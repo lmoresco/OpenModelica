@@ -75,22 +75,22 @@ end circuit;
 
 // Equations:
 //
-//   real(0) = AC.p.i +(real) AC.n.i
-//   real(0) = C.p.i  +(real) C.n.i
-//   real(0) = L.p.i  +(real) L.n.i
-//   real(0) = R1.p.i +(real) R1.n.i
-//   real(0) = R2.p.i +(real) R2.n.i
+//   real(0) = AC.p.i + AC.n.i
+//   real(0) = C.p.i  + C.n.i
+//   real(0) = L.p.i  + L.n.i
+//   real(0) = R1.p.i + R1.n.i
+//   real(0) = R2.p.i + R2.n.i
 //   AC.PI = 3.14159265358979
-//   AC.VA = 220
+//   AC.VA = real(220)
 //   AC.VA.unit = "V"
-//   AC.f = 50
+//   AC.f = real(50)
 //   AC.f.unit = "Hz"
 //   AC.i = AC.p.i
 //   AC.i.unit = "A"
 //   AC.n.i.unit = "A"
 //   AC.n.v = G.p.v
 //   AC.n.v.unit = "V"
-//   AC.p.i +(real) R1.p.i +(real) R2.p.i = 0.0
+//   AC.p.i + R1.p.i + R2.p.i = 0.0
 //   AC.p.i.unit = "A"
 //   AC.p.v = R1.p.v
 //   AC.p.v.unit = "V"
@@ -117,7 +117,7 @@ end circuit;
 //   L.L.unit = "H"
 //   L.i = L.p.i
 //   L.i.unit = "A"
-//   L.n.i +(real) C.n.i +(real) AC.n.i +(real) G.p.i = 0.0
+//   L.n.i + C.n.i + AC.n.i + G.p.i = 0.0
 //   L.n.i.unit = "A"
 //   L.n.v = C.n.v
 //   L.n.v.unit = "V"
@@ -125,12 +125,12 @@ end circuit;
 //   L.p.v.unit = "V"
 //   L.v = L.p.v - L.n.v
 //   L.v.unit = "V"
-//   R1.R = 10
+//   R1.R = real(10)
 //   R1.R*R1.i = R1.v
 //   R1.R.unit = "Ohm"
 //   R1.i = R1.p.i
 //   R1.i.unit = "A"
-//   R1.n.i +(real) C.p.i = 0.0
+//   R1.n.i + C.p.i = 0.0
 //   R1.n.i.unit = "A"
 //   R1.n.v = C.p.v
 //   R1.n.v.unit = "V"
@@ -139,12 +139,12 @@ end circuit;
 //   R1.p.v.unit = "V"
 //   R1.v = R1.p.v - R1.n.v
 //   R1.v.unit = "V"
-//   R2.R = 100
+//   R2.R = real(100)
 //   R2.R*R2.i = R2.v
 //   R2.R.unit = "Ohm"
 //   R2.i = R2.p.i
 //   R2.i.unit = "A"
-//   R2.n.i +(real) L.p.i = 0.0
+//   R2.n.i + L.p.i = 0.0
 //   R2.n.i.unit = "A"
 //   R2.n.v = L.p.v
 //   R2.n.v.unit = "V"

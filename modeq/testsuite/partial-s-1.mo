@@ -2,7 +2,6 @@
 
 // Equations:
 //
-//
 
 class A
 

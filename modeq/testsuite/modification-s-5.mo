@@ -10,7 +10,7 @@ class A
   Real x = 17 + x;
 end A;
 
-// Equations
+// Equations:
 //
 //   x = real(17) +(real) x
 //

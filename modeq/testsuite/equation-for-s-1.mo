@@ -11,8 +11,8 @@ end A;
 // Equations:
 //
 //   a[1] = real(1)
-//   a[2] = a[2-1] +(real) real(1)
-//   a[3] = a[3-1] +(real) real(1)
-//   a[4] = a[4-1] +(real) real(1)
-//   a[5] = a[5-1] +(real) real(1)
+//   a[2] = a[2-1] + real(1)
+//   a[3] = a[3-1] + real(1)
+//   a[4] = a[4-1] + real(1)
+//   a[5] = a[5-1] + real(1)
 //

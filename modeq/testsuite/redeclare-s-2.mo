@@ -3,7 +3,7 @@
 class A
   Real x;
 equation
-  x = 1;
+  x = 1.0;
 end A;
 
 class B

@@ -3,6 +3,7 @@
 successes=0
 total=0
 verbose=no
+page=cat
 
 runone ()
 {
@@ -60,26 +61,34 @@ EOF
     return 0
 }
 
-if [ $1 = "-v" ]; then
-    verbose=yes
-    shift
-fi
+for arg in $*; do
+    case $arg in
 
-for f in $*; do
-    printf "  %-24s... " $f
-    total=`expr $total + 1`
-    runone $f
-    if [ $? -eq 0 ]; then
-	printf 'ok\n'
-	successes=`expr $successes + 1`
-    else
-	if [ $verbose = yes ]; then
-	    echo
-	    echo ==== Log $log
-	    cat $log
+    -v)
+	verbose=yes
+	;;
+
+    -p)
+	page=${PAGER:-more}
+	;;
+
+    *)
+	printf "  %-24s... " $arg
+	total=`expr $total + 1`
+	runone $arg
+	if [ $? -eq 0 ]; then
+	    printf 'ok\n'
+	    successes=`expr $successes + 1`
+	else
+	    if [ $verbose = yes ]; then
+		echo
+		echo ==== Log $log
+		$page $log
+	    fi
+    #	printf 'failed\n'
 	fi
-#	printf 'failed\n'
-    fi
+	;;
+    esac
 done
 
 printf '\n== %d out of %d tests succeeded\n' $successes $total

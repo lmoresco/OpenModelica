@@ -1,28 +1,22 @@
 // Equations:
 //
-//   b[1].a.c.r.b == b[1].c.r.b
-//   b[1].a.c.y + -b[1].c.y == 0.0
-//   b[2].a.c.r.b == b[2].c.r.b
-//   b[2].a.c.y + -b[2].c.y == 0.0
-//   b[3].a.c.r.b == b[3].c.r.b
-//   b[3].a.c.y + -b[3].c.y == 0.0
-//   b[1].c.r.b == b[2].c.r.b
-//   b[2].c.r.b == b[3].c.r.b
-//   b[3].c.r.b == c.r.b
-//   b[1].c.y + b[2].c.y + b[3].c.y + -c.y == 0.0
+//   b1.a.c.x = b1.c.x
+//   b1.a.c.y + -b1.c.y = 0.0
+//   b2.a.c.x = b2.c.x
+//   b2.a.c.y + -b2.c.y = 0.0
+//   b3.a.c.x = b3.c.x
+//   b3.a.c.y + -b3.c.y = 0.0
+//   b1.c.x = b2.c.x
+//   b2.c.x = b3.c.x
+//   b3.c.x = cw.x
+//   b1.c.y + b2.c.y + b3.c.y + -cw.y = 0.0
 //
 
 type Real = RealType;
 
 class C
-
-  record R
-    Real b[10];
-  end R;
-
   flow Real y;
-  R r;
-
+  Real x;
 end A;
 
 model A
@@ -37,10 +31,10 @@ equation
 end B;
 
 model World
-  B b[3];
-  C c;
+  B b1,b2,b3;
+  C cw;
 equation
-  connect(b[1].c, b[2].c);
-  connect(b[2].c, b[1+2].c);
-  connect(b[4-1].c, c);
+  connect(b1.c, b2.c);
+  connect(b2.c, b3.c);
+  connect(b3.c, cw);
 end World;

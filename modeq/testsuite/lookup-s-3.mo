@@ -11,5 +11,5 @@ end B;
 // Equations:
 //
 //   a.c = 17
-//   d = a.c +(int) 1
+//   d = a.c + 1
 //

@@ -6,11 +6,11 @@
 type Real = RealType;
 
 record A
-  Real x = 17;
+  Real x = 17.0;
 end A;
 
 model World
-  A a(x=18);
+  A a(x=18.0);
 end World;
 
 // Equations:
