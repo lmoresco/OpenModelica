@@ -380,7 +380,7 @@ or @code{c}.
 What would be desirable is a way to determine that the type of the
 expression @code{f(a)} actually has type @code{Real[17]}.
 
-When comparing the function definition to other class definitions, one
+When comparing the function definition to normal class definitions, one
 thing worth noting is that in other classes, the type of components
 declared like @code{y} is determined at instantiation time.  So what if
 we say that the function @code{f} is implicitly instantiated for each
@@ -393,9 +393,9 @@ then model @code{M} is instantiated.  Think of it in this way:
 Model M
   Real a[17], b[17], c[3], d[3];
 
-  function f~1 = f(x = a);
-  function f~2 = f(x = a);
-  function f~3 = f(x = c);
+  f f~1 = f(x = a);
+  f f~2 = f(x = a);
+  f f~3 = f(x = c);
 equation
   b = f~1.y;
   c = f~2.y;
@@ -403,11 +403,14 @@ equation
 end M;
 @end example
 
+Here I instantiate the function @code{f} and call the three instances
+@code{f~1}, @code{f~2} and @code{f~3}, respectively.
+
 In the instance @code{f~1}, it would be possible to determine the size
-of @code{x} (if we add some extra magic), and the size of @code{y} could
-be derived.  Then the type of the expressions would be fully known, and
-the translator would be able to tell that the first and third equations
-are valid, but the second is invalid.
+of @code{x} (possibly using some extra magic), and the size of @code{y}
+could be derived.  Then the type of the expressions would be fully
+known, and the translator would be able to tell that the first and third
+equations are valid, but the second is invalid.
 
 It would be nice if this could be describe in terms of normal
 instantiation, but there are a couple of issues that need to be cleared
@@ -416,7 +419,7 @@ first.
 @itemize @bullet
 
 @item
-Recursive functions can not be described in this was.  But since we
+Recursive functions can not be described in this way.  But since we
 decided in Manchester that recursive functions are disallowed, this
 doesn't really matter.
 
@@ -439,12 +442,12 @@ equation
 @dots{}
 @end example
 
-But if it is necessary to be able to determine that the size of @code{}
-is 3, then there is a difference between the to types of equations.
+But if it is necessary to be able to determine that the size of @code{x}
+is 3, then there is a difference between the two types of equations.
 Saying that the translator should determine also that the size of
 @code{y} is 3 does not seem reasonable.
 
-This issue does proabably relate to other things than functions too.
+This issue does proabably relate to other things than functions also.
 
 @end itemize
 
