@@ -23,6 +23,8 @@ extern CWinMoshApp theApp;
 
 CMoshEdit::CMoshEdit()
 {
+	m_NoServ = false;
+	m_ShowServ = false;
 	m_ProcessCreated = false;
 	m_History.LoadHistory("mosh_history");
 }
@@ -154,6 +156,10 @@ void CMoshEdit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 CString CMoshEdit::DoCommand(LPCTSTR command)
 {
+	theApp.m_pMainWnd->BeginWaitCursor();
+
+	SetLimitText(0);
+
 	m_History.AddEntry(command);
 	if (client == NULL)
 		return CString("No Server");
@@ -166,7 +172,9 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 		CString res = tmp;
 		CORBA::string_free(tmp);
 
+		res.Replace("\r\n","\n");
 		res.Replace("\n","\r\n");
+		theApp.m_pMainWnd->EndWaitCursor();
 		return res;
 	}
 	catch(CORBA::Exception e) {
@@ -174,6 +182,7 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 		e._print(ss);
 //		AfxMessageBox(ss.str().c_str());
 		client = NULL;
+		theApp.m_pMainWnd->EndWaitCursor();
 		return CString(ss.str().c_str());
 	}
 }
@@ -223,9 +232,40 @@ void CMoshEdit::OnLButtonDown(UINT nFlags, CPoint point)
 	CEdit::OnLButtonDown(nFlags, point);
 }
 
+void CMoshEdit::Restart() {
+	try {
+		if (client != NULL) {
+			char* tmp = client->sendExpression("quit()");
+			Sleep(300);
+			CORBA::string_free(tmp);
+		}
+	}
+	catch(CORBA::Exception e) {
+	}
+	client = NULL;
+	m_NoServ = false;
+    m_ProcessCreated = false;
+
+	CString txt;
+	GetWindowText(txt);
+	txt += "Restarting server.\r\n>> ";
+	SetWindowText(txt);
+	SetSel(txt.GetLength(),txt.GetLength());
+
+	StartServer();
+	if (client==NULL) {
+		txt += "Unable to start server.\r\n";
+		SetWindowText(txt);
+		SetSel(txt.GetLength(),txt.GetLength());
+	}
+
+}
+
 bool CMoshEdit::StartServer(void)
 {
+	theApp.m_pMainWnd->BeginWaitCursor();
 	bool running = false;
+/*  Always start new server even if there is a modeq running
 	PROCESSENTRY32 entry;
 	entry.dwSize = sizeof(PROCESSENTRY32);
 	char* procName = "modeq.exe";
@@ -240,7 +280,9 @@ bool CMoshEdit::StartServer(void)
 		}
 		CloseHandle(snapshot);
 	}
-	if (!running) {
+*/
+
+	if (!running & !m_NoServ) {
 		SpawnServer();
 	}
 
@@ -277,11 +319,17 @@ bool CMoshEdit::StartServer(void)
 		count ++;
 	}
 
+	theApp.m_pMainWnd->EndWaitCursor();
+
 	return !notStarted;
 }
 
 void CMoshEdit::SpawnServer(void)
 {
+	CString logfile;
+	GetTempPath(MAX_PATH,logfile.GetBufferSetLength(MAX_PATH));
+	logfile.ReleaseBuffer();
+	logfile += "modeq.log";
 	CString MoshHome;
 	STARTUPINFO startinfo;
 	PROCESS_INFORMATION procinfo;
@@ -290,17 +338,32 @@ void CMoshEdit::SpawnServer(void)
 	startinfo.cb = sizeof(STARTUPINFO);
 	startinfo.lpReserved = NULL;
 	startinfo.dwFillAttribute = FOREGROUND_RED| BACKGROUND_RED| BACKGROUND_GREEN| BACKGROUND_BLUE;
-	startinfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEFILLATTRIBUTE;
 	startinfo.dwX = 0;
 	startinfo.dwY = 0;
 	startinfo.cbReserved2 = NULL;
 	startinfo.lpReserved2 = NULL;
 	startinfo.wShowWindow = SW_MINIMIZE;
+	if (m_ShowServ) {
+		startinfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEFILLATTRIBUTE;
+	}
+	else{
+		HANDLE log;
+		SECURITY_ATTRIBUTES sa;
+		sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+		sa.lpSecurityDescriptor = NULL;
+		sa.bInheritHandle =  TRUE;
+
+		log = CreateFile(logfile, FILE_ALL_ACCESS, 0, &sa, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);  
+		startinfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEFILLATTRIBUTE | STARTF_USESTDHANDLES;
+		startinfo.hStdError = log;  
+		startinfo.hStdInput = NULL;
+		startinfo.hStdOutput= log;  
+	}
 	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
 		MoshHome = MoshHome.Left(MoshHome.GetLength()-5);
 		MoshHome = CString("\"") + MoshHome + "\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
 		
-		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,0,NULL,NULL,&startinfo,&procinfo))
+		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
 		{
 			m_ProcessCreated = true;
 			Sleep(1000);

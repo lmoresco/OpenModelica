@@ -56,11 +56,15 @@ public:
 	void OnPaste() {
 		m_wndView.GetDlgItem(1)->SendMessage(WM_PASTE);
 	}
-
+	
+	void OnRestart() {
+		m_wndView.Restart();
+	}
 
 protected:  // control bar embedded members
 	CStatusBar  m_wndStatusBar;
 	CToolBar    m_wndToolBar;
+public:
 	CChildView    m_wndView;
 
 // Generated message map functions

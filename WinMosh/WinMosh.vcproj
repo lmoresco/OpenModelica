@@ -184,7 +184,6 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/libpath:&quot;&quot;C:\Documents"
 				AdditionalDependencies="mico.lib"
-				OutputFile=".\Release/WinMosh.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				AdditionalLibraryDirectories="&quot;$(MICOHOME)\win32-bin\lib&quot;"

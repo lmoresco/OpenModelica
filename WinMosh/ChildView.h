@@ -37,12 +37,20 @@ public:
 // Implementation
 public:
 	virtual ~CChildView();
-
+	void SetNoServ() {
+		m_Text.SetNoServ();
+	}
+	void SetShowServ() {
+		m_Text.SetShowServ();
+	}
 	void OnLoadLib()
 	{
 		m_Text.RunCommand("loadModel(Modelica)");
 	}
-
+	void Restart() 
+	{
+		m_Text.Restart();
+	}
 	void OnLoadModel()
 	{
 		CFileDialog dlg(TRUE, "mo", "*.mo", OFN_FILEMUSTEXIST, "Modelica files (*.mo)|*.mo||",this);

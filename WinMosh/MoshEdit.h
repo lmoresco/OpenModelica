@@ -23,6 +23,15 @@ public:
 
 // Attributes
 public:
+	void SetNoServ()
+	{
+		m_NoServ = true;
+	}
+	void SetShowServ()
+	{
+		m_ShowServ = true;
+	}
+	void Restart();
 
 // Operations
 public:
@@ -51,6 +60,8 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 private:
+	bool m_NoServ;
+	bool m_ShowServ;
 	bool m_ProcessCreated;
 	UINT_PTR m_Timer;
 	CHistory m_History;

@@ -65,8 +65,22 @@ BOOL CWinMoshApp::InitInstance()
 		WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, NULL,
 		NULL);
 
-
-
+	CString cmdLine = m_lpCmdLine;
+	int curpos = 0;
+	CString opt;
+	opt = cmdLine.Tokenize(" \t",curpos);
+	while (opt != "") {
+		if (opt.CompareNoCase("-noserv") == 0) {
+			pFrame->m_wndView.SetNoServ();
+		}
+		if (opt.CompareNoCase("-showserv") == 0) {
+			pFrame->m_wndView.SetShowServ();
+		}
+		opt = cmdLine.Tokenize(" \t",curpos);
+	}
+	
+	// always show server since it keeps popping up new consoles otherwise
+	pFrame->m_wndView.SetShowServ(); 
 
 	// The one and only window has been initialized, so show and update it.
 	pFrame->ShowWindow(SW_SHOW);
