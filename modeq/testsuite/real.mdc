@@ -1,20 +1,8 @@
 // Test the builtin types
 
-type Real 
-
-  RealType value;
-  parameter StringType quantity    = "";
-  parameter StringType unit        = "" "unit in equations"; 
-  parameter StringType displayUnit = "" "default display unit";
-  parameter RealType min = -Inf, max = +Inf;
-  parameter RealType start         = 0;
-
-equation
-
-  assert(value >= min and value <= max, "Variable value out of limit");
-
-end Real;  
-
 model World
-  Real r;
+  Integer i = 17		"an integer";
+  Real r = 18			"a real value";
+  String s = "hej"		"a string";
+  Boolean b = false		"a boolean";
 end World;
