@@ -4,6 +4,8 @@ class.c
 class.h
 dae.c
 dae.h
+dump.c
+dump.h
 exp.c
 exp.h
 main.c
@@ -12,3 +14,5 @@ modelica.h
 modeq
 parse.c
 parse.h
+test.c
+test.h
