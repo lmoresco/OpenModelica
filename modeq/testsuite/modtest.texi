@@ -684,6 +684,13 @@ redeclare. Should require that type-prefix is identical for extends.
 @end itemize
 
 @c --------------------------------------------------------- 
+@node For loops, Modifications, Redeclaration of parameter as variable, Open Issues
+@section For loops
+
+What are the restrictions on loop variables?  Can a loop variable also
+be used in equations?
+
+@c --------------------------------------------------------- 
 @node Equations, Modifications, Redeclaration of parameter as variable, Open Issues
 @section Equations
 

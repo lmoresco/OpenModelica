@@ -19,5 +19,5 @@ end Constant3;
 //   Real x[3];
 // equation
 //   N = 3;
-//   x[N-1] = 2.0;
+//   x[2] = 2.0;
 // end Constant3;

@@ -34,8 +34,8 @@ end ConnectTypes;
 //   discrete Real c.d;
 //   constant Real c.c;
 // equation
-//   c.e = a.c.e;
-//   c.p = a.c.p;
-//   c.d = a.c.d;
 //   c.c = a.c.c;
+//   c.d = a.c.d;
+//   c.p = a.c.p;
+//   c.e = a.c.e;
 // end ConnectTypes;

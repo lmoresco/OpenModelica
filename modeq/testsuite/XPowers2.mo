@@ -29,6 +29,6 @@ end XPowers2;
 //   n = 3;
 //   x = 2.0;
 //   xpowers[1] = x;
-//   xpowers[1 + 1] = xpowers[1] * x;
-//   xpowers[2 + 1] = xpowers[2] * x;
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
 // end XPowers2;

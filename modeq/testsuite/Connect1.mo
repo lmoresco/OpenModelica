@@ -18,8 +18,8 @@ end Connect1;
 
 // fclass Connect1
 //   Real c1.f;
-//   Real c2.f;
 //   Real c1.e;
+//   Real c2.f;
 //   Real c2.e;
 // equation
 //   c1.e = c2.e;

@@ -12,7 +12,6 @@ end Discrete2;
 
 // fclass Discrete2
 //   discrete Real    x;
-//            String  x.unit;
 // equation
 //   x = sin(time);
 // end Discrete2;

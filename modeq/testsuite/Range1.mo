@@ -7,6 +7,8 @@
 
 class Range1
   Integer x[5] = 1:5;
+protected
+  Integer i;
 equation
   for i in 1:5 loop
     x[i] = x[i] + 1;
@@ -18,6 +20,7 @@ equation
 end Range1;
 
 // fclass Range1
+//   Integer i;
 //   Integer x[1];
 //   Integer x[2];
 //   Integer x[3];

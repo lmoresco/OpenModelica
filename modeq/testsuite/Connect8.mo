@@ -19,11 +19,13 @@ equation
 end Connect8;
 
 // fclass Connect8
+//   parameter Integer N;
 //   Real c[1].x;
 //   Real c[2].x;
 //   Real c[3].x;
 //   Real cx.x;
 //   Real cy.x;
 // equation
-//   (-c[2].x) + (-cx.x) + (-cy.x) = 0.0;
+//   N = 3;
+//   (-c[3].x) + (-cx.x) + (-cy.x) = 0.0;
 // end Connect8;

@@ -19,3 +19,10 @@ class Connect9
 equation
   connect(c1,c2);
 end Connect9;
+
+// fclass Connect9
+// 	       Real    c1.x;
+// 	       Real    c2.x;
+// equation
+//   c1.x = c2.x;
+// end Connect9;

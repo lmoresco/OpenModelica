@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl -w
+#!/sw/local/bin/perl -w
 
 $successes=0;
 $total=0;
@@ -76,6 +76,8 @@ sub runone
 		  $mismatch = 1;
 	      } elsif (/^<(.*)$/) {
 		  if (/^< *String(.*)\.unit;$/) {
+		      # igore missing units
+		  } elsif (/^<.*\.unit = \"\";$/) {
 		      # igore missing units
 		  } else {
 		      print LOG "got:     $1\n";

@@ -20,9 +20,9 @@ model DisturbedResistance3
 end DisturbedResistance3;
 
 // fclass DisturbedResistance3
+//   Real R;
 //   Real u;
 //   Real i;
-//   Real R;
 // equation
 //   R = 1.0 + 0.1*sin(time);
 //   u = R*i;
