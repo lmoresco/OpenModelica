@@ -144,6 +144,9 @@
 				RelativePath="..\winruntime\corbaimpl.cpp">
 			</File>
 			<File
+				RelativePath="..\winruntime\daeext.cpp">
+			</File>
+			<File
 				RelativePath=".\modeq_communication.cc">
 			</File>
 			<File

@@ -49,8 +49,9 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
-				CommandLine="cd $(ProjectDir)antlr 
-nmake -f MakeFile.win32 "/>
+				CommandLine="cd $(ProjectDir)antlr
+nmake -f MakeFile.win32
+"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -107,8 +108,9 @@ copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
-				CommandLine="cd $(ProjectDir)antlr 
-nmake -f MakeFile.win32 "/>
+				CommandLine="cd $(ProjectDir)antlr
+nmake -f MakeFile.win32
+"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -165,8 +167,9 @@ copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
-				CommandLine="cd $(ProjectDir)antlr 
-nmake -f MakeFile.win32 "/>
+				CommandLine="cd $(ProjectDir)antlr
+nmake -f MakeFile.win32
+"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -223,8 +226,9 @@ copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
-				CommandLine="cd $(ProjectDir)antlr 
-nmake -f MakeFile.win32 "/>
+				CommandLine="cd $(ProjectDir)antlr
+nmake -f MakeFile.win32
+"/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
@@ -276,7 +280,13 @@ nmake -f MakeFile.win32 "/>
 				RelativePath="..\dae.c">
 			</File>
 			<File
+				RelativePath="..\daelow.c">
+			</File>
+			<File
 				RelativePath="..\debug.c">
+			</File>
+			<File
+				RelativePath="..\derive.c">
 			</File>
 			<File
 				RelativePath="..\dump.c">
@@ -324,6 +334,12 @@ nmake -f MakeFile.win32 "/>
 				RelativePath="..\staticexp.c">
 			</File>
 			<File
+				RelativePath="..\taskgraph.c">
+			</File>
+			<File
+				RelativePath="..\modpar\TaskGraphExt_stub.cpp">
+			</File>
+			<File
 				RelativePath="..\types.c">
 			</File>
 			<File
@@ -365,7 +381,13 @@ nmake -f MakeFile.win32 "/>
 				RelativePath="..\dae.h">
 			</File>
 			<File
+				RelativePath="..\daelow.h">
+			</File>
+			<File
 				RelativePath="..\debug.h">
+			</File>
+			<File
+				RelativePath="..\derive.h">
 			</File>
 			<File
 				RelativePath="..\dump.h">
@@ -411,6 +433,9 @@ nmake -f MakeFile.win32 "/>
 			</File>
 			<File
 				RelativePath="..\staticexp.h">
+			</File>
+			<File
+				RelativePath="..\taskgraph.h">
 			</File>
 			<File
 				RelativePath="..\types.h">
@@ -683,6 +708,12 @@ nmake -f MakeFile.win32 "/>
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath="..\daeext.rml">
+			</File>
+			<File
+				RelativePath="..\daelow.rml">
+			</File>
+			<File
 				RelativePath="..\debug.rml">
 				<FileConfiguration
 					Name="Release|Win32"
@@ -702,6 +733,9 @@ nmake -f MakeFile.win32 "/>
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\derive.rml">
 			</File>
 			<File
 				RelativePath="..\dump.rml">
@@ -1122,6 +1156,12 @@ nmake -f MakeFile.win32 "/>
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\taskgraph.rml">
+			</File>
+			<File
+				RelativePath="..\taskgraphext.rml">
 			</File>
 			<File
 				RelativePath="..\types.rml">
