@@ -1,0 +1,25 @@
+// name:     Parameters
+// keywords: Graphical API, Parameters
+// status:   correct
+// 
+//  Subset of the Graphical API for accessing parameters and modifiers
+//
+loadFile("interactive_api_param.mo");
+getParameterNames(A);
+getParameterValue(A,p1);
+getParameterValue(A,p2);
+getParameterValue(A,p4);
+setParameterValue(A,p4,55.2);
+setParameterValue(A,p2,1+p4);
+getParameterValue(A,p2);
+getParameterValue(A,p4)
+// Result:
+// true
+// {p1, p2, p4}
+// 35
+// 32
+// Error
+// Ok
+// Ok
+// 1 + p4
+// 55.2

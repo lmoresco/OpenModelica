@@ -1,0 +1,35 @@
+// name:     Classes
+// keywords: Graphical API
+// status:   correct
+// 
+//  Subset of the Graphical API.
+//
+createModel(A);
+createModel(A.test);
+createModel(test2);
+addComponent(x,Integer,A.test);
+addComponent(z,Real,A.test);
+addComponent(y,Integer,test2);
+updateComponent(x,Integer,A.test,binding=33);
+addClassAnnotation(A.test,annotate=Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{100,100}})}));
+getIconAnnotation(A.test);
+getComponentCount(A.test);
+getComponentCount(test2);
+getComponents(A.test);
+addConnection(a.n,b.z,A.test);
+getClassNames(A);
+// Result:
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// {-10.0,-10.0,10.0,10.0,{Line(true,{{0.0,0.0},{100.0,100.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}
+// 2
+// 1
+// {{Real,z,""},{Integer,x,""}}
+// Ok
+// {test}
