@@ -19,21 +19,15 @@ options {
 	importVocab = modelica_parser;
 	k = 2;
 	buildAST = false;
+    defaultErrorHandler = false;
 }
 
 {
-    symboltable symtab;
-//  void print(value val)
-//  {
-//		cout << val << endl;
-		//	cout << "Expression = " << val << endl;
-	//if (val.is_real()) cout << " Expression = " << val /*val.get_real()*/ << endl;
-	//if (val.is_integer()) cout << "Expression = " << val.get_integer() << endl;
-	//if (val.is_boolean()) cout << "Expression = " << val.get_boolean() << endl;
-	//if (val.is_array()) cout << "Expression = " << val.get_array() << endl;
-//  }
-
+// This stuff goes into modelica_tree_parser.hpp
+protected:
+    symboltable* m_symboltable;
 }
+
 stored_definition
 			{
 				// Put your initialization here
@@ -497,12 +491,13 @@ algorithm
 		:
         #(ALGORITHM_STATEMENT 
             (#(ASSIGN (
-                        (ptr = component_reference val = expression)
+                        (component_reference val = expression)
                         {
-                            if (!ptr) // New symbol
-                            {
-//                                symtab.insert(
-                            }
+                         // 0   if (!ptr) // New symbol
+                         //   {
+//                       //         symtab.insert(
+                         //   }
+                          
                         }
                     |	(expression_list component_reference function_call)
                     )
@@ -716,9 +711,9 @@ assert_clause
 		}
 		;
 
-start_expression returns [value val]
+start_expression[symboltable* symtab] returns [value val]
 		{
-//			value val;
+            m_symboltable = symtab;
 		}
 		:
 		val = expression //{ print(val);}
@@ -912,9 +907,10 @@ primary	returns [value val]
 		| s:STRING {val.set_value(s->getText());}
 		| f:FALSE {val.set_value(false);}
 		| t:TRUE {val.set_value(true);}
-		|   tmp_val = component_reference__function_call
+		|   component_reference__function_call
             {
-                if (!tmp_val)
+                cout << "primary: matched component reference" << endl;
+            /*    if (!tmp_val)
                 {
                    throw modelica_runtime_error("Undefined symbol");
                 }
@@ -922,7 +918,7 @@ primary	returns [value val]
                 {
                     val = value(*tmp_val);
                 }
-            
+            */
             }
 		| #(LPAR expression_list)
 		| #(LBRACK expr_val = expression_list 
@@ -941,8 +937,12 @@ component_reference__function_call returns [value* val]
 			// Initialization
 		}
 		:
-		#(FUNCTION_CALL component_reference (function_call)?)
-        | val = component_reference
+		#(FUNCTION_CALL component_reference (function_call)?
+            {
+//                cout << "Function call" << endl;
+            }
+        )
+        | component_reference
 		{
 			// Actions
 		}
@@ -960,23 +960,23 @@ name_path
 		}
 		;
 
-component_reference returns [value* val] 
+component_reference returns [value val] 
 		{
 		
 		}
 		:
 		#(i:IDENT (array_subscripts )? 
             {
-                value* tmp = symtab.lookup(i->getText());
-            //    if (!tmp)
-            //    {
-            //        std::string error = i->getText()+" undefined symbol";
-            //        throw modelica_runtime_error(error.c_str());
-            //    }
-            //else
-            //    {
-            //        return value(*tmp);
-            //    }
+                value* tmp = m_symboltable->lookup(i->getText());
+                if (!tmp)
+                {
+                    std::string error = i->getText()+" undefined symbol";
+                    throw modelica_runtime_error(error.c_str());
+                }
+            else
+                {
+                    return value(*tmp);
+                }
                 return tmp;
                 
             }

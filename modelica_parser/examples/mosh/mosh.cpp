@@ -13,6 +13,7 @@
 #include <readline/history.h>
 
 #include "value.hpp"
+#include "symboltable.hpp"
 
 void read_and_evaluate(istream&instream);
 
@@ -86,12 +87,12 @@ void read_and_evaluate(istream& instream)
 	    
 	    if (ast) 
 		{
-		  //  dumper.dump(ast);
+		  //   dumper.dump(ast);
 		    
 		    modelica_tree_parser walker;
-		    
+		    symboltable symtab;
 		    //std::cout << "-------------- Beginning of walk-------------\n";
-		    value result = walker.start_expression(ast);
+		    value result = walker.start_expression(ast,&symtab);
 		    if (!hide_result) cout << result << endl;
 		    //std::cout << "---------------- Walking done ---------------\n";
 		}
