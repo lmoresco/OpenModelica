@@ -340,6 +340,9 @@ nmake -f MakeFile.win32
 				RelativePath="..\modpar\TaskGraphExt_stub.cpp">
 			</File>
 			<File
+				RelativePath="..\tornado.c">
+			</File>
+			<File
 				RelativePath="..\types.c">
 			</File>
 			<File
@@ -436,6 +439,9 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\taskgraph.h">
+			</File>
+			<File
+				RelativePath="..\tornado.h">
 			</File>
 			<File
 				RelativePath="..\types.h">
@@ -1162,6 +1168,9 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\taskgraphext.rml">
+			</File>
+			<File
+				RelativePath="..\tornado.rml">
 			</File>
 			<File
 				RelativePath="..\types.rml">
