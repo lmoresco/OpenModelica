@@ -11,7 +11,6 @@ end A;
 
 model B
   extends A;
-  Real y = 1;
   Real z;
 end B;
 

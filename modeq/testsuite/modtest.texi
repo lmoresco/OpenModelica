@@ -1,7 +1,7 @@
 \input texinfo   @c -*-texinfo-*-
 @c %**start of header
 @setfilename modtest.info
-@settitle Modelica Testsuite, Version 1.0
+@settitle Modelica Testsuite
 @c %**end of header
 
 @c translation to HTML:
@@ -10,21 +10,30 @@
 @setchapternewpage odd
 @paragraphindent 0
 @iftex
+@afourpaper
 @parindent 0pt
 @parskip = @medskipamount
 @end iftex
 
-@ifinfo
-This is a collection of testcases for Modelica.
+@include VERSION.texi
+@set UPDATED 13 July 1998
+@set UPDATED-MONTH July 1998
 
-Copyright 1998 Modelica Design Group
+@ifinfo
+This is version @value{VERSION},
+last updated @value{UPDATED},
+of @cite{the Modelica testsuite},
+version @value{VERSION}.
+
+Copyright @copyright{} 1998 Modelica Design Group
 @end ifinfo
 
 @titlepage
 @sp 10
 @comment The title is printed in a large font.
-@title{Modelica Testsuite}
-@subtitle{Version 1.0}
+@title Modelica Testsuite
+@subtitle Version @value{VERSION}
+@subtitle @value{UPDATED-MONTH}
 @author{Modelica Design Group}
 
 @c The following two commands start the copyright page.
@@ -36,9 +45,16 @@ Copyright @copyright{} 1998 Modelica Design Group
 @node    Top, Conventions, (dir), (dir)
 @comment node-name, next,          previous, up
 
+This is version @value{VERSION}, last updated @value{UPDATED}, of
+@cite{the Modelica testsuite}, version @value{VERSION}.
+
+This document is made to provide a collection of issues that need to be
+resolved in the Modelica design process.
+
 @menu
 * Conventions::                 
 * Open Issues::                 
+* Closed Issues::               
 * Testcases::                   Collection of files with testcases.
 
 * Change-Log::                  
@@ -55,6 +71,7 @@ Open Issues
 
 * Types::                       
 * Array syntax::                
+* Expression Properties::       
 * Functions::                   
 * Equations in declarations vs. in equation sections::  
 * Connections::                 
@@ -68,6 +85,8 @@ Open Issues
 @comment node-name,     next,          previous, up
 @node     Conventions, Open Issues, Top, Top
 @chapter Conventions
+
+This chapter lists the conventions used in the text.
 
 @menu
 * General Conventions::         
@@ -240,7 +259,7 @@ as @code{fclass} to differentiate it from Modelica's @code{class}.
 @c ********************************************************************
 
 @comment node-name,     next,          previous, up
-@node    Open Issues, Testcases, Conventions, Top
+@node    Open Issues, Closed Issues, Conventions, Top
 @chapter Open Issues
 
 The issues brought up here are not yet clarified in the current
@@ -249,6 +268,7 @@ Modelica language specification (Version 1c of the Modelica report).
 @menu
 * Types::                       
 * Array syntax::                
+* Expression Properties::       
 * Functions::                   
 * Equations in declarations vs. in equation sections::  
 * Connections::                 
@@ -351,7 +371,7 @@ problems for the type system.
 @subsection Overloading and automatic type conversions
 
 @c --------------------------------------------------------- 
-@node Array syntax, Functions, Types, Open Issues
+@node Array syntax, Expression Properties, Types, Open Issues
 @section Array syntax
 
 @subsection Declaring arrays of arrays
@@ -369,12 +389,65 @@ arbitrary array expressions?  Currently, the indexing is part of the
 @code{component_reference} grammar rule, which means that you can only
 index variables.
 
+
+The following is currently not allowed:
+
 @example
 x = cross(A,B)[2]
 @end example
 
 @c --------------------------------------------------------- 
-@node Functions, Equations in declarations vs. in equation sections, Array syntax, Open Issues
+@node Expression Properties, Functions, Array syntax, Open Issues
+@section Expression Properties
+
+In several places in the discussions about what may or may not appear in
+expressions there are restrictions applied in a somewhat ad-hoc manner.
+This should be cleared up and formalized.
+
+Each expression has a number of properties that can be derivd by
+analyzing its subexpressions.
+
+@itemize @bullet
+
+@item
+A type. For each kind of expression (addition, logical-and etc.) it is
+well-defined what the type of the expression is.  The only exception are
+overloaded operators, but that problem is another issue.
+
+@item
+A "constancy" property, which describes whether the expression is a
+constant expression or not.  This can be stratified into the levels
+constant / parameter / discrete / variable,  just as components can be
+declared constant etc.
+
+@item
+A "differentiability" property.  I'm not so sure about what this is, but
+it seems to be needed.  For instance, the report states that the
+@code{div()} function is not differentiable.
+
+How is this property determined for function calls in the general case?
+
+@end itemize
+
+When these properties are defined, they can be used to define what may
+appear where.  Some examples:
+
+@itemize @bullet
+
+@item
+An array index must have type @code{Integer}.
+
+@item
+An array index in a @code{connect} statement must be a constant
+expression of type @code{Integer}.
+
+@item
+Expressions in equations must be differentiable.
+
+@end itemize
+
+@c --------------------------------------------------------- 
+@node Functions, Equations in declarations vs. in equation sections, Expression Properties, Open Issues
 @section Functions
 
 Saying that functions are classes is simply silly and
@@ -501,7 +574,12 @@ that break the rule. Should this be valid?  @*
 
 @c ********************************************************************
 
-@node Testcases, Change-Log, Open Issues, Top
+@node Closed Issues, Testcases, Open Issues, Top
+@chapter Closed Issues
+
+@c ********************************************************************
+
+@node Testcases, Change-Log, Closed Issues, Top
 @appendix Testcases
 
 @c

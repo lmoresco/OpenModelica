@@ -1,6 +1,6 @@
 // name:     ArrayModification5
 // keywords: array,modification,unknown
-// status:   correct
+// status:   incorrect
 // 
 // Partial indexing
 // 
