@@ -13,7 +13,8 @@ model World
   A a(x=18.0);
 end World;
 
-// Equations:
-//
-//   a.x = 18
-//
+// fclass World
+//   Real a.x;
+// equation
+//   a.x = 18.0;
+// end World;

@@ -1,11 +1,11 @@
-
+TEST=./rtest
 
 test :
 	@echo
-	@echo The following teste should not cause any errors
+	@echo The following tests should not cause any errors
 	@echo
-	@./runtest *-s-*.mo
+	@$(TEST) *-s-*.mo
 	@echo
-	@echo The following teste should fail
+	@echo The following tests should fail
 	@echo
-	@./runtest *-f-*.mo
+	@$(TEST) *-f-*.mo
