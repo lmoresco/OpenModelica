@@ -9,7 +9,7 @@ model Array1
    Real x=1.0;
    Real y=2.0;
    Integer q;
-   Integer A1[5];
+   Integer A1[5]=[1,2,3,4,5];
    algorithm
 //   der(A1)=y;
 //   y=der(A1);
