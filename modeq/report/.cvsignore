@@ -16,6 +16,7 @@ report.aux
 report.dvi
 report.log
 report.ps
+report.stc
 report.toc
 staticexp.tex
 types.tex
