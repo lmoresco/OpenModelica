@@ -1,4 +1,4 @@
-TESTFILES = variables.mos 
+TESTFILES = variables.mos Array1.mos
 
 TEST = rtest
 
