@@ -1,3 +1,5 @@
+absyn.c
+absyn.h
 class.c
 class.h
 dae.c
@@ -7,3 +9,6 @@ exp.h
 main.c
 main.h
 modelica.h
+modeq
+parse.c
+parse.h
