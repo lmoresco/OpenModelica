@@ -12,7 +12,8 @@ getParameterValue(A,p4);
 setParameterValue(A,p4,55.2);
 setParameterValue(A,p2,1+p4);
 getParameterValue(A,p2);
-getParameterValue(A,p4)
+getParameterValue(A,p4);
+getComponentModifierNames(C,b1);
 // Result:
 // true
 // {p1, p2, p4}
@@ -23,4 +24,5 @@ getParameterValue(A,p4)
 // Ok
 // 1 + p4
 // 55.2
+// {a1, a2}
 // endResult
