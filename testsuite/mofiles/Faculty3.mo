@@ -20,7 +20,14 @@ algorithm
   end while;
 end Faculty3;
 
-// fclass Faculty3
+model Faculty3Model
+  Integer x;
+  Integer y;
+equation
+  y = Faculty3(x);
+end Faculty3Model;
+
+// function Faculty3
 // input Integer x;
 // output Integer y;
 // Integer i;
@@ -32,3 +39,10 @@ end Faculty3;
 //     i := i + 1;
 //   end while;
 // end Faculty3;
+// 
+// fclass Faculty3Model
+// Integer x;
+// Integer y;
+// equation
+//   y = Faculty3(x);
+// end Faculty3Model;
