@@ -27,6 +27,8 @@ int main(int argc, char**argv) {
 
   cout << "nu=" << nu << ", nb=" << nb << endl;
 
+  delete [] bc;
+
   return 0;
 
 }

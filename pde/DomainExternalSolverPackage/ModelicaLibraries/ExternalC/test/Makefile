@@ -1,7 +1,9 @@
-default: test
+default: tests
+
+.PHONY: runtests
 
 # tests: ext meshext 
-TESTS= test_laplace test_row test_formsize test_form test_indices
+TESTS= test_laplace test_row test_formsize test_form test_indices test_formsizebdr test_formbdr test_bdr_coords
 
 
 # default: test
@@ -39,11 +41,17 @@ test_row: $(LIBOBJS) test_row.o
 test_form: $(LIBOBJS) test_form.o ../rheolef/print.h
 	$(CXX) $(LDFLAGS) -o test_form  test_form.o $(LIBOBJS) $(LDLIBS)
 
+test_formbdr: $(LIBOBJS) test_formbdr.o ../rheolef/print.h
+	$(CXX) $(LDFLAGS) -o test_formbdr  test_formbdr.o $(LIBOBJS) $(LDLIBS)
+
 test_indices: $(LIBOBJS) test_indices.o ../rheolef/print.h
 	$(CXX) $(LDFLAGS) -o test_indices  test_indices.o $(LIBOBJS) $(LDLIBS)
 
 test_formsize: $(LIBOBJS) test_formsize.o 
 	$(CXX) $(LDFLAGS) -o test_formsize  test_formsize.o $(LIBOBJS) $(LDLIBS)
+
+test_formsizebdr: $(LIBOBJS) test_formsizebdr.o 
+	$(CXX) $(LDFLAGS) -o test_formsizebdr  test_formsizebdr.o $(LIBOBJS) $(LDLIBS)
 
 test_ext: $(LIBOBJS) test_ext.o
 	$(CXX) $(LDFLAGS) -o test_ext  test_ext.o $(LIBOBJS) $(LDLIBS)
@@ -51,9 +59,15 @@ test_ext: $(LIBOBJS) test_ext.o
 test_meshext: $(LIBOBJS) test_meshext.o
 	$(CXX) $(LDFLAGS) -o test_meshext test_meshext.o $(LIBOBJS) $(LDLIBS)
 
+test_bdr_coords: $(LIBOBJS) test_bdr_coords.o ../rheolef/print.h
+	$(CXX) $(LDFLAGS) -o test_bdr_coords  test_bdr_coords.o $(LIBOBJS) $(LDLIBS)
 
 
-test: $(TESTS)
+
+tests: $(TESTS)
+
+runtests: $(TESTS)
 	@for x in $(TESTS); do \
 	  ./run-test.sh $$x || exit 1; \
 	done;
+
