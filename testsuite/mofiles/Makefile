@@ -33,7 +33,8 @@ Units2.mo XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo FunctionEval5.mo FunctionEval6.mo \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
-FunctionEvalBuiltin.mo
+FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
+ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
