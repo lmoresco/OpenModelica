@@ -28,18 +28,6 @@ int main(int argc, char**argv) {
   get_rheolef_poisson_mass(argv[1], nv, mass, nbc, bcdim, bc);
   get_rheolef_poisson_g(argv[1], nv, g, nbc, bcdim, bc);
 
-  cout << "laplace: " << endl;
-
-  for (int i=0; i< nv; i++) {
-    cout << endl;
-    for (int j=0; j<nv; j++)
-      cout << laplace[nv*i+j] << ", ";
-  }
-
-  cout << "g: " << endl;
-
-  for (int i=0; i<nv; i++)
-    cout << g[i] << endl;
 
   write_square_matrix(argv[5], nv, laplace);
   write_square_matrix(argv[6], nv, mass);

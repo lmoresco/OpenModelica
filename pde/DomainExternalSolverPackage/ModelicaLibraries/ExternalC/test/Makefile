@@ -1,4 +1,7 @@
-default: test test_row test_form test_formsize test_ext test_meshext test_indices
+default: test
+
+# tests: ext meshext 
+TESTS= test_laplace test_row test_formsize test_form test_indices
 
 
 # default: test
@@ -27,8 +30,8 @@ LIBOBJS= $(LIBEXTOBJS) $(LIBRHEOLEFOBJS) $(LIBBAMGOBJS) $(LIBMESHEXTOBJS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 
-test: $(LIBOBJS) test.o
-	$(CXX) $(LDFLAGS) -o test  test.o $(LIBOBJS) $(LDLIBS)
+test_laplace: $(LIBOBJS) test_laplace.o
+	$(CXX) $(LDFLAGS) -o test_laplace  test_laplace.o $(LIBOBJS) $(LDLIBS)
 
 test_row: $(LIBOBJS) test_row.o
 	$(CXX) $(LDFLAGS) -o test_row  test_row.o $(LIBOBJS) $(LDLIBS)
@@ -48,3 +51,9 @@ test_ext: $(LIBOBJS) test_ext.o
 test_meshext: $(LIBOBJS) test_meshext.o
 	$(CXX) $(LDFLAGS) -o test_meshext test_meshext.o $(LIBOBJS) $(LDLIBS)
 
+
+
+test: $(TESTS)
+	@for x in $(TESTS); do \
+	  ./run-test.sh $$x || exit 1; \
+	done;
