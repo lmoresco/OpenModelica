@@ -59,6 +59,7 @@ private:
 public:
 	bool StartServer(void);
 	void SpawnServer(void);
+	void RunCommand(LPCSTR command);
 };
 
 /////////////////////////////////////////////////////////////////////////////

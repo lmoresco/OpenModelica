@@ -40,6 +40,24 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
+	void OnCutnPasteUI( CCmdUI* pCmdUI )
+	{
+		pCmdUI->Enable();
+	}
+
+	void OnCut() {
+		m_wndView.GetDlgItem(1)->SendMessage(WM_CUT);
+	}
+
+	void OnCopy() {
+		m_wndView.GetDlgItem(1)->SendMessage(WM_COPY);
+	}
+
+	void OnPaste() {
+		m_wndView.GetDlgItem(1)->SendMessage(WM_PASTE);
+	}
+
+
 protected:  // control bar embedded members
 	CStatusBar  m_wndStatusBar;
 	CToolBar    m_wndToolBar;

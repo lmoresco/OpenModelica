@@ -38,6 +38,24 @@ public:
 public:
 	virtual ~CChildView();
 
+	void OnLoadLib()
+	{
+		m_Text.RunCommand("loadModel(Modelica)");
+	}
+
+	void OnLoadModel()
+	{
+		CFileDialog dlg(TRUE, "mo", "*.mo", OFN_FILEMUSTEXIST, "Modelica files (*.mo)|*.mo||",this);
+		if (dlg.DoModal() == IDOK) {
+			CString command;
+			CString file = dlg.GetPathName();
+			file.Replace('\\','/');
+			command.Format("loadFile(\"%s\")", file);
+			m_Text.RunCommand(command);
+		}
+	}
+
+
 	// Generated message map functions
 protected:
 	//{{AFX_MSG(CChildView)

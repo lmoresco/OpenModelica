@@ -7,6 +7,8 @@
 
 #include <sstream>
 #include <process.h>
+#include ".\moshedit.h"
+#include <tlhelp32.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -223,7 +225,25 @@ void CMoshEdit::OnLButtonDown(UINT nFlags, CPoint point)
 
 bool CMoshEdit::StartServer(void)
 {
-	WIN32_FIND_DATA data;
+	bool running = false;
+	PROCESSENTRY32 entry;
+	entry.dwSize = sizeof(PROCESSENTRY32);
+	char* procName = "modeq.exe";
+	HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	if (snapshot != (HANDLE)-1L) {
+		BOOL res = Process32First(snapshot, &entry);
+		while (res) {
+			if (strnicmp(entry.szExeFile, procName, strlen(procName)) == 0) {
+				running = true;
+			}
+			res = Process32Next(snapshot, &entry);
+		}
+		CloseHandle(snapshot);
+	}
+	if (!running) {
+		SpawnServer();
+	}
+
 	char tmpPath[1025];
 	int argc = 0;
 	char argv[10][2];
@@ -231,20 +251,6 @@ bool CMoshEdit::StartServer(void)
 	orb = CORBA::ORB_init(argc,(char**)argv);
 	char uri[300];
 	GetTempPath(1024,tmpPath);
-
-	sprintf(uri, "%sopenmodelica.objid",tmpPath);
-
-	if (!m_ProcessCreated) {
-		HANDLE hFile = FindFirstFile(uri,&data);
-		if (hFile == INVALID_HANDLE_VALUE) {
-			SpawnServer();
-			CString str;
-			str.Format("Objfile not found: %s", uri);
-		}
-		else {
-			FindClose(hFile);
-		}
-	}
 
 	sprintf(uri, "file://%sopenmodelica.objid",tmpPath);
 	CString sUri = uri;
@@ -269,7 +275,6 @@ bool CMoshEdit::StartServer(void)
 		}
 		
 		count ++;
-		if (notStarted) SpawnServer();
 	}
 
 	return !notStarted;
@@ -280,7 +285,6 @@ void CMoshEdit::SpawnServer(void)
 	CString MoshHome;
 	STARTUPINFO startinfo;
 	PROCESS_INFORMATION procinfo;
-//	GetStartupInfo(&startinfo);
 	startinfo.lpDesktop = NULL;
 	startinfo.lpTitle = NULL;
 	startinfo.cb = sizeof(STARTUPINFO);
@@ -302,4 +306,19 @@ void CMoshEdit::SpawnServer(void)
 			Sleep(1000);
 		};
 	}
+}
+
+void CMoshEdit::RunCommand(LPCSTR command)
+{
+	CString txt;
+	GetWindowText(txt);
+	txt += command ;
+	txt += "\r\n";
+	SetWindowText(txt);
+	SetSel(txt.GetLength(),txt.GetLength());
+	CString res = DoCommand(command);
+	txt += res + "\r\n"; 
+	txt += ">> ";
+	SetWindowText(txt);
+	SetSel(txt.GetLength(),txt.GetLength());
 }
