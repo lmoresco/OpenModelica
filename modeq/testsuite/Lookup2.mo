@@ -1,8 +1,8 @@
 // name:     Lookup2
 // keywords: scoping
-// status:   correct
+// status:   incorrect
 // 
-// Constants can be referred to using class names.
+// Lookup2 does not exists until it is completely defined.
 //
 
 class Lookup2

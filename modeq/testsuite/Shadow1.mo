@@ -24,7 +24,6 @@ end Shadow1;
 
 // fclass Shadow1
 //   Real a.x;
-//   Real a.b.x;
 // equation
 //   a.x = 2.0;
 // end Shadow1;

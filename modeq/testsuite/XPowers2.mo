@@ -20,8 +20,10 @@ end XPowers2;
 
 // fclass XPowers2
 //   Integer i;
-//   Integer n;
+//   constant Integer n;
 //   Real x;
+//   Real xpowers[1];
+//   Real xpowers[2];
 //   Real xpowers[3];
 // equation
 //   n = 3;

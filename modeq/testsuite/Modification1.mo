@@ -24,6 +24,10 @@ model Modification1
 end Modification1;
 
 // fclass Modification1
+//   parameter Real m.j;
+//   parameter Real m.f.q;
+//   parameter Real n.j;
+//   parameter Real n.f.q;
 // equation
 //   m.j   = 3.0;
 //   m.f.q = 2.0;

@@ -28,5 +28,5 @@ end Units1;
 //   v2.unit = "kV";
 //   i.unit = "A";
 //   v1 = v2;
-//   v1 = i;
+//   v2 = i;
 // end Units1;

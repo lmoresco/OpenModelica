@@ -1,5 +1,5 @@
 // name:     ConnectTypes
-// keywords: connect,type
+// keywords: connect,type,unknown
 // status:   correct
 // 
 // Check generation of connection equations. No equations should be 

@@ -5,7 +5,7 @@
 // A set of parameters can be computed from a set of other parameters 
 // by using a function call.
 //
-// david: whereever did you come up with this syntax?
+// david: whereever did you come up with this syntax? It is wrong
 //
 
 function fc

@@ -6,9 +6,9 @@
 //
 
 model ConditionalArrayExpression2
-  Real a=1, b=2, c[2], d, e;
+  Real a=1.0, b=2.0, c[2], d, e;
 equation
-  [0; 0] = if a > b then c else [d; e];
+  [0.0; 0.0] = if a > b then c else [d; e];
 end ConditionalArrayExpression2;
 
 // fclass ConditionalArrayExpression2

@@ -1,0 +1,28 @@
+// name:     Redeclare1
+// keywords: redeclare,types
+// status:   correct
+// 
+// Redeclaration and subtyping.
+// 
+
+model A
+  Real x;
+end A;
+
+model B
+  extends A;
+  Real y = 1;
+  Real z;
+end B;
+
+model M
+  A a(x(unit = "m"));
+equation
+  a.x = 17.0;
+end M;
+
+model Redeclare1
+  M m(redeclare B a);
+equation
+  m.z = m.x;
+end Redeclare1;

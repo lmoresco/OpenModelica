@@ -10,7 +10,7 @@
 
 block Faculty4
   parameter Integer x(min = 0) = 4;
-  Real work[x];
+  Integer work[x];
   output Integer y;
 equation
   if x < 2 then
@@ -25,7 +25,7 @@ end Faculty4;
 // fclass Faculty4
 //   parameter Integer x;
 //   parameter Integer x.min;
-//   Real work[x];
+//   Integer work[x];
 //   output Integer y;
 // equation
 //   x = 4;
