@@ -198,6 +198,9 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 				int scroll = m_pErrorText->GetFirstVisibleLine()-m_pErrorText->GetLineCount();
 				if (scroll < -4) m_pErrorText->LineScroll(-scroll);
 			}
+			else {
+				m_pErrorText->SetWindowText("");
+			}
 		}
 
 		theApp.m_pMainWnd->EndWaitCursor();
