@@ -99,7 +99,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;NOMICO"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
