@@ -39,14 +39,14 @@ typedef void *rml_labptr_t;
 
 #ifdef	RML_MORE_LOGGING
 #define RML_DEFINE_MODULE(MODULE)	static const char module[] = MODULE;
-#define RML_TAILCALL(LABVAL,NARGSIGNORED) return (rml_latest_module = module, rml_latest_known = 0, (void*)LABVAL)
-#define RML_TAILCALLQ(LABEL,NARGSIGNORED) return (rml_latest_module = module, rml_latest_known = 1, RML_LABVAL(LABEL))
+#define RML_TAILCALL(LABVAL,NARGSIGNORED) return (rml_nrArgs = NARGSIGNORED, rml_latest_module = module, rml_latest_known = 0, (void*)LABVAL)
+#define RML_TAILCALLQ(LABEL,NARGSIGNORED) return (rml_nrArgs = NARGSIGNORED, rml_latest_module = module, rml_latest_known = 1, RML_LABVAL(LABEL))
 #else	/*!RML_MORE_LOGGING*/
 #define RML_DEFINE_MODULE(MODULE)	/*empty*/
-#define RML_TAILCALL(LABVAL,NARGSIGNORED) return (void*)LABVAL
-#define RML_TAILCALLQ(LABEL,NARGSIGNORED) return RML_LABVAL(LABEL)
+#define RML_TAILCALL(LABVAL,NARGSIGNORED) return /*(rml_nrArgs = NARGSIGNORED, */(void*)LABVAL/*)*/
+#define RML_TAILCALLQ(LABEL,NARGSIGNORED) return /*(rml_nrArgs = NARGSIGNORED, */ RML_LABVAL(LABEL)/*)*/
 #endif	/*RML_MORE_LOGGING*/
-#define RML_TAILCALLK(KONT)	RML_TAILCALL(RML_FETCH((KONT)),NARGSIGNORED)
+#define RML_TAILCALLK(KONT)	RML_TAILCALL(RML_FETCH((KONT)),1)
 
 extern void *rml_prim_gcalloc(rml_uint_t, rml_uint_t);
 #define RML_ALLOC(VAR,NWORDS,NARGS,UNUSEDLABEL) do{(VAR) = (void*)rml_young_next;if((rml_young_next = (void**)(VAR)+(NWORDS)) >= rml_young_limit) (VAR) = rml_prim_gcalloc((NWORDS),(NARGS));}while(0)

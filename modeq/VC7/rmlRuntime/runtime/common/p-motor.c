@@ -25,7 +25,7 @@ void rml_prim_motor(rml_labptr_t f)
 	     * Add a small buffer zone at the stack bottom, to reduce
 	     * the risk of writes outside the stack bounds.
 	     */
-	    if( (void**)rmlSP < &rml_stack[16] ) {
+	    if( (void**)rmlSP < &rml_stack[32] ) {
 		fprintf(stderr, "Stack overflow!\n");
 		rml_exit(1);
 	    }

@@ -9,7 +9,8 @@
 void rml_prim_gc(rml_uint_t nwords, rml_uint_t nargs)
 {
     rml_minor_collection(nargs);
-    if( nwords > RML_YOUNG_SIZE ) {
+    if( nwords > rml_young_size ) /* RML_YOUNG_SIZE ) */
+	{
 	fprintf(stderr, "rml_prim_gc failed to get %lu words\n",
 		(unsigned long)nwords);
 	rml_exit(1);
@@ -25,7 +26,8 @@ void *rml_prim_alloc(rml_uint_t nwords, rml_uint_t nargs)
     void **p = rml_young_next;
     if( (rml_young_next = p + nwords) >= rml_young_limit ) {
 	rml_minor_collection(nargs);
-	if( nwords > RML_YOUNG_SIZE ) {
+	if( nwords > rml_young_size ) /* RML_YOUNG_SIZE ) */
+	{
 	    if( (p = rml_older_alloc(nwords, nargs)) != 0 ) {
 		rml_young_next = rml_young_region;
 		return (void*)p;

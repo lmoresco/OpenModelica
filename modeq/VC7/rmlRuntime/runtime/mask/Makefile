@@ -1,12 +1,12 @@
 include ../../config.cache
-# variables for Intel x86 / Mingw32 / gcc
-CC=gcc -mno-cygwin
+# variables for Intel x86 / Cygwin / gcc
+CC=gcc
 CFLAGS=
 COFLAGS=-O2 -fomit-frame-pointer
 CPFLAGS=-fno-omit-frame-pointer -pg
-CGFLAGS=-g
+CGFLAGS=-g -DRML_DEBUG
 RANLIB=ranlib
-CPP=gcc -mno-cygwin -x c -E -ansi
+CPP=gcc -x c -E -ansi
 AS=as
 LD=ld
 #
@@ -32,9 +32,13 @@ CSRC=	bool-and.c bool-not.c bool-or.c\
 	real-pow.c real-sin.c real-sqrt.c real-str.c real-sub.c\
 	str-append.c str-int.c str-length.c str-list.c str-nth.c\
 	vec-length.c vec-list.c vec-nth.c\
+	rml-debug.c debug.c rmldb-parse.c rmldb-scan.c \
+	debug-debug.c debug-print.c debug-dbg.c \
 	main.c
-RMLHSRC=../common/rml-core.h ../common/rml-state.h rml-labels.h ../common/rml-predef.h
+RMLHSRC=../common/rml-core.h ../common/rml-state.h rml-labels.h ../common/rml-predef.h ../debug/debug.h ../debug/rml-debug.h 
 p-gccore.h=../common/p-gccore.h
+rml-debug.h=../debug/rml-debug.h
+rmldb-parse.h=../debug/rmldb-parse.h
 
 default:	librml.a
 
@@ -561,3 +565,45 @@ vec-nth.p.o: ../common/vec-nth.c
 	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o vec-nth.p.o ../common/vec-nth.c
 main.p.o: ../common/main.c
 	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o main.p.o ../common/main.c
+rml-debug.o: ../debug/rml-debug.c
+	$(COMPILE.c) $(COFLAGS) -o rml-debug.o ../debug/rml-debug.c
+debug.o: ../debug/debug.c
+	$(COMPILE.c) $(COFLAGS) -o debug.o ../debug/debug.c
+rmldb-parse.o: ../debug/rmldb-parse.c
+	$(COMPILE.c) $(COFLAGS) -o rmldb-parse.o ../debug/rmldb-parse.c
+rmldb-scan.o: ../debug/rmldb-scan.c
+	$(COMPILE.c) $(COFLAGS) -o rmldb-scan.o ../debug/rmldb-scan.c
+debug-debug.o: ../debug/debug-debug.c
+	$(COMPILE.c) $(COFLAGS) -o debug-debug.o ../debug/debug-debug.c
+debug-print.o: ../debug/debug-print.c
+	$(COMPILE.c) $(COFLAGS) -o debug-print.o ../debug/debug-print.c
+debug-dbg.o: ../debug/debug-dbg.c
+	$(COMPILE.c) $(COFLAGS) -o debug-dbg.o ../debug/debug-dbg.c
+rml-debug.g.o: ../debug/rml-debug.c
+	$(COMPILE.c) $(CGFLAGS) -o rml-debug.g.o ../debug/rml-debug.c
+debug.g.o: ../debug/debug.c
+	$(COMPILE.c) $(CGFLAGS) -o debug.g.o ../debug/debug.c
+rmldb-parse.g.o: ../debug/rmldb-parse.c
+	$(COMPILE.c) $(CGFLAGS) -o rmldb-parse.g.o ../debug/rmldb-parse.c
+rmldb-scan.g.o: ../debug/rmldb-scan.c
+	$(COMPILE.c) $(CGFLAGS) -o rmldb-scan.g.o ../debug/rmldb-scan.c
+debug-debug.g.o: ../debug/debug-debug.c
+	$(COMPILE.c) $(CGFLAGS) -o debug-debug.g.o ../debug/debug-debug.c
+debug-print.g.o: ../debug/debug-print.c
+	$(COMPILE.c) $(CGFLAGS) -o debug-print.g.o ../debug/debug-print.c
+debug-dbg.g.o: ../debug/debug-dbg.c
+	$(COMPILE.c) $(CGFLAGS) -o debug-dbg.g.o ../debug/debug-dbg.c
+rml-debug.p.o: ../debug/rml-debug.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o rml-debug.p.o ../debug/rml-debug.c
+debug.p.o: ../debug/debug.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o debug.p.o ../debug/debug.c
+rmldb-parse.p.o: ../debug/rmldb-parse.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o rmldb-parse.p.o ../debug/rmldb-parse.c
+rmldb-scan.p.o: ../debug/rmldb-scan.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o rmldb-scan.p.o ../debug/rmldb-scan.c
+debug-debug.p.o: ../debug/debug-debug.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o debug-debug.p.o ../debug/debug-debug.c
+debug-print.p.o: ../debug/debug-print.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o debug-print.p.o ../debug/debug-print.c
+debug-dbg.p.o: ../debug/debug-dbg.c
+	$(COMPILE.c) $(COFLAGS) $(CPFLAGS) -o debug-dbg.p.o ../debug/debug-dbg.c

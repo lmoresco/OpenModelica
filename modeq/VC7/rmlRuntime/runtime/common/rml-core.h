@@ -2,6 +2,7 @@
  * rml-core.h
  */
 
+
 /*
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
  * An even value i<<1 represents the integer i.
@@ -194,8 +195,13 @@ extern unsigned long rml_call_count;
 extern char rml_flag_no_stack_check;
 extern void **rmlSPMIN;
 extern unsigned long rml_stack_size;
+/* adrpo added 2004-11-22 */
+extern unsigned long rml_young_size;
+/* adrpo added 2004-11-10 */
+extern unsigned long rml_allocated_from_c;
 extern void **rml_stack;
 extern void *rml_trail[];
+extern void *rml_array_trail[];
 #ifdef	RML_MORE_LOGGING
 extern const char *rml_latest_module;
 extern unsigned char rml_latest_known;
@@ -207,6 +213,10 @@ extern unsigned long rml_inter_known_calls;
 extern void rml_exit(int);
 extern struct rml_string *rml_prim_mkstring(rml_uint_t, rml_uint_t);
 extern void *rml_prim_mkreal(double);
+
+/* adrpo added 2004-11-03 */
+extern void rml_show_status(void);
+
 
 /*
  * Module init stuff

@@ -21,9 +21,13 @@ CSRC=	bool-and.c bool-not.c bool-or.c\
 	real-pow.c real-sin.c real-sqrt.c real-str.c real-sub.c\
 	str-append.c str-int.c str-length.c str-list.c str-nth.c\
 	vec-length.c vec-list.c vec-nth.c\
+	rml-debug.c debug.c rmldb-parse.c rmldb-scan.c \
+	debug-debug.c debug-print.c debug-dbg.c \
 	main.c
-RMLHSRC=../common/rml-core.h ../common/rml-state.h rml-labels.h ../common/rml-predef.h
+RMLHSRC=../common/rml-core.h ../common/rml-state.h rml-labels.h ../common/rml-predef.h ../debug/debug.h ../debug/rml-debug.h 
 p-gccore.h=../common/p-gccore.h
+rml-debug.h=../debug/rml-debug.h
+rmldb-parse.h=../debug/rmldb-parse.h
 
 default:	librml.a
 

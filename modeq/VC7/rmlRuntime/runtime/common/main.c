@@ -80,6 +80,14 @@ int main(int argc, char **argv)
 		rml_exit(1);
 	    }
 	    continue;
+	}  else if( strncmp(arg, "young-size=", 11) == 0 ) {
+	    if( (rml_young_size = my_atoul(arg+11)) == ULONG_MAX ) {
+		fprintf(stderr, "Illegal argument: -young-size=%s\n", arg);
+		fprintf(stderr, "Falback to: -young-size=%s\n", RML_YOUNG_SIZE);
+		rml_young_size = RML_YOUNG_SIZE;
+		continue;
+	    }
+	    continue;
 	} else if( strcmp(arg, "-") == 0 ) {
 	    break;
 	} else {

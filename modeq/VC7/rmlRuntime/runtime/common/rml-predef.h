@@ -79,3 +79,6 @@ extern RML_FORWARD_LABEL(RML__vector_5fnth);
 extern RML_FORWARD_LABEL(RML__clock);
 extern RML_FORWARD_LABEL(RML__print);
 extern RML_FORWARD_LABEL(RML__tick);
+extern RML_FORWARD_LABEL(RML__debug);
+extern RML_FORWARD_LABEL(RML__debug_print);
+extern RML_FORWARD_LABEL(RML__dbg);

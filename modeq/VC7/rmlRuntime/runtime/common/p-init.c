@@ -12,6 +12,15 @@ void RML_5finit(void)
     static int init_done = 0;
     if( !init_done ) {
 	rml_gcinit();
+
+	/* adrpo 2002-10 */
+#ifdef RML_DEBUG
+	/* stop and ask for commands here 
+	 * this is a good time to set breakpoints
+	 */
+	rml_debug_init();
+#endif
+	/* end adrpo */
 	init_done = 1;
     }
 }

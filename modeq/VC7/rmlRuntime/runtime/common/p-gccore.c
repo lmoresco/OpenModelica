@@ -21,17 +21,27 @@
  * The RML trail is used to register locations in the older region that may
  * refer to objects in the young region. The entire trail is always scanned.
  * (Eventually, the Uppsala Prolog collector [see PLILP'94], may be used.)
+
+ 2005-01-10 added by Adrian Pop, adrpo@ida.liu.se
+ * The RML aray_trail is used to register locations in the older region that 
+ * may refer to objects in the young region. The entire arrays present in the
+ * trail are scanned for the pointers into younger region.
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>	/* strerror() */
 #include <errno.h>
+#define RML_MORE_LOGGING
 #include "rml.h"
 #include "z-ysize.h"
 #include "p-gccore.h"
 
+/* adrpo added 2004-11-10 */
+unsigned long rml_allocated_from_c;
+
 /* the young region */
-void *rml_young_region[RML_YOUNG_SIZE];
+unsigned long rml_young_size;
+void **rml_young_region; /* void *rml_young_region[rml_young_size]; */
 
 /* the older region */
 static rml_uint_t rml_older_size;
@@ -39,20 +49,28 @@ static void **rml_current_region;
 static void **rml_current_next;
 static void **rml_reserve_region;
 
+
 static void **rml_alloc_core(rml_uint_t nslots)
 {
     unsigned long nbytes = nslots * sizeof(void*);
     void **p = malloc(nbytes);
-    if( !p ) {
-	fprintf(stderr, "malloc(%lu) failed: %s\n",
-		nbytes, strerror(errno));
-	exit(1);
+    if( !p ) 
+	{
+		fprintf(stderr, "malloc(%lu) failed: %s\n",
+			nbytes, strerror(errno));
+		exit(1);
     }
+#ifdef RML_DEBUG
+	/* fprintf(stderr, "[malloc(%p)=%d] ", p, nbytes); */
+#endif
     return p;
 }
 
 static void rml_free_core(void **p, size_t nslots_unused)
 {
+#ifdef RML_DEBUG
+	fprintf(stderr, "[free(%p)=%d] ", p, nslots_unused);
+#endif
     free(p);
 }
 
@@ -69,6 +87,11 @@ void **rmlSPMIN;
 #endif
 void *rml_trail[RML_TRAIL_SIZE];
 
+#if	!defined(RML_ARRAY_TRAIL_SIZE)
+#define RML_ARRAY_TRAIL_SIZE	(64*1024)
+#endif
+void *rml_array_trail[RML_ARRAY_TRAIL_SIZE];
+
 #ifdef	RML_STATE_JOIN
 
 struct rml_state rml_state = {
@@ -77,8 +100,9 @@ struct rml_state rml_state = {
     0,				/* SC */
     &rml_trail[RML_TRAIL_SIZE],	/* TP */
     {0,},			/* ARGS[] */
-    &rml_young_region[0],	/* young_next */
-    &rml_young_region[RML_YOUNG_SIZE],	/* young_limit; never changes */
+    0, /* &rml_young_region[0], */	/* young_next */
+    0, /* &rml_young_region[rml_young_size], */	/* young_limit; never changes */
+	&rml_array_trail[RML_ARRAY_TRAIL_SIZE], /* ATP */
 };
 
 #else	/*!RML_STATE_JOIN*/
@@ -88,25 +112,33 @@ void *rmlFC;
 void *rmlSC;
 void **rmlTP = &rml_trail[RML_TRAIL_SIZE];
 void *rmlARGS[RML_NUM_ARGS];
-void **rml_young_next = &rml_young_region[0];
-void **rml_young_limit = &rml_young_region[RML_YOUNG_SIZE];
+void **rml_young_next;  /*  = &rml_young_region[0]; */
+void **rml_young_limit; /* = &rml_young_region[rml_young_size]; */
+void **rmlATP = &rml_array_trail[RML_ARRAY_TRAIL_SIZE];
 
 #endif	/*RML_STATE_JOIN*/
 
 void rml_gcinit(void)
 {
-    if( rml_stack_size == 0 )
-	rml_stack_size = RML_STACK_SIZE;
+    if( rml_stack_size == 0 ) rml_stack_size = RML_STACK_SIZE;
     rml_stack = rml_alloc_core(rml_stack_size);
     rmlSPMIN = &rml_stack[rml_stack_size];
     rml_state_SP = &rml_stack[rml_stack_size];
     rml_state_FC = &rml_stack[rml_stack_size];
     rml_state_SC = &rml_stack[rml_stack_size];
 
-    rml_older_size = 4*RML_YOUNG_SIZE;
+	/* adrpo added 2004-11-22 */
+	if( rml_young_size == 0 ) rml_young_size = RML_YOUNG_SIZE;
+	rml_young_region = rml_alloc_core(rml_young_size);
+	rml_state_young_next = rml_young_region;
+	rml_state_young_limit = rml_young_region + rml_young_size;
+	
+    rml_older_size = 4*rml_young_size; /* RML_YOUNG_SIZE */
     rml_current_region = rml_alloc_core(rml_older_size);
     rml_current_next = rml_current_region;
     rml_reserve_region = rml_alloc_core(rml_older_size);
+	/* adrpo added 2004-11-10 */
+	rml_allocated_from_c = 0;
 }
 
 /* misc */
@@ -118,6 +150,8 @@ char rml_flag_no_stack_check;
 unsigned long rml_minorgc_count;
 unsigned long rml_majorgc_count;
 unsigned long rml_call_count;
+/* adrpo added 2004-11-02 */
+unsigned long rml_heap_expansions_count;
 #ifdef	RML_MORE_LOGGING
 const char *rml_latest_module;
 unsigned char rml_latest_known;
@@ -127,18 +161,27 @@ unsigned long rml_inter_calls;
 unsigned long rml_inter_known_calls;
 #endif	/*RML_MORE_LOGGING*/
 
-void rml_exit(int status)
+void rml_show_status(void)
 {
-    if( rml_flag_log ) {
+	int status = 0;
+    if( rml_flag_log ) 
+	{
 	fprintf(stderr, "[HEAP:\t%lu minor collections, %lu major collections, %lu words currently in use]\n",
 		rml_minorgc_count,
 		rml_majorgc_count,
 		(unsigned long)(rml_state_young_next - rml_young_region)
 		+ (unsigned long)(rml_current_next - rml_current_region));
+	fprintf(stderr, "[HEAP:\t%lu words allocated to young, %lu words allocated to current, %lu heap expansions performed]\n",
+		(unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
+		(unsigned long)rml_older_size,
+		(unsigned long)(rml_heap_expansions_count));
+	fprintf(stderr, "[HEAP: %lu words allocated into RML heap from C (from mk_* functions)\n", rml_allocated_from_c);
 	fprintf(stderr, "[STACK:\t%lu words currently in use (%lu words max, %lu words total)]\n",
 		(unsigned long)(&rml_stack[rml_stack_size] - (void**)rml_state_SP),
 		(unsigned long)(&rml_stack[rml_stack_size] - rmlSPMIN),
 		rml_stack_size);
+	fprintf(stderr, "[ARRAY:\t%lu words currently in use in the array trail]\n",
+		(unsigned long)(&rml_array_trail[RML_ARRAY_TRAIL_SIZE] - rml_state_ATP));
 	fprintf(stderr, "[TRAIL:\t%lu words currently in use]\n",
 		(unsigned long)(&rml_trail[RML_TRAIL_SIZE] - rml_state_TP));
 	fprintf(stderr, "[MOTOR:\t%lu tailcalls performed]\n",
@@ -149,7 +192,51 @@ void rml_exit(int status)
 		rml_inter_calls, rml_inter_known_calls);
 #endif	/*RML_MORE_LOGGING*/
     }
-    if( rml_flag_bench ) {
+	else
+	{
+		fprintf(stdout, "Run using -log: ./rml_program -log ...\n if you want status information in the debugger!\n");
+	}
+    if ( rml_flag_bench ) 
+	{
+	unsigned long rml_clock_end = rml_prim_clock();
+	double secs = (double)(rml_clock_end - rml_clock_start) / (double)RML_CLOCKS_PER_SEC;
+	fprintf(stderr, "[%s:\t%#.2f seconds, %lu minor collections, %lu major collections]\n",
+		status ? "FAIL" : "BENCH",
+		secs, rml_minorgc_count, rml_majorgc_count);
+    }
+}
+
+
+void rml_exit(int status)
+{
+    if( rml_flag_log ) {
+	fprintf(stderr, "[HEAP:\t%lu minor collections, %lu major collections, %lu words currently in use]\n",
+		rml_minorgc_count,
+		rml_majorgc_count,
+		(unsigned long)(rml_state_young_next - rml_young_region)
+		+ (unsigned long)(rml_current_next - rml_current_region));
+	fprintf(stderr, "[HEAP:\t%lu words allocated to young, %lu words allocated to current, %lu heap expansions performed]\n",
+		(unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
+		(unsigned long)rml_older_size,
+		(unsigned long)(rml_heap_expansions_count));
+	fprintf(stderr, "[HEAP: %lu words allocated into RML heap from C (from mk_* functions)\n", rml_allocated_from_c);
+	fprintf(stderr, "[STACK:\t%lu words currently in use (%lu words max, %lu words total)]\n",
+		(unsigned long)(&rml_stack[rml_stack_size] - (void**)rml_state_SP),
+		(unsigned long)(&rml_stack[rml_stack_size] - rmlSPMIN),
+		rml_stack_size);
+	fprintf(stderr, "[ARRAY:\t%lu words currently in use in the array trail]\n",
+		(unsigned long)(&rml_array_trail[RML_ARRAY_TRAIL_SIZE] - rml_state_ATP));
+	fprintf(stderr, "[TRAIL:\t%lu words currently in use]\n",
+		(unsigned long)(&rml_trail[RML_TRAIL_SIZE] - rml_state_TP));
+	fprintf(stderr, "[MOTOR:\t%lu tailcalls performed]\n",
+		rml_call_count);
+#ifdef	RML_MORE_LOGGING
+	fprintf(stderr, "[CALLS:\t%lu intra, %lu known intra, %lu inter, %lu known inter]\n",
+		rml_intra_calls, rml_intra_known_calls,
+		rml_inter_calls, rml_inter_known_calls);
+#endif	/*RML_MORE_LOGGING*/
+    }
+    if ( rml_flag_bench ) {
 	unsigned long rml_clock_end = rml_prim_clock();
 	double secs = (double)(rml_clock_end - rml_clock_start) / (double)RML_CLOCKS_PER_SEC;
 	fprintf(stderr, "[%s:\t%#.2f seconds, %lu minor collections, %lu major collections]\n",
@@ -161,7 +248,7 @@ void rml_exit(int status)
 
 /* Forward the vector scan[0..nwords-1] of values using next as the allocation
  * pointer. Return the updated allocation pointer.
- * Objects located outside of [region_low,region_low+region_nbytes[ remain in place.
+ * Objects located outside of [region_low,region_low+region_nbytes] remain in place.
  */
 #if defined(__GNUC__)
 #define INLINE __inline__
@@ -176,7 +263,8 @@ static INLINE void **rml_forward_vec(
     char *region_low,
     rml_uint_t region_nbytes)
 {
-    for(; nwords > 0; ++scan, --nwords) {
+    for(; nwords > 0; ++scan, --nwords) 
+	{
 	/* Forward the value pointed to by `*scan' to the next region.
 	 * Update `*scan' with the new address.
 	 * Leave forwarding address behind in `**scan'.
@@ -192,7 +280,11 @@ static INLINE void **rml_forward_vec(
 
 	/* If not allocated in this region, do nothing. */
 	if( (rml_uint_t)((char*)old - region_low) >= region_nbytes )
+	{
+		/*fprintf(stderr, "\n%p is outside %p+%d\n", old, region_low, region_nbytes);
+		printf("[ "); rml_var_print((void*)old); printf("] "); fflush(stdout);*/
 	    continue;
+	}
 
 	/* If already moved, replace `*scan' with the forwarding address. */
 	hdr = RML_GETHDR(old);
@@ -208,6 +300,7 @@ static INLINE void **rml_forward_vec(
 	old = (void**)RML_UNTAGPTR(old);
 	*old++ = RML_TAGPTR(next);
 	*next++ = (void*)hdr;
+
 	for(hdr = RML_HDRSLOTS(hdr); hdr > 0; --hdr)	/* reuse `hdr' as `#slots' */
 	    *next++ = *old++;
     }
@@ -225,11 +318,15 @@ struct rml_xgcstate {
 
 void rml_user_gc_callback(struct rml_xgcstate *s, void **vec, rml_uint_t nelts)
 {
+    if( rml_flag_gclog ) 
+	{
+	  fprintf(stderr, " [rml_user_gc called roots=%lu]", nelts);
+	}
     s->next = rml_forward_vec(vec, nelts, s->next, s->region_low, s->region_nbytes);
 }
 
 /* Forward all roots. Return updated allocation pointer.
- * Objects located outside of [region_low,region_low+region_nbytes[ remain in place.
+ * Objects located outside of [region_low,region_low+region_nbytes] remain in place.
  */
 static void **rml_forward_all(
     rml_uint_t nliveargs,
@@ -240,21 +337,52 @@ static void **rml_forward_all(
     next = rml_forward_vec(rml_state_SP, &rml_stack[rml_stack_size] - (void**)rml_state_SP, next, region_low, region_nbytes);
     next = rml_forward_vec(rml_state_ARGS, nliveargs, next, region_low, region_nbytes);
     {
-	void **TP = rml_state_TP;
-	rml_sint_t cnt = &rml_trail[RML_TRAIL_SIZE] - TP;
-	next = rml_forward_vec(TP, (rml_uint_t)cnt, next, region_low, region_nbytes);
-	for(; --cnt >= 0; ++TP) {
-	    void *ref_node = *TP;	/* known to be a BOUND ref node */
-	    next = rml_forward_vec(&RML_REFDATA(ref_node), 1, next, region_low, region_nbytes);
-	}
+		void **TP = rml_state_TP;
+		rml_sint_t cnt = &rml_trail[RML_TRAIL_SIZE] - TP;
+		next = rml_forward_vec(TP, (rml_uint_t)cnt, next, region_low, region_nbytes);
+		for(; --cnt >= 0; ++TP) 
+		{
+			void *ref_node = *TP;	/* known to be a BOUND ref node */
+			next = rml_forward_vec(&RML_REFDATA(ref_node), 1, next, region_low, region_nbytes);
+		}
+    }
+	/* Adrian Pop, adrpo@ida.liu.se addded 2005-01-11 
+	 * forwarding of array_setnth elements 
+	 */ 
+    {
+		void **ATP = rml_state_ATP;
+		rml_sint_t cnt = &rml_array_trail[RML_ARRAY_TRAIL_SIZE] - ATP;
+		/* take all the arrays present in the trail and scan them for pointers into
+		 * the younger generation
+		 */
+		for(; --cnt >= 0; ++ATP) 
+		{
+			void *array_node = *ATP;	/* known to be an array node */
+			rml_uint_t i;
+			rml_uint_t nrelements = RML_GETHDR(array_node);
+			if( RML_HDRISFORWARD(nrelements) ) 
+			{
+				continue;
+			}
+			nrelements = RML_HDRSLOTS(nrelements);
+			/* fprintf(stderr, "\n"); */
+			for (i = 0; i < nrelements; i++)
+			{
+				/* fprintf(stderr, "{%p[%d]=%p} ", array_node, i, RML_STRUCTDATA(array_node)[i]); */
+				next = rml_forward_vec(&(RML_STRUCTDATA(array_node)[i]), 1, next, region_low, region_nbytes);
+				/*rml_var_print(array_node);*/
+			}
+		}
+		/* next = rml_forward_vec(ATP, (rml_uint_t)cnt, next, region_low, region_nbytes); */
+		rml_state_ATP = &rml_array_trail[RML_ARRAY_TRAIL_SIZE];
     }
     {
-	struct rml_xgcstate state;
-	state.next = next;
-	state.region_low = region_low;
-	state.region_nbytes = region_nbytes;
-	rml_user_gc(&state);
-	next = state.next;
+		struct rml_xgcstate state;
+		state.next = next;
+		state.region_low = region_low;
+		state.region_nbytes = region_nbytes;
+		rml_user_gc(&state);
+		next = state.next;
     }
     return next;
 }
@@ -320,12 +448,14 @@ static void rml_major_collection(rml_uint_t nwords, rml_uint_t nliveargs)
     if( 4*current_inuse > 3*rml_older_size ) {
 	rml_uint_t new_size;
 
-	if( rml_flag_gclog ) {
+	if( rml_flag_gclog ) 
+	{
+		rml_heap_expansions_count++;
 	    fprintf(stderr, " expanding heap..");
 	    fflush(stderr);
 	}
 
-	new_size = (2 * current_inuse) + RML_YOUNG_SIZE;
+	new_size = (2 * current_inuse) + rml_young_size; /* RML_YOUNG_SIZE; */
 
 	/* expand the older region */
 	rml_free_core(rml_reserve_region, rml_older_size);
@@ -353,13 +483,17 @@ void rml_minor_collection(rml_uint_t nliveargs)
 {
     void **next;
     rml_uint_t current_nfree;
-
     ++rml_minorgc_count;
+	if( rml_flag_gclog )
+	{
+		fprintf(stderr, "\nminor collection #%d", rml_minorgc_count);
+		fflush(stderr);
+	}
 
     /* collect the young region, forwarding to the current region */
     next = rml_collect(rml_current_next,
 		       (char*)rml_young_region,
-		       RML_YOUNG_SIZE * sizeof(void*),
+				rml_young_size /* RML_YOUNG_SIZE */ * sizeof(void*),
 		       nliveargs);
 
     /* update the older region state variables */
@@ -367,7 +501,7 @@ void rml_minor_collection(rml_uint_t nliveargs)
     current_nfree = rml_older_size - (next - rml_current_region);
 
     /* check if a major collection should be done */
-    if( current_nfree < RML_YOUNG_SIZE )
+    if( current_nfree < rml_young_size )/* RML_YOUNG_SIZE )*/ 
 	rml_major_collection(0, nliveargs);
 }
 
@@ -378,14 +512,18 @@ void **rml_older_alloc(rml_uint_t nwords, rml_uint_t nargs)
 {
     void **next = rml_current_next;
     rml_uint_t nfree = rml_older_size - (next - rml_current_region);
-    if( nfree >= nwords + RML_YOUNG_SIZE ) {
-	rml_current_next = next + nwords;
-	return next;
-    } else {
+    if( nfree >= nwords + rml_young_size )/* RML_YOUNG_SIZE ) */
+	{
+	 rml_current_next = next + nwords;
+	 return next;
+    } 
+	else 
+	{
 	rml_major_collection(nwords, nargs);
 	next = rml_current_next;
 	nfree = rml_older_size - (next - rml_current_region);
-	if( nfree >= nwords + RML_YOUNG_SIZE ) {
+	if( nfree >= nwords + rml_young_size ) /* RML_YOUNG_SIZE ) */
+	{
 	    rml_current_next = next + nwords;
 	    return next;
 	}

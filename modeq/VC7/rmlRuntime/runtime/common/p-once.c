@@ -24,6 +24,11 @@ int rml_prim_once(rml_labptr_t f)
     jmp_buf here;
     int status;
 
+/* adrpo added 2004-11-02 */
+#ifdef RML_DEBUG
+	/* fprintf(stderr, "\nrml_prim_once called!\n"); */
+#endif
+
     origSC = rml_state_SC;
     origFC = rml_state_FC;
     origSP = rml_state_SP;
@@ -61,5 +66,6 @@ int rml_prim_once(rml_labptr_t f)
     rml_state_SC = origSC;
     rml_state_FC = origFC;
     rml_state_SP = origSP;
+	/* adrpo removed 2004-10-05 rml_debug_end(); */
     return status - 1;	/* 0 on failure, 1 on success */
 }
