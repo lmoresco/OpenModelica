@@ -1,0 +1,24 @@
+
+// This test shows what shadowing of variable names can do. Especially
+// the replacing of equation where tie LHS is a simple variable name.
+//
+// In my opinion, this is a very strange feature, which I'm not sure
+// is a good idea at all.
+
+// The equations should be
+//
+//   a.x == 2
+//
+// the x = 1 equation is shadowed by the modification.
+
+type Real = RealType;
+
+class A
+  Real x;
+equation
+  x = 1;
+end A;
+
+model World
+  A a(x = 2);
+end World;
