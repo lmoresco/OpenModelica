@@ -1,0 +1,18 @@
+// name:     Simulation
+// keywords: Simulate, readSimulationData
+// status:   correct
+// 
+//  Simulate models and read in data.
+//
+loadFile("../mofiles/SmallLinsys.mo");
+simulate(LinSys,numberOfIntervals=5);
+readSimulationResult("LinSys_res.plt",{x,y,z},5);
+system("rm -rf LinSys.* LinSys_*");
+// Result:
+// true
+// record
+//    resultFile = "LinSys_res.plt"
+// end record
+// {{1.65481453315771,2.16935953256454,2.62021328707145,3.03266930376175,3.41880484398529},{2.0,2.0,2.0,2.0,2.0},{2.54518546684229,2.23064046743547,1.97978671292856,1.76733069623826,1.58119515601473}}
+// 0
+// endResult
