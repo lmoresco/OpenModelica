@@ -152,10 +152,10 @@ void bamg_read_sizes(const char *outputfile, MyInteger *size, MySizeType dim)
   /* MY_ASSERT(file != NULL, "Error opening file"); */
 
   if (file == NULL) {
-    MY_MESSAGE("Mesh file not found. Returning dummy mesh size {3,3,1}. Run simulate and retranslate.");
-    size[0] = 3; // vertices
+    MY_MESSAGE("Mesh file not found. Returning dummy mesh size {4,3,3}. Run simulate and retranslate.");
+    size[0] = 4; // vertices
     size[1] = 3; // edges
-    size[2] = 1; // triangles
+    size[2] = 3; // triangles
     return;
   }
 
@@ -191,11 +191,10 @@ void bamg_read_triangles(const char *meshfile, MyInteger *v, MySizeType dim1, My
   /* MY_ASSERT(file != NULL, "Error opening file"); */
 
   if (file == NULL) {
-    MY_MESSAGE("Mesh file not found. Returning dummy triangle {1,2,3}. Run simulate and retranslate.");
-    v[0] = 1;
-    v[1] = 2;
-    v[2] = 3;
-    v[3] = 1;
+    MY_MESSAGE("Mesh file not found. Returning dummy triangles. Run simulate and retranslate.");
+    v[0] = 1;    v[1] = 2;    v[2] = 4;    v[3] = 1;
+    v[4] = 2;    v[5] = 3;    v[6] = 4;    v[7] = 1;
+    v[8] = 3;    v[9] = 1;    v[10] = 4;    v[11] = 1;
     return;
   }
 
@@ -233,9 +232,10 @@ void bamg_read_vertices(const char *meshfile, double *v, MySizeType dim1, MySize
 
   if (file == NULL) {
     MY_MESSAGE("Mesh file not found. Returning dummy mesh. Run simulate and retranslate.");
-    v[0] = 1.0;
-    v[1] = 2.0;
-    v[2] = 3.0;
+    v[0] = 1.0; v[1] = 1.0; v[2] = 1.0;
+    v[3] = 2.0; v[4] = 3.0; v[5] = 1.0;
+    v[6] = 0.0; v[7] = 3.0; v[8] = 1.0;
+    v[9] = 1.0; v[10] = 2.0; v[11] = 0.0;
     return;
   }
 
