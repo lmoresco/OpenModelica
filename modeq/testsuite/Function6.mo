@@ -4,6 +4,8 @@
 // 
 // This tests basic function functionality
 //
+// OBS!
+// The function f should be represented in the flatmodelica.
 
 function f
   input Real x;

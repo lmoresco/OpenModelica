@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/bin/env perl -w
 
 $successes=0;
 $total=0;
@@ -21,6 +21,7 @@ sub runone
     my $mismatch = 0;
     my ($f,%info) = @_;
     system "../modeq $f >$log 2>&1";
+#    system "/home/x97davka/modeq/modeq $f >$log 2>&1";
     
     if ( $? != 0 ) {
 	if ($info{"status"} eq "incorrect") {
