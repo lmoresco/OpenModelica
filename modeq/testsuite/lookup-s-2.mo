@@ -1,6 +1,7 @@
 
 class A
   constant Integer c = 17;
+  constant Real q = 3.0;
 end A;
 
 class B

@@ -12,7 +12,7 @@ end A;
 
 model World
   C c1;
-  const C c2;
+  constant C c2;
 equation
   connect(c1,c2);
 end World;
