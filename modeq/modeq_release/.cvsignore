@@ -41,3 +41,12 @@ types.rml
 util.rml
 values.rml
 vartransform.rml
+corba.rml
+daeext.rml
+parse.rml
+print.rml
+rtopts.rml
+socket.rml
+system.rml
+taskgraphext.rml
+tornadoext.rml
