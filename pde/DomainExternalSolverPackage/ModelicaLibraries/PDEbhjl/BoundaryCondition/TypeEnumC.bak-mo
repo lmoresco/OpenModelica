@@ -1,0 +1,6 @@
+package TypeEnumC 
+  constant Integer Begin=1;
+  constant TypeEnum dirichlet=Begin + 0;
+  constant TypeEnum neumann=Begin + 1;
+  constant Integer End=Begin + 1;
+end TypeEnumC;
