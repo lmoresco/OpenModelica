@@ -29,9 +29,9 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="$(ProjectDir)..\makemodeq"
-				ReBuildCommandLine="$(ProjectDir)..\rebuildmodeq"
-				CleanCommandLine="$(ProjectDir)..\cleanmodeq"/>
+				BuildCommandLine="&quot;$(ProjectDir)..\makemodeq&quot;"
+				ReBuildCommandLine="&quot;$(ProjectDir)..\rebuildmodeq&quot;"
+				CleanCommandLine="&quot;$(ProjectDir)..\cleanmodeq&quot;"/>
 		</Configuration>
 	</Configurations>
 	<References>

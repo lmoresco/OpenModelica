@@ -253,109 +253,109 @@ nmake -f MakeFile.win32
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
-				RelativePath="..\absyn.c">
+				RelativePath="..\modeq_release\absyn.c">
 			</File>
 			<File
-				RelativePath="..\algorithm.c">
+				RelativePath="..\modeq_release\algorithm.c">
 			</File>
 			<File
-				RelativePath="..\builtin.c">
+				RelativePath="..\modeq_release\builtin.c">
 			</File>
 			<File
-				RelativePath="..\ceval.c">
+				RelativePath="..\modeq_release\ceval.c">
 			</File>
 			<File
-				RelativePath="..\classinf.c">
+				RelativePath="..\modeq_release\classinf.c">
 			</File>
 			<File
-				RelativePath="..\classloader.c">
+				RelativePath="..\modeq_release\classloader.c">
 			</File>
 			<File
-				RelativePath="..\codegen.c">
+				RelativePath="..\modeq_release\codegen.c">
 			</File>
 			<File
-				RelativePath="..\connect.c">
+				RelativePath="..\modeq_release\connect.c">
 			</File>
 			<File
-				RelativePath="..\dae.c">
+				RelativePath="..\modeq_release\dae.c">
 			</File>
 			<File
-				RelativePath="..\daelow.c">
+				RelativePath="..\modeq_release\daelow.c">
 			</File>
 			<File
-				RelativePath="..\debug.c">
+				RelativePath="..\modeq_release\debug.c">
 			</File>
 			<File
-				RelativePath="..\derive.c">
+				RelativePath="..\modeq_release\derive.c">
 			</File>
 			<File
-				RelativePath="..\dump.c">
+				RelativePath="..\modeq_release\dump.c">
 			</File>
 			<File
-				RelativePath="..\dumpgraphviz.c">
+				RelativePath="..\modeq_release\dumpgraphviz.c">
 			</File>
 			<File
-				RelativePath="..\env.c">
+				RelativePath="..\modeq_release\env.c">
 			</File>
 			<File
-				RelativePath="..\exp.c">
+				RelativePath="..\modeq_release\exp.c">
 			</File>
 			<File
-				RelativePath="..\explode.c">
+				RelativePath="..\modeq_release\explode.c">
 			</File>
 			<File
-				RelativePath="..\graphviz.c">
+				RelativePath="..\modeq_release\graphviz.c">
 			</File>
 			<File
-				RelativePath="..\inst.c">
+				RelativePath="..\modeq_release\inst.c">
 			</File>
 			<File
-				RelativePath="..\interactive.c">
+				RelativePath="..\modeq_release\interactive.c">
 			</File>
 			<File
-				RelativePath="..\lookup.c">
+				RelativePath="..\modeq_release\lookup.c">
 			</File>
 			<File
-				RelativePath="..\main.c">
+				RelativePath="..\modeq_release\main.c">
 			</File>
 			<File
-				RelativePath="..\mod.c">
+				RelativePath="..\modeq_release\mod.c">
 			</File>
 			<File
-				RelativePath="..\modsim.c">
+				RelativePath="..\modeq_release\modsim.c">
 			</File>
 			<File
-				RelativePath="..\modutil.c">
+				RelativePath="..\modeq_release\modutil.c">
 			</File>
 			<File
-				RelativePath="..\prefix.c">
+				RelativePath="..\modeq_release\prefix.c">
 			</File>
 			<File
-				RelativePath="..\simcodegen.c">
+				RelativePath="..\modeq_release\simcodegen.c">
 			</File>
 			<File
-				RelativePath="..\staticexp.c">
+				RelativePath="..\modeq_release\staticexp.c">
 			</File>
 			<File
-				RelativePath="..\taskgraph.c">
+				RelativePath="..\modeq_release\taskgraph.c">
 			</File>
 			<File
 				RelativePath="..\modpar\TaskGraphExt_stub.cpp">
 			</File>
 			<File
-				RelativePath="..\tornado.c">
+				RelativePath="..\modeq_release\tornado.c">
 			</File>
 			<File
-				RelativePath="..\types.c">
+				RelativePath="..\modeq_release\types.c">
 			</File>
 			<File
-				RelativePath="..\util.c">
+				RelativePath="..\modeq_release\util.c">
 			</File>
 			<File
-				RelativePath="..\values.c">
+				RelativePath="..\modeq_release\values.c">
 			</File>
 			<File
-				RelativePath="..\vartransform.c">
+				RelativePath="..\modeq_release\vartransform.c">
 			</File>
 		</Filter>
 		<Filter
@@ -363,103 +363,103 @@ nmake -f MakeFile.win32
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
-				RelativePath="..\absyn.h">
+				RelativePath="..\modeq_release\absyn.h">
 			</File>
 			<File
-				RelativePath="..\algorithm.h">
+				RelativePath="..\modeq_release\algorithm.h">
 			</File>
 			<File
-				RelativePath="..\builtin.h">
+				RelativePath="..\modeq_release\builtin.h">
 			</File>
 			<File
-				RelativePath="..\ceval.h">
+				RelativePath="..\modeq_release\ceval.h">
 			</File>
 			<File
-				RelativePath="..\classinf.h">
+				RelativePath="..\modeq_release\classinf.h">
 			</File>
 			<File
-				RelativePath="..\classloader.h">
+				RelativePath="..\modeq_release\classloader.h">
 			</File>
 			<File
-				RelativePath="..\codegen.h">
+				RelativePath="..\modeq_release\codegen.h">
 			</File>
 			<File
-				RelativePath="..\connect.h">
+				RelativePath="..\modeq_release\connect.h">
 			</File>
 			<File
-				RelativePath="..\dae.h">
+				RelativePath="..\modeq_release\dae.h">
 			</File>
 			<File
-				RelativePath="..\daelow.h">
+				RelativePath="..\modeq_release\daelow.h">
 			</File>
 			<File
-				RelativePath="..\debug.h">
+				RelativePath="..\modeq_release\debug.h">
 			</File>
 			<File
-				RelativePath="..\derive.h">
+				RelativePath="..\modeq_release\derive.h">
 			</File>
 			<File
-				RelativePath="..\dump.h">
+				RelativePath="..\modeq_release\dump.h">
 			</File>
 			<File
-				RelativePath="..\dumpgraphviz.h">
+				RelativePath="..\modeq_release\dumpgraphviz.h">
 			</File>
 			<File
-				RelativePath="..\env.h">
+				RelativePath="..\modeq_release\env.h">
 			</File>
 			<File
-				RelativePath="..\exp.h">
+				RelativePath="..\modeq_release\exp.h">
 			</File>
 			<File
-				RelativePath="..\explode.h">
+				RelativePath="..\modeq_release\explode.h">
 			</File>
 			<File
-				RelativePath="..\graphviz.h">
+				RelativePath="..\modeq_release\graphviz.h">
 			</File>
 			<File
-				RelativePath="..\inst.h">
+				RelativePath="..\modeq_release\inst.h">
 			</File>
 			<File
-				RelativePath="..\interactive.h">
+				RelativePath="..\modeq_release\interactive.h">
 			</File>
 			<File
-				RelativePath="..\lookup.h">
+				RelativePath="..\modeq_release\lookup.h">
 			</File>
 			<File
-				RelativePath="..\main.h">
+				RelativePath="..\modeq_release\main.h">
 			</File>
 			<File
-				RelativePath="..\mod.h">
+				RelativePath="..\modeq_release\mod.h">
 			</File>
 			<File
-				RelativePath="..\modsim.h">
+				RelativePath="..\modeq_release\modsim.h">
 			</File>
 			<File
-				RelativePath="..\modutil.h">
+				RelativePath="..\modeq_release\modutil.h">
 			</File>
 			<File
-				RelativePath="..\prefix.h">
+				RelativePath="..\modeq_release\prefix.h">
 			</File>
 			<File
-				RelativePath="..\simcodegen.h">
+				RelativePath="..\modeq_release\simcodegen.h">
 			</File>
 			<File
-				RelativePath="..\staticexp.h">
+				RelativePath="..\modeq_release\staticexp.h">
 			</File>
 			<File
-				RelativePath="..\taskgraph.h">
+				RelativePath="..\modeq_release\taskgraph.h">
 			</File>
 			<File
-				RelativePath="..\tornado.h">
+				RelativePath="..\modeq_release\tornado.h">
 			</File>
 			<File
-				RelativePath="..\types.h">
+				RelativePath="..\modeq_release\types.h">
 			</File>
 			<File
-				RelativePath="..\util.h">
+				RelativePath="..\modeq_release\util.h">
 			</File>
 			<File
-				RelativePath="..\values.h">
+				RelativePath="..\modeq_release\values.h">
 			</File>
 		</Filter>
 		<Filter
