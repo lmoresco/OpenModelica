@@ -13,7 +13,7 @@
 
 type Real = RealType;
 
-connector C
+class C
 
   record R
     Real b[10];
@@ -21,6 +21,7 @@ connector C
 
   flow Real y;
   R r;
+
 end A;
 
 model A
