@@ -35,10 +35,10 @@ equation
 end B;
 
 model World
-  B b1, b2, b3;
+  B b[3];
   C c;
 equation
-  connect(b1.c, b2.c);
-  connect(b2.c, b3.c);
-  connect(b3.c, c);
+  connect(b[1].c, b[2].c);
+  connect(b[2].c, b[1+2].c);
+  connect(b[4-1].c, c);
 end World;
