@@ -152,7 +152,11 @@
 					Name="Debug|Win32">
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="&quot;$(MICOHOME)\win32-bin\idl&quot; &quot;$(InputPath)&quot;
+						CommandLine="pushd &quot;$(InputDir)&quot;
+&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
+copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
+copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
+popd
 "
 						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
 				</FileConfiguration>
@@ -164,14 +168,19 @@
 &quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
 copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
-popd"
+popd
+"
 						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="NoMico|Win32">
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="&quot;$(MICOHOME)\win32-bin\idl&quot; &quot;$(InputPath)&quot;
+						CommandLine="pushd &quot;$(InputDir)&quot;
+&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
+copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
+copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
+popd
 "
 						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
 				</FileConfiguration>

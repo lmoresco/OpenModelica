@@ -6021,6 +6021,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_739FA513DE5449C88EAC3B22AE6DDC51"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_73A42E2C628244ACA417101EDD5BDF9B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -6292,6 +6298,12 @@
         "Entry"
         {
         "MsmKey" = "8:_78EED24AA7AE41D19AF64C6C4A281FFC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_78EF94727AAC49049B756062159E8A71"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -10623,6 +10635,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CA02466639A847CBA4278605DDBA61A7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CA8668315CB5421394945645CDF0AA52"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -13204,6 +13222,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F92C0D03E9644EBA8D280C898B6C6432"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F93A8FA7FA2B4F2C8B5BF18852DE8F7F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33613,6 +33637,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_739FA513DE5449C88EAC3B22AE6DDC51"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\helptext.txt"
+            "TargetName" = "8:helptext.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_8BD56ED3C8DB4B3996A02EE5CC7E35A4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_73A42E2C628244ACA417101EDD5BDF9B"
             {
             "SourcePath" = "8:M:\\MinGW\\include\\lmmsg.h"
@@ -34499,6 +34543,26 @@
             "TargetName" = "8:Modelica.SIunits.Conversions.NonSIunitsI.png"
             "Tag" = "8:"
             "Folder" = "8:_7FDBA042748E44E9B0AC384ECF024428"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_78EF94727AAC49049B756062159E8A71"
+            {
+            "SourcePath" = "8:M:\\modeq\\LICENSE"
+            "TargetName" = "8:LICENSE"
+            "Tag" = "8:"
+            "Folder" = "8:_8BD56ED3C8DB4B3996A02EE5CC7E35A4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -48893,6 +48957,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CA02466639A847CBA4278605DDBA61A7"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\sim_dcmotor.mos"
+            "TargetName" = "8:sim_dcmotor.mos"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_CA8668315CB5421394945645CDF0AA52"
             {
             "SourcePath" = "8:M:\\MinGW\\lib\\gcc-lib\\mingw32\\3.2.3\\cc1obj.exe"
@@ -57513,6 +57597,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F93A8FA7FA2B4F2C8B5BF18852DE8F7F"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\dcmotor.mo"
+            "TargetName" = "8:dcmotor.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_F94854200704447DA69E455F315D2EF5"
             {
             "SourcePath" = "8:M:\\ModelicaLibrary\\Modelica\\help\\Modelica.Math.cosD.png"
@@ -58753,6 +58857,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+                    {
+                    "Name" = "8:testmodels"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_7C177F56A9A24FD987C9D82C20840ED3"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_1DF4D0D09EAF42CFA8690090BC62F9B0"
                     {
                     "Name" = "8:c_runtime"
@@ -59640,7 +59755,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{134D8E8A-3DD2-47DB-ABEE-33903B702259}"
-        "PackageCode" = "8:{7BB748F2-E72E-41CD-AC95-A2834F9F6D4D}"
+        "PackageCode" = "8:{D91CADA1-C66D-48CF-B8B7-1357E568C038}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
