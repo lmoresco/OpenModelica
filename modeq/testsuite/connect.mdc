@@ -1,14 +1,30 @@
 
 type Real = RealType;
 
-connector A
+connector C
+
+  record R
+    Real a, b[10];
+  end R;
+
   Real x;
   flow Real y;
+  R r;
 end A;
 
-model World
-  A a,b,c;
+model A
+  C c;
+end A;
+
+model B
+  C c;
+  A a;
 equation
-  connect(a,b);
-  connect(b,c);
+  connect(a.c, c);
+end B;
+
+model World
+  B b1, b2, b3;
+equation
+  connect(b1.c, b2.a.c);
 end World;
