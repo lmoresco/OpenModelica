@@ -24,7 +24,7 @@ void bamg_generate_mesh(const char *exec, const char *outputfile, MyInteger *sta
 void bamg_read_edges(const char *meshfile, MyInteger *v, MySizeType dim1, MySizeType dim2);
 
 
-void bamg_read_sizes(const char *meshfile, MyInteger *size, MySizeType dim);
+void bamg_read_sizes(const char *outputfile, MyInteger *size, MySizeType dim);
 
 void bamg_read_triangles(const char *meshfile, MyInteger *v, MySizeType dim1, MySizeType dim2);
 

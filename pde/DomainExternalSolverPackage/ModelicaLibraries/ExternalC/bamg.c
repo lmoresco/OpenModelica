@@ -84,12 +84,14 @@ void bamg_generate_mesh(const char *exec, const char *outputfile, MyInteger *sta
   *status = res;
   printf("Result: %d\n",res);
 
+  /*
 
   outappend = fopen(outputfile, "a");
 
   fprintf(outappend, "EdgeDomainNames\n1\nboundary\n");
   
   fclose(outappend);
+ */
 
   return;
 }
@@ -107,7 +109,17 @@ void bamg_read_edges(const char *meshfile, MyInteger *v, MySizeType dim1, MySize
 
   /* open file */
   file = fopen(meshfile,"rb");
-  MY_ASSERT(file != NULL, "Error opening file");
+
+  /*  MY_ASSERT(file != NULL, "Error opening file"); */
+
+  if (file == NULL) {
+    MY_MESSAGE("Mesh file not found. Returning dummy edges 1-2, 2-3, 3-1. Run simulate and retranslate.");
+    v[0] = 1; v[1] = 2; v[2] = 1;
+    v[3] = 2; v[4] = 3; v[5] = 1;
+    v[6] = 3; v[7] = 1; v[8] = 1;
+    return;
+  }
+
 
   res=read_until_token(file, "Edges");
   MY_ASSERT(res==0, "Error looking for Edges section in file");
@@ -125,7 +137,7 @@ void bamg_read_edges(const char *meshfile, MyInteger *v, MySizeType dim1, MySize
 }
 
 
-void bamg_read_sizes(const char *meshfile, MyInteger *size, MySizeType dim)
+void bamg_read_sizes(const char *outputfile, MyInteger *size, MySizeType dim)
 {
   
   FILE *file;
@@ -135,9 +147,17 @@ void bamg_read_sizes(const char *meshfile, MyInteger *size, MySizeType dim)
   MY_ASSERT(dim == 3, "Second dimension must be 3");
 
   /* open file */
-  file = fopen(meshfile,"rb");
+  file = fopen(outputfile,"rb");
 
-  MY_ASSERT(file != NULL, "Error opening file");
+  /* MY_ASSERT(file != NULL, "Error opening file"); */
+
+  if (file == NULL) {
+    MY_MESSAGE("Mesh file not found. Returning dummy mesh size {3,3,1}. Run simulate and retranslate.");
+    size[0] = 3; // vertices
+    size[1] = 3; // edges
+    size[2] = 1; // triangles
+    return;
+  }
 
   res=read_until_token(file, "Vertices");
   MY_ASSERT(res==0, "Error looking for Vertices section in file");
@@ -167,7 +187,17 @@ void bamg_read_triangles(const char *meshfile, MyInteger *v, MySizeType dim1, My
 
   /* open file */
   file = fopen(meshfile,"rb");
-  MY_ASSERT(file != NULL, "Error opening file");
+
+  /* MY_ASSERT(file != NULL, "Error opening file"); */
+
+  if (file == NULL) {
+    MY_MESSAGE("Mesh file not found. Returning dummy triangle {1,2,3}. Run simulate and retranslate.");
+    v[0] = 1;
+    v[1] = 2;
+    v[2] = 3;
+    v[3] = 1;
+    return;
+  }
 
   res=read_until_token(file, "Triangles");
   MY_ASSERT(res==0, "Error looking for Triangles section in file");
@@ -180,7 +210,7 @@ void bamg_read_triangles(const char *meshfile, MyInteger *v, MySizeType dim1, My
     v[dim2*i] = READINT(file);	 /* vertex index 1 */
     v[dim2*i+1] = READINT(file); /* vertex index 2 */
     v[dim2*i+2] = READINT(file); /* vertex index 3 */
-    v[dim2*i+3] = READINT(file); /* vertex index 4 */
+    v[dim2*i+3] = READINT(file); /* subdomain index */
     //READINT(file); /* throw away, subdomain info? */
   }
 
@@ -198,7 +228,16 @@ void bamg_read_vertices(const char *meshfile, double *v, MySizeType dim1, MySize
 
   /* open file */
   file = fopen(meshfile,"rb");
-  MY_ASSERT(file != NULL, "Error opening file");
+
+  /* MY_ASSERT(file != NULL, "Error opening file"); */
+
+  if (file == NULL) {
+    MY_MESSAGE("Mesh file not found. Returning dummy mesh. Run simulate and retranslate.");
+    v[0] = 1.0;
+    v[1] = 2.0;
+    v[2] = 3.0;
+    return;
+  }
 
   res=read_until_token(file, "Vertices");
   MY_ASSERT(res==0, "Error looking for Vertices section in file");

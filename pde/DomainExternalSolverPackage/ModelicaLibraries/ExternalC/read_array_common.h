@@ -16,6 +16,7 @@ extern "C" {
 
 #ifdef WITHOUT_DYMOLA
 #define ModelicaError(msg) { printf("ModelicaError:%s",msg); exit(3); }
+#define ModelicaMessage(msg) { printf("ModelicaMessage:%s",msg); }
 #endif
 
 
@@ -26,6 +27,7 @@ extern "C" {
 #define READINT(f) (internal_foo=fscanf(f,"%ld",&internal_inttemp),internal_inttemp)
 #define READDOUBLE(f) (internal_foo=fscanf(f,"%lf",&internal_dbltemp),internal_dbltemp)
 #define MY_ASSERT(cond,msg) do { if(!(cond)) ModelicaError(msg); } while (0)
+#define MY_MESSAGE(msg) do { ModelicaMessage(msg); } while (0)
 
 
 #define WRITEOPENCURLY(f) fprintf(f," {")
