@@ -8,6 +8,7 @@
 //
 // I'm not convinced that it is even possible to enforce this rule.
 // 
+// Apparently, modifiers of the form a.b are not allowed.  There you go.
 
 class Modification8
   class A

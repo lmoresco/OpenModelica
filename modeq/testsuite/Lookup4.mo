@@ -1,5 +1,5 @@
 // name:     Lookup4
-// keywords: scoping
+// keywords: scoping,unknown
 // status:   correct
 // 
 // Constants can be referred to using names of previously defined

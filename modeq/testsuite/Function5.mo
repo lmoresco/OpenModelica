@@ -2,7 +2,8 @@
 // keywords: function,unknown
 // status:   correct
 // 
-// Decarling a function as `class' seems to be allowed.
+// Decarling a function as `class' seems to be allowed.  I wonder if
+// any implementation will allow this...
 // 
 
 class f

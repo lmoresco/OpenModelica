@@ -16,7 +16,7 @@ equation
 end EquationFor3;
 
 // fclass EquationFor3
-//   constant Integer N;
+//   parameter Integer N;
 //   Real a[1];
 //   Real a[2];
 //   Real a[3];

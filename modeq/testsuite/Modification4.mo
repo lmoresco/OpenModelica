@@ -1,6 +1,6 @@
 // name:     Modification4
 // keywords: modification
-// status:   correct
+// status:   incorrect
 
 class A
   class AA
@@ -16,10 +16,3 @@ end B;
 class Modification4
   B b(A.AA(p=2));
 end Modification4;
-
-// fclass Modification4;
-// equation
-//   b.a.x = 2
-// end Modification4;
-//
-// Or what? How would the paramter be described?
