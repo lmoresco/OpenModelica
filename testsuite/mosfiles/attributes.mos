@@ -1,0 +1,32 @@
+// name:     Attributes
+// keywords: attributes
+// status:   correct
+// 
+//  Extracting attributes from models.
+//
+loadFile("attributes.mo");
+getUnit(x,test);
+getUnit(y,test);
+getQuantity(x,test);
+getQuantity(y,test);
+getDisplayUnit(y,test);
+getMin(x,test);
+getMax(x,test);
+getStart(x,test);
+getFixed(x,test);
+getNominal(x,test);
+getStateSelect(x,test);
+// Result:
+// true
+// "V"
+// ""
+// ""
+// "B"
+// "b"
+// 0
+// 100000.0
+// 1
+// true
+// 1.5
+// "StateSelect.avoid"
+// endResult 

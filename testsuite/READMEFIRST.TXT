@@ -1,4 +1,14 @@
 Tips for the testsuite.
+=======================
+The testsuite consists of modelica files (.mo) and modelica script files (.mos) in the directories mofiles and mosfiles.
+
+1. make  
+   Will make all tests that currently should pass. Use this before checking in.
+
+2. rtest in directory mofiles
+   Will run all tests in the directory, including tests that does not pass.
+
+
 To get a correct testfile, watch out for use of tab and space, can be hard to find. If rtest fails but the single file actually translates with modeq the check the log file in the /tmp directory. 
 
 OBS!

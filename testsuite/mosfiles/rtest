@@ -20,7 +20,7 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
-    system "../modeq/modeq $f >$log 2>&1";
+    system "../../modeq/modeq $f >$log 2>&1";
 #    system "../modeq/modeq +d=daedump $f >$log 2>&1";
 #    system "../modeq $f >$log 2>&1";
 #    system "/home/x97davka/modeq/modeq $f >$log 2>&1";
@@ -53,11 +53,9 @@ sub runone
     open(RES,">$tmp1");
     open(LOG,"<$log");
     while(<LOG>) {
-	if (/^fclass/../^end/) {
-	    s/^[ \t]*//;
-	    s/[ \t]+/ /;
-	    print RES $_;
-	}
+      s/^[ \t]*//;
+      s/[ \t]+/ /;
+      print RES $_;
     }
     close LOG;
     close RES;
@@ -108,7 +106,7 @@ sub dofile
 		"name"     => $f,
 		"keywords" => "unknown");
     $log = "/tmp/log-$f";
-    $tc_err = 0;
+    $tc_err = 1;
     # Find the expected result
     open(OUT,">$tmp2");
     open(IN,"<$f");
@@ -116,8 +114,10 @@ sub dofile
 	if (/^\/\/[ \\|]([a-z]*): *(.*)$/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
-	} elsif (/^\/\/ fclass/../^\/\/ end/) {
+	} elsif (/^\/\/ Result:/../^\/\/ endResult/) {
 	    s/^[ \t]*//;
+	    s/^\/\/ Result://;
+	    s/^\/\/ endResult//;
 	    s/[ \t]+/ /;
 	    if (/^.../) {
 		print OUT substr($_,3);
@@ -226,7 +226,7 @@ while ($#ARGV >= 0) {
 
 # Check for no file args
 if ($filearg == 0) {
-    for (glob '*.mo') { dofile $_; }
+    for (glob '*.mos') { dofile $_; }
 }
 
 # Final output. Statistics and stuff
