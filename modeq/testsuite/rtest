@@ -17,6 +17,7 @@ $statusfilter = "all";
 
 sub runone
 {
+    my $mismatch = 0;
     my ($f,%info) = @_;
     system "../modeq $f >$log 2>&1";
     
@@ -48,9 +49,11 @@ sub runone
     open(RES,">$tmp1");
     open(LOG,"<$log");
     while(<LOG>) {
-	 if (/^fclass/../^end/) {
-	     print RES $_;
-	 }
+	s/^ *//;
+	s/  */ /;
+	if (/^fclass/../^end/) {
+	    print RES $_;
+	}
     }
     close LOG;
     close RES;
@@ -98,14 +101,15 @@ sub dofile
     my %info = ("status"   => "unknown",
 		"name"     => $f,
 		"keywords" => "unknown");
-    my $mismatch = 0;
     $log = "/tmp/log-$f";
 
     # Find the expected result
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	if (/^\/\/\|([^:]*): *(.*)$/) {
+	s/^ *//;
+	s/  */ /;
+	if (/^\/\/[ \\|]([a-z]*): *(.*)$/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
