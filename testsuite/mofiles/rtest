@@ -82,7 +82,7 @@ sub runone
 	return 1;
     }
 
-    system "$grep -s '^#|Execution failed!' $log";
+    system "$grep -s -q '^#|Execution failed!' $log";
     if ( $? == 0 ) {
 	if ($info{"status"} eq "incorrect") {
 	    print "ok\n";
