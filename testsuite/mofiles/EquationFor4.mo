@@ -19,15 +19,19 @@ equation
   end for;
 end EquationFor3;
 
-// fclass EquationFor3
+// fclass EquationFor4
 // parameter Integer N = 4;
-// Real a[1];
-// Real a[2];
-// Real a[3];
-// Real a[4];
-// equation
-//   a[1] = 1.0;
-//   a[2] = a[1] + 1.0;
-//   a[3] = a[2] + 1.0;
-//   a[4] = a[3] + 1.0;
-// end EquationFor3;
+// Real p[1].i;
+// Real p[1].v;
+// Real p[2].i;
+// Real p[2].v;
+// Real p[3].i;
+// Real p[3].v;
+// Real p[4].i;
+// Real p[4].v;
+// equation 
+//  p[1].v = p[2].v;
+//  p[2].v = p[3].v;
+//  p[3].v = p[4].v;
+//  -p[1].i + -p[2].i + -p[3].i + -p[4].i = 0.0;
+// end EquationFor4;
