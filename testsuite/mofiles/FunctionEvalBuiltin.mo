@@ -45,3 +45,30 @@ model FunctionEvalBuiltin
      };
 end FunctionEvalBuiltin;
 
+// fclass FunctionEvalBuiltin
+// constant Real pi1 = asin(1.0);
+// constant Real pi2 = 0.841470984807897;
+// constant Real pi = 2.0 * asin(1.0);
+// constant Real r[1];
+// constant Real r[2];
+// constant Real r[3];
+// constant Real r[4];
+// constant Real r[5];
+// constant Real r[6];
+// constant Real r[7];
+// constant Real r[8];
+// constant Real r[9];
+// constant Real r[10];
+// constant Real r[11];
+// constant Real r[12];
+// constant Real r[13];
+// constant Real r[14];
+// constant Real r[15];
+// constant Real r[16];
+// constant Integer i[1] = 2;
+// constant Integer i[2] = 0;
+// constant Integer i[3] = 2;
+// constant Integer i[4] = 2;
+// equation
+//   r = {sin(pi / 3.0),cos(pi / 3.0),tan(pi / 3.0),acos(1.0),atan(1.0),exp(1.0),2.0,0.0,3.0,3.0,2.0,2.0,2.7,2.7,sign(2.7),sign(-2.7)};
+// end FunctionEvalBuiltin;

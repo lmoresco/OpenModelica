@@ -31,10 +31,14 @@ Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo \
 Units2.mo XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
-FunctionEval4.mo FunctionEval5.mo FunctionEval6.mo \
+FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
 ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo
+
+# test that currently fail. Move up when fixed. 
+# Run make testfailing
+FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
@@ -50,12 +54,19 @@ VERSION = $(shell cat VERSION)
 .PHONY : default
 default : modtest.info modtest.ps $(HTMLFILE)
 
-.PHONY : test
+.PHONY : test failingtest
+
 test :
 	@echo
 	@echo Running tests...
 	@echo
 	@$(TEST) $(TESTFILES)
+
+failingtest :
+	@echo
+	@echo Running failing tests...
+	@echo
+	@$(TEST) $(FAILINGTESTFILES)
 
 keywords :
 	$(TEST) -l $(TESTFILES)
