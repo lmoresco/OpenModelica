@@ -25,5 +25,11 @@ protected
   parameter Real p3=prec.p3,p4 = prec.p4;
 end ConstructParameters2;
 
-
-
+//fclass ConstructParameters2
+//parameter Real p1 = 2.0;
+//parameter Real p2 = 3.0;
+//Real prec.p3;
+//Real prec.p4;
+//parameter Real p3 = prec.p3;
+//parameter Real p4 = prec.p4;
+//end ConstructParameters2;

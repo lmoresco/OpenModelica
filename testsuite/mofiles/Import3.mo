@@ -46,7 +46,13 @@ model Import3
 end Import3;
 
 // fclass Import3
-//   Real c.x=4; // A.B1.C via import A.B1.C
-//   Real d.x=5; // A.B.D via import A.B.*;
-//   Real e.x=6; // A.B2.C via import A.B2.*;
-//   Real myc.x=7; // A.B2.E via import MyC=A.B2.C;
+// Real c.x;
+// Real d.x;
+// Real e.x;
+// Real myc.x;
+// equation
+//   c.x = 4.0;
+//   d.x = 5.0;
+//   e.x = 6.0;
+//   myc.x = 7.0;
+// end Import3;

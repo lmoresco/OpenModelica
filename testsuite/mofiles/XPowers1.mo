@@ -18,11 +18,12 @@ equation
 end XPowers1;
 
 // fclass XPowers1
-//   Integer n;
+//   constant Integer n = 3;
 //   Real x;
+//   Real xpowers[1];
+//   Real xpowers[2];
 //   Real xpowers[3];
 // equation
-//   n = 3;
 //   x = 2.0;
 //   xpowers[1] = x;
 //   xpowers[2] = xpowers[1] * x;

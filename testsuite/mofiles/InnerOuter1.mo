@@ -7,15 +7,14 @@
 //
 
 class A
-outer Real T0;
+  outer Real T0;
 end A;
+
 class B
-inner Real T0=100;
-A a1, a2; // B.T0, B.a1.T0 and B.a2.T0 is the same variable
+  inner Real T0=100;
+  A a1, a2; // B.T0, B.a1.T0 and B.a2.T0 is the same variable
 end B;
 
 // fclass B
-//   Real TO;
-// equation
-//   T0 = 100;
+// Real TO = 100;
 // end B;

@@ -18,10 +18,10 @@ model DisturbedResistance4
 end DisturbedResistance4;
 
 // fclass DisturbedResistance4
-//   Real u;
-//   Real i;
-//   Real R;
+// Real u;
+// Real i;
+// Real R;
 // equation
-//   R = 1.0 + 0.1*sin(time);
-//   u = R*i;
+// R = 1.0 + 0.1*sin(time);
+// u = R*i;
 // end DisturbedResistance4;

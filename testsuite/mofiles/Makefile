@@ -23,7 +23,7 @@ Range1.mo Real2Integer1.mo Real2Integer2.mo Record1.mo RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification2.mo SimpleIntegrator1.mo \
 SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo \
-Units2.mo XPowers2.mo
+Units2.mo XPowers2.mo 
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

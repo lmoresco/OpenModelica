@@ -6,15 +6,15 @@
 //
 
 
-model Abs
+model Abs1
   Real x,y;
 equation
   x=abs(x-y);
-end Abs;
+end Abs1;
 
-// fclass Abs
+// fclass Abs1
 // Real x;
 // Real y;
 // equation
 //   x = abs(x - y);
-// end Abs;
+// end Abs1;

@@ -11,9 +11,6 @@ class Constant4
 end Constant4;
 
 // fclass Constant4
-//   Real x[1];
-//   Real x[2];
-//   Real y[1];
-//   Real y[2];
-//  equation
+// Real x[1];
+// Real x[2];
 // end Constant4;

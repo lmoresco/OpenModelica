@@ -10,7 +10,6 @@ model Array4
   type T1 = Real[3];
   type T2 = T1[2];
   parameter T2 x;
-equation
 end Array4;
 
 // fclass Array4

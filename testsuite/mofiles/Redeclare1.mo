@@ -24,6 +24,9 @@ equation
   m.a.z = m.a.x;
 end Redeclare1;
 
-//equation
-// m.a.x =17;
-// m.a.z = m.a.x;
+// fclass Redeclare1
+// Real m.a.x;
+// Real m.a.z;
+// equation
+//   m.a.z = m.a.x;
+// end Redeclare1;

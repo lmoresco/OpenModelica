@@ -44,12 +44,11 @@ model InnerClass1
   A a;
 end InnerClass1;
 
-// flatmodel InnerClass1
-//  parameter Real b.x.p = 2;
-//  Real b.x.x;
-//  Real b.a.x;
-//  Real a.x;
-//equation
-//  der(b.x.x) = b.x.p;
-//  b.a.x = InnerClass1.myfoo(time);
-//  a.x = InnerClass1.myfoo(time);
+// fclass InnerClass1
+// parameter Real b.x.p = 2;
+// Real b.a.x;
+// Real a.x;
+// equation
+//   b.a.x = A.myfoo(time);
+//   a.x = A.myfoo(time);
+// end InnerClass1;

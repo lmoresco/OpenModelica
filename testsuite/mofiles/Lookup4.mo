@@ -16,10 +16,8 @@ class Lookup4
 end Lookup4;
 
 // fclass Lookup4
-//   constant Real Container.a;
-//   Real b
+//   Real b;
 // equation
-//   Container.a = 3.0;
-//   b = Container.a;
+//   b = 3.0;
 // end Lookup4;
 

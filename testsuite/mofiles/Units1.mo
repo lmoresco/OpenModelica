@@ -36,10 +36,8 @@ end Units1;
 //   Real p2.v;
 //   Real p2.i;
 // equation
-//   p1.v.unit = "kV";
-//   p2.v.unit = "V";
-//   p1.i.unit = "A";
-//   p2.i.unit = "A";
+//   p1.v = 0.0;
+//   p2.i = 1.0;
+//   -p1.i + -p2.i = 0.0;
 //   p1.v = p2.v;
-//   p1.i + p2.i= 0;
 // end Units1;

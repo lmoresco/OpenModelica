@@ -21,17 +21,11 @@ encapsulated model Encapsulated1
   import A.*;
   import A.B1.C2;
   B.C c(x=1);
-//  C2 c2; // Causes Infinite loop
 end Encapsulated1;
 
 // fclass Encapsulated1
-//   Real c.x;
-//   Real c2.x;
-//  equation
-//   c.x = 1;
-//   c2.x = 2;
+// Real c.x;
+// equation
+//   c.x = 1.0;
 // end Encapsulated1;
 
-// origfclass Encapsulated1
-//   Real c.x=1;
-//   Real c2.x=2;

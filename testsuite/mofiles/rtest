@@ -284,7 +284,9 @@ while ($#ARGV >= 0) {
 
 # Check for no file args
 if ($filearg == 0) {
-    for (glob '*.mo') { dofile $_; }
+    system "mkdir /tmp/log-drmodelica";
+    for (glob '*.mo drmodelica/*.mo') { dofile $_; }
+    system "rm -rf /tmp/log-drmodelica";
 }
 
 # Final output. Statistics and stuff

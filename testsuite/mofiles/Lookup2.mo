@@ -20,10 +20,8 @@ model Lookup2
 end Lookup2;
 
 // fclass Lookup2
-//   Real a;
-//   Real c.b
+//   Real c;
 // equation
-//   a = 3.0;
-//   b.c = a;
+//   c = 3.0;
 // end Lookup2;
 

@@ -6,8 +6,13 @@
 //
 
 class Terminal1 
-
   Boolean t;
 equation 
- t=terminal();
+  t=terminal();
 end Terminal1; 
+
+// fclass Terminal1
+// Boolean t;
+// equation
+// t = terminal();
+// end Terminal1;

@@ -18,11 +18,10 @@ end Shadow1;
 
 // fclass Shadow1
 //   Real z;
-//   Real a.x;
 //   Real a.y;
+//   Real a.x;
 // equation
-//   a.x = 1;
-//   a.x = z;
 //   a.y = 2.0;
+//   a.x = z;
 // end Shadow1;
 

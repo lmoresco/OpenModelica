@@ -1,0 +1,23 @@
+// name:     LogCall1
+// keywords: external function, equation
+// status:   correct
+
+
+function log "Natural logarithm"
+  input Real x;
+  output Real y;
+  external "C"
+end log;
+
+model LogCall1
+  Real res;
+equation
+  res = log(100);
+end LogCall1;
+
+
+// fclass LogCall1
+// Real res;
+// equation
+//   res = 366.699188232422;  // Wrong!!
+// end LogCall1;
