@@ -1,0 +1,184 @@
+#!/usr/local/bin/perl -w
+
+$successes=0;
+$total=0;
+$verbose="no";
+$pager="cat";
+$log="";
+$tmp1 = "/tmp/equations-1";
+$tmp2 = "/tmp/equations-2";
+$tmp3 = "/tmp/equations-diff";
+@keys = ();
+$collectkeys = 0;
+%knownkeys = ();
+
+sub runone
+{
+    my $f = shift;
+    my %info = ("status" => "unknown",
+		"name"   => $f);
+    my $mismatch = 0;
+    $log = "/tmp/log-$f";
+
+    # Find the expected result
+    open(OUT,">$tmp2");
+    open(IN,"<$f");
+    while(<IN>) {
+	if (/^\/\/\|([^:]*): *(.*)$/) {
+	    $info{$1} = $2;
+	    # print "Noticed $1 = $2\n";
+	} elsif (/^\/\/ fclass/../^\/\/ end/) {
+	    print OUT substr($_,3);
+	}
+    }
+    close IN;
+    close OUT;
+
+    # Check for keyword match
+    if ($#keys >=0) {
+	my %ks;
+	if (!$info{"keywords"}) {
+	    return 0;
+	}
+	for (split(/ *, */,$info{"keywords"})) { $ks{$_} = 1; }
+	for (@keys) {
+	    if (! $ks{$_}) {
+		return 0;
+	    }
+	}
+    }
+
+    # Collecting keys?
+    if ($collectkeys) {
+	if ($info{"keywords"}) {
+	    for (split(/ *, */, $info{"keywords"})) {
+		if (!$knownkeys{$_}) {
+		    $knownkeys{$_} = 1;
+		} else {
+		    $knownkeys{$_} += 1;
+		}
+	    }
+	}
+	return 0;
+    }
+
+    if ( $info{"status"} !~ /^(erroneous|(in|)correct)$/ ) {
+	print "unknown testcase status\n";
+	return 1;
+    }
+
+    printf "  %-31s... ", $arg;
+    $total = $total + 1;
+
+    system "../modeq $f >$log 2>&1";
+    
+    if ( $? != 0 ) {
+	if ($info{"status"} eq "incorrect") {
+	    print "ok\n";
+	    return 0;
+	}
+	print "nonzero exit status\n";
+	return 1;
+    }
+
+    system "egrep -s '^#|Execution failed!' $log";
+    if ( $? == 0 ) {
+	if ($info{"status"} eq "incorrect") {
+	    print "ok\n";
+	    return 0;
+	}
+	print "execution failed\n";
+	return 1;
+    }
+
+    if ($info{"status"} eq "incorrect") {
+	print "this test should have failed\n";
+	return 1;
+    }
+
+    # Extract the result
+    open(RES,">$tmp1");
+    open(LOG,"<$log");
+    while(<LOG>) {
+	 if (/^fclass/../^end/) {
+	     print RES $_;
+	 }
+    }
+    close LOG;
+    close RES;
+
+    # Compare
+    system "sort $tmp1 > $tmp1-sorted";
+    system "sort $tmp2 > $tmp2-sorted";
+    system "diff -w $tmp1-sorted $tmp2-sorted > $tmp3";
+
+    if ( $? != 0 ) {
+	  open(LOG,">>$log");
+	  print LOG "\n";
+	  print LOG "Equation diff:\n\n";
+
+	  open(DIFF,"<$tmp3");
+	  while(<DIFF>) {
+	      if (/^>(.*)$/) {
+		  print LOG "expected:$1\n";
+		  $mismatch = 1;
+	      } elsif (/^<(.*)$/) {
+		  if (/^< *String(.*)\.unit;$/) {
+		      # igore missing units
+		  } else {
+		      print LOG "got:     $1\n";
+		      $mismatch = 1;
+		  }
+	      }
+	  }
+	  close DIFF;
+	  close LOG;
+
+	  if ($mismatch) {
+	      print "equation mismatch\n";
+	      return 1;
+	  }
+      }
+
+    print "ok\n";
+    $successes = $successes + 1;
+}
+
+while ($#ARGV >= 0) {
+    $arg = shift(@ARGV);
+    if ($arg eq "-v") {
+	$verbose="yes";
+    } elsif ($arg eq "-p") {
+	if ($ENV{"PAGER"} eq "") {
+	    $pager="more";
+	} else {
+	    $pager=$ENV{"PAGER"};
+	}
+    } elsif ($arg eq "-k") {
+	if ($#ARGV < 0) {
+	    print "-m needs an argument\n";
+	    exit 1;
+	}
+	@keys = split(/,/,shift(@ARGV));
+    } elsif ($arg eq "-l") {
+	$collectkeys = 1;
+    } else {	
+	$status = runone $arg;
+	if ($status != 0) {
+	    if ($verbose eq "yes" ) {
+		print "\n";
+		print "==== Log $log\n";
+		system "$pager $log";
+	    }
+	    #	print 'failed\n'
+	}
+    }
+}
+
+if ($collectkeys) {
+    for (sort(keys %knownkeys)) {
+	printf "  %3d %s\n", $knownkeys{$_}, $_;
+    }
+} else {
+    printf "\n== %d out of %d tests succeeded\n", $successes, $total;
+}
