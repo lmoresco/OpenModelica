@@ -427,7 +427,12 @@ void CMoshEdit::SpawnServer(void)
 	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
 		MoshHome = MoshHome.Left(MoshHome.GetLength()-5);
 		MoshHome = CString("\"") + MoshHome + "\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
-		
+
+		if (m_ProcessCreated) {
+			Sleep(1000);
+			return;
+		}
+
 		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
 		{
 			m_ProcessCreated = true;
