@@ -2,17 +2,24 @@
 
 // This file tests information hiding using the 'protect' keyword
 
-// The file is not valid, the compiler should complaint about y being
-// protected.
+// The file is not valid, the compiler should complaint about y and a
+// being protected.
 
 type Real = RealType;
 
-model Foo
-  Real x;
+class A
+  Real a = 1;
+end A;
+
+class B
+  Real x = 1;
 protected
+  extends A;
   Real y = 1;
-end Foo;
+end B;
 
 model World
-  Foo a(x=17, y=18);
+  // B a(y=18);
+  B b(a=3);
+  B c;
 end World;
