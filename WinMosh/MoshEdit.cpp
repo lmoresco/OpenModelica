@@ -145,10 +145,15 @@ void CMoshEdit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			SetSel(end,end);
 	}
 
-	int lastline = GetLineCount() - 1;
-	int currentline = LineFromChar();
-	if (currentline != lastline) {
-		SetSel(LineIndex(lastline)+3,LineIndex(lastline)+3);
+	if (nChar != VK_CONTROL) {
+	//	GetKeyboardState(&state);
+		if (GetKeyState(VK_CONTROL) == 0) {
+			int lastline = GetLineCount() - 1;
+			int currentline = LineFromChar();
+			if (currentline != lastline) {
+				SetSel(LineIndex(lastline)+3,LineIndex(lastline)+3);
+			}
+		}
 	}
 	CEdit::OnKeyUp(nChar, nRepCnt, nFlags);
 }
@@ -216,7 +221,7 @@ BOOL CMoshEdit::PreTranslateMessage(MSG* pMsg)
 				return TRUE;
 		default:
 			GetSel(start, end);
-			if ((start - LineIndex(GetLineCount()-1)) < 3)
+			if (GetKeyState(VK_CONTROL)==0 && (start - LineIndex(GetLineCount()-1)) < 3)
 				return TRUE;
 			break;
 		}
