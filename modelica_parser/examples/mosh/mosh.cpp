@@ -86,7 +86,7 @@ void read_and_evaluate(istream& instream)
 	    
 	    if (ast) 
 		{
-		    //  dumper.dump(ast);
+		  //  dumper.dump(ast);
 		    
 		    modelica_tree_parser walker;
 		    

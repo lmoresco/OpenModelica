@@ -4,6 +4,9 @@ header "post_include_hpp" {
 #define null 0
 #include "value.hpp"
 #include <cmath>
+#include "symboltable.hpp"
+#include "modelica_runtime_error.hpp"
+#include <string>
 }
 
 options {
@@ -19,6 +22,7 @@ options {
 }
 
 {
+    symboltable symtab;
 //  void print(value val)
 //  {
 //		cout << val << endl;
@@ -487,15 +491,23 @@ equation
 
 algorithm 
 		{
-			// Initialization
+			value val;
+            value* ptr;
 		}
 		:
         #(ALGORITHM_STATEMENT 
             (#(ASSIGN (
-                        (component_reference (expression | function_call))
+                        (ptr = component_reference val = expression)
+                        {
+                            if (!ptr) // New symbol
+                            {
+//                                symtab.insert(
+                            }
+                        }
                     |	(expression_list component_reference function_call)
                     )
                 )
+            | component_reference function_call
             |	conditional_equation_a
             |	for_clause_a
             |	while_clause
@@ -889,6 +901,7 @@ factor returns [value val]
 primary	returns [value val]
 		{
 			value expr_val;
+            value* tmp_val;
 		}
 		:
 		( ui:UNSIGNED_INTEGER   		
@@ -899,11 +912,22 @@ primary	returns [value val]
 		| s:STRING {val.set_value(s->getText());}
 		| f:FALSE {val.set_value(false);}
 		| t:TRUE {val.set_value(true);}
-		| component_reference__function_call 
+		|   tmp_val = component_reference__function_call
+            {
+                if (!tmp_val)
+                {
+                   throw modelica_runtime_error("Undefined symbol");
+                }
+                else
+                {
+                    val = value(*tmp_val);
+                }
+            
+            }
 		| #(LPAR expression_list)
 		| #(LBRACK expr_val = expression_list 
-			{val= create_array(expr_val);}
-			(expr_val = expression_list {val.append_to_array(expr_val);})*)
+			{val = create_array(expr_val);}
+            (expr_val = expression_list {val.append_to_array(expr_val);})*)
 		| #(LBRACE val = expression_list)
 		)
 		{
@@ -912,13 +936,13 @@ primary	returns [value val]
 		;
 
 
-component_reference__function_call
+component_reference__function_call returns [value* val]
 		{
 			// Initialization
 		}
 		:
 		#(FUNCTION_CALL component_reference (function_call)?)
-        | component_reference
+        | val = component_reference
 		{
 			// Actions
 		}
@@ -936,12 +960,27 @@ name_path
 		}
 		;
 
-component_reference 
+component_reference returns [value* val] 
 		{
-			// Initialization
+		
 		}
 		:
-		#(IDENT (array_subscripts )?) 
+		#(i:IDENT (array_subscripts )? 
+            {
+                value* tmp = symtab.lookup(i->getText());
+            //    if (!tmp)
+            //    {
+            //        std::string error = i->getText()+" undefined symbol";
+            //        throw modelica_runtime_error(error.c_str());
+            //    }
+            //else
+            //    {
+            //        return value(*tmp);
+            //    }
+                return tmp;
+                
+            }
+            ) 
 		|#(DOT #(IDENT (array_subscripts)?) component_reference)
 		{
 			// Actions

@@ -5,7 +5,7 @@
 
 value::value()
 {
-
+  m_type = undefined;
 }
 
 value::value(double val)
@@ -161,9 +161,10 @@ const value& value::operator+= (const value& val)
       throw modelica_runtime_error("Adding non-numerical value\n");
     }
 
+
   if (val.is_real() || is_real())
   {
-    m_real = to_double()+val.to_double();//to_double(val.m_real);
+    m_real = to_double()+val.to_double();
     m_type = real;
   }
   else 
@@ -180,7 +181,6 @@ value value::operator+(const value& v) const
   
   value tmp(*this);
 
-  //  cout << "operator+" << v.type() << endl;
   tmp += v;
   return tmp;
 }
@@ -329,6 +329,7 @@ const value not_bool(const value& x)
 
 const value and_bool(const value& x,const value& y)
 {
+  
   if (!x.is_boolean())
     {
       throw modelica_runtime_error("And of a non-boolean value\n");
@@ -376,8 +377,9 @@ const value lesseq(const value& x, const value& y)
 	{
 	    throw modelica_runtime_error("less of a non-numerical value\n");
 	}
-    
-    return value(x.to_double() <= y.to_double());
+    bool result = x.to_double() <= y.to_double();
+    return value(result);
+//    return value(static_cast<bool>(x.to_double() <= y.to_double()));
 }
 
 /*const value greater(const value& x, const value& y)

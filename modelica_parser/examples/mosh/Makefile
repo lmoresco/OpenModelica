@@ -24,7 +24,7 @@ LIBS = -lantlr -lmodelica_parser -lreadline -ltermcap
 
 PARSER_OBJS = ../../src/modelica_lexer.o ../../src/token_names.o ../../src/parse_tree_dumper.o
 
-HELPER_OBJS = value.o modelica_runtime_error.o 
+HELPER_OBJS = value.o symboltable.o modelica_runtime_error.o 
 
 parsergen= modelica_expression_parser.cpp modelica_expression_parser.hpp \
 	   modelica_expression_parserTokenTypes.hpp modelica_expression_parserTokenTypes.txt

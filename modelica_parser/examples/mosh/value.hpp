@@ -28,7 +28,7 @@ public:
   int get_integer() const;
   bool get_boolean() const;
   
-  enum type_en {str,integer,real,boolean,array};
+  enum type_en {str,integer,real,boolean,array,undefined};
   type_en type() const;
   void set_type(type_en type);
 
