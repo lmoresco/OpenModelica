@@ -15,7 +15,9 @@ Function5.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Import1.mo Import2.mo Integer2Real.mo Lookup7.mo \
 modelica_1_1_Array9.mo modelica_1_1_Function10.mo modelica_1_1_Type10.mo \
 modelica_1_1_Type9.mo Modification9.mo ModifyConstant3.mo Overwriting1.mo \
-Overwriting4.mo package-s-1.mo partial-s-1.mo Protected1.mo prtest.mo \
+Overwriting4.mo package-s-1.mo \
+ParseError1.mo ParseError2.mo \
+partial-s-1.mo Protected1.mo prtest.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo Record1.mo RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification2.mo SimpleIntegrator1.mo \
 SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo Terminal2.mo \

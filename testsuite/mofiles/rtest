@@ -26,6 +26,53 @@ sub runone
 #    system "/home/x97davka/modeq/modeq $f >$log 2>&1";
     
     if ( $? != 0 ) {
+	if ($info{"status"} eq "parseerrormsg") {
+
+	    open(RES,">$tmp1");
+	    open(LOG,"<$log");
+	    while(<LOG>) {
+		if (/^\[/..$/) {
+		    s/^[ \t]*//;
+		    s/[ \t]+/ /;
+		    print RES $_;
+		}
+	    }
+	    close LOG;
+	    close RES;
+
+	    system "diff -w $tmp1 $tmp2 > $tmp3";
+	    if ( $? != 0 ) {
+		open(LOG,">>$log");
+		print LOG "\n";		print LOG "Parsing error message diff:\n\n";
+		
+		open(DIFF,"<$tmp3");
+		while(<DIFF>) {
+		    if (/^>(.*)$/) {
+			print LOG "expected:$1\n";
+			$mismatch = 1;
+		    } elsif (/^<(.*)$/) {
+			if (/^< *String(.*)\.unit;$/) {
+			    # igore missing units
+			} elsif (/^<.*\.unit = \"\";$/) {
+			    # igore missing units
+			} else {
+			    print LOG "got:     $1\n";
+			    $mismatch = 1;
+			}
+		    }
+		}
+		close DIFF;
+		close LOG;
+		
+		if ($mismatch) {
+		    print "parse error message mismatch\n";
+		    return 1;
+		}
+	    }
+	    print "ok\n";
+	    return 0;
+	}
+
 	if ($info{"status"} eq "incorrect") {
 	    print "ok\n";
 	    return 0;
@@ -126,6 +173,16 @@ sub dofile
 		print "Error in testcase: $f\n";
 		$tc_err = 1;		
 	    }
+	} elsif (/^\/\/ \[/..$/) {
+	    s/^[ \t]*//;
+	    s/[ \t]+/ /;
+	    if (/^.../) {
+		print OUT substr($_,3);
+	    }
+	    elsif ($tc_err == 0)  {
+		print "Error in testcase: $f\n";
+		$tc_err = 1;		
+	    }
 	}
     }
     close IN;
@@ -175,7 +232,7 @@ sub dofile
 	   $info{'status'} eq 'correct'?'+':'-', $info{'name'});
     $total = $total + 1;
 
-    if ( $info{"status"} !~ /^(erroneous|(in|)correct)$/ ) {
+    if ( $info{"status"} !~ /^(erroneous|(in|)correct|parseerrormsg)$/ ) {
 	print "unknown testcase status\n";
 	return 1;
     }
