@@ -14,16 +14,15 @@ class EquationComponent2
 equation
   a = if true then b else c;
 end EquationComponent2;
-
 // fclass EquationComponent2
-// 	       Real    a.x;
-// 	       Real    a.y;
-// 	       Real    b.x;
-// 	       Real    b.y;
-// 	       Real    c.x;
-// 	       Real    c.y;
+// Real a.x;
+// Real a.y;
+// Real b.x;
+// Real b.y;
+// Real c.x;
+// Real c.y;
 // equation
-//   __TMP__0 ::= if true then b else c;
+//   __TMP__0 = if true then b else c;
 //   a.x = __TMP__0.x;
 //   a.y = __TMP__0.y;
 // end EquationComponent2;

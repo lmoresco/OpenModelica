@@ -1,6 +1,6 @@
 // name:     ConstructParameters
 // keywords: declaration,algorithm,unknown
-// status:   incorrect
+// status:   correct
 // 
 // A set of parameters can be computed from a set of other parameters 
 // by using a function call.
@@ -20,3 +20,9 @@ model ConstructParameters
 protected
   parameter Real p3 = fc(p1,p2);
 end ConstructParameters;
+
+// fclass ConstructParameters
+// parameter Real p1 = 2.0;
+// parameter Real p2 = 3.0;
+// parameter Real p3 = fc(p1,p2);
+// end ConstructParameters;

@@ -33,22 +33,24 @@ equation
 end ConnectHierarchical2;
 
 // fclass ConnectHierarchical2
-//   Real a.b.c.f;
-//   Real a.b.c.e;
-//   Real a.c1.f;
-//   Real a.c1.e;
-//   Real a.c2.f;
-//   Real a.c2.e;
-//   Real c.f;
-//   Real c.e;
+// Real a.b.c.f;
+// Real a.b.c.e;
+// Real a.c1.f;
+// Real a.c1.e;
+// Real a.c2.f;
+// Real a.c2.e;
+// Real c.f;
+// Real c.e;
 // equation
-//   a.c2.f = 0.0;
 //   a.c1.e = a.b.c.e;
 //   a.b.c.e = a.c2.e;
 //   (-a.c1.f) + a.b.c.f + (-a.c2.f) = 0.0;
+//   c.f = 1.0;
 //   c.e = 1.0;
 //   c.e = a.c1.e;
 //   (-c.f) + a.c1.f = 0.0;
+//   a.b.c.f = 0.0;
+//   a.c2.f = 0.0;
 // end ConnectHierarchical2;
 
 

@@ -1,8 +1,8 @@
 // name:     Modification2
 // keywords: modification
-// status:   incorrect
+// status:   correct
 // 
-// Cannot modify all elements of a certain type in this way.
+// Modifying a parameter in a local class is allowed.
 
 
 class B
@@ -15,4 +15,8 @@ end B;
 class Modification2
   B b(A(p=2.0));
 end Modification2;
+
+// fclass Modification2
+// parameter Real b.a.p = 2.0;
+// end Modification2;
 

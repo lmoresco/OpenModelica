@@ -1,7 +1,9 @@
-// This file will make the translater fall into infinite recursion.
+// name:     partial-s-1
+// keywords: local class, declaration
+// status:   incorrect
 
-// Equations:
-//
+// Creating a dependency in the instantiation should give an error, not hang 
+// the compiler
 
 class A
 
@@ -12,6 +14,6 @@ class A
   end B;
 
   // Commented out for now
-  // B b;
+   B b;
   Real y;
 end A;

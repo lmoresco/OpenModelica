@@ -32,18 +32,28 @@ equation
   global.c.e=10;
 end ConnectInner3;
 
-// flatmodelica ConnectInner3
-
-//  Real global.c.e;
-//  Real global.c.f;
-//  Real b.a.my.e;
-//  Real b.a.my.f;
-//  Real a.my.e;
-//  Real a.my.f;
+// fclass ConnectInner3
+// Real global.c.e;
+// Real global.c.f;
+// Real b.a.global.c.e;
+// Real b.a.global.c.f;
+// Real b.a.my.e;
+// Real b.a.my.f;
+// Real a.global.c.e;
+// Real a.global.c.f;
+// Real a.my.e;
+// Real a.my.f;
 // equation
-//  b.a.my.f = 10+b.a.my.e;
-//  a.my.f = 10+a.my.e;
-//  global.c.e = 10;
-//  b.a.my.e = a.my.e;
-//  global.c.e = a.my.e;
-//  a.my.f+b.a.my.f+global.c.f = 0;
+//   b.a.my.f = 10.0 + b.a.my.e;
+//   b.a.global.c.f + (-b.a.my.f) = 0.0;
+//   b.a.global.c.e = b.a.my.e;
+//   a.my.f = 10.0 + a.my.e;
+//   a.global.c.f + (-a.my.f) = 0.0;
+//   a.global.c.e = a.my.e;
+//   global.c.e = 10.0;
+//   global.c.f = 0.0;
+//   b.a.global.c.f = 0.0;
+//   b.a.my.f = 0.0;
+//   a.global.c.f = 0.0;
+//   a.my.f = 0.0;
+// end ConnectInner3;

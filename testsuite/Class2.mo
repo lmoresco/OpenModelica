@@ -10,7 +10,6 @@ class Class2
 end Class2;
 
 // fclass Class2
-//   String  x.unit;
 //   Real    x;
 // equation
 //   x = 17.0;

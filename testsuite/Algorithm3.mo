@@ -13,12 +13,10 @@ algorithm
 end Algorithm3;
 
 // fclass Algorithm3
-// 	       String  i.unit;
-// 	       Integer i;
-// 	       String  x.unit;
-// 	       Real    x;
+// Integer i;
+// Real x;
 // equation
-//  i = integer(time * Real(10));
+//   i = integer(time * 10.0);
 // algorithm
 //   x := Real(i);
 // end Algorithm3;

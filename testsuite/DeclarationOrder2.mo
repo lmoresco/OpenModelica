@@ -16,7 +16,7 @@ package A
     der(y)=x;
   end C;
   model D
-    C c[size(c2,1)];
+//    C c[size(c2,1)]; // causes ininite loop
     C c2[n];
     parameter Integer n=1;
   end D;

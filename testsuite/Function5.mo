@@ -6,7 +6,7 @@
 // any implementation will allow this...
 // 
 
-class f
+function f
   input Real x;
   output Real y;
 algorithm

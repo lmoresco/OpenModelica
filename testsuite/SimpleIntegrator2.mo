@@ -13,11 +13,9 @@ equation
 end SimpleIntegrator2;
 
 // fclass SimpleIntegrator2
-//   Real u;
-//   Real x;
-//   parameter Real x.start;
+// Real u;
+// Real x(start=2.0);
 // equation
 //   u = 1.0;
-//   x.start = 2.0;
 //   der(x) = u;
 // end SimpleIntegrator2;

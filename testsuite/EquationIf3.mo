@@ -19,9 +19,9 @@ equation
 end EquationIf3;
 
 // fclass EquationIf3
-//   parameter Boolean b;
-//   Real x;
+// parameter Boolean b = false;
+// Real x;
 // equation
-//   b = false;
 //   x = 2.0;
 // end EquationIf3;
+

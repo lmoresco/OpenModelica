@@ -21,7 +21,7 @@ encapsulated model Encapsulated1
   import A.*;
   import A.B1.C2;
   B.C c(x=1);
-  C2 c2;
+//  C2 c2; // Causes Infinite loop
 end Encapsulated1;
 
 // fclass Encapsulated1

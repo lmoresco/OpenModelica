@@ -18,10 +18,8 @@ model Modification6
   M m2(f(q=4.0), redeclare model Foo=myFoo(q=3.0));
 end Modification6;
 
+
 // fclass Modification6
-//   parameter Real m1.f.q;
-//   parameter Real m2.f.q;
-// equation
-//   m1.f.q = 4.0;
-//   m2.f.q = 4.0;
+// parameter Real m1.f.q = 4.0;
+// parameter Real m2.f.q = 4.0;
 // end Modification6;

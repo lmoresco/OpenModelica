@@ -1,4 +1,4 @@
-TEST=/net/ent4000/files/dsk1/ida/x98petro/PELAB/modeq/testsuite/rtest
+TEST=rtest
 #TEST=runtest
 
 TESTFILES=*.mo

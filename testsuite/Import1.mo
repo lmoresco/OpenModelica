@@ -42,6 +42,18 @@ class Import1
 end Import1;
 
 // fclass Import1
+// Real c.x;
+// Real d.x;
+// Real e.x;
+// Real myc.x;
+// equation
+//   c.x = 4.0;
+//   d.x = 5.0;
+//   e.x = 6.0;
+//   myc.x = 7.0;
+// end Import1;
+
+// origfclass Import1
 //   Real c.x=4; // A.B1.C via import A.B1.C
 //   Real d.x=5; // A.B.D via import A.B.*;
 //   Real e.x=6; // A.B2.C via import A.B2.*;

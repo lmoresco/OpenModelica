@@ -19,13 +19,13 @@ equation
 end Connect1;
 
 // fclass Connect1
-//   Real c1.f;
-//   Real c2.f;
-//   Real c1.e;
-//   Real c2.e;
+// Real c1.f;
+// Real c1.e;
+// Real c2.f;
+// Real c2.e;
 // equation
+//   c1.e = 1.0;
+//   c2.f = time;
 //   c1.e = c2.e;
 //   (-c1.f) + (-c2.f) = 0.0;
-//   c1.e = Real(1);
-//   c2.f = time;
 // end Connect1;

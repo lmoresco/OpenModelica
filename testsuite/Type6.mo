@@ -17,5 +17,4 @@ end Type6;
 //   parameter Real r;
 //   parameter String s;
 //   parameter Boolean b;
-// equation
 // end Type6;

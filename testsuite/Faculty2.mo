@@ -17,10 +17,8 @@ algorithm
 end Faculty2;
 
 // fclass Faculty2
-//   Integer x;
-//   Integer y;
-//   Integer i;
-// equation
+// input Integer x;
+// output Integer y;
 // algorithm
 //   y := 1;
 //   for i in 2:x loop

@@ -32,5 +32,5 @@ end Function10;
 //      Real y;
 //      Real z;
 //      equation
-//      (x,y,z) = f(Real(1),Real(2));
+//      (x,y,z) = f(1.0,2.0);
 // end Function10;

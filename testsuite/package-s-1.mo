@@ -1,7 +1,9 @@
+// name:     package-s-1
+// keywords: package, declaration
+// status:   correct
+
 //
-// Equations:
-//
-//   a.unit = "m2"
+//   Instantiation of models residing in packages.
 //
 
 package P
@@ -12,7 +14,18 @@ end C;
 
 end P;
 
+package Modelica
+  package SIunits
+    type Area = Real (final quantity="Area", final unit="m2");
+  end SIunits;
+end Modelica;
+
 model World
   P.C c;
-  Modelica.SIunit.Area a;
+  Modelica.SIunits.Area a;
 end World;
+
+// fclass World
+// Real c.x;
+// Real a;
+// end World;

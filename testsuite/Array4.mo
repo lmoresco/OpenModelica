@@ -14,11 +14,10 @@ equation
 end Array4;
 
 // fclass Array4
-//   parameter Integer x[1,1];
-//   parameter Integer x[1,2];
-//   parameter Integer x[1,3];
-//   parameter Integer x[2,1];
-//   parameter Integer x[2,2];
-//   parameter Integer x[2,3];
-// equation
+// parameter Real x[1,1];
+// parameter Real x[1,2];
+// parameter Real x[1,3];
+// parameter Real x[2,1];
+// parameter Real x[2,2];
+// parameter Real x[2,3];
 // end Array4;

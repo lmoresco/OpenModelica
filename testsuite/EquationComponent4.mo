@@ -16,15 +16,15 @@ equation
 end EquationComponent4;
 
 // fclass EquationComponent4
-// 	       Real    a.x;
-// 	       Real    a.y;
-// 	       Real    b.x;
-// 	       Real    b.y;
-// 	       Real    c.x;
-// 	       Real    c.y;
+// Real a.x;
+// Real a.y;
+// Real b.x;
+// Real b.y;
+// Real c.x;
+// Real c.y;
 // equation
-//   __TMP__0 ::= if true then b else c;
-//   __TMP__1 ::= if true then a else b;
+//   __TMP__0 = if true then b else c;
+//   __TMP__1 = if true then a else b;
 //   __TMP__1.x = __TMP__0.x;
 //   __TMP__1.y = __TMP__0.y;
 // end EquationComponent4;

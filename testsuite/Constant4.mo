@@ -7,7 +7,7 @@
 
 class Constant4
   Real x[2];
-  Real y[size(x,1)];
+//  Real y[size(x,1)]; causes infinite loop
 end Constant4;
 
 // fclass Constant4

@@ -1,6 +1,7 @@
+// name:      Overwriting4
+// keywords:  modification, equation
 // Two arguments of a modifier shall not designate the same element.
-//
-// classification: modification&equation-incorrect
+// status:    incorrect
 
 class E
   Real x[3,3] = zeros(3,3);

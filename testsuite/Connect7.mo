@@ -4,7 +4,7 @@
 // 
 // If parameters are involved in connections, the parameters have to
 // be known to generate the equations.  If the parameter N would have
-// been set to 3 instead, only one big connection set would have been
+// been set to 2 instead, only one big connection set would have been
 // generated.
 // 
 
@@ -21,11 +21,14 @@ equation
 end Connect7;
 
 // fclass Connect7
-//   Real c[1].x;
-//   Real c[2].x;
-//   Real cx.x=x;
-//   Real cy.x=time;
+// parameter Integer N = 1;
+// Real c[1].x;
+// Real c[2].x;
+// Real cx.x;
+// Real cy.x;
 // equation
-//   (-c[1].x) + (-cx.x) = 0.0;
-//   (-c[2].x) + (-cy.x) = 0.0;
+//   cx.x = 2.0;
+//   cy.x = time;
+//   (-c[1].x) + (-cx.x) + (-cy.x) = 0.0;
+//   c[2].x = 0.0;
 // end Connect7;

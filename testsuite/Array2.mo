@@ -16,5 +16,4 @@ end Array2;
 //   parameter Integer x[2,1];
 //   parameter Integer x[2,2];
 //   parameter Integer x[2,3];
-// equation
 // end Array2;

@@ -10,5 +10,4 @@ class Class1
 end Class1;
 
 // fclass Class1
-// equation
 // end Class1;

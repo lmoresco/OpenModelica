@@ -23,11 +23,11 @@ model DeclarationOrder1
 end DeclarationOrder1;
 
 // fclass DeclarationOrder1
-//   Real b.y(start=b.x);
-//   parameter Real b.x=3.14;
-//  equation
-//    der(b.y)=b.x;
-// end DeclarationOrder1
+// Real b.y(start=b.x);
+// parameter Real b.x = 3.14;
+// equation
+//   der(b.y) = b.x;
+// end DeclarationOrder1;
 
 
    

@@ -13,6 +13,4 @@ end Type5;
 
 // fclass Type5
 //   Real v;
-// equation
-//   v.unit = "V";
 // end Type5;

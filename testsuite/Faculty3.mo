@@ -21,10 +21,9 @@ algorithm
 end Faculty3;
 
 // fclass Faculty3
-//   input Integer x;
-//   output Integer y;
-//   Integer i;
-// equation
+// input Integer x;
+// output Integer y;
+// Integer i;
 // algorithm
 //   y := 1;
 //   i := 2;
@@ -33,4 +32,3 @@ end Faculty3;
 //     i := i + 1;
 //   end while;
 // end Faculty3;
-
