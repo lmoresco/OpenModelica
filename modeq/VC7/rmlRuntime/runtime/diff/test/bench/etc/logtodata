@@ -1,0 +1,20 @@
+#!/bin/sh
+# usage: log2data < logfile > datafile
+
+fgrep -v 'rm -f' | nawk '
+BEGIN		{
+		FS = "[ \t\r]";
+		}
+
+$1 == "[EXAMPLE:" {
+		printf("example %s\n", $2);
+		}
+
+$1 == "[RUNTIME:" {
+		printf("runtime %s\n", $2);
+		}
+
+$1 == "[BENCH:"	{
+		printf("data %s\n", $2);
+		}
+'
