@@ -11,7 +11,7 @@ struct rml_state {
   void *SP, *FC, *SC, **TP, *ARGS[RML_NUM_ARGS];
   void **young_next, **young_limit; 
   void **ATP;
-  int nrArgs;
+  rml_uint_t nrArgs;
 };
 extern struct rml_state rml_state;
 

@@ -1,8 +1,30 @@
 /*
+    Copyright PELAB, Linkoping University
+
+    This file is part of Relational Meta-Language (RML).
+	http://www.ida.liu.se/~pelab/rml
+
+    RML is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    RML is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
  * rml-core.h
+ * Copyright: IDA/PELAB
+ * - RML creator     
+     + Mikael Pettersson, until 1999
+ * - RML maintainter/developer 
+     + Adrian Pop, http://www.ida.liu.se/~adrpo, since 2000
  */
-
-
 /*
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
  * An even value i<<1 represents the integer i.
@@ -193,15 +215,32 @@ extern char rml_flag_gclog;
 extern char rml_flag_log;
 extern unsigned long rml_call_count;
 extern char rml_flag_no_stack_check;
-extern void **rmlSPMIN;
-extern unsigned long rml_stack_size;
-/* adrpo added 2004-11-22 */
+
+/* adrpo added look into p-gccore.c for more */
+/* the young region */
+extern void **rml_young_region;
 extern unsigned long rml_young_size;
-/* adrpo added 2004-11-10 */
-extern unsigned long rml_allocated_from_c;
+
+/* the older region */
+extern unsigned long rml_older_size;
+extern void **rml_current_region;
+extern void **rml_current_next;
+extern void **rml_reserve_region;
+
+/* the roots */
+extern void **rmlSPMIN;
 extern void **rml_stack;
+extern unsigned long rml_stack_size;
+
 extern void *rml_trail[];
+extern unsigned long rml_trail_size;
+
 extern void *rml_array_trail[];
+extern unsigned long rml_array_trail_size;
+
+extern unsigned long rml_allocated_from_c;
+
+
 #ifdef	RML_MORE_LOGGING
 extern const char *rml_latest_module;
 extern unsigned char rml_latest_known;

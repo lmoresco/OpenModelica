@@ -23,7 +23,11 @@ typedef unsigned int rml_uint_t;
 #define rml_longjmp	longjmp
 
 #ifdef	RML_PLAIN
+/* adrpo played with the RML_YOUNG_SIZE
 #define RML_YOUNG_SIZE	(7*1024)
+#define RML_YOUNG_SIZE	(72*1024)
+*/
+#define RML_YOUNG_SIZE	(700*1024)
 #endif
 #ifdef	RML_SWITCH
 #define RML_YOUNG_SIZE	(72*1024)
@@ -47,10 +51,32 @@ typedef unsigned int rml_uint_t;
 #define RML_GCCGOTO
 #define RML_GCCGOTO_NOSHIFT
 /*
+    Copyright PELAB, Linkoping University
+
+    This file is part of Relational Meta-Language (RML).
+	http://www.ida.liu.se/~pelab/rml
+
+    RML is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    RML is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
  * rml-core.h
+ * Copyright: IDA/PELAB
+ * - RML creator     
+     + Mikael Pettersson, until 1999
+ * - RML maintainter/developer 
+     + Adrian Pop, http://www.ida.liu.se/~adrpo, since 2000
  */
-
-
 /*
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
  * An even value i<<1 represents the integer i.
@@ -241,15 +267,32 @@ extern char rml_flag_gclog;
 extern char rml_flag_log;
 extern unsigned long rml_call_count;
 extern char rml_flag_no_stack_check;
-extern void **rmlSPMIN;
-extern unsigned long rml_stack_size;
-/* adrpo added 2004-11-22 */
+
+/* adrpo added look into p-gccore.c for more */
+/* the young region */
+extern void **rml_young_region;
 extern unsigned long rml_young_size;
-/* adrpo added 2004-11-10 */
-extern unsigned long rml_allocated_from_c;
+
+/* the older region */
+extern unsigned long rml_older_size;
+extern void **rml_current_region;
+extern void **rml_current_next;
+extern void **rml_reserve_region;
+
+/* the roots */
+extern void **rmlSPMIN;
 extern void **rml_stack;
+extern unsigned long rml_stack_size;
+
 extern void *rml_trail[];
+extern unsigned long rml_trail_size;
+
 extern void *rml_array_trail[];
+extern unsigned long rml_array_trail_size;
+
+extern unsigned long rml_allocated_from_c;
+
+
 #ifdef	RML_MORE_LOGGING
 extern const char *rml_latest_module;
 extern unsigned char rml_latest_known;
@@ -356,7 +399,7 @@ struct rml_state {
   void *SP, *FC, *SC, **TP, *ARGS[RML_NUM_ARGS];
   void **young_next, **young_limit; 
   void **ATP;
-  int nrArgs;
+  rml_uint_t nrArgs;
 };
 extern struct rml_state rml_state;
 
@@ -562,6 +605,7 @@ typedef void *rml_labptr_t;
 
 extern void *rml_prim_gcalloc(rml_uint_t, rml_uint_t);
 #define RML_ALLOC(VAR,NWORDS,NARGS,UNUSEDLABEL) do{(VAR) = (void*)rml_young_next;if((rml_young_next = (void**)(VAR)+(NWORDS)) >= rml_young_limit) (VAR) = rml_prim_gcalloc((NWORDS),(NARGS));}while(0)
+
 /*
  * rml-predef.h
  */
@@ -569,6 +613,8 @@ extern void *rml_prim_gcalloc(rml_uint_t, rml_uint_t);
 extern void rml_prim_motor(rml_labptr_t);
 extern int rml_prim_once(rml_labptr_t);	/* C calls RML */
 extern RML_FORWARD_LABEL(Main__main);	/* user code's entry point */
+/* let the print relation be available for non-debug-version-rml-library also */
+extern void rmldb_var_print(void *p);
 
 /*
  * Standard procedures
@@ -576,6 +622,7 @@ extern RML_FORWARD_LABEL(Main__main);	/* user code's entry point */
 extern RML_FORWARD_LABEL(RML__bool_5fand);
 extern RML_FORWARD_LABEL(RML__bool_5fnot);
 extern RML_FORWARD_LABEL(RML__bool_5for);
+
 #define RML__char_5fint	RML__int_5fint
 extern RML_FORWARD_LABEL(RML__int_5fabs);
 extern RML_FORWARD_LABEL(RML__int_5fadd);
@@ -596,6 +643,7 @@ extern RML_FORWARD_LABEL(RML__int_5fneg);
 extern RML_FORWARD_LABEL(RML__int_5freal);
 extern RML_FORWARD_LABEL(RML__int_5fstring);
 extern RML_FORWARD_LABEL(RML__int_5fsub);
+
 extern RML_FORWARD_LABEL(RML__list_5fappend);
 extern RML_FORWARD_LABEL(RML__list_5fdelete);
 extern RML_FORWARD_LABEL(RML__list_5flength);
@@ -604,9 +652,12 @@ extern RML_FORWARD_LABEL(RML__list_5fnth);
 extern RML_FORWARD_LABEL(RML__list_5freverse);
 extern RML_FORWARD_LABEL(RML__list_5fstring);
 extern RML_FORWARD_LABEL(RML__list_5fvector);
+extern RML_FORWARD_LABEL(RML__list_5farray);
+
 extern RML_FORWARD_LABEL(RML__lvar_5fget);
 extern RML_FORWARD_LABEL(RML__lvar_5fnew);
 extern RML_FORWARD_LABEL(RML__lvar_5fset);
+
 extern RML_FORWARD_LABEL(RML__real_5fabs);
 extern RML_FORWARD_LABEL(RML__real_5fadd);
 extern RML_FORWARD_LABEL(RML__real_5fatan);
@@ -632,183 +683,177 @@ extern RML_FORWARD_LABEL(RML__real_5fsin);
 extern RML_FORWARD_LABEL(RML__real_5fsqrt);
 extern RML_FORWARD_LABEL(RML__real_5fstring);
 extern RML_FORWARD_LABEL(RML__real_5fsub);
+
 extern RML_FORWARD_LABEL(RML__string_5fappend);
 extern RML_FORWARD_LABEL(RML__string_5fint);
 extern RML_FORWARD_LABEL(RML__string_5flength);
 extern RML_FORWARD_LABEL(RML__string_5flist);
 extern RML_FORWARD_LABEL(RML__string_5fnth);
+
 extern RML_FORWARD_LABEL(RML__vector_5flength);
 extern RML_FORWARD_LABEL(RML__vector_5flist);
 extern RML_FORWARD_LABEL(RML__vector_5fnth);
+extern RML_FORWARD_LABEL(RML__vector_5fupdate);
+extern RML_FORWARD_LABEL(RML__vector_5fcreate);
+extern RML_FORWARD_LABEL(RML__vector_5fadd);
+extern RML_FORWARD_LABEL(RML__vector_5farray);
+
+extern RML_FORWARD_LABEL(RML__array_5flength);
+extern RML_FORWARD_LABEL(RML__array_5flist);
+extern RML_FORWARD_LABEL(RML__array_5fnth);
+extern RML_FORWARD_LABEL(RML__array_5fupdate);
+extern RML_FORWARD_LABEL(RML__array_5fcreate);
+extern RML_FORWARD_LABEL(RML__array_5fadd);
+extern RML_FORWARD_LABEL(RML__array_5fvector);
+
 extern RML_FORWARD_LABEL(RML__clock);
 extern RML_FORWARD_LABEL(RML__print);
 extern RML_FORWARD_LABEL(RML__tick);
+/* debugging */
+/* let these relation be available in all rml libraries */
+/* however their code depends on _RMLDB_DEFINED_ */
+extern RML_FORWARD_LABEL(RML__debug_5fprint);
 extern RML_FORWARD_LABEL(RML__debug);
-extern RML_FORWARD_LABEL(RML__debug_print);
-extern RML_FORWARD_LABEL(RML__dbg);
-/**************************************************
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fvars);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin01);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin02);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin03);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin04);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin05);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin06);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin07);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin08);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin09);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin10);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin11);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin12);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin13);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin14);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin15);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin16);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout01);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout02);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout03);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout04);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout05);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout06);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout07);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout08);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout09);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout10);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout11);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout12);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout13);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout14);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout15);
+extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout16);
 
- [ rml-debug.h ]
 
- adrpo 2002-10
- interface for rml debugging 
-
- this file contains all the functions for debugging
- 
-***************************************************/
-
-#define _RML_DEBUG_
+/* please LEAVE this line here */
+#define _RMLDB_DEFINED_  /* fix this */
+#ifdef _RMLDB_DEFINED_ /*  put these only in the debug version */
+/***********************************************************
+ [ rml-debug.h ] 
+  - Adrian Pop, adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo
+  - creation 2002-10
+    + interface for rml debugging 
+    + this file contains all the functions for debugging 
+	+ all things in this file start with rmldb_
+  - last modified 2005-01-18
+************************************************************/
 
 #ifndef _RML_DEBUG_H_
 #define _RML_DEBUG_H_
 
 #include <stdio.h>
 
+/* adrpo some useful defines. */
 #define RMLDB_PROMPT "rmldb@>"
+#define RMLDB_RUN    0
+#define RMLDB_STEP   1
+#define RMLDB_NEXT   2
+#define RMLDB_FAST   3 /* no livevars, no backtrace, just very fast debugging (breakpoints) */
 
-#define rmldb_sprintf printf
-
-/* adrpo 
-   some useful defines. */
-#define RMLDB_RUN   0
-#define RMLDB_STEP  1
-#define RMLDB_FAST  3 /* no livevars, no backtrace, just very fast debugging (breakpoints) */
+#define RMLDB_REPEAT_PARSE   0  /* repeat the command parse */
+#define RMLDB_BREAK_PARSE    1  /* exit the parse cycle and continue with the execution */
 
 #define RMLDB_SHOW  1
 #define RMLDB_HIDE  0
 
-#define RML_DEBUG_VAR_IN 0
-#define RML_DEBUG_VAR_OUT 1
+#define RMLDB_VAR_IN 0
+#define RMLDB_VAR_OUT 1
 
-#define RML_LIVEVARS_ON  1
-#define RML_LIVEVARS_OFF 0
+#define RMLDB_LIVEVARS_ON  1
+#define RMLDB_LIVEVARS_OFF 0
 
-#define RML_DEBUG_MAX_BREAKPOINTS 100
-#define RML_DEBUG_MAX_STRING  1000
+#define RMLDB_MAX_BREAKPOINTS 100
+#define RMLDB_MAX_STRING  1000
 
-#define RML_DEBUG_MAX_DISPLAY_VARS 100
+#define RMLDB_MAX_DISPLAY_VARS 100
 
-/* adrpo 
-   this flag is set to RMLDB_STEP when you need a "step" by step execution 
-   if you want "run" execution then this flag is set on RMLDB_RUN */ 
-extern int execution_type; 
-extern int rmldb_show;
-extern int last_command; /* need to know if we should start running or get more commands from the debugger */
-extern char* rmldb_command;
-extern int max_backtrace_entries;
-extern int depth_of_variable_print;
-extern int max_string_variable_print;
-extern int rml_debug_print_livevars_each_step; /* print the current livevars each step */
+#define rmldb_sprintf printf
 
-extern void rml_var_print(void *p);
-void show_help(void);
-int quit(char *line);
+/* debugger typedefs */
 
-/*
-  adrpo 2002-10 creation
-  - this function tries to connect through sockets to 
-    the rmld process for debugging.
-  - it will listen to the first command a user will 
-    give
-  - if an error in communication occurs -1 is returned
-*/
-extern int rml_debug_init(void);
-
-/*
-  adrpo 2002-10 creation
-  - this function will end the socket communication
-  - if an error in communication occurs -1 is returned
-*/
-extern int rml_debug_end(void);
-
-/* adrpo 
-   this filter is set on the relations you want to make the 
-   program to stop (like a breakpoint, but with string matching)  */
-extern char relation_filter[RML_DEBUG_MAX_BREAKPOINTS][RML_DEBUG_MAX_STRING];
-extern int number_of_filters; /* of course, the number of filters. */
-
-extern void add_relation_filter(char *);
-extern void del_relation_filter(char *);
-
-struct call_stack_node
-{
-   char relation_name[RML_DEBUG_MAX_STRING];
-   int depth;
-   struct call_stack_node *prev;
-   struct call_stack_node *next;
-};
-
-struct rml_debug_var_node
-{
-   void* var_name;
-   void* var;
-   int depth;
-   struct rml_debug_var_node *prev;
-   struct rml_debug_var_node *next;
-};
-
-extern void rml_debug_add_var(int direction, void* var_name, void* var);
-extern void clear_rml_debug_vars(void);
-extern void rml_print_variable(char* var_name);
-extern void rml_print_sizeof_variable(char* var_name);
-extern void print_rml_debug_vars(void);
-extern void set_print_rml_debug_vars(int flag);
-extern char rml_display_vars[RML_DEBUG_MAX_DISPLAY_VARS][RML_DEBUG_MAX_STRING];
-extern int number_of_display_vars; /* of course, the number active display vars. */
-extern void rml_display_variable(char* var_name);
-extern void rml_undisplay_variable(char* var_name);
-extern void print_displayvars(void);
-extern void show_displayvars(void);
-extern void clear_displayvars(void);
-extern void rml_view_variable(char* var_name);
-
-extern char *rmldb_ttyname;
-
-extern void push_node(char *rname);
-extern void pop_node(void);
-extern void print_backtrace(char* filter);
-extern void rml_set_depth(char* depth);
-extern void rml_set_maxstr(char* maxstr);
-extern void show_breakpoints(void);
-extern void clear_breakpoints(void);
-extern void set_max_backtrace(char *maxbt);
-extern void print_settings(void);
-extern void set_rmldb_output(char *);
-
-typedef struct rml_range_db
+typedef struct rmldb_range_db
 {
   int sl;
   int sc;
   int el;
   int ec;
-} rml_range_db_t;
+} rmldb_range_db_t;
 
-typedef struct rml_ex_loc
+typedef struct rmldb_ex_loc
 {
-   char file[RML_DEBUG_MAX_STRING];
-   rml_range_db_t range;
-   char relation[RML_DEBUG_MAX_STRING];
-   char goal[RML_DEBUG_MAX_STRING];
-} rml_current_execution_loc_t;
+   char file[RMLDB_MAX_STRING];
+   rmldb_range_db_t range;
+   char relation[RMLDB_MAX_STRING];
+   char goal[RMLDB_MAX_STRING];
+   unsigned long SP;
+} rmldb_current_execution_loc_t;
 
-/* location of current execution point */
-extern rml_current_execution_loc_t rml_current_execution_loc;
+typedef struct rmldb_stack_node
+{
+   char relation_name[RMLDB_MAX_STRING];
+   int depth;
+   rmldb_current_execution_loc_t loc;
+   struct rmldb_stack_node *prev;
+   struct rmldb_stack_node *next;
+} rmldb_stack_node_t;
+
+typedef struct rmldb_call_node
+{
+   char relation_name[RMLDB_MAX_STRING];
+   int depth;
+   rmldb_current_execution_loc_t loc;
+   struct rmldb_call_node *prev;
+   struct rmldb_call_node *next;
+} rmldb_call_node_t;
+
+typedef struct rmldb_var_node
+{
+   void* var_name;
+   void* var;
+   int depth;
+   struct rmldb_var_node *prev;
+   struct rmldb_var_node *next;
+} rmldb_var_node_t;
 
 /* types */
 
-typedef struct rml_str
+typedef struct rmldb_str
 {
    char *name;
    int depth;
-   struct rml_str *prev;
-   struct rml_str *next;
-} rml_str_t;
+   struct rmldb_str *prev;
+   struct rmldb_str *next;
+} rmldb_str_t;
 
-typedef struct rml_str_list
+typedef struct rmldb_str_list
 {
-	rml_str_t* list_start;
-	rml_str_t* list_end;
-} rml_str_list_t;
+	rmldb_str_t* list_start;
+	rmldb_str_t* list_end;
+} rmldb_str_list_t;
 
 /*
     excerpt from rml.grm
@@ -829,242 +874,322 @@ typedef struct rml_str_list
 /* define type ahead, as is it mutually recursive
  * with type components 
  */
-struct rml_type;
+struct rmldb_type;
 
-typedef struct rmlLISTty
+typedef struct rmldb_LISTty
 {
    int length;
-   struct rml_type* list_start; 
-   struct rml_type* list_end;
-} rmlLISTty_t;
+   struct rmldb_type* list_start; 
+   struct rmldb_type* list_end;
+} rmldb_LISTty_t;
 
-typedef struct rmlVARty { char* id; } rmlVARty_t;
+typedef struct rmldb_VARty { char* id; } rmldb_VARty_t;
 
-typedef struct rmlCONSty 
+typedef struct rmldb_CONSty 
 { 
-	rmlLISTty_t* list;
+	rmldb_LISTty_t* list;
 	char* id;
-} rmlCONSty_t;
+} rmldb_CONSty_t;
 
-typedef struct rmlTUPLEty 
+typedef struct rmldb_TUPLEty 
 { 
-	rmlLISTty_t* list;
-} rmlTUPLEty_t;
+	rmldb_LISTty_t* list;
+} rmldb_TUPLEty_t;
 
-typedef struct rmlRELty 
+typedef struct rmldb_RELty 
 { 
-	rmlLISTty_t* list1;
-	rmlLISTty_t* list2;
-} rmlRELty_t;
+	rmldb_LISTty_t* list1;
+	rmldb_LISTty_t* list2;
+} rmldb_RELty_t;
 
 
-typedef enum tyKind {eNORMAL,eLISTty,eVARty,eCONSty,eTUPLEty,eRELty} tyKind_t;
-
-typedef struct rml_type
+typedef enum rmldb_tyKind 
 {
-   tyKind_t kind; /* selects the stufs in the union or no union at all */
+	RMLDB_eNORMAL,
+	RMLDB_eLISTty,
+	RMLDB_eVARty,
+	RMLDB_eCONSty,
+	RMLDB_eTUPLEty,
+	RMLDB_eRELty
+} rmldb_tyKind_t;
+
+typedef struct rmldb_type
+{
+   rmldb_tyKind_t kind; /* selects the stufs in the union or no union at all */
    union component_t
    {
-	 rmlLISTty_t*  l;
-	 rmlVARty_t*   v;
-	 rmlCONSty_t*  c;
-	 rmlTUPLEty_t* t;
-	 rmlRELty_t*   r;
+	 rmldb_LISTty_t*  l;
+	 rmldb_VARty_t*   v;
+	 rmldb_CONSty_t*  c;
+	 rmldb_TUPLEty_t* t;
+	 rmldb_RELty_t*   r;
    } component;
 
-   /* these are used in rmlLISTty */
+   /* these are used in rmldb_LISTty */
    int depth;
-   struct rml_type *prev;
-   struct rml_type *next;
-} rml_type_t;
+   struct rmldb_type *prev;
+   struct rmldb_type *next;
+} rmldb_type_t;
 
-typedef struct rml_type_db
+typedef struct rmldb_type_db
 {
    char *file;
    char *name;
-   rml_range_db_t* range;
-   rml_type_t *type;
+   rmldb_range_db_t* range;
+   rmldb_type_t *type;
    int depth;
-   struct rml_type_db *prev;
-   struct rml_type_db *next;
-} rml_type_db_t;
+   struct rmldb_type_db *prev;
+   struct rmldb_type_db *next;
+} rmldb_type_db_t;
 
-typedef struct rml_var_db
+typedef struct rmldb_var_db
 {
    char *file;
-   rml_range_db_t *range;
-   rml_range_db_t *clause_range;
+   rmldb_range_db_t *range;
+   rmldb_range_db_t *clause_range;
    char *relation;
    char *name;
-   rml_type_db_t* type_db;
+   rmldb_type_db_t* type_db;
 
    int depth;
-   struct rml_var_db *prev;
-   struct rml_var_db *next;
-} rml_var_db_t;
+   struct rmldb_var_db *prev;
+   struct rmldb_var_db *next;
+} rmldb_var_db_t;
 
-typedef struct rml_con_db
+typedef struct rmldb_con_db
 {
    char *file;
    int constructor;
    int is_transparent;
-   rml_range_db_t* range;
+   rmldb_range_db_t* range;
    char *name;
-   rml_type_db_t* type_db;
+   rmldb_type_db_t* type_db;
 
    int depth;
-   struct rml_con_db *prev;
-   struct rml_con_db *next;
-} rml_con_db_t;
+   struct rmldb_con_db *prev;
+   struct rmldb_con_db *next;
+} rmldb_con_db_t;
 
-typedef struct rml_relation_db
+typedef struct rmldb_relation_db
 {
    char *file;
-   rml_range_db_t* range;
+   rmldb_range_db_t* range;
    char *name;
+   rmldb_type_db_t* type_db;
 
-   rml_type_db_t* type_db;
-	
    int depth;
-   struct rml_relation_db *prev;
-   struct rml_relation_db *next;
-} rml_relation_db_t;
+   struct rmldb_relation_db *prev;
+   struct rmldb_relation_db *next;
+} rmldb_relation_db_t;
 
-extern rml_var_db_t *rml_var_db_start;
-extern rml_var_db_t *rml_var_db_end;
-extern rml_type_db_t *rml_type_db_start;
-extern rml_type_db_t *rml_type_db_end;
-extern rml_con_db_t *rml_con_db_start;
-extern rml_con_db_t *rml_con_db_end;
-extern rml_relation_db_t *rml_relation_db_start;
-extern rml_relation_db_t *rml_relation_db_end;
+/* adrpo - debugger global variables */ 
+extern int   rmldb_execution_type; 
+extern int   rmldb_show;
+extern int   rmldb_last_command; /* need to know if we should start running or get more commands from the debugger */
+extern char* rmldb_command;
+extern int   rmldb_max_backtrace_entries;
+extern int   rmldb_max_callchain_entries;
+extern int   rmldb_depth_of_variable_print;
+extern int   rmldb_max_string_variable_print;
+extern int   rmldb_print_livevars_each_step; /* print the current livevars each step */
+/* this filter is set on the relations you want to make the 
+   program to stop (like a breakpoint, but with string matching)  */
+extern char  rmldb_relation_filter[RMLDB_MAX_BREAKPOINTS][RMLDB_MAX_STRING];
+extern int   rmldb_number_of_filters; /* of course, the number of filters. */
+extern char  rmldb_display_vars[RMLDB_MAX_DISPLAY_VARS][RMLDB_MAX_STRING];
+extern int   rmldb_number_of_display_vars; /* of course, the number active display vars. */
+extern char* rmldb_ttyname;
+/* location of current execution point */
+extern       rmldb_current_execution_loc_t rmldb_current_execution_loc;
 
-extern int rmldb_load_db(char* programdb_file);
-extern void rml_print_type_info_id(char* name, FILE* out);
-extern void rml_print_type_constructor(char* constructor_name, FILE* out);
-extern void rml_print_type_constructors(char* type_name, FILE* out);
-extern void rml_print_type(rml_type_t *type, int detailed, FILE* out);
-extern void rml_print_type_list(rmlLISTty_t* list, int detailed, char* separator, FILE* out);
-extern rml_type_db_t* rmldb_get_type(char* var_name);
-extern rml_var_db_t* rmldb_get_var(char* var_name);
-extern char* rml_get_con_name(rml_type_t *type, int constructor);
-extern rml_con_db_t* rml_get_con(rml_type_t *type, int constructor);
-extern int rml_is_type_transparent(rml_type_t *type);
-extern void rml_str_list_print(rml_str_list_t* list);
-extern void rml_str_list_free(rml_str_list_t* list);
-extern void rml_type_list_to_list(rmlLISTty_t* list, rml_str_list_t* lst);
-extern void rml_type_to_list(rml_type_t *type, rml_str_list_t* list);
-extern int rml_str_list_get_size(rml_str_list_t* list);
-extern char* rml_str_list_get_index(rml_str_list_t* list, int index);
-extern rmlLISTty_t* rml_get_type_components(rml_con_db_t* con_db);
-extern rml_type_t* rml_get_type_component(rml_type_t* type, int constr, int index);
-extern rml_type_t* rml_get_type_comp_from_con(rmlLISTty_t* type, int index);
-extern void rml_var_show(void *p, rml_type_t* type, int depth);
-extern void rml_var_send(void *p, rml_type_t* type, int depth);
-extern void rml_open_socket(void);
-extern void rml_close_socket(void);
-extern void rml_socket_outln(char* msg);
-extern void rml_socket_out(char* msg);
-extern void rml_type_list_to_sock(rmlLISTty_t* list, int detailed, char* separator);
-extern void rml_type_to_sock(rml_type_t *type, int detailed);
+/* init/help/exit */
+extern int  rmldb_init(void);
+extern int  rmldb_end(void);
+extern void rmldb_show_help(void);
+extern int  rmldb_quit(char *line);
+
+/* breakpoints */
+extern void rmldb_add_relation_filter(char *);
+extern void rmldb_del_relation_filter(char *);
+extern void rmldb_show_breakpoints(void);
+extern void rmldb_clear_breakpoints(void);
+
+
+extern void rmldb_debug_add_var(int direction, void* var_name, void* var);
+extern void rmldb_clear_debug_vars(void);
+extern void rmldb_print_variable(char* var_name);
+extern unsigned long rmldb_var_sizeof(void *p);
+extern void rmldb_print_sizeof_variable(char* var_name);
+extern void rmldb_print_debug_vars(void);
+extern void rmldb_set_print_debug_vars(int flag);
+extern void rmldb_display_variable(char* var_name);
+extern void rmldb_undisplay_variable(char* var_name);
+extern void rmldb_print_displayvars(void);
+extern void rmldb_show_displayvars(void);
+extern void rmldb_clear_displayvars(void);
+extern void rmldb_view_variable(char* var_name);
+
+extern unsigned long rmldb_stack_pointer_to_ulong(void* stackPointer);
+
+/* stack (backtrace) */
+extern void rmldb_backtrace_push(char *rname, rmldb_current_execution_loc_t loc);
+extern void rmldb_backtrace_pop(void);
+extern void rmldb_backtrace_print(char* filter);
+extern void rmldb_backtrace_send(char* filter);
+extern void rmldb_set_max_backtrace(char *maxbt);
+
+/* call chain */
+extern void rmldb_callchain_push(char *rname, rmldb_current_execution_loc_t loc);
+extern void rmldb_callchain_pop(void);
+extern void rmldb_callchain_print(char* filter);
+extern void rmldb_backtrace_send(char* filter);
+extern void rmldb_set_max_callchain(char *maxcallchain);
+
+/* settings */
+extern void rmldb_set_depth(char* depth);
+extern void rmldb_set_maxstring(char* maxstr);
+extern void rmldb_print_settings(void);
+extern void rmldb_set_output(char *);
+
+extern rmldb_var_db_t*      rmldb_var_db_start;
+extern rmldb_var_db_t*      rmldb_var_db_end;
+extern rmldb_type_db_t*     rmldb_type_db_start;
+extern rmldb_type_db_t*     rmldb_type_db_end;
+extern rmldb_con_db_t*      rmldb_con_db_start;
+extern rmldb_con_db_t*      rmldb_con_db_end;
+extern rmldb_relation_db_t* rmldb_relation_db_start;
+extern rmldb_relation_db_t* rmldb_relation_db_end;
+
+extern int  rmldb_load_db(char* programdb_file);
+extern void rmldb_print_type_info_id(char* name, FILE* out);
+extern void rmldb_print_type_constructor(char* constructor_name, FILE* out);
+extern void rmldb_print_type_constructors(char* type_name, FILE* out);
+extern void rmldb_print_type(rmldb_type_t* type, int detailed, FILE* out);
+extern void rmldb_print_type_list(rmldb_LISTty_t* list, int detailed, char* separator, FILE* out);
+extern rmldb_type_db_t* rmldb_get_type(char* var_name);
+extern rmldb_var_db_t* rmldb_get_var(char* var_name);
+extern char* rmldb_get_con_name(rmldb_type_t *type, int constructor);
+extern rmldb_con_db_t* rml_get_con(rmldb_type_t *type, int constructor);
+extern int rmldb_is_type_transparent(rmldb_type_t *type);
+extern void rmldb_str_list_print(rmldb_str_list_t* list);
+extern void rmldb_str_list_free(rmldb_str_list_t* list);
+extern void rmldb_type_list_to_list(rmldb_LISTty_t* list, rmldb_str_list_t* lst);
+extern void rmldb_type_to_list(rmldb_type_t *type, rmldb_str_list_t* list);
+extern int rmldb_str_list_get_size(rmldb_str_list_t* list);
+extern char* rmldb_str_list_get_index(rmldb_str_list_t* list, int index);
+extern rmldb_LISTty_t* rmldb_get_type_components(rmldb_con_db_t* con_db);
+extern rmldb_type_t* rmldb_get_type_component(rmldb_type_t* type, int constr, int index);
+extern rmldb_type_t* rmldb_get_type_comp_from_con(rmldb_LISTty_t* type, int index);
+extern void rmldb_var_show(void *p, rmldb_type_t* type, int depth);
+extern void rmldb_var_send(void *p, rmldb_type_t* type, int depth);
+extern void rmldb_open_socket(void);
+extern void rmldb_close_socket(void);
+extern void rmldb_socket_outln(char* msg);
+extern void rmldb_socket_out(char* msg);
+extern void rmldb_type_list_to_sock(rmldb_LISTty_t* list, int detailed, char* separator);
+extern void rmldb_type_to_sock(rmldb_type_t *type, int detailed);
 
 
 /* ---- components ---- */
 /* create a list from two tys */
-extern rmlLISTty_t* make_rmlLISTty(rml_type_t* type1, rml_type_t* type2);
+extern rmldb_LISTty_t* rmldb_make_rmldb_LISTty(rmldb_type_t* type1, rmldb_type_t* type2);
 /* appends ty in front of the list */
-extern rmlLISTty_t* make_cons_rmlLISTty(rml_type_t* type, rmlLISTty_t* list);
+extern rmldb_LISTty_t* rmldb_make_cons_rmldb_LISTty(rmldb_type_t* type, rmldb_LISTty_t* list);
 /* make a VARty */
-extern rmlVARty_t* make_rmlVARty(char* id);
+extern rmldb_VARty_t* rmldb_make_rmldb_VARty(char* id);
 /* make a CONSty */
-extern rmlCONSty_t* make_rmlCONSty(rmlLISTty_t* list, char* id);
+extern rmldb_CONSty_t* rmldb_make_rmldb_CONSty(rmldb_LISTty_t* list, char* id);
 /* make a TUPLEty */
-extern rmlTUPLEty_t* make_rmlTUPLEty(rmlLISTty_t* list);
+extern rmldb_TUPLEty_t* rmldb_make_rmldb_TUPLEty(rmldb_LISTty_t* list);
 /* make a RELty */
-extern rmlRELty_t* make_rmlRELty(rmlLISTty_t* list1, rmlLISTty_t* list2);
+extern rmldb_RELty_t* rmldb_make_rmlRELty(rmldb_LISTty_t* list1, rmldb_LISTty_t* list2);
 
 /* makes a type from a component, and casts it according to kind */
-extern rml_type_t* make_rml_type(tyKind_t kind, void* component);
+extern rmldb_type_t* rmldb_make_rmldb_type(rmldb_tyKind_t kind, void* component);
 
-extern rml_str_t* make_rml_str(char* name);
+extern rmldb_str_t* rmldb_make_rmldb_str(char* name);
 
-extern rml_var_db_t* make_rml_var_db(
+extern rmldb_var_db_t* rmldb_make_rmldb_var_db(
 		char* file,
-		rml_range_db_t* range,
-		rml_range_db_t* clause_range,
+		rmldb_range_db_t* range,
+		rmldb_range_db_t* clause_range,
 		char* relation,
 		char* name,
-		rml_type_db_t* type_db);
+		rmldb_type_db_t* type_db);
 
-extern rml_con_db_t* make_rml_con_db(
+extern rmldb_con_db_t* rmldb_make_rmldb_con_db(
 		char* file,
-		rml_range_db_t* range,
+		rmldb_range_db_t* range,
 		char* name,
-		rml_type_db_t* type_db,
+		rmldb_type_db_t* type_db,
 		int constructor);
 
-extern rml_type_db_t* make_rml_type_db(
+extern rmldb_type_db_t* rmldb_make_rmldb_type_db(
 		char* file,
-		rml_range_db_t* range,
+		rmldb_range_db_t* range,
 		char* name);
 
-extern rml_type_db_t* make_rml_type_db_t(
-		rml_type_t *type);
+extern rmldb_type_db_t* rmldb_make_rmldb_type_db_t(
+		rmldb_type_t *type);
 
-extern rml_relation_db_t* make_rml_relation_db(
+extern rmldb_relation_db_t* rmldb_make_rmldb_relation_db(
 		char* file,
-		rml_range_db_t* range,
+		rmldb_range_db_t* range,
 		char* name,
-		rml_type_db_t* type_db);
+		rmldb_type_db_t* type_db);
 
-extern void rml_type_list_push_front(
-					rml_type_t **start_node, 
-				    rml_type_t **end_node, 
-					rml_type_t *node);
+extern void rmldb_type_list_push_front(
+					rmldb_type_t **start_node, 
+				    rmldb_type_t **end_node, 
+					rmldb_type_t *node);
 
-extern void rml_type_list_push_back(
-					rml_type_t **start_node, 
-				    rml_type_t **end_node, 
-					rml_type_t *node);
+extern void rmldb_type_list_push_back(
+					rmldb_type_t **start_node, 
+				    rmldb_type_t **end_node, 
+					rmldb_type_t *node);
 
-extern void rml_str_list_add(
-					rml_str_t **start_node, 
-				    rml_str_t **end_node, 
-					rml_str_t *node);
+extern void rmldb_str_list_add(
+					rmldb_str_t **start_node, 
+				    rmldb_str_t **end_node, 
+					rmldb_str_t *node);
 
-extern void rml_var_db_add(
-					rml_var_db_t **start_node, 
-				    rml_var_db_t **end_node, 
-					rml_var_db_t *node);
-extern void rml_con_db_add(
-					rml_con_db_t **start_node, 
-				    rml_con_db_t **end_node, 
-					rml_con_db_t *node);
-extern void rml_type_db_add(
-					rml_type_db_t **start_node, 
-				    rml_type_db_t **end_node, 
-					rml_type_db_t *node);
-extern void rml_relation_db_add(
-					rml_relation_db_t **start_node, 
-				    rml_relation_db_t **end_node, 
-					rml_relation_db_t *node);
+extern void rmldb_var_db_add(
+					rmldb_var_db_t **start_node, 
+				    rmldb_var_db_t **end_node, 
+					rmldb_var_db_t *node);
+
+extern void rmldb_con_db_add(
+					rmldb_con_db_t **start_node, 
+				    rmldb_con_db_t **end_node, 
+					rmldb_con_db_t *node);
+
+extern void rmldb_type_db_add(
+					rmldb_type_db_t **start_node, 
+				    rmldb_type_db_t **end_node, 
+					rmldb_type_db_t *node);
+
+extern void rmldb_relation_db_add(
+					rmldb_relation_db_t **start_node, 
+				    rmldb_relation_db_t **end_node, 
+					rmldb_relation_db_t *node);
 
 /* program database stream */
-extern FILE *aarmldbin; /* the stream we need to parse from the rmldebugger */
-extern int aarmldberror(char*);
-extern int aarmldbparse(void);
-extern int aarmldbdebug;
-
+extern FILE* aarmldbin; /* the stream we need to parse from the rmldebugger */
+extern int   aarmldberror(char*);
+extern int   aarmldbparse(void);
+extern int   aarmldbdebug;
 
 /* comand stream */
-extern FILE *aain; /* the stream we need to parse from the rmldebugger */
-extern int aaerror(char*);
-extern int aaparse(void);
-extern int aadebug;
+extern FILE* aain; /* the stream we need to parse from the rmldebugger */
+extern int   aaerror(char*);
+extern int   aaparse(void);
+extern int   aadebug;
 
-int open_new_file(void);
-void use_quit (int);
+int  rmldb_open_new_file(void);
+void rmldb_use_quit (int);
+int  rmldb_parse(void);
 
-int rmldb_parse(void);
+#endif /* _RML_DEBUG_H_  */
 
-#endif /* [ rml-debug.h]  */
+#endif /* _RMLDB_DEFINED_ */
+/* please LEAVE this line here */

@@ -12,6 +12,8 @@ RML_BEGIN_LABEL(RML__array_5fvector)
 		struct rml_struct *vec_new = (struct rml_struct*)rml_prim_alloc(1+nelts, 1);
 		void **vecp = vec_new->data;
 		rml_uint_t i = 0;
+		/* re-read after alloc, it may have been moved */
+		vec = rmlA0;
 		vec_new->header = RML_STRUCTHDR(nelts, 0);
 		rmlA0 = RML_TAGPTR(vec_new);
 		/* copy the old vector */

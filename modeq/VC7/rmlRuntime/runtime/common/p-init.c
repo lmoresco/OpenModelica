@@ -14,11 +14,11 @@ void RML_5finit(void)
 	rml_gcinit();
 
 	/* adrpo 2002-10 */
-#ifdef RML_DEBUG
+#if defined(_RMLDB_DEFINED_) && defined(RML_DEBUG)
 	/* stop and ask for commands here 
 	 * this is a good time to set breakpoints
 	 */
-	rml_debug_init();
+	rmldb_init();
 #endif
 	/* end adrpo */
 	init_done = 1;

@@ -66,6 +66,6 @@ int rml_prim_once(rml_labptr_t f)
     rml_state_SC = origSC;
     rml_state_FC = origFC;
     rml_state_SP = origSP;
-	/* adrpo removed 2004-10-05 rml_debug_end(); */
+	/* adrpo removed 2004-10-05 rmldb_end(); */
     return status - 1;	/* 0 on failure, 1 on success */
 }

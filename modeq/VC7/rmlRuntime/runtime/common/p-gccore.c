@@ -31,7 +31,9 @@
 #include <stdlib.h>
 #include <string.h>	/* strerror() */
 #include <errno.h>
-#define RML_MORE_LOGGING
+
+/* #define RML_MORE_LOGGING */
+
 #include "rml.h"
 #include "z-ysize.h"
 #include "p-gccore.h"
@@ -44,11 +46,10 @@ unsigned long rml_young_size;
 void **rml_young_region; /* void *rml_young_region[rml_young_size]; */
 
 /* the older region */
-static rml_uint_t rml_older_size;
-static void **rml_current_region;
-static void **rml_current_next;
-static void **rml_reserve_region;
-
+unsigned long rml_older_size;
+void **rml_current_region;
+void **rml_current_next;
+void **rml_reserve_region;
 
 static void **rml_alloc_core(rml_uint_t nslots)
 {
@@ -60,17 +61,11 @@ static void **rml_alloc_core(rml_uint_t nslots)
 			nbytes, strerror(errno));
 		exit(1);
     }
-#ifdef RML_DEBUG
-	/* fprintf(stderr, "[malloc(%p)=%d] ", p, nbytes); */
-#endif
     return p;
 }
 
 static void rml_free_core(void **p, size_t nslots_unused)
 {
-#ifdef RML_DEBUG
-	fprintf(stderr, "[free(%p)=%d] ", p, nslots_unused);
-#endif
     free(p);
 }
 
@@ -85,11 +80,13 @@ void **rmlSPMIN;
 #if	!defined(RML_TRAIL_SIZE)
 #define RML_TRAIL_SIZE	(64*1024)
 #endif
+unsigned long rml_trail_size;
 void *rml_trail[RML_TRAIL_SIZE];
 
 #if	!defined(RML_ARRAY_TRAIL_SIZE)
 #define RML_ARRAY_TRAIL_SIZE	(64*1024)
 #endif
+unsigned long rml_array_trail_size;
 void *rml_array_trail[RML_ARRAY_TRAIL_SIZE];
 
 #ifdef	RML_STATE_JOIN
@@ -121,6 +118,8 @@ void **rmlATP = &rml_array_trail[RML_ARRAY_TRAIL_SIZE];
 void rml_gcinit(void)
 {
     if( rml_stack_size == 0 ) rml_stack_size = RML_STACK_SIZE;
+	rml_array_trail_size = RML_ARRAY_TRAIL_SIZE;
+	rml_trail_size = RML_TRAIL_SIZE;
     rml_stack = rml_alloc_core(rml_stack_size);
     rmlSPMIN = &rml_stack[rml_stack_size];
     rml_state_SP = &rml_stack[rml_stack_size];
@@ -132,11 +131,12 @@ void rml_gcinit(void)
 	rml_young_region = rml_alloc_core(rml_young_size);
 	rml_state_young_next = rml_young_region;
 	rml_state_young_limit = rml_young_region + rml_young_size;
-	
+	/* printf("\nyoung: %p < %p < old: ", rml_state_young_next, rml_state_young_limit); */
     rml_older_size = 4*rml_young_size; /* RML_YOUNG_SIZE */
     rml_current_region = rml_alloc_core(rml_older_size);
     rml_current_next = rml_current_region;
     rml_reserve_region = rml_alloc_core(rml_older_size);
+	/* printf("%p < %p\n", rml_current_region, rml_reserve_region); */
 	/* adrpo added 2004-11-10 */
 	rml_allocated_from_c = 0;
 }
@@ -161,7 +161,8 @@ unsigned long rml_inter_calls;
 unsigned long rml_inter_known_calls;
 #endif	/*RML_MORE_LOGGING*/
 
-void rml_show_status(void)
+#ifdef _RMLDB_DEFINED_
+void rmldb_show_status(void)
 {
 	int status = 0;
     if( rml_flag_log ) 
@@ -205,6 +206,7 @@ void rml_show_status(void)
 		secs, rml_minorgc_count, rml_majorgc_count);
     }
 }
+#endif /* _RMLDB_DEFINED_ */
 
 
 void rml_exit(int status)
@@ -352,6 +354,7 @@ static void **rml_forward_all(
     {
 		void **ATP = rml_state_ATP;
 		rml_sint_t cnt = &rml_array_trail[RML_ARRAY_TRAIL_SIZE] - ATP;
+		next = rml_forward_vec(ATP, (rml_uint_t)cnt, next, region_low, region_nbytes);
 		/* take all the arrays present in the trail and scan them for pointers into
 		 * the younger generation
 		 */
