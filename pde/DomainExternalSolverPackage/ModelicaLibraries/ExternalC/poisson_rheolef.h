@@ -34,6 +34,11 @@ extern "C" {
 				 double *uu, double *ub, double *bu, double *bb,
 				 MyInteger nbc, MySizeType bcdim, double *bc);
 
+void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, MyInteger bndindex,
+				      MyInteger nv, MyInteger nuin, MyInteger nbin, 
+				      double *uu, double *ub, double *bu, double *bb,
+				      MyInteger nbc, MySizeType bcdim, double *bc);
+
   void get_rheolef_form(const char *formname, 
 			const char *meshfile, MyInteger nv, MyInteger nuin, MyInteger nbin, 
 			double *uu, double *ub, double *bu, double *bb,

@@ -40,6 +40,12 @@ case $testname in
 	echo "ok.";
 	;;
 
+    test_formbdrbnd) echo -n "test_formbdrbnd... ";	
+	./test_formbdrbnd square.bamg 31 P1 square_bc2.txt 22 9 3 2> /dev/null > out_formbdrbnd.txt;
+	diff out_formbdrbnd.txt out/test_formbdrbnd.txt || exit 1;
+	echo "ok.";
+	;;
+
     test_indices) echo -n "test_indices... ";	
 	./test_indices square.bamg 31 P1 square_bc.txt 13 18 2> /dev/null > out_indices.txt;
 	diff out_indices.txt out/test_indices.txt || exit 1;

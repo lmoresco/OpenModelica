@@ -3,7 +3,7 @@ default: tests
 .PHONY: runtests
 
 # tests: ext meshext 
-TESTS= test_laplace test_row test_formsize test_form test_indices test_formsizebdr test_formbdr test_bdr_coords
+TESTS= test_laplace test_row test_formsize test_form test_indices test_formsizebdr test_formbdr test_formbdrbnd test_bdr_coords
 
 
 # default: test
@@ -43,6 +43,9 @@ test_form: $(LIBOBJS) test_form.o ../rheolef/print.h
 
 test_formbdr: $(LIBOBJS) test_formbdr.o ../rheolef/print.h
 	$(CXX) $(LDFLAGS) -o test_formbdr  test_formbdr.o $(LIBOBJS) $(LDLIBS)
+
+test_formbdrbnd: $(LIBOBJS) test_formbdrbnd.o
+	$(CXX) $(LDFLAGS) -o test_formbdrbnd  test_formbdrbnd.o $(LIBOBJS) $(LDLIBS)
 
 test_indices: $(LIBOBJS) test_indices.o ../rheolef/print.h
 	$(CXX) $(LDFLAGS) -o test_indices  test_indices.o $(LIBOBJS) $(LDLIBS)

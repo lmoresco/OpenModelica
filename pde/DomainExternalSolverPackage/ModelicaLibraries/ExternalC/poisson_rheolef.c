@@ -151,6 +151,24 @@ void get_rheolef_form_mass_bdr(const char *meshfile, MyInteger bndindex,
   read_matrices(tempfilename, 4, n1, n2, matrices);
 }
 
+void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, MyInteger bndindex,
+				      MyInteger nv, MyInteger nuin, MyInteger nbin, 
+				      double *uu, double *ub, double *bu, double *bb,
+				      MyInteger nbc, MySizeType bcdim, double *bc) 
+{
+  char buf[1024];
+  char tempfilename[]="temp_form_massbdr_on_bnd.txt";
+  doubleptr matrices[4] = { uu, ub, bu, bb};
+  int n1[4] = {nuin, nuin, nbin, nbin};  // number of rows for each matrix
+  int n2[4] = {nuin, nbin, nuin, nbin};  // number of columns for each matrix
+
+  write_bcfile(nbc, bcdim, bc);
+  sprintf(buf, "extsolverrun.bat -fmassbdrbnd %d %s %d P1 %s > %s", bndindex, meshfile, nv, bcfile, tempfilename);
+  fprintf(stderr, "Running: %s\n", buf);
+  system(buf);
+  read_matrices(tempfilename, 4, n1, n2, matrices);
+}
+
 void get_rheolef_unknown_indices(const char *meshfile, MyInteger nv, 
 				 MyInteger nuin, 
 				 MyInteger *indices,

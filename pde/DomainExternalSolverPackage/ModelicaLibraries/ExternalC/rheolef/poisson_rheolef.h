@@ -19,14 +19,14 @@ extern "C" {
   void get_rheolef_form_size_bdr(const char *meshfile, unsigned int bndindex, 
 				 unsigned int nv, unsigned int *nu, unsigned int *nb,
 				 unsigned int nbc, unsigned int bcdim, double *bc);
-  void get_rheolef_form_grad_grad(const char *meshfile, unsigned int nv, unsigned int nuin, unsigned int nbin, 
-				  unsigned int *fnu, unsigned int *fnb, 
+  void get_rheolef_form_grad_grad(const char *meshfile, unsigned int nv, 
+				  unsigned int nuin, unsigned int nbin, 
 				  double *uu, double *ub, double *bu, double *bb, 
 				  unsigned int nbc, unsigned int bcdim, double *bc);
-  void get_rheolef_form_mass(const char *meshfile, unsigned int nv, unsigned int nuin, unsigned int nbin, 
-				  unsigned int *fnu, unsigned int *fnb, 
-				  double *uu, double *ub, double *bu, double *bb,
-				 unsigned int nbc, unsigned int bcdim, double *bc);
+  void get_rheolef_form_mass(const char *meshfile, unsigned int nv, 
+			     unsigned int nuin, unsigned int nbin, 
+			     double *uu, double *ub, double *bu, double *bb,
+			     unsigned int nbc, unsigned int bcdim, double *bc);
   void get_rheolef_unknown_indices(const char *meshfile, const char *eltype, 
 				   unsigned int nv, unsigned int nuin, int *indices, 
 				  unsigned int nbc, unsigned int bcdim, double *bc);
@@ -38,21 +38,18 @@ extern "C" {
 				  unsigned int nbc, unsigned int bcdim, double *bc);
   void get_rheolef_form(const char *formname, const char *meshfile, unsigned int nv, 
 			unsigned int nuin, unsigned int nbin, 
-			unsigned int *fnu, unsigned int *fnb, 
 			double *uu, double *ub, double *bu, double *bb,
 			unsigned int nbc, unsigned int bcdim, double *bc);
 
   void get_rheolef_form_mass_bdr(const char *meshfile, unsigned int bndindex,
 				 unsigned int nv, 
 				 unsigned int nuin, unsigned int nbin, 
-				 unsigned int *fnu, unsigned int *fnb, 
 				 double *uu, double *ub, double *bu, double *bb,
 				 unsigned int nbc, unsigned int bcdim, double *bc);
 
   void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, unsigned int bndindex,
 					unsigned int nv, 
 					unsigned int nuin, unsigned int nbin, 
-					unsigned int *fnu, unsigned int *fnb, 
 					double *uu, double *ub, double *bu, double *bb,
 					unsigned int nbc, unsigned int bcdim, double *bc);
 

@@ -259,9 +259,8 @@ void get_rheolef_form_size_bdr(const char *meshfile, unsigned int bndindex,
   
 }
 
-void get_rheolef_form_grad_grad(const char *meshfile, unsigned int 
-				nv, unsigned int nuin, unsigned int nbin, 
-				unsigned int *fnu, unsigned int *fnb, 
+void get_rheolef_form_grad_grad(const char *meshfile, unsigned int nv, 
+				unsigned int nuin, unsigned int nbin, 
 				double *uu, double *ub, double *bu, double *bb, 
 				unsigned int nbc, unsigned int bcdim, double *bc) 
 {
@@ -295,7 +294,6 @@ void get_rheolef_form_grad_grad(const char *meshfile, unsigned int
 
 
 void get_rheolef_form_mass(const char *meshfile, unsigned int nv, unsigned int nuin, unsigned int nbin, 
-			   unsigned int *fnu, unsigned int *fnb, 
 			   double *uu, double *ub, double *bu, double *bb,
 			   unsigned int nbc, size_type bcdim, double *bc) {
 
@@ -329,7 +327,6 @@ void get_rheolef_form_mass(const char *meshfile, unsigned int nv, unsigned int n
 void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, unsigned int bndindex,
 				      unsigned int nv, 
 				      unsigned int nuin, unsigned int nbin, 
-				      unsigned int *fnu, unsigned int *fnb, 
 				      double *uu, double *ub, double *bu, double *bb,
 				      unsigned int nbc, size_type bcdim, double *bc) {
 
@@ -370,7 +367,6 @@ void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, unsigned int bndinde
 void get_rheolef_form_mass_bdr(const char *meshfile, unsigned int bndindex,
 			       unsigned int nv, 
 			       unsigned int nuin, unsigned int nbin, 
-			       unsigned int *fnu, unsigned int *fnb, 
 			       double *uu, double *ub, double *bu, double *bb,
 			       unsigned int nbc, size_type bcdim, double *bc) {
 
@@ -413,7 +409,6 @@ void get_rheolef_form_mass_bdr(const char *meshfile, unsigned int bndindex,
 
 void get_rheolef_form(const char *formname, const char *meshfile, unsigned int nv, 
 		      unsigned int nuin, unsigned int nbin, 
-		      unsigned int *fnu, unsigned int *fnb, 
 		      double *uu, double *ub, double *bu, double *bb,
 		      unsigned int nbc, size_type bcdim, double *bc) {
 
