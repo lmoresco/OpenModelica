@@ -3,6 +3,9 @@
 
 #include "stdafx.h"
 #include "UpdateEnv.h"
+
+#include <string>
+#include <process.h>
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -16,15 +19,172 @@ BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
+
+
+#pragma warning(disable : 4311)
+
+bool runTar(std::string& file, std::string& dir) {
+	LPSTR strcmd;
+	std::string commandline;
+	STARTUPINFO startinfo;
+	PROCESS_INFORMATION procinfo;
+	startinfo.lpDesktop = NULL;
+	startinfo.lpTitle = NULL;
+	startinfo.cb = sizeof(STARTUPINFO);
+	startinfo.lpReserved = NULL;
+	startinfo.dwFillAttribute = FOREGROUND_RED| BACKGROUND_RED| BACKGROUND_GREEN| BACKGROUND_BLUE;
+	startinfo.dwX = 0;
+	startinfo.dwY = 0;
+	startinfo.cbReserved2 = NULL;
+	startinfo.lpReserved2 = NULL;
+	startinfo.wShowWindow = SW_MINIMIZE;
+	startinfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEFILLATTRIBUTE;
+	CopyFile((dir + "\\" + file + ".tar.gz").c_str(), (dir + "\\" + file + ".tgz").c_str(),FALSE);
+
+	commandline = "\"";
+	commandline += dir + "\\modeq\\win\\gunzip.exe\" ";
+	commandline += file + ".tgz";
+	strcmd = strdup(commandline.c_str());
+	if (CreateProcess(NULL,strcmd,NULL,NULL,FALSE,DETACHED_PROCESS,NULL,dir.c_str(),&startinfo,&procinfo)) {
+		int res;
+		free(strcmd);
+		_cwait(&res, (int)procinfo.hProcess, NULL);
+		if (res != 0)
+			return false;
+	}
+	else {
+		free(strcmd);
+		return false;
+	}
+
+	commandline = "\"";
+	commandline += dir + "\\modeq\\win\\tar.exe\" -xf ";
+	commandline += file + ".tar";
+	strcmd = strdup(commandline.c_str());
+	if (CreateProcess(NULL,strcmd,NULL,NULL,FALSE,DETACHED_PROCESS,NULL,dir.c_str(),&startinfo,&procinfo)) {
+		int res;
+		free(strcmd);
+		_cwait(&res, (int)procinfo.hProcess, NULL);
+		DeleteFile((dir+"\\"+file+".tar").c_str());
+		if (res != 0)
+			return false;
+	}
+	else {
+		DeleteFile((dir+"\\"+file+".tar").c_str());
+		free(strcmd);
+		return false;
+	}
+
+	return true;
+}
+
+int DeleteDir(LPCTSTR lpszName)
+{
+	int ret=0;
+	char name1[256];
+	WIN32_FIND_DATA info;
+    HANDLE hp;
+    char *cp;
+	
+	sprintf(name1, "%s\\*.*",lpszName);
+    hp = FindFirstFile(name1,&info);
+    if(!hp || hp==INVALID_HANDLE_VALUE)
+        return(ret);
+    do
+    {
+		cp = info.cFileName;
+        if(cp[1]==0 && *cp=='.')
+            continue;
+        else if(cp[2]==0 && *cp=='.' && cp[1]=='.')
+            continue;
+        sprintf(name1,"%s\\%s",lpszName,info.cFileName);
+		if(info.dwFileAttributes&FILE_ATTRIBUTE_READONLY)
+		{
+			SetFileAttributes(name1,info.dwFileAttributes&~FILE_ATTRIBUTE_READONLY);
+		}
+		if(info.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY)
+		{
+			DeleteDir(name1);
+		}
+		else
+		{
+			DeleteFile(name1);
+		}
+
+    }
+    while(FindNextFile(hp,&info));
+	FindClose(hp);
+	if(info.dwFileAttributes&FILE_ATTRIBUTE_READONLY)
+	{
+		SetFileAttributes(lpszName,info.dwFileAttributes&~FILE_ATTRIBUTE_READONLY);
+	}
+	if(RemoveDirectory(lpszName))
+	{
+		printf("success\n");
+		ret=1;
+	}	
+	else
+	{
+		printf("error %d\n",GetLastError());
+	}
+	return(ret);
+}
+
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPTSTR    lpCmdLine,
                      int       nCmdShow)
 {
-
+	bool deldir = false;
 	DWORD dwReturnValue;
 	SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
      (LPARAM)"Environment", SMTO_ABORTIFHUNG,5000, &dwReturnValue);
+
+	std::string commands = lpCmdLine;
+	std::string::size_type first = commands.find_first_not_of(" \t");
+	commands = commands.substr(first);
+
+
+	if (commands.substr(0,7) == "/DelDir") {
+		deldir = true;
+		first = commands.find_first_not_of(" \t",7);
+		commands = commands.substr(first);
+	}
+
+	std::string dir;
+	if (commands[0] == '\"') {
+		dir = commands.substr(0,commands.find_first_of('\"',1));
+		commands = commands.substr(dir.length()+1);
+		dir = dir.substr(1);
+	}
+	else {
+		dir = commands.substr(0,commands.find_first_of(" \n"));
+		commands = commands.substr(dir.length()+1);
+	}
+
+	first = commands.find_first_not_of(" \t");
+	while (first != std::string::npos) {
+		std::string file;
+		std::string::size_type next;
+		next = commands.find_first_of(" \t",first);
+		if (next!=std::string::npos) {
+			file = commands.substr(first,next - 1);
+		}
+		else {
+			file = commands.substr(first);
+		}
+		if (deldir) {
+			DeleteDir((dir + "\\" + file).c_str());
+			first = commands.find_first_not_of(" \t",next);
+		}
+		else {
+			if (!runTar(file,dir)) return -1;
+			DeleteFile((dir + "\\" + file).c_str());
+			first = commands.find_first_not_of(" \t",next);
+		}
+	}
+
+	
 
 	return 0;
 }
