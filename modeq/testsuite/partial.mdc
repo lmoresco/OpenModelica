@@ -1,4 +1,4 @@
-
+// This file will make the translater fall into infinite recursion.
 
 
 class A
@@ -9,6 +9,7 @@ class A
     x.y = 1;
   end B;
 
-  B b;
+  // Commented out for now
+  // B b;
   Real y;
 end A;
