@@ -138,6 +138,47 @@ void get_full_rhs(const field & uh, const vec<Float>& bu, vec<Float>& rhs) {
   }
 }
 
+void get_space_node_coords(const space &V, vec<point>& pu, vec<point>& pb) {
+
+  typedef field::size_type size_type;
+  field u(V);
+  pu.resize(u.n_unknown());
+  pb.resize(u.n_blocked());
+  const geo&  g = V.get_geo() ;  
+  const base& b = V.get_base() ;  
+  check_macro (V.n_component() == 1, "interpolate: expect scalar space, get "
+	<< V.n_component() << "D vector-valued space.");
+  size_type coord_dimension = V.get_global_geo().dimension();
+  std::vector<bool> marked (V.size(), false);
+  for (geo::const_iterator iter_K = g.begin(); iter_K != g.end(); iter_K++) {
+      const geo_element& K = *iter_K;
+      size_type nb_dof = b.size(K.type()) ;
+      tiny_vector<space::size_type> dof(nb_dof);
+      V.set_dof(K, dof, 0) ;
+      base::argv Karg (g.begin_node(), K);
+      for(size_type i = 0; i < nb_dof; i++) {
+	  size_type i_dof = dof[i];
+	  if (marked [i_dof]) continue; else marked [i_dof] = true;
+	  point x = b.node (Karg, i, coord_dimension);
+	  size_type idx = V.index(i_dof);
+	  if (V.is_blocked(i_dof))
+	    pb(idx) = x;
+	  else
+	    pu(idx) = x;
+      }
+  }
+}
+
+  std::ostream& operator << (std::ostream& os, vec<point>& pv) {
+    //    copy(pv.begin(), pv.end(), ostream_iterator<point>(os, ", "));
+    vec<point>::iterator i=pv.begin();
+    for(; i!=pv.end(); ++i)
+      os << *i << ", ";
+    return os;
+  }
+
+
+
 #ifdef __cplusplus
 }
 #endif 

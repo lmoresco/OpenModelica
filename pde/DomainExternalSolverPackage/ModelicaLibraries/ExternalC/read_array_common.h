@@ -15,8 +15,8 @@ extern "C" {
 #endif
 
 #ifdef WITHOUT_DYMOLA
-#define ModelicaError(msg) { printf("ModelicaError:%s",msg); exit(3); }
-#define ModelicaMessage(msg) { printf("ModelicaMessage:%s",msg); }
+#define ModelicaError(msg) { printf("ModelicaError (%s:%d): %s", __FILE__, __LINE__, msg); exit(3); }
+#define ModelicaMessage(msg) { printf("ModelicaMessage  (%s:%d): %s", __FILE__, __LINE__, msg); }
 #endif
 
 

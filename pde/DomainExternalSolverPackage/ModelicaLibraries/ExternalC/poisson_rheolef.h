@@ -18,6 +18,9 @@ extern "C" {
 			     MyInteger nbc, MySizeType bcdim, double *bc);
   void get_rheolef_form_size(const char *meshfile, MyInteger nv, MyInteger *nu, MyInteger *nb,
 			     MyInteger nbc, MySizeType bcdim, double *bc);
+  void get_rheolef_form_size_bdr(const char *meshfile, MyInteger bndindex, 
+				 MyInteger nv, MyInteger *nu, MyInteger *nb,
+				 MyInteger nbc, MySizeType bcdim, double *bc);
   void get_rheolef_form_grad_grad(const char *meshfile, MyInteger nv, MyInteger nuin, MyInteger nbin, 
 				  double *uu, double *ub, double *bu, double *bb,
 				  MyInteger nbc, MySizeType bcdim, double *bc);
@@ -25,13 +28,31 @@ extern "C" {
 			     double *uu, double *ub, double *bu, double *bb,
 			     MyInteger nbc, MySizeType bcdim, double *bc) ;
 
-void get_rheolef_unknown_indices(const char *meshfile, MyInteger nv, MyInteger nuin, MyInteger *indices,
-				  MyInteger nbc, MySizeType bcdim, double *bc);
-void get_rheolef_blocked_indices(const char *meshfile, MyInteger nv, MyInteger nbin, MyInteger *indices,
+  void get_rheolef_form_mass_bdr(const char *meshfile, MyInteger bndindex,
+				 MyInteger nv, 
+				 MyInteger nuin, MyInteger nbin, 
+				 double *uu, double *ub, double *bu, double *bb,
+				 MyInteger nbc, MySizeType bcdim, double *bc);
+
+  void get_rheolef_form(const char *formname, 
+			const char *meshfile, MyInteger nv, MyInteger nuin, MyInteger nbin, 
+			double *uu, double *ub, double *bu, double *bb,
+			MyInteger nbc, MySizeType bcdim, double *bc) ;
+
+  void get_rheolef_unknown_indices(const char *meshfile, MyInteger nv, MyInteger nuin, MyInteger *indices,
+				   MyInteger nbc, MySizeType bcdim, double *bc);
+  void get_rheolef_blocked_indices(const char *meshfile, MyInteger nv, MyInteger nbin, MyInteger *indices,
+				   MyInteger nbc, MySizeType bcdim, double *bc);
+  
+  void get_rheolef_blocked_values(const char *meshfile, MyInteger nv, MyInteger nbin, double *values,
 				  MyInteger nbc, MySizeType bcdim, double *bc);
 
-void get_rheolef_blocked_values(const char *meshfile, MyInteger nv, MyInteger nbin, double *values,
-				MyInteger nbc, MySizeType bcdim, double *bc);
+
+  void get_rheolef_interpolate_bdr_coords(const char *meshfile, MyInteger bndindex,
+					  MyInteger nv, 
+					  MyInteger nuin, MyInteger nbin, MySizeType pdim,
+					  double *pu, double *pb,
+					  MyInteger nbc, MySizeType bcdim, double *bc);
 
 
 #ifdef __cplusplus

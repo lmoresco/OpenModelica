@@ -1,20 +1,24 @@
 #include "poisson_rheolef.h"
 #include "read_matrix.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "print.h"
 
 using namespace std;
 
-const char usage[]=" [-a | -m | -g | -fgg | -fmass | -fsize | -uind nbr_unknowns | -bind nbr_blockeds | -bval nbr_blockeds ] bamg-meshfile nv element-type bcfile";
+const char usage[]=" [-a | -m | -g | -fgg | -fmass | -fmassbdr bndindex | -fmassbdrbnd bndindex | -fsize | -fsizebdr bndindex | -form formname | -uind nbr_unknowns | -bind nbr_blockeds | -bval nbr_blockeds | -interpolate ] bamg-meshfile nv element-type bcfile";
 
 int main(unsigned int argc, char**argv) {
   
-  enum Modes { none=0, laplace, mass, g, fh, fgg, fmass, fsize, uindices, bindices, bvalues };
+  enum Modes { none=0, laplace, mass, g, fh, fgg, fmass, fmassbdr, fmassbdrbnd, fsize, fsizebdr, form, uindices, bindices, bvalues, interpolate };
   
   Modes mode=none;
 
-  int nbr_indices=0;
+  unsigned int nbr_indices=0;
+  unsigned int bndindex=0;
   int argi=1;
+  string formname;
 
 #ifdef EXTSOLVERDEBUG
   cout << "arguments are: " << argc << endl;
@@ -43,6 +47,31 @@ int main(unsigned int argc, char**argv) {
     mode=fmass;
   if (! strcmp(argv[argi], "-fsize"))
     mode=fsize;
+  if (! strcmp(argv[argi], "-interpolate")) {
+    mode=interpolate;
+    argi++;
+    bndindex = atoi(argv[argi]);
+  }
+  if (! strcmp(argv[argi], "-fsizebdr")) {
+    mode=fsizebdr;
+    argi++;
+    bndindex = atoi(argv[argi]);
+  }
+  if (! strcmp(argv[argi], "-fmassbdr")) {
+    mode=fmassbdr;
+    argi++;
+    bndindex = atoi(argv[argi]);
+  }
+  if (! strcmp(argv[argi], "-fmassbdrbnd")) {
+    mode=fmassbdrbnd;
+    argi++;
+    bndindex = atoi(argv[argi]);
+  }
+  if (! strcmp(argv[argi], "-form")) {
+    mode=form;
+    argi++;
+    formname = string(argv[argi]);
+  }
   if (! strcmp(argv[argi], "-uind")) {
     mode=uindices;
     argi++;
@@ -66,13 +95,13 @@ int main(unsigned int argc, char**argv) {
     exit(3);
   }
 
-  const char* filename = argv[argi];
+  string filename = string(argv[argi]);
   argi++;
   int nv = atoi(argv[argi]);
   argi++;
-  const char* eltype = argv[argi];
+  string eltype = string(argv[argi]);
   argi++;
-  const char* bcfile = argv[argi];
+  string bcfile = string(argv[argi]);
   argi++;
 
 
@@ -89,20 +118,28 @@ int main(unsigned int argc, char**argv) {
 
   int nbc, bcdim;
 
-  read_matrix_size(bcfile,&nbc,&bcdim);
+  read_matrix_size(bcfile.c_str(),&nbc,&bcdim);
 
   double *bc = new double[nbc*bcdim];
 
-  read_matrix(bcfile,nbc,bcdim,bc);
+  read_matrix(bcfile.c_str(),nbc,bcdim,bc);
+
+  ifstream in(filename.c_str());
   
- 
+  if (!in) {
+    cerr << "Mesh file not found: " << filename.c_str() << endl;
+    exit(1);
+  }
+  in.close();
+
+
   switch (mode) {
 
   case laplace: 
     {
       double *laplace = new double[nv*nv];
     
-      get_rheolef_poisson_laplace(filename, eltype, nv, laplace, nbc, bcdim, bc);
+      get_rheolef_poisson_laplace(filename.c_str(), eltype.c_str(), nv, laplace, nbc, bcdim, bc);
     
       print_matrix(cout, nv, nv, laplace);
     
@@ -114,7 +151,7 @@ int main(unsigned int argc, char**argv) {
     {
       double *mass = new double[nv*nv];
 
-      get_rheolef_poisson_mass(filename, eltype, nv, mass, nbc, bcdim, bc);
+      get_rheolef_poisson_mass(filename.c_str(), eltype.c_str(), nv, mass, nbc, bcdim, bc);
     
       print_matrix(cout, nv, nv, mass);    
     
@@ -126,10 +163,49 @@ int main(unsigned int argc, char**argv) {
     {
       unsigned int nu=0,nb=0;
       unsigned int s[2];
-      get_rheolef_form_size(filename, nv, &nu, &nb, nbc, bcdim, bc);
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
       s[0]=nu;
       s[1]=nb;
       print_vector(cout, 2, s);
+    } 
+    break;
+
+  case fsizebdr: 
+    {
+      unsigned int nu=0,nb=0;
+      unsigned int s[2];
+      get_rheolef_form_size_bdr(filename.c_str(), bndindex, nv, &nu, &nb, nbc, bcdim, bc);
+      s[0]=nu;
+      s[1]=nb;
+      print_vector(cout, 2, s);
+    } 
+    break;
+
+  case form:
+    {
+      unsigned int nu=0,nb=0;
+      unsigned int fnu=0,fnb=0;
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
+      double *uu = new double[nu*nu];
+      double *ub = new double[nu*nb];
+      double *bu = new double[nb*nu];
+      double *bb = new double[nb*nb];
+      get_rheolef_form(formname.c_str(), filename.c_str(), nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
+      
+      cout << "{ 4, " << endl;
+      print_matrix(cout, nu, nu, uu);
+      cout << ", " << endl;
+      print_matrix(cout, nu, nb, ub);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nu, bu);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nb, bb);
+      cout << "}";
+      
+      delete [] uu;
+      delete [] ub;
+      delete [] bu;
+      delete [] bb;
     } 
     break;
 
@@ -137,12 +213,12 @@ int main(unsigned int argc, char**argv) {
     {
       unsigned int nu=0,nb=0;
       unsigned int fnu=0,fnb=0;
-      get_rheolef_form_size(filename, nv, &nu, &nb, nbc, bcdim, bc);
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
       double *uu = new double[nu*nu];
       double *ub = new double[nu*nb];
       double *bu = new double[nb*nu];
       double *bb = new double[nb*nb];
-      get_rheolef_form_grad_grad(filename, nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
+      get_rheolef_form_grad_grad(filename.c_str(), nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
       
       cout << "{ 4, " << endl;
       print_matrix(cout, nu, nu, uu);
@@ -165,12 +241,69 @@ int main(unsigned int argc, char**argv) {
     {
       unsigned int nu=0,nb=0;
       unsigned int fnu=0,fnb=0;
-      get_rheolef_form_size(filename, nv, &nu, &nb, nbc, bcdim, bc);
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
       double *uu = new double[nu*nu];
       double *ub = new double[nu*nb];
       double *bu = new double[nb*nu];
       double *bb = new double[nb*nb];
-      get_rheolef_form_mass(filename, nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
+      get_rheolef_form_mass(filename.c_str(), nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
+      
+      cout << "{ 4, " << endl;
+      print_matrix(cout, nu, nu, uu);
+      cout << ", " << endl;
+      print_matrix(cout, nu, nb, ub);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nu, bu);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nb, bb);
+      cout << "}";
+      
+      delete [] uu;
+      delete [] ub;
+      delete [] bu;
+      delete [] bb;
+    } 
+    break;
+
+
+  case fmassbdr:
+    {
+      unsigned int nu=0,nb=0;
+      unsigned int fnu=0,fnb=0;
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
+      double *uu = new double[nu*nu];
+      double *ub = new double[nu*nb];
+      double *bu = new double[nb*nu];
+      double *bb = new double[nb*nb];
+      get_rheolef_form_mass_bdr(filename.c_str(), bndindex, nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
+      
+      cout << "{ 4, " << endl;
+      print_matrix(cout, nu, nu, uu);
+      cout << ", " << endl;
+      print_matrix(cout, nu, nb, ub);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nu, bu);
+      cout << ", " << endl;
+      print_matrix(cout, nb, nb, bb);
+      cout << "}";
+      
+      delete [] uu;
+      delete [] ub;
+      delete [] bu;
+      delete [] bb;
+    } 
+    break;
+
+  case fmassbdrbnd:
+    {
+      unsigned int nu=0,nb=0;
+      unsigned int fnu=0,fnb=0;
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
+      double *uu = new double[nu*nu];
+      double *ub = new double[nu*nb];
+      double *bu = new double[nb*nu];
+      double *bb = new double[nb*nb];
+      get_rheolef_form_mass_bdr_on_bnd(filename.c_str(), bndindex, nv, nu, nb, &fnu, &fnb, uu, ub, bu, bb, nbc, bcdim, bc);
       
       cout << "{ 4, " << endl;
       print_matrix(cout, nu, nu, uu);
@@ -193,7 +326,7 @@ int main(unsigned int argc, char**argv) {
     {
       double *g = new double[nv];
       
-      get_rheolef_poisson_g(filename, eltype, nv, g, nbc, bcdim, bc);
+      get_rheolef_poisson_g(filename.c_str(), eltype.c_str(), nv, g, nbc, bcdim, bc);
       
       print_vector(cout, nv, g);
       
@@ -205,7 +338,7 @@ int main(unsigned int argc, char**argv) {
     {
       double *fh = new double[nv];
       
-      get_rheolef_poisson_fh(filename, eltype, nv, fh, nbc, bcdim, bc);
+      get_rheolef_poisson_fh(filename.c_str(), eltype.c_str(), nv, fh, nbc, bcdim, bc);
       
       print_vector(cout, nv, fh);
       
@@ -216,7 +349,7 @@ int main(unsigned int argc, char**argv) {
   case uindices:
     {
       int *ind = new int[nbr_indices];
-      get_rheolef_unknown_indices(filename, eltype, nv, nbr_indices, ind, nbc, bcdim, bc);
+      get_rheolef_unknown_indices(filename.c_str(), eltype.c_str(), nv, nbr_indices, ind, nbc, bcdim, bc);
       
       print_vector(cout, nbr_indices, ind);
       
@@ -227,7 +360,7 @@ int main(unsigned int argc, char**argv) {
   case bindices:
     {
       int *ind = new int[nbr_indices];
-      get_rheolef_blocked_indices(filename, eltype, nv, nbr_indices, ind, nbc, bcdim, bc);
+      get_rheolef_blocked_indices(filename.c_str(), eltype.c_str(), nv, nbr_indices, ind, nbc, bcdim, bc);
       
       print_vector(cout, nbr_indices, ind);
       
@@ -238,7 +371,7 @@ int main(unsigned int argc, char**argv) {
   case bvalues:
     {
       double *val = new double[nbr_indices];
-      get_rheolef_blocked_values(filename, eltype, nv, nbr_indices, val, nbc, bcdim, bc);
+      get_rheolef_blocked_values(filename.c_str(), eltype.c_str(), nv, nbr_indices, val, nbc, bcdim, bc);
       
       print_vector(cout, nbr_indices, val);
       
@@ -246,6 +379,27 @@ int main(unsigned int argc, char**argv) {
     } 
     break;
 
+  case interpolate: 
+    {
+      double v;
+      unsigned int nu, nb;
+      get_rheolef_form_size_bdr(filename.c_str(), bndindex, nv, &nu, &nb, nbc, bcdim, bc);
+      const int pdim = 2;
+      double *pu = new double[nu*pdim];
+      double *pb = new double[nb*pdim];
+
+      get_rheolef_interpolate_bdr_coords(filename.c_str(), bndindex, nv, nu, nb, pdim, pu, pb, nbc, bcdim, bc);
+
+      cout << "{ 2, " << endl;
+      print_matrix(cout, nu, pdim, pu);
+      cout << ", " << endl;
+      print_matrix(cout, nb, pdim, pb);
+      cout << "}" << endl;
+
+      delete [] pu;
+      delete [] pb;    
+    } 
+    break;
 
   case none:
   default:

@@ -34,6 +34,10 @@ void get_full_matrix_mass(const form& a, dns<Float>& M);
 void get_full_rhs(const field & uh, const vec<Float>& bu, vec<Float>& rhs);
 void get_unknown_indices(const field &uh, vector<int> &indices);
 void get_blocked_indices(const field &uh, vector<int> &indices);
+void get_space_node_coords(const space &V, vec<point> & pu, vec<point> & pb);
+
+
+  std::ostream& operator << (std::ostream& os, vec<point>& pv);
 
 
 #endif // _RHEOLEF_COMMON_H_

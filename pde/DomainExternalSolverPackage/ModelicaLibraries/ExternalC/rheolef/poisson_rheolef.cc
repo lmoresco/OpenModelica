@@ -20,7 +20,6 @@ struct problem {
   space Vh;
   form a;
   form m;
-  form mleft;
   field uh;
   field fh;
   vec<Float> bu;
@@ -52,7 +51,6 @@ struct problem {
 
     a = form(Vh, Vh, "grad_grad");
     m = form(Vh, Vh, "mass");
-    mleft = form(Vh, Vh, "mass");
     fh = field(Vh, fhval);
     uh = field(Vh);
 
@@ -122,8 +120,9 @@ void get_rheolef_poisson_mass(const char *meshfile, const char *eltype, size_typ
   struct problem p(meshfile, eltype, nv, nbc, bcdim, bc);
 
   dns<Float> a_all;
+  form mleft(p.Vh, p.Vh, "mass");
 
-  get_full_matrix_mass(p.mleft, a_all);
+  get_full_matrix_mass(mleft, a_all);
   ostringstream msgstr1,msgstr2;
   msgstr1 << "Matrix row size doesn't much number of vertices: " << a_all.nrow() << " != " << nv << ends;
   msgstr2 << "Matrix column size doesn't much number of vertices: " << a_all.ncol() << " != " << nv << ends;
@@ -196,11 +195,75 @@ void get_rheolef_form_size(const char *meshfile, unsigned int nv, unsigned int *
   
 }
 
+
+class const_function {
+public:
+  typedef Float result_type;
+  result_type c;
+  const_function(result_type val=0.0) : c(val) {}
+  result_type operator () (const point &p) { return c; }
+};
+
+void get_rheolef_interpolate_bdr_coords(const char *meshfile, unsigned int bndindex, unsigned int nv, 
+					unsigned int nu, unsigned int nb,
+					size_type pdim, 
+					double *pu, double *pb,
+					unsigned int nbc, size_type bcdim, double *bc) {
+
+  MY_ASSERT( bndindex > 0, "Illegal boundary index in get_rheolef_form_mass_bdr");
+  MY_ASSERT( bndindex <= nbc, "Illegal boundary index in get_rheolef_form_mass_bdr");
+
+  struct problem p(meshfile, "P2", nv, nbc, bcdim, bc);
+  
+  const domain& boundary = p.omega.get_domain(bndindex-1);
+
+  space Wh(p.omega, boundary, "P1");
+  // form mb(Wh, p.Vh, "mass_bdr");
+  vec<point> vpu, vpb;
+  get_space_node_coords(Wh, vpu, vpb);
+
+  MY_ASSERT( vpu.size() == nu, "Unknown size is incorrect in get_rheolef_interpolate_bdr_coords");
+  MY_ASSERT( vpb.size() == nb, "Blocked size is incorrect in get_rheolef_interpolate_bdr_coords");
+
+  for (unsigned int i=0; i < nu; i++) {
+    const point& p=vpu(i);
+    pu[i*pdim+0] = p(0);
+    pu[i*pdim+1] = p(1);    
+  }
+
+  for (unsigned int i=0; i < nb; i++) {
+    const point& p=vpb(i);
+    pb[i*pdim+0] = p(0);
+    pb[i*pdim+1] = p(1);    
+  }
+    
+}
+
+
+void get_rheolef_form_size_bdr(const char *meshfile, unsigned int bndindex, 
+			       unsigned int nv, unsigned int *nu, unsigned int *nb,
+			       unsigned int nbc, size_type bcdim, double *bc) {
+
+  MY_ASSERT( bndindex > 0, "Illegal boundary index in get_rheolef_form_mass_bdr");
+  MY_ASSERT( bndindex <= nbc, "Illegal boundary index in get_rheolef_form_mass_bdr");
+
+  struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
+
+  const domain& boundary = p.omega.get_domain(bndindex-1);
+
+  space Wh(p.omega, boundary, "P1");
+  // form mb(Wh, p.Vh, "mass_bdr");
+  field gh = interpolate(Wh, const_function());
+  *nu = Wh.n_unknown();
+  *nb = Wh.n_blocked();
+  
+}
+
 void get_rheolef_form_grad_grad(const char *meshfile, unsigned int 
 				nv, unsigned int nuin, unsigned int nbin, 
 				unsigned int *fnu, unsigned int *fnb, 
 				double *uu, double *ub, double *bu, double *bb, 
-				  unsigned int nbc, unsigned int bcdim, double *bc) 
+				unsigned int nbc, unsigned int bcdim, double *bc) 
 {
 
   struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
@@ -235,6 +298,124 @@ void get_rheolef_form_mass(const char *meshfile, unsigned int nv, unsigned int n
 			   unsigned int *fnu, unsigned int *fnb, 
 			   double *uu, double *ub, double *bu, double *bb,
 			   unsigned int nbc, size_type bcdim, double *bc) {
+
+  struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
+
+  unsigned int nu = p.m.uu.nrow();
+  unsigned int nb = p.m.bu.nrow();
+
+  MY_ASSERT( nu == nuin, "Number of unknowns mismatch in get_rheolef_form_mass");
+  MY_ASSERT( nb == nbin, "Number of blockeds mismatch in get_rheolef_form_mass");
+  
+  for (unsigned int i=0; i < nu; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      uu[nu*i + j] = p.m.uu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      ub[nb*i + j] = p.m.ub(i,j);
+    }
+  }
+
+  for (unsigned int i=0; i < nb; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      bu[nu*i + j] = p.m.bu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      bb[nb*i + j] = p.m.bb(i,j);
+    }
+  }
+}
+
+void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, unsigned int bndindex,
+				      unsigned int nv, 
+				      unsigned int nuin, unsigned int nbin, 
+				      unsigned int *fnu, unsigned int *fnb, 
+				      double *uu, double *ub, double *bu, double *bb,
+				      unsigned int nbc, size_type bcdim, double *bc) {
+
+  MY_ASSERT( bndindex > 0, "Illegal boundary index in get_rheolef_form_mass_bdr_on_bnd");
+  MY_ASSERT( bndindex <= nbc, "Illegal boundary index in get_rheolef_form_mass_bdr_on_bnd");
+  
+  struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
+
+  const domain& boundary = p.omega.get_domain(bndindex-1);
+
+  form ab(p.Vh, p.Vh, "mass_bdr", boundary);
+
+  unsigned int nu = ab.uu.nrow();
+  unsigned int nb = ab.bu.nrow();
+
+  MY_ASSERT( nu == nuin, "Number of unknowns mismatch in get_rheolef_form_mass_bdr_on_bnd");
+  MY_ASSERT( nb == nbin, "Number of blockeds mismatch in get_rheolef_form_mass_bdr_on_bnd");
+  
+  for (unsigned int i=0; i < nu; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      uu[nu*i + j] = ab.uu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      ub[nb*i + j] = ab.ub(i,j);
+    }
+  }
+
+  for (unsigned int i=0; i < nb; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      bu[nu*i + j] = ab.bu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      bb[nb*i + j] = ab.bb(i,j);
+    }
+  }
+}
+
+void get_rheolef_form_mass_bdr(const char *meshfile, unsigned int bndindex,
+			       unsigned int nv, 
+			       unsigned int nuin, unsigned int nbin, 
+			       unsigned int *fnu, unsigned int *fnb, 
+			       double *uu, double *ub, double *bu, double *bb,
+			       unsigned int nbc, size_type bcdim, double *bc) {
+
+  MY_ASSERT( bndindex > 0, "Illegal boundary index in get_rheolef_form_mass_bdr");
+  MY_ASSERT( bndindex <= nbc, "Illegal boundary index in get_rheolef_form_mass_bdr");
+
+  struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
+
+  const domain& boundary = p.omega.get_domain(bndindex-1);
+
+  space Wh(p.omega, boundary, "P1");
+  form mb(Wh, p.Vh, "mass_bdr");
+
+  unsigned int nu = mb.uu.nrow();
+  unsigned int nb = mb.bu.nrow();
+
+  MY_ASSERT( nu == nuin, "Number of unknowns mismatch in get_rheolef_form_mass_bdr");
+  MY_ASSERT( nb == nbin, "Number of blockeds mismatch in get_rheolef_form_mass_bdr");
+  
+  for (unsigned int i=0; i < nu; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      uu[nu*i + j] = mb.uu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      ub[nb*i + j] = mb.ub(i,j);
+    }
+  }
+
+  for (unsigned int i=0; i < nb; i++) {
+    for (unsigned int j=0; j< nu; j++) {
+      bu[nu*i + j] = mb.bu(i,j);
+    }
+    for (unsigned int j=0; j< nb; j++) {
+      bb[nb*i + j] = mb.bb(i,j);
+    }
+  }
+}
+
+
+
+void get_rheolef_form(const char *formname, const char *meshfile, unsigned int nv, 
+		      unsigned int nuin, unsigned int nbin, 
+		      unsigned int *fnu, unsigned int *fnb, 
+		      double *uu, double *ub, double *bu, double *bb,
+		      unsigned int nbc, size_type bcdim, double *bc) {
 
   struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
 

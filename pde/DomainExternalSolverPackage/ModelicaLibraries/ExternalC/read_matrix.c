@@ -274,3 +274,24 @@ void write_vector(const char *filename, int n, double *v)
   WRITECLOSECURLY(f);
   fclose(f);
 }
+
+void add_matrix(int n1, int n2, double *a, double *b, double *m) {
+  unsigned int i,j;
+  for (i=0; i<n1; i++)
+    for (j=0; j<n2; j++)
+      m[i*n2+j]=a[i*n2+j]+b[i*n2+j];
+}
+
+void mult_scalar_matrix(int n1, int n2, double a, double *b, double *m) {
+  unsigned int i,j;
+  for (i=0; i<n1; i++)
+    for (j=0; j<n2; j++)
+      m[i*n2+j]=a*b[i*n2+j];
+}
+
+void set_scalar_matrix(int n1, int n2, double a, double *m) {
+  unsigned int i,j;
+  for (i=0; i<n1; i++)
+    for (j=0; j<n2; j++)
+      m[i*n2+j]=a;
+}

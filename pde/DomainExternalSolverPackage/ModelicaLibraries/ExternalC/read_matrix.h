@@ -21,6 +21,9 @@ void read_vector_int(const char *filename, int n, MyInteger *v);
 void write_matrix(const char *filename, int n1, int n2, double *m);
 void write_square_matrix(const char *filename, int n, double *m);
 void write_vector(const char *filename, int n, double *v);
+void add_matrix(int n1, int n2, double *a, double *b, double *m);
+void mult_scalar_matrix(int n1, int n2, double a, double *b, double *m);
+void set_scalar_matrix(int n1, int n2, double a, double *m);
 
 #ifdef __cplusplus
 }
