@@ -42,11 +42,11 @@ end ConnectHierarchical1;
 // equation
 //   a.c2.f = 2.0;
 //   a.c1.e = a.b.c.e;
-//   (-a.c1.f) + a.b.c.f = 0.0;
+//   -a.c1.f + a.b.c.f = 0.0;
 //   c.f = 1.0;
 //   c.e = 1.0;
 //   c.e = a.c1.e;
 //   a.c1.e = a.c2.e;
-//   (-c.f) + a.c1.f + a.c2.f = 0.0;
+//   -c.f + a.c1.f + a.c2.f = 0.0;
 //   a.b.c.f = 0.0;
 // end ConnectHierarchical1;

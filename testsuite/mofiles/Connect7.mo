@@ -26,9 +26,9 @@ end Connect7;
 // Real c[2].x;
 // Real cx.x;
 // Real cy.x;
-// equation
-//   cx.x = 2.0;
-//   cy.x = time;
-//   (-c[1].x) + (-cx.x) + (-cy.x) = 0.0;
-//   c[2].x = 0.0;
+// equation 
+//  cx.x = 2.0;
+//  cy.x = time;
+//  -c[2].x + -cy.x = 0.0;
+//  -c[1].x + -cx.x = 0.0;
 // end Connect7;

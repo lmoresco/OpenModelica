@@ -29,6 +29,6 @@ end Connect8;
 //   cx.x = 1.0;
 //   cy.x = time;
 //   c[1].x = time;
-//   (-c[2].x) + (-cx.x) + (-cy.x) = 0.0;
+//   -c[2].x + -cx.x + -cy.x = 0.0;
 //   c[1].x = 0.0;
 // end Connect8;

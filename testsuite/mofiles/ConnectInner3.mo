@@ -45,10 +45,10 @@ end ConnectInner3;
 // Real a.my.f;
 // equation
 //   b.a.my.f = 10.0 + b.a.my.e;
-//   b.a.global.c.f + (-b.a.my.f) = 0.0;
+//   b.a.global.c.f + -b.a.my.f = 0.0;
 //   b.a.global.c.e = b.a.my.e;
 //   a.my.f = 10.0 + a.my.e;
-//   a.global.c.f + (-a.my.f) = 0.0;
+//   a.global.c.f + -a.my.f = 0.0;
 //   a.global.c.e = a.my.e;
 //   global.c.e = 10.0;
 //   global.c.f = 0.0;

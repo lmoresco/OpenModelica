@@ -43,10 +43,10 @@ end ConnectInner1;
 // Real a.my.f;
 // equation
 //   b.a.my.f = 10.0 + b.a.my.e;
-//   (-b.a.global.f) + (-b.a.my.f) = 0.0;
+//   -b.a.global.f + -b.a.my.f = 0.0;
 //   b.a.global.e = b.a.my.e;
 //   a.my.f = 10.0 + a.my.e;
-//   (-a.global.f) + (-a.my.f) = 0.0;
+//   -a.global.f + -a.my.f = 0.0;
 //   a.global.e = a.my.e;
 //   global.e = 10.0;
 //   global.f = 0.0;
