@@ -21,7 +21,7 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
-    system "../../modeq/modeq $f >$log 2>&1";
+    system "../../../modeq/modeq $f >$log 2>&1";
 #    system "../modeq/modeq +d=daedump $f >$log 2>&1";
 #    system "../modeq $f >$log 2>&1";
 #    system "/home/x97davka/modeq/modeq $f >$log 2>&1";
@@ -285,7 +285,7 @@ while ($#ARGV >= 0) {
 # Check for no file args
 if ($filearg == 0) {
     system "mkdir /tmp/log-drmodelica";
-    for (glob '*.mo ') { dofile $_; }
+    for (glob '*.mo') { dofile $_; }
     system "rm -rf /tmp/log-drmodelica";
 }
 
