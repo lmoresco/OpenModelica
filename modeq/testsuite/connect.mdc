@@ -7,7 +7,8 @@ connector A
 end A;
 
 model World
-  A a,b;
+  A a,b,c;
 equation
   connect(a,b);
+  connect(b,c);
 end World;
