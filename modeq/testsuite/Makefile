@@ -1,15 +1,19 @@
 TEST=./rtest
 
 TESTFILES=*.mo
-DISTFILES=$(TESTFILES) VERSION modtest.texi modtest.info modtest.ps
+DOCFILES=modtest.texi cases.texi VERSION.texi
+DISTFILES=$(TESTFILES) VERSION modtest.texi \
+	Makefile rtest cases.texi index.html
+HTMLFILE=modtest_toc.html
 
 TEXI2DVI=texi2dvi
+TEXI2HTML=texi2html -split_chapter
 MAKEINFO=makeinfo
 
 VERSION = $(shell cat VERSION)
 
 .PHONY : default
-default : modtest.dvi modtest.info
+default : modtest.ps modtest.info $(HTMLFILE)
 
 .PHONY : test
 test :
@@ -21,30 +25,33 @@ test :
 keywords :
 	$(TEST) -l $(TESTFILES)
 
-modtest.dvi : modtest.texi cases.texi VERSION.texi
+modtest.dvi : $(DOCFILES)
 	$(TEXI2DVI) $<
 
 modtest.ps : modtest.dvi
 	dvips -o $@ $<
 
-modtest.info : modtest.texi cases.texi VERSION.texi
+modtest.info : $(DOCFILES)
 	$(MAKEINFO) $<
 
-cases.texi :
+$(HTMLFILE) : $(DOCFILES)
+	$(TEXI2HTML) $<
+
+cases.texi : $(TESTFILES)
 	$(RM) $@
 	cases=`$(TEST) -L $(TESTFILES) | sort`; \
 	echo "@menu" >> $@; \
 	for c in $$cases; do echo "* $$c::" >> $@; done; \
 	echo "@end menu" >> $@; \
-	set Testcases $$cases ""; \
+	set "Test Cases" $$cases ""; \
 	while [ "$$2" != "" ] ; do \
-		echo ""                 	   >> $@; \
-		echo "@page"                       >> $@; \
-		echo "@node $$2,$$3,$$1,Testcases" >> $@; \
-		echo "@appendixsec $$2" 	   >> $@; \
-		echo "@example"         	   >> $@; \
-		echo "@include $$2.mo"  	   >> $@; \
-		echo "@end example"     	   >> $@; \
+		echo ""                 	    >> $@; \
+		echo "@page"                        >> $@; \
+		echo "@node $$2,$$3,$$1,Test Cases" >> $@; \
+		echo "@appendixsec $$2" 	    >> $@; \
+		echo "@example"         	    >> $@; \
+		echo "@include $$2.mo"  	    >> $@; \
+		echo "@end example"     	    >> $@; \
 		shift ; \
 	done
 
