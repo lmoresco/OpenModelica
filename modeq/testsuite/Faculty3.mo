@@ -27,7 +27,7 @@ end Faculty3;
 // algorithm
 //   y := 1;
 //   i := 2;
-//   while (i <= x) loop
+//   while i <= x loop
 //     y := i * y;
 //     i := i + 1;
 //   end while;

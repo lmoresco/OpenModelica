@@ -21,9 +21,10 @@ end Faculty2;
 //   Integer x;
 //   Integer y;
 //   Integer i;
+// equation
 // algorithm
 //   y := 1;
-//   for i in 2:x loop
+//   for i in (2:x) loop
 //     y := i * y;
 //   end for;
 // end Faculty2;

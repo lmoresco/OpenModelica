@@ -1,5 +1,5 @@
 // name:     EquationFor1
-// keywords: equation
+// keywords: equation,array
 // status:   correct
 // 
 // Test for loops in equations.

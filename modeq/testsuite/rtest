@@ -49,9 +49,9 @@ sub runone
     open(RES,">$tmp1");
     open(LOG,"<$log");
     while(<LOG>) {
-	s/^ *//;
-	s/  */ /;
 	if (/^fclass/../^end/) {
+	    s/^[ \t]*//;
+	    s/[ \t]+/ /;
 	    print RES $_;
 	}
     }
@@ -107,12 +107,12 @@ sub dofile
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	s/^ *//;
-	s/  */ /;
 	if (/^\/\/[ \\|]([a-z]*): *(.*)$/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
+	    s/^[ \t]*//;
+	    s/[ \t]+/ /;
 	    print OUT substr($_,3);
 	}
     }

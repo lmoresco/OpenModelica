@@ -1,9 +1,11 @@
-//|name:     ConstructParameters
-//|keywords: declaration,algorithm
-//|status:   correct
+// name:     ConstructParameters
+// keywords: declaration,algorithm,unknown
+// status:   incorrect
 // 
 // A set of parameters can be computed from a set of other parameters 
 // by using a function call.
+//
+// david: whereever did you come up with this syntax?
 //
 
 function fc
@@ -20,7 +22,7 @@ protected
   parameter Real (p3,p4) = fc(p1,p2);
 end ConstructParameters;
 
-// fmodel ConstructParameters
+// fclass ConstructParameters
 //   parameter Real p1;
 //   parameter Real p2;
 // protected
