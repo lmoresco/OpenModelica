@@ -11,12 +11,13 @@ algorithm
   r := 2.0 * x;
 end f;
 
-model M
+model Function1
   Real x, y, z;
 equation
+  x = y;
   x = f(z);
   y = f(z);
-end M;
+end Function1;
 
 // Variables:
 //
