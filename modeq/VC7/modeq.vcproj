@@ -331,6 +331,9 @@ nmake -f MakeFile.win32
 				RelativePath="..\prefix.c">
 			</File>
 			<File
+				RelativePath="..\simcodegen.c">
+			</File>
+			<File
 				RelativePath="..\staticexp.c">
 			</File>
 			<File
@@ -436,6 +439,9 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\prefix.h">
+			</File>
+			<File
+				RelativePath="..\simcodegen.h">
 			</File>
 			<File
 				RelativePath="..\staticexp.h">
@@ -1102,6 +1108,9 @@ nmake -f MakeFile.win32
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\simcodegen.rml">
 			</File>
 			<File
 				RelativePath="..\socket.rml">
