@@ -42,12 +42,17 @@ public:
 	// Generated message map functions
 protected:
 	//{{AFX_MSG(CMoshEdit)
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnShowWindow( BOOL, UINT );
+	afx_msg void OnSetFocus( CWnd* );
 	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	//}}AFX_MSG
 
 	DECLARE_MESSAGE_MAP()
 private:
+	bool m_ProcessCreated;
+	UINT_PTR m_Timer;
 	CHistory m_History;
 	CORBA::ORB_var orb;
 	ModeqCommunication_var client; 

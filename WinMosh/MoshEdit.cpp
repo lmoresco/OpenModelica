@@ -21,8 +21,8 @@ extern CWinMoshApp theApp;
 
 CMoshEdit::CMoshEdit()
 {
+	m_ProcessCreated = false;
 	m_History.LoadHistory("mosh_history");
-	StartServer();
 }
 
 CMoshEdit::~CMoshEdit()
@@ -41,6 +41,8 @@ CMoshEdit::~CMoshEdit()
 
 BEGIN_MESSAGE_MAP(CMoshEdit, CEdit)
 	//{{AFX_MSG_MAP(CMoshEdit)
+	ON_WM_TIMER()
+	ON_WM_SHOWWINDOW()
 	ON_WM_KEYUP()
 	ON_WM_LBUTTONDOWN()
 	//}}AFX_MSG_MAP
@@ -49,6 +51,44 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CMoshEdit message handlers
 
+
+
+void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
+{
+	if (nIDEvent != 1) return;
+
+	if (client==NULL) {
+		CString txt;
+		txt += "Starting server.\r\n";
+		SetWindowText(txt);
+		SetSel(txt.GetLength(),txt.GetLength());
+
+		StartServer();
+		if (client==NULL) {
+			txt += "Unable to start server.\r\n";
+			SetWindowText(txt);
+			SetSel(txt.GetLength(),txt.GetLength());
+		}
+		else
+		{ 
+			KillTimer(m_Timer);
+			txt += ">> ";
+			SetWindowText(txt);
+			SetSel(txt.GetLength(),txt.GetLength());
+		}
+	}
+}
+
+void CMoshEdit::OnShowWindow( BOOL bShow, UINT )
+{
+	if (bShow)
+		m_Timer = SetTimer(1,100,NULL);
+}
+
+void CMoshEdit::OnSetFocus( CWnd* wnd)
+{
+
+}
 
 void CMoshEdit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) 
 {
@@ -150,7 +190,11 @@ BOOL CMoshEdit::PreTranslateMessage(MSG* pMsg)
 		case VK_DOWN:
 			return TRUE;
 			break;
+		case VK_RETURN:
+			SetSel(GetWindowTextLength(),GetWindowTextLength());
+			break;
 		case VK_LEFT:
+		case VK_BACK:
 			GetSel(start, end);
 			if ((start - LineIndex()) <= 3)
 				return TRUE;
@@ -189,25 +233,25 @@ bool CMoshEdit::StartServer(void)
 	GetTempPath(1024,tmpPath);
 
 	sprintf(uri, "%sopenmodelica.objid",tmpPath);
-	HANDLE hFile = FindFirstFile(uri,&data);
-	if (hFile == INVALID_HANDLE_VALUE) {
-		SpawnServer();
-		CString str;
-		str.Format("Objfile not found: %s", uri);
-//		AfxMessageBox(str);
-		Sleep(1500);
-	}
-	else {
-		FindClose(hFile);
+
+	if (!m_ProcessCreated) {
+		HANDLE hFile = FindFirstFile(uri,&data);
+		if (hFile == INVALID_HANDLE_VALUE) {
+			SpawnServer();
+			CString str;
+			str.Format("Objfile not found: %s", uri);
+		}
+		else {
+			FindClose(hFile);
+		}
 	}
 
 	sprintf(uri, "file://%sopenmodelica.objid",tmpPath);
 	CString sUri = uri;
 	sUri.Replace("\\","/");
-//	AfxMessageBox(CString("uri=")+sUri);
 	bool notStarted = true;
 	int count = 0;
-	while (notStarted && count < 2) {
+	while (notStarted && count < 1) {
 		try {
 			CORBA::Object_var obj = orb->string_to_object(sUri);
 			if (!CORBA::is_nil(obj)) {
@@ -221,12 +265,11 @@ bool CMoshEdit::StartServer(void)
 			std::ostringstream s;
 			e._print(s);
 			CString ex = s.str().c_str();
-//			AfxMessageBox(ex);
+			client = NULL;
 		}
 		
 		count ++;
 		if (notStarted) SpawnServer();
-		Sleep(1500);
 	}
 
 	return !notStarted;
@@ -237,12 +280,26 @@ void CMoshEdit::SpawnServer(void)
 	CString MoshHome;
 	STARTUPINFO startinfo;
 	PROCESS_INFORMATION procinfo;
-	GetStartupInfo(&startinfo);
+//	GetStartupInfo(&startinfo);
+	startinfo.lpDesktop = NULL;
+	startinfo.lpTitle = NULL;
+	startinfo.cb = sizeof(STARTUPINFO);
+	startinfo.lpReserved = NULL;
+	startinfo.dwFillAttribute = FOREGROUND_RED| BACKGROUND_RED| BACKGROUND_GREEN| BACKGROUND_BLUE;
+	startinfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEFILLATTRIBUTE;
+	startinfo.dwX = 0;
+	startinfo.dwY = 0;
+	startinfo.cbReserved2 = NULL;
+	startinfo.lpReserved2 = NULL;
 	startinfo.wShowWindow = SW_MINIMIZE;
 	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
-		MoshHome = CString("\"") + MoshHome + "\\..\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
+		MoshHome = MoshHome.Left(MoshHome.GetLength()-5);
+		MoshHome = CString("\"") + MoshHome + "\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
 		
-		CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,0,NULL,NULL,&startinfo,&procinfo);
-		spawnl(_P_NOWAIT, MoshHome, MoshHome, "+d=interactiveCorba", NULL);
+		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,0,NULL,NULL,&startinfo,&procinfo))
+		{
+			m_ProcessCreated = true;
+			Sleep(1000);
+		};
 	}
 }
