@@ -1,34 +1,38 @@
 // name:     Array5
-// keywords: array
+// keywords: array,modification
 // status:   correct
 // 
-// This is a variant of Array1, but with the equations in an equation section.
-// 
+// This is a test of values in types.
+// Note that the fill-operation is here generalized to non-scalars
+// in the flat model.
 
 model Array5
-  Integer x[5];
-  Integer y[3];
+  type T1 = Real[3](start={1,0,0});
+  type T2 = T1[2];
+  T2 x;
+  T1 y;
+  T1[4] z[5];
 equation
-  x = [1,2,3,4,5];
-  y = 1:3;
+  for i in 1:4 loop 
+    for j in 1:5 loop
+      z[j,i,:]=y;
+    end for;
+  end for;
+  der(y)=-y;
+  x={y,der(y)};
 end Array5;
 
-// fclass Array5
-//   Integer x[1];
-//   Integer x[2];
-//   Integer x[3];
-//   Integer x[4];
-//   Integer x[5];
-//   Integer y[1];
-//   Integer y[2];
-//   Integer y[3];
-// equation
-//   x[1] = 1;
-//   x[2] = 2;
-//   x[3] = 3;
-//   x[4] = 4;
-//   x[5] = 5;
-//   y[1] = (1:3)[1];
-//   y[2] = (1:3)[2];
-//   y[3] = (1:3)[3];
-// end Array5;
+// flatmodel Array5
+//
+// Real x[2, 3](start = fill({1, 0, 0}, size(x, 1)));
+// Real y[3](start = {1, 0, 0});
+// Real z[5, 4, 3](start = fill({1, 0, 0}, size(z, 1), size(z, 2)));
+//
+//equation
+//  for i in (1:4) loop
+//    for j in (1:5) loop
+//      z[j, i, :] = y;
+//    end for;
+//  end for;
+//  der(y) =  -y;
+//  x = {y, der(y)};

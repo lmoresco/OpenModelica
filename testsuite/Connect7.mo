@@ -13,22 +13,19 @@ connector C
 end C;
 
 class Connect7
-  parameter Integer N = 2;
-  C c[3], cx, cy;
+  parameter Integer N = 1;
+  C c[2], cx(x=2), cy(x=time);
 equation
   connect(c[N],cx);
-  connect(c[3],cy);
+  connect(c[2],cy);
 end Connect7;
 
 // fclass Connect7
-//   parameter Integer N;
 //   Real c[1].x;
 //   Real c[2].x;
-//   Real c[3].x;
-//   Real cx.x;
-//   Real cy.x;
+//   Real cx.x=x;
+//   Real cy.x=time;
 // equation
-//   N = 2;
-//   (-c[2].x) + (-cx.x) = 0.0;
-//   (-c[3].x) + (-cy.x) = 0.0;
+//   (-c[1].x) + (-cx.x) = 0.0;
+//   (-c[2].x) + (-cy.x) = 0.0;
 // end Connect7;

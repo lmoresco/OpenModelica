@@ -1,6 +1,6 @@
 // name:     ArrayModification9
 // keywords: array,modification
-// status:   correct
+// status:   correct, incomplete model
 // 
 // Full indexing of a multidimensional array.
 // 
@@ -19,4 +19,4 @@ end ArrayModification9;
 //   Real a.x[2,2];
 // equation
 //   a.x[1,2] = 2.0;
-// end ArrayModification9;
+// end ArrayModification9

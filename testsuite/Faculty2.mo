@@ -9,7 +9,6 @@
 function Faculty2
   input Integer x;
   output Integer y;
-  Integer i;
 algorithm
   y := 1;
   for i in 2:x loop

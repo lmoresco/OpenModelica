@@ -2,11 +2,11 @@
 // keywords: connect
 // status:   correct
 // 
-// All effort variables are equal to 1. The unknown flow 'a.b.c.f'
-// evaluates to 3, even though the same connections as in 
-// ConnectHierarchical1 are established ('a.b.c.f' evaluates to -1 
-// there)! 
-//
+// Compared to ConnectHiearchical1 we have established
+// the same connections but at different places.
+// Thus a.c2.f will thus be default connected, and set to zero.
+// Thus we cannot have a modifier for it.
+// The unknown flow 'a.b.c.f' evaluates to 1.
 
 connector Connector
   flow Real f;
@@ -19,7 +19,7 @@ end B;
 
 class A
   B b;
-  Connector c1, c2(f = 2.0);
+  Connector c1, c2;
 equation
   connect(c1, b.c);
   connect(c1, c2);
@@ -27,7 +27,7 @@ end A;
 
 class ConnectHierarchical2
   A a;
-  Connector c(e = 1.0, f = 1.0);
+  Connector c(e = 1.0, f=1.0);
 equation
   connect(c, a.c1);
 end ConnectHierarchical2;
@@ -42,11 +42,10 @@ end ConnectHierarchical2;
 //   Real c.f;
 //   Real c.e;
 // equation
-//   a.c2.f = 2.0;
+//   a.c2.f = 0.0;
 //   a.c1.e = a.b.c.e;
 //   a.b.c.e = a.c2.e;
 //   (-a.c1.f) + a.b.c.f + (-a.c2.f) = 0.0;
-//   c.f = 1.0;
 //   c.e = 1.0;
 //   c.e = a.c1.e;
 //   (-c.f) + a.c1.f = 0.0;

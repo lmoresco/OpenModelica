@@ -1,5 +1,5 @@
 // name:     ArrayModification8
-// keywords: array,modification,unknown
+// keywords: array,modification
 // status:   correct
 // 
 // This tests array modifications where the whole array is equated to
@@ -10,7 +10,7 @@ class ArrayModification8
   class A
     Real x[3];
   end A;
-  A a(x = [1.0,2.0,3.0]);
+  A a(x = {1.0,2.0,3.0});
 end ArrayModification8;
 
 // fclass ArrayModification8

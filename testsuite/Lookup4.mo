@@ -1,10 +1,11 @@
 // name:     Lookup4
-// keywords: scoping,unknown
+// keywords: scoping
 // status:   correct
 // 
 // Constants can be referred to using names of previously defined
 // classes.
 //
+// Note that Container must satisfy the requirement of a package.
 
 class Container
   constant Real a = 3.0;

@@ -1,10 +1,12 @@
 // name:     DisturbedResistance3
 // keywords: modification
-// status:   correct
+// status:   incorrect
 // 
 // This is an example of replacing a variable without using 
-// redeclaration syntax. In this way a parameter can be replaced 
-// by a variable.
+// redeclaration syntax. 
+// 
+// This was made illegal in Modelica 1.4 since it depends
+// very much on declaration order.
 //
 
 model Resistor
@@ -20,9 +22,9 @@ model DisturbedResistance3
 end DisturbedResistance3;
 
 // fclass DisturbedResistance3
-//   Real R;
 //   Real u;
 //   Real i;
+//   Real R;
 // equation
 //   R = 1.0 + 0.1*sin(time);
 //   u = R*i;

@@ -2,7 +2,7 @@
 // keywords: modification
 // status:   correct
 // 
-// This test checks that two modification of subsubcomponents are both
+// This test checks that two modifications of subsubcomponents are both
 // taken care of. 
 // 
 

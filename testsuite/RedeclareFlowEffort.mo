@@ -7,7 +7,7 @@
 
 connector Connector
   flow Real f;
-  Real e;
+  replaceable Real e;
 end Connector;
 
 class RedeclareFlowEffort

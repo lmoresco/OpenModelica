@@ -3,14 +3,16 @@
 // status:   correct
 // 
 // Testing `if' clauses in equations.
-// 
+// The branches need not have the same
+// number of equations if the condition
+// is a parameter-expression.
 
 class EquationIf2
   parameter Boolean b = false;
   Real x;
 equation
   if b then
-    x = 1.0;
+    assert(true,"Should not happen");
   else
     x = 2.0;
   end if;

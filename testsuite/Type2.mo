@@ -1,16 +1,16 @@
 // name:     Type2
 // keywords: type,unknown
-// status:   incorrect
+// status:   correct
 // 
 // What are valid connectors?  According to the report, only classes
 // declared with `connector', or classes declared with `class' which
 // adher to the restrictions for `connector'.
 //
-// On the other hand, records always adher to those restrictions.
+// The basic question is what classes a connector class may inherit from.
 // 
 
 record A
   Real x;
 end A;
 
-connector C = A;
+connector Type2 = A;

@@ -1,12 +1,14 @@
 // name:     Modification2
 // keywords: modification
-// status:   correct
+// status:   incorrect
+// 
+// Cannot modify all elements of a certain type in this way.
 
-class A
-  parameter Real p=1.0;
-end A;
 
 class B
+  class A
+    parameter Real p=1.0;
+  end A;
   A a;
 end B;
 
@@ -14,8 +16,3 @@ class Modification2
   B b(A(p=2.0));
 end Modification2;
 
-// fclass Modification2
-//   parameter Real b.a.p;
-// equation
-//   b.a.p = 2.0;
-// end Modification2;

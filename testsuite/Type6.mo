@@ -6,16 +6,16 @@
 // 
 
 model Type6
-  Integer i             "an integer";
-  Real r                "a real value";
-  String s              "a string";
-  Boolean b             "a boolean";
+  parameter Integer i             "an integer";
+  parameter Real r                "a real value";
+  parameter String s              "a string";
+  parameter Boolean b             "a boolean";
 end Type6;
 
 // fclass Type6
-//   Integer i;
-//   Real r;
-//   String s;
-//   Boolean b;
+//   parameter Integer i;
+//   parameter Real r;
+//   parameter String s;
+//   parameter Boolean b;
 // equation
 // end Type6;

@@ -10,6 +10,7 @@ class Constant3
   Real x[N];
 equation
   x[N-1] = 2.0;
+  x[{1,N}] = {1,time};
 end Constant3;
 
 // fclass Constant3
@@ -19,5 +20,7 @@ end Constant3;
 //   Real x[3];
 // equation
 //   N = 3;
-//   x[2] = 2.0;
+//   x[N-1] = 2.0;
+//   x[1]   = 1;
+//   x[N]   = time;
 // end Constant3;

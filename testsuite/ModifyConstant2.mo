@@ -1,8 +1,8 @@
 // name:     ModifyConstant2
 // keywords: scoping,modification
-// status:   correct
+// status:   incorrect
 // 
-// Constant values may be changed in modifications.
+// Constant values cannot be changed in modifications.
 //
 
 class A

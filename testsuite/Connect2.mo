@@ -15,17 +15,23 @@ model Connect2
 equation
   connect(c1,c2);
   connect(c2,c3);
+  c1.e = 1;
+  c2.f = time;
+  c3.f = 1;
 end Connect2;
 
 // fclass Connect2
 //   Real c1.f;
-//   Real c1.e;
 //   Real c2.f;
-//   Real c2.e;
 //   Real c3.f;
+//   Real c1.e;
+//   Real c2.e;
 //   Real c3.e;
 // equation
 //   c1.e = c2.e;
 //   c2.e = c3.e;
 //   (-c1.f) + (-c2.f) + (-c3.f) = 0.0;
+//   c1.e = 1;
+//   c2.f = time;
+//   c3.f = 1;
 // end Connect2;

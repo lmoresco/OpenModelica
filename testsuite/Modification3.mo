@@ -6,19 +6,19 @@ class A
   class AA
     parameter Real p=1.0;
   end AA;
-  AA aa;
 end A;
 
 class B
+  replaceable class A=A.AA;
   A a;
+  A a2;
 end B;
 
 class Modification3
-  B b(A.AA(p=2.0));
+  B b(redeclare class A=A.AA(p=2),a2(p=4));
 end Modification3;
 
 // fclass Modification3
-//   parameter Real b.a.aa.p;
-// equation
-//   b.a.aa.p = 2.0;
+//   parameter Real b.a.p=2.0;
+//   parameter Real b.a2.p=4;
 // end Modification3;

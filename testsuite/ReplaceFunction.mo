@@ -9,17 +9,22 @@
 function Sin
   input Real x;
   output Real y;
-external
+algorithm
+  y:=sin(x);
 end Sin;
 
 function Cos
   input Real xx;
   output Real yy;
-external
+algorithm
+  yy:=cos(xx);
 end Cos;
 
 model M 
   replaceable function f = Sin; 
+  Real x;
+equation
+  x=f(x);
 end M;
 
 model ReplaceFunction = M(redeclare function f = Cos);   // Error

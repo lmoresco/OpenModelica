@@ -7,8 +7,6 @@
 // The file is not valid, the compiler should complaint about y and a
 // being protected.
 
-type Real = RealType;
-
 class A
   Real a = 1;
 end A;

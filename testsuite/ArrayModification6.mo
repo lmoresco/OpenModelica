@@ -1,8 +1,9 @@
 // name:     ArrayModification6
-// keywords: array,modification,unknown
+// keywords: array,modification
 // status:   incorrect
 // 
 // Partial indexing mixed with full indexing.
+// Multiple modifiers of same element.
 // 
 
 class ArrayModification6

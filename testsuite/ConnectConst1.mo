@@ -1,18 +1,26 @@
 // name:     ConnectConst1
-// keywords: connect,constant,unknown
-// status:   incorrect
+// keywords: connect,constant
+// status:   correct
 // 
-// You should not be able to declare connectors as constant, or should you?
-// 
+// The specification does not forbid you to connectors as constant.
 
-class C
+connector C
   flow Real f;
   Real e;
-end A;
+end C;
 
-model World
+model ConnectConst1
   C c1;
-  constant C c2;
+  constant C c2(e=1,f=2);
 equation
   connect(c1,c2);
-end World;
+end ConnectConst1;
+
+// fclass ConnectConst1
+//   Real c1.e
+//   Real c1.f
+//   constant Real c2.e=1
+//   constant Real c2.f=2
+// equation
+//  c1.e=c2.e;
+//  c1.f+c2.f=0;

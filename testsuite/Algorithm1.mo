@@ -5,16 +5,17 @@
 // Simple algorithms
 
 model Algorithm1
-  Real x, y;
+  Real x, y, z, a;
 equation
   y = sin(time);
 protected
   Integer i;
 algorithm
   i := 0;
-  x := y-1.0;
+  a := y-1.0;
   while ((i/10) < y) loop
-    x := x + 0.5;
+    a := a + 0.5;
+    i := i + 1;
   end while;
 algorithm
   for i in 1:3 loop
@@ -31,7 +32,7 @@ algorithm
   end for;
 algorithm
   when y>0.9 do
-    x := 0.0;
+    z := 0.0;
   end when;
 end Algorithm1;
 
@@ -46,9 +47,10 @@ end Algorithm1;
 //   y = sin(time);
 // algorithm
 //   i := 0;
-//   x := y - 1.0;
+//   a := y - 1.0;
 //   while Real(i)/Real(10) < y loop
-//     x := x + 0.5;
+//     a := a + 0.5;
+//     i := i+1;
 //   end while;
 // algorithm
 //   for i in 1:3 loop
@@ -65,6 +67,6 @@ end Algorithm1;
 //   end for;
 // algorithm
 //   when y > 0.9 do
-//     x := 0.0;
+//     z := 0.0;
 //   end when;
 // end Algorithm1;

@@ -9,16 +9,16 @@
 
 class ScopeModification1
   class Inner
-    Real a;
+    Real a=2;
     Real b;
   end Inner;
-  Real a;
+  Real a=1;
   Inner m(b = a);
 end ScopeModification1;
 
 // fclass ScopeModification1
-//   Real a;
-//   Real m.a;
+//   Real a=1;
+//   Real m.a=2;
 //   Real m.b;
 // equation
 //   m.b = a;

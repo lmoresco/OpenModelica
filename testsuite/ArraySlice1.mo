@@ -8,7 +8,9 @@
 class ArraySlice1
   Real a[4];
 equation
-  a[[1,3]] = a[[2,4]];
+  a[{1,3}] = a[{2,4}];
+  a[1]=time;
+  a[4]=1;
 end ArraySlice1;
 
 // fclass ArraySlice1
@@ -19,4 +21,6 @@ end ArraySlice1;
 // equation
 //   a[1] = a[2];
 //   a[3] = a[4];
+//   a[1] = time;
+//   a[4] = 1;
 // end ArraySlice1;

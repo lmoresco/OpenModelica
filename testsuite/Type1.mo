@@ -5,6 +5,6 @@
 // You cannot define your own types, only derive them from the builtings.
 // 
 
-type T
+type Type1
   Real x;
-end T;
+end Type1;

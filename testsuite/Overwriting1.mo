@@ -1,10 +1,8 @@
 // name:     Overwriting1
-// keywords: modification,equation,unknown
+// keywords: modification,equation
 // status:   correct
 // 
-// The modification for 'x' replaces the equation in the original
-// class. Or maybe not.
-//
+// The modification does not overwrite the equation
 
 partial class A
   Real x, u;

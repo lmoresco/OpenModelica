@@ -1,17 +1,38 @@
 // name:     DependsMutual
 // keywords: scoping
-// status:   incorrect
+// status:   correct
 // 
-// Mutual dependence is not supported as only previously declared models 
-// are known and no forward declaration exists in Modelica.
+// Mutual dependence is supported since Modelica does not require
+// declare before use.
 //
+// Here package A depends on the class DependsMutual and
+// DependsMutual depends on the package A.
+//
+// Obviously a model cannot contain a model that contains itself
+// since that leads to recursive models.
 
-class A
+package A
  Real x;
- DependsMutual b;
+ model B
+   DependsMutual b;
+ end B;
+ model C
+   Real x;
+ end C;
 end A;
 
 class DependsMutual
   Real x;
-  A a;
+  A.C a;
+equation
+  a.x=x;
+  x=time;
 end DependsMutual;
+
+// flatmodelica
+//   Real x;
+//   Real a.x;
+// equation
+//   a.x=x;
+//   x=time;
+//

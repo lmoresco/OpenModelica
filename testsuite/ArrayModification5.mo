@@ -1,15 +1,15 @@
 // name:     ArrayModification5
-// keywords: array,modification,unknown
-// status:   correct
+// keywords: array,modification
+// status:   incorrect
 // 
-// Partial indexing
+// Partial indexing is not allowed.
 // 
 
 class ArrayModification5
   class A
     Real x[2,2];
   end A;
-  A a(x[2] = [1.0,2.0]);
+  A a(x[2] = {1.0,2.0});
 end ArrayModification5;
 
 // fclass ArrayModification5

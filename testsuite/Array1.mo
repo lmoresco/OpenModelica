@@ -6,7 +6,7 @@
 // 
 
 model Array1
-  Integer x[5] = [1,2,3,4,5];
+  Integer x[5] = {1,2,3,4,5};
   Integer y[3] = 1:3;
 end Array1;
 

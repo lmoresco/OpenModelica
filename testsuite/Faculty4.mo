@@ -8,16 +8,25 @@
 // is treated constant.
 //
 
+function multiply
+  input Real x;
+  input Real y;
+  output Real z;
+algorithm
+  z:=x*y;
+end multiply;
+
 block Faculty4
   parameter Integer x(min = 0) = 4;
-  Integer work[x];
   output Integer y;
+protected
+  Integer work[x];
 equation
   if x < 2 then
     y = 1;
   else
     y = work[x];
-    work[x:-1:2] = work[x-1:-1:1] * (ones(x-1) + work[x-1:-1:1]);
+    work[x:-1:2] = multiply(work[x-1:-1:1],(ones(x-1) + work[x-1:-1:1]));
     work[1] = 1;
   end if;
 end Faculty4;

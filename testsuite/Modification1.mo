@@ -1,11 +1,11 @@
-// name:     Modification_pr_1
+// name:     Modification1
 // keywords: modification
 // status:   correct
 // 
 // This file tests simple modifications of variables
 //
 
-type Real = RealType;
+//type Real = RealType;
 
 model Motor
 

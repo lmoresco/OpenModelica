@@ -1,12 +1,11 @@
 // name:     Modification4
 // keywords: modification
 // status:   incorrect
+//
+// Error since no p inside A.
 
 class A
-  class AA
-    parameter Integer p=1;
-  end AA;
-  Integer x = AA.p;
+  Integer x = 1;
 end A;
 
 class B
@@ -14,5 +13,10 @@ class B
 end B;
 
 class Modification4
-  B b(A.AA(p=2));
+  B b(a(p=2));
 end Modification4;
+
+// fclass Modification4;
+// equation
+//   b.a.x = 1
+// end Modification4;

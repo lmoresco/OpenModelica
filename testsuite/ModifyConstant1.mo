@@ -1,8 +1,8 @@
 // name:     ModifyConstant1
 // keywords: scoping,modification
-// status:   correct
+// status:   incorrect
 // 
-// Constants can be redeclared.
+// Constants cannot be redeclared.
 //
 
 class A

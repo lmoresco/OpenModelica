@@ -5,11 +5,11 @@
 // Multidimensional arrays
 // 
 
-model Array1
-  Integer x[2,3];
-end Array1;
+model Array2
+  parameter Integer x[2,3];
+end Array2;
 
-// fclass Array1
+// fclass Array2
 //   Integer x[1,1];
 //   Integer x[1,2];
 //   Integer x[1,3];
@@ -17,4 +17,4 @@ end Array1;
 //   Integer x[2,2];
 //   Integer x[2,3];
 // equation
-// end Array1;
+// end Array2;

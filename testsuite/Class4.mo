@@ -1,8 +1,8 @@
 // name:     Class4
 // keywords: 
-// status:   correct
+// status:   incorrect
 // 
-// A minimal source file
+// end should be followed by Class4.
 // 
 
 class Class4

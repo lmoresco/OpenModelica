@@ -11,7 +11,7 @@ class Lookup6
   class B
     Real a;
   equation
-    a = a;
+    a = -a;
   end B;
   B b;
 end Lookup6;
@@ -21,6 +21,6 @@ end Lookup6;
 //   Real b.a;
 // equation
 //   a = 3.0;
-//   b.a = b.a;
+//   b.a = -b.a;
 // end Lookup6;
 

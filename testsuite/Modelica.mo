@@ -71,7 +71,7 @@ package SIunit
 // Part 1: Space and time
 type Angle               = Real(final quantity="Angle",
 				final unit    ="rad", 
-				Displayunit   ="deg");
+				displayUnit   ="deg");
 type SolidAngle          = Real(final quantity="SolidAngle",
 				final unit    ="sr"); 
 type Length              = Real(final quantity="Length",
@@ -129,7 +129,7 @@ type Power              = Real(final quantity="Power",
 // Part 4: Heat
 type ThermodynamicTemperature = Real(final quantity="ThermodynamicTemperature",
 				     final unit    ="K", min=0,
-				     Displayunit   ="degC");
+				     displayUnit   ="degC");
 type CelsiusTemperature       = Real(final quantity="CelsiusTemperature",
 				     final unit    ="degC", min = -273.15);
 
@@ -448,9 +448,9 @@ end OnePortActive;
 partial model TwoPortPassive "Two port passive bond graph element"
   BondPort PowIn, PowOut;
 equation
-  assert(cardinality(Powin) == 1, "Power ports have only one edge connected to");
+  assert(cardinality(PowIn) == 1, "Power ports have only one edge connected to");
   assert(direction  (PowIn) ==+1, "power direction towards the element for passivity");
-  assert(cardinality(Powout)== 1, "Power ports have only one edge connected to");
+  assert(cardinality(PowOut)== 1, "Power ports have only one edge connected to");
   assert(direction  (PowOut)==-1, "Power direction from the element for passivity");
 end TwoPortPassive;
 
@@ -599,9 +599,13 @@ package Thermodynamic
 */
 
 // Short hands
-type HeatFlux = HeatFlowRate;
-type Temp_K   = ThermodynamicTemperature;
-type Temp_C   = CelsiusTemperature;
+type HeatFlux = SIunit.HeatFlowRate;
+type Temp_K   = SIunit.ThermodynamicTemperature;
+type Temp_C   = SIunit.CelsiusTemperature;
+type MassFlow = Real(final quantity="MassFlow",
+			       final unit    ="kg/s");
+type Pressure = SIunit.Pressure;
+type SpecificEnthalpy = SIunit.SpecificEnthalpy;
 
 // connectors
 connector TQ  "Heat exchange interface"
@@ -632,7 +636,7 @@ connector PMH  "Single directional flow of tempered fluid"
 end PMH;
 
 connector PMTQ  "Bidirectional flow of tempered fluid"
-  Pressure       p       "Fluid total pressure";
+  SIunit.Pressure       p       "Fluid total pressure";
   flow MassFlow  m_dot   "Massflow into port";
   Temp_C         T       "Fluid temperature";
   flow HeatFlux  q       "Heat convected by fluid into port";
@@ -640,7 +644,7 @@ end PMTQ;
 
 connector PMHQ  "Bidirectional flow of tempered fluid"
   Pressure          p      "Fluid total pressure";
-  flow Massflow     m_dot  "Massflow into port";
+  flow MassFlow     m_dot  "Massflow into port";
   SpecificEnthalpy  h      "Fluid enthalpy";
   flow HeatFlux     q      "Heat convected by fluid into port";
 end PMHQ;

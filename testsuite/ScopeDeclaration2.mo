@@ -1,10 +1,10 @@
 // name:     ScopeDeclaration2
 // keywords: scoping,declaration
-// status:   correct
+// status:   incorrect
 // 
-// An element (e.g. a variable) is added to the partially instantiated 
-// parent AFTER the element has been completely instantiated.
-//
+// An element is visible in its entire scope.
+// The following is thus incorrect since the minimum
+// value is not a parameter-expression.
 
 class ScopeDeclaration2
   constant Real a = 3.0;
@@ -15,11 +15,9 @@ class ScopeDeclaration2
 end ScopeDeclaration2;
 
 // fclass ScopeDeclaration2
-//   constant Real a;
+//   constant Real a=3.0;
 //   Real b.a;
-//   parameter Real b.a.min;
+//   parameter Real b.a.min=b.a;// Illegal.
 // equation
-//   a = 3.0;
-//   b.a.min = a;
-//   assert(b.a >= b.a.min);
+//   assert(b.a >= b.a.min,"...");
 // end ScopeDeclaration2;

@@ -1,6 +1,6 @@
 // name:     ArrayModification3
 // keywords: array,modification
-// status:   correct
+// status:   correct,incomplete model
 // 
 
 record R

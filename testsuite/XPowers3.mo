@@ -3,12 +3,10 @@
 // status:   incorrect
 // 
 // The powers of 'x' are defined by using a for loop. The dimension 'n'
-// is defined constant but not declared constant. The integer 'n' must 
-// be declared as constant. 
-//
+// is defined with a constant value but not declared constant. The integer 'n' 
+// must be declared as constant or parameter.
 
 model XPowers3
-  Integer i;
   Integer n = 3;
   Real x = 2.0, xpowers[n];
 equation

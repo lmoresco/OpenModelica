@@ -14,27 +14,30 @@ end f;
 model Function1
   Real x, y, z;
 equation
-  x = y;
   x = f(z);
   y = f(z);
 end Function1;
 
-// fclass Function1
-//   Real    x;
-//   Real    y;
-//   Real    z;
-//   Real f~1.x;
-//   Real f~1.r;
-//   Real f~2.x;
-//   Real f~2.r;
-// equation
-//   x = y;
-//   f~1.x = z;
-//   x = f~1.r;
-//   f~2.x = z;
-//   y = f~2.r;
-// algorithm
-//   f~1.r := 2.0 * f~1.x;
-// algorithm
-//   f~2.r := 2.0 * f~2.x;
-// end Function1;
+// Variables:
+//
+//   variable real f#1.x
+//   variable real f#1.r
+//   variable real f#2.x
+//   variable real f#2.r
+//   variable real x
+//   variable real y
+//   variable real z
+//
+// Equations:
+//
+//   f#1.x = z
+//   f#1.r = x
+//   f#2.x = z
+//   f#2.r = y
+//
+// Algorithms:
+//
+//   f#1.r := 2.0 *(Real) f#1.x
+//
+//   f#2.r := 2.0 *(Real) f#2.x
+//

@@ -1,6 +1,6 @@
 // name:     ArrayModification2
 // keywords: array,modification
-// status:   correct
+// status:   correct,incomplete model
 // 
 // Simple equation modification of array elements.
 // 

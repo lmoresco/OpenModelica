@@ -8,8 +8,6 @@
 class EquationFor3
   parameter Integer N = 4;
   Real a[N];
-protected
-  Integer i;
 equation
   a[1] = 1.0;
   for i in 1:N-1 loop
@@ -18,8 +16,7 @@ equation
 end EquationFor3;
 
 // fclass EquationFor3
-//   Integer i;
-//   parameter Integer N;
+//   constant Integer N;
 //   Real a[1];
 //   Real a[2];
 //   Real a[3];
@@ -27,7 +24,7 @@ end EquationFor3;
 // equation
 //   N = 4;
 //   a[1] = 1.0;
-//   a[2] = a[1] + 1.0;
-//   a[3] = a[2] + 1.0;
-//   a[4] = a[3] + 1.0;
+//   a[1 + 1] = a[1] + 1.0;
+//   a[2 + 1] = a[2] + 1.0;
+//   a[3 + 1] = a[3] + 1.0;
 // end EquationFor3;

@@ -9,6 +9,7 @@
 function Faculty3
   input Integer x;
   output Integer y;
+protected
   Integer i;
 algorithm
   y := 1;

@@ -2,9 +2,9 @@
 // keywords: declaration,equation
 // status:   incorrect
 // 
-// A constant requires a declaration equation with constant 
-// expression on the right hand side.
-// 
+// A constant requires a declaration equation.
+// A normal equation from which we can compute
+// the constant is not sufficient.
 
 class DeclareConstant1
   constant String s;

@@ -2,13 +2,12 @@
 // keywords: modification
 // status:   incorrect
 // 
-// Either this is a priority issue, or it is incorrect.  The
-// Manchester minutes says it's incorrect to have two modifiers for
-// the same component.
-//
-// I'm not convinced that it is even possible to enforce this rule.
+// These are seen as two modifications of the
+// same element.
 // 
-// Apparently, modifiers of the form a.b are not allowed.  There you go.
+// The 23rd meeting at Lund clarified that
+// a.x=1.0, a.y=2, a(z=3) is seen as a(x=1.0,y=2,z=3)
+// 
 
 class Modification8
   class A

@@ -1,8 +1,7 @@
 // name:     Modification10
-// keywords: modification,unknown
-// status:   incorrect
+// keywords: modification
+// status:   correct
 // 
-// You can only modify local names.
 // 
 
 class B
@@ -14,10 +13,16 @@ class C
 end C;
 
 class A
+  replaceable class B2=B;
   C c;
-  B b;
+  B2 b;
 end A;
 
 class Modification10
-  A a(B(x = 17.0));
+  A a(redeclare class B2=B(x = 17.0));
 end Modification10;
+
+
+// flatmodelica Modification10
+// Real a.c.b.x = 1;
+// Real a.b.x = 17.0;

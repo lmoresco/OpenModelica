@@ -15,13 +15,15 @@ model B
 end B;
 
 model M
-  A a(x(unit = "m"));
-equation
-  a.x = 17.0;
+  replaceable A a(x=17);
 end M;
 
 model Redeclare1
   M m(redeclare B a);
 equation
-  m.z = m.x;
+  m.a.z = m.a.x;
 end Redeclare1;
+
+//equation
+// m.a.x =17;
+// m.a.z = m.a.x;

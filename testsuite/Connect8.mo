@@ -11,21 +11,20 @@ connector C
 end C;
 
 class Connect8
-  parameter Integer N = 3;
-  C c[3], cx, cy;
+  parameter Integer N = 2;
+  C c[2], cx(x=1), cy(x=time);
 equation
   connect(c[N],cx);
-  connect(c[3],cy);
+  connect(c[2],cy);
+  c[1].x=time; // Extra equation required compared to Connect7 example.
 end Connect8;
 
 // fclass Connect8
-//   parameter Integer N;
 //   Real c[1].x;
 //   Real c[2].x;
-//   Real c[3].x;
-//   Real cx.x;
-//   Real cy.x;
+//   Real cx.x=1;
+//   Real cy.x=time;
 // equation
-//   N = 3;
-//   (-c[3].x) + (-cx.x) + (-cy.x) = 0.0;
+//   (-c[2].x) + (-cx.x) + (-cy.x) = 0.0;
+//   c[1].x=time;
 // end Connect8;
