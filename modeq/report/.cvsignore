@@ -13,7 +13,12 @@ main.tex
 mod.tex
 prefix.tex
 report.aux
+report.bbl
+report.blg
 report.dvi
+report.idx
+report.ilg
+report.ind
 report.log
 report.ps
 report.stc
