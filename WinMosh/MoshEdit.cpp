@@ -192,6 +192,10 @@ bool CMoshEdit::StartServer(void)
 	HANDLE hFile = FindFirstFile(uri,&data);
 	if (hFile == INVALID_HANDLE_VALUE) {
 		SpawnServer();
+		CString str;
+		str.Format("Objfile not found: %s", uri);
+//		AfxMessageBox(str);
+		Sleep(1500);
 	}
 	else {
 		FindClose(hFile);
@@ -200,23 +204,29 @@ bool CMoshEdit::StartServer(void)
 	sprintf(uri, "file://%sopenmodelica.objid",tmpPath);
 	CString sUri = uri;
 	sUri.Replace("\\","/");
-
+//	AfxMessageBox(CString("uri=")+sUri);
 	bool notStarted = true;
 	int count = 0;
-	while (notStarted && count < 10) {
+	while (notStarted && count < 2) {
 		try {
-			CORBA::Object_var obj = orb->string_to_object(sUri);	
-			client = ModeqCommunication::_narrow(obj);
-			char *tmp = client->sendExpression("cd()");
-			CORBA::string_free(tmp);
-			notStarted = false;
+			CORBA::Object_var obj = orb->string_to_object(sUri);
+			if (!CORBA::is_nil(obj)) {
+				client = ModeqCommunication::_narrow(obj);
+				char *tmp = client->sendExpression("cd()");
+				CORBA::string_free(tmp);
+				notStarted = false;
+			}
 		}
 		catch(CORBA::Exception e) {
+			std::ostringstream s;
+			e._print(s);
+			CString ex = s.str().c_str();
+//			AfxMessageBox(ex);
 		}
-		Sleep(500);
+		
 		count ++;
-		if (count == 5)
-			SpawnServer();
+		if (notStarted) SpawnServer();
+		Sleep(1500);
 	}
 
 	return !notStarted;
@@ -225,8 +235,14 @@ bool CMoshEdit::StartServer(void)
 void CMoshEdit::SpawnServer(void)
 {
 	CString MoshHome;
+	STARTUPINFO startinfo;
+	PROCESS_INFORMATION procinfo;
+	GetStartupInfo(&startinfo);
+	startinfo.wShowWindow = SW_MINIMIZE;
 	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
-		MoshHome += "\\..\\modeq\\win\\modeq";
+		MoshHome = CString("\"") + MoshHome + "\\..\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
+		
+		CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,0,NULL,NULL,&startinfo,&procinfo);
 		spawnl(_P_NOWAIT, MoshHome, MoshHome, "+d=interactiveCorba", NULL);
 	}
 }
