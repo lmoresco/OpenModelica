@@ -1,0 +1,18 @@
+// Protection
+
+// This file tests information hiding using the 'protect' keyword
+
+// The file is not valid, the compiler should complaint about y being
+// protected.
+
+type Real = RealType;
+
+model Foo
+  Real x;
+protected
+  Real y = 1;
+end Foo;
+
+model World
+  Foo a(x=17, y=18);
+end World;
