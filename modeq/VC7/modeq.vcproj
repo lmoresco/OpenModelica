@@ -346,6 +346,9 @@ nmake -f MakeFile.win32
 				RelativePath="..\modeq_release\tornado.c">
 			</File>
 			<File
+				RelativePath="..\modeq_release\tornadocodegen.c">
+			</File>
+			<File
 				RelativePath="..\modeq_release\types.c">
 			</File>
 			<File
@@ -451,6 +454,9 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\modeq_release\tornado.h">
+			</File>
+			<File
+				RelativePath="..\modeq_release\tornadocodegen.h">
 			</File>
 			<File
 				RelativePath="..\modeq_release\types.h">
