@@ -66,7 +66,6 @@ the test cases.
 @menu
 * Conventions::                 
 * Open Issues::                 
-* Closed Issues::               
 * Test Cases::                  Collection of files with test cases.
 
 * Change-Log::                  
@@ -86,8 +85,6 @@ Open Issues
 * Array syntax::                
 * Parameters::                  
 * Expression Properties::       
-* Functions::                   
-* Scoping::                     
 * Declarations::                
 * Connections::                 
 * Built-in types as connectors::  
@@ -312,7 +309,7 @@ The flat modelica grammar is probably not even context-free.
 @c ********************************************************************
 
 @comment node-name,     next,          previous, up
-@node    Open Issues, Closed Issues, Conventions, Top
+@node    Open Issues, Test Cases, Conventions, Top
 @chapter Open Issues
 
 The issues brought up here are not yet clarified in the current
@@ -324,8 +321,6 @@ Modelica language specification (Version 1c of the Modelica report).
 * Array syntax::                
 * Parameters::                  
 * Expression Properties::       
-* Functions::                   
-* Scoping::                     
 * Declarations::                
 * Connections::                 
 * Built-in types as connectors::  
@@ -352,121 +347,106 @@ This causes a few problems.  For instance, the function @code{size} is
 not well-defined.  What is the type of its first argument?  There is no
 type called ``Array''.
 
-@subsection Multidimensional arrays
+Another problem concerns array dimension sizes. Consider the following example:
 
-One very important issue is whether a multidimensional matrix is
-equivalent to an array of arrays.  This decision affects many parts of
-the semantic specification and needs to be thought about thoroughly.
+@example
+function f
+  input Real x[:];
+  output Real y[size(x,1)];
+algorithm
+  @dots{}
+end f;
 
-<david: Thanks to Henrik Nilsson for his thoughts on this subject>
+model M
+  Real a[17], b[17], c[3], d[3];
+equation
+  b = f(a);
+  c = f(a);
+  d = f(c);
+end M;
+@end example
 
-Let's see what happens if we make it equivalent:
+First of all, is it possible to define y in the way described above?  If
+not, how would it otherwise be defined?
+
+This defines a function that takes an input of type @code{Real[:]} and
+has an output of type @code{Real[:]}.  The size of @code{y} cannot be
+known by looking at the definition of @code{f}.
+
+This has the consequence that the expression @code{f(a)} has type
+@code{Real[:]}, which is not equivalent to either the type of @code{b}
+or @code{c}.
+
+What would be desirable is a way to determine that the type of the
+expression @code{f(a)} actually has type @code{Real[17]}.
+
+When comparing the function definition to other class definitions, one
+thing worth noting is that in other classes, the type of components
+declared like @code{y} is determined at instantiation time.  So what if
+we say that the function @code{f} is implicitly instantiated for each
+occation it appears in the model source?
+
+This would mean that @code{f} would be instantiated three times when
+then model @code{M} is instantiated.  Think of it in this way:
+
+@example
+Model M
+  Real a[17], b[17], c[3], d[3];
+
+  function f~1 = f(x = a);
+  function f~2 = f(x = a);
+  function f~3 = f(x = c);
+equation
+  b = f~1.y;
+  c = f~2.y;
+  d = f~3.y;
+end M;
+@end example
+
+In the instance @code{f~1}, it would be possible to determine the size
+of @code{x} (if we add some extra magic), and the size of @code{y} could
+be derived.  Then the type of the expressions would be fully known, and
+the translator would be able to tell that the first and third equations
+are valid, but the second is invalid.
+
+It would be nice if this could be describe in terms of normal
+instantiation, but there are a couple of issues that need to be cleared
+first.
 
 @itemize @bullet
 
 @item
-Partial indexing becomes very natural.  If the variable @code{x} is
-defined as a n*m matrix, it can also be regarded as an array of size n
-of arrays of size m.
+Recursive functions can not be described in this was.  But since we
+decided in Manchester that recursive functions are disallowed, this
+doesn't really matter.
+
+@item
+What is needed to determine the type of a component?  Currently, as I
+see it, the declaration of a component needs to be specified in the
+declaration.  The question is whether the declaration equation may
+affect the type of the component.
+
+I'd like to, as far as possible, treat declaration equations like any
+normal equations, meaning that @code{x} and @code{y} are treated equally
+in the example below:
 
 @example
-Real x[2,2];
 @dots{}
-x[1] = [ 1.0, 2.0 ];
-@end example
-
-This can be solved by writing @code{x[1,:]} even if we don't equate the
-types. (@xref{ArrayModification5})
-
-@item
-If @code{A} is a m*n matrix, then @code{A[x,y] = A[x][y]}, but
-@code{A[:,y] /= A[:][y]}.
-
-This might not be a disaster, but it might be a little surprising on
-first encouter.
-
-@item
-From the report:
-
-@example
-type Point = Real[2];
+  Real x[:] = [1,2,3];
+  Real y[:];
+equation
+  y = [1,2,3];
 @dots{}
-Point points[:];
 @end example
 
-This will mean that @code{points} is a matrix, i.e. @code{ndims(points)
-= 2}.  Both @code{points[17,2]} and @code{[17][2]} denote the same thing
-(provided that the Modelica syntax is extended @xref{Array syntax}).
+But if it is necessary to be able to determine that the size of @code{}
+is 3, then there is a difference between the to types of equations.
+Saying that the translator should determine also that the size of
+@code{y} is 3 does not seem reasonable.
 
-@item
-We get a simple and useful means to construct multidimensional arrays.
-For example, @code{[[1,2],[3,4]]} is a 2*2 matrix.  This syntax might be
-introduced even if arrays of arrays is not the same as a
-multidimensional array, but it might bring nast consequences. In the
-example below, @code{C} and @code{D} would become different.
-
-@example
-A = [1,2]
-B = [3,4]
-C = [A,B]
-D = [[1,2],[3,4]]
-@end example
-
-A related issue is the splicing of vectors in the syntax. @xref{Array
-syntax}.
-
-@item
-The internal representation of both types must be the same.  This might
-be problematic.  Say that you store the size of an array together with
-the array.  If the types are not the same, you only have to store the
-multi-dimensional size once for the whole multidimensional array.  It
-they are the same, then each secondary array needs to be tagged with its
-size, which would introduce irregularities in the representation.
+This issue does proabably relate to other things than functions too.
 
 @end itemize
-
-Some random notes:
-
-@itemize @bullet
-
-@item
-Defining arrays of arrays is already possible by derived type
-declarations
-
-@example
-type T1 = Real[3];
-type T2 = T1[2];
-@end example
-
-Does this mean that @code{T2} is the same as @code{Real[2,3]}?  If not,
-this is the only way to describe this type, as @code{Real[2][3]} is not
-a valid type.
-
-@xref{Array4}
-
-@item
-One could use a @code{reshape} function to construct multidimensional
-arrays, similar to Fortran 90.
-
-@end itemize
-
-@subsection Array types
-
-What is an array type?  How do the concepts of subtypes and equivalent
-types apply to arrays?  What about array types where one or more of the
-sizes are unknown?
-
-@subsection Determining types of expressions
-
-One desired property of the type system would be if the type of
-expressions can be determined without regard for the context it appears
-in.  This is the case for C and C++, for instance.
-
-This seems to be feasible.  At least as long as no strange array
-constructors are introduced.  If, say, a ``function'' @code{ones()}
-which created an array of arbitrary size to match whatever expresseion
-is appeared together with was added to the language, this would cause
-problems for the type system.
 
 @c --------------------------------------------------------- 
 @node Overloading and automatic type conversions, Array syntax, Types, Open Issues
@@ -485,83 +465,9 @@ even more extensive with both scalar and matrix multiplication.
 All operators need to be defined in terms of what they operate on.  A
 short table of types and operations should be sufficient.
 
-@subsection Vectors and scalar functions
-
-It also seems to be the view of most people that functions defined on
-scalars should be possible to apply to arrays (vectors at least), which
-would apply the function element-wise.  Exactly how does this work?
-
-On idea is to say that if @var{f} is defined as a function which takes
-an argument of type @var{a} and returns a value of type @var{b}, then
-@var{f} may be applied to a vector of @var{a}, returning a vector of
-@var{b}.
-
-Should this be generalized to n-dimensional arrays?
-
-Should this be valid for any types @var{a} and @var{b}?
-
-Another idea is to skip this idea, and introduce a function (or operator
-of some sort) @code{elementwise} with takes an array and a function.
-This is not easy to describe, as functions are not first-class objects
-in Modelica.
-
-@subsection Type conversions
-
-Then there is the problem of type conversions.  There hasn't been much
-discussion about this topic, but I believe it was brought up in
-Manchester.  <david: The Manchester minutes mention an explicit
-@code{integer} type cast operator, but that seems so strange that I'll
-ignore it for now.>
-
-Having implicit type casts is a convenience to the programmer. Take the
-following model as an example:
-
-@example
-model Circuit
-  parameter Integer N, Integer Rtot;
-  Resistor r1(R = 5);
-  Resistor rr[N](R = Rtot/N);
-@dots{}
-end Circuit;
-@end example
-
-In this example, implicit promotion (casts) of integer expressions to
-real expressions need to occur in three places for the model to be
-valid.
-
-First, the @code{R} parameter to @code{Resistor} is a @code{Real}
-parameter, but to make it equal the integer expression @code{5}, the
-expression has to be converted into a real expression.
-
-Second, the division operator is only defined for reals, which means
-that both the sub-expressions @code{Rtot} and @code{N} have to be promoted
-to reals before the division takes place.
-
-If automatic type promotions didn't exist, the model would have to be
-written as:
-
-@example
-model Circuit
-  parameter Integer N, Integer Rtot;
-  Resistor r1(R = 5.0);
-  Resistor rr[N](R = Real(Rtot)/Real(N));
-@dots{}
-end Circuit;
-@end example
-
-This, in my (David's) opinion, is unnecessarly cluttered.
-
 @c --------------------------------------------------------- 
 @node Array syntax, Parameters, Overloading and automatic type conversions, Open Issues
 @section Array syntax
-
-@subsection Declaring arrays of arrays
-
-If it is decided that arrays of arrays are not the same as
-multidimensional arrays, should it not be possible to declare a variable
-to be an array of arrays in a simple way?
-
-@xref{Array4}
 
 @subsection Array indexing operator
 
@@ -577,44 +483,6 @@ The following is currently not allowed:
 x = cross(A,B)[2]
 @end example
 
-@subsection Array splicing
-
-What does the expression @code{[[1,2],[3,4]]} denote? Is it the vector
-@code{[1,2,3,4]} or a 2*2 matrix?
-
-The question is whether the vector splicing syntas (from MATLAB, I
-believe) should be used.  A little more realistic example might be the
-following:
-
-@example
-block Foo
-  input Real x[:];
-protected
-  Real y[sizeof(x)+3] = [0,1,2,x];
-end Foo;
-@end example
-
-In my (David's) opinion, this introduces unnecessary irregularities in
-the syntax, and makes it difficult to do other things, like writing
-@var{n}-dimensional array constants.  If I see the expression
-@code{[a,b,c,d]}, I want to be able to know that it is a vector
-(one-dimensional array or whatever) of four element.
-                                      
-The previous example can be solved in other ways, either by an explicit
-vector concatenation function, or by using several equations, as in the
-following example:
-
-@example
-block Foo
-  input Real x[:];
-protected
-  Real y[size(x,1)+3];
-equation
-  y[1:3] = [0,1,2];
-  y[4:size(x,1)+3] = x;
-end Foo;
-@end example
-
 @c --------------------------------------------------------- 
 @node Parameters, Expression Properties, Array syntax, Open Issues
 @section Parameters
@@ -627,75 +495,8 @@ might not be so easy.
 The term ``compile-time'' is used several times in the discussion about
 Modelica, but it is never clearly defined what is meant by this.
 
-The following might be a starting-point for the discussion for what
-compile-time means:
-
-@itemize @bullet
-
-@item
-Equations can be generated from the structured model.
-
-@item
-Parameter values are unknown.
-
-@item
-Constant values are known.
-
-@end itemize
-
-@subsection Array sizes
-
-One of the obvious problems is parameterized array sizes.  If a vector
-is declared as @code{Real x[N]}, where @code{N} is a parameter, then the
-equations in the model might not be possible to determine.  As an
-example, the following @code{for} loop (@xref{EquationFor3}) can not be
-unrolled.
-
-@example
-class EquationFor3
-  parameter Integer N = 4;
-  Real a[N];
-equation
-  a[1] = 1.0;
-  for i in 1:N-1 loop
-    a[i+1] = a[i] + 1.0;
-  end for;
-end EquationFor3;
-@end example
-
-This might be taken as a quality-of-implementation issue.  If the
-parameter is reset, some systems will need to recompile the model, and
-some won't.
-
-@subsection Parameterized connections
-
-A more serious problem occurs when @code{connect} clauses are
-involved.  In some cases the connections can not be used to generate
-equations until the parameters are set. @xref{Connect7} and
-@ref{Connect8}.
-
-The only way to prevent recompilation in this case seems to be to
-prohibit constructions like this.
-
-@subsection Structural parameters
-
-The semantic specification gets around all of this by describing the
-semantics when the parameters are set in stone, but there are other
-observations that can be made.
-
-If a full set of equations is generated from the model, then some
-parameters have to be set, but not all.  Many parameters (restistances
-etc.) can still be reset.  This means that two different kinds of
-parameters are identifiable, one that may affect the number and
-structure of the equations, and one that don't.  Let's call the first
-type @dfn{structural parameters} and the second kind something else
-(what about @dfn{value parameters}?).
-
-Not that I know exactly what to do with this classification, but it
-might be useful.
-
 @c --------------------------------------------------------- 
-@node Expression Properties, Functions, Parameters, Open Issues
+@node Expression Properties, Declarations, Parameters, Open Issues
 @section Expression Properties
 
 In several places in the discussions about what may or may not appear in
@@ -710,10 +511,11 @@ analyzing its subexpressions.
 @item
 A type. For each kind of expression (addition, logical-and etc.) it is
 well-defined what the type of the expression is.  The only exception are
-overloaded operators, but that problem is another issue (@xref{Overloading and automatic type conversions}.)
+overloaded operators, but that problem is another issue
+(@xref{Overloading and automatic type conversions}.)
 
 @item
-A ``constancy'' property, which describes whether the expression is a
+A ``variability'' property, which describes whether the expression is a
 constant expression or not.  This can be stratified into the levels
 constant / parameter / discrete / variable, just as components can be
 declared constant etc.
@@ -744,59 +546,12 @@ Expressions in equations must be differentiable.
 
 @end itemize
 
-@c --------------------------------------------------------- 
-@node Functions, Scoping, Expression Properties, Open Issues
-@section Functions
-
-Saying that functions are classes is simply silly and
-counter-productive.
-
-<david: I haven't had time to elaborate more on this>
+I might be necessary to provide explicit information about the prperties
+of functions.
 
 @c --------------------------------------------------------- 
-@node Scoping, Declarations, Functions, Open Issues
-@section Scoping
-
-@subsection Recursive declarations
-
-Is the declared variable already known in its declaration equation?
-
-@xref{ScopeDeclaration1}, and @ref{ScopeDeclaration2}, as well as
-@ref{Lookup5}, and @ref{Lookup6}.
-
-If @code{ScopeDeclaration1} was correct, then the following declaration
-should also be correct:
-
-@example
-constant Real a[3] = [a[2]/a[3]; 2*a[3]; 3];
-@end example
-
-<david: The Manchester meeting decided that the declared thing does not
-exist in the scope until it is completely defined.>
-
-@c --------------------------------------------------------- 
-@node Declarations, Connections, Scoping, Open Issues
+@node Declarations, Connections, Expression Properties, Open Issues
 @section Declarations
-
-@subsection Model modification
-What are the ``named'' equations that can be replaced via
-modifications?  Only equations in declarations or all equations with a
-single name on the left hand side?
-
-<david: The Manchester meeting seems to have decided that ony equations
-in the declaration section can be replaced by modifications.  I seem to
-recall that Hilding or someone else thought that the other equations
-should be replaeable too.>
-
-(@xref{Overwriting1}, and @ref{Overwriting2}.)
-
-@subsection Typing
-
-A surprising but correct example that shows a consequence of treating
-declaration equations like ordinary equations is given in
-@ref{Real2Integer1}.
-
-@xref{Overloading and automatic type conversions}
 
 @subsection Array modifications
 
@@ -804,6 +559,7 @@ The type system makes the test case @ref{ArrayModification7} illegal.
 This seems natural too me, but I just want to make sure that nobody
 complains about this.
 
+@subsection Array element modifications
 
 @c --------------------------------------------------------- 
 @node Connections, Built-in types as connectors, Declarations, Open Issues
@@ -815,36 +571,8 @@ constants? This issue has been discussed at the 10th design meeting. But
 no decision was made there.
 @* (@xref{ConnectTypes}.)
 
-<david: The Manchester meeting decided that they should.>
-
-<Ruediger: If no connection equations are generated, should then
-@code{assert} statements be generated for two connected constants 
-(or parameters) @code{c1} and @code{c2}, i.e. @code{assert(c1 == c1)},
-so that no model information is lost in a flat representation?>
-
-@subsection Integers in connectors
-
-Are integers allowed in connectors?
-
-@xref{Connect4}
-
-@subsection Booleans in connectors
-
-Are booleans allowed in connectors?
-
-@xref{Connect5}
-
-@subsection Strings in connectors
-
-Are strings allowed in connectors?
-
-@xref{Connect6}
-
-@subsection Constant connectors
-
-Is it legal to declare a connector as @code{constant}?
-
-@xref{ConnectConst1}
+This has been discussed at both the 12th and 13th design meetings, but
+no agreement has been reached.
 
 @c --------------------------------------------------------- 
 @node Built-in types as connectors, Integer expressions, Connections, Open Issues
@@ -859,6 +587,8 @@ In the Modelica 1c report, section 4.6 ``Matrices'', subsection ``Block
 Diagrams'', vectors of type @code{Real} are used as inputs and
 outputs. But no example is given in the discussion about connection of
 inputs and outputs there.
+
+This has been discussed at the 13th design meeting in Reno.
 
 @c --------------------------------------------------------- 
 @node Integer expressions, Redeclaration of parameter as variable, Built-in types as connectors, Open Issues
@@ -911,9 +641,11 @@ equations and expressions (e.g. index expressions). (See the example
 above and @ref{Expression Properties})
 @end enumerate
 
-<david: The Manchester minutes say ``Require same type, introduce type
-cast: operation integer(div(i,2))'', which seems to be to be a strange
-thing to say. It doesn't really answer the question.>
+This was discussed at the 12th design meeting.  I'm not certain of what
+was actually decided there.
+
+It was also discussed at the 13th design meeting.  The conclusion was
+that functions with integer return type were needed.
 
 @c --------------------------------------------------------- 
 @node Redeclaration of parameter as variable, Equations, Integer expressions, Open Issues
@@ -926,6 +658,9 @@ redeclarations. (@xref{DisturbedResistance2}.)
 It should be noted that, using inheritance, one can formulate examples
 that break the rule. Should this be valid? (@xref{DisturbedResistance3},
 @ref{DisturbedResistance4}.)
+
+This could probably be solved by modifying the subtype relation (but the
+Manchester meeting decided otherwise, for some reason).
 
 @subsection Resolutions from the Manchester meeting
 
@@ -960,6 +695,13 @@ expressions, then this is clearly illegal.
 @c --------------------------------------------------------- 
 @node Modifications,  , Equations, Open Issues
 @section Modifications
+
+@subsection Modification of class definitions
+
+The Reno meeting agreed that it would no longer be allowed to modify
+class definitions in a modification list.  Does everebody agree on this?
+
+All the following sections depend on this decision.
 
 @subsection Double modifications
 
@@ -1051,12 +793,7 @@ if a modification is a class modification or a component modification.
 
 @c ********************************************************************
 
-@node Closed Issues, Test Cases, Open Issues, Top
-@chapter Closed Issues
-
-@c ********************************************************************
-
-@node Test Cases, Change-Log, Closed Issues, Top
+@node Test Cases, Change-Log, Open Issues, Top
 @appendix Test Cases
 
 @c
