@@ -1,4 +1,4 @@
-TEST=rtest
+TEST=./rtest
 #TEST=runtest
 
 TESTFILES= Abs1.mo Abs2.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \

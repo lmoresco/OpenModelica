@@ -15,6 +15,7 @@ $collectcases = 0;
 $filearg = 0;
 $status = 0;
 $statusfilter = "all";
+$grep = "/bin/egrep";
 
 sub runone
 {
@@ -81,7 +82,7 @@ sub runone
 	return 1;
     }
 
-    system "/usr/bin/egrep -s '^#|Execution failed!' $log";
+    system "$grep -s '^#|Execution failed!' $log";
     if ( $? == 0 ) {
 	if ($info{"status"} eq "incorrect") {
 	    print "ok\n";
