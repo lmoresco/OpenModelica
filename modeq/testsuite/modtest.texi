@@ -1,0 +1,1052 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename modtest.info
+@settitle Modelica Testsuite, Version 0.9.1
+@c %**end of header
+
+@c translation to HTML:
+@c   texi2html -split_node -number -menu modtest.texi
+
+@setchapternewpage odd
+@paragraphindent 0
+@iftex
+@parindent 0pt
+@parskip = @medskipamount
+@end iftex
+
+@ifinfo
+This is a collection of testcases for Modelica.
+
+Copyright 1998 Modelica Design Group
+@end ifinfo
+
+@titlepage
+@sp 10
+@comment The title is printed in a large font.
+@title{Modelica Testsuite}
+@subtitle{Version 0.9.1}
+@author{Modelica Design Group}
+
+@c The following two commands start the copyright page.
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} 1998 Modelica Design Group
+@end titlepage
+
+@node    Top, Conventions, (dir), (dir)
+@comment node-name, next,          previous, up
+
+@menu
+* Conventions::                 
+* Unclear Issues::              
+* Testcases::                   Collection of files with testcases.
+
+* Change-Log::                  
+
+ --- The Detailed Node Listing ---
+
+Conventions
+
+* General Conventions::         
+* Classification::              
+* Flat Modelica::               
+
+Unclear Issues
+
+* Equations in declarations vs. in equation sections::  
+* Is Modelica a strict define-before-use language?::  
+* Constants::                   
+* Connections::                 
+* Integer expressions::         
+* For loops::                   
+* Redeclaration of parameter as variable::  
+* Assert statement::            
+
+Testcases
+
+* ConditionalArrayExpression1::  
+* ConditionalArrayExpression2::  
+* ConnectFlowEffort::           
+* ConnectHierarchical1::        
+* ConnectHierarchical2::        
+* ConnectTypes::                
+* ConstructParameters::         
+* DeclareConstant1::            
+* DeclareConstant2::            
+* DeclareConstant3::            
+* DependsMutual::               
+* DependsRecursive::            
+* DisturbedResistance1::        
+* DisturbedResistance2::        
+* DisturbedResistance3::        
+* DisturbedResistance4::        
+* Faculty1::                    
+* Faculty2::                    
+* Faculty3::                    
+* Faculty4::                    
+* Integer2Real::                
+* Lookup1::                     
+* Lookup2::                     
+* Lookup3::                     
+* Lookup4::                     
+* Lookup5::                     
+* Lookup6::                     
+* ModifyConstant1::             
+* ModifyConstant2::             
+* ModifyConstant3::             
+* ModifyConstant4::             
+* ModifyUnknown1::              
+* ModifyUnknown2::              
+* Overwriting1::                
+* Overwriting2::                
+* Overwriting3::                
+* Real2Integer1::               
+* Real2Integer2::               
+* ScopeDeclaration1::           
+* ScopeDeclaration2::           
+* ScopeModification1::          
+* ScopeModification2::          
+* SimpleIntegrator1::           
+* SimpleIntegrator2::           
+* SimpleIntegrator3::           
+* SimpleIntegrator4::           
+* Units1::                      
+* Units2::                      
+* XPowers1::                    
+* XPowers2::                    
+* XPowers3::                    
+@end menu
+
+@c ********************************************************************
+
+@comment node-name,     next,          previous, up
+@node     Conventions, Unclear Issues, Top, Top
+@chapter Conventions
+
+@menu
+* General Conventions::         
+* Classification::              
+* Flat Modelica::               
+@end menu
+
+@node General Conventions, Classification, Conventions, Conventions
+@section General Conventions
+
+A Modelica testcase is an example that illustrates one ore more
+semantical aspects of the Modelica language. A testcase is given in two
+formulations: Modelica code and a flat representation that specifies the
+semantics of the example. Furthermore a classification is used to allow
+grouping of several testcases.
+
+@sp 0
+Each testcase is formulated in one Modelica file consisting of
+
+@enumerate
+@item header explaining the testcase
+@item classification entry  (@xref{Classification}.)
+@item Modelica code
+@item flat representation (@xref{Flat Modelica}.)
+@end enumerate
+
+@sp 0
+Everything except the Modelica code is given as comment in the file. No
+flat representation is given for incorrect examples.
+
+@node Classification, Flat Modelica, General Conventions, Conventions
+@section Classification
+
+Each testcase contains a classification entry of the form
+
+@samp{classification:}  @var{aspect}  [@samp{&} @var{aspect}]*  @samp{-}  @var{correctness}
+
+@sp 0
+Following identifiers are used to classify the tested @var{aspect}(s):
+@table @samp
+@item algorithm
+@item array
+@item connection
+@item declaration
+@item equation
+@item modification
+@item scoping
+@item typing
+@end table
+
+@sp 0
+The @var{correctness} of a testcase is given as one of:
+@table @samp
+@item correct
+The example is correct.
+@item incorrect
+The example is incorrect according to the formal Modelica semantics or
+syntax.
+@item erroneous
+The example is formally correct, but it contains a modeling error that 
+should be outlined.
+@end table
+
+@node Flat Modelica,  , Classification, Conventions
+@section Flat Modelica
+
+The aim of the flat representation is to clearly specify the semantics
+of a testcase. This is done using a low level format. The format has the 
+same basic syntax as Modelica.
+
+@sp 0
+Following restrictions apply:
+@itemize @bullet
+@item 
+Flat models contain only variables (or arrays) of predefined
+types. Predefined attributes, e.g. @code{start}, @code{unit},
+@code{min}, @code{max}, etc. are declared as separate variables directly
+behind the variable they belong to.
+@item 
+A flat model has one declaration section, optionally followed by an
+equation section, which is followed by zero or more algorithm
+sections. The order of equations is undefined.
+@item
+No modifications are used, i.e. equations modifications made in the
+Modelica source code are stated in the equation section of the flat
+representation.  Redeclarations are taken care of while flattening the
+model.
+@item
+No connect statements are used, i.e. the corresponding connection
+equations are stated.
+@item
+Array expressions and equations as well as short notations for regular
+equation structures (i.e. @code{for} loops) are not used if
+possible. Such Modelica notations are expanded and unrolled,
+respectively, in the flat representation.
+@*
+<David and Ruediger: The expansion may not be sensible or may even not
+be possible in all cases. But it is necessary for the specification of
+the semantics (e.g. what is the step size in @code{a:b:c}, does
+@code{a*b} mean outer or inner vector product, ...)>
+@end itemize
+
+@sp 0
+Following extensions are made:
+@itemize @bullet
+@item
+Identifiers may contain dots @samp{.} (resulting from subcomponents in the
+originating Modelica code) and tilde signs @samp{~} (see below).
+@item
+In order to be able to declare a local variable @var{var} of a function 
+@var{funcname}, an identifier of the form 
+@example
+@var{funcname}@samp{~}@var{n}@samp{.}@var{var}
+@end example
+with @var{n} a number is introduced. In this way calls to internal
+functions (that are defined in Modelica) can be expanded, e.g. to
+express the semantics of assigning input and output variables.
+The number @var{n} should be incremented for each call to the same
+function from the same class.
+@*
+<Peter: The expansion is not possible for recursive functions.>
+@*
+Calls to predefined and external functions remain in the flat
+representation as they are in the Modelica code.
+@item
+Automatic type conversions defined in the Modelica semantics, e.g. from 
+an @code{Integer} @code{i} to @code{Real}, are stated using the target
+type name as conversion operator, i.e. @code{Real(i)}.
+@item
+Due to the extensions a flat model representation is not valid
+Modelica. That is why the specifying class keyword is preceeded by an
+@samp{f}  (for flat), e.g. @code{fclass}, @code{fmodel},
+@code{fconnnector}, ... instead of @code{class}, @code{model},
+@code{connnector}, ..., respectively.
+@end itemize
+
+@c ********************************************************************
+
+@comment node-name,     next,          previous, up
+@node    Unclear Issues, Testcases, Conventions, Top
+@chapter Unclear Issues
+
+<Ruediger: The issues brought up here were unclear when writing the
+testcases together with David and when discussing them with Peter.
+They should be resolved soon.>
+
+@menu
+* Equations in declarations vs. in equation sections::  
+* Is Modelica a strict define-before-use language?::  
+* Constants::                   
+* Connections::                 
+* Integer expressions::         
+* For loops::                   
+* Redeclaration of parameter as variable::  
+* Assert statement::            
+@end menu
+
+@c --------------------------------------------------------- 
+@node Equations in declarations vs. in equation sections, Is Modelica a strict define-before-use language?, Unclear Issues, Unclear Issues
+@section Equations in declarations vs. in equation sections
+
+@subsection Model modification
+What are ``named'' equations that can be replaced via
+modifications?  (only equations in declarations or all equations with a
+single name on the left hand side) 
+@* (@xref{Overwriting1}, and @ref{Overwriting2}.)
+
+@subsection Scoping
+If only equations in declarations can be modified, what more differences 
+exist to equations in equation sections? For example: is the declared
+variable already known in its declaration equation?
+@* (@xref{ScopeDeclaration1}, and @ref{ScopeDeclaration2}, as well as
+@ref{Lookup5}, and @ref{Lookup6}.) 
+
+@sp 0
+If @code{ScopeDeclaration1} was correct, then the following declaration
+should also be correct:
+
+@example
+constant Real a[3] = [a[2]/a[3]; 2*a[3]; 3];
+@end example
+
+@subsection Typing
+
+A surprising but correct example that shows a consequence of treating
+declaration equations like ordinary equations is given in
+@ref{Real2Integer1}.
+
+@c --------------------------------------------------------- 
+@node Is Modelica a strict define-before-use language?, Constants, Equations in declarations vs. in equation sections, Unclear Issues
+@section Is Modelica a strict define-before-use language?
+
+Are recursive functions allowed? 
+@* (@xref{Faculty1}.)
+@*
+If yes, what happens if a function calls itself in the declaration part
+before the outputs are readily defined?
+
+@sp 0
+Recursive models are impossible in general.
+@* (@xref{DependsRecursive}.)
+
+Mutual dependency is not supported by Modelica as no forward declaration
+exists, although it can be worked around by using local function
+definitions.
+@* (@xref{DependsMutual}.)  @* Mutual dependency would be needed
+e.g. for mutually recursive functions.
+
+@c --------------------------------------------------------- 
+@node Constants, Connections, Is Modelica a strict define-before-use language?, Unclear Issues
+@section Constants
+
+@subsection Constant variables
+
+Should the use of a variable declared without the constant qualifier
+in a constant expression be allowed? 
+
+@sp 0
+Consider the following example: 
+
+@example
+model Foo
+  Integer i, n=10;
+  Real x[n];
+equation
+  for i in 2:n loop
+    x[i] = x[i-1]+1;
+  end for;
+end Foo;
+@end example
+
+The range @code{2:n} in the loop has to be constant, which means that
+@code{n} must be a constant. Now the variable @code{n} is not declared
+as a constant, but as a variable. However there is an equation in the
+declaration that says that it is always equal to 10, i.e. constant.  
+
+@sp 0
+Should a translator always keep track of which variables are declared
+with an equation modification with a constant expression? Or should only
+``variables'' declared as constant be regarded as constant?
+
+@sp 0
+If the example is correct, one might ask what the need of the constant
+qualifier is? One reason to keep it is to disallow redeclaration to
+e.g. parameter. Another reason is that constants can be looked up in
+class definitions, while variables can not.
+
+@* (@xref{XPowers3}, compared to @ref{XPowers2}.)
+
+@subsection Constant declaration
+Does a constant need a declaration equation with a constant
+expression on the right hand side or is it allowed to initialize a
+constant in an equation section?
+@* (@xref{DeclareConstant1}, @ref{DeclareConstant3}.)
+
+@subsection Variable constant declaration
+Can a constant have a declaration equation with a non-constant
+expression on the right hand side?  This is a consequence of regarding
+declaration equations as normal equations.  The answer depends on the
+answer the the previous question.
+@* (@xref{DeclareConstant1}, @ref{DeclareConstant3}.)
+
+@subsection Constant modification
+The Modelica 1c report says in appendix B2, subsection ``Variability
+constraints'', that constants can be changed by a model modifier. 
+@*
+<Ruediger: As I understood the discussion in Helsinki, only
+redeclaration is allowed for constants, but not modification of
+the value.>
+@* (@xref{ModifyConstant1}, compared to @ref{ModifyConstant2}.)
+
+@c --------------------------------------------------------- 
+@node Connections, Integer expressions, Constants, Unclear Issues
+@section Connections
+
+@subsection Parameters and constants in connectors
+Should connection equations be generated for parameters and
+constants? This issue has been discussed at the 10th design meeting. But 
+no decision was made there.
+@* (@xref{ConnectTypes}.)
+
+<Ruediger: If no connection equations are generated, should then
+@code{assert} statements be generated for two connected constants 
+(or parameters) @code{c1} and @code{c2}, i.e. @code{assert(c1 == c1)},
+so that no model information is lost in a flat representation?>
+
+@subsection Built-in types as connectors
+Are variables of predefined types, e.g. @code{Real}, valid
+connectors? This is not specified in the Modelica 1c report.
+It is assumed to be true here.
+@* (@xref{Units1}, and @ref{Units2}.)
+
+@sp 0
+In the Modelica 1c report, section 4.6 ``Matrices'', subsection ``Block
+Diagrams'', vectors of type @code{Real} are used as inputs and
+outputs. But no example is given in the discussion about connection of
+inputs and outputs there.
+
+@subsection Hierarchical models
+The Modelica 1c syntax restricts names allowed in connection
+clauses, compared to former versions. However, it is still possible to
+state examples that give different solutions even though the same
+connections are established. What is wrong?
+@* (@xref{ConnectHierarchical1}, and @ref{ConnectHierarchical2}.)
+
+@subsection Connections and Modifications
+Should it be allowed to redeclare a flow variable as non-flow and vice
+versa? This can cause trouble if connection equations are generated on a
+lower level of model hierarchy and if the modification is made on a
+higher level. 
+@* (One could reformulate @ref{ConnectFlowEffort} accordingly.)
+
+@subsection Directed connections
+Are connections involving an @code{input} or an @code{output} variable
+equations or assignments? 
+@*
+<Ruediger: If they are equations, then model information is lost in the
+flat representation.> 
+
+<David: The @code{input} and @code{output} keywords do not have any
+causality meaning.  They are only used to make sure you never connect an
+input to an output.  This is checked during translation, and that
+information is no more lost than other properties of the structural
+model, such as @code{protect}.>
+@* (@xref{ConstructParameters}.)
+
+@sp 0
+If they are assignments, should they then be stated in an
+@code{algorithm} section? Or should this be an exception from the
+general rule (no @samp{:=} appears in the Modelica code)?
+
+@c --------------------------------------------------------- 
+@node Integer expressions, For loops, Connections, Unclear Issues
+@section Integer expressions
+
+Version 1c of the Modelica report, appendix B.9, introduces built-in
+functions for doing things like integer division. Most of the
+functions have return type @code{Real}. But should not this be
+allowed:  
+
+@example
+model Foo
+  Real a[10];
+  Real b[20];
+  Integer i;
+equation
+  for i in 2:20 loop
+    a[div(i,2)] = b[i];
+  end for;
+end Foo;
+@end example
+
+There are two problems with the current specification:
+
+@enumerate
+@item 
+Possibly not only the built-in function @code{size}, but also
+@code{div}, @code{ceil}, @code{floor}, and @code{ndims} should have
+return type @code{Integer}. If used in @code{Real} expressions, then
+the result should be converted from @code{Integer} to @code{Real}
+(as for any integer used in a real expression). 
+@* (@xref{Integer2Real}.)
+
+@sp 0
+But this solution has another problem, which is more an
+implementation problem. The @code{Integer} type is often
+implemented as a limited type of typically 32 bits, which would mean 
+that if you call ceiling(large_real_numer) you would overflow the
+integer type. So there is probably the need to introduce functions
+that conceptually do the same thing, but works on reals instead. 
+
+@item 
+The use of the mentioned built-in functions should not only be
+allowed in @code{Boolean} equations and expressions, but also in
+@code{Integer} equations and expressions (e.g. index expressions).
+@* (See the example above)
+@end enumerate
+
+@page
+@c --------------------------------------------------------- 
+@node For loops, Redeclaration of parameter as variable, Integer expressions, Unclear Issues
+@section For loops
+
+@subsection Integer vector as index expression
+
+What expressions are allowed in @code{for} clauses? In the examples
+given in the Modelica 1c document only range expressions of the form
+@code{1:n} are stated, i.e.  
+@example
+for i in 1:n loop
+  ...
+end for;
+@end example
+Should not each constant @code{Integer} vector be allowed?
+
+@sp 0
+This would imply that the same expressions as for the initialization
+of a constant @code{Integer} vector are allowed, e.g.
+@example
+for i in [1,2,3,5] loop
+  ...
+end for;
+@end example
+
+<David: Yes, this is what we decided in Helsinki.>
+
+For reasons of consistency the first example should possibly be
+stated as  
+@example
+for i in [1:n] loop
+  ...
+end for;
+@end example
+Should it at least be allowed alternatively, if not exclusively? Both
+formulations are allowed in Matlab. This issue is related to matrix
+issues. 
+
+<David: No, the syntax for range expressions is EXP:EXP or EXP:EXP:EXP.
+The brackets are used for enumerated arrays.  Although someone claimed
+that the bracket syntax would automatically splice in array elements,
+which would mean that your code would be correct.  But this is another
+question.>
+
+@subsection Variable index expression
+
+Is a @code{for} loop with variable index expression allowed in an
+algorithm?  
+@* (@xref{Faculty2}.)
+@* If yes, is this expression evaluated only once or during each iteration?
+
+@sp 0
+One could define the same rule for both, equation and
+algorithm sections, even saying that the index expression must be
+constant during simulation. The @code{while} loop covers
+variable numbers of iterations in algorithms.
+
+<David: I'd say that in the equation section the expression must me
+constant (parameterization allowed), but in an algorithm section the
+expression can be any array expression that is evaluated once when the
+loop starts.>
+@* (@xref{Faculty3}.)
+
+@page
+@c --------------------------------------------------------- 
+@node Redeclaration of parameter as variable, Assert statement, For loops, Unclear Issues
+@section Redeclaration of parameter as variable
+
+Version 1c of the Modelica report, appendix B2, section ``Redeclaration'',
+says that variability constraints may only become stronger in
+redeclarations.
+@* (@xref{DisturbedResistance2}.)
+
+@sp 0
+It should be noted that one can formulate examples that break the
+rule. 
+@* (@xref{DisturbedResistance3}.)
+
+@sp 0
+Is it valid to break redeclaration rules using (multiple) inheritance?!
+
+@sp 0
+But is not the idea behind DisturbedResistance2 feasible so that Modelica
+could allow it, i.e. is the redeclaration rule too strong?  The key word
+@code{final} can be used to forbid redeclaration in critical cases.  
+@* (See also @ref{DisturbedResistance4}!)
+
+@sp 0
+<Peter: The keyword @code{redeclare} has actually been introduced to
+indicate that redeclarations are strong modifications in general.>
+
+@c --------------------------------------------------------- 
+@node Assert statement,  , Redeclaration of parameter as variable, Unclear Issues
+@section Assert statement
+
+The @code{assert} statement is currently not in the Modelica 1c
+syntax. However, in the examples it is treated as equation. Should it
+not be considered as a special @code{when} clause, i.e. belonging to 
+algorithms?
+
+@sp 0
+Furthermore, if @code{assert} statements are equations, then a Real with
+@code{assert(value <= min ...)} should actually not be allowed in
+connectors.
+
+@c ********************************************************************
+
+@node Testcases, Change-Log, Unclear Issues, Top
+@appendix Testcases
+
+@menu
+* ConditionalArrayExpression1::  
+* ConditionalArrayExpression2::  
+* ConnectFlowEffort::           
+* ConnectHierarchical1::        
+* ConnectHierarchical2::        
+* ConnectTypes::                
+* ConstructParameters::         
+* DeclareConstant1::            
+* DeclareConstant2::            
+* DeclareConstant3::            
+* DependsMutual::               
+* DependsRecursive::            
+* DisturbedResistance1::        
+* DisturbedResistance2::        
+* DisturbedResistance3::        
+* DisturbedResistance4::        
+* Faculty1::                    
+* Faculty2::                    
+* Faculty3::                    
+* Faculty4::                    
+* Integer2Real::                
+* Lookup1::                     
+* Lookup2::                     
+* Lookup3::                     
+* Lookup4::                     
+* Lookup5::                     
+* Lookup6::                     
+* ModifyConstant1::             
+* ModifyConstant2::             
+* ModifyConstant3::             
+* ModifyConstant4::             
+* ModifyUnknown1::              
+* ModifyUnknown2::              
+* Overwriting1::                
+* Overwriting2::                
+* Overwriting3::                
+* Real2Integer1::               
+* Real2Integer2::               
+* ScopeDeclaration1::           
+* ScopeDeclaration2::           
+* ScopeModification1::          
+* ScopeModification2::          
+* SimpleIntegrator1::           
+* SimpleIntegrator2::           
+* SimpleIntegrator3::           
+* SimpleIntegrator4::           
+* Units1::                      
+* Units2::                      
+* XPowers1::                    
+* XPowers2::                    
+* XPowers3::                    
+@end menu
+
+@c
+@c generated by testcases.sh
+@c
+
+@page
+@node ConditionalArrayExpression1, ConditionalArrayExpression2, Testcases, Testcases
+@appendixsec ConditionalArrayExpression1
+@example
+@include ConditionalArrayExpression1.mo
+@end example
+
+@page
+@node ConditionalArrayExpression2, ConnectFlowEffort, ConditionalArrayExpression1, Testcases
+@appendixsec ConditionalArrayExpression2
+@example
+@include ConditionalArrayExpression2.mo
+@end example
+
+@page
+@node ConnectFlowEffort, ConnectHierarchical1, ConditionalArrayExpression2, Testcases
+@appendixsec ConnectFlowEffort
+@example
+@include ConnectFlowEffort.mo
+@end example
+
+@page
+@node ConnectHierarchical1, ConnectHierarchical2, ConnectFlowEffort, Testcases
+@appendixsec ConnectHierarchical1
+@example
+@include ConnectHierarchical1.mo
+@end example
+
+@page
+@node ConnectHierarchical2, ConnectTypes, ConnectHierarchical1, Testcases
+@appendixsec ConnectHierarchical2
+@example
+@include ConnectHierarchical2.mo
+@end example
+
+@page
+@node ConnectTypes, ConstructParameters, ConnectHierarchical2, Testcases
+@appendixsec ConnectTypes
+@example
+@include ConnectTypes.mo
+@end example
+
+@page
+@node ConstructParameters, DeclareConstant1, ConnectTypes, Testcases
+@appendixsec ConstructParameters
+@example
+@include ConstructParameters.mo
+@end example
+
+@page
+@node DeclareConstant1, DeclareConstant2, ConstructParameters, Testcases
+@appendixsec DeclareConstant1
+@example
+@include DeclareConstant1.mo
+@end example
+
+@page
+@node DeclareConstant2, DeclareConstant3, DeclareConstant1, Testcases
+@appendixsec DeclareConstant2
+@example
+@include DeclareConstant2.mo
+@end example
+
+@page
+@node DeclareConstant3, DependsMutual, DeclareConstant2, Testcases
+@appendixsec DeclareConstant3
+@example
+@include DeclareConstant3.mo
+@end example
+
+@page
+@node DependsMutual, DependsRecursive, DeclareConstant3, Testcases
+@appendixsec DependsMutual
+@example
+@include DependsMutual.mo
+@end example
+
+@page
+@node DependsRecursive, DisturbedResistance1, DependsMutual, Testcases
+@appendixsec DependsRecursive
+@example
+@include DependsRecursive.mo
+@end example
+
+@page
+@node DisturbedResistance1, DisturbedResistance2, DependsRecursive, Testcases
+@appendixsec DisturbedResistance1
+@example
+@include DisturbedResistance1.mo
+@end example
+
+@page
+@node DisturbedResistance2, DisturbedResistance3, DisturbedResistance1, Testcases
+@appendixsec DisturbedResistance2
+@example
+@include DisturbedResistance2.mo
+@end example
+
+@page
+@node DisturbedResistance3, DisturbedResistance4, DisturbedResistance2, Testcases
+@appendixsec DisturbedResistance3
+@example
+@include DisturbedResistance3.mo
+@end example
+
+@page
+@node DisturbedResistance4, Faculty1, DisturbedResistance3, Testcases
+@appendixsec DisturbedResistance4
+@example
+@include DisturbedResistance4.mo
+@end example
+
+@page
+@node Faculty1, Faculty2, DisturbedResistance4, Testcases
+@appendixsec Faculty1
+@example
+@include Faculty1.mo
+@end example
+
+@page
+@node Faculty2, Faculty3, Faculty1, Testcases
+@appendixsec Faculty2
+@example
+@include Faculty2.mo
+@end example
+
+@page
+@node Faculty3, Faculty4, Faculty2, Testcases
+@appendixsec Faculty3
+@example
+@include Faculty3.mo
+@end example
+
+@page
+@node Faculty4, Integer2Real, Faculty3, Testcases
+@appendixsec Faculty4
+@example
+@include Faculty4.mo
+@end example
+
+@page
+@node Integer2Real, Lookup1, Faculty4, Testcases
+@appendixsec Integer2Real
+@example
+@include Integer2Real.mo
+@end example
+
+@page
+@node Lookup1, Lookup2, Integer2Real, Testcases
+@appendixsec Lookup1
+@example
+@include Lookup1.mo
+@end example
+
+@page
+@node Lookup2, Lookup3, Lookup1, Testcases
+@appendixsec Lookup2
+@example
+@include Lookup2.mo
+@end example
+
+@page
+@node Lookup3, Lookup4, Lookup2, Testcases
+@appendixsec Lookup3
+@example
+@include Lookup3.mo
+@end example
+
+@page
+@node Lookup4, Lookup5, Lookup3, Testcases
+@appendixsec Lookup4
+@example
+@include Lookup4.mo
+@end example
+
+@page
+@node Lookup5, Lookup6, Lookup4, Testcases
+@appendixsec Lookup5
+@example
+@include Lookup5.mo
+@end example
+
+@page
+@node Lookup6, ModifyConstant1, Lookup5, Testcases
+@appendixsec Lookup6
+@example
+@include Lookup6.mo
+@end example
+
+@page
+@node ModifyConstant1, ModifyConstant2, Lookup6, Testcases
+@appendixsec ModifyConstant1
+@example
+@include ModifyConstant1.mo
+@end example
+
+@page
+@node ModifyConstant2, ModifyConstant3, ModifyConstant1, Testcases
+@appendixsec ModifyConstant2
+@example
+@include ModifyConstant2.mo
+@end example
+
+@page
+@node ModifyConstant3, ModifyConstant4, ModifyConstant2, Testcases
+@appendixsec ModifyConstant3
+@example
+@include ModifyConstant3.mo
+@end example
+
+@page
+@node ModifyConstant4, ModifyUnknown1, ModifyConstant3, Testcases
+@appendixsec ModifyConstant4
+@example
+@include ModifyConstant4.mo
+@end example
+
+@page
+@node ModifyUnknown1, ModifyUnknown2, ModifyConstant4, Testcases
+@appendixsec ModifyUnknown1
+@example
+@include ModifyUnknown1.mo
+@end example
+
+@page
+@node ModifyUnknown2, Overwriting1, ModifyUnknown1, Testcases
+@appendixsec ModifyUnknown2
+@example
+@include ModifyUnknown2.mo
+@end example
+
+@page
+@node Overwriting1, Overwriting2, ModifyUnknown2, Testcases
+@appendixsec Overwriting1
+@example
+@include Overwriting1.mo
+@end example
+
+@page
+@node Overwriting2, Overwriting3, Overwriting1, Testcases
+@appendixsec Overwriting2
+@example
+@include Overwriting2.mo
+@end example
+
+@page
+@node Overwriting3, Real2Integer1, Overwriting2, Testcases
+@appendixsec Overwriting3
+@example
+@include Overwriting3.mo
+@end example
+
+@page
+@node Real2Integer1, Real2Integer2, Overwriting3, Testcases
+@appendixsec Real2Integer1
+@example
+@include Real2Integer1.mo
+@end example
+
+@page
+@node Real2Integer2, ScopeDeclaration1, Real2Integer1, Testcases
+@appendixsec Real2Integer2
+@example
+@include Real2Integer2.mo
+@end example
+
+@page
+@node ScopeDeclaration1, ScopeDeclaration2, Real2Integer2, Testcases
+@appendixsec ScopeDeclaration1
+@example
+@include ScopeDeclaration1.mo
+@end example
+
+@page
+@node ScopeDeclaration2, ScopeModification1, ScopeDeclaration1, Testcases
+@appendixsec ScopeDeclaration2
+@example
+@include ScopeDeclaration2.mo
+@end example
+
+@page
+@node ScopeModification1, ScopeModification2, ScopeDeclaration2, Testcases
+@appendixsec ScopeModification1
+@example
+@include ScopeModification1.mo
+@end example
+
+@page
+@node ScopeModification2, SimpleIntegrator1, ScopeModification1, Testcases
+@appendixsec ScopeModification2
+@example
+@include ScopeModification2.mo
+@end example
+
+@page
+@node SimpleIntegrator1, SimpleIntegrator2, ScopeModification2, Testcases
+@appendixsec SimpleIntegrator1
+@example
+@include SimpleIntegrator1.mo
+@end example
+
+@page
+@node SimpleIntegrator2, SimpleIntegrator3, SimpleIntegrator1, Testcases
+@appendixsec SimpleIntegrator2
+@example
+@include SimpleIntegrator2.mo
+@end example
+
+@page
+@node SimpleIntegrator3, SimpleIntegrator4, SimpleIntegrator2, Testcases
+@appendixsec SimpleIntegrator3
+@example
+@include SimpleIntegrator3.mo
+@end example
+
+@page
+@node SimpleIntegrator4, Units1, SimpleIntegrator3, Testcases
+@appendixsec SimpleIntegrator4
+@example
+@include SimpleIntegrator4.mo
+@end example
+
+@page
+@node Units1, Units2, SimpleIntegrator4, Testcases
+@appendixsec Units1
+@example
+@include Units1.mo
+@end example
+
+@page
+@node Units2, XPowers1, Units1, Testcases
+@appendixsec Units2
+@example
+@include Units2.mo
+@end example
+
+@page
+@node XPowers1, XPowers2, Units2, Testcases
+@appendixsec XPowers1
+@example
+@include XPowers1.mo
+@end example
+
+@page
+@node XPowers2, XPowers3, XPowers1, Testcases
+@appendixsec XPowers2
+@example
+@include XPowers2.mo
+@end example
+
+@page
+@node XPowers3,  , XPowers2, Testcases
+@appendixsec XPowers3
+@example
+@include XPowers3.mo
+@end example
+
+@c
+@c end testcases.sh
+@c
+
+@node Change-Log,  , Testcases, Top
+@appendix Change-Log
+
+@appendixsec Version 0.9 to 0.9.1
+
+@enumerate
+@item 
+@xref{ConditionalArrayExpression1}: corrected classification (&array).
+@item
+@xref{Connections}, @ref{ConnectTypes}: extended discussion in
+subsection ``Parameters and constants in connectors''
+(generation of assertions?).
+@item
+@xref{Connections}: new subsection ``Connections and Modifications''.
+@item
+@xref{Connections}: new subsection ``Directed connections''.
+@end enumerate
+
+@contents
+@bye

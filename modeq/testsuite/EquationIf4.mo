@@ -6,7 +6,7 @@
 // 
 
 class EquationIf3
-  parameter Real p = 10.0
+  parameter Real p = 10.0;
   Real x;
 equation
   if p<0.0 then
@@ -20,10 +20,10 @@ equation
   end if;
 end EquationIf3;
 
-// fclass EquationIf2
+// fclass EquationIf3
 //   parameter Real p;
 //   Real x;
 // equation
 //   p = 10.0;
 //   x = 4.0;
-// end EquationIf2;
+// end EquationIf3;
