@@ -1,0 +1,15 @@
+VERSION.texi
+cases.texi
+modtest.aux
+modtest.cp
+modtest.dvi
+modtest.fn
+modtest.info*
+modtest.ky
+modtest.log
+modtest.pg
+modtest.ps
+modtest.toc
+modtest.tp
+modtest.vr
+modtest_*.html

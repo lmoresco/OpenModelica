@@ -1,0 +1,190 @@
+// This is the test result from the modeq version with 
+// tuples and array grammar for modelica 1.1. The array semantics
+// uses davids row and column ast nodes. These should be transfered
+// inte the array constucture functoncall and the concatenation
+// function call respectivly.
+
+
+Running tests...
+
+Bus Error
+ + Algorithm1                     ... nonzero exit status
+ - Algorithm2                     ... ok
+ + Algorithm3                     ... ok
+ - Algorithm4                     ... ok
+ + Array1                         ... ok
+ + Array2                         ... ok
+ + Array3                         ... ok
+ + Array4                         ... equation mismatch
+ + Array5                         ... ok
+ + Array6                         ... equation mismatch
+ - Array7                         ... ok
+Segmentation Fault
+ + Array8                         ... nonzero exit status
+ + ArrayModification1             ... ok
+ + ArrayModification10            ... ok
+ + ArrayModification11            ... ok
+ + ArrayModification12            ... ok
+ + ArrayModification2             ... ok
+ + ArrayModification3             ... ok
+ + ArrayModification4             ... ok
+ + ArrayModification5             ... ok
+ - ArrayModification6             ... ok
+ - ArrayModification7             ... ok
+ + ArrayModification8             ... ok
+ + ArrayModification9             ... ok
+ + ArraySlice1                    ... ok
+ + Circuit1                       ... equation mismatch
+ + Class1                         ... ok
+ + Class2                         ... ok
+ - Class3                         ... this test should have failed
+ + Class4                         ... ok
+ - ConditionalArrayExpression1    ... ok
+ + ConditionalArrayExpression2    ... ok
+ + Connect1                       ... ok
+ - Connect10                      ... ok
+ - Connect11                      ... ok
+ + Connect2                       ... ok
+ + Connect3                       ... ok
+ - Connect4                       ... ok
+ - Connect5                       ... ok
+ - Connect6                       ... ok
+ + Connect7                       ... equation mismatch
+ + Connect8                       ... ok
+ + Connect9                       ... ok
+ - ConnectConst1                  ... ok
+ - ConnectFlowEffort              ... ok
+ + ConnectHierarchical1           ... ok
+ + ConnectHierarchical2           ... ok
+ + ConnectTypes                   ... ok
+ + Constant1                      ... ok
+ + Constant2                      ... ok
+ + Constant3                      ... ok
+ + Constant4                      ... execution failed
+ + Constant5                      ... execution failed
+ + Constant6                      ... execution failed
+ - ConstructParameters            ... ok
+Segmentation Fault
+ - Declaration1                   ... ok
+Segmentation Fault
+ - Declaration2                   ... ok
+Segmentation Fault
+ - Declaration3                   ... ok
+ - DeclareConstant1               ... ok
+ - DeclareConstant2               ... this test should have failed
+ - DeclareConstant3               ... this test should have failed
+ - DependsMutual                  ... ok
+ - DependsRecursive               ... ok
+ + Discrete1                      ... ok
+ - Discrete2                      ... ok
+ - DisturbedResistance1           ... ok
+ - DisturbedResistance2           ... ok
+ + DisturbedResistance3           ... equation mismatch
+ - DisturbedResistance4           ... equation mismatch
+ + EquationComponent1             ... ok
+ + EquationComponent2             ... ok
+ + EquationComponent3             ... execution failed
+ + EquationComponent4             ... execution failed
+ + EquationComponent5             ... ok
+ + EquationFor1                   ... ok
+ + EquationFor2                   ... ok
+ + EquationFor3                   ... ok
+ + EquationIf1                    ... ok
+ + EquationIf2                    ... ok
+ + EquationIf3                    ... ok
+ + EquationIf4                    ... ok
+ + Extends1                       ... ok
+ - Faculty1                       ... ok
+ + Faculty2                       ... ok
+ + Faculty3                       ... execution failed
+ + Faculty4                       ... execution failed
+ + Function1                      ... execution failed
+ - Function10                     ... unknown testcase status
+ - Function2                      ... ok
+ - Function3                      ... this test should have failed
+ - Function4                      ... ok
+ + Function5                      ... execution failed
+ + Function6                      ... execution failed
+ - Function7                      ... ok
+ - Function8                      ... ok
+ + Function9                      ... execution failed
+ + Integer2Real                   ... ok
+ + Lookup1                        ... ok
+ - Lookup2                        ... ok
+ - Lookup3                        ... this test should have failed
+ + Lookup4                        ... execution failed
+ + Lookup5                        ... ok
+ + Lookup6                        ... ok
+ - Lookup7                        ... ok
+ - Modelica.mo                    ... unknown testcase status
+ + Modification1                  ... ok
+ - Modification10                 ... this test should have failed
+ - Modification11                 ... ok
+ + Modification2                  ... ok
+ + Modification3                  ... ok
+ - Modification4                  ... ok
+ - Modification5                  ... ok
+ + Modification6                  ... ok
+ + Modification7                  ... ok
+ - Modification8                  ... this test should have failed
+ - Modification9                  ... ok
+ + ModifyConstant1                ... execution failed
+ + ModifyConstant2                ... ok
+Bus Error
+ - ModifyConstant3                ... ok
+ - ModifyConstant4                ... ok
+ - ModifyConstant5                ... ok
+ - ModifyConstant6                ... this test should have failed
+ - ModifyUnknown1                 ... this test should have failed
+ - ModifyUnknown2                 ... ok
+ + Overwriting1                   ... equation mismatch
+ + Overwriting2                   ... equation mismatch
+ + Overwriting3                   ... execution failed
+ - Partial1                       ... ok
+ - Protected1                     ... ok
+ + Range1                         ... ok
+ + Real2Integer1                  ... ok
+ - Real2Integer2                  ... ok
+ + Record1                        ... ok
+ + Redeclare1                     ... execution failed
+ + Redeclare2                     ... ok
+ + Redeclare3                     ... execution failed
+ - RedeclareFlowEffort            ... ok
+Bus Error
+ - ReplaceFunction                ... ok
+ - ScopeDeclaration1              ... ok
+ + ScopeDeclaration2              ... equation mismatch
+ - ScopeDeclaration3              ... this test should have failed
+ - ScopeDeclaration4              ... ok
+ + ScopeModification1             ... ok
+ - ScopeModification2             ... ok
+ + Shadow1                        ... ok
+ - SimpleIntegrator1              ... ok
+ + SimpleIntegrator2              ... equation mismatch
+ + SimpleIntegrator3              ... execution failed
+ - SimpleIntegrator4              ... this test should have failed
+ - Type1                          ... ok
+ - Type2                          ... ok
+ - Type3                          ... ok
+ + Type4                          ... ok
+ + Type5                          ... ok
+ + Type6                          ... ok
+ - Type7                          ... ok
+ - Type8                          ... ok
+ - Units1                         ... ok
+ - Units2                         ... ok
+ + XPowers1                       ... execution failed
+ + XPowers2                       ... ok
+ - XPowers3                       ... ok
+ - Faculty1                       ... this test should have failed
+ + modelica_1_1_Type1.mo          ... execution failed
+ - modelica_1_1_Type1.mo          ... ok
+ - modelica_1_1_Type1.mo          ... ok
+ - modelica_1_1_Type1.mo          ... ok
+Bus Error
+ + modelica_1_1_Type1.mo          ... nonzero exit status
+ + modelica_1_1_Type1.mo          ... equation mismatch
+ - package-s-1.mo                 ... unknown testcase status
+ - partial-s-1.mo                 ... unknown testcase status
+
+== 122 out of 171 tests succeeded
