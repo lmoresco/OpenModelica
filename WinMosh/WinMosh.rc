@@ -101,6 +101,9 @@ IDR_MAINFRAME MENU
 BEGIN
     POPUP "&File"
     BEGIN
+        MENUITEM "Load Model...",               ID_FILE_LOADMODEL
+        MENUITEM "Load Modelica Library",       ID_FILE_LOADLIB
+        MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_APP_EXIT
     END
     POPUP "&Edit"
@@ -294,6 +297,12 @@ STRINGTABLE
 BEGIN
     AFX_IDS_SCRESTORE       "Restore the window to normal size"
     AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOADMODEL       "Load mo-file"
+    ID_FILE_LOADLIB         "Load the modelica standard llibrary"
 END
 
 #endif    // English (U.S.) resources
