@@ -1,3 +1,8 @@
+//
+// Equations:
+//
+//   a.unit = "m2"
+//
 
 package P
 

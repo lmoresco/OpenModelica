@@ -9,3 +9,8 @@ end A;
 model World
   A a(x=18);
 end World;
+
+// Equations:
+//
+//   a.x = 18
+//

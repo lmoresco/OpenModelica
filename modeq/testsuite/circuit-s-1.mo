@@ -1,3 +1,4 @@
+// This is the example from the report
 
 type Voltage = Real(unit="V");
 type Current = Real(unit="A");
@@ -71,3 +72,84 @@ equation
   connect (L.n,  C.n);
   connect (AC.n, G.p);		// Ground
 end circuit;
+
+// Equations:
+//
+//   0.0 = AC.p.i + AC.n.i
+//   0.0 = C.p.i + C.n.i
+//   0.0 = L.p.i + L.n.i
+//   0.0 = R1.p.i + R1.n.i
+//   0.0 = R2.p.i + R2.n.i
+//   AC.PI = 3.14159265358979
+//   AC.VA = 220
+//   AC.VA.unit = "V"
+//   AC.f = 50
+//   AC.f.unit = "Hz"
+//   AC.i = AC.p.i
+//   AC.i.unit = "A"
+//   AC.n.i.unit = "A"
+//   AC.n.v = G.p.v
+//   AC.n.v.unit = "V"
+//   AC.p.i + R1.p.i + R2.p.i = 0.0
+//   AC.p.i.unit = "A"
+//   AC.p.v = R1.p.v
+//   AC.p.v.unit = "V"
+//   AC.v = AC.VA*sin(2.0*AC.PI*AC.f*TIME)
+//   AC.v = AC.p.v - AC.n.v
+//   AC.v.unit = "V"
+//   C.C = 0.01
+//   C.C*der(C.v) = C.i
+//   C.C.unit = "F"
+//   C.i = C.p.i
+//   C.i.unit = "A"
+//   C.n.i.unit = "A"
+//   C.n.v = AC.n.v
+//   C.n.v.unit = "V"
+//   C.p.i.unit = "A"
+//   C.p.v.unit = "V"
+//   C.v = C.p.v - C.n.v
+//   C.v.unit = "V"
+//   G.p.i.unit = "A"
+//   G.p.v = 0.0
+//   G.p.v.unit = "V"
+//   L.L = 0.1
+//   L.L*der(L.i) = L.v
+//   L.L.unit = "H"
+//   L.i = L.p.i
+//   L.i.unit = "A"
+//   L.n.i + C.n.i + AC.n.i + G.p.i = 0.0
+//   L.n.i.unit = "A"
+//   L.n.v = C.n.v
+//   L.n.v.unit = "V"
+//   L.p.i.unit = "A"
+//   L.p.v.unit = "V"
+//   L.v = L.p.v - L.n.v
+//   L.v.unit = "V"
+//   R1.R = 10
+//   R1.R*R1.i = R1.v
+//   R1.R.unit = "Ohm"
+//   R1.i = R1.p.i
+//   R1.i.unit = "A"
+//   R1.n.i + C.p.i = 0.0
+//   R1.n.i.unit = "A"
+//   R1.n.v = C.p.v
+//   R1.n.v.unit = "V"
+//   R1.p.i.unit = "A"
+//   R1.p.v = R2.p.v
+//   R1.p.v.unit = "V"
+//   R1.v = R1.p.v - R1.n.v
+//   R1.v.unit = "V"
+//   R2.R = 100
+//   R2.R*R2.i = R2.v
+//   R2.R.unit = "Ohm"
+//   R2.i = R2.p.i
+//   R2.i.unit = "A"
+//   R2.n.i + L.p.i = 0.0
+//   R2.n.i.unit = "A"
+//   R2.n.v = L.p.v
+//   R2.n.v.unit = "V"
+//   R2.p.i.unit = "A"
+//   R2.p.v.unit = "V"
+//   R2.v = R2.p.v - R2.n.v
+//   R2.v.unit = "V"
+//

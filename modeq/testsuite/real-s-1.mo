@@ -6,3 +6,11 @@ model World
   String s = "hej"		"a string";
   Boolean b = false		"a boolean";
 end World;
+
+// Equations:
+//
+//   i = 17
+//   r = 18
+//   s = "hej"
+//   b = FALSE
+//

@@ -1,0 +1,53 @@
+#!/bin/sh
+
+f=$1
+
+log=/tmp/log-$f
+
+../modeq $f >$log 2>&1;
+
+if [ $? -ne 0 ]; then
+    echo Nonzero exit status. Log saved in $log
+    exit 1
+fi
+
+if egrep '^#|Execution failed!' $log; then
+    echo Log saved in $log
+    exit 1
+fi
+
+tmp1=/tmp/equations-1
+tmp2=/tmp/equations-2
+
+cp $log $tmp1
+ed $tmp1 >/dev/null 2>&1 <<EOF
+1,/^Equations:/d
+1d
+/^\$/,\$d
+w
+q
+EOF
+
+cut -c 4- $f > $tmp2
+ed $tmp2 >/dev/null 2>&1 <<EOF
+1,/^Equations:/d
+1d
+/^\$/,\$d
+w
+q
+EOF
+
+sort $tmp1 > $tmp1-sorted
+sort $tmp2 > $tmp2-sorted
+
+diff -w $tmp1-sorted $tmp2-sorted > $tmp1
+
+if [ $? != 0 ]; then
+    echo Equation mismatch. Log saved in $log
+    echo >> $log
+    echo Equation diff: >> $log
+    sed -n -e 's/^>\(.*\)/expected:\1/p' \
+	   -e 's/^<\(.*\)/got:     \1/p' \
+	< $tmp1 >> $log
+    exit 1
+fi

@@ -6,3 +6,11 @@ model World
 equation
   x[N-1] = PI;
 end World;
+
+// Equations:
+//
+//   PI = 3.14159265358979
+//   N = 17
+//   N.unit = "hej"
+//   x[N - 1] = PI
+//

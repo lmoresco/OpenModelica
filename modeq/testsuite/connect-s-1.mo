@@ -1,15 +1,16 @@
-
-
-//  b1.a.c.r.b == b1.c.r.b
-//  b1.a.c.y + -b1.c.y == 0.0
-//  b2.a.c.r.b == b2.c.r.b
-//  b2.a.c.y + -b2.c.y == 0.0
-//  b3.a.c.r.b == b3.c.r.b
-//  b3.a.c.y + -b3.c.y == 0.0
-//  b1.c.r.b == b2.c.r.b
-//  b2.c.r.b == b3.c.r.b
-//  b3.c.r.b == c.r.b
-//  b1.c.y + b2.c.y + b3.c.y + -c.y == 0.0
+// Equations:
+//
+//   b[1].a.c.r.b == b[1].c.r.b
+//   b[1].a.c.y + -b[1].c.y == 0.0
+//   b[2].a.c.r.b == b[2].c.r.b
+//   b[2].a.c.y + -b[2].c.y == 0.0
+//   b[3].a.c.r.b == b[3].c.r.b
+//   b[3].a.c.y + -b[3].c.y == 0.0
+//   b[1].c.r.b == b[2].c.r.b
+//   b[2].c.r.b == b[3].c.r.b
+//   b[3].c.r.b == c.r.b
+//   b[1].c.y + b[2].c.y + b[3].c.y + -c.y == 0.0
+//
 
 type Real = RealType;
 
