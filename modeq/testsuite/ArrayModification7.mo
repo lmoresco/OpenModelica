@@ -23,4 +23,4 @@ end ArrayModification7;
 //   a.x[2] = 1.0;
 //   a.x[3] = 1.0;
 //   a.x[4] = 1.0;
-// end ArrayModification7
+// end ArrayModification7;

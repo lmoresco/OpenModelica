@@ -1,5 +1,5 @@
 // name:     ConnectFlowEffort
-// keywords: connection,modification
+// keywords: connect,modification
 // status:   incorrect
 // 
 // Flow and effort variables may not be connected.

@@ -35,5 +35,7 @@ end ConnectTypes;
 //   constant Real c.c;
 // equation
 //   c.e = a.c.e;
+//   c.p = a.c.p;
 //   c.d = a.c.d;
+//   c.c = a.c.c;
 // end ConnectTypes;

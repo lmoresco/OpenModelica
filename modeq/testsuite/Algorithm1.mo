@@ -52,7 +52,7 @@ end Algorithm1;
 //   end while;
 // algorithm
 //   for i in 1:3 loop
-//     if 2 < i then
+//     if i > 2 then
 // 	 x := x - Real(i);
 //     end if;
 //     if i < 1 then
@@ -64,7 +64,7 @@ end Algorithm1;
 //     end if;
 //   end for;
 // algorithm
-//   when 0.9<y do
+//   when y > 0.9 do
 //     x := 0.0;
 //   end when;
 // end Algorithm1;

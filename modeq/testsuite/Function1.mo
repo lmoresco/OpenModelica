@@ -1,3 +1,7 @@
+// name:     Function1
+// keywords: function
+// status:   correct
+// 
 // This tests basic function functionality
 
 function f

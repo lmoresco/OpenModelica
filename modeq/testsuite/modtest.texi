@@ -54,6 +54,7 @@ Conventions
 Open Issues
 
 * Types::                       
+* Array syntax::                
 * Functions::                   
 * Equations in declarations vs. in equation sections::  
 * Connections::                 
@@ -247,6 +248,7 @@ Modelica language specification (Version 1c of the Modelica report).
 
 @menu
 * Types::                       
+* Array syntax::                
 * Functions::                   
 * Equations in declarations vs. in equation sections::  
 * Connections::                 
@@ -256,7 +258,7 @@ Modelica language specification (Version 1c of the Modelica report).
 @end menu
 
 @c --------------------------------------------------------- 
-@node Types, Functions, Open Issues, Open Issues
+@node Types, Array syntax, Open Issues, Open Issues
 @section Types
 
 Modelica needs a well-defined type system, with a clear notion of what a
@@ -271,7 +273,7 @@ This goes for the builtin functions too.  For instance, the function
 @code{size} is not well-defined.  What is the type of its first
 argument?
 
-@subsection Arrays
+@subsection Multidimensional arrays
 
 One very important issue is whether a multidimensional matrix is
 equivalent to an array of arrays.  This decision affects many parts of
@@ -292,7 +294,18 @@ Real x[2,2];
 x[1] = [ 1.0, 2.0 ];
 @end example
 
+This can be solved by writing @code{x[1,:]} even if we don't equate the
+types.
+
 @ref{ArrayModification5}
+
+@item
+The internal representation of both types must be the same.  This might
+be problematic.  Say that you store the size of an array together with
+the array.  If the types are not the same, you only have to store the
+multi-dimensional size once for the whole multidimensional array.  It
+they are the same, then each secondary array needs to be tagged with its
+size, which would introduce irregularities in the representation.
 
 @end itemize
 
@@ -317,8 +330,51 @@ a valid type.
 
 @end itemize
 
+@subsection Array types
+
+What is an array type?  How the concepts of subtypes and equivalent
+types apply to arrays?  What about array types where one or more of the
+sizes are unknown?
+
+@subsection Determining types of expressions
+
+One desired property of the type system would be if the type of
+expressions can be determined without regard for the context it appears
+in.  This is the case for C and C++, for instance.
+
+This seems to be feasible.  At least as long as no strange array
+constructors are introduced.  If, say, a "function" @code{ones()} which
+created an array of arbitrary size to match whatever expresseion is
+appeared together with was added to the language, this would cause
+problems for the type system.
+
+@subsection Overloading and automatic type conversions
+
 @c --------------------------------------------------------- 
-@node Functions, Equations in declarations vs. in equation sections, Types, Open Issues
+@node Array syntax, Functions, Types, Open Issues
+@section Array syntax
+
+@subsection Declaring arrays of arrays
+
+If it is decided that arrays of arrays are not the same as
+multidimensional arrays, should it not be possible to declare a variable
+to be an array of arrays in a simple way?
+
+@xref{Array4}
+
+@subsection Array indexing operator
+
+Should the indexing operator @code{[]} be a real postfix operator on
+arbitrary array expressions?  Currently, the indexing is part of the
+@code{component_reference} grammar rule, which means that you can only
+index variables.
+
+@example
+x = cross(A,B)[2]
+@end example
+
+@c --------------------------------------------------------- 
+@node Functions, Equations in declarations vs. in equation sections, Array syntax, Open Issues
 @section Functions
 
 Saying that functions are classes is simply silly and

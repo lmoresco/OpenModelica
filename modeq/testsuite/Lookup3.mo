@@ -2,13 +2,13 @@
 // keywords: scoping
 // status:   incorrect
 // 
-// Non-constants can not be referred to using class names.
+// Non-constants in an outer scope can not be referred to.
 //
 
 class Lookup3
   Real a = 3.0;
   class B
-    Real c = Lookup3.a;
+    Real c = a;
   end B;
   B b;
 end Lookup3;
