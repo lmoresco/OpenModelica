@@ -724,7 +724,7 @@ expression returns [value val]
 		
 		}
 		:
-		(	val = simple_expression //{ print(val);}
+		(	val = simple_expression 
 		|	val = if_expression //{print(val);}
 		)
 		{
@@ -851,7 +851,7 @@ arithmetic_expression returns [value val]
 		|#(PLUS val_arith = arithmetic_expression val_term = term) 
 			{
 	  			val = val_arith + val_term;
-			}
+            }
 		|#(MINUS val_arith = arithmetic_expression val_term = term)
 		{
 	  		val = val_arith - val_term;
@@ -874,6 +874,7 @@ term returns [value val]
 		|#(STAR val_term = term val_factor = factor) 
 			{
 	  			val = val_term * val_factor;
+                cout << "Finished walking plus" << endl;
 			}
 		|#(SLASH val_term = term val_factor = factor)
 		{
@@ -934,12 +935,12 @@ primary	returns [value val]
 
 component_reference__function_call returns [value* val]
 		{
-			// Initialization
+			value component_val;
 		}
 		:
-		#(FUNCTION_CALL component_reference (function_call)?
+		#(FUNCTION_CALL component_val = component_reference (function_call)?
             {
-//                cout << "Function call" << endl;
+                cout << "Function call : " << component_val.type() <<  endl;
             }
         )
         | component_reference

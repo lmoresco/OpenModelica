@@ -17,5 +17,6 @@ public:
 
 private:
   std::map<std::string,value> m_symboltable;
+  std::map<std::string,value> m_builtin_functions;
 };
 #endif

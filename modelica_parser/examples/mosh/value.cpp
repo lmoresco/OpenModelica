@@ -3,8 +3,9 @@
 #include "modelica_runtime_error.hpp"
 #include <cmath>
 
-value::value()
+value::value():m_function(0)
 {
+
   m_type = undefined;
 }
 
@@ -26,11 +27,48 @@ value::value(int val)
   m_type = integer;
 }
 
+value::value(std::string val)
+{
+  m_string = val;
+  m_type = str;
+}
+
+value::value(builtin_function* fcn)
+{
+  m_function = fcn;
+  m_type = function;
+}
+
 value::~value()
 {
 
 }
 
+value::value(const value& val)
+{
+  m_type = val.m_type;
+  switch (m_type)
+    {
+    case str:
+      m_string = val.m_string;
+      break;
+    case integer:
+      m_integer = val.m_integer;
+      break;
+    case real:
+      m_real = val.m_real;
+      break;
+    case boolean:
+      m_boolean = val.m_boolean;
+      break;
+    case array:
+      m_array = val.m_array;
+    case function:
+      m_function = val.m_function;
+    }
+ 
+  
+}
 void value::set_value(std::string val)
 {
   m_string = val;

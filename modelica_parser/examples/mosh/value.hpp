@@ -5,6 +5,13 @@
 #include <string>
 #include <iostream>
 
+// Forward declaration
+class builtin_function;
+
+/**
+ * This class represents a value
+ */
+
 class value
 {
 public:
@@ -12,10 +19,12 @@ public:
   value(double val);
   value(bool val);
   value(int val);
+  value(std::string val);
+  value(builtin_function* function);
 
   virtual ~value();
 
-  //  value(const value& val);
+   value(const value& val);
   
   
   void set_value(std::string val);
@@ -28,7 +37,7 @@ public:
   int get_integer() const;
   bool get_boolean() const;
   
-  enum type_en {str,integer,real,boolean,array,undefined};
+  enum type_en {str,integer,real,boolean,array,function,undefined};
   type_en type() const;
   void set_type(type_en type);
 
@@ -81,6 +90,7 @@ private:
   
   double to_double() const;
   std::vector<value> m_array;
+  builtin_function* m_function;
     
 };
 #endif
