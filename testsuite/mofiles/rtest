@@ -15,7 +15,7 @@ $collectcases = 0;
 $filearg = 0;
 $status = 0;
 $statusfilter = "all";
-$grep = "/bin/egrep";
+$grep = "egrep";
 
 sub runone
 {
