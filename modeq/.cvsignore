@@ -7,6 +7,8 @@ dae.c
 dae.h
 dump.c
 dump.h
+env.c
+env.h
 exp.c
 exp.h
 foo.mdc
@@ -17,6 +19,8 @@ lform.c
 lform.h
 main.c
 main.h
+mod.c
+mod.h
 modelica.c
 modelica.h
 modelica.pdf
@@ -25,5 +29,7 @@ modeq
 old-modelica.rml
 parse.c
 parse.h
+prefix.c
+prefix.h
 test.c
 test.h
