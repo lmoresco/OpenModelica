@@ -51,4 +51,4 @@ end ConnectInner2;
 //   global.f = 0.0;
 //   a.my.f = 0.0;
 //   a.global.f = 0.0;
-end ConnectInner2;
+// end ConnectInner2;
