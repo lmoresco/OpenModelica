@@ -10,8 +10,11 @@ ANTLR_LIBP = -L$(ANTLR_CPP)/lib
 PARSE_INCP = -I../../src
 PARSE_LIBP = -L../../src
 
-INCP = $(ANTLR_INCP) $(PARSE_INCP)
-LIBP = $(ANTLR_LIBP) $(PARSE_LIBP)
+READLINE_INCP = -I /home/pelab/pkg/gnu/include
+READLINE_LIBP = -L /home/pelab/pkg/gnu/lib
+
+INCP = $(ANTLR_INCP) $(PARSE_INCP) $(READLINE_INCP)
+LIBP = $(ANTLR_LIBP) $(PARSE_LIBP) $(READLINE_LIBP)
 
 CFLAGS = $(INCP) -g -Wall -DDEBUG
 CXXFLAGS = $(CFLAGS)
