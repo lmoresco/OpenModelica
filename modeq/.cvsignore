@@ -8,8 +8,11 @@ dump.c
 dump.h
 exp.c
 exp.h
+lform.c
+lform.h
 main.c
 main.h
+modelica.c
 modelica.h
 modeq
 parse.c
