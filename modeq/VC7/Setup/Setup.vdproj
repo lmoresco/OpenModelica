@@ -93,6 +93,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_29A1B56548814B1BABDBA8B560D30D7E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2CB8057B02094FD68A863AA2C8AC0CEA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -123,6 +129,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_411D1E1E110640D5B786B2C38784028D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -142,6 +154,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4B2552DF2CFF4B6AAA4D4C33B5353E48"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4CB3E1D3F28644A78AB3E821840DC1D0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -177,6 +195,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5C8D77F5BDA741B18DA84AC95CEC7531"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5E5AA890143949639F4AEB884D523A2C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -190,6 +214,12 @@
         "Entry"
         {
         "MsmKey" = "8:_6745A88C895A4C55943493173EDCE309"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_684BE3AB0481496FA1C368B359C39377"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -219,7 +249,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7F0A5799577949D7907FDA49561C8043"
+        "MsmKey" = "8:_7E743D9863EE438C8279B9D7FD66C1B1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -333,6 +363,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D3B086C89ABA4D4894B537BCB039069A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D4F649B8DF1F4EC593CC84DFC3CF0D1B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DDB22A210D29434ABCE06D4B85CD55B8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -358,12 +400,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E7AA6D693E314331A583C60063EC4ED5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F7C3F21F159846D9AAAC8F4CAF8E46E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -705,6 +741,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_29A1B56548814B1BABDBA8B560D30D7E"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\bubblesort.mo"
+            "TargetName" = "8:bubblesort.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_2CB8057B02094FD68A863AA2C8AC0CEA"
             {
             "SourcePath" = "8:M:\\c_runtime\\Makefile"
@@ -805,6 +861,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_411D1E1E110640D5B786B2C38784028D"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\OpenModelicaUsersGuide-050304.pdf"
+            "TargetName" = "8:OpenModelicaUsersGuide-050304.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
             {
             "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\tar.exe"
@@ -851,6 +927,26 @@
             "TargetName" = "8:modelica.h"
             "Tag" = "8:"
             "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4CB3E1D3F28644A78AB3E821840DC1D0"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\Circle.mo"
+            "TargetName" = "8:Circle.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -965,6 +1061,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5C8D77F5BDA741B18DA84AC95CEC7531"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\VanDerPol.mo"
+            "TargetName" = "8:VanDerPol.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E5AA890143949639F4AEB884D523A2C"
             {
             "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\libintl-2.dll"
@@ -1011,6 +1127,26 @@
             "TargetName" = "8:dlamch.f"
             "Tag" = "8:"
             "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_684BE3AB0481496FA1C368B359C39377"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\SimpleIntegrator.mo"
+            "TargetName" = "8:SimpleIntegrator.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1085,12 +1221,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7F0A5799577949D7907FDA49561C8043"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7E743D9863EE438C8279B9D7FD66C1B1"
             {
-            "SourcePath" = "8:M:\\mosh\\LICENSE"
-            "TargetName" = "8:LICENSE"
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\sim_Influenza.mos"
+            "TargetName" = "8:sim_Influenza.mos"
             "Tag" = "8:"
-            "Folder" = "8:_596366ECE84B44178CE3B8AEEEA6FBE9"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1405,6 +1541,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D3B086C89ABA4D4894B537BCB039069A"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\OpenModelicaSystem-050304.pdf"
+            "TargetName" = "8:OpenModelicaSystem-050304.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D4F649B8DF1F4EC593CC84DFC3CF0D1B"
+            {
+            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\Influenza.mo"
+            "TargetName" = "8:Influenza.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_DDB22A210D29434ABCE06D4B85CD55B8"
             {
             "SourcePath" = "8:M:\\c_runtime\\real_array.h"
@@ -1491,26 +1667,6 @@
             "TargetName" = "8:mingw.tar.gz"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F7C3F21F159846D9AAAC8F4CAF8E46E1"
-            {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\bubblesort.mo"
-            "TargetName" = "8:bubblesort.mo"
-            "Tag" = "8:"
-            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1720,7 +1876,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{134D8E8A-3DD2-47DB-ABEE-33903B702259}"
-        "PackageCode" = "8:{BA6FB438-89FE-460E-AFED-AFDBCD564F85}"
+        "PackageCode" = "8:{71636378-603C-4895-805B-5AE6E7D7786F}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
