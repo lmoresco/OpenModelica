@@ -1,11 +1,12 @@
-//|name:     Faculty1
-//|keywords: algorithm,scoping
-//|status:   correct
+// name:     Faculty1
+// keywords: algorithm,scoping
+// status:   incorrect
 // 
 // Example for a recursive function. The function 'Faculty' must be 
 // known during its definition in order to be called from itself.
-// <Ruediger: Or should recursive functions not be supported in 
-//  Modelica as recursive models are impossible in general?>
+//
+// Only fully instantiated classes are known. Consequently recursive 
+// function are not supported inside Modelica.
 //
 
 function Faculty1
@@ -14,11 +15,3 @@ function Faculty1
 algorithm
   y := if x > 0 then Faculty1(x-1) else 1;
 end Faculty1;
-
-// fclass Faculty1
-//   Integer x;
-//   Integer y;
-// algorithm
-//   y := if x > 0 then Faculty1(x-1) else 1;
-// end Faculty1;
-

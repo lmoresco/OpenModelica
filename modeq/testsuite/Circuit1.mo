@@ -1,6 +1,6 @@
-//|name:     Circuit1
-//|keywords: 
-//|status:   correct
+// name:     Circuit1
+// keywords: 
+// status:   correct
 // 
 // This is the example from the report.  It is here to have a somewhat
 // larger test.

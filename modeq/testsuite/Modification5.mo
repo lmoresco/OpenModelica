@@ -1,6 +1,6 @@
-//|name:     Modification5
-//|keywords: modification,scoping,unknown
-//|status:   incorrect
+// name:     Modification5
+// keywords: modification,scoping,unknown
+// status:   incorrect
 //
 // This file tests equation modifications, and in particular what
 // happens if the variable is being used on the right-hand side.

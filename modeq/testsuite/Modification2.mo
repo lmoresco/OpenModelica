@@ -1,6 +1,6 @@
-//|name:     Modification2
-//|keywords: modification
-//|status:   correct
+// name:     Modification2
+// keywords: modification
+// status:   correct
 // 
 
 class A

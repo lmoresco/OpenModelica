@@ -1,6 +1,6 @@
-//|name:     DeclareConstant2
-//|keywords: declaration
-//|status:   incorrect
+// name:     DeclareConstant2
+// keywords: declaration
+// status:   incorrect
 // 
 // The attribute 'value' shall not be accessed.
 // 

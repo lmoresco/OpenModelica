@@ -13,7 +13,6 @@ end Overwriting2;
 
 // fclass Overwriting2
 //   Real x;
-//   String x.unit;
 // equation
 //   x = 5.0;
 //   x = 2.0;

@@ -1,6 +1,6 @@
-//|name:     Integer2Real
-//|keywords: typing
-//|status:   correct
+// name:     Integer2Real
+// keywords: typing
+// status:   correct
 // 
 // Automatic conversion from Integer to Real.
 //

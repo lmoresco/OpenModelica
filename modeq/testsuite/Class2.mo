@@ -1,6 +1,6 @@
-//|name:     Class2
-//|keywords: 
-//|status:   correct
+// name:     Class2
+// keywords: 
+// status:   correct
 // 
 // This is a really simple tests.
 // 

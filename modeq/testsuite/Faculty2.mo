@@ -1,6 +1,6 @@
-//|name:     Faculty2
-//|keywords: algorithm
-//|status:   correct
+// name:     Faculty2
+// keywords: algorithm
+// status:   correct
 // 
 // Definition of faculty using a for loop. The for loop can not be
 // unrolled.

@@ -1,6 +1,6 @@
-//|name:     Array2
-//|keywords: array
-//|status:   correct
+// name:     Array2
+// keywords: array
+// status:   correct
 // 
 // Multidimensional arrays
 // 

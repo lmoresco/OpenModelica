@@ -1,6 +1,6 @@
-//|name:     Faculty3
-//|keywords: algorithm
-//|status:   correct
+// name:     Faculty3
+// keywords: algorithm
+// status:   correct
 // 
 // Definition of faculty using a while loop. The while loop can not be
 // unrolled.

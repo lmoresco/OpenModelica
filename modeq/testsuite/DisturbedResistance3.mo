@@ -1,6 +1,6 @@
-//|name:     DisturbedResistance3
-//|keywords: modification
-//|status:   correct
+// name:     DisturbedResistance3
+// keywords: modification
+// status:   correct
 // 
 // This is an example of replacing a variable without using 
 // redeclaration syntax. In this way a parameter can be replaced 

@@ -1,6 +1,6 @@
-//|name:     ModifyUnknown1
-//|keywords: modification
-//|status:   incorrect
+// name:     ModifyUnknown1
+// keywords: modification
+// status:   incorrect
 // 
 // Try to introduce a new member via modification.
 //

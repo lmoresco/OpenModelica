@@ -1,9 +1,9 @@
-//|name:     DeclareConstant1
-//|keywords: declaration,equation
-//|status:   incorrect
+// name:     DeclareConstant1
+// keywords: declaration,equation
+// status:   incorrect
 // 
-// Does a constant need a declaration equation with constant 
-// expression on the right hand side?
+// A constant requires a declaration equation with constant 
+// expression on the right hand side.
 // 
 
 class DeclareConstant1

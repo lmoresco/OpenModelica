@@ -1,6 +1,6 @@
-//|name:     Connect1
-//|keywords: connect
-//|status:   correct
+// name:     Connect1
+// keywords: connect
+// status:   correct
 // 
 // Basic connections
 // 

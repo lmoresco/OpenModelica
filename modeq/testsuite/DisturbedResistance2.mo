@@ -1,6 +1,6 @@
-//|name:     DisturbedResistance2
-//|keywords: modification
-//|status:   incorrect
+// name:     DisturbedResistance2
+// keywords: modification
+// status:   incorrect
 // 
 // A parameter may not be redeclared as variable.
 //

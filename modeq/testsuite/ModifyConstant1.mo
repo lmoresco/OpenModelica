@@ -1,6 +1,6 @@
-//|name:     ModifyConstant1
-//|keywords: scoping,modification
-//|status:   correct
+// name:     ModifyConstant1
+// keywords: scoping,modification
+// status:   correct
 // 
 // Constants can be redeclared.
 //

@@ -1,6 +1,6 @@
-//|name:     ConnectTypes
-//|keywords: connect,type
-//|status:   correct
+// name:     ConnectTypes
+// keywords: connect,type
+// status:   correct
 // 
 // Check generation of connection equations. No equations should be 
 // generated for parameters and constants. <Ruediger: not sure>

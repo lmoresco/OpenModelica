@@ -1,17 +1,21 @@
-//|name:     ConnectFlowEffort
-//|keywords: connection,modification
-//|status:   incorrect
+// name:     ConnectFlowEffort
+// keywords: connection,modification
+// status:   incorrect
 // 
 // Flow and effort variables may not be connected.
 //
 
-connector Connector
-  flow Real f;
+connector Connector1
   Real e;
-end Connector;
+end Connector1;
+
+connector Connector2
+  flow Real e;
+end Connector2;
 
 class ConnectFlowEffort
-  Connector c1, c2(redeclare flow Real e);
+  Connector1 c1;
+  Connector2 c2;
 equation
   connect(c1, c2);
 end ConnectFlowEffort;

@@ -1,6 +1,6 @@
-//|name:     ConditionalArrayExpression1
-//|keywords: equation, array
-//|status:   incorrect
+// name:     ConditionalArrayExpression1
+// keywords: equation, array
+// status:   incorrect
 // 
 // The sizes must fit in array expressions and equations.
 // 

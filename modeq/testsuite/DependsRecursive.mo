@@ -1,6 +1,6 @@
-//|name:     DependsRecursive
-//|keywords: scoping
-//|status:   incorrect
+// name:     DependsRecursive
+// keywords: scoping
+// status:   incorrect
 // 
 // A recursive model can not be instantiated.
 //

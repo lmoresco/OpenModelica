@@ -3,7 +3,8 @@
 // status:   incorrect
 // 
 // The powers of 'x' are defined by using a for loop. The dimension 'n'
-// is defined constant but not declared constant. 
+// is defined constant but not declared constant. The integer 'n' must 
+// be declared as constant. 
 //
 
 model XPowers3

@@ -1,6 +1,6 @@
-//|name:     Lookup3
-//|keywords: scoping
-//|status:   incorrect
+// name:     Lookup3
+// keywords: scoping
+// status:   incorrect
 // 
 // Non-constants can not be referred to using class names.
 //

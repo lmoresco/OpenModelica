@@ -1,6 +1,6 @@
-//|name:     Array1
-//|keywords: array
-//|status:   correct
+// name:     Array1
+// keywords: array
+// status:   correct
 // 
 // This is a simple test of basic array handling.
 // 

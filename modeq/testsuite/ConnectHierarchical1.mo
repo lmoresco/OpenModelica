@@ -1,6 +1,6 @@
-//|name:     ConnectHierarchical1
-//|keywords: connect
-//|status:   correct
+// name:     ConnectHierarchical1
+// keywords: connect
+// status:   correct
 // 
 // All effort variables are equal to 1. The unknown flow 'a.b.c.f'
 // evaluates to -1.

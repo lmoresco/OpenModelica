@@ -1,6 +1,6 @@
-//|name:     ModifyConstant4
-//|keywords: scoping,modification
-//|status:   incorrect
+// name:     ModifyConstant4
+// keywords: scoping,modification
+// status:   incorrect
 // 
 // Only members may be modified.
 //

@@ -1,13 +1,11 @@
-//|name:     ConnectHierarchical2
-//|keywords: connect
-//|status:   erroneous
+// name:     ConnectHierarchical2
+// keywords: connect
+// status:   correct
 // 
 // All effort variables are equal to 1. The unknown flow 'a.b.c.f'
 // evaluates to 3, even though the same connections as in 
 // ConnectHierarchical1 are established ('a.b.c.f' evaluates to -1 
-// there).
-// <Ruediger: possibly not more than one outer connector should be 
-// allowed in a connection set?>
+// there)! 
 //
 
 connector Connector

@@ -1,6 +1,6 @@
-//|name:     ScopeModification2
-//|keywords: scoping,modification
-//|status:   incorrect
+// name:     ScopeModification2
+// keywords: scoping,modification
+// status:   incorrect
 // 
 // In class modifications the scope of the outer class is used for
 // looking up variables. There is no 'a' known in the example.

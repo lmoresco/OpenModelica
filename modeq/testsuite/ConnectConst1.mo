@@ -1,6 +1,6 @@
-//|name:     ConnectConst1
-//|keywords: connect,constant,unknown
-//|status:   incorrect
+// name:     ConnectConst1
+// keywords: connect,constant,unknown
+// status:   incorrect
 // 
 // You should not be able to declare connectors as constant, or should you?
 // 

@@ -1,6 +1,6 @@
-//|name:     Connect2
-//|keywords: connect
-//|status:   correct
+// name:     Connect2
+// keywords: connect
+// status:   correct
 // 
 // Basic connections between three connectors.
 // 

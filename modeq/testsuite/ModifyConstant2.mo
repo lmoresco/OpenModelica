@@ -1,8 +1,8 @@
-//|name:     ModifyConstant2
-//|keywords: scoping,modification
-//|status:   incorrect
+// name:     ModifyConstant2
+// keywords: scoping,modification
+// status:   correct
 // 
-// Constant values may not be changed.
+// Constant values may be changed in modifications.
 //
 
 class A
@@ -21,3 +21,11 @@ class ModifyConstant2
   B b;
   C c;
 end ModifyConstant2;
+
+// fclass ModifyConstant2
+//   constant Real b.a.c;
+//   constant Real c.a.c;
+// equation
+//   b.a.c = 2.0;
+//   c.a.c = 1.0;
+// end ModifyConstant2;

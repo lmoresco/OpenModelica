@@ -1,10 +1,9 @@
-//|name:     DeclareConstant3
-//|keywords: declaration
-//|status:   incorrect
+// name:     DeclareConstant3
+// keywords: declaration
+// status:   incorrect
 // 
-// Does a constant need a declaration equation with constant 
-// expression on the right hand side? If not, then the following 
-// example could define a constraining equation for x and y.
+// A constant requires a declaration equation with constant 
+// expression on the right hand side.
 // 
 
 class DeclareConstant3

@@ -1,6 +1,6 @@
-//|name:     Modification6
-//|keywords: modification,unknown
-//|status:   correct
+// name:     Modification6
+// keywords: modification,unknown
+// status:   correct
 // 
 // This file tests modification precedence.
 //

@@ -1,6 +1,6 @@
-//|name:     Class1
-//|keywords: 
-//|status:   correct
+// name:     Class1
+// keywords: 
+// status:   correct
 // 
 // An empty class should be allowed.
 // 

@@ -1,6 +1,6 @@
-//|name:     Lookup2
-//|keywords: scoping
-//|status:   correct
+// name:     Lookup2
+// keywords: scoping
+// status:   correct
 // 
 // Constants can be referred to using class names.
 //

@@ -2,8 +2,8 @@
 // keywords: scoping
 // status:   correct
 // 
-// Is a variable already known on the right hand side of its 
-// declaration equation? <Ruediger: assume not?>
+// Only fully declared elements (declaration ended by semicolon)
+// are known.
 //
 
 class Lookup5

@@ -1,6 +1,6 @@
-//|name:     Class4
-//|keywords: 
-//|status:   correct
+// name:     Class4
+// keywords: 
+// status:   correct
 // 
 // A minimal source file
 // 

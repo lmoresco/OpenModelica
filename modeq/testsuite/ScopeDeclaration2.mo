@@ -2,7 +2,8 @@
 // keywords: scoping,declaration
 // status:   correct
 // 
-// What scope is used during the declaration of a variable?
+// An element (e.g. a variable) is added to the partially instantiated 
+// parent AFTER the element has been completely instantiated.
 //
 
 class ScopeDeclaration2
@@ -22,4 +23,3 @@ end ScopeDeclaration2;
 //   b.a.min = a;
 //   assert(b.a >= b.a.min);
 // end ScopeDeclaration2;
-
