@@ -1,5 +1,7 @@
 absyn.c
 absyn.h
+builtin.c
+builtin.h
 class.c
 class.h
 const.mdc
