@@ -103,10 +103,85 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
+				RelativePath="..\absyn_builder\expression_parser.g">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
+java antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="modelica_expression_parser.cpp;modelica_expression_parser.hpp;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
+java antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="modelica_expression_parser.cpp;modelica_expression_parser.hpp;"/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp">
 			</File>
 			<File
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.g">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						Outputs="flat_modelica_lexer.cpp modelica_lexer.hpp;flat_modelicaTokenTypes.hpp;flat_modelicaTokenTypes.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						Outputs="flat_modelica_lexer.cpp modelica_lexer.hpp;flat_modelicaTokenTypes.hpp;flat_modelicaTokenTypes.txt"/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.cpp">
+			</File>
+			<File
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.g">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)flat_modelica_lexer.g"
+						Outputs="flat_modelica_parser.cpp;flat_modelica_parser.hpp;flat_modelica_parserTokenTypes.hpp;flat_modelica_parserTokenTypes.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)flat_modelica_lexer.g"
+						Outputs="flat_modelica_parser.cpp;flat_modelica_parser.hpp;flat_modelica_parserTokenTypes.hpp;flat_modelica_parserTokenTypes.txt"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\absyn_builder\modelica_expression_parser.cpp">
@@ -115,7 +190,55 @@
 				RelativePath="..\..\modelica_parser\src\modelica_lexer.cpp">
 			</File>
 			<File
+				RelativePath="..\..\modelica_parser\src\modelica_lexer.g">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						Outputs="modelica_lexer.cpp modelica_lexer.hpp;modelicaTokenTypes.hpp;modelicaTokenTypes.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						Outputs="modelica_lexer.cpp modelica_lexer.hpp;modelicaTokenTypes.hpp;modelicaTokenTypes.txt"/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath="..\..\modelica_parser\src\modelica_parser.cpp">
+			</File>
+			<File
+				RelativePath="..\..\modelica_parser\src\modelica_parser.g">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)modelica_lexer.g"
+						Outputs="modelica_parser.cpp;modelica_parser.hpp;modelica_parserTokenTypes.hpp;modelica_parserTokenTypes.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+java  antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)modelica_lexer.g"
+						Outputs="modelica_parser.cpp;modelica_parser.hpp;modelica_parserTokenTypes.hpp;modelica_parserTokenTypes.txt"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\absyn_builder\modelica_tree_parser.cpp">
@@ -128,6 +251,33 @@
 			</File>
 			<File
 				RelativePath="..\..\modelica_parser\src\token_names.cpp">
+			</File>
+			<File
+				RelativePath="..\absyn_builder\walker.g">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
+java antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="modelica_tree_parser.cpp;modelica_tree_parser.hpp;modelica_tree_parserTokenTypes.hpp;modelica_tree_parserTokenTypes.txt"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="pushd &quot;$(InputDir)&quot;
+copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
+java antlr.Tool $(InputFileName)
+popd
+"
+						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="modelica_tree_parser.cpp;modelica_tree_parser.hpp;modelica_tree_parserTokenTypes.hpp;modelica_tree_parserTokenTypes.txt"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\absyn_builder\yacclib.c">

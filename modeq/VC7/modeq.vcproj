@@ -88,7 +88,7 @@ nmake -f MakeFile.win32
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib"
+				AdditionalDependencies="main.obj modeqrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib"
 				OutputFile="$(OutDir)/modeq.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
@@ -108,8 +108,10 @@ copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
-				CommandLine="cd $(ProjectDir)antlr
+				CommandLine="pushd $(ProjectDir)antlr
 nmake -f MakeFile.win32
+popd
+
 "/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
@@ -253,480 +255,46 @@ nmake -f MakeFile.win32
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
-				RelativePath="..\modeq_release\absyn.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\algorithm.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\builtin.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\ceval.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\classinf.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\classloader.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\codegen.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\connect.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dae.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\daelow.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\debug.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\derive.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dump.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dumpgraphviz.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\env.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\exp.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\explode.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\graphviz.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\inst.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\interactive.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\lookup.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\main.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\mod.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\modsim.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\modutil.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\prefix.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\simcodegen.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\staticexp.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\taskgraph.c">
-			</File>
-			<File
 				RelativePath="..\modpar\TaskGraphExt_stub.cpp">
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
-			<File
-				RelativePath="..\modeq_release\tornado.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\tornadocodegen.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\types.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\util.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\values.c">
-			</File>
-			<File
-				RelativePath="..\modeq_release\vartransform.c">
-			</File>
-		</Filter>
-		<Filter
-			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
-			<File
-				RelativePath="..\modeq_release\absyn.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\algorithm.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\builtin.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\ceval.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\classinf.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\classloader.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\codegen.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\connect.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dae.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\daelow.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\debug.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\derive.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dump.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\dumpgraphviz.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\env.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\exp.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\explode.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\graphviz.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\inst.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\interactive.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\lookup.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\main.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\mod.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\modsim.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\modutil.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\prefix.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\simcodegen.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\staticexp.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\taskgraph.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\tornado.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\tornadocodegen.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\types.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\util.h">
-			</File>
-			<File
-				RelativePath="..\modeq_release\values.h">
-			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
 		</Filter>
 		<Filter
 			Name="rml"
 			Filter="">
 			<File
 				RelativePath="..\absyn.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\algorithm.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\builtin.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\builtin_safe.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\cache.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\ceval.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\classinf.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\classloader.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\codegen.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\connect.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\corba.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\dae.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\daeext.rml">
@@ -736,450 +304,72 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\debug.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\derive.rml">
 			</File>
 			<File
 				RelativePath="..\dump.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\dumpgraphviz.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\env.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\exp.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\explode.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\graphviz.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\inst.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\interactive.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\lookup.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\main.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\mod.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\modsim.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\modutil.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\parse.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\prefix.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\print.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\rtopts.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\simcodegen.rml">
 			</File>
 			<File
 				RelativePath="..\socket.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\staticexp.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\system.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\taskgraph.rml">
@@ -1191,69 +381,27 @@ nmake -f MakeFile.win32
 				RelativePath="..\tornado.rml">
 			</File>
 			<File
+				RelativePath="..\tornadocodegen.rml">
+			</File>
+			<File
+				RelativePath="..\tornadoext.rml">
+			</File>
+			<File
 				RelativePath="..\types.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\util.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\values.rml">
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="NoMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseStaticMico|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\vartransform.rml">
 			</File>
 		</Filter>
+		<File
+			RelativePath="..\Makefile.w32">
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

@@ -1773,7 +1773,7 @@
             }
             "{58C0ADA3-3CEA-43BD-A3B3-2EA121BC8217}:_5E09BEF16F57435892F962D446E8B3F8"
             {
-            "DefaultLocation" = "8:c:\\OpenModelica1.2"
+            "DefaultLocation" = "8:c:\\OpenModelica1.2.1"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -1875,13 +1875,13 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
-        "ProductCode" = "8:{134D8E8A-3DD2-47DB-ABEE-33903B702259}"
-        "PackageCode" = "8:{71636378-603C-4895-805B-5AE6E7D7786F}"
+        "ProductCode" = "8:{469DDB04-F398-46D7-AEDD-18B228C1466E}"
+        "PackageCode" = "8:{CEF335B9-99C9-4560-8378-0B7DBE4E9CD5}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "ProductVersion" = "8:1.2.0"
+        "ProductVersion" = "8:1.2.1"
         "Manufacturer" = "8:PELAB, Linköping University"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="MakeRMLandGRAMMAR"
+	Name="MakeRML"
 	ProjectGUID="{7DA26FFE-5443-4E0A-81DC-90679291ED2C}"
 	RootNamespace="MakeRMLandGRAMMAR"
 	Keyword="MakeFileProj">
@@ -18,9 +18,16 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="$(ProjectDir)..\makemodeq"
-				ReBuildCommandLine="$(ProjectDir)..\rebuildmodeq"
-				CleanCommandLine="$(ProjectDir)..\cleanmodeq"/>
+				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32
+popd"
+				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32 clean
+nmake /f Makefile.w32
+popd"
+				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32 clean
+popd"/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -29,9 +36,16 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="&quot;$(ProjectDir)..\makemodeq&quot;"
-				ReBuildCommandLine="&quot;$(ProjectDir)..\rebuildmodeq&quot;"
-				CleanCommandLine="&quot;$(ProjectDir)..\cleanmodeq&quot;"/>
+				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32
+popd"
+				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32 clean
+nmake /f Makefile.w32
+popd"
+				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
+nmake /f Makefile.w32 clean
+popd"/>
 		</Configuration>
 	</Configurations>
 	<References>
