@@ -1,4 +1,7 @@
-// record.mdc
+// This file tests that records work.
+//
+// THe implicit equation "x = 16" should not be counted as a "real"
+// equation, as that would break the record restricion.
 
 type Real = RealType;
 

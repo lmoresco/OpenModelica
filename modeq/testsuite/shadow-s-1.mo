@@ -28,5 +28,5 @@ equation
 end A;
 
 model World
-  A a(x = 2, y[3] = 5);
+A a(x = 2, y[3] = 5);
 end World;
