@@ -14,12 +14,13 @@ end ConditionalArrayExpression2;
 // fclass ConditionalArrayExpression2
 //   Real a;
 //   Real b;
-//   Real c[2];
+//   Real c[1,1];
+//   Real c[2,1];
 //   Real d;
 //   Real e;
 // equation
-//   a = Real(1);
-//   b = Real(2);
-//   0 = if a > b then c[1,1] else d;
-//   0 = if a > b then c[2,1] else e;
+//   a = 1.0;
+//   b = 2.0;
+//   0.0 = if a > b then c[1,1] else d;
+//   0.0 = if a > b then c[2,1] else e;
 // end ConditionalArrayExpression2;
