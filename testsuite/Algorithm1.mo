@@ -43,6 +43,10 @@ end Algorithm1;
 // 	       Real    x;
 // 	       String  y.unit;
 // 	       Real    y;
+// 	       String  z.unit;
+// 	       Real    z;
+// 	       String  a.unit;
+// 	       Real    a;
 // equation
 //   y = sin(time);
 // algorithm
