@@ -1,5 +1,5 @@
 // name:     Integer2Real
-// keywords: typing
+// keywords: type
 // status:   correct
 // 
 // Automatic conversion from Integer to Real.

@@ -1,5 +1,5 @@
 // name:     Real2Integer2
-// keywords: typing
+// keywords: type
 // status:   incorrect
 // 
 // No implicit conversion from Real to Integer. Division via '/' always 

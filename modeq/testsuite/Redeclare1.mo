@@ -1,5 +1,5 @@
 // name:     Redeclare1
-// keywords: redeclare,types
+// keywords: redeclare,type
 // status:   correct
 // 
 // Redeclaration and subtyping.

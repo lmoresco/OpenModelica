@@ -1,5 +1,5 @@
 // name:     Real2Integer1
-// keywords: typing,unknown
+// keywords: type,unknown
 // status:   erroneous
 //
 // No implicit conversion from 'Real' to 'Integer'. But integers are 
