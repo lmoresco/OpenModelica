@@ -1,4 +1,4 @@
-TESTFILES = variables.mos Array1.mos
+TESTFILES = variables.mos Array1.mos interactive_api_param.mos interactive_api_classes.mos
 
 TEST = rtest
 
