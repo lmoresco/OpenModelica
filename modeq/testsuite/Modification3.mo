@@ -2,7 +2,6 @@
 // keywords: modification
 // status:   correct
 
-
 class A
   class AA
     parameter Real p=1.0;

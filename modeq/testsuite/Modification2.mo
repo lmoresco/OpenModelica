@@ -1,7 +1,6 @@
 // name:     Modification2
 // keywords: modification
 // status:   correct
-// 
 
 class A
   parameter Real p=1.0;
