@@ -49,7 +49,6 @@ end ConnectHierarchical2;
 //   c.e = 1.0;
 //   c.e = a.c1.e;
 //   -c.f + a.c1.f = 0.0;
-//   a.b.c.f = 0.0;
 //   a.c2.f = 0.0;
 // end ConnectHierarchical2;
 
