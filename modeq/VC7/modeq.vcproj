@@ -34,7 +34,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="rmlRuntime.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrlib.lib"
+				AdditionalDependencies="main.obj modeqrml.lib rmlRuntime.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrlib.lib"
 				OutputFile="$(OutDir)/modeq.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
@@ -149,7 +149,7 @@ popd
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="runtime.lib absyn_builder.lib c_runtime.lib antlr.lib"
+				AdditionalDependencies="main.obj modeqrml.lib  runtime.lib absyn_builder.lib c_runtime.lib antlr.lib"
 				OutputFile="$(OutDir)/modeq.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;$(TargetDir)&quot;;&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
@@ -208,7 +208,7 @@ nmake -f MakeFile.win32
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="runtime.lib mico.lib wsock32.lib absyn_builder.lib c_runtime.lib antlr.lib"
+				AdditionalDependencies="main.obj modeqrml.lib runtime.lib mico.lib wsock32.lib absyn_builder.lib c_runtime.lib antlr.lib"
 				OutputFile="$(OutDir)/modeq.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
@@ -256,11 +256,6 @@ nmake -f MakeFile.win32
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
 				RelativePath="..\modpar\TaskGraphExt_stub.cpp">
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"/>
-				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
