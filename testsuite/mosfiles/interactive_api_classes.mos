@@ -4,6 +4,7 @@
 // 
 //  Subset of the Graphical API.
 //
+
 createModel(A);
 createModel(A.test);
 createModel(test2);
@@ -33,3 +34,4 @@ getClassNames(A);
 // {{Real,z,""},{Integer,x,""}}
 // Ok
 // {test}
+// endResult
