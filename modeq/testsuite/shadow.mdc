@@ -14,7 +14,11 @@
 type Real = RealType;
 
 class A
-  Real x;
+  Real x=1;
+  class B
+    Real x=3;
+  end B;
+  B b;
 equation
   x = 1;
 end A;

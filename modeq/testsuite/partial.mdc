@@ -1,0 +1,14 @@
+
+
+
+class A
+
+  class B
+    A x;
+  equation
+    x.y = 1;
+  end B;
+
+  B b;
+  Real y;
+end A;

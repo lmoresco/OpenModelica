@@ -1,0 +1,13 @@
+
+type Real = RealType;
+
+connector A
+  Real x;
+  flow Real y;
+end A;
+
+model World
+  A a,b;
+equation
+  connect(a,b);
+end World;
