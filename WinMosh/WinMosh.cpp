@@ -43,15 +43,26 @@ CWinMoshApp theApp;
 BOOL CWinMoshApp::InitInstance()
 {
 	CString moshhome;
+	CString ModelicaPath;
 	if (!moshhome.GetEnvironmentVariable("MOSHHOME") || moshhome == "") {
-		CRegKey reg;
-		unsigned long len = 1000;
-		if (ERROR_SUCCESS == reg.Open(HKEY_LOCAL_MACHINE,"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment", KEY_READ)) {
-			reg.QueryStringValue("MOSHHOME", moshhome.GetBufferSetLength(len), &len);
-			SetEnvironmentVariable("MOSHHOME", moshhome);
-		}
+		moshhome = theApp.m_pszHelpFilePath;
+		moshhome = moshhome.Left(moshhome.ReverseFind('\\'));
+		SetEnvironmentVariable("MOSHHOME", moshhome);
+		CString msg;
+		msg.Format("MOSHOME Environment variable not set. Using default: %s", (LPCSTR)moshhome);
+		MessageBox(NULL, msg, "Environment varible not set", MB_ICONWARNING|MB_OK);
 	}
-
+	if (!ModelicaPath.GetEnvironmentVariable("MODELICAPATH") || ModelicaPath == "") {
+		ModelicaPath = moshhome;
+		if (ModelicaPath.Right(1) == "\\") 
+			ModelicaPath = ModelicaPath.Left(ModelicaPath.GetLength() -1);
+		ModelicaPath = ModelicaPath.Left(ModelicaPath.ReverseFind('\\'));
+		ModelicaPath += "\\ModelicaLibrary";
+		SetEnvironmentVariable("MODELICAPATH", ModelicaPath);
+		CString msg;
+		msg.Format("MODELICAPATH Environment variable not set. Using default: %s", (LPCSTR)ModelicaPath);
+		MessageBox(NULL, msg, "Environment varible not set", MB_ICONWARNING|MB_OK);
+	}
 
 	// To create the main window, this code creates a new frame window
 	// object and then sets it as the application's main window object.
