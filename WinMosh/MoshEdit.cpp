@@ -145,15 +145,10 @@ void CMoshEdit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			SetSel(end,end);
 	}
 
-	if (nChar != VK_CONTROL) {
-	//	GetKeyboardState(&state);
-		if (GetKeyState(VK_CONTROL) == 0) {
-			int lastline = GetLineCount() - 1;
-			int currentline = LineFromChar();
-			if (currentline != lastline) {
-				SetSel(LineIndex(lastline)+3,LineIndex(lastline)+3);
-			}
-		}
+	int lastline = GetLineCount() - 1;
+	int currentline = LineFromChar();
+	if (currentline != lastline) {
+		SetSel(LineIndex(lastline)+3,LineIndex(lastline)+3);
 	}
 	CEdit::OnKeyUp(nChar, nRepCnt, nFlags);
 }
@@ -166,6 +161,12 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 	SetLimitText(0);
 
 	m_History.AddEntry(command);
+	if(CString(command) == "restartModeq()")
+	{
+		this->Restart();
+		return "";
+	}
+
 	if (client == NULL)
 		return CString("No Server");
 
@@ -221,7 +222,7 @@ BOOL CMoshEdit::PreTranslateMessage(MSG* pMsg)
 				return TRUE;
 		default:
 			GetSel(start, end);
-			if (GetKeyState(VK_CONTROL)==0 && (start - LineIndex(GetLineCount()-1)) < 3)
+			if ((start - LineIndex(GetLineCount()-1)) < 3)
 				return TRUE;
 			break;
 		}
@@ -251,6 +252,7 @@ void CMoshEdit::Restart() {
 	m_NoServ = false;
     m_ProcessCreated = false;
 
+	this->ClearEdit();
 	CString txt;
 	GetWindowText(txt);
 	txt += "Restarting server.\r\n>> ";
@@ -262,6 +264,44 @@ void CMoshEdit::Restart() {
 		txt += "Unable to start server.\r\n";
 		SetWindowText(txt);
 		SetSel(txt.GetLength(),txt.GetLength());
+	}
+
+}
+
+void CMoshEdit::ClearEdit()
+{
+	this->SetSel(0,-1);
+	this->Clear();
+	CString txt;
+	GetWindowText(txt);
+	txt += "\r\n";
+	txt += ">> ";
+	SetWindowText(txt);
+	SetSel(txt.GetLength(),txt.GetLength());
+
+}
+
+void CMoshEdit::Stop()
+{
+	if(client!=NULL){
+		try {
+			char* tmp = client->sendExpression("quit()");
+			CString res = tmp;
+			CORBA::string_free(tmp);
+
+			res.Replace("\r\n","\n");
+			res.Replace("\n","\r\n");
+			theApp.m_pMainWnd->EndWaitCursor();
+			SetWindowText(res);
+		}
+		catch(CORBA::Exception e) {
+			std::ostringstream ss;
+			e._print(ss);
+			//		AfxMessageBox(ss.str().c_str());
+			client = NULL;
+			theApp.m_pMainWnd->EndWaitCursor();
+			SetWindowText(CString(ss.str().c_str()));
+		}
 	}
 
 }
@@ -367,12 +407,12 @@ void CMoshEdit::SpawnServer(void)
 	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
 		MoshHome = MoshHome.Left(MoshHome.GetLength()-5);
 		MoshHome = CString("\"") + MoshHome + "\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
-
-		if (!m_ProcessCreated && CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
+		
+		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
 		{
 			m_ProcessCreated = true;
+			Sleep(1000);
 		};
-		Sleep(1000);
 	}
 }
 

@@ -61,6 +61,14 @@ public:
 		m_wndView.Restart();
 	}
 
+	void OnStop() {
+		m_wndView.Stop();
+	}
+
+	void OnClear() {
+		m_wndView.ClearEdit();
+	}
+
 protected:  // control bar embedded members
 	CStatusBar  m_wndStatusBar;
 	CToolBar    m_wndToolBar;

@@ -51,6 +51,15 @@ public:
 	{
 		m_Text.Restart();
 	}
+	void ClearEdit() 
+	{
+		m_Text.ClearEdit();
+	}
+	void Stop()
+	{
+		m_Text.Stop();
+	}
+
 	void OnLoadModel()
 	{
 		CFileDialog dlg(TRUE, "mo", "*.mo", OFN_FILEMUSTEXIST, "Modelica files (*.mo)|*.mo||",this);

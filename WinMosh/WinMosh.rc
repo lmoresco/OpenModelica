@@ -91,6 +91,8 @@ BEGIN
     BUTTON      ID_APP_ABOUT
     SEPARATOR
     BUTTON      ID_RESTART
+    BUTTON      ID_STOP
+    BUTTON      ID_CLEAR
 END
 
 
@@ -306,6 +308,7 @@ BEGIN
     ID_FILE_LOADMODEL       "Load mo-file"
     ID_FILE_LOADLIB         "Load the modelica standard llibrary"
     ID_RESTART              "Restart the modeq server"
+    ID_CLEAR                "Clear the input window"
 END
 
 #endif    // English (U.S.) resources

@@ -32,7 +32,8 @@ public:
 		m_ShowServ = true;
 	}
 	void Restart();
-
+	void ClearEdit();
+	void Stop();
 // Operations
 public:
 
