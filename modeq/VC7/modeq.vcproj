@@ -103,7 +103,7 @@ nmake -f MakeFile.win32
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
-copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
+copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win\modeq.exe&quot;
 "/>
 			<Tool
 				Name="VCPreBuildEventTool"
