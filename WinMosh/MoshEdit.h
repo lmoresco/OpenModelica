@@ -68,10 +68,12 @@ private:
 	CHistory m_History;
 	CORBA::ORB_var orb;
 	ModeqCommunication_var client; 
+	CEdit* m_pErrorText;
 public:
 	bool StartServer(void);
 	void SpawnServer(void);
 	void RunCommand(LPCSTR command);
+	void SetErrorWindow(CEdit* pWnd);
 };
 
 /////////////////////////////////////////////////////////////////////////////

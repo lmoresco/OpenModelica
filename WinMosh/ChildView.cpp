@@ -63,6 +63,11 @@ BOOL CChildView::Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwS
 		res = m_Text.Create(dwStyle|ES_MULTILINE|ES_WANTRETURN|WS_VSCROLL,rect,this,1);
 		m_Text.SetWindowText(">> ");
 		m_Text.SetSel(3,3);
+		if (res==0) return res;
+		res = m_ErrorText.Create(dwStyle|ES_MULTILINE|ES_WANTRETURN|WS_VSCROLL,rect,this,2);
+		m_ErrorText.SetReadOnly();
+		m_ErrorText.SetLimitText(0);
+		m_Text.SetErrorWindow(&m_ErrorText);
 	}
 	return res;
 }
@@ -71,8 +76,10 @@ void CChildView::OnSize(UINT nType, int cx, int cy)
 {
 	CWnd ::OnSize(nType, cx, cy);
 
-	if (IsWindow(m_Text.GetSafeHwnd()))
-		m_Text.MoveWindow(0,0,cx,cy);	
+	if (IsWindow(m_Text.GetSafeHwnd())) {
+		m_Text.MoveWindow(0,0,cx,cy-100);	
+		m_ErrorText.MoveWindow(0,cy-95,cx,95);	
+	}
 }
 
 

@@ -23,6 +23,7 @@ extern CWinMoshApp theApp;
 
 CMoshEdit::CMoshEdit()
 {
+	m_pErrorText = NULL;
 	m_NoServ = false;
 	m_ShowServ = false;
 	m_ProcessCreated = false;
@@ -180,6 +181,25 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 
 		res.Replace("\r\n","\n");
 		res.Replace("\n","\r\n");
+
+		if (m_pErrorText) {
+			tmp = client->sendExpression("getErrorString()");
+			CString errorString = tmp;
+			CORBA::string_free(tmp);
+			errorString = errorString.Mid(1,errorString.GetLength()-3);
+			errorString.Replace("\r\n","\n");
+			errorString.Replace("\n","\r\n");
+
+			if (errorString.GetLength() > 2) {
+				CString text;
+				//m_pErrorText->GetWindowText(text);
+				text = errorString + "\r\n";
+				m_pErrorText->SetWindowText(text);
+				int scroll = m_pErrorText->GetFirstVisibleLine()-m_pErrorText->GetLineCount();
+				if (scroll < -4) m_pErrorText->LineScroll(-scroll);
+			}
+		}
+
 		theApp.m_pMainWnd->EndWaitCursor();
 		return res;
 	}
@@ -429,4 +449,9 @@ void CMoshEdit::RunCommand(LPCSTR command)
 	txt += ">> ";
 	SetWindowText(txt);
 	SetSel(txt.GetLength(),txt.GetLength());
+}
+
+void CMoshEdit::SetErrorWindow(CEdit* pWnd)
+{
+	m_pErrorText = pWnd;
 }
