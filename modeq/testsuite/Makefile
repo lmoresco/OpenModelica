@@ -46,7 +46,6 @@ cases.texi : $(TESTFILES)
 	set "Test Cases" $$cases ""; \
 	while [ "$$2" != "" ] ; do \
 		echo ""                 	    >> $@; \
-		echo "@page"                        >> $@; \
 		echo "@node $$2,$$3,$$1,Test Cases" >> $@; \
 		echo "@appendixsec $$2" 	    >> $@; \
 		echo "@example"         	    >> $@; \
