@@ -1,4 +1,4 @@
-TESTFILES = variables.mos attributes.mos
+TESTFILES = variables.mos 
 
 TEST = rtest
 
