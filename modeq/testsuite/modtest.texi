@@ -17,7 +17,7 @@
 @end iftex
 
 @include VERSION.texi
-@set UPDATED 13 July 1998
+@set UPDATED 16 July 1998
 @set UPDATED-MONTH July 1998
 
 @ifinfo
@@ -94,6 +94,7 @@ Open Issues
 * Integer expressions::         
 * Redeclaration of parameter as variable::  
 * Equations::                   
+* Modifications::               
 @end menu
 
 @c ********************************************************************
@@ -331,6 +332,7 @@ Modelica language specification (Version 1c of the Modelica report).
 * Integer expressions::         
 * Redeclaration of parameter as variable::  
 * Equations::                   
+* Modifications::               
 @end menu
 
 @c --------------------------------------------------------- 
@@ -944,7 +946,7 @@ redeclare. Should require that type-prefix is identical for extends.
 @end itemize
 
 @c --------------------------------------------------------- 
-@node Equations,  , Redeclaration of parameter as variable, Open Issues
+@node Equations, Modifications, Redeclaration of parameter as variable, Open Issues
 @section Equations
 
 @subsection Discretes and equations
@@ -954,6 +956,98 @@ properties. If it is said that equations can only contain differentiable
 expressions, then this is clearly illegal.
 
 @xref{Expression Properties}
+
+@c --------------------------------------------------------- 
+@node Modifications,  , Equations, Open Issues
+@section Modifications
+
+@subsection Double modifications
+
+The Manchester meeting decided that the same component may not be
+modified twice in the same modification clause, i.e. the following
+example is invalid since @code{x} is modified twice.
+
+@example
+Foobar a(x = 5, y = 3, x = 7);
+@end example
+
+The following two examples are also disallowed.
+
+@example
+Foobar(x[2:8] = [1,2,3,4,5,6,7], x[3] = 17);
+Foobar(a.x = 17, a(x = 15, y = 16);
+@end example
+
+But it is still possible to write something that could be possible to
+interpret as a double modification. The following example is taken from
+@ref{Modification6}.
+
+@example
+model M
+  model Foo
+    parameter Real q = 1.0;
+  end Foo;
+  Foo f(q=2.0);
+end M;
+ 
+model Modification6
+  M m1(Foo(q=3.0), f(q=4.0));
+  M m2(f(q=4.0), Foo(q=3.0));
+end Modification6;
+@end example
+
+Although @code{f.q} are modified twice on both the declaration of
+@code{m1} and @code{m2}, this is not disallowed, and should not be
+disallowed.  But the semantics have to be defined.  There are three
+alternatives.
+
+@enumerate
+@item
+Instance modifications take precedence over class modifications.
+@item
+Class modificaitons take precedence over class modifications.
+@item
+The textual order of the modifications determines the precedence.
+@end enumerate
+
+If we follow the guiding principle that more specific modifications take
+precedence over more general, then the first alternative should be
+chosen.  This fits well with how outer (more specific) modifications
+take precedence over inner (more general) modifications.
+
+This might seem a little more natural if we look at the following
+example.
+
+@example
+model ResistorCircuit
+  parameter Integer N
+  Reistor r[N];
+  @dots{}
+end SeralResistors;
+
+model Foo
+  ResistorCircuit rr(N = 17, Resistor(R = 1.0), r[5] = 1.0);
+end Foo;
+@end example
+
+@xref{Modification6}, @ref{Modification8}, @ref{Modification9}
+
+@subsection Class modifications should be propagated down
+
+In @ref{Modification10}, we see how a class modification is valid while
+instantiating a hierachy of submodels.  This is what class modifications
+are for, I guess.  I actually think class modification mostly are a pain
+in the butt.
+
+@subsection Class modifications on non-local classes
+
+First of all, should it be possible to modify classes defined outside
+the class being instantiated? @xref{Modification2} for an example.  I
+suppose it should be possible.
+
+But there are some interesting consequences.  In @ref{Modification11},
+we see how this leads to a situation where it is impossible to determine
+if a modification is a class modification or a component modification.
 
 @c ********************************************************************
 
@@ -978,6 +1072,25 @@ expressions, then this is clearly illegal.
 @c ======================================================================
 @node Change-Log,  , Test Cases, Top
 @appendix Change-Log
+
+@appendixsec Version 1.0-dk2 to 1.0-dk3
+
+@itemize @bullet
+
+@item
+Stopped placing each test case on its own page.  This drastically
+decreased the number of pages in the PostScript version.
+
+@end itemize
+
+@appendixsec Version 1.0-dk1 to 1.0-dk2
+
+@itemize @bullet
+
+@item
+Added @ref{Modifications}.
+
+@end itemize
 
 @appendixsec Version 1.0 to 1.0-dk1
 
