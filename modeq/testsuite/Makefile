@@ -13,7 +13,7 @@ MAKEINFO=makeinfo
 VERSION = $(shell cat VERSION)
 
 .PHONY : default
-default : modtest.ps modtest.info $(HTMLFILE)
+default : modtest.info modtest.ps $(HTMLFILE)
 
 .PHONY : test
 test :
