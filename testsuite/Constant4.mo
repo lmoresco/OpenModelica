@@ -15,4 +15,5 @@ end Constant4;
 //   Real x[2];
 //   Real y[1];
 //   Real y[2];
+//  equation
 // end Constant4;

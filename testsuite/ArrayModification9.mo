@@ -20,4 +20,4 @@ end ArrayModification9;
 //   Real a.x[2,2];
 // equation
 //   a.x[1,2] = 2.0;
-// end ArrayModification9
+// end ArrayModification9;

@@ -19,6 +19,20 @@ equation
 end XPowers2;
 
 // fclass XPowers2
+//   constant Integer n;
+//   Real x;
+//   Real xpowers[1];
+//   Real xpowers[2];
+//   Real xpowers[3];
+// equation
+//   n = 3;
+//   x = 2.0;
+//   xpowers[1] = x;
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
+// end XPowers2;
+
+// origfclass XPowers2
 //   Integer i;
 //   constant Integer n;
 //   Real x;
@@ -31,4 +45,4 @@ end XPowers2;
 //   xpowers[1] = x;
 //   xpowers[1+1] = xpowers[1] * x;
 //   xpowers[2+1] = xpowers[2] * x;
-// end XPowers2;
+// origend XPowers2;

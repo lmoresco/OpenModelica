@@ -26,6 +26,6 @@ end Connect1;
 // equation
 //   c1.e = c2.e;
 //   (-c1.f) + (-c2.f) = 0.0;
-//   c1.e = 1;
+//   c1.e = Real(1);
 //   c2.f = time;
 // end Connect1;

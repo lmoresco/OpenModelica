@@ -18,6 +18,6 @@ class Overwriting3 = A(x[1]=1.0);
 //   Real x[3];
 // equation
 //   x[1] = 1.0;
-//   x[2] = 0.0;
-//   x[3] = 0.0;
+//   x[2] = Real(0);
+//   x[3] = Real(0);
 // end Overwriting3;

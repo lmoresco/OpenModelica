@@ -17,9 +17,11 @@ class ScopeModification1
 end ScopeModification1;
 
 // fclass ScopeModification1
-//   Real a=1;
-//   Real m.a=2;
+//   Real a;
+//   Real m.a;
 //   Real m.b;
 // equation
+//   a = Real(1);
+//   m.a = Real(2);
 //   m.b = a;
 // end ScopeModification1;

@@ -25,5 +25,13 @@ encapsulated model Encapsulated1
 end Encapsulated1;
 
 // fclass Encapsulated1
+//   Real c.x;
+//   Real c2.x;
+//  equation
+//   c.x = 1;
+//   c2.x = 2;
+// end Encapsulated1;
+
+// origfclass Encapsulated1
 //   Real c.x=1;
 //   Real c2.x=2;

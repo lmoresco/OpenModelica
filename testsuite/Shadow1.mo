@@ -17,9 +17,9 @@ model Shadow1
 end Shadow1;
 
 // fclass Shadow1
+//   Real z;
 //   Real a.x;
 //   Real a.y;
-//   Real z;
 // equation
 //   a.x = 1;
 //   a.x = z;

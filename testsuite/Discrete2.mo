@@ -11,8 +11,8 @@ equation
 end Discrete2;
 
 // fclass Discrete2
-//   discrete Real    x;
-//            String  x.unit;
+//  String x.unit;
+//  discrete Real x;
 // equation
 //   x = sin(time);
 // end Discrete2;

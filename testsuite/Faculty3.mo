@@ -21,8 +21,8 @@ algorithm
 end Faculty3;
 
 // fclass Faculty3
-//   Integer x;
-//   Integer y;
+//   input Integer x;
+//   output Integer y;
 //   Integer i;
 // equation
 // algorithm

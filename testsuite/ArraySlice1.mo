@@ -22,5 +22,5 @@ end ArraySlice1;
 //   a[1] = a[2];
 //   a[3] = a[4];
 //   a[1] = time;
-//   a[4] = 1;
+//   a[4] = Real(1);
 // end ArraySlice1;

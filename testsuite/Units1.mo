@@ -41,5 +41,5 @@ end Units1;
 //   p1.i.unit = "A";
 //   p2.i.unit = "A";
 //   p1.v = p2.v;
-//   p1.i+p2.i= 0;
+//   p1.i + p2.i= 0;
 // end Units1;

@@ -16,8 +16,7 @@ equation
   end when;
 end WhenSemantics1;
 
-// 
-//
+// fmodel WhenSemantics1 
 //  Real y;
 //  discrete Real x,z;
 //equation /* Sorted*/
@@ -32,3 +31,4 @@ end WhenSemantics1;
 //   x=pre(x);
 // end if;
 // y=sin(time)+x+z;
+// end WhenSemantics1
