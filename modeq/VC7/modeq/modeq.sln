@@ -1,0 +1,73 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runtime", "..\runtime.vcproj", "{72B8515B-6FE4-456D-80D3-51BE6A05EC58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E} = {39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}
+		{1007A2F7-E5AD-4227-833F-C781B410C142} = {1007A2F7-E5AD-4227-833F-C781B410C142}
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_runtime", "..\c_runtime.vcproj", "{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "absyn_builder", "..\absyn_builder.vcproj", "{1007A2F7-E5AD-4227-833F-C781B410C142}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeRMLandGRAMMAR", "..\MakeRMLandGRAMMAR\MakeRMLandGRAMMAR.vcproj", "{7DA26FFE-5443-4E0A-81DC-90679291ED2C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "modeq", "..\modeq.vcproj", "{087A2480-4E18-465E-BCE0-715481BE58DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58} = {72B8515B-6FE4-456D-80D3-51BE6A05EC58}
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E} = {39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}
+		{1007A2F7-E5AD-4227-833F-C781B410C142} = {1007A2F7-E5AD-4227-833F-C781B410C142}
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinMosh", "..\..\..\WinMosh\WinMosh.vcproj", "{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Debug.ActiveCfg = Debug|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Debug.Build.0 = Debug|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Release.ActiveCfg = Release|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Release.Build.0 = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Debug.ActiveCfg = Debug|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Debug.Build.0 = Debug|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Release.ActiveCfg = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Release.Build.0 = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Debug.ActiveCfg = Debug|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Debug.Build.0 = Debug|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Release.ActiveCfg = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Release.Build.0 = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Debug.ActiveCfg = Debug|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Debug.Build.0 = Debug|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Release.ActiveCfg = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Release.Build.0 = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Debug.ActiveCfg = Debug|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Debug.Build.0 = Debug|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Release.ActiveCfg = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Release.Build.0 = Release|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Debug.ActiveCfg = Debug|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Debug.Build.0 = Debug|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Release.ActiveCfg = Release|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Readme.txt = Readme.txt
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
