@@ -28,18 +28,16 @@ runone ()
 
     cp $log $tmp1
     ed $tmp1 >/dev/null 2>&1 <<EOF
-1,/^equations/d
-1d
-/^\$/,\$d
+1,/^fclass/d
+/^(end|equation|algorithm)/,\$d
 w
 q
 EOF
 
     cut -c 4- $f > $tmp2
     ed $tmp2 >/dev/null 2>&1 <<EOF
-1,/^Equations:/d
-1d
-/^\$/,\$d
+1,/^fclass/d
+/^(end|equation|algorithm)/,\$d
 w
 q
 EOF
