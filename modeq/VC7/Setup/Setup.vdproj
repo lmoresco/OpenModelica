@@ -1251,12 +1251,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1784976B30CC4709B170061FE41BF3DC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_178F0D5512804807AD9A4857F678B44F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -6525,12 +6519,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7CEC0DA1A8B7462CB666F57631BBBA89"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7D0F2151EAFB4BCA89EA1260CE9284F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -9657,6 +9645,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B71C69500242498FBCFA1E352F2AA9F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B7347391A4BD42C78AF88075CB2491B7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10149,6 +10143,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C05F5668503E42A9AE9F7600697C4912"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C05FFA7B4332465E86F5CE56239B96AF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10156,6 +10156,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C0637A4C0567473B8A965A0BBDB68A9F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -17743,26 +17749,6 @@
             "TargetName" = "8:Modelica.Electrical.Analog.Sources.TableCurrentI.png"
             "Tag" = "8:"
             "Folder" = "8:_7FDBA042748E44E9B0AC384ECF024428"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1784976B30CC4709B170061FE41BF3DC"
-            {
-            "SourcePath" = "8:M:\\modeq\\win\\modeq.exe"
-            "TargetName" = "8:modeq.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -35297,26 +35283,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7CEC0DA1A8B7462CB666F57631BBBA89"
-            {
-            "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
-            "TargetName" = "8:mico2311.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_546F64DA7B034C08AEFB677D77BC4D53"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_7D0F2151EAFB4BCA89EA1260CE9284F1"
             {
             "SourcePath" = "8:M:\\MinGW\\lib\\CRT_fp10.o"
@@ -45697,6 +45663,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B71C69500242498FBCFA1E352F2AA9F5"
+            {
+            "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_596366ECE84B44178CE3B8AEEEA6FBE9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_B7347391A4BD42C78AF88075CB2491B7"
             {
             "SourcePath" = "8:M:\\MinGW\\lib\\librpcdce4.a"
@@ -47323,6 +47309,26 @@
             "TargetName" = "8:pbt.h"
             "Tag" = "8:"
             "Folder" = "8:_EA416F539C6E4222BC169429B5E3F00A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C05F5668503E42A9AE9F7600697C4912"
+            {
+            "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -59755,7 +59761,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{134D8E8A-3DD2-47DB-ABEE-33903B702259}"
-        "PackageCode" = "8:{D91CADA1-C66D-48CF-B8B7-1357E568C038}"
+        "PackageCode" = "8:{C4BA3FC1-0801-443D-BFA2-C7DBFB7A3D3C}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -60403,7 +60409,7 @@
         {
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_4B2552DF2CFF4B6AAA4D4C33B5353E48"
             {
-            "SourcePath" = "8:..\\updateenv\\release\\UpdateEnv.exe"
+            "SourcePath" = "8:..\\UpdateEnv\\Release\\UpdateEnv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -60424,6 +60430,34 @@
             "OutputConfiguration" = "8:Release|Win32"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{8E584488-5EBE-43D7-973C-6C434E426803}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_C0808A7B696E49A79B16145F10BAB302"
+            {
+            "SourcePath" = "8:..\\Release\\modeq.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Release|Win32"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{087A2480-4E18-465E-BCE0-715481BE58DE}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
