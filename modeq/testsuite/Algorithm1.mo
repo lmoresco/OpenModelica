@@ -51,7 +51,7 @@ end Algorithm1;
 //     x := x + 0.5;
 //   end while;
 // algorithm
-//   for i in (1:3) loop
+//   for i in 1:3 loop
 //     if 2 < i then
 // 	 x := x - Real(i);
 //     end if;

@@ -1,10 +1,12 @@
 // name:     XPowers1
-// keywords: equation
+// keywords: equation,array
 // status:   correct
 // 
 // The powers of 'x' are defined by using array syntax. The dimension  
 // 'n' needs to be fixed in order to expand the formulation. 
 // Furthermore 'n' is treated fixed in the declaration of 'xpowers'.
+//
+// This also uses multiplication of an array with a scalar.
 //
 
 model XPowers1

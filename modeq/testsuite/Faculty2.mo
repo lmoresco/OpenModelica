@@ -24,7 +24,7 @@ end Faculty2;
 // equation
 // algorithm
 //   y := 1;
-//   for i in (2:x) loop
+//   for i in 2:x loop
 //     y := i * y;
 //   end for;
 // end Faculty2;

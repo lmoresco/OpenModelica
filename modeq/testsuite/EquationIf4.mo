@@ -1,11 +1,11 @@
-// name:     EquationIf3
+// name:     EquationIf4
 // keywords: equation
 // status:   correct
 // 
 // Testing `if' clauses in equations.
 // 
 
-class EquationIf3
+class EquationIf4
   parameter Real p = 10.0;
   Real x;
 equation
@@ -18,12 +18,12 @@ equation
   else
     x = 4.0;
   end if;
-end EquationIf3;
+end EquationIf4;
 
-// fclass EquationIf3
+// fclass EquationIf4
 //   parameter Real p;
 //   Real x;
 // equation
 //   p = 10.0;
 //   x = 4.0;
-// end EquationIf3;
+// end EquationIf4;

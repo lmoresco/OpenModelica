@@ -10,6 +10,7 @@ $tmp2 = "/tmp/equations-2";
 $tmp3 = "/tmp/equations-diff";
 @keys = ();
 $collectkeys = 0;
+$collectcases = 0;
 %knownkeys = ();
 $filearg = 0;
 $status = 0;
@@ -137,6 +138,14 @@ sub dofile
  	}
      }
 
+    # Collecting files
+    if ($collectcases) {
+	if ($info{'status'} ne "unknown") {
+	    print $info{'name'}."\n";
+	}
+	return 0;
+    }
+
     # Collecting keys?
     if ($collectkeys) {
 	if ($info{"keywords"}) {
@@ -196,6 +205,8 @@ while ($#ARGV >= 0) {
 	$statusfilter = shift;
     } elsif ($arg eq "-l") {
 	$collectkeys = 1;
+    } elsif ($arg eq "-L") {
+	$collectcases = 1;
     } else {	
 	$filearg = 1;
 	dofile $arg;
@@ -208,7 +219,7 @@ if ($filearg == 0) {
 }
 
 # Final output. Statistics and stuff
-if ($collectkeys) {
+if ($collectkeys || $collectcases) {
     for (sort(keys %knownkeys)) {
 	printf "  %3d %s\n", $knownkeys{$_}, $_;
     }
