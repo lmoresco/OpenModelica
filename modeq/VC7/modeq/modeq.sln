@@ -91,6 +91,7 @@ Global
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.NoMico.ActiveCfg = Release|Win32
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.NoMico.Build.0 = Release|Win32
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.Release.ActiveCfg = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.Release.Build.0 = Release|Win32
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.ReleaseStaticMico.ActiveCfg = Release|Win32
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.ReleaseStaticMico.Build.0 = Release|Win32
 	EndGlobalSection

@@ -351,6 +351,9 @@ nmake -f MakeFile.win32
 			<File
 				RelativePath="..\values.c">
 			</File>
+			<File
+				RelativePath="..\vartransform.c">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"

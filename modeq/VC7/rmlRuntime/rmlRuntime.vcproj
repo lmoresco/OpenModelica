@@ -104,6 +104,30 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
+				RelativePath=".\runtime\common\arr-add.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-create.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-length.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-list.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-nth.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-setnth.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-update.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\arr-vec.c">
+			</File>
+			<File
 				RelativePath="runtime\common\bool-and.c">
 			</File>
 			<File
@@ -168,6 +192,9 @@
 			</File>
 			<File
 				RelativePath="runtime\common\list-append.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\list-arr.c">
 			</File>
 			<File
 				RelativePath="runtime\common\list-delete.c">
@@ -267,11 +294,6 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="runtime\common\real-abs.c">
@@ -364,6 +386,15 @@
 				RelativePath="runtime\common\str-nth.c">
 			</File>
 			<File
+				RelativePath=".\runtime\common\vec-add.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\vec-arr.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\vec-create.c">
+			</File>
+			<File
 				RelativePath="runtime\common\vec-length.c">
 			</File>
 			<File
@@ -371,6 +402,12 @@
 			</File>
 			<File
 				RelativePath="runtime\common\vec-nth.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\vec-setnth.c">
+			</File>
+			<File
+				RelativePath=".\runtime\common\vec-update.c">
 			</File>
 		</Filter>
 		<Filter
