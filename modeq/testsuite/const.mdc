@@ -1,0 +1,22 @@
+package Constant
+
+/* This package provides often needed constants */
+extends SIunit;
+
+// Mathematical constants
+   constant Real PI = 3.14159265358979;
+   constant Real E  = 2.71828182845904;
+
+/* Constants of nature 
+   (from: E.R. Cohen, and B.N. Taylor: The 1986 Adjustment of the Fundamental
+          Physical Constants, CODATA Bulletin, Pergamon: Elmsford, NY, 1986.
+          see also: http://physics.nist.gov/PhysRefData/codata86/article.html
+                    http://physics.nist.gov/PhysRefData/codata86/codata86.html)
+*/
+
+   constant Real         N_A     (final unit="mol-1",
+                                  value = 6.0221367e23)  "Avogadro constant";
+// ...
+
+end Constant;
+
