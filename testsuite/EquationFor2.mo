@@ -24,7 +24,21 @@ end EquationFor2;
 // equation
 //   N = 4;
 //   a[1] = 1.0;
+//   a[2] = a[1] + 1.0;
+//   a[3] = a[2] + 1.0;
+//   a[4] = a[3] + 1.0;
+// end EquationFor2;
+
+// origfclass EquationFor2
+//   constant Integer N;
+//   Real a[1];
+//   Real a[2];
+//   Real a[3];
+//   Real a[4];
+// equation
+//   N = 4;
+//   a[1] = 1.0;
 //   a[1 + 1] = a[1] + 1.0;
 //   a[2 + 1] = a[2] + 1.0;
 //   a[3 + 1] = a[3] + 1.0;
-// end EquationFor2;
+// origend EquationFor2;

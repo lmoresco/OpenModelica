@@ -1,6 +1,7 @@
 // name:     ArrayModification10
 // keywords: array,modification
-// status:   correct, incomplete model
+// status:   correct
+// origstatus:   correct, incomplete model
 // 
 // Double multi-dimensional modifications.
 // 

@@ -1,6 +1,7 @@
 // name:     ArrayModification7
 // keywords: array,modification
-// status:   correct, incomplete model
+// status:   correct
+// origstatus:   correct, incomplete model
 // 
 // This tests array modifications where the index is an array, which
 // means that the modification modifies a whole slice.

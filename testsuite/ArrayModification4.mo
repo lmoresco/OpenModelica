@@ -1,6 +1,7 @@
 // name:     ArrayModification4
 // keywords: array,modification
-// status:   correct,incomplete model
+// status:   correct
+// origstatus:   correct,incomplete model
 // 
 
 class ArrayModification4

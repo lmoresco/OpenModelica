@@ -7,7 +7,7 @@
 
 class Constant4
   Real x[2];
-  Real y[size(1,x)];
+  Real y[size(x,1)];
 end Constant4;
 
 // fclass Constant4

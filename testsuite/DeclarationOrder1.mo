@@ -27,7 +27,7 @@ end DeclarationOrder1;
 //   parameter Real b.x=3.14;
 //  equation
 //    der(b.y)=b.x;
-
+// end DeclarationOrder1
 
 
    

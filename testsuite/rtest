@@ -107,7 +107,7 @@ sub dofile
 		"name"     => $f,
 		"keywords" => "unknown");
     $log = "/tmp/log-$f";
-
+    $tc_err = 0;
     # Find the expected result
     open(OUT,">$tmp2");
     open(IN,"<$f");
@@ -118,7 +118,13 @@ sub dofile
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
 	    s/^[ \t]*//;
 	    s/[ \t]+/ /;
-	    print OUT substr($_,3);
+	    if (/^.../) {
+		print OUT substr($_,3);
+	    }
+	    elsif ($tc_err == 0)  {
+		print "Error in testcase: $f\n";
+		$tc_err = 1;		
+	    }
 	}
     }
     close IN;

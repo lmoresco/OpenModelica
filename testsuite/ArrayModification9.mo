@@ -1,6 +1,7 @@
 // name:     ArrayModification9
 // keywords: array,modification
-// status:   correct, incomplete model
+// status:   correct
+// origstatus:   correct, incomplete model
 // 
 // Full indexing of a multidimensional array.
 // 

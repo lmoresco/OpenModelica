@@ -24,3 +24,4 @@ end ConnectConst1;
 // equation
 //  c1.e=c2.e;
 //  c1.f+c2.f=0;
+// end ConnectConst1

@@ -29,10 +29,10 @@ equation
   x=time;
 end DependsMutual;
 
-// flatmodelica
+// fclass DependsMutual
 //   Real x;
 //   Real a.x;
 // equation
 //   a.x=x;
 //   x=time;
-//
+// end DependsMutual
