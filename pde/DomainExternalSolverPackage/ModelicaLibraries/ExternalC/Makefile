@@ -11,7 +11,7 @@ DYMOLALIB=$(DYMOLADIR)/bin/lib/egcs/libds.a
 CPPFLAGS += $(DYMOLAINC)
 LDLIBS += $(DYMOLALIB)
 
-DESTPATH=../Applications
+DESTPATH=../../Applications
 
 LIBEXTSRCS= read_array_common.c read_matrix.c 
 
