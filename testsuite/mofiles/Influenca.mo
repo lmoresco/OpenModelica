@@ -1,76 +1,74 @@
-connector Port 
-  Real x;
-end Port;
+connector Port = Real;
 
 
 model Population 
-  Port in_1;
-  Port in_2;
-  Port out_1;
-  Real p(start=10);
+  input Port in_1;
+  input Port in_2;
+  output Port out_1;
+  output Real p(start=10);
 equation 
-  der(p)=in_1.x - in_2.x;
-  out_1.x = p;
+  der(p)=in_1 - in_2;
+  out_1 = p;
 end Population;
 
 
 model Division 
-  Port in_1;
-  Port in_2;
-  Port out_1;
+  input Port in_1;
+  input Port in_2;
+  output Port out_1;
   parameter Real c=1.00;
 equation 
-  out_1.x = c*in_1.x/in_2.x;
+  out_1 = c*in_1/in_2;
 end Division;
 
 
 model Constants 
-  Port out_1;
+  output Port out_1;
   parameter Real c=1.0;
 equation 
-  out_1.x = c;
+  out_1 = c;
 end Constants;
 
 
 model Product1 
-  Port in_1;
-  Port out_1;
+  input Port in_1;
+  output Port out_1;
   parameter Real c=0.10;
 equation 
-  out_1.x=c*in_1.x;
+  out_1=c*in_1;
 end Product1;
 
 
 model Product2 
-  Port in_1;
-  Port in_2;
-  Port out_1;
+  input Port in_1;
+  input Port in_2;
+  output Port out_1;
   parameter Real c=1.00;
 equation 
-  out_1.x=c*in_1.x*in_2.x;
+  out_1=c*in_1*in_2;
 end Product2;
 
 
 model Sum 
-  Port in_1;
-  Port in_2;
-  Port out_1;
+  input Port in_1;
+  input Port in_2;
+  output Port out_1;
 equation 
-  out_1.x = in_1.x + in_2.x;
+  out_1 = in_1 + in_2;
 end Sum;
 
 
 model Minimum 
-  Port in_1;
-  Port in_2;
-  Port out_1;
+  input Port in_1;
+  input Port in_2;
+  output Port out_1;
 equation 
-  out_1.x = if (in_1.x < in_2.x) then in_1.x else in_2.x;
+  out_1 = if (in_1 < in_2) then in_1 else in_2;
 end Minimum;
 
 
 model Influenza 
-  Real Introduction = 77.0;
+  input Real Introduction = 77;
   
   Population Immune_Popul(p(start = 10));
   Population Non_Infected_Popul(p(start = 100));
@@ -126,7 +124,7 @@ equation
   connect(Temp1.in_2,Contacts_Wk.out_1);
   connect(Temp2.in_2,Temp1.out_1);
   connect(Temp3.in_1,Temp2.out_1);
-  Temp3.in_2.x = Introduction;
+  Temp3.in_2 = Introduction;
   connect(Infection_Rate.in_1,Temp3.out_1);
   connect(Infection_Rate.in_2,Non_Infected_Popul.out_1);
   connect(Infected_Popul.in_1,Infection_Rate.out_1);
