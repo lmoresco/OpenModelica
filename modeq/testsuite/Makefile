@@ -1,4 +1,5 @@
-TEST=./rtest
+TEST=/net/ent4000/files/dsk1/ida/x98petro/PELAB/modeq/testsuite/rtest
+#TEST=runtest
 
 TESTFILES=*.mo
 DOCFILES=modtest.texi cases.texi VERSION.texi

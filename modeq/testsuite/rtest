@@ -1,4 +1,4 @@
-#!/sw/local/bin/perl -w
+#!/usr/bin/env perl
 
 $successes=0;
 $total=0;
