@@ -27,7 +27,7 @@ runone ()
 
     cp $log $tmp1
     ed $tmp1 >/dev/null 2>&1 <<EOF
-1,/^Equations:/d
+1,/^equations/d
 1d
 /^\$/,\$d
 w
