@@ -18,7 +18,9 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				Output="MakeRMLandGRAMMAR.exe"/>
+				BuildCommandLine="$(ProjectDir)..\makemodeq"
+				ReBuildCommandLine="$(ProjectDir)..\rebuildmodeq"
+				CleanCommandLine="$(ProjectDir)..\cleanmodeq"/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -27,7 +29,9 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="$(ProjectDir)..\makemodeq"/>
+				BuildCommandLine="$(ProjectDir)..\makemodeq"
+				ReBuildCommandLine="$(ProjectDir)..\rebuildmodeq"
+				CleanCommandLine="$(ProjectDir)..\cleanmodeq"/>
 		</Configuration>
 	</Configurations>
 	<References>
