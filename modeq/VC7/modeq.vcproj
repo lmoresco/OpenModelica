@@ -104,7 +104,8 @@ nmake -f MakeFile.win32
 				Name="VCPostBuildEventTool"
 				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
 copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win\modeq.exe&quot;
-"/>
+"
+				ExcludedFromBuild="TRUE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
