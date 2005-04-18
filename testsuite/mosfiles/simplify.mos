@@ -1,0 +1,15 @@
+// name:     Simplify
+// keywords: Simplify, Expression
+// status:   correct
+// 
+//  testing simplify in exp
+//
+simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Real");
+simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Integer");
+simplify(x * 1.0 + 1.0 * x + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + x * 1.0 + 1.0 * x + x * x * 1.0 + (x * 1.0 + 1.0 * x) * x + 1.0 + 1.0 + 1.0, "Real");
+
+// Result:
+// "x ^ 2.0 + x * 4.0 + x + x ^ 2.0 + x ^ 3.0 + x * 2.0 + x"
+// "x ^ 2 + x * 4 + x + x ^ 2 + x ^ 3 + x * 2 + x"
+// "2.0 * x + 5.0 + x * 2.0 + x ^ 2.0 + 2.0 * x ^ 2.0 + 3.0"
+// endResult
