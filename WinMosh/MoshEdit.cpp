@@ -244,9 +244,11 @@ BOOL CMoshEdit::PreTranslateMessage(MSG* pMsg)
 			if (end > start)
 				return TRUE;
 		default:
-			GetSel(start, end);
-			if ((start - LineIndex(GetLineCount()-1)) < 3)
-				return TRUE;
+			if (!GetKeyState(VK_CONTROL)) {
+				GetSel(start, end);
+				if ((start - LineIndex(GetLineCount()-1)) < 3)
+					return TRUE;
+			}
 			break;
 		}
 
@@ -398,7 +400,6 @@ void CMoshEdit::SpawnServer(void)
 	GetTempPath(MAX_PATH,logfile.GetBufferSetLength(MAX_PATH));
 	logfile.ReleaseBuffer();
 	logfile += "modeq.log";
-	CString MoshHome;
 	STARTUPINFO startinfo;
 	PROCESS_INFORMATION procinfo;
 	startinfo.lpDesktop = NULL;
@@ -427,21 +428,22 @@ void CMoshEdit::SpawnServer(void)
 		startinfo.hStdInput = NULL;
 		startinfo.hStdOutput= log;  
 	}
-	if (MoshHome.GetEnvironmentVariable("MOSHHOME")) {
-		MoshHome = MoshHome.Left(MoshHome.GetLength()-5);
-		MoshHome = CString("\"") + MoshHome + "\\modeq\\win\\modeq.exe\" +d=interactiveCorba";
 
-		if (m_ProcessCreated) {
-			Sleep(1000);
-			return;
-		}
+	CString command;
+	GetModuleFileName(NULL,command.GetBuffer(MAX_PATH),MAX_PATH);
+	command.ReleaseBuffer();
+	command = "\"" + command.Left(command.ReverseFind('\\')) + "\\modeq.exe\" +d=interactiveCorba";
 
-		if (CreateProcess(NULL,MoshHome.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
-		{
-			m_ProcessCreated = true;
-			Sleep(1000);
-		};
+	if (m_ProcessCreated) {
+		Sleep(1000);
+		return;
 	}
+
+	if (CreateProcess(NULL,command.GetBuffer(),NULL,NULL,FALSE,m_ShowServ?0:DETACHED_PROCESS,NULL,NULL,&startinfo,&procinfo))
+	{
+		m_ProcessCreated = true;
+		Sleep(1000);
+	};
 }
 
 void CMoshEdit::RunCommand(LPCSTR command)

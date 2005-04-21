@@ -102,9 +102,9 @@ nmake -f MakeFile.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
-copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win\modeq.exe&quot;
-"/>
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\modeq\win\modeq.exe&quot;
+"
+				ExcludedFromBuild="TRUE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
@@ -337,9 +337,6 @@ nmake -f MakeFile.win32
 				RelativePath="..\mod.rml">
 			</File>
 			<File
-				RelativePath="..\modsim.rml">
-			</File>
-			<File
 				RelativePath="..\modutil.rml">
 			</File>
 			<File
@@ -373,15 +370,6 @@ nmake -f MakeFile.win32
 				RelativePath="..\taskgraphext.rml">
 			</File>
 			<File
-				RelativePath="..\tornado.rml">
-			</File>
-			<File
-				RelativePath="..\tornadocodegen.rml">
-			</File>
-			<File
-				RelativePath="..\tornadoext.rml">
-			</File>
-			<File
 				RelativePath="..\types.rml">
 			</File>
 			<File
@@ -394,6 +382,12 @@ nmake -f MakeFile.win32
 				RelativePath="..\vartransform.rml">
 			</File>
 		</Filter>
+		<File
+			RelativePath="..\Makefile.common.w32">
+		</File>
+		<File
+			RelativePath="..\Makefile.sig.w32">
+		</File>
 		<File
 			RelativePath="..\Makefile.w32">
 		</File>

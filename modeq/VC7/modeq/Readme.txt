@@ -1,12 +1,8 @@
-Saker som ändrats under MOSHHOME:
+Saker som ändrats under OPENMODELICAHOME:
 
 Det har till kommit några script/bat-filer för kompilering och simulering
 Compile.bat och Compile
-runsim.bat och runsim
-runModelicaOpt.bat och runModelicaOpt
-
-under c_runtime har ett lib lagts till kompilerat med mingw
-libc_runtime_mingw.a
+doPlot.bat och doPlot
 
 Under modeq har katalogen win lagts dit där den win32-kompilerade modeq-versionen ligger
  

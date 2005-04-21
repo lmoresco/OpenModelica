@@ -42,21 +42,22 @@ CWinMoshApp theApp;
 
 BOOL CWinMoshApp::InitInstance()
 {
-	CString moshhome;
+	CString omhome;
 	CString ModelicaPath;
-	if (!moshhome.GetEnvironmentVariable("MOSHHOME") || moshhome == "") {
-		moshhome = theApp.m_pszHelpFilePath;
-		moshhome = moshhome.Left(moshhome.ReverseFind('\\'));
-		SetEnvironmentVariable("MOSHHOME", moshhome);
+	if (!omhome.GetEnvironmentVariable("OPENMODELICAHOME") || omhome == "") {
+		GetModuleFileName(NULL,omhome.GetBuffer(MAX_PATH),MAX_PATH);
+		omhome.ReleaseBuffer();
+		omhome = omhome.Left(omhome.ReverseFind('\\'));
+		SetEnvironmentVariable("OPENMODELICAHOME", omhome);
 		CString msg;
-		msg.Format("MOSHOME Environment variable not set. Using default: %s", (LPCSTR)moshhome);
+		msg.Format("OPENMODELICAHOME environment variable not set. Using default: %s", (LPCSTR)omhome);
 		MessageBox(NULL, msg, "Environment varible not set", MB_ICONWARNING|MB_OK);
 	}
 	if (!ModelicaPath.GetEnvironmentVariable("MODELICAPATH") || ModelicaPath == "") {
-		ModelicaPath = moshhome;
+		ModelicaPath = omhome;
 		if (ModelicaPath.Right(1) == "\\") 
 			ModelicaPath = ModelicaPath.Left(ModelicaPath.GetLength() -1);
-		ModelicaPath = ModelicaPath.Left(ModelicaPath.ReverseFind('\\'));
+//		ModelicaPath = ModelicaPath.Left(ModelicaPath.ReverseFind('\\'));
 		ModelicaPath += "\\ModelicaLibrary";
 		SetEnvironmentVariable("MODELICAPATH", ModelicaPath);
 		CString msg;

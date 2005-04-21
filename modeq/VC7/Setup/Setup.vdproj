@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1A1F92FEE65640D6B21E16BD1A46C43A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1AC58D9D14F54ED3866196D3AF37B0C1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -129,6 +135,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_39857A32FDB746B6A2708DB146A6A81E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3DB2A961CB0E92ABEEFFCC127E3174EF"
+        "OwnerKey" = "8:_E2759B4CC363474481880230648B004F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -178,12 +196,6 @@
         "Entry"
         {
         "MsmKey" = "8:_5AF0309AA6E54CB481AC7A9D2F14A1BD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5C0244269302463F84044BCD4CFFEECC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -279,12 +291,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_911D4D5733CC4E72ABE6215D4B6D9565"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_93BF90C5C64F4A7B88B8EF66A882DFA5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -315,25 +321,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A5EE0B1F213743A1975FC5A9E53E1DEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A7DA24557144402687F00DAFB05DFF39"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_ACCC02BC7F334B90B4EEA744D8100E2D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B139D34E242A44B1A34E9D03C57A86B3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B71C69500242498FBCFA1E352F2AA9F5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -382,6 +382,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DDE896874533465F85AFB89C55A84E1D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E2759B4CC363474481880230648B004F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -503,7 +509,7 @@
         {
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_00D768737A874B6AB74FEE4C3CF307A6"
             {
-            "SourcePath" = "8:M:\\modeq\\scripts\\Compile.bat"
+            "SourcePath" = "8:..\\..\\scripts\\Compile.bat"
             "TargetName" = "8:Compile.bat"
             "Tag" = "8:"
             "Folder" = "8:_BBAEFA486A27432EB19084BEF1399E1D"
@@ -523,7 +529,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_032BAE4BD3CD49A3B1F7AC66F1E38884"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\additions\\front.bmp"
+            "SourcePath" = "8:additions\\front.bmp"
             "TargetName" = "8:front.bmp"
             "Tag" = "8:"
             "Folder" = "8:_7EDB4A27B7DB48E1905C67ECDEC5438E"
@@ -621,6 +627,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1A1F92FEE65640D6B21E16BD1A46C43A"
+            {
+            "SourcePath" = "8:C:\\WINDOWS\\system32\\msvcrt.dll"
+            "TargetName" = "8:msvcrt.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_1AC58D9D14F54ED3866196D3AF37B0C1"
             {
             "SourcePath" = "8:M:\\c_runtime\\memory_pool.h"
@@ -663,7 +689,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_25087B154F6B4BEB81957EE09C1BB806"
             {
-            "SourcePath" = "8:M:\\modeq\\scripts\\doPlot.bat"
+            "SourcePath" = "8:..\\..\\scripts\\doPlot.bat"
             "TargetName" = "8:doPlot.bat"
             "Tag" = "8:"
             "Folder" = "8:_BBAEFA486A27432EB19084BEF1399E1D"
@@ -683,7 +709,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_26AB86A0DBA942D68F1AD184366C58A6"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\gunzip.exe"
+            "SourcePath" = "8:bin\\gunzip.exe"
             "TargetName" = "8:gunzip.exe"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -743,7 +769,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_29A1B56548814B1BABDBA8B560D30D7E"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\bubblesort.mo"
+            "SourcePath" = "8:testmodels\\bubblesort.mo"
             "TargetName" = "8:bubblesort.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -861,9 +887,49 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_39857A32FDB746B6A2708DB146A6A81E"
+            {
+            "SourcePath" = "8:M:\\doc\\OpenModelicaUsersGuide.pdf"
+            "TargetName" = "8:OpenModelicaUsersGuide.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3DB2A961CB0E92ABEEFFCC127E3174EF"
+            {
+            "SourcePath" = "8:comdlg32.dll"
+            "TargetName" = "8:comdlg32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\tar.exe"
+            "SourcePath" = "8:bin\\tar.exe"
             "TargetName" = "8:tar.exe"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -923,7 +989,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_4CB3E1D3F28644A78AB3E821840DC1D0"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\Circle.mo"
+            "SourcePath" = "8:testmodels\\Circle.mo"
             "TargetName" = "8:Circle.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -963,7 +1029,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_566BCD9370264E6988ACF1E673B3F8FC"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\gzip.exe"
+            "SourcePath" = "8:bin\\gzip.exe"
             "TargetName" = "8:gzip.exe"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -1003,7 +1069,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5AF0309AA6E54CB481AC7A9D2F14A1BD"
             {
-            "SourcePath" = "8:M:\\modeq\\scripts\\Compile"
+            "SourcePath" = "8:..\\..\\scripts\\Compile"
             "TargetName" = "8:Compile"
             "Tag" = "8:"
             "Folder" = "8:_BBAEFA486A27432EB19084BEF1399E1D"
@@ -1021,29 +1087,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5C0244269302463F84044BCD4CFFEECC"
-            {
-            "SourcePath" = "8:M:\\WinMosh\\Release\\WinMosh.exe"
-            "TargetName" = "8:WinMosh.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_596366ECE84B44178CE3B8AEEEA6FBE9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5C8D77F5BDA741B18DA84AC95CEC7531"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\VanDerPol.mo"
+            "SourcePath" = "8:testmodels\\VanDerPol.mo"
             "TargetName" = "8:VanDerPol.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1063,7 +1109,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E5AA890143949639F4AEB884D523A2C"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\libintl-2.dll"
+            "SourcePath" = "8:bin\\libintl-2.dll"
             "TargetName" = "8:libintl-2.dll"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -1123,7 +1169,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_684BE3AB0481496FA1C368B359C39377"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\SimpleIntegrator.mo"
+            "SourcePath" = "8:testmodels\\SimpleIntegrator.mo"
             "TargetName" = "8:SimpleIntegrator.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1143,7 +1189,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_739FA513DE5449C88EAC3B22AE6DDC51"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\helptext.txt"
+            "SourcePath" = "8:helptext.txt"
             "TargetName" = "8:helptext.txt"
             "Tag" = "8:"
             "Folder" = "8:_8BD56ED3C8DB4B3996A02EE5CC7E35A4"
@@ -1163,7 +1209,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_78EF94727AAC49049B756062159E8A71"
             {
-            "SourcePath" = "8:M:\\modeq\\LICENSE"
+            "SourcePath" = "8:..\\..\\LICENSE"
             "TargetName" = "8:LICENSE"
             "Tag" = "8:"
             "Folder" = "8:_8BD56ED3C8DB4B3996A02EE5CC7E35A4"
@@ -1203,7 +1249,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_7E743D9863EE438C8279B9D7FD66C1B1"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\sim_Influenza.mos"
+            "SourcePath" = "8:testmodels\\sim_Influenza.mos"
             "TargetName" = "8:sim_Influenza.mos"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1301,26 +1347,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_911D4D5733CC4E72ABE6215D4B6D9565"
-            {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\additions\\OpenModelicaUsersGuide-050304.pdf"
-            "TargetName" = "8:OpenModelicaUsersGuide-050304.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_93BF90C5C64F4A7B88B8EF66A882DFA5"
             {
             "SourcePath" = "8:M:\\c_runtime\\ddassl.f"
@@ -1383,8 +1409,28 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A3C45759D8D445D3A63ABDF132520C58"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\ptplot.jar"
+            "SourcePath" = "8:ptplot.jar"
             "TargetName" = "8:ptplot.jar"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A5EE0B1F213743A1975FC5A9E53E1DEA"
+            {
+            "SourcePath" = "8:M:\\doc\\OpenModelicaSystem.pdf"
+            "TargetName" = "8:OpenModelicaSystem.pdf"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
@@ -1421,52 +1467,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ACCC02BC7F334B90B4EEA744D8100E2D"
-            {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\additions\\OpenModelicaSystem-050305.pdf"
-            "TargetName" = "8:OpenModelicaSystem-050305.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_B139D34E242A44B1A34E9D03C57A86B3"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\additions\\contributors.rtf"
+            "SourcePath" = "8:additions\\contributors.rtf"
             "TargetName" = "8:contributors.rtf"
             "Tag" = "8:"
             "Folder" = "8:_7EDB4A27B7DB48E1905C67ECDEC5438E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B71C69500242498FBCFA1E352F2AA9F5"
-            {
-            "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
-            "TargetName" = "8:mico2311.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_596366ECE84B44178CE3B8AEEEA6FBE9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1486,7 +1492,7 @@
             "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
             "TargetName" = "8:mico2311.dll"
             "Tag" = "8:"
-            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1523,7 +1529,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C477F68565D442B19ED2A6F89C41C100"
             {
-            "SourcePath" = "8:M:\\modeq\\scripts\\doPlot"
+            "SourcePath" = "8:..\\..\\scripts\\doPlot"
             "TargetName" = "8:doPlot"
             "Tag" = "8:"
             "Folder" = "8:_BBAEFA486A27432EB19084BEF1399E1D"
@@ -1543,7 +1549,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_CA02466639A847CBA4278605DDBA61A7"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\sim_dcmotor.mos"
+            "SourcePath" = "8:testmodels\\sim_dcmotor.mos"
             "TargetName" = "8:sim_dcmotor.mos"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1563,7 +1569,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_D4F649B8DF1F4EC593CC84DFC3CF0D1B"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\Influenza.mo"
+            "SourcePath" = "8:testmodels\\Influenza.mo"
             "TargetName" = "8:Influenza.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1623,7 +1629,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_E39F5397958F47C0AAE3CA6900651879"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\bin\\libiconv-2.dll"
+            "SourcePath" = "8:bin\\libiconv-2.dll"
             "TargetName" = "8:libiconv-2.dll"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
@@ -1683,7 +1689,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_F93A8FA7FA2B4F2C8B5BF18852DE8F7F"
             {
-            "SourcePath" = "8:M:\\modeq\\VC7\\Setup\\testmodels\\dcmotor.mo"
+            "SourcePath" = "8:testmodels\\dcmotor.mo"
             "TargetName" = "8:dcmotor.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
@@ -1805,7 +1811,7 @@
                     }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_596366ECE84B44178CE3B8AEEEA6FBE9"
                     {
-                    "Name" = "8:mosh"
+                    "Name" = "8:work"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -1960,11 +1966,11 @@
                                                             }
                                                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_6981DB3FA35B46D3B70E3C5235C0200D"
                                                             {
-                                                            "Name" = "8:MOSHHOME"
+                                                            "Name" = "8:OPENMODELICAHOME"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser"
                                                             "Transitive" = "11:FALSE"
                                                             "ValueTypes" = "3:2"
-                                                            "Value" = "8:[TARGETDIR]mosh"
+                                                            "Value" = "8:[TARGETDIR]"
                                                             }
                                                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_D62183E80DAE4EB6BA13AFF6B1EDD5D6"
                                                             {
@@ -2016,11 +2022,11 @@
                         {
                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_2BD6D970E10D47B4AE5396F8CC7FBF56"
                             {
-                            "Name" = "8:MOSHHOME"
+                            "Name" = "8:OPENMODELICAHOME"
                             "Condition" = "8:ALLUSERS=NULL OR NOT AdminUser"
                             "Transitive" = "11:FALSE"
                             "ValueTypes" = "3:2"
-                            "Value" = "8:[TARGETDIR]mosh"
+                            "Value" = "8:[TARGETDIR]"
                             }
                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_45F72F823DC849E3932B9ABFD1F8E4E9"
                             {
@@ -2066,21 +2072,7 @@
         }
         "Shortcut"
         {
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_1574B0C4985947A5B744A1691A3CC46A"
-            {
-            "Name" = "8:OpenModelica Users Guide - 050304.pdf"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_911D4D5733CC4E72ABE6215D4B6D9565"
-            "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
-            "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_BEF1D1750DD749D8B45ADA62D3752CF9"
+            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_26C0CAED29C14C25850A56AA0460CC51"
             {
             "Name" = "8:OpenModelica Shell"
             "Arguments" = "8:"
@@ -2088,9 +2080,23 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5C0244269302463F84044BCD4CFFEECC"
+            "Target" = "8:_E2759B4CC363474481880230648B004F"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
-            "WorkingFolder" = "8:_596366ECE84B44178CE3B8AEEEA6FBE9"
+            "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_6DE971C332EE43E7B977FA9A54E0BB2A"
+            {
+            "Name" = "8:OpenModelica Users Guide.pdf"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_39857A32FDB746B6A2708DB146A6A81E"
+            "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
+            "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Icon" = "8:"
             "Feature" = "8:"
             }
@@ -2652,7 +2658,7 @@
             "SourcePath" = "8:..\\Release\\modeq.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2670,6 +2676,34 @@
             "OutputConfiguration" = "8:Release|Win32"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{087A2480-4E18-465E-BCE0-715481BE58DE}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_E2759B4CC363474481880230648B004F"
+            {
+            "SourcePath" = "8:m:\\WinMosh\\Release\\WinMosh.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Release|Win32"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
