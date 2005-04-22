@@ -13,10 +13,10 @@ model Type4
 end Type4;
 
 // fclass Type4
-//   Integer i;
-//   Real r;
-//   String s;
-//   Boolean b;
+//   Integer i "an integer";
+//   Real r "a real value";
+//   String s "a string";
+//   Boolean b "a boolean";
 // equation
 //   i = 17;
 //   r = 18.0;

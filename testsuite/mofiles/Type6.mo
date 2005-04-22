@@ -13,8 +13,8 @@ model Type6
 end Type6;
 
 // fclass Type6
-//   parameter Integer i;
-//   parameter Real r;
-//   parameter String s;
-//   parameter Boolean b;
+//   parameter Integer i "an integer";
+//   parameter Real r "a real value";
+//   parameter String s "a string";
+//   parameter Boolean b "a boolean";
 // end Type6;

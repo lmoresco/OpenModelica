@@ -1,6 +1,6 @@
 @menu
-* Abs1::
 * Abs2::
+* AddReal1::
 * Algorithm1::
 * Algorithm2::
 * Algorithm3::
@@ -8,6 +8,10 @@
 * Array2::
 * Array8::
 * Array9::
+* ArrayModification11::
+* ArrayModification5::
+* ArrayModification6::
+* ArrayModification8::
 * ArraySlice1::
 * Array_builtin::
 * Circuit1::
@@ -20,11 +24,14 @@
 * Connect4::
 * Connect7::
 * Connect8::
+* Connect9::
 * ConnectFlowEffort::
 * ConnectHierarchical1::
 * ConnectHierarchical2::
 * ConnectInner1::
-* ConnectInner3::
+* Constant1::
+* Constant2::
+* Constant4::
 * ConstrainingType1::
 * ConstructParameters::
 * ConstructParameters1::
@@ -33,45 +40,88 @@
 * Declaration3::
 * DeclareConstant1::
 * DependsMutual::
+* DependsRecursive::
+* Discrete1::
 * Discrete2::
-* DisturbedResistance2::
+* Encapsulated1::
+* Encapsulated2::
+* EquationComponent1::
+* EquationComponent2::
+* EquationComponent3::
+* EquationComponent4::
+* EquationComponent5::
 * EquationFor1::
 * EquationFor2::
 * EquationFor3::
 * EquationFor4::
 * EquationIf1::
+* EquationIf2::
 * EquationIf3::
+* EquationIf4::
 * Extends1::
-* Faculty2::
-* Faculty3::
+* ExternalFunction1::
+* ExternalFunction2::
+* ExternalFunction3::
 * Function1::
-* Function5::
+* Function3::
 * Function5::
 * Function6::
 * Function7::
 * Function8::
 * Function9::
+* FunctionBubblesort::
+* FunctionEval1::
+* FunctionEval2::
+* FunctionEval3::
+* FunctionEval4::
+* FunctionEval7::
+* FunctionEval8::
+* FunctionEval9::
+* FunctionEvalBuiltin::
+* FunctionSimplex::
+* Import1::
 * Import2::
+* Import3::
+* Import4::
+* InnerClass1::
 * Integer2Real::
+* Lookup1::
+* Lookup2::
+* Lookup4::
+* Lookup6::
 * Lookup7::
+* Modification1::
+* Modification10::
+* Modification2::
+* Modification6::
+* Modification7::
 * Modification9::
 * ModifyConstant3::
+* NoEvent1::
 * Overwriting1::
+* Overwriting2::
 * Overwriting4::
 * ParseError1::
 * ParseError2::
+* PredefinedTypes::
 * Protected1::
 * Range1::
 * Real2Integer1::
 * Real2Integer2::
 * Record1::
+* Redeclare1::
+* Redeclare2::
+* Redeclare3::
 * RedeclareFlowEffort::
 * ScopeDeclaration3::
+* ScopeModification1::
 * ScopeModification2::
+* Shadow1::
 * SimpleIntegrator1::
 * SimpleIntegrator2::
 * SimpleIntegrator3::
 * SimpleIntegrator4::
+* Terminal1::
 * Terminal2::
 * Type1::
 * Type3::
@@ -81,9 +131,10 @@
 * Type7::
 * Type8::
 * Units2::
+* XPowers1::
 * XPowers2::
+* XPowers3::
 * modelica_1_1_Array9::
-* modelica_1_1_Function10::
 * modelica_1_1_Type10::
 * modelica_1_1_Type9::
 * package-s-1::
@@ -91,19 +142,19 @@
 * prtest::
 @end menu
 
-@node Abs1,Abs2,Test Cases,Test Cases
-@appendixsec Abs1
-@example
-@include Abs1.mo
-@end example
-
-@node Abs2,Algorithm1,Abs1,Test Cases
+@node Abs2,AddReal1,Test Cases,Test Cases
 @appendixsec Abs2
 @example
 @include Abs2.mo
 @end example
 
-@node Algorithm1,Algorithm2,Abs2,Test Cases
+@node AddReal1,Algorithm1,Abs2,Test Cases
+@appendixsec AddReal1
+@example
+@include AddReal1.mo
+@end example
+
+@node Algorithm1,Algorithm2,AddReal1,Test Cases
 @appendixsec Algorithm1
 @example
 @include Algorithm1.mo
@@ -139,13 +190,37 @@
 @include Array8.mo
 @end example
 
-@node Array9,ArraySlice1,Array8,Test Cases
+@node Array9,ArrayModification11,Array8,Test Cases
 @appendixsec Array9
 @example
 @include Array9.mo
 @end example
 
-@node ArraySlice1,Array_builtin,Array9,Test Cases
+@node ArrayModification11,ArrayModification5,Array9,Test Cases
+@appendixsec ArrayModification11
+@example
+@include ArrayModification11.mo
+@end example
+
+@node ArrayModification5,ArrayModification6,ArrayModification11,Test Cases
+@appendixsec ArrayModification5
+@example
+@include ArrayModification5.mo
+@end example
+
+@node ArrayModification6,ArrayModification8,ArrayModification5,Test Cases
+@appendixsec ArrayModification6
+@example
+@include ArrayModification6.mo
+@end example
+
+@node ArrayModification8,ArraySlice1,ArrayModification6,Test Cases
+@appendixsec ArrayModification8
+@example
+@include ArrayModification8.mo
+@end example
+
+@node ArraySlice1,Array_builtin,ArrayModification8,Test Cases
 @appendixsec ArraySlice1
 @example
 @include ArraySlice1.mo
@@ -211,13 +286,19 @@
 @include Connect7.mo
 @end example
 
-@node Connect8,ConnectFlowEffort,Connect7,Test Cases
+@node Connect8,Connect9,Connect7,Test Cases
 @appendixsec Connect8
 @example
 @include Connect8.mo
 @end example
 
-@node ConnectFlowEffort,ConnectHierarchical1,Connect8,Test Cases
+@node Connect9,ConnectFlowEffort,Connect8,Test Cases
+@appendixsec Connect9
+@example
+@include Connect9.mo
+@end example
+
+@node ConnectFlowEffort,ConnectHierarchical1,Connect9,Test Cases
 @appendixsec ConnectFlowEffort
 @example
 @include ConnectFlowEffort.mo
@@ -235,19 +316,31 @@
 @include ConnectHierarchical2.mo
 @end example
 
-@node ConnectInner1,ConnectInner3,ConnectHierarchical2,Test Cases
+@node ConnectInner1,Constant1,ConnectHierarchical2,Test Cases
 @appendixsec ConnectInner1
 @example
 @include ConnectInner1.mo
 @end example
 
-@node ConnectInner3,ConstrainingType1,ConnectInner1,Test Cases
-@appendixsec ConnectInner3
+@node Constant1,Constant2,ConnectInner1,Test Cases
+@appendixsec Constant1
 @example
-@include ConnectInner3.mo
+@include Constant1.mo
 @end example
 
-@node ConstrainingType1,ConstructParameters,ConnectInner3,Test Cases
+@node Constant2,Constant4,Constant1,Test Cases
+@appendixsec Constant2
+@example
+@include Constant2.mo
+@end example
+
+@node Constant4,ConstrainingType1,Constant2,Test Cases
+@appendixsec Constant4
+@example
+@include Constant4.mo
+@end example
+
+@node ConstrainingType1,ConstructParameters,Constant4,Test Cases
 @appendixsec ConstrainingType1
 @example
 @include ConstrainingType1.mo
@@ -289,25 +382,73 @@
 @include DeclareConstant1.mo
 @end example
 
-@node DependsMutual,Discrete2,DeclareConstant1,Test Cases
+@node DependsMutual,DependsRecursive,DeclareConstant1,Test Cases
 @appendixsec DependsMutual
 @example
 @include DependsMutual.mo
 @end example
 
-@node Discrete2,DisturbedResistance2,DependsMutual,Test Cases
+@node DependsRecursive,Discrete1,DependsMutual,Test Cases
+@appendixsec DependsRecursive
+@example
+@include DependsRecursive.mo
+@end example
+
+@node Discrete1,Discrete2,DependsRecursive,Test Cases
+@appendixsec Discrete1
+@example
+@include Discrete1.mo
+@end example
+
+@node Discrete2,Encapsulated1,Discrete1,Test Cases
 @appendixsec Discrete2
 @example
 @include Discrete2.mo
 @end example
 
-@node DisturbedResistance2,EquationFor1,Discrete2,Test Cases
-@appendixsec DisturbedResistance2
+@node Encapsulated1,Encapsulated2,Discrete2,Test Cases
+@appendixsec Encapsulated1
 @example
-@include DisturbedResistance2.mo
+@include Encapsulated1.mo
 @end example
 
-@node EquationFor1,EquationFor2,DisturbedResistance2,Test Cases
+@node Encapsulated2,EquationComponent1,Encapsulated1,Test Cases
+@appendixsec Encapsulated2
+@example
+@include Encapsulated2.mo
+@end example
+
+@node EquationComponent1,EquationComponent2,Encapsulated2,Test Cases
+@appendixsec EquationComponent1
+@example
+@include EquationComponent1.mo
+@end example
+
+@node EquationComponent2,EquationComponent3,EquationComponent1,Test Cases
+@appendixsec EquationComponent2
+@example
+@include EquationComponent2.mo
+@end example
+
+@node EquationComponent3,EquationComponent4,EquationComponent2,Test Cases
+@appendixsec EquationComponent3
+@example
+@include EquationComponent3.mo
+@end example
+
+@node EquationComponent4,EquationComponent5,EquationComponent3,Test Cases
+@appendixsec EquationComponent4
+@example
+@include EquationComponent4.mo
+@end example
+
+@node EquationComponent5,EquationFor1,EquationComponent4,Test Cases
+@appendixsec EquationComponent5
+@example
+@include EquationComponent5.mo
+@end example
+
+@node EquationFor1,EquationFor2,EquationComponent5,Test Cases
 @appendixsec EquationFor1
 @example
 @include EquationFor1.mo
@@ -331,49 +472,67 @@
 @include EquationFor4.mo
 @end example
 
-@node EquationIf1,EquationIf3,EquationFor4,Test Cases
+@node EquationIf1,EquationIf2,EquationFor4,Test Cases
 @appendixsec EquationIf1
 @example
 @include EquationIf1.mo
 @end example
 
-@node EquationIf3,Extends1,EquationIf1,Test Cases
+@node EquationIf2,EquationIf3,EquationIf1,Test Cases
+@appendixsec EquationIf2
+@example
+@include EquationIf2.mo
+@end example
+
+@node EquationIf3,EquationIf4,EquationIf2,Test Cases
 @appendixsec EquationIf3
 @example
 @include EquationIf3.mo
 @end example
 
-@node Extends1,Faculty2,EquationIf3,Test Cases
+@node EquationIf4,Extends1,EquationIf3,Test Cases
+@appendixsec EquationIf4
+@example
+@include EquationIf4.mo
+@end example
+
+@node Extends1,ExternalFunction1,EquationIf4,Test Cases
 @appendixsec Extends1
 @example
 @include Extends1.mo
 @end example
 
-@node Faculty2,Faculty3,Extends1,Test Cases
-@appendixsec Faculty2
+@node ExternalFunction1,ExternalFunction2,Extends1,Test Cases
+@appendixsec ExternalFunction1
 @example
-@include Faculty2.mo
+@include ExternalFunction1.mo
 @end example
 
-@node Faculty3,Function1,Faculty2,Test Cases
-@appendixsec Faculty3
+@node ExternalFunction2,ExternalFunction3,ExternalFunction1,Test Cases
+@appendixsec ExternalFunction2
 @example
-@include Faculty3.mo
+@include ExternalFunction2.mo
 @end example
 
-@node Function1,Function5,Faculty3,Test Cases
+@node ExternalFunction3,Function1,ExternalFunction2,Test Cases
+@appendixsec ExternalFunction3
+@example
+@include ExternalFunction3.mo
+@end example
+
+@node Function1,Function3,ExternalFunction3,Test Cases
 @appendixsec Function1
 @example
 @include Function1.mo
 @end example
 
-@node Function5,Function5,Function1,Test Cases
-@appendixsec Function5
+@node Function3,Function5,Function1,Test Cases
+@appendixsec Function3
 @example
-@include Function5.mo
+@include Function3.mo
 @end example
 
-@node Function5,Function6,Function5,Test Cases
+@node Function5,Function6,Function3,Test Cases
 @appendixsec Function5
 @example
 @include Function5.mo
@@ -397,49 +556,199 @@
 @include Function8.mo
 @end example
 
-@node Function9,Import2,Function8,Test Cases
+@node Function9,FunctionBubblesort,Function8,Test Cases
 @appendixsec Function9
 @example
 @include Function9.mo
 @end example
 
-@node Import2,Integer2Real,Function9,Test Cases
+@node FunctionBubblesort,FunctionEval1,Function9,Test Cases
+@appendixsec FunctionBubblesort
+@example
+@include FunctionBubblesort.mo
+@end example
+
+@node FunctionEval1,FunctionEval2,FunctionBubblesort,Test Cases
+@appendixsec FunctionEval1
+@example
+@include FunctionEval1.mo
+@end example
+
+@node FunctionEval2,FunctionEval3,FunctionEval1,Test Cases
+@appendixsec FunctionEval2
+@example
+@include FunctionEval2.mo
+@end example
+
+@node FunctionEval3,FunctionEval4,FunctionEval2,Test Cases
+@appendixsec FunctionEval3
+@example
+@include FunctionEval3.mo
+@end example
+
+@node FunctionEval4,FunctionEval7,FunctionEval3,Test Cases
+@appendixsec FunctionEval4
+@example
+@include FunctionEval4.mo
+@end example
+
+@node FunctionEval7,FunctionEval8,FunctionEval4,Test Cases
+@appendixsec FunctionEval7
+@example
+@include FunctionEval7.mo
+@end example
+
+@node FunctionEval8,FunctionEval9,FunctionEval7,Test Cases
+@appendixsec FunctionEval8
+@example
+@include FunctionEval8.mo
+@end example
+
+@node FunctionEval9,FunctionEvalBuiltin,FunctionEval8,Test Cases
+@appendixsec FunctionEval9
+@example
+@include FunctionEval9.mo
+@end example
+
+@node FunctionEvalBuiltin,FunctionSimplex,FunctionEval9,Test Cases
+@appendixsec FunctionEvalBuiltin
+@example
+@include FunctionEvalBuiltin.mo
+@end example
+
+@node FunctionSimplex,Import1,FunctionEvalBuiltin,Test Cases
+@appendixsec FunctionSimplex
+@example
+@include FunctionSimplex.mo
+@end example
+
+@node Import1,Import2,FunctionSimplex,Test Cases
+@appendixsec Import1
+@example
+@include Import1.mo
+@end example
+
+@node Import2,Import3,Import1,Test Cases
 @appendixsec Import2
 @example
 @include Import2.mo
 @end example
 
-@node Integer2Real,Lookup7,Import2,Test Cases
+@node Import3,Import4,Import2,Test Cases
+@appendixsec Import3
+@example
+@include Import3.mo
+@end example
+
+@node Import4,InnerClass1,Import3,Test Cases
+@appendixsec Import4
+@example
+@include Import4.mo
+@end example
+
+@node InnerClass1,Integer2Real,Import4,Test Cases
+@appendixsec InnerClass1
+@example
+@include InnerClass1.mo
+@end example
+
+@node Integer2Real,Lookup1,InnerClass1,Test Cases
 @appendixsec Integer2Real
 @example
 @include Integer2Real.mo
 @end example
 
-@node Lookup7,Modification9,Integer2Real,Test Cases
+@node Lookup1,Lookup2,Integer2Real,Test Cases
+@appendixsec Lookup1
+@example
+@include Lookup1.mo
+@end example
+
+@node Lookup2,Lookup4,Lookup1,Test Cases
+@appendixsec Lookup2
+@example
+@include Lookup2.mo
+@end example
+
+@node Lookup4,Lookup6,Lookup2,Test Cases
+@appendixsec Lookup4
+@example
+@include Lookup4.mo
+@end example
+
+@node Lookup6,Lookup7,Lookup4,Test Cases
+@appendixsec Lookup6
+@example
+@include Lookup6.mo
+@end example
+
+@node Lookup7,Modification1,Lookup6,Test Cases
 @appendixsec Lookup7
 @example
 @include Lookup7.mo
 @end example
 
-@node Modification9,ModifyConstant3,Lookup7,Test Cases
+@node Modification1,Modification10,Lookup7,Test Cases
+@appendixsec Modification1
+@example
+@include Modification1.mo
+@end example
+
+@node Modification10,Modification2,Modification1,Test Cases
+@appendixsec Modification10
+@example
+@include Modification10.mo
+@end example
+
+@node Modification2,Modification6,Modification10,Test Cases
+@appendixsec Modification2
+@example
+@include Modification2.mo
+@end example
+
+@node Modification6,Modification7,Modification2,Test Cases
+@appendixsec Modification6
+@example
+@include Modification6.mo
+@end example
+
+@node Modification7,Modification9,Modification6,Test Cases
+@appendixsec Modification7
+@example
+@include Modification7.mo
+@end example
+
+@node Modification9,ModifyConstant3,Modification7,Test Cases
 @appendixsec Modification9
 @example
 @include Modification9.mo
 @end example
 
-@node ModifyConstant3,Overwriting1,Modification9,Test Cases
+@node ModifyConstant3,NoEvent1,Modification9,Test Cases
 @appendixsec ModifyConstant3
 @example
 @include ModifyConstant3.mo
 @end example
 
-@node Overwriting1,Overwriting4,ModifyConstant3,Test Cases
+@node NoEvent1,Overwriting1,ModifyConstant3,Test Cases
+@appendixsec NoEvent1
+@example
+@include NoEvent1.mo
+@end example
+
+@node Overwriting1,Overwriting2,NoEvent1,Test Cases
 @appendixsec Overwriting1
 @example
 @include Overwriting1.mo
 @end example
 
-@node Overwriting4,ParseError1,Overwriting1,Test Cases
+@node Overwriting2,Overwriting4,Overwriting1,Test Cases
+@appendixsec Overwriting2
+@example
+@include Overwriting2.mo
+@end example
+
+@node Overwriting4,ParseError1,Overwriting2,Test Cases
 @appendixsec Overwriting4
 @example
 @include Overwriting4.mo
@@ -451,13 +760,19 @@
 @include ParseError1.mo
 @end example
 
-@node ParseError2,Protected1,ParseError1,Test Cases
+@node ParseError2,PredefinedTypes,ParseError1,Test Cases
 @appendixsec ParseError2
 @example
 @include ParseError2.mo
 @end example
 
-@node Protected1,Range1,ParseError2,Test Cases
+@node PredefinedTypes,Protected1,ParseError2,Test Cases
+@appendixsec PredefinedTypes
+@example
+@include PredefinedTypes.mo
+@end example
+
+@node Protected1,Range1,PredefinedTypes,Test Cases
 @appendixsec Protected1
 @example
 @include Protected1.mo
@@ -481,31 +796,61 @@
 @include Real2Integer2.mo
 @end example
 
-@node Record1,RedeclareFlowEffort,Real2Integer2,Test Cases
+@node Record1,Redeclare1,Real2Integer2,Test Cases
 @appendixsec Record1
 @example
 @include Record1.mo
 @end example
 
-@node RedeclareFlowEffort,ScopeDeclaration3,Record1,Test Cases
+@node Redeclare1,Redeclare2,Record1,Test Cases
+@appendixsec Redeclare1
+@example
+@include Redeclare1.mo
+@end example
+
+@node Redeclare2,Redeclare3,Redeclare1,Test Cases
+@appendixsec Redeclare2
+@example
+@include Redeclare2.mo
+@end example
+
+@node Redeclare3,RedeclareFlowEffort,Redeclare2,Test Cases
+@appendixsec Redeclare3
+@example
+@include Redeclare3.mo
+@end example
+
+@node RedeclareFlowEffort,ScopeDeclaration3,Redeclare3,Test Cases
 @appendixsec RedeclareFlowEffort
 @example
 @include RedeclareFlowEffort.mo
 @end example
 
-@node ScopeDeclaration3,ScopeModification2,RedeclareFlowEffort,Test Cases
+@node ScopeDeclaration3,ScopeModification1,RedeclareFlowEffort,Test Cases
 @appendixsec ScopeDeclaration3
 @example
 @include ScopeDeclaration3.mo
 @end example
 
-@node ScopeModification2,SimpleIntegrator1,ScopeDeclaration3,Test Cases
+@node ScopeModification1,ScopeModification2,ScopeDeclaration3,Test Cases
+@appendixsec ScopeModification1
+@example
+@include ScopeModification1.mo
+@end example
+
+@node ScopeModification2,Shadow1,ScopeModification1,Test Cases
 @appendixsec ScopeModification2
 @example
 @include ScopeModification2.mo
 @end example
 
-@node SimpleIntegrator1,SimpleIntegrator2,ScopeModification2,Test Cases
+@node Shadow1,SimpleIntegrator1,ScopeModification2,Test Cases
+@appendixsec Shadow1
+@example
+@include Shadow1.mo
+@end example
+
+@node SimpleIntegrator1,SimpleIntegrator2,Shadow1,Test Cases
 @appendixsec SimpleIntegrator1
 @example
 @include SimpleIntegrator1.mo
@@ -523,13 +868,19 @@
 @include SimpleIntegrator3.mo
 @end example
 
-@node SimpleIntegrator4,Terminal2,SimpleIntegrator3,Test Cases
+@node SimpleIntegrator4,Terminal1,SimpleIntegrator3,Test Cases
 @appendixsec SimpleIntegrator4
 @example
 @include SimpleIntegrator4.mo
 @end example
 
-@node Terminal2,Type1,SimpleIntegrator4,Test Cases
+@node Terminal1,Terminal2,SimpleIntegrator4,Test Cases
+@appendixsec Terminal1
+@example
+@include Terminal1.mo
+@end example
+
+@node Terminal2,Type1,Terminal1,Test Cases
 @appendixsec Terminal2
 @example
 @include Terminal2.mo
@@ -577,31 +928,37 @@
 @include Type8.mo
 @end example
 
-@node Units2,XPowers2,Type8,Test Cases
+@node Units2,XPowers1,Type8,Test Cases
 @appendixsec Units2
 @example
 @include Units2.mo
 @end example
 
-@node XPowers2,modelica_1_1_Array9,Units2,Test Cases
+@node XPowers1,XPowers2,Units2,Test Cases
+@appendixsec XPowers1
+@example
+@include XPowers1.mo
+@end example
+
+@node XPowers2,XPowers3,XPowers1,Test Cases
 @appendixsec XPowers2
 @example
 @include XPowers2.mo
 @end example
 
-@node modelica_1_1_Array9,modelica_1_1_Function10,XPowers2,Test Cases
+@node XPowers3,modelica_1_1_Array9,XPowers2,Test Cases
+@appendixsec XPowers3
+@example
+@include XPowers3.mo
+@end example
+
+@node modelica_1_1_Array9,modelica_1_1_Type10,XPowers3,Test Cases
 @appendixsec modelica_1_1_Array9
 @example
 @include modelica_1_1_Array9.mo
 @end example
 
-@node modelica_1_1_Function10,modelica_1_1_Type10,modelica_1_1_Array9,Test Cases
-@appendixsec modelica_1_1_Function10
-@example
-@include modelica_1_1_Function10.mo
-@end example
-
-@node modelica_1_1_Type10,modelica_1_1_Type9,modelica_1_1_Function10,Test Cases
+@node modelica_1_1_Type10,modelica_1_1_Type9,modelica_1_1_Array9,Test Cases
 @appendixsec modelica_1_1_Type10
 @example
 @include modelica_1_1_Type10.mo
