@@ -82,7 +82,7 @@ nmake -f MakeFile.win32
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"
+				DebugInformationFormat="0"
 				DisableSpecificWarnings="4311;4312"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
@@ -93,7 +93,7 @@ nmake -f MakeFile.win32
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
 				DelayLoadDLLs=""
-				GenerateDebugInformation="TRUE"
+				GenerateDebugInformation="FALSE"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"

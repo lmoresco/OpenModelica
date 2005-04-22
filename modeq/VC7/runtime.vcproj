@@ -203,9 +203,6 @@ popd
 			<File
 				RelativePath="..\winruntime\systemimpl.c">
 			</File>
-			<File
-				RelativePath="..\winruntime\tornadoext.cpp">
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
