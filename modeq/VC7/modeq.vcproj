@@ -262,124 +262,124 @@ nmake -f MakeFile.win32
 			Name="rml"
 			Filter="">
 			<File
-				RelativePath="..\absyn.rml">
+				RelativePath="..\Absyn.rml">
 			</File>
 			<File
-				RelativePath="..\algorithm.rml">
+				RelativePath="..\Algorithm.rml">
 			</File>
 			<File
-				RelativePath="..\builtin.rml">
+				RelativePath="..\Builtin.rml">
 			</File>
 			<File
-				RelativePath="..\ceval.rml">
+				RelativePath="..\Ceval.rml">
 			</File>
 			<File
-				RelativePath="..\classinf.rml">
+				RelativePath="..\ClassInf.rml">
 			</File>
 			<File
-				RelativePath="..\classloader.rml">
+				RelativePath="..\ClassLoader.rml">
 			</File>
 			<File
-				RelativePath="..\codegen.rml">
+				RelativePath="..\Codegen.rml">
 			</File>
 			<File
-				RelativePath="..\connect.rml">
+				RelativePath="..\Connect.rml">
 			</File>
 			<File
-				RelativePath="..\corba.rml">
+				RelativePath="..\Corba.rml">
 			</File>
 			<File
-				RelativePath="..\dae.rml">
+				RelativePath="..\DAE.rml">
 			</File>
 			<File
-				RelativePath="..\daeext.rml">
+				RelativePath="..\DAEEXT.rml">
 			</File>
 			<File
-				RelativePath="..\daelow.rml">
+				RelativePath="..\DAELow.rml">
 			</File>
 			<File
-				RelativePath="..\debug.rml">
+				RelativePath="..\Debug.rml">
 			</File>
 			<File
-				RelativePath="..\derive.rml">
+				RelativePath="..\Derive.rml">
 			</File>
 			<File
-				RelativePath="..\dump.rml">
+				RelativePath="..\Dump.rml">
 			</File>
 			<File
-				RelativePath="..\dumpgraphviz.rml">
+				RelativePath="..\DumpGraphviz.rml">
 			</File>
 			<File
-				RelativePath="..\env.rml">
+				RelativePath="..\Env.rml">
 			</File>
 			<File
-				RelativePath="..\exp.rml">
+				RelativePath="..\Exp.rml">
 			</File>
 			<File
-				RelativePath="..\explode.rml">
+				RelativePath="..\SCode.rml">
 			</File>
 			<File
-				RelativePath="..\graphviz.rml">
+				RelativePath="..\Graphviz.rml">
 			</File>
 			<File
-				RelativePath="..\inst.rml">
+				RelativePath="..\Inst.rml">
 			</File>
 			<File
-				RelativePath="..\interactive.rml">
+				RelativePath="..\Interactive.rml">
 			</File>
 			<File
-				RelativePath="..\lookup.rml">
+				RelativePath="..\Lookup.rml">
 			</File>
 			<File
-				RelativePath="..\main.rml">
+				RelativePath="..\Main.rml">
 			</File>
 			<File
-				RelativePath="..\mod.rml">
+				RelativePath="..\Mod.rml">
 			</File>
 			<File
-				RelativePath="..\modutil.rml">
+				RelativePath="..\ModUtil.rml">
 			</File>
 			<File
-				RelativePath="..\parse.rml">
+				RelativePath="..\Parser.rml">
 			</File>
 			<File
-				RelativePath="..\prefix.rml">
+				RelativePath="..\Prefix.rml">
 			</File>
 			<File
-				RelativePath="..\print.rml">
+				RelativePath="..\Print.rml">
 			</File>
 			<File
-				RelativePath="..\rtopts.rml">
+				RelativePath="..\RTOpts.rml">
 			</File>
 			<File
-				RelativePath="..\simcodegen.rml">
+				RelativePath="..\SimCodegen.rml">
 			</File>
 			<File
-				RelativePath="..\socket.rml">
+				RelativePath="..\Socket.rml">
 			</File>
 			<File
-				RelativePath="..\staticexp.rml">
+				RelativePath="..\Static.rml">
 			</File>
 			<File
-				RelativePath="..\system.rml">
+				RelativePath="..\System.rml">
 			</File>
 			<File
-				RelativePath="..\taskgraph.rml">
+				RelativePath="..\TaskGraph.rml">
 			</File>
 			<File
-				RelativePath="..\taskgraphext.rml">
+				RelativePath="..\TaskGraphExt.rml">
 			</File>
 			<File
-				RelativePath="..\types.rml">
+				RelativePath="..\Types.rml">
 			</File>
 			<File
-				RelativePath="..\util.rml">
+				RelativePath="..\Util.rml">
 			</File>
 			<File
-				RelativePath="..\values.rml">
+				RelativePath="..\Values.rml">
 			</File>
 			<File
-				RelativePath="..\vartransform.rml">
+				RelativePath="..\VarTransform.rml">
 			</File>
 		</Filter>
 		<File
@@ -395,3 +395,4 @@ nmake -f MakeFile.win32
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
