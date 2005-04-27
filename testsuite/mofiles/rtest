@@ -5,6 +5,7 @@ $total=0;
 $verbose="no";
 $pager="cat";
 $log="";
+$diff = "diff -w";
 $tmp1 = "/tmp/equations-1";
 $tmp2 = "/tmp/equations-2";
 $tmp3 = "/tmp/equations-diff";
@@ -41,7 +42,7 @@ sub runone
 	    close LOG;
 	    close RES;
 
-	    system "diff -w $tmp1 $tmp2 > $tmp3";
+	    system "$diff $tmp1 $tmp2 > $tmp3";
 	    if ( $? != 0 ) {
 		open(LOG,">>$log");
 		print LOG "\n";		print LOG "Parsing error message diff:\n\n";
@@ -113,7 +114,7 @@ sub runone
     # Compare
     # system "sort $tmp1 > $tmp1-sorted";
     # system "sort $tmp2 > $tmp2-sorted";
-    system "diff -w $tmp1 $tmp2 > $tmp3";
+    system "$diff -w $tmp1 $tmp2 > $tmp3";
 
     if ( $? != 0 ) {
 	  open(LOG,">>$log");
@@ -162,7 +163,7 @@ sub dofile
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	if (/^\/\/[ \\|]([a-z]*): *(.*)$/) {
+	if (/^\/\/[ \\|]([a-z]*): *([^\r|^\n]*)/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
@@ -235,7 +236,12 @@ sub dofile
     $total = $total + 1;
 
     if ( $info{"status"} !~ /^(erroneous|(in|)correct|parseerrormsg)$/ ) {
-	print "unknown testcase status\n";
+	if ( $info{"status"} eq "incorrect\r" ) {
+	    print "TEST\n";
+        }
+	print "unknown testcase status:";
+	print $info{"status"};
+	print "\n";
 	return 1;
     }
 
