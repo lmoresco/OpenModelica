@@ -161,7 +161,7 @@ sub dofile
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	if (/^\/\/[ \\|]([a-z]*): *(.*)$/) {
+	if (/^\/\/[ \\|]([a-z]*): *([^\r|^\n]*)$/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
