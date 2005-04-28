@@ -1,9 +1,0 @@
-Makefile
-ModAST.*
-err.c
-mode.h
-modgram.c
-parser.dlg
-scanner.c
-stdpccts.h
-tokens.h
