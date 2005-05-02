@@ -5,35 +5,27 @@
 //  Subset of the Graphical API for accessing parameters and modifiers
 //
 loadFile("interactive_api_param.mo");
-getParameterNames(A);
-getParameterValue(A,p1);
-getParameterValue(A,p2);
-getParameterValue(A,p4);
-setParameterValue(A,p4,55.2);
-setParameterValue(A,p2,1+p4);
-getParameterValue(A,p2);
-getParameterValue(A,p4);
 getComponentModifierNames(C,b1);
-getComponentModifierValue(C,b1,a1);
-setComponentModifier(C,b1,a1,Code((p1=45)));
-getComponentModifierValue(C,b1,a1);
-setComponentModifier(C,b1,a2,Code(=33));
-getComponentModifierValue(C,b1,a2);
+getComponentModifierValue(C,b1.a1);
+setComponentModifierValue(C,b1.a1,Code((p1=45)));
+getComponentModifierValue(C,b1.a1);
+setComponentModifierValue(C,b1.a2,Code(=33));
+getComponentModifierValue(C,b1.a2);
+getExtendsModifierNames(D2,B2);
+getExtendsModifierValue(D2,B2,a.x);
+setExtendsModifierValue(D2,B2,a.x,Code(=10));
+getExtendsModifierValue(D2,B2,a.x);
 
 // Result:
 // true
-// {p1, p2, p4}
-// 35
-// 32
-// Error
-// Ok
-// Ok
-// 1 + p4
-// 55.2
-// {a1, a2}
+// {a1.p1, a1.p2, a2.p2}
 // (p1=0,p2=0)
 // Ok
 // (p1=45)
 // Ok
 // =33
+// {a.x, f}
+// =2*y
+// Ok
+// =10
 // endResult
