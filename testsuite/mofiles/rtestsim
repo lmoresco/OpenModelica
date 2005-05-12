@@ -94,7 +94,7 @@ $i=0;
 #
 
 # Set path to modeq
-$modeqpath = "../../modeq/modeq ";
+$modeqpath = "../../Compiler/modeq ";
 
 for (glob '*.mo') { dofile $_; }
 # Remove temporary files and directories
@@ -110,7 +110,7 @@ system "rm *_in.txt";
 system "rm *_out.txt";
 
 chdir('drmodelica');
-$modeqpath = "../../../modeq/modeq ";
+$modeqpath = "../../../Compiler/modeq ";
 for (glob ' *.mo') { dofile $_; }
 
 # Remove temporary files and directories

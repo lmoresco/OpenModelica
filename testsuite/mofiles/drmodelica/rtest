@@ -21,8 +21,8 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
-    system "../../../modeq/modeq $f >$log 2>&1";
-#    system "../modeq/modeq +d=daedump $f >$log 2>&1";
+    system "../../../Compiler/modeq $f >$log 2>&1";
+#    system "../Compiler/modeq +d=daedump $f >$log 2>&1";
 #    system "../modeq $f >$log 2>&1";
 #    system "/home/x97davka/modeq/modeq $f >$log 2>&1";
     

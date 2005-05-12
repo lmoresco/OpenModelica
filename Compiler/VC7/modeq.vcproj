@@ -102,7 +102,7 @@ nmake -f MakeFile.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\modeq\win\modeq.exe&quot;
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\Compiler\win\modeq.exe&quot;
 "
 				ExcludedFromBuild="TRUE"/>
 			<Tool
@@ -162,8 +162,8 @@ popd
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
-copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
+				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\Compiler\win&quot;
+copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\Compiler\win&quot;
 "
 				ExcludedFromBuild="TRUE"/>
 			<Tool
@@ -222,8 +222,8 @@ nmake -f MakeFile.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
-copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\modeq\win&quot;
+				CommandLine="echo copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\Compiler\win&quot;
+copy &quot;$(TargetPath)&quot; &quot;$(MOSHHOME)\..\Compiler\win&quot;
 "/>
 			<Tool
 				Name="VCPreBuildEventTool"

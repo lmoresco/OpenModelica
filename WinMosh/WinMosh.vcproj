@@ -24,7 +24,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\modeq\VC7&quot;"
+				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\Compiler\VC7&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -93,7 +93,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\modeq\VC7&quot;"
+				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\Compiler\VC7&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0400"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -163,7 +163,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\modeq\VC7&quot;"
+				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\Compiler\VC7&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0400"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -312,7 +312,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\modeq\Vc7\modeq_communication.cc">
+				RelativePath="..\Compiler\Vc7\modeq_communication.cc">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool

@@ -49,9 +49,9 @@ installation, e.g. {\tt export
 OPENMODELICAHOME=<instdir> } 
 \item{{\tt MODELICAUSERCFLAGS}} - can be set to additional libraries
 that should be linked when complining external functions, e.g. \\
-{\tt export MODELICAUSERCFLAGS="<instdir>/modeq/lib/blas\_cygwin.a \\
-<instdir>/modeq/lib/lapack\_cygwin.a  \\
-<instdir>/modeq/lib/libF77.a" } to
+{\tt export MODELICAUSERCFLAGS="<instdir>/lib/blas\_cygwin.a \\
+<instdir>/lib/lapack\_cygwin.a  \\
+<instdir>/lib/libF77.a" } to
 get a lapack interface to work. Note that annotations for finding such
 libraries have not been implemented yet.
 \end{itemize}
@@ -60,11 +60,11 @@ For debugging purposes it is possible to start mosh and modeq in
 interactive mode in two separate windows. This can be done by the
 follwing commands:
 \begin{verbatim}
-cd modelica/mosh/src;./mosh -noserv
+cd OpenModelica/mosh/src;./mosh -noserv
 \end{verbatim}
 and in another shell:
 \begin{verbatim}
-cd modelica/modeq/; ./modeq +d=interactive 
+cd OpenModelica/Compiler/; ./modeq +d=interactive 
 \end{verbatim}
 
 In the following chapters we describe the builtin functions that are
