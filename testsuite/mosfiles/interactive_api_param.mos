@@ -12,9 +12,9 @@ getComponentModifierValue(C,b1.a1);
 setComponentModifierValue(C,b1.a2,Code(=33));
 getComponentModifierValue(C,b1.a2);
 getExtendsModifierNames(D2,B2);
-getExtendsModifierValue(D2,B2,a.x);
-setExtendsModifierValue(D2,B2,a.x,Code(=10));
-getExtendsModifierValue(D2,B2,a.x);
+getExtendsModifierValue(D2,B2.a.x);
+setExtendsModifierValue(D2,B2.a.x,Code(=10));
+getExtendsModifierValue(D2,B2.a.x);
 
 // Result:
 // true
