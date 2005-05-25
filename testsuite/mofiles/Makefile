@@ -34,7 +34,8 @@ FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
-ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo PredefinedTypes.mo
+ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo \
+PredefinedTypes.mo StructuralParameter1.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

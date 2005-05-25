@@ -121,6 +121,7 @@
 * SimpleIntegrator2::
 * SimpleIntegrator3::
 * SimpleIntegrator4::
+* StructuralParameter1::
 * Terminal1::
 * Terminal2::
 * Type1::
@@ -868,13 +869,19 @@
 @include SimpleIntegrator3.mo
 @end example
 
-@node SimpleIntegrator4,Terminal1,SimpleIntegrator3,Test Cases
+@node SimpleIntegrator4,StructuralParameter1,SimpleIntegrator3,Test Cases
 @appendixsec SimpleIntegrator4
 @example
 @include SimpleIntegrator4.mo
 @end example
 
-@node Terminal1,Terminal2,SimpleIntegrator4,Test Cases
+@node StructuralParameter1,Terminal1,SimpleIntegrator4,Test Cases
+@appendixsec StructuralParameter1
+@example
+@include StructuralParameter1.mo
+@end example
+
+@node Terminal1,Terminal2,StructuralParameter1,Test Cases
 @appendixsec Terminal1
 @example
 @include Terminal1.mo
