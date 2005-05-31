@@ -1,0 +1,46 @@
+// name:     API loading and saving
+// keywords: Graphical API load save
+// status:   correct
+// 
+//  Subset of the Graphical API, loading and saving.
+//
+
+createModel(A);
+createModel(A.test);
+createModel(test2);
+addComponent(x,Integer,A.test);
+addComponent(z,Real,A.test);
+addComponent(y,Integer,test2);
+setSourceFile(A.test,"test.mo");
+setSourceFile(A,"A.mo");
+getSourceFile(A.test);
+getSourceFile(A);
+getSourceFile(test2);
+save(A.test);
+save(A);
+clear();
+loadFile("A.mo");
+loadFile("test.mo");
+getClassNames();
+getClassNames(A);
+
+// Result:
+// true
+// true
+// true
+// true
+// true
+// true
+// Ok
+// Ok
+// test.mo
+// A.mo
+// NoFile
+// true
+// true
+// true
+// true
+// true
+// {A}
+// {test}
+// endResult

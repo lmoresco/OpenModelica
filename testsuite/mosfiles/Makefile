@@ -1,5 +1,6 @@
 TESTFILES = interactive_api_param.mos interactive_api_classes.mos \
-variables.mos Array1.mos simulation.mos differentiate.mos simplify.mos
+variables.mos Array1.mos simulation.mos differentiate.mos simplify.mos \
+interactive_api_loadsave.mos 	
 TEST = rtest
 
 
