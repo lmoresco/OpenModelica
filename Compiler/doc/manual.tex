@@ -31,7 +31,7 @@ http://www.ida.liu.se/~pelab/rml/. If you would like to
 contribute to the development of OpenModelica or if you have any
 questions, please contact petar@ida.liu.se.
 
-The compiler consists of the binary file \emph{modeq}. It can either
+The compiler consists of the binary file \emph{omc}. It can either
 be executed as a standard compiler if it is given a filename as
 argument. But the compiler can also be started in an interactive mode,
 where it listens on port no 29500 on the localhost for a (one)
@@ -56,7 +56,7 @@ get a lapack interface to work. Note that annotations for finding such
 libraries have not been implemented yet.
 \end{itemize}
 
-For debugging purposes it is possible to start mosh and modeq in
+For debugging purposes it is possible to start mosh and omc in
 interactive mode in two separate windows. This can be done by the
 follwing commands:
 \begin{verbatim}
@@ -64,7 +64,7 @@ cd OpenModelica/mosh/src;./mosh -noserv
 \end{verbatim}
 and in another shell:
 \begin{verbatim}
-cd OpenModelica/Compiler/; ./modeq +d=interactive 
+cd OpenModelica/Compiler/; ./omc +d=interactive 
 \end{verbatim}
 
 In the following chapters we describe the builtin functions that are

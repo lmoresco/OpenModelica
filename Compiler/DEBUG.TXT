@@ -1,6 +1,6 @@
 Debug flags
 
-Run modeq with comma separated list of flags without spaces,
+Run omc with comma separated list of flags without spaces,
 "+d=flg1,flg2,..." where flg1,flg2,... are one of the strings on the
 leftmost column. Special flag named "all" turns on all flags.
 
@@ -8,7 +8,7 @@ Each debug printing is done by giving a flag name to the print function, like:
 
   Debug.fprint ("li", "Lookup information:...")
 
-If modeq is run with +d=foo,li,bar,etc this line will appear on
+If omc is run with +d=foo,li,bar,etc this line will appear on
 stdout, not otherwise.  For backwards compatibility for debug prints
 not yet sorted, the old 
 
@@ -18,7 +18,7 @@ was changed to a call like
 
   Debug.fprint ("olddebug",...)
 
-So if modeq is run with the debug flag "olddebug" (or "all"), these
+So if omc is run with the debug flag "olddebug" (or "all"), these
 messages will appear. The calls to Debug.print should eventually be
 changed to appropriate flagged calls.
 

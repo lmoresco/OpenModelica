@@ -5,8 +5,8 @@
 my @successes;
 # Total number of test cases
 my $total = 0;
-# Path to modeq
-my $modeqpath;
+# Path to omc
+my $omcpath;
 # Collect names of models which can be simulated
 my @simmodels;
 
@@ -28,8 +28,8 @@ sub runone
     my $simulate = "./" . $model;
 
 # Compile .mo file, generate simulation code
-    my $modeqcall = $modeqpath . "+s " . $f;
-    system "$modeqcall";
+    my $omccall = $omcpath . "+s " . $f;
+    system "$omccall";
     if ( $? != 0 ) {
 	$result[1] = 1;
     } else {
@@ -93,8 +93,8 @@ $i=0;
 # (glob '<testfiles>')
 #
 
-# Set path to modeq
-$modeqpath = "../../Compiler/modeq ";
+# Set path to omc
+$omcpath = "../../Compiler/omc ";
 
 for (glob '*.mo') { dofile $_; }
 # Remove temporary files and directories
@@ -110,7 +110,7 @@ system "rm *_in.txt";
 system "rm *_out.txt";
 
 chdir('drmodelica');
-$modeqpath = "../../../Compiler/modeq ";
+$omcpath = "../../../Compiler/omc ";
 for (glob ' *.mo') { dofile $_; }
 
 # Remove temporary files and directories

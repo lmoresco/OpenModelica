@@ -1,3 +1,6 @@
+*.ast
+*.cps
+*.fol
 *.rdb
 *.c
 *.h
@@ -5,7 +8,7 @@
 Makefile
 modelica.pdf
 modelica.ps
-modeq.exe
+omc.exe
 old-modelica.rml
 absyn.rml
 algorithm.rml

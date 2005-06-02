@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="modeq"
+	Name="omc"
 	ProjectGUID="{087A2480-4E18-465E-BCE0-715481BE58DE}"
 	RootNamespace="modeq"
 	Keyword="Win32Proj">
@@ -316,9 +316,6 @@ nmake -f MakeFile.win32
 				RelativePath="..\Exp.rml">
 			</File>
 			<File
-				RelativePath="..\SCode.rml">
-			</File>
-			<File
 				RelativePath="..\Graphviz.rml">
 			</File>
 			<File
@@ -350,6 +347,9 @@ nmake -f MakeFile.win32
 			</File>
 			<File
 				RelativePath="..\RTOpts.rml">
+			</File>
+			<File
+				RelativePath="..\SCode.rml">
 			</File>
 			<File
 				RelativePath="..\SimCodegen.rml">
@@ -395,4 +395,3 @@ nmake -f MakeFile.win32
 	<Globals>
 	</Globals>
 </VisualStudioProject>
-

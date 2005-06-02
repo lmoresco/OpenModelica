@@ -162,7 +162,7 @@ CString CMoshEdit::DoCommand(LPCTSTR command)
 	SetLimitText(0);
 
 	m_History.AddEntry(command);
-	if(CString(command) == "restartModeq()")
+	if(CString(command) == "restartOmc()")
 	{
 		this->Restart();
 		return "";
@@ -335,10 +335,10 @@ bool CMoshEdit::StartServer(void)
 {
 	theApp.m_pMainWnd->BeginWaitCursor();
 	bool running = false;
-/*  Always start new server even if there is a modeq running
+/*  Always start new server even if there is an omc running
 	PROCESSENTRY32 entry;
 	entry.dwSize = sizeof(PROCESSENTRY32);
-	char* procName = "modeq.exe";
+	char* procName = "omc.exe";
 	HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	if (snapshot != (HANDLE)-1L) {
 		BOOL res = Process32First(snapshot, &entry);
@@ -373,7 +373,7 @@ bool CMoshEdit::StartServer(void)
 		try {
 			CORBA::Object_var obj = orb->string_to_object(sUri);
 			if (!CORBA::is_nil(obj)) {
-				client = ModeqCommunication::_narrow(obj);
+				client = OmcCommunication::_narrow(obj);
 				char *tmp = client->sendExpression("cd()");
 				CORBA::string_free(tmp);
 				notStarted = false;
@@ -399,7 +399,7 @@ void CMoshEdit::SpawnServer(void)
 	CString logfile;
 	GetTempPath(MAX_PATH,logfile.GetBufferSetLength(MAX_PATH));
 	logfile.ReleaseBuffer();
-	logfile += "modeq.log";
+	logfile += "omc.log";
 	STARTUPINFO startinfo;
 	PROCESS_INFORMATION procinfo;
 	startinfo.lpDesktop = NULL;
@@ -432,7 +432,7 @@ void CMoshEdit::SpawnServer(void)
 	CString command;
 	GetModuleFileName(NULL,command.GetBuffer(MAX_PATH),MAX_PATH);
 	command.ReleaseBuffer();
-	command = "\"" + command.Left(command.ReverseFind('\\')) + "\\modeq.exe\" +d=interactiveCorba";
+	command = "\"" + command.Left(command.ReverseFind('\\')) + "\\omc.exe\" +d=interactiveCorba";
 
 	if (m_ProcessCreated) {
 		Sleep(1000);

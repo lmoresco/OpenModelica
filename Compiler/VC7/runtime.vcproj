@@ -144,10 +144,10 @@
 				RelativePath="..\winruntime\daeext.cpp">
 			</File>
 			<File
-				RelativePath=".\modeq_communication.cc">
+				RelativePath=".\omc_communication.cc">
 			</File>
 			<File
-				RelativePath="..\runtime\modeq_communication.idl">
+				RelativePath="..\runtime\omc_communication.idl">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -158,7 +158,7 @@ copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
 popd
 "
-						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -170,7 +170,7 @@ copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
 popd
 "
-						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="NoMico|Win32">
@@ -182,11 +182,11 @@ copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
 popd
 "
-						Outputs="$(ProjectDir)modeq_communication.cc;$(ProjectDir)modeq_communication.h"/>
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\winruntime\modeq_communication_impl.cpp">
+				RelativePath="..\winruntime\omc_communication_impl.cpp">
 			</File>
 			<File
 				RelativePath="..\winruntime\printimpl.c">
@@ -209,10 +209,10 @@ popd
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
-				RelativePath=".\modeq_communication.h">
+				RelativePath=".\omc_communication.h">
 			</File>
 			<File
-				RelativePath="..\winruntime\modeq_communication_impl.h">
+				RelativePath="..\winruntime\omc_communication_impl.h">
 			</File>
 			<File
 				RelativePath="..\winruntime\ptolemyio.hpp">

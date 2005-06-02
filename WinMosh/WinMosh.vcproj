@@ -312,7 +312,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\Compiler\Vc7\modeq_communication.cc">
+				RelativePath="..\Compiler\Vc7\omc_communication.cc">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool

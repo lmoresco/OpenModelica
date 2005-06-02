@@ -9,7 +9,7 @@
 //
 
 #include <CORBA.h>
-#include "modeq_communication.h"
+#include "omc_communication.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CMoshEdit window
@@ -67,7 +67,7 @@ private:
 	UINT_PTR m_Timer;
 	CHistory m_History;
 	CORBA::ORB_var orb;
-	ModeqCommunication_var client; 
+	OmcCommunication_var client; 
 	CEdit* m_pErrorText;
 public:
 	bool StartServer(void);

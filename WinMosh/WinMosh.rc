@@ -308,7 +308,7 @@ STRINGTABLE
 BEGIN
     ID_FILE_LOADMODEL       "Load mo-file"
     ID_FILE_LOADLIB         "Load the modelica standard llibrary"
-    ID_RESTART              "Restart the modeq server"
+    ID_RESTART              "Restart the omc server"
     ID_CLEAR                "Clear the input window"
 END
 
