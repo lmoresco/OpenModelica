@@ -4,16 +4,6 @@
 
 RML_BEGIN_LABEL(RML__array_5fupdate)
 {
-	/*
-    void *vec = rmlA0;
-    rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-    if( i >= RML_HDRSLOTS(RML_GETHDR(vec)) ) {
-	RML_TAILCALLK(rmlFC);
-    } else {
-	rmlA0 = RML_STRUCTDATA(vec)[i];
-	RML_TAILCALLK(rmlSC);
-    }
-	*/
 	rml_uint_t nelts = 0;
 	void *arr = rmlA0;
 	void *data;
@@ -37,15 +27,17 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 			/*
 			printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit); 
 			*/
+			/* check if are both in young 
 			if((unsigned long)RML_UNTAGPTR(rmlA0) - (unsigned long)(void*)(rml_young_region) >= 0 &&
-			   (unsigned long)(void*)(rml_young_limit) - (unsigned long)RML_UNTAGPTR(rmlA0) > 0 /*&& 
+			   (unsigned long)(void*)(rml_young_limit) - (unsigned long)RML_UNTAGPTR(rmlA0) > 0 && 
 			   RML_UNTAGPTR(rmlA2) - (void*)(rml_young_region) >= 0 &&
-			   (void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0*/)
+			   (void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0)
 			{
-				/* printf("Both in young!"); */
+				printf("Both in young!"); 
 				rmlA0 = arr;
 				RML_TAILCALLK(rmlSC);
 			}
+			*/
 			/* also check here if the array is not alreay in the trail */
 			for (idx = rml_array_trail_size; &rml_array_trail[idx] >= rmlATP; idx--)
 			if (rml_array_trail[idx] == rmlA0) /* if found, do not add again */
