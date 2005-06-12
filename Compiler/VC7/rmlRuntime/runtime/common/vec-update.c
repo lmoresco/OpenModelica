@@ -5,7 +5,6 @@ RML_BEGIN_LABEL(RML__vector_5fupdate)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
-	void *data;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
 	if( i-1 >= nelts ) 
@@ -24,7 +23,7 @@ RML_BEGIN_LABEL(RML__vector_5fupdate)
 		rmlA0 = RML_TAGPTR(vec_new);
 		for(idx=0; idx < nelts; idx++)
 			*vecp++ = RML_STRUCTDATA(vec)[idx];
-		RML_STRUCTDATA(vec_new)[i-1] = rmlA2;
+		RML_STRUCTDATA(rmlA0)[i-1] = rmlA2;
 	}
 	RML_TAILCALLK(rmlSC);
 }
