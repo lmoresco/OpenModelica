@@ -2,24 +2,15 @@
 #include "rml.h"
 #include <stdio.h>
 
+
+
 RML_BEGIN_LABEL(RML__array_5fsetnth)
 {
-	/*
-    void *vec = rmlA0;
-    rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-    if( i >= RML_HDRSLOTS(RML_GETHDR(vec)) ) {
-	RML_TAILCALLK(rmlFC);
-    } else {
-	rmlA0 = RML_STRUCTDATA(vec)[i];
-	RML_TAILCALLK(rmlSC);
-    }
-	*/
 	rml_uint_t nelts = 0;
 	void *arr = rmlA0;
-	void *data;
 	rml_uint_t idx = 0;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-	if( i >= RML_HDRSLOTS(RML_GETHDR(arr)) ) 
+	if( i >= RML_HDRSLOTS(RML_GETHDR(arr))) 
 	{
 		RML_TAILCALLK(rmlFC);
 	} 
@@ -37,15 +28,17 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 			/*
 			printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit); 
 			*/
+			/*
 			if((unsigned long)RML_UNTAGPTR(rmlA0) - (unsigned long)(void*)(rml_young_region) >= 0 &&
-			   (unsigned long)(void*)(rml_young_limit) - (unsigned long)RML_UNTAGPTR(rmlA0) > 0 /*&& 
+			   (unsigned long)(void*)(rml_young_limit) - (unsigned long)RML_UNTAGPTR(rmlA0) > 0 && 
 			   RML_UNTAGPTR(rmlA2) - (void*)(rml_young_region) >= 0 &&
-			   (void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0*/)
+			   (void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0)
 			{
-				/* printf("Both in young!"); */
+				printf("Both in young?!, not adding it again?!");
 				rmlA0 = arr;
 				RML_TAILCALLK(rmlSC);
 			}
+			*/
 			/* also check here if the array is not alreay in the trail */
 			for (idx = rml_array_trail_size; &rml_array_trail[idx] >= rmlATP; idx--)
 			if (rml_array_trail[idx] == rmlA0) /* if found, do not add again */
@@ -55,7 +48,7 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 			}
 		    /* add the address of the array into the roots to be
 			taken into consideration at the garbage collection time */
-			if( rmlATP == &rml_array_trail[0] ) 
+			if( rmlATP <= &rml_array_trail[0] ) 
 			{
 				(void)fprintf(stderr, "Array Trail Overflow!\n");
 				rml_exit(1);
@@ -68,3 +61,4 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 
 }
 RML_END_LABEL
+
