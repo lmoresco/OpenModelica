@@ -72,7 +72,7 @@ public:
 		}
 	}
 
-
+	void SetOmcFilePath(CString fp){ this->m_Text.SetOmcFilePath(fp);};
 	// Generated message map functions
 protected:
 	//{{AFX_MSG(CChildView)

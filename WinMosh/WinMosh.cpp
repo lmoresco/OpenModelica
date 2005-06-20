@@ -6,6 +6,7 @@
 
 #include "MainFrm.h"
 #include <atlbase.h>
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -88,6 +89,20 @@ BOOL CWinMoshApp::InitInstance()
 		if (opt.CompareNoCase("-showserv") == 0) {
 			pFrame->m_wndView.SetShowServ();
 		}
+	    if (opt.CompareNoCase("-omcpath") == 0) {
+			opt = cmdLine.Tokenize(" \t",curpos);
+	
+			FILE *stream = fopen( opt, "r" );
+			if(stream != NULL){
+				pFrame->SetOmcFilePath(opt);
+			}else{
+				CString msg;
+				msg.Format("omc cannot be found on the filepath specified: \n%s",opt);
+				MessageBox(NULL, msg, "No such file", MB_ICONWARNING|MB_OK);
+			}//*/
+
+		}
+
 		opt = cmdLine.Tokenize(" \t",curpos);
 	}
 	

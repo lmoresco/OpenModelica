@@ -430,9 +430,13 @@ void CMoshEdit::SpawnServer(void)
 	}
 
 	CString command;
-	GetModuleFileName(NULL,command.GetBuffer(MAX_PATH),MAX_PATH);
-	command.ReleaseBuffer();
-	command = "\"" + command.Left(command.ReverseFind('\\')) + "\\omc.exe\" +d=interactiveCorba";
+	if(this->m_omcFilePath == ""){
+		GetModuleFileName(NULL,command.GetBuffer(MAX_PATH),MAX_PATH);
+		command.ReleaseBuffer();
+		command = "\"" + command.Left(command.ReverseFind('\\')) + "\\omc.exe\" +d=interactiveCorba";
+	}else{
+		command = this->m_omcFilePath + " +d=interactiveCorba";
+	}
 
 	if (m_ProcessCreated) {
 		Sleep(1000);

@@ -68,6 +68,8 @@ public:
 	void OnClear() {
 		m_wndView.ClearEdit();
 	}
+	void SetOmcFilePath(CString fp){ this->m_wndView.SetOmcFilePath(fp);};
+
 
 protected:  // control bar embedded members
 	CStatusBar  m_wndStatusBar;

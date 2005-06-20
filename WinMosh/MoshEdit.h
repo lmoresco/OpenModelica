@@ -69,11 +69,13 @@ private:
 	CORBA::ORB_var orb;
 	OmcCommunication_var client; 
 	CEdit* m_pErrorText;
+	CString m_omcFilePath;
 public:
 	bool StartServer(void);
 	void SpawnServer(void);
 	void RunCommand(LPCSTR command);
 	void SetErrorWindow(CEdit* pWnd);
+	void SetOmcFilePath(CString fp){m_omcFilePath = fp;};
 };
 
 /////////////////////////////////////////////////////////////////////////////
