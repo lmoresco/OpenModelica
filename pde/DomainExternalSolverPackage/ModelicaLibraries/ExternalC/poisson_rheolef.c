@@ -114,6 +114,7 @@ void get_rheolef_form_grad_grad(const char *meshfile, MyInteger nv,
 }
 
 
+
 void get_rheolef_form_mass(const char *meshfile, MyInteger nv, 
 			   MyInteger nuin, MyInteger nbin, 
 			   double *uu, double *ub, double *bu, double *bb,
@@ -130,6 +131,21 @@ void get_rheolef_form_mass(const char *meshfile, MyInteger nv,
   fprintf(stderr, "Running: %s\n", buf);
   system(buf);
   read_matrices(tempfilename, 4, n1, n2, matrices);
+}
+
+void get_rheolef_massbdr_u(const char *meshfile, MyInteger nv, 
+			   MyInteger nuin, MyInteger nbin, 
+			   double *mbu, 
+			   MyInteger nbc, MySizeType bcdim, double *bc) 
+{
+  char buf[1024];
+  char tempfilename[]="temp_massbdr_u.txt";
+
+  write_bcfile(nbc, bcdim, bc);
+  sprintf(buf, "extsolverrun.bat -massbdr_u %s %d P1 %s > %s", meshfile, nv, bcfile, tempfilename);
+  fprintf(stderr, "Running: %s\n", buf);
+  system(buf);
+  read_vector(tempfilename, nuin, mbu);
 }
 
 void get_rheolef_form_mass_bdr(const char *meshfile, MyInteger bndindex,

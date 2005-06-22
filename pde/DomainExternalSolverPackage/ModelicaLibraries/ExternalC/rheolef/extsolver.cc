@@ -11,7 +11,7 @@ const char usage[]=" [-a | -m | -g | -fgg | -fmass | -fmassbdr bndindex | -fmass
 
 int main(unsigned int argc, char**argv) {
   
-  enum Modes { none=0, laplace, mass, g, fh, fgg, fmass, fmassbdr, fmassbdrbnd, fsize, fsizebdr, form, uindices, bindices, bvalues, interpolate };
+  enum Modes { none=0, laplace, mass, g, fh, fgg, fmass, fmassbdr, fmassbdrbnd, fsize, fsizebdr, form, uindices, bindices, bvalues, interpolate, massbdr_u };
   
   Modes mode=none;
 
@@ -45,6 +45,8 @@ int main(unsigned int argc, char**argv) {
     mode=fgg;
   if (! strcmp(argv[argi], "-fmass"))
     mode=fmass;
+  if (! strcmp(argv[argi], "-massbdr_u"))
+    mode=massbdr_u;
   if (! strcmp(argv[argi], "-fsize"))
     mode=fsize;
   if (! strcmp(argv[argi], "-interpolate")) {
@@ -314,6 +316,20 @@ int main(unsigned int argc, char**argv) {
       delete [] ub;
       delete [] bu;
       delete [] bb;
+    } 
+    break;
+
+  case massbdr_u:
+    {
+      unsigned int nu=0,nb=0;
+      get_rheolef_form_size(filename.c_str(), nv, &nu, &nb, nbc, bcdim, bc);
+      double *mbu = new double[nu];
+      
+      get_rheolef_massbdr_u(filename.c_str(), nv, nu, nb, mbu, nbc, bcdim, bc);
+      
+      print_vector(cout, nu, mbu);
+      
+      delete [] mbu;
     } 
     break;
 

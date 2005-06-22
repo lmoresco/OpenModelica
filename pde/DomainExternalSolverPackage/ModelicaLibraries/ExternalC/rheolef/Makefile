@@ -39,6 +39,22 @@ read_array_common.o: ../read_array_common.c
 read_matrix.o: ../read_matrix.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
+runrheoleftest: testrheolef default_mesh2d.geo
+	./testrheolef default_mesh2d.geo P1
+
+default_mesh2d.geo: default_mesh2d.bamg
+	cat default_mesh2d.bamg | geo -upgrade -input-bamg -geo - > $@
+
+# This is backwards. Bamg input should be called .bamg and the output
+# should be called .msh, but I happened to call the input for meshgeninput.msh
+#%.bamg: %.msh
+#	bamg -g $< -o $@
+#
+
+default_mesh2d.bamg: meshgeninput.msh
+	bamg -g $< -o $@
+	cat square.dmn >> $@
+
 
 
 

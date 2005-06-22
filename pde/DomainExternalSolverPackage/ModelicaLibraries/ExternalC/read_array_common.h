@@ -27,6 +27,7 @@ extern "C" {
 #define READINT(f) (internal_foo=fscanf(f,"%ld",&internal_inttemp),internal_inttemp)
 #define READDOUBLE(f) (internal_foo=fscanf(f,"%lf",&internal_dbltemp),internal_dbltemp)
 #define MY_ASSERT(cond,msg) do { if(!(cond)) ModelicaError(msg); } while (0)
+#define MY_ASSERT_ARGS(cond, str, args...) do { char buf[512]; sprintf(buf,str,args); if(!(cond)) ModelicaError(buf); } while (0)
 #define MY_MESSAGE(msg) do { ModelicaMessage(msg); } while (0)
 
 

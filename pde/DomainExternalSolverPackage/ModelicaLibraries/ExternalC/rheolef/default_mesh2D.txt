@@ -328,7 +328,7 @@ EdgeOnGeometricEdge
 
 End
 EdgeDomainNames
-3
+2
 boundary1
 boundary2
-boundary3
+

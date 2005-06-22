@@ -59,6 +59,11 @@ void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, MyInteger bndindex,
 					  double *pu, double *pb,
 					  MyInteger nbc, MySizeType bcdim, double *bc);
 
+  void get_rheolef_massbdr_u(const char *meshfile, MyInteger nv, 
+			     MyInteger nuin, MyInteger nbin, 
+			     double *mbu, 
+			     MyInteger nbc, MySizeType bcdim, double *bc);
+
 
 #ifdef __cplusplus
 }

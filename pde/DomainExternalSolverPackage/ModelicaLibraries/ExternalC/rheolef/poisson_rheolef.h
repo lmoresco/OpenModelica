@@ -53,12 +53,14 @@ extern "C" {
 					double *uu, double *ub, double *bu, double *bb,
 					unsigned int nbc, unsigned int bcdim, double *bc);
 
-void get_rheolef_interpolate_bdr_coords(const char *meshfile, unsigned int bndindex, unsigned int nv, 
-					unsigned int nu, unsigned int nb,
-					unsigned int pdim, 
-					double *pu, double *pb,
-					unsigned int nbc, unsigned int bcdim, double *bc);
+  void get_rheolef_interpolate_bdr_coords(const char *meshfile, unsigned int bndindex, unsigned int nv, 
+					  unsigned int nu, unsigned int nb,
+					  unsigned int pdim, 
+					  double *pu, double *pb,
+					  unsigned int nbc, unsigned int bcdim, double *bc);
 
+  void get_rheolef_massbdr_u(const char *meshfile, unsigned int nv, unsigned int nuin, unsigned int nbin, 
+			     double *mbu, unsigned int nbc, unsigned int bcdim, double *bc);
 
 #ifdef __cplusplus
 }

@@ -7,6 +7,12 @@
 #include <fstream>
 #include <sstream>
 
+#define BCTYPE 0
+#define BCGVAL 1
+#define BCQVAL 2
+#define BCINDEX 3
+#define BCDIM (BCINDEX+1)
+
 using namespace std;
 
 #ifdef __cplusplus
@@ -23,6 +29,7 @@ struct problem {
   field uh;
   field fh;
   vec<Float> bu;
+  vec<Float> solvec;
   problem(const char* meshfile, const char *eltype, size_type nv, 
 	  size_type nbc, size_type bcdim, double *bc,
 	  Float fhval = 5)
@@ -30,14 +37,14 @@ struct problem {
     get_geo_bamg(meshfile, omega);
     Vh = space(omega,eltype);
 
-    if (bcdim != 3) {
-      cerr << "Boundary conditions have incorrect dimension, must be == 3 (type, value, index):" << endl;
+    if (bcdim != BCDIM) {
+      cerr << "Boundary conditions have incorrect dimension, must be == " << BCDIM << " (type, gvalue, qvalue, index):" << endl;
       exit(3);
     }
 
     for (size_type i=0; i<nbc; i++) {
-      if (bc[i*bcdim + 0] == 1) { // dirichlet 
-	unsigned int domainnr = (unsigned int)bc[i*bcdim + 2] - 1;
+      if (bc[i*bcdim + BCTYPE] == 1 || bc[i*bcdim + BCTYPE] == 4) { // dirichlet or timedepdirichlet
+	unsigned int domainnr = (unsigned int)bc[i*bcdim + BCINDEX] - 1;
 	if (domainnr >= omega.n_domain()) {
 	  cerr << "Domain index larger than number of subdomains, skipping block:" << endl;
 	  cerr << domainnr << " >= " << omega.n_domain() << endl;
@@ -46,7 +53,7 @@ struct problem {
 	  Vh.block(dom);
 	}
       }
-      // Handle neumann here? Shouldn't block for neumann
+      // Nothing to do for neumann or robin. no blocking.
     }
 
     a = form(Vh, Vh, "grad_grad");
@@ -54,20 +61,39 @@ struct problem {
     fh = field(Vh, fhval);
     uh = field(Vh);
 
+    solvec = vec<Float>(a.uu.nrow(), 0);
     for (size_type i=0; i<nbc; i++) {
-      if (bc[i*bcdim + 0] == 1) { // dirichlet 
-	unsigned int domainnr = (unsigned int)bc[i*bcdim + 2] - 1;
-	if (domainnr >= omega.n_domain()) {
-	  cerr << "Domain index larger than number of subdomains, skipping block:" << endl;
-	  cerr << domainnr << " >= " << omega.n_domain() << endl;
-	} else {
-	  const domain & dom = omega.get_domain(domainnr);
-	  uh[dom] = bc[i*bcdim + 1];
+      unsigned int domainnr = (unsigned int)bc[i*bcdim + BCINDEX] - 1;
+      if (domainnr >= omega.n_domain()) {
+	cerr << "Domain index larger than number of subdomains, skipping block:" << endl;
+	cerr << domainnr << " >= " << omega.n_domain() << endl;
+      }
+      const domain & dom = omega.get_domain(domainnr);
+      if (bc[i*bcdim + BCTYPE] == 1 || bc[i*bcdim + BCTYPE] == 4) { // dirichlet or timedepdirichlet
+	uh[dom] = bc[i*bcdim + BCGVAL];
+      } 
+      else {
+	// Handle neumann and robin here.
+	space Wh (omega, dom, eltype);
+	field gh = field(Wh, bc[i*bcdim + BCGVAL]);
+	form mb(Wh, Vh, "mass_bdr");
+	solvec += mb.uu * gh.u + mb.ub * gh.b; // gh.b should be size zero but anyway
+	if (bc[i*bcdim + BCTYPE] == 2) { // neumann
+	  // nothing else for neumann
+	}
+	else if (bc[i*bcdim + BCTYPE] == 3) { // robin
+	  double q = bc[i*bcdim + BCQVAL];
+	  form ab(Vh, Vh, "mass_bdr", dom);
+	  a = a + q*ab;
+	}
+	else {
+	  cerr << "Boundary condition type unknown, must be 1-4 (dirichlet,neumann,robin,timedepdirichlet): " 
+	       << bc[i*bcdim + BCTYPE] << " for boundary " << i << endl;
+	  exit(3);
 	}
       }
-      // Handle neumann here? Shouldn't block for neumann
-    }    
-    bu = m.uu*fh.u + m.ub*fh.b - a.ub*uh.b; // unknown part of rhs
+    }
+    bu = solvec + m.uu*fh.u + m.ub*fh.b - a.ub*uh.b; // unknown part of rhs
   }
 };
 
@@ -322,6 +348,27 @@ void get_rheolef_form_mass(const char *meshfile, unsigned int nv, unsigned int n
       bb[nb*i + j] = p.m.bb(i,j);
     }
   }
+}
+
+
+void get_rheolef_massbdr_u(const char *meshfile, unsigned int nv, unsigned int nuin, unsigned int nbin, 
+			   double *mbu, unsigned int nbc, size_type bcdim, double *bc) {
+
+  struct problem p(meshfile, "P1", nv, nbc, bcdim, bc);
+
+  unsigned int nu = p.m.uu.nrow();
+  unsigned int nb = p.m.bu.nrow();
+
+  ostringstream msgstr1,msgstr2;
+  msgstr1 << "Number of unknowns mismatch in get_rheolef_massbdr_u: " << nu << " != " << nuin << ends;
+  MY_ASSERT( nu == nuin, msgstr1.str().c_str());
+
+  msgstr2 << "MassBdr_u size mismatch in get_rheolef_massbdr_u: " << nu << " != " << p.solvec.size() << ends;
+  MY_ASSERT( nu == p.solvec.size(), msgstr2.str().c_str());
+  
+  for (unsigned int i=0; i < nu; i++)
+    mbu[i] = p.solvec.at(i);
+
 }
 
 void get_rheolef_form_mass_bdr_on_bnd(const char *meshfile, unsigned int bndindex,

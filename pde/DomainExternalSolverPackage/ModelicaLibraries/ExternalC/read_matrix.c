@@ -136,7 +136,7 @@ void read_vector(const char *filename, int n, double *v)
 
   rows=READINT(f); READCOMMA(f);
 
-  MY_ASSERT(rows == n, "Vector size incorrect");
+  MY_ASSERT_ARGS(rows == n, "Vector size incorrect %d != %d", rows, n);
 
   OPENCURLY(f);
   for(i=0; i<rows; i++) {
@@ -194,7 +194,7 @@ void read_vector_int(const char *filename, int n, MyInteger *v)
 
   rows=READINT(f); READCOMMA(f);
 
-  MY_ASSERT(rows == n, "Vector size incorrect");
+  MY_ASSERT_ARGS(rows == n, "Vector size incorrect %d != %d", rows, n);
 
   OPENCURLY(f);
   for(i=0; i<rows; i++) {
