@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_032BAE4BD3CD49A3B1F7AC66F1E38884"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_090E6B50F1DB42A78FF8330A03E49C4B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -333,12 +327,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B139D34E242A44B1A34E9D03C57A86B3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B9C73EAFC88E404EA832FAFB558E08B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -513,26 +501,6 @@
             "TargetName" = "8:Compile.bat"
             "Tag" = "8:"
             "Folder" = "8:_BBAEFA486A27432EB19084BEF1399E1D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_032BAE4BD3CD49A3B1F7AC66F1E38884"
-            {
-            "SourcePath" = "8:additions\\front.bmp"
-            "TargetName" = "8:front.bmp"
-            "Tag" = "8:"
-            "Folder" = "8:_7EDB4A27B7DB48E1905C67ECDEC5438E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1467,26 +1435,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B139D34E242A44B1A34E9D03C57A86B3"
-            {
-            "SourcePath" = "8:additions\\contributors.rtf"
-            "TargetName" = "8:contributors.rtf"
-            "Tag" = "8:"
-            "Folder" = "8:_7EDB4A27B7DB48E1905C67ECDEC5438E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_B9C73EAFC88E404EA832FAFB558E08B3"
             {
             "SourcePath" = "8:mingw.tar.gz"
@@ -1833,7 +1781,7 @@
                     }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_8BD56ED3C8DB4B3996A02EE5CC7E35A4"
                     {
-                    "Name" = "8:modeq"
+                    "Name" = "8:Compiler"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -1882,7 +1830,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{DBFCB75E-5486-459C-8BC1-CF4961F379B6}"
-        "PackageCode" = "8:{C936F31E-1A6F-4041-84E9-AFEE6FD81A17}"
+        "PackageCode" = "8:{C9DE5EA5-56EA-4373-B3A4-2241B9452A80}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -2110,42 +2058,6 @@
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_29D63567E25E422B88CA6F03B33A4694"
-                    {
-                    "Sequence" = "3:110"
-                    "DisplayName" = "8:Splash"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdSplashDlg.wid"
-                        "Properties"
-                        {
-                            "SplashBitmap"
-                            {
-                            "Name" = "8:SplashBitmap"
-                            "DisplayName" = "8:#1013"
-                            "Description" = "8:#1113"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:2"
-                            "Value" = "8:_032BAE4BD3CD49A3B1F7AC66F1E38884"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "Sunken"
-                            {
-                            "Name" = "8:Sunken"
-                            "DisplayName" = "8:#1007"
-                            "Description" = "8:#1107"
-                            "Type" = "3:5"
-                            "ContextData" = "8:4;True=4;False=0"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:0"
-                            "Value" = "3:4"
-                            "DefaultValue" = "3:4"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
                     "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_A997ED4D0FE7426AAA310F2C9950B582"
                     {
                     "Sequence" = "3:200"
@@ -2309,53 +2221,6 @@
                             "Setting" = "3:1"
                             "Value" = "8:#1258"
                             "DefaultValue" = "8:#1258"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_C0B21ECB6DE54AEF8C69443358892E91"
-                    {
-                    "Sequence" = "3:220"
-                    "DisplayName" = "8:Read Me"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdReadmeDlg.wid"
-                        "Properties"
-                        {
-                            "BannerBitmap"
-                            {
-                            "Name" = "8:BannerBitmap"
-                            "DisplayName" = "8:#1001"
-                            "Description" = "8:#1101"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:4"
-                            "Setting" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "ReadmeText"
-                            {
-                            "Name" = "8:ReadmeText"
-                            "DisplayName" = "8:#1010"
-                            "Description" = "8:#1110"
-                            "Type" = "3:6"
-                            "ContextData" = "8:"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:2"
-                            "Value" = "8:_B139D34E242A44B1A34E9D03C57A86B3"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                            "Sunken"
-                            {
-                            "Name" = "8:Sunken"
-                            "DisplayName" = "8:#1007"
-                            "Description" = "8:#1107"
-                            "Type" = "3:5"
-                            "ContextData" = "8:4;True=4;False=0"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:0"
-                            "Value" = "3:4"
-                            "DefaultValue" = "3:4"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -2655,7 +2520,7 @@
             }
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_C0808A7B696E49A79B16145F10BAB302"
             {
-            "SourcePath" = "8:..\\Release\\modeq.exe"
+            "SourcePath" = "8:..\\Release\\omc.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
