@@ -83,6 +83,7 @@
 * Import2::
 * Import3::
 * Import4::
+* Import5::
 * InnerClass1::
 * Integer2Real::
 * Lookup1::
@@ -641,13 +642,19 @@
 @include Import3.mo
 @end example
 
-@node Import4,InnerClass1,Import3,Test Cases
+@node Import4,Import5,Import3,Test Cases
 @appendixsec Import4
 @example
 @include Import4.mo
 @end example
 
-@node InnerClass1,Integer2Real,Import4,Test Cases
+@node Import5,InnerClass1,Import4,Test Cases
+@appendixsec Import5
+@example
+@include Import5.mo
+@end example
+
+@node InnerClass1,Integer2Real,Import5,Test Cases
 @appendixsec InnerClass1
 @example
 @include InnerClass1.mo
