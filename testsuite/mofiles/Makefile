@@ -20,6 +20,7 @@ Function9.mo Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo \
 InnerClass1.mo Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
+Modification12.mo Modification13.mo \
 ModifyConstant3.mo NoEvent1.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo ParseError1.mo ParseError2.mo \
 partial-s-1.mo Protected1.mo prtest.mo \
