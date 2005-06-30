@@ -91,8 +91,13 @@
 * Lookup4::
 * Lookup6::
 * Lookup7::
+* Min::
+* &::
+* Max::
 * Modification1::
 * Modification10::
+* Modification11::
+* Modification13::
 * Modification2::
 * Modification6::
 * Modification7::
@@ -690,25 +695,55 @@
 @include Lookup6.mo
 @end example
 
-@node Lookup7,Modification1,Lookup6,Test Cases
+@node Lookup7,Min,Lookup6,Test Cases
 @appendixsec Lookup7
 @example
 @include Lookup7.mo
 @end example
 
-@node Modification1,Modification10,Lookup7,Test Cases
+@node Min,&,Lookup7,Test Cases
+@appendixsec Min
+@example
+@include Min.mo
+@end example
+
+@node &,Max,Min,Test Cases
+@appendixsec &
+@example
+@include &.mo
+@end example
+
+@node Max,Modification1,&,Test Cases
+@appendixsec Max
+@example
+@include Max.mo
+@end example
+
+@node Modification1,Modification10,Max,Test Cases
 @appendixsec Modification1
 @example
 @include Modification1.mo
 @end example
 
-@node Modification10,Modification2,Modification1,Test Cases
+@node Modification10,Modification11,Modification1,Test Cases
 @appendixsec Modification10
 @example
 @include Modification10.mo
 @end example
 
-@node Modification2,Modification6,Modification10,Test Cases
+@node Modification11,Modification13,Modification10,Test Cases
+@appendixsec Modification11
+@example
+@include Modification11.mo
+@end example
+
+@node Modification13,Modification2,Modification11,Test Cases
+@appendixsec Modification13
+@example
+@include Modification13.mo
+@end example
+
+@node Modification2,Modification6,Modification13,Test Cases
 @appendixsec Modification2
 @example
 @include Modification2.mo
