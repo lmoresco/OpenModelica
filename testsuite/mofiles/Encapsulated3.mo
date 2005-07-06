@@ -24,5 +24,6 @@ encapsulated model Encapsulated3
   import A.B.*;
   import A.B1.C2;
   C c(x=1);
-//  C2 c2; // Causes infitite loop
+  C2 c2; // Causes infitite loop
 end Encapsulated3;
+
