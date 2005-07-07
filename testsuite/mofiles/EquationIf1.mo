@@ -20,9 +20,5 @@ end EquationIf1;
 // parameter Boolean b = true;
 // Real x;
 // equation
-//   if b then
 //   x = 1.0;
-//   else
-//   x = 2.0;
-//   end if;
 // end EquationIf1;

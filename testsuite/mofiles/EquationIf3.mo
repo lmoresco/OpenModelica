@@ -22,13 +22,5 @@ end EquationIf3;
 // parameter Boolean b = false;
 // Real x;
 // equation
-//   if b then
-//   x = 1.0;
-//   else
-//   if  NOT b then
 //   x = 2.0;
-//   else
-//   x = 3.0;
-//   end if;
-//   end if;
 // end EquationIf3;
