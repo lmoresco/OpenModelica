@@ -75,6 +75,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_232F4F24BFD242C28CA756F5AFF25367"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_25087B154F6B4BEB81957EE09C1BB806"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -364,6 +370,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D4F649B8DF1F4EC593CC84DFC3CF0D1B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DD9CFD1D4B3C4A5CBC9A587DB96F4B01"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -659,6 +671,26 @@
             {
             "SourcePath" = "8:M:\\c_runtime\\string_array.c"
             "TargetName" = "8:string_array.c"
+            "Tag" = "8:"
+            "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_232F4F24BFD242C28CA756F5AFF25367"
+            {
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\vcf2c.lib"
+            "TargetName" = "8:vcf2c.lib"
             "Tag" = "8:"
             "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
             "Condition" = "8:"
@@ -1457,7 +1489,7 @@
             }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C05F5668503E42A9AE9F7600697C4912"
             {
-            "SourcePath" = "8:C:\\cygwin\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
+            "SourcePath" = "8:..\\..\\..\\..\\..\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
             "TargetName" = "8:mico2311.dll"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
@@ -1541,6 +1573,26 @@
             "TargetName" = "8:Influenza.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DD9CFD1D4B3C4A5CBC9A587DB96F4B01"
+            {
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\f2c.h"
+            "TargetName" = "8:f2c.h"
+            "Tag" = "8:"
+            "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2548,7 +2600,7 @@
             }
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_E2759B4CC363474481880230648B004F"
             {
-            "SourcePath" = "8:m:\\WinMosh\\Release\\WinMosh.exe"
+            "SourcePath" = "8:..\\..\\..\\WinMosh\\Release\\WinMosh.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
