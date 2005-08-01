@@ -31,7 +31,7 @@ getClassNames(A);
 // {-10.0,-10.0,10.0,10.0,{Line(true,{{0.0,0.0},{100.0,100.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}
 // 2
 // 1
-// {{Real,z,""},{Integer,x,""}}
+// {{Real,z,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Integer,x,"", "public", false, false, false, "unspecified", "none", "unspecified"}}
 // Ok
 // {test}
 // endResult
