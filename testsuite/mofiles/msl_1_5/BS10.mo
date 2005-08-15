@@ -950,19 +950,19 @@ equation
 end BS10;
 // fclass BS10
 // parameter Integer step1.nout = 1 "Number of outputs";
-// parameter Integer step1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer step1.outPort.n = step1.nout "Dimension of signal vector";
 // output Real step1.outPort.signal[1] "Real output signals";
 // output Real step1.y[1];
 // parameter Real step1.offset[1] = 0 "offset of output signal";
 // parameter Real step1.startTime[1] = 0 "output = offset for time < startTime";
 // parameter Real step1.height[1] = 1 "Heights of steps";
-// parameter Real step1.p_height[1] = if true then ({1.0} * step1.height[1])[1] else step1.height[1];
-// parameter Real step1.p_offset[1] = if true then ({1.0} * step1.offset[1])[1] else step1.offset[1];
-// parameter Real step1.p_startTime[1] = if true then ({1.0} * step1.startTime[1])[1] else step1.startTime[1];
+// parameter Real step1.p_height[1] = ({1.0} * step1.height[1])[1];
+// parameter Real step1.p_offset[1] = ({1.0} * step1.offset[1])[1];
+// parameter Real step1.p_startTime[1] = ({1.0} * step1.startTime[1])[1];
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer der1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";
-// parameter Integer der1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";

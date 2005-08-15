@@ -942,17 +942,17 @@ end BS1;
 
 // fclass BS1
 // parameter Integer clock1.nout = 1 "Number of outputs";
-// parameter Integer clock1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer clock1.outPort.n = clock1.nout "Dimension of signal vector";
 // output Real clock1.outPort.signal[1] "Real output signals";
 // output Real clock1.y[1];
 // parameter Real clock1.offset[1] = 0 "Offsets of output signals";
 // parameter Real clock1.startTime[1] = 0 "Output = offset for time < startTime";
-// parameter Real clock1.p_offset[1] = if true then ({1.0} * clock1.offset[1])[1] else clock1.offset[1];
-// parameter Real clock1.p_startTime[1] = if true then ({1.0} * clock1.startTime[1])[1] else clock1.startTime[1];
+// parameter Real clock1.p_offset[1] = ({1.0} * clock1.offset[1])[1];
+// parameter Real clock1.p_startTime[1] = ({1.0} * clock1.startTime[1])[1];
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer der1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";
-// parameter Integer der1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";

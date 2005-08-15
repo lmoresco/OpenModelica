@@ -987,3 +987,26 @@ model BS14
 equation 
   connect(integerToReal1.inPort,integerStep1.outPort) annotation(Line(visible=true,points={{11.15,15.01},{-29.3,13.79}}));
 end BS14;
+// fclass BS14
+// parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
+// parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
+// output Real integerToReal1.outPort.signal[1] "Real output signals";
+// parameter Integer integerToReal1.inPort.n = integerToReal1.n "Dimension of signal vector";
+// input Integer integerToReal1.inPort.signal[1] "Integer input signals";
+// parameter Integer integerStep1.nout = 1 "Number of outputs";
+// parameter Integer integerStep1.outPort.n = integerStep1.nout "Dimension of signal vector";
+// output Integer integerStep1.outPort.signal[1] "Integer output signals";
+// output Integer integerStep1.y[1];
+// parameter Integer integerStep1.offset[1] = 0 "offset of output signal";
+// parameter Real integerStep1.startTime[1] = 0 "output = offset for time < startTime";
+// parameter Integer integerStep1.height[1] = 1 "Heights of steps";
+// parameter Integer integerStep1.p_height[1] = ({1} * integerStep1.height[1])[1];
+// parameter Integer integerStep1.p_offset[1] = ({1} * integerStep1.offset[1])[1];
+// parameter Real integerStep1.p_startTime[1] = ({1.0} * integerStep1.startTime[1])[1];
+// equation
+//   integerToReal1.outPort.signal[1] = Real(integerToReal1.inPort.signal)[1];
+//   integerStep1.outPort.signal[1] = integerStep1.p_offset[1] + if time < integerStep1.p_startTime[1] then 0 else integerStep1.p_height[1];
+//   integerStep1.y[1] = integerStep1.outPort.signal[1];
+// assert(integerToReal1.inPort.n == integerStep1.outPort.n,"automatically generated from connect");
+//   integerToReal1.inPort.signal[1] = integerStep1.outPort.signal[1];
+// end BS14;

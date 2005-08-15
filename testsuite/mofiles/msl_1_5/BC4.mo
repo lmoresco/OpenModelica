@@ -941,16 +941,16 @@ end BC4;
 
 // fclass BC4
 // parameter Integer integrator1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer integrator1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer integrator1.inPort.n = integrator1.n "Dimension of signal vector";
 // input Real integrator1.inPort.signal[1] "Real input signals";
-// parameter Integer integrator1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer integrator1.outPort.n = integrator1.n "Dimension of signal vector";
 // output Real integrator1.outPort.signal[1] "Real output signals";
 // output Real integrator1.y[1] "Output signals";
 // Real integrator1.u[1] "Input signals";
 // parameter Real integrator1.k[1] = 1 "Integrator gains";
 // parameter Real integrator1.y0[1] = 0 "Start values of integrators";
 // parameter Integer constant1.nout = 1 "Number of outputs";
-// parameter Integer constant1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";

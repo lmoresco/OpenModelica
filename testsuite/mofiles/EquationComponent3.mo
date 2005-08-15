@@ -23,7 +23,6 @@ end EquationComponent3;
 // Real c.x;
 // Real c.y;
 // equation
-//   __TMP__0 = if true then a else b;
-//   __TMP__0.x = c.x;
-//   __TMP__0.y = c.y;
+//   a.x = c.x;
+//   a.y = c.y;
 // end EquationComponent3;

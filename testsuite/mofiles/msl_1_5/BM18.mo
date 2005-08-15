@@ -973,25 +973,24 @@ equation
   connect(constant2.outPort,min1.inPort2) annotation(Line(visible=true,points={{-52.72,-2.33},{-14.4,22.0}}));
   connect(constant1.outPort,min1.inPort1) annotation(Line(visible=true,points={{-58.8,45.42},{-13.18,31.73}}));
 end BM18;
-
 // fclass BM18
 // parameter Integer min1.n = 1 "Dimension of input and output vectors.";
-// parameter Integer min1.inPort1.n = 1 "Dimension of signal vector";
+// parameter Integer min1.inPort1.n = min1.n "Dimension of signal vector";
 // input Real min1.inPort1.signal[1] "Real input signals";
-// parameter Integer min1.inPort2.n = 1 "Dimension of signal vector";
+// parameter Integer min1.inPort2.n = min1.n "Dimension of signal vector";
 // input Real min1.inPort2.signal[1] "Real input signals";
-// parameter Integer min1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer min1.outPort.n = min1.n "Dimension of signal vector";
 // output Real min1.outPort.signal[1] "Real output signals";
 // output Real min1.y[1] "Output signals";
 // Real min1.u1[1] "Input signals 1";
 // Real min1.u2[1] "Input signals 2";
 // parameter Integer constant1.nout = 1 "Number of outputs";
-// parameter Integer constant1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // parameter Integer constant2.nout = 1 "Number of outputs";
-// parameter Integer constant2.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
 // parameter Real constant2.k[1] = 1 "Constant output values";

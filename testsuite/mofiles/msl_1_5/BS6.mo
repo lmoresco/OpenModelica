@@ -1184,3 +1184,39 @@ model BS6
 equation 
   connect(pulse1.outPort,der1.inPort) annotation(Line(visible=true,points={{-40.86,17.74},{-23.83,16.83}}));
 end BS6;
+// fclass BS6
+// parameter Integer pulse1.nout = 1 "Number of outputs";
+// parameter Integer pulse1.outPort.n = pulse1.nout "Dimension of signal vector";
+// output Real pulse1.outPort.signal[1] "Real output signals";
+// output Real pulse1.y[1];
+// parameter Real pulse1.amplitude[1] = 1 "Amplitudes of pulses";
+// parameter Real pulse1.width[1] = 50 "Widths of pulses in % of periods";
+// parameter Real pulse1.period[1] = 1 "Times for one period";
+// parameter Real pulse1.offset[1] = 0 "Offsets of output signals";
+// parameter Real pulse1.startTime[1] = 0 "Output = offset for time < startTime";
+// parameter Real pulse1.p_amplitude[1] = ({1.0} * pulse1.amplitude[1])[1];
+// parameter Real pulse1.p_period[1] = ({1.0} * pulse1.period[1])[1];
+// parameter Real pulse1.p_width[1] "Width of one pulse";
+// parameter Real pulse1.p_offset[1] = ({1.0} * pulse1.offset[1])[1];
+// parameter Real pulse1.p_startTime[1] = ({1.0} * pulse1.startTime[1])[1];
+// Real pulse1.T0[1] "Start time of current period";
+// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+// input Real der1.inPort.signal[1] "Real input signals";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+// output Real der1.outPort.signal[1] "Real output signals";
+// output Real der1.y[1] "Output signals";
+// Real der1.u[1] "Input signals";
+// equation
+//   pulse1.p_width = (diagonal({pulse1.p_period[1]}) * {1.0} * pulse1.width[1]) / 100.0;
+//   when sample(p_startTime[1],p_period[1]) then
+//   pulse1.T0[1] = time;
+//   end when;
+//   pulse1.outPort.signal[1] = pulse1.p_offset[1] + if time < pulse1.p_startTime[1] OR time >= pulse1.T0[1] + pulse1.p_width[1] then 0.0 else pulse1.p_amplitude[1];
+//   pulse1.y[1] = pulse1.outPort.signal[1];
+//   der1.u[1] = der1.inPort.signal[1];
+//   der1.y[1] = der(der1.u[1]);
+//   der1.y[1] = der1.outPort.signal[1];
+// assert(pulse1.outPort.n == der1.inPort.n,"automatically generated from connect");
+//   pulse1.outPort.signal[1] = der1.inPort.signal[1];
+// end BS6;

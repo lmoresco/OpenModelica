@@ -20,7 +20,7 @@ end MinMax;
 // Real y[2];
 // Real y[3];
 // Real y[4];
-// parameter Integer n = 3;
+// parameter Integer n = min(m,3);
 // parameter Integer m = 4;
 // equation
 //   x[1] = 1.0;

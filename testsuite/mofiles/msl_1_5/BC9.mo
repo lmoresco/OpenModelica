@@ -975,12 +975,11 @@ equation
   connect(constant1.outPort,secondOrder1.inPort) annotation(Line(visible=true,points={{-29.91,12.57},{-8.62,15.62}}));
 end BC9;
 
-
 // fclass BC9
 // parameter Integer secondOrder1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer secondOrder1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer secondOrder1.inPort.n = secondOrder1.n "Dimension of signal vector";
 // input Real secondOrder1.inPort.signal[1] "Real input signals";
-// parameter Integer secondOrder1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer secondOrder1.outPort.n = secondOrder1.n "Dimension of signal vector";
 // output Real secondOrder1.outPort.signal[1] "Real output signals";
 // output Real secondOrder1.y[1] "Output signals";
 // Real secondOrder1.u[1] "Input signals";
@@ -988,11 +987,11 @@ end BC9;
 // parameter Real secondOrder1.w[1] = 1 "Angular frequency";
 // parameter Real secondOrder1.D[1] = 1 "Damping";
 // output Real secondOrder1.yd[1] "Derivative of y";
-// parameter Real secondOrder1.p_k[1] = if true then ({1.0} * secondOrder1.k[1])[1] else secondOrder1.k[1];
-// parameter Real secondOrder1.p_w[1] = if true then ({1.0} * secondOrder1.w[1])[1] else secondOrder1.w[1];
-// parameter Real secondOrder1.p_D[1] = if true then ({1.0} * secondOrder1.D[1])[1] else secondOrder1.D[1];
+// parameter Real secondOrder1.p_k[1] = ({1.0} * secondOrder1.k[1])[1];
+// parameter Real secondOrder1.p_w[1] = ({1.0} * secondOrder1.w[1])[1];
+// parameter Real secondOrder1.p_D[1] = ({1.0} * secondOrder1.D[1])[1];
 // parameter Integer constant1.nout = 1 "Number of outputs";
-// parameter Integer constant1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";

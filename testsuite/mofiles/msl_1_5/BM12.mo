@@ -974,3 +974,32 @@ equation
   connect(constant2.outPort,feedback1.inPort2) annotation(Line(visible=true,points={{-24.74,-18.45},{-21.7,17.74}}));
   connect(constant1.outPort,feedback1.inPort1) annotation(Line(visible=true,points={{-55.76,25.35},{-29.3,26.26}}));
 end BM12;
+// fclass BM12
+// parameter Integer feedback1.n = 1 "size of input and feedback signal";
+// parameter Integer feedback1.inPort1.n = feedback1.n "Dimension of signal vector";
+// input Real feedback1.inPort1.signal[1] "Real input signals";
+// parameter Integer feedback1.inPort2.n = feedback1.n "Dimension of signal vector";
+// input Real feedback1.inPort2.signal[1] "Real input signals";
+// parameter Integer feedback1.outPort.n = feedback1.n "Dimension of signal vector";
+// output Real feedback1.outPort.signal[1] "Real output signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Integer constant2.nout = 1 "Number of outputs";
+// parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
+// output Real constant2.outPort.signal[1] "Real output signals";
+// output Real constant2.y[1];
+// parameter Real constant2.k[1] = 1 "Constant output values";
+// equation
+//   feedback1.outPort.signal[1] = feedback1.inPort1.signal[1] - feedback1.inPort2.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   constant2.outPort.signal[1] = constant2.k[1];
+//   constant2.y[1] = constant2.outPort.signal[1];
+// assert(constant2.outPort.n == feedback1.inPort2.n,"automatically generated from connect");
+// assert(constant1.outPort.n == feedback1.inPort1.n,"automatically generated from connect");
+//   constant1.outPort.signal[1] = feedback1.inPort1.signal[1];
+//   constant2.outPort.signal[1] = feedback1.inPort2.signal[1];
+// end BM12;

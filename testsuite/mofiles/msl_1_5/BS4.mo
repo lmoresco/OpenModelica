@@ -1279,14 +1279,14 @@ equation
 end BS4;
 // fclass BS4
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer der1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";
-// parameter Integer der1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // parameter Integer exponentials1.nout = 1 "Number of outputs";
-// parameter Integer exponentials1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer exponentials1.outPort.n = exponentials1.nout "Dimension of signal vector";
 // output Real exponentials1.outPort.signal[1] "Real output signals";
 // output Real exponentials1.y[1];
 // parameter Real exponentials1.outMax[1] = 1 "Height of output for infinite riseTime";
@@ -1295,12 +1295,12 @@ end BS4;
 // parameter Real exponentials1.fallTimeConst[1] = exponentials1.riseTimeConst[1] "Fall time constant";
 // parameter Real exponentials1.offset[1] = 0 "Offsets of output signals";
 // parameter Real exponentials1.startTime[1] = 0 "Output = offset for time < startTime";
-// parameter Real exponentials1.p_outMax[1] = if true then ({1.0} * exponentials1.outMax[1])[1] else exponentials1.outMax[1];
-// parameter Real exponentials1.p_riseTime[1] = if true then ({1.0} * exponentials1.riseTime[1])[1] else exponentials1.riseTime[1];
-// parameter Real exponentials1.p_riseTimeConst[1] = if true then ({1.0} * exponentials1.riseTimeConst[1])[1] else exponentials1.riseTimeConst[1];
-// parameter Real exponentials1.p_fallTimeConst[1] = if true then ({1.0} * exponentials1.fallTimeConst[1])[1] else exponentials1.fallTimeConst[1];
-// parameter Real exponentials1.p_offset[1] = if true then ({1.0} * exponentials1.offset[1])[1] else exponentials1.offset[1];
-// parameter Real exponentials1.p_startTime[1] = if true then ({1.0} * exponentials1.startTime[1])[1] else exponentials1.startTime[1];
+// parameter Real exponentials1.p_outMax[1] = ({1.0} * exponentials1.outMax[1])[1];
+// parameter Real exponentials1.p_riseTime[1] = ({1.0} * exponentials1.riseTime[1])[1];
+// parameter Real exponentials1.p_riseTimeConst[1] = ({1.0} * exponentials1.riseTimeConst[1])[1];
+// parameter Real exponentials1.p_fallTimeConst[1] = ({1.0} * exponentials1.fallTimeConst[1])[1];
+// parameter Real exponentials1.p_offset[1] = ({1.0} * exponentials1.offset[1])[1];
+// parameter Real exponentials1.p_startTime[1] = ({1.0} * exponentials1.startTime[1])[1];
 // Real exponentials1.y_riseTime[1];
 // equation
 //   der1.u[1] = der1.inPort.signal[1];

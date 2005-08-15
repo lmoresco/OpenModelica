@@ -991,7 +991,7 @@ end BM24;
 
 // fclass BM24
 // parameter Integer sum1.nin = 1 "Number of inputs";
-// parameter Integer sum1.inPort.n = 1 "Dimension of signal vector";
+// parameter Integer sum1.inPort.n = sum1.nin "Dimension of signal vector";
 // input Real sum1.inPort.signal[1] "Real input signals";
 // parameter Integer sum1.outPort.n = 1 "Dimension of signal vector";
 // output Real sum1.outPort.signal[1] "Real output signals";
@@ -999,7 +999,7 @@ end BM24;
 // Real sum1.u[1] "Input signals";
 // parameter Real sum1.k[1] = 1 "Optional: sum coefficients";
 // parameter Integer constant1.nout = 1 "Number of outputs";
-// parameter Integer constant1.outPort.n = 1 "Dimension of signal vector";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";

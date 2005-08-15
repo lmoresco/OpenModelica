@@ -956,11 +956,15 @@ package Modelica "Modelica Standard Library"
 end Modelica;
 
 model BC10 
-  Modelica.Blocks.Sources.Constant constant1 annotation(Placement(visible=true,
-        transformation(                                                                       x=-55.7591,y=23.2184,scale=0.1)));
+  Modelica.Blocks.Sources.Constant constant1 (k={2});
   Modelica.Blocks.Continuous.StateSpace stateSpace1 annotation(Placement(visible=true,
         transformation(                                                                              x=-20.7854,y=23.2184,scale=0.1)));
   
 equation 
   connect(constant1.outPort,stateSpace1.inPort) annotation(Line(visible=true,points={{-45.11,23.22},{-31.43,24.13}}));
 end BC10;
+
+
+
+
+
