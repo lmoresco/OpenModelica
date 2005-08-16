@@ -984,9 +984,49 @@ end Modelica;
 model BM16 
   Modelica.Blocks.Math.MatrixGain matrixGain1 annotation(Placement(visible=true,
         transformation(                                                                        x=-11.966,y=26.2596,scale=0.1)));
-  Modelica.Blocks.Sources.Constant constant1 annotation(Placement(visible=true,
+  Modelica.Blocks.Sources.Constant constant1(k={1,1}) annotation(Placement(visible=true,
         transformation(                                                                       x=-54.8467,y=26.2596,scale=0.1)));
   
 equation 
   connect(matrixGain1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-25.04,25.35},{-45.11,26.26}}));
 end BM16;
+// fclass BM16
+// parameter Integer matrixGain1.nin = 2 "Number of inputs";
+// parameter Integer matrixGain1.nout = 2 "Number of outputs";
+// parameter Integer matrixGain1.inPort.n = matrixGain1.nin "Dimension of signal vector";
+// input Real matrixGain1.inPort.signal[1] "Real input signals";
+// input Real matrixGain1.inPort.signal[2] "Real input signals";
+// parameter Integer matrixGain1.outPort.n = matrixGain1.nout "Dimension of signal vector";
+// output Real matrixGain1.outPort.signal[1] "Real output signals";
+// output Real matrixGain1.outPort.signal[2] "Real output signals";
+// output Real matrixGain1.y[1] "Output signals";
+// output Real matrixGain1.y[2] "Output signals";
+// Real matrixGain1.u[1] "Input signals";
+// Real matrixGain1.u[2] "Input signals";
+// parameter Real matrixGain1.K[1,1] = 1 "Gain matrix which is multiplied with the input";
+// parameter Real matrixGain1.K[1,2] = 0 "Gain matrix which is multiplied with the input";
+// parameter Real matrixGain1.K[2,1] = 0 "Gain matrix which is multiplied with the input";
+// parameter Real matrixGain1.K[2,2] = 1 "Gain matrix which is multiplied with the input";
+// parameter Integer constant1.nout = 2 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.outPort.signal[2] "Real output signals";
+// output Real constant1.y[1];
+// output Real constant1.y[2];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[2] = 1 "Constant output values";
+// equation
+//   matrixGain1.u[1] = matrixGain1.inPort.signal[1];
+//   matrixGain1.u[2] = matrixGain1.inPort.signal[2];
+//   matrixGain1.y[1] = ({{matrixGain1.K[1,1],matrixGain1.K[1,2]},{matrixGain1.K[2,1],matrixGain1.K[2,2]}} * matrixGain1.u)[1];
+//   matrixGain1.y[2] = ({{matrixGain1.K[1,1],matrixGain1.K[1,2]},{matrixGain1.K[2,1],matrixGain1.K[2,2]}} * matrixGain1.u)[2];
+//   matrixGain1.y[1] = matrixGain1.outPort.signal[1];
+//   matrixGain1.y[2] = matrixGain1.outPort.signal[2];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.outPort.signal[2] = constant1.k[2];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   constant1.y[2] = constant1.outPort.signal[2];
+// assert(matrixGain1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   matrixGain1.inPort.signal[1] = constant1.outPort.signal[1];
+//   matrixGain1.inPort.signal[2] = constant1.outPort.signal[2];
+// end BM16;

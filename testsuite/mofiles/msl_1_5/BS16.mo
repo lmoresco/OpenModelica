@@ -1218,3 +1218,33 @@ model BS16
 equation 
   connect(booleanPulse1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-14.4,12.88},{-0.41,11.66}}));
 end BS16;
+// fclass BS16
+// parameter Integer booleanPulse1.nout = 1 "Number of Boolean outputs";
+// parameter Integer booleanPulse1.outPort.n = booleanPulse1.nout "Dimension of signal vector";
+// output Boolean booleanPulse1.outPort.signal[1] "Boolean output signals";
+// parameter Real booleanPulse1.width[1] = 50 "Widths of pulses in % of period";
+// parameter Real booleanPulse1.period[1] = 1 "Times for one period";
+// parameter Real booleanPulse1.startTime[1] = 0 "Iime instants of first pulse";
+// parameter Real booleanPulse1.p_period[1] = ({1.0} * booleanPulse1.period[1])[1];
+// parameter Real booleanPulse1.Twidth[1] "width of one pulse";
+// parameter Real booleanPulse1.p_startTime[1] = ({1.0} * booleanPulse1.startTime[1])[1];
+// Real booleanPulse1.T0[1] "Start time of current period";
+// parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
+// input Boolean booleanChange1.inPort.signal[1] "Boolean input signals";
+// parameter Integer booleanChange1.outPort.n = booleanChange1.n "Dimension of signal vector";
+// output Boolean booleanChange1.outPort.signal[1] "Boolean output signals";
+// output Boolean booleanChange1.y[1] "Output signals";
+// Boolean booleanChange1.u[1] "Input signals";
+// equation
+//   booleanPulse1.Twidth = (diagonal({booleanPulse1.p_period[1]}) * {1.0} * booleanPulse1.width[1]) / 100.0;
+//   when sample(p_startTime[1],p_period[1]) then
+//   booleanPulse1.T0[1] = time;
+//   end when;
+//   booleanPulse1.outPort.signal[1] = time >= booleanPulse1.T0[1] AND time < booleanPulse1.T0[1] + booleanPulse1.Twidth[1];
+//   booleanChange1.u[1] = booleanChange1.inPort.signal[1];
+//   booleanChange1.y[1] = change(booleanChange1.u[1]);
+//   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
+// assert(booleanPulse1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
+//   booleanPulse1.outPort.signal[1] = booleanChange1.inPort.signal[1];
+// end BS16;

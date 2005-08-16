@@ -967,3 +967,23 @@ model BS15
 equation 
   connect(booleanConstant1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-26.87,25.35},{-12.27,25.35}}));
 end BS15;
+// fclass BS15
+// parameter Integer booleanConstant1.nout = 1 "Number of Boolean outputs";
+// parameter Integer booleanConstant1.outPort.n = booleanConstant1.nout "Dimension of signal vector";
+// output Boolean booleanConstant1.outPort.signal[1] "Boolean output signals";
+// parameter Boolean booleanConstant1.k[1] = true "Constant output values";
+// parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
+// input Boolean booleanChange1.inPort.signal[1] "Boolean input signals";
+// parameter Integer booleanChange1.outPort.n = booleanChange1.n "Dimension of signal vector";
+// output Boolean booleanChange1.outPort.signal[1] "Boolean output signals";
+// output Boolean booleanChange1.y[1] "Output signals";
+// Boolean booleanChange1.u[1] "Input signals";
+// equation
+//   booleanConstant1.outPort.signal[1] = booleanConstant1.k[1];
+//   booleanChange1.u[1] = booleanChange1.inPort.signal[1];
+//   booleanChange1.y[1] = change(booleanChange1.u[1]);
+//   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
+// assert(booleanConstant1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
+//   booleanConstant1.outPort.signal[1] = booleanChange1.inPort.signal[1];
+// end BS15;
