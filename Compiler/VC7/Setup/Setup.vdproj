@@ -75,12 +75,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_232F4F24BFD242C28CA756F5AFF25367"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_25087B154F6B4BEB81957EE09C1BB806"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -149,6 +143,24 @@
         {
         "MsmKey" = "8:_3DB2A961CB0E92ABEEFFCC127E3174EF"
         "OwnerKey" = "8:_E2759B4CC363474481880230648B004F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3DE6ADDEF91F4DC181EAD5D0798977F3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_415FDC1BAD369D893AE741E30BA0F397"
+        "OwnerKey" = "8:_E2759B4CC363474481880230648B004F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_415FDC1BAD369D893AE741E30BA0F397"
+        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -273,6 +285,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_84D079AA700B4E32B254847BD2C6E0E0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8522D3C19D1149F7B060B980DE671420"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -334,12 +352,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B9C73EAFC88E404EA832FAFB558E08B3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C05F5668503E42A9AE9F7600697C4912"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -687,26 +699,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_232F4F24BFD242C28CA756F5AFF25367"
-            {
-            "SourcePath" = "8:..\\..\\..\\c_runtime\\vcf2c.lib"
-            "TargetName" = "8:vcf2c.lib"
-            "Tag" = "8:"
-            "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_25087B154F6B4BEB81957EE09C1BB806"
             {
             "SourcePath" = "8:..\\..\\scripts\\doPlot.bat"
@@ -931,6 +923,46 @@
             {
             "SourcePath" = "8:comdlg32.dll"
             "TargetName" = "8:comdlg32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3DE6ADDEF91F4DC181EAD5D0798977F3"
+            {
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\vcf2c.lib"
+            "TargetName" = "8:vcf2c.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_415FDC1BAD369D893AE741E30BA0F397"
+            {
+            "SourcePath" = "8:mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
@@ -1307,6 +1339,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_84D079AA700B4E32B254847BD2C6E0E0"
+            {
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\f2c.h"
+            "TargetName" = "8:f2c.h"
+            "Tag" = "8:"
+            "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_8522D3C19D1149F7B060B980DE671420"
             {
             "SourcePath" = "8:M:\\c_runtime\\libc_runtime.a"
@@ -1471,26 +1523,6 @@
             {
             "SourcePath" = "8:mingw.tar.gz"
             "TargetName" = "8:mingw.tar.gz"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C05F5668503E42A9AE9F7600697C4912"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\usr\\local\\libsrcs\\mico\\win32-bin\\mico2311.dll"
-            "TargetName" = "8:mico2311.dll"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
@@ -1807,6 +1839,17 @@
                     "Property" = "8:_BABBD49E2EB54A509EB90788E46A217A"
                         "Folders"
                         {
+                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_CC3791ACD40E4BA589096DA612027057"
+                            {
+                            "Name" = "8:libf2c"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_8A05A97450AD49A0A1EF06D338755E22"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_596366ECE84B44178CE3B8AEEEA6FBE9"
@@ -2544,7 +2587,7 @@
         {
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_4B2552DF2CFF4B6AAA4D4C33B5353E48"
             {
-            "SourcePath" = "8:..\\UpdateEnv\\Release\\UpdateEnv.exe"
+            "SourcePath" = "8:..\\updateenv\\release\\UpdateEnv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
