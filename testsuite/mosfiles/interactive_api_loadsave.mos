@@ -35,7 +35,7 @@ getClassNames(A);
 // Ok
 // test.mo
 // A.mo
-// NoFile
+// 
 // true
 // true
 // true
