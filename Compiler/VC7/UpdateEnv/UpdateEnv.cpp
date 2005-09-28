@@ -178,7 +178,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 			first = commands.find_first_not_of(" \t",next);
 		}
 		else {
-			if (!runTar(file,dir)) return -1;
+			if (!runTar(file,dir)) {
+				//return -1;
+			}
 			DeleteFile((dir + "\\" + file).c_str());
 			first = commands.find_first_not_of(" \t",next);
 		}
