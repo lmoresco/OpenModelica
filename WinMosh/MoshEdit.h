@@ -57,7 +57,8 @@ protected:
 	afx_msg void OnSetFocus( CWnd* );
 	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	//}}AFX_MSG
+	afx_msg int OnCreate( LPCREATESTRUCT );
+//}}AFX_MSG
 
 	DECLARE_MESSAGE_MAP()
 private:
@@ -70,6 +71,7 @@ private:
 	OmcCommunication_var client; 
 	CEdit* m_pErrorText;
 	CString m_omcFilePath;
+	CFont m_font;
 public:
 	bool StartServer(void);
 	void SpawnServer(void);

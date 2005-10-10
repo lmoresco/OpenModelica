@@ -50,6 +50,7 @@ BEGIN_MESSAGE_MAP(CMoshEdit, CEdit)
 	ON_WM_SHOWWINDOW()
 	ON_WM_KEYUP()
 	ON_WM_LBUTTONDOWN()
+//	ON_WM_CREATE()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -57,6 +58,14 @@ END_MESSAGE_MAP()
 // CMoshEdit message handlers
 
 
+
+int CMoshEdit::OnCreate( LPCREATESTRUCT )
+{
+	m_font.CreateStockObject(OEM_FIXED_FONT);
+//	SetFont(&m_font);
+
+	return 0;
+}
 
 void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 {
@@ -77,8 +86,8 @@ void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 		else
 		{ 
 			KillTimer(m_Timer);
-			txt = "Open Source Modelica 1.3\r\n";
-			txt += "Copyright 2002, PELAB, Linkoping University\r\n\r\n";
+			txt = "OpenModelica 1.3\r\n";
+			txt += "Copyright 2002-2005, PELAB, Linkoping University\r\n\r\n";
 			txt += "To get help on using Mosh and OpenModelica, type \"help()\" and press enter.\r\n\r\n";
 
 			txt += ">> ";
@@ -90,8 +99,12 @@ void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 
 void CMoshEdit::OnShowWindow( BOOL bShow, UINT )
 {
-	if (bShow)
+	if (bShow) {
 		m_Timer = SetTimer(1,100,NULL);
+		m_font.CreateStockObject(OEM_FIXED_FONT);
+		SetFont(&m_font);
+	}
+
 }
 
 void CMoshEdit::OnSetFocus( CWnd* wnd)

@@ -466,5 +466,8 @@
 		</File>
 	</Files>
 	<Globals>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="WinMosh.rc"/>
 	</Globals>
 </VisualStudioProject>
