@@ -81,6 +81,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0C4B9736D9334FCE93819FEF65126333"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0C83B1E79AFA4203942DF89D6190253E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0D9D8A404F7E4FB59A9A2314EF21C833"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -178,6 +190,12 @@
         "Entry"
         {
         "MsmKey" = "8:_1E1DAF2DADF14A70A6D5C3A5122F2F0B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1E47F3548F5042458E7AAD5B74A9B7FD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -304,6 +322,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2A7E291B3C76496BA3359EEABF7B6C64"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2C64FD807BAC4A5684803CE5845AB9E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -471,6 +495,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_43C6025B2A2440E794FDB0195582C891"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -478,6 +508,18 @@
         "Entry"
         {
         "MsmKey" = "8:_44643384B887400B9872A3670AA8EA9E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_452D7BF6355E464CA5A7F7485D25A1F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_46DF4E0BCE8F4EDDB21032EF6B204917"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -597,7 +639,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_553BBBD14C2E424383C9737A4C1E3F58"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_566BCD9370264E6988ACF1E673B3F8FC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_578E5B54F0214ED1958DA8D02E8B23E0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -652,6 +706,12 @@
         "Entry"
         {
         "MsmKey" = "8:_5FC6E56D42544FABBC2B917AE5FB513A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_63122173793641148A8D091A06AF15DC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -718,6 +778,12 @@
         "Entry"
         {
         "MsmKey" = "8:_6E96E7877D0B4188832653E02014B860"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7009041EA4864639873346BFAB756AF2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -831,6 +897,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7C5BD8B373E044E38B313D6AE776D138"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7E4A25504DFF434EBF8C4CDEF98EB50E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -927,6 +999,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8B54000677CB45F88FA8648C4863F433"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8C268CAB336E44A2A46197AEA323769F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -939,7 +1017,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8E680FA32F964FBE90C29349C435283D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8E99E183D41A4F388EC27D67F13A000A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8F2C143666D74EC299C8AB277D7AE4B4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -957,7 +1047,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_913D1BA2B3AF4C98942E115B1C23AB17"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_917BCE135AF642A3A365857327DAF76E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_926523833A61479AB9B291F64B234BA6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_92727678D68F48449E86781C4D26CCBE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1029,6 +1137,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9A8B0B94BDAE460A84ACF64E2E4A3224"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9B59290A0F504670B7320A6977E8FF5B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1066,6 +1180,18 @@
         "Entry"
         {
         "MsmKey" = "8:_9F057B30ADDF4E5B87FFDCB01A1FF276"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A0D17541F70A4D79A8E0E4D504A82E45"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A131E69F89534D60A1FF4FB0C6EE5FC0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1179,6 +1305,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ADFFEB0EA56442C1B990E5E0D8B2B5B1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AE9DC681CDC44F1E824A6AFDD66C556D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1245,6 +1377,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BDAB48C9FCAF43C2B1FD28D265ED96C3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C06444A20F0D4A8D834F01EAB9DEB92E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1258,6 +1396,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C0FFEDECB43048E58E3C034A8E280C77"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C154EBCC773F4BEF9792D24342540FD8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1311,6 +1455,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C966A164BF284C16B7795F586A490C5E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C9A8E81C5FFC4E66AABB72945B3461D1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1335,6 +1485,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CE1F487BD35A42208BD375CBD3C5CD52"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CF932AFCDC1F43FBB2FDA4E6BCE6513D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1347,6 +1503,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D0D61792DDBE4550AD0140B55C66DF4D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D0EBD3DB4A904624A60E484657A0BF5A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1354,6 +1516,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D1183F73C9874910A7493BDBDABFA9B9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D28EEA1E7C6C4D73A8C0E862353816C9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1378,6 +1546,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D55D1531B4FF4D9B923224619AE676F1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D5FF4FB0D0E04109891DC00427034733"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1425,6 +1599,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DD1053CB5AE242169FE540B4653F4125"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DD73C456206343F68FCA962D16B159CD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1444,6 +1624,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E03F8D354BCC4A13A844F2D3BBF93620"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E13F6F97A4E74A52A9D6E58A054E3BD3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1480,6 +1666,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E680C970698349CEB3AF6ECEF1DD0689"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E7BFAC9127ED49E0BBE946CC259C8702"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1575,6 +1767,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F5668E19580A4371AC41BAC85CEFB7AF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F5E29A883AD74259A9AA3E0F34FF85F4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1599,6 +1797,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F8E0E42F22FC4316B3CA286B1E1A92DE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F93A8FA7FA2B4F2C8B5BF18852DE8F7F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1606,6 +1810,12 @@
         "Entry"
         {
         "MsmKey" = "8:_FA37232DFDC3412589E91F440F0B69C5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FB4FF44F5DE443E487774F2947204799"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1642,6 +1852,12 @@
         "Entry"
         {
         "MsmKey" = "8:_FE403DD8151746B29FA54CA38D641B8C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FF65BC05E06F48148A678FE1B1F111F0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1937,6 +2153,46 @@
             "TargetName" = "8:makefile.wat"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_0C4B9736D9334FCE93819FEF65126333"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\modelicacolors.xml"
+            "TargetName" = "8:modelicacolors.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_0C83B1E79AFA4203942DF89D6190253E"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise3-classes.nb"
+            "TargetName" = "8:Excercise3-classes.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2257,6 +2513,26 @@
             "TargetName" = "8:qform.f"
             "Tag" = "8:"
             "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1E47F3548F5042458E7AAD5B74A9B7FD"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\[SWE] ReadMe - OMNotebook.txt"
+            "TargetName" = "8:[SWE] ReadMe - OMNotebook.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2677,6 +2953,26 @@
             "TargetName" = "8:wsne.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_2C64FD807BAC4A5684803CE5845AB9E1"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Array.nb"
+            "TargetName" = "8:Array.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3231,6 +3527,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_43C6025B2A2440E794FDB0195582C891"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise2hybrid.nb"
+            "TargetName" = "8:Excercise2hybrid.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
             {
             "SourcePath" = "8:bin\\tar.exe"
@@ -3257,6 +3573,46 @@
             "TargetName" = "8:signal_.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_452D7BF6355E464CA5A7F7485D25A1F8"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\qt-mt335.dll"
+            "TargetName" = "8:qt-mt335.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_46DF4E0BCE8F4EDDB21032EF6B204917"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Algorithm.nb"
+            "TargetName" = "8:Algorithm.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3631,12 +3987,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_553BBBD14C2E424383C9737A4C1E3F58"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise2-classes.nb"
+            "TargetName" = "8:Excercise2-classes.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_566BCD9370264E6988ACF1E673B3F8FC"
             {
             "SourcePath" = "8:bin\\gzip.exe"
             "TargetName" = "8:gzip.exe"
             "Tag" = "8:"
             "Folder" = "8:_729117F81DA9422BA41A93982A5CA56A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_578E5B54F0214ED1958DA8D02E8B23E0"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\WhenClause.nb"
+            "TargetName" = "8:WhenClause.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3817,6 +4213,26 @@
             "TargetName" = "8:ef1asc_.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_63122173793641148A8D091A06AF15DC"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\stylesheet.xml"
+            "TargetName" = "8:stylesheet.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4037,6 +4453,26 @@
             "TargetName" = "8:README"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7009041EA4864639873346BFAB756AF2"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise2inheritance.nb"
+            "TargetName" = "8:Excercise2inheritance.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4391,6 +4827,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7C5BD8B373E044E38B313D6AE776D138"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\[EN] ReadMe - OMNotebook.txt"
+            "TargetName" = "8:[EN] ReadMe - OMNotebook.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_7E4A25504DFF434EBF8C4CDEF98EB50E"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\qrfac.f"
@@ -4691,6 +5147,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8B54000677CB45F88FA8648C4863F433"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\CreateInst.nb"
+            "TargetName" = "8:CreateInst.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_8C268CAB336E44A2A46197AEA323769F"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\rewind.c"
@@ -4731,12 +5207,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8E680FA32F964FBE90C29349C435283D"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\ReuseMod.nb"
+            "TargetName" = "8:ReuseMod.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_8E99E183D41A4F388EC27D67F13A000A"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\pow_ri.c"
             "TargetName" = "8:pow_ri.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8F2C143666D74EC299C8AB277D7AE4B4"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\IfClause.nb"
+            "TargetName" = "8:IfClause.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4791,12 +5307,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_913D1BA2B3AF4C98942E115B1C23AB17"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1classes.nb"
+            "TargetName" = "8:Excercise1classes.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_917BCE135AF642A3A365857327DAF76E"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Inheritance.nb"
+            "TargetName" = "8:Inheritance.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_926523833A61479AB9B291F64B234BA6"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\mkfile.plan9"
             "TargetName" = "8:mkfile.plan9"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_92727678D68F48449E86781C4D26CCBE"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1hybrid.nb"
+            "TargetName" = "8:Excercise1hybrid.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5031,6 +5607,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_9A8B0B94BDAE460A84ACF64E2E4A3224"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1equations.nb"
+            "TargetName" = "8:Excercise1equations.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_9B59290A0F504670B7320A6977E8FF5B"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\fdjac1.f"
@@ -5137,6 +5733,46 @@
             "TargetName" = "8:erfc_.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A0D17541F70A4D79A8E0E4D504A82E45"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\HelloWorld.nb"
+            "TargetName" = "8:HelloWorld.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A131E69F89534D60A1FF4FB0C6EE5FC0"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\DiffEq.nb"
+            "TargetName" = "8:DiffEq.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5511,6 +6147,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ADFFEB0EA56442C1B990E5E0D8B2B5B1"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\SimpleCircuit.nb"
+            "TargetName" = "8:SimpleCircuit.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_AE9DC681CDC44F1E824A6AFDD66C556D"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\libf2c.a"
@@ -5731,6 +6387,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BDAB48C9FCAF43C2B1FD28D265ED96C3"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Partial.nb"
+            "TargetName" = "8:Partial.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C06444A20F0D4A8D834F01EAB9DEB92E"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\real_array.h"
@@ -5757,6 +6433,26 @@
             "TargetName" = "8:l_ge.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C154EBCC773F4BEF9792D24342540FD8"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Packages.nb"
+            "TargetName" = "8:Packages.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5931,6 +6627,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C966A164BF284C16B7795F586A490C5E"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1inheritance.nb"
+            "TargetName" = "8:Excercise1inheritance.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C9A8E81C5FFC4E66AABB72945B3461D1"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\arith.h"
@@ -6011,6 +6727,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CE1F487BD35A42208BD375CBD3C5CD52"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\HelloWorldmod.nb"
+            "TargetName" = "8:HelloWorldmod.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_CF932AFCDC1F43FBB2FDA4E6BCE6513D"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\d_tan.c"
@@ -6051,6 +6787,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D0D61792DDBE4550AD0140B55C66DF4D"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1partial.nb"
+            "TargetName" = "8:Excercise1partial.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_D0EBD3DB4A904624A60E484657A0BF5A"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\z_exp.c"
@@ -6077,6 +6833,26 @@
             "TargetName" = "8:l_gt.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D28EEA1E7C6C4D73A8C0E862353816C9"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\OMNotebook.exe"
+            "TargetName" = "8:OMNotebook.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6157,6 +6933,26 @@
             "TargetName" = "8:d_cos.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D5FF4FB0D0E04109891DC00427034733"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1package.nb"
+            "TargetName" = "8:Excercise1package.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6311,6 +7107,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DD1053CB5AE242169FE540B4653F4125"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1algorithm.nb"
+            "TargetName" = "8:Excercise1algorithm.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_DD73C456206343F68FCA962D16B159CD"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\index_spec.c"
@@ -6377,6 +7193,26 @@
             "TargetName" = "8:err.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_E13F6F97A4E74A52A9D6E58A054E3BD3"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Statement.nb"
+            "TargetName" = "8:Statement.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6477,6 +7313,26 @@
             "TargetName" = "8:makefile.sy"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_E7BFAC9127ED49E0BBE946CC259C8702"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Equations.nb"
+            "TargetName" = "8:Equations.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6791,6 +7647,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F5668E19580A4371AC41BAC85CEFB7AF"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\DrModelica.nb"
+            "TargetName" = "8:DrModelica.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_F5E29A883AD74259A9AA3E0F34FF85F4"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\d_log.c"
@@ -6871,6 +7747,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F8E0E42F22FC4316B3CA286B1E1A92DE"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Local.nb"
+            "TargetName" = "8:Local.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_F93A8FA7FA2B4F2C8B5BF18852DE8F7F"
             {
             "SourcePath" = "8:..\\..\\..\\Examples\\dcmotor.mo"
@@ -6897,6 +7793,26 @@
             "TargetName" = "8:arithchk.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FB4FF44F5DE443E487774F2947204799"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Excercise1arrays.nb"
+            "TargetName" = "8:Excercise1arrays.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7031,6 +7947,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FF65BC05E06F48148A678FE1B1F111F0"
+            {
+            "SourcePath" = "8:C:\\OpenModelica13\\QuickTour\\Generic.nb"
+            "TargetName" = "8:Generic.nb"
+            "Tag" = "8:"
+            "Folder" = "8:_7A12081FC6AC44E08103A9A21616EC8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -7131,6 +8067,17 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_34D89386E1604278B4544C31D16E4A1F"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_7A12081FC6AC44E08103A9A21616EC8D"
+                    {
+                    "Name" = "8:QuickTour"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_8306DD2DD9A347418C7E83192E67FC30"
                         "Folders"
                         {
                         }
