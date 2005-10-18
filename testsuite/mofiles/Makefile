@@ -4,6 +4,7 @@ TEST=./rtest
 TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
 Array1.mo Array2.mo Array8.mo Array9.mo Array_builtin.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArraySlice1.mo \
+BoolArrayTest.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo ConditionalArrayExpression1.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
