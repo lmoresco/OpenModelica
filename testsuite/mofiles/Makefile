@@ -25,7 +25,8 @@ ModifyConstant3.mo NoEvent1.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo ParseError1.mo ParseError2.mo \
 partial-s-1.mo Protected1.mo prtest.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo Record1.mo Redeclare1.mo Redeclare2.mo \
-Redeclare3.mo RedeclareFlowEffort.mo \
+Redeclare3.mo Redeclare4.mo Redeclare5.mo \
+RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
 Terminal1.mo Terminal2.mo \
@@ -37,6 +38,7 @@ FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
 ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo \
 PredefinedTypes.mo StructuralParameter1.mo MinMax.mo 
+
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

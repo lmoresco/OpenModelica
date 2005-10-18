@@ -28,5 +28,6 @@ end Redeclare1;
 // Real m.a.x;
 // Real m.a.z;
 // equation
-//   m.a.z = m.a.x;
+//  m.a.x = 17.0;
+//  m.a.z = m.a.x;
 // end Redeclare1;

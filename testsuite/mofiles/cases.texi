@@ -118,6 +118,8 @@
 * Redeclare1::
 * Redeclare2::
 * Redeclare3::
+* Redeclare4::
+* Redeclare5::
 * RedeclareFlowEffort::
 * ScopeDeclaration3::
 * ScopeModification1::
@@ -857,13 +859,25 @@
 @include Redeclare2.mo
 @end example
 
-@node Redeclare3,RedeclareFlowEffort,Redeclare2,Test Cases
+@node Redeclare3,Redeclare4,Redeclare2,Test Cases
 @appendixsec Redeclare3
 @example
 @include Redeclare3.mo
 @end example
 
-@node RedeclareFlowEffort,ScopeDeclaration3,Redeclare3,Test Cases
+@node Redeclare4,Redeclare5,Redeclare3,Test Cases
+@appendixsec Redeclare4
+@example
+@include Redeclare4.mo
+@end example
+
+@node Redeclare5,RedeclareFlowEffort,Redeclare4,Test Cases
+@appendixsec Redeclare5
+@example
+@include Redeclare5.mo
+@end example
+
+@node RedeclareFlowEffort,ScopeDeclaration3,Redeclare5,Test Cases
 @appendixsec RedeclareFlowEffort
 @example
 @include RedeclareFlowEffort.mo
