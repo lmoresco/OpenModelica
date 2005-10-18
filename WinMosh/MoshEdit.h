@@ -57,7 +57,6 @@ protected:
 	afx_msg void OnSetFocus( CWnd* );
 	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg int OnCreate( LPCREATESTRUCT );
 //}}AFX_MSG
 
 	DECLARE_MESSAGE_MAP()

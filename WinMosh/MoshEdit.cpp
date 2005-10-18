@@ -50,7 +50,6 @@ BEGIN_MESSAGE_MAP(CMoshEdit, CEdit)
 	ON_WM_SHOWWINDOW()
 	ON_WM_KEYUP()
 	ON_WM_LBUTTONDOWN()
-//	ON_WM_CREATE()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -58,14 +57,6 @@ END_MESSAGE_MAP()
 // CMoshEdit message handlers
 
 
-
-int CMoshEdit::OnCreate( LPCREATESTRUCT )
-{
-	m_font.CreateStockObject(OEM_FIXED_FONT);
-//	SetFont(&m_font);
-
-	return 0;
-}
 
 void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 {
