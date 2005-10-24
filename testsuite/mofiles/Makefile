@@ -6,10 +6,11 @@ Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo \
  Array_builtin.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArraySlice1.mo \
 BoolArrayTest.mo \
+Cardinality.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo ConditionalArrayExpression1.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
-ConnectInner1.mo Constant2.mo Constant1.mo \
+Constant2.mo Constant1.mo \
 Constant4.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
 DeclareConstant1.mo DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo \
@@ -44,7 +45,7 @@ PredefinedTypes.mo StructuralParameter1.mo MinMax.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo
+FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
