@@ -1,0 +1,19 @@
+// name:     strings
+// keywords: strings
+// status:   correct
+// 
+//  string manipulations
+//
+a:="foo";
+b:="bar";
+a+b;
+loadFile("strings.mo");
+foo(a+b)
+
+// Result:
+// "foo"
+// "bar"
+// "foobar"
+// true 
+// "foobar"
+// endResult

@@ -1,6 +1,6 @@
 // name:     Test to return multiple values
 // keywords: multiple return
-// status:   correct, however ut does not work together with the test suite
+// status:   correct
 // 
 //
 //  Not working:
@@ -12,12 +12,11 @@ MultiRet(77);
 a;
 b;
 c;
-
 // Result:
 //true
-//(770,7700.0,-138191724)
+//(770,7700.0,0)
 //
 //20
 //200.0
-//-138191724
+//0
 // endResult
