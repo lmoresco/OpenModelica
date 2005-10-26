@@ -34,7 +34,10 @@ ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
 Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo \
-Units2.mo XPowers1.mo XPowers2.mo XPowers3.mo \
+Units2.mo \
+Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
+Vectorizable5.mo \
+ XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \

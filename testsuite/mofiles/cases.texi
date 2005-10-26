@@ -5,6 +5,8 @@
 * Algorithm2::
 * Algorithm3::
 * Array1::
+* Array10::
+* Array11::
 * Array2::
 * Array8::
 * Array9::
@@ -14,6 +16,8 @@
 * ArrayModification8::
 * ArraySlice1::
 * Array_builtin::
+* BoolArrayTest::
+* Cardinality::
 * Circuit1::
 * Class1::
 * Class2::
@@ -28,7 +32,6 @@
 * ConnectFlowEffort::
 * ConnectHierarchical1::
 * ConnectHierarchical2::
-* ConnectInner1::
 * Constant1::
 * Constant2::
 * Constant4::
@@ -181,13 +184,25 @@
 @include Algorithm3.mo
 @end example
 
-@node Array1,Array2,Algorithm3,Test Cases
+@node Array1,Array10,Algorithm3,Test Cases
 @appendixsec Array1
 @example
 @include Array1.mo
 @end example
 
-@node Array2,Array8,Array1,Test Cases
+@node Array10,Array11,Array1,Test Cases
+@appendixsec Array10
+@example
+@include Array10.mo
+@end example
+
+@node Array11,Array2,Array10,Test Cases
+@appendixsec Array11
+@example
+@include Array11.mo
+@end example
+
+@node Array2,Array8,Array11,Test Cases
 @appendixsec Array2
 @example
 @include Array2.mo
@@ -235,13 +250,25 @@
 @include ArraySlice1.mo
 @end example
 
-@node Array_builtin,Circuit1,ArraySlice1,Test Cases
+@node Array_builtin,BoolArrayTest,ArraySlice1,Test Cases
 @appendixsec Array_builtin
 @example
 @include Array_builtin.mo
 @end example
 
-@node Circuit1,Class1,Array_builtin,Test Cases
+@node BoolArrayTest,Cardinality,Array_builtin,Test Cases
+@appendixsec BoolArrayTest
+@example
+@include BoolArrayTest.mo
+@end example
+
+@node Cardinality,Circuit1,BoolArrayTest,Test Cases
+@appendixsec Cardinality
+@example
+@include Cardinality.mo
+@end example
+
+@node Circuit1,Class1,Cardinality,Test Cases
 @appendixsec Circuit1
 @example
 @include Circuit1.mo
@@ -319,19 +346,13 @@
 @include ConnectHierarchical1.mo
 @end example
 
-@node ConnectHierarchical2,ConnectInner1,ConnectHierarchical1,Test Cases
+@node ConnectHierarchical2,Constant1,ConnectHierarchical1,Test Cases
 @appendixsec ConnectHierarchical2
 @example
 @include ConnectHierarchical2.mo
 @end example
 
-@node ConnectInner1,Constant1,ConnectHierarchical2,Test Cases
-@appendixsec ConnectInner1
-@example
-@include ConnectInner1.mo
-@end example
-
-@node Constant1,Constant2,ConnectInner1,Test Cases
+@node Constant1,Constant2,ConnectHierarchical2,Test Cases
 @appendixsec Constant1
 @example
 @include Constant1.mo
