@@ -1,7 +1,7 @@
 TESTFILES = interactive_api_param.mos interactive_api_classes.mos \
 variables.mos Array1.mos simulation.mos differentiate.mos simplify.mos \
 strings.mos interactive_api_loadsave.mos \
-matrices.mos
+matrices.mos BouncingBall.mos
 TEST = rtest
 
 
