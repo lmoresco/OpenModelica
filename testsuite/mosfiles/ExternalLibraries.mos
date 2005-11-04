@@ -1,0 +1,34 @@
+// name: ExternalLibraries
+// keyword: external functions, libraries
+// status: correct
+//
+// External functions, Library and Include annotation.
+//
+//
+loadFile("ExternalLibraries.mo");
+system("gcc -c -o libExternalFunc1_ext.o ExternalFunc1.c");
+system("gcc -c -o libExternalFunc2.a ExternalFunc2.c");
+simulate(ExternalLibraries1,numberOfIntervals=5);
+resultSize:=readSimulationResultSize("ExternalLibraries1_res.plt");
+readSimulationResult("ExternalLibraries1_res.plt",{x,y},resultSize);
+getErrorString();
+readFile("output.log");
+system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log");
+
+
+// Result:
+// true
+// 0
+// 0
+// record
+//     resultFile = "ExternalLibraries1_res.plt"
+// end record
+// 6
+// {{1.0,0.600856216657383,0.403950305566201,0.288487010203958,0.213831091756544,0.162477019727119},{2.0,1.47702861915092,1.24427877474115,1.12932060688606,1.06962080454226,1.03781597225025}}
+// ""
+// ""
+// 0
+// endResult
+
+
+

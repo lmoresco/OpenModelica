@@ -1,0 +1,29 @@
+// name: API-attributes
+// keywords: Graphical API, component attributes
+// status: correct
+// 
+//  Subset of the Graphical API for setting component attributes
+//
+
+createModel(A);
+addComponent(x,Real ,A);
+setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});
+getComponents(A);
+setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});
+getComponents(A);
+setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"});
+getComponents(A);
+setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});
+getComponents(A);
+// Result:
+// true
+// true
+// Ok
+// {{Real,x,"", "public", false, false, false, "unspecified", "innerouter", "unspecified"}}
+// Ok
+// {{Real,x,"", "protected", true, true, false, "parameter", "innerouter", "input"}}
+// Ok
+// {{Real,x,"", "public", true, true, false, "constant", "outer", "output"}}
+// Ok
+// {{Real,x,"", "public", true, false, false, "discrete", "inner", "unspecified"}}
+// endResult

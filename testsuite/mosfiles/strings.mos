@@ -8,7 +8,8 @@ a:="foo";
 b:="bar";
 a+b;
 loadFile("strings.mo");
-foo(a+b)
+foo(a+b);
+system("rm -rf foo*");
 
 // Result:
 // "foo"
@@ -16,4 +17,5 @@ foo(a+b)
 // "foobar"
 // true 
 // "foobar"
+// 0
 // endResult
