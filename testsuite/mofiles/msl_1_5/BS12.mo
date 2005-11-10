@@ -1241,7 +1241,7 @@ end BS12;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   when pre(counter2[1]) <> 0 AND sample(p_startTime[1],p_period[1]) then
+//   when pre(trapezoid1.counter2[1]) <> 0 AND sample(trapezoid1.p_startTime[1],trapezoid1.p_period[1]) then
 //   trapezoid1.T0[1] = time;
 //   trapezoid1.counter2[1] = pre(trapezoid1.counter[1]);
 //   trapezoid1.counter[1] = pre(trapezoid1.counter[1]) - if pre(trapezoid1.counter[1]) > 0 then 1 else 0;

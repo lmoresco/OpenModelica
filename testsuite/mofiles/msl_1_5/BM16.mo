@@ -1018,8 +1018,8 @@ end BM16;
 // equation
 //   matrixGain1.u[1] = matrixGain1.inPort.signal[1];
 //   matrixGain1.u[2] = matrixGain1.inPort.signal[2];
-//   matrixGain1.y[1] = ({{matrixGain1.K[1,1],matrixGain1.K[1,2]},{matrixGain1.K[2,1],matrixGain1.K[2,2]}} * matrixGain1.u)[1];
-//   matrixGain1.y[2] = ({{matrixGain1.K[1,1],matrixGain1.K[1,2]},{matrixGain1.K[2,1],matrixGain1.K[2,2]}} * matrixGain1.u)[2];
+//   matrixGain1.y[1] = ({matrixGain1.K[1],matrixGain1.K[2]} * matrixGain1.u)[1];
+//   matrixGain1.y[2] = ({matrixGain1.K[1],matrixGain1.K[2]} * matrixGain1.u)[2];
 //   matrixGain1.y[1] = matrixGain1.outPort.signal[1];
 //   matrixGain1.y[2] = matrixGain1.outPort.signal[2];
 //   constant1.outPort.signal[1] = constant1.k[1];

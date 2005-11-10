@@ -979,3 +979,25 @@ model BM23
 equation 
   connect(constant1.outPort,sqrt1.inPort) annotation(Line(visible=true,points={{-64.27,9.53},{-41.77,6.19}}));
 end BM23;
+// fclass BM23
+// parameter Integer sqrt1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer sqrt1.inPort.n = sqrt1.n "Dimension of signal vector";
+// input Real sqrt1.inPort.signal[1] "Real input signals";
+// parameter Integer sqrt1.outPort.n = sqrt1.n "Dimension of signal vector";
+// output Real sqrt1.outPort.signal[1] "Real output signals";
+// output Real sqrt1.y[1] "Output signals";
+// Real sqrt1.u[1] "Input signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   sqrt1.u[1] = sqrt1.inPort.signal[1];
+//   sqrt1.y = {sqrt(sqrt1.u[1])};
+//   sqrt1.y[1] = sqrt1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(constant1.outPort.n == sqrt1.inPort.n,"automatically generated from connect");
+//   constant1.outPort.signal[1] = sqrt1.inPort.signal[1];
+// end BM23;

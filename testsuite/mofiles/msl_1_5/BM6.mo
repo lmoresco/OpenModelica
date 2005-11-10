@@ -1065,3 +1065,25 @@ model BM6
 equation 
   connect(atan1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-7.71,20.79},{-24.74,22.0}}));
 end BM6;
+// fclass BM6
+// parameter Integer atan1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer atan1.inPort.n = atan1.n "Dimension of signal vector";
+// input Real atan1.inPort.signal[1] "Real input signals";
+// parameter Integer atan1.outPort.n = atan1.n "Dimension of signal vector";
+// output Real atan1.outPort.signal[1] "Real output signals";
+// output Real atan1.y[1] "Output signals";
+// Real atan1.u[1] "Input signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   atan1.u[1] = atan1.inPort.signal[1];
+//   atan1.y = {Modelica.Math.atan(atan1.u[1])};
+//   atan1.y[1] = atan1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(atan1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   atan1.inPort.signal[1] = constant1.outPort.signal[1];
+// end BM6;

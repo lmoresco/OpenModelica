@@ -1065,3 +1065,25 @@ model BM25
 equation 
   connect(tan1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-27.87,16.95},{-49.71,16.95}}));
 end BM25;
+// fclass BM25
+// parameter Integer tan1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer tan1.inPort.n = tan1.n "Dimension of signal vector";
+// input Real tan1.inPort.signal[1] "Real input signals";
+// parameter Integer tan1.outPort.n = tan1.n "Dimension of signal vector";
+// output Real tan1.outPort.signal[1] "Real output signals";
+// output Real tan1.y[1] "Output signals";
+// Real tan1.u[1] "Input signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   tan1.u[1] = tan1.inPort.signal[1];
+//   tan1.y = {Modelica.Math.tan(tan1.u[1])};
+//   tan1.y[1] = tan1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(tan1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   tan1.inPort.signal[1] = constant1.outPort.signal[1];
+// end BM25;

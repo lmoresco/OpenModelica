@@ -15,6 +15,8 @@ setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"o
 getComponents(A);
 setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});
 getComponents(A);
+updateComponent(x,Integer,A);
+getComponents(A);
 // Result:
 // true
 // true
@@ -26,4 +28,6 @@ getComponents(A);
 // {{Real,x,"", "public", true, true, false, "constant", "outer", "output"}}
 // Ok
 // {{Real,x,"", "public", true, false, false, "discrete", "inner", "unspecified"}}
+// true
+// {{Integer,x,"", "public", true, false, false, "discrete", "inner", "unspecified"}}
 // endResult

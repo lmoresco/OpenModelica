@@ -974,3 +974,27 @@ model BM1
 equation 
   connect(abs1.inPort,constant1.outPort) annotation(Line(visible=true,points={{11.45,39.94},{-1.32,38.12}}));
 end BM1;
+
+// fclass BM1
+// parameter Integer abs1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer abs1.inPort.n = abs1.n "Dimension of signal vector";
+// input Real abs1.inPort.signal[1] "Real input signals";
+// parameter Integer abs1.outPort.n = abs1.n "Dimension of signal vector";
+// output Real abs1.outPort.signal[1] "Real output signals";
+// output Real abs1.y[1] "Output signals";
+// Real abs1.u[1] "Input signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   abs1.u[1] = abs1.inPort.signal[1];
+//   abs1.y = {abs(abs1.u[1])};
+//   abs1.y[1] = abs1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(abs1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   abs1.inPort.signal[1] = constant1.outPort.signal[1];
+// end BM1;
+

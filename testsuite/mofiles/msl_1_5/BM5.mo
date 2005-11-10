@@ -1071,3 +1071,25 @@ model BM5
 equation 
   connect(constant1.outPort,asin1.inPort) annotation(Line(visible=true,points={{-23.52,16.83},{1.72,15.92}}));
 end BM5;
+// fclass BM5
+// parameter Integer asin1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer asin1.inPort.n = asin1.n "Dimension of signal vector";
+// input Real asin1.inPort.signal[1] "Real input signals";
+// parameter Integer asin1.outPort.n = asin1.n "Dimension of signal vector";
+// output Real asin1.outPort.signal[1] "Real output signals";
+// output Real asin1.y[1] "Output signals";
+// Real asin1.u[1] "Input signals";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   asin1.u[1] = asin1.inPort.signal[1];
+//   asin1.y = {Modelica.Math.asin(asin1.u[1])};
+//   asin1.y[1] = asin1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(constant1.outPort.n == asin1.inPort.n,"automatically generated from connect");
+//   constant1.outPort.signal[1] = asin1.inPort.signal[1];
+// end BM5;

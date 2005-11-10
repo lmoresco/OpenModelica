@@ -1201,7 +1201,7 @@ end BS8;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   when sample(p_startTime[1],p_period[1]) then
+//   when sample(sawTooth1.p_startTime[1],sawTooth1.p_period[1]) then
 //   sawTooth1.T0[1] = time;
 //   end when;
 //   sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + if time < sawTooth1.p_startTime[1] then 0.0 else sawTooth1.p_amplitude[1] / sawTooth1.p_period[1] * (time - sawTooth1.T0[1]);

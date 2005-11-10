@@ -1321,6 +1321,6 @@ end BS11;
 //   timeTable1.outPort.signal[1] = der1.inPort.signal[1];
 // algorithm
 //   when {time >= pre(nextEvent),initial()} do
-//     (a, b, nextEvent, last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{table[1,1],table[1,2]},{table[2,1],table[2,2]},{table[3,1],table[3,2]}},scalar({offset[1]}),scalar({startTime[1]}),time,last,1e-13);
+// (a, b, nextEvent, last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({table[1],table[2],table[3]},scalar({offset[1]}),scalar({startTime[1]}),time,last,1e-13);
 //   end when;
 // end BS11;
