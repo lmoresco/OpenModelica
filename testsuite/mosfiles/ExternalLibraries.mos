@@ -10,7 +10,17 @@ system("gcc -c -o libExternalFunc1_ext.o ExternalFunc1.c");
 system("gcc -c -o libExternalFunc2.a ExternalFunc2.c");
 simulate(ExternalLibraries1,numberOfIntervals=5);
 resultSize:=readSimulationResultSize("ExternalLibraries1_res.plt");
-readSimulationResult("ExternalLibraries1_res.plt",{x,y},resultSize);
+echo(false);
+res:=readSimulationResult("ExternalLibraries1_res.plt",{x,y},resultSize);
+x:=res[1];
+y:=res[2];
+x:=100*x;
+y:=100*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/100.0;
+y/100.0;
 getErrorString();
 readFile("output.log");
 system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log");
@@ -24,7 +34,9 @@ system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExt
 //     resultFile = "ExternalLibraries1_res.plt"
 // end record
 // 6
-// {{1.0,0.600856216657383,0.403950305566201,0.288487010203958,0.213831091756544,0.162477019727119},{2.0,1.47702861915092,1.24427877474115,1.12932060688606,1.06962080454226,1.03781597225025}}
+// true
+// {1.0,0.6,0.4,0.28,0.21,0.16}
+// {2.0,1.47,1.24,1.12,1.06,1.03}
 // ""
 // ""
 // 0
