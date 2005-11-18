@@ -4,7 +4,7 @@
 // 
 //  Simulate models and read in data.
 //
-loadFile("../mofiles/SmallLinsys.mo");
+loadFile("SmallLinsys.mo");
 simulate(LinSys,numberOfIntervals=5);
 readSimulationResult("LinSys_res.plt",{x,y,z},6);
 readFile("output.log");
