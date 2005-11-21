@@ -1289,7 +1289,6 @@ model BS9
 equation 
   connect(sine1.outPort,der1.inPort) annotation(Line(visible=true,points={{-43.9,22.0},{-31.13,22.0}}));
 end BS9;
-
 // fclass BS9
 // parameter Integer sine1.nout = 1 "Number of outputs";
 // parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
@@ -1300,7 +1299,7 @@ end BS9;
 // parameter Real sine1.phase[1] = 0 "Phases of sine waves";
 // parameter Real sine1.offset[1] = 0 "Offsets of output signals";
 // parameter Real sine1.startTime[1] = 0 "Output = offset for time < startTime";
-// constant Real sine1.pi = Modelica.Constants.pi;
+// constant Real sine1.pi = 3.14159265358979;
 // parameter Real sine1.p_amplitude[1] = ({1.0} * sine1.amplitude[1])[1];
 // parameter Real sine1.p_freqHz[1] = ({1.0} * sine1.freqHz[1])[1];
 // parameter Real sine1.p_phase[1] = ({1.0} * sine1.phase[1])[1];
@@ -1314,7 +1313,7 @@ end BS9;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   sine1.outPort.signal[1] = sine1.p_offset[1] + if time < sine1.p_startTime[1] then 0.0 else sine1.p_amplitude[1] * Modelica.Math.sin(2.0 * sine1.pi * sine1.p_freqHz[1] * (time - sine1.p_startTime[1]) + sine1.p_phase[1]);
+//   sine1.outPort.signal[1] = sine1.p_offset[1] + if time < sine1.p_startTime[1] then 0.0 else sine1.p_amplitude[1] * Modelica.Math.sin(6.28318530717959 * sine1.p_freqHz[1] * (time - sine1.p_startTime[1]) + sine1.p_phase[1]);
 //   sine1.y[1] = sine1.outPort.signal[1];
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

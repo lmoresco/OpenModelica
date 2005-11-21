@@ -1309,7 +1309,6 @@ model BS3
 equation 
   connect(der1.inPort,expSine1.outPort) annotation(Line(visible=true,points={{5.06,23.22},{-14.09,24.13}}));
 end BS3;
-
 // fclass BS3
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
@@ -1328,7 +1327,7 @@ end BS3;
 // parameter Real expSine1.damping[1] = 1 "Damping coefficients of sine waves";
 // parameter Real expSine1.offset[1] = 0 "Offsets of output signals";
 // parameter Real expSine1.startTime[1] = 0 "Output = offset for time < startTime";
-// constant Real expSine1.pi = Modelica.Constants.pi;
+// constant Real expSine1.pi = 3.14159265358979;
 // parameter Real expSine1.p_amplitude[1] = ({1.0} * expSine1.amplitude[1])[1];
 // parameter Real expSine1.p_freqHz[1] = ({1.0} * expSine1.freqHz[1])[1];
 // parameter Real expSine1.p_phase[1] = ({1.0} * expSine1.phase[1])[1];
@@ -1339,7 +1338,7 @@ end BS3;
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
-//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * Modelica.Math.exp(-(time - expSine1.p_startTime[1] * expSine1.p_damping[1])) * Modelica.Math.sin(2.0 * expSine1.pi * expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1]) + expSine1.p_phase[1]);
+//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * Modelica.Math.exp(-(time - expSine1.p_startTime[1] * expSine1.p_damping[1])) * Modelica.Math.sin(6.28318530717959 * expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1]) + expSine1.p_phase[1]);
 //   expSine1.y[1] = expSine1.outPort.signal[1];
 // assert(der1.inPort.n == expSine1.outPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = expSine1.outPort.signal[1];
