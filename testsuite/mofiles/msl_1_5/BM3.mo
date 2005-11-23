@@ -1020,7 +1020,7 @@ end BM3;
 // equation
 //   add1.u1[1] = add1.inPort1.signal[1];
 //   add1.u2[1] = add1.inPort2.signal[1];
-//   add1.y[1] = (add1.k1 * add1.u1 + add1.k2 * add1.u2)[1];
+//   add1.y[1] = add1.k1 * add1.u1[1] + add1.k2 * add1.u2[1];
 //   add1.y[1] = add1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

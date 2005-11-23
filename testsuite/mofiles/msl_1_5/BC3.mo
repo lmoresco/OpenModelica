@@ -987,8 +987,8 @@ end BC3;
 // Real firstOrder1.u[1] "Input signals";
 // parameter Real firstOrder1.k[1] = 1 "Gain";
 // parameter Real firstOrder1.T[1] = 1 "Time Constant";
-// parameter Real firstOrder1.p_k[1] = ({1.0} * firstOrder1.k[1])[1];
-// parameter Real firstOrder1.p_T[1] = ({1.0} * firstOrder1.T[1])[1];
+// parameter Real firstOrder1.p_k[1] = 1.0 * firstOrder1.k[1];
+// parameter Real firstOrder1.p_T[1] = 1.0 * firstOrder1.T[1];
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

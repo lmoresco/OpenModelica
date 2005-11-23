@@ -6,15 +6,32 @@
 //
 loadFile("SmallLinsys.mo");
 simulate(LinSys,numberOfIntervals=5);
-readSimulationResult("LinSys_res.plt",{x,y,z},6);
+echo(false);
+res:=readSimulationResult("LinSys_res.plt",{x,y,z},6);
+x:=res[1];
+y:=res[2];
+z:=res[3];
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+echo(true);
+x/1000.0;
+y/1000.0;
+z/1000.0;
 readFile("output.log");
 system("rm -rf LinSys.* LinSys_* output.log");
 // Result:
 // true
 // record
-//    resultFile = "LinSys_res.plt"
+//     resultFile = "LinSys_res.plt"
 // end record
-// {{1.0,1.6548714147285,2.16942297506742,2.62027847394918,3.03274779638049,3.41888974006754},{2.0,2.0,2.0,2.0,2.0,2.0},{3.0,2.5451285852715,2.2305770249326,1.97972152605084,1.76725220361953,1.58111025993248}}
+// true
+// {1.0,1.654,2.169,2.62,3.032,3.418}
+// {2.0,2.0,2.0,2.0,2.0,2.0}
+// {3.0,2.545,2.23,1.979,1.767,1.581}
 // ""
 // 0
 // endResult

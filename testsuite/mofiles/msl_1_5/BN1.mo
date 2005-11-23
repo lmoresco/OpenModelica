@@ -957,7 +957,7 @@ end BN1;
 // output Real deadZone1.y[1] "Output signals";
 // Real deadZone1.u[1] "Input signals";
 // parameter Real deadZone1.uMax[1] = 1 "Upper limits of dead zones";
-// parameter Real deadZone1.uMin[1] = (-{deadZone1.uMax[1]})[1] "Lower limits of dead zones";
+// parameter Real deadZone1.uMin[1] = -deadZone1.uMax[1] "Lower limits of dead zones";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
