@@ -23,9 +23,9 @@ getComponents(A);
 // Ok
 // {{Real,x,"", "public", false, false, false, "unspecified", "innerouter", "unspecified"}}
 // Ok
-// {{Real,x,"", "protected", true, true, false, "parameter", "innerouter", "input"}}
+// {{Real,x,"", "protected", true, true, true, "parameter", "innerouter", "input"}}
 // Ok
-// {{Real,x,"", "public", true, true, false, "constant", "outer", "output"}}
+// {{Real,x,"", "public", true, true, true, "constant", "outer", "output"}}
 // Ok
 // {{Real,x,"", "public", true, false, false, "discrete", "inner", "unspecified"}}
 // true
