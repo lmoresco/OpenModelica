@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0168197220774C758C1C9A0C54B8BA65"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_01A3BBDA71D74805ABE1FD7F38277C72"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -544,6 +550,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2DC685A9402642B6AB599C247184EAA1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2DE728FD10054826B1389E0143E00EFF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1317,6 +1329,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_72D3ECBC32A44BDF9B845686FE18886D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_739FA513DE5449C88EAC3B22AE6DDC51"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1510,6 +1528,12 @@
         "Entry"
         {
         "MsmKey" = "8:_85CFAA0F5C9F4480AF534EAD3F066FDD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_864CC257E5514C3084ADCF41FB186564"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2859,7 +2883,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F70DBF6F8C284BE3B066D11EA22BB25E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F723436F70B54E34949F2B21988278F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F82081918EDA49B78FF5C73044CD5359"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3061,6 +3097,26 @@
             "TargetName" = "8:ftell64_.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_0168197220774C758C1C9A0C54B8BA65"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalFunc1.c"
+            "TargetName" = "8:ExternalFunc1.c"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4761,6 +4817,26 @@
             "TargetName" = "8:Exercise1.nb"
             "Tag" = "8:"
             "Folder" = "8:_B6C3A9C0CD714A97AFE7CE5227DF5505"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_2DE728FD10054826B1389E0143E00EFF"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalFunc2.c"
+            "TargetName" = "8:ExternalFunc2.c"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7315,6 +7391,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_72D3ECBC32A44BDF9B845686FE18886D"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalLibraries.mo"
+            "TargetName" = "8:ExternalLibraries.mo"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_739FA513DE5449C88EAC3B22AE6DDC51"
             {
             "SourcePath" = "8:..\\..\\helptext.txt"
@@ -7941,6 +8037,26 @@
             "TargetName" = "8:Short.nb"
             "Tag" = "8:"
             "Folder" = "8:_5A17D3713FE94D9A97E8DA09A86382C0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_864CC257E5514C3084ADCF41FB186564"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalLibraries.mos"
+            "TargetName" = "8:ExternalLibraries.mos"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12375,12 +12491,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F70DBF6F8C284BE3B066D11EA22BB25E"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalFunc1_ext.h"
+            "TargetName" = "8:ExternalFunc1_ext.h"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_F723436F70B54E34949F2B21988278F8"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\Equations.nb"
             "TargetName" = "8:Equations.nb"
             "Tag" = "8:"
             "Folder" = "8:_F1449E47B1AF4CDEB2CE29DC3CF1497E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F82081918EDA49B78FF5C73044CD5359"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ExternalFunc2.h"
+            "TargetName" = "8:ExternalFunc2.h"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -13023,7 +13179,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{46AD8DDE-52BE-45CA-812E-D50B8B71A240}"
-        "PackageCode" = "8:{0932D52E-7557-4A6B-926E-1F6DC5C78A87}"
+        "PackageCode" = "8:{0F19FE2B-12A8-4322-93ED-CA97108E1492}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
