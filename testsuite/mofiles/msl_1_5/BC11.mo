@@ -964,3 +964,37 @@ model BC11
 equation 
   connect(transferFunction1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-14.4,26.56},{-37.51,26.87}}));
 end BC11;
+
+// fclass BC11
+// parameter Integer transferFunction1.inPort.n = 1 "Dimension of signal vector";
+// input Real transferFunction1.inPort.signal[1] "Real input signals";
+// parameter Integer transferFunction1.outPort.n = 1 "Dimension of signal vector";
+// output Real transferFunction1.outPort.signal[1] "Real output signals";
+// output Real transferFunction1.y;
+// Real transferFunction1.u;
+// parameter Real transferFunction1.b[1] = 1 "Numerator coefficients of transfer function.";
+// parameter Real transferFunction1.a[1] = 1 "Denominator coefficients of transfer function.";
+// parameter Real transferFunction1.a[2] = 1 "Denominator coefficients of transfer function.";
+// output Real transferFunction1.x[1] "State of transfer function from controller canonical form";
+// parameter Integer transferFunction1.na = 2 "Size of Denominator of transfer function.";
+// parameter Integer transferFunction1.nb = 1 "Size of Numerator of transfer function.";
+// parameter Integer transferFunction1.nx = 1;
+// Real transferFunction1.x1dot "Derivative of first state of TransferFcn";
+// Real transferFunction1.xn "Highest order state of TransferFcn";
+// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1 "Constant output values";
+// equation
+//   transferFunction1.u = transferFunction1.inPort.signal[1];
+//   der(transferFunction1.x[1]) = transferFunction1.x1dot;
+//   transferFunction1.xn = transferFunction1.x[1];
+//   {{transferFunction1.u}} = transpose({{transferFunction1.a[1]},{transferFunction1.a[2]}}) * {{transferFunction1.x1dot},transferFunction1.x};
+//   {{transferFunction1.y}} = transpose({{0},{transferFunction1.b[1]}}) * {{transferFunction1.x1dot},transferFunction1.x};
+//   transferFunction1.y = transferFunction1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(transferFunction1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   transferFunction1.inPort.signal[1] = constant1.outPort.signal[1];
+// end BC11;

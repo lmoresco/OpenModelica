@@ -2,7 +2,7 @@ TEST=./rtest
 #TEST=runtest
 
 TESTFILES= BC1.mo BC2.mo BC3.mo BC4.mo BC5.mo BC6.mo BC7.mo BC8.mo BC9.mo \
- BC10.mo BS1.mo BS2.mo BS3.mo BS4.mo BS5.mo BS6.mo BS7.mo BS8.mo \
+ BC10.mo BC11.mo BS1.mo BS2.mo BS3.mo BS4.mo BS5.mo BS6.mo BS7.mo BS8.mo \
 BS9.mo BS10.mo BS11.mo BS12.mo BS13.mo BS14.mo BS15.mo BS16.mo BS17.mo \
 BN1.mo BN2.mo BN3.mo  \
 BM1.mo BM2.mo BM3.mo BM4.mo BM5.mo BM6.mo BM7.mo BM8.mo BM9.mo BM10.mo \
@@ -11,7 +11,7 @@ BM20.mo BM21.mo BM22.mo BM23.mo BM24.mo BM25.mo BM26.mo BM27.mo BM28.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= BC11.mo
+FAILINGTESTFILES= 
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

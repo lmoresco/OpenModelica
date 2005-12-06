@@ -71,7 +71,7 @@ end Minimum;
 
 
 model Influenza 
-  input Real Introduction = 77;
+  input Real Introduction(start = 77);
   
   Population Immune_Popul(p(start = 10));
   Population Non_Infected_Popul(p(start = 100));

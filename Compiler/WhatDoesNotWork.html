@@ -4,12 +4,11 @@
 </head>
 <body>
 <h1>Things that does not work</h1>
-OpenModelica v.1.2.2<br>
+OpenModelica v.1.3.1<br>
 <br>
 <h2>&nbsp;In simulation code: <br>
 </h2>
 <ul>
-  <li>&nbsp;Event handling, only continuous subset of Modelica works<br>
   </li>
   <li>&nbsp;Limited error checking in numerical solver. <br>
   </li>
@@ -19,8 +18,6 @@ OpenModelica v.1.2.2<br>
   </li>
   <li>Only possible to run with DASSL numerical solver. <br>
   </li>
-  <li>initial equation can not be used. Set initial values using the
-start attribute instead, e.g. Real x(start=1);</li>
   <li>All initial values must be consistent, i.e. no initial value
 calculation is performed. This can be done by hand and filled in into
 the &lt;modelname&gt;_init.txt file.<br>
@@ -33,7 +30,6 @@ the &lt;modelname&gt;_init.txt file.<br>
   <li>Inner/Outer&nbsp; </li>
   <li>Some excotic cases with Modifications, especially with redeclare.
   </li>
-  <li>Each modifier</li>
   <li>Final element modification not checked against.</li>
   <li>Constraining type on redeclarations</li>
   <li>Restrictions on redeclarations (subtype etc.)</li>
@@ -42,13 +38,11 @@ the &lt;modelname&gt;_init.txt file.<br>
   <li>When clauses. </li>
   <li>Restrictions on connections. </li>
   <li>The following operators in 3.4.2 have not been implemented: <br>
-smooth noEvent sample edge change reinit terminate mod delay
-cardinality&nbsp;<br>
+smooth terminate delay &nbsp;<br>
   </li>
   <li>Reduction expressions, </li>
   <li>Slice operation. Partly works but the resulting component names
 are sometimes messed up. </li>
-  <li>Vectorized call of functions not implemented. </li>
   <li>Output parameters of functions, enable attribute, etc.</li>
 </ul>
 <ul>
