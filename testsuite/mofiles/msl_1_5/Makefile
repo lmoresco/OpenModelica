@@ -10,8 +10,8 @@ BM11.mo BM12.mo BM13.mo BM14.mo BM15.mo BM16.mo BM17.mo BM18.mo BM19.mo \
 BM20.mo BM21.mo BM22.mo BM23.mo BM24.mo BM25.mo BM26.mo BM27.mo BM28.mo 
 
 # test that currently fail. Move up when fixed. 
-# Run make testfailing
-FAILINGTESTFILES= 
+# Run make failingtest
+FAILINGTESTFILES= "No failing tests left"
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

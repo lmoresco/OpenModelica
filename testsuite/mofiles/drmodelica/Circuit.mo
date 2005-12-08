@@ -2,6 +2,16 @@
 // keywords: algorithm, equation
 // status:   correct
 
+package Modelica
+  package SIunits
+  type ElectricCurrent = Real (final quantity="ElectricCurrent", final unit="A");
+  type Current = ElectricCurrent;
+   type Voltage = ElectricPotential;
+   type ElectricPotential = Real ( final quantity="ElectricPotential",
+		final unit="V");
+  end SIunits;
+end Modelica;
+
 connector Pin
   import Modelica.SIunits.Voltage;
   import Modelica.SIunits.Current;

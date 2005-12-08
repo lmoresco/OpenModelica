@@ -24,3 +24,15 @@ model PolynomialEvaluator2
 equation
   result = polyeval(inVector);
 end PolynomialEvaluator2;
+// fclass PolynomialEvaluator2
+// Real inVector[1];
+// Real inVector[2];
+// Real inVector[3];
+// Real result;
+// equation
+//   inVector[1] = 3.0;
+//   inVector[2] = 8.0;
+//   inVector[3] = 5.0;
+//   result = polyeval(inVector);
+// end PolynomialEvaluator2;
+

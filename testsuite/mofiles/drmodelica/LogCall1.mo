@@ -6,7 +6,7 @@
 function log "Natural logarithm"
   input Real x;
   output Real y;
-  external "C"
+  external "C";
 end log;
 
 model LogCall1
@@ -19,5 +19,5 @@ end LogCall1;
 // fclass LogCall1
 // Real res;
 // equation
-//   res = 366.699188232422;  // Wrong!!
+//   res = 4.60516977310181;
 // end LogCall1;

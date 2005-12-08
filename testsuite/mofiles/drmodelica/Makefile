@@ -1,11 +1,13 @@
 TEST=./rtest
 #TEST=runtest
 
-TESTFILES= AlgorithmSection.mo ArrayDim3.mo ArrayDim4.mo \
-BouncingBall.mo DAEexample.mo ElementWiseMultiplication.mo \
-Equations.mo ModifiedFiltersInSeries.mo PolynomialEvaluator1.mo \
-Summation.mo VanDerPol.mo
+TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \
+ArrayDim1.mo Colors.mo MultFuncCall.mo ArrayDim2.mo DAEexample.mo \
+PolynomialEvaluator1.mo ArrayDim3.mo ElementWiseMultiplication.mo \
+PolynomialEvaluator2.mo ArrayDim4.mo Equations.mo Summation.mo \
+BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo
 
+FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
 	Makefile rtest cases.texi index.html
@@ -26,6 +28,12 @@ test :
 	@echo Running tests...
 	@echo
 	@$(TEST) $(TESTFILES)
+
+failingtest :
+	@echo
+	@echo Running failing tests...
+	@echo
+	@$(TEST) $(FAILINGTESTFILES)
 
 keywords :
 	$(TEST) -l $(TESTFILES)

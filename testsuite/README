@@ -8,10 +8,21 @@ The testsuite consists of modelica files (.mo) and modelica script files (.mos) 
 2. rtest in directory mofiles
    Will run all tests in the directory, including tests that does not pass.
 
+3. make failingtest runs the tests that is added but not in the testsuite since they
+  fail, i.e. not implemented in OMC yet.
 
 To get a correct testfile, watch out for use of tab and space, can be hard to find. If rtest fails but the single file actually translates with omc the check the log file in the /tmp directory. 
 
-OBS!
+Templates for writing testfiles are:
+
+mofiles/translation_template.mo
+mofiles/translation_failed_template.mo
+
+mosfiles/simulation_template.mos
+mosfiles/simulation_failed_template.mos
+
+
+NOTE:
 A test MUST have the finishing "end ..." at the same indentation level as the "model ..." otherwise there will be a warning(perl -w rtest file) for the next test that are executed.
 NEVER do this:
 // flcass ...
