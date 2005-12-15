@@ -1,0 +1,24 @@
+// name:      SumVectorForIf
+// keywords:  equation
+// status:    incorrect
+loadFile("SumVectorForIf.mo");
+simulate(SumVector, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+echo(false);
+res:=readSimulationResult("SumVectorForIf_res.plt",{sum},3);
+x := res[1];
+x := 1000*x;
+x := floor(x);
+echo(true);
+x/1000.0;
+readFile("output.log");
+system("rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "SumVectorForIf_res.plt"
+// end record
+// true
+// {1500.0,1500.0,1500.0}
+// ""
+// 0
+// endResult

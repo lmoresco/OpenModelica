@@ -1,0 +1,27 @@
+// name:      PolynomialEvaluator1
+// keywords:  function, algorithm, scoping, array
+// status:    incorrect
+//
+// Don't know result value...
+//
+loadFile("PolynomialEvaluator1.mo");
+simulate(PolynomialEvaluator1, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+echo(false);
+res:=readSimulationResult("PolynomialEvaluator1_res.plt",{result},3);
+x := res[1];
+x := 1000*x;
+x := floor(x);
+echo(true);
+x/1000.0;
+readFile("output.log");
+system("rm -rf PolynomialEvaluator1_* PolynomialEvaluator1.exe PolynomialEvaluator1.cpp PolynomialEvaluator1.makefile PolynomialEvaluator1.libs PolynomialEvaluator1.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "PolynomialEvaluator1_res.plt"
+// end record
+// true
+// { <<RESULT>> }
+// ""
+// 0
+// endResult
