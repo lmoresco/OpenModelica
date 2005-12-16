@@ -1,0 +1,23 @@
+// name:     API loadFileInteractiveQualified
+// keywords: Graphical API interactive loading of files in a scope
+// status:   correct
+// 
+//  Subset of the Graphical API, interactive loading of files in a scope
+//
+
+loadFileInteractiveQualified("loadFileInteractiveQualifiedInit.mo");
+getClassNames(Something);
+loadFileInteractiveQualified("loadFileInteractiveQualified.mo");
+getElementsInfo(Something.Somewhere.BlaBla);
+getElementsInfo(Something.Somewhere.BlaBla.Z);
+
+// Result:
+// {Something}
+// {Somewhere}
+// {Something.Somewhere.Stuff,Something.Somewhere.Stuff2,Something.Somewhere.BlaBla}
+// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementline=23, elementcolumn=3, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Z, classrestriction=RECORD, classfile="loadFileInteractiveQualified.mo", classline=23, classcolumn=3 }
+//  }
+// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementline=24, elementcolumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, variability="unspecified", direction="unspecified" },
+// { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementline=25, elementcolumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, variability="unspecified", direction="unspecified" }
+//  }
+// endResult
