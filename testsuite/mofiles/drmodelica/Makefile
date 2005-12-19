@@ -5,9 +5,13 @@ TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \
 ArrayDim1.mo Colors.mo MultFuncCall.mo ArrayDim2.mo DAEexample.mo \
 PolynomialEvaluator1.mo ArrayDim3.mo ElementWiseMultiplication.mo \
 PolynomialEvaluator2.mo ArrayDim4.mo Equations.mo Summation.mo \
-BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo
+BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
+AppendElement.mo ArrayAddSub.mo ArrayDiv.mo ArrayExponentiation.mo \
+ArrayFieldSlice.mo ArraySlice.mo BlockMatrix.mo BlockMatrix2.mo \
+BlockMatrix3.mo PointInst.mo PointSum.mo \
+VectorizeSeveralArguments.mo
 
-FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo
+FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo ArrayDivError.mo CyclicPerm.mo
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
 	Makefile rtest cases.texi index.html
