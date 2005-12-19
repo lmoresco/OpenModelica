@@ -9,6 +9,6 @@ model ParseError2
   Real 1x;
 end ParseError2;
 
-// [ParseError2.mo:9:3]: error: unexpected token: Real
+// [ParseError2.mo:9:3]: Parse error: unexpected token: Real
 
 

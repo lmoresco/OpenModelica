@@ -144,6 +144,12 @@
 				RelativePath="..\winruntime\daeext.cpp">
 			</File>
 			<File
+				RelativePath="..\winruntime\errorext.cpp">
+			</File>
+			<File
+				RelativePath="..\winruntime\ErrorMessage.cpp">
+			</File>
+			<File
 				RelativePath=".\omc_communication.cc">
 			</File>
 			<File
@@ -208,6 +214,9 @@ popd
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="..\winruntime\ErrorMessage.hpp">
+			</File>
 			<File
 				RelativePath=".\omc_communication.h">
 			</File>
