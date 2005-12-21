@@ -9,9 +9,24 @@ BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
 AppendElement.mo ArrayAddSub.mo ArrayDiv.mo ArrayExponentiation.mo \
 ArrayFieldSlice.mo ArraySlice.mo BlockMatrix.mo BlockMatrix2.mo \
 BlockMatrix3.mo PointInst.mo PointSum.mo \
-VectorizeSeveralArguments.mo
+VectorizeSeveralArguments.mo \
+ComplexNumbers.mo EquationCall.mo  \
+ StatementCall.mo BouncingBall.mos
 
-FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo ArrayDivError.mo CyclicPerm.mo
+FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo ArrayDivError.mo \
+CyclicPerm.mo \
+ComplexNumbers.mos EquationCall.mos FilterBlock1.mo FilterBlock1.mos \
+PolynomialEvaluator1.mos PolynomialEvaluator2.mos \
+PolynomialEvaluator3.mo PolynomialEvaluator3.mos \
+JoinThreeVectors.mo JoinThreeVectors.mos \
+MRFCall.mo MRFCall.mos BouncingBall.mos \
+OneArgBaseFunction.mo OneArgBaseFunction.mos \
+StatementCall.mo StatementCall.mos \
+WhenPriority.mo WhenPriority.mos
+
+
+
+
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
 	Makefile rtest cases.texi index.html
