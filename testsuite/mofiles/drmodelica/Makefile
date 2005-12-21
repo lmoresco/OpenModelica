@@ -9,21 +9,28 @@ BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
 AppendElement.mo ArrayAddSub.mo ArrayDiv.mo ArrayExponentiation.mo \
 ArrayFieldSlice.mo ArraySlice.mo BlockMatrix.mo BlockMatrix2.mo \
 BlockMatrix3.mo PointInst.mo PointSum.mo \
-VectorizeSeveralArguments.mo \
 ComplexNumbers.mo EquationCall.mo  \
- StatementCall.mo BouncingBall.mos
+StatementCall.mo BouncingBall.mos \
+VectorizeSeveralArguments.mo \
+AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
+ColoredPointLegalMod.mo ArraysInitLegal.mo \
+TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
+RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInValid.mo
 
-FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo ArrayDivError.mo \
-CyclicPerm.mo \
-ComplexNumbers.mos EquationCall.mos FilterBlock1.mo FilterBlock1.mos \
+FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo \
+ArrayDivError.mo CyclicPerm.mo \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos \
 PolynomialEvaluator3.mo PolynomialEvaluator3.mos \
 JoinThreeVectors.mo JoinThreeVectors.mos \
 MRFCall.mo MRFCall.mos BouncingBall.mos \
 OneArgBaseFunction.mo OneArgBaseFunction.mos \
 StatementCall.mo StatementCall.mos \
-WhenPriority.mo WhenPriority.mos
-
+WhenPriority.mo WhenPriority.mos \
+ColoredPointIllegalMod1.mo \
+ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
+ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
+MicroCircuitValid.mo MicroCircuitInvalid.mo \
+GenericMicroCircuit.mo
 
 
 
@@ -33,7 +40,7 @@ DISTFILES=$(TESTFILES) VERSION modtest.texi \
 HTMLFILE=modtest_toc.html
 
 TEXI2DVI=texi2dvi
-TEXI2HTML=texi2html -split_chapter
+TEXI2HTML=texi2html -split_chapte
 MAKEINFO=makeinfo
 
 VERSION = $(shell cat VERSION)
