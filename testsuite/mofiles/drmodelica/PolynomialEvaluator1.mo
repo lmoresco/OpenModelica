@@ -1,39 +1,50 @@
-// name:     PolynomialEvaluator1
-// keywords: function, algorithm, scoping, array
+// name:     PolynomialEvaluator
+// keywords: dynamic array, for
 // status:   correct
+// 
+// Tests positional arguments, dynamic array sizes etc.
+// 
 
-
-function polyeval
-  input Real a[3];
-  input Real x = 1;
-  output Real y;
+function PolynomialEvaluator
+  input Real A[:]; // Array, size defined at function call time
+  input Real x := 1.0; // Default value 1.0 for x
+  output Real sum;
 protected
   Real xpower;
 algorithm
-  y := 0;
+  sum := 0;
   xpower := 1;
-  for i in 1:size(a,1) loop
-    y := y + a[i]*xpower;
-    xpower := xpower * x;
+  for i in 1:size(A, 1) loop
+    sum := sum + A[i]*xpower;
+    xpower := xpower*x;
   end for;
-end polyeval;
+end PolynomialEvaluator;
 
-model PolynomialEvaluator1
-  Real inVector[3] = {3,8,5};
-  Real result;
+class PositionalCall
+  Real p;
 equation
-  result = polyeval(inVector);
-end PolynomialEvaluator1;
+  p = PolynomialEvaluator({1,2,3,4},21);
+end PositionalCall;
 
 
-// fclass PolynomialEvaluator1
-// Real inVector[1];
-// Real inVector[2];
-// Real inVector[3];
-// Real result;
+// function PolynomialEvaluator
+// input Real A;
+// input Real x;
+// output Real sum;
+// Real xpower;
 // equation
-//   inVector[1] = 3.0;
-//   inVector[2] = 8.0;
-//   inVector[3] = 5.0;
-//   result = polyeval(inVector);
-// end PolynomialEvaluator1;
+//   x = 1.0;
+// algorithm
+//   sum := 0.0;
+//   xpower := 1.0;
+//   for i in 1:size(A,1) loop
+//     sum := sum + A[i] * xpower;
+//     xpower := xpower * x;
+//   end for;
+// end PolynomialEvaluator;
+// 
+// fclass PositionalCall
+// Real p;
+// equation
+//   p = 38410.0;
+// end PositionalCall;
