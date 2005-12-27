@@ -3,33 +3,33 @@ TEST=./rtest
 
 TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \
 ArrayDim1.mo Colors.mo MultFuncCall.mo ArrayDim2.mo DAEexample.mo \
-PolynomialEvaluator1.mo ArrayDim3.mo ElementWiseMultiplication.mo \
-PolynomialEvaluator2.mo ArrayDim4.mo Equations.mo Summation.mo \
+PolynomialEvaluator1.mos  PolynomialEvaluator3.mos ArrayDim3.mo ElementWiseMultiplication.mo \
+PolynomialEvaluator2.mos ArrayDim4.mo Equations.mo Summation.mo \
 BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
-AppendElement.mo ArrayAddSub.mo ArrayDiv.mo ArrayExponentiation.mo \
-ArrayFieldSlice.mo ArraySlice.mo BlockMatrix.mo BlockMatrix2.mo \
-BlockMatrix3.mo PointInst.mo PointSum.mo \
+ArrayAddSub.mo ArrayDiv.mo ArrayDivError.mo \
+JoinThreeVectors2.mos \
+BlockMatrix.mo BlockMatrix2.mo \
+BlockMatrix3.mo  PointSum.mo \
 ComplexNumbers.mo EquationCall.mo  \
-StatementCall.mo BouncingBall.mos \
+StatementCall.mos BouncingBall.mos \
 VectorizeSeveralArguments.mo \
 AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
 ColoredPointLegalMod.mo ArraysInitLegal.mo \
+CyclicPerm.mo \
+MRFcall.mo \
+MicroCircuitInvalid.mo \
+WhenPriority.mos \
+OneArgBaseFunction.mos \
 TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
 RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInValid.mo
 
-FAILINGTESTFILES= Circuit.mo ColorClasses.mo LeastSquares.mo \
-ArrayDivError.mo CyclicPerm.mo \
-PolynomialEvaluator1.mos PolynomialEvaluator2.mos \
-PolynomialEvaluator3.mo PolynomialEvaluator3.mos \
-JoinThreeVectors.mo JoinThreeVectors.mos \
-MRFCall.mo MRFCall.mos BouncingBall.mos \
-OneArgBaseFunction.mo OneArgBaseFunction.mos \
-StatementCall.mo StatementCall.mos \
-WhenPriority.mo WhenPriority.mos \
+FAILINGTESTFILES= AppendElement.mo ArrayExponentiation.mo Circuit.mo ColorClasses.mo LeastSquares.mo \
+ArrayFieldSlice.mo ArraySlice.mo \
+PointInst.mo \
 ColoredPointIllegalMod1.mo \
 ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
 ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
-MicroCircuitValid.mo MicroCircuitInvalid.mo \
+MicroCircuitValid.mo \
 GenericMicroCircuit.mo
 
 
