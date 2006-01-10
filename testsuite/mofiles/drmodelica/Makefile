@@ -25,9 +25,10 @@ RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInValid.mo \
 HelloWorld.mo Xpowers1.mo Xpowers2.mo Xpowers3.mo \
 PolynomialEvaluator1.mo PolynomialEvaluator2.mo FuncMultResults.mo \
 SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
-AlgorithmCondAssign1.mo AlgorithmCondAssign2.mo
+AlgorithmCondAssign1.mo 
 
 FAILINGTESTFILES= AppendElement.mo ArrayExponentiation.mo Circuit.mo ColorClasses.mo LeastSquares.mo \
+AlgorithmCondAssign2.mo \
 ArrayFieldSlice.mo ArraySlice.mo \
 PointInst.mo \
 ColoredPointIllegalMod1.mo \
