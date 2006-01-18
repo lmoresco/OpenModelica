@@ -25,3 +25,6 @@ model D2
   extends B2(a(x=2*y),f=1);
   extends C2(m=1,n=2);
 end D2;
+model E
+  A a(p1=1,p2=2);
+end E;
