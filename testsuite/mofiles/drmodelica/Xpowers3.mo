@@ -25,5 +25,5 @@ end Xpowers3;
 // parameter Integer n = 5;
 // equation
 //   xpowers[1] = 1.0;
-//   xpowers[2:(n + 1)] = xpowers[1:n] * x;
+//  xpowers[2:(1 + n)] = xpowers[1:n] * x;
 // end Xpowers3;

@@ -1765,6 +1765,7 @@ model BC6
 equation 
   connect(constant1.outPort,limPID1.inPort_s) annotation(Line(visible=true,points={{-11.66,13.79},{1.11,15.62}}));
 end BC6;
+
 // fclass BC6
 // Real limPID1.u_s "Scalar setpoint input signal";
 // Real limPID1.u_m "Scalar measurement input signal";
@@ -1843,8 +1844,8 @@ end BC6;
 // parameter Real limPID1.D.k[1] = limPID1.Td "Gains";
 // parameter Real limPID1.D.T[1] "Time constants (T>0 required; T=0 is ideal derivative block)";
 // output Real limPID1.D.x[1] "State of block";
-// parameter Real limPID1.D.p_k[1] = 1.0 * limPID1.D.k[1];
-// parameter Real limPID1.D.p_T[1] = 1.0 * limPID1.D.T[1];
+// parameter Real limPID1.D.p_k[1] = limPID1.D.k[1] * 1.0;
+// parameter Real limPID1.D.p_T[1] = limPID1.D.T[1] * 1.0;
 // parameter Real limPID1.gainPID.k[1] = limPID1.k "Gain vector multiplied element-wise with input vector";
 // Real limPID1.gainPID.u[1] "Input signals";
 // Real limPID1.gainPID.y[1] "Output signals";
@@ -1888,7 +1889,7 @@ end BC6;
 // Real limPID1.addSat.u2[1] "Input signals 2";
 // parameter Real limPID1.addSat.k1 = 1 "Gain of upper input";
 // parameter Real limPID1.addSat.k2 = -1 "Gain of lower input";
-// parameter Real limPID1.gainTrack.k[1] = 1.0 / (limPID1.k * limPID1.Ni) "Gain vector multiplied element-wise with input vector";
+// parameter Real limPID1.gainTrack.k[1] = 1.0 / limPID1.Ni / limPID1.k "Gain vector multiplied element-wise with input vector";
 // Real limPID1.gainTrack.u[1] "Input signals";
 // Real limPID1.gainTrack.y[1] "Output signals";
 // parameter Integer limPID1.gainTrack.inPort.n = 1 "Dimension of signal vector";
@@ -1919,9 +1920,9 @@ end BC6;
 //   der(limPID1.I.y[1]) = limPID1.I.k[1] * limPID1.I.u[1];
 //   limPID1.I.y[1] = limPID1.I.outPort.signal[1];
 //   limPID1.D.u[1] = limPID1.D.inPort.signal[1];
-//   limPID1.D.T = {max({{limPID1.Td / limPID1.Nd,1e-14}})};
-//   der(limPID1.D.x[1]) = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then (limPID1.D.u[1] - limPID1.D.x[1]) / limPID1.D.p_T[1] else 0.0;
-//   limPID1.D.y[1] = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then limPID1.D.p_k[1] / limPID1.D.p_T[1] * (limPID1.D.u[1] - limPID1.D.x[1]) else 0.0;
+//   limPID1.D.T = {max({{limPID1.Td * 1.0 / limPID1.Nd,1e-14}})};
+//   der(limPID1.D.x[1]) = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then (limPID1.D.u[1] - limPID1.D.x[1]) * 1.0 / limPID1.D.p_T[1] else 0.0;
+//   limPID1.D.y[1] = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then limPID1.D.p_k[1] * (limPID1.D.u[1] - limPID1.D.x[1]) * 1.0 / limPID1.D.p_T[1] else 0.0;
 //   limPID1.D.y[1] = limPID1.D.outPort.signal[1];
 //   limPID1.gainPID.u[1] = limPID1.gainPID.inPort.signal[1];
 //   limPID1.gainPID.y[1] = limPID1.gainPID.outPort.signal[1];

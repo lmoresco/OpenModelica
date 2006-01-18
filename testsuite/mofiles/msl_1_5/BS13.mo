@@ -960,6 +960,7 @@ model BS13
 equation 
   connect(integerToReal1.inPort,integerConstant1.outPort) annotation(Line(visible=true,points={{-35.38,24.43},{-57.89,25.35}}));
 end BS13;
+
 // fclass BS13
 // parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
 // parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
@@ -972,7 +973,7 @@ end BS13;
 // output Integer integerConstant1.y[1];
 // parameter Integer integerConstant1.k[1] = 1 "Constant output values";
 // equation
-//   integerToReal1.outPort.signal[1] = Real(integerToReal1.inPort.signal)[1];
+//   integerToReal1.outPort.signal[1] = Real(integerToReal1.inPort.signal[1]);
 //   integerConstant1.outPort.signal[1] = integerConstant1.k[1];
 //   integerConstant1.y[1] = integerConstant1.outPort.signal[1];
 // assert(integerToReal1.inPort.n == integerConstant1.outPort.n,"automatically generated from connect");

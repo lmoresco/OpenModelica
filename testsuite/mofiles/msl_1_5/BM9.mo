@@ -1078,7 +1078,7 @@ end BM9;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   cosh1.u[1] = cosh1.inPort.signal[1];
-//   cosh1.y = {Modelica.Math.cosh(cosh1.u[1])};
+//   {cosh1.y[1]} = {Modelica.Math.cosh(cosh1.u[1])};
 //   cosh1.y[1] = cosh1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

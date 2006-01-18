@@ -994,7 +994,7 @@ end BM23;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sqrt1.u[1] = sqrt1.inPort.signal[1];
-//   sqrt1.y = {sqrt(sqrt1.u[1])};
+//   {sqrt1.y[1]} = {sqrt(sqrt1.u[1])};
 //   sqrt1.y[1] = sqrt1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

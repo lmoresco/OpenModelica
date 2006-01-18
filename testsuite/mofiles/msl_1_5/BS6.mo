@@ -1194,11 +1194,11 @@ end BS6;
 // parameter Real pulse1.period[1] = 1 "Times for one period";
 // parameter Real pulse1.offset[1] = 0 "Offsets of output signals";
 // parameter Real pulse1.startTime[1] = 0 "Output = offset for time < startTime";
-// parameter Real pulse1.p_amplitude[1] = 1.0 * pulse1.amplitude[1];
-// parameter Real pulse1.p_period[1] = 1.0 * pulse1.period[1];
-// parameter Real pulse1.p_width[1] "Width of one pulse";
-// parameter Real pulse1.p_offset[1] = 1.0 * pulse1.offset[1];
-// parameter Real pulse1.p_startTime[1] = 1.0 * pulse1.startTime[1];
+// parameter Real pulse1.p_amplitude[1] = pulse1.amplitude[1] * 1.0;
+// parameter Real pulse1.p_period[1] = pulse1.period[1] * 1.0;
+// parameter Real pulse1.p_width[1] = 100.0 / (pulse1.p_period[1] * pulse1.width[1] * 1.0) "Width of one pulse";
+// parameter Real pulse1.p_offset[1] = pulse1.offset[1] * 1.0;
+// parameter Real pulse1.p_startTime[1] = pulse1.startTime[1] * 1.0;
 // Real pulse1.T0[1] "Start time of current period";
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
@@ -1208,7 +1208,6 @@ end BS6;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   pulse1.p_width = (diagonal({pulse1.p_period[1]}) * {1.0} * pulse1.width[1]) / 100.0;
 //   when sample(pulse1.p_startTime[1],pulse1.p_period[1]) then
 //   pulse1.T0[1] = time;
 //   end when;

@@ -18,5 +18,5 @@ end Integer2Real;
 // Real a;
 // equation
 //   n = 5;
-//   a = Real(n) / 2.0;
+//   a = Real(n) * 1.0 / 2.0;
 // end Integer2Real;

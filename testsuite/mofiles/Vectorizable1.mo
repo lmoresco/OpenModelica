@@ -31,7 +31,7 @@ end Vectorizable1;
 // Real b;
 // Real c;
 // equation
-//   x = {foo(a),foo(b),foo(c)} + {2.0,3.0,4.0};
+//  {x[1],x[2],x[3]} = {foo(a) + 2.0,foo(b) + 3.0,foo(c) + 4.0};
 //   der(s[1]) = -1.0;
 //   der(s[2]) = -1.0;
 // end Vectorizable1;

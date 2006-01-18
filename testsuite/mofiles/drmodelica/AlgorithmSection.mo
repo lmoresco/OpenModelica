@@ -30,7 +30,7 @@ end AlgorithmSection;
 // Real x3;
 // equation
 //   u = x1 + x2;
-//   x = y * 2.0;
+//   x = 2.0 * y;
 //   z = w;
 // algorithm
 //   x1 := z + x;

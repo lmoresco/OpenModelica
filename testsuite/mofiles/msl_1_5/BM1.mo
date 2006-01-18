@@ -990,7 +990,7 @@ end BM1;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   abs1.u[1] = abs1.inPort.signal[1];
-//   abs1.y = {abs(abs1.u[1])};
+//   {abs1.y[1]} = {abs(abs1.u[1])};
 //   abs1.y[1] = abs1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

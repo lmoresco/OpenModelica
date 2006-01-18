@@ -1086,7 +1086,7 @@ end BM5;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   asin1.u[1] = asin1.inPort.signal[1];
-//   asin1.y = {Modelica.Math.asin(asin1.u[1])};
+//   {asin1.y[1]} = {Modelica.Math.asin(asin1.u[1])};
 //   asin1.y[1] = asin1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

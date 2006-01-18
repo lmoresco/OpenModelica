@@ -1081,7 +1081,7 @@ end BM21;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sin1.u[1] = sin1.inPort.signal[1];
-//   sin1.y = {Modelica.Math.sin(sin1.u[1])};
+//   {sin1.y[1]} = {Modelica.Math.sin(sin1.u[1])};
 //   sin1.y[1] = sin1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

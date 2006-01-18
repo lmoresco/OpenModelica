@@ -16,7 +16,7 @@ end Algorithm3;
 // Integer i;
 // Real x;
 // equation
-//   i = integer(time * 10.0);
+//   i = integer(10.0 * time );
 // algorithm
 //   x := Real(i);
 // end Algorithm3;

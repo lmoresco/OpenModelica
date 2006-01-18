@@ -993,13 +993,13 @@ end BC7;
 // parameter Real PI1.k[1] = 1 "Gain";
 // parameter Real PI1.T[1] = 1 "Time Constant (T>0 required)";
 // output Real PI1.x[1] "State of block";
-// parameter Real PI1.p_k[1] = 1.0 * PI1.k[1];
-// parameter Real PI1.p_T[1] = 1.0 * PI1.T[1];
+// parameter Real PI1.p_k[1] = PI1.k[1] * 1.0;
+// parameter Real PI1.p_T[1] = PI1.T[1] * 1.0;
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   PI1.u[1] = PI1.inPort.signal[1];
-//   der(PI1.x[1]) = PI1.u[1] / PI1.p_T[1];
+//   der(PI1.x[1]) = PI1.u[1] * 1.0 / PI1.p_T[1];
 //   PI1.y[1] = PI1.p_k[1] * (PI1.x[1] + PI1.u[1]);
 //   PI1.y[1] = PI1.outPort.signal[1];
 // assert(constant1.outPort.n == PI1.inPort.n,"automatically generated from connect");

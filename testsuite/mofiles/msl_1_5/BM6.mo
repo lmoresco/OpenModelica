@@ -1080,7 +1080,7 @@ end BM6;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   atan1.u[1] = atan1.inPort.signal[1];
-//   atan1.y = {Modelica.Math.atan(atan1.u[1])};
+//   {atan1.y[1]} = {Modelica.Math.atan(atan1.u[1])};
 //   atan1.y[1] = atan1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

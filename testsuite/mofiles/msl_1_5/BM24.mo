@@ -1005,7 +1005,7 @@ end BM24;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sum1.u[1] = sum1.inPort.signal[1];
-//   sum1.y = {sum1.k[1]} * sum1.u;
+//   sum1.y = sum1.k[1] * sum1.u[1];
 //   sum1.y = sum1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

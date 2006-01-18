@@ -1078,7 +1078,7 @@ end BM22;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sinh1.u[1] = sinh1.inPort.signal[1];
-//   sinh1.y = {Modelica.Math.sinh(sinh1.u[1])};
+//   {sinh1.y[1]} = {Modelica.Math.sinh(sinh1.u[1])};
 //   sinh1.y[1] = sinh1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

@@ -36,7 +36,6 @@ algorithm
   end when;
 end Algorithm1;
 
-
 // fclass Algorithm1
 // Real x;
 // Real y;
@@ -48,9 +47,9 @@ end Algorithm1;
 // algorithm
 //   i := 0;
 //   a := y - 1.0;
-//   while Real(i) / 10.0 < y loop
-//     a := a + 0.5;
-//     i := i + 1;
+//   while 0.1 * Real(i) < y loop
+//     a := 0.5 + a;
+//     i := 1 + i;
 //   end while;
 //   for i in 1:3 loop
 //     if i > 2 then

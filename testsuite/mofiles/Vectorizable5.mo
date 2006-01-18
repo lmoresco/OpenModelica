@@ -42,5 +42,5 @@ end Vectorizable5;
 // Real w[1];
 // Real w[2];
 // equation
-//   w = {foo(x[1],y[1],z),foo(x[2],y[2],z)};
+// {w[1],w[2]} = {foo(x[1],y[1],z),foo(x[2],y[2],z)};
 // end Vectorizable5;

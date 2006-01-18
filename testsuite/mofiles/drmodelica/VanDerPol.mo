@@ -17,5 +17,5 @@ end VanDerPol;
 // parameter Real lambda = 0.3;
 // equation
 //   der(x) = y;
-//   der(y) = -x + lambda * (1.0 - x * x) * y;
+//   der(y) = -x + lambda * (1.0 - x ^ 2.0) * y;
 // end VanDerPol;

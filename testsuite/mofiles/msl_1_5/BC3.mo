@@ -971,7 +971,6 @@ equation
   connect(constant1.outPort,firstOrder1.inPort) annotation(Line(visible=true,points={{-13.21,11.11},{1.46,11.11}}));
 end BC3;
 
-
 // fclass BC3
 // parameter Integer constant1.nout = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
@@ -987,13 +986,13 @@ end BC3;
 // Real firstOrder1.u[1] "Input signals";
 // parameter Real firstOrder1.k[1] = 1 "Gain";
 // parameter Real firstOrder1.T[1] = 1 "Time Constant";
-// parameter Real firstOrder1.p_k[1] = 1.0 * firstOrder1.k[1];
-// parameter Real firstOrder1.p_T[1] = 1.0 * firstOrder1.T[1];
+// parameter Real firstOrder1.p_k[1] = firstOrder1.k[1] * 1.0;
+// parameter Real firstOrder1.p_T[1] = firstOrder1.T[1] * 1.0;
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   firstOrder1.u[1] = firstOrder1.inPort.signal[1];
-//   der(firstOrder1.y[1]) = (firstOrder1.p_k[1] * firstOrder1.u[1] - firstOrder1.y[1]) / firstOrder1.p_T[1];
+//   der(firstOrder1.y[1]) = (firstOrder1.p_k[1] * firstOrder1.u[1] - firstOrder1.y[1]) * 1.0 / firstOrder1.p_T[1];
 //   firstOrder1.y[1] = firstOrder1.outPort.signal[1];
 // assert(constant1.outPort.n == firstOrder1.inPort.n,"automatically generated from connect");
 //   constant1.outPort.signal[1] = firstOrder1.inPort.signal[1];

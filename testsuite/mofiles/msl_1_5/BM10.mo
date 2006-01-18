@@ -1006,7 +1006,7 @@ end BM10;
 // equation
 //   division1.u1[1] = division1.inPort1.signal[1];
 //   division1.u2[1] = division1.inPort2.signal[1];
-//   division1.y[1] = division1.u1[1] / division1.u2[1];
+//   division1.y[1] = division1.u1[1] * 1.0 / division1.u2[1];
 //   division1.y[1] = division1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

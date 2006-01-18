@@ -1225,9 +1225,9 @@ end BS16;
 // parameter Real booleanPulse1.width[1] = 50 "Widths of pulses in % of period";
 // parameter Real booleanPulse1.period[1] = 1 "Times for one period";
 // parameter Real booleanPulse1.startTime[1] = 0 "Iime instants of first pulse";
-// parameter Real booleanPulse1.p_period[1] = 1.0 * booleanPulse1.period[1];
-// parameter Real booleanPulse1.Twidth[1] "width of one pulse";
-// parameter Real booleanPulse1.p_startTime[1] = 1.0 * booleanPulse1.startTime[1];
+// parameter Real booleanPulse1.p_period[1] = booleanPulse1.period[1] * 1.0;
+// parameter Real booleanPulse1.Twidth[1] = 100.0 / (booleanPulse1.p_period[1] * booleanPulse1.width[1] * 1.0) "width of one pulse";
+// parameter Real booleanPulse1.p_startTime[1] = booleanPulse1.startTime[1] * 1.0;
 // Real booleanPulse1.T0[1] "Start time of current period";
 // parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
@@ -1237,7 +1237,6 @@ end BS16;
 // output Boolean booleanChange1.y[1] "Output signals";
 // Boolean booleanChange1.u[1] "Input signals";
 // equation
-//   booleanPulse1.Twidth = (diagonal({booleanPulse1.p_period[1]}) * {1.0} * booleanPulse1.width[1]) / 100.0;
 //   when sample(booleanPulse1.p_startTime[1],booleanPulse1.p_period[1]) then
 //   booleanPulse1.T0[1] = time;
 //   end when;

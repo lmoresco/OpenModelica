@@ -991,7 +991,7 @@ end BM20;
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sign1.u[1] = sign1.inPort.signal[1];
-//   sign1.y = {sign(sign1.u[1])};
+//   {sign1.y[1]} = {sign(sign1.u[1])};
 //   sign1.y[1] = sign1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
