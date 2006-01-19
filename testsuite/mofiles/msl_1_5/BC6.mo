@@ -1901,6 +1901,8 @@ end BC6;
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
+// initial equation
+//   limPID1.D.T = {max({{limPID1.Td * 1.0 / limPID1.Nd,1e-14}})};
 // equation
 //   limPID1.limiter.u[1] = limPID1.limiter.inPort.signal[1];
 //   limPID1.limiter.y[1] = if limPID1.limiter.u[1] > limPID1.limiter.uMax[1] then limPID1.limiter.uMax[1] else if limPID1.limiter.u[1] < limPID1.limiter.uMin[1] then limPID1.limiter.uMin[1] else limPID1.limiter.u[1];
@@ -1920,7 +1922,6 @@ end BC6;
 //   der(limPID1.I.y[1]) = limPID1.I.k[1] * limPID1.I.u[1];
 //   limPID1.I.y[1] = limPID1.I.outPort.signal[1];
 //   limPID1.D.u[1] = limPID1.D.inPort.signal[1];
-//   limPID1.D.T = {max({{limPID1.Td * 1.0 / limPID1.Nd,1e-14}})};
 //   der(limPID1.D.x[1]) = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then (limPID1.D.u[1] - limPID1.D.x[1]) * 1.0 / limPID1.D.p_T[1] else 0.0;
 //   limPID1.D.y[1] = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then limPID1.D.p_k[1] * (limPID1.D.u[1] - limPID1.D.x[1]) * 1.0 / limPID1.D.p_T[1] else 0.0;
 //   limPID1.D.y[1] = limPID1.D.outPort.signal[1];

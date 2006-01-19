@@ -1585,6 +1585,8 @@ end BC8;
 // input Real PID1.Add.inPort3.signal[1] "Real input signals";
 // parameter Integer PID1.Add.outPort.n = PID1.Add.n "Dimension of signal vector";
 // output Real PID1.Add.outPort.signal[1] "Real output signals";
+// initial equation
+//   PID1.D.T = {max({{PID1.Td * 1.0 / PID1.Nd,1e-13}})};
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
@@ -1596,7 +1598,6 @@ end BC8;
 //   der(PID1.I.y[1]) = PID1.I.k[1] * PID1.I.u[1];
 //   PID1.I.y[1] = PID1.I.outPort.signal[1];
 //   PID1.D.u[1] = PID1.D.inPort.signal[1];
-//   PID1.D.T = {max({{PID1.Td * 1.0 / PID1.Nd,1e-13}})};
 //   der(PID1.D.x[1]) = if noEvent(abs(PID1.D.p_k[1]) >= 1e-15) then (PID1.D.u[1] - PID1.D.x[1]) * 1.0 / PID1.D.p_T[1] else 0.0;
 //   PID1.D.y[1] = if noEvent(abs(PID1.D.p_k[1]) >= 1e-15) then PID1.D.p_k[1] * (PID1.D.u[1] - PID1.D.x[1]) * 1.0 / PID1.D.p_T[1] else 0.0;
 //   PID1.D.y[1] = PID1.D.outPort.signal[1];
