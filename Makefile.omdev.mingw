@@ -1,0 +1,69 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+
+.PHONY : .testvariables all omc omcd debug release mosh clean
+
+top_builddir = .
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+#Test if the needed variables are there... 
+
+.testvariables:
+ifndef OMDEV
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT Please Define OMDEV
+endif
+
+ifndef OMC_BUILD_FROM
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT Please Define OMC_BUILD_FROM
+endif
+
+all : .testvariables settings release 
+
+debug: settings omcd
+
+settings:
+	@echo Building OMC using OMDev with the following settings...
+	@echo Using OMDev: $(OMDEV)
+	@echo Using Files: $(OMC_BUILD_FROM)
+	@echo Using Path : $(PATH)    
+
+release: omc
+
+omcd: 
+	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw debug)
+
+omc:	
+	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw release)
+
+mosh:
+	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
+
+
+clean:
+	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd flat_modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
+
+.PRECIOUS: Makefile.omdev.mingw
+
+#Makefile.omdev.mingw: Makefile.omdev.mingw.in
+#	$(top_builddir)/config.status Makefile.omdev.mingw

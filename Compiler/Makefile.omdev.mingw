@@ -1,0 +1,214 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+# $Id: Makefile.omdev.mingw.in 1817 2006-02-01 12:21:26Z adrpo $
+#
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there... 
+
+.testvariables:
+ifndef OMDEV
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT
+endif
+ifndef OMC_BUILD_FROM
+	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+	ABORT
+endif
+
+
+srcdir= .
+top_builddir= ..
+
+ANTLR_HOME = $(OMDEV)/
+EXEEXT = .exe
+
+ANTLR_INCP = -I$(OMDEV)/include/antlr/
+ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
+# adrpo, libsocket should be -lwsock32 but is not needed!
+LIBSOCKET = -lwsock32
+
+SHELL	= /bin/sh
+CC	= gcc
+CFLAGS	= $(USE_CORBA) -DMINGW32
+RMLHOME	= $(OMDEV)/tools/rml/
+RMLINC	= -I$(RMLHOME)/include/plain
+
+USE_CORBA = -DUSE_CORBA
+CORBAHOME = $(OMDEV)
+
+include Makefile.common.omdev.mingw
+
+PROG = omc
+PROGD = omcd
+
+SUBDIRS	= runtime absyn_builder modpar
+
+
+ifeq ($(OMC_BUILD_FROM),mo)
+
+.SUFFIXES:
+.SUFFIXES: .o .mo .h
+.PHONY:  depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
+
+all : .testvariables release $(ALLMO)
+
+debug:	.testvariables $(PROGD) $(SRCRDB)
+
+release: $(PROG)
+
+$(SRCRDB): %.rdb : omc_debug/%.rdb 
+	cp $< $@
+
+$(PROG): omc_release
+	cp omc_release/$(PROG)$(EXEEXT) .
+
+$(PROGD): omc_debug
+	cp omc_debug/$(PROGD)$(EXEEXT) .
+
+omc_release:
+	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
+
+omc_debug:
+	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
+
+vctarget: 
+	@(cd omc_release ; $(MAKE) vctarget -f Makefile.omdev.mingw)
+
+test:
+	@(cd ../testsuite ; $(MAKE) -f Makefile)
+
+
+clean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
+	-$(RM) -f $(PROG)$(EXEEXT)
+
+dclean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
+	-$(RM) -f $(SRCRDB)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROGD)$(EXEEXT)
+
+
+reallyclean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
+	done
+	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw reallyclean)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROG)$(EXEEXT)
+
+dreallyclean: 
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
+	done
+	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw reallyclean)
+	-$(RM) -f $(SRCRDB)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROGD)$(EXEEXT)
+
+report:
+	@(cd report ; $(MAKE))
+
+depend:	
+	-$(RM) .depend
+	$(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
+
+else #else we build from .rml files *********************************************
+
+.SUFFIXES:
+.SUFFIXES: .o .rml .h
+.PHONY: all subdirs report vctarget debug release depend clean dclean test reallyclean omc_release omc_debug
+
+all : release
+
+debug:	$(PROGD) $(SRCRDB)
+
+release: $(PROG)
+
+$(SRCRDB): %.rdb: omc_debug/%.rdb 
+	cp $< $@
+
+$(PROG): omc_release
+	cp omc_release/$(PROG)$(EXEEXT) .
+
+$(PROGD): omc_debug
+	cp omc_debug/$(PROGD)$(EXEEXT) .
+
+omc_release:
+	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
+
+omc_debug:
+	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
+
+vctarget: 
+	@(cd omc_release ; $(MAKE) vctarget -f Makefile.omdev.mingw)
+
+test:
+	@(cd ../testsuite ; $(MAKE) -f Makefile.omdev.mingw)
+
+
+clean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
+	-$(RM) -f $(PROG)$(EXEEXT)
+
+dclean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
+	-$(RM) -f $(SRCRDB)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROGD)$(EXEEXT)
+
+
+reallyclean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
+	done
+	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw reallyclean)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROG)$(EXEEXT)
+
+dreallyclean: 
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
+	done
+	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw reallyclean)
+	-$(RM) -f $(SRCRDB)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(PROGD)$(EXEEXT)
+
+report:
+	@(cd report ; $(MAKE))
+
+depend:	
+	-$(RM) .depend
+	$(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
+
+endif #build from .rml files
+
+#.PRECIOUS: Makefile.omdev.mingw
+#
+#Makefile.omdev.mingw: Makefile.omdev.mingw.in
+#	$(top_builddir)/config.status Makefile.omdev.mingw

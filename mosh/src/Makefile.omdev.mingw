@@ -1,0 +1,87 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+# $Id: Makefile.omdev.mingw.in 1817 2006-02-01 12:21:26Z adrpo $
+#
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there... 
+ifndef OMDEV
+    @echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+    @echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+    @echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+    exit(1)
+endif
+
+ifndef OMC_BUILD_FROM
+    @echo From wich files to build must be set: $OMC_BUILD_FROM. Either "mo" or "rml"! Exiting....
+    exit(1)
+endif
+
+
+CC=gcc
+CXX=g++
+
+ANTLR_HOME = $(OMDEV)
+
+ANTLR_INCP = -I$(OMDEV)/include
+ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw
+
+PARSE_INCP = -I../../modelica_parser/src
+PARSE_LIBP = -L../../modelica_parser/src
+
+READLINE_INCP = -I/usr/local/include/readline
+READLINE_LIBP = -L/usr/local/lib
+
+USE_CORBA = -DUSE_CORBA
+CORBAHOME = $(OMDEV)
+
+# We always use corba when compiling with OMDev-mingw
+#ifdef USE_CORBA
+  CORBAIMPL = -I../../Compiler/runtime
+  CORBAOBJS = ../../Compiler/runtime/omc_communication.o \
+	../../Compiler/runtime/omc_communication_impl.o
+  CORBALIB = -L$(CORBAHOME)/lib/mico-msys-mingw -lmico 
+  CORBAINC = -I$(CORBAHOME)/include
+#else
+#  CORBAIMPL =
+#  CORBAOBJS =
+#  CORBALIB =
+#endif
+
+INCP = $(ANTLR_INCP) $(PARSE_INCP) $(READLINE_INCP) $(CORBAIMPL) $(CORBAINC)
+LIBP = $(ANTLR_LIBP) $(PARSE_LIBP) $(READLINE_LIBP) 
+
+CFLAGS = $(INCP) -g -Wall -DDEBUG $(USE_CORBA)
+CXXFLAGS = $(CFLAGS)
+LINKFLAGS = $(LIBP) 
+
+LIBS = -lantlr -lmodelica_parser -lreadline -ltermcap  $(CORBALIB) -lm -lwsock32 
+
+
+OBJS += mosh.o options.o
+
+
+all : mosh
+
+
+mosh : $(OBJS) 
+	$(CXX) -o $@ $(OBJS) $(CORBAOBJS) $(LINKFLAGS) $(LIBS)
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $<
+
+
+clean:
+	-rm -f *.o *~ core *.core mosh mosh.exe
+
+
+mosh.o : mosh.cpp 
+options.o: options.cpp
+
+
+

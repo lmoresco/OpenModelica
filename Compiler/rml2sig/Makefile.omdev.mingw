@@ -1,0 +1,23 @@
+#
+# Makefile for rml2sig
+#
+# Andrzej BEDNARSKI, changed by Adrian Pop, 2006-02-01
+#
+# $Id: Makefile.in 982 2003-06-13 21:45:32Z levsa $
+
+
+all: 
+	@echo These rml2sig/Makefile.* are not needed anymore. 
+	@echo The newest RML dumps the interface using the flag -fdump-interface 
+
+#LEX=flex
+#LEXLIB=-lfl
+#all: rml2sig
+#rml2sig: rml2sig.c
+#	gcc -o $@ $< $(LEXLIB)
+#
+#rml2sig.c: rml2sig.lex
+#	$(LEX) -t rml2sig.lex > $@
+
+clean:
+	$(RM) rml2sig.c rml2sig

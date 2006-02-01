@@ -1,0 +1,121 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+# Common part of Makefile.omdev.mingw for omc. Contains sourcenames.
+#
+# $Id: Makefile.omdev.mingw.common 2053 2006-01-28 11:04:09Z adrpo $
+#
+
+# In OMDev-mingw we use by default CORBA
+#ifdef USE_CORBA
+CORBAOBJ = $(srcdir)/runtime/corbaimpl.o $(srcdir)/runtime/omc_communication_impl.o $(srcdir)/runtime/omc_communication.o 
+CORBALIB = 
+#else
+# CORBAOBJ = $(srcdir)/runtime/corbaimpl_stub.o
+# CORBALIB =
+#endif
+
+AST	= $(srcdir)/absyn_builder/absyn_builder.a
+RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/../c_runtime/libc_runtime.a \
+	$(srcdir)/runtime/rtopts.o $(srcdir)/runtime/socketimpl.o \
+	$(srcdir)/runtime/printimpl.o $(srcdir)/runtime/ptolemyio.o \
+	$(srcdir)/runtime/errorext.o $(srcdir)/runtime/ErrorMessage.o \
+	$(srcdir)/runtime/daeext.o $(CORBAOBJ) \
+	$(srcdir)/modpar/libmodpar.a
+
+# The MO sources
+SRCMO= Absyn.mo \
+	Algorithm.mo \
+	Builtin.mo \
+	Ceval.mo \
+	ClassInf.mo \
+	ClassLoader.mo \
+	Codegen.mo \
+	Connect.mo \
+	DAE.mo \
+	DAELow.mo \
+	Derive.mo \
+	Debug.mo \
+	Dump.mo \
+	DumpGraphviz.mo \
+	Env.mo \
+	Error.mo \
+	Exp.mo \
+	SCode.mo \
+	Graphviz.mo \
+	Inst.mo \
+	Interactive.mo \
+	Lookup.mo \
+	Main.mo \
+	Mod.mo \
+	ModUtil.mo \
+	Prefix.mo \
+	Static.mo \
+	SimCodegen.mo \
+	Types.mo \
+	TaskGraph.mo \
+	Util.mo \
+	Values.mo \
+	VarTransform.mo
+
+# These are externally defined MO modules
+ALLMO = $(SRCMO) DAEEXT.mo Print.mo RTOpts.mo System.mo Parser.mo \
+		TaskGraphExt.mo Corba.mo Socket.mo ErrorExt.mo
+
+# The RML sources
+SRCRML= Absyn.rml \
+	Algorithm.rml \
+	Builtin.rml \
+	Ceval.rml \
+	ClassInf.rml \
+	ClassLoader.rml \
+	Codegen.rml \
+	Connect.rml \
+	DAE.rml \
+	DAELow.rml \
+	Derive.rml \
+	Debug.rml \
+	Dump.rml \
+	DumpGraphviz.rml \
+	Env.rml \
+	Error.rml \
+	Exp.rml \
+	SCode.rml \
+	Graphviz.rml \
+	Inst.rml \
+	Interactive.rml \
+	Lookup.rml \
+	Main.rml \
+	Mod.rml \
+	ModUtil.rml \
+	Prefix.rml \
+	Static.rml \
+	SimCodegen.rml \
+	Types.rml \
+	TaskGraph.rml \
+	Util.rml \
+	Values.rml \
+	VarTransform.rml
+
+# These are externally defined MO modules
+ALLRML = $(SRCRML) DAEEXT.rml Print.rml RTOpts.rml System.rml Parser.rml \
+		TaskGraphExt.rml Corba.rml Socket.rml ErrorExt.rml
+
+
+ifeq ($(OMC_BUILD_FROM),mo)
+	SRCC=	$(SRCMO:.mo=.c)
+	SRCH=	$(SRCMO:.mo=.h)
+	SRCRDB=	$(SRCMO:.mo=.rdb)
+	ALLRDB=	$(ALLMO:.mo=.rdb)
+	SRCRSIG=	$(SRCMO:.mo=.rsig)
+	SRCRMOD=	$(SRCMO:.mo=.rmod)
+	SRCO=	$(SRCC:.c=.o)
+else # we build from .rml files
+	SRCC=	$(SRCRML:.rml=.c)
+	SRCH=	$(SRCRML:.rml=.h)
+	SRCRDB=	$(SRCRML:.rml=.rdb)
+	SRCRSIG=	$(SRCRML:.rml=.rsig)
+	SRCRMOD=	$(SRCRML:.rml=.rmod)
+	SRCO=	$(SRCC:.c=.o)
+endif

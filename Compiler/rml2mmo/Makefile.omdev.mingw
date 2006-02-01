@@ -1,0 +1,42 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+#
+# $Id: Makefile.omdev.mingw.in 2054 2006-01-28 11:07:46Z adrpo $
+#
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there... 
+
+.testvariables:
+ifndef OMDEV
+    @echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+    @echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+    @echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+    ABORT
+endif
+ifndef OMC_BUILD_FROM
+    @echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+    ABORT
+endif
+
+
+srcdir = ..
+top_builddir = ../..
+
+ifeq ($(OMC_BUILD_FROM),mo)
+all : .testvariables  
+	@echo Generating MO files form RML files.....
+	./rdball.sh ; ./trall.sh
+else #We build from .rml files! Be it so!
+all : .testvariables
+	@echo Nothing to do, we follow the normal .rml compilation chain
+endif
+
+clean:
+	@echo Nothing to clean
+

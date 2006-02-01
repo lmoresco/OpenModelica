@@ -1,0 +1,77 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+# $Id: Makefile.omdev.mingw.in 1817 2006-02-01 12:21:26Z adrpo $
+#
+#
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there... 
+.testvariables:
+ifndef OMDEV
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT
+endif
+ifndef OMC_BUILD_FROM
+	@echo From wich files to build must be set: $OMC_BUILD_FROM. Either "mo" or "rml"! Exiting....
+    ABORT
+endif
+
+srcdir= .
+top_builddir= ../..
+
+BOOST_HOME = 
+RMLINCLUDE = ${OMDEV}/tools/rml/include/plain/
+
+USE_MODPAR = 
+
+ifdef USE_MODPAR
+OBJECTS = Codegen.o \
+	TaskMerging.o \
+	TaskGraph.o \
+	MergeRule.o \
+	SingleChildMerge.o \
+	DuplicateParentMerge.o \
+	MergeAllParents.o \
+	MergeSiblings.o \
+	Schedule.o \
+	TaskGraphExt.o \
+	solvers.o
+else
+OBJECTS = TaskGraphExt_stub.o
+endif
+all: .testvariables libmodpar.a
+libmodpar.a: $(OBJECTS)
+	ar -r $@ $(OBJECTS)
+
+INCFLAGS =-I$(RMLINCLUDE) -I$(BOOST_HOME) -I../../mosh/src
+
+CFLAGS = $(INCFLAGS) -g -Wall -DUNIX=1
+CXXFLAGS = $(CFLAGS)
+LIBS = 
+
+
+TaskGraphExt.o: TaskGraphExt.cpp
+TaskGraphExt_stub.o: TaskGraphExt_stub.cpp
+TaskMerging.o: TaskMerging.cpp TaskMerging.hpp
+TaskGraph.o: TaskGraph.cpp TaskGraph.hpp
+MergeRule.o: MergeRule.cpp MergeRule.hpp
+SingleChildMerge.o: SingleChildMerge.cpp SingleChildMerge.hpp MergeRule.hpp
+DuplicateParentMerge.o: DuplicateParentMerge.cpp DuplicateParentMerge.hpp MergeRule.hpp
+MergeAllParents.o: MergeAllParents.cpp MergeAllParents.hpp MergeRule.hpp
+Schedule.o: Schedule.cpp Schedule.hpp 
+
+clean:
+	rm -rf $(OBJECTS)
+
+reallyclean: clean
+
+#.PRECIOUS: Makefile.omdev.mingw
+#
+#Makefile.omdev.mingw: Makefile.omdev.mingw.in
+#	$(top_builddir)/config.status Makefile.omdev.mingw

@@ -1,0 +1,113 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+# $Id: Makefile.omdev.mingw.in 1817 2006-02-01 12:21:26Z adrpo $
+#
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there...
+.testvariables: 
+ifndef OMDEV
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT
+endif
+ifndef OMC_BUILD_FROM
+	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+	ABORT
+endif
+
+CC=gcc
+CXX=g++
+
+ANTLR_HOME = $(OMDEV)
+
+ANTLR_INCP = -I$(OMDEV)/include/
+ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
+
+RML_HOME =  $(OMDEV)
+RML_INCP = -I$(OMDEV)/tools/rml/include/plain
+
+FLAT_PARSE_HOME = ../../flat_modelica_parser
+FLAT_PARSE_INCP = -I$(FLAT_PARSE_HOME)/src
+FLAT_PARSE_LIBP = -L$(FLAT_PARSE_HOME)/src
+
+PARSE_HOME = ../../modelica_parser
+PARSE_INCP = -I$(PARSE_HOME)/src
+PARSE_LIBP = -L$(PARSE_HOME)/src
+
+INCP = $(ANTLR_INCP) $(PARSE_INCP) $(FLAT_PARSE_INCP) $(RML_INCP)
+LIBP = $(ANTLR_LIBP) $(PARSE_LIBP) $(FLAT_PARSE_LIBP)
+
+CFLAGS = $(INCP) -O3 -Wall
+CXXFLAGS = $(CFLAGS)
+LINKFLAGS = $(LIBP)
+
+LIBS = -lantlr -lmodelica_parser -lflat_modelica_parser
+
+PARSER_OBJS = $(FLAT_PARSE_HOME)/src/flat_modelica_parser.o \
+	$(FLAT_PARSE_HOME)/src/flat_modelica_lexer.o \
+	$(PARSE_HOME)/src/modelica_parser.o $(PARSE_HOME)/src/modelica_lexer.o \
+	$(PARSE_HOME)/src/token_names.o $(PARSE_HOME)/src/parse_tree_dumper.o
+
+
+walkergen= modelica_tree_parser.cpp modelica_tree_parser.hpp \
+	   modelica_tree_parserTokenTypes.hpp modelica_tree_parserTokenTypes.txt
+
+walkersrcs=$(filter %.cpp,$(walkergen))
+walkerobjs=$(walkersrcs:.cpp=.o)
+
+exprparsegen = modelica_expression_parser.cpp modelica_expression_parser.hpp 
+
+exprparsesrcs=$(filter %.cpp,$(exprparsegen))
+exprparseobjs=$(exprparsesrcs:.cpp=.o)
+
+OBJS += $(walkerobjs) $(exprparseobjs) $(PARSER_OBJS) parse.o yacclib.o
+
+ANTLR = java -cp $(ANTLR_HOME) antlr.Tool
+
+all : .testvariables flat_parser parser absyn_builder.a
+
+vctarget: vcparser $(walkergen) $(exprparsegen)
+
+vcparser:
+	cd $(PARSE_HOME)/src; $(MAKE) -f Makefile vctarget
+	cd $(FLAT_PARSE_HOME)/src; $(MAKE) -f Makefile vctarget
+
+parser:
+	cd $(PARSE_HOME)/src; $(MAKE) -f Makefile.omdev.mingw
+
+flat_parser:
+	cd $(FLAT_PARSE_HOME)/src; $(MAKE) -f Makefile.omdev.mingw
+
+absyn_builder.a : $(OBJS)
+	ar -r $@ $(OBJS)
+
+#walker : $(OBJS) 
+#	$(CXX) -o $@ $(OBJS) $(LINKFLAGS) $(LIBS) 
+
+$(walkergen): walker.g modelica_parserTokenTypes.txt
+	java antlr.Tool $(ANTLRFLAGS) $<
+
+$(exprparsegen): expression_parser.g modelica_parserTokenTypes.txt
+	java antlr.Tool -glib $(PARSE_HOME)/src/modelica_parser.g $(ANTLRFLAGS) $<
+
+modelica_parserTokenTypes.txt : $(PARSE_HOME)/src/modelica_parserTokenTypes.txt
+	cp $< $@
+
+clean:
+	-rm -f *.o *~ core *.core walker absyn_builder.a
+	-rm -f $(walkergen) modelica_parserTokenTypes.txt
+
+reallyclean: clean
+
+walker.o : walker.cpp $(PARSE_HOME)/src/modelica_lexer.hpp $(PARSE_HOME)/src/modelica_parser.hpp \
+	$(FLAT_PARSE_HOME)/src/flat_modelica_parser.hpp \
+	$(FLAT_PARSE_HOME)/src/flat_modelica_lexer.hpp
+
+

@@ -1,0 +1,167 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+#
+# $Id: Makefile.omdev.mingw.in 2054 2006-01-28 11:07:46Z adrpo $
+#
+
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV 
+# Building OMC from which files? .rml or .mo? MUST BE SET!
+#OMC_BUILD_FROM=$OMC_BUILD_FROM
+# Test if the needed variables are there... 
+
+.testvariables:
+ifndef OMDEV
+    @echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+    @echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+    @echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+    ABORT
+endif
+
+ifndef OMC_BUILD_FROM
+    @echo From wich files to build must be set: $OMC_BUILD_FROM. Either "mo" or "rml"! Exiting....
+    ABORT
+endif
+
+
+ANTLR_HOME = $(OMDEV)
+
+ANTLR_INCP = -I$(OMDEV)/include/antlr
+ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
+
+USE_CORBA = -DUSE_CORBA
+CORBAHOME = $(OMDEV)
+
+SHELL	= /bin/sh
+CC	= gcc
+CFLAGS	= $(USE_CORBA)
+RMLHOME	= $(OMDEV)/tools/rml
+RMLINC  = -I$(RMLHOME)/include/plain
+
+srcdir = ..
+top_builddir = ../..
+include $(srcdir)/Makefile.common.omdev.mingw
+
+LIBSOCKET=-lwsock32
+
+#We use corba by default when compiling on OMDev-mingw
+#ifdef USE_CORBA
+CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
+#else
+#	CORBALIBS=
+#endif
+
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
+
+PROG = omc.exe
+# Fix java names now!
+ifeq ($(OMC_BUILD_FROM),mo)
+	RML	= $(RMLHOME)/bin/rmlc -Wr,-ffix-java-names -Wc,-O3
+else
+	RML	= $(RMLHOME)/bin/rmlc -Wc,-O3
+endif
+
+SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
+
+ifeq ($(OMC_BUILD_FROM),mo)
+all : .testvariables $(ALLMO) ExternalRMLDefines.h subdirs $(PROG)
+.SUFFIXES:
+.SUFFIXES: .o .mo .h .rml .rdb
+else #We build from .rml files! Be it so!
+all : .testvariables $(ALLRML) subdirs $(PROG) 
+.SUFFIXES:
+.SUFFIXES: .o .rml .h
+endif
+
+.PHONY: all subdirs report vctarget absyn_subdir clean reallyclean
+
+SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
+
+
+ifeq ($(OMC_BUILD_FROM),mo)
+$(ALLMO): %.mo : $(srcdir)/%.mo
+	cp $< $@
+	
+$(SRCO): %.o : %.c %.h
+	$(RML) -c $<
+
+$(SRCC): %.c : %.mo
+	$(RML) +C $<
+
+$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
+	cp $< $@
+
+$(SRCH): %.h : %.mo
+	$(RML) -c $<
+
+%.rsig : %.mo
+	$(srcdir)/rml2sig/rmldep.sh $<
+else # we build from .rml files
+$(ALLRML): %.rml : $(srcdir)/%.rml
+	cp $< $@
+
+$(SRCO): %.o : %.c %.h
+	$(RML) -c $<
+
+$(SRCC): %.c : %.rml
+	$(RML) +C $<
+
+$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
+	cp $< $@
+
+$(SRCH): %.h : %.rml
+	$(RML) -c $<
+
+%.rsig : %.rml
+	$(srcdir)/rml2sig/rmldep.sh $<
+endif
+
+vctarget: $(SRCC) absyn_subdir
+
+
+absyn_subdir:
+	@(cd $(srcdir)/absyn_builder ; $(MAKE) -f Makefile.omdev.mingw vctarget)
+
+$(PROG): $(SRCO) $(AST) $(RTOBJ)
+	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS)
+
+subdirs: $(SRCHSRCDIR)
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw ) \
+	done
+
+clean:
+	@for d in $(SUBDIRS); do \
+		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd $(srcdir) && $(RM) $(SRCH))
+	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
+	
+clear-rmod-rsig:
+	-rm *.rmod *.rsig ../*.rmod ../*.rsig	
+
+ifeq ($(OMC_BUILD_FROM),mo)
+realclean:
+	$(RM) $(ALLRML)  $(ALLRML:.rml=.rsig) $(ALLRML:.rml=.rmod) $(ALLMO) $(ALLMO:.mo=.rsig) $(ALLMO:.mo=.rmod) $(SRCRDB) $(PROG)
+
+# don't remove these files after intermediate build steps
+#.PRECIOUS: Makefile.omdev.mingw $(ALLRML) $(ALLMO)
+#.PRECIOUS: $(ALLRML) $(ALLMO)
+else
+realclean:
+	$(RM) $(ALLRML) $(ALLRML:.rml=.rsig)  $(ALLRML:.rml=.rmod) $(SRCRDB) $(PROG)
+
+# don't remove these files after intermediate build steps
+#.PRECIOUS: Makefile.omdev.mingw $(ALLRML) 
+.PRECIOUS: $(ALLRML) 
+endif
+
+#Makefile.omdev.mingw: Makefile.omdev.mingw.in
+#	$(top_builddir)/config.status Makefile.omdev.mingw.in
+
+
+## dependencies
+include $(srcdir)/.depend
