@@ -1,0 +1,374 @@
+/*
+------------------------------------------------------------------------------------
+This file is part of OpenModelica.
+
+Copyright (c) 1998-2005, Linköpings universitet,
+Department of Computer and Information Science, PELAB
+See also: www.ida.liu.se/projects/OpenModelica
+
+All rights reserved.
+
+(The new BSD license, see also
+http://www.opensource.org/licenses/bsd-license.php)
+
+
+Redistribution and use in source and binary forms, with or without
+modification,
+are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    
+	* Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+
+    * Neither the name of Linköpings universitet nor the names of its contributors
+      may be used to endorse or promote products derived from this software without
+      specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+For more information about the Qt-library visit TrollTech:s webpage regarding
+licence: http://www.trolltech.com/products/qt/licensing.html
+
+------------------------------------------------------------------------------------
+*/
+
+// REMADE THIS CLASS 2005-10-27 /AF
+
+/*! 
+* \file modelicahighlighter.cpp
+* \author Anders Fernström
+* \date 2005-10-27
+*
+* \brief Had to remake the class to be compatible with the richtext 
+* system that is used in QT4. There is no old cpp file for this 
+* class. /AF
+*/
+
+
+//STD Headers
+#include <exception>
+#include <iostream>
+
+//QT Headers
+#include <QtGui/QApplication>
+
+// IAEX Headers
+#include "modelicahighlighter.h"
+
+
+using namespace std;
+namespace IAEX
+{
+	/*! 
+	 * \class ModelicaHighlighter
+	 * \author Anders Fernström
+	 * \date 2005-10-26
+	 *
+	 * \brief Implements syntaxhighlightning for Modelica code. 
+	 * Implements syntaxhighlightning for Modelica code. To change 
+	 * colors edit the modelicacolors.xml 
+	 */
+
+	/*! 
+	 * \brief Class constructor, create a new Highlighter object.
+	 */
+	ModelicaHighlighter::ModelicaHighlighter()
+		: QObject()
+	{
+		filename_ = QString("modelicacolors.xml");
+		highlighter_ = new Highlighter();
+
+		initializeQTextCharFormat();
+		initializeMapping();
+	}
+
+	/*! 
+	 * \brief Class constructor, automaticly set the standard text
+	 * format used by the highligter
+	 */
+	ModelicaHighlighter::ModelicaHighlighter( QTextCharFormat standard )
+		: QObject()
+	{
+		filename_ = QString("modelicacolors.xml");
+		highlighter_ = new Highlighter();
+
+		setStandardTextFormat( standard );
+	}
+
+	ModelicaHighlighter::~ModelicaHighlighter()
+	{
+
+	}
+
+	/*! 
+	 * \brief Set the text document that the highlighter should
+	 * highlight.
+	 *
+	 * \param doc The document.
+	 */
+	void ModelicaHighlighter::setTextDocument( QTextDocument *doc )
+	{
+		highlighter_->addToDocument( doc );
+	}
+
+	/*! 
+	 * \brief Set the standard text format that the should be used by
+	 * the highlight. After that the different text formats are 
+	 * initialized and than mapped to the highlighter.
+	 *
+	 * \param format The standard text format used.
+	 */
+	void ModelicaHighlighter::setStandardTextFormat( QTextCharFormat format )
+	{
+		standardTextFormat_ = format;
+
+		initializeQTextCharFormat();
+		initializeMapping();
+	}
+
+	/*! 
+	 * \brief Initialize the different text formats by reading the
+	 * settings from the file 'modelicacolors.xml'.
+	 *
+	 * \todo add functionality so text can be change.
+	 */
+	void ModelicaHighlighter::initializeQTextCharFormat()
+	{
+		QDomDocument doc("ModelicaColors");
+		QFile file(filename_);
+
+		if(!file.open(QIODevice::ReadOnly))
+		{
+			string tmp = "Could not open " + filename_.toStdString();
+			throw exception( tmp.c_str() );
+		}
+
+		if(!doc.setContent(&file))
+		{
+			file.close();
+
+			string tmp = "Could not understand content of " +  filename_.toStdString();
+			throw exception( tmp.c_str() );
+		}
+		file.close();
+
+		QDomElement root = doc.documentElement();
+		QDomNode node = root.firstChild();
+
+
+		// set all format to standard format to start with...
+		typeFormat_.merge( standardTextFormat_ );
+		keywordFormat_.merge( standardTextFormat_ );
+		functionNameFormat_.merge( standardTextFormat_ );
+		constantFormat_.merge( standardTextFormat_ );
+		warningFormat_.merge( standardTextFormat_ );
+		builtInFormat_.merge( standardTextFormat_ );
+		variableNameFormat_.merge( standardTextFormat_ );
+		stringFormat_.merge( standardTextFormat_ );
+		commentFormat_.merge( standardTextFormat_ );
+		
+
+		while( !node.isNull() )
+		{
+			QDomElement element = node.toElement();
+			if( !element.isNull() )
+			{
+				if( element.tagName() == "type" )
+					parseSettings( element, &typeFormat_ );
+				else if( element.tagName() == "keyword" )
+					parseSettings( element, &keywordFormat_ );
+				else if( element.tagName() == "functionName" )
+					parseSettings( element, &functionNameFormat_ );
+				else if( element.tagName() == "constant" )
+					parseSettings( element, &constantFormat_ );
+				else if( element.tagName() == "warning" )
+					parseSettings( element, &warningFormat_ );
+				else if( element.tagName() == "builtIn" )
+					parseSettings( element, &builtInFormat_ );
+				else if( element.tagName() == "variableName" )
+					parseSettings( element, &variableNameFormat_ );
+				else if( element.tagName() == "string" )
+					parseSettings( element, &stringFormat_ );
+				else if( element.tagName() == "comment" )
+					parseSettings( element, &commentFormat_ );
+				else
+				{
+					cout << "settings tag not specified: " << 
+						element.tagName().toStdString();
+				}
+			}
+
+			node = node.nextSibling();
+		}
+	}
+
+	/*! 
+	 * \brief Initialize the mapping by adding different paterns to
+	 * the highlighter.
+	 *
+	 * \todo implement patterns for string and comment
+	 */
+	void ModelicaHighlighter::initializeMapping()
+	{
+		// TYPE
+		highlighter_->addMapping( QString("\\b(block|c(lass|on(nector|stant))|discrete|e(n(capsulated|d)") +
+			"|xternal)|f(inal|low|unction)|in(ner|put)|model|out(er|put)|pa(ckage|r(tial|ameter))" + 
+			"|re(cord|declare|placeable)|type)\\b", 
+			typeFormat_ );
+		
+		// KEYWORD
+		highlighter_->addMapping( QString("\\b(a(lgorithm|nd)|e(lse(if|when)?|quation|xtends)|for") +
+			"|i(f|mport|n)|loop|not|or|p(rotected|ublic)|then|w(h(en|ile)|ithin))\\b", 
+			keywordFormat_ );
+		
+		// FUNCTION NAME
+		highlighter_->addMapping( QString("\\b(a(bs|nalysisType)|c(ardinality|hange|eil|ross)|d(e(lay|der)") + 
+			"|i(v|agonal))|edge|f(ill|loor)|i(dentity|n(itial|teger))|linspace|ma(trix|x)|min|mod|n(dims" +
+			"|oEvent)|o(nes|uterProduct)|pr(e|o(duct|mote))|re(init|m)|s(amle|calar|i(gn|ze)|kew" +
+            "|qrt|um|ymmetric)|t(erminal|ranspose)|vector|zeros)\\b", 
+			functionNameFormat_ );
+
+		// CONSTANT
+		highlighter_->addMapping( "\\b(false|true)\\b", 
+			constantFormat_ );
+
+		// WARNING
+		highlighter_->addMapping( "\\b(assert|terminate)\\b", 
+			warningFormat_ );
+
+		// BUILT IN
+		highlighter_->addMapping( "\\b(annotation|connect)\\b", 
+			builtInFormat_ );
+
+		// VARIABLE NAME
+		highlighter_->addMapping( "\\b(time)\\b", 
+			variableNameFormat_ );
+
+		// STRING
+		highlighter_->addStringMapping( "\"",
+			"\"",
+			stringFormat_ );
+
+		// COMMENT
+		highlighter_->addCommentLineMapping( "//.*",
+			commentFormat_ );
+
+		highlighter_->addCommentMapping( "/\\*",
+			"\\*/",
+			commentFormat_ );
+
+
+		
+
+	
+
+
+		// TODO: FIXA stringFormat_ & commentFormat_
+
+		//highlighter_->addMapping( "", stringFormat_ );
+		//highlighter_->addMapping( "", commentFormat_ );
+
+
+//   QString stringPattern("(\".*(([^\\\\]\")|$)|\"\")");
+//   QString endStringPattern(".*(([^\\\\]\")|^\"|$)");
+
+//   QString lineCommentPattern("//.*");
+//   QString commentPattern("/\\*.*((\\*/)|$)");
+//   QString endCommentPattern(".*((\\*/)|$)"); 
+//   
+//  string_.setPattern(stringPattern);
+//   string_.setMinimal(true);
+//   endString_.setPattern(endStringPattern);
+//   endString_.setMinimal(true);
+//   
+//   lineComment_.setPattern(lineCommentPattern);
+//   comment_.setPattern(commentPattern);
+//   comment_.setMinimal(true);
+//   endComment_.setPattern(endCommentPattern);
+//   endComment_.setMinimal(true);
+
+	}
+
+	/*
+	 * \brief Parse "type" settings tags
+	 */
+	void ModelicaHighlighter::parseSettings( QDomElement e, 
+		QTextCharFormat *format )
+	{
+		QDomNode node = e.firstChild();
+		while( !node.isNull() )
+		{
+			QDomElement element = node.toElement();
+			if( !element.isNull() )
+			{
+				// FOREGROUND
+				if( element.tagName() == "foreground" )
+				{
+					bool okRed;
+					bool okGreen;
+					bool okBlue;
+
+					int red = element.attribute( "red", "0" ).toInt(&okRed);
+					int green = element.attribute( "green", "0" ).toInt(&okGreen);
+					int blue = element.attribute( "blue", "0" ).toInt(&okBlue);
+
+					if( okRed && okGreen && okBlue )
+						format->setForeground( QBrush( QColor(red, green, blue) ));
+					else
+						format->setForeground( QBrush( QColor(0, 0, 0) ));
+				}
+				// BACKGROUND
+				else if( element.tagName() == "background" )
+				{
+					bool okRed;
+					bool okGreen;
+					bool okBlue;
+
+					int red = element.attribute( "red", "200" ).toInt(&okRed);
+					int green = element.attribute( "green", "200" ).toInt(&okGreen);
+					int blue = element.attribute( "blue", "255" ).toInt(&okBlue);
+
+					if( okRed && okGreen && okBlue )
+						format->setBackground( QBrush( QColor(red, green, blue) ));
+					else
+						format->setBackground( QBrush( QColor(200, 200, 255) ));
+				}
+				// BOLD
+				else if( element.tagName() == "bold" )
+				{
+					//This only occur when bold tag is present.
+					//delete bold tag to disable.
+					format->setFontWeight( QFont::Bold );
+				}
+				// ITALIC
+				else if( element.tagName() == "italic" )
+				{
+					//This only occur when italic tag is present.
+					//delete italic tag to disable.
+					format->setFontItalic( true );
+				}
+				else
+				{
+					cout << "type settings tag not specified: " << 
+						element.tagName().toStdString();
+				}
+			}
+
+			node = node.nextSibling();
+		}
+	}
+
+}

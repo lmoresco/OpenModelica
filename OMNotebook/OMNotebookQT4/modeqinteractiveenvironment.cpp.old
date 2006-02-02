@@ -1,0 +1,41 @@
+
+#include <exception>
+#include <stdexcept>
+
+#include "modeqinteractiveenvironment.h"
+
+using namespace std;
+
+namespace IAEX
+{
+   /*! \class ModeqInteractiveEnvironment
+    *
+    * \brief Implements evaluation for modelica code. 
+    */
+   ModeqInteractiveEnvironment::ModeqInteractiveEnvironment()
+      : comm_(ModeqCommunicator::getInstance()),result_("")
+   {
+      //Communicate with Modeq.
+      if(!comm_.isConnected())
+      {
+	 if(!comm_.establishConnection())
+	 {
+	    throw runtime_error("ModeqInteractiveEnvironment(): No connection to Modeq established");
+	 }
+      }
+   }
+   
+   ModeqInteractiveEnvironment::~ModeqInteractiveEnvironment(){}   
+
+   QString ModeqInteractiveEnvironment::getResult()
+   {
+	   qDebug(result_);
+      return result_;
+   }
+   
+   void ModeqInteractiveEnvironment::evalExpression(QString &expr)
+   {
+	 result_ = comm_.callModeq(expr);
+	 qDebug(result_);
+   }
+}

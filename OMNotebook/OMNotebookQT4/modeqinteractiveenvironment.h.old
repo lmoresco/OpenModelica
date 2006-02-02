@@ -1,0 +1,25 @@
+
+#ifndef _MODEQINTERACTIVE_H
+#define _MODEQINTERACTIVE_H
+
+#include <QtCore/QString>
+
+#include "modeq_communicator.hpp"
+#include "inputcelldelegate.h"
+
+namespace IAEX
+{
+   class ModeqInteractiveEnvironment : public InputCellDelegate
+   {
+   public:
+      ModeqInteractiveEnvironment();
+      virtual ~ModeqInteractiveEnvironment();
+
+      virtual QString getResult();
+      virtual void evalExpression(QString &expr);
+   private:
+      ModeqCommunicator &comm_;
+      QString result_;
+   };
+}
+#endif
