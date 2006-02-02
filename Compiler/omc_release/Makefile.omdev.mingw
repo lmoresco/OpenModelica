@@ -15,15 +15,14 @@
 
 .testvariables:
 ifndef OMDEV
-    @echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
-    @echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
-    @echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
-    ABORT
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT
 endif
-
 ifndef OMC_BUILD_FROM
-    @echo From wich files to build must be set: $OMC_BUILD_FROM. Either "mo" or "rml"! Exiting....
-    ABORT
+	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+	ABORT
 endif
 
 

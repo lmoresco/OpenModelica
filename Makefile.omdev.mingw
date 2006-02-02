@@ -19,9 +19,8 @@ ifndef OMDEV
 	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
 	ABORT Please Define OMDEV
 endif
-
 ifndef OMC_BUILD_FROM
-	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT Please Define OMC_BUILD_FROM
 endif
 
