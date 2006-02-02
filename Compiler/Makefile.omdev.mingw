@@ -56,13 +56,13 @@ ifeq ($(OMC_BUILD_FROM),mo)
 
 .SUFFIXES:
 .SUFFIXES: .o .mo .h
-.PHONY:  depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
+.PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
 
-all : .testvariables release $(ALLMO)
+all : .testvariables .depend release $(ALLMO)
 
-debug:	.testvariables $(PROGD) $(SRCRDB)
+debug:	.testvariables .depend $(PROGD) $(SRCRDB)
 
-release: $(PROG)
+release: .testvariables .depend $(PROG)
 
 $(SRCRDB): %.rdb : omc_debug/%.rdb 
 	cp $< $@
@@ -125,7 +125,7 @@ dreallyclean:
 report:
 	@(cd report ; $(MAKE))
 
-depend:	
+.depend: 
 	-$(RM) .depend
 	$(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 
@@ -133,13 +133,13 @@ else #else we build from .rml files ********************************************
 
 .SUFFIXES:
 .SUFFIXES: .o .rml .h
-.PHONY: all subdirs report vctarget debug release depend clean dclean test reallyclean omc_release omc_debug
+.PHONY: .testvariables .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
 
-all : release
+all : .testvariables .depend release
 
-debug:	$(PROGD) $(SRCRDB)
+debug:	.testvariables .depend $(PROGD) $(SRCRDB)
 
-release: $(PROG)
+release: .testvariables .depend $(PROG)
 
 $(SRCRDB): %.rdb: omc_debug/%.rdb 
 	cp $< $@
@@ -202,7 +202,7 @@ dreallyclean:
 report:
 	@(cd report ; $(MAKE))
 
-depend:	
+.depend:	
 	-$(RM) .depend
 	$(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
 
