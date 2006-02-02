@@ -21,7 +21,7 @@ ifndef OMDEV
 	ABORT
 endif
 ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT
 endif
 
@@ -97,7 +97,7 @@ $(SRCH): %.h : %.mo
 	$(RML) -c $<
 
 %.rsig : %.mo
-	$(srcdir)/rml2sig/rmldep.sh $<
+	$(srcdir)/rml2sig/rmldep-new.sh $<
 else # we build from .rml files
 $(ALLRML): %.rml : $(srcdir)/%.rml
 	cp $< $@
@@ -115,7 +115,7 @@ $(SRCH): %.h : %.rml
 	$(RML) -c $<
 
 %.rsig : %.rml
-	$(srcdir)/rml2sig/rmldep.sh $<
+	$(srcdir)/rml2sig/rmldep-new.sh $<
 endif
 
 vctarget: $(SRCC) absyn_subdir

@@ -16,7 +16,7 @@ ifndef OMDEV
 	ABORT Please Define OMDEV
 endif
 ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: \$OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
+	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT Please Define OMC_BUILD_FROM as one of \"mo\" or \"rml\"
 endif
 
