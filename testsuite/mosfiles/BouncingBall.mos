@@ -9,9 +9,12 @@ simulate(BouncingBall, stopTime=3.0);
 echo(false);
 s:=readSimulationResultSize("BouncingBall_res.plt");
 res:=readSimulationResult("BouncingBall_res.plt",{flying},s);
+res2:=readSimulationResult("BouncingBall_res.plt",{n_bounce},s);
 echo(true);
 res[1,1];
 res[1,s];
+res2[1,1];
+res2[1,s];
 readFile("output.log");
 system("rm -rf BouncingBall_* BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
 // Result:
@@ -22,6 +25,8 @@ system("rm -rf BouncingBall_* BouncingBall.exe BouncingBall.cpp BouncingBall.mak
 // true
 // 1.0
 // 0.0
+// 0.0
+// 36.0
 // ""
 // 0
 // endResult

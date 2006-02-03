@@ -6,6 +6,7 @@ model BouncingBall
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
+  discrete Integer n_bounce(start=0);
 equation   
   impact = h <= 0.0;
   der(v) = if flying then -g else 0;
@@ -15,6 +16,7 @@ equation
     v_new = if edge(impact) then -e*pre(v) else 0;
     flying = v_new > 0;
     reinit(v, v_new);
+    n_bounce=pre(n_bounce)+1;
   end when;
 
 end BouncingBall;
