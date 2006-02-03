@@ -7,14 +7,14 @@
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/trunk}"/>
 <mapAttribute key="org.eclipse.debug.core.environmentVariables">
 <mapEntry key="SystemRoot" value="${env_var:SystemRoot}"/>
-<mapEntry key="OMDEV" value="c:\\OMDev"/>
+<mapEntry key="OMDEV" value="/c/petar/OMDev/"/>
 <mapEntry key="TMP" value="${env_var:TMP}"/>
 <mapEntry key="CLASSPATH" value="${env_var:OMDEV}/bin/antlr/antlr.jar"/>
 <mapEntry key="COMSPEC" value="${env_var:COMSPEC}"/>
 <mapEntry key="SystemDrive" value="${env_var:SystemDrive}"/>
 <mapEntry key="TEMP" value="${env_var:TEMP}"/>
 <mapEntry key="PATH" value="${env_var:OMDEV}/tools/mingw/bin;${env_var:OMDEV}/tools/msys/bin;${env_var:OMDEV}/tools/rml/bin/;${env_var:OMDEV}/tools/msys/local/bin;${env_var:OMDEV}/bin/mico/;c:/windows;c:/windows/system32;"/>
-<mapEntry key="OMC_BUILD_FROM" value="mo"/>
+<mapEntry key="OMC_BUILD_FROM" value="rml"/>
 </mapAttribute>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${env_var:OMDEV}\tools\msys\bin\make.exe"/>
 <booleanAttribute key="org.eclipse.ui.externaltools.ATTR_TRIGGERS_CONFIGURED" value="true"/>
