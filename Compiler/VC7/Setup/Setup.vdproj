@@ -87,12 +87,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_058880DCFBCA474BB9CB3CB5DF840B44"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_05D29D27D80B4D18A24A63A433426FF9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,12 +130,6 @@
         "Entry"
         {
         "MsmKey" = "8:_090E6B50F1DB42A78FF8330A03E49C4B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0A1C0AFAF9C4463B8AAA2A41E26BFBD6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -208,6 +196,12 @@
         "Entry"
         {
         "MsmKey" = "8:_0FEFEC9C5AC04911805179BF4CD302F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0FFDFC547CDC41A09E25DB3BF33F1E93"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -280,6 +274,12 @@
         "Entry"
         {
         "MsmKey" = "8:_15E0A979E0F24A4CBFC115FAFE64CB9B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_162BEC01B9B84B24B494EBE72AB45E30"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -765,12 +765,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3E03B56E3DD940A38E74D3235BEB2607"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3E361EB4DA35450BAEF0FE3F3330B633"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -873,13 +867,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4A6724A476F44F9F9100BE15967ED1FC"
+        "MsmKey" = "8:_4A68EBEDFBDD459594D77F3795BB11A5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4A68EBEDFBDD459594D77F3795BB11A5"
+        "MsmKey" = "8:_4B1D40698CFD4E85BDD7FD47EC544FAE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1119,12 +1113,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5E31AE7A0D2441689D01EAE185A37EDE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5E5AA890143949639F4AEB884D523A2C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1156,6 +1144,12 @@
         "Entry"
         {
         "MsmKey" = "8:_5FC6E56D42544FABBC2B917AE5FB513A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5FDB0981E83446349F6B4702B7272CDA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1371,6 +1365,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_75CFF6A991AD4D48AF32450DD0855E4D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_75F7290EB53C46CBA39F3AC60DC4E268"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1456,6 +1456,12 @@
         "Entry"
         {
         "MsmKey" = "8:_7E608498D8344806810A44B1E5704D8E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7E6BC39CC53B43DAA2EE08380244F4EE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1564,6 +1570,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8766D0D076FF4AEB9E6F391BC8FAA821"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8776667C32FD42D191C1D6087DCFBB19"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2073,12 +2085,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AE14CE9C3F8D4B8CAEEB17A6B91EFB41"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_AE3AC249CE904FAA859D7496571F7121"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2211,12 +2217,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BD6C56829B3A44C79252C40A230272C2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BD6D895E069D40E99610007872823510"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2272,6 +2272,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C18E048E5BE448B780F5FF1AF0505C18"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C27BC9AAC0AC460B960394EA3D97CFDC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2338,12 +2344,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C68D640B01DB45B5AF073672D5FF5B5C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C6B6A0C496924E32A1A10B2E4F98B03D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2577,6 +2577,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DC1C7D7C6363404F90379C8654AE2DB5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DC830C3D2EE3409B9A987C4FA9EFF9BE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2608,12 +2614,6 @@
         "Entry"
         {
         "MsmKey" = "8:_DF99F3260AC34D9595769D00E0A57EB6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DFF1ECE54EF5495C98B9FF0D161C578B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2812,6 +2812,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F0C4A6D4BF344FF692822E08179566C4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0E3B588E7134B89B13C2AC5A3DC0993"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3315,26 +3321,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_058880DCFBCA474BB9CB3CB5DF840B44"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\qt-mt335.dll"
-            "TargetName" = "8:qt-mt335.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_05D29D27D80B4D18A24A63A433426FF9"
             {
             "SourcePath" = "8:M:\\DrModelica\\Variables\\VariabilityPrefixes.nb"
@@ -3479,26 +3465,6 @@
             {
             "SourcePath" = "8:ModelicaLib.tar.gz"
             "TargetName" = "8:ModelicaLib.tar.gz"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_0A1C0AFAF9C4463B8AAA2A41E26BFBD6"
-            {
-            "SourcePath" = "8:M:\\WinMoshQt\\OMS.exe"
-            "TargetName" = "8:OMS.exe"
             "Tag" = "8:"
             "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
@@ -3721,6 +3687,26 @@
             "TargetName" = "8:ScalarFunc.nb"
             "Tag" = "8:"
             "Folder" = "8:_1B35DA38B8924B29A0020B4D169BBBA8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_0FFDFC547CDC41A09E25DB3BF33F1E93"
+            {
+            "SourcePath" = "8:M:\\OMShell\\release\\OMShell.exe"
+            "TargetName" = "8:OMShell.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3961,6 +3947,26 @@
             "TargetName" = "8:dpmpar.f"
             "Tag" = "8:"
             "Folder" = "8:_1DF4D0D09EAF42CFA8690090BC62F9B0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_162BEC01B9B84B24B494EBE72AB45E30"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\modelicacolors.xml"
+            "TargetName" = "8:modelicacolors.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5555,26 +5561,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3E03B56E3DD940A38E74D3235BEB2607"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\OMNotebook.exe"
-            "TargetName" = "8:OMNotebook.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_3E361EB4DA35450BAEF0FE3F3330B633"
             {
             "SourcePath" = "8:M:\\DrModelica\\Arrays\\Built-inFunc.nb"
@@ -5915,12 +5901,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4A6724A476F44F9F9100BE15967ED1FC"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4A68EBEDFBDD459594D77F3795BB11A5"
             {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\stylesheet.xml"
-            "TargetName" = "8:stylesheet.xml"
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\sig_die.c"
+            "TargetName" = "8:sig_die.c"
             "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5935,12 +5921,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4A68EBEDFBDD459594D77F3795BB11A5"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4B1D40698CFD4E85BDD7FD47EC544FAE"
             {
-            "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\sig_die.c"
-            "TargetName" = "8:sig_die.c"
+            "SourcePath" = "8:M:\\OMNotebook\\release\\QtXml4.dll"
+            "TargetName" = "8:QtXml4.dll"
             "Tag" = "8:"
-            "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6715,26 +6701,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E31AE7A0D2441689D01EAE185A37EDE"
-            {
-            "SourcePath" = "8:M:\\WinMoshQt\\QtCore4.dll"
-            "TargetName" = "8:QtCore4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E5AA890143949639F4AEB884D523A2C"
             {
             "SourcePath" = "8:bin\\libintl-2.dll"
@@ -6841,6 +6807,26 @@
             "TargetName" = "8:ef1asc_.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5FDB0981E83446349F6B4702B7272CDA"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\QtCore4.dll"
+            "TargetName" = "8:QtCore4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7555,6 +7541,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_75CFF6A991AD4D48AF32450DD0855E4D"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\OMNotebook.exe"
+            "TargetName" = "8:OMNotebook.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_75F7290EB53C46CBA39F3AC60DC4E268"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\c_exp.c"
@@ -7821,6 +7827,26 @@
             "TargetName" = "8:uio.c"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7E6BC39CC53B43DAA2EE08380244F4EE"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\stylesheet.xml"
+            "TargetName" = "8:stylesheet.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -8181,6 +8207,26 @@
             "TargetName" = "8:Inheritance.nb"
             "Tag" = "8:"
             "Folder" = "8:_5E731CC45B3A4CA4A78B1FBB189FCA07"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8776667C32FD42D191C1D6087DCFBB19"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\commands.xml"
+            "TargetName" = "8:commands.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9835,26 +9881,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_AE14CE9C3F8D4B8CAEEB17A6B91EFB41"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\commands.xml"
-            "TargetName" = "8:commands.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_AE3AC249CE904FAA859D7496571F7121"
             {
             "SourcePath" = "8:M:\\DrModelica\\Algorithms\\IfStat.nb"
@@ -10295,26 +10321,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BD6C56829B3A44C79252C40A230272C2"
-            {
-            "SourcePath" = "8:M:\\WinMoshQt\\QtGui4.dll"
-            "TargetName" = "8:QtGui4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_BD6D895E069D40E99610007872823510"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\f77_aloc.c"
@@ -10481,6 +10487,26 @@
             "TargetName" = "8:Exercise4.nb"
             "Tag" = "8:"
             "Folder" = "8:_B6C3A9C0CD714A97AFE7CE5227DF5505"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C27BC9AAC0AC460B960394EA3D97CFDC"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\qt-mt335.dll"
+            "TargetName" = "8:qt-mt335.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10701,26 +10727,6 @@
             "TargetName" = "8:Extending.nb"
             "Tag" = "8:"
             "Folder" = "8:_01BB4CE289304C54A311846ECECE280C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C6B6A0C496924E32A1A10B2E4F98B03D"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\QtXml4.dll"
-            "TargetName" = "8:QtXml4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -11495,6 +11501,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DC1C7D7C6363404F90379C8654AE2DB5"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\QtGui4.dll"
+            "TargetName" = "8:QtGui4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_DC830C3D2EE3409B9A987C4FA9EFF9BE"
             {
             "SourcePath" = "8:M:\\DrModelica\\Inheritance\\Multiple.nb"
@@ -11601,26 +11627,6 @@
             "TargetName" = "8:Graphical.nb"
             "Tag" = "8:"
             "Folder" = "8:_674D7F665D3A4740A337F4EEC25CE035"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DFF1ECE54EF5495C98B9FF0D161C578B"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\notebook\\modelicacolors.xml"
-            "TargetName" = "8:modelicacolors.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12281,6 +12287,26 @@
             "TargetName" = "8:Call.nb"
             "Tag" = "8:"
             "Folder" = "8:_01BB4CE289304C54A311846ECECE280C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F0E3B588E7134B89B13C2AC5A3DC0993"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\OMNotebookHelp.onb"
+            "TargetName" = "8:OMNotebookHelp.onb"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12971,7 +12997,7 @@
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_596366ECE84B44178CE3B8AEEEA6FBE9"
                     {
                     "Name" = "8:work"
-                    "AlwaysCreate" = "11:FALSE"
+                    "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_34D89386E1604278B4544C31D16E4A1F"
@@ -13283,18 +13309,18 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{C66385D3-DD10-4601-B50A-79E578344270}"
-        "PackageCode" = "8:{B9C5519A-D6D5-48DA-9E6A-404D1D31A89F}"
+        "PackageCode" = "8:{44B9C40A-8E7F-426F-8459-6859AA40289E}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "ProductVersion" = "8:1.3.2"
-        "Manufacturer" = "8:Programming Environments Laboratory (PELAB), Linköping University"
+        "Manufacturer" = "8:Programming Environments Laboratory (PELAB), Linköping University (LiU). "
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://www.ida.liu.se/labs/pelab/modelica/OpenModelica.html"
         "Title" = "8:OpenModelica"
-        "Subject" = "8:"
-        "ARPCONTACT" = "8:PELAB"
+        "Subject" = "8:Modeling and Simulation Software for Modelica"
+        "ARPCONTACT" = "8:Programming Environments Laboratory (PELAB)"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:OpenModelica"
         "ARPURLINFOABOUT" = "8:http://www.ida.liu.se/labs/pelab"
@@ -13481,7 +13507,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_3E03B56E3DD940A38E74D3235BEB2607"
+            "Target" = "8:_75CFF6A991AD4D48AF32450DD0855E4D"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Icon" = "8:"
@@ -13509,7 +13535,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_0A1C0AFAF9C4463B8AAA2A41E26BFBD6"
+            "Target" = "8:_0FFDFC547CDC41A09E25DB3BF33F1E93"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Icon" = "8:"
