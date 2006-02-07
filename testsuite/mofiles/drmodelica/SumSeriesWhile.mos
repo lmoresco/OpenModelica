@@ -25,8 +25,8 @@ system("rm -rf SumSeriesWhile_* SumSeriesWhile.exe SumSeriesWhile.cpp SumSeriesW
 //     resultFile = "SumSeriesWhile_res.plt"
 // end record
 // true
-// { <<RESULT>> }
-// { <<RESULT>> }
+// {199.0,199.0,199.0}
+// {0.0,0.0,0.0}
 // ""
 // 0
 // endResult
