@@ -1,0 +1,28 @@
+// name:     Structural If
+// keywords: Simulate, readSimulationData, if expressions
+// status:   correct
+// 
+//  Simulate model with structural if equations
+//
+loadFile("structural_if.mo");
+simulate(test,numberOfIntervals=5);
+echo(false);
+s:=readSimulationResultSize("test_res.plt");
+res:=readSimulationResult("test_res.plt",{y},s);
+y:=res[1];
+y:=1000*y;
+y:=floor(y);
+echo(true);
+y/1000.0;
+readFile("output.log");
+system("rm -rf test.cpp test.libs test.makefile test.exe test_* output.log");
+// Result:
+// true
+// record
+//     resultFile = "test_res.plt"
+// end record
+// true
+// {1.0,2.978,3.0,3.0,3.0,3.0,2.674,2.451,2.302,2.203}
+// ""
+// 0
+// endResult
