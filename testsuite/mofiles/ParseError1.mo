@@ -4,10 +4,14 @@
 // 
 // Parsing error message.
 // 
+// TODO: omc should return both instantiated class -and-
+//       error messages, so this model can be fully tested.
 
 model ParseError1
   Real x,y,;
 end ParseError1;
 
-// [ParseError1.mo:9:12]: Parse error: expecting an identifier, found ';'
+// fclass ParseError1
+// end ParseError1;
+
 

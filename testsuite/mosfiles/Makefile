@@ -3,7 +3,7 @@ variables.mos Array1.mos simulation.mos differentiate.mos simplify.mos \
 strings.mos interactive_api_loadsave.mos  interactive_api_attributes.mos \
 matrices.mos BouncingBall.mos ExternalLibraries.mos \
 loadFileInteractiveQualified.mos ArrayEquation.mos structural_if.mos
-TEST = rtest
+TEST = ./rtest
 
 
 .PHONY : test
