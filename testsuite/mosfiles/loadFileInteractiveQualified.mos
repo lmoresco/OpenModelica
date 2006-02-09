@@ -15,9 +15,9 @@ getElementsInfo(Something.Somewhere.BlaBla.Z);
 // {Something}
 // {Somewhere}
 // {Something.Somewhere.Stuff,Something.Somewhere.Stuff2,Something.Somewhere.BlaBla}
-// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", readonly="writable", elementStartLine=23, elementStartColumn=3, elementEndLine=23, elementEndColumn=3, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Z, classrestriction=RECORD, classfile="loadFileInteractiveQualified.mo", readonly="writable", classStartLine=23, classStartColumn=3, classEndLine=24, classEndColumn=4 }
+// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=23, elementStartColumn=3, elementEndLine=23, elementEndColumn=3, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Z, classrestriction=RECORD, classfile="loadFileInteractiveQualified.mo", classreadonly="writable", classStartLine=23, classStartColumn=3, classEndLine=24, classEndColumn=4 }
 //  }
-// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", readonly="writable", elementStartLine=24, elementStartColumn=4, elementEndLine=24, elementEndColumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, variability="unspecified", direction="unspecified" },
-// { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", readonly="writable", elementStartLine=25, elementStartColumn=4, elementEndLine=25, elementEndColumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, variability="unspecified", direction="unspecified" }
+// { { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=24, elementStartColumn=4, elementEndLine=24, elementEndColumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, variability="unspecified", direction="unspecified" },
+// { elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=25, elementStartColumn=4, elementEndLine=25, elementEndColumn=4, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, variability="unspecified", direction="unspecified" }
 //  }
 // endResult
