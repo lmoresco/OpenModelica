@@ -19,7 +19,10 @@ class Stuff2
   Real z;
 end Stuff2;
 
+
 class BlaBla
+  import HelloWorld.*;
+  type X = Y;
   record Z
    Real x;
    Real y;
