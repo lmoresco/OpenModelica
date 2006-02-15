@@ -1,0 +1,11 @@
+// name:     While-statement Illegal
+// keywords: while
+// status:   incorrect
+// 
+//  Test the interactive While-statement
+//
+while 1234 loop s:="aa"+s;i:=i+1;end while;  
+
+// Result:
+// ""
+// endResult
