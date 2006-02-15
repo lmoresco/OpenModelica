@@ -6,67 +6,8 @@
 //
 loadFile("Rename.mo");
 renameComponent(Pck.TestRename,x,RENAMED_X);
-list();
+
 
 // Result:
 // true
-// OK
-// "model TestRenameComp2
-//   import A = Pck.TestRenameExt;
-//   import Pck2.TestRenameComp;
-//   Pck2.TestRenameComp pck_testRenameComp;
-//   A a;
-//   TestRenameComp b;
-
-// equation 
-//   a.RENAMED_X=2.3;
-//   pck_testRenameComp.testRenameExt.RENAMED_X=3.4;
-//   b.testRenameExt.RENAMED_X=3.4;
-//   when a.RENAMED_X >= 3 or b.testRenameExt.RENAMED_X >= 3 then
-//       pck_testRenameComp.testRenameExt.RENAMED_X=4;
-  
-//   end when;
-//   if a.RENAMED_X >= 5 then
-//     pck_testRenameComp.testRenameExt.RENAMED_X=3;
-
-//   else
-//     b.testRenameExt.RENAMED_X=4;
-
-//   end if;
-//   for i in 1:5 loop
-//   b.testRenameExt.RENAMED_X=3;
-
-//   end for;
-// end TestRenameComp2;
-// package Pck2
-//   model TestRenameComp
-//       Pck.TestRenameExt testRenameExt;
-//     TestRenameExt3 testRenameExt3;
-//   end TestRenameComp;
-// end Pck2;
-// model TestRenameExt3
-//   extends Pck.TestRenameExt2;
-//   Real az1;
-//   Real az2;
-// end TestRenameExt3;
-// package Pck
-//   model TestRename
-//       flow Real RENAMED_X;
-//     Real y;
-
-//   equation 
-//     RENAMED_X=0.2;
-//   end TestRename;
-//   model TestRenameExt
-//       extends TestRename;
-//     Real z1;
-//     Real z2;
-//   end TestRenameExt;
-//   model TestRenameExt2
-//       extends TestRename;
-//     Real zx1;
-//     Real zx2;
-//   end TestRenameExt2;
-// end Pck;
-
-// "
+// {TestRenameExt3,TestRenameComp2,Pck2.TestRenameComp,Pck.TestRenameExt,Pck.TestRenameExt2,Pck.TestRename}
