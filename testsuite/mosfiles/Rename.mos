@@ -11,3 +11,4 @@ renameComponent(Pck.TestRename,x,RENAMED_X);
 // Result:
 // true
 // {TestRenameExt3,TestRenameComp2,Pck2.TestRenameComp,Pck.TestRenameExt,Pck.TestRenameExt2,Pck.TestRename}
+// endResult
