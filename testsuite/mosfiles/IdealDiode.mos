@@ -1,0 +1,33 @@
+// name:     IdealDiode 
+// keywords: events, mixed systems
+// status:   correct
+//
+// Event handling
+//
+loadFile("ideal_diode.mo");
+simulate(ideal_diode);
+echo(false);
+s:=readSimulationResultSize("ideal_diode_res.plt");
+res:=readSimulationResult("ideal_diode_res.plt",{i0},s);
+i:=res[1];
+i:=1000*i;
+i:=floor(i);
+echo(true);
+i[1];
+i[30];
+i[s];
+readFile("output.log");
+system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log");
+// Result:
+// true
+// record
+//     resultFile = "ideal_diode_res.plt"
+// end record
+// true
+// 0.0
+// 612.0
+// 853.0
+// ""
+// 0
+// endResult
+
