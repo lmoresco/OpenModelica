@@ -2277,12 +2277,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C27BC9AAC0AC460B960394EA3D97CFDC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C2EF843BCDAB440A81EEAEA9B5462977"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10487,26 +10481,6 @@
             "TargetName" = "8:Exercise4.nb"
             "Tag" = "8:"
             "Folder" = "8:_B6C3A9C0CD714A97AFE7CE5227DF5505"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C27BC9AAC0AC460B960394EA3D97CFDC"
-            {
-            "SourcePath" = "8:M:\\OMNotebook\\release\\qt-mt335.dll"
-            "TargetName" = "8:qt-mt335.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
