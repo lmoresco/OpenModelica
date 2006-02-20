@@ -204,6 +204,9 @@ popd
 				RelativePath="..\winruntime\rtopts.c">
 			</File>
 			<File
+				RelativePath="..\winruntime\settingsimpl.c">
+			</File>
+			<File
 				RelativePath="..\winruntime\socketimpl.c">
 			</File>
 			<File
