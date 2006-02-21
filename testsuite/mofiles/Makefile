@@ -2,7 +2,7 @@ TEST=./rtest
 #TEST=runtest
 
 TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
-Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo \
+Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo \
  Array_builtin.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArraySlice1.mo \
 BoolArrayTest.mo \
