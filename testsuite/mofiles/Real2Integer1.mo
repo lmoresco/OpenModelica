@@ -1,6 +1,6 @@
 // name:     Real2Integer1
 // keywords: type
-// status:   erroneous
+// status:   incorrect
 //
 // No implicit conversion from 'Real' to 'Integer'. But integers are 
 // converted to reals in equations with real-expressions.
