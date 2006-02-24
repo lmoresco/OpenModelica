@@ -7,20 +7,20 @@
 
 within Something.Somewhere;
 
-class Stuff
+class Stuff "Stuff Comment"
 
   Real x;
   Real y;
 
 end Stuff;
 
-class Stuff2 
+class Stuff2 "Stuff2 Comment"
   extends Stuff;
   Real z;
 end Stuff2;
 
 
-class BlaBla
+class BlaBla "BlaBla Comment"
   import HelloWorld.*;
   type X = Y;
   record Z
