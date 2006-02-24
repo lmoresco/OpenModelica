@@ -1209,6 +1209,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_64FC859971AB4C7A96CBE39010786963"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_65766E9AC4DE406BA115B28507873714"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2241,6 +2247,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BEC6720DCA9843919F6A26E0CDD5084D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BF0739C2F4C44E4CB04E88C161712A08"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2248,6 +2260,12 @@
         "Entry"
         {
         "MsmKey" = "8:_BF843145B65443829A59B142CD83739E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BF92C21C81C84F78934B8CF4E2BCA4F4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2757,6 +2775,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ECB1CD3100464EA9B0FF264C1F80EC2B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_ED38ACB365144E1081A230876210E14E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2800,6 +2824,12 @@
         "Entry"
         {
         "MsmKey" = "8:_EFD9CA7E259745C19371F969F46C6F88"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0B6A230014D4B7BBC0E08EDE1A4135E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -5020,7 +5050,7 @@
             "SourcePath" = "8:OpenModelica.ico"
             "TargetName" = "8:OpenModelica.ico"
             "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7001,6 +7031,26 @@
             "TargetName" = "8:bubblesort.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_64FC859971AB4C7A96CBE39010786963"
+            {
+            "SourcePath" = "8:Uninstall.bat"
+            "TargetName" = "8:Uninstall.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10395,6 +10445,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BEC6720DCA9843919F6A26E0CDD5084D"
+            {
+            "SourcePath" = "8:OMNotebook.ico"
+            "TargetName" = "8:OMNotebook.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_BF0739C2F4C44E4CB04E88C161712A08"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\IfClause.nb"
@@ -10421,6 +10491,26 @@
             "TargetName" = "8:Exercise4.nb"
             "Tag" = "8:"
             "Folder" = "8:_A5527E1A63FA464198AB75CF7DA7E233"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BF92C21C81C84F78934B8CF4E2BCA4F4"
+            {
+            "SourcePath" = "8:Uninstall.ico"
+            "TargetName" = "8:Uninstall.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12095,6 +12185,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ECB1CD3100464EA9B0FF264C1F80EC2B"
+            {
+            "SourcePath" = "8:OMShell.ico"
+            "TargetName" = "8:OMShell.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_ED38ACB365144E1081A230876210E14E"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\libf2c\\dtime_.c"
@@ -12241,6 +12351,26 @@
             "TargetName" = "8:libf2c.lbc"
             "Tag" = "8:"
             "Folder" = "8:_CC3791ACD40E4BA589096DA612027057"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F0B6A230014D4B7BBC0E08EDE1A4135E"
+            {
+            "SourcePath" = "8:PDF.ico"
+            "TargetName" = "8:PDF.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12968,6 +13098,17 @@
                             }
                         }
                     }
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_47605D5899AF46B799996EC9F22DE894"
+                    {
+                    "Name" = "8:icons"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_89155535580B4EDDB69551A46EA252C0"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_596366ECE84B44178CE3B8AEEEA6FBE9"
                     {
                     "Name" = "8:work"
@@ -13484,7 +13625,7 @@
             "Target" = "8:_75CFF6A991AD4D48AF32450DD0855E4D"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Icon" = "8:"
+            "Icon" = "8:_BEC6720DCA9843919F6A26E0CDD5084D"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_6DE971C332EE43E7B977FA9A54E0BB2A"
@@ -13498,7 +13639,21 @@
             "Target" = "8:_39857A32FDB746B6A2708DB146A6A81E"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Icon" = "8:"
+            "Icon" = "8:_F0B6A230014D4B7BBC0E08EDE1A4135E"
+            "Feature" = "8:"
+            }
+            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_A921A4A9EBDD4633AEFFDEF958B5C757"
+            {
+            "Name" = "8:Uninstall OpenModelica"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:7"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_64FC859971AB4C7A96CBE39010786963"
+            "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
+            "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Icon" = "8:_BF92C21C81C84F78934B8CF4E2BCA4F4"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_DD9E92317E894F3E9098F3821BDD216F"
@@ -13512,7 +13667,7 @@
             "Target" = "8:_0FFDFC547CDC41A09E25DB3BF33F1E93"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Icon" = "8:"
+            "Icon" = "8:_ECB1CD3100464EA9B0FF264C1F80EC2B"
             "Feature" = "8:"
             }
         }
