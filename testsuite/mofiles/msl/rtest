@@ -22,7 +22,7 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
-    system "MODELICAUSERCFLAGS=$info{cflags} ../../../Compiler/omc $f >$log 2>&1";
+    system "MODELICAUSERCFLAGS=$info{cflags} ../../../omc $f >$log 2>&1";
 #    system "../Compiler/omc +d=daedump $f >$log 2>&1";
 #    system "../omc $f >$log 2>&1";
     

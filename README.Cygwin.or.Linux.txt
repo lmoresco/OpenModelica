@@ -1,5 +1,5 @@
-How to compile on Linux
-=======================
+How to compile on Linux or Cygwin
+=================================
 
 You need: 
 	cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
@@ -44,7 +44,8 @@ export OPENMODELICAHOME=path/to/trunk
 
 For debugging purposes it can be useful to start mosh and omc in two different termnials.
 For this use:
-OpenModelica/Compiler/omc +d=interactive
+OpenModelica/Compiler/omc +d=interactive      (if you configured with --without-CORBA) or
+OpenModelica/Compiler/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico) 
 
 OpenModelica/mosh/src/mosh -noserv
 
