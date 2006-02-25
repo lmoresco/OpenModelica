@@ -33,7 +33,7 @@ sub runone
 	return 1;
     }
 
-    system "/usr/bin/egrep -s '^#|Execution failed!' $log";
+    system "egrep -s '^#|Execution failed!' $log";
     if ( $? == 0 ) {
 	if ($info{"status"} eq "incorrect") {
 	    print "ok\n";
