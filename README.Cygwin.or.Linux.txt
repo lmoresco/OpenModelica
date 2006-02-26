@@ -57,6 +57,14 @@ trunk/build/bin/OMShell -noserv
 If you want to change the port number of the socket connection you
 will have to do it manually in mosh.cpp and Compiler/Main.rml.
 
+Plotting on Linux
+=================
+To be able to plot in Linux you will have to replace:
+$(OPENMODELICAHOME)/bin/doPlot
+with
+$(OPENMODELICAHOME)/bin/doPlot.Linux
+You can achieve this using:
+> cp $(OPENMODELICAHOME)/bin/doPlot.Linux $(OPENMODELICAHOME)/bin/doPlot 
 
 Example Session
 ===============
