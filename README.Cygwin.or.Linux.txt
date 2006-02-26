@@ -11,6 +11,9 @@ You need:
 	java
 	gcc
 
+NOTE:
+ We assume you took the source from Subversion in a subdirectory called "trunk".
+ If you used some other name, replace "trunk" below with your directory.
 
 1. Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.2
    Set CLASSPATH for antlr, e.g. $ANTLRHOME/antlr.jar
@@ -24,30 +27,30 @@ You need:
   run: 
   ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
   ./configure --without-CORBA            (is you want omc to use sockets)
-  in the modelica directory
+  in the trunk directory
   Make sure that all makefiles are created. Check carefully for error messages.
 
   make omc
   make mosh
 
-  To run the testsuite: export OPENMODELICAHOME=path/to/trunk
+  After the compilation the results are in the path/to/trunk/build.
+  To run the testsuite: export OPENMODELICAHOME=path/to/trunk/build
   cd testsuite
   testsuite> make
 
-
 How to run
 ==========
-To be able to use mosh (osm) you must
+To be able to use OMShell you must
 set the OPENMODELICAHOME environment variable
-to point to the root directory of osm e.g
-export OPENMODELICAHOME=path/to/trunk
+to point to the root directory of OpenModelica e.g
+export OPENMODELICAHOME=path/to/trunk/build
 
-For debugging purposes it can be useful to start mosh and omc in two different termnials.
+For debugging purposes it can be useful to start OMShell and omc in two different termnials.
 For this use:
-OpenModelica/Compiler/omc +d=interactive      (if you configured with --without-CORBA) or
-OpenModelica/Compiler/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico) 
+trunk/build/bin/omc +d=interactive      (if you configured with --without-CORBA) or
+trunk/build/bin/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico) 
 
-OpenModelica/mosh/src/mosh -noserv
+trunk/build/bin/OMShell -noserv
 
 ( The -noserv argument will prevent mosh from starting its own omc in the background )
 
@@ -59,11 +62,10 @@ Example Session
 ===============
 Here is a short example session. 
 
-$ cd modelica/mosh/src/
+$ cd trunk/build/bin
 $ export MODELICAPATH=home/petar/ModelicaLibrary
-$ ./mosh
-Started server using:home/petar/modelica/mosh/../Compiler/omc +d=inte
-ractive > /home/petar/modelica/mosh/error.log 2>&1 &
+$ ./OMShell
+Started server using:trunk/build/bin/omc +d=interactive > trunk/build/error.log 2>&1 &
  res = 0
 Open Source Modelica x.x.x
 Copyright 1997-2006, PELAB, Linkoping University

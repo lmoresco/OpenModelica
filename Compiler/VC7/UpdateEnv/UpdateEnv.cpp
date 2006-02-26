@@ -42,7 +42,7 @@ bool runTar(std::string& file, std::string& dir) {
 	CopyFile((dir + "\\" + file + ".tar.gz").c_str(), (dir + "\\" + file + ".tgz").c_str(),FALSE);
 
 	commandline = "\"";
-	commandline += dir + "\\Compiler\\win\\gunzip.exe\" ";
+	commandline += dir + "\\tools\\gunzip.exe\" ";
 	commandline += file + ".tgz";
 	strcmd = strdup(commandline.c_str());
 	if (CreateProcess(NULL,strcmd,NULL,NULL,FALSE,DETACHED_PROCESS,NULL,dir.c_str(),&startinfo,&procinfo)) {
@@ -58,7 +58,7 @@ bool runTar(std::string& file, std::string& dir) {
 	}
 
 	commandline = "\"";
-	commandline += dir + "\\Compiler\\win\\tar.exe\" -xf ";
+	commandline += dir + "\\tools\\tar.exe\" -xf ";
 	commandline += file + ".tar";
 	strcmd = strdup(commandline.c_str());
 	if (CreateProcess(NULL,strcmd,NULL,NULL,FALSE,DETACHED_PROCESS,NULL,dir.c_str(),&startinfo,&procinfo)) {
