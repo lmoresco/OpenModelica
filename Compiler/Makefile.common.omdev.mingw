@@ -61,7 +61,7 @@ SRCMO= Absyn.mo \
 
 # These are externally defined MO modules
 ALLMO = $(SRCMO) DAEEXT.mo Print.mo RTOpts.mo System.mo Parser.mo \
-		TaskGraphExt.mo Corba.mo Socket.mo ErrorExt.mo
+		TaskGraphExt.mo Corba.mo Socket.mo ErrorExt.mo Settings.mo
 
 # The RML sources
 SRCRML= Absyn.rml \
@@ -100,7 +100,7 @@ SRCRML= Absyn.rml \
 
 # These are externally defined MO modules
 ALLRML = $(SRCRML) DAEEXT.rml Print.rml RTOpts.rml System.rml Parser.rml \
-		TaskGraphExt.rml Corba.rml Socket.rml ErrorExt.rml
+		TaskGraphExt.rml Corba.rml Socket.rml ErrorExt.rml Settings.rml
 
 
 ifeq ($(OMC_BUILD_FROM),mo)

@@ -2,9 +2,27 @@
 # Makefile for compilation of OMC using OMDev-mingw
 # OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
 
-.PHONY : .testvariables all omc omcd debug release mosh clean
+.PHONY : .testvariables mkbuilddirs all omc omcd debug release mosh clean
 
 top_builddir = .
+builddir_bin=$(top_builddir)/build/bin
+builddir_lib=$(top_builddir)/build/lib
+builddir_inc=$(top_builddir)/build/include
+builddir_doc=$(top_builddir)/build/doc
+
+prefix = ./install
+exec_prefix = ${prefix}
+bindir = ${exec_prefix}/bin
+libdir = ${exec_prefix}/lib
+includedir = ${prefix}/include
+datadir = ${prefix}/share
+
+INSTALL_BINDIR     = ${bindir}
+INSTALL_LIBDIR     = ${libdir}
+INSTALL_INCLUDEDIR = ${includedir}
+INSTALL_DATADIR    = ${datadir}
+INSTALL_DOCDIR     = ${INSTALL_DATADIR}/omc/doc
+
 
 # The path to the OMDev-mingw package MUST BE SET!
 #OMDEV=$OMDEV 
@@ -24,9 +42,17 @@ ifndef OMC_BUILD_FROM
 	ABORT Please Define OMC_BUILD_FROM
 endif
 
-all : .testvariables settings release 
+all : .testvariables mkbuilddirs settings release 
 
-debug: settings omcd
+debug: .testvariables mkbuilddirs settings omcd
+
+mkbuilddirs: 
+	mkdir -p $(builddir_bin)
+	mkdir -p $(builddir_lib)
+	mkdir -p $(builddir_inc)
+	mkdir -p $(builddir_doc)
+	mkdir -p $(builddir_doc)/testmodels
+
 
 settings:
 	@echo Building OMC using OMDev with the following settings...
@@ -41,12 +67,17 @@ omcd:
 	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw debug)
+	(cp -p doc/*.pdf $(builddir_doc)/)
+	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 
 omc:	
 	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw release)
+	(cp doc/*.pdf $(builddir_doc)/)
+	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
+	
 
 mosh:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
@@ -61,6 +92,32 @@ clean:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd flat_modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
+	(rm -f $(builddir_doc)/*.pdf)
+	(rm -f $(builddir_doc)/testmodels/*.*)
+
+${INSTALL_BINDIR}:
+	mkdir -p ${INSTALL_BINDIR}
+
+${INSTALL_LIBDIR}:
+	mkdir -p ${INSTALL_LIBDIR}
+
+${INSTALL_INCLUDEDIR}:
+	mkdir -p ${INSTALL_INCLUDEDIR}
+
+${INSTALL_DOCDIR}:
+	mkdir -p ${INSTALL_DOCDIR}
+	mkdir -p ${INSTALL_DOCDIR}/testmodels
+
+install: ${INSTALL_BINDIR} ${INSTALL_LIBDIR} ${INSTALL_INCLUDEDIR} ${INSTALL_DOCDIR}
+	echo Installing OpenModelica...
+	echo Installing build/bin/* to ${INSTALL_BINDIR} ...
+	cp -p build/bin/* ${INSTALL_BINDIR}
+	echo Installing build/lib/* to ${INSTALL_LIBDIR} ...
+	cp -p build/lib/* ${INSTALL_LIBDIR}
+	echo Installing build/include/* to ${INSTALL_INCLUDEDIR} ...
+	cp -p build/include/* ${INSTALL_INCLUDEDIR}
+	echo Installing build/doc/* to ${INSTALL_DOCDIR} ...
+	cp -Rp build/doc/* ${INSTALL_DOCDIR}
 
 .PRECIOUS: Makefile.omdev.mingw
 

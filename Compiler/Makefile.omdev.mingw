@@ -26,6 +26,10 @@ endif
 
 srcdir= .
 top_builddir= ..
+builddir_bin=$(top_builddir)/build/bin
+builddir_lib=$(top_builddir)/build/lib
+builddir_inc=$(top_builddir)/build/include
+builddir_doc=$(top_builddir)/build/doc
 
 ANTLR_HOME = $(OMDEV)/
 EXEEXT = .exe
@@ -49,6 +53,9 @@ include Makefile.common.omdev.mingw
 PROG = omc
 PROGD = omcd
 
+SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Linux
+DOC_FILES = omc_helptext.txt omc_interactive_api.txt
+
 SUBDIRS	= runtime absyn_builder modpar
 
 
@@ -58,20 +65,57 @@ ifeq ($(OMC_BUILD_FROM),mo)
 .SUFFIXES: .o .mo .h
 .PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
 
-all : .testvariables .depend release $(ALLMO)
+all : .testvariables .depend copy_external release $(ALLMO)
 
-debug:	.testvariables .depend $(PROGD) $(SRCRDB)
+debug:	.testvariables .depend  copy_external $(PROGD) $(SRCRDB) dinstall
 
-release: .testvariables .depend $(PROG)
+release: .testvariables .depend  copy_external $(PROG) install
+
+copy_external:
+	cp ExternalRMLDefines.h omc_release/.
+	cp ExternalRMLDefines.h omc_debug/.	
 
 $(SRCRDB): %.rdb : omc_debug/%.rdb 
 	cp $< $@
 
 $(PROG): omc_release
-	cp omc_release/$(PROG)$(EXEEXT) .
+	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
 
 $(PROGD): omc_debug
-	cp omc_debug/$(PROGD)$(EXEEXT) .
+	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
+	cp *.rdb $(builddir_bin)/
+
+install_doc:
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_doc); \
+		cp doc/$$x $(builddir_doc)/; \
+	done
+	
+install_scripts:
+	for x in $(SCRIPT_FILES); do \
+		echo Copying $$x into $(builddir_bin); \
+		cp scripts/$$x $(builddir_bin)/; \
+	done
+
+
+install: install_doc install_scripts
+	echo Copying $(PROG)$(EXEEXT) into $(builddir_bin)
+	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
+	echo Copying needed helpfiles....
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_bin) where omc expects it...; \
+		cp doc/$$x $(builddir_bin)/; \
+	done
+
+dinstall: install_doc install_scripts $(SRCRDB)
+	cp *.rdb $(builddir_bin)/
+	echo Copying $(PROGD)$(EXEEXT) into $(builddir_bin)
+	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
+	echo Copying needed helpfiles....
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_bin) where omc expects it...; \
+		cp doc/$$x $(builddir_bin)/; \
+	done
 
 omc_release:
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
@@ -94,6 +138,11 @@ clean:
 	-$(RM) -f $(SRCH)
 	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
 	-$(RM) -f $(PROG)$(EXEEXT)
+	-$(RM) -f $(builddir_bin)/$(PROG)$(EXEEXT)
+	-$(RM) -f $(builddir)/*.rdb	
+	-cd $(builddir_bin) && rm -f $(SCRIPT_FILES) && rm -f $(DOC_FILES)
+	-cd $(builddir_doc) && rm -f $(DOC_FILES)	
+	
 
 dclean:
 	@for d in $(SUBDIRS); do \
@@ -102,7 +151,9 @@ dclean:
 	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
 	-$(RM) -f $(SRCRDB)
 	-$(RM) -f $(SRCH)
-	-$(RM) -f $(PROGD)$(EXEEXT)
+	-$(RM) -f $(builddir)/$(PROGD)$(EXEEXT)
+	-cd $(builddir_bin) && rm -f $(SCRIPTS_FILES) && rm -f $(DOC_FILES)
+	-cd $(builddir_doc) && rm -f $(DOC_FILES)
 
 
 reallyclean:
@@ -137,18 +188,51 @@ else #else we build from .rml files ********************************************
 
 all : .testvariables .depend release
 
-debug:	.testvariables .depend $(PROGD) $(SRCRDB)
+debug:	.testvariables .depend $(PROGD) $(SRCRDB) dinstall
 
-release: .testvariables .depend $(PROG)
+release: .testvariables .depend $(PROG) install
 
 $(SRCRDB): %.rdb: omc_debug/%.rdb 
 	cp $< $@
 
 $(PROG): omc_release
-	cp omc_release/$(PROG)$(EXEEXT) .
+	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
 
 $(PROGD): omc_debug
-	cp omc_debug/$(PROGD)$(EXEEXT) .
+	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
+	cp *.rdb 
+
+install_doc:
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_doc); \
+		cp doc/$$x $(builddir_doc)/; \
+	done
+	
+install_scripts:
+	for x in $(SCRIPT_FILES); do \
+		echo Copying $$x into $(builddir_bin); \
+		cp scripts/$$x $(builddir_bin)/; \
+	done
+
+
+install: install_doc install_scripts
+	echo Copying $(PROG)$(EXEEXT) into $(builddir_bin)
+	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
+	echo Copying needed helpfiles....
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_bin) where omc expects it...; \
+		cp doc/$$x $(builddir_bin)/; \
+	done
+
+dinstall: install_doc install_scripts $(SRCRDB)
+	cp *.rdb $(builddir_bin)/
+	echo Copying $(PROGD)$(EXEEXT) into $(builddir_bin)
+	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
+	echo Copying needed helpfiles....
+	for x in $(DOC_FILES); do \
+		echo Copying $$x into $(builddir_bin) where omc expects it...; \
+		cp doc/$$x $(builddir_bin)/; \
+	done
 
 omc_release:
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
@@ -170,7 +254,11 @@ clean:
 	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
 	-$(RM) -f $(SRCH)
 	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
-	-$(RM) -f $(PROG)$(EXEEXT)
+	-$(RM) -f $(SRCH)
+	-$(RM) -f $(builddir_bin)/$(PROG)$(EXEEXT)
+	-cd $(builddir_bin) && rm -f $(SCRIPT_FILES) && rm -f $(DOC_FILES)
+	-cd $(builddir_doc) && rm -f $(DOC_FILES)	
+
 
 dclean:
 	@for d in $(SUBDIRS); do \
@@ -179,7 +267,10 @@ dclean:
 	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
 	-$(RM) -f $(SRCRDB)
 	-$(RM) -f $(SRCH)
-	-$(RM) -f $(PROGD)$(EXEEXT)
+	-$(RM) -f $(builddir)/$(PROGD)$(EXEEXT)
+	-$(RM) -f $(builddir)/*.rdb
+	-cd $(builddir_bin) && rm -f $(SCRIPTS_FILES) && rm -f $(DOC_FILES)
+	-cd $(builddir_doc) && rm -f $(DOC_FILES)
 
 
 reallyclean:
