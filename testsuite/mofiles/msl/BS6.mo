@@ -1185,13 +1185,13 @@ equation
   connect(pulse1.outPort,der1.inPort) annotation(Line(visible=true,points={{-40.86,17.74},{-23.83,16.83}}));
 end BS6;
 // fclass BS6
-// parameter Integer pulse1.nout = 1 "Number of outputs";
+// parameter Integer pulse1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer pulse1.outPort.n = pulse1.nout "Dimension of signal vector";
 // output Real pulse1.outPort.signal[1] "Real output signals";
 // output Real pulse1.y[1];
 // parameter Real pulse1.amplitude[1] = 1 "Amplitudes of pulses";
-// parameter Real pulse1.width[1] = 50 "Widths of pulses in % of periods";
-// parameter Real pulse1.period[1] = 1 "Times for one period";
+// parameter Real pulse1.width[1](min = 1e-60, max=100.0) = 50 "Widths of pulses in % of periods";
+// parameter Real pulse1.period[1](min = 1e-60) = 1 "Times for one period";
 // parameter Real pulse1.offset[1] = 0 "Offsets of output signals";
 // parameter Real pulse1.startTime[1] = 0 "Output = offset for time < startTime";
 // parameter Real pulse1.p_amplitude[1] = pulse1.amplitude[1] * 1.0;

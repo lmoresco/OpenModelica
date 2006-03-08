@@ -1089,12 +1089,12 @@ equation
   connect(constant1.outPort,atan21.inPort1) annotation(Line(visible=true,points={{-44.81,43.59},{-17.14,28.39}}));
 end BM7;
 // fclass BM7
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
-// parameter Integer constant2.nout = 1 "Number of outputs";
+// parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
@@ -1116,7 +1116,7 @@ end BM7;
 //   constant2.y[1] = constant2.outPort.signal[1];
 //   atan21.u1[1] = atan21.inPort1.signal[1];
 //   atan21.u2[1] = atan21.inPort2.signal[1];
-//   {atan21.y[1]} = {Modelica.Math.atan2(atan21.u1[1],atan21.u2[1])};
+//   atan21.y[1] = Modelica.Math.atan2(atan21.u1[1],atan21.u2[1]);
 //   atan21.y[1] = atan21.outPort.signal[1];
 // assert(atan21.inPort2.n == constant2.outPort.n,"automatically generated from connect");
 // assert(constant1.outPort.n == atan21.inPort1.n,"automatically generated from connect");

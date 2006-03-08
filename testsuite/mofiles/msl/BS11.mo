@@ -1288,7 +1288,7 @@ equation
   connect(timeTable1.outPort,der1.inPort) annotation(Line(visible=true,points={{-22.91,19.87},{-11.97,19.87}}));
 end BS11;
 // fclass BS11
-// parameter Integer timeTable1.nout = 1 "Number of outputs";
+// parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
 // output Real timeTable1.outPort.signal[1] "Real output signals";
 // output Real timeTable1.y[1];

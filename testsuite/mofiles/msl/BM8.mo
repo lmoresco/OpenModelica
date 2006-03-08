@@ -1074,14 +1074,14 @@ end BM8;
 // output Real cos1.outPort.signal[1] "Real output signals";
 // output Real cos1.y[1] "Output signals";
 // Real cos1.u[1] "Input signals";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   cos1.u[1] = cos1.inPort.signal[1];
-//   {cos1.y[1]} = {Modelica.Math.cos(cos1.u[1])};
+//   cos1.y[1] = Modelica.Math.cos(cos1.u[1]);
 //   cos1.y[1] = cos1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

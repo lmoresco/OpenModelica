@@ -45,13 +45,20 @@ FSRCS = daux.f \
           dpmpar.f \
 	  enorm.f \
 	  fdjac1.f \
-	hybrd1.f \
+	  hybrd1.f \
 	  hybrd.f \
 	  hybrj.f \
 	  qform.f \
 	  qrfac.f \
 	  r1mpyq.f \
-	  r1updt.f 
+	  r1updt.f \
+	  nelmead.f \
+	  newuoa.f \
+	  newuob.f \
+	  biglag.f \
+	  bigden.f \
+	  trsapp.f \
+	  update.f
 
 FOBJS = $(patsubst %.f,%.o,$(FSRCS))
 

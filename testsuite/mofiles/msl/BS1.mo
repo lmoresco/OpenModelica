@@ -941,7 +941,7 @@ equation
 end BS1;
 
 // fclass BS1
-// parameter Integer clock1.nout = 1 "Number of outputs";
+// parameter Integer clock1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer clock1.outPort.n = clock1.nout "Dimension of signal vector";
 // output Real clock1.outPort.signal[1] "Real output signals";
 // output Real clock1.y[1];

@@ -993,7 +993,7 @@ end BS14;
 // output Real integerToReal1.outPort.signal[1] "Real output signals";
 // parameter Integer integerToReal1.inPort.n = integerToReal1.n "Dimension of signal vector";
 // input Integer integerToReal1.inPort.signal[1] "Integer input signals";
-// parameter Integer integerStep1.nout = 1 "Number of outputs";
+// parameter Integer integerStep1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer integerStep1.outPort.n = integerStep1.nout "Dimension of signal vector";
 // output Integer integerStep1.outPort.signal[1] "Integer output signals";
 // output Integer integerStep1.y[1];

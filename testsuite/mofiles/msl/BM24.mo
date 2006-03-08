@@ -998,7 +998,7 @@ end BM24;
 // output Real sum1.y "Output signal";
 // Real sum1.u[1] "Input signals";
 // parameter Real sum1.k[1] = 1 "Optional: sum coefficients";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];

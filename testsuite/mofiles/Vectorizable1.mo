@@ -30,8 +30,10 @@ end Vectorizable1;
 // Real a;
 // Real b;
 // Real c;
-// equation
-//  {x[1],x[2],x[3]} = {foo(a) + 2.0,foo(b) + 3.0,foo(c) + 4.0};
+// equation 
+// x[1] = foo(a) + 2.0;
+// x[2] = foo(b) + 3.0;
+// x[3] = foo(c) + 4.0;
 //   der(s[1]) = -1.0;
 //   der(s[2]) = -1.0;
 // end Vectorizable1;

@@ -1765,7 +1765,6 @@ model BC6
 equation 
   connect(constant1.outPort,limPID1.inPort_s) annotation(Line(visible=true,points={{-11.66,13.79},{1.11,15.62}}));
 end BC6;
-
 // fclass BC6
 // Real limPID1.u_s "Scalar setpoint input signal";
 // Real limPID1.u_m "Scalar measurement input signal";
@@ -1776,15 +1775,15 @@ end BC6;
 // parameter Integer limPID1.outPort.n = 1 "Dimension of signal vector";
 // output Real limPID1.outPort.signal[1] "Real output signals";
 // output Real limPID1.y "Scalar actuator output signal";
-// parameter Real limPID1.k = 1 "Gain of PID block";
-// parameter Real limPID1.Ti = 0.5 "Time constant of Integrator block";
-// parameter Real limPID1.Td = 0.1 "Time constant of Derivative block";
+// parameter Real limPID1.k(min = 0.0) = 1 "Gain of PID block";
+// parameter Real limPID1.Ti(min = 1e-60) = 0.5 "Time constant of Integrator block";
+// parameter Real limPID1.Td(min = 0.0) = 0.1 "Time constant of Derivative block";
 // parameter Real limPID1.yMax = 1 "Upper limit of output";
 // parameter Real limPID1.yMin = -limPID1.yMax "Lower limit of output";
-// parameter Real limPID1.wp = 1 "Set-point weight for Proportional block (0..1)";
-// parameter Real limPID1.wd = 0 "Set-point weight for Derivative block (0..1)";
-// parameter Real limPID1.Ni = 0.9 "Ni*Ti is time constant of anti-windup compensation";
-// parameter Real limPID1.Nd = 10 "The higher Nd, the more ideal the derivative block";
+// parameter Real limPID1.wp(min = 0.0) = 1 "Set-point weight for Proportional block (0..1)";
+// parameter Real limPID1.wd(min = 0.0) = 0 "Set-point weight for Derivative block (0..1)";
+// parameter Real limPID1.Ni(min = 1e-13) = 0.9 "Ni*Ti is time constant of anti-windup compensation";
+// parameter Real limPID1.Nd(min = 1e-13) = 10 "The higher Nd, the more ideal the derivative block";
 // parameter Integer limPID1.limiter.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer limPID1.limiter.inPort.n = limPID1.limiter.n "Dimension of signal vector";
 // input Real limPID1.limiter.inPort.signal[1] "Real input signals";
@@ -1896,7 +1895,7 @@ end BC6;
 // input Real limPID1.gainTrack.inPort.signal[1] "Real input signals";
 // parameter Integer limPID1.gainTrack.outPort.n = 1 "Dimension of signal vector";
 // output Real limPID1.gainTrack.outPort.signal[1] "Real output signals";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];

@@ -990,7 +990,7 @@ end BC9;
 // parameter Real secondOrder1.p_k[1] = secondOrder1.k[1] * 1.0;
 //  parameter Real secondOrder1.p_w[1] = secondOrder1.w[1] * 1.0;
 //  parameter Real secondOrder1.p_D[1] =  secondOrder1.D[1] * 1.0;
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];

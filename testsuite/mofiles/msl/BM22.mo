@@ -1071,14 +1071,14 @@ end BM22;
 // output Real sinh1.outPort.signal[1] "Real output signals";
 // output Real sinh1.y[1] "Output signals";
 // Real sinh1.u[1] "Input signals";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sinh1.u[1] = sinh1.inPort.signal[1];
-//   {sinh1.y[1]} = {Modelica.Math.sinh(sinh1.u[1])};
+//   sinh1.y[1] = Modelica.Math.sinh(sinh1.u[1]);
 //   sinh1.y[1] = sinh1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

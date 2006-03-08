@@ -1074,14 +1074,14 @@ end BM21;
 // output Real sin1.outPort.signal[1] "Real output signals";
 // output Real sin1.y[1] "Output signals";
 // Real sin1.u[1] "Input signals";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   sin1.u[1] = sin1.inPort.signal[1];
-//   {sin1.y[1]} = {Modelica.Math.sin(sin1.u[1])};
+//   sin1.y[1] = Modelica.Math.sin(sin1.u[1]);
 //   sin1.y[1] = sin1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

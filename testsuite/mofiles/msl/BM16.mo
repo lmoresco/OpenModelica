@@ -1007,7 +1007,7 @@ end BM16;
 // parameter Real matrixGain1.K[1,2] = 0 "Gain matrix which is multiplied with the input";
 // parameter Real matrixGain1.K[2,1] = 0 "Gain matrix which is multiplied with the input";
 // parameter Real matrixGain1.K[2,2] = 1 "Gain matrix which is multiplied with the input";
-// parameter Integer constant1.nout = 2 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 2 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.outPort.signal[2] "Real output signals";

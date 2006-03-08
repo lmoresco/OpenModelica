@@ -1523,7 +1523,7 @@ equation
   connect(constant1.outPort,PID1.inPort) annotation(Line(visible=true,points={{-18.35,14.7},{0.81,15.62}}));
 end BC8;
 // fclass BC8
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
@@ -1535,9 +1535,9 @@ end BC8;
 // output Real PID1.y;
 // Real PID1.u;
 // parameter Real PID1.k = 1 "Gain";
-// parameter Real PID1.Ti = 0.5 "Time Constant of Integrator";
-// parameter Real PID1.Td = 0.1 "Time Constant of Derivative block";
-// parameter Real PID1.Nd = 10 "The higher Nd, the more ideal the derivative block";
+// parameter Real PID1.Ti(min = 1e-60) = 0.5 "Time Constant of Integrator";
+// parameter Real PID1.Td(min = 0.0) = 0.1 "Time Constant of Derivative block";
+// parameter Real PID1.Nd(min = 1e-60) = 10 "The higher Nd, the more ideal the derivative block";
 // parameter Real PID1.P.k[1] = 1 "Gain vector multiplied element-wise with input vector";
 // Real PID1.P.u[1] "Input signals";
 // Real PID1.P.y[1] "Output signals";

@@ -949,7 +949,7 @@ equation
   connect(step1.outPort,der1.inPort) annotation(Line(visible=true,points={{-50.59,4.97},{-36.6,1.93}}));
 end BS10;
 // fclass BS10
-// parameter Integer step1.nout = 1 "Number of outputs";
+// parameter Integer step1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer step1.outPort.n = step1.nout "Dimension of signal vector";
 // output Real step1.outPort.signal[1] "Real output signals";
 // output Real step1.y[1];

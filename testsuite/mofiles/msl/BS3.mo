@@ -1318,7 +1318,7 @@ end BS3;
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
-// parameter Integer expSine1.nout = 1 "Number of outputs";
+// parameter Integer expSine1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer expSine1.outPort.n = expSine1.nout "Dimension of signal vector";
 // output Real expSine1.outPort.signal[1] "Real output signals";
 // output Real expSine1.y[1];

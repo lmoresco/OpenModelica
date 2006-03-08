@@ -79,7 +79,6 @@ equation
   connect (AC.n, G.p);		// Ground
 end Circuit1;
 
-
 // fclass Circuit1
 // Real R1.p.v;
 // Real R1.p.i;
@@ -87,28 +86,28 @@ end Circuit1;
 // Real R1.n.i;
 // Real R1.v;
 // Real R1.i;
-// parameter Real R1.R = 10 "Resistance";
+// parameter Real R1.R(unit = "Ohm") = 10 "Resistance";
 // Real C.p.v;
 // Real C.p.i;
 // Real C.n.v;
 // Real C.n.i;
 // Real C.v;
 // Real C.i;
-// parameter Real C.C = 0.01 "Capacitance";
+// parameter Real C.C(unit = "F") = 0.01 "Capacitance";
 // Real R2.p.v;
 // Real R2.p.i;
 // Real R2.n.v;
 // Real R2.n.i;
 // Real R2.v;
 // Real R2.i;
-// parameter Real R2.R = 100 "Resistance";
+// parameter Real R2.R(unit = "Ohm") = 100 "Resistance";
 // Real L.p.v;
 // Real L.p.i;
 // Real L.n.v;
 // Real L.n.i;
 // Real L.v;
 // Real L.i;
-// parameter Real L.L = 0.1 "Inductance";
+// parameter Real L.L(unit = "H") = 0.1 "Inductance";
 // Real AC.p.v;
 // Real AC.p.i;
 // Real AC.n.v;
@@ -116,7 +115,7 @@ end Circuit1;
 // Real AC.v;
 // Real AC.i;
 // parameter Real AC.VA = 220 "Amplitude";
-// parameter Real AC.f = 50 "Frequency";
+// parameter Real AC.f(unit = "Hz") = 50 "Frequency";
 // constant Real AC.PI = 3.14159265358979;
 // Real G.p.v;
 // Real G.p.i;
@@ -154,5 +153,3 @@ end Circuit1;
 //   R1.n.i + C.p.i = 0.0;
 //   R1.n.v = C.p.v;
 // end Circuit1;
-
-

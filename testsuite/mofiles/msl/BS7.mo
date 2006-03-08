@@ -1178,12 +1178,12 @@ equation
   connect(ramp1.outPort,der1.inPort) annotation(Line(visible=true,points={{-19.57,10.45},{11.45,12.57}}));
 end BS7;
 // fclass BS7
-// parameter Integer ramp1.nout = 1 "Number of outputs";
+// parameter Integer ramp1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer ramp1.outPort.n = ramp1.nout "Dimension of signal vector";
 // output Real ramp1.outPort.signal[1] "Real output signals";
 // output Real ramp1.y[1];
 // parameter Real ramp1.height[1] = 1 "Heights of ramps";
-// parameter Real ramp1.duration[1] = 2 "Durations of ramps";
+// parameter Real ramp1.duration[1](min=1e-60) = 2 "Durations of ramps";
 // parameter Real ramp1.offset[1] = 0 "Offsets of output signals";
 // parameter Real ramp1.startTime[1] = 0 "Output = offset for time < startTime";
 // parameter Real ramp1.p_height[1] = ramp1.height[1] * 1.0;

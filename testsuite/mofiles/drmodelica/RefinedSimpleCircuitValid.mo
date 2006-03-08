@@ -107,7 +107,7 @@
 // Real R3.n.i;
 // Real R3.v;
 // Real R3.i;
-// parameter Real R3.R = 300 "Resistance";
+// parameter Real R3.R (unit = "Ohm")= 300 "Resistance";
 // Real R3.Temp;
 // Real R3.RT;
 // equation

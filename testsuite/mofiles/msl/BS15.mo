@@ -968,7 +968,7 @@ equation
   connect(booleanConstant1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-26.87,25.35},{-12.27,25.35}}));
 end BS15;
 // fclass BS15
-// parameter Integer booleanConstant1.nout = 1 "Number of Boolean outputs";
+// parameter Integer booleanConstant1.nout(min = 1) = 1 "Number of Boolean outputs";
 // parameter Integer booleanConstant1.outPort.n = booleanConstant1.nout "Dimension of signal vector";
 // output Boolean booleanConstant1.outPort.signal[1] "Boolean output signals";
 // parameter Boolean booleanConstant1.k[1] = true "Constant output values";

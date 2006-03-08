@@ -961,7 +961,7 @@ equation
 end BN3;
 
 // fclass BN3
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
@@ -979,12 +979,12 @@ end BN3;
 // input Real variableLimiter1.limit2.signal[1] "Real input signals";
 // Real variableLimiter1.uMax[1];
 // Real variableLimiter1.uMin[1];
-// parameter Integer constant2.nout = 1 "Number of outputs";
+// parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
 // parameter Real constant2.k[1] = 1 "Constant output values";
-// parameter Integer constant3.nout = 1 "Number of outputs";
+// parameter Integer constant3.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant3.outPort.n = constant3.nout "Dimension of signal vector";
 // output Real constant3.outPort.signal[1] "Real output signals";
 // output Real constant3.y[1];

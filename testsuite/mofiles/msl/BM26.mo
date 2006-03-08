@@ -1063,7 +1063,7 @@ equation
   connect(tanh1.inPort,constant1.outPort) annotation(Line(visible=true,points={{4.48,-5.0},{-17.31,-2.93}}));
 end BM26;
 // fclass BM26
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
@@ -1079,7 +1079,7 @@ end BM26;
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   tanh1.u[1] = tanh1.inPort.signal[1];
-//   {tanh1.y[1]} = {Modelica.Math.tanh(tanh1.u[1])};
+//   tanh1.y[1] = Modelica.Math.tanh(tanh1.u[1]);
 //   tanh1.y[1] = tanh1.outPort.signal[1];
 // assert(tanh1.inPort.n == constant1.outPort.n,"automatically generated from connect");
 //   tanh1.inPort.signal[1] = constant1.outPort.signal[1];

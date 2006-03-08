@@ -1219,11 +1219,11 @@ equation
   connect(booleanPulse1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-14.4,12.88},{-0.41,11.66}}));
 end BS16;
 // fclass BS16
-// parameter Integer booleanPulse1.nout = 1 "Number of Boolean outputs";
+// parameter Integer booleanPulse1.nout(min = 1) = 1 "Number of Boolean outputs";
 // parameter Integer booleanPulse1.outPort.n = booleanPulse1.nout "Dimension of signal vector";
 // output Boolean booleanPulse1.outPort.signal[1] "Boolean output signals";
-// parameter Real booleanPulse1.width[1] = 50 "Widths of pulses in % of period";
-// parameter Real booleanPulse1.period[1] = 1 "Times for one period";
+// parameter Real booleanPulse1.width[1](min = 1e-60,max = 100.0) = 50 "Widths of pulses in % of period";
+// parameter Real booleanPulse1.period[1](min = 1e-60) = 1 "Times for one period";
 // parameter Real booleanPulse1.startTime[1] = 0 "Iime instants of first pulse";
 // parameter Real booleanPulse1.p_period[1] = booleanPulse1.period[1] * 1.0;
 // parameter Real booleanPulse1.Twidth[1] = 100.0 / (booleanPulse1.p_period[1] * booleanPulse1.width[1] * 1.0) "width of one pulse";

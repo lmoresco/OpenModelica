@@ -1211,15 +1211,15 @@ equation
   connect(trapezoid1.outPort,der1.inPort) annotation(Line(visible=true,points={{-25.04,14.7},{-8.01,14.4}}));
 end BS12;
 // fclass BS12
-// parameter Integer trapezoid1.nout = 1 "Number of outputs";
+// parameter Integer trapezoid1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer trapezoid1.outPort.n = trapezoid1.nout "Dimension of signal vector";
 // output Real trapezoid1.outPort.signal[1] "Real output signals";
 // output Real trapezoid1.y[1];
 // parameter Real trapezoid1.amplitude[1] = 1 "Amplitudes of trapezoids";
-// parameter Real trapezoid1.rising[1] = 0 "Rising durations of trapezoids";
-// parameter Real trapezoid1.width[1] = 0.5 "Width durations of trapezoids";
-// parameter Real trapezoid1.falling[1] = 0 "Falling durations of trapezoids";
-// parameter Real trapezoid1.period[1] = 1 "Time for one period";
+// parameter Real trapezoid1.rising[1](min = 0.0) = 0 "Rising durations of trapezoids";
+// parameter Real trapezoid1.width[1](min=0.0) = 0.5 "Width durations of trapezoids";
+// parameter Real trapezoid1.falling[1](min = 0.0) = 0 "Falling durations of trapezoids";
+// parameter Real trapezoid1.period[1](min = 1e-60) = 1 "Time for one period";
 // parameter Integer trapezoid1.nperiod[1] = -1 "Number of periods (< 0 means infinite number of periods)";
 // parameter Real trapezoid1.offset[1] = 0 "Offsets of output signals";
 // parameter Real trapezoid1.startTime[1] = 0 "Output = offset for time < startTime";

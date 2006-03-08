@@ -1290,7 +1290,7 @@ equation
   connect(sine1.outPort,der1.inPort) annotation(Line(visible=true,points={{-43.9,22.0},{-31.13,22.0}}));
 end BS9;
 // fclass BS9
-// parameter Integer sine1.nout = 1 "Number of outputs";
+// parameter Integer sine1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
 // output Real sine1.outPort.signal[1] "Real output signals";
 // output Real sine1.y[1];

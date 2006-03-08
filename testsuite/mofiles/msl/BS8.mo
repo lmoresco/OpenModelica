@@ -1180,12 +1180,12 @@ equation
   connect(sawTooth1.outPort,der1.inPort) annotation(Line(visible=true,points={{-22.91,13.49},{-8.01,12.57}}));
 end BS8;
 // fclass BS8
-// parameter Integer sawTooth1.nout = 1 "Number of outputs";
+// parameter Integer sawTooth1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer sawTooth1.outPort.n = sawTooth1.nout "Dimension of signal vector";
 // output Real sawTooth1.outPort.signal[1] "Real output signals";
 // output Real sawTooth1.y[1];
 // parameter Real sawTooth1.amplitude[1] = 1 "Amplitudes of saw tooths";
-// parameter Real sawTooth1.period[1] = 1 "Times for one period";
+// parameter Real sawTooth1.period[1](min = 1e-60) = 1 "Times for one period";
 // parameter Real sawTooth1.offset[1] = 0 "Offsets of output signals";
 // parameter Real sawTooth1.startTime[1] = 0 "Output = offset for time < startTime";
 // parameter Real sawTooth1.p_amplitude[1] = sawTooth1.amplitude[1] * 1.0;

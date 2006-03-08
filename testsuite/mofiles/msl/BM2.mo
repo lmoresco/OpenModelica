@@ -1081,14 +1081,14 @@ end BM2;
 // output Real acos1.outPort.signal[1] "Real output signals";
 // output Real acos1.y[1] "Output signals";
 // Real acos1.u[1] "Input signals";
-// parameter Integer constant1.nout = 1 "Number of outputs";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
 // parameter Real constant1.k[1] = 1 "Constant output values";
 // equation
 //   acos1.u[1] = acos1.inPort.signal[1];
-//   {acos1.y[1]} = {Modelica.Math.acos(acos1.u[1])};
+//   acos1.y[1] = Modelica.Math.acos(acos1.u[1]);
 //   acos1.y[1] = acos1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

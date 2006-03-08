@@ -7,7 +7,8 @@
 loadFile("SmallLinsys.mo");
 simulate(LinSys,numberOfIntervals=5);
 echo(false);
-res:=readSimulationResult("LinSys_res.plt",{x,y,z},6);
+size:=readSimulationResultSize("LinSys_res.plt");
+res:=readSimulationResult("LinSys_res.plt",{x,y,z},size);
 x:=res[1];
 y:=res[2];
 z:=res[3];
