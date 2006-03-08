@@ -92,7 +92,7 @@ $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
 $(SRCH): %.h : %.mo
 	$(RML) -c $<
 
-%.rsig : %.mo
+%.sig : %.mo
 	$(srcdir)/rml2sig/rmldep.sh $<
 
 else # we build from .rml files
@@ -111,7 +111,7 @@ $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
 $(SRCH): %.h : %.rml
 	$(RML) -c $<
 
-%.rsig : %.rml
+%.sig : %.rml
 	$(srcdir)/rml2sig/rmldep.sh $<
 
 endif
@@ -139,14 +139,14 @@ clean:
 
 ifeq ($(OMC_BUILD_FROM),mo)
 reallyclean: clean
-	$(RM) $(ALLRML)  $(ALLRML:.rml=.rsig) $(ALLRML:.rml=.rmod) $(ALLMO) $(ALLMO:.mo=.rsig) $(ALLMO:.mo=.rmod) $(SRCRDB) $(PROG)
+	$(RM) $(ALLRML)  $(ALLRML:.rml=.sig) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(SRCRDB) $(PROG)
 
 # don't remove these files after intermediate build steps
 #.PRECIOUS: Makefile $(ALLRMO)
 #.PRECIOUS: $(ALLMO)
 else
 reallyclean: clean
-	$(RM) $(ALLRML) $(ALLRML:.rml=.rsig)  $(ALLRML:.rml=.rmod) $(SRCRDB) $(PROG)
+	$(RM) $(ALLRML) $(ALLRML:.rml=.sig)  $(SRCRDB) $(PROG)
 
 # don't remove these files after intermediate build steps
 #.PRECIOUS: Makefile.omdev.mingw $(ALLRML)

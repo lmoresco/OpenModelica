@@ -22,7 +22,8 @@ RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/../c_runtime/libc_runtime.a \
 	$(srcdir)/runtime/printimpl.o $(srcdir)/runtime/ptolemyio.o \
 	$(srcdir)/runtime/errorext.o $(srcdir)/runtime/ErrorMessage.o \
 	$(srcdir)/runtime/daeext.o $(CORBAOBJ) \
-	$(srcdir)/modpar/libmodpar.a
+	$(srcdir)/modpar/libmodpar.a \
+	$(srcdir)/modpar/libmodpar.a $(srcdir)/runtime/settingsimpl.o
 
 # The MO sources
 SRCMO= Absyn.mo \
