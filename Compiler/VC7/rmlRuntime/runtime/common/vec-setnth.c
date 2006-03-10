@@ -5,12 +5,11 @@ RML_BEGIN_LABEL(RML__vector_5fsetnth)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
+	void *data;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
-	/* printf("setting element %d of the vector with %d elements\n", i, nelts); */
-	if( i >= nelts) 
+	if( i >= nelts ) 
 	{
-		/* printf("element %d OUTSIDE the vector bounds\n", i); */
 		RML_TAILCALLK(rmlFC);
 	} 
 	else 
@@ -25,14 +24,9 @@ RML_BEGIN_LABEL(RML__vector_5fsetnth)
 		rmlA0 = RML_TAGPTR(vec_new);
 		for(idx=0; idx < nelts; idx++)
 			*vecp++ = RML_STRUCTDATA(vec)[idx];
-		/* 
-		printf("vector copied, now setting element:");
-		printf ("%d=[", i);
-		rmldb_var_print(rmlA2);
-		printf ("]\n");
-		*/
 		RML_STRUCTDATA(rmlA0)[i] = rmlA2;
 	}
 	RML_TAILCALLK(rmlSC);
 }
 RML_END_LABEL
+

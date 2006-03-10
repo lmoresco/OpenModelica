@@ -5,6 +5,7 @@ RML_BEGIN_LABEL(RML__vector_5fupdate)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
+	void *data;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
 	if( i-1 >= nelts ) 

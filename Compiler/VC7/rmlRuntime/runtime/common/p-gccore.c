@@ -161,9 +161,9 @@ unsigned long rml_inter_calls;
 unsigned long rml_inter_known_calls;
 #endif	/*RML_MORE_LOGGING*/
 
-#ifdef _RMLDB_DEFINED_
 void rmldb_show_status(void)
 {
+#ifdef _RMLDB_DEFINED_
 	int status = 0;
     if( rml_flag_log ) 
 	{
@@ -205,8 +205,8 @@ void rmldb_show_status(void)
 		status ? "FAIL" : "BENCH",
 		secs, rml_minorgc_count, rml_majorgc_count);
     }
-}
 #endif /* _RMLDB_DEFINED_ */
+}
 
 
 void rml_exit(int status)

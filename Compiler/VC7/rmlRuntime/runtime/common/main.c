@@ -19,6 +19,7 @@ static void rml_prim_argv(int argc, char **argv)
 	    rml_uint_t len = strlen(s);
 	    struct rml_string *str = rml_prim_mkstring(len, 1);
 	    memcpy(str->data, s, len);
+		str->data[len] = '\0';
 	    rmlA1 = RML_TAGPTR(str);
 	}
 	{
@@ -54,6 +55,9 @@ static unsigned long my_atoul(const char *nptr)
 
 int main(int argc, char **argv)
 {
+#ifdef RML_DEBUG
+	rmldb_execution_startup_type = RMLDB_STEP;
+#endif /* RML_DEBUG */
     for(++argv, --argc; argc > 0 && argv[0][0] == '-';) {
 	char *arg = &argv[0][1];
 	++argv, --argc;
@@ -87,6 +91,16 @@ int main(int argc, char **argv)
 		rml_young_size = RML_YOUNG_SIZE;
 		continue;
 	    }
+	    continue;
+	} else if( strcmp(arg, "debugrun") == 0 ) {
+        #ifdef RML_DEBUG
+	    rmldb_execution_startup_type = RMLDB_RUN;
+        #endif /* RML_DEBUG */
+	    continue;
+	} else if( strcmp(arg, "debugfast") == 0 ) {
+        #ifdef RML_DEBUG
+	    rmldb_execution_startup_type = RMLDB_FAST;
+        #endif /* RML_DEBUG */
 	    continue;
 	} else if( strcmp(arg, "-") == 0 ) {
 	    break;

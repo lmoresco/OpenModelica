@@ -1,29 +1,53 @@
 /*
-    Copyright PELAB, Linkoping University
 
     This file is part of Relational Meta-Language (RML).
 	http://www.ida.liu.se/~pelab/rml
 
-    RML is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+RML COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
 
-    RML is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+------------------------------------------------------------------------
+Portions Copyright (c) 2002-2005 by Adrian Pop
+(Versions above rml-2.1.8)
 
-    You should have received a copy of the GNU General Public License
-    along with Foobar; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+Permission to use, copy, modify, and distribute this software and
+its documentation for NON-COMMERCIAL purposes and without fee is hereby 
+granted, provided that this copyright notice appear in all copies and 
+that both the copyright notice and this permission notice and warranty
+disclaimer appear in supporting documentation, and that the name of
+The Author not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior permission.
+For COMMERCIAL uses of versions above rml-2.1.8 please contact 
+Adrian Pop, adrpo@ida.liu.se. 
+
+THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+USE OR PERFORMANCE OF THIS SOFTWARE.
+
+------------------------------------------------------------------------
+Portions Copyright (c) 1994-2000 by Mikael Pettersson.
+(Versions up to rml-2.1.8)
+
+Permission to use, copy, modify, and distribute this software and
+its documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both the copyright notice and this permission notice and warranty
+disclaimer appear in supporting documentation, and that the name of
+The Author not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior permission.
+
+THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+USE OR PERFORMANCE OF THIS SOFTWARE.
 
  * rml-core.h
- * Copyright: IDA/PELAB
- * - RML creator     
-     + Mikael Pettersson, until 1999
- * - RML maintainter/developer 
-     + Adrian Pop, http://www.ida.liu.se/~adrpo, since 2000
  */
 /*
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
