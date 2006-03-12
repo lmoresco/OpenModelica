@@ -1,0 +1,122 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runtime", "..\runtime.vcproj", "{72B8515B-6FE4-456D-80D3-51BE6A05EC58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E} = {39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}
+		{1007A2F7-E5AD-4227-833F-C781B410C142} = {1007A2F7-E5AD-4227-833F-C781B410C142}
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_runtime", "..\c_runtime.vcproj", "{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "absyn_builder", "..\absyn_builder.vcproj", "{1007A2F7-E5AD-4227-833F-C781B410C142}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeRML", "..\MakeRMLandGRAMMAR\MakeRMLandGRAMMAR.vcproj", "{7DA26FFE-5443-4E0A-81DC-90679291ED2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omc", "..\omc.vcproj", "{087A2480-4E18-465E-BCE0-715481BE58DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58} = {72B8515B-6FE4-456D-80D3-51BE6A05EC58}
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6} = {BB69ADED-6C63-4156-AED4-8258C32B6FB6}
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E} = {39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}
+		{1007A2F7-E5AD-4227-833F-C781B410C142} = {1007A2F7-E5AD-4227-833F-C781B410C142}
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C} = {7DA26FFE-5443-4E0A-81DC-90679291ED2C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinMosh", "..\..\..\WinMosh\WinMosh.vcproj", "{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rmlRuntime", "..\rmlRuntime\rmlRuntime.vcproj", "{BB69ADED-6C63-4156-AED4-8258C32B6FB6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{39B28FEE-229D-4C93-82C9-B6C2D3E385FB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdateEnv", "..\UpdateEnv\UpdateEnv.vcproj", "{8E584488-5EBE-43D7-973C-6C434E426803}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libf2c", "..\libf2c.vcproj", "{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1C91AD10-B2CD-4F3B-B50C-60D409D79A51}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		NoMico|Win32 = NoMico|Win32
+		Release|Win32 = Release|Win32
+		ReleaseStaticMico|Win32 = ReleaseStaticMico|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Debug|Win32.ActiveCfg = Release|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.NoMico|Win32.ActiveCfg = NoMico|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.NoMico|Win32.Build.0 = NoMico|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Release|Win32.ActiveCfg = Release|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.Release|Win32.Build.0 = Release|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{72B8515B-6FE4-456D-80D3-51BE6A05EC58}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.NoMico|Win32.ActiveCfg = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.NoMico|Win32.Build.0 = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Release|Win32.ActiveCfg = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.Release|Win32.Build.0 = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.NoMico|Win32.ActiveCfg = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.NoMico|Win32.Build.0 = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Release|Win32.ActiveCfg = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.Release|Win32.Build.0 = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{1007A2F7-E5AD-4227-833F-C781B410C142}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Debug|Win32.ActiveCfg = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.NoMico|Win32.ActiveCfg = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.NoMico|Win32.Build.0 = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Release|Win32.ActiveCfg = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.Release|Win32.Build.0 = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{7DA26FFE-5443-4E0A-81DC-90679291ED2C}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Debug|Win32.ActiveCfg = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.NoMico|Win32.ActiveCfg = NoMico|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.NoMico|Win32.Build.0 = NoMico|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Release|Win32.ActiveCfg = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.Release|Win32.Build.0 = Release|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.ReleaseStaticMico|Win32.ActiveCfg = ReleaseStaticMico|Win32
+		{087A2480-4E18-465E-BCE0-715481BE58DE}.ReleaseStaticMico|Win32.Build.0 = ReleaseStaticMico|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Debug|Win32.Build.0 = Debug|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.NoMico|Win32.ActiveCfg = Release|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Release|Win32.ActiveCfg = Release|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.Release|Win32.Build.0 = Release|Win32
+		{1A44765A-DA36-4FE2-9FD8-1E6C745DA4FE}.ReleaseStaticMico|Win32.ActiveCfg = ReleaseStaticMico|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.Debug|Win32.ActiveCfg = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.NoMico|Win32.ActiveCfg = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.NoMico|Win32.Build.0 = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.Release|Win32.ActiveCfg = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.Release|Win32.Build.0 = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{BB69ADED-6C63-4156-AED4-8258C32B6FB6}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+		{39B28FEE-229D-4C93-82C9-B6C2D3E385FB}.Debug|Win32.ActiveCfg = Debug
+		{39B28FEE-229D-4C93-82C9-B6C2D3E385FB}.NoMico|Win32.ActiveCfg = Release
+		{39B28FEE-229D-4C93-82C9-B6C2D3E385FB}.Release|Win32.ActiveCfg = Release
+		{39B28FEE-229D-4C93-82C9-B6C2D3E385FB}.ReleaseStaticMico|Win32.ActiveCfg = Release
+		{8E584488-5EBE-43D7-973C-6C434E426803}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E584488-5EBE-43D7-973C-6C434E426803}.NoMico|Win32.ActiveCfg = Release|Win32
+		{8E584488-5EBE-43D7-973C-6C434E426803}.Release|Win32.ActiveCfg = Release|Win32
+		{8E584488-5EBE-43D7-973C-6C434E426803}.Release|Win32.Build.0 = Release|Win32
+		{8E584488-5EBE-43D7-973C-6C434E426803}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.Debug|Win32.ActiveCfg = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.NoMico|Win32.ActiveCfg = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.NoMico|Win32.Build.0 = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.Release|Win32.ActiveCfg = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.Release|Win32.Build.0 = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.ReleaseStaticMico|Win32.ActiveCfg = Release|Win32
+		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.ReleaseStaticMico|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

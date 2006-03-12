@@ -1,0 +1,47 @@
+Open Source Modelica functions
+------------------------------
+
+instantiateModel(modelname) - Instantiates a model/class and return a string
+                              containing the flat class definition.
+
+simulate(modelname) - translates a model and simulates it.
+simulate(modelname [,startTime=<Real>][,stopTime=<Real>][,numberOfIntervals=<Integer>])
+
+plot(vars) - Plots the variables given as a vector, e.g., plot({x1,x2}), using an external plotter.
+
+list() - Returns a string containing all class definitions.
+
+list(modelname) - Returns a string containing the class definition of
+the named class.
+
+typeOf(variable) - Returns the type of the variable as a string.
+
+clear() - Clears everything.
+
+clearVariables() - Clears the variables.
+
+timing(expr) - Evaluates expression and returns the number of seconds
+the evaluation took.
+
+cd() - Return the current directory
+
+cd(dir) - Change directory to the directory given as string.
+
+system(str) - Execute str as a system(shell) command, return integer
+success value.
+
+readFile(str) - Load file given as string and return a string of the
+file content.
+
+listVariables() - Return a vector of the defined variables names.
+
+runScript(str) - Exectute script file given as string argument.
+
+loadModel(classname) - Load model or package from MODELICAPATH.
+
+loadFile(str) - Load modelica file (.mo) given as string argument.
+
+saveModel(str,modelname) - Save the model/class with name modelname in the
+file given by the string argument.
+
+help() - print this helptext (returned as a string).

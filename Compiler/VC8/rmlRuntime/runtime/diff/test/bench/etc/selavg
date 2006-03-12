@@ -1,0 +1,31 @@
+#!/bin/sh
+# usage: selavg < data
+# within each data run, outputs only a single average entry
+exec nawk '
+function end_data() {
+	if( nitems != 0 ) {
+		printf("data %.2f\n", sum/nitems);
+		nitems = 0;
+	}
+	sum = 0.0;
+	}
+BEGIN	{
+	sum = 0.0;
+	nitems = 0;
+	}
+$1 == "runtime" {
+	end_data();
+	printf("runtime %s\n", $2);
+	}
+$1 == "example" {
+	end_data();
+	printf("example %s\n", $2);
+	}
+$1 == "data" {
+	sum += $2;
+	++nitems;
+	}
+END	{
+	end_data();
+	}
+'
