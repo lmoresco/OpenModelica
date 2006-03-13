@@ -78,7 +78,7 @@ SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
 
 ifeq ($(OMC_BUILD_FROM),mo)
 $(ALLMO): %.mo : $(srcdir)/%.mo
-	cp $< $@
+	cp -p $< $@
 
 $(SRCO): %.o : %.c %.h
 	$(RML) -c $<
@@ -87,7 +87,7 @@ $(SRCC): %.c : %.mo
 	$(RML) +C $<
 
 $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp $< $@
+	cp -p $< $@
 
 $(SRCH): %.h : %.mo
 	$(RML) -c $<
@@ -97,7 +97,7 @@ $(SRCH): %.h : %.mo
 
 else # we build from .rml files
 $(ALLRML): %.rml : $(srcdir)/%.rml
-	cp $< $@
+	cp -p $< $@
 
 $(SRCO): %.o : %.c %.h
 	$(RML) -c $<
@@ -106,7 +106,7 @@ $(SRCC): %.c : %.rml
 	$(RML) +C $<
 
 $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp $< $@
+	cp -p $< $@
 
 $(SRCH): %.h : %.rml
 	$(RML) -c $<
