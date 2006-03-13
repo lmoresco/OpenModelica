@@ -74,8 +74,8 @@ release: .testvariables .depend  copy_external $(PROG) install
 copy_external:
 	cp ExternalRMLDefines.h omc_release/.
 	cp ExternalRMLDefines.h omc_debug/.
-	-cp *.srz *.sig omc_release/
-	-cp *.srz *.sig omc_debug/
+	-cp -fp *.srz omc_release/
+	-cp -fp *.srz omc_debug/
 
 $(SRCRDB): %.rdb : omc_debug/%.rdb 
 	cp $< $@

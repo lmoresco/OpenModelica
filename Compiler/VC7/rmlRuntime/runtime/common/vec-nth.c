@@ -18,7 +18,7 @@ RML_BEGIN_LABEL(RML__vector_5fget)
 {
     void *vec = rmlA0;
     rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-    if( i >= RML_HDRSLOTS(RML_GETHDR(vec)) ) {
+    if( i-1 >= RML_HDRSLOTS(RML_GETHDR(vec)) ) {
 	RML_TAILCALLK(rmlFC);
     } else {
 	rmlA0 = RML_STRUCTDATA(vec)[i-1];
@@ -26,4 +26,3 @@ RML_BEGIN_LABEL(RML__vector_5fget)
     }
 }
 RML_END_LABEL
-
