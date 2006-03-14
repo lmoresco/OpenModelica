@@ -41,7 +41,7 @@ list(A);
 // Ok
 // Ok
 // Ok
-// {"model","A","this is the class A","",{false,false,false},{"writable",0,0,0,0}}
+// {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0}}
 // {{Integer,x,"comment for x", "public", true, false, false, "discrete", "inner", "unspecified"}}
 //  "model A "this is the class A"
 //       final inner discrete Integer x "comment for x";

@@ -29,7 +29,7 @@ getElementsInfo(Something.Somewhere.BlaBla.Z);
 // {Something}
 // {Somewhere}
 // {Something.Somewhere.Stuff,Something.Somewhere.Stuff2,Something.Somewhere.BlaBla}
-// {"class","Stuff","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10}}
+// {"class","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10}}
 // {name="Stuff", partial=false, final=false, encapsulated=false, restriction=CLASS, comment="Stuff Comment", file="loadFileInteractiveQualified.mo", readonly="writable", startLine=10, startColumn=1, endLine=15, endColumn=10}
 // loadFileInteractiveQualifiedInit.mo,writable,8,1,14,14
 // { { elementvisibility=public, elementfile="loadFileInteractiveQualifiedInit.mo", elementreadonly="writable", elementStartLine=10, elementStartColumn=3, elementEndLine=12, elementEndColumn=16, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Somewhere, classrestriction=PACKAGE }
