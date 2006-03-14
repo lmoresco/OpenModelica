@@ -257,13 +257,13 @@ getElementsInfo(cref)                     Returns all the elements in a class wi
                                                               direction="input"|"output"|"unspecified"
                                                now for classes with no parts returns "{ }" instead of "Error"
 getClassInformation(cref)         returns all known class information using this format:
-                                  {"restriction","comment","file.mo",
+                                  {"restriction","name","comment","file.mo",
                                    {partial,final,encapsulated},
                                    {"(readonly|writable)",startLine,startColumn,endLine,endColumn}} 
                                   with the following type for the components:
-			  {"string","string","string",{bool,bool,bool},{"string",int,int,int,int}}
+			  {"string","string","string","string",{bool,bool,bool},{"string",int,int,int,int}}
 			  Example: look into testsuite/mosfiles/loadFileInteractiveQualified.mos
-                                  {"class","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10}}
+                                  {"class","Stuff","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10}}
 
 
 getClassAttributes(cref)          returns all known class information using this format:

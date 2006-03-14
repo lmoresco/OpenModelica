@@ -297,7 +297,10 @@ report:
 
 .depend:	
 	-$(RM) .depend
+	date
 	$(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
+	date
+
 
 endif #build from .rml files
 
