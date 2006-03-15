@@ -23,7 +23,6 @@ ifndef OMC_BUILD_FROM
 	ABORT
 endif
 
-
 srcdir= .
 top_builddir= ..
 builddir_bin=$(top_builddir)/build/bin
@@ -178,9 +177,7 @@ report:
 
 .depend: 
 	-$(RM) .depend
-	date
-	$(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
-	date
+	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 
 else #else we build from .rml files *********************************************
 
@@ -297,9 +294,7 @@ report:
 
 .depend:	
 	-$(RM) .depend
-	date
-	$(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
-	date
+	time $(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
 
 
 endif #build from .rml files
