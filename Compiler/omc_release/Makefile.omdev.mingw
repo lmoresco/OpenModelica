@@ -56,12 +56,7 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
 
 PROG = omc.exe
-# Fix java names now!
-ifeq ($(OMC_BUILD_FROM),mo)
-	RML	= $(RMLHOME)/bin/rmlc -Wr,-ffix-java-names -Wc,-O3
-else
-	RML	= $(RMLHOME)/bin/rmlc -Wc,-O3
-endif
+RML = $(RMLHOME)/bin/rmlc -Wr,-Wnon-exhaustive -Wc,-O3
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
