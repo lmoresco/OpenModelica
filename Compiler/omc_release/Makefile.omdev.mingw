@@ -61,7 +61,7 @@ RML = $(RMLHOME)/bin/rmlc -Wc,-O3
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
 ifeq ($(OMC_BUILD_FROM),mo)
-all : .testvariables $(ALLMO) ExternalRMLDefines.h subdirs $(PROG)
+all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
 .SUFFIXES: .o .mo .h .rml .rdb
 else #We build from .rml files! Be it so!
