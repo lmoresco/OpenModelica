@@ -8,18 +8,6 @@
 #OMC_BUILD_FROM=$OMC_BUILD_FROM
 # Test if the needed variables are there... 
 
-.testvariables:
-ifndef OMDEV
-	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
-	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
-	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
-	ABORT Please Define OMDEV
-endif
-ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
-	ABORT Please Define OMC_BUILD_FROM as one of \"mo\" or \"rml\"
-endif
-
 top_builddir = ..
 builddir_bin=$(top_builddir)/build/bin
 builddir_lib=$(top_builddir)/build/lib
@@ -70,7 +58,7 @@ HFILES = blaswrap.h f2c.h integer_array.h memory_pool.h modelica_string.h \
 	real_array.h string_array.h boolean_array.h index_spec.h matrix.h \
 	modelica.h read_write.h simulation_runtime.h utility.h
 
-all : .testvariables libc_runtime.a libsim.a libf2c.a install
+all : libc_runtime.a libsim.a libf2c.a install
 
 libc_runtime.a : $(OBJS) 
 	$(AR) $@ $(OBJS) 
