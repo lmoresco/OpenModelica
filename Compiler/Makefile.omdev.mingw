@@ -64,11 +64,11 @@ ifeq ($(OMC_BUILD_FROM),mo)
 .SUFFIXES: .o .mo .h
 .PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
 
-all : .testvariables .depend copy_external release $(ALLMO)
+all : .testvariables .depend release $(ALLMO)
 
-debug:	.testvariables .depend  copy_external $(PROGD) $(SRCRDB) dinstall
+debug:	.testvariables .depend  $(PROGD) $(SRCRDB) dinstall
 
-release: .testvariables .depend  copy_external $(PROG) install
+release: .testvariables .depend $(PROG) install
 
 copy_external:
 	cp ExternalRMLDefines.h omc_release/.
