@@ -31,4 +31,6 @@ end Connect7;
 //  cy.x = time;
 //  -c[2].x + -cy.x = 0.0;
 //  -c[1].x + -cx.x = 0.0;
+//  cy.x = 0.0;
+//  cx.x = 0.0;
 // end Connect7;

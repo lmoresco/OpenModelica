@@ -30,4 +30,6 @@ end Connect8;
 //   cy.x = time;
 //   c[1].x = time;
 //   -c[2].x + -cx.x + -cy.x = 0.0;
+//   cy.x = 0.0;
+//   cx.x = 0.0;
 // end Connect8;

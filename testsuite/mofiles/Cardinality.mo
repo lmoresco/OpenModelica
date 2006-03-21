@@ -59,6 +59,7 @@ end circuit;
 //   R2.p.v = R2.q.v;
 //   R1.p.i + -p.i = 0.0;
 //   R1.p.v = p.v;
+//   p.i = 0.0;
 //   R1.q.i = 0.0;
 //   R1.n.i = 0.0;
 //   R2.q.i = 0.0;
