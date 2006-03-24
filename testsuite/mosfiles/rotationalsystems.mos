@@ -1,0 +1,88 @@
+// name:     Rotational Systems
+// keywords: Simulate, readSimulationData
+// status:   correct
+// 
+//  Simulate Rotational Systems
+//
+loadFile("Modelica.mo");
+loadFile("TestModels.mo");
+
+// DCMotor
+simulate(TestModels.RotationalModels.SystemTests.DCMotor,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.DCMotor_res.plt");
+res:=readSimulationResult("TestModels.RotationalModels.SystemTests.DCMotor_res.plt",{inertia1.w,inertia2.w},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *DCMotor.* *DCMotor_* output.log");
+
+// ElasticBearing
+simulate(TestModels.RotationalModels.SystemTests.ElasticBearing,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt");
+res:=readSimulationResult("TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt",{shaft.w,load.w},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *ElasticBearing.* *ElasticBearing_* output.log");
+
+// First
+simulate(TestModels.RotationalModels.SystemTests.First,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.First_res.plt");
+res:=readSimulationResult("TestModels.RotationalModels.SystemTests.First_res.plt",{inertia1.w,inertia2.w},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *First.* *First_* output.log");
+// Result:
+// true
+// true
+// record
+//     resultFile = "TestModels.RotationalModels.SystemTests.DCMotor_res.plt"
+// end record
+// true
+// {0.0,0.017,0.058,0.105,0.145,0.165}
+// {0.0,-0.199,-0.389,-0.561,-0.707,-0.818}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt"
+// end record
+// true
+// {0.0,0.275,0.39,0.571,1.23,1.597}
+// {0.0,0.007,0.072,0.181,0.31,0.504}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt"
+// end record
+// true
+// {0.0,-0.156,-0.538,-0.694,-0.903,-1.122}
+// {0.0,-0.016,-0.054,-0.07,-0.091,-0.113}
+// ""
+// 0
+
+// endResult

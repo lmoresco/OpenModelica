@@ -1,0 +1,114 @@
+// name:     Blocks Sources
+// keywords: Simulate, readSimulationData
+// status:   correct
+// 
+//  Simulate blocks sources and simulate.
+//
+loadFile("Modelica.mo");
+loadFile("TestModels.mo");
+
+// ConstantTest
+simulate(TestModels.BlockModels.SourceTests.ConstantTest,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ConstantTest_res.plt");
+res:=readSimulationResult("TestModels.BlockModels.SourceTests.ConstantTest_res.plt",{constant1.y,derivative1.y},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *ConstantTest.* *ConstantTest_* output.log");
+
+//ExpSineTest
+simulate(TestModels.BlockModels.SourceTests.ExpSineTest,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ExpSineTest_res.plt");
+res:=readSimulationResult("TestModels.BlockModels.SourceTests.ExpSineTest_res.plt",{expSine1.y,transferFunction1.y},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *ExpSineTest.* *ExpSineTest_* output.log");
+
+
+// ExponentialsTest
+simulate(TestModels.BlockModels.SourceTests.ExponentialsTest,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt");
+res:=readSimulationResult("TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt",{exponentials1.y,derivative1.y},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
+
+// SineTest
+simulate(TestModels.BlockModels.SourceTests.SineTest,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.SineTest_res.plt");
+res:=readSimulationResult("TestModels.BlockModels.SourceTests.SineTest_res.plt",{sine1.y,transferFunction1.y},size);
+x:=res[1];
+y:=res[2];
+x:=1000*x;
+y:=1000*y;
+x:=floor(x);
+y:=floor(y);
+echo(true);
+x/1000.0;
+y/1000.0;
+readFile("output.log");
+system("rm -rf *SineTest.* *SineTest_* output.log");
+
+// Result:
+// true
+// true
+// record
+//     resultFile = "TestModels.BlockModels.SourceTests.ConstantTest_res.plt"
+// end record
+// true
+// {1.0,1.0,1.0,1.0,1.0,1.0}
+// {100000000.0,0.0,0.0,0.0,0.0,0.0}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.BlockModels.SourceTests.ExpSineTest_res.plt"
+// end record
+// true
+// {0.0,0.481,-0.638,0.521,-0.265,0.0}
+// {0.0,0.117,0.036,0.03,0.064,0.0}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt"
+// end record
+// true
+// {0.0,0.864,0.981,0.993,0.993,0.365,0.049,0.006}
+// {0.0,1.503,0.203,0.076,0.075,-4.06,-0.55,-0.075}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.BlockModels.SourceTests.SineTest_res.plt"
+// end record
+// true
+// {0.0,0.198,0.389,0.564,0.717,0.841}
+// {0.0,0.018,0.069,0.144,0.234,0.334}
+// ""
+// 0
+// endResult

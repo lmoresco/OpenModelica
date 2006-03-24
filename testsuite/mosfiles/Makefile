@@ -5,7 +5,9 @@ variables.mos Array1.mos simulation.mos differentiate.mos simplify.mos \
 strings.mos interactive_api_loadsave.mos  interactive_api_attributes.mos \
 matrices.mos BouncingBall.mos ExternalLibraries.mos \
 loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
-IdealDiode.mos
+IdealDiode.mos \
+blockssources.mos blockssystems.mos rotationalspringinertia.mos \
+rotationalsystems.mos
 TEST = ./rtest
 
 
