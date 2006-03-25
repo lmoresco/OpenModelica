@@ -113,13 +113,13 @@ Global
 		{44CA648E-DDA1-4AEC-B7F6-CD5A6529649B}.ReleaseStaticMico.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionItems) = postSolution
-		..\Setup\IExplorer.ico = ..\Setup\IExplorer.ico
-		..\Setup\OMNotebook.ico = ..\Setup\OMNotebook.ico
-		..\Setup\OMShell.ico = ..\Setup\OMShell.ico
-		..\Setup\OpenModelica.ico = ..\Setup\OpenModelica.ico
-		..\Setup\PDF.ico = ..\Setup\PDF.ico
+		..\Setup\icons\IExplorer.ico = ..\Setup\icons\IExplorer.ico
+		..\Setup\icons\OMNotebook.ico = ..\Setup\icons\OMNotebook.ico
+		..\Setup\icons\OMShell.ico = ..\Setup\icons\OMShell.ico
+		..\Setup\icons\OpenModelica.ico = ..\Setup\icons\OpenModelica.ico
+		..\Setup\icons\PDF.ico = ..\Setup\icons\PDF.ico
 		Readme.txt = Readme.txt
-		..\Setup\Uninstall.ico = ..\Setup\Uninstall.ico
+		..\Setup\icons\Uninstall.ico = ..\Setup\icons\Uninstall.ico
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

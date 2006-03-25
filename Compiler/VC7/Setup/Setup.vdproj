@@ -93,6 +93,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_03F5180FD1EB41B9A23781626CFE0AD9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_03FF91AFBC61430C9F90CE3300DE61A5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -124,12 +130,6 @@
         "Entry"
         {
         "MsmKey" = "8:_07E8D7AD6D314B43B8592A0A981C5351"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_090E6B50F1DB42A78FF8330A03E49C4B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -250,12 +250,6 @@
         "Entry"
         {
         "MsmKey" = "8:_11FB95114FF6428FB0A03F9DAE9166CE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_12C2FCEA535349899A917976251E0E6D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -387,6 +381,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1EBAEAF7A26E4C3AA902E3E57C77FE82"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1F31714052524CB69262E43FE3F96B8B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -400,6 +400,12 @@
         "Entry"
         {
         "MsmKey" = "8:_20842AE377C743C6BC6B342995A3990F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2279D453BB2B4AE5A67A6ACFD81D557D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -448,12 +454,6 @@
         "Entry"
         {
         "MsmKey" = "8:_2661FF9CFEE648B7A7C41B182081BE4D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_26AB86A0DBA942D68F1AD184366C58A6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -579,6 +579,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2CEADAEA71A84EF58F8F2A83806FF8DE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2D7A8FBE9B5E488E824C9D9BC3159C55"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -639,19 +645,13 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_305CF88C1E474F9FB54C1B447C293F93"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_307A8B5C7018479D80B43A3BC7B2A2BB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_30833E8D65454A7CB8AC7ABC41CD8401"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_313B0E32F7F34279BAD62D8FEBB88D1C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -801,6 +801,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_42A83E0EA0BF49E4A734FA8DBB737561"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_42CB8C74223F4BB2B516D65054D39B8E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -808,12 +814,6 @@
         "Entry"
         {
         "MsmKey" = "8:_42EFA264EB484E1188E26D2F949C3591"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_436FC3D079B947AB9F95DB7324F56481"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -838,12 +838,6 @@
         "Entry"
         {
         "MsmKey" = "8:_440AD439F10B4630BD90C17D21CB7DE8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -909,7 +903,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4B372CF5F1AF4CDFB5D321F190AAB448"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4C1E19F09DF7433C987B43173213D6EA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C65DA0E08B4400EB6F9BE68492883A8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -963,6 +969,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_50D94EEB384744BD96C6792714F038FA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_50E810155CFB41BEA413FE2036CD51EA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1006,12 +1018,6 @@
         "Entry"
         {
         "MsmKey" = "8:_556F30826AE44A3AA4EE4486A3BD197A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_566BCD9370264E6988ACF1E673B3F8FC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1113,12 +1119,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5E5AA890143949639F4AEB884D523A2C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5EA24AE43F204C83AED0FDFB168CCF0A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1210,12 +1210,6 @@
         "Entry"
         {
         "MsmKey" = "8:_64BA46EAE4224815AF9DB18707DADC1E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_64FC859971AB4C7A96CBE39010786963"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1467,6 +1461,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7996564B4E4642BEBB0E7106A5A9A394"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7AA8AA3C993647579CF73A5CA286AA45"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1527,12 +1527,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7E769A1EB85E4542952B0E1F0B7B259D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7EA9BE664797491CBB95F0F6C3525F7F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1581,12 +1575,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_81D2784D0BC7490EB3467FA33A4E9212"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_82271C6B30154153A433DBBC19BA04EF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1630,6 +1618,12 @@
         "Entry"
         {
         "MsmKey" = "8:_84F4A67BE4004AD8976FDD3A1C549CBD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_85559952BF744D17843B3597642EEF97"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1851,12 +1845,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_994071F03FF6482AA5F627487CAD53E1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_99A69102E3C442AAB70BDB8CE7076502"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1935,7 +1923,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9FE3D34BD1FA47659F464514807E2773"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A106DC73919D4F5CB1A646002563C267"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A171BB2870DB4E48AE2AC3164BB2B3D1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1971,6 +1971,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A254279EE3514EE984545ABB92108F2A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A2945F87A70E4F1B82CEEE86A1D8C929"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A2A0E9400C8F4B8FB359EDBFCF1A2D8D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1978,12 +1990,6 @@
         "Entry"
         {
         "MsmKey" = "8:_A3086C4AF7A2475395B648D2DDA5DC2F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3C45759D8D445D3A63ABDF132520C58"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2007,6 +2013,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A4FD94586C5844F5999DFE8184AEE454"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A521F58DC17A4A909EF554CB3997DF93"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2014,12 +2026,6 @@
         "Entry"
         {
         "MsmKey" = "8:_A5EE0B1F213743A1975FC5A9E53E1DEA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A61FE38C7CEB4362B413C8D8B725B03F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2092,6 +2098,12 @@
         "Entry"
         {
         "MsmKey" = "8:_ADAAD9A7E49647F8B3373F647DCFCBA4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ADEBADF8D11B4426B4603C02EC87532F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2181,6 +2193,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B2E63C1FE51A42A5938A349E536527E5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B3077EE2766F4F6E8604E7ACBB6A0FA2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2223,12 +2241,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B827EB8FE19C4FB9874E14344033CBFA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B86D73B6AA7E4656812FDD388BB9979C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2248,12 +2260,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B8DB7835039B4FE3A3D3E6F456E4994C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B9C73EAFC88E404EA832FAFB558E08B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2307,12 +2313,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BEC6720DCA9843919F6A26E0CDD5084D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BF053EC50ABA44D8A3B8D38F70FB32F9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2325,7 +2325,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BF92C21C81C84F78934B8CF4E2BCA4F4"
+        "MsmKey" = "8:_BF98FEBB42F44ACDA5CAD9E83897B48D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2355,6 +2355,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C2206C1607C34828ACC2605657B30E39"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C22D70EE600B46379B94235BA53FBDAF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C30FB6E5860C4D96AED983AF76C6C69D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2379,7 +2391,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C6653FD6B9E346ACAEEE02B8A57BA922"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C6F14F516BA04B358FAB630AB1D84C7E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C732364BE2004F408FFBC9EC0259C5B6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2463,6 +2487,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CEE86BBC71ED47AE889F56F5A7652601"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CEE93BD52C1946EBACA6729C007F0F68"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2470,6 +2500,12 @@
         "Entry"
         {
         "MsmKey" = "8:_CF06E60F76CA4608BE7C8BF0C66B147B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CF143A5710FB428DAFBE416FD8D06116"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2559,12 +2595,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D6F21E5C4E48465685DD7BBA9309A110"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D72BD3FCDCE640558C6D28C7EE08049F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2613,6 +2643,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DFB68DF8AC9440159610876139D10805"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DFC6367AE66D478FB8D96F09408A6876"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2638,12 +2674,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E3290A5C1ACF4BB88BD8C2C607A890DB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E39F5397958F47C0AAE3CA6900651879"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2727,18 +2757,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_ECB1CD3100464EA9B0FF264C1F80EC2B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_ECD84E189D4945EC8D55634A00338758"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EE54E8AC4A6845959C1C4AF031CCEDCA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2770,12 +2788,6 @@
         "Entry"
         {
         "MsmKey" = "8:_F04A8669EEAA444D87D4F36D8B642BD7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F0B6A230014D4B7BBC0E08EDE1A4135E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2985,7 +2997,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FC8AD9C8940E4FD794C96CE860A0D99F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCD9DF5131C14A19A1DDA6946D87C03C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FDB2E873666748CFB9204E800867CC3E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FE9E8DFE551C48B7B8D4E0B6C8E899E3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3473,26 +3503,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_090E6B50F1DB42A78FF8330A03E49C4B"
-            {
-            "SourcePath" = "8:ModelicaLib.tar.gz"
-            "TargetName" = "8:ModelicaLib.tar.gz"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_09202D78F28C4A999697D4B803481686"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\Exercise3-classes.nb"
@@ -3879,26 +3889,6 @@
             "TargetName" = "8:Exercise1-7-6.nb"
             "Tag" = "8:"
             "Folder" = "8:_4A12A1393A92488B91F7564816FB898D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_12C2FCEA535349899A917976251E0E6D"
-            {
-            "SourcePath" = "8:ptplot copyright.txt"
-            "TargetName" = "8:ptplot copyright.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4333,6 +4323,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1EBAEAF7A26E4C3AA902E3E57C77FE82"
+            {
+            "SourcePath" = "8:bin\\atl71.dll"
+            "TargetName" = "8:atl71.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_1F31714052524CB69262E43FE3F96B8B"
             {
             "SourcePath" = "8:M:\\DrModelica\\AnnUnitsQuant\\Annotations.nb"
@@ -4379,6 +4389,26 @@
             "TargetName" = "8:Statement.onb"
             "Tag" = "8:"
             "Folder" = "8:_113B2314701249899C383458A2336591"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_2279D453BB2B4AE5A67A6ACFD81D557D"
+            {
+            "SourcePath" = "8:bin\\mfc71u.dll"
+            "TargetName" = "8:mfc71u.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4539,26 +4569,6 @@
             "TargetName" = "8:Sub-SuperType.nb"
             "Tag" = "8:"
             "Folder" = "8:_C0FE60BA191243ADB51E89CBFEA0C793"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_26AB86A0DBA942D68F1AD184366C58A6"
-            {
-            "SourcePath" = "8:bin\\gunzip.exe"
-            "TargetName" = "8:gunzip.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4973,6 +4983,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_2CEADAEA71A84EF58F8F2A83806FF8DE"
+            {
+            "SourcePath" = "8:bin\\comdlg32.dll"
+            "TargetName" = "8:comdlg32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_2D7A8FBE9B5E488E824C9D9BC3159C55"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\Exercise1equations.nb"
@@ -5173,30 +5203,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_307A8B5C7018479D80B43A3BC7B2A2BB"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_305CF88C1E474F9FB54C1B447C293F93"
             {
-            "SourcePath" = "8:M:\\DrModelica\\Functions\\External.onb"
-            "TargetName" = "8:External.onb"
-            "Tag" = "8:"
-            "Folder" = "8:_AA3E0A7315CF4271AC718A74012DF50F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_30833E8D65454A7CB8AC7ABC41CD8401"
-            {
-            "SourcePath" = "8:mfc71u.dll"
-            "TargetName" = "8:mfc71u.dll"
+            "SourcePath" = "8:bin\\msvcp71.dll"
+            "TargetName" = "8:msvcp71.dll"
             "Tag" = "8:"
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
@@ -5213,12 +5223,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_313B0E32F7F34279BAD62D8FEBB88D1C"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_307A8B5C7018479D80B43A3BC7B2A2BB"
             {
-            "SourcePath" = "8:OpenModelica.ico"
-            "TargetName" = "8:OpenModelica.ico"
+            "SourcePath" = "8:M:\\DrModelica\\Functions\\External.onb"
+            "TargetName" = "8:External.onb"
             "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Folder" = "8:_AA3E0A7315CF4271AC718A74012DF50F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5713,6 +5723,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_42A83E0EA0BF49E4A734FA8DBB737561"
+            {
+            "SourcePath" = "8:bin\\ptplot copyright.txt"
+            "TargetName" = "8:ptplot copyright.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_42CB8C74223F4BB2B516D65054D39B8E"
             {
             "SourcePath" = "8:M:\\DrModelica\\InherMod\\Modification.onb"
@@ -5739,26 +5769,6 @@
             "TargetName" = "8:Nested.onb"
             "Tag" = "8:"
             "Folder" = "8:_6ABDE783E3804A3FB509DC8C014F52B9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_436FC3D079B947AB9F95DB7324F56481"
-            {
-            "SourcePath" = "8:bin\\msvcrt.dll"
-            "TargetName" = "8:msvcrt.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5842,26 +5852,6 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_440D84CEA2124F2BA4C4B32F4D4AF8F3"
-            {
-            "SourcePath" = "8:bin\\tar.exe"
-            "TargetName" = "8:tar.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -6233,6 +6223,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_50D94EEB384744BD96C6792714F038FA"
+            {
+            "SourcePath" = "8:tools\\msvcrt.dll"
+            "TargetName" = "8:msvcrt.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_50E810155CFB41BEA413FE2036CD51EA"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\Exercise1hybrid.nb"
@@ -6379,26 +6389,6 @@
             "TargetName" = "8:Connectors.onb"
             "Tag" = "8:"
             "Folder" = "8:_EA0BF9C14F094342ABBFD22EB1157748"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_566BCD9370264E6988ACF1E673B3F8FC"
-            {
-            "SourcePath" = "8:bin\\gzip.exe"
-            "TargetName" = "8:gzip.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6733,26 +6723,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E5AA890143949639F4AEB884D523A2C"
-            {
-            "SourcePath" = "8:bin\\libintl-2.dll"
-            "TargetName" = "8:libintl-2.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:FALSE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_5EA24AE43F204C83AED0FDFB168CCF0A"
             {
             "SourcePath" = "8:M:\\DrModelica\\Algorithms\\Reinit.nb"
@@ -7059,26 +7029,6 @@
             "TargetName" = "8:bubblesort.mo"
             "Tag" = "8:"
             "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_64FC859971AB4C7A96CBE39010786963"
-            {
-            "SourcePath" = "8:Uninstall.bat"
-            "TargetName" = "8:Uninstall.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7913,6 +7863,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7996564B4E4642BEBB0E7106A5A9A394"
+            {
+            "SourcePath" = "8:zips\\ModelicaLib.tar.gz"
+            "TargetName" = "8:ModelicaLib.tar.gz"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_7AA8AA3C993647579CF73A5CA286AA45"
             {
             "SourcePath" = "8:M:\\DrModelica\\Classes\\Short.nb"
@@ -8113,26 +8083,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_7E769A1EB85E4542952B0E1F0B7B259D"
-            {
-            "SourcePath" = "8:msvcr71.dll"
-            "TargetName" = "8:msvcr71.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_7EA9BE664797491CBB95F0F6C3525F7F"
             {
             "SourcePath" = "8:M:\\DrModelica\\AnnUnitsQuant\\UnitsQuant.onb"
@@ -8279,26 +8229,6 @@
             "TargetName" = "8:ModStochProc.onb"
             "Tag" = "8:"
             "Folder" = "8:_EA7DA987B5224918880C63BCC54D8FE0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_81D2784D0BC7490EB3467FA33A4E9212"
-            {
-            "SourcePath" = "8:msvcp71.dll"
-            "TargetName" = "8:msvcp71.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9193,26 +9123,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_994071F03FF6482AA5F627487CAD53E1"
-            {
-            "SourcePath" = "8:bin\\mico2311.dll"
-            "TargetName" = "8:mico2311.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_99A69102E3C442AAB70BDB8CE7076502"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\index_spec.h"
@@ -9473,12 +9383,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_9FE3D34BD1FA47659F464514807E2773"
+            {
+            "SourcePath" = "8:tools\\tar.exe"
+            "TargetName" = "8:tar.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A106DC73919D4F5CB1A646002563C267"
             {
             "SourcePath" = "8:M:\\DrModelica\\Redeclaration\\Exercise2.onb"
             "TargetName" = "8:Exercise2.onb"
             "Tag" = "8:"
             "Folder" = "8:_2B50513B8F7048DAB43F8E341F06B51A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A171BB2870DB4E48AE2AC3164BB2B3D1"
+            {
+            "SourcePath" = "8:icons\\OpenModelica.ico"
+            "TargetName" = "8:OpenModelica.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9593,6 +9543,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A254279EE3514EE984545ABB92108F2A"
+            {
+            "SourcePath" = "8:icons\\Uninstall.ico"
+            "TargetName" = "8:Uninstall.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A2945F87A70E4F1B82CEEE86A1D8C929"
+            {
+            "SourcePath" = "8:bin\\msvcrt.dll"
+            "TargetName" = "8:msvcrt.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A2A0E9400C8F4B8FB359EDBFCF1A2D8D"
             {
             "SourcePath" = "8:M:\\DrModelica\\ApplicationEx\\FrequencyAnalysisEvaluated.onb"
@@ -9619,26 +9609,6 @@
             "TargetName" = "8:Inheritance.nb"
             "Tag" = "8:"
             "Folder" = "8:_113B2314701249899C383458A2336591"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A3C45759D8D445D3A63ABDF132520C58"
-            {
-            "SourcePath" = "8:ptplot.jar"
-            "TargetName" = "8:ptplot.jar"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9713,6 +9683,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A4FD94586C5844F5999DFE8184AEE454"
+            {
+            "SourcePath" = "8:icons\\OMNotebook.ico"
+            "TargetName" = "8:OMNotebook.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A521F58DC17A4A909EF554CB3997DF93"
             {
             "SourcePath" = "8:..\\..\\..\\c_runtime\\modelica.h"
@@ -9739,26 +9729,6 @@
             "TargetName" = "8:OpenModelicaSystem.pdf"
             "Tag" = "8:"
             "Folder" = "8:_7DA21596A495411F827247DC52301BCA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A61FE38C7CEB4362B413C8D8B725B03F"
-            {
-            "SourcePath" = "8:bin\\comdlg32.dll"
-            "TargetName" = "8:comdlg32.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9999,6 +9969,26 @@
             "TargetName" = "8:SimpleCircuit.nb"
             "Tag" = "8:"
             "Folder" = "8:_113B2314701249899C383458A2336591"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ADEBADF8D11B4426B4603C02EC87532F"
+            {
+            "SourcePath" = "8:icons\\OMShell.ico"
+            "TargetName" = "8:OMShell.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10293,6 +10283,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B2E63C1FE51A42A5938A349E536527E5"
+            {
+            "SourcePath" = "8:icons\\PDF.ico"
+            "TargetName" = "8:PDF.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_B3077EE2766F4F6E8604E7ACBB6A0FA2"
             {
             "SourcePath" = "8:M:\\DrModelica\\Arrays\\ConcatConstruct.nb"
@@ -10433,26 +10443,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B827EB8FE19C4FB9874E14344033CBFA"
-            {
-            "SourcePath" = "8:atl71.dll"
-            "TargetName" = "8:atl71.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_B86D73B6AA7E4656812FDD388BB9979C"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\IfClause.nb"
@@ -10519,26 +10509,6 @@
             "TargetName" = "8:Exercise3.onb"
             "Tag" = "8:"
             "Folder" = "8:_AA3E0A7315CF4271AC718A74012DF50F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B9C73EAFC88E404EA832FAFB558E08B3"
-            {
-            "SourcePath" = "8:mingw.tar.gz"
-            "TargetName" = "8:mingw.tar.gz"
-            "Tag" = "8:"
-            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10713,26 +10683,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BEC6720DCA9843919F6A26E0CDD5084D"
-            {
-            "SourcePath" = "8:OMNotebook.ico"
-            "TargetName" = "8:OMNotebook.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_BF053EC50ABA44D8A3B8D38F70FB32F9"
             {
             "SourcePath" = "8:M:\\DrModelica\\Arrays\\FlexSize.nb"
@@ -10773,12 +10723,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BF92C21C81C84F78934B8CF4E2BCA4F4"
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BF98FEBB42F44ACDA5CAD9E83897B48D"
             {
-            "SourcePath" = "8:Uninstall.ico"
-            "TargetName" = "8:Uninstall.ico"
+            "SourcePath" = "8:tools\\gunzip.exe"
+            "TargetName" = "8:gunzip.exe"
             "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10839,6 +10789,46 @@
             "TargetName" = "8:FlatTank mm.nb"
             "Tag" = "8:"
             "Folder" = "8:_EA7DA987B5224918880C63BCC54D8FE0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C2206C1607C34828ACC2605657B30E39"
+            {
+            "SourcePath" = "8:tools\\libiconv-2.dll"
+            "TargetName" = "8:libiconv-2.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C22D70EE600B46379B94235BA53FBDAF"
+            {
+            "SourcePath" = "8:bin\\Uninstall.bat"
+            "TargetName" = "8:Uninstall.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -10933,12 +10923,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C6653FD6B9E346ACAEEE02B8A57BA922"
+            {
+            "SourcePath" = "8:bin\\mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C6F14F516BA04B358FAB630AB1D84C7E"
             {
             "SourcePath" = "8:M:\\DrModelica\\InherMod\\Exercise2.nb"
             "TargetName" = "8:Exercise2.nb"
             "Tag" = "8:"
             "Folder" = "8:_90548BDD4C484EBCAB82BA27E9D3E599"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C732364BE2004F408FFBC9EC0259C5B6"
+            {
+            "SourcePath" = "8:icons\\IExplorer.ico"
+            "TargetName" = "8:IExplorer.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -11213,6 +11243,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CEE86BBC71ED47AE889F56F5A7652601"
+            {
+            "SourcePath" = "8:tools\\libintl-2.dll"
+            "TargetName" = "8:libintl-2.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_CEE93BD52C1946EBACA6729C007F0F68"
             {
             "SourcePath" = "8:M:\\DrModelica\\Functions\\External.nb"
@@ -11239,6 +11289,26 @@
             "TargetName" = "8:Construction.onb"
             "Tag" = "8:"
             "Folder" = "8:_4A12A1393A92488B91F7564816FB898D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CF143A5710FB428DAFBE416FD8D06116"
+            {
+            "SourcePath" = "8:tools\\zcat.exe"
+            "TargetName" = "8:zcat.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -11533,26 +11603,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D6F21E5C4E48465685DD7BBA9309A110"
-            {
-            "SourcePath" = "8:IExplorer.ico"
-            "TargetName" = "8:IExplorer.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_D72BD3FCDCE640558C6D28C7EE08049F"
             {
             "SourcePath" = "8:M:\\DrModelica\\Arrays\\Exercise1-7-4.nb"
@@ -11713,6 +11763,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DFB68DF8AC9440159610876139D10805"
+            {
+            "SourcePath" = "8:bin\\msvcr71.dll"
+            "TargetName" = "8:msvcr71.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_DFC6367AE66D478FB8D96F09408A6876"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\ReuseMod.nb"
@@ -11802,26 +11872,6 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_E39F5397958F47C0AAE3CA6900651879"
-            {
-            "SourcePath" = "8:bin\\libiconv-2.dll"
-            "TargetName" = "8:libiconv-2.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -12093,46 +12143,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ECB1CD3100464EA9B0FF264C1F80EC2B"
-            {
-            "SourcePath" = "8:OMShell.ico"
-            "TargetName" = "8:OMShell.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_ECD84E189D4945EC8D55634A00338758"
-            {
-            "SourcePath" = "8:mfc71.dll"
-            "TargetName" = "8:mfc71.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_EE54E8AC4A6845959C1C4AF031CCEDCA"
             {
             "SourcePath" = "8:M:\\DrModelica\\QuickTour\\SimpleCircuit.onb"
@@ -12239,26 +12249,6 @@
             "TargetName" = "8:HelloWorld.nb"
             "Tag" = "8:"
             "Folder" = "8:_113B2314701249899C383458A2336591"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F0B6A230014D4B7BBC0E08EDE1A4135E"
-            {
-            "SourcePath" = "8:PDF.ico"
-            "TargetName" = "8:PDF.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_47605D5899AF46B799996EC9F22DE894"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12953,12 +12943,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FC8AD9C8940E4FD794C96CE860A0D99F"
+            {
+            "SourcePath" = "8:tools\\gzip.exe"
+            "TargetName" = "8:gzip.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FCD9DF5131C14A19A1DDA6946D87C03C"
+            {
+            "SourcePath" = "8:zips\\mingw.tar.gz"
+            "TargetName" = "8:mingw.tar.gz"
+            "Tag" = "8:"
+            "Folder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_FDB2E873666748CFB9204E800867CC3E"
             {
             "SourcePath" = "8:M:\\DrModelica\\Packages\\PackLibrStruct.onb"
             "TargetName" = "8:PackLibrStruct.onb"
             "Tag" = "8:"
             "Folder" = "8:_BA803218EED944D99A4E70CD8DE29828"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FE9E8DFE551C48B7B8D4E0B6C8E899E3"
+            {
+            "SourcePath" = "8:bin\\ptplot.jar"
+            "TargetName" = "8:ptplot.jar"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -13452,7 +13502,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica"
         "ProductCode" = "8:{C66385D3-DD10-4601-B50A-79E578344270}"
-        "PackageCode" = "8:{7CF06496-2427-48A6-B596-30FA4209A8BE}"
+        "PackageCode" = "8:{0C7B9AFB-6D44-4C5C-A874-E342DA611262}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -13467,7 +13517,7 @@
         "Keywords" = "8:OpenModelica, Modeling and Simulation Software, PELAB"
         "ARPCOMMENTS" = "8:OpenModelica packed by Adrian Pop [http://www.ida.liu.se/~adrpo]"
         "ARPURLINFOABOUT" = "8:http://www.ida.liu.se/labs/pelab"
-        "ARPPRODUCTICON" = "8:_313B0E32F7F34279BAD62D8FEBB88D1C"
+        "ARPPRODUCTICON" = "8:_A171BB2870DB4E48AE2AC3164BB2B3D1"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -13653,7 +13703,7 @@
             "Target" = "8:_31E3CA421FB24C40984EBCBFAAE5934E"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_7DA21596A495411F827247DC52301BCA"
-            "Icon" = "8:_D6F21E5C4E48465685DD7BBA9309A110"
+            "Icon" = "8:_C732364BE2004F408FFBC9EC0259C5B6"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_44866B2A2B074C669C8593BB305F0944"
@@ -13667,7 +13717,7 @@
             "Target" = "8:_75CFF6A991AD4D48AF32450DD0855E4D"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Icon" = "8:_BEC6720DCA9843919F6A26E0CDD5084D"
+            "Icon" = "8:_A4FD94586C5844F5999DFE8184AEE454"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_6DE971C332EE43E7B977FA9A54E0BB2A"
@@ -13681,7 +13731,7 @@
             "Target" = "8:_39857A32FDB746B6A2708DB146A6A81E"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_7DA21596A495411F827247DC52301BCA"
-            "Icon" = "8:_F0B6A230014D4B7BBC0E08EDE1A4135E"
+            "Icon" = "8:_B2E63C1FE51A42A5938A349E536527E5"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_CF573E0168954D959EFC69C37FA82B5B"
@@ -13692,10 +13742,10 @@
             "ShowCmd" = "3:7"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_64FC859971AB4C7A96CBE39010786963"
+            "Target" = "8:_C22D70EE600B46379B94235BA53FBDAF"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_5E09BEF16F57435892F962D446E8B3F8"
-            "Icon" = "8:_BF92C21C81C84F78934B8CF4E2BCA4F4"
+            "Icon" = "8:_A254279EE3514EE984545ABB92108F2A"
             "Feature" = "8:"
             }
             "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_DD9E92317E894F3E9098F3821BDD216F"
@@ -13709,7 +13759,7 @@
             "Target" = "8:_0FFDFC547CDC41A09E25DB3BF33F1E93"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Icon" = "8:_ECB1CD3100464EA9B0FF264C1F80EC2B"
+            "Icon" = "8:_A171BB2870DB4E48AE2AC3164BB2B3D1"
             "Feature" = "8:"
             }
         }
@@ -14095,6 +14145,62 @@
         }
         "MergeModule"
         {
+            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_03F5180FD1EB41B9A23781626CFE0AD9"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files\\common files\\merge modules\\vc_user_atl71_rtl_x86_---.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_4B372CF5F1AF4CDFB5D321F190AAB448"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files\\common files\\merge modules\\vc_user_crt71_rtl_x86_---.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_4C65DA0E08B4400EB6F9BE68492883A8"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files\\common files\\merge modules\\vc_user_stl71_rtl_x86_---.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_85559952BF744D17843B3597642EEF97"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files\\common files\\merge modules\\vc_user_mfc71_rtl_x86_---.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
         }
         "ProjectOutput"
         {
