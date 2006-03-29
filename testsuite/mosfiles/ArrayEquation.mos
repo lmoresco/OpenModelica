@@ -33,9 +33,9 @@ system("rm -rf ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEqn.exe ArrayEq
 //     resultFile = "ArrayEqn_res.plt"
 // end record
 // true
-// {2.0,2.0,2.0,2.0,2.0,2.0}
-// {4.0,4.0,4.0,4.0,4.0,4.0}
 // {2.0,0.898,0.403,0.181,0.081,0.036}
+// {4.0,4.0,4.0,4.0,4.0,4.0}
+// {2.0,2.0,2.0,2.0,2.0,2.0}
 // {1.0,0.449,0.201,0.09,0.04,0.018}
 // ""
 // 0

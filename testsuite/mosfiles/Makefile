@@ -7,7 +7,7 @@ matrices.mos BouncingBall.mos ExternalLibraries.mos \
 loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
 IdealDiode.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
-rotationalsystems.mos
+rotationalsystems.mos Interpolation.mos
 TEST = ./rtest
 
 

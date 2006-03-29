@@ -1,0 +1,37 @@
+// name:     Interpolation
+// keywords: Simulate, readSimulationData
+// status:   correct
+// 
+//  Simulate Modelica.Math.tempInterpol functions
+//
+
+loadFile("Interpol2.mo");
+simulate(Interpol2Test,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("Interpol2Test_res.plt");
+res:=readSimulationResult("Interpol2Test_res.plt",{x,y,z,x2,y2,z2},size);
+echo(true);
+x:=res[1,1];
+y:=res[2,1];
+z:=res[3,1];
+x1:=res[4,1];
+x2:=res[5,1];
+x4:=res[6,1];
+readFile("output.log");
+system("rm -rf Interpol2Test.* Interpol2Test_* output.log");
+
+// Result:
+// true
+// record
+//     resultFile = "Interpol2Test_res.plt"
+// end record
+// true
+// 10.5
+// 35.0
+// 60.0
+// 105.0
+// 350.0
+// 600.0
+// ""
+// 0
+// endResult
