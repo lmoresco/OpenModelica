@@ -37,6 +37,9 @@ NOTE:
   To run the testsuite: export OPENMODELICAHOME=path/to/trunk/build
   cd testsuite
   testsuite> make
+  
+  If you run into problems read the GENERAL NOTES below and if that
+  does not help, sent us an email.
 
 How to run
 ==========
@@ -115,3 +118,15 @@ Error evaluating expr.
 >>> listVariables()
 {a, b}
 >>>
+
+GENERAL NOTES:
+==============
+- Fedora Core 4 has a missing symlink. To fix it, in /usr/lib do:
+  ln -s libg2c.so.0 libg2c.so
+  Otherwise the testsuite will fail when generating simulation code.
+  
+- to compile OMC you may need to fix the link flags in 
+  Compiler/omc_release/Makefile
+  run: 'mico-config --libs' and replace the CORBALIBS with the output
+  from the mico-config run. This should be handled by 'configure' but
+  it isn't.
