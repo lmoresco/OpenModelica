@@ -12,6 +12,7 @@
 <mapEntry key="TMP" value="${env_var:TMP}"/>
 <mapEntry key="CLASSPATH" value="${env_var:OMDEV}/bin/antlr/antlr.jar"/>
 <mapEntry key="COMSPEC" value="${env_var:COMSPEC}"/>
+<mapEntry key="OPENMODELICAHOME" value="${workspace_loc}\OpenModelica\build"/>
 <mapEntry key="SystemDrive" value="${env_var:SystemDrive}"/>
 <mapEntry key="TEMP" value="${env_var:TEMP}"/>
 <mapEntry key="PATH" value="${env_var:OMDEV}/tools/mingw/bin;${env_var:OMDEV}/tools/msys/bin;${env_var:OMDEV}/tools/rml/bin/;${env_var:OMDEV}/tools/msys/local/bin;${env_var:OMDEV}/bin/mico/;c:/windows;c:/windows/system32;"/>
