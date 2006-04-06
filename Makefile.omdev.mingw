@@ -78,6 +78,10 @@ omc:
 	(cp doc/*.pdf $(builddir_doc)/)
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	
+test:
+	(cd testsuite; $(MAKE) -f Makefile)
+	
+	 
 
 mosh:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
