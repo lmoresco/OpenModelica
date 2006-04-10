@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Things that does not work</h1>
-OpenModelica v.1.3.1<br>
+OpenModelica v.1.3.2<br>
 <br>
 <h2>&nbsp;In simulation code: <br>
 </h2>
@@ -12,16 +12,10 @@ OpenModelica v.1.3.1<br>
   </li>
   <li>&nbsp;Limited error checking in numerical solver. <br>
   </li>
-  <li>&nbsp;Limited support for initial values. <br>
   </li>
   <li>&nbsp;No dynamic selection of states (in index reduction) <br>
   </li>
   <li>Only possible to run with DASSL numerical solver. <br>
-  </li>
-  <li>All initial values must be consistent, i.e. no initial value
-calculation is performed. This can be done by hand and filled in into
-the &lt;modelname&gt;_init.txt file.<br>
-  </li>
 </ul>
 <h2>In translation to flat Modelica:
 <br>
@@ -46,8 +40,6 @@ are sometimes messed up. </li>
   <li>Output parameters of functions, enable attribute, etc.</li>
 </ul>
 <ul>
-  <li>Matrices and vectors in equations (only works if can be fully
-converted to scalar values.)</li>
   <li>Array construction (3.4.4.1). Using array(... for ...) syntax.
 Partially implemented. Left to do: <br>
 - Constant evaluation and/or optimization. Could be implemented as
