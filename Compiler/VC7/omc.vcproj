@@ -255,127 +255,136 @@ nmake -f MakeFile.win32
 			</File>
 		</Filter>
 		<Filter
-			Name="rml"
+			Name="mo"
 			Filter="">
 			<File
-				RelativePath="..\Absyn.rml">
+				RelativePath="..\Absyn.mo">
 			</File>
 			<File
-				RelativePath="..\Algorithm.rml">
+				RelativePath="..\Algorithm.mo">
 			</File>
 			<File
-				RelativePath="..\Builtin.rml">
+				RelativePath="..\Builtin.mo">
 			</File>
 			<File
-				RelativePath="..\Ceval.rml">
+				RelativePath="..\Ceval.mo">
 			</File>
 			<File
-				RelativePath="..\ClassInf.rml">
+				RelativePath="..\ClassInf.mo">
 			</File>
 			<File
-				RelativePath="..\ClassLoader.rml">
+				RelativePath="..\ClassLoader.mo">
 			</File>
 			<File
-				RelativePath="..\Codegen.rml">
+				RelativePath="..\Codegen.mo">
 			</File>
 			<File
-				RelativePath="..\Connect.rml">
+				RelativePath="..\Connect.mo">
 			</File>
 			<File
-				RelativePath="..\Corba.rml">
+				RelativePath="..\Corba.mo">
 			</File>
 			<File
-				RelativePath="..\DAE.rml">
+				RelativePath="..\DAE.mo">
 			</File>
 			<File
-				RelativePath="..\DAEEXT.rml">
+				RelativePath="..\DAEEXT.mo">
 			</File>
 			<File
-				RelativePath="..\DAELow.rml">
+				RelativePath="..\DAELow.mo">
 			</File>
 			<File
-				RelativePath="..\Debug.rml">
+				RelativePath="..\Debug.mo">
 			</File>
 			<File
-				RelativePath="..\Derive.rml">
+				RelativePath="..\Derive.mo">
 			</File>
 			<File
-				RelativePath="..\Dump.rml">
+				RelativePath="..\Dump.mo">
 			</File>
 			<File
-				RelativePath="..\DumpGraphviz.rml">
+				RelativePath="..\DumpGraphviz.mo">
 			</File>
 			<File
-				RelativePath="..\Env.rml">
+				RelativePath="..\Env.mo">
 			</File>
 			<File
-				RelativePath="..\Exp.rml">
+				RelativePath="..\Error.mo">
 			</File>
 			<File
-				RelativePath="..\Graphviz.rml">
+				RelativePath="..\ErrorExt.mo">
 			</File>
 			<File
-				RelativePath="..\Inst.rml">
+				RelativePath="..\Exp.mo">
 			</File>
 			<File
-				RelativePath="..\Interactive.rml">
+				RelativePath="..\Graphviz.mo">
 			</File>
 			<File
-				RelativePath="..\Lookup.rml">
+				RelativePath="..\Inst.mo">
 			</File>
 			<File
-				RelativePath="..\Main.rml">
+				RelativePath="..\Interactive.mo">
 			</File>
 			<File
-				RelativePath="..\Mod.rml">
+				RelativePath="..\Lookup.mo">
 			</File>
 			<File
-				RelativePath="..\ModUtil.rml">
+				RelativePath="..\Main.mo">
 			</File>
 			<File
-				RelativePath="..\Parser.rml">
+				RelativePath="..\Mod.mo">
 			</File>
 			<File
-				RelativePath="..\Prefix.rml">
+				RelativePath="..\ModUtil.mo">
 			</File>
 			<File
-				RelativePath="..\Print.rml">
+				RelativePath="..\Parser.mo">
 			</File>
 			<File
-				RelativePath="..\RTOpts.rml">
+				RelativePath="..\Prefix.mo">
 			</File>
 			<File
-				RelativePath="..\SCode.rml">
+				RelativePath="..\Print.mo">
 			</File>
 			<File
-				RelativePath="..\SimCodegen.rml">
+				RelativePath="..\RTOpts.mo">
 			</File>
 			<File
-				RelativePath="..\Socket.rml">
+				RelativePath="..\SCode.mo">
 			</File>
 			<File
-				RelativePath="..\Static.rml">
+				RelativePath="..\Settings.mo">
 			</File>
 			<File
-				RelativePath="..\System.rml">
+				RelativePath="..\SimCodegen.mo">
 			</File>
 			<File
-				RelativePath="..\TaskGraph.rml">
+				RelativePath="..\Socket.mo">
 			</File>
 			<File
-				RelativePath="..\TaskGraphExt.rml">
+				RelativePath="..\Static.mo">
 			</File>
 			<File
-				RelativePath="..\Types.rml">
+				RelativePath="..\System.mo">
 			</File>
 			<File
-				RelativePath="..\Util.rml">
+				RelativePath="..\TaskGraph.mo">
 			</File>
 			<File
-				RelativePath="..\Values.rml">
+				RelativePath="..\TaskGraphExt.mo">
 			</File>
 			<File
-				RelativePath="..\VarTransform.rml">
+				RelativePath="..\Types.mo">
+			</File>
+			<File
+				RelativePath="..\Util.mo">
+			</File>
+			<File
+				RelativePath="..\Values.mo">
+			</File>
+			<File
+				RelativePath="..\VarTransform.mo">
 			</File>
 		</Filter>
 		<File

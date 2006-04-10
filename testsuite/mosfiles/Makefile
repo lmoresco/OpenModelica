@@ -8,6 +8,11 @@ loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
 IdealDiode.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos Interpolation.mos
+
+# test that currently fail. Move up when fixed. 
+# Run make testfailing
+FAILINGTESTFILES= MoonAndEarth.mos
+
 TEST = ./rtest
 
 
