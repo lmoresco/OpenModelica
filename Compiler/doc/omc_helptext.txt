@@ -1,6 +1,6 @@
 OpenModelica Builtin Commands
-------------------------------
-Exit Mosh/Winmosh by pressing Ctrl-d
+-----------------------------
+Exit OMShell by pressing Ctrl-d
 
  up-arrow                      
           Get previously given command.
@@ -60,9 +60,10 @@ Exit Mosh/Winmosh by pressing Ctrl-d
           the most recently simulated model 
           Ex: plot({x,y})
 
- plotParametric(vars) 
-          Plot variables given as a vector from the most recently simulated 
-          model, relative to the first variable given. Ex: plotParametric({x,y})
+ plotParametric(var1, var2) 
+          Plot var2 relative to var1 from the most recently
+          simulated model. 
+          Ex: plotParametric(x,y)
 			          
  readFile(str) 
           Load file given as string and return a string of the file content.
