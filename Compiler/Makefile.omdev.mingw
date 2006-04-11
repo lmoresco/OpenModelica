@@ -7,8 +7,6 @@
 
 # The path to the OMDev-mingw package MUST BE SET!
 #OMDEV=$OMDEV 
-# Building OMC from which files? .rml or .mo? MUST BE SET!
-#OMC_BUILD_FROM=$OMC_BUILD_FROM
 # Test if the needed variables are there... 
 
 .testvariables:
@@ -16,10 +14,6 @@ ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
 	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
 	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
-	ABORT
-endif
-ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT
 endif
 
@@ -57,8 +51,6 @@ DOC_FILES = omc_helptext.txt omc_interactive_api.txt
 
 SUBDIRS	= runtime absyn_builder modpar
 
-
-ifeq ($(OMC_BUILD_FROM),mo)
 
 .SUFFIXES:
 .SUFFIXES: .o .mo .h
@@ -178,126 +170,6 @@ report:
 .depend: 
 	-$(RM) .depend
 	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
-
-else #else we build from .rml files *********************************************
-
-.SUFFIXES:
-.SUFFIXES: .o .rml .h
-.PHONY: .testvariables .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug
-
-all : .testvariables .depend release
-
-debug:	.testvariables .depend $(PROGD) $(SRCRDB) dinstall
-
-release: .testvariables .depend $(PROG) install
-
-$(SRCRDB): %.rdb: omc_debug/%.rdb 
-	cp $< $@
-
-$(PROG): omc_release
-	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
-
-$(PROGD): omc_debug
-	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
-	cp *.rdb 
-
-install_doc:
-	for x in $(DOC_FILES); do \
-		echo Copying $$x into $(builddir_doc); \
-		cp doc/$$x $(builddir_doc)/; \
-	done
-	
-install_scripts:
-	for x in $(SCRIPT_FILES); do \
-		echo Copying $$x into $(builddir_bin); \
-		cp scripts/$$x $(builddir_bin)/; \
-	done
-
-
-install: install_doc install_scripts
-	echo Copying $(PROG)$(EXEEXT) into $(builddir_bin)
-	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
-	echo Copying needed helpfiles....
-	for x in $(DOC_FILES); do \
-		echo Copying $$x into $(builddir_bin) where omc expects it...; \
-		cp doc/$$x $(builddir_bin)/; \
-	done
-
-dinstall: install_doc install_scripts $(SRCRDB)
-	cp *.rdb $(builddir_bin)/
-	echo Copying $(PROGD)$(EXEEXT) into $(builddir_bin)
-	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
-	echo Copying needed helpfiles....
-	for x in $(DOC_FILES); do \
-		echo Copying $$x into $(builddir_bin) where omc expects it...; \
-		cp doc/$$x $(builddir_bin)/; \
-	done
-
-omc_release:
-	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
-
-omc_debug:
-	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
-
-vctarget: 
-	@(cd omc_release ; $(MAKE) vctarget -f Makefile.omdev.mingw)
-
-test:
-	@(cd ../testsuite ; $(MAKE) -f Makefile.omdev.mingw)
-
-
-clean:
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
-	done
-	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
-	-$(RM) -f $(SRCH)
-	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
-	-$(RM) -f $(SRCH)
-	-$(RM) -f $(builddir_bin)/$(PROG)$(EXEEXT)
-	-cd $(builddir_bin) && rm -f $(SCRIPT_FILES) && rm -f $(DOC_FILES)
-	-cd $(builddir_doc) && rm -f $(DOC_FILES)	
-
-
-dclean:
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
-	done
-	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
-	-$(RM) -f $(SRCRDB)
-	-$(RM) -f $(SRCH)
-	-$(RM) -f $(builddir)/$(PROGD)$(EXEEXT)
-	-$(RM) -f $(builddir)/*.rdb
-	-cd $(builddir_bin) && rm -f $(SCRIPTS_FILES) && rm -f $(DOC_FILES)
-	-cd $(builddir_doc) && rm -f $(DOC_FILES)
-
-
-reallyclean:
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
-	done
-	(cd omc_release; $(MAKE) -f Makefile.omdev.mingw reallyclean)
-	-$(RM) -f $(SRCH)
-	-$(RM) -f $(PROG)$(EXEEXT)
-
-dreallyclean: 
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
-	done
-	(cd omc_debug; $(MAKE) -f Makefile.omdev.mingw reallyclean)
-	-$(RM) -f $(SRCRDB)
-	-$(RM) -f $(SRCH)
-	-$(RM) -f $(PROGD)$(EXEEXT)
-
-report:
-	@(cd report ; $(MAKE))
-
-.depend:	
-	-$(RM) .depend
-	time $(RMLHOME)/bin/rml -fdump-depends $(SRCRML) > .depend
-
-
-endif #build from .rml files
 
 #.PRECIOUS: Makefile.omdev.mingw
 #

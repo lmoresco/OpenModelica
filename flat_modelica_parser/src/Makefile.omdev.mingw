@@ -7,18 +7,12 @@
 
 # The path to the OMDev-mingw package MUST BE SET!
 #OMDEV=$OMDEV 
-# Building OMC from which files? .rml or .mo? MUST BE SET!
-#OMC_BUILD_FROM=$OMC_BUILD_FROM
 # Test if the needed variables are there... 
 .testvariables:
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
 	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
 	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
-	ABORT
-endif
-ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT
 endif
 

@@ -7,8 +7,6 @@
 
 # The path to the OMDev-mingw package MUST BE SET!
 #OMDEV=$OMDEV 
-# Building OMC from which files? .rml or .mo? MUST BE SET!
-#OMC_BUILD_FROM=$OMC_BUILD_FROM
 # Test if the needed variables are there... 
 
 .testvariables:
@@ -16,10 +14,6 @@ ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
 	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
 	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
-	ABORT
-endif
-ifndef OMC_BUILD_FROM
-	@echo From wich files to build must be set: OMC_BUILD_FROM. Either \"mo\" or \"rml\"! Exiting....
 	ABORT
 endif
 
@@ -57,26 +51,19 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
 
 PROG = omcd.exe
-# There is no debug in OMDev-mingw at the moment
+# There is now debug in OMDev-mingw
 RML	= $(OMDEV)/tools/rml/bin/rmlc -g -Wc,-g
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
-ifeq ($(OMC_BUILD_FROM),mo)
 all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
 .SUFFIXES: .o .mo .h
-else #We build from .rml files! Be it so!
-all : testvariables $(ALLRML) subdirs $(PROG)
-.SUFFIXES:
-.SUFFIXES: .o .rml .h
-endif 
 
 .PHONY: .testvariables all subdirs report vctarget absyn_subdir clean reallyclean
 SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
 
 
-ifeq ($(OMC_BUILD_FROM),mo)
 $(ALLMO): %.mo : $(srcdir)/%.mo
 	cp -p $< $@
 
@@ -93,28 +80,7 @@ $(SRCH): %.h : %.mo
 	$(RML) -c $<
 
 %.sig : %.mo
-	$(srcdir)/rml2sig/rmldep.sh $<
-
-else # we build from .rml files
-$(ALLRML): %.rml : $(srcdir)/%.rml
-	cp -p $< $@
-
-$(SRCO): %.o : %.c %.h
-	$(RML) -c $<
-
-$(SRCC): %.c : %.rml
-	$(RML) +C $<
-
-$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp -p $< $@
-
-$(SRCH): %.h : %.rml
-	$(RML) -c $<
-
-%.sig : %.rml
-	$(srcdir)/rml2sig/rmldep.sh $<
-
-endif
+	$(srcdir)/rml2sig/rmldep-new.sh $<
 
 vctarget: $(SRCC) absyn_subdir
 
@@ -137,21 +103,12 @@ clean:
 	(cd $(srcdir) && $(RM) $(SRCH))
 	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
 
-ifeq ($(OMC_BUILD_FROM),mo)
 reallyclean: clean
-	$(RM) $(ALLRML)  $(ALLRML:.rml=.sig) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(SRCRDB) $(PROG)
+	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(SRCRDB) $(PROG)
 
 # don't remove these files after intermediate build steps
 #.PRECIOUS: Makefile $(ALLRMO)
 #.PRECIOUS: $(ALLMO)
-else
-reallyclean: clean
-	$(RM) $(ALLRML) $(ALLRML:.rml=.sig)  $(SRCRDB) $(PROG)
-
-# don't remove these files after intermediate build steps
-#.PRECIOUS: Makefile.omdev.mingw $(ALLRML)
-.PRECIOUS: $(ALLRML)
-endif 
 
 #Makefile.omdev.mingw: Makefile.omdev.mingw.in
 #	$(top_builddir)/config.status Makefile.omdev.mingw.in

@@ -4,8 +4,8 @@ How to compile on Linux or Cygwin
 You need: 
 	cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
 	antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.6)
-	rml (http://www.ida.liu.se/~pelab/rml/ - tested on v2.1.8 and above) (unpack and follow instructions)
-	rml needs smlnj: http://www.smlnj.org (working version v110.xx)
+	rml (http://www.ida.liu.se/~pelab/rml/)
+	rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
 	mico   (http://www.mico.org - tested on 2.3.11 and 2.3.12)
 	libssl (not really necessary)
 	java
@@ -17,7 +17,7 @@ NOTE:
 
 1. Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.2
    Set CLASSPATH for antlr, e.g. $ANTLRHOME/antlr.jar
-   Set RMLHOME to rml installation, e.g. /usr/local/rml-2.1.8/x86-linux-gcc/
+   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
    If you plan to use mico corba with OMC you need to:
    - make 2 symbolic links:
      ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
