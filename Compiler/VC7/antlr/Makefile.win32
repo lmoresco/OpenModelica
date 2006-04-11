@@ -1,6 +1,6 @@
 SRCPATH=$(ANTLRHOME)\lib\cpp\src
 INCLPATH=$(ANTLRHOME)\lib\cpp
-CPPFLAGS=/O2 /I $(INCLPATH) /D "WIN32" /D "NDEBUG" /D "_LIB" /D "_MBCS" /FD /EHsc /MT /GS /Fd"vc70.pdb" /W3 /nologo /c /Wp64 /Zi /TP
+CPPFLAGS=/Ob2 /Ox /O2 /Og /Ot /Oy /I $(INCLPATH) /D "WIN32" /D "NDEBUG" /D "_LIB" /D "_MBCS" /FD /EHsc /MT /GS /Fd"vc70.pdb" /W3 /nologo /c /Wp64 /Zi /TP
 SRCS=$(SRCPATH)\*.cpp
 OBJS=*.obj 
 

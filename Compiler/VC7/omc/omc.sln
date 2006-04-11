@@ -119,6 +119,7 @@ Global
 		..\Setup\icons\OpenModelica.ico = ..\Setup\icons\OpenModelica.ico
 		..\Setup\icons\PDF.ico = ..\Setup\icons\PDF.ico
 		Readme.txt = Readme.txt
+		..\Setup\bin\Uninstall.bat = ..\Setup\bin\Uninstall.bat
 		..\Setup\icons\Uninstall.ico = ..\Setup\icons\Uninstall.ico
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
