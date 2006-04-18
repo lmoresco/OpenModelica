@@ -13,7 +13,7 @@ rotationalsystems.mos rotationalgears.mos Interpolation.mos
 # Run make testfailing
 FAILINGTESTFILES= MoonAndEarth.mos
 
-TEST = ./rtest
+TEST = ./rtest -v
 
 
 .PHONY : test
