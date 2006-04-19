@@ -1005,6 +1005,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5612CDF4BD4B44BDA34B62A9CCD25006"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_57F9DD78E672490092B7E89EF313FCB0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -6365,6 +6371,26 @@
             "TargetName" = "8:Connectors.onb"
             "Tag" = "8:"
             "Folder" = "8:_EA0BF9C14F094342ABBFD22EB1157748"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5612CDF4BD4B44BDA34B62A9CCD25006"
+            {
+            "SourcePath" = "8:testmodels\\UsersGuideExamples.onb"
+            "TargetName" = "8:UsersGuideExamples.onb"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -14126,7 +14152,7 @@
         {
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_4B2552DF2CFF4B6AAA4D4C33B5353E48"
             {
-            "SourcePath" = "8:..\\UpdateEnv\\Release\\UpdateEnv.exe"
+            "SourcePath" = "8:..\\updateenv\\release\\UpdateEnv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
