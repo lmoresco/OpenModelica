@@ -11,7 +11,7 @@ Circuit1.mo Class1.mo Class2.mo Class4.mo ConditionalArrayExpression1.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant2.mo Constant1.mo \
-Constant4.mo ConstrainingType1.mo ConstructParameters.mo \
+Constant4.mo Constant7.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
 DeclareConstant1.mo DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo \
 Each1.mo \
@@ -21,7 +21,7 @@ EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo  Extends1.mo Extends2.mo Function1.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo \
-InnerClass1.mo Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
+Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
 Modification12.mo Modification13.mo \
@@ -50,7 +50,7 @@ FlexibleShaftNonLinearTotal.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo
+FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo InnerClass1.mo 
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
