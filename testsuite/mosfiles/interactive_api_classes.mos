@@ -13,7 +13,9 @@ addComponent(z,Real,A.test);
 addComponent(y,Integer,test2);
 updateComponent(x,Integer,A.test,binding=33);
 addClassAnnotation(A.test,annotate=Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{100,100}})}));
+addClassAnnotation(A.test,annotate=Documentation(info="<HTML>foo</HTML>",revisions="1.0"));
 getIconAnnotation(A.test);
+getDocumentationAnnotation(A.test);
 getComponentCount(A.test);
 getComponentCount(test2);
 getComponents(A.test);
@@ -28,7 +30,9 @@ getClassNames(A);
 // true
 // true
 // true
+// true
 // {-10.0,-10.0,10.0,10.0,{Line(true,{{0.0,0.0},{100.0,100.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}
+// {"<HTML>foo</HTML>","1.0"}
 // 2
 // 1
 // {{Real,z,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Integer,x,"", "public", false, false, false, "unspecified", "none", "unspecified"}}
