@@ -1,7 +1,7 @@
 .PHONY : all failingtest
 
 all :
-	@echo OPENMODELICAHOME = "$(OPENMODELICAHOME)"; \
+	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
 	cd mofiles; $(MAKE) -f Makefile test; \
 	cd msl; $(MAKE) -f Makefile test; \
 	cd ../drmodelica; $(MAKE) -f Makefile test; \

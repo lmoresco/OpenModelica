@@ -22,5 +22,5 @@ test:
 	@echo
 	@echo Running tests...
 	@echo
-	@echo OPENMODELICAHOME="$(OPENMODELICAHOME)"
+	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
