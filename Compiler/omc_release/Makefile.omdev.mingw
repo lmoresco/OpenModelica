@@ -56,7 +56,7 @@ SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
 all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
-.SUFFIXES: .o .mo .h .rml .rdb
+.SUFFIXES: .o .mo .h .rdb
 
 .PHONY: all subdirs report vctarget absyn_subdir clean reallyclean
 

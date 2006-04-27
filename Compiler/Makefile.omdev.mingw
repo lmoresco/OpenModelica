@@ -74,7 +74,7 @@ $(PROG): omc_release
 
 $(PROGD): omc_debug
 	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
-	cp *.rdb $(builddir_bin)/
+	cp omc_debug/*.rdb $(builddir_bin)/
 
 install_doc:
 	for x in $(DOC_FILES); do \

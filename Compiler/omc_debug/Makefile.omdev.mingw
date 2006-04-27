@@ -26,7 +26,7 @@ LIBSOCKET = -lsocket
 SHELL	= /bin/sh
 CC	= gcc
 CFLAGS	= $(USE_CORBA)
-RMLHOME	= $(OMDEV)/
+RMLHOME	= $(OMDEV)/tools/rml
 RMLINC  = -I$(RMLHOME)/include/plain
 
 USE_CORBA = -DUSE_CORBA
@@ -39,7 +39,7 @@ include $(srcdir)/Makefile.common.omdev.mingw
 
 
 LIBSOCKET=-lwsock32
-CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico 
+CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311 
 
 # We always use corba when building with OMDev-mingw
 #ifdef USE_CORBA
@@ -48,17 +48,17 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico
 # CORBALIBS= 
 #endif
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
-RML	= $(OMDEV)/tools/rml/bin/rmlc -g -Wc,-g
+RML	= $(OMDEV)/tools/rml/bin/rmlc -g -Wc,-O3
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
 all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
-.SUFFIXES: .o .mo .h
+.SUFFIXES: .o .mo .h .rdb
 
 .PHONY: .testvariables all subdirs report vctarget absyn_subdir clean reallyclean
 SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
