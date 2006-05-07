@@ -651,6 +651,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_307D8BCC62DA46F1B661E35C53650ACA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3150E293C62442C5B86D8610E4A3E2C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -5211,6 +5217,26 @@
             "TargetName" = "8:External.onb"
             "Tag" = "8:"
             "Folder" = "8:_AA3E0A7315CF4271AC718A74012DF50F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_307D8BCC62DA46F1B661E35C53650ACA"
+            {
+            "SourcePath" = "8:M:\\OMNotebook\\release\\QtNetwork4.dll"
+            "TargetName" = "8:QtNetwork4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -14152,7 +14178,7 @@
         {
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_4B2552DF2CFF4B6AAA4D4C33B5353E48"
             {
-            "SourcePath" = "8:..\\updateenv\\release\\UpdateEnv.exe"
+            "SourcePath" = "8:..\\UpdateEnv\\Release\\UpdateEnv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9694DE4A9C8740A9AEF6BAE673C235F3"
