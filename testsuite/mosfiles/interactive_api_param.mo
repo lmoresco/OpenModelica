@@ -1,6 +1,10 @@
 type T1 = Real;
 type T2 = Real[4];
 
+type Resistance
+  extends Real(unit="ohm");
+end Resistance;
+
 package Types
   type T2 = T1(unit="foo");
   type T1 = Integer;

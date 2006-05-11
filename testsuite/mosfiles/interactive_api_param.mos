@@ -22,6 +22,7 @@ getInheritanceCount(Types.T2);
 getNthInheritedClass(T1,1);
 getNthInheritedClass(T2,1);
 getNthInheritedClass(Types.T2,1);
+getExtendsModifierNames(Resistance,Real);
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
@@ -41,4 +42,5 @@ getNthInheritedClass(Types.T2,1);
 // Real
 // Real
 // Types.T1
+// {unit}
 // endResult
