@@ -25,6 +25,7 @@ getNthInheritedClass(Types.T2,1);
 getExtendsModifierNames(Resistance,Real);
 setComponentModifierValue(Q,x.start,Code(=4));
 getComponentModifierValue(Q,x.start);
+getComponentModifierValue(Q,x);
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
@@ -47,4 +48,5 @@ getComponentModifierValue(Q,x.start);
 // {unit}
 // Ok
 // =4
+// 1
 // endResult
