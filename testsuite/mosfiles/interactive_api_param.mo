@@ -1,3 +1,9 @@
+
+model Q
+    Real x=1;
+end Q;
+   
+
 type T1 = Real;
 type T2 = Real[4];
 
