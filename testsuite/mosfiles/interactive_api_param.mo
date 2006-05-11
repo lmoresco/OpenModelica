@@ -1,3 +1,11 @@
+type T1 = Real;
+type T2 = Real[4];
+
+package Types
+  type T2 = T1(unit="foo");
+  type T1 = Integer;
+end Types;
+
 model A 
   parameter Integer p1=35; 
   parameter Integer p2=32,p4; 
