@@ -1,4 +1,14 @@
 
+package Modelica
+  package Blocks
+    package Interfaces
+      connector BooleanSignal = Boolean "Boolean port (both input/output possible)";
+      connector BooleanInput =input  BooleanSignal "'input Boolean' as connector" annotation (defaultComponentName="u",Icon(coordinateSystem(extent={{-100.,-100.},{100.,100.}}),graphics={Polygon(points={{-100.,100.},{100.,0.},{-100.,-100.},{-100.,100.}},lineColor={255,0,255},fillColor={255,0,255},fillPattern=FillPattern.Solid)}),Diagram(coordinateSystem(extent={{-100.,-100.},{100.,100.}}),graphics={Polygon(points={{0.,50.},{100.,0.},{0.,-50.},{0.,50.}},lineColor={255,0,255},fillColor={255,0,255},fillPattern=FillPattern.Solid),Text(extent={{-140.,120.},{100.,60.}},textString="%name",fillColor={255,0,255})}));
+  end	Interfaces;
+end Blocks;
+end Modelica;  
+
+
 model Q
     Real x=1;
 end Q;
