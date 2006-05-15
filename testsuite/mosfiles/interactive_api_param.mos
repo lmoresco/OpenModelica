@@ -26,7 +26,15 @@ getExtendsModifierNames(Resistance,Real);
 setComponentModifierValue(Q,x.start,Code(=4));
 getComponentModifierValue(Q,x.start);
 getComponentModifierValue(Q,x);
-getExtendsModifierNames(Modelica.Blocks.Interfaces.BooleanInput,Modelica.Blocks.Interfaces.BooleanSignal)
+getExtendsModifierNames(Modelica.Blocks.Interfaces.BooleanInput,Modelica.Blocks.Interfaces.BooleanSignal);
+setComponentModifierValue(M,x.start,Code(()));
+getComponentModifierNames(M,x);
+getComponentModifierValue(M,x);
+getComponentModifierValue(M2,x);
+setComponentModifierValue(M2,x,Code(()));
+setComponentModifierValue(M3,x,Code(()));
+getComponentModifierNames(M,x);
+getComponentModifierValue(M3,x);
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
@@ -51,4 +59,12 @@ getExtendsModifierNames(Modelica.Blocks.Interfaces.BooleanInput,Modelica.Blocks.
 // =4
 // 1
 // {}
+// Ok
+// {}
+// 1
+// 1
+// Ok
+// Ok
+// {}
+// Error
 // endResult

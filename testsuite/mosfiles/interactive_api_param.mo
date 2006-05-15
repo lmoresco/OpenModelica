@@ -1,3 +1,14 @@
+model M 
+  Real x(start=2)=1;
+end M;
+
+model M2
+  Real x=1;
+end M2;
+
+model M3
+  Real x(start=2)=1;
+end M3;
 
 package Modelica
   package Blocks

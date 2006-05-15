@@ -5,7 +5,7 @@ Ceval.o: Ceval.mo Values.sig Interactive.sig Exp.sig Env.sig DAELow.sig Absyn.si
 ClassInf.o: ClassInf.mo SCode.sig Error.sig Print.sig 
 ClassLoader.o: ClassLoader.mo Absyn.sig Util.sig Print.sig System.sig Interactive.sig Debug.sig Parser.sig 
 Codegen.o: Codegen.mo Print.sig Exp.sig DAE.sig Util.sig System.sig Types.sig ModUtil.sig Inst.sig Debug.sig Error.sig Interactive.sig ClassInf.sig Absyn.sig Algorithm.sig 
-Connect.o: Connect.mo Static.sig Exp.sig DAE.sig Env.sig Util.sig Print.sig 
+Connect.o: Connect.mo Static.sig Exp.sig Env.sig DAE.sig Util.sig Print.sig Types.sig Absyn.sig Lookup.sig 
 DAE.o: DAE.mo Values.sig Types.sig Exp.sig ClassInf.sig Algorithm.sig Absyn.sig Util.sig RTOpts.sig Print.sig Graphviz.sig ModUtil.sig SCode.sig Dump.sig Debug.sig Ceval.sig Error.sig 
 DAELow.o: DAELow.mo Values.sig Exp.sig DAE.sig Absyn.sig Algorithm.sig VarTransform.sig Util.sig System.sig Types.sig SCode.sig Print.sig Env.sig Error.sig SimCodegen.sig Derive.sig DAEEXT.sig Debug.sig Builtin.sig Ceval.sig Dump.sig 
 Derive.o: Derive.mo Exp.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Absyn.sig Error.sig 
