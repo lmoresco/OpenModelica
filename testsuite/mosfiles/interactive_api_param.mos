@@ -35,6 +35,12 @@ setComponentModifierValue(M2,x,Code(()));
 setComponentModifierValue(M3,x,Code(()));
 getComponentModifierNames(M,x);
 getComponentModifierValue(M3,x);
+setComponentModifierValue(M4,x,Code(()));
+setComponentModifierValue(M5,x.start,Code(()));
+setComponentModifierValue(M7,a1.x.fixed,Code(()));
+getComponentModifierNames(M5,x);
+getComponentModifierNames(M7,x);
+
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
@@ -67,4 +73,9 @@ getComponentModifierValue(M3,x);
 // Ok
 // {}
 // Error
+// Ok
+// Ok
+// Ok
+// {}
+// {}
 // endResult

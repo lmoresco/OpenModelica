@@ -10,6 +10,23 @@ model M3
   Real x(start=2)=1;
 end M3;
 
+model M4
+  Real x;
+end M4;
+
+model M5
+  Real x;
+end M5;
+
+
+model M6
+  Real x(start=1,fixed=false);
+end M6;
+
+model M7
+  A a1(x.fixed=true);
+end M7;
+
 package Modelica
   package Blocks
     package Interfaces
