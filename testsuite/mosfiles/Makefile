@@ -7,7 +7,8 @@ matrices.mos BouncingBall.mos ExternalLibraries.mos \
 loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
 IdealDiode.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
-rotationalsystems.mos rotationalgears.mos Interpolation.mos
+rotationalsystems.mos rotationalgears.mos Interpolation.mos \
+ExtObj.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
