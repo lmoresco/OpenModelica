@@ -40,7 +40,19 @@ setComponentModifierValue(M5,x.start,Code(()));
 setComponentModifierValue(M7,a1.x.fixed,Code(()));
 getComponentModifierNames(M5,x);
 getComponentModifierNames(M7,x);
-
+setExtendsModifierValue(K,Resistor.R,Code(=2));
+setExtendsModifierValue(K2,Resistor.R.start,Code(=2.25));
+getExtendsModifierValue(K2,Resistor.R.start);
+getExtendsModifierValue(K2,Resistor.R.fixed);
+setExtendsModifierValue(K2,Resistor.R.start,Code(()));
+getExtendsModifierValue(K2,Resistor.R.start);
+getExtendsModifierValue(K2,Resistor.R.fixed);
+setExtendsModifierValue(K3,Resistor.R,Code(=2));
+getExtendsModifierValue(K3,Resistor.R.start);
+getExtendsModifierValue(K3,Resistor.R);
+setExtendsModifierValue(K3,Resistor.R.fixed,Code(=false));
+setExtendsModifierValue(K3,Resistor.R.start,Code(=2.21));
+getExtendsModifierValue(K3,Resistor.R);
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
@@ -78,4 +90,17 @@ getComponentModifierNames(M7,x);
 // Ok
 // {}
 // {}
+// Ok
+// Ok
+// =2.25
+// =true
+// Ok
+// Error
+// =true
+// Ok
+// =5
+// (start=5,fixed=true)=2
+// Ok
+// Ok
+// (start=2.21,fixed=false)=2
 // endResult

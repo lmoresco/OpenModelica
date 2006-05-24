@@ -1,3 +1,19 @@
+model Resistor
+    Real r=1;
+end Resistor;
+
+model K
+  extends Resistor(R.start=5);
+end K;
+
+model K2
+  extends  Resistor(R(start=5,fixed=true)=2);
+end K2;
+
+model K3
+  extends  Resistor(R(start=5,fixed=true));
+end K3;
+
 model M 
   Real x(start=2)=1;
 end M;
