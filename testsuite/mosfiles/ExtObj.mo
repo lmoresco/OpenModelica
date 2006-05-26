@@ -13,13 +13,13 @@ package ExtObj
       input String tableName="";
       output MyTable outTable;
 
-      external "C" outTable=initMyTable(fileName,tableName) 
+      external "C" outTable=initMyTable(fileName,tableName) ;
       annotation(Include="#include \"ExtObj.h\"",Library="ExtObj.lib");
     end constructor;
     function destructor
           input MyTable inTable;
 
-      external "C" closeMyTable(inTable) 
+      external "C" closeMyTable(inTable) ;
       annotation(Include="#include \"ExtObj.h\"",Library="ExtObj.lib");
     end destructor;
   end MyTable;
