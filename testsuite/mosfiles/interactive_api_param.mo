@@ -14,6 +14,14 @@ model K3
   extends  Resistor(R(start=5,fixed=true));
 end K3;
 
+model K4
+  extends Resistor(x(start=2,fixed=true)=1);
+end K4;
+
+model K5
+  extends Resistor(x.fixed=true,x.start=2,x=1);
+end K5;
+
 model M 
   Real x(start=2)=1;
 end M;
