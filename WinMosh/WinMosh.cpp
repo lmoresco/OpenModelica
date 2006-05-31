@@ -89,23 +89,27 @@ BOOL CWinMoshApp::InitInstance()
 		if (opt.CompareNoCase("-showserv") == 0) {
 			pFrame->m_wndView.SetShowServ();
 		}
-	    if (opt.CompareNoCase("-omcpath") == 0) {
-			opt = cmdLine.Tokenize(" \t",curpos);
-	
-			FILE *stream = fopen( opt, "r" );
+		if (opt.CompareNoCase("-omcpath") == 0) {
+			opt = cmdLine.Right(cmdLine.GetLength() - curpos);
+			//opt = opt.Trim("\"");
+			CString tmpString = opt;
+			FILE *stream = fopen( opt.Trim("\" "), "r" );
 			if(stream != NULL){
-				pFrame->SetOmcFilePath(opt);
+				pFrame->SetOmcFilePath(tmpString);
+				fclose(stream);
+				opt = "";
 			}else{
 				CString msg;
 				msg.Format("omc cannot be found on the filepath specified: \n%s",opt);
 				MessageBox(NULL, msg, "No such file", MB_ICONWARNING|MB_OK);
+				opt = "";
 			}//*/
+		}else{
 
+			opt = cmdLine.Tokenize(" \t",curpos);
 		}
-
-		opt = cmdLine.Tokenize(" \t",curpos);
 	}
-	
+
 	// always show server since it keeps popping up new consoles otherwise
 	pFrame->m_wndView.SetShowServ(); 
 

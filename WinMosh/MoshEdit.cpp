@@ -28,6 +28,7 @@ CMoshEdit::CMoshEdit()
 	m_ShowServ = false;
 	m_ProcessCreated = false;
 	m_History.LoadHistory("mosh_history");
+	CFont *font = new CFont();
 }
 
 CMoshEdit::~CMoshEdit()
@@ -92,7 +93,23 @@ void CMoshEdit::OnShowWindow( BOOL bShow, UINT )
 {
 	if (bShow) {
 		m_Timer = SetTimer(1,100,NULL);
-		m_font.CreateStockObject(OEM_FIXED_FONT);
+		//m_font.CreateStockObject(OEM_FIXED_FONT);
+		m_font.CreateFont(		
+			12,                        // nHeight
+			0,                         // nWidth
+			0,                         // nEscapement
+			0,                         // nOrientation
+			FW_NORMAL,                 // nWeight
+			FALSE,                     // bItalic
+			FALSE,                     // bUnderline
+			0,                         // cStrikeOut
+			ANSI_CHARSET,              // nCharSet
+			OUT_DEFAULT_PRECIS,        // nOutPrecision
+			CLIP_DEFAULT_PRECIS,       // nClipPrecision
+			DEFAULT_QUALITY,           // nQuality
+			DEFAULT_PITCH | FF_SWISS,  // nPitchAndFamily
+			"Lucida Console");                 // lpszFacename
+
 		SetFont(&m_font);
 	}
 
