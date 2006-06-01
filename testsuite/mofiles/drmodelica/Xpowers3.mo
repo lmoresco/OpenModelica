@@ -14,6 +14,7 @@ equation
   xpowers[2:n+1] = xpowers[1:n]*x;
 end Xpowers3;
 
+
 // fclass Xpowers3
 // parameter Real x = 10;
 // Real xpowers[1];
@@ -25,5 +26,9 @@ end Xpowers3;
 // parameter Integer n = 5;
 // equation
 //   xpowers[1] = 1.0;
-//  xpowers[2:(1 + n)] = xpowers[1:n] * x;
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
+//   xpowers[4] = xpowers[3] * x;
+//   xpowers[5] = xpowers[4] * x;
+//   xpowers[6] = xpowers[5] * x;
 // end Xpowers3;
