@@ -25,7 +25,7 @@ Mod.o: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig Absyn.sig Values.si
 ModUtil.o: ModUtil.mo DAE.sig Absyn.sig Exp.sig Util.sig RTOpts.sig Types.sig Algorithm.sig 
 Prefix.o: Prefix.mo Lookup.sig Exp.sig Absyn.sig Env.sig Util.sig Print.sig Debug.sig 
 Static.o: Static.mo Values.sig Types.sig SCode.sig Exp.sig Interactive.sig Env.sig Absyn.sig Util.sig Print.sig ModUtil.sig Prefix.sig System.sig Lookup.sig Inst.sig Dump.sig Error.sig DAE.sig Codegen.sig Connect.sig Ceval.sig ClassInf.sig Debug.sig Mod.sig 
-SimCodegen.o: SimCodegen.mo SCode.sig Exp.sig DAELow.sig DAE.sig Absyn.sig VarTransform.sig Util.sig Values.sig System.sig Settings.sig Print.sig RTOpts.sig Types.sig Inst.sig Dump.sig Error.sig Algorithm.sig Codegen.sig Debug.sig ModUtil.sig 
+SimCodegen.o: SimCodegen.mo SCode.sig Exp.sig DAELow.sig DAE.sig Absyn.sig VarTransform.sig Util.sig Values.sig System.sig Types.sig RTOpts.sig ModUtil.sig Print.sig Settings.sig Error.sig Dump.sig Env.sig Algorithm.sig Codegen.sig Debug.sig Inst.sig 
 Types.o: Types.mo Values.sig SCode.sig Exp.sig Absyn.sig ClassInf.sig Util.sig Static.sig Debug.sig Dump.sig Print.sig 
 TaskGraph.o: TaskGraph.mo DAELow.sig Exp.sig VarTransform.sig Util.sig Values.sig SimCodegen.sig Absyn.sig DAE.sig TaskGraphExt.sig 
 Util.o: Util.mo System.sig Debug.sig Print.sig 
