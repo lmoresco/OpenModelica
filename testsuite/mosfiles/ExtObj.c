@@ -31,7 +31,7 @@ void* initMyTable(char* fileName, char* tableName)
 	FILE *file;
 
 	char buf[MATRIX_ROW_BUFSIZE ];
-	MyTable* table = malloc(sizeof(MyTable));
+	MyTable* table = (MyTable*)malloc(sizeof(MyTable));
 	if ( table == NULL ) printf("Not enough memory");
 	// read table from file and store all data in *table
 	
@@ -59,7 +59,7 @@ void* initMyTable(char* fileName, char* tableName)
 				printf("Error, illegal matrix dimensions: [%d,%d]\n",dim1,dim2);
 				exit(-2);
 			}
-			table->array = malloc(dim1*dim2*sizeof(double));
+			table->array = (double*)malloc(dim1*dim2*sizeof(double));
 			if(!table->array) { printf("Error allocating array in myTable\n"); exit(-2); }
 			for (r=0,i=0; r < dim1; r++) {
 				for (c = 0; c < dim2; c++) {
