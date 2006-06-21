@@ -22,7 +22,7 @@
  * 
  */
  
-void* initMyTable(char* fileName, char* tableName) 
+void* initMyTable(const char* fileName, const char* tableName) 
 {
 	float f;
 	int r,c,foundTable=0;
@@ -101,7 +101,7 @@ double interpolateMyTable(void* object, double u)
 		exit(-2);
 	}
 	if (table->ncol != 2) {
-		printf("Error, table dimension is not [:,2]\n");
+		printf("Error, table dimension (%d,%d) is not [:,2]\n",table->nrow,table->ncol);
 		exit(-2);
 	}
 

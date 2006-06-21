@@ -5,6 +5,6 @@ int ncol; /* number of columns */
 int type; /* interpolation type */
 int lastIndex; /* last row index for search */
 } MyTable;
-void* initMyTable(char* fileName, char* tableName); 
+void* initMyTable( const char* fileName,const char* tableName); 
 void closeMyTable(void* object); 
 double interpolateMyTable(void* object, double u); 
