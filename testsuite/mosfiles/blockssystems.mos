@@ -8,6 +8,7 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // Circuit1
+
 simulate(TestModels.BlockModels.SystemTests.Circuit1,numberOfIntervals=15);
 echo(false);
 size:=readSimulationResultSize("TestModels.BlockModels.SystemTests.Circuit1_res.plt");

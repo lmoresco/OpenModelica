@@ -14,12 +14,12 @@ Dump.o: Dump.mo Interactive.sig Absyn.sig Util.sig Print.sig Debug.sig
 DumpGraphviz.o: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig 
 Env.o: Env.mo Types.sig SCode.sig Exp.sig Absyn.sig ClassInf.sig Util.sig Print.sig System.sig DAE.sig Dump.sig Graphviz.sig 
 Error.o: Error.mo Absyn.sig Util.sig ErrorExt.sig Print.sig 
-Exp.o: Exp.mo Graphviz.sig Absyn.sig Util.sig Print.sig RTOpts.sig Error.sig Derive.sig Dump.sig Debug.sig ModUtil.sig 
+Exp.o: Exp.mo Graphviz.sig Absyn.sig Util.sig RTOpts.sig Print.sig Static.sig Error.sig ModUtil.sig Dump.sig Debug.sig Derive.sig Env.sig 
 SCode.o: SCode.mo Absyn.sig Util.sig Error.sig Print.sig Debug.sig Dump.sig 
 Graphviz.o: Graphviz.mo 
 Inst.o: Inst.mo Types.sig SCode.sig Prefix.sig Mod.sig Exp.sig Env.sig Connect.sig ClassInf.sig DAE.sig Absyn.sig Values.sig Util.sig Static.sig System.sig Lookup.sig ErrorExt.sig Interactive.sig Print.sig Debug.sig Dump.sig Builtin.sig Algorithm.sig Ceval.sig Error.sig 
 Interactive.o: Interactive.mo Values.sig Types.sig SCode.sig Settings.sig Env.sig DAE.sig Absyn.sig Util.sig Static.sig Prefix.sig Print.sig System.sig ModUtil.sig Lookup.sig Mod.sig Parser.sig Exp.sig Dump.sig Error.sig Connect.sig ClassInf.sig ClassLoader.sig Ceval.sig Debug.sig Inst.sig 
-Lookup.o: Lookup.mo Types.sig SCode.sig Exp.sig Env.sig ClassInf.sig Absyn.sig Values.sig Prefix.sig Static.sig Mod.sig Inst.sig ModUtil.sig Debug.sig Connect.sig Builtin.sig Error.sig 
+Lookup.o: Lookup.mo Types.sig SCode.sig Exp.sig Env.sig ClassInf.sig Absyn.sig Values.sig Static.sig Util.sig Prefix.sig Mod.sig ErrorExt.sig Inst.sig ModUtil.sig Debug.sig Connect.sig Builtin.sig Error.sig 
 Main.o: Main.mo Util.sig Types.sig TaskGraph.sig TaskGraphExt.sig Socket.sig SimCodegen.sig System.sig SCode.sig RTOpts.sig Parser.sig Print.sig Settings.sig Inst.sig Error.sig ErrorExt.sig Interactive.sig DumpGraphviz.sig Debug.sig Dump.sig DAE.sig Ceval.sig Absyn.sig Corba.sig DAELow.sig Env.sig 
 Mod.o: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig Absyn.sig Values.sig Util.sig Static.sig Inst.sig Print.sig Dump.sig Ceval.sig Debug.sig Error.sig 
 ModUtil.o: ModUtil.mo DAE.sig Absyn.sig Exp.sig Util.sig RTOpts.sig Types.sig Algorithm.sig 
