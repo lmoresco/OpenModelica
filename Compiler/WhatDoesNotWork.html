@@ -21,6 +21,11 @@ OpenModelica v.1.3.2<br>
 <br>
 </h2>
 <ul>
+   <li> Lookup through extends of packages, e.g. extends Modelica.Constants; is terribly slow. 
+Also lookup of unqualified imports, e.g. import Modelica.Constants.*; has this problem.
+Workaround: use fully qualified names or qualified or named imports. e.g. import Modelica.Constants.PI;
+</li>
+  <li> der(expression) is not supported. Only der(variable) works. Workaround: expand your expression by hand. e.g. der(x*y) => x*der(y)+der(x)*y </li>
   <li>Inner/Outer&nbsp; </li>
   <li>Some excotic cases with Modifications, especially with redeclare.
   </li>
