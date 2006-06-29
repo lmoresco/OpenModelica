@@ -19,5 +19,5 @@ end LogCall1;
 // fclass LogCall1
 // Real res;
 // equation
-//   res = 4.60516977310181;
+//   res = 4.60517018598809;
 // end LogCall1;

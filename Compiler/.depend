@@ -1,4 +1,4 @@
-Absyn.o: Absyn.mo Util.sig Debug.sig Print.sig 
+Absyn.o: Absyn.mo Util.sig ModUtil.sig Debug.sig Print.sig 
 Algorithm.o: Algorithm.mo SCode.sig Types.sig Exp.sig Util.sig Error.sig Absyn.sig Debug.sig Print.sig 
 Builtin.o: Builtin.mo SCode.sig Absyn.sig Env.sig Types.sig ClassInf.sig 
 Ceval.o: Ceval.mo Values.sig Types.sig Interactive.sig Exp.sig Env.sig DAELow.sig Absyn.sig Util.sig Static.sig SimCodegen.sig System.sig SCode.sig Print.sig RTOpts.sig Settings.sig Parser.sig ModUtil.sig Lookup.sig Inst.sig Prefix.sig Derive.sig Dump.sig DAE.sig Debug.sig Codegen.sig ClassInf.sig ClassLoader.sig Connect.sig Error.sig 
