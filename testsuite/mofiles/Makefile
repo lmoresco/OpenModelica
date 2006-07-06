@@ -20,7 +20,7 @@ EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo  Extends1.mo Extends2.mo Function1.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
-Function9.mo Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo \
+Function9.mo Function10.mo Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
