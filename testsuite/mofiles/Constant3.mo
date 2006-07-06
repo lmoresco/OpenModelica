@@ -14,13 +14,12 @@ equation
 end Constant3;
 
 // fclass Constant3
-//   constant Integer N;
-//   Real x[1];
-//   Real x[2];
-//   Real x[3];
+// constant Integer N = 3;
+// Real x[1];
+// Real x[2];
+// Real x[3];
 // equation
-//   N = 3;
-//   x[N-1] = 2.0;
-//   x[1]   = 1;
-//   x[N]   = time;
+//   x[2] = 2.0;
+//   x[1] = 1.0;
+//   x[3] = time;
 // end Constant3;

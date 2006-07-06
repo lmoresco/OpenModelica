@@ -24,9 +24,9 @@ system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.cpp ideal_diode.makefil
 //     resultFile = "ideal_diode_res.plt"
 // end record
 // true
-// 0.0
-// 612.0
-// 853.0
+// 0
+// 612
+// 853
 // ""
 // 0
 // endResult
