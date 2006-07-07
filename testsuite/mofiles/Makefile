@@ -8,7 +8,7 @@ ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArraySlice1.mo
 BoolArrayTest.mo \
 Cardinality.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo ConditionalArrayExpression1.mo \
-Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo \
+Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo \
 Constant4.mo Constant5.mo Constant6.mo Constant7.mo Constant8.mo Constant9.mo Constant10.mo ConstrainingType1.mo ConstructParameters.mo \
