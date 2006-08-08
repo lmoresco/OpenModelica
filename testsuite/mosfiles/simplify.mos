@@ -8,8 +8,15 @@ simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Real");
 simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Integer");
 simplify(x * 1.0 + 1.0 * x + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + x * 1.0 + 1.0 * x + x * x * 1.0 + (x * 1.0 + 1.0 * x) * x + 1.0 + 1.0 + 1.0, "Real");
 
+// Some bugs removed
+cos(0)/1.0;
+cos(0)/2;
+
+
 // Result:
 // "2.0 * x ^ 2.0 + 8.0 * x + x ^ 3.0"
 // "2.0 * x ^ 2.0 + 8 * x + x ^ 3.0"
 // "8.0 + 4.0 * x + 3.0 * x ^ 2.0"
+// 1.0
+// 0.5
 // endResult
