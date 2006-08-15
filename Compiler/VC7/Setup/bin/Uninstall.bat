@@ -1,3 +1,3 @@
 @echo off
 @echo "Uninstalling OpenModelica...."
-msiexec /x {7AA15D5F-717F-43EA-8039-C0B0A0619350}
+msiexec /x {5A1EEEC9-329F-4252-9E0C-F7929A31851A}
