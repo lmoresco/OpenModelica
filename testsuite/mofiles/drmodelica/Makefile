@@ -19,7 +19,7 @@ MRFcall.mo \
 MicroCircuitInvalid.mo \
 TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
 RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo \
-HelloWorld.mo Xpowers1.mo Xpowers2.mo Xpowers3.mo \
+HelloWorld.mo HelloWorld.mos Xpowers1.mo Xpowers2.mo Xpowers3.mo \
 PolynomialEvaluator1.mo PolynomialEvaluator2.mo FuncMultResults.mo \
 SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
 AlgorithmCondAssign1.mo 
