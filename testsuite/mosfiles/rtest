@@ -2,7 +2,7 @@
 
 $successes=0;
 $total=0;
-$verbose="no";
+$verbose="yes";
 $pager="cat";
 $log="";
 $tmp1 = "/tmp/equations-1";

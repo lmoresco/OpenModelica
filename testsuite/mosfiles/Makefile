@@ -1,7 +1,7 @@
 
 TESTFILES = IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 IfStatement.mos IfStatementIllegal.mos WhileStatement.mos WhileStatementIllegal.mos \
-interactive_api_param.mos interactive_api_classes.mos \
+interactive_api_param.mos interactive_api_classes.mos tempInterpol2.mos \
 variables.mos Array1.mos simulation.mos simulation2.mos simulation3.mos differentiate.mos simplify.mos \
 strings.mos interactive_api_loadsave.mos  interactive_api_attributes.mos \
 matrices.mos BouncingBall.mos ExternalLibraries.mos \
@@ -9,7 +9,8 @@ loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
 IdealDiode.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos rotationalgears.mos Interpolation.mos \
-ExtObj.mos algorithms.mos
+ExtObj.mos algorithms.mos 
+
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
