@@ -1,0 +1,29 @@
+// name:     Simulation3
+// keywords: Simulation, Various standard library models
+// status:   correct
+// 
+//  Simulate models and read in data.
+//
+loadFile("Modelica.mo");
+loadFile("TrapezoidTest.mo");
+simulate(TrapezoidTest,numberOfIntervals=5);
+echo(false);
+size:=readSimulationResultSize("TrapezoidTest_res.plt");
+res:=readSimulationResult("TrapezoidTest_res.plt",{resistor1.v},size);
+x:=res[1];
+x:=1000*x;
+x:=floor(x);
+echo(true);
+x;
+//system("rm TrapezoidTest_*");
+//system("rm TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
+
+// Result:
+// true
+// true
+// record
+//     resultFile = "TrapezoidTest_res.plt"
+// end record
+// true
+// {0,1000,1000,1000,1000,1000,1000,1000,999,499,0,0,0,0}
+// endResult
