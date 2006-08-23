@@ -7836,6 +7836,29 @@
         }
         "FileType"
         {
+            "{9300C6CA-4CE0-41D6-A6CD-70E04FD37067}:_C6DB650AE51A41978E45332F8B95418B"
+            {
+            "Name" = "8:OpenModelica Notebook"
+            "Description" = "8:OpenModelica Notebook"
+            "Extensions" = "8:onb"
+            "MIME" = "8:"
+            "Icon" = "8:_A4FD94586C5844F5999DFE8184AEE454"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_75CFF6A991AD4D48AF32450DD0855E4D"
+                }
+                "Verbs"
+                {
+                    "{9D28A334-2E55-48EE-AD7D-2DF3F0641A76}:_678BB09B2C2E4DB1BECA91F40638AF98"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
         }
         "Folder"
         {
@@ -8252,7 +8275,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.2"
         "ProductCode" = "8:{5A1EEEC9-329F-4252-9E0C-F7929A31851A}"
-        "PackageCode" = "8:{65CBCCF1-99B9-40E6-BCC6-8206AB5BF46F}"
+        "PackageCode" = "8:{7664C8CA-E98B-4FDC-9799-49B726D14439}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
