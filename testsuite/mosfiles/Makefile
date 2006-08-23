@@ -1,5 +1,7 @@
 
-TESTFILES = IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
+TESTFILES = ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.mos \
+ForStatement5fail.mos ForStatement6.mos ForStatement7.mos \
+IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 IfStatement.mos IfStatementIllegal.mos WhileStatement.mos WhileStatementIllegal.mos \
 interactive_api_param.mos interactive_api_classes.mos tempInterpol2.mos \
 variables.mos Array1.mos simulation.mos simulation2.mos simulation3.mos differentiate.mos simplify.mos \

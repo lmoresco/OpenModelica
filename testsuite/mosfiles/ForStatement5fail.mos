@@ -1,0 +1,15 @@
+// name:     For-statement fail 5
+// keywords: for
+// status:   incorrect
+// 
+//  Test the interactive for-statement
+//
+a := 5;
+for i in 2 loop
+  a := 10;
+end for;
+a
+
+// Result:
+//
+// endResult
