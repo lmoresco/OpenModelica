@@ -54,15 +54,15 @@ BOOL CWinMoshApp::InitInstance()
 		msg.Format("OPENMODELICAHOME environment variable not set. Using default: %s", (LPCSTR)omhome);
 		MessageBox(NULL, msg, "Environment varible not set", MB_ICONWARNING|MB_OK);
 	}
-	if (!ModelicaPath.GetEnvironmentVariable("MODELICAPATH") || ModelicaPath == "") {
+	if (!ModelicaPath.GetEnvironmentVariable("OPENMODELICALIBRARY") || ModelicaPath == "") {
 		ModelicaPath = omhome;
 		if (ModelicaPath.Right(1) == "\\") 
 			ModelicaPath = ModelicaPath.Left(ModelicaPath.GetLength() -1);
 //		ModelicaPath = ModelicaPath.Left(ModelicaPath.ReverseFind('\\'));
 		ModelicaPath += "\\ModelicaLibrary";
-		SetEnvironmentVariable("MODELICAPATH", ModelicaPath);
+		SetEnvironmentVariable("OPENMODELICALIBRARY", ModelicaPath);
 		CString msg;
-		msg.Format("MODELICAPATH Environment variable not set. Using default: %s", (LPCSTR)ModelicaPath);
+		msg.Format("OPENMODELICALIBRARY Environment variable not set. Using default: %s", (LPCSTR)ModelicaPath);
 		MessageBox(NULL, msg, "Environment varible not set", MB_ICONWARNING|MB_OK);
 	}
 

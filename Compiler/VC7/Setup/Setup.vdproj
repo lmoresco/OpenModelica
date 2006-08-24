@@ -8367,7 +8367,7 @@
                                                             }
                                                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_D62183E80DAE4EB6BA13AFF6B1EDD5D6"
                                                             {
-                                                            "Name" = "8:MODELICAPATH"
+                                                            "Name" = "8:OPENMODELICALIBRARY"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser"
                                                             "Transitive" = "11:FALSE"
                                                             "ValueTypes" = "3:2"
@@ -8423,7 +8423,7 @@
                             }
                             "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_45F72F823DC849E3932B9ABFD1F8E4E9"
                             {
-                            "Name" = "8:MODELICAPATH"
+                            "Name" = "8:OPENMODELICALIBRARY"
                             "Condition" = "8:ALLUSERS=NULL OR NOT AdminUser"
                             "Transitive" = "11:FALSE"
                             "ValueTypes" = "3:2"

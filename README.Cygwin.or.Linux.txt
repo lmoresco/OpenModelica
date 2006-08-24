@@ -74,7 +74,7 @@ Example Session
 Here is a short example session. 
 
 $ cd trunk/build/bin
-$ export MODELICAPATH=home/petar/ModelicaLibrary
+$ export OPENMODELICALIBRARY=/home/petar/ModelicaLibrary
 $ ./OMShell
 Started server using:trunk/build/bin/omc +d=interactive > trunk/build/error.log 2>&1 &
  res = 0

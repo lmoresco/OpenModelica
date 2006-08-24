@@ -46,10 +46,10 @@ Exit OMShell by pressing Ctrl-d
           Ex: loadFile("../myLibrary/myModels.mo")
 
  loadModel(name) 
-          Load model, function, or package relative to $MODELICAPATH.
+          Load model, function, or package relative to $OPENMODELICALIBRARY.
           Ex: loadModel(Modelica.Electrical)
           Note: if e.g. loadModel(Modelica) fails, you may have
-          MODELICAPATH pointing at the wrong location.
+          OPENMODELICALIBRARY pointing at the wrong location.
 
  plot(var)
           Plot a variable relative to time from the most recently 

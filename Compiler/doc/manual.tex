@@ -41,9 +41,9 @@ the mosh (Modelica shell) binary.
 When the program has been installed some environment variables have to
 be set.
 \begin{itemize}
-\item{{\tt MODELICAPATH}} - has to be set to a directory containg Modelica
+\item{{\tt OPENMODELICALIBRARY}} - has to be set to a directory containg Modelica
 models according to the specification, e.g.  \\ {\tt export
-MODELICAPATH=<instdir>/ModelicaLibrary/ }
+OPENMODELICALIBRARY=<instdir>/ModelicaLibrary/ }
 \item{{\tt OPENMODELICAHOME}} - has to be set to the root directory of the
 installation, e.g. {\tt export
 OPENMODELICAHOME=<instdir> } 
@@ -320,7 +320,7 @@ end runScript;
 \end{verbatim}
 
 \func{loadModel(\emph{classname})}  
-Load \emph{classname} from the MODELICAPATH enviroment variable,
+Load \emph{classname} from the OPENMODELICALIBRARY enviroment variable,
 returns true if successful.
 
 The function header is defined as:
