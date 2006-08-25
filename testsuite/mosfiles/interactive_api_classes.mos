@@ -20,6 +20,8 @@ getComponentCount(A.test);
 getComponentCount(test2);
 getComponents(A.test);
 addConnection(a.n,b.z,A.test);
+addConnection(a.n[1],b.z[2],A.test);
+getNthConnection(A.test,1);
 getClassNames(A);
 // Result:
 // true
@@ -37,5 +39,7 @@ getClassNames(A);
 // 1
 // {{Real,z,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Integer,x,"", "public", false, false, false, "unspecified", "none", "unspecified"}}
 // Ok
+// Ok
+// {a.n[1],b.z[2], ""}
 // {test}
 // endResult

@@ -72,8 +72,8 @@ system("rm -rf *First.* *First_* output.log");
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt"
 // end record
 // true
-// {0.0,0.275,0.39,0.571,1.23,1.597}
-// {0.0,0.007,0.072,0.181,0.31,0.504}
+//  {0.0,0.0,0.275,0.39,0.571,1.23,1.597}
+//  {0.0,0.0,0.007,0.072,0.181,0.31,0.504}
 // ""
 // 0
 // record

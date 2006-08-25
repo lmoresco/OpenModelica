@@ -132,8 +132,8 @@ system("rm -rf *SineTorque.* *SineTorque_* output.log");
 //     resultFile = "TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt"
 // end record
 // true
-// {0.0,0.109,0.287,0.287,0.109,-0.001}
-// {0.0,0.007,0.048,0.11,0.151,0.159}
+// {0.0,0.0,0.0,0.109,0.287,0.287,0.109,-0.001}
+// {0.0,0.0,0.0,0.007,0.048,0.11,0.151,0.159}
 // ""
 // 0
 // record
@@ -180,8 +180,8 @@ system("rm -rf *SineTorque.* *SineTorque_* output.log");
 //     resultFile = "TestModels.RotationalModels.SpringInertia.StepTorque_res.plt"
 // end record
 // true
-// {0.0,0.967,1.743,2.177,2.183,1.759}
-// {0.0,0.098,0.374,0.772,1.216,1.617}
+// {0.0,0.0,0.967,1.743,2.177,2.183,1.759}
+// {0.0,0.0,0.098,0.374,0.772,1.216,1.617}
 // ""
 // 0
 
