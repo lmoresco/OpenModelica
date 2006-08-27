@@ -16,4 +16,5 @@ end Overwriting2;
 //   Real u;
 // equation
 //   x = 5.0 + u;
+//   x = 2.0;
 // end Overwriting2;

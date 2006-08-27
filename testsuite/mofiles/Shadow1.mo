@@ -23,5 +23,6 @@ end Shadow1;
 // equation
 //   a.y = 2.0;
 //   a.x = z;
+//   a.x = 1.0;
 // end Shadow1;
 
