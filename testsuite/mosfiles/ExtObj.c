@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h> /* for Linux malloc and exit */
 #include <string.h>
 
 /* External object. Implementation based on example in Modelica Language Specification v.2.2 on page 113-114*/

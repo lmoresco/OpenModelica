@@ -16,7 +16,7 @@ x:=floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
-system("rm -rf test.cpp test_functions.cpp test.makefile test.exe output.log test.libs test.log testTables.txt test_init.txt test_res.plt");
+system("rm -rf test.cpp test_functions.cpp test.makefile test.exe output.log test.libs test.log test_init.txt test_res.plt");
 system("rm -rf ExtObj.lib");
 // Result:
 // true
