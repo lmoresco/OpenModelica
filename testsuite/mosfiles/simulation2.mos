@@ -9,28 +9,28 @@ simulate(TimeVaryingLinSys,numberOfIntervals=5,method="euler");
 size:=readSimulationResultSize("TimeVaryingLinSys_res.plt");
 readSimulationResult("TimeVaryingLinSys_res.plt",{x,y,z},size);
 
-system("rm TimeVaryingLinSys_*");
-system("rm TimeVaryingLinSys.cpp TimeVaryingLinSys.exe TimeVaryingLinSys.makefile TimeVaryingLinSys.log TimeVaryingLinSys.libs");
+system("rm -f TimeVaryingLinSys_*");
+system("rm -f TimeVaryingLinSys.cpp TimeVaryingLinSys.exe TimeVaryingLinSys.makefile TimeVaryingLinSys.log TimeVaryingLinSys.libs");
 loadFile("NonLinSys.mo");
 simulate(NonLinSys,numberOfIntervals=100,method="euler");
 size:=readSimulationResultSize("NonLinSys_res.plt");
 readSimulationResult("NonLinSys_res.plt",{x},size);
-system("rm NonLinSys_*");
-system("rm NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLinSys.libs");
+system("rm -f NonLinSys_*");
+system("rm -f NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLinSys.libs");
 
 loadFile("NonLinSys2.mo");
 simulate(NonLinSys2,numberOfIntervals=100,method="euler");
 size:=readSimulationResultSize("NonLinSys2_res.plt");
 readSimulationResult("NonLinSys2_res.plt",{x,y},size);
-system("rm NonLinSys2_*");
-system("rm NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log NonLinSys2.libs");
+system("rm -f NonLinSys2_*");
+system("rm -f NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log NonLinSys2.libs");
 
 loadFile("NonLinSys3.mo");
 simulate(NonLinSys3,numberOfIntervals=5,method="euler");
 size:=readSimulationResultSize("NonLinSys3_res.plt");
 readSimulationResult("NonLinSys3_res.plt",{x,y},size);
-system("rm NonLinSys3_*");
-system("rm NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log NonLinSys3.libs");
+system("rm -f NonLinSys3_*");
+system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log NonLinSys3.libs");
 
 
 loadFile("Modelica.mo");
@@ -38,16 +38,16 @@ loadFile("Test3PhaseSystemTotal.mo");
 simulate(Test3PhaseSystems.Test3PhaseSystem,numberOfIntervals=20);
 size:=readSimulationResultSize("Test3PhaseSystems.Test3PhaseSystem_res.plt");
 readSimulationResult("Test3PhaseSystems.Test3PhaseSystem_res.plt",{LR1.I1.i,LR1.I2.i,LR1.I3.i},size);
-system("rm Test3PhaseSystems.Test3PhaseSystem_*");
-system("rm Test3Phasesystems.Test3PhaseSystem.cpp Test3PhaseSystems.Test3PhaseSystem.exe Test3PhaseSystems.Test3PhaseSystem.makefile Test3PhaseSystems.Test3PhaseSystem.log Test3PhaseSystems.Test3PhaseSystem.libs");
+system("rm -f Test3PhaseSystems.Test3PhaseSystem_*");
+system("rm -f Test3Phasesystems.Test3PhaseSystem.cpp Test3PhaseSystems.Test3PhaseSystem.exe Test3PhaseSystems.Test3PhaseSystem.makefile Test3PhaseSystems.Test3PhaseSystem.log Test3PhaseSystems.Test3PhaseSystem.libs");
 
 // Model that tests discrete equations that do not contain zero crossings, e.g n = 1;
 loadFile("BooleanModel.mo");
 simulate(BooleanModel,numberOfIntervals=10);
 size:=readSimulationResultSize("BooleanModel_res.plt");
 readSimulationResult("BooleanModel_res.plt",{startForward,mode},size);
-system("rm BooleanModel_*");
-system("rm BooleanModel.cpp BooleanModel.exe BooleanModel.makefile BooleanModel.log BooleanModel.libs");
+system("rm -f BooleanModel_*");
+system("rm -f BooleanModel.cpp BooleanModel.exe BooleanModel.makefile BooleanModel.log BooleanModel.libs");
 
 
 /*
@@ -55,8 +55,8 @@ loadFile("NonLinSys4.mo");
 simulate(NonLinSys4,numberOfIntervals=5);
 size:=readSimulationResultSize("NonLinSys4_res.plt");
 readSimulationResult("NonLinSys4_res.plt",{psii,delta},size);
-system("rm NonLinSys4_*");
-system("rm NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
+system("rm -f NonLinSys4_*");
+system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
 */
 
 // Result:
