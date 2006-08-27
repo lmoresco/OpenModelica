@@ -8,15 +8,15 @@ loadFile("ExtObj.mo");
 system("gcc -c -o ExtObj.lib ExtObj.c");
 simulate(test,numberOfIntervals=25);
 echo(false);
-size:=readSimulationResultSize("Test_res.plt");
-res:=readSimulationResult("Test_res.plt",{t.y},size);
+size:=readSimulationResultSize("test_res.plt");
+res:=readSimulationResult("test_res.plt",{t.y},size);
 x:=res[1];
 x:=1000*x;
 x:=floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
-system("rm -rf Test.cpp Test_functions.cpp Test.makefile Test.exe output.log");
+system("rm -rf test.cpp test_functions.cpp test.makefile test.exe output.log test.libs test.log testTables.txt test_init.txt test_res.plt");
 system("rm -rf ExtObj.lib");
 // Result:
 // true
