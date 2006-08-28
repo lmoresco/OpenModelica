@@ -975,6 +975,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8B7945DD69EE4985A87308A6D0D968EA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8CC3F2D8ADCF46ABBEA00540B72D9FF3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -5059,6 +5065,26 @@
             "TargetName" = "8:libsim.a"
             "Tag" = "8:"
             "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8B7945DD69EE4985A87308A6D0D968EA"
+            {
+            "SourcePath" = "8:..\\..\\..\\Examples\\ModelQueryAPIexamples.onb"
+            "TargetName" = "8:ModelQueryAPIexamples.onb"
+            "Tag" = "8:"
+            "Folder" = "8:_033B56DFEA1F4ACCB9C8ADE432A23ABA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
