@@ -15,8 +15,8 @@ x:=1000*x;
 x:=floor(x);
 echo(true);
 x;
-system("rm TrapezoidTest_*");
-system("rm TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
+system("rm -f TrapezoidTest_*");
+system("rm -f TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
 
 // BearingFriction test (mixed system of equations in columb friction)
 
@@ -30,8 +30,8 @@ x:=1000*x;
 x:=floor(x);
 echo(true);
 x;
-system("rm BearingFrictionTest_*");
-system("rm BearingFrictionTest.cpp BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs");
+system("rm -f BearingFrictionTest_*");
+system("rm -f BearingFrictionTest.cpp BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs");
 
 // Result:
 // true
