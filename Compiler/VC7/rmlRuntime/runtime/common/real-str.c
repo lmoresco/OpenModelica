@@ -10,6 +10,7 @@ RML_BEGIN_LABEL(RML__real_5fstring)
 	int expo;
 	int count;
 	int i;
+	int frac;
     char buf[32], *q;
     struct rml_string *str;
 
@@ -26,6 +27,7 @@ RML_BEGIN_LABEL(RML__real_5fstring)
     sprintf(buf, "%.15g", rml_prim_get_real(rmlA0));
 	expo = 0;
 	count = 0;
+	frac = 0;
 	for(q = buf; ;) {	/* make sure it doesn't look like an int */
 	char c = *q++;
 	if( isdigit(c) ) {
@@ -33,14 +35,26 @@ RML_BEGIN_LABEL(RML__real_5fstring)
 	    continue;
 	}
 
-	if( c == '\0' && ! expo) {	/* looks like int -- append ".0" */
+	if( c == '\0' && ! expo && !frac) {	/* looks like int -- append ".0" */
 	    q[-1] = '.';
 	    q[0] = '0';
 	    q[1] = '\0';
 	    break;
 	}
+	else if (c == '\0')
+	{
+		/* This makes sure that the 1.0e-/+005 is rewritten to 1.0e-/+05 like in 
+		the cygwin version so that the testsuite works */ 
+		/* printf("buf:%s, q:%s, expo:%d, count:%d\n", buf, q, expo, count); */
+		if (expo && count >= 3 && q[-1-count] == '0') {
+			for(i=count; i>0; i--) {
+				q[-1-i] = q[-i];
+			}
+		}
+		break;
+	}
 
-	if( c == '-' )
+	if( c == '-' || c == '+')
 	    continue;
 
 	if( c == 'e' ) {
@@ -48,29 +62,16 @@ RML_BEGIN_LABEL(RML__real_5fstring)
 		continue;
 	}
 
-	/* This makes sure that the 1.0e-005 is rewritten to 1.0e-05 like in 
-	   the cygwin version so that the testsuite works */ 
-	if (expo && count >= 3 && q[-1-count] == '0') {
-		for(i=count; i>0; i--) {
-			q[-1-i] = q[-i];
-		}
-	}
-
-	/* If we get here we found
-	 * '.', indicating a fraction (ok),
-	 * or something else, probably indicating nan or inf (bad).
-	 * In either case, leave the string as-is.
-	 */
-
-	break;
+	if (c == '.') frac = 1;
     }
-
 
     str = rml_prim_mkstring(strlen(buf), 0);
     strcpy(str->data, buf);	/* this also sets the ending '\0' */
     rmlA0 = RML_TAGPTR(str);
     RML_TAILCALLK(rmlSC);
+
 #else /* Linux or other stuff */
+
     char buf[32], *q;
     struct rml_string *str;
 
