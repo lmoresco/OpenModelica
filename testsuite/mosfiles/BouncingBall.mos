@@ -16,7 +16,7 @@ res[1,s];
 res2[1,1];
 res2[1,s];
 readFile("output.log");
-system("rm -rf BouncingBall_* BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
+system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
 // Result:
 // true
 // record

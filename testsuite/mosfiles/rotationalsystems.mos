@@ -56,7 +56,7 @@ echo(true);
 x/1000.0;
 y/1000.0;
 readFile("output.log");
-system("rm -rf *First.* *First_* output.log");
+system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // Result:
 // true
 // true

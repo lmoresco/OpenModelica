@@ -17,7 +17,7 @@ i[1];
 i[30];
 i[s];
 readFile("output.log");
-system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log");
+system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log");
 // Result:
 // true
 // record
