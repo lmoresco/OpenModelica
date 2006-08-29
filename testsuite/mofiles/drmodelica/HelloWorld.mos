@@ -7,7 +7,8 @@
 loadFile("HelloWorld.mo");
 simulate(HelloWorld, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
 echo(false);
-res:=readSimulationResult("HelloWorld_res.plt",{x},3);
+size := readSimulationResultSize("HelloWorld_res.plt");
+res:=readSimulationResult("HelloWorld_res.plt",{x},size);
 x := res[1];
 x := 1000*x;
 x := floor(x);

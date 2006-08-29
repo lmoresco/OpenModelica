@@ -15,8 +15,23 @@ x:=1000*x;
 x:=floor(x);
 echo(true);
 x;
-//system("rm TrapezoidTest_*");
-//system("rm TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
+system("rm TrapezoidTest_*");
+system("rm TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
+
+// BearingFriction test (mixed system of equations in columb friction)
+
+loadFile("BearingFrictionTest.mo");
+simulate(BearingFrictionTest,numberOfIntervals=20);
+echo(false);
+size:=readSimulationResultSize("BearingFrictionTest_res.plt");
+res:=readSimulationResult("BearingFrictionTest_res.plt",{BearingFriction1.w},size);
+x:=res[1];
+x:=1000*x;
+x:=floor(x);
+echo(true);
+x;
+system("rm BearingFrictionTest_*");
+system("rm BearingFrictionTest.cpp BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs");
 
 // Result:
 // true
@@ -25,5 +40,15 @@ x;
 //     resultFile = "TrapezoidTest_res.plt"
 // end record
 // true
-// {0,0,0,1000,1000,1000,1000,1000,1000,1000,999,499,0,0,0,0}
+//   {0,0,0,0,0,0,0,0,1000,1000,1000,1000,1000,1000,1000,999,499,0,0,0,0}
+// 0
+// 0
+// true
+// record
+//     resultFile = "BearingFrictionTest_res.plt"
+// end record
+// true
+// {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,62,121,177,228,277,322,365,405,442,477,510,541,570,597,622,646,668,689,709,727}
+// 0
+// 0
 // endResult

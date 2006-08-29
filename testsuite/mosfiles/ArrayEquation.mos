@@ -7,7 +7,8 @@
 loadFile("ArrayEqn.mo");
 simulate(ArrayEqn,numberOfIntervals=5);
 echo(false);
-res:=readSimulationResult("ArrayEqn_res.plt",{x[1],x[2],x[3],y},6);
+size:=readSimulationResultSize("ArrayEqn_res.plt");
+res:=readSimulationResult("ArrayEqn_res.plt",{x[1],x[2],x[3],y},size);
 x1:=res[1];
 x2:=res[2];
 x3:=res[3];
@@ -33,10 +34,10 @@ system("rm -rf ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEqn.exe ArrayEq
 //     resultFile = "ArrayEqn_res.plt"
 // end record
 // true
-// {2.0,0.898,0.403,0.181,0.081,0.036}
-// {4.0,4.0,4.0,4.0,4.0,4.0}
-// {2.0,2.0,2.0,2.0,2.0,2.0}
-// {1.0,0.449,0.201,0.09,0.04,0.018}
+// {2.0,2.0,1.999,0.898,0.403,0.181,0.081,0.036}
+// {4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0}
+// {2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0}
+// {1.0,0.999,0.999,0.449,0.201,0.09,0.04,0.018}
 // ""
 // 0
 // endResult
