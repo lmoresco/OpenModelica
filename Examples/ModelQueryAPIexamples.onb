@@ -249,7 +249,7 @@ Syntax Error</Output>
    </GroupCell>
    <GroupCell closed="false" >
     <TextCell style="Section" >
-     <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:Times; font-size:18pt; font-weight:600; color:#000000;">Restricted Class Predicates&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
+     <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:Times; font-size:18pt; font-weight:600; color:#000000;">Restricted Class Predicates&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
     </TextCell>
     <TextCell style="Text" >
      <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:Times New Roman; font-size:12pt; color:#000000;">Predicates related to restricted class categories:&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
@@ -490,13 +490,12 @@ end BouncingBall;
      <Output>0.7</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>setComponentModifierValue(BouncingBall,e,0.87) //??Error in example</Input>
-     <Output>
-OMC-ERROR: 
-"Class setComponentModifierValue (its type)  not found in scope &lt;global scope>.
-No matching function found for setComponentModifierValue, candidates are 
-Class setComponentModifierValue not found in scope &lt;global scope>.
-"</Output>
+     <Input>setComponentModifierValue(BouncingBall,e,Code(=0.87)) // Change parameter value</Input>
+     <Output>Ok</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>getComponentModifierValue(BouncingBall,e)  // Retrieve it</Input>
+     <Output>0.87</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getComponentModifierNames(BouncingBall,e)</Input>
