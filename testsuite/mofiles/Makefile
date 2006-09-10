@@ -47,7 +47,7 @@ FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
 ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo \
 PredefinedTypes.mo StructuralParameter1.mo MinMax.mo \
-FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo
+FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo if_then_elseif_else.mo
 
 
 # test that currently fail. Move up when fixed. 
