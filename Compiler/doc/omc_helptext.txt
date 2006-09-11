@@ -57,7 +57,9 @@ Exit OMShell by pressing Ctrl-d
 
  plot(vars) 
           Plot variables given as a vector relative to time from 
-          the most recently simulated model 
+          the most recently simulated model.
+          Plotting parameters, array elements or record variables not
+          currently supported.
           Ex: plot({x,y})
 
  plotParametric(var1, var2) 
@@ -104,6 +106,13 @@ Exit OMShell by pressing Ctrl-d
 
  typeOf(variable) 
           Returns the type of the variable as a string. Ex: typeOf(R1.v)
+
+ val(variableName,stime)
+          The val(variableName,time) scription function retrieves the interpolated
+          value of a simulation result variable at time=stime of the
+            simulated time.
+          Using val on parameters, array elements, or record variables not
+          currently supported.
 
  quit()                       
           Leave OpenModelica and kill the process.
