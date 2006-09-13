@@ -1,0 +1,20 @@
+// name:      Ricatti
+// keywords:  Nonlinear equation system
+// status:    correct
+loadFile("Riccati.mo");
+simulate(Riccati);
+val(X[1,1],0.0);
+val(X[1,2],0.0);
+val(X[2,1],0.0);
+val(X[2,2],0.0);
+
+// Result:
+// true
+// record
+//     resultFile = "Riccati_res.plt"
+// end record
+// 0.5825317547
+// -0.7165063509
+// 0.6495190528
+// 0.2165063509
+// endResult
