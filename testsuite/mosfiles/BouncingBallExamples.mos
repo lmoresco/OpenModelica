@@ -8,13 +8,10 @@ loadFile("BouncingBallExamples.mo");
 simulate(BouncingBallExamples, stopTime=3);
 echo(false);
 s:=readSimulationResultSize("BouncingBallExamples_res.plt");
-res:=readSimulationResult("BouncingBallExamples_res.plt",{flying},s);
-res1:=readSimulationResult("BouncingBallExamples_res.plt",{v_new},s);
-res2:=readSimulationResult("BouncingBallExamples_res.plt",{h},s);
 echo(true);
-floor(res [1,190:198]);
-floor(res1[1,190:198]);
-floor(res2[1,190:198]);
+val(flying,3.0);
+val(h,1.25);
+val(v_new,3.0);
 readFile("output.log");
 system("rm -rf BouncingBallExamples_* BouncingBallExamples.log BouncingBallExamples.libs BouncingBallExamples.exe BouncingBallExamples.cpp BouncingBallExamples.makefile output.log");
 // Result:
@@ -23,9 +20,9 @@ system("rm -rf BouncingBallExamples_* BouncingBallExamples.log BouncingBallExamp
 //    resultFile = "BouncingBallExamples_res.plt"
 // end record
 // true
-// {1,1,1,1,1,1,1,1,1}
-// {3,3,3,3,2,2,2,2,2}
-// {0,0,-1,-1,-1,-1,-1,-1,0}
+// 0.0
+// 0.225270210165903 
+// 0.0
 // ""
 // 0
 // endResult
