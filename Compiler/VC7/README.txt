@@ -7,8 +7,6 @@ NoMico	           - builds without CORBA
 RelaseStaticMico   - builds with mico linked statically
 
 The following environment variables must be set:
-MICOHOME
-ANTLRHOME
+OMDEV
 
-
-Currently the version of RML that is compiled in this solution is 2.2.2
+Currently the version of RML that is compiled in this solution is 2.3.6

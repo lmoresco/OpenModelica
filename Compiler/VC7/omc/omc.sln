@@ -118,6 +118,9 @@ Global
 		..\Setup\icons\OMShell.ico = ..\Setup\icons\OMShell.ico
 		..\Setup\icons\OpenModelica.ico = ..\Setup\icons\OpenModelica.ico
 		..\Setup\icons\PDF.ico = ..\Setup\icons\PDF.ico
+		..\..\..\README-OMDev-MINGW.txt = ..\..\..\README-OMDev-MINGW.txt
+		..\..\..\README-WIN32.txt = ..\..\..\README-WIN32.txt
+		..\..\..\README.Cygwin.or.Linux.txt = ..\..\..\README.Cygwin.or.Linux.txt
 		Readme.txt = Readme.txt
 		..\Setup\bin\Uninstall.bat = ..\Setup\bin\Uninstall.bat
 		..\Setup\icons\Uninstall.ico = ..\Setup\icons\Uninstall.ico

@@ -55,6 +55,27 @@ popd"/>
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath="..\cleanomc.bat">
+			</File>
+			<File
+				RelativePath="..\..\Makefile.common.w32">
+			</File>
+			<File
+				RelativePath="..\..\Makefile.sig.w32">
+			</File>
+			<File
+				RelativePath="..\..\Makefile.w32">
+			</File>
+			<File
+				RelativePath="..\antlr\Makefile.win32">
+			</File>
+			<File
+				RelativePath="..\makeomc.bat">
+			</File>
+			<File
+				RelativePath="..\rebuildomc.bat">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
