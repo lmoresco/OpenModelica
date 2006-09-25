@@ -7,14 +7,12 @@
 loadFile("Modelica.mo");
 loadFile("TrapezoidTest.mo");
 simulate(TrapezoidTest,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TrapezoidTest_res.plt");
-res:=readSimulationResult("TrapezoidTest_res.plt",{resistor1.v},size);
-x:=res[1];
-x:=1000*x;
-x:=floor(x);
-echo(true);
-x;
+val(resistor1.v,0.0);
+val(resistor1.v,0.1);
+val(resistor1.v,0.5);
+val(resistor1.v,0.8);
+val(resistor1.v,1.0);
+
 system("rm -f TrapezoidTest_*");
 system("rm -f TrapezoidTest.cpp TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs");
 
@@ -33,14 +31,34 @@ x;
 system("rm -f BearingFrictionTest_*");
 system("rm -f BearingFrictionTest.cpp BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs");
 
+// LossyGearDemo1 in Modelica.Mechanics.Rotational.Examples
+
+loadFile("LossyGear1.mo");
+simulate(LossyGearDemo1);
+val(gear.mode,0.0);
+val(gear.mode,0.05);
+val(gear.mode,0.1);
+val(gear.mode,0.2);
+val(gear.mode,0.4);
+val(gear.mode,0.5);
+val(gear.mode,1.0);
+val(PowerLoss,0.3);
+val(PowerLoss,0.8);
+system("rm -f LossyGearDemo1_*");
+system("rm -f LossyGearDemo1.cpp LossyGearDemo1.exe LossyGearDemo1.makefile LossyGearDemo1.log LossyGearDemo1.libs");
+
+
 // Result:
 // true
 // true
 // record
 //     resultFile = "TrapezoidTest_res.plt"
 // end record
-// true
-// {0,0,0,0,0,0,0,0,1000,1000,1000,1000,1000,1000,1000,999,499,0,0,0,0}
+// 0.0
+// 0.5
+// 1.0
+// 0.499999999999999
+// 0.0
 // 0
 // 0
 // true
@@ -49,6 +67,21 @@ system("rm -f BearingFrictionTest.cpp BearingFrictionTest.exe BearingFrictionTes
 // end record
 // true
 // {0,0,0,0,0,0,0,0,62,121,177,228,277,322,365,405,442,477,510,541,570,597,622,646,668,689,709,727}
+// 0
+// 0
+// true
+// record
+// resultFile = "LossyGearDemo1_res.plt"
+// end record
+// 0.0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// -1.0
+// -1.0
+// 0.123383202593444
+// 0.422751352214007
 // 0
 // 0
 // endResult

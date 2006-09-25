@@ -132,8 +132,8 @@ system("rm -rf *SineTorque.* *SineTorque_* output.log");
 //     resultFile = "TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt"
 // end record
 // true
-// {0.0,0.0,0.0,0.0,0.0,0.109,0.287,0.287,0.11,0.0}
-// {0.0,0.0,0.0,0.0,0.0,0.007,0.048,0.11,0.151,0.159}
+// {0.0,0.0,0.0,0.109,0.287,0.287,0.11,0.0}
+// {0.0,0.0,0.0,0.007,0.048,0.11,0.151,0.159}
 // ""
 // 0
 // record
