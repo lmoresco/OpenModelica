@@ -129,7 +129,7 @@ popd
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
 copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
 popd
 "
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
@@ -156,7 +156,7 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
 						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"/>
@@ -183,7 +183,7 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
 						AdditionalDependencies="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.g;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp"
@@ -213,7 +213,7 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
 						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"/>
@@ -240,7 +240,7 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
 						AdditionalDependencies="$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt;$(InputDir)modelica_lexer.g"
@@ -279,7 +279,7 @@ popd
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
 copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
