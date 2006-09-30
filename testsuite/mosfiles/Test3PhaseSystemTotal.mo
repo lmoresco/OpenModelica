@@ -1920,7 +1920,7 @@ public
         20]);
     Modelica.Electrical.Analog.Basic.Resistor R3(R=.5) 
       annotation (extent=[10,-24; 30,-4]);
-    Modelica.Electrical.Analog.Basic.Inductor I3 (i.fixed=false)
+    Modelica.Electrical.Analog.Basic.Inductor I3(i.fixed=false)
       annotation (extent=[-24,-24; -4,-4]);
   abc2_a_b_c abc_1 annotation (extent=[-60,-60; -40,60]);
   abc2_a_b_c abc_2 annotation (extent=[60,-60; 40,60]);

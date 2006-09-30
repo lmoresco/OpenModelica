@@ -60,6 +60,16 @@ val(y,0.5);
 system("rm -f InputOutput_*");
 system("rm -f InputOutput.cpp InputOutput.exe InputOutput.makefile InputOutput.log InputOutput.libs");
 
+
+loadFile("InitTest.mo");
+simulate(InitTest,stopTime=10,numberOfIntervals=5000);
+val(slidingMass1.s,0.0);
+val(slidingMass1.s,4.946);
+val(slidingMass1.s,3.9540);
+system("rm -f InitTest_*");
+system("rm -f InitTest.cpp InitTest.exe InitTest.makefile InitTest.log InitTest.libs");
+
+
 // Result:
 // true
 // true
@@ -104,6 +114,15 @@ system("rm -f InputOutput.cpp InputOutput.exe InputOutput.makefile InputOutput.l
 // 1.0
 // 2.0
 // 4.31606420882174
+// 0
+// 0
+// true
+// record
+// resultFile = "InitTest_res.plt"
+// end record
+// 0.0150003433144835
+// 0.0158064548845218
+// 0.0141939001609943
 // 0
 // 0
 // endResult
