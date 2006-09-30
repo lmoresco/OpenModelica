@@ -5157,7 +5157,7 @@ package Modelica "Modelica Standard Library"
  "));
         end TwoFlangesAndBearingH;
         partial model FrictionBase "Base class of Coulomb friction elements"
-                  parameter SI.AngularVelocity w_small=-737418240 "Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)" annotation(Dialog(tab="Advanced"));
+                  parameter SI.AngularVelocity w_small=10e10 "Relative angular velocity near to zero if jumps due to a reinit(..) of the velocity can occur (set to low value only if such impulses can occur)" annotation(Dialog(tab="Advanced"));
           SI.AngularVelocity w_relfric "Relative angular velocity between frictional surfaces";
           SI.AngularAcceleration a_relfric "Relative angular acceleration between frictional surfaces";
           SI.Torque tau "Friction torque (positive, if directed in opposite direction of w_rel)";
