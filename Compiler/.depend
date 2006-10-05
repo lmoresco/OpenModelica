@@ -8,7 +8,7 @@ Codegen.o: Codegen.mo Print.sig Exp.sig DAE.sig Absyn.sig Util.sig System.sig Ty
 Connect.o: Connect.mo Static.sig Exp.sig Env.sig DAE.sig Util.sig Print.sig Types.sig Absyn.sig Lookup.sig 
 DAE.o: DAE.mo Values.sig Types.sig Exp.sig ClassInf.sig Algorithm.sig Absyn.sig Util.sig RTOpts.sig Print.sig Graphviz.sig ModUtil.sig SCode.sig Env.sig Dump.sig Debug.sig Ceval.sig Error.sig 
 DAELow.o: DAELow.mo Values.sig Exp.sig DAE.sig Absyn.sig Algorithm.sig VarTransform.sig Util.sig System.sig Types.sig SCode.sig Print.sig Env.sig Error.sig SimCodegen.sig Derive.sig DAEEXT.sig Debug.sig Builtin.sig Ceval.sig Dump.sig 
-Derive.o: Derive.mo Exp.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Absyn.sig Error.sig 
+Derive.o: Derive.mo Exp.sig Absyn.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Error.sig 
 Debug.o: Debug.mo Util.sig Print.sig RTOpts.sig 
 Dump.o: Dump.mo Interactive.sig Absyn.sig Util.sig Print.sig Debug.sig 
 DumpGraphviz.o: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig 
