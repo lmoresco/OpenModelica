@@ -29,7 +29,7 @@ LIBP=-L$(OMDEV)/lib/antlr-msys-mingw
 CFLAGS =-g -Wall $(INCLUDES) -D DEBUG
 CXXFLAGS = $(CFLAGS)
 
-ANTLRFLAGS=
+ANTLRFLAGS=#-traceParser
 
 LIB = $(LIBP) -lantlr
 

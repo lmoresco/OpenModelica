@@ -19,6 +19,7 @@ endif
 CC=gcc
 CXX=g++
 
+ANTLRFLAGS = #-traceTreeParser
 ANTLR_HOME = $(OMDEV)
 
 ANTLR_INCP = -I$(OMDEV)/include/
