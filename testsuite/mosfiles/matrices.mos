@@ -42,8 +42,9 @@ max(3,6);
 // sum(A);				// used in Media, Math, Electrical
 //product(A)				// used in Math
 //product(i+j for i in 1:5, j in 1:5); 
-//symmetric([1,2;3,4])    // not used in MSL
-//cross({1,2,3},{4,5,6})  // used in Multibody
+//symmetric([1,2;3,4]);    // not used in MSL
+cross({1,2,3},{4,5,6});  // used in Multibody
+cross({5,6,7},{7,8,9}); 
 //skew({1,2,3})		  //used in Multibody
 
 // Examples in section 3.4.4.4
@@ -94,6 +95,8 @@ cat(1,{{1},{2},{3}},{{4},{5},{6}});
 // 1
 // 4
 // 6
+// {-3,6,-3}
+// {-2,4,-2}
 // {1,2,3}
 // {4,5,6}
 // {{1,4},{2,5},{3,6}}
