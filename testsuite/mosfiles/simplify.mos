@@ -7,7 +7,6 @@
 simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Real");
 simplify(x*x+x+x+x+x+x+x*x+x*x*x+x+x+x,"Integer");
 simplify(x * 1.0 + 1.0 * x + 1.0 + 1.0 + 1.0 + 1.0 + 1.0 + x * 1.0 + 1.0 * x + x * x * 1.0 + (x * 1.0 + 1.0 * x) * x + 1.0 + 1.0 + 1.0, "Real");
-
 // Some bugs removed
 cos(0)/1.0;
 cos(0)/2;
