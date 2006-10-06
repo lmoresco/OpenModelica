@@ -78,8 +78,8 @@ void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 		else
 		{ 
 			KillTimer(m_Timer);
-			txt = "OpenModelica 1.3\r\n";
-			txt += "Copyright 2002-2005, PELAB, Linkoping University\r\n\r\n";
+			txt = "OpenModelica 1.4.2\r\n";
+			txt += "Copyright 2002-2006, PELAB, Linkoping University\r\n\r\n";
 			txt += "To get help on using Mosh and OpenModelica, type \"help()\" and press enter.\r\n\r\n";
 
 			txt += ">> ";

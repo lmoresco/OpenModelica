@@ -51,7 +51,7 @@ This environment variables are needed:
 
 > MODELICAHOME	: Should point at the home folder containing c++ files for 
                   corba communication with OMC, 
-		  for example "C:\Program\modelica\Omc\winruntime",
+		  for example "C:\Program\modelica\Omc\Compiler\runtime",
 		  > used like "$(MODELICAHOME)".
 
 
@@ -64,7 +64,7 @@ MISC
 
 > Probably the path to the file "omc_communicator.cc" in the OMNotebook project has
   to be change, because this path is relative also. The file is added to the project
-  to avoid link error and the file is located in modelicas winruntime library.
+  to avoid link error and the file is located in modelicas runtime library.
 
 > Compile in debug mode becuase there is a strange bug that make the text in some 
   inputcells very small if the project is compiled in release mode.

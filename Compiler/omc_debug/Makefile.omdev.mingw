@@ -52,7 +52,7 @@ LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
-RML	= $(OMDEV)/tools/rml/bin/rmlc -g -Wc,-O3
+RML	= $(OMDEV)/tools/rml/bin/rmlc -g
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 

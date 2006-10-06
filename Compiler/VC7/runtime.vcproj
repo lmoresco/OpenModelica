@@ -144,16 +144,16 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
-				RelativePath="..\winruntime\corbaimpl.cpp">
+				RelativePath="..\runtime\corbaimpl.cpp">
 			</File>
 			<File
-				RelativePath="..\winruntime\daeext.cpp">
+				RelativePath="..\runtime\daeext.cpp">
 			</File>
 			<File
-				RelativePath="..\winruntime\errorext.cpp">
+				RelativePath="..\runtime\errorext.cpp">
 			</File>
 			<File
-				RelativePath="..\winruntime\ErrorMessage.cpp">
+				RelativePath="..\runtime\ErrorMessage.cpp">
 			</File>
 			<File
 				RelativePath=".\omc_communication.cc">
@@ -198,25 +198,25 @@ popd
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\winruntime\omc_communication_impl.cpp">
+				RelativePath="..\runtime\omc_communication_impl.cpp">
 			</File>
 			<File
-				RelativePath="..\winruntime\printimpl.c">
+				RelativePath="..\runtime\printimpl.c">
 			</File>
 			<File
-				RelativePath="..\winruntime\ptolemyio.cpp">
+				RelativePath="..\runtime\ptolemyio.cpp">
 			</File>
 			<File
-				RelativePath="..\winruntime\rtopts.c">
+				RelativePath="..\runtime\rtopts.c">
 			</File>
 			<File
-				RelativePath="..\winruntime\settingsimpl.c">
+				RelativePath="..\runtime\settingsimpl.c">
 			</File>
 			<File
-				RelativePath="..\winruntime\socketimpl.c">
+				RelativePath="..\runtime\socketimpl.c">
 			</File>
 			<File
-				RelativePath="..\winruntime\systemimpl.c">
+				RelativePath="..\runtime\systemimpl.c">
 			</File>
 		</Filter>
 		<Filter
@@ -224,19 +224,19 @@ popd
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
-				RelativePath="..\winruntime\errorext.h">
+				RelativePath="..\runtime\errorext.h">
 			</File>
 			<File
-				RelativePath="..\winruntime\ErrorMessage.hpp">
+				RelativePath="..\runtime\ErrorMessage.hpp">
 			</File>
 			<File
 				RelativePath=".\omc_communication.h">
 			</File>
 			<File
-				RelativePath="..\winruntime\omc_communication_impl.h">
+				RelativePath="..\runtime\omc_communication_impl.h">
 			</File>
 			<File
-				RelativePath="..\winruntime\ptolemyio.hpp">
+				RelativePath="..\runtime\ptolemyio.hpp">
 			</File>
 		</Filter>
 		<Filter
