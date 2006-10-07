@@ -60,7 +60,7 @@ all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
 .SUFFIXES: .o .mo .h .rdb
 
-.PHONY: .testvariables all subdirs report vctarget absyn_subdir clean reallyclean
+.PHONY: .testvariables all subdirs $(SUBDIRS) report vctarget absyn_subdir clean reallyclean
 SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
 
 
@@ -86,19 +86,19 @@ vctarget: $(SRCC) absyn_subdir
 
 
 absyn_subdir:
-	@(cd $(srcdir)/absyn_builder ; $(MAKE) -f Makefile.omdev.mingw vctarget)
+	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ)
 	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS)
 
-subdirs: $(SRCHSRCDIR)
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE)  -f Makefile.omdev.mingw) \
-	done
+subdirs: $(SRCHSRCDIR) $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@ -f Makefile.omdev.mingw
 
 clean:
-	@for d in $(SUBDIRS); do \
-		(cd $$d ; $(MAKE)  -f Makefile.omdev.mingw clean) \
+	for d in $(SUBDIRS); do \
+		(cd $$d && $(MAKE)  -f Makefile.omdev.mingw clean) \
 	done
 	(cd $(srcdir) && $(RM) $(SRCH))
 	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~

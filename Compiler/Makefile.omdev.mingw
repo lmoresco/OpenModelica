@@ -115,10 +115,10 @@ omc_debug:
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
 
 vctarget: 
-	@(cd omc_release ; $(MAKE) vctarget -f Makefile.omdev.mingw)
+	@(cd omc_release && $(MAKE) vctarget -f Makefile.omdev.mingw)
 
 test:
-	@(cd ../testsuite ; $(MAKE) -f Makefile)
+	@(cd ../testsuite && $(MAKE) -f Makefile)
 
 
 clean:

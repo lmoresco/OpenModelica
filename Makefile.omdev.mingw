@@ -57,10 +57,10 @@ settings:
 release: omc
 
 omcd: 
-	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw debug)
+	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw debug)
 	(cp -p doc/*.pdf $(builddir_doc)/)
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
@@ -68,10 +68,10 @@ omcd:
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2311.dll $(builddir_bin)/)
 
 omc:	
-	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2mmo; $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw release)
+	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw release)
 	(cp doc/*.pdf $(builddir_doc)/)
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
@@ -87,14 +87,14 @@ mosh:
 
 
 clean:
-	(cd c_runtime; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/rml2sig; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/omc_debug; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/omc_release; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd flat_modelica_parser/src; $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/omc_debug && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/omc_release && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd mosh/src && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd flat_modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
 	(rm -f $(builddir_doc)/*.pdf)
 	(rm -f $(builddir_doc)/testmodels/*.*)
 

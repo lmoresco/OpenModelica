@@ -403,6 +403,9 @@ nmake -f MakeFile.win32
 		<File
 			RelativePath="..\Makefile.w32">
 		</File>
+		<File
+			RelativePath=".\omc\Readme.txt">
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
