@@ -20,16 +20,17 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				InlineFunctionExpansion="1"
+				InlineFunctionExpansion="0"
 				AdditionalIncludeDirectories="&quot;runtime\plain&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="5"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
 				DebugInformationFormat="4"
+				CompileAs="1"
 				DisableSpecificWarnings="4311;4312"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
@@ -294,13 +295,7 @@
 				RelativePath="runtime\common\p-unwind.c">
 			</File>
 			<File
-				RelativePath="runtime\common\p-usergc.c">
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="TRUE">
-					<Tool
-						Name="VCCLCompilerTool"/>
-				</FileConfiguration>
+				RelativePath=".\runtime\common\p-usergc.c">
 			</File>
 			<File
 				RelativePath="runtime\common\real-abs.c">

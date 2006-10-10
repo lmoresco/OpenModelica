@@ -18,11 +18,14 @@
 			ConfigurationType="0">
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="cd ..\..\..\c_runtime\libf2c
-nmake -f makefile.vc"
-				ReBuildCommandLine="cd ..\..\..\c_runtime\libf2c
-nmake -f makefile.vc"
-				Output="libf2c.lib"/>
+				BuildCommandLine="cd ..\..\c_runtime\libf2c
+nmake -f makefile.vc
+"
+				ReBuildCommandLine="cd ..\..\c_runtime\libf2c
+nmake -f makefile.vc rebuild"
+				CleanCommandLine="cd ..\..\c_runtime\libf2c
+nmake -f makefile.vc clean"
+				Output="..\..\c_runtime\vcf2c.lib"/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -59,6 +62,9 @@ nmake -f makefile.vc clean"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
 		</Filter>
+		<File
+			RelativePath="..\..\c_runtime\libf2c\makefile.vc">
+		</File>
 		<File
 			RelativePath=".\readme.txt">
 		</File>

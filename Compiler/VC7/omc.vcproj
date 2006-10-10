@@ -20,38 +20,38 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(ProjectDir)"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;$(ProjectDir)"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="5"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				DisableSpecificWarnings="4311;4312"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcml.lib rmlRuntime.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrlib.lib"
+				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrd.lib"
 				OutputFile="$(OutDir)/omc.exe"
-				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(MICOHOME)\win32-bin\lib&quot;"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;"
 				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile="$(OutDir)/modeq.pdb"
+				ProgramDatabaseFile="$(OutDir)/omc.pdb"
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\Compiler\win\omc.exe&quot;"/>
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
 				CommandLine="cd $(ProjectDir)antlr
-nmake -f MakeFile.win32
+nmake -f MakeFile.debug.win32
 "/>
 			<Tool
 				Name="VCPreLinkEventTool"/>
@@ -110,8 +110,8 @@ nmake -f MakeFile.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\Compiler\win\omc.exe&quot;"
-				ExcludedFromBuild="TRUE"/>
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
+				ExcludedFromBuild="FALSE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
@@ -396,6 +396,9 @@ nmake -f MakeFile.win32
 		</Filter>
 		<File
 			RelativePath="..\Makefile.common.w32">
+		</File>
+		<File
+			RelativePath="..\Makefile.debug.w32">
 		</File>
 		<File
 			RelativePath="..\Makefile.sig.w32">

@@ -20,11 +20,11 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc\&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="5"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
@@ -165,7 +165,7 @@
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
+&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)
 copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
 popd
@@ -177,7 +177,7 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
+&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)
 copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
 copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
 popd

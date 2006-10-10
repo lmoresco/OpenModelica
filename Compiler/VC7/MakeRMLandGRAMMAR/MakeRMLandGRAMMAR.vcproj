@@ -19,14 +19,14 @@
 			<Tool
 				Name="VCNMakeTool"
 				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32
+nmake /f Makefile.debug.w32
 popd"
 				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32 clean
+nmake /f Makefile.debug.w32 clean
 nmake /f Makefile.w32
 popd"
 				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32 clean
+nmake /f Makefile.debug.w32 clean
 popd"/>
 		</Configuration>
 		<Configuration
@@ -60,6 +60,9 @@ popd"/>
 			</File>
 			<File
 				RelativePath="..\..\Makefile.common.w32">
+			</File>
+			<File
+				RelativePath="..\..\Makefile.debug.w32">
 			</File>
 			<File
 				RelativePath="..\..\Makefile.sig.w32">

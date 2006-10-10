@@ -20,11 +20,11 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\modelica_parser\src&quot;;&quot;$(ProjectDir)..\absyn_builder&quot;;&quot;$(ANTLRHOME)\lib\cpp&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\flat_modelica_parser\src&quot;;&quot;$(ProjectDir)..\..\modelica_parser\src&quot;;&quot;$(ProjectDir)..\absyn_builder&quot;;&quot;$(OMDEV)\include\&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="5"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
@@ -118,11 +118,11 @@
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
 copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
 popd
 "
-						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="modelica_expression_parser.cpp;modelica_expression_parser.hpp;"/>
+						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="$(InputDir)modelica_expression_parser.cpp;$(InputDir)modelica_expression_parser.hpp"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -147,10 +147,10 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
-						Outputs="flat_modelica_lexer.cpp modelica_lexer.hpp;flat_modelicaTokenTypes.hpp;flat_modelicaTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -173,11 +173,11 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
-						AdditionalDependencies="$(InputDir)flat_modelica_lexer.g"
-						Outputs="flat_modelica_parser.cpp;flat_modelica_parser.hpp;flat_modelica_parserTokenTypes.hpp;flat_modelica_parserTokenTypes.txt"/>
+						AdditionalDependencies="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.g;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp"
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -204,10 +204,10 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
-						Outputs="modelica_lexer.cpp modelica_lexer.hpp;modelicaTokenTypes.hpp;modelicaTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -230,11 +230,11 @@ popd
 					<Tool
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
-java  antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
-						AdditionalDependencies="$(InputDir)modelica_lexer.g"
-						Outputs="modelica_parser.cpp;modelica_parser.hpp;modelica_parserTokenTypes.hpp;modelica_parserTokenTypes.txt"/>
+						AdditionalDependencies="$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt;$(InputDir)modelica_lexer.g"
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_parser.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parser.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
@@ -268,11 +268,11 @@ popd
 						Name="VCCustomBuildTool"
 						CommandLine="pushd &quot;$(InputDir)&quot;
 copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java antlr.Tool $(InputFileName)
+java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
 popd
 "
-						AdditionalDependencies="$(InputDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="modelica_tree_parser.cpp;modelica_tree_parser.hpp;modelica_tree_parserTokenTypes.hpp;modelica_tree_parserTokenTypes.txt"/>
+						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
+						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
