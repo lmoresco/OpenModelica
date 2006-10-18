@@ -1,22 +1,29 @@
-// name:     Interpolation
+// name:     Pendulum
 // keywords: Simulate, readSimulationData
 // status:   correct
 // 
 //  Simulate Pendulum example (index reduction, linear and nonlinear equation systems)
 //
 loadFile("Pendulum.mo");
-simulate(Pendulum);
-val(x,0.5);
-val(x,0.8);
-val(y,0.5);
-val(y,0.8);
+simulate(Pendulum,numberOfIntervals=1000,stopTime=5.0);
+val(x,1.0);
+val(x,2.0);
+val(x,3.0);
+
+val(y,1.0);
+val(y,2.0);
+val(y,3.0);
+system("rm -rf Pendulum.cpp Pendulum.exe");
 // Result:
 // true
 // record
 //     resultFile = "Pendulum_res.plt"
 // end record
-// 0.876392457
-// -0.4892544378
-// -0.4815976134
-// -0.8721410981
+// -0.9932654312
+// -0.4258511227
+// 0.9460181243
+// -0.115861051
+// -0.9047932478
+// 0.3241137274
+// 0
 // endResult
