@@ -71,14 +71,14 @@ end BouncingBall;
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-     <Output>C\\OpenModelica1.4.3\\ModelicaLibrary</Output>
+     <Output>C:\OpenModelica1.4.3\ModelicaLibrary</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>setEnvironmentVar("OPENMODELICALIBRARY","C\\OpenModelica1.4.3\\ModelicaLibrary")</Input>
      <Output>Ok</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>getEnvironmentVar("OPENMODELICALIBRARY")  //??Error Should return the same</Input>
+     <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
      <Output>C\\OpenModelica1.4.3\\ModelicaLibrary</Output>
     </InputCell>
    </GroupCell>
@@ -131,22 +131,26 @@ end BouncingBall;
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>saveModel("C:/OpenModelica1.4.3/testmodels/BouncingBall2.mo", BouncingBall ) //??Error in example</Input>
+     <Input>saveModel("C:\\OpenModelica1.4.3\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
      <Output>false
 OMC-ERROR: 
-"Class BouncingBall not found in scope global.
+"Class BouncingBall2 not found in scope global.
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>renameClass(BouncingBall, BouncingBall2)</Input>
-     <Output>{BouncingBall2}</Output>
+     <Input>save(BouncingBall)  // Save it back into the file it was loaded from</Input>
+     <Output>true</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>renameClass(BouncingBall, BouncingBall2) // ?? _Very_ slow if Modelica is loaded</Input>
+     <Output>{BouncingBall}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>deleteClass(BouncingBall2)</Input>
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")  // Load it back</Input>
+     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall2.mo")  // Load it back</Input>
      <Output>true</Output>
     </InputCell>
    </GroupCell>
@@ -159,13 +163,13 @@ OMC-ERROR:
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getElementsInfo(BouncingBall)</Input>
-     <Output>{ { elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=52, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, variability="parameter", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=47, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, variability="parameter", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=35, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, variability="unspecified", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, variability="unspecified", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=55, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, variability="unspecified", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, variability="unspecified", direction="unspecified" },
-{ elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, variability="unspecified", direction="unspecified" }
+     <Output>{ { rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=52, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=47, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=35, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=55, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, variability="unspecified", direction="unspecified") }
  }</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -198,16 +202,34 @@ end BouncingBall;
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>addClassAnnotation(A1&lt;cref>, annotate=&lt;expr>) //?? example call not completed</Input>
-     <Output>[1:19]: error: unexpected token: (</Output>
+     <Input>getIconAnnotation(BouncingBall); 
+getDiagramAnnotation(BouncingBall);
+getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
+     <Output>[done]</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>getIconAnnotation(Modelica.Electrical.Analog.Basic.Ground)</Input>
-     <Output>{-100.0,-100.0,100.0,100.0,{Line(true,{{-60.0,50.0},{60.0,50.0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false),Line(true,{{-40.0,30.0},{40.0,30.0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false),Line(true,{{-20.0,10.0},{20.0,10.0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false),Line(true,{{0.0,90.0},{0.0,50.0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false),Text(true,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.None,0.25,{{-144.0,-60.0},{138.0,0.0}},"%name",0.0,"")}}</Output>
+     <Input>addClassAnnotation(BouncingBall, annotate=Icon(extent={{0,0},{100, 100}},graphics={Line(points={{0,0},{101,102}})}))</Input>
+     <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>getDiagramAnnotation(Modelica.Electrical.Analog.Basic.Ground)</Input>
-     <Output>{-100.0,-100.0,100.0,100.0,{Line(true,{{-60.0,50.0},{60.0,50.0}},{0,0,255},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3.0,false),Line(true,{{-40.0,30.0},{40.0,30.0}},{0,0,255},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3.0,false),Line(true,{{-20.0,10.0},{20.0,10.0}},{0,0,255},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3.0,false),Line(true,{{0.0,96.0},{0.0,50.0}},{0,0,255},LinePattern.Solid,0.5,{Arrow.None,Arrow.None},3.0,false),Text(true,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.None,0.25,{{-24.0,-38.0},{22.0,-6.0}},"p.v=0",0.0,"")}}</Output>
+     <Input>getIconAnnotation(BouncingBall) //Icon annotations added</Input>
+     <Output>{-10.0,-10.0,10.0,10.0,{Line(true,{{0.0,0.0},{101.0,102.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>addClassAnnotation(BouncingBall, annotate=Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"));</Input>
+     <Output>[done]</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>getDocumentationAnnotation(BouncingBall) //Documentation annotation added</Input>
+     <Output>{"&lt;HTML>foo&lt;/HTML>","1.0"}</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>addClassAnnotation(BouncingBall, annotate=Diagram(coordinateSystem(extent={{-1.,-2.},{3.,4.}}))); //Diagram annotation added</Input>
+     <Output>[done]</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>getDiagramAnnotation(BouncingBall)</Input>
+     <Output>{-1.0,-2.0,3.0,4.0}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getPackages(Modelica)</Input>
@@ -215,7 +237,7 @@ end BouncingBall;
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getPackages()</Input>
-     <Output>{Modelica}</Output>
+     <Output>{Modelica,TaskGraphExt,System,Socket,Settings,RTOpts,Print,Parser,ErrorExt,DAEEXT,Corba}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassNames(Modelica.Electrical.Analog.Basic)</Input>
@@ -223,20 +245,23 @@ end BouncingBall;
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassNames()</Input>
-     <Output>{BouncingBall,Model1,Modelica}</Output>
+     <Output>{BouncingBall,Modelica,TaskGraphExt,System,Socket,Settings,RTOpts,Print,Parser,ErrorExt,DAEEXT,Corba}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassNamesForSimulation()</Input>
      <Output>{}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>//setClassNamesForSimulation(A1&lt;string>)  ?? example call not complete</Input>
-     <Output>Error occured building AST
-Syntax Error</Output>
+     <Input>setClassNamesForSimulation("{BouncingBall}")</Input>
+     <Output>true</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>getClassNamesForSimulation() //BouncingBall added</Input>
+     <Output>{BouncingBall}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassAttributes(BouncingBall) //?? Changed to rec(...) format</Input>
-     <Output>{name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="", file="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=20, endColumn=17}</Output>
+     <Output>{ rec(name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="A Bouncing Ball Model", file="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=20, endColumn=17) }</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassRestriction(BouncingBall) </Input>
@@ -244,7 +269,7 @@ Syntax Error</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassInformation(BouncingBall)</Input>
-     <Output>{"model","","C:/OpenModelica1.4.3/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,20,17}}</Output>
+     <Output>{"model","A Bouncing Ball Model","C:/OpenModelica1.4.3/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,20,17}}</Output>
     </InputCell>
    </GroupCell>
    <GroupCell closed="false" >
@@ -291,7 +316,7 @@ Syntax Error</Output>
      <Output>false</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>isParameter(BouncingBall.e)  //??Error in example</Input>
+     <Input>isParameter(BouncingBall.e)  //??Error in example?</Input>
      <Output>
 OMC-ERROR: 
 "Class isParameter (its type)  not found in scope &lt;global scope>.
@@ -300,7 +325,7 @@ Class isParameter not found in scope &lt;global scope>.
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>isConstant(BouncingBall.e) //??Error in example</Input>
+     <Input>isConstant(BouncingBall.e) //??Error in example?</Input>
      <Output>
 OMC-ERROR: 
 "Class isConstant (its type)  not found in scope &lt;global scope>.
@@ -309,7 +334,7 @@ Class isConstant not found in scope &lt;global scope>.
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>isProtected(BouncingBall) //??Error</Input>
+     <Input>isProtected(BouncingBall) //??Error in example?</Input>
      <Output>
 OMC-ERROR: 
 "Class isProtected (its type)  not found in scope &lt;global scope>.
@@ -338,13 +363,12 @@ Class isProtected not found in scope &lt;global scope>.
      <Output>{{Real,e,"coefficient of restitution", "public", false, false, false, "parameter", "none", "unspecified"},{Real,g,"gravity acceleration", "public", false, false, false, "parameter", "none", "unspecified"},{Real,h,"height of ball", "public", false, false, false, "unspecified", "none", "unspecified"},{Real,v,"velocity of ball", "public", false, false, false, "unspecified", "none", "unspecified"},{Boolean,flying,"true, if ball is flying", "public", false, false, false, "unspecified", "none", "unspecified"},{Boolean,impact,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Real,v_new,"", "public", false, false, false, "unspecified", "none", "unspecified"}}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>setComponentProperties(BouncingBall,e, false, false, false,false, "parameter", {false,false}, "")  //??Error in example</Input>
-     <Output>
-OMC-ERROR: 
-"Class setComponentProperties (its type)  not found in scope &lt;global scope>.
-No matching function found for setComponentProperties, candidates are 
-Class setComponentProperties not found in scope &lt;global scope>.
-"</Output>
+     <Input>setComponentProperties(BouncingBall,e, {false, false, true, false}, {"parameter"}, {false,false}, {""})  // Make e protected</Input>
+     <Output>Ok</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>getComponents(BouncingBall) // e is protected</Input>
+     <Output>{{Real,g,"gravity acceleration", "public", false, false, false, "parameter", "none", "unspecified"},{Real,h,"height of ball", "public", false, false, false, "unspecified", "none", "unspecified"},{Real,v,"velocity of ball", "public", false, false, false, "unspecified", "none", "unspecified"},{Boolean,flying,"true, if ball is flying", "public", false, false, false, "unspecified", "none", "unspecified"},{Boolean,impact,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Real,v_new,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Real,e,"coefficient of restitution", "protected", false, false, false, "parameter", "none", "unspecified"}}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getComponentAnnotations(Modelica.Electrical.Analog.Basic.Ground)</Input>
@@ -352,7 +376,7 @@ Class setComponentProperties not found in scope &lt;global scope>.
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getCrefInfo(BouncingBall)</Input>
-     <Output>C:/OpenModelica1.4.3/testmodels/BouncingBall.mo,writable,1,1,20,17</Output>
+     <Output>{C:/OpenModelica1.4.3/testmodels/BouncingBall.mo,writable,1,1,20,17}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>addComponent(e2,Real,BouncingBall);
@@ -362,14 +386,14 @@ true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>list(BouncingBall) // Verify that e2 and e3 have been added</Input>
-     <Output>"model BouncingBall
-  parameter Real e=0.7 "coefficient of restitution";
+     <Output>"model BouncingBall "A Bouncing Ball Model"
   parameter Real g=9.81 "gravity acceleration";
   Real h(start=1) "height of ball";
   Real v "velocity of ball";
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
+  annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
   Real e2;
   Real e3;
 
@@ -383,6 +407,8 @@ equation
 reinit(v, v_new);
   
   end when;
+protected 
+  parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
 "</Output>
@@ -393,14 +419,14 @@ end BouncingBall;
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>list(BouncingBall) // Verify that only e3 is left</Input>
-     <Output>"model BouncingBall
-  parameter Real e=0.7 "coefficient of restitution";
+     <Output>"model BouncingBall "A Bouncing Ball Model"
   parameter Real g=9.81 "gravity acceleration";
   Real h(start=1) "height of ball";
   Real v "velocity of ball";
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
+  annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
   Real e3;
 
 equation 
@@ -413,6 +439,8 @@ equation
 reinit(v, v_new);
   
   end when;
+protected 
+  parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
 "</Output>
@@ -423,14 +451,14 @@ end BouncingBall;
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>list(BouncingBall) // Verify that the type has changed to Integer</Input>
-     <Output>"model BouncingBall
-  parameter Real e=0.7 "coefficient of restitution";
+     <Output>"model BouncingBall "A Bouncing Ball Model"
   parameter Real g=9.81 "gravity acceleration";
   Real h(start=1) "height of ball";
   Real v "velocity of ball";
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
+  annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
   Integer e3;
 
 equation 
@@ -443,24 +471,27 @@ equation
 reinit(v, v_new);
   
   end when;
+protected 
+  parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>renameComponent(BouncingBall,e3,e3_renamed)</Input>
-     <Output>{BouncingBall}</Output>
+     <Input>renameComponent(BouncingBall,e3,e3_renamed) // ?? _Very_ slow if Modelica is loaded</Input>
+     <Output>{evaluating expression}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>list(BouncingBall)  // Verify that e3 has been renamed</Input>
-     <Output>"model BouncingBall
-  parameter Real e=0.7 "coefficient of restitution";
+     <Output>"model BouncingBall "A Bouncing Ball Model"
   parameter Real g=9.81 "gravity acceleration";
   Real h(start=1) "height of ball";
   Real v "velocity of ball";
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
+  annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
+  Real e2;
   Integer e3_renamed;
 
 equation 
@@ -473,9 +504,15 @@ equation
 reinit(v, v_new);
   
   end when;
+protected 
+  parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
 "</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo") //Reload model</Input>
+     <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getNthComponentAnnotation(Modelica.Electrical.Analog.Basic.Ground,1)</Input>
@@ -509,21 +546,32 @@ end BouncingBall;
       <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:Times New Roman; font-size:12pt; color:#000000;">Calls relating to inheritance properties.&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
      </TextCell>
      <InputCell style="Input" closed="false" >
-      <Input>getInheritanceCount(Modelica.Electrical.Analog.Basic.Resistor)</Input>
-      <Output>1</Output>
+      <Input>model A
+parameter Real a = 1;
+end A;
+
+model B
+extends A(a=2);
+end B;</Input>
+      <Output>Ok</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>getNthInheritedClass(Modelica.Electrical.Analog.Basic.Resistor,1)</Input>
-      <Output>Modelica.Electrical.Analog.Interfaces.OnePort</Output>
+      <Input>getInheritanceCount(A);
+getInheritanceCount(B)</Input>
+      <Output>0
+1</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>getExtendsModifierNames(Modelica.Electrical.Analog.Basic.Resistor,Modelica.Electrical.Analog.Interfaces.OnePort)</Input>
-      <Output>{}</Output>
+      <Input>getNthInheritedClass(B,1)</Input>
+      <Output>A</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>//getExtendsModifierValue(??)  ??Incomplete example</Input>
-      <Output>Error occured building AST
-Syntax Error</Output>
+      <Input>getExtendsModifierNames(B, A)</Input>
+      <Output>{a}</Output>
+     </InputCell>
+     <InputCell style="Input" closed="false" >
+      <Input>getExtendsModifierValue(B, A.a)</Input>
+      <Output>=2</Output>
      </InputCell>
     </GroupCell>
     <GroupCell closed="false" >
@@ -534,34 +582,36 @@ Syntax Error</Output>
       <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:Times New Roman; font-size:12pt; color:#000000;">Calls relating to connections.&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
      </TextCell>
      <InputCell style="Input" closed="false" >
-      <Input>getConnectionCount(Modelica.Electrical.Analog.Basic.Resistor)</Input>
+      <Input>createModel(C);</Input>
+      <Output>[done]</Output>
+     </InputCell>
+     <InputCell style="Input" closed="false" >
+      <Input>getConnectionCount(C) //No connections in C</Input>
       <Output>0</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>//getNthConnection(...)) ??Incomplete</Input>
-      <Output>Modelica.Electrical.Analog.Interfaces.OnePort</Output>
+      <Input>addConnection(a, b, C) //Connect a and b     annotate???</Input>
+      <Output>Ok</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>//getNthConnectionAnnotation(A1&lt;cref>,A2&lt;int>) ??Incomplete</Input>
-      <Output>{}</Output>
+      <Input>getConnectionCount(C)</Input>
+      <Output>1</Output>
      </InputCell>
      <InputCell style="Input" closed="false" >
-      <Input>//getExtendsModifierValue(??)  ??Incomplete example</Input>
-      <Output>Error occured building AST
-Syntax Error</Output>
+      <Input>getNthConnection(C, 1) </Input>
+      <Output>{a,b, ""}</Output>
      </InputCell>
-     <InputCell style="Input" closed="true" >
-      <Input>//addConnection(A1&lt;cref>,A2&lt;cref>,
-A3&lt;cref>, annotate=&lt;expr>)</Input>
-      <Output></Output>
+     <InputCell style="Input" closed="false" >
+      <Input>updateConnection(a,b,C)  //annotate?</Input>
+      <Output>Ok</Output>
      </InputCell>
-     <InputCell style="Input" closed="true" >
-      <Input>//updateConnection(A1&lt;cref>,A2&lt;cref>,A3&lt;cref>,annotate=&lt;expr>)</Input>
-      <Output></Output>
+     <InputCell style="Input" closed="false" >
+      <Input>deleteConnection(a, b, C)</Input>
+      <Output>Ok</Output>
      </InputCell>
-     <InputCell style="Input" closed="true" >
-      <Input>//deleteConnection(A1&lt;cref>,A2&lt;cref>,A3&lt;cref>)</Input>
-      <Output></Output>
+     <InputCell style="Input" closed="false" >
+      <Input>getConnectionCount(C)</Input>
+      <Output>0</Output>
      </InputCell>
     </GroupCell>
    </GroupCell>
