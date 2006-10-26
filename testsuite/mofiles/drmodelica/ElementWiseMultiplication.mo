@@ -28,5 +28,5 @@ end ElementWiseMultiplication;
 //   inVector[1] = 3.0;
 //   inVector[2] = 6.0;
 //   inVector[3] = 1.0;
-// {result[1],result[2],result[3]} = ewm({inVector[1],inVector[2],inVector[3]});
+// result = ewm({inVector[1],inVector[2],inVector[3]});
 // end ElementWiseMultiplication;
