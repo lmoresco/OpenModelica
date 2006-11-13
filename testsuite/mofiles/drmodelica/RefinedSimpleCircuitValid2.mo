@@ -77,7 +77,7 @@ model TempResistor
   Real RT;
 end TempResistor;
 
-model RefinedResistorCircuit2 = 
+model RefinedResistorCircuit2 = 
   GenericResistorCircuit2(redeclare model ResistorModel = TempResistor);
 
 //- The model RefinedResistorCircuit2 should give the same flattened model
