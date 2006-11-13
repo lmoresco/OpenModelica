@@ -819,10 +819,15 @@ extern RML_FORWARD_LABEL(RML__real_5fsub);
 extern RML_FORWARD_LABEL(RML__string_5fappend);
 extern RML_FORWARD_LABEL(RML__string_5fint);
 extern RML_FORWARD_LABEL(RML__string_5flength);
+extern RML_FORWARD_LABEL(RML__string_5fequal);
+extern RML_FORWARD_LABEL(RML__string_5fcompare);
+
    /* java named */
-#define RML__stringAppend RML__string_5fappend
-#define RML__stringInt    RML__string_5fint
-#define RML__stringLength RML__string_5flength
+#define RML__stringAppend   RML__string_5fappend
+#define RML__stringInt      RML__string_5fint
+#define RML__stringLength   RML__string_5flength
+#define RML__stringEqual    RML__string_5fequal
+#define RML__stringCompare  RML__string_5fcompare
 
 /* declarative vectors */
 extern RML_FORWARD_LABEL(RML__vector_5flength);

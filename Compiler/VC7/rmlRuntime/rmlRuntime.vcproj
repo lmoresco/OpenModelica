@@ -145,6 +145,9 @@
 				RelativePath="runtime\common\bool-or.c">
 			</File>
 			<File
+				RelativePath=".\runtime\common\external-rml.c">
+			</File>
+			<File
 				RelativePath="runtime\common\int-abs.c">
 			</File>
 			<File
