@@ -13,7 +13,7 @@ class Type10
 equation
   x = y;
   ok[1]=3.0;
-end Type10
+end Type10;
 
 // fclass Type10
 //            String  ok[1].unit;
