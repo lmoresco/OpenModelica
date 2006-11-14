@@ -17,7 +17,7 @@ equation
   for i in 1:N-1 loop
     connect(p[i],p[i+1]);
   end for;
-end EquationFor3;
+end EquationFor4;
 
 // fclass EquationFor4
 // parameter Integer N = 4;
