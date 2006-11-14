@@ -18,7 +18,7 @@ model Connect15
   A t1,t2;
 equation 
 connect(t1.p[1],t2.p[2]);
-end Conncet15;
+end Connect15;
 
 // fclass Connect15
 // Real t1.p[1].i;
