@@ -11,7 +11,7 @@ function f
   output Real y;
 algorithm
   y := x + 1;
-end test;
+end f;
 
 model FunctionEval2
   constant Real a=5;
