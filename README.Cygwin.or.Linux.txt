@@ -34,7 +34,11 @@ NOTE:
   make mosh
 
   After the compilation the results are in the path/to/trunk/build.
-  To run the testsuite: export OPENMODELICAHOME=path/to/trunk/build
+  To run the testsuite: 
+  Create a directory path/to/trunk/build/ModelicaLibrary in which
+  you unpack /Compiler/VC7/Setup/zips/ModelicaLib.tar.gz
+  > export OPENMODELICAHOME=path/to/trunk/build
+  > export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
   cd testsuite
   testsuite> make
   
@@ -134,6 +138,6 @@ GENERAL NOTES:
 - to run the testsuite you need to have "./" in your $PATH variable.
   In general this is considered in Linux a security threat, so make
   sure you have the "./" LAST in your path, after the normal binary
-  directories which should be first.
+  directories which should be first. 
   
 Last updated 2006-09-06
