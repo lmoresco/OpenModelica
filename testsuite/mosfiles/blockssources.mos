@@ -8,72 +8,35 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // ConstantTest
-simulate(TestModels.BlockModels.SourceTests.ConstantTest,numberOfIntervals=5);
-
-echo(false);
-size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ConstantTest_res.plt");
-res:=readSimulationResult("TestModels.BlockModels.SourceTests.ConstantTest_res.plt",{constant1.y,derivative1.y},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=y/1000; 
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y*1000.0;
+simulate(TestModels.BlockModels.SourceTests.ConstantTest);
+{val(constant1.y,0.0),val(constant1.y,0.5)};
+{val(derivative1.y,0.0),val(derivative1.y,0.5)};
 readFile("output.log");
 system("rm -rf *ConstantTest.* *ConstantTest_* output.log");
 
 //ExpSineTest
-simulate(TestModels.BlockModels.SourceTests.ExpSineTest,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ExpSineTest_res.plt");
-res:=readSimulationResult("TestModels.BlockModels.SourceTests.ExpSineTest_res.plt",{expSine1.y,transferFunction1.y},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
-readFile("output.log");
-system("rm -rf *ExpSineTest.* *ExpSineTest_* output.log");
+simulate(TestModels.BlockModels.SourceTests.ExpSineTest);
+{val(expSine1.y,0.0),val(expSine1.y,0.2),val(expSine1.y,0.4),val(expSine1.y,0.6),
+val(expSine1.y,0.8),val(expSine1.y,1.0)};
 
+{val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4),
+val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
 
 // ExponentialsTest
-simulate(TestModels.BlockModels.SourceTests.ExponentialsTest,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt");
-res:=readSimulationResult("TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt",{exponentials1.y,derivative1.y},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.BlockModels.SourceTests.ExponentialsTest);
+{val(exponentials1.y,0.0),val(exponentials1.y,0.2),val(exponentials1.y,0.4),
+val(exponentials1.y,0.6),val(exponentials1.y,0.8),val(exponentials1.y,1.0)};
+{val(derivative1.y,0.0),val(derivative1.y,0.2),val(derivative1.y,0.4)
+,val(derivative1.y,0.6),val(derivative1.y,0.8),val(derivative1.y,1.0)};
 readFile("output.log");
 system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
 
 // SineTest
 simulate(TestModels.BlockModels.SourceTests.SineTest,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.BlockModels.SourceTests.SineTest_res.plt");
-res:=readSimulationResult("TestModels.BlockModels.SourceTests.SineTest_res.plt",{sine1.y,transferFunction1.y},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+{val(sine1.y,0.0),val(sine1.y,0.2),val(sine1.y,0.4),
+val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
+{val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4)
+,val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
 readFile("output.log");
 system("rm -rf *SineTest.* *SineTest_* output.log");
 
@@ -83,33 +46,27 @@ system("rm -rf *SineTest.* *SineTest_* output.log");
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.ConstantTest_res.plt"
 // end record
-// true
-// {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}
-// {100000000.0,100000000.0,-1000.0,0.0,0.0,0.0,0.0,0.0}
+// {1.0,1.0}
+// {100000000.0,0.0}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.ExpSineTest_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.481,-0.638,0.521,-0.265,0.0}
-// {0.0,0.0,0.0,0.117,0.036,0.03,0.064,0.0}
-// ""
-// 0
+// {0.0,0.481218754680075,-0.637466502793774,0.521909353549391,-0.264092613972747,2.29241687122886e-15}
+// {0.0,0.117859083231208,0.0368605552907086,0.0301778633811624,0.0646827787344144,-4.03481781237046e-10}
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.0,0.864,0.981,0.993,0.993,0.365,0.049,0.006}
-// {0.0,0.0,0.0,0.0,1.503,0.203,0.079,0.078,-4.06,-0.55,-0.075}
+// {0.0,0.864660351156121,0.981683477245872,0.365418275234063,0.049453188199817,0.00669254706932299}
+// {0.0,1.50377387286842,0.203516922281472,-4.05969620026944,-0.549479879120765,-0.0743616354945548}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.SineTest_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.198,0.389,0.564,0.717,0.841}
-// {0.0,0.0,0.0,0.018,0.069,0.144,0.235,0.334}
+// {0.0,0.197923169480459,0.38661690686433,0.560310827171855,0.713605204980246,0.841470984807896}
+// {0.0,0.0229169052896101,0.0739705548434215,0.146975379291093,0.235831388969287,0.334524059337073}
 // ""
 // 0
 // endResult

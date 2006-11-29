@@ -8,181 +8,116 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // BacklashTest
-simulate(TestModels.RotationalModels.SpringInertia.BacklashTest,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt",{inertia1.w,inertia1.phi},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.BacklashTest);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 readFile("output.log");
 system("rm -rf *BacklashTest.* *BacklashTest_* output.log");
 
 // Shaft
-simulate(TestModels.RotationalModels.SpringInertia.Shaft,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.Shaft_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.Shaft_res.plt",{inertia3.w,inertia3.phi},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.Shaft);
+{val(inertia3.w,0.0),val(inertia3.w,0.2),val(inertia3.w,0.4),
+val(inertia3.w,0.6),val(inertia3.w,0.8),val(inertia3.w,1.0)};
 readFile("output.log");
 system("rm -rf *Shaft.* *Shaft_* output.log");
 
 // SineAccelerate
-simulate(TestModels.RotationalModels.SpringInertia.SineAccelerate,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.SineAccelerate_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.SineAccelerate_res.plt",{inertia1.w,inertia1.phi},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.SineAccelerate);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 readFile("output.log");
 system("rm -rf *SineAccelerate.* *SineAccelerate_* output.log");
 
 // SineSpeed
-simulate(TestModels.RotationalModels.SpringInertia.SineSpeed,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.SineSpeed_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.SineSpeed_res.plt",{inertia1.w,inertia1.phi},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.SineSpeed);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 readFile("output.log");
 system("rm -rf *SineSpeed.* *SineSpeed_* output.log");
 
 // SineTorque
-simulate(TestModels.RotationalModels.SpringInertia.SineTorque,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.SineTorque_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.SineTorque_res.plt",{inertia1.w,inertia1.phi},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.SineTorque);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 readFile("output.log");
 system("rm -rf *SineTorque.* *SineTorque_* output.log");
 
 // // SineTorque2inertias
- simulate(TestModels.RotationalModels.SpringInertia.SineTorque2intertias,numberOfIntervals=5);
- echo(false);
- size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.SineTorque2intertias_res.plt");
- res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.SineTorque2intertias_res.plt",{inertia1.w, inertia2.w},size);
- x:=res[1];
- y:=res[2];
- x:=1000*x;
- y:=1000*y;
- x:=floor(x);
- y:=floor(y);
- echo(true);
- x/1000.0;
- y/1000.0;
- readFile("output.log");
- system("rm -rf *SineTorque2inertias.* *SineTorque2inertias_* output.log");
+simulate(TestModels.RotationalModels.SpringInertia.SineTorque2intertias);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
+readFile("output.log");
+system("rm -rf *SineTorque2inertias.* *SineTorque2inertias_* output.log");
 
 // // StepTorque
- simulate(TestModels.RotationalModels.SpringInertia.StepTorque,numberOfIntervals=5);
- echo(false);
- size:=readSimulationResultSize("TestModels.RotationalModels.SpringInertia.StepTorque_res.plt");
- res:=readSimulationResult("TestModels.RotationalModels.SpringInertia.StepTorque_res.plt",{inertia1.w,inertia1.phi},size);
- x:=res[1];
- y:=res[2];
- x:=1000*x;
- y:=1000*y;
- x:=floor(x);
- y:=floor(y);
- echo(true);
- x/1000.0;
- y/1000.0;
+simulate(TestModels.RotationalModels.SpringInertia.StepTorque);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
+
  readFile("output.log");
  system("rm -rf *StepTorque.* *StepTorque_* output.log");
+
 // Result:
 // true
 // true
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.109,0.287,0.287,0.11,0.0}
-// {0.0,0.0,0.0,0.007,0.048,0.11,0.151,0.159}
+// {0.0,0.109973990000538,0.287911547353002,0.287911542150761,0.109973981018241,-4.54712798857432e-09}
+// {0.0,0.00774075100225786,0.0487734874904495,0.110381456983344,0.151414190116007,0.159154939108623}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.Shaft_res.plt"
 // end record
-// true
-//  {0.0,-0.001,-0.001,-0.001,-0.003,-0.012,-0.027,-0.028}
-// {0.0,-0.001,-0.001,-0.001,-0.001,-0.002,-0.006,-0.012}
+// {0.0,-9.16533481784797e-05,-0.00227669036895144,-0.0119128909253789,-0.0269171220527591,-0.0274278393055936}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineAccelerate_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.426,0.775,0.972,0.977,0.79}
-// {0.0,0.0,0.0,0.042,0.164,0.342,0.54,0.72}
+// {0.0,0.426147745003987,0.775540998607158,0.972294265854255,0.977683430432392,0.79064751063004}
+// {0.0,0.0426393145922036,0.164853569005949,0.342611642546119,0.540927970462574,0.72077080406612}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineSpeed_res.plt"
 // end record
-// true
-//  {0.0,0.0,0.0,0.043,0.167,0.345,0.544,0.723}
-// {0.0,0.0,0.0,0.002,0.022,0.073,0.162,0.289}
+// {0.0,0.0439957847119051,0.167322192154775,0.345706550932566,0.544040033125367,0.72328751305027}
+// {0.0,0.00295285501868853,0.0229227158810824,0.0735770161514663,0.16254405176904,0.289911635557901}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineTorque_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.988,1.821,2.323,2.378,1.955}
-// {0.0,0.0,0.0,0.099,0.385,0.806,1.284,1.725}
+// {0.0,0.988626868241183,1.82180242612728,2.32371924420177,2.37839616446167,1.955887035036}
+// {0.0,0.0998075086528494,0.385037913665847,0.806309412520307,1.28451393318931,1.72563826476821}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.SineTorque2intertias_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.872,1.341,1.498,1.593,1.692}
-// {0.0,0.0,0.0,0.235,1.023,1.963,2.45,2.271}
+// {0.0,0.872779300882476,1.34116038317063,1.49816876105528,1.59297953053381,1.69286626259869}
+// {0.0,0.235099007239819,1.02350700473867,1.96390764862623,2.45108303501751,2.27121243130146}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SpringInertia.StepTorque_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.0,0.966,1.743,2.177,2.183,1.759}
-// {0.0,0.0,0.0,0.0,0.098,0.374,0.772,1.216,1.617}
+// {0.0,0.966996866798049,1.74379486518949,2.17760870424107,2.18311303497764,1.75922453722822}
+// {0.0,0.0983458540780606,0.374035884756409,0.772845326679848,1.21633372485768,1.6172728758392}
 // ""
 // 0
-
 // endResult

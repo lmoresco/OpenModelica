@@ -63,30 +63,30 @@ simulate(Alg4,numberOfIntervals=5);
 //     resultFile = "Alg1_res.plt"
 // end record
 // true
-// {2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0}
+// {2.0,2.0,2.0,2.0,2.0,2.0,2.0}
 // ""
 // 0
 // record
-//   resultFile = "Alg2_res.plt"
-// end record
-//  true
-//   {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}
-// ""
-// 0
-// record
-//   resultFile = "Alg3_res.plt"
+//     resultFile = "Alg2_res.plt"
 // end record
 // true
-// {4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0}
-// {3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0}
-// {4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0}
+// {1.0,1.0,1.0,1.0,1.0,1.0,1.0}
 // ""
 // 0
 // record
-// resultFile = "Simulation failed.
+//     resultFile = "Alg3_res.plt"
+// end record
+// true
+// {4.0,4.0,4.0,4.0,4.0,4.0,4.0}
+// {3.0,3.0,3.0,3.0,3.0,3.0,3.0}
+// {4.0,4.0,4.0,4.0,4.0,4.0,4.0}
+// ""
+// 0
+// record
+//     resultFile = "Simulation failed.
 // Internal error Inverse Algorithm needs to be solved for in   $x := 1.0 + $y;
 // . This is not implemented yet.
-//     
+// 
 // Internal error generate_zero_crossing failed
 // Internal error Generation of simulation code  failed
 // "

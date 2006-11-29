@@ -8,19 +8,11 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // IdealGear
-simulate(TestModels.RotationalModels.Gears.IdealGear,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.Gears.IdealGear_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.Gears.IdealGear_res.plt",{inertia1.w,inertia2.w},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.Gears.IdealGear);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 readFile("output.log");
 system("rm -rf *IdealGear.* *IdealGear_* output.log");
 
@@ -52,34 +44,33 @@ val(inertia2.w,6.35); //~-0.122
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGear_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.042,0.107,0.091,-0.001,-0.063}
-// {0.0,0.0,0.0,0.086,0.214,0.181,-0.002,-0.124}
+// {0.0,0.0427943227239615,0.107448457361656,0.0913665481577742,-0.000753235656744347,-0.0623505688012499}
+// {0.0,0.0863477603535503,0.214427692943435,0.181919790711873,-0.00137361403569699,-0.123726827798976}
 // ""
 // 0
 // record
-//  resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt"
+//     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt"
 // end record
-// 0.0116387079184456
-// 0.112666003986344
-// 0.0243523518416829
-// 0.224491030373696
+// 0.0116359099414562
+// 0.112663449296624
+// 0.0243553673167365
+// 0.224498794735056
 // record
-//  resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt"
+//     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt"
 // end record
-// 0.000279067343670255
-// 0.040857162400232
-// -0.0475898192263583
-// 0.000598307228607384
-// 0.0816811280686567
-// -0.0951222146727265
+// 0.000295223657914013
+// 0.0408631930321737
+// -0.0482727777461327
+// 0.000592443700814027
+// 0.0816769633614498
+// -0.094959224122748
 // record
-//  resultFile = "TestModels.RotationalModels.Gears.Gear2_res.plt"
+//     resultFile = "TestModels.RotationalModels.Gears.Gear2_res.plt"
 // end record
-// 0.240575671032579
-// 0.36425349613305
-// -0.287335358469401
-// -0.121465978402219
-// 0.182304977360087
-// -0.124384106161501
+// 0.240445767846077
+// 0.340926232366728
+// -0.288084859013551
+// -0.121565700072296
+// 0.182566636588059
+// -0.123797096259082
 // endResult

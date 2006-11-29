@@ -8,53 +8,29 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // DCMotor
-simulate(TestModels.RotationalModels.SystemTests.DCMotor,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.DCMotor_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SystemTests.DCMotor_res.plt",{inertia1.w,inertia2.w},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SystemTests.DCMotor);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 readFile("output.log");
 system("rm -rf *DCMotor.* *DCMotor_* output.log");
 
 // ElasticBearing
-simulate(TestModels.RotationalModels.SystemTests.ElasticBearing,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt",{shaft.w,load.w},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SystemTests.ElasticBearing);
+{val(shaft.w,0.0),val(shaft.w,0.2),val(shaft.w,0.4),
+val(shaft.w,0.6),val(shaft.w,0.8),val(shaft.w,1.0)};
+{val(load.w,0.0),val(load.w,0.2),val(load.w,0.4),
+val(load.w,0.6),val(load.w,0.8),val(load.w,1.0)};
 readFile("output.log");
 system("rm -rf *ElasticBearing.* *ElasticBearing_* output.log");
 
 // First
-simulate(TestModels.RotationalModels.SystemTests.First,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("TestModels.RotationalModels.SystemTests.First_res.plt");
-res:=readSimulationResult("TestModels.RotationalModels.SystemTests.First_res.plt",{inertia1.w,inertia2.w},size);
-x:=res[1];
-y:=res[2];
-x:=1000*x;
-y:=1000*y;
-x:=floor(x);
-y:=floor(y);
-echo(true);
-x/1000.0;
-y/1000.0;
+simulate(TestModels.RotationalModels.SystemTests.First);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 readFile("output.log");
 system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // Result:
@@ -63,26 +39,22 @@ system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // record
 //     resultFile = "TestModels.RotationalModels.SystemTests.DCMotor_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.017,0.058,0.105,0.145,0.165}
-// {0.0,-0.001,-0.001,-0.199,-0.389,-0.561,-0.707,-0.818}
+// {0.0,0.0172802471082777,0.0580285584530562,0.105838838827575,0.145795006709801,0.165751218549117}
+// {0.0,-0.198608088051245,-0.388531194219349,-0.560628150059617,-0.706181920280979,-0.817837474181708}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,0.0,0.275,0.39,0.57,1.23,1.597}
-// {0.0,0.0,0.0,0.0,0.007,0.072,0.181,0.31,0.504}
+// {0.0,0.275458211099252,0.39038650022866,0.570803255173369,1.23031836533072,1.5979092642369}
+// {0.0,0.00747289287466059,0.0725773882972059,0.181752383000524,0.310181283620775,0.504125444145786}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt"
 // end record
-// true
-// {0.0,0.0,0.0,-0.157,-0.538,-0.694,-0.904,-1.12}
-// {0.0,0.0,0.0,-0.016,-0.054,-0.07,-0.091,-0.112}
+// {0.0,-0.155036568964036,-0.536294510715696,-0.692713902794465,-0.900903384015635,-1.12249295804833}
+// {0.0,-0.0155036567871248,-0.0536294512735585,-0.0692713899253918,-0.0900903388083512,-0.112249295514964}
 // ""
 // 0
-
 // endResult

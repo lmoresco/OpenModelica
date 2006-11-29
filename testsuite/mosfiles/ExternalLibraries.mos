@@ -33,10 +33,10 @@ system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExt
 // record
 //     resultFile = "ExternalLibraries1_res.plt"
 // end record
-// 8
+// 7
 // true
-// {1.0,0.99,0.99,0.6,0.4,0.28,0.21,0.16}
-// {2.0,1.99,1.99,1.47,1.24,1.12,1.06,1.03}
+// {1.0,0.99,0.99,0.53,0.33,0.22,0.16}
+//  {2.0,1.99,1.99,1.4,1.17,1.08,1.03}
 // ""
 // ""
 // 0
