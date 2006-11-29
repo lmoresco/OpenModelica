@@ -8,7 +8,7 @@
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/OpenModelica}"/>
 <mapAttribute key="org.eclipse.debug.core.environmentVariables">
 <mapEntry key="SystemRoot" value="${env_var:SystemRoot}"/>
-<mapEntry key="OMDEV" value="/c/petar/OMDev/"/>
+<mapEntry key="OMDEV" value="/c/OMDev/"/>
 <mapEntry key="TMP" value="${env_var:TMP}"/>
 <mapEntry key="CLASSPATH" value="${env_var:OMDEV}/bin/antlr/antlr.jar"/>
 <mapEntry key="COMSPEC" value="${env_var:COMSPEC}"/>
