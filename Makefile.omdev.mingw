@@ -81,6 +81,8 @@ omc:
 test:
 	(cd testsuite; $(MAKE) -f Makefile)
 	
+testmos:
+	(cd testsuite/mosfiles; $(MAKE) -f Makefile)	
 
 mosh:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
