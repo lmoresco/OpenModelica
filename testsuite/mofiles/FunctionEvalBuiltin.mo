@@ -8,16 +8,16 @@
 // doesn't seem to get called.
 
 model FunctionEvalBuiltin
-  constant Real pi1=asin(1.0);
+  constant Real pi1=arcsin(1.0);
   constant Real pi2=sin(1.0);
-  constant Real pi=2*asin(1.0);
+  constant Real pi=2*arcsin(1.0);
   constant Real r[:]= 
     {
      sin(pi/3),
      cos(pi/3),
      tan(pi/3),
-     acos(1.0),
-     atan(1.0),
+     arccos(1.0),
+     arctan(1.0),
      exp(1.0),
      div(15.0,7.0),
      rem(15.0,7.0),

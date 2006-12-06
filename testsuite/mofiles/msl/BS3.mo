@@ -1329,12 +1329,12 @@ end BS3;
 // parameter Real expSine1.offset[1] = 0 "Offsets of output signals";
 // parameter Real expSine1.startTime[1] = 0 "Output = offset for time < startTime";
 // constant Real expSine1.pi = 3.14159265358979;
-// parameter Real expSine1.p_amplitude[1] = expSine1.amplitude[1] * 1.0;
-// parameter Real expSine1.p_freqHz[1] = expSine1.freqHz[1] * 1.0;
-// parameter Real expSine1.p_phase[1] = expSine1.phase[1] * 1.0;
-// parameter Real expSine1.p_damping[1] = expSine1.damping[1] * 1.0;
-// parameter Real expSine1.p_offset[1] = expSine1.offset[1] * 1.0;
-// parameter Real expSine1.p_startTime[1] = expSine1.startTime[1] * 1.0;
+// parameter Real expSine1.p_amplitude[1] = expSine1.amplitude[1];
+// parameter Real expSine1.p_freqHz[1] = expSine1.freqHz[1];
+// parameter Real expSine1.p_phase[1] = expSine1.phase[1];
+// parameter Real expSine1.p_damping[1] = expSine1.damping[1];
+// parameter Real expSine1.p_offset[1] = expSine1.offset[1];
+// parameter Real expSine1.p_startTime[1] = expSine1.startTime[1];
 // equation
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

@@ -1216,14 +1216,14 @@ end BC2;
 // parameter Real derivative1.k[1] = 1 "Gains";
 // parameter Real derivative1.T[1](min = 1e-60) = 0.01 "Time constants (T>0 required; T=0 is ideal derivative block)";
 // output Real derivative1.x[1] "State of block";
-// parameter Real derivative1.p_k[1] = derivative1.k[1] * 1.0;
-// parameter Real derivative1.p_T[1] = derivative1.T[1] * 1.0;
+// parameter Real derivative1.p_k[1] = derivative1.k[1];
+// parameter Real derivative1.p_T[1] = derivative1.T[1];
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   derivative1.u[1] = derivative1.inPort.signal[1];
-//   der(derivative1.x[1]) = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then (derivative1.u[1] - derivative1.x[1]) * 1.0 / derivative1.p_T[1] else 0.0;
-//   derivative1.y[1] = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then derivative1.p_k[1] * (derivative1.u[1] - derivative1.x[1]) * 1.0 / derivative1.p_T[1] else 0.0;
+//   der(derivative1.x[1]) = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then (derivative1.u[1] - derivative1.x[1]) / derivative1.p_T[1] else 0.0;
+//   derivative1.y[1] = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then (derivative1.p_k[1] * (derivative1.u[1] - derivative1.x[1])) / derivative1.p_T[1] else 0.0;
 //   derivative1.y[1] = derivative1.outPort.signal[1];
 // assert(constant1.outPort.n == derivative1.inPort.n,"automatically generated from connect");
 //   constant1.outPort.signal[1] = derivative1.inPort.signal[1];

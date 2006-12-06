@@ -47,7 +47,7 @@ end Algorithm1;
 // algorithm
 //   i := 0;
 //   a := y - 1.0;
-//   while 0.1 * Real(i) < y loop
+//   while Real(i) / 10.0 < y loop
 //     a := 0.5 + a;
 //     i := 1 + i;
 //   end while;

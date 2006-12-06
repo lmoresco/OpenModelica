@@ -115,8 +115,8 @@ system("rm -f InitTest.cpp InitTest.exe InitTest.makefile InitTest.log InitTest.
 //     resultFile = "InitTest_res.plt"
 // end record
 // 0.0136106038548291
-// 0.0157465973790068
-// 0.0142514505532914
+// 0.0157465974954232
+//  0.014251450535333
 // 0
 // 0
 // endResult
