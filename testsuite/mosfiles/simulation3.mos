@@ -65,6 +65,16 @@ system("rm -f InitTest_*");
 system("rm -f InitTest.cpp InitTest.exe InitTest.makefile InitTest.log InitTest.libs");
 
 
+loadFile("FuncCross.mo");
+simulate(FuncCrossTest);
+val(r[1],0.0);
+val(r[2],0.0);
+val(r[3],0.0);
+system("rm -f FuncCrossTest_*");
+system("rm -f FuncCrossTest.cpp FuncCrossTest.exe FuncCrossTest.makefile FuncCrossTest.log FuncCrossTest.libs");
+
+
+
 // Result:
 // true
 // true
@@ -117,6 +127,15 @@ system("rm -f InitTest.cpp InitTest.exe InitTest.makefile InitTest.log InitTest.
 // 0.0136106038548291
 // 0.0157465974954232
 //  0.014251450535333
+// 0
+// 0
+// true
+// record
+// resultFile = "FuncCrossTest_res.plt"
+// end record
+// -1.0
+// 5.0
+// -1.0
 // 0
 // 0
 // endResult
