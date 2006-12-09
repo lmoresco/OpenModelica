@@ -73,7 +73,13 @@ val(r[3],0.0);
 system("rm -f FuncCrossTest_*");
 system("rm -f FuncCrossTest.cpp FuncCrossTest.exe FuncCrossTest.makefile FuncCrossTest.log FuncCrossTest.libs");
 
-
+loadFile("MatrixTest.mo");
+simulate(MatrixTest);
+val(F[1],0.0);
+val(F[2],0.0);
+val(F[3],0.0);
+system("rm -f MatrixTest_*");
+system("rm -f MatrixTest.cpp MatrixTest.exe MatrixTest.makefile MatrixTest.log MatrixTest.libs");
 
 // Result:
 // true
@@ -92,7 +98,7 @@ system("rm -f FuncCrossTest.cpp FuncCrossTest.exe FuncCrossTest.makefile FuncCro
 // record
 //     resultFile = "BearingFrictionTest_res.plt"
 // end record
-// {0.0,0.121904300845795,0.228947995437359,0.322942642820663,0.405478967632691,0.477953780166423,0.541593615178424,0.597475488940045,0.646545125932748,0.6896329636986,0.72746820664805}
+// {0.0,0.121904300845895,0.228947995437448,0.322942642820846,0.405478967632953,0.477953780166753,0.541593615178813,0.597475488940487,0.646545125933236,0.689632963699129,0.727468206648614}
 // 0
 // 0
 // true
@@ -106,8 +112,8 @@ system("rm -f FuncCrossTest.cpp FuncCrossTest.exe FuncCrossTest.makefile FuncCro
 // 0.0
 // -1.0
 // -1.0
-// 0.123386961621129
-// 0.422806193634425
+// 0.123386962422043
+// 0.422806193645928
 // 0
 // 0
 // true
@@ -124,18 +130,27 @@ system("rm -f FuncCrossTest.cpp FuncCrossTest.exe FuncCrossTest.makefile FuncCro
 // record
 //     resultFile = "InitTest_res.plt"
 // end record
-// 0.0136106038548291
-// 0.0157465974954232
-//  0.014251450535333
+// 0.0150003433144835
+// 0.0157465994180367
+// 0.0142515209132389
 // 0
 // 0
 // true
 // record
-// resultFile = "FuncCrossTest_res.plt"
+//     resultFile = "FuncCrossTest_res.plt"
 // end record
 // -1.0
 // 5.0
 // -1.0
+// 0
+// 0
+// true
+// record
+//     resultFile = "MatrixTest_res.plt"
+// end record
+// 100.0
+// 132.0
+// 70.0
 // 0
 // 0
 // endResult

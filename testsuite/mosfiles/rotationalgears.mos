@@ -21,6 +21,8 @@ val(inertia1.w,0.1);
 val(inertia1.w,0.5);
 val(inertia2.w,0.1);
 val(inertia2.w,0.5);
+system("rm -rf *IdealGearBrake.* *IdealGearBrake_* output.log");
+
 
 simulate(TestModels.RotationalModels.Gears.Gear);
 val(inertia1.w,0.1);
@@ -29,6 +31,7 @@ val(inertia1.w,0.9);
 val(inertia2.w,0.1);
 val(inertia2.w,0.4);
 val(inertia2.w,0.9);
+system("rm -rf *Gears.Gear.* *Gears.Gear_* output.log");
 
 simulate(TestModels.RotationalModels.Gears.Gear2,stopTime=10.0);
 val(inertia1.w,0.58); // ~0.241
@@ -37,6 +40,7 @@ val(inertia1.w,6.15); // ~-0.285
 val(inertia2.w,1.0); // ~-0.120
 val(inertia2.w,3.5); // ~0.182
 val(inertia2.w,6.35); //~-0.122
+system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 
 // Result:
 // true
@@ -44,33 +48,36 @@ val(inertia2.w,6.35); //~-0.122
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGear_res.plt"
 // end record
-// {0.0,0.0427943227239615,0.107448457361656,0.0913665481577742,-0.000753235656744347,-0.0623505688012499}
-// {0.0,0.0863477603535503,0.214427692943435,0.181919790711873,-0.00137361403569699,-0.123726827798976}
+// {0.0,0.0427943227239606,0.107448457361639,0.0913665481578635,-0.000753235656652793,-0.0623505688027685}
+// {0.0,0.0863477603535509,0.214427692943458,0.18191979071231,-0.00137361403541358,-0.123726827802009}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt"
 // end record
-// 0.0116359099414562
-// 0.112663449296624
-// 0.0243553673167365
-// 0.224498794735056
+// 0.0116359099414537
+// 0.112663449296632
+// 0.024355367316732
+// 0.224498794735025
+// 0
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt"
 // end record
-// 0.000295223657914013
-// 0.0408631930321737
-// -0.0482727777461327
-// 0.000592443700814027
-// 0.0816769633614498
-// -0.094959224122748
+// 0.000295223973989289
+// 0.0408631931404
+// -0.0482728236795762
+// 0.000592443931038147
+// 0.0816769639697272
+// -0.0949592703818133
+// 0
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.Gear2_res.plt"
 // end record
-// 0.240445767846077
-// 0.340926232366728
-// -0.288084859013551
-// -0.121565700072296
-// 0.182566636588059
-// -0.123797096259082
+// 0.24044576108214
+// 0.34099701543246
+// -0.28808492544483
+// -0.121565697427805
+// 0.182566558591571
+// -0.123797227715
+// 0
 // endResult

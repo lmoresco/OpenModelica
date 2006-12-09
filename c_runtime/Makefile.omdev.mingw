@@ -14,11 +14,9 @@ builddir_inc=$(top_builddir)/build/include
 CC = gcc
 FC = g77
 AR = ar -ru 
-#CFLAGS = -O1 -Wall -ansi -pedantic -I../mosh/src/ $(EXTRA_CFLAGS)
-CFLAGS = -g -Wall -ansi -pedantic -I../mosh/src/ $(EXTRA_CFLAGS)
+CFLAGS = -O1 -Wall -ansi -pedantic -I../mosh/src/ $(EXTRA_CFLAGS)
 CPPFLAGS = $(CFLAGS)
-#FFLAGS  = -O
-FFLAGS = -g
+FFLAGS  = -O
 # P.A: before, g77 had -O3 or -O2 but that caused a bug in DDASRT, giving infinite loop.
 OSTYP = $(OSTYPE)
 OS_MSYS=msys
@@ -58,7 +56,8 @@ solver_dasrt.o solver_euler.o simulation_result.o ../mosh/src/options.o dgesv_au
 
 HFILES = blaswrap.h f2c.h integer_array.h memory_pool.h modelica_string.h \
 	real_array.h string_array.h boolean_array.h index_spec.h matrix.h \
-	modelica.h read_write.h simulation_runtime.h simulation_events.h utility.h
+	modelica.h read_write.h simulation_runtime.h simulation_events.h utility.h \
+	simulation_init.h simulation_input.h solver_dasrt.h solver_euler.h simulation_result.h
 
 LIBS = libc_runtime.a libsim.a 
 

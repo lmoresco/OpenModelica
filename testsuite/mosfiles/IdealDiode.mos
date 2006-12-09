@@ -26,7 +26,7 @@ system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ide
 // true
 // 0
 // 566
-// 862
+// 853
 // ""
 // 0
 // endResult
