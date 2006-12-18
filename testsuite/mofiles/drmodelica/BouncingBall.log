@@ -1,3 +1,0 @@
-mingw32-make[3]: Entering directory `c:/Modelica/OpenModelicaSources/svns/testsuite/mofiles/drmodelica'
-g++ -o BouncingBall.exe BouncingBall.cpp -L"C:\Modelica\OpenModelicaSources\svns\build/lib/" -I. -I"C:\Modelica\OpenModelicaSources\svns\build/include/"  -lsim -lg2c -lc_runtime 
-mingw32-make[3]: Leaving directory `c:/Modelica/OpenModelicaSources/svns/testsuite/mofiles/drmodelica'
