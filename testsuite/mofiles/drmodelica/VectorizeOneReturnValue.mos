@@ -1,0 +1,34 @@
+// name:     VectorizeOneReturnValue
+// keywords: array
+// status:   incorrect
+// 
+
+loadFile("VectorizeOneReturnValue.mo");
+simulate(OneReturnValue,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+size := readSimulationResultSize("OneReturnValue_res.plt");
+res:=readSimulationResult("OneReturnValue_res.plt",{s[1],s[2,1]},size); 
+s1 := res[1,1];
+s21 := res[2,1];
+s1:=1000*s1;
+s21:=1000*s21;
+s1:=floor(s1);
+s21:=floor(s21);
+
+echo(true); // turns on output
+s1/1000.0; // rounded value to 3 digits
+s21/1000.0;
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf OneReturnValue_* OneReturnValue.exe OneReturnValue.cpp OneReturnValue.makefile OneReturnValue.libs OneReturnValue.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "OneReturnValue_res.plt"
+// end record
+// true
+// 0.841
+// 0.141
+// ""
+// 0
+// endResult
