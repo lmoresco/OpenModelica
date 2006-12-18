@@ -1,0 +1,21 @@
+// name:     AssertTest2
+// keywords: assert
+// status:   correct
+// 
+// The correct status should be incorrect but it does not work when the simulation dont fail.
+// ERROR!!! Does not stop the simulation when the assertion is violated and does not output the message string.
+// But the test should fail when it implemented, then modify this mos file.
+// Bugg has been reported.
+
+loadFile("AssertTest2.mo");
+simulate(Test2,startTime = 0, stopTime=10); // 2 intervals == 3 values
+getErrorString(); // simulation failed, check error string.
+system("rm -rf Test2_* Test2.exe Test2.cpp Test2.makefile Test2.libs Test2.log output.log"); // remove tmp files.
+// Result:
+// true
+// record
+//     resultFile = "Test2_res.plt"
+// end record
+// ""
+// 0
+// endResult

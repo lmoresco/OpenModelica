@@ -1,0 +1,29 @@
+// name:     TwoRateSampler
+// keywords: <insert keywords here>
+// status:   incorrect
+// 
+//  <insert description here>
+//
+loadFile("TwoRateSampler.mo");
+simulate(TwoRateSampler,startTime=0.0, stopTime=100.0,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+size:=readSimulationResultSize("TwoRateSampler_res.plt");
+res:=readSimulationResult("TwoRateSampler_res.plt",{x,y},size);
+x:=res[1,105];//troligen inte rätt, val(res[1],21);
+x:=1000*x;
+x:=floor(x);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSampler.makefile TwoRateSampler.libs TwoRateSampler.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "TwoRateSampler_res.plt"
+// end record
+// true
+// 0.912
+// ""
+// 0
+// endResult

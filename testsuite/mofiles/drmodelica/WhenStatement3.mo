@@ -1,0 +1,48 @@
+// name:     WhenStatement3
+// keywords: when
+// status:   incorrect
+// 
+//  algorithm sections outside functions not yet implemented
+// 
+
+class WhenStat3
+  Real x(start = 1);
+  Real y1;
+  Real y2;
+  Real y3;
+  
+algorithm
+  when x > 2 then
+    y1 := sin(x);
+  end when;
+  
+equation 
+  y2 = sin(y1);
+  
+algorithm
+  when x > 2 then
+    y3 := 2*x + pre(y1) + y2;  
+  end when;  
+  
+equation
+  der(x) = 2*x; 
+  
+end WhenStat3;
+
+
+// fclass WhenStat3
+// Real x(start = 1.0);
+// Real y1;
+// Real y2;
+// Real y3;
+// equation
+//  der(x) = 2.0 * x;
+//  y2 = sin(y1);
+// algorithm
+//  when x > 2.0 do
+//   y1 := sin(x);
+//  end when;
+//  when x > 2.0 do
+//   y3 := 2.0 * x + pre(y1) + y2;
+//  end when;
+// end WhenStat3;

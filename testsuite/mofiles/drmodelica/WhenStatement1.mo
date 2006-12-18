@@ -1,0 +1,35 @@
+// name:     WhenStatement1
+// keywords: when
+// status:   incorrect
+// 
+// algorithm sections outside functions not yet implemented
+// 
+
+class WhenStat
+  Real x(start=1);
+  Real y1;
+  parameter Real y2 = 5;
+  Real y3;
+algorithm
+  when x > 2 then
+    y1 := sin(x);
+    y3 := 2*x + pre(y1) + y2;
+  end when;
+equation
+  der(x) = 2*x;  
+end WhenStat;
+
+
+// fclass WhenStat
+// Real x(start = 1.0);
+// Real y1;
+// parameter Real y2 = 5;
+// Real y3;
+// equation
+//  der(x) = 2.0 * x;
+// algorithm
+//  when x > 2.0 do
+//  y1 := sin(x);
+//  y3 := 2.0 * x + pre(y1) + y2;
+//  end when;
+// end WhenStat;

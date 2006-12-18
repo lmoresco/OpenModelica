@@ -1,0 +1,41 @@
+// name:     Epidemics1
+// keywords: der terminate
+// status:   incorrect
+// 
+//  Too few equations, underdetermined system. The model has 3 variables and 0 equations
+//  because of terminate
+
+loadFile("Epidemics1.mo");
+simulate(Epidemics1,startTime=0.0, stopTime=60.0,numberOfIntervals=500); // 2 intervals == 3 values
+//getErrorString(); // simulation failed, check error string.
+echo(false); // turns of output
+size:=readSimulationResultSize("Epidemics1_res.plt");
+res:=readSimulationResult("Epidemics1_res.plt",{Indv,S,R},size);
+x:=res[1,1];
+y:=res[2,1];
+z:=res[3,1];
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y/1000.0;
+z/1000.0;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf Epidemics1_* Epidemics1.exe Epidemics1.cpp Epidemics1.makefile Epidemics1.libs Epidemics1.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "Epidemics1_res.plt"
+// end record
+// true
+// 0.005
+// 0.995
+// 0.0
+// ""
+// 0
+// endResult
