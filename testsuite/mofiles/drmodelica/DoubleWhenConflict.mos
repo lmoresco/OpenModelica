@@ -7,37 +7,10 @@ loadFile("DoubleWhenConflict.mo");
 simulate(DoubleWhenConflict,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 // Result:
-// differentiate_equation_time
-// WHEN_EQUATION: true
-// 
-// ===================
-// -differentiate_equation_time faile
-// -differentiate_eqns failed
-// eqns =2, 1
-// no states found in equations:close =  false
-// close =  true
-// differentiated equations:Variables :1
-// -reduce_index_dummy_der failed
-// differentiate_equation_time
-// WHEN_EQUATION: true
-// 
-// ===================
-// -differentiate_equation_time faile
-// -differentiate_eqns failed
-// eqns =2, 1
-// no states found in equations:close =  false
-// close =  true
-// differentiated equations:Variables :1
-// -reduce_index_dummy_der failed
+// lower_statement_input_outputs finished yet
 // true
 // record
-//     resultFile = "Simulation failed.
-// Model is structurally singular, error found sorting equations close := truewhen clause no:1
-// ;
-// close := falsewhen clause no:0
-// ;
-//  for variables close(1), 
+//    resultFile = "Simulation failed.
 // "
 // end record
 // ""
-// 
