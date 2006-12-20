@@ -62,10 +62,6 @@ debug:	.testvariables .depend  $(PROGD) $(SRCRDB) dinstall
 
 release: .testvariables .depend $(PROG) install
 
-copy_external:
-	cp ExternalRMLDefines.h omc_release/.
-	cp ExternalRMLDefines.h omc_debug/.
-
 $(SRCRDB): %.rdb : omc_debug/%.rdb 
 	cp $< $@
 
