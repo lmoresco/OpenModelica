@@ -124,6 +124,6 @@
 //   comp1.p.v = comp2.p.v;
 //   comp2.p.v = R3.p.v;
 //   comp1.n.i = 0.0;
-//   R3.n.i = 0.0;
 //   comp2.n.i = 0.0;
+//   R3.n.i = 0.0;
 // end RefinedSimpleCircuit;
