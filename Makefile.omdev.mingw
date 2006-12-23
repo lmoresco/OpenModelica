@@ -79,10 +79,10 @@ omc:
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2311.dll $(builddir_bin)/)
 	
 test:
-	(cd testsuite; $(MAKE) -f Makefile)
+	(cd testsuite; time $(MAKE) -f Makefile)
 	
 testmos:
-	(cd testsuite/mosfiles; $(MAKE) -f Makefile)	
+	(cd testsuite/mosfiles; time $(MAKE) -f Makefile)	
 
 mosh:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
