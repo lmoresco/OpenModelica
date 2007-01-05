@@ -24,7 +24,7 @@
  
 void* initMyTable(const char* fileName, const char* tableName) 
 {
-	float f;
+	double f;
 	int r,c,foundTable=0;
 	int dim1,dim2,i;
 	
@@ -63,7 +63,7 @@ void* initMyTable(const char* fileName, const char* tableName)
 			if(!table->array) { printf("Error allocating array in myTable\n"); exit(-2); }
 			for (r=0,i=0; r < dim1; r++) {
 				for (c = 0; c < dim2; c++) {
-				if (fscanf(file,"%e",&f) != 1) {printf("error reading double value near: %s\n",buf); exit(-2);}
+				if (fscanf(file,"%le",&f) != 1) {printf("error reading double value near: %s\n",buf); exit(-2);}
 				table->array[i++]=f;
 				}
 			}
