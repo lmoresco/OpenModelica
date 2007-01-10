@@ -3,7 +3,7 @@ How to compile on Linux or Cygwin
 
 You need: 
 	cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
-	antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.6)
+	antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
 	rml (http://www.ida.liu.se/~pelab/rml/)
 	rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
 	mico   (http://www.mico.org - tested on 2.3.11 and 2.3.12)
@@ -15,7 +15,7 @@ NOTE:
  We assume you took the source from Subversion in a subdirectory called "trunk".
  If you used some other name, replace "trunk" below with your directory.
 
-1. Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.2
+1. Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
    Set CLASSPATH for antlr, e.g. $ANTLRHOME/antlr.jar
    Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
    If you plan to use mico corba with OMC you need to:
@@ -62,16 +62,17 @@ trunk/build/bin/OMShell -noserv
 ( The -noserv argument will prevent mosh from starting its own omc in the background )
 
 If you want to change the port number of the socket connection you
-will have to do it manually in mosh.cpp and Compiler/Main.rml.
+will have to do it manually in mosh.cpp and Compiler/Main.mo.
 
-Plotting on Linux
-=================
+Plotting on Cygwin
+==================
 To be able to plot in Linux you will have to replace:
 $(OPENMODELICAHOME)/bin/doPlot
 with
-$(OPENMODELICAHOME)/bin/doPlot.Linux
+$(OPENMODELICAHOME)/bin/doPlot.Cygwin
 You can achieve this using:
-> cp $(OPENMODELICAHOME)/bin/doPlot.Linux $(OPENMODELICAHOME)/bin/doPlot 
+> cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot 
+> chmod +x $(OPENMODELICAHOME)/bin/doPlot
 
 Example Session
 ===============
@@ -140,4 +141,4 @@ GENERAL NOTES:
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first. 
   
-Last updated 2006-09-06
+Last updated 2007-01-10
