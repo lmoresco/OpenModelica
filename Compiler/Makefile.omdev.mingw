@@ -46,7 +46,7 @@ include Makefile.common.omdev.mingw
 PROG = omc
 PROGD = omcd
 
-SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Linux
+SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin
 DOC_FILES = omc_helptext.txt omc_interactive_api.txt
 
 SUBDIRS	= runtime absyn_builder modpar
