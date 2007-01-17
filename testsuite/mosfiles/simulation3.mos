@@ -112,8 +112,8 @@ system("rm -f MatrixTest.cpp MatrixTest.exe MatrixTest.makefile MatrixTest.log M
 // 0.0
 // -1.0
 // -1.0
-// 0.123386962422043
-// 0.422806193645928
+// 0.123382009008133
+// 0.422806004050189
 // 0
 // 0
 // true

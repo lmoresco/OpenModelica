@@ -55,10 +55,10 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt"
 // end record
-// 0.0116359099414537
-// 0.112663449296632
-// 0.024355367316732
-// 0.224498794735025
+// 0.0116359099426351
+// 0.112663449362851
+// 0.0243553673161819
+// 0.224498794472998
 // 0
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt"
@@ -73,11 +73,11 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // record
 //     resultFile = "TestModels.RotationalModels.Gears.Gear2_res.plt"
 // end record
-// 0.24044576108214
-// 0.34099701543246
-// -0.28808492544483
-// -0.121565697427805
-// 0.182566558591571
-// -0.123797227715
+// 0.240445761130818
+// 0.345765388181281
+// -0.288084940002769
+// -0.121565697753951
+// 0.182566558197257
+// -0.123797204810796
 // 0
 // endResult

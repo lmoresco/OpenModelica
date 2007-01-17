@@ -44,7 +44,7 @@ system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // ""
 // 0
 // record
-//    resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt"
+//     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt"
 // end record
 // {0.0,0.275458211099524,0.390386500228883,0.57080325517209,1.23031836533318,1.59790926424348}
 // {0.0,0.00747289287464818,0.0725773882971974,0.181752383000606,0.31018128362063,0.504125444145393}
@@ -53,8 +53,8 @@ system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // record
 //     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt"
 // end record
-// {0.0,-0.155036580716946,-0.536294484693675,-0.692713913564955,-0.900903399000729,-1.12249291286581}
-// {0.0,-0.0155036578129401,-0.0536294488045916,-0.069271391060793,-0.0900903403124303,-0.112249290885978}
+// {0.0,-0.155036629426929,-0.536294442084376,-0.692713933029096,-0.900903439833659,-1.12249279960953}
+// {0.0,-0.0155036632709836,-0.053629443710101,-0.0692713940088415,-0.0900903435294013,-0.112249280371754}
 // ""
 // 0
 // endResult
