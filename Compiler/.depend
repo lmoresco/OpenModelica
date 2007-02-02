@@ -18,7 +18,7 @@ Error.o: Error.mo Absyn.sig Util.sig ErrorExt.sig Print.sig
 Exp.o: Exp.mo Graphviz.sig Absyn.sig Util.sig RTOpts.sig Print.sig Static.sig Error.sig ModUtil.sig Dump.sig Debug.sig Derive.sig Env.sig 
 SCode.o: SCode.mo Absyn.sig Util.sig Print.sig Error.sig ModUtil.sig Debug.sig Dump.sig 
 Graphviz.o: Graphviz.mo 
-Inst.o: Inst.mo Types.sig SCode.sig Prefix.sig Mod.sig Exp.sig Env.sig Connect.sig DAE.sig Absyn.sig ClassInf.sig Values.sig Util.sig Static.sig System.sig Interactive.sig Lookup.sig Error.sig ErrorExt.sig Print.sig Debug.sig Ceval.sig Algorithm.sig Builtin.sig Dump.sig 
+Inst.o: Inst.mo Types.sig SCode.sig Prefix.sig Mod.sig Exp.sig Env.sig Connect.sig DAE.sig Absyn.sig ClassInf.sig VarTransform.sig Util.sig Values.sig Static.sig System.sig ModUtil.sig Print.sig Interactive.sig Error.sig ErrorExt.sig Debug.sig Dump.sig Ceval.sig Algorithm.sig Builtin.sig Lookup.sig 
 Interactive.o: Interactive.mo Values.sig Types.sig SCode.sig Settings.sig Env.sig DAE.sig Absyn.sig Util.sig Static.sig Prefix.sig Print.sig System.sig ModUtil.sig Lookup.sig Mod.sig Parser.sig Exp.sig Error.sig Debug.sig Dump.sig Connect.sig ClassLoader.sig Ceval.sig ClassInf.sig Constants.sig Inst.sig 
 Lookup.o: Lookup.mo Types.sig SCode.sig Exp.sig Env.sig ClassInf.sig Absyn.sig Static.sig ModUtil.sig Prefix.sig Inst.sig Debug.sig Error.sig Mod.sig Builtin.sig Connect.sig 
 Main.o: Main.mo Util.sig Types.sig TaskGraph.sig TaskGraphExt.sig Socket.sig SimCodegen.sig System.sig SCode.sig RTOpts.sig Parser.sig Print.sig Settings.sig Inst.sig Error.sig ErrorExt.sig Interactive.sig DumpGraphviz.sig Debug.sig Dump.sig DAE.sig Ceval.sig Absyn.sig Corba.sig DAELow.sig Env.sig 
@@ -31,4 +31,4 @@ Types.o: Types.mo Values.sig SCode.sig Exp.sig Absyn.sig ClassInf.sig Util.sig S
 TaskGraph.o: TaskGraph.mo DAELow.sig Exp.sig VarTransform.sig Util.sig Values.sig SimCodegen.sig Absyn.sig DAE.sig TaskGraphExt.sig 
 Util.o: Util.mo System.sig Debug.sig Print.sig 
 Values.o: Values.mo Exp.sig Absyn.sig Util.sig Print.sig System.sig Dump.sig Error.sig 
-VarTransform.o: VarTransform.mo Exp.sig DAELow.sig Util.sig System.sig Absyn.sig Algorithm.sig Debug.sig 
+VarTransform.o: VarTransform.mo Exp.sig DAELow.sig DAE.sig Util.sig System.sig Types.sig Absyn.sig Algorithm.sig Debug.sig 

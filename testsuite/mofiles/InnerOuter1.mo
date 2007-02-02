@@ -16,5 +16,7 @@ class B
 end B;
 
 // fclass B
-// Real TO = 100;
+// Real T0;
+// equation
+// T0 = 100.0;
 // end B;
