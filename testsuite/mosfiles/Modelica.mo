@@ -1983,7 +1983,7 @@ package Modelica "Modelica Standard Library"
         parameter Integer na=size(A, 1);
         Integer j=1;
         Integer k=0;
-        Boolean break=false;
+        Boolean breakme=false;
         Real Anorm;
         Real Tscaled=1;
         Real Atransf[na,na];
@@ -2011,10 +2011,10 @@ package Modelica "Modelica Standard Library"
         end while;
         M:=identity(na);
         D:=M;
-        while (j < nmax and not break) loop
+        while (j < nmax and not breakme) loop
                   M:=(Atransf*M*Tscaled)/j;
           if columnNorm(D + M - D) == 0 then 
-                    break:=true;
+                    breakme:=true;
 
           else           D:=M + D;
           j:=j + 1;
@@ -2043,7 +2043,7 @@ package Modelica "Modelica Standard Library"
         parameter Integer na=size(A, 1);
         Integer j=2;
         Integer k=0;
-        Boolean break=false;
+        Boolean breakme=false;
         Real Anorm;
         Real Tscaled=1;
         Real Atransf[na,na];
@@ -2141,10 +2141,10 @@ package Modelica "Modelica Standard Library"
         end while;
         M:=identity(na)*Tscaled;
         Psi:=M;
-        while (j < nmax and not break) loop
+        while (j < nmax and not breakme) loop
                   M:=(Atransf*M*Tscaled)/j;
           if norm(Psi + M - Psi, 1) == 0 then 
-                    break:=true;
+                    breakme:=true;
 
           else           Psi:=M + Psi;
           j:=j + 1;
@@ -2176,7 +2176,7 @@ package Modelica "Modelica Standard Library"
         parameter Integer na=size(A, 1);
         parameter Integer nb=size(B, 2);
         Integer j=1;
-        Boolean break=false;
+        Boolean breakme=false;
         Real F[na + 2*nb,na + 2*nb];
         annotation(Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}})),Diagram(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}})),Documentation(info="<HTML>
  <p>
