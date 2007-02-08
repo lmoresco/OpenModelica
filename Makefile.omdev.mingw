@@ -60,7 +60,7 @@ omcd:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw debug)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
 	(cp -p doc/*.pdf $(builddir_doc)/)
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
@@ -71,7 +71,7 @@ omc:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw release)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
 	(cp doc/*.pdf $(builddir_doc)/)
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory

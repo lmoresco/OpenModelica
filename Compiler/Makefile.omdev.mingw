@@ -58,19 +58,15 @@ SUBDIRS	= runtime absyn_builder modpar
 
 all : .testvariables .depend release $(ALLMO)
 
-debug:	.testvariables .depend  $(PROGD) $(SRCRDB) dinstall
+debug:	.testvariables .depend  $(PROGD) dinstall
 
 release: .testvariables .depend $(PROG) install
-
-$(SRCRDB): %.rdb : omc_debug/%.rdb 
-	cp $< $@
 
 $(PROG): omc_release
 	cp omc_release/$(PROG)$(EXEEXT) $(builddir_bin)/
 
 $(PROGD): omc_debug
 	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
-	cp omc_debug/*.rdb $(builddir_bin)/
 
 install_doc:
 	for x in $(DOC_FILES); do \
@@ -94,8 +90,7 @@ install: install_doc install_scripts
 		cp doc/$$x $(builddir_bin)/; \
 	done
 
-dinstall: install_doc install_scripts $(SRCRDB)
-	cp *.rdb $(builddir_bin)/
+dinstall: install_doc install_scripts
 	echo Copying $(PROGD)$(EXEEXT) into $(builddir_bin)
 	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
 	echo Copying needed helpfiles....
