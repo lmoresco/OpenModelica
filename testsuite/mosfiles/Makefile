@@ -11,7 +11,8 @@ loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
 IdealDiode.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos rotationalgears.mos Interpolation.mos \
-ExtObj.mos algorithms.mos UnpOpPrecedence.mos BouncingBallExamples.mos Riccati.mos Pendulum.mos
+ExtObj.mos algorithms.mos UnpOpPrecedence.mos BouncingBallExamples.mos Riccati.mos Pendulum.mos \
+val.mos
 
 
 # test that currently fail. Move up when fixed. 
