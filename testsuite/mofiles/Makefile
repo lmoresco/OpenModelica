@@ -32,7 +32,7 @@ Modification12.mo Modification13.mo \
 ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
 partial-s-1.mo Protected1.mo prtest.mo \
-Range1.mo Real2Integer1.mo Real2Integer2.mo Record1.mo Redeclare1.mo Redeclare2.mo \
+Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
 Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
