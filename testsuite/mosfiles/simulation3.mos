@@ -86,6 +86,11 @@ simulate(avgtest,stopTime=0.1,numberOfIntervals=5);
 val(x,0.0);
 system("rm -rf avgtest*");
 
+loadFile("tupleTest.mo");
+simulate(tplTest,stopTime=0.1);
+val(x,0.0);
+val(y,0.0);
+system("rm -rf tplTest*");
 // Result:
 // true
 // true
@@ -163,5 +168,12 @@ system("rm -rf avgtest*");
 //     resultFile = "avgtest_res.plt"
 // end record
 // 3.6
+// 0
+// true
+// record 
+//     resultFile = "tplTest_res.plt"
+// end record
+// 1.0
+// -1.0
 // 0
 // endResult
