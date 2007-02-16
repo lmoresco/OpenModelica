@@ -1204,7 +1204,7 @@ end BS8;
 //   when sample(sawTooth1.p_startTime[1],sawTooth1.p_period[1]) then
 //   sawTooth1.T0[1] = time;
 //   end when;
-//   sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + if time < sawTooth1.p_startTime[1] then 0.0 else (sawTooth1.p_amplitude[1] * (time - sawTooth1.T0[1])) / sawTooth1.p_period[1];
+//  sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + (if time < sawTooth1.p_startTime[1] then 0.0 else (sawTooth1.p_amplitude[1] * (time - sawTooth1.T0[1])) / sawTooth1.p_period[1]);
 //   sawTooth1.y[1] = sawTooth1.outPort.signal[1];
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

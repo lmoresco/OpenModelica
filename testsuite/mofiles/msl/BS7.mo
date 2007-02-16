@@ -1198,7 +1198,7 @@ end BS7;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   ramp1.outPort.signal[1] = ramp1.p_offset[1] + if time < ramp1.p_startTime[1] then 0.0 else if time < ramp1.p_startTime[1] + ramp1.p_duration[1] then (time - ramp1.p_startTime[1] * ramp1.p_height[1]) / ramp1.p_duration[1] else ramp1.p_height[1];
+//  ramp1.outPort.signal[1] = ramp1.p_offset[1] + (if time < ramp1.p_startTime[1] then 0.0 else if time < ramp1.p_startTime[1] + ramp1.p_duration[1] then ((time - ramp1.p_startTime[1]) * ramp1.p_height[1]) / ramp1.p_duration[1] else ramp1.p_height[1]);
 //   ramp1.y[1] = ramp1.outPort.signal[1];
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

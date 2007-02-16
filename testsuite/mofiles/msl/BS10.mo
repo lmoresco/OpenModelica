@@ -967,7 +967,7 @@ end BS10;
 // output Real der1.y[1] "Output signals";
 // Real der1.u[1] "Input signals";
 // equation
-//   step1.outPort.signal[1] = step1.p_offset[1] + if time < step1.p_startTime[1] then 0.0 else step1.p_height[1];
+// step1.outPort.signal[1] = step1.p_offset[1] + (if time < step1.p_startTime[1] then 0.0 else step1.p_height[1]);
 //   step1.y[1] = step1.outPort.signal[1];
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

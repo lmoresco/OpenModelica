@@ -28,6 +28,6 @@ end BouncingBall;
 //   der(height) = velocity;
 //   der(velocity) = -9.81;
 //   when height <= radius then
-//   reinit(velocity,-c * pre(velocity));
+//   reinit(velocity,(-c) * pre(velocity));
 //   end when;
 // end BouncingBall;

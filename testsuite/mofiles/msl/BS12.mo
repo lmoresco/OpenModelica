@@ -1244,9 +1244,9 @@ end BS12;
 //   when pre(trapezoid1.counter2[1]) <> 0 AND sample(trapezoid1.p_startTime[1],trapezoid1.p_period[1]) then
 //   trapezoid1.T0[1] = time;
 //   trapezoid1.counter2[1] = pre(trapezoid1.counter[1]);
-//   trapezoid1.counter[1] = pre(trapezoid1.counter[1]) - if pre(trapezoid1.counter[1]) > 0 then 1 else 0;
+// trapezoid1.counter[1] = pre(trapezoid1.counter[1]) - (if pre(trapezoid1.counter[1]) > 0 then 1 else 0);
 //   end when;
-// trapezoid1.outPort.signal[1] = trapezoid1.p_offset[1] + if time < trapezoid1.p_startTime[1] OR trapezoid1.counter2[1] == 0 OR time >= trapezoid1.T0[1] + trapezoid1.T_falling[1] then 0.0 else if time < trapezoid1.T0[1] + trapezoid1.T_rising[1] then (time - trapezoid1.T0[1] * trapezoid1.p_amplitude[1]) / trapezoid1.T_rising[1] else if time < trapezoid1.T0[1] + trapezoid1.T_width[1] then trapezoid1.p_amplitude[1] else ((trapezoid1.T0[1] + trapezoid1.T_falling[1]) - time * trapezoid1.p_amplitude[1]) / (trapezoid1.T_falling[1] - trapezoid1.T_width[1]);
+// trapezoid1.outPort.signal[1] = trapezoid1.p_offset[1] + (if time < trapezoid1.p_startTime[1] OR trapezoid1.counter2[1] == 0 OR time >= trapezoid1.T0[1] + trapezoid1.T_falling[1] then 0.0 else if time < trapezoid1.T0[1] + trapezoid1.T_rising[1] then ((time - trapezoid1.T0[1]) * trapezoid1.p_amplitude[1]) / trapezoid1.T_rising[1] else if time < trapezoid1.T0[1] + trapezoid1.T_width[1] then trapezoid1.p_amplitude[1] else ((trapezoid1.T0[1] + trapezoid1.T_falling[1] - time) * trapezoid1.p_amplitude[1]) / (trapezoid1.T_falling[1] - trapezoid1.T_width[1]));
 //   trapezoid1.y[1] = trapezoid1.outPort.signal[1];
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);

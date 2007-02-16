@@ -2417,7 +2417,7 @@ end ShaftTest;
 //   shaft.shaft[1].flange_b.phi = shaft.shaft[2].flange_a.phi;
 //   src.tau = src.inPort.signal[1];
 //   src.flange_b.tau = -src.tau;
-//   c.outPort.signal[1] = c.p_offset[1] + if time < c.p_startTime[1] then 0.0 else c.p_height[1];
+//   c.outPort.signal[1] = c.p_offset[1] + (if time < c.p_startTime[1] then 0.0 else c.p_height[1]);
 //   c.y[1] = c.outPort.signal[1];
 // assert(c.outPort.n == src.inPort.n,"automatically generated from connect");
 //   c.outPort.signal[1] = src.inPort.signal[1];

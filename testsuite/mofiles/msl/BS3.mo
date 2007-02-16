@@ -1339,7 +1339,7 @@ end BS3;
 //   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
-//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * Modelica.Math.exp((expSine1.p_startTime[1] - time) * expSine1.p_damping[1]) * Modelica.Math.sin(6.28318530717959 * expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1]) + expSine1.p_phase[1]);
+//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + (if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * Modelica.Math.exp((expSine1.p_startTime[1] - time) * expSine1.p_damping[1]) * Modelica.Math.sin(6.28318530717959 * expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1]) + expSine1.p_phase[1]));
 //   expSine1.y[1] = expSine1.outPort.signal[1];
 // assert(der1.inPort.n == expSine1.outPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = expSine1.outPort.signal[1];

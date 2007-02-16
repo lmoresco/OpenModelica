@@ -1005,7 +1005,7 @@ end BS14;
 // parameter Real integerStep1.p_startTime[1] = integerStep1.startTime[1];
 // equation
 //   integerToReal1.outPort.signal[1] = Real(integerToReal1.inPort.signal[1]);
-//   integerStep1.outPort.signal[1] = integerStep1.p_offset[1] + if time < integerStep1.p_startTime[1] then 0 else integerStep1.p_height[1];
+//  integerStep1.outPort.signal[1] = integerStep1.p_offset[1] + (if time < integerStep1.p_startTime[1] then 0 else integerStep1.p_height[1]);
 //   integerStep1.y[1] = integerStep1.outPort.signal[1];
 // assert(integerToReal1.inPort.n == integerStep1.outPort.n,"automatically generated from connect");
 //   integerToReal1.inPort.signal[1] = integerStep1.outPort.signal[1];
