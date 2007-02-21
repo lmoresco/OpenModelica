@@ -1,0 +1,81 @@
+// name:     refactorGraphAnn2
+// keywords: annotation
+// status:   correct
+// 
+//  Tests refactoring of graphical component annotations and connect annotations
+//
+//echo(false);
+loadModel(Modelica);
+loadFile("refactorGraphAnn2.mo");
+echo(true);
+refactorClass(connecttest);
+
+// Result:
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/package.mo
+// subdirs =Mechanics, Math, Electrical, C-Sources, Blocks
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Mechanics/package.mo
+// subdirs =
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Mechanics/Translational.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Mechanics/Rotational.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Math/package.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/package.mo
+// subdirs =Analog
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/package.mo
+// subdirs =Examples
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/package.mo
+// subdirs =Utilities
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Utilities/package.mo
+// subdirs =
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Utilities/Transistor.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Utilities/RealSwitch.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Utilities/NonlinearResistor.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Utilities/Nand.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/ShowVariableResistor.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/ShowSaturatingInductor.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/Rectifier.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/NandGate.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/HeatingRectifier.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/HeatingNPN_OrGate.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/HeatingMOSInverter.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/DifferenceAmplifier.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/ChuaCircuit.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/CharacteristicThyristors.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/CharacteristicIdealDiodes.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Examples/CauerFilter.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Sources.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Sensors.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Semiconductors.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Lines.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Interfaces.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Ideal.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Electrical/Analog/Basic.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/package.mo
+// subdirs =
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Types.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Sources.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Nonlinear.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Math.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Logical.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Interfaces.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Discrete.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Blocks/Continuous.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/SIunits.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Icons.mo
+// parsing c:/OpenModelica1.4.2/ModelicaLibrary//Modelica/Constants.mo
+// true
+// true
+// true
+// model connecttest
+//  annotation(uses(Modelica(version="1.6"),ModelicaAdditions(version="1.5")),Diagram);
+//  Modelica.Electrical.Analog.Basic.Conductor conductor annotation(Placement(transformation(x=34.0,y=64.0,scale=0.1,aspectRatio=1.0,flipHorizontal=false,flipVertical=false)));
+//  Modelica.Electrical.Analog.Basic.Resistor resistor annotation(Placement(transformation(x=-9.0,y=56.0,scale=0.09,aspectRatio=4.22222222222222,flipHorizontal=false,flipVertical=false,rotation=-180.0)));
+//  Modelica.Electrical.Analog.Basic.Conductor conductor1 annotation(Placement(transformation(x=79.0,y=32.0,scale=0.15,aspectRatio=0.666666666666667,flipHorizontal=true,flipVertical=false,rotation=-45.0)));
+// 
+// equation 
+//   connect(resistor.n,conductor.p) annotation(Line(points={{-18,56},{14,56},{14,64},{24,64}},color={255,0,127},pattern=LinePattern.Dash,arrow={Arrow.Filled,Arrow.Filled}));
+//   connect(resistor.p,conductor1.p) annotation(Line(color={0,0,255},points={{0,56},{-20,56},{-20,-40},{89.6066,-40},{89.6066,24.9289}}));
+//   connect(conductor1.n,conductor.n) annotation(Line(points={{68.3934,39.0711},{68.3934,64},{44,64}},color={0,0,255},thickness=1.0));
+// end connecttest;
+// 
+// 
+// endResult
