@@ -22,7 +22,7 @@ end HideVariable;
 // Real z[4];
 // Real z[5];
 // algorithm
-//   for k in 1:5 loop
+//   for k in {1,2,3,4,5} loop
 //     z[k] := Real(k);
 //   end for;
 // end HideVariable;
