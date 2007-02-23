@@ -31,7 +31,7 @@ end FilterBlock1;
 //   der(x) = (u - x) / T;
 //   y = k * x;
 // algorithm
-//   when initial() do
+//   when initial() then
 //     reinit(x, u);
 //   end when;
 // end FilterBlock1;

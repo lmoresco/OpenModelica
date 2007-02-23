@@ -63,7 +63,7 @@ end Algorithm1;
 //       x := 3.0;
 //     end if;
 //   end for;
-//   when y > 0.9 do
+//   when y > 0.9 then
 //     z := 0.0;
 //   end when;
 // end Algorithm1;

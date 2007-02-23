@@ -1320,7 +1320,7 @@ end BS11;
 // assert(timeTable1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   timeTable1.outPort.signal[1] = der1.inPort.signal[1];
 // algorithm
-//   when {time >= pre(nextEvent),initial()} do
+//   when {time >= pre(nextEvent),initial()} then
 //     (a, b, nextEvent, last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{table[1,1],table[1,2]},{table[2,1],table[2,2]},{table[3,1],table[3,2]}},offset[1],startTime[1],time,last,1e-13);
 //   end when;
 // end BS11;

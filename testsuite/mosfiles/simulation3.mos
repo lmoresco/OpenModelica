@@ -122,8 +122,8 @@ system("rm -rf tplTest*");
 // 0.0
 // -1.0
 // -1.0
-// 0.123382009008133
-// 0.422806004050189
+// 0.123377522958078
+// 0.422806001932014
 // 0
 // 0
 // true
@@ -170,10 +170,9 @@ system("rm -rf tplTest*");
 // 3.6
 // 0
 // true
-// record 
+// record
 //     resultFile = "tplTest_res.plt"
 // end record
 // 1.0
 // -1.0
 // 0
-// endResult

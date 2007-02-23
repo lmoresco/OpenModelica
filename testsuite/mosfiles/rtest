@@ -357,7 +357,7 @@ sub LessThanEpsilon
 	my $g       = shift;
 	my $epsilon = shift;
     	
-    if ($e - $g < $epsilon) 
+    if (abs($e - $g) < $epsilon) 
     {
     		return 1;
     }
