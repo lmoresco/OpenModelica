@@ -5,23 +5,16 @@
 //  Simulate models and read in data.
 //
 loadFile("SmallLinsys.mo");
-simulate(LinSys,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("LinSys_res.plt");
-res:=readSimulationResult("LinSys_res.plt",{x,y,z},size);
-x:=res[1];
-y:=res[2];
-z:=res[3];
-x:=1000*x;
-y:=1000*y;
-z:=1000*z;
-x:=floor(x);
-y:=floor(y);
-z:=floor(z);
-echo(true);
-x/1000.0;
-y/1000.0;
-z/1000.0;
+simulate(LinSys);
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+val(y,0.0);
+val(y,0.5);
+val(y,1.0);
+val(z,0.0);
+val(z,0.5);
+val(z,1.0);
 readFile("output.log");
 system("rm -rf LinSys.* LinSys_* output.log");
 // Result:
@@ -29,10 +22,15 @@ system("rm -rf LinSys.* LinSys_* output.log");
 // record
 //     resultFile = "LinSys_res.plt"
 // end record
-// true
-// {1.0,1.0,1.0,1.791,2.4,2.932,3.418}
-// {2.0,2.0,2.0,2.0,2.0,2.0,2.0}
-// {3.0,2.999,2.999,2.458,2.099,1.817,1.581}
+// 1.0
+// 2.40070535351976
+// 3.4188196567886
+// 2.0
+// 2.0
+// 2.0
+// 3.0
+// 2.09929464648023
+// 1.5811803432114
 // ""
 // 0
 // endResult

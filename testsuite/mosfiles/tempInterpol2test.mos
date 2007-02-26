@@ -6,7 +6,9 @@
 //
 
 loadFile("tempInterpol2test.mo");
-simulate(tempInterpol2test,numberOfIntervals=5);
+simulate(tempInterpol2test);
+val(y[1,1],0.0);
+val(y[1,2],0.0);
 system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs tempInterpol2test.log tempInterpol2test.exe tempInterpol2test.makefile  output.log");
 
 // Result:
@@ -14,5 +16,8 @@ system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs 
 // record
 //     resultFile = "tempInterpol2test_res.plt"
 // end record
+// 1.6
+// 2.6
 // 0
 // endResult
+

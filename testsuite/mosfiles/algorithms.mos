@@ -7,79 +7,48 @@
 loadFile("Algorithm.mo");
 
 // Alg1 - an algorithm for a single variable.
-simulate(Alg1,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("Alg1_res.plt");
-res:=readSimulationResult("Alg1_res.plt",{x},size);
-x:=res[1];
-x:=1000*x;
-x:=floor(x);
-echo(true);
-x/1000.0;
+simulate(Alg1);
+val(x,0.0);
 readFile("output.log");
 system("rm -rf Alg1.* Alg1_* output.log");
 
 // Alg2 - two variables in an algorithm
-simulate(Alg2,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("Alg2_res.plt");
-res:=readSimulationResult("Alg2_res.plt",{x},size);
-x:=res[1];
-x:=1000*x;
-x:=floor(x);
-echo(true);
-x/1000.0;
+simulate(Alg2);
+val(x,0.0);
 readFile("output.log");
 system("rm -rf Alg2.* Alg2_* output.log");
 
 // Alg3 - mixed algorithm and equation sections
-simulate(Alg3,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("Alg3_res.plt");
-res:=readSimulationResult("Alg3_res.plt",{x,z,u},size);
-x:=res[1];
-x:=1000*x;
-x:=floor(x);
-z:=res[2];
-z:=1000*z;
-z:=floor(z);
-u:=res[3];
-u:=1000*u;
-u:=floor(u);
-
-echo(true);
-x/1000.0;
-z/1000.0;
-u/1000.0;
+simulate(Alg3);
+val(x,0.0);
+val(z,0.0);
+val(u,0.0);
 readFile("output.log");
 system("rm -rf Alg3.* Alg3_* output.log");
 
 // Alg4 - single algorithm with wrong causality
-simulate(Alg4,numberOfIntervals=5);
+simulate(Alg4);
 
 // Result:
 // true
 // record
 //     resultFile = "Alg1_res.plt"
 // end record
-// true
-// {2.0,2.0,2.0,2.0,2.0,2.0,2.0}
+// 2.0
 // ""
 // 0
 // record
 //     resultFile = "Alg2_res.plt"
 // end record
-// true
-// {1.0,1.0,1.0,1.0,1.0,1.0,1.0}
+// 1.0
 // ""
 // 0
 // record
 //     resultFile = "Alg3_res.plt"
 // end record
-// true
-// {4.0,4.0,4.0,4.0,4.0,4.0,4.0}
-// {3.0,3.0,3.0,3.0,3.0,3.0,3.0}
-// {4.0,4.0,4.0,4.0,4.0,4.0,4.0}
+// 4.0
+// 3.0
+// 4.0
 // ""
 // 0
 // record

@@ -32,13 +32,19 @@ readFile("output.log");
 system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
 
 // SineTest
-simulate(TestModels.BlockModels.SourceTests.SineTest,numberOfIntervals=5);
+simulate(TestModels.BlockModels.SourceTests.SineTest);
 {val(sine1.y,0.0),val(sine1.y,0.2),val(sine1.y,0.4),
 val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 {val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4)
 ,val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
 readFile("output.log");
 system("rm -rf *SineTest.* *SineTest_* output.log");
+
+
+
+
+
+
 
 // Result:
 // true
@@ -47,26 +53,26 @@ system("rm -rf *SineTest.* *SineTest_* output.log");
 //     resultFile = "TestModels.BlockModels.SourceTests.ConstantTest_res.plt"
 // end record
 // {1.0,1.0}
-// {100000000.0,1.11022302462516e-08}
+// {100000000.0,2.59681165459843e-05}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.ExpSineTest_res.plt"
 // end record
 // {0.0,0.481218754680075,-0.637466502793774,0.521909353549391,-0.264092613972747,2.43373764515887e-15}
-// {0.0,0.117859083231208,0.0368605552907086,0.0301778633811624,0.0646827787344136,-4.0348344277424e-10}
+// {0.0,0.117859082610543,0.0368605549768214,0.0301778629711385,0.0646827788658426,-5.20483007167219e-13}
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.ExponentialsTest_res.plt"
 // end record
 // {0.0,0.864660351156121,0.981683477245872,0.365418275234063,0.049453188199817,0.00669254706932298}
-// {0.0,1.50377387286788,0.20351692228137,-4.05969619541245,-0.549479876771711,-0.0743616373402171}
+// {0.0,1.50377385306468,0.20351691949027,-4.05969621368182,-0.549479868885878,-0.0743616341035974}
 // ""
 // 0
 // record
 //     resultFile = "TestModels.BlockModels.SourceTests.SineTest_res.plt"
 // end record
-// {0.0,0.197923169480459,0.38661690686433,0.560310827171855,0.713605204980246,0.841470984807896}
-// {0.0,0.0229169052896101,0.0739705548434214,0.146975379291093,0.235831388969287,0.334524059337073}
+// {0.0,0.198669267092029,0.389418154697234,0.564642201226159,0.717355860334919,0.841470984807896}
+// {0.0,0.0186670101921223,0.0693389868628504,0.144059442287868,0.234989241578711,0.334524060055546}
 // ""
 // 0
 // endResult

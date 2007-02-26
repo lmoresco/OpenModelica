@@ -5,32 +5,31 @@
 //  Simulate model with array equations
 //
 loadFile("ArrayEqn.mo");
-simulate(ArrayEqn,numberOfIntervals=5);
-echo(false);
-size:=readSimulationResultSize("ArrayEqn_res.plt");
-res:=readSimulationResult("ArrayEqn_res.plt",{x[1],x[2],x[3],y},size);
-half:=ones(size)/2;
-x1:=res[1];
-x2:=res[2];
-x3:=res[3];
-y:=res[4];
-x1:=1000*x1;
-x2:=1000*x2;
-x3:=1000*x3;
-y:=1000*y;
-x1:=x1+half;
-x2:=x2+half;
-x3:=x3+half;
-y:=y+half;
-x1:=floor(x1);
-x2:=floor(x2);
-x3:=floor(x3);
-y:=floor(y);
-echo(true);
-x1/1000.0;
-x2/1000.0;
-x3/1000.0;
-y/1000.0;
+simulate(ArrayEqn);
+val(x[1],0.0);
+val(x[1],0.2);
+val(x[1],0.4);
+val(x[1],0.6);
+val(x[1],0.8);
+val(x[1],1.0);
+val(x[2],0.0);
+val(x[2],0.2);
+val(x[2],0.4);
+val(x[2],0.6);
+val(x[2],0.8);
+val(x[2],1.0);
+val(x[3],0.0);
+val(x[3],0.2);
+val(x[3],0.4);
+val(x[3],0.6);
+val(x[3],0.8);
+val(x[3],1.0);
+val(y,0.0);
+val(y,0.2);
+val(y,0.4);
+val(y,0.6);
+val(y,0.8);
+val(y,1.0);
 readFile("output.log");
 system("rm -rf ArrayEqn.log ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEqn.exe ArrayEqn_* output.log");
 // Result:
@@ -38,11 +37,30 @@ system("rm -rf ArrayEqn.log ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEq
 // record
 //     resultFile = "ArrayEqn_res.plt"
 // end record
-// true
-// {2.0,2.0,2.0,0.736,0.271,0.1,0.037}
-// {4.0,4.0,4.0,4.0,4.0,4.0,4.0}
-// {2.0,2.0,2.0,2.0,2.0,2.0,2.0}
-// {1.0,1.0,1.0,0.368,0.135,0.05,0.018}
+// 2.0
+// 0.898662555241422
+// 0.40379615122999
+// 0.181437304851404
+// 0.0815248263655863
+// 0.0366312777774443
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 1.0
+// 0.449331277620711
+// 0.201898075614995
+// 0.0907186524257019
+// 0.0407624131827932
+// 0.0183156388887221
 // ""
 // 0
 // endResult
