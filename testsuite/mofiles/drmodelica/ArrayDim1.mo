@@ -42,7 +42,6 @@ equation
   end for;
 end ArrayDim1;
 
-// sh: ../../build/bin/omc: No such file or directory
 // fclass ArrayDim1
 // parameter Integer n = 1;
 // parameter Integer m = 2;
