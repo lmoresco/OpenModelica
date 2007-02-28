@@ -985,7 +985,7 @@ end BC3;
 // output Real firstOrder1.y[1] "Output signals";
 // Real firstOrder1.u[1] "Input signals";
 // parameter Real firstOrder1.k[1] = 1 "Gain";
-// parameter Real firstOrder1.T[1] = 1 "Time Constant";
+// parameter Real firstOrder1.T[1](quantity = "Time", unit = "s") = 1 "Time Constant";
 // parameter Real firstOrder1.p_k[1] = firstOrder1.k[1];
 // parameter Real firstOrder1.p_T[1] = firstOrder1.T[1];
 // equation

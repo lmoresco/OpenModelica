@@ -991,7 +991,7 @@ end BC7;
 // output Real PI1.y[1] "Output signals";
 // Real PI1.u[1] "Input signals";
 // parameter Real PI1.k[1] = 1 "Gain";
-// parameter Real PI1.T[1] = 1 "Time Constant (T>0 required)";
+// parameter Real PI1.T[1](quantity = "Time", unit = "s") = 1 "Time Constant (T>0 required)";
 // output Real PI1.x[1] "State of block";
 // parameter Real PI1.p_k[1] = PI1.k[1];
 // parameter Real PI1.p_T[1] = PI1.T[1];

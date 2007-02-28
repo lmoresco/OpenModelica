@@ -27,5 +27,5 @@ end World;
 
 // fclass World
 // Real c.x;
-// Real a;
+// Real a(quantity = "Area", unit = "m2");
 // end World;

@@ -86,26 +86,26 @@ system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log N
 // Result:
 // true
 // record
-//   resultFile = "TimeVaryingLinSys_res.plt"
+//     resultFile = "TimeVaryingLinSys_res.plt"
 // end record
 // 0.0
-// 0.740874722472088
-// 2.00000003616934
+// 0.74087471699008
+// 1.99999999999989
 // 0.0
-// 0.707300222022331
-// 0.999999971064527
+// 0.707300226407899
+// 0.999999999999937
 // 0.0
-// 0.103650111011165
-// -1.446773672761e-08
+// 0.103650113203957
+// -2.34807341717829e-15
 // 0
 // 0
 // true
 // record
-// resultFile = "NonLinSys_res.plt"
+//     resultFile = "NonLinSys_res.plt"
 // end record
 // 1.0
-// 0.88088057842609
-// 0.854031364949885
+// 0.880880577295321
+// 0.85403136394905
 // 0
 // 0
 // true
@@ -113,11 +113,11 @@ system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log N
 //     resultFile = "NonLinSys3_res.plt"
 // end record
 // 1.0
-// 1.21473014998792
-// 1.642627020116
+// 1.21473014902332
+// 1.64262701824833
 // 2.0
-// 2.2687691691094
-// 2.92573133107505
+// 2.2687691671654
+// 2.92573132658972
 // 0
 // 0
 // true

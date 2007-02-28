@@ -87,27 +87,27 @@
   end RefinedSimpleCircuit;
 
 // fclass RefinedSimpleCircuit
-// Real comp1.p.v;
-// Real comp1.p.i;
-// Real comp1.n.v;
-// Real comp1.n.i;
-// Real comp1.v;
-// Real comp1.i;
-// parameter Real comp1.C = 0.003 "Capacitance";
-// Real comp2.p.v;
-// Real comp2.p.i;
-// Real comp2.n.v;
-// Real comp2.n.i;
-// Real comp2.v;
-// Real comp2.i;
-// parameter Real comp2.L = 0.0002 "Inductance";
-// Real R3.p.v;
-// Real R3.p.i;
-// Real R3.n.v;
-// Real R3.n.i;
-// Real R3.v;
-// Real R3.i;
-// parameter Real R3.R (unit = "Ohm")= 300 "Resistance";
+// Real comp1.p.v(quantity = "ElectricPotential", unit = "V");
+// Real comp1.p.i(quantity = "ElectricCurrent", unit = "A");
+// Real comp1.n.v(quantity = "ElectricPotential", unit = "V");
+// Real comp1.n.i(quantity = "ElectricCurrent", unit = "A");
+// Real comp1.v(quantity = "ElectricPotential", unit = "V");
+// Real comp1.i(quantity = "ElectricCurrent", unit = "A");
+// parameter Real comp1.C(quantity = "Capacitance", unit = "F", min = 0.0) = 0.003 "Capacitance";
+// Real comp2.p.v(quantity = "ElectricPotential", unit = "V");
+// Real comp2.p.i(quantity = "ElectricCurrent", unit = "A");
+// Real comp2.n.v(quantity = "ElectricPotential", unit = "V");
+// Real comp2.n.i(quantity = "ElectricCurrent", unit = "A");
+// Real comp2.v(quantity = "ElectricPotential", unit = "V");
+// Real comp2.i(quantity = "ElectricCurrent", unit = "A");
+// parameter Real comp2.L(quantity = "Inductance", unit = "H", min = 0.0) = 0.0002 "Inductance";
+// Real R3.p.v(quantity = "ElectricPotential", unit = "V");
+// Real R3.p.i(quantity = "ElectricCurrent", unit = "A");
+// Real R3.n.v(quantity = "ElectricPotential", unit = "V");
+// Real R3.n.i(quantity = "ElectricCurrent", unit = "A");
+// Real R3.v(quantity = "ElectricPotential", unit = "V");
+// Real R3.i(quantity = "ElectricCurrent", unit = "A");
+// parameter Real R3.R(unit = "Ohm") = 300 "Resistance";
 // Real R3.Temp;
 // Real R3.RT;
 // equation

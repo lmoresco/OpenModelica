@@ -16,6 +16,7 @@ val(z,0.5);
 val(z,1.0);
 readFile("output.log");
 system("rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log");
+
 // Result:
 // true
 // record
@@ -23,12 +24,11 @@ system("rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log");
 // end record
 // true
 // 2.0
-// 0.270672743366148
-// 0.0366312785922844
+// 0.270672740528001
+// 0.0366312777774443
 // 2.0
-// 0.270672743366148
-// 0.0366312785922844
+// 0.270672740528001
+// 0.0366312777774443
 // ""
 // 0
 // endResult
-

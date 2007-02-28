@@ -17,11 +17,11 @@ system("rm -rf BouncingBallExamples_* BouncingBallExamples.log BouncingBallExamp
 // Result:
 // true
 // record
-//    resultFile = "BouncingBallExamples_res.plt"
+//     resultFile = "BouncingBallExamples_res.plt"
 // end record
 // true
 // 0.0
-// 0.225300948616335
+// 0.225300948660628
 // 0.0
 // ""
 // 0
