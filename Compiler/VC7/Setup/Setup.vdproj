@@ -22775,7 +22775,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -101097,7 +101097,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.3"
         "ProductCode" = "8:{6CCE826D-3117-4D00-BC0C-2A75B612CB01}"
-        "PackageCode" = "8:{EC11A806-A6B6-4DD2-AE76-5B59ED922722}"
+        "PackageCode" = "8:{9C51C8B0-1988-431B-A562-410D093BDA05}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -101175,7 +101175,7 @@
                                                             {
                                                             "Name" = "8:DRMODELICAHOME"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser"
-                                                            "Transitive" = "11:FALSE"
+                                                            "Transitive" = "11:TRUE"
                                                             "ValueTypes" = "3:2"
                                                             "Value" = "8:\"[TARGETDIR]DrModelica\""
                                                             }
@@ -101183,7 +101183,7 @@
                                                             {
                                                             "Name" = "8:PTII"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser AND %PTII=NULL"
-                                                            "Transitive" = "11:FALSE"
+                                                            "Transitive" = "11:TRUE"
                                                             "ValueTypes" = "3:2"
                                                             "Value" = "8:[TARGETDIR]bin\\ptplot.jar"
                                                             }
@@ -101191,7 +101191,7 @@
                                                             {
                                                             "Name" = "8:OPENMODELICAHOME"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser"
-                                                            "Transitive" = "11:FALSE"
+                                                            "Transitive" = "11:TRUE"
                                                             "ValueTypes" = "3:2"
                                                             "Value" = "8:[TARGETDIR]"
                                                             }
@@ -101199,7 +101199,7 @@
                                                             {
                                                             "Name" = "8:OPENMODELICALIBRARY"
                                                             "Condition" = "8:ALLUSERS > 0 AND AdminUser"
-                                                            "Transitive" = "11:FALSE"
+                                                            "Transitive" = "11:TRUE"
                                                             "ValueTypes" = "3:2"
                                                             "Value" = "8:[TARGETDIR]ModelicaLibrary"
                                                             }
@@ -101247,7 +101247,7 @@
                             {
                             "Name" = "8:OPENMODELICAHOME"
                             "Condition" = "8:ALLUSERS=NULL OR NOT AdminUser"
-                            "Transitive" = "11:FALSE"
+                            "Transitive" = "11:TRUE"
                             "ValueTypes" = "3:2"
                             "Value" = "8:[TARGETDIR]"
                             }
@@ -101255,7 +101255,7 @@
                             {
                             "Name" = "8:OPENMODELICALIBRARY"
                             "Condition" = "8:ALLUSERS=NULL OR NOT AdminUser"
-                            "Transitive" = "11:FALSE"
+                            "Transitive" = "11:TRUE"
                             "ValueTypes" = "3:2"
                             "Value" = "8:[TARGETDIR]ModelicaLibrary"
                             }
@@ -101263,7 +101263,7 @@
                             {
                             "Name" = "8:DRMODELICAHOME"
                             "Condition" = "8:ALLUSERS=NULL OR NOT AdminUser"
-                            "Transitive" = "11:FALSE"
+                            "Transitive" = "11:TRUE"
                             "ValueTypes" = "3:2"
                             "Value" = "8:\"[TARGETDIR]DrModelica\""
                             }
@@ -101271,7 +101271,7 @@
                             {
                             "Name" = "8:PTII"
                             "Condition" = "8:(ALLUSERS=NULL OR NOT AdminUser)"
-                            "Transitive" = "11:FALSE"
+                            "Transitive" = "11:TRUE"
                             "ValueTypes" = "3:2"
                             "Value" = "8:[TARGETDIR]bin\\ptplot.jar"
                             }
@@ -101497,8 +101497,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:The package includes OpenModelica, a Modelica modeling, compilation and simulation environment based on free software."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -101729,8 +101729,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:The package includes OpenModelica, a Modelica modeling, compilation and simulation environment based on free software."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
