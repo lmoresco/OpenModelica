@@ -1,0 +1,38 @@
+// name:     when-statements
+// keywords: Simulate, when-statements
+// status:   correct
+// 
+//  Simulate model containing algortithms with when-stamtements
+//
+loadFile("testalgwhen.mo");
+
+simulate(testalgwhen);
+val(z,0.0);
+val(z,0.5);
+val(z,0.95);
+val(v,0.0);
+val(v,0.1);
+val(v,0.91);
+val(w,0.4);
+val(w,0.45);
+val(tt,0.91);
+readFile("output.log");
+system("rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log");
+
+// Result:
+// true
+// record
+//     resultFile = "testalgwhen_res.plt"
+// end record
+// 0.0
+// 2.2
+// 2.2
+// 1.0
+// 1.2
+// 3.91920622231406
+// 0.0
+// 0.594534891891833
+// 0.9
+// ""
+// 0
+// endResult
