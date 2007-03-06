@@ -11,7 +11,7 @@ package TestModels
       end SineTest;
       model ConstantTest
               Modelica.Blocks.Sources.Constant constant1 annotation(Placement(visible=true,transformation(x=-71.4489,y=29.9574,scale=0.1)));
-        Modelica.Blocks.Continuous.Derivative derivative1(T=1e-08) annotation(Placement(visible=true,transformation(x=-30.8594,y=29.6567,scale=0.1)));
+        Modelica.Blocks.Continuous.Derivative derivative1(T=1e-05) annotation(Placement(visible=true,transformation(x=-30.8594,y=29.6567,scale=0.1)));
         annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}),graphics={Ellipse(visible=true, fillColor={0,85,0}, fillPattern=FillPattern.Solid, extent={{-99.81,-100.07},{100.07,100.07}})}));
 
       equation 

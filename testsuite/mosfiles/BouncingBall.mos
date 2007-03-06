@@ -10,11 +10,13 @@ echo(false);
 s:=readSimulationResultSize("BouncingBall_res.plt");
 res:=readSimulationResult("BouncingBall_res.plt",{flying},s);
 res2:=readSimulationResult("BouncingBall_res.plt",{n_bounce},s);
+res3:=readSimulationResult("BouncingBall_res.plt",{h},s);
 echo(true);
 res[1,1];
 res[1,s];
 res2[1,1];
-res2[1,s];
+if res2[1,s]>70 and res2[1,s] < 100 then 1 else 0;
+if res3[1,s] > -1e-5 then 1 else 0;
 readFile("output.log");
 system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
 // Result:
@@ -26,7 +28,8 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // 1.0
 // 0.0
 // 0.0
-// 83.0
+// 1
+// 1
 // ""
 // 0
 // endResult
