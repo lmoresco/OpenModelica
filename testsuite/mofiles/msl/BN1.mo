@@ -955,7 +955,7 @@ end BN1;
 // parameter Integer deadZone1.outPort.n = deadZone1.n "Dimension of signal vector";
 // output Real deadZone1.outPort.signal[1] "Real output signals";
 // output Real deadZone1.y[1] "Output signals";
-// Real deadZone1.u[1] "Input signals";
+// protected Real deadZone1.u[1] "Input signals";
 // parameter Real deadZone1.uMax[1] = 1 "Upper limits of dead zones";
 // parameter Real deadZone1.uMin[1] = -deadZone1.uMax[1] "Lower limits of dead zones";
 // equation

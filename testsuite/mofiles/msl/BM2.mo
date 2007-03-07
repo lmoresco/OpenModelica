@@ -1073,6 +1073,7 @@ equation
   connect(constant1.outPort,acos1.inPort) annotation(Line(visible=true,points={{-51.5,43.59},{-28.08,46.64}}));
 end BM2;
 
+
 // fclass BM2
 // parameter Integer acos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer acos1.inPort.n = acos1.n "Dimension of signal vector";
@@ -1080,7 +1081,7 @@ end BM2;
 // parameter Integer acos1.outPort.n = acos1.n "Dimension of signal vector";
 // output Real acos1.outPort.signal[1] "Real output signals";
 // output Real acos1.y[1] "Output signals";
-// Real acos1.u[1] "Input signals";
+// protected Real acos1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -1095,4 +1096,3 @@ end BM2;
 // assert(constant1.outPort.n == acos1.inPort.n,"automatically generated from connect");
 //   constant1.outPort.signal[1] = acos1.inPort.signal[1];
 // end BM2;
-

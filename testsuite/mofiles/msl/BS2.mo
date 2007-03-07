@@ -935,7 +935,7 @@ end BS2;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// Real der1.u[1] "Input signals";
+// protected Real der1.u[1] "Input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

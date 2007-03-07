@@ -53,7 +53,7 @@ system("rm -rf *SineTest.* *SineTest_* output.log");
 //     resultFile = "TestModels.BlockModels.SourceTests.ConstantTest_res.plt"
 // end record
 // {1.0,1.0}
-// {100000.0,0.0}
+// {100000.0,-4.88498130835043e-10}
 // ""
 // 0
 // record

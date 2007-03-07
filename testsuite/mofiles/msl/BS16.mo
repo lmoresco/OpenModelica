@@ -1225,17 +1225,17 @@ end BS16;
 // parameter Real booleanPulse1.width[1](min = 1e-60, max = 100.0) = 50 "Widths of pulses in % of period";
 // parameter Real booleanPulse1.period[1](quantity = "Time", unit = "s", min = 1e-60) = 1 "Times for one period";
 // parameter Real booleanPulse1.startTime[1](quantity = "Time", unit = "s") = 0 "Iime instants of first pulse";
-// parameter Real booleanPulse1.p_period[1](quantity = "Time", unit = "s") = booleanPulse1.period[1];
-// parameter Real booleanPulse1.Twidth[1](quantity = "Time", unit = "s") = (booleanPulse1.p_period[1] * booleanPulse1.width[1] * 1.0) / 100.0 "width of one pulse";
-// parameter Real booleanPulse1.p_startTime[1](quantity = "Time", unit = "s") = booleanPulse1.startTime[1];
-// Real booleanPulse1.T0[1](quantity = "Time", unit = "s") "Start time of current period";
+// protected parameter Real booleanPulse1.p_period[1](quantity = "Time", unit = "s") = booleanPulse1.period[1];
+// protected parameter Real booleanPulse1.Twidth[1](quantity = "Time", unit = "s") = (booleanPulse1.p_period[1] * booleanPulse1.width[1] * 1.0) / 100.0 "width of one pulse";
+// protected parameter Real booleanPulse1.p_startTime[1](quantity = "Time", unit = "s") = booleanPulse1.startTime[1];
+// protected Real booleanPulse1.T0[1](quantity = "Time", unit = "s") "Start time of current period";
 // parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
 // input Boolean booleanChange1.inPort.signal[1] "Boolean input signals";
 // parameter Integer booleanChange1.outPort.n = booleanChange1.n "Dimension of signal vector";
 // output Boolean booleanChange1.outPort.signal[1] "Boolean output signals";
 // output Boolean booleanChange1.y[1] "Output signals";
-// Boolean booleanChange1.u[1] "Input signals";
+// protected Boolean booleanChange1.u[1] "Input signals";
 // equation
 //   when sample(booleanPulse1.p_startTime[1],booleanPulse1.p_period[1]) then
 //   booleanPulse1.T0[1] = time;

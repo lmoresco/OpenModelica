@@ -989,12 +989,12 @@ end BC7;
 // parameter Integer PI1.outPort.n = PI1.n "Dimension of signal vector";
 // output Real PI1.outPort.signal[1] "Real output signals";
 // output Real PI1.y[1] "Output signals";
-// Real PI1.u[1] "Input signals";
+// protected Real PI1.u[1] "Input signals";
 // parameter Real PI1.k[1] = 1 "Gain";
 // parameter Real PI1.T[1](quantity = "Time", unit = "s") = 1 "Time Constant (T>0 required)";
 // output Real PI1.x[1] "State of block";
-// parameter Real PI1.p_k[1] = PI1.k[1];
-// parameter Real PI1.p_T[1] = PI1.T[1];
+// protected parameter Real PI1.p_k[1] = PI1.k[1];
+// protected parameter Real PI1.p_T[1] = PI1.T[1];
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

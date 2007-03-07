@@ -1002,8 +1002,8 @@ end BM19;
 // parameter Integer product1.outPort.n = product1.n "Dimension of signal vector";
 // output Real product1.outPort.signal[1] "Real output signals";
 // output Real product1.y[1] "Output signals";
-// Real product1.u1[1] "Input signals 1";
-// Real product1.u2[1] "Input signals 2";
+// protected Real product1.u1[1] "Input signals 1";
+// protected Real product1.u2[1] "Input signals 2";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

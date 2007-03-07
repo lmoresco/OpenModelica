@@ -1070,7 +1070,7 @@ end BM9;
 // parameter Integer cosh1.outPort.n = cosh1.n "Dimension of signal vector";
 // output Real cosh1.outPort.signal[1] "Real output signals";
 // output Real cosh1.y[1] "Output signals";
-// Real cosh1.u[1] "Input signals";
+// protected Real cosh1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

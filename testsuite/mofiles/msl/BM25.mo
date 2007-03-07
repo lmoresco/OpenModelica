@@ -1072,7 +1072,7 @@ end BM25;
 // parameter Integer tan1.outPort.n = tan1.n "Dimension of signal vector";
 // output Real tan1.outPort.signal[1] "Real output signals";
 // output Real tan1.y[1] "Output signals";
-// Real tan1.u[1] "Input signals";
+// protected Real tan1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

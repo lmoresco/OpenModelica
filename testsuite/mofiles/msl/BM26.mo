@@ -1074,7 +1074,7 @@ end BM26;
 // parameter Integer tanh1.outPort.n = tanh1.n "Dimension of signal vector";
 // output Real tanh1.outPort.signal[1] "Real output signals";
 // output Real tanh1.y[1] "Output signals";
-// Real tanh1.u[1] "Input signals";
+// protected Real tanh1.u[1] "Input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

@@ -1072,7 +1072,7 @@ end BM6;
 // parameter Integer atan1.outPort.n = atan1.n "Dimension of signal vector";
 // output Real atan1.outPort.signal[1] "Real output signals";
 // output Real atan1.y[1] "Output signals";
-// Real atan1.u[1] "Input signals";
+// protected Real atan1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

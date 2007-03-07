@@ -1077,7 +1077,7 @@ end BM15;
 // parameter Integer log101.outPort.n = log101.n "Dimension of signal vector";
 // output Real log101.outPort.signal[1] "Real output signals";
 // output Real log101.y[1] "Output signals";
-// Real log101.u[1] "Input signals";
+// protected Real log101.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

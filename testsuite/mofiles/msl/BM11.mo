@@ -1070,7 +1070,7 @@ end BM11;
 // parameter Integer exp1.outPort.n = exp1.n "Dimension of signal vector";
 // output Real exp1.outPort.signal[1] "Real output signals";
 // output Real exp1.y[1] "Output signals";
-// Real exp1.u[1] "Input signals";
+// protected Real exp1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

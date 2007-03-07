@@ -50,12 +50,12 @@ end A;
 // Real b;
 // Real c;
 // Real cp.dummy;
-// Real cp.red;
-// parameter Real cp.blue = 3.5;
-// parameter Real cp.green = 5;
+// protected Real cp.red;
+// protected parameter Real cp.blue = 3.5;
+// protected parameter Real cp.green = 5;
 // parameter Real cp.x;
-// parameter Real cp.y;
-// parameter Real cp.z;
+// protected parameter Real cp.y;
+// protected parameter Real cp.z;
 // equation
 //   cp.red + cp.blue + cp.green = 1.0;
 //   a = cp.x;

@@ -1073,7 +1073,7 @@ end BM8;
 // parameter Integer cos1.outPort.n = cos1.n "Dimension of signal vector";
 // output Real cos1.outPort.signal[1] "Real output signals";
 // output Real cos1.y[1] "Output signals";
-// Real cos1.u[1] "Input signals";
+// protected Real cos1.u[1] "Input signals";
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

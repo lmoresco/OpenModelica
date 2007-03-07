@@ -25,7 +25,7 @@ end FilterBlock1;
 // parameter Real k = 1 "Gain";
 // input Real u;
 // output Real y;
-// Real x;
+// protected Real x;
 // equation
 //   u = 1.0;
 //   der(x) = (u - x) / T;

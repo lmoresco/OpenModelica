@@ -1107,8 +1107,8 @@ end BM7;
 // parameter Integer atan21.outPort.n = atan21.n "Dimension of signal vector";
 // output Real atan21.outPort.signal[1] "Real output signals";
 // output Real atan21.y[1] "Output signals";
-// Real atan21.u1[1] "Input signals 1";
-// Real atan21.u2[1] "Input signals 2";
+// protected Real atan21.u1[1] "Input signals 1";
+// protected Real atan21.u2[1] "Input signals 2";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

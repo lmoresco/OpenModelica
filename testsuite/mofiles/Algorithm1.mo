@@ -41,7 +41,7 @@ end Algorithm1;
 // Real y;
 // Real z;
 // Real a;
-// Integer i;
+// protected Integer i;
 // equation
 //   y = sin(time);
 // algorithm

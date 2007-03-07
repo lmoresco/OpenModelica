@@ -2371,9 +2371,9 @@ end ShaftTest;
 // parameter Real c.offset[1] = 0 "offset of output signal";
 // parameter Real c.startTime[1](quantity = "Time", unit = "s") = 0 "output = offset for time < startTime";
 // parameter Real c.height[1] = 1 "Heights of steps";
-// parameter Real c.p_height[1] = c.height[1];
-// parameter Real c.p_offset[1] = c.offset[1];
-// parameter Real c.p_startTime[1](quantity = "Time", unit = "s") = c.startTime[1];
+// protected parameter Real c.p_height[1] = c.height[1];
+// protected parameter Real c.p_offset[1] = c.offset[1];
+// protected parameter Real c.p_startTime[1](quantity = "Time", unit = "s") = c.startTime[1];
 // equation
 //   shaft.shaft[1].inertia1.w = der(shaft.shaft[1].inertia1.phi);
 //   shaft.shaft[1].inertia1.a = der(shaft.shaft[1].inertia1.w);
