@@ -13,7 +13,7 @@ blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos rotationalgears.mos Interpolation.mos \
 ExtObj.mos algorithms.mos UnpOpPrecedence.mos BouncingBallExamples.mos Riccati.mos Pendulum.mos \
 val.mos refactorGraphAnn1.mos refactorGraphAnn2.mos \
-DAEexample.mos whenstatements.mos
+DAEexample.mos whenstatements.mos StringTest.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

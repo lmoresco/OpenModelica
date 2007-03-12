@@ -1,0 +1,20 @@
+// name:     StringTest 
+// keywords: String, assert 
+// status:   correct
+// 
+//  Using String() functions to create strings in assert.
+//
+loadFile("StringTest.mo");
+simulate(STest1);
+readFile("output.log");
+system("rm -rf STest1.cpp STest1.exe STest1.libs STest1.log STest1_functions.cpp STest1.makefile STest1_init.txt STest1_res.plt");
+// Result:
+// true
+// record
+//     resultFile = "STest1_res.plt"
+// end record
+// "x reached 0.1 at time 0.1002 b =true i =     66
+// Simulation terminated at time 0.1002
+// "
+// 0
+// endResult

@@ -1936,7 +1936,7 @@ end BC6;
 //   limPID1.gainTrack.u[1] = limPID1.gainTrack.inPort.signal[1];
 //   limPID1.gainTrack.y[1] = limPID1.gainTrack.outPort.signal[1];
 //   limPID1.gainTrack.y[1] = limPID1.gainTrack.k[1] * limPID1.gainTrack.u[1];
-// assert(yMax >= yMin,"PID: Limits must be consistent");
+// assert(limPID1.yMax >= limPID1.yMin,"PID: Limits must be consistent");
 //   limPID1.u_s = limPID1.inPort_s.signal[1];
 //   limPID1.u_m = limPID1.inPort_m.signal[1];
 //   limPID1.y = limPID1.outPort.signal[1];
