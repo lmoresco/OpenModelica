@@ -46,7 +46,8 @@
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
@@ -110,7 +111,8 @@ nmake -f MakeFile.debug.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
 				ExcludedFromBuild="FALSE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -169,7 +171,8 @@ popd
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\Compiler\win\omc.exe&quot;"
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
 				ExcludedFromBuild="TRUE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -227,7 +230,8 @@ nmake -f MakeFile.win32
 				Name="VCMIDLTool"/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(OPENMODELICAHOME)\Compiler\win\omc.exe&quot;"/>
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
