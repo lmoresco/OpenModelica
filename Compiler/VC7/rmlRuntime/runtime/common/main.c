@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include "rml.h"
 
+char rml_trace_enabled = 1;
+
 static void rml_prim_argv(int argc, char **argv)
 {
 #if	defined(RML_STATE_APTR) || defined(RML_STATE_LPTR)

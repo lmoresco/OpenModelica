@@ -291,6 +291,7 @@ extern char rml_flag_gclog;
 extern char rml_flag_log;
 extern unsigned long rml_call_count;
 extern char rml_flag_no_stack_check;
+extern char rml_trace_enabled;
 
 /* adrpo added look into p-gccore.c for more */
 /* the young region */
