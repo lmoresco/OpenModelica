@@ -20,7 +20,7 @@ LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
 
-
+/*
 #pragma warning(disable : 4311)
 
 bool runTar(std::string& file, std::string& dir) {
@@ -130,6 +130,8 @@ int DeleteDir(LPCTSTR lpszName)
 	return(ret);
 }
 
+*/
+
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPTSTR    lpCmdLine,
@@ -137,9 +139,19 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 {
 	bool deldir = false;
 	DWORD dwReturnValue;
+
+	/* 
+	 * Adrian Pop - 2007-03-23
+	 * just send an update message to all windows! 
+	 * and then just exit
+	 *
+	 */
 	SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
      (LPARAM)"Environment", SMTO_ABORTIFHUNG,5000, &dwReturnValue);
 
+	return 0;
+
+	/*
 	std::string commands = lpCmdLine;
 	std::string::size_type first = commands.find_first_not_of(" \t");
 	commands = commands.substr(first);
@@ -186,7 +198,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		}
 	}
 
-	
+	*/
 
 	return 0;
 }

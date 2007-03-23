@@ -12975,6 +12975,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_91EC795947F44596A03657144BE79201"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_92004FA013414C76B70B0102F178069E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -22775,7 +22781,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:3"
+        "Compression" = "3:2"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -22787,6 +22793,34 @@
     {
         "CustomAction"
         {
+            "{0C9D821E-95BB-411F-BE03-2864360EBF94}:_47C84C0F5B6940D59D77EC1F0DF315B1"
+            {
+            "Name" = "8:Primary Output from UpdateEnv (Release Win32)"
+            "Condition" = "8:"
+            "Object" = "8:_91EC795947F44596A03657144BE79201"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:[TARGETDIR]"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_2C24F309_50A4_49B8_8C99_BBB6430C6DCC"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{0C9D821E-95BB-411F-BE03-2864360EBF94}:_FEE3BB191FF143E699DF28DCB544232A"
+            {
+            "Name" = "8:Primary Output from UpdateEnv (Release Win32)"
+            "Condition" = "8:"
+            "Object" = "8:_91EC795947F44596A03657144BE79201"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:[TARGETDIR]"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_B0313E73_F6A5_4C83_906E_CC421B33F870"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -22798,6 +22832,13 @@
         {
             "LaunchCondition"
             {
+                "{2522A265-4974-4402-83C5-3B575A2E935A}:_3117AD91D6B14FF39545818B685D9885"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "SupportedRuntimes" = "8:1.1.4322"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=9832"
+                }
             }
         }
         "Feature"
@@ -101097,7 +101138,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.3"
         "ProductCode" = "8:{6CCE826D-3117-4D00-BC0C-2A75B612CB01}"
-        "PackageCode" = "8:{9C51C8B0-1988-431B-A562-410D093BDA05}"
+        "PackageCode" = "8:{9C6EDCF6-DF87-44A5-A14E-4A769BF793E8}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -101801,6 +101842,34 @@
         }
         "ProjectOutput"
         {
+            "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_91EC795947F44596A03657144BE79201"
+            {
+            "SourcePath" = "8:..\\updateenv\\release\\UpdateEnv.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Release|Win32"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{8E584488-5EBE-43D7-973C-6C434E426803}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{8062640A-2EEE-46E9-AB67-688E9A886E9F}:_C0808A7B696E49A79B16145F10BAB302"
             {
             "SourcePath" = "8:..\\Release\\omc.exe"
