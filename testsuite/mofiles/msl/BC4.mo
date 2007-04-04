@@ -945,7 +945,7 @@ end BC4;
 // input Real integrator1.inPort.signal[1] "Real input signals";
 // parameter Integer integrator1.outPort.n = integrator1.n "Dimension of signal vector";
 // output Real integrator1.outPort.signal[1] "Real output signals";
-// output Real integrator1.y[1] "Output signals";
+// output Real integrator1.y[1](start = integrator1.y0[1]) "Output signals";
 // protected Real integrator1.u[1] "Input signals";
 // parameter Real integrator1.k[1] = 1 "Integrator gains";
 // parameter Real integrator1.y0[1] = 0 "Start values of integrators";

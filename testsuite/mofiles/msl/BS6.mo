@@ -1199,7 +1199,7 @@ end BS6;
 // protected parameter Real pulse1.p_width[1](quantity = "Time", unit = "s") = (pulse1.p_period[1] * pulse1.width[1] * 1.0) / 100.0 "Width of one pulse";
 // protected parameter Real pulse1.p_offset[1] = pulse1.offset[1];
 // protected parameter Real pulse1.p_startTime[1](quantity = "Time", unit = "s") = pulse1.startTime[1];
-// protected Real pulse1.T0[1](quantity = "Time", unit = "s") "Start time of current period";
+// protected Real pulse1.T0[1](quantity = "Time", unit = "s", start = pulse1.p_startTime[1]) "Start time of current period";
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";

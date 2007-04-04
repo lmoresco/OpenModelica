@@ -1550,7 +1550,7 @@ end BC8;
 // input Real PID1.I.inPort.signal[1] "Real input signals";
 // parameter Integer PID1.I.outPort.n = PID1.I.n "Dimension of signal vector";
 // output Real PID1.I.outPort.signal[1] "Real output signals";
-// output Real PID1.I.y[1] "Output signals";
+// output Real PID1.I.y[1](start = PID1.I.y0[1]) "Output signals";
 // protected Real PID1.I.u[1] "Input signals";
 // parameter Real PID1.I.k[1] = 1.0 / PID1.Ti "Integrator gains";
 // parameter Real PID1.I.y0[1] = 0 "Start values of integrators";

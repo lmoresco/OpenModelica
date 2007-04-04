@@ -954,7 +954,7 @@ end BN2;
 // output Real limiter1.y[1] "Output signals";
 // protected Real limiter1.u[1] "Input signals";
 // parameter Real limiter1.uMax[1] = 1 "Upper limits of input signals";
-// parameter Real limiter1.uMin[1] = -limiter1.uMax[1] "Lower limits of input signals";
+// parameter Real limiter1.uMin[1](max = limiter1.uMax[1]) = -limiter1.uMax[1] "Lower limits of input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

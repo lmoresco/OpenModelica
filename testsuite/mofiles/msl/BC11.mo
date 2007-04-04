@@ -977,7 +977,7 @@ end BC11;
 // parameter Real transferFunction1.a[2] = 1 "Denominator coefficients of transfer function.";
 // output Real transferFunction1.x[1] "State of transfer function from controller canonical form";
 // protected parameter Integer transferFunction1.na = 2 "Size of Denominator of transfer function.";
-// protected parameter Integer transferFunction1.nb = 1 "Size of Numerator of transfer function.";
+// protected parameter Integer transferFunction1.nb(max = transferFunction1.na) = 1 "Size of Numerator of transfer function.";
 // protected parameter Integer transferFunction1.nx = 1;
 // protected Real transferFunction1.x1dot "Derivative of first state of TransferFcn";
 // protected Real transferFunction1.xn "Highest order state of TransferFcn";

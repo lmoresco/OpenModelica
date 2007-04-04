@@ -959,7 +959,7 @@ end BC5;
 // input Real limIntegrator1.inPort.signal[1] "Real input signals";
 // parameter Integer limIntegrator1.outPort.n = limIntegrator1.n "Dimension of signal vector";
 // output Real limIntegrator1.outPort.signal[1] "Real output signals";
-// output Real limIntegrator1.y[1] "Output signals";
+// output Real limIntegrator1.y[1](start = limIntegrator1.y0[1]) "Output signals";
 // protected Real limIntegrator1.u[1] "Input signals";
 // parameter Real limIntegrator1.k[1] = 1 "Integrator gains";
 // parameter Real limIntegrator1.outMax[1] = 1 "Upper limits of outputs";
