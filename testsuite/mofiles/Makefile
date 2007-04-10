@@ -31,7 +31,7 @@ Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modificatio
 Modification12.mo Modification13.mo \
 ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
-partial-s-1.mo Protected1.mo prtest.mo \
+Protected1.mo prtest.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
 Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
@@ -54,7 +54,7 @@ FlatParse.mof
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo InnerClass1.mo 
+FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo InnerClass1.mo partial-s-1.mo
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

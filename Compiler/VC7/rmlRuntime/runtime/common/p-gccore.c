@@ -71,7 +71,7 @@ static void rml_free_core(void **p, size_t nslots_unused)
 
 /* the roots */
 #if	!defined(RML_STACK_SIZE)
-#define RML_STACK_SIZE	(64*1024)
+#define RML_STACK_SIZE	(1024*1024)
 #endif
 unsigned long rml_stack_size;
 void **rml_stack;

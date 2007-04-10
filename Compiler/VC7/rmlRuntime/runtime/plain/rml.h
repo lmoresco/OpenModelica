@@ -24,10 +24,9 @@ typedef unsigned int rml_uint_t;
 
 #ifdef	RML_PLAIN
 /* adrpo played with the RML_YOUNG_SIZE
-#define RML_YOUNG_SIZE	(7*1024)
-#define RML_YOUNG_SIZE	(72*1024)
-*/
 #define RML_YOUNG_SIZE	(700*1024)
+*/
+#define RML_YOUNG_SIZE	(1024*1024)
 #endif
 #ifdef	RML_SWITCH
 #define RML_YOUNG_SIZE	(72*1024)
