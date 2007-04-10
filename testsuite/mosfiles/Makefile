@@ -3,7 +3,7 @@ TESTFILES = ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.
 ForStatement5fail.mos ForStatement6.mos ForStatement7.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 IfStatement.mos IfStatementIllegal.mos WhileStatement.mos WhileStatementIllegal.mos \
-interactive_api_param.mos interactive_api_classes.mos tempInterpol2test.mos \
+interactive_api_param.mos interactive_api_classes.mos Initialization.mos tempInterpol2test.mos \
 variables.mos Array1.mos simulation.mos simulation2.mos simulation3.mos differentiate.mos simplify.mos \
 strings.mos interactive_api_loadsave.mos  interactive_api_attributes.mos \
 matrices.mos BouncingBall.mos ExternalLibraries.mos \

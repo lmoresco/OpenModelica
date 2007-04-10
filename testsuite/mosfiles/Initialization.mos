@@ -1,0 +1,61 @@
+// name:     Initialization 
+// keywords: Simulate, Initialization 
+// status:   correct
+// 
+//  Simulate models with initial conditions.
+//
+loadFile("Initialization.mo");
+
+simulate(Init1);
+val(x,0.0);
+val(y,0.0);
+getErrorString();
+readFile("output.log");
+system("rm -rf Init1.* Init1_* output.log");
+simulate(Init2);
+val(x,0.0);
+val(y,0.0);
+getErrorString();
+readFile("output.log");
+system("rm -rf Init2.* Init2_* output.log");
+simulate(Init3);
+val(x,0.0);
+val(y,0.0);
+getErrorString();
+readFile("output.log");
+system("rm -rf Init3.* Init3_* output.log");
+// Result:
+// true
+// record
+//     resultFile = "Init1_res.plt"
+// end record
+// 5.0
+// 5.0
+// "Warning, no variable has fixed=false but model contains initial equations. Setting fixed=false to the following variables: y, x
+// "
+// ""
+// 0
+// record
+//     resultFile = "Init2_res.plt"
+// end record
+// 5.0
+// 5.0
+// ""
+// ""
+// 0
+// record
+//     resultFile = "Init3_res.plt"
+// end record
+// 3.99999999867701
+// 4.49999999385518
+// "Warning, no variable has fixed=false but model contains initial equations. Setting fixed=false to the following variables: y, x
+// "
+// "Error in initialization. System of initial equations are not consistent.
+// (Least Square function value is 2.5)
+// residual[3] = 1
+// residual[4] = 0.5
+// residual[5] = -0.5
+// residual[6] = -1
+// "
+// 0
+// endResult
