@@ -40,10 +40,11 @@ val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 readFile("output.log");
 system("rm -rf *SineTest.* *SineTest_* output.log");
 
-
-
-
-
+// PulseTest
+simulate(TestModels.BlockModels.SourceTests.PulseTest);
+{val(p.y,0.0),val(p.y,0.4),val(p.y,0.4000001),val(p.y,0.8),val(p.y,0.8000001)};
+readFile("output.log");
+system("rm -rf *PulseTest.* *PulseTest_* output.log");
 
 
 // Result:
@@ -73,6 +74,12 @@ system("rm -rf *SineTest.* *SineTest_* output.log");
 // end record
 // {0.0,0.198669267092029,0.389418154697234,0.564642201226159,0.717355860334919,0.841470984807896}
 // {0.0,0.0186670101921223,0.0693389868628504,0.144059442287868,0.234989241578711,0.334524060055546}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.BlockModels.SourceTests.PulseTest_res.plt"
+// end record
+// {1.0,0.0,1.0,0.0,1.0}
 // ""
 // 0
 // endResult

@@ -54,7 +54,7 @@ system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log N
 
 loadFile("Modelica.mo");
 loadFile("Test3PhaseSystemTotal.mo");
-simulate(Test3PhaseSystems.Test3PhaseSystem,numberOfIntervals=20);
+simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20);
 val(LR1.I1.i,0.0);
 val(LR1.I2.i,0.0);
 val(LR1.I3.i,0.0);
@@ -135,7 +135,7 @@ system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log N
 //     resultFile = "BooleanModel_res.plt"
 // end record
 // 1.0
-// 0.0
+// 1.0
 // 0.0
 // 2.0
 // 2.0

@@ -33,6 +33,9 @@ package TestModels
       equation 
         connect(expSine1.y,transferFunction1.u) annotation(Line(visible=true,points={{-57.8776,0.826823},{-30.8681,0}}));
       end ExpSineTest;
+       model PulseTest
+          Modelica.Blocks.Sources.Pulse p(period=0.4);
+       end PulseTest;
     end SourceTests;
     package SystemTests
           model DCmotor
