@@ -3,8 +3,8 @@ TEST=./rtest
 
 TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
 Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13.mo \
- Array_builtin.mo ArrayModification11.mo \
-ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArraySlice1.mo \
+ Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
+ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayRemoveIndex1.mo \
 BoolArrayTest.mo \
 Cardinality.mo \
@@ -41,7 +41,7 @@ Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo \
 Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
-Vectorizable5.mo \
+Vectorizable5.mo VectorDimension.mo \
  XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
