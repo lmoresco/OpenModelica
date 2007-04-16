@@ -82,7 +82,12 @@ readSimulationResult("NonLinSys4_res.plt",{psii,delta},size);
 system("rm -f NonLinSys4_*");
 system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
 */
-
+loadFile("LargeSteps.mo");
+simulate(LargeSteps,stopTime=200,numberOfIntervals=5);
+val(x,0.0);
+val(x,200.0);
+system("rm -f LargeSteps_*");
+system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log LargeSteps.libs"); 
 // Result:
 // true
 // record
@@ -140,6 +145,14 @@ system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log N
 // 2.0
 // 2.0
 // 0.0
+// 0
+// 0
+// true
+// record
+//     resultFile = "LargeSteps_res.plt"
+// end record
+// 0.0
+// -0.76264816930482
 // 0
 // 0
 // endResult
