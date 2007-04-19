@@ -94,14 +94,14 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "TimeVaryingLinSys_res.plt"
 // end record
 // 0.0
-// 0.74087471699008
-// 1.99999999999989
+// 0.740874716990106
+// 2.00000000000023
 // 0.0
-// 0.707300226407899
-// 0.999999999999937
+// 0.707300226407917
+// 0.999999999999863
 // 0.0
-// 0.103650113203957
-// -2.34807341717829e-15
+// 0.103650113203958
+// -7.70898531860016e-14
 // 0
 // 0
 // true
@@ -109,8 +109,8 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "NonLinSys_res.plt"
 // end record
 // 1.0
-// 0.880880577295321
-// 0.85403136394905
+// 0.880880577295053
+// 0.85403136394939
 // 0
 // 0
 // true
@@ -118,11 +118,11 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "NonLinSys3_res.plt"
 // end record
 // 1.0
-// 1.21473014902332
-// 1.64262701824833
+// 1.21473014902821
+// 1.64262701825714
 // 2.0
-// 2.2687691671654
-// 2.92573132658972
+// 2.26876916716598
+// 2.92573132659916
 // 0
 // 0
 // true
@@ -130,9 +130,9 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // record
 //     resultFile = "Test3PhaseSystems.Test3PhaseSystem_res.plt"
 // end record
-// -0.00869273954826427
-// -0.021891758479452
-// 0.0305844980277181
+// -0.00869273954826455
+// -0.0218917584794523
+// 0.0305844980277178
 // 0
 // 0
 // true
@@ -152,7 +152,7 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "LargeSteps_res.plt"
 // end record
 // 0.0
-// -0.76264816930482
+// -0.762648169368246
 // 0
 // 0
 // endResult

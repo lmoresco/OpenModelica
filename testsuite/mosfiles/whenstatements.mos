@@ -29,9 +29,9 @@ system("rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log");
 // 2.2
 // 1.0
 // 1.2
-// 3.9192062223352
+// 3.9192062223142
 // 0.0
-// 0.594534891891826
+// 0.594534891891851
 // 0.9
 // ""
 // 0

@@ -27,6 +27,9 @@ readFile("output.log");
 system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log");
 
 
+
+
+
 // Result:
 // true
 // 0
@@ -35,21 +38,18 @@ system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExt
 //     resultFile = "ExternalLibraries1_res.plt"
 // end record
 // 1.0
-// 0.600887778157986
-// 0.403963944988834
-// 0.288487830038415
-// 0.213829700623426
-// 0.162473615686201
+// 0.600887778157982
+// 0.403963944988828
+// 0.288487830038412
+// 0.213829700623427
+// 0.16247361568621
 // 2.0
 // 1.47706529502177
-// 1.24429170349249
-// 1.12931884026376
+// 1.24429170349248
+// 1.12931884026375
 // 1.06961756611367
 // 1.03781092505351
 // ""
 // ""
 // 0
 // endResult
-
-
-
