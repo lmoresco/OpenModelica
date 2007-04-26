@@ -33,6 +33,18 @@ val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 readFile("output.log");
 system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
+
+// Professional.WeakAxis
+simulate(TestModels.Professional.WeakAxis,stopTime=200.0);
+{val(inertia1.w,0.0),val(inertia1.w,50.0),val(inertia1.w,100.0),
+val(inertia1.w,120.0),val(inertia1.w,180.0),val(inertia1.w,200.0)};
+{val(inertia2.w,0.0),val(inertia2.w,50.0),val(inertia2.w,100.0),
+val(inertia2.w,120.0),val(inertia2.w,180.0),val(inertia2.w,200.0)};
+{val(inertia3.w,0.0),val(inertia3.w,50.0),val(inertia3.w,100.0),
+val(inertia3.w,120.0),val(inertia3.w,180.0),val(inertia3.w,200.0)};
+readFile("output.log");
+system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
+
 // Result:
 // true
 // true
@@ -55,6 +67,14 @@ system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 // end record
 // {0.0,-0.155036551281273,-0.536294545506288,-0.692713882853474,-0.900903345512211,-1.12249309317095}
 // {0.0,-0.0155036551281951,-0.0536294545504159,-0.069271388285647,-0.0900903345509524,-0.112249309317336}
+// ""
+// 0
+// record
+//     resultFile = "TestModels.Professional.WeakAxis_res.plt"
+// end record
+// {0.0,6.61308791140295,7.04984494544141,6.70431143317138,6.356246233448,6.7379892527921}
+// {0.0,6.67913796573242,6.70660693160565,6.7099534573534,6.61470554273674,6.59594658579624}
+// {0.0,6.70777411524847,6.24354811533672,6.58573510185903,7.0290482161988,6.66606415379529}
 // ""
 // 0
 // endResult

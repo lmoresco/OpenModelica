@@ -845,6 +845,26 @@ package TestModels
       end NandGate;
     end SystemTests;
   end AnalogModels;
-  annotation(uses(Modelica(version="2.2")));
+annotation(uses(Modelica(version="2.2")));
+package Professional
+  model WeakAxis
+  annotation(Diagram(coordinateSystem(extent={{-148.5,-105},{148.5,105}})), Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Rectangle(visible=true, fillColor={143,143,143}, fillPattern=FillPattern.HorizontalCylinder, extent={{-100,-25},{100,25}}),Text(visible=true, fillPattern=FillPattern.Solid, extent={{-100,-150},{100,-110}}, textString="%name")}));
+  Modelica.Blocks.Sources.Pulse pulse1(width=1, period=200) annotation(Placement(visible=true, transformation(x=-67.5, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Torque torque1 annotation(Placement(visible=true, transformation(x=-45, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Inertia inertia3 annotation(Placement(visible=true, transformation(x=67.5, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Spring spring2(c=1) annotation(Placement(visible=true, transformation(x=45, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Inertia inertia2 annotation(Placement(visible=true, transformation(x=22.5, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Inertia inertia1 annotation(Placement(visible=true, transformation(x=-22.5, y=17.5476, scale=0.075)));
+  Modelica.Mechanics.Rotational.Spring spring1(c=0.7) annotation(Placement(visible=true, transformation(x=5.9952e-15, y=17.5476, scale=0.075)));
+
+  equation
+   connect(inertia1.flange_b,spring1.flange_a) annotation(Line(visible=true, points={{-15.119,17.3869},{-7.55952,17.3869}}));
+  connect(spring2.flange_b,inertia3.flange_a) annotation(Line(visible=true, points={{52.5387,17.3869},{60.0982,17.3869}}));
+  connect(pulse1.y,torque1.tau) annotation(Line(visible=true, points={{-59.3423,17.3869},{-54.0506,17.3869}}));
+  connect(spring1.flange_b,inertia2.flange_a) annotation(Line(visible=true, points={{7.55952,17.3869},{15.119,17.3869}}));
+  connect(torque1.flange_b,inertia1.flange_a) annotation(Line(visible=true, points={{-37.4196,17.3869},{-29.8601,17.3869}}));
+  connect(inertia2.flange_b,spring2.flange_a) annotation(Line(visible=true, points={{29.8601,17.3869},{37.4196,17.3869}}));
+end WeakAxis;  
+end Professional;
 end TestModels;
 
