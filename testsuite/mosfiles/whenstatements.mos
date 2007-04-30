@@ -25,14 +25,14 @@ system("rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log");
 //     resultFile = "testalgwhen_res.plt"
 // end record
 // 0.0
-// 2.2
-// 2.2
+// 2.20000000000009
+// 2.20000000000009
 // 1.0
-// 1.2
-// 3.91920622231807
+// 1.20000000000009
+// 3.91920622232044
 // 0.0
-// 0.594534891892412
-// 0.9
+// 0.594534891892803
+// 0.9000000000004
 // ""
 // 0
 // endResult

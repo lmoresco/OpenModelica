@@ -11,7 +11,6 @@ val(i0,0.5);
 val(i0,1.0);
 readFile("output.log");
 system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log");
-
 // Result:
 // true
 // record
@@ -19,7 +18,7 @@ system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ide
 // end record
 // 0.0
 // 0.0
-// 0.8539012556
+// 0.853901255599747
 // ""
 // 0
 // endResult

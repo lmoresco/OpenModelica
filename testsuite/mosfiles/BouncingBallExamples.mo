@@ -17,3 +17,19 @@ equation
     reinit(v, v_new);
   end when;
 end BouncingBallExamples;
+
+model BouncingBall "Simple model of a bouncing ball"
+   constant Real g=9.81;
+   parameter Real c=0.9;
+   parameter Real r=0.1;
+   Real x(start=1), y(start=0);
+
+equation
+   der(x) = y;
+   der(y) = -g;
+   when x < r then
+      reinit(y,(-c)*pre(y));
+   end when;
+end BouncingBall;
+
+
