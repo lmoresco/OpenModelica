@@ -20,10 +20,10 @@ system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DA
 //     resultFile = "DAEexample_res.plt"
 // end record
 // 0.9
-// 0.98148831835
-// 1.2016835965
+// 0.981488318374134
+// 1.20168359652666
 // 0.512239999389552
-// 0.653185973889415
-// 1.02593908837979
+// 0.653185973887926
+// 1.02593908837436
 // 0
 // endResult

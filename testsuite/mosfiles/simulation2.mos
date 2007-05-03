@@ -26,6 +26,18 @@ val(x,1.0);
 system("rm -f NonLinSys_*");
 system("rm -f NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLinSys.libs");
 
+
+// Nonlinear systems also in NonLinSys.mo
+simulate(dae1,stopTime=15);
+val(x1,15.0);
+val(x2,15.0);
+simulate(dae2,stopTime=15);
+val(x1,15.0);
+val(x2,15.0);
+system("rm -f dae1.* dae1_* dae1.log dae1.libs");
+system("rm -f dae2.* dae2_* dae2.log dae2.libs");
+
+
 /* TODO: Does not work since DASSL calls residual function for negative values when
 it calculates numerical jacobian. 
 loadFile("NonLinSys2.mo");
@@ -88,6 +100,8 @@ val(x,0.0);
 val(x,200.0);
 system("rm -f LargeSteps_*");
 system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log LargeSteps.libs"); 
+
+
 // Result:
 // true
 // record
@@ -109,8 +123,20 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "NonLinSys_res.plt"
 // end record
 // 1.0
-// 0.880880577258316
-// 0.854031363938055
+// 0.88088057724555
+// 0.854031363919528
+// 0
+// 0
+// record
+//     resultFile = "dae1_res.plt"
+// end record
+// 1.00066080211634
+// 0.000168488571094471
+// record
+//     resultFile = "dae2_res.plt"
+// end record
+// 0.666665089163638
+// 0.5000014076278
 // 0
 // 0
 // true
@@ -118,11 +144,11 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     resultFile = "NonLinSys3_res.plt"
 // end record
 // 1.0
-// 1.21473014902331
-// 1.64262701824808
+// 1.21473014906086
+// 1.64262701835091
 // 2.0
-// 2.26876916716529
-// 2.92573132658916
+// 2.26876916721021
+// 2.92573132674558
 // 0
 // 0
 // true
