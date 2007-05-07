@@ -1,0 +1,23 @@
+// name:     dertest 
+// keywords: Simulate, der(expr) 
+// status:   correct
+// 
+//  Simulate model containing der(expr).
+//
+
+loadFile("dertest.mo");
+simulate(dertest);
+val(x,0.0);
+val(x,1.0);
+val(y,0.0);
+val(y,1.0);
+// Result:
+// true
+// record
+//     resultFile = "dertest_res.plt"
+// end record
+// 10.0
+// 4.1982410203818
+// -1.0
+// -1.42916997163095
+// endResult
