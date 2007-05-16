@@ -3658,7 +3658,7 @@ end Gear;
 // parameter Real inertia2.J(quantity = "MomentOfInertia", unit = "kg.m2") = 1 "Moment of inertia";
 // Real inertia2.w(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "Absolute angular velocity of component";
 // Real inertia2.a(quantity = "AngularAcceleration", unit = "rad/s2") "Absolute angular acceleration of component";
-// Real torque1.tau "Torque driving the flange (a positive value accelerates the flange)";
+// Real torque1.tau(quantity = "Torque", unit = "N.m") "Torque driving the flange (a positive value accelerates the flange)";
 // Real torque1.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
 // Real torque1.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
 // Real torque1.bearing.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
