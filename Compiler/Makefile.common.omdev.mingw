@@ -61,7 +61,8 @@ SRCMO= Absyn.mo \
 	Util.mo \
 	Values.mo \
 	VarTransform.mo \
-	Refactor.mo
+	Refactor.mo \
+	DAEQuery.mo
 
 # These are externally defined MO modules
 ALLMO = $(SRCMO) DAEEXT.mo Print.mo RTOpts.mo System.mo Parser.mo \

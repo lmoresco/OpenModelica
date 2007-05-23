@@ -1,7 +1,7 @@
 Absyn.o: Absyn.mo Util.sig ModUtil.sig Debug.sig Print.sig 
 Algorithm.o: Algorithm.mo SCode.sig Types.sig Exp.sig Util.sig Error.sig Absyn.sig Debug.sig Print.sig 
 Builtin.o: Builtin.mo SCode.sig Absyn.sig Env.sig Types.sig ClassInf.sig 
-Ceval.o: Ceval.mo Values.sig Types.sig Interactive.sig Exp.sig Env.sig DAELow.sig Absyn.sig Util.sig Static.sig SimCodegen.sig SCode.sig Settings.sig System.sig RTOpts.sig Prefix.sig Print.sig Refactor.sig ModUtil.sig Lookup.sig Dump.sig Error.sig Inst.sig Parser.sig Debug.sig Connect.sig DAE.sig ClassLoader.sig ClassInf.sig Codegen.sig Derive.sig 
+Ceval.o: Ceval.mo Values.sig Types.sig Interactive.sig Exp.sig Env.sig DAELow.sig Absyn.sig Util.sig Static.sig SimCodegen.sig System.sig SCode.sig RTOpts.sig Print.sig Refactor.sig Settings.sig Parser.sig ModUtil.sig Lookup.sig Inst.sig Prefix.sig Dump.sig Debug.sig Derive.sig Connect.sig DAE.sig DAEQuery.sig ClassLoader.sig ClassInf.sig Codegen.sig Error.sig 
 ClassInf.o: ClassInf.mo SCode.sig Absyn.sig Print.sig Error.sig 
 ClassLoader.o: ClassLoader.mo Absyn.sig Util.sig Print.sig System.sig Interactive.sig Debug.sig Parser.sig 
 Codegen.o: Codegen.mo Print.sig Exp.sig Convert.sig Absyn.sig DAE.sig Util.sig System.sig Types.sig ModUtil.sig Inst.sig Debug.sig Error.sig Interactive.sig Algorithm.sig ClassInf.sig 
@@ -34,3 +34,4 @@ Util.o: Util.mo System.sig Debug.sig Print.sig
 Values.o: Values.mo Exp.sig Absyn.sig Util.sig Print.sig System.sig Dump.sig Error.sig 
 VarTransform.o: VarTransform.mo Exp.sig DAELow.sig DAE.sig Util.sig System.sig Types.sig Absyn.sig Algorithm.sig Debug.sig 
 Refactor.o: Refactor.mo Absyn.sig Util.sig Interactive.sig Env.sig Inst.sig 
+DAEQuery.o: DAEQuery.mo DAELow.sig Util.sig Exp.sig System.sig Algorithm.sig Absyn.sig DAE.sig 
