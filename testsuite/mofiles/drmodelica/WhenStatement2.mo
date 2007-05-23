@@ -1,8 +1,8 @@
 // name:     WhenStatement2
 // keywords: when
-// status:   incorrect
+// status:   correct
 // 
-// algorithm sections outside functions not yet implemented
+// 
 // 
 
 class WhenStat2
@@ -28,7 +28,7 @@ end WhenStat2;
 // equation
 //  der(x) = 2.0 * x;
 // algorithm
-//  when {x > 2.0,sample(0,2),x < 5.0} do
+//  when {x > 2.0,sample(0,2),x < 5.0} then
 //   y1 := sin(x);
 //   y3 := 2.0 * x + y1 + y2;
 //  end when;

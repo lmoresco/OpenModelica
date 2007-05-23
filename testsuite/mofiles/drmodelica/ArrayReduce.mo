@@ -22,5 +22,5 @@ end ArrayReduce;
 //   minimum = -1.0;
 //   maximum = 6.0;
 //   summ = Real({1,2,3} + {4,5,6});
-//   prod = product({3.14,2.0,2.0});
+//   prod = 12.56;
 // end ArrayReduce;

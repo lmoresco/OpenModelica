@@ -2,6 +2,7 @@
 // keywords: array
 // status:   correct
 //
+// //??Error - cat not yet implemented
 
 class AppendElement 
   Real[1, 3] PA=[1, 2, 3];

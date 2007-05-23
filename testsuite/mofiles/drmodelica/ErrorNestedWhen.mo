@@ -1,6 +1,6 @@
 // name:     ErrorNestedWhen
 // keywords: when
-// status:   correct
+// status:   incorrect
 // 
 // Nested whens are not allowed
 // 

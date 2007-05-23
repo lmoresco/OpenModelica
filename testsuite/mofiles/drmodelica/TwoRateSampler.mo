@@ -1,5 +1,5 @@
 // name:     TwoRateSampler
-// keywords: <insert keywords here>
+// keywords:  sample
 // status:   correct
 // 
 // <insert description here>
@@ -26,7 +26,7 @@ model TwoRateSampler
     y = log(time);               
   end when;
 end TwoRateSampler;
-
+   
 
 // fclass TwoRateSampler
 // discrete Real x;

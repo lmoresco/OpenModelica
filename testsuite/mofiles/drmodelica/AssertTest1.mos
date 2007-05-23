@@ -20,7 +20,9 @@ system("rm -rf Test1_* Test1.exe Test1.cpp Test1.makefile Test1.libs Test1.log o
 //     resultFile = "Test1_res.plt"
 // end record
 // true
-// 5.0
-// ""
+// 0.0
+// "Variable x out of limit
+// Simulation terminated at time 0
+// "
 // 0
 // endResult

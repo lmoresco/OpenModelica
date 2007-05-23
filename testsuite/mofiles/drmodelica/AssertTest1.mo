@@ -23,5 +23,5 @@ end Test1;
 // Real assertTest.x;
 // equation
 //   assertTest.x = 5.0;
-// assert(x >= lowlimit AND x <= highlimit,"Variable x out of limit");
+// assert(assertTest.x >= assertTest.lowlimit AND assertTest.x <= assertTest.highlimit,"Variable x out of limit");
 // end Test1;

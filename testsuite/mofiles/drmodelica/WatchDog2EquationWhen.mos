@@ -1,8 +1,8 @@
 // name:     WatchDog2EquationWhen
 // keywords: watchdog equation-when
-// status:   incorrect
+// status:   correct
 // 
-//  <insert description here>
+//  //??Error - not yet implemented
 //
 loadFile("WatchDog2EquationWhen.mo");
 simulate( WatchDogSystem2, stopTime=4 );
@@ -22,6 +22,7 @@ i21;
 i22;
 s1;
 s2;
+
 readFile("output.log"); // Check that output log is emtpy
 system("rm -rf WatchDogSystem2_* WatchDogSystem2.exe WatchDogSystem2.cpp WatchDogSystem2.makefile WatchDogSystem2.libs WatchDogSystem2.log output.log"); // remove tmp files.
 

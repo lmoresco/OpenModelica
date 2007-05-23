@@ -1,6 +1,6 @@
 // name:     EqualityEquations
 // keywords: equation
-// status:   correct
+// status:   incorrect
 // 
 // Illegal equations
 

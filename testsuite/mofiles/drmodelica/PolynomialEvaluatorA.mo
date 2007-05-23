@@ -27,8 +27,6 @@ equation
   p = polyeval.y;              // p gets the result
 end PolyEvaluate1;
 
-
-
 // fclass PolyEvaluate1
 // Real p;
 // parameter Real polyeval.c[1] = 1;
@@ -37,11 +35,11 @@ end PolyEvaluate1;
 // parameter Real polyeval.c[4] = 4;
 // input Real polyeval.x;
 // output Real polyeval.y;
-// parameter Integer polyeval.n = 3;
-// Real polyeval.xpowers[1];
-// Real polyeval.xpowers[2];
-// Real polyeval.xpowers[3];
-// Real polyeval.xpowers[4];
+// protected parameter Integer polyeval.n = 3;
+// protected Real polyeval.xpowers[1];
+// protected Real polyeval.xpowers[2];
+// protected Real polyeval.xpowers[3];
+// protected Real polyeval.xpowers[4];
 // equation
 //   polyeval.xpowers[1] = 1.0;
 //   polyeval.xpowers[2] = polyeval.xpowers[1] * polyeval.x;

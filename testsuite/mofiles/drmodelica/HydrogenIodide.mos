@@ -7,14 +7,15 @@
 loadFile("HydrogenIodide.mo");
 simulate(HydrogenIodide,startTime=0.0, stopTime=3.0,numberOfIntervals=500); // 2 intervals == 3 values
 echo(false); // turns of output
-size:=readSimulationResultSize("HydrogenIodide_res.plt");
-res:=readSimulationResult("HydrogenIodide_res.plt",{HI,H2,I2},size); 
-x:=res[1,1]; //val(res[1],0]);
-y:=res[2,1]; //val(res[2],0]);
-z:=res[3,1]; //val(res[3],0]);
-x2:=res[1,size]; //val(res[1],3]);
-y2:=res[2,size]; //val(res[2],3]);
-z2:=res[3,size]; //val(res[3],3]);
+//size:=readSimulationResultSize("HydrogenIodide_res.plt");
+//res:=readSimulationResult("HydrogenIodide_res.plt",{HI,H2,I2},size); 
+
+x:=val(HI,0.132);
+x2:=val(HI,0.666);
+y:=val(H2,0.12);
+y2:=val(H2,0.774);
+z:=val(I2,0.15);
+z2:=val(I2,0.72);
 x:=1000*x;
 y:=1000*y;
 z:=1000*z;
@@ -24,7 +25,6 @@ z2:=1000*z2;
 x:=floor(x);
 y:=floor(y);
 z:=floor(z);
-
 x2:=floor(x2);
 y2:=floor(y2);
 z2:=floor(z2);
@@ -35,6 +35,7 @@ y/1000.0;
 y2/1000.0;
 z/1000.0;
 z2/1000.0;
+
 readFile("output.log"); // Check that output log is emtpy
 system("rm -rf HydrogenIodide_* HydrogenIodide.exe HydrogenIodide.cpp HydrogenIodide.makefile HydrogenIodide.libs HydrogenIodide.log output.log"); // remove tmp files.
 
@@ -44,12 +45,12 @@ system("rm -rf HydrogenIodide_* HydrogenIodide.exe HydrogenIodide.cpp HydrogenIo
 //     resultFile = "HydrogenIodide_res.plt"
 // end record
 // true
-// 0.0
-// 8.147
-// 5.0
-// 0.926
-// 8.0
-// 3.926
+// 4.643
+// 7.925
+// 2.806
+// 0.991
+// 5.504
+// 4.011
 // ""
 // 0
 // endResult

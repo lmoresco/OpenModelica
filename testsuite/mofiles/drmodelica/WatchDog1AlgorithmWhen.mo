@@ -69,15 +69,14 @@ end WatchDogSystem1;
 //   turnOff.dOutput.signal = watchdog.dOff.signal;
 //   turnOn.dOutput.signal = watchdog.dOn.signal;
 // algorithm
-//   when change(dOn.signal) do
-//     watchdogActive := true;
+//   when change(watchdog.dOn.signal) then
+//     watchdog.watchdogActive := true;
 //   end when;
-//   when change(dOff.signal) do
-//     watchdogActive := false;
-//     dAlarm.signal := false;
+//   when change(watchdog.dOff.signal) then
+//     watchdog.watchdogActive := false;
+//     watchdog.dAlarm.signal := false;
 //   end when;
-//   when change(dDeadline.signal) AND watchdogActive do
-//     dAlarm.signal := true;
+//   when change(watchdog.dDeadline.signal) AND watchdog.watchdogActive then
+//     watchdog.dAlarm.signal := true;
 //   end when;
 // end WatchDogSystem1;
-// lower_statement_input_outputs finished yet

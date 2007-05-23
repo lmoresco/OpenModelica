@@ -1,7 +1,9 @@
 // name:     ArrayReduce
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
+// ??Error - not yet implemented
+//
 
 loadFile("ArrayReduce.mo");
 simulate(ArrayReduce,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values

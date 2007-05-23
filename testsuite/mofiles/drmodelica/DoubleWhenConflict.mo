@@ -17,3 +17,16 @@ algorithm
     close := false;
   end when;
 end DoubleWhenConflict;
+
+
+// fclass DoubleWhenConflict
+// Boolean close;
+// parameter Real x = 5;
+// algorithm
+//   when x >= 5.0 then
+//     close := true;
+//   end when;
+//   when x <= 5.0 then
+//     close := false;
+//   end when;
+// end DoubleWhenConflict;

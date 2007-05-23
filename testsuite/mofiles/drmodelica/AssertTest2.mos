@@ -8,14 +8,24 @@
 // Bugg has been reported.
 
 loadFile("AssertTest2.mo");
+echo(false); // turns of output
 simulate(Test2,startTime = 0, stopTime=10); // 2 intervals == 3 values
-getErrorString(); // simulation failed, check error string.
+//getErrorString(); // simulation failed, check error string.
+size:=readSimulationResultSize("Test2_res.plt");
+res:=readSimulationResult("Test2_res.plt",{assertTest.x},size); 
+x := res[1,1];
+echo(true); // turns on output
+x;
 system("rm -rf Test2_* Test2.exe Test2.cpp Test2.makefile Test2.libs Test2.log output.log"); // remove tmp files.
 // Result:
 // true
 // record
 //     resultFile = "Test2_res.plt"
 // end record
-// ""
+// true
+// 0.0
+// "Variable x out of limit
+// Simulation terminated at time 0
+// "
 // 0
 // endResult

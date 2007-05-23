@@ -13,12 +13,3 @@ equation
 	e2 = [1, 2; 1, 2] ^ 2;
 	// Result: {{3, 6}, {3, 6}}
 end Exp;
-
-
-// model Exp
-// Real e1[2, 2];
-// Real e2[2, 2];
-// equation
-// e1 = {{1, 2}, {1, 2}}^0;
-// e2 = [1, 2; 1, 2]^2;
-// end Exp;

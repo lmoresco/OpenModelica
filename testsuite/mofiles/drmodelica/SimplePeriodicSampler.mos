@@ -10,10 +10,18 @@ echo(false); // turns of output
 
 size:=readSimulationResultSize("Sampler_res.plt");
 res:=readSimulationResult("Sampler_res.plt",{x,y},size);
-x1:=res[1,99];
-y1:=res[2,99];
-x2:=res[1,344];
-y2:=res[2,344];
+//x1:=res[1,99];
+//y1:=res[2,99];
+//x2:=res[1,344];
+//y2:=res[2,344];
+// 1.839
+// 2.032
+// 0.15
+// 0.166
+x1:=val(x,1.0);
+y1:=val(y,1.0);
+x2:=val(x,3.0);
+y2:=val(y,3.0);
 x1:=1000*x1;
 y1:=1000*y1;
 x1:=floor(x1);
@@ -37,8 +45,8 @@ system("rm -rf Sampler_* Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs S
 // true
 // 1.839
 // 2.032
-// 0.15
-// 0.166
+// 0.248
+// 0.275
 // ""
 // 0
 // endResult

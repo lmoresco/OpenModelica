@@ -5,13 +5,10 @@
 
 loadFile("PolynomialEvaluatorA.mo");
 simulate(PolyEvaluate1,startTime=0.0, stopTime=10.0, numberOfIntervalls = 500); // 2 intervals == 3 values
-echo(false); // turns of output 
-size := readSimulationResultSize("PolyEvaluate1_res.plt");
-res:=readSimulationResult("PolyEvaluate1_res.plt",{p},size); 
-p1:=res[1,1];
-half := floor(size/2.0);
-p2:=res[1,half];
-p3:=res[1,size];
+echo(false); // turns of output  
+p1:=val(p,3.0);
+p2:=val(p,5.0);
+p3:=val(p,8.0);
 p1:=1000*p1;
 p2:=1000*p2;
 p3:=1000*p3;
@@ -32,9 +29,9 @@ system("rm -rf PolyEvaluate1_* PolyEvaluate1.exe PolyEvaluate1.cpp PolyEvaluate1
 //     resultFile = "PolyEvaluate1_res.plt"
 // end record
 // true
-// 0.0
-// 123.505
-// 1000.0
+// 27.0
+// 125.001
+// 512.001
 // ""
 // 0
 // endResult

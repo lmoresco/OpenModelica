@@ -18,7 +18,7 @@ end Sampler;
 
 
 // fclass Sampler
-// parameter Real sample_interval = 1 "Sample period";
+// parameter Real sample_interval = 0.1 "Sample period";
 // Real x(start = 5.0);
 // Real y;
 // equation

@@ -39,24 +39,3 @@ equation
   							//		 {"Anders", "Dan"}, 
   							//		 {"John", "Daniel"}}
 end getPerson; 
-
-
-// model getPerson
-// String pList.persons[1].name;
-// Integer pList.persons[1].age;
-// String pList.persons[1].children[2];
-// String pList.persons[2].name;
-// Integer pList.persons[2].age;
-// String pList.persons[2].children[2];
-// String pList.persons[3].name;
-// Integer pList.persons[3].age;
-// String pList.persons[3].children[2];
-// String name[3];
-// Integer age[3];
-// String children[3, 2];
-// equation
-// name = pList.persons.name;
-// age = pList.persons.age;
-// children = pList.persons.children;
-// end getPerson; 
-

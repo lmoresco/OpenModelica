@@ -1,6 +1,6 @@
 // name:     WhenNotValid
 // keywords: when
-// status:   correct
+// status:   incorrect
 // 
 // Modelica restricts the equations allowed within a when-equation 
 // to a form where the result variable is on the left-hand side

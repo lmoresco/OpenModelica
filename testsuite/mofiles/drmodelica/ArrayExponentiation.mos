@@ -1,6 +1,6 @@
 // name:     ArrayExponentiation
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
 
 loadFile("ArrayExponentiation.mo");

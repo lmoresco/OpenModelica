@@ -19,7 +19,7 @@ end AssertTestInst;
 // fclass AssertTestInst
 // parameter Real assertTest.lowlimit = -2;
 // parameter Real assertTest.highlimit = 6;
-// parameter Real assertTest.x = 7;
+// parameter Real assertTest.x = 5;
 // equation
-// assert(x >= lowlimit AND x <= highlimit,"Variable x out of limit");
+// assert(assertTest.x >= assertTest.lowlimit AND assertTest.x <= assertTest.highlimit,"Variable x out of limit");
 // end AssertTestInst;

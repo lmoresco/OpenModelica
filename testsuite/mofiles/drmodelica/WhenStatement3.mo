@@ -1,8 +1,8 @@
 // name:     WhenStatement3
 // keywords: when
-// status:   incorrect
+// status:   correct
 // 
-//  algorithm sections outside functions not yet implemented
+//  
 // 
 
 class WhenStat3
@@ -39,10 +39,10 @@ end WhenStat3;
 //  der(x) = 2.0 * x;
 //  y2 = sin(y1);
 // algorithm
-//  when x > 2.0 do
+//  when x > 2.0 then
 //   y1 := sin(x);
 //  end when;
-//  when x > 2.0 do
+//  when x > 2.0 then
 //   y3 := 2.0 * x + pre(y1) + y2;
 //  end when;
 // end WhenStat3;

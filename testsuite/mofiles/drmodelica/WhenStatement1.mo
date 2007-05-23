@@ -1,8 +1,8 @@
 // name:     WhenStatement1
 // keywords: when
-// status:   incorrect
+// status:   correct
 // 
-// algorithm sections outside functions not yet implemented
+// 
 // 
 
 class WhenStat
@@ -16,7 +16,7 @@ algorithm
     y3 := 2*x + pre(y1) + y2;
   end when;
 equation
-  der(x) = 2*x;  
+  der(x) = 2*x;
 end WhenStat;
 
 
@@ -26,10 +26,10 @@ end WhenStat;
 // parameter Real y2 = 5;
 // Real y3;
 // equation
-//  der(x) = 2.0 * x;
+//   der(x) = 2.0 * x;
 // algorithm
-//  when x > 2.0 do
-//  y1 := sin(x);
-//  y3 := 2.0 * x + pre(y1) + y2;
-//  end when;
+//   when x > 2.0 then
+//     y1 := sin(x);
+//     y3 := 2.0 * x + pre(y1) + y2;
+//   end when;
 // end WhenStat;

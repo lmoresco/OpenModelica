@@ -11,7 +11,7 @@ echo(true);
 getErrorString(); // simulation failed, check error string.
 
 // Result:
-// true
+// fel i lowerWhenEqntrue
 // record
 //     resultFile = "Simulation failed.
 // Too few equations, underdetermined system. The model has 3 variables and 0 equations

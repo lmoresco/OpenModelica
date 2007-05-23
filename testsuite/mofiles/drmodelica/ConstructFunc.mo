@@ -1,6 +1,6 @@
 // name:     ConstructFunc
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
 // Array constructs.
 // Error! linspace not implemented.

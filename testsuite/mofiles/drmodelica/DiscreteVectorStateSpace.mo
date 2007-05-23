@@ -104,11 +104,11 @@ end DVSSTest;
 // input Real dvss.u[4];
 // discrete output Real dvss.y[1];
 // discrete output Real dvss.y[2];
-// discrete Real dvss.x[1];
-// discrete Real dvss.x[2];
-// discrete Real dvss.x[3];
-// discrete Real dvss.x[4];
-// discrete Real dvss.x[5];
+// protected discrete Real dvss.x[1];
+// protected discrete Real dvss.x[2];
+// protected discrete Real dvss.x[3];
+// protected discrete Real dvss.x[4];
+// protected discrete Real dvss.x[5];
 // equation
 //   when sample(0,dvss.T) then
 //   dvss.x[1] = dvss.A[1,1] * pre(dvss.x[1]) + dvss.A[1,2] * pre(dvss.x[2]) + dvss.A[1,3] * pre(dvss.x[3]) + dvss.A[1,4] * pre(dvss.x[4]) + dvss.A[1,5] * pre(dvss.x[5]) + dvss.B[1,1] * dvss.u[1] + dvss.B[1,2] * dvss.u[2] + dvss.B[1,3] * dvss.u[3] + dvss.B[1,4] * dvss.u[4];

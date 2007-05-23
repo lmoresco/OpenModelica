@@ -1,16 +1,18 @@
 // name:     DoubleWhenConflict
-// keywords: when
+// keywords: equations when
 // status:   correct
 // 
-
+//  Erroneous model: close defined by two equations!
+//
 loadFile("DoubleWhenConflict.mo");
-simulate(DoubleWhenConflict,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(DoubleWhenConflict,numberOfIntervals=2); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 // Result:
-// lower_statement_input_outputs finished yet
 // true
 // record
-//    resultFile = "Simulation failed.
+//     resultFile = "Simulation failed.
+// Too many equations, overdetermined system. The model has 1 variables and 2 equations
 // "
 // end record
 // ""
+// endResult

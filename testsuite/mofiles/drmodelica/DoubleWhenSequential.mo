@@ -2,7 +2,7 @@
 // keywords: when
 // status:   correct
 // 
-// algorithm sections not yet implemented
+// 
 // 
 
 model DoubleWhenSequential
@@ -22,10 +22,10 @@ end DoubleWhenSequential;
 // fclass DoubleWhenSequential
 // Boolean close;
 // algorithm
-//   when time <= 2.0 do
+//   when time <= 2.0 then
 //     close := true;
 //   end when;
-//   when time <= 2.0 do
+//   when time <= 2.0 then
 //     close := false;
 //   end when;
 // end DoubleWhenSequential;

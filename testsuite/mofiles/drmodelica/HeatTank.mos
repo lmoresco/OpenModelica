@@ -1,0 +1,19 @@
+// name:     HeatTank
+// keywords: replaceable connector
+// status:   correct
+// 
+//  Error in implementation, replaceable connector.
+//
+loadFile("HeatTank.mo");
+simulate(HeatTank,numberOfIntervals=500); // 2 intervals == 3 values
+getErrorString(); // simulation failed, check error string.
+// Result:
+// true
+// record
+//     resultFile = "Simulation failed.
+// Variable inlet.temp not found in scope HeatTank
+// Error occured while flattening model HeatTank
+// "
+// end record
+// ""
+// endResult

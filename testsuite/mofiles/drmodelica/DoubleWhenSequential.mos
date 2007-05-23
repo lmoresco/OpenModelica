@@ -1,11 +1,11 @@
 // name:     DoubleWhenSequential
 // keywords: when
-// status:   incorrect
+// status:   correct
 // 
-// algorithm sections not yet implemented
+// 
 //
 loadFile("DoubleWhenSequential.mo");
-simulate(DoubleWhenSequential,startTime=0.0, stopTime=1.0); // 2 intervals == 3 values
+simulate(DoubleWhenSequential); // 2 intervals == 3 values
 echo(false); // turns of output 
 size:=readSimulationResultSize("DoubleWhenSequential_res.plt");
 res:=readSimulationResult("DoubleWhenSequential_res.plt",{close},size); 

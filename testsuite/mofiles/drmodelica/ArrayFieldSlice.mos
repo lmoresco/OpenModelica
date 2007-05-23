@@ -1,13 +1,13 @@
 // name:     ArrayFieldSlice
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
 
 loadFile("ArrayFieldSlice.mo");
 simulate(getPerson,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("getPerson_res.plt");
-res:=readSimulationResult("getPerson_res.plt",{name[1],name[2],name[3]},3); 
+res:=readSimulationResult("getPerson_res.plt",{name[1],name[2],name[3]},size); 
 name1:=res[1,1];
 name2:=res[2,1];
 name3:=res[3,1];

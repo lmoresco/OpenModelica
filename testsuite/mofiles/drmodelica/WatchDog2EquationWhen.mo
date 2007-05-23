@@ -1,6 +1,6 @@
 // name:     WatchDog2EquationWhen
 // keywords: watchdog equation-when
-// status:   incorrect
+// status:   correct
 // 
 // <insert description here>
 // 

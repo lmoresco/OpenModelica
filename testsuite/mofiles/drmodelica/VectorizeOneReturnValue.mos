@@ -1,7 +1,9 @@
 // name:     VectorizeOneReturnValue
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
+// not yet implmeneted
+//
 
 loadFile("VectorizeOneReturnValue.mo");
 simulate(OneReturnValue,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values

@@ -9,7 +9,7 @@ equation
   for i in 1:5 loop
     x[i] = i + 1;
   end for;
-end FiveEquations;
+end FiveForEquations;
 
 // fclass FiveForEquations
 // Real x[1];

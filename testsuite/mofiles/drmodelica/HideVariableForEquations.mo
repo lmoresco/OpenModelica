@@ -1,4 +1,4 @@
-// name:     FiveForEquations
+// name:     HideVariableForEquations
 // keywords: for
 // status:   correct
 // 
@@ -12,7 +12,7 @@ equation
   end for;    
 end HideVariableForEquations;
 
-// fclass HideVariable
+// fclass HideVariableForEquations
 // constant Integer k = 4;
 // Real x[1];
 // Real x[2];
@@ -25,4 +25,4 @@ end HideVariableForEquations;
 //   x[3] = 3.0;
 //   x[4] = 4.0;
 //   x[5] = 5.0;
-// end HideVariable;
+// end HideVariableForEquations;

@@ -1,11 +1,11 @@
 // name:     WhenStatement2
 // keywords: when
-// status:   incorrect
+// status:   correct
 // 
-//  algorithm sections outside functions not yet implemented
+//  
 //
 loadFile("WhenStatement2.mo");
-simulate(WhenStat2, startTime=0.0, stopTime=1.0); // 2 intervals == 3 values
+simulate(WhenStat2); // 2 intervals == 3 values
 echo(false); // turns of output 
 size:=readSimulationResultSize("WhenStat2_res.plt");
 res:=readSimulationResult("WhenStat2_res.plt",{x,y1,y3},size); 

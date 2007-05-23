@@ -1,6 +1,6 @@
 // name:     DimConvert
 // keywords: array
-// status:   incorrect
+// status:   correct
 // 
 // Not yet implemented
 

@@ -22,7 +22,26 @@ RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo \
 HelloWorld.mo HelloWorld.mos Xpowers1.mo Xpowers2.mo Xpowers3.mo \
 PolynomialEvaluator1.mo PolynomialEvaluator2.mo FuncMultResults.mo \
 SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
-AlgorithmCondAssign1.mo 
+AlgorithmCondAssign1.mo Tank.mo Tank.mos HeatTank.mos HeatTankExpanded.mo \
+HeatTankExpanded.mos FlatTank.mo FlatTank.mos TankPI.mos TankPI.mo \
+TankPID.mos TankPID.mo TanksConnectedPI.mos TanksConnectedPI.mo \
+TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo CyclicPerm.mos \
+ArrayAddSub1.mo ArrayAddSub1.mos ArrayDivError.mo ArrayDivError.mos \
+ArrayMult.mo ArrayMult.mos ArrayReduce.mo \
+VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
+EqualityEquations.mos FiveForEquations.mo FiveForEquations.mos \
+HideVariableForEquations.mo HideVariableForEquations.mos IfEquation.mo \
+IfEquation.mos WhenEquation.mo WhenEquation.mos WhenVectorPredicateEquation.mo \
+WhenVectorPredicateEquation.mo WhenNotValid.mos WhenValidResult.mo WhenValidResult.mo \
+ErrorNestedWhen.mos PolynomialEvaluatorA.mo PolynomialEvaluatorA.mos \
+PolynomialEvaluatorB.mo PolynomialEvaluatorB.mos StepAdvanced.mo StepAdvanced.mos \
+AlgorithmSection.mo AlgorithmSection.mos WhenStatement1.mo WhenStatement1.mos \
+WhenStatement2.mo WhenStatement2.mos WhenStatement3.mo WhenStatement3.mos \
+DoubleWhenConflict.mos DoubleWhenSequential.mo DoubleWhenSequential.mos \
+FuncDer.mo FuncDer.mos SimplePeriodicSampler.mo SimplePeriodicSampler.mos \
+TwoRateSampler.mo TwoRateSampler.mos DiscreteVectorStateSpace.mo DiscreteVectorStateSpace.mos \
+WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
+LotkaVolterra.mo LotkaVolterra.mos HydrogenIodide.mo HydrogenIodide.mos \
 
 FAILINGTESTFILES= AppendElement.mo ArrayExponentiation.mo Circuit.mo ColorClasses.mo LeastSquares.mo \
 AlgorithmCondAssign2.mo \
@@ -34,7 +53,15 @@ ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
 MicroCircuitValid.mo \
 GenericMicroCircuit.mo \
 PolynomialEvaluator1.mos  PolynomialEvaluator3.mos PolynomialEvaluator2.mos \
-JoinThreeVectors2.mos StatementCall.mos WhenPriority.mos OneArgBaseFunction.mos
+JoinThreeVectors2.mos StatementCall.mos WhenPriority.mos OneArgBaseFunction.mos \
+HeatTank.mo TankHybridPID.mos TankHybridPI.mos ArrayFieldSlice.mo ArrayFieldSlice.mos \
+AppendElement.mo AppendElement.mos ArrayExponentiation.mo ArrayExponentiation.mos \
+DimConvert.mo DimConvert.mos ConstructFunc.mo ConstructFunc.mos ArrayReduce.mos \
+VectorizeOneReturnValue.mos ABCDsystem.mos EqualityEquationsCorrect.mos \
+EqualityEquations.mo DimSize.mo WhenNotValid.mo ErrorNestedWhen.mo \
+DoubleWhenConflict.mo WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
+
+ 
 
 
 
