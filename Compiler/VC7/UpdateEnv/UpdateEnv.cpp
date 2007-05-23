@@ -146,8 +146,14 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	 * and then just exit
 	 *
 	 */
-	SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0,
-     (LPARAM)"Environment", SMTO_ABORTIFHUNG,5000, &dwReturnValue);
+	SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)"Environment", SMTO_ABORTIFHUNG, 5000, &dwReturnValue);
+
+	/* Adrian Pop - 2007-05-09 
+	 * broadcast the environment change again.
+	 */
+	/*
+	BroadcastSystemMessage(BSF_POSTMESSAGE, BSM_ALLCOMPONENTS, WM_SETTINGCHANGE, 0, (LPARAM)"Environment");
+	*/
 
 	return 0;
 
