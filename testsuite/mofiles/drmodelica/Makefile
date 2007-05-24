@@ -32,8 +32,8 @@ VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
 EqualityEquations.mos FiveForEquations.mo FiveForEquations.mos \
 HideVariableForEquations.mo HideVariableForEquations.mos IfEquation.mo \
 IfEquation.mos WhenEquation.mo WhenEquation.mos WhenVectorPredicateEquation.mo \
-WhenVectorPredicateEquation.mo WhenNotValid.mos WhenValidResult.mo WhenValidResult.mo \
-ErrorNestedWhen.mos PolynomialEvaluatorA.mo PolynomialEvaluatorA.mos \
+WhenVectorPredicateEquation.mo WhenValidResult.mo WhenValidResult.mo \
+PolynomialEvaluatorA.mo PolynomialEvaluatorA.mos \
 PolynomialEvaluatorB.mo PolynomialEvaluatorB.mos StepAdvanced.mo StepAdvanced.mos \
 AlgorithmSection.mo AlgorithmSection.mos WhenStatement1.mo WhenStatement1.mos \
 WhenStatement2.mo WhenStatement2.mos WhenStatement3.mo WhenStatement3.mos \

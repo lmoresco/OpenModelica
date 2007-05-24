@@ -30,8 +30,8 @@ system("rm -rf HeatTankExpanded_* HeatTankExpanded.exe HeatTankExpanded.cpp Heat
 //     resultFile = "HeatTankExpanded_res.plt"
 // end record
 // true
-// 2.9
-// 3.5
+// 2.899
+// 3.499
 // 4.1
 // ""
 // 0
