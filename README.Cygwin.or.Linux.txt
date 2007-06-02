@@ -57,7 +57,8 @@ For this use:
 trunk/build/bin/omc +d=interactive      (if you configured with --without-CORBA) or
 trunk/build/bin/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico) 
 
-trunk/build/bin/OMShell -noserv
+trunk/build/bin/OMShell -noserv         (if you configured with --without-CORBA) or
+trunk/build/bin/OMShell -noserv -corba  (if you configured with --with-CORBA=path/to/mico)
 
 ( The -noserv argument will prevent mosh from starting its own omc in the background )
 
