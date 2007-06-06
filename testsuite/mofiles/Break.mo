@@ -30,6 +30,7 @@ algorithm
       x := 2.0;
     else
       x := 3.0;
+      break;
     end if;
   end for;
 algorithm
