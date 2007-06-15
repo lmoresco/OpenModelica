@@ -37,7 +37,7 @@ getClassNames(A);
 // {"<HTML>foo</HTML>","1.0"}
 // 2
 // 1
-// {{Real,z,"", "public", false, false, false, "unspecified", "none", "unspecified"},{Integer,x,"", "public", false, false, false, "unspecified", "none", "unspecified"}}
+// {{Real,z,"", "public", false, false, false, "unspecified", "none", "unspecified",{}},{Integer,x,"", "public", false, false, false, "unspecified", "none", "unspecified",{}}}
 // Ok
 // Ok
 // {a.n[1],b.z[2], ""}
