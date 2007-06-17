@@ -53,6 +53,7 @@ SRCMO= Absyn.mo \
 	Lookup.mo \
 	Main.mo \
 	Matrix.mo \
+	MetaUtil.mo \
 	Mod.mo \
 	ModUtil.mo \
 	Patternm.mo \
