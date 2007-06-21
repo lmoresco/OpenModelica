@@ -9450,7 +9450,7 @@ constrain(constraintResidue, constraintResidue_d, constraintResidue_dd);
           input Integer colWise;
           output Integer tableID;
 
-          external "C" tableID=dymTableTimeIni2(timeIn,startTime,ipoType,expoType,tableName,fileName,table,size(table, 1),size(table, 2),colWise) ;
+          external "C" tableID=omcTableTimeIni(timeIn,startTime,ipoType,expoType,tableName,fileName,table,size(table, 1),size(table, 2),colWise) ;
 
         end tableTimeInit;
         function tableTimeIpo
