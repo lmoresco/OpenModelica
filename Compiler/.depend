@@ -11,7 +11,7 @@ DAE.o: DAE.mo Values.sig Types.sig Exp.sig ClassInf.sig Algorithm.sig Absyn.sig 
 DAELow.o: DAELow.mo Values.sig Exp.sig DAE.sig Absyn.sig Algorithm.sig VarTransform.sig Util.sig System.sig Types.sig SCode.sig Print.sig RTOpts.sig Env.sig Error.sig SimCodegen.sig Derive.sig DAEEXT.sig Debug.sig Builtin.sig Ceval.sig Dump.sig 
 Derive.o: Derive.mo Exp.sig Absyn.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Error.sig 
 Debug.o: Debug.mo Util.sig Print.sig RTOpts.sig 
-DFA.o: DFA.mo Util.sig Types.sig Matrix.sig Lookup.sig SCode.sig ClassInf.sig Absyn.sig Env.sig 
+DFA.o: DFA.mo Types.sig Matrix.sig SCode.sig ClassInf.sig Absyn.sig Env.sig Util.sig Lookup.sig 
 Dump.o: Dump.mo Interactive.sig Absyn.sig Util.sig Print.sig Debug.sig 
 DumpGraphviz.o: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig 
 Constants.o: Constants.mo Absyn.sig 
@@ -28,7 +28,7 @@ Matrix.o: Matrix.mo Util.sig Absyn.sig
 MetaUtil.o: MetaUtil.mo Util.sig Types.sig Lookup.sig Exp.sig SCode.sig Debug.sig Absyn.sig DAE.sig Env.sig 
 Mod.o: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig Absyn.sig Values.sig Util.sig Static.sig Inst.sig Print.sig Dump.sig Ceval.sig Debug.sig Error.sig 
 ModUtil.o: ModUtil.mo DAE.sig Absyn.sig Exp.sig Util.sig RTOpts.sig Types.sig Algorithm.sig 
-Patternm.o: Patternm.mo Util.sig Matrix.sig SCode.sig Env.sig Absyn.sig DFA.sig Lookup.sig 
+Patternm.o: Patternm.mo Matrix.sig SCode.sig DFA.sig Absyn.sig Env.sig Util.sig Lookup.sig 
 Prefix.o: Prefix.mo Lookup.sig Exp.sig Absyn.sig Env.sig Util.sig Print.sig Debug.sig 
 Static.o: Static.mo Values.sig Types.sig SCode.sig MetaUtil.sig Interactive.sig Exp.sig Env.sig Convert.sig Absyn.sig Algorithm.sig Util.sig Print.sig ModUtil.sig Prefix.sig System.sig Lookup.sig Dump.sig Error.sig Inst.sig Mod.sig DAE.sig Codegen.sig Connect.sig Ceval.sig ClassInf.sig Debug.sig 
 SimCodegen.o: SimCodegen.mo SCode.sig Exp.sig DAELow.sig DAE.sig Absyn.sig VarTransform.sig Util.sig Values.sig System.sig Types.sig RTOpts.sig ModUtil.sig Print.sig Settings.sig Error.sig Dump.sig Env.sig Algorithm.sig Codegen.sig Debug.sig Inst.sig 

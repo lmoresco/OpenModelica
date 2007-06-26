@@ -47,7 +47,14 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
 #	CORBALIBS=
 #endif
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
+
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)   
+
+ifdef QTHOME
+PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
+else
+PLTPKGFLAGS = -L../../build/lib -lsendData
+endif
 
 PROG = omc.exe
 RML = $(RMLHOME)/bin/rmlc -v
@@ -58,6 +65,8 @@ SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 all : .testvariables $(ALLMO) subdirs $(PROG)
 .SUFFIXES:
 .SUFFIXES: .o .mo .h .rdb
+
+#pltpkg2: .testvariables $(ALLMO) subdirs prog2
 
 .PHONY: all subdirs $(SUBDIRS) report vctarget absyn_subdir clean reallyclean
 
@@ -88,8 +97,9 @@ vctarget: $(SRCC) absyn_subdir
 absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
-$(PROG): $(SRCO) $(AST) $(RTOBJ)
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS)
+$(PROG): $(SRCO) $(AST) $(RTOBJ) 
+	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
+
 
 subdirs: $(SRCHSRCDIR) $(SUBDIRS)
 
