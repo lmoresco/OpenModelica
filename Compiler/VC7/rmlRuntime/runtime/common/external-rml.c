@@ -55,7 +55,11 @@ RML_BEGIN_LABEL(RML__string_5fequal)
 	char *str2 = RML_STRINGDATA(rmlA1);
 	rml_uint_t len1 = strlen(str1);
 	rml_uint_t len2 = strlen(str2);
-	if (len1 != len2) RML_FALSE; 
+	if (len1 != len2) 
+	{
+		rmlA0 = RML_FALSE;
+		RML_TAILCALLK(rmlSC);
+	}
 	if( !memcmp(str1, str2, len1) )
 		    rmlA0 = RML_TRUE;
 		else

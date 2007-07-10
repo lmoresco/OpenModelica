@@ -34,10 +34,10 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrd.lib"
+				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrd.lib libsendData.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)..\..\c_runtime\sendData\release&quot;"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/omc.pdb"
 				SubSystem="1"
@@ -47,7 +47,8 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
-copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"
@@ -97,10 +98,10 @@ nmake -f MakeFile.debug.win32
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib"
+				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib libsendData.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime\sendData\release&quot;"
 				DelayLoadDLLs=""
 				GenerateDebugInformation="FALSE"
 				SubSystem="1"
@@ -112,7 +113,8 @@ nmake -f MakeFile.debug.win32
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
-copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+"
 				ExcludedFromBuild="FALSE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -172,7 +174,8 @@ popd
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
-copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+"
 				ExcludedFromBuild="TRUE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -231,7 +234,8 @@ nmake -f MakeFile.win32
 			<Tool
 				Name="VCPostBuildEventTool"
 				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
-copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;"/>
+copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;
+"/>
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Building antlr runtime"

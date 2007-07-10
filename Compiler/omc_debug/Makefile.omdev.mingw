@@ -50,6 +50,12 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
 
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
 
+ifdef QTHOME
+PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
+else
+PLTPKGFLAGS = -L../../build/lib -lsendData
+endif
+
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
 RML	= $(OMDEV)/tools/rml/bin/rmlc -g
@@ -79,7 +85,7 @@ $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
 $(SRCH): %.h : %.mo
 	$(RML) -c $<
 
-%.sig : %.mo
+$(SRCSIG): %.sig : %.mo
 	$(srcdir)/rml2sig/rmldep-new.sh $<
 
 vctarget: $(SRCC) absyn_subdir
@@ -89,7 +95,7 @@ absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ)
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS)
+	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
 
 subdirs: $(SRCHSRCDIR) $(SUBDIRS)
 

@@ -88,7 +88,7 @@ $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
 $(SRCH): %.h : %.mo
 	$(RML) $(RMLCFLAGS) -c $<
 
-%.sig : %.mo
+$(SRCSIG): %.sig : %.mo
 	$(srcdir)/rml2sig/rmldep-new.sh $<
 
 vctarget: $(SRCC) absyn_subdir

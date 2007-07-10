@@ -98737,6 +98737,17 @@
                         {
                         }
                     }
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_2B3260C96E0C4C598117FC3186F419F7"
+                    {
+                    "Name" = "8:tmp"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:TRUE"
+                    "Property" = "8:_A1DDFC5C0F3D49CE945542A0D30FF3DF"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_45F3F37B645C4F4E94E3329542A0F0A9"
                     {
                     "Name" = "8:ModelicaLibrary"
@@ -101164,7 +101175,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.3"
         "ProductCode" = "8:{6CCE826D-3117-4D00-BC0C-2A75B612CB01}"
-        "PackageCode" = "8:{9C6EDCF6-DF87-44A5-A14E-4A769BF793E8}"
+        "PackageCode" = "8:{7212B48B-B17B-469F-8C7A-BA8D68F86FE1}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -101422,7 +101433,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_F782837C9C9F45C0A2D257206DA323BA"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
-            "WorkingFolder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "WorkingFolder" = "8:_2B3260C96E0C4C598117FC3186F419F7"
             "Icon" = "8:_A4FD94586C5844F5999DFE8184AEE454"
             "Feature" = "8:"
             }
@@ -101464,7 +101475,7 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_0FFDFC547CDC41A09E25DB3BF33F1E93"
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
-            "WorkingFolder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "WorkingFolder" = "8:_2B3260C96E0C4C598117FC3186F419F7"
             "Icon" = "8:_A171BB2870DB4E48AE2AC3164BB2B3D1"
             "Feature" = "8:"
             }
