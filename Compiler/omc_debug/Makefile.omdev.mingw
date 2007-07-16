@@ -62,9 +62,9 @@ RML	= $(OMDEV)/tools/rml/bin/rmlc -g
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
-all : .testvariables $(ALLMO) subdirs $(PROG)
+all : .testvariables $(ALLMO) $(SRCSIG) subdirs $(PROG)
 .SUFFIXES:
-.SUFFIXES: .o .mo .h .rdb
+.SUFFIXES: .o .mo .h
 
 .PHONY: .testvariables all subdirs $(SUBDIRS) report vctarget absyn_subdir clean reallyclean
 SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)

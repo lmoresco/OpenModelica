@@ -62,9 +62,9 @@ RMLCFLAGS = #-Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
-all : .testvariables $(ALLMO) subdirs $(PROG)
+all : .testvariables $(ALLMO) $(SRCSIG) subdirs $(PROG)
 .SUFFIXES:
-.SUFFIXES: .o .mo .h .rdb
+.SUFFIXES: .o .mo .h
 
 #pltpkg2: .testvariables $(ALLMO) subdirs prog2
 
