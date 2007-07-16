@@ -110,7 +110,7 @@ clean:
 	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
 
 reallyclean: clean
-	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(SRCRDB) $(PROG)
+	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz)  $(PROG)
 
 # don't remove these files after intermediate build steps
 #.PRECIOUS: Makefile $(ALLRMO)

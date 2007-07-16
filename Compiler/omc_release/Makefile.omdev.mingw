@@ -118,7 +118,7 @@ clear-rmod-rsig:
 	-rm *.srz *.sig ../*.srz ../*.sig	
 
 realclean:
-	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(SRCRDB) $(PROG)
+	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG)
 
 # don't remove these files after intermediate build steps
 #.PRECIOUS: Makefile.omdev.mingw $(ALLRML) $(ALLMO)
