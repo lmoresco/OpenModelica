@@ -22838,13 +22838,6 @@
         {
             "LaunchCondition"
             {
-                "{2522A265-4974-4402-83C5-3B575A2E935A}:_3117AD91D6B14FF39545818B685D9885"
-                {
-                "Name" = "8:.NET Framework"
-                "Message" = "8:[VSDNETMSG]"
-                "SupportedRuntimes" = "8:1.1.4322"
-                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=9832"
-                }
             }
         }
         "Feature"
