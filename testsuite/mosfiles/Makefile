@@ -1,5 +1,5 @@
 
-TESTFILES = ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.mos \
+TESTFILES = ForIterator1.mos ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.mos \
 ForStatement5fail.mos ForStatement6.mos ForStatement7.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 IfStatement.mos IfStatementIllegal.mos WhileStatement.mos WhileStatementIllegal.mos \
