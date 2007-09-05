@@ -1,0 +1,29 @@
+// name:     ActivateWhenEquation
+// keywords: <insert keywords here>
+// status:   correct
+// 
+// Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
+//
+loadFile("ActivateWhenEquation.mo");
+simulate(Activate,numberOfIntervals=100); // 2 intervals == 3 values
+echo(false); // turns of output 
+//size:=readSimulationResultSize(Activate_res.plt");
+//res:=readSimulationResult("Activate_res.plt",{},size); 
+y:=val(y,0.0);
+z:=val(z,1.0);
+echo(true); // turns on output
+y;
+z;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf Activate_* Activate.exe Activate.cpp Activate.makefile Activate.libs Activate.log output.log"); // remove tmp files.
+// Result:
+// true
+// record
+//     resultFile = "Activate_res.plt"
+// end record
+// true
+// 7.0
+// 2.0
+// ""
+// 0
+// endResult

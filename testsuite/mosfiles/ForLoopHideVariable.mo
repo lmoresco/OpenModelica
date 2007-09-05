@@ -3,6 +3,7 @@
 // status:   correct
 // 
 // for statment handling
+// Drmodelica: 9.1 for-Statement (p.288)
 // 
 
 model HideVariable
@@ -22,7 +23,7 @@ end HideVariable;
 // Real z[4];
 // Real z[5];
 // algorithm
-//   for k in 1:5 loop
+//   for k in {1,2,3,4,5} loop
 //     z[k] := Real(k);
 //   end for;
 // end HideVariable;

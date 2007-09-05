@@ -1,10 +1,14 @@
 // name:      AlgorithmCondAssign2
 // keywords:  for statement, if statement, function
-// status:    incorrect
+// status:    correct
+//
+// Drmodelica: 9.1  if-Statement (p. 292)
+//
 loadFile("AlgorithmCondAssign2.mo");
 simulate(CondAssignFuncCall, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
 echo(false);
-res:=readSimulationResult("AlgorithmCondAssign1_res.plt",{a,b},3);
+size := readSimulationResultSize("CondAssignFuncCall_res.plt");
+res:=readSimulationResult("CondAssignFuncCall_res.plt",{a,b},size);
 a := res[1];
 a := 1000*a;
 a := floor(a);
@@ -15,15 +19,15 @@ echo(true);
 a/1000.0;
 b/1000.0;
 readFile("output.log");
-system("rm -rf CondAssignFunc_* CondAssignFunc.* AlgorithmCondAssign2_* AlgorithmCondAssign2.exe AlgorithmCondAssign2.cpp AlgorithmCondAssign2.makefile AlgorithmCondAssign2.libs AlgorithmCondAssign2.log output.log");
+//system("rm -rf CondAssignFunc_* CondAssignFunc.* CondAssignFuncCall_* CondAssignFuncCall.exe CondAssignFuncCall.cpp CondAssignFuncCall.makefile CondAssignFuncCall.libs CondAssignFuncCall.log output.log");
 // Result:
 // true
 // record
-//     resultFile = "AlgorithmCondAssign2_res.plt"
+//     resultFile = "CondAssignFuncCall_res.plt"
 // end record
 // true
-// {400.0,400.0,400.0}
-// {45.0,45.0,45.0}
+// 400.0
+// 45.0
 // ""
 // 0
 // endResult

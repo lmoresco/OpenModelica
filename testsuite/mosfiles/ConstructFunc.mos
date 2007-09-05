@@ -1,0 +1,48 @@
+// name:     ConstructFunc
+// keywords: array
+// status:   correct
+// 
+// Drmodelica: 7.7 Built-in Functions (p. 225)
+// 
+loadFile("ConstructFunc.mo");
+simulate(ConstructFunc,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+size := readSimulationResultSize("ConstructFunc_res.plt");
+res:=readSimulationResult("ConstructFunc_res.plt",{z[2,2],o[2],f[2,1],check[2,4],id[1,1],di[3,2],ls[3]},size); 
+z:=res[1,1];
+o:=res[2,1];
+f:=res[3,1];
+check:=res[4,1];
+id:=res[5,1];
+di:=res[6,1];
+ls:=res[7,1];
+
+
+echo(true); // turns on output
+
+z;
+o;
+f;
+check;
+id;
+di;
+ls;
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf ConstructFunc_* ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "ConstructFunc_res.plt"
+// end record
+// true
+// 0.0
+// 1.0
+// 2.1
+// 1.0
+// 1.0
+// 0.0
+// 4.0
+// ""
+// 0
+// endResult

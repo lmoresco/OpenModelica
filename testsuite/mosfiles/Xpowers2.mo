@@ -4,7 +4,8 @@
 // 
 // <decription>
 //
-
+// Drmodelica: 8.2 XPowers (p. 242)
+// 
 model Xpowers2
   parameter Real x=10;
   Real xpowers[n];

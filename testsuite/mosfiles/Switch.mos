@@ -1,0 +1,50 @@
+// name:     Switch
+// keywords: <insert keywords here>
+// status:   correct
+// 
+//  <insert description here>
+//
+// Drmodelica: 
+// 
+loadFile("Switch.mo");
+simulate(Switch,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+//size:=readSimulationResultSize("Switch_res.plt");
+//res:=readSimulationResult("Switch_res.plt",{v,i,i1,itot,open},size); 
+v1:=val(v,0.3);
+v2:=val(v,0.8);
+i1:=val(i,0.3);
+i2:=val(i,0.8);
+itot1:=val(itot,0.3);
+itot2:=val(itot,0.8);
+open1:=val(open,0.3);
+open2:=val(open,0.8);
+echo(true); // turns on output
+v1;
+v2;
+i1;
+i2;
+itot1;
+itot2;
+open1;
+open2;
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf Switch_* Switch.exe Switch.cpp Switch.makefile Switch.libs Switch.log output.log"); // remove tmp files.
+// Result:
+// true
+// record
+//     resultFile = "Switch_res.plt"
+// end record
+// true
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 2.0
+// 0.0
+// 1.0
+// ""
+// 0
+// endResult

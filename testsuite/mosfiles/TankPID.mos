@@ -1,0 +1,46 @@
+// name:     TankPID
+// keywords: <insert keywords here>
+// status:   correct
+// 
+//  <insert description here>
+//
+// Drmodelica: 12.1 Object Oriented Component-based (p. 386)
+// 
+loadFile("TankPID.mo");
+simulate(TankPID,stopTime=250,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+
+//res:=readSimulationResult("TankPID_res.plt",{x,y,z},3); 
+x:=val(tank.h,25.0);
+y:=val(tank.h,100.0);
+z:=val(tank.h,150.0);
+w:=val(tank.h,200.0);
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+w:=1000*w;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+w:=floor(w);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y/1000.0;
+z/1000.0;
+w/1000.0;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf TankPID_* TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "TankPID_res.plt"
+// end record
+// true
+// 0.394
+// 0.235
+// 0.252
+// 0.235
+// ""
+// 0
+// endResult

@@ -3,6 +3,7 @@
 // status:   correct
 // 
 // function handling
+// Drmodelica: 9.1 Function with Multiple Results (p. 287)
 // 
 
 function f

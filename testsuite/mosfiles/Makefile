@@ -13,11 +13,43 @@ blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos rotationalgears.mos Interpolation.mos \
 ExtObj.mos algorithms.mos UnpOpPrecedence.mos BouncingBallExamples.mos Riccati.mos Pendulum.mos \
 val.mos refactorGraphAnn1.mos refactorGraphAnn2.mos \
-DAEexample.mos whenstatements.mos StringTest.mos dertest.mos DefaultComponentName.mos
+DAEexample.mos whenstatements.mos StringTest.mos dertest.mos DefaultComponentName.mos \
+BouncingBall2.mos \
+HelloWorld.mos Tank.mos HeatTank.mos \
+HeatTankExpanded.mos FlatTank.mos TankPI.mos \
+TankPID.mos TanksConnectedPI.mos \
+CyclicPerm.mos \
+ArrayAddSub1.mos ArrayDivError.mos \
+ArrayMult.mos \
+EqualityEquations.mos FiveForEquations.mos \
+HideVariableForEquations.mos \
+IfEquation.mos WhenEquation.mos \
+PolynomialEvaluatorA.mos \
+PolynomialEvaluatorB.mos StepAdvanced.mos \
+AlgorithmSection.mos WhenStatement1.mos \
+WhenStatement2.mos WhenStatement3.mos \
+DoubleWhenConflict.mos DoubleWhenSequential.mos \
+FuncDer.mos SimplePeriodicSampler.mos \
+TwoRateSampler.mos DiscreteVectorStateSpace.mos \
+LotkaVolterra.mos HydrogenIodide.mos \
+MyPointsInst1.mos MyPointsInst2.mos \
+Switch.mos AlgorithmCondAssign1.mos \
+Xpowers1.mos Xpowers2.mos DAEexample2.mos \
+ComplexNumbers.mos \
+PolynomialEvaluator1.mos PolynomialEvaluator3.mos PolynomialEvaluator2.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= MoonAndEarth.mos
+FAILINGTESTFILES= MoonAndEarth.mos \
+JoinThreeVectors2.mos StatementCall.mos \
+WhenPriority.mos OneArgBaseFunction.mos \
+TankHybridPID.mos TankHybridPI.mos ArrayFieldSlice.mos \
+AppendElement.mos ArrayExponentiation.mos \
+DimConvert.mos ConstructFunc.mos ArrayReduce.mos \
+VectorizeOneReturnValue.mos ABCDsystem.mos EqualityEquationsCorrect.mos \
+WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
+ActivateWhenEquation.mos AlgorithmCondAssign2.mos \
+Xpowers3.mos \
 
 TEST = ./rtest -v
 
@@ -30,3 +62,9 @@ test:
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
+	
+failingtest :
+	@echo
+	@echo Running failing tests...
+	@echo
+	@$(TEST) $(FAILINGTESTFILES)

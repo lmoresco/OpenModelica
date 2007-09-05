@@ -4,7 +4,8 @@
 // 
 // <decription>
 //
-
+// Drmodelica: 8.2 XPowers (p. 242)
+// 
 model Xpowers3
   parameter Real x=10;
   Real xpowers[n+1];
@@ -13,6 +14,7 @@ equation
   xpowers[1]=1;
   xpowers[2:n+1] = xpowers[1:n]*x;
 end Xpowers3;
+
 
 // fclass Xpowers3
 // parameter Real x = 10;
@@ -25,5 +27,9 @@ end Xpowers3;
 // parameter Integer n = 5;
 // equation
 //   xpowers[1] = 1.0;
-//   xpowers[2:(n + 1)] = xpowers[1:n] * x;
+//   xpowers[2] = x * xpowers[1];
+//   xpowers[3] = x * xpowers[2];
+//   xpowers[4] = x * xpowers[3];
+//   xpowers[5] = x * xpowers[4];
+//   xpowers[6] = x * xpowers[5];
 // end Xpowers3;

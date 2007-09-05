@@ -1,0 +1,50 @@
+// name:     LotkaVolterra
+// keywords: der
+// status:   correct
+// 
+//  
+// Drmodelica: 15.4.1 Population Dynamics (p. 556) Not in the notebook
+// 
+loadFile("LotkaVolterra.mo");
+simulate(LotkaVolterra,startTime=0.0, stopTime=1000.0,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+//size:=readSimulationResultSize("LotkaVolterra_res.plt");
+//res:=readSimulationResult("LotkaVolterra_res.plt",{rabbits,foxes},size); 
+decimals := 10.0;
+x1:=val(rabbits,180.0);
+y1:=val(foxes,200.0);
+x2:=val(rabbits,666.0);
+y2:=val(foxes,760.0);
+x1:=decimals*x1;
+y1:=decimals*y1;
+x2:=decimals*x2;
+y2:=decimals*y2;
+x1:=floor(x1);
+y1:=floor(y1);
+x2:=floor(x2);
+y2:=floor(y2);
+echo(true); // turns on output
+x1/decimals; // rounded value to 3 digits
+x2/decimals; 
+y1/decimals;
+y2/decimals;
+// dymola values, differs a bit.
+// 4311.1
+// 1161.7
+// 312.8
+// 43.2
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log"); // remove tmp files.
+// Result:
+// true
+// record
+//     resultFile = "LotkaVolterra_res.plt"
+// end record
+// true
+// 4310.0
+// 1154.9
+// 312.6
+// 43.7
+// ""
+// 0
+// endResult

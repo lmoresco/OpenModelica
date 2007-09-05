@@ -3,6 +3,7 @@
 // status:   correct
 //
 // Assignments within if-Statements
+// Drmodelica: 9.1  if-Statement (p. 292)
 //
 
 function CondAssignFunc

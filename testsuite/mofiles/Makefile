@@ -3,7 +3,7 @@ TEST=./rtest
 
 TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
 Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13.mo \
- Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
+Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayRemoveIndex1.mo \
 BoolArrayTest.mo \
@@ -42,7 +42,7 @@ Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.m
 Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
 Vectorizable5.mo VectorDimension.mo \
- XPowers1.mo XPowers2.mo XPowers3.mo \
+XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
@@ -50,11 +50,69 @@ FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
 ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo \
 PredefinedTypes.mo StructuralParameter1.mo MinMax.mo \
 FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo if_then_elseif_else.mo \
+ModifiedFiltersInSeries.mo \
+Colors.mo MultFuncCall.mo ArrayDim1.mo ArrayDim2.mo \
+ArrayDim3.mo ArrayDim4.mo ElementWiseMultiplication.mo \
+Equations.mo Summation.mo \
+VanDerPol.mo LogCall1.mo Xpowers.mo \
+ArrayAddSub.mo ArrayDiv.mo \
+BlockMatrix.mo BlockMatrix2.mo \
+BlockMatrix3.mo \
+VectorizeSeveralArguments.mo \
+AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
+ColoredPointLegalMod.mo ArraysInitLegal.mo \
+MicroCircuitInvalid.mo \
+TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
+RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo PointSum.mo \
+AlgorithmSection.mo \
+DAEexample.mo \
+BouncingBall.mo \
+ArrayDivError.mo \
+ComplexNumbers.mo EquationCall.mo  \
+CyclicPerm.mo \
+MRFcall.mo \
+PolynomialEvaluator1.mo PolynomialEvaluator2.mo FuncMultResults.mo \
+SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
+AlgorithmCondAssign1.mo Tank.mo HeatTankExpanded.mo \
+FlatTank.mo TankPI.mo \
+TankPID.mo TanksConnectedPI.mo \
+TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo \
+ArrayAddSub1.mo ArrayDivError.mo \
+ArrayMult.mo ArrayReduce.mo \
+VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
+FiveForEquations.mo \
+HideVariableForEquations.mo IfEquation.mo \
+WhenEquation.mo WhenVectorPredicateEquation.mo \
+WhenVectorPredicateEquation.mo WhenValidResult.mo WhenValidResult.mo \
+PolynomialEvaluatorA.mo \
+PolynomialEvaluatorB.mo StepAdvanced.mo \
+AlgorithmSection.mo WhenStatement1.mo \
+WhenStatement2.mo WhenStatement3.mo \
+DoubleWhenSequential.mo \
+FuncDer.mo SimplePeriodicSampler.mo \
+TwoRateSampler.mo DiscreteVectorStateSpace.mo \
+WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
+LotkaVolterra.mo HydrogenIodide.mo \
 FlatParse.mof
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo InnerClass1.mo partial-s-1.mo
+FAILINGTESTFILES= FunctionEval5.mo FunctionEval6.mo ConnectInner1.mo InnerClass1.mo partial-s-1.mo \
+Circuit.mo ColorClasses.mo LeastSquares.mo \
+AlgorithmCondAssign2.mo \
+ArraySlice.mo \
+PointInst.mo \
+ColoredPointIllegalMod1.mo \
+ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
+ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
+MicroCircuitValid.mo GenericMicroCircuit.mo \
+AppendElement.mo \
+ArrayFieldSlice.mo ArrayExponentiation.mo \
+HeatTank.mo ArrayFieldSlice.mo \
+AppendElement.mo ArrayExponentiation.mo \
+DimConvert.mo ConstructFunc.mo \
+EqualityEquations.mo DimSize.mo WhenNotValid.mo ErrorNestedWhen.mo \
+DoubleWhenConflict.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

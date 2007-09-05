@@ -1,0 +1,19 @@
+// name:     DoubleWhenConflict
+// keywords: equations when
+// status:   correct
+// 
+//  Erroneous model: close defined by two equations!
+// Drmodelica: 9.1 When-Statements (p. 293)
+// 
+loadFile("DoubleWhenConflict.mo");
+simulate(DoubleWhenConflict,numberOfIntervals=2); // 2 intervals == 3 values
+getErrorString(); // simulation failed, check error string.
+// Result:
+// true
+// record
+//     resultFile = "Simulation failed.
+// Too many equations, overdetermined system. The model has 1 variables and 2 equations
+// "
+// end record
+// ""
+// endResult

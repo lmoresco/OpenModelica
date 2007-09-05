@@ -4,7 +4,8 @@
 // 
 // for statment handling
 // 
-
+// Drmodelica: 9.1 for-Statement (p.288)
+// 
 model SumZ
   parameter Integer n = 5;
   parameter Real[n] z := {10, 20, 30, 40, 50};

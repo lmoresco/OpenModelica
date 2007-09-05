@@ -1,0 +1,43 @@
+// name:     WhenStatement2
+// keywords: when
+// status:   correct
+// 
+//  
+// Drmodelica: 9.1 When-Statements (p. 293)
+// 
+loadFile("WhenStatement2.mo");
+simulate(WhenStat2); // 2 intervals == 3 values
+echo(false); // turns of output 
+size:=readSimulationResultSize("WhenStat2_res.plt");
+res:=readSimulationResult("WhenStat2_res.plt",{x,y1,y3},size); 
+
+x:=res[1,1];
+y1:=res[2,400];
+y3:=res[3,400];
+x:=1000*x;
+y1:=1000*y1;
+y3:=1000*y3;
+x:=floor(x);
+y1:=floor(y1);
+y3:=floor(y3);
+
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y1/1000.0;
+y3/1000.0;
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf WhenStat2_* WhenStat2.exe WhenStat2.cpp WhenStat2.makefile WhenStat2.libs WhenStat2.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "WhenStat2_res.plt"
+// end record
+// true
+// 1.0
+// 0.909
+// 9.909
+// ""
+// 0
+// endResult

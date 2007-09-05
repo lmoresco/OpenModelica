@@ -1,32 +1,36 @@
-// name:     XPowers2
-// keywords: equation
+// name:     Xpowers2
+// keywords: equation,array
 // status:   correct
 // 
-// The powers of 'x' are defined by using a for loop. The dimension 'n'
-// needs to be fixed in order to expand the formulation. Furthermore 'n'
-// is treated fixed in the declaration of 'xpowers'.
+// <decription>
 //
-// No need to declare 'Integer i' since it is declared implicit in the for statement.
-
-model XPowers2
-  constant Integer n = 3;
-  Real x = 2.0, xpowers[n];
+// Drmodelica: 8.2 XPowers (p. 242)
+// 
+model Xpowers2
+  parameter Real x=10;
+  Real xpowers[n];
+  parameter Integer i=1;
+  parameter Integer n = 5;
 equation
-  xpowers[1] = x;
-  for i in 1:n-1 loop
-    xpowers[i+1] = xpowers[i] * x;
+  xpowers[1]=1;
+    for i in 1:n-1 loop
+  xpowers[i + 1] = xpowers[i]*x;
   end for;
-end XPowers2;
+end Xpowers2;
 
-// fclass XPowers2
-// constant Integer n = 3;
-// Real x;
+// fclass Xpowers2
+// parameter Real x = 10;
 // Real xpowers[1];
 // Real xpowers[2];
 // Real xpowers[3];
+// Real xpowers[4];
+// Real xpowers[5];
+// parameter Integer i = 1;
+// parameter Integer n = 5;
 // equation
-//   x = 2.0;
-//   xpowers[1] = x;
+//   xpowers[1] = 1.0;
 //   xpowers[2] = xpowers[1] * x;
 //   xpowers[3] = xpowers[2] * x;
-// end XPowers2;
+//   xpowers[4] = xpowers[3] * x;
+//   xpowers[5] = xpowers[4] * x;
+// end Xpowers2;

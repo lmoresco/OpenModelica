@@ -54,7 +54,7 @@ val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),
 val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
 readFile("output.log");
-system("rm -rf *Tank.* *Tank_* output.log");
+system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 
 // Result:
 // true

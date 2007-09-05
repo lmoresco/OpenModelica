@@ -1,0 +1,39 @@
+// name:     HeatTankExpanded
+// keywords: <insert keywords here>
+// status:   correct
+// 
+//  <insert description here>
+// Drmodelica: 4.4 Parameterization and extension of Interfaces (p. 136).
+//
+loadFile("HeatTankExpanded.mo");
+simulate(HeatTankExpanded,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+
+//res:=readSimulationResult("HeatTankExpanded_res.plt",{x,y,z},3); 
+x:=val(level,0.3);
+y:=val(level,0.5);
+z:=val(level,0.7);
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y/1000.0;
+z/1000.0;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf HeatTankExpanded_* HeatTankExpanded.exe HeatTankExpanded.cpp HeatTankExpanded.makefile HeatTankExpanded.libs HeatTankExpanded.log output.log"); // remove tmp files.
+// Result:
+// true
+// record
+//     resultFile = "HeatTankExpanded_res.plt"
+// end record
+// true
+// 2.899
+// 3.499
+// 4.099
+// ""
+// 0
+// endResult

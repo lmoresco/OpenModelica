@@ -1,0 +1,39 @@
+// name:     EqualityEquationsCorrect
+// keywords: equation
+// status:   correct
+// 
+// Not yet implemented
+// Drmodelica: 8.2 Simple Equality Equations (p. 240)
+// 
+loadFile("EqualityEquationsCorrect.mo");
+
+simulate(EqualityEquationsCorrect,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+size := readSimulationResultSize("EqualityEquationsCorrect_res.plt");
+res:=readSimulationResult("EqualityEquationsCorrect_res.plt",{u,x,y,z},size); 
+u:=res[1,1];
+x:=res[2,1];
+y:=res[3,1];
+z:=res[4,1];
+
+
+echo(true); // turns on output
+u;
+x; 
+y;
+z;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect.exe EqualityEquationsCorrect.cpp EqualityEquationsCorrect.makefile EqualityEquationsCorrect.libs EqualityEquationsCorrect.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "EqualityEquationsCorrect_res.plt"
+// end record
+// true
+// 2.0
+// 3.0
+// -1.0
+// 2.0
+// ""
+// 0
+// endResult

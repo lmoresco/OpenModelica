@@ -3,7 +3,9 @@
 // status:   correct
 //
 // Assignments within if-Statements
+// Drmodelica: 9.1  if-Statement (p. 292)
 //
+
 
 model CondAssign
   Real x(start = 35);

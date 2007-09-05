@@ -4,7 +4,8 @@
 // 
 // <decription>
 //
-
+// Drmodelica: 8.2 XPowers (p. 242)
+// 
 model Xpowers1
   parameter Real x = 10;
   Real a = 1;

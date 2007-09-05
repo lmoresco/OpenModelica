@@ -1,31 +1,42 @@
-// name:     XPowers1
+// name:     Xpowers1
 // keywords: equation,array
 // status:   correct
 // 
-// The powers of 'x' are defined by using array syntax. The dimension  
-// 'n' needs to be fixed in order to expand the formulation. 
-// Furthermore 'n' is treated fixed in the declaration of 'xpowers'.
+// <decription>
 //
-// This also uses multiplication of an array with a scalar.
-//
-
-model XPowers1
-  constant Integer n = 3;
-  Real x = 2.0, xpowers[n];
+// Drmodelica: 8.2 XPowers (p. 242)
+// 
+model Xpowers1
+  parameter Real x = 10;
+  Real a = 1;
+  parameter Integer n = 5;
+  Real xpowers[n];
+  Real y;
 equation
-  xpowers[1] = x;
-  xpowers[2:n] = xpowers[1:n-1] * x;
-end XPowers1;
+  xpowers[1] = 1;
+  xpowers[2] = xpowers[1]*x;
+  xpowers[3] = xpowers[2]*x;
+  xpowers[4] = xpowers[3]*x;
+  xpowers[4 + 1] = xpowers[4]*x;
+  y = a * xpowers[5];
+end Xpowers1;
 
-// fclass XPowers1
-// constant Integer n = 3;
-// Real x;
+// fclass Xpowers1
+// parameter Real x = 10;
+// Real a;
+// parameter Integer n = 5;
 // Real xpowers[1];
 // Real xpowers[2];
 // Real xpowers[3];
+// Real xpowers[4];
+// Real xpowers[5];
+// Real y;
 // equation
-//   x = 2.0;
-//   xpowers[1] = x;
-//   xpowers[2] = x * xpowers[1];
-//   xpowers[3] = x * xpowers[2];
-// end XPowers1;
+//   a = 1.0;
+//   xpowers[1] = 1.0;
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
+//   xpowers[4] = xpowers[3] * x;
+//   xpowers[5] = xpowers[4] * x;
+//   y = a * xpowers[5];
+// end Xpowers1;
