@@ -116,6 +116,9 @@
 				RelativePath="..\..\c_runtime\memory_pool.c">
 			</File>
 			<File
+				RelativePath="..\..\c_runtime\meta_modelica.c">
+			</File>
+			<File
 				RelativePath="..\..\c_runtime\modelica_string.c">
 			</File>
 			<File
@@ -155,6 +158,9 @@
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\memory_pool.h">
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\meta_modelica.h">
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\modelica.h">

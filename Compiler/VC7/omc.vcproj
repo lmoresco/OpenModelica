@@ -297,6 +297,12 @@ nmake -f MakeFile.win32
 				RelativePath="..\Connect.mo">
 			</File>
 			<File
+				RelativePath="..\Constants.mo">
+			</File>
+			<File
+				RelativePath="..\Convert.mo">
+			</File>
+			<File
 				RelativePath="..\Corba.mo">
 			</File>
 			<File
@@ -309,10 +315,16 @@ nmake -f MakeFile.win32
 				RelativePath="..\DAELow.mo">
 			</File>
 			<File
+				RelativePath="..\DAEQuery.mo">
+			</File>
+			<File
 				RelativePath="..\Debug.mo">
 			</File>
 			<File
 				RelativePath="..\Derive.mo">
+			</File>
+			<File
+				RelativePath="..\DFA.mo">
 			</File>
 			<File
 				RelativePath="..\Dump.mo">
@@ -348,6 +360,9 @@ nmake -f MakeFile.win32
 				RelativePath="..\Main.mo">
 			</File>
 			<File
+				RelativePath="..\MetaUtil.mo">
+			</File>
+			<File
 				RelativePath="..\Mod.mo">
 			</File>
 			<File
@@ -357,10 +372,16 @@ nmake -f MakeFile.win32
 				RelativePath="..\Parser.mo">
 			</File>
 			<File
+				RelativePath="..\Patternm.mo">
+			</File>
+			<File
 				RelativePath="..\Prefix.mo">
 			</File>
 			<File
 				RelativePath="..\Print.mo">
+			</File>
+			<File
+				RelativePath="..\Refactor.mo">
 			</File>
 			<File
 				RelativePath="..\RTOpts.mo">
