@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="libsendData"
+	ProjectGUID="{5E35077E-DFDD-4535-A1FB-528023C9BD5B}"
+	RootNamespace="sendData"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake -f makefile.vc"
+				ReBuildCommandLine="nmake -f makefile.vc rebuild"
+				CleanCommandLine="nmake -f makefile.vc clean"
+				Output="sendData.lib"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cd ..\..\..\c_runtime\sendData
+
+nmake -f makefile.vc"
+				ReBuildCommandLine="cd ..\..\..\c_runtime\sendData
+
+nmake -f makefile.vc rebuild"
+				CleanCommandLine="cd ..\..\..\c_runtime\sendData
+
+nmake -f makefile.vc clean"
+				Output="..\..\..\c_runtime\sendData\release\libsendData.lib"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath="..\..\..\c_runtime\sendData\humbug.cpp">
+			</File>
+			<File
+				RelativePath="..\..\..\c_runtime\sendData\sendData.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="..\..\..\c_runtime\sendData\humbug.h">
+			</File>
+			<File
+				RelativePath="..\..\..\c_runtime\sendData\sendData.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+		</Filter>
+		<File
+			RelativePath="..\..\..\c_runtime\sendData\makefile.vc">
+		</File>
+		<File
+			RelativePath=".\readme.txt">
+		</File>
+		<File
+			RelativePath="..\..\..\c_runtime\sendData\sendData.pro">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
