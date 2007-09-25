@@ -5391,6 +5391,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3C880D9B2A7E40449F16F0729B256434"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3C8B2AF08E18491786B75DABDAFA0318"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7666,6 +7672,12 @@
         "Entry"
         {
         "MsmKey" = "8:_546A97075F624AA383566E51D27A15C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5484B1F804EE4E629285785E5271E2B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -13179,6 +13191,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_941DCFF82ED6AC7FE30776643B068A57"
+        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9423AE1A48A04FF2A124C6A22AFC9EB9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -14044,6 +14062,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9E8F48DF3D3D40CB9E4451F75F842029"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9E965B6E398F46C0BBDAD4395108A179"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -17487,6 +17511,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C5CA15FFA25E4F42A6960460346CCFF8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C5DFB39DB6AC4A1C9C100609B78297F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -19576,6 +19606,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DC0AA400FAEF42C8A8551E741ACA1C07"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DC4ED6CA851045C3AE7B9C370AFE6876"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40759,6 +40795,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3C880D9B2A7E40449F16F0729B256434"
+            {
+            "SourcePath" = "8:lib\\QtNetwork4.dll"
+            "TargetName" = "8:QtNetwork4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_3C8B2AF08E18491786B75DABDAFA0318"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\smlnj-lib\\PP\\src\\sources.cm"
@@ -48345,6 +48401,26 @@
             "TargetName" = "8:ModelicaAdditions.PetriNets.Place22D.png"
             "Tag" = "8:"
             "Folder" = "8:_4B338A0BC44344278446C03E7A5CEBF1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5484B1F804EE4E629285785E5271E2B3"
+            {
+            "SourcePath" = "8:..\\Release\\omc.exe"
+            "TargetName" = "8:omc.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -66699,6 +66775,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_941DCFF82ED6AC7FE30776643B068A57"
+            {
+            "SourcePath" = "8:mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_9423AE1A48A04FF2A124C6A22AFC9EB9"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\ckit-lib\\HISTORY"
@@ -69585,6 +69681,26 @@
             "TargetName" = "8:ModelicaAdditions_MultiBody_Sensors.html"
             "Tag" = "8:"
             "Folder" = "8:_4B338A0BC44344278446C03E7A5CEBF1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_9E965B6E398F46C0BBDAD4395108A179"
+            {
+            "SourcePath" = "8:lib\\QtGui4.dll"
+            "TargetName" = "8:QtGui4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -81039,6 +81155,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C5CA15FFA25E4F42A6960460346CCFF8"
+            {
+            "SourcePath" = "8:..\\..\\..\\c_runtime\\sendData\\release\\libsendData.a"
+            "TargetName" = "8:libsendData.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_C5DFB39DB6AC4A1C9C100609B78297F1"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\smlnj-lib\\Util\\iterate-sig.sml"
@@ -88005,6 +88141,26 @@
             "TargetName" = "8:ostream.h"
             "Tag" = "8:"
             "Folder" = "8:_AEEAE2503ABD4AA38066C5CE01AD078D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DC4ED6CA851045C3AE7B9C370AFE6876"
+            {
+            "SourcePath" = "8:lib\\QtCore4.dll"
+            "TargetName" = "8:QtCore4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -101902,9 +102058,6 @@
                 {
                 }
             }
-        }
-        "VJSharpPlugin"
-        {
         }
     }
 }

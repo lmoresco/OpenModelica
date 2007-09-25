@@ -50,11 +50,16 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
 
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)   
 
-ifdef QTHOME
-PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
-else
-PLTPKGFLAGS = -L../../build/lib -lsendData
-endif
+#ifdef WIN32
+PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui -luuid -lole32 -lws2_32  
+#else
+PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui
+#endif
+
+#PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
+#else
+#PLTPKGFLAGS = -L../../build/lib -lsendData
+#endif
 
 PROG = omc.exe
 RML = $(RMLHOME)/bin/rmlc -v

@@ -32,7 +32,7 @@
 				Name="VCNMakeTool"
 				BuildCommandLine="cd ..\..\..\c_runtime\sendData
 
-nmake -f makefile.vc"
+nmake -f makefile.vc release"
 				ReBuildCommandLine="cd ..\..\..\c_runtime\sendData
 
 nmake -f makefile.vc rebuild"

@@ -23,7 +23,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "omc", "..\omc.vcproj", "{087A2480-4E18-465E-BCE0-715481BE58DE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{72B8515B-6FE4-456D-80D3-51BE6A05EC58} = {72B8515B-6FE4-456D-80D3-51BE6A05EC58}
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B} = {5E35077E-DFDD-4535-A1FB-528023C9BD5B}
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E} = {D41D8CD9-8F00-3204-A980-0998ECF8427E}
 		{BB69ADED-6C63-4156-AED4-8258C32B6FB6} = {BB69ADED-6C63-4156-AED4-8258C32B6FB6}
 		{39F5AFF5-D483-4265-9F82-2FE07ED8EF0E} = {39F5AFF5-D483-4265-9F82-2FE07ED8EF0E}
 		{1007A2F7-E5AD-4227-833F-C781B410C142} = {1007A2F7-E5AD-4227-833F-C781B410C142}
@@ -46,7 +46,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UpdateEnv", "..\UpdateEnv\U
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsendData", "..\sendData\sendData.vcproj", "{5E35077E-DFDD-4535-A1FB-528023C9BD5B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sendData", "..\..\..\c_runtime\sendData\sendData.vcproj", "{D41D8CD9-8F00-3204-A980-0998ECF8427E}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -128,20 +128,19 @@ Global
 		{8E584488-5EBE-43D7-973C-6C434E426803}.Release.Build.0 = Release|Win32
 		{8E584488-5EBE-43D7-973C-6C434E426803}.ReleaseStaticMico.ActiveCfg = Release|Win32
 		{8E584488-5EBE-43D7-973C-6C434E426803}.ReleaseStaticMico.Build.0 = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.Debug.ActiveCfg = Debug|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.Debug.Build.0 = Debug|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.NoMico.ActiveCfg = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.NoMico.Build.0 = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.Release.ActiveCfg = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.Release.Build.0 = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.ReleaseStaticMico.ActiveCfg = Release|Win32
-		{5E35077E-DFDD-4535-A1FB-528023C9BD5B}.ReleaseStaticMico.Build.0 = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.Debug.ActiveCfg = Debug|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.Debug.Build.0 = Debug|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.NoMico.ActiveCfg = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.NoMico.Build.0 = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.Release.ActiveCfg = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.Release.Build.0 = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.ReleaseStaticMico.ActiveCfg = Release|Win32
+		{D41D8CD9-8F00-3204-A980-0998ECF8427E}.ReleaseStaticMico.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionItems) = postSolution
 		..\Setup\icons\IExplorer.ico = ..\Setup\icons\IExplorer.ico
 		..\Setup\icons\OMNotebook.ico = ..\Setup\icons\OMNotebook.ico
 		..\Setup\icons\OMShell.ico = ..\Setup\icons\OMShell.ico
-		..\Setup\icons\OpenModelica.ico = ..\Setup\icons\OpenModelica.ico
 		..\Setup\icons\PDF.ico = ..\Setup\icons\PDF.ico
 		..\..\..\README-BUILD-RELEASE.txt = ..\..\..\README-BUILD-RELEASE.txt
 		..\..\..\README-OMDev-MINGW.txt = ..\..\..\README-OMDev-MINGW.txt

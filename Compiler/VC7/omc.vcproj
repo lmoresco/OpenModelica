@@ -98,10 +98,11 @@ nmake -f MakeFile.debug.win32
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib libsendData.lib"
+				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib sendData.lib QtCore4.lib QtNetwork4.lib QtGui4.lib qtmain.lib libcmtd.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime\sendData\release&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime\sendData\release&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;"
+				IgnoreDefaultLibraryNames="libcmtd.lib"
 				DelayLoadDLLs=""
 				GenerateDebugInformation="FALSE"
 				SubSystem="1"
