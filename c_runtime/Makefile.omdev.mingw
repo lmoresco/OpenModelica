@@ -39,20 +39,26 @@ HFILES = blaswrap.h f2c.h integer_array.h memory_pool.h modelica_string.h \
 
 LIBS = libc_runtime.a libsim.a 
 
-#ifdef QTHOME
-#	$(QTHOME)/bin/qmake && \
-#	../../build/bin/qmake.exe -spec win32-g++ && \
-#	sed -e's/QtNetwork /QtNetwork4 /' -e's/QtGui /QtGui4 /' -e's/QtCore /QtCore4 /' Makefile.Release > Makefile && \
 
-PLTPKGCMD =	cd ./sendData && \
+#	mkdir -p release && \
+#	$(MAKE) -f Makefile.Release.mingw
+ifeq ($(OSTYPE), $(OS_MSYS))
+	PLTPKGCMD =	cd ./sendData && \
 	mkdir -p release && \
-	$(MAKE) -f Makefile.Release.mingw
+	$(MAKE) -f Makefile.Release.mingw	
+else
+	ifdef QTHOME
+    	PLTPKGCMD =	cd ./sendData && \
+		qmake && \
+		$(MAKE) release
+	else
+	    PLTPKGCMD = mkdir -p sendData/release && \
+	    g++ -c -o sendData/libsendData.o sendData/humbug.cpp && \
+	    ar -ru sendData/release/libsendData.a sendData/libsendData.o
+	endif
+endif
 		
-#else
-#PLTPKGCMD = mkdir -p sendData/release && \
-#g++ -c -o sendData/libsendData.o sendData/humbug.cpp && \
-#ar -ru sendData/release/libsendData.a sendData/libsendData.o
-#endif
+
 
 all : libc_runtime.a libsim.a libf2c.a libsendData.a install
 
