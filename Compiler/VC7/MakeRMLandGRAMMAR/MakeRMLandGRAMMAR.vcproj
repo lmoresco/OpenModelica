@@ -23,7 +23,7 @@ nmake /f Makefile.debug.w32
 popd"
 				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
 nmake /f Makefile.debug.w32 clean
-nmake /f Makefile.w32
+nmake /f Makefile.debug.w32
 popd"
 				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
 nmake /f Makefile.debug.w32 clean
