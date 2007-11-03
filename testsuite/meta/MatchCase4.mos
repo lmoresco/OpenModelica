@@ -1,0 +1,19 @@
+// name:     MatchCase4
+// keywords: Match Cases
+// status:   correct
+//
+// Match Testing
+//
+loadFile("MatchCase4.mo");
+simulate(MatchCase4);
+val(a,0.0);
+system("rm -rf MatchCase4_* MatchCase4.exe MatchCase4.cpp MatchCase4.makefile MatchCase4.libs MatchCase4.log output.log");
+
+// Result:
+// true
+// record
+//    resultFile = "MatchCase4_res.plt"
+// end record
+// 4.0
+// 0
+// endResult

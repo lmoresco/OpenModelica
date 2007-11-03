@@ -1,0 +1,21 @@
+// name:     MatchCase8
+// keywords: Match Cases
+// status:   correct
+//
+// Match Testing
+//
+loadFile("MatchCase8.mo");
+simulate(MatchCase8);
+val(a,0.0);
+val(b,0.0);
+system("rm -rf MatchCase8_* MatchCase8.exe MatchCase8.cpp MatchCase8.makefile MatchCase8.libs MatchCase8.log output.log");
+
+// Result:
+// true
+// record
+//    resultFile = "MatchCase8_res.plt"
+// end record
+// 7.0
+// 8.0
+// 0
+// endResult
