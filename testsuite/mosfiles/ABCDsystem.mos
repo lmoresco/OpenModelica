@@ -6,7 +6,7 @@
 // Drmodelica: 7.9 Empty Arrays (p. 231)
 //
 loadFile("ABCDsystem.mo");
-simulate(ABCDsystem,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(ABCDsystem,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-4); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("ABCDsystem_res.plt");
 res:=readSimulationResult("ABCDsystem_res.plt",{D[2,2],y[2],u[1]},size); 
