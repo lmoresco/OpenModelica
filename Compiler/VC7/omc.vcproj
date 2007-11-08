@@ -34,10 +34,10 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrd.lib libsendData.lib"
+				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlrd.lib sendData.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)..\..\c_runtime\sendData\release&quot;"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)\sendData\debug&quot;"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/omc.pdb"
 				SubSystem="1"
