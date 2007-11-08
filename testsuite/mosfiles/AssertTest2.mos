@@ -11,7 +11,7 @@
 
 loadFile("AssertTest2.mo");
 echo(false); // turns of output
-simulate(Test2,startTime = 0, stopTime=10); // 2 intervals == 3 values
+simulate(Test2,startTime = 0, stopTime=10, tolerance=1e-5); // 2 intervals == 3 values
 //getErrorString(); // simulation failed, check error string.
 size:=readSimulationResultSize("Test2_res.plt");
 res:=readSimulationResult("Test2_res.plt",{assertTest.x},size); 

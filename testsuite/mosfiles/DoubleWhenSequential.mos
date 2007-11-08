@@ -5,7 +5,7 @@
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 
 loadFile("DoubleWhenSequential.mo");
-simulate(DoubleWhenSequential); // 2 intervals == 3 values
+simulate(DoubleWhenSequential, tolerance=1e-5, numberOfIntervals=100); // 2 intervals == 3 values
 echo(false); // turns of output 
 size:=readSimulationResultSize("DoubleWhenSequential_res.plt");
 res:=readSimulationResult("DoubleWhenSequential_res.plt",{close},size); 

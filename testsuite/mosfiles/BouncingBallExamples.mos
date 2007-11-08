@@ -5,7 +5,7 @@
 // Event handling
 //
 loadFile("BouncingBallExamples.mo");
-simulate(BouncingBallExamples, stopTime=3);
+simulate(BouncingBallExamples, stopTime=3, tolerance=1e-7, numberOfIntervals=500);
 echo(false);
 s:=readSimulationResultSize("BouncingBallExamples_res.plt");
 echo(true);

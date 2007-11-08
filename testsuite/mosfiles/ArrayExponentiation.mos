@@ -5,7 +5,7 @@
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 //
 loadFile("ArrayExponentiation.mo");
-simulate(Exp,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(Exp,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("Exp_res.plt");
 res:=readSimulationResult("Exp_res.plt",{e1[1,1],e1[2,1],e2[1,2],e2[2,2]},size); 

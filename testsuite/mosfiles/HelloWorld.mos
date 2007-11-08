@@ -6,7 +6,7 @@
 // Drmodelica: 2.1 Hello World (p. 19)
 // 
 loadFile("HelloWorld.mo");
-simulate(HelloWorld, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+simulate(HelloWorld, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
 size := readSimulationResultSize("HelloWorld_res.plt");
 res:=readSimulationResult("HelloWorld_res.plt",{x},size);

@@ -7,7 +7,7 @@
 // 
 //loadModel(Modelica);
 loadFile("FuncDer.mo");
-simulate(FuncDer,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(FuncDer,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 
 size:=readSimulationResultSize("FuncDer_res.plt");

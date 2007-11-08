@@ -7,7 +7,7 @@
 // Drmodelica: 4.1  Moon Landing (p. 115)
 //
 loadFile("MoonLanding.mo");
-simulate(MoonLanding,numberOfIntervals=100); // 2 intervals == 3 values
+simulate(MoonLanding,numberOfIntervals=100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size:=readSimulationResultSize("MoonLanding_res.plt");
 //res:=readSimulationResult("MoonLanding_res.plt",{apollo.mass,apollo.altitude,apollo.acceleration},size); 

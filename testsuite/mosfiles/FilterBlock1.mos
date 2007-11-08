@@ -7,7 +7,7 @@
 //
 
 loadFile("FilterBlock1.mo");
-simulate(FilterBlock1,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(FilterBlock1,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 res:=readSimulationResult("FilterBlock1_res.plt",{x, y},3); 
 echo(true); // turns on output

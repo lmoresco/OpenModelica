@@ -7,7 +7,7 @@
 // Drmodelica: 4.4 Parameterization and extension of Interfaces (p. 136).
 // 
 loadFile("Tank.mo");
-simulate(Tank,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(Tank,numberOfIntervals=50, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size:=readSimulationResultSize("Tank_res.plt");
 //res:=readSimulationResult("Tank_res.plt",{level},size); 

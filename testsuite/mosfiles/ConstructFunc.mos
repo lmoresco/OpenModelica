@@ -5,7 +5,7 @@
 // Drmodelica: 7.7 Built-in Functions (p. 225)
 // 
 loadFile("ConstructFunc.mo");
-simulate(ConstructFunc,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(ConstructFunc,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("ConstructFunc_res.plt");
 res:=readSimulationResult("ConstructFunc_res.plt",{z[2,2],o[2],f[2,1],check[2,4],id[1,1],di[3,2],ls[3]},size); 

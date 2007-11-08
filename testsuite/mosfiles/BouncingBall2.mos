@@ -7,7 +7,7 @@
 //
 
 loadFile("BouncingBall2.mo");
-simulate(BouncingBall,numberOfIntervals=5); // 2 intervals == 3 values
+simulate(BouncingBall,numberOfIntervals=5, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 s:=readSimulationResultSize("BouncingBall_res.plt");
 res:=readSimulationResult("BouncingBall_res.plt",{height, velocity},s); 

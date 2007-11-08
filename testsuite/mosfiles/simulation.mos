@@ -5,7 +5,7 @@
 //  Simulate models and read in data.
 //
 loadFile("SmallLinsys.mo");
-simulate(LinSys);
+simulate(LinSys, tolerance=1e-7, numberOfIntervals=100);
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);

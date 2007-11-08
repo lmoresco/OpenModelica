@@ -6,7 +6,7 @@
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 //
 loadFile("ArrayAddSub1.mo");
-simulate(AddSub1,startTime = 0.0, stopTime = 1.0 ,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(AddSub1,startTime = 0.0, stopTime = 1.0 ,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("AddSub1_res.plt");
 res:=readSimulationResult("AddSub1_res.plt",{Add3[1,1],Add3[1,2],Add3[2,1],Add3[2,2],Sub1[1],Sub1[2],Sub1[3]},size); 

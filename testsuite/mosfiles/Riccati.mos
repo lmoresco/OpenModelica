@@ -2,7 +2,7 @@
 // keywords:  Nonlinear equation system
 // status:    correct
 loadFile("Riccati.mo");
-simulate(Riccati);
+simulate(Riccati, tolerance=1e-5, numberOfIntervals=100);
 val(X[1,1],0.0);
 val(X[1,2],0.0);
 val(X[2,1],0.0);

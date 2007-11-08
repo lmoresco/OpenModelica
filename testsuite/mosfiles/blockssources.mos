@@ -8,14 +8,14 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // ConstantTest
-simulate(TestModels.BlockModels.SourceTests.ConstantTest);
+simulate(TestModels.BlockModels.SourceTests.ConstantTest, tolerance=1e-5, numberOfIntervals=100);
 {val(constant1.y,0.0),val(constant1.y,0.5)};
 {val(derivative1.y,0.0),val(derivative1.y,0.5)};
 readFile("output.log");
 system("rm -rf *ConstantTest.* *ConstantTest_* output.log");
 
 //ExpSineTest
-simulate(TestModels.BlockModels.SourceTests.ExpSineTest);
+simulate(TestModels.BlockModels.SourceTests.ExpSineTest, tolerance=1e-7, numberOfIntervals=200);
 {val(expSine1.y,0.0),val(expSine1.y,0.2),val(expSine1.y,0.4),val(expSine1.y,0.6),
 val(expSine1.y,0.8),val(expSine1.y,1.0)};
 
@@ -23,7 +23,7 @@ val(expSine1.y,0.8),val(expSine1.y,1.0)};
 val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
 
 // ExponentialsTest
-simulate(TestModels.BlockModels.SourceTests.ExponentialsTest);
+simulate(TestModels.BlockModels.SourceTests.ExponentialsTest, tolerance=1e-8, numberOfIntervals=400);
 {val(exponentials1.y,0.0),val(exponentials1.y,0.2),val(exponentials1.y,0.4),
 val(exponentials1.y,0.6),val(exponentials1.y,0.8),val(exponentials1.y,1.0)};
 {val(derivative1.y,0.0),val(derivative1.y,0.2),val(derivative1.y,0.4)
@@ -32,7 +32,7 @@ readFile("output.log");
 system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
 
 // SineTest
-simulate(TestModels.BlockModels.SourceTests.SineTest);
+simulate(TestModels.BlockModels.SourceTests.SineTest, tolerance=1e-5, numberOfIntervals=100);
 {val(sine1.y,0.0),val(sine1.y,0.2),val(sine1.y,0.4),
 val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 {val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4)
@@ -41,7 +41,7 @@ readFile("output.log");
 system("rm -rf *SineTest.* *SineTest_* output.log");
 
 // PulseTest
-simulate(TestModels.BlockModels.SourceTests.PulseTest);
+simulate(TestModels.BlockModels.SourceTests.PulseTest, tolerance=1e-5, numberOfIntervals=100);
 {val(p.y,0.0),val(p.y,0.4),val(p.y,0.4000001),val(p.y,0.8),val(p.y,0.8000001)};
 readFile("output.log");
 system("rm -rf *PulseTest.* *PulseTest_* output.log");

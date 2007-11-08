@@ -7,7 +7,7 @@
 // Drmodelica: 13.2 WatchDog System. (p. 435)
 // 
 loadFile("WatchDog2EquationWhen.mo");
-simulate( WatchDogSystem2, stopTime=4 );
+simulate( WatchDogSystem2, stopTime=4, tolerance=1e-5, numberOfIntervals=100);
 echo(false); // turns of output 
 size:=readSimulationResultSize("WatchDogSystem2_res.plt");
 res:=readSimulationResult("WatchDogSystem2_res.plt",{watchdog.internalTime1,watchdog.internalTime2,watchdog.dAlarm.signal},size); 

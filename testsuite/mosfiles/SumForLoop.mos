@@ -7,7 +7,7 @@
 // Drmodelica: 9.1 for-Statement (p.288)
 // 
 loadFile("SumForLoop.mo");
-simulate(SumZ, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+simulate(SumZ, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
 res:=readSimulationResult("SumForLoop_res.plt",{z[1],z[2],z[3],z[4],z[5],sum},3);
 z1 := res[1];

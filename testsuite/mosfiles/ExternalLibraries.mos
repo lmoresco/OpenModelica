@@ -8,7 +8,7 @@
 loadFile("ExternalLibraries.mo");
 system("gcc -c -o libExternalFunc1_ext.o ExternalFunc1.c");
 system("gcc -c -o libExternalFunc2.a ExternalFunc2.c");
-simulate(ExternalLibraries1);
+simulate(ExternalLibraries1, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(x,0.2);
 val(x,0.4);

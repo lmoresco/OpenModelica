@@ -9,7 +9,7 @@ loadFile("TestModels.mo");
 
 // Circuit1
 
-simulate(TestModels.BlockModels.SystemTests.Circuit1);
+simulate(TestModels.BlockModels.SystemTests.Circuit1, tolerance=1e-5, numberOfIntervals=500);
 {val(add3.y,0.0),val(add3.y,0.2),val(add3.y,0.4),
 val(add3.y,0.6),val(add3.y,0.8),val(add3.y,1.0)};
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
@@ -20,7 +20,7 @@ readFile("output.log");
 system("rm -rf *Circuit1.* *Circuit1_* output.log");
 
 //DCmotor
-simulate(TestModels.BlockModels.SystemTests.DCmotor);
+simulate(TestModels.BlockModels.SystemTests.DCmotor, tolerance=1e-5, numberOfIntervals=50);
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
 val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
 {val(firstOrder1.y,0.0),val(firstOrder1.y,0.2),val(firstOrder1.y,0.4),
@@ -30,7 +30,7 @@ system("rm -rf *DCmotor.* *DCmotor_* output.log");
 
 
 // DCmotorDeadzone
- simulate(TestModels.BlockModels.SystemTests.DCmotorDeadzone);
+ simulate(TestModels.BlockModels.SystemTests.DCmotorDeadzone, tolerance=1e-5, numberOfIntervals=50);
 {val(gain2.y,0.0),val(gain2.y,0.2),val(gain2.y,0.4),
 val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
@@ -39,7 +39,7 @@ readFile("output.log");
 system("rm -rf *DCmotorDeadzone.* *DCmotorDeadzone_* output.log");
 
 // SpringMass
-simulate(TestModels.BlockModels.SystemTests.SpringMass);
+simulate(TestModels.BlockModels.SystemTests.SpringMass, tolerance=1e-5, numberOfIntervals=100);
 {val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),
 val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
@@ -48,7 +48,7 @@ readFile("output.log");
 system("rm -rf *SpringMass.* *SpringMass_* output.log");
 
 // Tank
-simulate(TestModels.BlockModels.SystemTests.Tank);
+simulate(TestModels.BlockModels.SystemTests.Tank, tolerance=1e-5, numberOfIntervals=50);
 {val(gain2.y,0.0),val(gain2.y,0.2),val(gain2.y,0.4),
 val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),

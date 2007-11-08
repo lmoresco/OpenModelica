@@ -5,7 +5,7 @@
 //  Simulate Pendulum example (index reduction, linear and nonlinear equation systems)
 //
 loadFile("Pendulum.mo");
-simulate(Pendulum,numberOfIntervals=1000,stopTime=5.0);
+simulate(Pendulum,numberOfIntervals=300,stopTime=5.0, tolerance=1e-10);
 val(x,1.0);
 val(x,2.0);
 val(x,3.0);
@@ -13,7 +13,7 @@ val(x,3.0);
 val(y,1.0);
 val(y,2.0);
 val(y,3.0);
-system("rm -rf Pendulum.cpp Pendulum.exe");
+system("rm -rf Pendulum.cpp Pendulum.exe Pendulum.libs Pendulum.log Pendulum.makefile Pendulum_*.*");
 // Result:
 // true
 // record

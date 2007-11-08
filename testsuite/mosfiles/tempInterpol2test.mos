@@ -6,7 +6,7 @@
 //
 
 loadFile("tempInterpol2test.mo");
-simulate(tempInterpol2test);
+simulate(tempInterpol2test, tolerance=1e-5, numberOfIntervals=100);
 val(y[1,1],0.0);
 val(y[1,2],0.0);
 system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs tempInterpol2test.log tempInterpol2test.exe tempInterpol2test.makefile  output.log");

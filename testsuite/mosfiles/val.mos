@@ -5,7 +5,7 @@
 // Interactive val handling
 //
 loadFile("val.mo");
-simulate(val, stopTime=1.0);
+simulate(val, stopTime=1.0, tolerance=1e-5, numberOfIntervals=100);
 echo(false);
 echo(true);
 val(x[1],0.0);

@@ -7,7 +7,7 @@
 // Drmodelica: 9.2 Partial Base Function (p. 308)
 // 
 loadFile("OneArgBaseFunction.mo");
-simulate(OneArgBaseFunction,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(OneArgBaseFunction,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 res:=readSimulationResult("OneArgBaseFunction_res.plt",{t},3); 
 echo(true); // turns on output

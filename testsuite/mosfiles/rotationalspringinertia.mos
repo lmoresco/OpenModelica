@@ -8,7 +8,7 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // BacklashTest
-simulate(TestModels.RotationalModels.SpringInertia.BacklashTest);
+simulate(TestModels.RotationalModels.SpringInertia.BacklashTest, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
@@ -17,14 +17,14 @@ readFile("output.log");
 system("rm -rf *BacklashTest.* *BacklashTest_* output.log");
 
 // Shaft
-simulate(TestModels.RotationalModels.SpringInertia.Shaft);
+simulate(TestModels.RotationalModels.SpringInertia.Shaft, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia3.w,0.0),val(inertia3.w,0.2),val(inertia3.w,0.4),
 val(inertia3.w,0.6),val(inertia3.w,0.8),val(inertia3.w,1.0)};
 readFile("output.log");
 system("rm -rf *Shaft.* *Shaft_* output.log");
 
 // SineAccelerate
-simulate(TestModels.RotationalModels.SpringInertia.SineAccelerate);
+simulate(TestModels.RotationalModels.SpringInertia.SineAccelerate, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
@@ -33,7 +33,7 @@ readFile("output.log");
 system("rm -rf *SineAccelerate.* *SineAccelerate_* output.log");
 
 // SineSpeed
-simulate(TestModels.RotationalModels.SpringInertia.SineSpeed);
+simulate(TestModels.RotationalModels.SpringInertia.SineSpeed, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
@@ -42,7 +42,7 @@ readFile("output.log");
 system("rm -rf *SineSpeed.* *SineSpeed_* output.log");
 
 // SineTorque
-simulate(TestModels.RotationalModels.SpringInertia.SineTorque);
+simulate(TestModels.RotationalModels.SpringInertia.SineTorque, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
@@ -51,7 +51,7 @@ readFile("output.log");
 system("rm -rf *SineTorque.* *SineTorque_* output.log");
 
 // // SineTorque2inertias
-simulate(TestModels.RotationalModels.SpringInertia.SineTorque2intertias);
+simulate(TestModels.RotationalModels.SpringInertia.SineTorque2intertias, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
@@ -60,7 +60,7 @@ readFile("output.log");
 system("rm -rf *SineTorque2inertias.* *SineTorque2inertias_* output.log");
 
 // // StepTorque
-simulate(TestModels.RotationalModels.SpringInertia.StepTorque);
+simulate(TestModels.RotationalModels.SpringInertia.StepTorque, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),

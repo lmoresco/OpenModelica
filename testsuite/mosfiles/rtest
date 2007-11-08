@@ -17,7 +17,7 @@ $collectcases = 0;
 $filearg = 0;
 $status = 0;
 $statusfilter = "all";
-$epsilon = 1.0e-5;
+$epsilon = 1.0e-3;
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
 sub setbaseline
@@ -199,7 +199,7 @@ sub runone
 	      }
 	      if ($majorNumberDifferences == 0)
 	      {
-	        print "warning - numeric differences less than 1.0e-5\n";
+	        print "warning - numeric differences less than $epsilon\n";
 	        print "\t* for details please check: $log\n";
 	        close LOG;
 	        return 0;

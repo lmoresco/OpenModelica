@@ -7,7 +7,7 @@
 // Drmodelica: 9.1 while-loop (p.290)
 // 
 loadFile("SumSeriesWhile.mo");
-simulate(SumSeries, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+simulate(SumSeries, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
 res:=readSimulationResult("SumSeriesWhile_res.plt",{sum,delta},3);
 sum := res[1];

@@ -6,19 +6,19 @@
 //
 loadFile("Initialization.mo");
 
-simulate(Init1);
+simulate(Init1, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 getErrorString();
 readFile("output.log");
 system("rm -rf Init1.* Init1_* output.log");
-simulate(Init2);
+simulate(Init2, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 getErrorString();
 readFile("output.log");
 system("rm -rf Init2.* Init2_* output.log");
-simulate(Init3);
+simulate(Init3, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 getErrorString();

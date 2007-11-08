@@ -7,7 +7,7 @@
 // Drmodelica: 12.1 Object Oriented Component-based (p. 386)
 // 
 loadFile("TanksConnectedPI.mo");
-simulate(TanksConnectedPI,stopTime=400,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(TanksConnectedPI,stopTime=210,numberOfIntervals=250, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 
 //res:=readSimulationResult("TanksConnectedPI_res.plt",{x,y,z},3); 

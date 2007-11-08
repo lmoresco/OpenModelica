@@ -7,7 +7,7 @@
 //
 loadModel(Modelica);
 loadFile("ConcatArr4.mo");
-simulate(ConcatArr4,numberOfIntervals=100); // 2 intervals == 3 values
+simulate(ConcatArr4,numberOfIntervals=100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 x:=val(fixed1.flange_b.f,0.6);
 y:=val(mass1.a,1.0);

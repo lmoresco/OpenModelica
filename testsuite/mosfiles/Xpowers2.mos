@@ -7,7 +7,7 @@
 // Drmodelica: 8.2 XPowers (p. 242)
 // 
 loadFile("Xpowers2.mo");
-simulate(Xpowers2, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+simulate(Xpowers2, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
 size:=readSimulationResultSize("Xpowers2_res.plt");
 res:=readSimulationResult("Xpowers2_res.plt",{xpowers[1],xpowers[2], xpowers[3],xpowers[4],xpowers[5]},size);

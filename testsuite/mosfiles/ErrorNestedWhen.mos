@@ -5,7 +5,7 @@
 // Drmodelica:   8.2 Conditional Equations with when-Equations (p. 246) 
 //
 loadFile("ErrorNestedWhen.mo");
-simulate(ErrorNestedWhen,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(ErrorNestedWhen,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false);
 system("rm -rf f_* f.exe f.c");
 echo(true);

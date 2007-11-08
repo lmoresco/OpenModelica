@@ -6,7 +6,7 @@
 //
 
 loadFile("Interpol2.mo");
-simulate(Interpol2Test);
+simulate(Interpol2Test, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 val(z,0.0);

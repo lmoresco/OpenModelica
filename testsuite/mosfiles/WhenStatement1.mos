@@ -8,7 +8,7 @@
 
 loadFile("WhenStatement1.mo");
 
-simulate(WhenStat);
+simulate(WhenStat, tolerance=1e-3, numberOfIntervals=400);
 echo(false); // turns of output
 size:=readSimulationResultSize("WhenStat_res.plt");
 res:=readSimulationResult("WhenStat_res.plt",{x,y1,y3},size); 

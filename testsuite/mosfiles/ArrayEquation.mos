@@ -5,7 +5,7 @@
 //  Simulate model with array equations
 //
 loadFile("ArrayEqn.mo");
-simulate(ArrayEqn);
+simulate(ArrayEqn, numberOfIntervals=50, tolerance=1e-5);
 val(x[1],0.0);
 val(x[1],0.2);
 val(x[1],0.4);

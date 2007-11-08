@@ -7,7 +7,7 @@
 // Drmodelica: 9.2 called (p. 300)
 //
 loadFile("PolynomialEvaluator2.mo");
-simulate(PolynomialEvaluator2,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(PolynomialEvaluator2,numberOfIntervals=100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size := readSimulationResultSize("PolynomialEvaluator2_res.plt");
 //res:=readSimulationResult("PolynomialEvaluator2_res.plt",{result},size); 

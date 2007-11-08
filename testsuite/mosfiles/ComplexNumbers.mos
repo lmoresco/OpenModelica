@@ -7,7 +7,7 @@
 //
 
 loadFile("ComplexNumbers.mo");
-simulate(ComplexNumbers,numberOfIntervals=1); // 2 intervals == 3 values
+simulate(ComplexNumbers,numberOfIntervals=1, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("ComplexNumbers_res.plt");
 //res:=readSimulationResult("ComplexNumbers_res.plt",{z},size); 

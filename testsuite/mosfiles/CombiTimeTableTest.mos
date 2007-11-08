@@ -5,7 +5,7 @@
 //  Simulate models and read in data.
 //
 loadFile("CombiTimeTableTestAll.mo");
-simulate(CombiTimeTableTest,stopTime=4.0);
+simulate(CombiTimeTableTest,stopTime=4.0, tolerance=1e-5, numberOfIntervals=100);
 
 val(combiTimeTable1.y[1],0.0);
 val(combiTimeTable1.y[1],1.0);

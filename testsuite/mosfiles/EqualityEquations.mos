@@ -5,7 +5,7 @@
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)
 // 
 loadFile("EqualityEquations.mo");
-simulate(EqualityEquations,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(EqualityEquations,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 // Result:

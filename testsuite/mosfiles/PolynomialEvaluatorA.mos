@@ -5,7 +5,7 @@
 // Drmodelica: 8.2 Polynomial Evaluator (p. 242)
 //
 loadFile("PolynomialEvaluatorA.mo");
-simulate(PolyEvaluate1,startTime=0.0, stopTime=10.0, numberOfIntervalls = 500); // 2 intervals == 3 values
+simulate(PolyEvaluate1,startTime=0.0, stopTime=10.0, numberOfIntervalls = 100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output  
 p1:=val(p,3.0);
 p2:=val(p,5.0);

@@ -7,7 +7,7 @@
 loadFile("Algorithm.mo");
 
 // Alg1 - an algorithm for a single variable.
-simulate(Alg1);
+simulate(Alg1, numberOfIntervals=10, tolerance=1e-5);
 val(x,0.0);
 readFile("output.log");
 system("rm -rf Alg1.* Alg1_* output.log");

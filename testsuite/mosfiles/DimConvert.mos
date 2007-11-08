@@ -5,7 +5,7 @@
 // Drmodelica: 7.7 Built-in Functions (p. 225)
 //
 loadFile("DimConvert.mo");
-simulate(DimConvert,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(DimConvert,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("DimConvert_res.plt");
 res:=readSimulationResult("DimConvert_res.plt",{m1[3,1],v2[3],s1,m4[2,1]},size); 

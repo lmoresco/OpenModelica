@@ -6,7 +6,7 @@
 // Drmodelica: 15.3.1 Chemical Reaction Kinetics of Hydrogen Iodine (p. 555) Not in the notebook
 //
 loadFile("HydrogenIodide.mo");
-simulate(HydrogenIodide,startTime=0.0, stopTime=3.0,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(HydrogenIodide, startTime=0.0, stopTime=3.0, numberOfIntervals=480, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output
 //size:=readSimulationResultSize("HydrogenIodide_res.plt");
 //res:=readSimulationResult("HydrogenIodide_res.plt",{HI,H2,I2},size); 

@@ -8,7 +8,7 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // DCMotor
-simulate(TestModels.RotationalModels.SystemTests.DCMotor);
+simulate(TestModels.RotationalModels.SystemTests.DCMotor, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
@@ -17,7 +17,7 @@ readFile("output.log");
 system("rm -rf *DCMotor.* *DCMotor_* output.log");
 
 // ElasticBearing
-simulate(TestModels.RotationalModels.SystemTests.ElasticBearing);
+simulate(TestModels.RotationalModels.SystemTests.ElasticBearing, tolerance=1e-5, numberOfIntervals=100);
 {val(shaft.w,0.0),val(shaft.w,0.2),val(shaft.w,0.4),
 val(shaft.w,0.6),val(shaft.w,0.8),val(shaft.w,1.0)};
 {val(load.w,0.0),val(load.w,0.2),val(load.w,0.4),

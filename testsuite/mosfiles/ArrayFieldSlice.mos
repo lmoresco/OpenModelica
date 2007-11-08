@@ -5,7 +5,7 @@
 // Drmodelica: 7.4  Array Indexing operator (p. 216)
 //
 loadFile("ArrayFieldSlice.mo");
-simulate(getPerson,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(getPerson,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("getPerson_res.plt");
 res:=readSimulationResult("getPerson_res.plt",{name[1],name[2],name[3]},size); 

@@ -6,11 +6,14 @@
 //
 
 loadFile("dertest.mo");
-simulate(dertest);
+simulate(dertest, tolerance=1e-6, numberOfIntervals=50);
 val(x,0.0);
 val(x,1.0);
 val(y,0.0);
 val(y,1.0);
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs dertest.log output.log"); // remove tmp files.
+
 // Result:
 // true
 // record
@@ -20,4 +23,6 @@ val(y,1.0);
 // 4.1982410203818
 // -1.0
 // -1.42916997163095
+// 
+// 0
 // endResult

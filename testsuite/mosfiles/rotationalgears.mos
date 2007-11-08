@@ -8,7 +8,7 @@ loadFile("Modelica.mo");
 loadFile("TestModels.mo");
 
 // IdealGear
-simulate(TestModels.RotationalModels.Gears.IdealGear);
+simulate(TestModels.RotationalModels.Gears.IdealGear, tolerance=1e-5, numberOfIntervals=100);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
@@ -16,7 +16,7 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 readFile("output.log");
 system("rm -rf *IdealGear.* *IdealGear_* output.log");
 
-simulate(TestModels.RotationalModels.Gears.IdealGearBrake);
+simulate(TestModels.RotationalModels.Gears.IdealGearBrake, tolerance=1e-5, numberOfIntervals=100);
 val(inertia1.w,0.1);
 val(inertia1.w,0.5);
 val(inertia2.w,0.1);
@@ -24,7 +24,7 @@ val(inertia2.w,0.5);
 system("rm -rf *IdealGearBrake.* *IdealGearBrake_* output.log");
 
 
-simulate(TestModels.RotationalModels.Gears.Gear);
+simulate(TestModels.RotationalModels.Gears.Gear, tolerance=1e-5, numberOfIntervals=100);
 val(inertia1.w,0.1);
 val(inertia1.w,0.4);
 val(inertia1.w,0.9);
@@ -33,7 +33,7 @@ val(inertia2.w,0.4);
 val(inertia2.w,0.9);
 system("rm -rf *Gears.Gear.* *Gears.Gear_* output.log");
 
-simulate(TestModels.RotationalModels.Gears.Gear2,stopTime=10.0);
+simulate(TestModels.RotationalModels.Gears.Gear2, stopTime=10.0, tolerance=1e-10, numberOfIntervals=300);
 val(inertia1.w,0.58); // ~0.241
 val(inertia1.w,5.48); // ~0.365
 val(inertia1.w,6.15); // ~-0.285

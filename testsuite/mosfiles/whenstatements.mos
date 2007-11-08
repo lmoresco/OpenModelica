@@ -6,7 +6,7 @@
 //
 loadFile("testalgwhen.mo");
 
-simulate(testalgwhen);
+simulate(testalgwhen, tolerance=1e-5, numberOfIntervals=100);
 val(z,0.0);
 val(z,0.5);
 val(z,0.95);

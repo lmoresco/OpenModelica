@@ -7,7 +7,7 @@
 // Drmodelica: 11.1 Function Annotations (p. 372)
 // 
 loadFile("JoinThreeVectors2.mo");
-simulate(JoinThreeVectors2,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(JoinThreeVectors2,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 res:=readSimulationResult("JoinThreeVectors2_res.plt",{x},3); 
 echo(true); // turns on output

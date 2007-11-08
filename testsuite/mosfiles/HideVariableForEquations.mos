@@ -5,7 +5,7 @@
 // Drmodelica: 8.2 Repetitive Equation Structures with for-Equations (p. 241)
 // 
 loadFile("HideVariableForEquations.mo");
-simulate(HideVariableForEquations,startTime = 0.0, stopTime = 1.0 ,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(HideVariableForEquations,startTime = 0.0, stopTime = 1.0 ,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("HideVariableForEquations_res.plt");
 res:=readSimulationResult("HideVariableForEquations_res.plt",{x[1],x[2],x[3],x[4],x[5]},size); 

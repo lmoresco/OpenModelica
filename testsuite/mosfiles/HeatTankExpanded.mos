@@ -6,7 +6,7 @@
 // Drmodelica: 4.4 Parameterization and extension of Interfaces (p. 136).
 //
 loadFile("HeatTankExpanded.mo");
-simulate(HeatTankExpanded,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(HeatTankExpanded, tolerance=1e-5, numberOfIntervals=100); // 2 intervals == 3 values
 echo(false); // turns of output 
 
 //res:=readSimulationResult("HeatTankExpanded_res.plt",{x,y,z},3); 

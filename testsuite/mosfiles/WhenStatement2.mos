@@ -6,7 +6,7 @@
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 
 loadFile("WhenStatement2.mo");
-simulate(WhenStat2); // 2 intervals == 3 values
+simulate(WhenStat2, tolerance=1e-3, numberOfIntervals=400); // 2 intervals == 3 values
 echo(false); // turns of output 
 size:=readSimulationResultSize("WhenStat2_res.plt");
 res:=readSimulationResult("WhenStat2_res.plt",{x,y1,y3},size); 

@@ -7,7 +7,7 @@
 // 
 
 loadFile("EquationCall.mo");
-simulate(EquationCall,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(EquationCall,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 res:=readSimulationResult("EquationCall_res.plt",{px, py},3); 
 echo(true); // turns on output

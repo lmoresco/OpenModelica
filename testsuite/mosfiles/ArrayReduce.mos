@@ -7,7 +7,7 @@
 // 
 
 loadFile("ArrayReduce.mo");
-simulate(ArrayReduce,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+simulate(ArrayReduce,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size := readSimulationResultSize("ArrayReduce_res.plt");
 res:=readSimulationResult("ArrayReduce_res.plt",{minimum,maximum,summ,prod},size); 

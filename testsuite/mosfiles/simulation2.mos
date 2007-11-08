@@ -5,7 +5,7 @@
 //  Simulate models and read in data.
 //
 loadFile("TimeVaryingLinsys.mo");
-simulate(TimeVaryingLinSys); 
+simulate(TimeVaryingLinSys, tolerance=1e-5, numberOfIntervals=100); 
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
@@ -19,7 +19,7 @@ system("rm -f TimeVaryingLinSys_*");
 system("rm -f TimeVaryingLinSys.cpp TimeVaryingLinSys.exe TimeVaryingLinSys.makefile TimeVaryingLinSys.log TimeVaryingLinSys.libs");
 
 loadFile("NonLinSys.mo");
-simulate(NonLinSys);
+simulate(NonLinSys, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
@@ -28,10 +28,10 @@ system("rm -f NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLi
 
 
 // Nonlinear systems also in NonLinSys.mo
-simulate(dae1,stopTime=15);
+simulate(dae1,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
 val(x1,15.0);
 val(x2,15.0);
-simulate(dae2,stopTime=15);
+simulate(dae2,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
 val(x1,15.0);
 val(x2,15.0);
 system("rm -f dae1.* dae1_* dae1.log dae1.libs");
@@ -41,7 +41,7 @@ system("rm -f dae2.* dae2_* dae2.log dae2.libs");
 /* TODO: Does not work since DASSL calls residual function for negative values when
 it calculates numerical jacobian. 
 loadFile("NonLinSys2.mo");
-simulate(NonLinSys2); 
+simulate(NonLinSys2, tolerance=1e-5, numberOfIntervals=100); 
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
@@ -53,7 +53,7 @@ system("rm -f NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log N
 */
 
 loadFile("NonLinSys3.mo");
-simulate(NonLinSys3); 
+simulate(NonLinSys3, tolerance=1e-5, numberOfIntervals=100); 
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
@@ -66,7 +66,7 @@ system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log N
 
 loadFile("Modelica.mo");
 loadFile("Test3PhaseSystemTotal.mo");
-simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20);
+simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20, tolerance=1e-5, numberOfIntervals=100);
 val(LR1.I1.i,0.0);
 val(LR1.I2.i,0.0);
 val(LR1.I3.i,0.0);
@@ -75,7 +75,7 @@ system("rm -f Test3Phasesystems.Test3PhaseSystem.cpp Test3PhaseSystems.Test3Phas
 
 // Model that tests discrete equations that do not contain zero crossings, e.g n = 1;
 loadFile("BooleanModel.mo");
-simulate(BooleanModel);
+simulate(BooleanModel, tolerance=1e-5, numberOfIntervals=100);
 val(startForward,0.0);
 val(startForward,0.5);
 val(startForward,0.9);
@@ -88,14 +88,14 @@ system("rm -f BooleanModel.cpp BooleanModel.exe BooleanModel.makefile BooleanMod
 
 /*
 loadFile("NonLinSys4.mo");
-simulate(NonLinSys4,numberOfIntervals=5);
+simulate(NonLinSys4,numberOfIntervals=5, tolerance=1e-5);
 size:=readSimulationResultSize("NonLinSys4_res.plt");
 readSimulationResult("NonLinSys4_res.plt",{psii,delta},size);
 system("rm -f NonLinSys4_*");
 system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
 */
 loadFile("LargeSteps.mo");
-simulate(LargeSteps,stopTime=200,numberOfIntervals=5);
+simulate(LargeSteps,stopTime=200,numberOfIntervals=100,tolerance=1e-10);
 val(x,0.0);
 val(x,200.0);
 system("rm -f LargeSteps_*");

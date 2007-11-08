@@ -6,7 +6,7 @@
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 
 loadFile("WhenStatement3.mo");
-simulate(WhenStat3);
+simulate(WhenStat3, tolerance=1e-6, numberOfIntervals=400);
 echo(false); // turns of output 
 size:=readSimulationResultSize("WhenStat3_res.plt");
 res:=readSimulationResult("WhenStat3_res.plt",{x,y1,y3},size); 

@@ -5,7 +5,7 @@
 // Drmodelica: 9.1 assert (p. 298) 
 // 
 loadFile("AssertTest1.mo");
-simulate(Test1,startTime = 0, stopTime=10); // 2 intervals == 3 values
+simulate(Test1,startTime = 0, stopTime=10, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 size:=readSimulationResultSize("Test1_res.plt");
 res:=readSimulationResult("Test1_res.plt",{assertTest.x},size); 

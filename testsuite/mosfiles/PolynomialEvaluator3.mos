@@ -7,7 +7,7 @@
 // Drmodelica: 9.2 called (p. 300)
 //
 loadFile("PolynomialEvaluator3.mo");
-simulate(NamedCall,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(NamedCall,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //res:=readSimulationResult("NamedCall_res.plt",{p},3); 
 echo(true); // turns on output

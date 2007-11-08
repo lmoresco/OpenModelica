@@ -5,7 +5,7 @@
 // Drmodelica: 7.2  Array Constructor (p. 210)
 //
 loadFile("ArrayConstruct1.mo");
-simulate(ArrayConstruct1,numberOfIntervals=2); // 2 intervals == 3 values
+simulate(ArrayConstruct1,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size:=readSimulationResultSize("ArrayConstruct1_res.plt");
 //res:=readSimulationResult("ArrayConstruct1_res.plt",{a[1],c[1,2]},size); 

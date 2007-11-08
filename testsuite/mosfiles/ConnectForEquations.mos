@@ -7,7 +7,7 @@
 // 
 loadModel(Modelica);
 loadFile("ConnectForEquations.mo");
-simulate(ConnectForEquations,numberOfIntervals=100); // 2 intervals == 3 values
+simulate(ConnectForEquations,numberOfIntervals=100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 x:=val(r_components[1].v,0.6);
 y:=val(r_components[2].v,1.0);

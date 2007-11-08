@@ -6,7 +6,7 @@
 // Drmodelica: 4.4 Parameterization and extension of Interfaces (p. 136).
 //
 loadFile("HeatTank.mo");
-simulate(HeatTank,numberOfIntervals=500); // 2 intervals == 3 values
+simulate(HeatTank,numberOfIntervals=10, tolerance=1e-5); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 // Result:
 // true
