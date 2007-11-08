@@ -59,9 +59,10 @@ else
 endif
 		
 
+all : $(SIMOBJS) $(OBJS) libc_runtime.a libsim.a libf2c.a libsendData.a install
 
-all : libc_runtime.a libsim.a libf2c.a libsendData.a install
-
+$(SIMOBJS) : $(HFILES) *.c*
+$(OBJS) : $(HFILES) *.c*
 	
 libc_runtime.a : $(OBJS)
 	$(AR) $@ $(OBJS)
