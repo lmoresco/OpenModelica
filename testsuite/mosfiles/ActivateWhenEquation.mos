@@ -5,7 +5,7 @@
 // Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
 //
 loadFile("ActivateWhenEquation.mo");
-simulate(Activate,numberOfIntervals=100); // 2 intervals == 3 values
+simulate(Activate,numberOfIntervals=10,tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size:=readSimulationResultSize(Activate_res.plt");
 //res:=readSimulationResult("Activate_res.plt",{},size); 
