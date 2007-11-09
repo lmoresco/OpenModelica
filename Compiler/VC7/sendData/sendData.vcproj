@@ -25,7 +25,7 @@
 				GeneratePreprocessedFile="0"
 				MinimalRebuild="TRUE"
 				ExceptionHandling="TRUE"
-				RuntimeLibrary="3"
+				RuntimeLibrary="1"
 				BufferSecurityCheck="FALSE"
 				RuntimeTypeInfo="TRUE"
 				AssemblerListingLocation="debug\"
