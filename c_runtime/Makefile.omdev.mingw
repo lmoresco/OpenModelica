@@ -59,14 +59,10 @@ else
 endif
 		
 
-all : $(SIMOBJS) $(OBJS) libc_runtime.a libsim.a libf2c.a libsendData.a install
-
-$(SIMOBJS) : $(HFILES) *.c*
-$(OBJS) : $(HFILES) *.c*
+all : libc_runtime.a libsim.a libf2c.a libsendData.a install
 	
 libc_runtime.a : $(OBJS)
 	$(AR) $@ $(OBJS)
-
 
 install: libc_runtime.a libsim.a libf2c/libf2c.a 
 	cp $(HFILES) $(builddir_inc)/
