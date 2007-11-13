@@ -1,0 +1,19 @@
+// name:     List2
+// keywords: Lists
+// status:   correct
+//
+// List Testing
+//
+loadFile("List2.mo");
+simulate(List2);
+val(a,0.0);
+system("rm -rf List2_* List2.exe List2.cpp List2.makefile List2.libs List2.log output.log");
+
+// Result:
+// true
+// record
+//    resultFile = "List2_res.plt"
+// end record
+// 1.0
+// 0
+// endResult
