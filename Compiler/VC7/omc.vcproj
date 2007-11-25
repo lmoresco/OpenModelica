@@ -103,7 +103,7 @@ nmake -f MakeFile.debug.win32
 				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib absyn_builder.lib c_runtime.lib antlr.lib sendData.lib QtCore4.lib QtNetwork4.lib QtGui4.lib qtmain.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(ProjectDir)\sendData\release&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(ProjectDir)\sendData\release&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc&quot;"
 				IgnoreDefaultLibraryNames=""
 				DelayLoadDLLs=""
 				GenerateDebugInformation="FALSE"
