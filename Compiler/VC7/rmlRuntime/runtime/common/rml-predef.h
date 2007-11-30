@@ -157,6 +157,15 @@ extern RML_FORWARD_LABEL(RML__real_5fsin);
 extern RML_FORWARD_LABEL(RML__real_5fsqrt);
 extern RML_FORWARD_LABEL(RML__real_5fstring);
 extern RML_FORWARD_LABEL(RML__real_5fsub);
+extern RML_FORWARD_LABEL(RML__real_5fasin);
+extern RML_FORWARD_LABEL(RML__real_5facos);
+extern RML_FORWARD_LABEL(RML__real_5fatan);
+extern RML_FORWARD_LABEL(RML__real_5fatan2);
+extern RML_FORWARD_LABEL(RML__real_5fcosh);
+extern RML_FORWARD_LABEL(RML__real_5flog);
+extern RML_FORWARD_LABEL(RML__real_5flog10);
+extern RML_FORWARD_LABEL(RML__real_5fsinh);
+extern RML_FORWARD_LABEL(RML__real_5ftanh);
    /* java named */
 #define RML__realAbs    RML__real_5fabs
 #define RML__realAdd    RML__real_5fadd
@@ -183,6 +192,14 @@ extern RML_FORWARD_LABEL(RML__real_5fsub);
 #define RML__realSqrt   RML__real_5fsqrt
 #define RML__realString RML__real_5fstring
 #define RML__realSub    RML__real_5fsub
+#define RML__realAsin   RML__real_5fasin
+#define RML__realAcos   RML__real_5facos
+#define RML__realAtan2  RML__real_5fatan2
+#define RML__realCosh   RML__real_5fcosh
+#define RML__realLog    RML__real_5flog
+#define RML__realLog10  RML__real_5flog10
+#define RML__realSinh   RML__real_5fsinh
+#define RML__realTanh   RML__real_5ftanh
 
 /* strings */
 extern RML_FORWARD_LABEL(RML__string_5fappend);
@@ -253,7 +270,6 @@ extern RML_FORWARD_LABEL(RML__tick);
 /* however their code depends on _RMLDB_DEFINED_ */
 extern RML_FORWARD_LABEL(RML__debug_5fprint);
 extern RML_FORWARD_LABEL(RML__debug);
-extern RML_FORWARD_LABEL(RML__debug_5fpush_5fvars);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin01);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin02);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fin03);
@@ -286,4 +302,6 @@ extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout13);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout14);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout15);
 extern RML_FORWARD_LABEL(RML__debug_5fpush_5fout16);
+extern RML_FORWARD_LABEL(RML__debug_5fshow_5fdepth);
 
+extern void RML__call_debug(char* fileName, int sp, int ep, int sl, int sc, int el, int ec, char* relation, char* call);

@@ -112,307 +112,73 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
-				RelativePath=".\runtime\common\arr-add.c">
+				RelativePath=".\runtime\common\array.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-create.c">
+				RelativePath=".\runtime\common\boolean.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-length.c">
+				RelativePath=".\runtime\common\controlflow.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-list.c">
+				RelativePath=".\runtime\common\integer.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-nth.c">
+				RelativePath=".\runtime\common\internal.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-setnth.c">
+				RelativePath=".\runtime\common\list.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-update.c">
+				RelativePath=".\runtime\common\logicalvar.c">
 			</File>
 			<File
-				RelativePath=".\runtime\common\arr-vec.c">
+				RelativePath=".\runtime\common\main.c">
 			</File>
 			<File
-				RelativePath="runtime\common\bool-and.c">
+				RelativePath=".\runtime\common\p-gccore.c">
 			</File>
 			<File
-				RelativePath="runtime\common\bool-not.c">
+				RelativePath=".\runtime\common\p-gccore.h">
 			</File>
 			<File
-				RelativePath="runtime\common\bool-or.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\external-rml.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-abs.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-add.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-div.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-eq.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-ge.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-gt.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-int.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-le.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-lt.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-max.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-min.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-mod.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-mul.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-ne.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-neg.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-real.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-str.c">
-			</File>
-			<File
-				RelativePath="runtime\common\int-sub.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-append.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\list-arr.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-delete.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-length.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-member.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-nth.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-reverse.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-str.c">
-			</File>
-			<File
-				RelativePath="runtime\common\list-vec.c">
-			</File>
-			<File
-				RelativePath="runtime\common\lvar-get.c">
-			</File>
-			<File
-				RelativePath="runtime\common\lvar-new.c">
-			</File>
-			<File
-				RelativePath="runtime\common\lvar-set.c">
-			</File>
-			<File
-				RelativePath="runtime\common\main.c">
-			</File>
-			<File
-				RelativePath="runtime\common\misc-clock.c">
-			</File>
-			<File
-				RelativePath="runtime\common\misc-print.c">
-			</File>
-			<File
-				RelativePath="runtime\common\misc-tick.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-atoi.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-clock.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-equal.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-gccore.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-gcuser-block.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-gcuser-plain.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-get-real.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-init.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-mkreal.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-mkstring.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-motor.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-nil.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-once.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-set-real.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-stringeq.c">
-			</File>
-			<File
-				RelativePath="runtime\common\p-unwind.c">
+				RelativePath=".\runtime\common\p-gcuser-plain.c">
 			</File>
 			<File
 				RelativePath=".\runtime\common\p-usergc.c">
 			</File>
 			<File
-				RelativePath="runtime\common\real-abs.c">
+				RelativePath=".\runtime\common\real.c">
 			</File>
 			<File
-				RelativePath="runtime\common\real-add.c">
+				RelativePath=".\runtime\common\rml-core.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-atan.c">
+				RelativePath=".\runtime\common\rml-end.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-cos.c">
+				RelativePath=".\runtime\common\rml-predef.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-div.c">
+				RelativePath=".\runtime\common\rml-start.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-eq.c">
+				RelativePath=".\runtime\common\string.c">
 			</File>
 			<File
-				RelativePath="runtime\common\real-exp.c">
+				RelativePath=".\runtime\common\vector.c">
 			</File>
 			<File
-				RelativePath="runtime\common\real-floor.c">
+				RelativePath=".\runtime\common\z-agptr.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-ge.c">
+				RelativePath=".\runtime\common\z-joing.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-gt.c">
+				RelativePath=".\runtime\common\z-lgptr.h">
 			</File>
 			<File
-				RelativePath="runtime\common\real-int.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-le.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-ln.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-lt.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-max.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-min.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-mod.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-mul.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-ne.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-neg.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-pow.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-sin.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-sqrt.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-str.c">
-			</File>
-			<File
-				RelativePath="runtime\common\real-sub.c">
-			</File>
-			<File
-				RelativePath="runtime\common\str-append.c">
-			</File>
-			<File
-				RelativePath="runtime\common\str-int.c">
-			</File>
-			<File
-				RelativePath="runtime\common\str-length.c">
-			</File>
-			<File
-				RelativePath="runtime\common\str-list.c">
-			</File>
-			<File
-				RelativePath="runtime\common\str-nth.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\vec-add.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\vec-arr.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\vec-create.c">
-			</File>
-			<File
-				RelativePath="runtime\common\vec-length.c">
-			</File>
-			<File
-				RelativePath="runtime\common\vec-list.c">
-			</File>
-			<File
-				RelativePath="runtime\common\vec-nth.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\vec-setnth.c">
-			</File>
-			<File
-				RelativePath=".\runtime\common\vec-update.c">
+				RelativePath=".\runtime\common\z-split.h">
 			</File>
 		</Filter>
 		<Filter

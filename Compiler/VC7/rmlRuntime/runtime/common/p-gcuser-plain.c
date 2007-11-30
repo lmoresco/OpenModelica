@@ -9,20 +9,31 @@
 void *rml_prim_gcalloc(rml_uint_t nwords, rml_uint_t nargs)
 {
     void **p;
+    if (rml_flag_gclog)
+    	rml_gc_start_clock = rml_prim_clock();    
     rml_minor_collection(nargs);
     if( nwords > rml_young_size ) /* RML_YOUNG_SIZE ) */ 
 	{
 	  if( (p = rml_older_alloc(nwords, nargs)) != 0 ) 
 	  {
 	    rml_state_young_next = rml_young_region;
-	    return (void*)p;
 	  }
-	  fprintf(stderr, "rml_prim_gcalloc failed to get %lu words\n",
-		(unsigned long)nwords);
-	  rml_exit(1);
+	  else
+	  {
+	    fprintf(stderr, "rml_prim_gcalloc failed to get %lu words\n", (unsigned long)nwords);
+	    rml_exit(1);
+	  }
     }
-    p = rml_young_region;
-    rml_state_young_next = p + nwords;
+    else
+    {
+	    p = rml_young_region;
+	    rml_state_young_next = p + nwords;
+    }
+    if (rml_flag_gclog)
+    {    	
+    	rml_gc_end_clock = rml_prim_clock();
+    	rml_gc_total_time += (double)(rml_gc_end_clock - rml_gc_start_clock) / (double)RML_CLOCKS_PER_SEC;
+    }
     return (void*)p;
 }
 

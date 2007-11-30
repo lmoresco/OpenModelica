@@ -12,6 +12,7 @@ typedef void *rml_labptr_t;
 #define RML_FORWARD_LABEL(LABEL)	void *LABEL(struct rml_state*)
 #define RML_BEGIN_LABEL(LABEL)	void *LABEL(struct rml_state *rmlState)
 #define RML_END_LABEL		/*empty*/
+
 #ifdef	RML_CRAP_RISC_CC
 #define RML_APPLY(LABVAL)	((*(void*(*)())(LABVAL))(rmlState))
 #else	/*!RML_CRAP_RISC_CC*/

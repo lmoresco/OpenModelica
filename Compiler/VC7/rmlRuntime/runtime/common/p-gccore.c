@@ -100,6 +100,7 @@ struct rml_state rml_state = {
     0, /* &rml_young_region[0], */	/* young_next */
     0, /* &rml_young_region[rml_young_size], */	/* young_limit; never changes */
 	&rml_array_trail[RML_ARRAY_TRAIL_SIZE], /* ATP */
+	0 /* nrArgs */
 };
 
 #else	/*!RML_STATE_JOIN*/
@@ -112,11 +113,37 @@ void *rmlARGS[RML_NUM_ARGS];
 void **rml_young_next;  /*  = &rml_young_region[0]; */
 void **rml_young_limit; /* = &rml_young_region[rml_young_size]; */
 void **rmlATP = &rml_array_trail[RML_ARRAY_TRAIL_SIZE];
+rml_uint_t rml_nrArgs = 0; /* number of arguments passed on the stack */
 
 #endif	/*RML_STATE_JOIN*/
 
+/* misc */
+char rml_flag_bench;
+char rml_flag_gclog;
+unsigned long rml_clock_start;
+unsigned long rml_gc_start_clock;
+unsigned long rml_gc_end_clock;
+double        rml_gc_total_time;
+char rml_flag_log;
+char rml_flag_no_stack_check;
+unsigned long rml_minorgc_count;
+unsigned long rml_majorgc_count;
+unsigned long rml_call_count;
+/* adrpo added 2004-11-02 */
+unsigned long rml_heap_expansions_count;
+#ifdef	RML_MORE_LOGGING
+const char *rml_latest_module;
+unsigned char rml_latest_known;
+unsigned long rml_intra_calls;
+unsigned long rml_intra_known_calls;
+unsigned long rml_inter_calls;
+unsigned long rml_inter_known_calls;
+#endif	/*RML_MORE_LOGGING*/
+
 void rml_gcinit(void)
 {
+	rml_gc_total_time = 0;
+	rml_gc_start_clock = rml_prim_clock();
     if( rml_stack_size == 0 ) rml_stack_size = RML_STACK_SIZE;
 	rml_array_trail_size = RML_ARRAY_TRAIL_SIZE;
 	rml_trail_size = RML_TRAIL_SIZE;
@@ -135,31 +162,12 @@ void rml_gcinit(void)
     rml_older_size = 4*rml_young_size; /* RML_YOUNG_SIZE */
     rml_current_region = rml_alloc_core(rml_older_size);
     rml_current_next = rml_current_region;
-    rml_reserve_region = rml_alloc_core(rml_older_size);
-	/* printf("%p < %p\n", rml_current_region, rml_reserve_region); */
+    rml_reserve_region = NULL; /* rml_alloc_core(rml_older_size); */
 	/* adrpo added 2004-11-10 */
 	rml_allocated_from_c = 0;
+	rml_gc_end_clock = rml_prim_clock();
+	rml_gc_total_time += (double)(rml_gc_end_clock - rml_gc_start_clock) / (double)RML_CLOCKS_PER_SEC;
 }
-
-/* misc */
-char rml_flag_bench;
-unsigned long rml_clock_start;
-char rml_flag_gclog;
-char rml_flag_log;
-char rml_flag_no_stack_check;
-unsigned long rml_minorgc_count;
-unsigned long rml_majorgc_count;
-unsigned long rml_call_count;
-/* adrpo added 2004-11-02 */
-unsigned long rml_heap_expansions_count;
-#ifdef	RML_MORE_LOGGING
-const char *rml_latest_module;
-unsigned char rml_latest_known;
-unsigned long rml_intra_calls;
-unsigned long rml_intra_known_calls;
-unsigned long rml_inter_calls;
-unsigned long rml_inter_known_calls;
-#endif	/*RML_MORE_LOGGING*/
 
 void rmldb_show_status(void)
 {
@@ -176,7 +184,8 @@ void rmldb_show_status(void)
 		(unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
 		(unsigned long)rml_older_size,
 		(unsigned long)(rml_heap_expansions_count));
-	fprintf(stderr, "[HEAP: %lu words allocated into RML heap from C (from mk_* functions)\n", rml_allocated_from_c);
+	fprintf(stderr, "[HEAP: %lu words allocated into RML heap from C (from mk_* functions)]\n", rml_allocated_from_c);
+	fprintf(stderr, "[HEAP:\t%#.2f seconds waisted while doing GC]\n", rml_gc_total_time);	
 	fprintf(stderr, "[STACK:\t%lu words currently in use (%lu words max, %lu words total)]\n",
 		(unsigned long)(&rml_stack[rml_stack_size] - (void**)rml_state_SP),
 		(unsigned long)(&rml_stack[rml_stack_size] - rmlSPMIN),
@@ -201,9 +210,9 @@ void rmldb_show_status(void)
 	{
 	unsigned long rml_clock_end = rml_prim_clock();
 	double secs = (double)(rml_clock_end - rml_clock_start) / (double)RML_CLOCKS_PER_SEC;
-	fprintf(stderr, "[%s:\t%#.2f seconds, %lu minor collections, %lu major collections]\n",
+	fprintf(stderr, "[%s:\t%#.2f seconds total from which %#.2f seconds GC, %lu minor collections, %lu major collections]\n",
 		status ? "FAIL" : "BENCH",
-		secs, rml_minorgc_count, rml_majorgc_count);
+		secs, rml_gc_total_time, rml_minorgc_count, rml_majorgc_count);
     }
 #endif /* _RMLDB_DEFINED_ */
 }
@@ -221,7 +230,8 @@ void rml_exit(int status)
 		(unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
 		(unsigned long)rml_older_size,
 		(unsigned long)(rml_heap_expansions_count));
-	fprintf(stderr, "[HEAP: %lu words allocated into RML heap from C (from mk_* functions)\n", rml_allocated_from_c);
+	fprintf(stderr, "[HEAP:\t%lu words allocated into RML heap from C (from mk_* functions)]\n", rml_allocated_from_c);
+	fprintf(stderr, "[HEAP:\t%#.2f seconds waisted while doing GC]\n", rml_gc_total_time); 
 	fprintf(stderr, "[STACK:\t%lu words currently in use (%lu words max, %lu words total)]\n",
 		(unsigned long)(&rml_stack[rml_stack_size] - (void**)rml_state_SP),
 		(unsigned long)(&rml_stack[rml_stack_size] - rmlSPMIN),
@@ -241,9 +251,9 @@ void rml_exit(int status)
     if ( rml_flag_bench ) {
 	unsigned long rml_clock_end = rml_prim_clock();
 	double secs = (double)(rml_clock_end - rml_clock_start) / (double)RML_CLOCKS_PER_SEC;
-	fprintf(stderr, "[%s:\t%#.2f seconds, %lu minor collections, %lu major collections]\n",
+	fprintf(stderr, "[%s:\t%#.2f seconds total from which %#.2f seconds GC, %lu minor collections, %lu major collections]\n",
 		status ? "FAIL" : "BENCH",
-		secs, rml_minorgc_count, rml_majorgc_count);
+		secs, rml_gc_total_time, rml_minorgc_count, rml_majorgc_count);
     }
     exit(status);
 }
@@ -320,7 +330,7 @@ struct rml_xgcstate {
 
 void rml_user_gc_callback(struct rml_xgcstate *s, void **vec, rml_uint_t nelts)
 {
-    if( rml_flag_gclog ) 
+    if( rml_flag_gclog && !rml_flag_bench ) 
 	{
 	  fprintf(stderr, " [rml_user_gc called roots=%lu]", nelts);
 	}
@@ -424,11 +434,14 @@ static void rml_major_collection(rml_uint_t nwords, rml_uint_t nliveargs)
     rml_uint_t current_inuse;
 
     ++rml_majorgc_count;
-    if( rml_flag_gclog ) {
-	fprintf(stderr, "[major collection #%lu..", rml_majorgc_count);
+    if( rml_flag_gclog && !rml_flag_bench ) {
+	fprintf(stderr, "\n[major collection #%lu..", rml_majorgc_count);
 	fflush(stderr);
     }
 
+    /* allocate the reserve region */
+    if (!rml_reserve_region) 
+    	rml_reserve_region = rml_alloc_core(rml_older_size); 
     /* collect the current region, forwarding to the reserve region */
     next = rml_collect(rml_reserve_region,
 		       (char*)rml_current_region,
@@ -448,34 +461,70 @@ static void rml_major_collection(rml_uint_t nwords, rml_uint_t nliveargs)
      * The new size is chosen to make the heap at least 50% free.
      */
     current_inuse += nwords;
-    if( 4*current_inuse > 3*rml_older_size ) {
-	rml_uint_t new_size;
-
-	if( rml_flag_gclog ) 
-	{
-		rml_heap_expansions_count++;
-	    fprintf(stderr, " expanding heap..");
-	    fflush(stderr);
-	}
-
-	new_size = (2 * current_inuse) + rml_young_size; /* RML_YOUNG_SIZE; */
-
-	/* expand the older region */
-	rml_free_core(rml_reserve_region, rml_older_size);
-	rml_reserve_region = rml_alloc_core(new_size);
-	next = rml_collect(rml_reserve_region,
-			   (char*)rml_current_region,
-			   (char*)rml_current_next - (char*)rml_current_region,
-			   nliveargs);
-	rml_current_next = next;
-	rml_free_core(rml_current_region, rml_older_size);
-	rml_current_region = rml_reserve_region;
-	rml_older_size = new_size;
-	rml_reserve_region = rml_alloc_core(rml_older_size);
+    /* do a heap expansion if needed */
+    if( 4*current_inuse > 3*rml_older_size ) 
+    {
+		rml_uint_t new_size;
+	
+		if( rml_flag_gclog && !rml_flag_bench ) 
+		{
+			rml_heap_expansions_count++;
+		    fprintf(stderr, " expanding heap..");
+		    fflush(stderr);
+		}
+	
+		new_size = (2 * current_inuse) + rml_young_size; /* RML_YOUNG_SIZE; */
+	
+		/* expand the older region */
+		rml_free_core(rml_reserve_region, rml_older_size);
+		rml_reserve_region = rml_alloc_core(new_size);
+		next = rml_collect(rml_reserve_region,
+				   (char*)rml_current_region,
+				   (char*)rml_current_next - (char*)rml_current_region,
+				   nliveargs);
+		rml_current_next = next;
+		rml_free_core(rml_current_region, rml_older_size);
+		rml_current_region = rml_reserve_region;
+		rml_older_size = new_size;
+		rml_reserve_region = NULL; /* rml_alloc_core(rml_older_size); */
     }
-
+    else if( /* do a heap shrink if only 20% is used and it was an expansion */
+    	100*current_inuse < 20*rml_older_size && /* less than 20% used */ 
+    	rml_young_size * 4 < rml_older_size &&   /* an expansion was performed before */
+    	rml_older_size >= rml_young_size * 8     /* half of the current heap is not less than default size */ 
+    	)  
+    {    	 
+		rml_uint_t new_size;
+	
+		if( rml_flag_gclog && !rml_flag_bench ) 
+		{
+			rml_heap_expansions_count++;
+		    fprintf(stderr, " shrinking heap..");
+		    fflush(stderr);
+		}
+	
+		new_size = rml_older_size / 2; /* RML_YOUNG_SIZE; */
+	
+		/* shrink the older region */
+		rml_free_core(rml_reserve_region, rml_older_size);
+		rml_reserve_region = rml_alloc_core(new_size);
+		next = rml_collect(rml_reserve_region,
+				   (char*)rml_current_region,
+				   (char*)rml_current_next - (char*)rml_current_region,
+				   nliveargs);
+		rml_current_next = next;
+		rml_free_core(rml_current_region, rml_older_size);
+		rml_current_region = rml_reserve_region;
+		rml_older_size = new_size;
+		rml_reserve_region = NULL; /* rml_alloc_core(rml_older_size); */
+    }
+    else
+    {
+    	rml_free_core(rml_reserve_region, rml_older_size);
+    	rml_reserve_region = NULL;
+    }
     /* done with the major collection */
-    if( rml_flag_gclog )
+    if( rml_flag_gclog && !rml_flag_bench )
 	fprintf(stderr, " %lu%% used]\n",
 		(unsigned long)((current_inuse*100)/rml_older_size));
 }
@@ -487,7 +536,7 @@ void rml_minor_collection(rml_uint_t nliveargs)
     void **next;
     rml_uint_t current_nfree;
     ++rml_minorgc_count;
-	if( rml_flag_gclog )
+	if( rml_flag_gclog && !rml_flag_bench )
 	{
 		fprintf(stderr, "\nminor collection #%d", rml_minorgc_count);
 		fflush(stderr);

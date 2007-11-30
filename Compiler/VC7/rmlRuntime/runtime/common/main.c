@@ -7,14 +7,12 @@
 #include <stdlib.h>
 #include "rml.h"
 
-char rml_trace_enabled = 0;
-
 void rml_show_help(char *program, FILE* file)
 {
   fprintf(file, "Usage: %s [runtime_options] program_options\n", program);
   fprintf(file, "where [runtime_options] are:\n");
   fprintf(file, "-log                   prints runtime log information at the program exit\n");
-  fprintf(file, "-gcag                  prints garbage collector log information at the program exit\n");
+  fprintf(file, "-gcgag                 prints garbage collector log information at the program exit\n");
   fprintf(file, "-bench                 prints running time and other log information at the program exit\n");
   fprintf(file, "-no-stack-check        instructs the runtime no to check for stack overflow\n");
   fprintf(file, "-stack-size=<size>     instructs the runtime to alloc a stack of specified size\n");
@@ -108,11 +106,12 @@ int main(int argc, char **argv)
       rml_flag_no_stack_check = 0;
       continue;
     } else if( strcmp(arg, "gcgag") == 0 ) {
-      rml_flag_gclog = 0;
+      rml_flag_gclog = 1;
       continue;
     } else if( strcmp(arg, "bench") == 0 ) {
       rml_flag_bench = 1;
       rml_flag_no_stack_check = 1;
+      rml_flag_gclog = 1;
       rml_clock_start = rml_prim_clock();
       continue;
     } else if( strcmp(arg, "no-stack-check") == 0 ) {
