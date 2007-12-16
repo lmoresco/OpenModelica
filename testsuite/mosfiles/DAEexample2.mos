@@ -6,7 +6,7 @@
 // Drmodelica: 2.1 Differential Algebraic Equation System (p. 19)
 //
 loadFile("DAEexample2.mo");
-simulate(DAEexample, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+simulate(DAEexample, startTime=0.0, stopTime=1.0, numberOfIntervals=3, tolerance=1e-5);
 echo(false);
 size := readSimulationResultSize("DAEexample_res.plt");
 res:=readSimulationResult("DAEexample_res.plt",{x},size);
@@ -23,7 +23,7 @@ system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DA
 //     resultFile = "DAEexample_res.plt"
 // end record
 // true
-// {0.588,0.588,0.682,0.919}
+// {0.588,0.588,0.631,0.749,0.919}
 // ""
 // 0
 // endResult

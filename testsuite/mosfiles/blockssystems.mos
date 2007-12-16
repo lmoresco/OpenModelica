@@ -48,7 +48,7 @@ readFile("output.log");
 system("rm -rf *SpringMass.* *SpringMass_* output.log");
 
 // Tank
-simulate(TestModels.BlockModels.SystemTests.Tank, tolerance=1e-5, numberOfIntervals=50);
+simulate(TestModels.BlockModels.SystemTests.Tank, tolerance=1e-10, numberOfIntervals=50);
 {val(gain2.y,0.0),val(gain2.y,0.2),val(gain2.y,0.4),
 val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),

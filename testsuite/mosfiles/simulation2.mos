@@ -53,7 +53,7 @@ system("rm -f NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log N
 */
 
 loadFile("NonLinSys3.mo");
-simulate(NonLinSys3, tolerance=1e-5, numberOfIntervals=100); 
+simulate(NonLinSys3, tolerance=1e-10, numberOfIntervals=100); 
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
