@@ -7,7 +7,7 @@ rml_sint_t rml_prim_atoi(const struct rml_string *str)
   rml_sint_t nchars;
   const unsigned char *s;
   unsigned char c;
-  rml_uint_t value;
+  rml_sint_t value;
   int negate;
 
   nchars = RML_HDRSTRLEN(str->header);
@@ -209,9 +209,9 @@ RML_BEGIN_LABEL(RML__string_5fsetnth)
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
     /* re-read after alloc, it may have been moved */
-    strold = rmlA0;
-    unsigned char *sold = (unsigned char*)RML_STRINGDATA(strold);
+    unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
+	strold = rmlA0;
     rmlA0 = RML_TAGPTR(strnew);
     for(; len > 0; --len)
       *snew++ = *sold++;
@@ -238,10 +238,10 @@ RML_BEGIN_LABEL(RML__string_5fupdate)
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */
-    strold = rmlA0;
-    unsigned char *sold = (unsigned char*)RML_STRINGDATA(strold);
+    /* re-read after alloc, it may have been moved */    
+    unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
+	strold = rmlA0;
     rmlA0 = RML_TAGPTR(strnew);
     for(; len > 0; --len)
       *snew++ = *sold++;
@@ -268,10 +268,10 @@ RML_BEGIN_LABEL(RML__string_5fsetnth_5fstring_5fchar)
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */
-    strold = rmlA0;
-    unsigned char *sold = (unsigned char*)RML_STRINGDATA(strold);
+    /* re-read after alloc, it may have been moved */    
+    unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
+	strold = rmlA0;
     rmlA0 = RML_TAGPTR(strnew);
     for(; len > 0; --len)
       *snew++ = *sold++;
@@ -298,10 +298,10 @@ RML_BEGIN_LABEL(RML__string_5fupdate_5fstring_5fchar)
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */
-    strold = rmlA0;
-    unsigned char *sold = (unsigned char*)RML_STRINGDATA(strold);
+    /* re-read after alloc, it may have been moved */    
+    unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
+	strold = rmlA0;
     rmlA0 = RML_TAGPTR(strnew);
     for(; len > 0; --len)
       *snew++ = *sold++;
