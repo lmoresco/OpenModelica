@@ -67,7 +67,7 @@ LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(
 
 PROG = omc.exe
 RML = $(RMLHOME)/bin/rmlc -v
-RMLCFLAGS = #-Wr,-ftrace
+RMLCFLAGS = -Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
