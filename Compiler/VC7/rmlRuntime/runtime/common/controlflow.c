@@ -79,7 +79,9 @@ int simIndex = 0;
  */
 void rml_prim_motor(rml_labptr_t f)
 {
-    int i;
+#ifdef RML_DEBUG_
+    int i; 
+#endif
 #if	defined(RML_STATE_APTR) || defined(RML_STATE_LPTR)
     struct rml_state *rmlState = &rml_state;
 #endif	/*RML_STATE_APTR || RML_STATE_LPTR*/
