@@ -9,7 +9,7 @@ RML_BEGIN_LABEL(RML__array_5fadd)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
-	void *data;
+	/* void *data; */
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
 	{
 		/* first alocate old_vector.length+1 then copy the old vector */
@@ -122,7 +122,7 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 #ifndef NON_DESTRUCTIVE_ARRAY_IMPLEMENTATION
 	rml_uint_t nelts = 0;
 	void *arr = rmlA0;
-	void *data;
+	/* void *data; */
 	rml_uint_t idx = 0;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	if( i >= RML_HDRSLOTS(RML_GETHDR(arr)) ) 
@@ -209,7 +209,7 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 #ifndef NON_DESTRUCTIVE_ARRAY_IMPLEMENTATION
 	rml_uint_t nelts = 0;
 	void *arr = rmlA0;
-	void *data;
+	/* void *data; */
 	rml_uint_t idx = 0;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	if( i-1 >= RML_HDRSLOTS(RML_GETHDR(arr)) ) 
@@ -291,7 +291,7 @@ RML_BEGIN_LABEL(RML__array_5fvector)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
-	void *data;
+	/* void *data; */
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
 	{
 		/* first alocate old_vector.length then copy the old vector */
@@ -315,7 +315,7 @@ RML_BEGIN_LABEL(RML__array_5fcopy)
 {
 	rml_uint_t nelts = 0;
 	void *vec = rmlA0;
-	void *data;
+	/* void *data; */
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
 	{
 		/* first alocate old_vector.length then copy the old vector */
