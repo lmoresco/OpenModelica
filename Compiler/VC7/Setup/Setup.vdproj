@@ -9549,6 +9549,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_697AC3C66848416D84520ABA052965C6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6989621B73BE4358885BC566BBD67630"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -12117,6 +12123,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_87937A52DDBF4C5EBB41BAD134185FC2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_879F1547969C4D6BA166C8D408EBCAB2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -13191,6 +13203,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_941DCFF82ED6AC7FE30776643B068A57"
+        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9423AE1A48A04FF2A124C6A22AFC9EB9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -14056,6 +14074,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9E8F48DF3D3D40CB9E4451F75F842029"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9E98E345B9EA446CB4BF0482EA52E2D9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -54667,6 +54691,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_697AC3C66848416D84520ABA052965C6"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtNetwork.a"
+            "TargetName" = "8:libQtNetwork.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_6989621B73BE4358885BC566BBD67630"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\smlnj-lib\\HTML\\html-cons-lib.mlb"
@@ -63227,6 +63271,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_87937A52DDBF4C5EBB41BAD134185FC2"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtGui.a"
+            "TargetName" = "8:libQtGui.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_879F1547969C4D6BA166C8D408EBCAB2"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\smlnj-lib\\Util\\io-util-sig.sml"
@@ -66787,6 +66851,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_941DCFF82ED6AC7FE30776643B068A57"
+            {
+            "SourcePath" = "8:mico2311.dll"
+            "TargetName" = "8:mico2311.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_9423AE1A48A04FF2A124C6A22AFC9EB9"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\ckit-lib\\HISTORY"
@@ -69673,6 +69757,26 @@
             "TargetName" = "8:ModelicaAdditions_MultiBody_Sensors.html"
             "Tag" = "8:"
             "Folder" = "8:_4B338A0BC44344278446C03E7A5CEBF1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_9E98E345B9EA446CB4BF0482EA52E2D9"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtCore.a"
+            "TargetName" = "8:libQtCore.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -101350,7 +101454,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.3"
         "ProductCode" = "8:{6CCE826D-3117-4D00-BC0C-2A75B612CB01}"
-        "PackageCode" = "8:{5DB72B08-B4DC-4601-BF4A-F3170B9003F6}"
+        "PackageCode" = "8:{562D87F3-25DB-4D70-9087-595BDEA09DAB}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -102110,9 +102214,6 @@
                 {
                 }
             }
-        }
-        "VJSharpPlugin"
-        {
         }
     }
 }
