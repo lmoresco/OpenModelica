@@ -1,0 +1,19 @@
+// name:     List3
+// keywords: Lists
+// status:   correct
+//
+// List Testing
+//
+loadFile("List3.mo");
+simulate(List3);
+val(c,0.0);
+system("rm -rf List3_* List3.exe List3.cpp List3.makefile List3.libs List3.log output.log");
+
+// Result:
+// true
+// record
+//    resultFile = "List3_res.plt"
+// end record
+// 3.0
+// 0
+// endResult

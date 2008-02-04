@@ -1,0 +1,19 @@
+// name:     List4
+// keywords: Lists
+// status:   correct
+//
+// List Testing
+//
+loadFile("List4.mo");
+simulate(List4);
+val(c1,0.0);
+system("rm -rf List4_* List4.exe List4.cpp List4.makefile List4.libs List4.log output.log");
+
+// Result:
+// true
+// record
+//    resultFile = "List4_res.plt"
+// end record
+// 9.0
+// 0
+// endResult
