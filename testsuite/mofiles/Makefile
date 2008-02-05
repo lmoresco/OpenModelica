@@ -93,7 +93,7 @@ FuncDer.mo SimplePeriodicSampler.mo \
 TwoRateSampler.mo DiscreteVectorStateSpace.mo \
 WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
 LotkaVolterra.mo HydrogenIodide.mo \
-FlatParse.mof Transpose.mo
+FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

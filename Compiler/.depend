@@ -27,7 +27,7 @@ Main.c: Main.mo Util.sig Types.sig TaskGraph.sig TaskGraphExt.sig Socket.sig Sim
 MetaUtil.c: MetaUtil.mo Util.sig Types.sig Lookup.sig Exp.sig SCode.sig Debug.sig Absyn.sig DAE.sig Env.sig 
 Mod.c: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig Absyn.sig Values.sig Util.sig Static.sig Inst.sig Print.sig Dump.sig Ceval.sig Debug.sig Error.sig 
 ModUtil.c: ModUtil.mo DAE.sig Absyn.sig Exp.sig Util.sig RTOpts.sig Types.sig Algorithm.sig 
-Patternm.c: Patternm.mo SCode.sig Types.sig Env.sig Absyn.sig DFA.sig Util.sig Lookup.sig 
+Patternm.c: Patternm.mo SCode.sig DFA.sig Absyn.sig Env.sig Util.sig Lookup.sig 
 Prefix.c: Prefix.mo Lookup.sig Exp.sig Absyn.sig Env.sig Util.sig Print.sig Debug.sig 
 Static.c: Static.mo Values.sig Types.sig SCode.sig MetaUtil.sig Interactive.sig Exp.sig Env.sig Convert.sig Absyn.sig Algorithm.sig Util.sig Print.sig ModUtil.sig Prefix.sig System.sig Lookup.sig Dump.sig Error.sig Inst.sig Mod.sig DAE.sig Codegen.sig Connect.sig Ceval.sig ClassInf.sig Debug.sig 
 SimCodegen.c: SimCodegen.mo SCode.sig Exp.sig DAELow.sig DAE.sig Absyn.sig VarTransform.sig Util.sig Values.sig System.sig Types.sig RTOpts.sig ModUtil.sig Print.sig Settings.sig Error.sig Dump.sig Env.sig Algorithm.sig Codegen.sig Debug.sig Inst.sig 
