@@ -1,0 +1,74 @@
+// name:     Test fixes of bug 180
+// keywords: events
+// status:   correct
+//
+// Test for function wrapper code generation involving arrays
+//
+// 
+loadFile("Matrix.mo");
+system("gcc -c -o libFunc.a Func.c");
+checkModel(tt);
+instantiateModel(tt);
+buildModel(tt,numberOfIntervals=1);
+simulate(tt,numberOfIntervals=1);
+{val(x[1,1], 0.0), val(x[1,2], 0.0), val(x[1,3], 0.0)};
+{val(x[2,1], 0.0), val(x[2,2], 0.0), val(x[2,3], 0.0)};
+{val(y[1,1], 0.0), val(y[1,2], 0.0)};
+{val(y[2,1], 0.0), val(y[2,2], 0.0)};
+{val(y[3,1], 0.0), val(y[3,2], 0.0)};
+{val(z[1,1], 0.0), val(z[1,2], 0.0)}; 
+{val(z[2,1], 0.0), val(z[2,2], 0.0)};
+{val(z[3,1], 0.0), val(z[3,2], 0.0)};
+system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.cpp");
+// Result:
+// true
+// 0
+// "Check of tt successful.
+// 
+// model tt has 18 equation(s) and 18 variable(s).
+// 6 of these are trivial equation(s).
+// "
+// "fclass tt
+// Real x[1,1];
+// Real x[1,2];
+// Real x[1,3];
+// Real x[2,1];
+// Real x[2,2];
+// Real x[2,3];
+// Real z[1,1];
+// Real z[1,2];
+// Real z[2,1];
+// Real z[2,2];
+// Real z[3,1];
+// Real z[3,2];
+// Real y[1,1];
+// Real y[1,2];
+// Real y[2,1];
+// Real y[2,2];
+// Real y[3,1];
+// Real y[3,2];
+// equation
+//   x[1,1] = 1.0;
+//   x[1,2] = 2.0;
+//   x[1,3] = 3.0;
+//   x[2,1] = 4.0;
+//   x[2,2] = 5.0;
+//   x[2,3] = 6.0;
+//   z = Trans({{x[1,1],x[1,2],x[1,3]},{x[2,1],x[2,2],x[2,3]}});
+//   y = Trans({{x[1,1],x[1,2],x[1,3]},{x[2,1],x[2,2],x[2,3]}});
+// end tt;
+// "
+// {"tt","tt_init.txt"}
+// record
+//     resultFile = "tt_res.plt"
+// end record
+// {1.0,2.0,3.0}
+// {4.0,5.0,6.0}
+// {1.0,3.0}
+// {5.0,2.0}
+// {4.0,6.0}
+// {1.0,3.0}
+// {5.0,2.0}
+// {4.0,6.0}
+// 0
+// endResult

@@ -36,7 +36,8 @@ MyPointsInst1.mos MyPointsInst2.mos \
 Switch.mos AlgorithmCondAssign1.mos \
 Xpowers1.mos Xpowers2.mos DAEexample2.mos \
 ComplexNumbers.mos \
-PolynomialEvaluator1.mos PolynomialEvaluator3.mos PolynomialEvaluator2.mos \
+PolynomialEvaluator1.mos PolynomialEvaluator3.mos \
+PolynomialEvaluator2.mos Matrix.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
