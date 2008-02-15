@@ -17,7 +17,7 @@
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")</Input>
+     <Input>loadFile("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -55,10 +55,10 @@ end BouncingBall;
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getSourceFile(BouncingBall)</Input>
-     <Output>C:/OpenModelica1.4.3/testmodels/BouncingBall.mo</Output>
+     <Output>C:/OpenModelica1.4.4/testmodels/BouncingBall.mo</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")</Input>
+     <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
      <Output>Ok</Output>
     </InputCell>
    </GroupCell>
@@ -71,15 +71,15 @@ end BouncingBall;
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-     <Output>C:\OpenModelica1.4.3\ModelicaLibrary</Output>
+     <Output>C:\OpenModelica1.4.4\ModelicaLibrary</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>setEnvironmentVar("OPENMODELICALIBRARY","C\\OpenModelica1.4.3\\ModelicaLibrary")</Input>
+     <Input>setEnvironmentVar("OPENMODELICALIBRARY","C\\OpenModelica1.4.4\\ModelicaLibrary")</Input>
      <Output>Ok</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-     <Output>C\\OpenModelica1.4.3\\ModelicaLibrary</Output>
+     <Output>C\\OpenModelica1.4.4\\ModelicaLibrary</Output>
     </InputCell>
    </GroupCell>
    <GroupCell closed="false" >
@@ -90,15 +90,15 @@ end BouncingBall;
      <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:Times New Roman; font-size:12pt; color:#000000;">Calls related to classes and models:&lt;/span>&lt;/p>&lt;/body>&lt;/html></Text>
     </TextCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")</Input>
+     <Input>loadFile("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFileInteractiveQualified("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")</Input>
+     <Input>loadFileInteractiveQualified("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
      <Output>{BouncingBall}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFileInteractive("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo")</Input>
+     <Input>loadFileInteractive("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
      <Output>{BouncingBall}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -131,7 +131,7 @@ end BouncingBall;
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>saveModel("C:\\OpenModelica1.4.3\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
+     <Input>saveModel("C:\\OpenModelica1.4.4\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
      <Output>false
 OMC-ERROR: 
 "Class BouncingBall2 not found in scope global.
@@ -150,7 +150,7 @@ OMC-ERROR:
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall2.mo")  // Load it back</Input>
+     <Input>loadFile("C:/OpenModelica1.4.4/testmodels/BouncingBall2.mo")  // Load it back</Input>
      <Output>true</Output>
     </InputCell>
    </GroupCell>
@@ -163,13 +163,13 @@ OMC-ERROR:
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getElementsInfo(BouncingBall)</Input>
-     <Output>{ { rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=52, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, variability="parameter", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=47, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, variability="parameter", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=35, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=55, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, variability="unspecified", direction="unspecified") }
+     <Output>{ { rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=52, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=47, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=35, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=55, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, variability="unspecified", direction="unspecified") }
  }</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -261,7 +261,7 @@ getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassAttributes(BouncingBall) //?? Changed to rec(...) format</Input>
-     <Output>{ rec(name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="A Bouncing Ball Model", file="C:/OpenModelica1.4.3/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=20, endColumn=17) }</Output>
+     <Output>{ rec(name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="A Bouncing Ball Model", file="C:/OpenModelica1.4.4/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=20, endColumn=17) }</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassRestriction(BouncingBall) </Input>
@@ -269,7 +269,7 @@ getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getClassInformation(BouncingBall)</Input>
-     <Output>{"model","A Bouncing Ball Model","C:/OpenModelica1.4.3/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,20,17}}</Output>
+     <Output>{"model","A Bouncing Ball Model","C:/OpenModelica1.4.4/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,20,17}}</Output>
     </InputCell>
    </GroupCell>
    <GroupCell closed="false" >
@@ -376,7 +376,7 @@ Class isProtected not found in scope &lt;global scope>.
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>getCrefInfo(BouncingBall)</Input>
-     <Output>{C:/OpenModelica1.4.3/testmodels/BouncingBall.mo,writable,1,1,20,17}</Output>
+     <Output>{C:/OpenModelica1.4.4/testmodels/BouncingBall.mo,writable,1,1,20,17}</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>addComponent(e2,Real,BouncingBall);
@@ -511,7 +511,7 @@ end BouncingBall;
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.3/testmodels/BouncingBall.mo") //Reload model</Input>
+     <Input>loadFile("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo") //Reload model</Input>
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -624,7 +624,7 @@ getInheritanceCount(B)</Input>
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getVersion()</Input>
-     <Output>"1.4.3"</Output>
+     <Output>"1.4.4"</Output>
     </InputCell>
    </GroupCell>
   </GroupCell>

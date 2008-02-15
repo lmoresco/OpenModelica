@@ -26,5 +26,5 @@ end EquationCall;
 // Real px;
 // Real py;
 // equation
-//   (px,py) = (0.7247155,1.864078);
+//   (px,py) = (0.724715508953347,1.86407817193445);
 // end EquationCall;

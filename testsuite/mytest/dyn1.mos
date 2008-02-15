@@ -1,0 +1,18 @@
+// name:      dyn1
+// keywords:  equation
+// status:    correct
+//
+// Equation handling
+//
+loadFile("dyn1.mo");
+dyn1int(2, 40);
+dyn1real(5.0, 10.0);
+dyn1str("test", " string");
+dyn1strlst({"arne","leif","bertil"});
+// Result:
+// true
+// 42
+// 15.0
+// "test string"
+// "arne,leif,bertil"
+// endResult

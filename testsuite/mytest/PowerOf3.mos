@@ -1,0 +1,32 @@
+// name:      PowerOf3
+// keywords:  equation
+// status:    correct
+//
+// Equation handling
+// 
+loadFile("PowerOf3.mo");
+PowerOf3(0);
+0^3;
+PowerOf3(1);
+1^3;
+PowerOf3(2);
+2^3;
+PowerOf3(3);
+3^3;
+PowerOf3(4);
+4^3;
+system("rm -rf PowerOf3.exe");
+// Result:
+// true
+// 0
+// 0
+// 1
+// 1
+// 8
+// 8
+// 27
+// 27
+// 64
+// 64
+// 0
+// endResult

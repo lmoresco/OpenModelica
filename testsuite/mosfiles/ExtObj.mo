@@ -41,6 +41,6 @@ package ExtObj
   end interpolateMyTable;
 end ExtObj;
 
-model test
+model testextobj
   ExtObj.ExtObjtest t;
-end test;
+end testextobj;

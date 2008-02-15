@@ -57,7 +57,7 @@ end FuncDer;
 // Real fn1;
 // Real fn2;
 // algorithm
-//   fn0 := h0(2,5.0,true);
+//   fn0 := 150.413159102577;
 //   fn1 := h1(2,5.0,true,fn0);
 //   fn2 := h2(2,5.0,true,fn0,fn1);
 // end FuncDer;

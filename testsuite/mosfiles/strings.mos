@@ -9,7 +9,8 @@ b:="bar";
 a+b;
 loadFile("strings.mo");
 foo(a+b);
-system("rm -rf foo*");
+// foo.dll can't be removed within this test since windows does not allow for a filehandle to be removed while the file is open.
+system("rm -rf foo.makefile foo.libs foo.c foo.log foo.so");
 
 // Result:
 // "foo"

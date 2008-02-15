@@ -38,6 +38,7 @@ Xpowers1.mos Xpowers2.mos DAEexample2.mos \
 ComplexNumbers.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator3.mos \
 PolynomialEvaluator2.mos Matrix.mos \
+FuncNamespace.mos OverloadingFunc.mos 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
