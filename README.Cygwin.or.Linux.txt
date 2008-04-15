@@ -10,19 +10,31 @@ You need:
 	libssl (not really necessary)
 	java
 	gcc
+        readline & libreadlineX-dev, currently X=5
 
 NOTE:
  We assume you took the source from Subversion in a subdirectory called "trunk".
  If you used some other name, replace "trunk" below with your directory.
 
-1. Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
+Setting your environment for compiling OpenModelica
+===================================================
+   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
+   Ubuntu 7.10:
+     > sudo apt-get install antlr
+     > sudo apt-get install libantrl-dev
+     > export ANTLRHOME=/usr/
+
    Set CLASSPATH for antlr, e.g. $ANTLRHOME/antlr.jar
+   Ubuntu 7.10:
+     > export CLASSPATH=/usr/share/java/antlr.java
+
    Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
    If you plan to use mico corba with OMC you need to:
    - make 2 symbolic links:
      ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
      ln -s path/to/mico/lib/libmicoX.X.XX.so path/to/mico/lib/libmico.so
    - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
+   - set the LD_LIBRARY_PATH to path/to/mico/lib (for mico libs)
 
   run: 
   ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
@@ -50,7 +62,9 @@ How to run
 To be able to use OMShell you must
 set the OPENMODELICAHOME environment variable
 to point to the root directory of OpenModelica e.g
-export OPENMODELICAHOME=path/to/trunk/build
+> export OPENMODELICAHOME=path/to/trunk/build
+Also, you have to set the OPENMODELICALIBRARY environment variable:
+> export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
 
 For debugging purposes it can be useful to start OMShell and omc in two different termnials.
 For this use:
@@ -137,9 +151,25 @@ GENERAL NOTES:
   from the mico-config run. This should be handled by 'configure' but
   it isn't.
 
-- to run the testsuite you need to have "./" in your $PATH variable.
+- to run an models and the testsuite you need to have 
+  "./" in your $PATH variable.
   In general this is considered in Linux a security threat, so make
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first. 
+
+- Ubuntu 7.10 
+  + comes with GNU Java, install sun-java
+    https://jdk-distros.dev.java.net/ubuntu.html
+  + you will need readline to compile mosh (OMShell)
+    > sudo apt-get install libreadline5-dev
+
+- On some Linux systems when running simulate(Model, ...) the
+  executable for the Model enters an infinite loop. To fix this:
+  > cd /path/to/OpenModelica/c_runtime
+  > emacs Makefile
+    add -ffloat-store to CFLAGS: CFLAGS= -ffloat-store .....
+  > make clean ; make
+  > cd ../Examples
+  > ../build/bin/omc sim_dcmotor.mos
   
-Last updated 2007-01-10 
+Last updated 2008-04-15 
