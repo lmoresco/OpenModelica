@@ -121,7 +121,7 @@ copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\buil
 				ExcludedFromBuild="FALSE"/>
 			<Tool
 				Name="VCPreBuildEventTool"
-				Description="Building antlr runtime"
+				Description="Building OMC (omc.exe)"
 				CommandLine="pushd $(ProjectDir)antlr
 nmake -f MakeFile.win32
 popd
