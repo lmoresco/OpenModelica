@@ -15,8 +15,8 @@ echo(true);
 res[1,1];
 res[1,s];
 res2[1,1];
-if res2[1,s]>60 and res2[1,s] < 100 then 1 else 0;
-if res3[1,s] > -1e-5 then 1 else 0;
+if res2[1,s]>59 and res2[1,s] < 100 then 1 else 0;
+if res3[1,s] > -1e-2 then 1 else 0;
 readFile("output.log");
 system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
 // Result:
