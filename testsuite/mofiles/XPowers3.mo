@@ -27,9 +27,9 @@ end Xpowers3;
 // parameter Integer n = 5;
 // equation
 //   xpowers[1] = 1.0;
-//   xpowers[2] = x * xpowers[1];
-//   xpowers[3] = x * xpowers[2];
-//   xpowers[4] = x * xpowers[3];
-//   xpowers[5] = x * xpowers[4];
-//   xpowers[6] = x * xpowers[5];
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
+//   xpowers[4] = xpowers[3] * x;
+//   xpowers[5] = xpowers[4] * x;
+//   xpowers[6] = xpowers[5] * x;
 // end Xpowers3;
