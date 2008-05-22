@@ -101,6 +101,12 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
+				RelativePath="..\..\c_runtime\base_array.c">
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\base_array.h">
+			</File>
+			<File
 				RelativePath="..\..\c_runtime\boolean_array.c">
 			</File>
 			<File
