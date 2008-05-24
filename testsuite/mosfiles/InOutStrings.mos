@@ -1,0 +1,45 @@
+// name:     String array arguments
+// keywords: array, string, external function
+// status:   correct
+
+system("g++ -c -o libInOutStrings1.o InOutStrings_fkn1.cc");
+system("g++ -c -o libInOutStrings2.o InOutStrings_fkn2.cc");
+loadFile("InOutStrings.mo");
+simulate(c1);
+echo(false);
+s:=readSimulationResultSize("c1_res.plt");
+res:=readSimulationResult("c1_res.plt",{x},s);
+echo(true);
+res[1,1];
+ext1({1,2,3});
+readFile("output.log");
+
+simulate(c2);
+echo(false);
+s:=readSimulationResultSize("c2_res.plt");
+res:=readSimulationResult("c2_res.plt",{x},s);
+echo(true);
+res[1,1];
+ext2({"a","b","c"});
+readFile("output.log");
+system("rm -f c1.makefile c1.log c1.libs c1_init.txt c1_functions.cpp c1.cpp ext1.so ext1.makefile ext1.log ext1.libs ext1.c c2.makefile c2.log c2.libs c2_init.txt c2_functions.cpp c2.cpp c1_res.plt c1 output.log c2_res.plt c2 ext2.so ext2.makefile ext2.log ext2.libs ext2.c libInOutStrings1.o libInOutStrings2.o");
+// Result:
+// 0
+// 0
+// true
+// record
+//    resultFile = "c1_res.plt"
+// end record
+// true
+// 4.0
+// 3
+// ""
+// record
+//    resultFile = "c2_res.plt"
+// end record
+// true
+// 4.0
+// 3
+// ""
+// 0
+// endResult

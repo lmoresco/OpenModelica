@@ -1,0 +1,44 @@
+// name:     Record arguments
+// keywords: array, record
+// status:   correct
+
+loadFile("InOutRecord.mo");
+
+test := TestPkg.mk_r(true, "not");
+TestPkg.fkn(test);
+
+simulate(m);
+echo(false);
+s:=readSimulationResultSize("m_res.plt");
+res:=readSimulationResult("m_res.plt",{q},s);
+echo(true);
+res[1,1];
+readFile("output.log");
+
+simulate(TestPkg.subm);
+echo(false);
+s:=readSimulationResultSize("TestPkg.subm_res.plt");
+res:=readSimulationResult("TestPkg.subm_res.plt",{q},s);
+echo(true);
+res[1,1];
+readFile("output.log");
+// Result:
+// true
+// record
+// a = true,
+//     tmp = "not"
+// end record
+// true
+// record
+//     resultFile = "m_res.plt"
+// end record
+// true
+// 1.0
+// ""
+// record
+//     resultFile = "TestPkg.subm_res.plt"
+// end record
+// true
+// 0.0
+// ""
+// endResult
