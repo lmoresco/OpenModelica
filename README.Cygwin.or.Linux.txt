@@ -8,9 +8,9 @@ You need:
 	rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
 	mico   (http://www.mico.org - tested on 2.3.11 and 2.3.12)
 	libssl (not really necessary)
-	java
+	sun-java version > 1.4
 	gcc
-        readline & libreadlineX-dev, currently X=5
+	readline & libreadlineX-dev, currently X=5
 
 NOTE:
  We assume you took the source from Subversion in a subdirectory called "trunk".
@@ -172,4 +172,4 @@ GENERAL NOTES:
   > cd ../Examples
   > ../build/bin/omc sim_dcmotor.mos
   
-Last updated 2008-04-15 
+Last updated 2008-06-03 
