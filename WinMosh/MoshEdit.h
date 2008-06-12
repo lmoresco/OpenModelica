@@ -72,6 +72,7 @@ private:
 	CString m_omcFilePath;
 	CFont m_font;
 public:
+	CString version;
 	bool StartServer(void);
 	void SpawnServer(void);
 	void RunCommand(LPCSTR command);

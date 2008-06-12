@@ -78,8 +78,8 @@ void CMoshEdit::OnTimer(UINT_PTR nIDEvent)
 		else
 		{ 
 			KillTimer(m_Timer);
-			txt = "OpenModelica 1.4.2\r\n";
-			txt += "Copyright 2002-2006, PELAB, Linkoping University\r\n\r\n";
+			txt = "OpenModelica " + version + "\r\n";
+			txt += "Copyright 2002-2008, PELAB, Linkoping University\r\n\r\n";
 			txt += "To get help on using Mosh and OpenModelica, type \"help()\" and press enter.\r\n\r\n";
 
 			txt += ">> ";
@@ -360,33 +360,12 @@ bool CMoshEdit::StartServer(void)
 {
 	theApp.m_pMainWnd->BeginWaitCursor();
 	bool running = false;
-/*  Always start new server even if there is an omc running
-	PROCESSENTRY32 entry;
-	entry.dwSize = sizeof(PROCESSENTRY32);
-	char* procName = "omc.exe";
-	HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-	if (snapshot != (HANDLE)-1L) {
-		BOOL res = Process32First(snapshot, &entry);
-		while (res) {
-			if (strnicmp(entry.szExeFile, procName, strlen(procName)) == 0) {
-				running = true;
-			}
-			res = Process32Next(snapshot, &entry);
-		}
-		CloseHandle(snapshot);
-	}
-*/
-
-	if (!running & !m_NoServ) {
-		SpawnServer();
-	}
 
 	char tmpPath[1025];
-	int argc = 0;
-	char argv[10][2];
-	sprintf(argv[0], "WinMosh");
+	int argc = 1;
+  char *argv[] = {"WinMosh"};	
 	orb = CORBA::ORB_init(argc,(char**)argv);
-	char uri[300];
+	char uri[1024];
 	GetTempPath(1024,tmpPath);
 
 	sprintf(uri, "file://%sopenmodelica.objid",tmpPath);
@@ -399,7 +378,8 @@ bool CMoshEdit::StartServer(void)
 			CORBA::Object_var obj = orb->string_to_object(sUri);
 			if (!CORBA::is_nil(obj)) {
 				client = OmcCommunication::_narrow(obj);
-				char *tmp = client->sendExpression("cd()");
+				char *tmp = client->sendExpression("getVersion()");
+				this->version = tmp;
 				CORBA::string_free(tmp);
 				notStarted = false;
 			}
@@ -409,8 +389,17 @@ bool CMoshEdit::StartServer(void)
 			e._print(s);
 			CString ex = s.str().c_str();
 			client = NULL;
-		}
-		
+      // omc.exe was not started, start it!
+	    if (!running & !m_NoServ) {
+		    SpawnServer();
+	    }
+    }
+		catch(...) {
+      // omc.exe was not started, start it!
+	    if (!running & !m_NoServ) {
+		    SpawnServer();
+	    }
+		}		
 		count ++;
 	}
 
@@ -453,6 +442,23 @@ void CMoshEdit::SpawnServer(void)
 		startinfo.hStdInput = NULL;
 		startinfo.hStdOutput= log;  
 	}
+
+	CString txt;
+	GetWindowText(txt);
+	txt += "Aquiring %OPENMODELICAHOME%\r\n>> ";
+	SetWindowText(txt);
+	SetSel(txt.GetLength(),txt.GetLength());
+
+  // get OPENMODELICAHOME environment variable
+  CString openmodelicahome = getenv("OPENMODELICAHOME");
+  if (openmodelicahome.IsEmpty())
+  {
+		txt += "The %OPENMODELICAHOME% variable is emtpy.\r\n";
+		SetWindowText(txt);
+		SetSel(txt.GetLength(),txt.GetLength());
+  }
+
+  this->SetOmcFilePath(openmodelicahome + "\\bin\\omc.exe");
 
 	CString command;
 	if(this->m_omcFilePath == ""){
