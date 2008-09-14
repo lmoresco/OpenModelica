@@ -25,9 +25,10 @@
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
+				ProgramDataBaseFileName="$(IntDir)/c_runtime.pdb"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="4"
+				DebugInformationFormat="1"
 				DisableSpecificWarnings="4267;4218;4244;4018;4700"/>
 			<Tool
 				Name="VCCustomBuildTool"/>

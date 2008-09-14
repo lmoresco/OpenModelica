@@ -40,61 +40,46 @@ typedef unsigned int rml_uint_t;
 
 #define RML_GCCGOTO
 #define RML_GCCGOTO_NOSHIFT
+
 /* starting rml.h */
 #ifndef _RML_H_
 #define _RML_H_
-/*
-
-    This file is part of Relational Meta-Language (RML).
-	http://www.ida.liu.se/~pelab/rml
-
-RML COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
-
-------------------------------------------------------------------------
-Portions Copyright (c) 2002-2007 by Adrian Pop
-(Versions above rml-2.1.8)
-
-Permission to use, copy, modify, and distribute this software and
-its documentation for NON-COMMERCIAL purposes and without fee is hereby 
-granted, provided that this copyright notice appear in all copies and 
-that both the copyright notice and this permission notice and warranty
-disclaimer appear in supporting documentation, and that the name of
-The Author not be used in advertising or publicity pertaining to
-distribution of the software without specific, written prior permission.
-For COMMERCIAL uses of versions above rml-2.1.8 please contact 
-Adrian Pop, adrpo@ida.liu.se. 
-
-THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
-IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
-OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
-OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
-USE OR PERFORMANCE OF THIS SOFTWARE.
-
-------------------------------------------------------------------------
-Portions Copyright (c) 1994-2000 by Mikael Pettersson.
-(Versions up to rml-2.1.8)
-
-Permission to use, copy, modify, and distribute this software and
-its documentation for any purpose and without fee is hereby granted,
-provided that the above copyright notice appear in all copies and that
-both the copyright notice and this permission notice and warranty
-disclaimer appear in supporting documentation, and that the name of
-The Author not be used in advertising or publicity pertaining to
-distribution of the software without specific, written prior permission.
-
-THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
-IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
-OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
-OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
-USE OR PERFORMANCE OF THIS SOFTWARE.
-
- * rml-core.h
+/* 
+ * This file is part of OpenModelica.
+ * 
+ * It implements the Relational Meta-Language (RML) and MetaModelica
+ * http://www.ida.liu.se/~pelab/rml
+ * 
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science, 
+ * SE-58183 Linköping, Sweden. 
+ * 
+ * All rights reserved.
+ * 
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
+ * PUBLIC LICENSE. 
+ * 
+ * The OpenModelica software and the Open Source Modelica 
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained 
+ * from Linköpings University, either from the above address, 
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ * 
+ * This program is distributed  WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of  MERCHANTABILITY or FITNESS 
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
+ * OF OSMC-PL. 
+ * 
+ * See the full OSMC Public License conditions for more details.
+ * 
  */
+
 /*
+ * rml-core.h
+ * 
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
  * An even value i<<1 represents the integer i.
  * An odd value p+3 represents (a pointer to) the node at even address p-3.
@@ -257,9 +242,9 @@ struct rml_struct {
 #define RML_CDR(X)	RML_FETCH(RML_OFFSET(RML_UNTAGPTR(X),2))
 
 #define RML_DEFSTRUCTLIT(NAME,LEN,CON)	\
-    struct {				\
-	rml_uint_t header;		\
-	void *data[LEN];		\
+    struct { \
+      rml_uint_t header; \
+      void *data[LEN]; \
     } NAME = { RML_STRUCTHDR(LEN,CON),
 #define RML_DEFSTRUCT0LIT(NAME,CON) struct rml_header NAME = { RML_STRUCTHDR(0,CON) }
 #define RML_REFSTRUCTLIT(NAME) RML_TAGPTR(&(NAME).header)
@@ -268,9 +253,9 @@ struct rml_struct {
 /*
  * Additional operators used by the C code
  */
-#define RML_OFFSET(p,i)		((void*)((void**)(p) + (i)))
-#define RML_FETCH(p)		(*(void**)(p))
-#define RML_STORE(dst,val)	(*(void**)(dst) = (val))
+#define RML_OFFSET(p,i)     ((void*)((void**)(p) + (i)))
+#define RML_FETCH(p)        (*(void**)(p))
+#define RML_STORE(dst,val)  (*(void**)(dst) = (val))
 
 /*
  * Strictly internal declarations
@@ -278,41 +263,74 @@ struct rml_struct {
 extern rml_sint_t rml_prim_atoi(const struct rml_string*);
 #define RML_CLOCKS_PER_SEC	1000	/* milliseconds */
 extern unsigned long rml_prim_clock(void);
-extern char rml_flag_bench;
+extern char          rml_flag_bench;
 extern unsigned long rml_clock_start;
-extern char rml_flag_gclog;
+extern char          rml_flag_gclog;
 extern unsigned long rml_gc_start_clock;
 extern unsigned long rml_gc_end_clock;
 extern double        rml_gc_total_time;
-extern char rml_flag_log;
+extern char          rml_flag_log;
 extern unsigned long rml_call_count;
-extern char rml_flag_no_stack_check;
-extern char rml_debug_enabled;
-extern char rml_trace_enabled;
+extern char          rml_flag_no_stack_check;
+extern char          rml_debug_enabled;
+extern char          rml_trace_enabled;
 
-/* adrpo added look into p-gccore.c for more */
+/* adrpo added: look into p-gccore.c for more */
 /* the young region */
-extern void **rml_young_region;
+extern void        **rml_young_region;
 extern unsigned long rml_young_size;
 
 /* the older region */
 extern unsigned long rml_older_size;
-extern void **rml_current_region;
-extern void **rml_current_next;
-extern void **rml_reserve_region;
+extern void        **rml_current_region;
+extern void        **rml_current_next;
+extern void        **rml_reserve_region;
+
+/* the allocated from C region */
+typedef struct rml_c_heap_region
+{
+  void **region;
+  void **next;
+  void **limit;
+  unsigned long size;
+  struct rml_c_heap_region* next_region;
+} rml_c_heap_region_t;
+
+extern rml_c_heap_region_t *rml_c_heap;
+extern unsigned long rml_c_heap_region_total_size;
 
 /* the roots */
-extern void **rmlSPMIN;
-extern void **rml_stack;
+extern void        **rmlSPMIN;
+extern void        **rml_stack;
 extern unsigned long rml_stack_size;
 
-extern void *rml_trail[];
+extern void         *rml_trail[];
 extern unsigned long rml_trail_size;
 
-extern void *rml_array_trail[];
+extern void         *rml_array_trail[];
 extern unsigned long rml_array_trail_size;
 
-extern unsigned long rml_allocated_from_c;
+/* functions for Foreign Function Interface (FFI) */
+extern void *mk_icon(int);
+extern void *mk_rcon(double);
+extern void *mk_scon(char*);
+extern void *mk_nil(void);
+extern void *mk_cons(void*, void*);
+extern void *mk_none(void);
+extern void *mk_some(void*);
+extern void *mk_box0(unsigned ctor);
+extern void *mk_box1(unsigned ctor, void*);
+extern void *mk_box2(unsigned ctor, void*, void*);
+extern void *mk_box3(unsigned ctor, void*, void*, void*);
+extern void *mk_box4(unsigned ctor, void*, void*, void*, void*);
+extern void *mk_box5(unsigned ctor, void*, void*, void*, void*, void*);
+extern void *mk_box6(unsigned ctor, void*, void*, void*, void*, void*, void*);
+extern void *mk_box7(unsigned ctor, void*, void*, void*, void*, void *,
+         void*, void*);
+extern void *mk_box8(unsigned ctor, void*, void*, void*, void*, void *,
+         void*, void*, void*);
+extern void *mk_box9(unsigned ctor, void*, void*, void*, void*, void *,
+         void*, void*, void*, void*);
 
 
 #ifdef	RML_MORE_LOGGING
@@ -336,8 +354,8 @@ extern void rml_show_status(void);
  */
 struct rml_gval {
     union {
-	void *value;
-	struct rml_gval *prev;
+      void *value;
+      struct rml_gval *prev;
     } u;
     struct rml_gval *next;
     const char *name;
@@ -837,10 +855,12 @@ extern RML_FORWARD_LABEL(RML__real_5ftanh);
 extern RML_FORWARD_LABEL(RML__string_5fappend);
 extern RML_FORWARD_LABEL(RML__string_5fint);
 extern RML_FORWARD_LABEL(RML__string_5flength);
-   /* java named */
+extern RML_FORWARD_LABEL(RML__string_5fappend_5flist);
+/* java named */
 #define RML__stringAppend RML__string_5fappend
 #define RML__stringInt    RML__string_5fint
 #define RML__stringLength RML__string_5flength
+#define RML__stringAppendList RML__string_5fappend_5flist
 
 /* declarative vectors */
 extern RML_FORWARD_LABEL(RML__vector_5flength);
@@ -1017,17 +1037,42 @@ extern rmldb_command_type* rmldb_mk_cmd_frameLazyVarValue(int ty, char* frame, c
 extern int rmldb_freeCommand(rmldb_command_type* cmd);
 
 #endif /* _RMLDB_COMMAND_H_*/
-/******************************************************************************
- * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
- * Copyright (c) 2002-2007, Adrian Pop [adrpo@ida.liu.se],
- * Programming Environments Laboratory (PELAB),
- * Department of Computer and Information Science (IDA), 
- * Linköpings University (LiU). 
+/* 
+ * This file is part of OpenModelica.
+ * 
+ * It implements the Relational Meta-Language (RML) and MetaModelica
+ * http://www.ida.liu.se/~pelab/rml
+ * 
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science, 
+ * SE-58183 Linköping, Sweden. 
+ * 
  * All rights reserved.
- *
- * http://www.ida.liu.se/~adrpo/license/
- *
- *
+ * 
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
+ * PUBLIC LICENSE. 
+ * 
+ * The OpenModelica software and the Open Source Modelica 
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained 
+ * from Linköpings University, either from the above address, 
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ * 
+ * This program is distributed  WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of  MERCHANTABILITY or FITNESS 
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
+ * OF OSMC-PL. 
+ * 
+ * See the full OSMC Public License conditions for more details.
+ * 
+ * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
+ * 
+ */
+
+/*
  * [ rml-socket.h ] 
  * - Adrian Pop, adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo
  * - creation 2007-02-24
@@ -1454,15 +1499,39 @@ extern int   aarmldbdebug;
 extern int   aarmldb_lineno;
 
 #endif /* _RMLDB_LOAD_H_  */
-/******************************************************************************
- * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
- * Copyright (c) 2002-2007, Adrian Pop [adrpo@ida.liu.se],
- * Programming Environments Laboratory (PELAB),
- * Department of Computer and Information Science (IDA), 
- * Linköpings University (LiU). 
+/* 
+ * This file is part of OpenModelica.
+ * 
+ * It implements the Relational Meta-Language (RML) and MetaModelica
+ * http://www.ida.liu.se/~pelab/rml
+ * 
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science, 
+ * SE-58183 Linköping, Sweden. 
+ * 
  * All rights reserved.
- *
- * http://www.ida.liu.se/~adrpo/license/
+ * 
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
+ * PUBLIC LICENSE. 
+ * 
+ * The OpenModelica software and the Open Source Modelica 
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained 
+ * from Linköpings University, either from the above address, 
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ * 
+ * This program is distributed  WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of  MERCHANTABILITY or FITNESS 
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
+ * OF OSMC-PL. 
+ * 
+ * See the full OSMC Public License conditions for more details.
+ * 
+ * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
+ * 
  */
 /***********************************************************
  [ debug.h ] 
@@ -1489,12 +1558,13 @@ extern int   aarmldb_lineno;
 #define RMLDB_FAILURE -1
 
 #define RMLDB_PROMPT "rml+mmc db@>"
-#define RMLDB_RUN    		0
-#define RMLDB_STEP   		1
-#define RMLDB_STEP_OVER		2
+#define RMLDB_RUN         0
+#define RMLDB_STEP        1
+#define RMLDB_STEP_OVER   2
 #define RMLDB_STEP_RETURN	3
-#define RMLDB_BREAKPOINT	4
+#define RMLDB_BREAKPOINT  4
 #define RMLDB_TRACE_CALLS	5
+#define RMLDB_TRACE_ALL   6 /* display all function calls and variable values */
 
 #define RMLDB_VAR_IN 0
 #define RMLDB_VAR_OUT 1

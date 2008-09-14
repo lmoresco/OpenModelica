@@ -26,9 +26,10 @@
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
+				ProgramDataBaseFileName="$(IntDir)/absyn_builder.pdb"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="4"
+				DebugInformationFormat="1"
 				DisableSpecificWarnings="4800;4101;4231"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
@@ -286,9 +287,6 @@ popd
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
 						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"/>
 				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\absyn_builder\yacclib.c">
 			</File>
 		</Filter>
 		<Filter

@@ -12,7 +12,7 @@ void *rml_prim_gcalloc(rml_uint_t nwords, rml_uint_t nargs)
     if (rml_flag_gclog)
     	rml_gc_start_clock = rml_prim_clock();    
     rml_minor_collection(nargs);
-    if( nwords > rml_young_size ) /* RML_YOUNG_SIZE ) */ 
+	if(rml_c_heap_region_total_size || nwords > rml_young_size ) /* RML_YOUNG_SIZE ) */ 
 	{
 	  if( (p = rml_older_alloc(nwords, nargs)) != 0 ) 
 	  {
@@ -44,6 +44,6 @@ void *rml_prim_alloc(rml_uint_t nwords, rml_uint_t nargs)
 #endif	/*RML_STATE_APTR || RML_STATE_LPTR*/
     void **p = rml_young_next;
     if( (rml_young_next = p + nwords) >= rml_young_limit )
-	p = rml_prim_gcalloc(nwords, nargs);
+		p = rml_prim_gcalloc(nwords, nargs);
     return p;
 }
