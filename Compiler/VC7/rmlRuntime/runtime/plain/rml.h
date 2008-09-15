@@ -311,6 +311,7 @@ extern void         *rml_array_trail[];
 extern unsigned long rml_array_trail_size;
 
 /* functions for Foreign Function Interface (FFI) */
+extern void *mk_bcon(double);
 extern void *mk_icon(int);
 extern void *mk_rcon(double);
 extern void *mk_scon(char*);

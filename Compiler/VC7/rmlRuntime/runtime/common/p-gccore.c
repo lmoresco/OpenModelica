@@ -791,6 +791,13 @@ void print_scon(FILE *fp, void *scon)
     fprintf(fp, "%.*s", RML_HDRSTRLEN(RML_GETHDR(scon)), RML_STRINGDATA(scon));
 }
 
+void *mk_bcon(double d)
+{
+  if (d > 0) 
+     return RML_TRUE;
+  return RML_FALSE;
+}
+
 void *mk_icon(int i)
 {
     return RML_IMMEDIATE(RML_TAGFIXNUM((rml_sint_t)i));
