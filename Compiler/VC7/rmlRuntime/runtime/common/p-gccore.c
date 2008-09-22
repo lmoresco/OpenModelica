@@ -251,12 +251,13 @@ void rmldb_show_status(void)
         rml_minorgc_count,
         rml_majorgc_count,
         (unsigned long)(rml_state_young_next - rml_young_region)
-        + (unsigned long)(rml_current_next - rml_current_region));
+        + (unsigned long)(rml_current_next - rml_current_region)
+		+ (unsigned long)rml_c_heap_region_total_size);
     fprintf(stderr, "[HEAP:\t%lu words allocated to young, %lu words allocated to current, %lu heap expansions performed]\n",
         (unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
         (unsigned long)rml_older_size,
         (unsigned long)(rml_heap_expansions_count));
-	fprintf(stderr, "[HEAP: %lu words allocated into managed C heap (from mk_* functions)], collected %lu times, remaining uncollected %lu words\n", 
+	fprintf(stderr, "[HEAP: %lu words allocated into managed C heap (from mk_* functions), collected %lu times, remaining uncollected %lu words]\n", 
 		rml_allocated_from_c, rml_c_heap_collect_count, rml_c_heap_region_total_size);
     fprintf(stderr, "[HEAP:\t%#.2f seconds waisted while doing GC]\n", rml_gc_total_time);
     fprintf(stderr, "[STACK:\t%lu words currently in use (%lu words max, %lu words total)]\n",
@@ -299,14 +300,15 @@ void rml_exit(int status)
         "[HEAP:\t%lu minor collections, %lu major collections, %lu words currently in use]\n",
         rml_minorgc_count, rml_majorgc_count,
         (unsigned long)(rml_state_young_next - rml_young_region)
-            + (unsigned long)(rml_current_next - rml_current_region));
+        + (unsigned long)(rml_current_next - rml_current_region)
+		+ (unsigned long)rml_c_heap_region_total_size);
     fprintf(
         stderr,
         "[HEAP:\t%lu words allocated to young, %lu words allocated to current, %lu heap expansions performed]\n",
         (unsigned long)rml_young_size, /* RML_YOUNG_SIZE, */
         (unsigned long)rml_older_size,
         (unsigned long)(rml_heap_expansions_count));
-	fprintf(stderr, "[HEAP: %lu words allocated into managed C heap (from mk_* functions)], collected %lu times, remaining uncollected %lu words\n", 
+	fprintf(stderr, "[HEAP: %lu words allocated into managed C heap (from mk_* functions), collected %lu times, remaining uncollected %lu words]\n", 
 		rml_allocated_from_c, rml_c_heap_collect_count, rml_c_heap_region_total_size);
     fprintf(stderr, "[HEAP:\t%#.2f seconds waisted while doing GC]\n",
         rml_gc_total_time);
@@ -524,12 +526,12 @@ static void rml_major_collection(rml_uint_t nwords, rml_uint_t nliveargs)
   /* allocate the reserve region */
   if (!rml_reserve_region)
   {
-    if (rml_c_heap_region_total_size <  rml_older_size - (rml_current_next - rml_current_region)) 
+    if (rml_c_heap_region_total_size + nwords <  rml_older_size - (rml_current_next - rml_current_region)) 
 		rml_reserve_region = rml_alloc_core(rml_older_size);
 	else
 	{
       rml_heap_expansions_count++;
-      rml_older_size += rml_c_heap_region_total_size;
+      rml_older_size += rml_c_heap_region_total_size + nwords;
       rml_reserve_region = rml_alloc_core(rml_older_size);
 	}
   }
