@@ -105,9 +105,6 @@
 				RelativePath="..\..\c_runtime\base_array.c">
 			</File>
 			<File
-				RelativePath="..\..\c_runtime\base_array.h">
-			</File>
-			<File
 				RelativePath="..\..\c_runtime\boolean_array.c">
 			</File>
 			<File
@@ -146,6 +143,9 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
+				RelativePath="..\..\c_runtime\base_array.h">
+			</File>
+			<File
 				RelativePath="..\..\c_runtime\blaswrap.h">
 			</File>
 			<File
@@ -156,6 +156,9 @@
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\index_spec.h">
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\inline.h">
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\integer_array.h">
