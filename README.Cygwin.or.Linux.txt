@@ -38,7 +38,9 @@ Setting your environment for compiling OpenModelica
      ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
      ln -s path/to/mico/lib/libmicoX.X.XX.so path/to/mico/lib/libmico.so
    - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
-   - set the LD_LIBRARY_PATH to path/to/mico/lib (for mico libs)
+   - set the LD_LIBRARY_PATH to path/to/installed/mico/lib (for mico libs)
+   - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
+     + this is for executables: idl, mico-cpp and mico-config
 
   run: 
   ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
