@@ -1,109 +1,176 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9,00"
 	Name="runtime"
 	ProjectGUID="{72B8515B-6FE4-456D-80D3-51BE6A05EC58}"
 	RootNamespace="runtime"
-	Keyword="Win32Proj">
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc\&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				ProgramDataBaseFileName="$(IntDir)/runtime.pdb"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="1"/>
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="1"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/runtime.lib"/>
+				OutputFile="$(OutDir)/runtime.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="TRUE"
-				EnableIntrinsicFunctions="TRUE"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				OptimizeForProcessor="3"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="0"
-				BufferSecurityCheck="FALSE"
+				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="2"
-				DebugInformationFormat="0"/>
+				DebugInformationFormat="0"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/runtime.lib"/>
+				OutputFile="$(OutDir)/runtime.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="NoMico|Win32"
 			OutputDirectory="$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(MICOHOME)\include&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
@@ -111,30 +178,36 @@
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="2"
-				DebugInformationFormat="3"/>
+				DebugInformationFormat="3"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/runtime.lib"/>
+				OutputFile="$(OutDir)/runtime.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -143,107 +216,119 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath="..\runtime\corbaimpl.cpp">
+				RelativePath="..\runtime\corbaimpl.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\daeext.cpp">
+				RelativePath="..\runtime\daeext.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\errorext.cpp">
+				RelativePath="..\runtime\errorext.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\ErrorMessage.cpp">
+				RelativePath="..\runtime\ErrorMessage.cpp"
+				>
 			</File>
 			<File
-				RelativePath=".\omc_communication.cc">
+				RelativePath=".\omc_communication.cc"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\omc_communication.idl">
+				RelativePath="..\runtime\omc_communication.idl"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)
-copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
-copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
-popd
-"
-						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)&#x0D;&#x0A;copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;&#x0D;&#x0A;copy $(SafeInputName).h &quot;$(ProjectDir)&quot;&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)
-copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
-copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
-popd
-"
-						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;&quot;$(OMDEV)\bin\mico\idl&quot; $(InputFileName)&#x0D;&#x0A;copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;&#x0D;&#x0A;copy $(SafeInputName).h &quot;$(ProjectDir)&quot;&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="NoMico|Win32">
+					Name="NoMico|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)
-copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;
-copy $(SafeInputName).h &quot;$(ProjectDir)&quot;
-popd
-"
-						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;&quot;$(MICOHOME)\win32-bin\idl&quot; $(InputFileName)&#x0D;&#x0A;copy $(SafeInputName).cc &quot;$(ProjectDir)&quot;&#x0D;&#x0A;copy $(SafeInputName).h &quot;$(ProjectDir)&quot;&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)omc_communication.cc;$(ProjectDir)omc_communication.h"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\runtime\omc_communication_impl.cpp">
+				RelativePath="..\runtime\omc_communication_impl.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\printimpl.c">
+				RelativePath="..\runtime\printimpl.c"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\ptolemyio.cpp">
+				RelativePath="..\runtime\ptolemyio.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\rtopts.c">
+				RelativePath="..\runtime\rtopts.c"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\settingsimpl.c">
+				RelativePath="..\runtime\settingsimpl.c"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\socketimpl.c">
+				RelativePath="..\runtime\socketimpl.c"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\systemimpl.c">
+				RelativePath="..\runtime\systemimpl.c"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<File
-				RelativePath="..\runtime\errorext.h">
+				RelativePath="..\runtime\errorext.h"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\ErrorMessage.hpp">
+				RelativePath="..\runtime\ErrorMessage.hpp"
+				>
 			</File>
 			<File
-				RelativePath=".\omc_communication.h">
+				RelativePath=".\omc_communication.h"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\omc_communication_impl.h">
+				RelativePath="..\runtime\omc_communication_impl.h"
+				>
 			</File>
 			<File
-				RelativePath="..\runtime\ptolemyio.hpp">
+				RelativePath="..\runtime\ptolemyio.hpp"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 		</Filter>
 	</Files>
 	<Globals>

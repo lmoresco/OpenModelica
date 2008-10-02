@@ -1,107 +1,155 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9,00"
 	Name="absyn_builder"
 	ProjectGUID="{1007A2F7-E5AD-4227-833F-C781B410C142}"
 	RootNamespace="absyn_builder"
-	Keyword="Win32Proj">
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\flat_modelica_parser\src&quot;;&quot;$(ProjectDir)..\..\modelica_parser\src&quot;;&quot;$(ProjectDir)..\absyn_builder&quot;;&quot;$(OMDEV)\include\&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				ProgramDataBaseFileName="$(IntDir)/absyn_builder.pdb"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="FALSE"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="1"
-				DisableSpecificWarnings="4800;4101;4231"/>
+				DisableSpecificWarnings="4800;4101;4231"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/absyn_builder.lib"/>
+				OutputFile="$(OutDir)/absyn_builder.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="4"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="TRUE"
-				EnableIntrinsicFunctions="TRUE"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				OptimizeForProcessor="3"
-				OptimizeForWindowsApplication="FALSE"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\flat_modelica_parser\src&quot;;&quot;$(ProjectDir)..\..\modelica_parser\src&quot;;&quot;$(ProjectDir)..\absyn_builder&quot;;&quot;$(OMDEV)\include\&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="0"
-				BufferSecurityCheck="FALSE"
+				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
-				DisableSpecificWarnings="4800;4101;4231"/>
+				DisableSpecificWarnings="4800;4101;4231"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/absyn_builder.lib"/>
+				OutputFile="$(OutDir)/absyn_builder.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -110,194 +158,196 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath="..\absyn_builder\expression_parser.g">
+				RelativePath="..\absyn_builder\expression_parser.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="$(InputDir)modelica_expression_parser.cpp;$(InputDir)modelica_expression_parser.hpp"/>
+						Outputs="$(InputDir)modelica_expression_parser.cpp;$(InputDir)modelica_expression_parser.hpp"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool -glib ../../modelica_parser/src/modelica_parser.g  $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="$(InputDir)modelica_expression_parser.cpp;$(InputDir)modelica_expression_parser.hpp"/>
+						Outputs="$(InputDir)modelica_expression_parser.cpp;$(InputDir)modelica_expression_parser.hpp"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp">
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.g">
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_lexer.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
-						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
-						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.hpp"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.cpp">
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.g">
+				RelativePath="..\..\flat_modelica_parser\src\flat_modelica_parser.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.g;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp"
-						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_lexer.g;$(ProjectDir)..\..\flat_modelica_parser\src\flatmodelicaTokenTypes.txt;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelicaTokenTypes.hpp"
-						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.cpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parser.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\flat_modelica_parser\src\flat_modelica_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\absyn_builder\modelica_expression_parser.cpp">
+				RelativePath="..\absyn_builder\modelica_expression_parser.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\modelica_lexer.cpp">
+				RelativePath="..\..\modelica_parser\src\modelica_lexer.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\modelica_lexer.g">
+				RelativePath="..\..\modelica_parser\src\modelica_lexer.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
-						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
-						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"/>
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_lexer.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\modelica_parser.cpp">
+				RelativePath="..\..\modelica_parser\src\modelica_parser.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\modelica_parser.g">
+				RelativePath="..\..\modelica_parser\src\modelica_parser.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt;$(InputDir)modelica_lexer.g"
-						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_parser.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parser.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_parser.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parser.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)..\..\modelica_parser\src\modelicaTokenTypes.txt;$(InputDir)modelica_lexer.g"
-						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_parser.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parser.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.txt"/>
+						Outputs="$(ProjectDir)..\..\modelica_parser\src\modelica_parser.cpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parser.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.hpp;$(ProjectDir)..\..\modelica_parser\src\modelica_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\absyn_builder\modelica_tree_parser.cpp">
+				RelativePath="..\absyn_builder\modelica_tree_parser.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\absyn_builder\parse.cpp">
+				RelativePath="..\absyn_builder\parse.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\parse_tree_dumper.cpp">
+				RelativePath="..\..\modelica_parser\src\parse_tree_dumper.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\modelica_parser\src\token_names.cpp">
+				RelativePath="..\..\modelica_parser\src\token_names.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\absyn_builder\walker.g">
+				RelativePath="..\absyn_builder\walker.g"
+				>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"/>
+						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="pushd &quot;$(InputDir)&quot;
-copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .
-java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)
-popd
-"
+						CommandLine="pushd &quot;$(InputDir)&quot;&#x0D;&#x0A;copy /Y ..\..\modelica_parser\src\modelica_parserTokenTypes.txt .&#x0D;&#x0A;java -cp $(OMDev)\bin\antlr\antlr.jar antlr.Tool $(InputFileName)&#x0D;&#x0A;popd&#x0D;&#x0A;"
 						AdditionalDependencies="$(ProjectDir)../../modelica_parser/src/modelica_parserTokenTypes.txt"
-						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"/>
+						Outputs="$(InputDir)modelica_tree_parser.cpp;$(InputDir)modelica_tree_parser.hpp;$(InputDir)modelica_tree_parserTokenTypes.hpp;$(InputDir)modelica_tree_parserTokenTypes.txt"
+					/>
 				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 		</Filter>
 	</Files>
 	<Globals>

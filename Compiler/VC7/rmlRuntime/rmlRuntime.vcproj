@@ -1,108 +1,158 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9,00"
 	Name="rmlRuntime"
 	ProjectGUID="{BB69ADED-6C63-4156-AED4-8258C32B6FB6}"
 	RootNamespace="rmlRuntime"
-	Keyword="Win32Proj">
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				InlineFunctionExpansion="0"
 				AdditionalIncludeDirectories="&quot;runtime\plain&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
-				MinimalRebuild="TRUE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				ProgramDataBaseFileName="$(IntDir)/"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="1"
 				CompileAs="1"
-				DisableSpecificWarnings="4311;4312"/>
+				DisableSpecificWarnings="4311;4312"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/rmlRuntime.lib"/>
+				OutputFile="$(OutDir)/rmlRuntime.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="4"
-			CharacterSet="2">
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="TRUE"
-				EnableIntrinsicFunctions="TRUE"
+				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="3"
-				OptimizeForWindowsApplication="FALSE"
+				OmitFramePointers="true"
+				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="&quot;runtime\plain&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="0"
-				BufferSecurityCheck="FALSE"
+				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="0"/>
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="0"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/rmlRuntime.lib"/>
+				OutputFile="$(OutDir)/rmlRuntime.lib"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -111,92 +161,120 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath=".\runtime\common\array.c">
+				RelativePath=".\runtime\common\array.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\boolean.c">
+				RelativePath=".\runtime\common\boolean.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\controlflow.c">
+				RelativePath=".\runtime\common\controlflow.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\integer.c">
+				RelativePath=".\runtime\common\integer.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\internal.c">
+				RelativePath=".\runtime\common\internal.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\list.c">
+				RelativePath=".\runtime\common\list.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\logicalvar.c">
+				RelativePath=".\runtime\common\logicalvar.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\main.c">
+				RelativePath=".\runtime\common\main.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\p-gccore.c">
+				RelativePath=".\runtime\common\p-gccore.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\p-gccore.h">
+				RelativePath=".\runtime\common\p-gccore.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\p-gcuser-plain.c">
+				RelativePath=".\runtime\common\p-gcuser-plain.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\p-usergc.c">
+				RelativePath=".\runtime\common\p-usergc.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\real.c">
+				RelativePath=".\runtime\common\real.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\rml-core.h">
+				RelativePath=".\runtime\common\rml-core.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\rml-end.h">
+				RelativePath=".\runtime\common\rml-end.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\rml-predef.h">
+				RelativePath=".\runtime\common\rml-predef.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\rml-start.h">
+				RelativePath=".\runtime\common\rml-start.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\string.c">
+				RelativePath=".\runtime\common\string.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\vector.c">
+				RelativePath=".\runtime\common\vector.c"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\z-agptr.h">
+				RelativePath=".\runtime\common\z-agptr.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\z-joing.h">
+				RelativePath=".\runtime\common\z-joing.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\z-lgptr.h">
+				RelativePath=".\runtime\common\z-lgptr.h"
+				>
 			</File>
 			<File
-				RelativePath=".\runtime\common\z-split.h">
+				RelativePath=".\runtime\common\z-split.h"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<File
-				RelativePath=".\runtime\plain\rml.h">
+				RelativePath=".\runtime\plain\rml.h"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 		</Filter>
 		<File
-			RelativePath=".\ReadMe.txt">
+			RelativePath=".\ReadMe.txt"
+			>
 		</File>
 	</Files>
 	<Globals>

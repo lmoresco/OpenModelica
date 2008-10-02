@@ -1,51 +1,62 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9,00"
 	Name="MakeRML"
 	ProjectGUID="{7DA26FFE-5443-4E0A-81DC-90679291ED2C}"
 	RootNamespace="MakeRMLandGRAMMAR"
-	Keyword="MakeFileProj">
+	Keyword="MakeFileProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
-			ConfigurationType="0">
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.debug.w32
-popd"
-				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.debug.w32 clean
-nmake /f Makefile.debug.w32
-popd"
-				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.debug.w32 clean
-popd"/>
+				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.debug.w32&#x0D;&#x0A;popd"
+				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.debug.w32 clean&#x0D;&#x0A;nmake /f Makefile.debug.w32&#x0D;&#x0A;popd"
+				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.debug.w32 clean&#x0D;&#x0A;popd"
+				Output=""
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
-			ConfigurationType="0">
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			>
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32
-popd"
-				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32 clean
-nmake /f Makefile.w32
-popd"
-				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;
-nmake /f Makefile.w32 clean
-popd"/>
+				BuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.w32&#x0D;&#x0A;popd"
+				ReBuildCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.w32 clean&#x0D;&#x0A;nmake /f Makefile.w32&#x0D;&#x0A;popd"
+				CleanCommandLine="pushd &quot;$(ProjectDir)..\..&quot;&#x0D;&#x0A;nmake /f Makefile.w32 clean&#x0D;&#x0A;popd"
+				Output=""
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -54,44 +65,56 @@ popd"/>
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<File
-				RelativePath="..\cleanomc.bat">
+				RelativePath="..\cleanomc.bat"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Makefile.common.w32">
+				RelativePath="..\..\Makefile.common.w32"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Makefile.debug.w32">
+				RelativePath="..\..\Makefile.debug.w32"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Makefile.sig.w32">
+				RelativePath="..\..\Makefile.sig.w32"
+				>
 			</File>
 			<File
-				RelativePath="..\..\Makefile.w32">
+				RelativePath="..\..\Makefile.w32"
+				>
 			</File>
 			<File
-				RelativePath="..\antlr\Makefile.win32">
+				RelativePath="..\antlr\Makefile.win32"
+				>
 			</File>
 			<File
-				RelativePath="..\makeomc.bat">
+				RelativePath="..\makeomc.bat"
+				>
 			</File>
 			<File
-				RelativePath="..\rebuildomc.bat">
+				RelativePath="..\rebuildomc.bat"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 		</Filter>
 		<File
-			RelativePath=".\readme.txt">
+			RelativePath=".\readme.txt"
+			>
 		</File>
 	</Files>
 	<Globals>
