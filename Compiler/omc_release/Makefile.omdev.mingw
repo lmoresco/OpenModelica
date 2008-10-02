@@ -42,7 +42,7 @@ LIBSOCKET=-lwsock32
 
 #We use corba by default when compiling on OMDev-mingw
 #ifdef USE_CORBA
-CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2311
+CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #else
 #	CORBALIBS=
 #endif
