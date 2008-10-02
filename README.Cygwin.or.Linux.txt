@@ -4,9 +4,13 @@ How to compile on Linux or Cygwin
 You need: 
 	cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
 	antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
-	rml (http://www.ida.liu.se/~pelab/rml/)
+	rml+mmc (http://www.ida.liu.se/~pelab/rml/)
+	    Just grab it from subversion:
+	    svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
+	    user: anonymous
+	    pass: none
 	rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
-	mico   (http://www.mico.org - tested on 2.3.11 and 2.3.12)
+	mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
 	libssl (not really necessary)
 	sun-java version > 1.4
 	gcc
@@ -172,4 +176,4 @@ GENERAL NOTES:
   > cd ../Examples
   > ../build/bin/omc sim_dcmotor.mos
   
-Last updated 2008-06-03 
+Last updated 2008-10-02 
