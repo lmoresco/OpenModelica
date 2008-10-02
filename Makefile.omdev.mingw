@@ -65,7 +65,7 @@ omcd:
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2311.dll $(builddir_bin)/)
+	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 
 omc:	
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
@@ -76,7 +76,7 @@ omc:
 	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2311.dll $(builddir_bin)/)
+	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	
 test:
 	(cd testsuite; time $(MAKE) -f Makefile)
