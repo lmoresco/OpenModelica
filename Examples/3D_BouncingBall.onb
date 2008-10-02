@@ -1,0 +1,93 @@
+<!DOCTYPE OMNotebook>
+<Notebook>
+ <GroupCell closed="false" >
+  <GroupCell closed="false" >
+   <TextCell style="Title" >
+    <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;table border="0" style="-qt-table-type: root; margin-top:10px; margin-bottom:10px; margin-left:10px; margin-right:10px;">
+&lt;tr>
+&lt;td style="border: none;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial'; font-size:38pt; font-weight:600; color:#000000;">First Basic Class&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
+   </TextCell>
+   <GroupCell closed="false" >
+    <TextCell style="Section" >
+     <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
+&lt;tr>
+&lt;td style="border: none;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:18pt; font-weight:600; color:#000000;">HelloWorld&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
+    </TextCell>
+    <InputCell style="Input" closed="false" >
+     <Input>model BouncingBall
+  import Modelica.SimpleVisual;
+  parameter Real e=0.7 "coefficient of restitution";
+  parameter Real g=9.81 "gravity acceleration";
+  Real h(start=10) "height of ball";
+  Real v "velocity of ball";
+  Boolean flying(start=true) "true, if ball is flying";
+  Boolean impact;
+  Real v_new;
+  SimpleVisual.PositionSize obj "color=blue;shape=sphere;";
+equation 
+  impact=h &lt;= 0.0;
+  der(v)=if flying then -g else 0;
+  der(h)=v;
+
+  obj.size[1]=5;
+  obj.size[2]=5;
+  obj.size[3]=5;
+  obj.frame_a[1]=0;
+  obj.frame_a[2]=h+obj.size[2]/2;
+  obj.frame_a[3]=0;
+
+  when {h &lt;= 0.0 and v &lt;= 0.0,impact} then
+      v_new=if edge(impact) then -e*pre(v) else 0;
+    flying=v_new > 0;
+    reinit(v, v_new);
+ 
+  end when;
+end BouncingBall;</Input>
+     <Output>[done]</Output>
+    </InputCell>
+    <InputCell style="Input" closed="false" >
+     <Input>loadModel(Modelica.SimpleVisual)</Input>
+     <Output>[done]</Output>
+    </InputCell>
+   </GroupCell>
+   <GroupCell closed="false" >
+    <TextCell style="Section" >
+     <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
+&lt;tr>
+&lt;td style="border: none;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:18pt; font-weight:600; color:#000000;">Simulation of HelloWorld &lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
+    </TextCell>
+    <InputCell style="Input" closed="false" >
+     <Input>simulate(BouncingBall, startTime=0, stopTime=10);</Input>
+     <Output>[done]</Output>
+    </InputCell>
+    <GraphCell MajorY="20" LogX="false" Title="Plot by OpenModelica" MinorX="4" LogY="false" Grid="true" MinorY="4" AutoX="true" AutoY="true" Antialiasing="false" style="Graph" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" closed="false" YLabel="" Legend="false" XLabel="time" MajorX="20" >
+     <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
+     <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
+     <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
+     <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
+     <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
+     <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
+     <Data Id="0" Label="time" >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</Data>
+     <Data Id="0" Label="x" >AAAB9T/wAAAAAAAAP+//////8GE/7++Zf7f8Fj/v3ztnOJU4P+/O5bIy+VE/776YXFqM2j/vrlNhZOhAP++eFr0J1uU/743iawNWGz/vfbZnDZO/P+9tkqzm7V4/7113OE/u3D/vTWQFC1GbP+89WQ7d+wM/7y1WUY77uj/vHVvI545WP+8NaXCzFlw/7v1/RL8fCj/u7Z1A21pHP+7dw2DZn5s/7s3xoI3q9z/uvif7zlvGP+6uZm5zM5I/7p6s9FbVMT/ujvuJVcOHP+5/UilOoHY/7m+w0CIryz/uYBd5s0ItP+5QhiHm2+w/7kD8xKQMMT/uMXtd0/+DP+4iAelh+xU/7hKQYztbfz/uAybHT5OiP+3zxRGQK9M/7eRrPfDAeD/t1RlIZwE3P+3Fzyzqr8s/7baM53WfAD/tp1J0A7GMP+2YH86S2SE/7Yj08yMVPT/tedHdtnJBP+1qtopRCEQ/7Vui9Pj6Ij/tTJcZtnRMP+09kvSTq+s/7S6WgZzdqD/tH6G84EzDP+0QtKJuQfg/7QHPLlkKhD/s8vFctPcHP+zkGymYWoY/7NVMkRuJbz/sxoWPWNiBP+y3xiBsm9E/7KkOQHUlvT/sml3rksXsP+yLtR3nyDk/7H0T05hzwz/sbnoIywnyP+xf57mnxUw/7FFc4ljYiT/sQtl/Cm2mP+w0XYvqpLU/7CXpBSmTBj/sF3vm+UIEP+wJFi2NrlU/6/q31RzGxD/r7GDZ3mtMP+veETgMbAE/68/I6+KIRD/rwYfxnm2TP+uzTkV/tp4/66Ub48fqXj/rlvDIunr7P+uIzPCcxNY/63qwV7YNnj/rbJr6T4NEP+tejNS0Ow8/61CF4zEwkD/rQoYiFUTFP+s0jY2xPPg/6yacIlfB7z/rGLHcXV7dP+sKzrgYgHw/6vzyseFz7j/q7x3GEmYDP+rhT/EHYhI/6tOJLx5RHT/qxcl8tvjNP+q4ENYy+pU/6qpfN/XSkz/qnLSeZNbOP+qPEQXnNjQ/6oF0auX3iT/qc97Jy/iiP+pmUB8F7VU/6ljIZwJeiz/qS0eeMalqP+o9zcEF/kU/6jBay/Nfuj/qIu67b6HCP+oViYvyaLw/6ggrOfUokz/p+tPB8yPFP+ntgyBpam8/6eA5UdbZUD/p0vZSvBkUP+nFuh+bnSQ/6biEtPmjCj/pq1YPXDEyP+meLitLFkA/6ZENBU/n+D/pg/KZ9gJ6P+l23uXKh0s/6WnR5VxcXj/pXMuVPCtIP+lPy/H8YD8/6ULS+DEpST/pNeCkcHU6P+ko9PNR8u8/6RwP4W8QSz/pDzFrYvllP+kCWY3Kl6A/6PWIRUSQvz/o6L2OcUYGP+jb+WXy02A/6M87yG0OYj/owoSyhYWAP+i11CDjfyY/6KkqEC/43T/onIZ9FaZRP+iP6WRA8JI/6INSwl/1Ez/odsKUIoT2P+hqONY6I+4/6F21hVoHkj/oUTieNxaIP+hEwh2H52g/6DhSAATAID/oK+hCZ5TzP+gfhOFsB6Q/6BMn2c9mnT/oBtEoUKwfP+f6gMmwfUY/5+42urEpXj/n4fL4FqjFP+fVtX6mnFc/58l+SyhMfT/nvU1aZKg5P+exIqkmRGo/56T+NDla6z/nmN/4a8m4P+eMx/KNEiM/54C2H25X7j/ndKp74mCAP+dopQS9kfo/51ylttXykz/nUKyPAyeLP+dEuYoedGU/5zjMpQK6KT/nLOXcjHZ9P+chBS2Zws8/5xUqlQpTnz/nCVYPv3d3P+b9h5qcFlk/5vG/MoSwtT/m5fzUX16wP+baQH0Tz1A/5s6KKYtHxD/mwtnWsKJtP+a3L4FwThw/5quLJrhNQz/mn+zDeDUzP+aUVFShLUE/5ojB1yXt7T/mfTVH+sAvP+ZxrqQVfKk/5mYt6G2Knz/mWrMR+9+WP+ZPPh26/hE/5kPPCKb1KD/mOGXPvV96P+YtAm/9Yp0/5iGk5meuDD/mFk0v/nqfP+YK+0nFiZY/5f+vMMIj8T/l9Gjh+xmLP+XpKFp4wF8/5d3tl0TzxD/l0riVaxOYP+XHiVH4A3g/5bxfyfoqID/lsTv6gXBsP+WmHeCfQK8/5ZsFeWaF/j/lj/LB66s+P+WE5bdEmpE/5XneVoi8aD/lbtyc0PbZP+Vj4Ic3rNE/5VjqEti9Uz/lTfk80YK5P+VDDgJA0e4/5TgoYEb5nj/lLUhUBcGfP+UibdqgafI/5ReY8TuqLT/lDMmU/bDLP+UB/8MOIic/5Pc7eJYYDD/k7HyywCCzP+Thw264PjM/5NcPqavlrz/kzGFgyf6mP+TBuJFC4gQ/5LcVOEhZqj/krHdTDZ+HP+Sh3t7HXOU/5JdL2KupsD/kjL498guqP+SCNgvTdc8/5HezP4pHfz/kbTXWUkvQP+Rivc1ouLw/5FhLIgwuhT/kTd3RfLcAP+RDddj7xL0/5DkTNcwyTz/kLrXlMkHEP+QkXeRzm7k/5BoLMNdOoT/kD73Hpc42P+QFdaYo8rU/4/syyav4BT/j8PUve300P+PmvNTlg4Q/49yJtzlt/z/j0lvTyAB6P+PIMyfjXyc/474PsN8Nlj/js/FsD+4vP+Op2FbMQYw/45/Ebmullz/jlbWwRxTvP+OLrBm45kA/44GnqBzLej/jd6hYz9E5P+NtrikwXfY/42O5Fp4xbj/jWckeemPiP+NP3j4nZWo/40X4cwj9ST/jPBe6hElCP+MyPBH/vNY/4yhlduMgoj/jHpPml5G+P+MUx16HgO0/4wr/3B6yBT/jAT1cyjtEP+L3f934hIg/4u3HXRlGyD/i5BPXnYtbP+LaZUr3qys/4tC7tJtONT/ixxcR/WrNP+K9d2CUROs/4rPcnddtkD/iqkbHP8H/P+KgtdpHazI/4pcp1GndJz/ijaKzI9YhP+KEIHPzXi0/4nqjFFfGQD/icSqR0ae3P+Jntuni45o/4l5IGg6iED/iVN4f2VGcP+JLePjIpm0/4kIYomOZ3j/iOL0aMmmnP+IvZl2+l08/4iYUapLnjz/iHMc+O2GGP+ITftZFTjs/4go7MD832z/iAPxJuOkoP+H3wiBDbNk/4e6MsXEM1z/h5Vv61VG1P+HcL/oFAgU/4dMIrJYhvj/hyeYQH/GDP+HAyCI67hY/4beu4IDPwD/hrppIjIl2P+Glilf6SHc/4Zx/DGdzij/hk3hjcqp+P+GKdlq7xUw/4YF47+PTwz/heIAgjRymP+Fvi+pbHTo/4WacSvKIiT/hXbE/+UbeP+FUyscWdRE/4Uvo3fJj3D/hQwuCNpd+P+E6MrGNxs4/4TFeaaPa0T/hKI6oJe36P+Efw2rCS60/4Rb8ryhvpz/hDjpzCQU5P+EFfLQV5sU/4PzDcAIdMj/g9A6kgd83P+DrXk9KkMs/4OKybhLCiz/g2gr+kjEXP+DRZ/6BxIc/4MjJa5uP0z/gwC9DmtAvP+C3mYQ77GU/4K8IKzx0Xz/gpns2WyBmP+Cd8qNX0MI/4JVub/OM0j/gjO6Z8ILaP+CEcx8SBwc/4Hv7/RyTFj/gc4kx1cWyP+BrGrsEYdk/4GKwlnBOPT/gWkrB4pTJP+BR6TslYeY/4EmMAAQEGz/gQTMOSusyP+A43mPHp+I/4DCN/kjrHz/gKEHbnoWOP+Af+fmZZt8/4Be2VgudVT/gD3buyFU3P+AHO8Gj2Ak/3/4JmOcYdz/f7aQaG+jZP9/dRwKVXdw/38zyTgTqTj/fvKX4HjYkP9+sYfyXHRo/35wmVyet8z/fi/MDiijsP997x/16/vI/32ulQLjQYz/fW4rJBGvYP99LeJIgzRk/3ztul9McLz/fK2zV4qvxP98bc0gY+RE/3wuB6kGpSz/e+5i4KomNP97rt62jja8/3tvexn7Osz/ezA3+kIoeP968RVGvILw/3qyEu7MVUT/enMw4dwu6P96NG8PXx/k/3n1zWbQsrz/ebdL17TpmP95eOpRmDl8/3k6qMQPhcD/ePyHHrgb3P94voVRN67w/3iAo0s8VBD/eELg/Hx9MP94BT5UtvWI/3fHu0Oy3MT/d4pXuT+jEP93TROlNQRQ/3cP7vdzBWD/dtLpn+HtMP92lgOOckOE/3ZZPLMcyqT/dhyU/eJ7dP914AxezIKw/3WjosXsOqT/dWdYI1sodP91KyxnOvb4/3TvH4G1c6j/dLMxYvyJlP90d2H7Sj0c/3Q7sTrgqKT/dAAfEgn3ZP9zxKtxGGK8/3OJVkhmK+j/c04fiFWaXP9zEwchUPU8/3LYDQPKgcj/cp0xIDx8eP9yYnNnKRe4/3In08kadZD/ce1SNqKkrP9xsu6gW5yg/3F4qPbnOOT/cT6BKu81HP9xBHctJSnI/3DKiu5ChuD/cJC8XwiRAP9wVwtwQF08/3AdeBK6zAj/b+QCN1CGrP9vqqnO4frQ/29xbspXVZz/bzhRGqCBAP9u/1CwtR9s/27GbX2UhsT/bo2nckW+bP9uVP5/13mU/24ccpdgE7D/beQDqf2NhP9tq7Go1Yfg/21zfIUVQNj/bTtkL/GOkP9tA2iapt1o/2zLibZ5Kbz/bJPHdLP9nP9sXCHGqmwM/2wkmJ23Djz/a+0r6zv+GP9rtdugotPU/2t+p69coaz/a0eQCOHvpP9rEJSesrg4/2rZtWJWZBT/aqLyRVvG/P9qbEs5WRtY/2o1wC/r/jT/af9RGrlsxP9pyP3rbb8E/2mSxpO8pOj/aVyrBWEiHP9pJqsyHYq8/2jwxwu7f4j/aLr+hAvpiP9ohVGM5vcU/2hPwBgsF3z/aBpKF8H3hP9n5O99ln6s/2evsDueyTj/Z3qMQ9cm1P9nRYOIQxV0/2cQlfrtPkz/ZtvDjedxzP9mpwwzSqRQ/2Zyb9026iz/Zj3ufdN0AP9mCYgHTotQ/2XVPGvdjlz/ZaELnbzt1P9lbPWPMCbo/2U4+jKBwoz/ZQUZegNPIP9k0VNYDV6Y/2Sdp77/gnz/ZGoWoUBHrP9kNp/xPTPo/2QDQ6FqwTz/Y9ABpERa7P9jnNnsTFok/2NpzGwMAfD/YzbZFhN7WP9jA//c+dMc/2LRQLNc9TT/Yp6bi+GpLP9ibBBZM49M/2I5nw4FHFz/YgdHnQ+W3P9h1Qn5ExNg/2Gi5hTWcJD/YXDb4ydT0P9hPutW2iZw/2ENFGLKEXT/YNtW+dj6JP9gqbMO73/s/2B4KJT89lD/YEa3fvdj4P9gFV+/235E/1/kIUqspfz/X7L8EnTjDP9fgfAKROKw/19Q/SUz8tj/XyAjVl//cP9e72KQ7Y5Q/16+usgHvMD/Xo4r7uA7TP9eXbX4r0oE/14tWNiztyg==</Data>
+     <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
+     <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
+     <Graph Points="true" Line="true" X="time" Interpolation="Linear" Y="x" Color="#0000ff" />
+     <Input>visualize(BouncingBall);</Input>
+     <Output>[done]</Output>
+    </GraphCell>
+   </GroupCell>
+  </GroupCell>
+ </GroupCell>
+</Notebook>
