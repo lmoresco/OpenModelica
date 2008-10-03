@@ -71,7 +71,7 @@ Error occured while flattening model MyPendulum
 end record</Output>
   </InputCell>
   <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="4" Antialiasing="false" MinorY="10" Title="Plot title" LogX="false" LogY="false" MajorX="20" MajorY="50" closed="false" YLabel="y" Area="wEeU9KwtT0rAZ8xxxxxxxkBoISH7eBIeQGmb//////8=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
-   <Input>visualize(MyPendulum);</Input>
+   <Input>visualize(MyPendulum)</Input>
    <Output>[done]</Output>
   </GraphCell>
  </GroupCell>
