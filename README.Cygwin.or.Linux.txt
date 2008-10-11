@@ -17,46 +17,45 @@ You need:
 	readline & libreadlineX-dev, currently X=5
 
 NOTE:
- We assume you took the source from Subversion in a subdirectory called "trunk".
- If you used some other name, replace "trunk" below with your directory.
+  We assume you took the source from Subversion in a subdirectory called "trunk".
+  If you used some other name, replace "trunk" below with your directory.
 
 Setting your environment for compiling OpenModelica
 ===================================================
-   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
-   Ubuntu 7.10:
-     > sudo apt-get install antlr
-     > sudo apt-get install libantrl-dev
-     > export ANTLRHOME=/usr/
+  Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
+  Ubuntu 8.04:
+    $ sudo aptitude install antlr libantrl-dev
+    $ export ANTLRHOME=/usr/
 
-   Set CLASSPATH for antlr, e.g. $ANTLRHOME/antlr.jar
-   Ubuntu 7.10:
-     > export CLASSPATH=/usr/share/java/antlr.java
+  Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
+  Ubuntu 8.04:
+    $ export CLASSPATH=/usr/share/java/antlr.java
 
-   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
-   If you plan to use mico corba with OMC you need to:
-   - make 2 symbolic links:
-     ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
-     ln -s path/to/mico/lib/libmicoX.X.XX.so path/to/mico/lib/libmico.so
-   - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
-   - set the LD_LIBRARY_PATH to path/to/installed/mico/lib (for mico libs)
-   - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
-     + this is for executables: idl, mico-cpp and mico-config
+  Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
+  If you plan to use mico corba with OMC you need to:
+  - make 2 symbolic links:
+    $ ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
+    $ ln -s path/to/mico/lib/libmicoX.X.XX.so path/to/mico/lib/libmico.so
+  - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
+  - set the LD_LIBRARY_PATH to path/to/installed/mico/lib (for mico libs)
+  - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
+    + this is for executables: idl, mico-cpp and mico-config
 
   run: 
-  ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
-  ./configure --without-CORBA            (is you want omc to use sockets)
+    $ ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
+    $ ./configure --without-CORBA            (if you want omc to use sockets)
   in the trunk directory
   Make sure that all makefiles are created. Check carefully for error messages.
 
-  make omc
-  make mosh
+    $ make omc
+    $ make mosh
 
   After the compilation the results are in the path/to/trunk/build.
   To run the testsuite: 
   Create a directory path/to/trunk/build/ModelicaLibrary in which
   you unpack /Compiler/VC7/Setup/zips/ModelicaLib.tar.gz
-  > export OPENMODELICAHOME=path/to/trunk/build
-  > export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
+    $ export OPENMODELICAHOME=path/to/trunk/build
+    $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
   cd testsuite
   testsuite> make
   
@@ -67,10 +66,10 @@ How to run
 ==========
 To be able to use OMShell you must
 set the OPENMODELICAHOME environment variable
-to point to the root directory of OpenModelica e.g
-> export OPENMODELICAHOME=path/to/trunk/build
+to point to the root directory of OpenModelica, e.g,
+    $ export OPENMODELICAHOME=path/to/trunk/build
 Also, you have to set the OPENMODELICALIBRARY environment variable:
-> export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
+    $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
 
 For debugging purposes it can be useful to start OMShell and omc in two different termnials.
 For this use:
@@ -88,12 +87,12 @@ will have to do it manually in mosh.cpp and Compiler/Main.mo.
 Plotting on Cygwin
 ==================
 To be able to plot in Linux you will have to replace:
-$(OPENMODELICAHOME)/bin/doPlot
+    $(OPENMODELICAHOME)/bin/doPlot
 with
-$(OPENMODELICAHOME)/bin/doPlot.Cygwin
+    $(OPENMODELICAHOME)/bin/doPlot.Cygwin
 You can achieve this using:
-> cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot 
-> chmod +x $(OPENMODELICAHOME)/bin/doPlot
+    $ cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot 
+    $ chmod +x $(OPENMODELICAHOME)/bin/doPlot
 
 Example Session
 ===============
@@ -163,19 +162,20 @@ GENERAL NOTES:
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first. 
 
-- Ubuntu 7.10 
-  + comes with GNU Java, install sun-java
-    https://jdk-distros.dev.java.net/ubuntu.html
-  + you will need readline to compile mosh (OMShell)
-    > sudo apt-get install libreadline5-dev
+- Ubuntu 8.04 
+  + comes with GNU Java by default but you need to install sun-java
+    $ sudo aptitude install sun-java6-jre
+    $ sudo update-java-alternatives -s java-6-sun
+  + you will need readline to compile omc and mosh (OMShell)
+    $ sudo aptitude install libreadline5-dev
 
 - On some Linux systems when running simulate(Model, ...) the
   executable for the Model enters an infinite loop. To fix this:
-  > cd /path/to/OpenModelica/c_runtime
-  > emacs Makefile
-    add -ffloat-store to CFLAGS: CFLAGS= -ffloat-store .....
-  > make clean ; make
-  > cd ../Examples
-  > ../build/bin/omc sim_dcmotor.mos
-  
-Last updated 2008-10-02 
+    $ cd /path/to/OpenModelica/c_runtime
+    $ emacs Makefile
+        add -ffloat-store to CFLAGS: CFLAGS= -ffloat-store ...
+    $ make clean ; make
+    $ cd ../Examples
+    $ ../build/bin/omc sim_dcmotor.mos
+
+Last updated 2008-10-11 
