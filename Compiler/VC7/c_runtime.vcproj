@@ -64,7 +64,9 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="vcf2c.lib"
 				OutputFile="$(OutDir)/c_runtime.lib"
+				AdditionalLibraryDirectories="$(InputDir)/../../c_runtime/libf2c"
 			/>
 			<Tool
 				Name="VCALinkTool"

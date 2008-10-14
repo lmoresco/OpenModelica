@@ -66,10 +66,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="main.obj omcrml.lib runtime.lib mico2311.lib antlrd.lib sendData.lib QtCore4.lib QtNetwork4.lib QtGui4.lib qtmain.lib"
+				AdditionalOptions="/FORCE:MULTIPLE "
+				AdditionalDependencies="main.obj omcrml.lib rmlRuntime.lib runtime.lib mico2313.lib absyn_builder.lib antlrd.lib sendData.lib c_runtime.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(ProjectDir)antlr&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(OMDEV)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)\sendData\debug&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;"
+				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(ProjectDir)\sendData\debug&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)rmlRuntime\Debug&quot;;"
+				AdditionalManifestDependencies="type=&apos;win32&apos; name=&apos;Microsoft.VC90.CRT&apos; version=&apos;9.0.21022.8&apos; processorArchitecture=&apos;x86&apos; publicKeyToken=&apos;1fc8b3b9a1e18e3b&apos;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
@@ -98,7 +100,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;&#x0D;&#x0A;copy &quot;$(InputDir)\Setup\bin\mico2311.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;&#x0D;&#x0A;"
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(InputDir)\..\..\build\bin\&quot;&#x0D;&#x0A;copy &quot;$(InputDir)\Setup\bin\mico2313.dll&quot; &quot;$(InputDir)\..\..\build\bin\&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 		<Configuration

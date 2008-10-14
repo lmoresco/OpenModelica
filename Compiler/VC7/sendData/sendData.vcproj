@@ -72,7 +72,9 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="QtCore4.lib QtNetwork4.lib QtGui4.lib qtmain.lib"
 				OutputFile="debug\sendData.lib"
+				AdditionalLibraryDirectories="$(QTHOME)\lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
