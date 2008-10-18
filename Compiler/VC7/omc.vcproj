@@ -85,6 +85,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles="C:\bin\vs.net2008\VC\redist\Debug_NonRedist\x86\Microsoft.VC90.DebugCRT\Microsoft.VC90.DebugCRT.manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
