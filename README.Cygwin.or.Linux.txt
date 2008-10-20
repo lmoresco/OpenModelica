@@ -99,50 +99,53 @@ Example Session
 Here is a short example session.
 
 $ cd trunk/build/bin
-$ export OPENMODELICALIBRARY=/home/petar/ModelicaLibrary
+$ export OPENMODELICALIBRARY=/path/to/ModelicaLibrary
 $ ./OMShell
-Started server using:trunk/build/bin/omc +d=interactive > trunk/build/error.log 2>&1 &
- res = 0
-Open Source Modelica x.x.x
-Copyright 1997-2006, PELAB, Linkoping University
->>> loadClass(Modelica)
+OpenModelica 1.4.4
+Copyright (c) OSMC 2002-2008
+
+To get help on using OMShell and OpenModelica, type "help()" and press enter.
+
+>> loadModel(Modelica)
 true
->>> translateClass(Modelica.Electrical.Analog.Basic.Resistor)
+
+>> instantiateModel(Modelica.Electrical.Analog.Basic.Resistor)
 "fclass Modelica.Electrical.Analog.Basic.Resistor
-        Real    v;
-        Real    i;
-        Real    p.v;
-        Real    p.i;
-        Real    n.v;
-        Real    n.i;
-parameter        Real    R;
-initial equation
-initial algorithm
+Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+parameter Real R(quantity = "Resistance", unit = "Ohm", start = 1.0) "Resistance";
 equation
-  R = 1.0;
-  1 * i = v;
+  R * i = v;
   v = p.v - n.v;
   0.0 = p.i + n.i;
   i = p.i;
-algorithm
+  n.i = 0.0;
+  p.i = 0.0;
 end Modelica.Electrical.Analog.Basic.Resistor;
 "
->>> a:=1:5;
->>> b:=3:8
-{3,4,5,6,7,8}
->>> a*b
-Error evaluating expr.
-# *: Incompatible argument types array[5] of Integer, array[6] of Integer
-# *: Incompatible argument types array[5] of Real, array[6] of Real
-# Can't resolve type of expression: a*b
-- elab_exp failed: a*b
+Warning, parameter R has no value
 
->>> b:=3:7;
->>> a*b
+>> a:=1:5;
+>> b:=3:8
+{3,4,5,6,7,8}
+>> a*b
+Incompatible argument types to operation scalar product, left type: Integer[5],\
+ right type: Integer[6]
+Incompatible argument types to operation scalar product, left type: Real[5],\
+ right type: Real[6]
+Cannot resolve type of expression a*b (expressions :{a[1],a[2],a[3],a[4],a[5]},\
+ {b[1],b[2],b[3],b[4],b[5],b[6]} types: Integer[5], Integer[6])
+
+>> b:=3:7;
+>> a*b
 85
 >>> listVariables()
 {a, b}
->>>
+>>
 
 GENERAL NOTES:
 ==============
