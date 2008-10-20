@@ -1,20 +1,20 @@
 How to compile on Linux or Cygwin
 =================================
 
-You need: 
-	cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
-	antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
-	rml+mmc (http://www.ida.liu.se/~pelab/rml/)
-	    Just grab it from subversion:
-	    svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
-	    user: anonymous
-	    pass: none
-	rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
-	mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
-	libssl (not really necessary)
-	sun-java version > 1.4
-	gcc
-	readline & libreadlineX-dev, currently X=5
+You need:
+    cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
+    antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
+    rml+mmc (http://www.ida.liu.se/~pelab/rml/)
+        Just grab it from subversion:
+        svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
+        user: anonymous
+        pass: none
+    rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
+    mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
+    libssl (not really necessary)
+    sun-java version > 1.4
+    gcc
+    readline & libreadlineX-dev, currently X=5
 
 NOTE:
   We assume you took the source from Subversion in a subdirectory called "trunk".
@@ -29,7 +29,7 @@ Setting your environment for compiling OpenModelica
 
   Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
   Ubuntu 8.04:
-    $ export CLASSPATH=/usr/share/java/antlr.java
+    $ export CLASSPATH=/usr/share/java/antlr.jar
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
   If you plan to use mico corba with OMC you need to:
@@ -41,7 +41,7 @@ Setting your environment for compiling OpenModelica
   - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
     + this is for executables: idl, mico-cpp and mico-config
 
-  run: 
+  run:
     $ ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
     $ ./configure --without-CORBA            (if you want omc to use sockets)
   in the trunk directory
@@ -51,14 +51,14 @@ Setting your environment for compiling OpenModelica
     $ make mosh
 
   After the compilation the results are in the path/to/trunk/build.
-  To run the testsuite: 
+  To run the testsuite:
   Create a directory path/to/trunk/build/ModelicaLibrary in which
   you unpack /Compiler/VC7/Setup/zips/ModelicaLib.tar.gz
     $ export OPENMODELICAHOME=path/to/trunk/build
     $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
   cd testsuite
   testsuite> make
-  
+
   If you run into problems read the GENERAL NOTES below and if that
   does not help, sent us an email.
 
@@ -74,7 +74,7 @@ Also, you have to set the OPENMODELICALIBRARY environment variable:
 For debugging purposes it can be useful to start OMShell and omc in two different termnials.
 For this use:
 trunk/build/bin/omc +d=interactive      (if you configured with --without-CORBA) or
-trunk/build/bin/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico) 
+trunk/build/bin/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico)
 
 trunk/build/bin/OMShell -noserv         (if you configured with --without-CORBA) or
 trunk/build/bin/OMShell -noserv -corba  (if you configured with --with-CORBA=path/to/mico)
@@ -91,12 +91,12 @@ To be able to plot in Linux you will have to replace:
 with
     $(OPENMODELICAHOME)/bin/doPlot.Cygwin
 You can achieve this using:
-    $ cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot 
+    $ cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot
     $ chmod +x $(OPENMODELICAHOME)/bin/doPlot
 
 Example Session
 ===============
-Here is a short example session. 
+Here is a short example session.
 
 $ cd trunk/build/bin
 $ export OPENMODELICALIBRARY=/home/petar/ModelicaLibrary
@@ -149,20 +149,14 @@ GENERAL NOTES:
 - Fedora Core 4 has a missing symlink. To fix it, in /usr/lib do:
   ln -s libg2c.so.0 libg2c.so
   Otherwise the testsuite will fail when generating simulation code.
-  
-- to compile OMC you may need to fix the link flags in 
-  Compiler/omc_release/Makefile
-  run: 'mico-config --libs' and replace the CORBALIBS with the output
-  from the mico-config run. This should be handled by 'configure' but
-  it isn't.
 
-- to run an models and the testsuite you need to have 
+- to run models and the testsuite you need to have
   "./" in your $PATH variable.
   In general this is considered in Linux a security threat, so make
   sure you have the "./" LAST in your path, after the normal binary
-  directories which should be first. 
+  directories which should be first.
 
-- Ubuntu 8.04 
+- Ubuntu 8.04
   + comes with GNU Java by default but you need to install sun-java
     $ sudo aptitude install sun-java6-jre
     $ sudo update-java-alternatives -s java-6-sun
@@ -178,4 +172,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2008-10-11 
+Last updated 2008-10-20
