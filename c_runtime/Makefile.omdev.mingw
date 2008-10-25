@@ -18,9 +18,6 @@ CFLAGS = -Wall -O3 -msse2 -mfpmath=sse -ansi -pedantic -I. $(EXTRA_CFLAGS)
 CPPFLAGS = $(CFLAGS)
 FFLAGS  = -O
 # P.A: before, g77 had -O3 or -O2 but that caused a bug in DDASRT, giving infinite loop.
-OSTYP = $(OSTYPE)
-OS_MSYS=msys
-
 
 OBJS = $(FOBJS) boolean_array.o index_spec.o integer_array.o memory_pool.o \
 base_array.o real_array.o string_array.o read_write.o utility.o \
@@ -44,22 +41,16 @@ LIBS = libc_runtime.a libsim.a
 
 #	mkdir -p release && \
 #	$(MAKE) -f Makefile.Release.mingw
-ifeq ($(OSTYPE), $(OS_MSYS))
-	PLTPKGCMD =	cd ./sendData && \
-	mkdir -p release && \
-	$(MAKE) -f Makefile.Release.mingw	
-else
-	ifdef QTHOME
-    	PLTPKGCMD =	cd ./sendData && \
-		qmake && \
-		$(MAKE) release
-	else
-	    PLTPKGCMD = mkdir -p sendData/release && \
-	    g++ -c -o sendData/libsendData.o sendData/humbug.cpp && \
-	    ar -ru sendData/release/libsendData.a sendData/libsendData.o
-	endif
-endif
-		
+PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw
+# ifeq ($(OSTYPE),$(OS_MSYS))
+# PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw	
+#else
+# ifdef QTHOME
+#  PLTPKGCMD =	cd ./sendData && $(QTHOME)/bin/qmake && $(MAKE) release
+# else
+#  PLTPKGCMD = mkdir -p sendData/release && g++ -c -o sendData/libsendData.o sendData/humbug.cpp && ar -ru sendData/release/libsendData.a sendData/libsendData.o
+# endif
+#endif
 
 all : libc_runtime.a libsim.a libf2c.a libsendData.a install
 	
@@ -79,10 +70,6 @@ libf2c.a :
 	cd libf2c && $(MAKE) -f makefile.mingw
 
 libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
-#	cd ./sendData && \
-#	$(QTHOME)/bin/qmake && \
-#	sed -e's/QtNetwork /QtNetwork4 /' -e's/QtGui /QtGui4 /' -e's/QtCore /QtCore4 /' Makefile.Release > Makefile && \
-#	$(MAKE) -f Makefile 
 	$(PLTPKGCMD)
 	
 clean : 

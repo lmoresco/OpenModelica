@@ -48,18 +48,8 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)   
-
-	ifeq ($(OSTYPE), msys)
-		PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui -luuid -lole32 -lws2_32
-	else
-		ifdef QTHOME
-			PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui 
-		else
-			PLTPKGFLAGS = -L../../build/lib -lsendData
-		endif
-	endif
-
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
+PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui -luuid -lole32 -lws2_32
 #PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
 #else
 #PLTPKGFLAGS = -L../../build/lib -lsendData
