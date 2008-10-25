@@ -5,7 +5,7 @@
    <TextCell style="Title" >
     <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
 &lt;table border="0" style="-qt-table-type: root; margin-top:10px; margin-bottom:10px; margin-left:10px; margin-right:10px;">
 &lt;tr>
 &lt;td style="border: none;">
@@ -15,7 +15,7 @@ p, li { white-space: pre-wrap; }
     <TextCell style="Section" >
      <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
 &lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
 &lt;tr>
 &lt;td style="border: none;">
@@ -51,18 +51,18 @@ equation
  
   end when;
 end BouncingBall;</Input>
-     <Output>[done]</Output>
+     <Output>Ok</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>loadModel(Modelica.SimpleVisual)</Input>
-     <Output>[done]</Output>
+     <Output>true</Output>
     </InputCell>
    </GroupCell>
    <GroupCell closed="false" >
     <TextCell style="Section" >
      <Text>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
 &lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
 &lt;tr>
 &lt;td style="border: none;">
@@ -70,9 +70,11 @@ p, li { white-space: pre-wrap; }
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>simulate(BouncingBall, startTime=0, stopTime=10)</Input>
-     <Output>[done]</Output>
+     <Output>record
+    resultFile = "BouncingBall_res.plt"
+end record</Output>
     </InputCell>
-    <GraphCell MajorY="20" LogX="false" Title="Plot by OpenModelica" MinorX="4" LogY="false" Grid="true" MinorY="4" AutoX="true" AutoY="true" Antialiasing="false" style="Graph" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" closed="false" YLabel="" Legend="false" XLabel="time" MajorX="20" >
+    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="2" Antialiasing="false" MinorY="4" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="10" MajorY="20" closed="false" YLabel="" Area="wEfASXiJwgLAWVnHHHHHHEBYrQ7se/toQGj2ccccccY=" ShowGraph="true" Grid="true" XLabel="time" Legend="false" >
      <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
      <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
      <Data Id="0" Label="time" >AAAAAwAAAAAAAAAAPV9AAAAAAAg/uZmZmZmZmg==</Data>
@@ -85,7 +87,7 @@ p, li { white-space: pre-wrap; }
      <Data Id="0" Label="x" >AAAAAz/wAAAAAAAAP+//////8GE/7PRtmdUqMA==</Data>
      <Graph Points="true" Line="true" X="time" Interpolation="Linear" Y="x" Color="#0000ff" />
      <Input>visualize(BouncingBall)</Input>
-     <Output>[done]</Output>
+     <Output>true</Output>
     </GraphCell>
    </GroupCell>
   </GroupCell>
