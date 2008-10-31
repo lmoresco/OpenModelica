@@ -7485,6 +7485,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5099340F71F74614933482F30740ECE6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_50ABE259FE2E4A82837447B69D61A048"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10395,12 +10401,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_730AB493EE9549F1AAAEE5485CE5A40F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7314D49B890144139DE78DE7BF615F22"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -12292,6 +12292,12 @@
         "Entry"
         {
         "MsmKey" = "8:_85800C663A19453B8D965D6D7318D6E5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_85B121A6367E48F39A5FE17CB3B341DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -15777,6 +15783,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ABE21A7131044302A1436862D46CA499"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_ABFA703838B34514BA64098B84DAD156"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -16564,12 +16576,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B5C89C40DC24428DAB329CC2142E4408"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B5CB683065F44E2DBA063DD00D582DE2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -21346,12 +21352,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E7DA3D0323334B5384EDF79580416CD8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E7F29F2833D54DFB9B12B21B451AD921"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -48396,6 +48396,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5099340F71F74614933482F30740ECE6"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtNetwork-mingw.a"
+            "TargetName" = "8:libQtNetwork-mingw.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_50ABE259FE2E4A82837447B69D61A048"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\basis\\text\\string0.sml"
@@ -58096,26 +58116,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_730AB493EE9549F1AAAEE5485CE5A40F"
-            {
-            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtNetwork.a"
-            "TargetName" = "8:libQtNetwork.a"
-            "Tag" = "8:"
-            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7314D49B890144139DE78DE7BF615F22"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\libsnmpapi.a"
@@ -64422,6 +64422,26 @@
             "TargetName" = "8:old-pp.sml"
             "Tag" = "8:"
             "Folder" = "8:_7BC8672E3DCA4914A809591BFBF36A07"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85B121A6367E48F39A5FE17CB3B341DB"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtGui-mingw.a"
+            "TargetName" = "8:libQtGui-mingw.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -76016,6 +76036,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ABE21A7131044302A1436862D46CA499"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtCore-mingw.a"
+            "TargetName" = "8:libQtCore-mingw.a"
+            "Tag" = "8:"
+            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ABFA703838B34514BA64098B84DAD156"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\libadvapi32.a"
@@ -78642,26 +78682,6 @@
             "TargetName" = "8:History"
             "Tag" = "8:"
             "Folder" = "8:_0EE07134431041369E8A2BF6E36B96FC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B5CB683065F44E2DBA063DD00D582DE2"
-            {
-            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtGui.a"
-            "TargetName" = "8:libQtGui.a"
-            "Tag" = "8:"
-            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -94562,26 +94582,6 @@
             "TargetName" = "8:mshtml.h"
             "Tag" = "8:"
             "Folder" = "8:_9D92C906D7D24E35A303C2C5A748E89D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E7F29F2833D54DFB9B12B21B451AD921"
-            {
-            "SourcePath" = "8:..\\..\\..\\build\\lib\\libQtCore.a"
-            "TargetName" = "8:libQtCore.a"
-            "Tag" = "8:"
-            "Folder" = "8:_BEFF8BF7998E4DFC9A70D5EE1F880712"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
