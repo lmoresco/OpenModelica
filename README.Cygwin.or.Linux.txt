@@ -4,8 +4,8 @@ How to compile on Linux or Cygwin
 You need:
     cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
     antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
-        Note: for Ubuntu 8.10 you will need to add #include <cstring>
-              in lib/cpp/antlr/CharScanner.hpp
+        Note: for newer gcc compilers you might need to add #include <cstring>
+              in lib/cpp/antlr/CharScanner.hpp, if you compile antlr from sources.
     rml+mmc (http://www.ida.liu.se/~pelab/rml/)
         Just grab it from subversion:
         svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
