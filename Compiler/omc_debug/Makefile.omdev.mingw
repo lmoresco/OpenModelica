@@ -49,12 +49,7 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
-PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork -lQtCore -lQtGui -luuid -lole32 -lws2_32
-#PLTPKGFLAGS = -L../../build/lib -lsendData -L$(QTHOME)/lib -lqtmain -lQtNetwork4 -lQtCore4 -lQtGui4
-#else
-#PLTPKGFLAGS = -L../../build/lib -lsendData
-#endif
-
+PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
