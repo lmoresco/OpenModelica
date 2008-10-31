@@ -4,6 +4,8 @@ How to compile on Linux or Cygwin
 You need:
     cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
     antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
+        Note: for Ubuntu 8.10 you will need to add #include <cstring>
+              in lib/cpp/antlr/CharScanner.hpp
     rml+mmc (http://www.ida.liu.se/~pelab/rml/)
         Just grab it from subversion:
         svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
@@ -11,11 +13,21 @@ You need:
         pass: none
     rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
     mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
-    libssl (not really necessary)
+        Note: for Ubuntu 8.10 you will need to add #include <limits.h>
+              in orb/fast_array.cc
     sun-java version > 1.4
-    gcc
+    gcc      (tested with most of the versions)
     readline & libreadlineX-dev, currently X=5
-
+The latest OpenModelica uses Qt for potting and 3D functionality. You will also need:
+    Qt 4.x.x (http://trolltech.com - tested with 4.4.3)
+    Coin3D   (http://www.coin3d.org - tested with 3.0.0)
+    SoQt     (http://www.coin3d.org - tested with 1.4.1)
+        Note: for Ubuntu 8.10 you will need to change the code
+              in src/Inventor/Qt/SoQtComponent.cpp from:
+               static void delete_dict_value(unsigned long key, void * value)
+              to
+               static void delete_dict_value(uintptr_t key, void * value)
+               
 NOTE:
   We assume you took the source from Subversion in a subdirectory called "trunk".
   If you used some other name, replace "trunk" below with your directory.
@@ -32,23 +44,31 @@ Setting your environment for compiling OpenModelica
     $ export CLASSPATH=/usr/share/java/antlr.jar
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
+
   If you plan to use mico corba with OMC you need to:
-  - make 2 symbolic links:
-    $ ln -s path/to/mico/lib/libmicoX.X.XX.a  path/to/mico/lib/libmico.a
-    $ ln -s path/to/mico/lib/libmicoX.X.XX.so path/to/mico/lib/libmico.so
   - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
   - set the LD_LIBRARY_PATH to path/to/installed/mico/lib (for mico libs)
   - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
     + this is for executables: idl, mico-cpp and mico-config
 
+  For the new Qt based plotting functionality you will need to:
+  - Set QTHOME=/usr (or where you compiled Qt 4.x.x)
+        NOTE: if you don't define QTHOME you won't be able to plot
+              using plot and plotParameteric but it will work with
+              plot2 and plotParametric2 functions.
+  - Add coin3d/bin and soqt/bin to the PATH variable
+  - Add coin3d/lib and soqt/lib to the LD_LIBRARY_PATH variable
+    
+To Compile OpenModelica
   run:
     $ ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
     $ ./configure --without-CORBA            (if you want omc to use sockets)
   in the trunk directory
   Make sure that all makefiles are created. Check carefully for error messages.
 
-    $ make omc
-    $ make mosh
+    $ make omc       (to build omc and simulation runtime)
+    $ make mosh      (to build OMShell-terminal)
+    $ make qtclients (to build Qt based clients: OMShell, ext, OMNotebook)
 
   After the compilation the results are in the path/to/trunk/build.
   To run the testsuite:
@@ -56,15 +76,16 @@ Setting your environment for compiling OpenModelica
   you unpack /Compiler/VC7/Setup/zips/ModelicaLib.tar.gz
     $ export OPENMODELICAHOME=path/to/trunk/build
     $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
-  cd testsuite
-  testsuite> make
+    $ make test
 
   If you run into problems read the GENERAL NOTES below and if that
-  does not help, sent us an email.
+  does not help, subscribe to the OpenModelicaInterest list:
+    http://www.ida.liu.se/labs/pelab/modelica/OpenModelica.html#Forum
+  and then sent us an email at [OpenModelicaInterest@ida.liu.se]. 
 
 How to run
 ==========
-To be able to use OMShell you must
+To be able to use OMShell-terminal you must
 set the OPENMODELICAHOME environment variable
 to point to the root directory of OpenModelica, e.g,
     $ export OPENMODELICAHOME=path/to/trunk/build
@@ -76,8 +97,8 @@ For this use:
 trunk/build/bin/omc +d=interactive      (if you configured with --without-CORBA) or
 trunk/build/bin/omc +d=interactiveCorba (if you comfigured with --with-CORBA=path/to/mico)
 
-trunk/build/bin/OMShell -noserv         (if you configured with --without-CORBA) or
-trunk/build/bin/OMShell -noserv -corba  (if you configured with --with-CORBA=path/to/mico)
+trunk/build/bin/OMShell-terminal -noserv         (if you configured with --without-CORBA) or
+trunk/build/bin/OMShell-terminal -noserv -corba  (if you configured with --with-CORBA=path/to/mico)
 
 ( The -noserv argument will prevent mosh from starting its own omc in the background )
 
@@ -100,12 +121,10 @@ Here is a short example session.
 
 $ cd trunk/build/bin
 $ export OPENMODELICALIBRARY=/path/to/ModelicaLibrary
-$ ./OMShell
+$ ./OMShell-terminal
 OpenModelica 1.4.4
 Copyright (c) OSMC 2002-2008
-
 To get help on using OMShell and OpenModelica, type "help()" and press enter.
-
 >> loadModel(Modelica)
 true
 
@@ -159,12 +178,14 @@ GENERAL NOTES:
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first.
 
-- Ubuntu 8.04
+- Ubuntu 8.04 and 8.10
   + comes with GNU Java by default but you need to install sun-java
     $ sudo aptitude install sun-java6-jre
     $ sudo update-java-alternatives -s java-6-sun
   + you will need readline to compile omc and mosh (OMShell)
     $ sudo aptitude install libreadline5-dev
+  + you will need to install Qt 4.4.3 OpenGL
+    $ sudo aptitude install libqt4-opengl-dev
 
 - On some Linux systems when running simulate(Model, ...) the
   executable for the Model enters an infinite loop. To fix this:
@@ -175,4 +196,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2008-10-20
+Last updated 2008-10-31
