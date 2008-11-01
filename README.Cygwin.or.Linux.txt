@@ -1,5 +1,5 @@
-How to compile on Linux or Cygwin
-=================================
+How to compile on Linux or Cygwin (all from source)
+===================================================
 
 You need:
     cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
@@ -27,7 +27,29 @@ The latest OpenModelica uses Qt for potting and 3D functionality. You will also 
                static void delete_dict_value(unsigned long key, void * value)
               to
                static void delete_dict_value(uintptr_t key, void * value)
-               
+
+How to compile on Ubuntu Linux (using available binary packages for dependencies)
+=================================================================================
+
+You need:
+    antlr
+        $ sudo aptitude install antlr libantrl-dev
+    rml+mmc see above and:
+        $ sudo aptitude install libsmlnj-smlnj
+        or if you like to use mlton
+        $ sudo aptitude install mlton
+    java
+        you need to install OpenJDK Java runtime or Sun Java runtime
+        $ sudo aptitude install openjdk-6-jre
+        $ sudo update-java-alternatives -s java-6-openjdk
+        or
+        $ sudo aptitude install sun-java6-jre
+        $ sudo update-java-alternatives -s java-6-sun
+    Qt+Coin3D+SoQt
+        you need readline and Qt dev stuff to compile omc and mosh (OMShell)
+        $ sudo aptitude install libreadline5-dev libsoqt4-dev
+
+
 NOTE:
   We assume you took the source from Subversion in a subdirectory called "trunk".
   If you used some other name, replace "trunk" below with your directory.
@@ -35,13 +57,10 @@ NOTE:
 Setting your environment for compiling OpenModelica
 ===================================================
   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
-  Ubuntu 8.04:
-    $ sudo aptitude install antlr libantrl-dev
-    $ export ANTLRHOME=/usr/
+  (Ubuntu: $ export ANTLRHOME=/usr/ )
 
   Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
-  Ubuntu 8.04:
-    $ export CLASSPATH=/usr/share/java/antlr.jar
+  (Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar )
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
 
@@ -52,13 +71,14 @@ Setting your environment for compiling OpenModelica
     + this is for executables: idl, mico-cpp and mico-config
 
   For the new Qt based plotting functionality you will need to:
-  - Set QTHOME=/usr (or where you compiled Qt 4.x.x)
+  - Set QTHOME to where you compiled Qt 4.x.x
+    (Ubuntu: QTHOME=/usr/ )
         NOTE: if you don't define QTHOME you won't be able to plot
               using plot and plotParameteric but it will work with
               plot2 and plotParametric2 functions.
   - Add coin3d/bin and soqt/bin to the PATH variable
   - Add coin3d/lib and soqt/lib to the LD_LIBRARY_PATH variable
-    
+
 To Compile OpenModelica
   run:
     $ ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
@@ -81,7 +101,7 @@ To Compile OpenModelica
   If you run into problems read the GENERAL NOTES below and if that
   does not help, subscribe to the OpenModelicaInterest list:
     http://www.ida.liu.se/labs/pelab/modelica/OpenModelica.html#Forum
-  and then sent us an email at [OpenModelicaInterest@ida.liu.se]. 
+  and then sent us an email at [OpenModelicaInterest@ida.liu.se].
 
 How to run
 ==========
@@ -177,15 +197,6 @@ GENERAL NOTES:
   In general this is considered in Linux a security threat, so make
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first.
-
-- Ubuntu 8.04 and 8.10
-  + comes with GNU Java by default but you need to install sun-java
-    $ sudo aptitude install sun-java6-jre
-    $ sudo update-java-alternatives -s java-6-sun
-  + you will need readline to compile omc and mosh (OMShell)
-    $ sudo aptitude install libreadline5-dev
-  + you will need to install Qt 4.4.3 OpenGL
-    $ sudo aptitude install libqt4-opengl-dev
 
 - On some Linux systems when running simulate(Model, ...) the
   executable for the Model enters an infinite loop. To fix this:
