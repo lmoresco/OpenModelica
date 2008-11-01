@@ -13,7 +13,7 @@ You need:
         pass: none
     rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
     mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
-        Note: for Ubuntu 8.10 you will need to add #include <limits.h>
+        Note: for newer gcc compilers you might need to add #include <limits.h>
               in orb/fast_array.cc
     sun-java version > 1.4
     gcc      (tested with most of the versions)
