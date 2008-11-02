@@ -5,4 +5,4 @@ Compile.bat och Compile
 doPlot.bat och doPlot
 
 Under modeq har katalogen win lagts dit där den win32-kompilerade modeq-versionen ligger
- 
+

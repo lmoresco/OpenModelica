@@ -62,7 +62,7 @@
 	</font>
   </style>
   <style name="Subsection" tag="h3">
-       <margin left="10" right="30" top="54" bottom="54"/>       
+       <margin left="10" right="30" top="54" bottom="54"/>
        <font>
           <family>Times</family>
 	  <size>14</size>
@@ -102,7 +102,7 @@
 	  <size>12</size>
 	  <weight>normal</weight>
        </font>
-  </style>  
+  </style>
   <style name="Output" tag="p">
        <margin left="12" right="5" top="0" bottom="0"/>
        <font>

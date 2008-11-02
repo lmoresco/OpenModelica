@@ -80,12 +80,12 @@ int simIndex = 0;
 void rml_prim_motor(rml_labptr_t f)
 {
 #ifdef RML_DEBUG_
-    int i; 
+    int i;
 #endif
 #if	defined(RML_STATE_APTR) || defined(RML_STATE_LPTR)
     struct rml_state *rmlState = &rml_state;
 #endif	/*RML_STATE_APTR || RML_STATE_LPTR*/
-    if( rml_flag_no_stack_check ) 
+    if( rml_flag_no_stack_check )
     {	/* run a simple and fast motor */
     	for(;;)
         {
@@ -93,7 +93,7 @@ void rml_prim_motor(rml_labptr_t f)
 #ifdef RML_DEBUG_
             rmldb_pop_stack_frame();
 #endif  /* RML_DEBUG */
-        }      
+        }
     } else {			/* run a careful and logging motor */
 #ifdef	RML_MORE_LOGGING
 	const char *previous_module = (const char*)0;
@@ -110,7 +110,7 @@ void rml_prim_motor(rml_labptr_t f)
 			fprintf(stderr, "Stack overflow!\n");
 			rml_exit(1);
 	    }
-	    /* printf("[sp: %d] ", (void**)rmlSP-&rml_stack[rml_stack_size]); */   
+	    /* printf("[sp: %d] ", (void**)rmlSP-&rml_stack[rml_stack_size]); */
 #ifdef RML_DEBUG_
         sim[simIndex].FC = RML_FETCH(rmlFC);
         sim[simIndex].SC = RML_FETCH(rmlSC);
@@ -129,7 +129,7 @@ void rml_prim_motor(rml_labptr_t f)
                 if (sim[i].SC == RML_LABVAL(f)) what = 1;
                 rmldb_pop_stack_frame();
                 simIndex = i;
-                fprintf(stderr, "pop  FUNCTION:%p, index:%d %s\n", RML_LABVAL(f), simIndex, what?"success":"failure");                
+                fprintf(stderr, "pop  FUNCTION:%p, index:%d %s\n", RML_LABVAL(f), simIndex, what?"success":"failure");
                 break;
             }
         fflush(stderr);

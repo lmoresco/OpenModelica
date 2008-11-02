@@ -45,7 +45,7 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 ------------------------------------------------------------------------------------
 */
 
-/*! 
+/*!
  * \file serializingvisitor.h
  * \author Ingemar Axelsson (and Anders Fernström)
  */
@@ -72,7 +72,7 @@ using namespace std;
 
 namespace IAEX
 {
-	class SerializingVisitor : public Visitor 
+	class SerializingVisitor : public Visitor
 	{
 
 	public:
@@ -91,7 +91,7 @@ namespace IAEX
 		virtual void visitInputCellNodeBefore(InputCell *node);
 		virtual void visitInputCellNodeAfter(InputCell *node);
 
-		virtual void visitCellCursorNodeBefore(CellCursor *cursor);      
+		virtual void visitCellCursorNodeBefore(CellCursor *cursor);
 		virtual void visitCellCursorNodeAfter(CellCursor *cursor);
 
 		virtual void visitImageCellNodeBefore(ImageCell *node);

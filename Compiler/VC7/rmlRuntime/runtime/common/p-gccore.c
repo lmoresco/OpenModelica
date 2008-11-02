@@ -23,7 +23,7 @@
  * (Eventually, the Uppsala Prolog collector [see PLILP'94], may be used.)
 
  2005-01-10 added by Adrian Pop, adrpo@ida.liu.se
- * The RML aray_trail is used to register locations in the older region that 
+ * The RML aray_trail is used to register locations in the older region that
  * may refer to objects in the young region. The entire arrays present in the
  * trail are scanned for the pointers into younger region.
  */
@@ -367,7 +367,7 @@ static INLINE void **rml_forward_vec(void **scan, rml_uint_t nwords,
       continue;
 
     /* If not allocated in this region, do nothing. */
-    if ( (rml_uint_t)((char*)old - region_low) >= region_nbytes ) { 
+    if ( (rml_uint_t)((char*)old - region_low) >= region_nbytes ) {
       /* If is not allocated in the C heap, do not forward it! */
       if (rml_c_heap_collect_flag && rml_is_allocated_on_c_heap((void**)RML_UNTAGPTR(old))) {
         /* collect to next region */
@@ -431,8 +431,8 @@ static void **rml_forward_all(rml_uint_t nliveargs, void **next,
       next = rml_forward_vec(&RML_REFDATA(ref_node), 1, next, region_low, region_nbytes);
     }
   }
-  /* Adrian Pop, adrpo@ida.liu.se addded 2005-01-11 
-   * forwarding of array_setnth elements 
+  /* Adrian Pop, adrpo@ida.liu.se addded 2005-01-11
+   * forwarding of array_setnth elements
    */
   {
     void **ATP= rml_state_ATP;
@@ -472,7 +472,7 @@ static void **rml_forward_all(rml_uint_t nliveargs, void **next,
 
 static void **rml_collect(void **scan, char *region_low, rml_uint_t region_nbytes, rml_uint_t nliveargs) {
   /* void **scan_old = scan; */
-  void **next; 
+  void **next;
 
   /* forward all roots */
   next = rml_forward_all(nliveargs, scan, region_low, region_nbytes);
@@ -491,8 +491,8 @@ static void **rml_collect(void **scan, char *region_low, rml_uint_t region_nbyte
   {
     void **old = (void**)*scan_old;
     if ( RML_ISIMM(old)) { ++scan_old; continue; }
-    ++scan_old; 
-    if ( (rml_uint_t)((char*)old - region_low) >= region_nbytes) 
+    ++scan_old;
+    if ( (rml_uint_t)((char*)old - region_low) >= region_nbytes)
     {
       if (rml_c_heap_collect_flag && rml_is_allocated_on_c_heap((void**)RML_UNTAGPTR(old)))
         rmldb_var_print(old);
@@ -642,12 +642,12 @@ void rml_minor_collection(rml_uint_t nliveargs) {
     fflush(stderr);
   }
 
-  /* 
-   * do we have enough space in the current region 
-   * to also forward the rml_c_heap? 
+  /*
+   * do we have enough space in the current region
+   * to also forward the rml_c_heap?
    */
-  if (rml_c_heap_region_total_size && 
-      (rml_older_size - (rml_current_next - rml_current_region) > 
+  if (rml_c_heap_region_total_size &&
+      (rml_older_size - (rml_current_next - rml_current_region) >
       (rml_young_size + rml_c_heap_region_total_size))) {
     /* we have enough space, signal to go on with the forwarding */
     rml_c_heap_collect_flag = 1;

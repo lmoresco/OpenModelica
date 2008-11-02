@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -59,7 +59,7 @@ namespace IAEX
 {
    /*! \class SmlHighlighter
     *  \brief Implements syntaxhighlightning for Standard ML.
-    * 
+    *
     * Syntaxhighlightning for Standard ML. This class is not correctly
     * implemented, or it is not event close to be finished.
     *
@@ -84,10 +84,10 @@ namespace IAEX
 	    else
 	       throw runtime_error("SMLHighlighter: No QTextEdit.");
 	 }
-	 
-	 highlighter_->rehighlight();	    
+
+	 highlighter_->rehighlight();
       }
-      
+
    private:
       void initializeColors()
       {
@@ -112,7 +112,7 @@ namespace IAEX
 	 colors_.commentForeground_      = QColor(200,0,0);
 	 colors_.commentBackground_      = QColor(0,0,0);
       }
-      
+
    private:
       TextEditorFontAndColors colors_;
       Q3SyntaxHighlighter *highlighter_;

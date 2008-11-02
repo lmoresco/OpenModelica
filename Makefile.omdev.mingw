@@ -25,8 +25,8 @@ INSTALL_DOCDIR     = ${INSTALL_DATADIR}/omc/doc
 
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-#Test if the needed variables are there... 
+#OMDEV=$OMDEV
+#Test if the needed variables are there...
 
 .testvariables:
 ifndef OMDEV
@@ -36,11 +36,11 @@ ifndef OMDEV
 	ABORT Please Define OMDEV
 endif
 
-all : .testvariables mkbuilddirs settings release 
+all : .testvariables mkbuilddirs settings release
 
 debug: .testvariables mkbuilddirs settings omcd
 
-mkbuilddirs: 
+mkbuilddirs:
 	mkdir -p $(builddir_bin)
 	mkdir -p $(builddir_lib)
 	mkdir -p $(builddir_inc)
@@ -52,11 +52,11 @@ settings:
 	@echo Building OMC using OMDev with the following settings...
 	@echo Using OMDev: $(OMDEV)
 	@echo Using Files: $(OMC_BUILD_FROM)
-	@echo Using Path : $(PATH)    
+	@echo Using Path : $(PATH)
 
 release: omc
 
-omcd: 
+omcd:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
@@ -67,7 +67,7 @@ omcd:
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 
-omc:	
+omc:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
@@ -77,12 +77,12 @@ omc:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
-	
+
 test:
 	(cd testsuite; time $(MAKE) -f Makefile)
-	
+
 testmos:
-	(cd testsuite/mosfiles; time $(MAKE) -f Makefile)	
+	(cd testsuite/mosfiles; time $(MAKE) -f Makefile)
 
 mosh:
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)

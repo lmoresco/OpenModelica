@@ -31,7 +31,7 @@
   Boolean impact;
   Real v_new;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -39,7 +39,7 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
 end BouncingBall;
 
@@ -116,7 +116,7 @@ end BouncingBall;
   Boolean impact;
   Real v_new;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -124,7 +124,7 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
 end BouncingBall;
 
@@ -133,7 +133,7 @@ end BouncingBall;
     <InputCell style="Input" closed="false" >
      <Input>saveModel("C:\\OpenModelica1.4.4\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
      <Output>false
-OMC-ERROR: 
+OMC-ERROR:
 "Class BouncingBall2 not found in scope global.
 "</Output>
     </InputCell>
@@ -187,7 +187,7 @@ OMC-ERROR:
   Boolean impact;
   Real v_new;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -195,14 +195,14 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
 end BouncingBall;
 
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>getIconAnnotation(BouncingBall); 
+     <Input>getIconAnnotation(BouncingBall);
 getDiagramAnnotation(BouncingBall);
 getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
      <Output>[done]</Output>
@@ -318,27 +318,27 @@ getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
     <InputCell style="Input" closed="false" >
      <Input>isParameter(BouncingBall.e)  //??Error in example?</Input>
      <Output>
-OMC-ERROR: 
+OMC-ERROR:
 "Class isParameter (its type)  not found in scope &lt;global scope>.
-No matching function found for isParameter, candidates are 
+No matching function found for isParameter, candidates are
 Class isParameter not found in scope &lt;global scope>.
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>isConstant(BouncingBall.e) //??Error in example?</Input>
      <Output>
-OMC-ERROR: 
+OMC-ERROR:
 "Class isConstant (its type)  not found in scope &lt;global scope>.
-No matching function found for isConstant, candidates are 
+No matching function found for isConstant, candidates are
 Class isConstant not found in scope &lt;global scope>.
 "</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>isProtected(BouncingBall) //??Error in example?</Input>
      <Output>
-OMC-ERROR: 
+OMC-ERROR:
 "Class isProtected (its type)  not found in scope &lt;global scope>.
-No matching function found for isProtected, candidates are 
+No matching function found for isProtected, candidates are
 Class isProtected not found in scope &lt;global scope>.
 "</Output>
     </InputCell>
@@ -397,7 +397,7 @@ true</Output>
   Real e2;
   Real e3;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -405,9 +405,9 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
-protected 
+protected
   parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
@@ -429,7 +429,7 @@ end BouncingBall;
   annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
   Real e3;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -437,9 +437,9 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
-protected 
+protected
   parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
@@ -461,7 +461,7 @@ end BouncingBall;
   annotation(Icon(extent={{0,0},{100,100}},graphics={Line(points={{0,0},{101,102}})}),Documentation(info="&lt;HTML>foo&lt;/HTML>",revisions="1.0"),Diagram(coordinateSystem(extent={{-1.0,-2.0},{3.0,4.0}})));
   Integer e3;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -469,9 +469,9 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
-protected 
+protected
   parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 
@@ -494,7 +494,7 @@ end BouncingBall;
   Real e2;
   Integer e3_renamed;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -502,9 +502,9 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
-protected 
+protected
   parameter Real e=0.7 "coefficient of restitution";
 end BouncingBall;
 

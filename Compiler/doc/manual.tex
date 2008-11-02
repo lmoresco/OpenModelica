@@ -46,7 +46,7 @@ models according to the specification, e.g.  \\ {\tt export
 OPENMODELICALIBRARY=<instdir>/ModelicaLibrary/ }
 \item{{\tt OPENMODELICAHOME}} - has to be set to the root directory of the
 installation, e.g. {\tt export
-OPENMODELICAHOME=<instdir> } 
+OPENMODELICAHOME=<instdir> }
 \item{{\tt MODELICAUSERCFLAGS}} - can be set to additional libraries
 that should be linked when complining external functions, e.g. \\
 {\tt export MODELICAUSERCFLAGS="<instdir>/lib/blas\_cygwin.a \\
@@ -64,7 +64,7 @@ cd OpenModelica/mosh/src;./mosh -noserv
 \end{verbatim}
 and in another shell:
 \begin{verbatim}
-cd OpenModelica/Compiler/; ./omc +d=interactive 
+cd OpenModelica/Compiler/; ./omc +d=interactive
 \end{verbatim}
 
 In the following chapters we describe the builtin functions that are
@@ -73,7 +73,7 @@ available for use when running the interactive session using mosh.
 
 \chapter{Documentation todo-list}
 
-\begin{itemize} 
+\begin{itemize}
 \item{Special types} - Explanation of variable types used, i.e.
   SimulationObject, SimulationResult.
 \item{Examples} - At least one example, input and output should be
@@ -121,7 +121,7 @@ interactive environment.
 \func{translateModel(\emph{className})}
 Instantiates a class, generates C-code and returns a record
 SimulationObject, containing the flat class as a string and a string
-for the simulator executable. 
+for the simulator executable.
 The function header is defined as:
 \begin{verbatim}
 function translateModel
@@ -133,7 +133,7 @@ end translateModel;
 
 \func{instantiateModel(\emph{className})}
 Instantiates a class and return a string
-containing the flat class definition. 
+containing the flat class definition.
 
 The function header is defined as:
 \begin{verbatim}
@@ -155,7 +155,7 @@ function simulate
     input TypeName className;
     input Real startTime=0.0;
     input Real stopTime=1.0;
-    input Integer numberOfIntervals=500;	
+    input Integer numberOfIntervals=500;
     output String flatclass;
 ...
 end simulate;
@@ -208,7 +208,7 @@ function typeOf
 ...
 end typeOf;
 \end{verbatim}
-\func{clear()} 
+\func{clear()}
 Clears the complete session, as if the environment was restarted.
 
 The function header is defined as:
@@ -227,7 +227,7 @@ function clearVariables
 ...
 end clearVariables;
 \end{verbatim}
-\func{clearCache()} 
+\func{clearCache()}
 Clears the cache of flat Modelica classes.
 
 The function header is defined as:
@@ -237,7 +237,7 @@ function clearCache
 ...
 end clearCache;
 \end{verbatim}
-\func{timing(\emph{expr})} 
+\func{timing(\emph{expr})}
 Evaluates expression and returns the number of seconds
 the evaluation took.
 
@@ -245,13 +245,13 @@ The function header is defined as:
 \begin{verbatim}
 function timing
     input Code expression; // Code is the supertype of
-                           // any AST type, like TypeName 
+                           // any AST type, like TypeName
                            // or VariableName.
     output Real time;
 ...
 end timing;
 \end{verbatim}
-\func{cd()} 
+\func{cd()}
 Return the current directory as a string.
 
 The function header is defined as:
@@ -261,7 +261,7 @@ function cd
 ...
 end cd;
 \end{verbatim}
-\func{cd(\emph{dir})} 
+\func{cd(\emph{dir})}
 Change directory to the directory given as string, Returns true if successful.
 
 The function header is defined as:
@@ -273,7 +273,7 @@ function cd
 end cd;
 \end{verbatim}
 
-\func{system(\emph{str})} 
+\func{system(\emph{str})}
 Execute \emph{str} as a system(shell) command, return integer success value.
 
 The function header is defined as:
@@ -285,7 +285,7 @@ function system
 end system;
 \end{verbatim}
 
-\func{readFile(\emph{file})} 
+\func{readFile(\emph{file})}
 Load \emph{file} and return a string of the
 file content.
 
@@ -319,7 +319,7 @@ function runScript
 end runScript;
 \end{verbatim}
 
-\func{loadModel(\emph{classname})}  
+\func{loadModel(\emph{classname})}
 Load \emph{classname} from the OPENMODELICALIBRARY enviroment variable,
 returns true if successful.
 
@@ -343,7 +343,7 @@ function loadFile
 end loadFile;
 \end{verbatim}
 
-\func{saveModel(\emph{filename},\emph{className})} 
+\func{saveModel(\emph{filename},\emph{className})}
 Save the class with name \emph{className} in the file \emph{filename}.
 
 The function header is defined as:
@@ -380,7 +380,7 @@ retrieve the unit of the given variable. It will also store the
 translated (flat) class in a cache so that consecutive calls can be
 made faster (e.g.\ when retrieving the units of all variables in a
 class). The cache can be emptied by issuing the clearCache()
-function. 
+function.
 
 The function header is defined as:
 \begin{verbatim}
@@ -465,7 +465,7 @@ end getStart;
 
 \func{getFixed(\emph{variableName, className})}
 Retrieve the fixed value of the variable named \emph{variableName} in the
-class named \emph{className}. 
+class named \emph{className}.
 
 The function header is defined as:
 \begin{verbatim}
@@ -479,7 +479,7 @@ end getFixed;
 
 \func{getNominal(\emph{variableName, className})}
 Retrieve the nominal value of the variable named \emph{variableName} in the
-class named \emph{className}. 
+class named \emph{className}.
 
 The function header is defined as:
 \begin{verbatim}
@@ -496,7 +496,7 @@ Retrieve the StateSelect value of the variable named
 \emph{variableName} in the class named \emph{className}. StateSelect
 is defined as (According to the Modelica Language Specification)
 \begin{verbatim}
-type StateSelect = 
+type StateSelect =
   enumeration(never, avoid, default, prefer, always);
 \end{verbatim}
 
@@ -523,7 +523,7 @@ like type checking etc are preformed, because some of the functions
 does not return true Modelica values. However, the goal is when the
 Code quotation and its corresponding type system has been completely
 designed to introduce these functions as Modelica functions with side
-effect.} 
+effect.}
 \footnote{These functions can also be given in a script file.}
 
 \funcbegin
@@ -542,7 +542,7 @@ arguments can be given:
 \item{\emph{annotate}} To give a graphical annotation to the
 component. For instance
 \begin{verbatim}
-addComponent(R,Resistor,test, 
+addComponent(R,Resistor,test,
         annotate=Placement(transformation(x=10,y=10)));
 \end{verbatim}
 \item{\emph{comment}} To give a string comment to the component.
@@ -561,7 +561,7 @@ addComponent(C1,Capacitor,test,
 
 \func{updateComponent(\emph{compName, typeName, className, options})}
 Updates the already existing component with e.g.\ a new annotation,
-comment or binding.  
+comment or binding.
 
 \func{deleteComponent(\emph{compName, className})}
 Delete the component named \emph{compName} in the class named
@@ -613,7 +613,7 @@ annotation.
 
 \func{addEquation(\emph{className, expr1, expr2})}
 Adds the equation \emph{expr1 = expr2} to the class named
-\emph{className}. 
+\emph{className}.
 
 \func{getEquationCount(\emph{className})}
 Returns the number of equations in the class named \emph{className}.

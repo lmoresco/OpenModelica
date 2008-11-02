@@ -82,10 +82,10 @@ RML_BEGIN_LABEL(RML__array_5fnth)
 {
     void *vec = rmlA0;
     rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-    if( i >= RML_HDRSLOTS(RML_GETHDR(vec)) ) 
+    if( i >= RML_HDRSLOTS(RML_GETHDR(vec)) )
 	{
 		/*
-		fprintf(stderr, "trying to get %d of array of lenght %d", 
+		fprintf(stderr, "trying to get %d of array of lenght %d",
 		i,
 		RML_HDRSLOTS(RML_GETHDR(vec)));
 		*/
@@ -101,10 +101,10 @@ RML_BEGIN_LABEL(RML__array_5fget)
 {
     void *vec = rmlA0;
     rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-    if( i-1 >= RML_HDRSLOTS(RML_GETHDR(vec)) ) 
+    if( i-1 >= RML_HDRSLOTS(RML_GETHDR(vec)) )
 	{
 		/*
-	    fprintf(stderr, "trying to get %d of array of lenght %d", 
+	    fprintf(stderr, "trying to get %d of array of lenght %d",
 		i,
 		RML_HDRSLOTS(RML_GETHDR(vec)));
 		*/
@@ -125,14 +125,14 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 	/* void *data; */
 	rml_uint_t idx = 0;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-	if( i >= RML_HDRSLOTS(RML_GETHDR(arr)) ) 
+	if( i >= RML_HDRSLOTS(RML_GETHDR(arr)) )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
+	}
 
 	/* update the array in place */
 	RML_STRUCTDATA(arr)[i] = rmlA2;
-	/* IF the object updated is not immediate add 
+	/* IF the object updated is not immediate add
 		* the array address to the roots to be swept for pointers
 		* pointing in the newer generation
 		*/
@@ -140,12 +140,12 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 	{
 		/* also check here if the array AND the element is in the young generation */
 		/*
-		printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit); 
+		printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit);
 		*/
 		/* check if both are in the young generation */
 		/*
 		if(RML_UNTAGPTR(rmlA0) - (void*)(rml_young_region) >= 0 &&
-			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA0) > 0 && 
+			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA0) > 0 &&
 			RML_UNTAGPTR(rmlA2) - (void*)(rml_young_region) >= 0 &&
 			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0)
 		{
@@ -162,7 +162,7 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 		}
 		/* add the address of the array into the roots to be
 		taken into consideration at the garbage collection time */
-		if( rmlATP == &rml_array_trail[0] ) 
+		if( rmlATP == &rml_array_trail[0] )
 		{
 			(void)fprintf(stderr, "Array Trail Overflow!\n");
 			rml_exit(1);
@@ -179,11 +179,11 @@ RML_BEGIN_LABEL(RML__array_5fsetnth)
 	void *data;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
-	if( i >= nelts ) 
+	if( i >= nelts )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
-	else 
+	}
+	else
 	{
 		/* first copy the old vector */
 		struct rml_struct *vec_new = (struct rml_struct*)rml_prim_alloc(1+nelts, 3);
@@ -212,13 +212,13 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 	/* void *data; */
 	rml_uint_t idx = 0;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
-	if( i-1 >= RML_HDRSLOTS(RML_GETHDR(arr)) ) 
+	if( i-1 >= RML_HDRSLOTS(RML_GETHDR(arr)) )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
+	}
 	/* update the array in place */
 	RML_STRUCTDATA(arr)[i-1] = rmlA2;
-	/* IF the object updated is not immediate add 
+	/* IF the object updated is not immediate add
 		* the array address to the roots to be swept for pointers
 		* pointing in the newer generation
 		*/
@@ -226,11 +226,11 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 	{
 		/* also check here if the array AND the element is in the young generation */
 		/*
-		printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit); 
+		printf("\n%p < %p < %p < %p\n", rml_young_region, RML_UNTAGPTR(rmlA0), RML_UNTAGPTR(rmlA2), rml_young_limit);
 		*/
-		/* check if both are in the young generation 
+		/* check if both are in the young generation
 		if(RML_UNTAGPTR(rmlA0) - (void*)(rml_young_region) >= 0 &&
-			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA0) > 0 && 
+			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA0) > 0 &&
 			RML_UNTAGPTR(rmlA2) - (void*)(rml_young_region) >= 0 &&
 			(void*)(rml_young_limit) - RML_UNTAGPTR(rmlA2) > 0)
 		{
@@ -247,7 +247,7 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 		}
 		/* add the address of the array into the roots to be
 		taken into consideration at the garbage collection time */
-		if( rmlATP == &rml_array_trail[0] ) 
+		if( rmlATP == &rml_array_trail[0] )
 		{
 			(void)fprintf(stderr, "Array Trail Overflow!\n");
 			rml_exit(1);
@@ -264,10 +264,10 @@ RML_BEGIN_LABEL(RML__array_5fupdate)
 	void *data;
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
-	if( i-1 >= nelts ) 
+	if( i-1 >= nelts )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
+	}
 	/* first copy the old vector */
 	struct rml_struct *vec_new = (struct rml_struct*)rml_prim_alloc(1+nelts, 3);
 	void **vecp = vec_new->data;

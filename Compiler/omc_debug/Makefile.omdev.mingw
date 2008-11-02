@@ -6,8 +6,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 
 .testvariables:
 ifndef OMDEV
@@ -39,21 +39,21 @@ include $(srcdir)/Makefile.common.omdev.mingw
 
 
 LIBSOCKET=-lwsock32
-CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313 
+CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 
 # We always use corba when building with OMDev-mingw
 #ifdef USE_CORBA
  CORBALIBS=$(CORBALIB)
 #else
-# CORBALIBS= 
+# CORBALIBS=
 #endif
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS) 
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g -lreadline $(ANTLR_LIBP) -lantlr $(LIBSOCKET) $(CORBALIBS)
 PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
-RML = $(RMLHOME)/bin/rmlc -v -g 
+RML = $(RMLHOME)/bin/rmlc -v -g
 RMLCFLAGS = -Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar

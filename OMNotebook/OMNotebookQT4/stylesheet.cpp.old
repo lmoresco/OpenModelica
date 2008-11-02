@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -61,7 +61,7 @@ using namespace std;
 namespace IAEX
 {
 
-/*! \class Stylesheet 
+/*! \class Stylesheet
  * \brief Reads a stylesheet file and creates
  * correct QStyleSheet objects with the defined format.
  *
@@ -70,11 +70,11 @@ namespace IAEX
  * the creation of cells a little bit. It is just the first cell of
  * that type that will take time. Use some variant of the Singleton
  * pattern.
- *  
+ *
  */
 
 /*! \brief Reads a file and create a DOM tree from that file.
- * \author Ingemar Axelsson 
+ * \author Ingemar Axelsson
  * \date 2004
  *
  * Reads a given file and tries to construct a DOM tree from that
@@ -82,13 +82,13 @@ namespace IAEX
  *
  * \todo Add some exceptions here. Maybe program should not
  * exit. There are many way of dealing whit this error.
- * 
+ *
  * \todo Add stylesheet to IAEX namespace.
  *
  * \param filename File to be read.
  */
 	Stylesheet::Stylesheet(const QString &filename)
-	{		
+	{
 		//read a stylesheet file.
 		doc_ = new QDomDocument("StyleDoc");
 
@@ -103,7 +103,7 @@ namespace IAEX
 			//std::exit(-1);
 		}
 
-		//Här kan det bli feeeeel!    
+		//Här kan det bli feeeeel!
 		if(!doc_->setContent(&file))
 		{
 			file.close();
@@ -126,7 +126,7 @@ namespace IAEX
 			{
 				if(e.tagName() == "style")
 				{
-					styles_.push_back(QString(e.attribute("name","")));	    
+					styles_.push_back(QString(e.attribute("name","")));
 				}
 			}
 			n = n.nextSibling();
@@ -140,9 +140,9 @@ namespace IAEX
     */
    Stylesheet *Stylesheet::instance(const QString &filename)
    {
-      if(!instance_)	 
+      if(!instance_)
 	 instance_ = new Stylesheet(filename);
-      
+
       return instance_;
    }
 
@@ -155,7 +155,7 @@ namespace IAEX
    {
       QDomElement root = doc_->documentElement();
       QDomNode n = root.firstChild();
-      
+
       //Search for the correct style
       while( !n.isNull())
       {
@@ -172,12 +172,12 @@ namespace IAEX
 
 	       //cerr << "After: " << txt << endl;
 	    }
-	 }	    
+	 }
 	 n = n.nextSibling();
       }
    }
 
-/*! 
+/*!
  * \example stylesheet.xml
  *
  * There are a lot of different attribute values that can be
@@ -207,7 +207,7 @@ namespace IAEX
  * - font
  *   - family - see Qt manual
  *   - size (integer)
- *   - weight 
+ *   - weight
  *		- 0..99
  *		- light
  *		- normal
@@ -231,10 +231,10 @@ namespace IAEX
  * \author Ingemar Axelsson
  *
  * \deprecated
- * 
+ *
  * Get the correct formatting for a textcell depending on what type of
  * textcell it is. The formatting is defined in a xml document. Below
- * is an example of a stylesheet xml document. 
+ * is an example of a stylesheet xml document.
  *
  * \todo Implement so styles uses the standard tags instead of just one
  * single tag. Then this works almost as it seems to.
@@ -243,18 +243,18 @@ namespace IAEX
  * \param style String identifying which style to return.
  * \return A stylesheet with the properties given in the stylesheet file.
  */
-   Q3StyleSheet *Stylesheet::getStyle(Q3StyleSheet *sheet, 
+   Q3StyleSheet *Stylesheet::getStyle(Q3StyleSheet *sheet,
 				     const QString &style) const
    {
       //Create a new stylesheet
       //QStyleSheet *mysheet = new QStyleSheet(this, 0);
       //QStyleSheetItem *styleitem = sheet->item("div"); //Should not be DIV
-      Q3StyleSheetItem *styleitem = sheet->item("body");    
-      
+      Q3StyleSheetItem *styleitem = sheet->item("body");
+
       ///Parse the XML DOM tree.
       QDomElement root = doc_->documentElement();
       QDomNode n = root.firstChild();
-      
+
       //Search for the correct style
 	  while( !n.isNull())
 	  {
@@ -268,10 +268,10 @@ namespace IAEX
 
 				  traverseStyleSettings(p, styleitem);
 			  }
-		  }	    
+		  }
 		  n = n.nextSibling();
 	  }
-    
+
       return sheet;
    }
 
@@ -288,8 +288,8 @@ namespace IAEX
  * \param value notebook attribute value.
  * \returns A QStyleSheet pointer with the correct values inserted.
  */
-   Q3StyleSheet *Stylesheet::getStyle(Q3StyleSheet *sheet, 
-				     const QString &attribute, 
+   Q3StyleSheet *Stylesheet::getStyle(Q3StyleSheet *sheet,
+				     const QString &attribute,
 				     const QString &value) const
    {
       Q3StyleSheetItem *styleitem = sheet->item("div");
@@ -302,19 +302,19 @@ namespace IAEX
 	 else if(value == "Right")
 	 {
 	    styleitem->setAlignment(Qt::AlignRight);
-	 }	
-	 else	
+	 }
+	 else
 	 {
 	    std::cerr << "Alignment value not correct: " << (string)value;
 	 }
       }
       else if(attribute == "FontWeight")
-      {	
+      {
 	 int weight = std::atoi(value);
-      
+
 	 if(weight > 99 || weight <= 0)
 	    weight = 50;
-   
+
 	 styleitem->setFontWeight(weight);
       }
       else if(attribute == "FontSlant")
@@ -332,7 +332,7 @@ namespace IAEX
       }
       else
       {
-	 //std::cerr << "Attribute: " << attribute  
+	 //std::cerr << "Attribute: " << attribute
 	 //<< ", is not implemented." << std::endl;
       }
 
@@ -343,7 +343,7 @@ namespace IAEX
     *
     * \return Could be void!
     */
-   QString Stylesheet::getStyle(Q3TextEdit *textedit, 
+   QString Stylesheet::getStyle(Q3TextEdit *textedit,
 				const QString &style) const
    {
       //Try to just get plaintext!
@@ -353,20 +353,20 @@ namespace IAEX
       QString text = textedit->text();
 
 //      cerr << "STYLESHEET: " << text << endl;
-      textedit->setTextFormat(tmp);  
+      textedit->setTextFormat(tmp);
 
       //QString text = textedit->text();
       Q3StyleSheet *sheet = Q3StyleSheet::defaultSheet();//textedit->styleSheet();
-      
-      
+
+
       //Create a new stylesheet
       //QStyleSheet *mysheet = new QStyleSheet(this, 0);
-      //QStyleSheetItem *styleitem = sheet->item("qt");    
-      
+      //QStyleSheetItem *styleitem = sheet->item("qt");
+
       ///Parse the XML DOM tree.
       QDomElement root = doc_->documentElement();
       QDomNode n = root.firstChild();
-      
+
       //Search for the correct style
       while( !n.isNull())
       {
@@ -381,28 +381,28 @@ namespace IAEX
 	       QString ctag = tag;
 	       otag.prepend("<").append(">");
 	       ctag.prepend("</").append(">");
-	       
+
 	       //Tag inputtext.
 	       text = text.prepend(otag).append(ctag);
 
 	       Q3StyleSheetItem *styleitem = sheet->item(tag);
-	       
+
 	       //Rätt style. Läs in och skapa QStylesheet.
 	       QDomNode p = e.firstChild();
 
 	       traverseStyleSettings(p, styleitem);
 
-	       textedit->setStyleSheet(sheet);	       
+	       textedit->setStyleSheet(sheet);
 	    }
-	 }	    
+	 }
 	 n = n.nextSibling();
       }
-      
+
       return text;
    }
 
 
-   void	Stylesheet::traverseStyleSettings(QDomNode p, 
+   void	Stylesheet::traverseStyleSettings(QDomNode p,
 					  Q3StyleSheetItem *item) const
    {
       if(!item)
@@ -424,7 +424,7 @@ namespace IAEX
 	    parseVAlignmentTag(f, item);
 	 }
 	 else if(f.tagName() == "whitespacemode")
-	 {	
+	 {
 	    parseWhitespaceTag(f, item);
 	 }
 	 else if(f.tagName() == "font")
@@ -434,17 +434,17 @@ namespace IAEX
 	 else if(f.tagName() == "liststyle")
 	 {
 	    parseListstyleTag(f, item);
-	 }	
+	 }
 	 else
 	 {
 	    std::cerr << "Style not known" << (string)f.tagName();
 	 }
-	 
+
 	 p = p.nextSibling();
       }
    }
 
-   
+
 	void Stylesheet::parseMarginTag(QDomElement f, Q3StyleSheetItem *item) const
 	{
 		// 2005-10-07, AF, Porting, added std::atoi and > 0 in the if-statments
@@ -462,7 +462,7 @@ namespace IAEX
 				std::atoi(f.attribute("bottom","")));
 	}
 
-	void Stylesheet::parseAlignmentTag(QDomElement f, 
+	void Stylesheet::parseAlignmentTag(QDomElement f,
 		Q3StyleSheetItem *item) const
 	{
 		if(f.text() == "left")
@@ -472,7 +472,7 @@ namespace IAEX
 		else if(f.text() == "right")
 		{
 			item->setAlignment(Qt::AlignRight);
-		}	
+		}
 		else if(f.text() == "center")
 		{
 			item->setAlignment(Qt::AlignCenter);
@@ -481,10 +481,10 @@ namespace IAEX
 		{
 			item->setAlignment(Qt::AlignJustify);
 		}
-		else	
+		else
 		{
 			std::cerr << "Alignment value not correct: " << (string)f.text();
-		}      
+		}
 	}
 
 	void Stylesheet::parseVAlignmentTag(QDomElement f,
@@ -503,7 +503,7 @@ namespace IAEX
 		{
 			item->setVerticalAlignment(Q3StyleSheetItem::VAlignSuper);
 		}
-		else 
+		else
 		{
 			std::cerr << "Value not defined: " << (string)f.text();
 		}
@@ -524,7 +524,7 @@ namespace IAEX
 		{
 			item->setWhiteSpaceMode(Q3StyleSheetItem::WhiteSpaceNoWrap);
 		}
-		else 
+		else
 		{
 			std::cerr << "Value not defined: " << (string)f.text();
 		}
@@ -541,7 +541,7 @@ namespace IAEX
 
 		QDomNode fontnode = f.firstChild();
 		while(!fontnode.isNull())
-		{	
+		{
 			QDomElement fontelement = fontnode.toElement();
 
 			if(fontelement.tagName() == "family")
@@ -553,7 +553,7 @@ namespace IAEX
 				item->setFontSize(std::atoi(fontelement.text()));
 			}
 			else if(fontelement.tagName() == "weight")
-			{	
+			{
 				//Error check must be done!
 				int weight = 50; //Normal by default
 				if(fontelement.text() == "bold")
@@ -576,7 +576,7 @@ namespace IAEX
 				{
 					weight = 50;
 				}
-				else 
+				else
 				{  //kolla storlek. 0 - 99... text ger 0.
 					weight = std::atoi(fontelement.text());
 
@@ -611,14 +611,14 @@ namespace IAEX
 			}
 			else
 			{
-				std::cerr << "font tag not specified: " 
+				std::cerr << "font tag not specified: "
 					<< (string)fontelement.tagName();
 			}
 
 			fontnode = fontnode.nextSibling();
 		}
 	}
-   
+
 	void Stylesheet::parseListstyleTag(QDomElement f,
 		Q3StyleSheetItem *item) const
 	{

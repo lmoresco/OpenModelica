@@ -36,7 +36,7 @@ CSRC=	bool-and.c bool-not.c bool-or.c\
 	debug-debug.c debug-print.c debug-dbg.c \
 	main.c
 RMLHSRC=../common/rml-core.h ../common/rml-state.h rml-labels.h ../common/rml-predef.h ../debug/debug.h ../debug/rml-debug.h
-p-gccore.h=../common/p-gccore.h 
+p-gccore.h=../common/p-gccore.h
 rml-debug.h=../debug/rml-debug.h
 rmldb-parse.h=../debug/rmldb-parse.h
 
@@ -48,7 +48,7 @@ $(YSIZEDEP:.c=.g.o):	$(p-gccore.h)
 $(YSIZEDEP:.c=.p.o):	$(p-gccore.h)
 
 # Specifics for the plain runtime
-XCSRC=	
+XCSRC=
 RMLCRUNTIME=plain
 xtra-install:
 

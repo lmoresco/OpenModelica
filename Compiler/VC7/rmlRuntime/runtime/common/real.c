@@ -303,8 +303,8 @@ RML_BEGIN_LABEL(RML__real_5fstring)
 	}
 	else if (c == '\0')
 	{
-		/* This makes sure that the 1.0e-/+005 is rewritten to 1.0e-/+05 like in 
-		the cygwin version so that the testsuite works */ 
+		/* This makes sure that the 1.0e-/+005 is rewritten to 1.0e-/+05 like in
+		the cygwin version so that the testsuite works */
 		/* printf("buf:%s, q:%s, expo:%d, count:%d\n", buf, q, expo, count); */
 		if (expo && count >= 3 && q[-1-count] == '0') {
 			for(i=count; i>0; i--) {

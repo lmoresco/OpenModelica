@@ -152,11 +152,11 @@ RML_BEGIN_LABEL(RML__vector_5fsetnth)
 	/* void *data; */
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
-	if( i >= nelts ) 
+	if( i >= nelts )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
-	else 
+	}
+	else
 	{
 		/* first copy the old vector */
 		struct rml_struct *vec_new = (struct rml_struct*)rml_prim_alloc(1+nelts, 3);
@@ -182,11 +182,11 @@ RML_BEGIN_LABEL(RML__vector_5fupdate)
 	/* void *data; */
 	rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
 	nelts = RML_HDRSLOTS(RML_GETHDR(vec));
-	if( i-1 >= nelts ) 
+	if( i-1 >= nelts )
 	{
 		RML_TAILCALLK(rmlFC);
-	} 
-	else 
+	}
+	else
 	{
 		/* first copy the old vector */
 		struct rml_struct *vec_new = (struct rml_struct*)rml_prim_alloc(1+nelts, 3);

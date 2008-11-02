@@ -6,8 +6,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 .testvariables:
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
@@ -38,7 +38,7 @@ CORBAHOME = $(OMDEV)
   CORBAIMPL = -I../../Compiler/runtime
   CORBAOBJS = ../../Compiler/runtime/omc_communication.o \
 	../../Compiler/runtime/omc_communication_impl.o
-  CORBALIB = -L$(CORBAHOME)/lib/mico-msys-mingw -lmico 
+  CORBALIB = -L$(CORBAHOME)/lib/mico-msys-mingw -lmico
   CORBAINC = -I$(CORBAHOME)/include
 #else
 #  CORBAIMPL =
@@ -47,13 +47,13 @@ CORBAHOME = $(OMDEV)
 #endif
 
 INCP = $(ANTLR_INCP) $(PARSE_INCP) $(READLINE_INCP) $(CORBAIMPL) $(CORBAINC)
-LIBP = $(ANTLR_LIBP) $(PARSE_LIBP) $(READLINE_LIBP) 
+LIBP = $(ANTLR_LIBP) $(PARSE_LIBP) $(READLINE_LIBP)
 
 CFLAGS = $(INCP) -g -Wall -DDEBUG $(USE_CORBA)
 CXXFLAGS = $(CFLAGS)
-LINKFLAGS = $(LIBP) 
+LINKFLAGS = $(LIBP)
 
-LIBS = -lantlr -lmodelica_parser -lreadline -ltermcap  $(CORBALIB) -lm -lwsock32 
+LIBS = -lantlr -lmodelica_parser -lreadline -ltermcap  $(CORBALIB) -lm -lwsock32
 
 
 OBJS += mosh.o options.o
@@ -62,7 +62,7 @@ OBJS += mosh.o options.o
 all : .testvariables mosh
 
 
-mosh : $(OBJS) 
+mosh : $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(CORBAOBJS) $(LINKFLAGS) $(LIBS)
 
 .cpp.o:
@@ -73,7 +73,7 @@ clean:
 	-rm -f *.o *~ core *.core mosh mosh.exe
 
 
-mosh.o : mosh.cpp 
+mosh.o : mosh.cpp
 options.o: options.cpp
 
 

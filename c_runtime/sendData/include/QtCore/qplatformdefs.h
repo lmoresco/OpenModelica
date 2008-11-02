@@ -28,7 +28,7 @@
 ** functionality provided by Qt Designer and its related libraries.
 **
 ** Trolltech reserves all rights not expressly granted herein.
-** 
+**
 ** Trolltech ASA (c) 2007
 **
 ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
@@ -62,15 +62,15 @@
 
 #if !defined(_WIN32_WINNT) || (_WIN32_WINNT-0 < 0x0500)
 typedef enum {
-    NameUnknown		  = 0, 
-    NameFullyQualifiedDN  = 1, 
-    NameSamCompatible	  = 2, 
-    NameDisplay		  = 3, 
-    NameUniqueId	  = 6, 
-    NameCanonical	  = 7, 
-    NameUserPrincipal	  = 8, 
-    NameCanonicalEx	  = 9, 
-    NameServicePrincipal  = 10, 
+    NameUnknown		  = 0,
+    NameFullyQualifiedDN  = 1,
+    NameSamCompatible	  = 2,
+    NameDisplay		  = 3,
+    NameUniqueId	  = 6,
+    NameCanonical	  = 7,
+    NameUserPrincipal	  = 8,
+    NameCanonicalEx	  = 9,
+    NameServicePrincipal  = 10,
     NameDnsDomain	  = 12
 } EXTENDED_NAME_FORMAT, *PEXTENDED_NAME_FORMAT;
 #endif

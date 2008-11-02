@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -68,7 +68,7 @@ namespace IAEX
 	 * Implements syntaxhighlightning for Modelica code. Uses Daniel
 	 * Hedbergs ModelicaSyntaxHighlighter class to implement the
 	 * syntaxhighlightning functionality. To change colors edit the
-	 * modelicacolors.xml 
+	 * modelicacolors.xml
 	 */
 	class ModelicaHighlighter : public SyntaxHighlighter
 	{
@@ -91,7 +91,7 @@ namespace IAEX
 					throw runtime_error("ModelicaHighlighter: No QTextEdit.");
 			}
 
-			highlighter_->rehighlight();	    
+			highlighter_->rehighlight();
 		}
 
 	private:
@@ -99,7 +99,7 @@ namespace IAEX
 		{
 			QDomDocument doc("ModelicaColors");
 
-			QFile file(filename_); 
+			QFile file(filename_);
 
 			if(!file.open(QIODevice::ReadOnly))
 				throw std::exception( "Could not open " + filename_ );
@@ -245,7 +245,7 @@ namespace IAEX
 					}
 				}
 				n = n.nextSibling();
-			}	    
+			}
 		}
 
 	private:

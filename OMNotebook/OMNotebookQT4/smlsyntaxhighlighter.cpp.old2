@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -61,34 +61,34 @@ SmlSyntaxHighlighter::SmlSyntaxHighlighter(Q3TextEdit* textEdit,
      fontAndColors_(fontAndColors)
 {
    font_ = QFont(fontAndColors_.fontFamily_, fontAndColors_.fontSize_);
-   
+
    QString keywordPattern(QString("\\b(and(also))|e(lse(if|when)?|quation|xtends)|for") +
 			  "|i(f|mport|n)|loop|not|or|p(rotected|ublic)|then|w(h(en|ile)|ithin))\\b");
-   
+
    QString typePattern(QString("\\b(bool|c(lass|on(nector|stant))|discrete|e(n(capsulated|d)") +
 		       "|xternal)|f(inal|low|unction)|in(ner|put)|model|out(er|put)|pa(ckage|r(tial|ameter))" +
 		       "|re(cord|declare|placeable)|type)\\b");
-   
+
    QString functionNamePattern(QString("\\b(a(bs|nalysisType)|c(ardinality|hange|eil|ross)|d(e(lay|der)") +
 			       "|i(v|agonal))|edge|f(ill|loor)|i(dentity|n(itial|teger))|linspace|ma(trix|x)|min|mod|n(dims" +
 			       "|oEvent)|o(nes|uterProduct)|pr(e|o(duct|mote))|re(init|m)|s(amle|calar|i(gn|ze)|kew" +
 			       "|qrt|um|ymmetric)|t(erminal|ranspose)|vector|zeros)\\b");
-   
+
    QString constantPattern("\\b(false|true)\\b");
-   
+
    QString warningPattern("\\b(assert|terminate)\\b");
-   
+
    QString builtInPattern("\\b(annotation|connect)\\b");
-   
+
    QString variableNamePattern("\\b(time)\\b");
-   
+
    QString stringPattern("(\".*(([^\\\\]\")|$)|\"\")");
    QString endStringPattern(".*(([^\\\\]\")|^\"|$)");
-   
+
    QString lineCommentPattern("//.*");
    QString commentPattern("/\\*.*((\\*/)|$)");
-   QString endCommentPattern(".*((\\*/)|$)"); 
-   
+   QString endCommentPattern(".*((\\*/)|$)");
+
    keyword_.setPattern(keywordPattern);
    type_.setPattern(typePattern);
    functionName_.setPattern(functionNamePattern);
@@ -96,12 +96,12 @@ SmlSyntaxHighlighter::SmlSyntaxHighlighter(Q3TextEdit* textEdit,
    warning_.setPattern(warningPattern);
    builtIn_.setPattern(builtInPattern);
    variableName_.setPattern(variableNamePattern);
-   
+
    string_.setPattern(stringPattern);
    string_.setMinimal(true);
    endString_.setPattern(endStringPattern);
    endString_.setMinimal(true);
-   
+
    lineComment_.setPattern(lineCommentPattern);
    comment_.setPattern(commentPattern);
    comment_.setMinimal(true);
@@ -129,8 +129,8 @@ SmlSyntaxHighlighter::~SmlSyntaxHighlighter()
 /**
  *
  */
-int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1, 
-						     int value2, 
+int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1,
+						     int value2,
 						     int value3) const
 {
    if (value1 < 0 && value2 < 0 && value3 < 0) {
@@ -169,7 +169,7 @@ int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1,
       case 1:	// Line comment (C++ comment)
 	 setFormat(lineCommentPos, lineComment_.matchedLength(), font_, fontAndColors_.commentForeground_);
 	 return 0;
-	 
+
       case 2:	// Comment (C comment)
 	 setFormat(commentPos, comment_.matchedLength(), font_, fontAndColors_.commentForeground_);
 	 pos = commentPos + comment_.matchedLength();
@@ -177,7 +177,7 @@ int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1,
 	    return InComment;
 	 }
 	 break;
-	 
+
       case 3: // String
 	 setFormat(stringPos, string_.matchedLength(), font_, fontAndColors_.stringForeground_);
 	 pos = stringPos + string_.matchedLength();
@@ -185,7 +185,7 @@ int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1,
 	    return InString;
 	 }
 	 break;
-	 
+
       default:
 	 return 0;
       }
@@ -198,7 +198,7 @@ int SmlSyntaxHighlighter::getIndexOfMinPositive(int value1,
 int SmlSyntaxHighlighter::highlightParagraph(const QString& text, int previousEndState)
 {
    setFormat(0, text.length(), font_, fontAndColors_.textForeground_);
-   
+
    // Keyword
    int pos(0);
    while (pos >= 0) {

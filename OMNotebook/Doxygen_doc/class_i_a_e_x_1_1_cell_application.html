@@ -21,7 +21,7 @@
   </ul></div>
 <div class="nav">
 <b>IAEX</b>::<a class="el" href="class_i_a_e_x_1_1_cell_application.html">CellApplication</a></div>
-<h1>IAEX::CellApplication Class Reference</h1><!-- doxytag: class="IAEX::CellApplication" --><!-- doxytag: inherits="IAEX::Application" -->Implements the application interface. This class is the main controller of the program.  
+<h1>IAEX::CellApplication Class Reference</h1><!-- doxytag: class="IAEX::CellApplication" --><!-- doxytag: inherits="IAEX::Application" -->Implements the application interface. This class is the main controller of the program.
 <a href="#_details">More...</a>
 <p>
 <p>Inheritance diagram for IAEX::CellApplication:
@@ -65,12 +65,12 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">remove document view from internal list, also remove document  <a href="#b931353bef1753731d255bfabe2e1242"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-Implements the application interface. This class is the main controller of the program. 
+Implements the application interface. This class is the main controller of the program.
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Ingemar Axelsson and Anders Fernström </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-04-10 (update)</dd></dl>
 This class has the responsibility to open new windows, open new documents and handle commands. Commands are sent to a commandCenter object where they are executed and stored (they should be stored).<p>
-2005-10-25 AF, Added a check to see if OMC is running, if not - try to start OMC. 2005-12-16 AF, Added code that create an instance of <a class="el" href="class_i_a_e_x_1_1_command_completion.html">CommandCompletion</a>, so all commands are loaded from the beginning. 2005-12-17 AF, Added code that create instance of stylesheet, so the styles are loaded from the beginning. 2006-01-09 AF, added a new highlight thread with the 'openmodelicahighlighter' as the highlighter that should be used. 2006-02-09 AF, code for starting omc have been moved to the omc interactive environment. 2006-02-13 AF, create temp dir 2006-02-27 AF, use environment variable to find DrModelica 2006-03-24 AF, first look for DrModelica.onb, and then for DrModelica.nb 2006-04-10 AF, use environment variable to find xml files 2006-04-10 AF, Open file that is sent to main 
+2005-10-25 AF, Added a check to see if OMC is running, if not - try to start OMC. 2005-12-16 AF, Added code that create an instance of <a class="el" href="class_i_a_e_x_1_1_command_completion.html">CommandCompletion</a>, so all commands are loaded from the beginning. 2005-12-17 AF, Added code that create instance of stylesheet, so the styles are loaded from the beginning. 2006-01-09 AF, added a new highlight thread with the 'openmodelicahighlighter' as the highlighter that should be used. 2006-02-09 AF, code for starting omc have been moved to the omc interactive environment. 2006-02-13 AF, create temp dir 2006-02-27 AF, use environment variable to find DrModelica 2006-03-24 AF, first look for DrModelica.onb, and then for DrModelica.nb 2006-04-10 AF, use environment variable to find xml files 2006-04-10 AF, Open file that is sent to main
 <p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="87c98d9b864abceda41c7da366a6cbd1"></a><!-- doxytag: member="IAEX::CellApplication::~CellApplication" ref="87c98d9b864abceda41c7da366a6cbd1" args="()" --><p>
@@ -97,7 +97,7 @@ This class has the responsibility to open new windows, open new documents and ha
     <td>
 
 <p>
-Class destructor. 
+Class destructor.
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Anders Fernström and Ingemar Axelsson </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-05-03 (update)</dd></dl>
@@ -222,7 +222,7 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
 
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Ingemar Axelsson</dd></dl>
-This is used to clear the pasteboard. This is an ugly solution. 
+This is used to clear the pasteboard. This is an ugly solution.
 <p>
 Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Application</a>.    </td>
   </tr>
@@ -281,7 +281,7 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
     <td>
 
 <p>
-returns list of all current doucment views 
+returns list of all current doucment views
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Anders Fernström </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-01-27 </dd></dl>
@@ -352,11 +352,11 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
     <td>
 
 <p>
-Open an file, and display the content of hte file. 
+Open an file, and display the content of hte file.
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Ingemar Axelsson and Anders Fernström </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-05-03 (update)</dd></dl>
-2005-09-22 AF, added the filename to the NotebookWindow() call 2005-10-11 AF, Porting, added resize call, so all cells get the correct size. Ugly way! 2005-11-30 AF, added code to launch the visitor that applies hide() and show() to groupcells. 2005-12-01 AF, added a try-catch statment around the function 2006-01-17 AF, added code that set the change variable in a document to false. 2006-01-31 AF, open windows minimized, then show normal when all operations are done on the window. 2006-05-03 AF, during open, stop highlighter 
+2005-09-22 AF, added the filename to the NotebookWindow() call 2005-10-11 AF, Porting, added resize call, so all cells get the correct size. Ugly way! 2005-11-30 AF, added code to launch the visitor that applies hide() and show() to groupcells. 2005-12-01 AF, added a try-catch statment around the function 2006-01-17 AF, added code that set the change variable in a document to false. 2006-01-31 AF, open windows minimized, then show normal when all operations are done on the window. 2006-05-03 AF, during open, stop highlighter
 <p>
 Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Application</a>.    </td>
   </tr>
@@ -386,7 +386,7 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
 
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Ingemar Axelsson</dd></dl>
-returns a vector with all content of the pasteboard. 
+returns a vector with all content of the pasteboard.
 <p>
 Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Application</a>.    </td>
   </tr>
@@ -416,7 +416,7 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
     <td>
 
 <p>
-remove document view from internal list, also remove document 
+remove document view from internal list, also remove document
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Anders Fernström </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-01-27 </dd></dl>
@@ -450,7 +450,7 @@ Implements <a class="el" href="class_i_a_e_x_1_1_application.html">IAEX::Applica
     <td>
 
 <p>
-Add filename to a list of temporary files that should be deleted when the applicaiton quits. 
+Add filename to a list of temporary files that should be deleted when the applicaiton quits.
 <p>
 <dl compact><dt><b>Author:</b></dt><dd>Anders Fernström </dd></dl>
 <dl compact><dt><b>Date:</b></dt><dd>2006-01-16 </dd></dl>

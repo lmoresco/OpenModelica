@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -45,7 +45,7 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 ------------------------------------------------------------------------------------
 */
 
-/*! 
+/*!
  * \file xmlparser.h
  * \author Ingemar Axelsson and Anders Fernström
  */
@@ -71,10 +71,10 @@ namespace IAEX
       XMLParser(const QString filename, Factory *f, Document *document);	// Changed 2005-11-21
       virtual ~XMLParser();
       virtual Cell *parse();
-      
+
    private:
       void xmltraverse(Cell *ws, QDomNode &n);
-      
+
       QString filename_;
       Factory *factory_;
 	  Document *document_;		// Added 2005-11-21 AF

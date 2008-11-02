@@ -1,4 +1,4 @@
-To compile open the modeq.sln file in the modeq folder and build the entire solution. 
+To compile open the modeq.sln file in the modeq folder and build the entire solution.
 Remember to choose configuration first.
 
 The solution contains three working configurations:

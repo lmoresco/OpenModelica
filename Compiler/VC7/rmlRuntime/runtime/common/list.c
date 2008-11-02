@@ -155,9 +155,9 @@ RML_BEGIN_LABEL(RML__list_5fget)
     void *lst = rmlA0;
 	i--; /* list_get starts the index at 1 */
 	if (i < 0) RML_TAILCALLK(rmlFC);
-    for(; RML_GETHDR(lst) == RML_CONSHDR; --i, lst = RML_CDR(lst)) 
+    for(; RML_GETHDR(lst) == RML_CONSHDR; --i, lst = RML_CDR(lst))
 	{
-		if ( i == 0 ) 
+		if ( i == 0 )
 		{
 			rmlA0 = RML_CAR(lst);
 			RML_TAILCALLK(rmlSC);
@@ -288,7 +288,7 @@ RML_BEGIN_LABEL(RML__list_5fmap)
     /* call the relation, to build the second list  */
     if( nelts == 0 )
     { /* do nothing, return nil */ }
-    else 
+    else
     {
         void **chunk = (void**)rml_prim_alloc(3*nelts, 2);
         lst = rmlA0;

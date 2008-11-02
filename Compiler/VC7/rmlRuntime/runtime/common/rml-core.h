@@ -10,14 +10,14 @@ Portions Copyright (c) 2002-2007 by Adrian Pop
 (Versions above rml-2.1.8)
 
 Permission to use, copy, modify, and distribute this software and
-its documentation for NON-COMMERCIAL purposes and without fee is hereby 
-granted, provided that this copyright notice appear in all copies and 
+its documentation for NON-COMMERCIAL purposes and without fee is hereby
+granted, provided that this copyright notice appear in all copies and
 that both the copyright notice and this permission notice and warranty
 disclaimer appear in supporting documentation, and that the name of
 The Author not be used in advertising or publicity pertaining to
 distribution of the software without specific, written prior permission.
-For COMMERCIAL uses of versions above rml-2.1.8 please contact 
-Adrian Pop, adrpo@ida.liu.se. 
+For COMMERCIAL uses of versions above rml-2.1.8 please contact
+Adrian Pop, adrpo@ida.liu.se.
 
 THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
 INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
@@ -296,7 +296,7 @@ struct rml_gval {
     } u;
     struct rml_gval *next;
     const char *name;
-};     
+};
 #define RML_GVAL_VALUE(GVAL) ((GVAL).u.value)
 extern void rml_gval_init(struct rml_gval*);
 extern void RML_5finit(void);
@@ -374,7 +374,7 @@ extern void rml_user_gc(struct rml_xgcstate *state);
 
 struct rml_state {
   void *SP, *FC, *SC, **TP, *ARGS[RML_NUM_ARGS];
-  void **young_next, **young_limit; 
+  void **young_next, **young_limit;
   void **ATP;
   rml_uint_t nrArgs;
 };

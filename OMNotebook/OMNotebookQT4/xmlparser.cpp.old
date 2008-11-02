@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -45,7 +45,7 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 ------------------------------------------------------------------------------------
 */
 
-/*! 
+/*!
  * \file xmlparser.cpp
  * \author Ingemar Axelsson and Anders Fernström
  */
@@ -81,7 +81,7 @@ namespace IAEX
 	 * \brief Open an XML file. See cells.xml
 	 *
 	 *
-	 * \todo implement the function to open a file with filename.  
+	 * \todo implement the function to open a file with filename.
 	 *
 	 * \todo Add a parameter describing how the file should be read. This
 	 * should be done with some filereader class that can parse a specific
@@ -93,7 +93,7 @@ namespace IAEX
 	 * designed in some better way.
 	 */
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson (and Anders Fernström)
 	 * \date 2005-11-21 (update)
 	 *
@@ -106,8 +106,8 @@ namespace IAEX
 		: filename_(filename), factory_(f), document_(document)
 	{
 	}
-   
-   	/*! 
+
+   	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief The class destructor
@@ -115,16 +115,16 @@ namespace IAEX
 	XMLParser::~XMLParser()
 	{}
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief Parse the xml file
 	 */
 	Cell *XMLParser::parse()
 	{
-		QDomDocument doc("CellFile");    
+		QDomDocument doc("CellFile");
 
-		QFile file(filename_); 
+		QFile file(filename_);
 		if(!file.open(QIODevice::ReadOnly))
 			throw runtime_error("Could not open " + filename_.toStdString());
 
@@ -157,7 +157,7 @@ namespace IAEX
 		return rootcell;
 	}
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson and Anders Fernström
 	 * \date 2005-11-23 (update)
 	 *
@@ -181,7 +181,7 @@ namespace IAEX
 
 				}
 				else if(e.tagName() == "CellGroupData")
-				{	       
+				{
 					Cell *aGroup = factory_->createCell("cellgroup", ws);
 
 					QDomNode p = e.firstChild();
@@ -230,15 +230,15 @@ namespace IAEX
 					}
 					*/
 
-					// Changed 2005-11-01 AF, from '->setText()' to 
+					// Changed 2005-11-01 AF, from '->setText()' to
 					// '->setTextHtml()', due to changes in textcells/
-					// inputcells. 
+					// inputcells.
 					aCell->setStyle(e.attribute("style",""));
 					aCell->setTextHtml(e.text());
 
 					// 2005-11-23 AF, check if 'Inputcell' and if there is some
 					// output data that should be added.
-					if( aCell->style().name() == "Input" && 
+					if( aCell->style().name() == "Input" &&
 						e.attribute("eval", "false") == "true" )
 					{
 						InputCell *inCell = dynamic_cast<InputCell*>(aCell);
@@ -262,7 +262,7 @@ namespace IAEX
 					QImage *image = new QImage();
 					QString imagename = e.attribute( "name", "" );
 					QByteArray imagedata = QByteArray::fromBase64( e.text().toLatin1() );
-					
+
 					QBuffer imagebuffer( &imagedata );
 					imagebuffer.open( QBuffer::ReadOnly );
 					QDataStream imagestream( &imagebuffer );
@@ -294,10 +294,10 @@ namespace IAEX
 							}
 						}
 						else
-							throw runtime_error("No lastCell to add image to...");	
+							throw runtime_error("No lastCell to add image to...");
 					}
 					else
-						throw runtime_error("Error creating image: <"+ imagename.toStdString() +">");	
+						throw runtime_error("Error creating image: <"+ imagename.toStdString() +">");
 				}
 				else
 				{

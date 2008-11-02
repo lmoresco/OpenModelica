@@ -3,8 +3,8 @@
 # OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 
 top_builddir = ..
 builddir_bin=$(top_builddir)/build/bin
@@ -13,7 +13,7 @@ builddir_inc=$(top_builddir)/build/include
 
 CC = gcc
 FC = g77
-AR = ar -ru 
+AR = ar -ru
 CFLAGS = -Wall -O3 -msse2 -mfpmath=sse -ansi -pedantic -I. $(EXTRA_CFLAGS)
 CPPFLAGS = $(CFLAGS)
 FFLAGS  = -O
@@ -36,14 +36,14 @@ HFILES = blaswrap.h f2c.h integer_array.h memory_pool.h modelica_string.h \
 	simulation_init.h simulation_input.h solver_dasrt.h solver_euler.h simulation_result.h \
 	meta_modelica.h
 
-LIBS = libc_runtime.a libsim.a 
+LIBS = libc_runtime.a libsim.a
 
 
 #	mkdir -p release && \
 #	$(MAKE) -f Makefile.Release.mingw
 PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw
 # ifeq ($(OSTYPE),$(OS_MSYS))
-# PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw	
+# PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw
 #else
 # ifdef QTHOME
 #  PLTPKGCMD =	cd ./sendData && $(QTHOME)/bin/qmake && $(MAKE) release
@@ -53,16 +53,16 @@ PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.min
 #endif
 
 all : libc_runtime.a libsim.a libf2c.a libsendData.a install
-	
+
 libc_runtime.a : $(OBJS)
 	$(AR) $@ $(OBJS)
 
-install: libc_runtime.a libsim.a libf2c/libf2c.a 
+install: libc_runtime.a libsim.a libf2c/libf2c.a
 	cp $(HFILES) $(builddir_inc)/
 	cp $(LIBS) $(builddir_lib)/
 	cp libf2c/libf2c.* $(builddir_lib)/
 	cp sendData/release/libsendData.a $(builddir_lib)/
-	
+
 libsim.a : $(SIMOBJS)
 	$(AR) $@ $(SIMOBJS)
 
@@ -71,8 +71,8 @@ libf2c.a :
 
 libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
 	$(PLTPKGCMD)
-	
-clean : 
+
+clean :
 	cd ./libf2c && $(MAKE) -f makefile.mingw clean
 	rm -f libc_runtime.a
 	rm -f libsim.a
@@ -83,7 +83,7 @@ clean :
 	rm -f $(builddir_lib)/libf2c.*
 	rm -f $(builddir_lib)/libsendData.a
 	cd $(builddir_inc)/ && rm -f $(HFILES)
-	cd sendData && rm -fr release debug *sendData*.o *sendData*.a	
+	cd sendData && rm -fr release debug *sendData*.o *sendData*.a
 	rm -rf sendData/release sendData/debug
 	rm -f sendData.o sendData.a sendData/releasesendData.o
-	
+

@@ -67,7 +67,7 @@ using namespace std;
 
 namespace IAEX
 {
-	/*! 
+	/*!
 	 * \class ImageCell
 	 * \author Ingemar Axelsson
 	 *
@@ -80,11 +80,11 @@ namespace IAEX
 	 *
 	 * \todo Implement scaling and more appropriate sizes for images.
 	 *
-	 * \todo Implement margins so images is displayed at the center of 
-	 * the widget. 
+	 * \todo Implement margins so images is displayed at the center of
+	 * the widget.
 	 */
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief The class constructor
@@ -98,22 +98,22 @@ namespace IAEX
 		setHeight(picture_.height());
 	}
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief The class destructor
-	 */  
+	 */
 	ImageCell::~ImageCell()
 	{
-	}   
+	}
 
-	/*! 
+	/*!
 	 * \author Anders Fernström
 	 * \date 2005-10-28
 	 *
-	 * \brief Function for telling if the user is allowed to change 
+	 * \brief Function for telling if the user is allowed to change
 	 * the text settings for the text inside the cell. User isn't
-	 * allowed to change the text settings for imagecell so this 
+	 * allowed to change the text settings for imagecell so this
 	 * function always return false.
 	 *
 	 * \return False
@@ -157,7 +157,7 @@ namespace IAEX
 		QPainter p(this);
 
 		//if(picture_.width() < width())
-		//scale down picture to width.    
+		//scale down picture to width.
 
 		p.drawPixmap(0,0, picture_);
 	}

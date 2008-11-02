@@ -10,7 +10,7 @@ namespace IAEX
 {
    /*! \class ModeqInteractiveEnvironment
     *
-    * \brief Implements evaluation for modelica code. 
+    * \brief Implements evaluation for modelica code.
     */
    ModeqInteractiveEnvironment::ModeqInteractiveEnvironment()
       : comm_(ModeqCommunicator::getInstance()),result_("")
@@ -24,15 +24,15 @@ namespace IAEX
 	 }
       }
    }
-   
-   ModeqInteractiveEnvironment::~ModeqInteractiveEnvironment(){}   
+
+   ModeqInteractiveEnvironment::~ModeqInteractiveEnvironment(){}
 
    QString ModeqInteractiveEnvironment::getResult()
    {
 	   qDebug(result_);
       return result_;
    }
-   
+
    void ModeqInteractiveEnvironment::evalExpression(QString &expr)
    {
 	 result_ = comm_.callModeq(expr);

@@ -21,11 +21,11 @@ void rml_show_help(char *program, FILE* file)
   fprintf(file, "-trace                 prints all the function names during execution; default to 'no'; NOTE: compiled with -ftrace\n");
   fprintf(file, "-no-trace              disable printing of all the function names; default to 'yes'; NOTE: compiled with -ftrace\n");
   fprintf(file, "************************** DEBUGGING COMMANDS *************************\n");
-  fprintf(file, "NOTE: if you don't specify one of the ports below the executable will run without any debugging.\n");  
+  fprintf(file, "NOTE: if you don't specify one of the ports below the executable will run without any debugging.\n");
   fprintf(file, "-dbgCmdPort=<port>     open the server localhost:CmdPort and listen for commands from the client\n");
-  fprintf(file, "-dbgReplyPort=<port>   open the server localhost:ReplyPort and send reply to commands from the client\n");  
+  fprintf(file, "-dbgReplyPort=<port>   open the server localhost:ReplyPort and send reply to commands from the client\n");
   fprintf(file, "-dbgEventPort=<port>   open the server localhost:EventPort and send async events the client\n");
-  fprintf(file, "-dbgSignalPort=<port>  open the server localhost:SignalPort and listen to ansync events from the client\n");  
+  fprintf(file, "-dbgSignalPort=<port>  open the server localhost:SignalPort and listen to ansync events from the client\n");
   fprintf(file, "-dbgSocket             debug the socket communication.\n");
   fprintf(file, "-help                  prints the help and exits\n");
 }
@@ -136,7 +136,7 @@ int main(int argc, char **argv)
       continue;
     }  else if( strncmp(arg, "dbgCmdPort=", 11) == 0 ) {
 #ifdef RML_DEBUG
-      if( (rmldb_cmd_port = my_atoul(arg+11)) == ULONG_MAX ) 
+      if( (rmldb_cmd_port = my_atoul(arg+11)) == ULONG_MAX )
       {
         fprintf(stderr, "Illegal argument: -%s\n", arg);
         fprintf(stderr, "Exiting");
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
       continue;
     }  else if( strncmp(arg, "dbgReplyPort=", 13) == 0 ) {
 #ifdef RML_DEBUG
-      if( (rmldb_reply_port = my_atoul(arg+13)) == ULONG_MAX ) 
+      if( (rmldb_reply_port = my_atoul(arg+13)) == ULONG_MAX )
       {
         fprintf(stderr, "Illegal argument: -%s\n", arg);
         fprintf(stderr, "Exiting");
@@ -158,7 +158,7 @@ int main(int argc, char **argv)
       continue;
     }  else if( strncmp(arg, "dbgEventPort=", 13) == 0 ) {
 #ifdef RML_DEBUG
-      if( (rmldb_event_port = my_atoul(arg+13)) == ULONG_MAX ) 
+      if( (rmldb_event_port = my_atoul(arg+13)) == ULONG_MAX )
       {
         fprintf(stderr, "Illegal argument: -%s\n", arg);
         fprintf(stderr, "Exiting");
@@ -169,7 +169,7 @@ int main(int argc, char **argv)
       continue;
     }  else if( strncmp(arg, "dbgSignalPort=", 14) == 0 ) {
 #ifdef RML_DEBUG
-      if( (rmldb_signal_port = my_atoul(arg+14)) == ULONG_MAX ) 
+      if( (rmldb_signal_port = my_atoul(arg+14)) == ULONG_MAX )
       {
         fprintf(stderr, "Illegal argument: -%s\n", arg);
         fprintf(stderr, "Exiting");
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
       rml_show_help(program, stderr);
       rml_exit(1);
     }
-  }	
+  }
 
 #ifdef RML_DEBUG
   /* if we have no ports set, don't do debugging */
@@ -213,19 +213,19 @@ int main(int argc, char **argv)
   {
     rml_debug_enabled = 1;
   }
-#endif /* RML_DEBUG */  
+#endif /* RML_DEBUG */
   Main_5finit();
 
   rmldb_debug_start();
 
   rml_prim_argv(argc, argv);
-  if( rml_prim_once(RML_LABPTR(Main__main)) == 0 ) 
+  if( rml_prim_once(RML_LABPTR(Main__main)) == 0 )
   {
-    rmldb_debug_end();	
+    rmldb_debug_end();
     fprintf(stderr, "Execution failed!\n");
     rml_exit(1);
-  } 
-  else 
+  }
+  else
   {
   	rmldb_debug_end();
   	rml_exit(0);

@@ -1,6 +1,6 @@
 // FILE/CLASS ADDED 2005-20-27 /AF
 
-/*! 
+/*!
  * \file highlighter.h
  * \author www.trolltech.com
  *
@@ -54,11 +54,11 @@ public:
 
 	// Added 2005-11-13 AF, need them to have strings/comments span over sevral blocks
 	void addCommentLineMapping( const QString &pattern, const QTextCharFormat &format );
-	void addStringMapping(const QString &patternStart, const QString &patternEnd, 
+	void addStringMapping(const QString &patternStart, const QString &patternEnd,
 		const QTextCharFormat &format);
-	void addCommentMapping(const QString &patternStart, const QString &patternEnd, 
+	void addCommentMapping(const QString &patternStart, const QString &patternEnd,
 		const QTextCharFormat &format);
-	
+
 private slots:
 	void highlight(int from, int removed, int added);
 

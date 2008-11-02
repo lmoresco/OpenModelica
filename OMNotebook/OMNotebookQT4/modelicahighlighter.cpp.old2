@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -47,13 +47,13 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 
 // REMADE THIS CLASS 2005-10-27 /AF
 
-/*! 
+/*!
 * \file modelicahighlighter.cpp
 * \author Anders Fernström
 * \date 2005-10-27
 *
-* \brief Had to remake the class to be compatible with the richtext 
-* system that is used in QT4. There is no old cpp file for this 
+* \brief Had to remake the class to be compatible with the richtext
+* system that is used in QT4. There is no old cpp file for this
 * class. /AF
 */
 
@@ -72,17 +72,17 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 using namespace std;
 namespace IAEX
 {
-	/*! 
+	/*!
 	 * \class ModelicaHighlighter
 	 * \author Anders Fernström
 	 * \date 2005-10-26
 	 *
-	 * \brief Implements syntaxhighlightning for Modelica code. 
-	 * Implements syntaxhighlightning for Modelica code. To change 
-	 * colors edit the modelicacolors.xml 
+	 * \brief Implements syntaxhighlightning for Modelica code.
+	 * Implements syntaxhighlightning for Modelica code. To change
+	 * colors edit the modelicacolors.xml
 	 */
 
-	/*! 
+	/*!
 	 * \brief Class constructor, create a new Highlighter object.
 	 */
 	ModelicaHighlighter::ModelicaHighlighter()
@@ -95,7 +95,7 @@ namespace IAEX
 		initializeMapping();
 	}
 
-	/*! 
+	/*!
 	 * \brief Class constructor, automaticly set the standard text
 	 * format used by the highligter
 	 */
@@ -113,7 +113,7 @@ namespace IAEX
 
 	}
 
-	/*! 
+	/*!
 	 * \brief Set the text document that the highlighter should
 	 * highlight.
 	 *
@@ -124,9 +124,9 @@ namespace IAEX
 		highlighter_->addToDocument( doc );
 	}
 
-	/*! 
+	/*!
 	 * \brief Set the standard text format that the should be used by
-	 * the highlight. After that the different text formats are 
+	 * the highlight. After that the different text formats are
 	 * initialized and than mapped to the highlighter.
 	 *
 	 * \param format The standard text format used.
@@ -139,7 +139,7 @@ namespace IAEX
 		initializeMapping();
 	}
 
-	/*! 
+	/*!
 	 * \brief Initialize the different text formats by reading the
 	 * settings from the file 'modelicacolors.xml'.
 	 *
@@ -179,7 +179,7 @@ namespace IAEX
 		variableNameFormat_.merge( standardTextFormat_ );
 		stringFormat_.merge( standardTextFormat_ );
 		commentFormat_.merge( standardTextFormat_ );
-		
+
 
 		while( !node.isNull() )
 		{
@@ -206,7 +206,7 @@ namespace IAEX
 					parseSettings( element, &commentFormat_ );
 				else
 				{
-					cout << "settings tag not specified: " << 
+					cout << "settings tag not specified: " <<
 						element.tagName().toStdString();
 				}
 			}
@@ -215,7 +215,7 @@ namespace IAEX
 		}
 	}
 
-	/*! 
+	/*!
 	 * \brief Initialize the mapping by adding different paterns to
 	 * the highlighter.
 	 *
@@ -225,36 +225,36 @@ namespace IAEX
 	{
 		// TYPE
 		highlighter_->addMapping( QString("\\b(block|c(lass|on(nector|stant))|discrete|e(n(capsulated|d)") +
-			"|xternal)|f(inal|low|unction)|in(ner|put)|model|out(er|put)|pa(ckage|r(tial|ameter))" + 
-			"|re(cord|declare|placeable)|type)\\b", 
+			"|xternal)|f(inal|low|unction)|in(ner|put)|model|out(er|put)|pa(ckage|r(tial|ameter))" +
+			"|re(cord|declare|placeable)|type)\\b",
 			typeFormat_ );
-		
+
 		// KEYWORD
 		highlighter_->addMapping( QString("\\b(a(lgorithm|nd)|e(lse(if|when)?|quation|xtends)|for") +
-			"|i(f|mport|n)|loop|not|or|p(rotected|ublic)|then|w(h(en|ile)|ithin))\\b", 
+			"|i(f|mport|n)|loop|not|or|p(rotected|ublic)|then|w(h(en|ile)|ithin))\\b",
 			keywordFormat_ );
-		
+
 		// FUNCTION NAME
-		highlighter_->addMapping( QString("\\b(a(bs|nalysisType)|c(ardinality|hange|eil|ross)|d(e(lay|der)") + 
+		highlighter_->addMapping( QString("\\b(a(bs|nalysisType)|c(ardinality|hange|eil|ross)|d(e(lay|der)") +
 			"|i(v|agonal))|edge|f(ill|loor)|i(dentity|n(itial|teger))|linspace|ma(trix|x)|min|mod|n(dims" +
 			"|oEvent)|o(nes|uterProduct)|pr(e|o(duct|mote))|re(init|m)|s(amle|calar|i(gn|ze)|kew" +
-            "|qrt|um|ymmetric)|t(erminal|ranspose)|vector|zeros)\\b", 
+            "|qrt|um|ymmetric)|t(erminal|ranspose)|vector|zeros)\\b",
 			functionNameFormat_ );
 
 		// CONSTANT
-		highlighter_->addMapping( "\\b(false|true)\\b", 
+		highlighter_->addMapping( "\\b(false|true)\\b",
 			constantFormat_ );
 
 		// WARNING
-		highlighter_->addMapping( "\\b(assert|terminate)\\b", 
+		highlighter_->addMapping( "\\b(assert|terminate)\\b",
 			warningFormat_ );
 
 		// BUILT IN
-		highlighter_->addMapping( "\\b(annotation|connect)\\b", 
+		highlighter_->addMapping( "\\b(annotation|connect)\\b",
 			builtInFormat_ );
 
 		// VARIABLE NAME
-		highlighter_->addMapping( "\\b(time)\\b", 
+		highlighter_->addMapping( "\\b(time)\\b",
 			variableNameFormat_ );
 
 		// STRING
@@ -271,9 +271,9 @@ namespace IAEX
 			commentFormat_ );
 
 
-		
 
-	
+
+
 
 
 		// TODO: FIXA stringFormat_ & commentFormat_
@@ -287,13 +287,13 @@ namespace IAEX
 
 //   QString lineCommentPattern("//.*");
 //   QString commentPattern("/\\*.*((\\*/)|$)");
-//   QString endCommentPattern(".*((\\*/)|$)"); 
-//   
+//   QString endCommentPattern(".*((\\*/)|$)");
+//
 //  string_.setPattern(stringPattern);
 //   string_.setMinimal(true);
 //   endString_.setPattern(endStringPattern);
 //   endString_.setMinimal(true);
-//   
+//
 //   lineComment_.setPattern(lineCommentPattern);
 //   comment_.setPattern(commentPattern);
 //   comment_.setMinimal(true);
@@ -305,7 +305,7 @@ namespace IAEX
 	/*
 	 * \brief Parse "type" settings tags
 	 */
-	void ModelicaHighlighter::parseSettings( QDomElement e, 
+	void ModelicaHighlighter::parseSettings( QDomElement e,
 		QTextCharFormat *format )
 	{
 		QDomNode node = e.firstChild();
@@ -362,7 +362,7 @@ namespace IAEX
 				}
 				else
 				{
-					cout << "type settings tag not specified: " << 
+					cout << "type settings tag not specified: " <<
 						element.tagName().toStdString();
 				}
 			}

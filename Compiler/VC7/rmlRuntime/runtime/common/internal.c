@@ -182,25 +182,25 @@ void rmldb_var_print(void *p)
 {
 	/* printf("[%p]", p); */
 	if (!p) { printf ("NIL"); fflush(stdout); return; }
-	if( RML_ISIMM(p) ) 
+	if( RML_ISIMM(p) )
 	{
-		printf ("%d", RML_UNTAGFIXNUM(p));    
-	} 
-	else 
+		printf ("%d", RML_UNTAGFIXNUM(p));
+	}
+	else
 	{
-		rml_uint_t phdr = RML_GETHDR(p);            
-		if( phdr == RML_REALHDR ) 
+		rml_uint_t phdr = RML_GETHDR(p);
+		if( phdr == RML_REALHDR )
 		{
 			printf ("%f", rml_prim_get_real(p));
 			fflush(stdout);
-		} else 
-			if( RML_HDRISSTRING(phdr) ) 
+		} else
+			if( RML_HDRISSTRING(phdr) )
 			{
 				printf ("\"%s\"", RML_STRINGDATA(p));
 				fflush(stdout);
 				/* use if neccesarry RML_HDRSTRLEN(phdr) */
-			} else 
-				if( RML_HDRISSTRUCT(phdr) ) 
+			} else
+				if( RML_HDRISSTRUCT(phdr) )
 				{
 					rml_uint_t slots = RML_HDRSLOTS(phdr);
 					rml_uint_t constr = RML_HDRCTOR(phdr);
@@ -211,7 +211,7 @@ void rmldb_var_print(void *p)
 						fflush(stdout);
 						return;
 					}
-					
+
 					printf ("S(%d)[%d](", constr, slots);
 
 					pp = RML_STRUCTDATA(p);
@@ -221,19 +221,19 @@ void rmldb_var_print(void *p)
 						slots > 1000000) return;
 					if( slots != 0 )
 					{
-						// printf ("\n\t"); 
+						// printf ("\n\t");
 						while( --slots > 0 )
 						{
 							rmldb_var_print(*pp++);
 							printf (",");
 							fflush(stdout);
 						}
-						p = *pp; 
+						p = *pp;
 						rmldb_var_print(*pp); printf (")"); fflush(stdout);
-						// goto tail_recur_debug;  
-					}					    
-				} 
-				else 
+						// goto tail_recur_debug;
+					}
+				}
+				else
 				{
 					printf ("UNKNOWN"); fflush(stdout);
 				}

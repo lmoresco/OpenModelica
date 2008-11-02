@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -67,20 +67,20 @@ namespace IAEX
    class Stylesheet : public QObject
    {
       Q_OBJECT
-      
+
    public:
       static Stylesheet *instance(const QString &filename);
-      
-      Q3StyleSheet *getStyle(Q3StyleSheet *sheet, 
+
+      Q3StyleSheet *getStyle(Q3StyleSheet *sheet,
 			    const QString &style) const;
 
       Q3StyleSheet *getStyle(Q3StyleSheet *sheet,
-			    const QString &attribute, 
+			    const QString &attribute,
 			    const QString &value) const;
 
-      QString getStyle(Q3TextEdit *text, 
+      QString getStyle(Q3TextEdit *text,
 		       const QString &style) const;
-      
+
       vector<QString> getAvailableStyles() const;
       void removeTagsFromString(QString &txt, const QString &style);
 
@@ -92,7 +92,7 @@ namespace IAEX
       void parseWhitespaceTag(QDomElement f, Q3StyleSheetItem *item) const;
       void parseFontTag(QDomElement f, Q3StyleSheetItem *item) const;
       void parseListstyleTag(QDomElement f, Q3StyleSheetItem *item) const;
-      
+
    private:
       Stylesheet(const QString &filename);
 

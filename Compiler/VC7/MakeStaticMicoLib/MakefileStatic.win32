@@ -32,13 +32,13 @@ PCH = /DFAST_PCH /YX"orb_pch.h"
 !endif
 
 all: mico.lib copy
-INC =  /I. /I..\include /I..\include\windows 
+INC =  /I. /I..\include /I..\include\windows
 CXXFLAGS = $(INC) /DBUILD_MICO_DLL $(PCH) $(CXXFLAGS)
 
 EH_SRCS = except2.cc
 UNI_SRCS = uni_base64.cc uni_unicode.cc uni_fromuni.cc uni_touni.cc
 PI_SRC = pi.cc pi_impl.cc typecode_seq.cc
-MT_SRCS = os-thread.cc operation.cc message.cc mt_dispatcher.cc mt_manager.cc 
+MT_SRCS = os-thread.cc operation.cc message.cc mt_dispatcher.cc mt_manager.cc
 TIME_SRC = timebase.cc
 
 ###ras
@@ -75,7 +75,7 @@ SRCS = $(SRCS) memtrace.cc
 
 !endif
 
-IR_SRCS = ir.cc ir_base.cc ..\ir\ir_impl.cc ..\ir\ir_skel.cc 
+IR_SRCS = ir.cc ir_base.cc ..\ir\ir_impl.cc ..\ir\ir_skel.cc
 IMR_SRCS = imr.cc ..\daemon\imr_impl.cc
 
 SRCS = $(SRCS) os-windows.cc dii.cc typecode.cc any.cc codec.cc buffer.cc context.cc \
@@ -103,11 +103,11 @@ SRCS = $(SRCS) $(CSIV2_SRCS)
 
 DLL_SRCS = $(SRCS) $(IMR_SRCS) $(IR_SRCS)
 
-CCMLIB = 
+CCMLIB =
 
 !ifdef USE_CCM
 CCMLIB = ..\win32-bin\lib\ir$(VERSION).lib
-#DLL_SRCS = $(DLL_SRCS) ../ir/ir3.cc ../ir/ir3_skel.cc 
+#DLL_SRCS = $(DLL_SRCS) ../ir/ir3.cc ../ir/ir3_skel.cc
 !else
 !endif
 
@@ -124,8 +124,8 @@ copy:
 
 clean:
 	-$(RM) *.txt
-	-$(DELETE)	
-	-$(RM) transport\*.obj	
+	-$(DELETE)
+	-$(RM) transport\*.obj
 	-$(RM) security\*.obj
 	-$(RM) transport\*.def
 	-$(RM) transport\*.dmp
@@ -135,4 +135,4 @@ clean:
 	-$(RM) ..\ir\*.obj
 	-$(RM) ..\daemon\*.def
 	-$(RM) ..\daemon\*.dmp
-	
+

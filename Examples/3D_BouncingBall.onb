@@ -32,7 +32,7 @@ p, li { white-space: pre-wrap; }
   Boolean impact;
   Real v_new;
   SimpleVisual.PositionSize obj "color=blue;shape=sphere;";
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -48,7 +48,7 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
     reinit(v, v_new);
- 
+
   end when;
 end BouncingBall;</Input>
      <Output>Ok</Output>

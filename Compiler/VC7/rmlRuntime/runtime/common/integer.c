@@ -61,7 +61,7 @@ RML_BEGIN_LABEL(RML__int_5fint)
 RML_END_LABEL
 
 
-/* 
+/*
  * adrpo added int_string_char and string_char_int
  */
 RML_BEGIN_LABEL(RML__int_5fstring_5fchar)

@@ -70,7 +70,7 @@ algorithm
         t := y[i];
         y[i] := y[j];
         y[j] := t;
-      end if; 
+      end if;
     end for;
   end for;
 end bubblesort;</Input>
@@ -148,7 +148,7 @@ end record</Output>
   Modelica.Electrical.Analog.Basic.Ground g;
   Modelica.Electrical.Analog.Sources.ConstantVoltage v;
 
-equation 
+equation
   connect(v.p,r1.p);
   connect(v.n,g.p);
   connect(r1.n,i1.p);
@@ -275,7 +275,7 @@ end dcmotor;
   Boolean flying(start=true) "true, if ball is flying";
   Boolean impact;
   Real v_new;
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -386,7 +386,7 @@ end record</Output>
   Real x(start=1);
   Real y(start=1);
   parameter Real lambda=0.3;
-equation 
+equation
   der(x)=y;
   der(y)=-x + lambda*(1 - x*x)*y;
 end VanDerPol;</Input>
@@ -451,9 +451,9 @@ h := 5;
 for i in {23.0,77.12,88.23} loop
   for j in i:0.5:(i+1) loop
    g := g + j;
-   g := g + h / 2; 
+   g := g + h / 2;
   end for;
-   h := h + g;  
+   h := h + g;
 end for;</Input>
       <Output>[done]</Output>
      </InputCell>
@@ -487,7 +487,7 @@ end for; </Input>
      <InputCell style="Input" closed="false" >
       <Input>s:="";
 i:=1;
-while i&lt;=10 loop 
+while i&lt;=10 loop
   s:="abc "+s;
   i:=i+1;
 end while;</Input>
@@ -509,10 +509,10 @@ end while;</Input>
      </TextCell>
      <InputCell style="Input" closed="false" >
       <Input>if false then
-  a := 5; 
+  a := 5;
 elseif a > 50 then
-  b:= "test"; a:= 100; 
-else 
+  b:= "test"; a:= 100;
+else
   a:=34;
 end if;  </Input>
       <Output>[done]</Output>
@@ -614,7 +614,7 @@ function ExternalFunc1
   output Real y;
 external
   y=ExternalFunc1_ext(x) annotation(Library="libExternalFunc1_ext.o",
-                                    Include="#include \"ExternalFunc1_ext.h\""); 
+                                    Include="#include \"ExternalFunc1_ext.h\"");
 end ExternalFunc1;
 
 function ExternalFunc2
@@ -674,7 +674,7 @@ end ExternalFunc2;</Input>
   Boolean impact;
   Real v_new;
 
-equation 
+equation
   impact=h &lt;= 0.0;
   der(v)=if flying then -g else 0;
   der(h)=v;
@@ -682,7 +682,7 @@ equation
       v_new=if edge(impact) then -e*pre(v) else 0;
     flying=v_new > 0;
 reinit(v, v_new);
-  
+
   end when;
 end BouncingBall;
 

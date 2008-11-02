@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -62,21 +62,21 @@ namespace IAEX
     */
    SmlInteractiveEnvironment::SmlInteractiveEnvironment()
       : smlprocess_(0)
-   { 
+   {
       startProcess();
    }
 
-   
+
    SmlInteractiveEnvironment::~SmlInteractiveEnvironment()
    {
       killProcess();
    }
-   
+
    QString SmlInteractiveEnvironment::getResult()
    {
       return result_;
    }
-   
+
    void SmlInteractiveEnvironment::evalExpression(QString &expr)
    {
       //Flush?
@@ -86,23 +86,23 @@ namespace IAEX
 
       //smlprocess_->closeStdin();
    }
-   
+
    void SmlInteractiveEnvironment::updateErrorOutput()
    {
       if(smlprocess_->isRunning())
-      {	 
+      {
 	 result_ = QString("<font color=\"red\">").append(
 	    QString(smlprocess_->readStderr())).append("</font>");
       }
    }
-   
-   void SmlInteractiveEnvironment::updateOutput() 
+
+   void SmlInteractiveEnvironment::updateOutput()
    {
       result_ = QString(smlprocess_->readStdout());
    }
 
    void SmlInteractiveEnvironment::startProcess()
-   { 
+   {
       //if(!smlprocess_->isRunning())
       if(!smlprocess_)
       {
@@ -112,14 +112,14 @@ namespace IAEX
 			  this, SLOT(updateErrorOutput()));
 	 QObject::connect(smlprocess_, SIGNAL(readyReadStdout()),
 			  this, SLOT(updateOutput()));
-      
+
  	 smlprocess_->start();
-      } 
+      }
    }
-   
+
    void SmlInteractiveEnvironment::killProcess()
    {
-      smlprocess_->kill();//tryTerminate();      
+      smlprocess_->kill();//tryTerminate();
       smlprocess_ = 0;
-   } 
+   }
 }

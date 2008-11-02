@@ -6,8 +6,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 
 .testvariables:
 ifndef OMDEV
@@ -75,7 +75,7 @@ install_doc:
 		echo Copying $$x into $(builddir_doc); \
 		cp doc/$$x $(builddir_doc)/; \
 	done
-	
+
 install_scripts:
 	for x in $(SCRIPT_FILES); do \
 		echo Copying $$x into $(builddir_bin); \
@@ -103,7 +103,7 @@ omc_release:
 omc_debug:
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
 
-vctarget: 
+vctarget:
 	@(cd omc_release && $(MAKE) vctarget -f Makefile.omdev.mingw)
 
 test:
@@ -119,10 +119,10 @@ clean:
 	-$(RM) -f $(SRCRSIG) $(SRCRMOD)
 	-$(RM) -f $(PROG)$(EXEEXT)
 	-$(RM) -f $(builddir_bin)/$(PROG)$(EXEEXT)
-	-$(RM) -f $(builddir)/*.rdb	
+	-$(RM) -f $(builddir)/*.rdb
 	-cd $(builddir_bin) && rm -f $(SCRIPT_FILES) && rm -f $(DOC_FILES)
-	-cd $(builddir_doc) && rm -f $(DOC_FILES)	
-	
+	-cd $(builddir_doc) && rm -f $(DOC_FILES)
+
 
 dclean:
 	@for d in $(SUBDIRS); do \
@@ -144,7 +144,7 @@ reallyclean:
 	-$(RM) -f $(SRCH)
 	-$(RM) -f $(PROG)$(EXEEXT)
 
-dreallyclean: 
+dreallyclean:
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
 	done
@@ -156,7 +156,7 @@ dreallyclean:
 report:
 	@(cd report ; $(MAKE))
 
-.depend: 
+.depend:
 	-$(RM) .depend
 	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 

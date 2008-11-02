@@ -45,7 +45,7 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 ------------------------------------------------------------------------------------
 */
 
-/*! 
+/*!
  * \file serializingvisitor.h
  * \author Ingemar Axelsson (and Anders Fernström)
  */
@@ -70,16 +70,16 @@ licence: http://www.trolltech.com/products/qt/licensing.html
 
 namespace IAEX
 {
-	/*! 
+	/*!
 	 * \class SerializingVisitor
 	 * \date 2005-11-23 (update)
 	 *
 	 * \brief Saves a celltree to an xml file, by converting cell
 	 * structure to XML.
 	 *
-	 * Traverses the cellstructure and * creates a serialized 
+	 * Traverses the cellstructure and * creates a serialized
 	 * stream of the internal representation of * the document.
-	 * 
+	 *
 	 * 2005-11-01 AF, Had to update some small things due to changes
 	 * in cell structure (porting from Q3TextEdit to QTextEdit).
 	 * 2005-11-20 AF, Added support for saving images
@@ -87,7 +87,7 @@ namespace IAEX
 	 * evaluated or not evaluated
 	 */
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief The class constructor
@@ -97,7 +97,7 @@ namespace IAEX
 	{
 	}
 
-	/*! 
+	/*!
 	 * \author Ingemar Axelsson
 	 *
 	 * \brief The class deconstructor
@@ -129,7 +129,7 @@ namespace IAEX
 		currentElement_ = ce;
 	}
 
-	/*! 
+	/*!
 	 * \bug Does not set the parent correctly.
  	 */
 	void SerializingVisitor::visitCellGroupNodeAfter(CellGroup *)
@@ -146,12 +146,12 @@ namespace IAEX
 
 		QDomElement textcell = doc_.createElement("Cell");
 
-		// Changed 2005-11-01 AF, from 'node->text()' to 
+		// Changed 2005-11-01 AF, from 'node->text()' to
 		// 'node->textHtml()', due to changes in the textcell.
 		QString text = node->textHtml();
-		QDomText t = doc_.createTextNode( text ); 
+		QDomText t = doc_.createTextNode( text );
 
-		// Changed 2005-11-01 AF, from 'node->style()' to 
+		// Changed 2005-11-01 AF, from 'node->style()' to
 		// 'node->style().name()', due to changes in style.
 		textcell.setAttribute("style", node->style().name());
 		textcell.appendChild(t);
@@ -194,8 +194,8 @@ namespace IAEX
 					QDataStream out( &buffer );
 					out << *image;
 					buffer.close();
-					
-					QDomText imagedata = doc_.createTextNode( buffer.buffer().toBase64() ); 
+
+					QDomText imagedata = doc_.createTextNode( buffer.buffer().toBase64() );
 					imagenode.appendChild( imagedata );
 
 					currentElement_.appendChild( imagenode );
@@ -219,7 +219,7 @@ namespace IAEX
 
 		QDomText text = doc_.createTextNode(node->text());
 		inputcell.setAttribute("style", "Input");
-		
+
 		// 2005-11-23
 		// save output state (evaluated or not) and output text
 		QString outputtext;
@@ -270,8 +270,8 @@ namespace IAEX
 					QDataStream out( &buffer );
 					out << *image;
 					buffer.close();
-					
-					QDomText imagedata = doc_.createTextNode( buffer.buffer().toBase64() ); 
+
+					QDomText imagedata = doc_.createTextNode( buffer.buffer().toBase64() );
 					imagenode.appendChild( imagedata );
 
 					currentElement_.appendChild( imagenode );
@@ -305,9 +305,9 @@ namespace IAEX
 	//CELLCURSOR
 	void SerializingVisitor::visitCellCursorNodeBefore(CellCursor *)
 	{
-	}      
+	}
 
 	void SerializingVisitor::visitCellCursorNodeAfter(CellCursor *)
 	{
 	}
-} 
+}

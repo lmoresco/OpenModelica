@@ -109,7 +109,7 @@ RML_BEGIN_LABEL(RML__string_5flist_5fstring_5fchar)
   void **strStartAddr = consp+(3*nelts); /* where the list ends the strings start */
   unsigned char *s = (unsigned char*)RML_STRINGDATA(rmlA0) + nelts;
   /* XXX: we should build the list in address order */
-  for(; nelts > 0; a0 = RML_TAGPTR(consp), consp += 3, strStartAddr +=2, --nelts) 
+  for(; nelts > 0; a0 = RML_TAGPTR(consp), consp += 3, strStartAddr +=2, --nelts)
   {
     consp[0] = RML_IMMEDIATE(RML_CONSHDR);
     p = (struct rml_string *)strStartAddr;
@@ -145,8 +145,8 @@ RML_BEGIN_LABEL(RML__string_5fnth_5fstring_5fchar)
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
   if( i >= RML_HDRSTRLEN(RML_GETHDR(str)) ) {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     struct rml_string *strnew = rml_prim_mkstring(1, 2);
     /* re-read after alloc, it may have been moved */
@@ -179,8 +179,8 @@ RML_BEGIN_LABEL(RML__string_5fget_5fstring_5fchar)
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1);
   if( i-1 >= RML_HDRSTRLEN(RML_GETHDR(str)) ) {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     struct rml_string *strnew = rml_prim_mkstring(1, 2);
     /* re-read after alloc, it may have been moved */
@@ -200,11 +200,11 @@ RML_BEGIN_LABEL(RML__string_5fsetnth)
   rml_uint_t len = RML_HDRSTRLEN(RML_GETHDR(rmlA0)); /* string lenght */
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1); /* index */
   rml_uint_t ch = (rml_uint_t)RML_UNTAGFIXNUM(rmlA2); /* char */
-  if( i >= RML_HDRSTRLEN(RML_GETHDR(strold)) ) 
+  if( i >= RML_HDRSTRLEN(RML_GETHDR(strold)) )
   {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
@@ -230,15 +230,15 @@ RML_BEGIN_LABEL(RML__string_5fupdate)
   rml_uint_t len = RML_HDRSTRLEN(RML_GETHDR(rmlA0)); /* string lenght */
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1); /* index */
   rml_uint_t ch = RML_UNTAGFIXNUM(rmlA2); /* char */
-  if( i-1 >= RML_HDRSTRLEN(RML_GETHDR(strold)) ) 
+  if( i-1 >= RML_HDRSTRLEN(RML_GETHDR(strold)) )
   {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */    
+    /* re-read after alloc, it may have been moved */
     unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
 	strold = rmlA0;
@@ -260,15 +260,15 @@ RML_BEGIN_LABEL(RML__string_5fsetnth_5fstring_5fchar)
   rml_uint_t len = RML_HDRSTRLEN(RML_GETHDR(rmlA0)); /* string lenght */
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1); /* index */
   rml_uint_t ch = RML_STRINGDATA(rmlA2)[0]; /* char */
-  if( i >= RML_HDRSTRLEN(RML_GETHDR(strold)) ) 
+  if( i >= RML_HDRSTRLEN(RML_GETHDR(strold)) )
   {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */    
+    /* re-read after alloc, it may have been moved */
     unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
 	strold = rmlA0;
@@ -290,15 +290,15 @@ RML_BEGIN_LABEL(RML__string_5fupdate_5fstring_5fchar)
   rml_uint_t len = RML_HDRSTRLEN(RML_GETHDR(rmlA0)); /* string lenght */
   rml_uint_t i = (rml_uint_t)RML_UNTAGFIXNUM(rmlA1); /* index */
   rml_uint_t ch = RML_STRINGDATA(rmlA2)[0]; /* char */
-  if( i-1 >= RML_HDRSTRLEN(RML_GETHDR(strold)) ) 
+  if( i-1 >= RML_HDRSTRLEN(RML_GETHDR(strold)) )
   {
     RML_TAILCALLK(rmlFC);
-  } 
-  else 
+  }
+  else
   {
     /* first copy the old string */
     struct rml_string *strnew = rml_prim_mkstring(len, 3);
-    /* re-read after alloc, it may have been moved */    
+    /* re-read after alloc, it may have been moved */
     unsigned char *sold = (unsigned char*)RML_STRINGDATA(rmlA0);
     unsigned char *snew = (unsigned char*)strnew->data;
 	strold = rmlA0;
@@ -319,11 +319,11 @@ RML_BEGIN_LABEL(RML__string_5fequal)
   char *str2 = RML_STRINGDATA(rmlA1);
   rml_uint_t len1 = strlen(str1);
   rml_uint_t len2 = strlen(str2);
-  if (len1 != len2) 
+  if (len1 != len2)
   {
     rmlA0 = RML_FALSE;
     RML_TAILCALLK(rmlSC);
-  } 
+  }
   if( !memcmp(str1, str2, len1) )
     rmlA0 = RML_TRUE;
   else

@@ -6,8 +6,8 @@
 #
 #
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 .testvariables:
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
@@ -19,10 +19,10 @@ endif
 srcdir= .
 top_builddir= ../..
 
-BOOST_HOME = 
+BOOST_HOME =
 RMLINCLUDE = ${OMDEV}/tools/rml/include/plain/
 
-USE_MODPAR = 
+USE_MODPAR =
 
 ifdef USE_MODPAR
 OBJECTS = Codegen.o \
@@ -47,7 +47,7 @@ INCFLAGS =-I$(RMLINCLUDE) -I$(BOOST_HOME) -I../../mosh/src
 
 CFLAGS = $(INCFLAGS) -g -Wall -DUNIX=1
 CXXFLAGS = $(CFLAGS)
-LIBS = 
+LIBS =
 
 
 TaskGraphExt.o: TaskGraphExt.cpp
@@ -58,7 +58,7 @@ MergeRule.o: MergeRule.cpp MergeRule.hpp
 SingleChildMerge.o: SingleChildMerge.cpp SingleChildMerge.hpp MergeRule.hpp
 DuplicateParentMerge.o: DuplicateParentMerge.cpp DuplicateParentMerge.hpp MergeRule.hpp
 MergeAllParents.o: MergeAllParents.cpp MergeAllParents.hpp MergeRule.hpp
-Schedule.o: Schedule.cpp Schedule.hpp 
+Schedule.o: Schedule.cpp Schedule.hpp
 
 clean:
 	rm -rf $(OBJECTS)

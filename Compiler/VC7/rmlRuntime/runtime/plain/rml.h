@@ -44,42 +44,42 @@ typedef unsigned int rml_uint_t;
 /* starting rml.h */
 #ifndef _RML_H_
 #define _RML_H_
-/* 
+/*
  * This file is part of OpenModelica.
- * 
+ *
  * It implements the Relational Meta-Language (RML) and MetaModelica
  * http://www.ida.liu.se/~pelab/rml
- * 
+ *
  * Copyright (c) 1998-2008, Linköpings University,
- * Department of Computer and Information Science, 
- * SE-58183 Linköping, Sweden. 
- * 
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
  * All rights reserved.
- * 
- * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
- * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
- * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
- * PUBLIC LICENSE. 
- * 
- * The OpenModelica software and the Open Source Modelica 
- * Consortium (OSMC) Public License (OSMC-PL) are obtained 
- * from Linköpings University, either from the above address, 
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
  * from the URL: http://www.ida.liu.se/projects/OpenModelica
  * and in the OpenModelica distribution.
- * 
- * This program is distributed  WITHOUT ANY WARRANTY; without 
- * even the implied warranty of  MERCHANTABILITY or FITNESS 
- * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
- * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
- * OF OSMC-PL. 
- * 
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
  * See the full OSMC Public License conditions for more details.
- * 
+ *
  */
 
 /*
  * rml-core.h
- * 
+ *
  * A value is represented as a 32-bit quantity with a tag in the lowest bit.
  * An even value i<<1 represents the integer i.
  * An odd value p+3 represents (a pointer to) the node at even address p-3.
@@ -360,7 +360,7 @@ struct rml_gval {
     } u;
     struct rml_gval *next;
     const char *name;
-};     
+};
 #define RML_GVAL_VALUE(GVAL) ((GVAL).u.value)
 extern void rml_gval_init(struct rml_gval*);
 extern void RML_5finit(void);
@@ -438,7 +438,7 @@ extern void rml_user_gc(struct rml_xgcstate *state);
 
 struct rml_state {
   void *SP, *FC, *SC, **TP, *ARGS[RML_NUM_ARGS];
-  void **young_next, **young_limit; 
+  void **young_next, **young_limit;
   void **ATP;
   rml_uint_t nrArgs;
 };
@@ -1010,12 +1010,12 @@ extern void RML__call_debug(char* fileName, int sp, int ep, int sl, int sc, int 
 typedef struct rmldb_command_t
 {
 	int ty;   /* the command type */
-	union 
+	union
 	{
 		struct brkFile      	 { char *file; int   line;   		} brkFile;
-		struct brkFunction  	 { char *file; char *name;   		} brkFunction;		
+		struct brkFunction  	 { char *file; char *name;   		} brkFunction;
 		struct brkString		 { char *filter;             		} brkString;
-        struct brkFailure        { char *filter;                    } brkFailure;        
+        struct brkFailure        { char *filter;                    } brkFailure;
 		struct varValue			 { char *name;       	    		} varValue;
 		struct lazyVarValue		 { char *name; int *path;			} lazyVarValue;
 		struct frameVarValue     { int frame; int nr;				} frameVarValue;
@@ -1038,43 +1038,43 @@ extern rmldb_command_type* rmldb_mk_cmd_frameLazyVarValue(int ty, char* frame, c
 extern int rmldb_freeCommand(rmldb_command_type* cmd);
 
 #endif /* _RMLDB_COMMAND_H_*/
-/* 
+/*
  * This file is part of OpenModelica.
- * 
+ *
  * It implements the Relational Meta-Language (RML) and MetaModelica
  * http://www.ida.liu.se/~pelab/rml
- * 
+ *
  * Copyright (c) 1998-2008, Linköpings University,
- * Department of Computer and Information Science, 
- * SE-58183 Linköping, Sweden. 
- * 
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
  * All rights reserved.
- * 
- * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
- * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
- * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
- * PUBLIC LICENSE. 
- * 
- * The OpenModelica software and the Open Source Modelica 
- * Consortium (OSMC) Public License (OSMC-PL) are obtained 
- * from Linköpings University, either from the above address, 
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
  * from the URL: http://www.ida.liu.se/projects/OpenModelica
  * and in the OpenModelica distribution.
- * 
- * This program is distributed  WITHOUT ANY WARRANTY; without 
- * even the implied warranty of  MERCHANTABILITY or FITNESS 
- * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
- * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
- * OF OSMC-PL. 
- * 
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
  * See the full OSMC Public License conditions for more details.
- * 
+ *
  * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
- * 
+ *
  */
 
 /*
- * [ rml-socket.h ] 
+ * [ rml-socket.h ]
  * - Adrian Pop, adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo
  * - creation 2007-02-24
  *   + interface for Windows and Linux sockets
@@ -1111,45 +1111,45 @@ extern int rmldb_freeCommand(rmldb_command_type* cmd);
 
 #endif
 
-/* 
- * set to 1 to have debugging or to 0 to 
+/*
+ * set to 1 to have debugging or to 0 to
  * disable debugging of the socket communication
  */
 extern int   rmldb_socket_debug;
-/* 
+/*
  * initialize the socket library
  * returns -1 on error and 1 on success.
  */
-extern int   rmldb_socket_initialize_library(void);  
-/* 
+extern int   rmldb_socket_initialize_library(void);
+/*
  * cleanups the socket library
  * returns -1 on error and 1 on success.
  */
-extern int   rmldb_socket_cleanup_library(void);  
+extern int   rmldb_socket_cleanup_library(void);
 
-/* 
- * get a socket 
+/*
+ * get a socket
  * returns -1 or the socket
  */
 extern int   rmldb_socket_get(void);
 
-/* 
+/*
  * binds the given socket on localhost and given port
  * performs bind and listen
  * returns -1 on error and 0 on success
  */
 extern int   rmldb_socket_bind_and_listen(int socket, char* hostname, int port);
-/* 
- * performs accept on the given socket 
+/*
+ * performs accept on the given socket
  * returns the new socket or -1 on error
  */
 extern int   rmldb_socket_accept(int socket);
 
-/* 
- * close the socket 
- * returns -1 for error or 0 for no error 
+/*
+ * close the socket
+ * returns -1 for error or 0 for no error
  */
-extern int   rmldb_socket_close(int socket); 
+extern int   rmldb_socket_close(int socket);
 
 /* send to socket with error handling */
 extern int rmldb_socket_outln(int sock, char *msg);
@@ -1187,7 +1187,7 @@ typedef struct rmldb_communication
 	int   cmd_bind_sock;     /* bind and accept on this socket */
 	int   cmd_sock;          /* listen for commands on this socket */
 	int   reply_bind_sock;   /* bind and accept on this socket */
-	int   reply_sock;        /* send reply of commands to this socket */	
+	int   reply_sock;        /* send reply of commands to this socket */
 	int   event_bind_sock;   /* bind and accept on this socket */
 	int   event_sock;        /* send output to this port */
 	int   signal_bind_sock;  /* bind and accept on this socket */
@@ -1208,11 +1208,11 @@ extern int rmldb_sendReply(char* reply);
 
 #endif /*HANDLER_H_*/
 /***********************************************************
- [ load.h ] 
+ [ load.h ]
   - Adrian Pop, adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo
   - creation 2005-12-27
-    + interface for rml debugging 
-    + this file contains all the functions for loading the program database. 
+    + interface for rml debugging
+    + this file contains all the functions for loading the program database.
 	+ all things in this file start with rmldb_
   - last modified 2007-06-01
 ************************************************************/
@@ -1283,38 +1283,38 @@ typedef struct rmldb_str_list
 */
 
 /* define type ahead, as is it mutually recursive
- * with type components 
+ * with type components
  */
 struct rmldb_type;
 
 typedef struct rmldb_LISTty
 {
    int length;
-   struct rmldb_type* list_start; 
+   struct rmldb_type* list_start;
    struct rmldb_type* list_end;
 } rmldb_LISTty_t;
 
 typedef struct rmldb_VARty { char* id; } rmldb_VARty_t;
 
-typedef struct rmldb_CONSty 
-{ 
+typedef struct rmldb_CONSty
+{
 	rmldb_LISTty_t* list;
 	char* id;
 } rmldb_CONSty_t;
 
-typedef struct rmldb_TUPLEty 
-{ 
+typedef struct rmldb_TUPLEty
+{
 	rmldb_LISTty_t* list;
 } rmldb_TUPLEty_t;
 
-typedef struct rmldb_RELty 
-{ 
+typedef struct rmldb_RELty
+{
 	rmldb_LISTty_t* list1;
 	rmldb_LISTty_t* list2;
 } rmldb_RELty_t;
 
 
-typedef enum rmldb_tyKind 
+typedef enum rmldb_tyKind
 {
 	RMLDB_eNORMAL,
 	RMLDB_eLISTty,
@@ -1335,10 +1335,10 @@ typedef struct rmldb_type
 	 rmldb_TUPLEty_t* t;
 	 rmldb_RELty_t*   r;
    } component;
-   
+
    /* this is used to name the component */
    char* name;
-   
+
    /* these are used in rmldb_LISTty */
    int depth;
    struct rmldb_type *prev;
@@ -1459,38 +1459,38 @@ extern rmldb_relation_db_t* rmldb_relation_db_end;
 /* function to work with the program database */
 extern int  rmldb_load_db(char** programdb);
 extern void rmldb_type_list_push_front(
-					rmldb_type_t **start_node, 
-				    rmldb_type_t **end_node, 
+					rmldb_type_t **start_node,
+				    rmldb_type_t **end_node,
 					rmldb_type_t *node);
 
 extern void rmldb_type_list_push_back(
-					rmldb_type_t **start_node, 
-				    rmldb_type_t **end_node, 
+					rmldb_type_t **start_node,
+				    rmldb_type_t **end_node,
 					rmldb_type_t *node);
 
 extern void rmldb_str_list_add(
-					rmldb_str_t **start_node, 
-				    rmldb_str_t **end_node, 
+					rmldb_str_t **start_node,
+				    rmldb_str_t **end_node,
 					rmldb_str_t *node);
 
 extern void rmldb_var_db_add(
-					rmldb_var_db_t **start_node, 
-				    rmldb_var_db_t **end_node, 
+					rmldb_var_db_t **start_node,
+				    rmldb_var_db_t **end_node,
 					rmldb_var_db_t *node);
 
 extern void rmldb_con_db_add(
-					rmldb_con_db_t **start_node, 
-				    rmldb_con_db_t **end_node, 
+					rmldb_con_db_t **start_node,
+				    rmldb_con_db_t **end_node,
 					rmldb_con_db_t *node);
 
 extern void rmldb_type_db_add(
-					rmldb_type_db_t **start_node, 
-				    rmldb_type_db_t **end_node, 
+					rmldb_type_db_t **start_node,
+				    rmldb_type_db_t **end_node,
 					rmldb_type_db_t *node);
 
 extern void rmldb_relation_db_add(
-					rmldb_relation_db_t **start_node, 
-				    rmldb_relation_db_t **end_node, 
+					rmldb_relation_db_t **start_node,
+				    rmldb_relation_db_t **end_node,
 					rmldb_relation_db_t *node);
 
 /* program database stream */
@@ -1500,46 +1500,46 @@ extern int   aarmldbdebug;
 extern int   aarmldb_lineno;
 
 #endif /* _RMLDB_LOAD_H_  */
-/* 
+/*
  * This file is part of OpenModelica.
- * 
+ *
  * It implements the Relational Meta-Language (RML) and MetaModelica
  * http://www.ida.liu.se/~pelab/rml
- * 
+ *
  * Copyright (c) 1998-2008, Linköpings University,
- * Department of Computer and Information Science, 
- * SE-58183 Linköping, Sweden. 
- * 
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
  * All rights reserved.
- * 
- * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC 
- * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF 
- * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC 
- * PUBLIC LICENSE. 
- * 
- * The OpenModelica software and the Open Source Modelica 
- * Consortium (OSMC) Public License (OSMC-PL) are obtained 
- * from Linköpings University, either from the above address, 
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
  * from the URL: http://www.ida.liu.se/projects/OpenModelica
  * and in the OpenModelica distribution.
- * 
- * This program is distributed  WITHOUT ANY WARRANTY; without 
- * even the implied warranty of  MERCHANTABILITY or FITNESS 
- * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH 
- * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS 
- * OF OSMC-PL. 
- * 
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
  * See the full OSMC Public License conditions for more details.
- * 
+ *
  * @author Adrian Pop [adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo]
- * 
+ *
  */
 /***********************************************************
- [ debug.h ] 
+ [ debug.h ]
   - Adrian Pop, adrpo@ida.liu.se, http://www.ida.liu.se/~adrpo
   - creation 2002-10
-    + interface for rml debugging 
-    + this file contains all the functions for debugging 
+    + interface for rml debugging
+    + this file contains all the functions for debugging
 	+ all things in this file start with rmldb_
   - last modified 2005-12-27
 ************************************************************/
@@ -1593,9 +1593,9 @@ extern int rmdlb_handle_variable_request(rmldb_command_type* cmd);
 /* stack */
 extern int rmdlb_handle_stack_request(rmldb_command_type* cmd);
 extern int rmldb_push_stack_frame(
-			char* file, 
-			int charStart, int charEnd, 
-			int startLine, int startColumn, int endLine, int endColumn,					  
+			char* file,
+			int charStart, int charEnd,
+			int startLine, int startColumn, int endLine, int endColumn,
 			char* function,
 			char* call);
 extern int rmldb_pop_stack_frame(char gototype);

@@ -28,6 +28,7 @@ The latest OpenModelica uses Qt for potting and 3D functionality. You will also 
               to
                static void delete_dict_value(uintptr_t key, void * value)
 
+
 How to compile on Ubuntu Linux (using available binary packages for dependencies)
 =================================================================================
 

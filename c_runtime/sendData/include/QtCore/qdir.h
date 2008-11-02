@@ -28,7 +28,7 @@
 ** functionality provided by Qt Designer and its related libraries.
 **
 ** Trolltech reserves all rights not expressly granted herein.
-** 
+**
 ** Trolltech ASA (c) 2007
 **
 ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
@@ -77,7 +77,7 @@ public:
                   Modified    = 0x080,
                   Hidden      = 0x100,
                   System      = 0x200,
-                 
+
                   AccessMask  = 0x3F0,
 
                   AllDirs       = 0x400,
@@ -104,7 +104,7 @@ public:
                     Reversed    = 0x08,
                     IgnoreCase  = 0x10,
                     DirsLast    = 0x20,
-                    LocaleAware = 0x40, 
+                    LocaleAware = 0x40,
                     Type        = 0x80,
                     NoSort = -1
 #ifdef QT3_SUPPORT

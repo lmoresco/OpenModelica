@@ -85,7 +85,7 @@ int DeleteDir(LPCTSTR lpszName)
 	WIN32_FIND_DATA info;
     HANDLE hp;
     char *cp;
-	
+
 	sprintf(name1, "%s\\*.*",lpszName);
     hp = FindFirstFile(name1,&info);
     if(!hp || hp==INVALID_HANDLE_VALUE)
@@ -122,7 +122,7 @@ int DeleteDir(LPCTSTR lpszName)
 	{
 		printf("success\n");
 		ret=1;
-	}	
+	}
 	else
 	{
 		printf("error %d\n",GetLastError());
@@ -140,15 +140,15 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	bool deldir = false;
 	DWORD dwReturnValue;
 
-	/* 
+	/*
 	 * Adrian Pop - 2007-03-23
-	 * just send an update message to all windows! 
+	 * just send an update message to all windows!
 	 * and then just exit
 	 *
 	 */
 	SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)"Environment", SMTO_ABORTIFHUNG, 5000, &dwReturnValue);
 
-	/* Adrian Pop - 2007-05-09 
+	/* Adrian Pop - 2007-05-09
 	 * broadcast the environment change again.
 	 */
 	/*
@@ -228,7 +228,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 {
 	WNDCLASSEX wcex;
 
-	wcex.cbSize = sizeof(WNDCLASSEX); 
+	wcex.cbSize = sizeof(WNDCLASSEX);
 
 	wcex.style			= CS_HREDRAW | CS_VREDRAW;
 	wcex.lpfnWndProc	= (WNDPROC)WndProc;
@@ -291,11 +291,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 
-	switch (message) 
+	switch (message)
 	{
 	case WM_COMMAND:
-		wmId    = LOWORD(wParam); 
-		wmEvent = HIWORD(wParam); 
+		wmId    = LOWORD(wParam);
+		wmEvent = HIWORD(wParam);
 		// Parse the menu selections:
 		switch (wmId)
 		{
@@ -332,7 +332,7 @@ LRESULT CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 		return TRUE;
 
 	case WM_COMMAND:
-		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) 
+		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
 		{
 			EndDialog(hDlg, LOWORD(wParam));
 			return TRUE;

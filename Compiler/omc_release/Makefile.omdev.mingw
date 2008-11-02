@@ -8,8 +8,8 @@
 
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 
 .testvariables:
 ifndef OMDEV
@@ -70,7 +70,7 @@ SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
 
 $(ALLMO): %.mo : $(srcdir)/%.mo
 	cp -p $< $@
-	
+
 $(SRCO): %.o : %.c %.h
 	$(RML) -c $<
 
@@ -92,7 +92,7 @@ vctarget: $(SRCC) absyn_subdir
 absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
-$(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a 
+$(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
 	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
 
 
@@ -108,9 +108,9 @@ clean:
 	done
 	(cd $(srcdir) && $(RM) $(SRCH))
 	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
-	
+
 clear-rmod-rsig:
-	-rm *.srz *.sig ../*.srz ../*.sig	
+	-rm *.srz *.sig ../*.srz ../*.sig
 
 realclean:
 	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG)

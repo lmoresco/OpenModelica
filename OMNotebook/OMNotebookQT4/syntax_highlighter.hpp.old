@@ -18,7 +18,7 @@ are permitted provided that the following conditions are met:
 
     * Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-    
+
 	* Redistributions in binary form must reproduce the above copyright notice,
       this list of conditions and the following disclaimer in the documentation
       and/or other materials provided with the distribution.
@@ -61,7 +61,7 @@ class QFont;
 
 /*! \class TextEditorFontAndColors
  *
- * \brief A structure for describing colors for different keywords. 
+ * \brief A structure for describing colors for different keywords.
  */
 class TextEditorFontAndColors
 {
@@ -70,11 +70,11 @@ public:
 			  TextEditorFontAndColors& rhs);
    friend bool operator!=(const TextEditorFontAndColors& lhs, const
 			  TextEditorFontAndColors& rhs);
-   
+
 public:
    QString fontFamily_;
    int fontSize_;
-   
+
    QColor textForeground_;
    QColor textBackground_;
    QColor typeForeground_;
@@ -97,13 +97,13 @@ public:
    QColor commentBackground_;
 };
 
- 
+
 class ModelicaSyntaxHighlighter : public Q3SyntaxHighlighter//, QObject
 {
 //   Q_OBJECT
 
 public:
-   ModelicaSyntaxHighlighter(Q3TextEdit* textEdit, 
+   ModelicaSyntaxHighlighter(Q3TextEdit* textEdit,
 			     const TextEditorFontAndColors& fontAndColors);
    ~ModelicaSyntaxHighlighter();
 

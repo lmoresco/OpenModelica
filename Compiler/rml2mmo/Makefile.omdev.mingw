@@ -7,8 +7,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 
 .testvariables:
 ifndef OMDEV
@@ -21,7 +21,7 @@ endif
 srcdir = ..
 top_builddir = ../..
 
-all : .testvariables  
+all : .testvariables
 	@echo Already moved to .mo files ... NO GENERATION!
 	#./rdball.sh ; ./trall.sh
 

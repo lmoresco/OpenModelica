@@ -1,6 +1,6 @@
 // FILE/CLASS ADDED 2005-20-27 /AF
 
-/*! 
+/*!
  * \file highlighter.cpp
  * \author www.trolltech.com
  *
@@ -60,7 +60,7 @@ void Highlighter::addMapping(const QString &pattern,
 }
 
 // Added 2005-11-13 AF, need it to have strings/comments span over sevral blocks
-void Highlighter::addCommentLineMapping( const QString &pattern, 
+void Highlighter::addCommentLineMapping( const QString &pattern,
 	const QTextCharFormat &format )
 {
 	commentLine_.setPattern( pattern );
@@ -68,8 +68,8 @@ void Highlighter::addCommentLineMapping( const QString &pattern,
 }
 
 // Added 2005-11-13 AF, need it to have strings/comments span over sevral blocks
-void Highlighter::addStringMapping( const QString &patternStart, 
-	const QString &patternEnd, 
+void Highlighter::addStringMapping( const QString &patternStart,
+	const QString &patternEnd,
 	const QTextCharFormat &format )
 {
 	stringStart_.setPattern( patternStart );
@@ -78,8 +78,8 @@ void Highlighter::addStringMapping( const QString &patternStart,
 }
 
 // Added 2005-11-13 AF, need it to have strings/comments span over sevral blocks
-void Highlighter::addCommentMapping( const QString &patternStart, 
-	const QString &patternEnd, 
+void Highlighter::addCommentMapping( const QString &patternStart,
+	const QString &patternEnd,
 	const QTextCharFormat &format )
 {
 	commentStart_.setPattern( patternStart );
@@ -170,7 +170,7 @@ void Highlighter::highlightBlock(QTextBlock block)
 	else if( insideComment_ )
 	{
 		int end = text.indexOf( commentEnd_, startPos );
-		
+
 		if( end >= 0 )
 		{ // found end in this block
 			startPos = end + commentEnd_.matchedLength();
@@ -193,16 +193,16 @@ void Highlighter::highlightBlock(QTextBlock block)
 			overrides << range;
 		}
 	}
-	
-	
+
+
 	if( !wholeBlock )
 	{
-		foreach( QString pattern, mappings.keys() ) 
+		foreach( QString pattern, mappings.keys() )
 		{
 			QRegExp expression( pattern );
 			int i = text.indexOf( expression, startPos );
 
-			while( i >= 0 ) 
+			while( i >= 0 )
 			{
 				QTextLayout::FormatRange range;
 				range.start = i;
@@ -213,7 +213,7 @@ void Highlighter::highlightBlock(QTextBlock block)
 				i = text.indexOf(expression, i + expression.matchedLength());
 			}
 		}
-	
+
 
 		while( true )
 		{
@@ -230,11 +230,11 @@ void Highlighter::highlightBlock(QTextBlock block)
 				firstCommentLine = text.indexOf( commentLine_, startPos );
 
 
-			if( firstString >= 0 && 
-				( (firstString < firstComment) || (firstComment < 0) ) && 
+			if( firstString >= 0 &&
+				( (firstString < firstComment) || (firstComment < 0) ) &&
 				( (firstString < firstCommentLine) || (firstCommentLine < 0) ))
 			{
-				int end = text.indexOf( stringEnd_, 
+				int end = text.indexOf( stringEnd_,
 					firstString + stringStart_.matchedLength() );
 				if( end >= 0 )
 				{
@@ -257,11 +257,11 @@ void Highlighter::highlightBlock(QTextBlock block)
 					break;
 				}
 			}
-			else if( firstComment >= 0 && 
+			else if( firstComment >= 0 &&
 				( (firstComment < firstString) || (firstString < 0) ) &&
 				( (firstComment < firstCommentLine) || (firstCommentLine < 0) ))
 			{
-				int end = text.indexOf( commentEnd_, 
+				int end = text.indexOf( commentEnd_,
 					firstComment + commentStart_.matchedLength() );
 				if( end >= 0 )
 				{
@@ -284,7 +284,7 @@ void Highlighter::highlightBlock(QTextBlock block)
 					break;
 				}
 			}
-			else if( firstCommentLine >= 0 && 
+			else if( firstCommentLine >= 0 &&
 				( (firstCommentLine < firstString) || (firstString < 0) ) &&
 				( (firstCommentLine < firstComment) || (firstComment < 0) ))
 			{

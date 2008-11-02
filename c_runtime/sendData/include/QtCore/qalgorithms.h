@@ -28,7 +28,7 @@
 ** functionality provided by Qt Designer and its related libraries.
 **
 ** Trolltech reserves all rights not expressly granted herein.
-** 
+**
 ** Trolltech ASA (c) 2007
 **
 ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
@@ -239,7 +239,7 @@ template <typename RandomAccessIterator, typename T>
 Q_OUTOFLINE_TEMPLATE RandomAccessIterator qLowerBound(RandomAccessIterator begin, RandomAccessIterator end, const T &value)
 {
     // Implementation is duplicated from QAlgorithmsPrivate to keep existing code
-    // compiling. We have to allow using *begin and value with different types, 
+    // compiling. We have to allow using *begin and value with different types,
     // and then implementing operator< for those types.
     RandomAccessIterator middle;
     int n = end - begin;
@@ -429,9 +429,9 @@ Q_OUTOFLINE_TEMPLATE void qReverse(RandomAccessIterator begin, RandomAccessItera
 template <typename RandomAccessIterator>
 Q_OUTOFLINE_TEMPLATE void qRotate(RandomAccessIterator begin, RandomAccessIterator middle, RandomAccessIterator end)
 {
-    qReverse(begin, middle); 
-    qReverse(middle, end); 
-    qReverse(begin, end); 
+    qReverse(begin, middle);
+    qReverse(middle, end);
+    qReverse(begin, end);
 }
 
 template <typename RandomAccessIterator, typename T, typename LessThan>
@@ -475,7 +475,7 @@ Q_OUTOFLINE_TEMPLATE void qStableSortHelper(RandomAccessIterator begin, RandomAc
     const int span = end - begin;
     if (span < 2)
        return;
-       
+
     const RandomAccessIterator middle = begin + span / 2;
     qStableSortHelper(begin, middle, t, lessThan);
     qStableSortHelper(middle, end, t, lessThan);

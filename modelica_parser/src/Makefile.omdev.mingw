@@ -6,8 +6,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 .testvariables:
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....

@@ -6,8 +6,8 @@
 #
 
 # The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV 
-# Test if the needed variables are there... 
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
 .testvariables:
 ifndef OMDEV
 	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
@@ -49,7 +49,7 @@ parserobjs=$(parsersrcs:.cpp=.o)
 
 helperobjs =  parse_tree_dumper.o token_names.o
 
-OBJS += $(lexerobjs) $(parserobjs) 
+OBJS += $(lexerobjs) $(parserobjs)
 #$(helperobjs)
 
 all: .testvariables libflat_modelica_parser.a
@@ -86,7 +86,7 @@ reallyclean: clean
 flat_modelica_lexer.o:flat_modelica_lexer.cpp flat_modelica_lexer.hpp
 flat_modelica_parser.o:flat_modelica_parser.cpp flat_modelica_parser.hpp
 #token_names.o:token_names.cpp
-parse_tree_dumper.o: 
+parse_tree_dumper.o:
 	cd $(MODELICA_PARSER) && make -f Makefile.omdev.mingw && cd ../../flat_modelica_parser/src
 
 
