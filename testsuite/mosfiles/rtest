@@ -248,9 +248,13 @@ sub dofile
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	if (/^\/\/[ \\|]([a-z]*): *([^\r|^\n]*)$/) {
+	# @adrpo - uncomment for debugging
+	# print ($_);
+	if (/^\/\/[ \\|]*([a-z]*):[ \\|]*([^\012\015\n\r]*)/) {
+	    # @adrpo - uncomment for debugging
+	    # print "Noticed: $1 = $2\n";		
+	    # $info{$1} = $value;
 	    $info{$1} = $2;
-	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ Result:/../^\/\/ endResult/) {
 	    s/^[ \t]*//;
 	    s/^\/\/ Result://;
@@ -417,9 +421,7 @@ sub LessThanEpsilon
 
 # Check for no file args
 if ($filearg == 0) {
-    system "mkdir /tmp/log-drmodelica";
-    for (glob '*.mo ') { dofile $_; }
-    system "rm -rf /tmp/log-drmodelica";
+    for (glob '*.mos ') { dofile $_; }
 }
 
 # Final output. Statistics and stuff
