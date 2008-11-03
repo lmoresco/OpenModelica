@@ -61,7 +61,9 @@ Setting your environment for compiling OpenModelica
   (Ubuntu: $ export ANTLRHOME=/usr/ )
 
   Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
-  (Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar )
+  (Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar
+     Note: you might need to use CLASSPATH=/usr/share/java/antlrall.jar
+           if the above doesn't work.)
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
 
