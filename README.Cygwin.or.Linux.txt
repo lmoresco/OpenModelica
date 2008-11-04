@@ -58,12 +58,10 @@ NOTE:
 Setting your environment for compiling OpenModelica
 ===================================================
   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
-  (Ubuntu: $ export ANTLRHOME=/usr/ )
+  ( Ubuntu: $ export ANTLRHOME=/usr/ )
 
   Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
-  (Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar
-     Note: you might need to use CLASSPATH=/usr/share/java/antlrall.jar
-           if the above doesn't work.)
+  ( Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar )
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
 
@@ -75,7 +73,7 @@ Setting your environment for compiling OpenModelica
 
   For the new Qt based plotting functionality you will need to:
   - Set QTHOME to where you compiled Qt 4.x.x
-    (Ubuntu: QTHOME=/usr/ )
+    ( Ubuntu: QTHOME=/usr/ )
         NOTE: if you don't define QTHOME you won't be able to plot
               using plot and plotParameteric but it will work with
               plot2 and plotParametric2 functions.
