@@ -11,7 +11,9 @@ end test2;
 
 function test3
   input Real a;
-  output Real x := a+5;
+  output Real x;
+algorithm
+  x := a+5;
 end test3;
 
 function test
