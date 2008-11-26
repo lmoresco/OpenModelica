@@ -2,10 +2,11 @@
 
 all :
 	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
-	cd mofiles; $(MAKE) -f Makefile test; \
-	cd msl; $(MAKE) -f Makefile test; \
-	cd ../../mosfiles; $(MAKE) -f Makefile test; \
-	cd ../meta; $(MAKE) -f Makefile test
+	cd mofiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
+	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
+	cd ../../mosfiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
+	cd ../meta; $(MAKE) -f Makefile test; rm -f *.dll *.so;
+	
 failingtest:
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
