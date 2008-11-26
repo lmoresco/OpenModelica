@@ -9,10 +9,10 @@ loadFile("LotkaVolterra.mo");
 simulate(LotkaVolterra,startTime=0.0, stopTime=760.0, numberOfIntervals=300, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 //size:=readSimulationResultSize("LotkaVolterra_res.plt");
-//res:=readSimulationResult("LotkaVolterra_res.plt",{rabbits,foxes},size); 
+//res:=readSimulationResult("LotkaVolterra_res.plt",{rabbits,foxes},size);
 decimals := 10.0;
-x1:=val(rabbits,180.0);
-y1:=val(foxes,200.0);
+x1:=val(rabbits,180);
+y1:=val(foxes,200);
 x2:=val(rabbits,666.0);
 y2:=val(foxes,760.0);
 x1:=decimals*x1;
@@ -37,14 +37,14 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log"); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "LotkaVolterra_res.plt"
-// end record
+// end SimulationResult;
 // true
-// 4309.8
-// 1155.4
-// 312.0
-// 43.7
+// 4309.9
+// 1156.9
+// 312.1
+// 43.6
 // ""
 // 0
 // endResult

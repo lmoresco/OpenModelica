@@ -10,10 +10,10 @@ simulate(DoubleWhenConflict,numberOfIntervals=2, tolerance=1e-5); // 2 intervals
 getErrorString(); // simulation failed, check error string.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed.
 // Too many equations, overdetermined system. The model has 1 variables and 2 equations
 // "
-// end record
+// end SimulationResult;
 // ""
 // endResult

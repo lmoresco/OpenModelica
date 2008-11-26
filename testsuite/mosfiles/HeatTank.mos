@@ -10,11 +10,11 @@ simulate(HeatTank,numberOfIntervals=10, tolerance=1e-5); // 2 intervals == 3 val
 getErrorString(); // simulation failed, check error string.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed.
 // Variable inlet.temp not found in scope HeatTank
 // Error occured while flattening model HeatTank
 // "
-// end record
+// end SimulationResult;
 // ""
 // endResult

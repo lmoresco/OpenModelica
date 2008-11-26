@@ -18,9 +18,9 @@ system("rm -rf ForIterator1_* ForIterator1.exe ForIterator1.cpp ForIterator1.mak
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "ForIterator1_res.plt"
-// end record
+// end SimulationResult;
 // 6.3
 // 15.0
 // 12.0

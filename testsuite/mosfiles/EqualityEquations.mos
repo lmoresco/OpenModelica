@@ -10,11 +10,11 @@ getErrorString(); // simulation failed, check error string.
 system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 // Result:
 // incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.true
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed.
 // Too few equations, underdetermined system. The model has 3 variables and 2 equations
 // "
-// end record
+// end SimulationResult;
 // ""
 // 0
 // endResult

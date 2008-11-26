@@ -15,9 +15,9 @@ system("rm -rf ExtObj.lib");
 // Result:
 // true
 // 0
-// record
+// record SimulationResult
 //     resultFile = "testextobj_res.plt"
-// end record
+// end SimulationResult;
 // {1.0,1.6,2.2,2.6,2.8,3.0,3.2,3.4,3.6,3.8,4.0}
 // ""
 // 0

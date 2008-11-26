@@ -25,9 +25,9 @@ system("rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSam
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "TwoRateSampler_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 0.912
 // 0.395

@@ -11,9 +11,9 @@ system("rm -rf MatchCase1_* MatchCase1.exe MatchCase1.cpp MatchCase1.makefile Ma
 
 // Result:
 // true
-// record
+// record SimulationResult
 //    resultFile = "MatchCase1_res.plt"
-// end record
+// end SimulationResult;
 // 2.0
 // 0
 // endResult

@@ -36,9 +36,9 @@ readFile("output.log");
 system("rm -rf Xpowers1_* Xpowers1.exe Xpowers1.cpp Xpowers1.makefile Xpowers1.libs Xpowers1.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Xpowers1_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 1.0
 // 10.0

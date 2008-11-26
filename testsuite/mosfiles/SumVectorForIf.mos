@@ -17,9 +17,9 @@ readFile("output.log");
 system("rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "SumVectorForIf_res.plt"
-// end record
+// end SimulationResult;
 // true
 // {1500.0,1500.0,1500.0}
 // ""

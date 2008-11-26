@@ -189,6 +189,10 @@ sub runone
 	    	  					print LOG "expected:$e1 - got:$g1 < epsilon:$epsilon\n";
 	    					}
 	    				}
+	    				else
+	    				{
+	    					goto DEFAULT;
+	    				}
 	    			}
 	    		}
 	    		else 

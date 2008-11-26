@@ -23,11 +23,7 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 // Result:
 // true
 // 0
-// "Check of tt successful.
-// 
-// model tt has 18 equation(s) and 18 variable(s).
-// 6 of these are trivial equation(s).
-// "
+// "Check of tt successful. Model tt has 18 equation(s) and 18 variable(s)."
 // "fclass tt
 // Real x[1,1];
 // Real x[1,2];
@@ -59,9 +55,9 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 // end tt;
 // "
 // {"tt","tt_init.txt"}
-// record
+// record SimulationResult
 //     resultFile = "tt_res.plt"
-// end record
+// end SimulationResult;
 // {1.0,2.0,3.0}
 // {4.0,5.0,6.0}
 // {1.0,3.0}

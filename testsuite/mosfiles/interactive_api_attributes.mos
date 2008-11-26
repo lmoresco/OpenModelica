@@ -5,50 +5,83 @@
 //  Subset of the Graphical API for setting component attributes
 //
 
-createModel(A);
-addComponent(x,Real ,A);
-setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});
-getComponents(A);
-setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});
-getComponents(A);
-setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"});
-getComponents(A);
-setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});
-getComponents(A);
-updateComponent(x,Integer,A);
-getComponents(A);
-setComponentComment(A,x,"comment for x");
-addConnection(a,b,A);
-setConnectionComment(A,a,b,"connecting a and b");	
-setClassComment(A,"this is the class A");
-getClassInformation(A);
-getComponents(A);
-list(A);
+createModel(A);                                                                           getErrorString();
+addComponent(x,Real,A);                                                                   getErrorString();
+setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});             getErrorString();
+getComponents(A);                                                                         getErrorString();
+// test the setting of "stream"
+setComponentProperties(A ,x,{true,false,true,true,true},{""},{true,true},{"input"});      getErrorString();
+getComponents(A);                                                                         getErrorString();
+setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});   getErrorString();
+getComponents(A);                                                                         getErrorString();
+setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"}); getErrorString();
+getComponents(A);                                                                         getErrorString();
+setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});     getErrorString();
+getComponents(A);                                                                         getErrorString();
+updateComponent(x,Integer,A);                                                             getErrorString();
+getComponents(A);                                                                         getErrorString();
+setComponentComment(A,x,"comment for x");                                                 getErrorString();
+addConnection(a,b,A);                                                                     getErrorString();
+setConnectionComment(A,a,b,"connecting a and b");	                                        getErrorString();
+setClassComment(A,"this is the class A");                                                 getErrorString();
+getClassInformation(A);                                                                   getErrorString();
+getComponents(A);                                                                         getErrorString();
+addComponent(y,Real,A);                                                                   getErrorString();
+setComponentProperties(A ,y,{true,false,true,false,false},{""},{false,false},{""});       getErrorString();
+list(A);                                                                                  getErrorString();
 // Result:
 // true
+// ""
 // true
+// ""
 // Ok
-// {{Real,x,"", "public", false, false, false, "unspecified", "innerouter", "unspecified",{}}}
+// ""
+// {{Real,x,"", "public", false, false, false, false, "unspecified", "innerouter", "unspecified",{}}}
+// ""
 // Ok
-// {{Real,x,"", "protected", true, true, true, "parameter", "innerouter", "input",{}}}
+// ""
+// {{Real,x,"", "protected", true, false, true, true, "unspecified", "innerouter", "input",{}}}
+// ""
 // Ok
-// {{Real,x,"", "public", true, true, true, "constant", "outer", "output",{}}}
+// ""
+// {{Real,x,"", "protected", true, true, false, true, "parameter", "innerouter", "input",{}}}
+// ""
 // Ok
-// {{Real,x,"", "public", true, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
+// {{Real,x,"", "public", true, true, false, true, "constant", "outer", "output",{}}}
+// ""
+// Ok
+// ""
+// {{Real,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
 // true
-// {{Integer,x,"", "public", true, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
+// {{Integer,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
 // Ok
+// ""
 // Ok
+// ""
 // Ok
+// ""
 // Ok
+// ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
-// {{Integer,x,"comment for x", "public", true, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
+// {{Integer,x,"comment for x", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
+// ""
+// true
+// ""
+// Ok
+// ""
 // "model A "this is the class A"
 //   final inner discrete Integer x "comment for x";
+//   final stream Real y;
 // 
 // equation 
 //   connect(a,b) "connecting a and b";
 // end A;
 // 
 // "
+// ""
 // endResult

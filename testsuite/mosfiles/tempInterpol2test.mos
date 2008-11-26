@@ -13,9 +13,9 @@ system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs 
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "tempInterpol2test_res.plt"
-// end record
+// end SimulationResult;
 // 1.6
 // 2.6
 // 0

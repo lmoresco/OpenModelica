@@ -13,7 +13,7 @@ echo(false); // turns of output
 system("rm -rf AssertTestInst_* AssertTestInst.exe AssertTestInst.cpp AssertTestInst.makefile AssertTestInst.libs AssertTestInst.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "AssertTestInst_res.plt"
-// end record
+// end SimulationResult;
 // endResult

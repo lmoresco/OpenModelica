@@ -12,9 +12,9 @@ readFile("output.log");
 system("rm -rf TooManyPointsBug_* TooManyPointsBug.exe TooManyPointsBug.cpp TooManyPointsBug.makefile TooManyPointsBug.libs TooManyPointsBug.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "TooManyPointsBug_res.plt"
-// end record
+// end SimulationResult;
 // ""
 // 0
 // endResult

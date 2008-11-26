@@ -16,9 +16,9 @@ system("rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs d
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "dertest_res.plt"
-// end record
+// end SimulationResult;
 // 10.0
 // 4.1982410203818
 // -1.0

@@ -30,9 +30,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf MyPointsInst1_* MyPointsInst1.exe MyPointsInst1.cpp MyPointsInst1.makefile MyPointsInst1.libs MyPointsInst1.log output.log"); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "MyPointsInst1_res.plt"
-// end record
+// end SimulationResult;
 // true
 // {1.0,1.0,1.0,1.0}
 // {2.0,2.0,2.0,2.0}

@@ -24,20 +24,20 @@ res[1,1];
 readFile("output.log");
 // Result:
 // true
-// record
-// a = true,
+// record TestPkg.R
+//     a = true,
 //     tmp = "not"
-// end record
+// end TestPkg.R;
 // true
-// record
+// record SimulationResult
 //     resultFile = "m_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 1.0
 // ""
-// record
+// record SimulationResult
 //     resultFile = "TestPkg.subm_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 0.0
 // ""

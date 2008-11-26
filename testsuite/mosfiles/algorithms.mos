@@ -31,27 +31,27 @@ simulate(Alg4);
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Alg1_res.plt"
-// end record
+// end SimulationResult;
 // 2.0
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "Alg2_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "Alg3_res.plt"
-// end record
+// end SimulationResult;
 // 4.0
 // 3.0
 // 4.0
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed.
 // Internal error Inverse Algorithm needs to be solved for in   $x := 1.0 + $y;
 // . This is not implemented yet.
@@ -59,5 +59,5 @@ simulate(Alg4);
 // Internal error generate_zero_crossing failed
 // Internal error Generation of simulation code  failed
 // "
-// end record
+// end SimulationResult;
 // endResult

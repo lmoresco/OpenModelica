@@ -11,9 +11,9 @@ system("rm -rf List4_* List4.exe List4.cpp List4.makefile List4.libs List4.log o
 
 // Result:
 // true
-// record
+// record SimulationResult
 //    resultFile = "List4_res.plt"
-// end record
+// end SimulationResult;
 // 9.0
 // 0
 // endResult

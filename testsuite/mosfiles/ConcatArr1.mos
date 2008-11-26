@@ -27,9 +27,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf ConcatArr1_* ConcatArr1.exe ConcatArr1.cpp ConcatArr1.makefile ConcatArr1.libs ConcatArr1.log output.log"); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "ConcatArr1_res.plt"
-// end record
+// end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}
 // {2.0,2.0,2.0,2.0,2.0,2.0}

@@ -104,9 +104,9 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "TimeVaryingLinSys_res.plt"
-// end record
+// end SimulationResult;
 // 0.0
 // 0.740874716990085
 // 2.00000000000034
@@ -119,30 +119,30 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "NonLinSys_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // 0.88088057724555
 // 0.854031363919528
 // 0
 // 0
-// record
+// record SimulationResult
 //     resultFile = "dae1_res.plt"
-// end record
+// end SimulationResult;
 // 1.00066080211634
 // 0.000168488571094471
-// record
+// record SimulationResult
 //     resultFile = "dae2_res.plt"
-// end record
+// end SimulationResult;
 // 0.666665089163638
 // 0.5000014076278
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "NonLinSys3_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // 1.21473014906086
 // 1.64262701835091
@@ -153,18 +153,18 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 0
 // true
 // true
-// record
+// record SimulationResult
 //     resultFile = "Test3PhaseSystems.Test3PhaseSystem_res.plt"
-// end record
+// end SimulationResult;
 // -0.00869273954826455
 // -0.0218917584794523
 // 0.0305844980277178
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "BooleanModel_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // 1.0
 // 0.0
@@ -174,9 +174,9 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "LargeSteps_res.plt"
-// end record
+// end SimulationResult;
 // 0.0
 // -0.762648169337983
 // 0

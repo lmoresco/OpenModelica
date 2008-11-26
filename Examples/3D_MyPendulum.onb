@@ -64,15 +64,12 @@ end MyPendulum;</Input>
   <InputCell style="Input" closed="false" >
    <Input>simulate(MyPendulum, startTime=0, stopTime=5, numberOfIntervals=90)</Input>
    <Output>record
-    resultFile = "Simulation failed.
-Type mismatch in array expression. 0 is of type Real(start=0.0) while the elements [0] are of type Integer
-Error occured while flattening model MyPendulum
-"
+    resultFile = "MyPendulum_res.plt"
 end record</Output>
   </InputCell>
-  <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="4" Antialiasing="false" MinorY="10" Title="Plot title" LogX="false" LogY="false" MajorX="20" MajorY="50" closed="false" YLabel="y" Area="wEeU9KwtT0rAZ8xxxxxxxkBoISH7eBIeQGmb//////8=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
+  <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="4" Antialiasing="false" MinorY="10" Title="Plot title" LogX="false" LogY="false" MajorX="20" MajorY="50" closed="false" YLabel="y" Area="wEfy6CKbRVLAdvx3HHHHHEBofJOr0JPoQHg1eAAAAAA=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
    <Input>visualize(MyPendulum)</Input>
-   <Output>[done]</Output>
+   <Output>true</Output>
   </GraphCell>
  </GroupCell>
 </Notebook>

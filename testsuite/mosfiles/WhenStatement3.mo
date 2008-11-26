@@ -22,7 +22,7 @@ equation
   
 algorithm
   when x > 2 then
-    y3 := 2*x + pre(y1) + y2;  
+    y3 := 2*x + pre(y1) + y2;
   end when;  
   
 equation

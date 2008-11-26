@@ -29,7 +29,7 @@ getElementsInfo(Something.Somewhere.BlaBla.Z);
 // {Something}
 // {Somewhere}
 // {Something.Somewhere.Stuff,Something.Somewhere.Stuff2,Something.Somewhere.BlaBla}
-// {"class","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10}}
+// {"class","Stuff Comment","loadFileInteractiveQualified.mo",{false,false,false},{"writable",10,1,15,10},{}}
 // { rec(name="Stuff", partial=false, final=false, encapsulated=false, restriction=CLASS, comment="Stuff Comment", file="loadFileInteractiveQualified.mo", readonly="writable", startLine=10, startColumn=1, endLine=15, endColumn=10) }
 // {loadFileInteractiveQualifiedInit.mo,writable,8,1,14,14}
 // { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualifiedInit.mo", elementreadonly="writable", elementStartLine=10, elementStartColumn=3, elementEndLine=12, elementEndColumn=16, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Somewhere, classrestriction=PACKAGE) }
@@ -44,17 +44,17 @@ getElementsInfo(Something.Somewhere.BlaBla.Z);
 // {loadFileInteractiveQualified.mo,writable,23,1,30,11}
 // {loadFileInteractiveQualified.mo,writable,26,3,29,8}
 // {loadFileInteractiveQualified.mo,writable,25,3,25,13}
-// { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=12, elementStartColumn=3, elementEndLine=12, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, variability="unspecified", direction="unspecified") },
-// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=13, elementStartColumn=3, elementEndLine=13, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, variability="unspecified", direction="unspecified") }
+// { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=12, elementStartColumn=3, elementEndLine=12, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=13, elementStartColumn=3, elementEndLine=13, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") }
 //  }
 // { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=18, elementStartColumn=3, elementEndLine=18, elementEndColumn=16, final=false, replaceable=false, inout="none", elementtype=extends, path=Stuff) },
-// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=19, elementStartColumn=3, elementEndLine=19, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={z,""}, flow=false, variability="unspecified", direction="unspecified") }
+// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=19, elementStartColumn=3, elementEndLine=19, elementEndColumn=9, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={z,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") }
 //  }
 // { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=24, elementStartColumn=3, elementEndLine=24, elementEndColumn=22, final=false, replaceable=false, inout="none", elementtype=import, kind=unqualified, path=HelloWorld) },
 // { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=25, elementStartColumn=3, elementEndLine=25, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=classdef, classname=X, classrestriction=TYPE) },
 // { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=26, elementStartColumn=3, elementEndLine=29, elementEndColumn=8, final=false, replaceable=false, inout="none", elementtype=classdef, classname=Z, classrestriction=RECORD) }
 //  }
-// { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=27, elementStartColumn=4, elementEndLine=27, elementEndColumn=10, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, variability="unspecified", direction="unspecified") },
-// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=28, elementStartColumn=4, elementEndLine=28, elementEndColumn=10, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, variability="unspecified", direction="unspecified") }
+// { { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=27, elementStartColumn=4, elementEndLine=27, elementEndColumn=10, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={x,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+// { rec(elementvisibility=public, elementfile="loadFileInteractiveQualified.mo", elementreadonly="writable", elementStartLine=28, elementStartColumn=4, elementEndLine=28, elementEndColumn=10, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={y,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") }
 //  }
 // endResult

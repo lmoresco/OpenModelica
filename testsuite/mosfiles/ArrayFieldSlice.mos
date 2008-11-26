@@ -20,9 +20,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf getPerson_* getPerson.exe getPerson.cpp getPerson.makefile getPerson.libs getPerson.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "getPerson_res.plt"
-// end record
+// end SimulationResult;
 // true
 // John
 // Karin

@@ -44,9 +44,9 @@ system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefil
 //   pu.port.pressure = pi.port.pressure;
 // end LinearSysEq;
 // "
-// record
+// record SimulationResult
 //     resultFile = "LinearSysEq_res.plt"
-// end record
+// end SimulationResult;
 // 0.0
 // 0.0
 // 0.0

@@ -24,9 +24,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf BouncingBall.makefile BouncingBall.libs BouncingBall.log BouncingBall.exe BouncingBall.cpp BouncingBall.plt BouncingBall_* output.log"); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "BouncingBall_res.plt"
-// end record
+// end SimulationResult;
 // true
 // {0.0,0.0,-0.001,-1.963,-3.925,-4.203,3.781,3.781,3.781,3.781,3.781,3.781,2.098,0.136,-1.826}
 // {1.0,1.0,1.0,0.803,0.215,0.099,0.099,0.099,0.099,0.1,0.1,0.1,0.604,0.828,0.659}

@@ -31,9 +31,9 @@ system("rm -rf WhenStat2_* WhenStat2.exe WhenStat2.cpp WhenStat2.makefile WhenSt
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "WhenStat2_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 1.0
 // 0.909

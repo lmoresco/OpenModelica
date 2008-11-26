@@ -94,9 +94,9 @@ system("rm -rf tplTest*");
 // Result:
 // true
 // true
-// record
+// record SimulationResult
 //     resultFile = "TrapezoidTest_res.plt"
-// end record
+// end SimulationResult;
 // 0.0
 // 0.5
 // 1.0
@@ -105,16 +105,16 @@ system("rm -rf tplTest*");
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "BearingFrictionTest_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,0.121904300704784,0.228947995320593,0.322942642831153,0.405478967735732,0.477953780340487,0.541593615408751,0.597475489208024,0.646545126226023,0.689632964007956,0.727468206966025}
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "LossyGearDemo1_res.plt"
-// end record
+// end SimulationResult;
 // 0.0
 // -1.0
 // 0.0
@@ -127,9 +127,9 @@ system("rm -rf tplTest*");
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "InputOutput_res.plt"
-// end record
+// end SimulationResult;
 // 0.316059910058819
 // 1.0
 // 2.0
@@ -137,42 +137,42 @@ system("rm -rf tplTest*");
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "InitTest_res.plt"
-// end record
+// end SimulationResult;
 // 0.500000000001762
 // 0.0150331845518451
 // 0.0152186132517958
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "FuncCrossTest_res.plt"
-// end record
+// end SimulationResult;
 // -1.0
 // 5.0
 // -1.0
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "MatrixTest_res.plt"
-// end record
+// end SimulationResult;
 // 100.0
 // 132.0
 // 70.0
 // 0
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "avgtest_res.plt"
-// end record
+// end SimulationResult;
 // 3.6
 // 0
 // true
-// record
+// record SimulationResult
 //     resultFile = "tplTest_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // -1.0
 // 0

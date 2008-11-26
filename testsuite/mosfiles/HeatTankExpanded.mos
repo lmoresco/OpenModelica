@@ -27,9 +27,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf HeatTankExpanded_* HeatTankExpanded.exe HeatTankExpanded.cpp HeatTankExpanded.makefile HeatTankExpanded.libs HeatTankExpanded.log output.log"); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "HeatTankExpanded_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 2.899
 // 3.499

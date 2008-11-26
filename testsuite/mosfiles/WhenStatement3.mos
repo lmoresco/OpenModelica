@@ -6,7 +6,8 @@
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 
 loadFile("WhenStatement3.mo");
-simulate(WhenStat3, tolerance=1e-6, numberOfIntervals=400);
+simulate(WhenStat3, tolerance=1e-10, numberOfIntervals=800);
+//plot2({x, y1, y2, y3});
 echo(false); // turns of output 
 size:=readSimulationResultSize("WhenStat3_res.plt");
 res:=readSimulationResult("WhenStat3_res.plt",{x,y1,y3},size); 
@@ -28,9 +29,9 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf WhenStat3_* WhenStat3.exe WhenStat3.cpp WhenStat3.makefile WhenStat3.libs WhenStat3.log output.log"); // remove tmp files.); // remove tmp files.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "WhenStat3_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 1.0
 // 0.909

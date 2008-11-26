@@ -10,10 +10,10 @@ getErrorString(); // simulation failed, check error string.
 
 // Result:
 // fel i lowerWhenEqntrue
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed.
 // Too few equations, underdetermined system. The model has 2 variables and 1 equations
 // "
-// end record
+// end SimulationResult;
 // ""
 // endResult

@@ -9,9 +9,9 @@ simulate(<XXX>,numberOfIntervals=2); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Simulation failed."
-// end record
+// end SimulationResult;
 //"#Error, too few equations. Underdetermined system
 // The model has 3 variables and 2 equations
 // "

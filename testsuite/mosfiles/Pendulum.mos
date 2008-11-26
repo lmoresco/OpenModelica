@@ -16,9 +16,9 @@ val(y,3.0);
 system("rm -rf Pendulum.cpp Pendulum.exe Pendulum.libs Pendulum.log Pendulum.makefile Pendulum_*.*");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Pendulum_res.plt"
-// end record
+// end SimulationResult;
 // -0.993207788795591
 // -0.427440318032962
 // 0.945695372367875

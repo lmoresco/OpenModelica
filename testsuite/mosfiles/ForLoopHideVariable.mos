@@ -34,9 +34,9 @@ readFile("output.log");
 system("rm -rf f_* f.* ForLoopHideVariable_* ForLoopHideVariable.exe ForLoopHideVariable.cpp ForLoopHideVariable.makefile ForLoopHideVariable.libs ForLoopHideVariable.log output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "ForLoopHideVariable_res.plt"
-// end record
+// end SimulationResult;
 // true
 // {1.0,1.0,1.0}
 // {2.0,2.0,2.0}

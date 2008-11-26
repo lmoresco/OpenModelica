@@ -59,38 +59,38 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // Result:
 // true
 // true
-// record
+// record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Circuit1_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,-0.0241519190111006,0.0577087552933089,0.0687873738407907,0.0702867082645326,0.0704896693970913}
 // {0.0,-6.04903508715775,-6.86764238380936,-6.97842917980261,-6.9934225506362,-6.99545092462888}
 // {0.0,4.09428047021265e-12,1.53668744395929e-11,2.28189134254819e-11,3.07337350013981e-11,3.79489105070685e-11}
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotor_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,0.00126681076571484,0.00960551915312436,0.0306594765528892,0.0685896446788921,0.12619295827702}
 // {0.0,0.180063687167362,0.320981193692089,0.424756727070061,0.494373231524696,0.533507195114723}
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotorDeadzone_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,0.0811477149312822,0.226375521620967,0.337098428969106,0.415570335911699,0.464801895236942}
 // {0.0,0.000124166246734191,0.00355503295581433,0.0159257203513825,0.0416726486691108,0.0839447425146643}
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.SpringMass_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,0.841451823919794,0.304841637025216,-0.857237563331019,-1.02245254380554,0.0577366470735178}
 // {0.0,0.00734380218986698,0.0433640147440819,0.0893162138696879,0.10458096901866,0.0834478209223841}
 // ""
 // 0
-// record
+// record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.plt"
-// end record
+// end SimulationResult;
 // {0.0,3.87243540497187,7.70245354623883,9.54604625083369,9.42519263321225,9.3051089012989}
 // {0.0,0.0196784654164696,0.0277532739636358,0.0308966765875522,0.0307004765875522,0.0305042765875523}
 // ""

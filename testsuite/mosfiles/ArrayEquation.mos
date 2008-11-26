@@ -34,9 +34,9 @@ readFile("output.log");
 system("rm -rf ArrayEqn.log ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEqn.exe ArrayEqn_* output.log");
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "ArrayEqn_res.plt"
-// end record
+// end SimulationResult;
 // 2.0
 // 0.898662555240009
 // 0.403796151229362

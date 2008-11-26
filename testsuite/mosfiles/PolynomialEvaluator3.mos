@@ -17,9 +17,9 @@ system("rm -rf NamedCall.makefile NamedCall.libs NamedCall.log NamedCall.plt Nam
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "NamedCall_res.plt"
-// end record
+// end SimulationResult;
 // true
 // 38410.0
 // ""

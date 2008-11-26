@@ -18,9 +18,9 @@ system("rm -rf Interpol2Test.* Interpol2Test_* output.log");
 
 // Result:
 // true
-// record
+// record SimulationResult
 //     resultFile = "Interpol2Test_res.plt"
-// end record
+// end SimulationResult;
 // 10.5
 // 35.0
 // 60.0

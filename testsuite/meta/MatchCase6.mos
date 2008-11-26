@@ -12,9 +12,9 @@ system("rm -rf MatchCase6_* MatchCase6.exe MatchCase6.cpp MatchCase6.makefile Ma
 
 // Result:
 // true
-// record
+// record SimulationResult
 //    resultFile = "MatchCase6_res.plt"
-// end record
+// end SimulationResult;
 // 1.0
 // 2.0
 // 0
