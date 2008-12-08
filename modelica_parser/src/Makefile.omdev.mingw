@@ -26,7 +26,7 @@ INCLUDES=-I$(ANTLR_HOME)/include/
 
 LIBP=-L$(OMDEV)/lib/antlr-msys-mingw
 
-CFLAGS =-O3 -Wall $(INCLUDES) #-D DEBUG
+CFLAGS = $(INCLUDES) -O3 -Wall #-D DEBUG
 CXXFLAGS = $(CFLAGS)
 
 ANTLRFLAGS=#-traceParser

@@ -20,6 +20,6 @@ end Modification6;
 
 
 // fclass Modification6
-// parameter Real m1.f.q = 1.0;
-// parameter Real m2.f.q = 1.0;
+// parameter Real m1.f.q = 4.0;
+// parameter Real m2.f.q = 4.0;
 // end Modification6;

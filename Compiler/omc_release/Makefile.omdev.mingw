@@ -93,7 +93,8 @@ absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
+	g++ -O3 -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
+	strip $(PROG)
 
 
 subdirs: $(SRCHSRCDIR) $(SUBDIRS)
@@ -107,10 +108,10 @@ clean:
 		(cd $$d && $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
 	(cd $(srcdir) && $(RM) $(SRCH))
-	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
+	$(RM) -f $(SRCO) $(SRCC) $(SRCH) $(PROG) *~ $(ALLMO:.mo=.srz) $(ALLMO:.mo=.sig)
 
 clear-rmod-rsig:
-	-rm *.srz *.sig ../*.srz ../*.sig
+	-rm -f *.srz *.sig ../*.srz ../*.sig
 
 realclean:
 	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG)
