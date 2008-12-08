@@ -27,9 +27,11 @@ RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/../c_runtime/libc_runtime.a \
 
 # The MO sources
 SRCMO= Absyn.mo \
+	AbsynDep.mo \
 	Algorithm.mo \
 	Builtin.mo \
 	Ceval.mo \
+	Cevalfunc.mo \
 	ClassInf.mo \
 	ClassLoader.mo \
 	Codegen.mo \
@@ -48,11 +50,17 @@ SRCMO= Absyn.mo \
 	Exp.mo \
 	SCode.mo \
 	Graphviz.mo \
+	HashTable.mo \
+	HashTable2.mo \
+	HashTable3.mo \
+	HashTable4.mo \
+	HashTable5.mo \
 	Inst.mo \
 	Interactive.mo \
 	Lookup.mo \
 	Main.mo \
 	MetaUtil.mo \
+	OptManager.mo \
 	Mod.mo \
 	ModUtil.mo \
 	Patternm.mo \
