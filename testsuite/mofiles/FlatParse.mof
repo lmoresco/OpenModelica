@@ -13,6 +13,9 @@ equation
   der(x[2].y[1])=1;
   der(x[2].y[2])=-x.y;
   x.y[2].z = 0;
+  assert(1<2,"blah1") "test also the no return function call";
+algorithm
+  assert(1<2,"blah2") "test also the no return function call";
 end FlatParse;
 Some tools might put garbage text here. That should be ok. 
 
@@ -26,6 +29,9 @@ Some tools might put garbage text here. That should be ok.
 //   der(x[2].y[1]) = 1.0;
 //   der(x[2].y[2]) = -x.y;
 //   x.y[2].z = 0.0;
+// assert(true,"blah1");
+// algorithm
+//   assert(true, "blah2");
 // end FlatParse;
 
 
