@@ -7,6 +7,8 @@ $verbose="no";
 $pager="cat";
 $log="";
 $tmpPath = "/tmp/omctesting/"; # double slash to work on *nix to.
+# adrpo: make sure we have created the directory!
+system "mkdir -p $tmpPath";
 $tmp1 = "$tmpPath/equations-1";
 $tmp2 = "$tmpPath/equations-2";
 $tmp3 = "$tmpPath/equations-diff";
