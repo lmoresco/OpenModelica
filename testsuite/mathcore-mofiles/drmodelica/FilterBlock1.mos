@@ -1,0 +1,25 @@
+// Name:     FilterBlock1
+// keywords: equations when
+// status:   correct
+// 
+//  Tests when, elsewhen
+//
+
+loadFile("FilterBlock1.mo");
+simulate(FilterBlock1,numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+res:=readSimulationResult("FilterBlock1_res.plt",{x, y},3); 
+echo(true); // turns on output
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf FilterBlock1.plt FilterBlock1.exe FilterBlock1.c FilterBlock1_* output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "FilterBlock1_res.plt"
+// end record
+// true
+// ""
+// 0
+// endResult
+

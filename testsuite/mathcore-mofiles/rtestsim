@@ -1,0 +1,135 @@
+#!/usr/bin/perl -w
+
+
+# Total successful cases - simulation code, compilation, simulation
+my @successes;
+# Total number of test cases
+my $total = 0;
+# Path to omc
+my $omcpath;
+# Collect names of models which can be simulated
+my @simmodels;
+
+sub runone
+{
+# Success/failure returned from runone
+    my @result;
+
+# f: filename relative to /modelica/testsuite/mofiles/. 
+# info: model name, keywords, test case status
+    my ($f,%info) = @_;
+    my $model = $info{"name"};
+    $model = ~/^(.*)\.mo$/;
+    $model = $1;
+
+# Path to the model's makefile, <modelname>.makefile
+    my $makepath = $model . ".makefile";
+# Simulation path
+    my $simulate = "./" . $model;
+
+# Compile .mo file, generate simulation code
+    my $omccall = $omcpath . "+s " . $f;
+    system "$omccall";
+    if ( $? != 0 ) {
+	$result[1] = 1;
+    } else {
+	$result[2] = 0;
+    }
+
+# Compile .cpp files
+    system "make -f $makepath";
+    if ( $? != 0 ) {
+	$result[2] = 1;
+    } else {
+	$result[2] = 0;
+    }
+
+# Run simulation
+    system "$simulate";
+    if ( $? != 0 ) {
+	$result[3] = 1;
+    } else {
+	$result[3] = 0;
+	$simmodels[$i] = $info{"name"};
+	$i++;
+    }
+
+    return @result;
+}
+
+sub dofile
+{
+# Get filname and information
+    my $f = shift;
+    my %info = ("status"   => "unknown",
+		"name"     => $f,
+		"keywords" => "unknown");
+
+# Compile and run simulations
+    my @status = runone( $f,%info);
+# Check results - success/failure
+    if ($status[1] == 0) {
+	$successes[1] = $successes[1] + 1;
+    }
+    if ($status[2] == 0) {
+	$successes[2] = $successes[2] + 1;
+    }
+    if ($status[3] == 0) {
+	$successes[3] = $successes[3] + 1;
+    }
+    $total = $total + 1;
+}
+
+# Create temporary directory
+system "mkdir /tmp/log-drmodelica";
+
+$successes[1]=0;
+$successes[2]=0;
+$successes[3]=0;
+$i=0;
+
+# 
+# ************* DEFINE TEST FILES BELOW *************** 
+# (glob '<testfiles>')
+#
+
+# Set path to omc
+$omcpath = "../../Compiler/omc ";
+
+for (glob '*.mo') { dofile $_; }
+# Remove temporary files and directories
+system "rm -rf /tmp/log-drmodelica";
+system "rm *.makefile";
+system "rm *init.txt";
+system "rm *.plt";
+system "rm *.cpp";
+system "rm *.exe";
+system "rm *.stackdump";
+system "rm *.c";
+system "rm *_in.txt";
+system "rm *_out.txt";
+
+chdir('drmodelica');
+$omcpath = "../../../Compiler/omc ";
+for (glob ' *.mo') { dofile $_; }
+
+# Remove temporary files and directories
+system "rm -rf /tmp/log-drmodelica";
+system "rm *.makefile";
+system "rm *init.txt";
+system "rm *.plt";
+system "rm *.cpp";
+system "rm *.exe";
+system "rm *.stackdump";
+system "rm *.c";
+system "rm *_in.txt";
+system "rm *_out.txt";
+
+# Final output. Statistics and stuff
+printf "\n== %d out of %d simulation code generations succeeded\n", $successes[1], $total;
+printf "== %d out of %d compilations succeeded\n", $successes[2], $total;
+printf "== %d out of %d simulations succeeded\n", $successes[3], $total;
+printf "\nSuccessfully simulated models:\n";
+for ($i=0; $i < $successes[3]; $i++) {
+    printf $simmodels[$i] . "\n";
+}

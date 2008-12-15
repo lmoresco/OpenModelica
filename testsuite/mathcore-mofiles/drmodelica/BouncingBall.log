@@ -1,0 +1,3 @@
+mingw32-make[2]: Entering directory `c:/petar/dev/OpenModelica/testsuite/mofiles/drmodelica'
+g++ -m32 -o BouncingBall.exe BouncingBall.cpp "c:/petar/dev/OpenModelica/build//include/simulation_main.cpp"  -L"c:/petar/dev/OpenModelica/build//lib/" -I. -I"c:/petar/dev/OpenModelica/build//include/"  -lsim -lsuperlu_3.0 -lc_runtime -lf2c -lc_common -lsundials_cvodes -lsundials_nvecserial  && rm -f BouncingBall.cpp BouncingBall_functions.cpp BouncingBall.libs output_BouncingBall.log BouncingBall.makefile
+mingw32-make[2]: Leaving directory `c:/petar/dev/OpenModelica/testsuite/mofiles/drmodelica'

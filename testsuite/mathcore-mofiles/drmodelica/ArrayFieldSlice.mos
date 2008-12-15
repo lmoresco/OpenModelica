@@ -1,0 +1,31 @@
+// name:     ArrayFieldSlice
+// keywords: array
+// status:   correct
+// 
+
+loadFile("ArrayFieldSlice.mo");
+simulate(getPerson,startTime=0.0, stopTime=1.0, numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+size := readSimulationResultSize("getPerson_res.plt");
+res:=readSimulationResult("getPerson_res.plt",{name[1],name[2],name[3]},size); 
+name1:=res[1,1];
+name2:=res[2,1];
+name3:=res[3,1];
+echo(true); // turns on output
+name1;
+name2;
+name3;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf getPerson_* getPerson.exe getPerson.cpp getPerson.makefile getPerson.libs getPerson.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "getPerson_res.plt"
+// end record
+// true
+// John
+// Karin
+// Lisa
+// ""
+// 0
+// endResult

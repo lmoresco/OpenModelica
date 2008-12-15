@@ -1,0 +1,43 @@
+// name:     FlatTank
+// keywords: <insert keywords here>
+// status:   correct
+// 
+//  <insert description here>
+//
+loadFile("FlatTank.mo");
+simulate(FlatTank,stopTime=250,numberOfIntervals=500); // 2 intervals == 3 values
+echo(false); // turns of output 
+
+x:=val(h,25.0);
+y:=val(h,100.0);
+z:=val(h,150.0);
+w:=val(h,200.0);
+x:=1000*x;
+y:=1000*y;
+z:=1000*z;
+w:=1000*w;
+x:=floor(x);
+y:=floor(y);
+z:=floor(z);
+w:=floor(w);
+echo(true); // turns on output
+x/1000.0; // rounded value to 3 digits
+y/1000.0;
+z/1000.0;
+w/1000.0;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf FlatTank_* FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.libs FlatTank.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "FlatTank_res.plt"
+// end record
+// true
+// 0.439
+// 0.255
+// 0.249
+// 0.214
+// ""
+// 0
+// endResult
