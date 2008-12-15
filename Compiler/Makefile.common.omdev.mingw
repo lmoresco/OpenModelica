@@ -31,6 +31,7 @@ SRCMO= Absyn.mo \
 	Algorithm.mo \
 	Builtin.mo \
 	Ceval.mo \
+	CevalScript.mo \
 	Cevalfunc.mo \
 	ClassInf.mo \
 	ClassLoader.mo \
@@ -71,6 +72,7 @@ SRCMO= Absyn.mo \
 	Util.mo \
 	Values.mo \
 	VarTransform.mo \
+	BackendVarTransform.mo \
 	Refactor.mo \
 	DAEQuery.mo \
 	XMLDump.mo
