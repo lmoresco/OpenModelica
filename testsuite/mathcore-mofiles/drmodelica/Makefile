@@ -1,47 +1,34 @@
 TEST=./rtest -v
 #TEST=runtest
-
+#adrpo 2008-12-16 disable the .mos files for now.
 TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \
 ArrayDim1.mo Colors.mo MultFuncCall.mo ArrayDim2.mo DAEexample.mo \
-ArrayDim3.mo ElementWiseMultiplication.mo \
-ArrayDim4.mo Equations.mo Summation.mo \
-BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
-ArrayAddSub.mo ArrayDiv.mo ArrayDivError.mo \
-BlockMatrix.mo BlockMatrix2.mo \
-BlockMatrix3.mo  PointSum.mo \
-ComplexNumbers.mo EquationCall.mo  \
-BouncingBall.mos \
-VectorizeSeveralArguments.mo \
-AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
-ColoredPointLegalMod.mo ArraysInitLegal.mo \
-CyclicPerm.mo \
-MRFcall.mo \
-MicroCircuitInvalid.mo \
-TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
-RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo \
-HelloWorld.mo HelloWorld.mos Xpowers1.mo Xpowers2.mo Xpowers3.mo \
-PolynomialEvaluator1.mo PolynomialEvaluator2.mo FuncMultResults.mo \
-SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
-AlgorithmCondAssign1.mo Tank.mo HeatTank.mos HeatTankExpanded.mo \
-FlatTank.mo FlatTank.mos TankPI.mos TankPI.mo \
-TankPID.mos TankPID.mo TanksConnectedPI.mos TanksConnectedPI.mo \
-TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo CyclicPerm.mos \
-ArrayAddSub1.mo ArrayAddSub1.mos ArrayDivError.mo ArrayDivError.mos \
-ArrayMult.mo ArrayMult.mos ArrayReduce.mo \
-VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
-EqualityEquations.mos FiveForEquations.mo FiveForEquations.mos \
-HideVariableForEquations.mo HideVariableForEquations.mos IfEquation.mo \
-IfEquation.mos WhenEquation.mo WhenEquation.mos WhenVectorPredicateEquation.mo \
-WhenVectorPredicateEquation.mo WhenValidResult.mo WhenValidResult.mo \
-PolynomialEvaluatorA.mo PolynomialEvaluatorA.mos \
-PolynomialEvaluatorB.mo PolynomialEvaluatorB.mos StepAdvanced.mo StepAdvanced.mos \
-AlgorithmSection.mo AlgorithmSection.mos WhenStatement1.mo WhenStatement1.mos \
-WhenStatement2.mo WhenStatement2.mos WhenStatement3.mo WhenStatement3.mos \
-DoubleWhenConflict.mos DoubleWhenSequential.mo DoubleWhenSequential.mos \
-FuncDer.mo FuncDer.mos SimplePeriodicSampler.mo SimplePeriodicSampler.mos \
-TwoRateSampler.mo TwoRateSampler.mos DiscreteVectorStateSpace.mo DiscreteVectorStateSpace.mos \
-WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
-LotkaVolterra.mo LotkaVolterra.mos HydrogenIodide.mo HydrogenIodide.mos \
+ArrayDim3.mo ElementWiseMultiplication.mo ArrayDim4.mo Equations.mo \
+Summation.mo BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
+ArrayAddSub.mo ArrayDiv.mo ArrayDivError.mo BlockMatrix.mo BlockMatrix2.mo \
+BlockMatrix3.mo PointSum.mo ComplexNumbers.mo EquationCall.mo \
+VectorizeSeveralArguments.mo AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
+ColoredPointLegalMod.mo ArraysInitLegal.mo CyclicPerm.mo MRFcall.mo \
+MicroCircuitInvalid.mo TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
+RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo HelloWorld.mo \
+Xpowers1.mo Xpowers2.mo Xpowers3.mo PolynomialEvaluator1.mo PolynomialEvaluator2.mo \
+FuncMultResults.mo SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
+AlgorithmCondAssign1.mo Tank.mo HeatTankExpanded.mo FlatTank.mo TankPI.mo \
+TankPID.mo TanksConnectedPI.mo TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo \
+ArrayAddSub1.mo ArrayDivError.mo ArrayMult.mo ArrayReduce.mo VectorizeOneReturnValue.mo \
+ABCDsystem.mo EqualityEquationsCorrect.mo FiveForEquations.mo HideVariableForEquations.mo \
+IfEquation.mo WhenEquation.mo WhenVectorPredicateEquation.mo WhenVectorPredicateEquation.mo \
+WhenValidResult.mo WhenValidResult.mo PolynomialEvaluatorA.mo PolynomialEvaluatorB.mo \
+StepAdvanced.mo AlgorithmSection.mo WhenStatement1.mo WhenStatement2.mo \
+WhenStatement3.mo DoubleWhenSequential.mo FuncDer.mo SimplePeriodicSampler.mo TwoRateSampler.mo \
+DiscreteVectorStateSpace.mo WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
+LotkaVolterra.mo HydrogenIodide.mo
+#TanksConnectedPI.mos TankPID.mos FlatTank.mos BouncingBall.mos HelloWorld.mos HeatTank.mos TankPI.mos \
+#CyclicPerm.mos HydrogenIodide.mos LotkaVolterra.mos DiscreteVectorStateSpace.mos SimplePeriodicSampler.mos \
+#DoubleWhenSequential.mos DoubleWhenConflict.mos FuncDer.mos StepAdvanced.mos \
+#WhenStatement3.mos WhenStatement2.mos WhenStatement1.mos TwoRateSampler.mos PolynomialEvaluatorB.mos \
+#PolynomialEvaluatorA.mos HideVariableForEquations.mos ArrayMult.mos ArrayDivError.mos ArrayAddSub1.mos \
+#EqualityEquations.mos FiveForEquations.mos IfEquation.mos WhenEquation.mos AlgorithmSection.mos 
 
 FAILINGTESTFILES= AppendElement.mo ArrayExponentiation.mo Circuit.mo ColorClasses.mo LeastSquares.mo \
 AlgorithmCondAssign2.mo \
