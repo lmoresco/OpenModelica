@@ -1,3 +1,14 @@
-mingw32-make[2]: Entering directory `c:/petar/dev/OpenModelica/testsuite/mofiles/drmodelica'
-g++ -m32 -o BouncingBall.exe BouncingBall.cpp "c:/petar/dev/OpenModelica/build//include/simulation_main.cpp"  -L"c:/petar/dev/OpenModelica/build//lib/" -I. -I"c:/petar/dev/OpenModelica/build//include/"  -lsim -lsuperlu_3.0 -lc_runtime -lf2c -lc_common -lsundials_cvodes -lsundials_nvecserial  && rm -f BouncingBall.cpp BouncingBall_functions.cpp BouncingBall.libs output_BouncingBall.log BouncingBall.makefile
-mingw32-make[2]: Leaving directory `c:/petar/dev/OpenModelica/testsuite/mofiles/drmodelica'
+mingw32-make[3]: Entering directory `C:/bin/cygwin/home/adrpo/dev/OpenModelicaMathCore/testsuite/mathcore-mofiles/drmodelica'
+g++ -I"C:\bin\cygwin\home\adrpo\dev\OpenModelicaMathCore\build/include" -Wall -msse2 -mfpmath=sse  -I. -o BouncingBall.exe BouncingBall.cpp -lsim -L"C:\bin\cygwin\home\adrpo\dev\OpenModelicaMathCore\build/lib" -lc_runtime -lf2c -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 
+BouncingBall.cpp: In function `int function_updateDependents()':
+BouncingBall.cpp:465: error: `$derivative$$$velocity' was not declared in this scope
+BouncingBall.cpp:464: warning: unused variable 'njev'
+BouncingBall.cpp:471: error: `$derivative$$$height' was not declared in this scope
+BouncingBall.cpp:470: warning: unused variable 'njev'
+BouncingBall.cpp: In function `int functionODE()':
+BouncingBall.cpp:520: error: `$derivative$$$velocity' was not declared in this scope
+BouncingBall.cpp:519: warning: unused variable 'njev'
+BouncingBall.cpp:526: error: `$derivative$$$height' was not declared in this scope
+BouncingBall.cpp:525: warning: unused variable 'njev'
+mingw32-make[3]: *** [BouncingBall] Error 1
+mingw32-make[3]: Leaving directory `C:/bin/cygwin/home/adrpo/dev/OpenModelicaMathCore/testsuite/mathcore-mofiles/drmodelica'

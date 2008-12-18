@@ -1,0 +1,129 @@
+# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
+# Makefile for compilation of OMC using OMDev-mingw
+# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+#
+#
+# $Id: Makefile.omdev.mingw.in 2054 2006-01-28 11:07:46Z adrpo $
+#
+
+
+# The path to the OMDev-mingw package MUST BE SET!
+#OMDEV=$OMDEV
+# Test if the needed variables are there...
+
+.testvariables:
+ifndef OMDEV
+	@echo You have to set the OMDEV variabile pointing to your OMDev package root! Exiting....
+	@echo Take the OMDev package from: http://www.ida.liu.se/~adrpo/omc/omdev/
+	@echo For questions or problems email Adrian Pop, adrpo@ida.liu.se
+	ABORT
+endif
+
+
+ANTLR_HOME = $(OMDEV)
+
+ANTLR_INCP = -I$(OMDEV)/include/antlr
+ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
+
+USE_CORBA = -DUSE_CORBA
+CORBAHOME = $(OMDEV)
+
+SHELL	= /bin/sh
+CC	= gcc
+CFLAGS	= $(USE_CORBA)
+RMLHOME	= $(OMDEV)/tools/rml
+RMLINC  = -I$(RMLHOME)/include/plain
+
+srcdir = ..
+top_builddir = ../..
+include $(srcdir)/Makefile.common.omdev.mingw
+
+LIBSOCKET=-lwsock32
+
+#We use corba by default when compiling on OMDev-mingw
+#ifdef USE_CORBA
+CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
+#else
+#	CORBALIBS=
+#endif
+
+
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
+PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
+
+PROG = omcf.exe
+RML = $(RMLHOME)/bin/rmlc -v
+RMLCFLAGS = -Wr,-ftrace
+
+SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
+
+SRCSTUB = CevalScript_stub.mo BackendVarTransform_stub.mo
+
+all : .testvariables $(ALLMO) $(SRCSTUB) $(SRCSIG) subdirs $(PROG)
+.SUFFIXES:
+.SUFFIXES: .o .mo .h
+
+.PHONY: all subdirs $(SUBDIRS) report vctarget absyn_subdir clean reallyclean
+
+SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
+
+$(ALLMO): %.mo : $(srcdir)/%.mo
+	cp -p $< $@
+
+$(SRCSTUB):
+	cp -p ../CevalScript_stub.mo CevalScript.mo
+	cp -p ../BackendVarTransform_stub.mo BackendVarTransform.mo
+
+$(SRCO): %.o : %.c %.h
+	$(RML) -c $<
+
+$(SRCC): %.c : %.mo
+	$(RML) $(RMLCFLAGS) +C $<
+
+$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
+	cp -p $< $@
+
+$(SRCH): %.h : %.mo
+	$(RML) $(RMLCFLAGS) -c $<
+
+$(SRCSIG): %.sig : %.mo
+	$(srcdir)/rml2sig/rmldep-new.sh $<
+
+vctarget: $(SRCC) absyn_subdir
+
+absyn_subdir:
+	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
+
+$(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
+	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi -O3	
+	strip $(PROG)
+	ar -r frontend.a $(SRCO) $(RTOBJ)
+
+subdirs: $(SRCHSRCDIR) $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@ -f Makefile.omdev.mingw
+
+clean:
+	for d in $(SUBDIRS); do \
+		(cd $$d && $(MAKE) -f Makefile.omdev.mingw clean) \
+	done
+	(cd $(srcdir) && $(RM) $(SRCH))
+	$(RM) -f $(SRCO) $(SRCC) $(SRCH) $(PROG) *~ $(ALLMO:.mo=.srz) $(ALLMO:.mo=.sig) frontend.a
+
+clear-rmod-rsig:
+	-rm -f *.srz *.sig ../*.srz ../*.sig
+
+realclean:
+	$(RM) $(ALLMO) $(SRCSTUB) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG) $(SRCSTUB:.mo=.sig) $(SRCSTUB:.mo=.srz)
+
+# don't remove these files after intermediate build steps
+#.PRECIOUS: Makefile.omdev.mingw $(ALLRML) $(ALLMO)
+#.PRECIOUS: $(ALLRML) $(ALLMO)
+
+#Makefile.omdev.mingw: Makefile.omdev.mingw.in
+#	$(top_builddir)/config.status Makefile.omdev.mingw.in
+
+
+## dependencies
+include $(srcdir)/.depend

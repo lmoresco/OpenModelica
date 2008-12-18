@@ -8,7 +8,6 @@
 extern "C" {
 #endif
 /* header part */
-#include "modelica.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -25,15 +24,15 @@ typedef struct addmatrices_rettype_s
 extern void addmatrices(const double * a, size_t a_1, size_t a_2, const double * b, size_t b_1, size_t b_2, double* c, size_t c_1, size_t c_2);
 
 
-int _addmatrices_read_call_write(char const* in_filename, char const* out_filename);
+int in_addmatrices(type_description * inArgs, type_description * outVar);
 
 addmatrices_rettype _addmatrices(real_array a, real_array b);
+/* End of header part */
 
-
-/* body part */
+/* Body */
 extern void addmatrices(const double * a, size_t a_1, size_t a_2, const double * b, size_t b_1, size_t b_2, double* c, size_t c_1, size_t c_2);
 
-int _addmatrices_read_call_write(char const* in_filename, char const* out_filename)
+int in_addmatrices(type_description * inArgs, type_description * outVar)
 {
   real_array a; /* [:, :] */
   real_array b; /* [:, :] */
@@ -41,55 +40,32 @@ int _addmatrices_read_call_write(char const* in_filename, char const* out_filena
   size_t tmp1;
   size_t tmp2;
   addmatrices_rettype out;
-
-  PRE_VARIABLES
-  PRE_OPEN_INFILE
-  if(read_real_array(in_file, &a)) return 1;
-  if(read_real_array(in_file, &b)) return 1;
-  PRE_READ_DONE
+  if(read_real_array(&inArgs, &a)) return 1;
+  if(read_real_array(&inArgs, &b)) return 1;
   tmp3 = get_memory_state();
   tmp1 = size_of_dimension_real_array(a,1);
   tmp2 = size_of_dimension_real_array(a,2);
   alloc_real_array(&out.targ1, 2, tmp1, tmp2);
-
-  addmatrices(a.data, size_of_dimension_real_array(a, 1), size_of_dimension_real_array(a, 2), b.data, size_of_dimension_real_array(b, 1), size_of_dimension_real_array(b, 2), out.targ1.data, size_of_dimension_real_array(out.targ1, 1), size_of_dimension_real_array(out.targ1, 2));
-  PRE_OPEN_OUTFILE
-  write_real_array(out_file, &out.targ1);
-  PRE_WRITE_DONE
-
+  addmatrices(data_of_real_array(&(a)), size_of_dimension_real_array(a, 1), size_of_dimension_real_array(a, 2), data_of_real_array(&(b)), size_of_dimension_real_array(b, 1), size_of_dimension_real_array(b, 2), data_of_real_array(&(out.targ1)), size_of_dimension_real_array(out.targ1, 1), size_of_dimension_real_array(out.targ1, 2));
+  write_real_array(outVar, &out.targ1);
   restore_memory_state(tmp3);
   return 0;
-
 }
+
 addmatrices_rettype _addmatrices(real_array a, real_array b)
 {
-  addmatrices_rettype out;
   size_t tmp1;
   size_t tmp2;
-
+  addmatrices_rettype out;
   tmp1 = size_of_dimension_real_array(a,1);
   tmp2 = size_of_dimension_real_array(a,2);
   alloc_real_array(&out.targ1, 2, tmp1, tmp2);
-
-  addmatrices(a.data, size_of_dimension_real_array(a, 1), size_of_dimension_real_array(a, 2), b.data, size_of_dimension_real_array(b, 1), size_of_dimension_real_array(b, 2), out.targ1.data, size_of_dimension_real_array(out.targ1, 1), size_of_dimension_real_array(out.targ1, 2));
-
+  addmatrices(data_of_real_array(&(a)), size_of_dimension_real_array(a, 1), size_of_dimension_real_array(a, 2), data_of_real_array(&(b)), size_of_dimension_real_array(b, 1), size_of_dimension_real_array(b, 2), data_of_real_array(&(out.targ1)), size_of_dimension_real_array(out.targ1, 1), size_of_dimension_real_array(out.targ1, 2));
   return out;
-
 }
 
+/* End Body */
 
 #ifdef __cplusplus
 }
 #endif
-
-int main(int argc, char** argv)
-{
-
-  if (argc != 3)
-{
-      fprintf(stderr,"# Incorrect number of arguments\n");
-return 1;
-    }
-_addmatrices_read_call_write(argv[1],argv[2]);
-  return 0;
-}
