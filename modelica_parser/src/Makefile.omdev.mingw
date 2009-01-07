@@ -30,6 +30,7 @@ CFLAGS = $(INCLUDES) -O3 -Wall #-D DEBUG
 CXXFLAGS = $(CFLAGS)
 
 ANTLRFLAGS=#-traceParser
+ANTLRCLASSPATH=-cp $(OMDEV)/bin/antlr/antlr.jar
 
 LIB = $(LIBP) -lantlr
 
@@ -58,10 +59,10 @@ libmodelica_parser.a: $(OBJS)
 	$(AR) $@ $(OBJS)
 
 $(lexergen): modelica_lexer.g
-	java antlr.Tool $(ANTLRFLAGS) $<
+	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
 
 $(parsergen): modelica_parser.g modelica_lexer.g
-	java antlr.Tool $(ANTLRFLAGS) $<
+	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
