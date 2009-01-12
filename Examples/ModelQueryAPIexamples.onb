@@ -17,7 +17,7 @@
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>loadFile("C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
+     <Input>loadFile("C:/OpenModelica1.4.5/testmodels/BouncingBall.mo")</Input>
      <Output>true</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
@@ -55,10 +55,10 @@ end BouncingBall;
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getSourceFile(BouncingBall)</Input>
-     <Output>C:/OpenModelica1.4.4/testmodels/BouncingBall.mo</Output>
+     <Output>C:/OpenModelica1.4.5/testmodels/BouncingBall.mo</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
-     <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.4.4/testmodels/BouncingBall.mo")</Input>
+     <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.4.5/testmodels/BouncingBall.mo")</Input>
      <Output>Ok</Output>
     </InputCell>
    </GroupCell>
@@ -71,7 +71,7 @@ end BouncingBall;
     </TextCell>
     <InputCell style="Input" closed="false" >
      <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-     <Output>C:\OpenModelica1.4.4\ModelicaLibrary</Output>
+     <Output>C:\OpenModelica1.4.5\ModelicaLibrary</Output>
     </InputCell>
     <InputCell style="Input" closed="false" >
      <Input>setEnvironmentVar("OPENMODELICALIBRARY","C\\OpenModelica1.4.4\\ModelicaLibrary")</Input>
