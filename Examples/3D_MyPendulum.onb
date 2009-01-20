@@ -1,8 +1,9 @@
 <!DOCTYPE OMNotebook>
 <Notebook>
   <GroupCell closed="false" >
-    <TextCell style="Title" >
-      <Text>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+    <GroupCell closed="false" >
+      <TextCell style="Title" >
+        <Text>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
@@ -10,9 +11,9 @@ p, li { white-space: pre-wrap; }
 &lt;tr>
 &lt;td style="border: none;">
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-family:'Arial'; font-size:38pt; font-weight:600; color:#000000;">Complex example&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
-    </TextCell>
-    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-      <Input>class MyPendulum "Planar Pendulum"
+      </TextCell>
+      <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-4.836697827223e-26" Antialiasing="false" MinorY="-4.836697827223e-26" Title="Plot title" LogX="false" LogY="false" MajorX="-4.836697827223e-26" MajorY="-4.836697827223e-26" closed="false" YLabel="y" Area="wEeAAAAAAADAYQAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false" >
+        <Input>class MyPendulum "Planar Pendulum"
   import Modelica.SimpleVisual;
 constant Real PI=3.141592653589793;
 parameter Real m=1, g=9.81, L=5.;
@@ -55,19 +56,20 @@ equation
   der(y)=vy;
   x^2+y^2=L^2;
 end MyPendulum;</Input>
-      <Output>Ok</Output>
-    </GraphCell>
-    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-      <Input>loadModel(Modelica.SimpleVisual)</Input>
-      <Output>true</Output>
-    </GraphCell>
-    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
+        <Output>Ok</Output>
+      </GraphCell>
+      <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-4.836697827223e-26" Antialiasing="false" MinorY="-4.836697827223e-26" Title="Plot title" LogX="false" LogY="false" MajorX="-4.836697827223e-26" MajorY="-4.836697827223e-26" closed="false" YLabel="y" Area="wEeAAAAAAADAYQAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false" >
+        <Input>loadModel(Modelica.SimpleVisual)</Input>
+        <Output>true</Output>
+      </GraphCell>
+    </GroupCell>
+    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-4.836697827223e-26" Antialiasing="false" MinorY="-4.836697827223e-26" Title="Plot title" LogX="false" LogY="false" MajorX="-4.836697827223e-26" MajorY="-4.836697827223e-26" closed="false" YLabel="y" Area="wEeAAAAAAADAYQAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false" >
       <Input>simulate(MyPendulum, startTime=0, stopTime=5, numberOfIntervals=90)</Input>
       <Output>record SimulationResult
     resultFile = "MyPendulum_res.plt"
 end SimulationResult;</Output>
     </GraphCell>
-    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="10" Antialiasing="false" MinorY="100" Title="Plot title" LogX="false" LogY="false" MajorX="20" MajorY="200" closed="false" YLabel="y" Area="wEgzqHOWQVbAsxF8RtPAykBo2KGTch02QLM5Avu9oS8=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
+    <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-4.836697827223e-26" Antialiasing="false" MinorY="-4.836697827223e-26" Title="Plot title" LogX="false" LogY="false" MajorX="-4.836697827223e-26" MajorY="-4.836697827223e-26" closed="false" YLabel="y" Area="wEeAAAAAAADAYQAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
       <Input>visualize(MyPendulum)</Input>
       <Output>true</Output>
     </GraphCell>

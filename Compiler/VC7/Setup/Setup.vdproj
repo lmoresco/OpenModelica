@@ -7251,6 +7251,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4E2BFB5FB1D64D00B2B34A14C257A64A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4E300DA3245F4B31A8FF92D63504285C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -47602,6 +47608,26 @@
             "TargetName" = "8:counter-example.c"
             "Tag" = "8:"
             "Folder" = "8:_657CC4DFE7DC4D9586E6809D1E12B823"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4E2BFB5FB1D64D00B2B34A14C257A64A"
+            {
+            "SourcePath" = "8:..\\..\\..\\OMNotebook\\OMNotebookQT4\\Release\\OMNotebook.pdb"
+            "TargetName" = "8:OMNotebook.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
