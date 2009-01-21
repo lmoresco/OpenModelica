@@ -58,10 +58,10 @@ vctarget: $(lexergen) $(parsergen)
 libmodelica_parser.a: $(OBJS)
 	$(AR) $@ $(OBJS)
 
-$(lexergen): modelica_lexer.g
+$(lexergen): modelica_lexer.g 
 	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
 
-$(parsergen): modelica_parser.g modelica_lexer.g
+$(parsergen): modelica_parser.g modelica_lexer.g ../../Compiler/runtime/errorext.h ../../Compiler/runtime/error_reporting.h
 	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
 
 .c.o:
@@ -82,7 +82,7 @@ reallyclean: clean
 	-rm -f $(lexergen) $(parsergen)
 
 modelica_lexer.o:modelica_lexer.cpp modelica_lexer.hpp
-modelica_parser.o:modelica_parser.cpp modelica_parser.hpp
+modelica_parser.o:modelica_parser.cpp modelica_parser.hpp ../../Compiler/runtime/errorext.h ../../Compiler/runtime/error_reporting.h
 token_names.o:token_names.cpp
 parse_tree_dumper.o:parse_tree_dumper.cpp parse_tree_dumper.hpp
 #include $(DFILES)
