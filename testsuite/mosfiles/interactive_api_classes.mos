@@ -33,7 +33,7 @@ getClassNames(A);
 // true
 // true
 // true
-// {-10.0,-10.0,10.0,10.0,,{Line(true,{{0.0,0.0},{100.0,100.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}
+// {-10.0,-10.0,10.0,10.0,{Line(true,{{0.0,0.0},{100.0,100.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}}
 // {"<HTML>foo</HTML>","1.0"}
 // 2
 // 1
