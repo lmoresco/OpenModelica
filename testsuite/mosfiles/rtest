@@ -206,65 +206,54 @@ sub runone
 #					print(@expect_array); print( "\n"); print(@got_array); print("\n");
 #					print($#expect_array . "\n");
 
-					#if($corrCounter == 0 || $corrCounter/$totCounter < 1.75) # where correctness is less then 50%, fail.
-					#{
 #						print(@expect_array2); print("\n");
 #						print(@got_array2); print("\n");
 						while($#expect_array2 >= 0)
 						{
 #print($#expect_array2 . "\n");
 #print($#got_array2 . "\n");
-							my $ec1 = pop @expect_array2;
-							my $ec2 = pop @got_array2;
+						my $ec1 = pop @expect_array2;
+						my $ec2 = pop @got_array2;
 #print(" raw: ($ec1) vs ($ec2)\n");
 
-						    @field=split(/ /,$ec1);
-							@field2=split(/ /,$ec2);
-							while ($#field >=0)
-							{
+						@field=split(/ /,$ec1);
+						@field2=split(/ /,$ec2);
+						while ($#field >=0)
+						{
 #							print(" ENTER FIELD\n");
-								my $ecf1 = pop @field;
-								my $ecf2 = pop @field2;
+							my $ecf1 = pop @field;
+							my $ecf2 = pop @field2;
 #print "$ecf1 -VS- $ecf2\n";
-							
-								if (isNumber($ecf2) && isNumber($ecf1))
-								{
+						
+							if (isNumber($ecf2) && isNumber($ecf1))
+							{
 #print(" --NUMBER expected($ecf1) got($ecf2)\n");
-									if (LessThanEpsilon($ecf2,$ecf1,$epsilon) == 0)
-									{
-										print LOG "expected:$ecf1 - got:$ecf2 > epsilon-3:$epsilon\n";
-#										print(" ERROR ");
-										$majorNumberDifferences = 1;
-										goto DEFAULT;	    			
-									}
-									if (LessThanEpsilon($ecf2,$ecf1,$epsilon) == 1)
-									{
-#										print(" OK ");
-									}
-									#else
-									#{ 
-									#	if(!($ecf2 == $ecf1)){
-									#		print LOG "expected:$ecf1 - got:$ecf2 < eps---ilon:$epsilon\n";
-									#		$majorNumberDifferences = 1;
-									#		goto DEFAULT;	
-									#	}
-									#}
-								}
-								else
+								if (LessThanEpsilon($ecf2,$ecf1,$epsilon) == 0)
 								{
-#									print(" NONUMBER expected($ecf1) got($ecf2)\n");
-									if(! ($ecf2 eq $ecf1))
-									{
-										print LOG "expected:$ecf1 - got:$ecf2 > epsilon-4:$epsilon\n";
-										$majorNumberDifferences = 1;
-										goto DEFAULT;
-									}
+									print LOG "expected:$ecf1 - got:$ecf2 > epsilon-3:$epsilon\n";
+#										print(" ERROR ");
+									$majorNumberDifferences = 1;
+									goto DEFAULT;	    			
+								}
+								if (LessThanEpsilon($ecf2,$ecf1,$epsilon) == 1)
+								{
+#										print(" OK ");
 								}
 							}
-#							print(" left: @field and @field2 \n");
+							else
+							{
+#								print(" NONUMBER expected($ecf1) got($ecf2)\n");
+								if(! ($ecf2 eq $ecf1))
+								{
+									print LOG "expected:$ecf1 - got:$ecf2 > epsilon-4:$epsilon\n";
+									$majorNumberDifferences = 1;
+									goto DEFAULT;
+								}
+							}
 						}
-						$corrCounter = $totCounter;
-					#}
+#						print(" left: @field and @field2 \n");
+					}
+					$corrCounter = $totCounter;
 	    		}				
 	    		else 
 	    		{
@@ -487,7 +476,8 @@ while ($#ARGV >= 0) {
 			$SIG{USR2} = "failSig";
 			$parent = $$;
 			#print( @ARGV );
-			splice @ARGV, 1, 0, $arg;
+			#splice @ARGV, 1, 0, $arg;
+			push(@ARGV,$arg); # re-add "current" element to end of array(first element have been removed to find what type it is)
 			while($#ARGV >= 0)
 			{
 				#printf(" if $activeProcesses < $threads then kör\n");
