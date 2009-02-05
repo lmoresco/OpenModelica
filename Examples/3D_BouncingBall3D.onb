@@ -87,7 +87,7 @@ end SimulationResult;</Output>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-6.27743856220419e+66" Antialiasing="false" MinorY="-6.27743856220419e+66" Title="Plot title" LogX="false" LogY="false" MajorX="-6.27743856220419e+66" MajorY="-6.27743856220419e+66" closed="false" YLabel="y" Area="wHSjns+SgOjBMwgxm+cqf0CFE7J4b5lcQTMb1vhnENw=" ShowGraph="true" Grid="false" XLabel="x" Legend="false" >
-          <Input>visualize(BouncingBall)</Input>
+          <Input>visualize(BouncingBall3D)</Input>
           <Output>true</Output>
         </GraphCell>
       </GroupCell>

@@ -119,7 +119,7 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="0"
+				DebugInformationFormat="3"
 				DisableSpecificWarnings="4800;4101;4231"
 			/>
 			<Tool

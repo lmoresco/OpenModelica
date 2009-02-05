@@ -38,4 +38,4 @@ Values.c: Values.mo Exp.sig Absyn.sig Util.sig Print.sig System.sig Dump.sig Err
 VarTransform.c: VarTransform.mo Exp.sig DAELow.sig DAE.sig Util.sig System.sig Types.sig Absyn.sig Algorithm.sig Debug.sig 
 Refactor.c: Refactor.mo Absyn.sig Util.sig Interactive.sig Env.sig Inst.sig 
 DAEQuery.c: DAEQuery.mo DAELow.sig Util.sig RTOpts.sig System.sig Algorithm.sig Absyn.sig DAE.sig Exp.sig 
-XMLDump.c: XMLDump.mo Values.sig Static.sig Util.sig Print.sig Dump.sig Exp.sig RTOpts.sig DAE.sig Absyn.sig Algorithm.sig DAELow.sig 
+XMLDump.c: XMLDump.mo Values.sig Static.sig Util.sig Print.sig Dump.sig Exp.sig RTOpts.sig DAEEXT.sig Algorithm.sig Absyn.sig DAE.sig DAELow.sig 

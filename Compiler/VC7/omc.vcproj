@@ -143,7 +143,7 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="0"
+				DebugInformationFormat="3"
 				DisableSpecificWarnings="4311;4312"
 			/>
 			<Tool
@@ -165,7 +165,7 @@
 				AdditionalManifestDependencies="type=&apos;win32&apos; name=&apos;Microsoft.VC90.CRT&apos; version=&apos;9.0.21022.8&apos; processorArchitecture=&apos;x86&apos; publicKeyToken=&apos;1fc8b3b9a1e18e3b&apos;"
 				IgnoreDefaultLibraryNames=""
 				DelayLoadDLLs=""
-				GenerateDebugInformation="false"
+				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -600,7 +600,19 @@
 			>
 		</File>
 		<File
+			RelativePath=".\omc.rc"
+			>
+		</File>
+		<File
+			RelativePath=".\Setup\icons\OpenModelica.ico"
+			>
+		</File>
+		<File
 			RelativePath=".\omc\Readme.txt"
+			>
+		</File>
+		<File
+			RelativePath=".\resource.h"
 			>
 		</File>
 	</Files>

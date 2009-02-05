@@ -117,7 +117,7 @@
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="2"
-				DebugInformationFormat="0"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

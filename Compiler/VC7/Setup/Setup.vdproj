@@ -2553,6 +2553,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1D92CDB81C6443E683FC4AA39F28687E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1DABEE6D8DB141239A062708F384A03C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -9064,6 +9070,12 @@
         "Entry"
         {
         "MsmKey" = "8:_662F083361FB4E899876BA07D8A85B85"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6653DBAF65644896BB2EFE428D7C0E64"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -20434,6 +20446,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DDBC3098900C49A2BEE60CCAC8DB0E82"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DDBD16A289F240B3B9C1B3E77294D6C6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -31927,6 +31945,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1D92CDB81C6443E683FC4AA39F28687E"
+            {
+            "SourcePath" = "8:..\\..\\..\\OMShell\\Release\\OMShell.pdb"
+            "TargetName" = "8:OMShell.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -53644,6 +53682,26 @@
             "TargetName" = "8:r40.c"
             "Tag" = "8:"
             "Folder" = "8:_657CC4DFE7DC4D9586E6809D1E12B823"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6653DBAF65644896BB2EFE428D7C0E64"
+            {
+            "SourcePath" = "8:..\\Release\\omc.pdb"
+            "TargetName" = "8:omc.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -91518,6 +91576,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DDBD16A289F240B3B9C1B3E77294D6C6"
+            {
+            "SourcePath" = "8:..\\..\\..\\OMNotebook\\ext\\release\\ext.pdb"
+            "TargetName" = "8:ext.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DDBD73B2173A4EBCA56400259D9B1850"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\info\\gdb\\Create-and-Delete-Tracepoints.html"
@@ -103804,7 +103882,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OpenModelica-1.4.5"
         "ProductCode" = "8:{2010C8DB-C5CA-410E-BBEF-308DB5009BC6}"
-        "PackageCode" = "8:{64BC6B4F-2189-49CD-BF9D-26B749E5BBFB}"
+        "PackageCode" = "8:{404C2DD5-39B0-4E68-9ABF-8A4D6245CD85}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
