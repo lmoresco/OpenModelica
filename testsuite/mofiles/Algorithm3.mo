@@ -13,10 +13,8 @@ algorithm
 end Algorithm3;
 
 // fclass Algorithm3
-// Integer i;
+// Integer i = integer(10.0 * time);
 // Real x;
-// equation
-//   i = integer(10.0 * time );
 // algorithm
 //   x := Real(i);
 // end Algorithm3;
