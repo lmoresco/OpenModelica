@@ -32,13 +32,13 @@ default : modtest.info modtest.ps $(HTMLFILE)
 
 test :
 	@echo
-	@echo Running tests...
+	@echo Running tests:
 	@echo
 	@$(TEST) $(TESTFILES)
 
 failingtest :
 	@echo
-	@echo Running failing tests...
+	@echo Running failing tests:
 	@echo
 	@$(TEST) $(FAILINGTESTFILES)
 

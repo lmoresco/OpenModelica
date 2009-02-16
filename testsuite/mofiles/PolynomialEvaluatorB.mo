@@ -2,8 +2,7 @@
 // keywords: 
 // status:   correct
 // 
-// Drmodelica: 8.2 Polynomial Evaluator (p. 242)
-//
+
 block PolynomialEvaluator 
   parameter Real c[:];     
   input Real x;
@@ -33,16 +32,14 @@ end PolyEvaluate2;
 // parameter Real polyeval.c[2] = 2;
 // parameter Real polyeval.c[3] = 3;
 // parameter Real polyeval.c[4] = 4;
-// input Real polyeval.x;
-// output Real polyeval.y;
+// input Real polyeval.x = time;
+// output Real polyeval.y = p;
 // protected parameter Integer polyeval.n = 3;
 // protected Real polyeval.xpowers[1];
 // protected Real polyeval.xpowers[2];
 // protected Real polyeval.xpowers[3];
 // protected Real polyeval.xpowers[4];
 // equation
-//   polyeval.x = time;
-//   polyeval.y = p;
 //   polyeval.xpowers[1] = 1.0;
 //   polyeval.xpowers[2] = polyeval.xpowers[1] * polyeval.x;
 //   polyeval.xpowers[3] = polyeval.xpowers[2] * polyeval.x;

@@ -11,9 +11,7 @@ end test2;
 
 function test3
   input Real a;
-  output Real x;
-algorithm
-  x := a+5;
+  output Real x := a+5;
 end test3;
 
 function test
@@ -56,11 +54,9 @@ end FunctionEval7;
 // fclass FunctionEval7
 // parameter Real a = 5;
 // parameter Real b = sqrt(a);
-// Real x1;
-// Real x3;
+// Real x1 = test(a);
+// Real x3 = test(test3(sin(x1)));
 // Real y;
 // equation
-//   x1 = test(a);
-//   x3 = test(test3(sin(x1)));
 //   y = test(x1 + x3);
 // end FunctionEval7;

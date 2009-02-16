@@ -22,11 +22,7 @@ model Import5
 end Import5;
 
 // fclass Import5
-// Real x;
-// Real x2;
-// Real x3;
-// equation
-//   x = 9.42;
-//   x2 = 2.7;
-//   x3 = 300000000.0;
+// Real x = 9.42;
+// Real x2 = 2.7;
+// Real x3 = 300000000.0;
 // end Import5;

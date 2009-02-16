@@ -1199,16 +1199,15 @@ end BS8;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   when sample(sawTooth1.p_startTime[1],sawTooth1.p_period[1]) then
 //   sawTooth1.T0[1] = time;
 //   end when;
 //   sawTooth1.outPort.signal[1] = sawTooth1.p_offset[1] + (if time < sawTooth1.p_startTime[1] then 0.0 else (sawTooth1.p_amplitude[1] * (time - sawTooth1.T0[1])) / sawTooth1.p_period[1]);
 //   sawTooth1.y[1] = sawTooth1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(sawTooth1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   sawTooth1.outPort.signal[1] = der1.inPort.signal[1];
+// sawTooth1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS8;

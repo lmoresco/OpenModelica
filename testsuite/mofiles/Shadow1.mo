@@ -16,13 +16,11 @@ model Shadow1
   A a(x = z, y=2.0);
 end Shadow1;
 
+
 // fclass Shadow1
-//   Real z;
-//   Real a.y;
-//   Real a.x;
+// Real z;
+// Real a.y = 2.0;
+// Real a.x = z;
 // equation
-//   a.y = 2.0;
-//   a.x = z;
 //   a.x = 1.0;
 // end Shadow1;
-

@@ -12,9 +12,8 @@ equation
 end Overwriting2;
 
 // fclass Overwriting2
-//   Real x;
-//   Real u;
+// Real x = 5.0 + u;
+// Real u;
 // equation
-//   x = 5.0 + u;
 //   x = 2.0;
 // end Overwriting2;

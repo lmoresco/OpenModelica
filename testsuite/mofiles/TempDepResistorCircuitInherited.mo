@@ -5,9 +5,6 @@
 // 
 // The flattened model should be the same for test TempDepResistorCircuit and
 // TempDepResistorCircuitInherited
-// 
-// Drmodelica: 4.4 Parameterized Generic Classes (p. 133)
-// 
 
 
 type ElectricPotential = Real (final quantity="ElectricPotential", final unit ="V");
@@ -74,8 +71,8 @@ end TempDepResistorCircuitInherited;
 // Real R1.v(quantity = "ElectricPotential", unit = "V");
 // Real R1.i(quantity = "ElectricCurrent", unit = "A");
 // parameter Real R1.R(unit = "Ohm") = 100 "Resistance";
-// Real R1.Temp;
-// Real R1.RT;
+// Real R1.Temp = Temp;
+// Real R1.RT = 0.1;
 // Real R2.p.v(quantity = "ElectricPotential", unit = "V");
 // Real R2.p.i(quantity = "ElectricCurrent", unit = "A");
 // Real R2.n.v(quantity = "ElectricPotential", unit = "V");
@@ -93,15 +90,13 @@ end TempDepResistorCircuitInherited;
 // Real R3.i(quantity = "ElectricCurrent", unit = "A");
 // parameter Real R3.R(unit = "Ohm") = 300 "Resistance";
 // equation
-//   R1.Temp = Temp;
-//   R1.RT = 0.1;
 //   R1.v = R1.i * R1.R;
 //   R2.v = R2.i * R2.R;
 //   R3.v = R3.i * R3.R;
-//   R1.p.i + R2.p.i + R3.p.i = 0.0;
-//   R1.p.v = R2.p.v;
-//   R2.p.v = R3.p.v;
-//   R1.n.i = 0.0;
+//   R1.p.i + (R2.p.i + R3.p.i) = 0.0;
+// R1.p.v = R2.p.v;
+// R2.p.v = R3.p.v;
 //   R2.n.i = 0.0;
+//   R1.n.i = 0.0;
 //   R3.n.i = 0.0;
 // end TempDepResistorCircuitInherited;

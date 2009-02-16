@@ -1,9 +1,7 @@
 // name:     PolynomialEvaluator2
 // keywords: function, algorithm, scoping, array
 // status:   correct
-//
-// Drmodelica: 9.2 called (p. 300)
-//
+
 
 function polyeval
   input Real a[:];
@@ -44,13 +42,10 @@ end PolynomialEvaluator2;
 // end polyeval;
 // 
 // fclass PolynomialEvaluator2
-// Real inVector[1];
-// Real inVector[2];
-// Real inVector[3];
+// Real inVector[1] = 3.0;
+// Real inVector[2] = 8.0;
+// Real inVector[3] = 5.0;
 // Real result;
 // equation
-//   inVector[1] = 3.0;
-//   inVector[2] = 8.0;
-//   inVector[3] = 5.0;
 //   result = polyeval({inVector[1],inVector[2],inVector[3]},1.0);
 // end PolynomialEvaluator2;

@@ -10,7 +10,5 @@ class Class2
 end Class2;
 
 // fclass Class2
-//   Real    x;
-// equation
-//   x = 17.0;
+// Real x = 17.0;
 // end Class2;

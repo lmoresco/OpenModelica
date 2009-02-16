@@ -23,13 +23,11 @@ end Connect8;
 // parameter Integer N = 2;
 // Real c[1].x;
 // Real c[2].x;
-// Real cx.x;
-// Real cy.x;
+// Real cx.x = 1.0;
+// Real cy.x = time;
 // equation
-//   cx.x = 1.0;
-//   cy.x = time;
 //   c[1].x = time;
-//   -c[2].x + -cx.x + -cy.x = 0.0;
+//   (-c[2].x) + ((-cx.x) + (-cy.x)) = 0.0;
 //   cy.x = 0.0;
 //   cx.x = 0.0;
 // end Connect8;

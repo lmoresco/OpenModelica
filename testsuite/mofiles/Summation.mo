@@ -24,17 +24,11 @@ end Summation;
 // fclass Summation
 // Real sum;
 // Integer n;
-// Real a[1];
-// Real a[2];
-// Real a[3];
-// Real a[4];
-// Real a[5];
-// equation
-//   a[1] = 1.0;
-//   a[2] = 3.0;
-//   a[3] = 6.0;
-//   a[4] = 9.0;
-//   a[5] = 12.0;
+// Real a[1] = 1.0;
+// Real a[2] = 3.0;
+// Real a[3] = 6.0;
+// Real a[4] = 9.0;
+// Real a[5] = 12.0;
 // algorithm
 //   sum := 0.0;
 //   n := 5;

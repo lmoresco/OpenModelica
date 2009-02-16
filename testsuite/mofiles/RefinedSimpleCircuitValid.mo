@@ -8,8 +8,7 @@
 // parameters and components comp1 and comp2 below. This allows replacement 
 // by another kind of electrical component than a resistor in the circuit.
 // 
-// Drmodelica: 4.4 Parameterized Generic Classes (p. 133)
-// 
+
   type ElectricPotential = Real (final quantity="ElectricPotential", final unit
         ="V");
   type Voltage = ElectricPotential;
@@ -121,7 +120,7 @@
 //   comp2.p.i + comp2.n.i = 0.0;
 //   comp2.i = comp2.p.i;
 //   R3.v = R3.i * R3.R;
-//   comp1.p.i + comp2.p.i + R3.p.i = 0.0;
+//   comp1.p.i + (comp2.p.i + R3.p.i) = 0.0;
 //   comp1.p.v = comp2.p.v;
 //   comp2.p.v = R3.p.v;
 //   comp1.n.i = 0.0;

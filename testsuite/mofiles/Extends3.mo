@@ -22,10 +22,12 @@ equation
   y = B*u;
 end SS;
 
+
+
 // fclass SS
-// Real u[1];
-// Real y[1];
-// Real y[2];
+// input Real u[1];
+// output Real y[1];
+// output Real y[2];
 // parameter Integer nin = 1;
 // parameter Integer nout = 2;
 // parameter Real B[1,1] = 1;
@@ -34,5 +36,3 @@ end SS;
 //   y[1] = B[1,1] * u[1];
 //   y[2] = B[2,1] * u[1];
 // end SS;
-
-

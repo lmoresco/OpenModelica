@@ -13,10 +13,8 @@ class Lookup1
   B b;
 end Lookup1;
 
-// fclass Lookup1
-//   constant Real a = 3.0;
-//   Real b.c;
-// equation
-//   b.c = 3.0;
-// end Lookup1;
 
+// fclass Lookup1
+// constant Real a = 3.0;
+// Real b.c = 3.0;
+// end Lookup1;

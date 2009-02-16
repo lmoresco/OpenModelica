@@ -1019,7 +1019,7 @@ end BM4;
 // output Real constant3.y[1];
 // parameter Real constant3.k[1] = 1 "Constant output values";
 // equation
-//   add31.outPort.signal[1] = add31.k1 * add31.inPort1.signal[1] + add31.k2 * add31.inPort2.signal[1] + add31.k3 * add31.inPort3.signal[1];
+//   add31.outPort.signal[1] = add31.k1 * add31.inPort1.signal[1] + (add31.k2 * add31.inPort2.signal[1] + add31.k3 * add31.inPort3.signal[1]);
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   constant2.outPort.signal[1] = constant2.k[1];

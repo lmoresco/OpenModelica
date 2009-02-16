@@ -1196,13 +1196,12 @@ end BS7;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   ramp1.outPort.signal[1] = ramp1.p_offset[1] + (if time < ramp1.p_startTime[1] then 0.0 else if time < ramp1.p_startTime[1] + ramp1.p_duration[1] then ((time - ramp1.p_startTime[1]) * ramp1.p_height[1]) / ramp1.p_duration[1] else ramp1.p_height[1]);
 //   ramp1.y[1] = ramp1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(ramp1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   ramp1.outPort.signal[1] = der1.inPort.signal[1];
+// ramp1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS7;

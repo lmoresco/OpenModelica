@@ -1254,7 +1254,6 @@ model BS5
 equation 
   connect(kinematicPTP1.outPort,der1.inPort) annotation(Line(visible=true,points={{-4.67,11.36},{16.62,8.32}}));
 end BS5;
-
 // fclass BS5
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
@@ -1262,7 +1261,7 @@ end BS5;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // parameter Integer kinematicPTP1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer kinematicPTP1.outPort.n = kinematicPTP1.nout "Dimension of signal vector";
 // output Real kinematicPTP1.outPort.signal[1] "Real output signals";
@@ -1285,7 +1284,6 @@ end BS5;
 // protected Real kinematicPTP1.Te(quantity = "Time", unit = "s");
 // protected Boolean kinematicPTP1.noWphase;
 // equation
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 //   kinematicPTP1.aux1[1] = kinematicPTP1.p_deltaq[1] / kinematicPTP1.p_qd_max[1];
@@ -1298,8 +1296,8 @@ end BS5;
 //   kinematicPTP1.Tv = if kinematicPTP1.noWphase then kinematicPTP1.Ta1 else 1.0 / kinematicPTP1.sd_max;
 //   kinematicPTP1.Te = if kinematicPTP1.noWphase then 2.0 * kinematicPTP1.Ta1 else kinematicPTP1.Tv + kinematicPTP1.Ta2;
 //   kinematicPTP1.sdd = if time < kinematicPTP1.startTime then 0.0 else if kinematicPTP1.noWphase then if time < kinematicPTP1.Ta1 + kinematicPTP1.startTime then kinematicPTP1.sdd_max else if time < kinematicPTP1.Te + kinematicPTP1.startTime then -kinematicPTP1.sdd_max else 0.0 else if time < kinematicPTP1.Ta2 + kinematicPTP1.startTime then kinematicPTP1.sdd_max else if time < kinematicPTP1.Tv + kinematicPTP1.startTime then 0.0 else if time < kinematicPTP1.Te + kinematicPTP1.startTime then -kinematicPTP1.sdd_max else 0.0;
-//   kinematicPTP1.outPort.signal[1] = kinematicPTP1.p_deltaq[1] * kinematicPTP1.sdd;
+//   kinematicPTP1.outPort.signal[1] = kinematicPTP1.sdd * kinematicPTP1.p_deltaq[1];
 //   kinematicPTP1.y[1] = kinematicPTP1.outPort.signal[1];
 // assert(kinematicPTP1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   kinematicPTP1.outPort.signal[1] = der1.inPort.signal[1];
+// kinematicPTP1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS5;

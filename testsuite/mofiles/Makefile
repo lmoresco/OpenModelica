@@ -14,7 +14,7 @@ ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo \
 Constant4.mo Constant5.mo Constant6.mo Constant7.mo Constant8.mo Constant9.mo Constant10.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
-DeclareConstant1.mo DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo \
+DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo \
 Each1.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
@@ -42,7 +42,7 @@ Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.m
 Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
 Vectorizable5.mo VectorDimension.mo \
-XPowers1.mo XPowers2.mo XPowers3.mo \
+Xpowers.mo XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
@@ -54,7 +54,7 @@ ModifiedFiltersInSeries.mo \
 Colors.mo MultFuncCall.mo ArrayDim1.mo ArrayDim2.mo \
 ArrayDim3.mo ArrayDim4.mo ElementWiseMultiplication.mo \
 Equations.mo Summation.mo \
-VanDerPol.mo LogCall1.mo Xpowers.mo \
+VanDerPol.mo LogCall1.mo \
 ArrayAddSub.mo ArrayDiv.mo \
 BlockMatrix.mo BlockMatrix2.mo \
 BlockMatrix3.mo \

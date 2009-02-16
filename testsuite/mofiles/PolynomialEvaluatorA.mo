@@ -2,8 +2,7 @@
 // keywords: 
 // status:   correct
 // 
-// Drmodelica: 8.2 Polynomial Evaluator (p. 242)
-// 
+
 
 block PolynomialEvaluator 
   parameter Real c[:];     

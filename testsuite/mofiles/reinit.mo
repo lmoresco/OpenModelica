@@ -23,11 +23,10 @@ end FilterBlock1;
 // fclass FilterBlock1
 // parameter Real T = 1 "Time constant";
 // parameter Real k = 1 "Gain";
-// input Real u;
+// input Real u = 1.0;
 // output Real y;
 // protected Real x;
 // equation
-//   u = 1.0;
 //   der(x) = (u - x) / T;
 //   y = k * x;
 // algorithm

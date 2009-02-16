@@ -13,9 +13,8 @@ end A;
 class Overwriting1 = A(x = 5.0);
 
 // fclass Overwriting1
-//   Real x;
-//   Real u;
+// Real x = 5.0;
+// Real u;
 // equation
-//   x = 5.0;
 //   x = 2.0 * u;
 // end Overwriting1;

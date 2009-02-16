@@ -23,7 +23,5 @@ end InOutArray2;
 // constant String A[3] = "!";
 // constant String A[4] = " ab";
 // constant String A[5] = "ba ";
-// String Asum;
-// equation
-//   Asum = "hello world! abba ";
+// String Asum = "hello world! abba ";
 // end InOutArray2;

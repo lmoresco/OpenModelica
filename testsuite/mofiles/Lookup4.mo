@@ -15,9 +15,7 @@ class Lookup4
   Real b = Container.a;
 end Lookup4;
 
-// fclass Lookup4
-//   Real b;
-// equation
-//   b = 3.0;
-// end Lookup4;
 
+// fclass Lookup4
+// Real b = 3.0;
+// end Lookup4;

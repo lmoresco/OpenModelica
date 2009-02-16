@@ -23,7 +23,7 @@ end Xpowers1;
 
 // fclass Xpowers1
 // parameter Real x = 10;
-// Real a;
+// Real a = 1.0;
 // parameter Integer n = 5;
 // Real xpowers[1];
 // Real xpowers[2];
@@ -32,7 +32,6 @@ end Xpowers1;
 // Real xpowers[5];
 // Real y;
 // equation
-//   a = 1.0;
 //   xpowers[1] = 1.0;
 //   xpowers[2] = xpowers[1] * x;
 //   xpowers[3] = xpowers[2] * x;

@@ -10,9 +10,6 @@ model Array9
 end Array9;
 
 // fclass Array9
-// Real x[1];
-// Real x[2];
-// equation
-//   x[1] = 1.0;
-//   x[2] = 2.0;
+// Real x[1] = 1.0;
+// Real x[2] = 2.0;
 // end Array9;

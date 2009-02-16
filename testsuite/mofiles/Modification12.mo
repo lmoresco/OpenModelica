@@ -1,4 +1,4 @@
-// name:     Modification11
+// name:     Modification12
 // keywords: modification, attributes, arrays
 // status:   correct
 // 
@@ -9,7 +9,5 @@ class Modification12
 end Modification12;
 
 // fclass Modification12
-// Real x[1](min = 1.0);
-// equation
-//  x[1] = 1.0;
+// Real x[1](min = 1.0) = 1.0;
 // end Modification12;

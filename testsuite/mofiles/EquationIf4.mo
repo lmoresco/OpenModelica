@@ -22,9 +22,16 @@ equation
 end EquationIf4;
 
 // fclass EquationIf4
-// Real p;
+// Real p = 10.0 * time;
 // Real x;
 // equation
-//   p = 10.0 * time;
-//   x = if p < 0.0 then 1.0 else if p < 10.0 then 2.0 else if p > 10.0 then 3.0 else 4.0;
+//   if p < 0.0 then
+//   x = 1.0;
+//   elseif p < 10.0 then
+//   x = 2.0;
+//   elseif p > 10.0 then
+//   x = 3.0;
+//   else
+//   x = 4.0;
+//   end if;
 // end EquationIf4;

@@ -1311,13 +1311,12 @@ end BS9;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
-//   sine1.outPort.signal[1] = sine1.p_offset[1] + (if time < sine1.p_startTime[1] then 0.0 else sine1.p_amplitude[1] * Modelica.Math.sin(6.28318530717959 * sine1.p_freqHz[1] * (time - sine1.p_startTime[1]) + sine1.p_phase[1]));
+//   sine1.outPort.signal[1] = sine1.p_offset[1] + (if time < sine1.p_startTime[1] then 0.0 else sine1.p_amplitude[1] * Modelica.Math.sin(6.28318530717959 * (sine1.p_freqHz[1] * (time - sine1.p_startTime[1])) + sine1.p_phase[1]));
 //   sine1.y[1] = sine1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(sine1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   sine1.outPort.signal[1] = der1.inPort.signal[1];
+// sine1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS9;

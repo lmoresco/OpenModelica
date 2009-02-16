@@ -18,9 +18,6 @@ model Extends1
 end Extends1;
 
 // fclass Extends1
-//   Real x.a;
-//   Real x.b;
-// equation
-//   x.a = 2.0;
-//   x.b = 2.0;
+// Real x.a = 2.0;
+// Real x.b = 2.0;
 // end Extends1;

@@ -23,10 +23,14 @@ class Modification10
 end Modification10;
 
 
+
+
+
+
+
+
+
 // fclass Modification10
-// Real a.c.b.x;
-// Real a.b.x;
-// equation
-//   a.c.b.x = 1.0;
-//   a.b.x = 1.0;
+// Real a.c.b.x = 1.0;
+// Real a.b.x = 17.0;
 // end Modification10;

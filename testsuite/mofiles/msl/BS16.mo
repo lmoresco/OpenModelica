@@ -1226,7 +1226,7 @@ end BS16;
 // parameter Real booleanPulse1.period[1](quantity = "Time", unit = "s", min = 1e-60) = 1 "Times for one period";
 // parameter Real booleanPulse1.startTime[1](quantity = "Time", unit = "s") = 0 "Iime instants of first pulse";
 // protected parameter Real booleanPulse1.p_period[1](quantity = "Time", unit = "s") = booleanPulse1.period[1];
-// protected parameter Real booleanPulse1.Twidth[1](quantity = "Time", unit = "s") = (booleanPulse1.p_period[1] * 1.0 * booleanPulse1.width[1]) / 100.0 "width of one pulse";
+// protected parameter Real booleanPulse1.Twidth[1](quantity = "Time", unit = "s") = booleanPulse1.p_period[1] * booleanPulse1.width[1] / 100.0 "width of one pulse";
 // protected parameter Real booleanPulse1.p_startTime[1](quantity = "Time", unit = "s") = booleanPulse1.startTime[1];
 // protected Real booleanPulse1.T0[1](quantity = "Time", unit = "s", start = booleanPulse1.p_startTime[1]) "Start time of current period";
 // parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
@@ -1235,15 +1235,14 @@ end BS16;
 // parameter Integer booleanChange1.outPort.n = booleanChange1.n "Dimension of signal vector";
 // output Boolean booleanChange1.outPort.signal[1] "Boolean output signals";
 // output Boolean booleanChange1.y[1] "Output signals";
-// protected Boolean booleanChange1.u[1] "Input signals";
+// protected Boolean booleanChange1.u[1] = booleanChange1.inPort.signal[1] "Input signals";
 // equation
 //   when sample(booleanPulse1.p_startTime[1],booleanPulse1.p_period[1]) then
 //   booleanPulse1.T0[1] = time;
 //   end when;
 //   booleanPulse1.outPort.signal[1] = time >= booleanPulse1.T0[1] AND time < booleanPulse1.T0[1] + booleanPulse1.Twidth[1];
-//   booleanChange1.u[1] = booleanChange1.inPort.signal[1];
 //   booleanChange1.y[1] = change(booleanChange1.u[1]);
 //   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
 // assert(booleanPulse1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
-//   booleanPulse1.outPort.signal[1] = booleanChange1.inPort.signal[1];
+// booleanPulse1.outPort.signal[1] = booleanChange1.inPort.signal[1];
 // end BS16;

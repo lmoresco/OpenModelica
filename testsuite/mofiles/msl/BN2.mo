@@ -952,15 +952,14 @@ end BN2;
 // parameter Integer limiter1.outPort.n = limiter1.n "Dimension of signal vector";
 // output Real limiter1.outPort.signal[1] "Real output signals";
 // output Real limiter1.y[1] "Output signals";
-// protected Real limiter1.u[1] "Input signals";
+// protected Real limiter1.u[1] = limiter1.inPort.signal[1] "Input signals";
 // parameter Real limiter1.uMax[1] = 1 "Upper limits of input signals";
 // parameter Real limiter1.uMin[1](max = limiter1.uMax[1]) = -limiter1.uMax[1] "Lower limits of input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-//   limiter1.u[1] = limiter1.inPort.signal[1];
 //   limiter1.y[1] = if limiter1.u[1] > limiter1.uMax[1] then limiter1.uMax[1] else if limiter1.u[1] < limiter1.uMin[1] then limiter1.uMin[1] else limiter1.u[1];
 //   limiter1.y[1] = limiter1.outPort.signal[1];
 // assert(constant1.outPort.n == limiter1.inPort.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = limiter1.inPort.signal[1];
+// constant1.outPort.signal[1] = limiter1.inPort.signal[1];
 // end BN2;

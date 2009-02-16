@@ -4,8 +4,6 @@
 // 
 // <insert description here>
 // 
-// Drmodelica: 13.3 Hybrid Tank Model with a Discrete Controller (p. 460)
-// 
 function LimitValue
   input Real pMin;
   input Real pMax;
@@ -136,7 +134,7 @@ end TankHybridPI;
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
 //   when sample(0,piDiscrete.Ts) then
-//   piDiscrete.x = pre(piDiscrete.x) + (piDiscrete.error * piDiscrete.Ts) / piDiscrete.T;
+//   piDiscrete.x = pre(piDiscrete.x) + piDiscrete.error * piDiscrete.Ts / piDiscrete.T;
 //   piDiscrete.outCtr = piDiscrete.K * (piDiscrete.x + piDiscrete.error);
 //   end when;
 //   piDiscrete.error = piDiscrete.ref - piDiscrete.cIn.val;

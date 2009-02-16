@@ -1074,13 +1074,12 @@ end BM26;
 // parameter Integer tanh1.outPort.n = tanh1.n "Dimension of signal vector";
 // output Real tanh1.outPort.signal[1] "Real output signals";
 // output Real tanh1.y[1] "Output signals";
-// protected Real tanh1.u[1] "Input signals";
+// protected Real tanh1.u[1] = tanh1.inPort.signal[1] "Input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-//   tanh1.u[1] = tanh1.inPort.signal[1];
 //   tanh1.y[1] = Modelica.Math.tanh(tanh1.u[1]);
 //   tanh1.y[1] = tanh1.outPort.signal[1];
 // assert(tanh1.inPort.n == constant1.outPort.n,"automatically generated from connect");
-//   tanh1.inPort.signal[1] = constant1.outPort.signal[1];
+// tanh1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BM26;

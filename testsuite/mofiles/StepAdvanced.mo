@@ -2,8 +2,7 @@
 // keywords: 
 // status:   correct
 // 
-// Drmodelica: 8.2 Step (p. 244)
-// 
+
 
 
 connector InPort            "Connector with input signals of type Real"
@@ -59,7 +58,7 @@ end Step;                        // From Modelica.Blocks.Sources
 // parameter Integer nout = 1 "Number of outputs";
 // parameter Integer outPort.n = nout "Dimension of signal vector";
 // output Real outPort.signal[1] "Real output signals";
-// protected Real n[1];
+// protected Real n[1] = outPort.signal[1];
 // parameter Real height[1] = 1 "Heights of steps";
 // parameter Real offset[1] = 0 "Offset of output signals";
 // parameter Real startTime[1](quantity = "Time", unit = "s") = 0 "Output = offset for time < startTime";
@@ -67,6 +66,5 @@ end Step;                        // From Modelica.Blocks.Sources
 // protected parameter Real p_offset[1] = offset[1];
 // protected parameter Real p_startTime[1](quantity = "Time", unit = "s") = startTime[1];
 // equation
-//   n[1] = outPort.signal[1];
 //   outPort.signal[1] = p_offset[1] + (if time < p_startTime[1] then 0.0 else p_height[1]);
 // end Step;

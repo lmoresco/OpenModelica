@@ -75,12 +75,11 @@ end FunctionEval9;
 // parameter Real b[1] = 1;
 // parameter Real b[2] = 2;
 // parameter Real b[3] = 3;
-// Real x1;
+// Real x1 = test(a);
 // parameter Real x2 = 4;
 // Real y;
 // Real z;
 // equation
-//   x1 = test(a);
 //   y = test3(x1 + x2);
 //   z = test(y);
 // end FunctionEval9;

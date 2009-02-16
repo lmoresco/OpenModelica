@@ -17,9 +17,7 @@ model test
 end test;
 
 // fclass test
-// Real x;
-// equation
-//   x = 1.0;
+// Real x = 1.0;
 // end test;
 
 

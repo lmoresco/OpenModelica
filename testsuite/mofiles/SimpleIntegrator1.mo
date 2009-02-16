@@ -13,11 +13,10 @@ equation
   der(x) = u;
 end SimpleIntegrator1;
 
+
 // fclass SimpleIntegrator1
-//   Real u;
-//   Real x;
+// Real u;
+// Real x = 2.0;
 // equation
-//   x = 2.0;
 //   der(x) = u;
 // end SimpleIntegrator1;
-

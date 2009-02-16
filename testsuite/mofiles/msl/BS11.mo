@@ -1310,15 +1310,14 @@ end BS11;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   timeTable1.outPort.signal[1] = timeTable1.a * time + timeTable1.b;
 //   timeTable1.y[1] = timeTable1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(timeTable1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   timeTable1.outPort.signal[1] = der1.inPort.signal[1];
+// timeTable1.outPort.signal[1] = der1.inPort.signal[1];
 // algorithm
 //   when {time >= pre(timeTable1.nextEvent),initial()} then
 //     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-13);

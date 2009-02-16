@@ -1239,7 +1239,7 @@ end BS12;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   when pre(trapezoid1.counter2[1]) <> 0 AND sample(trapezoid1.p_startTime[1],trapezoid1.p_period[1]) then
 //   trapezoid1.T0[1] = time;
@@ -1248,9 +1248,8 @@ end BS12;
 //   end when;
 //   trapezoid1.outPort.signal[1] = trapezoid1.p_offset[1] + (if time < trapezoid1.p_startTime[1] OR trapezoid1.counter2[1] == 0 OR time >= trapezoid1.T0[1] + trapezoid1.T_falling[1] then 0.0 else if time < trapezoid1.T0[1] + trapezoid1.T_rising[1] then ((time - trapezoid1.T0[1]) * trapezoid1.p_amplitude[1]) / trapezoid1.T_rising[1] else if time < trapezoid1.T0[1] + trapezoid1.T_width[1] then trapezoid1.p_amplitude[1] else ((trapezoid1.T0[1] + trapezoid1.T_falling[1] - time) * trapezoid1.p_amplitude[1]) / (trapezoid1.T_falling[1] - trapezoid1.T_width[1]));
 //   trapezoid1.y[1] = trapezoid1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(trapezoid1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   trapezoid1.outPort.signal[1] = der1.inPort.signal[1];
+// trapezoid1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS12;

@@ -3,7 +3,6 @@
 // status:   correct
 // 
 // defines and uses a package
-// Drmodelica: 10.1 Abstract Data Type (p. 333)
 //
 
 encapsulated package ComplexNumbers
@@ -51,23 +50,15 @@ class ComplexUser
 end ComplexUser;
 
 // fclass ComplexUser
-// Real a.re;
-// Real a.im;
-// Real b.re;
-// Real b.im;
+// Real a.re = 1.0;
+// Real a.im = 2.0;
+// Real b.re = 1.0;
+// Real b.im = 2.0;
 // Real z.re;
 // Real z.im;
 // Real w.re;
 // Real w.im;
 // equation
-//   a.re = 1.0;
-//   a.im = 2.0;
-//   b.re = 1.0;
-//   b.im = 2.0;
-//   __TMP__0 = ComplexNumbers.Multiply(a,b);
-//   z.re = __TMP__0.re;
-//   z.im = __TMP__0.im;
-//   __TMP__1 = ComplexNumbers.Add(a,b);
-//   z.re = __TMP__1.re;
-//   z.im = __TMP__1.im;
+//   z = ComplexNumbers.Multiply(a,b);
+//   z = ComplexNumbers.Add(a,b);
 // end ComplexUser;

@@ -80,7 +80,7 @@ sub runone
 	$preTime = time();
 	
 	
-    system "$pathToOMC $f >$log 2>&1";
+    system "\"$pathToOMC\" $f >$log 2>&1";
 #    system "../Compiler/omc +d=daedump $f >$log 2>&1";
 #    system "../omc $f >$log 2>&1";
     
@@ -323,7 +323,7 @@ sub dofile
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	if (/^\/\/[ \\|]([a-z]*): *([^\r|^\n]*)$/) {
+	if (/^\/\/[ \\|]*([a-z]*):[ \\|]*([^\012\015\n\r]*)/) {
 	    $info{$1} = $2;
 	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ Result:/../^\/\/ endResult/) {

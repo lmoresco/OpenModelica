@@ -978,12 +978,11 @@ end BS15;
 // parameter Integer booleanChange1.outPort.n = booleanChange1.n "Dimension of signal vector";
 // output Boolean booleanChange1.outPort.signal[1] "Boolean output signals";
 // output Boolean booleanChange1.y[1] "Output signals";
-// protected Boolean booleanChange1.u[1] "Input signals";
+// protected Boolean booleanChange1.u[1] = booleanChange1.inPort.signal[1] "Input signals";
 // equation
 //   booleanConstant1.outPort.signal[1] = booleanConstant1.k[1];
-//   booleanChange1.u[1] = booleanChange1.inPort.signal[1];
 //   booleanChange1.y[1] = change(booleanChange1.u[1]);
 //   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
 // assert(booleanConstant1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
-//   booleanConstant1.outPort.signal[1] = booleanChange1.inPort.signal[1];
+// booleanConstant1.outPort.signal[1] = booleanChange1.inPort.signal[1];
 // end BS15;

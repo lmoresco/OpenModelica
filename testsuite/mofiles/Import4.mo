@@ -47,13 +47,8 @@ model Import4
 end Import4;
 
 // fclass Import4
-// Real c.x;
-// Real d.x;
-// Real e.x;
-// Real myc.x;
-// equation
-//   c.x = 1.0;
-//   d.x = 5.0;
-//   e.x = 6.0;
-//   myc.x = 7.0;
+// Real c.x = 1.0;
+// Real d.x = 5.0;
+// Real e.x = 6.0;
+// Real myc.x = 7.0;
 // end Import4;

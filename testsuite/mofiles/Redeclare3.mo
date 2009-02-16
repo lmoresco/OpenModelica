@@ -24,8 +24,14 @@ class Redeclare3
   C c(redeclare class Q = B(y=1));
 end Redeclare3;
 
+
+
+
+
+
 // fclass Redeclare3
-//  Real c.x.x;
+// Real c.x.x;
+// Real c.x.y = 1.0;
 // equation
-//   c.x.x = 1.0;
+//   c.x.y = c.x.x;
 // end Redeclare3;

@@ -935,13 +935,12 @@ end BS2;
 // parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
 // output Real der1.outPort.signal[1] "Real output signals";
 // output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] "Input signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-//   der1.u[1] = der1.inPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 // assert(constant1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = der1.inPort.signal[1];
+// constant1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS2;

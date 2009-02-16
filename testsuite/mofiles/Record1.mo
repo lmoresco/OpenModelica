@@ -12,7 +12,5 @@ model Record1
 end Record1;
 
 // fclass Record1
-//   Real a.x;
-// equation
-//   a.x = 18.0;
+// Real a.x = 18.0;
 // end Record1;

@@ -19,9 +19,7 @@ model Lookup2
   extends Lookup2Package.B;
 end Lookup2;
 
-// fclass Lookup2
-//   Real c;
-// equation
-//   c = 3.0;
-// end Lookup2;
 
+// fclass Lookup2
+// Real c = 3.0;
+// end Lookup2;

@@ -14,11 +14,7 @@ class ArrayModification8
 end ArrayModification8;
 
 // fclass ArrayModification8
-//   Real    a.x[1];
-//   Real    a.x[2];
-//   Real    a.x[3];
-// equation
-//   a.x[1] = 1.0;
-//   a.x[2] = 2.0;
-//   a.x[3] = 3.0;
+// Real a.x[1] = 1.0;
+// Real a.x[2] = 2.0;
+// Real a.x[3] = 3.0;
 // end ArrayModification8;

@@ -2,7 +2,7 @@
 // keywords: <insert keywords here>
 // status:   correct
 // 
-// Drmodelica: 13.2  Sampled Systems (p. 429)
+// <insert description here>
 // 
 
 model DiscreteVectorStateSpace
@@ -111,13 +111,13 @@ end DVSSTest;
 // protected discrete Real dvss.x[5];
 // equation
 //   when sample(0,dvss.T) then
-//   dvss.x[1] = dvss.A[1,1] * pre(dvss.x[1]) + dvss.A[1,2] * pre(dvss.x[2]) + dvss.A[1,3] * pre(dvss.x[3]) + dvss.A[1,4] * pre(dvss.x[4]) + dvss.A[1,5] * pre(dvss.x[5]) + dvss.B[1,1] * dvss.u[1] + dvss.B[1,2] * dvss.u[2] + dvss.B[1,3] * dvss.u[3] + dvss.B[1,4] * dvss.u[4];
-//   dvss.x[2] = dvss.A[2,1] * pre(dvss.x[1]) + dvss.A[2,2] * pre(dvss.x[2]) + dvss.A[2,3] * pre(dvss.x[3]) + dvss.A[2,4] * pre(dvss.x[4]) + dvss.A[2,5] * pre(dvss.x[5]) + dvss.B[2,1] * dvss.u[1] + dvss.B[2,2] * dvss.u[2] + dvss.B[2,3] * dvss.u[3] + dvss.B[2,4] * dvss.u[4];
-//   dvss.x[3] = dvss.A[3,1] * pre(dvss.x[1]) + dvss.A[3,2] * pre(dvss.x[2]) + dvss.A[3,3] * pre(dvss.x[3]) + dvss.A[3,4] * pre(dvss.x[4]) + dvss.A[3,5] * pre(dvss.x[5]) + dvss.B[3,1] * dvss.u[1] + dvss.B[3,2] * dvss.u[2] + dvss.B[3,3] * dvss.u[3] + dvss.B[3,4] * dvss.u[4];
-//   dvss.x[4] = dvss.A[4,1] * pre(dvss.x[1]) + dvss.A[4,2] * pre(dvss.x[2]) + dvss.A[4,3] * pre(dvss.x[3]) + dvss.A[4,4] * pre(dvss.x[4]) + dvss.A[4,5] * pre(dvss.x[5]) + dvss.B[4,1] * dvss.u[1] + dvss.B[4,2] * dvss.u[2] + dvss.B[4,3] * dvss.u[3] + dvss.B[4,4] * dvss.u[4];
-//   dvss.x[5] = dvss.A[5,1] * pre(dvss.x[1]) + dvss.A[5,2] * pre(dvss.x[2]) + dvss.A[5,3] * pre(dvss.x[3]) + dvss.A[5,4] * pre(dvss.x[4]) + dvss.A[5,5] * pre(dvss.x[5]) + dvss.B[5,1] * dvss.u[1] + dvss.B[5,2] * dvss.u[2] + dvss.B[5,3] * dvss.u[3] + dvss.B[5,4] * dvss.u[4];
-//   dvss.y[1] = dvss.C[1,1] * pre(dvss.x[1]) + dvss.C[1,2] * pre(dvss.x[2]) + dvss.C[1,3] * pre(dvss.x[3]) + dvss.C[1,4] * pre(dvss.x[4]) + dvss.C[1,5] * pre(dvss.x[5]) + dvss.D[1,1] * dvss.u[1] + dvss.D[1,2] * dvss.u[2] + dvss.D[1,3] * dvss.u[3] + dvss.D[1,4] * dvss.u[4];
-//   dvss.y[2] = dvss.C[2,1] * pre(dvss.x[1]) + dvss.C[2,2] * pre(dvss.x[2]) + dvss.C[2,3] * pre(dvss.x[3]) + dvss.C[2,4] * pre(dvss.x[4]) + dvss.C[2,5] * pre(dvss.x[5]) + dvss.D[2,1] * dvss.u[1] + dvss.D[2,2] * dvss.u[2] + dvss.D[2,3] * dvss.u[3] + dvss.D[2,4] * dvss.u[4];
+//   dvss.x[1] = dvss.A[1,1] * pre(dvss.x[1]) + (dvss.A[1,2] * pre(dvss.x[2]) + (dvss.A[1,3] * pre(dvss.x[3]) + (dvss.A[1,4] * pre(dvss.x[4]) + (dvss.A[1,5] * pre(dvss.x[5]) + (dvss.B[1,1] * dvss.u[1] + (dvss.B[1,2] * dvss.u[2] + (dvss.B[1,3] * dvss.u[3] + dvss.B[1,4] * dvss.u[4])))))));
+//   dvss.x[2] = dvss.A[2,1] * pre(dvss.x[1]) + (dvss.A[2,2] * pre(dvss.x[2]) + (dvss.A[2,3] * pre(dvss.x[3]) + (dvss.A[2,4] * pre(dvss.x[4]) + (dvss.A[2,5] * pre(dvss.x[5]) + (dvss.B[2,1] * dvss.u[1] + (dvss.B[2,2] * dvss.u[2] + (dvss.B[2,3] * dvss.u[3] + dvss.B[2,4] * dvss.u[4])))))));
+//   dvss.x[3] = dvss.A[3,1] * pre(dvss.x[1]) + (dvss.A[3,2] * pre(dvss.x[2]) + (dvss.A[3,3] * pre(dvss.x[3]) + (dvss.A[3,4] * pre(dvss.x[4]) + (dvss.A[3,5] * pre(dvss.x[5]) + (dvss.B[3,1] * dvss.u[1] + (dvss.B[3,2] * dvss.u[2] + (dvss.B[3,3] * dvss.u[3] + dvss.B[3,4] * dvss.u[4])))))));
+//   dvss.x[4] = dvss.A[4,1] * pre(dvss.x[1]) + (dvss.A[4,2] * pre(dvss.x[2]) + (dvss.A[4,3] * pre(dvss.x[3]) + (dvss.A[4,4] * pre(dvss.x[4]) + (dvss.A[4,5] * pre(dvss.x[5]) + (dvss.B[4,1] * dvss.u[1] + (dvss.B[4,2] * dvss.u[2] + (dvss.B[4,3] * dvss.u[3] + dvss.B[4,4] * dvss.u[4])))))));
+//   dvss.x[5] = dvss.A[5,1] * pre(dvss.x[1]) + (dvss.A[5,2] * pre(dvss.x[2]) + (dvss.A[5,3] * pre(dvss.x[3]) + (dvss.A[5,4] * pre(dvss.x[4]) + (dvss.A[5,5] * pre(dvss.x[5]) + (dvss.B[5,1] * dvss.u[1] + (dvss.B[5,2] * dvss.u[2] + (dvss.B[5,3] * dvss.u[3] + dvss.B[5,4] * dvss.u[4])))))));
+//   dvss.y[1] = dvss.C[1,1] * pre(dvss.x[1]) + (dvss.C[1,2] * pre(dvss.x[2]) + (dvss.C[1,3] * pre(dvss.x[3]) + (dvss.C[1,4] * pre(dvss.x[4]) + (dvss.C[1,5] * pre(dvss.x[5]) + (dvss.D[1,1] * dvss.u[1] + (dvss.D[1,2] * dvss.u[2] + (dvss.D[1,3] * dvss.u[3] + dvss.D[1,4] * dvss.u[4])))))));
+//   dvss.y[2] = dvss.C[2,1] * pre(dvss.x[1]) + (dvss.C[2,2] * pre(dvss.x[2]) + (dvss.C[2,3] * pre(dvss.x[3]) + (dvss.C[2,4] * pre(dvss.x[4]) + (dvss.C[2,5] * pre(dvss.x[5]) + (dvss.D[2,1] * dvss.u[1] + (dvss.D[2,2] * dvss.u[2] + (dvss.D[2,3] * dvss.u[3] + dvss.D[2,4] * dvss.u[4])))))));
 //   end when;
 //   dvss.u[1] = time;
 //   dvss.u[2] = time;
