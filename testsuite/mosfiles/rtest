@@ -5,7 +5,7 @@ $OPENMODELICAHOME = $ENV{'OPENMODELICAHOME'};
 $pathToOMC = $OPENMODELICAHOME."/bin/omc";
 
 $gotone = 0;
-$threads=2;
+$threads=1;
 
 $successes=0;
 $total=0;
