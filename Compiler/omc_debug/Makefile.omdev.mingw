@@ -91,7 +91,7 @@ absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS)
+	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi
 
 subdirs: $(SRCHSRCDIR) $(SUBDIRS)
 
