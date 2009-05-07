@@ -7,17 +7,20 @@ $verbose="no";
 $pager="cat";
 $log="";
 $diff = "diff -w";
-$tmp1 = "/tmp/equations-1";
-$tmp2 = "/tmp/equations-2";
-$tmp3 = "/tmp/equations-diff";
-$tmp4 = "/tmp/baseline";
+$tmpPath = "/tmp/omctesting/"; # double slash to work on *nix to.
+# adrpo: make sure we have created the directory!
+system "mkdir -p $tmpPath";
+$tmp1 = "$tmpPath/equations-1";
+$tmp2 = "$tmpPath/equations-2";
+$tmp3 = "$tmpPath/equations-diff";
+$tmp4 = "$tmpPath/baseline";
 @keys = ();
 $collectkeys = 0;
 $collectcases = 0;
 %knownkeys = ();
 $filearg = 0;
 $status = 0;
-$statusfilter = "all";
+$statusfilter = "all"; 
 $grep = "egrep";
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
@@ -25,7 +28,7 @@ sub setbaseline
 {
 
     my $f = shift;
-    $log ="/tmp/log-$f";
+    $log ="$tmpPath/log-$f";
     system "../../build/bin/omc $f >$log 2>&1";
 
     open(RES,">$tmp4");
@@ -195,19 +198,15 @@ sub dofile
 		"name"     => $f,
 		"keywords" => "unknown",
 		"cflags"   => "");
-    $log = "/tmp/log-$f";
+    $log = "$tmpPath/log-$f";
     $tc_err = 0;
     # Find the expected result
     open(OUT,">$tmp2");
     open(IN,"<$f");
     while(<IN>) {
-	# @adrpo - uncomment for debugging
-	# print ($_);
-	if (/^\/\/[ \\|]*([a-z]*):[ \\|]*([^\012\015\n\r]*)/) {
-	    # @adrpo - uncomment for debugging
-	    # print "Noticed: $1 = $2\n";		
-	    # $info{$1} = $value;
+	if (/^\/\/[ \\|]([a-z]*): *([^\r|^\n]*)/) {
 	    $info{$1} = $2;
+	    # print "Noticed $1 = $2\n";
 	} elsif (/^\/\/ fclass/../^\/\/ end/) {
 	    s/^[ \t]*//;
 	    s/[ \t]+/ /;
@@ -339,7 +338,9 @@ while ($#ARGV >= 0) {
 
 # Check for no file args
 if ($filearg == 0) {
+    system "mkdir /tmp/log-drmodelica";
     for (glob '*.mo ') { dofile $_; }
+    system "rm -rf /tmp/log-drmodelica";
 }
 
 # Final output. Statistics and stuff

@@ -9,7 +9,7 @@ ClassInf.c: ClassInf.mo SCode.sig Absyn.sig Print.sig Error.sig
 ClassLoader.c: ClassLoader.mo Interactive.sig Absyn.sig Util.sig Print.sig System.sig Debug.sig Parser.sig 
 Codegen.c: Codegen.mo Print.sig MetaUtil.sig Exp.sig Convert.sig Absyn.sig DAE.sig Util.sig System.sig Types.sig ModUtil.sig Inst.sig Debug.sig Error.sig Interactive.sig Algorithm.sig ClassInf.sig 
 Connect.c: Connect.mo Static.sig Prefix.sig Exp.sig Env.sig DAE.sig Absyn.sig Util.sig Types.sig Print.sig Inst.sig Dump.sig Error.sig Debug.sig Lookup.sig 
-ConnectionGraph.c: ConnectionGraph.mo Util.sig HashTableCG.sig DAE.sig Exp.sig 
+ConnectionGraph.c: ConnectionGraph.mo Util.sig Exp.sig HashTableCG.sig Absyn.sig DAE.sig 
 Convert.c: Convert.mo Values.sig Types.sig Util.sig Exp.sig DAE.sig Algorithm.sig Absyn.sig ClassInf.sig SCode.sig 
 DAE.c: DAE.mo Values.sig Types.sig Exp.sig ClassInf.sig Algorithm.sig Absyn.sig System.sig Util.sig RTOpts.sig Print.sig SCode.sig Graphviz.sig Error.sig Dump.sig Env.sig ModUtil.sig Ceval.sig Debug.sig 
 DAELow.c: DAELow.mo Values.sig Exp.sig DAE.sig Algorithm.sig Absyn.sig VarTransform.sig Types.sig Util.sig SimCodegen.sig RTOpts.sig SCode.sig Print.sig System.sig Env.sig Derive.sig Dump.sig DAEEXT.sig Builtin.sig Ceval.sig BackendVarTransform.sig Debug.sig Error.sig 
