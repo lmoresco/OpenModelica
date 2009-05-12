@@ -21,7 +21,7 @@ DumpGraphviz.c: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig
 Constants.c: Constants.mo 
 Env.c: Env.mo Types.sig SCode.sig Exp.sig ClassInf.sig Absyn.sig Util.sig Print.sig System.sig Dump.sig Inst.sig 
 Error.c: Error.mo Absyn.sig Util.sig ErrorExt.sig Print.sig 
-Exp.c: Exp.mo SCode.sig Graphviz.sig Absyn.sig ClassInf.sig Util.sig RTOpts.sig Static.sig ModUtil.sig Print.sig Dump.sig Debug.sig Derive.sig Env.sig 
+Exp.c: Exp.mo SCode.sig Graphviz.sig ClassInf.sig Absyn.sig Util.sig System.sig Static.sig Print.sig RTOpts.sig Env.sig Derive.sig Dump.sig Debug.sig ModUtil.sig 
 SCode.c: SCode.mo Absyn.sig Util.sig Print.sig Error.sig ModUtil.sig Debug.sig Dump.sig 
 Graphviz.c: Graphviz.mo 
 HashTable.c: HashTable.mo Exp.sig Util.sig System.sig 
