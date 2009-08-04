@@ -68,6 +68,7 @@ omc:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -f Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
 omcd:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
@@ -79,6 +80,7 @@ omcd:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -f Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
 omc_frontend:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
@@ -90,6 +92,7 @@ omc_frontend:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -f Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
 test:
 	(cd testsuite; time $(MAKE) -f Makefile)
