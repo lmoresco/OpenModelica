@@ -65,7 +65,7 @@ SRCMO= Absyn.mo \
 	Interactive.mo \
 	Lookup.mo \
 	Main.mo \
-	Math.mo \
+	MMath.mo \
 	MetaUtil.mo \
 	Mod.mo \
 	ModUtil.mo \
