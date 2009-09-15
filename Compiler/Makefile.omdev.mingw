@@ -84,13 +84,13 @@ $(PROGF): omc_frontend
 install_doc:
 	for x in $(DOC_FILES); do \
 		echo Copying $$x into $(builddir_doc); \
-		cp doc/$$x $(builddir_doc)/; \
+		cp -puf doc/$$x $(builddir_doc)/; \
 	done
 
 install_scripts:
 	for x in $(SCRIPT_FILES); do \
 		echo Copying $$x into $(builddir_bin); \
-		cp scripts/$$x $(builddir_bin)/; \
+		cp -puf scripts/$$x $(builddir_bin)/; \
 	done
 
 
@@ -98,7 +98,7 @@ install: install_doc install_scripts
 	echo Copying needed helpfiles....
 	for x in $(DOC_FILES); do \
 		echo Copying $$x into $(builddir_bin) where omc expects it...; \
-		cp doc/$$x $(builddir_bin)/; \
+		cp -puf doc/$$x $(builddir_bin)/; \
 	done
 	
 omc_release:

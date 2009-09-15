@@ -2,6 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+
+#if defined(_MSC_VER)
+  #define DLLExport   __declspec( dllexport ) 
+#else 
+  #define DLLExport /* nothing */
+#endif 
+
+#if !defined(MODELICA_ASSERT)
+  #define MODELICA_ASSERT(cond,msg) { if (!(cond)) fprintf(stderr,"Modelica Assert: %s!\n", msg); }
+#endif
+#if !defined(MODELICA_TERMINATE)
+  #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
+#endif
+
+
 /*---FUNC: addmatrices ---*/
 
 #ifdef __cplusplus
@@ -24,8 +39,10 @@ typedef struct addmatrices_rettype_s
 extern void addmatrices(const double * a, size_t a_1, size_t a_2, const double * b, size_t b_1, size_t b_2, double* c, size_t c_1, size_t c_2);
 
 
+DLLExport 
 int in_addmatrices(type_description * inArgs, type_description * outVar);
 
+DLLExport 
 addmatrices_rettype _addmatrices(real_array a, real_array b);
 /* End of header part */
 

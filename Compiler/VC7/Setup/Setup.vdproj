@@ -3705,12 +3705,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2A66C230AA96E24184702E446AE89075"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2A6BC355CF0643D38A1F4F05D554EB5A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7557,12 +7551,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5156467C1D76078CA06AE78FD8C1A079"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_515CD88C64B74CCF9E21F9B689B1A68C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -8903,12 +8891,6 @@
         {
         "MsmKey" = "8:_60EAD887BB134E8FBAAF3D6682A5F453"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_60F6C6E2850FF35F7EAB7254368F5373"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -17699,12 +17681,6 @@
         {
         "MsmKey" = "8:_C16C1F45E7A7491FA711AF48857F5C81"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C17B71E70B424689C3184675EAD96FF9"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -35796,26 +35772,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A66C230AA96E24184702E446AE89075"
-            {
-            "SourcePath" = "8:mico2313.dll"
-            "TargetName" = "8:mico2313.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A6BC355CF0643D38A1F4F05D554EB5A"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\share\\doc\\mlton\\examples\\same-fringe.sml"
@@ -48636,26 +48592,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5156467C1D76078CA06AE78FD8C1A079"
-            {
-            "SourcePath" = "8:QtNetwork4.dll"
-            "TargetName" = "8:QtNetwork4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_515CD88C64B74CCF9E21F9B689B1A68C"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\basis\\libs\\basis-1997\\real\\real-convert.fun"
@@ -53134,26 +53070,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_60F6C6E2850FF35F7EAB7254368F5373"
-            {
-            "SourcePath" = "8:QtCore4.dll"
-            "TargetName" = "8:QtCore4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6138A6D28AE94BE4A8517A69F79A0F52"
@@ -82416,26 +82332,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C17B71E70B424689C3184675EAD96FF9"
-            {
-            "SourcePath" = "8:QtGui4.dll"
-            "TargetName" = "8:QtGui4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C17BBDF21C2D4228964537FDBCD3B602"
             {
             "SourcePath" = "8:..\\..\\..\\OMNotebook\\DrModelica\\DiscreteHybrid\\meningsfil.onb"
@@ -101402,7 +101298,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_5E09BEF16F57435892F962D446E8B3F8"
             {
-            "DefaultLocation" = "8:C:\\OpenModelica1.4.4"
+            "DefaultLocation" = "8:C:\\OpenModelica1.5.0"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -103869,19 +103765,19 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:OpenModelica-1.4.4"
-        "ProductCode" = "8:{451E7243-9124-4B19-BCE4-ABA9CDE94DE2}"
-        "PackageCode" = "8:{66BA7586-F9C9-4B22-84CB-E58E39F40FA6}"
+        "ProductName" = "8:OpenModelica-1.5.0"
+        "ProductCode" = "8:{3B179FB1-DE2A-4011-BD92-F1F7C0DD525F}"
+        "PackageCode" = "8:{9751524E-D7F3-4AE7-BA2D-276F666AF5D6}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.4"
+        "ProductVersion" = "8:1.5.0"
         "Manufacturer" = "8:Programming Environments Laboratory (PELAB), Linköping University (LiU). "
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://www.ida.liu.se/labs/pelab/modelica/OpenModelica.html"
-        "Title" = "8:OpenModelica-1.4.4"
+        "Title" = "8:OpenModelica-1.5.0"
         "Subject" = "8:Modeling and Simulation Software for Modelica"
         "ARPCONTACT" = "8:Programming Environments Laboratory (PELAB)"
         "Keywords" = "8:OpenModelica, Modeling and Simulation Software, PELAB"

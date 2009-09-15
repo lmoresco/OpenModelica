@@ -13,7 +13,7 @@ model HeatTankExpanded  //Modelica Book version, Added start values etc.
 
   connector TankStream
     Real pressure;
-    flow Real volumeFlowRate;
+    /* flow */ Real volumeFlowRate;
     Real temp;
   end TankStream;
 

@@ -2,6 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+
+#if defined(_MSC_VER)
+  #define DLLExport   __declspec( dllexport ) 
+#else 
+  #define DLLExport /* nothing */
+#endif 
+
+#if !defined(MODELICA_ASSERT)
+  #define MODELICA_ASSERT(cond,msg) { if (!(cond)) fprintf(stderr,"Modelica Assert: %s!\n", msg); }
+#endif
+#if !defined(MODELICA_TERMINATE)
+  #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
+#endif
+
+
 /*---FUNC: add ---*/
 
 #ifdef __cplusplus
@@ -24,8 +39,10 @@ typedef struct add_rettype_s
 extern double add(double x, double y);
 
 
+DLLExport 
 int in_add(type_description * inArgs, type_description * outVar);
 
+DLLExport 
 add_rettype _add(modelica_real x, modelica_real y);
 /* End of header part */
 

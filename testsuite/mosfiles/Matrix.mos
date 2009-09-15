@@ -23,14 +23,19 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 // Result:
 // true
 // 0
-// "Check of tt successful. Model tt has 18 equation(s) and 18 variable(s)."
+// "Check of tt completed successfully.
+// 
+// 
+// Class tt has 18 equation(s) and 18 variable(s).
+// 6 of these are trivial equation(s).
+// "
 // "fclass tt
-// Real x[1,1];
-// Real x[1,2];
-// Real x[1,3];
-// Real x[2,1];
-// Real x[2,2];
-// Real x[2,3];
+// Real x[1,1] = 1.0;
+// Real x[1,2] = 2.0;
+// Real x[1,3] = 3.0;
+// Real x[2,1] = 4.0;
+// Real x[2,2] = 5.0;
+// Real x[2,3] = 6.0;
 // Real z[1,1];
 // Real z[1,2];
 // Real z[2,1];
@@ -44,12 +49,6 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 // Real y[3,1];
 // Real y[3,2];
 // equation
-//   x[1,1] = 1.0;
-//   x[1,2] = 2.0;
-//   x[1,3] = 3.0;
-//   x[2,1] = 4.0;
-//   x[2,2] = 5.0;
-//   x[2,3] = 6.0;
 //   z = Trans({{x[1,1],x[1,2],x[1,3]},{x[2,1],x[2,2],x[2,3]}});
 //   y = Trans({{x[1,1],x[1,2],x[1,3]},{x[2,1],x[2,2],x[2,3]}});
 // end tt;

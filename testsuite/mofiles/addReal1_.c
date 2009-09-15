@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+
+#if !defined(MODELICA_ASSERT)
+  #define MODELICA_ASSERT(cond,msg) { if (!(cond)) fprintf(stderr,"Modelica Assert: %s!\n", msg); }
+#endif
+#if !defined(MODELICA_TERMINATE)
+  #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
+#endif
+
+
 /*---FUNC: addReal1_ ---*/
 
 #ifdef __cplusplus
