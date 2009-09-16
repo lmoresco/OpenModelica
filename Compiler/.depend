@@ -53,6 +53,5 @@ XMLDump.c: XMLDump.mo Values.sig Static.sig Util.sig Print.sig Dump.sig Exp.sig 
 InstanceHierarchy.c: InstanceHierarchy.mo Types.sig Lookup.sig SCode.sig Connect.sig Absyn.sig Env.sig Dump.sig Debug.sig 
 UnitAbsyn.c: UnitAbsyn.mo MMath.sig Exp.sig HashTable.sig 
 MMath.c: MMath.mo 
-UnitParserExt.c: UnitParserExt.mo UnitAbsyn.sig 
 UnitAbsynBuilder.c: UnitAbsynBuilder.mo UnitAbsyn.sig Types.sig MMath.sig HashTable.sig Env.sig Absyn.sig DAE.sig Exp.sig Util.sig UnitParserExt.sig SCode.sig System.sig Lookup.sig Interactive.sig OptManager.sig 
 UnitChecker.c: UnitChecker.mo UnitAbsynBuilder.sig UnitAbsyn.sig MMath.sig OptManager.sig Debug.sig Error.sig 
