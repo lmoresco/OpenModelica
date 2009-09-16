@@ -31,7 +31,7 @@ protected
 algorithm
   res := y1;
 end foo;    </Input>
-        <Output>Ok</Output>
+        <Output>{foo}</Output>
       </GraphCell>
       <GroupCell closed="false" >
         <TextCell style="Section" >
@@ -45,8 +45,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:18pt; font-weight:600; color:#000000;">Calling foo&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADALgAAAAAAAEBYwAAAAAAAQD0AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>foo(3.0)  //??? Error, wrong result, should be 1.722 - Error if using default values or declaration assignments</Input>
-          <Output>5.28326e-308</Output>
+          <Input>foo(3.0)  </Input>
+          <Output>2.72203612439102</Output>
         </GraphCell>
       </GroupCell>
     </GroupCell>
