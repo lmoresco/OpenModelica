@@ -94,7 +94,7 @@ absyn_subdir:
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
 	g++ -O3 -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi 
-	#strip $(PROG)
+	strip $(PROG)
 
 
 subdirs: $(SRCHSRCDIR) $(SUBDIRS)
