@@ -293,7 +293,8 @@ p, li { white-space: pre-wrap; }
 &lt;tr>
 &lt;td style="border: none;">
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans'; font-size:10pt;">&lt;span style=" font-family:'Times New Roman'; font-size:14pt; font-weight:600; color:#000000;">    &lt;/span>&lt;a href="QuickTour/Exercise1inheritance.onb
-">&lt;span style=" font-family:'Times New Roman'; font-size:14pt; font-weight:600; text-decoration: underline; color:#0000ff;">Exercise 1&lt;br />    &lt;/span>&lt;/a>&lt;a href="QuickTour/Exercise2inheritance.onb
+">&lt;span style=" font-family:'Times New Roman'; font-size:14pt; font-weight:600; text-decoration: underline; color:#0000ff;">Exercise 1&lt;br />&lt;/span>&lt;/a>&lt;a href="QuickTour/Exercise1inheritance.onb
+">&lt;span style=" font-family:'Times New Roman'; font-size:14pt; font-weight:600; color:#0000ff;">    &lt;/span>&lt;/a>&lt;a href="QuickTour/Exercise2inheritance.onb
 ">&lt;span style=" font-family:'Times New Roman'; font-size:14pt; font-weight:600; text-decoration: underline; color:#0000ff;">Exercise 2&lt;/span>&lt;/a>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
               <Rule name="FontSize" >14</Rule>
               <Rule name="FontWeight" >Bold</Rule>
