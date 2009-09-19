@@ -1,3 +1,35 @@
+/*
+ * This file is part of OpenModelica.
+ *
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
+ * All rights reserved.
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
+ * See the full OSMC Public License conditions for more details.
+ *
+ * For more information about the Qt-library visit TrollTech's webpage 
+ * regarding the Qt licence: http://www.trolltech.com/products/qt/licensing.html
+ */
+
 #include "VisualizationWidget.h"
 
 namespace IAEX {
@@ -5,13 +37,13 @@ namespace IAEX {
 	VisualizationWidget::VisualizationWidget(QWidget *parent) : QWidget(parent)
 	{
 #ifndef __APPLE_CC__
-		this->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+		this->setMinimumWidth(600);
 		this->setMinimumHeight(300);
-		this->setMinimumWidth(500);
+		this->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
-		QWidget *visframe = new QWidget(this);
+		visframe_ = new QWidget(this);
 
-		visframe->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+		visframe_->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
 		simdata_ = new SimulationData();
 		simdata_->setFrame(0);
@@ -29,40 +61,41 @@ namespace IAEX {
 		slider_->setRange(1000*simdata_->get_start_time(), 1000*simdata_->get_end_time());
 		slider_->setValue(0);
     currentTime_ = 1000*simdata_->get_start_time();
-		QTimer *timer = new QTimer(this);
+		timer_ = new QTimer(this);
 		// 40 fps
-		timer->setInterval(25);
+		timer_->setInterval(25);
 
 		connect(slider_, SIGNAL(valueChanged(int)),
 			this, SLOT(sliderChanged(int)));
 		connect(playbutton, SIGNAL(clicked()),
-			timer, SLOT(start()));
+			timer_, SLOT(start()));
 		connect(stopbutton, SIGNAL(clicked()),
-			timer, SLOT(stop()));
-		connect(timer, SIGNAL(timeout()),
+			timer_, SLOT(stop()));
+		connect(timer_, SIGNAL(timeout()),
 			this, SLOT(nextFrame()));
 
-		QVBoxLayout *buttonlayout = new QVBoxLayout(this);
-		buttonlayout->addWidget(playbutton);
-		buttonlayout->addWidget(stopbutton);
-		buttonlayout->addWidget(rewbutton);
-		buttonlayout->addWidget(slider_);
-		buttonlayout->addWidget(label_);
-		buttonlayout->setAlignment(slider_, Qt::AlignHCenter);
-		buttonlayout->setAlignment(label_, Qt::AlignHCenter);
+		buttonlayout_ = new QVBoxLayout();
+		buttonlayout_->addWidget(playbutton);
+		buttonlayout_->addWidget(stopbutton);
+		buttonlayout_->addWidget(rewbutton);
+		buttonlayout_->addWidget(slider_);
+		buttonlayout_->addWidget(label_);
+		buttonlayout_->setAlignment(slider_, Qt::AlignHCenter);
+		buttonlayout_->setAlignment(label_, Qt::AlignHCenter);
 
-		buttonframe->setLayout(buttonlayout);
+		buttonframe->setLayout(buttonlayout_);
 
-		eviewer_ = new SoQtExaminerViewer(visframe, NULL, TRUE, SoQtFullViewer::BUILD_NONE);
-		eviewer_->setSize(SbVec2s(500,400));
+		eviewer_ = new SoQtExaminerViewer(visframe_, NULL, TRUE, SoQtFullViewer::BUILD_NONE);
+		//eviewer_->setSize(SbVec2s(600,400));
+    //eviewer_->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 		eviewer_->setSceneGraph(simdata_->getSceneGraph());
-		eviewer_->setBackgroundColor(SbColor(0.85f, 0.85f, 0.85f));
+		eviewer_->setBackgroundColor(SbColor(0.95f, 0.95f, 0.95f));
 
 		//SoCamera *cam = eviewer_->getCamera();
 		//cam->
 
-		QHBoxLayout *framelayout = new QHBoxLayout;
-		framelayout->addWidget(visframe);
+		QHBoxLayout *framelayout = new QHBoxLayout(this);
+		framelayout->addWidget(visframe_);
 		framelayout->addWidget(buttonframe);
 		this->setLayout(framelayout);
 
@@ -75,6 +108,14 @@ namespace IAEX {
 
 	VisualizationWidget::~VisualizationWidget(void)
 	{
+#ifndef __APPLE_CC__        
+    delete slider_;
+    delete eviewer_;
+    delete visframe_;
+    delete server;
+    delete buttonlayout_;
+    delete timer_;
+#endif        
 	}
 
 	void VisualizationWidget::sliderChanged(int val) {

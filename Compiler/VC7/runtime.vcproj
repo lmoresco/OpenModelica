@@ -112,12 +112,12 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;;&quot;$(ProjectDir)..\&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="2"
-				DebugInformationFormat="0"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

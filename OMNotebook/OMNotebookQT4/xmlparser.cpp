@@ -1,44 +1,34 @@
 /*
-See also: www.ida.liu.se/projects/OpenModelica
-
-All rights reserved.
-
-(The new BSD license, see also
-http://www.opensource.org/licenses/bsd-license.php)
-
-
-Redistribution and use in source and binary forms, with or without
-modification,
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice,
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-* Neither the name of Linkopings universitet nor the names of its contributors
-may be used to endorse or promote products derived from this software without
-specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-
-For more information about the Qt-library visit TrollTech:s webpage regarding
-licence: http://www.trolltech.com/products/qt/licensing.html
-
-------------------------------------------------------------------------------------
-*/
+ * This file is part of OpenModelica.
+ *
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
+ * All rights reserved.
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
+ * See the full OSMC Public License conditions for more details.
+ *
+ * For more information about the Qt-library visit TrollTech's webpage 
+ * regarding the Qt licence: http://www.trolltech.com/products/qt/licensing.html
+ */
 
 // REMADE LARGE PART OF THIS CLASS 2005-11-30 /AF
 
@@ -146,41 +136,43 @@ namespace IAEX
     {
       if(!(ba = qUncompress(ba)).size())
       {
+        file.close();
         string msg = "The file " + filename_.toStdString() + " is not a valid onbz file.";
         throw runtime_error(msg.c_str());
       }
     }
-
-    /* -- no freaking conversion
+    
     if(ba.indexOf("<InputCell") != -1)
     {
-    QSettings s("PELAB", "OMNotebook");
-    bool alwaysConvert = s.value("AlwaysConvert", false).toBool();
-    QMessageBox m;
-    int i;
-    if(!alwaysConvert)
-    {
-    m.setWindowTitle("OMNotebook");
-    m.setText("Do you want to convert this file to the current document version?");
-    m.setIcon(QMessageBox::Question);
-    m.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    QPushButton* always = m.addButton("Always convert old documents", QMessageBox::YesRole );
+      /*
+      QSettings s("PELAB", "OMNotebook");
+      bool alwaysConvert = s.value("AlwaysConvert", true).toBool();
+      QMessageBox m;
+      int i;
+      if(!alwaysConvert)
+      {
+        m.setWindowTitle("OMNotebook");
+        m.setText("Do you want to convert this file to the current document version?");
+        m.setIcon(QMessageBox::Question);
+        m.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        QPushButton* always = m.addButton("Always convert old documents", QMessageBox::YesRole );
 
-    i = m.exec();
+        i = m.exec();
 
-    if(m.clickedButton() == always)
-    {
-    s.setValue("AlwaysConvert", true);
-    alwaysConvert = true;
+        if(m.clickedButton() == always)
+        {
+          s.setValue("AlwaysConvert", true);
+          alwaysConvert = true;
+        }
+      }
+
+      if(alwaysConvert || i == QMessageBox::Yes)
+      */
+      ba = ba.replace("<InputCell", "<GraphCell").
+        replace("/InputCell>", "/GraphCell>").
+        replace("style=\"Input\"", "style=\"Graph\"");
+
     }
-    }
-
-    if(alwaysConvert || i == QMessageBox::Yes)
-    ba = ba.replace("<InputCell", "<GraphCell").replace("/InputCell>", "/GraphCell>").replace("style=\"Input\"", "style=\"Graph\"");
-
-
-    }
-    */
 
     if(!domdoc.setContent(ba))
     {
@@ -188,6 +180,7 @@ namespace IAEX
       string msg = "Could not understand content of " + filename_.toStdString();
       throw runtime_error( msg.c_str() );
     }
+
     file.close();
 
     // go to correct parse function
@@ -415,10 +408,12 @@ namespace IAEX
       {
         if( e.tagName() == XML_TEXT )
         {
+          
           // adrpo --> add URL conversion because Qt 4.4.2 doesn't accept \ in the URL!
           QString text = e.text();
           // replace all href="...\..." with href=".../..."
-          QRegExp rx("(href[^=]*=[^\"]*\"[^\"\\\\]*)\\\\([^\"]*\")");
+          QString pattern("(href[^=]*=[^\"]*\"[^\"\\\\]*)\\\\([^\"]*\")");
+          QRegExp rx(pattern);
           rx.setCaseSensitivity(Qt::CaseInsensitive);
           rx.setMinimal(true);
           rx.setPatternSyntax(QRegExp::RegExp);
@@ -431,8 +426,9 @@ namespace IAEX
           {
             while (done > -1)
             {
-              // int numX = rx.numCaptures(); QString s1 = rx.cap(1),s2 = rx.cap(2); cout << numX << " " << s1.toStdString() << "-" << s2.toStdString() << endl;
-              text = text.replace(rx, "\\1/\\2");
+              // int numX = rx.numCaptures(); QString s1 = rx.cap(1),s2 = rx.cap(2); 
+              // cout << numX << " " << s1.toStdString() << "-" << s2.toStdString() << endl;
+              text = text.replace(rx, rx.cap(1) + QString::fromAscii("/") + rx.cap(2));
               done = rx.indexIn(text);
             }
             textcell->setTextHtml( text );
@@ -508,7 +504,7 @@ namespace IAEX
         {
           InputCell *iCell = dynamic_cast<InputCell*>(inputcell);
 
-          if( iCell->isPlot() )
+          if( iCell->isJavaPlot() )
             iCell->setTextOutputHtml( e.text() );
           else
             iCell->setTextOutput( e.text() );
@@ -589,7 +585,7 @@ namespace IAEX
         {
           GraphCell *iCell = dynamic_cast<GraphCell*>(graphcell);
 
-          if( iCell->isPlot() )
+          if( iCell->isQtPlot() )
             iCell->setTextOutputHtml( e.text() );
           else
             iCell->setTextOutput( e.text() );
@@ -613,7 +609,6 @@ namespace IAEX
           gCell->compoundwidget->gwMain->variables[label] =v;
 
           gCell->compoundwidget->gwMain->variableData.push_back(v);
-
         }
         else if( e.tagName() == XML_GRAPHCELL_GRAPH )
         {
@@ -777,41 +772,6 @@ namespace IAEX
       gCell->compoundwidget->gwMain->antiAliasing = true;
       gCell->compoundwidget->gwMain->aaAction->setChecked(true);
     }
-    bool showGraphics = (element.attribute(XML_GRAPHCELL_SHOWGRAPH, XML_FALSE) == XML_TRUE)?true:false;
-    if(showGraphics)
-    {
-      gCell->showGraph = true;
-      gCell->showGraphics();
-    }
-    else
-      gCell->compoundwidget->hide();
-
-
-
-    // 2006-01-17 AF, check if the inputcell is open or closed
-    QString closed = element.attribute( XML_CLOSED, XML_FALSE );
-
-
-    if( closed == XML_TRUE )
-    {
-      gCell->setClosed( true,true );
-
-    }
-    else if( closed == XML_FALSE )
-    {
-      /*
-      gCell->setHeight(gCell->height() +200);
-      gCell->compoundwidget->show();
-      gCell->compoundwidget->setMinimumHeight(200);
-      gCell->setEvaluated(true);
-      */
-      gCell->setClosed( false,true );
-    }
-    else
-      throw runtime_error( "Unknown closed value in inputcell" );
-
-
-
 
     QByteArray ba = QByteArray::fromBase64( element.attribute(XML_GRAPHCELL_AREA).toLatin1());
     QBuffer b(&ba);
@@ -823,16 +783,32 @@ namespace IAEX
     b.close();
 
     gCell->compoundwidget->gwMain->setLogarithmic(false);
-
     gCell->compoundwidget->gwMain->doFitInView = false;
     gCell->compoundwidget->gwMain->doSetArea = true;
     gCell->compoundwidget->gwMain->newRect = r;
     gCell->compoundwidget->gwMain->originalArea = r;
 
-    if(!gCell->isPlot2())
+    // 2006-01-17 AF, check if the inputcell is open or closed
+    QString closed = element.attribute( XML_CLOSED, XML_FALSE );
+    if( closed == XML_TRUE )
+      gCell->setClosed( true,true );
+    else if( closed == XML_FALSE )
+      gCell->setClosed( false,true );
+    else
+      throw runtime_error( "Unknown closed value in inputcell" );
+
+    bool showGraphics = (element.attribute(XML_GRAPHCELL_SHOWGRAPH, XML_FALSE) == XML_TRUE)?true:false;
+    if(showGraphics)
+    {
+      gCell->showGraph = true;
+      gCell->showGraphics();
+      gCell->compoundwidget->gwMain->resetZoom();
+    }
+    else
       gCell->compoundwidget->hide();
 
-    //		gCell->compoundwidget->gwMain->graphicsScene->addItem(gCell->compoundwidget->gwMain->graphicsItems);
+    if(!gCell->isQtPlot())
+      gCell->compoundwidget->hide();
 
     parent->addChild( graphcell );
   }

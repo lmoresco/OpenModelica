@@ -26,7 +26,7 @@ readFile("output.log");
 system("rm -rf *ElasticBearing.* *ElasticBearing_* output.log");
 
 // First
-simulate(TestModels.RotationalModels.SystemTests.First);
+simulate(TestModels.RotationalModels.SystemTests.First, tolerance=1e-10);
 {val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
@@ -35,7 +35,7 @@ readFile("output.log");
 system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 
 // Professional.WeakAxis
-simulate(TestModels.Professional.WeakAxis,stopTime=200.0);
+simulate(TestModels.Professional.WeakAxis,stopTime=200.0,tolerance=1e-10);
 {val(inertia1.w,0.0),val(inertia1.w,50.0),val(inertia1.w,100.0),
 val(inertia1.w,120.0),val(inertia1.w,180.0),val(inertia1.w,200.0)};
 {val(inertia2.w,0.0),val(inertia2.w,50.0),val(inertia2.w,100.0),

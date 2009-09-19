@@ -1,50 +1,35 @@
 #define QT_NO_DEBUG_OUTPUT
 /*
-------------------------------------------------------------------------------------
-This file is part of OpenModelica.
-
-Copyright (c) 1998-2006, Linköpings universitet,
-Department of Computer and Information Science, PELAB
-See also: www.ida.liu.se/projects/OpenModelica
-
-All rights reserved.
-
-(The new BSD license, see also
-http://www.opensource.org/licenses/bsd-license.php)
-
-
-Redistribution and use in source and binary forms, with or without
-modification,
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice,
-this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-* Neither the name of Linköpings universitet nor the names of its contributors
-may be used to endorse or promote products derived from this software without
-specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-
-For more information about the Qt-library visit TrollTech:s webpage regarding
-licence: http://www.trolltech.com/products/qt/licensing.html
-
-------------------------------------------------------------------------------------
-*/
+ * This file is part of OpenModelica.
+ *
+ * Copyright (c) 1998-2008, Linköpings University,
+ * Department of Computer and Information Science,
+ * SE-58183 Linköping, Sweden.
+ *
+ * All rights reserved.
+ *
+ * THIS PROGRAM IS PROVIDED UNDER THE TERMS OF THIS OSMC PUBLIC
+ * LICENSE (OSMC-PL). ANY USE, REPRODUCTION OR DISTRIBUTION OF
+ * THIS PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THE OSMC
+ * PUBLIC LICENSE.
+ *
+ * The OpenModelica software and the Open Source Modelica
+ * Consortium (OSMC) Public License (OSMC-PL) are obtained
+ * from Linköpings University, either from the above address,
+ * from the URL: http://www.ida.liu.se/projects/OpenModelica
+ * and in the OpenModelica distribution.
+ *
+ * This program is distributed  WITHOUT ANY WARRANTY; without
+ * even the implied warranty of  MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE, EXCEPT AS EXPRESSLY SET FORTH
+ * IN THE BY RECIPIENT SELECTED SUBSIDIARY LICENSE CONDITIONS
+ * OF OSMC-PL.
+ *
+ * See the full OSMC Public License conditions for more details.
+ *
+ * For more information about the Qt-library visit TrollTech's webpage 
+ * regarding the Qt licence: http://www.trolltech.com/products/qt/licensing.html
+ */
 
 /*!
  * \file notebook.h
@@ -141,7 +126,7 @@ namespace IAEX
 	 * Also made som other updates /AF
 	 */
 	NotebookWindow::NotebookWindow(Document *subject,
-		const QString &filename, QWidget *parent)
+		const QString filename, QWidget *parent)
 		: DocumentView(parent),
 		subject_(subject),
 		filename_(filename),
@@ -305,7 +290,6 @@ namespace IAEX
 
 		delete groupAction;
 		delete inputAction;
-		delete graphAction;
 		delete textAction;
 
 		delete aboutAction;
@@ -428,7 +412,7 @@ namespace IAEX
 	/*!
 	 * \author Ingemar Axelsson
 	 */
-	Application *NotebookWindow::application()
+	CellApplication *NotebookWindow::application()
 	{
 		return subject_->application();
 	}
@@ -743,38 +727,22 @@ namespace IAEX
 		connect(pasteCellAction, SIGNAL(triggered()), this, SLOT(pasteCell()));
 		*/
 
-		// 2005-10-07 AF, Porting, replaced this
-		//QAction *addCellAction = new QAction("Add cell", "&Add Cell", CTRL+Key_A, this, "addcell");
-		//QObject::connect(addCellAction, SIGNAL(activated()), this, SLOT(createNewCell()));
 		addCellAction = new QAction( tr("&Add Cell (previus cell style)"), this);
 		addCellAction->setShortcut( tr("Alt+Enter") );
 		addCellAction->setStatusTip( tr("Add a new textcell with the previuos cells style") );
 		connect(addCellAction, SIGNAL(triggered()), this, SLOT(createNewCell()));
 
-		// 2005-10-07 AF, Porting, replaced this
-		//QAction *inputAction = new QAction("Inputcell", "&Input cell", CTRL+SHIFT+Key_I, this, "inputcells");
-		//QObject::connect(inputAction, SIGNAL(activated()), this, SLOT(inputCellsAction()));
 		inputAction = new QAction( tr("Add &Inputcell"), this);
 		inputAction->setShortcut( tr("Ctrl+Shift+I") );
 		inputAction->setStatusTip( tr("Add an input cell") );
 		connect(inputAction, SIGNAL(triggered()), this, SLOT(inputCellsAction()));
-
 		/// fjass
-
-		graphAction = new QAction( tr("Add &Graphcell"), this);
-		graphAction->setShortcut( tr("Ctrl+Shift+R") );
-		graphAction->setStatusTip( tr("Add a graph cell") );
-		connect(graphAction, SIGNAL(triggered()), this, SLOT(graphCellsAction()));
-
 		textAction = new QAction( tr("Add &Textcell"), this);
 		textAction->setShortcut( tr("Ctrl+Shift+T") );
 		textAction->setStatusTip( tr("Add a text cell") );
 		connect(textAction, SIGNAL(triggered()), this, SLOT(textCellsAction()));
 		// \fjass
 
-		// 2005-10-07 AF, Porting, replaced this
-		//QAction *groupAction = new QAction("Group Cells", "&Group cells", CTRL+SHIFT+Key_G, this, "groupcells");
-		//QObject::connect(groupAction, SIGNAL(activated()), this, SLOT(groupCellsAction()));
 		groupAction = new QAction( tr("&Groupcell"), this);
 		groupAction->setShortcut( tr("Ctrl+Shift+G") );
 		groupAction->setStatusTip( tr("Groupcell") );
@@ -827,7 +795,6 @@ namespace IAEX
 		//cellMenu->addSeparator();
 		cellMenu->addAction( addCellAction );
 		cellMenu->addAction( inputAction );
-		cellMenu->addAction( graphAction );
 		cellMenu->addAction( textAction );
 
 		cellMenu->addAction( groupAction );
@@ -1660,6 +1627,7 @@ namespace IAEX
 	/*!
 	 * \author Ingemar Axelsson
 	 */
+  /*
 	void NotebookWindow::createSavingTimer()
 	{
 		//start a saving timer.
@@ -1669,6 +1637,7 @@ namespace IAEX
 		connect(savingTimer_, SIGNAL(timeout()),
 			this, SLOT(save()));
 	}
+  */
 
 
 
@@ -2501,7 +2470,7 @@ namespace IAEX
 	 *
 	 * \brief Open a file. Shows a file dialog.
 	 */
-	void NotebookWindow::openFile(const QString &filename)
+	void NotebookWindow::openFile(const QString filename)
 	{
 		try
 		{
@@ -2623,7 +2592,7 @@ namespace IAEX
 		{
 			try
 			{
-				OmcInteractiveEnvironment *omc = new OmcInteractiveEnvironment();
+        OmcInteractiveEnvironment *omc = OmcInteractiveEnvironment::getInstance();
 
 				int result = QMessageBox::question( 0, tr("Close OMC"),
 					"OK to quit running OpenModelica Compiler process at exit?\n(Answer No if other OMShell/OMNotebook/Graphic editor is still running)",
@@ -2643,6 +2612,7 @@ namespace IAEX
 			}
 			catch( exception &e )
 			{
+        e.what();
 			}
 		}
 	}
@@ -2762,8 +2732,7 @@ namespace IAEX
 			}
 
 			statusBar()->showMessage("Saving file");
-			application()->commandCenter()->executeCommand(
-				new SaveDocumentCommand(subject_, filename));
+			application()->commandCenter()->executeCommand(new SaveDocumentCommand(subject_, filename));
 
 			filename_ = filename;
 			statusBar()->showMessage("Ready");
@@ -3737,14 +3706,6 @@ namespace IAEX
 	 * are updated when new cell is added.
 	 */
 	void NotebookWindow::inputCellsAction()
-	{
-		subject_->executeCommand(new CreateNewCellCommand("Input"));
-		subject_->updateScrollArea();
-		updateChapterCounters();
-	}
-
-
-	void NotebookWindow::graphCellsAction()
 	{
 		subject_->executeCommand(new CreateNewCellCommand("Graph"));
 		subject_->updateScrollArea();
