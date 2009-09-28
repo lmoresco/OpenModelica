@@ -94,7 +94,9 @@ TwoRateSampler.mo DiscreteVectorStateSpace.mo \
 WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
 LotkaVolterra.mo HydrogenIodide.mo \
 FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
-InOutBool.mo InOutArray.mo InOutArray2.mo
+InOutBool.mo InOutArray.mo InOutArray2.mo \
+AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
+EquationFor5.mo EquationFor6.mo EquationFor7.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
