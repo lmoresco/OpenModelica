@@ -20,17 +20,17 @@ Each1.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
-EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo  Extends1.mo Extends2.mo Extends3.mo \
+EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  Extends1.mo Extends2.mo Extends3.mo \
 Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
-Matrix1.mo \
+MathematicalFunctions.mo Matrix1.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
 Modification12.mo Modification13.mo \
-ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo Operators.mo Overwriting1.mo Overwriting2.mo \
+ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo NumericFunctions.mo Operators.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
 Protected1.mo prtest.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
@@ -38,7 +38,7 @@ Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
-StringLiterals.mo \
+StringLiterals.mo StringConversion.mo \
 Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.mo \
 Units2.mo \
