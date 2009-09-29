@@ -6,25 +6,25 @@ Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13
 Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayRemoveIndex1.mo \
-BoolArrayTest.mo \
+BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
-Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo\
+Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
 ConditionalArrayExpression1.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo Connect15.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo \
 Constant4.mo Constant5.mo Constant6.mo Constant7.mo Constant8.mo Constant9.mo Constant10.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
-DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo\
+DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo \
 Each1.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo  Extends1.mo Extends2.mo Extends3.mo \
-Extends4.mo Function1.mo \
+Extends4.mo Function1.mo FloatingPoint.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
-Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo \
+Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 Matrix1.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
@@ -38,6 +38,7 @@ Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
+StringLiterals.mo \
 Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.mo \
 Units2.mo \
