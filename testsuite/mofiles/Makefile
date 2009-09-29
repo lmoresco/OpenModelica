@@ -8,13 +8,14 @@ ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrix
 ArrayRemoveIndex1.mo \
 BoolArrayTest.mo \
 Cardinality.mo \
-Circuit1.mo Class1.mo Class2.mo Class4.mo ConditionalArrayExpression1.mo \
+Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo\
+ConditionalArrayExpression1.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo Connect15.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo \
 Constant4.mo Constant5.mo Constant6.mo Constant7.mo Constant8.mo Constant9.mo Constant10.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
-DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo \
+DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo\
 Each1.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
