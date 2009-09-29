@@ -8,7 +8,7 @@ variables.mos Array1.mos simulation.mos simulation2.mos simulation3.mos differen
 strings.mos interactive_api_loadsave.mos  interactive_api_attributes.mos \
 matrices.mos BouncingBall.mos ExternalLibraries.mos \
 loadFileInteractiveQualified.mos ArrayEquation.mos Rename.mos \
-IdealDiode.mos \
+IdealDiode.mos Identifier.mos \
 blockssources.mos blockssystems.mos rotationalspringinertia.mos \
 rotationalsystems.mos rotationalgears.mos Interpolation.mos \
 ExtObj.mos algorithms.mos UnpOpPrecedence.mos BouncingBallExamples.mos Riccati.mos Pendulum.mos \

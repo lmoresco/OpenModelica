@@ -1,0 +1,10 @@
+// name: Identifier
+// keywords: identifier
+// status: incorrect
+//
+// Using reserved words as identifiers
+//
+
+loadFile("Identifier.mo");
+s := getErrorString();
+isEmpty(s);
