@@ -24,6 +24,7 @@ model Operators
   constant Integer unusedMatrix[2, 2] = [3,4;5,6];
   constant Integer unusedArray3[7,1] = [1:2:14];
   constant Boolean b = true;
+  constant String s = "te" + "st";
   Integer iarr[2];
   OtherModel om;
   Integer i1;
@@ -58,6 +59,7 @@ end Operators;
 // constant Integer unusedArray3[6,1] = 11;
 // constant Integer unusedArray3[7,1] = 13;
 // constant Boolean b = true;
+// constant String s = "test";
 // Integer iarr[1];
 // Integer iarr[2];
 // parameter Integer om.i1 = 12;
