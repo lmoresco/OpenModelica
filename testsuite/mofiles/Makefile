@@ -5,11 +5,11 @@ TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
 Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13.mo \
 Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
-ArrayRemoveIndex1.mo \
+ArrayRemoveIndex1.mo ArrayOperators.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
-ConditionalArrayExpression1.mo \
+ConditionalArrayExpression1.mo CondOperators.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo Connect15.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo \
@@ -21,7 +21,7 @@ Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo  Extends1.mo Extends2.mo Extends3.mo \
-Extends4.mo Function1.mo FloatingPoint.mo \
+Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
@@ -30,7 +30,7 @@ Matrix1.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
 Modification12.mo Modification13.mo \
-ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo Overwriting1.mo Overwriting2.mo \
+ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo Operators.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
 Protected1.mo prtest.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
