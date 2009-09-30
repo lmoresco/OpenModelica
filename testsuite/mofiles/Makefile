@@ -25,6 +25,7 @@ Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
+IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 MathematicalFunctions.mo Matrix1.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
@@ -33,6 +34,7 @@ Modification12.mo Modification13.mo \
 ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo NumericFunctions.mo Operators.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
 Protected1.mo prtest.mo \
+RealAdd.mo RealSub.mo RealMul.mo RealDiv.mo RealPow.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
 Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
