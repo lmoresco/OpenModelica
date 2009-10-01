@@ -7,6 +7,7 @@ Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayRemoveIndex1.mo ArrayOperators.mo \
 ArrayCurlyBrackets.mo ArrayBrackets.mo ArrayRange.mo ArrayAccess.mo \
+ArrayAddition.mo ArraySubtraction.mo ArrayMultiplication.mo ArrayDivision.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
