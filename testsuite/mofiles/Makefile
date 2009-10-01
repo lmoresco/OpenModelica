@@ -12,6 +12,7 @@ BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
 Abs.mo Sign.mo Sqrt.mo \
 Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
+Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
 ConditionalArrayExpression1.mo CondOperators.mo \
 LessThan.mo LessThanEqual.mo GreaterThan.mo GreaterThanEqual.mo Equals.mo NotEquals.mo Not.mo And.mo Or.mo \
