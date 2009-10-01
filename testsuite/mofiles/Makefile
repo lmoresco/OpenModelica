@@ -6,6 +6,7 @@ Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13
 Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayRemoveIndex1.mo ArrayOperators.mo \
+ArrayCurlyBrackets.mo ArrayBrackets.mo ArrayRange.mo ArrayAccess.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
@@ -22,13 +23,14 @@ Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  Extends1.mo Extends2.mo Extends3.mo \
-Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo \
+Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo FunctionCall.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
 IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
-MathematicalFunctions.mo Matrix1.mo \
+MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo \
+ModelAccess.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
 Modification12.mo Modification13.mo \
@@ -41,7 +43,7 @@ Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
-StringLiterals.mo StringConversion.mo \
+StringLiterals.mo StringConversion.mo StringConcatenation.mo \
 Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.mo \
 Units2.mo \
