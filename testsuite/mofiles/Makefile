@@ -31,6 +31,7 @@ EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
 EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  Extends1.mo Extends2.mo Extends3.mo \
 Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo FunctionCall.mo \
 FlowDeclType.mo FlowDeclRecord.mo FlowDeclConnector.mo \
+DiscreteDeclType.mo DiscreteDeclRecord.mo DiscreteDeclConnector.mo \
 Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
