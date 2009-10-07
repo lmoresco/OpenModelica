@@ -16,6 +16,7 @@ Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
 Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
 Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
 ConditionalArrayExpression1.mo CondOperators.mo \
+CyclicBindingConst.mo CyclicBindingParam.mo \
 LessThan.mo LessThanEqual.mo GreaterThan.mo GreaterThanEqual.mo Equals.mo NotEquals.mo Not.mo And.mo Or.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo Connect15.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
