@@ -57,6 +57,7 @@ RealAdd.mo RealSub.mo RealMul.mo RealDiv.mo RealPow.mo \
 Range1.mo Real2Integer1.mo Real2Integer2.mo reinit.mo Record1.mo Redeclare1.mo Redeclare2.mo \
 Redeclare3.mo Redeclare4.mo Redeclare5.mo \
 RedeclareFlowEffort.mo \
+RecordSimple.mo RecordNonPublic.mo RecordConnections.mo RecordPrefixes.mo RecordConstructors.mo RecordAssignment.mo \
 ScopeDeclaration3.mo ScopeModification1.mo ScopeModification2.mo Shadow1.mo \
 SimpleIntegrator1.mo SimpleIntegrator2.mo SimpleIntegrator3.mo SimpleIntegrator4.mo \
 StringLiterals.mo StringConversion.mo StringConcatenation.mo \
