@@ -64,6 +64,7 @@ StringLiterals.mo StringConversion.mo StringConcatenation.mo \
 StringBoolean.mo StringInteger.mo StringReal.mo \
 Terminal1.mo Terminal2.mo \
 Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.mo \
+TypeSimple.mo TypeEnumeration.mo TypeArray.mo TypeClass1.mo TypeClass2.mo \
 Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
 Vectorizable5.mo VectorDimension.mo \
