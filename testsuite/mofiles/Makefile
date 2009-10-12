@@ -26,6 +26,8 @@ ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
 DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo \
 DeclarationEquation1.mo DeclarationEquation2.mo DeclarationEquation3.mo \
 Each1.mo \
+ConnectorSimple.mo ConnectorComponents.mo ConnectorIllegal.mo \
+PackageSimple.mo PackageComponents.mo PackageIllegal.mo \
 ShortClassDef.mo SimpleInheritance.mo TypeDeclArray.mo \
 ArrayExtend.mo SimpleTypeExtend.mo NestedClasses.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
