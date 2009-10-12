@@ -2,8 +2,8 @@
 // keywords: array, string, external function
 // status:   correct
 
-system("g++ -c -o libInOutStrings1.o InOutStrings_fkn1.cc");
-system("g++ -c -o libInOutStrings2.o InOutStrings_fkn2.cc");
+system("g++ -fPIC -c -o libInOutStrings1.o InOutStrings_fkn1.cc");
+system("g++ -fPIC -c -o libInOutStrings2.o InOutStrings_fkn2.cc");
 loadFile("InOutStrings.mo");
 simulate(c1);
 echo(false);
