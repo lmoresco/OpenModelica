@@ -1,7 +1,0 @@
-# For 32-bit Linux
-sudo cp liblpsolve55.so /usr/local/lib/
-sudo ldconfig /usr/local/lib/liblpsolve55.so
-# For 64-bit Linux
-sudo cp liblpsolve55.so.64-bit /usr/local/lib/liblpsolve55.so
-sudo ldconfig /usr/local/lib/liblpsolve55.so
-# Then for both, add -llpsolve55 to Compiler/omc_{debug,release}/Makefile LDFLAGS

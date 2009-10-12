@@ -49,6 +49,14 @@ You need:
     Qt+Coin3D+SoQt
         you need readline and Qt dev stuff to compile omc and mosh (OMShell)
         $ sudo aptitude install libreadline5-dev libsoqt4-dev
+    liblpsolve55
+        you need to copy this library from the Compiler runtime
+        For 32-bit Linux:
+        $ sudo cp Compiler/runtime/lpsolve/lib/linux/liblpsolve55.so /usr/local/lib
+        $ sudo ldconfig /usr/local/lib/liblpsolve55.so
+        For 64-bit Linux:
+        $ sudo cp Compiler/runtime/lpsolve/lib/linux/liblpsolve55.so.64-bit /usr/local/lib/liblpsolve55.so
+        $ sudo ldconfig /usr/local/lib/liblpsolve55.so
 
 
 NOTE:
