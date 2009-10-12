@@ -1,15 +1,20 @@
 // name: TypeEnumeration
 // keywords: type
-// status: incorrect
+// status: correct
 //
 // Tests declaring a type from an enumeration
-// THIS TEST SHOULD NOT FAIL
 //
 
-type EnumType = enumeration(test1,test2,test3);
+type Enum = enumeration(test1,test2,test3);
 
 model TypeEnumeration
-  EnumType et;
+  Enum et;
 equation
-  et = test3;
+  et = Enum.test3;
 end TypeEnumeration;
+
+// fclass TypeEnumeration
+// enumeration(test1, test2, test3)et;
+// equation
+//   et = Enum.test3;
+// end TypeEnumeration;

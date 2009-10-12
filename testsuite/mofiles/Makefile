@@ -46,6 +46,7 @@ IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo \
 ModelAccess.mo \
+ModelSimple.mo BlockSimple.mo BlockComponents.mo BlockIllegal.mo FunctionSimple.mo \
 PublicAccess.mo ProtectedAccess.mo ProtectedAccess2.mo DoubleDeclaration.mo ComponentNames.mo DeclarationOrder.mo \
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
