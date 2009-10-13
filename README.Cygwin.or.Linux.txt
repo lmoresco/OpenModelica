@@ -18,6 +18,7 @@ You need:
     sun-java version > 1.4
     gcc      (tested with most of the versions)
     readline & libreadlineX-dev, currently X=5
+    liblpsolve: http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
 The latest OpenModelica uses Qt for potting and 3D functionality. You will also need:
     Qt 4.x.x (http://trolltech.com - tested with 4.4.3)
     Coin3D   (http://www.coin3d.org - tested with 3.0.0)
@@ -57,6 +58,12 @@ You need:
         For 64-bit Linux:
         $ sudo cp Compiler/runtime/lpsolve/lib/linux/liblpsolve55.so.64-bit /usr/local/lib/liblpsolve55.so
         $ sudo ldconfig /usr/local/lib/liblpsolve55.so
+      Alternatively you can compile lpsolve yourself:
+        Download the library:
+         http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
+        and unpack it, then call in the top folder: 
+        $ make -f Makefile.Linux
+        then copy lpsolve55/liblpsolve55.a to $OPENMODELICAHOME/build/lib/.
 
 
 NOTE:
