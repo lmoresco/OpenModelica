@@ -77,7 +77,7 @@ char* historyfile = "mosh_history";
 int maxhistoryfileentries = 3000;
 
 
-pthread_mutex_t lock;
+pthread_mutex_t clientlock;
 
 // Condition variable for keeping omc waiting for client requests
 pthread_cond_t omc_waitformsg;

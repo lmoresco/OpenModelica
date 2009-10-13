@@ -39,7 +39,7 @@ CORBAHOME = $(OMDEV)
   CORBAOBJS = ../../Compiler/runtime/omc_communication.o \
 	../../Compiler/runtime/omc_communication_impl.o
   CORBALIB = -L$(CORBAHOME)/lib/mico-msys-mingw -lmico
-  CORBAINC = -I$(CORBAHOME)/include
+  CORBAINC = -I$(CORBAHOME)/include/mico-msys-mingw
 #else
 #  CORBAIMPL =
 #  CORBAOBJS =
