@@ -5,11 +5,10 @@ model Pendulum
   Real x,y,xd,yd;
   Real Fo;
 equation
-
-der(y)=yd;
-der(x)=xd;
-m*der(xd) = -x*Fo/L;
-m*der(yd) = -m*g-Fo*y/L;
-x*x+y*y=L^2;
+  der(y)=yd;
+  der(x)=xd;
+  m*der(xd) = -x*Fo/L;
+  m*der(yd) = -m*g-Fo*y/L;
+  x*x+y*y=L^2;
 end Pendulum;
 

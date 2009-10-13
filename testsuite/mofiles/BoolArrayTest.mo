@@ -12,16 +12,12 @@ equation
   c = time > 2;
 end BoolArrayTest;
 
-
 // fclass BoolArrayTest
-// Boolean b[1];
-// Boolean b[2];
+// Boolean b[1] = a;
+// Boolean b[2] = time > 2.0;
 // Boolean a;
 // Boolean c;
 // equation
-//   b[1] = a;
-//   b[2] = time > 2.0;
 //   a = time > 1.0;
 //   c = time > 2.0;
 // end BoolArrayTest;
-

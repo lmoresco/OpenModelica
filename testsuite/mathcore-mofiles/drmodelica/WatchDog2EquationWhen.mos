@@ -1,0 +1,43 @@
+// name:     WatchDog2EquationWhen
+// keywords: watchdog equation-when
+// status:   correct
+// 
+//  //??Error - not yet implemented
+//
+loadFile("WatchDog2EquationWhen.mo");
+simulate( WatchDogSystem2, stopTime=4 );
+echo(false); // turns of output 
+size:=readSimulationResultSize("WatchDogSystem2_res.plt");
+res:=readSimulationResult("WatchDogSystem2_res.plt",{watchdog.internalTime1,watchdog.internalTime2,watchdog.dAlarm.signal},size); 
+i11:=res[1,1];
+i12:=res[2,450];
+i21:=res[1,1];
+i22:=res[2,450];
+s1:=res[1,1];
+s2:=res[2,450];
+echo(true); // turns on output
+i11;
+i12;
+i21;
+i22;
+s1;
+s2;
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf WatchDogSystem2_* WatchDogSystem2.exe WatchDogSystem2.cpp WatchDogSystem2.makefile WatchDogSystem2.libs WatchDogSystem2.log output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "WatchDogSystem2_res.plt"
+// end record
+// true
+// 0.0
+// 1.0
+// 0.0
+// 0.25
+// 0.0
+// 1.0
+// ""
+// 0
+// endResult

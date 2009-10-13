@@ -3,7 +3,6 @@
 // status:   correct
 // 
 // <insert description here>
-// Drmodelica: 15.3.1 Chemical Reaction Kinetics of Hydrogen Iodine (p. 555) Not in the notebook
 // 
 
 type Concentration = Real(final quantity ="Concentration",final unit = "mol/m3");
@@ -27,7 +26,7 @@ end HydrogenIodide;
 // Real I2(quantity = "Concentration", unit = "mol/m3", start = 8.0);
 // Real HI(quantity = "Concentration", unit = "mol/m3", start = 0.0);
 // equation
-//   der(H2) = k2 * HI ^ 2.0 - k1 * H2 * I2;
-//   der(I2) = k2 * HI ^ 2.0 - k1 * H2 * I2;
-//   der(HI) = 2.0 * k1 * H2 * I2 - 2.0 * k2 * HI ^ 2.0;
+//   der(H2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
+//   der(I2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
+//   der(HI) = 2.0 * (k1 * (H2 * I2)) - 2.0 * (k2 * HI ^ 2.0);
 // end HydrogenIodide;

@@ -67,10 +67,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE "
-				AdditionalDependencies="main.obj omcrml.lib rmlRuntime.lib runtime.lib mico2313.lib absyn_builder.lib antlrd.lib sendData.lib c_runtime.lib"
+				AdditionalDependencies="main.obj omcrml.lib rmlRuntime.lib runtime.lib mico2313.lib absyn_builder.lib antlrd.lib sendData.lib c_runtime.lib liblpsolve55d.lib shlwapi.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(ProjectDir)\sendData\debug&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)rmlRuntime\Debug&quot;;"
+				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Debug&quot;;&quot;$(ProjectDir)\sendData\debug&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc\debug&quot;;&quot;$(ProjectDir)rmlRuntime\Debug&quot;;&quot;$(ProjectDir)..\runtime\&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;"
 				AdditionalManifestDependencies="type=&apos;win32&apos; name=&apos;Microsoft.VC90.CRT&apos; version=&apos;9.0.21022.8&apos; processorArchitecture=&apos;x86&apos; publicKeyToken=&apos;1fc8b3b9a1e18e3b&apos;"
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames=""
@@ -136,8 +136,8 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;$(ProjectDir)"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
@@ -158,10 +158,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE "
-				AdditionalDependencies="main.obj omcrml.lib rmlRuntime.lib runtime.lib mico2313.lib absyn_builder.lib antlr.lib sendData.lib c_runtime.lib"
+				AdditionalDependencies="main.obj omcrml.lib rmlRuntime.lib runtime.lib mico2313.lib absyn_builder.lib antlr.lib c_runtime.lib liblpsolve55.lib shlwapi.lib"
 				OutputFile="$(OutDir)/omc.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(ProjectDir)\sendData\release&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc&quot;;&quot;$(ProjectDir)rmlRuntime\Release&quot;;"
+				AdditionalLibraryDirectories="&quot;$(OMDev)\lib\antlr-win32-msvc&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)Release&quot;;&quot;$(ProjectDir)\sendData\release&quot;;&quot;$(ProjectDir)..\VC7\Setup\lib&quot;;&quot;$(OMDev)\lib\mico-win32-msvc&quot;;&quot;$(ProjectDir)rmlRuntime\Release&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;"
 				AdditionalManifestDependencies="type=&apos;win32&apos; name=&apos;Microsoft.VC90.CRT&apos; version=&apos;9.0.21022.8&apos; processorArchitecture=&apos;x86&apos; publicKeyToken=&apos;1fc8b3b9a1e18e3b&apos;"
 				IgnoreDefaultLibraryNames=""
 				DelayLoadDLLs=""
@@ -387,7 +387,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\AbsynDep.mo"
+				>
+			</File>
+			<File
 				RelativePath="..\Algorithm.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\BackendVarTransform.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\BackendVarTransform_stub.mo"
 				>
 			</File>
 			<File
@@ -396,6 +408,18 @@
 			</File>
 			<File
 				RelativePath="..\Ceval.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\Cevalfunc.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\CevalScript.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\CevalScript_stub.mo"
 				>
 			</File>
 			<File
@@ -412,6 +436,10 @@
 			</File>
 			<File
 				RelativePath="..\Connect.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\ConnectionGraph.mo"
 				>
 			</File>
 			<File
@@ -451,6 +479,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\Derive_stub.mo"
+				>
+			</File>
+			<File
 				RelativePath="..\DFA.mo"
 				>
 			</File>
@@ -483,6 +515,30 @@
 				>
 			</File>
 			<File
+				RelativePath="..\HashTable.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\HashTable2.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\HashTable3.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\HashTable4.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\HashTable5.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\HashTableCG.mo"
+				>
+			</File>
+			<File
 				RelativePath="..\Inst.mo"
 				>
 			</File>
@@ -499,7 +555,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\Main_stub.mo"
+				>
+			</File>
+			<File
 				RelativePath="..\MetaUtil.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\MMath.mo"
 				>
 			</File>
 			<File
@@ -508,6 +572,10 @@
 			</File>
 			<File
 				RelativePath="..\ModUtil.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\OptManager.mo"
 				>
 			</File>
 			<File
@@ -528,6 +596,14 @@
 			</File>
 			<File
 				RelativePath="..\Refactor.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\Refactorings.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\RefactoringsAPI.mo"
 				>
 			</File>
 			<File
@@ -571,6 +647,26 @@
 				>
 			</File>
 			<File
+				RelativePath="..\UnitAbsyn.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\UnitAbsynBuilder.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\UnitChecker.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\UnitParserExt.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\Unparser.mo"
+				>
+			</File>
+			<File
 				RelativePath="..\Util.mo"
 				>
 			</File>
@@ -580,6 +676,10 @@
 			</File>
 			<File
 				RelativePath="..\VarTransform.mo"
+				>
+			</File>
+			<File
+				RelativePath="..\XMLDump.mo"
 				>
 			</File>
 		</Filter>

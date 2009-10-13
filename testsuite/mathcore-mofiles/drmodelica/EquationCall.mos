@@ -1,0 +1,24 @@
+// Name:     EquationCall
+// keywords: equations when
+// status:   correct
+// 
+//  Tests when, elsewhen
+//
+
+loadFile("EquationCall.mo");
+simulate(EquationCall,numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+res:=readSimulationResult("EquationCall_res.plt",{px, py},3); 
+echo(true); // turns on output
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf EquationCall.plt EquationCall.exe EquationCall.c EquationCall_* output.log"); // remove tmp files.
+
+// Result:
+// true
+// record
+//     resultFile = "EquationCall_res.plt"
+// end record
+// true
+// ""
+// 0
+// endResult

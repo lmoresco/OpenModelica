@@ -8,18 +8,11 @@ loadFile("CyclicPerm.mo");
 simulate(CyclicPerm,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 // Result:
-// instStatement W:=cat(2, WO[1:1,2:3], WO[1:1,1:1]); failed
 // true
 // record SimulationResult
 //     resultFile = "Simulation failed.
-// Different dimension sizes in arguments to cat(2, WO[1:1,2:3], WO[1:1,1:1])
-// Class cat (its type)  not found in scope CyclicPerm.
-// No matching function found for cat
-// Class cat not found in scope CyclicPerm.
-// Class cat (its type)  not found in scope CyclicPerm.
-// No matching function found for cat
-// Class cat not found in scope CyclicPerm.
-// Error occured while flattening model CyclicPerm
+// Error: Index out of bounds. Adressing position: p[1] and position p[2] and position p[3], while array length is: 3
+// Error: Error occured while flattening model CyclicPerm
 // "
 // end SimulationResult;
 // ""

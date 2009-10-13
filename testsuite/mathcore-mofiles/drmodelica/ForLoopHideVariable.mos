@@ -1,0 +1,47 @@
+// name:      ForLoopHideVariable
+// keywords:  for statment
+// status:    incorrect
+//
+// for statment handling
+//
+loadFile("ForLoopHideVariable.mo");
+simulate(HideVariable, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+echo(false);
+res:=readSimulationResult("ForLoopHideVariable_res.plt",{z[1],z[2],z[3],z[4],z[5]},3);
+z1 := res[1];
+z1 := 1000*z1;
+z1 := floor(z1);
+z2 := res[2];
+z2 := 1000*z2;
+z2 := floor(z2);
+z3 := res[3];
+z3 := 1000*z3;
+z3 := floor(z3);
+z4 := res[4];
+z4 := 1000*z4;
+z4 := floor(z4);
+z5 := res[5];
+z5 := 1000*z5;
+z5 := floor(z5);
+echo(true);
+z1/1000.0;
+z2/1000.0;
+z3/1000.0;
+z4/1000.0;
+z5/1000.0;
+readFile("output.log");
+system("rm -rf f_* f.* ForLoopHideVariable_* ForLoopHideVariable.exe ForLoopHideVariable.cpp ForLoopHideVariable.makefile ForLoopHideVariable.libs ForLoopHideVariable.log output.log");
+// Result:
+// true
+// record
+//     resultFile = "ForLoopHideVariable_res.plt"
+// end record
+// true
+// {1.0,1.0,1.0}
+// {2.0,2.0,2.0}
+// {3.0,3.0,3.0}
+// {4.0,4.0,4.0}
+// {5.0,5.0,5.0}
+// ""
+// 0
+// endResult

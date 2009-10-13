@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc\&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc\&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;;&quot;$(ProjectDir)..\&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -111,8 +111,8 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain&quot;;&quot;$(OMDEV)\include\mico-win32-msvc&quot;;&quot;$(ProjectDir)..\..\c_runtime&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\runtime&quot;;&quot;$(ProjectDir)..\&quot;;&quot;$(ProjectDir)..\runtime\lpsolve&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"
@@ -274,6 +274,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\runtime\optmanager.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\runtime\printimpl.c"
 				>
 			</File>
@@ -297,6 +301,14 @@
 				RelativePath="..\runtime\systemimpl.c"
 				>
 			</File>
+			<File
+				RelativePath="..\runtime\unitparser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\runtime\unitparserext.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -312,6 +324,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\runtime\lpsolve\lp_lib.h"
+				>
+			</File>
+			<File
 				RelativePath=".\omc_communication.h"
 				>
 			</File>
@@ -321,6 +337,10 @@
 			</File>
 			<File
 				RelativePath="..\runtime\ptolemyio.hpp"
+				>
+			</File>
+			<File
+				RelativePath="..\runtime\unitparser.h"
 				>
 			</File>
 		</Filter>

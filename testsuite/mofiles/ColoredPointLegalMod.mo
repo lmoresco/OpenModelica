@@ -44,7 +44,6 @@ class A
   ColoredPoint cp;
 equation
   a = cp.x;       //Should work since x is public
-
 end A;
 
 // fclass A
@@ -59,6 +58,6 @@ end A;
 // protected parameter Real cp.y;
 // protected parameter Real cp.z;
 // equation
-//   cp.red + cp.blue + cp.green = 1.0;
+//   cp.red + (cp.blue + cp.green) = 1.0;
 //   a = cp.x;
 // end A;

@@ -24,8 +24,6 @@ encapsulated model Encapsulated1
 end Encapsulated1;
 
 // fclass Encapsulated1
-// Real c.x;
-// equation
-//   c.x = 1.0;
+// Real c.x = 1.0;
 // end Encapsulated1;
 

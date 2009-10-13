@@ -3,7 +3,6 @@
 // status:   correct
 // 
 // <insert description here>
-// Drmodelica: 15.4.1 Population Dynamics (p. 556) Not in the notebook
 // 
 
 class LotkaVolterra
@@ -27,6 +26,6 @@ end LotkaVolterra;
 // Real rabbits(start = 700.0) "Rabbits,(R) with start population 700";
 // Real foxes(start = 10.0) "Foxes,(F) with start population 10";
 // equation
-//   der(rabbits) = g_r * rabbits - d_rf * rabbits * foxes;
-//   der(foxes) = g_fr * d_rf * rabbits * foxes - d_f * foxes;
+//   der(rabbits) = g_r * rabbits - d_rf * (rabbits * foxes);
+//   der(foxes) = g_fr * (d_rf * (rabbits * foxes)) - d_f * foxes;
 // end LotkaVolterra;

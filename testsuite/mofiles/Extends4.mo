@@ -25,19 +25,19 @@ block Multiplex3 "Multiplexer block for three input connectors"
 equation 
   [y]=[u1;u2;u3];
 end Multiplex3;
+
 // fclass Multiplex3
 // parameter Integer n1 = 1 "dimension of input signal connector 1";
 // parameter Integer n2 = 1 "dimension of input signal connector 2";
 // parameter Integer n3 = 1 "dimension of input signal connector 3";
-// Real u1[1];
-// Real u2[1];
-// Real u3[1];
-// Real y[1];
-// Real y[2];
-// Real y[3];
+// input Real u1[1];
+// input Real u2[1];
+// input Real u3[1];
+// output Real y[1];
+// output Real y[2];
+// output Real y[3];
 // equation
 //   y[1] = u1[1];
 //   y[2] = u2[1];
 //   y[3] = u3[1];
 // end Multiplex3;
-

@@ -2,8 +2,7 @@
 // keywords: when
 // status:   correct
 // 
-// Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
-// 
+
 model WhenEquation
   Real x(start = 1);
   discrete Real y1;
@@ -26,6 +25,6 @@ end WhenEquation;
 //   x = time - y2;
 //   when x > 2.0 then
 //   y1 = sin(x);
-//   y3 = 2.0 * x + y1 + y2;
+//   y3 = 2.0 * x + (y1 + y2);
 //   end when;
 // end WhenEquation;

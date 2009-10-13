@@ -16,7 +16,5 @@ model test
 end test;
 
 // fclass test
-// Real x;
-// equation
-//   x = foo(time);
+// Real x = foo(time);
 // end test;

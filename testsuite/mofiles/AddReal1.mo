@@ -3,19 +3,19 @@
 // status:   correct
 
 
-function add
+function addReal1_
   input Real x;
   input Real y;
   output Real res;
   external "C";
-end add;
+end addReal1_;
 
 model AddReal1
   parameter Real a=2.3;
   parameter Real b=4.5;
   Real c;
 equation
-  c = add(a, b);
+  c = addReal1_(a, b);
 end AddReal1;
 
 // fclass AddReal1
@@ -23,7 +23,7 @@ end AddReal1;
 // parameter Real b = 4.5;
 // Real c;
 // equation
-//   c = add(a,b);
+//   c = addReal1_(a,b);
 // end AddReal1;
 
 

@@ -23,9 +23,7 @@ model Constant8
 end Constant8;
 
 // fclass Constant8
-//   Integer n;
-//   Real x;
-// equation
-//   n = 2;
+// Integer n = 2;
+// Real x;
 // end Constant8;
 

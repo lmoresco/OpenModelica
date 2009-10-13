@@ -2,7 +2,7 @@
 // keywords: <insert keywords here>
 // status:   correct
 // 
-// Drmodelica: 12.1 Traditional Methodology (p. 385)
+// <insert description here>
 // 
 
 function limitValue
@@ -58,17 +58,16 @@ end FlatTank;
 // parameter Real T(unit = "s") = 10 "Time constant";
 // parameter Real minV = 0;
 // parameter Real maxV = 10;
-// Real ref "Reference level for control";
+// Real ref = 0.25 "Reference level for control";
 // Real error "Deviation from reference level";
 // Real outCtr "Control signal without limiter";
 // Real x "State variable for controller";
 // equation
-//   ref = 0.25;
 // assert(minV >= 0.0,"minV must be greater or equal to zero");
 //   der(h) = (qInflow - qOutflow) / area;
 //   qInflow = if time > 150.0 then 3.0 * flowLevel else flowLevel;
 //   qOutflow = limitValue(minV,maxV,(-flowGain) * outCtr);
 //   error = ref - h;
 //   der(x) = error / T;
-//  outCtr = K * (error + x);
+//   outCtr = K * (error + x);
 // end FlatTank;

@@ -40,6 +40,8 @@ all : .testvariables mkbuilddirs settings release
 
 debug: .testvariables mkbuilddirs settings omcd
 
+frontend: .testvariables mkbuilddirs settings omc_frontend
+
 mkbuilddirs:
 	mkdir -p $(builddir_bin)
 	mkdir -p $(builddir_lib)
@@ -56,27 +58,41 @@ settings:
 
 release: omc
 
-omcd:
-	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
-	(cp -p doc/*.pdf $(builddir_doc)/)
-	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
-	echo Copying needed .dlls to the build/bin directory
-	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
-
 omc:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
 	(cp doc/*.pdf $(builddir_doc)/)
-	(cp -p Examples/*.* $(builddir_doc)/testmodels/)
+	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
-	(cp -f $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -f $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
+	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
+
+omcd:
+	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
+	(cp -puf doc/*.pdf $(builddir_doc)/)
+	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
+	echo Copying needed .dlls to the build/bin directory
+	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
+
+omc_frontend:
+	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw frontend)
+	(cp -puf doc/*.pdf $(builddir_doc)/)
+	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
+	echo Copying needed .dlls to the build/bin directory
+	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
+	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
 test:
 	(cd testsuite; time $(MAKE) -f Makefile)
@@ -97,6 +113,7 @@ clean:
 	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd Compiler/omc_debug && $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd Compiler/omc_release && $(MAKE) -f Makefile.omdev.mingw clean)
+	(cd Compiler/omc_frontend && $(MAKE) -f Makefile.omdev.mingw clean)	
 	(cd mosh/src && $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
 	(cd flat_modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
@@ -119,13 +136,13 @@ ${INSTALL_DOCDIR}:
 install: ${INSTALL_BINDIR} ${INSTALL_LIBDIR} ${INSTALL_INCLUDEDIR} ${INSTALL_DOCDIR}
 	echo Installing OpenModelica...
 	echo Installing build/bin/* to ${INSTALL_BINDIR} ...
-	cp -p build/bin/* ${INSTALL_BINDIR}
+	cp -puf build/bin/* ${INSTALL_BINDIR}
 	echo Installing build/lib/* to ${INSTALL_LIBDIR} ...
-	cp -p build/lib/* ${INSTALL_LIBDIR}
+	cp -puf build/lib/* ${INSTALL_LIBDIR}
 	echo Installing build/include/* to ${INSTALL_INCLUDEDIR} ...
-	cp -p build/include/* ${INSTALL_INCLUDEDIR}
+	cp -puf build/include/* ${INSTALL_INCLUDEDIR}
 	echo Installing build/doc/* to ${INSTALL_DOCDIR} ...
-	cp -Rp build/doc/* ${INSTALL_DOCDIR}
+	cp -Rpuf build/doc/* ${INSTALL_DOCDIR}
 
 .PRECIOUS: Makefile.omdev.mingw
 

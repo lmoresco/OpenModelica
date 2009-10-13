@@ -79,9 +79,7 @@ int simIndex = 0;
  */
 void rml_prim_motor(rml_labptr_t f)
 {
-#ifdef RML_DEBUG_
     int i;
-#endif
 #if	defined(RML_STATE_APTR) || defined(RML_STATE_LPTR)
     struct rml_state *rmlState = &rml_state;
 #endif	/*RML_STATE_APTR || RML_STATE_LPTR*/
@@ -100,8 +98,14 @@ void rml_prim_motor(rml_labptr_t f)
 	unsigned char previous_known = 0;
 #endif	/*RML_MORE_LOGGING*/
 	for(;;) {
+    /*
+     * turn on the trace if we're almost out of stack!
+     */
 	    if( (void**)rmlSP < rmlSPMIN )
 			rmlSPMIN = (void**)rmlSP;
+      if( (void**)rmlSP < &rml_stack[32*4] ) {
+        rml_trace_enabled = 1;
+      }
 	    /*
 	     * Add a small buffer zone at the stack bottom, to reduce
 	     * the risk of writes outside the stack bounds.

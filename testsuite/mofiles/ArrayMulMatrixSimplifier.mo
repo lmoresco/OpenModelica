@@ -32,6 +32,6 @@ end ArrayMulMatrixSimplifier;
 // equation
 //   x[1] = pre(x[1]) * A[1,1] + pre(x[2]) * A[2,1] + B[1,1] * u[1];
 //   x[2] = pre(x[1]) * A[1,2] + pre(x[2]) * A[2,2] + B[2,1] * u[1];
-//   y[1] = A[1,1] * pre(x[1]) + A[1,2] * pre(x[2]) + B[1,1] * u[1];
-//   y[2] = A[2,1] * pre(x[1]) + A[2,2] * pre(x[2]) + B[2,1] * u[1];
+//   y[1] = A[1,1] * pre(x[1]) + (A[1,2] * pre(x[2]) + B[1,1] * u[1]);
+//   y[2] = A[2,1] * pre(x[1]) + (A[2,2] * pre(x[2]) + B[2,1] * u[1]);
 // end ArrayMulMatrixSimplifier;

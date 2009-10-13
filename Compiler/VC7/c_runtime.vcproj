@@ -110,7 +110,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -129,9 +129,9 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				AdditionalDependencies="vcf2c.lib"
+				AdditionalDependencies="vcf2c.lib sendData.lib"
 				OutputFile="$(OutDir)/c_runtime.lib"
-				AdditionalLibraryDirectories="$(InputDir)/../../c_runtime/libf2c"
+				AdditionalLibraryDirectories="&quot;$(InputDir)/../../c_runtime/libf2c&quot;;&quot;$(InputDir)/sendData/Release/&quot;"
 			/>
 			<Tool
 				Name="VCALinkTool"

@@ -12,8 +12,7 @@ getErrorString(); // simulation failed, check error string.
 // true
 // record SimulationResult
 //     resultFile = "Simulation failed.
-// Variable inlet.temp not found in scope HeatTank
-// Error occured while flattening model HeatTank
+// Error: Too many equations, overdetermined system. The model has 3 equation(s) and 1 variable(s)
 // "
 // end SimulationResult;
 // ""

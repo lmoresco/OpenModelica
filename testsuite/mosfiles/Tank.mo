@@ -7,7 +7,7 @@
 
 connector Stream   //Connector class
   Real pressure;
-  flow Real volumeFlowRate;
+  Real volumeFlowRate;
 end Stream;
 
 

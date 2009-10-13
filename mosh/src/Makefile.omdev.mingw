@@ -36,10 +36,9 @@ CORBAHOME = $(OMDEV)
 # We always use corba when compiling with OMDev-mingw
 #ifdef USE_CORBA
   CORBAIMPL = -I../../Compiler/runtime
-  CORBAOBJS = ../../Compiler/runtime/omc_communication.o \
-	../../Compiler/runtime/omc_communication_impl.o
+  CORBAOBJS = ../../Compiler/runtime/omc_communication.o #../../Compiler/runtime/omc_communication_impl.o
   CORBALIB = -L$(CORBAHOME)/lib/mico-msys-mingw -lmico
-  CORBAINC = -I$(CORBAHOME)/include
+  CORBAINC = -I$(CORBAHOME)/include/mico-msys-mingw
 #else
 #  CORBAIMPL =
 #  CORBAOBJS =

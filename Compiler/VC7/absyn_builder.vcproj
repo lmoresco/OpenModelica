@@ -113,7 +113,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)rmlRuntime\runtime\plain\&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)..\..\flat_modelica_parser\src&quot;;&quot;$(ProjectDir)..\..\modelica_parser\src&quot;;&quot;$(ProjectDir)..\absyn_builder&quot;;&quot;$(OMDEV)\include\&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
 				UsePrecompiledHeader="0"

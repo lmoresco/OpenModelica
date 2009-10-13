@@ -127,7 +127,7 @@
 				Optimization="2"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="&quot;$(QTHOME)\include\QtCore&quot;;&quot;$(QTHOME)\include\QtNetwork&quot;;&quot;$(QTHOME)\include\QtGui&quot;;&quot;$(QTHOME)\include&quot;;.;&quot;$(QTHOME)\include\ActiveQt&quot;;release"
-				PreprocessorDefinitions="NDEBUG;UNICODE;QT_LARGEFILE_SUPPORT;WIN32;QT_NO_DEBUG;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT"
+				PreprocessorDefinitions="NDEBUG;UNICODE;QT_LARGEFILE_SUPPORT;WIN32;QT_NO_DEBUG;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;"
 				GeneratePreprocessedFile="0"
 				ExceptionHandling="1"
 				RuntimeLibrary="0"

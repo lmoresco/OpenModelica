@@ -21,17 +21,12 @@ model test
   Real z2=foo(w,v);
 end test; 
 
-// fclass test
-//   Real w;
-//   Real v;
-//   Real x;
-//   Real y;
-//   Real z;
-//   Real z2;
-// equation
-//   x = foo(2.0,w);
-//   y = foo(v,w);
-//   z = foo(w,v);
-//   z2 = foo(w,v);
-// end test;
   
+// fclass test
+// Real w;
+// Real v;
+// Real x = foo(2.0,w);
+// Real y = foo(v,w);
+// Real z = foo(w,v);
+// Real z2 = foo(w,v);
+// end test;

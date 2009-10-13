@@ -2,8 +2,7 @@
 // keywords: array
 // status:   correct
 // 
-// Drmodelica: 7.7 Built-in Functions (p. 225)
-// 
+ 
 
 class ArrayReduce
   Real minimum, maximum, summ, prod;
@@ -22,6 +21,6 @@ end ArrayReduce;
 // equation
 //   minimum = -1.0;
 //   maximum = 6.0;
-//   summ = Real({1,2,3} + {4,5,6});
+//   summ = 21.0;
 //   prod = 12.56;
 // end ArrayReduce;

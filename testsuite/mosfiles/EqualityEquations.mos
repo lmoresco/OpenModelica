@@ -12,7 +12,7 @@ system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 // incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.true
 // record SimulationResult
 //     resultFile = "Simulation failed.
-// Too few equations, underdetermined system. The model has 3 variables and 2 equations
+// Error: Too few equations, underdetermined system. The model has 2 equation(s) and 3 variable(s)
 // "
 // end SimulationResult;
 // ""

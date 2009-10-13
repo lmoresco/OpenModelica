@@ -2,7 +2,7 @@
 // keywords: replaceable connector
 // status:   correct
 // 
-// Drmodelica: 4.4 Parameterization and extension of Interfaces (p. 136).
+// 
 // 
 
 connector Stream   //Connector class
@@ -42,4 +42,6 @@ end Tank;
 //   area * der(level) = inlet.volumeFlowRate + outlet.volumeFlowRate;
 //   outlet.pressure = inlet.pressure;
 //   outlet.volumeFlowRate = 2.0;
+//   inlet.volumeFlowRate = 0.0;
+//   outlet.volumeFlowRate = 0.0;
 // end Tank;

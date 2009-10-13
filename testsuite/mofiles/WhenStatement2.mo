@@ -3,8 +3,7 @@
 // status:   correct
 // 
 // 
-// Drmodelica: 9.1 When-Statements (p. 293)
-//  
+// 
 
 class WhenStat2
   Real x(start = 1);
@@ -27,10 +26,10 @@ end WhenStat2;
 // parameter Real y2 = 5;
 // Real y3;
 // equation
-//  der(x) = 2.0 * x;
+//   der(x) = 2.0 * x;
 // algorithm
-//  when {x > 2.0,sample(0,2),x < 5.0} then
-//   y1 := sin(x);
-//   y3 := 2.0 * x + y1 + y2;
-//  end when;
+//   when {x > 2.0,sample(0,2),x < 5.0} then
+//     y1 := sin(x);
+//     y3 := 2.0 * x + (y1 + y2);
+//   end when;
 // end WhenStat2;

@@ -1,0 +1,21 @@
+// name: Time
+// keywords: time
+// status: correct
+//
+// Testing the built-in variable time
+//
+
+loadFile("Time.mo");
+simulate(Time);
+val(x,0.0);
+system("rm Time.cpp Time.libs Time.log Time.makefile");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Time_res.plt"
+// end SimulationResult;
+// 0.0
+// 0
+// endResult
+

@@ -3,8 +3,7 @@
 // status:   correct
 // 
 // Not yet implemented
-// Drmodelica: 8.2 Simple Equality Equations (p. 240)
-// 
+
 
 function f
   input Real a;
@@ -36,9 +35,8 @@ end EqualityEquationsCorrect;
 // Real y;
 // Real z;
 // Real u;
-// Real v;
+// Real v = 2.0;
 // equation
-//   v = 2.0;
 //   u = v;
 //   (x,y,z) = (3.0,-1.0,2.0);
 // end EqualityEquationsCorrect;

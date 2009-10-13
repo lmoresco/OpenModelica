@@ -40,7 +40,7 @@ include $(srcdir)/Makefile.common.omdev.mingw
 
 LIBSOCKET=-lwsock32
 
-#We use corba by default when compiling on OMDev-mingw
+#We use corba by default when compiling on OMDev-mingw 
 #ifdef USE_CORBA
 CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #else
@@ -48,7 +48,7 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET)
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET) $(srcdir)/runtime/lpsolve/lpsolve55.lib
 PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omc.exe
@@ -93,7 +93,7 @@ absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -O3
+	g++ -O3 -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi 
 	strip $(PROG)
 
 

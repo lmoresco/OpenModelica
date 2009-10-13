@@ -16,6 +16,7 @@ equation
  t = x*y2[2,:];
 end Subscript2;
 
+
 // fclass Subscript2
 // Real x[1];
 // Real x[2];
@@ -35,7 +36,6 @@ end Subscript2;
 // Real s;
 // Real t;
 // equation
-//   s = x[1] * y[1,1] + x[2] * y[2,1] + x[3] * y[3,1];
-//   t = x[1] * y2[2,1] + x[2] * y2[2,2] + x[3] * y2[2,3];
+//   s = x[1] * y[1,1] + (x[2] * y[2,1] + x[3] * y[3,1]);
+//   t = x[1] * y2[2,1] + (x[2] * y2[2,2] + x[3] * y2[2,3]);
 // end Subscript2;
-

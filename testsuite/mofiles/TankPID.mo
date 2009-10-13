@@ -4,8 +4,6 @@
 // 
 // <insert description here>
 // 
-// Drmodelica: 12.1 Object Oriented Component-based (p. 386)
-// 
 partial model BaseController
   parameter Real Ts(unit = "s") = 0.1  "Time period between discrete samples";
   parameter Real K = 2          "Gain";
@@ -115,7 +113,7 @@ end TankPID;
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
 //   der(pidContinuous.x) = pidContinuous.error / pidContinuous.T;
 //   pidContinuous.y = pidContinuous.T * der(pidContinuous.error);
-//   pidContinuous.outCtr = pidContinuous.K * (pidContinuous.error + pidContinuous.x + pidContinuous.y);
+//   pidContinuous.outCtr = pidContinuous.K * (pidContinuous.error + (pidContinuous.x + pidContinuous.y));
 //   pidContinuous.error = pidContinuous.ref - pidContinuous.cIn.val;
 //   pidContinuous.cOut.act = pidContinuous.outCtr;
 // assert(tank.minV >= 0.0,"minV - minimum Valve level must be >= 0 ");
@@ -125,4 +123,4 @@ end TankPID;
 //   tank.tSensor.val = pidContinuous.cIn.val;
 //   tank.tActuator.act = pidContinuous.cOut.act;
 //   source.qOut.lflow = tank.qIn.lflow;
-// end TankPID; 
+// end TankPID;

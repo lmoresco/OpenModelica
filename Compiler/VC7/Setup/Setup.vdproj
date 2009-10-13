@@ -135,6 +135,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_012D1F73D35348DF935EB02C352ED5BB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_015930E16DC84E989B4B528DB4C3B56B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -802,6 +808,12 @@
         "Entry"
         {
         "MsmKey" = "8:_091AA5A09A85479E9EEC8E9D6AE15439"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_093F28299F304F7D97B6DF24F1EDAD70"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1816,6 +1828,12 @@
         "Entry"
         {
         "MsmKey" = "8:_1401E9158445454CAB517F3ACDEA750A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_14144D8E46304E89B514BD5C44EAF516"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3561,12 +3579,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2A66C230AA96E24184702E446AE89075"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2A6BC355CF0643D38A1F4F05D554EB5A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4684,6 +4696,12 @@
         "Entry"
         {
         "MsmKey" = "8:_367A490E0D6E4AD0B68CA81C641329F7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_367FD8D98921468D8A66D128E9B3D1A1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6081,12 +6099,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4314A4185CB34FC3B6AFF5A61C2970D8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_43317A6829E84BBA9DBA69A928C8F0FF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7365,12 +7377,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5156467C1D76078CA06AE78FD8C1A079"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_515CD88C64B74CCF9E21F9B689B1A68C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7581,6 +7587,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5437F5E3D667431186ACA6AD9917DEDD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5462321616F149E888C97E9D2A9947CD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7743,6 +7755,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_566707780DA54A48B523C631FDF90565"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5674E7DB5DCE40CB9B417EFF6D44F7FE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -7876,6 +7894,12 @@
         "Entry"
         {
         "MsmKey" = "8:_57BE1EBE643A4818AB74B0E7C90C3D76"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_57BED27F8FCC4729B6B48CB2D14B42BA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -8727,12 +8751,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_60F6C6E2850FF35F7EAB7254368F5373"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6138A6D28AE94BE4A8517A69F79A0F52"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -9489,12 +9507,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6A55763D25324B75B2CAEA50C357EB57"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6A6139B8CFAA4736BE2FCB886F29DDEC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -10150,6 +10162,12 @@
         "Entry"
         {
         "MsmKey" = "8:_722DAFBB93FA43748A468597FC0DBAC3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7255A029C76F42BFB7EE9381085E5C0F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -11229,12 +11247,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7CF5268046774CC08964364DCD29E080"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7D135B96D1744E9BADF6D4F9321AE7DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -11584,12 +11596,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7FC08E8C340D466EA4DF53765263C42F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7FC7471A361448B9AA9BE1F6FFF534AE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -12999,6 +13005,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8ECF4C0F1AE24C54BBA1CF714C1A6ABB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8F0713A0D9CA458AA6C5A045CC9E7F3F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -13533,6 +13545,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9491CBB54BCB42C7B30B275282C55A4A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_949B3B4848044008A8F1176378C52073"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -13570,12 +13588,6 @@
         "Entry"
         {
         "MsmKey" = "8:_952D7C625715416E977FEDA216947D85"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95416CDBEF954409BF22CBB06A84E1F9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -13852,6 +13864,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9872FE8B05964CAD9EB2534BC206638F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_988E75D0346545DE985A9C0A4D74B13B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -14284,12 +14302,6 @@
         "Entry"
         {
         "MsmKey" = "8:_9D4A3F112CB24BB49E963D0A0293F50F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9D4F4C510FA84E2FA35BCAB7FB62FB21"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -14949,6 +14961,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A45B295CA3BE489EA012E1D4934C9791"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A466504DCEEA498CB68FAE7E0AE831B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -15340,6 +15358,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A8891C9A9407412FA681475146869D44"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A88963C615CA4A03ABF15668FF1C9338"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -17559,12 +17583,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C089D1CEC50E4001BD9DBB91F775C48E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -17603,12 +17621,6 @@
         {
         "MsmKey" = "8:_C16C1F45E7A7491FA711AF48857F5C81"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C17B71E70B424689C3184675EAD96FF9"
-        "OwnerKey" = "8:_C0808A7B696E49A79B16145F10BAB302"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -17913,12 +17925,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C48D51B540674DAA85A86A1952ABE54C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C4A05B3CAF4449C69359C1C4084CCE4D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -18118,6 +18124,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C6A940267F224585AE0CF79D5A08EF4D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C6C79FDC5E34493EAC1E8414B5145782"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -18544,6 +18556,12 @@
         "Entry"
         {
         "MsmKey" = "8:_CB2E615BCA444CECB8D5EE6F032799E4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CB3329A424C04BFF9AA4832CEF23454A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -19833,6 +19851,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D6D61BD05DCE4BF4BD140EDE4EDCABB9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D6DB8BE71B7745A093830C718669E409"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -20668,6 +20692,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DF88E1A9267F4F87BFD145A01A00125F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF8EB2119FF24D658CC311D8AC238FD7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -21598,6 +21628,12 @@
         "Entry"
         {
         "MsmKey" = "8:_EB411C73D2F34FB3AAD25462487C0C5F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EB4B2BDCAF8E4A388E2CD7AD0FECF0B6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -22911,12 +22947,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FB31543FF4474A1C9F04A026BB4988FA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_FB35ADB26BC6464F81D3272DEC81090E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -23151,6 +23181,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FDCEDA21D3964AB796C0A0690B61C654"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FDD6428E22B44EF6BCD6F83EEDDD28B8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -23254,12 +23290,6 @@
         "Entry"
         {
         "MsmKey" = "8:_FE8C74A18D44448D921FEC64B1BD4F18"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FE9E8DFE551C48B7B8D4E0B6C8E899E3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -23431,7 +23461,7 @@
             "Enabled" = "11:FALSE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
-            "Url" = "8:"
+            "Url" = "8:http://www.OpenModelica.org"
             "ComponentsUrl" = "8:"
                 "Items"
                 {
@@ -23764,7 +23794,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -23885,6 +23915,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_012D1F73D35348DF935EB02C352ED5BB"
+            {
+            "SourcePath" = "8:bin\\QtGui4.dll"
+            "TargetName" = "8:QtGui4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -26136,6 +26186,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_093F28299F304F7D97B6DF24F1EDAD70"
+            {
+            "SourcePath" = "8:bin\\soqt1.dll"
+            "TargetName" = "8:soqt1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_095CE02A8FD249C3867D126888AE2DAF"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\cml\\cml.mlb"
@@ -28204,7 +28274,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -29505,6 +29575,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_14144D8E46304E89B514BD5C44EAF516"
+            {
+            "SourcePath" = "8:bin\\ptplot.jar"
+            "TargetName" = "8:ptplot.jar"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -31964,7 +32054,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -34044,7 +34134,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -35314,26 +35404,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A66C230AA96E24184702E446AE89075"
-            {
-            "SourcePath" = "8:mico2313.dll"
-            "TargetName" = "8:mico2313.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A6BC355CF0643D38A1F4F05D554EB5A"
@@ -39065,6 +39135,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_367FD8D98921468D8A66D128E9B3D1A1"
+            {
+            "SourcePath" = "8:bin\\msvcr90.dll"
+            "TargetName" = "8:msvcr90.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -43444,7 +43534,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -43544,7 +43634,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -43702,26 +43792,6 @@
             "TargetName" = "8:unsafe.sig"
             "Tag" = "8:"
             "Folder" = "8:_CA114AB5C35540BE870D8B00E9D9310C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4314A4185CB34FC3B6AFF5A61C2970D8"
-            {
-            "SourcePath" = "8:bin\\mico2313.dll"
-            "TargetName" = "8:mico2313.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -46984,7 +47054,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -47996,26 +48066,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5156467C1D76078CA06AE78FD8C1A079"
-            {
-            "SourcePath" = "8:QtNetwork4.dll"
-            "TargetName" = "8:QtNetwork4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_515CD88C64B74CCF9E21F9B689B1A68C"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\basis\\libs\\basis-1997\\real\\real-convert.fun"
@@ -48716,6 +48766,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5437F5E3D667431186ACA6AD9917DEDD"
+            {
+            "SourcePath" = "8:tools\\SimForge-0.8.4.1-README.txt"
+            "TargetName" = "8:SimForge-0.8.4.1-README.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_FF735EACB7D240158565CAF77FE1A927"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5462321616F149E888C97E9D2A9947CD"
             {
             "SourcePath" = "8:..\\..\\..\\OMNotebook\\OMNotebookQT4\\stylesheet.xml"
@@ -48724,7 +48794,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -48804,7 +48874,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -49242,6 +49312,26 @@
             "TargetName" = "8:Exercise2hybrid.onb"
             "Tag" = "8:"
             "Folder" = "8:_E20F000717E540389408F1498236C79E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_566707780DA54A48B523C631FDF90565"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\omc.exe"
+            "TargetName" = "8:omc.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:FALSE"
@@ -49705,6 +49795,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_57BED27F8FCC4729B6B48CB2D14B42BA"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\mingwm10.dll"
+            "TargetName" = "8:mingwm10.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -50684,7 +50794,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -52536,26 +52646,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_60F6C6E2850FF35F7EAB7254368F5373"
-            {
-            "SourcePath" = "8:QtCore4.dll"
-            "TargetName" = "8:QtCore4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6138A6D28AE94BE4A8517A69F79A0F52"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\smlnj-lib\\Util\\int-list-map.sml"
@@ -53184,7 +53274,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -53244,7 +53334,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -53699,12 +53789,12 @@
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6653DBAF65644896BB2EFE428D7C0E64"
             {
             "SourcePath" = "8:..\\Release\\omc.pdb"
-            "TargetName" = "8:omc.pdb"
+            "TargetName" = "8:omc-msvc.pdb"
             "Tag" = "8:"
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -55076,26 +55166,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A55763D25324B75B2CAEA50C357EB57"
-            {
-            "SourcePath" = "8:bin\\soqt1.dll"
-            "TargetName" = "8:soqt1.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A6139B8CFAA4736BE2FCB886F29DDEC"
             {
             "SourcePath" = "8:..\\..\\..\\OMNotebook\\DrModelica\\Equations\\PolynomialEvaluator.onb"
@@ -55124,7 +55194,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -55724,7 +55794,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -57285,6 +57355,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7255A029C76F42BFB7EE9381085E5C0F"
+            {
+            "SourcePath" = "8:bin\\QtXml4.dll"
+            "TargetName" = "8:QtXml4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -60876,26 +60966,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7CF5268046774CC08964364DCD29E080"
-            {
-            "SourcePath" = "8:bin\\msvcr90.dll"
-            "TargetName" = "8:msvcr90.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7D135B96D1744E9BADF6D4F9321AE7DB"
             {
             "SourcePath" = "8:..\\..\\..\\OMNotebook\\DrModelica\\CompConn\\CardEq.onb"
@@ -62062,26 +62132,6 @@
             "TargetName" = "8:taut.sml"
             "Tag" = "8:"
             "Folder" = "8:_AD8909D6F759460383E4A412A35D1A07"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7FC7471A361448B9AA9BE1F6FFF534AE"
-            {
-            "SourcePath" = "8:bin\\QtXml4.dll"
-            "TargetName" = "8:QtXml4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -66776,6 +66826,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8ECF4C0F1AE24C54BBA1CF714C1A6ABB"
+            {
+            "SourcePath" = "8:bin\\Microsoft.VC90.CRT.manifest"
+            "TargetName" = "8:Microsoft.VC90.CRT.manifest"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F0713A0D9CA458AA6C5A045CC9E7F3F"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\bin\\mingwm10.dll"
@@ -68536,6 +68606,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9491CBB54BCB42C7B30B275282C55A4A"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\CompileMSVC.bat"
+            "TargetName" = "8:CompileMSVC.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_949B3B4848044008A8F1176378C52073"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\share\\doc\\mlton\\guide\\moin-news.png"
@@ -68665,26 +68755,6 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_95416CDBEF954409BF22CBB06A84E1F9"
-            {
-            "SourcePath" = "8:..\\..\\..\\build\\ModelicaLibrary\\ModelicaAdditions\\MultiBody\\Examples\\Pendulum-trace.txt"
-            "TargetName" = "8:Pendulum-trace.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_EA50652B88604A76B45EBDB4F33D76DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -69605,6 +69675,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_988E75D0346545DE985A9C0A4D74B13B"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\lpsolve55.dll"
+            "TargetName" = "8:lpsolve55.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -71042,26 +71132,6 @@
             "TargetName" = "8:Annotations-for-Running.html"
             "Tag" = "8:"
             "Folder" = "8:_EF6B7CFFF50F4BCFB94B323D1CBE9E8C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9D4F4C510FA84E2FA35BCAB7FB62FB21"
-            {
-            "SourcePath" = "8:bin\\coin3.dll"
-            "TargetName" = "8:coin3.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -73256,6 +73326,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A45B295CA3BE489EA012E1D4934C9791"
+            {
+            "SourcePath" = "8:bin\\QtNetwork4.dll"
+            "TargetName" = "8:QtNetwork4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A466504DCEEA498CB68FAE7E0AE831B3"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\basis\\basis-none.mlb"
@@ -74565,6 +74655,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A88963C615CA4A03ABF15668FF1C9338"
+            {
+            "SourcePath" = "8:bin\\mico2313.dll"
+            "TargetName" = "8:mico2313.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -79844,7 +79954,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -82096,26 +82206,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C17B71E70B424689C3184675EAD96FF9"
-            {
-            "SourcePath" = "8:QtGui4.dll"
-            "TargetName" = "8:QtGui4.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C17BBDF21C2D4228964537FDBCD3B602"
             {
             "SourcePath" = "8:..\\..\\..\\OMNotebook\\DrModelica\\DiscreteHybrid\\meningsfil.onb"
@@ -82384,7 +82474,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -83104,26 +83194,6 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C48D51B540674DAA85A86A1952ABE54C"
-            {
-            "SourcePath" = "8:..\\..\\..\\build\\ModelicaLibrary\\ModelicaAdditions\\MultiBody\\Examples\\all.txt"
-            "TargetName" = "8:all.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_EA50652B88604A76B45EBDB4F33D76DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
             "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
@@ -83805,6 +83875,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6C79FDC5E34493EAC1E8414B5145782"
+            {
+            "SourcePath" = "8:bin\\coin3.dll"
+            "TargetName" = "8:coin3.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -85225,6 +85315,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB3329A424C04BFF9AA4832CEF23454A"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\omc-msvc.exe"
+            "TargetName" = "8:omc-msvc.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -88884,7 +88994,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -89502,6 +89612,26 @@
             "TargetName" = "8:Sample-Init-File.html"
             "Tag" = "8:"
             "Folder" = "8:_EF6B7CFFF50F4BCFB94B323D1CBE9E8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D6D61BD05DCE4BF4BD140EDE4EDCABB9"
+            {
+            "SourcePath" = "8:tools\\SimForge-0.8.4.1.zip"
+            "TargetName" = "8:SimForge-0.8.4.1.zip"
+            "Tag" = "8:"
+            "Folder" = "8:_FF735EACB7D240158565CAF77FE1A927"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -91584,7 +91714,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -92305,6 +92435,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF8EB2119FF24D658CC311D8AC238FD7"
+            {
+            "SourcePath" = "8:..\\..\\..\\doc\\SimForge - An Open Source Graphical Model Editor by Politecnico di Milano.url"
+            "TargetName" = "8:SimForge - An Open Source Graphical Model Editor by Politecnico di Milano.url"
+            "Tag" = "8:"
+            "Folder" = "8:_FF735EACB7D240158565CAF77FE1A927"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -95284,7 +95434,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -95405,6 +95555,26 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB4B2BDCAF8E4A388E2CD7AD0FECF0B6"
+            {
+            "SourcePath" = "8:..\\..\\..\\build\\bin\\omc-mingw.exe"
+            "TargetName" = "8:omc-mingw.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -98764,7 +98934,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -99776,26 +99946,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB31543FF4474A1C9F04A026BB4988FA"
-            {
-            "SourcePath" = "8:bin\\Microsoft.VC90.CRT.manifest"
-            "TargetName" = "8:Microsoft.VC90.CRT.manifest"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FB35ADB26BC6464F81D3272DEC81090E"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\lib\\mlton\\sml\\ckit-lib\\regression\\invalid-programs\\r21.c"
@@ -100576,6 +100726,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FDCEDA21D3964AB796C0A0690B61C654"
+            {
+            "SourcePath" = "8:bin\\QtCore4.dll"
+            "TargetName" = "8:QtCore4.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FDD6428E22B44EF6BCD6F83EEDDD28B8"
             {
             "SourcePath" = "8:..\\..\\..\\build\\MinGW\\libexec\\gcc\\mingw32\\3.4.5\\cc1plus.exe"
@@ -100922,26 +101092,6 @@
             "TargetName" = "8:newdev.h"
             "Tag" = "8:"
             "Folder" = "8:_5AD90A03F138429E96499494C6488E65"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE9E8DFE551C48B7B8D4E0B6C8E899E3"
-            {
-            "SourcePath" = "8:bin\\ptplot.jar"
-            "TargetName" = "8:ptplot.jar"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -101402,7 +101552,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_5E09BEF16F57435892F962D446E8B3F8"
             {
-            "DefaultLocation" = "8:C:\\OpenModelica1.4.5"
+            "DefaultLocation" = "8:C:\\OpenModelica1.5.0"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -103863,6 +104013,17 @@
                         {
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_FF735EACB7D240158565CAF77FE1A927"
+                    {
+                    "Name" = "8:SimForge"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_2B8F2E22196142F1B78FC29F8DA62B2C"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -103880,24 +104041,24 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:OpenModelica-1.4.5"
-        "ProductCode" = "8:{2010C8DB-C5CA-410E-BBEF-308DB5009BC6}"
-        "PackageCode" = "8:{404C2DD5-39B0-4E68-9ABF-8A4D6245CD85}"
+        "ProductName" = "8:OpenModelica-1.5.0"
+        "ProductCode" = "8:{6F001411-FEFC-4E0A-8380-128E7613E2EA}"
+        "PackageCode" = "8:{472EB03C-179C-496E-A852-6205E3C541B3}"
         "UpgradeCode" = "8:{19EAF29E-6005-4CB8-87D0-A2BE5C97CAAB}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.5"
-        "Manufacturer" = "8:Programming Environments Laboratory (PELAB), Linköping University (LiU). "
+        "ProductVersion" = "8:1.5.0"
+        "Manufacturer" = "8:Open Source Modelica Consortium (OSMC) and Linköping University (LiU). "
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://www.ida.liu.se/labs/pelab/modelica/OpenModelica.html"
-        "Title" = "8:OpenModelica-1.4.5"
+        "Title" = "8:OpenModelica-1.5.0"
         "Subject" = "8:Modeling and Simulation Software for Modelica"
-        "ARPCONTACT" = "8:Programming Environments Laboratory (PELAB)"
+        "ARPCONTACT" = "8:Open Source Modelica Consortium (OSMC)"
         "Keywords" = "8:OpenModelica, Modeling and Simulation Software, PELAB"
         "ARPCOMMENTS" = "8:OpenModelica packed by Adrian Pop [http://www.ida.liu.se/~adrpo]"
-        "ARPURLINFOABOUT" = "8:http://www.ida.liu.se/labs/pelab"
+        "ARPURLINFOABOUT" = "8:http://www.OpenModelica.org"
         "ARPPRODUCTICON" = "8:_A171BB2870DB4E48AE2AC3164BB2B3D1"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -104147,6 +104308,20 @@
             "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
             "WorkingFolder" = "8:_2B3260C96E0C4C598117FC3186F419F7"
             "Icon" = "8:_A4FD94586C5844F5999DFE8184AEE454"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4CB1929FDE454C62B9FA394D6B7F96CC"
+            {
+            "Name" = "8:SimForge-0.8.4.1"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_5437F5E3D667431186ACA6AD9917DEDD"
+            "Folder" = "8:_209EBABD686745B1BB682E2CE563492D"
+            "WorkingFolder" = "8:_FF735EACB7D240158565CAF77FE1A927"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6DE971C332EE43E7B977FA9A54E0BB2A"
@@ -104612,7 +104787,7 @@
             "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
+            "Vital" = "11:FALSE"
             "ReadOnly" = "11:FALSE"
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
@@ -104627,34 +104802,6 @@
             "OutputConfiguration" = "8:Release|Win32"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{8E584488-5EBE-43D7-973C-6C434E426803}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C0808A7B696E49A79B16145F10BAB302"
-            {
-            "SourcePath" = "8:..\\Release\\omc.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_875570E899A242DF916C2237EE00D9E0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|Win32"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{087A2480-4E18-465E-BCE0-715481BE58DE}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

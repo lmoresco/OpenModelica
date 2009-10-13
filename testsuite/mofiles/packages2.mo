@@ -25,9 +25,7 @@ model test
   Real x=Modelica.Constants.PI;
 end test;
 
-// fclass test
-//   Real x;
-// equation
-//   x = 3.14;
-// end test;
 
+// fclass test
+// Real x = 3.14;
+// end test;

@@ -28,6 +28,6 @@ end Colors;
 // Real c.green;
 // Real k;
 // equation
-//   c.red + c.blue + c.green = 1.0;
+//   c.red + (c.blue + c.green) = 1.0;
 //   k = c.green;
 // end Colors;
