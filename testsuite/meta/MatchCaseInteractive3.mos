@@ -1,0 +1,27 @@
+// name:     MatchCaseInteractive3
+// keywords: MatchCase
+// status:   correct
+//
+// MatchCase Testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("MatchCaseInteractive3.mo");
+a := MatchCaseInteractive3.myConst;
+a := MatchCaseInteractive3.retMyConst();
+MatchCaseInteractive3.printSelect(MatchCaseInteractive3.mySelect);
+print("
+");
+
+// Result:
+// ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
+// true
+// true
+// record MatchCaseInteractive3.REC1
+//     x = 3
+// end MatchCaseInteractive3.REC1;
+// record MatchCaseInteractive3.REC1
+//     x = 3
+// end MatchCaseInteractive3.REC1;
+// 
+// 
+// endResult

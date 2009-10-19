@@ -1,0 +1,32 @@
+// name:     Assignment
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+// Note that the testcase needs to be run with the input:
+// a:=1+2
+// c:=1
+// b:=1+c
+// d:=a+b+c
+// ;
+// d+1
+// or something that generates the same output.
+//
+echo(false);
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Assignment.mo");
+print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+");
+syntree := Assignment.parse();
+i:=Assignment.evalprogram(syntree);
+print(intString(i) + "
+");
+
+// Result:
+// [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 
+// The assignments: a = 1+2, c = 1, b = 1+c, d = a+b+c
+// The expression: d+1
+// The environment: d = 6, b = 2, c = 1, a = 3
+// 7
+// endResult

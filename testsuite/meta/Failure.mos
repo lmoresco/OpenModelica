@@ -1,0 +1,25 @@
+// name:     Failure
+// keywords: Failure
+// status:   correct
+//
+// Failure Testing
+//
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Failure.mo");
+a:=Failure.myFailure(1);
+a:=Failure.myFailure(2);
+a:=Failure.myFailure(3);
+a:=Failure.myFailure(4);
+a:=Failure.myFailure(5);
+a:=Failure.myFailure2();
+
+// Result:
+// true
+// true
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// endResult

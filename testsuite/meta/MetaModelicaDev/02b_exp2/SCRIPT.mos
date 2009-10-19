@@ -1,0 +1,22 @@
+// name:     Exp2
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+// Note that the testcase needs to be run with the input "1+2*35/7",
+// or something that generates the same output.
+//
+echo(false);
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Exp2.mo");
+print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+");
+syntree := Exp2.parse();
+i := Exp2.eval(syntree);
+print(intString(i) + "
+");
+
+// Result:
+// [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 8
+// endResult

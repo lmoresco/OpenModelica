@@ -1,0 +1,59 @@
+// name:     Uniontype8
+// keywords: Uniontype
+// status:   correct
+//
+// Uniontype Testing
+//
+loadFile("Uniontype8.mo");
+a:=Uniontype8.test(5);
+a:=Uniontype8.test3(5);
+a:=Uniontype8.test4(5);
+a:=foo(1,1.5,"z");
+a:=Uniontype8.test5(5);
+a:=Uniontype8.test6(5);
+
+// Result:
+// true
+// 5
+// record REC1
+//     x = 5,
+//     y = 6.0,
+//     z = "z"
+// end REC1;
+// record REC4
+//     ut = record REC4
+//     ut = record REC1
+//     x = 1,
+//     y = 2.5,
+//     z = "z"
+// end REC1;
+// end REC4;
+// end REC4;
+// record foo
+//     x = 1,
+//     y = 1.5,
+//     z = "z"
+// end foo;
+// record REC4
+//     ut = record REC4
+//     ut = record REC5
+//     f = record foo
+//     x = 1,
+//     y = 2.5,
+//     z = "z"
+// end foo;
+// end REC5;
+// end REC4;
+// end REC4;
+// record REC4
+//     ut = record REC4
+//     ut = record REC5
+//     f = record foo
+//     x = 1,
+//     y = 2.5,
+//     z = "z"
+// end foo;
+// end REC5;
+// end REC4;
+// end REC4;
+// endResult

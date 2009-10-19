@@ -1,0 +1,17 @@
+// name:     Uniontype4
+// keywords: Uniontype
+// status:   correct
+//
+// Uniontype Testing
+//
+loadFile("Uniontype4.mo");
+simulate(Uniontype4);
+val(a,0.0);
+
+// Result:
+// true
+// record SimulationResult
+//    resultFile = "Uniontype4_res.plt"
+// end SimulationResult;
+// 5.0
+// endResult

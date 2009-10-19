@@ -1,0 +1,24 @@
+// name:     OptionInteractive
+// keywords: Option Type
+// status:   correct
+//
+// Option Testing
+//
+loadFile("OptionInteractive.mo");
+some := SOME(1);
+NONE;
+OptionInteractive.optionIdent(some);
+OptionInteractive.optionIdent(NONE);
+OptionInteractive.someToNone(some);
+OptionInteractive.someToNone(NONE);
+
+// Result:
+// true
+// SOME(1)
+// NONE()
+// SOME(1)
+// NONE()
+// NONE()
+// NONE()
+// endResult
+

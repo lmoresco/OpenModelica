@@ -14,8 +14,6 @@ res:=RecordTest.mk_plus4(1.0,2.0,3.0,4.0);
 res:=RecordTest.mk_plus_ext(RecordTest.ADD(1.0,2.0),RecordTest.ADD(3.0,4.0));
 res:=RecordTest.MULT_PLUS(plus1,plus2,plus3);
 
-system("rm -f RecordTest_*");
-
 // Result:
 // true
 // record RecordTest.ADD
@@ -108,5 +106,5 @@ system("rm -f RecordTest_*");
 // end RecordTest.ADD;
 // end RecordTest.PLUS;
 // end RecordTest.MULT_PLUS;
-// 0
+// endResult
 

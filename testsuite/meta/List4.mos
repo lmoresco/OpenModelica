@@ -7,7 +7,6 @@
 loadFile("List4.mo");
 simulate(List4);
 val(c1,0.0);
-system("rm -rf List4_* List4.exe List4.cpp List4.makefile List4.libs List4.log output.log");
 
 // Result:
 // true
@@ -15,5 +14,4 @@ system("rm -rf List4_* List4.exe List4.cpp List4.makefile List4.libs List4.log o
 //    resultFile = "List4_res.plt"
 // end SimulationResult;
 // 9.0
-// 0
 // endResult

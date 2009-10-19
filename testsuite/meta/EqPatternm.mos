@@ -1,0 +1,37 @@
+// name:     EqPatternm
+// keywords: EqPatternm
+// status:   correct
+//
+// Pattern matching in equations
+//
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("EqPatternm.mo");
+a:=EqPatternm.test(1);
+a:=EqPatternm.test(2);
+a:=EqPatternm.test(3);
+a:=EqPatternm.test(4);
+a:=EqPatternm.test(5);
+a:=EqPatternm.test(6);
+a:=EqPatternm.test(7);
+a:=EqPatternm.test(8);
+a:=EqPatternm.test(9);
+a:=EqPatternm.test(10);
+a:=EqPatternm.test(11);
+a:=EqPatternm.test(12);
+
+// Result:
+// true
+// true
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// 1
+// endResult

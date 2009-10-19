@@ -1,0 +1,19 @@
+// name:     Recursive
+// keywords: Recursive
+// status:   correct
+//
+// Recursive function testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Recursive.mo");
+
+i := Recursive.facMetaModelica(8);
+i := Recursive.facModelica(6);
+
+// Result:
+// true
+// true
+// 40320
+// 720
+// endResult
+

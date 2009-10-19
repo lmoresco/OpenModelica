@@ -69,6 +69,7 @@ SRCMO= Absyn.mo \
 	MetaUtil.mo \
 	Mod.mo \
 	ModUtil.mo \
+	PartFn.mo \
 	Patternm.mo \
 	Prefix.mo \
 	Static.mo \

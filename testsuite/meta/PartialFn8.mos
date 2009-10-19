@@ -1,0 +1,19 @@
+// name:     PartialFn8
+// keywords: PartialFn
+// status:   correct
+//
+// Partial Function Testing
+//
+loadFile("PartialFn8.mo");
+simulate(PartialFn8);
+val(area,0.0);
+val(area,1.0);
+
+// Result:
+// true
+// record SimulationResult
+//    resultFile = "PartialFn8_res.plt"
+// end SimulationResult;
+// 0.0
+// 2.0
+// endResult

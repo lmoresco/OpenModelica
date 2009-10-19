@@ -1,0 +1,21 @@
+// name:     Uniontype11
+// keywords: Uniontype
+// status:   correct
+//
+// Uniontype Testing
+//
+loadFile("Uniontype11.mo");
+a:=Uniontype11.REC1(1+2);
+b:=Uniontype11.test(a);
+
+// Result:
+// true
+// record Uniontype11.REC1
+//     x = 3
+// end Uniontype11.REC1;
+// record Uniontype11.REC2
+//     x = record Uniontype11.REC1
+//     x = 3
+// end Uniontype11.REC1;
+// end Uniontype11.REC2;
+// endResult

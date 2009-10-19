@@ -1,0 +1,14 @@
+// name:     PartialFns
+// keywords: PartialFn
+// status:   correct
+//
+// Partial Function Testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("PartialFn9.mo");
+res := PartialFn9.runTest(0);
+
+// Result:
+// true
+// 6
+// endResult

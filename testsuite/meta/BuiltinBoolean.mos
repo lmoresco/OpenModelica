@@ -1,0 +1,23 @@
+// name:     BuiltinBoolean
+// keywords: Builtin
+// status:   correct
+//
+// Builtin function testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("BuiltinBoolean.mo");
+
+BuiltinBoolean.func(true,false);
+BuiltinBoolean.func(true,true);
+BuiltinBoolean.func(false,true);
+BuiltinBoolean.func(false,false);
+
+// Result:
+// true
+// true
+// (false,true,false)
+// (true,true,false)
+// (false,true,true)
+// (false,false,true)
+// endResult
+

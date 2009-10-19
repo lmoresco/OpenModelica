@@ -7,8 +7,6 @@ loadFile("RecordTest.mo");
 rec:=RecordTest.ADD(1.0,2.0);
 b:=RecordTest.eval_add(rec);
 
-system("rm -f RecordTest_*");
-
 // Result:
 // true
 // record RecordTest.ADD
@@ -16,5 +14,4 @@ system("rm -f RecordTest_*");
 //     a2 = 2.0
 // end RecordTest.ADD;
 // 3.0
-// 0
-
+// endResult

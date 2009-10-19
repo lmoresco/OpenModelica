@@ -1,0 +1,28 @@
+// name:     Checking for Java Implementation
+// keywords: algorithm
+// status:   correct
+// 
+// Test of External Java functions
+//
+
+loadFile("JavaTest.mo");
+a:=JavaTest.GetJavaSystemProperty("java.vm.name");
+b:=JavaTest.GetJavaSystemProperty("java.vm.version");
+a:=JavaTest.JavaIntString(1);
+a:=JavaTest.JavaRealString(1.5);
+a:=JavaTest.JavaBoolString(true);
+a:=JavaTest.JavaStringInt("1");
+a:=JavaTest.JavaStringReal("1.5");
+a:=JavaTest.JavaStringBool("true");
+
+// Result:
+// true
+// "Java HotSpot(TM) Client VM"
+// "14.1-b02"
+// "1"
+// "1.5"
+// "true"
+// 1
+// 1.5
+// true
+// endResult

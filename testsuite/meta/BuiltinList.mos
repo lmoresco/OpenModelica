@@ -1,0 +1,75 @@
+// name:     BuiltinList
+// keywords: Builtin
+// status:   correct
+//
+// Builtin function testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("BuiltinList.mo");
+
+i:=BuiltinList.func({1,2,3},2);
+BuiltinList.func({5,6,7},2);
+echo(false);
+ut1 := BuiltinList.UT1({(3,SOME(2)),(2,NONE)});
+ut2 := BuiltinList.UT1({(1,NONE)});
+ut3 := BuiltinList.UT1({});
+tup1 := (1,1.5,false,"tup1",ut1);
+tup2 := (1,1.5,false,"tup2",ut2);
+tup3 := (1,1.5,false,"tup3",ut3);
+echo(true);
+BuiltinList.funcTuple({tup1,tup2,tup3},tup3,1);
+BuiltinList.funcTuple({tup1,tup2},tup3,1);
+
+// Result:
+// true
+// true
+// ({3,2,1},{1,2,3,1,2,3},3,true,2,3,{1,3})
+// ({7,6,5},{5,6,7,5,6,7},3,false,6,7,{5,7})
+// true
+// ({(1,1.5,0,"tup3",record BuiltinList.UT1
+//     lst = {}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;)},{(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup3",record BuiltinList.UT1
+//     lst = {}
+// end BuiltinList.UT1;),(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup3",record BuiltinList.UT1
+//     lst = {}
+// end BuiltinList.UT1;)},3,true,(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),{(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup3",record BuiltinList.UT1
+//     lst = {}
+// end BuiltinList.UT1;)})
+// ({(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;)},{(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;)},2,false,(1,1.5,0,"tup1",record BuiltinList.UT1
+//     lst = {(3,SOME(2)),(2,NONE())}
+// end BuiltinList.UT1;),(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;),{(1,1.5,0,"tup2",record BuiltinList.UT1
+//     lst = {(1,NONE())}
+// end BuiltinList.UT1;)})
+// endResult

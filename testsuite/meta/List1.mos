@@ -7,7 +7,6 @@
 loadFile("List1.mo");
 simulate(List1);
 val(a,0.0);
-system("rm -rf List1_* List1.exe List1.cpp List1.makefile List1.libs List1.log output.log");
 
 // Result:
 // true
@@ -15,5 +14,4 @@ system("rm -rf List1_* List1.exe List1.cpp List1.makefile List1.libs List1.log o
 //    resultFile = "List1_res.plt"
 // end SimulationResult;
 // 5.0
-// 0
 // endResult

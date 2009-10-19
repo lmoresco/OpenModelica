@@ -1,0 +1,17 @@
+// name:     AssignTwoType
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+//
+echo(false);
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Absyn.mo");
+loadFile("Eval.mo");
+loadFile("Main.mo");
+loadFile("Parse.mo");
+i:=Main.main({});
+// Result:
+// [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 14.6
+// endResult

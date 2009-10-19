@@ -1,0 +1,28 @@
+// name:     Experiment (Compiled)
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+// Uses packages, aliases, etc
+//
+echo(false);
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Main.mo");
+loadFile("SOLUTION.mo");
+loadFile("Types.mo");
+i:=Main.main({"10"});
+
+// Result:
+// Factorial of 10 is: 3628800
+// Calling Functions.test("one"):   1
+// Calling Functions.test("two"):   2
+// Calling Functions.test("three"): 3
+// Calling Functions.test("other"): 0
+// Types.aliasConstant: 1
+// Types.optionAliasConstant: 1
+// Types.optionAliasConstantNone: NONE
+// Types.tupleConstant: ("a tuple element", 1, 1)
+// Types.listConstant: {("a tuple element", 1, 1), ("another element", 2, NONE)}
+// Types.oneRecord: OneRecord("first element", 3)
+// Types.select: ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
+// endResult

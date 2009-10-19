@@ -1,0 +1,13 @@
+// name:     PartialFn3
+// keywords: PartialFn
+// status:   incorrect
+//
+// Partial Function Testing
+//
+loadFile("PartialFn3.mo");
+a:=PartialFn3.ApplyIntOp(PartialFn3.AddInt,4);
+
+// Result:
+// true
+// 5
+// endResult

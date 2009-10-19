@@ -9,8 +9,6 @@ a:=RecordTest.mk_empty2();
 a:=RecordTest.mk_empty_ext();
 a:=RecordTest.EMPTY();
 
-system("rm -f RecordTest_*");
-
 // Result:
 // true
 // record RecordTest.EMPTY
@@ -21,5 +19,5 @@ system("rm -f RecordTest_*");
 // end RecordTest.EMPTY;
 // record RecordTest.EMPTY
 // end RecordTest.EMPTY;
-// 0
+// endResult
 

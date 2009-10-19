@@ -7,12 +7,10 @@ loadFile("RecordTest.mo");
 rec:=RecordTest.EMPTY();
 b:=RecordTest.eval_empty(rec);
 
-system("rm -f RecordTest_*");
-
 // Result:
 // true
 // record RecordTest.EMPTY
 // end RecordTest.EMPTY;
 // 0.0
-// 0
+// endResult
 

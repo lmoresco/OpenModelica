@@ -1,0 +1,4 @@
+SOLUTIONS=SOLUTION.mos
+CLEAN=Assignment_*
+DEPS=lexer.o parser.o
+include ../common.mk

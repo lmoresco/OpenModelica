@@ -5,11 +5,10 @@
 loadFile("RecordTest.mo");
 
 plus:=RecordTest.PLUS(RecordTest.ADD(1.0,2.0),RecordTest.ADD(3.0,4.0));
-mult:=RecordTest.MULT_PLUS(plus,plus,plus);
+/*mult:=RecordTest.MULT_PLUS(plus,plus,plus);
 res:=RecordTest.plus_ident(plus);
 res:=RecordTest.eval_plus(plus);
-res:=RecordTest.eval_mult(mult);
-system("rm -f RecordTest_*");
+res:=RecordTest.eval_mult(mult);*/
 
 // Result:
 // true
@@ -67,5 +66,4 @@ system("rm -f RecordTest_*");
 // end RecordTest.PLUS;
 // 10.0
 // 1000.0
-// 0
-
+// endResult

@@ -3,7 +3,6 @@
 // status: correct
 //
 // Tests record constructor functions
-// Currently, something is wrong with record constructors
 //
 
 record TestRecord
@@ -19,5 +18,5 @@ end RecordConstructors;
 // fclass RecordConstructors
 // Integer tr.i;
 // equation
-//   tr = TestRecord();
+//   tr = TestRecord(1);
 // end RecordConstructors;

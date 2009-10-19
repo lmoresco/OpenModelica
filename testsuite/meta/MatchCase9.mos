@@ -7,13 +7,11 @@
 loadFile("MatchCase9.mo");
 simulate(MatchCase9);
 val(i,0.0);
-system("rm -rf MatchCase9_* MatchCase9.exe MatchCase9.cpp MatchCase9.makefile MatchCase9.libs MatchCase9.log output.log");
 
 // Result:
 // true
 // record SimulationResult
 //    resultFile = "MatchCase9_res.plt"
 // end SimulationResult;
-// 1.0
-// 0
+// 2.0
 // endResult

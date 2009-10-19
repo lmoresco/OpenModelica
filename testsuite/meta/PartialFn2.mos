@@ -1,0 +1,17 @@
+// name:     PartialFn2
+// keywords: PartialFn
+// status:   correct
+//
+// Partial Function Testing
+//
+loadFile("PartialFn2.mo");
+simulate(PartialFn2);
+val(i2,0.0);
+
+// Result:
+// true
+// record SimulationResult
+//    resultFile = "PartialFn2_res.plt"
+// end SimulationResult;
+// 3.0
+// endResult

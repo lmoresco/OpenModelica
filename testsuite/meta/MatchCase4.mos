@@ -7,7 +7,6 @@
 loadFile("MatchCase4.mo");
 simulate(MatchCase4);
 val(a,0.0);
-system("rm -rf MatchCase4_* MatchCase4.exe MatchCase4.cpp MatchCase4.makefile MatchCase4.libs MatchCase4.log output.log");
 
 // Result:
 // true
@@ -15,5 +14,4 @@ system("rm -rf MatchCase4_* MatchCase4.exe MatchCase4.cpp MatchCase4.makefile Ma
 //    resultFile = "MatchCase4_res.plt"
 // end SimulationResult;
 // 4.0
-// 0
 // endResult

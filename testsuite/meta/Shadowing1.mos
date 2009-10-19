@@ -1,0 +1,11 @@
+// name:     Shadowing1
+// keywords: Shadowing
+// status:   incorrect
+//
+// Local Delcaration Shadowing
+//
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("Shadowing1.mo");
+getErrorString();
+a:=Shadowing1.test(1);
+

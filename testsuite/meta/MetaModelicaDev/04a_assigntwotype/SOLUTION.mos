@@ -1,0 +1,20 @@
+// name:     AssignTwoType
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+//
+echo(false);
+setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("SOLUTION.mo");
+print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+");
+syntree := AssignTwoType.parse();
+AssignTwoType.evalprogram(syntree);
+print(intString(i) + "
+");
+
+// Result:
+// [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 7.899999999999999
+// endResult

@@ -1,0 +1,46 @@
+// name:     BuiltinMisc
+// keywords: Builtin
+// status:   correct
+//
+// Builtin function testing
+//
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
+loadFile("BuiltinMisc.mo");
+
+r := BuiltinMisc.myClock();
+i := BuiltinMisc.myTick();
+BuiltinMisc.myTick();
+BuiltinMisc.myTick();
+// BuiltinMisc.myClock(); // Disabled because it is not deterministic
+
+BuiltinMisc.myPrint("abc");
+BuiltinMisc.myTick();
+BuiltinMisc.myTick();
+BuiltinMisc.myPrint("def");
+BuiltinMisc.myTick();
+// BuiltinMisc.myClock(); // Disabled because it is not deterministic
+i:=BuiltinMisc.myIf(true, 1547, 0);
+i:=BuiltinMisc.myIf(false, 0, 1385);
+i:=BuiltinMisc.myIfOpt(false, 1385);
+i:=BuiltinMisc.myIfOpt(true, 1385);
+
+// Result:
+// abc
+// def
+// true
+// true
+// 0.0
+// 0
+// 1
+// 2
+// 
+// 3
+// 4
+// 
+// 5
+// 1547
+// 1385
+// NONE()
+// SOME(1385)
+// endResult
+
