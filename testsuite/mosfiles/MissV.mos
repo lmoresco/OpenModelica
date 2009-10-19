@@ -1,0 +1,41 @@
+// name:     MissV  (test bug 1110)
+// keywords: linear system of equations
+// status:   correct
+//
+// Solving of a linear system of equations
+//
+// Tests fixes for bug: http://openmodelica.ida.liu.se:8080/cb/issue/1110
+//  
+loadFile("MissV.mo");
+instantiateModel(MissV);
+simulate(MissV,startTime=0.0, stopTime=1.0, numberOfIntervals=500, tolerance=1e-5); 
+
+val(pa, 1.0);
+val(pb, 1.0);
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf MissV_* MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log");
+// Result:
+// true
+// "fclass MissV
+// Real pb(start = 12000000.0);
+// Real Qb;
+// Real pa(start = 12000000.0);
+// Real Qa;
+// parameter Real s = 0.001;
+// parameter Real v = 5000.0;
+// equation
+//   der(pb) = (Qb - v) / s;
+//   der(pa) = (Qa - v) / s;
+//   pa = pb;
+//   Qa + Qb = 0.0;
+// end MissV;
+// "
+// record SimulationResult
+//     resultFile = "MissV_res.plt"
+// end SimulationResult;
+// 7000000.0
+// 7000000.0
+// ""
+// 0
+// endResult

@@ -40,7 +40,7 @@ PolynomialEvaluator1.mos PolynomialEvaluator3.mos \
 PolynomialEvaluator2.mos Matrix.mos \
 FuncNamespace.mos OverloadingFunc.mos \
 InOutStrings.mos InOutRecord.mos \
-LinearSysEq.mos
+LinearSysEq.mos MissV.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
