@@ -1,9 +1,13 @@
 %{
 #include "parser.h"
-#include "meta_modelica.h"
 
 void* absyn_integer(char *s);
 
+#ifdef RML
+#include "yacclib.h"
+#include "Exp1.h"
+#else
+#include "meta_modelica.h"
 const char* Exp1_INTconst__desc__fields[] = {"integer"};
 struct record_description Exp1_INTconst__desc = {
     "Exp1_INTconst",
@@ -11,6 +15,7 @@ struct record_description Exp1_INTconst__desc = {
     Exp1_INTconst__desc__fields
 };
 #define Exp1__INTconst(X1) (mmc_mk_box2(3,&Exp1_INTconst__desc,(X1)))
+#endif
 
 %}
 

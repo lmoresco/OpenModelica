@@ -347,7 +347,7 @@ algorithm
 end printEnvironment;
 protected function yyparse
   output Integer i;
-external annotation(Library = "parser.o lexer.o");
+external;
 end yyparse;
 
 protected function getAST

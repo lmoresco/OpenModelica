@@ -204,3 +204,64 @@ algorithm
 end printSelect;
 
 end Functions;
+
+package Main
+
+import Types;
+import Functions;
+
+function main
+ input list<String> arg;
+algorithm
+ _ := 
+ matchcontinue arg
+  case (n_str::_) 
+   local 
+    Integer i, n; 
+    String str, n_str;
+   equation
+     // factorial 
+     print("Factorial of " +& n_str +& " is: ");
+     n = stringInt(n_str);    
+     i = Functions.factorial(n);
+     str = intString(i);
+     print(str); 
+     // test function
+     print("\nCalling Functions.test(\"one\"):   " +& intString(Functions.test("one")));
+     print("\nCalling Functions.test(\"two\"):   " +& intString(Functions.test("two")));
+     print("\nCalling Functions.test(\"three\"): " +& intString(Functions.test("three")));
+     print("\nCalling Functions.test(\"other\"): " +& intString(Functions.test("other")));
+                    
+     // print Types.aliasConstant
+     print("\nTypes.aliasConstant: ");
+     Functions.printAlias(Types.aliasConstant);
+
+     // print Types.optionAliasConstant
+     print("\nTypes.optionAliasConstant: ");
+     Functions.printOptionType(Types.optionAliasConstant);
+
+     // print Types.optionAliasConstantNone
+     print("\nTypes.optionAliasConstantNone: ");
+     Functions.printOptionType(Types.optionAliasConstantNone);
+
+     // print Types.tupleConstant
+     print("\nTypes.tupleConstant: ");
+     Functions.printTupleType(Types.tupleConstant);
+
+     // print Types.listConstant
+     print("\nTypes.listConstant: {");
+     Functions.printListType(Types.listConstant);
+     print("}");
+     
+     // print Types.oneRecord
+     print("\nTypes.oneRecord: ");
+     Functions.printOneRecord(Types.oneRecord);
+     
+     // print Types.select
+     print("\nTypes.select: ");
+     Functions.printSelect(Types.select);
+ then ();
+ end matchcontinue; 
+end main;
+
+end Main;

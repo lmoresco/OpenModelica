@@ -30,11 +30,12 @@ uniontype Exp
     Exp exp;
   end NEGop;
   
-  /* Note that the external C code assumes you add the records in a specific order */
+  /* Note that the external C code for the OMC version assumes you add the
+   * records in a specific order. The RML version does not make this assumtpion. */
   
-  /* Add POWop here */
+  /* Add POWop here */ // your code here
 
-  /* Add FACop here */
+  /* Add FACop here */ // your code here
 end Exp;
 
 public function eval "Abstract syntax of the language Exp1: Evaluation semantics  of Exp1"
@@ -77,34 +78,12 @@ algorithm
       equation 
         v1 = eval(e); 
       then -v1;
+    // your code here
+    // add evaluation handlers for the new operators
   end matchcontinue;
 end eval;
 
-protected function fac
-  input Integer i;
-  output Integer out;
-algorithm
-  out := if i==0 then 1 else i*fac(i-1);
-end fac;
-
-protected function yyparse
-  output Integer i;
-external annotation(Library = "parser.o lexer.o");
-end yyparse;
-
-protected function getAST
-  output Exp exp;
-external;
-end getAST;
-
-public function parse
-  output Exp exp;
-  Integer yyres;
-algorithm
-  yyres := yyparse();
-  exp := matchcontinue (yyres)
-    case 0 then getAST();
- end matchcontinue;
-end parse;
+// your code here
+// add a factorial function
 
 end Exp1;

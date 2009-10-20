@@ -5,7 +5,7 @@
 // OpenModelica Development Course at PELAB
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC");
+setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
 loadFile("Absyn.mo");
 loadFile("Eval.mo");
 loadFile("Main.mo");

@@ -8,16 +8,15 @@ to the exp1 language and deal with their evaluation.
 ASSIGNMENT: add the following constructs to the language
 - a power operator
 - a factorial operator
-- search for // your code here within exp1.mo
+- search for // your code here within Exp1.mo
 
-NOTE: the parser/lexer are ready, however the records need to be defined
-in the same order as in lexer.l and parser.y
+NOTE: the parser/lexer are ready, but you have to implement the types
+before they start parsing POWop and FACop properly.
 
-SOLUTION.mo presents the solution to the assignment.
+SOLUTION.txt presents the solution to the assignment.
 
-To run the calculator, run "make"
-To test our solution, run "make test"
-For more details, run "omc +g=MetaModelica +d=failtrace,matchcase SCRIPT.mos"
+To clean the project type "clean" when building the project.
+To build the project leave the input box empty when building the project.
+To run the calculator type "run" when building the project.
 
-You need to edit the input of the calculator edit the file called program.txt
-in order to test the new features you add to the language.
+If you need to edit the input of the calculator edit the file called program.txt

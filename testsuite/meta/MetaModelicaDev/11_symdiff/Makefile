@@ -1,4 +1,4 @@
-CLEAN=Exp2_*
-SOLUTIONS=SCRIPT.mos
+SOLUTIONS=SOLUTION.mos
+CLEAN=Exp_*
 DEPS=lexer.o parser.o
 include ../common.mk

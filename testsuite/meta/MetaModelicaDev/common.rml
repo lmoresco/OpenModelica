@@ -1,0 +1,56 @@
+ifdef OMDEV
+  RMLC=$(OMDEV)/tools/rml/bin/rmlc
+else
+  RMLC=rmlc
+endif
+
+COMPILE.rml=$(RMLC) -DRML -I../rml/ $(RMLCFLAGS) $(CPPFLAGS) -c
+LINK.rml=$(RMLC) $(RMLCFLAGS)
+
+.SUFFIXES:	.c .o .rml .h .mo
+
+.c.o:
+	$(COMPILE.rml) $<
+.rml.c:
+	$(COMPILE.rml) +C $<
+.rml.h:
+	$(COMPILE.rml) +C $<
+.rml.o:
+	$(COMPILE.rml) $<
+
+.mo.c:
+	$(COMPILE.rml) +C $<
+.mo.h:
+	$(COMPILE.rml) +C $<
+.mo.o:
+	$(COMPILE.rml) $<
+
+all: clean executable
+
+# LEXER
+
+lexer.o:  lexer.c parser.h
+lexer.c:  lexer.l
+	flex -t -l lexer.l >lexer.c
+
+# PARSER
+
+parser.o:  parser.c parser.h
+parser.c parser.h:  parser.y
+	bison -d parser.y
+	mv parser.tab.c parser.c
+	mv parser.tab.h parser.h
+
+# yacclib
+yacclib.c: ../rml/yacclib.c
+	cp $< $@
+
+clean:
+	rm -f $(CLEAN) *.o *.so *.dll *.exe *.h parser.c lexer.c rtest yacclib.c *~
+
+executable: $(HEADERS) $(OBJS)
+	$(LINK.rml) $(OBJS) $(LDLIBS) -o executable
+
+run: executable
+	cat program.txt
+	./executable 10 < program.txt

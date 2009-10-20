@@ -3,13 +3,10 @@ package Main
 import Types;
 import Functions;
 
-function main
-  /* Code taken from the old RML/MetaModelica compiler. These were the arguments provided to the executable.
-   * This version of the course uses OpenModelica scripts to provide input instead. */
-  input list<String> arg;
-  output Integer out;
+public function main
+ input list<String> arg;
 algorithm
- out := 
+ _ := 
  matchcontinue arg
   case (n_str::_) 
    local 
@@ -27,61 +24,44 @@ algorithm
      print("\nCalling Functions.test(\"two\"):   " +& intString(Functions.test("two")));
      print("\nCalling Functions.test(\"three\"): " +& intString(Functions.test("three")));
      print("\nCalling Functions.test(\"other\"): " +& intString(Functions.test("other")));
-     print("\n");
+                    
+     // print Types.aliasConstant
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.aliasConstant: ");
+     // Functions.printAlias(Types.aliasConstant);
+
+     // print Types.optionAliasConstant
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.optionAliasConstant: ");
+     // Functions.printOptionType(Types.optionAliasConstant);
+
+     // print Types.optionAliasConstantNone
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.optionAliasConstantNone: ");
+     // Functions.printOptionType(Types.optionAliasConstantNone);
+
+     // print Types.tupleConstant
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.tupleConstant: ");
+     // Functions.printTupleType(Types.tupleConstant);
+
+     // print Types.listConstant
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.listConstant: {");
+     // Functions.printListType(Types.listConstant);
+     // print("}");
      
-     mainSimple();
-     mainOption();
-     mainTuple();
-     mainList();
-     mainOneRecord();
-     mainSelect();
-   then i;
+     // print Types.oneRecord
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.oneRecord: ");
+     // Functions.printOneRecord(Types.oneRecord);
+     
+     // print Types.select
+     // your code here -- uncomment these when you wrote the functions     
+     // print("\nTypes.select: ");
+     // Functions.printSelect(Types.select);
+ then ();
  end matchcontinue; 
 end main;
 
-function mainSimple
-algorithm
-  print("Types.aliasConstant: ");
-  Functions.printAlias(Types.aliasConstant);
-  print("\n");
-end mainSimple;
-
-function mainOption
-algorithm
-  print("Types.optionAliasConstant: ");
-  Functions.printOptionType(Types.optionAliasConstant);
-
-  print("\nTypes.optionAliasConstantNone: ");
-  Functions.printOptionType(Types.optionAliasConstantNone);
-  print("\n");
-end mainOption;
-
-function mainTuple
-algorithm
-  print("Types.tupleConstant: ");
-  Functions.printTupleType(Types.tupleConstant);
-  print("\n");
-end mainTuple;
-
-function mainList
-algorithm
-  print("Types.listConstant: {");
-  Functions.printListType(Types.listConstant);
-  print("}\n");
-end mainList;
-
-function mainOneRecord
-algorithm
-  print("Types.oneRecord: ");
-  Functions.printOneRecord(Types.oneRecord);
-  print("\n");
-end mainOneRecord;
-
-function mainSelect
-algorithm
-  print("Types.select: ");
-  Functions.printSelect(Types.select);
-  print("\n");
-end mainSelect;
-  
 end Main;

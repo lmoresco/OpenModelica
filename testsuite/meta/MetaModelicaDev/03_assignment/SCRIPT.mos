@@ -13,7 +13,7 @@
 // or something that generates the same output.
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC");
+setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
 loadFile("Assignment.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");

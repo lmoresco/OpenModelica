@@ -1,25 +1,24 @@
 package Parse
 
-import Absyn;
+import Exp2;
 
 protected function yyparse
   output Integer i;
-external;
+external "C";
 end yyparse;
 
 protected function getAST
-  output Absyn.Exp exp;
-external;
+  output Exp2.Exp exp;
+external "C";
 end getAST;
 
 public function parse
-  output Absyn.Exp exp;
+  output Exp2.Exp exp;
   Integer yyres;
 algorithm
   yyres := yyparse();
   exp := matchcontinue (yyres)
     case 0 then getAST();
-    case _ equation print("Failed parsing"); then fail();
  end matchcontinue;
 end parse;
 

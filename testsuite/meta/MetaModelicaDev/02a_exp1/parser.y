@@ -1,6 +1,5 @@
 %{
 #include <stdio.h>
-#include "meta_modelica.h"
 
 #define YYSTYPE void*
 void* absyntree;
@@ -16,6 +15,17 @@ int yywrap()
   return 1;
 }
 
+#ifdef RML
+#include "Exp1.h"
+#include "yacclib.h"
+#ifndef Exp1__FACop
+#define Exp1__FACop(X) yyerror("")
+#endif
+#ifndef Exp1__POWop
+#define Exp1__POWop(X,Y) yyerror("")
+#endif
+#else
+#include "meta_modelica.h"
 void* getAST()
 {
   return absyntree;
@@ -71,6 +81,7 @@ struct record_description Exp1_FACop__desc = {
 #define Exp1__NEGop(X1)    (mmc_mk_box2(8,&Exp1_NEGop__desc,(X1)))
 #define Exp1__POWop(X1,X2) (mmc_mk_box3(9,&Exp1_POWop__desc,(X1),(X2)))
 #define Exp1__FACop(X1)    (mmc_mk_box2(10,&Exp1_FACop__desc,(X1)))
+#endif
 
 %}
 

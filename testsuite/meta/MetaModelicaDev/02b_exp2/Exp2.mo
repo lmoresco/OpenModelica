@@ -87,25 +87,5 @@ algorithm
   end matchcontinue;
 end applyUnop;
 
-protected function yyparse
-  output Integer i;
-external annotation(Library = "parser.o lexer.o");
-end yyparse;
-
-protected function getAST
-  output Exp exp;
-external;
-end getAST;
-
-public function parse
-  output Exp exp;
-  Integer yyres;
-algorithm
-  yyres := yyparse();
-  exp := matchcontinue (yyres)
-    case 0 then getAST();
- end matchcontinue;
-end parse;
-
 end Exp2;
 

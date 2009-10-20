@@ -1,4 +1,4 @@
-// name:     AssignTwoType
+// name:     Symbolic Differentation
 // keywords: MetaModelica
 // status:   correct
 //
@@ -6,15 +6,13 @@
 //
 echo(false);
 setLinker("g++ -shared -export-dynamic -g -fPIC parser.o lexer.o");
-loadFile("SOLUTION.mo");
+loadFile("Exp.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := AssignTwoType.parse();
-AssignTwoType.evalprogram(syntree);
-print(intString(i) + "
-");
+exp := Exp.parse();
+str := Exp.expStr(exp);
+print(str);
 
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
-// 7.899999999999999
 // endResult
