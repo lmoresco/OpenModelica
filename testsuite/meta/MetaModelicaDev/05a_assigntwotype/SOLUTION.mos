@@ -7,14 +7,13 @@
 echo(false);
 setLinker("g++ -shared -export-dynamic -g -fPIC parser.o lexer.o");
 loadFile("SOLUTION.mo");
+loadFile("Parse.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := AssignTwoType.parse();
+syntree := Parse.parse();
 AssignTwoType.evalprogram(syntree);
-print(intString(i) + "
-");
 
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
-// 7.899999999999999
+// 7.9
 // endResult

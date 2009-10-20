@@ -1,4 +1,3 @@
 CLEAN={Types,Functions,Main}.{c,h,o,srz}
 OBJS=Types.o Functions.o Main.o
-CC=$(RML)
 include ../common.rml

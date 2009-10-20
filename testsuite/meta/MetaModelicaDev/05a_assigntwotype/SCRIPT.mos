@@ -7,18 +7,13 @@
 echo(false);
 setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
 loadFile("AssignTwoType.mo");
+loadFile("Parse.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := AssignTwoType.parse();
+syntree := Parse.parse();
 i:=AssignTwoType.evalprogram(syntree);
-print(intString(i) + "
-");
 
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
-// 
-// The assignments: a = 1+2, c = 1, b = 1+c, d = a+b+c
-// The expression: d+1
-// The environment: d = 6, b = 2, c = 1, a = 3
-// 7
+// 7.9
 // endResult

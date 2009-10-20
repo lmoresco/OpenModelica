@@ -24,7 +24,7 @@ parser.c parser.h:  parser.y
 	mv parser.tab.h parser.h
 
 clean:
-	rm -f $(CLEAN) *.o *.so *.dll *.exe *.h parser.c lexer.c rtest *~
+	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest *~
 
 run2:
 	./rtest SCRIPT.mos < program.txt

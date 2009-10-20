@@ -62,16 +62,25 @@ type VarBnd = tuple<Ident,Value> "Bindings and environments";
 public 
 type Env = list<VarBnd>;
 
-function lookup
+protected function lookup
   input Env inEnv;
   input Ident inIdent;
-  output Value outInteger;
-algorithm
- outInteger:=
+  output Value outValue;
+algorithm 
+  outValue:=
   matchcontinue (inEnv,inIdent)
-    local  Ident id2,id;  Value value;  Env rest;
-    case ( (id2,value) :: rest, id)
-      then  if id ==& id2 then value else lookup(rest,id);
+    local
+      Ident id2,id;
+      Value value;
+      Env rest;
+    case ((id2,value) :: _,id) "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail."
+      equation 
+        equality(id = id2); then value;
+    case ((id2,_) :: rest,id)
+      equation 
+        failure(equality(id = id2));
+        value = lookup(rest, id); then value;
   end matchcontinue;
 end lookup;
 
@@ -345,32 +354,6 @@ algorithm
       then ();
   end matchcontinue;
 end printEnvironment;
-protected function yyparse
-  output Integer i;
-external;
-end yyparse;
-
-protected function getAST
-  output Program program;
-external;
-end getAST;
-
-public function parse
-  output Program program;
-  Integer yyres;
-algorithm
-  yyres := yyparse();
-  program := matchcontinue (yyres)
-    case 0 then getAST();
- end matchcontinue;
-end parse;
-
-public function programIdent "for debugging"
-  input Program prog;
-  output Program out;
-algorithm
-  out := prog;
-end programIdent;
 
 end Assignment;
 

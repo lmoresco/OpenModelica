@@ -1,7 +1,11 @@
 %{
 
-#include "meta_modelica.h"
 #include "parser.h"
+#ifdef RML
+#include "yacclib.h"
+#else
+#include "meta_modelica.h"
+#endif
 
 %}
 

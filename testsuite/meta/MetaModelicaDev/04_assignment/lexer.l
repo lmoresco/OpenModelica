@@ -1,10 +1,14 @@
 %{
 #include "parser.h"
-#include "meta_modelica.h"
 
 int lex_icon();
 int lex_ident();
 
+#ifdef RML
+#include "yacclib.h"
+#include "Assignment.h"
+#else
+#include "meta_modelica.h"
 const char* Assignment_INT__desc__fields[] = {"integer"};
 struct record_description Assignment_INT__desc = {
     "Assignment_INT",
@@ -13,6 +17,7 @@ struct record_description Assignment_INT__desc = {
 };
 
 #define Assignment__INT(X1) (mmc_mk_box2(3,&Assignment_INT__desc,(X1)))
+#endif
 
 %}
 

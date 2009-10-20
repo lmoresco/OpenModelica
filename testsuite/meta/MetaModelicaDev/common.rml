@@ -1,10 +1,13 @@
 ifdef OMDEV
   RMLC=$(OMDEV)/tools/rml/bin/rmlc
+  LDLIBS = -lfl -lm -lwsock32
 else
   RMLC=rmlc
+  LDLIBS = # Insert Linux LDFLAGS here...
 endif
 
-COMPILE.rml=$(RMLC) -DRML -I../rml/ $(RMLCFLAGS) $(CPPFLAGS) -c
+RMLCFLAGS=-g -Wr,-Ono-cps -DRML
+COMPILE.rml=$(RMLC) -I../rml/ $(RMLCFLAGS) $(CPPFLAGS) -c
 LINK.rml=$(RMLC) $(RMLCFLAGS)
 
 .SUFFIXES:	.c .o .rml .h .mo
@@ -29,13 +32,13 @@ all: clean executable
 
 # LEXER
 
-lexer.o:  lexer.c parser.h
+lexer.o:  lexer.c parser.h $(HEADERS)
 lexer.c:  lexer.l
 	flex -t -l lexer.l >lexer.c
 
 # PARSER
 
-parser.o:  parser.c parser.h
+parser.o:  parser.c parser.h $(HEADERS)
 parser.c parser.h:  parser.y
 	bison -d parser.y
 	mv parser.tab.c parser.c
@@ -46,7 +49,7 @@ yacclib.c: ../rml/yacclib.c
 	cp $< $@
 
 clean:
-	rm -f $(CLEAN) *.o *.so *.dll *.exe *.h parser.c lexer.c rtest yacclib.c *~
+	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest yacclib.c *~
 
 executable: $(HEADERS) $(OBJS)
 	$(LINK.rml) $(OBJS) $(LDLIBS) -o executable

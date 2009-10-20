@@ -1,6 +1,5 @@
 %{
 #include <stdio.h>
-#include "meta_modelica.h"
 
 #define YYSTYPE void*
 void* absyntree;
@@ -16,6 +15,14 @@ int yywrap()
   return 1;
 }
 
+#ifdef RML
+#include "yacclib.h"
+#include "AssignTwoType.h"
+#ifndef AssignTwoType__STRING
+#define AssignTwoType__STRING(X) yyerror(X)
+#endif
+#else
+#include "meta_modelica.h"
 void* getAST()
 {
   return absyntree;
@@ -123,6 +130,7 @@ struct record_description AssignTwoType_NEG__desc = {
 };
 
 #define AssignTwoType__NEG (mmc_mk_box1(3,&AssignTwoType_NEG__desc))
+#endif
 
 %}
 

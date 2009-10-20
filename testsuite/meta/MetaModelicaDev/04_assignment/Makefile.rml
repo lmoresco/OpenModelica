@@ -1,0 +1,4 @@
+CLEAN=Assignment.{c,h,o,srz} main.o
+HEADERS=Assignment.h
+OBJS=Assignment.o main.o lexer.o parser.o yacclib.o
+include ../common.rml

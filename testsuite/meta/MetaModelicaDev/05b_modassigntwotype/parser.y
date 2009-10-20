@@ -1,6 +1,5 @@
 %{
 #include <stdio.h>
-#include "meta_modelica.h"
 
 #define YYSTYPE void*
 void* absyntree;
@@ -16,6 +15,14 @@ int yywrap()
   return 1;
 }
 
+#ifdef RML
+#include "Absyn.h"
+#include "yacclib.h"
+#ifndef Absyn__STRING
+#define Absyn__STRING(X) yyerror(X)
+#endif
+#else
+#include "meta_modelica.h"
 void* getAST()
 {
   return absyntree;
@@ -113,6 +120,7 @@ struct record_description Absyn_NEG__desc = {
 };
 
 #define Absyn__NEG (mmc_mk_box1(3,&Absyn_NEG__desc))
+#endif
 
 %}
 

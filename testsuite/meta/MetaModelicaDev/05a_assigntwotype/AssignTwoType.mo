@@ -262,10 +262,10 @@ algorithm
   outReal:=
   matchcontinue (inBinOp1,inReal2,inReal3)
     local Real x,y;
-    case (ADD(),x,y) then x + y;  
-    case (SUB(),x,y) then x - y;  
-    case (MUL(),x,y) then x * y;  
-    case (DIV(),x,y) then x / y; 
+    case (ADD(),x,y) then x +. y;  
+    case (SUB(),x,y) then x -. y;  
+    case (MUL(),x,y) then x *. y;  
+    case (DIV(),x,y) then x /. y; 
   end matchcontinue;
 end applyRealBinop;
 
@@ -355,26 +355,6 @@ algorithm
     case (env,id,value) then (id,value) :: env; 
   end matchcontinue;
 end update;
-
-protected function yyparse
-  output Integer i;
-external;
-end yyparse;
-
-protected function getAST
-  output Program program;
-external;
-end getAST;
-
-public function parse
-  output Program program;
-  Integer yyres;
-algorithm
-  yyres := yyparse();
-  program := matchcontinue (yyres)
-    case 0 then getAST();
- end matchcontinue;
-end parse;
 
 end AssignTwoType;
 

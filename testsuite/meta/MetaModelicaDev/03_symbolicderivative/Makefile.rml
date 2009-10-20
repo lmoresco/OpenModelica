@@ -1,4 +1,3 @@
 CLEAN=Exp.{c,h,o,srz} main.o
 OBJS=Exp.o lexer.o parser.o main.o yacclib.o
-CC=$(RML)
 include ../common.rml

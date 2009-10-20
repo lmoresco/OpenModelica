@@ -15,9 +15,10 @@
 echo(false);
 setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
 loadFile("SOLUTION.mo");
+loadFile("Parse.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := Assignment.parse();
+syntree := Parse.parse();
 i:=Assignment.evalprogram(syntree);
 print(intString(i) + "
 ");

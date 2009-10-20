@@ -143,10 +143,10 @@ algorithm
   out_real:=
   matchcontinue (in_binop1,in_real2,in_real3)
     local Real x,y;
-    case (Absyn.ADD(),x,y) then x + y;
-    case (Absyn.SUB(),x,y) then x - y;
-    case (Absyn.MUL(),x,y) then x * y;
-    case (Absyn.DIV(),x,y) then x / y;
+    case (Absyn.ADD(),x,y) then x +. y;
+    case (Absyn.SUB(),x,y) then x -. y;
+    case (Absyn.MUL(),x,y) then x *. y;
+    case (Absyn.DIV(),x,y) then x /. y;
   end matchcontinue;
 end apply_real_binop;
 

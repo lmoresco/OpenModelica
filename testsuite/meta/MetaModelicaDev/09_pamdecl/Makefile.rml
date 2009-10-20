@@ -1,0 +1,4 @@
+CLEAN={Absyn,Env,Eval,Main,ScanParse}.{c,h,o,srz} ScanParseRML.o
+HEADERS=Absyn.h
+OBJS=Absyn.o Env.o Eval.o Main.o ScanParseRML.o yacclib.o lexer.o parser.o
+include ../common.rml

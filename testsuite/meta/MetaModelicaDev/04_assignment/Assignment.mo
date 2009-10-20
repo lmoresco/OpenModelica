@@ -48,6 +48,7 @@ end BinOp;
 public 
 uniontype UnOp
   record NEG end NEG;
+
 end UnOp;
 
 public 
@@ -62,6 +63,36 @@ type VarBnd = tuple<Ident,Value> "Bindings and environments";
 public 
 type Env = list<VarBnd>;
 
+protected function lookup
+  input Env inEnv;
+  input Ident inIdent;
+  output Value outValue;
+algorithm 
+  outValue:=
+  matchcontinue (inEnv,inIdent)
+    local
+      Ident id2,id;
+      Value value;
+      Env rest;
+    case ((id2,value) :: _,id) "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail."
+      equation 
+        equality(id = id2); then value;
+    case ((id2,_) :: rest,id)
+      equation 
+        failure(equality(id = id2));
+        value = lookup(rest, id); then value;
+  end matchcontinue;
+end lookup;
+
+/* lookup function using if expression 
+ * doesn't work in the RML MetaModelica version
+ * because both then part and else part are evaluated 
+ * disregarding the condition.
+ * It does however work in the OMC implementation, but the function
+ * needs to work in both implementations.
+ */
+/*
 function lookup
   input Env inEnv;
   input Ident inIdent;
@@ -74,6 +105,7 @@ algorithm
       then  if id ==& id2 then value else lookup(rest,id);
   end matchcontinue;
 end lookup;
+*/
 
 protected function lookupextend
   input Env inEnv;
@@ -89,7 +121,7 @@ algorithm
       Value value;
     case (env,id)
       equation 
-        failure(value = lookup(env, id)); then ((id,0) :: env,0);
+        failure(v = lookup(env, id)); then ((id,0) :: env,0);
     case (env,id)
       equation 
         value = lookup(env, id); then (env,value);
@@ -124,7 +156,7 @@ algorithm
     case (ADD(),v1,v2) then v1+v2; 
     case (SUB(),v1,v2) then v1-v2; 
     case (MUL(),v1,v2) then v1*v2; 
-    case (DIV(),v1,v2) then intDiv(v1,v2); 
+    case (DIV(),v1,v2) then v1/v2; 
   end matchcontinue;
 end applyBinop;
 
@@ -237,25 +269,5 @@ end evalprogram;
 
 // your code here
   
-protected function yyparse
-  output Integer i;
-external;
-end yyparse;
-
-protected function getAST
-  output Program program;
-external;
-end getAST;
-
-public function parse
-  output Program program;
-  Integer yyres;
-algorithm
-  yyres := yyparse();
-  program := matchcontinue (yyres)
-    case 0 then getAST();
- end matchcontinue;
-end parse;
-
 end Assignment;
 

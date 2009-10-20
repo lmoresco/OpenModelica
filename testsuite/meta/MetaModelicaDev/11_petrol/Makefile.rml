@@ -1,0 +1,4 @@
+CLEAN={Absyn,FCEmit,FCode,Flatten,Main,Parse,Static,TCode,Types}.{c,h,o,srz} parsutil.o
+HEADERS=Absyn.h
+OBJS=Absyn.o FCEmit.o FCode.o Flatten.o Main.o Static.o TCode.o Types.o ParseRML.o parsutil.o yacclib.o parser.o lexerPetrol.o 
+include ../common.rml

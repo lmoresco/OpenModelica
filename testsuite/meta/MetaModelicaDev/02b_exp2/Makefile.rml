@@ -1,5 +1,4 @@
 CLEAN=Exp2.{c,h,o,srz} main.o
 HEADERS=Exp2.h
 OBJS=Exp2.o main.o lexer.o parser.o yacclib.o
-CC=$(RML)
 include ../common.rml

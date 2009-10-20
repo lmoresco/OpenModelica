@@ -1,0 +1,3 @@
+CLEAN={Main,Functions,Types}.{c,h,o,srz}
+OBJS=Main.o Functions.o Types.o yacclib.o
+include ../common.rml
