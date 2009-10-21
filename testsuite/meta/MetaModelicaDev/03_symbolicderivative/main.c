@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include "rml.h"
-#include "Exp.h"
+#include "SymbolicDerivative.h"
 
 extern void* absyntree;
 
@@ -15,7 +15,7 @@ void Main_5finit(void)
 	if( done ) return;
 	done = 1;
 	RML_5finit();
-	Exp_5finit();
+	SymbolicDerivative_5finit();
 }
 
 RML_BEGIN_LABEL(Main__main)
@@ -42,7 +42,7 @@ RML_BEGIN_LABEL(Main__main)
 
   printf("[Eval]\n");
   rmlA0 = absyntree;
-  if (!rml_prim_once(RML_LABPTR(Exp__main)) )
+  if (!rml_prim_once(RML_LABPTR(SymbolicDerivative__main)) )
   {
     fprintf(stderr,"Evaluation failed!\n");
     RML_TAILCALLK(rememberFC);

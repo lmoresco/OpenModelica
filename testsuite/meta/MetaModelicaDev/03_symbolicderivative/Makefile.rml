@@ -1,3 +1,3 @@
-CLEAN=Exp.{c,h,o,srz} main.o
-OBJS=Exp.o lexer.o parser.o main.o
+CLEAN=SymbolicDerivative.{c,h,o,srz} main.o
+OBJS=SymbolicDerivative.o lexer.o parser.o main.o
 include ../common.rml

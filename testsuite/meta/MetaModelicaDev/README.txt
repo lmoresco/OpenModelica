@@ -3,7 +3,7 @@ MetaModelica exercises pack
 
 For Windows you need to have installed:
 - OpenModelica 1.4.2 (1.5.0 or later recommended)
-- Latest OMDev-mingw-msvc.zip unpacked, and OMDEV environment variable set.
+- Latest OMDev-mingw-msvc.zip unpacked, and OMDEV environment variable set (e.g. OMDEV=c:/OMDev).
 - Java 5.0
 - Eclipse 3.5 (or later) with the latest MDT
 
@@ -39,5 +39,5 @@ NOTES:
 If you need any help with anything just contact 
 Adrian Pop or Martin Sjölund [{adrpo,marsj}@ida.liu.se]
 
-2009-10-21: Modified makefiles, added previosuly missing files and 03_symbolicderivative. Martin Sjölund.
+2009-10-21: Modified makefiles, added previosuly missing files, 00_simplesim and 03_symbolicderivative. Martin Sjölund.
 2007-08-28: Original version. Adrian Pop.

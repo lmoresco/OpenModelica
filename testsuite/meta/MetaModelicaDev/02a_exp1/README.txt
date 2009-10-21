@@ -10,8 +10,8 @@ ASSIGNMENT: add the following constructs to the language
 - a factorial operator
 - search for // your code here within Exp1.mo
 
-NOTE: the parser/lexer are ready, but you have to implement the types
-before they start parsing POWop and FACop properly.
+NOTE: The parser/lexer are ready, but give parser errors for the new operators
+until they are added in Exp1.mo
 
 SOLUTION.txt presents the solution to the assignment.
 

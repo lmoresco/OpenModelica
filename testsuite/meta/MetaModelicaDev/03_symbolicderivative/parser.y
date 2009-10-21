@@ -17,7 +17,7 @@ int yywrap()
 }
 
 #ifdef RML
-#include "Exp.h"
+#include "SymbolicDerivative.h"
 #include "yacclib.h"
 #else
 #include "meta_modelica.h"
@@ -27,63 +27,63 @@ void* getAST()
 }
 
 /* Exp */
-const char* Exp_INT__desc__fields[] = {"integer"};
-struct record_description Exp_INTEGER__desc = {
-    "Exp_INT",
+const char* SymbolicDerivative_INT__desc__fields[] = {"integer"};
+struct record_description SymbolicDerivative_INTEGER__desc = {
+    "SymbolicDerivative_INT",
     "Exp.INT",
-    Exp_INT__desc__fields
+    SymbolicDerivative_INT__desc__fields
 };
-const char* Exp_ADD__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp_ADD__desc = {
-    "Exp_ADD",
+const char* SymbolicDerivative_ADD__desc__fields[] = {"exp1","exp2"};
+struct record_description SymbolicDerivative_ADD__desc = {
+    "SymbolicDerivative_ADD",
     "Exp.ADD",
-    Exp_ADD__desc__fields
+    SymbolicDerivative_ADD__desc__fields
 };
-const char* Exp_SUB__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp_SUB__desc = {
-    "Exp_SUB",
+const char* SymbolicDerivative_SUB__desc__fields[] = {"exp1","exp2"};
+struct record_description SymbolicDerivative_SUB__desc = {
+    "SymbolicDerivative_SUB",
     "Exp.SUB",
-    Exp_SUB__desc__fields
+    SymbolicDerivative_SUB__desc__fields
 };
-const char* Exp_MUL__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp_MUL__desc = {
-    "Exp_MUL",
+const char* SymbolicDerivative_MUL__desc__fields[] = {"exp1","exp2"};
+struct record_description SymbolicDerivative_MUL__desc = {
+    "SymbolicDerivative_MUL",
     "Exp.MUL",
-    Exp_MUL__desc__fields
+    SymbolicDerivative_MUL__desc__fields
 };
-const char* Exp_DIV__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp_DIV__desc = {
-    "Exp_DIV",
+const char* SymbolicDerivative_DIV__desc__fields[] = {"exp1","exp2"};
+struct record_description SymbolicDerivative_DIV__desc = {
+    "SymbolicDerivative_DIV",
     "Exp.DIV",
-    Exp_DIV__desc__fields
+    SymbolicDerivative_DIV__desc__fields
 };
-const char* Exp_NEG__desc__fields[] = {"exp"};
-struct record_description Exp_NEG__desc = {
-    "Exp_NEG",
+const char* SymbolicDerivative_NEG__desc__fields[] = {"exp"};
+struct record_description SymbolicDerivative_NEG__desc = {
+    "SymbolicDerivative_NEG",
     "Exp.NEG",
-    Exp_NEG__desc__fields
+    SymbolicDerivative_NEG__desc__fields
 };
-const char* Exp_IDENT__desc__fields[] = {"id"};
-struct record_description Exp_IDENT__desc = {
-    "Exp_IDENT",
+const char* SymbolicDerivative_IDENT__desc__fields[] = {"id"};
+struct record_description SymbolicDerivative_IDENT__desc = {
+    "SymbolicDerivative_IDENT",
     "Exp.IDENT",
-    Exp_IDENT__desc__fields
+    SymbolicDerivative_IDENT__desc__fields
 };
-const char* Exp_CALL__desc__fields[] = {"id","args"};
-struct record_description Exp_CALL__desc = {
-    "Exp_CALL",
+const char* SymbolicDerivative_CALL__desc__fields[] = {"id","args"};
+struct record_description SymbolicDerivative_CALL__desc = {
+    "SymbolicDerivative_CALL",
     "Exp.CALL",
-    Exp_CALL__desc__fields
+    SymbolicDerivative_CALL__desc__fields
 };
 
-#define Exp__INTEGER(X1) (mmc_mk_box2(3,&Exp_INTEGER__desc,(X1)))
-#define Exp__ADD(X1,X2) (mmc_mk_box3(4,&Exp_ADD__desc,(X1),(X2)))
-#define Exp__SUB(X1,X2) (mmc_mk_box3(5,&Exp_SUB__desc,(X1),(X2)))
-#define Exp__MUL(X1,X2) (mmc_mk_box3(6,&Exp_MUL__desc,(X1),(X2)))
-#define Exp__DIV(X1,X2) (mmc_mk_box3(7,&Exp_DIV__desc,(X1),(X2)))
-#define Exp__NEG(X1) (mmc_mk_box2(8,&Exp_NEG__desc,(X1)))
-#define Exp__IDENT(X1) (mmc_mk_box2(9,&Exp_IDENT__desc,(X1)))
-#define Exp__CALL(X1,X2) (mmc_mk_box3(10,&Exp_CALL__desc,(X1),(X2)))
+#define SymbolicDerivative__INTEGER(X1) (mmc_mk_box2(3,&SymbolicDerivative_INTEGER__desc,(X1)))
+#define SymbolicDerivative__ADD(X1,X2) (mmc_mk_box3(4,&SymbolicDerivative_ADD__desc,(X1),(X2)))
+#define SymbolicDerivative__SUB(X1,X2) (mmc_mk_box3(5,&SymbolicDerivative_SUB__desc,(X1),(X2)))
+#define SymbolicDerivative__MUL(X1,X2) (mmc_mk_box3(6,&SymbolicDerivative_MUL__desc,(X1),(X2)))
+#define SymbolicDerivative__DIV(X1,X2) (mmc_mk_box3(7,&SymbolicDerivative_DIV__desc,(X1),(X2)))
+#define SymbolicDerivative__NEG(X1) (mmc_mk_box2(8,&SymbolicDerivative_NEG__desc,(X1)))
+#define SymbolicDerivative__IDENT(X1) (mmc_mk_box2(9,&SymbolicDerivative_IDENT__desc,(X1)))
+#define SymbolicDerivative__CALL(X1,X2) (mmc_mk_box3(10,&SymbolicDerivative_CALL__desc,(X1),(X2)))
 #endif
 
 %}
@@ -112,28 +112,28 @@ program         : expression
 expression      :  term
                         { $$ = $1;}
                 |  expression  T_ADD  term
-                        { $$ = (void*) Exp__ADD($1, $3);}
+                        { $$ = (void*) SymbolicDerivative__ADD($1, $3);}
                 |  expression  T_SUB  term
-                        { $$ = (void*) Exp__SUB($1, $3);}
+                        { $$ = (void*) SymbolicDerivative__SUB($1, $3);}
 
 term            :  u_element
                         { $$ = $1;}
                 |  term  T_MUL u_element
-                        { $$ = (void*) Exp__MUL($1, $3);}
+                        { $$ = (void*) SymbolicDerivative__MUL($1, $3);}
                 |  term  T_DIV u_element
-                        { $$ = (void*) Exp__DIV($1, $3);}
+                        { $$ = (void*) SymbolicDerivative__DIV($1, $3);}
 
 u_element       :  element
                         { $$ = $1;}
                 |  T_SUB element
-                        { $$ = (void*) Exp__NEG($2);}
+                        { $$ = (void*) SymbolicDerivative__NEG($2);}
 
 element         :  T_INTCONST
-                        { $$ = (void*) Exp__INT($1);}
+                        { $$ = (void*) SymbolicDerivative__INT($1);}
                 |  T_IDENT T_LPAREN call_args T_RPAREN
-                        { $$ = (void*) Exp__CALL($1,$3);}
+                        { $$ = (void*) SymbolicDerivative__CALL($1,$3);}
                 |  T_IDENT
-                        { $$ = (void*) Exp__IDENT($1);}
+                        { $$ = (void*) SymbolicDerivative__IDENT($1);}
                 |  T_LPAREN  expression  T_RPAREN
                         { $$ = $2;}
 

@@ -1,4 +1,4 @@
-package Exp
+package SymbolicDerivative
   
 uniontype Exp
   record INT
@@ -42,6 +42,7 @@ algorithm
   print("f(x) = ");
   printExp(expr);
   print("\n");
+  print("[Differentiating expression]\n");
   diffExpr := diff(expr,"x");
   print("f’(x) = ");
   printExp(diffExpr);
@@ -292,4 +293,4 @@ algorithm
   str := "(" +& expStr(lhs) +& op +& expStr(rhs) +& ")";
 end binExpStr;
 
-end Exp;
+end SymbolicDerivative;
