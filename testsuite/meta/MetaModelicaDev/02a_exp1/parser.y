@@ -8,6 +8,7 @@ int yyerror(char *s)
 {
   extern int yylineno;
   fprintf(stderr,"Syntax error at or near line %d.\n",yylineno);
+  exit(1);
 }
 
 int yywrap()
@@ -19,10 +20,10 @@ int yywrap()
 #include "Exp1.h"
 #include "yacclib.h"
 #ifndef Exp1__FACop
-#define Exp1__FACop(X) yyerror("")
+#define Exp1__FACop(X) (void*)yyerror("")
 #endif
 #ifndef Exp1__POWop
-#define Exp1__POWop(X,Y) yyerror("")
+#define Exp1__POWop(X,Y) (void*)yyerror("")
 #endif
 #else
 #include "meta_modelica.h"

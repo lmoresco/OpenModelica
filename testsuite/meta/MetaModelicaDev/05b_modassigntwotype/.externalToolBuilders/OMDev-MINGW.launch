@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramBuilderLaunchConfigurationType">
+<booleanAttribute key="org.eclipse.ui.externaltools.ATTR_BUILDER_ENABLED" value="true"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="true"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-f Makefile.rml ${string_prompt}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS" value="full,incremental,"/>
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${workspace}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/05b_modassigntwotype}"/>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="OMDEV" value="/c/OMDev/"/>
+<mapEntry key="SystemRoot" value="${env_var:SystemRoot}"/>
+<mapEntry key="TMP" value="${env_var:TMP}"/>
+<mapEntry key="CLASSPATH" value="${env_var:OMDEV}/bin/antlr/antlr.jar"/>
+<mapEntry key="COMSPEC" value="${env_var:COMSPEC}"/>
+<mapEntry key="SystemDrive" value="${env_var:SystemDrive}"/>
+<mapEntry key="TEMP" value="${env_var:TEMP}"/>
+<mapEntry key="PATH" value="${env_var:OMDEV}/tools/mingw/bin;${env_var:OMDEV}/tools/msys/bin;${env_var:OMDEV}/tools/rml/bin/;${env_var:OMDEV}/tools/msys/local/bin;${env_var:OMDEV}/bin/mico/;c:/windows;c:/windows/system32;"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${env_var:OMDEV}\tools\msys\bin\make.exe"/>
+<booleanAttribute key="org.eclipse.ui.externaltools.ATTR_TRIGGERS_CONFIGURED" value="true"/>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="false"/>
+</launchConfiguration>

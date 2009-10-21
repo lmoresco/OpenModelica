@@ -1,7 +1,6 @@
 %{
 #include <stdio.h>
 #include "yacclib.h"
-#include "rml.h"
 #include "Pam.h"
 
 void yyerror(char *str);

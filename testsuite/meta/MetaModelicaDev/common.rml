@@ -44,12 +44,8 @@ parser.c parser.h:  parser.y
 	mv parser.tab.c parser.c
 	mv parser.tab.h parser.h
 
-# yacclib
-yacclib.c: ../rml/yacclib.c
-	cp $< $@
-
 clean:
-	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest yacclib.c *~
+	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c parser.h lexer.h rtest yacclib.c *~
 
 executable: $(HEADERS) $(OBJS)
 	$(LINK.rml) $(OBJS) $(LDLIBS) -o executable

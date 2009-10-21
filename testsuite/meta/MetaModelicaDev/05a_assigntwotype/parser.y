@@ -8,6 +8,7 @@ int yyerror(char *s)
 {
   extern int yylineno;
   fprintf(stderr,"Syntax error at or near line %d.\n",yylineno);
+  exit(1);
 }
 
 int yywrap()

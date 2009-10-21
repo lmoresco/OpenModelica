@@ -30,7 +30,7 @@ istring      \"{icon}\"
 
 {whitespace} ;
 {ident}      return lex_ident(); /* T_IDENT */
-{icon}       return lex_rcon();  /* T_INTCONST */
+{icon}       return lex_icon();  /* T_INTCONST */
 {rcon}       return lex_rcon();   /* T_REALCONST */
 ":="         return T_ASSIGN;
 "+"          return T_ADD;
@@ -42,6 +42,12 @@ istring      \"{icon}\"
 ","          return T_COMMA;
 
 %%
+
+int lex_icon()
+{
+  yylval=(long) mmc_mk_icon(atol(yytext));
+  return T_INTCONST;
+}
 
 int lex_rcon()
 {

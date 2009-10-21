@@ -1,7 +1,6 @@
 %{
 #include "parser.h"
 #include "yacclib.h"
-#include "rml.h"
 #include "Absyn.h"
 
 typedef void *rml_t;

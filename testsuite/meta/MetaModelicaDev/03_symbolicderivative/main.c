@@ -42,7 +42,7 @@ RML_BEGIN_LABEL(Main__main)
 
   printf("[Eval]\n");
   rmlA0 = absyntree;
-  if (!rml_prim_once(RML_LABPTR(Exp__printExp)) )
+  if (!rml_prim_once(RML_LABPTR(Exp__main)) )
   {
     fprintf(stderr,"Evaluation failed!\n");
     RML_TAILCALLK(rememberFC);

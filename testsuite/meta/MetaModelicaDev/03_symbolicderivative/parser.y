@@ -8,6 +8,7 @@ int yyerror(char *s)
 {
   extern int yylineno;
   fprintf(stderr,"Syntax error at or near line %d.\n",yylineno);
+  exit(1);
 }
 
 int yywrap()
@@ -26,11 +27,11 @@ void* getAST()
 }
 
 /* Exp */
-const char* Exp_REAL__desc__fields[] = {"real"};
-struct record_description Exp_REAL__desc = {
-    "Exp_REAL",
-    "Exp.REAL",
-    Exp_REAL__desc__fields
+const char* Exp_INT__desc__fields[] = {"integer"};
+struct record_description Exp_INTEGER__desc = {
+    "Exp_INT",
+    "Exp.INT",
+    Exp_INT__desc__fields
 };
 const char* Exp_ADD__desc__fields[] = {"exp1","exp2"};
 struct record_description Exp_ADD__desc = {
@@ -75,7 +76,7 @@ struct record_description Exp_CALL__desc = {
     Exp_CALL__desc__fields
 };
 
-#define Exp__REAL(X1) (mmc_mk_box2(3,&Exp_REAL__desc,(X1)))
+#define Exp__INTEGER(X1) (mmc_mk_box2(3,&Exp_INTEGER__desc,(X1)))
 #define Exp__ADD(X1,X2) (mmc_mk_box3(4,&Exp_ADD__desc,(X1),(X2)))
 #define Exp__SUB(X1,X2) (mmc_mk_box3(5,&Exp_SUB__desc,(X1),(X2)))
 #define Exp__MUL(X1,X2) (mmc_mk_box3(6,&Exp_MUL__desc,(X1),(X2)))
@@ -90,6 +91,7 @@ struct record_description Exp_CALL__desc = {
 %token T_COMMA
 %token T_ASSIGN
 %token T_IDENT
+%token T_INTCONST
 %token T_REALCONST
 %token T_LPAREN T_RPAREN
 %token T_ADD
@@ -126,8 +128,8 @@ u_element       :  element
                 |  T_SUB element
                         { $$ = (void*) Exp__NEG($2);}
 
-element         :  T_REALCONST
-                        { $$ = (void*) Exp__REAL($1);}
+element         :  T_INTCONST
+                        { $$ = (void*) Exp__INT($1);}
                 |  T_IDENT T_LPAREN call_args T_RPAREN
                         { $$ = (void*) Exp__CALL($1,$3);}
                 |  T_IDENT
