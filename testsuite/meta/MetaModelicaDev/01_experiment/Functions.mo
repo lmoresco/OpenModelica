@@ -7,11 +7,11 @@ function test
   output Integer x;
 algorithm
   x := matchcontinue s
-         case "one"   then 1;
-         case "two"   then 2;
-         case "three" then 3;
-         case _ then 0;
-       end matchcontinue;
+    case "one"   then 1;
+    case "two"   then 2;
+    case "three" then 3;
+    case _ then 0;
+  end matchcontinue;
 end test;
 
 function factorial
@@ -24,22 +24,6 @@ algorithm
     case n then n*factorial(n-1);
   end matchcontinue;
 end factorial;
-
-function testPrint
-  input Integer inValue;
-  output Integer z;
-algorithm
-  _ := matchcontinue inValue
-    case z as 0 
-      equation 
-        print(intString(inValue)); 
-      then z;
-    case z as 1 
-      equation
-        print(intString(inValue)); 
-      then z;
-  end matchcontinue;
-end testPrint;
 
 // your code here
 

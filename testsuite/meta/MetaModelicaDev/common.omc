@@ -1,4 +1,8 @@
+ifdef OMDEV
+CFLAGS = -I$(OPENMODELICAHOME)/include
+else
 CFLAGS = -I$(OPENMODELICAHOME)/include -fPIC
+endif
 DEPS += rtest
 CC = gcc
 run: $(DEPS) run2 clean
@@ -6,8 +10,8 @@ run: $(DEPS) run2 clean
 # rtest
 
 rtest: ../../rtest
-	sed 's/build\/bin\/omc/..\/..\/build\/bin\/omc/' $< > $@
-	chmod +x rtest
+	@sed 's/build\/bin\/omc/..\/..\/build\/bin\/omc/' $< > $@
+	@chmod +x rtest
 
 # LEXER
 
@@ -20,11 +24,11 @@ lexer.c:  lexer.l
 parser.o:  parser.c parser.h
 parser.c parser.h:  parser.y
 	bison -d parser.y
-	mv parser.tab.c parser.c
-	mv parser.tab.h parser.h
+	@mv parser.tab.c parser.c
+	@mv parser.tab.h parser.h
 
 clean:
-	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest *~
+	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest *~
 
 run2:
 	./rtest SCRIPT.mos < program.txt

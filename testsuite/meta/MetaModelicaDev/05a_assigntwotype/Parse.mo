@@ -1,17 +1,19 @@
 package Parse
 
+import AssignTwoType;
+
 protected function yyparse
   output Integer i;
 external;
 end yyparse;
 
 protected function getAST
-  output Program program;
+  output AssignTwoType.Program program;
 external;
 end getAST;
 
 public function parse
-  output Program program;
+  output AssignTwoType.Program program;
   Integer yyres;
 algorithm
   yyres := yyparse();

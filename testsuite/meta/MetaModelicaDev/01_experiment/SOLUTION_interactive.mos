@@ -5,6 +5,9 @@
 // OpenModelica Development Course at PELAB
 // Uses packages, aliases, etc
 //
+// This test should be disabled until dynamic loading of functions
+// works properly on the Windows platform.
+//
 echo(false);
 setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("SOLUTION.mo");

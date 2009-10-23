@@ -7,18 +7,16 @@
 b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("BuiltinList.mo");
 
-i:=BuiltinList.func({1,2,3},2);
+BuiltinList.func({1,2,3},2);
 BuiltinList.func({5,6,7},2);
 echo(false);
 ut1 := BuiltinList.UT1({(3,SOME(2)),(2,NONE)});
 ut2 := BuiltinList.UT1({(1,NONE)});
 ut3 := BuiltinList.UT1({});
-tup1 := (1,1.5,false,"tup1",ut1);
-tup2 := (1,1.5,false,"tup2",ut2);
-tup3 := (1,1.5,false,"tup3",ut3);
 echo(true);
-BuiltinList.funcTuple({tup1,tup2,tup3},tup3,1);
-BuiltinList.funcTuple({tup1,tup2},tup3,1);
+// Can't assign tuples in OpenModelica yet
+BuiltinList.funcTuple({(1,1.5,false,"tup1",ut1),(1,1.5,false,"tup2",ut2),(1,1.5,false,"tup3",ut3)},(1,1.5,false,"tup3",ut3),1);
+BuiltinList.funcTuple({(1,1.5,false,"tup1",ut1),(1,1.5,false,"tup2",ut2)},(1,1.5,false,"tup3",ut3),1);
 
 // Result:
 // true

@@ -19,10 +19,10 @@ external "C";
 end getAST;
 
 protected function parse2
-  input Integer yyparse;
+  input Integer yyres;
   output Absyn.Exp out;
 algorithm
-  exp := matchcontinue (yyres)
+  out := matchcontinue (yyres)
     case 0 then getAST();
     case _ equation print("Failed parsing"); then fail();
  end matchcontinue;

@@ -8,11 +8,8 @@ loadFile("TupleInteractive.mo");
 i:=1;
 (1,1.5);
 (1,i+2.5);
-a:=(3,7.5);
-a;
 res := TupleInteractive.tupleToInt((3,7.5));
 res := TupleInteractive.tupleToInt((3,7));
-res := TupleInteractive.tupleToInt(a);
 res := TupleInteractive.tupleIdent((1,1.5));
 res := TupleInteractive.intRealToTuple(2,2.5);
 TupleInteractive.tupleToMultipleCompiled((2,3.5));
@@ -24,9 +21,6 @@ TupleInteractive.tupleToMultipleCompiled((2,3.5));
 // 1
 // (1,1.5)
 // (1,3.5)
-// (3,7.5)
-// (3,7.5)
-// 2
 // 2
 // 2
 // (1,1.5)

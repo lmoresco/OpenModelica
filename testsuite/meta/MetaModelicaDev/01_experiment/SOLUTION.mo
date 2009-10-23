@@ -25,22 +25,6 @@ algorithm
   end matchcontinue;
 end factorial;
 
-function testPrint
-  input Integer inValue;
-  output Integer z;
-algorithm
-  _ := matchcontinue inValue
-    case z as 0 
-      equation 
-        print(intString(inValue)); 
-      then z;
-    case z as 1 
-      equation
-        print(intString(inValue)); 
-      then z;
-  end matchcontinue;
-end testPrint;
-
 // an alias for the Real type 
 // type Alias = Real; 
 // constant Alias aliasConstant = 1.0;
