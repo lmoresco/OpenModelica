@@ -32,4 +32,6 @@ end Connect15;
 // equation
 //   t1.p[1].v = t2.p[2].v;
 //   t1.p[1].i + t2.p[2].i = 0.0;
+//   t1.p[2].i = 0.0;
+//   t2.p[1].i = 0.0;
 // end Connect15;
