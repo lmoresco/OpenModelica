@@ -109,10 +109,10 @@ clean:
 		(cd $$d && $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
 	(cd $(srcdir) && $(RM) $(SRCH))
-	$(RM) -f $(SRCO) $(SRCC) $(SRCH) $(PROG) *~ $(ALLMO:.mo=.srz) $(ALLMO:.mo=.sig)
+	$(RM) -f $(SRCO) $(SRCC) $(SRCH) $(PROG) *~ $(ALLMO:.mo=.srz) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.sigx)
 
 clear-rmod-rsig:
-	-rm -f *.srz *.sig ../*.srz ../*.sig
+	-rm -f *.srz *.sig *.sigx ../*.srz ../*.sig ../*.sigx
 
 realclean:
 	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG)
