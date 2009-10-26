@@ -6,8 +6,10 @@
 //
 
 loadFile("JavaTest.mo");
+echo(false);
 a:=JavaTest.GetJavaSystemProperty("java.vm.name");
 b:=JavaTest.GetJavaSystemProperty("java.vm.version");
+echo(true);
 a:=JavaTest.JavaIntString(1);
 a:=JavaTest.JavaRealString(1.5);
 a:=JavaTest.JavaBoolString(true);
@@ -17,8 +19,7 @@ a:=JavaTest.JavaStringBool("true");
 
 // Result:
 // true
-// "Java HotSpot(TM) Client VM"
-// "14.1-b02"
+// true
 // "1"
 // "1.5"
 // "true"
