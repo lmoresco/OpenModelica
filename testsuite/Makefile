@@ -10,6 +10,7 @@ all :
 	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
 	cd ../../mosfiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
 	cd ../meta; $(MAKE) -f Makefile test;
+	cd ../records; $(MAKE) -f Makefile test;
 	
 failingtest:
 	cd mofiles; $(MAKE) -f Makefile failingtest; \

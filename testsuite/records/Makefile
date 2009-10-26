@@ -17,7 +17,7 @@ test:
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
-	rm -f RecordTest_*
+	@rm -f RecordTest_*
 	
 failingtest :
 	@echo
