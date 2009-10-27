@@ -10,12 +10,12 @@ echo(false);
 a:=JavaTest.GetJavaSystemProperty("java.vm.name");
 b:=JavaTest.GetJavaSystemProperty("java.vm.version");
 echo(true);
-a:=JavaTest.JavaIntString(1);
-a:=JavaTest.JavaRealString(1.5);
-a:=JavaTest.JavaBoolString(true);
-a:=JavaTest.JavaStringInt("1");
-a:=JavaTest.JavaStringReal("1.5");
-a:=JavaTest.JavaStringBool("true");
+JavaTest.JavaIntString(1);
+JavaTest.JavaRealString(1.5);
+JavaTest.JavaBoolString(true);
+JavaTest.JavaStringInt("1");
+JavaTest.JavaStringReal("1.5");
+JavaTest.JavaStringBool("true");
 
 // Result:
 // true

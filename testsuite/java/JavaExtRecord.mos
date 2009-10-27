@@ -58,4 +58,4 @@ a:=JavaTest.NestedRecordExtIdent(NestedRecordToRecordIn);
 // end JavaTest.myRecord;,
 //     desc = "Nested Record Test"
 // end JavaTest.nestedRecord;
-
+// endResult

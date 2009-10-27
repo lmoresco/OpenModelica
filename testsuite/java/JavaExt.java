@@ -170,8 +170,9 @@ private static void setProxy() throws Exception {
   
   proxy = new SmartProxy("JavaExtTest", "MetaModelica", true, false);
   // The spawned OMC shell can be in somewhat random locations...
-  proxy.sendExpression("cd(\""+System.getProperty("user.dir")+"\")");
-  proxy.sendExpression("loadFile(\"JavaExt.mo\")");
+  proxy.sendExpression(String.format("cd(\"%s\")", ModelicaString.escapeOMC(System.getProperty("user.dir"))));
+  if (proxy.sendModelicaExpression("loadFile(\"JavaExt.mo\")",ModelicaBoolean.class).b != true)
+    throw new Exception("Failed to load file JavaExt.mo");
   proxy.sendExpression("setLinker(\"g++ -shared -export-dynamic -g -fPIC\");");
   GetOMCInternalValues = new org.openmodelica.JavaExtTest.JavaTest.GetOMCInternalValues(proxy);
 }

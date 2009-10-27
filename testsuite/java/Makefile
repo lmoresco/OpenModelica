@@ -5,38 +5,40 @@ LDL=$(shell test -e "`which mingw32-gcc.exe`" && echo "" || echo "-ldl")
 RUNTIME=$(OPENMODELICAHOME)/share/java/modelica_java.jar
 ANTLR=$(OPENMODELICAHOME)/share/java/antlr-3.1.3.jar
 OMC=$(OPENMODELICAHOME)/bin/omc
+CLASSPATH=JavaExtDefs.jar$(SEP).$(SEP)$(RUNTIME)
 CLEAN=JavaTest_*
-
-CLASSPATH:=JavaExtDefs.jar$(SEP).
-
+ifdef JAVA_HOME
+JAVAC=$(JAVA_HOME)/bin/javac
+JAVA=$(JAVA_HOME)/bin/java
+else
+JAVAC=javac
+JAVA=java
+endif
 test: check defs clean
 	@echo
 	@echo Running tests...
 	@echo
-	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
-	@echo CLASSPATH=" $(CLASSPATH) "
-	@echo JAVA_HOME=" $(JAVA_HOME) "
-	@$(TEST) $(TESTFILES)
+	@echo OPENMODELICAHOME = $$OPENMODELICAHOME
+	@echo JAVA_HOME = $$JAVA_HOME
+	CLASSPATH="$(CLASSPATH)" $(TEST) $(TESTFILES)
 	$(RM) -f JavaTest_*
 interactivetest: check defs
-	@$(TEST) JavaExtInteractive.mos	
+	@$(TEST) JavaExtInteractive.mos
 failingtest : check defs
 	@echo
 	@echo Running failing tests...
 	@echo
 	@$(TEST) $(FAILINGTESTFILES)
 check:
-	@echo
 	@echo Checking if JRE is installed
-	@echo
-	$(TEST) JavaTest.mos || (echo "Skipping Java testsuite.\nInstall Java or add the Java installation directory to the JAVA_HOME environment variable" && false)
+	@$(TEST) JavaTest.mos GetDefinitions.mos || (echo "Skipping Java testsuite. Install Java JDK or add the Java installation directory to the JAVA_HOME environment variable." && false)
 defs: check_javac JavaExtDefs.jar JavaExt.class
 check_javac:
-	javac -version || (echo "No Java Compiler on the system PATH. Install a Java Development Kit (JDK)" && false)
+	@"$(JAVAC)" -version || (echo "No Java Compiler found." && echo "Install a Java Development Kit (JDK) and set JAVA_HOME to that location." && echo "Sun Java installs both JRE and JDK in Windows, but we MUST load the JDK so we can access javac." && false)
 JavaExtDefs.jar: JavaExt.mo $(OMC) $(RUNTIME)
-	java -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.JavaExtTest "." $<
+	"$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.JavaExtTest "." $<
 JavaExt.class: JavaExt.java JavaExtDefs.jar $(OMC) $(RUNTIME)
-	javac -classpath "$(OPENMODELICAHOME)/share/java/modelica_java.jar$(SEP)JavaExtDefs.jar" $<
+	"$(JAVAC)" -classpath "$(CLASSPATH)" $<
     
 clean:
 	rm -f $(CLEAN)
