@@ -1,0 +1,31 @@
+// name:     Sign
+// keywords: built-in sign function
+// status:   correct
+//
+loadFile("Sign.mo");
+instantiateModel(Sign);
+simulate(Sign); 
+
+val(r1, 1.0);
+val(r2, 1.0);
+
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.log");
+// Result:
+// true
+// "fclass Sign
+// Real r1;
+// Real r2;
+// equation
+//   r1= sign(time);
+//   r2= sign(-time);
+// end Sign;
+// "
+// record SimulationResult
+//     resultFile = "Sign_res.plt"
+// end SimulationResult;
+// 1.0
+// -1.0
+// ""
+// 0
+// endResult

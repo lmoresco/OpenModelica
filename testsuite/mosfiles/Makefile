@@ -41,7 +41,8 @@ PolynomialEvaluator2.mos Matrix.mos \
 FuncNamespace.mos OverloadingFunc.mos \
 InOutStrings.mos InOutRecord.mos \
 LinearSysEq.mos MissV.mos \
-FunctionIndirectRecursion.mos FunctionIndirectRecursion2.mos
+FunctionIndirectRecursion.mos FunctionIndirectRecursion2.mos \
+Sign.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
@@ -54,7 +55,7 @@ DimConvert.mos ConstructFunc.mos ArrayReduce.mos \
 VectorizeOneReturnValue.mos ABCDsystem.mos EqualityEquationsCorrect.mos \
 WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
 ActivateWhenEquation.mos AlgorithmCondAssign2.mos \
-Xpowers3.mos \
+Xpowers3.mos\
 
 TEST = ./rtest -v
 
