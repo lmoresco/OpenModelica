@@ -12,6 +12,8 @@ print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux
 ");
 exp := Parse.parse();
 SymbolicDerivative.main(exp);
+echo(true);
+readFile("SymbolicDerivative_main.log");
 
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]

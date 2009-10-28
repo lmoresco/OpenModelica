@@ -1,0 +1,24 @@
+// name:     FunctionIndirectRecursion
+// keywords: function,recursion
+// status:   correct
+// 
+// Indirectly recursive function call
+// 
+loadFile("FunctionIndirectRecursion.mo");
+simulate(FunctionIndirectRecursion);
+echo(false); // turns off output 
+y1:=val(y1,0.0);
+echo(true); // turns on output
+y1;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf FunctionIndirectRecursion_* FunctionIndirectRecursion FunctionIndirectRecursion.exe FunctionIndirectRecursion.cpp FunctionIndirectRecursion.makefile FunctionIndirectRecursion.libs FunctionIndirectRecursion.log output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "FunctionIndirectRecursion_res.plt"
+// end SimulationResult;
+// true
+// 120.0
+// ""
+// 0
+// endResult
