@@ -33,47 +33,23 @@ void* getAST()
   return absyntree;
 }
 
-const char* Exp1_ADDop__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp1_ADDop__desc = {
-    "Exp1_ADDop",
-    "Exp1.ADDop",
-    Exp1_ADDop__desc__fields
-};
-const char* Exp1_SUBop__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp1_SUBop__desc = {
-    "Exp1_SUBop",
-    "Exp1.SUBop",
-    Exp1_SUBop__desc__fields
-};
-const char* Exp1_MULop__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp1_MULop__desc = {
-    "Exp1_MULop",
-    "Exp1.MULop",
-    Exp1_MULop__desc__fields
-};
-const char* Exp1_DIVop__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp1_DIVop__desc = {
-    "Exp1_DIVop",
-    "Exp1.DIVop",
-    Exp1_DIVop__desc__fields
-};
-const char* Exp1_NEGop__desc__fields[] = {"exp"};
-struct record_description Exp1_NEGop__desc = {
-    "Exp1_NEGop",
-    "Exp1.NEGop",
-    Exp1_NEGop__desc__fields
-};
-const char* Exp1_POWop__desc__fields[] = {"exp1","exp2"};
-struct record_description Exp1_POWop__desc = {
+extern struct record_description Exp1_ADDop__desc;
+extern struct record_description Exp1_SUBop__desc;
+extern struct record_description Exp1_MULop__desc;
+extern struct record_description Exp1_DIVop__desc;
+extern struct record_description Exp1_NEGop__desc;
+
+const char* WORKAROUND__Exp1_POWop__desc__fields[] = {"exp1","exp2"};
+struct record_description WORKAROUND__Exp1_POWop__desc = {
     "Exp1_POWop",
     "Exp1.POWop",
-    Exp1_POWop__desc__fields
+    WORKAROUND__Exp1_POWop__desc__fields
 };
-const char* Exp1_FACop__desc__fields[] = {"exp"};
-struct record_description Exp1_FACop__desc = {
+const char* WORKAROUND__Exp1_FACop__desc__fields[] = {"exp"};
+struct record_description WORKAROUND__Exp1_FACop__desc = {
     "Exp1_FACop",
     "Exp1.FACop",
-    Exp1_FACop__desc__fields
+    WORKAROUND__Exp1_FACop__desc__fields
 };
 
 #define Exp1__ADDop(X1,X2) (mmc_mk_box3(4,&Exp1_ADDop__desc,(X1),(X2)))
@@ -81,8 +57,8 @@ struct record_description Exp1_FACop__desc = {
 #define Exp1__MULop(X1,X2) (mmc_mk_box3(6,&Exp1_MULop__desc,(X1),(X2)))
 #define Exp1__DIVop(X1,X2) (mmc_mk_box3(7,&Exp1_DIVop__desc,(X1),(X2)))
 #define Exp1__NEGop(X1)    (mmc_mk_box2(8,&Exp1_NEGop__desc,(X1)))
-#define Exp1__POWop(X1,X2) (mmc_mk_box3(9,&Exp1_POWop__desc,(X1),(X2)))
-#define Exp1__FACop(X1)    (mmc_mk_box2(10,&Exp1_FACop__desc,(X1)))
+#define Exp1__POWop(X1,X2) (mmc_mk_box3(9,&WORKAROUND__Exp1_POWop__desc,(X1),(X2)))
+#define Exp1__FACop(X1)    (mmc_mk_box2(10,&WORKAROUND__Exp1_FACop__desc,(X1)))
 #endif
 
 %}

@@ -29,40 +29,14 @@ void* getAST()
 
 
 /* Program */
-const char* Assignment_PROGRAM__desc__fields[] = {"expLst","exp"};
-struct record_description Assignment_PROGRAM__desc = {
-    "Assignment_PROGRAM",
-    "Assignment.PROGRAM",
-    Assignment_PROGRAM__desc__fields
-};
-
+extern struct record_description Assignment_PROGRAM__desc;
 #define Assignment__PROGRAM(X1,X2) (mmc_mk_box3(3,&Assignment_PROGRAM__desc,(X1),(X2)))
 
 /* Exp */
-const char* Assignment_BINARY__desc__fields[] = {"Assignment","binOp2","exp3"};
-struct record_description Assignment_BINARY__desc = {
-    "Assignment_BINARY",
-    "Assignment.BINARY",
-    Assignment_BINARY__desc__fields
-};
-const char* Assignment_UNARY__desc__fields[] = {"unOp","exp"};
-struct record_description Assignment_UNARY__desc = {
-    "Assignment_UNARY",
-    "Assignment.UNARY",
-    Assignment_UNARY__desc__fields
-};
-const char* Assignment_ASSIGN__desc__fields[] = {"ident","exp"};
-struct record_description Assignment_ASSIGN__desc = {
-    "Assignment_ASSIGN",
-    "Assignment.ASSIGN",
-    Assignment_ASSIGN__desc__fields
-};
-const char* Assignment_IDENT__desc__fields[] = {"ident"};
-struct record_description Assignment_IDENT__desc = {
-    "Assignment_IDENT",
-    "Assignment.IDENT",
-    Assignment_IDENT__desc__fields
-};
+extern struct record_description Assignment_BINARY__desc;
+extern struct record_description Assignment_UNARY__desc;
+extern struct record_description Assignment_ASSIGN__desc;
+extern struct record_description Assignment_IDENT__desc;
 
 #define Assignment__BINARY(X1,OP,X2) (mmc_mk_box4(4,&Assignment_BINARY__desc,(X1),(OP),(X2)))
 #define Assignment__UNARY(OP,X1) (mmc_mk_box3(5,&Assignment_UNARY__desc,(OP),(X1)))
@@ -70,30 +44,10 @@ struct record_description Assignment_IDENT__desc = {
 #define Assignment__IDENT(X1) (mmc_mk_box2(7,&Assignment_IDENT__desc,(X1)))
 
 /* BinOp */
-const char* Assignment_ADD__desc__fields[] = {};
-struct record_description Assignment_ADD__desc = {
-    "Assignment_ADD",
-    "Assignment.ADD",
-    Assignment_ADD__desc__fields
-};
-const char* Assignment_SUB__desc__fields[] = {};
-struct record_description Assignment_SUB__desc = {
-    "Assignment_SUB",
-    "Assignment.SUB",
-    Assignment_SUB__desc__fields
-};
-const char* Assignment_MUL__desc__fields[] = {};
-struct record_description Assignment_MUL__desc = {
-    "Assignment_MUL",
-    "Assignment.MUL",
-    Assignment_MUL__desc__fields
-};
-const char* Assignment_DIV__desc__fields[] = {};
-struct record_description Assignment_DIV__desc = {
-    "Assignment_DIV",
-    "Assignment.DIV",
-    Assignment_DIV__desc__fields
-};
+extern struct record_description Assignment_ADD__desc;
+extern struct record_description Assignment_SUB__desc;
+extern struct record_description Assignment_MUL__desc;
+extern struct record_description Assignment_DIV__desc;
 
 #define Assignment__ADD (mmc_mk_box1(3,&Assignment_ADD__desc))
 #define Assignment__SUB (mmc_mk_box1(4,&Assignment_SUB__desc))
@@ -101,12 +55,7 @@ struct record_description Assignment_DIV__desc = {
 #define Assignment__DIV (mmc_mk_box1(6,&Assignment_DIV__desc))
 
 /* UnOp */
-const char* Assignment_NEG__desc__fields[] = {};
-struct record_description Assignment_NEG__desc = {
-    "Assignment_NEG",
-    "Assignment.NEG",
-    Assignment_NEG__desc__fields
-};
+extern struct record_description Assignment_NEG__desc;
 
 #define Assignment__NEG (mmc_mk_box1(3,&Assignment_NEG__desc))
 #endif

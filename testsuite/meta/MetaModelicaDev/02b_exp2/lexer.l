@@ -8,12 +8,7 @@ void* absyn_integer(char *s);
 #include "Exp2.h"
 #else
 #include "meta_modelica.h"
-const char* Exp2_INT__desc__fields[] = {"integer"};
-struct record_description Exp2_INT__desc = {
-    "Exp2_INT",
-    "Exp2.INT",
-    Exp2_INT__desc__fields
-};
+extern struct record_description Exp2_INT__desc;
 #define Exp2__INT(X1) (mmc_mk_box2(3,&Exp2_INT__desc,(X1)))
 #endif
 

@@ -28,54 +28,14 @@ void* getAST()
 }
 
 /* Exp */
-const char* SymbolicDerivative_INT__desc__fields[] = {"integer"};
-struct record_description SymbolicDerivative_INT__desc = {
-    "SymbolicDerivative_INT",
-    "SymbolicDerivative.INT",
-    SymbolicDerivative_INT__desc__fields
-};
-const char* SymbolicDerivative_ADD__desc__fields[] = {"exp1","exp2"};
-struct record_description SymbolicDerivative_ADD__desc = {
-    "SymbolicDerivative_ADD",
-    "SymbolicDerivative.ADD",
-    SymbolicDerivative_ADD__desc__fields
-};
-const char* SymbolicDerivative_SUB__desc__fields[] = {"exp1","exp2"};
-struct record_description SymbolicDerivative_SUB__desc = {
-    "SymbolicDerivative_SUB",
-    "SymbolicDerivative.SUB",
-    SymbolicDerivative_SUB__desc__fields
-};
-const char* SymbolicDerivative_MUL__desc__fields[] = {"exp1","exp2"};
-struct record_description SymbolicDerivative_MUL__desc = {
-    "SymbolicDerivative_MUL",
-    "SymbolicDerivative.MUL",
-    SymbolicDerivative_MUL__desc__fields
-};
-const char* SymbolicDerivative_DIV__desc__fields[] = {"exp1","exp2"};
-struct record_description SymbolicDerivative_DIV__desc = {
-    "SymbolicDerivative_DIV",
-    "SymbolicDerivative.DIV",
-    SymbolicDerivative_DIV__desc__fields
-};
-const char* SymbolicDerivative_NEG__desc__fields[] = {"exp"};
-struct record_description SymbolicDerivative_NEG__desc = {
-    "SymbolicDerivative_NEG",
-    "SymbolicDerivative.NEG",
-    SymbolicDerivative_NEG__desc__fields
-};
-const char* SymbolicDerivative_IDENT__desc__fields[] = {"id"};
-struct record_description SymbolicDerivative_IDENT__desc = {
-    "SymbolicDerivative_IDENT",
-    "SymbolicDerivative.IDENT",
-    SymbolicDerivative_IDENT__desc__fields
-};
-const char* SymbolicDerivative_CALL__desc__fields[] = {"id","args"};
-struct record_description SymbolicDerivative_CALL__desc = {
-    "SymbolicDerivative_CALL",
-    "SymbolicDerivative.CALL",
-    SymbolicDerivative_CALL__desc__fields
-};
+extern struct record_description SymbolicDerivative_INT__desc;
+extern struct record_description SymbolicDerivative_ADD__desc;
+extern struct record_description SymbolicDerivative_SUB__desc;
+extern struct record_description SymbolicDerivative_MUL__desc;
+extern struct record_description SymbolicDerivative_DIV__desc;
+extern struct record_description SymbolicDerivative_NEG__desc;
+extern struct record_description SymbolicDerivative_IDENT__desc;
+extern struct record_description SymbolicDerivative_CALL__desc;
 
 #define SymbolicDerivative__INT(X1) (mmc_mk_box2(3,&SymbolicDerivative_INT__desc,(X1)))
 #define SymbolicDerivative__ADD(X1,X2) (mmc_mk_box3(4,&SymbolicDerivative_ADD__desc,(X1),(X2)))

@@ -1,6 +1,6 @@
 DIRS = 02a_exp1 02b_exp2 04_assignment 05a_assigntwotype 05b_modassigntwotype
 
-all:
+test:
 	@make -C 01_experiment -f Makefile.omc test | grep "^ + " > result.txt
 	@make -C 02a_exp1 -f Makefile.omc test | grep "^ + " >> result.txt
 	@make -C 02b_exp2 -f Makefile.omc test | grep "^ + " >> result.txt

@@ -3,7 +3,7 @@ ifdef OMDEV
   LDLIBS = -lfl -lm -lwsock32
 else
   RMLC=rmlc
-  LDLIBS = # Insert Linux LDFLAGS here...
+  LDLIBS = -lm -lpthread # Insert Linux LDFLAGS here...
 endif
 
 RMLCFLAGS=-g -Wr,-Ono-cps -DRML

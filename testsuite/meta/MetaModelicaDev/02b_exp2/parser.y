@@ -35,75 +35,41 @@ void* getAST()
 }
 
 /* Exp */
-const char* Exp2_BINARY__desc__fields[] = {"Exp2","binOp2","exp3"};
-struct record_description Exp2_BINARY__desc = {
-    "Exp2_BINARY",
-    "Exp2.BINARY",
-    Exp2_BINARY__desc__fields
-};
-const char* Exp2_UNARY__desc__fields[] = {"unOp","exp"};
-struct record_description Exp2_UNARY__desc = {
-    "Exp2_UNARY",
-    "Exp2.UNARY",
-    Exp2_UNARY__desc__fields
-};
+extern struct record_description Exp2_BINARY__desc;
+extern struct record_description Exp2_UNARY__desc;
 #define Exp2__BINARY(X1,OP,X2) (mmc_mk_box4(4,&Exp2_BINARY__desc,(X1),(OP),(X2)))
 #define Exp2__UNARY(OP,X1) (mmc_mk_box3(5,&Exp2_UNARY__desc,(OP),(X1)))
 
 /* BinOp */
-const char* Exp2_ADD__desc__fields[] = {};
-struct record_description Exp2_ADD__desc = {
-    "Exp2_ADD",
-    "Exp2.ADD",
-    Exp2_ADD__desc__fields
-};
-const char* Exp2_SUB__desc__fields[] = {};
-struct record_description Exp2_SUB__desc = {
-    "Exp2_SUB",
-    "Exp2.SUB",
-    Exp2_SUB__desc__fields
-};
-const char* Exp2_MUL__desc__fields[] = {};
-struct record_description Exp2_MUL__desc = {
-    "Exp2_MUL",
-    "Exp2.MUL",
-    Exp2_MUL__desc__fields
-};
-const char* Exp2_DIV__desc__fields[] = {};
-struct record_description Exp2_DIV__desc = {
-    "Exp2_DIV",
-    "Exp2.DIV",
-    Exp2_DIV__desc__fields
-};
-const char* Exp2_POW__desc__fields[] = {};
-struct record_description Exp2_POW__desc = {
+extern struct record_description Exp2_ADD__desc;
+extern struct record_description Exp2_SUB__desc;
+extern struct record_description Exp2_MUL__desc;
+extern struct record_description Exp2_DIV__desc;
+const char* WORKAROUND__Exp2_POW__desc__fields[] = {};
+struct record_description WORKAROUND__Exp2_POW__desc = {
     "Exp2_POW",
     "Exp2.POW",
-    Exp2_POW__desc__fields
+    WORKAROUND__Exp2_POW__desc__fields
 };
+
 
 #define Exp2__ADD (mmc_mk_box1(3,&Exp2_ADD__desc))
 #define Exp2__SUB (mmc_mk_box1(4,&Exp2_SUB__desc))
 #define Exp2__MUL (mmc_mk_box1(5,&Exp2_MUL__desc))
 #define Exp2__DIV (mmc_mk_box1(6,&Exp2_DIV__desc))
-#define Exp2__POW (mmc_mk_box1(8,&Exp2_POW__desc))
+#define Exp2__POW (mmc_mk_box1(8,&WORKAROUND__Exp2_POW__desc))
 
 /* UnOp */
-const char* Exp2_NEG__desc__fields[] = {};
-struct record_description Exp2_NEG__desc = {
-    "Exp2_NEG",
-    "Exp2.NEG",
-    Exp2_NEG__desc__fields
-};
-const char* Exp2_FAC__desc__fields[] = {};
-struct record_description Exp2_FAC__desc = {
+extern struct record_description Exp2_NEG__desc;
+const char* WORKAROUND__Exp2_FAC__desc__fields[] = {};
+struct record_description WORKAROUND__Exp2_FAC__desc = {
     "Exp2_FAC",
     "Exp2.FAC",
-    Exp2_FAC__desc__fields
+    WORKAROUND__Exp2_FAC__desc__fields
 };
 
 #define Exp2__NEG (mmc_mk_box1(3,&Exp2_NEG__desc))
-#define Exp2__FAC (mmc_mk_box1(4,&Exp2_FAC__desc))
+#define Exp2__FAC (mmc_mk_box1(4,&WORKAROUND__Exp2_FAC__desc))
 #endif
 
 %}

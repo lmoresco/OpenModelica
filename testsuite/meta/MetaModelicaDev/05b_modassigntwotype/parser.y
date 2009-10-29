@@ -31,47 +31,17 @@ void* getAST()
 }
 
 /* Exp */
-const char* Absyn_INT__desc__fields[] = {"integer"};
-struct record_description Absyn_INT__desc = {
-    "Absyn_INT",
-    "Absyn.INT",
-    Absyn_INT__desc__fields
-};
-const char* Absyn_REAL__desc__fields[] = {"real"};
-struct record_description Absyn_REAL__desc = {
-    "Absyn_REAL",
-    "Absyn.REAL",
-    Absyn_REAL__desc__fields
-};
-const char* Absyn_BINARY__desc__fields[] = {"exp1","binOp2","exp3"};
-struct record_description Absyn_BINARY__desc = {
-    "Absyn_BINARY",
-    "Absyn.BINARY",
-    Absyn_BINARY__desc__fields
-};
-const char* Absyn_UNARY__desc__fields[] = {"unOp","exp"};
-struct record_description Absyn_UNARY__desc = {
-    "Absyn_UNARY",
-    "Absyn.UNARY",
-    Absyn_UNARY__desc__fields
-};
-const char* Absyn_ASSIGN__desc__fields[] = {"ident","exp"};
-struct record_description Absyn_ASSIGN__desc = {
-    "Absyn_ASSIGN",
-    "Absyn.ASSIGN",
-    Absyn_ASSIGN__desc__fields
-};
-const char* Absyn_IDENT__desc__fields[] = {"ident"};
-struct record_description Absyn_IDENT__desc = {
-    "Absyn_IDENT",
-    "Absyn.IDENT",
-    Absyn_IDENT__desc__fields
-};
-const char* Absyn_STRING__desc__fields[] = {"string"};
-struct record_description Absyn_STRING__desc = {
+extern struct record_description Absyn_INT__desc;
+extern struct record_description Absyn_REAL__desc;
+extern struct record_description Absyn_BINARY__desc;
+extern struct record_description Absyn_UNARY__desc;
+extern struct record_description Absyn_ASSIGN__desc;
+extern struct record_description Absyn_IDENT__desc;
+const char* WORKAROUND__Absyn_STRING__desc__fields[] = {"string"};
+struct record_description WORKAROUND__Absyn_STRING__desc = {
     "Absyn_STRING",
     "Absyn.STRING",
-    Absyn_STRING__desc__fields
+    WORKAROUND__Absyn_STRING__desc__fields
 };
 
 #define Absyn__INT(X1) (mmc_mk_box2(3,&Absyn_INT__desc,(X1)))
@@ -80,33 +50,13 @@ struct record_description Absyn_STRING__desc = {
 #define Absyn__UNARY(OP,X1) (mmc_mk_box3(6,&Absyn_UNARY__desc,(OP),(X1)))
 #define Absyn__ASSIGN(X1,X2) (mmc_mk_box3(7,&Absyn_ASSIGN__desc,(X1),(X2)))
 #define Absyn__IDENT(X1) (mmc_mk_box2(8,&Absyn_IDENT__desc,(X1)))
-#define Absyn__STRING(X1) (mmc_mk_box2(9,&Absyn_STRING__desc,(X1)))
+#define Absyn__STRING(X1) (mmc_mk_box2(9,&WORKAROUND__Absyn_STRING__desc,(X1)))
 
 /* BinOp */
-const char* Absyn_ADD__desc__fields[] = {};
-struct record_description Absyn_ADD__desc = {
-    "Absyn_ADD",
-    "Absyn.ADD",
-    Absyn_ADD__desc__fields
-};
-const char* Absyn_SUB__desc__fields[] = {};
-struct record_description Absyn_SUB__desc = {
-    "Absyn_SUB",
-    "Absyn.SUB",
-    Absyn_SUB__desc__fields
-};
-const char* Absyn_MUL__desc__fields[] = {};
-struct record_description Absyn_MUL__desc = {
-    "Absyn_MUL",
-    "Absyn.MUL",
-    Absyn_MUL__desc__fields
-};
-const char* Absyn_DIV__desc__fields[] = {};
-struct record_description Absyn_DIV__desc = {
-    "Absyn_DIV",
-    "Absyn.DIV",
-    Absyn_DIV__desc__fields
-};
+extern struct record_description Absyn_ADD__desc;
+extern struct record_description Absyn_SUB__desc;
+extern struct record_description Absyn_MUL__desc;
+extern struct record_description Absyn_DIV__desc;
 
 #define Absyn__ADD (mmc_mk_box1(3,&Absyn_ADD__desc))
 #define Absyn__SUB (mmc_mk_box1(4,&Absyn_SUB__desc))
@@ -114,12 +64,7 @@ struct record_description Absyn_DIV__desc = {
 #define Absyn__DIV (mmc_mk_box1(6,&Absyn_DIV__desc))
 
 /* UnOp */
-const char* Absyn_NEG__desc__fields[] = {};
-struct record_description Absyn_NEG__desc = {
-    "Absyn_NEG",
-    "Absyn.NEG",
-    Absyn_NEG__desc__fields
-};
+extern struct record_description Absyn_NEG__desc;
 
 #define Absyn__NEG (mmc_mk_box1(3,&Absyn_NEG__desc))
 #endif

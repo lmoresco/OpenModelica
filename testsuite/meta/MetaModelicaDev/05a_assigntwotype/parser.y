@@ -31,57 +31,22 @@ void* getAST()
 }
 
 /* Program */
-const char* AssignTwoType_PROGRAM__desc__fields[] = {"expLst","exp"};
-struct record_description AssignTwoType_PROGRAM__desc = {
-    "AssignTwoType_PROGRAM",
-    "AssignTwoType.PROGRAM",
-    AssignTwoType_PROGRAM__desc__fields
-};
+extern struct record_description AssignTwoType_PROGRAM__desc;
 
 #define AssignTwoType__PROGRAM(X1,X2) (mmc_mk_box3(3,&AssignTwoType_PROGRAM__desc,(X1),(X2)))
 
 /* Exp */
-const char* AssignTwoType_INT__desc__fields[] = {"integer"};
-struct record_description AssignTwoType_INT__desc = {
-    "AssignTwoType_INT",
-    "AssignTwoType.INT",
-    AssignTwoType_INT__desc__fields
-};
-const char* AssignTwoType_REAL__desc__fields[] = {"real"};
-struct record_description AssignTwoType_REAL__desc = {
-    "AssignTwoType_REAL",
-    "AssignTwoType.REAL",
-    AssignTwoType_REAL__desc__fields
-};
-const char* AssignTwoType_BINARY__desc__fields[] = {"exp1","binOp2","exp3"};
-struct record_description AssignTwoType_BINARY__desc = {
-    "AssignTwoType_BINARY",
-    "AssignTwoType.BINARY",
-    AssignTwoType_BINARY__desc__fields
-};
-const char* AssignTwoType_UNARY__desc__fields[] = {"unOp","exp"};
-struct record_description AssignTwoType_UNARY__desc = {
-    "AssignTwoType_UNARY",
-    "AssignTwoType.UNARY",
-    AssignTwoType_UNARY__desc__fields
-};
-const char* AssignTwoType_ASSIGN__desc__fields[] = {"ident","exp"};
-struct record_description AssignTwoType_ASSIGN__desc = {
-    "AssignTwoType_ASSIGN",
-    "AssignTwoType.ASSIGN",
-    AssignTwoType_ASSIGN__desc__fields
-};
-const char* AssignTwoType_IDENT__desc__fields[] = {"ident"};
-struct record_description AssignTwoType_IDENT__desc = {
-    "AssignTwoType_IDENT",
-    "AssignTwoType.IDENT",
-    AssignTwoType_IDENT__desc__fields
-};
-const char* AssignTwoType_STRING__desc__fields[] = {"string"};
-struct record_description AssignTwoType_STRING__desc = {
+extern struct record_description AssignTwoType_INT__desc;
+extern struct record_description AssignTwoType_REAL__desc;
+extern struct record_description AssignTwoType_BINARY__desc;
+extern struct record_description AssignTwoType_UNARY__desc;
+extern struct record_description AssignTwoType_ASSIGN__desc;
+extern struct record_description AssignTwoType_IDENT__desc;
+const char* WORKAROUND__AssignTwoType_STRING__desc__fields[] = {"string"};
+struct record_description WORKAROUND__AssignTwoType_STRING__desc = {
     "AssignTwoType_STRING",
     "AssignTwoType.STRING",
-    AssignTwoType_STRING__desc__fields
+    WORKAROUND__AssignTwoType_STRING__desc__fields
 };
 
 #define AssignTwoType__INT(X1) (mmc_mk_box2(3,&AssignTwoType_INT__desc,(X1)))
@@ -90,33 +55,13 @@ struct record_description AssignTwoType_STRING__desc = {
 #define AssignTwoType__UNARY(OP,X1) (mmc_mk_box3(6,&AssignTwoType_UNARY__desc,(OP),(X1)))
 #define AssignTwoType__ASSIGN(X1,X2) (mmc_mk_box3(7,&AssignTwoType_ASSIGN__desc,(X1),(X2)))
 #define AssignTwoType__IDENT(X1) (mmc_mk_box2(8,&AssignTwoType_IDENT__desc,(X1)))
-#define AssignTwoType__STRING(X1) (mmc_mk_box2(9,&AssignTwoType_STRING__desc,(X1)))
+#define AssignTwoType__STRING(X1) (mmc_mk_box2(9,&WORKAROUND__AssignTwoType_STRING__desc,(X1)))
 
 /* BinOp */
-const char* AssignTwoType_ADD__desc__fields[] = {};
-struct record_description AssignTwoType_ADD__desc = {
-    "AssignTwoType_ADD",
-    "AssignTwoType.ADD",
-    AssignTwoType_ADD__desc__fields
-};
-const char* AssignTwoType_SUB__desc__fields[] = {};
-struct record_description AssignTwoType_SUB__desc = {
-    "AssignTwoType_SUB",
-    "AssignTwoType.SUB",
-    AssignTwoType_SUB__desc__fields
-};
-const char* AssignTwoType_MUL__desc__fields[] = {};
-struct record_description AssignTwoType_MUL__desc = {
-    "AssignTwoType_MUL",
-    "AssignTwoType.MUL",
-    AssignTwoType_MUL__desc__fields
-};
-const char* AssignTwoType_DIV__desc__fields[] = {};
-struct record_description AssignTwoType_DIV__desc = {
-    "AssignTwoType_DIV",
-    "AssignTwoType.DIV",
-    AssignTwoType_DIV__desc__fields
-};
+extern struct record_description AssignTwoType_ADD__desc;
+extern struct record_description AssignTwoType_SUB__desc;
+extern struct record_description AssignTwoType_MUL__desc;
+extern struct record_description AssignTwoType_DIV__desc;
 
 #define AssignTwoType__ADD (mmc_mk_box1(3,&AssignTwoType_ADD__desc))
 #define AssignTwoType__SUB (mmc_mk_box1(4,&AssignTwoType_SUB__desc))
@@ -124,12 +69,7 @@ struct record_description AssignTwoType_DIV__desc = {
 #define AssignTwoType__DIV (mmc_mk_box1(6,&AssignTwoType_DIV__desc))
 
 /* UnOp */
-const char* AssignTwoType_NEG__desc__fields[] = {};
-struct record_description AssignTwoType_NEG__desc = {
-    "AssignTwoType_NEG",
-    "AssignTwoType.NEG",
-    AssignTwoType_NEG__desc__fields
-};
+extern struct record_description AssignTwoType_NEG__desc;
 
 #define AssignTwoType__NEG (mmc_mk_box1(3,&AssignTwoType_NEG__desc))
 #endif

@@ -9,13 +9,8 @@ int lex_ident();
 #include "Assignment.h"
 #else
 #include "meta_modelica.h"
-const char* Assignment_INT__desc__fields[] = {"integer"};
-struct record_description Assignment_INT__desc = {
-    "Assignment_INT",
-    "Assignment.INT",
-    Assignment_INT__desc__fields
-};
 
+extern struct record_description Assignment_INT__desc;
 #define Assignment__INT(X1) (mmc_mk_box2(3,&Assignment_INT__desc,(X1)))
 #endif
 
