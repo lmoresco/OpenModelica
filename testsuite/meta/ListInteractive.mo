@@ -1,5 +1,8 @@
 package ListInteractive
   
+  public constant list<Integer> intCons = 2::3::4::5::{};
+  public constant list<Integer> intList = {2,3,4,5};
+
   function listPrepend
     input list<Integer> intList;
     input Integer inInt;

@@ -17,8 +17,12 @@ tmp := ListInteractive.listPrepend({}, 1);
 // Nested array/list
 lst6 := ListInteractive.listlistIdent({tmp,tmp});
 
+// cref to list<Integer> (builtin type)
+lst7 := ListInteractive.listPrepend(ListInteractive.intList, 1);
+lst8 := ListInteractive.listPrepend(ListInteractive.intCons, 1);
+
 // Illegal calls
-lst7 := ListInteractive.testCompiledArrayToList(lst);
+lst9 := ListInteractive.testCompiledArrayToList(lst); // Let's say this works anyway
 
 ListInteractive.listPrepend({1.5,2.5}, 1);
 ListInteractive.listlistIdent({{1.5,2.5}}, 1);
@@ -37,6 +41,8 @@ ListInteractive.listlistIdent({{1.5,2.5}}, 1);
 // {{{2,3},{2,3},{2,3}},{{2,3},{2,3},{2,3}}}
 // {1}
 // {{1},{1}}
+// {1,2,3,4,5}
+// {1,2,3,4,5}
 // {1,2,3}
 // 
 // 
