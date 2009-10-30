@@ -45,12 +45,12 @@ algorithm
   print("\n");
   print("[Differentiating expression]\n");
   diffExpr := diff(expr,"x");
-  print("f’(x) = ");
+  print("f'(x) = ");
   printExp(diffExpr);
   print("\n");
   print("[Simplifying expression]\n");
   simpleExpr := simplifyExp(diffExpr);
-  print("f’(x) = ");
+  print("f'(x) = ");
   printExp(simpleExpr);
   print("\n");
   i := 0;
@@ -74,19 +74,19 @@ algorithm
       then INT(1);
     // der of time-independent variable
     case (IDENT(_), _) then INT(0);
-    // (e1+e2)’ => e1’+e2’
+    // (e1+e2)' => e1'+e2'
     case (ADD(e1,e2),id)
       equation
         e1prim = diff(e1,id);
         e2prim = diff(e2,id);
       then ADD(e1prim,e2prim);
-    // (e1/e2)’ => (e1’*e2 – e1*e2’)/e2*e2
+    // (e1/e2)' => (e1'*e2 - e1*e2')/e2*e2
     case (DIV(e1,e2),id)
       equation
         e1prim = diff(e1,id);
         e2prim = diff(e2,id); 
       then DIV(SUB(MUL(e1prim,e2),MUL(e1,e2prim)), MUL(e2,e2));
-    // (-e1)’ => -e1’
+    // (-e1)' => -(e1')
     case (NEG(e1),id)
       equation
         e1prim = diff(e1,id);
@@ -94,29 +94,29 @@ algorithm
     
     // your code here
     
-    // (e1-e2)’ => e1’+e2’
+    // (e1-e2)' => e1'+e2'
     case (SUB(e1,e2),id)
       equation
         e1prim = diff(e1,id);
         e2prim = diff(e2,id); 
       then SUB(e1prim,e2prim);
-    // (e1*e2)’ => e1’*e2 + e1*e2’
+    // (e1*e2)' => e1'*e2 + e1*e2'
     case (MUL(e1,e2),id)
       equation
         e1prim = diff(e1,id);
         e2prim = diff(e2,id); 
       then ADD(MUL(e1prim,e2),MUL(e1,e2prim));
-    // sin(e1)’ => cos(e1)*e1’
+    // sin(e1)' => cos(e1)*e1'
     case (CALL("sin", {e1}),id)
       equation
         e1prim = diff(e1,id);
       then MUL(CALL("cos",{e1}),e1prim);
-    // cos(e1)’ => -sin(e1)*e1’
+    // cos(e1)' => -sin(e1)*e1'
     case (CALL("cos", {e1}),id)
       equation
         e1prim = diff(e1,id);
       then NEG(MUL(CALL("sin",{e1}),e1prim));
-    // pow(e1,INT(i))’ => i*e1’*pow(e1,INT(i-1))
+    // pow(e1,INT(i))' => i*e1'*pow(e1,INT(i-1))
     case (CALL("pow", {e1,INT(i1)}),id)
       local
         Integer i1,i2;
@@ -125,7 +125,7 @@ algorithm
         i2 = i1-1;
       then MUL(INT(i1),MUL(e1prim,CALL("pow",{e1,INT(i2)})));
     
-    // default case, e1’ => e1’
+    // default case, e1' => e1'
     case (e1,_) then CALL("der",{e1});
   end matchcontinue;
 end diff;
@@ -289,7 +289,7 @@ algorithm
     case CALL("der",{e})
       equation
         res = expStr(e);
-      then "(" +& res +& ")’";
+      then "(" +& res +& ")'";
     case CALL("pow",{e,INT(i)})
       equation
         res = expStr(e);

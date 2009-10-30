@@ -7,8 +7,8 @@ else
 endif
 
 RMLCFLAGS=-g -Wr,-Ono-cps -DRML
-COMPILE.rml=$(RMLC) -I../rml/ $(RMLCFLAGS) $(CPPFLAGS) -c
-LINK.rml=$(RMLC) $(RMLCFLAGS)
+COMPILE.rml=$(RMLC) $(RMLCFLAGS) $(CPPFLAGS) -I../rml/ -c
+LINK.rml=$(RMLC)
 
 .SUFFIXES:	.c .o .rml .h .mo
 
@@ -45,7 +45,7 @@ parser.c parser.h:  parser.y
 	mv parser.tab.h parser.h
 
 clean:
-	rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c parser.h lexer.h rtest yacclib.c *~
+	rm -f $(CLEAN) *.o *.so *.dll *.exe executable parser.c lexer.c parser.h lexer.h rtest yacclib.c *~
 
 executable: $(HEADERS) $(OBJS)
 	$(LINK.rml) $(OBJS) $(LDLIBS) -o executable
