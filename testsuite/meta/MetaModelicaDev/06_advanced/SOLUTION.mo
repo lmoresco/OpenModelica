@@ -16,9 +16,12 @@ algorithm
         print("Starting\n");
         // order the initial Int list
         orderedIntList    = Functions.orderList(Types.intList, Functions.compareInt);
+        print("\nOrdered List:");
+        printAny(orderedIntList);
         // transform the ordered list to String for printing
-        // strIntLst = Functions.map1(orderedIntList, Functions.transformInt2String);
-        // print("\nInt String List:");
+        strIntLst = Functions.map1(orderedIntList, Functions.transformInt2String);
+        print("\nInt String List:");
+        printAny(strIntLst);
         // Functions.map0(strIntLst, Functions.printElement);
         
         // transforming the initial int list to a String list
@@ -87,7 +90,7 @@ function quicksort
   replaceable type Type_a subtypeof Any;
   input  list<Type_a> inList;
   input  list<Type_a> accList;  
-  function FuncType 
+  partial function FuncType 
     input Type_a el1;
     input Type_a el2;
     output Boolean cmp;
@@ -113,8 +116,8 @@ end quicksort;
 function partition 
   replaceable type Type_a subtypeof Any;
   input  Type_a inList;
-  input  list<Type_a> accList;  
-  function FuncType 
+  input  list<Type_a> accList;
+  partial function FuncType 
     input Type_a el1;
     input Type_a el2;
     output Boolean cmp;
@@ -127,12 +130,6 @@ algorithm
     local 
       Type_a x, y;
       list<Type_a> l, smaller, greater;
-      //function FuncType 
-      //  input Type_a el1;
-      //  input Type_a el2;
-      //  output Boolean cmp;
-      //end FuncType;
-      FuncType comparator;
     case (x, {}, _) then ({}, {}); 
     case (x, y::l, comparator)  
       equation
@@ -150,7 +147,7 @@ end partition;
 function orderList
   replaceable type Type_a subtypeof Any;
   input  list<Type_a> inList;
-  function FuncType 
+  partial function FuncType 
     input Type_a el1;
     input Type_a el2;
     output Boolean cmp;
@@ -195,7 +192,7 @@ function map1
   replaceable type Type_a subtypeof Any;
   replaceable type Type_b subtypeof Any;
   input  list<Type_a> inList;
-  function FuncType 
+  partial function FuncType 
     input  Type_a elIn;
     output Type_b elOut;
   end FuncType;
@@ -220,7 +217,7 @@ end map1;
 function map0
   replaceable type Type_a subtypeof Any;
   input  list<Type_a> inList;
-  function FuncType 
+  partial function FuncType 
     input  Type_a elIn;
   end FuncType;
   input FuncType f;
