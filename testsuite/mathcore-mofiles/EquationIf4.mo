@@ -25,13 +25,5 @@ end EquationIf4;
 // Real p = 10.0 * time;
 // Real x;
 // equation
-//   if p < 0.0 then
-//   x = 1.0;
-//   elseif p < 10.0 then
-//   x = 2.0;
-//   elseif p > 10.0 then
-//   x = 3.0;
-//   else
-//   x = 4.0;
-//   end if;
+//   0.0 = if p < 0.0 then x - 1.0 else if p < 10.0 then x - 2.0 else if p > 10.0 then x - 3.0 else x - 4.0;
 // end EquationIf4;

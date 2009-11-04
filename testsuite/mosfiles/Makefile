@@ -23,7 +23,7 @@ ArrayAddSub1.mos ArrayDivError.mos \
 ArrayMult.mos \
 EqualityEquations.mos FiveForEquations.mos \
 HideVariableForEquations.mos \
-IfEquation.mos WhenEquation.mos \
+IfEquation.mos IfEquation2.mos WhenEquation.mos \
 PolynomialEvaluatorA.mos \
 PolynomialEvaluatorB.mos StepAdvanced.mos \
 AlgorithmSection.mos WhenStatement1.mos \
