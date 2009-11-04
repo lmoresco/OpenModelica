@@ -10,7 +10,7 @@ TESTFILES = MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos MatchCas
   Recursive.mos Failure.mos Equality.mos Shadowing1.mos Shadowing2.mos EqPatternm.mos Polymorphic.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= PartialFn9.mos \
+FAILINGTESTFILES= PartialFn9.mos PartialFn10.mos \
 
 TEST = ./rtest -v
 # Remove executables on Linux (no extension)
