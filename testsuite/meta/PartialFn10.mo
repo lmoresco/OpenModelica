@@ -49,10 +49,10 @@ end TestCreateTestRecord;
 
 Real r1;
 Real r2;
-Integer tr;
+Real tr;
 
 equation
-  r1 = 1.0;
-  r2 = 2.0;
+  r1 = 17.0;
+  r2 = -12.0;
   tr = TestCreateTestRecord(r1,r2);
 end PartialFn10;

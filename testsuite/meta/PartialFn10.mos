@@ -5,7 +5,7 @@
 // Partial Function Testing
 //
 loadFile("PartialFn10.mo");
-simulate(PartialFn10);
+simulate(PartialFn10,startTime=0,stopTime=1.0,numberOfIntervals=1);
 val(tr, 0.0);
 
 // Result:
@@ -13,5 +13,5 @@ val(tr, 0.0);
 // record SimulationResult
 //    resultFile = "PartialFn10_res.plt"
 // end SimulationResult;
-// 2.0
+// 17.0
 // endResult
