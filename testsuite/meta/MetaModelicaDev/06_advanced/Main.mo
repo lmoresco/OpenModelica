@@ -13,13 +13,12 @@ algorithm
       list<Real> orderedRealList, realList;            
     case (_) 
       equation
-        print("Starting\n");
         // your code here:
         // order the initial Int list
         // orderedIntList    = Functions.orderList(Types.intList, Functions.compareInt);
         // transform the ordered list to String for printing
         // strIntLst = Functions.map1(orderedIntList, Functions.transformInt2String);
-        // print("\nInt String List:");
+        // print("Int String List:");
         // Functions.map0(strIntLst, Functions.printElement);
         
         // transforming the initial int list to a String list
@@ -36,6 +35,7 @@ algorithm
         // strRealLst = Functions.map1(orderedRealList, Functions.transformReal2String);
         // print("\nOrdered Real List:");
         // Functions.map0(strIntLst, Functions.printElement);
+        print("\n");
       then ();
   end matchcontinue; 
 end main;

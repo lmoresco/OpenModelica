@@ -15,7 +15,7 @@ DAE.c: DAE.mo Values.sig Types.sig SCode.sig Exp.sig Env.sig ClassInf.sig Algori
 DAELow.c: DAELow.mo Values.sig SCode.sig Exp.sig DAE.sig Algorithm.sig Absyn.sig VarTransform.sig Types.sig Util.sig SimCodegen.sig Print.sig RTOpts.sig System.sig Env.sig Derive.sig Dump.sig DAEEXT.sig Builtin.sig Ceval.sig BackendVarTransform.sig Debug.sig Error.sig 
 Derive.c: Derive.mo Exp.sig Absyn.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Error.sig 
 Debug.c: Debug.mo Util.sig Print.sig RTOpts.sig 
-DFA.c: DFA.mo Types.sig MetaUtil.sig SCode.sig Error.sig Debug.sig Absyn.sig Env.sig Util.sig Lookup.sig 
+DFA.c: DFA.mo Types.sig MetaUtil.sig SCode.sig Error.sig Env.sig Debug.sig Absyn.sig Util.sig Dump.sig Lookup.sig 
 Dump.c: Dump.mo Interactive.sig Absyn.sig Util.sig Print.sig Debug.sig 
 DumpGraphviz.c: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig 
 Constants.c: Constants.mo 

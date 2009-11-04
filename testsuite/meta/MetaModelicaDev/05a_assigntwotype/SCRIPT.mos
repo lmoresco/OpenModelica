@@ -15,5 +15,5 @@ i:=AssignTwoType.evalprogram(syntree);
 
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
-// 7.9
+// 7.899999999999999
 // endResult

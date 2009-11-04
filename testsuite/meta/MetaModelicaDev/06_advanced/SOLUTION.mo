@@ -13,31 +13,29 @@ algorithm
       list<Real> orderedRealList, realList;            
     case (_) 
       equation
-        print("Starting\n");
+        // your code here:
         // order the initial Int list
         orderedIntList    = Functions.orderList(Types.intList, Functions.compareInt);
-        print("\nOrdered List:");
-        printAny(orderedIntList);
         // transform the ordered list to String for printing
         strIntLst = Functions.map1(orderedIntList, Functions.transformInt2String);
-        print("\nInt String List:");
-        printAny(strIntLst);
-        // Functions.map0(strIntLst, Functions.printElement);
+        print("Int String List:");
+        Functions.map0(strIntLst, Functions.printElement);
         
         // transforming the initial int list to a String list
-        // stringList = Functions.map1(Types.intList, Functions.transformInt2String);
+        stringList = Functions.map1(Types.intList, Functions.transformInt2String);
         // order the transformed String list        
-        // orderedStringList = Functions.orderList(stringList, Functions.compareString);
-        // print("\nOrdered String List:");
-        // Functions.map0(orderedStringList, Functions.printElement);
+        orderedStringList = Functions.orderList(stringList, Functions.compareString);
+        print("\nOrdered String List:");
+        Functions.map0(orderedStringList, Functions.printElement);
         
         // transforming the int list to a Real list
-        // realList = Functions.map1(Types.intList, Functions.transformInt2Real);
+        realList = Functions.map1(Types.intList, Functions.transformInt2Real);
         // order the transformed Real list
-        // orderedRealList = Functions.orderList(realList, Functions.compareReal);
-        // strRealLst = Functions.map1(orderedRealList, Functions.transformReal2String);
-        // print("\nOrdered Real List:");
-        // Functions.map0(strIntLst, Functions.printElement);
+        orderedRealList = Functions.orderList(realList, Functions.compareReal);
+        strRealLst = Functions.map1(orderedRealList, Functions.transformReal2String);
+        print("\nOrdered Real List:");
+        Functions.map0(strIntLst, Functions.printElement);
+        print("\n");
       then ();
   end matchcontinue; 
 end main;
@@ -71,16 +69,16 @@ algorithm
     local Integer z;
     case (s1, s2)
       equation
-        0 = string_compare(s1, s2);
+        0 = stringCompare(s1, s2);
       then false;
     case (s1, s2)
       equation
-        z = string_compare(s1, s2);
+        z = stringCompare(s1, s2);
         true = (z < 0);
       then true;
     case (s1, s2)
       equation
-        z = string_compare(s1, s2);
+        z = stringCompare(s1, s2);
         false = (z < 0);
       then false;        
   end matchcontinue;
@@ -222,7 +220,7 @@ function map0
   end FuncType;
   input FuncType f;
 algorithm
-  outList := matchcontinue(inList, f)
+  _ := matchcontinue(inList, f)
     local 
       list<Type_a> rest;
       Type_a x;
