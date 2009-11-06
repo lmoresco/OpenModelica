@@ -19,10 +19,10 @@ endif
 srcdir= .
 top_builddir= ../..
 
-BOOST_HOME =
+BOOST_HOME = /C/Boost/
 RMLINCLUDE = ${OMDEV}/tools/rml/include/plain/
 
-USE_MODPAR =
+USE_MODPAR= -DUSE_MODPAR
 
 ifdef USE_MODPAR
 OBJECTS = Codegen.o \
