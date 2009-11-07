@@ -35,7 +35,7 @@ How to compile on Ubuntu Linux (using available binary packages for dependencies
 
 You need:
     antlr
-        $ sudo aptitude install antlr libantrl-dev
+        $ sudo aptitude install antlr libantlr-dev
     rml+mmc see above and:
         $ sudo aptitude install libsmlnj-smlnj
         or if you like to use mlton
