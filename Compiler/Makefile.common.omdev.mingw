@@ -17,13 +17,14 @@ CORBALIB =
 #endif
 
 AST	= $(srcdir)/absyn_builder/absyn_builder.a
-RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/../c_runtime/libc_runtime.a \
+RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/runtime/dynload.o \
+	$(srcdir)/runtime/optmanager.o \
+	$(srcdir)/../c_runtime/libc_runtime.a \
 	$(srcdir)/runtime/rtopts.o $(srcdir)/runtime/socketimpl.o \
 	$(srcdir)/runtime/printimpl.o $(srcdir)/runtime/ptolemyio.o \
 	$(srcdir)/runtime/errorext.o $(srcdir)/runtime/ErrorMessage.o \
 	$(srcdir)/runtime/daeext.o \
 	$(srcdir)/runtime/lpsolve/lpsolve55.lib  \
-	$(srcdir)/runtime/optmanager.o $(srcdir)/runtime/dynload.o \
 	$(srcdir)/runtime/unitparser.o $(srcdir)/runtime/unitparserext.o $(CORBAOBJ) \
 	$(srcdir)/modpar/libmodpar.a \
 	$(srcdir)/modpar/libmodpar.a $(srcdir)/runtime/settingsimpl.o
