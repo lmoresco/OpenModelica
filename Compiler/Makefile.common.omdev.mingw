@@ -23,7 +23,7 @@ RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/../c_runtime/libc_runtime.a \
 	$(srcdir)/runtime/errorext.o $(srcdir)/runtime/ErrorMessage.o \
 	$(srcdir)/runtime/daeext.o \
 	$(srcdir)/runtime/lpsolve/lpsolve55.lib  \
-	$(srcdir)/runtime/optmanager.o \
+	$(srcdir)/runtime/optmanager.o $(srcdir)/runtime/dynload.o \
 	$(srcdir)/runtime/unitparser.o $(srcdir)/runtime/unitparserext.o $(CORBAOBJ) \
 	$(srcdir)/modpar/libmodpar.a \
 	$(srcdir)/modpar/libmodpar.a $(srcdir)/runtime/settingsimpl.o
@@ -90,7 +90,7 @@ SRCMO= Absyn.mo \
 	InstanceHierarchy.mo
 
 # These are externally defined MO modules
-ALLMO = $(SRCMO) DAEEXT.mo Print.mo RTOpts.mo System.mo Parser.mo \
+ALLMO = $(SRCMO) DAEEXT.mo DynLoad.mo Print.mo RTOpts.mo System.mo Parser.mo \
 		TaskGraphExt.mo Corba.mo Socket.mo ErrorExt.mo Settings.mo OptManager.mo UnitParserExt.mo
 
 SRCC=	$(SRCMO:.mo=.c)
