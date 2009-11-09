@@ -148,4 +148,24 @@ end eval_empty;
 record EMPTY
 end EMPTY;
 
+record WithParameters
+  Integer x = 5;
+  parameter Integer y = 3;
+  constant Integer z = 1;
+end WithParameters;
+
+function TestWithParameters
+  input Integer x;
+  input Integer y;
+  output WithParameters out1;
+algorithm
+  out1 := WithParameters(y,x);
+end TestWithParameters;
+
+function TestWithoutParameters
+  output WithParameters out2;
+algorithm
+  out2 := WithParameters();
+end TestWithoutParameters;
+
 end RecordTest;
