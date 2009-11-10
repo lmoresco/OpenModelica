@@ -227,6 +227,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\runtime\dynload.c"
+				>
+			</File>
+			<File
 				RelativePath="..\runtime\errorext.cpp"
 				>
 			</File>
@@ -316,6 +320,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath="..\runtime\error_reporting.h"
+				>
+			</File>
+			<File
 				RelativePath="..\runtime\errorext.h"
 				>
 			</File>
@@ -328,6 +336,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\runtime\omc_communication.h"
+				>
+			</File>
+			<File
 				RelativePath=".\omc_communication.h"
 				>
 			</File>
@@ -337,6 +349,10 @@
 			</File>
 			<File
 				RelativePath="..\runtime\ptolemyio.hpp"
+				>
+			</File>
+			<File
+				RelativePath="..\runtime\systemimpl.h"
 				>
 			</File>
 			<File

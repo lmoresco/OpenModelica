@@ -243,6 +243,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\c_runtime\java_interface.c"
+				>
+			</File>
+			<File
 				RelativePath="..\..\c_runtime\lsame.c"
 				>
 			</File>
@@ -252,6 +256,10 @@
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\meta_modelica.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\meta_modelica_builtin.cpp"
 				>
 			</File>
 			<File
@@ -381,6 +389,26 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\c_runtime\java_interface.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\jni.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\jni_md.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\jni_md_solaris.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\jni_md_windows.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\c_runtime\matrix.h"
 				>
 			</File>
@@ -390,6 +418,10 @@
 			</File>
 			<File
 				RelativePath="..\..\c_runtime\meta_modelica.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\c_runtime\meta_modelica_builtin.h"
 				>
 			</File>
 			<File
