@@ -1,4 +1,0 @@
-#!/bin/sh
-px run -an4 1 1 ./dryrun
-px run -an4 1 1 ./dryrun
-px run -an4 1 1 ./dryrun
