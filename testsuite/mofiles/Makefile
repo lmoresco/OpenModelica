@@ -126,7 +126,7 @@ FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
 InOutBool.mo InOutArray.mo InOutArray2.mo \
 AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
-Enum1.mo Enum2.mo Enum3.mo Enum6.mo  \
+Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum6.mo  \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
@@ -146,7 +146,7 @@ AppendElement.mo ArrayExponentiation.mo \
 DimConvert.mo ConstructFunc.mo \
 EqualityEquations.mo DimSize.mo WhenNotValid.mo ErrorNestedWhen.mo \
 DoubleWhenConflict.mo \
-Enum4.mo Enum5.mo Enum7.mo\
+Enum5.mo Enum7.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

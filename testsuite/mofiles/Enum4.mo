@@ -1,6 +1,6 @@
 // name:     Enumeration4
 // keywords: enumeration enum
-// status:   incorrect
+// status:   correct
 // 
 // 
 // 
@@ -16,10 +16,10 @@ end N;
 model Enumeration4
    parameter M.Enum em = M.Enum.e1;
    parameter N.Enum en = N.Enum.e3;
-   Enum test;
+   M.Enum test;
 equation
    test = if M.Enum.e1 == M.Enum.e3 then M.Enum.e2 else M.Enum.e1;
-end Enumeration4
+end Enumeration4;
 
 // fclass Enumeration4
 // parameter enumeration(e1, e2, e3)em = M.Enum.e1;
