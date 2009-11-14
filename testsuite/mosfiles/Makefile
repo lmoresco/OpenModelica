@@ -42,7 +42,7 @@ FuncNamespace.mos OverloadingFunc.mos \
 InOutStrings.mos InOutRecord.mos \
 LinearSysEq.mos MissV.mos \
 FunctionIndirectRecursion.mos FunctionIndirectRecursion2.mos \
-Sign.mos \
+Sign.mos Enum8.mos\
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
