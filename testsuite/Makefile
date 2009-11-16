@@ -1,6 +1,7 @@
 .PHONY : all failingtest
 
-all :
+all : test
+test :
 	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
 	cd mathcore-mofiles ; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
 	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \

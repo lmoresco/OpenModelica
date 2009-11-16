@@ -4,7 +4,7 @@ TESTFILES = EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
 	RecordParameters.mos RecordVariability.mo
 
 # test that currently fail. Move up when fixed. 
-FAILINGTESTFILES=
+FAILINGTESTFILES=NONE
 
 
 TEST = ./rtest
