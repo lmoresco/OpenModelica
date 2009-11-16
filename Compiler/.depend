@@ -1,7 +1,7 @@
 Absyn.c: Absyn.mo Util.sig System.sig ModUtil.sig Print.sig 
 AbsynDep.c: AbsynDep.mo Absyn.sig Util.sig ModUtil.sig System.sig 
 Algorithm.c: Algorithm.mo Types.sig Exp.sig SCode.sig Absyn.sig DAE.sig Util.sig Print.sig Debug.sig Error.sig 
-Builtin.c: Builtin.mo SCode.sig RTOpts.sig Env.sig Absyn.sig Values.sig Types.sig ClassInf.sig Exp.sig 
+Builtin.c: Builtin.mo RTOpts.sig SCode.sig Env.sig Absyn.sig Values.sig ClassInf.sig DAE.sig Exp.sig 
 Ceval.c: Ceval.mo Values.sig Types.sig InstanceHierarchy.sig Interactive.sig Exp.sig Env.sig ConnectionGraph.sig Absyn.sig AbsynDep.sig ValuesUtil.sig UnitAbsyn.sig Util.sig Static.sig RTOpts.sig SCode.sig System.sig Prefix.sig Lookup.sig ModUtil.sig Error.sig Dump.sig DynLoad.sig Inst.sig Print.sig Debug.sig Connect.sig DAE.sig CevalScript.sig ClassInf.sig Derive.sig 
 CevalScript.c: CevalScript.mo Values.sig Types.sig Interactive.sig Exp.sig Env.sig DAELow.sig Ceval.sig Absyn.sig XMLDump.sig Util.sig ValuesUtil.sig UnitAbsynBuilder.sig UnitParserExt.sig Static.sig System.sig SimCodegen.sig Settings.sig SimulationResults.sig UnitAbsyn.sig Refactor.sig Print.sig RTOpts.sig SCode.sig Parser.sig ModUtil.sig InstanceHierarchy.sig Lookup.sig Inline.sig Inst.sig Debug.sig Dump.sig Error.sig DAEQuery.sig DAE.sig DAEUtil.sig Prefix.sig Connect.sig ClassLoader.sig Codegen.sig AbsynDep.sig ClassInf.sig ConnectionGraph.sig 
 Cevalfunc.c: Cevalfunc.mo Values.sig Types.sig SCode.sig Prefix.sig Exp.sig Env.sig DAE.sig Connect.sig Absyn.sig ClassInf.sig ConnectionGraph.sig ValuesUtil.sig Util.sig UnitAbsyn.sig Lookup.sig Static.sig Inst.sig Error.sig Debug.sig Ceval.sig InstanceHierarchy.sig 
@@ -11,16 +11,16 @@ Codegen.c: Codegen.mo Types.sig SCode.sig Print.sig MetaUtil.sig RTOpts.sig Exp.
 Connect.c: Connect.mo Static.sig Prefix.sig Exp.sig Env.sig DAE.sig Absyn.sig Util.sig Types.sig Print.sig Inst.sig Dump.sig Error.sig Debug.sig Lookup.sig 
 ConnectionGraph.c: ConnectionGraph.mo Util.sig Exp.sig HashTableCG.sig DAE.sig Absyn.sig DAEUtil.sig 
 Convert.c: Convert.mo Values.sig Types.sig Util.sig Exp.sig Debug.sig DAE.sig Algorithm.sig Absyn.sig ClassInf.sig SCode.sig DAEUtil.sig 
-DAE.c: DAE.mo Types.sig Exp.sig Absyn.sig SCode.sig 
+DAE.c: DAE.mo Values.sig Exp.sig SCode.sig Absyn.sig ClassInf.sig 
 DAELow.c: DAELow.mo Values.sig Types.sig SCode.sig Exp.sig DAE.sig Algorithm.sig Absyn.sig VarTransform.sig Util.sig SimCodegen.sig Print.sig RTOpts.sig System.sig Env.sig Derive.sig DAEUtil.sig Debug.sig ClassInf.sig Builtin.sig Ceval.sig BackendVarTransform.sig DAEEXT.sig Error.sig 
 DAEUtil.c: DAEUtil.mo Values.sig Types.sig SCode.sig Exp.sig Env.sig DAE.sig Absyn.sig Algorithm.sig ClassInf.sig Util.sig System.sig Print.sig Graphviz.sig ModUtil.sig RTOpts.sig Dump.sig Debug.sig Ceval.sig Error.sig 
 Derive.c: Derive.mo Exp.sig Absyn.sig DAELow.sig Util.sig SimCodegen.sig Debug.sig Error.sig 
 Debug.c: Debug.mo Util.sig Print.sig RTOpts.sig 
-DFA.c: DFA.mo Types.sig MetaUtil.sig SCode.sig Error.sig Env.sig Debug.sig Absyn.sig Util.sig Dump.sig Lookup.sig 
+DFA.c: DFA.mo SCode.sig MetaUtil.sig Types.sig Error.sig Env.sig Debug.sig Absyn.sig DAE.sig Util.sig Dump.sig Lookup.sig 
 Dump.c: Dump.mo Interactive.sig Absyn.sig Util.sig Print.sig Debug.sig 
 DumpGraphviz.c: DumpGraphviz.mo Graphviz.sig Absyn.sig Dump.sig 
 Constants.c: Constants.mo 
-Env.c: Env.mo Types.sig SCode.sig Exp.sig ClassInf.sig Absyn.sig Util.sig Print.sig System.sig Dump.sig Inst.sig 
+Env.c: Env.mo Types.sig SCode.sig Exp.sig DAE.sig Absyn.sig ClassInf.sig Util.sig Print.sig System.sig Dump.sig Inst.sig 
 Error.c: Error.mo Absyn.sig Util.sig ErrorExt.sig Print.sig 
 Exp.c: Exp.mo Values.sig SCode.sig Graphviz.sig Absyn.sig ClassInf.sig System.sig Util.sig RTOpts.sig ModUtil.sig Print.sig Static.sig Dump.sig Derive.sig DAELow.sig Debug.sig Env.sig 
 SCode.c: SCode.mo PartFn.sig Absyn.sig Util.sig Print.sig MetaUtil.sig Error.sig Debug.sig Dump.sig ModUtil.sig 
@@ -34,17 +34,17 @@ HashTableCG.c: HashTableCG.mo Exp.sig Util.sig System.sig
 Inline.c: Inline.mo Values.sig Types.sig Util.sig Exp.sig SCode.sig DAE.sig Absyn.sig Algorithm.sig DAELow.sig DAEUtil.sig Debug.sig 
 Inst.c: Inst.mo Types.sig SCode.sig Prefix.sig Patternm.sig RTOpts.sig Mod.sig MetaUtil.sig InstanceHierarchy.sig UnitAbsyn.sig Exp.sig Env.sig ConnectionGraph.sig DAE.sig ClassInf.sig Connect.sig Absyn.sig Algorithm.sig VarTransform.sig Values.sig ValuesUtil.sig UnitParserExt.sig UnitAbsynBuilder.sig UnitChecker.sig Util.sig System.sig Static.sig OptManager.sig Lookup.sig HashTable5.sig Interactive.sig ModUtil.sig ErrorExt.sig Dump.sig Error.sig DAEUtil.sig Debug.sig Builtin.sig Ceval.sig HashTable.sig 
 Interactive.c: Interactive.mo Values.sig Settings.sig SCode.sig Types.sig OptManager.sig Env.sig DAE.sig ConnectionGraph.sig Absyn.sig AbsynDep.sig ValuesUtil.sig UnitAbsyn.sig Util.sig System.sig Static.sig Refactor.sig Print.sig Parser.sig Prefix.sig RTOpts.sig Mod.sig MetaUtil.sig InstanceHierarchy.sig Lookup.sig HashTable2.sig Inst.sig ErrorExt.sig Error.sig Exp.sig ModUtil.sig Debug.sig DAEUtil.sig ClassLoader.sig Connect.sig Constants.sig Ceval.sig ClassInf.sig Dump.sig 
-Lookup.c: Lookup.mo Types.sig SCode.sig Exp.sig Env.sig ClassInf.sig Absyn.sig Util.sig UnitAbsyn.sig ModUtil.sig Mod.sig Prefix.sig Static.sig Inst.sig Debug.sig Error.sig Connect.sig Builtin.sig ConnectionGraph.sig InstanceHierarchy.sig 
+Lookup.c: Lookup.mo Types.sig SCode.sig Exp.sig Env.sig DAE.sig Absyn.sig ClassInf.sig Util.sig UnitAbsyn.sig ModUtil.sig Mod.sig Prefix.sig Static.sig Inst.sig Error.sig Connect.sig ConnectionGraph.sig Builtin.sig Debug.sig InstanceHierarchy.sig 
 Main.c: Main.mo Util.sig TaskGraphExt.sig System.sig TaskGraph.sig SimCodegen.sig Socket.sig SCode.sig RTOpts.sig Parser.sig Interactive.sig Print.sig Settings.sig Inst.sig ErrorExt.sig Inline.sig Env.sig Dump.sig DumpGraphviz.sig DAEUtil.sig Debug.sig Error.sig DAE.sig Corba.sig CevalScript.sig ClassLoader.sig Absyn.sig AbsynDep.sig DAELow.sig InstanceHierarchy.sig 
-MetaUtil.c: MetaUtil.mo Util.sig SCode.sig Types.sig Lookup.sig Exp.sig RTOpts.sig Debug.sig Absyn.sig ClassInf.sig Env.sig 
-Mod.c: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig Absyn.sig ValuesUtil.sig Util.sig Values.sig Print.sig Inst.sig Static.sig Dump.sig Ceval.sig Debug.sig Error.sig 
+MetaUtil.c: MetaUtil.mo Util.sig SCode.sig Types.sig Lookup.sig Env.sig Exp.sig RTOpts.sig DAE.sig Absyn.sig ClassInf.sig Debug.sig 
+Mod.c: Mod.mo Types.sig SCode.sig Prefix.sig Exp.sig Env.sig DAE.sig Absyn.sig ValuesUtil.sig Util.sig Values.sig Print.sig Inst.sig Static.sig Dump.sig Debug.sig Ceval.sig Error.sig 
 ModUtil.c: ModUtil.mo SCode.sig Exp.sig Absyn.sig DAE.sig Util.sig Types.sig System.sig Algorithm.sig RTOpts.sig 
 PartFn.c: PartFn.mo Util.sig Debug.sig Absyn.sig RTOpts.sig 
 Patternm.c: Patternm.mo SCode.sig Env.sig Debug.sig Absyn.sig DFA.sig Dump.sig Util.sig Lookup.sig 
 Prefix.c: Prefix.mo SCode.sig Lookup.sig Env.sig Absyn.sig Exp.sig Util.sig Print.sig ClassInf.sig Debug.sig 
 Static.c: Static.mo Values.sig Types.sig SCode.sig RTOpts.sig Interactive.sig MetaUtil.sig Exp.sig Env.sig Convert.sig ConnectionGraph.sig Absyn.sig Algorithm.sig ValuesUtil.sig UnitAbsyn.sig Util.sig Print.sig OptManager.sig Prefix.sig System.sig Mod.sig Lookup.sig Inst.sig ErrorExt.sig InstanceHierarchy.sig ModUtil.sig Debug.sig Dump.sig DAE.sig ClassInf.sig Ceval.sig CevalScript.sig AbsynDep.sig Connect.sig Error.sig 
 SimCodegen.c: SimCodegen.mo SCode.sig Exp.sig Env.sig DAE.sig DAELow.sig Absyn.sig VarTransform.sig Values.sig ValuesUtil.sig Types.sig Settings.sig System.sig Util.sig Print.sig Lookup.sig ModUtil.sig Inst.sig Inline.sig Error.sig InstanceHierarchy.sig RTOpts.sig DAEUtil.sig CevalScript.sig Algorithm.sig Codegen.sig Debug.sig 
-Types.c: Types.mo Values.sig SCode.sig Exp.sig Absyn.sig ClassInf.sig ValuesUtil.sig Util.sig RTOpts.sig Print.sig Static.sig Debug.sig Dump.sig 
+Types.c: Types.mo Values.sig SCode.sig Exp.sig ClassInf.sig Absyn.sig DAE.sig ValuesUtil.sig Util.sig RTOpts.sig Print.sig Static.sig Debug.sig Dump.sig 
 TaskGraph.c: TaskGraph.mo SCode.sig DAELow.sig Exp.sig VarTransform.sig Values.sig ValuesUtil.sig TaskGraphExt.sig SimCodegen.sig Util.sig DAEUtil.sig Absyn.sig DAE.sig 
 Util.c: Util.mo System.sig OptManager.sig Print.sig DAELow.sig Debug.sig 
 Values.c: Values.mo Absyn.sig 
