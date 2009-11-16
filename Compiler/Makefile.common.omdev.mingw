@@ -85,6 +85,7 @@ SRCMO= Absyn.mo \
 	UnitAbsynBuilder.mo \
 	UnitChecker.mo \
 	Values.mo \
+	ValuesUtil.mo \
 	VarTransform.mo \
 	BackendVarTransform.mo \
 	Refactor.mo \
