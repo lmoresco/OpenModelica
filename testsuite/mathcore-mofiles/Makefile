@@ -54,7 +54,8 @@ PredefinedTypes.mo StructuralParameter1.mo MinMax.mo \
 FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo if_then_elseif_else.mo \
 FlatParse.mof \
 ArrayEWOps1.mo ArrayEWOps2.mo ArrayEWOps3.mo ArrayEWOps4.mo ArrayEWOps5.mo \
-ArrayEWOpsCEval1.mo ArrayEWOpsCEval2.mo ArrayEWOpsCEval3.mo ArrayEWOpsCEval4.mo ArrayEWOpsCEval5.mo
+ArrayEWOpsCEval1.mo ArrayEWOpsCEval2.mo ArrayEWOpsCEval3.mo ArrayEWOpsCEval4.mo ArrayEWOpsCEval5.mo \
+MatrixRowIndexing.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

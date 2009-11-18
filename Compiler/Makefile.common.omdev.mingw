@@ -42,6 +42,7 @@ SRCMO= Absyn.mo \
 	ClassLoader.mo \
 	Codegen.mo \
 	Connect.mo \
+	ExpandableConnectors.mo \
 	ConnectionGraph.mo \
 	Convert.mo \
 	DAE.mo \
@@ -57,6 +58,7 @@ SRCMO= Absyn.mo \
 	Error.mo \
 	Exp.mo \
 	SCode.mo \
+	SCodeUtil.mo \
 	Graphviz.mo \
 	HashTable.mo \
 	HashTable2.mo \
