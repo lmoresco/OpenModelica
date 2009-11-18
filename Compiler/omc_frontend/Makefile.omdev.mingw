@@ -52,7 +52,7 @@ LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(
 PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omcf.exe
-RML = $(RMLHOME)/bin/rmlc -v
+RMLC = $(RMLHOME)/bin/rmlc -v
 RMLCFLAGS = -Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
@@ -78,16 +78,16 @@ $(SRCSTUB):
 	cp -p ../DAELow_stub.mo DAELow.mo
 
 $(SRCO): %.o : %.c %.h
-	$(RML) -c $<
+	$(RMLC) -c $<
 
 $(SRCC): %.c : %.mo
-	$(RML) $(RMLCFLAGS) +C $<
+	$(RMLC) $(RMLCFLAGS) +C $<
 
 $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
 	cp -p $< $@
 
 $(SRCH): %.h : %.mo
-	$(RML) $(RMLCFLAGS) -c $<
+	$(RMLC) $(RMLCFLAGS) -c $<
 
 $(SRCSIG): %.sig : %.mo
 	$(srcdir)/rml2sig/rmldep-new.sh $<

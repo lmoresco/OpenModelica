@@ -52,7 +52,7 @@ LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(
 PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omc.exe
-RML = $(RMLHOME)/bin/rmlc -v
+RMLC = $(RMLHOME)/bin/rmlc -v
 RMLCFLAGS = -Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
@@ -96,7 +96,7 @@ $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
 	strip $(PROG)
 
 subdirs: $(SRCHSRCDIR)
-	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir; done;
+	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir -f Makefile.omdev.mingw; done;
 
 clean:
 	for d in $(SUBDIRS); do \

@@ -53,7 +53,7 @@ PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQt
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
-RML = $(RMLHOME)/bin/rmlc -v -g
+RMLC = $(RMLHOME)/bin/rmlc -v -g
 RMLCFLAGS = -Wr,-ftrace
 
 SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
@@ -94,7 +94,7 @@ $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
 	strip $(PROG)
 
 subdirs: $(SRCHSRCDIR)
-	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir; done;
+	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir -f Makefile.omdev.mingw; done;
 
 clean:
 	for d in $(SUBDIRS); do \
