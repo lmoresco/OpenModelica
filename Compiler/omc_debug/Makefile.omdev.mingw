@@ -60,26 +60,25 @@ SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
 
 all : .testvariables $(ALLMO) $(SRCSIGX) subdirs $(PROG)
 .SUFFIXES:
-.SUFFIXES: .o .mo .h
+.SUFFIXES: .o .mo .h .c
 
-.PHONY: .testvariables all subdirs $(SUBDIRS) report vctarget absyn_subdir clean reallyclean
+.PHONY: all vctarget absyn_subdir clean reallyclean
 SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
 
 
 $(ALLMO): %.mo : $(srcdir)/%.mo
-	cp -p $< $@
+	cp $< $@
 
 $(SRCO): %.o : %.c %.h
-	$(RML) -c $<
+	$(RMLC) $(RMLCFLAGS) -c $<
 
-$(SRCC): %.c : %.mo
-	$(RML) $(RMLCFLAGS) +C $<
+%.c %.h : %.mo
+	$(RMLC) $(RMLCFLAGS) +C $<
+
+%.h : %.c
 
 $(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp -p $< $@
-
-$(SRCH): %.h : %.mo
-	$(RML) $(RMLCFLAGS) -c $<
+	cp $< $@
 
 $(SRCSIGX): %.sigx : %.mo
 	$(srcdir)/rml2sig/rmldep-new.sh $<
@@ -87,17 +86,15 @@ $(SRCSIGX): %.sigx : %.mo
 
 vctarget: $(SRCC) absyn_subdir
 
-
 absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
-	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi
+	g++ -O3 -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi 
+	strip $(PROG)
 
-subdirs: $(SRCHSRCDIR) $(SUBDIRS)
-
-$(SUBDIRS):
-	$(MAKE) -C $@ -f Makefile.omdev.mingw
+subdirs: $(SRCHSRCDIR)
+	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir; done;
 
 clean:
 	for d in $(SUBDIRS); do \

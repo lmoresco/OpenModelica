@@ -54,7 +54,7 @@ PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.min
 # endif
 #endif
 
-all : libc_runtime.a libsim.a libf2c.a libsendData.a install
+all : libc_runtime.a libsim.a libf2c/libf2c.a libsendData.a install
 
 libc_runtime.a : $(OBJS)
 	$(AR) $@ $(OBJS)
@@ -69,7 +69,7 @@ install: libc_runtime.a libsim.a libf2c/libf2c.a
 libsim.a : $(SIMOBJS)
 	$(AR) $@ $(SIMOBJS)
 
-libf2c.a :
+libf2c/libf2c.a :
 	cd libf2c && $(MAKE) -f makefile.mingw
 
 libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
