@@ -31,8 +31,8 @@ model PartialFn8
   Real ww; 
   Real area; 
 algorithm 
-  area  := 0; 
+  area  := 0;
   ww    := 2*time;  
   area  := area + quadrature(0, 1,  
-                 integrand = function Sine(A=2, w=ww));  // Named argument integrand 
+                   integrand = function Sine(A=2, w=ww));  // Named argument integrand 
 end PartialFn8; 
