@@ -31,6 +31,7 @@ CXXFLAGS = $(CFLAGS)
 
 ANTLRFLAGS=#-traceParser
 ANTLRCLASSPATH=-cp $(OMDEV)/bin/antlr/antlr.jar
+ANTLR = java $(ANTLRCLASSPATH) antlr.Tool
 
 LIB = $(LIBP) -lantlr
 
@@ -52,17 +53,22 @@ helperobjs = token_names.o parse_tree_dumper.o
 OBJS += $(lexerobjs) $(parserobjs) $(helperobjs)
 
 all: libmodelica_parser.a
+.PHONY: lexeronce parseronce
 
 vctarget: $(lexergen) $(parsergen)
 
 libmodelica_parser.a: $(OBJS)
 	$(AR) $@ $(OBJS)
 
-$(lexergen): modelica_lexer.g 
-	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
+lexeronce: modelica_lexer.g
+	$(ANTLR) $(ANTLRFLAGS) $<
 
-$(parsergen): modelica_parser.g modelica_lexer.g ../../Compiler/runtime/errorext.h ../../Compiler/runtime/error_reporting.h
-	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
+parseronce: modelica_parser.g $(lexergen)
+	$(ANTLR) $(ANTLRFLAGS) $<
+
+$(lexergen): lexeronce
+
+$(parsergen): parseronce
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<

@@ -75,9 +75,6 @@ Setting your environment for compiling OpenModelica
   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
   ( Ubuntu: $ export ANTLRHOME=/usr/ )
 
-  Set CLASSPATH for antlr, e.g., $ANTLRHOME/antlr.jar
-  ( Ubuntu: $ export CLASSPATH=/usr/share/java/antlr.jar )
-
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
 
   If you plan to use mico corba with OMC you need to:

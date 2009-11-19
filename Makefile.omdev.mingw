@@ -36,7 +36,8 @@ ifndef OMDEV
 	ABORT Please Define OMDEV
 endif
 
-all : .testvariables mkbuilddirs settings release
+all : .testvariables settings release
+.PHONY : .testvariables settings c_runtime omc omcd release debug mosh all mkbuilddirs test
 
 debug: .testvariables mkbuilddirs settings omcd
 
@@ -58,8 +59,10 @@ settings:
 
 release: omc
 
-omc:
+c_runtime: mkbuilddirs
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+
+omc: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
@@ -70,8 +73,7 @@ omc:
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
-omcd:
-	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+omcd: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
@@ -82,8 +84,7 @@ omcd:
 	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
-omc_frontend:
-	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
+omc_frontend: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw frontend)
@@ -103,7 +104,7 @@ testmos:
 testSummary:
 	(cd testsuite; time $(MAKE) -f Makefile | grep "==")
 
-mosh:
+mosh: omc
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
 
 

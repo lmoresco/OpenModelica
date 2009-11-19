@@ -33,6 +33,7 @@ CXXFLAGS = $(CFLAGS)
 
 ANTLRFLAGS=
 ANTLRCLASSPATH=-cp $(OMDEV)/bin/antlr/antlr.jar
+ANTLR = java $(ANTLRCLASSPATH) antlr.Tool
 
 LIB = $(LIBP) -lantlr
 
@@ -54,17 +55,22 @@ OBJS += $(lexerobjs) $(parserobjs)
 #$(helperobjs)
 
 all: .testvariables libflat_modelica_parser.a
+.PHONY: lexeronce parseronce
 
 vctarget: $(lexergen) $(parsergen)
 
 libflat_modelica_parser.a: $(OBJS)
 	$(AR) $@ $(OBJS)
 
-$(lexergen): flat_modelica_lexer.g
-	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
+lexeronce: flat_modelica_lexer.g
+	$(ANTLR) $(ANTLRFLAGS) $<
 
-$(parsergen): flat_modelica_parser.g flat_modelica_lexer.g
-	java $(ANTLRCLASSPATH) antlr.Tool $(ANTLRFLAGS) $<
+parseronce: flat_modelica_parser.g $(lexergen)
+	$(ANTLR) $(ANTLRFLAGS) $<
+
+$(lexergen): lexeronce
+
+$(parsergen): lexeronce parseronce
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<

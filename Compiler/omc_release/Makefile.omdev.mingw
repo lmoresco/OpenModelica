@@ -96,7 +96,7 @@ $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
 	strip $(PROG)
 
 subdirs: $(SRCHSRCDIR)
-	for dir in $(SUBDIRS); do $(MAKE) -j 1 -C $$dir -f Makefile.omdev.mingw; done;
+	for dir in $(SUBDIRS); do $(MAKE) -C $$dir -f Makefile.omdev.mingw; done;
 
 clean:
 	for d in $(SUBDIRS); do \
