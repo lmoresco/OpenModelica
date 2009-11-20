@@ -76,10 +76,10 @@ vcparser:
 	cd $(FLAT_PARSE_HOME)/src; $(MAKE) -f Makefile vctarget
 
 parser:
-	$(MAKE) -C $(PARSE_HOME)/src
+	$(MAKE) -C $(PARSE_HOME)/src -f Makefile.omdev.mingw
 
 flat_parser:
-	$(MAKE) -C $(FLAT_PARSE_HOME)/src
+	$(MAKE) -C $(FLAT_PARSE_HOME)/src -f Makefile.omdev.mingw
 
 absyn_builder.a : parser flat_parser $(OBJS)
 	ar -sr $@ $(OBJS) $(PARSER_OBJS)
