@@ -117,7 +117,7 @@ test:
 	@(cd ../testsuite && $(MAKE) -f Makefile)
 
 
-clean:
+clean: .depend
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
@@ -131,7 +131,7 @@ clean:
 	-cd $(builddir_doc) && rm -f $(DOC_FILES)
 
 
-dclean:
+dclean: .depend
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
@@ -143,7 +143,7 @@ dclean:
 	-cd $(builddir_doc) && rm -f $(DOC_FILES)
 
 
-reallyclean:
+reallyclean: .depend
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
 	done
@@ -151,7 +151,7 @@ reallyclean:
 	-$(RM) -f $(SRCH)
 	-$(RM) -f $(PROG)$(EXEEXT)
 
-dreallyclean:
+dreallyclean: .depend
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
 	done
