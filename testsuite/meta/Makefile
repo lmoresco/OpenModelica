@@ -13,7 +13,7 @@ TESTFILES = MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos MatchCas
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= PartialFn9.mos PartialFn12.mos \
+FAILINGTESTFILES= PartialFn9.mos PartialFn12.mos\
 
 TEST = ./rtest -v
 # Remove executables on Linux (no extension)
