@@ -18,6 +18,7 @@ DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
 Enum8.mos \
 EqualityEquations.mos \
+ExtendsBasic.mos \
 ExternalLibraries.mos \
 ExtObj.mos \
 FiveForEquations.mos \
