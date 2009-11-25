@@ -31,6 +31,7 @@ FunctionIndirectRecursion.mos FunctionIndirectRecursion2.mos \
 HeatTank.mos HeatTankExpanded.mos \
 HideVariableForEquations.mos \
 HydrogenIodide.mos \
+Identity.mos \
 IdealDiode.mos Identifier.mos \
 IfEquation.mos IfEquation2.mos \
 IfStatement.mos IfStatementIllegal.mos \

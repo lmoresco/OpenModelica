@@ -1,0 +1,22 @@
+// name:     Identity Matrix
+// keywords: identity, matrix
+// status:   correct
+// 
+//  Generate code for identity matrix and type conversion
+//
+loadFile("Identity.mo");
+simulate(Identity);
+val(x[1,1],0.0);
+val(x[1,2],0.0);
+val(x[3,3],0.0);
+system("rm -rf Identity.exe Identity_* Identity.cpp Identity.makefile Identity.log Identity.libs output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Identity_res.plt"
+// end SimulationResult;
+// 1.0
+// 0.0
+// 1.0
+// 0
+// endResult
