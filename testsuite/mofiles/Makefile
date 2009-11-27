@@ -128,7 +128,8 @@ AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
 Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum6.mo Enum8.mo Enum9.mo \
 ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
-Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo 
+Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
+Cross.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

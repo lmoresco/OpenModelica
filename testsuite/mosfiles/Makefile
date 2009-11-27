@@ -10,6 +10,7 @@ blockssources.mos blockssystems.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 ComplexNumbers.mos \
 ConstructFunc.mos \
+Cross.mos \
 CyclicPerm.mos \
 DAEexample.mos DAEexample2.mos \
 DefaultComponentName.mos \

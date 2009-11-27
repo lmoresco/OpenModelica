@@ -1,0 +1,42 @@
+// name:     Cross
+// keywords: vector
+// status:   correct
+//
+// 
+loadFile("Cross.mo");
+simulate(Cross, startTime=0.0, stopTime=3.0, numberOfIntervals=5, tolerance=1e-5);
+val(z[1],0.0);
+val(z[2],0.0);
+val(z[3],0.0);
+val(z[1],2.0);
+val(z[2],2.0);
+val(z[3],2.0);
+
+val(zi[1],0.0);
+val(zi[2],0.0);
+val(zi[3],0.0);
+val(zi[1],2.0);
+val(zi[2],2.0);
+val(zi[3],2.0);
+
+system("rm -rf Cross_* Cross.exe Cross.cpp Cross.makefile Cross.libs Cross.log output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Cross_res.plt"
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// -4.0
+// 14.0
+// -22.0
+// 0.0
+// 0.0
+// 0.0
+// -4.0
+// 14.0
+// -22.0
+// 0
+// endResult
+
