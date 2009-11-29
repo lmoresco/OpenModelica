@@ -1,0 +1,13 @@
+0.0 // start value
+1.0 // stop value
+0.002 // step value
+1e-06 // tolerance
+"dassl" // method
+1 // n states
+0 // n alg vars
+1 //n parameters
+0 // n string-parameters
+0 // n string variables
+1.0 // x
+0.0
+1 // a

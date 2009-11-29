@@ -107,6 +107,20 @@ testSummary:
 mosh: omc
 	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
 
+susan: all
+	(cd Compiler/susan_codegen && $(MAKE) -f Makefile)
+
+sus:
+	(cd Compiler/susan_codegen && $(MAKE) -f Makefile)
+
+
+tpl_simcode: tpl_sc susan tpl_gen
+
+tpl_sc:
+	(cd Compiler/susan_codegen/SimCode && $(MAKE) -f Makefile)
+
+tpl_gen:
+	(cd Compiler/susan_codegen/SimCode/GenTest && $(MAKE) -f Makefile)
 
 clean:
 	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw clean)
