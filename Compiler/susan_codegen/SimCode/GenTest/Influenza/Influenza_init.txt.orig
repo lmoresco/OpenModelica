@@ -1,0 +1,82 @@
+0.0 // start value
+1.0 // stop value
+0.002 // step value
+1e-06 // tolerance
+"dassl" // method
+3 // n states
+55 // n alg vars
+11 //n parameters
+0 // n string-parameters
+0 // n string variables
+100.0 // Non_Infected_Popul.p
+50.0 // Infected_Popul.p
+0.0 // Sick_Popul.p
+0.0
+0.0
+0.0
+0.0 // der(Activation.out_1)
+10.0 // der(Immune_Popul.p)
+0.0 // Immune_Popul.in_2
+10.0 // Immune_Popul.p
+0.0 // Incubation.out_1
+0.0 // Activation.out_1
+0.0 // Perc_Infected.out_1
+0.0 // Contagious_Popul.out_1
+0.0 // Non_Contagious_Popul.out_1
+0.0 // Total_Popul.out_1
+0.0 // Temp3.out_1
+0.0 // Contacts_Wk.out_1
+0.0 // Temp1.out_1
+0.0 // Temp2.out_1
+0.0 // Infection_Rate.out_1
+0.0 // Introduction
+0.0 // Immune_Popul.in_1
+0.0 // Immune_Popul.out_1
+0.0 // Non_Infected_Popul.in_1
+0.0 // Non_Infected_Popul.in_2
+0.0 // Non_Infected_Popul.out_1
+0.0 // Infected_Popul.in_1
+0.0 // Infected_Popul.in_2
+0.0 // Infected_Popul.out_1
+0.0 // Sick_Popul.in_1
+0.0 // Sick_Popul.in_2
+0.0 // Sick_Popul.out_1
+0.0 // Incubation.in_1
+0.0 // Incubation.in_2
+0.0 // Cure_Rate.in_1
+0.0 // Cure_Rate.in_2
+0.0 // Cure_Rate.out_1
+0.0 // Activation.in_1
+0.0 // Activation.in_2
+0.0 // Perc_Infected.in_1
+0.0 // Perc_Infected.in_2
+0.0 // Time_to_Breakdown.out_1
+0.0 // Sickness_Duration.out_1
+0.0 // Contraction_Rate.out_1
+0.0 // Immune_Period.out_1
+0.0 // Contagious_Popul.in_1
+0.0 // Contagious_Popul.in_2
+0.0 // Non_Contagious_Popul.in_1
+0.0 // Non_Contagious_Popul.in_2
+0.0 // Total_Popul.in_1
+0.0 // Total_Popul.in_2
+0.0 // Temp3.in_1
+0.0 // Temp3.in_2
+0.0 // Contacts_Wk.in_1
+0.0 // Temp1.in_1
+0.0 // Temp1.in_2
+0.0 // Temp2.in_1
+0.0 // Temp2.in_2
+0.0 // Infection_Rate.in_1
+0.0 // Infection_Rate.in_2
+1.0 // Incubation.c
+1.0 // Cure_Rate.c
+1.0 // Activation.c
+1.0 // Perc_Infected.c
+1.0 // Time_to_Breakdown.c
+1.0 // Sickness_Duration.c
+1.0 // Contraction_Rate.c
+1.0 // Immune_Period.c
+0.1 // Contacts_Wk.c
+1.0 // Temp1.c
+1.0 // Temp2.c
