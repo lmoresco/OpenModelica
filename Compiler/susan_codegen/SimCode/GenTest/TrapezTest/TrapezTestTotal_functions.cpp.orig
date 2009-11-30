@@ -1,0 +1,332 @@
+#ifdef __cplusplus
+extern "C" {
+#endif
+/* header part */
+#define SimpleFun_tryFunction_rettype_1 targ1
+typedef struct SimpleFun_tryFunction_rettype_s
+{
+    modelica_real targ1; /* [] */
+} SimpleFun_tryFunction_rettype;
+
+DLLExport 
+SimpleFun_tryFunction_rettype _SimpleFun_tryFunction(modelica_real a);
+
+DLLExport 
+int in_SimpleFun_tryFunction(type_description * inArgs, type_description * outVar);
+#define SimpleFun_tryFunction_rettypeboxed_1 targ1
+typedef struct SimpleFun_tryFunction_rettypeboxed_s
+{
+  metamodelica_type targ1;
+} SimpleFun_tryFunction_rettypeboxed;
+
+DLLExport 
+SimpleFun_tryFunction_rettypeboxed boxptr_SimpleFun_tryFunction(metamodelica_type a);
+#define SimpleFun_otherFun_rettype_1 targ1
+#define SimpleFun_otherFun_rettype_2 targ2
+typedef struct SimpleFun_otherFun_rettype_s
+{
+    modelica_real targ1; /* [] */
+    modelica_real targ2; /* [] */
+} SimpleFun_otherFun_rettype;
+
+DLLExport 
+SimpleFun_otherFun_rettype _SimpleFun_otherFun(modelica_real ia, modelica_real ib);
+
+DLLExport 
+int in_SimpleFun_otherFun(type_description * inArgs, type_description * outVar);
+#define SimpleFun_otherFun_rettypeboxed_1 targ1
+#define SimpleFun_otherFun_rettypeboxed_2 targ2
+typedef struct SimpleFun_otherFun_rettypeboxed_s
+{
+  metamodelica_type targ1;
+  metamodelica_type targ2;
+} SimpleFun_otherFun_rettypeboxed;
+
+DLLExport 
+SimpleFun_otherFun_rettypeboxed boxptr_SimpleFun_otherFun(metamodelica_type ia, metamodelica_type ib);
+struct Try_Rec {
+  modelica_real r1;
+  modelica_real r2;
+};
+const char* SimpleFun_Try__Rec__desc__fields[] = {"r1","r2"};
+struct record_description SimpleFun_Try__Rec__desc = {
+    "SimpleFun_Try__Rec", /* package_record__X */
+    "SimpleFun.Try_Rec", /* package.record_X */
+    SimpleFun_Try__Rec__desc__fields
+};
+#define SimpleFun_mk__rec_rettype_1 targ1
+typedef struct SimpleFun_mk__rec_rettype_s
+{
+    struct Try_Rec targ1; /* [] */
+} SimpleFun_mk__rec_rettype;
+
+DLLExport 
+SimpleFun_mk__rec_rettype _SimpleFun_mk__rec(modelica_real a, modelica_real b);
+
+DLLExport 
+int in_SimpleFun_mk__rec(type_description * inArgs, type_description * outVar);
+#define SimpleFun_mk__rec_rettypeboxed_1 targ1
+typedef struct SimpleFun_mk__rec_rettypeboxed_s
+{
+  metamodelica_type targ1;
+} SimpleFun_mk__rec_rettypeboxed;
+
+DLLExport 
+SimpleFun_mk__rec_rettypeboxed boxptr_SimpleFun_mk__rec(metamodelica_type a, metamodelica_type b);
+#define SimpleFun_recFun_rettype_1 targ1
+typedef struct SimpleFun_recFun_rettype_s
+{
+    modelica_real targ1; /* [] */
+} SimpleFun_recFun_rettype;
+
+DLLExport 
+SimpleFun_recFun_rettype _SimpleFun_recFun(struct Try_Rec tr);
+
+DLLExport 
+int in_SimpleFun_recFun(type_description * inArgs, type_description * outVar);
+#define SimpleFun_recFun_rettypeboxed_1 targ1
+typedef struct SimpleFun_recFun_rettypeboxed_s
+{
+  metamodelica_type targ1;
+} SimpleFun_recFun_rettypeboxed;
+
+DLLExport 
+SimpleFun_recFun_rettypeboxed boxptr_SimpleFun_recFun(metamodelica_type tr);
+/* End of header part */
+
+/* Body */
+SimpleFun_tryFunction_rettype _SimpleFun_tryFunction(modelica_real a)
+{
+  SimpleFun_tryFunction_rettype tmp1;
+  state tmp2;
+  modelica_real tmp1;
+  tmp2 = get_memory_state();
+  tmp1 = (10.0 * a);
+  
+  _return:
+  tmp1.targ1 = tmp1;
+  restore_memory_state(tmp2);
+  return tmp1;
+}
+
+int in_SimpleFun_tryFunction(type_description * inArgs, type_description * outVar)
+{
+  modelica_real a;
+  SimpleFun_tryFunction_rettype out;
+  if(read_modelica_real(&inArgs, &a)) return 1;
+  out = _SimpleFun_tryFunction(a);
+  write_modelica_real(outVar, &out.targ1);
+  return 0;
+}
+
+SimpleFun_tryFunction_rettypeboxed boxptr_SimpleFun_tryFunction(metamodelica_type a)
+{
+  SimpleFun_tryFunction_rettypeboxed tmp1;
+  state tmp5;
+  mmc__unbox__real_rettype tmp2;
+  SimpleFun_tryFunction_rettype tmp3;
+  mmc__mk__rcon_rettype tmp4;
+  tmp5 = get_memory_state();
+  tmp2 = mmc__unbox__real(a);
+  tmp3 = _SimpleFun_tryFunction(tmp2);
+  tmp4 = mmc__mk__rcon(tmp3.SimpleFun_tryFunction_rettype_1);
+  tmp1.SimpleFun_tryFunction_rettypeboxed_1 = tmp4;
+  restore_memory_state(tmp5);
+  return tmp1;
+}
+
+SimpleFun_otherFun_rettype _SimpleFun_otherFun(modelica_real ia, modelica_real ib)
+{
+  SimpleFun_otherFun_rettype tmp1;
+  state tmp2;
+  modelica_real yy;
+  modelica_real xx;
+  modelica_real s;
+  state tmp3;
+  modelica_integer tmp5;
+  modelica_integer tmp6;
+  modelica_integer tmp7;
+  state tmp8;
+  modelica_integer tmp10;
+  modelica_integer tmp11;
+  modelica_integer tmp12;
+  modelica_boolean tmp13;
+  tmp2 = get_memory_state();
+  s = ((modelica_real)0);
+  tmp5 = 1; tmp6 = (1); tmp7 = 10;
+  {
+  modelica_integer i;
+
+    for (i = tmp5; in_range_integer(i, tmp5, tmp7); i += tmp6) {
+      tmp3 = get_memory_state();
+      s = (s + (ia * ((modelica_real)(modelica_integer)i)));
+      restore_memory_state(tmp3);
+    }
+  } /* end for*/
+
+  yy = ((10.0 * ia) + (ib + s));
+  tmp10 = 1; tmp11 = (1); tmp12 = 10;
+  {
+  modelica_integer i;
+
+    for (i = tmp10; in_range_integer(i, tmp10, tmp12); i += tmp11) {
+      tmp8 = get_memory_state();
+      s = (s + (ia * ((modelica_real)(modelica_integer)i)));
+      restore_memory_state(tmp8);
+    }
+  } /* end for*/
+
+  tmp13 = (yy > 10.0);
+  if (tmp13) {
+  }
+  else {
+  }
+  s = ((tmp13)?(4.0 + s):(s - 2.0));
+  xx = (yy / s);
+  
+  _return:
+  tmp1.targ1 = yy;
+  tmp1.targ2 = xx;
+  restore_memory_state(tmp2);
+  return tmp1;
+}
+
+int in_SimpleFun_otherFun(type_description * inArgs, type_description * outVar)
+{
+  modelica_real ia;
+  modelica_real ib;
+  SimpleFun_otherFun_rettype out;
+  if(read_modelica_real(&inArgs, &ia)) return 1;
+  if(read_modelica_real(&inArgs, &ib)) return 1;
+  out = _SimpleFun_otherFun(ia, ib);
+  write_modelica_real(outVar, &out.targ1);
+  write_modelica_real(outVar, &out.targ2);
+  return 0;
+}
+
+SimpleFun_otherFun_rettypeboxed boxptr_SimpleFun_otherFun(metamodelica_type ia, metamodelica_type ib)
+{
+  SimpleFun_otherFun_rettypeboxed tmp1;
+  state tmp7;
+  mmc__unbox__real_rettype tmp2;
+  mmc__unbox__real_rettype tmp3;
+  SimpleFun_otherFun_rettype tmp4;
+  mmc__mk__rcon_rettype tmp5;
+  mmc__mk__rcon_rettype tmp6;
+  tmp7 = get_memory_state();
+  tmp2 = mmc__unbox__real(ia);
+  tmp3 = mmc__unbox__real(ib);
+  tmp4 = _SimpleFun_otherFun(tmp2, tmp3);
+  tmp5 = mmc__mk__rcon(tmp4.SimpleFun_otherFun_rettype_1);
+  tmp1.SimpleFun_otherFun_rettypeboxed_1 = tmp5;
+  tmp6 = mmc__mk__rcon(tmp4.SimpleFun_otherFun_rettype_2);
+  tmp1.SimpleFun_otherFun_rettypeboxed_2 = tmp6;
+  restore_memory_state(tmp7);
+  return tmp1;
+}
+
+SimpleFun_mk__rec_rettype _SimpleFun_mk__rec(modelica_real a, modelica_real b)
+{
+  SimpleFun_mk__rec_rettype tmp1;
+  state tmp2;
+  struct Try_Rec out;
+  tmp2 = get_memory_state();
+  out.r1 = (a + b);
+  out.r2 = b;
+  
+  _return:
+  tmp1.targ1 = out;
+  restore_memory_state(tmp2);
+  return tmp1;
+}
+
+int in_SimpleFun_mk__rec(type_description * inArgs, type_description * outVar)
+{
+  modelica_real a;
+  modelica_real b;
+  SimpleFun_mk__rec_rettype out;
+  if(read_modelica_real(&inArgs, &a)) return 1;
+  if(read_modelica_real(&inArgs, &b)) return 1;
+  out = _SimpleFun_mk__rec(a, b);
+  write_modelica_record(outVar, &SimpleFun_Try__Rec__desc, TYPE_DESC_REAL,&(out.targ1.r1),TYPE_DESC_REAL,&(out.targ1.r2),TYPE_DESC_NONE);
+  return 0;
+}
+
+SimpleFun_mk__rec_rettypeboxed boxptr_SimpleFun_mk__rec(metamodelica_type a, metamodelica_type b)
+{
+  SimpleFun_mk__rec_rettypeboxed tmp1;
+  state tmp8;
+  mmc__unbox__real_rettype tmp2;
+  mmc__unbox__real_rettype tmp3;
+  SimpleFun_mk__rec_rettype tmp4;
+  mmc__mk__rcon_rettype tmp5;
+  mmc__mk__rcon_rettype tmp6;
+  metamodelica_type tmp7;
+  tmp8 = get_memory_state();
+  tmp2 = mmc__unbox__real(a);
+  tmp3 = mmc__unbox__real(b);
+  tmp4 = _SimpleFun_mk__rec(tmp2, tmp3);
+  tmp5 = mmc__mk__rcon(tmp4.SimpleFun_mk__rec_rettype_1.r1);
+  tmp6 = mmc__mk__rcon(tmp4.SimpleFun_mk__rec_rettype_1.r2);
+  tmp7 = mmc_mk_box3(3,&SimpleFun_Try_Rec__desc,tmp5,tmp6);
+  tmp1.SimpleFun_mk__rec_rettypeboxed_1 = tmp7;
+  restore_memory_state(tmp8);
+  return tmp1;
+}
+
+SimpleFun_recFun_rettype _SimpleFun_recFun(struct Try_Rec tr)
+{
+  SimpleFun_recFun_rettype tmp1;
+  state tmp2;
+  modelica_real rr;
+  tmp2 = get_memory_state();
+  rr = tr.r1;
+  
+  _return:
+  tmp1.targ1 = rr;
+  restore_memory_state(tmp2);
+  return tmp1;
+}
+
+int in_SimpleFun_recFun(type_description * inArgs, type_description * outVar)
+{
+  struct Try_Rec tr;
+  SimpleFun_recFun_rettype out;
+  if(read_modelica_record(&inArgs,&(tr.r1),&(tr.r2))) return 1;
+  out = _SimpleFun_recFun(tr);
+  write_modelica_real(outVar, &out.targ1);
+  return 0;
+}
+
+SimpleFun_recFun_rettypeboxed boxptr_SimpleFun_recFun(metamodelica_type tr)
+{
+  SimpleFun_recFun_rettypeboxed tmp1;
+  state tmp9;
+  metamodelica_type tmp2;
+  metamodelica_type tmp3;
+  struct Try_Rec tmp4;
+  mmc__unbox__real_rettype tmp5;
+  mmc__unbox__real_rettype tmp6;
+  SimpleFun_recFun_rettype tmp7;
+  mmc__mk__rcon_rettype tmp8;
+  tmp9 = get_memory_state();
+  /* Start unboxing record Try_Rec */
+  tmp2 = (MMC_FETCH(MMC_OFFSET(MMC_UNTAGPTR(tr),2)));
+  tmp3 = (MMC_FETCH(MMC_OFFSET(MMC_UNTAGPTR(tr),3)));
+  tmp5 = mmc__unbox__real(tmp2);
+  tmp4.r1 = tmp5;
+  tmp6 = mmc__unbox__real(tmp3);
+  tmp4.r2 = tmp6;
+  /* Finished unboxing record Try_Rec */
+  tmp7 = _SimpleFun_recFun(tmp4);
+  tmp8 = mmc__mk__rcon(tmp7.SimpleFun_recFun_rettype_1);
+  tmp1.SimpleFun_recFun_rettypeboxed_1 = tmp8;
+  restore_memory_state(tmp9);
+  return tmp1;
+}
+
+/* End Body */
+
+#ifdef __cplusplus
+}
+#endif

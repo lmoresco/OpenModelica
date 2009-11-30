@@ -1,0 +1,30 @@
+0.0 // start value
+1.0 // stop value
+0.002 // step value
+1e-06 // tolerance
+"dassl" // method
+1 // n states
+7 // n alg vars
+11 //n parameters
+0 // n string-parameters
+0 // n string variables
+0.0 // $dummy
+0.0
+0.0 // trapezoid.y
+0.0 // trapezoid.T0
+0.0 // trapezoid.counter
+0.0 // trapezoid.counter2
+0.0 // y
+0.0 // x
+0.0 // r
+6 // trapezoid.amplitude
+0.1 // trapezoid.rising
+0.5 // trapezoid.width
+0.2 // trapezoid.falling
+3 // trapezoid.period
+10 // trapezoid.nperiod
+7 // trapezoid.offset
+4 // trapezoid.startTime
+0.1 // trapezoid.T_rising
+0.6 // trapezoid.T_width
+0.8 // trapezoid.T_falling
