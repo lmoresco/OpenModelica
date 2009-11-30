@@ -220,8 +220,8 @@ algorithm
     local Integer x,y;
     case (ADD(),x,y) then x + y;  /* Apply a binary arithmetic operator to constant integer arguments x+y*/
     case (SUB(),x,y) then x - y;  /* x-y */
-    case (MUL(),x,y) then x*y;    /* xy */
-    case (DIV(),x,y) then x/y;    /* x/y */
+    case (MUL(),x,y) then x * y;    /* xy */
+    case (DIV(),x,y) then intDiv(x, y);    /* x/y */
   end matchcontinue;
 end applyBinop;
 
@@ -259,13 +259,16 @@ algorithm
       RelOp relop;
     case (_,INT(integer = v)) then INTval(v);   /* integer constant */
     case (env,IDENT(ident = id)) "identifier id"
-      local Value v;
+      local
+        Value val;
       equation 
-        v = lookup(env, id); then v;
+        val = lookup(env, id);
+      then val;
     case (env,IDENT(ident = id)) "If id not declared, give an error message and fail through error undefined variable id"
       equation 
-        failure(v = lookup(env, id));
-        error("Undefined identifier", id); then INTval(0);
+        failure(_ = lookup(env, id));
+        error("Undefined identifier", id);
+      then INTval(0);
     case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) "expr1 binop expr2"
       equation 
         INTval(integer = v1) = eval(env, e1);

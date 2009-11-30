@@ -1,0 +1,25 @@
+// name:     08  Pam
+// keywords: MetaModelica
+// status:   correct
+//
+// OpenModelica Development Course at PELAB
+//
+setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
+loadFile("Pam.mo");
+loadFile("Main.mo");
+loadFile("Parse.mo");
+loadFile("Input.mo");
+i:=Main.main();
+print("
+");
+// Result:
+// [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 3628800
+// true
+// true
+// true
+// true
+// true
+// 0
+// 
+// endResult

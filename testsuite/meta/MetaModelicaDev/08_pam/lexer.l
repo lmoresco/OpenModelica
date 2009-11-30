@@ -1,12 +1,22 @@
 %{
 #include "parser.h"
+
+#ifdef RML
 #include "yacclib.h"
 #include "Pam.h"
+#else
+#include "meta_modelica.h"
+
+extern struct record_description Pam_INT__desc;
+
+#define Pam__INT(X1) (mmc_mk_box2(3,&Pam_INT__desc,(X1)))
+
+#endif
 
 typedef void *rml_t;
 
 int linenr = 1;
-int absyn_integer(char *s);
+long absyn_integer(char *s);
 int absyn_ident_or_keyword(char *s);
 int yywrap();
 
@@ -17,17 +27,17 @@ int yywrap();
 %x c_comment
 
 whitespace   [ \t]+
-newline   [\n]
+newline      [\n]
 letter       [a-zA-Z]
-ident           {letter}({letter}|{digit})*
+ident        {letter}({letter}|{digit})*
 digit        [0-9]
 digits       {digit}+
-icon       {digits}
+icon         {digits}
 /* Lex style lexical syntax of tokens in the PAM language */
 
 %%
 {whitespace} ;
-{newline} linenr++;
+{newline}    linenr++;
 {ident}      return absyn_ident_or_keyword(yytext); /* T_IDENT */
 {digits}     return absyn_integer(yytext);  /* T_INTCONST */
 
@@ -66,9 +76,9 @@ icon       {digits}
 /* Make an RML integer from a C string representation (decimal),
    box it for our abstract syntax, put in yylval and return constant token. */
  
-int absyn_integer(char *s)
+long absyn_integer(char *s)
 {
-  yylval=(int) Pam__INT(mk_icon(atoi(s)));
+  yylval=(long) Pam__INT(mmc_mk_icon(atoi(s)));
   return T_INTCONST;
 }
  
