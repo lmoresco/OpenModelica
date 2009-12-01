@@ -17,7 +17,7 @@ typedef void *rml_t;
 
 int linenr = 1;
 long absyn_integer(char *s);
-int absyn_ident_or_keyword(char *s);
+long absyn_ident_or_keyword(char *s);
 int yywrap();
 
 %}
@@ -103,7 +103,7 @@ static struct keyword_s
   {"write",     T_WRITE},
 };
 
-int absyn_ident_or_keyword(char *s)
+long absyn_ident_or_keyword(char *s)
 {
         int low = 0;
         int high = (sizeof kw) / sizeof(struct keyword_s) - 1;
@@ -120,7 +120,7 @@ int absyn_ident_or_keyword(char *s)
                 else
                         high = mid - 1;
         }
-        yylval = (int) mmc_mk_scon(s);
+        yylval = (long) mmc_mk_scon(s);
         return T_IDENT;
 }
 
