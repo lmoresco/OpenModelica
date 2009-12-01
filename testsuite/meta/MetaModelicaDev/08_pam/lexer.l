@@ -120,7 +120,7 @@ int absyn_ident_or_keyword(char *s)
                 else
                         high = mid - 1;
         }
-        yylval = (int) mk_scon(s);
+        yylval = (int) mmc_mk_scon(s);
         return T_IDENT;
 }
 
