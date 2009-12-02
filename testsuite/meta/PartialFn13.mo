@@ -23,12 +23,7 @@ function CallerFn
   input PartFn inPartFn;
   output Real outReal;
 algorithm
-  //outReal := if (inReal < 2.0) then inPartFn(inReal) else CallerFn(inReal - 1.0,inPartFn);
-  if inReal < 2.0 then
-    outReal := inPartFn(inReal);
-  else
-    outReal := CallerFn(inReal - 1.0, inPartFn);
-  end if;
+  outReal := if (inReal < 2.0) then inPartFn(inReal) else CallerFn(inReal - 1.0,inPartFn);
 end CallerFn;
 
 function TestFn
