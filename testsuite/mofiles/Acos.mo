@@ -14,5 +14,5 @@ end Acos;
 // fclass Acos
 // Real r;
 // equation
-//   r = acos(0.5);
+//   r = 1.0471975511966;
 // end Acos;

@@ -14,5 +14,5 @@ end Atan;
 // fclass Atan
 // Real r;
 // equation
-//   r = atan(0.5);
+//   r = 0.463647609000806;
 // end Atan;

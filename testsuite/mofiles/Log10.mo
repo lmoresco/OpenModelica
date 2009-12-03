@@ -14,5 +14,5 @@ end Log10;
 // fclass Log10
 // Real r;
 // equation
-//   r = log10(45.0);
+//   r = 1.65321251377534;
 // end Log10;

@@ -14,5 +14,5 @@ end Asin;
 // fclass Asin
 // Real r;
 // equation
-//   r = asin(0.5);
+//   r = 0.523598775598299;
 // end Asin;
