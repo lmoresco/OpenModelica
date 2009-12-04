@@ -127,8 +127,9 @@ FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
 InOutBool.mo InOutArray.mo InOutArray2.mo \
 AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
-Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum6.mo Enum8.mo Enum9.mo \
+Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum7.mo Enum8.mo Enum9.mo \
 ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
+ArraysInitIllegal.mo \
 Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
 Cross.mo
 
@@ -141,7 +142,7 @@ ArraySlice.mo \
 PointInst.mo \
 ColoredPointIllegalMod1.mo \
 ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
-ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
+RefinedSimpleCircuitValid2.mo \
 MicroCircuitValid.mo GenericMicroCircuit.mo \
 AppendElement.mo \
 ArrayFieldSlice.mo ArrayExponentiation.mo \
@@ -150,7 +151,6 @@ AppendElement.mo ArrayExponentiation.mo \
 DimConvert.mo ConstructFunc.mo \
 EqualityEquations.mo DimSize.mo ErrorNestedWhen.mo \
 DoubleWhenConflict.mo \
-Enum5.mo Enum7.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
