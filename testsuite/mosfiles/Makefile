@@ -64,6 +64,7 @@ simplify.mos \
 simulation.mos simulation2.mos simulation3.mos \
 StepAdvanced.mos \
 strings.mos StringTest.mos \
+SumSeriesWhile.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TanksConnectedPI.mos TankHybridPID.mos TankHybridPI.mos \
 tempInterpol2test.mos \

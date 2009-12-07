@@ -6,10 +6,11 @@
 // 
 model SumSeries
   parameter Real eps = 1.E-6;
-  Integer i;
+	Integer i;
   Real sum;
   Real delta;
 algorithm
+	sum := 0;
   i := 1;
   delta := exp(-0.01 * i);
   while delta >= eps loop
