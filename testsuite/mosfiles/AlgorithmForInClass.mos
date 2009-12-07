@@ -1,0 +1,44 @@
+// name:     AlgorithmForInClass
+// keywords: algorithm, for, class
+// status:   correct
+// 
+//  Tests for-statements in algorithm-sections in classes.
+//
+loadFile("AlgorithmForInClass.mo");
+simulate(AlgorithmForInClass,numberOfIntervals=2); // 2 intervals == 3 values
+echo(false); // turns of output 
+
+res:=readSimulationResult("AlgorithmForInClass_res.plt",{accum_sum[5], S[2],
+sum2[6], sum3[2,2]},4); 
+accum_sum := res[1];
+S := res[2];
+sum2 := res[3];
+sum3 := res[4];
+accum_sum := 1000*accum_sum;
+S := 1000*S;
+sum2 := 1000*sum2;
+sum3 := 1000*sum3;
+accum_sum := floor(accum_sum);
+S := floor(S);
+sum2 := floor(sum2);
+sum3 := floor(sum3);
+echo(true); // turns on output
+accum_sum/1000.0; // rounded value to 3 digits
+S/1000.0;
+sum2/1000.0;
+sum3/1000.0;
+readFile("output.log"); // Check that output log is emtpy
+system("rm -rf AlgorithmForInClass_.* AlgorithmForInClass.cpp AlgorithmForInClass.makefile AlgorithmForInClass.exe AlgorithmForInClass.libs output.log"); // remove tmp files.
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "AlgorithmForInClass_res.plt"
+// end SimulationResult;
+// true
+// {20.0,30.0,5045.0,10045.0}
+// {13.0,13.0,13.0,13.0}
+// {5.0,5.0,5.0,5.0}
+// {13.0,13.0,13.0,13.0}
+// ""
+// 0
+// endResult

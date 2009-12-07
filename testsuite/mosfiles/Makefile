@@ -2,6 +2,7 @@
 TESTFILES = \
 ABCDsystem.mos \
 AlgorithmCondAssign1.mos \
+AlgorithmForInClass.mos \
 AlgorithmSection.mos \
 algorithms.mos \
 Array1.mos ArrayAddSub1.mos ArrayDivError.mos \
