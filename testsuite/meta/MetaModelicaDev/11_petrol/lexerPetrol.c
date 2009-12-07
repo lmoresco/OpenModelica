@@ -4,10 +4,15 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include "yacclib.h"
 #include "parsutil.h"
 #include "parser.h"
 #include "lexerPetrol.h"
+
+#ifdef RML
+#include "yacclib.h"
+#else
+#include "meta_modelica.h"
+#endif
 
 int yylineno = 1;
 
@@ -175,7 +180,7 @@ static int lex_kwd_or_ident(char *s)
 	else
 	    high = mid - 1;
     }
-    yylval.voidp = mk_scon(s);
+    yylval.voidp = mmc_mk_scon(s);
     return T_IDENT;
 }
 
@@ -228,10 +233,10 @@ static int lex_number(int ch)
     s[i] = '\0';
     ungetc(ch, stdin);
     if( isreal ) {
-	yylval.voidp = mk_rcon(atof(s));
+	yylval.voidp = mmc_mk_rcon(atof(s));
 	return T_RCON;
     } else {
-	yylval.voidp = mk_icon(atoi(s));
+	yylval.voidp = mmc_mk_icon(atoi(s));
 	return T_ICON;
     }
 }

@@ -3,9 +3,15 @@
 %{
 #include <stdarg.h>
 #include <stdio.h>
-#include "yacclib.h"
 #include "parsutil.h"
+
+#ifdef RML
+#include "yacclib.h"
 #include "lexerPetrol.h"
+#else
+#include "meta_modelica.h"
+#endif
+
 static void yyerror(const char*);
 void* absyntree;
 %}
@@ -95,9 +101,9 @@ block		: const_part type_part var_part sub_part comp_stmt
 			{ $$ = pu_BLOCK($1, $2, $3, $4, $5); }
 
 body		: T_EXTERN
-			{ $$ = mk_none(); }
+			{ $$ = mmc_mk_none(); }
 		| block
-			{ $$ = mk_some($1); }
+			{ $$ = mmc_mk_some($1); }
 
 /*
  * CONSTANTS
@@ -106,12 +112,12 @@ body		: T_EXTERN
 const_part	: T_CONST const_decls
 			{ $$ = $2; }
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 const_decls	: const_decl
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| const_decl const_decls
-			{ $$ = mk_cons($1, $2); }
+			{ $$ = mmc_mk_cons($1, $2); }
 
 const_decl	: T_IDENT T_EQ constant T_SEMI
 			{ $$ = pu_CONBND($1, $3); }
@@ -130,12 +136,12 @@ constant	: T_ICON
 type_part	: T_TYPE type_decls
 			{ $$ = $2; }
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 type_decls	: type_decl
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| type_decl type_decls
-			{ $$ = mk_cons($1, $2); }
+			{ $$ = mmc_mk_cons($1, $2); }
 
 type_decl	: T_IDENT T_EQ type T_SEMI
 			{ $$ = pu_TYBND($1, $3); }
@@ -156,12 +162,12 @@ type		: T_IDENT
 var_part	: T_VAR var_decls
 			{ $$ = $2; }
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 var_decls	: var_decl
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| var_decl var_decls
-			{ $$ = mk_cons($1, $2); }
+			{ $$ = mmc_mk_cons($1, $2); }
 
 var_decl	: T_IDENT T_COLON type T_SEMI
 			{ $$ = pu_VARBND($1, $3); }
@@ -172,12 +178,12 @@ var_decl	: T_IDENT T_COLON type T_SEMI
 
 sub_part	: sub_decls
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 sub_decls	: sub_decl
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| sub_decl sub_decls
-			{ $$ = mk_cons($1, $2); }
+			{ $$ = mmc_mk_cons($1, $2); }
 
 sub_decl	: T_PROCEDURE T_IDENT opt_param_list T_SEMI body T_SEMI
 			{ $$ = pu_SubBnd_PROCBND($2, $3, $5); }
@@ -187,14 +193,14 @@ sub_decl	: T_PROCEDURE T_IDENT opt_param_list T_SEMI body T_SEMI
 opt_param_list	: T_LPAREN param_list T_RPAREN
 			{ $$ = $2; }
 		| T_LPAREN T_RPAREN
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 param_list	: param
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| param T_SEMI param_list
-			{ $$ = mk_cons($1, $3); }
+			{ $$ = mmc_mk_cons($1, $3); }
 
 param		: T_IDENT T_COLON type
 			{ $$ = pu_VARBND($1, $3); }
@@ -240,12 +246,12 @@ else_part	: T_ELSE stmt_list T_END
 
 opt_exp_list	: exp_list
 		| /*empty*/
-			{ $$ = mk_nil(); }
+			{ $$ = mmc_mk_nil(); }
 
 exp_list	: exp
-			{ $$ = mk_cons($1, mk_nil()); }
+			{ $$ = mmc_mk_cons($1, mmc_mk_nil()); }
 		| exp T_COMMA exp_list
-			{ $$ = mk_cons($1, $3); }
+			{ $$ = mmc_mk_cons($1, $3); }
 
 exp		: eq_exp
 
