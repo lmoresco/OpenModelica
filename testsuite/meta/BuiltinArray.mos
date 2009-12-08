@@ -5,7 +5,7 @@
 // Builtin function testing
 //
 
-b := setLinker("g++ -shared -export-dynamic ");
+b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("BuiltinArray.mo");
 
 BuiltinArray.test(3,2,1);
