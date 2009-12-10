@@ -11,7 +11,7 @@ ArrayAddition.mo ArraySubtraction.mo ArrayMultiplication.mo ArrayDivision.mo \
 ArrayDeclaration1.mo ArrayDeclaration2.mo ArrayDeclaration3.mo ArrayDeclaration4.mo ArrayDeclaration5.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
-ClassExtends1.mo \
+ClassExtends1.mo ClassExtends2.mo \
 Abs.mo Sign.mo Sqrt.mo \
 Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
 Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
