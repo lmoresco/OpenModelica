@@ -100,6 +100,10 @@ test:
 
 testmos:
 	(cd testsuite/mosfiles; time $(MAKE) -f Makefile)
+	
+testmeta:
+	(cd testsuite/meta; time $(MAKE) -f Makefile)
+	(cd testsuite/records; time $(MAKE) -f Makefile)
 
 testSummary:
 	(cd testsuite; time $(MAKE) -f Makefile | grep "==")
