@@ -10,9 +10,9 @@ class Y
 end Y;
 
 class ClassExtends1
- extends Y(X(x(start=5)));
+ extends Y;
 
- redeclare replaceable model extends X(x(start=4))
+ redeclare replaceable model extends X(x=y)
    parameter Integer y;
  end X;
  
@@ -23,7 +23,7 @@ end ClassExtends1;
 
 // Result:
 // fclass ClassExtends1
-// Integer component.x(start = 4);
+// Integer component.x = component.y;
 // parameter Integer component.y;
 // initial equation
 //   component.y = 5;
