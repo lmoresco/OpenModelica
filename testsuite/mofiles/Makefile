@@ -151,6 +151,9 @@ AppendElement.mo ArrayExponentiation.mo \
 DimConvert.mo ConstructFunc.mo \
 EqualityEquations.mo DimSize.mo ErrorNestedWhen.mo \
 DoubleWhenConflict.mo \
+OperatorSimple.mo OperatorComponents.mo \
+OperatorIllegal.mo \
+OperatorFunction1.mo OperatorFunction2.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
