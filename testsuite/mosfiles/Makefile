@@ -18,7 +18,6 @@ DefaultComponentName.mos \
 dertest.mos differentiate.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
-Enum8.mos \
 EqualityEquations.mos \
 ExtendsBasic.mos \
 ExternalLibraries.mos \
@@ -89,7 +88,7 @@ AppendElement.mos ArrayExponentiation.mos \
 DimConvert.mos \
 VectorizeOneReturnValue.mos EqualityEquationsCorrect.mos \
 WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
-ActivateWhenEquation.mos AlgorithmCondAssign2.mos
+ActivateWhenEquation.mos AlgorithmCondAssign2.mos Enum8.mos 
 
 TEST = ./rtest -v
 
