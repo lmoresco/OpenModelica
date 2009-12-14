@@ -1,6 +1,6 @@
 // name:     Enumeration7
 // keywords: enumeration enum
-// status:   incorrect
+// status:   correct
 // 
 // 
 // 
@@ -81,3 +81,34 @@ model X
    x = if frame_r_out == frame_r_in then 0 else 1;   
    f=enum.a;   
 end X;
+
+// fclass X
+// parameter enumeration(world, frame_a, frame_resolve) frame_r_in = ResolveInFrameA.frame_a;
+// parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
+// Real x;
+// enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
+// enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Size.medium;
+// enumeration(start, fixed, quantity, zero, one) enumtest.c(quantity = "Current", start = DigitalCurrent.one, fixed = true);
+// enumeration(zero, one) enumtest.choice(start = DigitalCurrentChoices.one, fixed = true);
+// Real enumtest.x[1];
+// Real enumtest.x[2];
+// Real enumtest.xx[1];
+// Real enumtest.xx[2];
+// Real enumtest.xxx[1];
+// Real enumtest.xxx[2];
+// equation
+//    enumtest.c = DigitalCurrent.one;
+//   enumtest.choice = if enumtest.c == DigitalCurrent.zero then DigitalCurrent.one else DigitalCurrent.one;
+//   x = Real(if frame_r_out == frame_r_in then 0 else 1);
+//   f = enum.a;
+// algorithm
+//   for e in {1,2} loop
+//     enumtest.x[enumtest.e] := 0.0;
+//   end for;
+//   for e in {1,2} loop
+//     enumtest.xx[enumtest.e] := 0.0;
+//   end for;
+//   for e in {1,2} loop
+//     enumtest.xxx[enumtest.e] := 0.0;
+//   end for;
+// end X;
