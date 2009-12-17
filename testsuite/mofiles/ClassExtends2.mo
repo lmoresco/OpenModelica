@@ -1,4 +1,4 @@
-// name:     ClassExtends1
+// name:     ClassExtends2
 // keywords: class,extends
 // status:   correct
 // 
