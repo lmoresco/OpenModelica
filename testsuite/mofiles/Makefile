@@ -9,6 +9,7 @@ ArrayRemoveIndex1.mo ArrayOperators.mo \
 ArrayCurlyBrackets.mo ArrayBrackets.mo ArrayRange.mo ArrayAccess.mo \
 ArrayAddition.mo ArraySubtraction.mo ArrayMultiplication.mo ArrayDivision.mo \
 ArrayDeclaration1.mo ArrayDeclaration2.mo ArrayDeclaration3.mo ArrayDeclaration4.mo ArrayDeclaration5.mo \
+ArrayExtendsUnknown.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
 ClassExtends1.mo ClassExtends2.mo ClassExtends3.mo \
