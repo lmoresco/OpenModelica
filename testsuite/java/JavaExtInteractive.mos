@@ -38,8 +38,7 @@ a:=JavaTest.RunInteractiveTestsuite();
 // JavaTest.someToNone            [OK]
 // JavaTest.tupleIdent            [OK]
 // JavaTest.ApplyIntOp            [failed]
-// Expression JavaTest.ApplyIntOp(JavaTest.JavaIntegerToInteger,1) returned an error: \"Error: Class inFunc (its type)  not found in scope JavaTest.ApplyIntOp.
-// \"
+// Expression JavaTest.ApplyIntOp(JavaTest.JavaIntegerToInteger,1)-> Failed to cast NULL to org.openmodelica.ModelicaInteger
 // JavaTest.anyToString           [OK]
 // JavaTest.anyToString           [OK]
 // JavaTest.uniontypeIdent        [OK]

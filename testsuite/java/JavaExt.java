@@ -334,7 +334,7 @@ public static ModelicaString RunInteractiveTestsuite() throws Exception {
     new ModelicaTuple(new ModelicaInteger[]{new ModelicaInteger(1), new ModelicaInteger(2)}));
   
   res += TestFunction(
-    "JavaTest.ApplyIntOp", ModelicaArray.class,
+    "JavaTest.ApplyIntOp", ModelicaInteger.class,
     new ModelicaInteger(2),
     new org.openmodelica.JavaExtTest.JavaTest.JavaIntegerToInteger(proxy).getReference(),
     new ModelicaInteger(1));
