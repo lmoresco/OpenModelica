@@ -46,6 +46,6 @@ end B;
 // fclass B
 // constant Integer X = 1;
 // constant Integer Y = 1;
-// Integer b = B.usePart(floor(time));
+// Integer b = B.usePart(integer(time));
 // end B;
 // endResult
