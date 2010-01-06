@@ -6,7 +6,7 @@
 // 
 
 class Constant5
-  Real x[floor(2.5)];
+  Real x[integer(2.5)];
 end Constant5;
 
 // fclass Constant5

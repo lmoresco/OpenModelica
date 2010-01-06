@@ -39,7 +39,7 @@ package B
   algorithm
     b := a;
   end part2;
-  Integer b = usePart(floor(time));
+  Integer b = usePart(integer(time));
 end B;
 
 // Result:
