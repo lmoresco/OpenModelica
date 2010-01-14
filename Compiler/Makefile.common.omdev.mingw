@@ -82,6 +82,7 @@ SRCMO= Absyn.mo \
 	Static.mo \
 	SimCode.mo \
 	SimCodeC.mo \
+	SimCodeCSharp.mo \
 	SimCodegen.mo \
 	Types.mo \
 	TaskGraph.mo \
