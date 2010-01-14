@@ -133,7 +133,7 @@ Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum7.mo Enum8.mo Enum9.mo
 ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
 ArraysInitIllegal.mo \
 Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
-Cross.mo TestGravityAcceleration.mo
+Cross.mo TestGravityAcceleration.mo VectorizeExtendedType.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
