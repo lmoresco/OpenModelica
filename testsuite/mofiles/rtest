@@ -272,7 +272,7 @@ sub dofile
 	return 0;
     }
 
-    printf(" %s %-31s... ",
+    printf(" %s %-41s... ",
 	   $info{'status'} eq 'correct'?'+':'-', $info{'name'});
     $total = $total + 1;
 
