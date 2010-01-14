@@ -106,7 +106,8 @@ To Compile OpenModelica
   After the compilation the results are in the path/to/trunk/build.
   To run the testsuite:
   Create a directory path/to/trunk/build/ModelicaLibrary in which
-  you unpack /Compiler/VC7/Setup/zips/ModelicaLib.tar.gz
+  you unpack ModelicaLib.tar.gz that you can get from Subversion directory:
+  https://openmodelica.ida.liu.se/svn/OpenModelica/installers/windows/VC7/Setup/zips/ModelicaLib.tar.gz
     $ export OPENMODELICAHOME=path/to/trunk/build
     $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
     $ make test
