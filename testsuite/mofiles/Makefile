@@ -127,7 +127,7 @@ LotkaVolterra.mo HydrogenIodide.mo \
 FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
 InOutBool.mo InOutArray.mo InOutArray2.mo \
 AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
-ForIterator1.mo \
+ForIterator1.mo ForIterator2.mo \
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
 Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum7.mo Enum8.mo Enum9.mo \
 ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
