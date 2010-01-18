@@ -4,14 +4,14 @@ import static org.openmodelica.corba.parser.OMCStringParser.parse;
 import org.openmodelica.JavaExtTest.JavaTest.myRecord;
 import org.openmodelica.JavaExtTest.JavaTest.myEmptyRecord;
 import org.openmodelica.JavaExtTest.JavaTest.APPLE;
-import org.openmodelica.JavaExtTest.JavaTest.Expression;
+import org.openmodelica.JavaExtTest.JavaTest.Expression_UT;
 import org.openmodelica.JavaExtTest.JavaTest.ICONST;
 import org.openmodelica.JavaExtTest.JavaTest.RCONST;
 import org.openmodelica.JavaExtTest.JavaTest.IFEXP;
 import org.openmodelica.JavaExtTest.JavaTest.ADD;
 import org.openmodelica.JavaExtTest.JavaTest.STRLEN;
 import org.openmodelica.JavaExtTest.JavaTest.SUB;
-import org.openmodelica.AbsynTest.Absyn.Program;
+import org.openmodelica.AbsynTest.Absyn.Program_UT;
 import java.io.*;
 
 public class JavaExt {
@@ -88,7 +88,7 @@ public static void RecordToRecord(ModelicaRecord rec, ModelicaRecord out) {
 
 public static ModelicaReal calcExpression(IModelicaRecord rec) throws Exception
 {
-  Expression exp = ModelicaAny.cast(rec, Expression.class);
+  Expression_UT exp = ModelicaAny.cast(rec, Expression_UT.class);
   if (exp instanceof ADD) {
     ADD add = (ADD) exp;
     return new ModelicaReal(calcExpression(add.get_lhs()).r + calcExpression(add.get_rhs()).r);
@@ -121,13 +121,13 @@ public static ModelicaReal calcExpression(IModelicaRecord rec) throws Exception
 
 public static IModelicaRecord expIdent(IModelicaRecord rec) throws Exception
 {
-  Expression exp = ModelicaAny.cast(rec, Expression.class);
+  Expression_UT exp = ModelicaAny.cast(rec, Expression_UT.class);
   return exp;
 }
 
 public static void expIdent(IModelicaRecord rec, IModelicaRecord out) throws Exception
 {
-  Expression exp = ModelicaAny.cast(rec, Expression.class);
+  Expression_UT exp = ModelicaAny.cast(rec, Expression_UT.class);
   out.setObject(exp);
 }
 
@@ -191,7 +191,7 @@ public static void GetValuesFromOMCThroughJava(ModelicaInteger in_i, ModelicaRea
 }
 
 public static ModelicaBoolean RunProgramParseTest(ModelicaString filename) throws Exception {
-  ModelicaObject o = parse(new File(filename.s),Program.class);
+  ModelicaObject o = parse(new File(filename.s),Program_UT.class);
   return new ModelicaBoolean(o.toString().startsWith("Absyn.PROGRAM(classes={"));
 }
 
@@ -360,7 +360,7 @@ public static ModelicaString RunInteractiveTestsuite() throws Exception {
     new APPLE(),
     new APPLE());
 
-  Expression exp = parse("record JavaTest.ADD\n" +
+  Expression_UT exp = parse("record JavaTest.ADD\n" +
 "  lhs = record JavaTest.ICONST\n" +
 "  value = 2\n" +
 "end JavaTest.ICONST;,\n" +
@@ -372,7 +372,7 @@ public static ModelicaString RunInteractiveTestsuite() throws Exception {
 "  value = 1\n" +
 "end JavaTest.ICONST;\n" +
 "end JavaTest.SUB;\n" +
-"end JavaTest.ADD;\n", Expression.class);
+"end JavaTest.ADD;\n", Expression_UT.class);
 
   res += TestFunction(
     "JavaTest.calcExpressionDummy", ModelicaInteger.class,

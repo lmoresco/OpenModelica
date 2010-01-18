@@ -39,7 +39,7 @@ JavaExtDefs.jar: JavaExt.mo $(OMC) $(RUNTIME)
 	"$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.JavaExtTest "." $<
 AbsynTest.jar: ../../Compiler/Absyn.mo $(OMC) $(RUNTIME)
 	"$(JAVA)" -classpath "$(RUNTIME)$(SEP)$(ANTLR)" org.openmodelica.corba.parser.DefinitionsCreator $@ org.openmodelica.AbsynTest "." $<
-JavaExt.class: JavaExt.java JavaExtDefs.jar $(OMC) $(RUNTIME)
+JavaExt.class: JavaExt.java JavaExtDefs.jar AbsynTest.jar $(OMC) $(RUNTIME)
 	"$(JAVAC)" -classpath "$(CLASSPATH)" $<
     
 clean:
