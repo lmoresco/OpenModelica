@@ -267,4 +267,10 @@ function extJavaTestAllMMCTypes
   external "Java" out='JavaExt.testAllMMCTypes'();
 end extJavaTestAllMMCTypes;
 
+function extJavaParseProgramFromFile
+  input String filename;
+  output Boolean out;
+  external "Java" out='JavaExt.RunProgramParseTest'(filename);
+end extJavaParseProgramFromFile;
+
 end JavaTest;

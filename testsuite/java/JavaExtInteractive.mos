@@ -38,7 +38,7 @@ a:=JavaTest.RunInteractiveTestsuite();
 // JavaTest.someToNone            [OK]
 // JavaTest.tupleIdent            [OK]
 // JavaTest.ApplyIntOp            [failed]
-// Expression JavaTest.ApplyIntOp(JavaTest.JavaIntegerToInteger,1)-> Failed to cast NULL to org.openmodelica.ModelicaInteger
+// Expression JavaTest.ApplyIntOp(JavaTest.JavaIntegerToInteger,1)
 // JavaTest.anyToString           [OK]
 // JavaTest.anyToString           [OK]
 // JavaTest.uniontypeIdent        [OK]

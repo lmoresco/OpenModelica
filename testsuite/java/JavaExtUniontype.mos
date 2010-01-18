@@ -268,3 +268,4 @@ res:=JavaTest.extJavaTestAllMMCTypes();
 //     some = SOME((1,2.5,0,"OpenModelica Test")),
 //     arr = {1,2.5,0,"OpenModelica Test"}
 // end dummy; 
+// endResult

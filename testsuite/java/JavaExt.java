@@ -11,6 +11,7 @@ import org.openmodelica.JavaExtTest.JavaTest.IFEXP;
 import org.openmodelica.JavaExtTest.JavaTest.ADD;
 import org.openmodelica.JavaExtTest.JavaTest.STRLEN;
 import org.openmodelica.JavaExtTest.JavaTest.SUB;
+import org.openmodelica.AbsynTest.Absyn.Program;
 import java.io.*;
 
 public class JavaExt {
@@ -187,6 +188,11 @@ public static void GetValuesFromOMCThroughJava(ModelicaInteger in_i, ModelicaRea
   out_s.s = "Java function got: " + out_s.s;
   
   System.setOut(out);
+}
+
+public static ModelicaBoolean RunProgramParseTest(ModelicaString filename) throws Exception {
+  ModelicaObject o = parse(new File(filename.s),Program.class);
+  return new ModelicaBoolean(o.toString().startsWith("Absyn.PROGRAM(classes={"));
 }
 
 private static String TestFunction(String fnname, Class<? extends ModelicaObject> c, ModelicaObject expected, ModelicaObject... args) {

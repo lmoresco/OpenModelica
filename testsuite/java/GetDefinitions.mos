@@ -53,6 +53,7 @@ getDefinitions(true);
 // (function expIdentExtJava (input Expression in1) (output Expression out) )
 // (function expIdentExtJava2 (input Expression in1) (output Expression out) )
 // (function extJavaTestAllMMCTypes (output Expression out) )
+// (function extJavaParseProgramFromFile (input String filename) (output Boolean out) )
 // )
 // 
 // )"
