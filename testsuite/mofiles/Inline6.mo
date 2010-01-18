@@ -21,10 +21,10 @@ equation
   y = simpleInline(x);
 end Inline6;
 
-// fclass Inline1
-// Integer x;
+// fclass Inline6
+// Integer x[1];
 // Integer y;
 // equation
-//   x = 2;
-//   Real(y) = Real(2 + (5 + x - x) * x) * Real((13 + x - (8 + x)) * (8 + x)) / 2.0;
-// end Inline1;
+//   x[1] = 2;
+//   y = simpleInline({x[1]});
+// end Inline6;
