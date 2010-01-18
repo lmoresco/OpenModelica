@@ -32,7 +32,7 @@ failingtest : check defs
 check:
 	@echo Checking if JRE is installed
 	@$(TEST) JavaTest.mos GetDefinitions.mos || (echo "Skipping Java testsuite. Install Java JDK or add the Java installation directory to the JAVA_HOME environment variable." && false)
-defs: check_javac JavaExtDefs.jar JavaExt.class AbsynTest.jar
+defs: check_javac JavaExtDefs.jar AbsynTest.jar JavaExt.class
 check_javac:
 	@"$(JAVAC)" -version 2>version.txt || (echo "No Java Compiler found." && echo "Install a Java Development Kit (JDK) and set JAVA_HOME to that location." && echo "Sun Java installs both JRE and JDK in Windows, but we MUST load the JDK so we can access javac." && false)
 JavaExtDefs.jar: JavaExt.mo $(OMC) $(RUNTIME)
