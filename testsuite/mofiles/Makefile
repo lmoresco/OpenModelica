@@ -156,6 +156,7 @@ DoubleWhenConflict.mo \
 OperatorSimple.mo OperatorComponents.mo \
 OperatorIllegal.mo \
 OperatorFunction1.mo OperatorFunction2.mo \
+Inline6.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
