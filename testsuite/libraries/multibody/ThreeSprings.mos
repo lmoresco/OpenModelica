@@ -1,0 +1,33 @@
+// name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
+// keywords: multibody, balancing, instantiation
+// status:   correct
+// 
+//  Modelica MultiBody 3.x: instantiation and balance checking of the ThreeSprings model
+//
+
+loadFile("_ElementaryTotal.mo");
+getErrorString();
+instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings);
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings);
+getErrorString();
+system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
+
+// Result:
+// true
+// ""
+// ""
+// "Error: Variable animation not found in scope Modelica.Mechanics.MultiBody
+// Error: Modification on outer element: body1.world
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
+// Error: Variable animation not found in scope Modelica.Mechanics.MultiBody
+// Error: Modification on outer element: body1.world
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
+// "
+// "Error: Variable animation not found in scope Modelica.Mechanics.MultiBody
+// Error: Modification on outer element: body1.world
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
+// "
+// ""
+// 0
+// endResult
