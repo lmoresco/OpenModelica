@@ -49,6 +49,7 @@ Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
 Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
 IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
+InheritanceSimple.mo InheritanceSeveral.mo InheritanceClassMod.mo \
 Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
 MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo \
 ModelAccess.mo \
