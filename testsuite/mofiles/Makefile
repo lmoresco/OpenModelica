@@ -36,8 +36,9 @@ ArrayExtend.mo SimpleTypeExtend.mo NestedClasses.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
-EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  Extends1.mo Extends2.mo Extends3.mo \
-Extends4.mo Expressions.mo Function1.mo FloatingPoint.mo FunctionCall.mo \
+EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  \
+Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo \
+Expressions.mo Function1.mo FloatingPoint.mo FunctionCall.mo \
 FlowDeclType.mo FlowDeclRecord.mo FlowDeclConnector.mo \
 DiscreteDeclType.mo DiscreteDeclRecord.mo DiscreteDeclConnector.mo \
 ParameterDeclType.mo ParameterDeclRecord.mo ParameterDeclConnector.mo \
