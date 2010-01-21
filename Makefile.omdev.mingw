@@ -105,6 +105,9 @@ testmeta:
 	(cd testsuite/meta; time $(MAKE) -f Makefile)
 	(cd testsuite/records; time $(MAKE) -f Makefile)
 
+testlibraries:
+	(cd testsuite/libraries; time $(MAKE) -f Makefile)
+
 testSummary:
 	(cd testsuite; time $(MAKE) -f Makefile | grep "==")
 
