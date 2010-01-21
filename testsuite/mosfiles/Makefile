@@ -49,6 +49,7 @@ LotkaVolterra.mos \
 Matrix.mos matrices.mos \
 MissV.mos \
 MyPointsInst1.mos MyPointsInst2.mos \
+ModelBalance1.mos ModelBalance2.mos ModelBalance3.mos \
 OverloadingFunc.mos \
 Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \

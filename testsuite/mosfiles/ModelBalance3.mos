@@ -1,0 +1,18 @@
+// name: ModelBalance3
+// keywords: balance
+// status: correct
+//
+// Tests an unbalanced model with too many equations
+//
+
+loadFile("ModelBalance3.mo");
+simulate(ModelBalance3);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Simulation failed.
+// Error: Too many equations, overdetermined system. The model has 3 equation(s) and 2 variable(s)
+// "
+// end SimulationResult;
+// endResult

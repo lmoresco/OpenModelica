@@ -1,0 +1,18 @@
+// name: ModelBalance1
+// keywords: balance
+// status: correct
+//
+// Tests a balanced model
+//
+
+loadFile("ModelBalance1.mo");
+simulate(ModelBalance1);
+val(y,0.0);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "ModelBalance1_res.plt"
+// end SimulationResult;
+// 4.0
+// endResult
