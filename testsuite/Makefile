@@ -1,7 +1,9 @@
 .PHONY : all failingtest
 
 all : test
-test :
+test : fast
+	cd libraries/multibody; $(MAKE) -f Makefile test;
+fast:
 	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
 	cd mathcore-mofiles ; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
 	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
@@ -12,7 +14,6 @@ test :
 	cd ../../mosfiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
 	cd ../meta; $(MAKE) -f Makefile test; \
 	cd ../records; $(MAKE) -f Makefile test; \
-	cd ../libraries/multibody; $(MAKE) -f Makefile test; \
 	#cd ../java; $(MAKE) -f Makefile test;
 	
 failingtest:
