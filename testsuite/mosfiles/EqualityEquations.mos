@@ -5,14 +5,30 @@
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)
 // 
 loadFile("EqualityEquations.mo");
+instantiateModel(EqualityEquations);
+getErrorString(); 
 simulate(EqualityEquations,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
 system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
+
 // Result:
-// incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.incidence_row_exp TUPLE not impl. yet.true
+// true
+// "fclass EqualityEquations
+// Real x;
+// Real y;
+// Real z;
+// Real u;
+// Real v = 2.0;
+// equation
+//   u = v;
+//   (x,y,z) = (3.0,-1.0,2.0);
+//   (1.0 + x,3.0,z / y) = (3.0,-1.0,2.0);
+// end EqualityEquations;
+// "
+// ""
 // record SimulationResult
 //     resultFile = "Simulation failed.
-// Error: Too few equations, underdetermined system. The model has 2 equation(s) and 3 variable(s)
+// Error: Too many equations, overdetermined system. The model has 3 equation(s) and 0 variable(s)
 // "
 // end SimulationResult;
 // ""
