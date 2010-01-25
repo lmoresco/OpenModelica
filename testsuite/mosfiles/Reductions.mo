@@ -7,8 +7,7 @@
 // 
 model Reductions
 	Real x,y,z,w;
-	//Real erx, ery, erz, erw;
-	//Integer eix, eiy, eiz, eiw;
+	Real erx, ery, erz, erw;
 	parameter Integer n = 5;
 equation
 	// Normal reductions
@@ -16,18 +15,12 @@ equation
 	y = min(i^2 for i in -n:n);
 	z = max(i^2 for i in -n:n);
 	w = product(i for i in 1:n);
-/*
+
 	// Reduction of empty real vector
 	erx = sum(i for i in {});
 	ery = min(i for i in {});
 	erz = max(i for i in {});
 	erw = product(i for i in {});
-
-	// Reduction of empty integer vector
-	eix = sum(i for i in {});
-	eiy = min(i for i in {});
-	eiz = max(i for i in {});
-	eiw = product(i for i in {});*/
 end Reductions;
 
 // fclass Reductions
@@ -41,4 +34,8 @@ end Reductions;
 //   y = Real(<reduction>min(i ^ 2 for i in -n:n));
 //   z = Real(<reduction>max(i ^ 2 for i in -n:n));
 //   w = Real(<reduction>product(i for i in 1:n));
+//   erx = 0.0;
+//   ery = 1e+60;
+//   erz = -1e+60;
+//   erw = 1.0;
 // end Reductions;

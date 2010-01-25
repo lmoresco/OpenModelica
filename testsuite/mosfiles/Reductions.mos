@@ -9,24 +9,40 @@ loadFile("Reductions.mo");
 simulate(Reductions,numberOfIntervals=1); 
 echo(false); // turns of output 
 
-res:=readSimulationResult("Reductions_res.plt",{x,y,z,w},3); 
+res:=readSimulationResult("Reductions_res.plt",{x,y,z,w,erx,ery,erz,erw},3); 
 x:=res[1,1];
 y:=res[2,1];
 z:=res[3,1];
 w:=res[4,1];
+erx:=res[5,1];
+ery:=res[6,1];
+erz:=res[7,1];
+erw:=res[8,1];
 x:=1000*x;
 y:=1000*y;
 z:=1000*z;
 w:=1000*w;
+erx:=1000*erx;
+ery:=1000*ery;
+erz:=1000*erz;
+erw:=1000*erw;
 x:=floor(x);
 y:=floor(y);
 z:=floor(z);
 w:=floor(w);
+erx:=floor(erx);
+ery:=floor(ery);
+erz:=floor(erz);
+erw:=floor(erw);
 echo(true); // turns on output
 x/1000.0; // rounded value to 3 digits
 y/1000.0;
 z/1000.0;
 w/1000.0;
+erx/1000.0; 
+ery/1000.0;
+erz/1000.0;
+erw/1000.0;
 readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Reductions.cpp Reductions_* output.log"); // remove tmp files.
 // Result:
@@ -39,6 +55,10 @@ system("rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Red
 // 0.0
 // 25.0
 // 120.0
+// 0.0
+// 1e+60
+// -1e+60
+// 1.0
 // ""
 // 0
 // endResult
