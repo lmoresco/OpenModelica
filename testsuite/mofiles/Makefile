@@ -114,7 +114,7 @@ FlatTank.mo TankPI.mo \
 TankPID.mo TanksConnectedPI.mo \
 TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo \
 ArrayAddSub1.mo ArrayDivError.mo \
-ArrayMult.mo ArrayReduce.mo \
+ArrayMult.mo ArrayReduce.mo ArrayReduce2.mo \
 VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
 FiveForEquations.mo \
 HideVariableForEquations.mo IfEquation.mo \
