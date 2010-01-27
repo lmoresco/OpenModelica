@@ -20,7 +20,7 @@ DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
 EqualityEquations.mos \
 ExtendsBasic.mos \
-ExternalLibraries.mos \
+ExternalLibraries.mos ExternalFunctionResultOrder.mos\
 ExtObj.mos \
 FiveForEquations.mos \
 FlatTank.mos \
