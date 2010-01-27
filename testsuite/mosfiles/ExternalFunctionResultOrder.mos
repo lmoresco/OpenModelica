@@ -16,7 +16,8 @@ ExternalFunctionResultOrder.f1234();
 ExternalFunctionResultOrder.f2341();
 ExternalFunctionResultOrder.f1243();
 ExternalFunctionResultOrder.f4321();
-system("rm -rf ExternalFunctionResultOrder_*");
+// do not delete .dlls as this test will fail on windows.
+system("rm -rf ExternalFunctionResultOrder_*.log ExternalFunctionResultOrder_*.makefile ExternalFunctionResultOrder*.libs ExternalFunctionResultOrder_*.c");
 
 // Result:
 // true
