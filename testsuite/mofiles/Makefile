@@ -60,6 +60,7 @@ PublicAccess.mo ProtectedAccess.mo ProtectedAccess2.mo DoubleDeclaration.mo Comp
 modelica_1_1_Array9.mo modelica_1_1_Type10.mo modelica_1_1_Type9.mo Modification1.mo \
 Modification10.mo Modification2.mo Modification6.mo Modification7.mo Modification9.mo \
 Modification12.mo Modification13.mo \
+ModifierVariable.mo ModifierClass.mo ModifierExtends.mo ModifierRedeclare.mo \
 ModifyConstant3.mo MultipleDeclarations.mo MultipleDeclarations2.mo NoEvent1.mo NamedArguments.mo NumericFunctions.mo Operators.mo Overwriting1.mo Overwriting2.mo \
 Overwriting4.mo package-s-1.mo packages2.mo ParseError1.mo ParseError2.mo \
 Protected1.mo prtest.mo \
