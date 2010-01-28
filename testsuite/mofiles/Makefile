@@ -140,7 +140,7 @@ ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
 ArraysInitIllegal.mo \
 Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
 Cross.mo TestGravityAcceleration.mo VectorizeExtendedType.mo \
-OverrideFinalTest.mo InnerOuterSystem.mo ModifierProblem.mo
+OverrideFinalTest.mo InnerOuterSystem.mo ModifierProblem.mo DiagonalBlock.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
