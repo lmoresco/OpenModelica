@@ -2906,21 +2906,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // world.frame_b.r_0[3] = bar1.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper;
 // "
-// "[_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.5), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.5), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// "
+// ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper completed successfully.
 // 
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.5), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.5), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper has 1845 equation(s) and 1845 variable(s).
 // 1083 of these are trivial equation(s).

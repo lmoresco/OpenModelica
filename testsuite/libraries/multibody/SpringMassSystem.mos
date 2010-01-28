@@ -3342,18 +3342,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   p2.axis.f = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem;
 // "
-// "[_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.1), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.1), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.1), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (s), class or component s, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (start = 0.1), class or component start, not found in the built-in class Real
-// [_ElementaryTotal.mo:3032:13-3033:58:readonly] Error: Variable s: In modifier (fixed = true), class or component fixed, not found in the built-in class Real
-// "
+// ""
 // 0
 // endResult
