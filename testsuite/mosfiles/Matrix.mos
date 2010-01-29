@@ -29,7 +29,14 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 // Class tt has 18 equation(s) and 18 variable(s).
 // 6 of these are trivial equation(s).
 // "
-// "fclass tt
+// "function Trans
+// input Real x;
+// output Real y;
+// 
+// external "C";
+// end Trans;
+// 
+// fclass tt
 // Real x[1,1] = 1.0;
 // Real x[1,2] = 2.0;
 // Real x[1,3] = 3.0;
