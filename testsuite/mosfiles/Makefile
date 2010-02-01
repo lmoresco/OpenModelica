@@ -57,6 +57,7 @@ PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
 Reductions.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \
 Rename.mos \
+Return.mos \
 Riccati.mos \
 rotationalsystems.mos rotationalgears.mos \
 rotationalspringinertia.mos \
