@@ -13,7 +13,19 @@ system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 
 // Result:
 // true
-// "fclass EqualityEquations
+// "function f
+// input Real a;
+// input Real b;
+// output Real c;
+// output Real d;
+// output Real e;
+// algorithm
+//   c := a + b;
+//   d := a - b;
+//   e := a * b;
+// end f;
+// 
+// fclass EqualityEquations
 // Real x;
 // Real y;
 // Real z;

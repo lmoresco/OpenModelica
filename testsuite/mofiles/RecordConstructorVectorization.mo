@@ -55,5 +55,6 @@ end RecordConstructorVectorization;
 // String w.x = "Shipot";
 // Real w.y = 5.5;
 // equation
-//   w = Crap.Whatever("Nothing",4.7);
+//   w.y = 4.7;
+//   w.x = "Nothing";
 // end RecordConstructorVectorization;

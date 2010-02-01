@@ -18,5 +18,5 @@ end RecordConstructors;
 // fclass RecordConstructors
 // Integer tr.i;
 // equation
-//   tr = TestRecord(1);
+//   tr.i = 1;
 // end RecordConstructors;
