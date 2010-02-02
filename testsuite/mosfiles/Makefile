@@ -15,6 +15,7 @@ Cross.mos \
 CyclicPerm.mos \
 DAEexample.mos DAEexample2.mos \
 DefaultComponentName.mos \
+Delay.mos \
 dertest.mos differentiate.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \

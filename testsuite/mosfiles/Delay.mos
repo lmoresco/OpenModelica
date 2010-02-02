@@ -1,0 +1,29 @@
+// name:     Delay
+// keywords: builtin delay
+// status:   correct
+// 
+// Test builtin function delay
+// Expected values are sin(2.5)-1, cos(5), sin(4.99) and sin(3)
+//
+
+loadFile("Delay.mo");
+simulate(Delay, startTime=0, tolerance=1e-5, stopTime=10);
+val(x, 5);
+val(y, 5);
+val(z, 5);
+val(w, 5);
+readFile("output.log");
+system("rm -rf Delay_* Delay.exe Delay.cpp Delay.makefile Delay.libs Delay.log output.log");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Delay_res.plt"
+// end SimulationResult;
+// 1.59847214410396
+// 0.283662185463226
+// -0.961712903426793
+// 0.141120008059877
+// ""
+// 0
+// endResult
