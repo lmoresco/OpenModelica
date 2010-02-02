@@ -104,6 +104,13 @@ test:
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
+
+test_susan:
+	@echo
+	@echo Running tests with susan code generation...
+	@echo
+	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
+	@RTEST_OMCFLAGS="+d=tplmode,tpl2" $(TEST) $(TESTFILES)
 	
 failingtest :
 	@echo
