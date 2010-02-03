@@ -95,6 +95,9 @@ omc_frontend: c_runtime
 	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
+testfast:
+	(cd testsuite; time $(MAKE) -f Makefile fast)
+
 test:
 	(cd testsuite; time $(MAKE) -f Makefile)
 
