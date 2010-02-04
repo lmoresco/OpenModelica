@@ -28,14 +28,14 @@ S/1000.0;
 sum2/1000.0;
 sum3/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf AlgorithmForInClass_.* AlgorithmForInClass.cpp AlgorithmForInClass.makefile AlgorithmForInClass.exe AlgorithmForInClass.libs output.log"); // remove tmp files.
+system("rm -rf AlgorithmForInClass_* AlgorithmForInClass.cpp AlgorithmForInClass.makefile AlgorithmForInClass.exe AlgorithmForInClass.libs output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
 //     resultFile = "AlgorithmForInClass_res.plt"
 // end SimulationResult;
 // true
-// {20.0,30.0,5045.0,10045.0}
+// {20.0,30.0,5295.0,10300.0}
 // {13.0,13.0,13.0,13.0}
 // {5.0,5.0,5.0,5.0}
 // {13.0,13.0,13.0,13.0}
