@@ -62,6 +62,7 @@ Return.mos \
 Riccati.mos \
 rotationalsystems.mos rotationalgears.mos \
 rotationalspringinertia.mos \
+Sample1.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
 simplify.mos \
