@@ -19,6 +19,7 @@ type Axis = Real2[3];
 model VectorizeExtendedType
 	parameter Real2 r1[3] = {1,2,3};
 	Real3 r2[3] = {3,2,1};
+	parameter Real2 r3[2,2] = {{1,2},{3,4}};
 	parameter Axis n = {0, -1, 0};
 end VectorizeExtendedType;
 
@@ -29,6 +30,10 @@ end VectorizeExtendedType;
 // Real r2[1] = 3.0;
 // Real r2[2] = 2.0;
 // Real r2[3] = 1.0;
+// parameter Real r3[1,1] = 1;
+// parameter Real r3[1,2] = 2;
+// parameter Real r3[2,1] = 3;
+// parameter Real r3[2,2] = 4;
 // parameter Real n[1] = 0;
 // parameter Real n[2] = -1;
 // parameter Real n[3] = 0;
