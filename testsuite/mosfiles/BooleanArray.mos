@@ -1,0 +1,29 @@
+// name:     BooleanArray
+// keywords: boolean,array
+// status:   correct
+//
+// Boolean array handling, fill
+//
+// 
+
+loadFile("BooleanArray.mo");
+simulate(BooleanArray);
+val(resArr[1],0.5);
+val(resArr[2],0.5);
+val(resArr[3],0.5);
+val(resArr[4],0.5);
+val(resArr[5],0.5);
+system("rm -rf BooleanArray_* BooleanArray.exe BooleanArray.cpp BooleanArray.makefile BooleanArray.libs BooleanArray.log output.log");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "BooleanArray_res.plt"
+// end SimulationResult;
+// 1.0
+// 0.0
+// 9.0
+// 0.0
+// 25.0
+// 0
+// endResult
