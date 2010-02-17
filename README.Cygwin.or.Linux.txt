@@ -212,6 +212,32 @@ GENERAL NOTES:
   sure you have the "./" LAST in your path, after the normal binary
   directories which should be first.
 
+- On some Ubuntu 9.10 64 bit systems undefined references errors
+  for /usr/lib//liblpsolve55.a might be present.
+  More in particular, the error output is:
+  "
+  ...
+  /usr/lib//liblpsolve55.a(lp_MDO.o): In function `getMDO':
+  (.text+0x77e): undefined reference to `colamd_recommended'
+  /usr/lib//liblpsolve55.a(lp_MDO.o): In function `getMDO':
+  (.text+0x7c0): undefined reference to `colamd_set_defaults'
+  /usr/lib//liblpsolve55.a(lp_MDO.o): In function `getMDO':
+  (.text+0x814): undefined reference to `colamd'
+  /usr/lib//liblpsolve55.a(lp_MDO.o): In function `getMDO':
+  (.text+0x892): undefined reference to `symamd'
+  collect2: ld returned 1 exit status
+  ...
+  "
+  To solve this problem is necessary to add a '-lcolamd' flag when
+  calling g++ in Compiler/omc_release/Makefile.
+  After this change the g++ compilation line should look like:
+  "
+  ...
+  $(PROG): $(SRCO) subdirs $(top_builddir)/c_runtime/sendData/*.cpp
+	g++ -O3 -o $(PROG)$(EXEEXT) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lcolamd 
+  ...
+  "
+
 - On some Linux systems when running simulate(Model, ...) the
   executable for the Model enters an infinite loop. To fix this:
     $ cd /path/to/OpenModelica/c_runtime
@@ -221,4 +247,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2008-10-31
+Last updated 2010-02-17
