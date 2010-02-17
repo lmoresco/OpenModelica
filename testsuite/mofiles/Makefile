@@ -81,7 +81,7 @@ Type1.mo Type3.mo Type4.mo Type5.mo Type6.mo Type7.mo Type8.mo Type9.mo Type10.m
 TypeSimple.mo TypeEnumeration.mo TypeArray.mo TypeClass1.mo TypeClass2.mo \
 Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
-Vectorizable5.mo VectorDimension.mo \
+Vectorizable5.mo Vectorizable6.mo VectorDimension.mo \
 Xpowers.mo XPowers1.mo XPowers2.mo XPowers3.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
 FunctionEval4.mo  \
