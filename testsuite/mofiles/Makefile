@@ -162,13 +162,11 @@ ArrayFieldSlice.mo ArrayExponentiation.mo \
 HeatTank.mo ArrayFieldSlice.mo \
 AppendElement.mo ArrayExponentiation.mo \
 DimConvert.mo ConstructFunc.mo \
-EqualityEquations.mo DimSize.mo ErrorNestedWhen.mo \
-DoubleWhenConflict.mo \
-OperatorSimple.mo OperatorComponents.mo \
-OperatorIllegal.mo \
+EqualityEquations.mo DimSize.mo ErrorNestedWhen.mo DoubleWhenConflict.mo \
+OperatorSimple.mo OperatorComponents.mo OperatorIllegal.mo \
 OperatorFunction1.mo OperatorFunction2.mo \
-Inline6.mo \
-InheritanceRestrictions.mo \
+Inline6.mo InheritanceRestrictions.mo \
+ForceAndTorque \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
