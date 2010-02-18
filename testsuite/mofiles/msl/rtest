@@ -21,7 +21,7 @@ $collectcases = 0;
 $filearg = 0;
 $status = 0;
 $statusfilter = "all";
-$grep = "egrep";
+$grep = "grep";
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
 sub setbaseline
