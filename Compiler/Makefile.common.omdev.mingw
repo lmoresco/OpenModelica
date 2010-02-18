@@ -79,6 +79,7 @@ SRCMO= Absyn.mo \
 	PartFn.mo \
 	Patternm.mo \
 	Prefix.mo \
+	PrefixUtil.mo \
 	Static.mo \
 	SimCode.mo \
 	SimCodeC.mo \
@@ -102,7 +103,9 @@ SRCMO= Absyn.mo \
 	Refactor.mo \
 	DAEQuery.mo \
 	XMLDump.mo \
-	InstanceHierarchy.mo
+	InstanceHierarchy.mo \
+	InnerOuter.mo \
+	ConnectUtil.mo
 
 # These are externally defined MO modules
 ALLMO = $(SRCMO) DAEEXT.mo DynLoad.mo Print.mo RTOpts.mo System.mo Parser.mo \

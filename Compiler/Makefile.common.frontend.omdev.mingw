@@ -74,6 +74,7 @@ SRCMO= Absyn.mo \
 	PartFn.mo \
 	Patternm.mo \
 	Prefix.mo \
+	PrefixUtil.mo \
 	Static.mo \
 	Types.mo \
 	Util.mo \
@@ -85,7 +86,9 @@ SRCMO= Absyn.mo \
 	BackendVarTransform.mo \
 	Refactor.mo \
 	InstanceHierarchy.mo \
-	ExpandableConnectors.mo 
+	ExpandableConnectors.mo \
+	InnerOuter.mo \
+	ConnectUtil.mo
 
 # These are externally defined MO modules
 ALLMO = $(SRCMO) DAEEXT.mo DynLoad.mo Print.mo RTOpts.mo System.mo Parser.mo \
