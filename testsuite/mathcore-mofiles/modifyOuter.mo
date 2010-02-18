@@ -1,8 +1,9 @@
 // name:     modifyOuter
 // keywords: modification inner outer innerouter
-// status:   incorrect
+// status:   correct
 // 
 //  It is illegal to modify on pure "outer" elements.
+//  we only issue a warning now and ignore the modification.
 //
 
 connector Pin "Pin of an electrical component"
@@ -33,6 +34,21 @@ model inn
  mid io;
  equation 
 end inn;
-// Error, modification on outer element: io.la.ip
-// #|Execution failed!
-// Execution failed!
+
+// fclass inn
+// Real ip.i;
+// Real ip.v;
+// Real io.ip.i = 3.0;
+// Real io.ip.v;
+// Real io.x;
+// Real io.la.x;
+// Real io.y.i;
+// Real io.y.v;
+// equation
+//   der(io.la.x) = io.ip.v;
+//   io.x = der(io.x) + ip.v;
+//   io.y.v = 2.4;
+// ip.v = io.y.v;
+//   (-ip.i) + io.y.i = 0.0;
+//   ip.i = 0.0;
+// end inn;

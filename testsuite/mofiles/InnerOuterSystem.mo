@@ -28,11 +28,11 @@ model InnerOuterSystem
 end InnerOuterSystem;
 
 // fclass InnerOuterSystem
-// Boolean subSystem.enableMe = time <= 1.0;
+// Boolean isEnabled = time >= 0.5;
 // Boolean subSystem.isEnabled = isEnabled AND subSystem.enableMe;
+// Boolean subSystem.enableMe = time <= 1.0;
 // Real subSystem.conditionalIntegrator.x(start = 1.0);
 // Real subSystem.conditionalIntegrator2.x(start = 1.0);
-// Boolean isEnabled = time >= 0.5;
 // equation
 //   der(subSystem.conditionalIntegrator.x) = if subSystem.isEnabled then -subSystem.conditionalIntegrator.x else 0.0;
 //   der(subSystem.conditionalIntegrator2.x) = if subSystem.isEnabled then -subSystem.conditionalIntegrator2.x else 0.0;
