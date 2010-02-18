@@ -8,7 +8,7 @@ test:
 	@make -C 04_assignment -f Makefile.omc test | grep "^ + " >> result.txt
 	@make -C 05a_assigntwotype -f Makefile.omc test | grep "^ + " >> result.txt
 	@make -C 05b_modassigntwotype -f Makefile.omc test | grep "^ + " >> result.txt
-	@make -C 06_advanced -f Makefile.omc test | grep "^ + " >> result.txt
+	#@make -C 06_advanced -f Makefile.omc test | grep "^ + " >> result.txt
 	@make -C 08_pam -f Makefile.omc test | grep "^ + " >> result.txt
 	@cat result.txt
 	@echo == `grep -e ok -e warning result.txt | wc -l` out of `cat result.txt | wc -l` succeeded "[MetaModelica Course]"
