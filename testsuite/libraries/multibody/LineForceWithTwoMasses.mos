@@ -5764,54 +5764,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // jointUPS.bearing.s = damper1.flange_a.s;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses;
 // "
-// "Error: Variable bodyBox1.r[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.r[1] in scope <global scope>.
-// Error: Variable bodyBox1.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.body.sequence_start[1] in scope <global scope>.
-// Error: Variable bodyBox1.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.body.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable bodyBox2.r[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.r[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.sequence_start[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.Q[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.Q[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable revolute1.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute1.frame_a.R in scope <global scope>.
-// Error: Variable bodyBox1.r[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.r[1] in scope <global scope>.
-// Error: Variable bodyBox1.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.body.sequence_start[1] in scope <global scope>.
-// Error: Variable bodyBox1.body.Q[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.body.Q[1] in scope <global scope>.
-// Error: Variable bodyBox1.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox1.body.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_start[1] in scope <global scope>.
-// Error: Variable body1.Q[1] not found in scope <global scope>
-// Error: No constant value for variable body1.Q[1] in scope <global scope>.
-// Error: Variable body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable body2.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body2.sequence_start[1] in scope <global scope>.
-// Error: Variable body2.Q[1] not found in scope <global scope>
-// Error: No constant value for variable body2.Q[1] in scope <global scope>.
-// Error: Variable body2.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body2.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable revolute2.e[1] not found in scope <global scope>
-// Error: No constant value for variable revolute2.e[1] in scope <global scope>.
-// Error: Variable revolute2.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute2.frame_a.R in scope <global scope>.
-// Error: Variable bodyBox2.r[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.r[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.sequence_start[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.Q[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.Q[1] in scope <global scope>.
-// Error: Variable bodyBox2.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable bodyBox2.body.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

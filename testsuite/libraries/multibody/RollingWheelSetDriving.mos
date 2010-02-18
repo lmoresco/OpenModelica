@@ -4817,28 +4817,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   world.frame_b.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving;
 // "
-// "Error: Variable wheelSet.body2.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable wheelSet.body2.sequence_start[1] in scope <global scope>.
-// Error: Variable wheelSet.body2.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable wheelSet.body2.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable wheelSet.body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable wheelSet.body1.sequence_start[1] in scope <global scope>.
-// Error: Variable wheelSet.body1.Q[1] not found in scope <global scope>
-// Error: No constant value for variable wheelSet.body1.Q[1] in scope <global scope>.
-// Error: Variable wheelSet.body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable wheelSet.body1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable wheelSet.wheelSetJoint.revolute.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable wheelSet.wheelSetJoint.revolute.frame_a.R in scope <global scope>.
-// Error: Variable wheelSet.wheelSetJoint.revolute1.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable wheelSet.wheelSetJoint.revolute1.frame_a.R in scope <global scope>.
-// Error: Variable wheelSet.wheelSetJoint.revolute2.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable wheelSet.wheelSetJoint.revolute2.frame_a.R in scope <global scope>.
-// Error: Variable body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.Q[1] not found in scope <global scope>
-// Error: No constant value for variable body.Q[1] in scope <global scope>.
-// Error: Variable body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

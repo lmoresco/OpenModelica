@@ -7576,34 +7576,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // fixedTranslation2.frame_b.r_0[3] = pointMass3.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2;
 // "
-// "Error: Variable freeMotion.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable freeMotion.sequence_start[1] in scope <global scope>.
-// Error: Variable freeMotion.Q[1] not found in scope <global scope>
-// Error: No constant value for variable freeMotion.Q[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass1.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass2.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass2.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass2.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass2.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass3.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass3.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass3.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass3.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass4.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass4.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass4.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass4.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass5.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass5.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass5.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass5.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass6.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass6.sequence_start[1] in scope <global scope>.
-// Error: Variable referenceSystem.pointMass6.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable referenceSystem.pointMass6.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

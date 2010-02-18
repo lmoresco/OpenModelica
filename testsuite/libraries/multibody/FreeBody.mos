@@ -3213,10 +3213,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // spring1.frame_b.r_0[3] = body.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody;
 // "
-// "Error: Variable body.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

@@ -3644,16 +3644,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   p2.axis.f = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem;
 // "
-// "Error: Variable body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_start[1] in scope <global scope>.
-// Error: Variable body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable body2.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body2.sequence_start[1] in scope <global scope>.
-// Error: Variable body2.Q[1] not found in scope <global scope>
-// Error: No constant value for variable body2.Q[1] in scope <global scope>.
-// Error: Variable body2.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body2.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

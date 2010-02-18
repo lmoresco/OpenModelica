@@ -4127,41 +4127,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   world.frame_b.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque;
 // "
-// "Error: Variable body.r[1] not found in scope <global scope>
-// Error: No constant value for variable body.r[1] in scope <global scope>.
-// Error: Variable body.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable fixedRotation.R_rel.T[1,1] not found in scope <global scope>
-// Error: No constant value for variable fixedRotation.R_rel.T[1,1] in scope <global scope>.
-// Error: Variable fixedRotation.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable fixedRotation.frame_a.R in scope <global scope>.
-// Error: Variable revolute2.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute2.frame_a.R in scope <global scope>.
-// Error: Variable revolute1.e[1] not found in scope <global scope>
-// Error: No constant value for variable revolute1.e[1] in scope <global scope>.
-// Error: Variable revolute1.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute1.frame_a.R in scope <global scope>.
-// "
+// ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque completed successfully.
 // 
-// Error: Variable body.r[1] not found in scope <global scope>
-// Error: No constant value for variable body.r[1] in scope <global scope>.
-// Error: Variable body.body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.body.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable fixedRotation.R_rel.T[1,1] not found in scope <global scope>
-// Error: No constant value for variable fixedRotation.R_rel.T[1,1] in scope <global scope>.
-// Error: Variable fixedRotation.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable fixedRotation.frame_a.R in scope <global scope>.
-// Error: Variable revolute2.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute2.frame_a.R in scope <global scope>.
-// Error: Variable revolute1.e[1] not found in scope <global scope>
-// Error: No constant value for variable revolute1.e[1] in scope <global scope>.
-// Error: Variable revolute1.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute1.frame_a.R in scope <global scope>.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque has 2337 equation(s) and 2337 variable(s).
 // 1411 of these are trivial equation(s).

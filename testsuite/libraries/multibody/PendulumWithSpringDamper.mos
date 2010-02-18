@@ -3255,21 +3255,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // world.frame_b.r_0[3] = bar1.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper;
 // "
-// "Error: Variable body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_start[1] in scope <global scope>.
-// Error: Variable body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable revolute.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute.frame_a.R in scope <global scope>.
-// "
+// ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper completed successfully.
 // 
-// Error: Variable body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_start[1] in scope <global scope>.
-// Error: Variable body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_angleStates[1] in scope <global scope>.
-// Error: Variable revolute.frame_a.R not found in scope <global scope>
-// Error: No constant value for variable revolute.frame_a.R in scope <global scope>.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper has 1845 equation(s) and 1845 variable(s).
 // 1095 of these are trivial equation(s).

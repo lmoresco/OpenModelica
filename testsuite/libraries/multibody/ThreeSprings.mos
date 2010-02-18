@@ -3590,10 +3590,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // bar1.frame_a.r_0[3] = bar2.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings;
 // "
-// "Error: Variable body1.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_start[1] in scope <global scope>.
-// Error: Variable body1.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body1.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // 0
 // endResult

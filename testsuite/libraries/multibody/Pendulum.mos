@@ -2323,17 +2323,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // world.frame_b.r_0[3] = rev.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum;
 // "
-// "Error: Variable body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_angleStates[1] in scope <global scope>.
-// "
+// ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum completed successfully.
 // 
-// Error: Variable body.sequence_start[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_start[1] in scope <global scope>.
-// Error: Variable body.sequence_angleStates[1] not found in scope <global scope>
-// Error: No constant value for variable body.sequence_angleStates[1] in scope <global scope>.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum has 1380 equation(s) and 1380 variable(s).
 // 766 of these are trivial equation(s).
