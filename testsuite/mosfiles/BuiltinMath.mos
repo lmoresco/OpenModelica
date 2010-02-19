@@ -37,8 +37,8 @@ system("rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe Bu
 // {1.0,1.54308063481524}
 // {0.0,0.761594155955765}
 // {1.0,2.71828182845905}
-// {0.0,0.0}
-// {0.0,0.0}
+// {-inf,0.0}
+// {-inf,0.0}
 // ""
 // 0
 // endResult
