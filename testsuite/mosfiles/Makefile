@@ -10,6 +10,7 @@ ArrayEquation.mos ArrayMult.mos ArrayReduce.mos \
 blockssources.mos blockssystems.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
+BuiltinMath.mos \
 ComplexNumbers.mos \
 ConstructFunc.mos \
 Cross.mos \

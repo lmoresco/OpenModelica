@@ -1,0 +1,44 @@
+// name:     BuiltinMath 
+// keywords: Built-in Mathematical Functions
+// status:   correct
+//
+// Built-in Mathematical Functions
+//
+loadFile("BuiltinMath.mo");
+simulate(BuiltinMath, stopTime=1);
+{val(x[1],0.0),val(x[1],1.0)};
+{val(x[2],0.0),val(x[2],1.0)};
+{val(x[3],0.0),val(x[3],1.0)};
+{val(x[4],0.0),val(x[4],1.0)};
+{val(x[5],0.0),val(x[5],1.0)};
+{val(x[6],0.0),val(x[6],1.0)};
+{val(x[7],0.0),val(x[7],1.0)};
+{val(x[8],0.0),val(x[8],1.0)};
+{val(x[9],0.0),val(x[9],1.0)};
+{val(x[10],0.0),val(x[10],1.0)};
+{val(x[11],0.0),val(x[11],1.0)};
+{val(x[12],0.0),val(x[12],1.0)};
+{val(x[13],0.0),val(x[13],1.0)};
+readFile("output.log");
+system("rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe BuiltinMath.cpp BuiltinMath.makefile output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "BuiltinMath_res.plt"
+// end SimulationResult;
+// {0.0,0.841470984807897}
+// {1.0,0.54030230586814}
+// {0.0,1.5574077246549}
+// {0.0,1.5707963267949}
+// {1.5707963267949,0.0}
+// {0.0,0.785398163397448}
+// {0.0,0.463647609000806}
+// {0.0,1.1752011936438}
+// {1.0,1.54308063481524}
+// {0.0,0.761594155955765}
+// {1.0,2.71828182845905}
+// {0.0,0.0}
+// {0.0,0.0}
+// ""
+// 0
+// endResult
