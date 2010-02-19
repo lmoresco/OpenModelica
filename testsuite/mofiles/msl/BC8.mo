@@ -1594,7 +1594,7 @@ end BC8;
 //   der(PID1.I.y[1]) = PID1.I.k[1] * PID1.I.u[1];
 //   PID1.I.y[1] = PID1.I.outPort.signal[1];
 //   der(PID1.D.x[1]) = if noEvent(abs(PID1.D.p_k[1]) >= 1e-15) then (PID1.D.u[1] - PID1.D.x[1]) / PID1.D.p_T[1] else 0.0;
-//   PID1.D.y[1] = if noEvent(abs(PID1.D.p_k[1]) >= 1e-15) then PID1.D.p_k[1] * (PID1.D.u[1] - PID1.D.x[1]) / PID1.D.p_T[1] else 0.0;
+//   PID1.D.y[1] = if noEvent(abs(PID1.D.p_k[1]) >= 1e-15) then (PID1.D.p_k[1] * (PID1.D.u[1] - PID1.D.x[1])) / PID1.D.p_T[1] else 0.0;
 //   PID1.D.y[1] = PID1.D.outPort.signal[1];
 //   PID1.Gain.u[1] = PID1.Gain.inPort.signal[1];
 //   PID1.Gain.y[1] = PID1.Gain.outPort.signal[1];

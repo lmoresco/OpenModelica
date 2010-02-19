@@ -134,7 +134,7 @@ end TankHybridPI;
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
 //   when sample(0,piDiscrete.Ts) then
-//   piDiscrete.x = pre(piDiscrete.x) + piDiscrete.error * piDiscrete.Ts / piDiscrete.T;
+//   piDiscrete.x = pre(piDiscrete.x) + (piDiscrete.error * piDiscrete.Ts) / piDiscrete.T;
 //   piDiscrete.outCtr = piDiscrete.K * (piDiscrete.x + piDiscrete.error);
 //   end when;
 //   piDiscrete.error = piDiscrete.ref - piDiscrete.cIn.val;
@@ -143,7 +143,8 @@ end TankHybridPI;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   tank.tSensor.val = piDiscrete.cIn.val;
-//   tank.tActuator.act = piDiscrete.cOut.act;
-//   source.qOut.lflow = tank.qIn.lflow;
+// tank.tSensor.val = piDiscrete.cIn.val;
+// tank.tActuator.act = piDiscrete.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPI;
+

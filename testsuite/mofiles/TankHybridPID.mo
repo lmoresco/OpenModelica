@@ -140,7 +140,7 @@ end TankHybridPID;
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
 //   when sample(0,pidDiscrete.Ts) then
-//   pidDiscrete.x = pre(pidDiscrete.x) + pidDiscrete.error * pidDiscrete.Ts / pidDiscrete.T;
+//   pidDiscrete.x = pre(pidDiscrete.x) + (pidDiscrete.error * pidDiscrete.Ts) / pidDiscrete.T;
 //   pidDiscrete.y = pidDiscrete.T * (pidDiscrete.error - pre(pidDiscrete.error));
 //   pidDiscrete.outCtr = pidDiscrete.K * (pidDiscrete.x + (pidDiscrete.error + pidDiscrete.y));
 //   end when;
@@ -150,7 +150,7 @@ end TankHybridPID;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   tank.tSensor.val = pidDiscrete.cIn.val;
-//   tank.tActuator.act = pidDiscrete.cOut.act;
-//   source.qOut.lflow = tank.qIn.lflow;
+// tank.tSensor.val = pidDiscrete.cIn.val;
+// tank.tActuator.act = pidDiscrete.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPID;
