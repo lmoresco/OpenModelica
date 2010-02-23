@@ -1222,7 +1222,7 @@ end BC2;
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   der(derivative1.x[1]) = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then (derivative1.u[1] - derivative1.x[1]) / derivative1.p_T[1] else 0.0;
-//   derivative1.y[1] = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then (derivative1.p_k[1] * (derivative1.u[1] - derivative1.x[1])) / derivative1.p_T[1] else 0.0;
+//   derivative1.y[1] = if noEvent(abs(derivative1.p_k[1]) >= 1e-15) then derivative1.p_k[1] * (derivative1.u[1] - derivative1.x[1]) / derivative1.p_T[1] else 0.0;
 //   derivative1.y[1] = derivative1.outPort.signal[1];
 // assert(constant1.outPort.n == derivative1.inPort.n,"automatically generated from connect");
 // constant1.outPort.signal[1] = derivative1.inPort.signal[1];

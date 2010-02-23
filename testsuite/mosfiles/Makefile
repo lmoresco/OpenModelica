@@ -57,7 +57,6 @@ OverloadingFunc.mos \
 Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
-ParameterModel.mos \
 Reductions.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \
 Rename.mos \

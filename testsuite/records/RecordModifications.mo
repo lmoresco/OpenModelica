@@ -33,6 +33,6 @@ end RecordExtends;
 // parameter Real a.T_op = 293.15;
 // parameter Real a.B_r = a.B_rRef * (1.0 + a.alpha_Br * (a.T_op - a.T_ref));
 // parameter Real a.H_cB = a.H_cBRef * (1.0 + a.alpha_Br * (a.T_op - a.T_ref));
-// parameter Real a.mu_r = a.B_r / (a.H_cB * 3.0);
+// parameter Real a.mu_r = a.B_r * 1.0 / a.H_cB / 3.0;
 // end RecordExtends;
 // endResult

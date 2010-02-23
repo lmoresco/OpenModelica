@@ -140,7 +140,7 @@ end TankHybridPID;
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
 //   when sample(0,pidDiscrete.Ts) then
-//    pidDiscrete.x = pre(pidDiscrete.x) + (pidDiscrete.error * pidDiscrete.Ts) / pidDiscrete.T;
+//   pidDiscrete.x = pre(pidDiscrete.x) + pidDiscrete.error * pidDiscrete.Ts / pidDiscrete.T;
 //   pidDiscrete.y = pidDiscrete.T * (pidDiscrete.error - pre(pidDiscrete.error));
 //   pidDiscrete.outCtr = pidDiscrete.K * (pidDiscrete.x + (pidDiscrete.error + pidDiscrete.y));
 //   end when;
