@@ -23,16 +23,16 @@ equation
 end ArrayRemoveIndex1;
 
 // fclass ArrayRemoveIndex1
-// parameter Real A[1,1] = -1;
-// parameter Real A[1,2] = 0;
-// parameter Real A[2,1] = 0;
-// parameter Real A[2,2] = -1;
-// parameter Real B[1,1] = 1;
-// parameter Real B[2,1] = 1;
-// parameter Real Q[1,1] = 1;
-// parameter Real Q[1,2] = 0;
-// parameter Real Q[2,1] = 1;
-// parameter Real Q[2,2] = 0;
+// parameter Real A[1,1] = -1.0;
+// parameter Real A[1,2] = 0.0;
+// parameter Real A[2,1] = 0.0;
+// parameter Real A[2,2] = -1.0;
+// parameter Real B[1,1] = 1.0;
+// parameter Real B[2,1] = 1.0;
+// parameter Real Q[1,1] = 1.0;
+// parameter Real Q[1,2] = 0.0;
+// parameter Real Q[2,1] = 1.0;
+// parameter Real Q[2,2] = 0.0;
 // Real X[1,1];
 // Real X[1,2];
 // Real X[2,1];

@@ -31,7 +31,7 @@ model D
 end D;
 
 // fclass D
-// parameter Real c.b = 5;
+// parameter Real c.b = 5.0;
 // parameter Real c.d.b = c.b;
 // Real c.d.x;
 // equation

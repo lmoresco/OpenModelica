@@ -29,7 +29,7 @@ end FunctionEval3;
 // end f;
 // 
 // fclass FunctionEval3
-// parameter Real a = 5;
+// parameter Real a = 5.0;
 // Real x;
 // equation
 //   x = f(a);

@@ -19,10 +19,10 @@ equation
 end ArrayMatrixSimplifier;
 
 // fclass ArrayMatrixSimplifier
-// parameter Real a[1] = 1;
-// parameter Real a[2] = 1;
+// parameter Real a[1] = 1.0;
+// parameter Real a[2] = 1.0;
 // output Real x[1];
-// parameter Real u = 3;
+// parameter Real u = 3.0;
 // protected Real x1;
 // protected Real z[1,1];
 // protected Real z[1,2];

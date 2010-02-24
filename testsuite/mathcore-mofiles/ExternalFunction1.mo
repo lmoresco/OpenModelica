@@ -21,7 +21,7 @@ equation
 end ExternalFunction1;
 
 // fclass ExternalFunction1
-// constant Real x = 5;
+// constant Real x = 5.0;
 // Real y;
 // equation
 //   y = 15.0;

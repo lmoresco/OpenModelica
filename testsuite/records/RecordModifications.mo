@@ -26,7 +26,7 @@ end RecordExtends;
 
 // Result:
 // fclass RecordExtends
-// parameter Real a.H_cBRef = 900000;
+// parameter Real a.H_cBRef = 900000.0;
 // parameter Real a.B_rRef = 1.2;
 // parameter Real a.T_ref = 293.15;
 // parameter Real a.alpha_Br = -0.001;

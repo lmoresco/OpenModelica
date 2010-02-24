@@ -52,7 +52,7 @@ end FunctionEval7;
 // end test;
 // 
 // fclass FunctionEval7
-// parameter Real a = 5;
+// parameter Real a = 5.0;
 // parameter Real b = sqrt(a);
 // Real x1 = test(a);
 // Real x3 = test(test3(sin(x1)));

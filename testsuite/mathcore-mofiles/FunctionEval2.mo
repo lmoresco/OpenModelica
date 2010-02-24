@@ -29,7 +29,7 @@ end FunctionEval2;
 // end f;
 // 
 // fclass FunctionEval2
-// constant Real a = 5;
+// constant Real a = 5.0;
 // Real x;
 // equation
 //   x = 6.0;

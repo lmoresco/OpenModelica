@@ -71,12 +71,12 @@ end FunctionEval9;
 // end test;
 // 
 // fclass FunctionEval9
-// parameter Real a = 5;
-// parameter Real b[1] = 1;
-// parameter Real b[2] = 2;
-// parameter Real b[3] = 3;
+// parameter Real a = 5.0;
+// parameter Real b[1] = 1.0;
+// parameter Real b[2] = 2.0;
+// parameter Real b[3] = 3.0;
 // Real x1 = test(a);
-// parameter Real x2 = 4;
+// parameter Real x2 = 4.0;
 // Real y;
 // Real z;
 // equation
