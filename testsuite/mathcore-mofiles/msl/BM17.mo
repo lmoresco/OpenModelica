@@ -988,12 +988,12 @@ end BM17;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
-// parameter Real constant2.k[1] = 1 "Constant output values";
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
 // equation
 //   max1.y[1] = max(max1.u1[1],max1.u2[1]);
 //   max1.y[1] = max1.outPort.signal[1];

@@ -998,7 +998,7 @@ end BS14;
 // output Integer integerStep1.outPort.signal[1] "Integer output signals";
 // output Integer integerStep1.y[1];
 // parameter Integer integerStep1.offset[1] = 0 "offset of output signal";
-// parameter Real integerStep1.startTime[1](quantity = "Time", unit = "s") = 0 "output = offset for time < startTime";
+// parameter Real integerStep1.startTime[1](quantity = "Time", unit = "s") = 0.0 "output = offset for time < startTime";
 // parameter Integer integerStep1.height[1] = 1 "Heights of steps";
 // protected parameter Integer integerStep1.p_height[1] = integerStep1.height[1];
 // protected parameter Integer integerStep1.p_offset[1] = integerStep1.offset[1];

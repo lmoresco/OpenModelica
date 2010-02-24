@@ -107,7 +107,7 @@
 // Real R3.n.i(quantity = "ElectricCurrent", unit = "A");
 // Real R3.v(quantity = "ElectricPotential", unit = "V");
 // Real R3.i(quantity = "ElectricCurrent", unit = "A");
-// parameter Real R3.R(unit = "Ohm") = 300 "Resistance";
+// parameter Real R3.R(unit = "Ohm") = 300.0 "Resistance";
 // Real R3.Temp;
 // Real R3.RT;
 // equation

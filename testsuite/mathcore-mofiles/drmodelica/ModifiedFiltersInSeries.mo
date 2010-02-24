@@ -24,10 +24,10 @@ model ModifiedFiltersInSeries
 end ModifiedFiltersInSeries;
 
 // fclass ModifiedFiltersInSeries
-// parameter Real F12.F1.T = 6;
+// parameter Real F12.F1.T = 6.0;
 // Real F12.F1.u;
 // Real F12.F1.y(start=1.0);
-// parameter Real F12.F2.T = 11;
+// parameter Real F12.F2.T = 11.0;
 // Real F12.F2.u;
 // Real F12.F2.y(start=1.0);
 // equation

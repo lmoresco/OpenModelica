@@ -1077,7 +1077,7 @@ end BM25;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   tan1.y[1] = Modelica.Math.tan(tan1.u[1]);
 //   tan1.y[1] = tan1.outPort.signal[1];

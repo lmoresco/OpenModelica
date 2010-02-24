@@ -52,7 +52,7 @@ end A;
 // Real cp.dummy;
 // protected Real cp.red;
 // protected parameter Real cp.blue = 3.5;
-// protected parameter Real cp.green = 5;
+// protected parameter Real cp.green = 5.0;
 // parameter Real cp.x;
 // protected parameter Real cp.y;
 // protected parameter Real cp.z;

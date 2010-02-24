@@ -28,10 +28,10 @@ end PolyEvaluate2;
 
 // fclass PolyEvaluate2
 // Real p;
-// parameter Real polyeval.c[1] = 1;
-// parameter Real polyeval.c[2] = 2;
-// parameter Real polyeval.c[3] = 3;
-// parameter Real polyeval.c[4] = 4;
+// parameter Real polyeval.c[1] = 1.0;
+// parameter Real polyeval.c[2] = 2.0;
+// parameter Real polyeval.c[3] = 3.0;
+// parameter Real polyeval.c[4] = 4.0;
 // input Real polyeval.x = time;
 // output Real polyeval.y = p;
 // protected parameter Integer polyeval.n = 3;

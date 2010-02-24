@@ -953,7 +953,7 @@ end BM27;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer twoInputs1.n = 1 "number of input signals";
 // parameter Integer twoInputs1.inPort1.n = twoInputs1.n "Dimension of signal vector";
 // input Real twoInputs1.inPort1.signal[1] "Real input signals";
@@ -963,7 +963,7 @@ end BM27;
 // parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
-// parameter Real constant2.k[1] = 1 "Constant output values";
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

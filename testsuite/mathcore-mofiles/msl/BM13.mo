@@ -969,7 +969,7 @@ equation
 end BM13;
 
 // fclass BM13
-// parameter Real gain1.k[1] = 1 "Gain vector multiplied element-wise with input vector";
+// parameter Real gain1.k[1] = 1.0 "Gain vector multiplied element-wise with input vector";
 // protected Real gain1.u[1] "Input signals";
 // protected Real gain1.y[1] "Output signals";
 // parameter Integer gain1.inPort.n = 1 "Dimension of signal vector";
@@ -980,7 +980,7 @@ end BM13;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   gain1.u[1] = gain1.inPort.signal[1];
 //   gain1.y[1] = gain1.outPort.signal[1];

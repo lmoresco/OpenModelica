@@ -1,4 +1,4 @@
-// name:     AlgorithmCondAssign
+// name:     AlgorithmCondAssign1
 // keywords: for statement, if statement
 // status:   correct
 //
@@ -21,7 +21,7 @@ end CondAssign;
 // fclass CondAssign
 // Real x(start = 35.0);
 // Real y(start = 45.0);
-// parameter Real z = 0;
+// parameter Real z = 0.0;
 // algorithm
 //   if x > 5.0 then
 //     x := 400.0;
