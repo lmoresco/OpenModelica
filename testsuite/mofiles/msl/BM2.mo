@@ -1074,6 +1074,13 @@ equation
 end BM2;
 
 
+// function Modelica.Math.acos
+// input Real u;
+// output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.acos;
+// 
 // fclass BM2
 // parameter Integer acos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer acos1.inPort.n = acos1.n "Dimension of signal vector";
@@ -1086,7 +1093,7 @@ end BM2;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   acos1.y[1] = Modelica.Math.acos(acos1.u[1]);
 //   acos1.y[1] = acos1.outPort.signal[1];

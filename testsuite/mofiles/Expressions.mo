@@ -16,9 +16,9 @@ equation
 end Expressions;
 
 // fclass Expressions
-// constant Real r1 = 3;
-// constant Real r2 = -1;
-// constant Real r3 = 30;
+// constant Real r1 = 3.0;
+// constant Real r2 = -1.0;
+// constant Real r3 = 30.0;
 // constant Real r4 = 0.875;
 // Real r;
 // equation

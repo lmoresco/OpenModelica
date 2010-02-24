@@ -1277,6 +1277,13 @@ model BS4
 equation 
   connect(exponentials1.outPort,der1.inPort) annotation(Line(visible=true,points={{-32.34,26.26},{-14.4,24.13}}));
 end BS4;
+// function Modelica.Math.exp
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // fclass BS4
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
@@ -1289,12 +1296,12 @@ end BS4;
 // parameter Integer exponentials1.outPort.n = exponentials1.nout "Dimension of signal vector";
 // output Real exponentials1.outPort.signal[1] "Real output signals";
 // output Real exponentials1.y[1];
-// parameter Real exponentials1.outMax[1] = 1 "Height of output for infinite riseTime";
+// parameter Real exponentials1.outMax[1] = 1.0 "Height of output for infinite riseTime";
 // parameter Real exponentials1.riseTime[1](quantity = "Time", unit = "s", min = 0.0) = 0.5 "Rise time";
 // parameter Real exponentials1.riseTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = 0.1 "Rise time constant";
 // parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = exponentials1.riseTimeConst[1] "Fall time constant";
-// parameter Real exponentials1.offset[1] = 0 "Offsets of output signals";
-// parameter Real exponentials1.startTime[1](quantity = "Time", unit = "s") = 0 "Output = offset for time < startTime";
+// parameter Real exponentials1.offset[1] = 0.0 "Offsets of output signals";
+// parameter Real exponentials1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
 // protected parameter Real exponentials1.p_outMax[1] = exponentials1.outMax[1];
 // protected parameter Real exponentials1.p_riseTime[1](quantity = "Time", unit = "s") = exponentials1.riseTime[1];
 // protected parameter Real exponentials1.p_riseTimeConst[1](quantity = "Time", unit = "s") = exponentials1.riseTimeConst[1];

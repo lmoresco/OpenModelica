@@ -1071,6 +1071,13 @@ model BM5
 equation 
   connect(constant1.outPort,asin1.inPort) annotation(Line(visible=true,points={{-23.52,16.83},{1.72,15.92}}));
 end BM5;
+// function Modelica.Math.asin
+// input Real u;
+// output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // fclass BM5
 // parameter Integer asin1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer asin1.inPort.n = asin1.n "Dimension of signal vector";
@@ -1083,7 +1090,7 @@ end BM5;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   asin1.y[1] = Modelica.Math.asin(asin1.u[1]);
 //   asin1.y[1] = asin1.outPort.signal[1];

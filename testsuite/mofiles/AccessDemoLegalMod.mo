@@ -29,7 +29,7 @@ equation
 end B;
 
 // fclass B
-// parameter Real a = 2;
+// parameter Real a = 2.0;
 // Real x;
 // Real z;
 // parameter Real y;

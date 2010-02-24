@@ -52,7 +52,7 @@ end WatchDogSystem2;
 
 
 // fclass WatchDogSystem2
-// parameter Real turnOn.eventTime = 1;
+// parameter Real turnOn.eventTime = 1.0;
 // discrete Boolean turnOn.dOutput.signal;
 // parameter Real turnOff.eventTime = 0.25;
 // discrete Boolean turnOff.dOutput.signal;
@@ -77,7 +77,7 @@ end WatchDogSystem2;
 //   when change(watchdog.dDeadline.signal) AND time > watchdog.internalTime1 AND watchdog.internalTime1 > watchdog.internalTime2 then
 //   watchdog.dAlarm.signal = true;
 //   end when;
-//   deadlineEmitter.dOutput.signal = watchdog.dDeadline.signal;
-//   turnOff.dOutput.signal = watchdog.dOff.signal;
-//   turnOn.dOutput.signal = watchdog.dOn.signal;
+// deadlineEmitter.dOutput.signal = watchdog.dDeadline.signal;
+// turnOff.dOutput.signal = watchdog.dOff.signal;
+// turnOn.dOutput.signal = watchdog.dOn.signal;
 // end WatchDogSystem2;

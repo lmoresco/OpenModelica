@@ -1088,17 +1088,25 @@ equation
   connect(atan21.inPort2,constant2.outPort) annotation(Line(visible=true,points={{-16.22,16.53},{-49.37,-2.33}}));
   connect(constant1.outPort,atan21.inPort1) annotation(Line(visible=true,points={{-44.81,43.59},{-17.14,28.39}}));
 end BM7;
+// function Modelica.Math.atan2
+// input Real u1;
+// input Real u2;
+// output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.atan2;
+// 
 // fclass BM7
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
 // output Real constant2.outPort.signal[1] "Real output signals";
 // output Real constant2.y[1];
-// parameter Real constant2.k[1] = 1 "Constant output values";
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
 // parameter Integer atan21.n = 1 "Dimension of input and output vectors.";
 // parameter Integer atan21.inPort1.n = atan21.n "Dimension of signal vector";
 // input Real atan21.inPort1.signal[1] "Real input signals";

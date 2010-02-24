@@ -49,15 +49,32 @@ end FunctionBubblesort;
 //   end for;
 // end bubblesort;
 // 
+// function bubblesort
+// input Real[:] x;
+// output Real[size(x,1)] y;
+// protected Real t;
+// algorithm
+//   y := x;
+//   for i in 1:size(x,1) loop
+//     for j in 1:size(x,1) loop
+//       if y<asub>[i] > y<asub>[j] then
+//         t := y<asub>[i];
+//         y[i] := y<asub>[j];
+//         y[j] := t;
+//       end if;
+//     end for;
+//   end for;
+// end bubblesort;
+// 
 // fclass FunctionBubblesort
-// constant Real a[1] = 0;
-// constant Real a[2] = 9;
-// constant Real a[3] = 3;
-// constant Real a[4] = 5;
-// constant Real a[5] = 7;
-// constant Real a[6] = 6;
-// constant Real a[7] = 8;
-// constant Real a[8] = 0;
+// constant Real a[1] = 0.0;
+// constant Real a[2] = 9.0;
+// constant Real a[3] = 3.0;
+// constant Real a[4] = 5.0;
+// constant Real a[5] = 7.0;
+// constant Real a[6] = 6.0;
+// constant Real a[7] = 8.0;
+// constant Real a[8] = 0.0;
 // Real b[1];
 // Real b[2];
 // Real b[3];
@@ -76,3 +93,6 @@ end FunctionBubblesort;
 //   b[7] = 0.0;
 //   b[8] = 0.0;
 // end FunctionBubblesort;
+// #-- Ceval.cevalBuiltinSize failed: x
+// #-- Ceval.cevalBuiltinSize failed: x
+// 

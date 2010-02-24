@@ -1066,6 +1066,13 @@ model BM8
 equation 
   connect(constant1.outPort,cos1.inPort) annotation(Line(visible=true,points={{-25.96,23.22},{-6.8,28.39}}));
 end BM8;
+// function Modelica.Math.cos
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.cos;
+// 
 // fclass BM8
 // parameter Integer cos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cos1.inPort.n = cos1.n "Dimension of signal vector";
@@ -1078,7 +1085,7 @@ end BM8;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   cos1.y[1] = Modelica.Math.cos(cos1.u[1]);
 //   cos1.y[1] = cos1.outPort.signal[1];

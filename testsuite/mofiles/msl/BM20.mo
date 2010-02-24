@@ -988,7 +988,7 @@ end BM20;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   sign1.y[1] = sign(sign1.u[1]);
 //   sign1.y[1] = sign1.outPort.signal[1];

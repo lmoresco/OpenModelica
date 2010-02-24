@@ -92,6 +92,15 @@ end TanksConnectedPI;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass TanksConnectedPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
@@ -99,10 +108,10 @@ end TanksConnectedPI;
 // Real tank1.tActuator.act;
 // Real tank1.qIn.lflow(unit = "m3/s");
 // Real tank1.qOut.lflow(unit = "m3/s");
-// parameter Real tank1.area(unit = "m2") = 1;
+// parameter Real tank1.area(unit = "m2") = 1.0;
 // parameter Real tank1.flowGain(unit = "m2/s") = 0.05;
-// parameter Real tank1.minV = 0;
-// parameter Real tank1.maxV = 10;
+// parameter Real tank1.minV = 0.0;
+// parameter Real tank1.maxV = 10.0;
 // Real tank1.h(unit = "m", start = 0.0) "Tank level";
 // Real tank2.tSensor.val(unit = "m");
 // Real tank2.tActuator.act;
@@ -110,12 +119,12 @@ end TanksConnectedPI;
 // Real tank2.qOut.lflow(unit = "m3/s");
 // parameter Real tank2.area(unit = "m2") = 1.3;
 // parameter Real tank2.flowGain(unit = "m2/s") = 0.05;
-// parameter Real tank2.minV = 0;
-// parameter Real tank2.maxV = 10;
+// parameter Real tank2.minV = 0.0;
+// parameter Real tank2.maxV = 10.0;
 // Real tank2.h(unit = "m", start = 0.0) "Tank level";
 // parameter Real piContinuous1.Ts(unit = "s") = 0.1 "Time period between discrete samples";
-// parameter Real piContinuous1.K = 2 "Gain";
-// parameter Real piContinuous1.T(unit = "s") = 10 "Time constant";
+// parameter Real piContinuous1.K = 2.0 "Gain";
+// parameter Real piContinuous1.T(unit = "s") = 10.0 "Time constant";
 // Real piContinuous1.cIn.val(unit = "m");
 // Real piContinuous1.cOut.act;
 // parameter Real piContinuous1.ref = 0.25 "Reference level";
@@ -123,8 +132,8 @@ end TanksConnectedPI;
 // Real piContinuous1.outCtr "Output control signal";
 // Real piContinuous1.x "State variable of continuous PI controller";
 // parameter Real piContinuous2.Ts(unit = "s") = 0.1 "Time period between discrete samples";
-// parameter Real piContinuous2.K = 2 "Gain";
-// parameter Real piContinuous2.T(unit = "s") = 10 "Time constant";
+// parameter Real piContinuous2.K = 2.0 "Gain";
+// parameter Real piContinuous2.T(unit = "s") = 10.0 "Time constant";
 // Real piContinuous2.cIn.val(unit = "m");
 // Real piContinuous2.cOut.act;
 // parameter Real piContinuous2.ref = 0.4 "Reference level";
@@ -149,10 +158,10 @@ end TanksConnectedPI;
 //   piContinuous2.outCtr = piContinuous2.K * (piContinuous2.error + piContinuous2.x);
 //   piContinuous2.error = piContinuous2.ref - piContinuous2.cIn.val;
 //   piContinuous2.cOut.act = piContinuous2.outCtr;
-//   tank2.tSensor.val = piContinuous2.cIn.val;
-//   tank2.tActuator.act = piContinuous2.cOut.act;
-//   tank1.qOut.lflow = tank2.qIn.lflow;
-//   tank1.tSensor.val = piContinuous1.cIn.val;
-//   tank1.tActuator.act = piContinuous1.cOut.act;
-//   source.qOut.lflow = tank1.qIn.lflow;
+// tank2.tSensor.val = piContinuous2.cIn.val;
+// tank2.tActuator.act = piContinuous2.cOut.act;
+// tank1.qOut.lflow = tank2.qIn.lflow;
+// tank1.tSensor.val = piContinuous1.cIn.val;
+// tank1.tActuator.act = piContinuous1.cOut.act;
+// source.qOut.lflow = tank1.qIn.lflow;
 // end TanksConnectedPI;

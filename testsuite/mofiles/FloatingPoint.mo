@@ -31,7 +31,7 @@ end FloatingPoint;
 // constant Real r7 = 13.0;
 // constant Real r8 = 13.0;
 // constant Real r9 = 13.0;
-// constant Real r10 = 2;
+// constant Real r10 = 2.0;
 // Real x;
 // equation
 //   x = 2.0;

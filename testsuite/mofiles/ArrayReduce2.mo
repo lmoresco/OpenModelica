@@ -19,10 +19,10 @@ end ArrayReduce2;
 
 // fclass ArrayReduce2
 // parameter Integer n = 3;
-// parameter Real a[1].k = 1;
-// parameter Real a[2].k = 1;
-// parameter Real a[3].k = 1;
+// parameter Real a[1].k = 1.0;
+// parameter Real a[2].k = 1.0;
+// parameter Real a[3].k = 1.0;
 // Real y;
 // equation
-// 	y = a[1].k + (a[2].k + a[3].k);
+//   y = a[1].k + (a[2].k + a[3].k);
 // end ArrayReduce2;

@@ -24,10 +24,10 @@ end ArrayExtendsUnknown;
 
 // Result:
 // fclass ArrayExtendsUnknown
-// constant Real tableDensity[1,1] = 1;
-// constant Real tableDensity[1,2] = 2;
-// constant Real tableDensity[2,1] = 3;
-// constant Real tableDensity[2,2] = 4;
+// constant Real tableDensity[1,1] = 1.0;
+// constant Real tableDensity[1,2] = 2.0;
+// constant Real tableDensity[2,1] = 3.0;
+// constant Real tableDensity[2,2] = 4.0;
 // constant Real d1.tableDensity2[1,1] = 1.0;
 // constant Real d1.tableDensity2[1,2] = 2.0;
 // constant Real d1.tableDensity2[2,1] = 3.0;

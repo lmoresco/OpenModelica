@@ -1287,19 +1287,69 @@ model BS11
 equation 
   connect(timeTable1.outPort,der1.inPort) annotation(Line(visible=true,points={{-22.91,19.87},{-11.97,19.87}}));
 end BS11;
+// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// input Real[:, 2] table "Table for interpolation";
+// input Real offset "y-offset";
+// input Real startTime "time-offset";
+// input Real t "Actual time instant";
+// input Integer last "Last used lower grid index";
+// input Real TimeEps "Relative epsilon to check for identical time instants";
+// output Real a "Interpolation coefficients a (y=a*x + b)";
+// output Real b "Interpolation coefficients b (y=a*x + b)";
+// output Real nextEvent "Next event instant";
+// output Integer next "New lower grid index";
+// protected Integer columns = 2 "Column to be interpolated";
+// protected Integer ncol = 2 "Number of columns to be interpolated";
+// protected Integer nrow = size(table,1) "Number of table rows";
+// protected Integer next0;
+// protected Real tp;
+// protected Real dt;
+// algorithm
+//   next := last;
+//   nextEvent := t - TimeEps * abs(t);
+//   tp := (t + TimeEps * abs(t)) - startTime;
+//   if tp < 0.0 then
+//     nextEvent := startTime;
+//     a := 0.0;
+//     b := offset;
+//   else
+//     if nrow < 2 then
+//       a := 0.0;
+//       b := offset + table<asub>[1, columns];
+//     else
+//       while next < nrow AND tp >= table<asub>[next, 1] loop
+//         next := 1 + next;
+//       end while;
+//       if next < nrow then
+//         nextEvent := startTime + table<asub>[next, 1];
+//       end if;
+//       next0 := next - 1;
+//       dt := table<asub>[next, 1] - table<asub>[next0, 1];
+//       if dt <= TimeEps * abs(table<asub>[next, 1]) then
+//         a := 0.0;
+//         b := offset + table<asub>[next, columns];
+//       else
+//         a := (table<asub>[next, columns] - table<asub>[next0, columns]) / dt;
+//         b := (offset + table<asub>[next0, columns]) - a * table<asub>[next0, 1];
+//       end if;
+//     end if;
+//   end if;
+//   b := b - a * startTime;
+// end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
+// 
 // fclass BS11
 // parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
 // output Real timeTable1.outPort.signal[1] "Real output signals";
 // output Real timeTable1.y[1];
-// parameter Real timeTable1.table[1,1] = 0 "Table matrix (time = first column)";
-// parameter Real timeTable1.table[1,2] = 0 "Table matrix (time = first column)";
-// parameter Real timeTable1.table[2,1] = 1 "Table matrix (time = first column)";
-// parameter Real timeTable1.table[2,2] = 1 "Table matrix (time = first column)";
-// parameter Real timeTable1.table[3,1] = 2 "Table matrix (time = first column)";
-// parameter Real timeTable1.table[3,2] = 4 "Table matrix (time = first column)";
-// parameter Real timeTable1.offset[1] = 0 "Offset of output signal";
-// parameter Real timeTable1.startTime[1](quantity = "Time", unit = "s") = 0 "Output = offset for time < startTime";
+// parameter Real timeTable1.table[1,1] = 0.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[1,2] = 0.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[2,1] = 1.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[2,2] = 1.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[3,1] = 2.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[3,2] = 4.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.offset[1] = 0.0 "Offset of output signal";
+// parameter Real timeTable1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
 // protected Real timeTable1.a "Interpolation coefficients a of actual interval (y=a*x+b)";
 // protected Real timeTable1.b "Interpolation coefficients b of actual interval (y=a*x+b)";
 // protected Integer timeTable1.last(start = 1) "Last used lower grid index";

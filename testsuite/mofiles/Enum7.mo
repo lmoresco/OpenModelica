@@ -97,18 +97,18 @@ end X;
 // Real enumtest.xxx[1];
 // Real enumtest.xxx[2];
 // equation
-//    enumtest.c = DigitalCurrent.one;
+//   enumtest.c = DigitalCurrent.one;
 //   enumtest.choice = if enumtest.c == DigitalCurrent.zero then DigitalCurrent.one else DigitalCurrent.one;
 //   x = Real(if frame_r_out == frame_r_in then 0 else 1);
 //   f = enum.a;
 // algorithm
 //   for e in {1,2} loop
-//     enumtest.x[enumtest.e] := 0.0;
+//     enumtest.x[e] := 0.0;
 //   end for;
 //   for e in {1,2} loop
-//     enumtest.xx[enumtest.e] := 0.0;
+//     enumtest.xx[e] := 0.0;
 //   end for;
 //   for e in {1,2} loop
-//     enumtest.xxx[enumtest.e] := 0.0;
+//     enumtest.xxx[e] := 0.0;
 //   end for;
 // end X;

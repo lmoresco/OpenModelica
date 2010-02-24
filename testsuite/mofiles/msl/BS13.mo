@@ -977,5 +977,5 @@ end BS13;
 //   integerConstant1.outPort.signal[1] = integerConstant1.k[1];
 //   integerConstant1.y[1] = integerConstant1.outPort.signal[1];
 // assert(integerToReal1.inPort.n == integerConstant1.outPort.n,"automatically generated from connect");
-//   integerToReal1.inPort.signal[1] = integerConstant1.outPort.signal[1];
+// integerToReal1.inPort.signal[1] = integerConstant1.outPort.signal[1];
 // end BS13;

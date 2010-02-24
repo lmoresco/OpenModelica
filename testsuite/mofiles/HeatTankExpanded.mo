@@ -33,7 +33,7 @@ equation
 end HeatTankExpanded; 
 
 // fclass HeatTankExpanded
-// parameter Real Area = 1;
+// parameter Real Area = 1.0;
 // Real inlet.pressure;
 // Real inlet.volumeFlowRate;
 // Real inlet.temp;

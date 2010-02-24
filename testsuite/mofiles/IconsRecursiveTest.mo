@@ -17,5 +17,5 @@
   end BaseClasses;
 
 // fclass BaseClasses
-// parameter Real p = 1;
+// parameter Real p = 1.0;
 // end BaseClasses;

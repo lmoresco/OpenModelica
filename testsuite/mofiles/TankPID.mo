@@ -87,12 +87,21 @@ end TankPID;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass TankPID
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real pidContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";
-// parameter Real pidContinuous.K = 2 "Gain";
-// parameter Real pidContinuous.T(unit = "s") = 10 "Time constant";
+// parameter Real pidContinuous.K = 2.0 "Gain";
+// parameter Real pidContinuous.T(unit = "s") = 10.0 "Time constant";
 // Real pidContinuous.cIn.val(unit = "m");
 // Real pidContinuous.cOut.act;
 // parameter Real pidContinuous.ref = 0.25 "Reference level";
@@ -104,10 +113,10 @@ end TankPID;
 // Real tank.tActuator.act;
 // Real tank.qIn.lflow(unit = "m3/s");
 // Real tank.qOut.lflow(unit = "m3/s");
-// parameter Real tank.area(unit = "m2") = 1;
+// parameter Real tank.area(unit = "m2") = 1.0;
 // parameter Real tank.flowGain(unit = "m2/s") = 0.05;
-// parameter Real tank.minV = 0;
-// parameter Real tank.maxV = 10;
+// parameter Real tank.minV = 0.0;
+// parameter Real tank.maxV = 10.0;
 // Real tank.h(unit = "m", start = 0.0) "Tank level";
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
@@ -120,7 +129,7 @@ end TankPID;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = limitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   tank.tSensor.val = pidContinuous.cIn.val;
-//   tank.tActuator.act = pidContinuous.cOut.act;
-//   source.qOut.lflow = tank.qIn.lflow;
+// tank.tSensor.val = pidContinuous.cIn.val;
+// tank.tActuator.act = pidContinuous.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
 // end TankPID;

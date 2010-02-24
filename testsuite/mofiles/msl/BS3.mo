@@ -1310,6 +1310,20 @@ equation
   connect(der1.inPort,expSine1.outPort) annotation(Line(visible=true,points={{5.06,23.22},{-14.09,24.13}}));
 end BS3;
 
+// function Modelica.Math.exp
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
 // fclass BS3
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
@@ -1322,12 +1336,12 @@ end BS3;
 // parameter Integer expSine1.outPort.n = expSine1.nout "Dimension of signal vector";
 // output Real expSine1.outPort.signal[1] "Real output signals";
 // output Real expSine1.y[1];
-// parameter Real expSine1.amplitude[1] = 1 "Amplitudes of sine waves";
-// parameter Real expSine1.freqHz[1](quantity = "Frequency", unit = "Hz") = 2 "Frequencies of sine waves";
-// parameter Real expSine1.phase[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0 "Phases of sine waves";
-// parameter Real expSine1.damping[1](quantity = "DampingCoefficient", unit = "s-1") = 1 "Damping coefficients of sine waves";
-// parameter Real expSine1.offset[1] = 0 "Offsets of output signals";
-// parameter Real expSine1.startTime[1](quantity = "Time", unit = "s") = 0 "Output = offset for time < startTime";
+// parameter Real expSine1.amplitude[1] = 1.0 "Amplitudes of sine waves";
+// parameter Real expSine1.freqHz[1](quantity = "Frequency", unit = "Hz") = 2.0 "Frequencies of sine waves";
+// parameter Real expSine1.phase[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phases of sine waves";
+// parameter Real expSine1.damping[1](quantity = "DampingCoefficient", unit = "s-1") = 1.0 "Damping coefficients of sine waves";
+// parameter Real expSine1.offset[1] = 0.0 "Offsets of output signals";
+// parameter Real expSine1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
 // protected constant Real expSine1.pi = 3.14159265358979;
 // protected parameter Real expSine1.p_amplitude[1] = expSine1.amplitude[1];
 // protected parameter Real expSine1.p_freqHz[1] = expSine1.freqHz[1];

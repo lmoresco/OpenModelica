@@ -28,8 +28,15 @@ end FunctionEval2;
 //   y := x + 1.0;
 // end f;
 // 
+// function f
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 1.0 + x;
+// end f;
+// 
 // fclass FunctionEval2
-// constant Real a = 5;
+// constant Real a = 5.0;
 // Real x;
 // equation
 //   x = 6.0;

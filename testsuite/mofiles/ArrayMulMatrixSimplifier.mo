@@ -18,12 +18,12 @@ equation
       y= A*pre(x) + B*u;
 end ArrayMulMatrixSimplifier;
 // fclass ArrayMulMatrixSimplifier
-// parameter Real A[1,1] = 1;
-// parameter Real A[1,2] = 0;
-// parameter Real A[2,1] = 0;
-// parameter Real A[2,2] = 1;
-// parameter Real B[1,1] = 1;
-// parameter Real B[2,1] = 1;
+// parameter Real A[1,1] = 1.0;
+// parameter Real A[1,2] = 0.0;
+// parameter Real A[2,1] = 0.0;
+// parameter Real A[2,2] = 1.0;
+// parameter Real B[1,1] = 1.0;
+// parameter Real B[2,1] = 1.0;
 // output Real x[1];
 // output Real x[2];
 // output Real y[1];

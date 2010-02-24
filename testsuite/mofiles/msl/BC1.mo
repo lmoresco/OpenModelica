@@ -930,7 +930,7 @@ end BC1;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";

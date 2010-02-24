@@ -1062,12 +1062,19 @@ model BM26
 equation 
   connect(tanh1.inPort,constant1.outPort) annotation(Line(visible=true,points={{4.48,-5.0},{-17.31,-2.93}}));
 end BM26;
+// function Modelica.Math.tanh
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.tanh;
+// 
 // fclass BM26
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer tanh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer tanh1.inPort.n = tanh1.n "Dimension of signal vector";
 // input Real tanh1.inPort.signal[1] "Real input signals";

@@ -53,7 +53,7 @@ end A;
 // Real cp.dummy;
 // protected Real cp.red;
 // protected parameter Real cp.blue = 3.5;
-// protected parameter Real cp.green = 5;
+// protected parameter Real cp.green = 5.0;
 // parameter Real cp.x;
 // protected parameter Real cp.y;
 // protected parameter Real cp.z;
@@ -61,3 +61,5 @@ end A;
 //   cp.red + (cp.blue + cp.green) = 1.0;
 //   a = cp.x;
 // end A;
+// Warning: Parameter cp.x has no value, and is fixed during initialization (fixed=true)
+// 

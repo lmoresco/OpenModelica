@@ -21,8 +21,8 @@ algorithm
   end when;
 end FilterBlock1;
 // fclass FilterBlock1
-// parameter Real T = 1 "Time constant";
-// parameter Real k = 1 "Gain";
+// parameter Real T = 1.0 "Time constant";
+// parameter Real k = 1.0 "Gain";
 // input Real u = 1.0;
 // output Real y;
 // protected Real x;

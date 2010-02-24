@@ -1063,6 +1063,13 @@ model BM9
 equation 
   connect(constant1.outPort,cosh1.inPort) annotation(Line(visible=true,points={{-29.0,25.35},{-10.14,28.39}}));
 end BM9;
+// function Modelica.Math.cosh
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.cosh;
+// 
 // fclass BM9
 // parameter Integer cosh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cosh1.inPort.n = cosh1.n "Dimension of signal vector";
@@ -1075,7 +1082,7 @@ end BM9;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   cosh1.y[1] = Modelica.Math.cosh(cosh1.u[1]);
 //   cosh1.y[1] = cosh1.outPort.signal[1];

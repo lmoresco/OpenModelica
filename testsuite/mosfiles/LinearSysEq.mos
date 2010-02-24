@@ -29,6 +29,7 @@ val(pu.port.flowrate, 1.0);
 readFile("output.log");
 system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log");
 
+
 // Result:
 // true
 // "fclass LinearSysEq
@@ -36,12 +37,12 @@ system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefil
 // Real pu.port.flowrate;
 // Real pi.port.pressure;
 // Real pi.port.flowrate;
-// parameter Real pi.a = 1;
+// parameter Real pi.a = 1.0;
 // equation
 //   pu.port.flowrate = pu.port.pressure - time;
 //   pi.port.pressure = pi.port.flowrate * pi.a;
 //   pu.port.flowrate + pi.port.flowrate = 0.0;
-//   pu.port.pressure = pi.port.pressure;
+// pu.port.pressure = pi.port.pressure;
 // end LinearSysEq;
 // "
 // record SimulationResult
@@ -62,4 +63,3 @@ system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefil
 // ""
 // 0
 // endResult
-

@@ -15,7 +15,7 @@ equation
 end Xpowers3;
 
 // fclass Xpowers3
-// parameter Real x = 10;
+// parameter Real x = 10.0;
 // Real xpowers[1];
 // Real xpowers[2];
 // Real xpowers[3];

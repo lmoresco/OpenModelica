@@ -945,7 +945,7 @@ end BN2;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // parameter Integer limiter1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer limiter1.inPort.n = limiter1.n "Dimension of signal vector";
 // input Real limiter1.inPort.signal[1] "Real input signals";
@@ -953,7 +953,7 @@ end BN2;
 // output Real limiter1.outPort.signal[1] "Real output signals";
 // output Real limiter1.y[1] "Output signals";
 // protected Real limiter1.u[1] = limiter1.inPort.signal[1] "Input signals";
-// parameter Real limiter1.uMax[1] = 1 "Upper limits of input signals";
+// parameter Real limiter1.uMax[1] = 1.0 "Upper limits of input signals";
 // parameter Real limiter1.uMin[1](max = limiter1.uMax[1]) = -limiter1.uMax[1] "Lower limits of input signals";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];

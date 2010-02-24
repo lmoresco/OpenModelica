@@ -1063,6 +1063,13 @@ model BM22
 equation 
   connect(sinh1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-19.57,29.6},{-48.16,31.73}}));
 end BM22;
+// function Modelica.Math.sinh
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sinh;
+// 
 // fclass BM22
 // parameter Integer sinh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sinh1.inPort.n = sinh1.n "Dimension of signal vector";
@@ -1075,7 +1082,7 @@ end BM22;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   sinh1.y[1] = Modelica.Math.sinh(sinh1.u[1]);
 //   sinh1.y[1] = sinh1.outPort.signal[1];

@@ -23,11 +23,11 @@ end SumVector;
 
 // fclass SumVector
 // Real sum;
-// parameter Real v[1] = 100;
-// parameter Real v[2] = 200;
-// parameter Real v[3] = -300;
-// parameter Real v[4] = 400;
-// parameter Real v[5] = 500;
+// parameter Real v[1] = 100.0;
+// parameter Real v[2] = 200.0;
+// parameter Real v[3] = -300.0;
+// parameter Real v[4] = 400.0;
+// parameter Real v[5] = 500.0;
 // parameter Integer n = 5;
 // algorithm
 //   sum := 0.0;

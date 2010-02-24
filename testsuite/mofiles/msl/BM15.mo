@@ -1070,6 +1070,13 @@ model BM15
 equation 
   connect(log101.inPort,constant1.outPort) annotation(Line(visible=true,points={{-18.35,13.79},{-38.73,14.7}}));
 end BM15;
+// function Modelica.Math.log10
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.log10;
+// 
 // fclass BM15
 // parameter Integer log101.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer log101.inPort.n = log101.n "Dimension of signal vector";
@@ -1082,7 +1089,7 @@ end BM15;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   log101.y[1] = Modelica.Math.log10(log101.u[1]);
 //   log101.y[1] = log101.outPort.signal[1];

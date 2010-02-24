@@ -1065,6 +1065,13 @@ model BM25
 equation 
   connect(tan1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-27.87,16.95},{-49.71,16.95}}));
 end BM25;
+// function Modelica.Math.tan
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.tan;
+// 
 // fclass BM25
 // parameter Integer tan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer tan1.inPort.n = tan1.n "Dimension of signal vector";
@@ -1077,7 +1084,7 @@ end BM25;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   tan1.y[1] = Modelica.Math.tan(tan1.u[1]);
 //   tan1.y[1] = tan1.outPort.signal[1];

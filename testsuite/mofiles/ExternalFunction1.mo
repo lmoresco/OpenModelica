@@ -20,10 +20,17 @@ equation
   y = f(x);
 end ExternalFunction1;
 
+
+// function f
+// input Real x;
+// output Real y;
+// 
+// external "C";
+// end f;
+// 
 // fclass ExternalFunction1
-// constant Real x = 5;
+// constant Real x = 5.0;
 // Real y;
 // equation
 //   y = 15.0;
 // end ExternalFunction1;
-

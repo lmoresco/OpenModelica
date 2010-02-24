@@ -30,8 +30,8 @@ end SS;
 // output Real y[2];
 // parameter Integer nin = 1;
 // parameter Integer nout = 2;
-// parameter Real B[1,1] = 1;
-// parameter Real B[2,1] = 2;
+// parameter Real B[1,1] = 1.0;
+// parameter Real B[2,1] = 2.0;
 // equation
 //   y[1] = B[1,1] * u[1];
 //   y[2] = B[2,1] * u[1];

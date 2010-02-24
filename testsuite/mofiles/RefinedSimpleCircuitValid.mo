@@ -107,7 +107,7 @@
 // Real R3.n.i(quantity = "ElectricCurrent", unit = "A");
 // Real R3.v(quantity = "ElectricPotential", unit = "V");
 // Real R3.i(quantity = "ElectricCurrent", unit = "A");
-// parameter Real R3.R(unit = "Ohm") = 300 "Resistance";
+// parameter Real R3.R(unit = "Ohm") = 300.0 "Resistance";
 // Real R3.Temp;
 // Real R3.RT;
 // equation
@@ -121,8 +121,8 @@
 //   comp2.i = comp2.p.i;
 //   R3.v = R3.i * R3.R;
 //   comp1.p.i + (comp2.p.i + R3.p.i) = 0.0;
-//   comp1.p.v = comp2.p.v;
-//   comp2.p.v = R3.p.v;
+// comp1.p.v = comp2.p.v;
+// comp2.p.v = R3.p.v;
 //   comp1.n.i = 0.0;
 //   R3.n.i = 0.0;
 //   comp2.n.i = 0.0;

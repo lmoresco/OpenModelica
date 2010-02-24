@@ -1065,6 +1065,13 @@ model BM6
 equation 
   connect(atan1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-7.71,20.79},{-24.74,22.0}}));
 end BM6;
+// function Modelica.Math.atan
+// input Real u;
+// output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.atan;
+// 
 // fclass BM6
 // parameter Integer atan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer atan1.inPort.n = atan1.n "Dimension of signal vector";
@@ -1077,7 +1084,7 @@ end BM6;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   atan1.y[1] = Modelica.Math.atan(atan1.u[1]);
 //   atan1.y[1] = atan1.outPort.signal[1];

@@ -22,7 +22,7 @@ equation
 end Xpowers1;
 
 // fclass Xpowers1
-// parameter Real x = 10;
+// parameter Real x = 10.0;
 // Real a = 1.0;
 // parameter Integer n = 5;
 // Real xpowers[1];

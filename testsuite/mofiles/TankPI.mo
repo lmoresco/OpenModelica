@@ -87,12 +87,21 @@ end TankPI;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass TankPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real piContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";
-// parameter Real piContinuous.K = 2 "Gain";
-// parameter Real piContinuous.T(unit = "s") = 10 "Time constant";
+// parameter Real piContinuous.K = 2.0 "Gain";
+// parameter Real piContinuous.T(unit = "s") = 10.0 "Time constant";
 // Real piContinuous.cIn.val(unit = "m");
 // Real piContinuous.cOut.act;
 // parameter Real piContinuous.ref = 0.25 "Reference level";
@@ -103,10 +112,10 @@ end TankPI;
 // Real tank.tActuator.act;
 // Real tank.qIn.lflow(unit = "m3/s");
 // Real tank.qOut.lflow(unit = "m3/s");
-// parameter Real tank.area(unit = "m2") = 1;
+// parameter Real tank.area(unit = "m2") = 1.0;
 // parameter Real tank.flowGain(unit = "m2/s") = 0.05;
-// parameter Real tank.minV = 0;
-// parameter Real tank.maxV = 10;
+// parameter Real tank.minV = 0.0;
+// parameter Real tank.maxV = 10.0;
 // Real tank.h(unit = "m", start = 0.0) "Tank level";
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
@@ -118,7 +127,7 @@ end TankPI;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = limitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   tank.tSensor.val = piContinuous.cIn.val;
-//   tank.tActuator.act = piContinuous.cOut.act;
-//   source.qOut.lflow = tank.qIn.lflow;
+// tank.tSensor.val = piContinuous.cIn.val;
+// tank.tActuator.act = piContinuous.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
 // end TankPI;

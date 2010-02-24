@@ -1063,6 +1063,13 @@ model BM11
 equation 
   connect(exp1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-14.09,8.32},{-32.34,4.06}}));
 end BM11;
+// function Modelica.Math.exp
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // fclass BM11
 // parameter Integer exp1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer exp1.inPort.n = exp1.n "Dimension of signal vector";
@@ -1075,7 +1082,7 @@ end BM11;
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
 // output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1 "Constant output values";
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   exp1.y[1] = Modelica.Math.exp(exp1.u[1]);
 //   exp1.y[1] = exp1.outPort.signal[1];
