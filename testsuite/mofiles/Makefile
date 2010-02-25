@@ -1,11 +1,14 @@
 TEST=./rtest
 #TEST=runtest
 
-TESTFILES= Abs2.mo AddReal1.mo Algorithm1.mo Algorithm2.mo Algorithm3.mo \
+TESTFILES=\
+Abs.mo Abs2.mo AddReal1.mo \
+Algorithm1.mo Algorithm2.mo Algorithm3.mo \
+AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
 Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13.mo \
 Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
-ArrayRemoveIndex1.mo ArrayOperators.mo \
+ArrayExtend.mo ArrayRemoveIndex1.mo ArrayOperators.mo \
 ArrayCurlyBrackets.mo ArrayBrackets.mo ArrayRange.mo ArrayAccess.mo \
 ArrayAddition.mo ArraySubtraction.mo ArrayMultiplication.mo ArrayDivision.mo \
 ArrayDeclaration1.mo ArrayDeclaration2.mo ArrayDeclaration3.mo ArrayDeclaration4.mo ArrayDeclaration5.mo \
@@ -13,43 +16,48 @@ ArrayExtendsUnknown.mo \
 AssignmentSimple.mo AssignmentFunction.mo AssignmentFunctionMultiple1.mo \
 BoolArrayTest.mo BooleanLiterals.mo \
 Cardinality.mo \
+ConnectorSimple.mo ConnectorComponents.mo ConnectorIllegal.mo \
+Class1.mo Class2.mo Class4.mo \
 ClassExtends1.mo ClassExtends2.mo ClassExtends3.mo \
-Abs.mo Sign.mo Sqrt.mo \
-Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
-Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
-Circuit1.mo Class1.mo Class2.mo Class4.mo Comment1.mo Comment2.mo \
-Delay.mo Delay2.mo Delay3.mo Delay4.mo Delay5.mo Delay6.mo Delay7.mo \
+Circuit1.mo Comment1.mo Comment2.mo \
 ConditionalArrayExpression1.mo CondOperators.mo CondDeclaration.mo \
-CyclicBindingConst.mo CyclicBindingParam.mo \
-LessThan.mo LessThanEqual.mo GreaterThan.mo GreaterThanEqual.mo Equals.mo NotEquals.mo Not.mo And.mo Or.mo \
 Connect1.mo Connect2.mo Connect4.mo Connect7.mo Connect8.mo Connect9.mo Connect12.mo Connect13.mo Connect14.mo Connect15.mo \
 ConnectFlowEffort.mo ConnectHierarchical1.mo ConnectHierarchical2.mo \
 Constant1.mo Constant2.mo Constant3.mo Constant4.mo Constant5.mo Constant6.mo \
 Constant7.mo Constant8.mo Constant9.mo Constant10.mo Constant11.mo \
 ConstantReductions.mo ConstrainingType1.mo ConstructParameters.mo \
 ConstructParameters1.mo Declaration1.mo Declaration2.mo Declaration3.mo \
-DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo \
+CyclicBindingConst.mo CyclicBindingParam.mo \
 DeclarationEquation1.mo DeclarationEquation2.mo DeclarationEquation3.mo \
+DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo \
 EngineSAAB95Total.mo Each1.mo \
-ConnectorSimple.mo ConnectorComponents.mo ConnectorIllegal.mo \
+Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum7.mo Enum8.mo Enum9.mo \
+Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo Extends6.mo \
+FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo FunctionEval4.mo  \
+FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
+FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
+Delay.mo Delay2.mo Delay3.mo Delay4.mo Delay5.mo Delay6.mo Delay7.mo \
+Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
+Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
+LessThan.mo LessThanEqual.mo GreaterThan.mo GreaterThanEqual.mo Equals.mo NotEquals.mo Not.mo And.mo Or.mo \
 PackageSimple.mo PackageComponents.mo PackageIllegal.mo \
 ShortClassDef.mo SimpleInheritance.mo TypeDeclArray.mo \
-ArrayExtend.mo SimpleTypeExtend.mo NestedClasses.mo \
+SimpleTypeExtend.mo NestedClasses.mo \
 Encapsulated1.mo Encapsulated2.mo EquationComponent1.mo EquationComponent2.mo \
 EquationComponent3.mo EquationComponent4.mo EquationComponent5.mo \
 EquationFor1.mo EquationFor2.mo EquationFor3.mo EquationFor4.mo \
-EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo  \
-Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo \
-Expressions.mo Function1.mo FloatingPoint.mo FunctionCall.mo \
-FlowDeclType.mo FlowDeclRecord.mo FlowDeclConnector.mo \
+EquationIf1.mo EquationIf2.mo EquationIf3.mo EquationIf4.mo EventFunctions.mo Expressions.mo \
+FloatingPoint.mo FlowDeclType.mo FlowDeclRecord.mo FlowDeclConnector.mo \
+Function1.mo Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
+Function9.mo Function10.mo Function11.mo \
+FunctionCall.mo \
 DiscreteDeclType.mo DiscreteDeclRecord.mo DiscreteDeclConnector.mo \
 ParameterDeclType.mo ParameterDeclRecord.mo ParameterDeclConnector.mo \
 ConstantDeclType.mo ConstantDeclRecord.mo ConstantDeclConnector.mo \
 InputDeclType.mo InputDeclRecord.mo InputDeclConnector.mo \
 OutputDeclType.mo OutputDeclRecord.mo OutputDeclConnector.mo \
 ForSimple.mo ForNested.mo While.mo \
-Function3.mo Function5.mo Function6.mo Function7.mo Function8.mo \
-Function9.mo Function10.mo Function11.mo InnerOuter1.mo InnerOuter2.mo \
+InnerOuter1.mo InnerOuter2.mo \
 Import1.mo Import2.mo Import3.mo Import4.mo Import5.mo IntegerLiterals.mo \
 IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
 InheritanceSimple.mo InheritanceSeveral.mo InheritanceClassMod.mo \
@@ -83,10 +91,6 @@ Units2.mo \
 Vectorizable1.mo Vectorizable2.mo Vectorizable3.mo Vectorizable4.mo \
 Vectorizable5.mo Vectorizable6.mo VectorDimension.mo \
 Xpowers.mo XPowers1.mo XPowers2.mo XPowers3.mo \
-FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo \
-FunctionEval4.mo  \
-FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
-FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
 ExternalFunction1.mo ExternalFunction2.mo ExternalFunction3.mo \
 PredefinedTypes.mo StructuralParameter1.mo MinMax.mo \
 FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo if_then_elseif_else.mo \
@@ -135,16 +139,15 @@ WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
 LotkaVolterra.mo HydrogenIodide.mo \
 FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
 InOutBool.mo InOutArray.mo InOutArray2.mo \
-AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
 ForIterator1.mo ForIterator2.mo \
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
-Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum7.mo Enum8.mo Enum9.mo \
 ArrayAsAlias.mo ArrayAsAliasInExtends.mo WhenNotValid.mo \
 ArraysInitIllegal.mo \
 Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
 Cross.mo TestGravityAcceleration.mo VectorizeExtendedType.mo \
 OverrideFinalTest.mo InnerOuterSystem.mo ModifierProblem.mo DiagonalBlock.mo \
-Pow.mo VectorBuiltin.mo
+Pow.mo VectorBuiltin.mo \
+Sign.mo Sqrt.mo \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
