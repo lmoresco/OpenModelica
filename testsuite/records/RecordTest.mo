@@ -27,7 +27,7 @@ function mk_add_ext
   input Real a1;
   input Real a2;
   output ADD out;
-  external "C" annotation(Library="External_C_RecordTest.c");
+  external "C" annotation(Library="External_C_RecordTest.o");
 end mk_add_ext;
 
 function eval_add
@@ -87,7 +87,7 @@ function mk_plus_ext
   input ADD left;
   input ADD right;
   output PLUS out;
-  external "C" annotation(Library="External_C_RecordTest.c");
+  external "C" annotation(Library="External_C_RecordTest.o");
 end mk_plus_ext;
 
 function eval_plus
@@ -135,7 +135,7 @@ end mk_empty2;
 
 function mk_empty_ext
   output EMPTY out;
-  external "C" annotation(Library="External_C_RecordTest.c");
+  external "C" annotation(Library="External_C_RecordTest.o");
 end mk_empty_ext;
 
 function eval_empty

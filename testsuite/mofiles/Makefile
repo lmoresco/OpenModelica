@@ -1,4 +1,4 @@
-TEST=./rtest
+TEST=./rtest -v
 #TEST=runtest
 
 TESTFILES=\

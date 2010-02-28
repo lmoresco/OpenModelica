@@ -1,5 +1,7 @@
 #include <stdlib.h>
 
+extern "C" {
+
 void ExternalFunction2_f(double* x, size_t xdim1, double* y, size_t ydim1)
 {
   size_t i;
@@ -8,3 +10,4 @@ void ExternalFunction2_f(double* x, size_t xdim1, double* y, size_t ydim1)
   }
 }
 
+}

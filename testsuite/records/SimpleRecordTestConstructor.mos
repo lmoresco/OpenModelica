@@ -2,6 +2,7 @@
 // keywords: algorithm
 // status:   correct
 
+system("gcc -c External_C_RecordTest.c");
 loadFile("RecordTest.mo");
 
 a:=RecordTest.mk_add1(1.0,2.0);
@@ -9,6 +10,7 @@ a:=RecordTest.mk_add2(1.0,2.0);
 a:=RecordTest.mk_add3();
 a:=RecordTest.mk_add_ext(1.0,2.0);
 a:=RecordTest.ADD(1.0,2.0);
+system("rm -f *.o");
 
 // Result:
 // true

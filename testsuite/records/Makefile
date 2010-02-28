@@ -8,7 +8,7 @@ TESTFILES = EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
 FAILINGTESTFILES=NONE
 
 
-TEST = ./rtest
+TEST = ./rtest -v
 
 .PHONY : test
 

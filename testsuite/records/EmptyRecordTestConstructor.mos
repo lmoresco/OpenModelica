@@ -2,12 +2,15 @@
 // keywords: algorithm
 // status:   correct
 
+system("gcc -c External_C_RecordTest.c");
 loadFile("RecordTest.mo");
 
 a:=RecordTest.mk_empty1();
 a:=RecordTest.mk_empty2();
 a:=RecordTest.mk_empty_ext();
 a:=RecordTest.EMPTY();
+
+system("rm -f *.o");
 
 // Result:
 // true
