@@ -4,7 +4,6 @@
 //
 // Equality Testing
 //
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("Equality.mo");
 getErrorString();
 a:=Equality.myEquality(1);
@@ -13,7 +12,6 @@ a:=Equality.myEquality(3);
 a:=Equality.myEquality(4);
 
 // Result:
-// true
 // true
 // ""
 // 1

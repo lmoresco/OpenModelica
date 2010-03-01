@@ -4,7 +4,6 @@
 //
 // Builtin function testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("BuiltinBoolean.mo");
 
 BuiltinBoolean.func(true,false);
@@ -13,7 +12,6 @@ BuiltinBoolean.func(false,true);
 BuiltinBoolean.func(false,false);
 
 // Result:
-// true
 // true
 // (false,true,false)
 // (true,true,false)

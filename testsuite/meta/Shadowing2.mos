@@ -4,7 +4,6 @@
 //
 // Local Delcaration Shadowing
 //
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("Shadowing2.mo");
 getErrorString();
 a:=Shadowing2.test(1);

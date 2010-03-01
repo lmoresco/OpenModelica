@@ -6,7 +6,6 @@
 // Uses packages, aliases, etc
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("Main.mo");
 loadFile("Functions.mo");
 loadFile("Types.mo");

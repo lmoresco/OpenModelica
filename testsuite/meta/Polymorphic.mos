@@ -4,7 +4,6 @@
 //
 // Polymorphic functions
 //
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("Polymorphic.mo");
 getErrorString();
 // This is fine; lists are already boxed
@@ -14,8 +13,6 @@ i:=Polymorphic.ident(1.5);
 i:=Polymorphic.ident("abc123");
 
 // Result:
-// true
-// true
 // ""
 // {1}
 // 1

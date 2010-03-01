@@ -4,7 +4,6 @@
 //
 // Builtin function testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("BuiltinMisc.mo");
 
 r := BuiltinMisc.myClock();
@@ -27,7 +26,6 @@ i:=BuiltinMisc.myIfOpt(true, 1385);
 // Result:
 // abc
 // def
-// true
 // true
 // 0.0
 // 0

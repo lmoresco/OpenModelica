@@ -4,7 +4,6 @@
 //
 // MatchCase Testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("MatchCaseInteractive3.mo");
 a:=MatchCaseInteractive3.myConst;
 a:=MatchCaseInteractive3.retMyConst();
@@ -14,7 +13,6 @@ print("
 
 // Result:
 // ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
-// true
 // true
 // record MatchCaseInteractive3.REC1
 //     x = 3

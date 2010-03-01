@@ -6,7 +6,6 @@
 // Uses packages, aliases, etc
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 i:=Main.main({"10"});

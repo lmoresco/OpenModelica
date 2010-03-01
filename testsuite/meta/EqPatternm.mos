@@ -4,7 +4,6 @@
 //
 // Pattern matching in equations
 //
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("EqPatternm.mo");
 a:=EqPatternm.test(1);
 a:=EqPatternm.test(2);
@@ -20,7 +19,6 @@ a:=EqPatternm.test(11);
 a:=EqPatternm.test(12);
 
 // Result:
-// true
 // true
 // 1
 // 1

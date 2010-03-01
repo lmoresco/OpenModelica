@@ -4,7 +4,6 @@
 //
 // Match Testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("MatchCaseInteractive2.mo");
 
 a := MatchCaseInteractive2.matchInMatch(2);
@@ -20,7 +19,6 @@ a := MatchCaseInteractive2.matchUniontype(4);
 a := MatchCaseInteractive2.matchUniontype(5);
 
 // Result:
-// true
 // true
 // 3
 // "REC(1,true,"abc")"

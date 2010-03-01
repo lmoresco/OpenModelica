@@ -4,7 +4,6 @@
 //
 // Match Testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("MatchCaseInteractive1.mo");
 a := MatchCaseInteractive1.func(1222,false);
 a := MatchCaseInteractive1.func(2,false);
@@ -36,7 +35,6 @@ a := MatchCaseInteractive1.listlistFunc({{1,2,3}});
 a := MatchCaseInteractive1.optionFunc(1);
 
 // Result:
-// true
 // true
 // 2
 // 4

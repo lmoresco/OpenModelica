@@ -4,7 +4,6 @@
 //
 // Builtin function testing
 //
-b := setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("BuiltinInteger.mo");
 
 BuiltinInteger.funcIntIntToInt(-17,3);
@@ -16,7 +15,6 @@ BuiltinInteger.funcIntegerRelations( 1,-1);
 BuiltinInteger.func(-1047483648);
 
 // Result:
-// true
 // true
 // (-14,-20,-51,-5,-2,3,-17)
 // (false,true,true,false,true,false)

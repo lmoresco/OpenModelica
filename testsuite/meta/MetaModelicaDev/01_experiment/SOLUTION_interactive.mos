@@ -9,7 +9,6 @@
 // works properly on the Windows platform.
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 

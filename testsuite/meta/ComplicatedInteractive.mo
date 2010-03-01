@@ -26,6 +26,7 @@ package ComplicatedInteractive
     input Option<list<Integer>> opt;
     output tupIntLI2 out;
   algorithm
+    printAny(opt);
     out := (4, RecordWithComplicatedTypes((1,{(7.5,opt)})));
   end NewComplicatedThingy;
 

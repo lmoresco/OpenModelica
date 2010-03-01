@@ -5,7 +5,6 @@
 // OpenModelica Development Course at PELAB
 //
 echo(false);
-setLinker("g++ -shared -export-dynamic -g -fPIC parser.o lexer.o");
 loadFile("SymbolicDerivative.mo");
 loadFile("Parse.mo");
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
