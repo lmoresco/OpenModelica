@@ -146,7 +146,7 @@ ArraysInitIllegal.mo \
 Sequence.mo DefaultRecordParameters.mo RecordConstructorVectorization.mo \
 Cross.mo TestGravityAcceleration.mo VectorizeExtendedType.mo \
 OverrideFinalTest.mo InnerOuterSystem.mo ModifierProblem.mo DiagonalBlock.mo \
-Pow.mo VectorBuiltin.mo \
+Pow.mo VectorBuiltin.mo VectorTest.mo \
 Sign.mo Sqrt.mo \
 
 # test that currently fail. Move up when fixed. 
