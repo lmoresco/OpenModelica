@@ -4,7 +4,6 @@
 //
 // OpenModelica Development Course at PELAB
 //
-setLinker("g++ -shared -export-dynamic -g -fPIC lexer.o parser.o");
 loadFile("Pam.mo");
 loadFile("Main.mo");
 loadFile("Parse.mo");
@@ -15,7 +14,6 @@ print("
 // Result:
 // [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
 // 3628800
-// true
 // true
 // true
 // true

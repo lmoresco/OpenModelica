@@ -9,7 +9,7 @@ end yyparse;
 
 protected function getAST
   output Exp exp;
-external "C";
+external "C" annotation(Library = "parser.o lexer.o");
 end getAST;
 
 public function parse

@@ -15,7 +15,7 @@ end yyparse;
 
 protected function getAST
   output Absyn.Exp exp;
-external "C";
+external "C" annotation(Library = "parser.o lexer.o");
 end getAST;
 
 protected function parse2

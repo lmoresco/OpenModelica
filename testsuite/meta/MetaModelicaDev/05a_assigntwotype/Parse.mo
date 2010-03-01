@@ -9,7 +9,7 @@ end yyparse;
 
 protected function getAST
   output AssignTwoType.Program program;
-external;
+external "C" annotation(Library = "parser.o lexer.o");
 end getAST;
 
 public function parse
