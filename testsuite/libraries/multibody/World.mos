@@ -16,15 +16,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // Result:
 // true
 // ""
-// "function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
-// input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
-// input Real[3] v2 "Vector in frame 2";
-// output Real[3] v1 "Vector in frame 1";
-// algorithm
-//   v1 := {T[1,1] * v2[1] + T[2,1] * v2[2] + T[3,1] * v2[3],T[1,2] * v2[1] + T[2,2] * v2[2] + T[3,2] * v2[3],T[1,3] * v2[1] + T[2,3] * v2[2] + T[3,3] * v2[3]};
-// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
+// "function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
 // input Real[3, 3] T;
 // input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
 // output Orientation res;
@@ -44,6 +36,20 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   result := sqrt(v * v);
 // end Modelica.Math.Vectors.length;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.nullRotation
+// output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object such that frame 1 and frame 2 are identical";
+// algorithm
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{0.0,0.0,0.0});
+// end Modelica.Mechanics.MultiBody.Frames.nullRotation;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
+// input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
+// input Real[3] v2 "Vector in frame 2";
+// output Real[3] v1 "Vector in frame 1";
+// algorithm
+//   v1 := {T[1,1] * v2[1] + T[2,1] * v2[2] + T[3,1] * v2[3],T[1,2] * v2[1] + T[2,2] * v2[2] + T[3,2] * v2[3],T[1,3] * v2[1] + T[2,3] * v2[2] + T[3,3] * v2[3]};
+// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy
 // input Real[3] n_x(unit = "1") "Vector in direction of x-axis of frame 2, resolved in frame 1";
@@ -76,12 +82,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   mat := material1 + material2 + material3 + sp;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.nullRotation
-// output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object such that frame 1 and frame 2 are identical";
-// algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{0.0,0.0,0.0});
-// end Modelica.Mechanics.MultiBody.Frames.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape
 // input String shapeType;
