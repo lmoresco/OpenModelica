@@ -5,6 +5,10 @@
  */
 
 #include <string.h>
+#include <stdlib.h>
+
+extern "C"
+{
 
 int checkParseError(char *str)
 {
@@ -12,3 +16,6 @@ int checkParseError(char *str)
 		exit(1);
 	return 0;
 }
+
+}
+
