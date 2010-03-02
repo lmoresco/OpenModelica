@@ -83,7 +83,9 @@ variables.mos \
 WhenEquation.mos \
 WhenStatement1.mos WhenStatement2.mos WhenStatement3.mos whenstatements.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
-Xpowers1.mos Xpowers2.mos Xpowers3.mos ModifierProblem.mos
+Xpowers1.mos Xpowers2.mos Xpowers3.mos ModifierProblem.mos \
+when_sorting.mos EventIteration.mos 
+
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

@@ -1,0 +1,40 @@
+// name:     EventIteration
+// keywords: EventHandling, EventIteration
+// status:   correct
+// 
+//  Simulate model containing EventIterations
+//
+loadFile("./EventIteration.mo");
+
+simulate(EventIteration, tolerance=1e-5,startTime=0, stopTime=1,numberOfIntervals=10,method="euler");
+val(x,0.0);
+val(x,1.0);
+val(h1,0.0);
+val(h1,1.0);
+val(c1,0.0);
+val(c1,1.0);
+val(c2,0.0);
+val(c2,1.0);
+val(c3,0.0);
+val(c3,1.0);
+readFile("output.log");
+system("rm -rf EventIteration EventIteration.exe EventIteration.cpp EventIteration.make EventIteration_* output.log");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "EventIteration_res.plt"
+// end SimulationResult;
+// 1.0
+// 2.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// ""
+// 0
+// endResult

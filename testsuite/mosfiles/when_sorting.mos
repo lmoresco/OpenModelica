@@ -1,0 +1,36 @@
+// name:     when-sorting
+// keywords: Simulate, when-sorting
+// status:   correct
+// 
+//  Simulate model containing two when equation, that 
+//
+loadFile("when_sorting.mo");
+
+simulate(when_sorting, tolerance=1e-5,startTime=0, stopTime=3,numberOfIntervals=30,method="euler");
+val(v,0.0);
+val(v,3.0);
+val(w,0.0);
+val(w,2.0);
+val(x,0.0);
+val(x,2.0);
+val(y,0.0);
+val(y,2.0);
+readFile("output.log");
+system("rm -rf when_sorting when_sorting.exe when_sorting.cpp when_sorting.make when_sorting_* output.log");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "when_sorting_res.plt"
+// end SimulationResult;
+// 1.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 3.0
+// 0.0
+// 3.0
+// ""
+// 0
+// endResult
