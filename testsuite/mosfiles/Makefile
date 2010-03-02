@@ -22,7 +22,7 @@ dertest.mos differentiate.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
 EqualityEquations.mos \
-ExtendsBasic.mos \
+ExtendsBasic.mos ExtendsOrder.mos \
 ExternalLibraries.mos ExternalFunctionResultOrder.mos\
 ExtObj.mos \
 FiveForEquations.mos \
