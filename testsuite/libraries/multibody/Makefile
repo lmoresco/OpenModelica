@@ -24,7 +24,7 @@ World.mos \
 # Run make testfailing
 FAILINGTESTFILES=  
 
-TEST = ./rtest -b
+TEST = ./rtest -v
 
 
 .PHONY : test
