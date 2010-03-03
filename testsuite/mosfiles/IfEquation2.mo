@@ -7,7 +7,7 @@
 
 model IfEquation2
  Real x;
- Real y;
+ Real y(start=1);
  Real z;
  parameter Real a = 20;
 equation
