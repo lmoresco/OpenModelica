@@ -36,6 +36,7 @@ Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo Extends6.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
+Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo Lookup9.mo \
 Delay.mo Delay2.mo Delay3.mo Delay4.mo Delay5.mo Delay6.mo Delay7.mo \
 Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
 Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
@@ -63,7 +64,7 @@ IntAdd.mo IntSub.mo IntMul.mo IntDiv.mo IntPow.mo \
 InheritanceSimple.mo InheritanceSeveral.mo InheritanceClassMod.mo \
 InheritanceMultiple.mo InheritanceProtected.mo InheritancePublic.mo \
 InheritanceDiamond.mo \
-Integer2Real.mo Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo \
+Integer2Real.mo \
 MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo \
 ModelAccess.mo \
 ModelSimple.mo BlockSimple.mo BlockComponents.mo BlockIllegal.mo FunctionSimple.mo \
@@ -169,7 +170,7 @@ EqualityEquations.mo DimSize.mo ErrorNestedWhen.mo DoubleWhenConflict.mo \
 OperatorSimple.mo OperatorComponents.mo OperatorIllegal.mo \
 OperatorFunction1.mo OperatorFunction2.mo \
 Inline6.mo InheritanceRestrictions.mo \
-ForceAndTorque \
+ForceAndTorque Lookup8.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \
