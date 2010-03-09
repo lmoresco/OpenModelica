@@ -1,5 +1,6 @@
 %{
 
+#define YYSTYPE void*
 #include "parser.h"
 #ifdef RML
 #include "yacclib.h"
@@ -57,13 +58,13 @@ int lex_string()
   char *buff = strdup(yytext);
   /* Remove first/last quotes */
   buff[strlen(buff)-1] = '\0';
-  yylval = (long) mmc_mk_scon(buff+1);
+  yylval = mmc_mk_scon(buff+1);
   free(buff);
   return T_STRINGCONST;
 }
 
 int lex_ident()
 {
-  yylval = (long) mmc_mk_scon(yytext);
+  yylval = mmc_mk_scon(yytext);
   return T_IDENT;
 }

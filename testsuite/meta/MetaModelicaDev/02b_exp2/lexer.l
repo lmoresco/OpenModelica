@@ -1,4 +1,5 @@
 %{
+#define YYSTYPE void*
 #include "parser.h"
 
 void* absyn_integer(char *s);
@@ -23,7 +24,7 @@ letters         {letter}+
 
 %%
 
-{digits}     { yylval=(long)absyn_integer(yytext); return T_INTCONST; }
+{digits}     { yylval = absyn_integer(yytext); return T_INTCONST; }
 "+"          return T_ADD;
 "-"          return T_SUB;
 "*"          return T_MUL;

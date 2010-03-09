@@ -8,7 +8,7 @@ endif
 
 RMLCFLAGS=-g -Wr,-Ono-cps -DRML
 COMPILE.rml=$(RMLC) $(RMLCFLAGS) $(CPPFLAGS) -I../rml/ -c
-LINK.rml=$(RMLC)
+LINK.rml=$(RMLC) -g
 
 .SUFFIXES:	.c .o .rml .h .mo
 

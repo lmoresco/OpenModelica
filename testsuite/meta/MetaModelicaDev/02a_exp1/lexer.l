@@ -1,4 +1,5 @@
 %{
+#define YYSTYPE void*
 #include "parser.h"
 
 void* absyn_integer(char *s);

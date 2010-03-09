@@ -1,4 +1,4 @@
-CLEAN={Main,PAM,Parse,Input}.{c,h,o,srz} InputRML.o ParseRML.o
+CLEAN={Main,Pam,Parse,Input}.{c,h,o,srz} InputRML.o ParseRML.o
 HEADERS=Pam.h
-OBJS=Main.o PAM.o ParseRML.o InputRML.o lexer.o parser.o
+OBJS=Main.o Pam.o ParseRML.o InputRML.o lexer.o parser.o
 include ../common.rml

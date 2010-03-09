@@ -1,4 +1,4 @@
-CLEAN={Absyn,Env,Eval,Main,ScanParse}.{c,h,o,srz} ScanParseRML.o
+CLEAN=Absyn.c Absyn.h Absyn.o Absyn.srz Env.c Env.h Env.o Env.srz Eval.c Eval.h Eval.o Eval.srz Main.c Main.h Main.o Main.srz ScanParse.c ScanParse.h ScanParse.o ScanParse.srz ScanParseRML.o
 HEADERS=Absyn.h
 OBJS=Absyn.o Env.o Eval.o Main.o ScanParseRML.o lexer.o parser.o
 include ../common.rml

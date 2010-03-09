@@ -15,23 +15,16 @@ end BinOp;
 public 
 uniontype UnOp
   record NEG end NEG;
-
 end UnOp;
 
 public 
 uniontype RelOp
-  record LT end LT;
-
-  record LE end LE;
-
-  record GT end GT;
-
-  record GE end GE;
-
-  record NE end NE;
-
   record EQ end EQ;
-
+  record GT end GT;
+  record LT end LT;
+  record LE end LE;
+  record GE end GE;
+  record NE end NE;
 end RelOp;
 
 public 

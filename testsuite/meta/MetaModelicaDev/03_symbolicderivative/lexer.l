@@ -6,6 +6,7 @@
   #include "meta_modelica.h"
 #endif
 
+#define YYSTYPE void*
 #include "parser.h"
 
 int lex_rcon();
@@ -45,18 +46,18 @@ istring      \"{icon}\"
 
 int lex_icon()
 {
-  yylval=(long) mmc_mk_icon(atol(yytext));
+  yylval = mmc_mk_icon(atol(yytext));
   return T_INTCONST;
 }
 
 int lex_rcon()
 {
-  yylval=(long) mmc_mk_rcon(atof(yytext));
+  yylval = mmc_mk_rcon(atof(yytext));
   return T_REALCONST;
 }
 
 int lex_ident()
 {
-  yylval = (long) mmc_mk_scon(yytext);
+  yylval = mmc_mk_scon(yytext);
   return T_IDENT;
 }

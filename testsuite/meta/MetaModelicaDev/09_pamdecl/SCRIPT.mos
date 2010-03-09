@@ -1,23 +1,26 @@
-// name:     08  Pam
+// name:     09  Pam Decl
 // keywords: MetaModelica
 // status:   correct
 //
 // OpenModelica Development Course at PELAB
 //
-loadFile("Pam.mo");
+loadFile("Absyn.mo");
+loadFile("Env.mo");
+loadFile("Eval.mo");
 loadFile("Main.mo");
-loadFile("ParseOMC.mo");
-loadFile("Input.mo");
+loadFile("ScanParseOMC.mo");
+getErrorString();
 i:=Main.main();
 print("
 ");
 // Result:
 // [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
-// 3628800
 // true
 // true
 // true
 // true
+// true
+// ""
 // 0
 // 
 // endResult

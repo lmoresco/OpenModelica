@@ -1,11 +1,15 @@
 %{
 #include <stdlib.h>
+#define YYSTYPE void*
 #include "parser.h"
+
+
+#ifdef RML
 #include "yacclib.h"
 #include "Absyn.h"
- 
-typedef void *rml_t;
-/* extern rml_t yylval; */
+#else
+#include "meta_modelica.h"
+#endif
  
 int absyn_integer(char *s);
 int absyn_ident_or_keyword(char *s);
@@ -80,7 +84,7 @@ junk            .|\n
  
 int absyn_integer(char *s)
 {
-  yylval=(int) Absyn__INTCONST(mk_icon(atoi(s)));
+  yylval = Absyn__INTCONST(mmc_mk_icon(atoi(s)));
   return T_CONST_INT;
 }
  
@@ -89,7 +93,7 @@ int absyn_integer(char *s)
  
 int absyn_real(char *s)
 {
-  yylval=(int) Absyn__REALCONST(mk_rcon(atof(s)));
+  yylval = Absyn__REALCONST(mmc_mk_rcon(atof(s)));
   return T_CONST_REAL;
 }
  
@@ -114,23 +118,21 @@ static struct keyword_s
 
 int absyn_ident_or_keyword(char *s)
 {
-        int low = 0;
-        int high = (sizeof kw) / sizeof(struct keyword_s) - 1;
+  int low = 0;
+  int high = (sizeof kw) / sizeof(struct keyword_s) - 1;
 
-        while( low <= high ) {
-                int mid = (low + high) / 2;
-                int cmp = strcmp(kw[mid].name, yytext);
-                if( cmp == 0 )
-                {
-                        return kw[mid].token;
-                }
-                else if( cmp < 0 )
-                        low = mid + 1;
-                else
-                        high = mid - 1;
-        }
-        yylval = (int) mk_scon(s);
-        return T_IDENT;
+  while( low <= high ) {
+    int mid = (low + high) / 2;
+    int cmp = strcmp(kw[mid].name, yytext);
+    if( cmp == 0 )
+      return kw[mid].token;
+    else if( cmp < 0 )
+      low = mid + 1;
+    else
+      high = mid - 1;
+  }
+  yylval = mmc_mk_scon(s);
+  return T_IDENT;
 }
 
 int yywrap()

@@ -1,4 +1,5 @@
 %{
+#define YYSTYPE void*
 #include "parser.h"
 
 #ifdef RML
@@ -12,8 +13,6 @@ extern struct record_description Pam_INT__desc;
 #define Pam__INT(X1) (mmc_mk_box2(3,&Pam_INT__desc,(X1)))
 
 #endif
-
-typedef void *rml_t;
 
 int linenr = 1;
 long absyn_integer(char *s);
@@ -78,7 +77,7 @@ icon         {digits}
  
 long absyn_integer(char *s)
 {
-  yylval=(long) Pam__INT(mmc_mk_icon(atoi(s)));
+  yylval= Pam__INT(mmc_mk_icon(atoi(s)));
   return T_INTCONST;
 }
  
@@ -105,23 +104,23 @@ static struct keyword_s
 
 long absyn_ident_or_keyword(char *s)
 {
-        int low = 0;
-        int high = (sizeof kw) / sizeof(struct keyword_s) - 1;
+  int low = 0;
+  int high = (sizeof kw) / sizeof(struct keyword_s) - 1;
 
-        while( low <= high ) {
-                int mid = (low + high) / 2;
-                int cmp = strcmp(kw[mid].name, yytext);
-                if( cmp == 0 )
-                {
-                        return kw[mid].token;
-                }
-                else if( cmp < 0 )
-                        low = mid + 1;
-                else
-                        high = mid - 1;
-        }
-        yylval = (long) mmc_mk_scon(s);
-        return T_IDENT;
+  while( low <= high ) {
+    int mid = (low + high) / 2;
+    int cmp = strcmp(kw[mid].name, yytext);
+    if( cmp == 0 )
+    {
+            return kw[mid].token;
+    }
+    else if( cmp < 0 )
+            low = mid + 1;
+    else
+            high = mid - 1;
+  }
+  yylval = mmc_mk_scon(s);
+  return T_IDENT;
 }
 
 int yywrap()

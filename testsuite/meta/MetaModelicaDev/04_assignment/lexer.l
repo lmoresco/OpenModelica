@@ -1,4 +1,5 @@
 %{
+#define YYSTYPE void*
 #include "parser.h"
 
 int lex_icon();
@@ -18,13 +19,13 @@ extern struct record_description Assignment_INT__desc;
 
 whitespace   [ \t\n]+
 letter       [a-zA-Z_]
-ident           {letter}({letter}|{digit})*
+ident        {letter}({letter}|{digit})*
 digit        [0-9]
 digits       {digit}+
 %%
 
 {whitespace} ;
-{ident}         return lex_ident(); /* T_IDENT */
+{ident}      return lex_ident(); /* T_IDENT */
 {digits}     return lex_icon();  /* T_INTCONST */
 ":="         return T_ASSIGN;
 "+"          return T_ADD;
@@ -39,12 +40,12 @@ digits       {digit}+
 
 int lex_icon()
 {
-  yylval = (long) Assignment__INT(mmc_mk_icon(atoi(yytext)));  
+  yylval = Assignment__INT(mmc_mk_icon(atoi(yytext)));  
   return T_INTCONST;        
 }
 
 int lex_ident()
 {
-        yylval = (long) mmc_mk_scon(yytext);
-        return T_IDENT;
+  yylval = mmc_mk_scon(yytext);
+  return T_IDENT;
 }
