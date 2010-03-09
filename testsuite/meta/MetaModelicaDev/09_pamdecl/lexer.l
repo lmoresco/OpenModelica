@@ -9,6 +9,19 @@
 #include "Absyn.h"
 #else
 #include "meta_modelica.h"
+extern struct record_description Absyn_INTCONST__desc;
+extern struct record_description Absyn_REALCONST__desc;
+extern struct record_description Absyn_BINARY__desc;
+extern struct record_description Absyn_UNARY__desc;
+extern struct record_description Absyn_RELATION__desc;
+extern struct record_description Absyn_VARIABLE__desc;
+
+#define Absyn__INTCONST(X1)       (mmc_mk_box2(3,&Absyn_INTCONST__desc,X1))
+#define Absyn__REALCONST(X1)      (mmc_mk_box2(4,&Absyn_REALCONST__desc,X1))
+#define Absyn__BINARY(X1,OP,X2)   (mmc_mk_box4(5,&Absyn_BINARY__desc,X1,OP,X2))
+#define Absyn__UNARY(OP,X1)       (mmc_mk_box3(6,&Absyn_UNARY__desc,OP,X1))
+#define Absyn__RELATION(X1,OP,X2) (mmc_mk_box4(7,&Absyn_RELATION__desc,X1,OP,X2$
+#define Absyn__VARIABLE(X1)       (mmc_mk_box2(8,&Absyn_VARIABLE__desc,X1))
 #endif
  
 int absyn_integer(char *s);

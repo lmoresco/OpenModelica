@@ -1,0 +1,17 @@
+// name:     MatchCase10
+// keywords: Match Cases
+// status:   correct
+//
+// Match Testing
+//
+loadFile("MatchCase10.mo");
+simulate(MatchCase10);
+val(i,0.0);
+
+// Result:
+// true
+// record SimulationResult
+//    resultFile = "MatchCase9_res.plt"
+// end SimulationResult;
+// 3.0
+// endResult

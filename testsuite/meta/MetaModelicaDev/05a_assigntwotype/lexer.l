@@ -43,13 +43,13 @@ istring      \"{icon}\"
 
 int lex_icon()
 {
-  yylval = (long) mmc_mk_icon(atoi(yytext));
+  yylval = mmc_mk_icon(atoi(yytext));
   return T_INTCONST;
 }
 
 int lex_rcon()
 {
-  yylval=(long) mmc_mk_rcon(atof(yytext));
+  yylval = mmc_mk_rcon(atof(yytext));
   return T_REALCONST;
 }
 
