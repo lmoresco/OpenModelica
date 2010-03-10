@@ -7,6 +7,7 @@ AlgorithmSection.mos \
 algorithms.mos \
 Array1.mos ArrayAddSub1.mos ArrayDivError.mos \
 ArrayEquation.mos ArrayMult.mos ArrayReduce.mos \
+BaseClass1.mos \
 blockssources.mos blockssystems.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
