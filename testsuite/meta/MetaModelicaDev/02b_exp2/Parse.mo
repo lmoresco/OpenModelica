@@ -4,12 +4,12 @@ import Exp2;
 
 protected function yyparse
   output Integer i;
-external "C";
+external "C" annotation(Library = {"lexer.o","parser.o"});
 end yyparse;
 
 protected function getAST
   output Exp2.Exp exp;
-external "C" annotation(Library = "lexer.o parser.o");
+external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;
 
 public function parse

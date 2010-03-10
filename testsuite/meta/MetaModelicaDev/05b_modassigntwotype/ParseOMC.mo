@@ -10,12 +10,12 @@ import Absyn;
 
 protected function yyparse
   output Integer i;
-external "C";
+external "C" annotation(Library = {"lexer.o","parser.o"});
 end yyparse;
 
 protected function getAST
   output Absyn.Exp exp;
-external "C" annotation(Library = "parser.o lexer.o");
+external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;
 
 protected function parse2
