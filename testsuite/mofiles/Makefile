@@ -36,7 +36,7 @@ Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo Extends6.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
-Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo Lookup9.mo \
+Lookup1.mo Lookup2.mo Lookup4.mo Lookup6.mo Lookup7.mo Lookup9.mo Lookup10.mo \
 Delay.mo Delay2.mo Delay3.mo Delay4.mo Delay5.mo Delay6.mo Delay7.mo \
 Div.mo Mod.mo Rem.mo Ceil.mo Floor.mo Integer.mo \
 Sin.mo Cos.mo Tan.mo Asin.mo Acos.mo Atan.mo Atan2.mo Sinh.mo Cosh.mo Tanh.mo Exp.mo Log.mo Log10.mo \
