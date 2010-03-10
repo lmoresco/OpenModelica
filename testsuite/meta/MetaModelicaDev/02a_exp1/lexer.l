@@ -24,13 +24,13 @@ letters         {letter}+
 
 %%
 
-{digits}     { yylval=(long)absyn_integer(yytext); return T_INTCONST; }
+{digits}     { yylval = absyn_integer(yytext); return T_INTCONST; }
 "+"          return T_ADD;
 "-"          return T_SUB;
 "*"          return T_MUL;
 "/"          return T_DIV;
-"^"			 return T_POW;
-"!"			 return T_FACTORIAL;
+"^"          return T_POW;
+"!"          return T_FACTORIAL;
 "("          return T_LPAREN;
 ")"          return T_RPAREN;
 {junk}+         ;
