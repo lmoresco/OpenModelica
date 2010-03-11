@@ -19,8 +19,3 @@ fast:
 failingtest:
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
-
-test_susan:
-	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
-	cd mofiles; $(MAKE) -f Makefile test_susan; rm -f *.dll *.so; cd ..; \
-	cd mosfiles; $(MAKE) -f Makefile test_susan; rm -f *.dll *.so; cd ..; \

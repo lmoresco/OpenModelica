@@ -194,12 +194,6 @@ test :
 	@echo
 	@$(TEST) $(TESTFILES)
 
-test_susan :
-	@echo
-	@echo Running tests with susan code generation...
-	@echo
-	@RTEST_OMCFLAGS="+d=tplmode" $(TEST) $(TESTFILES)
-
 failingtest :
 	@echo
 	@echo Running failing tests...
