@@ -22,6 +22,7 @@ Delay.mos \
 dertest.mos differentiate.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
+EnzMM.mos \
 EqualityEquations.mos \
 ExtendsBasic.mos ExtendsOrder.mos \
 ExternalLibraries.mos ExternalFunctionResultOrder.mos\
