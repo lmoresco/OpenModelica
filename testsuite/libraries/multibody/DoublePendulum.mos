@@ -67,19 +67,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // external "C";
 // end Modelica.Math.sin;
 // 
-// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy
-// input Real[3] n_x(unit = "1") "Vector in direction of x-axis of frame 2, resolved in frame 1";
-// input Real[3] n_y(unit = "1") "Vector in direction of y-axis of frame 2, resolved in frame 1";
+// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation
+// input Integer axis(min = 1, max = 3) "Rotate around 'axis' of frame 1";
+// input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along 'axis' of frame 1";
 // output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
-// protected Real abs_n_x = sqrt(n_x[1] ^ 2.0 + (n_x[2] ^ 2.0 + n_x[3] ^ 2.0));
-// protected Real[3] e_x(unit = "1") = if abs_n_x < 1e-10 then {1.0,0.0,0.0} else {n_x[1] / abs_n_x,n_x[2] / abs_n_x,n_x[3] / abs_n_x};
-// protected Real[3] n_z_aux(unit = "1") = {e_x[2] * n_y[3] - e_x[3] * n_y[2],e_x[3] * n_y[1] - e_x[1] * n_y[3],e_x[1] * n_y[2] - e_x[2] * n_y[1]};
-// protected Real[3] n_y_aux(unit = "1") = if n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-06 then {n_y[1],n_y[2],n_y[3]} else DAE.CAST(/tp:REAL[3]/, if abs(e_x[1]) > 1e-06 then {0,1,0} else {1,0,0});
-// protected Real[3] e_z_aux(unit = "1") = {e_x[2] * n_y_aux[3] - e_x[3] * n_y_aux[2],e_x[3] * n_y_aux[1] - e_x[1] * n_y_aux[3],e_x[1] * n_y_aux[2] - e_x[2] * n_y_aux[1]};
-// protected Real[3] e_z(unit = "1") = {e_z_aux[1] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0)),e_z_aux[2] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0)),e_z_aux[3] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0))};
 // algorithm
-//   T := <matrix>[e_x[1],e_x[2],e_x[3];e_z[2] * e_x[3] - e_z[3] * e_x[2],e_z[3] * e_x[1] - e_z[1] * e_x[3],e_z[1] * e_x[2] - e_z[2] * e_x[1];e_z[1],e_z[2],e_z[3]];
-// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy;
+//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,Modelica.Math.cos(angle),Modelica.Math.sin(angle);0.0,-Modelica.Math.sin(angle),Modelica.Math.cos(angle)] else if axis == 2 then <matrix>[Modelica.Math.cos(angle),0.0,-Modelica.Math.sin(angle);0.0,1.0,0.0;Modelica.Math.sin(angle),0.0,Modelica.Math.cos(angle)] else <matrix>[Modelica.Math.cos(angle),Modelica.Math.sin(angle),0.0;-Modelica.Math.sin(angle),Modelica.Math.cos(angle),0.0;0.0,0.0,1.0];
+// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation
 // input Real[3, 3] T1 "Orientation object to rotate frame 0 into frame 1";
@@ -88,6 +82,12 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   T2 := <matrix>[T_rel[1,1] * T1[1,1] + T_rel[1,2] * T1[2,1] + T_rel[1,3] * T1[3,1],T_rel[1,1] * T1[1,2] + T_rel[1,2] * T1[2,2] + T_rel[1,3] * T1[3,2],T_rel[1,1] * T1[1,3] + T_rel[1,2] * T1[2,3] + T_rel[1,3] * T1[3,3];T_rel[2,1] * T1[1,1] + T_rel[2,2] * T1[2,1] + T_rel[2,3] * T1[3,1],T_rel[2,1] * T1[1,2] + T_rel[2,2] * T1[2,2] + T_rel[2,3] * T1[3,2],T_rel[2,1] * T1[1,3] + T_rel[2,2] * T1[2,3] + T_rel[2,3] * T1[3,3];T_rel[3,1] * T1[1,1] + T_rel[3,2] * T1[2,1] + T_rel[3,3] * T1[3,1],T_rel[3,1] * T1[1,2] + T_rel[3,2] * T1[2,2] + T_rel[3,3] * T1[3,2],T_rel[3,1] * T1[1,3] + T_rel[3,2] * T1[2,3] + T_rel[3,3] * T1[3,3]];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation
+// output Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2";
+// algorithm
+//   Q := {0.0,0.0,0.0,1.0};
+// end Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
@@ -128,13 +128,19 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   end if;
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T;
 // 
-// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation
-// input Integer axis(min = 1, max = 3) "Rotate around 'axis' of frame 1";
-// input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along 'axis' of frame 1";
+// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy
+// input Real[3] n_x(unit = "1") "Vector in direction of x-axis of frame 2, resolved in frame 1";
+// input Real[3] n_y(unit = "1") "Vector in direction of y-axis of frame 2, resolved in frame 1";
 // output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
+// protected Real abs_n_x = sqrt(n_x[1] ^ 2.0 + (n_x[2] ^ 2.0 + n_x[3] ^ 2.0));
+// protected Real[3] e_x(unit = "1") = if abs_n_x < 1e-10 then {1.0,0.0,0.0} else {n_x[1] / abs_n_x,n_x[2] / abs_n_x,n_x[3] / abs_n_x};
+// protected Real[3] n_z_aux(unit = "1") = {e_x[2] * n_y[3] - e_x[3] * n_y[2],e_x[3] * n_y[1] - e_x[1] * n_y[3],e_x[1] * n_y[2] - e_x[2] * n_y[1]};
+// protected Real[3] n_y_aux(unit = "1") = if n_z_aux[1] ^ 2.0 + (n_z_aux[2] ^ 2.0 + n_z_aux[3] ^ 2.0) > 1e-06 then {n_y[1],n_y[2],n_y[3]} else DAE.CAST(/tp:REAL[3]/, if abs(e_x[1]) > 1e-06 then {0,1,0} else {1,0,0});
+// protected Real[3] e_z_aux(unit = "1") = {e_x[2] * n_y_aux[3] - e_x[3] * n_y_aux[2],e_x[3] * n_y_aux[1] - e_x[1] * n_y_aux[3],e_x[1] * n_y_aux[2] - e_x[2] * n_y_aux[1]};
+// protected Real[3] e_z(unit = "1") = {e_z_aux[1] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0)),e_z_aux[2] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0)),e_z_aux[3] / sqrt(e_z_aux[1] ^ 2.0 + (e_z_aux[2] ^ 2.0 + e_z_aux[3] ^ 2.0))};
 // algorithm
-//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,Modelica.Math.cos(angle),Modelica.Math.sin(angle);0.0,-Modelica.Math.sin(angle),Modelica.Math.cos(angle)] else if axis == 2 then <matrix>[Modelica.Math.cos(angle),0.0,-Modelica.Math.sin(angle);0.0,1.0,0.0;Modelica.Math.sin(angle),0.0,Modelica.Math.cos(angle)] else <matrix>[Modelica.Math.cos(angle),Modelica.Math.sin(angle),0.0;-Modelica.Math.sin(angle),Modelica.Math.cos(angle),0.0;0.0,0.0,1.0];
-// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation;
+//   T := <matrix>[e_x[1],e_x[2],e_x[3];e_z[2] * e_x[3] - e_z[3] * e_x[2],e_z[3] * e_x[1] - e_z[1] * e_x[3],e_z[1] * e_x[2] - e_z[2] * e_x[1];e_z[1],e_z[2],e_z[3]];
+// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation
 // input Real[3] e(unit = "1") "Normalized axis of rotation (must have length=1)";

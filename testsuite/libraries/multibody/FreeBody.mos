@@ -17,13 +17,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // Result:
 // true
 // ""
-// "function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
-// input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
-// input Real[3] v2 "Vector in frame 2";
-// output Real[3] v1 "Vector in frame 1";
+// "function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation
+// input Integer axis(min = 1, max = 3) "Rotate around 'axis' of frame 1";
+// input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along 'axis' of frame 1";
+// output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   v1 := {T[1,1] * v2[1] + T[2,1] * v2[2] + T[3,1] * v2[3],T[1,2] * v2[1] + T[2,2] * v2[2] + T[3,2] * v2[3],T[1,3] * v2[1] + T[2,3] * v2[2] + T[3,3] * v2[3]};
-// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1;
+//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,Modelica.Math.cos(angle),Modelica.Math.sin(angle);0.0,-Modelica.Math.sin(angle),Modelica.Math.cos(angle)] else if axis == 2 then <matrix>[Modelica.Math.cos(angle),0.0,-Modelica.Math.sin(angle);0.0,1.0,0.0;Modelica.Math.sin(angle),0.0,Modelica.Math.cos(angle)] else <matrix>[Modelica.Math.cos(angle),Modelica.Math.sin(angle),0.0;-Modelica.Math.sin(angle),Modelica.Math.cos(angle),0.0;0.0,0.0,1.0];
+// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent
 // input Real u1;
@@ -72,14 +72,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // external "C";
 // end Modelica.Math.sin;
 // 
-// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation
-// input Integer axis(min = 1, max = 3) "Rotate around 'axis' of frame 1";
-// input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along 'axis' of frame 1";
-// output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
-// algorithm
-//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,Modelica.Math.cos(angle),Modelica.Math.sin(angle);0.0,-Modelica.Math.sin(angle),Modelica.Math.cos(angle)] else if axis == 2 then <matrix>[Modelica.Math.cos(angle),0.0,-Modelica.Math.sin(angle);0.0,1.0,0.0;Modelica.Math.sin(angle),0.0,Modelica.Math.cos(angle)] else <matrix>[Modelica.Math.cos(angle),Modelica.Math.sin(angle),0.0;-Modelica.Math.sin(angle),Modelica.Math.cos(angle),0.0;0.0,0.0,1.0];
-// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation;
-// 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
 // input Real[4] Q_guess = Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation() "Guess value for Q (there are 2 solutions; the one close to Q_guess is used";
@@ -125,6 +117,12 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // output Orientation res;
 // end Modelica.Mechanics.MultiBody.Frames.Orientation;
 // 
+// function Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation
+// output Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2";
+// algorithm
+//   Q := {0.0,0.0,0.0,1.0};
+// end Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation
 // input Real[3, 3] T1 "Orientation object to rotate frame 0 into frame 1";
 // input Real[3, 3] T_rel "Orientation object to rotate frame 1 into frame 2";
@@ -132,6 +130,23 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   T2 := <matrix>[T_rel[1,1] * T1[1,1] + T_rel[1,2] * T1[2,1] + T_rel[1,3] * T1[3,1],T_rel[1,1] * T1[1,2] + T_rel[1,2] * T1[2,2] + T_rel[1,3] * T1[3,2],T_rel[1,1] * T1[1,3] + T_rel[1,2] * T1[2,3] + T_rel[1,3] * T1[3,3];T_rel[2,1] * T1[1,1] + T_rel[2,2] * T1[2,1] + T_rel[2,3] * T1[3,1],T_rel[2,1] * T1[1,2] + T_rel[2,2] * T1[2,2] + T_rel[2,3] * T1[3,2],T_rel[2,1] * T1[1,3] + T_rel[2,2] * T1[2,3] + T_rel[2,3] * T1[3,3];T_rel[3,1] * T1[1,1] + T_rel[3,2] * T1[2,1] + T_rel[3,3] * T1[3,1],T_rel[3,1] * T1[1,2] + T_rel[3,2] * T1[2,2] + T_rel[3,3] * T1[3,2],T_rel[3,1] * T1[1,3] + T_rel[3,2] * T1[2,3] + T_rel[3,3] * T1[3,3]];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.axesRotations
+// input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
+// input Real[3] angles(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angles around the axes defined in 'sequence'";
+// input Real[3] der_angles(quantity = "AngularVelocity", unit = "rad/s") "= der(angles)";
+// output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
+// algorithm
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[2],angles[2]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[1],angles[1]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[3]) * der_angles[3] + Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve2(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[2]) * der_angles[2]) + Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve2(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[2],angles[2]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[1]) * der_angles[1]));
+// end Modelica.Mechanics.MultiBody.Frames.axesRotations;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
+// input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
+// input Real[3] v2 "Vector in frame 2";
+// output Real[3] v1 "Vector in frame 1";
+// algorithm
+//   v1 := {T[1,1] * v2[1] + T[2,1] * v2[2] + T[3,1] * v2[3],T[1,2] * v2[1] + T[2,2] * v2[2] + T[3,2] * v2[3],T[1,3] * v2[1] + T[2,3] * v2[2] + T[3,3] * v2[3]};
+// end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation
 // input Real[3] e(unit = "1") "Normalized axis of rotation (must have length=1)";
@@ -154,15 +169,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   T := <matrix>[e_x[1],e_x[2],e_x[3];e_z[2] * e_x[3] - e_z[3] * e_x[2],e_z[3] * e_x[1] - e_z[1] * e_x[3],e_z[1] * e_x[2] - e_z[2] * e_x[1];e_z[1],e_z[2],e_z[3]];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.axesRotations
-// input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
-// input Real[3] angles(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angles around the axes defined in 'sequence'";
-// input Real[3] der_angles(quantity = "AngularVelocity", unit = "rad/s") "= der(angles)";
-// output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
-// algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[2],angles[2]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[1],angles[1]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[3]) * der_angles[3] + Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve2(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[2]) * der_angles[2]) + Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve2(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[3],angles[3]) * Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation(sequence[2],angles[2]),Modelica.Mechanics.MultiBody.Frames.axis(sequence[1]) * der_angles[1]));
-// end Modelica.Mechanics.MultiBody.Frames.axesRotations;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.angularVelocity2
 // input Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
@@ -2309,14 +2315,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real spring2.spring.c(quantity = "TranslationalSpringConstant", unit = "N/m", min = 0.0, start = 1.0) = spring2.c "spring constant ";
 // parameter Real spring2.spring.s_rel0(quantity = "Length", unit = "m", min = 0.0) = spring2.s_unstretched "unstretched spring length";
 // initial equation
-//   if true then
-//   elseif body.body.useQuaternions then
-//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Quaternions.Orientation.equalityConstraint({body.body.Q[1],body.body.Q[2],body.body.Q[3],body.body.Q[4]},{body.body.Q_start[1],body.body.Q_start[2],body.body.Q_start[3],body.body.Q_start[4]});
-//   else
-//   body.body.phi[1] = body.body.phi_start[1];
-//   body.body.phi[2] = body.body.phi_start[2];
-//   body.body.phi[3] = body.body.phi_start[3];
-//   end if;
+//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint(body.body.frame_a.R,body.body.R_start);
 // equation
 //   world.x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(world.x_arrowLine.shapeType);
 //   world.x_arrowLine.rxvisobj[1] = world.x_arrowLine.R.T[1,1] * world.x_arrowLine.e_x[1] + (world.x_arrowLine.R.T[2,1] * world.x_arrowLine.e_x[2] + world.x_arrowLine.R.T[3,1] * world.x_arrowLine.e_x[3]);

@@ -84,6 +84,12 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   T2 := <matrix>[T_rel[1,1] * T1[1,1] + T_rel[1,2] * T1[2,1] + T_rel[1,3] * T1[3,1],T_rel[1,1] * T1[1,2] + T_rel[1,2] * T1[2,2] + T_rel[1,3] * T1[3,2],T_rel[1,1] * T1[1,3] + T_rel[1,2] * T1[2,3] + T_rel[1,3] * T1[3,3];T_rel[2,1] * T1[1,1] + T_rel[2,2] * T1[2,1] + T_rel[2,3] * T1[3,1],T_rel[2,1] * T1[1,2] + T_rel[2,2] * T1[2,2] + T_rel[2,3] * T1[3,2],T_rel[2,1] * T1[1,3] + T_rel[2,2] * T1[2,3] + T_rel[2,3] * T1[3,3];T_rel[3,1] * T1[1,1] + T_rel[3,2] * T1[2,1] + T_rel[3,3] * T1[3,1],T_rel[3,1] * T1[1,2] + T_rel[3,2] * T1[2,2] + T_rel[3,3] * T1[3,2],T_rel[3,1] * T1[1,3] + T_rel[3,2] * T1[2,3] + T_rel[3,3] * T1[3,3]];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation;
 // 
+// function Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation
+// output Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2";
+// algorithm
+//   Q := {0.0,0.0,0.0,1.0};
+// end Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
 // input Real[4] Q_guess = Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation() "Guess value for Q (there are 2 solutions; the one close to Q_guess is used";
@@ -5147,14 +5153,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // protected output Real referenceSystem.fixedTranslation5.shape.Material;
 // protected output Real referenceSystem.fixedTranslation5.shape.Extra;
 // initial equation
-//   if false then
-//   elseif referenceSystem.pointMass1.useQuaternions then
 //   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Quaternions.Orientation.equalityConstraint({referenceSystem.pointMass1.Q[1],referenceSystem.pointMass1.Q[2],referenceSystem.pointMass1.Q[3],referenceSystem.pointMass1.Q[4]},{referenceSystem.pointMass1.Q_start[1],referenceSystem.pointMass1.Q_start[2],referenceSystem.pointMass1.Q_start[3],referenceSystem.pointMass1.Q_start[4]});
-//   else
-//   referenceSystem.pointMass1.phi[1] = referenceSystem.pointMass1.phi_start[1];
-//   referenceSystem.pointMass1.phi[2] = referenceSystem.pointMass1.phi_start[2];
-//   referenceSystem.pointMass1.phi[3] = referenceSystem.pointMass1.phi_start[3];
-//   end if;
 // equation
 //   world.x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(world.x_arrowLine.shapeType);
 //   world.x_arrowLine.rxvisobj[1] = world.x_arrowLine.R.T[1,1] * world.x_arrowLine.e_x[1] + (world.x_arrowLine.R.T[2,1] * world.x_arrowLine.e_x[2] + world.x_arrowLine.R.T[3,1] * world.x_arrowLine.e_x[3]);

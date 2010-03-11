@@ -14,4 +14,14 @@ getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
+// false
+// ""
+// "Unknown model.
+// "
+// ""
+// "Error: No classes are loaded.
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum
+// "
+// ""
+// 0
 // endResult
