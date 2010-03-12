@@ -1,0 +1,24 @@
+// name:     ModelicaUtilities
+// keywords: ModelicaUtilities
+// status:   correct
+//
+// Checks that ModelicaUtilities.h is implemented
+//
+loadFile("ModelicaUtilities.mo");
+ModelicaUtilities.myExtFunction("abc 123");
+simulate(ModelicaUtilities);
+system("rm -rf ModelicaUtilities_* ModelicaUtilities.exe ModelicaUtilities ModelicaUtilities.cpp ModelicaUtilities.makefile ModelicaUtilities.libs ModelicaUtilities.log output.log");
+
+// Result:
+// "abc 123: was normal - this is formatted: abc 123"
+// "abc 123: was error - this is formatted error: abc 123"
+// "abc: was normal - this is formatted: abc"
+// "abc: was error - this is formatted error: abc"
+// true
+// "OK
+// "
+// record SimulationResult
+//     resultFile = "ModelicaUtilities_res.plt"
+// end SimulationResult;
+// 0
+// endResult

@@ -27,6 +27,7 @@ EqualityEquations.mos \
 ExtendsBasic.mos ExtendsOrder.mos \
 ExternalLibraries.mos ExternalFunctionResultOrder.mos\
 ExtObj.mos \
+FinalTests.mos \
 FiveForEquations.mos \
 FlatTank.mos \
 ForIterator1.mos ForIterator2.mos \
@@ -53,6 +54,7 @@ loadFileInteractiveQualified.mos \
 LotkaVolterra.mos \
 Matrix.mos matrices.mos \
 MissV.mos \
+ModelicaUtilities.mos \
 MyPointsInst1.mos MyPointsInst2.mos \
 ModelBalance1.mos ModelBalance2.mos ModelBalance3.mos \
 NotbasicType.mos NotbasicType2.mos \

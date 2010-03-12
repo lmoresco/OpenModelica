@@ -1,0 +1,40 @@
+// name: FinalTests
+// keywords: final override
+// status: correct
+// 
+//  
+//
+loadFile("FinalTests.mo");
+instantiateModel(test1);
+getErrorString();
+instantiateModel(test2);
+getErrorString();
+instantiateModel(test3);
+getErrorString();
+// Result:
+// true
+// ""
+// "Error: trying to override final variable in class: p1.p2.AfunctionExtend
+// Error: trying to override final variable in class: p3.m3
+// Error: trying to override final variable in class: test1
+// Error: Error occured while flattening model test1
+// Error: trying to override final variable in class: p1.p2.AfunctionExtend
+// Error: trying to override final variable in class: p3.m3
+// Error: trying to override final variable in class: test1
+// Error: Error occured while flattening model test1
+// "
+// ""
+// "[FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: test2
+// [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: Real
+// Error: Error occured while flattening model test2
+// [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: test2
+// [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: Real
+// Error: Error occured while flattening model test2
+// "
+// ""
+// "Error: trying to override final variable in class: PI
+// Error: Error occured while flattening model test3
+// Error: trying to override final variable in class: PI
+// Error: Error occured while flattening model test3
+// "
+// endResult
