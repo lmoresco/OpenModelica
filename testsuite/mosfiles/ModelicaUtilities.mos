@@ -7,7 +7,7 @@
 loadFile("ModelicaUtilities.mo");
 ModelicaUtilities.myExtFunction("abc 123");
 simulate(ModelicaUtilities);
-system("rm -rf ModelicaUtilities_* ModelicaUtilities.exe ModelicaUtilities ModelicaUtilities.cpp ModelicaUtilities.makefile ModelicaUtilities.libs ModelicaUtilities.log output.log");
+system("rm -rf ModelicaUtilities_init.txt ModelicaUtilities_functions.cpp ModelicaUtilities.exe ModelicaUtilities ModelicaUtilities.cpp ModelicaUtilities.makefile ModelicaUtilities.libs ModelicaUtilities.log output.log");
 
 // Result:
 // "abc 123: was normal - this is formatted: abc 123"
