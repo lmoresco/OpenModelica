@@ -7,18 +7,20 @@
 loadFile("ModelicaUtilities.mo");
 ModelicaUtilities.myExtFunction("abc 123");
 simulate(ModelicaUtilities);
+readFile("output.log");
 system("rm -rf ModelicaUtilities_init.txt ModelicaUtilities_functions.cpp ModelicaUtilities.exe ModelicaUtilities ModelicaUtilities.cpp ModelicaUtilities.makefile ModelicaUtilities.libs ModelicaUtilities.log output.log");
 
 // Result:
-// "abc 123: was normal - this is formatted: abc 123"
-// "abc 123: was error - this is formatted error: abc 123"
-// "abc: was normal - this is formatted: abc"
-// "abc: was error - this is formatted error: abc"
+// abc 123 was normal - this is formatted abc 123
+// abc 123 was error - this is formatted error abc 123
 // true
 // "OK
 // "
 // record SimulationResult
 //     resultFile = "ModelicaUtilities_res.plt"
 // end SimulationResult;
+// "abc was normal - this is formatted abc
+// abc was error - this is formatted error abc
+// "
 // 0
 // endResult

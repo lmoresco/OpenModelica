@@ -4,13 +4,11 @@ extern "C" {
 
 #include "ModelicaUtilities.h"
 
-const char* myExtFunction(const char* str) {
-  ModelicaMessage("\"");
+const char* myExtFunction(const char* str, double t) {
   ModelicaMessage(str);
-  ModelicaFormatMessage(": was normal - this is formatted: %s\"\n",str);
-  ModelicaError("\"");
+  ModelicaFormatMessage(" was normal - this is formatted %s\n",str);
   ModelicaError(str);
-  ModelicaFormatError(": was error - this is formatted error: %s\"\n",str);
+  ModelicaFormatError(" was error - this is formatted error %s\n",str);
   char* buf = ModelicaAllocateString(3);
   buf[0] = 'O';
   buf[1] = 'K';
