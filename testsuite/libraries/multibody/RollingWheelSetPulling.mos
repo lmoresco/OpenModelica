@@ -5061,8 +5061,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   wheelSet.frame1.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling;
 // "
-// "ERROR: OMC unable to load `./Modelica_Blocks_Sources_CombiTimeTable_tableTimeInit.so': ./Modelica_Blocks_Sources_CombiTimeTable_tableTimeInit.so: undefined symbol: ModelicaTables_CombiTimeTable_init.
-// 
-// "
+// ""
 // 0
 // endResult
