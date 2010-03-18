@@ -72,11 +72,11 @@ end VectorTest;
 // constant Real plyprime[1,4] = 1.0;
 // constant Real plyprime[2,1] = 1.0;
 // constant Real plyprime[2,2] = 0.0;
-// constant Real plyprime[2,3] = 0.0;
-// constant Real plyprime[2,4] = 1.0;
-// constant Real plyprime[3,1] = 1.0;
+// constant Real plyprime[2,3] = 1.0;
+// constant Real plyprime[2,4] = 0.0;
+// constant Real plyprime[3,1] = 0.0;
 // constant Real plyprime[3,2] = 0.0;
-// constant Real plyprime[3,3] = 0.0;
+// constant Real plyprime[3,3] = 1.0;
 // constant Real plyprime[3,4] = 1.0;
 // end VectorTest;
 
