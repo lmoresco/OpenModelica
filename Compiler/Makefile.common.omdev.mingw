@@ -25,7 +25,9 @@ RTOBJ   = $(srcdir)/runtime/systemimpl.o $(srcdir)/runtime/systemimplmisc.o $(sr
 	$(srcdir)/runtime/errorext.o $(srcdir)/runtime/ErrorMessage.o \
 	$(srcdir)/runtime/daeext.o \
 	$(srcdir)/runtime/lpsolve/lpsolve55.lib  \
-	$(srcdir)/runtime/unitparser.o $(srcdir)/runtime/unitparserext.o $(CORBAOBJ) \
+	$(srcdir)/runtime/unitparser.o \
+  $(srcdir)/runtime/unitparserext.o \
+  $(CORBAOBJ) \
 	$(srcdir)/modpar/libmodpar.a \
 	$(srcdir)/runtime/settingsimpl.o \
 	$(srcdir)/runtime/SimulationResults.o
@@ -67,6 +69,7 @@ SRCMO= Absyn.mo \
 	HashTable5.mo \
 	HashTable6.mo \
 	HashTableCG.mo \
+  HashTableStringToPath.mo \
 	Inline.mo \
 	Inst.mo \
 	Interactive.mo \
