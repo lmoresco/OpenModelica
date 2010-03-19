@@ -47,8 +47,7 @@ getClassNames(A);
 // true
 // ""
 // 
-// "Error: In modifier (extent = {{0,0},{100,100}}), class or component extent not found in <Icon>
-// "
+// ""
 // true
 // true
 // true
