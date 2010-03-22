@@ -6,7 +6,8 @@
 //
 loadFile("TransformerYYTotal.mo");
 checkModel(Modelica.Electrical.MultiPhase.Examples.TransformerYY);
-getErrorString();// Result:
+getErrorString();
+// Result:
 // true
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYY completed successfully.
 // 
