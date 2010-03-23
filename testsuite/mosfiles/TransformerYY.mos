@@ -11,7 +11,6 @@ getErrorString();
 // true
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYY completed successfully.
 // 
-// Warning: Parameter j has no value, and is fixed during initialization (fixed=true)
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 257 equation(s) and 257 variable(s).
 // 199 of these are trivial equation(s).
