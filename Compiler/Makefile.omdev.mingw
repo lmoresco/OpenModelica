@@ -45,6 +45,7 @@ include Makefile.common.omdev.mingw
 
 PROG = omc
 PROGD = omcd
+PROGP = omcp
 PROGF = omcf
 
 SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin
@@ -74,6 +75,10 @@ $(PROG): omc_release
 $(PROGD): omc_debug
 	echo Copying $(PROGD)$(EXEEXT) into $(builddir_bin)
 	cp omc_debug/$(PROGD)$(EXEEXT) $(builddir_bin)/
+
+$(PROGP): omc_profiler
+	echo Copying $(PROGP)$(EXEEXT) into $(builddir_bin)
+	cp omc_profiler/$(PROGP)$(EXEEXT) $(builddir_bin)/
 
 $(PROGF): omc_frontend
 	echo Copying frontend $(PROGF)$(EXEEXT) into $(builddir_bin)/$(PROG)$(EXEEXT)
@@ -106,6 +111,9 @@ omc_release:
 
 omc_debug:
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
+
+omc_profiler:
+	(cd omc_profiler && $(MAKE) -f Makefile.omdev.mingw)
 
 omc_frontend:
 	(cd omc_frontend && $(MAKE) -f Makefile.omdev.mingw)
