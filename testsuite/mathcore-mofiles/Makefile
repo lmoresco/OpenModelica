@@ -55,7 +55,7 @@ FlexibleShaftNonLinearTotal.mo SubScript1.mo SubScript2.mo if_then_elseif_else.m
 FlatParse.mof \
 ArrayEWOps1.mo ArrayEWOps2.mo ArrayEWOps3.mo ArrayEWOps4.mo ArrayEWOps5.mo \
 ArrayEWOpsCEval1.mo ArrayEWOpsCEval2.mo ArrayEWOpsCEval3.mo ArrayEWOpsCEval4.mo ArrayEWOpsCEval5.mo \
-MatrixRowIndexing.mo Philosopher.mo PEXPipeTotal.mo
+MatrixRowIndexing.mo Philosopher.mo Philosopher2.mo PEXPipeTotal.mo
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
