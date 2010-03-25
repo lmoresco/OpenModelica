@@ -108,9 +108,9 @@ end TestGravityAcceleration;
 // end TestGravityAcceleration.w.gravityAcceleration;
 // 
 // fclass TestGravityAcceleration
-// parameter Real w.n[1] = 0.0;
-// parameter Real w.n[2] = -1.0;
-// parameter Real w.n[3] = 0.0;
+// parameter Real w.n[1](unit = "1") = 0.0;
+// parameter Real w.n[2](unit = "1") = -1.0;
+// parameter Real w.n[3](unit = "1") = 0.0;
 // parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000.0 "Gravity field constant (default = field constant of earth)";
 // parameter enumeration(NoGravity, UniformGravity, PointGravity) w.gravityType = Types.GravityTypes.UniformGravity;
 // parameter Real w.g = 9.81 "Constant gravity acceleration";

@@ -3,12 +3,10 @@
 // status:   correct
 // 
 // Array as alias used in extends checks, enumeration used as array size, enumeration indexing, etc.
-// this is partially correct as modifications doesn't seem to be kept!
-// Needs to be investigated further.
 
 type NowLetsSee = enumeration(one, two, three);
 
-type Alias = Real[NowLetsSee](unit="fish/s");
+type Alias = Real[NowLetsSee](each unit="fish/s");
 
 type Orientation 
   extends Alias annotation(dummyAnn = true);
@@ -44,8 +42,8 @@ end ArrayAsAliasInExtends;
 
 
 // fclass ArrayAsAliasInExtends
-// parameter Real R1[1] = 1.0;
-// parameter Real R1[2] = 2.0;
-// parameter Real R1[3] = 3.0;
+// parameter Real R1[1](unit = "fish/s") = 1.0;
+// parameter Real R1[2](unit = "fish/s") = 2.0;
+// parameter Real R1[3](unit = "fish/s") = 3.0;
 // Real x = 6.0;
 // end ArrayAsAliasInExtends;
