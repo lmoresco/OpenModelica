@@ -1,0 +1,16 @@
+//name:         Glycolysis
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("../msl221/Modelica/package.mo");
+loadFile("BioChem/package.mo");
+
+getErrorString();
+// Result:
+// true
+// true
+// ""
+// endResult

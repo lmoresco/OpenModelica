@@ -1,0 +1,144 @@
+//name:         WhyArrows
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Mechanics.Translational.Examples.WhyArrows);
+getErrorString();
+// Result:
+// true
+// "fclass Modelica.Mechanics.Translational.Examples.WhyArrows
+// parameter Real Fixed1.s0(quantity = "Length", unit = "m") = 0.0 "fixed offset position of housing";
+// Real Fixed1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod1.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real Rod1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real Rod1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod2.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real Rod2.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real Rod2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod3.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real Rod3.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real Rod3.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod3.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Rod3.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Rod3.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real PositionSensor2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real PositionSensor2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real PositionSensor2.s(quantity = "Length", unit = "m") "Absolute position of flange as output signal";
+// Real PositionSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real PositionSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real PositionSensor1.s(quantity = "Length", unit = "m") "Absolute position of flange as output signal";
+// Real PositionSensor3.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real PositionSensor3.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real PositionSensor3.s(quantity = "Length", unit = "m") "Absolute position of flange as output signal";
+// parameter Real Fixed3.s0(quantity = "Length", unit = "m") = -1.9 "fixed offset position of housing";
+// Real Fixed3.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed3.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real Spring1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real Spring1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real Spring1.s_rel0(quantity = "Length", unit = "m", min = 0.0) = 2.0 "unstretched spring length";
+// parameter Real Spring1.c(unit = "N/m", min = 0.0) = 11.0 "spring constant ";
+// Real SlidingMass1.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass1.L(quantity = "Length", unit = "m") = 2.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass1.v(quantity = "Velocity", unit = "m/s") "absolute velocity of component";
+// Real SlidingMass1.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// parameter Real Fixed2.s0(quantity = "Length", unit = "m") = -1.9 "fixed offset position of housing";
+// Real Fixed2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring2.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real Spring2.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real Spring2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real Spring2.s_rel0(quantity = "Length", unit = "m", min = 0.0) = 2.0 "unstretched spring length";
+// parameter Real Spring2.c(unit = "N/m", min = 0.0) = 11.0 "spring constant ";
+// Real SlidingMass2.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass2.L(quantity = "Length", unit = "m") = 2.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass2.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass2.v(quantity = "Velocity", unit = "m/s") "absolute velocity of component";
+// Real SlidingMass2.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// equation
+//   Fixed1.flange_b.s = Fixed1.s0;
+//   0.0 = Rod1.flange_a.f + Rod1.flange_b.f;
+//   Rod1.flange_a.s = Rod1.s - Rod1.L / 2.0;
+//   Rod1.flange_b.s = Rod1.s + Rod1.L / 2.0;
+//   0.0 = Rod2.flange_a.f + Rod2.flange_b.f;
+//   Rod2.flange_a.s = Rod2.s - Rod2.L / 2.0;
+//   Rod2.flange_b.s = Rod2.s + Rod2.L / 2.0;
+//   0.0 = Rod3.flange_a.f + Rod3.flange_b.f;
+//   Rod3.flange_a.s = Rod3.s - Rod3.L / 2.0;
+//   Rod3.flange_b.s = Rod3.s + Rod3.L / 2.0;
+//   PositionSensor2.s = PositionSensor2.flange_a.s;
+//   0.0 = PositionSensor2.flange_a.f;
+//   PositionSensor1.s = PositionSensor1.flange_a.s;
+//   0.0 = PositionSensor1.flange_a.f;
+//   PositionSensor3.s = PositionSensor3.flange_a.s;
+//   0.0 = PositionSensor3.flange_a.f;
+//   Fixed3.flange_b.s = Fixed3.s0;
+//   Spring1.f = Spring1.c * (Spring1.s_rel - Spring1.s_rel0);
+//   Spring1.s_rel = Spring1.flange_b.s - Spring1.flange_a.s;
+//   Spring1.flange_b.f = Spring1.f;
+//   Spring1.flange_a.f = -Spring1.f;
+//   SlidingMass1.v = der(SlidingMass1.s);
+//   SlidingMass1.a = der(SlidingMass1.v);
+//   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
+//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
+//   Fixed2.flange_b.s = Fixed2.s0;
+//   Spring2.f = Spring2.c * (Spring2.s_rel - Spring2.s_rel0);
+//   Spring2.s_rel = Spring2.flange_b.s - Spring2.flange_a.s;
+//   Spring2.flange_b.f = Spring2.f;
+//   Spring2.flange_a.f = -Spring2.f;
+//   SlidingMass2.v = der(SlidingMass2.s);
+//   SlidingMass2.a = der(SlidingMass2.v);
+//   SlidingMass2.m * SlidingMass2.a = SlidingMass2.flange_a.f + SlidingMass2.flange_b.f;
+//   SlidingMass2.flange_a.s = SlidingMass2.s - SlidingMass2.L / 2.0;
+//   SlidingMass2.flange_b.s = SlidingMass2.s + SlidingMass2.L / 2.0;
+//   Rod1.flange_b.f + (Rod3.flange_a.f + (Fixed1.flange_b.f + Rod2.flange_a.f)) = 0.0;
+// Rod1.flange_b.s = Rod3.flange_a.s;
+// Rod3.flange_a.s = Fixed1.flange_b.s;
+// Fixed1.flange_b.s = Rod2.flange_a.s;
+//   Rod2.flange_b.f + PositionSensor2.flange_a.f = 0.0;
+// Rod2.flange_b.s = PositionSensor2.flange_a.s;
+//   PositionSensor1.flange_a.f + Rod1.flange_a.f = 0.0;
+// PositionSensor1.flange_a.s = Rod1.flange_a.s;
+//   PositionSensor3.flange_a.f + Rod3.flange_b.f = 0.0;
+// PositionSensor3.flange_a.s = Rod3.flange_b.s;
+//   Fixed3.flange_b.f + Spring1.flange_a.f = 0.0;
+// Fixed3.flange_b.s = Spring1.flange_a.s;
+//   Spring1.flange_b.f + SlidingMass1.flange_b.f = 0.0;
+// Spring1.flange_b.s = SlidingMass1.flange_b.s;
+//   Fixed2.flange_b.f + Spring2.flange_a.f = 0.0;
+// Fixed2.flange_b.s = Spring2.flange_a.s;
+//   Spring2.flange_b.f + SlidingMass2.flange_b.f = 0.0;
+// Spring2.flange_b.s = SlidingMass2.flange_b.s;
+//   SlidingMass1.flange_a.f = 0.0;
+//   SlidingMass2.flange_a.f = 0.0;
+// end Modelica.Mechanics.Translational.Examples.WhyArrows;
+// "
+// ""
+// endResult

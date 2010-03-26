@@ -1,0 +1,130 @@
+//name:         CharacteristicThyristors
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Electrical.Analog.Examples.CharacteristicThyristors);
+getErrorString();
+// Result:
+// true
+// "function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// fclass Modelica.Electrical.Analog.Examples.CharacteristicThyristors
+// Real IdealThyristor1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real IdealThyristor1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real IdealThyristor1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real IdealThyristor1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real IdealThyristor1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real IdealThyristor1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real IdealThyristor1.Ron(quantity = "Resistance", unit = "Ohm", min = 0.0) = 1e-05 "Closed thyristor resistance";
+// parameter Real IdealThyristor1.Goff(quantity = "Conductance", unit = "S", min = 0.0) = 1e-05 "Opened thyristor conductance";
+// parameter Real IdealThyristor1.Vknee(quantity = "ElectricPotential", unit = "V", min = 0.0) = 5.0 "Forward threshold voltage";
+// Boolean IdealThyristor1.off(start = true) "Switching state";
+// input Boolean IdealThyristor1.fire;
+// protected Real IdealThyristor1.s "Auxiliary variable: if on then current, if opened then voltage";
+// protected parameter Real IdealThyristor1.unitVoltage(quantity = "ElectricPotential", unit = "V") = 1.0;
+// protected parameter Real IdealThyristor1.unitCurrent(quantity = "ElectricCurrent", unit = "A") = 1.0;
+// Real SineVoltage1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real SineVoltage1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real SineVoltage1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real SineVoltage1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real SineVoltage1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real SineVoltage1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real SineVoltage1.offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+// parameter Real SineVoltage1.startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+// output Real SineVoltage1.signalSource.y "Connector of Real output signal";
+// parameter Real SineVoltage1.signalSource.amplitude = SineVoltage1.V "Amplitude of sine wave";
+// parameter Real SineVoltage1.signalSource.freqHz(quantity = "Frequency", unit = "Hz") = SineVoltage1.freqHz "Frequency of sine wave";
+// parameter Real SineVoltage1.signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = SineVoltage1.phase "Phase of sine wave";
+// parameter Real SineVoltage1.signalSource.offset = SineVoltage1.offset "Offset of output signal";
+// parameter Real SineVoltage1.signalSource.startTime(quantity = "Time", unit = "s") = SineVoltage1.startTime "Output = offset for time < startTime";
+// protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
+// parameter Real SineVoltage1.V(quantity = "ElectricPotential", unit = "V") = 10.0 "Amplitude of sine wave";
+// parameter Real SineVoltage1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+// parameter Real SineVoltage1.freqHz(quantity = "Frequency", unit = "Hz") = 1.0 "Frequency of sine wave";
+// Real Ground1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Ground1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real R3.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real R3.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real R3.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real R3.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real R3.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real R3.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real R3.R(quantity = "Resistance", unit = "Ohm") = 0.001 "Resistance";
+// output Boolean BooleanStep1.y "Connector of Boolean output signal";
+// parameter Real BooleanStep1.startTime(quantity = "Time", unit = "s") = 1.25 "Time instant of step start";
+// parameter Boolean BooleanStep1.startValue = false "Output before startTime";
+// Real IdealGTOThyristor1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real IdealGTOThyristor1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real IdealGTOThyristor1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real IdealGTOThyristor1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real IdealGTOThyristor1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real IdealGTOThyristor1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real IdealGTOThyristor1.Ron(quantity = "Resistance", unit = "Ohm", min = 0.0) = 1e-05 "Closed thyristor resistance";
+// parameter Real IdealGTOThyristor1.Goff(quantity = "Conductance", unit = "S", min = 0.0) = 1e-05 "Opened thyristor conductance";
+// parameter Real IdealGTOThyristor1.Vknee(quantity = "ElectricPotential", unit = "V", min = 0.0) = 0.0 "Forward threshold voltage";
+// Boolean IdealGTOThyristor1.off(start = true) "Switching state";
+// input Boolean IdealGTOThyristor1.fire;
+// protected Real IdealGTOThyristor1.s "Auxiliary variable: if on then current, if opened then voltage";
+// protected parameter Real IdealGTOThyristor1.unitVoltage(quantity = "ElectricPotential", unit = "V") = 1.0;
+// protected parameter Real IdealGTOThyristor1.unitCurrent(quantity = "ElectricCurrent", unit = "A") = 1.0;
+// Real R1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real R1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real R1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real R1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real R1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real R1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real R1.R(quantity = "Resistance", unit = "Ohm") = 0.001 "Resistance";
+// equation
+//   IdealThyristor1.off = IdealThyristor1.s < 0.0 OR pre(IdealThyristor1.off) AND  NOT IdealThyristor1.fire;
+//   IdealThyristor1.v = IdealThyristor1.s * (IdealThyristor1.unitCurrent * (if IdealThyristor1.off then 1.0 else IdealThyristor1.Ron)) + IdealThyristor1.Vknee;
+//   IdealThyristor1.i = IdealThyristor1.s * (IdealThyristor1.unitVoltage * (if IdealThyristor1.off then IdealThyristor1.Goff else 1.0)) + IdealThyristor1.Goff * IdealThyristor1.Vknee;
+//   IdealThyristor1.v = IdealThyristor1.p.v - IdealThyristor1.n.v;
+//   0.0 = IdealThyristor1.p.i + IdealThyristor1.n.i;
+//   IdealThyristor1.i = IdealThyristor1.p.i;
+//   SineVoltage1.signalSource.y = SineVoltage1.signalSource.offset + (if time < SineVoltage1.signalSource.startTime then 0.0 else SineVoltage1.signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (SineVoltage1.signalSource.freqHz * (time - SineVoltage1.signalSource.startTime)) + SineVoltage1.signalSource.phase));
+//   SineVoltage1.v = SineVoltage1.signalSource.y;
+//   SineVoltage1.v = SineVoltage1.p.v - SineVoltage1.n.v;
+//   0.0 = SineVoltage1.p.i + SineVoltage1.n.i;
+//   SineVoltage1.i = SineVoltage1.p.i;
+//   Ground1.p.v = 0.0;
+//   R3.R * R3.i = R3.v;
+//   R3.v = R3.p.v - R3.n.v;
+//   0.0 = R3.p.i + R3.n.i;
+//   R3.i = R3.p.i;
+//   BooleanStep1.y = if time >= BooleanStep1.startTime then  NOT BooleanStep1.startValue else BooleanStep1.startValue;
+//   IdealGTOThyristor1.off = IdealGTOThyristor1.s < 0.0 OR  NOT IdealGTOThyristor1.fire;
+//   IdealGTOThyristor1.v = IdealGTOThyristor1.s * (IdealGTOThyristor1.unitCurrent * (if IdealGTOThyristor1.off then 1.0 else IdealGTOThyristor1.Ron)) + IdealGTOThyristor1.Vknee;
+//   IdealGTOThyristor1.i = IdealGTOThyristor1.s * (IdealGTOThyristor1.unitVoltage * (if IdealGTOThyristor1.off then IdealGTOThyristor1.Goff else 1.0)) + IdealGTOThyristor1.Goff * IdealGTOThyristor1.Vknee;
+//   IdealGTOThyristor1.v = IdealGTOThyristor1.p.v - IdealGTOThyristor1.n.v;
+//   0.0 = IdealGTOThyristor1.p.i + IdealGTOThyristor1.n.i;
+//   IdealGTOThyristor1.i = IdealGTOThyristor1.p.i;
+//   R1.R * R1.i = R1.v;
+//   R1.v = R1.p.v - R1.n.v;
+//   0.0 = R1.p.i + R1.n.i;
+//   R1.i = R1.p.i;
+//   IdealThyristor1.n.i + R3.p.i = 0.0;
+// IdealThyristor1.n.v = R3.p.v;
+//   R3.n.i + (R1.n.i + (Ground1.p.i + SineVoltage1.n.i)) = 0.0;
+// R3.n.v = R1.n.v;
+// R1.n.v = Ground1.p.v;
+// Ground1.p.v = SineVoltage1.n.v;
+//   SineVoltage1.p.i + (IdealGTOThyristor1.p.i + IdealThyristor1.p.i) = 0.0;
+// SineVoltage1.p.v = IdealGTOThyristor1.p.v;
+// IdealGTOThyristor1.p.v = IdealThyristor1.p.v;
+// BooleanStep1.y = IdealGTOThyristor1.fire;
+// IdealGTOThyristor1.fire = IdealThyristor1.fire;
+//   IdealGTOThyristor1.n.i + R1.p.i = 0.0;
+// IdealGTOThyristor1.n.v = R1.p.v;
+// end Modelica.Electrical.Analog.Examples.CharacteristicThyristors;
+// "
+// ""
+// endResult

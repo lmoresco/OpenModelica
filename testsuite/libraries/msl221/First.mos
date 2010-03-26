@@ -1,0 +1,162 @@
+//name:         First
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Mechanics.Rotational.Examples.First);
+getErrorString();
+// Result:
+// true
+// "function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// fclass Modelica.Mechanics.Rotational.Examples.First
+// parameter Real amplitude = 10.0;
+// parameter Real freqHz(quantity = "Frequency", unit = "Hz") = 5.0;
+// parameter Real Jmotor(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = 0.1;
+// parameter Real Jload(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = 2.0;
+// parameter Real ratio = 10.0;
+// parameter Real damping = 10.0;
+// parameter Real fixed.phi0(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Fixed offset angle of housing";
+// Real fixed.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real fixed.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// input Real torque.tau(quantity = "Torque", unit = "N.m") "Torque driving the flange (a positive value accelerates the flange)";
+// Real torque.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real torque.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real torque.bearing.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real torque.bearing.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real inertia1.phi(quantity = "Angle", unit = "rad", displayUnit = "deg", start = inertia1.phi_start, StateSelect = StateSelect.default) "Absolute rotation angle of component (= flange_a.phi = flange_b.phi)";
+// Real inertia1.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia1.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real inertia1.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia1.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// parameter Real inertia1.J(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = Jmotor "Moment of inertia";
+// parameter Integer inertia1.initType(min = 1, max = 9) = 1 "Type of initialization (defines usage of start values below)";
+// parameter Real inertia1.phi_start(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Initial or guess value of rotor rotation angle phi";
+// parameter Real inertia1.w_start(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") = 0.0 "Initial or guess value of angular velocity w = der(phi)";
+// parameter Real inertia1.a_start(quantity = "AngularAcceleration", unit = "rad/s2") = 0.0 "Initial value of angular acceleration a = der(w)";
+// parameter Integer inertia1.stateSelection(min = 1, max = 5) = 3 "Priority to use phi and w as states";
+// Real inertia1.w(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min", start = inertia1.w_start, StateSelect = StateSelect.default) "Absolute angular velocity of component";
+// Real inertia1.a(quantity = "AngularAcceleration", unit = "rad/s2") "Absolute angular acceleration of component";
+// Real idealGear.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real idealGear.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real idealGear.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real idealGear.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real idealGear.tau_support(quantity = "Torque", unit = "N.m");
+// Real idealGear.bearing.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real idealGear.bearing.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real idealGear.phi_a(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// Real idealGear.phi_b(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// parameter Real idealGear.ratio = ratio "Transmission ratio (flange_a.phi/flange_b.phi)";
+// Real inertia2.phi(quantity = "Angle", unit = "rad", displayUnit = "deg", start = 0.0, StateSelect = StateSelect.default) "Absolute rotation angle of component (= flange_a.phi = flange_b.phi)";
+// Real inertia2.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia2.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real inertia2.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia2.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// parameter Real inertia2.J(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = 2.0 "Moment of inertia";
+// parameter Integer inertia2.initType(min = 1, max = 9) = 1 "Type of initialization (defines usage of start values below)";
+// parameter Real inertia2.phi_start(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Initial or guess value of rotor rotation angle phi";
+// parameter Real inertia2.w_start(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") = 0.0 "Initial or guess value of angular velocity w = der(phi)";
+// parameter Real inertia2.a_start(quantity = "AngularAcceleration", unit = "rad/s2") = 0.0 "Initial value of angular acceleration a = der(w)";
+// parameter Integer inertia2.stateSelection(min = 1, max = 5) = 3 "Priority to use phi and w as states";
+// Real inertia2.w(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min", start = 0.0, StateSelect = StateSelect.default) "Absolute angular velocity of component";
+// Real inertia2.a(quantity = "AngularAcceleration", unit = "rad/s2") "Absolute angular acceleration of component";
+// Real spring.phi_rel(quantity = "Angle", unit = "rad", displayUnit = "deg", start = 0.0) "Relative rotation angle (= flange_b.phi - flange_a.phi)";
+// Real spring.tau(quantity = "Torque", unit = "N.m") "Torque between flanges (= flange_b.tau)";
+// Real spring.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real spring.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real spring.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real spring.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// parameter Real spring.c(unit = "N.m/rad", min = 0.0) = 10000.0 "Spring constant";
+// parameter Real spring.phi_rel0(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Unstretched spring angle";
+// Real inertia3.phi(quantity = "Angle", unit = "rad", displayUnit = "deg", start = 0.0, StateSelect = StateSelect.default) "Absolute rotation angle of component (= flange_a.phi = flange_b.phi)";
+// Real inertia3.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia3.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real inertia3.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real inertia3.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// parameter Real inertia3.J(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = Jload "Moment of inertia";
+// parameter Integer inertia3.initType(min = 1, max = 9) = 1 "Type of initialization (defines usage of start values below)";
+// parameter Real inertia3.phi_start(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Initial or guess value of rotor rotation angle phi";
+// parameter Real inertia3.w_start(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") = 0.0 "Initial or guess value of angular velocity w = der(phi)";
+// parameter Real inertia3.a_start(quantity = "AngularAcceleration", unit = "rad/s2") = 0.0 "Initial value of angular acceleration a = der(w)";
+// parameter Integer inertia3.stateSelection(min = 1, max = 5) = 3 "Priority to use phi and w as states";
+// Real inertia3.w(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min", start = 0.0, StateSelect = StateSelect.default) "Absolute angular velocity of component";
+// Real inertia3.a(quantity = "AngularAcceleration", unit = "rad/s2") "Absolute angular acceleration of component";
+// output Real sine.y "Connector of Real output signal";
+// parameter Real sine.amplitude = amplitude "Amplitude of sine wave";
+// parameter Real sine.freqHz(quantity = "Frequency", unit = "Hz") = freqHz "Frequency of sine wave";
+// parameter Real sine.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+// parameter Real sine.offset = 0.0 "Offset of output signal";
+// parameter Real sine.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected constant Real sine.pi = 3.14159265358979;
+// Real damper.phi_rel(quantity = "Angle", unit = "rad", displayUnit = "deg", start = 0.0) "Relative rotation angle (= flange_b.phi - flange_a.phi)";
+// Real damper.tau(quantity = "Torque", unit = "N.m") "Torque between flanges (= flange_b.tau)";
+// Real damper.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real damper.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// Real damper.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+// Real damper.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// parameter Real damper.d(unit = "N.m.s/rad", min = 0.0) = damping "Damping constant";
+// Real damper.w_rel(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "Relative angular velocity between flange_b and flange_a";
+// equation
+//   fixed.flange_b.phi = fixed.phi0;
+//   torque.flange_b.tau = -torque.tau;
+//   torque.bearing.phi = 0.0;
+//   inertia1.w = der(inertia1.phi);
+//   inertia1.a = der(inertia1.w);
+//   inertia1.J * inertia1.a = inertia1.flange_a.tau + inertia1.flange_b.tau;
+//   inertia1.flange_a.phi = inertia1.phi;
+//   inertia1.flange_b.phi = inertia1.phi;
+//   idealGear.phi_a = idealGear.ratio * idealGear.phi_b;
+//   0.0 = idealGear.ratio * idealGear.flange_a.tau + idealGear.flange_b.tau;
+//   idealGear.bearing.phi = 0.0;
+//   0.0 = idealGear.flange_a.tau + (idealGear.flange_b.tau + idealGear.tau_support);
+//   idealGear.phi_a = idealGear.flange_a.phi - idealGear.bearing.phi;
+//   idealGear.phi_b = idealGear.flange_b.phi - idealGear.bearing.phi;
+//   inertia2.w = der(inertia2.phi);
+//   inertia2.a = der(inertia2.w);
+//   inertia2.J * inertia2.a = inertia2.flange_a.tau + inertia2.flange_b.tau;
+//   inertia2.flange_a.phi = inertia2.phi;
+//   inertia2.flange_b.phi = inertia2.phi;
+//   spring.tau = spring.c * (spring.phi_rel - spring.phi_rel0);
+//   spring.phi_rel = spring.flange_b.phi - spring.flange_a.phi;
+//   spring.flange_b.tau = spring.tau;
+//   spring.flange_a.tau = -spring.tau;
+//   inertia3.w = der(inertia3.phi);
+//   inertia3.a = der(inertia3.w);
+//   inertia3.J * inertia3.a = inertia3.flange_a.tau + inertia3.flange_b.tau;
+//   inertia3.flange_a.phi = inertia3.phi;
+//   inertia3.flange_b.phi = inertia3.phi;
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   damper.w_rel = der(damper.phi_rel);
+//   damper.tau = damper.d * damper.w_rel;
+//   damper.phi_rel = damper.flange_b.phi - damper.flange_a.phi;
+//   damper.flange_b.tau = damper.tau;
+//   damper.flange_a.tau = -damper.tau;
+//   damper.flange_b.tau + fixed.flange_b.tau = 0.0;
+// damper.flange_b.phi = fixed.flange_b.phi;
+//   damper.flange_a.tau + (inertia2.flange_b.tau + spring.flange_a.tau) = 0.0;
+// damper.flange_a.phi = inertia2.flange_b.phi;
+// inertia2.flange_b.phi = spring.flange_a.phi;
+//   torque.flange_b.tau + inertia1.flange_a.tau = 0.0;
+// torque.flange_b.phi = inertia1.flange_a.phi;
+//   inertia1.flange_b.tau + idealGear.flange_a.tau = 0.0;
+// inertia1.flange_b.phi = idealGear.flange_a.phi;
+//   idealGear.flange_b.tau + inertia2.flange_a.tau = 0.0;
+// idealGear.flange_b.phi = inertia2.flange_a.phi;
+//   spring.flange_b.tau + inertia3.flange_a.tau = 0.0;
+// spring.flange_b.phi = inertia3.flange_a.phi;
+// sine.y = torque.tau;
+//   idealGear.bearing.tau = 0.0;
+//   inertia3.flange_b.tau = 0.0;
+//   torque.bearing.tau = 0.0;
+// end Modelica.Mechanics.Rotational.Examples.First;
+// "
+// ""
+// endResult

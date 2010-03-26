@@ -1,0 +1,49 @@
+//name:         Accelerate
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Mechanics.Translational.Examples.Accelerate);
+getErrorString();
+// Result:
+// true
+// "fclass Modelica.Mechanics.Translational.Examples.Accelerate
+// parameter Real Accelerate1.s_start(quantity = "Length", unit = "m") = 0.0 "Start position";
+// parameter Real Accelerate1.v_start(quantity = "Velocity", unit = "m/s") = 0.0 "Start velocity";
+// Real Accelerate1.v(quantity = "Velocity", unit = "m/s", start = Accelerate1.v_start, fixed = true) "absolute velocity of flange_b";
+// Real Accelerate1.s(quantity = "Length", unit = "m", start = Accelerate1.s_start, fixed = true) "absolute position of flange_b";
+// input Real Accelerate1.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of flange as input signal";
+// Real Accelerate1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Accelerate1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass1.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass1.v(quantity = "Velocity", unit = "m/s") "absolute velocity of component";
+// Real SlidingMass1.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// output Real Constant1.y "Connector of Real output signal";
+// parameter Real Constant1.k = 1.0 "Constant output value";
+// equation
+//   Accelerate1.s = Accelerate1.flange_b.s;
+//   Accelerate1.v = der(Accelerate1.s);
+//   Accelerate1.a = der(Accelerate1.v);
+//   SlidingMass1.v = der(SlidingMass1.s);
+//   SlidingMass1.a = der(SlidingMass1.v);
+//   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
+//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
+//   Constant1.y = Constant1.k;
+//   Accelerate1.flange_b.f + SlidingMass1.flange_a.f = 0.0;
+// Accelerate1.flange_b.s = SlidingMass1.flange_a.s;
+// Constant1.y = Accelerate1.a;
+//   SlidingMass1.flange_b.f = 0.0;
+// end Modelica.Mechanics.Translational.Examples.Accelerate;
+// "
+// ""
+// endResult

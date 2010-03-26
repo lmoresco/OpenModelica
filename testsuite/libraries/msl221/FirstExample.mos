@@ -1,0 +1,153 @@
+//name:         FirstExample
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.StateGraph.Examples.FirstExample);
+getErrorString();
+// Result:
+// true
+// "function Modelica.StateGraph.Temporary.anyTrue
+// input Boolean[:] b;
+// output Boolean result;
+// algorithm
+//   result := false;
+//   for i in 1:size(b,1) loop
+//     result := result OR b<asub>[i];
+//   end for;
+// end Modelica.StateGraph.Temporary.anyTrue;
+// 
+// fclass Modelica.StateGraph.Examples.FirstExample
+// output Boolean stateGraphRoot.suspend = false;
+// output Boolean stateGraphRoot.resume = false;
+// output Boolean stateGraphRoot.subgraphStatePort.suspend "= true, if suspend transition of CompositeStep fires";
+// output Boolean stateGraphRoot.subgraphStatePort.resume "= true, if resume transition of CompositeStep fires";
+// input Real stateGraphRoot.subgraphStatePort.activeSteps "Number of active steps in the CompositeStep";
+// output Integer stateGraphRoot.activeSteps "Number of active steps within the stategraph";
+// parameter Integer initialStep.nIn(min = 0) = 1 "Number of input connections";
+// parameter Integer initialStep.nOut(min = 0) = 1 "Number of output connections";
+// output Boolean initialStep.localActive = initialStep.active "= true if step is active, otherwise the step is not active";
+// output Boolean initialStep.inPort[1].occupied "true, if step is active";
+// input Boolean initialStep.inPort[1].set "true, if transition fires and step is activated";
+// output Boolean initialStep.outPort[1].available "true, if step is active";
+// input Boolean initialStep.outPort[1].reset "true, if transition fires and step is deactivated";
+// input Boolean initialStep.subgraphStatePort.suspend "= true, if suspend transition of CompositeStep fires";
+// input Boolean initialStep.subgraphStatePort.resume "= true, if resume transition of CompositeStep fires";
+// output Real initialStep.subgraphStatePort.activeSteps "Number of active steps in the CompositeStep";
+// protected Boolean initialStep.newActive "Value of active in the next iteration";
+// protected Boolean initialStep.oldActive "Value of active when CompositeStep was aborted";
+// output Boolean initialStep.active "= true if step is active, otherwise the step is not active";
+// input Boolean transition1.localCondition = transition1.condition "= true, if transition may fire";
+// parameter Boolean transition1.enableTimer = true "= true, if timer is enabled";
+// parameter Real transition1.waitTime(quantity = "Time", unit = "s", min = 0.0) = 1.0 "Wait time before transition fires";
+// output Real transition1.t(quantity = "Time", unit = "s") "= actual waiting time (transition will fire when t > waitTime)";
+// output Boolean transition1.enableFire "= true, if all firing conditions are true";
+// output Boolean transition1.fire "= true, if transition fires";
+// input Boolean transition1.inPort.available "true, if step connected to the transition input is active";
+// output Boolean transition1.inPort.reset "true, if transition fires and the step connected to the transition input is deactivated";
+// input Boolean transition1.outPort.occupied "true, if step connected to the transition output is active";
+// output Boolean transition1.outPort.set "true, if transition fires and step connected to the transition output becomes active";
+// protected Real transition1.t_start(quantity = "Time", unit = "s") "Time instant at which the transition would fire, if waitTime would be zero";
+// protected Real transition1.t_dummy;
+// input Boolean transition1.condition = true "= true, if transition may fire (time varying expression)";
+// parameter Integer step.nIn(min = 0) = 1 "Number of input connections";
+// parameter Integer step.nOut(min = 0) = 1 "Number of output connections";
+// output Boolean step.localActive = step.active "= true if step is active, otherwise the step is not active";
+// output Boolean step.inPort[1].occupied "true, if step is active";
+// input Boolean step.inPort[1].set "true, if transition fires and step is activated";
+// output Boolean step.outPort[1].available "true, if step is active";
+// input Boolean step.outPort[1].reset "true, if transition fires and step is deactivated";
+// input Boolean step.subgraphStatePort.suspend "= true, if suspend transition of CompositeStep fires";
+// input Boolean step.subgraphStatePort.resume "= true, if resume transition of CompositeStep fires";
+// output Real step.subgraphStatePort.activeSteps "Number of active steps in the CompositeStep";
+// protected Boolean step.newActive "Value of active in the next iteration";
+// protected Boolean step.oldActive "Value of active when CompositeStep was aborted";
+// output Boolean step.active "= true if step is active, otherwise the step is not active";
+// input Boolean transition2.localCondition = transition2.condition "= true, if transition may fire";
+// parameter Boolean transition2.enableTimer = true "= true, if timer is enabled";
+// parameter Real transition2.waitTime(quantity = "Time", unit = "s", min = 0.0) = 1.0 "Wait time before transition fires";
+// output Real transition2.t(quantity = "Time", unit = "s") "= actual waiting time (transition will fire when t > waitTime)";
+// output Boolean transition2.enableFire "= true, if all firing conditions are true";
+// output Boolean transition2.fire "= true, if transition fires";
+// input Boolean transition2.inPort.available "true, if step connected to the transition input is active";
+// output Boolean transition2.inPort.reset "true, if transition fires and the step connected to the transition input is deactivated";
+// input Boolean transition2.outPort.occupied "true, if step connected to the transition output is active";
+// output Boolean transition2.outPort.set "true, if transition fires and step connected to the transition output becomes active";
+// protected Real transition2.t_start(quantity = "Time", unit = "s") "Time instant at which the transition would fire, if waitTime would be zero";
+// protected Real transition2.t_dummy;
+// input Boolean transition2.condition = true "= true, if transition may fire (time varying expression)";
+// initial equation
+//   initialStep.active = true;
+//   pre(initialStep.newActive) = pre(initialStep.localActive);
+//   pre(initialStep.oldActive) = pre(initialStep.localActive);
+//   pre(transition1.enableFire) = false;
+//   step.active = false;
+//   pre(step.newActive) = pre(step.localActive);
+//   pre(step.oldActive) = pre(step.localActive);
+//   pre(transition2.enableFire) = false;
+// equation
+//   stateGraphRoot.activeSteps = -integer(stateGraphRoot.subgraphStatePort.activeSteps);
+//   stateGraphRoot.suspend = stateGraphRoot.subgraphStatePort.suspend;
+//   stateGraphRoot.resume = stateGraphRoot.subgraphStatePort.resume;
+// assert(true,"Connector inPort[1] of the step is connected to more than one transition");
+// assert(true,"Connector outPort[1] of the step is connected to more than one transition");
+//   initialStep.localActive = pre(initialStep.newActive);
+//   initialStep.newActive = if initialStep.subgraphStatePort.resume then initialStep.oldActive else (Modelica.StateGraph.Temporary.anyTrue({initialStep.inPort[1].set}) OR initialStep.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({initialStep.outPort[1].reset})) AND  NOT initialStep.subgraphStatePort.suspend;
+//   when initialStep.subgraphStatePort.suspend then
+//   initialStep.oldActive = initialStep.localActive;
+//   end when;
+//   initialStep.subgraphStatePort.activeSteps = if initialStep.localActive then 1.0 else 0.0;
+//   initialStep.inPort[1].occupied = initialStep.localActive;
+//   initialStep.outPort[1].available = initialStep.localActive;
+// assert(true,"Connector inPort is not connected to exactly one other connector");
+// assert(true,"Connector outPort is not connected to exactly one other connector");
+//   when transition1.enableFire then
+//   transition1.t_start = time;
+//   end when;
+//   transition1.t_dummy = time - transition1.t_start;
+//   transition1.t = if transition1.enableFire then transition1.t_dummy else 0.0;
+//   transition1.fire = transition1.enableFire AND time >= transition1.t_start + transition1.waitTime;
+//   transition1.enableFire = transition1.localCondition AND transition1.inPort.available AND  NOT transition1.outPort.occupied;
+//   transition1.inPort.reset = transition1.fire;
+//   transition1.outPort.set = transition1.fire;
+// assert(true,"Connector inPort[1] of the step is connected to more than one transition");
+// assert(true,"Connector outPort[1] of the step is connected to more than one transition");
+//   step.localActive = pre(step.newActive);
+//   step.newActive = if step.subgraphStatePort.resume then step.oldActive else (Modelica.StateGraph.Temporary.anyTrue({step.inPort[1].set}) OR step.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({step.outPort[1].reset})) AND  NOT step.subgraphStatePort.suspend;
+//   when step.subgraphStatePort.suspend then
+//   step.oldActive = step.localActive;
+//   end when;
+//   step.subgraphStatePort.activeSteps = if step.localActive then 1.0 else 0.0;
+//   step.inPort[1].occupied = step.localActive;
+//   step.outPort[1].available = step.localActive;
+// assert(true,"Connector inPort is not connected to exactly one other connector");
+// assert(true,"Connector outPort is not connected to exactly one other connector");
+//   when transition2.enableFire then
+//   transition2.t_start = time;
+//   end when;
+//   transition2.t_dummy = time - transition2.t_start;
+//   transition2.t = if transition2.enableFire then transition2.t_dummy else 0.0;
+//   transition2.fire = transition2.enableFire AND time >= transition2.t_start + transition2.waitTime;
+//   transition2.enableFire = transition2.localCondition AND transition2.inPort.available AND  NOT transition2.outPort.occupied;
+//   transition2.inPort.reset = transition2.fire;
+//   transition2.outPort.set = transition2.fire;
+// initialStep.outPort[1].reset = transition1.inPort.reset;
+// initialStep.outPort[1].available = transition1.inPort.available;
+// transition1.outPort.set = step.inPort[1].set;
+// transition1.outPort.occupied = step.inPort[1].occupied;
+// step.outPort[1].reset = transition2.inPort.reset;
+// step.outPort[1].available = transition2.inPort.available;
+// transition2.outPort.set = initialStep.inPort[1].set;
+// transition2.outPort.occupied = initialStep.inPort[1].occupied;
+//   initialStep.subgraphStatePort.activeSteps + (step.subgraphStatePort.activeSteps + stateGraphRoot.subgraphStatePort.activeSteps) = 0.0;
+// initialStep.subgraphStatePort.resume = step.subgraphStatePort.resume;
+// step.subgraphStatePort.resume = stateGraphRoot.subgraphStatePort.resume;
+// initialStep.subgraphStatePort.suspend = step.subgraphStatePort.suspend;
+// step.subgraphStatePort.suspend = stateGraphRoot.subgraphStatePort.suspend;
+// end Modelica.StateGraph.Examples.FirstExample;
+// "
+// ""
+// endResult

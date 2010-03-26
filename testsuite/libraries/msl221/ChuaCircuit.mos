@@ -1,0 +1,102 @@
+//name:         ChuaCircuit
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Electrical.Analog.Examples.ChuaCircuit);
+getErrorString();
+// Result:
+// true
+// "fclass Modelica.Electrical.Analog.Examples.ChuaCircuit
+// Real G.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real G.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real G.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real G.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real G.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real G.G(quantity = "Conductance", unit = "S") = 0.565 "Conductance";
+// Real Gnd.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Gnd.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real L.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real L.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real L.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real L.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real L.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real L.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real L.L(quantity = "Inductance", unit = "H") = 18.0 "Inductance";
+// Real Ro.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real Ro.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real Ro.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Ro.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real Ro.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Ro.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real Ro.R(quantity = "Resistance", unit = "Ohm") = 0.0125 "Resistance";
+// Real Nr.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real Nr.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real Nr.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Nr.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real Nr.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real Nr.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real Nr.Ga(quantity = "Conductance", unit = "S", min = -1.0) = -0.757576;
+// parameter Real Nr.Gb(quantity = "Conductance", unit = "S", min = -1.0) = -0.409091;
+// parameter Real Nr.Ve(quantity = "ElectricPotential", unit = "V") = 1.0;
+// Real C1.v(quantity = "ElectricPotential", unit = "V", start = 4.0) "Voltage drop between the two pins (= p.v - n.v)";
+// Real C1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real C1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real C1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real C1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real C1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real C1.C(quantity = "Capacitance", unit = "F", min = 0.0) = 10.0 "Capacitance";
+// Real C2.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+// Real C2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+// Real C2.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real C2.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// Real C2.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+// Real C2.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// parameter Real C2.C(quantity = "Capacitance", unit = "F", min = 0.0) = 100.0 "Capacitance";
+// equation
+//   G.i = G.G * G.v;
+//   G.v = G.p.v - G.n.v;
+//   0.0 = G.p.i + G.n.i;
+//   G.i = G.p.i;
+//   Gnd.p.v = 0.0;
+//   L.L * der(L.i) = L.v;
+//   L.v = L.p.v - L.n.v;
+//   0.0 = L.p.i + L.n.i;
+//   L.i = L.p.i;
+//   Ro.R * Ro.i = Ro.v;
+//   Ro.v = Ro.p.v - Ro.n.v;
+//   0.0 = Ro.p.i + Ro.n.i;
+//   Ro.i = Ro.p.i;
+//   Nr.i = if Nr.v < -Nr.Ve then Nr.Gb * (Nr.v + Nr.Ve) - Nr.Ga * Nr.Ve else if Nr.v > Nr.Ve then Nr.Gb * (Nr.v - Nr.Ve) + Nr.Ga * Nr.Ve else Nr.Ga * Nr.v;
+//   Nr.v = Nr.p.v - Nr.n.v;
+//   0.0 = Nr.p.i + Nr.n.i;
+//   Nr.i = Nr.p.i;
+//   C1.i = C1.C * der(C1.v);
+//   C1.v = C1.p.v - C1.n.v;
+//   0.0 = C1.p.i + C1.n.i;
+//   C1.i = C1.p.i;
+//   C2.i = C2.C * der(C2.v);
+//   C2.v = C2.p.v - C2.n.v;
+//   0.0 = C2.p.i + C2.n.i;
+//   C2.i = C2.p.i;
+//   C2.n.i + (C1.n.i + (Nr.n.i + (Ro.n.i + Gnd.p.i))) = 0.0;
+// C2.n.v = C1.n.v;
+// C1.n.v = Nr.n.v;
+// Nr.n.v = Ro.n.v;
+// Ro.n.v = Gnd.p.v;
+//   C1.p.i + (G.n.i + Nr.p.i) = 0.0;
+// C1.p.v = G.n.v;
+// G.n.v = Nr.p.v;
+//   L.p.i + (G.p.i + C2.p.i) = 0.0;
+// L.p.v = G.p.v;
+// G.p.v = C2.p.v;
+//   L.n.i + Ro.p.i = 0.0;
+// L.n.v = Ro.p.v;
+// end Modelica.Electrical.Analog.Examples.ChuaCircuit;
+// "
+// ""
+// endResult

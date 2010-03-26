@@ -1,0 +1,142 @@
+//name:         Damper
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Mechanics.Translational.Examples.Damper);
+getErrorString();
+// Result:
+// true
+// "fclass Modelica.Mechanics.Translational.Examples.Damper
+// Real SlidingMass1.s(quantity = "Length", unit = "m", start = 3.0) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass1.v(quantity = "Velocity", unit = "m/s", start = 10.0) "absolute velocity of component";
+// Real SlidingMass1.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// Real Damper1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real Damper1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real Damper1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Damper1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Damper1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Damper1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real Damper1.d(unit = "N/ (m/s)", min = 0.0) = 25.0 "damping constant [N/ (m/s)]";
+// Real Damper1.v_rel(quantity = "Velocity", unit = "m/s") "relative velocity between flange_a and flange_b";
+// parameter Real Fixed1.s0(quantity = "Length", unit = "m") = 4.5 "fixed offset position of housing";
+// Real Fixed1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass2.s(quantity = "Length", unit = "m", start = 3.0) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass2.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass2.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass2.v(quantity = "Velocity", unit = "m/s", start = 10.0) "absolute velocity of component";
+// Real SlidingMass2.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// Real Damper2.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real Damper2.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real Damper2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Damper2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Damper2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Damper2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real Damper2.d(unit = "N/ (m/s)", min = 0.0) = 25.0 "damping constant [N/ (m/s)]";
+// Real Damper2.v_rel(quantity = "Velocity", unit = "m/s") "relative velocity between flange_a and flange_b";
+// parameter Real Fixed2.s0(quantity = "Length", unit = "m") = 4.5 "fixed offset position of housing";
+// Real Fixed2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass3.s(quantity = "Length", unit = "m", start = 3.0) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass3.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass3.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass3.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass3.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass3.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass3.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass3.v(quantity = "Velocity", unit = "m/s", start = 10.0) "absolute velocity of component";
+// Real SlidingMass3.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// parameter Real Fixed3.s0(quantity = "Length", unit = "m") = 4.5 "fixed offset position of housing";
+// Real Fixed3.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Fixed3.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real Spring1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real Spring1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real Spring1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Spring1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real Spring1.s_rel0(quantity = "Length", unit = "m", min = 0.0) = 1.0 "unstretched spring length";
+// parameter Real Spring1.c(unit = "N/m", min = 0.0) = 1.0 "spring constant ";
+// Real SpringDamper1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+// Real SpringDamper1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+// Real SpringDamper1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SpringDamper1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SpringDamper1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SpringDamper1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SpringDamper1.s_rel0(quantity = "Length", unit = "m") = 1.0 "unstretched spring length";
+// parameter Real SpringDamper1.c(unit = "N/m", min = 0.0) = 1.0 "spring constant";
+// parameter Real SpringDamper1.d(unit = "N/(m/s)", min = 0.0) = 25.0 "damping constant";
+// Real SpringDamper1.v_rel(quantity = "Velocity", unit = "m/s") "relative velocity between flange_a and flange_b";
+// equation
+//   SlidingMass1.v = der(SlidingMass1.s);
+//   SlidingMass1.a = der(SlidingMass1.v);
+//   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
+//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
+//   Damper1.v_rel = der(Damper1.s_rel);
+//   Damper1.f = Damper1.d * Damper1.v_rel;
+//   Damper1.s_rel = Damper1.flange_b.s - Damper1.flange_a.s;
+//   Damper1.flange_b.f = Damper1.f;
+//   Damper1.flange_a.f = -Damper1.f;
+//   Fixed1.flange_b.s = Fixed1.s0;
+//   SlidingMass2.v = der(SlidingMass2.s);
+//   SlidingMass2.a = der(SlidingMass2.v);
+//   SlidingMass2.m * SlidingMass2.a = SlidingMass2.flange_a.f + SlidingMass2.flange_b.f;
+//   SlidingMass2.flange_a.s = SlidingMass2.s - SlidingMass2.L / 2.0;
+//   SlidingMass2.flange_b.s = SlidingMass2.s + SlidingMass2.L / 2.0;
+//   Damper2.v_rel = der(Damper2.s_rel);
+//   Damper2.f = Damper2.d * Damper2.v_rel;
+//   Damper2.s_rel = Damper2.flange_b.s - Damper2.flange_a.s;
+//   Damper2.flange_b.f = Damper2.f;
+//   Damper2.flange_a.f = -Damper2.f;
+//   Fixed2.flange_b.s = Fixed2.s0;
+//   SlidingMass3.v = der(SlidingMass3.s);
+//   SlidingMass3.a = der(SlidingMass3.v);
+//   SlidingMass3.m * SlidingMass3.a = SlidingMass3.flange_a.f + SlidingMass3.flange_b.f;
+//   SlidingMass3.flange_a.s = SlidingMass3.s - SlidingMass3.L / 2.0;
+//   SlidingMass3.flange_b.s = SlidingMass3.s + SlidingMass3.L / 2.0;
+//   Fixed3.flange_b.s = Fixed3.s0;
+//   Spring1.f = Spring1.c * (Spring1.s_rel - Spring1.s_rel0);
+//   Spring1.s_rel = Spring1.flange_b.s - Spring1.flange_a.s;
+//   Spring1.flange_b.f = Spring1.f;
+//   Spring1.flange_a.f = -Spring1.f;
+//   SpringDamper1.v_rel = der(SpringDamper1.s_rel);
+//   SpringDamper1.f = SpringDamper1.c * (SpringDamper1.s_rel - SpringDamper1.s_rel0) + SpringDamper1.d * SpringDamper1.v_rel;
+//   SpringDamper1.s_rel = SpringDamper1.flange_b.s - SpringDamper1.flange_a.s;
+//   SpringDamper1.flange_b.f = SpringDamper1.f;
+//   SpringDamper1.flange_a.f = -SpringDamper1.f;
+//   SlidingMass1.flange_b.f + Damper1.flange_a.f = 0.0;
+// SlidingMass1.flange_b.s = Damper1.flange_a.s;
+//   Damper1.flange_b.f + Fixed1.flange_b.f = 0.0;
+// Damper1.flange_b.s = Fixed1.flange_b.s;
+//   SlidingMass2.flange_b.f + (Damper2.flange_a.f + Spring1.flange_a.f) = 0.0;
+// SlidingMass2.flange_b.s = Damper2.flange_a.s;
+// Damper2.flange_a.s = Spring1.flange_a.s;
+//   Damper2.flange_b.f + (Spring1.flange_b.f + Fixed2.flange_b.f) = 0.0;
+// Damper2.flange_b.s = Spring1.flange_b.s;
+// Spring1.flange_b.s = Fixed2.flange_b.s;
+//   SlidingMass3.flange_b.f + SpringDamper1.flange_a.f = 0.0;
+// SlidingMass3.flange_b.s = SpringDamper1.flange_a.s;
+//   SpringDamper1.flange_b.f + Fixed3.flange_b.f = 0.0;
+// SpringDamper1.flange_b.s = Fixed3.flange_b.s;
+//   SlidingMass1.flange_a.f = 0.0;
+//   SlidingMass3.flange_a.f = 0.0;
+//   SlidingMass2.flange_a.f = 0.0;
+// end Modelica.Mechanics.Translational.Examples.Damper;
+// "
+// ""
+// endResult

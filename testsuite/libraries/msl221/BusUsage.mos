@@ -1,0 +1,80 @@
+//name:         BusUsage
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Blocks.Examples.BusUsage);
+getErrorString();
+// Result:
+// true
+// "function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// fclass Modelica.Blocks.Examples.BusUsage
+// parameter Boolean restBus.set_realSignal1 = false "Set dummy value for desiredThrottle";
+// parameter Boolean restBus.set_realSignal2 = true "Set dummy value for brake";
+// parameter Boolean restBus.set_integerSignal = false "Set dummy value for controlLeverPosition";
+// parameter Boolean restBus.set_booleanSignal = false "Set dummy value for desiredGear";
+// parameter Boolean restBus.set_multiSignal = false "Set dummy value for ignition";
+// Real restBus.bus.realSignal1(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "First Real signal (angular velocity)";
+// Real restBus.bus.realSignal2 "Second Real signal";
+// Integer restBus.bus.integerSignal "Integer signal";
+// Boolean restBus.bus.booleanSignal "Boolean signal";
+// Real restBus.bus.multiSignal.myRealSignal;
+// Boolean restBus.bus.multiSignal.myBooleanSignal;
+// output Integer integerStep.y "Connector of Integer output signal";
+// parameter Integer integerStep.offset = 2 "offset of output signal";
+// parameter Real integerStep.startTime(quantity = "Time", unit = "s") = 0.5 "y = offset for time < startTime";
+// parameter Integer integerStep.height = 1 "Height of step";
+// output Boolean booleanStep.y "Connector of Boolean output signal";
+// parameter Real booleanStep.startTime(quantity = "Time", unit = "s") = 0.5 "Time instant of step start";
+// parameter Boolean booleanStep.startValue = false "Output before startTime";
+// output Real sine.y "Connector of Real output signal";
+// parameter Real sine.amplitude = 1.0 "Amplitude of sine wave";
+// parameter Real sine.freqHz(quantity = "Frequency", unit = "Hz") = 1.0 "Frequency of sine wave";
+// parameter Real sine.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+// parameter Real sine.offset = 0.0 "Offset of output signal";
+// parameter Real sine.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected constant Real sine.pi = 3.14159265358979;
+// Real part.multiSignal.myRealSignal;
+// Boolean part.multiSignal.myBooleanSignal;
+// parameter Real gain.k = 1.0 "Gain value multiplied with input signal";
+// input Real gain.u "Input signal connector";
+// output Real gain.y "Output signal connector";
+// Real bus.realSignal1(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "First Real signal (angular velocity)";
+// Real bus.realSignal2 "Second Real signal";
+// Integer bus.integerSignal "Integer signal";
+// Boolean bus.booleanSignal "Boolean signal";
+// Real bus.multiSignal.myRealSignal;
+// Boolean bus.multiSignal.myBooleanSignal;
+// equation
+//   restBus.bus.realSignal2 = 0.0;
+//   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
+//   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   part.multiSignal.myRealSignal = time;
+//   part.multiSignal.myBooleanSignal = time > 0.5;
+//   gain.y = gain.k * gain.u;
+// restBus.bus.multiSignal.myBooleanSignal = part.multiSignal.myBooleanSignal;
+// part.multiSignal.myBooleanSignal = bus.multiSignal.myBooleanSignal;
+// restBus.bus.multiSignal.myRealSignal = part.multiSignal.myRealSignal;
+// part.multiSignal.myRealSignal = bus.multiSignal.myRealSignal;
+// restBus.bus.booleanSignal = booleanStep.y;
+// booleanStep.y = bus.booleanSignal;
+// restBus.bus.integerSignal = integerStep.y;
+// integerStep.y = bus.integerSignal;
+// restBus.bus.realSignal2 = bus.realSignal2;
+// restBus.bus.realSignal1 = sine.y;
+// sine.y = gain.u;
+// gain.u = bus.realSignal1;
+// end Modelica.Blocks.Examples.BusUsage;
+// "
+// ""
+// endResult

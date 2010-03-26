@@ -1,0 +1,93 @@
+//name:         Sensors
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+instantiateModel(Modelica.Mechanics.Translational.Examples.Sensors);
+getErrorString();
+// Result:
+// true
+// "function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// fclass Modelica.Mechanics.Translational.Examples.Sensors
+// Real ForceSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real ForceSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real ForceSensor1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real ForceSensor1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real ForceSensor1.f(quantity = "Force", unit = "N") "force in flange_a and flange_b (f = flange_a.f = -flange_b.f)";
+// Real SpeedSensor1.s(quantity = "Length", unit = "m") "Absolute position of flange";
+// Real SpeedSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SpeedSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real SpeedSensor1.v(quantity = "Velocity", unit = "m/s") "Absolute velocity of flange as output signal";
+// Real PositionSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real PositionSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real PositionSensor1.s(quantity = "Length", unit = "m") "Absolute position of flange as output signal";
+// Real AccSensor1.v(quantity = "Velocity", unit = "m/s") "Absolute velocity of flange";
+// Real AccSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real AccSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real AccSensor1.a(quantity = "Acceleration", unit = "m/s2") "Absolute acceleration of flange as output signal";
+// Real SlidingMass1.s(quantity = "Length", unit = "m") "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+// parameter Real SlidingMass1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+// Real SlidingMass1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// Real SlidingMass1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real SlidingMass1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// parameter Real SlidingMass1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass of the sliding mass";
+// Real SlidingMass1.v(quantity = "Velocity", unit = "m/s") "absolute velocity of component";
+// Real SlidingMass1.a(quantity = "Acceleration", unit = "m/s2") "absolute acceleration of component";
+// Real Force1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real Force1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// input Real Force1.f(quantity = "Force", unit = "N") "driving force as input signal";
+// output Real Sine1.y "Connector of Real output signal";
+// parameter Real Sine1.amplitude = 10.0 "Amplitude of sine wave";
+// parameter Real Sine1.freqHz(quantity = "Frequency", unit = "Hz") = 4.0 "Frequency of sine wave";
+// parameter Real Sine1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+// parameter Real Sine1.offset = 0.0 "Offset of output signal";
+// parameter Real Sine1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected constant Real Sine1.pi = 3.14159265358979;
+// Real PositionSensor2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+// Real PositionSensor2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// output Real PositionSensor2.s(quantity = "Length", unit = "m") "Absolute position of flange as output signal";
+// equation
+//   ForceSensor1.flange_a.s = ForceSensor1.flange_b.s;
+//   ForceSensor1.flange_a.f = ForceSensor1.f;
+//   ForceSensor1.flange_b.f = -ForceSensor1.f;
+//   SpeedSensor1.s = SpeedSensor1.flange_a.s;
+//   SpeedSensor1.v = der(SpeedSensor1.s);
+//   0.0 = SpeedSensor1.flange_a.f;
+//   PositionSensor1.s = PositionSensor1.flange_a.s;
+//   0.0 = PositionSensor1.flange_a.f;
+//   AccSensor1.v = der(AccSensor1.flange_a.s);
+//   AccSensor1.a = der(AccSensor1.v);
+//   0.0 = AccSensor1.flange_a.f;
+//   SlidingMass1.v = der(SlidingMass1.s);
+//   SlidingMass1.a = der(SlidingMass1.v);
+//   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
+//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
+//   Force1.flange_b.f = -Force1.f;
+//   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (Sine1.freqHz * (time - Sine1.startTime)) + Sine1.phase));
+//   PositionSensor2.s = PositionSensor2.flange_a.s;
+//   0.0 = PositionSensor2.flange_a.f;
+//   ForceSensor1.flange_b.f + (SlidingMass1.flange_a.f + (PositionSensor1.flange_a.f + (SpeedSensor1.flange_a.f + AccSensor1.flange_a.f))) = 0.0;
+// ForceSensor1.flange_b.s = SlidingMass1.flange_a.s;
+// SlidingMass1.flange_a.s = PositionSensor1.flange_a.s;
+// PositionSensor1.flange_a.s = SpeedSensor1.flange_a.s;
+// SpeedSensor1.flange_a.s = AccSensor1.flange_a.s;
+//   SlidingMass1.flange_b.f + PositionSensor2.flange_a.f = 0.0;
+// SlidingMass1.flange_b.s = PositionSensor2.flange_a.s;
+//   Force1.flange_b.f + ForceSensor1.flange_a.f = 0.0;
+// Force1.flange_b.s = ForceSensor1.flange_a.s;
+// Sine1.y = Force1.f;
+// end Modelica.Mechanics.Translational.Examples.Sensors;
+// "
+// ""
+// endResult
