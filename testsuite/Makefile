@@ -2,7 +2,7 @@
 
 all : test
 test : fast
-	cd libraries/multibody; $(MAKE) -f Makefile test;
+	cd libraries; $(MAKE) -f Makefile test;
 fast:
 	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
 	cd mathcore-mofiles ; $(MAKE) -f Makefile test; rm -f *.dll *.so; \

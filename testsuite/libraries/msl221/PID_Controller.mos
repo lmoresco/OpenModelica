@@ -249,11 +249,11 @@ getErrorString();
 //   torque.bearing.tau = 0.0;
 // end Modelica.Blocks.Examples.PID_Controller;
 // "
-// "[c:/petar/dev/NewMathModelicaDev/OpenModelica/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:252:5-252:102:readonly] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// "[/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:252:5-252:102:readonly] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [c:/petar/dev/NewMathModelicaDev/OpenModelica/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:251:5-251:97:readonly] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:251:5-251:97:readonly] Warning: Variable kinematicPTP.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [c:/petar/dev/NewMathModelicaDev/OpenModelica/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:252:5-252:102:readonly] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [/testsuite/libraries/msl221/Modelica/../Modelica/Blocks/Sources.mo:252:5-252:102:readonly] Warning: Variable kinematicPTP.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // "
 // endResult

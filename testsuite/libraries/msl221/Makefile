@@ -1,3 +1,4 @@
+RTEST_OMCFLAGS += +d=rtest
 
 TESTFILES = \
 AIMC_DOL.mos FirstExample.mos PumpAndValve.mos\

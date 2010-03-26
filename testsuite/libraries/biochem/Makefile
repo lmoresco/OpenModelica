@@ -1,3 +1,4 @@
+RTEST_OMCFLAGS += +d=rtest
 
 TESTFILES = \
 EnzMM.mos Glycolysis.mos InsulinSignaling_Sedaghat.mos \
