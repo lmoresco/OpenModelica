@@ -63,7 +63,9 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
+    $start_run = time();
     system "../../../build/bin/omc $f >$log 2>&1";
+    $run_time = time()-$start_run;
     
     if ( $? != 0 ) {
 	if ($info{"status"} eq "incorrect") {
@@ -77,7 +79,7 @@ sub runone
     system "grep -s '^#|Execution failed!' $log";
     if ( $? == 0 ) {
 	if ($info{"status"} eq "incorrect") {
-	    print "ok\n";
+	    print "ok\n;";
 	    return 0;
 	}
 	print "execution failed\n";
@@ -203,6 +205,7 @@ sub runone
 	      {
 	        print "warning - numeric differences less than $epsilon\n";
 	        print "\t* for details please check: $log\n";
+	        print "\t* execution time: $run_time seconds\n";
 	        close LOG;
 	        return 0;
 	      }
@@ -234,7 +237,7 @@ sub runone
 	  }
       }
 
-    print "ok\n";
+    print "ok in $run_time seconds\n";
     return 0;
 }
 
