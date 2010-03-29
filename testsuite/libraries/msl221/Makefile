@@ -1,5 +1,3 @@
-RTEST_OMCFLAGS += +d=rtest
-
 TESTFILES = \
 AIMC_DOL.mos FirstExample.mos PumpAndValve.mos\
 AIMC_Inverter.mos FirstExample_Variant2.mos  PumpDropOut.mos\

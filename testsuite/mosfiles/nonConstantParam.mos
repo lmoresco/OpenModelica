@@ -1,0 +1,18 @@
+// name:     nonConstantParam
+// keywords: nonConstantParam
+// status:   correct
+//
+//
+loadFile("nonConstantParam.mo");
+simulate(Modelica_Electrical_Machines_Examples_DCEE_start,stopTime=1);
+//val(DCEE1.TurnsRatio,0);
+val(DCEE1.tau_shaft,0:0.1:1);
+getErrorString();
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica_Electrical_Machines_Examples_DCEE_start_res.plt"
+// end SimulationResult;
+// {0.0,0.0,0.0,31.6586838204096,29.8375960850196,29.257507557906,29.4976233932397,29.4457525807494,29.4528255597077,29.4525971840022,29.4523796876553}
+// ""
+// endResult

@@ -48,6 +48,7 @@ interactive_api_param.mos interactive_api_classes.mos \
 interactive_api_loadsave.mos  interactive_api_attributes.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
+invertedPendulum.mos \
 HelloWorld.mos \
 LinearSysEq.mos \
 loadFileInteractiveQualified.mos \
@@ -57,6 +58,7 @@ MissV.mos \
 ModelicaUtilities.mos \
 MyPointsInst1.mos MyPointsInst2.mos \
 ModelBalance1.mos ModelBalance2.mos ModelBalance3.mos \
+nonConstantParam.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
 Pendulum.mos \
