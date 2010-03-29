@@ -1,9 +1,6 @@
 
 TESTFILES = \
-Engine1Total.mo  FourBar1Total.mo \
-TwoLoopTotal.mo  Engine2Total.mo  FourBar2Total.mo  \
-PendulumTotal.mo  robotTotal.mo
-
+Engine1.mos  Engine2.mos  FourBar1.mos  FourBar2.mos  TwoLoop.mos  robot.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
