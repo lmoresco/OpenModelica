@@ -1,5 +1,10 @@
 #!/usr/bin/perl -w
 
+if (defined $ENV{"RTEST_OMCFLAGS"}) {
+    $omcflags=$ENV{"RTEST_OMCFLAGS"};
+} else {
+    $omcflags="";
+}
 $successes=0;
 $total=0;
 $setbaseline=0;
@@ -25,7 +30,7 @@ sub setbaseline
 
     my $f = shift;
     $log ="/tmp/log-$f";
-    system "../../../build/bin/omc $f >$log 2>&1";
+    system "../../../build/bin/omc $omcflags $f >$log 2>&1";
 
     open(RES,">$tmp4");
     open(LOG,"<$log");    
@@ -64,7 +69,7 @@ sub runone
     my $mismatch = 0;
     my ($f,%info) = @_;
     $start_run = time();
-    system "../../../build/bin/omc $f >$log 2>&1";
+    system "../../../build/bin/omc $omcflags $f >$log 2>&1";
     $run_time = time()-$start_run;
     
     if ( $? != 0 ) {
