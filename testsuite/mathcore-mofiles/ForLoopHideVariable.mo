@@ -14,6 +14,7 @@ algorithm
   end for;
 end HideVariable;
 
+// Result:
 // fclass HideVariable
 // constant Integer k = 4;
 // Real z[1];
@@ -26,3 +27,4 @@ end HideVariable;
 //     z[k] := Real(k);
 //   end for;
 // end HideVariable;
+// endResult

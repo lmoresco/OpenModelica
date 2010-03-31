@@ -14,6 +14,7 @@ class ScopeDeclaration2
   B b;
 end ScopeDeclaration2;
 
+// Result:
 // fclass ScopeDeclaration2
 //   constant Real a=3.0;
 //   Real b.a;
@@ -21,3 +22,4 @@ end ScopeDeclaration2;
 // equation
 //   assert(b.a >= b.a.min,"...");
 // end ScopeDeclaration2;
+// endResult

@@ -11,6 +11,7 @@ class ArrayModification4
   A a(x[1] = 1.0, x.unit = "V");
 end ArrayModification4;
 
+// Result:
 // fclass ArrayModification4
 //   Real a.x[1];
 //   Real a.x[2];
@@ -21,3 +22,4 @@ end ArrayModification4;
 //   a.x[2].unit = "V";
 //   a.x[3].unit = "V";
 // end ArrayModification4;
+// endResult

@@ -26,6 +26,14 @@ end Vectorizable3;
 //   y := x + 1.0;
 // end foo;
 
+// Result:
+// function foo
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 1.0 + x;
+// end foo;
+// 
 // fclass Vectorizable3
 // Real x[1,1];
 // Real x[1,2];
@@ -37,3 +45,4 @@ end Vectorizable3;
 //   x[2,1] = 4.0;
 //   x[2,2] = 5.0;
 // end Vectorizable3;
+// endResult

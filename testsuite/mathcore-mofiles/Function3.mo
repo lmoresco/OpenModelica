@@ -12,3 +12,12 @@ function Function3
 algorithm
   y := x;
 end Function3;
+// Result:
+// Error processing file: Function3.mo
+// Error: No classes are loaded.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

@@ -12,6 +12,7 @@ model Array4
   parameter T2 x;
 end Array4;
 
+// Result:
 // fclass Array4
 // parameter Real x[1,1];
 // parameter Real x[1,2];
@@ -20,3 +21,4 @@ end Array4;
 // parameter Real x[2,2];
 // parameter Real x[2,3];
 // end Array4;
+// endResult

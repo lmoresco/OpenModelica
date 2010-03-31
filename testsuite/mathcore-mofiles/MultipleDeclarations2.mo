@@ -11,7 +11,8 @@ model MultipleDeclarations2
   Real x;
 end MultipleDeclarations2;
 
+// Result:
 // fclass MultipleDeclarations2
 //   Real x;
 // end MultipleDeclarations2;
-
+// endResult

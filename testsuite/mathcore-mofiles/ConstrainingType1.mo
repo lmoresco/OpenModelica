@@ -80,6 +80,7 @@ equation
   connect(b.b,s.a);
 end ConstrainingType1;
 
+// Result:
 // fclass ConstrainingType1
 // Real a.a.i;
 // Real a.a.v;
@@ -172,3 +173,4 @@ end ConstrainingType1;
 //   s.b.v = a.a.v;
 //   s.b.i + a.a.i = 0.0;
 // end ConstrainingType1;
+// endResult

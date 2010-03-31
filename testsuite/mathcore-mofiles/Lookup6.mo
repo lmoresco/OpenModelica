@@ -16,10 +16,11 @@ class Lookup6
   B b;
 end Lookup6;
 
+// Result:
 // fclass Lookup6
 // constant Real a = 3.0;
 // Real b.a;
 // equation
 //   b.a = -b.a;
 // end Lookup6;
-
+// endResult

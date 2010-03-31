@@ -35,6 +35,7 @@ model inn
  equation 
 end inn;
 
+// Result:
 // fclass inn
 // Real ip.i;
 // Real ip.v;
@@ -52,3 +53,4 @@ end inn;
 //   (-ip.i) + io.y.i = 0.0;
 //   ip.i = 0.0;
 // end inn;
+// endResult

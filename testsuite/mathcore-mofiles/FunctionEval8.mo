@@ -48,6 +48,21 @@ end FunctionEval8;
 //   y := cos(x) + 4.0;
 // end test;
 // 
+// Result:
+// function test
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 4.0 + cos(x);
+// end test;
+// 
+// function test3
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 7.0 + x;
+// end test3;
+// 
 // fclass FunctionEval8
 // parameter Real a = 5.0;
 // parameter Real b[1] = 1.0;
@@ -61,3 +76,4 @@ end FunctionEval8;
 //   y = test3(x1 + x2);
 //   z = test(y);
 // end FunctionEval8;
+// endResult

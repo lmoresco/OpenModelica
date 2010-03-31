@@ -13,6 +13,7 @@ equation
   x[{1,N}] = {1,time};
 end Constant3;
 
+// Result:
 // fclass Constant3
 // constant Integer N = 3;
 // Real x[1];
@@ -23,3 +24,4 @@ end Constant3;
 //   x[1] = 1.0;
 //   x[3] = time;
 // end Constant3;
+// endResult

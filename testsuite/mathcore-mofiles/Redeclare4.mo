@@ -30,6 +30,7 @@ model D
   F.C c(b=5, redeclare E.BB d);
 end D;
 
+// Result:
 // fclass D
 // parameter Real c.b = 5.0;
 // parameter Real c.d.b = c.b;
@@ -37,4 +38,4 @@ end D;
 // equation
 //   der(c.d.x) = c.d.b;
 // end D;
-
+// endResult

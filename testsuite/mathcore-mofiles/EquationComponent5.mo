@@ -14,6 +14,7 @@ class EquationComponent5
   R b = a;
 end EquationComponent5;
 
+// Result:
 // fclass EquationComponent5
 // 	       Real    a.x;
 // 	       Real    a.y;
@@ -23,3 +24,4 @@ end EquationComponent5;
 //   b.x = a.x;
 //   b.y = a.y;
 // end EquationComponent5;
+// endResult

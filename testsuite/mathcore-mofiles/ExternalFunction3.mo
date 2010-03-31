@@ -22,6 +22,15 @@ equation
   c = addmatrices(a,b);
 end ExternalFunction3;
 
+// Result:
+// function addmatrices
+// input Real a;
+// input Real b;
+// output Real c;
+// 
+// external "C";
+// end addmatrices;
+// 
 // fclass ExternalFunction3
 // constant Real a[1,1] = 1.0;
 // constant Real a[1,2] = 2.0;
@@ -36,8 +45,6 @@ end ExternalFunction3;
 // Real c[2,1];
 // Real c[2,2];
 // equation
-//   c[1,1] = 6.0;
-//   c[1,2] = 8.0;
-//   c[2,1] = 10.0;
-//   c[2,2] = 12.0;
+//   c = addmatrices({{1.0,2.0},{3.0,4.0}},{{5.0,6.0},{7.0,8.0}});
 // end ExternalFunction3;
+// endResult

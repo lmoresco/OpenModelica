@@ -11,8 +11,10 @@ equation
   t=terminal();
 end Terminal1; 
 
+// Result:
 // fclass Terminal1
 // Boolean t;
 // equation
 // t = terminal();
 // end Terminal1;
+// endResult

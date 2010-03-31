@@ -41,6 +41,7 @@ model inn
  mid1 io;
  equation 
 end inn;
+// Result:
 // fclass inn
 // Real ip.i;
 // Real ip.v = 23.0;
@@ -62,3 +63,4 @@ end inn;
 //   io.ip.i + io.mid.y.i = 0.0;
 //   ip.i = 0.0;
 // end inn;
+// endResult

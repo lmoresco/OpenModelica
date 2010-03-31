@@ -21,6 +21,7 @@ equation
   end if;
 end EquationIf4;
 
+// Result:
 // fclass EquationIf4
 // Real p = 10.0 * time;
 // Real x;
@@ -35,3 +36,4 @@ end EquationIf4;
 //   x = 4.0;
 //   end if;
 // end EquationIf4;
+// endResult

@@ -13,6 +13,7 @@ algorithm
   a[end-b[end]] := 1;
 end Array9;
 
+// Result:
 // fclass Array9
 // Integer a[1] = 3;
 // Integer a[2] = 4;
@@ -24,3 +25,4 @@ end Array9;
 // algorithm
 //   a[1] := 1;
 // end Array9;
+// endResult

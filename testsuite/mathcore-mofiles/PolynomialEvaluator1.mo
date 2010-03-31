@@ -42,6 +42,7 @@ end PolynomialEvaluator1;
 //   end for;
 // end polyeval;
 // 
+// Result:
 // fclass PolynomialEvaluator1
 // Real inVector[1];
 // Real inVector[2];
@@ -52,4 +53,4 @@ end PolynomialEvaluator1;
 //   inVector[2] = 8.0;
 //   inVector[3] = 5.0;
 //   result = polyeval(inVector);
-// end PolynomialEvaluator1;
+// end PolynomialEvaluator1;// endResult

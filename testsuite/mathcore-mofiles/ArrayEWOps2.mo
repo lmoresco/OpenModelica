@@ -14,6 +14,7 @@ equation
   v=t.*u;
 end ArrayEWOps2;  
 
+// Result:
 // fclass ArrayEWOps2
 // Real x[1,1];
 // Real x[1,2];
@@ -53,3 +54,4 @@ end ArrayEWOps2;
 //   x2[2,2] = t * y[2,2];
 //   v = t * u;
 // end ArrayEWOps2;
+// endResult

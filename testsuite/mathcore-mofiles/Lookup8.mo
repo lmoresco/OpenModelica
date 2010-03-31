@@ -15,6 +15,7 @@ model Test
   Cytosol Cytosol;
 end Test;
 
+// Result:
 // fclass Test
 // Real Cytosol_V;
 // Real Cytosol.V;
@@ -22,3 +23,4 @@ end Test;
 //   Cytosol_V = Cytosol.V;
 //   Cytosol.V = 1.0;
 // end Test;
+// endResult

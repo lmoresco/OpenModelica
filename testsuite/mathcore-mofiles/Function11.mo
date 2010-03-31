@@ -22,6 +22,16 @@ x=y;
 b = equal(x,y);
 end test;
 
+// Result:
+// function equal
+// input Real[:] x;
+// input Real[:] y;
+// input Real eps = 1e-06;
+// output Boolean equal;
+// algorithm
+//   equal := false;
+// end equal;
+// 
 // fclass test
 // Real x[1];
 // Real x[2];
@@ -33,3 +43,4 @@ end test;
 //   x[2] = y[2];
 //   b = equal({x[1],x[2]},{y[1],y[2]},1e-06);
 // end test;
+// endResult

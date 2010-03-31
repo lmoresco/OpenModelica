@@ -21,10 +21,11 @@ model D
   C c(redeclare BB d);
 end D;
 
+// Result:
 // fclass D
 // parameter Real c.d.b = 5.0;
 // Real c.d.x;
 // equation
 //  der(c.d.x) = c.d.b;
 // end D;
-
+// endResult

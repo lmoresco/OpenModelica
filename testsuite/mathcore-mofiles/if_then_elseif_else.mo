@@ -15,6 +15,7 @@ equation
              time < 4 then time^4 else time^5);
 
 end ifThenElseIfElse;
+// Result:
 // fclass ifThenElseIfElse
 // Real out1;
 // Real out2;
@@ -26,3 +27,4 @@ end ifThenElseIfElse;
 //   out3 = if time < 1.0 then time else if time < 2.0 then time ^ 2.0 else time ^ 3.0;
 //   out4 = if time < 1.0 then time else if time < 2.0 then time ^ 2.0 else if time < 3.0 then time ^ 3.0 else if time < 4.0 then time ^ 4.0 else time ^ 5.0;
 // end ifThenElseIfElse;
+// endResult

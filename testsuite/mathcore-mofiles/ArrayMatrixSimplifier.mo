@@ -18,6 +18,7 @@ equation
   x1=(u - a[2:size(a, 1)]*pre(x))/a[1];
 end ArrayMatrixSimplifier;
 
+// Result:
 // fclass ArrayMatrixSimplifier
 // parameter Real a[1] = 1.0;
 // parameter Real a[2] = 1.0;
@@ -44,3 +45,4 @@ end ArrayMatrixSimplifier;
 //   z[2,3] = q[2,2];
 //   x1 = (u - a[2] * pre(x[1])) / a[1];
 // end ArrayMatrixSimplifier;
+// endResult

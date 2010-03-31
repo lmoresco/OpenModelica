@@ -30,6 +30,7 @@ equation
   connect(world.p,topPin);
 end Top;
 
+// Result:
 // fclass Top
 // Real world.p.i;
 // Real world.p.v;
@@ -49,3 +50,4 @@ end Top;
 //   topPin.i = 0.0;
 //   world.n.i = 0.0;
 // end Top;
+// endResult

@@ -40,9 +40,11 @@ end Faculty3Model;
 //   end while;
 // end Faculty3;
 // 
+// Result:
 // fclass Faculty3Model
 // Integer x;
 // Integer y;
 // equation
 //   y = Faculty3(x);
 // end Faculty3Model;
+// endResult

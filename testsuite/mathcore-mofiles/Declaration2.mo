@@ -11,5 +11,7 @@ class Declaration2
   constant discrete Real x;
 end Declaration2;
 
+// Result:
 // fclass Declaration2
 // end Declaration2;
+// endResult

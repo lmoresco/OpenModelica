@@ -19,6 +19,7 @@ algorithm
   end for;
 end SumVector;
 
+// Result:
 // fclass SumVector
 // Real sum;
 // parameter Real v[1] = 100;
@@ -39,3 +40,4 @@ end SumVector;
 //     end if;
 //   end for;
 // end SumVector;
+// endResult

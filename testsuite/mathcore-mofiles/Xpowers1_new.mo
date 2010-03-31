@@ -20,6 +20,7 @@ equation
   y = a * xpowers[5];
 end Xpowers1;
 
+// Result:
 // fclass Xpowers1
 // parameter Real x = 10;
 // Real a;
@@ -39,3 +40,4 @@ end Xpowers1;
 //   xpowers[5] = xpowers[4] * x;
 //   y = a * xpowers[5];
 // end Xpowers1;
+// endResult

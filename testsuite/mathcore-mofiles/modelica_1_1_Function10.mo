@@ -27,6 +27,7 @@ equation
   (x,y,z) = f(1,2);
 end Function10;
 
+// Result:
 // fclass Function10
 //      Real x;
 //      Real y;
@@ -34,3 +35,4 @@ end Function10;
 //      equation
 //      (x,y,z) = f(1.0,2.0);
 // end Function10;
+// endResult

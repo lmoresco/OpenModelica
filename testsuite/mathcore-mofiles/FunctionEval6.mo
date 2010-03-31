@@ -52,6 +52,18 @@ end FunctionEval6;
 // 
 
 
+// Result:
+// function test
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 4.0 + x;
+// end test;
+// 
+// function test3
+// output Real x = 5.0;
+// end test3;
+// 
 // fclass FunctionEval6
 // parameter Real a = 5.0;
 // parameter Real b[1] = 1.0;
@@ -64,3 +76,4 @@ end FunctionEval6;
 // equation
 //   y = test(x1 + x2);
 // end FunctionEval6;
+// endResult

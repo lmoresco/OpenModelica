@@ -37,6 +37,7 @@ end fCall;
 //   r3 := x * y;
 // end f;
 // 
+// Result:
 // fclass fCall
 // Real x[1];
 // Real x[2];
@@ -48,3 +49,4 @@ end fCall;
 //   (a,b,c) = (1.0,2.0,2.0);
 //   (x[1],x[2],x[3]) = (3.0,4.0,12.0);
 // end fCall;
+// endResult

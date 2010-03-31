@@ -23,6 +23,7 @@ class Modification11
   A a(B(x = 17.0));
 end Modification11;
 
+// Result:
 // fclass Modification11
 //   Real    a.c.b.x;
 //   Real    a.b.x;
@@ -30,3 +31,4 @@ end Modification11;
 //   a.b.x = 1.0;
 //   a.B.x = 17.0;
 // end Modification11;
+// endResult

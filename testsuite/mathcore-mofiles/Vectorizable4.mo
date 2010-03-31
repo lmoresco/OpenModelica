@@ -17,6 +17,7 @@ equation
 end Vectorizable4;
 
 
+// Result:
 // fclass Vectorizable4
 // Real x[1,1];
 // Real x[1,2];
@@ -48,3 +49,4 @@ end Vectorizable4;
 //   der(z[2,2,1]) = -1.0;
 //   der(z[2,2,2]) = -1.0;
 // end Vectorizable4;
+// endResult

@@ -13,6 +13,7 @@ equation
   x = 2.0 * PI;
 end Constant1;
 
+// Result:
 // fclass Constant1
 // constant Real PI = 3.14159265358979;
 // constant Integer N = 17;
@@ -20,3 +21,4 @@ end Constant1;
 // equation
 // x = 6.28318530717958;
 // end Constant1;
+// endResult

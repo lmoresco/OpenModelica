@@ -16,6 +16,7 @@ equation
 x=y;
 end StructuralParam;
 
+// Result:
 // fclass StructuralParam
 // parameter Integer m = n;
 // parameter Integer n = 1;
@@ -24,3 +25,4 @@ end StructuralParam;
 // equation
 //  x[1] = y[1];
 // end StructuralParam;
+// endResult

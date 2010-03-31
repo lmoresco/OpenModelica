@@ -18,3 +18,19 @@ model Function2
 equation
   x = f(z);
 end Function2;
+// Result:
+// function f
+// input Real x;
+// output Real r;
+// Real toomuch;
+// algorithm
+//   r := 2.0 * x;
+// end f;
+// 
+// fclass Function2
+// Real x;
+// Real z;
+// equation
+//   x = f(z);
+// end Function2;
+// endResult

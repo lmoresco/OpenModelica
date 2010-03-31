@@ -10,6 +10,7 @@ model Array3
 end Array3;
 
 
+// Result:
 // fclass Array3
 //   Integer x[1,1];
 //   Integer x[1,2];
@@ -41,3 +42,4 @@ end Array3;
 //   x[2,2] = [1,2,3;4,5,6][2][2];
 //   x[2,3] = [1,2,3;4,5,6][2][3];
 // origend Array3;
+// endResult

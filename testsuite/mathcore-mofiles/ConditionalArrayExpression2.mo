@@ -16,6 +16,7 @@ equation
   end if;
 end ConditionalArrayExpression2;
 
+// Result:
 // fclass ConditionalArrayExpression2
 //   Real a;
 //   Real b;
@@ -34,3 +35,4 @@ end ConditionalArrayExpression2;
 //     c[2] = 4;
 //  end if;
 // end ConditionalArrayExpression2;
+// endResult

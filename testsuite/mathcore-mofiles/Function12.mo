@@ -32,6 +32,13 @@ equation
     x=f(pre(x), u);
   end when;
 end BaseSampler;
+// Result:
+// function BaseSampler.f
+// input Real u1;
+// input Real u2;
+// output Real y;
+// end BaseSampler.f;
+// 
 // fclass BaseSampler
 // input Real u;
 // Boolean doSample;
@@ -41,3 +48,4 @@ end BaseSampler;
 //   x = BaseSampler.f(pre(x),u);
 //   end when;
 // end BaseSampler;
+// endResult

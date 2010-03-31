@@ -30,6 +30,7 @@ equation
   connect(c, a.c1);
 end ConnectHierarchical1;
 
+// Result:
 // fclass ConnectHierarchical1
 // Real a.b.c.f;
 // Real a.b.c.e;
@@ -47,3 +48,4 @@ end ConnectHierarchical1;
 //   (-c.f) + (a.c1.f + a.c2.f) = 0.0;
 //   c.f = 0.0;
 // end ConnectHierarchical1;
+// endResult

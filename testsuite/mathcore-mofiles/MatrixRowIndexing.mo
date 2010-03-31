@@ -31,6 +31,14 @@ algorithm
   d := a[4];
 end MatrixRowIndexing;
 
+// Result:
+// function callMe
+// input Real[:] a;
+// output Real[size(a,1)] b;
+// algorithm
+//   b := a;
+// end callMe;
+// 
 // fclass MatrixRowIndexing
 // constant Real a[1,1] = 1.0;
 // constant Real a[1,2] = 2.0;
@@ -96,3 +104,4 @@ end MatrixRowIndexing;
 // algorithm
 //   d := {16.0,17.0,18.0,19.0,20.0};
 // end MatrixRowIndexing;
+// endResult

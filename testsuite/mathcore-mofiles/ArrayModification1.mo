@@ -13,6 +13,7 @@ class ArrayModification1
   A a(x[2] = 1.0);
 end ArrayModification1;
 
+// Result:
 // fclass ArrayModification1
 //   Real a.x[1];
 //   Real a.x[2];
@@ -20,3 +21,4 @@ end ArrayModification1;
 // equation
 //   a.x[2] = 1.0;
 // end ArrayModification1;
+// endResult

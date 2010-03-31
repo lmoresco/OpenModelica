@@ -21,6 +21,14 @@ equation
   der(s)=-fill(1,2);
 end Vectorizable1;
 
+// Result:
+// function foo
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 1.0 + x;
+// end foo;
+// 
 // fclass Vectorizable1
 // Real x[1];
 // Real x[2];
@@ -30,10 +38,11 @@ end Vectorizable1;
 // Real a;
 // Real b;
 // Real c;
-// equation 
-// x[1] = 2.0 + foo(a);
-// x[2] = 3.0 + foo(b);
-// x[3] = 4.0 + foo(c);
+// equation
+//   x[1] = 2.0 + foo(a);
+//   x[2] = 3.0 + foo(b);
+//   x[3] = 4.0 + foo(c);
 //   der(s[1]) = -1.0;
 //   der(s[2]) = -1.0;
 // end Vectorizable1;
+// endResult

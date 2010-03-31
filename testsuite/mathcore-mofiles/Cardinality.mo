@@ -32,6 +32,7 @@ equation
     connect(R1.p,p); // R1.n_conn = cardinality(R1.p) = 2;
 end circuit;
 
+// Result:
 // fclass circuit
 // Real p.v;
 // Real p.i;
@@ -66,3 +67,4 @@ end circuit;
 //   R1.q.i = 0.0;
 //   R1.n.i = 0.0;
 // end circuit;
+// endResult

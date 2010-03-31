@@ -25,6 +25,7 @@ equation
   connect(world,topPin);
 end Top;
 
+// Result:
 // fclass Top
 // Real world.i;
 // Real world.v;
@@ -42,3 +43,4 @@ end Top;
 //   topPin.i = 0.0;
 //   world.i = 0.0;
 // end Top;
+// endResult

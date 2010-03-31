@@ -18,3 +18,12 @@ model Function7
 equation
   x = f(z);
 end Function7;
+// Result:
+// Error processing file: Function7.mo
+// Error: Type mismatch in equation x=f(z) of type String=Real
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

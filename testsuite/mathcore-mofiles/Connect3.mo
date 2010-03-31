@@ -11,4 +11,3 @@ equation
   connect(e1,e2);
   connect(f1,f2);
 end Connect3;
-

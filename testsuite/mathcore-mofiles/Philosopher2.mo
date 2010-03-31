@@ -312,6 +312,54 @@ end Philosopher_DiningTable;
 //   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0,1.0);
 // end Philosopher.Random.random;
 // 
+// Result:
+// function Philosopher.Random.normalvariate
+// input Real mu "mean value";
+// input Real sigma "standard deviation";
+// input Real[3] si "input random seed";
+// output Real x;
+// output Real[3] so "output random seed";
+// protected Real[3] s1;
+// protected Real[3] s2;
+// protected Real z;
+// protected Real zz;
+// protected Real u1;
+// protected Real u2;
+// protected Boolean my_break = false;
+// algorithm
+//   s1 := {si[1],si[2],si[3]};
+//   u2 := 1.0;
+//   while  NOT my_break loop
+//     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
+//     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
+//     z := 1.71552776992141 * (u1 - 0.5) / u2;
+//     zz := z ^ 2.0 / 4.0;
+//     my_break := zz <= -log(u2);
+//   end while;
+//   x := mu + z * sigma;
+//   so := {s1[1],s1[2],s1[3]};
+// end Philosopher.Random.normalvariate;
+// 
+// function Philosopher.Random.random
+// input Real[3] si "input random seed";
+// output Real x "uniform random variate between 0 and 1";
+// output Real[3] so "output random seed";
+// algorithm
+//   so[1] := abs(rem(171.0 * si[1],30269.0));
+//   so[2] := abs(rem(172.0 * si[2],30307.0));
+//   so[3] := abs(rem(170.0 * si[3],30323.0));
+//   if so[1] <= 0.0 AND so[1] >= 0.0 then
+//     so[1] := 1.0;
+//   end if;
+//   if so[2] <= 0.0 AND so[2] >= 0.0 then
+//     so[2] := 1.0;
+//   end if;
+//   if so[3] <= 0.0 AND so[3] >= 0.0 then
+//     so[3] := 1.0;
+//   end if;
+//   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0,1.0);
+// end Philosopher.Random.random;
+// 
 // fclass Philosopher_DiningTable
 // parameter Integer n = 5 "Number of philosophers and forks";
 // parameter Real sigma = 5.0 "Standard deviation of delay times";
@@ -830,3 +878,4 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 // end Philosopher_DiningTable;
+// endResult

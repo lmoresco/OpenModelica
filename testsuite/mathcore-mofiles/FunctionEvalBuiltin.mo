@@ -40,6 +40,7 @@ model FunctionEvalBuiltin
      };
 end FunctionEvalBuiltin;
 
+// Result:
 // fclass FunctionEvalBuiltin
 // constant Real pi1 = 1.5707963267949;
 // constant Real pi2 = 0.841470984807897;
@@ -66,3 +67,10 @@ end FunctionEvalBuiltin;
 // constant Integer i[4] = 2;
 // constant Integer i[5] = 3;
 // end FunctionEvalBuiltin;
+// Warning: Using non-standardized function arcsin. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arccos. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arctan. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arccos. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arctan. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// 
+// endResult

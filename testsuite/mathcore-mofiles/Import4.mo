@@ -46,9 +46,11 @@ model Import4
   extends B.A.F;
 end Import4;
 
+// Result:
 // fclass Import4
 // Real c.x = 1.0;
 // Real d.x = 5.0;
 // Real e.x = 6.0;
 // Real myc.x = 7.0;
 // end Import4;
+// endResult

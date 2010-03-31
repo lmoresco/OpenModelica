@@ -28,11 +28,18 @@ end FunctionEval3;
 //   y := x + 2.0;
 // end f;
 // 
+// Result:
+// function f
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 2.0 + x;
+// end f;
+// 
 // fclass FunctionEval3
 // parameter Real a = 5.0;
 // Real x;
 // equation
 //   x = f(a);
 // end FunctionEval3;
-
-
+// endResult

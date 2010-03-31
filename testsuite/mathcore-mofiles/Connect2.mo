@@ -20,6 +20,7 @@ equation
   c3.f = 1;
 end Connect2;
 
+// Result:
 // fclass Connect2
 // Real c1.f;
 // Real c1.e;
@@ -38,3 +39,4 @@ end Connect2;
 //   c3.f = 0.0;
 //   c2.f = 0.0;
 // end Connect2;
+// endResult

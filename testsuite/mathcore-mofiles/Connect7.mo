@@ -20,6 +20,7 @@ equation
   connect(c[2],cy);
 end Connect7;
 
+// Result:
 // fclass Connect7
 // parameter Integer N = 1;
 // Real c[1].x;
@@ -32,3 +33,4 @@ end Connect7;
 //   cy.x = 0.0;
 //   cx.x = 0.0;
 // end Connect7;
+// endResult

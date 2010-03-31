@@ -18,9 +18,11 @@ equation
   b=c2.s=="h"; 
 end Connect6;
 
+// Result:
 // fclass Connect4
 //   String c1.s;
 //   String c2.s;
 // equation
 //   c1.s=c2.s;
 // end Connect4;
+// endResult

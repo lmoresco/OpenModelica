@@ -25,6 +25,18 @@ equation
  (x,z) = fooTuple(xvar);
  y = fooTuple(der(xvar)); 
 end mo;
+// Result:
+// function fooTuple
+// input Real x;
+// output Real y;
+// output Real y2;
+// output Real y3;
+// algorithm
+//   y := 2.0 * x;
+//   y2 := 2.0 * y;
+//   y3 := 2.0 * y2;
+// end fooTuple;
+// 
 // fclass mo
 // Real x;
 // Real y;
@@ -35,3 +47,4 @@ end mo;
 //   (x,z,_) = fooTuple(xvar);
 //   (y,_,_) = fooTuple(der(xvar));
 // end mo;
+// endResult

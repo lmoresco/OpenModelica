@@ -21,8 +21,10 @@ model Import5
   Real x3=c;
 end Import5;
 
+// Result:
 // fclass Import5
 // Real x = 9.42;
 // Real x2 = 2.7;
 // Real x3 = 300000000.0;
 // end Import5;
+// endResult

@@ -15,6 +15,7 @@ model Constant2
   constant Integer F = E + 4;
 end Constant2;
 
+// Result:
 // fclass Constant2
 // constant Real A = 5.0;
 // constant Real B = 5.0;
@@ -23,3 +24,4 @@ end Constant2;
 // constant Integer E = 3;
 // constant Integer F = 7;
 // end Constant2;
+// endResult

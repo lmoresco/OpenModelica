@@ -15,6 +15,15 @@ model test
   Real x=foo(time);
 end test;
 
+// Result:
+// function foo
+// input Real x;
+// output Real foo;
+// 
+// external "C";
+// end foo;
+// 
 // fclass test
 // Real x = foo(time);
 // end test;
+// endResult

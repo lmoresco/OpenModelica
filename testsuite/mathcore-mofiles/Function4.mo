@@ -18,3 +18,19 @@ model Function4
 equation
   x = f(y);
 end Function4;
+// Result:
+// function f
+// input Real x;
+// output Real y;
+// constant Integer n = 5;
+// algorithm
+//   y := x;
+// end f;
+// 
+// fclass Function4
+// Real x;
+// Real y;
+// equation
+//   x = f(y);
+// end Function4;
+// endResult

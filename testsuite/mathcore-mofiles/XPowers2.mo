@@ -18,6 +18,7 @@ equation
   end for;
 end XPowers2;
 
+// Result:
 // fclass XPowers2
 // constant Integer n = 3;
 // Real x = 2.0;
@@ -29,3 +30,4 @@ end XPowers2;
 //   xpowers[2] = xpowers[1] * x;
 //   xpowers[3] = xpowers[2] * x;
 // end XPowers2;
+// endResult

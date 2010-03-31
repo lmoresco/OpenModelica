@@ -25,7 +25,8 @@ model World
   Modelica.SIunits.Area a;
 end World;
 
+// Result:
 // fclass World
 // Real c.x;
 // Real a;
-// end World;
+// end World;// endResult

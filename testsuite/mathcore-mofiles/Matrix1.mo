@@ -12,6 +12,7 @@ model test
   parameter Real A=0.1;
   parameter Real L=4;
 end test;
+// Result:
 // fclass test
 // parameter Real K[1,1] = Em;
 // parameter Real K[1,2] = -Em;
@@ -23,3 +24,4 @@ end test;
 // parameter Real A = 0.1;
 // parameter Real L = 4.0;
 // end test;
+// endResult

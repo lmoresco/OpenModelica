@@ -26,4 +26,3 @@ encapsulated model Encapsulated3
   C c(x=1);
   C2 c2; // Causes infitite loop
 end Encapsulated3;
-

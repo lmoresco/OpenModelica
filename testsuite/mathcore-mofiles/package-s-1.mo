@@ -25,7 +25,9 @@ model World
   Modelica.SIunits.Area a;
 end World;
 
+// Result:
 // fclass World
 // Real c.x;
 // Real a(quantity = "Area", unit = "m2");
 // end World;
+// endResult

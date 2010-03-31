@@ -21,9 +21,18 @@ equation
   x = f(z);
 end Function6;
 
+// Result:
+// function f
+// input Real x;
+// output Real r;
+// algorithm
+//   r := 2.0 * x;
+// end f;
+// 
 // fclass Function6
-//   Real    x;
-//   Integer z;
+// Real x;
+// Integer z;
 // equation
 //   x = f(Real(z));
 // end Function6;
+// endResult

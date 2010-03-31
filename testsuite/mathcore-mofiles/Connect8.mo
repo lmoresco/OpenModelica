@@ -19,6 +19,7 @@ equation
   c[1].x=time; // Extra equation required compared to Connect7 example.
 end Connect8;
 
+// Result:
 // fclass Connect8
 // parameter Integer N = 2;
 // Real c[1].x;
@@ -31,3 +32,4 @@ end Connect8;
 //   cy.x = 0.0;
 //   cx.x = 0.0;
 // end Connect8;
+// endResult

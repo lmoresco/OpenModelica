@@ -15,5 +15,7 @@ model Array_builtin
     x:=sin(y);
 end Array_builtin;
 
+// Result:
 // fclass Array_builtin
 // end Array_builtin;
+// endResult

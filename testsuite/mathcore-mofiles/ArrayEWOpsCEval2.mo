@@ -14,6 +14,7 @@ u3=2 .-{4,5};
 t=2 .-4;
 end ArrayEWOpsCEval2;  
 
+// Result:
 // fclass ArrayEWOpsCEval2
 // Real u1[1];
 // Real u1[2];
@@ -31,3 +32,4 @@ end ArrayEWOpsCEval2;
 //   u3[2] = -3.0;
 //   t = -2.0;
 // end ArrayEWOpsCEval2;
+// endResult

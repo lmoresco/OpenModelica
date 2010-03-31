@@ -35,6 +35,7 @@ end ConnectHierarchical2;
 
 
 
+// Result:
 // fclass ConnectHierarchical2
 // Real a.b.c.f;
 // Real a.b.c.e;
@@ -53,3 +54,4 @@ end ConnectHierarchical2;
 //   c.f = 0.0;
 //   a.c2.f = 0.0;
 // end ConnectHierarchical2;
+// endResult

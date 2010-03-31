@@ -19,6 +19,7 @@ model A
   equation
     b4 = C[1].g.setdg;
 end A;
+// Result:
 // fclass A
 // Boolean C[1,1,1].g[1].setdg[1];
 // Boolean C[1,1,1].g[1].setdg[2];
@@ -76,3 +77,4 @@ end A;
 //   b4[3,1,2,1] = C[1,3,1].g[2].setdg[1];
 //   b4[3,1,2,2] = C[1,3,1].g[2].setdg[2];
 // end A;
+// endResult

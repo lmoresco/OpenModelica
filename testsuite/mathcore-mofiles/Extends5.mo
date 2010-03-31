@@ -21,6 +21,8 @@ end Base;
 model test
   extends Base;
 end test;
+// Result:
 // fclass test
 // Real x;
 // end test;
+// endResult

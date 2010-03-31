@@ -49,6 +49,24 @@ end FunctionBubblesort;
 //   end for;
 // end bubblesort;
 // 
+// Result:
+// function bubblesort
+// input Real[:] x;
+// output Real[size(x,1)] y;
+// protected Real t;
+// algorithm
+//   y := x;
+//   for i in 1:size(x,1) loop
+//     for j in 1:size(x,1) loop
+//       if y<asub>[i] > y<asub>[j] then
+//         t := y<asub>[i];
+//         y[i] := y<asub>[j];
+//         y[j] := t;
+//       end if;
+//     end for;
+//   end for;
+// end bubblesort;
+// 
 // fclass FunctionBubblesort
 // constant Real a[1] = 0.0;
 // constant Real a[2] = 9.0;
@@ -76,3 +94,4 @@ end FunctionBubblesort;
 //   b[7] = 0.0;
 //   b[8] = 0.0;
 // end FunctionBubblesort;
+// endResult

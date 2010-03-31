@@ -24,6 +24,7 @@ end SS;
 
 
 
+// Result:
 // fclass SS
 // input Real u[1];
 // output Real y[1];
@@ -36,3 +37,4 @@ end SS;
 //   y[1] = B[1,1] * u[1];
 //   y[2] = B[2,1] * u[1];
 // end SS;
+// endResult

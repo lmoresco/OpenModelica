@@ -20,6 +20,8 @@ model Lookup2
 end Lookup2;
 
 
+// Result:
 // fclass Lookup2
 // Real c = 3.0;
 // end Lookup2;
+// endResult

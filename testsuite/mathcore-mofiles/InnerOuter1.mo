@@ -15,6 +15,8 @@ class B
   A a1, a2; // B.T0, B.a1.T0 and B.a2.T0 is the same variable
 end B;
 
+// Result:
 // fclass B
 // Real T0 = 100.0;
 // end B;
+// endResult

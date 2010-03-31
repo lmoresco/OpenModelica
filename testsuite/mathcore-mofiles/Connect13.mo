@@ -20,6 +20,7 @@ equation
 connect(t1.n,t2.p);
 connect(t2.n,t1.p);
 end test2;
+// Result:
 // fclass test2
 // Real t1.p.u_dq0[1];
 // Real t1.p.u_dq0[2];
@@ -59,3 +60,4 @@ end test2;
 //   t1.n.u_dq0[2] = t2.p.u_dq0[2];
 //   t1.n.u_dq0[3] = t2.p.u_dq0[3];
 // end test2;
+// endResult

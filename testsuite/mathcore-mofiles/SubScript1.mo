@@ -12,6 +12,7 @@ equation
 end SubScript1;
 
 
+// Result:
 // fclass SubScript1
 // parameter Integer tmp = 2;
 // Real arraySubs[1];
@@ -21,3 +22,4 @@ end SubScript1;
 // Real arraySubs[5];
 // Real arraySubs[6];
 // end SubScript1;
+// endResult

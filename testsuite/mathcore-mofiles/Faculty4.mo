@@ -31,6 +31,7 @@ equation
   end if;
 end Faculty4;
 
+// Result:
 // fclass Faculty4
 //   parameter Integer x;
 //   parameter Integer x.min;
@@ -50,3 +51,4 @@ end Faculty4;
 //   end if;
 //   assert(x >= x.min);
 // end Faculty4;
+// endResult

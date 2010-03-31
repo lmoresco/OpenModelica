@@ -1,6 +1,6 @@
 // name:     ParseError2
 // keywords: parse error
-// status:   parseerrormsg
+// status:   correct
 // 
 // Parsing error message.
 // 
@@ -11,7 +11,7 @@ model ParseError2
   Real 1x;
 end ParseError2;
 
+// Result:
 // fclass ParseError2
 // end ParseError2;
-
-
+// endResult

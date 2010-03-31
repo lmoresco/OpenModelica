@@ -30,6 +30,7 @@ equation
   p2.i=1;
 end Units1;
 
+// Result:
 // fclass Units1
 //   Real p1.v;
 //   Real p1.i;
@@ -41,3 +42,4 @@ end Units1;
 //   -p1.i + -p2.i = 0.0;
 //   p1.v = p2.v;
 // end Units1;
+// endResult

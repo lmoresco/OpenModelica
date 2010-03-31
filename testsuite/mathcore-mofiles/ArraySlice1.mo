@@ -13,6 +13,7 @@ equation
   a[4]=1;
 end ArraySlice1;
 
+// Result:
 // fclass ArraySlice1
 //   Real    a[1];
 //   Real    a[2];
@@ -24,3 +25,4 @@ end ArraySlice1;
 //   a[1] = time;
 //   a[4] = 1.0;
 // end ArraySlice1;
+// endResult

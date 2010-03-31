@@ -17,6 +17,7 @@ equation
   xpowers[2:n] = xpowers[1:n-1] * x;
 end XPowers1;
 
+// Result:
 // fclass XPowers1
 // constant Integer n = 3;
 // Real x = 2.0;
@@ -28,3 +29,4 @@ end XPowers1;
 //   xpowers[2] = x * xpowers[1];
 //   xpowers[3] = x * xpowers[2];
 // end XPowers1;
+// endResult

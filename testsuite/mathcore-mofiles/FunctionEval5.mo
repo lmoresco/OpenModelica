@@ -33,3 +33,13 @@ model FunctionEval5
 equation
   y = test(x1+x2);
 end FunctionEval5;
+// Result:
+// Error processing file: FunctionEval5.mo
+// Error: Wrong type or wrong number of arguments to size(test2(size(b, 1), b), 1)'.
+// 
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

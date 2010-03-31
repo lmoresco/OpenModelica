@@ -33,6 +33,16 @@ end Vectorizable5;
 //   w := x + y + z;
 // end foo;
 
+// Result:
+// function foo
+// input Real x;
+// input Real y;
+// input Real z;
+// output Real w;
+// algorithm
+//   w := x + y + z;
+// end foo;
+// 
 // fclass Vectorizable5
 // Real x[1];
 // Real x[2];
@@ -42,6 +52,7 @@ end Vectorizable5;
 // Real w[1];
 // Real w[2];
 // equation
-// w[1] = foo(x[1],y[1],z);
-// w[2] = foo(x[2],y[2],z);
+//   w[1] = foo(x[1],y[1],z);
+//   w[2] = foo(x[2],y[2],z);
 // end Vectorizable5;
+// endResult

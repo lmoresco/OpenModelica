@@ -20,6 +20,7 @@ equation
   z[4]=2;
 end Range1;
 
+// Result:
 // fclass Range1
 // Integer x[1] = 1;
 // Integer x[2] = 2;
@@ -48,3 +49,4 @@ end Range1;
 //   z[2] = 1;
 //   z[4] = 2;
 // end Range1;
+// endResult

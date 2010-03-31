@@ -12,9 +12,11 @@ equation
   x=abs(x-y);
 end Abs1;
 
+// Result:
 // fclass Abs1
 // Real x;
 // Real y;
 // equation
 //   x = abs(x - y);
 // end Abs1;
+// endResult

@@ -40,9 +40,11 @@ end CondAssignFuncCall;
 //   end if;
 // end CondAssignFunc;
 // 
+// Result:
 // fclass CondAssignFuncCall
 // Real a;
 // Real b;
 // equation
 //   (a,b) = (400.0,-1.0);
 // end CondAssignFuncCall;
+// endResult

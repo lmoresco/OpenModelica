@@ -15,6 +15,7 @@ equation
   der(h)=if noEvent(h>0) then -c*sqrt(h) else 0;
 end NoEvent1;
 
+// Result:
 // fclass NoEvent1
 // parameter Real c = 1.0;
 // Real x;
@@ -26,3 +27,4 @@ end NoEvent1;
 //   b = noEvent(x < y);
 //  der(h) = if noEvent(h > 0.0) then (-c) * sqrt(h) else 0.0;
 // end NoEvent1;
+// endResult

@@ -31,6 +31,7 @@ model Array1
   Integer y[3] = 1:3;
 end Array1;
 
+// Result:
 // fclass Array1
 // Integer x[1] = 1;
 // Integer x[2] = 2;
@@ -41,3 +42,4 @@ end Array1;
 // Integer y[2] = 2;
 // Integer y[3] = 3;
 // end Array1;
+// endResult

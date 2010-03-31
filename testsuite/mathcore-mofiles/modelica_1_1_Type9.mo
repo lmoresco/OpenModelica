@@ -14,6 +14,7 @@ equation
   ok[1]=3.0;
 end Type9;
 
+// Result:
 // fclass Type9
 //      Real x[1,1];
 //      Real x[1,2];
@@ -39,6 +40,4 @@ end Type9;
 //      x[2,3] = y[2,3];
 //      ok[1] = 3.0;
 // end Type9;
-
-
-
+// endResult

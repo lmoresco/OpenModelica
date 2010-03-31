@@ -9,5 +9,7 @@ class Class1
   
 end Class1;
 
+// Result:
 // fclass Class1
 // end Class1;
+// endResult

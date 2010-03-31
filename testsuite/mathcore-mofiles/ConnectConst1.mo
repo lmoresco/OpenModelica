@@ -16,6 +16,7 @@ equation
   connect(c1,c2);
 end ConnectConst1;
 
+// Result:
 // fclass ConnectConst1
 //   Real c1.e
 //   Real c1.f
@@ -25,3 +26,4 @@ end ConnectConst1;
 //  c1.e=c2.e;
 //  c1.f+c2.f=0;
 // end ConnectConst1
+// endResult

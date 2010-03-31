@@ -36,6 +36,7 @@ algorithm
   end when;
 end Algorithm1;
 
+// Result:
 // fclass Algorithm1
 // Real x;
 // Real y;
@@ -67,3 +68,4 @@ end Algorithm1;
 //     z := 0.0;
 //   end when;
 // end Algorithm1;
+// endResult

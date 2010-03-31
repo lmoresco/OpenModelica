@@ -16,6 +16,7 @@ equation
   c1.i=integer(time*10);
 end Connect4;
 
+// Result:
 // fclass Connect4
 // Integer c1.i;
 // Integer c2.i;
@@ -23,3 +24,4 @@ end Connect4;
 //  c1.i = integer(10.0 * time);
 //   c1.i = c2.i;
 // end Connect4;
+// endResult

@@ -14,7 +14,9 @@ class Modification5
   extends A;
 end Modification5;
 
+// Result:
 // fclass Modification5
 // equation
 //   x = real(17) +2*x
 // end Modification5;
+// endResult

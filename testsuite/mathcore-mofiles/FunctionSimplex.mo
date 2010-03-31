@@ -115,6 +115,75 @@ model FunctionSimplex
 equation
   (b,z,p,q)=misc_simplex1(a);
 end FunctionSimplex;
+// Result:
+// function misc_simplex1
+// input Real[:, :] matr;
+// output Real[(size(matr,2)) - 1] x;
+// output Real z;
+// output Integer q;
+// output Integer p;
+// protected Real[size(matr,1), size(matr,2)] a;
+// protected Integer M;
+// protected Integer N;
+// algorithm
+//   N := size(a,1) - 1;
+//   M := size(a,2) - 1;
+//   a := matr;
+//   p := 0;
+//   q := 0;
+//   a := pivot1(a,1 + p,1 + q);
+//   while  NOT (q == M OR p == N) loop
+//     q := 0;
+//     while  NOT (q == M OR a<asub>[1, 1 + q] > 1.0) loop
+//       q := 1 + q;
+//     end while;
+//     p := 0;
+//     while  NOT (p == N OR a<asub>[1 + p, 1 + q] > 0.1) loop
+//       p := 1 + p;
+//     end while;
+//     if q < M AND p < N AND p > 0 AND q > 0 then
+//       a := pivot1(a,p,q);
+//     end if;
+//     if p <= 0 AND q <= 0 then
+//       a := pivot1(a,1 + p,1 + q);
+//     end if;
+//     if p <= 0 AND q > 0 then
+//       a := pivot1(a,1 + p,q);
+//     end if;
+//     if p > 0 AND q <= 0 then
+//       a := pivot1(a,p,1 + q);
+//     end if;
+//   end while;
+//   z := a<asub>[1, M];
+//   x := a[1,1:30];
+//   for i in 1:10 loop
+//     for j in 1:M loop
+//       x[j] := 1.01 * x<asub>[j];
+//     end for;
+//   end for;
+// end misc_simplex1;
+// 
+// function pivot1
+// input Real[:, :] b;
+// input Integer p;
+// input Integer q;
+// output Real[size(b,1), size(b,2)] a;
+// protected Integer M;
+// protected Integer N;
+// algorithm
+//   a := b;
+//   N := size(a,1) - 1;
+//   M := size(a,2) - 1;
+//   for j in 1:N loop
+//     for k in 1:M loop
+//       if j <> p AND k <> q then
+//         a[j,k] := a<asub>[j, k] - 0.3 * /*REAL*/(j);
+//       end if;
+//     end for;
+//   end for;
+//   a[p,q] := 0.05;
+// end pivot1;
+// 
 // fclass FunctionSimplex
 // constant Real a[1,1] = -1.0;
 // constant Real a[1,2] = -1.0;
@@ -338,3 +407,4 @@ end FunctionSimplex;
 // equation
 //   (b,z,p,q) = ({0.0552311062705602,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,-1.1046221254112,0.0,0.0,0.0,0.0,0.0},0.0,30,1);
 // end FunctionSimplex;
+// endResult

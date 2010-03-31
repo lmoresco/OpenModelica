@@ -14,6 +14,7 @@ class ArrayModification7
   A a(x[2:4] = {2,3,4.5});
 end ArrayModification7;
 
+// Result:
 // fclass ArrayModification7
 //   Real    a.x[1];
 //   Real    a.x[2];
@@ -25,3 +26,4 @@ end ArrayModification7;
 //   a.x[3] = 1.0;
 //   a.x[4] = 1.0;
 // end ArrayModification7;
+// endResult

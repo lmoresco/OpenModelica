@@ -22,6 +22,15 @@ model test
 end test; 
 
   
+// Result:
+// function foo
+// input Real x;
+// input Real y;
+// output Real z;
+// algorithm
+//   z := x + y;
+// end foo;
+// 
 // fclass test
 // Real w;
 // Real v;
@@ -30,3 +39,4 @@ end test;
 // Real z = foo(w,v);
 // Real z2 = foo(w,v);
 // end test;
+// endResult

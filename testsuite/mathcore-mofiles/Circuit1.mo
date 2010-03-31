@@ -79,6 +79,7 @@ equation
   connect (AC.n, G.p);		// Ground
 end Circuit1;
 
+// Result:
 // fclass Circuit1
 // Real R1.p.v(unit = "V");
 // Real R1.p.i(unit = "A");
@@ -153,3 +154,4 @@ end Circuit1;
 //   R1.n.i + C.p.i = 0.0;
 //   R1.n.v = C.p.v;
 // end Circuit1;
+// endResult

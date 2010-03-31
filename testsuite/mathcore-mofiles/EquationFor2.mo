@@ -14,6 +14,7 @@ equation
     a[i+1] = a[i] + 1.0;
   end for;
 end EquationFor2;
+// Result:
 // fclass EquationFor2
 // constant Integer N = 4;
 // Real a[1];
@@ -26,4 +27,4 @@ end EquationFor2;
 //   a[3] = 1.0 + a[2];
 //   a[4] = 1.0 + a[3];
 // end EquationFor2;
-
+// endResult
