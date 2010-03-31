@@ -1121,3 +1121,46 @@ end BM7;
 // constant1.outPort.signal[1] = atan21.inPort1.signal[1];
 // atan21.inPort2.signal[1] = constant2.outPort.signal[1];
 // end BM7;
+// Result:
+// function Modelica.Math.atan2
+// input Real u1;
+// input Real u2;
+// output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.atan2;
+// 
+// fclass BM7
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
+// output Real constant2.outPort.signal[1] "Real output signals";
+// output Real constant2.y[1];
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
+// parameter Integer atan21.n = 1 "Dimension of input and output vectors.";
+// parameter Integer atan21.inPort1.n = atan21.n "Dimension of signal vector";
+// input Real atan21.inPort1.signal[1] "Real input signals";
+// parameter Integer atan21.inPort2.n = atan21.n "Dimension of signal vector";
+// input Real atan21.inPort2.signal[1] "Real input signals";
+// parameter Integer atan21.outPort.n = atan21.n "Dimension of signal vector";
+// output Real atan21.outPort.signal[1] "Real output signals";
+// output Real atan21.y[1] "Output signals";
+// protected Real atan21.u1[1] = atan21.inPort1.signal[1] "Input signals 1";
+// protected Real atan21.u2[1] = atan21.inPort2.signal[1] "Input signals 2";
+// equation
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   constant2.outPort.signal[1] = constant2.k[1];
+//   constant2.y[1] = constant2.outPort.signal[1];
+//   atan21.y[1] = Modelica.Math.atan2(atan21.u1[1],atan21.u2[1]);
+//   atan21.y[1] = atan21.outPort.signal[1];
+// assert(atan21.inPort2.n == constant2.outPort.n,"automatically generated from connect");
+// assert(constant1.outPort.n == atan21.inPort1.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = atan21.inPort1.signal[1];
+// atan21.inPort2.signal[1] = constant2.outPort.signal[1];
+// end BM7;
+// endResult

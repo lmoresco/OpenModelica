@@ -25,6 +25,7 @@ model Test
 	IfEquation y3(u = 3.0, uMax = 2.0, uMin = 0.0);
 end Test;    
 
+// Result:
 // fclass Test
 // parameter Real y1.u = 1.0;
 // parameter Real y1.uMax = 2.0;
@@ -43,3 +44,4 @@ end Test;
 //   y2.y = y2.u;
 //   y3.y = y3.uMax;
 // end Test;
+// endResult

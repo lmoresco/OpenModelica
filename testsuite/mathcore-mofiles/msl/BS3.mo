@@ -1343,3 +1343,52 @@ end BS3;
 // assert(der1.inPort.n == expSine1.outPort.n,"automatically generated from connect");
 // der1.inPort.signal[1] = expSine1.outPort.signal[1];
 // end BS3;
+// Result:
+// function Modelica.Math.exp
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// fclass BS3
+// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+// input Real der1.inPort.signal[1] "Real input signals";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+// output Real der1.outPort.signal[1] "Real output signals";
+// output Real der1.y[1] "Output signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
+// parameter Integer expSine1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer expSine1.outPort.n = expSine1.nout "Dimension of signal vector";
+// output Real expSine1.outPort.signal[1] "Real output signals";
+// output Real expSine1.y[1];
+// parameter Real expSine1.amplitude[1] = 1.0 "Amplitudes of sine waves";
+// parameter Real expSine1.freqHz[1](quantity = "Frequency", unit = "Hz") = 2.0 "Frequencies of sine waves";
+// parameter Real expSine1.phase[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phases of sine waves";
+// parameter Real expSine1.damping[1](quantity = "DampingCoefficient", unit = "s-1") = 1.0 "Damping coefficients of sine waves";
+// parameter Real expSine1.offset[1] = 0.0 "Offsets of output signals";
+// parameter Real expSine1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected constant Real expSine1.pi = 3.14159265358979;
+// protected parameter Real expSine1.p_amplitude[1] = expSine1.amplitude[1];
+// protected parameter Real expSine1.p_freqHz[1] = expSine1.freqHz[1];
+// protected parameter Real expSine1.p_phase[1] = expSine1.phase[1];
+// protected parameter Real expSine1.p_damping[1] = expSine1.damping[1];
+// protected parameter Real expSine1.p_offset[1] = expSine1.offset[1];
+// protected parameter Real expSine1.p_startTime[1](quantity = "Time", unit = "s") = expSine1.startTime[1];
+// equation
+//   der1.y[1] = der(der1.u[1]);
+//   der1.y[1] = der1.outPort.signal[1];
+//   expSine1.outPort.signal[1] = expSine1.p_offset[1] + (if time < expSine1.p_startTime[1] then 0.0 else expSine1.p_amplitude[1] * (Modelica.Math.exp((expSine1.p_startTime[1] - time) * expSine1.p_damping[1]) * Modelica.Math.sin(6.28318530717959 * (expSine1.p_freqHz[1] * (time - expSine1.p_startTime[1])) + expSine1.p_phase[1])));
+//   expSine1.y[1] = expSine1.outPort.signal[1];
+// assert(der1.inPort.n == expSine1.outPort.n,"automatically generated from connect");
+// der1.inPort.signal[1] = expSine1.outPort.signal[1];
+// end BS3;
+// endResult

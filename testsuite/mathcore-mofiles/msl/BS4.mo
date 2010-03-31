@@ -1311,3 +1311,57 @@ end BS4;
 // assert(exponentials1.outPort.n == der1.inPort.n,"automatically generated from connect");
 // exponentials1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS4;
+// Result:
+// function Modelica.Math.exp
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// fclass BS4
+// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+// input Real der1.inPort.signal[1] "Real input signals";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+// output Real der1.outPort.signal[1] "Real output signals";
+// output Real der1.y[1] "Output signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
+// parameter Integer exponentials1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer exponentials1.outPort.n = exponentials1.nout "Dimension of signal vector";
+// output Real exponentials1.outPort.signal[1] "Real output signals";
+// output Real exponentials1.y[1];
+// parameter Real exponentials1.outMax[1] = 1.0 "Height of output for infinite riseTime";
+// parameter Real exponentials1.riseTime[1](quantity = "Time", unit = "s", min = 0.0) = 0.5 "Rise time";
+// parameter Real exponentials1.riseTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = 0.1 "Rise time constant";
+// parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = exponentials1.riseTimeConst[1] "Fall time constant";
+// parameter Real exponentials1.offset[1] = 0.0 "Offsets of output signals";
+// parameter Real exponentials1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected parameter Real exponentials1.p_outMax[1] = exponentials1.outMax[1];
+// protected parameter Real exponentials1.p_riseTime[1](quantity = "Time", unit = "s") = exponentials1.riseTime[1];
+// protected parameter Real exponentials1.p_riseTimeConst[1](quantity = "Time", unit = "s") = exponentials1.riseTimeConst[1];
+// protected parameter Real exponentials1.p_fallTimeConst[1](quantity = "Time", unit = "s") = exponentials1.fallTimeConst[1];
+// protected parameter Real exponentials1.p_offset[1] = exponentials1.offset[1];
+// protected parameter Real exponentials1.p_startTime[1](quantity = "Time", unit = "s") = exponentials1.startTime[1];
+// protected Real exponentials1.y_riseTime[1];
+// equation
+//   der1.y[1] = der(der1.u[1]);
+//   der1.y[1] = der1.outPort.signal[1];
+//   exponentials1.y_riseTime[1] = exponentials1.p_outMax[1] * (1.0 - Modelica.Math.exp((-exponentials1.p_riseTime[1]) / exponentials1.p_riseTimeConst[1]));
+//   exponentials1.outPort.signal[1] = exponentials1.p_offset[1] + (if time < exponentials1.p_startTime[1] then 0.0 else if time < exponentials1.p_startTime[1] + exponentials1.p_riseTime[1] then exponentials1.p_outMax[1] * (1.0 - Modelica.Math.exp((exponentials1.p_startTime[1] - time) / exponentials1.p_riseTimeConst[1])) else exponentials1.y_riseTime[1] * Modelica.Math.exp((exponentials1.p_riseTime[1] - (time - exponentials1.p_startTime[1])) / exponentials1.p_fallTimeConst[1]));
+//   exponentials1.y[1] = exponentials1.outPort.signal[1];
+// assert(exponentials1.outPort.n == der1.inPort.n,"automatically generated from connect");
+// exponentials1.outPort.signal[1] = der1.inPort.signal[1];
+// end BS4;
+// [BS4.mo:687:11-688:29:readonly] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// [BS4.mo:689:11-690:29:readonly] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// [BS4.mo:686:11-686:65:readonly] Warning: Variable exponentials1.riseTime: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS4.mo:687:11-688:29:readonly] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// [BS4.mo:689:11-690:29:readonly] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// 
+// endResult

@@ -37,3 +37,23 @@ end Summation;
 //     n := n - 1;
 //   end while;
 // end Summation;
+// Result:
+// fclass Summation
+// Real sum;
+// Integer n;
+// Real a[1] = 1.0;
+// Real a[2] = 3.0;
+// Real a[3] = 6.0;
+// Real a[4] = 9.0;
+// Real a[5] = 12.0;
+// algorithm
+//   sum := 0.0;
+//   n := 5;
+//   while n > 0 loop
+//     if a[n] > 0.0 then
+//       sum := sum + a[n];
+//     end if;
+//     n := n - 1;
+//   end while;
+// end Summation;
+// endResult

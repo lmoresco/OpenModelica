@@ -71,3 +71,38 @@ end FlatTank;
 //   der(x) = error / T;
 //   outCtr = K * (error + x);
 // end FlatTank;
+// Result:
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
+// fclass FlatTank
+// parameter Real flowLevel(unit = "m3/s") = 0.02;
+// parameter Real area(unit = "m2") = 1.0;
+// parameter Real flowGain(unit = "m2/s") = 0.05;
+// Real h(unit = "m", start = 0.0) "Tank level";
+// Real qInflow(unit = "m3/s") "Flow through input valve";
+// Real qOutflow(unit = "m3/s") "Flow through output valve";
+// parameter Real K = 2.0 "Gain";
+// parameter Real T(unit = "s") = 10.0 "Time constant";
+// parameter Real minV = 0.0;
+// parameter Real maxV = 10.0;
+// Real ref = 0.25 "Reference level for control";
+// Real error "Deviation from reference level";
+// Real outCtr "Control signal without limiter";
+// Real x "State variable for controller";
+// equation
+// assert(minV >= 0.0,"minV must be greater or equal to zero");
+//   der(h) = (qInflow - qOutflow) / area;
+//   qInflow = if time > 150.0 then 3.0 * flowLevel else flowLevel;
+//   qOutflow = limitValue(minV,maxV,(-flowGain) * outCtr);
+//   error = ref - h;
+//   der(x) = error / T;
+//   outCtr = K * (error + x);
+// end FlatTank;
+// endResult

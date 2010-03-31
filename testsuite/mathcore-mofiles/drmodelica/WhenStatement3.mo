@@ -46,3 +46,21 @@ end WhenStat3;
 //     y3 := 2.0 * x + (pre(y1) + y2);
 //   end when;
 // end WhenStat3;
+// Result:
+// fclass WhenStat3
+// Real x(start = 1.0);
+// Real y1;
+// Real y2;
+// Real y3;
+// equation
+//   der(x) = 2.0 * x;
+//   y2 = sin(y1);
+// algorithm
+//   when x > 2.0 then
+//     y1 := sin(x);
+//   end when;
+//   when x > 2.0 then
+//     y3 := 2.0 * x + (pre(y1) + y2);
+//   end when;
+// end WhenStat3;
+// endResult

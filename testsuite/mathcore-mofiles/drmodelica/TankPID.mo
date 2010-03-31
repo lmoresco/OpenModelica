@@ -124,3 +124,51 @@ end TankPID;
 //   tank.tActuator.act = pidContinuous.cOut.act;
 //   source.qOut.lflow = tank.qIn.lflow;
 // end TankPID;
+// Result:
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
+// fclass TankPID
+// Real source.qOut.lflow(unit = "m3/s");
+// parameter Real source.flowLevel = 0.02;
+// parameter Real pidContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";
+// parameter Real pidContinuous.K = 2.0 "Gain";
+// parameter Real pidContinuous.T(unit = "s") = 10.0 "Time constant";
+// Real pidContinuous.cIn.val(unit = "m");
+// Real pidContinuous.cOut.act;
+// parameter Real pidContinuous.ref = 0.25 "Reference level";
+// Real pidContinuous.error "Deviation from reference level";
+// Real pidContinuous.outCtr "Output control signal";
+// Real pidContinuous.x;
+// Real pidContinuous.y;
+// Real tank.tSensor.val(unit = "m");
+// Real tank.tActuator.act;
+// Real tank.qIn.lflow(unit = "m3/s");
+// Real tank.qOut.lflow(unit = "m3/s");
+// parameter Real tank.area(unit = "m2") = 1.0;
+// parameter Real tank.flowGain(unit = "m2/s") = 0.05;
+// parameter Real tank.minV = 0.0;
+// parameter Real tank.maxV = 10.0;
+// Real tank.h(unit = "m", start = 0.0) "Tank level";
+// equation
+//   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
+//   der(pidContinuous.x) = pidContinuous.error / pidContinuous.T;
+//   pidContinuous.y = pidContinuous.T * der(pidContinuous.error);
+//   pidContinuous.outCtr = pidContinuous.K * (pidContinuous.error + (pidContinuous.x + pidContinuous.y));
+//   pidContinuous.error = pidContinuous.ref - pidContinuous.cIn.val;
+//   pidContinuous.cOut.act = pidContinuous.outCtr;
+// assert(tank.minV >= 0.0,"minV - minimum Valve level must be >= 0 ");
+//   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
+//   tank.qOut.lflow = limitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
+//   tank.tSensor.val = tank.h;
+// tank.tSensor.val = pidContinuous.cIn.val;
+// tank.tActuator.act = pidContinuous.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
+// end TankPID;
+// endResult

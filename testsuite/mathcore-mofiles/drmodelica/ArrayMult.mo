@@ -35,3 +35,26 @@ end ArrayMult;
 // Real m8[2,1] = 11.0;
 // Real m8[2,2] = 10.0;
 // end ArrayMult;
+// Result:
+// fclass ArrayMult
+// Real m1[1] = 2.0;
+// Real m1[2] = 4.0;
+// Real m1[3] = 6.0;
+// Real m2[1] = 3.0;
+// Real m2[2] = 6.0;
+// Real m2[3] = 9.0;
+// Real m3 = 11.0;
+// Real m4[1] = 5.0;
+// Real m4[2] = 11.0;
+// Real m5[1] = 35.0;
+// Real m6[1] = 35.0;
+// Real m7[1,1] = 5.0;
+// Real m7[1,2] = 4.0;
+// Real m7[2,1] = 11.0;
+// Real m7[2,2] = 10.0;
+// Real m8[1,1] = 5.0;
+// Real m8[1,2] = 4.0;
+// Real m8[2,1] = 11.0;
+// Real m8[2,2] = 10.0;
+// end ArrayMult;
+// endResult

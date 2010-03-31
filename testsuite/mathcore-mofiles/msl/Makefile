@@ -1,4 +1,4 @@
-TEST=./rtest -v
+TEST=../../rtest -v
 #TEST=runtest
 
 TESTFILES= BC1.mo BC2.mo BC3.mo BC4.mo BC5.mo BC6.mo BC7.mo BC8.mo BC9.mo \

@@ -772,3 +772,14 @@ end BM28;
 // equation
 //   twoOutputs1.OutPort1.signal[1] = twoOutputs1.OutPort2.signal[1];
 // end BM28;
+// Result:
+// fclass BM28
+// parameter Integer twoOutputs1.n = 1 "number of input signals";
+// parameter Integer twoOutputs1.OutPort1.n = twoOutputs1.n "Dimension of signal vector";
+// output Real twoOutputs1.OutPort1.signal[1] "Real output signals";
+// parameter Integer twoOutputs1.OutPort2.n = twoOutputs1.n "Dimension of signal vector";
+// output Real twoOutputs1.OutPort2.signal[1] "Real output signals";
+// equation
+//   twoOutputs1.OutPort1.signal[1] = twoOutputs1.OutPort2.signal[1];
+// end BM28;
+// endResult

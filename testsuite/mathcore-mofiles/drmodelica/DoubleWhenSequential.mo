@@ -29,3 +29,15 @@ end DoubleWhenSequential;
 //     close := false;
 //   end when;
 // end DoubleWhenSequential;
+// Result:
+// fclass DoubleWhenSequential
+// Boolean close;
+// algorithm
+//   when time <= 2.0 then
+//     close := true;
+//   end when;
+//   when time <= 2.0 then
+//     close := false;
+//   end when;
+// end DoubleWhenSequential;
+// endResult

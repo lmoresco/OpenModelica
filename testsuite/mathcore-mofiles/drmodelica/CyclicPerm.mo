@@ -30,3 +30,12 @@ algorithm
   X[1, :] := [XO[1, 2:3], XO[1, 1]];      // ERROR, incompatible dimensions
 end CyclicPerm;
 
+// Result:
+// Error processing file: CyclicPerm.mo
+// Error: Index out of bounds. Adressing position: p[1] and position p[2] and position p[3], while array length is: 3
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

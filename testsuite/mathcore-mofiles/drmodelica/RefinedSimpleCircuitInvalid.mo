@@ -88,3 +88,12 @@
         Inductor comp2(L=0.0002));
   end RefinedSimpleCircuit;
 
+// Result:
+// Error processing file: RefinedSimpleCircuitInvalid.mo
+// Error: Variable i not found in scope Capacitor
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

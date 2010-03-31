@@ -14,3 +14,12 @@ equation
 	Div3 = {1, 2, 3} / {1, 2, 2};
 	// Not allowed!
 end ArrayDivError;
+// Result:
+// Error processing file: ArrayDivError.mo
+// Error: Type mismatch in equation {{Div1[1,1],Div1[1,2],Div1[1,3]}}={1.0,2.0,3.0} of type Real[1, 3]=Real[3]
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

@@ -147,3 +147,51 @@ end TankHybridPI;
 //   tank.tActuator.act = piDiscrete.cOut.act;
 //   source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPI;
+// Result:
+// function LimitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end LimitValue;
+// 
+// fclass TankHybridPI
+// Real source.qOut.lflow;
+// parameter Real source.flowLevel = 0.02;
+// parameter Real piDiscrete.Ts(unit = "s") = 0.1 "Time period between discrete samples";
+// parameter Real piDiscrete.K = 2.0 "Gain";
+// parameter Real piDiscrete.T(unit = "s") = 10.0 "Time constant";
+// Real piDiscrete.cIn.val;
+// Real piDiscrete.cOut.act;
+// parameter Real piDiscrete.ref = 0.25 "Reference level";
+// Real piDiscrete.error "Deviation from reference level";
+// Real piDiscrete.outCtr "Output control signal";
+// discrete Real piDiscrete.x;
+// Real tank.tSensor.val;
+// Real tank.tActuator.act;
+// Real tank.qIn.lflow;
+// Real tank.qOut.lflow;
+// parameter Real tank.area(unit = "m2") = 1.0;
+// parameter Real tank.flowGain(unit = "m2/s") = 0.05;
+// parameter Real tank.minV = 0.0;
+// parameter Real tank.maxV = 10.0;
+// Real tank.h(unit = "m", start = 0.0) "Tank level";
+// equation
+//   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
+//   when sample(0,piDiscrete.Ts) then
+//   piDiscrete.x = pre(piDiscrete.x) + piDiscrete.error * piDiscrete.Ts / piDiscrete.T;
+//   piDiscrete.outCtr = piDiscrete.K * (piDiscrete.x + piDiscrete.error);
+//   end when;
+//   piDiscrete.error = piDiscrete.ref - piDiscrete.cIn.val;
+//   piDiscrete.cOut.act = piDiscrete.outCtr;
+// assert(tank.minV >= 0.0,"minV - minimum Valve level must be >= 0 ");
+//   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
+//   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
+//   tank.tSensor.val = tank.h;
+// tank.tSensor.val = piDiscrete.cIn.val;
+// tank.tActuator.act = piDiscrete.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
+// end TankHybridPI;
+// endResult

@@ -25,3 +25,17 @@ end OneReturnValue;
 // Real s2[2,1] = 0.141120008059867;
 // Real s2[2,2] = -0.756802495307928;
 // end OneReturnValue;
+// Result:
+// fclass OneReturnValue
+// Real a = 1.0;
+// Real b = 0.0;
+// Real c = 1.0;
+// Real s1[1] = sin(a);
+// Real s1[2] = sin(b);
+// Real s1[3] = sin(c);
+// Real s2[1,1] = 0.841470984807897;
+// Real s2[1,2] = 0.909297426825682;
+// Real s2[2,1] = 0.141120008059867;
+// Real s2[2,2] = -0.756802495307928;
+// end OneReturnValue;
+// endResult

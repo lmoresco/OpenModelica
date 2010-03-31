@@ -85,3 +85,13 @@ class InductorMicroCircuit =
 
 
 
+// Result:
+// Error processing file: MicroCircuitInvalid.mo
+// # Restriction violation: Inductor is not a TYPE
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// # Restriction violation: Inductor is not a TYPE
+// 
+// Execution failed!
+// endResult

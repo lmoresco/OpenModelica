@@ -1,4 +1,4 @@
-TEST=./rtest -v
+TEST=../../rtest -v
 #TEST=runtest
 #adrpo 2008-12-16 disable the .mos files for now.
 TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \

@@ -55,3 +55,21 @@ end EquationCall;
 // equation
 //   (px,py) = (0.724715508953347,1.86407817193445);
 // end EquationCall;
+// Result:
+// function PointOnCircle
+// input Real angle "Angle in radians";
+// input Real radius;
+// output Real x;
+// output Real y;
+// algorithm
+//   x := radius * cos(angle);
+//   y := radius * sin(angle);
+// end PointOnCircle;
+// 
+// fclass EquationCall
+// Real px;
+// Real py;
+// equation
+//   (px,py) = (0.724715508953347,1.86407817193445);
+// end EquationCall;
+// endResult

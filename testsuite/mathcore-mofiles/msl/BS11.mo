@@ -1323,3 +1323,91 @@ end BS11;
 //     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-13);
 //   end when;
 // end BS11;
+// Result:
+// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// input Real[:, 2] table "Table for interpolation";
+// input Real offset "y-offset";
+// input Real startTime "time-offset";
+// input Real t "Actual time instant";
+// input Integer last "Last used lower grid index";
+// input Real TimeEps "Relative epsilon to check for identical time instants";
+// output Real a "Interpolation coefficients a (y=a*x + b)";
+// output Real b "Interpolation coefficients b (y=a*x + b)";
+// output Real nextEvent "Next event instant";
+// output Integer next "New lower grid index";
+// protected Integer columns = 2 "Column to be interpolated";
+// protected Integer ncol = 2 "Number of columns to be interpolated";
+// protected Integer nrow = size(table,1) "Number of table rows";
+// protected Integer next0;
+// protected Real tp;
+// protected Real dt;
+// algorithm
+//   next := last;
+//   nextEvent := t - TimeEps * abs(t);
+//   tp := (t + TimeEps * abs(t)) - startTime;
+//   if tp < 0.0 then
+//     nextEvent := startTime;
+//     a := 0.0;
+//     b := offset;
+//   else
+//     if nrow < 2 then
+//       a := 0.0;
+//       b := offset + table<asub>[1, columns];
+//     else
+//       while next < nrow AND tp >= table<asub>[next, 1] loop
+//         next := 1 + next;
+//       end while;
+//       if next < nrow then
+//         nextEvent := startTime + table<asub>[next, 1];
+//       end if;
+//       next0 := next - 1;
+//       dt := table<asub>[next, 1] - table<asub>[next0, 1];
+//       if dt <= TimeEps * abs(table<asub>[next, 1]) then
+//         a := 0.0;
+//         b := offset + table<asub>[next, columns];
+//       else
+//         a := (table<asub>[next, columns] - table<asub>[next0, columns]) / dt;
+//         b := (offset + table<asub>[next0, columns]) - a * table<asub>[next0, 1];
+//       end if;
+//     end if;
+//   end if;
+//   b := b - a * startTime;
+// end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
+// 
+// fclass BS11
+// parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
+// output Real timeTable1.outPort.signal[1] "Real output signals";
+// output Real timeTable1.y[1];
+// parameter Real timeTable1.table[1,1] = 0.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[1,2] = 0.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[2,1] = 1.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[2,2] = 1.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[3,1] = 2.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.table[3,2] = 4.0 "Table matrix (time = first column)";
+// parameter Real timeTable1.offset[1] = 0.0 "Offset of output signal";
+// parameter Real timeTable1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected Real timeTable1.a "Interpolation coefficients a of actual interval (y=a*x+b)";
+// protected Real timeTable1.b "Interpolation coefficients b of actual interval (y=a*x+b)";
+// protected Integer timeTable1.last(start = 1) "Last used lower grid index";
+// protected Real timeTable1.nextEvent(quantity = "Time", unit = "s", start = 0.0) "Next event instant";
+// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+// input Real der1.inPort.signal[1] "Real input signals";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+// output Real der1.outPort.signal[1] "Real output signals";
+// output Real der1.y[1] "Output signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
+// equation
+//   timeTable1.outPort.signal[1] = timeTable1.a * time + timeTable1.b;
+//   timeTable1.y[1] = timeTable1.outPort.signal[1];
+//   der1.y[1] = der(der1.u[1]);
+//   der1.y[1] = der1.outPort.signal[1];
+// assert(timeTable1.outPort.n == der1.inPort.n,"automatically generated from connect");
+// timeTable1.outPort.signal[1] = der1.inPort.signal[1];
+// algorithm
+//   when {time >= pre(timeTable1.nextEvent),initial()} then
+//     (timeTable1.a, timeTable1.b, timeTable1.nextEvent, timeTable1.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{timeTable1.table[1,1],timeTable1.table[1,2]},{timeTable1.table[2,1],timeTable1.table[2,2]},{timeTable1.table[3,1],timeTable1.table[3,2]}},timeTable1.offset[1],timeTable1.startTime[1],time,timeTable1.last,1e-13);
+//   end when;
+// end BS11;
+// endResult

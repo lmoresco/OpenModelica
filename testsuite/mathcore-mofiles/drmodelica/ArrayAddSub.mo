@@ -14,3 +14,12 @@ class AddSub
 end AddSub;
 
 
+// Result:
+// Error processing file: ArrayAddSub.mo
+// Error: Cannot resolve type of expression {1,2,3} + 1 (expressions :{1,2,3}, 1 types: Integer[3], Integer)
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

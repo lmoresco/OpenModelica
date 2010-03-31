@@ -23,3 +23,14 @@ end WhenValidResult;
 //   y = 7.0;
 //   end when;
 // end WhenValidResult;
+// Result:
+// fclass WhenValidResult
+// Real x;
+// Real y;
+// equation
+//   x + y = 5.0;
+//   when sample(0,2) then
+//   y = 7.0;
+//   end when;
+// end WhenValidResult;
+// endResult

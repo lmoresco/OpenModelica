@@ -154,3 +154,53 @@ end TankHybridPID;
 //   tank.tActuator.act = pidDiscrete.cOut.act;
 //   source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPID;
+// Result:
+// function LimitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end LimitValue;
+// 
+// fclass TankHybridPID
+// Real source.qOut.lflow;
+// parameter Real source.flowLevel = 0.02;
+// parameter Real pidDiscrete.Ts(unit = "s") = 0.1 "Time period between discrete samples";
+// parameter Real pidDiscrete.K = 2.0 "Gain";
+// parameter Real pidDiscrete.T(unit = "s") = 10.0 "Time constant";
+// Real pidDiscrete.cIn.val;
+// Real pidDiscrete.cOut.act;
+// parameter Real pidDiscrete.ref = 0.25 "Reference level";
+// Real pidDiscrete.error "Deviation from reference level";
+// Real pidDiscrete.outCtr "Output control signal";
+// discrete Real pidDiscrete.x;
+// discrete Real pidDiscrete.y;
+// Real tank.tSensor.val;
+// Real tank.tActuator.act;
+// Real tank.qIn.lflow;
+// Real tank.qOut.lflow;
+// parameter Real tank.area(unit = "m2") = 1.0;
+// parameter Real tank.flowGain(unit = "m2/s") = 0.05;
+// parameter Real tank.minV = 0.0;
+// parameter Real tank.maxV = 10.0;
+// Real tank.h(unit = "m", start = 0.0) "Tank level";
+// equation
+//   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
+//   when sample(0,pidDiscrete.Ts) then
+//   pidDiscrete.x = pre(pidDiscrete.x) + pidDiscrete.error * pidDiscrete.Ts / pidDiscrete.T;
+//   pidDiscrete.y = pidDiscrete.T * (pidDiscrete.error - pre(pidDiscrete.error));
+//   pidDiscrete.outCtr = pidDiscrete.K * (pidDiscrete.x + (pidDiscrete.error + pidDiscrete.y));
+//   end when;
+//   pidDiscrete.error = pidDiscrete.ref - pidDiscrete.cIn.val;
+//   pidDiscrete.cOut.act = pidDiscrete.outCtr;
+// assert(tank.minV >= 0.0,"minV - minimum Valve level must be >= 0 ");
+//   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
+//   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
+//   tank.tSensor.val = tank.h;
+// tank.tSensor.val = pidDiscrete.cIn.val;
+// tank.tActuator.act = pidDiscrete.cOut.act;
+// source.qOut.lflow = tank.qIn.lflow;
+// end TankHybridPID;
+// endResult

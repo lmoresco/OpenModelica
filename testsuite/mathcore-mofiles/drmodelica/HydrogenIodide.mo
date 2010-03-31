@@ -30,3 +30,16 @@ end HydrogenIodide;
 //   der(I2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
 //   der(HI) = 2.0 * (k1 * (H2 * I2)) - 2.0 * (k2 * HI ^ 2.0);
 // end HydrogenIodide;
+// Result:
+// fclass HydrogenIodide
+// parameter Real k1 = 0.73;
+// parameter Real k2 = 0.04;
+// Real H2(quantity = "Concentration", unit = "mol/m3", start = 5.0);
+// Real I2(quantity = "Concentration", unit = "mol/m3", start = 8.0);
+// Real HI(quantity = "Concentration", unit = "mol/m3", start = 0.0);
+// equation
+//   der(H2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
+//   der(I2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
+//   der(HI) = 2.0 * (k1 * (H2 * I2)) - 2.0 * (k2 * HI ^ 2.0);
+// end HydrogenIodide;
+// endResult

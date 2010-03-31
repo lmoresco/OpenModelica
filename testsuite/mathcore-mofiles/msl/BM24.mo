@@ -1011,3 +1011,27 @@ end BM24;
 // assert(sum1.inPort.n == constant1.outPort.n,"automatically generated from connect");
 // sum1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BM24;
+// Result:
+// fclass BM24
+// parameter Integer sum1.nin = 1 "Number of inputs";
+// parameter Integer sum1.inPort.n = sum1.nin "Dimension of signal vector";
+// input Real sum1.inPort.signal[1] "Real input signals";
+// parameter Integer sum1.outPort.n = 1 "Dimension of signal vector";
+// output Real sum1.outPort.signal[1] "Real output signals";
+// output Real sum1.y "Output signal";
+// protected Real sum1.u[1] = sum1.inPort.signal[1] "Input signals";
+// parameter Real sum1.k[1] = 1.0 "Optional: sum coefficients";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// equation
+//   sum1.y = sum1.k[1] * sum1.u[1];
+//   sum1.y = sum1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(sum1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+// sum1.inPort.signal[1] = constant1.outPort.signal[1];
+// end BM24;
+// endResult

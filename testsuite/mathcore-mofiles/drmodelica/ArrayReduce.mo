@@ -24,3 +24,16 @@ end ArrayReduce;
 //   summ = 21.0;
 //   prod = 12.56;
 // end ArrayReduce;
+// Result:
+// fclass ArrayReduce
+// Real minimum;
+// Real maximum;
+// Real summ;
+// Real prod;
+// equation
+//   minimum = -1.0;
+//   maximum = 6.0;
+//   summ = 21.0;
+//   prod = 12.56;
+// end ArrayReduce;
+// endResult

@@ -32,3 +32,21 @@ end Xpowers;
 //   xpowers[5] = xpowers[4] * x;
 // end Xpowers;
 
+// Result:
+// fclass Xpowers
+// parameter Real x = 10.0;
+// Real xpowers[1];
+// Real xpowers[2];
+// Real xpowers[3];
+// Real xpowers[4];
+// Real xpowers[5];
+// parameter Integer i = 1;
+// parameter Integer n = 5;
+// equation
+//   xpowers[1] = 1.0;
+//   xpowers[2] = xpowers[1] * x;
+//   xpowers[3] = xpowers[2] * x;
+//   xpowers[4] = xpowers[3] * x;
+//   xpowers[5] = xpowers[4] * x;
+// end Xpowers;
+// endResult

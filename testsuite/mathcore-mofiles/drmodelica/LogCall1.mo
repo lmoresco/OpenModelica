@@ -21,3 +21,17 @@ end LogCall1;
 // equation
 //   res = 4.60517018598809;
 // end LogCall1;
+// Result:
+// function log
+// input Real x;
+// output Real y;
+// 
+// external "C";
+// end log;
+// 
+// fclass LogCall1
+// Real res;
+// equation
+//   res = 4.60517018598809;
+// end LogCall1;
+// endResult

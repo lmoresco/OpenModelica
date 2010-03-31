@@ -11,6 +11,7 @@ equation
   end for;
 end FiveForEquations;
 
+// Result:
 // fclass FiveForEquations
 // Real x[1];
 // Real x[2];
@@ -24,3 +25,4 @@ end FiveForEquations;
 //   x[4] = 5.0;
 //   x[5] = 6.0;
 // end FiveForEquations;
+// endResult

@@ -19,3 +19,13 @@ end VanDerPol;
 //   der(x) = y;
 //   der(y) = lambda * ((1.0 - x ^ 2.0) * y) - x;
 // end VanDerPol;
+// Result:
+// fclass VanDerPol
+// Real x(start = 1.0);
+// Real y(start = 1.0);
+// parameter Real lambda = 0.3;
+// equation
+//   der(x) = y;
+//   der(y) = lambda * ((1.0 - x ^ 2.0) * y) - x;
+// end VanDerPol;
+// endResult

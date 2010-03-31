@@ -20,3 +20,12 @@ equation
   // Lower right block
 end BlockMatrix;
 
+// Result:
+// Error processing file: BlockMatrix.mo
+// Error: Type mismatch in equation Q[{4,5,6},{1,2,3}]=cat(2,{{Q[1,1],Q[1,2],Q[1,3]},{Q[2,1],Q[2,2],Q[2,3]}},-{{Q[3,1],Q[3,2],Q[3,3]}}) of type Real[3, 3]=Real[1, 6]
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

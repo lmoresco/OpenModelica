@@ -17,3 +17,11 @@ end Equations;
 // equation
 //   x = 3.0;
 // end Equations;
+// Result:
+// fclass Equations
+// Real x(start = 2.0);
+// constant Integer one = 1;
+// equation
+//   x = 3.0;
+// end Equations;
+// endResult

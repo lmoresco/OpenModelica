@@ -13,3 +13,14 @@ class SeveralArguments
 	// Result: {2 + atan2(a, d), 2 + atan2(b, e)}
 
 end SeveralArguments;
+// Result:
+// Error processing file: VectorizeSeveralArguments.mo
+// Error: Class atan2Add (its type)  not found in scope SeveralArguments.
+// Error: No matching function found for atan2Add
+// Error: Class atan2Add not found in scope SeveralArguments.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult
