@@ -1,5 +1,10 @@
 #!/usr/bin/perl -w
 
+if (defined $ENV{"RTEST_OMCFLAGS"}) {
+    $omcflags=$ENV{"RTEST_OMCFLAGS"};
+} else {
+    $omcflags="";
+}
 $successes=0;
 $total=0;
 $setbaseline=0;
@@ -29,7 +34,7 @@ sub setbaseline
 
     my $f = shift;
     $log ="$tmpPath/log-$f";
-    system "../../../build/bin/omc $f >$log 2>&1";
+    system "../../../build/bin/omc $omcflags $f >$log 2>&1";
 
     open(RES,">$tmp4");
     open(LOG,"<$log");    
@@ -65,7 +70,7 @@ sub runone
 {
     my $mismatch = 0;
     my ($f,%info) = @_;
-    system "MODELICAUSERCFLAGS=$info{cflags} ../../../build/bin/omc $f >$log 2>&1";
+    system "MODELICAUSERCFLAGS=$info{cflags} ../../../build/bin/omc $omcflags $f >$log 2>&1";
 #    system "../Compiler/omc +d=daedump $f >$log 2>&1";
 #    system "../omc $f >$log 2>&1";
     
