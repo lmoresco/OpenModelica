@@ -1,20 +1,33 @@
-.PHONY : all failingtest
+.PHONY : all failingtest test fast fast.logs mofiles java.log records.log meta.log mmdev.log mosfiles.log libraries.log
 
 all : test
-test : fast
-	cd libraries; $(MAKE) -f Makefile test;
-fast:
-	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
-	cd mathcore-mofiles ; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd ../drmodelica; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd ../.. ; \
-	cd mofiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd msl; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd ../../mosfiles; $(MAKE) -f Makefile test; rm -f *.dll *.so; \
-	cd ../meta; $(MAKE) -f Makefile test; \
-	cd ../records; $(MAKE) -f Makefile test; \
-	#cd ../java; $(MAKE) -f Makefile test;
+test : libraries.log fast.logs
+	@cat mathcore-mofiles.log mathcore-msl.log drmodelica.log mofiles.log msl.log mosfiles.log meta.log mmdev.log records.log libraries.log
+	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+fast : fast.logs
+	@cat mathcore-mofiles.log mathcore-msl.log drmodelica.log mofiles.log msl.log mosfiles.log meta.log mmdev.log records.log
+	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+fast.logs: mofiles mosfiles.log meta.log mmdev.log records.log
+# java should probably also be part of 'fast'
+libraries.log:
+	$(MAKE) -C libraries -f Makefile test > $@
+mofiles:
+	@# These testcases have to be run in serial because they use the special fclass rtest-file
+	$(MAKE) -C mathcore-mofiles -f Makefile test > mathcore-mofiles.log
+	$(MAKE) -C mathcore-mofiles/msl -f Makefile test > mathcore-msl.log
+	$(MAKE) -C mathcore-mofiles/drmodelica -f Makefile test > drmodelica.log
+	$(MAKE) -C mofiles -f Makefile test > mofiles.log
+	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
+mosfiles.log:
+	$(MAKE) -C mosfiles -f Makefile test > $@
+meta.log:
+	$(MAKE) -C meta -f Makefile test > $@
+mmdev.log:
+	$(MAKE) -C meta/MetaModelicaDev -f Makefile.omc test > $@
+records.log:
+	$(MAKE) -C records -f Makefile test > $@
+java.log:
+	$(MAKE) -C java -f Makefile test > $@
 	
 failingtest:
 	cd mofiles; $(MAKE) -f Makefile failingtest; \

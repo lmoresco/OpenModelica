@@ -1,3 +1,5 @@
+TEST = ../rtest -v
+
 TESTFILES = EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
 	SimpleRecordTestConstructor.mos SimpleRecordTestInput.mos \
 	NestedRecordTestConstructor.mos  NestedRecordTestInput.mos \
@@ -6,9 +8,6 @@ TESTFILES = EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
 
 # test that currently fail. Move up when fixed. 
 FAILINGTESTFILES=NONE
-
-
-TEST = ./rtest -v
 
 .PHONY : test
 

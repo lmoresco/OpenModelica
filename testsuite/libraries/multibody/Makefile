@@ -1,3 +1,4 @@
+TEST = ../../rtest -v
 
 TESTFILES = \
 DoublePendulum.mos \
@@ -23,9 +24,6 @@ World.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  
-
-TEST = ./rtest -v
-
 
 .PHONY : test
 

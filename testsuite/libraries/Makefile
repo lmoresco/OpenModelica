@@ -1,12 +1,18 @@
-.PHONY : all failingtest
+LOGS = multibody.log msl221.log msl221additions.log biochem.log
+.PHONY : all failingtest msl221.log msl221additions.log biochem.log multibody.log
 
 all : test
-test :
-	@echo OPENMODELICAHOME = " $(OPENMODELICAHOME) "; \
-	cd msl221; $(MAKE) -f Makefile test; \
-	cd ../msl221/modelicaAdditions; $(MAKE) -f Makefile test; \
-	cd ../../biochem; $(MAKE) -f Makefile test; \
-	cd ../multibody; $(MAKE) -f Makefile test;
+test : $(LOGS)
+	@cat $(LOGS)
+
+msl221.log:
+	$(MAKE) -C msl221 -f Makefile test > $@
+msl221additions.log:
+	$(MAKE) -C msl221/modelicaAdditions -f Makefile test > $@
+biochem.log:
+	$(MAKE) -C biochem -f Makefile test > $@
+multibody.log:
+	$(MAKE) -C multibody -f Makefile test > $@
 	
 failingtest:
 	cd msl221; $(MAKE) -f Makefile failingtest; \

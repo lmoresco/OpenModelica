@@ -6,7 +6,7 @@ UniBi.mos UniUni.mos
 # Run make testfailing
 FAILINGTESTFILES=  
 
-TEST = ./rtest -v
+TEST = ../../rtest -v
 
 
 .PHONY : test

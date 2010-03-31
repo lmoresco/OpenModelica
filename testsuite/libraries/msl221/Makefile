@@ -1,3 +1,5 @@
+TEST = ../../rtest -v
+
 TESTFILES = \
 AIMC_DOL.mos FirstExample.mos PumpAndValve.mos\
 AIMC_Inverter.mos FirstExample_Variant2.mos  PumpDropOut.mos\
@@ -29,9 +31,6 @@ PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  
-
-TEST = ./rtest -v
-
 
 .PHONY : test
 

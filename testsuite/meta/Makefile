@@ -1,3 +1,4 @@
+TEST = ../rtest +g=MetaModelica -v
 
 TESTFILES = MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos MatchCase5.mos MatchCase6.mos MatchCase7.mos MatchCase8.mos MatchCase9.mos \
   List1.mos List2.mos List3.mos \
@@ -19,7 +20,6 @@ PartialFn7.mos PartialFn8.mos PartialFn9.mos PartialFn12.mos PartialFn10.mos \
 PartialFn11.mos PartialFn13.mos \
 
 
-TEST = ./rtest -v
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
 
@@ -32,8 +32,7 @@ test2:
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
-	@make -C MetaModelicaDev -f Makefile.omc
-    
+
 clean:
 	@rm -f $(CLEAN)
 failingtest :

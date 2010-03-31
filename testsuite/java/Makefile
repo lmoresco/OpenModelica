@@ -1,4 +1,5 @@
-TEST=./rtest -v
+TEST=../rtest -v
+
 TESTFILES=JavaExt.mos JavaExtArrays.mos JavaExtInteractive.mos JavaExtRecord.mos JavaExtUniontype.mos JavaExtParseProgram.mos
 SEP=$(shell test -e "`which mingw32-gcc.exe`" && echo ";" || echo ":")
 LDL=$(shell test -e "`which mingw32-gcc.exe`" && echo "" || echo "-ldl")

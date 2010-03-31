@@ -16,6 +16,13 @@ model example
 end example;
 
 // Result:
+// function abcRec "Automatically generated record constructor for abcRec"
+// input Integer a;
+// input Integer b = 2;
+// input Integer c = 3;
+// output abcRec res;
+// end abcRec;
+// 
 // fclass example
 // constant Integer p = 13;
 // constant Integer x.a = 1;

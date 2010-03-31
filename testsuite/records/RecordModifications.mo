@@ -25,6 +25,18 @@ class RecordExtends
 end RecordExtends;
 
 // Result:
+// function HardMagnetic.NdFeB "Automatically generated record constructor for HardMagnetic.NdFeB"
+// input Real H_cBRef = 900000.0;
+// input Real B_rRef = 1.2;
+// input Real T_ref = 293.15;
+// input Real alpha_Br = -0.001;
+// input Real T_op = 293.15;
+// input Real B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+// input Real H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+// input Real mu_r = B_r * 1.0 / H_cB / 3.0;
+// output NdFeB res;
+// end HardMagnetic.NdFeB;
+// 
 // fclass RecordExtends
 // parameter Real a.H_cBRef = 900000.0;
 // parameter Real a.B_rRef = 1.2;

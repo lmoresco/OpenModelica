@@ -28,7 +28,7 @@ a:=RecordTest.TestWithoutParameters();
 //     z = 1
 // end RecordTest.WithParameters;
 // record RecordTest.WithParameters
-//     x = 4,
+//     x = 5,
 //     y = 3,
 //     z = 1
 // end RecordTest.WithParameters;

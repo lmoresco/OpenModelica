@@ -13,6 +13,7 @@ a:=RecordTest.ADD(1.0,2.0);
 system("rm -f *.o");
 
 // Result:
+// 0
 // true
 // record RecordTest.ADD
 //     a1 = 1.0,
@@ -34,4 +35,5 @@ system("rm -f *.o");
 //     a1 = 1.0,
 //     a2 = 2.0
 // end RecordTest.ADD;
+// 0
 // endResult

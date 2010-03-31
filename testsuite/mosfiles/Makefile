@@ -1,3 +1,4 @@
+TEST = ../rtest -v
 
 TESTFILES = \
 ABCDsystem.mos \
@@ -106,9 +107,6 @@ DimConvert.mos \
 VectorizeOneReturnValue.mos EqualityEquationsCorrect.mos \
 WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
 ActivateWhenEquation.mos AlgorithmCondAssign2.mos Enum8.mos 
-
-TEST = ./rtest -v
-
 
 .PHONY : test
 
