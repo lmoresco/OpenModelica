@@ -5,7 +5,7 @@ test: $(LOGS)
 	@cat $(LOGS:=.log) | grep "^ + " > result.txt
 	@rm -f $(LOGS:=.log)
 	@cat result.txt
-	@echo == `grep -e ok -e warning result.txt | wc -l` out of `cat result.txt | wc -l` succeeded "[MetaModelica Course]"
+	@echo == `grep -v -e ok -e warning result.txt | wc -l` out of `cat result.txt | wc -l` failed "[MetaModelica Course]"
 01:
 	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
 02a:
