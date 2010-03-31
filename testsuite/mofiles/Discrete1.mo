@@ -12,6 +12,7 @@ equation
   end when;
 end Discrete1;
 
+// Result:
 // fclass Discrete1
 //   discrete Real    x;
 // equation
@@ -19,3 +20,4 @@ end Discrete1;
 //     x=time;
 //   end when;
 // end Discrete1;
+// endResult

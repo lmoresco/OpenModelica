@@ -46,6 +46,7 @@ equation
 end AppendElement;
 
 
+// Result:
 // fclass AppendElement
 // Real PA[1, 3] = [1, 2, 3];
 // Real PB[3, 1] = [1; 2; 3];
@@ -66,4 +67,4 @@ end AppendElement;
 // XA3 = [(-1), zeros(1, 2), 1];
 // XA4 = cat(2, {{(-1)}}, zeros(1, 2), {{1}});
 // end AppendElement;
-
+// endResult

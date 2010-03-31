@@ -22,8 +22,9 @@ model Constant8
  extends A.B.test;
 end Constant8;
 
+// Result:
 // fclass Constant8
 // Integer n = 2;
 // Real x;
 // end Constant8;
-
+// endResult

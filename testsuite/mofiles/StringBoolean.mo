@@ -17,6 +17,7 @@ equation
   s3 = String(b);
 end StringBoolean;
 
+// Result:
 // fclass StringBoolean
 // String s1;
 // String s2;
@@ -28,3 +29,4 @@ end StringBoolean;
 //   b = true;
 //   s3 = String(b,0,true,6);
 // end StringBoolean;
+// endResult

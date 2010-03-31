@@ -101,6 +101,16 @@ end TanksConnectedPI;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
+// Result:
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass TanksConnectedPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
@@ -165,3 +175,4 @@ end TanksConnectedPI;
 // tank1.tActuator.act = piContinuous1.cOut.act;
 // source.qOut.lflow = tank1.qIn.lflow;
 // end TanksConnectedPI;
+// endResult

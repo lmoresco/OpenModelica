@@ -20,8 +20,10 @@ model C
    A.AB h(R_0=0.7);
 end C;
 
+// Result:
 // fclass C
 // constant Real h.k = 1.0;
 // parameter Real h.R0 = h.R_0;
 // parameter Real h.R_0 = 0.7;
 // end C;
+// endResult

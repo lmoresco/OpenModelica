@@ -25,6 +25,21 @@ equation
   t = testBool(1,2,true);
 end Booltest;
 
+// Result:
+// function testBool
+// input Integer x;
+// input Integer y;
+// input Boolean should_be_equal;
+// output Boolean t;
+// algorithm
+//   t := false;
+//   if x == y AND should_be_equal then
+//     t := true;
+//   elseif x <> y AND  NOT should_be_equal then
+//     t := true;
+//   end if;
+// end testBool;
+// 
 // fclass Booltest
 // Boolean t;
 // equation
@@ -33,3 +48,4 @@ end Booltest;
 //   t = true;
 //   t = false;
 // end Booltest;
+// endResult

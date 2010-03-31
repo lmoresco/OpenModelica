@@ -15,6 +15,7 @@ class ArrayModification3
   A a(x[2].a = 1.0, x[2].b = 1.0);
 end ArrayModification3;
 
+// Result:
 // fclass ArrayModification3
 //   Real a.x[1].a;
 //   Real a.x[1].b;
@@ -26,3 +27,4 @@ end ArrayModification3;
 //   a.x[2].a = 1.0;
 //   a.x[2].b = 1.0;
 // end ArrayModification3;
+// endResult

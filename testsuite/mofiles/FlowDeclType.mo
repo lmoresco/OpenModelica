@@ -9,6 +9,8 @@ class FlowDeclType
   flow Real rFlow = 1.0;
 end FlowDeclType;
 
+// Result:
 // fclass FlowDeclType
 // Real rFlow = 1.0;
 // end FlowDeclType;
+// endResult

@@ -45,6 +45,7 @@ end TempResistor3;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass TempResistor3
 // Real p.v;
 // Real p.i;
@@ -59,3 +60,4 @@ end TempResistor3;
 // equation
 //   Temp = 20.0;
 // end TempResistor3;
+// endResult

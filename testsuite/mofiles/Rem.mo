@@ -11,8 +11,10 @@ equation
   r = rem(27, 6);
 end Rem;
 
+// Result:
 // fclass Rem
 // Real r;
 // equation
 //   r = 3.0;
 // end Rem;
+// endResult

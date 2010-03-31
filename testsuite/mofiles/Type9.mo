@@ -22,6 +22,7 @@ class A
   T4 b4;
   T5 b5;
 end A;
+// Result:
 // fclass A
 // Real a(unit = "m/s");
 // Real b(unit = "m/s");
@@ -30,3 +31,4 @@ end A;
 // String b4(quantity = "name");
 // Boolean b5(quantity = "foo");
 // end A;
+// endResult

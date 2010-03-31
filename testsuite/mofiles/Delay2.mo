@@ -14,6 +14,7 @@ equation
   x = delay(y+1, 2.5);
 end Delay;
 
+// Result:
 // fclass Delay
 // Real x;
 // Integer y;
@@ -21,3 +22,4 @@ end Delay;
 //   y = 0;
 //   x = delay(Real(1 + y),2.5,2.5);
 // end Delay;
+// endResult

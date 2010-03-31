@@ -13,6 +13,7 @@ class ArrayModification6
   A a(x[2] = 1.0, x[2,1] = 2.0);
 end ArrayModification6;
 
+// Result:
 // fclass ArrayModification6
 //   Real a.x[1,1];
 //   Real a.x[1,2];
@@ -23,3 +24,4 @@ end ArrayModification6;
 //   a.x[2,2] = 1.0;
 //   a.x[2,1] = 2.0;
 // end ArrayModification6;
+// endResult

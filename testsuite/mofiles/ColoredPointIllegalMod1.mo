@@ -47,4 +47,3 @@ equation
                   //point class. Public inheritance preserves the protection
 
 end A;
-

@@ -14,6 +14,7 @@ equation
 	x4 = product(i for i in 1:5);
 end ConstantReductions;
 
+// Result:
 // fclass ConstantReductions
 // Real x1;
 // Real x2;
@@ -25,3 +26,4 @@ end ConstantReductions;
 // 	x3 = 1.0;
 // 	x4 = 120.0;
 // end ConstantReductions;
+// endResult

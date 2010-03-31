@@ -26,6 +26,7 @@ model ModifiedFiltersInSeries
 end ModifiedFiltersInSeries;
 
 
+// Result:
 // fclass ModifiedFiltersInSeries
 // parameter Real F12.F1.T = 6.0;
 // Real F12.F1.u;
@@ -39,3 +40,4 @@ end ModifiedFiltersInSeries;
 //   F12.F1.u = sin(time);
 //   F12.F2.u = F12.F1.y;
 // end ModifiedFiltersInSeries;
+// endResult

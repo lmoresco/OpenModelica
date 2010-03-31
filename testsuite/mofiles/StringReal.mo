@@ -17,6 +17,7 @@ equation
   s3 = String(r);
 end StringReal;
 
+// Result:
 // fclass StringReal
 // String s1;
 // String s2;
@@ -28,3 +29,4 @@ end StringReal;
 //   r = 1234.5678;
 //   s3 = String(r,0,true,6);
 // end StringReal;
+// endResult

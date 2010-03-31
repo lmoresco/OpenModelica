@@ -12,5 +12,7 @@ model ConnectorSimple
   SimpleConnector sc;
 end ConnectorSimple;
 
+// Result:
 // fclass ConnectorSimple
 // end ConnectorSimple;
+// endResult

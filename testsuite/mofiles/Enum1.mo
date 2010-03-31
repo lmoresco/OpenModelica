@@ -14,6 +14,7 @@ equation
    x[Color.yelow] = 3;
 end Enumeration1;
 
+// Result:
 // fclass Enumeration1
 // Real x[1];
 // Real x[2];
@@ -23,3 +24,4 @@ end Enumeration1;
 //   x[Color.blue] = 2.0;
 //   x[Color.yelow] = 3.0;
 // end Enumeration1;
+// endResult

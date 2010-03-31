@@ -19,6 +19,7 @@ der(I2) = k2*HI^2 - k1*H2*I2;
 der(HI) = 2*k1*H2*I2 - 2*k2*HI^2;
 end HydrogenIodide;
 
+// Result:
 // fclass HydrogenIodide
 // parameter Real k1 = 0.73;
 // parameter Real k2 = 0.04;
@@ -30,3 +31,4 @@ end HydrogenIodide;
 //   der(I2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
 //   der(HI) = 2.0 * (k1 * (H2 * I2)) - 2.0 * (k2 * HI ^ 2.0);
 // end HydrogenIodide;
+// endResult

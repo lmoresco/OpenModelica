@@ -16,9 +16,11 @@ equation
   end if;
 end EquationIf1;
 
+// Result:
 // fclass EquationIf1
 // parameter Boolean b = true;
 // Real x;
 // equation
 //   x = 1.0;
 // end EquationIf1;
+// endResult

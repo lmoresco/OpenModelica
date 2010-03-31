@@ -11,8 +11,10 @@ equation
   r = log(45);
 end Log;
 
+// Result:
 // fclass Log
 // Real r;
 // equation
 //   r = 3.80666248977032;
 // end Log;
+// endResult

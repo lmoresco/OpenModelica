@@ -11,6 +11,8 @@ end ClassA;
 
 class ModifierClass = ClassA(r1 = 4711.0);
 
+// Result:
 // fclass ModifierClass
 // parameter Real r1 = 4711.0;
 // end ModifierClass;
+// endResult

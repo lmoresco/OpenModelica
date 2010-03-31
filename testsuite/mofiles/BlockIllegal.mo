@@ -17,6 +17,7 @@ equation
   connect(tb1.i,tb2.i);
 end BlockIllegal;
 
+// Result:
 // fclass BlockIllegal
 // Integer tb1.i;
 // Integer tb2.i;
@@ -24,3 +25,4 @@ end BlockIllegal;
 //   tb1.i = 1;
 // tb1.i = tb2.i;
 // end BlockIllegal;
+// endResult

@@ -61,4 +61,3 @@ equation
   connect(R1.p, d.n);
   connect(d.p, src.p);
 end Circuit;
-

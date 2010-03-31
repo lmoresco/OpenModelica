@@ -13,6 +13,7 @@ equation
   a = n / 2;
 end Integer2Real;
 
+// Result:
 // fclass Integer2Real
 // Integer n;
 // Real a;
@@ -20,3 +21,4 @@ end Integer2Real;
 //   n = 5;
 //   a = Real(n) / 2.0;
 // end Integer2Real;
+// endResult

@@ -84,4 +84,3 @@ class GenMicroCircuit
 end GenMicroCircuit;  
 
 //Have not got a flattended version yet...
-

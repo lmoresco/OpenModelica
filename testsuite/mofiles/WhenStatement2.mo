@@ -20,6 +20,7 @@ equation
 end WhenStat2;
 
 
+// Result:
 // fclass WhenStat2
 // Real x(start = 1.0);
 // Real y1;
@@ -33,3 +34,4 @@ end WhenStat2;
 //     y3 := 2.0 * x + (y1 + y2);
 //   end when;
 // end WhenStat2;
+// endResult

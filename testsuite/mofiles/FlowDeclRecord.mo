@@ -15,8 +15,10 @@ equation
   fr.r = 1.0;
 end FlowDeclRecord;
 
+// Result:
 // fclass FlowDeclRecord
 // Real fr.r;
 // equation
 //   fr.r = 1.0;
 // end FlowDeclRecord;
+// endResult

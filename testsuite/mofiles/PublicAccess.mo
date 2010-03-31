@@ -16,8 +16,10 @@ equation
   tm.x = 3;
 end PublicAccess;
 
+// Result:
 // fclass PublicAccess
 // Integer tm.x = 2;
 // equation
 //   tm.x = 3;
 // end PublicAccess;
+// endResult

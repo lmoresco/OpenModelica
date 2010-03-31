@@ -14,8 +14,10 @@ equation
 end EnumTest;
 
 
+// Result:
 // fclass EnumTest
 // Integer a;
 // equation
 //   a = 2;
 // end EnumTest;
+// endResult

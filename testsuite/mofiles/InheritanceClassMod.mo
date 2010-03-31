@@ -13,6 +13,8 @@ class B
   extends A(a = 2.0);
 end B;
 
+// Result:
 // fclass B
 // parameter Real a = 2.0;
 // end B;
+// endResult

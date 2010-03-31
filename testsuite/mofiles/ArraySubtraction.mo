@@ -13,6 +13,7 @@ equation
   intArray = intArray1 .- intArray2;
 end ArraySubtraction;
 
+// Result:
 // fclass ArraySubtraction
 // constant Integer intArray1[1] = 4;
 // constant Integer intArray1[2] = 8;
@@ -28,3 +29,4 @@ end ArraySubtraction;
 //   intArray[2] = 4;
 //   intArray[3] = 6;
 // end ArraySubtraction;
+// endResult

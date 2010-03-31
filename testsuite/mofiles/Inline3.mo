@@ -21,6 +21,7 @@ equation
   y = inlineFac(x);
 end Inline3;
 
+// Result:
 // fclass Inline3
 // Integer x;
 // Integer y;
@@ -28,3 +29,4 @@ end Inline3;
 //   x = 5;
 //   y = if x == 1 then 1 else x * inlineFac(x - 1);
 // end Inline3;
+// endResult

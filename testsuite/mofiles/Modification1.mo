@@ -23,9 +23,11 @@ model Modification1
   Motor n(f(q=5.0));
 end Modification1;
 
+// Result:
 // fclass Modification1
 // parameter Real m.j = 3.0;
 // parameter Real m.f.q = 2.0;
 // parameter Real n.j = 1.0;
 // parameter Real n.f.q = 5.0;
 // end Modification1;
+// endResult

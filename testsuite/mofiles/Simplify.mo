@@ -17,6 +17,7 @@ equation
 end Simplify;
 
 
+// Result:
 // fclass Simplify
 // Real x(start = 1.0);
 // parameter Real a = 2;
@@ -27,4 +28,4 @@ end Simplify;
 // parameter Real f = 7;
 // equation
 //   der(x) = sin(time) / (f * d * b * a * c * e);
-// end Simplify;
+// end Simplify;// endResult

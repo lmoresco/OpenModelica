@@ -12,5 +12,7 @@ end SimplePackage;
 model PackageSimple
 end PackageSimple;
 
+// Result:
 // fclass PackageSimple
 // end PackageSimple;
+// endResult

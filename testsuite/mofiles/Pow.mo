@@ -16,6 +16,7 @@ equation
 	l = 3.0 * (pr ^ 2);
 end Pow;
 
+// Result:
 // fclass Pow
 // parameter Integer pi = 3;
 // parameter Real pr = 4.0;
@@ -29,4 +30,4 @@ end Pow;
 //   k = 3.0 * 2.0 ^ pr;
 //   l = 3.0 * pr ^ 2.0;
 // end Pow;
-
+// endResult

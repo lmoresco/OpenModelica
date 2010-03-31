@@ -119,6 +119,16 @@ end TankHybridPI;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end LimitValue;
 // 
+// Result:
+// function LimitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end LimitValue;
+// 
 // fclass TankHybridPI
 // Real source.qOut.lflow;
 // parameter Real source.flowLevel = 0.02;
@@ -156,3 +166,4 @@ end TankHybridPI;
 // tank.tActuator.act = piDiscrete.cOut.act;
 // source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPI;
+// endResult

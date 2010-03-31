@@ -31,6 +31,7 @@ equation
    connect(v,v2);
 end test;
 
+// Result:
 // fclass test
 // input Real x;
 // output Real x2;
@@ -45,3 +46,4 @@ end test;
 // v[2] = v2[2];
 // x = x2;
 // end test;
+// endResult

@@ -47,6 +47,7 @@ equation
    f = E.b;
 end Enumeration6;
 
+// Result:
 // fclass Enumeration6
 // Real t.hh[1];
 // Real t.hh[2];
@@ -70,3 +71,4 @@ end Enumeration6;
 //   ee = EE.frame_a;
 //   f = E.b;
 // end Enumeration6;
+// endResult

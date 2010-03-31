@@ -56,6 +56,16 @@ end FlatTank;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
+// Result:
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass FlatTank
 // parameter Real flowLevel(unit = "m3/s") = 0.02;
 // parameter Real area(unit = "m2") = 1.0;
@@ -80,3 +90,4 @@ end FlatTank;
 //   der(x) = error / T;
 //   outCtr = K * (error + x);
 // end FlatTank;
+// endResult

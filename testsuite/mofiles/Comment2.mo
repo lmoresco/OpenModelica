@@ -28,8 +28,10 @@ end Comment2; /* Comment
 */
 /* Comment */
 
+// Result:
 // fclass Comment2
 // Real x;
 // equation
 //   x = 2.0;
 // end Comment2;
+// endResult

@@ -15,6 +15,7 @@ algorithm
   end for;
 end AlgorithmFor3;
 
+// Result:
 // fclass AlgorithmFor3
 // parameter Integer N = 4;
 // Real a[1];
@@ -27,3 +28,4 @@ end AlgorithmFor3;
 //     a[1 + i] := 1.0 + a[i];
 //   end for;
 // end AlgorithmFor3;
+// endResult

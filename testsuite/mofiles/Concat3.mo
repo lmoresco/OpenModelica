@@ -14,6 +14,7 @@ end Concat3;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass Concat3
 // Real r1[1,1];
 // Real r1[1,2];
@@ -42,3 +43,4 @@ end Concat3;
 //   r1[2,3] = 6;
 //   r2 = cat(2,{{r1[1,1],r1[1,2],r1[1,3]},{r1[2,1],r1[2,2],r1[2,3]}},{{r1[1,1],r1[1,2],r1[1,3]},{r1[2,1],r1[2,2],r1[2,3]}});
 // end Concat3;
+// endResult

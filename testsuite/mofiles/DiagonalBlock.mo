@@ -19,6 +19,7 @@ algorithm
 	end for;
 end DiagonalBlock;
 
+// Result:
 // fclass DiagonalBlock
 // parameter Integer m5 = 3;
 // parameter Integer m6 = 3;
@@ -41,3 +42,4 @@ end DiagonalBlock;
 //     Ydia[k, 1] := Xaux[k + abs(offset), k];
 //   end for;
 // end DiagonalBlock;
+// endResult

@@ -13,6 +13,7 @@ algorithm
   end for;
 end AlgorithmFor5;
 
+// Result:
 // fclass AlgorithmFor5
 // Real a[1];
 // Real a[2];
@@ -23,3 +24,4 @@ end AlgorithmFor5;
 //     a[i] := Real(i);
 //   end for;
 // end AlgorithmFor5;
+// endResult

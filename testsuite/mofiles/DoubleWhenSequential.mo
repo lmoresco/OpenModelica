@@ -19,6 +19,7 @@ algorithm
 end DoubleWhenSequential;
 
 
+// Result:
 // fclass DoubleWhenSequential
 // Boolean close;
 // algorithm
@@ -29,3 +30,4 @@ end DoubleWhenSequential;
 //     close := false;
 //   end when;
 // end DoubleWhenSequential;
+// endResult

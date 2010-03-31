@@ -22,6 +22,7 @@ model MathematicalFunctions
 end MathematicalFunctions;
 
 // Results:
+// Result:
 // fclass MathematicalFunctions
 // Real r1 = 0.850903524534118;
 // Real r2 = 0.52532198881773;
@@ -38,3 +39,4 @@ end MathematicalFunctions;
 // Real r13 = 0.698970004336019;
 // end MathematicalFunctions;
 // endResults
+// endResult

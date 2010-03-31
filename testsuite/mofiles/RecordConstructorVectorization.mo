@@ -43,6 +43,13 @@ model RecordConstructorVectorization
   w = Crap.Whatever("Nothing", 4.7);
 end RecordConstructorVectorization;
 
+// Result:
+// function Crap.Whatever "Automatically generated record constructor for Crap.Whatever"
+// input String x;
+// input Real y;
+// output Whatever res;
+// end Crap.Whatever;
+// 
 // fclass RecordConstructorVectorization
 // String fluidConstants[1].iupacName = "simple air" "complete IUPAC name (or common name, if non-existent)";
 // String fluidConstants[1].casRegistryNumber = "not a real substance" "chemical abstracts sequencing number (if it exists)";
@@ -58,3 +65,4 @@ end RecordConstructorVectorization;
 //   w.y = 4.7;
 //   w.x = "Nothing";
 // end RecordConstructorVectorization;
+// endResult

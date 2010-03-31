@@ -38,6 +38,7 @@ end WaveEquationSample;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass WaveEquationSample
 //	parameter Real L(quantity = "Length", unit = "m") = 10 "Length of duct";
 //	parameter Integer n = 30 "Number of sections";
@@ -165,3 +166,4 @@ end WaveEquationSample;
 //  der(dp[28]) = (c ^ 2.0 * (p[29] + -2.0 * p[28] + p[27])) / dL ^ 2.0;
 //  der(dp[29]) = (c ^ 2.0 * (p[30] + -2.0 * p[29] + p[28])) / dL ^ 2.0;
 // end WaveEquationSample;
+// endResult

@@ -61,6 +61,7 @@ model TemperatureDependentResistorCircuit
 	);
 end TemperatureDependentResistorCircuit;
 
+// Result:
 // fclass TemperatureDependentResistorCircuit
 // Real R1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real R1.p.i(quantity = "ElectricCurrent", unit = "A");
@@ -99,5 +100,4 @@ end TemperatureDependentResistorCircuit;
 //   R1.n.i = 0.0;
 //   R3.n.i = 0.0;
 // end TemperatureDependentResistorCircuit;
-// Error: Variable Temp not found in scope TemperatureDependentResistorCircuit
-// 
+// endResult

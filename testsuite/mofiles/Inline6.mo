@@ -21,6 +21,7 @@ equation
   y = simpleInline(x);
 end Inline6;
 
+// Result:
 // fclass Inline6
 // Integer x[1];
 // Integer y;
@@ -28,3 +29,4 @@ end Inline6;
 //   x[1] = 2;
 //   y = simpleInline({x[1]});
 // end Inline6;
+// endResult

@@ -17,6 +17,7 @@ equation
   r = tc1.r;
 end ConnectorComponents;
 
+// Result:
 // fclass ConnectorComponents
 // Real tc1.r;
 // Real r;
@@ -24,3 +25,4 @@ end ConnectorComponents;
 //   tc1.r = 3.0;
 //   r = tc1.r;
 // end ConnectorComponents;
+// endResult

@@ -28,4 +28,3 @@ model LeastSquares
 equation
   x = ls(in1, in2);
 end LeastSquares;
-

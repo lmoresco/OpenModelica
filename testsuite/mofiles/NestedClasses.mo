@@ -19,8 +19,10 @@ class NestedClasses
   Integer i;
 end NestedClasses;
 
+// Result:
 // fclass NestedClasses
 // Integer nc1.nestedInt1;
 // Integer nc2.nestedInt2;
 // Integer i;
 // end NestedClasses;
+// endResult

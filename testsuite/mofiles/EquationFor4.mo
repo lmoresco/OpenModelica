@@ -19,6 +19,7 @@ equation
   end for;
 end EquationFor4;
 
+// Result:
 // fclass EquationFor4
 // parameter Integer N = 4;
 // Real p[1].i;
@@ -35,3 +36,4 @@ end EquationFor4;
 //  p[3].v = p[4].v;
 //  (-p[1].i) + ((-p[2].i) + ((-p[3].i) + (-p[4].i))) = 0.0;
 // end EquationFor4;
+// endResult

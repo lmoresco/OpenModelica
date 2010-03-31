@@ -19,6 +19,14 @@ equation
   y = TestFunction(x);
 end FunctionSimple;
 
+// Result:
+// function TestFunction
+// input Integer i;
+// output Integer o;
+// algorithm
+//   o := i;
+// end TestFunction;
+// 
 // fclass FunctionSimple
 // Integer x;
 // Integer y;
@@ -26,3 +34,4 @@ end FunctionSimple;
 //   x = 1;
 //   y = TestFunction(x);
 // end FunctionSimple;
+// endResult

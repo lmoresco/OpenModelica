@@ -15,6 +15,7 @@ equation
   y_out = y;
 end Circle;
 
+// Result:
 // fclass Circle
 // Real x_out;
 // Real y_out;
@@ -26,3 +27,4 @@ end Circle;
 //   x_out = x;
 //   y_out = y;
 // end Circle;
+// endResult

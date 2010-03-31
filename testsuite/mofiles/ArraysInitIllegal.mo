@@ -13,5 +13,3 @@ class ArraysInit
   Real A5[2, 2](start[2, 1] = 2.3);					
    // Array with single element modification 
 end ArraysInit;
-
-

@@ -15,6 +15,7 @@ equation
   y = delay(x, a);
 end Delay;
 
+// Result:
 // fclass Delay
 // Real x;
 // Real y;
@@ -24,3 +25,4 @@ end Delay;
 //   x = sin(time);
 //   y = delay(x,a,a);
 // end Delay;
+// endResult

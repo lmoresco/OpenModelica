@@ -15,6 +15,7 @@ equation
   end for;
 end EquationFor3;
 
+// Result:
 // fclass EquationFor3
 // parameter Integer N = 4;
 // Real a[1];
@@ -27,3 +28,4 @@ end EquationFor3;
 //   a[3] = 1.0 + a[2];
 //   a[4] = 1.0 + a[3];
 // end EquationFor3;
+// endResult

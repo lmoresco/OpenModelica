@@ -27,6 +27,7 @@ model DeclarationOrder2
   A.D D;
 end DeclarationOrder2;
 
+// Result:
 // fclass DeclarationOrder2
 //  parameter Integer D.n = 1;
 //  parameter Real D.c2[1].x(start = 3.14);
@@ -42,3 +43,4 @@ end DeclarationOrder2;
 
 
    
+// endResult

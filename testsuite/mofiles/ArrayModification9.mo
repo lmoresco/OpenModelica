@@ -13,6 +13,7 @@ class ArrayModification9
   A a(x[1,2] = 2.0);
 end ArrayModification9;
 
+// Result:
 // fclass ArrayModification9
 //   Real a.x[1,1];
 //   Real a.x[1,2];
@@ -21,3 +22,4 @@ end ArrayModification9;
 // equation
 //   a.x[1,2] = 2.0;
 // end ArrayModification9;
+// endResult

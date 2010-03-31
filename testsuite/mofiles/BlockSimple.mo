@@ -12,5 +12,7 @@ model BlockSimple
   TestBlock tb;
 end BlockSimple;
 
+// Result:
 // fclass BlockSimple
 // end BlockSimple;
+// endResult

@@ -93,6 +93,7 @@ model RefinedResistorCircuit2 =
 //  connect(R1.p, R3.p);
 // end RefinedResistorCircuit2Expanded;
 
+// Result:
 // fclass RefinedResistorCircuit2Expanded
 // Real R1.p.v;
 // Real R1.p.i;
@@ -132,3 +133,4 @@ model RefinedResistorCircuit2 =
 //   R2.n.i = 0.0;
 //   R3.n.i = 0.0;
 // end RefinedResistorCircuit2Expanded;
+// endResult

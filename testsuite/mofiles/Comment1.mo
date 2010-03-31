@@ -16,8 +16,10 @@ end Comment1; //
 
 // Comment again...
 
+// Result:
 // fclass Comment1
 // Real x;
 // equation
 //   x = 2.0;
 // end Comment1;
+// endResult

@@ -62,6 +62,7 @@ equation
   connect(R1.p, R3.p);
 end TempDepResistorCircuitInherited;
 
+// Result:
 // fclass TempDepResistorCircuitInherited
 // Real Temp;
 // Real R1.p.v(quantity = "ElectricPotential", unit = "V");
@@ -100,3 +101,4 @@ end TempDepResistorCircuitInherited;
 //   R1.n.i = 0.0;
 //   R3.n.i = 0.0;
 // end TempDepResistorCircuitInherited;
+// endResult

@@ -13,5 +13,7 @@ equation
   r = integer(4.5);
 end Integer;
 
+// Result:
 // fclass Integer
 // end Integer;
+// endResult

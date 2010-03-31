@@ -47,6 +47,30 @@ model Sequence
 end Sequence;
 
 
+// Result:
+// function axesRot
+// input Integer[3] sequence = {1,2,3};
+// input Real[3] angles = {4.0,5.0,6.0};
+// output Real r;
+// algorithm
+//   r := /*REAL*/(sequence[1]) * angles[3] + /*REAL*/(sequence[2]) * angles[2] + /*REAL*/(sequence[3]) * angles[1];
+// end axesRot;
+// 
+// function Orientation "Automatically generated record constructor for Orientation"
+// input Real[3, 3] T;
+// input Real[3] w;
+// output Orientation res;
+// end Orientation;
+// 
+// function axesRotations
+// input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
+// input Real[3] angles "Rotation angles around the axes defined in 'sequence'";
+// input Real[3] der_angles "= der(angles)";
+// output Orientation R "Orientation object to rotate frame 1 into frame 2";
+// algorithm
+//   R := Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{angles[1],angles[2],angles[3]});
+// end axesRotations;
+// 
 // fclass Sequence
 // Real r.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
 // Real r.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
@@ -74,3 +98,4 @@ end Sequence;
 // Real rOther.w[3] = 6.0 "Absolute angular velocity of local frame, resolved in local frame";
 // Real x = 28.0;
 // end Sequence;
+// endResult

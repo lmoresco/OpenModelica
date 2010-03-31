@@ -17,6 +17,17 @@ class InOutArray2
   String Asum = strCombine(A);
 end InOutArray2;
 
+// Result:
+// function strCombine
+// input String[:] inVal;
+// output String outVal;
+// algorithm
+//   outVal := "";
+//   for i in 1:size(inVal,1) loop
+//     outVal := outVal + inVal<asub>[i];
+//   end for;
+// end strCombine;
+// 
 // fclass InOutArray2
 // constant String A[1] = "hello";
 // constant String A[2] = " world";
@@ -25,3 +36,4 @@ end InOutArray2;
 // constant String A[5] = "ba ";
 // String Asum = "hello world! abba ";
 // end InOutArray2;
+// endResult

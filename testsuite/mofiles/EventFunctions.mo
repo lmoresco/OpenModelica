@@ -14,6 +14,7 @@ model EventFunctions
   Real r6 = integer(4.5);
 end EventFunctions;
 
+// Result:
 // fclass EventFunctions
 // Real r1 = 11.0;
 // Real r2 = 2.0;
@@ -22,3 +23,4 @@ end EventFunctions;
 // Real r5 = 4.0;
 // Real r6 = 4.0;
 // end EventFunctions;
+// endResult

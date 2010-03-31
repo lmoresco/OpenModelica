@@ -9,6 +9,8 @@ model ConstantDeclType
   constant Real rConst = 2.0;
 end ConstantDeclType;
 
+// Result:
 // fclass ConstantDeclType
 // constant Real rConst = 2.0;
 // end ConstantDeclType;
+// endResult

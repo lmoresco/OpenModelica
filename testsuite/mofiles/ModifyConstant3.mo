@@ -25,6 +25,8 @@ class ModifyConstant3
   C c;
 end ModifyConstant3;
 
+// Result:
 // fclass ModifyConstant3
 // constant Real c.a.c = 1.0;
 // end ModifyConstant3;
+// endResult

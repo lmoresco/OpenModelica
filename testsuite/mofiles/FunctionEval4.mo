@@ -27,6 +27,14 @@ end FunctionEval4;
 //   y := x + 4.0;
 // end f;
 // 
+// Result:
+// function f
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 4.0 + x;
+// end f;
+// 
 // fclass FunctionEval4
 // Real x;
 // Real y;
@@ -34,3 +42,4 @@ end FunctionEval4;
 //   y = f(x);
 //   x = 5.0;
 // end FunctionEval4;
+// endResult

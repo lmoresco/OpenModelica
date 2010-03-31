@@ -50,6 +50,7 @@ end MoonLanding;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass MoonLanding
 // parameter Real force1 = 36350;
 // parameter Real force2 = 1308;
@@ -78,3 +79,4 @@ end MoonLanding;
 //   apollo.thrust = if time < thrustDecreaseTime then force1 else if time < thrust EndTime then force2 else 0.0;
 //  apollo.gravity = (6.672e-11 * moon.mass) / (apollo.altitude + moon.radius) ^ 2.0;
 // end MoonLanding;
+// endResult

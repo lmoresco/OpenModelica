@@ -11,8 +11,10 @@ equation
   r = sqrt(25);
 end Sqrt;
 
+// Result:
 // fclass Sqrt
 // Real r;
 // equation
 //   r = 5.0;
 // end Sqrt;
+// endResult

@@ -15,8 +15,10 @@ equation
   dr.r = 1.0;
 end DiscreteDeclRecord;
 
+// Result:
 // fclass DiscreteDeclRecord
 // discrete Real dr.r;
 // equation
 //   dr.r = 1.0;
 // end DiscreteDeclRecord;
+// endResult

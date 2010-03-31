@@ -22,9 +22,11 @@ algorithm
   (px, py) := PointOnCircle(1.2, 2);
 end StatementCall;
 
+// Result:
 // fclass StatementCall
 // Real px;
 // Real py;
 // algorithm
 //   (px, py) := PointOnCircle(1.2,2.0);
 // end StatementCall;
+// endResult

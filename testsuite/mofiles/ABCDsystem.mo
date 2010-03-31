@@ -20,6 +20,7 @@ end ABCDsystem;
 
 
 
+// Result:
 // fclass ABCDsystem
 // parameter Integer n = 0;
 // Real u[1] = 15.0;
@@ -50,3 +51,4 @@ end ABCDsystem;
 //   y[2] = D[2,1] * u[1] + (D[2,2] * u[2] + (D[2,3] * u[3] + (D[2,4] * u[4] + D[2,5] * u[5])));
 //   y[3] = D[3,1] * u[1] + (D[3,2] * u[2] + (D[3,3] * u[3] + (D[3,4] * u[4] + D[3,5] * u[5])));
 // end ABCDsystem;
+// endResult

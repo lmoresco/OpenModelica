@@ -12,6 +12,7 @@ end A;
 
 class Overwriting3 = A(x[1]=1.0);
 
+// Result:
 // fclass Overwriting3
 //   Real x[1];
 //   Real x[2];
@@ -21,3 +22,4 @@ class Overwriting3 = A(x[1]=1.0);
 //   x[2] = Real(0);
 //   x[3] = Real(0);
 // end Overwriting3;
+// endResult

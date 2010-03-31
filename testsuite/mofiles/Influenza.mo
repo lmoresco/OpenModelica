@@ -136,6 +136,7 @@ equation
 end Influenza;
 
 
+// Result:
 // fclass Influenza
 // input Real Introduction;
 // input Real Immune_Popul.in_1;
@@ -262,3 +263,4 @@ end Influenza;
 //   Infected_Popul.in_2 = Incubation.out_1;
 //   Incubation.in_2 = Time_to_Breakdown.out_1;
 // end Influenza;
+// endResult

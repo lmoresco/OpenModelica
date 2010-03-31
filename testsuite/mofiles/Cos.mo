@@ -11,8 +11,10 @@ equation
   r = cos(45);
 end Cos;
 
+// Result:
 // fclass Cos
 // Real r;
 // equation
 //   r = 0.52532198881773;
 // end Cos;
+// endResult

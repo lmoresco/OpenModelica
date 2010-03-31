@@ -15,8 +15,10 @@ equation
   ir.r = 1.0;
 end InputDeclRecord;
 
+// Result:
 // fclass InputDeclRecord
 // input Real ir.r;
 // equation
 //   ir.r = 1.0;
 // end InputDeclRecord;
+// endResult

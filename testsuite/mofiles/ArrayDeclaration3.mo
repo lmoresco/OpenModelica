@@ -17,6 +17,7 @@ equation
   d = 6;
 end ArrayDeclaration3;
 
+// Result:
 // fclass ArrayDeclaration3
 // Real a;
 // Real b[1];
@@ -32,3 +33,4 @@ end ArrayDeclaration3;
 //   c[2] = 5.0;
 //   d = 6.0;
 // end ArrayDeclaration3;
+// endResult

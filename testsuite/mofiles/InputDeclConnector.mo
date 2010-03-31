@@ -15,8 +15,10 @@ equation
   ic.r = 1.0;
 end InputDeclConnector;
 
+// Result:
 // fclass InputDeclConnector
 // input Real ic.r;
 // equation
 //   ic.r = 1.0;
 // end InputDeclConnector;
+// endResult

@@ -24,8 +24,10 @@ equation
   lc.i = 1;
 end PackageIllegal;
 
+// Result:
 // fclass PackageIllegal
 // Integer lc.i;
 // equation
 //   lc.i = 1;
 // end PackageIllegal;
+// endResult

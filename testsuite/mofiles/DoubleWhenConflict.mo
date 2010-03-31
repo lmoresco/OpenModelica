@@ -20,6 +20,7 @@ algorithm
 end DoubleWhenConflict;
 
 
+// Result:
 // fclass DoubleWhenConflict
 // Boolean close;
 // parameter Real x = 5;
@@ -30,4 +31,4 @@ end DoubleWhenConflict;
 //   when x <= 5.0 then
 //     close := false;
 //   end when;
-// end DoubleWhenConflict;
+// end DoubleWhenConflict;// endResult

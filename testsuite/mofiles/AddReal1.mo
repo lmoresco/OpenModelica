@@ -18,6 +18,15 @@ equation
   c = addReal1_(a, b);
 end AddReal1;
 
+// Result:
+// function addReal1_
+// input Real x;
+// input Real y;
+// output Real res;
+// 
+// external "C";
+// end addReal1_;
+// 
 // fclass AddReal1
 // parameter Real a = 2.3;
 // parameter Real b = 4.5;
@@ -25,5 +34,4 @@ end AddReal1;
 // equation
 //   c = addReal1_(a,b);
 // end AddReal1;
-
-
+// endResult

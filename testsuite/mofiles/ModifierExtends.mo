@@ -13,6 +13,8 @@ class ModifierExtends
   extends ClassA(r1 = 4711.0);
 end ModifierExtends;
 
+// Result:
 // fclass ModifierExtends
 // parameter Real r1 = 4711.0;
 // end ModifierExtends;
+// endResult

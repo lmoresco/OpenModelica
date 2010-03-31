@@ -18,6 +18,7 @@ equation
 end LotkaVolterra;
 
 
+// Result:
 // fclass LotkaVolterra
 // parameter Real g_r = 0.04 "Natural growth rate for rabbits";
 // parameter Real d_rf = 0.0005 "Death rate of rabbits due to foxes";
@@ -29,3 +30,4 @@ end LotkaVolterra;
 //   der(rabbits) = g_r * rabbits - d_rf * (rabbits * foxes);
 //   der(foxes) = g_fr * (d_rf * (rabbits * foxes)) - d_f * foxes;
 // end LotkaVolterra;
+// endResult

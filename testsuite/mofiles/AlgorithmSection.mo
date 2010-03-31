@@ -21,6 +21,7 @@ equation
 end AlgorithmSection;
 
 
+// Result:
 // fclass AlgorithmSection
 // Real x;
 // Real z;
@@ -39,3 +40,4 @@ end AlgorithmSection;
 //   x2 := y - 5.0;
 //   x3 := x2 + y;
 // end AlgorithmSection;
+// endResult

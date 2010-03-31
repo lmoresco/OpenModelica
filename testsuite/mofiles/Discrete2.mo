@@ -10,8 +10,10 @@ equation
   x = sin(time);
 end Discrete2;
 
+// Result:
 // fclass Discrete2
 //  discrete Real x;
 // equation
 //   x = sin(time);
 // end Discrete2;
+// endResult

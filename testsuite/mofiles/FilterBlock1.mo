@@ -21,4 +21,3 @@ algorithm
     reinit(x, u); // if x is u since der(x) = (u - x)/T
   end when;
 end FilterBlock1;
-

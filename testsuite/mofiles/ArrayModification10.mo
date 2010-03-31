@@ -13,6 +13,7 @@ class ArrayModification10
   A a(x[2,1] = 1.0, x[2,2] = 2.0);
 end ArrayModification10;
 
+// Result:
 // fclass ArrayModification10
 //   Real a.x[1,1];
 //   Real a.x[1,2];
@@ -22,3 +23,4 @@ end ArrayModification10;
 //   a.x[2,1] = 1.0;
 //   a.x[2,2] = 2.0;
 // end ArrayModification10;
+// endResult

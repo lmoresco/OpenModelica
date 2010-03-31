@@ -23,6 +23,19 @@ model Constant11
 end Constant11;
 
 // Result:
+// function Constant11.abc
+// output Real r;
+// algorithm
+//   r := Constant11.def();
+// end Constant11.abc;
+// 
+// function Constant11.def
+// output Real r;
+// algorithm
+//   r := 1.0;
+// end Constant11.def;
+// 
 // fclass Constant11
 // constant Real x = 1.0;
 // end Constant11;
+// endResult

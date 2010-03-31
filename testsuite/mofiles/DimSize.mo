@@ -13,4 +13,3 @@ class DimSize
 equation  
  // size(2*x + x) = size(x);                // This equation holds
 end DimSize;
-

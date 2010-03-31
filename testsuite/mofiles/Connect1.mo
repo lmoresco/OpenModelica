@@ -18,6 +18,7 @@ equation
   c2.f = time;
 end Connect1;
 
+// Result:
 // fclass Connect1
 // Real c1.f;
 // Real c1.e;
@@ -31,3 +32,4 @@ end Connect1;
 //   c2.f = 0.0;
 //   c1.f = 0.0;
 // end Connect1;
+// endResult

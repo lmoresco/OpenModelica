@@ -21,6 +21,7 @@ model DisturbedResistance3
   extends Resistor;
 end DisturbedResistance3;
 
+// Result:
 // fclass DisturbedResistance3
 //   Real u;
 //   Real i;
@@ -29,3 +30,4 @@ end DisturbedResistance3;
 //   R = 1.0 + 0.1*sin(time);
 //   u = R*i;
 // end DisturbedResistance3;
+// endResult

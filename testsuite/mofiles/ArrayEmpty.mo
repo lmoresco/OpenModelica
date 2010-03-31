@@ -19,6 +19,8 @@ end Empty;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass <XXX> 
 // Real x;
 // end <XXX>;
+// endResult

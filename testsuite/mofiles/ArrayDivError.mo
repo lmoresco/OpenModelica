@@ -16,3 +16,4 @@ equation
 	Div3 = {1, 2, 3} / {1, 2, 2};
 	// Not allowed!
 end ArrayDivError;
+// endResult

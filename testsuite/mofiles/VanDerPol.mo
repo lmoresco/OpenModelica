@@ -13,6 +13,7 @@ equation
   der(y) = - x + lambda*(1 - x*x)*y;	
 end VanDerPol;
 
+// Result:
 // fclass VanDerPol
 // Real x(start=1.0);
 // Real y(start=1.0);
@@ -21,3 +22,4 @@ end VanDerPol;
 //   der(x) = y;
 //   der(y) = lambda *  ((1.0 - x ^ 2.0) * y) - x;
 // end VanDerPol;
+// endResult

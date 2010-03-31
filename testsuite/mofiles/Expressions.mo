@@ -15,6 +15,7 @@ equation
   r = 2 ^ 3;
 end Expressions;
 
+// Result:
 // fclass Expressions
 // constant Real r1 = 3.0;
 // constant Real r2 = -1.0;
@@ -24,3 +25,4 @@ end Expressions;
 // equation
 //   r = 8.0;
 // end Expressions;
+// endResult

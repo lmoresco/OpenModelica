@@ -21,8 +21,10 @@ class Redeclare2
   Q x;
 end Redeclare2;
 
+// Result:
 // fclass Redeclare2
 // Real x.x;
 // equation
 // x.x = 1.0;
 // end Redeclare2;
+// endResult

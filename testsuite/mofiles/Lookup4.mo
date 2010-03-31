@@ -16,6 +16,8 @@ class Lookup4
 end Lookup4;
 
 
+// Result:
 // fclass Lookup4
 // Real b = 3.0;
 // end Lookup4;
+// endResult

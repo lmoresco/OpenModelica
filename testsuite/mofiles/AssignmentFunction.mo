@@ -20,6 +20,14 @@ algorithm
   y := F(x);
 end AssignmentFunction;
 
+// Result:
+// function F
+// input Real inReal;
+// output Real outReal;
+// algorithm
+//   outReal := 2.0 + inReal;
+// end F;
+// 
 // fclass AssignmentFunction
 // Real x;
 // Real y;
@@ -27,3 +35,4 @@ end AssignmentFunction;
 //   x := 2.0;
 //   y := F(x);
 // end AssignmentFunction;
+// endResult

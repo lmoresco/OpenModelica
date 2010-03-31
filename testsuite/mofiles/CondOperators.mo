@@ -17,6 +17,7 @@ model CondOperators
   constant Boolean b9 = true or false;
 end CondOperators;
 
+// Result:
 // fclass CondOperators
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
@@ -28,3 +29,4 @@ end CondOperators;
 // constant Boolean b8 = false;
 // constant Boolean b9 = true;
 // end CondOperators;
+// endResult

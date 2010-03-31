@@ -29,6 +29,7 @@ equation
   x=time;
 end DependsMutual;
 
+// Result:
 // fclass DependsMutual
 // Real x;
 // Real a.x;
@@ -36,3 +37,4 @@ end DependsMutual;
 //   a.x = x;
 //   x = time;
 // end DependsMutual;
+// endResult

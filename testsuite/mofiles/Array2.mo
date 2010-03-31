@@ -9,6 +9,7 @@ model Array2
   parameter Integer x[2,3];
 end Array2;
 
+// Result:
 // fclass Array2
 //   parameter Integer x[1,1];
 //   parameter Integer x[1,2];
@@ -17,3 +18,4 @@ end Array2;
 //   parameter Integer x[2,2];
 //   parameter Integer x[2,3];
 // end Array2;
+// endResult

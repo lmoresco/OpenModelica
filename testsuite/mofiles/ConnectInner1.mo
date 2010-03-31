@@ -30,6 +30,7 @@ equation
   global.e=10;
 end ConnectInner1;
 
+// Result:
 // fclass ConnectInner1
 // Real global.e;
 // Real global.f;
@@ -53,3 +54,4 @@ end ConnectInner1;
 //  a.my.f = 0.0;
 //  a.global.f = 0.0;
 // end ConnectInner1;
+// endResult

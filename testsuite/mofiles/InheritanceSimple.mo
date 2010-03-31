@@ -13,6 +13,8 @@ class B
   extends A;
 end B;
 
+// Result:
 // fclass B
 // parameter Real a;
 // end B;
+// endResult

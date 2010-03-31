@@ -20,6 +20,7 @@ algorithm
     reinit(x, u); // if x is u since der(x) = (u - x)/T
   end when;
 end FilterBlock1;
+// Result:
 // fclass FilterBlock1
 // parameter Real T = 1.0 "Time constant";
 // parameter Real k = 1.0 "Gain";
@@ -34,3 +35,4 @@ end FilterBlock1;
 //     reinit(x, u);
 //   end when;
 // end FilterBlock1;
+// endResult

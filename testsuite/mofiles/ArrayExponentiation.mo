@@ -14,4 +14,4 @@ equation
 
 	e2 = [1, 2; 1, 2] ^ 2;
 	// Result: {{3, 6}, {3, 6}}
-end Exp;
+end Exp;// endResult

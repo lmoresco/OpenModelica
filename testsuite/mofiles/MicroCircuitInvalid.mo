@@ -84,6 +84,3 @@ end GenMicroCircuit;
 
 class InductorMicroCircuit =
   GenMicroCircuit(redeclare type CompType = Inductor);
-
-
-

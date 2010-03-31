@@ -15,4 +15,3 @@ equation
   Q[4:6, 1:3] = [Q[1:2, 1:3], -Q[3:3, 1:3]];	// Lower left block
   Q[4:6, 4:6] = P;	// Lower right block
 end BlockMatrix2;
-

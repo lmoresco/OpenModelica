@@ -19,6 +19,7 @@ equation
   i2 = om.i2;
 end ModelAccess;
 
+// Result:
 // fclass ModelAccess
 // parameter Integer om.i1 = 8;
 // parameter Integer om.i2 = 12;
@@ -28,3 +29,4 @@ end ModelAccess;
 //   i1 = om.i1;
 //   i2 = om.i2;
 // end ModelAccess;
+// endResult

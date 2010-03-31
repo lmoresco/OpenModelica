@@ -32,7 +32,9 @@ model Lookup10
 	extends TOOLS.surf_orient.surf_orient_alias_def;
 end Lookup10;
 
+// Result:
 // fclass Lookup10
 // constant Integer i = 4;
 // constant Integer n_of_surf_orient_def = 4;
 // end Lookup10;
+// endResult

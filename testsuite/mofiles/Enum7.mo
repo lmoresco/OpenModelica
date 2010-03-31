@@ -82,6 +82,7 @@ model X
    f=enum.a;   
 end X;
 
+// Result:
 // fclass X
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_in = ResolveInFrameA.frame_a;
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
@@ -112,3 +113,4 @@ end X;
 //     enumtest.xxx[e] := 0.0;
 //   end for;
 // end X;
+// endResult

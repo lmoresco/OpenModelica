@@ -50,6 +50,7 @@ equation
 end WatchDogSystem1;
 
 
+// Result:
 // fclass WatchDogSystem1
 // parameter Real turnOn.eventTime = 1.0;
 // discrete Boolean turnOn.dOutput.signal;
@@ -81,3 +82,4 @@ end WatchDogSystem1;
 //     watchdog.dAlarm.signal := true;
 //   end when;
 // end WatchDogSystem1;
+// endResult

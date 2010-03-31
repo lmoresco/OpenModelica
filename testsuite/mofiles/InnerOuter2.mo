@@ -43,6 +43,7 @@ class I
   A a; // a.TI, a.b.c.d.TI, and TI is the same variable
 end I;
 
+// Result:
 // fclass I
 // Real TI;
 // Real e.TI;
@@ -53,3 +54,4 @@ end I;
 // Real a.b.TI;
 // Real a.b.c.TI;
 // end I;
+// endResult

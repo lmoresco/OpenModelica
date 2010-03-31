@@ -15,3 +15,4 @@ class SeveralArguments
 	// Result: {2 + atan2(a, d), 2 + atan2(b, e)}
 
 end SeveralArguments;
+// endResult

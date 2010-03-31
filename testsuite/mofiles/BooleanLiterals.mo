@@ -13,6 +13,7 @@ equation
   b = true;
 end BooleanLiterals;
 
+// Result:
 // fclass BooleanLiterals
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
@@ -20,3 +21,4 @@ end BooleanLiterals;
 // equation
 //   b = true;
 // end BooleanLiterals;
+// endResult

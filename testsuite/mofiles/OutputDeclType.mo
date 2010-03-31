@@ -9,6 +9,8 @@ class OutputDeclType
   output Real rOutput = 1.0;
 end OutputDeclType;
 
+// Result:
 // fclass OutputDeclType
 // output Real rOutput = 1.0;
 // end OutputDeclType;
+// endResult

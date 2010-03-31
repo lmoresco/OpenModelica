@@ -16,6 +16,7 @@ equation
   end when;  
 end WhenEquation;
 
+// Result:
 // fclass WhenEquation
 // Real x(start = 1.0);
 // discrete Real y1;
@@ -28,3 +29,4 @@ end WhenEquation;
 //   y3 = 2.0 * x + (y1 + y2);
 //   end when;
 // end WhenEquation;
+// endResult

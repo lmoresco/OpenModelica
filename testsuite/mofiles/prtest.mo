@@ -15,6 +15,7 @@ equation
   ok[1]=3.0;
 end Type10;
 
+// Result:
 // fclass Type10
 //            String  ok[1].unit;
 //            Real    ok[1];
@@ -28,3 +29,4 @@ end Type10;
 //  ok[3].unit = "";
 //  ok[1] = 3.0;
 // end Type10;
+// endResult

@@ -19,8 +19,18 @@ equation
 end MultFuncCall;
 
 
+// Result:
+// function Multiply
+// input Real x;
+// input Real y;
+// output Real result;
+// algorithm
+//   result := x * y;
+// end Multiply;
+// 
 // fclass MultFuncCall
 // Real res;
 // equation
 //   res = 7.0;
 // end MultFuncCall;
+// endResult

@@ -21,6 +21,7 @@ equation
   connect(c1,c2);
   connect(c1.b,b2);
 end Connect14;
+// Result:
 // fclass Connect14
 // String c1.s;
 // Boolean c1.b;
@@ -38,4 +39,4 @@ end Connect14;
 //   c1.n = c2.n;
 //   c1.s = c2.s;
 // end Connect14;
-
+// endResult

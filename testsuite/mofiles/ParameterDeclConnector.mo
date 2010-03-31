@@ -15,8 +15,10 @@ equation
   pc.r = 1.0;
 end ParameterDeclConnector;
 
+// Result:
 // fclass ParameterDeclConnector
 // parameter Real pc.r;
 // equation
 //   pc.r = 1.0;
 // end ParameterDeclConnector;
+// endResult

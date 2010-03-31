@@ -10,6 +10,7 @@ equation
 x = vector([1;3]);
 end VectorDimension;
 
+// Result:
 // fclass VectorDimension
 // Real x[1];
 // Real x[2];
@@ -17,3 +18,4 @@ end VectorDimension;
 //   x[1] = 1.0;
 //   x[2] = 3.0;
 // end VectorDimension;
+// endResult

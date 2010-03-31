@@ -39,6 +39,7 @@ algorithm
   end when;
 end Break;
 
+// Result:
 // fclass Break
 // Real x;
 // Real y;
@@ -74,3 +75,4 @@ end Break;
 //     z := 0.0;
 //   end when;
 // end Break;
+// endResult

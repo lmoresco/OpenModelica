@@ -41,6 +41,21 @@ end PolynomialEvaluator2;
 //   end for;
 // end polyeval;
 // 
+// Result:
+// function polyeval
+// input Real[:] a;
+// input Real x = 1.0;
+// output Real y;
+// protected Real xpower;
+// algorithm
+//   y := 0.0;
+//   xpower := 1.0;
+//   for i in 1:size(a,1) loop
+//     y := y + a<asub>[i] * xpower;
+//     xpower := xpower * x;
+//   end for;
+// end polyeval;
+// 
 // fclass PolynomialEvaluator2
 // Real inVector[1] = 3.0;
 // Real inVector[2] = 8.0;
@@ -49,3 +64,4 @@ end PolynomialEvaluator2;
 // equation
 //   result = polyeval({inVector[1],inVector[2],inVector[3]},1.0);
 // end PolynomialEvaluator2;
+// endResult

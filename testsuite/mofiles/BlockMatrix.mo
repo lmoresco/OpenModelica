@@ -21,4 +21,3 @@ equation
   Q[4:6, 4:6] = P;
   // Lower right block
 end BlockMatrix;
-

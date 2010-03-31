@@ -17,8 +17,10 @@ equation
   lt = 1;
 end TypeClass1;
 
+// Result:
 // fclass TypeClass1
 // Integer lt;
 // equation
 //   lt = 1;
 // end TypeClass1;
+// endResult

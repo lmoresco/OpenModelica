@@ -11,5 +11,7 @@ class Declaration3
   constant parameter Real x;
 end Declaration3;
 
+// Result:
 // fclass Declaration3
 // end Declaration3;
+// endResult

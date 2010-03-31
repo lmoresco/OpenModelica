@@ -11,8 +11,10 @@ equation
   r = sin(45);
 end Sin;
 
+// Result:
 // fclass Sin
 // Real r;
 // equation
 //   r = 0.850903524534118;
 // end Sin;
+// endResult

@@ -16,6 +16,7 @@ equation
 	D = vector({{{1}},{{2}},{{3}},{{4}}});
 end VectorBuiltin;
 
+// Result:
 // fclass VectorBuiltin
 // output Real A[1];
 // output Real B[1];
@@ -45,3 +46,4 @@ end VectorBuiltin;
 //   D[3] = 3.0;
 //   D[4] = 4.0;
 // end VectorBuiltin;
+// endResult

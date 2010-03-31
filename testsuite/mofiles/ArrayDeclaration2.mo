@@ -12,6 +12,7 @@ equation
   realArray[2] = 5;
 end ArrayDeclaration2;
 
+// Result:
 // fclass ArrayDeclaration2
 // Real realArray[1];
 // Real realArray[2];
@@ -19,3 +20,4 @@ end ArrayDeclaration2;
 //   realArray[1] = 4.0;
 //   realArray[2] = 5.0;
 // end ArrayDeclaration2;
+// endResult

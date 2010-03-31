@@ -19,9 +19,11 @@ equation
   a = f(b);
 end Function5;
 
+// Result:
 // fclass Function5
 //   Real a;
 //   Real b;
 // equation
 //   a = f(b);
 // end Function5;
+// endResult

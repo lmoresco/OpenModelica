@@ -15,6 +15,7 @@ equation
   TM1 = transpose(M1);
 end Transpose;
 
+// Result:
 // fclass Transpose
 // Real M[1,1] = 1.0;
 // Real M[1,2] = 2.0;
@@ -108,3 +109,4 @@ end Transpose;
 //   TM1[3,4] = M1[4,3];
 //   TM1[3,5] = M1[5,3];
 // end Transpose;
+// endResult

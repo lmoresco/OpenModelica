@@ -15,8 +15,10 @@ equation
   pr.r = 1.0;
 end ParameterDeclRecord;
 
+// Result:
 // fclass ParameterDeclRecord
 // parameter Real pr.r;
 // equation
 //   pr.r = 1.0;
 // end ParameterDeclRecord;
+// endResult

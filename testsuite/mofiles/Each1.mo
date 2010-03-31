@@ -11,6 +11,7 @@ end C;
 model B
   C c[5](each a={1,2,3},d={1,2,3,4,5});
 end B;
+// Result:
 // fclass B
 // parameter Real c[1].a[1] = 1.0;
 // parameter Real c[1].a[2] = 2.0;
@@ -33,3 +34,4 @@ end B;
 // parameter Real c[5].a[3] = 3.0;
 // parameter Real c[5].d = 5.0;
 // end B;
+// endResult

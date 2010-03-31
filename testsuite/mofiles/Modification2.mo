@@ -16,7 +16,8 @@ class Modification2
   B b(A(p=2.0));
 end Modification2;
 
+// Result:
 // fclass Modification2
 // parameter Real b.a.p = 2.0;
 // end Modification2;
-
+// endResult

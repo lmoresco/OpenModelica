@@ -20,6 +20,7 @@ equation
   u=-transpose(B)*X*x "Control";
 end ArrayRemoveIndex1;
 
+// Result:
 // fclass ArrayRemoveIndex1
 // parameter Real A[1,1] = -1.0;
 // parameter Real A[1,2] = 0.0;
@@ -47,3 +48,4 @@ end ArrayRemoveIndex1;
 //   der(x[2,1]) = A[2,1] * x[1,1] + (A[2,2] * x[2,1] + B[2,1] * u[1,1]);
 //   u[1,1] = ((-B[1,1]) * X[1,1] + (-B[2,1]) * X[2,1]) * x[1,1] + ((-B[1,1]) * X[1,2] + (-B[2,1]) * X[2,2]) * x[2,1];
 // end ArrayRemoveIndex1;
+// endResult

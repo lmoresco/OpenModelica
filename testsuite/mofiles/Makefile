@@ -1,4 +1,4 @@
-TEST=./rtest -v
+TEST=../rtest -v
 
 TESTFILES=\
 Abs.mo Abs2.mo AddReal1.mo \

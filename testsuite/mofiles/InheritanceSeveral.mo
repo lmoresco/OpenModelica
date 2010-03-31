@@ -18,7 +18,9 @@ class C
   extends B;
 end C;
 
+// Result:
 // fclass C
 // parameter Real a;
 // parameter Real b;
 // end C;
+// endResult

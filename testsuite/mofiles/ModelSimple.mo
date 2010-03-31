@@ -15,8 +15,10 @@ equation
   tm.i = 1;
 end ModelSimple;
 
+// Result:
 // fclass ModelSimple
 // Integer tm.i;
 // equation
 //   tm.i = 1;
 // end ModelSimple;
+// endResult

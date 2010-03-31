@@ -10,6 +10,8 @@ model CondDeclaration
   Real r2 if false;
 end CondDeclaration;
 
+// Result:
 // fclass CondDeclaration
 // Real r1;
 // end CondDeclaration;
+// endResult

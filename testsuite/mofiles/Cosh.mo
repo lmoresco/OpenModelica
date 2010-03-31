@@ -11,8 +11,10 @@ equation
   r = cosh(45);
 end Cosh;
 
+// Result:
 // fclass Cosh
 // Real r;
 // equation
 //   r = 1.74671355287425e+19;
 // end Cosh;
+// endResult

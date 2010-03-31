@@ -11,8 +11,10 @@ equation
   r = floor(4.5);
 end Floor;
 
+// Result:
 // fclass Floor
 // Real r;
 // equation
 //   r = 4.0;
 // end Floor;
+// endResult

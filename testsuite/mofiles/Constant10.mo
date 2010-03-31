@@ -16,8 +16,8 @@ model test
   Real x=A.y;
 end test;
 
+// Result:
 // fclass test
 // Real x = 1.0;
 // end test;
-
-
+// endResult

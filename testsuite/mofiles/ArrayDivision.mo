@@ -13,6 +13,7 @@ equation
   intArray = intArray1 ./ intArray2;
 end ArrayDivision;
 
+// Result:
 // fclass ArrayDivision
 // constant Integer intArray1[1] = 4;
 // constant Integer intArray1[2] = 8;
@@ -28,3 +29,4 @@ end ArrayDivision;
 //   Real(intArray[2]) = 2.0;
 //   Real(intArray[3]) = 2.0;
 // end ArrayDivision;
+// endResult

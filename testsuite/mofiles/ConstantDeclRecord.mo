@@ -13,6 +13,8 @@ model ConstantDeclRecord
   constant ConstantRecord cr(r = 2.0);
 end ConstantDeclRecord;
 
+// Result:
 // fclass ConstantDeclRecord
 // constant Real cr.r = 2.0;
 // end ConstantDeclRecord;
+// endResult

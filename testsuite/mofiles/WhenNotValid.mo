@@ -16,6 +16,7 @@ equation
   end when;   
 end WhenNotValid;
 
+// Result:
 // fclass WhenNotValid
 // Real x;
 // Real y;
@@ -25,3 +26,4 @@ end WhenNotValid;
 //   2.0 * x + y = 7.0;
 //   end when;
 // end WhenNotValid;
+// endResult

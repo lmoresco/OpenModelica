@@ -13,6 +13,7 @@ equation
   end for;
 end EquationFor7;
 
+// Result:
 // fclass EquationFor7
 // Real a[1,1];
 // Real a[1,2];
@@ -28,3 +29,4 @@ end EquationFor7;
 //   a[2,2] = 4.0;
 //   a[2,3] = 5.0;
 // end EquationFor7;
+// endResult

@@ -12,6 +12,7 @@ equation
   r2 = sign(-4711);
 end Sign;
 
+// Result:
 // fclass Sign
 // Real r1;
 // Real r2;
@@ -19,3 +20,4 @@ end Sign;
 //   r1 = 1.0;
 //   r2 = -1.0;
 // end Sign;
+// endResult

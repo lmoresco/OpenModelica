@@ -18,6 +18,7 @@ equation
   end when;
 end WhenSet;
 
+// Result:
 // fclass WhenSet
 // Real x;
 // parameter Real y2 = 3.0;
@@ -30,3 +31,4 @@ end WhenSet;
 //   y3 = 2.0 * x + (y1 + y2);
 //   end when;
 // end WhenSet;
+// endResult

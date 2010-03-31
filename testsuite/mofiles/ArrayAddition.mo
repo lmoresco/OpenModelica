@@ -13,6 +13,7 @@ equation
   intArray = intArray1 .+ intArray2;
 end ArrayAddition;
 
+// Result:
 // fclass ArrayAddition
 // constant Integer intArray1[1] = 4;
 // constant Integer intArray1[2] = 8;
@@ -28,3 +29,4 @@ end ArrayAddition;
 //   intArray[2] = 12;
 //   intArray[3] = 18;
 // end ArrayAddition;
+// endResult

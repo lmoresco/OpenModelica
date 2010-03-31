@@ -94,6 +94,31 @@ end FunctionEval9;
 //   y := 7.0 + x;
 // end test3;
 // 
+// Result:
+// function test
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 4.0 + cos(x);
+// end test;
+// 
+// function test2
+// input Real[3] a;
+// output Real[4] b;
+// algorithm
+//   for i in 1:3 loop
+//     b[i] := 2.0 * a<asub>[i];
+//   end for;
+//   b[4] := 3.0;
+// end test2;
+// 
+// function test3
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 7.0 + x;
+// end test3;
+// 
 // fclass FunctionEval9
 // parameter Real a = 5.0;
 // parameter Real b[1] = 1.0;
@@ -107,3 +132,4 @@ end FunctionEval9;
 //   y = test3(x1 + x2);
 //   z = test(y);
 // end FunctionEval9;
+// endResult

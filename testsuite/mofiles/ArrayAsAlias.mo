@@ -194,6 +194,7 @@ model ArrayAsAlias
 end ArrayAsAlias;
 
 
+// Result:
 // fclass ArrayAsAlias
 // parameter Boolean w.enableAnimation = true "= true, if animation of all components is enabled";
 // parameter Boolean w.animateWorld = true "= true, if world coordinate system shall be visualized";
@@ -245,3 +246,4 @@ end ArrayAsAlias;
 // parameter Real w.defaultN_to_m(unit = "N/m", min = 0.0) = 1000.0 "Default scaling of force arrows (length = force/defaultN_to_m)";
 // parameter Real w.defaultNm_to_m(unit = "N.m/m", min = 0.0) = 1000.0 "Default scaling of torque arrows (length = torque/defaultNm_to_m)";
 // end ArrayAsAlias;
+// endResult

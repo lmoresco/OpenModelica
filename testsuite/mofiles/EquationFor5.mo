@@ -13,6 +13,7 @@ equation
   end for;
 end EquationFor5;
 
+// Result:
 // fclass EquationFor5
 // Real a[1];
 // Real a[2];
@@ -22,3 +23,4 @@ end EquationFor5;
 //   a[2] = 1.0 + a[1];
 //   a[4] = 1.0 + a[3];
 // end EquationFor5;
+// endResult

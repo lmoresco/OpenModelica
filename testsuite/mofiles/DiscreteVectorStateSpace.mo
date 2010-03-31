@@ -30,6 +30,7 @@ equation
 end DVSSTest;
 
 
+// Result:
 // fclass DVSSTest
 // parameter Integer dvss.n = 5;
 // parameter Integer dvss.m = 4;
@@ -124,3 +125,4 @@ end DVSSTest;
 //   dvss.u[3] = time;
 //   dvss.u[4] = time;
 // end DVSSTest;
+// endResult

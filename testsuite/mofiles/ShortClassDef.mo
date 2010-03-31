@@ -11,6 +11,8 @@ end TestClass;
 
 class ShortClassDef = TestClass;
 
+// Result:
 // fclass ShortClassDef
 // Integer i1;
 // end ShortClassDef;
+// endResult

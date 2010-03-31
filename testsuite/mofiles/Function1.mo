@@ -18,6 +18,14 @@ equation
   y = f(z);
 end Function1;
 
+// Result:
+// function f
+// input Real x;
+// output Real r;
+// algorithm
+//   r := 2.0 * x;
+// end f;
+// 
 // fclass Function1
 // Real x;
 // Real y;
@@ -26,3 +34,4 @@ end Function1;
 //   x = f(z);
 //   y = f(z);
 // end Function1;
+// endResult

@@ -25,9 +25,11 @@ class InheritanceDiamond
   parameter Real finalReal;
 end InheritanceDiamond;
 
+// Result:
 // fclass InheritanceDiamond
 // parameter Real superReal = 2.0;
 // parameter Real baseReal1 = 2.0;
 // parameter Real baseReal2 = 3.0;
 // parameter Real finalReal;
 // end InheritanceDiamond;
+// endResult

@@ -27,6 +27,7 @@ end Switch;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass Switch
 // Real v;
 // Real i;
@@ -40,3 +41,4 @@ end Switch;
 //   1.0 - v - i = 0.0;
 //   open = time >= 0.5;
 // end Switch;
+// endResult

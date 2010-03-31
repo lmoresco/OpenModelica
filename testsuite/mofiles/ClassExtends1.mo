@@ -22,10 +22,12 @@ initial equation
 end ClassExtends1;
 
 // Result:
+// Result:
 // fclass ClassExtends1
 // Integer component.x = component.y;
 // parameter Integer component.y;
 // initial equation
 //   component.y = 5;
 // end ClassExtends1;
+// endResult
 // endResult

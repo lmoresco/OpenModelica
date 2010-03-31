@@ -71,6 +71,7 @@ end Oscillator;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass Oscillator
 // Real mass1.s(start = -0.5) "Absolute position s of center of component(s = flange_a.s + L/2 = flange_b.s - L/2)";
 // parameter Real mass1.L = 1 "Length L of component from left to right flange (L = flange_b.s - flange_a.s)";
@@ -109,4 +110,4 @@ end Oscillator;
 //  spring1.flange_b.s = fixed1.flange_b.s;
 //  mass1.flange_a.f = 0.0;
 // end Oscillator;
-
+// endResult

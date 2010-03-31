@@ -9,6 +9,7 @@ model ArrayOperators
   constant Real rarr4[2,2] = [5,6;7,8] .- [1,2;3,4];
 end ArrayOperators;
 
+// Result:
 // fclass ArrayOperators
 // constant Real rarr1[1,1] = 5.0;
 // constant Real rarr1[1,2] = 12.0;
@@ -27,3 +28,4 @@ end ArrayOperators;
 // constant Real rarr4[2,1] = 4.0;
 // constant Real rarr4[2,2] = 4.0;
 // end ArrayOperators;
+// endResult

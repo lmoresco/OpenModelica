@@ -31,6 +31,13 @@ model EngineSAAB95
   EngineModel.Engine engine2(data=EngineModel.SAAB95i(bore=3,stroke=5));
 end EngineSAAB95;
 
+// Result:
+// function EngineModel.SAAB95i "Automatically generated record constructor for EngineModel.SAAB95i"
+// input Real bore = 0.09;
+// input Real stroke = 0.09;
+// output SAAB95i res;
+// end EngineModel.SAAB95i;
+// 
 // fclass EngineSAAB95
 // parameter Real engine.data.bore = 0.09;
 // parameter Real engine.data.stroke = 0.09;
@@ -44,3 +51,4 @@ end EngineSAAB95;
 //   engine.displacement = 0.7853989 * (engine.data.bore ^ 2.0 * engine.data.stroke);
 //   engine2.displacement = 0.7853989 * (engine2.data.bore ^ 2.0 * engine2.data.stroke);
 // end EngineSAAB95;
+// endResult

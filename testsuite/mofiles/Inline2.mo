@@ -29,6 +29,7 @@ equation
   y = (2 + simpleInline(x)) * (simpleInline(x + 8) / 2);
 end Inline2;
 
+// Result:
 // fclass Inline2
 // Integer x;
 // Integer y;
@@ -36,3 +37,4 @@ end Inline2;
 //   x = 2;
 //   Real(y) = Real(32 + 4 * x) * Real(62 + 4 * x) / 2.0;
 // end Inline2;
+// endResult

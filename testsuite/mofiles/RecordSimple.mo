@@ -12,5 +12,7 @@ model RecordSimple
   TestRecord tr;
 end RecordSimple;
 
+// Result:
 // fclass RecordSimple
 // end RecordSimple;
+// endResult

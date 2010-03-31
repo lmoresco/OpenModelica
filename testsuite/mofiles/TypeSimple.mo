@@ -13,8 +13,10 @@ equation
   mt = 2;
 end TypeSimple;
 
+// Result:
 // fclass TypeSimple
 // Integer mt;
 // equation
 //   mt = 2;
 // end TypeSimple;
+// endResult

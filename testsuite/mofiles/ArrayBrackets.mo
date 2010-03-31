@@ -11,6 +11,7 @@ equation
   intArray = [1, 2, 3, 4, 5, 6, 7];
 end ArrayBrackets;
 
+// Result:
 // fclass ArrayBrackets
 // Integer intArray[1,1];
 // Integer intArray[1,2];
@@ -28,3 +29,4 @@ end ArrayBrackets;
 //   intArray[1,6] = 6;
 //   intArray[1,7] = 7;
 // end ArrayBrackets;
+// endResult

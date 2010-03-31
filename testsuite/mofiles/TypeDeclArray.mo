@@ -13,6 +13,7 @@ equation
   at = {1,2,3};
 end TypeDeclArray;
 
+// Result:
 // fclass TypeDeclArray
 // Real at[1];
 // Real at[2];
@@ -22,3 +23,4 @@ end TypeDeclArray;
 //   at[2] = 2.0;
 //   at[3] = 3.0;
 // end TypeDeclArray;
+// endResult

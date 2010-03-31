@@ -11,8 +11,10 @@ equation
   r = sinh(45);
 end Sinh;
 
+// Result:
 // fclass Sinh
 // Real r;
 // equation
 //   r = 1.74671355287425e+19;
 // end Sinh;
+// endResult

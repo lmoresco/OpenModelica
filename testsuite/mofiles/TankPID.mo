@@ -96,6 +96,16 @@ end TankPID;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
+// Result:
+// function limitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end limitValue;
+// 
 // fclass TankPID
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
@@ -133,3 +143,4 @@ end TankPID;
 // tank.tActuator.act = pidContinuous.cOut.act;
 // source.qOut.lflow = tank.qIn.lflow;
 // end TankPID;
+// endResult

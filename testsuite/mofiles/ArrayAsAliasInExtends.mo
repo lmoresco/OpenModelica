@@ -41,9 +41,18 @@ model ArrayAsAliasInExtends
 end ArrayAsAliasInExtends;
 
 
+// Result:
+// function Orientation.equalityConstraint
+// input Real[3] x(unit = "fish/s");
+// output Real y;
+// algorithm
+//   y := x[NowLetsSee.one] + x[NowLetsSee.two] + x[NowLetsSee.three];
+// end Orientation.equalityConstraint;
+// 
 // fclass ArrayAsAliasInExtends
 // parameter Real R1[1](unit = "fish/s") = 1.0;
 // parameter Real R1[2](unit = "fish/s") = 2.0;
 // parameter Real R1[3](unit = "fish/s") = 3.0;
 // Real x = 6.0;
 // end ArrayAsAliasInExtends;
+// endResult

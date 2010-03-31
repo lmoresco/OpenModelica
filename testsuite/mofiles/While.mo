@@ -15,6 +15,7 @@ algorithm
   end while;
 end While;
 
+// Result:
 // fclass While
 // Integer x;
 // Integer y;
@@ -24,3 +25,4 @@ end While;
 //     y := 1 + y;
 //   end while;
 // end While;
+// endResult

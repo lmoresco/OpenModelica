@@ -10,7 +10,9 @@ model NotEquals
   constant Boolean b2 = 5 <> 5;
 end NotEquals;
 
+// Result:
 // fclass NotEquals
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end NotEquals;
+// endResult

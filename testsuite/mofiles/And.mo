@@ -12,9 +12,11 @@ model And
   constant Boolean b4 = false and false;
 end And;
 
+// Result:
 // fclass And
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // constant Boolean b3 = false;
 // constant Boolean b4 = false;
 // end And;
+// endResult

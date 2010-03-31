@@ -21,6 +21,7 @@ equation
   x = 2e0;
 end FloatingPoint;
 
+// Result:
 // fclass FloatingPoint
 // constant Real r1 = 1.79769313486232e+308;
 // constant Real r2 = 2.2250738585072e-308;
@@ -36,3 +37,4 @@ end FloatingPoint;
 // equation
 //   x = 2.0;
 // end FloatingPoint;
+// endResult

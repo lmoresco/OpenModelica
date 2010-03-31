@@ -15,8 +15,10 @@ equation
   fc.r = 1.0;
 end FlowDeclConnector;
 
+// Result:
 // fclass FlowDeclConnector
 // Real fc.r;
 // equation
 //   fc.r = 1.0;
 // end FlowDeclConnector;
+// endResult

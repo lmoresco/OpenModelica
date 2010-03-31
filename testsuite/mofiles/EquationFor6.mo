@@ -13,6 +13,7 @@ equation
   end for;
 end EquationFor6;
 
+// Result:
 // fclass EquationFor6
 // Real a[1];
 // Real a[2];
@@ -22,3 +23,4 @@ end EquationFor6;
 //   a[2] = 2.0;
 //   a[3] = 3.0;
 // end EquationFor6;
+// endResult

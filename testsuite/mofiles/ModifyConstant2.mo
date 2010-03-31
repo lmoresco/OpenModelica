@@ -22,6 +22,7 @@ class ModifyConstant2
   C c;
 end ModifyConstant2;
 
+// Result:
 // fclass ModifyConstant2
 //   constant Real b.a.c;
 //   constant Real c.a.c;
@@ -29,3 +30,4 @@ end ModifyConstant2;
 //   b.a.c = 2.0;
 //   c.a.c = 1.0;
 // end ModifyConstant2;
+// endResult

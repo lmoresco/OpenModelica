@@ -28,6 +28,7 @@ equation
 end ConnectTypes;
 
 // Result
+// Result:
 // fclass ConnectTypes
 // Real a.c.e[1];
 // Integer a.c.d;
@@ -48,3 +49,4 @@ end ConnectTypes;
 // c.d = a.c.d;
 // c.e[1] = a.c.e[1];
 // end ConnectTypes;
+// endResult

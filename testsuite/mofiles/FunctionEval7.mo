@@ -63,6 +63,19 @@ end FunctionEval7;
 //   y := test3(x) + test3(4.0);
 // end test;
 // 
+// Result:
+// function test
+// input Real x;
+// output Real y;
+// algorithm
+//   y := test3(x) + test3(4.0);
+// end test;
+// 
+// function test3
+// input Real a;
+// output Real x = 5.0 + a;
+// end test3;
+// 
 // fclass FunctionEval7
 // parameter Real a = 5.0;
 // parameter Real b = sqrt(a);
@@ -72,3 +85,4 @@ end FunctionEval7;
 // equation
 //   y = test(x1 + x3);
 // end FunctionEval7;
+// endResult

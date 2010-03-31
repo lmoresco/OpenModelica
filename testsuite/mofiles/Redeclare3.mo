@@ -29,9 +29,11 @@ end Redeclare3;
 
 
 
+// Result:
 // fclass Redeclare3
 // Real c.x.x;
 // Real c.x.y = 1.0;
 // equation
 //   c.x.y = c.x.x;
 // end Redeclare3;
+// endResult

@@ -9,6 +9,8 @@ class Class4
   
 end;
 
+// Result:
 // fclass Class4
 // equation
 // end Class4;
+// endResult

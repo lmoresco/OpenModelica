@@ -9,6 +9,8 @@ model IntAdd
   constant Integer i = 4711 + 1138;
 end IntAdd;
 
+// Result:
 // fclass IntAdd
 // constant Integer i = 5849;
 // end IntAdd;
+// endResult

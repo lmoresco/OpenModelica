@@ -13,6 +13,7 @@ class OneReturnValue
                 // Matrix argument, result: [sin(1), sin(2); sin(3), sin(4)]
 end OneReturnValue;  
 
+// Result:
 // fclass OneReturnValue
 // Real a = 1.0;
 // Real b = 0.0;
@@ -25,3 +26,4 @@ end OneReturnValue;
 // Real s2[2,1] = 0.141120008059867;
 // Real s2[2,2] = -0.756802495307928;
 // end OneReturnValue;
+// endResult

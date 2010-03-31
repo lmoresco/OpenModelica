@@ -19,6 +19,7 @@ end Activate;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass Activate
 // constant Real x = 4;
 // Real y;
@@ -31,3 +32,4 @@ end Activate;
 //  z = 2.0;
 //  end when;
 // end Activate;
+// endResult

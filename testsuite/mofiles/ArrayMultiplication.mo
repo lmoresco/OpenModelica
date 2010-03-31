@@ -13,6 +13,7 @@ equation
   intArray = intArray1 .* intArray2;
 end ArrayMultiplication;
 
+// Result:
 // fclass ArrayMultiplication
 // constant Integer intArray1[1] = 4;
 // constant Integer intArray1[2] = 8;
@@ -28,3 +29,4 @@ end ArrayMultiplication;
 //   intArray[2] = 32;
 //   intArray[3] = 72;
 // end ArrayMultiplication;
+// endResult

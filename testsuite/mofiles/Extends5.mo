@@ -18,6 +18,15 @@ class Extends5
   constant Integer i = f(1);
 end Extends5;
 
+// Result:
+// function Extends5.f
+// input Integer i;
+// output Integer out;
+// algorithm
+//   out := i;
+// end Extends5.f;
+// 
 // fclass Extends5
 // constant Integer i = 1;
 // end Extends5;
+// endResult

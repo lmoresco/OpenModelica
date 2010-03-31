@@ -11,8 +11,10 @@ equation
   r = div(45, 4);
 end Div;
 
+// Result:
 // fclass Div
 // Real r;
 // equation
 //   r = 11.0;
 // end Div;
+// endResult

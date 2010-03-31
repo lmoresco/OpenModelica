@@ -17,6 +17,7 @@ equation
       x= pre(x)*A + B*u;
       y= A*pre(x) + B*u;
 end ArrayMulMatrixSimplifier;
+// Result:
 // fclass ArrayMulMatrixSimplifier
 // parameter Real A[1,1] = 1.0;
 // parameter Real A[1,2] = 0.0;
@@ -35,3 +36,4 @@ end ArrayMulMatrixSimplifier;
 //   y[1] = A[1,1] * pre(x[1]) + (A[1,2] * pre(x[2]) + B[1,1] * u[1]);
 //   y[2] = A[2,1] * pre(x[1]) + (A[2,2] * pre(x[2]) + B[2,1] * u[1]);
 // end ArrayMulMatrixSimplifier;
+// endResult

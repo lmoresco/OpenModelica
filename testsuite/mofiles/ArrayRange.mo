@@ -11,6 +11,7 @@ equation
   intArray = [1:2:14];
 end ArrayRange;
 
+// Result:
 // fclass ArrayRange
 // Integer intArray[1,1];
 // Integer intArray[2,1];
@@ -28,3 +29,4 @@ end ArrayRange;
 //   intArray[6,1] = 11;
 //   intArray[7,1] = 13;
 // end ArrayRange;
+// endResult

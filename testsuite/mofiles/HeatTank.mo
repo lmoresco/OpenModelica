@@ -50,5 +50,3 @@ equation
   outlet.temp = temp;
   
 end HeatTank;  
-
-

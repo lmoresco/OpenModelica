@@ -22,6 +22,7 @@ model DeclarationOrder1
   A.B b;
 end DeclarationOrder1;
 
+// Result:
 // fclass DeclarationOrder1
 // Real b.y(start=b.x);
 // parameter Real b.x = 3.14;
@@ -31,3 +32,4 @@ end DeclarationOrder1;
 
 
    
+// endResult

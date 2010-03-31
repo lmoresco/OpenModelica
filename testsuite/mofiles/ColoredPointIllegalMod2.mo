@@ -47,4 +47,3 @@ equation
                   //ColoredPoint
 
 end A;
-

@@ -20,6 +20,14 @@ equation
   y = f(x);
 end FunctionCall;
 
+// Result:
+// function f
+// input Integer x;
+// output Integer y;
+// algorithm
+//   y := 2 + x;
+// end f;
+// 
 // fclass FunctionCall
 // Integer x;
 // Integer y;
@@ -27,3 +35,4 @@ end FunctionCall;
 //   x = 2;
 //   y = f(x);
 // end FunctionCall;
+// endResult

@@ -20,6 +20,14 @@ equation
   y = f(x);
 end ExternalFunction2;
 
+// Result:
+// function f
+// input Real x;
+// output Real y;
+// 
+// external "C";
+// end f;
+// 
 // fclass ExternalFunction2
 // constant Real x[1] = 3.0;
 // constant Real x[2] = 4.0;
@@ -30,10 +38,6 @@ end ExternalFunction2;
 // Real y[3];
 // Real y[4];
 // equation
-//   y[1] = 9.0;
-//   y[2] = 12.0;
-//   y[3] = 15.0;
-//   y[4] = 18.0;
+//   y = f({3.0,4.0,5.0,6.0});
 // end ExternalFunction2;
-
-
+// endResult

@@ -11,6 +11,7 @@ class Real2Integer1
   Integer n = a;
 end Real2Integer1;
 
+// Result:
 // fclass Real2Integer1
 //   Real a;
 //   Integer n;
@@ -18,3 +19,4 @@ end Real2Integer1;
 //   a = 5.6;
 //   Real(n) = a;
 // end Real2Integer1;
+// endResult

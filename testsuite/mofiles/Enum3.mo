@@ -22,6 +22,7 @@ equation
    test = if Enum.e1 == Enum.e3 then Enum.e2 else Enum.e1;
 end Enumeration3;
 
+// Result:
 // fclass Enumeration3
 // parameter enumeration(e1, e2, e3)em = Enum.e1;
 // parameter enumeration(e3, e2, e1)en = N.Enum.e3;
@@ -29,3 +30,4 @@ end Enumeration3;
 // equation
 //   test = Enum.e1;
 // end Enumeration3;
+// endResult

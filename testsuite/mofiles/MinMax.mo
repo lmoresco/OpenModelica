@@ -11,6 +11,7 @@ model MinMax
 equation
   x= fill(1.0,max(n,m));
 end MinMax;
+// Result:
 // fclass MinMax
 // Real x[1];
 // Real x[2];
@@ -28,3 +29,4 @@ end MinMax;
 //   x[3] = 1.0;
 //   x[4] = 1.0;
 // end MinMax;
+// endResult

@@ -25,5 +25,3 @@ class A
   AccessDemo ad(a = 2, y = 7, w = 7); 
   // Illegal modifier of protected w, since AccessDemo is not inherited
 end A;
-
-

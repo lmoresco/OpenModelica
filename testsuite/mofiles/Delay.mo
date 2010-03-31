@@ -13,6 +13,7 @@ equation
   z = delay(y-1, 0.5, 1.0);
 end Delay;
 
+// Result:
 // fclass Delay
 // Real x;
 // Real y;
@@ -22,3 +23,4 @@ end Delay;
 //   x = delay(1.0 + y,2.5,2.5);
 //   z = delay(y - 1.0,0.5,1.0);
 // end Delay;
+// endResult

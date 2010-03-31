@@ -46,4 +46,3 @@ equation
   a = cp.blue;    //Should NOT work, since blue was protected from 
                   //the beginning.
 end A;
-

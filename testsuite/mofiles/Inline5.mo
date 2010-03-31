@@ -22,6 +22,7 @@ equation
   y = (2 + simpleInline(x)) * (simpleInline(x + 8) / 2);
 end Inline5;
 
+// Result:
 // fclass Inline5
 // Integer x;
 // Integer y;
@@ -29,3 +30,4 @@ end Inline5;
 //   x = 2;
 //   Real(y) = Real(2 + (5 + x - x) * x) * Real((13 + x - (8 + x)) * (8 + x)) / 2.0;
 // end Inline5;
+// endResult

@@ -11,6 +11,7 @@ model SimpleTypeExtend
   Real illegalReal;
 end SimpleTypeExtend;
 
+// Result:
 // fclass SimpleTypeExtend
 // parameter String unit = "";
 // parameter String quantity = "";
@@ -23,3 +24,4 @@ end SimpleTypeExtend;
 // parameter enumeration(never, avoid, default, prefer, always)stateSelect = StateSelect.default;
 // Real illegalReal;
 // end SimpleTypeExtend;
+// endResult

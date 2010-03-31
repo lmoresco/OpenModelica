@@ -20,6 +20,7 @@ equation
 end BouncingBall;
 
 
+// Result:
 // fclass BouncingBall
 // constant Real g = 9.81;
 // parameter Real c = 0.9;
@@ -33,3 +34,4 @@ end BouncingBall;
 //   reinit(velocity,(-c) * pre(velocity));
 //   end when;
 // end BouncingBall;
+// endResult

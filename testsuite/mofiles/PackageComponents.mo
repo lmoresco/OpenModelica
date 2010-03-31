@@ -19,8 +19,10 @@ equation
   tc.i = 1;
 end PackageComponents;
 
+// Result:
 // fclass PackageComponents
 // Integer tc.i;
 // equation
 //   tc.i = 1;
 // end PackageComponents;
+// endResult

@@ -124,6 +124,16 @@ end TankHybridPID;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end LimitValue;
 // 
+// Result:
+// function LimitValue
+// input Real pMin;
+// input Real pMax;
+// input Real p;
+// output Real pLim;
+// algorithm
+//   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
+// end LimitValue;
+// 
 // fclass TankHybridPID
 // Real source.qOut.lflow;
 // parameter Real source.flowLevel = 0.02;
@@ -163,3 +173,4 @@ end TankHybridPID;
 // tank.tActuator.act = pidDiscrete.cOut.act;
 // source.qOut.lflow = tank.qIn.lflow;
 // end TankHybridPID;
+// endResult

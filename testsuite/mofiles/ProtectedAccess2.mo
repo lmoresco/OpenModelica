@@ -17,8 +17,10 @@ equation
   tm.x = 3;
 end ProtectedAccess2;
 
+// Result:
 // fclass ProtectedAccess2
 // protected Integer tm.x = 2;
 // equation
 //   tm.x = 3;
 // end ProtectedAccess2;
+// endResult

@@ -30,6 +30,7 @@ model TwoRateSampler
 end TwoRateSampler;
    
 
+// Result:
 // fclass TwoRateSampler
 // discrete Real x;
 // discrete Real y;
@@ -49,3 +50,4 @@ end TwoRateSampler;
 //   slowSample = pre(cyCounter) == 0;
 //   end when;
 // end TwoRateSampler;
+// endResult

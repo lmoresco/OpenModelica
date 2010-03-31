@@ -13,6 +13,7 @@ algorithm
   end for;
 end ForSimple;
 
+// Result:
 // fclass ForSimple
 // Real rarr[1];
 // Real rarr[2];
@@ -23,3 +24,4 @@ end ForSimple;
 //     rarr[i] := 1.0 + Real(i);
 //   end for;
 // end ForSimple;
+// endResult

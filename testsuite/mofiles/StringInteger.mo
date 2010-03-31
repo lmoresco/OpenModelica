@@ -17,6 +17,7 @@ equation
   s3 = String(i);
 end StringInteger;
 
+// Result:
 // fclass StringInteger
 // String s1;
 // String s2;
@@ -28,3 +29,4 @@ end StringInteger;
 //   i = 1337;
 //   s3 = String(i,0,true,6);
 // end StringInteger;
+// endResult

@@ -11,8 +11,10 @@ equation
   r = tanh(45);
 end Tanh;
 
+// Result:
 // fclass Tanh
 // Real r;
 // equation
 //   r = 1.0;
 // end Tanh;
+// endResult

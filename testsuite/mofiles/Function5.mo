@@ -19,9 +19,18 @@ equation
   a = f(b);
 end Function5;
 
+// Result:
+// function f
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 2.0 * x;
+// end f;
+// 
 // fclass Function5
-//   Real a;
-//   Real b;
+// Real a;
+// Real b;
 // equation
 //   a = f(b);
 // end Function5;
+// endResult

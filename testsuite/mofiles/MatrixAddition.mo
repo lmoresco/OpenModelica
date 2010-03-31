@@ -21,6 +21,7 @@ equation
 end FahrzeugCon;
 
 
+// Result:
 // fclass FahrzeugCon
 // Real M[1];
 // Real M[2];
@@ -90,3 +91,4 @@ end FahrzeugCon;
 //   K[3,2] = C[3,2] - B[3,2];
 //   K[3,3] = C[3,3] - B[3,3];
 // end FahrzeugCon;
+// endResult

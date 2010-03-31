@@ -17,7 +17,9 @@ model Extends1
   B x;
 end Extends1;
 
+// Result:
 // fclass Extends1
 // Real x.a = 2.0;
 // Real x.b = 2.0;
 // end Extends1;
+// endResult

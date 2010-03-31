@@ -20,6 +20,7 @@ end ArrayIndex;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass ArrayIndex
 // Real A[1,1];
 // Real A[1,2];
@@ -42,3 +43,4 @@ end ArrayIndex;
 //   B[2,1] := 8.0;
 //   c := A[1,1];
 // end ArrayIndex;
+// endResult

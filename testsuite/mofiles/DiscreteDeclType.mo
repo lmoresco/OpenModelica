@@ -9,6 +9,8 @@ class DiscreteDeclType
   discrete Real rDiscrete = 1.0;
 end DiscreteDeclType;
 
+// Result:
 // fclass DiscreteDeclType
 // discrete Real rDiscrete = 1.0;
 // end DiscreteDeclType;
+// endResult

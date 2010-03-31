@@ -20,6 +20,7 @@ equation
   y = f(x);
 end FunctionReturn;
 
+// Result:
 // fclass FunctionReturn
 // Real x;
 // Real y;
@@ -28,3 +29,4 @@ end FunctionReturn;
 //   x = f(z);
 //   y = f(z);
 // end FunctionReturn;
+// endResult

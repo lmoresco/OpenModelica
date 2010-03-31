@@ -15,7 +15,9 @@ model ComponentNames
   Integer Integer = 2;
 end ComponentNames;
 
+// Result:
 // fclass ComponentNames
 // parameter Integer TestClass.x = 2;
 // Integer Integer = 2;
 // end ComponentNames;
+// endResult

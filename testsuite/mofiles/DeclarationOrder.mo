@@ -19,8 +19,10 @@ model DeclarationOrder
   Test t;
 end DeclarationOrder;
 
+// Result:
 // fclass DeclarationOrder
 // parameter Integer t.testComponent.x = 2;
 // Integer t.x = 3;
 // constant Integer t.y = 3;
 // end DeclarationOrder;
+// endResult

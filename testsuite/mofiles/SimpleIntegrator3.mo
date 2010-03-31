@@ -12,4 +12,3 @@ equation
   x.start = 2.0;
   der(x) = u;
 end SimpleIntegrator3;
-

@@ -15,4 +15,3 @@ equation
   Q[4:6, 1:3] = [Q[1:2, 1:3], -Q[3, 1:3]];	// ERROR!
   Q[4:6, 4:6] = P;	// OK!
 end BlockMatrix3;
-

@@ -23,6 +23,7 @@ model VectorizeExtendedType
 	parameter Axis n = {0, -1, 0};
 end VectorizeExtendedType;
 
+// Result:
 // fclass VectorizeExtendedType
 // parameter Real r1[1] = 1.0;
 // parameter Real r1[2] = 2.0;
@@ -38,3 +39,4 @@ end VectorizeExtendedType;
 // parameter Real n[2] = -1.0;
 // parameter Real n[3] = 0.0;
 // end VectorizeExtendedType;
+// endResult

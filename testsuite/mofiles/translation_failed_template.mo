@@ -8,4 +8,3 @@
 model <XXX>
     Integer x=1.0; // Illegal, translation should fail.
 end <XXX>;
-

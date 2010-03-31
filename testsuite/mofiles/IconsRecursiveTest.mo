@@ -16,6 +16,8 @@
    end Icons;
   end BaseClasses;
 
+// Result:
 // fclass BaseClasses
 // parameter Real p = 1.0;
 // end BaseClasses;
+// endResult

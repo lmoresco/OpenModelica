@@ -21,6 +21,7 @@ algorithm
 end Summation;
 
 
+// Result:
 // fclass Summation
 // Real sum;
 // Integer n;
@@ -39,3 +40,4 @@ end Summation;
 //     n := n - 1;
 //   end while;
 // end Summation;
+// endResult

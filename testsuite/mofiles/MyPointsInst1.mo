@@ -30,6 +30,7 @@ end MyPointsInst1;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
+// Result:
 // fclass MyPointsInst1
 // parameter Real pts.point1.x = 1;
 // parameter Real pts.point1.y = 2;
@@ -48,3 +49,4 @@ end MyPointsInst1;
 //   y = pts.point1.y;
 //   z = pts.point1.z;
 // end MyPointsInst1;
+// endResult

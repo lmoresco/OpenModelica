@@ -26,6 +26,7 @@ class PolyEvaluate2
 end PolyEvaluate2;
 
 
+// Result:
 // fclass PolyEvaluate2
 // Real p;
 // parameter Real polyeval.c[1] = 1.0;
@@ -46,3 +47,4 @@ end PolyEvaluate2;
 //   polyeval.xpowers[4] = polyeval.xpowers[3] * polyeval.x;
 //   polyeval.y = polyeval.c[1] * polyeval.xpowers[4];
 // end PolyEvaluate2;
+// endResult

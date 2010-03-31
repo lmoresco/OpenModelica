@@ -11,6 +11,7 @@ class AddSub1
   Real Sub1[3] = {1, 2, 3} - {1, 2, 0};    // Result: {0, 0, 3}
 end AddSub1; 
 
+// Result:
 // fclass AddSub1
 // Real Add3[1,1] = 2.0;
 // Real Add3[1,2] = 3.0;
@@ -20,3 +21,4 @@ end AddSub1;
 // Real Sub1[2] = 0.0;
 // Real Sub1[3] = 3.0;
 // end AddSub1;
+// endResult

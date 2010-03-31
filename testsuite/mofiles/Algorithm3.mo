@@ -12,9 +12,11 @@ algorithm
   x := i;
 end Algorithm3;
 
+// Result:
 // fclass Algorithm3
 // Integer i = integer(10.0 * time);
 // Real x;
 // algorithm
 //   x := Real(i);
 // end Algorithm3;
+// endResult

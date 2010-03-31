@@ -17,6 +17,7 @@ algorithm
   end for;
 end SumZ;
 
+// Result:
 // fclass SumZ
 // parameter Integer n = 5;
 // parameter Real z[1] = 10.0;
@@ -31,3 +32,4 @@ end SumZ;
 //     sum := sum + z[i];
 //   end for;
 // end SumZ;
+// endResult

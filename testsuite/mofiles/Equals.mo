@@ -10,7 +10,9 @@ model Equals
   constant Boolean b2 = 5 == 7;
 end Equals;
 
+// Result:
 // fclass Equals
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end Equals;
+// endResult

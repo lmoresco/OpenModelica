@@ -27,6 +27,7 @@ equation
 end FunctionBreak;
 
 
+// Result:
 // fclass FunctionBreak
 // Real x;
 // Real y;
@@ -34,3 +35,4 @@ end FunctionBreak;
 //   x = f(y);
 //   y = f(x);
 // end FunctionBreak;
+// endResult

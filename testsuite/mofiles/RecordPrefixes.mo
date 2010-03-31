@@ -16,8 +16,10 @@ equation
   tr.i = 1;
 end RecordPrefixes;
 
+// Result:
 // fclass RecordPrefixes
 // input Integer tr.i;
 // equation
 //   tr.i = 1;
 // end RecordPrefixes;
+// endResult

@@ -27,6 +27,7 @@ equation
   p = polyeval.y;              // p gets the result
 end PolyEvaluate1;
 
+// Result:
 // fclass PolyEvaluate1
 // Real p;
 // parameter Real polyeval.c[1] = 1.0;
@@ -49,3 +50,4 @@ end PolyEvaluate1;
 //   polyeval.x = time;
 //   p = polyeval.y;
 // end PolyEvaluate1;
+// endResult

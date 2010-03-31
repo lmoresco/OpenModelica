@@ -17,6 +17,7 @@ equation
   connect(tr1.i,tr2.i);
 end RecordConnections;
 
+// Result:
 // fclass RecordConnections
 // Integer tr1.i;
 // Integer tr2.i;
@@ -24,3 +25,4 @@ end RecordConnections;
 //   tr1.i = 3;
 // tr1.i = tr2.i;
 // end RecordConnections;
+// endResult

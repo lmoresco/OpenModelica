@@ -26,6 +26,7 @@ equation
   [y]=[u1;u2;u3];
 end Multiplex3;
 
+// Result:
 // fclass Multiplex3
 // parameter Integer n1 = 1 "dimension of input signal connector 1";
 // parameter Integer n2 = 1 "dimension of input signal connector 2";
@@ -41,3 +42,4 @@ end Multiplex3;
 //   y[2] = u2[1];
 //   y[3] = u3[1];
 // end Multiplex3;
+// endResult

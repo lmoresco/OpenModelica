@@ -44,6 +44,7 @@ model InnerClass1
   A a;
 end InnerClass1;
 
+// Result:
 // fclass InnerClass1
 // parameter Real b.x.p = 2;
 // Real b.a.x;
@@ -52,3 +53,4 @@ end InnerClass1;
 //   b.a.x = A.myfoo(time);
 //   a.x = A.myfoo(time);
 // end InnerClass1;
+// endResult

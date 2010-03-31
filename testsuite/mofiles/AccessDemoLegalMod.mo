@@ -28,6 +28,7 @@ equation
   u3 = q;  	// Legal, since u3 is public
 end B;
 
+// Result:
 // fclass B
 // parameter Real a = 2.0;
 // Real x;
@@ -47,3 +48,4 @@ end B;
 //   u2 = 5.0;
 //   u3 = 8.0;
 // end B;
+// endResult

@@ -9,7 +9,9 @@ class Constant5
   Real x[integer(2.5)];
 end Constant5;
 
+// Result:
 // fclass Constant5
 //   Real x[1];
 //   Real x[2];
 // end Constant5;
+// endResult

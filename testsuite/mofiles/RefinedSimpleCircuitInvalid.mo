@@ -88,4 +88,3 @@
     extends GeneralSimpleCircuit(redeclare Capacitor comp1(C=0.003), redeclare 
         Inductor comp2(L=0.0002));
   end RefinedSimpleCircuit;
-

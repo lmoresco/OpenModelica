@@ -12,6 +12,7 @@ model Array10
 end Array10;
 
 
+// Result:
 // fclass Array10
 // Real x[1] = 1.0;
 // Real x[2] = 2.0;
@@ -23,3 +24,4 @@ end Array10;
 // Real y[2,1] = 3.0;
 // Real y[2,2] = 4.0;
 // end Array10;
+// endResult

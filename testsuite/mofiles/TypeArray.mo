@@ -15,6 +15,7 @@ equation
   ia[3] = 3;
 end TypeArray;
 
+// Result:
 // fclass TypeArray
 // Integer ia[1];
 // Integer ia[2];
@@ -24,3 +25,4 @@ end TypeArray;
 //   ia[2] = 2;
 //   ia[3] = 3;
 // end TypeArray;
+// endResult

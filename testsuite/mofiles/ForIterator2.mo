@@ -22,6 +22,7 @@ end ForIterator2;
 // empty store
 // empty store
 // empty store
+// Result:
 // fclass ForIterator2
 // parameter Integer n = 3;
 // parameter Real r[1] = 1.0;
@@ -67,3 +68,4 @@ end ForIterator2;
 // parameter Real c[3].lengthDirection[2] = lines[3,1,2] - lines[3,2,2];
 // parameter Real c[3].lengthDirection[3] = lines[3,1,3] - lines[3,2,3];
 // end ForIterator2;
+// endResult

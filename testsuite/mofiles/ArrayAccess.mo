@@ -15,6 +15,7 @@ equation
   intArray2[3] = intArray1[3];
 end ArrayAccess;
 
+// Result:
 // fclass ArrayAccess
 // Integer intArray1[1];
 // Integer intArray1[2];
@@ -30,3 +31,4 @@ end ArrayAccess;
 //   intArray2[2] = intArray1[2];
 //   intArray2[3] = intArray1[3];
 // end ArrayAccess;
+// endResult

@@ -39,6 +39,19 @@ model DefaultRecordParameters
 end DefaultRecordParameters;
 
 
+// Result:
+// function BodyModel.Extended "Automatically generated record constructor for BodyModel.Extended"
+// input Real length = 0.09;
+// input Real volume = 2.1;
+// output Extended res;
+// end BodyModel.Extended;
+// 
+// function BodyModel.Extended2 "Automatically generated record constructor for BodyModel.Extended2"
+// input Real length = 5.0;
+// input Real volume = 6.0;
+// output Extended2 res;
+// end BodyModel.Extended2;
+// 
 // fclass DefaultRecordParameters
 // parameter Real body1.data.length = 0.09;
 // parameter Real body1.data.volume = 2.1;
@@ -57,3 +70,4 @@ end DefaultRecordParameters;
 //   body2.displacement = 0.7853989 * (body2.data.length * body2.data.volume);
 //   body3.displacement = 0.7853989 * (body3.data.length * body3.data.volume);
 // end DefaultRecordParameters;
+// endResult

@@ -11,3 +11,4 @@ equation
 	Div1 = {2, 4, 6} / 2;
 	// Result: {1, 2, 3}
 end ArrayDiv;
+// endResult

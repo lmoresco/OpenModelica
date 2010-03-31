@@ -42,7 +42,29 @@ package B
   Integer b = usePart(integer(time));
 end B;
 
+// endResult
 // Result:
+// function B.part
+// input Integer a;
+// output Integer b;
+// algorithm
+//   b := a;
+// end B.part;
+// 
+// function B.part2
+// input Integer a;
+// output Integer b;
+// algorithm
+//   b := a;
+// end B.part2;
+// 
+// function B.usePart
+// input Integer a;
+// output Integer b;
+// algorithm
+//   b := B.part2(B.part(a));
+// end B.usePart;
+// 
 // fclass B
 // constant Integer X = 1;
 // constant Integer Y = 1;

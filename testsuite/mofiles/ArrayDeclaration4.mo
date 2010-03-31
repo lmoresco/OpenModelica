@@ -10,5 +10,7 @@ model ArrayDeclaration4
   Real errArr[-2];
 end ArrayDeclaration4;
 
+// Result:
 // fclass ArrayDeclaration4
 // end ArrayDeclaration4;
+// endResult

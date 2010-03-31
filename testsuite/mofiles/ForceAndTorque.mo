@@ -47,6 +47,7 @@ equation
   connect(force.y, forceAndTorque.force);
 end ForceAndTorque;
 
+// Result:
 // fclass ForceAndTorque
 // input Real forceAndTorque.force[1](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
 // input Real forceAndTorque.force[2](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
@@ -71,3 +72,4 @@ end ForceAndTorque;
 // force[2].y = forceAndTorque.force[2];
 // force[3].y = forceAndTorque.force[3];
 // end ForceAndTorque;
+// endResult

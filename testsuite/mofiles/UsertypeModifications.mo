@@ -21,6 +21,7 @@ equation
   a2 = ones(3);
 end AliasType;
 
+// Result:
 // fclass AliasType
 // Real b[1](start = 2.0);
 // Real b[2](start = 2.0);
@@ -42,3 +43,4 @@ end AliasType;
 //   a2[2] = 1.0;
 //   a2[3] = 1.0;
 // end AliasType;
+// endResult

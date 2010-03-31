@@ -44,6 +44,28 @@ equation
   (i1,i2,r1,r2) = func(3);
 end ForIterator1;
 
+// Result:
+// function ForIterator1.func
+// input Integer x1;
+// output Integer y1;
+// output Integer y2;
+// output Real y3;
+// output Real y4;
+// Integer[4] arrFunc1;
+// Real[4] arrFunc2;
+// Integer[4, 3] arrFunc3;
+// Real[4, 3] arrFunc4;
+// algorithm
+//   _ := #VALUEBLOCK#;
+//   _ := #VALUEBLOCK#;
+//   _ := #VALUEBLOCK#;
+//   _ := #VALUEBLOCK#;
+//   y1 := 45;
+//   y2 := arrFunc1[1] + arrFunc3[3,2];
+//   y3 := arrFunc2[2];
+//   y4 := arrFunc4[2,2];
+// end ForIterator1.func;
+// 
 // fclass ForIterator1
 // Integer i1;
 // Integer i2;
@@ -132,3 +154,4 @@ end ForIterator1;
 //   arr4[5,3] = 45;
 //   (i1,i2,r1,r2) = (45,17,10.6,14.0);
 // end ForIterator1;
+// endResult

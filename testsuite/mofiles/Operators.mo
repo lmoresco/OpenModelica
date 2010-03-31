@@ -40,6 +40,14 @@ equation
   i3 = if b then 36 else 37;
 end Operators;
 
+// Result:
+// function f
+// input Integer inInt;
+// output Integer outInt;
+// algorithm
+//   outInt := 1138 + inInt;
+// end f;
+// 
 // fclass Operators
 // constant Integer unusedArray1[1] = 1;
 // constant Integer unusedArray1[2] = 2;
@@ -76,3 +84,4 @@ end Operators;
 //   i2 = f(i1);
 //   i3 = 36;
 // end Operators;
+// endResult

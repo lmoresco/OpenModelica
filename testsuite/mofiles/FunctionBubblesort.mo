@@ -32,23 +32,7 @@ equation
 end FunctionBubblesort;
 
  
-// function bubblesort
-// input Real x;
-// output Real y;
-// Real t;
-// algorithm
-//   y := x;
-//   for i in 1:size(x,1) loop
-//     for j in 1:size(x,1) loop
-//       if y[i] > y[j] then
-//         t := y[i];
-//         y[i] := y[j];
-//         y[j] := t;
-//       end if;
-//     end for;
-//   end for;
-// end bubblesort;
-// 
+// Result:
 // function bubblesort
 // input Real[:] x;
 // output Real[size(x,1)] y;
@@ -93,6 +77,4 @@ end FunctionBubblesort;
 //   b[7] = 0.0;
 //   b[8] = 0.0;
 // end FunctionBubblesort;
-// #-- Ceval.cevalBuiltinSize failed: x
-// #-- Ceval.cevalBuiltinSize failed: x
-// 
+// endResult

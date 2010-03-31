@@ -19,6 +19,7 @@ algorithm
   end while;
 end SumSeries;
 
+// Result:
 // fclass SumSeries
 // parameter Real eps = 1e-06;
 // Integer i;
@@ -33,3 +34,4 @@ end SumSeries;
 //     delta := exp(-0.01 * Real(i));
 //   end while;
 // end SumSeries;
+// endResult

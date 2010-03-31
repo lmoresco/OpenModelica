@@ -17,6 +17,7 @@ class Test2
   AssertTest assertTest(lowlimit = 6, highlimit = 20);
 end Test2;
 
+// Result:
 // fclass Test2
 // parameter Real assertTest.lowlimit = 6;
 // parameter Real assertTest.highlimit = 20;
@@ -25,3 +26,4 @@ end Test2;
 //   assertTest.x = 5.0;
 // assert(assertTest.x >= assertTest.lowlimit AND assertTest.x <= assertTest.highlimit,"Variable x out of limit");
 // end Test2;
+// endResult

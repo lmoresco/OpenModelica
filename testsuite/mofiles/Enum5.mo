@@ -23,6 +23,7 @@ model Enumeration5
 end Enumeration5;
 
 
+// Result:
 // fclass Enumeration5
 // Real t.hh[1];
 // Real t.hh[2];
@@ -38,3 +39,4 @@ end Enumeration5;
 //   tt.hh[E.b1] = 2.0;
 //   tt.hh[E.c1] = 3.0;
 // end Enumeration5;
+// endResult

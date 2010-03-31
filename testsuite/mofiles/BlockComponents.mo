@@ -20,6 +20,7 @@ equation
   i = tb.outInt;
 end BlockComponents;
 
+// Result:
 // fclass BlockComponents
 // Integer i;
 // input Integer tb.inInt;
@@ -29,3 +30,4 @@ end BlockComponents;
 //   tb.inInt = 3;
 //   i = tb.outInt;
 // end BlockComponents;
+// endResult

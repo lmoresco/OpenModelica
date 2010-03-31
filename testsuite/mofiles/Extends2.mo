@@ -23,6 +23,8 @@ model test2
   extends A;
 end test2;
 
+// Result:
 // fclass test2
 // Real adapter.x;
 // end test2;
+// endResult

@@ -54,6 +54,7 @@ equation
 end Step;                        // From Modelica.Blocks.Sources  
 
 
+// Result:
 // fclass Step
 // parameter Integer nout = 1 "Number of outputs";
 // parameter Integer outPort.n = nout "Dimension of signal vector";
@@ -68,3 +69,4 @@ end Step;                        // From Modelica.Blocks.Sources
 // equation
 //   outPort.signal[1] = p_offset[1] + (if time < p_startTime[1] then 0.0 else p_height[1]);
 // end Step;
+// endResult

@@ -11,8 +11,10 @@ model NumericFunctions
   constant Real r3 = sqrt(49);
 end NumericFunctions;
 
+// Result:
 // fclass NumericFunctions
 // constant Real r1 = 2.5;
 // constant Real r2 = -1.0;
 // constant Real r3 = 7.0;
 // end NumericFunctions;
+// endResult

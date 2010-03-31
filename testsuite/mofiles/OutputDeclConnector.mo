@@ -15,8 +15,10 @@ equation
   oc.r = 1.0;
 end OutputDeclConnector;
 
+// Result:
 // fclass OutputDeclConnector
 // output Real oc.r;
 // equation
 //   oc.r = 1.0;
 // end OutputDeclConnector;
+// endResult

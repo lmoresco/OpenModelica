@@ -30,6 +30,7 @@ equation
   z = inlineTwoArgs(x, inlineTwoArgs(x, simpleInline(y)));
 end Inline4;
 
+// Result:
 // fclass Inline4
 // Integer x;
 // Integer y;
@@ -39,3 +40,4 @@ end Inline4;
 //   y = 4 + x;
 //   z = inlineTwoArgs(x,inlineTwoArgs(x,simpleInline(y)));
 // end Inline4;
+// endResult

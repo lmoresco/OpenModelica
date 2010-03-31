@@ -9,6 +9,8 @@ class ParameterDeclType
   parameter Real rParameter = 1.0;
 end ParameterDeclType;
 
+// Result:
 // fclass ParameterDeclType
 // parameter Real rParameter = 1.0;
 // end ParameterDeclType;
+// endResult

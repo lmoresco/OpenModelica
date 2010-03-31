@@ -23,6 +23,16 @@ algorithm
   (y, z) := F(x);
 end AssignmentFunctionMultiple1;
 
+// Result:
+// function F
+// input Real inReal;
+// output Real outReal1;
+// output Real outReal2;
+// algorithm
+//   outReal1 := 2.0 + inReal;
+//   outReal2 := 4.0 + inReal;
+// end F;
+// 
 // fclass AssignmentFunctionMultiple1
 // Real x;
 // Real y;
@@ -31,3 +41,4 @@ end AssignmentFunctionMultiple1;
 //   x := 2.0;
 //   (y, z) := F(x);
 // end AssignmentFunctionMultiple1;
+// endResult

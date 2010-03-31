@@ -44,8 +44,24 @@ end PositionalCall;
 //   end for;
 // end PolynomialEvaluator;
 // 
+// Result:
+// function PolynomialEvaluator1
+// input Real[:] A;
+// input Real x = 1.0;
+// output Real sum;
+// protected Real xpower;
+// algorithm
+//   sum := 0.0;
+//   xpower := 1.0;
+//   for i in 1:size(A,1) loop
+//     sum := sum + A<asub>[i] * xpower;
+//     xpower := xpower * x;
+//   end for;
+// end PolynomialEvaluator1;
+// 
 // fclass PositionalCall
 // Real p;
 // equation
 //   p = 38410.0;
 // end PositionalCall;
+// endResult

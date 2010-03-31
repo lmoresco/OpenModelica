@@ -17,6 +17,7 @@ equation
 end Enumeration8;
 
 
+// Result:
 // fclass Enumeration8
 // parameter String s = String(Enum.test2,0,true,6);
 // Real x;
@@ -25,3 +26,4 @@ end Enumeration8;
 //   der(x) = x;
 //   ss = String(Enum.test1,0,true,6);
 // end Enumeration8;
+// endResult

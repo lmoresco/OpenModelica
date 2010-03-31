@@ -46,6 +46,7 @@ equation
   a = cp.x;       //Should work since x is public
 end A;
 
+// Result:
 // fclass A
 // Real a;
 // Real b;
@@ -63,3 +64,4 @@ end A;
 // end A;
 // Warning: Parameter cp.x has no value, and is fixed during initialization (fixed=true)
 // 
+// endResult

@@ -33,6 +33,7 @@ equation
 end ArrayDim4;
 
 
+// Result:
 // fclass ArrayDim4
 // parameter Integer n = 1;
 // parameter Integer m = 2;
@@ -65,3 +66,4 @@ end ArrayDim4;
 //   arr3d[1,2,2] = 5;
 //   arr3d[1,2,3] = 6;
 // end ArrayDim4;
+// endResult
