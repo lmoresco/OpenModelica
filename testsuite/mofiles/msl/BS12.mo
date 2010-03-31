@@ -1253,3 +1253,63 @@ end BS12;
 // assert(trapezoid1.outPort.n == der1.inPort.n,"automatically generated from connect");
 // trapezoid1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS12;
+// Result:
+// fclass BS12
+// parameter Integer trapezoid1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer trapezoid1.outPort.n = trapezoid1.nout "Dimension of signal vector";
+// output Real trapezoid1.outPort.signal[1] "Real output signals";
+// output Real trapezoid1.y[1];
+// parameter Real trapezoid1.amplitude[1] = 1.0 "Amplitudes of trapezoids";
+// parameter Real trapezoid1.rising[1](quantity = "Time", unit = "s", min = 0.0) = 0.0 "Rising durations of trapezoids";
+// parameter Real trapezoid1.width[1](quantity = "Time", unit = "s", min = 0.0) = 0.5 "Width durations of trapezoids";
+// parameter Real trapezoid1.falling[1](quantity = "Time", unit = "s", min = 0.0) = 0.0 "Falling durations of trapezoids";
+// parameter Real trapezoid1.period[1](quantity = "Time", unit = "s", min = 1e-60) = 1.0 "Time for one period";
+// parameter Integer trapezoid1.nperiod[1] = -1 "Number of periods (< 0 means infinite number of periods)";
+// parameter Real trapezoid1.offset[1] = 0.0 "Offsets of output signals";
+// parameter Real trapezoid1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+// protected parameter Real trapezoid1.p_amplitude[1] = trapezoid1.amplitude[1];
+// protected parameter Real trapezoid1.T_rising[1](quantity = "Time", unit = "s") = trapezoid1.rising[1] "End time of rising phase within one period";
+// protected parameter Real trapezoid1.T_width[1](quantity = "Time", unit = "s") = trapezoid1.T_rising[1] + trapezoid1.width[1] "End time of width phase within one period";
+// protected parameter Real trapezoid1.T_falling[1](quantity = "Time", unit = "s") = trapezoid1.T_width[1] + trapezoid1.falling[1] "End time of falling phase within one period";
+// protected parameter Real trapezoid1.p_period[1](quantity = "Time", unit = "s") = trapezoid1.period[1] "Duration of one period";
+// protected parameter Real trapezoid1.p_offset[1] = trapezoid1.offset[1];
+// protected parameter Real trapezoid1.p_startTime[1](quantity = "Time", unit = "s") = trapezoid1.startTime[1];
+// protected Real trapezoid1.T0[1](quantity = "Time", unit = "s", start = trapezoid1.p_startTime[1]) "Start time of current period";
+// protected Integer trapezoid1.counter[1](start = trapezoid1.nperiod[1]) "Period counter";
+// protected Integer trapezoid1.counter2[1](start = trapezoid1.nperiod[1]);
+// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+// input Real der1.inPort.signal[1] "Real input signals";
+// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+// output Real der1.outPort.signal[1] "Real output signals";
+// output Real der1.y[1] "Output signals";
+// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
+// equation
+//   when pre(trapezoid1.counter2[1]) <> 0 AND sample(trapezoid1.p_startTime[1],trapezoid1.p_period[1]) then
+//   trapezoid1.T0[1] = time;
+//   trapezoid1.counter2[1] = pre(trapezoid1.counter[1]);
+//   trapezoid1.counter[1] = pre(trapezoid1.counter[1]) - (if pre(trapezoid1.counter[1]) > 0 then 1 else 0);
+//   end when;
+//   trapezoid1.outPort.signal[1] = trapezoid1.p_offset[1] + (if time < trapezoid1.p_startTime[1] OR trapezoid1.counter2[1] == 0 OR time >= trapezoid1.T0[1] + trapezoid1.T_falling[1] then 0.0 else if time < trapezoid1.T0[1] + trapezoid1.T_rising[1] then ((time - trapezoid1.T0[1]) * trapezoid1.p_amplitude[1]) / trapezoid1.T_rising[1] else if time < trapezoid1.T0[1] + trapezoid1.T_width[1] then trapezoid1.p_amplitude[1] else ((trapezoid1.T0[1] + trapezoid1.T_falling[1] - time) * trapezoid1.p_amplitude[1]) / (trapezoid1.T_falling[1] - trapezoid1.T_width[1]));
+//   trapezoid1.y[1] = trapezoid1.outPort.signal[1];
+//   der1.y[1] = der(der1.u[1]);
+//   der1.y[1] = der1.outPort.signal[1];
+// assert(trapezoid1.outPort.n == der1.inPort.n,"automatically generated from connect");
+// trapezoid1.outPort.signal[1] = der1.inPort.signal[1];
+// end BS12;
+// [BS12.mo:691:11-692:30:readonly] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:689:11-690:42:readonly] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:687:11-688:40:readonly] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:685:11-686:41:readonly] Warning: Variable trapezoid1.rising: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:687:11-688:40:readonly] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:689:11-690:42:readonly] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
+// 
+// [BS12.mo:691:11-692:30:readonly] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// 
+// 
+// endResult

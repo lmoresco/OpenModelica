@@ -975,3 +975,32 @@ end BM27;
 // twoInputs1.inPort1.signal[1] = constant1.outPort.signal[1];
 // twoInputs1.inPort2.signal[1] = constant2.outPort.signal[1];
 // end BM27;
+// Result:
+// fclass BM27
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// parameter Integer twoInputs1.n = 1 "number of input signals";
+// parameter Integer twoInputs1.inPort1.n = twoInputs1.n "Dimension of signal vector";
+// input Real twoInputs1.inPort1.signal[1] "Real input signals";
+// parameter Integer twoInputs1.inPort2.n = twoInputs1.n "Dimension of signal vector";
+// input Real twoInputs1.inPort2.signal[1] "Real input signals";
+// parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
+// output Real constant2.outPort.signal[1] "Real output signals";
+// output Real constant2.y[1];
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
+// equation
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   twoInputs1.inPort1.signal[1] = twoInputs1.inPort2.signal[1];
+//   constant2.outPort.signal[1] = constant2.k[1];
+//   constant2.y[1] = constant2.outPort.signal[1];
+// assert(twoInputs1.inPort2.n == constant2.outPort.n,"automatically generated from connect");
+// assert(twoInputs1.inPort1.n == constant1.outPort.n,"automatically generated from connect");
+// twoInputs1.inPort1.signal[1] = constant1.outPort.signal[1];
+// twoInputs1.inPort2.signal[1] = constant2.outPort.signal[1];
+// end BM27;
+// endResult

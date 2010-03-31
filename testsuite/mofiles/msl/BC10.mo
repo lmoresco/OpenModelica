@@ -999,3 +999,40 @@ end BC10;
 // assert(constant1.outPort.n == stateSpace1.inPort.n,"automatically generated from connect");
 // constant1.outPort.signal[1] = stateSpace1.inPort.signal[1];
 // end BC10;
+// Result:
+// fclass BC10
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 2.0 "Constant output values";
+// parameter Integer stateSpace1.nin = 1 "Number of inputs";
+// parameter Integer stateSpace1.nout = 1 "Number of outputs";
+// parameter Integer stateSpace1.inPort.n = stateSpace1.nin "Dimension of signal vector";
+// input Real stateSpace1.inPort.signal[1] "Real input signals";
+// parameter Integer stateSpace1.outPort.n = stateSpace1.nout "Dimension of signal vector";
+// output Real stateSpace1.outPort.signal[1] "Real output signals";
+// output Real stateSpace1.y[1] "Output signals";
+// protected Real stateSpace1.u[1] = stateSpace1.inPort.signal[1] "Input signals";
+// parameter Real stateSpace1.A[1,1] = 1.0 "Matrix A of state space model";
+// parameter Real stateSpace1.A[1,2] = 0.0 "Matrix A of state space model";
+// parameter Real stateSpace1.A[2,1] = 0.0 "Matrix A of state space model";
+// parameter Real stateSpace1.A[2,2] = 1.0 "Matrix A of state space model";
+// parameter Real stateSpace1.B[1,1] = 1.0 "Matrix B of state space model";
+// parameter Real stateSpace1.B[2,1] = 1.0 "Matrix B of state space model";
+// parameter Real stateSpace1.C[1,1] = 1.0 "Matrix C of state space model";
+// parameter Real stateSpace1.C[1,2] = 1.0 "Matrix C of state space model";
+// parameter Real stateSpace1.D[1,1] = 0.0 "Matrix D of state space model";
+// output Real stateSpace1.x[1] "State vector";
+// output Real stateSpace1.x[2] "State vector";
+// equation
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   der(stateSpace1.x[1]) = stateSpace1.A[1,1] * stateSpace1.x[1] + (stateSpace1.A[1,2] * stateSpace1.x[2] + stateSpace1.B[1,1] * stateSpace1.u[1]);
+//   der(stateSpace1.x[2]) = stateSpace1.A[2,1] * stateSpace1.x[1] + (stateSpace1.A[2,2] * stateSpace1.x[2] + stateSpace1.B[2,1] * stateSpace1.u[1]);
+//   stateSpace1.y[1] = stateSpace1.C[1,1] * stateSpace1.x[1] + (stateSpace1.C[1,2] * stateSpace1.x[2] + stateSpace1.D[1,1] * stateSpace1.u[1]);
+//   stateSpace1.y[1] = stateSpace1.outPort.signal[1];
+// assert(constant1.outPort.n == stateSpace1.inPort.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = stateSpace1.inPort.signal[1];
+// end BC10;
+// endResult

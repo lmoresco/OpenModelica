@@ -962,3 +962,28 @@ end BC4;
 // assert(constant1.outPort.n == integrator1.inPort.n,"automatically generated from connect");
 // constant1.outPort.signal[1] = integrator1.inPort.signal[1];
 // end BC4;
+// Result:
+// fclass BC4
+// parameter Integer integrator1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer integrator1.inPort.n = integrator1.n "Dimension of signal vector";
+// input Real integrator1.inPort.signal[1] "Real input signals";
+// parameter Integer integrator1.outPort.n = integrator1.n "Dimension of signal vector";
+// output Real integrator1.outPort.signal[1] "Real output signals";
+// output Real integrator1.y[1](start = integrator1.y0[1]) "Output signals";
+// protected Real integrator1.u[1] = integrator1.inPort.signal[1] "Input signals";
+// parameter Real integrator1.k[1] = 1.0 "Integrator gains";
+// parameter Real integrator1.y0[1] = 0.0 "Start values of integrators";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// equation
+//   der(integrator1.y[1]) = integrator1.k[1] * integrator1.u[1];
+//   integrator1.y[1] = integrator1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(constant1.outPort.n == integrator1.inPort.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = integrator1.inPort.signal[1];
+// end BC4;
+// endResult

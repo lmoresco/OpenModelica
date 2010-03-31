@@ -1091,3 +1091,33 @@ end BM9;
 // assert(constant1.outPort.n == cosh1.inPort.n,"automatically generated from connect");
 // constant1.outPort.signal[1] = cosh1.inPort.signal[1];
 // end BM9;
+// Result:
+// function Modelica.Math.cosh
+// input Real u;
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.cosh;
+// 
+// fclass BM9
+// parameter Integer cosh1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer cosh1.inPort.n = cosh1.n "Dimension of signal vector";
+// input Real cosh1.inPort.signal[1] "Real input signals";
+// parameter Integer cosh1.outPort.n = cosh1.n "Dimension of signal vector";
+// output Real cosh1.outPort.signal[1] "Real output signals";
+// output Real cosh1.y[1] "Output signals";
+// protected Real cosh1.u[1] = cosh1.inPort.signal[1] "Input signals";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// equation
+//   cosh1.y[1] = Modelica.Math.cosh(cosh1.u[1]);
+//   cosh1.y[1] = cosh1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(constant1.outPort.n == cosh1.inPort.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = cosh1.inPort.signal[1];
+// end BM9;
+// endResult

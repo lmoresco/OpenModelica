@@ -997,3 +997,26 @@ end BM20;
 // assert(constant1.outPort.n == sign1.inPort.n,"automatically generated from connect");
 // constant1.outPort.signal[1] = sign1.inPort.signal[1];
 // end BM20;
+// Result:
+// fclass BM20
+// parameter Integer sign1.n = 1 "Number of inputs (= number of outputs)";
+// parameter Integer sign1.inPort.n = sign1.n "Dimension of signal vector";
+// input Real sign1.inPort.signal[1] "Real input signals";
+// parameter Integer sign1.outPort.n = sign1.n "Dimension of signal vector";
+// output Real sign1.outPort.signal[1] "Real output signals";
+// output Real sign1.y[1] "Output signals";
+// protected Real sign1.u[1] = sign1.inPort.signal[1] "Input signals";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// equation
+//   sign1.y[1] = sign(sign1.u[1]);
+//   sign1.y[1] = sign1.outPort.signal[1];
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+// assert(constant1.outPort.n == sign1.inPort.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = sign1.inPort.signal[1];
+// end BM20;
+// endResult

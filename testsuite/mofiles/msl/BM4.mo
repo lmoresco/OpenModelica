@@ -1033,3 +1033,48 @@ end BM4;
 // constant2.outPort.signal[1] = add31.inPort2.signal[1];
 // constant3.outPort.signal[1] = add31.inPort3.signal[1];
 // end BM4;
+// Result:
+// fclass BM4
+// parameter Real add31.k1 = 1.0 "Gain of upper input";
+// parameter Real add31.k2 = 1.0 "Gain of middle input";
+// parameter Real add31.k3 = 1.0 "Gain of lower input";
+// parameter Integer add31.n = 1 "Dimension of input and output vectors.";
+// parameter Integer add31.inPort1.n = add31.n "Dimension of signal vector";
+// input Real add31.inPort1.signal[1] "Real input signals";
+// parameter Integer add31.inPort2.n = add31.n "Dimension of signal vector";
+// input Real add31.inPort2.signal[1] "Real input signals";
+// parameter Integer add31.inPort3.n = add31.n "Dimension of signal vector";
+// input Real add31.inPort3.signal[1] "Real input signals";
+// parameter Integer add31.outPort.n = add31.n "Dimension of signal vector";
+// output Real add31.outPort.signal[1] "Real output signals";
+// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+// output Real constant1.outPort.signal[1] "Real output signals";
+// output Real constant1.y[1];
+// parameter Real constant1.k[1] = 1.0 "Constant output values";
+// parameter Integer constant2.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant2.outPort.n = constant2.nout "Dimension of signal vector";
+// output Real constant2.outPort.signal[1] "Real output signals";
+// output Real constant2.y[1];
+// parameter Real constant2.k[1] = 1.0 "Constant output values";
+// parameter Integer constant3.nout(min = 1) = 1 "Number of outputs";
+// parameter Integer constant3.outPort.n = constant3.nout "Dimension of signal vector";
+// output Real constant3.outPort.signal[1] "Real output signals";
+// output Real constant3.y[1];
+// parameter Real constant3.k[1] = 1.0 "Constant output values";
+// equation
+//   add31.outPort.signal[1] = add31.k1 * add31.inPort1.signal[1] + (add31.k2 * add31.inPort2.signal[1] + add31.k3 * add31.inPort3.signal[1]);
+//   constant1.outPort.signal[1] = constant1.k[1];
+//   constant1.y[1] = constant1.outPort.signal[1];
+//   constant2.outPort.signal[1] = constant2.k[1];
+//   constant2.y[1] = constant2.outPort.signal[1];
+//   constant3.outPort.signal[1] = constant3.k[1];
+//   constant3.y[1] = constant3.outPort.signal[1];
+// assert(constant3.outPort.n == add31.inPort3.n,"automatically generated from connect");
+// assert(constant2.outPort.n == add31.inPort2.n,"automatically generated from connect");
+// assert(constant1.outPort.n == add31.inPort1.n,"automatically generated from connect");
+// constant1.outPort.signal[1] = add31.inPort1.signal[1];
+// constant2.outPort.signal[1] = add31.inPort2.signal[1];
+// constant3.outPort.signal[1] = add31.inPort3.signal[1];
+// end BM4;
+// endResult
