@@ -1,22 +1,19 @@
-.PHONY : all failingtest test fast fast.logs mathcore-mofiles.log mathcore-msl.log drmodelica.log mofiles.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log
+.PHONY : all failingtest test fast fast.logs mathcore-mofiles.log drmodelica.log mofiles.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log
 
 all : test
 test : libraries.log fast.logs
-	@cat mathcore-mofiles.log mathcore-msl.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
+	@cat mathcore-mofiles.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
 	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 fast : fast.logs
-	@cat mathcore-mofiles.log mathcore-msl.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log
+	@cat mathcore-mofiles.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log
 	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
-fast.logs: mosfiles.log mosfiles-msl22.log meta.log mofiles.log msl.log mathcore-mofiles.log mmdev.log mathcore-msl.log drmodelica.log mosfiles-nosim.log records.log
+fast.logs: mosfiles.log mosfiles-msl22.log meta.log mofiles.log msl.log mathcore-mofiles.log mmdev.log drmodelica.log mosfiles-nosim.log records.log
 # java should probably also be part of 'fast'
 libraries.log:
 	$(MAKE) -C libraries -f Makefile test > $@
 	@echo $@ done
 mathcore-mofiles.log:
 	$(MAKE) -C mathcore-mofiles -f Makefile test > mathcore-mofiles.log
-	@echo $@ done
-mathcore-msl.log:
-	$(MAKE) -C mathcore-mofiles/msl -f Makefile test > mathcore-msl.log
 	@echo $@ done
 drmodelica.log:
 	$(MAKE) -C mathcore-mofiles/drmodelica -f Makefile test > drmodelica.log
