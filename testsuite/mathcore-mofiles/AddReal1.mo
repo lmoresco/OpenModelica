@@ -1,5 +1,6 @@
 // name:     AddReal1
 // keywords: external function, equation
+// cflags:   +d=nogen
 // status:   correct
 
 
