@@ -12,6 +12,8 @@ class Declaration1
 end Declaration1;
 
 // Result:
+// [Declaration1.mo:11:12-11:27:writable] Error: unexpected token: constant, parsing resumed at token ';' on line 11, column 27
+// 
 // fclass Declaration1
 // end Declaration1;
 // endResult

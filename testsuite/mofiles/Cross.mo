@@ -17,7 +17,6 @@ equation
 end Cross;
 
 // Result:
-// Result:
 // fclass Cross
 // Real x[1];
 // Real x[2];
@@ -45,5 +44,4 @@ end Cross;
 //   zi[2] = xi[3] * yi[1] - xi[1] * yi[3];
 //   zi[3] = xi[1] * yi[2] - xi[2] * yi[1];
 // end Cross;
-// endResult
 // endResult

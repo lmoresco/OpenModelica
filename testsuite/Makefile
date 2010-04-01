@@ -11,26 +11,37 @@ fast.logs: mosfiles.log mofiles.log meta.log msl.log mathcore-mofiles.log mmdev.
 # java should probably also be part of 'fast'
 libraries.log:
 	$(MAKE) -C libraries -f Makefile test > $@
+	@echo $@ done
 mathcore-mofiles.log:
 	$(MAKE) -C mathcore-mofiles -f Makefile test > mathcore-mofiles.log
+	@echo $@ done
 mathcore-msl.log:
 	$(MAKE) -C mathcore-mofiles/msl -f Makefile test > mathcore-msl.log
+	@echo $@ done
 drmodelica.log:
 	$(MAKE) -C mathcore-mofiles/drmodelica -f Makefile test > drmodelica.log
+	@echo $@ done
 mofiles.log:
 	$(MAKE) -C mofiles -f Makefile test > mofiles.log
+	@echo $@ done
 msl.log:
 	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
+	@echo $@ done
 mosfiles.log:
 	$(MAKE) -C mosfiles -f Makefile test > $@
+	@echo $@ done
 meta.log:
 	$(MAKE) -C meta -f Makefile test > $@
+	@echo $@ done
 mmdev.log:
 	$(MAKE) -C meta/MetaModelicaDev -f Makefile.omc test > $@
+	@echo $@ done
 records.log:
 	$(MAKE) -C records -f Makefile test > $@
+	@echo $@ done
 java.log:
 	$(MAKE) -C java -f Makefile test > $@
+	@echo $@ done
 	
 failingtest:
 	cd mofiles; $(MAKE) -f Makefile failingtest; \

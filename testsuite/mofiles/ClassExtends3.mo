@@ -42,7 +42,6 @@ package B
   Integer b = usePart(integer(time));
 end B;
 
-// endResult
 // Result:
 // function B.part
 // input Integer a;

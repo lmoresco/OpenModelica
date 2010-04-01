@@ -36,6 +36,8 @@ end ConstructParameters1;
 // end fc;
 // 
 // Result:
+// [ConstructParameters1.mo:25:18-25:37:writable] Error: unexpected token: (, parsing resumed at token ';' on line 25, column 37
+// 
 // fclass ConstructParameters1
 // parameter Real p1 = 2.0;
 // parameter Real p2 = 3.0;
