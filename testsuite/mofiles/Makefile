@@ -4,7 +4,8 @@ TESTFILES=\
 Abs.mo Abs2.mo AddReal1.mo \
 Algorithm1.mo Algorithm2.mo Algorithm3.mo \
 AlgorithmFor1.mo AlgorithmFor2.mo AlgorithmFor3.mo AlgorithmFor4.mo AlgorithmFor5.mo AlgorithmFor6.mo \
-Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo Array11.mo Array12.mo Array13.mo \
+Array1.mo Array2.mo Array8.mo Array9.mo Array10.mo \
+Array11.mo Array12.mo Array13.mo Array14.mo Array15.mo \
 Array_builtin.mo ArrayMatrixSimplifier.mo ArrayModification11.mo \
 ArrayModification5.mo ArrayModification6.mo ArrayModification8.mo ArrayMulMatrixSimplifier.mo ArraySlice1.mo \
 ArrayExtend.mo ArrayRemoveIndex1.mo ArrayOperators.mo \
