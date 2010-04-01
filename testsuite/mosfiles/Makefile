@@ -8,7 +8,6 @@ AlgorithmSection.mos \
 algorithms.mos \
 ArrayAddSub1.mos ArrayDivError.mos \
 ArrayEquation.mos ArrayMult.mos ArrayReduce.mos \
-blockssources.mos blockssystems.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 BuiltinMath.mos \
@@ -55,14 +54,12 @@ PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
 Reductions.mos \
 Riccati.mos \
-rotationalsystems.mos rotationalgears.mos \
-rotationalspringinertia.mos \
 Sample1.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
-simulation.mos simulation2.mos simulation3.mos \
+simulation.mos \
 StepAdvanced.mos \
- StringTest.mos \
+StringTest.mos \
 SumSeriesWhile.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TanksConnectedPI.mos TankHybridPID.mos TankHybridPI.mos \
