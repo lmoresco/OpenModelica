@@ -88,7 +88,8 @@ SRCMO= Absyn.mo \
 	InstanceHierarchy.mo \
 	ExpandableConnectors.mo \
 	InnerOuter.mo \
-	ConnectUtil.mo
+	ConnectUtil.mo \
+	Dependency.mo
 
 # These are externally defined MO modules
 ALLMO = $(SRCMO) DAEEXT.mo DynLoad.mo Print.mo RTOpts.mo System.mo Parser.mo \
