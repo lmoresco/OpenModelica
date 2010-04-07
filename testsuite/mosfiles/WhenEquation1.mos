@@ -1,0 +1,36 @@
+// name:     WhenEquation1
+// keywords: when
+// status:   correct
+// 
+// Conditional Equations with when-Equations and elsewhen-Equations
+// 
+
+loadFile("WhenEquation1.mo");
+simulate(WhenEquation1);
+val(pos,0.0);
+val(pos,0.2);
+val(pos,0.4);
+val(pos,0.8);
+val(pos,1.0);
+val(toggle,0.2);
+val(toggle,0.4);
+val(toggle,0.8);
+readFile("output.log");
+system("rm -rf WhenEquation1 WhenEquation1.exe WhenEquation1.cpp WhenEquation1.make WhenEquation1_* output.log");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "WhenEquation1_res.plt"
+// end SimulationResult;
+// 0.0
+// 1.0
+// 2.0
+// 3.0
+// 4.0
+// 1.0
+// -1.0
+// 1.0
+// ""
+// 0
+// endResult

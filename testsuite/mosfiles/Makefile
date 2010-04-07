@@ -67,7 +67,7 @@ tempInterpol2test.mos \
 Time.mos \
 TwoRateSampler.mos \
 val.mos \
-WhenEquation.mos \
+WhenEquation.mos WhenEquation1.mos \
 WhenStatement1.mos WhenStatement2.mos WhenStatement3.mos whenstatements.mos \
 Xpowers1.mos Xpowers2.mos Xpowers3.mos  \
 when_sorting.mos EventIteration.mos \
