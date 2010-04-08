@@ -73,7 +73,8 @@ NOTE:
 Setting your environment for compiling OpenModelica
 ===================================================
   Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
-  ( Ubuntu: $ export ANTLRHOME=/usr/ )
+  ( Note: We default to /usr/, so if you use e.g. the Ubuntu pre-built package,
+    you can skip this. )
 
   Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
 
