@@ -2315,7 +2315,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real spring2.spring.c(quantity = "TranslationalSpringConstant", unit = "N/m", min = 0.0, start = 1.0) = spring2.c "spring constant ";
 // parameter Real spring2.spring.s_rel0(quantity = "Length", unit = "m", min = 0.0) = spring2.s_unstretched "unstretched spring length";
 // initial equation
-//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint(body.body.frame_a.R,body.body.R_start);
+//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Quaternions.Orientation.equalityConstraint({body.body.Q[1],body.body.Q[2],body.body.Q[3],body.body.Q[4]},{body.body.Q_start[1],body.body.Q_start[2],body.body.Q_start[3],body.body.Q_start[4]});
 // equation
 //   world.x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(world.x_arrowLine.shapeType);
 //   world.x_arrowLine.rxvisobj[1] = world.x_arrowLine.R.T[1,1] * world.x_arrowLine.e_x[1] + (world.x_arrowLine.R.T[2,1] * world.x_arrowLine.e_x[2] + world.x_arrowLine.R.T[3,1] * world.x_arrowLine.e_x[3]);
@@ -2798,7 +2798,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body.body.r_0[1] = body.body.frame_a.r_0[1];
 //   body.body.r_0[2] = body.body.frame_a.r_0[2];
 //   body.body.r_0[3] = body.body.frame_a.r_0[3];
-//   if true then
+//   if false then
 //   body.body.Q[1] = 0.0;
 //   body.body.Q[2] = 0.0;
 //   body.body.Q[3] = 0.0;
@@ -3021,7 +3021,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   spring2.lineForce.ag_CM_0[3] = 0.0;
 //   spring2.lineForce.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring2.lineForce.frame_a.R,{spring2.lineForce.fa * spring2.lineForce.e_rel_0[1],spring2.lineForce.fa * spring2.lineForce.e_rel_0[2],spring2.lineForce.fa * spring2.lineForce.e_rel_0[3]});
 //   spring2.lineForce.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring2.lineForce.frame_b.R,{spring2.lineForce.fb * spring2.lineForce.e_rel_0[1],spring2.lineForce.fb * spring2.lineForce.e_rel_0[2],spring2.lineForce.fb * spring2.lineForce.e_rel_0[3]});
-//   if true then
+//   if false then
 //   spring2.lineForce.frame_a.R.w[3] = 0.0;
 //   spring2.lineForce.frame_a.R.w[2] = 0.0;
 //   spring2.lineForce.frame_a.R.w[1] = 0.0;
