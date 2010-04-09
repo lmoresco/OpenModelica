@@ -65,7 +65,7 @@ InheritanceSimple.mo InheritanceSeveral.mo InheritanceClassMod.mo \
 InheritanceMultiple.mo InheritanceProtected.mo InheritancePublic.mo \
 InheritanceDiamond.mo \
 Integer2Real.mo \
-MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo \
+MathematicalFunctions.mo Matrix1.mo MatrixBrackets.mo MatrixPow.mo\
 MatrixAddition.mo \
 ModelAccess.mo \
 ModelSimple.mo BlockSimple.mo BlockComponents.mo BlockIllegal.mo FunctionSimple.mo \
