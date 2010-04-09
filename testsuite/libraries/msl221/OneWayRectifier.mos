@@ -5,7 +5,7 @@
 //  instantiate OneWayRectifier BondLib Spice example
 //
 
-loadFile("OneWayRectifierTotal.mo");
+loadFile("/home/per/workspace/modelica/testsuite/libraries/msl221/OneWayRectifierTotal.mo");
 instantiateModel(BondLib_Examples_ModelicaSpice_OneWayRectifier);
 getErrorString();
 
@@ -3658,6 +3658,5 @@ getErrorString();
 // D1.p.v = L1.n.v;
 // end BondLib_Examples_ModelicaSpice_OneWayRectifier;
 // "
-// "Error: Division by zero in IBVval / Ibreak
-// "
+// ""
 // endResult

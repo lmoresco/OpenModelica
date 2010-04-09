@@ -1456,6 +1456,5 @@ getErrorString();
 // end BondLib_Examples_ModelicaSpice_OneWayRectifierBG;
 // "
 // "Warning: Parameter BVval has no value, and is fixed during initialization (fixed=true)
-// Error: Division by zero in IBVval / Ibreak
 // "
 // endResult
