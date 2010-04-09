@@ -5,7 +5,7 @@
 //  instantiate OneWayRectifier BondLib Spice example
 //
 
-loadFile("/home/per/workspace/modelica/testsuite/libraries/msl221/OneWayRectifierTotal.mo");
+loadFile("OneWayRectifierTotal.mo");
 instantiateModel(BondLib_Examples_ModelicaSpice_OneWayRectifier);
 getErrorString();
 
