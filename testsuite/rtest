@@ -277,7 +277,7 @@ sub runone
       close LOG;
 
       if ($mismatch) {
-          print "equation mismatch\n";
+          print "equation mismatch [time:$end_t]\n";
           return 1;
       }
       }

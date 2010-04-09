@@ -3978,7 +3978,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   wheelSet.body2.r_0[1] = wheelSet.body2.frame_a.r_0[1];
 //   wheelSet.body2.r_0[2] = wheelSet.body2.frame_a.r_0[2];
 //   wheelSet.body2.r_0[3] = wheelSet.body2.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   wheelSet.body2.Q[1] = 0.0;
 //   wheelSet.body2.Q[2] = 0.0;
 //   wheelSet.body2.Q[3] = 0.0;
@@ -4067,7 +4067,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   wheelSet.body1.r_0[1] = wheelSet.body1.frame_a.r_0[1];
 //   wheelSet.body1.r_0[2] = wheelSet.body1.frame_a.r_0[2];
 //   wheelSet.body1.r_0[3] = wheelSet.body1.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   wheelSet.body1.Q[1] = 0.0;
 //   wheelSet.body1.Q[2] = 0.0;
 //   wheelSet.body1.Q[3] = 0.0;
