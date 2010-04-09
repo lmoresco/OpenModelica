@@ -5000,7 +5000,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body2.r_0[1] = body2.frame_a.r_0[1];
 //   body2.r_0[2] = body2.frame_a.r_0[2];
 //   body2.r_0[3] = body2.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   body2.Q[1] = 0.0;
 //   body2.Q[2] = 0.0;
 //   body2.Q[3] = 0.0;
@@ -5446,7 +5446,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   lineForceWithTwoMasses.aux2_0[3] = lineForceWithTwoMasses.aux1_0[3] - (lineForceWithTwoMasses.aux1_0[1] * lineForceWithTwoMasses.e_rel_0[1] + (lineForceWithTwoMasses.aux1_0[2] * lineForceWithTwoMasses.e_rel_0[2] + lineForceWithTwoMasses.aux1_0[3] * lineForceWithTwoMasses.e_rel_0[3])) * lineForceWithTwoMasses.e_rel_0[3];
 //   lineForceWithTwoMasses.frame_a.f = Modelica.Mechanics.MultiBody.Frames.resolve2(lineForceWithTwoMasses.frame_a.R,{lineForceWithTwoMasses.m_a * lineForceWithTwoMasses.ag_CM1_0[1] - lineForceWithTwoMasses.aux2_0[1] - lineForceWithTwoMasses.fa * lineForceWithTwoMasses.e_rel_0[1],lineForceWithTwoMasses.m_a * lineForceWithTwoMasses.ag_CM1_0[2] - lineForceWithTwoMasses.aux2_0[2] - lineForceWithTwoMasses.fa * lineForceWithTwoMasses.e_rel_0[2],lineForceWithTwoMasses.m_a * lineForceWithTwoMasses.ag_CM1_0[3] - lineForceWithTwoMasses.aux2_0[3] - lineForceWithTwoMasses.fa * lineForceWithTwoMasses.e_rel_0[3]});
 //   lineForceWithTwoMasses.frame_b.f = Modelica.Mechanics.MultiBody.Frames.resolve2(lineForceWithTwoMasses.frame_b.R,{lineForceWithTwoMasses.m_b * lineForceWithTwoMasses.ag_CM2_0[1] + lineForceWithTwoMasses.aux2_0[1] - lineForceWithTwoMasses.fb * lineForceWithTwoMasses.e_rel_0[1],lineForceWithTwoMasses.m_b * lineForceWithTwoMasses.ag_CM2_0[2] + lineForceWithTwoMasses.aux2_0[2] - lineForceWithTwoMasses.fb * lineForceWithTwoMasses.e_rel_0[2],lineForceWithTwoMasses.m_b * lineForceWithTwoMasses.ag_CM2_0[3] + lineForceWithTwoMasses.aux2_0[3] - lineForceWithTwoMasses.fb * lineForceWithTwoMasses.e_rel_0[3]});
-//   if true then
+//   if false then
 //   lineForceWithTwoMasses.frame_a.R.w[3] = 0.0;
 //   lineForceWithTwoMasses.frame_a.R.w[2] = 0.0;
 //   lineForceWithTwoMasses.frame_a.R.w[1] = 0.0;

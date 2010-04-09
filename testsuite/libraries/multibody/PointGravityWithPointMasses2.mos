@@ -5528,7 +5528,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pointMass2.sphere.size[3] = pointMass2.sphere.height;
 //   pointMass2.sphere.Material = Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial(pointMass2.sphere.color[1] / 255.0,pointMass2.sphere.color[2] / 255.0,pointMass2.sphere.color[3] / 255.0,pointMass2.sphere.specularCoefficient);
 //   pointMass2.sphere.Extra = pointMass2.sphere.extra;
-//   if true then
+//   if false then
 // assert(false,"
 // A Modelica.Mechanics.MultiBody.Parts.PointMass model is connected in
 // a way, so that no equations are present to compute frame_a.R
@@ -5594,7 +5594,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pointMass3.sphere.size[3] = pointMass3.sphere.height;
 //   pointMass3.sphere.Material = Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial(pointMass3.sphere.color[1] / 255.0,pointMass3.sphere.color[2] / 255.0,pointMass3.sphere.color[3] / 255.0,pointMass3.sphere.specularCoefficient);
 //   pointMass3.sphere.Extra = pointMass3.sphere.extra;
-//   if true then
+//   if false then
 // assert(false,"
 // A Modelica.Mechanics.MultiBody.Parts.PointMass model is connected in
 // a way, so that no equations are present to compute frame_a.R
@@ -5660,7 +5660,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pointMass4.sphere.size[3] = pointMass4.sphere.height;
 //   pointMass4.sphere.Material = Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial(pointMass4.sphere.color[1] / 255.0,pointMass4.sphere.color[2] / 255.0,pointMass4.sphere.color[3] / 255.0,pointMass4.sphere.specularCoefficient);
 //   pointMass4.sphere.Extra = pointMass4.sphere.extra;
-//   if true then
+//   if false then
 // assert(false,"
 // A Modelica.Mechanics.MultiBody.Parts.PointMass model is connected in
 // a way, so that no equations are present to compute frame_a.R
@@ -5726,7 +5726,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pointMass5.sphere.size[3] = pointMass5.sphere.height;
 //   pointMass5.sphere.Material = Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial(pointMass5.sphere.color[1] / 255.0,pointMass5.sphere.color[2] / 255.0,pointMass5.sphere.color[3] / 255.0,pointMass5.sphere.specularCoefficient);
 //   pointMass5.sphere.Extra = pointMass5.sphere.extra;
-//   if true then
+//   if false then
 // assert(false,"
 // A Modelica.Mechanics.MultiBody.Parts.PointMass model is connected in
 // a way, so that no equations are present to compute frame_a.R
@@ -5792,7 +5792,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pointMass6.sphere.size[3] = pointMass6.sphere.height;
 //   pointMass6.sphere.Material = Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial(pointMass6.sphere.color[1] / 255.0,pointMass6.sphere.color[2] / 255.0,pointMass6.sphere.color[3] / 255.0,pointMass6.sphere.specularCoefficient);
 //   pointMass6.sphere.Extra = pointMass6.sphere.extra;
-//   if true then
+//   if false then
 // assert(false,"
 // A Modelica.Mechanics.MultiBody.Parts.PointMass model is connected in
 // a way, so that no equations are present to compute frame_a.R
@@ -6371,7 +6371,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   referenceSystem.pointMass2.r_0[1] = referenceSystem.pointMass2.frame_a.r_0[1];
 //   referenceSystem.pointMass2.r_0[2] = referenceSystem.pointMass2.frame_a.r_0[2];
 //   referenceSystem.pointMass2.r_0[3] = referenceSystem.pointMass2.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   referenceSystem.pointMass2.Q[1] = 0.0;
 //   referenceSystem.pointMass2.Q[2] = 0.0;
 //   referenceSystem.pointMass2.Q[3] = 0.0;
@@ -6478,7 +6478,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   referenceSystem.pointMass3.r_0[1] = referenceSystem.pointMass3.frame_a.r_0[1];
 //   referenceSystem.pointMass3.r_0[2] = referenceSystem.pointMass3.frame_a.r_0[2];
 //   referenceSystem.pointMass3.r_0[3] = referenceSystem.pointMass3.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   referenceSystem.pointMass3.Q[1] = 0.0;
 //   referenceSystem.pointMass3.Q[2] = 0.0;
 //   referenceSystem.pointMass3.Q[3] = 0.0;
@@ -6585,7 +6585,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   referenceSystem.pointMass4.r_0[1] = referenceSystem.pointMass4.frame_a.r_0[1];
 //   referenceSystem.pointMass4.r_0[2] = referenceSystem.pointMass4.frame_a.r_0[2];
 //   referenceSystem.pointMass4.r_0[3] = referenceSystem.pointMass4.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   referenceSystem.pointMass4.Q[1] = 0.0;
 //   referenceSystem.pointMass4.Q[2] = 0.0;
 //   referenceSystem.pointMass4.Q[3] = 0.0;
@@ -6692,7 +6692,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   referenceSystem.pointMass5.r_0[1] = referenceSystem.pointMass5.frame_a.r_0[1];
 //   referenceSystem.pointMass5.r_0[2] = referenceSystem.pointMass5.frame_a.r_0[2];
 //   referenceSystem.pointMass5.r_0[3] = referenceSystem.pointMass5.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   referenceSystem.pointMass5.Q[1] = 0.0;
 //   referenceSystem.pointMass5.Q[2] = 0.0;
 //   referenceSystem.pointMass5.Q[3] = 0.0;
@@ -6799,7 +6799,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   referenceSystem.pointMass6.r_0[1] = referenceSystem.pointMass6.frame_a.r_0[1];
 //   referenceSystem.pointMass6.r_0[2] = referenceSystem.pointMass6.frame_a.r_0[2];
 //   referenceSystem.pointMass6.r_0[3] = referenceSystem.pointMass6.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   referenceSystem.pointMass6.Q[1] = 0.0;
 //   referenceSystem.pointMass6.Q[2] = 0.0;
 //   referenceSystem.pointMass6.Q[3] = 0.0;

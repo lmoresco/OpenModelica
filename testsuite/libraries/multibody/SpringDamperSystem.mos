@@ -2886,7 +2886,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // protected output Real damper1.shape_b.Material;
 // protected output Real damper1.shape_b.Extra;
 // initial equation
-//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint(body1.frame_a.R,body1.R_start);
+//   {0.0,0.0,0.0} = Modelica.Mechanics.MultiBody.Frames.Quaternions.Orientation.equalityConstraint({body1.Q[1],body1.Q[2],body1.Q[3],body1.Q[4]},{body1.Q_start[1],body1.Q_start[2],body1.Q_start[3],body1.Q_start[4]});
 // equation
 //   world.x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(world.x_arrowLine.shapeType);
 //   world.x_arrowLine.rxvisobj[1] = world.x_arrowLine.R.T[1,1] * world.x_arrowLine.e_x[1] + (world.x_arrowLine.R.T[2,1] * world.x_arrowLine.e_x[2] + world.x_arrowLine.R.T[3,1] * world.x_arrowLine.e_x[3]);
@@ -3236,7 +3236,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body1.r_0[1] = body1.frame_a.r_0[1];
 //   body1.r_0[2] = body1.frame_a.r_0[2];
 //   body1.r_0[3] = body1.frame_a.r_0[3];
-//   if true then
+//   if false then
 //   body1.Q[1] = 0.0;
 //   body1.Q[2] = 0.0;
 //   body1.Q[3] = 0.0;
@@ -3433,7 +3433,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body2.r_0[1] = body2.frame_a.r_0[1];
 //   body2.r_0[2] = body2.frame_a.r_0[2];
 //   body2.r_0[3] = body2.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   body2.Q[1] = 0.0;
 //   body2.Q[2] = 0.0;
 //   body2.Q[3] = 0.0;

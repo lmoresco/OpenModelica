@@ -3031,7 +3031,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   spring1.lineForce.ag_CM_0[3] = 0.0;
 //   spring1.lineForce.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring1.lineForce.frame_a.R,{spring1.lineForce.fa * spring1.lineForce.e_rel_0[1],spring1.lineForce.fa * spring1.lineForce.e_rel_0[2],spring1.lineForce.fa * spring1.lineForce.e_rel_0[3]});
 //   spring1.lineForce.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring1.lineForce.frame_b.R,{spring1.lineForce.fb * spring1.lineForce.e_rel_0[1],spring1.lineForce.fb * spring1.lineForce.e_rel_0[2],spring1.lineForce.fb * spring1.lineForce.e_rel_0[3]});
-//   if true then
+//   if false then
 //   spring1.lineForce.frame_a.R.w[3] = 0.0;
 //   spring1.lineForce.frame_a.R.w[2] = 0.0;
 //   spring1.lineForce.frame_a.R.w[1] = 0.0;
@@ -3049,7 +3049,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   spring1.lineForce.frame_a.t[2] = 0.0;
 //   spring1.lineForce.frame_a.t[3] = 0.0;
 //   end if;
-//   if false then
+//   if true then
 //   spring1.lineForce.frame_b.R.w[3] = 0.0;
 //   spring1.lineForce.frame_b.R.w[2] = 0.0;
 //   spring1.lineForce.frame_b.R.w[1] = 0.0;
@@ -3362,7 +3362,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   spring3.lineForce.ag_CM_0[3] = 0.0;
 //   spring3.lineForce.frame_a.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring3.lineForce.frame_a.R,{spring3.lineForce.fa * spring3.lineForce.e_rel_0[1],spring3.lineForce.fa * spring3.lineForce.e_rel_0[2],spring3.lineForce.fa * spring3.lineForce.e_rel_0[3]});
 //   spring3.lineForce.frame_b.f = -Modelica.Mechanics.MultiBody.Frames.resolve2(spring3.lineForce.frame_b.R,{spring3.lineForce.fb * spring3.lineForce.e_rel_0[1],spring3.lineForce.fb * spring3.lineForce.e_rel_0[2],spring3.lineForce.fb * spring3.lineForce.e_rel_0[3]});
-//   if true then
+//   if false then
 //   spring3.lineForce.frame_a.R.w[3] = 0.0;
 //   spring3.lineForce.frame_a.R.w[2] = 0.0;
 //   spring3.lineForce.frame_a.R.w[1] = 0.0;

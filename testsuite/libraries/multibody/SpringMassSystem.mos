@@ -3041,7 +3041,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body1.r_0[1] = body1.frame_a.r_0[1];
 //   body1.r_0[2] = body1.frame_a.r_0[2];
 //   body1.r_0[3] = body1.frame_a.r_0[3];
-//   if false then
+//   if true then
 //   body1.Q[1] = 0.0;
 //   body1.Q[2] = 0.0;
 //   body1.Q[3] = 0.0;
