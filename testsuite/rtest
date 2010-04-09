@@ -366,7 +366,7 @@ sub dofile
     }
 
     if (!$setbaseline) {
-      printf(" %s %-31s... ",
+      printf(" %s %-82s... ",
          $info{'status'} eq 'correct'?'+':'-', $info{'name'});
     }
     $total = $total + 1;
