@@ -53,4 +53,6 @@ end inn;
 //   (-ip.i) + io.y.i = 0.0;
 //   ip.i = 0.0;
 // end inn;
+// [modifyOuter.mo:24:2-24:9:readonly] Warning: Variable io.la: Ignoring the modification on outer element: io.la.ip (i = 3), class or component i
+// 
 // endResult
