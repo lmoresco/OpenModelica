@@ -699,6 +699,5 @@ getErrorString();
 // compositeStep.compositeStep11.exitStep.subgraphStatePort.suspend = compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.suspend;
 // end Modelica.StateGraph.Examples.ShowExceptions;
 // "
-// "Error: Variable stateGraphRoot in package Modelica.StateGraph.Examples.Utilities.CompositeStep2 is not constant
-// "
+// ""
 // endResult

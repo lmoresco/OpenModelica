@@ -815,6 +815,5 @@ getErrorString();
 //   end when;
 // end Modelica.StateGraph.Examples.ControlledTanks;
 // "
-// "Error: Variable stateGraphRoot in package Modelica.StateGraph.Examples.Utilities.MakeProduct is not constant
-// "
+// ""
 // endResult
