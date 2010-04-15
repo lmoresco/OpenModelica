@@ -1,0 +1,22 @@
+// name: Graphical-API
+// keywords: Graphical API, Parameters
+// status: correct
+// 
+//  Subset of the Graphical API for accessing components
+//
+
+loadFile("interactive_test.mo"); getErrorString();
+getComponentCount(P.A);          getErrorString();
+getNthComponent(P.A, 1);         getErrorString();
+getNthComponent(P.B, 1);         getErrorString();
+
+// Result:
+// true
+// ""
+// 1
+// ""
+// {Real,t1," some comment "}
+// ""
+// {Real,t2,"some other comment"}
+// ""
+// endResult

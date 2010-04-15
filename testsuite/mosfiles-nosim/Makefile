@@ -31,8 +31,8 @@ variables.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
 ModifierProblem.mos \
 TransformerYY.mos \
-AIMC_DOL.mos
-
+AIMC_DOL.mos \
+interactive_test.mos 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
