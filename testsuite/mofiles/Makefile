@@ -33,7 +33,7 @@ DependsMutual.mo DependsRecursive.mo Discrete1.mo Discrete2.mo DocString.mo \
 EngineSAAB95Total.mo Each1.mo \
 Enum1.mo Enum2.mo Enum3.mo Enum4.mo Enum5.mo Enum6.mo Enum8.mo Enum9.mo \
 Extends1.mo Extends2.mo Extends3.mo Extends4.mo Extends5.mo Extends6.mo Extends7.mo Extends8.mo \
-FinalParameterModification.mo \
+FinalParameterModification.mo FixedFinalParameter.mo \
 FunctionEval1.mo FunctionEval2.mo FunctionEval3.mo FunctionEval4.mo  \
 FunctionEval7.mo FunctionEval8.mo FunctionEval9.mo \
 FunctionEvalBuiltin.mo FunctionBubblesort.mo FunctionSimplex.mo \
