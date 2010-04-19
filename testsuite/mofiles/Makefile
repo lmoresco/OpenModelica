@@ -132,6 +132,7 @@ FiveForEquations.mo \
 HideVariableForEquations.mo IfEquation.mo \
 WhenEquation.mo WhenVectorPredicateEquation.mo \
 WhenVectorPredicateEquation.mo WhenValidResult.mo WhenValidResult.mo \
+WhenNested.mo WhenElseNested.mo \
 PolynomialEvaluatorA.mo \
 PolynomialEvaluatorB.mo StepAdvanced.mo \
 AlgorithmSection.mo WhenStatement1.mo \
