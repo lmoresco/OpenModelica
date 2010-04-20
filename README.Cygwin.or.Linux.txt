@@ -51,19 +51,22 @@ You need:
         you need readline and Qt dev stuff to compile omc and mosh (OMShell)
         $ sudo aptitude install libreadline5-dev libsoqt4-dev
     liblpsolve55
-        you need to copy this library from the Compiler runtime
-        For 32-bit Linux:
-        $ sudo cp Compiler/runtime/lpsolve/lib/linux/liblpsolve55.so /usr/local/lib
-        $ sudo ldconfig /usr/local/lib/liblpsolve55.so
-        For 64-bit Linux:
-        $ sudo cp Compiler/runtime/lpsolve/lib/linux/liblpsolve55.so.64-bit /usr/local/lib/liblpsolve55.so
-        $ sudo ldconfig /usr/local/lib/liblpsolve55.so
+      You can now use the version from the Ubuntu repository
+        $ sudo aptitude install liblpsolve55-dev
+        
+      It is also possible to copy this library from the Compiler runtime:
+        For 32-bit OSX:
+        $ sudo cp Compiler/runtime/lpsolve/lib/osx/liblpsolve55.dylib /usr/local/lib
+        For 64-bit OSX:
+        $ sudo cp Compiler/runtime/lpsolve/lib/x86_64-osx/liblpsolve55.dylib /usr/local/lib
+        (Note that the Linux versions have been remove now that the configure script has been fixed)
       Alternatively you can compile lpsolve yourself:
         Download the library:
          http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
         and unpack it, then call in the top folder: 
         $ make -f Makefile.Linux
         then copy lpsolve55/liblpsolve55.a to $OPENMODELICAHOME/build/lib/.
+      Note that some versions of lp_solve depends on libsuitesparse-dev, which provides -lcolamd.
 
 
 NOTE:
