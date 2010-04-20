@@ -1,7 +1,7 @@
 TEST = ../rtest -v
 
 TESTFILES = \
- Derived1.mo \
+ Derived1.mo Derived2.mo \
  EmptyRecordTestConstructor.mos   EmptyRecordTestInput.mos \
  SimpleRecordTestConstructor.mos SimpleRecordTestInput.mos \
  NestedRecordTestConstructor.mos  NestedRecordTestInput.mos \
