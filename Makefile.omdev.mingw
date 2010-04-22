@@ -79,7 +79,7 @@ omcd: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
-	(cp -puf doc/*.pdf $(builddir_doc)/)
+	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
 	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
@@ -90,7 +90,7 @@ omc_frontend: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw frontend)
-	(cp -puf doc/*.pdf $(builddir_doc)/)
+	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
 	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
