@@ -9,6 +9,7 @@ builddir_bin=$(top_builddir)/build/bin
 builddir_lib=$(top_builddir)/build/lib
 builddir_inc=$(top_builddir)/build/include
 builddir_doc=$(top_builddir)/build/doc
+builddir_java=$(top_builddir)/build/share/omc/java
 
 prefix = ./install
 exec_prefix = ${prefix}
@@ -21,8 +22,8 @@ INSTALL_BINDIR     = ${bindir}
 INSTALL_LIBDIR     = ${libdir}
 INSTALL_INCLUDEDIR = ${includedir}
 INSTALL_DATADIR    = ${datadir}
-INSTALL_DOCDIR     = ${INSTALL_DATADIR}/omc/doc
-
+INSTALL_DOCDIR     = ${INSTALL_DATADIR}/doc/omc
+INSTALL_JAVADIR     = ${INSTALL_DATADIR}/omc/java
 
 # The path to the OMDev-mingw package MUST BE SET!
 #OMDEV=$OMDEV
@@ -48,6 +49,7 @@ mkbuilddirs:
 	mkdir -p $(builddir_lib)
 	mkdir -p $(builddir_inc)
 	mkdir -p $(builddir_doc)
+	mkdir -p $(builddir_java)
 	mkdir -p $(builddir_doc)/testmodels
 
 
@@ -66,7 +68,7 @@ omc: c_runtime
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
-	(cp doc/*.pdf $(builddir_doc)/)
+	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
 	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
@@ -148,6 +150,7 @@ clean:
 	(cd flat_modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
 	(rm -f $(builddir_doc)/*.pdf)
 	(rm -f $(builddir_doc)/testmodels/*.*)
+	(rm -rf $(builddir_java))
 
 ${INSTALL_BINDIR}:
 	mkdir -p ${INSTALL_BINDIR}
@@ -172,6 +175,8 @@ install: ${INSTALL_BINDIR} ${INSTALL_LIBDIR} ${INSTALL_INCLUDEDIR} ${INSTALL_DOC
 	cp -puf build/include/* ${INSTALL_INCLUDEDIR}
 	echo Installing build/doc/* to ${INSTALL_DOCDIR} ...
 	cp -Rpuf build/doc/* ${INSTALL_DOCDIR}
+	echo Installing build/share/java/* to ${INSTALL_JAVADIR} ...
+	cp -Rp build/share/omc/java/* ${INSTALL_JAVADIR}
 
 .PRECIOUS: Makefile.omdev.mingw
 
