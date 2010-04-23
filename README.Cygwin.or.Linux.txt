@@ -1,3 +1,17 @@
+Ubuntu 10.04 Cheat Sheet
+========================
+
+If you have a system with apt, the following is faster than reading the
+whole guide for all dependencies.
+
+$ echo deb-src deb-src http://www.ida.liu.se/~pelab/modelica/OpenModelica/releases/1.5.0/Linux deb/ >> /etc/apt/sources.list
+$ sudo apt-get update
+$ sudo apt-get build-dep openmodelica
+$ export RMLHOME=/usr
+$ export ANTLRHOME=/usr
+$ ./configure --with-omniORB=/usr
+$ make # or make omc if you only want the omc core
+
 How to compile on Linux or Cygwin (all from source)
 ===================================================
 
@@ -12,9 +26,14 @@ You need:
         user: anonymous
         pass: none
     rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
-    mico   (http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13)
-        Note: for newer gcc compilers you might need to add #include <limits.h>
-              in orb/fast_array.cc
+    mico or omniORB:
+        omniORB:
+          Is better maintained by Linux distributions, but doesn't print as
+          good error messages if things go really wrong.
+        mico:
+          http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13
+          Note: for newer gcc compilers you might need to add
+            #include <limits.h> in orb/fast_array.cc
     sun-java version > 1.4
     gcc      (tested with most of the versions)
     readline & libreadlineX-dev, currently X=5
@@ -99,6 +118,7 @@ Setting your environment for compiling OpenModelica
 To Compile OpenModelica
   run:
     $ ./configure --with-CORBA=/path/to/mico (if you want omc to use mico corba)
+    $ ./configure --with-omniORB=/path/to/omniORB (if you want omc to use omniORB corba)
     $ ./configure --without-CORBA            (if you want omc to use sockets)
   in the trunk directory
   Make sure that all makefiles are created. Check carefully for error messages.
