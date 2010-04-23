@@ -1,15 +1,6 @@
-# Adrian Pop, adrpo@ida.liu.se, 2006-02-01
-# Makefile for compilation of OMC using OMDev-mingw
-# OMDev-mingw: http://www.ida.liu.se/~adrpo/omc/omdev/
+all : .testvariables settings release
 
-.PHONY : .testvariables mkbuilddirs all omc omcd debug release mosh clean
-
-top_builddir = .
-builddir_bin=$(top_builddir)/build/bin
-builddir_lib=$(top_builddir)/build/lib
-builddir_inc=$(top_builddir)/build/include
-builddir_doc=$(top_builddir)/build/doc/omc
-builddir_java=$(top_builddir)/build/share/omc/java
+autoconfGeneratedFiles =
 
 prefix = ./install
 exec_prefix = ${prefix}
@@ -17,17 +8,11 @@ bindir = ${exec_prefix}/bin
 libdir = ${exec_prefix}/lib
 includedir = ${prefix}/include
 datadir = ${prefix}/share
+docdir = ${prefix}/doc
 
-INSTALL_BINDIR     = ${bindir}
-INSTALL_LIBDIR     = ${libdir}
-INSTALL_INCLUDEDIR = ${includedir}
-INSTALL_DATADIR    = ${datadir}
-INSTALL_DOCDIR     = ${INSTALL_DATADIR}/doc/omc
-INSTALL_JAVADIR     = ${INSTALL_DATADIR}/omc/java
+defaultMakefileTarget = Makefile.omdev.mingw
 
-# The path to the OMDev-mingw package MUST BE SET!
-#OMDEV=$OMDEV
-#Test if the needed variables are there...
+include Makefile.common
 
 .testvariables:
 ifndef OMDEV
@@ -37,149 +22,34 @@ ifndef OMDEV
 	ABORT Please Define OMDEV
 endif
 
-all : .testvariables settings release
-.PHONY : .testvariables settings c_runtime omc omcd release debug mosh all mkbuilddirs test
-
-debug: .testvariables mkbuilddirs settings omcd
-
-frontend: .testvariables mkbuilddirs settings omc_frontend
-
-mkbuilddirs:
-	mkdir -p $(builddir_bin)
-	mkdir -p $(builddir_lib)
-	mkdir -p $(builddir_inc)
-	mkdir -p $(builddir_doc)
-	mkdir -p $(builddir_java)
-	mkdir -p $(builddir_doc)/testmodels
-
-
 settings:
 	@echo Building OMC using OMDev with the following settings...
 	@echo Using OMDev: $(OMDEV)
 	@echo Using Files: $(OMC_BUILD_FROM)
 	@echo Using Path : $(PATH)
 
-release: omc
-
-c_runtime: mkbuilddirs
-	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw)
-
-omc: c_runtime
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
-	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
-	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
-	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
+omdev_extra_dlls:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
-omcd: c_runtime
+omc: c_runtime docs omdev_extra_dlls
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
+
+omcd: c_runtime docs omdev_extra_dlls
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
-	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
-	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
-	echo Copying needed .dlls to the build/bin directory
-	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
-	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
-omc_frontend: c_runtime
+omc_frontend: c_runtime docs omdev_extra_dlls
 	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw frontend)
-	(cp doc/*.pdf doc/OpenModelicaAPI-Howto/*.pdf $(builddir_doc)/)
-	(cp -puf Examples/*.* $(builddir_doc)/testmodels/)
-	echo Copying needed .dlls to the build/bin directory
-	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
-	(cp -puf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
-	(cp -puf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
-testfast:
-	(cd testsuite; time $(MAKE) -f Makefile fast)
-
-test:
-	(cd testsuite; time $(MAKE) -f Makefile)
-
-testlog:
-	(cd testsuite; time $(MAKE) -f Makefile > testsuite-trace.txt 2>&1)
-	echo "log is in testsuite/testsuite-trace.txt"
-
-testmos:
-	(cd testsuite/mosfiles; time $(MAKE) -f Makefile)
-	
-testmeta:
-	(cd testsuite/meta; time $(MAKE) -f Makefile)
-	(cd testsuite/records; time $(MAKE) -f Makefile)
-
-testlibraries:
-	(cd testsuite/libraries; time $(MAKE) -f Makefile)
-
-testSummary:
-	(cd testsuite; time $(MAKE) -f Makefile | grep "==")
-
-mosh: omc
-	(cd mosh/src; $(MAKE) -f Makefile.omdev.mingw)
-
-susan: all
-	(cd Compiler/susan_codegen && $(MAKE) -f Makefile)
-
-sus:
-	(cd Compiler/susan_codegen && $(MAKE) -f Makefile)
-
-
-tpl_simcode: tpl_sc susan tpl_gen
-
-tpl_sc:
-	(cd Compiler/susan_codegen/SimCode && $(MAKE) -f Makefile)
-
-tpl_gen:
-	(cd Compiler/susan_codegen/SimCode/GenTest && $(MAKE) -f Makefile)
-
-clean:
-	(cd c_runtime && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/omc_debug && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/omc_release && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd Compiler/omc_frontend && $(MAKE) -f Makefile.omdev.mingw clean)	
-	(cd mosh/src && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
-	(cd flat_modelica_parser/src && $(MAKE) -f Makefile.omdev.mingw clean)
-	(rm -f $(builddir_doc)/*.pdf)
-	(rm -f $(builddir_doc)/testmodels/*.*)
-	(rm -rf $(builddir_java))
-
-${INSTALL_BINDIR}:
-	mkdir -p ${INSTALL_BINDIR}
-
-${INSTALL_LIBDIR}:
-	mkdir -p ${INSTALL_LIBDIR}
-
-${INSTALL_INCLUDEDIR}:
-	mkdir -p ${INSTALL_INCLUDEDIR}
-
-${INSTALL_DOCDIR}:
-	mkdir -p ${INSTALL_DOCDIR}
-	mkdir -p ${INSTALL_DOCDIR}/testmodels
-
-install: ${INSTALL_BINDIR} ${INSTALL_LIBDIR} ${INSTALL_INCLUDEDIR} ${INSTALL_DOCDIR}
-	echo Installing OpenModelica...
-	# Binaries
-	cp -p build/bin/* ${INSTALL_BINDIR}
-	# Libraries
-	cp -p build/lib/* ${INSTALL_LIBDIR}
-	# Includes
-	cp -p build/include/* ${INSTALL_INCLUDEDIR}
-	# Documents
-	cp -p build/doc/*.pdf ${INSTALL_DOCDIR}
-	cp -p build/doc/testmodels/* ${INSTALL_DOCDIR}/testmodels
-	# Java
-	cp -Rp build/share/omc/java/* ${INSTALL_JAVADIR}
+# Empty; only Unix version uses QT makefiles, etc...
+qtclean:
 
 .PRECIOUS: Makefile.omdev.mingw
-
-#Makefile.omdev.mingw: Makefile.omdev.mingw.in
-#	$(top_builddir)/config.status Makefile.omdev.mingw

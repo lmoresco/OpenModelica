@@ -1,1 +1,0 @@
-please consult the OpenModelica/doc/*.pdf for latest OMC API

@@ -1,8 +1,5 @@
 include Makefile.common
 
-install:
-	cp -u modelica_java.jar $(antlr) ../../build/share/omc/java
-build: modelica_java.jar $(antlr) install
 modelica_java.jar: $(java_sources)
 	@echo "* Compiling modelica_java.jar"
 	@rm -rf bin-jar; mkdir bin-jar
