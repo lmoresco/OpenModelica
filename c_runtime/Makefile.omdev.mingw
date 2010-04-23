@@ -30,3 +30,5 @@ LIBF2CMAKEFILE = makefile.mingw
 JAVAMAKEFILE = Makefile.omdev.mingw
 include Makefile.common
 
+omdevinstall:
+	cp omdev_qtdeps/*.a ${builddir_lib}
