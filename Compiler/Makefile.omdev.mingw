@@ -53,13 +53,15 @@ SUBDIRS	= runtime absyn_builder modpar
 
 .SUFFIXES:
 .SUFFIXES: .o .mo .h
-.PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug omc_frontend
+.PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug omc_frontend omc_profiler
 
 all : .testvariables .depend release $(ALLMO)
 
 frontend : .testvariables .depend frontend_release $(ALLMO) $(SRCSTUB)
 
 debug:	.testvariables .depend  $(PROGD) install
+
+profiler:	.testvariables .depend  $(PROGP) install
 
 release: .testvariables .depend $(PROG) install
 

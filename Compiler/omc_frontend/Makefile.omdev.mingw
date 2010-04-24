@@ -97,7 +97,7 @@ vctarget: $(SRCC) absyn_subdir
 absyn_subdir:
 	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
 
-$(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/libsendData.a
+$(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/omc/libsendData.a
 	g++ -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi -O3 	
 	strip $(PROG)
 	ar -r frontend.a $(SRCO) $(RTOBJ)
