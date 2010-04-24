@@ -86,7 +86,7 @@ $(PROGF): omc_frontend
 install_scripts:
 	cd scripts; cp -puf $(SCRIPT_FILES) ../$(builddir_scripts)
 
-install: install_doc install_scripts
+install: install_scripts # install_doc
 	
 omc_release:
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
