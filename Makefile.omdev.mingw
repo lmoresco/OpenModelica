@@ -49,6 +49,12 @@ omc_frontend: c_runtime docs omdev_extra_dlls
 	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw frontend)
 
+omc_profiler: c_runtime docs omdev_extra_dlls
+	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler/rml2mmo && $(MAKE) -f Makefile.omdev.mingw)
+	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw profiler)
+
+
 # Empty; only Unix version uses QT makefiles, etc...
 qtclean:
 
