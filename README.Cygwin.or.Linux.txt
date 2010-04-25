@@ -84,7 +84,7 @@ You need:
          http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
         and unpack it, then call in the top folder: 
         $ make -f Makefile.Linux
-        then copy lpsolve55/liblpsolve55.a to $OPENMODELICAHOME/build/lib/.
+        then copy lpsolve55/liblpsolve55.a to /usr/local/lib
       Note that some versions of lp_solve depends on libsuitesparse-dev, which provides -lcolamd.
 
 
