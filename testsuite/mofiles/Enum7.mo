@@ -113,6 +113,4 @@ end X;
 //     enumtest.xxx[e] := 0.0;
 //   end for;
 // end X;
-// [Enum7.mo:17:5-17:63:readonly] Error: Variable enumtest.c: Variable one not found in scope Types.EnumTest
-//  
 // endResult
