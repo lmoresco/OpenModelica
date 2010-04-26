@@ -1,41 +1,16 @@
-TEST = ../../rtest -v
+LOGS = elementary.log loops.log 
+.PHONY : all failingtest elementary.log loops.log
 
-TESTFILES = \
-DoublePendulum.mos \
-ForceAndTorque.mos \
-FreeBody.mos \
-InitSpringConstant.mos \
-LineForceWithTwoMasses.mos \
-Pendulum.mos \
-PendulumWithSpringDamper.mos \
-PointGravity.mos \
-PointGravityWithPointMasses2.mos \
-PointGravityWithPointMasses.mos \
-RollingWheel.mos \
-RollingWheelSetDriving.mos \
-RollingWheelSetPulling.mos \
-SpringDamperSystem.mos \
-SpringMassSystem.mos \
-SpringWithMass.mos \
-ThreeSprings.mos \
-World.mos \
+all : test
+test : $(LOGS)
+	@cat $(LOGS)
 
-
-# test that currently fail. Move up when fixed. 
-# Run make testfailing
-FAILINGTESTFILES=  
-
-.PHONY : test
-
-test:
-	@echo
-	@echo Running tests...
-	@echo
-	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
-	@$(TEST) $(TESTFILES)
+elementary.log:
+	$(MAKE) -C elementary -f Makefile test > $@
+loops.log:
+	$(MAKE) -C loops -f Makefile test > $@
 	
-failingtest :
-	@echo
-	@echo Running failing tests...
-	@echo
-	@$(TEST) $(FAILINGTESTFILES)
+failingtest:
+	cd elementary; $(MAKE) -f Makefile failingtest; \
+	cd ../elementary; $(MAKE) -f Makefile failingtest; 
+

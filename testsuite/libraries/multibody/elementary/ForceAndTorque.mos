@@ -53,6 +53,14 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // external "C";
 // end Modelica.Math.sin;
 // 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
+// output Real[3] residue "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)";
+// algorithm
+//   residue := {Modelica.Math.atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),Modelica.Math.atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),Modelica.Math.atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
+// end Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
 // input Real[4] Q_guess = Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation() "Guess value for Q (there are 2 solutions; the one close to Q_guess is used";

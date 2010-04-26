@@ -10,8 +10,8 @@ getErrorString();
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2);
 getErrorString();
 // check model doesn't work yet for this model.
-// checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2);
-// getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2);
+getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
@@ -59,6 +59,14 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // external "C";
 // end Modelica.Math.sin;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
+// output Real[3] residue "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)";
+// algorithm
+//   residue := {Modelica.Math.atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),Modelica.Math.atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),Modelica.Math.atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
+// end Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2
 // input Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2";
@@ -7574,6 +7582,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // fixedTranslation2.frame_b.r_0[2] = pointMass3.frame_a.r_0[2];
 // fixedTranslation2.frame_b.r_0[3] = pointMass3.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2;
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2 completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2 has 4066 equation(s) and 4074 variable(s).
+// 2504 of these are trivial equation(s).
 // "
 // ""
 // 0

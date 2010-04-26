@@ -10,8 +10,8 @@ getErrorString();
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses);
 getErrorString();
 // this doesn't work yet as we don't support implicit IF EQUATIONS
-// checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses);
-// getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses);
+getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
@@ -73,6 +73,14 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   y := if u1 > u2 then u1 else u2;
 //   dummy := 0;
 // end Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
+// output Real[3] residue "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)";
+// algorithm
+//   residue := {Modelica.Math.atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),Modelica.Math.atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),Modelica.Math.atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
+// end Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
@@ -5769,6 +5777,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   jointUPS.bearing.f + damper1.flange_a.f = 0.0;
 // jointUPS.bearing.s = damper1.flange_a.s;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses;
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses has 3095 equation(s) and 3095 variable(s).
+// 1818 of these are trivial equation(s).
 // "
 // ""
 // 0

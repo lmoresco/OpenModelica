@@ -10,14 +10,20 @@ getErrorString();
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving);
 getErrorString();
 // check model doesn't work yet as we need to support implicit IF EQUATIONS
-// checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving);
-// getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving);
+getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
 // ""
-// "function Modelica.Math.Vectors.length
+// "function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
+// input Real[3, 3] T;
+// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
+// output Orientation res;
+// end Modelica.Mechanics.MultiBody.Frames.Orientation;
+// 
+// function Modelica.Math.Vectors.length
 // input Real[:] v "Vector";
 // output Real result "Length of vector v";
 // algorithm
@@ -40,12 +46,27 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // external "C";
 // end Modelica.Math.atan2;
 // 
+// function Modelica.Math.cos
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.cos;
+// 
 // function Modelica.Math.sin
 // input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // output Real y;
 // 
 // external "C";
 // end Modelica.Math.sin;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";
+// input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
+// output Real[3] residue "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)";
+// algorithm
+//   residue := {Modelica.Math.atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),Modelica.Math.atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),Modelica.Math.atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
+// end Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
@@ -137,19 +158,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   v1 := {T[1,1] * v2[1] + T[2,1] * v2[2] + T[3,1] * v2[3],T[1,2] * v2[1] + T[2,2] * v2[2] + T[3,2] * v2[3],T[1,3] * v2[1] + T[2,3] * v2[2] + T[3,3] * v2[3]};
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
-// input Real[3, 3] T;
-// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
-// output Orientation res;
-// end Modelica.Mechanics.MultiBody.Frames.Orientation;
-// 
-// function Modelica.Math.cos
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
-// 
-// external "C";
-// end Modelica.Math.cos;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve2
 // input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
@@ -4822,6 +4830,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   world.frame_b.t[2] = 0.0;
 //   world.frame_b.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving;
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving has 2587 equation(s) and 2587 variable(s).
+// 1643 of these are trivial equation(s).
 // "
 // ""
 // 0

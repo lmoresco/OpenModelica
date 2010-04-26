@@ -1,0 +1,17 @@
+// name:     Modelica3.x.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic
+// keywords: multibody, balancing, instantiation
+// status:   correct
+// 
+//  Modelica MultiBody 3.x: instantiation and balance checking
+//
+
+loadFile("_LoopsTotal.mo");
+getErrorString();
+instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);
+getErrorString();
+system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
+
+// Result:
+// endResult

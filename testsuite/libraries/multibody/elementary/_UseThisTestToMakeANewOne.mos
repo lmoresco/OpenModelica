@@ -1,0 +1,27 @@
+// name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.Pendulum
+// keywords: multibody, balancing, instantiation
+// status:   correct
+// 
+//  Modelica MultiBody 3.x: instantiation and balance checking of the Pendulum model
+//
+
+loadFile("ElementaryTotal.mo");
+getErrorString();
+instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum);
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum);
+getErrorString();
+system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
+
+// Result:
+// false
+// ""
+// "Unknown model.
+// "
+// ""
+// "Error: No classes are loaded.
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum
+// "
+// ""
+// 0
+// endResult
