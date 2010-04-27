@@ -22,7 +22,7 @@ You need:
               in lib/cpp/antlr/CharScanner.hpp, if you compile antlr from sources.
     rml+mmc (http://www.ida.liu.se/~pelab/rml/)
         Just grab it from subversion:
-        svn co https://openmodelica.ida.liu.se/svn/MetaModelica/trunk mmc
+        svn co https://openmodelica.org/svn/MetaModelica/trunk mmc
         user: anonymous
         pass: none
     rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
@@ -131,7 +131,7 @@ To Compile OpenModelica
   To run the testsuite:
   Create a directory path/to/trunk/build/ModelicaLibrary in which
   you unpack ModelicaLib.tar.gz that you can get from Subversion directory:
-  https://openmodelica.ida.liu.se/svn/OpenModelica/installers/windows/VC7/Setup/zips/ModelicaLib.tar.gz
+  https://openmodelica.org/svn/OpenModelica/installers/windows/VC7/Setup/zips/ModelicaLib.tar.gz
     $ export OPENMODELICAHOME=path/to/trunk/build
     $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
     $ make test
