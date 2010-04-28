@@ -52,6 +52,7 @@ nonConstantParam.mos \
 Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
+PreAndAliasedVar.mos \
 Reductions.mos \
 Riccati.mos \
 Sample1.mos \
