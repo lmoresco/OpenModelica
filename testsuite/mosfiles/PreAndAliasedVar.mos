@@ -8,7 +8,6 @@
 // 
 loadFile("PreAndAliasedVar.mo");
 simulate(PreAndAliasedVar);
-plot(c);
 val(c, 0.01);
 val(c, 0.11);
 val(c, 0.21);
@@ -27,7 +26,6 @@ system("rm -rf PreAndAliasedVar_* PreAndAliasedVar.exe PreAndAliasedVar PreAndAl
 // record SimulationResult
 //     resultFile = "PreAndAliasedVar_res.plt"
 // end SimulationResult;
-// true
 // 0.0
 // 0.0
 // 0.0
