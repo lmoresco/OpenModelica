@@ -4397,13 +4397,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // end Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic;
 // "
 // "Warning: Parameter rodLength has no value, and is fixed during initialization (fixed=true)
-// Error: No constant value for variable rodLength in scope Modelica.Mechanics.MultiBody.Joints.SphericalSpherical.
-// Warning: Parameter rodLength has no value, and is fixed during initialization (fixed=true)
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic completed successfully.
 // 
-// Warning: Parameter rodLength has no value, and is fixed during initialization (fixed=true)
-// Error: No constant value for variable rodLength in scope Modelica.Mechanics.MultiBody.Joints.SphericalSpherical.
 // Warning: Parameter rodLength has no value, and is fixed during initialization (fixed=true)
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic has 2238 equation(s) and 2238 variable(s).

@@ -7108,11 +7108,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   jointRRP.frame_im.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic;
 // "
-// "Error: No constant value for variable e_im in scope Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRP.
-// "
+// ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic completed successfully.
 // 
-// Error: No constant value for variable e_im in scope Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRP.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic has 3329 equation(s) and 3326 variable(s).
 // 2199 of these are trivial equation(s).
