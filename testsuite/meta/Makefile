@@ -9,16 +9,17 @@ TESTFILES = MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos MatchCas
   BuiltinArray.mos BuiltinBoolean.mos BuiltinInteger.mos \
   BuiltinString.mos BuiltinList.mos BuiltinMisc.mos \
   Recursive.mos Failure.mos Equality.mos Shadowing1.mos Shadowing2.mos EqPatternm.mos Polymorphic.mos \
-  PartialFn3.mos 
+  PartialFn1.mos PartialFn2.mos PartialFn3.mos PartialFn4.mos PartialFn5.mos PartialFn6.mos \
+  PartialFn7.mos PartialFn8.mos PartialFn10.mos PartialFn11.mos \
+  PartialFn12.mos PartialFn13.mos \
+
+
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-PartialFn1.mos PartialFn2.mos PartialFn4.mos PartialFn5.mos PartialFn6.mos \
-PartialFn7.mos PartialFn8.mos PartialFn9.mos PartialFn12.mos PartialFn10.mos \
-PartialFn11.mos PartialFn13.mos \
-
+PartialFn9.mos \
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
