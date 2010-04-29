@@ -143,7 +143,7 @@ FuncDer.mo SimplePeriodicSampler.mo \
 TwoRateSampler.mo DiscreteVectorStateSpace.mo \
 WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
 LotkaVolterra.mo HydrogenIodide.mo \
-FlatParse.mof Transpose.mo IconsRecursiveTest.mo \
+FlatParse.mof Transpose.mo Transpose2.mo IconsRecursiveTest.mo \
 InOutBool.mo InOutArray.mo InOutArray2.mo \
 ForIterator1.mo ForIterator2.mo \
 EquationFor5.mo EquationFor6.mo EquationFor7.mo \
