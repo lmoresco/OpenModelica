@@ -157,15 +157,15 @@ getErrorString();
 //     assert(Stop1.s > Stop1.smin + Stop1.L / 2.0 OR Stop1.s >= Stop1.smin + Stop1.L / 2.0 AND Stop1.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");
 //     assert(Stop1.s < Stop1.smax - Stop1.L / 2.0 OR Stop1.s <= Stop1.smax - Stop1.L / 2.0 AND Stop1.v <= 0.0, "Error in initialization of hard stop. (s + L/2) must be <= smax ");
 //   end when;
-//   when  NOT Stop1.s < Stop1.smax - Stop1.L / 2.0 then
+//   when NOT Stop1.s < Stop1.smax - Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smax - Stop1.L / 2.0);
-//     if  NOT initial() OR Stop1.v > 0.0 then
+//     if NOT initial() OR Stop1.v > 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
-//   when  NOT Stop1.s > Stop1.smin + Stop1.L / 2.0 then
+//   when NOT Stop1.s > Stop1.smin + Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smin + Stop1.L / 2.0);
-//     if  NOT initial() OR Stop1.v < 0.0 then
+//     if NOT initial() OR Stop1.v < 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
@@ -173,15 +173,15 @@ getErrorString();
 //     assert(Stop2.s > Stop2.smin + Stop2.L / 2.0 OR Stop2.s >= Stop2.smin + Stop2.L / 2.0 AND Stop2.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");
 //     assert(Stop2.s < Stop2.smax - Stop2.L / 2.0 OR Stop2.s <= Stop2.smax - Stop2.L / 2.0 AND Stop2.v <= 0.0, "Error in initialization of hard stop. (s + L/2) must be <= smax ");
 //   end when;
-//   when  NOT Stop2.s < Stop2.smax - Stop2.L / 2.0 then
+//   when NOT Stop2.s < Stop2.smax - Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smax - Stop2.L / 2.0);
-//     if  NOT initial() OR Stop2.v > 0.0 then
+//     if NOT initial() OR Stop2.v > 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;
-//   when  NOT Stop2.s > Stop2.smin + Stop2.L / 2.0 then
+//   when NOT Stop2.s > Stop2.smin + Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smin + Stop2.L / 2.0);
-//     if  NOT initial() OR Stop2.v < 0.0 then
+//     if NOT initial() OR Stop2.v < 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;
