@@ -67,15 +67,15 @@ getExtendsModifierValue(K5,Resistor,x.start);
 // Result:
 // true
 // {a1.p1, a1.p2, a2.p2}
-// (p1=0, p2=0)
+// (p1 = 0, p2 = 0)
 // Ok
-// (p1=45)
+// (p1 = 45)
 // Ok
-// =33
+//  = 33
 // {a.x, f}
-// =2*y
+// = 2 * y
 // Ok
-// =10
+// = 10
 // Ok
 // {p2}
 // 1
@@ -85,7 +85,7 @@ getExtendsModifierValue(K5,Resistor,x.start);
 // Types.T1
 // {unit}
 // Ok
-// =4
+// = 4
 // 1
 // {}
 // Ok
@@ -100,29 +100,29 @@ getExtendsModifierValue(K5,Resistor,x.start);
 // Ok
 // Ok
 // Ok
-// =false
+// = false
 // Ok
-// =true
+// = true
 // {}
 // {}
 // Ok
 // Ok
-// =2.25
-// =true
+// = 2.25
+// = true
 // Ok
 // Error
-// =true
+// = true
 // Ok
-// =5
-// (start=5, fixed=true)=2
+// = 5
+// (start = 5, fixed = true) = 2
 // Ok
 // Ok
-// (start=2.21, fixed=false)=2
+// (start = 2.21, fixed = false) = 2
 // {x, x.start, x.fixed}
 // Ok
-// (start=2, fixed=true)
+// (start = 2, fixed = true)
 // Ok
 // {x.fixed, x.start}
-// =true
-// =2
+// = true
+// = 2
 // endResult

@@ -17,8 +17,8 @@ system("rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.
 // Real r1;
 // Real r2;
 // equation
-//   r1= sign(time);
-//   r2= sign(-time);
+// r1 = sign(time);
+// r2 = sign(-time);
 // end Sign;
 // "
 // record SimulationResult

@@ -30,7 +30,7 @@ end EquationFor4;
 // Real p[3].v;
 // Real p[4].i;
 // Real p[4].v;
-// equation 
+// equation
 //  p[1].v = p[2].v;
 //  p[2].v = p[3].v;
 //  p[3].v = p[4].v;

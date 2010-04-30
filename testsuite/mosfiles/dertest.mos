@@ -23,6 +23,6 @@ system("rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs d
 // 4.1982410203818
 // -1.0
 // -1.42916997163095
-// 
+// ""
 // 0
 // endResult

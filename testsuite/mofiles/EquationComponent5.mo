@@ -16,10 +16,10 @@ end EquationComponent5;
 
 // Result:
 // fclass EquationComponent5
-// 	       Real    a.x;
-// 	       Real    a.y;
-// 	       Real    b.x;
-// 	       Real    b.y;
+// Real a.x;
+// Real a.y;
+// Real b.x;
+// Real b.y;
 // equation
 //   b.x = a.x;
 //   b.y = a.y;

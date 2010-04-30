@@ -36,7 +36,8 @@ $collectcases = 0;
 $filearg = 0;
 $status = 0;
 $statusfilter = "all";
-$epsilon = 1.0e-2;
+$eps_mo = 1.0e-6;
+$eps_mos = 5.0e-3;
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
 sub setbaselineone
@@ -149,138 +150,22 @@ sub runone
     close RES;
 
     # Compare
-    # system "sort $tmp1 > $tmp1-sorted";
-    # system "sort $tmp2 > $tmp2-sorted";
-    system "diff -w $tmp1 $tmp2 > $tmp3";
+    my $epsilon;
+    if ($f =~ /mos$/) {
+      $epsilon = $eps_mos;
+    } else {
+      $epsilon = $eps_mo;
+    }
+    system "$OPENMODELICAHOME/bin/omc-diff $epsilon $tmp2 $tmp1 > $tmp3";
 
-    # adrpo - 2006-12-06 
-    # if we have only numbers see if their difference is < 1.0e-5 
-    # which is the dassl integration step!
-    # some array for handline what we "expect" and what we "got"
-    my @expect; 
-    my @got;
-    my $majorNumberDifferences = 0;
-    
-    if ( $? != 0 ) 
-    {  
-      # open the log first, as we need to put in the differences!
-      open(LOG,">>$log");
-      print LOG "\n";
-      print LOG "Equation diff:\n\n";
-    
-      open(DIFF,"<$tmp3");
-      while(<DIFF>) 
-      {
-          if (/^>(.*)$/) 
-          {
-              my $line = $1;
-              chomp($line);
-              $line = trim($line);
-              push @expect, $line; # push the expected content in @expect
-          } 
-          elsif (/^<(.*)$/) 
-          {
-              my $line = $1;
-              chomp($line);
-              $line = trim($line);
-              push @got, $line;    # push the calculated content in @got
-          }
-      }
-      close DIFF;
-      # now we have what we need in @expect and @got
-      if (@expect == @got) # are they equal in size?
-      {
-          while ( my $e = pop @expect )
-          { 
-            my $g = pop @got;
-                        
-            #check if $e and $g are numbers or arrays!
-            # first try normal numbers!
-            if (isNumber($e) && isNumber($g))
-            {
-                if (LessThanEpsilon($e,$g,$epsilon) == 0)
-                {
-                  print LOG "expected:$e - got:$g > epsilon:$epsilon\n";
-                  $majorNumberDifferences = 1;
-                  goto DEFAULT;                    
-                }
-                else
-                { 
-                      print LOG "expected:$e - got:$g < epsilon:$epsilon\n";
-                }
-            }
-            else # here we should have arrays of numbers {0.1, 1.2, ..., nn.mm}
-            {
-                # get rid of { and }
-                $e =~ s/\{//g; $e =~ s/\}//g;
-                $g =~ s/\{//g; $g =~ s/\}//g;
-                @expect_array = split /,/ , $e;
-                @got_array = split /,/ , $g;
-                  if (@expect_array == @got_array) # are they equal in size?
-                  {
-                      while ( my $e1 = pop @expect_array )
-                      { 
-                        my $g1 = pop @got_array;            
-                        # first try normal numbers!
-                        if (isNumber($e1) && isNumber($g1))
-                        {
-                            if (LessThanEpsilon($e1,$g1,$epsilon) == 0)
-                            {
-                                  print LOG "expected:$e1 - got:$g1 > epsilon:$epsilon\n";
-                                  $majorNumberDifferences = 1;
-                                  goto DEFAULT;                    
-                            }
-                            else
-                            { 
-                                  print LOG "expected:$e1 - got:$g1 < epsilon:$epsilon\n";
-                            }
-                        }
-                        else
-                        {
-                            goto DEFAULT;
-                        }
-                    }
-                }
-                else 
-                {
-                    goto DEFAULT;
-                }
-            } 
-          }
-          if ($majorNumberDifferences == 0)
-          {
-            print "warning [time:$end_t] - numeric differences less than $epsilon\n";
-            print "\t* for details please check: $log\n";
-            close LOG;
-            return 0;
-          }
-      }
-      
-      DEFAULT:
-      open(DIFF,"<$tmp3");
-      while(<DIFF>) {
-          if (/^>(.*)$/) {
-          print LOG "expected:$1\n";
-          $mismatch = 1;
-          } elsif (/^<(.*)$/) {
-          if (/^< *String(.*)\.unit;$/) {
-              # igore missing units
-          } elsif (/^<.*\.unit = \"\";$/) {
-              # igore missing units
-          } else {
-              print LOG "got:     $1\n";
-              $mismatch = 1;
-          }
-          }
-      }
-      close DIFF;
-      close LOG;
-
-      if ($mismatch) {
-          print "equation mismatch [time:$end_t]\n";
-          return 1;
-      }
-      }
+    if ( $? != 0 ) {  
+    print "equation mismatch [time:$end_t]\n";
+    system "echo Equation mismatch: diff says: >> $log";
+    system "diff -w $tmp2 $tmp1 >> $log";
+    system "echo Equation mismatch: omc-diff says: >> $log";
+    system "cat $tmp3 >> $log";
+    return 1;
+    }
 
     print "ok [time:$end_t]\n";
     return 0;

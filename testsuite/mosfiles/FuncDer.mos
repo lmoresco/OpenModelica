@@ -44,7 +44,7 @@ system("rm -rf FuncDer_* FuncDer.exe FuncDer.cpp FuncDer.makefile FuncDer.libs F
 // true
 // 150.413
 // 22323.292
-// 6670787
+// 6670787.0
 // ""
 // 0
 // endResult

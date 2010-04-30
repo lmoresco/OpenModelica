@@ -18,6 +18,6 @@ end PredefinedTypes;
 // Integer integer(quantity = "quant_str_integer", min = 2, max = 4, start = 1, fixed = true);
 // Boolean Boolean(quantity = "quant_str_boolean", start = false, fixed = true);
 // String String(quantity = "quant_str_string", start = "start");
-// enumeration(a, b, c)f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
+// enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
 // end PredefinedTypes;
 // endResult

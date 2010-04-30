@@ -22,8 +22,8 @@ end Connect9;
 
 // Result:
 // fclass Connect9
-//   input Real    c1.x;
-//   output Real    c2.x;
+//   input Real c1.x;
+//   output Real c2.x;
 // equation
 //   c1.x = c2.x;
 // end Connect9;

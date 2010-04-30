@@ -1,12 +1,15 @@
-.PHONY : all failingtest test fast fast.logs mathcore-mofiles.log drmodelica.log mofiles.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log
+.PHONY : all omc-diff failingtest test fast fast.logs mathcore-mofiles.log drmodelica.log mofiles.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log
 
 all : test
-test : libraries.log fast.logs
+
+omc-diff :
+	$(MAKE) -C difftool
+test : omc-diff libraries.log fast.logs
 	@cat mathcore-mofiles.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
 	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 test-oldresult:
 	@cat mathcore-mofiles.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
-fast : fast.logs
+fast : omc-diff fast.logs
 	@cat mathcore-mofiles.log drmodelica.log mofiles.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log
 	@rm -f {mathcore-mofiles,mathcore-mofiles/msl/,mathcore-mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 fast.logs: mosfiles.log mosfiles-msl22.log meta.log mofiles.log msl.log mathcore-mofiles.log mmdev.log drmodelica.log mosfiles-nosim.log records.log
@@ -48,6 +51,6 @@ java.log:
 	$(MAKE) -C java -f Makefile test > $@
 	@echo $@ done
 	
-failingtest:
+failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \

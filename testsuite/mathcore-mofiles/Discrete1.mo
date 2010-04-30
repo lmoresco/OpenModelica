@@ -14,10 +14,10 @@ end Discrete1;
 
 // Result:
 // fclass Discrete1
-//   discrete Real    x;
+//   discrete Real x;
 // equation
-//   when time>0.5 then
-//     x=time;
+//   when time > 0.5 then
+//     x = time;
 //   end when;
 // end Discrete1;
 // endResult

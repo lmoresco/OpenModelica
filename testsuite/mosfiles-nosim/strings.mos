@@ -16,7 +16,7 @@ system("rm -rf foo.makefile foo.libs foo.c foo.log foo.so");
 // "foo"
 // "bar"
 // "foobar"
-// true 
+// true
 // "foobar"
 // 0
 // endResult

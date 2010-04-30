@@ -15,10 +15,10 @@ end ArraySlice1;
 
 // Result:
 // fclass ArraySlice1
-//   Real    a[1];
-//   Real    a[2];
-//   Real    a[3];
-//   Real    a[4];
+//   Real a[1];
+//   Real a[2];
+//   Real a[3];
+//   Real a[4];
 // equation
 //   a[1] = a[2];
 //   a[3] = a[4];

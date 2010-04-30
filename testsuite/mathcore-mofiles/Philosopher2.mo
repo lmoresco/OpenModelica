@@ -254,7 +254,7 @@ end Philosopher_DiningTable;
 // algorithm
 //   s1 := {si[1],si[2],si[3]};
 //   u2 := 1.0;
-//   while  NOT my_break loop
+//   while NOT my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
 //     z := 1.71552776992141 * (u1 - 0.5) / u2;
@@ -281,7 +281,7 @@ end Philosopher_DiningTable;
 // algorithm
 //   s1 := {si[1],si[2],si[3]};
 //   u2 := 1.0;
-//   while  NOT my_break loop
+//   while NOT my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
 //     z := 1.71552776992141 * (u1 - 0.5) / u2;
@@ -329,7 +329,7 @@ end Philosopher_DiningTable;
 // algorithm
 //   s1 := {si[1],si[2],si[3]};
 //   u2 := 1.0;
-//   while  NOT my_break loop
+//   while NOT my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
 //     z := 1.71552776992141 * (u1 - 0.5) / u2;
@@ -783,7 +783,7 @@ end Philosopher_DiningTable;
 //     phil[5].timeOfNextChange := time + abs(phil[5].T);
 //   end when;
 //   when mutex.request[1] then
-//     if  NOT mutex.occupied then
+//     if NOT mutex.occupied then
 //       mutex.ok[1] := true;
 //       mutex.waiting[1] := false;
 //     else
@@ -802,7 +802,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[2] then
-//     if  NOT mutex.occupied then
+//     if NOT mutex.occupied then
 //       mutex.ok[2] := true;
 //       mutex.waiting[2] := false;
 //     else
@@ -821,7 +821,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[3] then
-//     if  NOT mutex.occupied then
+//     if NOT mutex.occupied then
 //       mutex.ok[3] := true;
 //       mutex.waiting[3] := false;
 //     else
@@ -840,7 +840,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[4] then
-//     if  NOT mutex.occupied then
+//     if NOT mutex.occupied then
 //       mutex.ok[4] := true;
 //       mutex.waiting[4] := false;
 //     else
@@ -859,7 +859,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[5] then
-//     if  NOT mutex.occupied then
+//     if NOT mutex.occupied then
 //       mutex.ok[5] := true;
 //       mutex.waiting[5] := false;
 //     else

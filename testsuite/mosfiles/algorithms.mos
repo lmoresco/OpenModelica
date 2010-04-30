@@ -58,6 +58,6 @@ simulate(Alg4);
 // 
 // Error: Internal error generate_zero_crossing failed
 // Error: Internal error Generation of simulation code  failed
-// 
+// "
 // end SimulationResult;
 // endResult

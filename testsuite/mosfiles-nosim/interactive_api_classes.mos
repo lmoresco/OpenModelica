@@ -52,14 +52,14 @@ getClassNames(A);
 // true
 // true
 // "model test2
-//   Integer y ;
+//   Integer y;
 // end test2;
 // model A
 //   model test
-//     Real z ;
-//     Integer x = 33 ;
+//     Real z;
+//     Integer x = 33;
 //     annotation(Icon(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{ -50, -50},{50,50},{100,0},{0,100}})}), Diagram(graphics = {Line(color = {127,127,127}, arrow = {Arrow.None,Arrow.Open}, points = {{ -50, -50},{50,50},{100,0},{0,100}})}), Documentation(info = "<HTML>foo</HTML>", revisions = "1.0"));
-//   end test ;
+//   end test;
 // end A;
 // 
 // "

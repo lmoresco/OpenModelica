@@ -16,6 +16,6 @@ end Sign;
 // Real r1;
 // Real r2;
 // equation
-//   r1 = 1.0;
-//   r2 = -1.0;
+// r1 = 1.0;
+// r2 = -1.0;
 // end Sign;

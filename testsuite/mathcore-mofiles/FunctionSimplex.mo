@@ -132,13 +132,13 @@ end FunctionSimplex;
 //   p := 0;
 //   q := 0;
 //   a := pivot1(a,1 + p,1 + q);
-//   while  NOT (q == M OR p == N) loop
+//   while NOT (q == M OR p == N) loop
 //     q := 0;
-//     while  NOT (q == M OR a<asub>[1, 1 + q] > 1.0) loop
+//     while NOT (q == M OR a<asub>[1, 1 + q] > 1.0) loop
 //       q := 1 + q;
 //     end while;
 //     p := 0;
-//     while  NOT (p == N OR a<asub>[1 + p, 1 + q] > 0.1) loop
+//     while NOT (p == N OR a<asub>[1 + p, 1 + q] > 0.1) loop
 //       p := 1 + p;
 //     end while;
 //     if q < M AND p < N AND p > 0 AND q > 0 then
