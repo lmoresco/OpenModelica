@@ -81,7 +81,8 @@ int lex_main(double eps, FILE* f1, FILE* f2) {
       double d1 = strtod(s1,NULL);
       double d2 = strtod(s2,NULL);
       if (fabs(d2-d1) > eps) {
-        printf("Line %d: Real %s != %s with eps %f\n", line, s1, s2, eps);
+        printf("Line %d: Real %s != %s\n  eps: %f, actual diff: %f\n",
+               line, s1, s2, eps, fabs(d2-d1));
         return 1;
       }
       break;

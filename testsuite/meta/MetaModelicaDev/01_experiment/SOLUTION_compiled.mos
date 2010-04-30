@@ -9,7 +9,8 @@ echo(false);
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 i:=Main.main({"10"});
-
+print("
+");
 // Result:
 // Factorial of 10 is: 3628800
 // Calling Functions.test("one"):   1
