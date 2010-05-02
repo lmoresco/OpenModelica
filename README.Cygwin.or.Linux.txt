@@ -107,9 +107,9 @@ Setting your environment for compiling OpenModelica
     + this is for executables: idl, mico-cpp and mico-config
 
   For the new Qt based plotting functionality you will need to:
-  - Set QTHOME to where you compiled Qt 4.x.x
-    ( Ubuntu: QTHOME=/usr/ )
-        NOTE: if you don't define QTHOME you won't be able to plot
+  - Configure with-Qt-sendData
+  - Have Qt installed and qmake on the PATH.
+        NOTE: if you don't, you won't be able to plot
               using plot and plotParameteric but it will work with
               plot2 and plotParametric2 functions.
   - Add coin3d/bin and soqt/bin to the PATH variable

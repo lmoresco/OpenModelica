@@ -13,24 +13,16 @@ builddir_inc=$(top_builddir)/build/include/omc
 
 FPUFLAGS = -msse2 -mfpmath=sse
 
-#	mkdir -p release && \
-#	$(MAKE) -f Makefile.Release.mingw
-PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw
-# ifeq ($(OSTYPE),$(OS_MSYS))
-# PLTPKGCMD =	cd ./sendData && mkdir -p release && $(MAKE) -f Makefile.Release.mingw
-#else
-# ifdef QTHOME
-#  PLTPKGCMD =	cd ./sendData && $(QTHOME)/bin/qmake && $(MAKE) release
-# else
-#  PLTPKGCMD = mkdir -p sendData/release && g++ -c -o sendData/libsendData.o sendData/humbug.cpp && ar -ru sendData/release/libsendData.a sendData/libsendData.o
-# endif
-#endif
-
 LIBF2CMAKEFILE = makefile.mingw
 JAVAMAKEFILE = Makefile.omdev.mingw
 INTERACTIVEMAKEFILE = Makefile
 INTERACTIVELIBS = 
+LIBSENDDATA = libsendData.a
+
 include Makefile.common
+
+libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
+	$(MAKE) -C sendData -f Makefile.Release.mingw
 
 omdevinstall:
 	cp omdev_qtdeps/*.a ${builddir_lib}
