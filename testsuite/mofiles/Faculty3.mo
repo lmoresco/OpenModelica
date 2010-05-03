@@ -27,20 +27,20 @@ equation
   y = Faculty3(x);
 end Faculty3Model;
 
+// Result:
 // function Faculty3
 // input Integer x;
 // output Integer y;
-// Integer i;
+// protected Integer i;
 // algorithm
 //   y := 1;
 //   i := 2;
 //   while i <= x loop
 //     y := i * y;
-//     i := i + 1;
+//     i := 1 + i;
 //   end while;
 // end Faculty3;
 // 
-// Result:
 // fclass Faculty3Model
 // Integer x;
 // Integer y;

@@ -32,23 +32,4 @@ equation
 end Faculty4;
 
 // Result:
-// fclass Faculty4
-//   parameter Integer x;
-//   parameter Integer x.min;
-//   Integer work[x];
-//   output Integer y;
-// equation
-//   x = 4;
-//   x.min = 0;
-//   if x < 2 then
-//     y = 1;
-//   else
-//     y = work[4];
-//     work[4] = work[3] * (1 + work[3]);
-//     work[3] = work[2] * (1 + work[2]);
-//     work[2] = work[1] * (1 + work[1]);
-//     work[1] = 1;
-//   end if;
-//   assert(x >= x.min);
-// end Faculty4;
 // endResult

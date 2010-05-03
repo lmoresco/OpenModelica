@@ -23,6 +23,7 @@ equation
   y = Faculty2(x);
 end Faculty2Model;
 
+// Result:
 // function Faculty2
 // input Integer x;
 // output Integer y;
@@ -33,7 +34,6 @@ end Faculty2Model;
 //   end for;
 // end Faculty2;
 // 
-// Result:
 // fclass Faculty2Model
 // Integer x;
 // Integer y;
