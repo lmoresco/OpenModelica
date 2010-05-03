@@ -17,8 +17,8 @@ AlgorithmCondAssign1.mo Tank.mo HeatTankExpanded.mo FlatTank.mo TankPI.mo \
 TankPID.mo TanksConnectedPI.mo TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo \
 ArrayAddSub1.mo ArrayDivError.mo ArrayMult.mo ArrayReduce.mo VectorizeOneReturnValue.mo \
 ABCDsystem.mo EqualityEquationsCorrect.mo FiveForEquations.mo HideVariableForEquations.mo \
-IfEquation.mo WhenEquation.mo WhenVectorPredicateEquation.mo WhenVectorPredicateEquation.mo \
-WhenValidResult.mo WhenValidResult.mo PolynomialEvaluatorA.mo PolynomialEvaluatorB.mo \
+IfEquation.mo WhenEquation.mo WhenVectorPredicateEquation.mo \
+WhenValidResult.mo PolynomialEvaluatorA.mo PolynomialEvaluatorB.mo \
 StepAdvanced.mo AlgorithmSection.mo WhenStatement1.mo WhenStatement2.mo \
 WhenStatement3.mo DoubleWhenSequential.mo FuncDer.mo SimplePeriodicSampler.mo TwoRateSampler.mo \
 DiscreteVectorStateSpace.mo WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \

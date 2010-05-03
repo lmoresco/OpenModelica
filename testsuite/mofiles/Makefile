@@ -131,8 +131,7 @@ ArrayMult.mo ArrayReduce.mo ArrayReduce2.mo \
 VectorizeOneReturnValue.mo ABCDsystem.mo EqualityEquationsCorrect.mo \
 FiveForEquations.mo \
 HideVariableForEquations.mo IfEquation.mo \
-WhenEquation.mo WhenVectorPredicateEquation.mo \
-WhenVectorPredicateEquation.mo WhenValidResult.mo WhenValidResult.mo \
+WhenEquation.mo WhenVectorPredicateEquation.mo WhenValidResult.mo \
 WhenNested.mo WhenElseNested.mo \
 PolynomialEvaluatorA.mo \
 PolynomialEvaluatorB.mo StepAdvanced.mo \
