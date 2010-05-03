@@ -1,4 +1,4 @@
-// name:     Extends8
+// name:     Extends9
 // keywords: extends
 // status:   correct
 //
