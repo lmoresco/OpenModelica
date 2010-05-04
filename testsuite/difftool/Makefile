@@ -1,5 +1,5 @@
 ifdef OMDEV
-EXT="".exe"
+EXT=".exe"
 endif
 
 ../../build/bin/omc-diff$(EXT): omc-diff.l
