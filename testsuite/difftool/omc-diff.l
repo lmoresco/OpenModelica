@@ -14,9 +14,9 @@ letter          [^0-9\-\n\r]
 
 %%
 
-"\n\r"|"\n"         return T_NEWLINE;
+"\r\n"|"\n\r"|"\n"|"\r" return T_NEWLINE;
 "-"?{digit}+("."({digit}+))?(("e"|"E")"-"?{digit}+)?  return T_REAL;
-{letter}+    return T_TEXT;
+"-"?{letter}+    return T_TEXT;
 
 %%
 
