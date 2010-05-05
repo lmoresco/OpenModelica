@@ -70,12 +70,12 @@
   model TempResistor2 
     extends TempResistor;
     Real Temp2;
-  end TempResistor;
+  end TempResistor2;
   
   model Resistor2 
     extends Resistor;
     Real R2;
-  end TempResistor;
+  end Resistor2;
 
   class GenMicroCircuit2 
     replaceable type CompType = Resistor extends TwoPin;

@@ -1,56 +1,45 @@
 TEST=../../rtest -v
-#TEST=runtest
-#adrpo 2008-12-16 disable the .mos files for now.
-TESTFILES= AlgorithmSection.mo ModifiedFiltersInSeries.mo \
-ArrayDim1.mo Colors.mo MultFuncCall.mo ArrayDim2.mo DAEexample.mo \
-ArrayDim3.mo ElementWiseMultiplication.mo ArrayDim4.mo Equations.mo \
-Summation.mo BouncingBall.mo VanDerPol.mo LogCall1.mo Xpowers.mo \
-ArrayAddSub.mo ArrayDiv.mo ArrayDivError.mo BlockMatrix.mo BlockMatrix2.mo \
-BlockMatrix3.mo PointSum.mo ComplexNumbers.mo EquationCall.mo \
-VectorizeSeveralArguments.mo AccessDemoIllegalMod.mo AccessDemoLegalMod.mo \
-ColoredPointLegalMod.mo ArraysInitLegal.mo CyclicPerm.mo MRFcall.mo \
-MicroCircuitInvalid.mo TempDepResistorCircuit.mo TempDepResistorCircuitInherited.mo \
-RefinedSimpleCircuitValid.mo RefinedSimpleCircuitInvalid.mo HelloWorld.mo \
-Xpowers1.mo Xpowers2.mo Xpowers3.mo PolynomialEvaluator1.mo PolynomialEvaluator2.mo \
-FuncMultResults.mo SumForLoop.mo ForLoopHideVariable.mo SumSeriesWhile.mo SumVectorForIf.mo \
-AlgorithmCondAssign1.mo Tank.mo HeatTankExpanded.mo FlatTank.mo TankPI.mo \
-TankPID.mo TanksConnectedPI.mo TankHybridPID.mo TankHybridPI.mo CyclicPerm.mo \
-ArrayAddSub1.mo ArrayDivError.mo ArrayMult.mo ArrayReduce.mo VectorizeOneReturnValue.mo \
-ABCDsystem.mo EqualityEquationsCorrect.mo FiveForEquations.mo HideVariableForEquations.mo \
-IfEquation.mo WhenEquation.mo WhenVectorPredicateEquation.mo \
-WhenValidResult.mo PolynomialEvaluatorA.mo PolynomialEvaluatorB.mo \
-StepAdvanced.mo AlgorithmSection.mo WhenStatement1.mo WhenStatement2.mo \
-WhenStatement3.mo DoubleWhenSequential.mo FuncDer.mo SimplePeriodicSampler.mo TwoRateSampler.mo \
-DiscreteVectorStateSpace.mo WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo Epidemics1.mo \
-LotkaVolterra.mo HydrogenIodide.mo
-#TanksConnectedPI.mos TankPID.mos FlatTank.mos BouncingBall.mos HelloWorld.mos HeatTank.mos TankPI.mos \
-#CyclicPerm.mos HydrogenIodide.mos LotkaVolterra.mos DiscreteVectorStateSpace.mos SimplePeriodicSampler.mos \
-#DoubleWhenSequential.mos DoubleWhenConflict.mos FuncDer.mos StepAdvanced.mos \
-#WhenStatement3.mos WhenStatement2.mos WhenStatement1.mos TwoRateSampler.mos PolynomialEvaluatorB.mos \
-#PolynomialEvaluatorA.mos HideVariableForEquations.mos ArrayMult.mos ArrayDivError.mos ArrayAddSub1.mos \
-#EqualityEquations.mos FiveForEquations.mos IfEquation.mos WhenEquation.mos AlgorithmSection.mos 
 
-FAILINGTESTFILES= AppendElement.mo ArrayExponentiation.mo Circuit.mo ColorClasses.mo LeastSquares.mo \
-AlgorithmCondAssign2.mo \
-ArrayFieldSlice.mo ArraySlice.mo \
-PointInst.mo \
-ColoredPointIllegalMod1.mo \
-ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
-ArraysInitIllegal.mo RefinedSimpleCircuitValid2.mo \
-MicroCircuitValid.mo \
-GenericMicroCircuit.mo \
-PolynomialEvaluator1.mos  PolynomialEvaluator3.mos PolynomialEvaluator2.mos \
-JoinThreeVectors2.mos StatementCall.mos WhenPriority.mos OneArgBaseFunction.mos \
-HeatTank.mo TankHybridPID.mos TankHybridPI.mos ArrayFieldSlice.mo ArrayFieldSlice.mos \
-AppendElement.mo AppendElement.mos ArrayExponentiation.mo ArrayExponentiation.mos \
-DimConvert.mo DimConvert.mos ConstructFunc.mo ConstructFunc.mos ArrayReduce.mos \
-VectorizeOneReturnValue.mos ABCDsystem.mos EqualityEquationsCorrect.mos \
+TESTFILES=\
+ABCDsystem.mo AccessDemoIllegalMod.mo AccessDemoLegalMod.mo ActivateWhenEquation.mo \
+AlgorithmCondAssign1.mo AlgorithmCondAssign2.mo AlgorithmSection.mo \
+ArrayAddSub1.mo ArrayAddSub.mo ArrayConstruct1.mo \
+ArrayDim1.mo ArrayDim2.mo ArrayDim3.mo ArrayDim4.mo ArrayDivError.mo ArrayDiv.mo \
+ArrayExponentiation.mo ArrayFieldSlice.mo ArrayIndex.mo ArrayMult.mo \
+ArrayReduce.mo ArraysInitIllegal.mo ArraysInitLegal.mo \
+AssertTest.mo AssertTest1.mo AssertTest2.mo \
+BlockMatrix.mo BlockMatrix2.mo BlockMatrix3.mo \
+BouncingBall.mo ColoredPointLegalMod.mo Colors.mo ComplexNumbers.mo Concat3.mo \
+ConstructFunc.mo CyclicPerm.mo DAEexample.mo DiscreteVectorStateSpace.mo \
+DoubleWhenSequential.mo ElementWiseMultiplication.mo Epidemics1.mo \
+EqualityEquationsCorrect.mo EquationCall.mo Equations.mo FilterBlock1.mo \
+FiveForEquations.mo FlatTank.mo ForLoopHideVariable.mo FuncDer.mo FuncMultResults.mo \
+HeatTankExpanded.mo HeatTank.mo HelloWorld.mo HideVariableForEquations.mo \
+HydrogenIodide.mo IfEquation.mo JoinThreeVectors2.mo LeastSquares.mo \
+LogCall1.mo LotkaVolterra.mo MicroCircuitInvalid.mo ModifiedFiltersInSeries.mo \
+MoonLanding.mo MRFcall.mo MultFuncCall.mo OneArgBaseFunction.mo PointSum.mo \
+PolynomialEvaluator1.mo PolynomialEvaluator2.mo PolynomialEvaluator3.mo \
+PolynomialEvaluatorA.mo PolynomialEvaluatorB.mo RangeVector.mo \
+RefinedSimpleCircuitInvalid.mo RefinedSimpleCircuitValid.mo \
+RefinedSimpleCircuitValid2.mo SimplePeriodicSampler.mo StepAdvanced.mo \
+SumForLoop.mo Summation.mo SumSeriesWhile.mo SumVectorForIf.mo \
+TankHybridPID.mo TankHybridPI.mo Tank.mo TankPID.mo TankPI.mo TanksConnectedPI.mo \
+TempDepResistorCircuitInherited.mo TempDepResistorCircuit.mo TwoRateSampler.mo \
+VanDerPol.mo WatchDog1AlgorithmWhen.mo WatchDog2EquationWhen.mo \
+VectorizeOneReturnValue.mo VectorizeSeveralArguments.mo \
+WhenEquation.mo WhenNotValid.mo WhenPriority.mo WhenStatement1.mo WhenStatement2.mo \
+WhenStatement3.mo WhenValidResult.mo WhenVectorPredicateEquation.mo \
+Xpowers1.mo Xpowers2.mo Xpowers3.mo Xpowers.mo 
+
+FAILINGTESTFILES= AddEmpty.mo AppendElement.mo Circuit.mo ColorClasses.mo \
+ArraySlice.mo PointInst.mo DoubleWhenConflict.mo \
+ColoredPointIllegalMod1.mo ColoredPointIllegalMod2.mo ColoredPointIllegalMod3.mo \
+MicroCircuitValid.mo GenericMicroCircuit.mo DimConvert.mo \
 EqualityEquations.mo DimSize.mo WhenNotValid.mo ErrorNestedWhen.mo \
-DoubleWhenConflict.mo WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos Epidemics1.mos \
-
- 
-
-
+ArrayAlgebraFunc.mo ArrayEmpty.mo ColorPixel.mo \
+ConcatArr1.mo ConcatArr2.mo Concat4.mo ConnectForEquations.mo \
+Oscillator.mo StatementCall.mo SubArrayIndex.mo TempResistor3.mo \
+VectorizeSumVec.mo
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

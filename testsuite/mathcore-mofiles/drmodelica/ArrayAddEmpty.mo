@@ -12,9 +12,7 @@ class AddEmpty
 	//Real ac = A + C; // Error,incompatible types Real[3, 0] and Real[0, 0]
 end AddEmpty;
 
-// insert expected flat file here. Can be done by issuing the command
-// ./omc XXX.mo >> XXX.mo and then comment the inserted class.
-//
-// fclass <XXX> 
-// Real x;
-// end <XXX>;
+// Result:
+// fclass AddEmpty
+// end AddEmpty;
+// endResult

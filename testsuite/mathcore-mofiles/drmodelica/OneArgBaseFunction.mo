@@ -27,3 +27,18 @@ class myTanCall
 equation
   t = myTan(1.0);
 end myTanCall;
+
+// Result:
+// function myTan
+// input Real x;
+// output Real result;
+// algorithm
+//   result := sin(x) / cos(x);
+// end myTan;
+// 
+// fclass myTanCall
+// Real t;
+// equation
+//   t = 1.5574077246549;
+// end myTanCall;
+// endResult

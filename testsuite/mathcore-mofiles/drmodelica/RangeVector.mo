@@ -15,9 +15,29 @@ class RangeVector
 	Real[0] v7none;	// v7 none is an empty Real vector
 end RangeVector;
 
-// insert expected flat file here. Can be done by issuing the command
-// ./omc XXX.mo >> XXX.mo and then comment the inserted class.
-//
-// fclass <XXX> 
-// Real x;
-// end <XXX>;
+// Result:
+// fclass RangeVector
+// Real v1[1] = 2.7;
+// Real v1[2] = 3.7;
+// Real v1[3] = 4.7;
+// Real v1[4] = 5.7;
+// Real v1[5] = 6.7;
+// Real v2[1] = 2.7;
+// Real v2[2] = 3.7;
+// Real v2[3] = 4.7;
+// Real v2[4] = 5.7;
+// Real v2[5] = 6.7;
+// Integer v3[1] = 3;
+// Integer v3[2] = 4;
+// Integer v3[3] = 5;
+// Real v5[1] = 1.0;
+// Real v5[2] = 3.0;
+// Real v5[3] = 5.0;
+// Real v5[4] = 7.0;
+// Integer v6[1];
+// Integer v6[2];
+// Integer v6[3];
+// Integer v6[4];
+// Integer v6[5];
+// end RangeVector;
+// endResult

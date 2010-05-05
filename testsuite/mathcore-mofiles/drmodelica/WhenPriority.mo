@@ -15,3 +15,16 @@ algorithm
     close := false;
   end when;
 end WhenPriority;
+
+// Result:
+// fclass WhenPriority
+// Boolean close;
+// parameter Real x = 5.0;
+// algorithm
+//   when x >= 5.0 then
+//     close := true;
+//   elsewhen x <= 5.0 then
+//     close := false;
+//   end when;
+// end WhenPriority;
+// endResult

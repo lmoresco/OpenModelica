@@ -16,28 +16,21 @@ algorithm
 	c := A[1, 1];
 end ArrayIndex;
 
-// insert expected flat file here. Can be done by issuing the command
-// ./omc XXX.mo >> XXX.mo and then comment the inserted class.
-//
+// Result:
 // fclass ArrayIndex
-// Real A[1,1];
-// Real A[1,2];
-// Real A[2,1];
-// Real A[2,2];
-// Real A_Retrieval;
+// Real A[1,1] = 2.0;
+// Real A[1,2] = 3.0;
+// Real A[2,1] = 4.0;
+// Real A[2,2] = 5.0;
+// Real A_Retrieval = A[2,2];
 // Real B[1,1];
 // Real B[1,2];
 // Real B[2,1];
 // Real B[2,2];
 // Real c;
-// equation
-//   A[1,1] = 2.0;
-//   A[1,2] = 3.0;
-//   A[2,1] = 4.0;
-//   A[2,2] = 5.0;
-//   A_Retrieval = A[2,2];
 // algorithm
 //   B := {{1.0,1.0},{1.0,1.0}};
 //   B[2,1] := 8.0;
 //   c := A[1,1];
 // end ArrayIndex;
+// endResult
