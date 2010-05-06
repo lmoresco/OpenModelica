@@ -116,6 +116,8 @@ val(Force3.flange_b.s,0.5);
 val(Force3.flange_b.s,0.75);
 val(Force3.flange_b.s,1.0);
 
+system("rm Modelica.Mechanics.Translational.Examples.SignConvention*");
+
 // Result:
 // true
 // record SimulationResult
@@ -211,4 +213,5 @@ val(Force3.flange_b.s,1.0);
 // 0.625
 // 0.78125
 // 1.0
+// 0
 // endResult
