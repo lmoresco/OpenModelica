@@ -27,11 +27,15 @@ int yywrap (void ) {
   return 1;
 }
 
+#define VERSION_STRING "-v1.0"
+
 int usage(char* exe, char* s1,char* s2) {
   printf("Error: %s%s.\n", s1, s2);
-  printf("Usage: %s epsilon $file_expected $file_actual\n",exe);
+  printf("Usage (Normal): %s epsilon $file_expected $file_actual\n",exe);
   printf("  Compares two files. Floating point numbers are parsed.\n");
   printf("  A maximum error of 0.0 < epsilon < 1.0 is tolerated when comparing.\n");
+  printf("Usage (Version test): %s %s\n", exe, VERSION_STRING);
+  printf("  Returns exit code 0.\n");
   return 2;
 }
 
@@ -99,6 +103,8 @@ int main(int argc, char** argv) {
   FILE *f1, *f2;
   char* endptr;
   double eps;
+  if (argc == 2 && 0 == strcmp(argv[1], VERSION_STRING))
+    exit(0);
   if (argc != 4)
     exit(usage(argv[0],"Wrong number of arguments",""));
   eps = strtod(argv[1],&endptr);
