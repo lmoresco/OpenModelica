@@ -53,7 +53,7 @@ end FooFunctions;
 
 model Derivative1
   Real x[3];
-  Real u[3](fixed=false);
+  Real u[3](each fixed=false);
   type IC=Real(start=0,fixed=true);
   IC ic[2]=x[1:2]-u[1:2];
   parameter Boolean b=true;
@@ -63,3 +63,63 @@ equation
   x[3]=u[3];
   der(u[1:2])=u[2:3];
 end Derivative1;
+
+// Result:
+// function FooFunctions.foo0
+// input Real x;
+// input Boolean b;
+// output Real y;
+// algorithm
+//   if b then
+//     y := sin(x);
+//   else
+//     y := x;
+//   end if;
+// end FooFunctions.foo0;
+// 
+// function FooFunctions.foo1
+// input Real x;
+// input Boolean b;
+// input Real der_x;
+// output Real der_y;
+// algorithm
+//   if b then
+//     der_y := cos(x) * der_x;
+//   else
+//     der_y := der_x;
+//   end if;
+// end FooFunctions.foo1;
+// 
+// function FooFunctions.foo2
+// input Real x;
+// input Boolean b;
+// input Real der_x;
+// input Real der_2_x;
+// output Real der_2_y;
+// algorithm
+//   if b then
+//     der_2_y := cos(x) * der_2_x - sin(x) * der_x ^ 2.0;
+//   else
+//     der_2_y := der_2_x;
+//   end if;
+// end FooFunctions.foo2;
+// 
+// fclass Derivative1
+// Real x[1];
+// Real x[2];
+// Real x[3];
+// Real u[1](fixed = false);
+// Real u[2](fixed = false);
+// Real u[3](fixed = false);
+// Real ic[1](start = 0.0, fixed = true) = x[1] - u[1];
+// Real ic[2](start = 0.0, fixed = true) = x[2] - u[2];
+// parameter Boolean b = true;
+// equation
+//   x[1] = FooFunctions.foo0(exp(time),b);
+//   der(x[1]) = x[2];
+//   der(x[2]) = x[3];
+//   x[3] = u[3];
+//   der(u[1]) = u[2];
+//   der(u[2]) = u[3];
+// end Derivative1;
+// endResult

@@ -20,12 +20,13 @@ end Simplify;
 // Result:
 // fclass Simplify
 // Real x(start = 1.0);
-// parameter Real a = 2;
-// parameter Real b = 3;
-// parameter Real c = 4;
-// parameter Real d = 5;
-// parameter Real e = 6;
-// parameter Real f = 7;
+// parameter Real a = 2.0;
+// parameter Real b = 3.0;
+// parameter Real c = 4.0;
+// parameter Real d = 5.0;
+// parameter Real e = 6.0;
+// parameter Real f = 7.0;
 // equation
-//   der(x) = sin(time) / (f * d * b * a * c * e);
-// end Simplify;// endResult
+//   der(x) = sin(time) * 1.0 / f / d / b / a / c / e;
+// end Simplify;
+// endResult

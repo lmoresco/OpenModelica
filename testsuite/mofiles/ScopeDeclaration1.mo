@@ -8,3 +8,9 @@
 class ScopeDeclaration1
   Real a = -a;
 end ScopeDeclaration1;
+
+// Result:
+// fclass ScopeDeclaration1
+// Real a = -a;
+// end ScopeDeclaration1;
+// endResult

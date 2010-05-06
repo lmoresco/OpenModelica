@@ -17,11 +17,11 @@ equation
 end Connect5;
 
 // Result:
-// fclass Connect4
+// fclass Connect5
 //   Boolean c1.b;
 //   Boolean c2.b;
 // equation
-//   c1.b=c2.b;
-//   c1.b=time<0.5;
-// end Connect4;
+//   c1.b = time < 0.5;
+//   c1.b = c2.b;
+// end Connect5;
 // endResult

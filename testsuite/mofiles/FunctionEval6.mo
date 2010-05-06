@@ -11,7 +11,7 @@ end test2;
 
 function test3
   output Real x = 5;
-end test2;
+end test3;
 
 function test
   input  Real x;
@@ -32,38 +32,29 @@ equation
   y = test(x1+x2);
 end FunctionEval6;
 
-
-// function test2
-// output Real x;
-// end test2;
-// 
-// function test3
-// output Real x;
-// equation
-//   x = 5.0;
-// end test3;
-// 
+// Result:
 // function test
 // input Real x;
 // output Real y;
 // algorithm
-//   y := x + 4.0;
+//   y := 4.0 + x;
 // end test;
+// 
+// function test3
+// output Real x = 5.0;
+// end test3;
 // 
 // Result:
 // fclass FunctionEval6
-// parameter Real a = 5;
-// parameter Real b[1] = 1;
-// parameter Real b[2] = 2;
-// parameter Real b[3] = 3;
-// Real x1;
-// Real x2;
-// Real x3;
+// parameter Real a = 5.0;
+// parameter Real b[1] = 1.0;
+// parameter Real b[2] = 2.0;
+// parameter Real b[3] = 3.0;
+// Real x1 = test(a);
+// Real x2 = 7.0;
+// Real x3 = 9.0;
 // Real y;
 // equation
-//   x1 = test(a);
-//   x2 = 7.0;
-//   x3 = 7.0;
 //   y = test(x1 + x2);
 // end FunctionEval6;
 // endResult

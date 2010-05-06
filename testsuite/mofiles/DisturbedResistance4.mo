@@ -1,6 +1,6 @@
 // name:     DisturbedResistance4
 // keywords: modification
-// status:   erroneous
+// status:   incorrect
 // 
 // Finalized objects shall not be overwritten.
 //

@@ -18,12 +18,14 @@ end ConnectConst1;
 
 // Result:
 // fclass ConnectConst1
-//   Real c1.e
-//   Real c1.f
-//   constant Real c2.e=1
-//   constant Real c2.f=2
+//   Real c1.f;
+//   Real c1.e;
+//   constant Real c2.f = 2.0;
+//   constant Real c2.e = 1.0;
 // equation
-//  c1.e=c2.e;
-//  c1.f+c2.f=0;
-// end ConnectConst1
+//   c1.e = c2.e;
+//   (-c1.f) + (-c2.f) = 0.0;
+//   c2.f = 0.0;
+//   c1.f = 0.0;
+// end ConnectConst1;
 // endResult

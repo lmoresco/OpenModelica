@@ -12,3 +12,13 @@ algorithm
   n1 := integer(6.6);
   n2 := div(n1,2);
 end Real2Integer3;
+
+// Result:
+// fclass Real2Integer3
+// Integer n1;
+// Integer n2;
+// algorithm
+//   n1 := 6;
+//   n2 := div(n1,2);
+// end Real2Integer3;
+// endResult

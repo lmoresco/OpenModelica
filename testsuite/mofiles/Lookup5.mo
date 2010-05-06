@@ -17,10 +17,7 @@ end Lookup5;
 
 // Result:
 // fclass Lookup5
-//   constant Real a;
-//   Real b.a;
-// equation
-//   a = 3.0;
-//   b.a = -b.a;
+//   constant Real a = 3.0;
+//   Real b.a = -b.a;
 // end Lookup5;
 // endResult

@@ -2,7 +2,7 @@
 // keywords: function,unknown
 // status:   correct
 // 
-// Decarling a function as `class' seems to be allowed.  I wonder if
+// Declaring a function as `class' seems to be allowed.  I wonder if
 // any implementation will allow this...
 // 
 
@@ -20,6 +20,13 @@ equation
 end Function5;
 
 // Result:
+// function f
+// input Real x;
+// output Real y;
+// algorithm
+//   y := 2.0 * x;
+// end f;
+// 
 // fclass Function5
 //   Real a;
 //   Real b;

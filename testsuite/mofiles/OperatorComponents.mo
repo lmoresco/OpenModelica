@@ -1,6 +1,6 @@
 // name: OperatorComponents
 // keywords: operator
-// status: incorrect
+// status: correct
 //
 // Tests operator overloading, operators can only contain function declarations
 //

@@ -1,6 +1,6 @@
 // name:     Units1
 // keywords: connect,modification
-// status:   erroneous
+// status:   incorrect
 // 
 // Conversion between units is not supported within the Modelica 
 // language. Consequently in the following example the generation 
@@ -32,14 +32,16 @@ end Units1;
 
 // Result:
 // fclass Units1
-//   Real p1.v;
-//   Real p1.i;
-//   Real p2.v;
-//   Real p2.i;
+// Real p1.v(unit = "kV");
+// Real p1.i(unit = "A");
+// Real p2.v(unit = "V");
+// Real p2.i(unit = "A");
 // equation
 //   p1.v = 0.0;
 //   p2.i = 1.0;
-//   -p1.i + -p2.i = 0.0;
-//   p1.v = p2.v;
+//   (-p1.i) + (-p2.i) = 0.0;
+// p1.v = p2.v;
+//   p2.i = 0.0;
+//   p1.i = 0.0;
 // end Units1;
 // endResult

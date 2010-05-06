@@ -28,6 +28,22 @@ end FunctionBreak;
 
 
 // Result:
+// function f
+// input Real y;
+// output Real a;
+// protected Integer i;
+// algorithm
+//   i := 0;
+//   a := y - 1.0;
+//   while /*REAL*/(i) / 10.0 < y loop
+//     a := 0.5 + a;
+//     if a > y then
+//       break;
+//     end if;
+//     i := 1 + i;
+//   end while;
+// end f;
+// 
 // fclass FunctionBreak
 // Real x;
 // Real y;

@@ -14,20 +14,22 @@ u3=2 .+{4,5};
 t=2 .+4;
 end ArrayEWOpsCEval1;  
 
-//fclass ArrayEWOpsCEval1
-//Real u1[1];
-//Real u1[2];
-//Real u2[1];
-//Real u2[2];
-//Real u3[1];
-//Real u3[2];
-//Real t;
-//equation
-//  u1[1] = 6.0;
-//  u1[2] = 8.0;
-//  u2[1] = 7.0;
-//  u2[2] = 8.0;
-//  u3[1] = 6.0;
-//  u3[2] = 7.0;
-//  t = 6.0;
-//end ArrayEWOpsCEval1;
+// Result:
+// fclass ArrayEWOpsCEval1
+// Real u1[1];
+// Real u1[2];
+// Real u2[1];
+// Real u2[2];
+// Real u3[1];
+// Real u3[2];
+// Real t;
+// equation
+//   u1[1] = 6.0;
+//   u1[2] = 8.0;
+//   u2[1] = 7.0;
+//   u2[2] = 8.0;
+//   u3[1] = 6.0;
+//   u3[2] = 7.0;
+//   t = 6.0;
+// end ArrayEWOpsCEval1;
+// endResult

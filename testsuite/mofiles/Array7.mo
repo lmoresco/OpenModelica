@@ -15,9 +15,14 @@ model Array7
   A a[2](n={1,2});
 end Array7;
 
-// flatmodel Array7
-//
+// Result:
+// fclass Array7
 // parameter Integer a[1].n = 1;
 // parameter Real a[1].x[1,1];
 // parameter Integer a[2].n = 2;
+// parameter Real a[2].x[1,1];
+// parameter Real a[2].x[1,2];
+// parameter Real a[2].x[2,1];
 // parameter Real a[2].x[2,2];
+// end Array7;
+// endResult

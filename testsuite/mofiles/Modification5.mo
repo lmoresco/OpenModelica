@@ -16,7 +16,6 @@ end Modification5;
 
 // Result:
 // fclass Modification5
-// equation
-//   x = real(17) +2*x
+//   Real x = 17.0 + 2.0 * x;
 // end Modification5;
 // endResult

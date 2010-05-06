@@ -17,10 +17,7 @@ end ArrayModification10;
 // fclass ArrayModification10
 //   Real a.x[1,1];
 //   Real a.x[1,2];
-//   Real a.x[2,1];
-//   Real a.x[2,2];
-// equation
-//   a.x[2,1] = 1.0;
-//   a.x[2,2] = 2.0;
+//   Real a.x[2,1] = 1.0;
+//   Real a.x[2,2] = 2.0;
 // end ArrayModification10;
 // endResult

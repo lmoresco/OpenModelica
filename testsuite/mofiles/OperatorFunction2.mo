@@ -5,14 +5,14 @@
 // tests the shorthand operator function keyword, extension should be illegal
 //
 
-record Rec;
+record Rec
   Real r;
   operator function '+'
     input Rec r1;
     input Rec r2;
     output Rec res;
   algorithm
-    res = Rec(r = r1.r + r2.r);
+    res := Rec(r = r1.r + r2.r);
   end '+';
 end Rec;
 

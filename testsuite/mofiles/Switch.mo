@@ -24,9 +24,6 @@ equation
     open = time >= 0.5;
 end Switch;
 
-// insert expected flat file here. Can be done by issuing the command
-// ./omc XXX.mo >> XXX.mo and then comment the inserted class.
-//
 // Result:
 // fclass Switch
 // Real v;
@@ -36,7 +33,11 @@ end Switch;
 // Boolean open;
 // equation
 //   itot = i + i1;
-//   0.0 = if open then v - 0.0 else i - 0.0;
+//   if open then
+//   v = 0.0;
+//   else
+//   i = 0.0;
+//   end if;
 //   1.0 - i1 = 0.0;
 //   1.0 - v - i = 0.0;
 //   open = time >= 0.5;

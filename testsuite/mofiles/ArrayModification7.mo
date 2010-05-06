@@ -16,14 +16,10 @@ end ArrayModification7;
 
 // Result:
 // fclass ArrayModification7
-//   Real    a.x[1];
-//   Real    a.x[2];
-//   Real    a.x[3];
-//   Real    a.x[4];
-//   Real    a.x[5];
-// equation
-//   a.x[2] = 1.0;
-//   a.x[3] = 1.0;
-//   a.x[4] = 1.0;
+//   Real a.x[1];
+//   Real a.x[2] = 2.0;
+//   Real a.x[3] = 3.0;
+//   Real a.x[4] = 4.5;
+//   Real a.x[5];
 // end ArrayModification7;
 // endResult

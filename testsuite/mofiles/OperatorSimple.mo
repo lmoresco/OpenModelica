@@ -10,7 +10,7 @@ record Complex
   Real im;
 
   operator '*'
-    funtion mul
+    function mul
       input Complex c1;
       input Complex c2;
       output Complex result;
@@ -22,7 +22,7 @@ record Complex
 end Complex;
 
 model OperatorSimple
-  Complex c1,c2,c2;
+  Complex c1,c2,c3;
 equation
   c1 = Complex(re=2.0,im=3.0);
   c2 = Complex(re=7.0,im=3.14);

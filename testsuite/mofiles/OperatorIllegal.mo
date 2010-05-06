@@ -5,7 +5,7 @@
 // extending from a record containing operator overloads should be illegal
 //
 
-record Rec;
+record Rec
   Real r;
   operator '+'
     function add
@@ -13,7 +13,7 @@ record Rec;
       input Rec r2;
       output Rec res;
     algorithm
-      res = Rec(r = r1.r + r2.r);
+      res := Rec(r = r1.r + r2.r);
     end add;
   end '+';
 end Rec;

@@ -21,12 +21,22 @@ equation
 end FunctionReturn;
 
 // Result:
+// function f
+// input Real x;
+// output Real r;
+// algorithm
+//   r := 2.0 * x;
+//   if r > 20.0 then
+//     return;
+//   end if;
+//   r := r * x;
+// end f;
+// 
 // fclass FunctionReturn
 // Real x;
 // Real y;
-// Real z;
 // equation
-//   x = f(z);
-//   y = f(z);
+//   x = f(y);
+//   y = f(x);
 // end FunctionReturn;
 // endResult

@@ -19,10 +19,13 @@ equation
 end Connect6;
 
 // Result:
-// fclass Connect4
+// fclass Connect6
 //   String c1.s;
 //   String c2.s;
+//   Boolean b;
 // equation
-//   c1.s=c2.s;
-// end Connect4;
+//   c1.s = "h";
+//   b = c2.s == "h";
+//   c1.s = c2.s;
+// end Connect6;
 // endResult

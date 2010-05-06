@@ -29,18 +29,10 @@ end DeclarationOrder2;
 
 // Result:
 // fclass DeclarationOrder2
-//  parameter Integer D.n = 1;
-//  parameter Real D.c2[1].x(start = 3.14);
-//  parameter Real D.c[1].x = 3.14;
-//  Real D.c2[1].y(start = D.c2[1].x);
-//  Real D.c[1].y(start = D.c[1].x);
-//equation
-//  der(D.c2[1].y) = D.c2[1].x;
-//  der(D.c[1].y) = D.c[1].x;
-// end DeclarationOrder2
-
-
-
-
-   
+// Real D.c2[1].y(start = D.c2[1].x);
+// parameter Real D.c2[1].x = 3.14;
+// parameter Integer D.n = 1;
+// equation
+//   der(D.c2[1].y) = D.c2[1].x;
+// end DeclarationOrder2;
 // endResult
