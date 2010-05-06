@@ -1,11 +1,11 @@
-// name:     Xpowers1
+// name:     Xpowers01
 // keywords: equation,array
 // status:   correct
 // 
 // <decription>
 //
 
-model Xpowers1
+model Xpowers01
   parameter Real x = 10;
   Real a = 1;
   parameter Integer n = 5;
@@ -18,9 +18,9 @@ equation
   xpowers[4] = xpowers[3]*x;
   xpowers[4 + 1] = xpowers[4]*x;
   y = a * xpowers[5];
-end Xpowers1;
+end Xpowers01;
 
-// fclass Xpowers1
+// fclass Xpowers01
 // parameter Real x = 10.0;
 // Real a = 1.0;
 // parameter Integer n = 5;
@@ -37,9 +37,9 @@ end Xpowers1;
 //   xpowers[4] = xpowers[3] * x;
 //   xpowers[5] = xpowers[4] * x;
 //   y = a * xpowers[5];
-// end Xpowers1;
+// end Xpowers01;
 // Result:
-// fclass Xpowers1
+// fclass Xpowers01
 // parameter Real x = 10.0;
 // Real a = 1.0;
 // parameter Integer n = 5;
@@ -56,5 +56,5 @@ end Xpowers1;
 //   xpowers[4] = xpowers[3] * x;
 //   xpowers[5] = xpowers[4] * x;
 //   y = a * xpowers[5];
-// end Xpowers1;
+// end Xpowers01;
 // endResult

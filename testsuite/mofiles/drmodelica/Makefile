@@ -105,9 +105,9 @@ WhenStatement2.mo \
 WhenStatement3.mo \
 WhenValidResult.mo \
 WhenVectorPredicateEquation.mo \
-Xpowers1.mo \
-Xpowers2.mo \
-Xpowers3.mo \
+Xpowers01.mo \
+Xpowers02.mo \
+Xpowers03.mo \
 Xpowers.mo 
 
 FAILINGTESTFILES= AddEmpty.mo AppendElement.mo Circuit.mo ColorClasses.mo \

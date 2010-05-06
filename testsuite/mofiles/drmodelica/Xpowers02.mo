@@ -1,11 +1,11 @@
-// name:     Xpowers2
+// name:     Xpowers02
 // keywords: equation,array
 // status:   correct
 // 
 // <decription>
 //
 
-model Xpowers2
+model Xpowers02
   parameter Real x=10;
   Real xpowers[n];
   parameter Integer i=1;
@@ -15,9 +15,9 @@ equation
     for i in 1:n-1 loop
   xpowers[i + 1] = xpowers[i]*x;
   end for;
-end Xpowers2;
+end Xpowers02;
 
-// fclass Xpowers2
+// fclass Xpowers02
 // parameter Real x = 10.0;
 // Real xpowers[1];
 // Real xpowers[2];
@@ -32,9 +32,9 @@ end Xpowers2;
 //   xpowers[3] = xpowers[2] * x;
 //   xpowers[4] = xpowers[3] * x;
 //   xpowers[5] = xpowers[4] * x;
-// end Xpowers2;
+// end Xpowers02;
 // Result:
-// fclass Xpowers2
+// fclass Xpowers02
 // parameter Real x = 10.0;
 // Real xpowers[1];
 // Real xpowers[2];
@@ -49,5 +49,5 @@ end Xpowers2;
 //   xpowers[3] = xpowers[2] * x;
 //   xpowers[4] = xpowers[3] * x;
 //   xpowers[5] = xpowers[4] * x;
-// end Xpowers2;
+// end Xpowers02;
 // endResult
