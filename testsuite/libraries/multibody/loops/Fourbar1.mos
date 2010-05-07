@@ -5064,7 +5064,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2672 equation(s) and 2674 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2674 equation(s) and 2674 variable(s).
 // 1590 of these are trivial equation(s).
 // "
 // ""
