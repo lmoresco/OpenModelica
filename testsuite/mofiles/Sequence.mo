@@ -62,7 +62,7 @@ end Sequence;
 // output Orientation res;
 // end Orientation;
 // 
-// function axesRotations
+// function axesRotations "Inline before index reduction"
 // input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
 // input Real[3] angles "Rotation angles around the axes defined in 'sequence'";
 // input Real[3] der_angles "= der(angles)";
