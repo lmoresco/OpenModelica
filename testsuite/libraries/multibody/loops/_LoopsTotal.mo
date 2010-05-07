@@ -1471,6 +1471,7 @@ extends Modelica.Icons.Library;
                Modelica.Math.atan2(cross(R1.T[1, :], R1.T[2, :])*R2.T[2, :],R1.T[1,:]*R2.T[1,:]),
                Modelica.Math.atan2(-cross(R1.T[1, :],R1.T[2, :])*R2.T[1, :],R1.T[2,:]*R2.T[2,:]),
                Modelica.Math.atan2(R1.T[2, :]*R2.T[1, :],R1.T[3,:]*R2.T[3,:])};
+            annotation(Inline=true);               
           end equalityConstraint;
 
 
@@ -1486,6 +1487,7 @@ extends Modelica.Icons.Library;
           "Angular velocity of frame 2 with respect to frame 1 resolved in frame 2";
         algorithm
           w := R.w;
+          annotation(Inline=true);
         end angularVelocity2;
 
         function resolve1 "Transform vector from frame 2 to frame 1"
@@ -1863,6 +1865,7 @@ extends Modelica.Icons.Library;
             algorithm
               residue := [Q1[4], Q1[3], -Q1[2], -Q1[1]; -Q1[3], Q1[4], Q1[1], -Q1[2];
                  Q1[2], -Q1[1], Q1[4], -Q1[3]]*Q2;
+              annotation(Inline=true);
             end equalityConstraint;
 
           end Orientation;
@@ -1878,6 +1881,7 @@ extends Modelica.Icons.Library;
             output Real residue[1] "Residue constraint (shall be zero)";
           algorithm
             residue := {Q*Q - 1};
+            annotation(Inline=true);
           end orientationConstraint;
 
           function angularVelocity2
