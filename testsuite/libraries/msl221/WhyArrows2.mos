@@ -1,0 +1,330 @@
+//name:         WhyArrows
+//keyword:      simulating msl221
+//status:       correct
+//
+// simulation example
+//
+
+loadFile("Modelica/package.mo");
+simulate(Modelica.Mechanics.Translational.Examples.WhyArrows,numberOfIntervals=500,tolerance=0.0001,startTime=0,stopTime=1);
+"Fixed3.flange_b.f:";
+val(Fixed3.flange_b.f,0.0);
+val(Fixed3.flange_b.f,0.25);
+val(Fixed3.flange_b.f,0.5);
+val(Fixed3.flange_b.f,0.75);
+val(Fixed3.flange_b.f,1.0);
+
+"Spring1.flange_a.f:";
+val(Spring1.flange_a.f,0.0);
+val(Spring1.flange_a.f,0.25);
+val(Spring1.flange_a.f,0.5);
+val(Spring1.flange_a.f,0.75);
+val(Spring1.flange_a.f,1.0);
+
+"Spring1.flange_b.s:";
+val(Spring1.flange_b.s,0.0);
+val(Spring1.flange_b.s,0.25);
+val(Spring1.flange_b.s,0.5);
+val(Spring1.flange_b.s,0.75);
+val(Spring1.flange_b.s,1.0);
+
+"Spring1.flange_b.f:";
+val(Spring1.flange_b.f,0.0);
+val(Spring1.flange_b.f,0.25);
+val(Spring1.flange_b.f,0.5);
+val(Spring1.flange_b.f,0.75);
+val(Spring1.flange_b.f,1.0);
+
+"Spring1.s_rel:";
+val(Spring1.s_rel,0.0);
+val(Spring1.s_rel,0.25);
+val(Spring1.s_rel,0.5);
+val(Spring1.s_rel,0.75);
+val(Spring1.s_rel,1.0);
+
+"Spring1.f:";
+val(Spring1.f,0.0);
+val(Spring1.f,0.25);
+val(Spring1.f,0.5);
+val(Spring1.f,0.75);
+val(Spring1.f,1.0);
+
+"SlidingMass1.s:";
+val(SlidingMass1.s,0.0);
+val(SlidingMass1.s,0.25);
+val(SlidingMass1.s,0.5);
+val(SlidingMass1.s,0.75);
+val(SlidingMass1.s,1.0);
+
+"SlidingMass1.flange_a.s:";
+val(SlidingMass1.flange_a.s,0.0);
+val(SlidingMass1.flange_a.s,0.25);
+val(SlidingMass1.flange_a.s,0.5);
+val(SlidingMass1.flange_a.s,0.75);
+val(SlidingMass1.flange_a.s,1.0);
+
+"SlidingMass1.flange_b.s:";
+val(SlidingMass1.flange_b.s,0.0);
+val(SlidingMass1.flange_b.s,0.25);
+val(SlidingMass1.flange_b.s,0.5);
+val(SlidingMass1.flange_b.s,0.75);
+val(SlidingMass1.flange_b.s,1.0);
+
+"SlidingMass1.flange_b.f:";
+val(SlidingMass1.flange_b.f,0.0);
+val(SlidingMass1.flange_b.f,0.25);
+val(SlidingMass1.flange_b.f,0.5);
+val(SlidingMass1.flange_b.f,0.75);
+val(SlidingMass1.flange_b.f,1.0);
+
+"SlidingMass1.v:";
+val(SlidingMass1.v,0.0);
+val(SlidingMass1.v,0.25);
+val(SlidingMass1.v,0.5);
+val(SlidingMass1.v,0.75);
+val(SlidingMass1.v,1.0);
+
+"SlidingMass1.a:";
+val(SlidingMass1.a,0.0);
+val(SlidingMass1.a,0.25);
+val(SlidingMass1.a,0.5);
+val(SlidingMass1.a,0.75);
+val(SlidingMass1.a,1.0);
+
+"Fixed2.flange_b.f:";
+val(Fixed2.flange_b.f,0.0);
+val(Fixed2.flange_b.f,0.25);
+val(Fixed2.flange_b.f,0.5);
+val(Fixed2.flange_b.f,0.75);
+val(Fixed2.flange_b.f,1.0);
+
+"Spring2.flange_a.f:";
+val(Spring2.flange_a.f,0.0);
+val(Spring2.flange_a.f,0.25);
+val(Spring2.flange_a.f,0.5);
+val(Spring2.flange_a.f,0.75);
+val(Spring2.flange_a.f,1.0);
+
+"Spring2.flange_b.s:";
+val(Spring2.flange_b.s,0.0);
+val(Spring2.flange_b.s,0.25);
+val(Spring2.flange_b.s,0.5);
+val(Spring2.flange_b.s,0.75);
+val(Spring2.flange_b.s,1.0);
+
+"Spring2.flange_b.f:";
+val(Spring2.flange_b.f,0.0);
+val(Spring2.flange_b.f,0.25);
+val(Spring2.flange_b.f,0.5);
+val(Spring2.flange_b.f,0.75);
+val(Spring2.flange_b.f,1.0);
+
+"Spring2.s_rel:";
+val(Spring2.s_rel,0.0);
+val(Spring2.s_rel,0.25);
+val(Spring2.s_rel,0.5);
+val(Spring2.s_rel,0.75);
+val(Spring2.s_rel,1.0);
+
+"Spring2.f:";
+val(Spring2.f,0.0);
+val(Spring2.f,0.25);
+val(Spring2.f,0.5);
+val(Spring2.f,0.75);
+val(Spring2.f,1.0);
+
+"SlidingMass2.s:";
+val(SlidingMass2.s,0.0);
+val(SlidingMass2.s,0.25);
+val(SlidingMass2.s,0.5);
+val(SlidingMass2.s,0.75);
+val(SlidingMass2.s,1.0);
+
+"SlidingMass2.flange_a.s:";
+val(SlidingMass2.flange_a.s,0.0);
+val(SlidingMass2.flange_a.s,0.25);
+val(SlidingMass2.flange_a.s,0.5);
+val(SlidingMass2.flange_a.s,0.75);
+val(SlidingMass2.flange_a.s,1.0);
+
+"SlidingMass2.flange_b.s:";
+val(SlidingMass2.flange_b.s,0.0);
+val(SlidingMass2.flange_b.s,0.25);
+val(SlidingMass2.flange_b.s,0.5);
+val(SlidingMass2.flange_b.s,0.75);
+val(SlidingMass2.flange_b.s,1.0);
+
+"SlidingMass2.flange_b.f:";
+val(SlidingMass2.flange_b.f,0.0);
+val(SlidingMass2.flange_b.f,0.25);
+val(SlidingMass2.flange_b.f,0.5);
+val(SlidingMass2.flange_b.f,0.75);
+val(SlidingMass2.flange_b.f,1.0);
+
+"SlidingMass2.v:";
+val(SlidingMass2.v,0.0);
+val(SlidingMass2.v,0.25);
+val(SlidingMass2.v,0.5);
+val(SlidingMass2.v,0.75);
+val(SlidingMass2.v,1.0);
+
+"SlidingMass2.a:";
+val(SlidingMass2.a,0.0);
+val(SlidingMass2.a,0.25);
+val(SlidingMass2.a,0.5);
+val(SlidingMass2.a,0.75);
+val(SlidingMass2.a,1.0);
+
+system("rm Modelica.Mechanics.Translational.Examples.WhyArrows*");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.plt"
+// end SimulationResult;
+// "Fixed3.flange_b.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "Spring1.flange_a.f:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// "Spring1.flange_b.s:"
+// 1.0
+// 0.708047692113994
+// 0.0211274675467954
+// -0.614659686645924
+// -0.786374668245008
+// "Spring1.flange_b.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "Spring1.s_rel:"
+// 2.9
+// 2.60804769211399
+// 1.92112746754679
+// 1.28534031335408
+// 1.11362533175499
+// "Spring1.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "SlidingMass1.s:"
+// 0.0
+// -0.291952307886006
+// -0.978872532453205
+// -1.61465968664592
+// -1.78637466824501
+// "SlidingMass1.flange_a.s:"
+// -1.0
+// -1.29195230788601
+// -1.9788725324532
+// -2.61465968664592
+// -2.78637466824501
+// "SlidingMass1.flange_b.s:"
+// 1.0
+// 0.708047692113994
+// 0.0211274675467954
+// -0.614659686645924
+// -0.786374668245008
+// "SlidingMass1.flange_b.f:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// "SlidingMass1.v:"
+// 0.0
+// -2.20124813021062
+// -2.9741589148209
+// -1.81576883242927
+// 0.521215847542586
+// "SlidingMass1.a:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// "Fixed2.flange_b.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "Spring2.flange_a.f:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// "Spring2.flange_b.s:"
+// 1.0
+// 0.708047692113994
+// 0.0211274675467954
+// -0.614659686645924
+// -0.786374668245008
+// "Spring2.flange_b.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "Spring2.s_rel:"
+// 2.9
+// 2.60804769211399
+// 1.92112746754679
+// 1.28534031335408
+// 1.11362533175499
+// "Spring2.f:"
+// 9.9
+// 6.68852461325393
+// -0.86759785698525
+// -7.86125655310517
+// -9.75012135069509
+// "SlidingMass2.s:"
+// 0.0
+// -0.291952307886006
+// -0.978872532453205
+// -1.61465968664592
+// -1.78637466824501
+// "SlidingMass2.flange_a.s:"
+// -1.0
+// -1.29195230788601
+// -1.9788725324532
+// -2.61465968664592
+// -2.78637466824501
+// "SlidingMass2.flange_b.s:"
+// 1.0
+// 0.708047692113994
+// 0.0211274675467954
+// -0.614659686645924
+// -0.786374668245008
+// "SlidingMass2.flange_b.f:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// "SlidingMass2.v:"
+// 0.0
+// -2.20124813021062
+// -2.9741589148209
+// -1.81576883242927
+// 0.521215847542586
+// "SlidingMass2.a:"
+// -9.9
+// -6.68852461325393
+// 0.86759785698525
+// 7.86125655310517
+// 9.75012135069509
+// 0
+// endResult

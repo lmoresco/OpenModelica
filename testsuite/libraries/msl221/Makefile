@@ -22,7 +22,7 @@ DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
 Damper.mos   Oscillator.mos   TwoMasses.mos\
 DifferentialAmplifier.mos  PID_Controller.mos \
 ElasticBearing.mos   ParallelCooling.mos \
-ParallelPumpDropOut.mos  WhyArrows.mos\
+ParallelPumpDropOut.mos  WhyArrows.mos WhyArrows2.mos\
 ExecutionPaths.mos \
 First.mos    PreLoad.mos \
 PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
