@@ -104,8 +104,7 @@ WhenStatement1.mo \
 WhenStatement2.mo \
 WhenStatement3.mo \
 WhenValidResult.mo \
-WhenVectorPredicateEquation.mo \
-Xpowers.mo 
+WhenVectorPredicateEquation.mo 
 
 FAILINGTESTFILES= AddEmpty.mo AppendElement.mo Circuit.mo ColorClasses.mo \
 ArraySlice.mo PointInst.mo DoubleWhenConflict.mo \
