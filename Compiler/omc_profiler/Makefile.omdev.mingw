@@ -36,7 +36,6 @@ RMLINC  = -I$(RMLHOME)/include/plain
 
 srcdir = ..
 top_builddir = ../..
-include $(srcdir)/Makefile.common
 
 LIBSOCKET=-lwsock32
 
@@ -55,70 +54,8 @@ PROG = omcp.exe
 RMLC = $(RMLHOME)/bin/rmlc -v -p
 RMLCFLAGS = -Wr,-ftrace
 
-SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
-
-all : .testvariables $(ALLMO) $(SRCSIGX) subdirs $(PROG)
-.SUFFIXES:
-.SUFFIXES: .o .mo .h .c
-
-#pltpkg2: .testvariables $(ALLMO) subdirs prog2
-
-.PHONY: all vctarget absyn_subdir clean reallyclean
-
-SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
-
-
-$(ALLMO): %.mo : $(srcdir)/%.mo
-	cp $< $@
-
-$(SRCO): %.o : %.c %.h
-	$(RMLC) $(RMLCFLAGS) -c $<
-
-%.c %.h : %.mo
-	$(RMLC) $(RMLCFLAGS) +C $<
-
-%.h : %.c
-
-$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp $< $@
-
-$(SRCSIGX): %.sigx : %.mo
-	$(srcdir)/rml2sig/rmldep-new.sh $<
-	@touch $@
-
-vctarget: $(SRCC) absyn_subdir
-
-absyn_subdir:
-	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
+MAKETARGET = Makefile.omdev.mingw
+include $(srcdir)/Makefile.compiler_subdirs.common
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/omc/libsendData.a
-	g++ -pg -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi 
-
-subdirs: $(SRCHSRCDIR)
-	for dir in $(SUBDIRS); do \
-		(cd $$dir && $(MAKE) -f Makefile.omdev.mingw)\
-	done;
-
-clean:
-	for d in $(SUBDIRS); do \
-		(cd $$d && $(MAKE) -f Makefile.omdev.mingw clean) \
-	done
-	(cd $(srcdir) && $(RM) $(SRCH))
-	$(RM) -f $(SRCO) $(SRCC) $(SRCH) $(PROG) *~ $(ALLMO:.mo=.srz) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.sigx)
-
-clear-rmod-rsig:
-	-rm -f *.srz *.sig *.sigx ../*.srz ../*.sig ../*.sigx
-
-realclean:
-	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.srz) $(PROG)
-
-# don't remove these files after intermediate build steps
-#.PRECIOUS: Makefile.omdev.mingw $(ALLRML) $(ALLMO)
-#.PRECIOUS: $(ALLRML) $(ALLMO)
-
-#Makefile.omdev.mingw: Makefile.omdev.mingw.in
-#	$(top_builddir)/config.status Makefile.omdev.mingw.in
-
-
-## dependencies
-include $(srcdir)/.depend
+	g++ -pg -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi

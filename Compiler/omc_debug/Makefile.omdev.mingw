@@ -35,9 +35,6 @@ CORBAHOME = $(OMDEV)
 srcdir = ..
 top_builddir = ../..
 
-include $(srcdir)/Makefile.common
-
-
 LIBSOCKET=-lwsock32
 CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 
@@ -56,62 +53,9 @@ PROG = omcd.exe
 RMLC = $(RMLHOME)/bin/rmlc -v -g
 RMLCFLAGS = -Wr,-ftrace
 
-SUBDIRS	= $(srcdir)/runtime $(srcdir)/absyn_builder $(srcdir)/modpar
-
-all : .testvariables $(ALLMO) $(SRCSIGX) subdirs $(PROG)
-.SUFFIXES:
-.SUFFIXES: .o .mo .h .c
-
-.PHONY: all vctarget absyn_subdir clean reallyclean
-SRCHSRCDIR = $(SRCH:%.h=$(srcdir)/%.h)
-
-
-$(ALLMO): %.mo : $(srcdir)/%.mo
-	cp $< $@
-
-$(SRCO): %.o : %.c %.h
-	$(RMLC) $(RMLCFLAGS) -c $<
-
-%.c %.h : %.mo
-	$(RMLC) $(RMLCFLAGS) +C $<
-
-%.h : %.c
-
-$(SRCHSRCDIR) : $(srcdir)/%.h : %.h
-	cp $< $@
-
-$(SRCSIGX): %.sigx : %.mo
-	$(srcdir)/rml2sig/rmldep-new.sh $<
-	@touch $@
-
-vctarget: $(SRCC) absyn_subdir
-
-absyn_subdir:
-	(cd $(srcdir)/absyn_builder && $(MAKE) -f Makefile.omdev.mingw vctarget)
+MAKETARGET = Makefile.omdev.mingw
+include $(srcdir)/Makefile.compiler_subdirs.common
 
 $(PROG): $(SRCO) $(AST) $(RTOBJ) ../../build/lib/omc/libsendData.a
 	g++ -O3 -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi 
 	strip $(PROG)
-
-subdirs: $(SRCHSRCDIR)
-	for dir in $(SUBDIRS); do $(MAKE) -C $$dir -f Makefile.omdev.mingw; done;
-
-clean:
-	for d in $(SUBDIRS); do \
-		(cd $$d && $(MAKE)  -f Makefile.omdev.mingw clean) \
-	done
-	(cd $(srcdir) && $(RM) $(SRCH))
-	$(RM) $(SRCO) $(SRCC) $(SRCH) $(PROG) *~
-
-reallyclean: clean
-	$(RM) $(ALLMO) $(ALLMO:.mo=.sig) $(ALLMO:.mo=.sigx) $(ALLMO:.mo=.srz) $(PROG)
-
-# don't remove these files after intermediate build steps
-#.PRECIOUS: Makefile $(ALLRMO)
-#.PRECIOUS: $(ALLMO)
-
-#Makefile.omdev.mingw: Makefile.omdev.mingw.in
-#	$(top_builddir)/config.status Makefile.omdev.mingw.in
-
-## dependencies
-include $(srcdir)/.depend
