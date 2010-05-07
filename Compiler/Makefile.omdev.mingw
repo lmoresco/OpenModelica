@@ -39,7 +39,7 @@ RMLINC	= -I$(RMLHOME)/include/plain
 USE_CORBA = -DUSE_CORBA
 CORBAHOME = $(OMDEV)
 
-include Makefile.common.omdev.mingw
+include Makefile.common
 
 PROG = omc
 PROGD = omcd

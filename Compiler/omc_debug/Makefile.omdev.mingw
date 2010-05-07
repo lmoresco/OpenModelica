@@ -35,7 +35,7 @@ CORBAHOME = $(OMDEV)
 srcdir = ..
 top_builddir = ../..
 
-include $(srcdir)/Makefile.common.omdev.mingw
+include $(srcdir)/Makefile.common
 
 
 LIBSOCKET=-lwsock32
