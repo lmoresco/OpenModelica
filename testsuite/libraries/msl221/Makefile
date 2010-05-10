@@ -15,7 +15,7 @@ CharacteristicIdealDiodes.mos  LogicalNetwork1.mos  ShowSaturatingInductor.mos\
 CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
 ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos SignConvention2.mos\
 ControlledTanks.mos Motor.mos SimpleCooling.mos\
-CoupledClutches.mos NandGate.mos TestNand.mos\
+CoupledClutches.mos CoupledClutches2.mos NandGate.mos TestNand.mos\
 DCEE_start.mos OneMass.mos TransformerYD.mos\
 DCPM_start.mos   OneWayRectifier.mos  TransformerYY.mos\
 DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
