@@ -22,7 +22,7 @@ DCPM_start.mos   OneWayRectifier.mos  TransformerYY.mos\
 DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
 Damper.mos Damper2.mos  Oscillator.mos Oscillator2.mos   TwoMasses.mos\
 DifferentialAmplifier.mos  PID_Controller.mos \
-ElasticBearing.mos   ParallelCooling.mos \
+ElasticBearing.mos ElasticBearing2.mos ParallelCooling.mos \
 ParallelPumpDropOut.mos  WhyArrows.mos WhyArrows2.mos\
 ExecutionPaths.mos \
 First.mos First2.mos PreLoad.mos PreLoad2.mos\
