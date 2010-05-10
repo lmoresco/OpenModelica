@@ -7,7 +7,7 @@ AIMC_YD.mos FirstExample_Variant3.mos Rectifier.mos\
 Friction.mos SMEE_Gen.mos\
 AIMS_start.mos SMPM_Inverter.mos\
 Accelerate.mos Accelerate2.mos HeatingMOSInverter.mos   SMR_Inverter.mos\
-BusUsage.mos HeatingRectifier.mos Sensors.mos\
+BusUsage.mos HeatingRectifier.mos Sensors.mos Sensors2.mos\
 CauerLowPassAnalog.mos IndirectCooling.mos ShowCompositeStep.mos\
 CauerLowPassOPV.mos InitialConditions.mos ShowExceptions.mos\
 CauerLowPassSC.mos  ShowLogicalSources.mos\

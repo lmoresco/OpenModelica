@@ -1,8 +1,8 @@
-//name:         Oscillator
-//keyword:      instantiating msl221
+//name:         Oscillator2
+//keyword:      simulating msl221
 //status:       correct
 //
-// instantiate example
+// simulation example
 //
 
 loadFile("Modelica/package.mo");
