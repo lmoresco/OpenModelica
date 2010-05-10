@@ -19,7 +19,7 @@ CoupledClutches.mos NandGate.mos TestNand.mos\
 DCEE_start.mos OneMass.mos TransformerYD.mos\
 DCPM_start.mos   OneWayRectifier.mos  TransformerYY.mos\
 DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
-Damper.mos Damper2.mos  Oscillator.mos   TwoMasses.mos\
+Damper.mos Damper2.mos  Oscillator.mos Oscillator2.mos   TwoMasses.mos\
 DifferentialAmplifier.mos  PID_Controller.mos \
 ElasticBearing.mos   ParallelCooling.mos \
 ParallelPumpDropOut.mos  WhyArrows.mos WhyArrows2.mos\
