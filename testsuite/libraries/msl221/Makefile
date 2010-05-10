@@ -24,7 +24,7 @@ DifferentialAmplifier.mos  PID_Controller.mos \
 ElasticBearing.mos   ParallelCooling.mos \
 ParallelPumpDropOut.mos  WhyArrows.mos WhyArrows2.mos\
 ExecutionPaths.mos \
-First.mos    PreLoad.mos \
+First.mos    PreLoad.mos PreLoad2.mos\
 PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 
 

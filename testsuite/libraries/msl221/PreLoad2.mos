@@ -1,0 +1,1176 @@
+//name:         PreLoad2
+//keyword:      simulating msl221
+//status:       correct
+//
+// simulation example
+//
+
+loadFile("Modelica/package.mo");
+simulate(Modelica.Mechanics.Translational.Examples.PreLoad,numberOfIntervals=500,tolerance=0.0001,startTime=0,stopTime=100);
+
+"InnerContactA.flange_a.s:";
+val(InnerContactA.flange_a.s,0.0);
+val(InnerContactA.flange_a.s,0.25);
+val(InnerContactA.flange_a.s,0.5);
+val(InnerContactA.flange_a.s,0.75);
+val(InnerContactA.flange_a.s,1.0);
+
+"InnerContactA.flange_a.f:";
+val(InnerContactA.flange_a.f,0.0);
+val(InnerContactA.flange_a.f,0.25);
+val(InnerContactA.flange_a.f,0.5);
+val(InnerContactA.flange_a.f,0.75);
+val(InnerContactA.flange_a.f,1.0);
+
+"InnerContactA.flange_b.s:";
+val(InnerContactA.flange_b.s,0.0);
+val(InnerContactA.flange_b.s,0.25);
+val(InnerContactA.flange_b.s,0.5);
+val(InnerContactA.flange_b.s,0.75);
+val(InnerContactA.flange_b.s,1.0);
+
+"InnerContactA.flange_b.f:";
+val(InnerContactA.flange_b.f,0.0);
+val(InnerContactA.flange_b.f,0.25);
+val(InnerContactA.flange_b.f,0.5);
+val(InnerContactA.flange_b.f,0.75);
+val(InnerContactA.flange_b.f,1.0);
+
+"InnerContactA.s_rel:";
+val(InnerContactA.s_rel,0.0);
+val(InnerContactA.s_rel,0.25);
+val(InnerContactA.s_rel,0.5);
+val(InnerContactA.s_rel,0.75);
+val(InnerContactA.s_rel,1.0);
+
+"InnerContactA.f:";
+val(InnerContactA.f,0.0);
+val(InnerContactA.f,0.25);
+val(InnerContactA.f,0.5);
+val(InnerContactA.f,0.75);
+val(InnerContactA.f,1.0);
+
+"InnerContactA.v_rel:";
+val(InnerContactA.v_rel,0.0);
+val(InnerContactA.v_rel,0.25);
+val(InnerContactA.v_rel,0.5);
+val(InnerContactA.v_rel,0.75);
+val(InnerContactA.v_rel,1.0);
+
+"InnerContactA.Contact:";
+val(InnerContactA.Contact,0.0);
+val(InnerContactA.Contact,0.25);
+val(InnerContactA.Contact,0.5);
+val(InnerContactA.Contact,0.75);
+val(InnerContactA.Contact,1.0);
+
+"InnerContactB.flange_a.s:";
+val(InnerContactB.flange_a.s,0.0);
+val(InnerContactB.flange_a.s,0.25);
+val(InnerContactB.flange_a.s,0.5);
+val(InnerContactB.flange_a.s,0.75);
+val(InnerContactB.flange_a.s,1.0);
+
+"InnerContactB.flange_a.f:";
+val(InnerContactB.flange_a.f,0.0);
+val(InnerContactB.flange_a.f,0.25);
+val(InnerContactB.flange_a.f,0.5);
+val(InnerContactB.flange_a.f,0.75);
+val(InnerContactB.flange_a.f,1.0);
+
+"InnerContactB.flange_b.s:";
+val(InnerContactB.flange_b.s,0.0);
+val(InnerContactB.flange_b.s,0.25);
+val(InnerContactB.flange_b.s,0.5);
+val(InnerContactB.flange_b.s,0.75);
+val(InnerContactB.flange_b.s,1.0);
+
+"InnerContactB.flange_b.f:";
+val(InnerContactB.flange_b.f,0.0);
+val(InnerContactB.flange_b.f,0.25);
+val(InnerContactB.flange_b.f,0.5);
+val(InnerContactB.flange_b.f,0.75);
+val(InnerContactB.flange_b.f,1.0);
+
+"InnerContactB.s_rel:";
+val(InnerContactB.s_rel,0.0);
+val(InnerContactB.s_rel,0.25);
+val(InnerContactB.s_rel,0.5);
+val(InnerContactB.s_rel,0.75);
+val(InnerContactB.s_rel,1.0);
+
+"InnerContactB.f:";
+val(InnerContactB.f,0.0);
+val(InnerContactB.f,0.25);
+val(InnerContactB.f,0.5);
+val(InnerContactB.f,0.75);
+val(InnerContactB.f,1.0);
+
+"InnerContactB.v_rel:";
+val(InnerContactB.v_rel,0.0);
+val(InnerContactB.v_rel,0.25);
+val(InnerContactB.v_rel,0.5);
+val(InnerContactB.v_rel,0.75);
+val(InnerContactB.v_rel,1.0);
+
+"InnerContactB.Contact:";
+val(InnerContactB.Contact,0.0);
+val(InnerContactB.Contact,0.25);
+val(InnerContactB.Contact,0.5);
+val(InnerContactB.Contact,0.75);
+val(InnerContactB.Contact,1.0);
+
+"Spool.s:";
+val(Spool.s,0.0);
+val(Spool.s,0.25);
+val(Spool.s,0.5);
+val(Spool.s,0.75);
+val(Spool.s,1.0);
+
+"Spool.flange_a.s:";
+val(Spool.flange_a.s,0.0);
+val(Spool.flange_a.s,0.25);
+val(Spool.flange_a.s,0.5);
+val(Spool.flange_a.s,0.75);
+val(Spool.flange_a.s,1.0);
+
+"Spool.flange_a.f:";
+val(Spool.flange_a.f,0.0);
+val(Spool.flange_a.f,0.25);
+val(Spool.flange_a.f,0.5);
+val(Spool.flange_a.f,0.75);
+val(Spool.flange_a.f,1.0);
+
+"Spool.flange_b.s:";
+val(Spool.flange_b.s,0.0);
+val(Spool.flange_b.s,0.25);
+val(Spool.flange_b.s,0.5);
+val(Spool.flange_b.s,0.75);
+val(Spool.flange_b.s,1.0);
+
+"Spool.v:";
+val(Spool.v,0.0);
+val(Spool.v,0.25);
+val(Spool.v,0.5);
+val(Spool.v,0.75);
+val(Spool.v,1.0);
+
+"Spool.a:";
+val(Spool.a,0.0);
+val(Spool.a,0.25);
+val(Spool.a,0.5);
+val(Spool.a,0.75);
+val(Spool.a,1.0);
+
+"FixedLe.flange_b.f:";
+val(FixedLe.flange_b.f,0.0);
+val(FixedLe.flange_b.f,0.25);
+val(FixedLe.flange_b.f,0.5);
+val(FixedLe.flange_b.f,0.75);
+val(FixedLe.flange_b.f,1.0);
+
+"SpringPlateA.s:";
+val(SpringPlateA.s,0.0);
+val(SpringPlateA.s,0.25);
+val(SpringPlateA.s,0.5);
+val(SpringPlateA.s,0.75);
+val(SpringPlateA.s,1.0);
+
+"SpringPlateA.flange_a.s:";
+val(SpringPlateA.flange_a.s,0.0);
+val(SpringPlateA.flange_a.s,0.25);
+val(SpringPlateA.flange_a.s,0.5);
+val(SpringPlateA.flange_a.s,0.75);
+val(SpringPlateA.flange_a.s,1.0);
+
+"SpringPlateA.flange_a.f:";
+val(SpringPlateA.flange_a.f,0.0);
+val(SpringPlateA.flange_a.f,0.25);
+val(SpringPlateA.flange_a.f,0.5);
+val(SpringPlateA.flange_a.f,0.75);
+val(SpringPlateA.flange_a.f,1.0);
+
+"SpringPlateA.flange_b.s:";
+val(SpringPlateA.flange_b.s,0.0);
+val(SpringPlateA.flange_b.s,0.25);
+val(SpringPlateA.flange_b.s,0.5);
+val(SpringPlateA.flange_b.s,0.75);
+val(SpringPlateA.flange_b.s,1.0);
+
+"SpringPlateA.flange_b.f:";
+val(SpringPlateA.flange_b.f,0.0);
+val(SpringPlateA.flange_b.f,0.25);
+val(SpringPlateA.flange_b.f,0.5);
+val(SpringPlateA.flange_b.f,0.75);
+val(SpringPlateA.flange_b.f,1.0);
+
+"SpringPlateA.v:";
+val(SpringPlateA.v,0.0);
+val(SpringPlateA.v,0.25);
+val(SpringPlateA.v,0.5);
+val(SpringPlateA.v,0.75);
+val(SpringPlateA.v,1.0);
+
+"SpringPlateA.a:";
+val(SpringPlateA.a,0.0);
+val(SpringPlateA.a,0.25);
+val(SpringPlateA.a,0.5);
+val(SpringPlateA.a,0.75);
+val(SpringPlateA.a,1.0);
+
+"SpringPlateB.s:";
+val(SpringPlateB.s,0.0);
+val(SpringPlateB.s,0.25);
+val(SpringPlateB.s,0.5);
+val(SpringPlateB.s,0.75);
+val(SpringPlateB.s,1.0);
+
+"SpringPlateB.flange_a.s:";
+val(SpringPlateB.flange_a.s,0.0);
+val(SpringPlateB.flange_a.s,0.25);
+val(SpringPlateB.flange_a.s,0.5);
+val(SpringPlateB.flange_a.s,0.75);
+val(SpringPlateB.flange_a.s,1.0);
+
+"SpringPlateB.flange_a.f:";
+val(SpringPlateB.flange_a.f,0.0);
+val(SpringPlateB.flange_a.f,0.25);
+val(SpringPlateB.flange_a.f,0.5);
+val(SpringPlateB.flange_a.f,0.75);
+val(SpringPlateB.flange_a.f,1.0);
+
+"SpringPlateB.flange_b.s:";
+val(SpringPlateB.flange_b.s,0.0);
+val(SpringPlateB.flange_b.s,0.25);
+val(SpringPlateB.flange_b.s,0.5);
+val(SpringPlateB.flange_b.s,0.75);
+val(SpringPlateB.flange_b.s,1.0);
+
+"SpringPlateB.flange_b.f:";
+val(SpringPlateB.flange_b.f,0.0);
+val(SpringPlateB.flange_b.f,0.25);
+val(SpringPlateB.flange_b.f,0.5);
+val(SpringPlateB.flange_b.f,0.75);
+val(SpringPlateB.flange_b.f,1.0);
+
+"SpringPlateB.v:";
+val(SpringPlateB.v,0.0);
+val(SpringPlateB.v,0.25);
+val(SpringPlateB.v,0.5);
+val(SpringPlateB.v,0.75);
+val(SpringPlateB.v,1.0);
+
+"SpringPlateB.a:";
+val(SpringPlateB.a,0.0);
+val(SpringPlateB.a,0.25);
+val(SpringPlateB.a,0.5);
+val(SpringPlateB.a,0.75);
+val(SpringPlateB.a,1.0);
+
+"Spring.flange_a.s:";
+val(Spring.flange_a.s,0.0);
+val(Spring.flange_a.s,0.25);
+val(Spring.flange_a.s,0.5);
+val(Spring.flange_a.s,0.75);
+val(Spring.flange_a.s,1.0);
+
+"Spring.flange_a.f:";
+val(Spring.flange_a.f,0.0);
+val(Spring.flange_a.f,0.25);
+val(Spring.flange_a.f,0.5);
+val(Spring.flange_a.f,0.75);
+val(Spring.flange_a.f,1.0);
+
+"Spring.flange_b.s:";
+val(Spring.flange_b.s,0.0);
+val(Spring.flange_b.s,0.25);
+val(Spring.flange_b.s,0.5);
+val(Spring.flange_b.s,0.75);
+val(Spring.flange_b.s,1.0);
+
+"Spring.flange_b.f:";
+val(Spring.flange_b.f,0.0);
+val(Spring.flange_b.f,0.25);
+val(Spring.flange_b.f,0.5);
+val(Spring.flange_b.f,0.75);
+val(Spring.flange_b.f,1.0);
+
+"Spring.s_rel:";
+val(Spring.s_rel,0.0);
+val(Spring.s_rel,0.25);
+val(Spring.s_rel,0.5);
+val(Spring.s_rel,0.75);
+val(Spring.s_rel,1.0);
+
+"Spring.f:";
+val(Spring.f,0.0);
+val(Spring.f,0.25);
+val(Spring.f,0.5);
+val(Spring.f,0.75);
+val(Spring.f,1.0);
+
+"OuterContactA.flange_a.f:";
+val(OuterContactA.flange_a.f,0.0);
+val(OuterContactA.flange_a.f,0.25);
+val(OuterContactA.flange_a.f,0.5);
+val(OuterContactA.flange_a.f,0.75);
+val(OuterContactA.flange_a.f,1.0);
+
+"OuterContactA.flange_b.s:";
+val(OuterContactA.flange_b.s,0.0);
+val(OuterContactA.flange_b.s,0.25);
+val(OuterContactA.flange_b.s,0.5);
+val(OuterContactA.flange_b.s,0.75);
+val(OuterContactA.flange_b.s,1.0);
+
+"OuterContactA.flange_b.f:";
+val(OuterContactA.flange_b.f,0.0);
+val(OuterContactA.flange_b.f,0.25);
+val(OuterContactA.flange_b.f,0.5);
+val(OuterContactA.flange_b.f,0.75);
+val(OuterContactA.flange_b.f,1.0);
+
+"OuterContactA.s_rel:";
+val(OuterContactA.s_rel,0.0);
+val(OuterContactA.s_rel,0.25);
+val(OuterContactA.s_rel,0.5);
+val(OuterContactA.s_rel,0.75);
+val(OuterContactA.s_rel,1.0);
+
+"OuterContactA.f:";
+val(OuterContactA.f,0.0);
+val(OuterContactA.f,0.25);
+val(OuterContactA.f,0.5);
+val(OuterContactA.f,0.75);
+val(OuterContactA.f,1.0);
+
+"OuterContactA.v_rel:";
+val(OuterContactA.v_rel,0.0);
+val(OuterContactA.v_rel,0.25);
+val(OuterContactA.v_rel,0.5);
+val(OuterContactA.v_rel,0.75);
+val(OuterContactA.v_rel,1.0);
+
+"OuterContactA.Contact:";
+val(OuterContactA.Contact,0.0);
+val(OuterContactA.Contact,0.25);
+val(OuterContactA.Contact,0.5);
+val(OuterContactA.Contact,0.75);
+val(OuterContactA.Contact,1.0);
+
+"OuterContactB.flange_a.s:";
+val(OuterContactB.flange_a.s,0.0);
+val(OuterContactB.flange_a.s,0.25);
+val(OuterContactB.flange_a.s,0.5);
+val(OuterContactB.flange_a.s,0.75);
+val(OuterContactB.flange_a.s,1.0);
+
+"OuterContactB.flange_a.f:";
+val(OuterContactB.flange_a.f,0.0);
+val(OuterContactB.flange_a.f,0.25);
+val(OuterContactB.flange_a.f,0.5);
+val(OuterContactB.flange_a.f,0.75);
+val(OuterContactB.flange_a.f,1.0);
+
+"OuterContactB.flange_b.f:";
+val(OuterContactB.flange_b.f,0.0);
+val(OuterContactB.flange_b.f,0.25);
+val(OuterContactB.flange_b.f,0.5);
+val(OuterContactB.flange_b.f,0.75);
+val(OuterContactB.flange_b.f,1.0);
+
+"OuterContactB.s_rel:";
+val(OuterContactB.s_rel,0.0);
+val(OuterContactB.s_rel,0.25);
+val(OuterContactB.s_rel,0.5);
+val(OuterContactB.s_rel,0.75);
+val(OuterContactB.s_rel,1.0);
+
+"OuterContactB.f:";
+val(OuterContactB.f,0.0);
+val(OuterContactB.f,0.25);
+val(OuterContactB.f,0.5);
+val(OuterContactB.f,0.75);
+val(OuterContactB.f,1.0);
+
+"OuterContactB.v_rel:";
+val(OuterContactB.v_rel,0.0);
+val(OuterContactB.v_rel,0.25);
+val(OuterContactB.v_rel,0.5);
+val(OuterContactB.v_rel,0.75);
+val(OuterContactB.v_rel,1.0);
+
+"OuterContactB.Contact:";
+val(OuterContactB.Contact,0.0);
+val(OuterContactB.Contact,0.25);
+val(OuterContactB.Contact,0.5);
+val(OuterContactB.Contact,0.75);
+val(OuterContactB.Contact,1.0);
+
+"Rod1.s:";
+val(Rod1.s,0.0);
+val(Rod1.s,0.25);
+val(Rod1.s,0.5);
+val(Rod1.s,0.75);
+val(Rod1.s,1.0);
+
+"Rod1.flange_a.s:";
+val(Rod1.flange_a.s,0.0);
+val(Rod1.flange_a.s,0.25);
+val(Rod1.flange_a.s,0.5);
+val(Rod1.flange_a.s,0.75);
+val(Rod1.flange_a.s,1.0);
+
+"Rod1.flange_a.f:";
+val(Rod1.flange_a.f,0.0);
+val(Rod1.flange_a.f,0.25);
+val(Rod1.flange_a.f,0.5);
+val(Rod1.flange_a.f,0.75);
+val(Rod1.flange_a.f,1.0);
+
+"Rod1.flange_b.s:";
+val(Rod1.flange_b.s,0.0);
+val(Rod1.flange_b.s,0.25);
+val(Rod1.flange_b.s,0.5);
+val(Rod1.flange_b.s,0.75);
+val(Rod1.flange_b.s,1.0);
+
+"Rod1.flange_b.f:";
+val(Rod1.flange_b.f,0.0);
+val(Rod1.flange_b.f,0.25);
+val(Rod1.flange_b.f,0.5);
+val(Rod1.flange_b.f,0.75);
+val(Rod1.flange_b.f,1.0);
+
+"Friction.flange_a.f:";
+val(Friction.flange_a.f,0.0);
+val(Friction.flange_a.f,0.25);
+val(Friction.flange_a.f,0.5);
+val(Friction.flange_a.f,0.75);
+val(Friction.flange_a.f,1.0);
+
+"Friction.flange_b.s:";
+val(Friction.flange_b.s,0.0);
+val(Friction.flange_b.s,0.25);
+val(Friction.flange_b.s,0.5);
+val(Friction.flange_b.s,0.75);
+val(Friction.flange_b.s,1.0);
+
+"Friction.flange_b.f:";
+val(Friction.flange_b.f,0.0);
+val(Friction.flange_b.f,0.25);
+val(Friction.flange_b.f,0.5);
+val(Friction.flange_b.f,0.75);
+val(Friction.flange_b.f,1.0);
+
+"Friction.s_rel:";
+val(Friction.s_rel,0.0);
+val(Friction.s_rel,0.25);
+val(Friction.s_rel,0.5);
+val(Friction.s_rel,0.75);
+val(Friction.s_rel,1.0);
+
+"Friction.f:";
+val(Friction.f,0.0);
+val(Friction.f,0.25);
+val(Friction.f,0.5);
+val(Friction.f,0.75);
+val(Friction.f,1.0);
+
+"Friction.v_rel:";
+val(Friction.v_rel,0.0);
+val(Friction.v_rel,0.25);
+val(Friction.v_rel,0.5);
+val(Friction.v_rel,0.75);
+val(Friction.v_rel,1.0);
+
+"Force1.flange_b.s:";
+val(Force1.flange_b.s,0.0);
+val(Force1.flange_b.s,0.25);
+val(Force1.flange_b.s,0.5);
+val(Force1.flange_b.s,0.75);
+val(Force1.flange_b.s,1.0);
+
+"Force1.flange_b.f:";
+val(Force1.flange_b.f,0.0);
+val(Force1.flange_b.f,0.25);
+val(Force1.flange_b.f,0.5);
+val(Force1.flange_b.f,0.75);
+val(Force1.flange_b.f,1.0);
+
+"Force1.f:";
+val(Force1.f,0.0);
+val(Force1.f,0.25);
+val(Force1.f,0.5);
+val(Force1.f,0.75);
+val(Force1.f,1.0);
+
+"Housing.flange_a.f:";
+val(Housing.flange_a.f,0.0);
+val(Housing.flange_a.f,0.25);
+val(Housing.flange_a.f,0.5);
+val(Housing.flange_a.f,0.75);
+val(Housing.flange_a.f,1.0);
+
+"Housing.flange_b.f:";
+val(Housing.flange_b.f,0.0);
+val(Housing.flange_b.f,0.25);
+val(Housing.flange_b.f,0.5);
+val(Housing.flange_b.f,0.75);
+val(Housing.flange_b.f,1.0);
+
+"Rod3.s:";
+val(Rod3.s,0.0);
+val(Rod3.s,0.25);
+val(Rod3.s,0.5);
+val(Rod3.s,0.75);
+val(Rod3.s,1.0);
+
+"Rod3.flange_a.s:";
+val(Rod3.flange_a.s,0.0);
+val(Rod3.flange_a.s,0.25);
+val(Rod3.flange_a.s,0.5);
+val(Rod3.flange_a.s,0.75);
+val(Rod3.flange_a.s,1.0);
+
+"Rod3.flange_a.f:";
+val(Rod3.flange_a.f,0.0);
+val(Rod3.flange_a.f,0.25);
+val(Rod3.flange_a.f,0.5);
+val(Rod3.flange_a.f,0.75);
+val(Rod3.flange_a.f,1.0);
+
+"Rod3.flange_b.s:";
+val(Rod3.flange_b.s,0.0);
+val(Rod3.flange_b.s,0.25);
+val(Rod3.flange_b.s,0.5);
+val(Rod3.flange_b.s,0.75);
+val(Rod3.flange_b.s,1.0);
+
+"Rod3.flange_b.f:";
+val(Rod3.flange_b.f,0.0);
+val(Rod3.flange_b.f,0.25);
+val(Rod3.flange_b.f,0.5);
+val(Rod3.flange_b.f,0.75);
+val(Rod3.flange_b.f,1.0);
+
+"Rod4.s:";
+val(Rod4.s,0.0);
+val(Rod4.s,0.25);
+val(Rod4.s,0.5);
+val(Rod4.s,0.75);
+val(Rod4.s,1.0);
+
+"Rod4.flange_a.s:";
+val(Rod4.flange_a.s,0.0);
+val(Rod4.flange_a.s,0.25);
+val(Rod4.flange_a.s,0.5);
+val(Rod4.flange_a.s,0.75);
+val(Rod4.flange_a.s,1.0);
+
+"Rod4.flange_a.f:";
+val(Rod4.flange_a.f,0.0);
+val(Rod4.flange_a.f,0.25);
+val(Rod4.flange_a.f,0.5);
+val(Rod4.flange_a.f,0.75);
+val(Rod4.flange_a.f,1.0);
+
+"Rod4.flange_b.s:";
+val(Rod4.flange_b.s,0.0);
+val(Rod4.flange_b.s,0.25);
+val(Rod4.flange_b.s,0.5);
+val(Rod4.flange_b.s,0.75);
+val(Rod4.flange_b.s,1.0);
+
+"Rod4.flange_b.f:";
+val(Rod4.flange_b.f,0.0);
+val(Rod4.flange_b.f,0.25);
+val(Rod4.flange_b.f,0.5);
+val(Rod4.flange_b.f,0.75);
+val(Rod4.flange_b.f,1.0);
+
+"Rod2.s:";
+val(Rod2.s,0.0);
+val(Rod2.s,0.25);
+val(Rod2.s,0.5);
+val(Rod2.s,0.75);
+val(Rod2.s,1.0);
+
+"Rod2.flange_a.s:";
+val(Rod2.flange_a.s,0.0);
+val(Rod2.flange_a.s,0.25);
+val(Rod2.flange_a.s,0.5);
+val(Rod2.flange_a.s,0.75);
+val(Rod2.flange_a.s,1.0);
+
+"Rod2.flange_a.f:";
+val(Rod2.flange_a.f,0.0);
+val(Rod2.flange_a.f,0.25);
+val(Rod2.flange_a.f,0.5);
+val(Rod2.flange_a.f,0.75);
+val(Rod2.flange_a.f,1.0);
+
+"Rod2.flange_b.s:";
+val(Rod2.flange_b.s,0.0);
+val(Rod2.flange_b.s,0.25);
+val(Rod2.flange_b.s,0.5);
+val(Rod2.flange_b.s,0.75);
+val(Rod2.flange_b.s,1.0);
+
+"Rod2.flange_b.f:";
+val(Rod2.flange_b.f,0.0);
+val(Rod2.flange_b.f,0.25);
+val(Rod2.flange_b.f,0.5);
+val(Rod2.flange_b.f,0.75);
+val(Rod2.flange_b.f,1.0);
+
+"Sine1.y:";
+val(Sine1.y,0.0);
+val(Sine1.y,0.25);
+val(Sine1.y,0.5);
+val(Sine1.y,0.75);
+val(Sine1.y,1.0);
+
+system("rm Modelica.Mechanics.Translational.Examples.PreLoad*");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.PreLoad_res.plt"
+// end SimulationResult;
+// "InnerContactA.flange_a.s:"
+// -0.086
+// -0.0859976698750573
+// -0.0859953146815723
+// -0.0859929604736661
+// -0.0859906092749354
+// "InnerContactA.flange_a.f:"
+// -0.0
+// 15.8721227615599
+// 17.0497192763983
+// 18.2268227995395
+// 19.4024215116717
+// "InnerContactA.flange_b.s:"
+// -0.085
+// -0.085013540819882
+// -0.0850123632231391
+// -0.0850111861191859
+// -0.0850100105198205
+// "InnerContactA.flange_b.f:"
+// 0.0
+// -15.8721227615599
+// -17.0497192763983
+// -18.2268227995395
+// -19.4024215116717
+// "InnerContactA.s_rel:"
+// 0.00100000000000001
+// 0.000984129055175222
+// 0.000982951458433252
+// 0.000981774354480207
+// 0.000980598755114928
+// "InnerContactA.f:"
+// 0.0
+// -15.8721227615599
+// -17.0497192763983
+// -18.2268227995395
+// -19.4024215116717
+// "InnerContactA.v_rel:"
+// 0.0
+// -4.71174712859233e-06
+// -4.71083860303101e-06
+// -4.70911898515255e-06
+// -4.70650639914797e-06
+// "InnerContactA.Contact:"
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// "InnerContactB.flange_a.s:"
+// -0.07725
+// -0.0754841290551762
+// -0.0754829514584332
+// -0.0754817743544801
+// -0.0754805987551146
+// "InnerContactB.flange_a.f:"
+// -0.0
+// 13.5396419443134
+// 12.3620454294749
+// 11.1849419063234
+// 10.0093431941877
+// "InnerContactB.flange_b.s:"
+// -0.0745
+// -0.0744976698750573
+// -0.0744953146815723
+// -0.0744929604736661
+// -0.0744906092749354
+// "InnerContactB.flange_b.f:"
+// 0.0
+// -13.5396419443134
+// -12.3620454294749
+// -11.1849419063234
+// -10.0093431941877
+// "InnerContactB.s_rel:"
+// 0.00275000000000002
+// 0.000986459180118904
+// 0.000987636776860874
+// 0.00098881388081393
+// 0.000989989480179213
+// "InnerContactB.f:"
+// 0.0
+// -13.5396419443134
+// -12.3620454294749
+// -11.1849419063234
+// -10.0093431941877
+// "InnerContactB.v_rel:"
+// 0.0
+// 4.71174712876325e-06
+// 4.71083860303894e-06
+// 4.7091189851692e-06
+// 4.70650639916743e-06
+// "InnerContactB.Contact:"
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// "Spool.s:"
+// 0.01475
+// 0.0147523301249427
+// 0.0147546853184277
+// 0.0147570395263339
+// 0.0147593907250646
+// "Spool.flange_a.s:"
+// -0.08025
+// -0.0802476698750573
+// -0.0802453146815723
+// -0.0802429604736661
+// -0.0802406092749354
+// "Spool.flange_a.f:"
+// 0.0
+// 1.85121787301679e-05
+// 0.000292818543075945
+// 0.000441157203928899
+// 0.0019670799163265
+// "Spool.flange_b.s:"
+// 0.10975
+// 0.109752330124943
+// 0.109754685318428
+// 0.109757039526334
+// 0.109759390725065
+// "Spool.v:"
+// 0.0
+// 9.42349463083194e-06
+// 9.42167721157419e-06
+// 9.41823797065242e-06
+// 9.41301279868189e-06
+// "Spool.a:"
+// 0.0
+// 0.000123414524867786
+// 0.0019521236205063
+// 0.00294104802619266
+// 0.0131138661088433
+// "FixedLe.flange_b.f:"
+// 0.0
+// 2.35603955213683
+// 4.71122804010774
+// 7.06542648844817
+// 9.41661085009149
+// "SpringPlateA.s:"
+// -0.093
+// -0.093013540819882
+// -0.0930123632231391
+// -0.0930111861191859
+// -0.0930100105198205
+// "SpringPlateA.flange_a.s:"
+// -0.094
+// -0.094013540819882
+// -0.0940123632231391
+// -0.0940111861191859
+// -0.0940100105198205
+// "SpringPlateA.flange_a.f:"
+// -0.0
+// 13.5396419451702
+// 12.3620454294107
+// 11.1849419061841
+// 10.0093431938958
+// "SpringPlateA.flange_b.s:"
+// -0.092
+// -0.092013540819882
+// -0.0920123632231391
+// -0.0920111861191859
+// -0.0920100105198205
+// "SpringPlateA.flange_b.f:"
+// -65.0000000000002
+// -13.5396419443222
+// -12.3620454294838
+// -11.1849419063428
+// -10.0093431942107
+// "SpringPlateA.v:"
+// 0.0
+// 4.7117475022396e-06
+// 4.71083860854318e-06
+// 4.70911898549986e-06
+// 4.70650639953393e-06
+// "SpringPlateA.a:"
+// -6500.00000000002
+// 8.47970138551091e-08
+// -7.30757676592475e-09
+// -1.58725921295399e-08
+// -3.1493030405727e-08
+// "SpringPlateB.s:"
+// -0.06925
+// -0.0674841290551761
+// -0.0674829514584332
+// -0.0674817743544801
+// -0.0674805987551146
+// "SpringPlateB.flange_a.s:"
+// -0.07025
+// -0.0684841290551761
+// -0.0684829514584332
+// -0.0684817743544801
+// -0.0684805987551146
+// "SpringPlateB.flange_a.f:"
+// 65.0000000000002
+// 15.8721227615687
+// 17.0497192764072
+// 18.2268227995589
+// 19.4024215116947
+// "SpringPlateB.flange_b.s:"
+// -0.06825
+// -0.0664841290551761
+// -0.0664829514584332
+// -0.06648177435448
+// -0.0664805987551146
+// "SpringPlateB.flange_b.f:"
+// 0.0
+// -15.8721227607299
+// -17.0497192764895
+// -18.2268227997057
+// -19.4024215119905
+// "SpringPlateB.v:"
+// 0.0
+// 4.71174750206869e-06
+// 4.71083860853524e-06
+// 4.70911898548321e-06
+// 4.70650639951446e-06
+// "SpringPlateB.a:"
+// 6500.00000000002
+// 8.3879170276191e-08
+// -8.23341395062016e-09
+// -1.46749279394953e-08
+// -2.95873547884184e-08
+// "Spring.flange_a.s:"
+// -0.092
+// -0.092013540819882
+// -0.0920123632231391
+// -0.0920111861191859
+// -0.0920100105198205
+// "Spring.flange_a.f:"
+// 65.0000000000002
+// 29.4117647058821
+// 29.4117647058821
+// 29.4117647058823
+// 29.4117647058824
+// "Spring.flange_b.s:"
+// -0.07025
+// -0.0684841290551761
+// -0.0684829514584332
+// -0.0684817743544801
+// -0.0684805987551146
+// "Spring.flange_b.f:"
+// -65.0000000000002
+// -29.4117647058821
+// -29.4117647058821
+// -29.4117647058823
+// -29.4117647058824
+// "Spring.s_rel:"
+// 0.02175
+// 0.0235294117647059
+// 0.0235294117647059
+// 0.0235294117647059
+// 0.0235294117647059
+// "Spring.f:"
+// -65.0000000000002
+// -29.4117647058821
+// -29.4117647058821
+// -29.4117647058823
+// -29.4117647058824
+// "OuterContactA.flange_a.f:"
+// -0.0
+// 13.5396419451702
+// 12.3620454294107
+// 11.1849419061841
+// 10.0093431938958
+// "OuterContactA.flange_b.s:"
+// -0.094
+// -0.094013540819882
+// -0.0940123632231391
+// -0.0940111861191859
+// -0.0940100105198205
+// "OuterContactA.flange_b.f:"
+// 0.0
+// -13.5396419451702
+// -12.3620454294107
+// -11.1849419061841
+// -10.0093431938958
+// "OuterContactA.s_rel:"
+// 0.0015
+// 0.00148645918011795
+// 0.00148763677686094
+// 0.00148881388081407
+// 0.0014899894801795
+// "OuterContactA.f:"
+// 0.0
+// -13.5396419451702
+// -12.3620454294107
+// -11.1849419061841
+// -10.0093431938958
+// "OuterContactA.v_rel:"
+// 0.0
+// 4.7117475022396e-06
+// 4.71083860854318e-06
+// 4.70911898549986e-06
+// 4.70650639953393e-06
+// "OuterContactA.Contact:"
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// "OuterContactB.flange_a.s:"
+// -0.06825
+// -0.0664841290551761
+// -0.0664829514584332
+// -0.06648177435448
+// -0.0664805987551146
+// "OuterContactB.flange_a.f:"
+// -0.0
+// 15.8721227607299
+// 17.0497192764895
+// 18.2268227997057
+// 19.4024215119905
+// "OuterContactB.flange_b.f:"
+// 0.0
+// -15.8721227607299
+// -17.0497192764895
+// -18.2268227997057
+// -19.4024215119905
+// "OuterContactB.s_rel:"
+// 0.00325
+// 0.00148412905517615
+// 0.00148295145843316
+// 0.00148177435448004
+// 0.00148059875511461
+// "OuterContactB.f:"
+// 0.0
+// -15.8721227607299
+// -17.0497192764895
+// -18.2268227997057
+// -19.4024215119905
+// "OuterContactB.v_rel:"
+// 0.0
+// -4.71174750206869e-06
+// -4.71083860853524e-06
+// -4.70911898548321e-06
+// -4.70650639951446e-06
+// "OuterContactB.Contact:"
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// "Rod1.s:"
+// -0.0885
+// -0.088513540819882
+// -0.0885123632231391
+// -0.0885111861191859
+// -0.0885100105198205
+// "Rod1.flange_a.s:"
+// -0.092
+// -0.092013540819882
+// -0.0920123632231391
+// -0.0920111861191859
+// -0.0920100105198205
+// "Rod1.flange_a.f:"
+// 0.0
+// -15.8721227615599
+// -17.0497192763983
+// -18.2268227995395
+// -19.4024215116717
+// "Rod1.flange_b.s:"
+// -0.085
+// -0.085013540819882
+// -0.0850123632231391
+// -0.0850111861191859
+// -0.0850100105198205
+// "Rod1.flange_b.f:"
+// -0.0
+// 15.8721227615599
+// 17.0497192763983
+// 18.2268227995395
+// 19.4024215116717
+// "Friction.flange_a.f:"
+// -0.0
+// -0.0235587365770798
+// -0.0235541930289355
+// -0.023545594926631
+// -0.0235325319967047
+// "Friction.flange_b.s:"
+// -0.086
+// -0.0859976698750573
+// -0.0859953146815723
+// -0.0859929604736661
+// -0.0859906092749354
+// "Friction.flange_b.f:"
+// 0.0
+// 0.0235587365770798
+// 0.0235541930289355
+// 0.023545594926631
+// 0.0235325319967047
+// "Friction.s_rel:"
+// 0.00949999999999999
+// 0.00950233012494274
+// 0.00950468531842769
+// 0.00950703952633387
+// 0.00950939072506458
+// "Friction.f:"
+// 0.0
+// 0.0235587365770798
+// 0.0235541930289355
+// 0.023545594926631
+// 0.0235325319967047
+// "Friction.v_rel:"
+// 0.0
+// 9.42349463083194e-06
+// 9.42167721157419e-06
+// 9.41823797065242e-06
+// 9.41301279868189e-06
+// "Force1.flange_b.s:"
+// -0.08025
+// -0.0802476698750573
+// -0.0802453146815723
+// -0.0802429604736661
+// -0.0802406092749354
+// "Force1.flange_b.f:"
+// -0.0
+// -2.35605806600232
+// -4.7115208584954
+// -7.06586764534662
+// -9.41857792939701
+// "Force1.f:"
+// 0.0
+// 2.35605806600232
+// 4.7115208584954
+// 7.06586764534662
+// 9.41857792939701
+// "Housing.flange_a.f:"
+// 0.0
+// -15.8721227607299
+// -17.0497192764895
+// -18.2268227997057
+// -19.4024215119905
+// "Housing.flange_b.f:"
+// -0.0
+// 15.8721227607299
+// 17.0497192764895
+// 18.2268227997057
+// 19.4024215119905
+// "Rod3.s:"
+// -0.083125
+// -0.0831226698750573
+// -0.0831203146815723
+// -0.0831179604736661
+// -0.0831156092749354
+// "Rod3.flange_a.s:"
+// -0.086
+// -0.0859976698750573
+// -0.0859953146815723
+// -0.0859929604736661
+// -0.0859906092749354
+// "Rod3.flange_a.f:"
+// -0.0
+// -15.895681498137
+// -17.0732734694273
+// -18.2503683944661
+// -19.4259540436684
+// "Rod3.flange_b.s:"
+// -0.08025
+// -0.0802476698750573
+// -0.0802453146815723
+// -0.0802429604736661
+// -0.0802406092749354
+// "Rod3.flange_b.f:"
+// 0.0
+// 15.895681498137
+// 17.0732734694273
+// 18.2503683944661
+// 19.4259540436684
+// "Rod4.s:"
+// -0.077375
+// -0.0773726698750573
+// -0.0773703146815723
+// -0.0773679604736661
+// -0.0773656092749354
+// "Rod4.flange_a.s:"
+// -0.08025
+// -0.0802476698750573
+// -0.0802453146815723
+// -0.0802429604736661
+// -0.0802406092749354
+// "Rod4.flange_a.f:"
+// 0.0
+// -13.5396419443134
+// -12.3620454294749
+// -11.1849419063234
+// -10.0093431941877
+// "Rod4.flange_b.s:"
+// -0.0745
+// -0.0744976698750573
+// -0.0744953146815723
+// -0.0744929604736661
+// -0.0744906092749354
+// "Rod4.flange_b.f:"
+// -0.0
+// 13.5396419443134
+// 12.3620454294749
+// 11.1849419063234
+// 10.0093431941877
+// "Rod2.s:"
+// -0.07375
+// -0.0719841290551761
+// -0.0719829514584332
+// -0.0719817743544801
+// -0.0719805987551146
+// "Rod2.flange_a.s:"
+// -0.07725
+// -0.0754841290551762
+// -0.0754829514584332
+// -0.0754817743544801
+// -0.0754805987551146
+// "Rod2.flange_a.f:"
+// 0.0
+// -13.5396419443134
+// -12.3620454294749
+// -11.1849419063234
+// -10.0093431941877
+// "Rod2.flange_b.s:"
+// -0.07025
+// -0.0684841290551761
+// -0.0684829514584332
+// -0.0684817743544801
+// -0.0684805987551146
+// "Rod2.flange_b.f:"
+// -0.0
+// 13.5396419443134
+// 12.3620454294749
+// 11.1849419063234
+// 10.0093431941877
+// "Sine1.y:"
+// 0.0
+// 2.35605806600232
+// 4.7115208584954
+// 7.06586764534662
+// 9.41857792939701
+// 0
+// endResult
