@@ -31,7 +31,7 @@ PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-Friction2.mos \
+Friction2.mos FrictionRotationalSim.mos \
 
 .PHONY : test
 
