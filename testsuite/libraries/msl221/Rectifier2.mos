@@ -1,5 +1,5 @@
 // name: Rectifier2
-// keywords: simulating msl221
+// keyword: simulating msl221
 // status: correct
 
 loadModel(Modelica);

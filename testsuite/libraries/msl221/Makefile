@@ -9,7 +9,7 @@ AIMS_start.mos SMPM_Inverter.mos\
 Accelerate.mos Accelerate2.mos HeatingMOSInverter.mos   SMR_Inverter.mos\
 BusUsage.mos HeatingRectifier.mos Sensors.mos Sensors2.mos\
 CauerLowPassAnalog.mos IndirectCooling.mos ShowCompositeStep.mos\
-CauerLowPassOPV.mos InitialConditions.mos ShowExceptions.mos\
+CauerLowPassOPV.mos CauerLowPassOPV2.mos InitialConditions.mos ShowExceptions.mos\
 CauerLowPassSC.mos  ShowLogicalSources.mos\
 CharacteristicIdealDiodes.mos  LogicalNetwork1.mos  ShowSaturatingInductor.mos\
 CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
