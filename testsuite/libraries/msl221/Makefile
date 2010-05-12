@@ -33,6 +33,7 @@ PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 # Run make testfailing
 FAILINGTESTFILES=  \
 Friction2.mos FrictionRotationalSim.mos \
+Rectifier2.mos \
 
 .PHONY : test
 
