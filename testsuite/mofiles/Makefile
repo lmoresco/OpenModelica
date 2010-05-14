@@ -236,6 +236,7 @@ Extends11.mo \
 ExternalFunction1.mo \
 ExternalFunction2.mo \
 ExternalFunction3.mo \
+ExternalFunction4.mo \
 Faculty1.mo \
 Faculty2.mo \
 Faculty3.mo \
