@@ -13,6 +13,7 @@ CauerLowPassOPV.mos CauerLowPassOPV2.mos InitialConditions.mos ShowExceptions.mo
 CauerLowPassSC.mos  CauerLowPassSC2.mos ShowLogicalSources.mos\
 CharacteristicIdealDiodes.mos  LogicalNetwork1.mos  ShowSaturatingInductor.mos\
 CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
+CharacteristicThyristors2.mos\
 LossyGearDemo1Sim.mos LossyGearDemo2Sim.mos \
 ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos SignConvention2.mos\
 ControlledTanks.mos Motor.mos SimpleCooling.mos\
