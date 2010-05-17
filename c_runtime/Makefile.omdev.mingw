@@ -15,7 +15,7 @@ FPUFLAGS = -msse2 -mfpmath=sse
 
 LIBF2CMAKEFILE = makefile.mingw
 JAVAMAKEFILE = Makefile.omdev.mingw
-INTERACTIVEMAKEFILE = Makefile
+INTERACTIVEMAKEFILE = Makefile.mingw
 INTERACTIVELIBS = 
 LIBSENDDATA = libsendData.a
 
