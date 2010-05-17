@@ -193,6 +193,19 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   w := {R.w[1],R.w[2],R.w[3]};
 // end Modelica.Mechanics.MultiBody.Frames.angularVelocity2;
 // 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
+// input Real[3, 3] T;
+// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
+// output Orientation res;
+// end Modelica.Mechanics.MultiBody.Frames.Orientation;
+// 
+// function Modelica.Math.cos
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.cos;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.axesRotations
 // input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
 // input Real[3] angles(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angles around the axes defined in 'sequence'";
@@ -250,19 +263,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
-// input Real[3, 3] T;
-// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
-// output Orientation res;
-// end Modelica.Mechanics.MultiBody.Frames.Orientation;
-// 
-// function Modelica.Math.cos
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
-// 
-// external "C";
-// end Modelica.Math.cos;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.from_T
 // input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
@@ -526,7 +526,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real Piston.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Piston.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Piston.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-// parameter Real Piston.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+// parameter Real Piston.R.T[3,1] = -0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Piston.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Piston.R.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Piston.R.w[1](quantity = "AngularVelocity", unit = "rad/s") = 0.0 "Absolute angular velocity of local frame, resolved in local frame";
@@ -890,7 +890,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real Rod2.R.T[1,2] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Rod2.R.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Rod2.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
-// parameter Real Rod2.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
+// parameter Real Rod2.R.T[2,2] = -0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Rod2.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Rod2.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Rod2.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
@@ -2544,7 +2544,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real Crank4.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank4.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank4.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-// parameter Real Crank4.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+// parameter Real Crank4.R.T[3,1] = -0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank4.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank4.R.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank4.R.w[1](quantity = "AngularVelocity", unit = "rad/s") = 0.0 "Absolute angular velocity of local frame, resolved in local frame";
@@ -3638,7 +3638,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // parameter Real Crank2.R.T[1,2] = 1.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank2.R.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank2.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
-// parameter Real Crank2.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
+// parameter Real Crank2.R.T[2,2] = -0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank2.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank2.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
 // parameter Real Crank2.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";

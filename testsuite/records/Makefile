@@ -6,7 +6,8 @@ TESTFILES = \
  SimpleRecordTestConstructor.mos SimpleRecordTestInput.mos \
  NestedRecordTestConstructor.mos  NestedRecordTestInput.mos \
  RecordModifications.mo \
- RecordParameters.mos RecordVariability.mo
+ RecordParameters.mos RecordVariability.mo \
+ RecordFuncParam.mo RecordFuncParam.mos
 
 # test that currently fail. Move up when fixed. 
 FAILINGTESTFILES=NONE
