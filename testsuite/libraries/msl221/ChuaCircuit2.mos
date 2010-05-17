@@ -1,0 +1,55 @@
+//name:         ChuaCircuit2
+//keyword:      simulating msl221
+//status:       correct
+//
+// simulation example
+//
+
+loadFile("Modelica/package.mo");
+simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit,method="dassl");
+
+"Nr.v:";
+val(Nr.v,0.0);
+val(Nr.v,0.5);
+val(Nr.v,1.0);
+
+"Nr.i:";
+val(Nr.i,0.0);
+val(Nr.i,0.5);
+val(Nr.i,1.0);
+
+"G.v:";
+val(G.v,0.0);
+val(G.v,0.5);
+val(G.v,1.0);
+
+"G.i:";
+val(G.i,0.0);
+val(G.i,0.5);
+val(G.i,1.0);
+
+system("rm Modelica.Electrical.Analog.Examples.ChuaCircuit*");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.plt"
+// end SimulationResult;
+// "Nr.v:"
+// 4.0
+// 3.98645463004395
+// 3.97332969315684
+// "Nr.i:"
+// -1.984849
+// -1.97930771105931
+// -1.97393841750323
+// "G.v:"
+// -4.0
+// -3.97519005686502
+// -3.95087152596704
+// "G.i:"
+// -2.26
+// -2.24598238212873
+// -2.23224241217138
+// 0
+// endResult

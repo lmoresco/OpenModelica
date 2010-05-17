@@ -16,6 +16,7 @@ CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
 CharacteristicThyristors2.mos\
 LossyGearDemo1Sim.mos LossyGearDemo2Sim.mos \
 ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos SignConvention2.mos\
+ChuaCircuit2.mos\
 ControlledTanks.mos Motor.mos SimpleCooling.mos\
 CoupledClutches.mos CoupledClutches2.mos NandGate.mos TestNand.mos\
 DCEE_start.mos OneMass.mos TransformerYD.mos\
