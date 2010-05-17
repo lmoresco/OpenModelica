@@ -1,0 +1,87 @@
+//name:         CauerLowPassSC2
+//keyword:      simulation msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo");
+simulate(Modelica.Electrical.Analog.Examples.CauerLowPassSC,stopTime=60,numberOfIntervals=1500,method="dassl");
+
+"C5.v:";
+val(C5.v,0.0);
+val(C5.v,10.05);
+val(C5.v,20.05);
+val(C5.v,30.05);
+val(C5.v,40.05);
+val(C5.v,50.0);
+val(C5.v,60.0);
+
+"C5.i:";
+val(C5.i,0.0);
+val(C5.i,10.05);
+val(C5.i,20.05);
+val(C5.i,30.05);
+val(C5.i,40.05);
+val(C5.i,50.0);
+val(C5.i,60.0);
+
+"Op2.out.v:";
+val(Op2.out.v,0.0);
+val(Op2.out.v,10.05);
+val(Op2.out.v,20.05);
+val(Op2.out.v,30.05);
+val(Op2.out.v,40.05);
+val(Op2.out.v,50.0);
+val(Op2.out.v,60.0);
+
+"Op2.out.i:";
+val(Op2.out.i,0.0);
+val(Op2.out.i,10.05);
+val(Op2.out.i,20.05);
+val(Op2.out.i,30.05);
+val(Op2.out.i,40.05);
+val(Op2.out.i,50.0);
+val(Op2.out.i,60.0);
+
+system("rm Modelica.Electrical.Analog.Examples.CauerLowPassSC*");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.plt"
+// end SimulationResult;
+// "C5.v:"
+// -0.0
+// 0.49695342313116
+// 0.500614439919587
+// 0.501127733652533
+// 0.498999050620109
+// 0.500672013177112
+// 0.499601196031287
+// "C5.i:"
+// -0.0
+// -1.2101347867842e-22
+// -1.28602557445628e-22
+// -5.17888356818866e-23
+// -5.51456463244526e-23
+// 5.01428348684508e-14
+// 1.3385141860099e-15
+// "Op2.out.v:"
+// -0.0
+// 0.551528037077943
+// 0.468383310570054
+// 0.512534477252592
+// 0.495092395819062
+// 0.501843105495126
+// 0.49934924958731
+// "Op2.out.i:"
+// -0.0
+// -1.10305607404558e-05
+// -9.36766621046431e-06
+// -1.02506895440268e-05
+// -9.90184791539106e-06
+// -1.00368621088988e-05
+// -9.98698499074751e-06
+// 0
+// endResult
