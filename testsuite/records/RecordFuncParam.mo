@@ -26,16 +26,16 @@ equation
 end RecordFuncParam;
 
 // Result:
-// function f
-// input R r;
-// output Real y;
-// end f;
-// 
 // function R "Automatically generated record constructor for R"
 // input Real x;
 // input Real y;
 // output R res;
 // end R;
+// 
+// function f
+// input R r;
+// output Real y;
+// end f;
 // 
 // fclass RecordFuncParam
 // input Real r.x;

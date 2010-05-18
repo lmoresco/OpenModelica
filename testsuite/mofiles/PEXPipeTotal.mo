@@ -997,6 +997,13 @@ end Toneco_PEXPipe;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // Result:
+// function Modelica.SIunits.Conversions.from_degC
+// input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
+// output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
+// algorithm
+//   Kelvin := Celsius - -273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
 // function Modelica.Thermal.FluidHeatFlow.Media.Medium "Automatically generated record constructor for Modelica.Thermal.FluidHeatFlow.Media.Medium"
 // input Real(quantity="Density", unit="kg/m3", displayUnit="g/cm3", min=0.0) rho = 1.0;
 // input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cp = 1.0;
@@ -1005,13 +1012,6 @@ end Toneco_PEXPipe;
 // input Real(quantity="KinematicViscosity", unit="m2/s", min=0.0) nue = 1.0;
 // output Medium res;
 // end Modelica.Thermal.FluidHeatFlow.Media.Medium;
-// 
-// function Modelica.SIunits.Conversions.from_degC
-// input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
-// output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
-// algorithm
-//   Kelvin := Celsius - -273.15;
-// end Modelica.SIunits.Conversions.from_degC;
 // 
 // fclass Toneco_PEXPipe
 // parameter Real medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "density";

@@ -48,6 +48,12 @@ end Sequence;
 
 
 // Result:
+// function Orientation "Automatically generated record constructor for Orientation"
+// input Real[3, 3] T;
+// input Real[3] w;
+// output Orientation res;
+// end Orientation;
+// 
 // function axesRot
 // input Integer[3] sequence = {1,2,3};
 // input Real[3] angles = {4.0,5.0,6.0};
@@ -55,12 +61,6 @@ end Sequence;
 // algorithm
 //   r := /*REAL*/(sequence[1]) * angles[3] + /*REAL*/(sequence[2]) * angles[2] + /*REAL*/(sequence[3]) * angles[1];
 // end axesRot;
-// 
-// function Orientation "Automatically generated record constructor for Orientation"
-// input Real[3, 3] T;
-// input Real[3] w;
-// output Orientation res;
-// end Orientation;
 // 
 // function axesRotations "Inline before index reduction"
 // input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
