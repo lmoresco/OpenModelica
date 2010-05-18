@@ -10,16 +10,7 @@ instantiateModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve);
 getErrorString();
 // Result:
 // true
-// "function Modelica.Thermal.FluidHeatFlow.Media.Medium "Automatically generated record constructor for Modelica.Thermal.FluidHeatFlow.Media.Medium"
-// input Real(quantity="Density", unit="kg/m3", displayUnit="g/cm3", min=0.0) rho = 1.0;
-// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cp = 1.0;
-// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cv = 1.0;
-// input Real(quantity="ThermalConductivity", unit="W/(m.K)") lamda = 1.0;
-// input Real(quantity="KinematicViscosity", unit="m2/s", min=0.0) nue = 1.0;
-// output Medium res;
-// end Modelica.Thermal.FluidHeatFlow.Media.Medium;
-// 
-// function Modelica.Math.log
+// "function Modelica.Math.log
 // input Real u;
 // output Real y;
 // 
@@ -32,6 +23,15 @@ getErrorString();
 // algorithm
 //   Kelvin := Celsius - -273.15;
 // end Modelica.SIunits.Conversions.from_degC;
+// 
+// function Modelica.Thermal.FluidHeatFlow.Media.Medium "Automatically generated record constructor for Modelica.Thermal.FluidHeatFlow.Media.Medium"
+// input Real(quantity="Density", unit="kg/m3", displayUnit="g/cm3", min=0.0) rho = 1.0;
+// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cp = 1.0;
+// input Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") cv = 1.0;
+// input Real(quantity="ThermalConductivity", unit="W/(m.K)") lamda = 1.0;
+// input Real(quantity="KinematicViscosity", unit="m2/s", min=0.0) nue = 1.0;
+// output Medium res;
+// end Modelica.Thermal.FluidHeatFlow.Media.Medium;
 // 
 // fclass Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve
 // parameter Real medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "density";
