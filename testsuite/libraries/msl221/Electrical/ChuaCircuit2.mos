@@ -5,7 +5,7 @@
 // simulation example
 //
 
-loadFile("Modelica/package.mo");
+loadFile("../Modelica/package.mo");
 simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit,method="dassl");
 
 "Nr.v:";

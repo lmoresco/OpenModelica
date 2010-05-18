@@ -5,7 +5,7 @@
 // instantiate example
 //
 
-loadFile("Modelica/package.mo");
+loadFile("../Modelica/package.mo");
 simulate(Modelica.Electrical.Analog.Examples.CauerLowPassSC,stopTime=60,numberOfIntervals=1500,method="dassl");
 
 "C5.v:";

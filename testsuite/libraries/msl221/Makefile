@@ -39,10 +39,18 @@ test:
 	@echo Running tests...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
-	@$(TEST) $(TESTFILES)
+	@$(TEST) $(TESTFILES) \
 	
 failingtest :
 	@echo
 	@echo Running failing tests...
 	@echo
-	@$(TEST) $(FAILINGTESTFILES)
+	@$(TEST) $(FAILINGTESTFILES) \
+
+sim:
+	@make -C Electrical -f Makefile test 
+	@make -C Mechanical -f Makefile test 
+
+simfailingtest:
+	@make -C Electrical -f Makefile failingtest
+	@make -C Mechanical -f Makefile failingtest

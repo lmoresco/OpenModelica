@@ -1,11 +1,11 @@
-//name:         Damper
+//name:         Damper2
 //keyword:      simulating msl221
 //status:       correct
 //
 // simulation example
 //
 
-loadFile("Modelica/package.mo");
+loadFile("../Modelica/package.mo");
 simulate(Modelica.Mechanics.Translational.Examples.Damper,numberOfIntervals=500,tolerance=0.0001,startTime=0,stopTime=1);
 
 "SlidingMass1.s:";
