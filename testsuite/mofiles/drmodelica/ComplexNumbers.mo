@@ -50,21 +50,6 @@ class ComplexUser
 end ComplexUser;
 
 // Result:
-// function ComplexNumbers.Multiply
-// input ComplexNumbers.Complex x;
-// input ComplexNumbers.Complex y;
-// output ComplexNumbers.Complex z;
-// algorithm
-//   z.re := x.re * y.re - x.im * y.im;
-//   z.im := x.re * y.im + x.im * y.re;
-// end ComplexNumbers.Multiply;
-// 
-// function ComplexNumbers.Complex "Automatically generated record constructor for ComplexNumbers.Complex"
-// input Real re;
-// input Real im;
-// output Complex res;
-// end ComplexNumbers.Complex;
-// 
 // function ComplexNumbers.Add
 // input ComplexNumbers.Complex x;
 // input ComplexNumbers.Complex y;
@@ -73,6 +58,21 @@ end ComplexUser;
 //   z.re := x.re + y.re;
 //   z.im := x.im + y.im;
 // end ComplexNumbers.Add;
+// 
+// function ComplexNumbers.Complex "Automatically generated record constructor for ComplexNumbers.Complex"
+// input Real re;
+// input Real im;
+// output Complex res;
+// end ComplexNumbers.Complex;
+// 
+// function ComplexNumbers.Multiply
+// input ComplexNumbers.Complex x;
+// input ComplexNumbers.Complex y;
+// output ComplexNumbers.Complex z;
+// algorithm
+//   z.re := x.re * y.re - x.im * y.im;
+//   z.im := x.re * y.im + x.im * y.re;
+// end ComplexNumbers.Multiply;
 // 
 // fclass ComplexUser
 // Real a.re = 1.0;
