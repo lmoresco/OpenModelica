@@ -16,13 +16,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // Result:
 // true
 // ""
-// "function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
-// input Real[3, 3] T;
-// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
-// output Orientation res;
-// end Modelica.Mechanics.MultiBody.Frames.Orientation;
-// 
-// function Modelica.Math.Vectors.length
+// "function Modelica.Math.Vectors.length
 // input Real[:] v "Vector";
 // output Real result "Length of vector v";
 // algorithm
@@ -58,6 +52,12 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // external "C";
 // end Modelica.Math.sin;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
+// input Real[3, 3] T;
+// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
+// output Orientation res;
+// end Modelica.Mechanics.MultiBody.Frames.Orientation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint "Inline before index reduction"
 // input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";

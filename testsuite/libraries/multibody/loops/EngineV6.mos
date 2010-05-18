@@ -7,11 +7,21 @@
 
 loadFile("_LoopsTotal.mo");
 getErrorString();
-instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6);
-getErrorString();
+//instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6);
+//getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6);
 getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
+// true
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 has 12491 equation(s) and 12491 variable(s).
+// 8624 of these are trivial equation(s).
+// "
+// ""
+// 0
 // endResult

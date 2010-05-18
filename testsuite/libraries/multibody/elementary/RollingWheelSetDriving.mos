@@ -47,6 +47,19 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // external "C";
 // end Modelica.Math.cos;
 // 
+// function Modelica.Math.sin
+// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
+// input Real[3, 3] T;
+// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
+// output Orientation res;
+// end Modelica.Mechanics.MultiBody.Frames.Orientation;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint
 // input Modelica.Mechanics.MultiBody.Frames.Orientation R1 "Orientation object to rotate frame 0 into frame 1";
 // input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
@@ -152,19 +165,6 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   T := (<matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0] + ({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}} - <matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0]) * Modelica.Math.cos(angle)) - <matrix>[0.0,-Modelica.Math.sin(angle) * e[3],Modelica.Math.sin(angle) * e[2];Modelica.Math.sin(angle) * e[3],0.0,-Modelica.Math.sin(angle) * e[1];-Modelica.Math.sin(angle) * e[2],Modelica.Math.sin(angle) * e[1],0.0];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation;
-// 
-// function Modelica.Mechanics.MultiBody.Frames.Orientation "Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation"
-// input Real[3, 3] T;
-// input Real(quantity="AngularVelocity", unit="rad/s")[3] w;
-// output Orientation res;
-// end Modelica.Mechanics.MultiBody.Frames.Orientation;
-// 
-// function Modelica.Math.sin
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
-// 
-// external "C";
-// end Modelica.Math.sin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
 // input Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
