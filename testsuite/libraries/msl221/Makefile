@@ -6,36 +6,31 @@ AIMC_Inverter.mos FirstExample_Variant2.mos  PumpDropOut.mos\
 AIMC_YD.mos FirstExample_Variant3.mos Rectifier.mos\
 Friction.mos SMEE_Gen.mos\
 AIMS_start.mos SMPM_Inverter.mos\
-Accelerate.mos Accelerate2.mos HeatingMOSInverter.mos   SMR_Inverter.mos\
-BusUsage.mos HeatingRectifier.mos Sensors.mos Sensors2.mos\
+Accelerate.mos HeatingMOSInverter.mos   SMR_Inverter.mos\
+BusUsage.mos HeatingRectifier.mos Sensors.mos\
 CauerLowPassAnalog.mos IndirectCooling.mos ShowCompositeStep.mos\
-CauerLowPassOPV.mos CauerLowPassOPV2.mos InitialConditions.mos ShowExceptions.mos\
-CauerLowPassSC.mos  CauerLowPassSC2.mos ShowLogicalSources.mos\
+CauerLowPassOPV.mos InitialConditions.mos ShowExceptions.mos\
+CauerLowPassSC.mos  ShowLogicalSources.mos\
 CharacteristicIdealDiodes.mos  LogicalNetwork1.mos  ShowSaturatingInductor.mos\
 CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
-CharacteristicThyristors2.mos\
-LossyGearDemo1Sim.mos LossyGearDemo2Sim.mos \
-ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos SignConvention2.mos\
-ChuaCircuit2.mos\
+ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos\
 ControlledTanks.mos Motor.mos SimpleCooling.mos\
-CoupledClutches.mos CoupledClutches2.mos NandGate.mos TestNand.mos\
+CoupledClutches.mos NandGate.mos TestNand.mos\
 DCEE_start.mos OneMass.mos TransformerYD.mos\
 DCPM_start.mos   OneWayRectifier.mos  TransformerYY.mos\
 DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
-Damper.mos Damper2.mos  Oscillator.mos Oscillator2.mos   TwoMasses.mos\
-DifferentialAmplifier.mos  PID_Controller.mos \
-ElasticBearing.mos ElasticBearing2.mos ParallelCooling.mos \
-ParallelPumpDropOut.mos  WhyArrows.mos WhyArrows2.mos\
+Damper.mos Oscillator.mos TwoMasses.mos\
+DifferentialAmplifier.mos PID_Controller.mos \
+ElasticBearing.mos ParallelCooling.mos \
+ParallelPumpDropOut.mos  WhyArrows.mos\
 ExecutionPaths.mos \
-First.mos First2.mos PreLoad.mos PreLoad2.mos\
+First.mos PreLoad.mos \
 PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-Friction2.mos FrictionRotationalSim.mos \
-Rectifier2.mos \
 
 .PHONY : test
 
