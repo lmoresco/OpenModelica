@@ -5,7 +5,7 @@
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-f Makefile.omdev.mingw ${string_prompt}"/>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS" value="full,incremental,"/>
 <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${workspace}"/>
-<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/OpenModelica}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${project_loc}"/>
 <mapAttribute key="org.eclipse.debug.core.environmentVariables">
 <mapEntry key="SystemRoot" value="${env_var:SystemRoot}"/>
 <mapEntry key="OMDEV" value="/c/OMDev/"/>
