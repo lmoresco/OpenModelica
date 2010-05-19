@@ -135,6 +135,10 @@ To Compile OpenModelica
     $ export OPENMODELICAHOME=path/to/trunk/build
     $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
     $ make test
+  Note: Some Modelica Standard Library functions depend on LAPACK.
+        On Ubuntu, this is installed by lpsolve dependencies.
+        If you compiled omc using a static lpsolve, it is possible that you
+        don't have LAPACK installed.
 
   If you run into problems read the GENERAL NOTES below and if that
   does not help, subscribe to the OpenModelicaInterest list:
