@@ -32,10 +32,10 @@ $pager="cat";
 $log="";
 $tmpdir = "/tmp/omc-$dirname";
 system "mkdir -p $tmpdir";
-$tmp1 = "$tmpdir/equations-1";
-$tmp2 = "$tmpdir/equations-2";
-$tmp3 = "$tmpdir/equations-diff";
-$tmp4 = "$tmpdir/baseline";
+$got = "$tmpdir/equations-got";
+$expected = "$tmpdir/equations-expected";
+$difference = "$tmpdir/equations-diff";
+$baseline = "$tmpdir/baseline";
 @keys = ();
 $collectkeys = 0;
 $collectcases = 0;
@@ -67,7 +67,7 @@ sub setbaselineone
       system $teardown_command;
     }
 
-    open(RES,">$tmp4");
+    open(RES,">$baseline");
     open(LOG,"<$log");    
     open(SRC,"<$f");
     
@@ -90,7 +90,7 @@ sub setbaselineone
     close SRC;
     print "Set baseline for ";print $f;print "\n"; 
     
-    open(SRC,"<$tmp4");
+    open(SRC,"<$baseline");
     open(DST,">$f");
     while(<SRC>) {
       print DST $_;
@@ -146,7 +146,7 @@ sub runone
     }
 
     # Extract the result
-    open(RES,">$tmp1");
+    open(RES,">$got");
     open(LOG,"<$log");
     while(<LOG>) {
       s/^[ \t]*//;
@@ -163,14 +163,19 @@ sub runone
     } else {
       $epsilon = $eps_mo;
     }
-    system "$OPENMODELICAHOME/bin/omc-diff $epsilon $tmp2 $tmp1 > $tmp3";
+    system "$OPENMODELICAHOME/bin/omc-diff $epsilon $expected $got > $difference";
 
     if ( $? != 0 ) {  
     print "equation mismatch [time:$end_t]\n";
-    system "echo Equation mismatch: diff says: >> $log";
-    system "diff -w $tmp2 $tmp1 >> $log";
+    ## make a newline
+    system "echo '' >> $log";
+    system "echo Equation mismatch: diff says '(expected < | > got)': >> $log";
+    system "diff -w $expected $got >> $log";
+
+    ## make a newline
+    system "echo '' >> $log";
     system "echo Equation mismatch: omc-diff says: >> $log";
-    system "cat $tmp3 >> $log";
+    system "cat $difference >> $log";
     return 1;
     }
 
@@ -190,7 +195,7 @@ sub dofile
     $log = "$tmpdir/log-$f";
     $tc_err = 1;
     # Find the expected result
-    open(OUT,">$tmp2");
+    open(OUT,">$expected");
     open(IN,"<$f");
     while(<IN>) {
     # @adrpo - uncomment for debugging
