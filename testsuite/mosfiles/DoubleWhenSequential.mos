@@ -1,7 +1,7 @@
 // name:     DoubleWhenSequential
 // keywords: when
 // status: correct
-// teardown_command: rm -rf DoubleWhenSequential_* DoubleWhenSequential.exe DoubleWhenSequential.cpp DoubleWhenSequential.makefile DoubleWhenSequential.libs DoubleWhenSequential.log output.log
+// teardown_command: rm -rf DoubleWhenSequential_* DoubleWhenSequential DoubleWhenSequential.exe DoubleWhenSequential.cpp DoubleWhenSequential.makefile DoubleWhenSequential.libs DoubleWhenSequential.log output.log
 // 
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 

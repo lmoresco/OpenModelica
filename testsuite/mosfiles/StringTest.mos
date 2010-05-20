@@ -1,7 +1,7 @@
 // name:     StringTest 
 // keywords: String, assert 
 // status: correct
-// teardown_command: rm -rf STest1.cpp STest1.exe STest1.libs STest1.log STest1_functions.cpp STest1.makefile STest1_init.txt STest1_res.plt
+// teardown_command: rm -rf STest1.cpp STest1 STest1.exe STest1.libs STest1.log STest1_functions.cpp STest1.makefile STest1_init.txt STest1_res.plt
 // 
 //  Using String() functions to create strings in assert.
 //

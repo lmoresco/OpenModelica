@@ -1,7 +1,7 @@
 // name:     WatchDog1AlgorithmWhen
 // keywords: watchdog, when
 // status: correct
-// teardown_command: rm -rf WatchDogSystem1_* WatchDogSystem1.exe WatchDogSystem1.cpp WatchDogSystem1.makefile WatchDogSystem1.libs WatchDogSystem1.log output.log
+// teardown_command: rm -rf WatchDogSystem1_* WatchDogSystem1 WatchDogSystem1.exe WatchDogSystem1.cpp WatchDogSystem1.makefile WatchDogSystem1.libs WatchDogSystem1.log output.log
 // 
 //  //??Error - not yet implemented
 //

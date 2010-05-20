@@ -1,7 +1,7 @@
 // name:     WhenEquation
 // keywords: when
 // status: correct
-// teardown_command: rm -rf WhenEquation_* WhenEquation.exe WhenEquation.cpp WhenEquation.makefile WhenEquation.libs WhenEquation.log output.log
+// teardown_command: rm -rf WhenEquation_* WhenEquation WhenEquation.exe WhenEquation.cpp WhenEquation.makefile WhenEquation.libs WhenEquation.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
 // 

@@ -1,7 +1,7 @@
 // name:     DiscreteVectorStateSpace
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf DVSSTest_* DVSSTest.exe DVSSTest.cpp DVSSTest.makefile DVSSTest.libs DVSSTest.log output.log
+// teardown_command: rm -rf DVSSTest_* DVSSTest DVSSTest.exe DVSSTest.cpp DVSSTest.makefile DVSSTest.libs DVSSTest.log output.log
 // 
 // Drmodelica: 13.2  Sampled Systems (p. 429)
 // 

@@ -1,7 +1,7 @@
 // name:     Sample1
 // keywords: events
 // status: correct
-// teardown_command: rm -rf Sample1_* Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs Sample1.log output.log
+// teardown_command: rm -rf Sample1_* Sample1 Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs Sample1.log output.log
 //
 // Event handling
 //

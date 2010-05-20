@@ -1,7 +1,7 @@
 // name:     ArrayReduce
 // keywords: array
 // status: correct
-// teardown_command: rm -rf ArrayReduce_* ArrayReduce.exe ArrayReduce.cpp ArrayReduce.makefile ArrayReduce.libs ArrayReduce.log output.log
+// teardown_command: rm -rf ArrayReduce_* ArrayReduce ArrayReduce.exe ArrayReduce.cpp ArrayReduce.makefile ArrayReduce.libs ArrayReduce.log output.log
 // 
 // ??Error - not yet implemented
 // Drmodelica: 7.7 Built-in Functions (p. 225)

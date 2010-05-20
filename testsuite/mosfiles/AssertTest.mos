@@ -1,7 +1,7 @@
 // name:     AssertTest
 // keywords: assert
 // status: correct
-// teardown_command: rm -rf AssertTestInst_* AssertTestInst.exe AssertTestInst.cpp AssertTestInst.makefile AssertTestInst.libs AssertTestInst.log output.log
+// teardown_command: rm -rf AssertTestInst_* AssertTestInst AssertTestInst.exe AssertTestInst.cpp AssertTestInst.makefile AssertTestInst.libs AssertTestInst.log output.log
 // 
 // Error! Assertion does not cancel simulation.
 // Simulation should fail! Update case after implementation of assert.

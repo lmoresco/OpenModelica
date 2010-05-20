@@ -1,7 +1,7 @@
 // name:     Tank
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf Tank_* Tank.exe Tank.cpp Tank.makefile Tank.libs Tank.log output.log
+// teardown_command: rm -rf Tank_* Tank Tank.exe Tank.cpp Tank.makefile Tank.libs Tank.log output.log
 // 
 //  <insert description here>
 //

@@ -1,7 +1,7 @@
 // name:      SumSeriesWhile
 // keywords:  equation
 // status: correct
-// teardown_command: rm -rf SumSeries_* SumSeries.exe SumSeries.cpp SumSeries.makefile SumSeries.libs SumSeries.log output.log
+// teardown_command: rm -rf SumSeries_* SumSeries SumSeries.exe SumSeries.cpp SumSeries.makefile SumSeries.libs SumSeries.log output.log
 //
 // Drmodelica: 9.1 while-loop (p.290)
 // 

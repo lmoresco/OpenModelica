@@ -1,7 +1,7 @@
 // name:     Cross
 // keywords: vector
 // status: correct
-// teardown_command: rm -rf Cross_* Cross.exe Cross.cpp Cross.makefile Cross.libs Cross.log output.log
+// teardown_command: rm -rf Cross_* Cross Cross.exe Cross.cpp Cross.makefile Cross.libs Cross.log output.log
 //
 // 
 loadFile("Cross.mo");

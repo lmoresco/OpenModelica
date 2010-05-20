@@ -1,7 +1,7 @@
 // name:     Extends Basic
 // keywords: Function, Extends
 // status: correct
-// teardown_command: rm -rf ExtendsBasic.exe ExtendsBasic_* ExtendsBasic.cpp ExtendsBasic.makefile ExtendsBasic.log ExtendsBasic.libs output.log
+// teardown_command: rm -rf ExtendsBasic ExtendsBasic.exe ExtendsBasic_* ExtendsBasic.cpp ExtendsBasic.makefile ExtendsBasic.log ExtendsBasic.libs output.log
 // 
 //  Generate code from an extended base type
 //

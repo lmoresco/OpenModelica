@@ -1,7 +1,7 @@
 // name:     LinearSysEq (test bug 1012)
 // keywords: linear system of equations
 // status: correct
-// teardown_command: rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log
+// teardown_command: rm -rf LinearSysEq_* LinearSysEq LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log
 //
 // Solving of a linear system of equations
 //

@@ -1,7 +1,7 @@
 // name:     AlgorithmSection
 // keywords: algorithm
 // status: correct
-// teardown_command: rm -rf AlgorithmSection_* AlgorithmSection.exe AlgorithmSection.cpp AlgorithmSection.makefile AlgorithmSection.libs AlgorithmSection.log output.log
+// teardown_command: rm -rf AlgorithmSection_* AlgorithmSection AlgorithmSection.exe AlgorithmSection.cpp AlgorithmSection.makefile AlgorithmSection.libs AlgorithmSection.log output.log
 // 
 // Drmodelica: 9.1 Algorithm Sections (p. 285)
 //

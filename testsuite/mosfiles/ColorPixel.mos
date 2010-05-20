@@ -1,7 +1,7 @@
 // name:     ColorPixel
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf ColorPixel_* ColorPixel.exe ColorPixel.cpp ColorPixel.makefile ColorPixel.libs ColorPixel.log output.log
+// teardown_command: rm -rf ColorPixel_* ColorPixel ColorPixel.exe ColorPixel.cpp ColorPixel.makefile ColorPixel.libs ColorPixel.log output.log
 // 
 // Drmodelica: 7.1 Type Checking (p. 209)
 //

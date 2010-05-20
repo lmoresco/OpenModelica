@@ -1,7 +1,7 @@
 // name:     DAEexample
 // keywords: equation
 // status: correct
-// teardown_command: rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log
+// teardown_command: rm -rf DAEexample_* DAEexample DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log
 //
 // Equation handling
 //

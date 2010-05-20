@@ -1,7 +1,7 @@
 // name:     Xpowers2
 // keywords: events
 // status: correct
-// teardown_command: rm -rf Xpowers2_* Xpowers2.exe Xpowers2.cpp Xpowers2.makefile Xpowers2.libs Xpowers2.log output.log
+// teardown_command: rm -rf Xpowers2_* Xpowers2 Xpowers2.exe Xpowers2.cpp Xpowers2.makefile Xpowers2.libs Xpowers2.log output.log
 //
 // Event handling
 //

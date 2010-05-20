@@ -1,7 +1,7 @@
 // name:     TankHybridPID
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf TankHybridPID_* TankHybridPID.exe TankHybridPID.cpp TankHybridPID.makefile TankHybridPID.libs TankHybridPID.log output.log
+// teardown_command: rm -rf TankHybridPID_* TankHybridPID TankHybridPID.exe TankHybridPID.cpp TankHybridPID.makefile TankHybridPID.libs TankHybridPID.log output.log
 // 
 //  //??Error - simulates too short time
 //

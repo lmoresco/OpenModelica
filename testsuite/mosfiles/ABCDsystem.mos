@@ -1,7 +1,7 @@
 // name:     ABCDsystem
 // keywords: array
 // status: correct
-// teardown_command: rm -rf ABCDsystem_* ABCDsystem.exe ABCDsystem.cpp ABCDsystem.makefile ABCDsystem.libs ABCDsystem.log output.log
+// teardown_command: rm -rf ABCDsystem_* ABCDsystem ABCDsystem.exe ABCDsystem.cpp ABCDsystem.makefile ABCDsystem.libs ABCDsystem.log output.log
 // 
 // Using empty arrays
 // Drmodelica: 7.9 Empty Arrays (p. 231)

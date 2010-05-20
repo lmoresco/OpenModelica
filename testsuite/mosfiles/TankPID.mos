@@ -1,7 +1,7 @@
 // name:     TankPID
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf TankPID_* TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log
+// teardown_command: rm -rf TankPID_* TankPID TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log
 // 
 //  <insert description here>
 //

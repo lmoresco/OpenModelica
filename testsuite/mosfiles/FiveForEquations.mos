@@ -1,7 +1,7 @@
 // name:     FiveForEquations
 // keywords: for
 // status: correct
-// teardown_command: rm -rf FiveForEquations_* FiveForEquations.exe FiveForEquations.cpp FiveForEquations.makefile FiveForEquations.libs FiveForEquations.log output.log
+// teardown_command: rm -rf FiveForEquations_* FiveForEquations FiveForEquations.exe FiveForEquations.cpp FiveForEquations.makefile FiveForEquations.libs FiveForEquations.log output.log
 // 
 // Drmodelica: 8.2 Repetitive Equation Structures with for-Equations (p. 241)
 // 

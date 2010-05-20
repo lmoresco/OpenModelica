@@ -1,7 +1,7 @@
 // name:     Switch
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf Switch_* Switch.exe Switch.cpp Switch.makefile Switch.libs Switch.log output.log
+// teardown_command: rm -rf Switch_* Switch Switch.exe Switch.cpp Switch.makefile Switch.libs Switch.log output.log
 // 
 //  <insert description here>
 //

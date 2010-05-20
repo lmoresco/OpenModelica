@@ -1,7 +1,7 @@
 // name:     ArrayAddSub1
 // keywords: array
 // status: correct
-// teardown_command: rm -rf AddSub1_* AddSub1.exe AddSub1.cpp AddSub1.makefile AddSub1.libs AddSub1.log output.log
+// teardown_command: rm -rf AddSub1_* AddSub1 AddSub1.exe AddSub1.cpp AddSub1.makefile AddSub1.libs AddSub1.log output.log
 // 
 //  arithmetic ops on arrays
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)

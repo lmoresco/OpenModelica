@@ -1,7 +1,7 @@
 // name:     BouncingBall
 // keywords: events
 // status: correct
-// teardown_command: rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log
+// teardown_command: rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log
 //
 // Event handling
 //

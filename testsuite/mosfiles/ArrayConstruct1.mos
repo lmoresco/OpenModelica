@@ -1,7 +1,7 @@
 // name:     ArrayConstruct1
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf ArrayConstruct1_* ArrayConstruct1.exe ArrayConstruct1.cpp ArrayConstruct1.makefile ArrayConstruct1.libs ArrayConstruct1.log output.log
+// teardown_command: rm -rf ArrayConstruct1_* ArrayConstruct1 ArrayConstruct1.exe ArrayConstruct1.cpp ArrayConstruct1.makefile ArrayConstruct1.libs ArrayConstruct1.log output.log
 // 
 // Drmodelica: 7.2  Array Constructor (p. 210)
 //

@@ -1,7 +1,7 @@
 // name:     Fixes for Too Many Points Bug
 // keywords: events
 // status: correct
-// teardown_command: rm -rf TooManyPointsBug_* TooManyPointsBug.exe TooManyPointsBug.cpp TooManyPointsBug.makefile TooManyPointsBug.libs TooManyPointsBug.log output.log
+// teardown_command: rm -rf TooManyPointsBug_* TooManyPointsBug TooManyPointsBug.exe TooManyPointsBug.cpp TooManyPointsBug.makefile TooManyPointsBug.libs TooManyPointsBug.log output.log
 //
 // Event handling
 //

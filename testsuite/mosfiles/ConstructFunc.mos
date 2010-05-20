@@ -1,7 +1,7 @@
 // name:     ConstructFunc
 // keywords: array
 // status: correct
-// teardown_command: rm -rf ConstructFunc_* ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log
+// teardown_command: rm -rf ConstructFunc_* ConstructFunc ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log
 // 
 // Drmodelica: 7.7 Built-in Functions (p. 225)
 // 

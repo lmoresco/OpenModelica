@@ -1,7 +1,7 @@
 // name:     MissV  (test bug 1110)
 // keywords: linear system of equations
 // status: correct
-// teardown_command: rm -rf MissV_* MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log
+// teardown_command: rm -rf MissV_* MissV MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log
 //
 // Solving of a linear system of equations
 //

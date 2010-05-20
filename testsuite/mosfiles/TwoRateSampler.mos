@@ -1,7 +1,7 @@
 // name:     TwoRateSampler
 // keywords:  sample
 // status: correct
-// teardown_command: rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSampler.makefile TwoRateSampler.libs TwoRateSampler.log output.log
+// teardown_command: rm -rf TwoRateSampler_* TwoRateSampler TwoRateSampler.exe TwoRateSampler.cpp TwoRateSampler.makefile TwoRateSampler.libs TwoRateSampler.log output.log
 // 
 // Drmodelica: 13.2  Sampled Systems (p. 429)
 // 

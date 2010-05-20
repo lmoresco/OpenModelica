@@ -1,7 +1,7 @@
 // name:     ArrayMult
 // keywords: array
 // status: correct
-// teardown_command: rm -rf ArrayMult_* ArrayMult.exe ArrayMult.cpp ArrayMult.makefile ArrayMult.libs ArrayMult.log output.log
+// teardown_command: rm -rf ArrayMult_* ArrayMult ArrayMult.exe ArrayMult.cpp ArrayMult.makefile ArrayMult.libs ArrayMult.log output.log
 //
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 // 

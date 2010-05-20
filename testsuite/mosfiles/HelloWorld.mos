@@ -1,7 +1,7 @@
 // name:      HelloWorld
 // keywords:  equation
 // status: correct
-// teardown_command: rm -rf HelloWorld_* HelloWorld.exe HelloWorld.cpp HelloWorld.makefile HelloWorld.libs HelloWorld.log output.log
+// teardown_command: rm -rf HelloWorld_* HelloWorld HelloWorld.exe HelloWorld.cpp HelloWorld.makefile HelloWorld.libs HelloWorld.log output.log
 //
 // Equation handling
 // Drmodelica: 2.1 Hello World (p. 19)

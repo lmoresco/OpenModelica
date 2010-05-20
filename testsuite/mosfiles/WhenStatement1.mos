@@ -1,7 +1,7 @@
 // name:     WhenStatement1
 // keywords: when
 // status: correct
-// teardown_command: rm -rf WhenStat_* WhenStat.exe WhenStat.cpp WhenStat.makefile WhenStat.libs WhenStat.log output.log
+// teardown_command: rm -rf WhenStat_* WhenStat WhenStat.exe WhenStat.cpp WhenStat.makefile WhenStat.libs WhenStat.log output.log
 // 
 //  
 // Drmodelica: 9.1 When-Statements (p. 293)

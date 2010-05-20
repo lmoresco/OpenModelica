@@ -1,7 +1,7 @@
 // name:     SimplePeriodicSampler
 // keywords: sample
 // status: correct
-// teardown_command: rm -rf Sampler_* Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs Sampler.log output.log
+// teardown_command: rm -rf Sampler_* Sampler Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs Sampler.log output.log
 // 
 //  <insert description here>
 //

@@ -1,7 +1,7 @@
 // name:      SumVectorForIf
 // keywords:  equation
 // status: incorrect
-// teardown_command: rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log
+// teardown_command: rm -rf SumVectorForIf_* SumVectorForIf SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log
 // 
 // Drmodelica: 9.1  if-Statement (p. 292)
 // 

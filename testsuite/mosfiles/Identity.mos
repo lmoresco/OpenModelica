@@ -1,7 +1,7 @@
 // name:     Identity Matrix
 // keywords: identity, matrix
 // status: correct
-// teardown_command: rm -rf Identity.exe Identity_* Identity.cpp Identity.makefile Identity.log Identity.libs output.log
+// teardown_command: rm -rf Identity Identity.exe Identity_* Identity.cpp Identity.makefile Identity.log Identity.libs output.log
 // 
 //  Generate code for identity matrix and type conversion
 //

@@ -1,7 +1,7 @@
 // name:     ArrayExponentiation
 // keywords: array
 // status: correct
-// teardown_command: rm -rf Exp_* Exp.exe Exp.cpp Exp.makefile Exp.libs Exp.log output.log
+// teardown_command: rm -rf Exp_* Exp Exp.exe Exp.cpp Exp.makefile Exp.libs Exp.log output.log
 // 
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 //

@@ -1,7 +1,7 @@
 // name:     BooleanArray
 // keywords: boolean,array
 // status: correct
-// teardown_command: rm -rf BooleanArray_* BooleanArray.exe BooleanArray.cpp BooleanArray.makefile BooleanArray.libs BooleanArray.log output.log
+// teardown_command: rm -rf BooleanArray_* BooleanArray BooleanArray.exe BooleanArray.cpp BooleanArray.makefile BooleanArray.libs BooleanArray.log output.log
 //
 // Boolean array handling, fill
 //

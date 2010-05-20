@@ -1,7 +1,7 @@
 // name:     LotkaVolterra
 // keywords: der
 // status: correct
-// teardown_command: rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log
+// teardown_command: rm -rf LotkaVolterra_* LotkaVolterra LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log
 // 
 //  
 // Drmodelica: 15.4.1 Population Dynamics (p. 556) Not in the notebook

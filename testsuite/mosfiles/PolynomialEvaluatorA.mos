@@ -1,7 +1,7 @@
 // name:     PolynomialEvaluatorA
 // keywords: 
 // status: correct
-// teardown_command: rm -rf PolyEvaluate1_* PolyEvaluate1.exe PolyEvaluate1.cpp PolyEvaluate1.makefile PolyEvaluate1.libs PolyEvaluate1.log output.log
+// teardown_command: rm -rf PolyEvaluate1_* PolyEvaluate1 PolyEvaluate1.exe PolyEvaluate1.cpp PolyEvaluate1.makefile PolyEvaluate1.libs PolyEvaluate1.log output.log
 // 
 // Drmodelica: 8.2 Polynomial Evaluator (p. 242)
 //

@@ -1,7 +1,7 @@
 // name:     Sign
 // keywords: built-in sign function
 // status: correct
-// teardown_command: rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.log
+// teardown_command: rm -rf Sign_* Sign Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.log
 //
 loadFile("Sign.mo");
 instantiateModel(Sign);

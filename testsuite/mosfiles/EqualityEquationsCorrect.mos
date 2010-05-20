@@ -1,7 +1,7 @@
 // name:     EqualityEquationsCorrect
 // keywords: equation
 // status: correct
-// teardown_command: rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect.exe EqualityEquationsCorrect.cpp EqualityEquationsCorrect.makefile EqualityEquationsCorrect.libs EqualityEquationsCorrect.log output.log
+// teardown_command: rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect EqualityEquationsCorrect.exe EqualityEquationsCorrect.cpp EqualityEquationsCorrect.makefile EqualityEquationsCorrect.libs EqualityEquationsCorrect.log output.log
 // 
 // Not yet implemented
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)

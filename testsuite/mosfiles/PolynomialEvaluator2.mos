@@ -1,7 +1,7 @@
 // Name:     PolynomialEvaluator2
 // keywords: equations when
 // status: correct
-// teardown_command: rm -rf PolynomialEvaluator2.makefile PolynomialEvaluator2.plt PolynomialEvaluator2.libs PolynomialEvaluator2.log PolynomialEvaluator2.cpp PolynomialEvaluator2.exe PolynomialEvaluator2_* output.log
+// teardown_command: rm -rf PolynomialEvaluator2.makefile PolynomialEvaluator2.plt PolynomialEvaluator2.libs PolynomialEvaluator2.log PolynomialEvaluator2.cpp PolynomialEvaluator2 PolynomialEvaluator2.exe PolynomialEvaluator2_* output.log
 // 
 //  Tests when, elsewhen
 //

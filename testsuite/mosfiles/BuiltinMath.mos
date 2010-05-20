@@ -1,7 +1,7 @@
 // name:     BuiltinMath 
 // keywords: Built-in Mathematical Functions
 // status: correct
-// teardown_command: rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe BuiltinMath.cpp BuiltinMath.makefile output.log
+// teardown_command: rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath BuiltinMath.exe BuiltinMath.cpp BuiltinMath.makefile output.log
 //
 // Built-in Mathematical Functions
 //

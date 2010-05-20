@@ -1,7 +1,7 @@
 // name:     TankPI
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf TankPI_* TankPI.exe TankPI.cpp TankPI.makefile TankPI.libs TankPI.log output.log
+// teardown_command: rm -rf TankPI_* TankPI TankPI.exe TankPI.cpp TankPI.makefile TankPI.libs TankPI.log output.log
 // 
 //  <insert description here>
 //

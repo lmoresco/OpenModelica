@@ -1,7 +1,7 @@
 // name:      FuncMultResults
 // keywords:  function
 // status: incorrect
-// teardown_command: rm -rf f_* f.* FuncMultResults_* FuncMultResults.exe FuncMultResults.cpp FuncMultResults.makefile FuncMultResults.libs FuncMultResults.log output.log
+// teardown_command: rm -rf f_* f.* FuncMultResults_* FuncMultResults FuncMultResults.exe FuncMultResults.cpp FuncMultResults.makefile FuncMultResults.libs FuncMultResults.log output.log
 //
 // function handling
 // Drmodelica: 9.1 Function with Multiple Results (p. 287)

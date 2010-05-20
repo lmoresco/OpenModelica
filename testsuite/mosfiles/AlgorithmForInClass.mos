@@ -1,7 +1,7 @@
 // name:     AlgorithmForInClass
 // keywords: algorithm, for, class
 // status: correct
-// teardown_command: rm -rf AlgorithmForInClass_* AlgorithmForInClass.cpp AlgorithmForInClass.makefile AlgorithmForInClass.exe AlgorithmForInClass.libs AlgorithmForInClass.log output.log
+// teardown_command: rm -rf AlgorithmForInClass_* AlgorithmForInClass.cpp AlgorithmForInClass.makefile AlgorithmForInClass AlgorithmForInClass.exe AlgorithmForInClass.libs AlgorithmForInClass.log output.log
 // 
 //  Tests for-statements in algorithm-sections in classes.
 //

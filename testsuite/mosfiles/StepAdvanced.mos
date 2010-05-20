@@ -1,7 +1,7 @@
 // name:     StepAdvanced
 // keywords: 
 // status: correct
-// teardown_command: rm -rf Step_* Step.exe Step.cpp Step.makefile Step.libs Step.log output.log
+// teardown_command: rm -rf Step_* Step Step.exe Step.cpp Step.makefile Step.libs Step.log output.log
 // 
 // Drmodelica: 8.2 Step (p. 244)
 // 

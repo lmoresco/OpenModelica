@@ -1,7 +1,7 @@
 // name:     FlatTank
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf FlatTank_* FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.libs FlatTank.log output.log
+// teardown_command: rm -rf FlatTank_* FlatTank FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.libs FlatTank.log output.log
 // 
 // Drmodelica: 12.1 Traditional Methodology (p. 385)
 //

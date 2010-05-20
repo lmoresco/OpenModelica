@@ -1,7 +1,7 @@
 // name:     TankHybridPI
 // keywords: <insert keywords here>
 // status: correct
-// teardown_command: rm -rf TankHybridPI_* TankHybridPI.exe TankHybridPI.cpp TankHybridPI.makefile TankHybridPI.libs TankHybridPI.log output.log
+// teardown_command: rm -rf TankHybridPI_* TankHybridPI TankHybridPI.exe TankHybridPI.cpp TankHybridPI.makefile TankHybridPI.libs TankHybridPI.log output.log
 // 
 //  //??Error - simulates too short time
 //

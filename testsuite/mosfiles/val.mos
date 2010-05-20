@@ -1,7 +1,7 @@
 // name:    val
 // keywords: interactive functionality val
 // status: correct
-// teardown_command: rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log
+// teardown_command: rm -rf val_* val.log val.libs val val.exe val.cpp val.makefile output.log
 //
 // Interactive val handling
 //

@@ -1,7 +1,7 @@
 // name:     HideVariableForEquations
 // keywords: for
 // status: correct
-// teardown_command: rm -rf HideVariableForEquations_* HideVariableForEquations.exe HideVariableForEquations.cpp HideVariableForEquations.makefile HideVariableForEquations.libs HideVariableForEquations.log output.log
+// teardown_command: rm -rf HideVariableForEquations_* HideVariableForEquations HideVariableForEquations.exe HideVariableForEquations.cpp HideVariableForEquations.makefile HideVariableForEquations.libs HideVariableForEquations.log output.log
 // 
 // Drmodelica: 8.2 Repetitive Equation Structures with for-Equations (p. 241)
 // 

@@ -1,7 +1,7 @@
 // name:     WhenVectorPredicateEquation
 // keywords: when
 // status: correct
-// teardown_command: rm -rf WhenSet_* WhenSet.exe WhenSet.cpp WhenSet.makefile WhenSet.libs WhenSet.log output.log
+// teardown_command: rm -rf WhenSet_* WhenSet WhenSet.exe WhenSet.cpp WhenSet.makefile WhenSet.libs WhenSet.log output.log
 // 
 //  Conditional equations with when-equations
 //

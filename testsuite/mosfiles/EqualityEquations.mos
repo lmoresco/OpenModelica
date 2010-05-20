@@ -1,7 +1,7 @@
 // name:     EqualityEquations
 // keywords: equation
 // status: correct
-// teardown_command: rm -rf f.c f.exe f_in.txt f_out.txt
+// teardown_command: rm -rf f.c f f.exe f_in.txt f_out.txt
 // 
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)
 // 
