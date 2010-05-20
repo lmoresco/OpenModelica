@@ -1,6 +1,7 @@
 // name:      SumVectorForIf
 // keywords:  equation
-// status:    incorrect
+// status: incorrect
+// teardown_command: rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log
 // 
 // Drmodelica: 9.1  if-Statement (p. 292)
 // 
@@ -14,7 +15,6 @@ x := floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
-system("rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorForIf.makefile SumVectorForIf.libs SumVectorForIf.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -23,5 +23,4 @@ system("rm -rf SumVectorForIf_* SumVectorForIf.exe SumVectorForIf.cpp SumVectorF
 // true
 // {1500.0,1500.0,1500.0}
 // ""
-// 0
 // endResult

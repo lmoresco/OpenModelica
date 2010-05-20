@@ -1,6 +1,7 @@
 // name:     DimSize
 // keywords: array
-// status:   incorrect
+// status: incorrect
+// teardown_command: rm -rf DimSize_* DimSize.exe DimSize.cpp DimSize.makefile DimSize.libs DimSize.log output.log
 // 
 // Drmodelica: 7.7 Built-in Functions (p. 225)
 //
@@ -20,7 +21,6 @@ dimsize;
 specsize;
 x;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf DimSize_* DimSize.exe DimSize.cpp DimSize.makefile DimSize.libs DimSize.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -32,5 +32,4 @@ system("rm -rf DimSize_* DimSize.exe DimSize.cpp DimSize.makefile DimSize.libs D
 // 1.0
 // 1.0
 // ""
-// 0
 // endResult

@@ -1,6 +1,7 @@
 // name:      SumForLoop
 // keywords:  for statment
-// status:    incorrect
+// status: incorrect
+// teardown_command: rm -rf SumForLoop_* SumForLoop.exe SumForLoop.cpp SumForLoop.makefile SumForLoop.libs SumForLoop.log output.log
 //
 // for statment handling
 //
@@ -36,7 +37,6 @@ z4/1000.0;
 z5/1000.0;
 x/1000.0;
 readFile("output.log");
-system("rm -rf SumForLoop_* SumForLoop.exe SumForLoop.cpp SumForLoop.makefile SumForLoop.libs SumForLoop.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -50,5 +50,4 @@ system("rm -rf SumForLoop_* SumForLoop.exe SumForLoop.cpp SumForLoop.makefile Su
 // {50.0,50.0,50.0}
 // {150.0,150.0,150.0}
 // ""
-// 0
 // endResult

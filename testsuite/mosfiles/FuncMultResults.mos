@@ -1,6 +1,7 @@
 // name:      FuncMultResults
 // keywords:  function
-// status:    incorrect
+// status: incorrect
+// teardown_command: rm -rf f_* f.* FuncMultResults_* FuncMultResults.exe FuncMultResults.cpp FuncMultResults.makefile FuncMultResults.libs FuncMultResults.log output.log
 //
 // function handling
 // Drmodelica: 9.1 Function with Multiple Results (p. 287)
@@ -35,7 +36,6 @@ x1/1000.0;
 x2/1000.0;
 x3/1000.0;
 readFile("output.log");
-system("rm -rf f_* f.* FuncMultResults_* FuncMultResults.exe FuncMultResults.cpp FuncMultResults.makefile FuncMultResults.libs FuncMultResults.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -49,5 +49,4 @@ system("rm -rf f_* f.* FuncMultResults_* FuncMultResults.exe FuncMultResults.cpp
 // {4.0,4.0,4.0}
 // {12.0,12.0,12.0}
 // ""
-// 0
 // endResult
