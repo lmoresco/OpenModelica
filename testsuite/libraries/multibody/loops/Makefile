@@ -8,7 +8,7 @@ Fourbar1.mos \
 Fourbar2.mos \
 Fourbar_analytic.mos \
 PlanarLoops_analytic.mos \
-# v6 engines run out of memory now.
+# v6 engines take *A LOT OF TIME* to flatten, disable for now
 # EngineV6.mos \
 # EngineV6_analytic.mos \
 
