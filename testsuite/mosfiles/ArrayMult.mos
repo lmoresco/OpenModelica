@@ -1,6 +1,7 @@
 // name:     ArrayMult
 // keywords: array
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ArrayMult_* ArrayMult.exe ArrayMult.cpp ArrayMult.makefile ArrayMult.libs ArrayMult.log output.log
 //
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 // 
@@ -30,7 +31,6 @@ m7;
 m8;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf ArrayMult_* ArrayMult.exe ArrayMult.cpp ArrayMult.makefile ArrayMult.libs ArrayMult.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -46,5 +46,4 @@ system("rm -rf ArrayMult_* ArrayMult.exe ArrayMult.cpp ArrayMult.makefile ArrayM
 // 10.0
 // 4.0
 // ""
-// 0
 // endResult

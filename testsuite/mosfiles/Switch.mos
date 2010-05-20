@@ -1,6 +1,7 @@
 // name:     Switch
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Switch_* Switch.exe Switch.cpp Switch.makefile Switch.libs Switch.log output.log
 // 
 //  <insert description here>
 //
@@ -30,7 +31,6 @@ open1;
 open2;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Switch_* Switch.exe Switch.cpp Switch.makefile Switch.libs Switch.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -46,5 +46,4 @@ system("rm -rf Switch_* Switch.exe Switch.cpp Switch.makefile Switch.libs Switch
 // 0.0
 // 1.0
 // ""
-// 0
 // endResult

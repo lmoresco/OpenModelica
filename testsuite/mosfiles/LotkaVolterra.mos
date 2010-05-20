@@ -1,6 +1,7 @@
 // name:     LotkaVolterra
 // keywords: der
-// status:   correct
+// status: correct
+// teardown_command: rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log
 // 
 //  
 // Drmodelica: 15.4.1 Population Dynamics (p. 556) Not in the notebook
@@ -34,7 +35,6 @@ y2/decimals;
 // 312.8
 // 43.2
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra.makefile LotkaVolterra.libs LotkaVolterra.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -46,5 +46,4 @@ system("rm -rf LotkaVolterra_* LotkaVolterra.exe LotkaVolterra.cpp LotkaVolterra
 // 312.1
 // 43.6
 // ""
-// 0
 // endResult

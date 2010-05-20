@@ -1,6 +1,7 @@
 // name:     FuncDer
 // keywords: Function Annotations
-// status:   correct
+// status: correct
+// teardown_command: rm -rf FuncDer_* FuncDer.exe FuncDer.cpp FuncDer.makefile FuncDer.libs FuncDer.log h0.c h0.exe output.log
 // 
 //  undefined reference to `read_modelica_boolean'
 // Drmodelica: 11.1 Function Annotations (p. 372)
@@ -35,7 +36,6 @@ fn2;
 // fn2/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf FuncDer_* FuncDer.exe FuncDer.cpp FuncDer.makefile FuncDer.libs FuncDer.log h0.c h0.exe output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -46,5 +46,4 @@ system("rm -rf FuncDer_* FuncDer.exe FuncDer.cpp FuncDer.makefile FuncDer.libs F
 // 22323.292
 // 6670787.0
 // ""
-// 0
 // endResult
