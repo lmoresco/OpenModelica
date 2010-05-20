@@ -1,6 +1,7 @@
 // name:     TankPID
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TankPID_* TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log
 // 
 //  <insert description here>
 //
@@ -29,7 +30,6 @@ y/1000.0;
 z/1000.0;
 w/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TankPID_* TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -42,5 +42,4 @@ system("rm -rf TankPID_* TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs T
 // 0.252
 // 0.235
 // ""
-// 0
 // endResult

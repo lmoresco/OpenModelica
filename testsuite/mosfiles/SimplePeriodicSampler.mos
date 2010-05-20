@@ -1,6 +1,7 @@
 // name:     SimplePeriodicSampler
 // keywords: sample
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Sampler_* Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs Sampler.log output.log
 // 
 //  <insert description here>
 //
@@ -38,7 +39,6 @@ y1/1000.0;
 x2/1000.0; 
 y2/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Sampler_* Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs Sampler.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -50,5 +50,4 @@ system("rm -rf Sampler_* Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs S
 // 0.248
 // 0.275
 // ""
-// 0
 // endResult

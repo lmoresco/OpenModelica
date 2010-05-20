@@ -1,6 +1,7 @@
 // Name:     PolynomialEvaluator1
 // keywords: equations when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf PositionalCall.makefile PositionalCall.libs PositionalCall.log PositionalCall.plt PositionalCall.exe PositionalCall.cpp PositionalCall_* PolynomialEvaluator1.exe PolynomialEvaluator1.c PolynomialEvaluator1_* output.log
 // 
 //  Tests when, elsewhen
 //
@@ -14,7 +15,6 @@ echo(false); // turns of output
 echo(true); // turns on output
 val(p,0.5);
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf PositionalCall.makefile PositionalCall.libs PositionalCall.log PositionalCall.plt PositionalCall.exe PositionalCall.cpp PositionalCall_* PolynomialEvaluator1.exe PolynomialEvaluator1.c PolynomialEvaluator1_* output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -24,5 +24,4 @@ system("rm -rf PositionalCall.makefile PositionalCall.libs PositionalCall.log Po
 // true
 // 38410.0
 // ""
-// 0
 // endResult

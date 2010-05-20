@@ -1,6 +1,7 @@
 // name:     WhenEquation
 // keywords: when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf WhenEquation_* WhenEquation.exe WhenEquation.cpp WhenEquation.makefile WhenEquation.libs WhenEquation.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
 // 
@@ -41,7 +42,6 @@ y31/1000.0;
 y32/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf WhenEquation_* WhenEquation.exe WhenEquation.cpp WhenEquation.makefile WhenEquation.libs WhenEquation.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -55,5 +55,4 @@ system("rm -rf WhenEquation_* WhenEquation.exe WhenEquation.cpp WhenEquation.mak
 // 0.0
 // 7.909
 // ""
-// 0
 // endResult

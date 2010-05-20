@@ -1,6 +1,7 @@
 // name:     TankPI
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TankPI_* TankPI.exe TankPI.cpp TankPI.makefile TankPI.libs TankPI.log output.log
 // 
 //  <insert description here>
 //
@@ -29,7 +30,6 @@ y/1000.0;
 z/1000.0;
 w/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TankPI_* TankPI.exe TankPI.cpp TankPI.makefile TankPI.libs TankPI.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -42,5 +42,4 @@ system("rm -rf TankPI_* TankPI.exe TankPI.cpp TankPI.makefile TankPI.libs TankPI
 // 0.249
 // 0.214
 // ""
-// 0
 // endResult

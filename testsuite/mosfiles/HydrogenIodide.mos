@@ -1,6 +1,7 @@
 // name:     HydrogenIodide
 // keywords: der
-// status:   correct
+// status: correct
+// teardown_command: rm -rf HydrogenIodide_* HydrogenIodide.exe HydrogenIodide.cpp HydrogenIodide.makefile HydrogenIodide.libs HydrogenIodide.log output.log
 // 
 //  <insert description here>
 // Drmodelica: 15.3.1 Chemical Reaction Kinetics of Hydrogen Iodine (p. 555) Not in the notebook
@@ -38,7 +39,6 @@ z/1000.0;
 z2/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf HydrogenIodide_* HydrogenIodide.exe HydrogenIodide.cpp HydrogenIodide.makefile HydrogenIodide.libs HydrogenIodide.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -53,5 +53,4 @@ system("rm -rf HydrogenIodide_* HydrogenIodide.exe HydrogenIodide.cpp HydrogenIo
 // 5.504
 // 4.011
 // ""
-// 0
 // endResult

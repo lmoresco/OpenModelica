@@ -1,6 +1,7 @@
 // name:    val
 // keywords: interactive functionality val
-// status:   correct
+// status: correct
+// teardown_command: rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log
 //
 // Interactive val handling
 //
@@ -15,7 +16,6 @@ val(z,0.0);
 val(z,0.5);
 val(z,1.0);
 readFile("output.log");
-system("rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log");
 
 // Result:
 // true
@@ -30,5 +30,4 @@ system("rm -rf val_* val.log val.libs val.exe val.cpp val.makefile output.log");
 // 0.270672740527608
 // 0.0366312777773877
 // ""
-// 0
 // endResult

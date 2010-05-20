@@ -1,6 +1,7 @@
 // name:     TanksConnectedPI
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TanksConnectedPI_* TanksConnectedPI.exe TanksConnectedPI.cpp TanksConnectedPI.makefile TanksConnectedPI.libs TanksConnectedPI.log output.log
 // 
 //  <insert description here>
 //
@@ -45,7 +46,6 @@ y2/1000.0;
 z2/1000.0;
 w2/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TanksConnectedPI_* TanksConnectedPI.exe TanksConnectedPI.cpp TanksConnectedPI.makefile TanksConnectedPI.libs TanksConnectedPI.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -62,5 +62,4 @@ system("rm -rf TanksConnectedPI_* TanksConnectedPI.exe TanksConnectedPI.cpp Tank
 // 0.42
 // 0.335
 // ""
-// 0
 // endResult

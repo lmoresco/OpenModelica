@@ -1,6 +1,7 @@
 // name:     TankHybridPI
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TankHybridPI_* TankHybridPI.exe TankHybridPI.cpp TankHybridPI.makefile TankHybridPI.libs TankHybridPI.log output.log
 // 
 //  //??Error - simulates too short time
 //
@@ -29,7 +30,6 @@ y/1000.0;
 z/1000.0;
 w/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TankHybridPI_* TankHybridPI.exe TankHybridPI.cpp TankHybridPI.makefile TankHybridPI.libs TankHybridPI.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -42,5 +42,4 @@ system("rm -rf TankHybridPI_* TankHybridPI.exe TankHybridPI.cpp TankHybridPI.mak
 // 0.249
 // 0.215
 // ""
-// 0
 // endResult

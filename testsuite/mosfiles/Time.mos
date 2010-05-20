@@ -1,6 +1,7 @@
 // name: Time
 // keywords: time
 // status: correct
+// teardown_command: rm Time.cpp Time.libs Time.log Time.makefile
 //
 // Testing the built-in variable time
 //
@@ -8,7 +9,6 @@
 loadFile("Time.mo");
 simulate(Time);
 val(x,0.0);
-system("rm Time.cpp Time.libs Time.log Time.makefile");
 
 // Result:
 // true
@@ -16,6 +16,5 @@ system("rm Time.cpp Time.libs Time.log Time.makefile");
 //     resultFile = "Time_res.plt"
 // end SimulationResult;
 // 0.0
-// 0
 // endResult
 

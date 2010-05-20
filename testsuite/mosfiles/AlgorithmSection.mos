@@ -1,6 +1,7 @@
 // name:     AlgorithmSection
 // keywords: algorithm
-// status:   correct
+// status: correct
+// teardown_command: rm -rf AlgorithmSection_* AlgorithmSection.exe AlgorithmSection.cpp AlgorithmSection.makefile AlgorithmSection.libs AlgorithmSection.log output.log
 // 
 // Drmodelica: 9.1 Algorithm Sections (p. 285)
 //
@@ -20,7 +21,6 @@ x2;
 x3;
 u;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf AlgorithmSection_* AlgorithmSection.exe AlgorithmSection.cpp AlgorithmSection.makefile AlgorithmSection.libs AlgorithmSection.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -32,5 +32,4 @@ system("rm -rf AlgorithmSection_* AlgorithmSection.exe AlgorithmSection.cpp Algo
 // -1.0
 // 4.0
 // ""
-// 0
 // endResult

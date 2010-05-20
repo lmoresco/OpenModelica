@@ -1,6 +1,7 @@
 // name:     IfEquation2
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf IfEquation2_* IfEquation2.exe IfEquation2.cpp IfEquation2.makefile IfEquation2.libs IfEquation2.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with if-Equations (p. 245)
 // 
@@ -12,7 +13,6 @@ res:=readSimulationResult("IfEquation2_res.plt",{x,y},size);
 echo(true); // turns on output
 val(z,0);
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf IfEquation2_* IfEquation2.exe IfEquation2.cpp IfEquation2.makefile IfEquation2.libs IfEquation2.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -21,5 +21,4 @@ system("rm -rf IfEquation2_* IfEquation2.exe IfEquation2.cpp IfEquation2.makefil
 // true
 // 0.0
 // ""
-// 0
 // endResult

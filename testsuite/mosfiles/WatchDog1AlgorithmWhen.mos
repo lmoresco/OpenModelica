@@ -1,6 +1,7 @@
 // name:     WatchDog1AlgorithmWhen
 // keywords: watchdog, when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf WatchDogSystem1_* WatchDogSystem1.exe WatchDogSystem1.cpp WatchDogSystem1.makefile WatchDogSystem1.libs WatchDogSystem1.log output.log
 // 
 //  //??Error - not yet implemented
 //
@@ -23,7 +24,6 @@ x/1000.0; // rounded value to 3 digits
 y/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf WatchDogSystem1_* WatchDogSystem1.exe WatchDogSystem1.cpp WatchDogSystem1.makefile WatchDogSystem1.libs WatchDogSystem1.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -33,5 +33,4 @@ system("rm -rf WatchDogSystem1_* WatchDogSystem1.exe WatchDogSystem1.cpp WatchDo
 // 0.0
 // 1.0
 // ""
-// 0
 // endResult

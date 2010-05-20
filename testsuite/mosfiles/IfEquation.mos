@@ -1,6 +1,7 @@
 // name:     IfEquation
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TestMe_* TestMe.exe TestMe.cpp TestMe.makefile TestMe.libs TestMe.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with if-Equations (p. 245)
 // 
@@ -17,7 +18,6 @@ y1;
 y2;
 y3;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TestMe_* TestMe.exe TestMe.cpp TestMe.makefile TestMe.libs TestMe.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -28,5 +28,4 @@ system("rm -rf TestMe_* TestMe.exe TestMe.cpp TestMe.makefile TestMe.libs TestMe
 // 0.0
 // 2.0
 // ""
-// 0
 // endResult

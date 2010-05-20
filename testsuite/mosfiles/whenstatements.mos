@@ -1,6 +1,7 @@
 // name:     when-statements
 // keywords: Simulate, when-statements
-// status:   correct
+// status: correct
+// teardown_command: rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log
 // 
 //  Simulate model containing algortithms with when-stamtements
 //
@@ -17,7 +18,6 @@ val(w,0.4);
 val(w,0.45);
 val(tt,0.91);
 readFile("output.log");
-system("rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log");
 
 // Result:
 // true
@@ -34,5 +34,4 @@ system("rm -rf testalgwhen.cpp testalwhen.make testalgwhen_* output.log");
 // 0.594534891892803
 // 0.9000000000004
 // ""
-// 0
 // endResult

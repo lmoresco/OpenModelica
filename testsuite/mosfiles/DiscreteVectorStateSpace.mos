@@ -1,6 +1,7 @@
 // name:     DiscreteVectorStateSpace
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf DVSSTest_* DVSSTest.exe DVSSTest.cpp DVSSTest.makefile DVSSTest.libs DVSSTest.log output.log
 // 
 // Drmodelica: 13.2  Sampled Systems (p. 429)
 // 
@@ -19,7 +20,6 @@ echo(true); // turns on output
 x/1000.0; // rounded value to 3 digits
 y/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf DVSSTest_* DVSSTest.exe DVSSTest.cpp DVSSTest.makefile DVSSTest.libs DVSSTest.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -29,5 +29,4 @@ system("rm -rf DVSSTest_* DVSSTest.exe DVSSTest.cpp DVSSTest.makefile DVSSTest.l
 // 56.0
 // 152.0
 // ""
-// 0
 // endResult

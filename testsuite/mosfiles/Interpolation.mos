@@ -1,6 +1,7 @@
 // name:     Interpolation
 // keywords: Simulate, readSimulationData
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Interpol2Test.* Interpol2Test_* output.log
 // 
 //  Simulate Modelica.Math.tempInterpol functions
 //
@@ -14,7 +15,6 @@ val(x2,0.0);
 val(y2,0.0);
 val(z2,0.0);
 readFile("output.log");
-system("rm -rf Interpol2Test.* Interpol2Test_* output.log");
 
 // Result:
 // true
@@ -28,5 +28,4 @@ system("rm -rf Interpol2Test.* Interpol2Test_* output.log");
 // 350.0
 // 600.0
 // ""
-// 0
 // endResult

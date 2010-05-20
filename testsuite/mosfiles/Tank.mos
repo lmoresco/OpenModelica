@@ -1,6 +1,7 @@
 // name:     Tank
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Tank_* Tank.exe Tank.cpp Tank.makefile Tank.libs Tank.log output.log
 // 
 //  <insert description here>
 //
@@ -25,7 +26,6 @@ x/1000.0; // rounded value to 3 digits
 y/1000.0;
 z/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Tank_* Tank.exe Tank.cpp Tank.makefile Tank.libs Tank.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -36,5 +36,4 @@ system("rm -rf Tank_* Tank.exe Tank.cpp Tank.makefile Tank.libs Tank.log output.
 // 3.5
 // 4.1
 // ""
-// 0
 // endResult

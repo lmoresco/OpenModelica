@@ -1,6 +1,7 @@
 // name:     Simulation
 // keywords: Simulate, readSimulationData
-// status:   correct
+// status: correct
+// teardown_command: rm -rf LinSys.* LinSys_* output.log
 // 
 //  Simulate models and read in data.
 //
@@ -16,7 +17,6 @@ val(z,0.0);
 val(z,0.5);
 val(z,1.0);
 readFile("output.log");
-system("rm -rf LinSys.* LinSys_* output.log");
 // Result:
 // true
 // record SimulationResult
@@ -32,5 +32,4 @@ system("rm -rf LinSys.* LinSys_* output.log");
 // 2.09929464647825
 // 1.58118034320971
 // ""
-// 0
 // endResult

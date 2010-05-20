@@ -1,6 +1,7 @@
 // Name:     PolynomialEvaluator3
 // keywords: equations when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf NamedCall.makefile NamedCall.libs NamedCall.log NamedCall.plt NamedCall.exe NamedCall.cpp NamedCall_* PolynomialEvaluator3.exe PolynomialEvaluator3.c PolynomialEvaluator3_* output.log
 // 
 //  Tests when, elsewhen
 //
@@ -13,7 +14,6 @@ echo(false); // turns of output
 echo(true); // turns on output
 val(p,0.5);
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf NamedCall.makefile NamedCall.libs NamedCall.log NamedCall.plt NamedCall.exe NamedCall.cpp NamedCall_* PolynomialEvaluator3.exe PolynomialEvaluator3.c PolynomialEvaluator3_* output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -23,5 +23,4 @@ system("rm -rf NamedCall.makefile NamedCall.libs NamedCall.log NamedCall.plt Nam
 // true
 // 38410.0
 // ""
-// 0
 // endResult

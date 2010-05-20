@@ -1,6 +1,7 @@
 // name:     ArrayReduce
 // keywords: array
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ArrayReduce_* ArrayReduce.exe ArrayReduce.cpp ArrayReduce.makefile ArrayReduce.libs ArrayReduce.log output.log
 // 
 // ??Error - not yet implemented
 // Drmodelica: 7.7 Built-in Functions (p. 225)
@@ -21,7 +22,6 @@ maximum;
 summ;
 prod;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf ArrayReduce_* ArrayReduce.exe ArrayReduce.cpp ArrayReduce.makefile ArrayReduce.libs ArrayReduce.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -33,5 +33,4 @@ system("rm -rf ArrayReduce_* ArrayReduce.exe ArrayReduce.cpp ArrayReduce.makefil
 // 21.0
 // 12.56
 // ""
-// 0
 // endResult

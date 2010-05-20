@@ -1,6 +1,7 @@
 // name:     Sign
 // keywords: built-in sign function
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.log
 //
 loadFile("Sign.mo");
 instantiateModel(Sign);
@@ -10,7 +11,6 @@ val(r1, 1.0);
 val(r2, 1.0);
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.log");
 // Result:
 // true
 // "fclass Sign
@@ -27,5 +27,4 @@ system("rm -rf Sign_* Sign.exe Sign.cpp Sign.makefile Sign.libs Sign.log output.
 // 1.0
 // -1.0
 // ""
-// 0
 // endResult

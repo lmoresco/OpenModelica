@@ -1,6 +1,7 @@
 // name:     TwoRateSampler
 // keywords:  sample
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSampler.makefile TwoRateSampler.libs TwoRateSampler.log output.log
 // 
 // Drmodelica: 13.2  Sampled Systems (p. 429)
 // 
@@ -21,7 +22,6 @@ echo(true); // turns on output
 x/1000.0; // rounded value to 3 digits
 x2/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSampler.makefile TwoRateSampler.libs TwoRateSampler.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -32,5 +32,4 @@ system("rm -rf TwoRateSampler_* TwoRateSampler.exe TwoRateSampler.cpp TwoRateSam
 // 0.912
 // 0.395
 // ""
-// 0
 // endResult

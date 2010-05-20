@@ -1,6 +1,7 @@
 // name:     Pendulum
 // keywords: Simulate, readSimulationData
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Pendulum.cpp Pendulum.exe Pendulum.libs Pendulum.log Pendulum.makefile Pendulum_*.*
 // 
 //  Simulate Pendulum example (index reduction, linear and nonlinear equation systems)
 //
@@ -13,7 +14,6 @@ val(x,3.0);
 val(y,1.0);
 val(y,2.0);
 val(y,3.0);
-system("rm -rf Pendulum.cpp Pendulum.exe Pendulum.libs Pendulum.log Pendulum.makefile Pendulum_*.*");
 // Result:
 // true
 // record SimulationResult
@@ -25,5 +25,4 @@ system("rm -rf Pendulum.cpp Pendulum.exe Pendulum.libs Pendulum.log Pendulum.mak
 // -0.116137107453409
 // -0.903950673180161
 // 0.325018730535974
-// 0
 // endResult

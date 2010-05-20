@@ -1,6 +1,7 @@
 // name:     LinearSysEq (test bug 1012)
 // keywords: linear system of equations
-// status:   correct
+// status: correct
+// teardown_command: rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log
 //
 // Solving of a linear system of equations
 //
@@ -27,7 +28,6 @@ val(pu.port.pressure, 1.0);
 val(pu.port.flowrate, 1.0);
 
 readFile("output.log");
-system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log");
 
 
 // Result:
@@ -61,5 +61,4 @@ system("rm -rf LinearSysEq_* LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefil
 // 0.5
 // -0.5
 // ""
-// 0
 // endResult

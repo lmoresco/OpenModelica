@@ -1,6 +1,7 @@
 // name:     WhenVectorPredicateEquation
 // keywords: when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf WhenSet_* WhenSet.exe WhenSet.cpp WhenSet.makefile WhenSet.libs WhenSet.log output.log
 // 
 //  Conditional equations with when-equations
 //
@@ -40,7 +41,6 @@ y31/1000.0;
 y32/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf WhenSet_* WhenSet.exe WhenSet.cpp WhenSet.makefile WhenSet.libs WhenSet.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -54,5 +54,4 @@ system("rm -rf WhenSet_* WhenSet.exe WhenSet.cpp WhenSet.makefile WhenSet.libs W
 // -3.142
 // 12.041
 // ""
-// 0
 // endResult

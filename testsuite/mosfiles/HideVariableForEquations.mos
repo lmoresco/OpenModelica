@@ -1,6 +1,7 @@
 // name:     HideVariableForEquations
 // keywords: for
-// status:   correct
+// status: correct
+// teardown_command: rm -rf HideVariableForEquations_* HideVariableForEquations.exe HideVariableForEquations.cpp HideVariableForEquations.makefile HideVariableForEquations.libs HideVariableForEquations.log output.log
 // 
 // Drmodelica: 8.2 Repetitive Equation Structures with for-Equations (p. 241)
 // 
@@ -21,7 +22,6 @@ x3[1];
 x4[1];
 x5[1];
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf HideVariableForEquations_* HideVariableForEquations.exe HideVariableForEquations.cpp HideVariableForEquations.makefile HideVariableForEquations.libs HideVariableForEquations.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -34,5 +34,4 @@ system("rm -rf HideVariableForEquations_* HideVariableForEquations.exe HideVaria
 // 4.0
 // 5.0
 // ""
-// 0
 // endResult

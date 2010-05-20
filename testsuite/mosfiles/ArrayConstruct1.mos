@@ -1,6 +1,7 @@
 // name:     ArrayConstruct1
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ArrayConstruct1_* ArrayConstruct1.exe ArrayConstruct1.cpp ArrayConstruct1.makefile ArrayConstruct1.libs ArrayConstruct1.log output.log
 // 
 // Drmodelica: 7.2  Array Constructor (p. 210)
 //
@@ -29,7 +30,6 @@ x;
 y;
 z;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf ArrayConstruct1_* ArrayConstruct1.exe ArrayConstruct1.cpp ArrayConstruct1.makefile ArrayConstruct1.libs ArrayConstruct1.log output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -40,5 +40,4 @@ system("rm -rf ArrayConstruct1_* ArrayConstruct1.exe ArrayConstruct1.cpp ArrayCo
 // 2.0
 // 3.0
 // ""
-// 0
 // endResult

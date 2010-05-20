@@ -1,6 +1,7 @@
 // name:     ArrayAddSub1
 // keywords: array
-// status:   correct
+// status: correct
+// teardown_command: rm -rf AddSub1_* AddSub1.exe AddSub1.cpp AddSub1.makefile AddSub1.libs AddSub1.log output.log
 // 
 //  arithmetic ops on arrays
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
@@ -29,7 +30,6 @@ y2;
 y3;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf AddSub1_* AddSub1.exe AddSub1.cpp AddSub1.makefile AddSub1.libs AddSub1.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -44,5 +44,4 @@ system("rm -rf AddSub1_* AddSub1.exe AddSub1.cpp AddSub1.makefile AddSub1.libs A
 // 0.0
 // 3.0
 // ""
-// 0
 // endResult

@@ -1,6 +1,7 @@
 // name:     ArrayExponentiation
 // keywords: array
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Exp_* Exp.exe Exp.cpp Exp.makefile Exp.libs Exp.log output.log
 // 
 // Drmodelica: 7.6 Arithmetic Array Operators (p. 223)
 //
@@ -20,7 +21,6 @@ e12;
 e21;
 e22;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Exp_* Exp.exe Exp.cpp Exp.makefile Exp.libs Exp.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -32,5 +32,4 @@ system("rm -rf Exp_* Exp.exe Exp.cpp Exp.makefile Exp.libs Exp.log output.log");
 // 6.0
 // 6.0
 // ""
-// 0
 // endResult

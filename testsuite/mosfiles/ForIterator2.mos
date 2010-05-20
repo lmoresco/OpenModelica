@@ -1,6 +1,7 @@
 // name:     ForIterator2
 // keywords: for iterators
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ForIterator2_* ForIterator2.exe ForIterator2.cpp ForIterator2.makefile ForIterator2.libs ForIterator2.log output.log
 //
 // For Iterator handling
 //
@@ -14,7 +15,6 @@ val(i1,0.0);
 val(i2,0.0);
 val(i3,0.0);
 val(i4,0.0);
-system("rm -rf ForIterator2_* ForIterator2.exe ForIterator2.cpp ForIterator2.makefile ForIterator2.libs ForIterator2.log output.log");
 
 // Result:
 // true
@@ -29,5 +29,4 @@ system("rm -rf ForIterator2_* ForIterator2.exe ForIterator2.cpp ForIterator2.mak
 // 4.0
 // 7.0
 // 8.0
-// 0
 // endResult

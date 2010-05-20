@@ -1,6 +1,7 @@
 // name:     Reductions
 // keywords: reduction
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Reductions.cpp Reductions_* output.log
 // 
 // Test reduction expression.
 // Fix for bug #1136: http://openmodelica.ida.liu.se:8080/cb/issue/1136?navigation=true
@@ -44,7 +45,6 @@ ery/1000.0;
 erz/1000.0;
 erw/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Reductions.cpp Reductions_* output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
@@ -60,5 +60,4 @@ system("rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Red
 // -1e+60
 // 1.0
 // ""
-// 0
 // endResult

@@ -1,6 +1,7 @@
 // name:     EventIteration
 // keywords: EventHandling, EventIteration
-// status:   correct
+// status: correct
+// teardown_command: rm -rf EventIteration EventIteration.exe EventIteration.cpp EventIteration.make EventIteration_* output.log
 // 
 //  Simulate model containing EventIterations
 //
@@ -18,7 +19,6 @@ val(c2,1.0);
 val(c3,0.0);
 val(c3,1.0);
 readFile("output.log");
-system("rm -rf EventIteration EventIteration.exe EventIteration.cpp EventIteration.make EventIteration_* output.log");
 
 // Result:
 // true
@@ -36,5 +36,4 @@ system("rm -rf EventIteration EventIteration.exe EventIteration.cpp EventIterati
 // 0.0
 // 1.0
 // ""
-// 0
 // endResult

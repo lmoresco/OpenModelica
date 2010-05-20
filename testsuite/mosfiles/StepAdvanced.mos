@@ -1,6 +1,7 @@
 // name:     StepAdvanced
 // keywords: 
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Step_* Step.exe Step.cpp Step.makefile Step.libs Step.log output.log
 // 
 // Drmodelica: 8.2 Step (p. 244)
 // 
@@ -13,7 +14,6 @@ signal:=res[1,1];
 echo(true); // turns on output
 signal;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf Step_* Step.exe Step.cpp Step.makefile Step.libs Step.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -22,5 +22,4 @@ system("rm -rf Step_* Step.exe Step.cpp Step.makefile Step.libs Step.log output.
 // true
 // 1.0
 // ""
-// 0
 // endResult

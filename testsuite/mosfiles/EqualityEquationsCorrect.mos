@@ -1,6 +1,7 @@
 // name:     EqualityEquationsCorrect
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect.exe EqualityEquationsCorrect.cpp EqualityEquationsCorrect.makefile EqualityEquationsCorrect.libs EqualityEquationsCorrect.log output.log
 // 
 // Not yet implemented
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)
@@ -23,7 +24,6 @@ x;
 y;
 z;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect.exe EqualityEquationsCorrect.cpp EqualityEquationsCorrect.makefile EqualityEquationsCorrect.libs EqualityEquationsCorrect.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -35,5 +35,4 @@ system("rm -rf EqualityEquationsCorrect_* EqualityEquationsCorrect.exe EqualityE
 // -1.0
 // 2.0
 // ""
-// 0
 // endResult

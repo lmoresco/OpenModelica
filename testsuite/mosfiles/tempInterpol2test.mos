@@ -1,6 +1,7 @@
 // name:     tempInterpol2test
 // keywords: Simulate, function, 
-// status:   correct
+// status: correct
+// teardown_command: rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs tempInterpol2test.log tempInterpol2test.exe tempInterpol2test.makefile  output.log
 // 
 //  Simulate models and read in data.
 //
@@ -9,7 +10,6 @@ loadFile("tempInterpol2test.mo");
 simulate(tempInterpol2test, tolerance=1e-5, numberOfIntervals=100);
 val(y[1,1],0.0);
 val(y[1,2],0.0);
-system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs tempInterpol2test.log tempInterpol2test.exe tempInterpol2test.makefile  output.log");
 
 // Result:
 // true
@@ -18,6 +18,5 @@ system("rm -rf tempInterpol2test_* tempInterpol2test.cpp tempInterpol2test.libs 
 // end SimulationResult;
 // 1.6
 // 2.6
-// 0
 // endResult
 

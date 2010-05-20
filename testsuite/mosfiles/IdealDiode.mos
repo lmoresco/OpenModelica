@@ -1,6 +1,7 @@
 // name:     IdealDiode 
 // keywords: events, mixed systems
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log
 //
 // Event handling
 //
@@ -10,7 +11,6 @@ val(i0,0.0);
 val(i0,0.5);
 val(i0,1.0);
 readFile("output.log");
-system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log");
 // Result:
 // true
 // record SimulationResult
@@ -20,5 +20,4 @@ system("rm -rf ideal_diode_* ideal_diode.exe ideal_diode.log ideal_diode.cpp ide
 // 0.0
 // 0.853901255599747
 // ""
-// 0
 // endResult

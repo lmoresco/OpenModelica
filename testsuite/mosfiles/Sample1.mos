@@ -1,6 +1,7 @@
 // name:     Sample1
 // keywords: events
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Sample1_* Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs Sample1.log output.log
 //
 // Event handling
 //
@@ -14,7 +15,6 @@ val(storage,3.1);
 val(storage,5.1);
 val(storage,7.1);
 val(storage,9.1);
-system("rm -rf Sample1_* Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs Sample1.log output.log");
 
 // Result:
 // true
@@ -27,5 +27,4 @@ system("rm -rf Sample1_* Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs S
 // 5000.0
 // 7000.0
 // 9000.0
-// 0
 // endResult

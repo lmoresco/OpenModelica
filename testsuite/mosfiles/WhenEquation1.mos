@@ -1,6 +1,7 @@
 // name:     WhenEquation1
 // keywords: when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf WhenEquation1 WhenEquation1.exe WhenEquation1.cpp WhenEquation1.make WhenEquation1_* output.log
 // 
 // Conditional Equations with when-Equations and elsewhen-Equations
 // 
@@ -16,7 +17,6 @@ val(toggle,0.2);
 val(toggle,0.4);
 val(toggle,0.8);
 readFile("output.log");
-system("rm -rf WhenEquation1 WhenEquation1.exe WhenEquation1.cpp WhenEquation1.make WhenEquation1_* output.log");
 
 // Result:
 // true
@@ -32,5 +32,4 @@ system("rm -rf WhenEquation1 WhenEquation1.exe WhenEquation1.cpp WhenEquation1.m
 // -1.0
 // 1.0
 // ""
-// 0
 // endResult

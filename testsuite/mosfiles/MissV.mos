@@ -1,6 +1,7 @@
 // name:     MissV  (test bug 1110)
 // keywords: linear system of equations
-// status:   correct
+// status: correct
+// teardown_command: rm -rf MissV_* MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log
 //
 // Solving of a linear system of equations
 //
@@ -14,7 +15,6 @@ val(pa, 1.0);
 val(pb, 1.0);
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf MissV_* MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log");
 // Result:
 // true
 // "fclass MissV
@@ -37,5 +37,4 @@ system("rm -rf MissV_* MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log o
 // 7000000.0
 // 7000000.0
 // ""
-// 0
 // endResult

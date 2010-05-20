@@ -1,6 +1,7 @@
 // name:     DAEexample
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log
 //
 // Equation handling
 //
@@ -12,7 +13,6 @@ val(x,1.0);
 val(y,0.0);
 val(y,0.5);
 val(y,1.0);
-system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log");
 
 // Result:
 // true
@@ -25,5 +25,4 @@ system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DA
 // 0.512239999389552
 // 0.653185973887926
 // 1.02593908837436
-// 0
 // endResult

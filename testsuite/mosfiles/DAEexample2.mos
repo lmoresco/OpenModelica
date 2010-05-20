@@ -1,6 +1,7 @@
 // name:     DAEexample2
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log
 //
 // Equation handling
 // Drmodelica: 2.1 Differential Algebraic Equation System (p. 19)
@@ -16,7 +17,6 @@ x := floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
-system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DAEexample.libs DAEexample.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -25,6 +25,5 @@ system("rm -rf DAEexample_* DAEexample.exe DAEexample.cpp DAEexample.makefile DA
 // true
 // {0.588,0.588,0.631,0.749,0.919}
 // ""
-// 0
 // endResult
 

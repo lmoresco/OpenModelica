@@ -1,6 +1,7 @@
 // name:     BuiltinMath 
 // keywords: Built-in Mathematical Functions
-// status:   correct
+// status: correct
+// teardown_command: rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe BuiltinMath.cpp BuiltinMath.makefile output.log
 //
 // Built-in Mathematical Functions
 //
@@ -20,7 +21,6 @@ simulate(BuiltinMath, stopTime=1);
 {val(x[12],0.0),val(x[12],1.0)};
 {val(x[13],0.0),val(x[13],1.0)};
 readFile("output.log");
-system("rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe BuiltinMath.cpp BuiltinMath.makefile output.log");
 // Result:
 // true
 // record SimulationResult
@@ -40,5 +40,4 @@ system("rm -rf BuiltinMath_* BuiltinMath.log BuiltinMath.libs BuiltinMath.exe Bu
 // {-inf,0.0}
 // {-inf,0.0}
 // ""
-// 0
 // endResult

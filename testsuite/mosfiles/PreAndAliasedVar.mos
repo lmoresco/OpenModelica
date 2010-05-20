@@ -1,6 +1,7 @@
 // name:     PreAndAliasedVar
 // keywords: events
-// status:   correct
+// status: correct
+// teardown_command: rm -rf PreAndAliasedVar_* PreAndAliasedVar.exe PreAndAliasedVar PreAndAliasedVar.cpp PreAndAliasedVar.makefile PreAndAliasedVar.libs PreAndAliasedVar.log output.log
 //
 // Event handling
 //
@@ -19,7 +20,6 @@ val(c, 0.71);
 val(c, 0.81);
 val(c, 0.91);
 readFile("output.log");
-system("rm -rf PreAndAliasedVar_* PreAndAliasedVar.exe PreAndAliasedVar PreAndAliasedVar.cpp PreAndAliasedVar.makefile PreAndAliasedVar.libs PreAndAliasedVar.log output.log");
 
 // Result:
 // true
@@ -37,5 +37,4 @@ system("rm -rf PreAndAliasedVar_* PreAndAliasedVar.exe PreAndAliasedVar PreAndAl
 // 0.0
 // 0.0
 // ""
-// 0
 // endResult

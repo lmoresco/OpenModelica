@@ -1,6 +1,7 @@
 // name:     PolynomialEvaluatorB
 // keywords: 
-// status:   correct
+// status: correct
+// teardown_command: rm -rf PolyEvaluate2_* PolyEvaluate2.exe PolyEvaluate2.cpp PolyEvaluate2.makefile PolyEvaluate2.libs PolyEvaluate2.log output.log
 // 
 // Drmodelica: 8.2 Polynomial Evaluator (p. 242)
 //
@@ -23,7 +24,6 @@ p2/1000.0;
 p3/1000.0;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf PolyEvaluate2_* PolyEvaluate2.exe PolyEvaluate2.cpp PolyEvaluate2.makefile PolyEvaluate2.libs PolyEvaluate2.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -34,5 +34,4 @@ system("rm -rf PolyEvaluate2_* PolyEvaluate2.exe PolyEvaluate2.cpp PolyEvaluate2
 // 125.001
 // 512.001
 // ""
-// 0
 // endResult

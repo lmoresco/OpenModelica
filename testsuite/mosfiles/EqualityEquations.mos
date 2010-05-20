@@ -1,6 +1,7 @@
 // name:     EqualityEquations
 // keywords: equation
-// status:   correct
+// status: correct
+// teardown_command: rm -rf f.c f.exe f_in.txt f_out.txt
 // 
 // Drmodelica: 8.2 Simple Equality Equations (p. 240)
 // 
@@ -9,7 +10,6 @@ instantiateModel(EqualityEquations);
 getErrorString(); 
 simulate(EqualityEquations,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 getErrorString(); // simulation failed, check error string.
-system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 
 // Result:
 // true
@@ -44,5 +44,4 @@ system("rm -rf f.c f.exe f_in.txt f_out.txt"); // remove tmp files.
 // "
 // end SimulationResult;
 // ""
-// 0
 // endResult

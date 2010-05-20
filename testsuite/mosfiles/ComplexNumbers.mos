@@ -1,6 +1,7 @@
 // Name:     ComplexNumbers
 // keywords: equations when
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ComplexNumbers.exe ComplexNumbers.c ComplexNumbers.cpp ComplexNumbers.libs ComplexNumbers.log ComplexNumbers.makefile ComplexNumbers.plt ComplexNumbers_* output.log
 // 
 //  
 // Drmodelica: 10.1 Abstract Data Type (p. 333)
@@ -15,7 +16,6 @@ size := readSimulationResultSize("ComplexNumbers_res.plt");
 echo(true); // turns on output
 //x;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf ComplexNumbers.exe ComplexNumbers.c ComplexNumbers.cpp ComplexNumbers.libs ComplexNumbers.log ComplexNumbers.makefile ComplexNumbers.plt ComplexNumbers_* output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -24,5 +24,4 @@ system("rm -rf ComplexNumbers.exe ComplexNumbers.c ComplexNumbers.cpp ComplexNum
 // end SimulationResult;
 // true
 // ""
-// 0
 // endResult

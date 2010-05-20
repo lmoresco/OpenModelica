@@ -1,6 +1,7 @@
 // name:     Delay
 // keywords: builtin delay
-// status:   correct
+// status: correct
+// teardown_command: rm -rf Delay_* Delay.exe Delay.cpp Delay.makefile Delay.libs Delay.log output.log
 // 
 // Test builtin function delay
 // Expected values are sin(2.5)-1, cos(5), sin(4.99) and sin(3)
@@ -13,7 +14,6 @@ val(y, 5);
 val(z, 5);
 val(w, 5);
 readFile("output.log");
-system("rm -rf Delay_* Delay.exe Delay.cpp Delay.makefile Delay.libs Delay.log output.log");
 
 // Result:
 // true
@@ -25,5 +25,4 @@ system("rm -rf Delay_* Delay.exe Delay.cpp Delay.makefile Delay.libs Delay.log o
 // -0.961712903426793
 // 0.141120008059877
 // ""
-// 0
 // endResult

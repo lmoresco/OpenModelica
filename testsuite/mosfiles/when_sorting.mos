@@ -1,6 +1,7 @@
 // name:     when-sorting
 // keywords: Simulate, when-sorting
-// status:   correct
+// status: correct
+// teardown_command: rm -rf when_sorting when_sorting.exe when_sorting.cpp when_sorting.make when_sorting_* output.log
 // 
 //  Simulate model containing two when equation, that 
 //
@@ -16,7 +17,6 @@ val(x,2.0);
 val(y,0.0);
 val(y,2.0);
 readFile("output.log");
-system("rm -rf when_sorting when_sorting.exe when_sorting.cpp when_sorting.make when_sorting_* output.log");
 
 // Result:
 // true
@@ -32,5 +32,4 @@ system("rm -rf when_sorting when_sorting.exe when_sorting.cpp when_sorting.make 
 // 0.0
 // 3.0
 // ""
-// 0
 // endResult

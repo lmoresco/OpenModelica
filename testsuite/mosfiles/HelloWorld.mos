@@ -1,6 +1,7 @@
 // name:      HelloWorld
 // keywords:  equation
-// status:    correct
+// status: correct
+// teardown_command: rm -rf HelloWorld_* HelloWorld.exe HelloWorld.cpp HelloWorld.makefile HelloWorld.libs HelloWorld.log output.log
 //
 // Equation handling
 // Drmodelica: 2.1 Hello World (p. 19)
@@ -16,7 +17,6 @@ x := floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
-system("rm -rf HelloWorld_* HelloWorld.exe HelloWorld.cpp HelloWorld.makefile HelloWorld.libs HelloWorld.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -25,5 +25,4 @@ system("rm -rf HelloWorld_* HelloWorld.exe HelloWorld.cpp HelloWorld.makefile He
 // true
 // {1.0,0.999,0.606,0.367}
 // ""
-// 0
 // endResult

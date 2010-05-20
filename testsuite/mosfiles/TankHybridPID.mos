@@ -1,6 +1,7 @@
 // name:     TankHybridPID
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf TankHybridPID_* TankHybridPID.exe TankHybridPID.cpp TankHybridPID.makefile TankHybridPID.libs TankHybridPID.log output.log
 // 
 //  //??Error - simulates too short time
 //
@@ -31,7 +32,6 @@ y/1000.0;
 z/1000.0;
 w/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf TankHybridPID_* TankHybridPID.exe TankHybridPID.cpp TankHybridPID.makefile TankHybridPID.libs TankHybridPID.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -44,5 +44,4 @@ system("rm -rf TankHybridPID_* TankHybridPID.exe TankHybridPID.cpp TankHybridPID
 // 0.249
 // 0.215
 // ""
-// 0
 // endResult

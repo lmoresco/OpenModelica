@@ -1,6 +1,7 @@
 // name:     FlatTank
 // keywords: <insert keywords here>
-// status:   correct
+// status: correct
+// teardown_command: rm -rf FlatTank_* FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.libs FlatTank.log output.log
 // 
 // Drmodelica: 12.1 Traditional Methodology (p. 385)
 //
@@ -26,7 +27,6 @@ y/1000.0;
 z/1000.0;
 w/1000.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf FlatTank_* FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.libs FlatTank.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -39,5 +39,4 @@ system("rm -rf FlatTank_* FlatTank.exe FlatTank.cpp FlatTank.makefile FlatTank.l
 // 0.25
 // 0.249
 // ""
-// 0
 // endResult

@@ -1,6 +1,7 @@
 // name:     BouncingBall
 // keywords: events
-// status:   correct
+// status: correct
+// teardown_command: rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log
 //
 // Event handling
 //
@@ -18,7 +19,6 @@ res2[1,1];
 if res2[1,s]>59 and res2[1,s] < 100 then 1 else 0;
 if res3[1,s] > -1e-2 then 1 else 0;
 readFile("output.log");
-system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log");
 // Result:
 // true
 // record SimulationResult
@@ -31,6 +31,5 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // 1
 // 1
 // ""
-// 0
 // endResult
 

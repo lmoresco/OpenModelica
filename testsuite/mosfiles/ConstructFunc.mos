@@ -1,6 +1,7 @@
 // name:     ConstructFunc
 // keywords: array
-// status:   correct
+// status: correct
+// teardown_command: rm -rf ConstructFunc_* ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log
 // 
 // Drmodelica: 7.7 Built-in Functions (p. 225)
 // 
@@ -29,7 +30,6 @@ di;
 ls;
 
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf ConstructFunc_* ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log");
 // Result:
 // true
 // record SimulationResult
@@ -44,5 +44,4 @@ system("rm -rf ConstructFunc_* ConstructFunc.exe ConstructFunc.cpp ConstructFunc
 // 0.0
 // 4.0
 // ""
-// 0
 // endResult

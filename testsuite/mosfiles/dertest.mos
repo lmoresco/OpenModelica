@@ -1,6 +1,7 @@
 // name:     dertest 
 // keywords: Simulate, der(expr) 
-// status:   correct
+// status: correct
+// teardown_command: rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs dertest.log output.log
 // 
 //  Simulate model containing der(expr).
 //
@@ -12,7 +13,6 @@ val(x,1.0);
 val(y,0.0);
 val(y,1.0);
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs dertest.log output.log"); // remove tmp files.
 
 // Result:
 // true
@@ -24,5 +24,4 @@ system("rm -rf dertest_* dertest.exe dertest.cpp dertest.makefile dertest.libs d
 // -1.0
 // -1.42916997163095
 // ""
-// 0
 // endResult
