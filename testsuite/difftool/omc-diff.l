@@ -67,7 +67,7 @@ int lex_main(double eps, FILE* f1, FILE* f2) {
     }
     
     if (v1 != v2) {
-      printf("Line %d: Lexical token differs:\nexpected: %s\ngot: %s\n", line, s1, s2);
+      printf("Line %d: Lexical token differs:\nexpected: %s\ngot:      %s\n", line, s1, s2);
       return 1;
     }
     
@@ -77,7 +77,7 @@ int lex_main(double eps, FILE* f1, FILE* f2) {
       break;
     case T_TEXT:
       if (strcmp(s1,s2)) {
-      printf("Line %d: Text differs:\nexpected: %s\ngot: %s\n", line, s1, s2);
+      printf("Line %d: Text differs:\nexpected: %s\ngot:      %s\n", line, s1, s2);
         return 1;
       }
       break;
