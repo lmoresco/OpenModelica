@@ -1688,7 +1688,7 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
           parameter Frames.Quaternions.Orientation Q_start=
                     Modelica.Mechanics.MultiBody.Frames.to_Q(R_rel_start)
           "Quaternion orientation object from frame_a to frame_b at initial time";
-          Frames.Quaternions.Orientation Q(start=Q_start, stateSelect=if 
+          Frames.Quaternions.Orientation Q(start=Q_start, each stateSelect=if 
                 enforceStates and useQuaternions then StateSelect.prefer else 
                 StateSelect.never)
           "Quaternion orientation object from frame_a to frame_b (dummy value, if quaternions are not used as states)";
@@ -1699,17 +1699,17 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
                and sequence_start[3] == sequence_angleStates[3] then angles_start else 
                Frames.axesRotationsAngles(R_rel_start, sequence_angleStates)
           "Potential angle states at initial time";
-          SI.Angle phi[3](start=phi_start, stateSelect=if enforceStates and not 
+          SI.Angle phi[3](start=phi_start, each stateSelect=if enforceStates and not 
                 useQuaternions then StateSelect.always else StateSelect.never)
           "Dummy or 3 angles to rotate frame_a into frame_b";
-          SI.AngularVelocity phi_d[3](stateSelect=if enforceStates and not 
+          SI.AngularVelocity phi_d[3](each stateSelect=if enforceStates and not 
                 useQuaternions then StateSelect.always else StateSelect.never)
           "= der(phi)";
           SI.AngularAcceleration phi_dd[3] "= der(phi_d)";
 
           // Other declarations
           SI.AngularVelocity w_rel[3](start=Frames.resolve2(R_rel_start, w_rel_a_start),
-                fixed = fill(w_rel_a_fixed,3), stateSelect=if 
+                fixed = fill(w_rel_a_fixed,3), each stateSelect=if 
                 enforceStates and useQuaternions then StateSelect.always else 
                 StateSelect.never)
           "Dummy or relative angular velocity of frame_b with respect to frame_a, resolved in frame_b";
@@ -2111,10 +2111,10 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
           parameter SI.Inertia I_32(min=-C.inf)=0
           " (3,2) element of inertia tensor";
 
-          SI.Position r_0[3](start={0,0,0}, stateSelect=if enforceStates then 
+          SI.Position r_0[3](start={0,0,0}, each stateSelect=if enforceStates then 
                       StateSelect.always else StateSelect.avoid)
           "Position vector from origin of world frame to origin of frame_a";
-          SI.Velocity v_0[3](start={0,0,0}, stateSelect=if enforceStates then StateSelect.always else 
+          SI.Velocity v_0[3](start={0,0,0}, each stateSelect=if enforceStates then StateSelect.always else 
                       StateSelect.avoid)
           "Absolute velocity of frame_a, resolved in world frame (= der(r_0))";
           SI.Acceleration a_0[3](start={0,0,0})
@@ -2163,7 +2163,7 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
 
           SI.AngularVelocity w_a[3](start=Frames.resolve2(R_start, w_0_start),
                                     fixed=fill(w_0_fixed,3),
-                                    stateSelect=if enforceStates then (if useQuaternions then 
+                                    each stateSelect=if enforceStates then (if useQuaternions then 
                                     StateSelect.always else StateSelect.never) else StateSelect.avoid)
           "Absolute angular velocity of frame_a resolved in frame_a";
           SI.AngularAcceleration z_a[3](start=Frames.resolve2(R_start, z_0_start),fixed=fill(z_0_fixed,3))
@@ -2176,7 +2176,7 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
           // Declarations for quaternions (dummies, if quaternions are not used)
           parameter Frames.Quaternions.Orientation Q_start=Frames.to_Q(R_start)
           "Quaternion orientation object from world frame to frame_a at initial time";
-          Frames.Quaternions.Orientation Q(start=Q_start, stateSelect=if 
+          Frames.Quaternions.Orientation Q(start=Q_start, each stateSelect=if 
                 enforceStates then (if useQuaternions then StateSelect.prefer else 
                 StateSelect.never) else StateSelect.avoid)
           "Quaternion orientation object from world frame to frame_a (dummy value, if quaternions are not used as states)";
@@ -2187,11 +2187,11 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
                and sequence_start[3] == sequence_angleStates[3] then angles_start else 
                Frames.axesRotationsAngles(R_start, sequence_angleStates)
           "Potential angle states at initial time";
-          SI.Angle phi[3](start=phi_start, stateSelect=if enforceStates then (if 
+          SI.Angle phi[3](start=phi_start, each stateSelect=if enforceStates then (if 
                 useQuaternions then StateSelect.never else StateSelect.always) else 
                 StateSelect.avoid)
           "Dummy or 3 angles to rotate world frame into frame_a of body";
-          SI.AngularVelocity phi_d[3](stateSelect=if enforceStates then (if 
+          SI.AngularVelocity phi_d[3](each stateSelect=if enforceStates then (if 
                 useQuaternions then StateSelect.never else StateSelect.always) else 
                 StateSelect.avoid) "= der(phi)";
           SI.AngularAcceleration phi_dd[3] "= der(phi_d)";
@@ -2330,10 +2330,10 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
           parameter SI.Inertia I_32(min=-C.inf) = 0
           " (3,2) element of inertia tensor";
 
-          SI.Position r_0[3](start={0,0,0}, stateSelect=if enforceStates then 
+          SI.Position r_0[3](start={0,0,0}, each stateSelect=if enforceStates then 
                       StateSelect.always else StateSelect.avoid)
           "Position vector from origin of world frame to origin of frame_a";
-          SI.Velocity v_0[3](start={0,0,0}, stateSelect=if enforceStates then StateSelect.always else 
+          SI.Velocity v_0[3](start={0,0,0}, each stateSelect=if enforceStates then StateSelect.always else 
                       StateSelect.avoid)
           "Absolute velocity of frame_a, resolved in world frame (= der(r_0))";
           SI.Acceleration a_0[3](start={0,0,0})
@@ -2473,10 +2473,10 @@ coordinate system a vector is resolved (non-filled rectangular icon)"
           input Types.SpecularCoefficient specularCoefficient = world.defaultSpecularCoefficient
           "Reflection of ambient light (= 0: light is completely absorbed)";
 
-          SI.Position r_0[3](start={0,0,0}, stateSelect=if enforceStates then 
+          SI.Position r_0[3](start={0,0,0}, each stateSelect=if enforceStates then 
                       StateSelect.always else StateSelect.avoid)
           "Position vector from origin of world frame to origin of frame_a";
-          SI.Velocity v_0[3](start={0,0,0}, stateSelect=if enforceStates then StateSelect.always else 
+          SI.Velocity v_0[3](start={0,0,0}, each stateSelect=if enforceStates then StateSelect.always else 
                       StateSelect.avoid)
           "Absolute velocity of frame_a, resolved in world frame (= der(r_0))";
           SI.Acceleration a_0[3](start={0,0,0})
