@@ -25,7 +25,7 @@ x:=x/10.0; // rounded value to 1 digits
 y:=y/10.0;
 z:=z/10.0;
 readFile("output.log"); // Check that output log is emtpy
-system("rm -rf WillowForest.* WillowForest_* output.log"); // remove tmp files.
+system("rm -rf WillowForest WillowForest.exe WillowForest_* output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
