@@ -39,8 +39,6 @@ RMLINC	= -I$(RMLHOME)/include/plain
 USE_CORBA = -DUSE_CORBA
 CORBAHOME = $(OMDEV)
 
-include Makefile.common
-
 PROG = omc
 PROGD = omcd
 PROGP = omcp
@@ -56,6 +54,8 @@ SUBDIRS	= runtime absyn_builder modpar
 .PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug omc_frontend omc_profiler
 
 all : .testvariables .depend release $(ALLMO)
+
+include Makefile.common
 
 frontend : .testvariables .depend frontend_release $(ALLMO) $(SRCSTUB)
 
@@ -151,7 +151,10 @@ dreallyclean: .depend
 report:
 	@(cd report ; $(MAKE))
 
-.depend:
+simcode:
+	@make -C susan_codegen/SimCode/ > susan.log 2>&1 && echo Susan generated new SimCode files. See susan.log for details. || echo "Using old Susan template files. See susan.log for details."
+
+.depend: simcode
 	-$(RM) .depend
 	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 
