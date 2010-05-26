@@ -8,6 +8,8 @@ val(uDC,0); //dymola 565.35
 val(uDC,0.05); //dymola 516.78
 val(uDC,0.1); //dymola 517
 
+system("rm Modelica.Electrical.Analog.Examples.Rectifier*");
+
 // Result:
 // true
 // record SimulationResult
@@ -16,4 +18,5 @@ val(uDC,0.1); //dymola 517
 // 0.0
 // 516.169112835177
 // 517.036249651542
+// 0
 // endResult
