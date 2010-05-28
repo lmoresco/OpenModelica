@@ -12,6 +12,7 @@ HeatingMOSInverter2.mos \
 # Run make testfailing
 FAILINGTESTFILES=  \
 HeatingNPN_OrGate2.mos \
+HeatingResistor.mos \
 
 .PHONY : test
 
