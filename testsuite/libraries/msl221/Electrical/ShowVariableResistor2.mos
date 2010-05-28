@@ -1,0 +1,72 @@
+//name:         ShowVariableResistor2
+//keyword:      simulating msl221
+//status:       correct
+//
+// simulation example
+//
+
+loadFile("../Modelica/package.mo");
+simulate(Modelica.Electrical.Analog.Examples.ShowVariableResistor, method="dassl");
+
+"Ramp1.y:";
+val(Ramp1.y,0.0);
+val(Ramp1.y,0.25);
+val(Ramp1.y,0.5);
+val(Ramp1.y,0.75);
+val(Ramp1.y,1.0);
+
+"VariableResistor.v:";
+val(VariableResistor.v,0.0);
+val(VariableResistor.v,0.25);
+val(VariableResistor.v,0.5);
+val(VariableResistor.v,0.75);
+val(VariableResistor.v,1.0);
+
+"VariableResistor.i:";
+val(VariableResistor.i,0.0);
+val(VariableResistor.i,0.25);
+val(VariableResistor.i,0.5);
+val(VariableResistor.i,0.75);
+val(VariableResistor.i,1.0);
+
+"R2.v:";
+val(R2.v,0.0);
+val(R2.v,0.25);
+val(R2.v,0.5);
+val(R2.v,0.75);
+val(R2.v,1.0);
+
+system("rm Modelica.Electrical.Analog.Examples.ShowVariableResistor*");
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.plt"
+// end SimulationResult;
+// "Ramp1.y:"
+// 2.0
+// 2.625
+// 3.25
+// 3.875
+// 4.5
+// "VariableResistor.v:"
+// 0.0
+// -0.567567567567567
+// 1.10370214148072e-15
+// 0.659574468085106
+// -2.29001012864033e-15
+// "VariableResistor.i:"
+// -0.0
+// -0.216216216216216
+// 3.38987032414144e-16
+// 0.170212765957447
+// -5.0889113969785e-16
+// "R2.v:"
+// 0.0
+// -0.333333333333333
+// 5.93892068769669e-16
+// 0.333333333333333
+// -1.10259746934534e-15
+// 0
+// endResult
