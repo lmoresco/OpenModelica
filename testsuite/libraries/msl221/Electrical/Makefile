@@ -18,6 +18,7 @@ HeatingResistor.mos \
 OvervoltageProtection2.mos \
 ShowSaturatingInductor2.mos \
 SwitchWithArc2.mos \
+ThyristorBehaviourTest2.mos \
 
 .PHONY : test
 
