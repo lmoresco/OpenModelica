@@ -17,6 +17,7 @@ HeatingNPN_OrGate2.mos \
 HeatingResistor.mos \
 OvervoltageProtection2.mos \
 ShowSaturatingInductor2.mos \
+SwitchWithArc2.mos \
 
 .PHONY : test
 
