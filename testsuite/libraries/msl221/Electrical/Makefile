@@ -11,6 +11,7 @@ HeatingMOSInverter2.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+HeatingNPN_OrGate2.mos \
 
 .PHONY : test
 
