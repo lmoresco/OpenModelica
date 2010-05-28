@@ -35,7 +35,7 @@ HideVariableForEquations.mos \
 HydrogenIodide.mos \
 Identity.mos \
 IdealDiode.mos  \
-IfEquation.mos IfEquation2.mos \
+IfEquation.mos IfEquation2.mos IfEquation3.mos \
 Initialization.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \

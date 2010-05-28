@@ -1,0 +1,37 @@
+// name:     IfEquation3
+// keywords: equation
+// status: correct
+// teardown_command: rm -rf IfEquation3_* IfEquation3 IfEquation3.exe IfEquation3.cpp IfEquation3.makefile IfEquation3.libs IfEquation3.log output.log
+// 
+// Checks that if-equations which have another if-equation in one of the branches are transformed correctly
+// 
+loadFile("IfEquation3.mo");
+simulate(IfEquation3,startTime=0.0, stopTime=2.0, numberOfIntervals=8, tolerance=1e-5); 
+echo(false); // turns of output 
+size := readSimulationResultSize("IfEquation3_res.plt");
+res:=readSimulationResult("IfEquation3_res.plt",{x,y},size); 
+echo(true); // turns on output
+val(x,0.25);
+val(y,0.25);
+val(x,0.75);
+val(y,0.75);
+val(x,1.25);
+val(y,1.25);
+val(x,1.75);
+val(y,1.75);
+readFile("output.log"); // Check that output log is emtpy
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "IfEquation3_res.plt"
+// end SimulationResult;
+// true
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 2.0
+// 2.0
+// 1.0
+// ""
