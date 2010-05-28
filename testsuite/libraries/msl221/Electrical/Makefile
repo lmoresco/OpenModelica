@@ -14,6 +14,7 @@ HeatingRectifier2.mos \
 FAILINGTESTFILES=  \
 HeatingNPN_OrGate2.mos \
 HeatingResistor.mos \
+OvervoltageProtection2.mos \
 
 .PHONY : test
 
