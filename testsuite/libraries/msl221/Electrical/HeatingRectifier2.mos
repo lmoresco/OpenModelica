@@ -1,0 +1,138 @@
+//name:         HeatingRectifier2
+//keyword:      simulating msl221
+//status:       correct
+//
+// simulation example
+//
+
+loadFile("../Modelica/package.mo");
+simulate(Modelica.Electrical.Analog.Examples.HeatingRectifier, stopTime=5, method="dassl");
+
+"HeatingDiode1.v:";
+val(HeatingDiode1.v,0.0);
+val(HeatingDiode1.v,0.75);
+val(HeatingDiode1.v,1.25);
+val(HeatingDiode1.v,1.75);
+val(HeatingDiode1.v,3.0);
+val(HeatingDiode1.v,4.25);
+val(HeatingDiode1.v,5);
+
+"HeatingDiode1.i:";
+val(HeatingDiode1.i,0.0);
+val(HeatingDiode1.i,0.75);
+val(HeatingDiode1.i,1.25);
+val(HeatingDiode1.i,1.75);
+val(HeatingDiode1.i,3.0);
+val(HeatingDiode1.i,4.25);
+val(HeatingDiode1.i,5);
+
+"HeatingDiode1.heatPort.T:";
+val(HeatingDiode1.heatPort.T,0.0);
+val(HeatingDiode1.heatPort.T,0.75);
+val(HeatingDiode1.heatPort.T,1.25);
+val(HeatingDiode1.heatPort.T,1.75);
+val(HeatingDiode1.heatPort.T,3.0);
+val(HeatingDiode1.heatPort.T,4.25);
+val(HeatingDiode1.heatPort.T,5);
+
+"HeatingDiode1.id:";
+val(HeatingDiode1.id,0.0);
+val(HeatingDiode1.id,0.75);
+val(HeatingDiode1.id,1.25);
+val(HeatingDiode1.id,1.75);
+val(HeatingDiode1.id,3.0);
+val(HeatingDiode1.id,4.25);
+val(HeatingDiode1.id,5);
+
+"HeatCapacitor1.T:";
+val(HeatCapacitor1.T,0.0);
+val(HeatCapacitor1.T,0.75);
+val(HeatCapacitor1.T,1.25);
+val(HeatCapacitor1.T,1.75);
+val(HeatCapacitor1.T,3.0);
+val(HeatCapacitor1.T,4.25);
+val(HeatCapacitor1.T,5);
+
+"SineVoltage1.v:";
+val(SineVoltage1.v,0.0);
+val(SineVoltage1.v,0.75);
+val(SineVoltage1.v,1.25);
+val(SineVoltage1.v,1.75);
+val(SineVoltage1.v,3.0);
+val(SineVoltage1.v,4.25);
+val(SineVoltage1.v,5);
+
+"SineVoltage1.i:";
+val(SineVoltage1.i,0.0);
+val(SineVoltage1.i,0.75);
+val(SineVoltage1.i,1.25);
+val(SineVoltage1.i,1.75);
+val(SineVoltage1.i,3.0);
+val(SineVoltage1.i,4.25);
+val(SineVoltage1.i,5);
+
+system("rm Modelica.Electrical.Analog.Examples.HeatingRectifier*");
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt"
+// end SimulationResult;
+// "HeatingDiode1.v:"
+// 0.0
+// -1.39559314991718
+// 0.383988008445016
+// -1.39601651204438
+// -0.308720548723028
+// 0.381167526626524
+// -0.309313029454789
+// "HeatingDiode1.i:"
+// 4.42518339851657e-99
+// -3.65457602107949e-07
+// 1.396385306018
+// -3.75893591154952e-07
+// -3.75725639859608e-07
+// 1.34206948172047
+// -3.97999736096185e-07
+// "HeatingDiode1.heatPort.T:"
+// 293.15
+// 293.462620367397
+// 293.686190795435
+// 293.645754650355
+// 293.828530407333
+// 294.231459938591
+// 294.193069998869
+// "HeatingDiode1.id:"
+// 3.71768823825535e-115
+// -1.0
+// 3833312.17032973
+// -1.0
+// -0.999994932419437
+// 3377749.17751771
+// -0.999994974117301
+// "HeatCapacitor1.T:"
+// 293.15
+// 293.462620316394
+// 293.632571274167
+// 293.645754597879
+// 293.828530395733
+// 294.180304608101
+// 294.193069986558
+// "SineVoltage1.v:"
+// 0.0
+// -1.0
+// 1.0
+// -1.0
+// 1.10590633834005e-14
+// 0.999999999999991
+// 1.65389620401801e-14
+// "SineVoltage1.i:"
+// -4.42518339851657e-99
+// 3.65457602107949e-07
+// -1.396385306018
+// 3.75893591154952e-07
+// 3.75725639859608e-07
+// -1.34206948172047
+// 3.97999736096185e-07
+// 0
+// endResult
