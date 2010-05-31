@@ -3,9 +3,7 @@
 // status: correct
 loadFile("Engine1Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Engine1);
-getErrorString();// Result:
-// sh: ../../../build/bin/omc: No such file or directory
-// endResult
+getErrorString();
 // Result:
 // true
 // "function MCVisualShape.local_normalize
