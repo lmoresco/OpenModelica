@@ -35,22 +35,22 @@ end Top2;
 
 // Result:
 // fclass Top2
-// Real world.i;
-// Real world.v;
-// Real topPin.i;
-// Real topPin.v;
-// Real a1.world.i;
-// Real a1.world.v;
-// Real a1.a.aPin.i;
-// Real a1.a.aPin.v;
-// Real a1.a2Pin.i;
-// Real a1.a2Pin.v;
+//   Real world.i;
+//   Real world.v;
+//   Real topPin.i;
+//   Real topPin.v;
+//   Real a1.world.i;
+//   Real a1.world.v;
+//   Real a1.a.aPin.i;
+//   Real a1.a.aPin.v;
+//   Real a1.a2Pin.i;
+//   Real a1.a2Pin.v;
 // equation
-// a1.a2Pin.v = world.v;
-// world.v = topPin.v;
-//   a1.a2Pin.i + ((-world.i) + (-topPin.i)) = 0.0;
-// a1.world.v = a1.a.aPin.v;
+//   a1.world.v = a1.a.aPin.v;
 //   a1.world.i + a1.a.aPin.i = 0.0;
+//   world.v = topPin.v;
+//   topPin.v = a1.a2Pin.v;
+//   (-world.i) + ((-topPin.i) + a1.a2Pin.i) = 0.0;
 //   topPin.i = 0.0;
 //   world.i = 0.0;
 // end Top2;
