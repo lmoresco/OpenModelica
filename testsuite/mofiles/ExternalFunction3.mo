@@ -1,21 +1,22 @@
 // name:     ExternalFunction3
 // keywords: external function,code generation,constant propagation
 // status:   correct
-// setup_command: gcc -c -o ExternalFunction3_addmatrices.o ExternalFunction3_addmatrices.c
-// teardown_command: rm -f ExternalFunction3_addmatrices.o
+// setup_command: gcc -c -o ExternalFunction3-addmatrices.o ExternalFunction3-addmatrices.c
+// teardown_command: rm -f ExternalFunction3-addmatrices.o ExternalFunction3_*
 // 
 // Constant evaluation of function calls. Result of a function call with 
 // constant arguments is inserted into flat modelica.
 // 
 
+model ExternalFunction3
+
 function addmatrices
   input Real a[:,:];
   input Real b[size(a,1),size(a,2)];
   output Real c[size(a,1),size(a,2)];
-external "C" annotation(Library = "ExternalFunction3_addmatrices.o");
+external "C" annotation(Library = "ExternalFunction3-addmatrices.o");
 end addmatrices;
 
-model ExternalFunction3
   constant Real a[2,2]={{1,2},{3,4}};
   constant Real b[2,2]={{5,6},{7,8}};
   Real c[2,2];
@@ -24,13 +25,13 @@ equation
 end ExternalFunction3;
 
 // Result:
-// function addmatrices
+// function ExternalFunction3.addmatrices
 // input Real a;
 // input Real b;
 // output Real c;
 // 
 // external "C";
-// end addmatrices;
+// end ExternalFunction3.addmatrices;
 // 
 // fclass ExternalFunction3
 // constant Real a[1,1] = 1.0;

@@ -20,6 +20,7 @@ val(y,1.25);
 val(x,1.75);
 val(y,1.75);
 readFile("output.log"); // Check that output log is emtpy
+
 // Result:
 // true
 // record SimulationResult
@@ -35,3 +36,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 2.0
 // 1.0
 // ""
+// endResult
