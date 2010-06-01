@@ -9,15 +9,12 @@ loadFile("Main.mo");
 loadFile("ParseOMC.mo");
 loadFile("Input.mo");
 i:=Main.main();
-print("
-");
 // Result:
+// true
+// true
+// true
+// true
 // [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
 // 3628800
-// true
-// true
-// true
-// true
 // 0
-// 
 // endResult

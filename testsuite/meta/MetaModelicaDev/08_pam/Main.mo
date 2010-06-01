@@ -12,6 +12,7 @@ algorithm
   print("[Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]\n"); 
   program := Parse.parse();
   _ := Pam.evalStmt({}, program);
+  print("\n");
   out := 0;
 end main;
 end Main;
