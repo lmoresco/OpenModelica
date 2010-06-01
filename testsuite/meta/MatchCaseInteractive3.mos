@@ -12,7 +12,6 @@ print("
 ");
 
 // Result:
-// ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
 // true
 // record MatchCaseInteractive3.REC1
 //     x = 3
@@ -20,6 +19,7 @@ print("
 // record MatchCaseInteractive3.REC1
 //     x = 3
 // end MatchCaseInteractive3.REC1;
+// ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
 // 
 // 
 // endResult

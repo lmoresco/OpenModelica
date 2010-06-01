@@ -23,17 +23,18 @@ i:=BuiltinMisc.myIf(false, 0, 1385);
 i:=BuiltinMisc.myIfOpt(false, 1385);
 i:=BuiltinMisc.myIfOpt(true, 1385);
 
+
 // Result:
-// abc
-// def
 // true
 // 0.0
 // 0
 // 1
 // 2
+// abc
 // 
 // 3
 // 4
+// def
 // 
 // 5
 // 1547
@@ -41,4 +42,3 @@ i:=BuiltinMisc.myIfOpt(true, 1385);
 // NONE()
 // SOME(1385)
 // endResult
-

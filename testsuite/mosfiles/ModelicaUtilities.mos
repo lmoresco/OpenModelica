@@ -11,9 +11,9 @@ simulate(ModelicaUtilities);
 readFile("output.log");
 
 // Result:
+// true
 // abc 123 was normal - this is formatted abc 123
 // abc 123 was error - this is formatted error abc 123
-// true
 // "OK
 // "
 // record SimulationResult
