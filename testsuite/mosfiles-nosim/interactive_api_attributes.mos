@@ -49,7 +49,10 @@ list(A);                                                                        
 // Ok
 // ""
 // {{Real,x,"", "public", true, true, false, true, "constant", "outer", "output",{}}}
-// ""
+// "Warning: No corresponding 'inner' declaration found for component x declared as 'outer '.
+// 	Please declare an 'inner' component with the same name in the top scope.
+// 	Continuing flattening by only considering the 'outer' component declaration.
+// "
 // Ok
 // ""
 // {{Real,x,"", "public", true, false, false, false, "discrete", "inner", "unspecified",{}}}
