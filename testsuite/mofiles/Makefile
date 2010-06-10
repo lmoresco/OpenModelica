@@ -175,6 +175,9 @@ Delay.mo \
 DependsMutual.mo \
 DependsRecursive.mo \
 Derivative1.mo \
+DerConstant1.mo \
+DerConstant2.mo \
+DerConstant3.mo \
 DiagonalBlock.mo \
 Discrete1.mo \
 Discrete2.mo \
