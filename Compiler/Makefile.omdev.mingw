@@ -158,8 +158,9 @@ else
 simcode:
 	make -C susan_codegen/SimCode/
 endif
+$(SUSANMO): simcode
 
-.depend: simcode
+.depend: $(ALLMO)
 	-$(RM) .depend
 	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 
