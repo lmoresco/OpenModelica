@@ -31,7 +31,8 @@ system("rm -rf Init3.* Init3_* output.log");
 // end SimulationResult;
 // 5.0
 // 5.0
-// "Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: y, x
+// "Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: x
+// Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: y
 // "
 // ""
 // 0
@@ -48,7 +49,8 @@ system("rm -rf Init3.* Init3_* output.log");
 // end SimulationResult;
 // 3.99999999728413
 // 4.49999999960388
-// "Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: y, x
+// "Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: x
+// Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: y
 // "
 // "Error in initialization. System of initial equations are not consistent.
 // (Least Square function value is 2.5)

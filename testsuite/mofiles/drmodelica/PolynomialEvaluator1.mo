@@ -54,7 +54,7 @@ end PositionalCall;
 //   sum := 0.0;
 //   xpower := 1.0;
 //   for i in 1:size(A,1) loop
-//     sum := sum + A<asub>[i] * xpower;
+//     sum := sum + A[i] * xpower;
 //     xpower := xpower * x;
 //   end for;
 // end PolynomialEvaluator1;

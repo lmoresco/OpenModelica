@@ -75,7 +75,7 @@ end FunctionEval9;
 // output Real[4] b;
 // algorithm
 //   for i in 1:3 loop
-//     b[i] := 2.0 * a<asub>[i];
+//     b[i] := 2.0 * a[i];
 //   end for;
 //   b[4] := 3.0;
 // end test2;
@@ -107,7 +107,7 @@ end FunctionEval9;
 // output Real[4] b;
 // algorithm
 //   for i in 1:3 loop
-//     b[i] := 2.0 * a<asub>[i];
+//     b[i] := 2.0 * a[i];
 //   end for;
 //   b[4] := 3.0;
 // end test2;

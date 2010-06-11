@@ -53,11 +53,11 @@ simulate(Alg4);
 // 0
 // record SimulationResult
 //     resultFile = "Simulation failed.
-// Error: Internal error Inverse Algorithm needs to be solved for in   $x := 1.0 + $y;
+// Error: Internal error Inverse Algorithm needs to be solved for in   x := 1.0 + y;
 // . This is not implemented yet.
 // 
-// Error: Internal error generate_zero_crossing failed
-// Error: Internal error Generation of simulation code  failed
+// Error: Internal error createEquations failed
+// Error: Internal error Generation of simulation using code using templates failed
 // "
 // end SimulationResult;
 // endResult

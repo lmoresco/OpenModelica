@@ -24,7 +24,7 @@ end InOutArray2;
 // algorithm
 //   outVal := "";
 //   for i in 1:size(inVal,1) loop
-//     outVal := outVal + inVal<asub>[i];
+//     outVal := outVal + inVal[i];
 //   end for;
 // end strCombine;
 // 

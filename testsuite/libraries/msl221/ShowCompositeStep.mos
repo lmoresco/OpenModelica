@@ -16,7 +16,7 @@ getErrorString();
 // algorithm
 //   result := true;
 //   for i in 1:size(b,1) loop
-//     result := result AND b<asub>[i];
+//     result := result AND b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.allTrue;
 // 
@@ -26,7 +26,7 @@ getErrorString();
 // algorithm
 //   result := false;
 //   for i in 1:size(b,1) loop
-//     result := result OR b<asub>[i];
+//     result := result OR b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
 // 

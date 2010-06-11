@@ -27,7 +27,7 @@ algorithm
 	for i in 1:3 loop
 		for j in 1:3 loop
 			sum2[i + j] := v1[i] + v2[j];
-			sum3[i,j] := v2[i] + v1[j];
+			sum3[i, j] := v2[i] + v1[j];
 		end for;
 	end for;
 end AlgorithmForInClass;

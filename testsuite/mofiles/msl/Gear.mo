@@ -3639,21 +3639,21 @@ end Gear;
 // algorithm
 //   n := size(table,1);
 //   if n <= 1 then
-//     y := table<asub>[1, icol];
+//     y := table[1, icol];
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table<asub>[i, 1] loop
+//       while i < n AND u >= table[i, 1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
 //     end if;
-//     u1 := table<asub>[i, 1];
-//     u2 := table<asub>[1 + i, 1];
-//     y1 := table<asub>[i, icol];
-//     y2 := table<asub>[1 + i, icol];
+//     u1 := table[i, 1];
+//     u2 := table[1 + i, 1];
+//     y1 := table[i, icol];
+//     y2 := table[1 + i, icol];
 //     assert( u2 > u1, "Table index must be increasing");
 //     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;
@@ -3921,21 +3921,21 @@ end Gear;
 // algorithm
 //   n := size(table,1);
 //   if n <= 1 then
-//     y := table<asub>[1, icol];
+//     y := table[1, icol];
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table<asub>[i, 1] loop
+//       while i < n AND u >= table[i, 1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
 //     end if;
-//     u1 := table<asub>[i, 1];
-//     u2 := table<asub>[1 + i, 1];
-//     y1 := table<asub>[i, icol];
-//     y2 := table<asub>[1 + i, icol];
+//     u1 := table[i, 1];
+//     u2 := table[1 + i, 1];
+//     y1 := table[i, icol];
+//     y2 := table[1 + i, icol];
 //     assert( u2 > u1, "Table index must be increasing");
 //     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;

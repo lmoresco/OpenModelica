@@ -63,7 +63,7 @@ end InOutArray;
 // algorithm
 //   for i in 1:3 loop
 //     for j in 1:2 loop
-//       outVal[i,j] := 2.0 + inVal<asub>[i, j];
+//       outVal[i, j] := 2.0 + inVal[i, j];
 //     end for;
 //   end for;
 // end addReal32;
@@ -74,7 +74,7 @@ end InOutArray;
 // algorithm
 //   outSum := 0;
 //   for i in 1:size(inVal,1) loop
-//     if inVal<asub>[i] then
+//     if inVal[i] then
 //       outSum := 1 + outSum;
 //     end if;
 //   end for;
@@ -86,7 +86,7 @@ end InOutArray;
 // algorithm
 //   outSum := 0;
 //   for i in 1:size(inVal,1) loop
-//     outSum := outSum + inVal<asub>[i];
+//     outSum := outSum + inVal[i];
 //   end for;
 // end sumInt;
 // 
@@ -96,7 +96,7 @@ end InOutArray;
 // algorithm
 //   outSum := 0.0;
 //   for i in 1:size(inVal,1) loop
-//     outSum := outSum + inVal<asub>[i];
+//     outSum := outSum + inVal[i];
 //   end for;
 // end sumReal;
 // 

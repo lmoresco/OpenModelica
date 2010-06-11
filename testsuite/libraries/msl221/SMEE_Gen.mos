@@ -19,7 +19,7 @@ getErrorString();
 // algorithm
 //   y := {0.0,0.0};
 //   for k in 1:3 loop
-//     y := {y[1] + x<asub>[k] * 0.666666666666667 * cos(2.0943951023932 * /*REAL*/(k - 1)),y[2] + x<asub>[k] * 0.666666666666667 * sin(2.0943951023932 * /*REAL*/(k - 1))};
+//     y := {y[1] + x[k] * 0.666666666666667 * cos(2.0943951023932 * /*REAL*/(k - 1)),y[2] + x[k] * 0.666666666666667 * sin(2.0943951023932 * /*REAL*/(k - 1))};
 //   end for;
 //   y0 := 0.333333333333333 * (x[1] + x[2] + x[3]);
 // end Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor;

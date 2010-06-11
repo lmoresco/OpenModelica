@@ -55,22 +55,22 @@ getErrorString();
 //     b := offset;
 //   elseif nrow < 2 then
 //     a := 0.0;
-//     b := offset + table<asub>[1, columns];
+//     b := offset + table[1, columns];
 //   else
-//     while next < nrow AND tp >= table<asub>[next, 1] loop
+//     while next < nrow AND tp >= table[next, 1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
-//       nextEvent := startTime + table<asub>[next, 1];
+//       nextEvent := startTime + table[next, 1];
 //     end if;
 //     next0 := next - 1;
-//     dt := table<asub>[next, 1] - table<asub>[next0, 1];
-//     if dt <= TimeEps * abs(table<asub>[next, 1]) then
+//     dt := table[next, 1] - table[next0, 1];
+//     if dt <= TimeEps * abs(table[next, 1]) then
 //       a := 0.0;
-//       b := offset + table<asub>[next, columns];
+//       b := offset + table[next, columns];
 //     else
-//       a := (table<asub>[next, columns] - table<asub>[next0, columns]) / dt;
-//       b := (offset + table<asub>[next0, columns]) - a * table<asub>[next0, 1];
+//       a := (table[next, columns] - table[next0, columns]) / dt;
+//       b := (offset + table[next0, columns]) - a * table[next0, 1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;

@@ -35,7 +35,7 @@ end PolynomialEvaluator2;
 //   y := 0.0;
 //   xpower := 1.0;
 //   for i in 1:size(a,1) loop
-//     y := y + a<asub>[i] * xpower;
+//     y := y + a[i] * xpower;
 //     xpower := xpower * x;
 //   end for;
 // end polyeval;

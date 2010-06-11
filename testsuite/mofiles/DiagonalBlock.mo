@@ -39,7 +39,7 @@ end DiagonalBlock;
 // output Real Ydia[2,1];
 // algorithm
 //   for k in 1:3 + offset loop
-//     Ydia[k,1] := Xaux[k + abs(offset), k];
+//     Ydia[k, 1] := Xaux[k + abs(offset), k];
 //   end for;
 // end DiagonalBlock;
 // Error: No constant value for variable offset in scope DiagonalBlock.

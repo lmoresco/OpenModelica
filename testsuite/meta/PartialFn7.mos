@@ -4,7 +4,7 @@
 //
 // Partial Function Testing
 //
-loadFile("PartialFn7.mo");
+loadFile("/home/per/workspace/modelica/testsuite/meta/PartialFn7.mo");
 simulate(PartialFn7);
 val(tr, 0.0);
 
