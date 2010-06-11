@@ -112,9 +112,8 @@ $(exprparsegen): exprparse.stamp
 	$(MAKE) exprparse.stamp; \
 	fi
 
-$(PARSE_HOME)/src/modelica_parserTokenTypes.txt: parser flat_parser
-modelica_parserTokenTypes.txt : $(PARSE_HOME)/src/modelica_parserTokenTypes.txt
-	cp $< $@
+modelica_parserTokenTypes.txt : parser flat_parser
+	cp -up $(PARSE_HOME)/src/modelica_parserTokenTypes.txt $@
 
 clean:
 	-rm -f *.o *~ core *.core walker absyn_builder.a
