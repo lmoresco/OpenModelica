@@ -89,8 +89,9 @@ $(PARSER_OBJS) : parser flat_parser
 walker.stamp: walker.g modelica_parserTokenTypes.txt
 	@rm -f walker.tmp
 	@touch walker.tmp
+	@touch $<
 	$(ANTLR) $(ANTLRFLAGS) $<
-	touch $(walkergen)
+	@touch $(walkergen)
 	@mv -f walker.tmp $@
 $(walkergen): walker.stamp
 	## Recover from the removal of $@
@@ -100,11 +101,12 @@ $(walkergen): walker.stamp
 	fi
 
 exprparse.stamp: expression_parser.g modelica_parserTokenTypes.txt
-	rm -f exprparse.tmp
-	touch exprparse.tmp
+	@rm -f exprparse.tmp
+	@touch exprparse.tmp
+	@touch $<
 	$(ANTLR) $(ANTLRFLAGS) $<
-	touch $(exprparsegen)
-	mv -f exprparse.tmp $@
+	@touch $(exprparsegen)
+	@mv -f exprparse.tmp $@
 $(exprparsegen): exprparse.stamp
 	## Recover from the removal of $@
 	@if test -f $@; then :; else \

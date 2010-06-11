@@ -65,8 +65,9 @@ libflat_modelica_parser.a: $(OBJS)
 lexer.stamp: flat_modelica_lexer.g
 	@rm -f lexer.tmp
 	@touch lexer.tmp
+	@touch $<
 	$(ANTLR) $(ANTLRFLAGS) $<
-	touch $(lexergen)
+	@touch -c $(lexergen)
 	@mv -f lexer.tmp $@
 $(lexergen): lexer.stamp
 	## Recover from the removal of $@
@@ -76,11 +77,12 @@ $(lexergen): lexer.stamp
 	fi
 
 parser.stamp: flat_modelica_parser.g $(lexergen)
-	rm -f parser.tmp
-	touch parser.tmp
+	@rm -f parser.tmp
+	@touch parser.tmp
+	@touch $<
 	$(ANTLR) $(ANTLRFLAGS) $<
-	touch $(parsergen)
-	mv -f parser.tmp $@
+	@touch -c $(parsergen)
+	@mv -f parser.tmp $@
 $(parsergen): parser.stamp
 	## Recover from the removal of $@
 	@if test -f $@; then :; else \
@@ -101,7 +103,7 @@ test: test.cpp libflat_modelica_parser.a parse_tree_dumper.o
 depend: $(DFILES)
 
 clean:
-	-rm -f *.o *~ core *.core libflat_modelica_parser.a
+	-rm -f *.o *~ core *.core libflat_modelica_parser.a  $(lexergen) $(parsergen) *.stamp
 
 reallyclean: clean
 	-rm -f $(lexergen) $(parsergen)
