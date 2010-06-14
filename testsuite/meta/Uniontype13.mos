@@ -4,7 +4,7 @@
 //
 // Uniontype Testing
 //
-loadFile("/home/per/workspace/modelica/testsuite/meta/Uniontype13.mo");
+loadFile("Uniontype13.mo");
 a:=Uniontype13.REC1(3);
 f:=Uniontype13.test(Uniontype13.REC1(3));
 f:=Uniontype13.foo(a);

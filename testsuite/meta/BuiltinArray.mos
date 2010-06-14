@@ -5,7 +5,7 @@
 // Builtin function testing
 //
 
-loadFile("/home/per/workspace/modelica/testsuite/meta/BuiltinArray.mo");
+loadFile("BuiltinArray.mo");
 BuiltinArray.test(3,2,1);
 
 // Result:
