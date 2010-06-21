@@ -5857,7 +5857,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses has 3095 equation(s) and 3095 variable(s).
-// 1818 of these are trivial equation(s).
+// 1874 of these are trivial equation(s).
 // "
 // ""
 // 0

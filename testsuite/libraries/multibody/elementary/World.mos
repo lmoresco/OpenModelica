@@ -1533,7 +1533,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.World has 1054 equation(s) and 1054 variable(s).
-// 575 of these are trivial equation(s).
+// 590 of these are trivial equation(s).
 // "
 // ""
 // 0

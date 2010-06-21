@@ -4198,7 +4198,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem has 2284 equation(s) and 2292 variable(s).
-// 1375 of these are trivial equation(s).
+// 1401 of these are trivial equation(s).
 // "
 // ""
 // 0

@@ -3339,7 +3339,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper has 1845 equation(s) and 1845 variable(s).
-// 1095 of these are trivial equation(s).
+// 1116 of these are trivial equation(s).
 // "
 // ""
 // 0

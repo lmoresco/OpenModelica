@@ -3375,7 +3375,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum has 1772 equation(s) and 1772 variable(s).
-// 1042 of these are trivial equation(s).
+// 1061 of these are trivial equation(s).
 // "
 // ""
 // 0
