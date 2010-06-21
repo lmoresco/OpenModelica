@@ -104,7 +104,7 @@ exprparse.stamp: expression_parser.g modelica_parserTokenTypes.txt
 	@rm -f exprparse.tmp
 	@touch exprparse.tmp
 	@touch $<
-	$(ANTLR) $(ANTLRFLAGS) $<
+	$(ANTLR) -glib $(PARSE_HOME)/src/modelica_parser.g $(ANTLRFLAGS) $<
 	@touch $(exprparsegen)
 	@mv -f exprparse.tmp $@
 $(exprparsegen): exprparse.stamp
