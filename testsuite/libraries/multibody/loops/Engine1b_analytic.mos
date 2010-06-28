@@ -1659,7 +1659,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Real Piston.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Piston.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Piston.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-//   parameter Real Piston.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   parameter Real Piston.R.T[3,1] = -0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Piston.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Piston.R.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Piston.R.w[1](quantity = "AngularVelocity", unit = "rad/s") = 0.0 "Absolute angular velocity of local frame, resolved in local frame";
@@ -2023,7 +2023,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Real Rod2.R.T[1,2] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Rod2.R.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Rod2.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
-//   parameter Real Rod2.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   parameter Real Rod2.R.T[2,2] = -0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Rod2.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Rod2.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Rod2.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
@@ -2544,7 +2544,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Real Crank4.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank4.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank4.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-//   parameter Real Crank4.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   parameter Real Crank4.R.T[3,1] = -0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank4.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank4.R.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank4.R.w[1](quantity = "AngularVelocity", unit = "rad/s") = 0.0 "Absolute angular velocity of local frame, resolved in local frame";
@@ -3638,7 +3638,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Real Crank2.R.T[1,2] = 1.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank2.R.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank2.R.T[2,1] = 1.0 "Transformation matrix from world frame to local frame";
-//   parameter Real Crank2.R.T[2,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   parameter Real Crank2.R.T[2,2] = -0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank2.R.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank2.R.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
 //   parameter Real Crank2.R.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
@@ -7136,7 +7136,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic has 3329 equation(s) and 3326 variable(s).
-// 2199 of these are trivial equation(s).
+// 2217 of these are trivial equation(s).
 // "
 // ""
 // 0

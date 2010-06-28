@@ -7614,7 +7614,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2 has 4066 equation(s) and 4074 variable(s).
-// 2553 of these are trivial equation(s).
+// 2571 of these are trivial equation(s).
 // "
 // ""
 // 0

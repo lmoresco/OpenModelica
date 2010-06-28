@@ -9388,7 +9388,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic has 5043 equation(s) and 5034 variable(s).
-// 3218 of these are trivial equation(s).
+// 3227 of these are trivial equation(s).
 // "
 // ""
 // 0

@@ -3298,7 +3298,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody has 1762 equation(s) and 1770 variable(s).
-// 1100 of these are trivial equation(s).
+// 1103 of these are trivial equation(s).
 // "
 // ""
 // 0

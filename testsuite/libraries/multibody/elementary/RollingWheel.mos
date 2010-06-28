@@ -2603,7 +2603,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel has 1501 equation(s) and 1501 variable(s).
-// 883 of these are trivial equation(s).
+// 886 of these are trivial equation(s).
 // "
 // ""
 // 0

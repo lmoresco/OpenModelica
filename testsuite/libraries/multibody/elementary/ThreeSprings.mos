@@ -3675,7 +3675,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings has 2007 equation(s) and 2015 variable(s).
-// 1261 of these are trivial equation(s).
+// 1264 of these are trivial equation(s).
 // "
 // ""
 // 0

@@ -4187,7 +4187,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque has 2337 equation(s) and 2337 variable(s).
-// 1436 of these are trivial equation(s).
+// 1439 of these are trivial equation(s).
 // "
 // ""
 // 0
