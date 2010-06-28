@@ -1,7 +1,9 @@
 TEST = ../rtest -v
 
 TESTFILES = \
-ABCDsystem.mos \
+ABCDsystem.plt.mos \
+ABCDsystem.csv.mos \
+ABCDsystem.empty.mos \
 AlgorithmCondAssign1.mos \
 AlgorithmForInClass.mos \
 AlgorithmSection.mos \

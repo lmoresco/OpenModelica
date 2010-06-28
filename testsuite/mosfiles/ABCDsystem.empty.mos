@@ -1,0 +1,20 @@
+// name:     ABCDsystem.csv
+// keywords: array
+// status: correct
+// teardown_command: rm -rf ABCDsystem_* ABCDsystem ABCDsystem.exe ABCDsystem.cpp ABCDsystem.makefile ABCDsystem.libs ABCDsystem.log output.log
+// 
+// Using empty arrays
+// Drmodelica: 7.9 Empty Arrays (p. 231)
+//
+loadFile("ABCDsystem.mo");
+simulate(ABCDsystem,startTime=0.0, stopTime=1.0, method="euler", numberOfIntervals=2, tolerance=1e-4, outputFormat="empty"); // 2 intervals == 3 values
+readFile("ABCDsystem_res.empty");
+readFile("output.log"); // Check that output log is emtpy
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "ABCDsystem_res.empty"
+// end SimulationResult;
+// "No such file"
+// ""
+// endResult
