@@ -55,14 +55,18 @@ sub setbaselineone
     my $cflags = $info{"cflags"};
     my $teardown_command = $info{"teardown_command"};
     
+    $log = "$tmpdir/log-$f";
+    system "rm -f $log";
     if ($setup_command) {
-      system $setup_command;
+      if ( system "$setup_command" ) {
+        print "== Failed to set baseline for $f (system $setup_command failed)";
+        return 1;
+      }
     }
     if (!$cflags) {
       $cflags = "";
     }
-    $log = "$tmpdir/log-$f";
-    system "$OPENMODELICAHOME/bin/omc $omcflags $cflags $f >$log 2>&1";
+    system "$OPENMODELICAHOME/bin/omc $omcflags $cflags $f >>$log 2>&1";
     if ($teardown_command) {
       system $teardown_command;
     }
@@ -108,16 +112,21 @@ sub runone
     my $teardown_command = $info{"teardown_command"};
     my $start_t = time;
     
+    $log = "$tmpdir/log-$f";
+    system "rm -f $log";
     if ($setup_command) {
-      system $setup_command;
+      if ( system "$setup_command >>$log 2>&1" ) {
+        print " setup_command failed";
+        return 1;
+      }
     }
     if (!$cflags) {
       $cflags = "";
     }
-    system "$OPENMODELICAHOME/bin/omc $omcflags $cflags $f >$log 2>&1";
+    system "$OPENMODELICAHOME/bin/omc $omcflags $cflags $f >>$log 2>&1";
     $retval = $?;
     if ($teardown_command) {
-      system $teardown_command;
+      system "$teardown_command >>$log 2>&1";
     }
     my $end_t = time-$start_t;
 
