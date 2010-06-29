@@ -25,7 +25,7 @@ DoubleWhenConflict.mos DoubleWhenSequential.mos \
 EqualityEquations.mos \
 ExtendsBasic.mos  \
 ExternalLibraries.mos \
-ExtObj.mos \
+ExtObj.mos ExtObjStringParam.mos \
 FiveForEquations.mos \
 FlatTank.mos \
 ForIterator1.mos ForIterator2.mos \
