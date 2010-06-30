@@ -159,7 +159,7 @@ package Philosopher
   end MutexPortIn;
 
   model Mutex "Mutual exclusion of shared resource"
-    constant Integer n=5 "The number of connected ports";
+    parameter Integer n=5 "The number of connected ports";
     MutexPortIn[n] port;
   protected 
     Boolean request[n];
@@ -488,7 +488,7 @@ end Philosopher_DiningTable;
 // protected Boolean phil[5].timeToChangeState;
 // protected Boolean phil[5].timeToGetHungry;
 // protected Boolean phil[5].doneEating;
-// constant Integer mutex.n = n "The number of connected ports";
+// parameter Integer mutex.n = n "The number of connected ports";
 // input Boolean mutex.port[1].request "Set by application to request access";
 // input Boolean mutex.port[1].release "Set by application to release access";
 // output Boolean mutex.port[1].ok "Signal that ownership was granted";

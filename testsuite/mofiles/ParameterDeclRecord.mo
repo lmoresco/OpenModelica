@@ -21,4 +21,5 @@ end ParameterDeclRecord;
 // equation
 //   pr.r = 1.0;
 // end ParameterDeclRecord;
+// Warning: Parameter pr.r has no value, and is fixed during initialization (fixed=true)
 // endResult
