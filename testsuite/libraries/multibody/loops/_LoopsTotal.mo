@@ -6237,6 +6237,15 @@ degree of freedom is lost.
           final unit="J/(kg.K)");
   end SIunits;
 end Modelica;
+
+model BigEngineModel  
+  Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 ev6[100];
+  Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic ev6analytic[100];
+  
+  Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 ev6_[100];
+  Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic ev6analytic_[100];
+end BigEngineModel;
+
 package Modelica_Mechanics_MultiBody_Examples_Loops
  extends Modelica.Mechanics.MultiBody.Examples.Loops;
   annotation(experiment(
