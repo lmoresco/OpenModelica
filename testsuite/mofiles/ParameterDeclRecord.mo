@@ -17,9 +17,10 @@ end ParameterDeclRecord;
 
 // Result:
 // fclass ParameterDeclRecord
-// parameter Real pr.r;
+//   parameter Real pr.r;
 // equation
 //   pr.r = 1.0;
 // end ParameterDeclRecord;
 // Warning: Parameter pr.r has no value, and is fixed during initialization (fixed=true)
+// 
 // endResult

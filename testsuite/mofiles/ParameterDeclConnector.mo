@@ -17,9 +17,10 @@ end ParameterDeclConnector;
 
 // Result:
 // fclass ParameterDeclConnector
-// parameter Real pc.r;
+//   parameter Real pc.r;
 // equation
 //   pc.r = 1.0;
 // end ParameterDeclConnector;
 // Warning: Parameter pc.r has no value, and is fixed during initialization (fixed=true)
+// 
 // endResult
