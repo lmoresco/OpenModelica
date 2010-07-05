@@ -30,6 +30,7 @@ function TestFn
   input Real inReal;
   output Real outReal;
 algorithm
+  outReal := 0;
   for i in 1:10 loop
     outReal := outReal + CallerFn(inReal, function FullFn(1.5,7.5));
   end for;
