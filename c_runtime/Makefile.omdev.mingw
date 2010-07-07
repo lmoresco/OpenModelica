@@ -11,7 +11,7 @@ builddir_bin=$(top_builddir)/build/bin
 builddir_lib=$(top_builddir)/build/lib/omc
 builddir_inc=$(top_builddir)/build/include/omc
 
-FPUFLAGS = -msse2 -mfpmath=sse
+CFLAGS = -O3 -msse2 -mfpmath=sse
 
 LIBF2CMAKEFILE = makefile.mingw
 JAVAMAKEFILE = Makefile.omdev.mingw
