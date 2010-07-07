@@ -178,8 +178,8 @@ sub runone
     print "equation mismatch [time:$end_t]\n";
     ## make a newline
     system "echo '' >> $log";
-    system "echo Equation mismatch: diff says '(expected < | > got)': >> $log";
-    system "diff -w $expected $got >> $log";
+    system "echo Equation mismatch: diff says: >> $log";
+    system "diff -U 5 -w $expected $got >> $log";
 
     ## make a newline
     system "echo '' >> $log";
