@@ -95,7 +95,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T
 //   input Real[3, 3] T "Transformation matrix to transform vector from frame 1 to frame 2 (v2=T*v1)";
-//   input Real[4] Q_guess = Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation() "Guess value for Q (there are 2 solutions; the one close to Q_guess is used";
+//   input Real[4] Q_guess = {0.0,0.0,0.0,1.0} "Guess value for Q (there are 2 solutions; the one close to Q_guess is used";
 //   output Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2 (Q and -Q have same transformation matrix)";
 //   protected Real paux;
 //   protected Real paux4;
@@ -297,7 +297,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // function Modelica.Mechanics.MultiBody.Frames.nullRotation "Inline before index reduction"
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object such that frame 1 and frame 2 are identical";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{0.0,0.0,0.0});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[1.0,0.0,0.0;0.0,1.0,0.0;0.0,0.0,1.0],{0.0,0.0,0.0});
 // end Modelica.Mechanics.MultiBody.Frames.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.planarRotation "Inline before index reduction"
@@ -344,7 +344,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // function Modelica.Mechanics.MultiBody.Frames.to_Q "Inline before index reduction"
 //   input Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
-//   input Real[4] Q_guess = Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation() "Guess value for output Q (there are 2 solutions; the one closer to Q_guess is used";
+//   input Real[4] Q_guess = {0.0,0.0,0.0,1.0} "Guess value for output Q (there are 2 solutions; the one closer to Q_guess is used";
 //   output Real[4] Q "Quaternions orientation object to rotate frame 1 into frame 2";
 // algorithm
 //   Q := Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T(<matrix>[R.T[1,1],R.T[1,2],R.T[1,3];R.T[2,1],R.T[2,2],R.T[2,3];R.T[3,1],R.T[3,2],R.T[3,3]],{Q_guess[1],Q_guess[2],Q_guess[3],Q_guess[4]});
@@ -1625,10 +1625,10 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   Real body.body.g_0[1](quantity = "Acceleration", unit = "m/s2") "Gravity acceleration resolved in world frame";
 //   Real body.body.g_0[2](quantity = "Acceleration", unit = "m/s2") "Gravity acceleration resolved in world frame";
 //   Real body.body.g_0[3](quantity = "Acceleration", unit = "m/s2") "Gravity acceleration resolved in world frame";
-//   protected parameter Real body.body.Q_start[1] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,{0.0,0.0,0.0,1.0})[1] "Quaternion orientation object from world frame to frame_a at initial time";
-//   protected parameter Real body.body.Q_start[2] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,{0.0,0.0,0.0,1.0})[2] "Quaternion orientation object from world frame to frame_a at initial time";
-//   protected parameter Real body.body.Q_start[3] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,{0.0,0.0,0.0,1.0})[3] "Quaternion orientation object from world frame to frame_a at initial time";
-//   protected parameter Real body.body.Q_start[4] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,{0.0,0.0,0.0,1.0})[4] "Quaternion orientation object from world frame to frame_a at initial time";
+//   protected parameter Real body.body.Q_start[1] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[1] "Quaternion orientation object from world frame to frame_a at initial time";
+//   protected parameter Real body.body.Q_start[2] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[2] "Quaternion orientation object from world frame to frame_a at initial time";
+//   protected parameter Real body.body.Q_start[3] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[3] "Quaternion orientation object from world frame to frame_a at initial time";
+//   protected parameter Real body.body.Q_start[4] = Modelica.Mechanics.MultiBody.Frames.to_Q(body.body.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[4] "Quaternion orientation object from world frame to frame_a at initial time";
 //   protected Real body.body.Q[1](start = body.body.Q_start[1], StateSelect = StateSelect.avoid) "Quaternion orientation object from world frame to frame_a (dummy value, if quaternions are not used as states)";
 //   protected Real body.body.Q[2](start = body.body.Q_start[2], StateSelect = StateSelect.avoid) "Quaternion orientation object from world frame to frame_a (dummy value, if quaternions are not used as states)";
 //   protected Real body.body.Q[3](start = body.body.Q_start[3], StateSelect = StateSelect.avoid) "Quaternion orientation object from world frame to frame_a (dummy value, if quaternions are not used as states)";

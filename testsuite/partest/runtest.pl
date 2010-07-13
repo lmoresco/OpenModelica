@@ -48,6 +48,11 @@ sub lib_to_header {
 sub make_test_specific_links {
 	given($test) {
 		when ("ExtObj.mos") { make_link("testTables.txt"); }
+    when ("ExtObjStringParam.mos") {
+      make_link("sampledata.xml");
+      make_link("ExtObjStringParam.ext.c");
+      make_link("ExtObjStringParam.ext.h");
+    }
 		when ("ModelicaUtilities.mos") { 
 			make_link("ModelicaUtilities.myExtFunction.c"); 
 		}

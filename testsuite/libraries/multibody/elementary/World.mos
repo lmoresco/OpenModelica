@@ -70,7 +70,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // function Modelica.Mechanics.MultiBody.Frames.nullRotation "Inline before index reduction"
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object such that frame 1 and frame 2 are identical";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{0.0,0.0,0.0});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[1.0,0.0,0.0;0.0,1.0,0.0;0.0,0.0,1.0],{0.0,0.0,0.0});
 // end Modelica.Mechanics.MultiBody.Frames.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial "Inline before index reduction"

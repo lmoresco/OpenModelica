@@ -39,9 +39,9 @@ end Vectorizable1;
 // Real b;
 // Real c;
 // equation
-//   x[1] = 2.0 + foo(a);
-//   x[2] = 3.0 + foo(b);
-//   x[3] = 4.0 + foo(c);
+//   x[1] = foo(a) + foo(1.0);
+//   x[2] = foo(b) + foo(2.0);
+//   x[3] = foo(c) + foo(3.0);
 //   der(s[1]) = -1.0;
 //   der(s[2]) = -1.0;
 // end Vectorizable1;

@@ -34,8 +34,8 @@ end ForNested;
 // Real rmatrix[4,3];
 // Real rmatrix[4,4];
 // algorithm
-//   for i in {1,2,3,4} loop
-//     for j in {1,2,3,4} loop
+//   for i in 1:4 loop
+//     for j in 1:4 loop
 //       rmatrix[i, j] := Real(i * j);
 //     end for;
 //   end for;

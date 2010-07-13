@@ -103,13 +103,13 @@ end X;
 //   x = Real(if frame_r_out == frame_r_in then 0 else 1);
 //   f = enum.a;
 // algorithm
-//   for e in {1,2} loop
+//   for e in 1:2 loop
 //     enumtest.x[e] := 0.0;
 //   end for;
-//   for e in {1,2} loop
+//   for e in 1:2 loop
 //     enumtest.xx[e] := 0.0;
 //   end for;
-//   for e in {1,2} loop
+//   for e in DigitalCurrentChoices.zero:DigitalCurrentChoices.one loop
 //     enumtest.xxx[e] := 0.0;
 //   end for;
 // end X;

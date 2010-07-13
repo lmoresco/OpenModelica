@@ -1978,7 +1978,7 @@ getErrorString();
 // assert(controller.limiter.uMax >= controller.limiter.uMin,"Limiter: Limits must be consistent. However, uMax (=" + String(controller.limiter.uMax,0,true,6) + ") < uMin (=" + String(controller.limiter.uMin,0,true,6) + ")");
 //   if initial() AND  NOT controller.limiter.limitsAtInit then
 //   controller.limiter.y = controller.limiter.u;
-// assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.\nHowever, the result is that the input u is not within the required limits:\n  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
+// assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.\n" + "However, the result is that the input u is not within the required limits:\n" + "  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 //   else
 //   controller.limiter.y = if controller.limiter.u > controller.limiter.uMax then controller.limiter.uMax else if controller.limiter.u < controller.limiter.uMin then controller.limiter.uMin else controller.limiter.u;
 //   end if;

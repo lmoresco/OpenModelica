@@ -26,7 +26,7 @@ end Constant11;
 // function Constant11.abc
 // output Real r;
 // algorithm
-//   r := Constant11.def();
+//   r := 1.0;
 // end Constant11.abc;
 // 
 // function Constant11.def

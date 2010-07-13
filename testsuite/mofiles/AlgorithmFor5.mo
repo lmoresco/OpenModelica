@@ -20,7 +20,7 @@ end AlgorithmFor5;
 // Real a[3];
 // Real a[4];
 // algorithm
-//   for i in {1,2,3,4} loop
+//   for i in 1:4 loop
 //     a[i] := Real(i);
 //   end for;
 // end AlgorithmFor5;

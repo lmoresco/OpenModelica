@@ -58,7 +58,7 @@ end Break;
 //     end if;
 //     i := 1 + i;
 //   end while;
-//   for i in {1,2,3} loop
+//   for i in 1:3 loop
 //     if i > 2 then
 //       x := x - Real(i);
 //     end if;

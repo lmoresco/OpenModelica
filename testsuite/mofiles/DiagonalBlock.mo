@@ -38,10 +38,8 @@ end DiagonalBlock;
 // output Real Ydia[1,1];
 // output Real Ydia[2,1];
 // algorithm
-//   for k in 1:3 + offset loop
+//   for k in 1:max(size({{Xaux[1,1],Xaux[1,2],Xaux[1,3]},{Xaux[2,1],Xaux[2,2],Xaux[2,3]},{Xaux[3,1],Xaux[3,2],Xaux[3,3]}})) + offset loop
 //     Ydia[k, 1] := Xaux[k + abs(offset), k];
 //   end for;
 // end DiagonalBlock;
-// Error: No constant value for variable offset in scope DiagonalBlock.
-// 
 // endResult
