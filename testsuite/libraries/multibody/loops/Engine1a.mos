@@ -162,7 +162,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along axis e";
 //   output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   T := (<matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0] + ({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}} - <matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0]) * Modelica.Math.cos(angle)) - <matrix>[0.0,-Modelica.Math.sin(angle) * e[3],Modelica.Math.sin(angle) * e[2];Modelica.Math.sin(angle) * e[3],0.0,-Modelica.Math.sin(angle) * e[1];-Modelica.Math.sin(angle) * e[2],Modelica.Math.sin(angle) * e[1],0.0];
+//   T := <matrix>[e[1] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + Modelica.Math.cos(angle) * -e[1] * e[2]) - -Modelica.Math.sin(angle) * e[3],(e[1] * e[3] + Modelica.Math.cos(angle) * -e[1] * e[3]) - Modelica.Math.sin(angle) * e[2];(e[2] * e[1] + Modelica.Math.cos(angle) * -e[2] * e[1]) - Modelica.Math.sin(angle) * e[3],e[2] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + Modelica.Math.cos(angle) * -e[2] * e[3]) - -Modelica.Math.sin(angle) * e[1];(e[3] * e[1] + Modelica.Math.cos(angle) * -e[3] * e[1]) - -Modelica.Math.sin(angle) * e[2],(e[3] * e[2] + Modelica.Math.cos(angle) * -e[3] * e[2]) - Modelica.Math.sin(angle) * e[1],e[3] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[3] ^ 2.0)];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1
@@ -280,7 +280,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   input Real der_angle(quantity = "AngularVelocity", unit = "rad/s") "= der(angle)";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation((<matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0] + ({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}} - <matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0]) * Modelica.Math.cos(angle)) - <matrix>[0.0,-Modelica.Math.sin(angle) * e[3],Modelica.Math.sin(angle) * e[2];Modelica.Math.sin(angle) * e[3],0.0,-Modelica.Math.sin(angle) * e[1];-Modelica.Math.sin(angle) * e[2],Modelica.Math.sin(angle) * e[1],0.0],{der_angle * e[1],der_angle * e[2],der_angle * e[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[e[1] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + Modelica.Math.cos(angle) * -e[1] * e[2]) - -Modelica.Math.sin(angle) * e[3],(e[1] * e[3] + Modelica.Math.cos(angle) * -e[1] * e[3]) - Modelica.Math.sin(angle) * e[2];(e[2] * e[1] + Modelica.Math.cos(angle) * -e[2] * e[1]) - Modelica.Math.sin(angle) * e[3],e[2] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + Modelica.Math.cos(angle) * -e[2] * e[3]) - -Modelica.Math.sin(angle) * e[1];(e[3] * e[1] + Modelica.Math.cos(angle) * -e[3] * e[1]) - -Modelica.Math.sin(angle) * e[2],(e[3] * e[2] + Modelica.Math.cos(angle) * -e[3] * e[2]) - Modelica.Math.sin(angle) * e[1],e[3] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[3] ^ 2.0)],{der_angle * e[1],der_angle * e[2],der_angle * e[3]});
 // end Modelica.Mechanics.MultiBody.Frames.planarRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.planarRotationAngle
@@ -6317,7 +6317,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a has 3032 equation(s) and 3032 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a has 2977 equation(s) and 3032 variable(s).
 // 1930 of these are trivial equation(s).
 // "
 // ""

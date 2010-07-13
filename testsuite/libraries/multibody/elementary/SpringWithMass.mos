@@ -233,7 +233,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along axis e";
 //   output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   T := (<matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0] + ({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}} - <matrix>[e[1] ^ 2.0,e[1] * e[2],e[1] * e[3];e[2] * e[1],e[2] ^ 2.0,e[2] * e[3];e[3] * e[1],e[3] * e[2],e[3] ^ 2.0]) * Modelica.Math.cos(angle)) - <matrix>[0.0,-Modelica.Math.sin(angle) * e[3],Modelica.Math.sin(angle) * e[2];Modelica.Math.sin(angle) * e[3],0.0,-Modelica.Math.sin(angle) * e[1];-Modelica.Math.sin(angle) * e[2],Modelica.Math.sin(angle) * e[1],0.0];
+//   T := <matrix>[e[1] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + Modelica.Math.cos(angle) * -e[1] * e[2]) - -Modelica.Math.sin(angle) * e[3],(e[1] * e[3] + Modelica.Math.cos(angle) * -e[1] * e[3]) - Modelica.Math.sin(angle) * e[2];(e[2] * e[1] + Modelica.Math.cos(angle) * -e[2] * e[1]) - Modelica.Math.sin(angle) * e[3],e[2] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + Modelica.Math.cos(angle) * -e[2] * e[3]) - -Modelica.Math.sin(angle) * e[1];(e[3] * e[1] + Modelica.Math.cos(angle) * -e[3] * e[1]) - -Modelica.Math.sin(angle) * e[2],(e[3] * e[2] + Modelica.Math.cos(angle) * -e[3] * e[2]) - Modelica.Math.sin(angle) * e[1],e[3] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[3] ^ 2.0)];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1 "Inline before index reduction"
@@ -2485,7 +2485,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1366 equation(s) and 1374 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1363 equation(s) and 1374 variable(s).
 // 793 of these are trivial equation(s).
 // "
 // ""
