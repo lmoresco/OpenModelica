@@ -26,3 +26,4 @@ libsendData.a : sendData/sendData.cpp sendData/sendData.h sendData/sendData.pro
 
 omdevinstall:
 	cp omdev_qtdeps/*.a ${builddir_lib}
+	cp ExternalLibraries/mingw/*.a $(builddir_lib)/
