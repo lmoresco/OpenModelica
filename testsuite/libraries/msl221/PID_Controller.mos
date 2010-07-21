@@ -176,13 +176,13 @@ getErrorString();
 // assert(PI.limiter.uMax >= PI.limiter.uMin,"Limiter: Limits must be consistent. However, uMax (=" + String(PI.limiter.uMax,0,true,6) + ") < uMin (=" + String(PI.limiter.uMin,0,true,6) + ")");
 //   if initial() AND  NOT PI.limiter.limitsAtInit then
 //   PI.limiter.y = PI.limiter.u;
-// assert(PI.limiter.u >= PI.limiter.uMin - 0.01 * abs(PI.limiter.uMin) AND PI.limiter.u <= PI.limiter.uMax + 0.01 * abs(PI.limiter.uMax),"Limiter: During initialization the limits have been ignored.\nHowever, the result is that the input u is not within the required limits:\n  u = " + String(PI.limiter.u,0,true,6) + ", uMin = " + String(PI.limiter.uMin,0,true,6) + ", uMax = " + String(PI.limiter.uMax,0,true,6));
+// assert(PI.limiter.u >= PI.limiter.uMin - 0.01 * abs(PI.limiter.uMin) AND PI.limiter.u <= PI.limiter.uMax + 0.01 * abs(PI.limiter.uMax),"Limiter: During initialization the limits have been ignored.\n" + "However, the result is that the input u is not within the required limits:\n" + "  u = " + String(PI.limiter.u,0,true,6) + ", uMin = " + String(PI.limiter.uMin,0,true,6) + ", uMax = " + String(PI.limiter.uMax,0,true,6));
 //   else
 //   PI.limiter.y = if PI.limiter.u > PI.limiter.uMax then PI.limiter.uMax else if PI.limiter.u < PI.limiter.uMin then PI.limiter.uMin else PI.limiter.u;
 //   end if;
 //   PI.Dzero.y = PI.Dzero.k;
 // assert(PI.yMax >= PI.yMin,"LimPID: Limits must be consistent. However, yMax (=" + String(PI.yMax,0,true,6) + ") < yMin (=" + String(PI.yMin,0,true,6) + ")");
-// assert(PI.limitsAtInit OR  NOT PI.limitsAtInit AND PI.y >= PI.yMin AND PI.y <= PI.yMax,"LimPID: During initialization the limits have been switched off.\nAfter initialization, the output y (=" + String(PI.y,0,true,6) + ") is outside of the limits of yMin (=" + String(PI.yMin,0,true,6) + ") and yMax (=" + String(PI.yMax,0,true,6) + ")");
+// assert(PI.limitsAtInit OR  NOT PI.limitsAtInit AND PI.y >= PI.yMin AND PI.y <= PI.yMax,"LimPID: During initialization the limits have been switched off.\n" + "After initialization, the output y (=" + String(PI.y,0,true,6) + ") is outside of the limits of yMin (=" + String(PI.yMin,0,true,6) + ") and yMax (=" + String(PI.yMax,0,true,6) + ")");
 // PI.addP.y = PI.P.u;
 // PI.addI.y = PI.I.u;
 // PI.P.y = PI.addPID.u1;
