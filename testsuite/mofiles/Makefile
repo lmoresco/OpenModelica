@@ -439,6 +439,7 @@ Redeclare4.mo \
 Redeclare5.mo \
 RedeclareFlowEffort.mo \
 reinit.mo \
+ReinitArray.mo \
 Rem.mo \
 ScopeDeclaration1.mo \
 ScopeDeclaration3.mo \
