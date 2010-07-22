@@ -255,6 +255,7 @@ FlowDeclConnector.mo \
 FlowDeclRecord.mo \
 FlowDeclType.mo \
 ForceAndTorque.mo \
+ForIf.mo \
 ForIterator1.mo \
 ForIterator2.mo \
 ForNested.mo \
