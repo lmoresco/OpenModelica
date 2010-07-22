@@ -157,10 +157,17 @@ end error;
 
 protected function inputItem
   output Integer i;
-algorithm 
-  print("input: ");
-  i := Input.read();
-  print("\n");
+algorithm
+  i := matchcontinue ()
+    /* Disabled due to OpenModelica trying to ceval Input.read()
+    case ()
+      equation
+        print("input: ");
+        i = Input.read();
+        print("\n");
+      then i;
+    */
+  end matchcontinue;
 end inputItem;
 
 protected function outputItem
