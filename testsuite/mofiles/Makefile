@@ -33,6 +33,7 @@ ArrayAccess.mo \
 ArrayAddition.mo \
 ArrayAsAliasInExtends.mo \
 ArrayAsAlias.mo \
+ArrayAssignWholeDim.mo \
 ArrayBrackets.mo \
 Array_builtin.mo \
 ArrayCurlyBrackets.mo \
