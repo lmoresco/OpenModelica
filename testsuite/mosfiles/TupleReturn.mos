@@ -1,0 +1,19 @@
+// name:      TupleReturn
+// keywords:  tuple function return
+// status:    correct
+// teardown_command: rm -rf TupleReturn_* TupleReturn TupleReturn.exe TupleReturn.cpp TupleReturn.makefile TupleReturn.libs TupleReturn.log output.log
+//
+// Tests code generation for functions returning tuples, both simulation and
+// function code.
+// 
+loadFile("TupleReturn.mo");
+simulate(TupleReturn, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+echo(false);
+readFile("output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "TupleReturn_res.plt"
+// end SimulationResult;
+// endResult
+
