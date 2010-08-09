@@ -32,6 +32,7 @@ ForIterator1.mos ForIterator2.mos \
 FuncDer.mos  \
 FunctionIndirectRecursion.mos \
 FunctionIndirectRecursion2.mos \
+FunctionInReinit.mos \
 HeatTank.mos HeatTankExpanded.mos \
 HideVariableForEquations.mos \
 HydrogenIodide.mos \
