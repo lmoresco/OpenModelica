@@ -58,6 +58,7 @@ PreAndAliasedVar.mos \
 Reductions.mos \
 Riccati.mos \
 Sample1.mos \
+SemiLinear.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
 simulation.mos \
