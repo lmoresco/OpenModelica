@@ -70,7 +70,7 @@ Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TanksConnectedPI.mos TankHybridPID.mos TankHybridPI.mos \
 tempInterpol2test.mos \
 Time.mos \
-#TupleReturn.mos \
+TupleReturn.mos \
 TwoRateSampler.mos \
 val.mos \
 WhenEquation.mos WhenEquation1.mos \
