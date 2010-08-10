@@ -1,0 +1,81 @@
+// name: XmlDumpComment
+// keywords: xml, dump
+// status: correct
+// teardown_command: rm -f XmlDumpComment.xml
+// 
+// Tests that < is escaped in Xml dumps
+//
+
+loadFile("XmlDumpComment.mo");
+instantiateModel(XmlDumpComment);
+dumpXMLDAE(XmlDumpComment);
+
+// Result:
+// true
+// "fclass XmlDumpComment
+//   parameter Real A;
+//   parameter Real B;
+//   Real x "evaluated to 0 if A < B";
+// equation
+//   x = Real(if A < B then 0 else 1);
+// end XmlDumpComment;
+// "
+// {"<?xml version="1.0" encoding="UTF-8"?>
+// <dae xmlns:p1="http://www.w3.org/1998/Math/MathML"
+// xmlns:xlink="http://www.w3.org/1999/xlink"
+// xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+// xsi:noNamespaceSchemaLocation="http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd">
+// <variables dimension="4">
+// <orderedVariables dimension="2">
+// <variablesList>
+// <variable id="1" name="x" variability="continuous" direction="none" type="Real" index="-1" fixed="false" flow="NonConnector" stream="NonStreamConnector" comment="evaluated to 0 if A &lt; B">
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
+// <variable id="2" name="$dummy" variability="continuousState" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStream">
+// <attributesValues>
+// <fixed string="true">
+// </fixed>
+// </attributesValues>
+// </variable>
+// </variablesList>
+// </orderedVariables>
+// <knownVariables dimension="2">
+// <variablesList>
+// <variable id="1" name="B" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
+// <variable id="2" name="A" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
+// </variablesList>
+// </knownVariables>
+// </variables>
+// <equations dimension="2">
+// <equation id="1">x = if A &lt; B then 0.0 else 1.0
+// </equation>
+// <equation id="2">der($dummy) = 0.0
+// </equation>
+// </equations>
+// </dae>","The model has been dumped to xml file: XmlDumpComment.xml"}
+// endResult

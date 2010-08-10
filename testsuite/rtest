@@ -209,12 +209,7 @@ sub dofile
     while(<IN>) {
     # @adrpo - uncomment for debugging
     # print ($_);
-    if (/^\/\/[ \\|]*([a-z_]*):[ \\|]*([^\012\015\n\r]*)/) {
-        # @adrpo - uncomment for debugging
-        # print "Noticed: $1 = $2\n";        
-        # $info{$1} = $value;
-        $info{$1} = $2;
-    } elsif (/^\/\/ Result:/../^\/\/ endResult/) {
+    if (/^\/\/ Result:/../^\/\/ endResult/) {
         s/^[ \t]*//;
         s/^\/\/ Result://;
         s/^\/\/ endResult//;
@@ -226,7 +221,12 @@ sub dofile
         print "Error in testcase: $f\n";
         $tc_err = 1;        
         }
-    }
+    } elsif (/^\/\/[ \\|]*([a-z_]*):[ \\|]*([^\012\015\n\r]*)/) {
+        # @adrpo - uncomment for debugging
+        # print "Noticed: $1 = $2\n";        
+        # $info{$1} = $value;
+        $info{$1} = $2;
+    } 
     }
     close IN;
     close OUT;
