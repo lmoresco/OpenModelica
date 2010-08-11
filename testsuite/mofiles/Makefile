@@ -55,6 +55,7 @@ ArrayEWOpsCEval4.mo \
 ArrayEWOpsCEval5.mo \
 ArrayExtend.mo \
 ArrayExtendsUnknown.mo \
+ArrayIndex.mo \
 ArrayMatrixSimplifier.mo \
 ArrayModification10.mo \
 ArrayModification11.mo \
