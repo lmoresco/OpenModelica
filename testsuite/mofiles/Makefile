@@ -425,6 +425,7 @@ Real2Integer3.mo \
 RealAdd.mo \
 RealDiv.mo \
 RealMul.mo \
+RealOpLexer.mo \
 RealPow.mo \
 RealSub.mo \
 Record1.mo \
