@@ -1,0 +1,25 @@
+// name:     ArraySlice
+// keywords: array slice
+// status: correct
+// teardown_command: rm -rf ArraySlice_* ArraySlice ArraySlice.exe ArraySlice.cpp ArraySlice.makefile ArraySlice.libs ArraySlice.log output.log
+// 
+// Tests assignment of one slice to another slice.
+// 
+
+loadFile("ArraySlice.mo");
+simulate(ArraySlice,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
+echo(false); // turns of output 
+size := readSimulationResultSize("ArraySlice_res.plt");
+echo(true); // turns on output
+size;
+readFile("output.log"); // Check that output log is emtpy
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "ArraySlice_res.plt"
+// end SimulationResult;
+// true
+// 4
+// ""
+// endResult
