@@ -4,6 +4,7 @@ TESTFILES = \
 ABCDsystem.plt.mos \
 ABCDsystem.csv.mos \
 ABCDsystem.empty.mos \
+AlgorithmArrayEqn.mos \
 AlgorithmCondAssign1.mos \
 AlgorithmForInClass.mos \
 AlgorithmSection.mos \
