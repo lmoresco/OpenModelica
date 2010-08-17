@@ -42,6 +42,7 @@ Identity.mos \
 IdealDiode.mos  \
 IfEquation.mos IfEquation2.mos IfEquation3.mos \
 Initialization.mos \
+InlineSolverCodeGenerationEuler.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
 invertedPendulum.mos \
