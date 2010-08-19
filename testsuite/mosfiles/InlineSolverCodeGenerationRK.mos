@@ -1,4 +1,4 @@
-// name:     InlineSolverCodeGenerationEuler
+// name:     InlineSolverCodeGenerationRK
 // keywords: events
 // status: correct
 // teardown_command: rm -rf DerivativeCodeGeneration_* DerivativeCodeGeneration DerivativeCodeGeneration.exe DerivativeCodeGeneration.cpp DerivativeCodeGeneration.makefile DerivativeCodeGeneration.libs DerivativeCodeGeneration.log output.log
