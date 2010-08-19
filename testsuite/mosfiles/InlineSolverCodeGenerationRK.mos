@@ -7,9 +7,6 @@
 // 
 
 loadFile("DerivativeCodeGeneration.mo");
-echo(false);
-appendEnvironmentVar("MODELICAUSERCFLAGS"," -D_OMC_INLINE_RK");
-echo(true);
 simulate(DerivativeCodeGeneration,method="inline-rungekutta",stopTime=4.0);
 getErrorString();
 readFile("output.log");
@@ -25,7 +22,6 @@ val(y,0.0);val(y,1.0);val(y,2.0);
 val(z,0.0);val(z,1.0);val(z,2.0);
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "DerivativeCodeGeneration_res.plt"
