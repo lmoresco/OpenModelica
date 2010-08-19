@@ -8,9 +8,9 @@
 
 loadFile("DerivativeCodeGeneration.mo");
 echo(false);
-appendEnvironmentVar("MODELICAUSERCFLAGS"," -D_OMC_INLINE_EULER");
+appendEnvironmentVar("MODELICAUSERCFLAGS"," -D_OMC_INLINE_RK");
 echo(true);
-simulate(DerivativeCodeGeneration,method="inline-euler",stopTime=4.0);
+simulate(DerivativeCodeGeneration,method="inline-rungekutta",stopTime=4.0);
 getErrorString();
 readFile("output.log");
 "x[1]";

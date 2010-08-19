@@ -38,7 +38,7 @@ function arrcall
 input Real r;
 output Real[3] rs;
 algorithm
-rs := {r,2*r,3*r};
+rs := {1.0,2.0,3.0};
 end arrcall;
 
 MixedSystem mixed;
@@ -47,7 +47,7 @@ Real x[3];
 Real y(start=2.0);
 Real z(start=15.0);
 equation
-der(x) = arrcall(1.0); // Tests cref = arrayCall()
+der(x) = arrcall(time); // Tests cref = arrayCall()
 der(y) = one(der(y)); // Always 1 but omc does not know that = free non-linear equation to test!
 der(z) = 1.0; // Tests simple equation
 

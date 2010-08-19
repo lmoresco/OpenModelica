@@ -43,6 +43,7 @@ IdealDiode.mos  \
 IfEquation.mos IfEquation2.mos IfEquation3.mos \
 Initialization.mos \
 InlineSolverCodeGenerationEuler.mos \
+InlineSolverCodeGenerationRK.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
 invertedPendulum.mos \
