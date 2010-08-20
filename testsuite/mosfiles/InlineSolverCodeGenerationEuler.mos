@@ -7,7 +7,7 @@
 // 
 
 loadFile("DerivativeCodeGeneration.mo");
-simulate(DerivativeCodeGeneration,method="inline-euler",stopTime=4.0);
+simulate(DerivativeCodeGeneration,method="inline-euler",stopTime=4.0,numberOfIntervals=1000);
 getErrorString();
 readFile("output.log");
 "x[1]";
@@ -46,6 +46,6 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // 4.0
 // "z"
 // 15.0
-// 16.0
+// 15.5
 // 17.0
 // endResult

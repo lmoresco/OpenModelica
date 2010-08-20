@@ -49,6 +49,6 @@ Real z(start=15.0);
 equation
 der(x) = arrcall(time); // Tests cref = arrayCall()
 der(y) = one(der(y)); // Always 1 but omc does not know that = free non-linear equation to test!
-der(z) = 1.0; // Tests simple equation
+der(z) = time; // Tests simple equation
 
 end DerivativeCodeGeneration;
