@@ -25067,6 +25067,6 @@ getErrorString();
 //   assert(Nand1.Mn2.Leff > 0.0, "The effective channel length must be larger than zero");
 // end BondLib_Examples_ModelicaSpice_NandGate_TestNand;
 // "
-// "Warning: In NFS == 0.0,  ==  on Reals is only allowed inside functions.
+// "Warning: In component <NO COMPONENT>, in relation NFS == 0.0,  ==  on Reals is only allowed inside functions.
 // "
 // endResult

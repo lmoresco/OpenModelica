@@ -67,10 +67,10 @@ end FunctionEvalBuiltin;
 // constant Integer i[4] = 2;
 // constant Integer i[5] = 3;
 // end FunctionEvalBuiltin;
-// Warning: Using non-standardized function arcsin. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
-// Warning: Using non-standardized function arccos. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
-// Warning: Using non-standardized function arctan. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
-// Warning: Using non-standardized function arccos. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
-// Warning: Using non-standardized function arctan. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arcsin in component <NO COMPONENT>. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arccos in component <NO COMPONENT>. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arctan in component <NO COMPONENT>. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arccos in component <NO COMPONENT>. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
+// Warning: Using non-standardized function arctan in component <NO COMPONENT>. For full conformance with language specification please use appropriate function in e.g. Modelica.Math
 // 
 // endResult
