@@ -7,7 +7,7 @@
 // 
 
 loadFile("DerivativeCodeGeneration.mo");
-simulate(DerivativeCodeGeneration,method="inline-rungekutta",stopTime=4.0);
+simulate(DerivativeCodeGeneration,method="inline-rungekutta",numberOfIntervals=10000,stopTime=4.0);
 getErrorString();
 readFile("output.log");
 "x[1]";
