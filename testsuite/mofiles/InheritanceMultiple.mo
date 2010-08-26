@@ -20,7 +20,7 @@ class InheritanceMultiple
 end InheritanceMultiple;
 
 // Result:
-// fclass InheritanceMultiple
+// class InheritanceMultiple
 // parameter Real baseReal1 = 2.0;
 // parameter Real baseReal2 = 3.0;
 // parameter Real finalReal;

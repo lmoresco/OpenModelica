@@ -1184,7 +1184,7 @@ model BS6
 equation 
   connect(pulse1.outPort,der1.inPort) annotation(Line(visible=true,points={{-40.86,17.74},{-23.83,16.83}}));
 end BS6;
-// fclass BS6
+// class BS6
 // parameter Integer pulse1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer pulse1.outPort.n = pulse1.nout "Dimension of signal vector";
 // output Real pulse1.outPort.signal[1] "Real output signals";
@@ -1219,7 +1219,7 @@ end BS6;
 // pulse1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS6;
 // Result:
-// fclass BS6
+// class BS6
 // parameter Integer pulse1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer pulse1.outPort.n = pulse1.nout "Dimension of signal vector";
 // output Real pulse1.outPort.signal[1] "Real output signals";

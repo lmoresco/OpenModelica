@@ -17,7 +17,7 @@ equation
 end ConditionalArrayExpression2;
 
 // Result:
-// fclass ConditionalArrayExpression2
+// class ConditionalArrayExpression2
 //   Real a = 4.0 * time;
 //   Real b = 2.0;
 //   Real c[1];

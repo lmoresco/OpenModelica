@@ -23,7 +23,7 @@ algorithm
 end StatementCall;
 
 // Result:
-// fclass StatementCall
+// class StatementCall
 // Real px;
 // Real py;
 // algorithm

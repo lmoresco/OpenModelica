@@ -40,7 +40,7 @@ end Function10;
 //   r3 := a + b;
 // end f;
 // 
-// fclass Function10
+// class Function10
 //      Real x;
 //      Real y;
 //      Real z;

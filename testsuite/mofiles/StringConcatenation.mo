@@ -12,7 +12,7 @@ equation
 end StringConcatenation;
 
 // Result:
-// fclass StringConcatenation
+// class StringConcatenation
 // String s;
 // equation
 //   s = "test";

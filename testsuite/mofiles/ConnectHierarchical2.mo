@@ -33,7 +33,7 @@ equation
 end ConnectHierarchical2;
 
 // Result:
-// fclass ConnectHierarchical2
+// class ConnectHierarchical2
 // Real a.b.c.f;
 // Real a.b.c.e;
 // Real a.c1.f;

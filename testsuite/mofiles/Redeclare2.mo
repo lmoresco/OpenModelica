@@ -22,7 +22,7 @@ class Redeclare2
 end Redeclare2;
 
 // Result:
-// fclass Redeclare2
+// class Redeclare2
 // Real x.x;
 // equation
 // x.x = 1.0;

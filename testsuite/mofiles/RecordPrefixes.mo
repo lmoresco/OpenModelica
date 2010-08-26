@@ -17,7 +17,7 @@ equation
 end RecordPrefixes;
 
 // Result:
-// fclass RecordPrefixes
+// class RecordPrefixes
 // input Integer tr.i;
 // equation
 //   tr.i = 1;

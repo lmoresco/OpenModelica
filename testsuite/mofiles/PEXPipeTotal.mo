@@ -1013,7 +1013,7 @@ end Toneco_PEXPipe;
 // output Medium res;
 // end Modelica.Thermal.FluidHeatFlow.Media.Medium;
 // 
-// fclass Toneco_PEXPipe
+// class Toneco_PEXPipe
 // parameter Real medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "density";
 // parameter Real medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "specific heat capacity at constant pressure";
 // parameter Real medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "specific heat capacity at constant volume";

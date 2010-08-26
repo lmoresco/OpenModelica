@@ -10,7 +10,7 @@ model IntSub
 end IntSub;
 
 // Result:
-// fclass IntSub
+// class IntSub
 // constant Integer i = 3573;
 // end IntSub;
 // endResult

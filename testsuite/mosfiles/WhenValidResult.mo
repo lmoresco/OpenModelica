@@ -15,7 +15,7 @@ equation
   end when;   
 end WhenValidResult;
 
-// fclass WhenValidResult
+// class WhenValidResult
 // Real x;
 // Real y;
 // equation

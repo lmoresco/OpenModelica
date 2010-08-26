@@ -20,7 +20,7 @@ equation
 end Connect8;
 
 // Result:
-// fclass Connect8
+// class Connect8
 // parameter Integer N = 2;
 // Real c[1].x;
 // Real c[2].x;

@@ -32,7 +32,7 @@ readFile("output.log");
 
 // Result:
 // true
-// "fclass LinearSysEq
+// "class LinearSysEq
 // Real pu.port.pressure;
 // Real pu.port.flowrate;
 // Real pi.port.pressure;

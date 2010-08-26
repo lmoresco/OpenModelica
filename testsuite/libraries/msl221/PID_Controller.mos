@@ -10,7 +10,7 @@ instantiateModel(Modelica.Blocks.Examples.PID_Controller);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Blocks.Examples.PID_Controller
+// "class Modelica.Blocks.Examples.PID_Controller
 // parameter Real driveAngle(quantity = "Angle", unit = "rad", displayUnit = "deg") = 1.57;
 // input Real PI.u_s "Connector of setpoint input signal";
 // output Real PI.y "Connector of actuator output signal";

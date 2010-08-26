@@ -34,7 +34,7 @@ equation
   y = CallerFn(x, function FullFn(1.5,7.5));
 end PartialFn11; 
 
-// fclass PartialFn11
+// class PartialFn11
 // Real x;
 // Real y;
 // equation

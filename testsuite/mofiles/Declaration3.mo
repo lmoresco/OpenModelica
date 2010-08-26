@@ -14,6 +14,6 @@ end Declaration3;
 // Result:
 // [Declaration3.mo:11:12-11:28:writable] Error: unexpected token: parameter, parsing resumed at token ';' on line 11, column 28
 // 
-// fclass Declaration3
+// class Declaration3
 // end Declaration3;
 // endResult

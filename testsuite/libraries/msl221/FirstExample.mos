@@ -20,7 +20,7 @@ getErrorString();
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
 // 
-// fclass Modelica.StateGraph.Examples.FirstExample
+// class Modelica.StateGraph.Examples.FirstExample
 //   output Boolean stateGraphRoot.suspend = false;
 //   output Boolean stateGraphRoot.resume = false;
 //   output Boolean stateGraphRoot.subgraphStatePort.suspend "= true, if suspend transition of CompositeStep fires";

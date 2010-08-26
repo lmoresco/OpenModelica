@@ -18,7 +18,7 @@ equation
 end Type11;
 
 // Result:
-// fclass Type11
+// class Type11
 //      Real x[1,1];
 //      Real x[1,2];
 //      Real x[1,3];

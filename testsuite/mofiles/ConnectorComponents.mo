@@ -18,7 +18,7 @@ equation
 end ConnectorComponents;
 
 // Result:
-// fclass ConnectorComponents
+// class ConnectorComponents
 // Real tc1.r;
 // Real r;
 // equation

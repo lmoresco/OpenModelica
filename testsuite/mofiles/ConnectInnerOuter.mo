@@ -26,7 +26,7 @@ equation
 end Top;
 
 // Result:
-// fclass Top
+// class Top
 //   Real world.i;
 //   Real world.v;
 //   Real topPin.i;

@@ -21,7 +21,7 @@ equation
 end BlockComponents;
 
 // Result:
-// fclass BlockComponents
+// class BlockComponents
 // Integer i;
 // input Integer tb.inInt;
 // output Integer tb.outInt;

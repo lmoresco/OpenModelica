@@ -62,7 +62,7 @@ model TemperatureDependentResistorCircuit
 end TemperatureDependentResistorCircuit;
 
 // Result:
-// fclass TemperatureDependentResistorCircuit
+// class TemperatureDependentResistorCircuit
 // Real R1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real R1.p.i(quantity = "ElectricCurrent", unit = "A");
 // Real R1.n.v(quantity = "ElectricPotential", unit = "V");

@@ -10,7 +10,7 @@ model RealSub
 end RealSub;
 
 // Result:
-// fclass RealSub
+// class RealSub
 // constant Real r = 3572.9;
 // end RealSub;
 // endResult

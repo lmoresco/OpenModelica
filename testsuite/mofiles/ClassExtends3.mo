@@ -64,7 +64,7 @@ end B;
 //   b := B.part2(B.part(a));
 // end B.usePart;
 // 
-// fclass B
+// class B
 // constant Integer X = 1;
 // constant Integer Y = 1;
 // Integer b = B.usePart(integer(time));

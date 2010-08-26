@@ -40,7 +40,7 @@ equation
   (r1,r2,r3,r4,i1,i2,i3,i4) = func(3);
 end ForIterator2;
 
-// fclass ForIterator2
+// class ForIterator2
 // Integer i1;
 // Integer i2;
 // Integer i3;

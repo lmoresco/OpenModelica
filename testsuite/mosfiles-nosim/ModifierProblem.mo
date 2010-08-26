@@ -16,7 +16,7 @@ model ModifierProblem
   Prismatic p1(s(start=0.1));  
 end ModifierProblem;
 
-// fclass ModifierProblem
+// class ModifierProblem
 // Real p1.s(start = 0.1);
 // protected Real p1.length = p1.s;
 // end ModifierProblem;

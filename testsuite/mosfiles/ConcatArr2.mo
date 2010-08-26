@@ -13,6 +13,6 @@ end ConcatArr2;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass <XXX> 
+// class <XXX> 
 // Real x;
 // end <XXX>;

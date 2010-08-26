@@ -965,7 +965,7 @@ equation
   connect(transferFunction1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-14.4,26.56},{-37.51,26.87}}));
 end BC11;
 
-// fclass BC11
+// class BC11
 // parameter Integer transferFunction1.inPort.n = 1 "Dimension of signal vector";
 // input Real transferFunction1.inPort.signal[1] "Real input signals";
 // parameter Integer transferFunction1.outPort.n = 1 "Dimension of signal vector";
@@ -998,7 +998,7 @@ end BC11;
 // transferFunction1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BC11;
 // Result:
-// fclass BC11
+// class BC11
 // parameter Integer transferFunction1.inPort.n = 1 "Dimension of signal vector";
 // input Real transferFunction1.inPort.signal[1] "Real input signals";
 // parameter Integer transferFunction1.outPort.n = 1 "Dimension of signal vector";

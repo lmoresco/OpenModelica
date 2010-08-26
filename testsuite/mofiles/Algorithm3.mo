@@ -13,7 +13,7 @@ algorithm
 end Algorithm3;
 
 // Result:
-// fclass Algorithm3
+// class Algorithm3
 // Integer i = integer(10.0 * time);
 // Real x;
 // algorithm

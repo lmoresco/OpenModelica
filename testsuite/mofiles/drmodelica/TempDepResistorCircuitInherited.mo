@@ -63,7 +63,7 @@ equation
 end TempDepResistorCircuitInherited;
 
 // Result:
-// fclass TempDepResistorCircuitInherited
+// class TempDepResistorCircuitInherited
 // Real Temp;
 // Real R1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real R1.p.i(quantity = "ElectricCurrent", unit = "A");

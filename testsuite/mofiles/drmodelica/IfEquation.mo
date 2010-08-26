@@ -28,7 +28,7 @@ model Test
 end Test;    
 
 // Result:
-// fclass Test
+// class Test
 // parameter Real y1.u = 1.0;
 // parameter Real y1.uMax = 2.0;
 // parameter Real y1.uMin = 0.0;

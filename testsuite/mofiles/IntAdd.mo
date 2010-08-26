@@ -10,7 +10,7 @@ model IntAdd
 end IntAdd;
 
 // Result:
-// fclass IntAdd
+// class IntAdd
 // constant Integer i = 5849;
 // end IntAdd;
 // endResult

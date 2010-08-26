@@ -26,7 +26,7 @@ end Function1;
 //   r := 2.0 * x;
 // end f;
 // 
-// fclass Function1
+// class Function1
 // Real x;
 // Real y;
 // Real z;

@@ -16,7 +16,7 @@ equation
 end InputDeclRecord;
 
 // Result:
-// fclass InputDeclRecord
+// class InputDeclRecord
 // input Real ir.r;
 // equation
 //   ir.r = 1.0;

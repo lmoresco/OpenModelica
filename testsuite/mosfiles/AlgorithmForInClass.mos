@@ -38,7 +38,7 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // ""
-// "fclass AlgorithmForInClass
+// "class AlgorithmForInClass
 // Real accum_sum[1];
 // Real accum_sum[2];
 // Real accum_sum[3];

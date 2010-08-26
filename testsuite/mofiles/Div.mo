@@ -12,7 +12,7 @@ equation
 end Div;
 
 // Result:
-// fclass Div
+// class Div
 // Real r;
 // equation
 //   r = 11.0;

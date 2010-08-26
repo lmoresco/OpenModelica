@@ -13,7 +13,7 @@ class ArraysInit
 end ArraysInit;
 
 // Result:
-// fclass ArraysInit
+// class ArraysInit
 // Real A3[1,1];
 // Real A3[1,2];
 // Real A3[2,1];

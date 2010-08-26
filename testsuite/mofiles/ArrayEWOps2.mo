@@ -15,7 +15,7 @@ equation
 end ArrayEWOps2;  
 
 // Result:
-// fclass ArrayEWOps2
+// class ArrayEWOps2
 // Real x[1,1];
 // Real x[1,2];
 // Real x[2,1];

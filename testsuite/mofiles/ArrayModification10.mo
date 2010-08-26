@@ -14,7 +14,7 @@ class ArrayModification10
 end ArrayModification10;
 
 // Result:
-// fclass ArrayModification10
+// class ArrayModification10
 //   Real a.x[1,1];
 //   Real a.x[1,2];
 //   Real a.x[2,1] = 1.0;

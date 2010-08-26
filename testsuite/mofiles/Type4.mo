@@ -13,7 +13,7 @@ model Type4
 end Type4;
 
 // Result:
-// fclass Type4
+// class Type4
 // Integer i = 17 "an integer";
 // Real r = 18.0 "a real value";
 // String s = "hi" "a string";

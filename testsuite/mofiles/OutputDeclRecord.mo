@@ -16,7 +16,7 @@ equation
 end OutputDeclRecord;
 
 // Result:
-// fclass OutputDeclRecord
+// class OutputDeclRecord
 // output Real orec.r;
 // equation
 //   orec.r = 1.0;

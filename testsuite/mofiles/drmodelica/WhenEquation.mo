@@ -17,7 +17,7 @@ equation
 end WhenEquation;
 
 // Result:
-// fclass WhenEquation
+// class WhenEquation
 // Real x(start = 1.0);
 // discrete Real y1;
 // parameter Real y2 = 3.0;

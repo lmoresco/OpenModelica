@@ -26,7 +26,7 @@ end ArraySizeFromFunc;
 //   x := /*/tp:REAL[]/*/(fill(1,n));
 // end f;
 // 
-// fclass ArraySizeFromFunc
+// class ArraySizeFromFunc
 // parameter Integer n = 5;
 // parameter Real x[1] = f(n)[1];
 // parameter Real x[2] = f(n)[2];

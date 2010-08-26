@@ -23,7 +23,7 @@ end test;
 // external "C";
 // end foo;
 // 
-// fclass test
+// class test
 // Real x = foo(time);
 // end test;
 // endResult

@@ -37,7 +37,7 @@ end RecordFuncParam;
 // output Real y;
 // end f;
 // 
-// fclass RecordFuncParam
+// class RecordFuncParam
 // input Real r.x;
 // input Real r.y;
 // output Real y;

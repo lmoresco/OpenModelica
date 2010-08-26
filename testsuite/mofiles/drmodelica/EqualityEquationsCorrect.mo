@@ -43,7 +43,7 @@ end EqualityEquationsCorrect;
 //   e := a * b;
 // end f;
 // 
-// fclass EqualityEquationsCorrect
+// class EqualityEquationsCorrect
 // Real x;
 // Real y;
 // Real z;

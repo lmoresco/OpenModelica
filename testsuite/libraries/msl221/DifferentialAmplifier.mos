@@ -52,7 +52,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BondLib_Examples_ModelicaSpice_DifferentialAmplifier
+// class BondLib_Examples_ModelicaSpice_DifferentialAmplifier
 // output Real vin(quantity = "ElectricPotential", unit = "V");
 // output Real vout(quantity = "ElectricPotential", unit = "V");
 // Real Gnd1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";

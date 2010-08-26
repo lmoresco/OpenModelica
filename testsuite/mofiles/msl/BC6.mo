@@ -1765,7 +1765,7 @@ model BC6
 equation 
   connect(constant1.outPort,limPID1.inPort_s) annotation(Line(visible=true,points={{-11.66,13.79},{1.11,15.62}}));
 end BC6;
-// fclass BC6
+// class BC6
 // protected Real limPID1.u_s "Scalar setpoint input signal";
 // protected Real limPID1.u_m "Scalar measurement input signal";
 // parameter Integer limPID1.inPort_s.n = 1 "Dimension of signal vector";
@@ -1973,7 +1973,7 @@ end BC6;
 // constant1.outPort.signal[1] = limPID1.inPort_s.signal[1];
 // end BC6;
 // Result:
-// fclass BC6
+// class BC6
 // protected Real limPID1.u_s "Scalar setpoint input signal";
 // protected Real limPID1.u_m "Scalar measurement input signal";
 // parameter Integer limPID1.inPort_s.n = 1 "Dimension of signal vector";

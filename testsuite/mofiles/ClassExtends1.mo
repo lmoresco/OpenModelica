@@ -22,7 +22,7 @@ initial equation
 end ClassExtends1;
 
 // Result:
-// fclass ClassExtends1
+// class ClassExtends1
 // Integer component.x = component.y;
 // discrete Integer component.y;
 // initial equation

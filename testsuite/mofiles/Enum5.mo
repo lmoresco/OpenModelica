@@ -24,7 +24,7 @@ end Enumeration5;
 
 
 // Result:
-// fclass Enumeration5
+// class Enumeration5
 // Real t.hh[1];
 // Real t.hh[2];
 // Real t.hh[3];

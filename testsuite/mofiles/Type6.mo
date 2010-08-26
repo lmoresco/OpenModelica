@@ -13,7 +13,7 @@ model Type6
 end Type6;
 
 // Result:
-// fclass Type6
+// class Type6
 //   parameter Integer i "an integer";
 //   parameter Real r "a real value";
 //   parameter String s "a string";

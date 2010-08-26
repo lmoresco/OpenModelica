@@ -30,7 +30,7 @@ end Tank;
 
 
 // Result:
-// fclass Tank
+// class Tank
 // parameter Real area = 1.0;
 // Real inlet.pressure;
 // Real inlet.volumeFlowRate;

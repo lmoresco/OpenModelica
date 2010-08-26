@@ -14,7 +14,7 @@ equation
 end Constant3;
 
 // Result:
-// fclass Constant3
+// class Constant3
 // constant Integer N = 3;
 // Real x[1];
 // Real x[2];

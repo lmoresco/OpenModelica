@@ -21,7 +21,7 @@ end WhenStat2;
 
 
 // Result:
-// fclass WhenStat2
+// class WhenStat2
 // Real x(start = 1.0);
 // Real y1;
 // parameter Real y2 = 5.0;

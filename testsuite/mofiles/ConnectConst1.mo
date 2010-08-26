@@ -17,7 +17,7 @@ equation
 end ConnectConst1;
 
 // Result:
-// fclass ConnectConst1
+// class ConnectConst1
 //   Real c1.f;
 //   Real c1.e;
 //   constant Real c2.f = 2.0;

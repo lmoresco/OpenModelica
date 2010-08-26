@@ -961,7 +961,7 @@ equation
   connect(integerToReal1.inPort,integerConstant1.outPort) annotation(Line(visible=true,points={{-35.38,24.43},{-57.89,25.35}}));
 end BS13;
 
-// fclass BS13
+// class BS13
 // parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
 // parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
 // output Real integerToReal1.outPort.signal[1] "Real output signals";
@@ -980,7 +980,7 @@ end BS13;
 // integerToReal1.inPort.signal[1] = integerConstant1.outPort.signal[1];
 // end BS13;
 // Result:
-// fclass BS13
+// class BS13
 // parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
 // parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
 // output Real integerToReal1.outPort.signal[1] "Real output signals";

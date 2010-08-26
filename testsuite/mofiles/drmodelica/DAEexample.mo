@@ -15,7 +15,7 @@ equation
 end DAEexample;
 
 // Result:
-// fclass DAEexample
+// class DAEexample
 // Real x(start = 0.9);
 // Real y;
 // parameter Real a = 2.0;

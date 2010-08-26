@@ -14,7 +14,7 @@ model Array15
   parameter Integer m2 = size(b,2);
 end Array15;
 // Result:
-// fclass Array15
+// class Array15
 // parameter Integer n1 = 2;
 // parameter Integer m1 = 0;
 // parameter Integer n2 = 2;

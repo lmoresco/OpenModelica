@@ -15,7 +15,7 @@ equation
   (if true then a else b) = if true then b else c;
 end EquationComponent4;
 // Result:
-// fclass EquationComponent4
+// class EquationComponent4
 // Real a.x;
 // Real a.y;
 // Real b.x;

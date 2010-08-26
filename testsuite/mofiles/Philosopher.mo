@@ -312,7 +312,7 @@ end Philosopher_DiningTable;
 //   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0,1.0);
 // end Philosopher.Random.random;
 // 
-// fclass Philosopher_DiningTable
+// class Philosopher_DiningTable
 // parameter Integer t.n = 5 "Number of philosophers and forks";
 // parameter Real t.sigma = 5.0 "Standard deviation of delay times";
 // output Boolean t.phil[1].mutexPort.request "Set this to request ownership of the mutex";

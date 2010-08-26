@@ -10,7 +10,7 @@ class Constant5
 end Constant5;
 
 // Result:
-// fclass Constant5
+// class Constant5
 //   Real x[1];
 //   Real x[2];
 // end Constant5;

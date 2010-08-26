@@ -55,7 +55,7 @@ end getPerson;
 //   p.children := {children[1],children[2]};
 // end mkperson;
 // 
-// fclass getPerson
+// class getPerson
 // String pList.persons[1].name = "John";
 // Integer pList.persons[1].age = 35;
 // String pList.persons[1].children[1] = "Carl";

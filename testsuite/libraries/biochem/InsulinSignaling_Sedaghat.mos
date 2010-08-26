@@ -12,7 +12,7 @@ getErrorString();
 // Result:
 // true
 // true
-// "fclass BioChem.Examples.InsulinSignaling_Sedaghat
+// "class BioChem.Examples.InsulinSignaling_Sedaghat
 // Real V(quantity = "Volume", unit = "l", start = 1.0) "Compartment volume";
 // Real irPMembIns.c(quantity = "Concentration", unit = "mol/l", min = 0.0, start = 0.0) "Current concentration of substance (mM)";
 // Real irPMembIns.rNet(quantity = "Molar flow rate", unit = "mol/s") "Net flow rate of substance into the node";

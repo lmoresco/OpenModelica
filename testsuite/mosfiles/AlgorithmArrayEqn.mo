@@ -13,7 +13,7 @@ algorithm
 end AlgorithmArrayEqn;
 
 // Result:
-// fclass AlgorithmArrayEqn
+// class AlgorithmArrayEqn
 //   Real p1[1,1] = 1.0;
 //   Real p1[1,2] = 2.0;
 //   Real p1[2,1] = 3.0;

@@ -1070,7 +1070,7 @@ end BM11;
 // external "C";
 // end Modelica.Math.exp;
 // 
-// fclass BM11
+// class BM11
 // parameter Integer exp1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer exp1.inPort.n = exp1.n "Dimension of signal vector";
 // input Real exp1.inPort.signal[1] "Real input signals";
@@ -1099,7 +1099,7 @@ end BM11;
 // external "C";
 // end Modelica.Math.exp;
 // 
-// fclass BM11
+// class BM11
 // parameter Integer exp1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer exp1.inPort.n = exp1.n "Dimension of signal vector";
 // input Real exp1.inPort.signal[1] "Real input signals";

@@ -22,7 +22,7 @@ class D
 end D;
 
 // Result:
-// fclass D
+// class D
 // parameter Real a.x = 1.0;
 // parameter Real a.y = 2.0;
 // end D;

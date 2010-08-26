@@ -18,7 +18,7 @@ equation
 end StringReal;
 
 // Result:
-// fclass StringReal
+// class StringReal
 // String s1;
 // String s2;
 // Real r;

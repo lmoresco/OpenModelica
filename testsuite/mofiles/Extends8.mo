@@ -27,7 +27,7 @@ class Extends8
 end Extends8;
 
 // Result:
-// fclass Extends8
+// class Extends8
 // Integer abc(min = 1, max = 4) = 3;
 // end Extends8;
 // endResult

@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Electrical.MultiPhase.Examples.TransformerYD
+// class Modelica.Electrical.MultiPhase.Examples.TransformerYD
 // parameter Integer m = 3 "Number of phases";
 // parameter Real V(quantity = "ElectricPotential", unit = "V") = 1.0 "Amplitude of Star-Voltage";
 // parameter Real f(quantity = "Frequency", unit = "Hz") = 5.0 "Frequency";

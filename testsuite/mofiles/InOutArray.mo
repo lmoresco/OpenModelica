@@ -100,7 +100,7 @@ end InOutArray;
 //   end for;
 // end sumReal;
 // 
-// fclass InOutArray
+// class InOutArray
 // constant Real A[1] = 1.0;
 // constant Real A[2] = 2.0;
 // constant Real A[3] = 3.0;

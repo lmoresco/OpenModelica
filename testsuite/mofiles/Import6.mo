@@ -20,7 +20,7 @@ model Import6
 end Import6;
 
 // Result:
-// fclass Import6
+// class Import6
 //   Real x = 2.0 * time;
 // end Import6;
 // endResult

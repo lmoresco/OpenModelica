@@ -12,7 +12,7 @@ equation
 end Mod;
 
 // Result:
-// fclass Mod
+// class Mod
 // Real r;
 // equation
 //   r = 2.0;

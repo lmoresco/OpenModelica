@@ -14,7 +14,7 @@ equation
 end BooleanLiterals;
 
 // Result:
-// fclass BooleanLiterals
+// class BooleanLiterals
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // Boolean b;

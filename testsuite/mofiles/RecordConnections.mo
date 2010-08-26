@@ -18,7 +18,7 @@ equation
 end RecordConnections;
 
 // Result:
-// fclass RecordConnections
+// class RecordConnections
 // Integer tr1.i;
 // Integer tr2.i;
 // equation

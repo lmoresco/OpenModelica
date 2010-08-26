@@ -22,7 +22,7 @@ equation
 end FloatingPoint;
 
 // Result:
-// fclass FloatingPoint
+// class FloatingPoint
 // constant Real r1 = 1.79769313486232e+308;
 // constant Real r2 = 2.2250738585072e-308;
 // constant Real r3 = 22.5;

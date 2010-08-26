@@ -9,7 +9,7 @@ class Modification12
 end Modification12;
 
 // Result:
-// fclass Modification12
+// class Modification12
 // Real x[1](min = 1.0) = 1.0;
 // end Modification12;
 // endResult

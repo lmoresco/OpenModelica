@@ -15,7 +15,7 @@ t=2 .-4;
 end ArrayEWOpsCEval2;  
 
 // Result:
-// fclass ArrayEWOpsCEval2
+// class ArrayEWOpsCEval2
 // Real u1[1];
 // Real u1[2];
 // Real u2[1];

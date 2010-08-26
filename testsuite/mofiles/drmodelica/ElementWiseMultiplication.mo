@@ -27,7 +27,7 @@ end ElementWiseMultiplication;
 //   result := {2.0 * positionvector[1],2.0 * positionvector[2],2.0 * positionvector[3]};
 // end ewm;
 // 
-// fclass ElementWiseMultiplication
+// class ElementWiseMultiplication
 // Real inVector[1] = 3.0;
 // Real inVector[2] = 6.0;
 // Real inVector[3] = 1.0;

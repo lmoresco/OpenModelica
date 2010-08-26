@@ -16,7 +16,7 @@ model Constant2
 end Constant2;
 
 // Result:
-// fclass Constant2
+// class Constant2
 // constant Real A = 5.0;
 // constant Real B = 5.0;
 // constant Real C = 6.0;

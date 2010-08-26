@@ -10,7 +10,7 @@ class DiscreteDeclType
 end DiscreteDeclType;
 
 // Result:
-// fclass DiscreteDeclType
+// class DiscreteDeclType
 // discrete Real rDiscrete = 1.0;
 // end DiscreteDeclType;
 // endResult

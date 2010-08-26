@@ -51,7 +51,7 @@ getErrorString();
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
-// fclass Modelica.Mechanics.Rotational.Examples.CoupledClutches
+// class Modelica.Mechanics.Rotational.Examples.CoupledClutches
 // parameter Real freqHz(quantity = "Frequency", unit = "Hz") = 0.2 "frequency of sine function to invoke clutch1";
 // parameter Real T2(quantity = "Time", unit = "s") = 0.4 "time when clutch2 is invoked";
 // parameter Real T3(quantity = "Time", unit = "s") = 0.9 "time when clutch3 is invoked";

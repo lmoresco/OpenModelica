@@ -16,7 +16,7 @@ equation
 end Circle;
 
 // Result:
-// fclass Circle
+// class Circle
 // Real x_out;
 // Real y_out;
 // Real x(start = 0.1);

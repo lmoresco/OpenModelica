@@ -15,7 +15,7 @@ end EnumTest;
 
 
 // Result:
-// fclass EnumTest
+// class EnumTest
 // Integer a;
 // equation
 //   a = 2;

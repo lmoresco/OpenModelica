@@ -45,7 +45,7 @@ equation
 end ArrayDim1;
 
 // Result:
-// fclass ArrayDim1
+// class ArrayDim1
 // parameter Integer n = 1;
 // parameter Integer m = 2;
 // parameter Integer k = 3;

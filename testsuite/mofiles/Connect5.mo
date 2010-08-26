@@ -17,7 +17,7 @@ equation
 end Connect5;
 
 // Result:
-// fclass Connect5
+// class Connect5
 //   Boolean c1.b;
 //   Boolean c2.b;
 // equation

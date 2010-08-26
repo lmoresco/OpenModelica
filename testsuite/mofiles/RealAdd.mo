@@ -10,7 +10,7 @@ model RealAdd
 end RealAdd;
 
 // Result:
-// fclass RealAdd
+// class RealAdd
 // constant Real r = 5849.5;
 // end RealAdd;
 // endResult

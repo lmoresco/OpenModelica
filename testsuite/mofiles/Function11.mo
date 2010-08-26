@@ -32,7 +32,7 @@ end test;
 //   equal := false;
 // end equal;
 // 
-// fclass test
+// class test
 // Real x[1];
 // Real x[2];
 // Real y[1] = 1.0;

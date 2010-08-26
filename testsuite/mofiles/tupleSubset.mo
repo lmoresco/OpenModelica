@@ -37,7 +37,7 @@ end mo;
 //   y3 := 2.0 * y2;
 // end fooTuple;
 // 
-// fclass mo
+// class mo
 // Real x;
 // Real y;
 // Real z;

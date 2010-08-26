@@ -1073,7 +1073,7 @@ end BM8;
 // external "C";
 // end Modelica.Math.cos;
 // 
-// fclass BM8
+// class BM8
 // parameter Integer cos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cos1.inPort.n = cos1.n "Dimension of signal vector";
 // input Real cos1.inPort.signal[1] "Real input signals";
@@ -1102,7 +1102,7 @@ end BM8;
 // external "C";
 // end Modelica.Math.cos;
 // 
-// fclass BM8
+// class BM8
 // parameter Integer cos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cos1.inPort.n = cos1.n "Dimension of signal vector";
 // input Real cos1.inPort.signal[1] "Real input signals";

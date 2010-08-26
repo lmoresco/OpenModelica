@@ -134,7 +134,7 @@ end TankHybridPID;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end LimitValue;
 // 
-// fclass TankHybridPID
+// class TankHybridPID
 // Real source.qOut.lflow;
 // parameter Real source.flowLevel = 0.02;
 // parameter Real pidDiscrete.Ts(unit = "s") = 0.1 "Time period between discrete samples";

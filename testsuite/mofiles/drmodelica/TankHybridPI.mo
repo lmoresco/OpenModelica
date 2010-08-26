@@ -120,7 +120,7 @@ end TankHybridPI;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end LimitValue;
 // 
-// fclass TankHybridPI
+// class TankHybridPI
 // Real source.qOut.lflow;
 // parameter Real source.flowLevel = 0.02;
 // parameter Real piDiscrete.Ts(unit = "s") = 0.1 "Time period between discrete samples";

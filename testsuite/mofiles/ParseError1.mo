@@ -14,6 +14,6 @@ end ParseError1;
 // Result:
 // [ParseError1.mo:11:12-11:12:writable] Error: unexpected token: ;, parsing resumed at token ';' on line 11, column 12
 // 
-// fclass ParseError1
+// class ParseError1
 // end ParseError1;
 // endResult

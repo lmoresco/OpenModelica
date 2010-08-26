@@ -10,7 +10,7 @@ getErrorString();
 
 // Result:
 // true
-// "fclass BaseClass1
+// "class BaseClass1
 // Real medium.Xi[1] = 1.0;
 // Real medium.Xi[2] = 2.0;
 // Real medium.Xi[3] = 3.0;

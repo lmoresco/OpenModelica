@@ -20,7 +20,7 @@ equation
 end ModelAccess;
 
 // Result:
-// fclass ModelAccess
+// class ModelAccess
 // parameter Integer om.i1 = 8;
 // parameter Integer om.i2 = 12;
 // Integer i1;

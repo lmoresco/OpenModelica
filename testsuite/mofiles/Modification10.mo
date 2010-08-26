@@ -31,7 +31,7 @@ end Modification10;
 
 
 // Result:
-// fclass Modification10
+// class Modification10
 // Real a.c.b.x = 1.0;
 // Real a.b.x = 17.0;
 // end Modification10;

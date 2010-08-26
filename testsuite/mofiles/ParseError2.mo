@@ -14,6 +14,6 @@ end ParseError2;
 // Result:
 // [ParseError2.mo:11:3-11:10:writable] Error: unexpected token: Real, parsing resumed at token ';' on line 11, column 10
 // 
-// fclass ParseError2
+// class ParseError2
 // end ParseError2;
 // endResult

@@ -90,7 +90,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   pack := 1.2;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape;
 // 
-// fclass Modelica.Mechanics.MultiBody.World
+// class Modelica.Mechanics.MultiBody.World
 //   Real frame_b.r_0[1](quantity = "Length", unit = "m") "Position vector from world frame to the connector frame origin, resolved in world frame";
 //   Real frame_b.r_0[2](quantity = "Length", unit = "m") "Position vector from world frame to the connector frame origin, resolved in world frame";
 //   Real frame_b.r_0[3](quantity = "Length", unit = "m") "Position vector from world frame to the connector frame origin, resolved in world frame";

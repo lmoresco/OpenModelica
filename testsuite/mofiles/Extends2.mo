@@ -24,7 +24,7 @@ model test2
 end test2;
 
 // Result:
-// fclass test2
+// class test2
 // Real adapter.x;
 // end test2;
 // endResult

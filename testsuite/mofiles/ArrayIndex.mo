@@ -38,7 +38,7 @@ model myTestClass_a2
   extends myTestClass.a2;
 end myTestClass_a2;
 // Result:
-// fclass myTestClass_a2
+// class myTestClass_a2
 //   Real myTable.IN.value;
 //   Real myTable.OUT.value;
 //   protected Real myTable.v[1] = 1.1;

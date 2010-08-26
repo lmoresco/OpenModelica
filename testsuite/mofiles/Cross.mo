@@ -17,7 +17,7 @@ equation
 end Cross;
 
 // Result:
-// fclass Cross
+// class Cross
 // Real x[1];
 // Real x[2];
 // Real x[3];

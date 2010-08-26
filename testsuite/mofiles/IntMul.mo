@@ -10,7 +10,7 @@ model IntMul
 end IntMul;
 
 // Result:
-// fclass IntMul
+// class IntMul
 // constant Integer i = 5361118;
 // end IntMul;
 // endResult

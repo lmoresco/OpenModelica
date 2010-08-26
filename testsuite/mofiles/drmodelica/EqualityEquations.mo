@@ -30,7 +30,7 @@ equation
 end EqualityEquations;
 
 // Result:
-// fclass EqualityEquations
+// class EqualityEquations
 // Real x;
 // Real y;
 // Real z;

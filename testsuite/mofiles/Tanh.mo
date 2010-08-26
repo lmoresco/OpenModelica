@@ -12,7 +12,7 @@ equation
 end Tanh;
 
 // Result:
-// fclass Tanh
+// class Tanh
 // Real r;
 // equation
 //   r = 1.0;

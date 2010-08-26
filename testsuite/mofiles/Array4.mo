@@ -13,7 +13,7 @@ model Array4
 end Array4;
 
 // Result:
-// fclass Array4
+// class Array4
 // parameter Real x[1,1];
 // parameter Real x[1,2];
 // parameter Real x[1,3];

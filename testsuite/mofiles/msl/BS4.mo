@@ -1284,7 +1284,7 @@ end BS4;
 // external "C";
 // end Modelica.Math.exp;
 // 
-// fclass BS4
+// class BS4
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";
@@ -1326,7 +1326,7 @@ end BS4;
 // external "C";
 // end Modelica.Math.exp;
 // 
-// fclass BS4
+// class BS4
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";

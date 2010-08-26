@@ -14,7 +14,7 @@ equation
 end FinalParameterModification;
 
 // Result:
-// fclass FinalParameterModification
+// class FinalParameterModification
 // parameter Real p[1](unit = "1", fixed = false);
 // parameter Real p[2](unit = "1", fixed = false);
 // parameter Real p[3](unit = "1", fixed = false);

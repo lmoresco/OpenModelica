@@ -16,7 +16,7 @@ equation
 end ArrayAccess;
 
 // Result:
-// fclass ArrayAccess
+// class ArrayAccess
 // Integer intArray1[1];
 // Integer intArray1[2];
 // Integer intArray1[3];

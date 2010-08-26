@@ -49,7 +49,7 @@ end ArrayAsAliasInExtends;
 //   y := x[NowLetsSee.one] + x[NowLetsSee.two] + x[NowLetsSee.three];
 // end Orientation.equalityConstraint;
 // 
-// fclass ArrayAsAliasInExtends
+// class ArrayAsAliasInExtends
 // parameter Real R1[1](unit = "fish/s") = 1.0;
 // parameter Real R1[2](unit = "fish/s") = 2.0;
 // parameter Real R1[3](unit = "fish/s") = 3.0;

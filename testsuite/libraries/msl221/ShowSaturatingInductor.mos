@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Electrical.Analog.Examples.ShowSaturatingInductor
+// class Modelica.Electrical.Analog.Examples.ShowSaturatingInductor
 // parameter Real Lzer(quantity = "Inductance", unit = "H") = 2.0;
 // parameter Real Lnom(quantity = "Inductance", unit = "H") = 1.0;
 // parameter Real Inom(quantity = "ElectricCurrent", unit = "A") = 1.0;

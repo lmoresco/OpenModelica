@@ -14,7 +14,7 @@ equation
 end EquationFor5;
 
 // Result:
-// fclass EquationFor5
+// class EquationFor5
 // Real a[1];
 // Real a[2];
 // Real a[3];

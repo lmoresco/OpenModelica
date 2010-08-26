@@ -21,7 +21,7 @@ algorithm
   end for;
 end SumVector;
 
-// fclass SumVector
+// class SumVector
 // Real sum;
 // parameter Real v[1] = 100;
 // parameter Real v[2] = 200;

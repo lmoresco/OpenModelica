@@ -12,7 +12,7 @@ equation
 end Rem;
 
 // Result:
-// fclass Rem
+// class Rem
 // Real r;
 // equation
 //   r = 3.0;

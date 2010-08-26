@@ -1081,7 +1081,7 @@ end BM2;
 // external "C";
 // end Modelica.Math.acos;
 // 
-// fclass BM2
+// class BM2
 // parameter Integer acos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer acos1.inPort.n = acos1.n "Dimension of signal vector";
 // input Real acos1.inPort.signal[1] "Real input signals";
@@ -1110,7 +1110,7 @@ end BM2;
 // external "C";
 // end Modelica.Math.acos;
 // 
-// fclass BM2
+// class BM2
 // parameter Integer acos1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer acos1.inPort.n = acos1.n "Dimension of signal vector";
 // input Real acos1.inPort.signal[1] "Real input signals";

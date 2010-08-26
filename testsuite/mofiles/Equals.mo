@@ -11,7 +11,7 @@ model Equals
 end Equals;
 
 // Result:
-// fclass Equals
+// class Equals
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end Equals;

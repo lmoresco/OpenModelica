@@ -11,7 +11,7 @@ model Not
 end Not;
 
 // Result:
-// fclass Not
+// class Not
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end Not;

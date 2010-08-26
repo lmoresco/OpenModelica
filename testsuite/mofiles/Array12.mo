@@ -11,7 +11,7 @@ model Array12
   parameter Real c[2,2]=[1,3.0;4,5.2];
 end Array12;
 // Result:
-// fclass Array12
+// class Array12
 // parameter Real a[1,1] = 2.0;
 // parameter Real a[1,2] = 1.0;
 // parameter Real a[2,1] = 1.2;

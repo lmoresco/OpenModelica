@@ -24,7 +24,7 @@ getErrorString();
 //   rpm := 9.54929658551372 * rs;
 // end Modelica.SIunits.Conversions.to_rpm;
 // 
-// fclass Modelica.Electrical.Machines.Examples.DCSE_start
+// class Modelica.Electrical.Machines.Examples.DCSE_start
 // parameter Real Va(quantity = "ElectricPotential", unit = "V") = 100.0 "actual armature voltage";
 // parameter Real tStart(quantity = "Time", unit = "s") = 0.2 "armature voltage ramp";
 // parameter Real tRamp(quantity = "Time", unit = "s") = 0.8 "armature voltage ramp";

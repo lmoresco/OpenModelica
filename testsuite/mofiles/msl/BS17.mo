@@ -976,7 +976,7 @@ model BS17
 equation 
   connect(booleanStep1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-20.48,14.7},{-2.54,10.14}}));
 end BS17;
-// fclass BS17
+// class BS17
 // parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
 // input Boolean booleanChange1.inPort.signal[1] "Boolean input signals";
@@ -997,7 +997,7 @@ end BS17;
 // booleanStep1.outPort.signal[1] = booleanChange1.inPort.signal[1];
 // end BS17;
 // Result:
-// fclass BS17
+// class BS17
 // parameter Integer booleanChange1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer booleanChange1.inPort.n = booleanChange1.n "Dimension of signal vector";
 // input Boolean booleanChange1.inPort.signal[1] "Boolean input signals";

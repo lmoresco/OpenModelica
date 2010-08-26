@@ -37,7 +37,7 @@ end RecordExtends;
 // output NdFeB res;
 // end HardMagnetic.NdFeB;
 // 
-// fclass RecordExtends
+// class RecordExtends
 // parameter Real a.H_cBRef = 900000.0;
 // parameter Real a.B_rRef = 1.2;
 // parameter Real a.T_ref = 293.15;

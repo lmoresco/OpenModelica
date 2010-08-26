@@ -13,7 +13,7 @@ end A;
 class Overwriting1 = A(x = 5.0);
 
 // Result:
-// fclass Overwriting1
+// class Overwriting1
 // Real x = 5.0;
 // Real u;
 // equation

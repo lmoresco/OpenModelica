@@ -24,7 +24,7 @@ end Constant6;
 //   y := 1 + x;
 // end inc;
 // 
-// fclass Constant6
+// class Constant6
 // Real x[1];
 // Real x[2];
 // end Constant6;

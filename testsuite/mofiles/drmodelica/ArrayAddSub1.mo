@@ -12,7 +12,7 @@ class AddSub1
 end AddSub1; 
 
 // Result:
-// fclass AddSub1
+// class AddSub1
 // Real Add3[1,1] = 2.0;
 // Real Add3[1,2] = 3.0;
 // Real Add3[2,1] = 5.0;

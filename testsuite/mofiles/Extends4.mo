@@ -27,7 +27,7 @@ equation
 end Multiplex3;
 
 // Result:
-// fclass Multiplex3
+// class Multiplex3
 // parameter Integer n1 = 1 "dimension of input signal connector 1";
 // parameter Integer n2 = 1 "dimension of input signal connector 2";
 // parameter Integer n3 = 1 "dimension of input signal connector 3";

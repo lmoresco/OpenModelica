@@ -16,7 +16,7 @@ model ComponentNames
 end ComponentNames;
 
 // Result:
-// fclass ComponentNames
+// class ComponentNames
 // parameter Integer TestClass.x = 2;
 // Integer Integer = 2;
 // end ComponentNames;

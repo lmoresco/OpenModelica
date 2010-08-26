@@ -15,7 +15,7 @@ equation
 end Type9;
 
 // Result:
-// fclass Type9
+// class Type9
 //      Real x[1,1];
 //      Real x[1,2];
 //      Real x[1,3];

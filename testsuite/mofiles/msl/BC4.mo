@@ -939,7 +939,7 @@ equation
   connect(constant1.outPort,integrator1.inPort) annotation(Line(visible=true,points={{-4.04,14.0},{13.25,16.62}}));
 end BC4;
 
-// fclass BC4
+// class BC4
 // parameter Integer integrator1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer integrator1.inPort.n = integrator1.n "Dimension of signal vector";
 // input Real integrator1.inPort.signal[1] "Real input signals";
@@ -963,7 +963,7 @@ end BC4;
 // constant1.outPort.signal[1] = integrator1.inPort.signal[1];
 // end BC4;
 // Result:
-// fclass BC4
+// class BC4
 // parameter Integer integrator1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer integrator1.inPort.n = integrator1.n "Dimension of signal vector";
 // input Real integrator1.inPort.signal[1] "Real input signals";

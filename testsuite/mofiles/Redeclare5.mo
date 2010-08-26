@@ -23,7 +23,7 @@ end D;
 
 
 // Result:
-// fclass D
+// class D
 // parameter Real c.d.b = 5.0;
 // Real c.d.x;
 // equation

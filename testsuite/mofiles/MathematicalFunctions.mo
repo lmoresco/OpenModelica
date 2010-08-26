@@ -23,7 +23,7 @@ end MathematicalFunctions;
 
 // Results:
 // Result:
-// fclass MathematicalFunctions
+// class MathematicalFunctions
 // Real r1 = 0.850903524534118;
 // Real r2 = 0.52532198881773;
 // Real r3 = 1.61977519054386;

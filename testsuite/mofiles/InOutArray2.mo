@@ -28,7 +28,7 @@ end InOutArray2;
 //   end for;
 // end strCombine;
 // 
-// fclass InOutArray2
+// class InOutArray2
 // constant String A[1] = "hello";
 // constant String A[2] = " world";
 // constant String A[3] = "!";

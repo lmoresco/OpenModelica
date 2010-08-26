@@ -22,7 +22,7 @@ model Import5
 end Import5;
 
 // Result:
-// fclass Import5
+// class Import5
 // Real x = 9.42;
 // Real x2 = 2.7;
 // Real x3 = 300000000.0;

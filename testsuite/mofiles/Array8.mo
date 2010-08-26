@@ -12,7 +12,7 @@ equation
 end Array8;
 
 // Result:
-// fclass Array8
+// class Array8
 //   Real x[1];
 //   Real x[2];
 //   Real y[1];

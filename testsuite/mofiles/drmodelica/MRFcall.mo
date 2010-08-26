@@ -37,7 +37,7 @@ end MRFcall;
 //   r3 := x - y;
 // end MultipleResultsFunction;
 // 
-// fclass MRFcall
+// class MRFcall
 // Real a;
 // Real b;
 // Real c;

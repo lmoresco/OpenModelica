@@ -25,7 +25,7 @@ equation
 end Switch;
 
 // Result:
-// fclass Switch
+// class Switch
 // Real v;
 // Real i;
 // Real i1;

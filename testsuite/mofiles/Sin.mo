@@ -12,7 +12,7 @@ equation
 end Sin;
 
 // Result:
-// fclass Sin
+// class Sin
 // Real r;
 // equation
 //   r = 0.850903524534118;

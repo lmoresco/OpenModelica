@@ -21,7 +21,7 @@ end Derived1;
 // output ThermodynamicState res;
 // end Derived1.ThermodynamicState;
 // 
-// fclass Derived1
+// class Derived1
 // constant Real T = 1.0;
 // constant Real p = 2.0;
 // constant Real res.T = 1.0 "temperature";

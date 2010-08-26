@@ -104,7 +104,7 @@ end Derivative1;
 //   end if;
 // end FooFunctions.foo2;
 // 
-// fclass Derivative1
+// class Derivative1
 // Real x[1];
 // Real x[2];
 // Real x[3];

@@ -14,6 +14,6 @@ end Declaration2;
 // Result:
 // [Declaration2.mo:11:12-11:27:writable] Error: unexpected token: discrete, parsing resumed at token ';' on line 11, column 27
 // 
-// fclass Declaration2
+// class Declaration2
 // end Declaration2;
 // endResult

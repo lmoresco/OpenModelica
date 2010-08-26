@@ -33,7 +33,7 @@ model Lookup10
 end Lookup10;
 
 // Result:
-// fclass Lookup10
+// class Lookup10
 // constant Integer i = 4;
 // constant Integer n_of_surf_orient_def = 4;
 // end Lookup10;

@@ -10,7 +10,7 @@ model RealMul
 end RealMul;
 
 // Result:
-// fclass RealMul
+// class RealMul
 // constant Real r = 5362758.96;
 // end RealMul;
 // endResult

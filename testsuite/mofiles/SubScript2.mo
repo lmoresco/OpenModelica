@@ -18,7 +18,7 @@ end Subscript2;
 
 
 // Result:
-// fclass Subscript2
+// class Subscript2
 // Real x[1];
 // Real x[2];
 // Real x[3];

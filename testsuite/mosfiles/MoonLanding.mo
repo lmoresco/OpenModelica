@@ -50,7 +50,7 @@ end MoonLanding;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass MoonLanding
+// class MoonLanding
 // parameter Real force1 = 36350;
 // parameter Real force2 = 1308;
 // parameter Real thrustEndTime = 210;

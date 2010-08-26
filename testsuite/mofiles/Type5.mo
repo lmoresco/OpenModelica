@@ -12,7 +12,7 @@ model Type5
 end Type5;
 
 // Result:
-// fclass Type5
+// class Type5
 // Real v(unit = "V");
 // end Type5;
 // endResult

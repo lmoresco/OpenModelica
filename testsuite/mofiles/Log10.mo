@@ -12,7 +12,7 @@ equation
 end Log10;
 
 // Result:
-// fclass Log10
+// class Log10
 // Real r;
 // equation
 //   r = 1.65321251377534;

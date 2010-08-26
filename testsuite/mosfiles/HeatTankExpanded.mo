@@ -32,7 +32,7 @@ equation
   outlet.volumeFlowRate = 2;
 end HeatTankExpanded; 
 
-// fclass HeatTankExpanded
+// class HeatTankExpanded
 // parameter Real Area = 1;
 // Real inlet.pressure;
 // Real inlet.volumeFlowRate;

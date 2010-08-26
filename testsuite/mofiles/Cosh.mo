@@ -12,7 +12,7 @@ equation
 end Cosh;
 
 // Result:
-// fclass Cosh
+// class Cosh
 // Real r;
 // equation
 //   r = 1.74671355287425e+19;

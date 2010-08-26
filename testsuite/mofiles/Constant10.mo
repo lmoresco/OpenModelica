@@ -17,7 +17,7 @@ model test
 end test;
 
 // Result:
-// fclass test
+// class test
 // Real x = 1.0;
 // end test;
 // endResult

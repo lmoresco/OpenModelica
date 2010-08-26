@@ -50,7 +50,7 @@ end FunctionBubblesort;
 //   end for;
 // end bubblesort;
 // 
-// fclass FunctionBubblesort
+// class FunctionBubblesort
 // constant Real a[1] = 0.0;
 // constant Real a[2] = 9.0;
 // constant Real a[3] = 3.0;

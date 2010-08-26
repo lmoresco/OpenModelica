@@ -13,7 +13,7 @@ equation
 end ArrayDeclaration1;
 
 // Result:
-// fclass ArrayDeclaration1
+// class ArrayDeclaration1
 // Real realArray[1];
 // Real realArray[2];
 // equation

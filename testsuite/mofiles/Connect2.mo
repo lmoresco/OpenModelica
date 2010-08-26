@@ -21,7 +21,7 @@ equation
 end Connect2;
 
 // Result:
-// fclass Connect2
+// class Connect2
 // Real c1.f;
 // Real c1.e;
 // Real c2.f;

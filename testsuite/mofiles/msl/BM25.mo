@@ -1072,7 +1072,7 @@ end BM25;
 // external "C";
 // end Modelica.Math.tan;
 // 
-// fclass BM25
+// class BM25
 // parameter Integer tan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer tan1.inPort.n = tan1.n "Dimension of signal vector";
 // input Real tan1.inPort.signal[1] "Real input signals";
@@ -1101,7 +1101,7 @@ end BM25;
 // external "C";
 // end Modelica.Math.tan;
 // 
-// fclass BM25
+// class BM25
 // parameter Integer tan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer tan1.inPort.n = tan1.n "Dimension of signal vector";
 // input Real tan1.inPort.signal[1] "Real input signals";

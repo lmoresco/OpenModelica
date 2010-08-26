@@ -27,7 +27,7 @@ end PolyEvaluate2;
 
 
 // Result:
-// fclass PolyEvaluate2
+// class PolyEvaluate2
 // Real p;
 // parameter Real polyeval.c[1] = 1.0;
 // parameter Real polyeval.c[2] = 2.0;

@@ -23,7 +23,7 @@ equation
   k = c.green;
 end Colors;
 // Result:
-// fclass Colors
+// class Colors
 // parameter Real c.red = 0.7;
 // parameter Real c.blue = 0.1;
 // Real c.green;

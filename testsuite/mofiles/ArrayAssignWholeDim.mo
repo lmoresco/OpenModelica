@@ -30,7 +30,7 @@ end ArrayAssignWholeDim;
 //   a[{2,3},2] := x[{2,3}];
 // end ArrayAssignWholeDim.GetA;
 // 
-// fclass ArrayAssignWholeDim
+// class ArrayAssignWholeDim
 //   constant Real X[1] = 1.0;
 //   constant Real X[2] = 2.0;
 //   constant Real X[3] = 3.0;

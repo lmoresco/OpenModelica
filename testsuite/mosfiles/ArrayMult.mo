@@ -16,7 +16,7 @@ class ArrayMult
   Real m8[2, 2] = [1, 2; 3, 4] * [1, 2; 2, 1];   // Matrix mult: {{5, 4}, {11, 10}};
 end ArrayMult;  
 
-// fclass ArrayMult
+// class ArrayMult
 // Real m1[1];
 // Real m1[2];
 // Real m1[3];

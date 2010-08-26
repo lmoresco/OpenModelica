@@ -10,7 +10,7 @@ model ModifierVariable
 end ModifierVariable;
 
 // Result:
-// fclass ModifierVariable
+// class ModifierVariable
 // parameter Real r1(start = 4711.0);
 // end ModifierVariable;
 // endResult

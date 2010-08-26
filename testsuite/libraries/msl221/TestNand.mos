@@ -173,7 +173,7 @@ getErrorString();
 //   ids0 := if NFS == 0.0 AND Vgst <= 0.0 then 0.0 else ids;
 // end BondLib.Spice.Utilities.MOSeq3;
 // 
-// fclass BondLib_Examples_ModelicaSpice_NandGate_TestNand
+// class BondLib_Examples_ModelicaSpice_NandGate_TestNand
 // parameter Integer Level = 3 "MOSFET modeling level";
 // output Real vA(quantity = "ElectricPotential", unit = "V") "First input voltage";
 // output Real vB(quantity = "ElectricPotential", unit = "V") "Second input voltage";

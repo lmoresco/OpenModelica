@@ -940,7 +940,7 @@ equation
   connect(clock1.outPort,der1.inPort) annotation(Line(visible=true,points={{-34.47,24.13},{-13.18,23.22}}));
 end BS1;
 
-// fclass BS1
+// class BS1
 // parameter Integer clock1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer clock1.outPort.n = clock1.nout "Dimension of signal vector";
 // output Real clock1.outPort.signal[1] "Real output signals";
@@ -965,7 +965,7 @@ end BS1;
 // clock1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS1;
 // Result:
-// fclass BS1
+// class BS1
 // parameter Integer clock1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer clock1.outPort.n = clock1.nout "Dimension of signal vector";
 // output Real clock1.outPort.signal[1] "Real output signals";

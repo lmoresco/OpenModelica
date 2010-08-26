@@ -19,7 +19,7 @@ class ArrayConstruct1
 end ArrayConstruct1;  
   
 // Result:
-// fclass ArrayConstruct1
+// class ArrayConstruct1
 // Integer a[1] = 1;
 // Integer a[2] = 2;
 // Integer a[3] = 3;

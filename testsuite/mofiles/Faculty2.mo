@@ -34,7 +34,7 @@ end Faculty2Model;
 //   end for;
 // end Faculty2;
 // 
-// fclass Faculty2Model
+// class Faculty2Model
 // Integer x;
 // Integer y;
 // equation

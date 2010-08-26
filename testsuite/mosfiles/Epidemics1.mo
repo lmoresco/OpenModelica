@@ -26,7 +26,7 @@ end Epidemics1;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass Epidemics1
+// class Epidemics1
 // Real Indv(start = 0.005);
 // Real S(start = 0.995);
 // Real R(start = 0.0);

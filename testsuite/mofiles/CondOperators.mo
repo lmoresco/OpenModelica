@@ -18,7 +18,7 @@ model CondOperators
 end CondOperators;
 
 // Result:
-// fclass CondOperators
+// class CondOperators
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // constant Boolean b3 = true;

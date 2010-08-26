@@ -55,7 +55,7 @@ end Step;                        // From Modelica.Blocks.Sources
 
 
 // Result:
-// fclass Step
+// class Step
 // parameter Integer nout = 1 "Number of outputs";
 // parameter Integer outPort.n = nout "Dimension of signal vector";
 // output Real outPort.signal[1] "Real output signals";

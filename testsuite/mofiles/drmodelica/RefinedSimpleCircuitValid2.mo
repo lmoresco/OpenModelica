@@ -92,7 +92,7 @@ equation
 end RefinedResistorCircuit2Expanded;
 
 // Result:
-// fclass RefinedResistorCircuit2Expanded
+// class RefinedResistorCircuit2Expanded
 // Real R1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real R1.p.i(quantity = "ElectricCurrent", unit = "A");
 // Real R1.n.v(quantity = "ElectricPotential", unit = "V");

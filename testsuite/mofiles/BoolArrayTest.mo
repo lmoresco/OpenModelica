@@ -13,7 +13,7 @@ equation
 end BoolArrayTest;
 
 // Result:
-// fclass BoolArrayTest
+// class BoolArrayTest
 // Boolean b[1] = a;
 // Boolean b[2] = time > 2.0;
 // Boolean a;

@@ -10,7 +10,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.NandGate);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Electrical.Analog.Examples.NandGate
+// "class Modelica.Electrical.Analog.Examples.NandGate
 // Real Gnd1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
 // Real Gnd1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
 // Real Gnd4.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";

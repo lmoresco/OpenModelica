@@ -26,7 +26,7 @@ end LogCall1;
 // external "C";
 // end log;
 // 
-// fclass LogCall1
+// class LogCall1
 // Real res;
 // equation
 //   res = 4.60517018598809;

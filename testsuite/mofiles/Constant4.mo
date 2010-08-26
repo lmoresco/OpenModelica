@@ -11,7 +11,7 @@ class Constant4
 end Constant4;
 
 // Result:
-// fclass Constant4
+// class Constant4
 // Real x[1];
 // Real x[2];
 // end Constant4;

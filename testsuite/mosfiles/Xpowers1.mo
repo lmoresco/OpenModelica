@@ -21,7 +21,7 @@ equation
   y = a * xpowers[5];
 end Xpowers1;
 
-// fclass Xpowers1
+// class Xpowers1
 // parameter Real x = 10;
 // Real a;
 // parameter Integer n = 5;

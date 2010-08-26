@@ -12,7 +12,7 @@ equation
 end Exp;
 
 // Result:
-// fclass Exp
+// class Exp
 // Real r;
 // equation
 //   r = 3.49342710574851e+19;

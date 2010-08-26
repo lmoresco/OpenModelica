@@ -13,6 +13,6 @@ model RecordSimple
 end RecordSimple;
 
 // Result:
-// fclass RecordSimple
+// class RecordSimple
 // end RecordSimple;
 // endResult

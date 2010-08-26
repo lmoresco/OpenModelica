@@ -20,7 +20,7 @@ model A
     b4 = C[1].g.setdg;
 end A;
 // Result:
-// fclass A
+// class A
 // Boolean C[1,1,1].g[1].setdg[1];
 // Boolean C[1,1,1].g[1].setdg[2];
 // Boolean C[1,1,1].g[2].setdg[1];

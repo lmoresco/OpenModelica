@@ -12,7 +12,7 @@ equation
   r2 = sign(-time);
 end Sign;
 
-// fclass Sign
+// class Sign
 // Real r1;
 // Real r2;
 // equation

@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Electrical.Analog.Examples.Rectifier
+// class Modelica.Electrical.Analog.Examples.Rectifier
 // parameter Real VAC(quantity = "ElectricPotential", unit = "V") = 400.0 "RMS line-to-line";
 // parameter Real f(quantity = "Frequency", unit = "Hz") = 50.0 "line frequency";
 // parameter Real LAC(quantity = "Inductance", unit = "H") = 6e-05 "line inductor";

@@ -84,7 +84,7 @@ getErrorString();
 //   end if;
 // end PackShape;
 // 
-// fclass MultiBody.Examples.Loops.Fourbar2
+// class MultiBody.Examples.Loops.Fourbar2
 // output Real j1q(quantity = "Angle", unit = "rad", displayUnit = "deg") "angle of revolute joint j1";
 // output Real j2q(quantity = "Length", unit = "m") "distance of prismatic joint j2";
 // output Real j1qd(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "axis speed of revolute joint j1";

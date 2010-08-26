@@ -14,7 +14,7 @@ algorithm
 end ForSimple;
 
 // Result:
-// fclass ForSimple
+// class ForSimple
 // Real rarr[1];
 // Real rarr[2];
 // Real rarr[3];

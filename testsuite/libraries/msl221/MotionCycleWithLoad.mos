@@ -31,7 +31,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.log;
 // 
-// fclass Magnetic_Examples_MotionCycleWithLoad
+// class Magnetic_Examples_MotionCycleWithLoad
 // Real Ground.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
 // Real Ground.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
 // parameter Real STA_195205_129.l_yoke(quantity = "Length", unit = "m") = 0.039 "Total length of yoke";

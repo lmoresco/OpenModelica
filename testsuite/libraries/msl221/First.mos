@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Mechanics.Rotational.Examples.First
+// class Modelica.Mechanics.Rotational.Examples.First
 // parameter Real amplitude = 10.0;
 // parameter Real freqHz(quantity = "Frequency", unit = "Hz") = 5.0;
 // parameter Real Jmotor(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0) = 0.1;

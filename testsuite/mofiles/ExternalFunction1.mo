@@ -37,7 +37,7 @@ end ExternalFunction1;
 // external "C";
 // end f;
 // 
-// fclass ExternalFunction1
+// class ExternalFunction1
 // constant Real x = 5.0;
 // Real y;
 // equation

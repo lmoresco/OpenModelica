@@ -22,7 +22,7 @@ equation
 end Inline6;
 
 // Result:
-// fclass Inline6
+// class Inline6
 // Integer x[1];
 // Integer y;
 // equation

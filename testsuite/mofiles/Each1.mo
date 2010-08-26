@@ -12,7 +12,7 @@ model B
   C c[5](each a={1,2,3},d={1,2,3,4,5});
 end B;
 // Result:
-// fclass B
+// class B
 // parameter Real c[1].a[1] = 1.0;
 // parameter Real c[1].a[2] = 2.0;
 // parameter Real c[1].a[3] = 3.0;

@@ -14,7 +14,7 @@ equation
 end TypeEnumeration;
 
 // Result:
-// fclass TypeEnumeration
+// class TypeEnumeration
 // enumeration(test1, test2, test3) et;
 // equation
 //   et = Enum.test3;

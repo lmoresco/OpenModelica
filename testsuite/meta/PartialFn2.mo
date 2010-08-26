@@ -67,7 +67,7 @@ equation
 end PartialFn2;
 
 // Result:
-// fclass PartialFn2
+// class PartialFn2
 // Integer i1;
 // Integer i2;
 // equation

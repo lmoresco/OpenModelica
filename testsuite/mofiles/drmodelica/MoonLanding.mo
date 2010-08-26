@@ -47,7 +47,7 @@ equation
 end MoonLanding;
 
 // Result:
-// fclass MoonLanding
+// class MoonLanding
 // parameter Real force1 = 36350.0;
 // parameter Real force2 = 1308.0;
 // parameter Real thrustEndTime = 210.0;

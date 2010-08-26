@@ -14,7 +14,7 @@ algorithm
 end AlgorithmFor6;
 
 // Result:
-// fclass AlgorithmFor6
+// class AlgorithmFor6
 // Real a[1,1];
 // Real a[1,2];
 // Real a[1,3];

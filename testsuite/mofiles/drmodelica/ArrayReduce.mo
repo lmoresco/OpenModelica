@@ -14,7 +14,7 @@ equation
 end ArrayReduce;
 
 // Result:
-// fclass ArrayReduce
+// class ArrayReduce
 // Real minimum;
 // Real maximum;
 // Real summ;

@@ -15,7 +15,7 @@ equation
 end Delay;
 
 // Result:
-// fclass Delay
+// class Delay
 // Real x;
 // Real y;
 // Real a = 1.0;

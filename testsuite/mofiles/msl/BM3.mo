@@ -994,7 +994,7 @@ equation
   connect(constant1.outPort,add1.inPort1) annotation(Line(visible=true,points={{-31.13,29.6},{4.15,22.31}}));
 end BM3;
 
-// fclass BM3
+// class BM3
 // parameter Integer add1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer add1.inPort1.n = add1.n "Dimension of signal vector";
 // input Real add1.inPort1.signal[1] "Real input signals";
@@ -1030,7 +1030,7 @@ end BM3;
 // constant2.outPort.signal[1] = add1.inPort2.signal[1];
 // end BM3;
 // Result:
-// fclass BM3
+// class BM3
 // parameter Integer add1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer add1.inPort1.n = add1.n "Dimension of signal vector";
 // input Real add1.inPort1.signal[1] "Real input signals";

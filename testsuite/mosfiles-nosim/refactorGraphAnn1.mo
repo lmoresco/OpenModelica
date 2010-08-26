@@ -84,5 +84,5 @@ fillColor=51,
   
 end complextest;
 
-// fclass complextest
+// class complextest
 // end complextest;

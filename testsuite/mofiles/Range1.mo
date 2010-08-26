@@ -21,7 +21,7 @@ equation
 end Range1;
 
 // Result:
-// fclass Range1
+// class Range1
 // Integer x[1] = 1;
 // Integer x[2] = 2;
 // Integer x[3] = 3;

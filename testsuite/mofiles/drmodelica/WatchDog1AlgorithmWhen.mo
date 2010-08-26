@@ -51,7 +51,7 @@ end WatchDogSystem1;
 
 
 // Result:
-// fclass WatchDogSystem1
+// class WatchDogSystem1
 // parameter Real turnOn.eventTime = 1.0;
 // discrete Boolean turnOn.dOutput.signal;
 // parameter Real turnOff.eventTime = 0.25;

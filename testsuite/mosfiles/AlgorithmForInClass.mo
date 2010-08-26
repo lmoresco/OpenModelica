@@ -32,7 +32,7 @@ algorithm
 	end for;
 end AlgorithmForInClass;
 
-// fclass AlgorithmForInClass
+// class AlgorithmForInClass
 // Real accum_sum[1];
 // Real accum_sum[2];
 // Real accum_sum[3];

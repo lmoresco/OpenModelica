@@ -20,7 +20,7 @@ algorithm
   end if;
 end CondAssign;
 
-// fclass CondAssign
+// class CondAssign
 // Real x(start = 35.0);
 // Real y(start = 45.0);
 // parameter Real z = 0;

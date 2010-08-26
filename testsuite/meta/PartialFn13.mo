@@ -41,7 +41,7 @@ equation
   y = TestFn(x);
 end PartialFn13; 
 
-// fclass PartialFn13
+// class PartialFn13
 // Real x;
 // Real y;
 // equation

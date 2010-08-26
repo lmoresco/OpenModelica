@@ -12,7 +12,7 @@ class AddSub1
   Real Sub1[3] = {1, 2, 3} - {1, 2, 0};    // Result: {0, 0, 3}
 end AddSub1; 
 
-// fclass AddSub1
+// class AddSub1
 // Real Add3[1,1];
 // Real Add3[1,2];
 // Real Add3[2,1];

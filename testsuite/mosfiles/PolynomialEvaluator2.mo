@@ -43,7 +43,7 @@ end PolynomialEvaluator2;
 //   end for;
 // end polyeval;
 // 
-// fclass PolynomialEvaluator2
+// class PolynomialEvaluator2
 // Real inVector[1];
 // Real inVector[2];
 // Real inVector[3];

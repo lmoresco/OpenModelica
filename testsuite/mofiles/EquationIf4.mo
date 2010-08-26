@@ -22,7 +22,7 @@ equation
 end EquationIf4;
 
 // Result:
-// fclass EquationIf4
+// class EquationIf4
 // Real p = 10.0 * time;
 // Real x;
 // equation

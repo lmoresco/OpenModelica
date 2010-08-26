@@ -34,7 +34,7 @@ end FunctionEval1;
 //   y := 1.0 + x;
 // end f;
 // 
-// fclass FunctionEval1
+// class FunctionEval1
 // Real x;
 // equation
 //   x = 2.0;

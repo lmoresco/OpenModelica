@@ -16,7 +16,7 @@ equation
 end Type10;
 
 // Result:
-// fclass Type10
+// class Type10
 //            String  ok[1].unit;
 //            Real    ok[1];
 //            String  ok[2].unit;

@@ -40,7 +40,7 @@ end Extends10;
 //   out := 1.0;
 // end Extends10.f;
 // 
-// fclass Extends10
+// class Extends10
 // Real x = Extends10.f(time);
 // end Extends10;
 // endResult

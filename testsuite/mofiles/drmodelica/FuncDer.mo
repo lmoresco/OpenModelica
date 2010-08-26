@@ -83,7 +83,7 @@ end FuncDer;
 //   der_2_y := exp(x) * der_x ^ 2.0 + exp(x) * der_2_x;
 // end h2;
 // 
-// fclass FuncDer
+// class FuncDer
 // Real fn0;
 // Real fn1;
 // Real fn2;

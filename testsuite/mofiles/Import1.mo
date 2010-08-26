@@ -50,7 +50,7 @@ end Import1;
    Real myc.x=7; // A.B2.E via import MyC=A.B2.C;
 */
 // Result:
-// fclass Import1
+// class Import1
 // Real c.x = 4.0;
 // Real d.x = 5.0;
 // Real e.x = 6.0;

@@ -23,7 +23,7 @@ model DeclarationOrder1
 end DeclarationOrder1;
 
 // Result:
-// fclass DeclarationOrder1
+// class DeclarationOrder1
 // Real b.y(start = b.x);
 // parameter Real b.x = 3.14;
 // equation

@@ -50,7 +50,7 @@ class ComplexUser
     z = ComplexNumbers.Add(a, b);
 end ComplexUser;
 
-// fclass ComplexUser
+// class ComplexUser
 // Real a.re;
 // Real a.im;
 // Real b.re;

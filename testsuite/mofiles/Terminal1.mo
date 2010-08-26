@@ -12,7 +12,7 @@ equation
 end Terminal1; 
 
 // Result:
-// fclass Terminal1
+// class Terminal1
 // Boolean t;
 // equation
 // t = terminal();

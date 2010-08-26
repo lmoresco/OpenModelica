@@ -18,7 +18,7 @@ equation
 end BlockIllegal;
 
 // Result:
-// fclass BlockIllegal
+// class BlockIllegal
 // Integer tb1.i;
 // Integer tb2.i;
 // equation

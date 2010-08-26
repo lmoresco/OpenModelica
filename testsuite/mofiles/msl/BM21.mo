@@ -1073,7 +1073,7 @@ end BM21;
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BM21
+// class BM21
 // parameter Integer sin1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sin1.inPort.n = sin1.n "Dimension of signal vector";
 // input Real sin1.inPort.signal[1] "Real input signals";
@@ -1102,7 +1102,7 @@ end BM21;
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BM21
+// class BM21
 // parameter Integer sin1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sin1.inPort.n = sin1.n "Dimension of signal vector";
 // input Real sin1.inPort.signal[1] "Real input signals";

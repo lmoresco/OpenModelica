@@ -52,7 +52,7 @@ end DefaultRecordParameters;
 // output Extended2 res;
 // end BodyModel.Extended2;
 // 
-// fclass DefaultRecordParameters
+// class DefaultRecordParameters
 // parameter Real body1.data.length = 0.09;
 // parameter Real body1.data.volume = 2.1;
 // Real body1.displacement;

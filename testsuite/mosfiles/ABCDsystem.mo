@@ -18,7 +18,7 @@ equation
   y = C*x + D*u;                  // Which is: y = D*u
 end ABCDsystem;
 
-// fclass ABCDsystem
+// class ABCDsystem
 // parameter Integer n = 0;
 // Real u[1];
 // Real u[2];

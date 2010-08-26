@@ -18,7 +18,7 @@ algorithm
 end SumZ;
 
 // Result:
-// fclass SumZ
+// class SumZ
 // parameter Integer n = 5;
 // parameter Real z[1] = 10.0;
 // parameter Real z[2] = 20.0;

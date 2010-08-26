@@ -14,7 +14,7 @@ class B
 end B;
 
 // Result:
-// fclass B
+// class B
 // parameter Real a;
 // end B;
 // endResult

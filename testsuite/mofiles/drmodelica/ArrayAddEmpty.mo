@@ -13,6 +13,6 @@ class AddEmpty
 end AddEmpty;
 
 // Result:
-// fclass AddEmpty
+// class AddEmpty
 // end AddEmpty;
 // endResult

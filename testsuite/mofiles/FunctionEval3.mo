@@ -45,7 +45,7 @@ end FunctionEval3;
 //   y := 2.0 + x;
 // end f;
 // 
-// fclass FunctionEval3
+// class FunctionEval3
 // parameter Real a = 5.0;
 // Real x;
 // equation

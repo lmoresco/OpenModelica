@@ -81,7 +81,7 @@ equation
 end ConstrainingType1;
 
 // Result:
-// fclass ConstrainingType1
+// class ConstrainingType1
 // Real a.a.i;
 // Real a.a.v;
 // Real a.b.i;

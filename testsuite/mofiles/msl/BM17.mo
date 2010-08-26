@@ -973,7 +973,7 @@ equation
   connect(max1.inPort2,constant2.outPort) annotation(Line(visible=true,points={{-42.99,25.35},{-74.92,13.49}}));
   connect(max1.inPort1,constant1.outPort) annotation(Line(visible=true,points={{-42.99,37.21},{-72.79,41.16}}));
 end BM17;
-// fclass BM17
+// class BM17
 // parameter Integer max1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer max1.inPort1.n = max1.n "Dimension of signal vector";
 // input Real max1.inPort1.signal[1] "Real input signals";
@@ -1007,7 +1007,7 @@ end BM17;
 // max1.inPort2.signal[1] = constant2.outPort.signal[1];
 // end BM17;
 // Result:
-// fclass BM17
+// class BM17
 // parameter Integer max1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer max1.inPort1.n = max1.n "Dimension of signal vector";
 // input Real max1.inPort1.signal[1] "Real input signals";

@@ -17,7 +17,7 @@ class AssertTestInst
   AssertTest assertTest(lowlimit = -2, highlimit = 6, x = 5);
 end AssertTestInst;
 
-// fclass AssertTestInst
+// class AssertTestInst
 // parameter Real assertTest.lowlimit = -2;
 // parameter Real assertTest.highlimit = 6;
 // parameter Real assertTest.x = 5;

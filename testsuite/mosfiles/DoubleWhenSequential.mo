@@ -19,7 +19,7 @@ algorithm
 end DoubleWhenSequential;
 
 
-// fclass DoubleWhenSequential
+// class DoubleWhenSequential
 // Boolean close;
 // algorithm
 //   when time <= 2.0 then

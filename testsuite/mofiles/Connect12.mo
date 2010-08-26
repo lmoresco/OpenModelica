@@ -32,7 +32,7 @@ equation
 end test;
 
 // Result:
-// fclass test
+// class test
 // input Real x;
 // output Real x2;
 // input Real v = {1.0,2.4};

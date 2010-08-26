@@ -120,7 +120,7 @@ getErrorString();// Result:
 //   end if;
 // end PackShape;
 // 
-// fclass MultiBody.Examples.Loops.Engine2
+// class MultiBody.Examples.Loops.Engine2
 // parameter Real D = 0.1;
 // parameter Real e = 0.05;
 // parameter Real L = 0.2;

@@ -23,7 +23,7 @@ class ModifyConstant2
 end ModifyConstant2;
 
 // Result:
-// fclass ModifyConstant2
+// class ModifyConstant2
 //   constant Real b.a.c;
 //   constant Real c.a.c;
 // equation

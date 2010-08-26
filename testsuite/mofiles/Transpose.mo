@@ -16,7 +16,7 @@ equation
 end Transpose;
 
 // Result:
-// fclass Transpose
+// class Transpose
 // Real M[1,1] = 1.0;
 // Real M[1,2] = 2.0;
 // Real M[1,3] = 3.0;

@@ -19,7 +19,7 @@ equation
   end when;
 end WhenSet;
 
-// fclass WhenSet
+// class WhenSet
 // Real x;
 // parameter Real y2 = 3;
 // discrete Real y1;

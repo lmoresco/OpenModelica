@@ -12,7 +12,7 @@ equation
 end Sqrt;
 
 // Result:
-// fclass Sqrt
+// class Sqrt
 // Real r;
 // equation
 //   r = 5.0;

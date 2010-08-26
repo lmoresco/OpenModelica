@@ -17,7 +17,7 @@ equation
 end RecordAssignment;
 
 // Result:
-// fclass RecordAssignment
+// class RecordAssignment
 // Integer tr1.i;
 // Integer tr2.i;
 // equation

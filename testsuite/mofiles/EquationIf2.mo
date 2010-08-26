@@ -19,7 +19,7 @@ equation
 end EquationIf2;
 
 // Result:
-// fclass EquationIf2
+// class EquationIf2
 // parameter Boolean b = false;
 // Real x;
 // equation

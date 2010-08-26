@@ -30,7 +30,7 @@ end ConnectInner2;
 
 
 // Result:
-// fclass ConnectInner2
+// class ConnectInner2
 //   Real global.e;
 //   Real global.f;
 //   Real b.a.global.e;

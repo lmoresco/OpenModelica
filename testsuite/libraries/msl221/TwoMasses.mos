@@ -24,7 +24,7 @@ getErrorString();
 //   Celsius := -273.15 + Kelvin;
 // end Modelica.SIunits.Conversions.to_degC;
 // 
-// fclass Modelica.Thermal.HeatTransfer.Examples.TwoMasses
+// class Modelica.Thermal.HeatTransfer.Examples.TwoMasses
 // parameter Real T_final_K(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, fixed = false) "Projected final temperature";
 // parameter Real T_final_degC(quantity = "ThermodynamicTemperature", unit = "degC", fixed = false) "Projected final temperature";
 // parameter Real mass1.C(quantity = "HeatCapacity", unit = "J/K") = 15.0 "Heat capacity of part (= cp*m)";

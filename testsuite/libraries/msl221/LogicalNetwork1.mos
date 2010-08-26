@@ -58,7 +58,7 @@ getErrorString();
 //   end if;
 // end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
 // 
-// fclass Modelica.Blocks.Examples.LogicalNetwork1
+// class Modelica.Blocks.Examples.LogicalNetwork1
 // output Boolean table2.y "Connector of Boolean output signal";
 // parameter Boolean table2.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
 // parameter Real table2.table[1](quantity = "Time", unit = "s") = 1.0 "Vector of time points. At every time point, the output y gets its opposite value";

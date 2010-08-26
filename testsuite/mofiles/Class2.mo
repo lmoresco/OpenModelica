@@ -10,7 +10,7 @@ class Class2
 end Class2;
 
 // Result:
-// fclass Class2
+// class Class2
 // Real x = 17.0;
 // end Class2;
 // endResult

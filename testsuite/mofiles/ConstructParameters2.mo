@@ -35,7 +35,7 @@ end ConstructParameters2;
 //   p.p4 := p.p3 * p1 + p2;
 // end fc;
 // 
-// fclass ConstructParameters2
+// class ConstructParameters2
 // parameter Real p1 = 2.0;
 // parameter Real p2 = 3.0;
 // parameter Real prec.p3 = 6.0;

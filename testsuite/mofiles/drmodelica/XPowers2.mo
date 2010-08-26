@@ -19,7 +19,7 @@ equation
 end Xpowers2;
 
 // Result:
-// fclass Xpowers2
+// class Xpowers2
 // parameter Real x = 10.0;
 // Real xpowers[1];
 // Real xpowers[2];

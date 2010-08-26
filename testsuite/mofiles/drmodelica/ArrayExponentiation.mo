@@ -18,7 +18,7 @@ equation
 end Exp;
 
 // Result:
-// fclass Exp
+// class Exp
 // Real e1[1,1];
 // Real e1[1,2];
 // Real e1[2,1];

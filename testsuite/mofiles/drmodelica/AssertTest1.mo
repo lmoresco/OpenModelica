@@ -18,7 +18,7 @@ class Test1
 end Test1;
 
 // Result:
-// fclass Test1
+// class Test1
 // parameter Real assertTest.lowlimit = 4.0;
 // parameter Real assertTest.highlimit = 8.0;
 // Real assertTest.x = 5.0;

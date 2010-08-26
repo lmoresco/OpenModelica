@@ -13,7 +13,7 @@ end <XXX>;
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
 // Result:
-// fclass <XXX> 
+// class <XXX> 
 // Real x;
 // end <XXX>;
 // endResult

@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Blocks.Examples.BusUsage
+// class Modelica.Blocks.Examples.BusUsage
 // parameter Boolean restBus.set_realSignal1 = false "Set dummy value for desiredThrottle";
 // parameter Boolean restBus.set_realSignal2 = true "Set dummy value for brake";
 // parameter Boolean restBus.set_integerSignal = false "Set dummy value for controlLeverPosition";

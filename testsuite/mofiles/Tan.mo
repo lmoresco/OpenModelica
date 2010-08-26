@@ -12,7 +12,7 @@ equation
 end Tan;
 
 // Result:
-// fclass Tan
+// class Tan
 // Real r;
 // equation
 //   r = 1.61977519054386;

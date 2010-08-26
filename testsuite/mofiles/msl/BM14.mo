@@ -1076,7 +1076,7 @@ end BM14;
 // external "C";
 // end Modelica.Math.log;
 // 
-// fclass BM14
+// class BM14
 // parameter Integer log1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer log1.inPort.n = log1.n "Dimension of signal vector";
 // input Real log1.inPort.signal[1] "Real input signals";
@@ -1105,7 +1105,7 @@ end BM14;
 // external "C";
 // end Modelica.Math.log;
 // 
-// fclass BM14
+// class BM14
 // parameter Integer log1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer log1.inPort.n = log1.n "Dimension of signal vector";
 // input Real log1.inPort.signal[1] "Real input signals";

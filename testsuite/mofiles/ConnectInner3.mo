@@ -33,7 +33,7 @@ equation
 end ConnectInner3;
 
 // Result:
-// fclass ConnectInner3
+// class ConnectInner3
 // Real global.c.e;
 // Real global.c.f;
 // Real b.a.my.e;

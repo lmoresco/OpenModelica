@@ -14,7 +14,7 @@ equation
 end ArraySlice1;
 
 // Result:
-// fclass ArraySlice1
+// class ArraySlice1
 // Real a[1];
 // Real a[2];
 // Real a[3];

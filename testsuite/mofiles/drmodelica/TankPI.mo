@@ -97,7 +97,7 @@ end TankPI;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
-// fclass TankPI
+// class TankPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real piContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";

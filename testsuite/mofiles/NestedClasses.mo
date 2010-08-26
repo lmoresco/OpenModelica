@@ -20,7 +20,7 @@ class NestedClasses
 end NestedClasses;
 
 // Result:
-// fclass NestedClasses
+// class NestedClasses
 // Integer nc1.nestedInt1;
 // Integer nc2.nestedInt2;
 // Integer i;

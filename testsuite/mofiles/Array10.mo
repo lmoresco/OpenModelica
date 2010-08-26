@@ -13,7 +13,7 @@ end Array10;
 
 
 // Result:
-// fclass Array10
+// class Array10
 // Real x[1] = 1.0;
 // Real x[2] = 2.0;
 // Real x[3] = 3.0;

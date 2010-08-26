@@ -34,7 +34,7 @@ end Vectorizable3;
 //   y := 1.0 + x;
 // end foo;
 // 
-// fclass Vectorizable3
+// class Vectorizable3
 // Real x[1,1];
 // Real x[1,2];
 // Real x[2,1];

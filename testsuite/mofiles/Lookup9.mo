@@ -21,7 +21,7 @@ model C
 end C;
 
 // Result:
-// fclass C
+// class C
 // constant Real h.k = 1.0;
 // parameter Real h.R0 = h.R_0;
 // parameter Real h.R_0 = 0.7;

@@ -22,7 +22,7 @@ end ArrayConstruct1;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass ArrayConstruct1
+// class ArrayConstruct1
 // Integer a[1];
 // Integer a[2];
 // Integer a[3];

@@ -10,7 +10,7 @@ instantiateModel(Modelica.Mechanics.Translational.Examples.WhyArrows);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Mechanics.Translational.Examples.WhyArrows
+// "class Modelica.Mechanics.Translational.Examples.WhyArrows
 // parameter Real Fixed1.s0(quantity = "Length", unit = "m") = 0.0 "fixed offset position of housing";
 // Real Fixed1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
 // Real Fixed1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";

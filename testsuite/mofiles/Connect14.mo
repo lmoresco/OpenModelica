@@ -22,7 +22,7 @@ equation
   connect(c1.b,b2);
 end Connect14;
 // Result:
-// fclass Connect14
+// class Connect14
 // String c1.s;
 // Boolean c1.b;
 // Integer c1.n;

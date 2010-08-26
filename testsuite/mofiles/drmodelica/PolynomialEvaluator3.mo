@@ -44,7 +44,7 @@ end NamedCall;
 //   end for;
 // end PolynomialEvaluator2;
 // 
-// fclass NamedCall
+// class NamedCall
 // Real p;
 // equation
 //   p = 38410.0;

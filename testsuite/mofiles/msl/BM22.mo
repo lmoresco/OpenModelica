@@ -1070,7 +1070,7 @@ end BM22;
 // external "C";
 // end Modelica.Math.sinh;
 // 
-// fclass BM22
+// class BM22
 // parameter Integer sinh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sinh1.inPort.n = sinh1.n "Dimension of signal vector";
 // input Real sinh1.inPort.signal[1] "Real input signals";
@@ -1099,7 +1099,7 @@ end BM22;
 // external "C";
 // end Modelica.Math.sinh;
 // 
-// fclass BM22
+// class BM22
 // parameter Integer sinh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sinh1.inPort.n = sinh1.n "Dimension of signal vector";
 // input Real sinh1.inPort.signal[1] "Real input signals";

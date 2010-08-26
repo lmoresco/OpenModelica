@@ -42,7 +42,7 @@ equation
   (i1,i2,r1,r2) = func(3);
 end ForIterator1;
 
-// fclass ForIterator1
+// class ForIterator1
 // Integer i1;
 // Integer i2;
 // Real r1;

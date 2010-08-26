@@ -15,7 +15,7 @@ class ArrayMult
 end ArrayMult;  
 
 // Result:
-// fclass ArrayMult
+// class ArrayMult
 // Real m1[1] = 2.0;
 // Real m1[2] = 4.0;
 // Real m1[3] = 6.0;

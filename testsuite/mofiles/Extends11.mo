@@ -19,7 +19,7 @@ end Extends11;
 // output Real r = 2.0;
 // end Extends11.f2;
 // 
-// fclass Extends11
+// class Extends11
 // constant Real r = 2.0;
 // end Extends11;
 // endResult

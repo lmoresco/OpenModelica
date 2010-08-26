@@ -74,7 +74,7 @@ end ComplexUser;
 //   z.im := x.re * y.im + x.im * y.re;
 // end ComplexNumbers.Multiply;
 // 
-// fclass ComplexUser
+// class ComplexUser
 // Real a.re = 1.0;
 // Real a.im = 2.0;
 // Real b.re = 1.0;

@@ -33,7 +33,7 @@ end AssignmentFunctionMultiple1;
 //   outReal2 := 4.0 + inReal;
 // end F;
 // 
-// fclass AssignmentFunctionMultiple1
+// class AssignmentFunctionMultiple1
 // Real x;
 // Real y;
 // Real z;

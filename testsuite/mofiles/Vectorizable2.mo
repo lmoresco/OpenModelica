@@ -37,7 +37,7 @@ end Vectorizable2;
 //   y := 1.0 + x + x2[1] + 2.0 * x2[2];
 // end foo;
 // 
-// fclass Vectorizable2
+// class Vectorizable2
 // Real x[1];
 // Real x[2];
 // Real x[3];

@@ -11,7 +11,7 @@ getErrorString();
 // Result:
 // true
 // true
-// "fclass BioChem.Examples.MassAction.UniBi
+// "class BioChem.Examples.MassAction.UniBi
 // Real V(quantity = "Volume", unit = "l", start = 1.0) "Compartment volume";
 // input Real sF3.c(quantity = "Concentration", unit = "mol/l", min = 0.0, start = 1.0) "Current concentration of substance (mM)";
 // Real sF3.rNet(quantity = "Molar flow rate", unit = "mol/s") "Net flow rate of substance into the node";

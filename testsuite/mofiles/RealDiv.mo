@@ -10,7 +10,7 @@ model RealDiv
 end RealDiv;
 
 // Result:
-// fclass RealDiv
+// class RealDiv
 // constant Real r = 18.9705858533504;
 // end RealDiv;
 // endResult

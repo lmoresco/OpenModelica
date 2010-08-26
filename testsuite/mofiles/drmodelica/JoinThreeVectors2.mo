@@ -34,7 +34,7 @@ end joinThreeVectors;
 // external "C";
 // end joinThreeVectors2;
 // 
-// fclass joinThreeVectors
+// class joinThreeVectors
 // Real a[1] = 1.0;
 // Real a[2] = 2.0;
 // Real b[1] = 3.0;

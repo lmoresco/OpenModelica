@@ -16,7 +16,7 @@ equation
   end when;   
 end WhenNotValid;
 
-// fclass WhenNotValid
+// class WhenNotValid
 // Real x;
 // Real y;
 // equation

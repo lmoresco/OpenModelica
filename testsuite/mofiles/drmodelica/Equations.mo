@@ -14,7 +14,7 @@ end Equations;
 
 
 // Result:
-// fclass Equations
+// class Equations
 // Real x(start = 2.0);
 // constant Integer one = 1;
 // equation

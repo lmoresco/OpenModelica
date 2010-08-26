@@ -59,7 +59,7 @@ end PositionalCall;
 //   end for;
 // end PolynomialEvaluator1;
 // 
-// fclass PositionalCall
+// class PositionalCall
 // Real p;
 // equation
 //   p = 38410.0;

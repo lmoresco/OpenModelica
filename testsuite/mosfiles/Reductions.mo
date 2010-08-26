@@ -23,7 +23,7 @@ equation
 	erw = product(i for i in {});
 end Reductions;
 
-// fclass Reductions
+// class Reductions
 // Real x;
 // Real y;
 // Real z;

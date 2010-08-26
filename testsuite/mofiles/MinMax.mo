@@ -12,7 +12,7 @@ equation
   x= fill(1.0,max(n,m));
 end MinMax;
 // Result:
-// fclass MinMax
+// class MinMax
 // Real x[1];
 // Real x[2];
 // Real x[3];

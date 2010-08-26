@@ -25,7 +25,7 @@ equation
 end Redeclare1;
 
 // Result:
-// fclass Redeclare1
+// class Redeclare1
 // Real m.a.x = 17.0;
 // Real m.a.z;
 // equation

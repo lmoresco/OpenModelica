@@ -14,7 +14,7 @@ equation
 end TypeDeclArray;
 
 // Result:
-// fclass TypeDeclArray
+// class TypeDeclArray
 // Real at[1];
 // Real at[2];
 // Real at[3];

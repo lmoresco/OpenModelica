@@ -45,7 +45,7 @@ end FunctionEval6;
 // end test3;
 // 
 // Result:
-// fclass FunctionEval6
+// class FunctionEval6
 // parameter Real a = 5.0;
 // parameter Real b[1] = 1.0;
 // parameter Real b[2] = 2.0;

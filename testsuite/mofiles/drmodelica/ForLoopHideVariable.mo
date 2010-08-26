@@ -16,7 +16,7 @@ algorithm
 end HideVariable;
 
 // Result:
-// fclass HideVariable
+// class HideVariable
 // constant Integer k = 4;
 // Real z[1];
 // Real z[2];

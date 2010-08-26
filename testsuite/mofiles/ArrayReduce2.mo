@@ -18,7 +18,7 @@ equation
 end ArrayReduce2;
 
 // Result:
-// fclass ArrayReduce2
+// class ArrayReduce2
 // parameter Integer n = 3;
 // parameter Real a[1].k = 1.0;
 // parameter Real a[2].k = 1.0;

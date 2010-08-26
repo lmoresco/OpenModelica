@@ -44,7 +44,7 @@ model inn
  equation 
 end inn;
 // Result:
-// fclass inn
+// class inn
 //   Real ip.i;
 //   Real ip.v = 23.0;
 //   Real io.ip.i = 13.0;

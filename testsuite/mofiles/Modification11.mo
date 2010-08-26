@@ -24,7 +24,7 @@ class Modification11
 end Modification11;
 
 // Result:
-// fclass Modification11
+// class Modification11
 //   Real    a.c.b.x;
 //   Real    a.b.x;
 // equation

@@ -50,7 +50,7 @@ end RecordConstructorVectorization;
 // output Whatever res;
 // end Crap.Whatever;
 // 
-// fclass RecordConstructorVectorization
+// class RecordConstructorVectorization
 // String fluidConstants[1].iupacName = "simple air" "complete IUPAC name (or common name, if non-existent)";
 // String fluidConstants[1].casRegistryNumber = "not a real substance" "chemical abstracts sequencing number (if it exists)";
 // String fluidConstants[1].chemicalFormula = "N2, O2" "Chemical formula, (brutto, nomenclature according to Hill";

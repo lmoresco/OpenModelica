@@ -990,7 +990,7 @@ equation
   connect(constant2.outPort,add31.inPort2) annotation(Line(visible=true,points={{-44.81,24.43},{-3.45,26.26}}));
   connect(constant1.outPort,add31.inPort1) annotation(Line(visible=true,points={{-51.2,56.06},{-4.36,32.95}}));
 end BM4;
-// fclass BM4
+// class BM4
 // parameter Real add31.k1 = 1.0 "Gain of upper input";
 // parameter Real add31.k2 = 1.0 "Gain of middle input";
 // parameter Real add31.k3 = 1.0 "Gain of lower input";
@@ -1034,7 +1034,7 @@ end BM4;
 // constant3.outPort.signal[1] = add31.inPort3.signal[1];
 // end BM4;
 // Result:
-// fclass BM4
+// class BM4
 // parameter Real add31.k1 = 1.0 "Gain of upper input";
 // parameter Real add31.k2 = 1.0 "Gain of middle input";
 // parameter Real add31.k3 = 1.0 "Gain of lower input";

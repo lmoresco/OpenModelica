@@ -16,7 +16,7 @@ algorithm
 end ForNested;
 
 // Result:
-// fclass ForNested
+// class ForNested
 // Real rmatrix[1,1];
 // Real rmatrix[1,2];
 // Real rmatrix[1,3];

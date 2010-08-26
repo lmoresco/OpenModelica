@@ -80,7 +80,7 @@ equation
 end Circuit1;
 
 // Result:
-// fclass Circuit1
+// class Circuit1
 // Real R1.p.v(unit = "V");
 // Real R1.p.i(unit = "A");
 // Real R1.n.v(unit = "V");

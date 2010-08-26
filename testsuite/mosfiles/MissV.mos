@@ -17,7 +17,7 @@ val(pb, 1.0);
 readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
-// "fclass MissV
+// "class MissV
 // Real pb(start = 12000000.0);
 // Real Qb;
 // Real pa(start = 12000000.0);

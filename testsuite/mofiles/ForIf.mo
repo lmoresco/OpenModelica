@@ -15,7 +15,7 @@ equation
 end ForIf;
 
 // Result:
-// fclass ForIf
+// class ForIf
 //   Integer k[1];
 //   Integer k[2];
 //   Integer index;

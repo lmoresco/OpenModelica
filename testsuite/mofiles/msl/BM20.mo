@@ -976,7 +976,7 @@ model BM20
 equation 
   connect(constant1.outPort,sign1.inPort) annotation(Line(visible=true,points={{-45.11,18.05},{-18.35,18.05}}));
 end BM20;
-// fclass BM20
+// class BM20
 // parameter Integer sign1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sign1.inPort.n = sign1.n "Dimension of signal vector";
 // input Real sign1.inPort.signal[1] "Real input signals";
@@ -998,7 +998,7 @@ end BM20;
 // constant1.outPort.signal[1] = sign1.inPort.signal[1];
 // end BM20;
 // Result:
-// fclass BM20
+// class BM20
 // parameter Integer sign1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sign1.inPort.n = sign1.n "Dimension of signal vector";
 // input Real sign1.inPort.signal[1] "Real input signals";

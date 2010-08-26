@@ -27,7 +27,7 @@ end test;
 
 
 // Result:
-// fclass test
+// class test
 // Real x = 3.14;
 // end test;
 // endResult

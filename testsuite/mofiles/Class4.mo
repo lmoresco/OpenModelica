@@ -10,7 +10,7 @@ class Class4
 end;
 
 // Result:
-// fclass Class4
+// class Class4
 // equation
 // end Class4;
 // endResult

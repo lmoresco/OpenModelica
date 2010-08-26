@@ -1522,7 +1522,7 @@ model BC8
 equation 
   connect(constant1.outPort,PID1.inPort) annotation(Line(visible=true,points={{-18.35,14.7},{0.81,15.62}}));
 end BC8;
-// fclass BC8
+// class BC8
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -1621,7 +1621,7 @@ end BC8;
 // constant1.outPort.signal[1] = PID1.inPort.signal[1];
 // end BC8;
 // Result:
-// fclass BC8
+// class BC8
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

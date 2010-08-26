@@ -22,7 +22,7 @@ equation
   (px, py) = PointOnCircle(1.2, 2);
 end EquationCall;
 
-// fclass EquationCall
+// class EquationCall
 // Real px;
 // Real py;
 // equation

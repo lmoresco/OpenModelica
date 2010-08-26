@@ -26,5 +26,5 @@ equation
       thickness=4));
 end connecttest;
 
-// fclass complextest
+// class complextest
 // end complextest;

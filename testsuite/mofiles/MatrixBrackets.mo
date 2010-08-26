@@ -12,7 +12,7 @@ equation
 end MatrixBrackets;
 
 // Result:
-// fclass MatrixBrackets
+// class MatrixBrackets
 // Integer intMatrix[1,1];
 // Integer intMatrix[1,2];
 // Integer intMatrix[1,3];

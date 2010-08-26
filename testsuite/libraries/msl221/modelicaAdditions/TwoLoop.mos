@@ -84,7 +84,7 @@ getErrorString();
 //   end if;
 // end PackShape;
 // 
-// fclass MultiBody.Examples.Loops.TwoLoop
+// class MultiBody.Examples.Loops.TwoLoop
 // parameter Real inertial.g(quantity = "Acceleration", unit = "m/s2") = 9.81 "Gravity constant";
 // parameter Real inertial.ng[1] = 0.0 "Direction of gravity (gravity = g*ng)";
 // parameter Real inertial.ng[2] = -1.0 "Direction of gravity (gravity = g*ng)";

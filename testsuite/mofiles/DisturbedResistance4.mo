@@ -18,7 +18,7 @@ model DisturbedResistance4
 end DisturbedResistance4;
 
 // Result:
-// fclass DisturbedResistance4
+// class DisturbedResistance4
 // Real u;
 // Real i;
 // Real R;

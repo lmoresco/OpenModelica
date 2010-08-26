@@ -11,7 +11,7 @@ equation
 end Discrete2;
 
 // Result:
-// fclass Discrete2
+// class Discrete2
 //  discrete Real x;
 // equation
 //   x = sin(time);

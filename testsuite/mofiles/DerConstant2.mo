@@ -15,7 +15,7 @@ class DerConstant2
 end DerConstant2; 
 
 // Result:
-// fclass DerConstant2
+// class DerConstant2
 // constant Integer pa = 1;
 // Real a = 0.0;
 // Real b = 0.0;

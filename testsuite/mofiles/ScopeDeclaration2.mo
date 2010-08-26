@@ -15,7 +15,7 @@ class ScopeDeclaration2
 end ScopeDeclaration2;
 
 // Result:
-// fclass ScopeDeclaration2
+// class ScopeDeclaration2
 //   constant Real a=3.0;
 //   Real b.a;
 //   parameter Real b.a.min=b.a;// Illegal.

@@ -48,7 +48,7 @@ equation
 end Enumeration6;
 
 // Result:
-// fclass Enumeration6
+// class Enumeration6
 // Real t.hh[1];
 // Real t.hh[2];
 // Real t.hh[3];

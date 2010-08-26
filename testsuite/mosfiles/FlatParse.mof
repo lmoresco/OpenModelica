@@ -15,7 +15,7 @@ equation
   x.y[2].z = 0;
 end FlatParse;
 
-// fclass FlatParse
+// class FlatParse
 //  Real x[2].y[2];
 //  Real x.y[2].z;
 //  parameter Real x.y=1.0;

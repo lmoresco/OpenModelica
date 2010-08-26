@@ -14,6 +14,6 @@ equation
 end Integer;
 
 // Result:
-// fclass Integer
+// class Integer
 // end Integer;
 // endResult

@@ -36,7 +36,7 @@ model inn
 end inn;
 
 // Result:
-// fclass inn
+// class inn
 // Real ip.i;
 // Real ip.v;
 // Real io.ip.i = 3.0;

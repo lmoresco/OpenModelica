@@ -19,7 +19,7 @@ class C
 end C;
 
 // Result:
-// fclass C
+// class C
 // parameter Real a;
 // parameter Real b;
 // end C;

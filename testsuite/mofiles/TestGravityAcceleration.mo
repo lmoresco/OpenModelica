@@ -133,7 +133,7 @@ end TestGravityAcceleration;
 //   gravity := if gravityType == GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == GravityTypes.PointGravity then {-1.0 * (mue * r[1]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[2]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[3]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
 // end TestGravityAcceleration.w.gravityAcceleration;
 // 
-// fclass TestGravityAcceleration
+// class TestGravityAcceleration
 // parameter Real w.n[1](unit = "1") = 0.0;
 // parameter Real w.n[2](unit = "1") = -1.0;
 // parameter Real w.n[3](unit = "1") = 0.0;

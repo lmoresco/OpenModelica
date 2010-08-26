@@ -34,7 +34,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.log;
 // 
-// fclass Magnetic_Examples_EnforcedMovement
+// class Magnetic_Examples_EnforcedMovement
 // parameter Boolean EnforcedMovement.exact = false "true/false exact treatment/filtering the input signal";
 // parameter Real EnforcedMovement.f_crit(quantity = "Frequency", unit = "Hz") = 50.0 "if exact=false, critical frequency of filter to filter input signal";
 // output Real EnforcedMovement.s(quantity = "Length", unit = "m") "absolute position of flange_b";

@@ -16,7 +16,7 @@ equation
 end EquationComponent3;
 
 // Result:
-// fclass EquationComponent3
+// class EquationComponent3
 // Real a.x;
 // Real a.y;
 // Real b.x;

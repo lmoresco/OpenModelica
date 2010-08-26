@@ -27,7 +27,7 @@ end Function5;
 //   y := 2.0 * x;
 // end f;
 // 
-// fclass Function5
+// class Function5
 //   Real a;
 //   Real b;
 // equation

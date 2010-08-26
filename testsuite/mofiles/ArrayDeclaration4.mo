@@ -11,6 +11,6 @@ model ArrayDeclaration4
 end ArrayDeclaration4;
 
 // Result:
-// fclass ArrayDeclaration4
+// class ArrayDeclaration4
 // end ArrayDeclaration4;
 // endResult

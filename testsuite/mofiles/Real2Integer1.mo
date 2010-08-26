@@ -12,7 +12,7 @@ class Real2Integer1
 end Real2Integer1;
 
 // Result:
-// fclass Real2Integer1
+// class Real2Integer1
 //   Real a;
 //   Integer n;
 // equation

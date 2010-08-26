@@ -23,7 +23,7 @@ end example;
 // output abcRec res;
 // end abcRec;
 // 
-// fclass example
+// class example
 // constant Integer p = 13;
 // constant Integer x.a = 1;
 // constant Integer x.b = 2;

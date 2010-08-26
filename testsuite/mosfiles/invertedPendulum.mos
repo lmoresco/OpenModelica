@@ -145,7 +145,7 @@ getErrorString();
 //   end if;
 // end PackShape;
 // 
-// fclass IntroductoryExamples.Systems.InvertedPendulum
+// class IntroductoryExamples.Systems.InvertedPendulum
 // parameter Integer referenceType(min = 1, max = 3) = 2 "Type of reference signal: 1=step, 2=pulse, 3=time table";
 // parameter Real motor.R(quantity = "Resistance", unit = "Ohm") = 2.6 "Resistance";
 // parameter Real motor.L(quantity = "Inductance", unit = "H") = 0.001 "Inductance";

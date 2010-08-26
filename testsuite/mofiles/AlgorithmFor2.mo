@@ -16,7 +16,7 @@ algorithm
 end AlgorithmFor2;
 
 // Result:
-// fclass AlgorithmFor2
+// class AlgorithmFor2
 // constant Integer N = 4;
 // Real a[1];
 // Real a[2];

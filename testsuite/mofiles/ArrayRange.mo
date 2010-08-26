@@ -12,7 +12,7 @@ equation
 end ArrayRange;
 
 // Result:
-// fclass ArrayRange
+// class ArrayRange
 // Integer intArray[1,1];
 // Integer intArray[2,1];
 // Integer intArray[3,1];

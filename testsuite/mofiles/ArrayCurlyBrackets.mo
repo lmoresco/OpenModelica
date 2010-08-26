@@ -12,7 +12,7 @@ equation
 end ArrayCurlyBrackets;
 
 // Result:
-// fclass ArrayCurlyBrackets
+// class ArrayCurlyBrackets
 // Integer intArray[1];
 // Integer intArray[2];
 // Integer intArray[3];

@@ -97,7 +97,7 @@ end TankPID;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
-// fclass TankPID
+// class TankPID
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real pidContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";

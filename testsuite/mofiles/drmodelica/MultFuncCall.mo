@@ -28,7 +28,7 @@ end MultFuncCall;
 //   result := x * y;
 // end Multiply;
 // 
-// fclass MultFuncCall
+// class MultFuncCall
 // Real res;
 // equation
 //   res = 7.0;

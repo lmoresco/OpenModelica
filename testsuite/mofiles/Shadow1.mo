@@ -18,7 +18,7 @@ end Shadow1;
 
 
 // Result:
-// fclass Shadow1
+// class Shadow1
 // Real z;
 // Real a.y = 2.0;
 // Real a.x = z;

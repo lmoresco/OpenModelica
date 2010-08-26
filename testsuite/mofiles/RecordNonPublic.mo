@@ -17,7 +17,7 @@ model RecordNonPublic
 end RecordNonPublic;
 
 // Result:
-// fclass RecordNonPublic
+// class RecordNonPublic
 // protected Integer tr.i;
 // end RecordNonPublic;
 // endResult

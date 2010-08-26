@@ -30,7 +30,7 @@ equation
 end Inline2;
 
 // Result:
-// fclass Inline2
+// class Inline2
 // Integer x;
 // Integer y;
 // equation

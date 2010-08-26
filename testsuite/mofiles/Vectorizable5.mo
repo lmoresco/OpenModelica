@@ -43,7 +43,7 @@ end Vectorizable5;
 //   w := x + y + z;
 // end foo;
 // 
-// fclass Vectorizable5
+// class Vectorizable5
 // Real x[1];
 // Real x[2];
 // Real y[1];

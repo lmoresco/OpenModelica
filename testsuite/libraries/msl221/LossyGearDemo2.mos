@@ -104,7 +104,7 @@ getErrorString();
 //   end if;
 // end Modelica.Mechanics.Rotational.LossyGear.equal;
 // 
-// fclass Modelica.Mechanics.Rotational.Examples.LossyGearDemo2
+// class Modelica.Mechanics.Rotational.Examples.LossyGearDemo2
 // Real PowerLoss(quantity = "Power", unit = "W") "power lost in the gear";
 // Real gear.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
 // Real gear.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";

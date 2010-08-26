@@ -87,7 +87,7 @@ end TankPI;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass TankPI
+// class TankPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real piContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";

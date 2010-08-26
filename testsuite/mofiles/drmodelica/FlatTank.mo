@@ -47,7 +47,7 @@ end FlatTank;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass FlatTank
+// class FlatTank
 // parameter Real flowLevel(unit = "m3/s") = 0.02;
 // parameter Real area(unit = "m2") = 1.0;
 // parameter Real flowGain(unit = "m2/s") = 0.05;
@@ -81,7 +81,7 @@ end FlatTank;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
-// fclass FlatTank
+// class FlatTank
 // parameter Real flowLevel(unit = "m3/s") = 0.02;
 // parameter Real area(unit = "m2") = 1.0;
 // parameter Real flowGain(unit = "m2/s") = 0.05;

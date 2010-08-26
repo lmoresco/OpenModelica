@@ -1210,7 +1210,7 @@ model BS12
 equation 
   connect(trapezoid1.outPort,der1.inPort) annotation(Line(visible=true,points={{-25.04,14.7},{-8.01,14.4}}));
 end BS12;
-// fclass BS12
+// class BS12
 // parameter Integer trapezoid1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer trapezoid1.outPort.n = trapezoid1.nout "Dimension of signal vector";
 // output Real trapezoid1.outPort.signal[1] "Real output signals";
@@ -1254,7 +1254,7 @@ end BS12;
 // trapezoid1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS12;
 // Result:
-// fclass BS12
+// class BS12
 // parameter Integer trapezoid1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer trapezoid1.outPort.n = trapezoid1.nout "Dimension of signal vector";
 // output Real trapezoid1.outPort.signal[1] "Real output signals";

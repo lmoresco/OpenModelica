@@ -17,7 +17,7 @@ equation
 end Pow;
 
 // Result:
-// fclass Pow
+// class Pow
 // parameter Integer pi = 3;
 // parameter Real pr = 4.0;
 // Real i;

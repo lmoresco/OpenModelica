@@ -12,7 +12,7 @@ model NumericFunctions
 end NumericFunctions;
 
 // Result:
-// fclass NumericFunctions
+// class NumericFunctions
 // constant Real r1 = 2.5;
 // constant Real r2 = -1.0;
 // constant Real r3 = 7.0;

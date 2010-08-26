@@ -27,7 +27,7 @@ end Epidemics1;
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
 // Result:
-// fclass Epidemics1
+// class Epidemics1
 //   Real Indv(start = 0.005);
 //   Real S(start = 0.995);
 //   Real R(start = 0.0);

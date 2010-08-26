@@ -20,7 +20,7 @@ equation
 end EquationFor4;
 
 // Result:
-// fclass EquationFor4
+// class EquationFor4
 // parameter Integer N = 4;
 // Real p[1].i;
 // Real p[1].v;

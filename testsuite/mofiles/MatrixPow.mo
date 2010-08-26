@@ -17,7 +17,7 @@ equation
 end MatrixPow;
 
 // Result:
-// fclass MatrixPow
+// class MatrixPow
 // Real m[1,1];
 // Real m[1,2];
 // Real m[1,3];

@@ -44,7 +44,7 @@ class I
 end I;
 
 // Result:
-// fclass I
+// class I
 // Real TI;
 // Real e.TI;
 // Real e.f.TI;

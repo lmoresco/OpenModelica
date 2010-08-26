@@ -18,7 +18,7 @@ equation
 end ProtectedAccess2;
 
 // Result:
-// fclass ProtectedAccess2
+// class ProtectedAccess2
 // protected Integer tm.x = 2;
 // equation
 //   tm.x = 3;

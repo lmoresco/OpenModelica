@@ -40,7 +40,7 @@ algorithm
 end Break;
 
 // Result:
-// fclass Break
+// class Break
 // Real x;
 // Real y;
 // Real z;

@@ -16,7 +16,7 @@ class Lookup5
 end Lookup5;
 
 // Result:
-// fclass Lookup5
+// class Lookup5
 //   constant Real a = 3.0;
 //   Real b.a = -b.a;
 // end Lookup5;

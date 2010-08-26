@@ -19,7 +19,7 @@ class Modification3
 end Modification3;
 
 // Result:
-// fclass Modification3
+// class Modification3
 //   parameter Real b.a.p=2.0;
 //   parameter Real b.a2.p=4;
 // end Modification3;

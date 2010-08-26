@@ -10,7 +10,7 @@ instantiateModel(Modelica.Mechanics.Translational.Examples.Accelerate);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Mechanics.Translational.Examples.Accelerate
+// "class Modelica.Mechanics.Translational.Examples.Accelerate
 // parameter Real Accelerate1.s_start(quantity = "Length", unit = "m") = 0.0 "Start position";
 // parameter Real Accelerate1.v_start(quantity = "Velocity", unit = "m/s") = 0.0 "Start velocity";
 // Real Accelerate1.v(quantity = "Velocity", unit = "m/s", start = Accelerate1.v_start, fixed = true) "absolute velocity of flange_b";

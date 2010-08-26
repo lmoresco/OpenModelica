@@ -69,7 +69,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   radian := 0.0174532925199433 * degree;
 // end Modelica.SIunits.Conversions.from_deg;
 // 
-// fclass Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis
+// class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis
 //   parameter Real mLoad(quantity = "Mass", unit = "kg", min = 0.0) = 15.0 "Mass of load";
 //   parameter Real kp = 5.0 "Gain of position controller of axis 2";
 //   parameter Real ks = 0.5 "Gain of speed controller of axis 2";
@@ -1397,7 +1397,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   radian := 0.0174532925199433 * degree;
 // end Modelica.SIunits.Conversions.from_deg;
 // 
-// fclass Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot
+// class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot
 //   parameter Real mLoad(quantity = "Mass", unit = "kg", min = 0.0) = 15.0 "Mass of load";
 //   parameter Real rLoad[1](quantity = "Length", unit = "m") = 0.1 "Distance from last flange to load mass";
 //   parameter Real rLoad[2](quantity = "Length", unit = "m") = 0.25 "Distance from last flange to load mass";

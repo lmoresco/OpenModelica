@@ -18,7 +18,7 @@ algorithm
 end ArrayIndex;
 
 // Result:
-// fclass ArrayIndex
+// class ArrayIndex
 // Real A[1,1] = 2.0;
 // Real A[1,2] = 3.0;
 // Real A[2,1] = 4.0;

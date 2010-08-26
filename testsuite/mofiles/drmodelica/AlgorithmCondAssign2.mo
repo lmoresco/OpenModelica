@@ -39,7 +39,7 @@ end CondAssignFuncCall;
 //   end if;
 // end CondAssignFunc;
 // 
-// fclass CondAssignFuncCall
+// class CondAssignFuncCall
 // Real a;
 // Real b;
 // equation

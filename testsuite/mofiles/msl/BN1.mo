@@ -943,7 +943,7 @@ equation
   connect(constant1.outPort,deadZone1.inPort) annotation(Line(visible=true,points={{-26.56,35.08},{-8.62,32.65}}));
 end BN1;
 
-// fclass BN1
+// class BN1
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -967,7 +967,7 @@ end BN1;
 // constant1.outPort.signal[1] = deadZone1.inPort.signal[1];
 // end BN1;
 // Result:
-// fclass BN1
+// class BN1
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

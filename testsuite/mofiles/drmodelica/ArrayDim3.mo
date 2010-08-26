@@ -34,7 +34,7 @@ end ArrayDim3;
 
 
 // Result:
-// fclass ArrayDim3
+// class ArrayDim3
 // parameter Integer n = 1;
 // parameter Integer m = 2;
 // parameter Integer k = 3;

@@ -175,7 +175,7 @@ end M1_solutions_E03_Faculty_FacultyCall;
 //   k := if n == 0 then 1 else n * M1_solutions.E03.Faculty.faculty_rec(n - 1);
 // end M1_solutions.E03.Faculty.faculty_rec;
 // 
-// fclass M1_solutions_E03_Faculty_FacultyCall
+// class M1_solutions_E03_Faculty_FacultyCall
 // parameter Integer n = 15;
 // Integer fac = M1_solutions.E03.Faculty.faculty(n);
 // Integer fac_rec = M1_solutions.E03.Faculty.faculty_rec(n);

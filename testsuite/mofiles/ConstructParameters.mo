@@ -66,7 +66,7 @@ end ConstructParameters;
 //   p3 := p1 * p2;
 // end fc;
 // 
-// fclass ConstructParameters
+// class ConstructParameters
 // parameter Real p1 = 2.0;
 // parameter Real p2 = 3.0;
 // protected parameter Real p3 = fc(p1,p2);

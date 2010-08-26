@@ -195,7 +195,7 @@ end ArrayAsAlias;
 
 
 // Result:
-// fclass ArrayAsAlias
+// class ArrayAsAlias
 // parameter Boolean w.enableAnimation = true "= true, if animation of all components is enabled";
 // parameter Boolean w.animateWorld = true "= true, if world coordinate system shall be visualized";
 // parameter Boolean w.animateGravity = true "= true, if gravity field shall be visualized (acceleration vector or field center)";

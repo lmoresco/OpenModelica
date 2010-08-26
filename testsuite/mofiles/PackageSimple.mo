@@ -13,6 +13,6 @@ model PackageSimple
 end PackageSimple;
 
 // Result:
-// fclass PackageSimple
+// class PackageSimple
 // end PackageSimple;
 // endResult

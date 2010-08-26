@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Mechanics.Translational.Examples.PreLoad
+// class Modelica.Mechanics.Translational.Examples.PreLoad
 // Real InnerContactA.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
 // Real InnerContactA.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
 // Real InnerContactA.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";

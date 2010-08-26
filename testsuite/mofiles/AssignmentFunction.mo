@@ -28,7 +28,7 @@ end AssignmentFunction;
 //   outReal := 2.0 + inReal;
 // end F;
 // 
-// fclass AssignmentFunction
+// class AssignmentFunction
 // Real x;
 // Real y;
 // algorithm

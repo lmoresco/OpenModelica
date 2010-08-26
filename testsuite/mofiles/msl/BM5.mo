@@ -1078,7 +1078,7 @@ end BM5;
 // external "C";
 // end Modelica.Math.asin;
 // 
-// fclass BM5
+// class BM5
 // parameter Integer asin1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer asin1.inPort.n = asin1.n "Dimension of signal vector";
 // input Real asin1.inPort.signal[1] "Real input signals";
@@ -1107,7 +1107,7 @@ end BM5;
 // external "C";
 // end Modelica.Math.asin;
 // 
-// fclass BM5
+// class BM5
 // parameter Integer asin1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer asin1.inPort.n = asin1.n "Dimension of signal vector";
 // input Real asin1.inPort.signal[1] "Real input signals";

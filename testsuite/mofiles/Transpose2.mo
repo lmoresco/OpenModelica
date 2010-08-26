@@ -13,7 +13,7 @@ equation
 end bug1210;
 
 // Result:
-// fclass bug1210
+// class bug1210
 // constant Real i[1,1] = 1.1;
 // constant Real i[1,2] = 3.3;
 // constant Real i[2,1] = 2.2;

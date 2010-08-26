@@ -13,7 +13,7 @@ model test
   parameter Real L=4;
 end test;
 // Result:
-// fclass test
+// class test
 // parameter Real K[1,1] = Em;
 // parameter Real K[1,2] = -Em;
 // parameter Real K[2,1] = -Em;

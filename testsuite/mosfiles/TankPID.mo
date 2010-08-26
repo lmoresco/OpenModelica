@@ -89,7 +89,7 @@ end TankPID;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass TankPID
+// class TankPID
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // parameter Real pidContinuous.Ts(unit = "s") = 0.1 "Time period between discrete samples";

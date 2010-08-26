@@ -971,7 +971,7 @@ equation
   connect(constant1.outPort,firstOrder1.inPort) annotation(Line(visible=true,points={{-13.21,11.11},{1.46,11.11}}));
 end BC3;
 
-// fclass BC3
+// class BC3
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -997,7 +997,7 @@ end BC3;
 // constant1.outPort.signal[1] = firstOrder1.inPort.signal[1];
 // end BC3;
 // Result:
-// fclass BC3
+// class BC3
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

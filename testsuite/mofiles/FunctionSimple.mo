@@ -27,7 +27,7 @@ end FunctionSimple;
 //   o := i;
 // end TestFunction;
 // 
-// fclass FunctionSimple
+// class FunctionSimple
 // Integer x;
 // Integer y;
 // equation

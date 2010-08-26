@@ -16,7 +16,7 @@ equation
 end NoEvent1;
 
 // Result:
-// fclass NoEvent1
+// class NoEvent1
 // parameter Real c = 1.0;
 // Real x;
 // Real y;

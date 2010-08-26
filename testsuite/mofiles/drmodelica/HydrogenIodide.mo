@@ -20,7 +20,7 @@ der(HI) = 2*k1*H2*I2 - 2*k2*HI^2;
 end HydrogenIodide;
 
 // Result:
-// fclass HydrogenIodide
+// class HydrogenIodide
 // parameter Real k1 = 0.73;
 // parameter Real k2 = 0.04;
 // Real H2(quantity = "Concentration", unit = "mol/m3", start = 5.0);

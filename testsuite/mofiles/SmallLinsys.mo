@@ -14,7 +14,7 @@ equation
 end LinSys;
 
 // Result:
-// fclass LinSys
+// class LinSys
 // Real x(start = 1.0);
 // Real y(start = 2.0);
 // Real z(start = 3.0);

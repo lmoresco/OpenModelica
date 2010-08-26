@@ -21,7 +21,7 @@ equation
 end ConstantReductions;
 
 // Result:
-// fclass ConstantReductions
+// class ConstantReductions
 // Real x1;
 // Real x2;
 // Real x3;

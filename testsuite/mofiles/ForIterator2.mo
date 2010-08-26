@@ -23,7 +23,7 @@ end ForIterator2;
 // empty store
 // empty store
 // Result:
-// fclass ForIterator2
+// class ForIterator2
 // parameter Integer n = 3;
 // parameter Real r[1] = 1.0;
 // parameter Real r[2] = 2.0;

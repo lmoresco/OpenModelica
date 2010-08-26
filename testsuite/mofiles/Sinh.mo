@@ -12,7 +12,7 @@ equation
 end Sinh;
 
 // Result:
-// fclass Sinh
+// class Sinh
 // Real r;
 // equation
 //   r = 1.74671355287425e+19;

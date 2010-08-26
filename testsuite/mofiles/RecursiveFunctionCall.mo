@@ -34,7 +34,7 @@ end RecursiveFunctionCall;
 //   end if;
 // end pkg.factorial;
 // 
-// fclass RecursiveFunctionCall
+// class RecursiveFunctionCall
 // Integer y;
 // algorithm
 //   y := 2;

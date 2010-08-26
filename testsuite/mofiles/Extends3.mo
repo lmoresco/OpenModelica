@@ -25,7 +25,7 @@ end SS;
 
 
 // Result:
-// fclass SS
+// class SS
 // input Real u[1];
 // output Real y[1];
 // output Real y[2];

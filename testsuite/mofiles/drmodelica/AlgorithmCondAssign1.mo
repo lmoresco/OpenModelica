@@ -22,7 +22,7 @@ end CondAssign;
 
 
 // Result:
-// fclass CondAssign
+// class CondAssign
 // Real x(start = 35.0);
 // Real y(start = 45.0);
 // parameter Real z = 0.0;

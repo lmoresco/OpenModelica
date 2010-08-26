@@ -39,7 +39,7 @@ end Test;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass Test
+// class Test
 // parameter Integer rc.n = 6;
 // Real rc.r_components[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
 // Real rc.r_components[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";

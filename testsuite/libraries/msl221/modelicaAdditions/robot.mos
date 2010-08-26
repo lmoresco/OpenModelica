@@ -155,7 +155,7 @@ getErrorString();
 //   end if;
 // end PackShape;
 // 
-// fclass MultiBody.Examples.Robots.r3.robot
+// class MultiBody.Examples.Robots.r3.robot
 // parameter Real robot.q0[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = -1.0 "initial joint angles";
 // parameter Real robot.q0[2](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.43 "initial joint angles";
 // parameter Real robot.q0[3](quantity = "Angle", unit = "rad", displayUnit = "deg") = 1.57 "initial joint angles";

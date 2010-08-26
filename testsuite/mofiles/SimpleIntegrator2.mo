@@ -13,7 +13,7 @@ equation
 end SimpleIntegrator2;
 
 // Result:
-// fclass SimpleIntegrator2
+// class SimpleIntegrator2
 // Real u = 1.0;
 // Real x(start = 2.0);
 // equation

@@ -1337,7 +1337,7 @@ end BS11;
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
 // 
-// fclass BS11
+// class BS11
 // parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
 // output Real timeTable1.outPort.signal[1] "Real output signals";
@@ -1424,7 +1424,7 @@ end BS11;
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
 // 
-// fclass BS11
+// class BS11
 // parameter Integer timeTable1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer timeTable1.outPort.n = timeTable1.nout "Dimension of signal vector";
 // output Real timeTable1.outPort.signal[1] "Real output signals";

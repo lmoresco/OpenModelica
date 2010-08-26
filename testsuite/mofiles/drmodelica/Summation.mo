@@ -22,7 +22,7 @@ end Summation;
 
 
 // Result:
-// fclass Summation
+// class Summation
 // Real sum;
 // Integer n;
 // Real a[1] = 1.0;

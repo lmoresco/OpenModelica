@@ -39,7 +39,7 @@ end MatrixRowIndexing;
 //   b := a;
 // end callMe;
 // 
-// fclass MatrixRowIndexing
+// class MatrixRowIndexing
 // constant Real a[1,1] = 1.0;
 // constant Real a[1,2] = 2.0;
 // constant Real a[1,3] = 3.0;

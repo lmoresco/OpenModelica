@@ -17,7 +17,7 @@ equation
 end VectorBuiltin;
 
 // Result:
-// fclass VectorBuiltin
+// class VectorBuiltin
 // output Real A[1];
 // output Real B[1];
 // output Real B[2];

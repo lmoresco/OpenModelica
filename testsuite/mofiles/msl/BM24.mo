@@ -989,7 +989,7 @@ equation
   connect(sum1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-53.63,31.73},{-74.92,32.95},{-74.61,33.86}}));
 end BM24;
 
-// fclass BM24
+// class BM24
 // parameter Integer sum1.nin = 1 "Number of inputs";
 // parameter Integer sum1.inPort.n = sum1.nin "Dimension of signal vector";
 // input Real sum1.inPort.signal[1] "Real input signals";
@@ -1012,7 +1012,7 @@ end BM24;
 // sum1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BM24;
 // Result:
-// fclass BM24
+// class BM24
 // parameter Integer sum1.nin = 1 "Number of inputs";
 // parameter Integer sum1.inPort.n = sum1.nin "Dimension of signal vector";
 // input Real sum1.inPort.signal[1] "Real input signals";

@@ -185,7 +185,7 @@ end FunctionSimplex;
 //   a[p,q] := 0.05;
 // end pivot1;
 // 
-// fclass FunctionSimplex
+// class FunctionSimplex
 // constant Real a[1,1] = -1.0;
 // constant Real a[1,2] = -1.0;
 // constant Real a[1,3] = -1.0;

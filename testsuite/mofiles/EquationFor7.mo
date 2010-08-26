@@ -14,7 +14,7 @@ equation
 end EquationFor7;
 
 // Result:
-// fclass EquationFor7
+// class EquationFor7
 // Real a[1,1];
 // Real a[1,2];
 // Real a[1,3];

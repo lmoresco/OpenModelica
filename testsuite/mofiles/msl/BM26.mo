@@ -1069,7 +1069,7 @@ end BM26;
 // external "C";
 // end Modelica.Math.tanh;
 // 
-// fclass BM26
+// class BM26
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -1098,7 +1098,7 @@ end BM26;
 // external "C";
 // end Modelica.Math.tanh;
 // 
-// fclass BM26
+// class BM26
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

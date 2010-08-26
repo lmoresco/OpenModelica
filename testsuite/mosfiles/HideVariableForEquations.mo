@@ -13,7 +13,7 @@ equation
   end for;    
 end HideVariableForEquations;
 
-// fclass HideVariableForEquations
+// class HideVariableForEquations
 // constant Integer k = 4;
 // Real x[1];
 // Real x[2];

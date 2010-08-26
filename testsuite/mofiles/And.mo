@@ -13,7 +13,7 @@ model And
 end And;
 
 // Result:
-// fclass And
+// class And
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // constant Boolean b3 = false;

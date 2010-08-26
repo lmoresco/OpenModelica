@@ -21,7 +21,7 @@ connect(t1.p[1],t2.p[2]);
 end Connect15;
 
 // Result:
-// fclass Connect15
+// class Connect15
 // Real t1.p[1].i;
 // Real t1.p[1].v;
 // Real t1.p[2].i;

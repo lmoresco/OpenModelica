@@ -32,7 +32,7 @@ model Array1
 end Array1;
 
 // Result:
-// fclass Array1
+// class Array1
 // Integer x[1] = 1;
 // Integer x[2] = 2;
 // Integer x[3] = 3;

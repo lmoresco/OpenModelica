@@ -14,7 +14,7 @@ equation
   prod    = product({3.14, 2, 2});        // Gives the value 12.56
 end ArrayReduce;
 
-// fclass ArrayReduce
+// class ArrayReduce
 // Real minimum;
 // Real maximum;
 // Real summ;

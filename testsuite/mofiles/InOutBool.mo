@@ -40,7 +40,7 @@ end Booltest;
 //   end if;
 // end testBool;
 // 
-// fclass Booltest
+// class Booltest
 // Boolean t;
 // equation
 //   t = false;

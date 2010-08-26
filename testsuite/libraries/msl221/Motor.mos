@@ -61,7 +61,7 @@ getErrorString();
 //   Celsius := -273.15 + Kelvin;
 // end Modelica.SIunits.Conversions.to_degC;
 // 
-// fclass Modelica.Thermal.HeatTransfer.Examples.Motor
+// class Modelica.Thermal.HeatTransfer.Examples.Motor
 // parameter Real TAmb(quantity = "ThermodynamicTemperature", unit = "degC") = 20.0 "Ambient temperature";
 // parameter Real winding.C(quantity = "HeatCapacity", unit = "J/K") = 2500.0 "Heat capacity of part (= cp*m)";
 // parameter Boolean winding.steadyStateStart = false "true, if component shall start in steady state";

@@ -16,7 +16,7 @@ equation
 end ArraySlice;
 
 // Result:
-// fclass ArraySlice
+// class ArraySlice
 //   Real T[1](start = 200.0);
 //   Real T[2](start = 200.0);
 //   Real T[3](start = 200.0);

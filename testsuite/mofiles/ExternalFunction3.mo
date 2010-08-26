@@ -33,7 +33,7 @@ end ExternalFunction3;
 // external "C";
 // end ExternalFunction3.addmatrices;
 // 
-// fclass ExternalFunction3
+// class ExternalFunction3
 // constant Real a[1,1] = 1.0;
 // constant Real a[1,2] = 2.0;
 // constant Real a[2,1] = 3.0;

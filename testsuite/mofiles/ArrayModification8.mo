@@ -14,7 +14,7 @@ class ArrayModification8
 end ArrayModification8;
 
 // Result:
-// fclass ArrayModification8
+// class ArrayModification8
 // Real a.x[1] = 1.0;
 // Real a.x[2] = 2.0;
 // Real a.x[3] = 3.0;

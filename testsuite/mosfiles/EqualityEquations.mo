@@ -29,7 +29,7 @@ equation
   (x+1, 3.0, z/y)  = f(1.0, 2.0);        // Illegal! Not a list of variables on the left hand side
 end EqualityEquations;
 
-// fclass EqualityEquations
+// class EqualityEquations
 // Real x;
 // Real y;
 // Real z;

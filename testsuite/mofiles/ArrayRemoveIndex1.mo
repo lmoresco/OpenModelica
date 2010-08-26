@@ -21,7 +21,7 @@ equation
 end ArrayRemoveIndex1;
 
 // Result:
-// fclass ArrayRemoveIndex1
+// class ArrayRemoveIndex1
 // parameter Real A[1,1] = -1.0;
 // parameter Real A[1,2] = 0.0;
 // parameter Real A[2,1] = 0.0;

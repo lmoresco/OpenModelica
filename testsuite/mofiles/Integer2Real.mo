@@ -14,7 +14,7 @@ equation
 end Integer2Real;
 
 // Result:
-// fclass Integer2Real
+// class Integer2Real
 // Integer n;
 // Real a;
 // equation

@@ -976,7 +976,7 @@ equation
 end BM1;
 
 
-// fclass BM1
+// class BM1
 // parameter Integer abs1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer abs1.inPort.n = abs1.n "Dimension of signal vector";
 // input Real abs1.inPort.signal[1] "Real input signals";
@@ -998,7 +998,7 @@ end BM1;
 // abs1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BM1;
 // Result:
-// fclass BM1
+// class BM1
 // parameter Integer abs1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer abs1.inPort.n = abs1.n "Dimension of signal vector";
 // input Real abs1.inPort.signal[1] "Real input signals";

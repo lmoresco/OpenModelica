@@ -11,7 +11,7 @@ end Array3;
 
 
 // Result:
-// fclass Array3
+// class Array3
 // Integer x[1,1] = 1;
 // Integer x[1,2] = 2;
 // Integer x[1,3] = 3;

@@ -3659,7 +3659,7 @@ end Gear;
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
-// fclass Gear
+// class Gear
 // parameter Real fixed1.phi0(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Fixed offset angle of housing";
 // Real fixed1.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
 // Real fixed1.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
@@ -3941,7 +3941,7 @@ end Gear;
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
-// fclass Gear
+// class Gear
 // parameter Real fixed1.phi0(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Fixed offset angle of housing";
 // Real fixed1.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
 // Real fixed1.flange_b.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";

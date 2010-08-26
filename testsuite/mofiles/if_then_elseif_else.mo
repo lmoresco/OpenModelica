@@ -16,7 +16,7 @@ equation
 
 end ifThenElseIfElse;
 // Result:
-// fclass ifThenElseIfElse
+// class ifThenElseIfElse
 // Real out1;
 // Real out2;
 // Real out3;

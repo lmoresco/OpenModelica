@@ -25,7 +25,7 @@ end Test;
 //   y := if x > 0 then x * Faculty1(x - 1) else 1;
 // end Faculty1;
 // 
-// fclass Test
+// class Test
 // Real x = Real(Faculty1(integer(2.0 * time)));
 // end Test;
 // endResult

@@ -17,7 +17,7 @@ class ConstructFunc
 end ConstructFunc;
 
 // Result:
-// fclass ConstructFunc
+// class ConstructFunc
 // Real z[1,1] = 0.0;
 // Real z[1,2] = 0.0;
 // Real z[1,3] = 0.0;

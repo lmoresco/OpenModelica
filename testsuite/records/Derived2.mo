@@ -25,7 +25,7 @@ end N;
 // output ThermodynamicState res;
 // end N.ThermodynamicState;
 // 
-// fclass N
+// class N
 // constant Real T = 1.0;
 // constant Real p = 2.0;
 // Real res.T = 1.0 "temperature";

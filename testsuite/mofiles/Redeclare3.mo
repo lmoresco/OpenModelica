@@ -30,7 +30,7 @@ end Redeclare3;
 
 
 // Result:
-// fclass Redeclare3
+// class Redeclare3
 // Real c.x.x;
 // Real c.x.y = 1.0;
 // equation

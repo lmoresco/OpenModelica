@@ -12,7 +12,7 @@ equation
 end Atan;
 
 // Result:
-// fclass Atan
+// class Atan
 // Real r;
 // equation
 //   r = 0.463647609000806;

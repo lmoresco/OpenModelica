@@ -12,7 +12,7 @@ equation
 end Asin;
 
 // Result:
-// fclass Asin
+// class Asin
 // Real r;
 // equation
 //   r = 0.523598775598299;

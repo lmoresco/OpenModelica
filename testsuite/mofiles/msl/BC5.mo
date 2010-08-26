@@ -953,7 +953,7 @@ model BC5
 equation 
   connect(constant1.outPort,limIntegrator1.inPort) annotation(Line(visible=true,points={{-21.59,8.49},{-3.25,8.49}}));
 end BC5;
-// fclass BC5
+// class BC5
 // parameter Integer limIntegrator1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer limIntegrator1.inPort.n = limIntegrator1.n "Dimension of signal vector";
 // input Real limIntegrator1.inPort.signal[1] "Real input signals";
@@ -982,7 +982,7 @@ end BC5;
 // constant1.outPort.signal[1] = limIntegrator1.inPort.signal[1];
 // end BC5;
 // Result:
-// fclass BC5
+// class BC5
 // parameter Integer limIntegrator1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer limIntegrator1.inPort.n = limIntegrator1.n "Dimension of signal vector";
 // input Real limIntegrator1.inPort.signal[1] "Real input signals";

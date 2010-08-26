@@ -974,7 +974,7 @@ equation
   connect(constant2.outPort,feedback1.inPort2) annotation(Line(visible=true,points={{-24.74,-18.45},{-21.7,17.74}}));
   connect(constant1.outPort,feedback1.inPort1) annotation(Line(visible=true,points={{-55.76,25.35},{-29.3,26.26}}));
 end BM12;
-// fclass BM12
+// class BM12
 // parameter Integer feedback1.n = 1 "size of input and feedback signal";
 // parameter Integer feedback1.inPort1.n = feedback1.n "Dimension of signal vector";
 // input Real feedback1.inPort1.signal[1] "Real input signals";
@@ -1004,7 +1004,7 @@ end BM12;
 // constant2.outPort.signal[1] = feedback1.inPort2.signal[1];
 // end BM12;
 // Result:
-// fclass BM12
+// class BM12
 // parameter Integer feedback1.n = 1 "size of input and feedback signal";
 // parameter Integer feedback1.inPort1.n = feedback1.n "Dimension of signal vector";
 // input Real feedback1.inPort1.signal[1] "Real input signals";

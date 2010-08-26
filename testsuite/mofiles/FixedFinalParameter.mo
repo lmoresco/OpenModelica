@@ -14,7 +14,7 @@ initial equation
 end FixedFinalParameter;
 
 // Result:
-// fclass FixedFinalParameter
+// class FixedFinalParameter
 // parameter Real p[1](fixed = false);
 // parameter Real p[2](fixed = false);
 // parameter Real p[3](fixed = false);

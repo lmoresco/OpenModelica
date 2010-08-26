@@ -10,7 +10,7 @@ model RealPow
 end RealPow;
 
 // Result:
-// fclass RealPow
+// class RealPow
 // constant Real r = 2731.58325751917;
 // end RealPow;
 // endResult

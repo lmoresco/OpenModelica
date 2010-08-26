@@ -1177,7 +1177,7 @@ model BS7
 equation 
   connect(ramp1.outPort,der1.inPort) annotation(Line(visible=true,points={{-19.57,10.45},{11.45,12.57}}));
 end BS7;
-// fclass BS7
+// class BS7
 // parameter Integer ramp1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer ramp1.outPort.n = ramp1.nout "Dimension of signal vector";
 // output Real ramp1.outPort.signal[1] "Real output signals";
@@ -1206,7 +1206,7 @@ end BS7;
 // ramp1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS7;
 // Result:
-// fclass BS7
+// class BS7
 // parameter Integer ramp1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer ramp1.outPort.n = ramp1.nout "Dimension of signal vector";
 // output Real ramp1.outPort.signal[1] "Real output signals";

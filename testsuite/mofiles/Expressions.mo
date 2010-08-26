@@ -16,7 +16,7 @@ equation
 end Expressions;
 
 // Result:
-// fclass Expressions
+// class Expressions
 // constant Real r1 = 3.0;
 // constant Real r2 = -1.0;
 // constant Real r3 = 30.0;

@@ -14,7 +14,7 @@ class ModifierExtends
 end ModifierExtends;
 
 // Result:
-// fclass ModifierExtends
+// class ModifierExtends
 // parameter Real r1 = 4711.0;
 // end ModifierExtends;
 // endResult

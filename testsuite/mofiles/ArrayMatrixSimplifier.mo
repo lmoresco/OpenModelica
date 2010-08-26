@@ -19,7 +19,7 @@ equation
 end ArrayMatrixSimplifier;
 
 // Result:
-// fclass ArrayMatrixSimplifier
+// class ArrayMatrixSimplifier
 // parameter Real a[1] = 1.0;
 // parameter Real a[2] = 1.0;
 // output Real x[1];

@@ -28,7 +28,7 @@ end ModifyConstant3;
 // Result:
 // [ModifyConstant3.mo:16:32-16:41:writable] Error: unexpected token: ., parsing resumed at token ';' on line 16, column 41
 // 
-// fclass ModifyConstant3
+// class ModifyConstant3
 // constant Real c.a.c = 1.0;
 // end ModifyConstant3;
 // endResult

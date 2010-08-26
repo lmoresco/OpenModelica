@@ -47,7 +47,7 @@ end AppendElement;
 
 
 // Result:
-// fclass AppendElement
+// class AppendElement
 // Real PA[1, 3] = [1, 2, 3];
 // Real PB[3, 1] = [1; 2; 3];
 // Real q[3] = {1, 2, 3};

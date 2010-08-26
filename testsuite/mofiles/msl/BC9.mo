@@ -975,7 +975,7 @@ equation
   connect(constant1.outPort,secondOrder1.inPort) annotation(Line(visible=true,points={{-29.91,12.57},{-8.62,15.62}}));
 end BC9;
 
-// fclass BC9
+// class BC9
 // parameter Integer secondOrder1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer secondOrder1.inPort.n = secondOrder1.n "Dimension of signal vector";
 // input Real secondOrder1.inPort.signal[1] "Real input signals";
@@ -1005,7 +1005,7 @@ end BC9;
 // constant1.outPort.signal[1] = secondOrder1.inPort.signal[1];
 // end BC9;
 // Result:
-// fclass BC9
+// class BC9
 // parameter Integer secondOrder1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer secondOrder1.inPort.n = secondOrder1.n "Dimension of signal vector";
 // input Real secondOrder1.inPort.signal[1] "Real input signals";

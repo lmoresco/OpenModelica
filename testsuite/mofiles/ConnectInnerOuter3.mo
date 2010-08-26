@@ -34,7 +34,7 @@ equation
 end Top2;
 
 // Result:
-// fclass Top2
+// class Top2
 //   Real world.i;
 //   Real world.v;
 //   Real topPin.i;

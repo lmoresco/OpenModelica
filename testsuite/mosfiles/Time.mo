@@ -11,7 +11,7 @@ equation
   x = time;
 end Time;
 
-// fclass Time
+// class Time
 // Real x;
 // equation
 //   x = time;

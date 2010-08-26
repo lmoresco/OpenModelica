@@ -987,7 +987,7 @@ model BS14
 equation 
   connect(integerToReal1.inPort,integerStep1.outPort) annotation(Line(visible=true,points={{11.15,15.01},{-29.3,13.79}}));
 end BS14;
-// fclass BS14
+// class BS14
 // parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
 // parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
 // output Real integerToReal1.outPort.signal[1] "Real output signals";
@@ -1011,7 +1011,7 @@ end BS14;
 // integerToReal1.inPort.signal[1] = integerStep1.outPort.signal[1];
 // end BS14;
 // Result:
-// fclass BS14
+// class BS14
 // parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
 // parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
 // output Real integerToReal1.outPort.signal[1] "Real output signals";

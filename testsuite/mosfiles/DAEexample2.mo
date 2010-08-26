@@ -14,7 +14,7 @@ equation
   x-y = exp(-0.9*x)*cos(y);
 end DAEexample;
 
-// fclass DAEexample
+// class DAEexample
 // Real x(start=0.9);
 // Real y;
 // parameter Real a = 2;

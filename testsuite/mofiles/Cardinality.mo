@@ -33,7 +33,7 @@ equation
 end circuit;
 
 // Result:
-// fclass circuit
+// class circuit
 // Real p.v;
 // Real p.i;
 // Real R1.p.v;

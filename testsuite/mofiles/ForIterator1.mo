@@ -66,7 +66,7 @@ end ForIterator1;
 //   y4 := arrFunc4[2,2];
 // end ForIterator1.func;
 // 
-// fclass ForIterator1
+// class ForIterator1
 // Integer i1;
 // Integer i2;
 // Real r1;

@@ -33,7 +33,7 @@ end EquationCall;
 //   y := radius * sin(angle);
 // end PointOnCircle;
 // 
-// fclass EquationCall
+// class EquationCall
 // Real px;
 // Real py;
 // equation

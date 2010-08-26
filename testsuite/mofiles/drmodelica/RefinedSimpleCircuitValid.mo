@@ -86,7 +86,7 @@
         Inductor comp2(L=0.0002));
   end RefinedSimpleCircuit;
 
-// fclass RefinedSimpleCircuit
+// class RefinedSimpleCircuit
 // Real comp1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real comp1.p.i(quantity = "ElectricCurrent", unit = "A");
 // Real comp1.n.v(quantity = "ElectricPotential", unit = "V");
@@ -128,7 +128,7 @@
 //   comp2.n.i = 0.0;
 // end RefinedSimpleCircuit;
 // Result:
-// fclass RefinedSimpleCircuit
+// class RefinedSimpleCircuit
 // Real comp1.p.v(quantity = "ElectricPotential", unit = "V");
 // Real comp1.p.i(quantity = "ElectricCurrent", unit = "A");
 // Real comp1.n.v(quantity = "ElectricPotential", unit = "V");

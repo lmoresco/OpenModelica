@@ -16,6 +16,6 @@ model Array_builtin
 end Array_builtin;
 
 // Result:
-// fclass Array_builtin
+// class Array_builtin
 // end Array_builtin;
 // endResult

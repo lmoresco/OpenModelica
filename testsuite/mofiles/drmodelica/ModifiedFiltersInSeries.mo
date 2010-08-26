@@ -27,7 +27,7 @@ end ModifiedFiltersInSeries;
 
 
 // Result:
-// fclass ModifiedFiltersInSeries
+// class ModifiedFiltersInSeries
 // parameter Real F12.F1.T = 6.0;
 // Real F12.F1.u;
 // Real F12.F1.y(start = 1.0);

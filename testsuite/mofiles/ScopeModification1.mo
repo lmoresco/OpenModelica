@@ -17,7 +17,7 @@ class ScopeModification1
 end ScopeModification1;
 
 // Result:
-// fclass ScopeModification1
+// class ScopeModification1
 // Real a = 1.0;
 // Real m.a = 2.0;
 // Real m.b = a;

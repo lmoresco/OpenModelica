@@ -14,7 +14,7 @@ algorithm
 end Real2Integer3;
 
 // Result:
-// fclass Real2Integer3
+// class Real2Integer3
 // Integer n1;
 // Integer n2;
 // algorithm

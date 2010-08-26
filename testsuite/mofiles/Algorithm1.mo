@@ -37,7 +37,7 @@ algorithm
 end Algorithm1;
 
 // Result:
-// fclass Algorithm1
+// class Algorithm1
 // Real x;
 // Real y;
 // Real z;

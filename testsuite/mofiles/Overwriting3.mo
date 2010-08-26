@@ -13,7 +13,7 @@ end A;
 class Overwriting3 = A(x[1]=1.0);
 
 // Result:
-// fclass Overwriting3
+// class Overwriting3
 //   Real x[1] = 1.0;
 //   Real x[2] = 0.0;
 //   Real x[3] = 0.0;

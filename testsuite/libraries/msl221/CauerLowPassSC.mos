@@ -10,7 +10,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.CauerLowPassSC);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Electrical.Analog.Examples.CauerLowPassSC
+// "class Modelica.Electrical.Analog.Examples.CauerLowPassSC
 // parameter Real l1 = 1.304;
 // parameter Real l2 = 0.8586;
 // parameter Real c1 = 1.072;

@@ -77,7 +77,7 @@ end FunctionEval8;
 //   y := 7.0 + x;
 // end test3;
 // 
-// fclass FunctionEval8
+// class FunctionEval8
 // parameter Real a = 5.0;
 // parameter Real b[1] = 1.0;
 // parameter Real b[2] = 2.0;

@@ -20,7 +20,7 @@ equation
 end PackageComponents;
 
 // Result:
-// fclass PackageComponents
+// class PackageComponents
 // Integer tc.i;
 // equation
 //   tc.i = 1;

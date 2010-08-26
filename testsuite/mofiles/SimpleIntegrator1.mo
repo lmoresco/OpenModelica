@@ -15,7 +15,7 @@ end SimpleIntegrator1;
 
 
 // Result:
-// fclass SimpleIntegrator1
+// class SimpleIntegrator1
 // Real u;
 // Real x = 2.0;
 // equation

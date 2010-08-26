@@ -23,7 +23,7 @@ model WhenEquation1
     end when;
 end WhenEquation1;
 
-// fclass WhenEquation1
+// class WhenEquation1
 // Real phi(start = 0.0);
 // Real sp;
 // Integer pos(start = 0);

@@ -23,7 +23,7 @@ class A
   T5 b5;
 end A;
 // Result:
-// fclass A
+// class A
 // Real a(unit = "m/s");
 // Real b(unit = "m/s");
 // Real b2(unit = "m/s", displayUnit = "ms");

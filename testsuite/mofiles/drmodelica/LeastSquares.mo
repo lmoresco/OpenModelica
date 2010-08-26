@@ -44,7 +44,7 @@ end LeastSquares;
 // external "C";
 // end ls;
 // 
-// fclass LeastSquares
+// class LeastSquares
 // Real in1[1,1] = 1.0;
 // Real in1[1,2] = 3.0;
 // Real in1[2,1] = 4.0;

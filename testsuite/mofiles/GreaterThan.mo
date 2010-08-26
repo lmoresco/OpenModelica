@@ -11,7 +11,7 @@ model GreaterThan
 end GreaterThan;
 
 // Result:
-// fclass GreaterThan
+// class GreaterThan
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end GreaterThan;

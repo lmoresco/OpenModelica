@@ -38,7 +38,7 @@ end EngineSAAB95;
 // output SAAB95i res;
 // end EngineModel.SAAB95i;
 // 
-// fclass EngineSAAB95
+// class EngineSAAB95
 // parameter Real engine.data.bore = 0.09;
 // parameter Real engine.data.stroke = 0.09;
 // Real engine.displacement;

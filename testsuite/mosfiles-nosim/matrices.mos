@@ -126,7 +126,7 @@ instantiateModel(TestNDims);
 // {{1,4},{2,5},{3,6}}
 // {{1},{2},{3},{4},{5},{6}}
 // true
-// "fclass TestNDims
+// "class TestNDims
 // Real a[1,1];
 // Real a[1,2];
 // Real a[1,3];

@@ -47,7 +47,7 @@ model Import4
 end Import4;
 
 // Result:
-// fclass Import4
+// class Import4
 // Real c.x = 1.0;
 // Real d.x = 5.0;
 // Real e.x = 6.0;

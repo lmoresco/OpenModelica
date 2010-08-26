@@ -12,7 +12,7 @@ equation
 end Acos;
 
 // Result:
-// fclass Acos
+// class Acos
 // Real r;
 // equation
 //   r = 1.0471975511966;

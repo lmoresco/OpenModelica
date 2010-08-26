@@ -17,7 +17,7 @@ equation
 end WhenSemantics1;
 
 // Result:
-// fclass WhenSemantics1
+// class WhenSemantics1
 //  Real x;
 //  Real y;
 //  Real z;

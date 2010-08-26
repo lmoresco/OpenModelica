@@ -38,7 +38,7 @@ end myTanCall;
 //   result := sin(x) / cos(x);
 // end myTan;
 // 
-// fclass myTanCall
+// class myTanCall
 // Real t;
 // equation
 //   t = 1.5574077246549;

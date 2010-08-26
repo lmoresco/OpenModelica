@@ -12,7 +12,7 @@ class ArrayModification4
 end ArrayModification4;
 
 // Result:
-// fclass ArrayModification4
+// class ArrayModification4
 // Real a.x[1](unit = "V") = 1.0;
 // Real a.x[2](unit = "V");
 // Real a.x[3](unit = "V");

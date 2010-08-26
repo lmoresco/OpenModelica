@@ -13,7 +13,7 @@ constant Real z = 1+ .2 "1+ .2";
 end A;
 
 // Result:
-// fclass A
+// class A
 //   constant Real x = 1.2 "1+.2";
 //   constant Real y = 3.0 "1+. 2";
 //   constant Real z = 1.2 "1+ .2";

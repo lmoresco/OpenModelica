@@ -21,7 +21,7 @@ end RecordConstructors;
 // output TestRecord res;
 // end TestRecord;
 // 
-// fclass RecordConstructors
+// class RecordConstructors
 // Integer tr.i;
 // equation
 //   tr.i = 1;

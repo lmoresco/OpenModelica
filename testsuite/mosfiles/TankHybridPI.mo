@@ -112,7 +112,7 @@ end TankHybridPI;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass TankHybridPI
+// class TankHybridPI
 // Real source.qOut.lflow;
 // parameter Real source.flowLevel = 0.02;
 // parameter Real piDiscrete.Ts(unit = "s") = 0.1 "Time period between discrete samples";

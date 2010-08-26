@@ -10,7 +10,7 @@ class ScopeDeclaration1
 end ScopeDeclaration1;
 
 // Result:
-// fclass ScopeDeclaration1
+// class ScopeDeclaration1
 // Real a = -a;
 // end ScopeDeclaration1;
 // endResult

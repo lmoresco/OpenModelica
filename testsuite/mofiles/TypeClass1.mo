@@ -18,7 +18,7 @@ equation
 end TypeClass1;
 
 // Result:
-// fclass TypeClass1
+// class TypeClass1
 // Integer lt;
 // equation
 //   lt = 1;

@@ -14,7 +14,7 @@ model ConstantDeclConnector
 end ConstantDeclConnector;
 
 // Result:
-// fclass ConstantDeclConnector
+// class ConstantDeclConnector
 // constant Real cc.r = 2.0;
 // end ConstantDeclConnector;
 // endResult

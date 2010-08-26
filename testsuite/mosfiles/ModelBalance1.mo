@@ -13,7 +13,7 @@ equation
   y = x + 2;
 end ModelBalance1;
 
-// fclass ModelBalance1
+// class ModelBalance1
 // Integer x;
 // Integer y;
 // equation

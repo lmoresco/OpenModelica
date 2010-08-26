@@ -20,7 +20,7 @@ algorithm
 end DiagonalBlock;
 
 // Result:
-// fclass DiagonalBlock
+// class DiagonalBlock
 // parameter Integer m5 = 3;
 // parameter Integer m6 = 3;
 // parameter Integer m7 = 1;

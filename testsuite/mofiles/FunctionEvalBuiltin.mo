@@ -41,7 +41,7 @@ model FunctionEvalBuiltin
 end FunctionEvalBuiltin;
 
 // Result:
-// fclass FunctionEvalBuiltin
+// class FunctionEvalBuiltin
 // constant Real pi1 = 1.5707963267949;
 // constant Real pi2 = 0.841470984807897;
 // constant Real pi = 3.14159265358979;

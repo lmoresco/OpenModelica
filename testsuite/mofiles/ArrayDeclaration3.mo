@@ -18,7 +18,7 @@ equation
 end ArrayDeclaration3;
 
 // Result:
-// fclass ArrayDeclaration3
+// class ArrayDeclaration3
 // Real a;
 // Real b[1];
 // Real b[2];

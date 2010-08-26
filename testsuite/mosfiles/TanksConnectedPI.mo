@@ -92,7 +92,7 @@ end TanksConnectedPI;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass TanksConnectedPI
+// class TanksConnectedPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // Real tank1.tSensor.val(unit = "m");

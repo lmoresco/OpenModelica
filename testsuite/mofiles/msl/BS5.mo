@@ -1254,7 +1254,7 @@ model BS5
 equation 
   connect(kinematicPTP1.outPort,der1.inPort) annotation(Line(visible=true,points={{-4.67,11.36},{16.62,8.32}}));
 end BS5;
-// fclass BS5
+// class BS5
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";
@@ -1302,7 +1302,7 @@ end BS5;
 // kinematicPTP1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS5;
 // Result:
-// fclass BS5
+// class BS5
 // parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
 // input Real der1.inPort.signal[1] "Real input signals";

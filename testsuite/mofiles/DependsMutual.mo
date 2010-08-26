@@ -30,7 +30,7 @@ equation
 end DependsMutual;
 
 // Result:
-// fclass DependsMutual
+// class DependsMutual
 // Real x;
 // Real a.x;
 // equation

@@ -31,7 +31,7 @@ equation
 end Units1;
 
 // Result:
-// fclass Units1
+// class Units1
 // Real p1.v(unit = "kV");
 // Real p1.i(unit = "A");
 // Real p2.v(unit = "V");

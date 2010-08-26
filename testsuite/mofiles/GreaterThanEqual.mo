@@ -12,7 +12,7 @@ model GreaterThanEqual
 end GreaterThanEqual;
 
 // Result:
-// fclass GreaterThanEqual
+// class GreaterThanEqual
 // constant Boolean b1 = true;
 // constant Boolean b2 = true;
 // constant Boolean b3 = false;

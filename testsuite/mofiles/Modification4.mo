@@ -17,7 +17,7 @@ class Modification4
 end Modification4;
 
 // Result:
-// fclass Modification4;
+// class Modification4;
 // equation
 //   b.a.x = 1
 // end Modification4;

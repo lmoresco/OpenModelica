@@ -45,7 +45,7 @@ model InnerClass1
 end InnerClass1;
 
 // Result:
-// fclass InnerClass1
+// class InnerClass1
 // parameter Real b.x.p = 2;
 // Real b.a.x;
 // Real a.x;

@@ -13,7 +13,7 @@ equation
 end Sign;
 
 // Result:
-// fclass Sign
+// class Sign
 // Real r1;
 // Real r2;
 // equation

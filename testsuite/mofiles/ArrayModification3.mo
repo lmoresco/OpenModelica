@@ -16,7 +16,7 @@ class ArrayModification3
 end ArrayModification3;
 
 // Result:
-// fclass ArrayModification3
+// class ArrayModification3
 //   Real a.x[1].a;
 //   Real a.x[1].b;
 //   Real a.x[2].a = 1.0;

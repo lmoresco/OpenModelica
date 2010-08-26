@@ -982,7 +982,7 @@ equation
   connect(division1.inPort2,constant2.outPort) annotation(Line(visible=true,points={{-0.41,4.97},{-53.63,-6.89}}));
   connect(division1.inPort1,constant1.outPort) annotation(Line(visible=true,points={{-1.32,16.83},{-33.25,39.03}}));
 end BM10;
-// fclass BM10
+// class BM10
 // parameter Integer division1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer division1.inPort1.n = division1.n "Dimension of signal vector";
 // input Real division1.inPort1.signal[1] "Real input signals";
@@ -1016,7 +1016,7 @@ end BM10;
 // division1.inPort2.signal[1] = constant2.outPort.signal[1];
 // end BM10;
 // Result:
-// fclass BM10
+// class BM10
 // parameter Integer division1.n = 1 "Dimension of input and output vectors.";
 // parameter Integer division1.inPort1.n = division1.n "Dimension of signal vector";
 // input Real division1.inPort1.signal[1] "Real input signals";

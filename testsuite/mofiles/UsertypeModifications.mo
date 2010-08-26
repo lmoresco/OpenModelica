@@ -22,7 +22,7 @@ equation
 end AliasType;
 
 // Result:
-// fclass AliasType
+// class AliasType
 // Real b[1](start = 2.0);
 // Real b[2](start = 2.0);
 // Real b[3](start = 2.0);

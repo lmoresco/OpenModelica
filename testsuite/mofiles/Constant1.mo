@@ -14,7 +14,7 @@ equation
 end Constant1;
 
 // Result:
-// fclass Constant1
+// class Constant1
 // constant Real PI = 3.14159265358979;
 // constant Integer N = 17;
 // Real x;

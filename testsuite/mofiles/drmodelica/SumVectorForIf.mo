@@ -22,7 +22,7 @@ algorithm
 end SumVector;
 
 // Result:
-// fclass SumVector
+// class SumVector
 // Real sum;
 // parameter Real v[1] = 100.0;
 // parameter Real v[2] = 200.0;

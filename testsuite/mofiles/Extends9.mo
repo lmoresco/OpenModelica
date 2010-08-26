@@ -38,7 +38,7 @@ end Main;
 
 
 // Result:
-// fclass Main
+// class Main
 // Real phi_rel(quantity = "Angle", unit = "rad", displayUnit = "deg", start = 0.0) "Relative rotation angle (= flange_b.phi - flange_a.phi)";
 // Real tau(quantity = "Torque", unit = "N.m") "Torque between flanges (= flange_b.tau)";
 // Real flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";

@@ -19,7 +19,7 @@ model ArrayExtend
 end ArrayExtend;
 
 // Result:
-// fclass ArrayExtend
+// class ArrayExtend
 // Real r;
 // Real illegalReal;
 // end ArrayExtend;

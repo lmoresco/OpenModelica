@@ -27,7 +27,7 @@ end f;
 //   y := 2.0 + x;
 // end f;
 // 
-// fclass DocString
+// class DocString
 // Real x = 2.0 "Real named x";
 // Real y "Real named y";
 // equation

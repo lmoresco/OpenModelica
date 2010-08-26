@@ -10,7 +10,7 @@ model IntPow
 end IntPow;
 
 // Result:
-// fclass IntPow
+// class IntPow
 // constant Integer i = 512;
 // end IntPow;
 // endResult

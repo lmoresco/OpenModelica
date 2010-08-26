@@ -16,7 +16,7 @@ equation
 end InputDeclConnector;
 
 // Result:
-// fclass InputDeclConnector
+// class InputDeclConnector
 // input Real ic.r;
 // equation
 //   ic.r = 1.0;

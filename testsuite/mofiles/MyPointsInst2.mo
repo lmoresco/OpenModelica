@@ -32,7 +32,7 @@ end MyPointsInst2;
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
 // Result:
-// fclass MyPointsInst2
+// class MyPointsInst2
 // parameter Real pts.point1.x = 1.0;
 // parameter Real pts.point1.y = 2.0;
 // parameter Real pts.point1.z = 3.0;

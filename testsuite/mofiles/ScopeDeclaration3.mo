@@ -17,7 +17,7 @@ public
 end ScopeDeclaration3;
 
 // Result:
-// fclass ScopeDeclaration3
+// class ScopeDeclaration3
 // Real x;
 // Real y;
 // equation

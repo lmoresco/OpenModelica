@@ -1296,7 +1296,7 @@ end BS9;
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BS9
+// class BS9
 // parameter Integer sine1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
 // output Real sine1.outPort.signal[1] "Real output signals";
@@ -1335,7 +1335,7 @@ end BS9;
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BS9
+// class BS9
 // parameter Integer sine1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
 // output Real sine1.outPort.signal[1] "Real output signals";

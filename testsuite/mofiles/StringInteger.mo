@@ -18,7 +18,7 @@ equation
 end StringInteger;
 
 // Result:
-// fclass StringInteger
+// class StringInteger
 // String s1;
 // String s2;
 // Integer i;

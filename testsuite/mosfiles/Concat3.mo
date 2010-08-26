@@ -14,7 +14,7 @@ end Concat3;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass Concat3
+// class Concat3
 // Real r1[1,1];
 // Real r1[1,2];
 // Real r1[1,3];

@@ -39,7 +39,7 @@ end BaseSampler;
 // output Real y;
 // end BaseSampler.f;
 // 
-// fclass BaseSampler
+// class BaseSampler
 // input Real u;
 // Boolean doSample;
 // protected discrete Real x;

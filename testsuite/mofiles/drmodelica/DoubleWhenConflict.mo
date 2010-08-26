@@ -21,7 +21,7 @@ end DoubleWhenConflict;
 
 
 // Result:
-// fclass DoubleWhenConflict
+// class DoubleWhenConflict
 // Boolean close;
 // parameter Real x = 5;
 // algorithm

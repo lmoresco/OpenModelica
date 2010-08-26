@@ -13,7 +13,7 @@ class OneReturnValue
 end OneReturnValue;  
 
 // Result:
-// fclass OneReturnValue
+// class OneReturnValue
 // Real a = 1.0;
 // Real b = 0.0;
 // Real c = 1.0;

@@ -15,7 +15,7 @@ model EventFunctions
 end EventFunctions;
 
 // Result:
-// fclass EventFunctions
+// class EventFunctions
 // Real r1 = 11.0;
 // Real r2 = 2.0;
 // Real r3 = 3.0;

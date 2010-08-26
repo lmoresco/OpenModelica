@@ -43,7 +43,7 @@ end FunctionEval2;
 //   y := 1.0 + x;
 // end f;
 // 
-// fclass FunctionEval2
+// class FunctionEval2
 // constant Real a = 5.0;
 // Real x;
 // equation

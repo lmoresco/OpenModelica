@@ -11,7 +11,7 @@ model LessThan
 end LessThan;
 
 // Result:
-// fclass LessThan
+// class LessThan
 // constant Boolean b1 = true;
 // constant Boolean b2 = false;
 // end LessThan;

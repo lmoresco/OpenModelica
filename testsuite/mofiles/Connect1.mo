@@ -19,7 +19,7 @@ equation
 end Connect1;
 
 // Result:
-// fclass Connect1
+// class Connect1
 // Real c1.f;
 // Real c1.e;
 // Real c2.f;

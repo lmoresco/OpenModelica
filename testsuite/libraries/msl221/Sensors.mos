@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Mechanics.Translational.Examples.Sensors
+// class Modelica.Mechanics.Translational.Examples.Sensors
 // Real ForceSensor1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
 // Real ForceSensor1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
 // Real ForceSensor1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";

@@ -925,7 +925,7 @@ equation
 end BC1;
 
 
-// fclass BC1
+// class BC1
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";
@@ -947,7 +947,7 @@ end BC1;
 // constant1.outPort.signal[1] = der1.inPort.signal[1];
 // end BC1;
 // Result:
-// fclass BC1
+// class BC1
 // parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
 // parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
 // output Real constant1.outPort.signal[1] "Real output signals";

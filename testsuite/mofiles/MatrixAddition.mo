@@ -22,7 +22,7 @@ end FahrzeugCon;
 
 
 // Result:
-// fclass FahrzeugCon
+// class FahrzeugCon
 // Real M[1];
 // Real M[2];
 // Real M[3];

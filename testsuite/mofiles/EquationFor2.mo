@@ -15,7 +15,7 @@ equation
   end for;
 end EquationFor2;
 // Result:
-// fclass EquationFor2
+// class EquationFor2
 // constant Integer N = 4;
 // Real a[1];
 // Real a[2];

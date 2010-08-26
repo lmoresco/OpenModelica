@@ -35,7 +35,7 @@ end Constant11;
 //   r := 1.0;
 // end Constant11.def;
 // 
-// fclass Constant11
+// class Constant11
 // constant Real x = 1.0;
 // end Constant11;
 // endResult

@@ -16,7 +16,7 @@ equation
 end TypeArray;
 
 // Result:
-// fclass TypeArray
+// class TypeArray
 // Integer ia[1];
 // Integer ia[2];
 // Integer ia[3];

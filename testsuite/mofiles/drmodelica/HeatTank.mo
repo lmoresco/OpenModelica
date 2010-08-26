@@ -53,7 +53,7 @@ end HeatTank;
 
 
 // Result:
-// fclass HeatTank
+// class HeatTank
 // parameter Real area = 1.0;
 // Real inlet.pressure;
 // Real inlet.volumeFlowRate;

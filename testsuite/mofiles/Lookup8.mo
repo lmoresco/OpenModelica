@@ -16,7 +16,7 @@ model Test
 end Test;
 
 // Result:
-// fclass Test
+// class Test
 // Real Cytosol_V;
 // Real Cytosol.V;
 // equation

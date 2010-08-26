@@ -13,7 +13,7 @@ end SubScript1;
 
 
 // Result:
-// fclass SubScript1
+// class SubScript1
 // parameter Integer tmp = 2;
 // Real arraySubs[1];
 // Real arraySubs[2];

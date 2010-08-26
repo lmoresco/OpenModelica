@@ -17,7 +17,7 @@ x=y;
 end StructuralParam;
 
 // Result:
-// fclass StructuralParam
+// class StructuralParam
 // parameter Integer m = n;
 // parameter Integer n = 1;
 // Real x[1];

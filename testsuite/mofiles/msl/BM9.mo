@@ -1070,7 +1070,7 @@ end BM9;
 // external "C";
 // end Modelica.Math.cosh;
 // 
-// fclass BM9
+// class BM9
 // parameter Integer cosh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cosh1.inPort.n = cosh1.n "Dimension of signal vector";
 // input Real cosh1.inPort.signal[1] "Real input signals";
@@ -1099,7 +1099,7 @@ end BM9;
 // external "C";
 // end Modelica.Math.cosh;
 // 
-// fclass BM9
+// class BM9
 // parameter Integer cosh1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer cosh1.inPort.n = cosh1.n "Dimension of signal vector";
 // input Real cosh1.inPort.signal[1] "Real input signals";

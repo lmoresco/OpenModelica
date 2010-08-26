@@ -22,7 +22,7 @@ model Constant7
   A.test t;
 end Constant7;
 // Result:
-// fclass Constant7
+// class Constant7
 //  parameter Real t.b.C = 1.0;
 // end Constant7;
 // endResult

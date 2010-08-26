@@ -44,7 +44,7 @@ end FillSize;
 // output Real[size(B,1), size(B,2)] A = DAE.CAST(/tp:REAL[]/, fill(0,size(B,1),size(B,2)));
 // end z2;
 // 
-// fclass FillSize
+// class FillSize
 // constant Real r[1] = 1.0;
 // constant Real r[2] = 1.0;
 // constant Real r[3] = 1.0;

@@ -102,7 +102,7 @@ end TanksConnectedPI;
 //   pLim := if p > pMax then pMax else if p < pMin then pMin else p;
 // end limitValue;
 // 
-// fclass TanksConnectedPI
+// class TanksConnectedPI
 // Real source.qOut.lflow(unit = "m3/s");
 // parameter Real source.flowLevel = 0.02;
 // Real tank1.tSensor.val(unit = "m");

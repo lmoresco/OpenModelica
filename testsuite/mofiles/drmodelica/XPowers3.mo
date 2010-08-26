@@ -17,7 +17,7 @@ end Xpowers3;
 
 
 // Result:
-// fclass Xpowers3
+// class Xpowers3
 // parameter Real x = 10.0;
 // Real xpowers[1];
 // Real xpowers[2];

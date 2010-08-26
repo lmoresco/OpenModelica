@@ -1072,7 +1072,7 @@ end BM6;
 // external "C";
 // end Modelica.Math.atan;
 // 
-// fclass BM6
+// class BM6
 // parameter Integer atan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer atan1.inPort.n = atan1.n "Dimension of signal vector";
 // input Real atan1.inPort.signal[1] "Real input signals";
@@ -1101,7 +1101,7 @@ end BM6;
 // external "C";
 // end Modelica.Math.atan;
 // 
-// fclass BM6
+// class BM6
 // parameter Integer atan1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer atan1.inPort.n = atan1.n "Dimension of signal vector";
 // input Real atan1.inPort.signal[1] "Real input signals";

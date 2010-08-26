@@ -28,7 +28,7 @@ end FunctionCall;
 //   y := 2 + x;
 // end f;
 // 
-// fclass FunctionCall
+// class FunctionCall
 // Integer x;
 // Integer y;
 // equation

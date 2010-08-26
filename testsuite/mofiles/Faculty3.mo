@@ -41,7 +41,7 @@ end Faculty3Model;
 //   end while;
 // end Faculty3;
 // 
-// fclass Faculty3Model
+// class Faculty3Model
 // Integer x;
 // Integer y;
 // equation

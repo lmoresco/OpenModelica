@@ -21,7 +21,7 @@ equation
 end AlgorithmSection;
 
 
-// fclass AlgorithmSection
+// class AlgorithmSection
 // Real x;
 // Real z;
 // Real u;

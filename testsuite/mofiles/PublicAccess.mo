@@ -17,7 +17,7 @@ equation
 end PublicAccess;
 
 // Result:
-// fclass PublicAccess
+// class PublicAccess
 // Integer tm.x = 2;
 // equation
 //   tm.x = 3;

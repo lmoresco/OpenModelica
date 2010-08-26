@@ -15,7 +15,7 @@ class OneReturnValue
                 // Matrix argument, result: [sin(1), sin(2); sin(3), sin(4)]
 end OneReturnValue;  
 
-// fclass OneReturnValue
+// class OneReturnValue
 // Real a;
 // Real b;
 // Real c;

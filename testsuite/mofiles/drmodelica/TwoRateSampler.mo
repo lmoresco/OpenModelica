@@ -31,7 +31,7 @@ end TwoRateSampler;
    
 
 // Result:
-// fclass TwoRateSampler
+// class TwoRateSampler
 // discrete Real x;
 // discrete Real y;
 // Boolean fastSample;

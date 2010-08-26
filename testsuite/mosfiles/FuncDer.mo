@@ -52,7 +52,7 @@ end FuncDer;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass FuncDer
+// class FuncDer
 // Real fn0;
 // Real fn1;
 // Real fn2;

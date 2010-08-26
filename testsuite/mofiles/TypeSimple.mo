@@ -14,7 +14,7 @@ equation
 end TypeSimple;
 
 // Result:
-// fclass TypeSimple
+// class TypeSimple
 // Integer mt;
 // equation
 //   mt = 2;

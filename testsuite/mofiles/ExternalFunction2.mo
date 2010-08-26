@@ -29,7 +29,7 @@ end ExternalFunction2;
 // external "C";
 // end f;
 // 
-// fclass ExternalFunction2
+// class ExternalFunction2
 // constant Real x[1] = 3.0;
 // constant Real x[2] = 4.0;
 // constant Real x[3] = 5.0;

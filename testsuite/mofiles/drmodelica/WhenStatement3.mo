@@ -31,7 +31,7 @@ end WhenStat3;
 
 
 // Result:
-// fclass WhenStat3
+// class WhenStat3
 // Real x(start = 1.0);
 // Real y1;
 // Real y2;

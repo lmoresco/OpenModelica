@@ -19,7 +19,7 @@ equation
 end LotkaVolterra;
 
 
-// fclass LotkaVolterra
+// class LotkaVolterra
 // parameter Real g_r = 0.04 "Natural growth rate for rabbits";
 // parameter Real d_rf = 0.0005 "Death rate of rabbits due to foxes";
 // parameter Real d_f = 0.09 "Natural deathrate for foxes";

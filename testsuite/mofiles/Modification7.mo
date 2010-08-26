@@ -21,7 +21,7 @@ class Modification7
 end Modification7;
 
 // Result:
-// fclass Modification7
+// class Modification7
 // Real b.a.x = 1.0;
 // Real b.a.y = 2.0;
 // end Modification7;

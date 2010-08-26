@@ -18,7 +18,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BondLib_Examples_ModelicaSpice_OneWayRectifier
+// class BondLib_Examples_ModelicaSpice_OneWayRectifier
 // output Real vout(quantity = "ElectricPotential", unit = "V") "Output voltage";
 // Real V0.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins";
 // Real V0.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";

@@ -14,7 +14,7 @@ equation
 end ArraySubtraction;
 
 // Result:
-// fclass ArraySubtraction
+// class ArraySubtraction
 // constant Integer intArray1[1] = 4;
 // constant Integer intArray1[2] = 8;
 // constant Integer intArray1[3] = 12;

@@ -10,7 +10,7 @@ model Array2
 end Array2;
 
 // Result:
-// fclass Array2
+// class Array2
 //   parameter Integer x[1,1];
 //   parameter Integer x[1,2];
 //   parameter Integer x[1,3];

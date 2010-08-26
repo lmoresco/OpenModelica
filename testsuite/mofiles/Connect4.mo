@@ -17,7 +17,7 @@ equation
 end Connect4;
 
 // Result:
-// fclass Connect4
+// class Connect4
 // Integer c1.i;
 // Integer c2.i;
 // equation

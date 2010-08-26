@@ -16,7 +16,7 @@ equation
   end when;
 end ErrorNestedWhen;    
 
-// fclass ErrorNestedWhen
+// class ErrorNestedWhen
 // Real x;
 // Real y1;
 // Real y2;

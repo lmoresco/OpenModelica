@@ -15,7 +15,7 @@ class C2
 end C2;
 
 // Result:
-// fclass C2
+// class C2
 // Integer i1;
 // Integer i2;
 // end C2;

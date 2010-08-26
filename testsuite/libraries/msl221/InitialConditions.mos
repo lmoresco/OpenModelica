@@ -10,7 +10,7 @@ instantiateModel(Modelica.Mechanics.Translational.Examples.InitialConditions);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Mechanics.Translational.Examples.InitialConditions
+// "class Modelica.Mechanics.Translational.Examples.InitialConditions
 // Real M3.s(quantity = "Length", unit = "m", start = 4.5) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
 // parameter Real M3.L(quantity = "Length", unit = "m") = 3.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
 // Real M3.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";

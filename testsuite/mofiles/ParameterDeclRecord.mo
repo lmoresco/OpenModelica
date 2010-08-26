@@ -16,7 +16,7 @@ equation
 end ParameterDeclRecord;
 
 // Result:
-// fclass ParameterDeclRecord
+// class ParameterDeclRecord
 //   parameter Real pr.r;
 // equation
 //   pr.r = 1.0;

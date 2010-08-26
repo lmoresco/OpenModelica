@@ -47,7 +47,7 @@ equation
 end A;
 
 // Result:
-// fclass A
+// class A
 // Real a;
 // Real b;
 // Real c;

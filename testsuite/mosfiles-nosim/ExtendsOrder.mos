@@ -14,14 +14,14 @@ getErrorString();
 
 // Result:
 // true
-// "fclass Order1
+// "class Order1
 // parameter Integer m.nXi = 2;
 // Real m.Xi[1](start = 1.0);
 // Real m.Xi[2](start = 2.0);
 // end Order1;
 // "
 // ""
-// "fclass Order2
+// "class Order2
 // parameter Integer m.nXi = 2;
 // Real m.Xi[1](start = 1.0);
 // Real m.Xi[2](start = 2.0);

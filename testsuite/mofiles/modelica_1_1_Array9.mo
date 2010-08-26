@@ -10,7 +10,7 @@ model Array9
 end Array9;
 
 // Result:
-// fclass Array9
+// class Array9
 // Real x[1] = 1.0;
 // Real x[2] = 2.0;
 // end Array9;

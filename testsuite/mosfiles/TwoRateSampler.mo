@@ -30,7 +30,7 @@ model TwoRateSampler
 end TwoRateSampler;
    
 
-// fclass TwoRateSampler
+// class TwoRateSampler
 // discrete Real x;
 // discrete Real y;
 // Boolean fastSample;

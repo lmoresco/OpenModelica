@@ -13,7 +13,7 @@ equation
 end Abs1;
 
 // Result:
-// fclass Abs1
+// class Abs1
 // Real x;
 // Real y;
 // equation

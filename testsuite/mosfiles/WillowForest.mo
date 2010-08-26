@@ -45,7 +45,7 @@ end WillowForest;
 // insert expected flat file here. Can be done by issuing the command
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
-// fclass WillowForest
+// class WillowForest
 //	parameter Real h = 0.95 "Harvest fraction";
 //	parameter Real e[1] = 0.73 "Radiation efficiency fraction";
 //	parameter Real e[2] = 0.8 "Radiation efficiency fraction";

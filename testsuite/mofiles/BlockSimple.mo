@@ -13,6 +13,6 @@ model BlockSimple
 end BlockSimple;
 
 // Result:
-// fclass BlockSimple
+// class BlockSimple
 // end BlockSimple;
 // endResult

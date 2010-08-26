@@ -2308,7 +2308,7 @@ equation
   connect(c.outPort,src.inPort);
 end ShaftTest;
 // Result:
-// fclass ShaftTest
+// class ShaftTest
 // Real shaft.flange_a.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
 // Real shaft.flange_a.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
 // Real shaft.flange_b.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";

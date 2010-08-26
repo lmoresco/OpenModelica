@@ -32,7 +32,7 @@ end FunctionReturn;
 //   r := r * x;
 // end f;
 // 
-// fclass FunctionReturn
+// class FunctionReturn
 // Real x;
 // Real y;
 // equation

@@ -18,7 +18,7 @@ end Vectorizable4;
 
 
 // Result:
-// fclass Vectorizable4
+// class Vectorizable4
 // Real x[1,1];
 // Real x[1,2];
 // Real x[2,1];

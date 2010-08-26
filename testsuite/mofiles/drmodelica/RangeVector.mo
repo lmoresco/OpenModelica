@@ -16,7 +16,7 @@ class RangeVector
 end RangeVector;
 
 // Result:
-// fclass RangeVector
+// class RangeVector
 // Real v1[1] = 2.7;
 // Real v1[2] = 3.7;
 // Real v1[3] = 4.7;

@@ -10,7 +10,7 @@ model DeclarationEquation1
 end DeclarationEquation1;
 
 // Result:
-// fclass DeclarationEquation1
+// class DeclarationEquation1
 // Real x = 1.0;
 // end DeclarationEquation1;
 // endResult

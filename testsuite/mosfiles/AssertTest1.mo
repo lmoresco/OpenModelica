@@ -17,7 +17,7 @@ class Test1
   AssertTest assertTest(lowlimit = 4, highlimit = 8);
 end Test1;
 
-// fclass Test1
+// class Test1
 // parameter Real assertTest.lowlimit = 4;
 // parameter Real assertTest.highlimit = 8;
 // Real assertTest.x;

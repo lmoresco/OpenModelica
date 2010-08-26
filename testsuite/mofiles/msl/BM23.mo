@@ -979,7 +979,7 @@ model BM23
 equation 
   connect(constant1.outPort,sqrt1.inPort) annotation(Line(visible=true,points={{-64.27,9.53},{-41.77,6.19}}));
 end BM23;
-// fclass BM23
+// class BM23
 // parameter Integer sqrt1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sqrt1.inPort.n = sqrt1.n "Dimension of signal vector";
 // input Real sqrt1.inPort.signal[1] "Real input signals";
@@ -1001,7 +1001,7 @@ end BM23;
 // constant1.outPort.signal[1] = sqrt1.inPort.signal[1];
 // end BM23;
 // Result:
-// fclass BM23
+// class BM23
 // parameter Integer sqrt1.n = 1 "Number of inputs (= number of outputs)";
 // parameter Integer sqrt1.inPort.n = sqrt1.n "Dimension of signal vector";
 // input Real sqrt1.inPort.signal[1] "Real input signals";

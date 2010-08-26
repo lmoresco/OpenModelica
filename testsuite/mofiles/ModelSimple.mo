@@ -16,7 +16,7 @@ equation
 end ModelSimple;
 
 // Result:
-// fclass ModelSimple
+// class ModelSimple
 // Integer tm.i;
 // equation
 //   tm.i = 1;

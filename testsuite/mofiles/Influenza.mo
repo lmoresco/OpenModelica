@@ -137,7 +137,7 @@ end Influenza;
 
 
 // Result:
-// fclass Influenza
+// class Influenza
 // input Real Introduction(start = 77.0);
 // input Real Immune_Popul.in_1;
 // input Real Immune_Popul.in_2;

@@ -12,7 +12,7 @@ equation
   end for;
 end FiveForEquations;
 
-// fclass FiveForEquations
+// class FiveForEquations
 // Real x[1];
 // Real x[2];
 // Real x[3];

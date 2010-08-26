@@ -31,7 +31,7 @@ end test;
 //   z := x + y;
 // end foo;
 // 
-// fclass test
+// class test
 // Real w;
 // Real v;
 // Real x = foo(2.0,w);

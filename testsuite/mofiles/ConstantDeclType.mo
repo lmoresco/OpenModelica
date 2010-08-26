@@ -10,7 +10,7 @@ model ConstantDeclType
 end ConstantDeclType;
 
 // Result:
-// fclass ConstantDeclType
+// class ConstantDeclType
 // constant Real rConst = 2.0;
 // end ConstantDeclType;
 // endResult

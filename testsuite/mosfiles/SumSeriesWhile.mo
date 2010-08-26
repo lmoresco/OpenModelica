@@ -20,7 +20,7 @@ algorithm
   end while;
 end SumSeries;
 
-// fclass SumSeries
+// class SumSeries
 // parameter Real eps = 1e-06;
 // Integer i;
 // Real sum;

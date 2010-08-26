@@ -25,7 +25,7 @@ equation
 end PackageIllegal;
 
 // Result:
-// fclass PackageIllegal
+// class PackageIllegal
 // Integer lc.i;
 // equation
 //   lc.i = 1;

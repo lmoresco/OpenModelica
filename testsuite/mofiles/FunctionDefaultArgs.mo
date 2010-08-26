@@ -33,7 +33,7 @@ end FunctionDefaultArgs;
 //   x1 := X[1];
 // end FunctionDefaultArgs.set;
 // 
-// fclass FunctionDefaultArgs
+// class FunctionDefaultArgs
 // constant Integer reference_X[1] = 1;
 // constant Integer reference_X[2] = 2;
 // constant Integer reference_X[3] = 3;

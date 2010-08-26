@@ -71,7 +71,7 @@ end Sequence;
 //   R := Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{angles[1],angles[2],angles[3]});
 // end axesRotations;
 // 
-// fclass Sequence
+// class Sequence
 // Real r.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
 // Real r.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
 // Real r.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";

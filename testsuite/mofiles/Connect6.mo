@@ -19,7 +19,7 @@ equation
 end Connect6;
 
 // Result:
-// fclass Connect6
+// class Connect6
 //   String c1.s;
 //   String c2.s;
 //   Boolean b;

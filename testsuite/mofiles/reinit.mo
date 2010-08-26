@@ -21,7 +21,7 @@ algorithm
   end when;
 end FilterBlock1;
 // Result:
-// fclass FilterBlock1
+// class FilterBlock1
 // parameter Real T = 1.0 "Time constant";
 // parameter Real k = 1.0 "Gain";
 // input Real u = 1.0;

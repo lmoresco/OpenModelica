@@ -990,7 +990,7 @@ model BM16
 equation 
   connect(matrixGain1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-25.04,25.35},{-45.11,26.26}}));
 end BM16;
-// fclass BM16
+// class BM16
 // parameter Integer matrixGain1.nin = 2 "Number of inputs";
 // parameter Integer matrixGain1.nout = 2 "Number of outputs";
 // parameter Integer matrixGain1.inPort.n = matrixGain1.nin "Dimension of signal vector";
@@ -1029,7 +1029,7 @@ end BM16;
 // matrixGain1.inPort.signal[2] = constant1.outPort.signal[2];
 // end BM16;
 // Result:
-// fclass BM16
+// class BM16
 // parameter Integer matrixGain1.nin = 2 "Number of inputs";
 // parameter Integer matrixGain1.nout = 2 "Number of outputs";
 // parameter Integer matrixGain1.inPort.n = matrixGain1.nin "Dimension of signal vector";

@@ -14,7 +14,7 @@ algorithm
 end Array9;
 
 // Result:
-// fclass Array9
+// class Array9
 // Integer a[1] = 3;
 // Integer a[2] = 4;
 // Integer a[3] = 5;

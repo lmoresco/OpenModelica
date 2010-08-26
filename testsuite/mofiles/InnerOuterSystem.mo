@@ -28,7 +28,7 @@ model InnerOuterSystem
 end InnerOuterSystem;
 
 // Result:
-// fclass InnerOuterSystem
+// class InnerOuterSystem
 // Boolean isEnabled = time >= 0.5;
 // Boolean subSystem.isEnabled = isEnabled AND subSystem.enableMe;
 // Boolean subSystem.enableMe = time <= 1.0;

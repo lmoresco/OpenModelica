@@ -10,7 +10,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.ChuaCircuit);
 getErrorString();
 // Result:
 // true
-// "fclass Modelica.Electrical.Analog.Examples.ChuaCircuit
+// "class Modelica.Electrical.Analog.Examples.ChuaCircuit
 // Real G.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
 // Real G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
 // Real G.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";

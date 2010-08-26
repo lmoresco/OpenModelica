@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes
+// class Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes
 // Real Ideal.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
 // Real Ideal.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
 // Real Ideal.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";

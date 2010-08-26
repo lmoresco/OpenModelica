@@ -17,7 +17,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass Modelica.Mechanics.Translational.Examples.Friction
+// class Modelica.Mechanics.Translational.Examples.Friction
 // Real Stop1.s(quantity = "Length", unit = "m", StateSelect = StateSelect.always) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
 // parameter Real Stop1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
 // Real Stop1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";

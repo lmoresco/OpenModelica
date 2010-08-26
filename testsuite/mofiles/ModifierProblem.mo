@@ -17,7 +17,7 @@ model ModifierProblem
 end ModifierProblem;
 
 // Result:
-// fclass ModifierProblem
+// class ModifierProblem
 // Real p1.s(start = 0.1);
 // protected Real p1.length = p1.s;
 // end ModifierProblem;

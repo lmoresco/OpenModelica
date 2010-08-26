@@ -15,7 +15,7 @@ class Modification5
 end Modification5;
 
 // Result:
-// fclass Modification5
+// class Modification5
 //   Real x = 17.0 + 2.0 * x;
 // end Modification5;
 // endResult

@@ -18,7 +18,7 @@ getErrorString();
 // external "C";
 // end Modelica.Math.sin;
 // 
-// fclass BondLib_Examples_ModelicaSpice_OneWayRectifierBG
+// class BondLib_Examples_ModelicaSpice_OneWayRectifierBG
 // output Real vout(quantity = "ElectricPotential", unit = "V") "Output voltage";
 // Real V0.e "Bondgraphic effort";
 // Real V0.f "Bondgraphic flow";

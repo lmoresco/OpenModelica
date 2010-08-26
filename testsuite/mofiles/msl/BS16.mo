@@ -1218,7 +1218,7 @@ model BS16
 equation 
   connect(booleanPulse1.outPort,booleanChange1.inPort) annotation(Line(visible=true,points={{-14.4,12.88},{-0.41,11.66}}));
 end BS16;
-// fclass BS16
+// class BS16
 // parameter Integer booleanPulse1.nout(min = 1) = 1 "Number of Boolean outputs";
 // parameter Integer booleanPulse1.outPort.n = booleanPulse1.nout "Dimension of signal vector";
 // output Boolean booleanPulse1.outPort.signal[1] "Boolean output signals";
@@ -1247,7 +1247,7 @@ end BS16;
 // booleanPulse1.outPort.signal[1] = booleanChange1.inPort.signal[1];
 // end BS16;
 // Result:
-// fclass BS16
+// class BS16
 // parameter Integer booleanPulse1.nout(min = 1) = 1 "Number of Boolean outputs";
 // parameter Integer booleanPulse1.outPort.n = booleanPulse1.nout "Dimension of signal vector";
 // output Boolean booleanPulse1.outPort.signal[1] "Boolean output signals";

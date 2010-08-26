@@ -29,7 +29,7 @@ end ConnectTypes;
 
 // Result
 // Result:
-// fclass ConnectTypes
+// class ConnectTypes
 // Real a.c.e[1];
 // Integer a.c.d;
 // parameter Integer a.c.p = 4;

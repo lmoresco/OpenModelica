@@ -12,7 +12,7 @@ equation
 end Cos;
 
 // Result:
-// fclass Cos
+// class Cos
 // Real r;
 // equation
 //   r = 0.52532198881773;

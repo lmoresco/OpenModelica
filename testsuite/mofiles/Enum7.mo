@@ -83,7 +83,7 @@ model X
 end X;
 
 // Result:
-// fclass X
+// class X
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_in = ResolveInFrameA.frame_a;
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 // Real x;

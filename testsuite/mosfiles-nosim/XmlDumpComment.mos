@@ -12,7 +12,7 @@ dumpXMLDAE(XmlDumpComment);
 
 // Result:
 // true
-// "fclass XmlDumpComment
+// "class XmlDumpComment
 //   parameter Real A;
 //   parameter Real B;
 //   Real x "evaluated to 0 if A < B";

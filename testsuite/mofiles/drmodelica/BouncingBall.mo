@@ -21,7 +21,7 @@ end BouncingBall;
 
 
 // Result:
-// fclass BouncingBall
+// class BouncingBall
 // constant Real g = 9.81;
 // parameter Real c = 0.9;
 // parameter Real radius = 0.1;

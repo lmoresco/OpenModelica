@@ -46,7 +46,7 @@ end TempResistor3;
 // ./omc XXX.mo >> XXX.mo and then comment the inserted class.
 //
 // Result:
-// fclass TempResistor3
+// class TempResistor3
 // Real p.v;
 // Real p.i;
 // Real n.v;

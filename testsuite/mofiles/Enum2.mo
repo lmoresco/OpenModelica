@@ -16,7 +16,7 @@ end Enumeration2;
 
 
 // Result:
-// fclass Enumeration2
+// class Enumeration2
 // Real x[1];
 // Real x[2];
 // Real x[3];

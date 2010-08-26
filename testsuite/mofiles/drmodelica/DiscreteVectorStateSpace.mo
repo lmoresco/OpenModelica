@@ -31,7 +31,7 @@ end DVSSTest;
 
 
 // Result:
-// fclass DVSSTest
+// class DVSSTest
 // parameter Integer dvss.n = 5;
 // parameter Integer dvss.m = 4;
 // parameter Integer dvss.p = 2;

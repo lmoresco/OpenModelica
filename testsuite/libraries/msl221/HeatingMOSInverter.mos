@@ -32,7 +32,7 @@ getErrorString();
 //   Kelvin := Celsius - -273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
-// fclass Modelica.Electrical.Analog.Examples.HeatingMOSInverter
+// class Modelica.Electrical.Analog.Examples.HeatingMOSInverter
 // parameter Real HeatCapacitor1.C(quantity = "HeatCapacity", unit = "J/K") = 0.01 "Heat capacity of part (= cp*m)";
 // parameter Boolean HeatCapacitor1.steadyStateStart = false "true, if component shall start in steady state";
 // Real HeatCapacitor1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 293.15) "Temperature of part";

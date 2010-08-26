@@ -12,7 +12,7 @@ getErrorString();
 // Result:
 // true
 // true
-// "fclass BioChem.Examples.MassAction.UniUni
+// "class BioChem.Examples.MassAction.UniUni
 // Real V(quantity = "Volume", unit = "l", start = 1.0) "Compartment volume";
 // input Real sF21.c(quantity = "Concentration", unit = "mol/l", min = 0.0, start = 1.0) "Current concentration of substance (mM)";
 // Real sF21.rNet(quantity = "Molar flow rate", unit = "mol/s") "Net flow rate of substance into the node";

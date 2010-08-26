@@ -14,7 +14,7 @@ der(x)={-x[1],x[2],1};
 end ReinitArray;
 
 // Result:
-// fclass ReinitArray
+// class ReinitArray
 //   Real x[1](start = 1.1);
 //   Real x[2](start = 2.2);
 //   Real x[3](start = 3.3);

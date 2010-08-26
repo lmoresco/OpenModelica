@@ -31,7 +31,7 @@ equation
 end EqualityEquationsCorrect;
 
 
-// fclass EqualityEquationsCorrect
+// class EqualityEquationsCorrect
 // Real x;
 // Real y;
 // Real z;

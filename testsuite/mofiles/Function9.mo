@@ -29,7 +29,7 @@ end Function9;
 //   r := 2.0 * x;
 // end f;
 // 
-// fclass Function9
+// class Function9
 // Real x;
 // Real z;
 // equation

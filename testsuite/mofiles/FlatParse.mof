@@ -20,7 +20,7 @@ end FlatParse;
 Some tools might put garbage text here. That should be ok. 
 
 
-// fclass FlatParse
+// class FlatParse
 // Real x[2].y[1];
 // Real x[2].y[2];
 // Real x.y[2].z;
@@ -36,7 +36,7 @@ Some tools might put garbage text here. That should be ok.
 
 
 // Result:
-// fclass FlatParse
+// class FlatParse
 // Real x[2].y[1];
 // Real x[2].y[2];
 // Real x.y[2].z;

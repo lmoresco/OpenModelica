@@ -50,7 +50,7 @@ end VectorTest;
 //   end for;
 // end VectorTest.PolyToRelCoord;
 // 
-// fclass VectorTest
+// class VectorTest
 // constant Real H[1,1] = 1.0;
 // constant Real H[1,2] = 0.0;
 // constant Real H[1,3] = 0.0;

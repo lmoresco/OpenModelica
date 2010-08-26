@@ -12,7 +12,7 @@ model Record1
 end Record1;
 
 // Result:
-// fclass Record1
+// class Record1
 // Real a.x = 18.0;
 // end Record1;
 // endResult

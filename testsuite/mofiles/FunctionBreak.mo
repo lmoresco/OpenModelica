@@ -44,7 +44,7 @@ end FunctionBreak;
 //   end while;
 // end f;
 // 
-// fclass FunctionBreak
+// class FunctionBreak
 // Real x;
 // Real y;
 // equation

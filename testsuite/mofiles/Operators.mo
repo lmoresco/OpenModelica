@@ -48,7 +48,7 @@ end Operators;
 //   outInt := 1138 + inInt;
 // end f;
 // 
-// fclass Operators
+// class Operators
 // constant Integer unusedArray1[1] = 1;
 // constant Integer unusedArray1[2] = 2;
 // constant Integer unusedArray1[3] = 3;

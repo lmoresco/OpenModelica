@@ -31,7 +31,7 @@ equation
 end Top;
 
 // Result:
-// fclass Top
+// class Top
 // Real world.p.i;
 // Real world.p.v;
 // Real world.n.i;

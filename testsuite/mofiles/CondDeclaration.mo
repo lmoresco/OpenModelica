@@ -11,7 +11,7 @@ model CondDeclaration
 end CondDeclaration;
 
 // Result:
-// fclass CondDeclaration
+// class CondDeclaration
 // Real r1;
 // end CondDeclaration;
 // endResult

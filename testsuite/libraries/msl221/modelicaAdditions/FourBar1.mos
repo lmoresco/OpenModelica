@@ -84,7 +84,7 @@ getErrorString();
 //   end if;
 // end PackShape;
 // 
-// fclass MultiBody.Examples.Loops.Fourbar1
+// class MultiBody.Examples.Loops.Fourbar1
 // parameter Real L(quantity = "Length", unit = "m") = 1.04880884817015 "Length of connecting rod";
 // output Real j1q(quantity = "Angle", unit = "rad", displayUnit = "deg") "angle of revolute joint j1";
 // output Real j2q(quantity = "Length", unit = "m") "distance of prismatic joint j2";

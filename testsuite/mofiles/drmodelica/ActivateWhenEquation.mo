@@ -16,7 +16,7 @@ equation
 end Activate;
 
 // Result:
-// fclass Activate
+// class Activate
 // constant Real x = 4;
 // Real y;
 // Real z;

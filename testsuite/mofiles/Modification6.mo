@@ -20,7 +20,7 @@ end Modification6;
 
 
 // Result:
-// fclass Modification6
+// class Modification6
 // parameter Real m1.f.q = 4.0;
 // parameter Real m2.f.q = 4.0;
 // end Modification6;

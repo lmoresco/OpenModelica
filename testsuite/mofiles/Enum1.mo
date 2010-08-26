@@ -15,7 +15,7 @@ equation
 end Enumeration1;
 
 // Result:
-// fclass Enumeration1
+// class Enumeration1
 // Real x[1];
 // Real x[2];
 // Real x[3];

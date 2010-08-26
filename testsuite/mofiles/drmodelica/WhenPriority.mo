@@ -19,7 +19,7 @@ algorithm
 end WhenPriority;
 
 // Result:
-// fclass WhenPriority
+// class WhenPriority
 // Boolean close;
 // parameter Real x = 5.0;
 // algorithm

@@ -76,7 +76,7 @@ end FunctionEval7;
 // output Real x = 5.0 + a;
 // end test3;
 // 
-// fclass FunctionEval7
+// class FunctionEval7
 // parameter Real a = 5.0;
 // parameter Real b = sqrt(a);
 // Real x1 = test(a);

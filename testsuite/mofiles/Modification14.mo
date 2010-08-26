@@ -37,7 +37,7 @@ end Modification6;
 // Instantiating element: m3.Foo
 // Instantiating element: myFoo
 // Result:
-// fclass Modification6
+// class Modification6
 // parameter Real m1.f.q = 4.0;
 // parameter Real m1.f.z = 3.0;
 // parameter Real m2.f.q = 4.0;

@@ -16,7 +16,7 @@ readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Enumeration8_* Enumeration8.exe Enumeration8.cpp Enumeration8.makefile Enumeration8.libs Enumeration8.log output.log");
 // Result:
 // true
-// "fclass Enumeration8
+// "class Enumeration8
 // parameter String s = String(Enum.test2,0,true,6);
 // Real x;
 // String ss;

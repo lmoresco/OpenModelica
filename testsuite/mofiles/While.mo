@@ -16,7 +16,7 @@ algorithm
 end While;
 
 // Result:
-// fclass While
+// class While
 // Integer x;
 // Integer y;
 // algorithm

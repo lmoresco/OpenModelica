@@ -24,7 +24,7 @@ model VectorizeExtendedType
 end VectorizeExtendedType;
 
 // Result:
-// fclass VectorizeExtendedType
+// class VectorizeExtendedType
 // parameter Real r1[1] = 1.0;
 // parameter Real r1[2] = 2.0;
 // parameter Real r1[3] = 3.0;

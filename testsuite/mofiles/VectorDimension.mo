@@ -11,7 +11,7 @@ x = vector([1;3]);
 end VectorDimension;
 
 // Result:
-// fclass VectorDimension
+// class VectorDimension
 // Real x[1];
 // Real x[2];
 // equation

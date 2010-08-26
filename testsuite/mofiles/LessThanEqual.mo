@@ -12,7 +12,7 @@ model LessThanEqual
 end LessThanEqual;
 
 // Result:
-// fclass LessThanEqual
+// class LessThanEqual
 // constant Boolean b1 = true;
 // constant Boolean b2 = true;
 // constant Boolean b3 = false;

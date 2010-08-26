@@ -14,7 +14,7 @@ model Enum10
 end Enum10;
 
 // Result:
-// fclass Enum10
+// class Enum10
 // enumeration(one, two, three) e1;
 // enumeration(start, one, two, three) e2(start = e2.two);
 // end Enum10;

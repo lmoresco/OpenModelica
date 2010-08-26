@@ -31,7 +31,7 @@ equation
 end Inline4;
 
 // Result:
-// fclass Inline4
+// class Inline4
 // Integer x;
 // Integer y;
 // Integer z;

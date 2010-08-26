@@ -78,7 +78,7 @@ end ExternalFunction4;
 //   invA := ExternalFunction4.dgetri(<matrix>[LU[1,1],LU[1,2];LU[2,1],LU[2,2]],{pivots[1],pivots[2]});
 // end ExternalFunction4.inv;
 // 
-// fclass ExternalFunction4
+// class ExternalFunction4
 // constant Real r[1,1] = 1.0;
 // constant Real r[1,2] = 2.0;
 // constant Real r[2,1] = 3.0;

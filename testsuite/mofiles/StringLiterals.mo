@@ -10,7 +10,7 @@ equation
 end StringLiterals;
 
 // Result:
-// fclass StringLiterals
+// class StringLiterals
 // constant String s = "\'\"\?\\\a\b\f\n\r\t\v";
 // String str;
 // equation

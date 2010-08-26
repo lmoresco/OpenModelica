@@ -18,7 +18,7 @@ equation
 end StringBoolean;
 
 // Result:
-// fclass StringBoolean
+// class StringBoolean
 // String s1;
 // String s2;
 // Boolean b;

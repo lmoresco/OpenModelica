@@ -60,7 +60,7 @@ getErrorString();
 //   rpm := 9.54929658551372 * rs;
 // end Modelica.SIunits.Conversions.to_rpm;
 // 
-// fclass Modelica.Electrical.Machines.Examples.SMEE_Gen
+// class Modelica.Electrical.Machines.Examples.SMEE_Gen
 // constant Integer m = 3 "number of phases";
 // parameter Real VNominal(quantity = "ElectricPotential", unit = "V") = 100.0 "nominal RMS voltage per phase";
 // parameter Real fNominal(quantity = "Frequency", unit = "Hz") = 50.0 "nominal frequency";

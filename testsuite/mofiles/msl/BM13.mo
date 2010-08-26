@@ -968,7 +968,7 @@ equation
   connect(gain1.inPort,constant1.outPort) annotation(Line(visible=true,points={{-29.3,31.43},{-60.02,28.39}}));
 end BM13;
 
-// fclass BM13
+// class BM13
 // parameter Real gain1.k[1] = 1.0 "Gain vector multiplied element-wise with input vector";
 // protected Real gain1.u[1] "Input signals";
 // protected Real gain1.y[1] "Output signals";
@@ -991,7 +991,7 @@ end BM13;
 // gain1.inPort.signal[1] = constant1.outPort.signal[1];
 // end BM13;
 // Result:
-// fclass BM13
+// class BM13
 // parameter Real gain1.k[1] = 1.0 "Gain vector multiplied element-wise with input vector";
 // protected Real gain1.u[1] "Input signals";
 // protected Real gain1.y[1] "Output signals";

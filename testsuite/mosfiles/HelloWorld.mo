@@ -13,7 +13,7 @@ equation
 	der(x) = - a * x;
 end HelloWorld;
 
-// fclass HelloWorld
+// class HelloWorld
 // Real x(start = 1.0);
 // parameter Real a = 1;
 // equation

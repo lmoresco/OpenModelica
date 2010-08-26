@@ -12,7 +12,7 @@ algorithm
 end AssignmentSimple;
 
 // Result:
-// fclass AssignmentSimple
+// class AssignmentSimple
 // Real x;
 // algorithm
 //   x := 2.0;
