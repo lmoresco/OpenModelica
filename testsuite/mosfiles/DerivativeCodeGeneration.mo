@@ -1,4 +1,4 @@
-model DerivativeCodeGeneration
+model DerivativeCodeGenerationBase
 
 model MixedSystem "based on ideal_diode.mo, but changed to force code generation of der.
 Creates a mixed+linear system that we can try code generation on.
@@ -41,14 +41,18 @@ algorithm
 rs := {1.0,2.0,3.0};
 end arrcall;
 
-MixedSystem mixed;
-
 Real x[3];
 Real y(start=2.0);
+Real dery = der(y);
 Real z(start=15.0);
 equation
 der(x) = arrcall(time); // Tests cref = arrayCall()
-der(y) = one(der(y)); // Always 1 but omc does not know that = free non-linear equation to test!
+dery = one(dery); // Always 1 but omc does not know that = free non-linear equation to test!
 der(z) = time; // Tests simple equation
 
+end DerivativeCodeGenerationBase;
+
+model DerivativeCodeGeneration
+  extends DerivativeCodeGenerationBase;
+  MixedSystem mixed;
 end DerivativeCodeGeneration;
