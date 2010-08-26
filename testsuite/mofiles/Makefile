@@ -197,6 +197,7 @@ Encapsulated2.mo \
 Encapsulated3.mo \
 EngineSAAB95Total.mo \
 Enum10.mo \
+Enum11.mo \
 Enum1.mo \
 Enum2.mo \
 Enum3.mo \
