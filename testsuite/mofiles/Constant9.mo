@@ -13,3 +13,13 @@ end A;
 model test
   Real x=A.x;
 end test;
+// Result:
+// Error processing file: Constant9.mo
+// Error: Variable A.x in package A is not constant
+// Error: Variable A.x not found in scope test
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

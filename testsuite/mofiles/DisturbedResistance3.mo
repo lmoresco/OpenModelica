@@ -22,12 +22,13 @@ model DisturbedResistance3
 end DisturbedResistance3;
 
 // Result:
-// class DisturbedResistance3
-//   Real u;
-//   Real i;
-//   Real R;
-// equation
-//   R = 1.0 + 0.1*sin(time);
-//   u = R*i;
-// end DisturbedResistance3;
+// Error processing file: DisturbedResistance3.mo
+// Error: Duplicate elements (due to inherited elements) not identical, first element is:  Real R = 1.0 + 0.1 * sin(time);
+// , second element is: parameter Real R = 1.0;
+// 
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

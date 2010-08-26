@@ -1,14 +1,20 @@
 // name:     Function3
 // keywords: function
-// status:   incorrect
+// status:   erroneous
 // 
 // This tests for illegal parts of a function definition.
 // 
 
-function Function3
+class Function3
+
+function fn
   input Real x;
   output Real y;
   type Voltage = Real;
 algorithm
   y := x;
+end fn;
+
+Real x = fn(time);
+
 end Function3;

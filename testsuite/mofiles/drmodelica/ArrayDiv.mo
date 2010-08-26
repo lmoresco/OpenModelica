@@ -14,7 +14,7 @@ equation
 end ArrayDiv;
 // Result:
 // Error processing file: ArrayDiv.mo
-// Error: Type mismatch in equation {{Div1[1,1],Div1[1,2],Div1[1,3]}}={1.0,2.0,3.0} of type Real[1, 3]=Real[3]
+// [ArrayDiv.mo:12:14-12:14:writable] Error: Type mismatch in equation {{Div1[1,1],Div1[1,2],Div1[1,3]}}={1.0,2.0,3.0} of type Real[1, 3]=Real[3]
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

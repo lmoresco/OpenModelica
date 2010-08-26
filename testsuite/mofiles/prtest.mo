@@ -16,17 +16,11 @@ equation
 end Type10;
 
 // Result:
-// class Type10
-//            String  ok[1].unit;
-//            Real    ok[1];
-//            String  ok[2].unit;
-//            Real    ok[2];
-//            String  ok[3].unit;
-//            Real    ok[3];
-// equation
-//  ok[1].unit = "";
-//  ok[2].unit = "";
-//  ok[3].unit = "";
-//  ok[1] = 3.0;
-// end Type10;
+// Error processing file: prtest.mo
+// [prtest.mo:14:5-15:8:writable] Error: Type mismatch in equation {{x[1,1],x[1,2],x[1,3]},{x[2,1],x[2,2],x[2,3]}}={{y[1,1],y[1,2],y[1,3]},{y[2,1],y[2,2],y[2,3]},{y[3,1],y[3,2],y[3,3]}} of type Real[2, 3]=Real[3, 3]
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

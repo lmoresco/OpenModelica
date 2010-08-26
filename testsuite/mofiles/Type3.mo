@@ -11,3 +11,13 @@ class Type3
 equation
   x[i/4] = 0.5;
 end Type3;
+// Result:
+// Error processing file: Type3.mo
+// Error: Illegal subscript [i / 4] for dimensions 100 in component <NO COMPONENT>
+// Error: Variable x[i / 4] not found in scope Type3
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

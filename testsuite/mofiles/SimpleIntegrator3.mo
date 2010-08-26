@@ -12,3 +12,12 @@ equation
   x.start = 2.0;
   der(x) = u;
 end SimpleIntegrator3;
+// Result:
+// Error processing file: SimpleIntegrator3.mo
+// Error: Variable x.start not found in scope SimpleIntegrator3
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

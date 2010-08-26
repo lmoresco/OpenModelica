@@ -7,5 +7,11 @@
 while 1234 loop s:="aa"+s;i:=i+1;end while;  
 
 // Result:
-// ""
+// Error processing file: WhileStatementIllegal.mos
+// Error: Type error in while conditional (1234). Expected Boolean got Integer.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

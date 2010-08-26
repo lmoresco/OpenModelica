@@ -17,3 +17,7 @@ class A
    B b;
   Real y;
 end A;
+
+// Result:
+// enter error message here
+// endResult

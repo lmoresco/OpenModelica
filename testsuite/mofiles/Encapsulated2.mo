@@ -23,3 +23,13 @@ encapsulated model Encapsulated2
   A.B.C c(x=1);
   A.B1.C2 c2;
 end Encapsulated2;
+// Result:
+// Error processing file: Encapsulated2.mo
+// Error: Class A not found in scope Encapsulated2.
+// Error: Class A.B.C not found in scope Encapsulated2 while instantiating c.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

@@ -10,3 +10,12 @@ class Type7
 equation
   x.start = x.start.start;
 end Type7;
+// Result:
+// Error processing file: Type7.mo
+// Error: Variable x.start not found in scope Type7
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

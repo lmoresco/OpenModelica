@@ -34,7 +34,6 @@ end WhenNested;
 // 
 // end when;
 // 
-// Error: Error occured while flattening model 
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

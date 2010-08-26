@@ -21,3 +21,12 @@ class ModifyConstant4
   B b;
   C c;
 end ModifyConstant4;
+// Result:
+// Error processing file: ModifyConstant4.mo
+// [ModifyConstant4.mo:13:3-13:17:readonly] Error: Variable b.a: In modifier (A), class or component A not found in <A>
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

@@ -1,6 +1,6 @@
 // name: CyclicBindingConst
 // keywords: cyclic
-// status: incorrect
+// status: erroneous
 //
 // Tests cyclic binding of constants
 //

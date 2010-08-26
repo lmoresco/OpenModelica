@@ -1,6 +1,6 @@
 // name: CyclicBindingParam
 // keywords: cyclic
-// status: incorrect
+// status: erroneous
 //
 // Tests cyclic binding of parameters
 //

@@ -7,5 +7,11 @@
 if "should fail" then a := 5;else a:=10;end if; //test else if (true)
 a;
 // Result:
-//  
+// Error processing file: IfStatementIllegal.mos
+// Error: Type error in conditional ( "should fail"). Expected Boolean, got String.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

@@ -23,3 +23,14 @@ model test
   B b(n=1);
   B2 b2(n=1); // Error n in B2 and A is not identical
 end test;
+// Result:
+// Error processing file: MultipleDeclarations.mo
+// Error: Duplicate elements (due to inherited elements) not identical, first element is: parameter Integer n(min  = 3);
+// , second element is: parameter Integer n(min  = 1);
+// 
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

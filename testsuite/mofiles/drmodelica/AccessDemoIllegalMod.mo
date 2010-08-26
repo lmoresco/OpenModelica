@@ -29,7 +29,7 @@ end A;
 
 // Result:
 // Error processing file: AccessDemoIllegalMod.mo
-// Error: Trying to modify protected element ad.w
+// Error: Attempt to modify protected element ad.w
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

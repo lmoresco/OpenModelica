@@ -26,3 +26,12 @@ encapsulated model Encapsulated3
   C c(x=1);
   C2 c2; // Causes infitite loop
 end Encapsulated3;
+// Result:
+// Error processing file: Encapsulated3.mo
+// [Encapsulated3.mo:27:3-27:8:readonly] Error: Variable c2: Base class B.C not found in scope A.B1.C2
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

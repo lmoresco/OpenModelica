@@ -22,7 +22,7 @@ end WhenElseNested;
 
 // Result:
 // Error processing file: WhenElseNested.mo
-// Error: In scope WhenNested: Invalid nested when statements:
+// Error: In scope WhenElseNested: Invalid nested when statements:
 // when x == 3 then
 //   when y < 1 then
 //       y:=2;
@@ -31,7 +31,6 @@ end WhenElseNested;
 // 
 // end when;
 // 
-// Error: Error occured while flattening model 
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

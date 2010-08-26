@@ -17,8 +17,11 @@ class Modification4
 end Modification4;
 
 // Result:
-// class Modification4;
-// equation
-//   b.a.x = 1
-// end Modification4;
+// Error processing file: Modification4.mo
+// [Modification4.mo:12:3-12:6:readonly] Error: Variable b.a: In modifier (p = 2), class or component p not found in <A>
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

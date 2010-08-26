@@ -12,7 +12,6 @@ FinalTests.mos \
 ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.mos \
 ForStatement5fail.mos ForStatement6.mos ForStatement7.mos \
 FuncNamespace.mos \
-Identifier.mos \
 IfStatement.mos IfStatementIllegal.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 interactive_api_param.mos interactive_api_classes.mos \

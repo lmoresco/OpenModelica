@@ -18,3 +18,12 @@ model Function8
 equation
   x = f(z);
 end Function8;
+// Result:
+// Error processing file: Function8.mo
+// Error: No matching function found for f(z) of type function(x:String) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

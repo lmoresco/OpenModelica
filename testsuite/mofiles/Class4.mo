@@ -10,7 +10,11 @@ class Class4
 end;
 
 // Result:
-// class Class4
-// equation
-// end Class4;
+// Error processing file: Class4.mo
+// [Class4.mo:10:4-10:4:writable] Error: Parse error: expecting an identifier, found ';'
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

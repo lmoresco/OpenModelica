@@ -24,19 +24,12 @@ end Enumeration5;
 
 
 // Result:
-// class Enumeration5
-// Real t.hh[1];
-// Real t.hh[2];
-// Real t.hh[3];
-// Real tt.hh[1];
-// Real tt.hh[2];
-// Real tt.hh[3];
-// equation
-//   t.hh[E.j] = 1.0;
-//   t.hh[E.l] = 2.0;
-//   t.hh[E.k] = 3.0;
-//   tt.hh[E.a1] = 1.0;
-//   tt.hh[E.b1] = 2.0;
-//   tt.hh[E.c1] = 3.0;
-// end Enumeration5;
+// Error processing file: Enum5.mo
+// Error: Illegal subscript [E.j] for dimensions 3 in component <NO COMPONENT>
+// Error: Variable hh[E.j] not found in scope P.h
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

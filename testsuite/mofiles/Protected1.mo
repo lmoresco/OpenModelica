@@ -23,3 +23,12 @@ model Protected1
   B b(a=3);
   B c;
 end Protected1;
+// Result:
+// Error processing file: Protected1.mo
+// Error: Attempt to modify protected element a.y
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

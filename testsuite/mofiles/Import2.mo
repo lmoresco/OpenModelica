@@ -1,6 +1,6 @@
 // name:     Import2
 // keywords: import
-// status:   incorrect
+// status:   erroneous
 // 
 // Import is not inherited through extends.
 // 
@@ -41,3 +41,11 @@ class Import2
   E e;
   MyC myc;
 end Import2;
+// Result:
+// TODO: This needs a proper error message
+// Error processing file: Import2.mo
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

@@ -131,27 +131,16 @@ sub runone
     my $end_t = time-$start_t;
 
     if ( $retval != 0 ) {
-    if ($info{"status"} eq "incorrect") {
-        print "ok\n";
-        return 0;
-    }
-    print "nonzero exit status\n";
-    return 1;
-    }
-
-    system "grep -s '^#|Execution failed!' $log";
-    if ( $? == 0 ) {
-    if ($info{"status"} eq "incorrect") {
-        print "ok\n";
-        return 0;
-    }
-    print "execution failed\n";
-    return 1;
-    }
-
-    if ($info{"status"} eq "incorrect") {
-    print "this test should have failed\n";
-    return 1;
+        if ($info{"status"} eq "erroneous") {
+            print "erroneous\n";
+            return 1;
+        } elsif ($info{"status"} eq "correct") {
+            print "execution failed\n";
+            return 1;
+        }
+    } elsif ($info{"status"} ne "correct") {
+        print "this test should have failed\n";
+        return 1;
     }
 
     # Extract the result

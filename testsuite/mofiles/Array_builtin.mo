@@ -16,6 +16,11 @@ model Array_builtin
 end Array_builtin;
 
 // Result:
-// class Array_builtin
-// end Array_builtin;
+// Error processing file: Array_builtin.mo
+// Error: Array dimension mismatch, expression {{1,2,3,4,5}} has type Integer[1, 5], expected array dimensions [5]
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

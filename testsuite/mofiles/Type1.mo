@@ -8,3 +8,12 @@
 type Type1
   Real x;
 end Type1;
+// Result:
+// Error processing file: Type1.mo
+// Error: In class Type1, class restriction 'type' can only be derived from predefined types.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult

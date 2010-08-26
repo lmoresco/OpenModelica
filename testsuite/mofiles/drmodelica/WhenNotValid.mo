@@ -26,3 +26,13 @@ end WhenNotValid;
 //   2.0 * x + y = 7.0;
 //   end when;
 // end WhenNotValid;
+// Result:
+// -verify_When_Equation FAILED
+// Error processing file: WhenNotValid.mo
+// [WhenNotValid.mo:15:3-15:3:writable] Error: Failed to instantiate equation EQ_WHEN(... not impl ...)
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult
