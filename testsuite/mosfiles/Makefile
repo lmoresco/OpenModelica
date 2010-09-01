@@ -69,6 +69,7 @@ SemiLinear.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
 simulation.mos \
+SliceAssignment.mos \
 StepAdvanced.mos \
 StringTest.mos \
 SumSeriesWhile.mos \

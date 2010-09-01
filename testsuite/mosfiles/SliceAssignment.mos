@@ -1,0 +1,23 @@
+// name:     SliceAssignment
+// keywords: events
+// status: correct
+// teardown_command: rm -rf SliceAssignment_* Xpowers1 Xpowers1.exe Xpowers1.cpp Xpowers1.makefile Xpowers1.libs Xpowers1.log output.log
+//
+// Checks that correct code is generated for slice assignments.
+// 
+loadFile("SliceAssignment.mo");
+simulate(SliceAssignment, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+echo(false);
+size:=readSimulationResultSize("SliceAssignment_res.plt");
+echo(true);
+size;
+readFile("output.log");
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "SliceAssignment_res.plt"
+// end SimulationResult;
+// true
+// 4
+// ""
+// endResult
