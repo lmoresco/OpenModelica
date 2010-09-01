@@ -23,46 +23,36 @@ model FillSize
 	constant Real r2[:,:] = z2(ones(4, 4));
 end FillSize;
 
-// function z
-// input Real[:] B;
-// output Real[size(B,1)] A = DAE.CAST(/tp:REAL[]/, fill(1,size(B,1)));
-// end z;
-// 
-// function z2
-// input Real[:, :] B;
-// output Real[size(B,1), size(B,2)] A = DAE.CAST(/tp:REAL[]/, fill(0,size(B,1),size(B,2)));
-// end z2;
-// 
 // Result:
 // function z
-// input Real[:] B;
-// output Real[size(B,1)] A = DAE.CAST(/tp:REAL[]/, fill(1,size(B,1)));
+//   input Real[:] B;
+//   output Real[size(B,1)] A = DAE.CAST(/tp:REAL[:]/, fill(1,size(B,1)));
 // end z;
 // 
 // function z2
-// input Real[:, :] B;
-// output Real[size(B,1), size(B,2)] A = DAE.CAST(/tp:REAL[]/, fill(0,size(B,1),size(B,2)));
+//   input Real[:, :] B;
+//   output Real[size(B,1), size(B,2)] A = DAE.CAST(/tp:REAL[:, :]/, fill(0,size(B,1),size(B,2)));
 // end z2;
 // 
 // class FillSize
-// constant Real r[1] = 1.0;
-// constant Real r[2] = 1.0;
-// constant Real r[3] = 1.0;
-// constant Real r2[1,1] = 0.0;
-// constant Real r2[1,2] = 0.0;
-// constant Real r2[1,3] = 0.0;
-// constant Real r2[1,4] = 0.0;
-// constant Real r2[2,1] = 0.0;
-// constant Real r2[2,2] = 0.0;
-// constant Real r2[2,3] = 0.0;
-// constant Real r2[2,4] = 0.0;
-// constant Real r2[3,1] = 0.0;
-// constant Real r2[3,2] = 0.0;
-// constant Real r2[3,3] = 0.0;
-// constant Real r2[3,4] = 0.0;
-// constant Real r2[4,1] = 0.0;
-// constant Real r2[4,2] = 0.0;
-// constant Real r2[4,3] = 0.0;
-// constant Real r2[4,4] = 0.0;
+//   constant Real r[1] = 1.0;
+//   constant Real r[2] = 1.0;
+//   constant Real r[3] = 1.0;
+//   constant Real r2[1,1] = 0.0;
+//   constant Real r2[1,2] = 0.0;
+//   constant Real r2[1,3] = 0.0;
+//   constant Real r2[1,4] = 0.0;
+//   constant Real r2[2,1] = 0.0;
+//   constant Real r2[2,2] = 0.0;
+//   constant Real r2[2,3] = 0.0;
+//   constant Real r2[2,4] = 0.0;
+//   constant Real r2[3,1] = 0.0;
+//   constant Real r2[3,2] = 0.0;
+//   constant Real r2[3,3] = 0.0;
+//   constant Real r2[3,4] = 0.0;
+//   constant Real r2[4,1] = 0.0;
+//   constant Real r2[4,2] = 0.0;
+//   constant Real r2[4,3] = 0.0;
+//   constant Real r2[4,4] = 0.0;
 // end FillSize;
 // endResult

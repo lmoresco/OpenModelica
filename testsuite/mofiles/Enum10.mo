@@ -16,6 +16,6 @@ end Enum10;
 // Result:
 // class Enum10
 // enumeration(one, two, three) e1;
-// enumeration(start, one, two, three) e2(start = e2.two);
+// enumeration(start, one, two, three) e2(start = two);
 // end Enum10;
 // endResult

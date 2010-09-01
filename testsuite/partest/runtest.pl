@@ -136,15 +136,23 @@ system("$rtest $test &> $test.test_log");
 open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.log: $!\n";
 
 my $exit_status = 1;
+my $erroneous = 0;
 
 while(<$test_log>) {
+	if(/... erroneous/) {
+		$erroneous = 1;
+	}
 	if(/== (\d) out of 1 tests failed.*time: (\d*)/) {
 		my $time = $2;
 		if($1 =~ /0/) {
 			print color 'green';
 		} else {
-			print color 'red';
-			$exit_status = 0;
+			if($erroneous == 0) {
+				print color 'red';
+				$exit_status = 0;
+			} else {
+				print color 'magenta';
+			}
 		}
 		print " [$test:$time]";
     print color 'reset';

@@ -91,12 +91,12 @@ end X;
 // enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Size.medium;
 // enumeration(start, fixed, quantity, zero, one) enumtest.c(quantity = "Current", start = DigitalCurrent.one, fixed = true);
 // enumeration(zero, one) enumtest.choice(start = DigitalCurrentChoices.one, fixed = true);
-// Real enumtest.x[1];
-// Real enumtest.x[2];
-// Real enumtest.xx[1];
-// Real enumtest.xx[2];
-// Real enumtest.xxx[1];
-// Real enumtest.xxx[2];
+// Real enumtest.x[DigitalCurrentChoices.zero];
+// Real enumtest.x[DigitalCurrentChoices.one];
+// Real enumtest.xx[DigitalCurrentChoices.zero];
+// Real enumtest.xx[DigitalCurrentChoices.one];
+// Real enumtest.xxx[DigitalCurrentChoices.zero];
+// Real enumtest.xxx[DigitalCurrentChoices.one];
 // equation
 //   enumtest.c = DigitalCurrent.one;
 //   enumtest.choice = if enumtest.c == DigitalCurrent.zero then DigitalCurrent.one else DigitalCurrent.one;

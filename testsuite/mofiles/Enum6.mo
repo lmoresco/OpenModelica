@@ -49,15 +49,15 @@ end Enumeration6;
 
 // Result:
 // class Enumeration6
-// Real t.hh[1];
-// Real t.hh[2];
-// Real t.hh[3];
+// Real t.hh[E.j];
+// Real t.hh[E.l];
+// Real t.hh[E.k];
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_in = EE.frame_a;
 // parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 // Real x(StateSelect = StateSelect.default);
-// Real z[1];
-// Real z[2];
-// Real z[3];
+// Real z[EE.world];
+// Real z[EE.frame_a];
+// Real z[EE.frame_resolve];
 // enumeration(world, frame_a, frame_resolve) ee(start = EE.world);
 // enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = E.a, max = E.b, start = E.c, fixed = true);
 // equation

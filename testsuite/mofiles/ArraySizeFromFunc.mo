@@ -23,7 +23,7 @@ end ArraySizeFromFunc;
 // input Integer n;
 // output Real[n] x;
 // algorithm
-//   x := /*/tp:REAL[]/*/(fill(1,n));
+//   x := /*/tp:REAL[:]/*/(fill(1,n));
 // end f;
 // 
 // class ArraySizeFromFunc

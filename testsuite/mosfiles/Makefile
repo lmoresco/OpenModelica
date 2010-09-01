@@ -24,6 +24,7 @@ Delay.mos \
 dertest.mos  \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
+EnumArray.mos \
 EquationCallIntegerArray.mos \
 EqualityEquations.mos \
 ExtendsBasic.mos  \

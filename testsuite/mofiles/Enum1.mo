@@ -6,22 +6,22 @@
 // 
 
 model Enumeration1
-   type Color = enumeration(green "1st",blue "2st", yelow "3th");
+   type Color = enumeration(green "1st",blue "2st", yellow "3th");
    Real[Color] x;
 equation 
    x[Color.green] = 1;
    x[Color.blue] = 2;
-   x[Color.yelow] = 3;
+   x[Color.yellow] = 3;
 end Enumeration1;
 
 // Result:
 // class Enumeration1
-// Real x[1];
-// Real x[2];
-// Real x[3];
+// Real x[Color.green];
+// Real x[Color.blue];
+// Real x[Color.yellow];
 // equation
 //   x[Color.green] = 1.0;
 //   x[Color.blue] = 2.0;
-//   x[Color.yelow] = 3.0;
+//   x[Color.yellow] = 3.0;
 // end Enumeration1;
 // endResult
