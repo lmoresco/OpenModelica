@@ -85,6 +85,7 @@ Atan2.mo \
 Atan.mo \
 BlockComponents.mo \
 BlockIllegal.mo \
+BlockResult.mo \
 BlockSimple.mo \
 BoolArrayTest.mo \
 BooleanLiterals.mo \
