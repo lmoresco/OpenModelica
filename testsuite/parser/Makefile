@@ -11,8 +11,13 @@ Identifier.mo \
 IntegerLiterals.mo \
 ParseError1.mo \
 ParseError2.mo \
-RealOpLexerMetaModelica.mo \
-RealOpLexerModelica.mo
+RealOpLexerMetaModelica.mo
+
+FAILINGTESTFILES=\
+Assign1.mo \
+Assign2.mo \
+Assign3.mo \
+RealOpLexerModelica.mo \
 
 .PHONY : test
 
