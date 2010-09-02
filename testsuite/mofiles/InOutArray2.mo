@@ -8,7 +8,7 @@ function strCombine
 algorithm
   outVal := "";
   for i in 1:size(inVal,1) loop
-    outVal := outVal +& inVal[i];
+    outVal := outVal + inVal[i];
   end for;
 end strCombine;
 

@@ -130,11 +130,13 @@ sub runone
     }
     my $end_t = time-$start_t;
 
+    if ($info{"status"} eq "erroneous") {
+      print "erroneous\n";
+      return 1;
+    }
+
     if ( $retval != 0 ) {
-        if ($info{"status"} eq "erroneous") {
-            print "erroneous\n";
-            return 1;
-        } elsif ($info{"status"} eq "correct") {
+        if ($info{"status"} eq "correct") {
             print "execution failed\n";
             return 1;
         }

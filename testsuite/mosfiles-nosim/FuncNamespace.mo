@@ -2,7 +2,7 @@ function TestFunc
   input Real x;
   output Real y;
 algorithm
-  y := x *. 3.0;
+  y := x * 3.0;
 end TestFunc;
 
 package TestPkg
@@ -31,12 +31,12 @@ function TestPkg_TestFunc
   input Real x;
   output Real y;
 algorithm
-  y := x +. 1.0;
+  y := x + 1.0;
 end TestPkg_TestFunc;
 
 function TestPkg_TestClass_TestFunc
   input Real x;
   output Real y;
 algorithm
-  y := x +. 2.0;
+  y := x + 2.0;
 end TestPkg_TestClass_TestFunc;

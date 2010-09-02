@@ -17,7 +17,8 @@ FAILINGTESTFILES=\
 Assign1.mo \
 Assign2.mo \
 Assign3.mo \
-RealOpLexerModelica.mo \
+MetaModelicaStringOpModelicaLexer.mo \
+RealOpLexerModelica.mo
 
 .PHONY : test
 
@@ -26,3 +27,6 @@ test :
 	@echo Running tests...
 	@echo
 	@$(TEST) $(TESTFILES)
+
+failingtest :
+	@$(TEST) $(FAILINGTESTFILES)
