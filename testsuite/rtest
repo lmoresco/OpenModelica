@@ -17,7 +17,7 @@ if ($cwd =~ m/(.*)testsuite.*\/(.+)$/) {
   exit 0;
 }
 
-system "$OPENMODELICAHOME/bin/omc-diff -v1.0";
+system "$OPENMODELICAHOME/bin/omc-diff -v1.1";
 if ($?) {
   print "$OPENMODELICAHOME/bin/omc-diff seems to be missing or of an incompatible version.";
   print "Compile omc-diff and run rtest again.";

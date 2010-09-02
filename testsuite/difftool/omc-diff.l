@@ -27,7 +27,7 @@ int yywrap (void ) {
   return 1;
 }
 
-#define VERSION_STRING "-v1.0"
+#define VERSION_STRING "-v1.1"
 
 int usage(char* exe, char* s1,char* s2) {
   printf("Error: %s%s.\n", s1, s2);
@@ -37,6 +37,21 @@ int usage(char* exe, char* s1,char* s2) {
   printf("Usage (Version test): %s %s\n", exe, VERSION_STRING);
   printf("  Returns exit code 0.\n");
   return 2;
+}
+
+int strcmp_omc_diff(const char* s1, const char* s2) {
+  while (*s1 || *s2) {
+    if (*s1 == ' ' && *s2 == ' ') {
+      do *s1++; while (*s1 == ' ');
+      do *s2++; while (*s2 == ' ');
+    }
+    if (*s1 != *s2) return *s1 > *s2;
+    if (*s1 || *s2) {
+      *s1++;
+      *s2++;
+    }
+  }
+  return *s1 == *s2 ? 0 : *s1 > *s2;
 }
 
 int lex_main(double eps, FILE* f1, FILE* f2) {
@@ -76,7 +91,7 @@ int lex_main(double eps, FILE* f1, FILE* f2) {
       line++;
       break;
     case T_TEXT:
-      if (strcmp(s1,s2)) {
+      if (strcmp_omc_diff(s1,s2)) {
       printf("Line %d: Text differs:\nexpected: %s\ngot:      %s\n", line, s1, s2);
         return 1;
       }
