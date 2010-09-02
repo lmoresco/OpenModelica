@@ -436,6 +436,7 @@ Redeclare3.mo \
 Redeclare4.mo \
 Redeclare5.mo \
 RedeclareFlowEffort.mo \
+Reductions.mo \
 reinit.mo \
 ReinitArray.mo \
 Rem.mo \
