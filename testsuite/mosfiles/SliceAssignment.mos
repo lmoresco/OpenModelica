@@ -1,5 +1,5 @@
 // name:     SliceAssignment
-// keywords: events
+// keywords: slice assignment bug1249 
 // status: correct
 // teardown_command: rm -rf SliceAssignment_* Xpowers1 Xpowers1.exe Xpowers1.cpp Xpowers1.makefile Xpowers1.libs Xpowers1.log output.log
 //
