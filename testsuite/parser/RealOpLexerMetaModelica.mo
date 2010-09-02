@@ -1,5 +1,6 @@
-// name: RealOpLexer
+// name: RealOpLexerMetaModelica
 // keywords: real, lexing
+// cflags: +g=MetaModelica
 // status: correct
 //
 // tests that the lexer/parser handles proper Modelica syntax for real operations

@@ -6,12 +6,12 @@
 //
 
 loadFile("_ElementaryTotal.mo");
-getErrorString();
+/*getErrorString();
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum);
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
+system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");*/
 
 // Result:
 // true

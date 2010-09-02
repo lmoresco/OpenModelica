@@ -97,8 +97,6 @@ Circle.mo \
 Circuit1.mo \
 Class1.mo \
 Class2.mo \
-Class3.mo \
-Class4.mo \
 ClassExtends1.mo \
 ClassExtends2.mo \
 ClassExtends3.mo \
@@ -151,7 +149,6 @@ ConstantDeclRecord.mo \
 ConstantDeclType.mo \
 ConstantReductions.mo \
 ConstrainingType1.mo \
-ConstructParameters1.mo \
 ConstructParameters2.mo \
 ConstructParameters.mo \
 Cosh.mo \
@@ -159,9 +156,6 @@ Cos.mo \
 Cross.mo \
 CyclicBindingConst.mo \
 CyclicBindingParam.mo \
-Declaration1.mo \
-Declaration2.mo \
-Declaration3.mo \
 DeclarationEquation1.mo \
 DeclarationEquation2.mo \
 DeclarationEquation3.mo \
@@ -295,7 +289,6 @@ FunctionSimplex.mo \
 GreaterThanEqual.mo \
 GreaterThan.mo \
 IconsRecursiveTest.mo \
-Identifier.mo \
 if_then_elseif_else.mo \
 Import1.mo \
 Import2.mo \
@@ -323,7 +316,6 @@ InputDeclType.mo \
 IntAdd.mo \
 IntDiv.mo \
 Integer2Real.mo \
-IntegerLiterals.mo \
 Integer.mo \
 IntMul.mo \
 IntPow.mo \
@@ -409,8 +401,6 @@ PackageSimple.mo \
 ParameterDeclConnector.mo \
 ParameterDeclRecord.mo \
 ParameterDeclType.mo \
-ParseError1.mo \
-ParseError2.mo \
 Partial1.mo \
 PEXPipeTotal.mo \
 Philosopher2.mo \
@@ -429,7 +419,6 @@ Real2Integer3.mo \
 RealAdd.mo \
 RealDiv.mo \
 RealMul.mo \
-RealOpLexer.mo \
 RealPow.mo \
 RealSub.mo \
 Record1.mo \
