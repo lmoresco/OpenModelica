@@ -163,7 +163,7 @@ protected function apply_real_unop
   input Real x;
   output Real y;
 algorithm 
-  y := -.x;
+  y := -. x;
 end apply_real_unop;
 
 public function eval "************** Expression evaluation **************"

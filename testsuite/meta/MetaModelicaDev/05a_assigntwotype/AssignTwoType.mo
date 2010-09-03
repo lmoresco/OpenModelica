@@ -277,7 +277,7 @@ algorithm
   outInteger:=
   matchcontinue (inUnOp,inInteger)
     local Integer x;
-    case (NEG(),x) then -x; 
+    case (NEG(),x) then -x;
   end matchcontinue;
 end applyIntUnop;
 
@@ -289,7 +289,7 @@ algorithm
   outReal:=
   matchcontinue (inUnOp,inReal)
     local Real x;
-    case (NEG(),x) then -.x;  
+    case (NEG(),x) then -x;
   end matchcontinue;
 end applyRealUnop;
 

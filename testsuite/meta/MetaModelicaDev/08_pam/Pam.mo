@@ -167,6 +167,7 @@ algorithm
         print("\n");
       then i;
     */
+    case () then -1;
   end matchcontinue;
 end inputItem;
 

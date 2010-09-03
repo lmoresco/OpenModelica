@@ -292,7 +292,7 @@ algorithm
   outReal:=
   matchcontinue (inUnOp,inReal)
     local Real x;
-    case (NEG(),x) then -.x;  
+    case (NEG(),x) then -. x;
   end matchcontinue;
 end applyRealUnop;
 
