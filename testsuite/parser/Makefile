@@ -18,6 +18,7 @@ FAILINGTESTFILES=\
 Assign1.mo \
 Assign2.mo \
 Assign3.mo \
+MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
 RealOpLexerModelica.mo
 
