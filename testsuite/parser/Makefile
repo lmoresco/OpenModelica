@@ -26,7 +26,9 @@ Assign2.mo \
 Assign3.mo \
 MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
-RealOpLexerModelica.mo
+RealOpLexerModelica.mo \
+WildLexerModelica.mo \
+WildLexerMetaModelica.mo
 
 .PHONY : test
 
