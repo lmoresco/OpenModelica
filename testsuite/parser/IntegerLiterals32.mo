@@ -1,4 +1,4 @@
-// name: IntegerLiterals
+// name: IntegerLiterals (32-bit)
 // keywords: integer
 // status: incorrect
 //
@@ -6,7 +6,7 @@
 // i5 and i6 are not initialized properly
 //
 
-model IntegerLiterals
+model IntegerLiterals32
   constant Integer i1 = 33;
   constant Integer i2 = 0;
   constant Integer i3 = 100;
@@ -16,7 +16,7 @@ model IntegerLiterals
   Integer i;
 equation
   i = -2;
-end IntegerLiterals;
+end IntegerLiterals32;
 // Result:
 // 
 // IntegerLiterals.mo:14:26 Warning: Modelica supports only 32 bit signed integers! Transforming: 2147483648 into a real
