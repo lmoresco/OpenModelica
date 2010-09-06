@@ -61,6 +61,7 @@ sub make_test_specific_links {
 			make_link("ext_ExternalFunctionResultOrder.c");
 		}
 		when ("PartialFn6.mos") { make_link("PartialFn6.ext_f.c"); };
+    when ("RunScript.mos") { make_link("strings.mo"); };
 	}
 }
 
@@ -92,6 +93,7 @@ sub enter_sandbox {
 			when (/$stop_expr/) 							{ last; }
 			when (/setup_command.*\s(.*\.c)/) { make_link($1); }
 			when (/loadFile.*\(\"(.*)\"\)/) 	{ make_link($1); }
+      when (/runScript.*\(\"(.*)\"\)/)  { make_link($1); }
 			when (/system\(\"(gcc|g\+\+).*\s(\w*\.\w*)\s(\w*\.\w*)/) {
 				my $header = lib_to_header($2);
 				make_link($header); 
@@ -118,7 +120,7 @@ sub enter_sandbox {
 # directory.
 sub exit_sandbox {
 	chdir("..");
-  rmtree($test . "_temp");
+  rmtree($test . "_temp") unless $test eq "RunScript.mos";
 }
 
 
