@@ -235,6 +235,7 @@ Extends8.mo \
 Extends9.mo \
 Extends10.mo \
 Extends11.mo \
+ExtendsModWithImport.mo \
 ExternalFunction1.mo \
 ExternalFunction2.mo \
 ExternalFunction3.mo \
