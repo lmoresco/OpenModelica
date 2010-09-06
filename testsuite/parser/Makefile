@@ -11,7 +11,7 @@ Identifier.mo \
 IntegerLiterals.mo \
 ParseError1.mo \
 ParseError2.mo \
-ParseFullModelica3.1.mo \
+ParseFullModelica3.1.mos \
 RealOpLexerMetaModelica.mo
 
 FAILINGTESTFILES=\
