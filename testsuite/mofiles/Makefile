@@ -148,6 +148,7 @@ ConstantDeclConnector.mo \
 ConstantDeclRecord.mo \
 ConstantDeclType.mo \
 ConstantReductions.mo \
+ConstantSize.mo \
 ConstrainingType1.mo \
 ConstructParameters2.mo \
 ConstructParameters.mo \
