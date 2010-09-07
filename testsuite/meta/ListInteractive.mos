@@ -1,6 +1,7 @@
 // name:     ListInteractive
 // keywords: Lists
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // List Testing
 loadFile("ListInteractive.mo");

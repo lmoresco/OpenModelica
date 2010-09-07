@@ -1,6 +1,7 @@
 // name:     Recursive
 // keywords: Recursive
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // Recursive function testing
 //

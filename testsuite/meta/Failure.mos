@@ -1,6 +1,7 @@
 // name:     Failure
 // keywords: Failure
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // Failure Testing
 //

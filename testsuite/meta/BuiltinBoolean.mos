@@ -1,6 +1,7 @@
 // name:     BuiltinBoolean
 // keywords: Builtin
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // Builtin function testing
 //

@@ -1,6 +1,7 @@
 // name:     Polymorphic
 // keywords: Polymorphism
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // Polymorphic functions
 //

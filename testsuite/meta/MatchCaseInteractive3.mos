@@ -1,6 +1,7 @@
 // name:     MatchCaseInteractive3
 // keywords: MatchCase
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // MatchCase Testing
 //

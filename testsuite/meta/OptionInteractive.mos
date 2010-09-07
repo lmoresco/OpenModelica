@@ -1,6 +1,7 @@
 // name:     OptionInteractive
 // keywords: Option Type
 // status:   correct
+// cflags:   +g=MetaModelica
 //
 // Option Testing
 //
