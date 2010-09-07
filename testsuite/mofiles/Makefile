@@ -204,6 +204,7 @@ Enum6.mo \
 Enum7.mo \
 Enum8.mo \
 Enum9.mo \
+EnumDimSum.mo \
 EnumInvalidLiteral.mo \
 Equals.mo \
 EquationComponent1.mo \
