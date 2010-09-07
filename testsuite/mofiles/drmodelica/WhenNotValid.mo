@@ -29,7 +29,7 @@ end WhenNotValid;
 // Result:
 // -verify_When_Equation FAILED
 // Error processing file: WhenNotValid.mo
-// [WhenNotValid.mo:15:3-15:3:writable] Error: Failed to instantiate equation EQ_WHEN(... not impl ...)
+// [WhenNotValid.mo:15:3-17:11:writable] Error: Failed to instantiate equation EQ_WHEN(... not impl ...)
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

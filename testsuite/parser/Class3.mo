@@ -10,7 +10,7 @@ class Class3
 end WrongEnd;
 // Result:
 // Error processing file: Class3.mo
-// [Class3.mo:10:5-10:5:writable] Error: Parse error: The identifier at start and end are different
+// [Class3.mo:8:7-10:12:writable] Error: Parse error: The identifier at start and end are different
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

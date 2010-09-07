@@ -20,7 +20,7 @@ equation
 end Function7;
 // Result:
 // Error processing file: Function7.mo
-// [Function7.mo:19:5-19:5:writable] Error: Type mismatch in equation x=f(z) of type String=Real
+// [Function7.mo:19:3-19:11:writable] Error: Type mismatch in equation x=f(z) of type String=Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

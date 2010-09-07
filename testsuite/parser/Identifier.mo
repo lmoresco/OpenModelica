@@ -1,6 +1,6 @@
 // name: Identifier
 // keywords: identifier
-// status: correct
+// status: incorrect
 //
 // Using reserved words as identifiers
 //
@@ -12,9 +12,11 @@ equation
 end Identifier;
 
 // Result:
-// [Identifier.mo:9:3-9:13:writable] Error: unexpected token: Real, parsing resumed at token ';' on line 9, column 13
-// [Identifier.mo:11:3-12:1:writable] Error: unexpected token: model, parsing resumed at token 'end' on line 12, column 1
+// Error processing file: Identifier.mo
+// [Identifier.mo:9:3-9:7:writable] Error: No viable alternative near token: Real
 // 
-// class Identifier
-// end Identifier;
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

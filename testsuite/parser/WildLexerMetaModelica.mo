@@ -1,4 +1,4 @@
-// name: WildLexerModelica
+// name: WildLexerMetaModelica
 // status: incorrect
 // cflags: +g=MetaModelica
 //
@@ -9,7 +9,7 @@ end WildLexerModelica;
 
 // Result:
 // Error processing file: WildLexerMetaModelica.mo
-// [WildLexerMetaModelica.mo:7:1-7:6:writable] Error: No viable alternative near token: _
+// [WildLexerMetaModelica.mo:7:1-7:5:writable] Error: No viable alternative near token: Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

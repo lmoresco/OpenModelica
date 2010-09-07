@@ -19,12 +19,6 @@ ifndef OMDEV
 	ABORT
 endif
 
-
-ANTLR_HOME = $(OMDEV)
-
-ANTLR_INCP = -I$(OMDEV)/include/antlr
-ANTLR_LIBP = -L$(OMDEV)/lib/antlr-msys-mingw/
-
 USE_CORBA = -DUSE_CORBA
 CORBAHOME = $(OMDEV)
 
@@ -48,7 +42,7 @@ CORBALIBS=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 
-LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(ANTLR_LIBP) -lantlr $(CORBALIBS) $(LIBSOCKET) $(srcdir)/runtime/lpsolve/lpsolve55.lib
+LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml $(CORBALIBS) $(LIBSOCKET) $(srcdir)/runtime/lpsolve/lpsolve55.lib
 PLTPKGFLAGS = -L../../build/lib -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32
 
 PROG = omcf.exe

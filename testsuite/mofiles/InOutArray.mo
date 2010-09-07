@@ -18,7 +18,7 @@ function sumReal
 algorithm
     outSum := 0.0;
     for i in 1:size(inVal,1) loop
-        outSum := outSum +. inVal[i];
+        outSum := outSum + inVal[i];
     end for;
 end sumReal;
 
@@ -28,7 +28,7 @@ function addReal32
 algorithm
     for i in 1:3 loop
         for j in 1:2 loop
-            outVal[i, j] := inVal[i, j] +. 2.0;
+            outVal[i, j] := inVal[i, j] + 2.0;
         end for;
     end for;
 end addReal32;

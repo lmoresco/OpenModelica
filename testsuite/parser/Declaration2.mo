@@ -1,19 +1,20 @@
 // name:     Declaration2
 // keywords: declaration
-// status:   correct
+// status:   incorrect
 // 
 // Misuse of component attributes.
 //
-// N.B! Panic mode handles this by simply skipping the declaration of x.
-//      There is no error output, but there should be.
 
 class Declaration2
   constant discrete Real x;
 end Declaration2;
 
 // Result:
-// [Declaration2.mo:11:12-11:27:writable] Error: unexpected token: discrete, parsing resumed at token ';' on line 11, column 27
+// Error processing file: Declaration2.mo
+// [Declaration2.mo:9:12-9:20:writable] Error: No viable alternative near token: discrete
 // 
-// class Declaration2
-// end Declaration2;
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

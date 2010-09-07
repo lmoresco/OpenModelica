@@ -1,6 +1,6 @@
 // name:     ConstructParameters1
 // keywords: declaration,algorithm
-// status:   correct
+// status:   incorrect
 // 
 // This is not legal Modelica, see ConstructParameters2
 // for an example of how to do it.
@@ -8,8 +8,6 @@
 // This syntax has been discussed to generate
 // several parameters from one function call.
 //
-// N.B! Panic mode handles this by simply skipping the bad construct.
-//      There is no error output, but there should be.
 
 function fc
   output Real p3, p4;
@@ -36,10 +34,11 @@ end ConstructParameters1;
 // end fc;
 // 
 // Result:
-// [ConstructParameters1.mo:25:18-25:37:writable] Error: unexpected token: (, parsing resumed at token ';' on line 25, column 37
+// Error processing file: ConstructParameters1.mo
+// [ConstructParameters1.mo:23:18-23:18:writable] Error: No viable alternative near token: (
 // 
-// class ConstructParameters1
-// parameter Real p1 = 2.0;
-// parameter Real p2 = 3.0;
-// end ConstructParameters1;
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

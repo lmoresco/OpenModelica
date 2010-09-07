@@ -1,19 +1,20 @@
 // name:     Declaration3
 // keywords: declaration
-// status:   correct
+// status:   incorrect
 // 
 // Misuse of component attributes.
 //
-// N.B! Panic mode handles this by simply skipping the declaration of x.
-//      There is no error output, but there should be.
 
 class Declaration3
   constant parameter Real x;
 end Declaration3;
 
 // Result:
-// [Declaration3.mo:11:12-11:28:writable] Error: unexpected token: parameter, parsing resumed at token ';' on line 11, column 28
+// Error processing file: Declaration3.mo
+// [Declaration3.mo:9:12-9:21:writable] Error: No viable alternative near token: parameter
 // 
-// class Declaration3
-// end Declaration3;
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

@@ -22,8 +22,8 @@ end ConnectFlowEffort;
 // Result:
 // -Inst.connectComponents failed
 // Error processing file: ConnectFlowEffort.mo
-// [ConnectFlowEffort.mo:20:3-20:3:writable] Error: Cannot connect flow component c2.e to non-flow component c1.e
-// [ConnectFlowEffort.mo:20:3-20:3:writable] Error: The type of variables c1 and c2 (Connector1 connector and Connector2 connector) are inconsistent in connect equations
+// [ConnectFlowEffort.mo:20:3-20:18:writable] Error: Cannot connect flow component c2.e to non-flow component c1.e
+// [ConnectFlowEffort.mo:20:3-20:18:writable] Error: The type of variables c1 and c2 (Connector1 connector and Connector2 connector) are inconsistent in connect equations
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -366,7 +366,6 @@ ModifierExtends.mo \
 ModifierProblem.mo \
 ModifierRedeclare.mo \
 ModifierVariable.mo \
-ModifyConstant3.mo \
 ModifyConstant4.mo \
 ModifyConstant5.mo \
 ModifyConstant6.mo \
@@ -455,7 +454,6 @@ SimpleInheritance.mo \
 SimpleIntegrator1.mo \
 SimpleIntegrator2.mo \
 SimpleIntegrator3.mo \
-SimpleIntegrator4.mo \
 SimpleTypeExtend.mo \
 Simplify.mo \
 Sinh.mo \

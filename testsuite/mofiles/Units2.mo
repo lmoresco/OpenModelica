@@ -25,8 +25,8 @@ end Units2;
 // Result:
 // -Inst.connectComponents failed
 // Error processing file: Units2.mo
-// [Units2.mo:23:3-23:3:writable] Error: Cannot connect flow component i.x to non-flow component v.x
-// [Units2.mo:23:3-23:3:writable] Error: The type of variables v and i (Pin1 connector and Pin2 connector) are inconsistent in connect equations
+// [Units2.mo:23:3-23:16:writable] Error: Cannot connect flow component i.x to non-flow component v.x
+// [Units2.mo:23:3-23:16:writable] Error: The type of variables v and i (Pin1 connector and Pin2 connector) are inconsistent in connect equations
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

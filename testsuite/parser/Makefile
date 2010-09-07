@@ -8,6 +8,9 @@ endif
 
 TESTFILES=\
 $(ARCH_DEPENDENT_FILES) \
+Assign1.mo \
+Assign2.mo \
+Assign3.mo \
 Class3.mo \
 Class4.mo \
 ConstructParameters1.mo \
@@ -15,20 +18,19 @@ Declaration1.mo \
 Declaration2.mo \
 Declaration3.mo \
 Identifier.mo \
+MetaModelicaMatchElse.mo \
+MetaModelicaStringOpModelicaLexer.mo \
+ModifyConstant3.mo \
 ParseError1.mo \
 ParseError2.mo \
 ParseFullModelica3.1.mos \
-RealOpLexerMetaModelica.mo
-
-FAILINGTESTFILES=\
-Assign1.mo \
-Assign2.mo \
-Assign3.mo \
-MetaModelicaMatchElse.mo \
-MetaModelicaStringOpModelicaLexer.mo \
 RealOpLexerModelica.mo \
+RealOpLexerMetaModelica.mo \
+SimpleIntegrator4.mo \
 WildLexerModelica.mo \
 WildLexerMetaModelica.mo
+
+FAILINGTESTFILES=NONE\
 
 .PHONY : test
 

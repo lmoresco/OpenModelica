@@ -1,6 +1,6 @@
 // name: MetaModelicaStringOpModelicaLexer
 // keywords: string, lexing
-// status: erroneous
+// status: incorrect
 //
 // tests that the lexer/parser handles proper Modelica syntax for string operations
 
@@ -10,7 +10,8 @@ end MetaModelicaStringOpModelicaLexer;
 
 // Result:
 // Error processing file: MetaModelicaStringOpModelicaLexer.mo
-// [RealOpLexerModelica.mo:11:21-11:21:writable] Error: Parser error near: '.'. 
+// [MetaModelicaStringOpModelicaLexer.mo:8:26-8:26:writable] Error: Lexer failed to recognize '& "2";
+// end '
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

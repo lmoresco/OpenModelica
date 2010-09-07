@@ -19,7 +19,7 @@ end Real2Integer2;
 // - Algorithm.makeAssignment failed
 //     n2 := Real(n1) / 2.0
 // 
-// Error: Type mismatch in assignment in n2 := Real(n1) / 2.0 of Integer := Real
+// [Real2Integer2.mo:13:3-13:15:writable] Error: Type mismatch in assignment in n2 := Real(n1) / 2.0 of Integer := Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

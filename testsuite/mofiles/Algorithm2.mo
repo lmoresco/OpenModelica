@@ -18,7 +18,7 @@ end Algorithm2;
 // - Algorithm.makeAssignment failed
 //     i := x
 // 
-// Error: Type mismatch in assignment in i := x of Integer := Real
+// [Algorithm2.mo:12:3-12:9:writable] Error: Type mismatch in assignment in i := x of Integer := Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

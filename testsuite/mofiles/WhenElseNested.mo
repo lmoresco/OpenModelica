@@ -22,7 +22,7 @@ end WhenElseNested;
 
 // Result:
 // Error processing file: WhenElseNested.mo
-// Error: In scope WhenElseNested: Invalid nested when statements:
+// [WhenElseNested.mo:14:3-20:11:writable] Error: In scope WhenElseNested: Invalid nested when statements:
 // when x == 3 then
 //   when y < 1 then
 //       y:=2;

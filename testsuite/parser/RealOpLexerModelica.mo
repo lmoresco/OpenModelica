@@ -14,7 +14,7 @@ end A;
 
 // Result:
 // Error processing file: RealOpLexerModelica.mo
-// [RealOpLexerModelica.mo:11:21-11:21:writable] Error: Parser error near: '.'. 
+// [RealOpLexerModelica.mo:11:21-11:22:writable] Error: No viable alternative near token: .
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
