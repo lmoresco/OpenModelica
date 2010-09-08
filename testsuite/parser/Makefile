@@ -21,6 +21,7 @@ Identifier.mo \
 MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
 ModifyConstant3.mo \
+OptionalOutput.mos \
 ParseError1.mo \
 ParseError2.mo \
 ParseFullModelica3.1.mos \
