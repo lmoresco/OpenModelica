@@ -14,7 +14,7 @@ end A;
 
 // Result:
 // Error processing file: RealOpLexerModelica.mo
-// [RealOpLexerModelica.mo:11:21-11:22:writable] Error: No viable alternative near token: .
+// [RealOpLexerModelica.mo:11:23-11:24:writable] Error: No viable alternative near token: 2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
