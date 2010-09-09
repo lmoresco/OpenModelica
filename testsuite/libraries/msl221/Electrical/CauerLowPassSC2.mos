@@ -1,6 +1,7 @@
 //name:         CauerLowPassSC2
 //keyword:      simulation msl221
 //status:       correct
+//teardown_command: rm -f Modelica.Electrical.Analog.Examples.CauerLowPassSC*
 //
 // instantiate example
 //
@@ -44,8 +45,6 @@ val(Op2.out.i,40.05);
 val(Op2.out.i,50.0);
 val(Op2.out.i,60.0);
 
-system("rm Modelica.Electrical.Analog.Examples.CauerLowPassSC*");
-
 // Result:
 // true
 // record SimulationResult
@@ -84,5 +83,4 @@ system("rm Modelica.Electrical.Analog.Examples.CauerLowPassSC*");
 // -9.90184791539106e-06
 // -1.00368621088988e-05
 // -9.98698499074751e-06
-// 0
 // endResult
