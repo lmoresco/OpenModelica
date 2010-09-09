@@ -44,7 +44,6 @@ z2/1000.0;
 // 0.195
 // 0.901
 //////////////////
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Epidemics1_* Epidemics1.exe Epidemics1.cpp Epidemics1.makefile Epidemics1.libs Epidemics1.log output.log"); // remove tmp files.
 
 // Result:

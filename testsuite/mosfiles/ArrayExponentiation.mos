@@ -20,7 +20,6 @@ e11;
 e12;
 e21;
 e22;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult

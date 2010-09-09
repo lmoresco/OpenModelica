@@ -9,7 +9,6 @@
 // 
 loadFile("TooManyPointsBug.mo");
 simulate(TooManyPointsBug, stopTime=50);
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult

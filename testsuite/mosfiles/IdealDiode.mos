@@ -10,7 +10,6 @@ simulate(ideal_diode, tolerance=1e-5, numberOfIntervals=100);
 val(i0,0.0);
 val(i0,0.5);
 val(i0,1.0);
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -20,5 +19,4 @@ readFile("output.log");
 // 0.0
 // 0.0
 // 0.853903940405634
-// ""
 // endResult

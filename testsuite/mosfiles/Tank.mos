@@ -25,7 +25,6 @@ echo(true); // turns on output
 x/1000.0; // rounded value to 3 digits
 y/1000.0;
 z/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -36,5 +35,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 2.9
 // 3.5
 // 4.1
-// ""
 // endResult

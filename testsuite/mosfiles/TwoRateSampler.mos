@@ -21,7 +21,6 @@ x2:=floor(x2);
 echo(true); // turns on output
 x/1000.0; // rounded value to 3 digits
 x2/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -32,5 +31,4 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // 0.912
 // 0.395
-// ""
 // endResult

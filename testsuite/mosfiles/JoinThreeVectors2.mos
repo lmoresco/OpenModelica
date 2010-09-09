@@ -11,7 +11,6 @@ simulate(JoinThreeVectors2,numberOfIntervals=2, tolerance=1e-5); // 2 intervals 
 echo(false); // turns of output 
 res:=readSimulationResult("JoinThreeVectors2_res.plt",{x},3); 
 echo(true); // turns on output
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf JoinThreeVectors2.plt JoinThreeVectors2.exe JoinThreeVectors2.c JoinThreeVectors2_* output.log"); // remove tmp files.
 
 // Result:

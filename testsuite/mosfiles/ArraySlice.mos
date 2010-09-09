@@ -12,7 +12,6 @@ echo(false); // turns of output
 size := readSimulationResultSize("ArraySlice_res.plt");
 echo(true); // turns on output
 size;
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -22,5 +21,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // true
 // 4
-// ""
 // endResult

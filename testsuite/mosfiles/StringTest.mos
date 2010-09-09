@@ -7,7 +7,6 @@
 //
 loadFile("StringTest.mo");
 simulate(STest1, tolerance=1e-5, numberOfIntervals=100);
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -15,7 +14,4 @@ readFile("output.log");
 //     messages = "Simulation failed.
 // "
 // end SimulationResult;
-// "x reached 0.1 at time 0.101 b =true i =     66
-// Simulation terminated at time 0.101
-// "
 // endResult

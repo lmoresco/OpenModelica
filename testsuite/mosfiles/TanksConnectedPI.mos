@@ -45,7 +45,6 @@ x2/1000.0; // rounded value to 3 digits
 y2/1000.0;
 z2/1000.0;
 w2/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -62,5 +61,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 0.395
 // 0.42
 // 0.335
-// ""
 // endResult

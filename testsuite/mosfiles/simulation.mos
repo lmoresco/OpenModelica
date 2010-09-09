@@ -16,7 +16,6 @@ val(y,1.0);
 val(z,0.0);
 val(z,0.5);
 val(z,1.0);
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -32,5 +31,4 @@ readFile("output.log");
 // 3.0
 // 2.09929446535679
 // 1.58118094258584
-// ""
 // endResult

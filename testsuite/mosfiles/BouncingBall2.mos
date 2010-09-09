@@ -20,7 +20,6 @@ velocity:=floor(velocity);
 echo(true); // turns on output
 height/1000.0; 
 velocity/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 //system("rm -rf BouncingBall.makefile BouncingBall.libs BouncingBall.log BouncingBall.exe BouncingBall.cpp BouncingBall.plt BouncingBall_* output.log"); // remove tmp files.
 // Result:
 // true
@@ -31,5 +30,4 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // {0.0,-0.001,-1.962,-3.924,-4.203,3.781,3.781,3.781,2.098,0.136,-1.826}
 // {1.0,1.0,0.803,0.215,0.099,0.099,0.1,0.1,0.604,0.828,0.659}
-// ""
 // endResult

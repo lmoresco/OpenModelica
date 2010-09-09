@@ -44,7 +44,6 @@ erx/1000.0;
 ery/1000.0;
 erz/1000.0;
 erw/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -60,5 +59,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 1e+60
 // -1e+60
 // 1.0
-// ""
 // endResult

@@ -18,7 +18,6 @@ val(c2,0.0);
 val(c2,1.0);
 val(c3,0.0);
 val(c3,1.0);
-readFile("output.log");
 
 // Result:
 // true
@@ -36,5 +35,4 @@ readFile("output.log");
 // 1.0
 // 0.0
 // 1.0
-// ""
 // endResult

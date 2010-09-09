@@ -11,7 +11,6 @@ echo(false);
 size:=readSimulationResultSize("EnumArray_res.plt");
 echo(true);
 size;
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -20,5 +19,4 @@ readFile("output.log");
 // end SimulationResult;
 // true
 // 4
-// ""
 // endResult

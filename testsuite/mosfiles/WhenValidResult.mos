@@ -18,7 +18,6 @@ y1;
 y2;
 x1;
 x2;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf WhenValidResult_* WhenValidResult.exe WhenValidResult.cpp WhenValidResult.makefile WhenValidResult.libs WhenValidResult.log output.log");
 // Result:
 // true

@@ -24,7 +24,6 @@ echo(true); // turns on output
 x:=x/1.0; // rounded value to 1 digits
 y:=y/1.0;
 z:=z/1.0;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf MoonLanding_* MoonLanding.exe MoonLanding.cpp MoonLanding.makefile MoonLanding.libs MoonLanding.log output.log"); // remove tmp files.
 // Result:
 // true

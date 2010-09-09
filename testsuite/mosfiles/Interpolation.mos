@@ -14,7 +14,6 @@ val(z,0.0);
 val(x2,0.0);
 val(y2,0.0);
 val(z2,0.0);
-readFile("output.log");
 
 // Result:
 // true
@@ -28,5 +27,4 @@ readFile("output.log");
 // 105.0
 // 350.0
 // 600.0
-// ""
 // endResult

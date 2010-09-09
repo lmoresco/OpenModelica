@@ -18,7 +18,6 @@ delta := floor(delta);
 echo(true);
 sum/1000.0;
 delta/1000.0;
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -28,5 +27,4 @@ readFile("output.log");
 // true
 // {99.5,99.5,99.5,99.5}
 // {0.0,0.0,0.0,0.0}
-// ""
 // endResult

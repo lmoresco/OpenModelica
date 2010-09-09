@@ -10,7 +10,6 @@ simulate(Sign);
 val(r1, 1.0);
 val(r2, 1.0);
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // "class Sign
@@ -27,5 +26,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // 1.0
 // -1.0
-// ""
 // endResult

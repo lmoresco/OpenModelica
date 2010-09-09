@@ -18,7 +18,6 @@ m1;
 v2;
 s1;
 m4;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf DimConvert_* DimConvert.exe DimConvert.cpp DimConvert.makefile DimConvert.libs DimConvert.log output.log");
 // Result:
 // true

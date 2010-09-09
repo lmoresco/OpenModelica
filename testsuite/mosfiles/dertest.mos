@@ -12,7 +12,6 @@ val(x,0.0);
 val(x,1.0);
 val(y,0.0);
 val(y,1.0);
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -24,5 +23,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 4.19818865479138
 // -1.0
 // -1.42916471588056
-// ""
 // endResult

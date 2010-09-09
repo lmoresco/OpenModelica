@@ -16,7 +16,6 @@ x := 1000*x;
 x := floor(x);
 echo(true);
 x/1000.0;
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -25,5 +24,4 @@ readFile("output.log");
 // end SimulationResult;
 // true
 // {1.0,0.999,0.606,0.367}
-// ""
 // endResult

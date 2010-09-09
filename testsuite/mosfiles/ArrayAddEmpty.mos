@@ -26,7 +26,6 @@ echo(true); // turns on output
 A;
 B;
 C;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf AddEmpty_* AddEmpty.exe AddEmpty.cpp AddEmpty.makefile AddEmpty.libs AddEmpty.log output.log"); // remove tmp files.
 // Result:
 // true

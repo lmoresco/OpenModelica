@@ -14,7 +14,6 @@ z:=val(z,1.0);
 echo(true); // turns on output
 y;
 z;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Activate_* Activate.exe Activate.cpp Activate.makefile Activate.libs Activate.log output.log"); // remove tmp files.
 // Result:
 // true

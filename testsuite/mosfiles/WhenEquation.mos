@@ -41,7 +41,6 @@ y12/1000.0;
 y31/1000.0;
 y32/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -55,5 +54,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 0.909
 // 0.0
 // 7.909
-// ""
 // endResult

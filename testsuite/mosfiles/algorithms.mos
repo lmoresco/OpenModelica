@@ -9,13 +9,11 @@ loadFile("Algorithm.mo");
 // Alg1 - an algorithm for a single variable.
 simulate(Alg1, numberOfIntervals=10, tolerance=1e-5);
 val(x,0.0);
-readFile("output.log");
 system("rm -rf Alg1.* Alg1_* output.log");
 
 // Alg2 - two variables in an algorithm
 simulate(Alg2);
 val(x,0.0);
-readFile("output.log");
 system("rm -rf Alg2.* Alg2_* output.log");
 
 // Alg3 - mixed algorithm and equation sections
@@ -23,7 +21,6 @@ simulate(Alg3);
 val(x,0.0);
 val(z,0.0);
 val(u,0.0);
-readFile("output.log");
 system("rm -rf Alg3.* Alg3_* output.log");
 
 // Alg4 - single algorithm with wrong causality
@@ -36,14 +33,12 @@ simulate(Alg4);
 //     messages = ""
 // end SimulationResult;
 // 2.0
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "Alg2_res.plt",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "Alg3_res.plt",
@@ -52,7 +47,6 @@ simulate(Alg4);
 // 4.0
 // 3.0
 // 4.0
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "",

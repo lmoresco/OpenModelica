@@ -20,7 +20,6 @@ simulate(BuiltinMath, stopTime=1);
 {val(x[11],0.0),val(x[11],1.0)};
 {val(x[12],0.0),val(x[12],1.0)};
 {val(x[13],0.0),val(x[13],1.0)};
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -40,5 +39,4 @@ readFile("output.log");
 // {1.0,2.71828182845905}
 // {-inf,0.0}
 // {-inf,0.0}
-// ""
 // endResult

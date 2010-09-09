@@ -38,7 +38,6 @@ y2/1000.0;
 z/1000.0;
 z2/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -53,5 +52,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 0.991
 // 5.504
 // 4.011
-// ""
 // endResult

@@ -13,7 +13,6 @@ val(x, 5);
 val(y, 5);
 val(z, 5);
 val(w, 5);
-readFile("output.log");
 
 // Result:
 // true
@@ -25,5 +24,4 @@ readFile("output.log");
 // 0.283662185463226
 // -0.961712903426793
 // 0.141120008059867
-// ""
 // endResult

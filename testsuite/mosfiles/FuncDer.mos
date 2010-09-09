@@ -35,7 +35,6 @@ fn1/1000.0;
 fn2;
 // fn2/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -46,5 +45,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 150.413
 // 22323.292
 // 6670787.0
-// ""
 // endResult

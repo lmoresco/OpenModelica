@@ -24,13 +24,11 @@ echo(true); // turns on output
 x:=x/10.0; // rounded value to 1 digits
 y:=y/10.0;
 z:=z/10.0;
-readFile("output.log"); // Check that output log is emtpy
 
 echo(true); // turns on output
 x:=x/1000.0; // rounded value to 3 digits
 //y:=y/1000.0;
 //z:=z/1000.0;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf TempResistor3_* TempResistor3.exe TempResistor3.cpp TempResistor3.makefile TempResistor3.libs TempResistor3.log output.log"); // remove tmp files.
 // Result:
 // true

@@ -9,7 +9,6 @@
 loadFile("DerivativeCodeGeneration.mo");
 simulate(DerivativeCodeGeneration,method="inline-rungekutta",numberOfIntervals=10000,stopTime=4.0);
 getErrorString();
-readFile("output.log");
 "x[1]";
 val(x[1],0.0);val(x[1],1.0);val(x[1],2.0);
 "x[2]";
@@ -27,7 +26,6 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 //     resultFile = "DerivativeCodeGeneration_res.plt",
 //     messages = ""
 // end SimulationResult;
-// ""
 // ""
 // "x[1]"
 // 0.0

@@ -27,7 +27,6 @@ val(pi.port.flowrate, 1.0);
 val(pu.port.pressure, 1.0);
 val(pu.port.flowrate, 1.0);
 
-readFile("output.log");
 
 
 // Result:
@@ -61,5 +60,4 @@ readFile("output.log");
 // 0.5
 // 0.5
 // -0.5
-// ""
 // endResult

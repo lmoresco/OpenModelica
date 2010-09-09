@@ -13,7 +13,6 @@ simulate(TestModels.RotationalModels.Gears.IdealGear, tolerance=1e-5, numberOfIn
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
 val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
-readFile("output.log");
 system("rm -rf *IdealGear.* *IdealGear_* output.log");
 
 simulate(TestModels.RotationalModels.Gears.IdealGearBrake, tolerance=1e-5, numberOfIntervals=100);
@@ -51,7 +50,6 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // end SimulationResult;
 // {0.0,0.0428007219053217,0.107445682214664,0.0913803271315843,-0.00078214498021506,-0.0623708688962204}
 // {0.0,0.0863368081569939,0.214428853175442,0.181921532634685,-0.00136475865901982,-0.123740910077574}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt",

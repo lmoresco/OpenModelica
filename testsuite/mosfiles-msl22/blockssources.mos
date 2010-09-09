@@ -11,7 +11,6 @@ loadFile("TestModels.mo");
 simulate(TestModels.BlockModels.SourceTests.ConstantTest, tolerance=1e-5, numberOfIntervals=100);
 {val(constant1.y,0.0),val(constant1.y,0.5)};
 {val(derivative1.y,0.0),val(derivative1.y,0.5)};
-readFile("output.log");
 system("rm -rf *ConstantTest.* *ConstantTest_* output.log");
 
 //ExpSineTest
@@ -28,7 +27,6 @@ simulate(TestModels.BlockModels.SourceTests.ExponentialsTest, tolerance=1e-8, nu
 val(exponentials1.y,0.6),val(exponentials1.y,0.8),val(exponentials1.y,1.0)};
 {val(derivative1.y,0.0),val(derivative1.y,0.2),val(derivative1.y,0.4)
 ,val(derivative1.y,0.6),val(derivative1.y,0.8),val(derivative1.y,1.0)};
-readFile("output.log");
 system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
 
 // SineTest
@@ -37,13 +35,11 @@ simulate(TestModels.BlockModels.SourceTests.SineTest, tolerance=1e-5, numberOfIn
 val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 {val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4)
 ,val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
-readFile("output.log");
 system("rm -rf *SineTest.* *SineTest_* output.log");
 
 // PulseTest
 simulate(TestModels.BlockModels.SourceTests.PulseTest, tolerance=1e-5, numberOfIntervals=100);
 {val(p.y,0.0),val(p.y,0.4),val(p.y,0.4000001),val(p.y,0.8),val(p.y,0.8000001)};
-readFile("output.log");
 system("rm -rf *PulseTest.* *PulseTest_* output.log");
 
 
@@ -56,7 +52,6 @@ system("rm -rf *PulseTest.* *PulseTest_* output.log");
 // end SimulationResult;
 // {1.0,1.0}
 // {100000.0,0.0}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.ExpSineTest_res.plt",
@@ -70,7 +65,6 @@ system("rm -rf *PulseTest.* *PulseTest_* output.log");
 // end SimulationResult;
 // {0.0,0.864664716763387,0.981684361111266,0.365400688994776,0.0494516057399615,0.00669254706932298}
 // {0.0,1.50372533908652,0.203507105589141,-4.05950283356187,-0.549462550645551,-0.074361669180935}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.SineTest_res.plt",
@@ -78,13 +72,11 @@ system("rm -rf *PulseTest.* *PulseTest_* output.log");
 // end SimulationResult;
 // {0.0,0.198669330795061,0.38941834230865,0.564642473395035,0.717356090899522,0.841470984807896}
 // {0.0,0.0186631669201252,0.0693371105541329,0.14406146910058,0.2350029716327,0.33454998309724}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SourceTests.PulseTest_res.plt",
 //     messages = ""
 // end SimulationResult;
 // {1.0,0.0,1.0,0.0,1.0}
-// ""
 // 0
 // endResult

@@ -13,7 +13,6 @@ res:=readSimulationResult("DoubleWhenSequential_res.plt",{close},size);
 close:=res[1,1];
 echo(true); // turns on output
 close;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -22,5 +21,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // true
 // 0.0
-// ""
 // endResult

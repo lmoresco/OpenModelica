@@ -13,7 +13,6 @@ simulate(TestModels.RotationalModels.SystemTests.DCMotor, tolerance=1e-5, number
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
 val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
-readFile("output.log");
 system("rm -rf *DCMotor.* *DCMotor_* output.log");
 
 // ElasticBearing
@@ -22,7 +21,6 @@ simulate(TestModels.RotationalModels.SystemTests.ElasticBearing, tolerance=1e-5,
 val(shaft.w,0.6),val(shaft.w,0.8),val(shaft.w,1.0)};
 {val(load.w,0.0),val(load.w,0.2),val(load.w,0.4),
 val(load.w,0.6),val(load.w,0.8),val(load.w,1.0)};
-readFile("output.log");
 system("rm -rf *ElasticBearing.* *ElasticBearing_* output.log");
 
 // First
@@ -31,7 +29,6 @@ simulate(TestModels.RotationalModels.SystemTests.First, tolerance=1e-10);
 val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
 {val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
 val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
-readFile("output.log");
 system("rm -rf *First.* *First_* output.log TestModels.RotationalModels.*");
 
 // Professional.WeakAxis
@@ -42,7 +39,6 @@ val(inertia1.w,120.0),val(inertia1.w,180.0),val(inertia1.w,200.0)};
 val(inertia2.w,120.0),val(inertia2.w,180.0),val(inertia2.w,200.0)};
 {val(inertia3.w,0.0),val(inertia3.w,50.0),val(inertia3.w,100.0),
 val(inertia3.w,120.0),val(inertia3.w,180.0),val(inertia3.w,200.0)};
-readFile("output.log");
 system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 
 // Result:
@@ -54,7 +50,6 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // end SimulationResult;
 // {0.0,0.0172711480172265,0.0580145326172172,0.105827997375912,0.145784590603209,0.165737879321608}
 // {0.0,-0.198603377183309,-0.388524336731096,-0.560622946984718,-0.706176601390361,-0.817829460047303}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt",
@@ -62,7 +57,6 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // end SimulationResult;
 // {0.0,0.275863935348383,0.392417116970391,0.569744893496212,1.23073673905217,1.60127637718387}
 // {0.0,0.00744816387987757,0.0724549729835669,0.181815306391984,0.310155795658677,0.503923417370719}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt",
@@ -70,7 +64,6 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // end SimulationResult;
 // {0.0,-0.15560418929093,-0.537477780553385,-0.693696161003548,-0.90158424392602,-1.12249284118502}
 // {0.0,-0.0155604191673736,-0.053747777604553,-0.0693696164388354,-0.090158423831254,-0.112249284527425}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.Professional.WeakAxis_res.plt",
@@ -79,6 +72,5 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // {0.0,1.55351025869842,0.963995111051157,1.49560074990992,0.179062784161782,-0.217278535570951}
 // {0.0,0.795686614398855,0.787859018094239,0.813524821714491,0.596000807971475,0.533702671058319}
 // {0.0,-0.349196875456189,0.248145868495684,-0.309125573983337,1.22493640550782,1.68357586215371}
-// ""
 // 0
 // endResult

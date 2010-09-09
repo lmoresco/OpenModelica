@@ -27,7 +27,6 @@ x/1000.0; // rounded value to 3 digits
 y/1000.0;
 z/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -38,5 +37,4 @@ readFile("output.log"); // Check that output log is emtpy
 // {1.0,1.0,1.0,1.0}
 // {2.0,2.0,2.0,2.0}
 // {3.0,3.0,3.0,3.0}
-// ""
 // endResult

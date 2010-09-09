@@ -14,7 +14,6 @@ echo(false); // turns of output
 //res:=readSimulationResult("PolynomialEvaluator2_res.plt",{result},size); 
 echo(true); // turns on output
 val(result,0.5);
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -24,5 +23,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // true
 // 16.0
-// ""
 // endResult

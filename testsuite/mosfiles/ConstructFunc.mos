@@ -29,7 +29,6 @@ id;
 di;
 ls;
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -44,5 +43,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 1.0
 // 0.0
 // 4.0
-// ""
 // endResult

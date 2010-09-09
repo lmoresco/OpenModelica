@@ -20,7 +20,6 @@ dim;
 dimsize;
 specsize;
 x;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult

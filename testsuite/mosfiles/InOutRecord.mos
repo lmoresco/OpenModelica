@@ -13,7 +13,6 @@ s:=readSimulationResultSize("m_res.plt");
 res:=readSimulationResult("m_res.plt",{q},s);
 echo(true);
 res[1,1];
-readFile("output.log");
 
 simulate(TestPkg.subm);
 echo(false);
@@ -21,7 +20,6 @@ s:=readSimulationResultSize("TestPkg.subm_res.plt");
 res:=readSimulationResult("TestPkg.subm_res.plt",{q},s);
 echo(true);
 res[1,1];
-readFile("output.log");
 // Result:
 // true
 // record TestPkg.R
@@ -35,12 +33,10 @@ readFile("output.log");
 // end SimulationResult;
 // true
 // 1.0
-// ""
 // record SimulationResult
 //     resultFile = "TestPkg.subm_res.plt",
 //     messages = ""
 // end SimulationResult;
 // true
 // 0.0
-// ""
 // endResult

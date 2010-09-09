@@ -23,7 +23,6 @@ val(y,0.6);
 val(y,0.8);
 val(y,1.0);
 getErrorString();
-readFile("output.log");
 system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log");
 
 
@@ -50,7 +49,6 @@ system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExt
 // 1.12932910341657
 // 1.06963566764904
 // 1.03783726511909
-// ""
 // ""
 // 0
 // endResult

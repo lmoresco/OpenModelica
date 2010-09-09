@@ -10,13 +10,11 @@ simulate(Init1, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 getErrorString();
-readFile("output.log");
 system("rm -rf Init1.* Init1_* output.log");
 simulate(Init2, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(y,0.0);
 getErrorString();
-readFile("output.log");
 system("rm -rf Init2.* Init2_* output.log");
 simulate(Init3, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
@@ -35,7 +33,6 @@ system("rm -rf Init3.* Init3_* output.log");
 // "Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: x
 // Warning: Using overdeterimed solver for initialization. Setting fixed=false to the following variables: y
 // "
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "Init2_res.plt",
@@ -43,7 +40,6 @@ system("rm -rf Init3.* Init3_* output.log");
 // end SimulationResult;
 // 5.0
 // 5.0
-// ""
 // ""
 // 0
 // record SimulationResult

@@ -21,7 +21,6 @@ minimum;
 maximum;
 summ;
 prod;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -33,5 +32,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 6.0
 // 21.0
 // 12.56
-// ""
 // endResult

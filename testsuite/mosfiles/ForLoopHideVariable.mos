@@ -31,7 +31,6 @@ z2/1000.0;
 z3/1000.0;
 z4/1000.0;
 z5/1000.0;
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult

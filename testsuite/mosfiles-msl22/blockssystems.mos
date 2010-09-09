@@ -16,7 +16,6 @@ val(add3.y,0.6),val(add3.y,0.8),val(add3.y,1.0)};
 val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
 {val(sine1.y,0.0),val(sine1.y,0.2),val(sine1.y,0.4),
 val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
-readFile("output.log");
 system("rm -rf *Circuit1.* *Circuit1_* output.log");
 
 //DCmotor
@@ -25,7 +24,6 @@ simulate(TestModels.BlockModels.SystemTests.DCmotor, tolerance=1e-5, numberOfInt
 val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
 {val(firstOrder1.y,0.0),val(firstOrder1.y,0.2),val(firstOrder1.y,0.4),
 val(firstOrder1.y,0.6),val(firstOrder1.y,0.8),val(firstOrder1.y,1.0)};
-readFile("output.log");
 system("rm -rf *DCmotor.* *DCmotor_* output.log");
 
 
@@ -35,7 +33,6 @@ system("rm -rf *DCmotor.* *DCmotor_* output.log");
 val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
 val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
-readFile("output.log");
 system("rm -rf *DCmotorDeadzone.* *DCmotorDeadzone_* output.log");
 
 // SpringMass
@@ -44,7 +41,6 @@ simulate(TestModels.BlockModels.SystemTests.SpringMass, tolerance=1e-5, numberOf
 val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
 {val(integrator2.y,0.0),val(integrator2.y,0.2),val(integrator2.y,0.4),
 val(integrator2.y,0.6),val(integrator2.y,0.8),val(integrator2.y,1.0)};
-readFile("output.log");
 system("rm -rf *SpringMass.* *SpringMass_* output.log");
 
 // Tank
@@ -53,7 +49,6 @@ simulate(TestModels.BlockModels.SystemTests.Tank, tolerance=1e-10, numberOfInter
 val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
 {val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),
 val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
-readFile("output.log");
 system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 
 // Result:
@@ -66,7 +61,6 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // {0.0,-0.0241567375194052,0.0577053998994437,0.0687842115210824,0.070283596598756,0.0704864781476259}
 // {0.0,-6.04900780382282,-6.86762892549697,-6.97841747814076,-6.99341070865672,-6.99544032563561}
 // {0.0,1.12834186438704e-11,1.53761448018486e-11,2.28226326726144e-11,3.07238678942667e-11,3.79488215273535e-11}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotor_res.plt",
@@ -74,7 +68,6 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // end SimulationResult;
 // {0.0,0.00126908885284295,0.00959550319993667,0.0306407307570597,0.0685773156082535,0.126182759507239}
 // {0.0,0.180065265234923,0.320990085429124,0.424768373308709,0.494376882694731,0.533510964171519}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotorDeadzone_res.plt",
@@ -82,7 +75,6 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // end SimulationResult;
 // {0.0,0.0811419490635226,0.226371627821236,0.337091350442629,0.415562882491085,0.46479410890229}
 // {0.0,0.000134293203588852,0.00358135197044368,0.0159592806244529,0.0417119729360711,0.0839839459626537}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.SpringMass_res.plt",
@@ -90,7 +82,6 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // end SimulationResult;
 // {0.0,0.841454863634451,0.304781501568817,-0.857330810623884,-1.02252909516144,0.0577056695509957}
 // {0.0,0.0073473564818909,0.0433603443490117,0.0893321447990363,0.104619360530089,0.0834880287413293}
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.plt",
@@ -98,6 +89,5 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // end SimulationResult;
 // {0.0,3.87243571488101,7.70245387019044,9.54604622064544,9.42519260624459,9.30510888064587}
 // {0.0,0.0196785053164132,0.0277532950659745,0.0308966765537095,0.0307004765537029,0.0305042765536996}
-// ""
 // 0
 // endResult

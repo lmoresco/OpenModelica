@@ -11,7 +11,6 @@ simulate(OneArgBaseFunction,numberOfIntervals=2, tolerance=1e-5); // 2 intervals
 echo(false); // turns of output 
 res:=readSimulationResult("OneArgBaseFunction_res.plt",{t},3); 
 echo(true); // turns on output
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf OneArgBaseFunction.plt OneArgBaseFunction.exe OneArgBaseFunction.c neArgBaseFunction_* output.log"); // remove tmp files.
 
 // Result:

@@ -29,7 +29,6 @@ echo(true); // turns on output
 x;
 y;
 z;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult

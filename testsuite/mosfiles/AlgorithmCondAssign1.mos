@@ -20,7 +20,6 @@ y := floor(y);
 echo(true);
 x/1000.0;
 y/1000.0;
-readFile("output.log");
 // Result:
 // true
 // record SimulationResult
@@ -30,5 +29,4 @@ readFile("output.log");
 // true
 // 400.0
 // 45.0
-// ""
 // endResult

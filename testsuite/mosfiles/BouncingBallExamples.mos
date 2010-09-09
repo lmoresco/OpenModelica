@@ -12,7 +12,6 @@ echo(true);
 val(flying,3.0);
 val(h,1.25);
 val(v_new,3.0);
-readFile("output.log");
 
 system("rm -rf BouncingBallExamples_* BouncingBallExamples.log BouncingBallExamples.libs BouncingBallExamples.exe BouncingBallExamples.cpp BouncingBallExamples.makefile output.log");
 
@@ -32,7 +31,6 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // 0.0
 // 0.225275104799069
 // 0.0
-// ""
 // 0
 // record SimulationResult
 //     resultFile = "BouncingBall_res.plt",

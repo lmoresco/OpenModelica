@@ -15,7 +15,6 @@ val(x[1],1.0);
 val(z,0.0);
 val(z,0.5);
 val(z,1.0);
-readFile("output.log");
 
 // Result:
 // true
@@ -30,5 +29,4 @@ readFile("output.log");
 // 2.0
 // 0.270647459835805
 // 0.0366299451191233
-// ""
 // endResult

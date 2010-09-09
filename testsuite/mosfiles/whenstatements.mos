@@ -17,7 +17,6 @@ val(v,0.91);
 val(w,0.4);
 val(w,0.45);
 val(tt,0.91);
-readFile("output.log");
 
 // Result:
 // true
@@ -34,5 +33,4 @@ readFile("output.log");
 // 0.0
 // 0.594551972203662
 // 0.9000000000002
-// ""
 // endResult

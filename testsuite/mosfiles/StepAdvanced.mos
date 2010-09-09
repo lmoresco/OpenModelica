@@ -13,7 +13,6 @@ res:=readSimulationResult("Step_res.plt",{outPort.signal[1]},size);
 signal:=res[1,1];
 echo(true); // turns on output
 signal;
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -22,5 +21,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // true
 // 1.0
-// ""
 // endResult

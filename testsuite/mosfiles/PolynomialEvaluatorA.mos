@@ -23,7 +23,6 @@ p1/1000.0; // rounded value to 3 digits
 p2/1000.0;
 p3/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -34,5 +33,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 27.0
 // 125.0
 // 512.0
-// ""
 // endResult

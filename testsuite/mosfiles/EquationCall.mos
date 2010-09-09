@@ -11,7 +11,6 @@ simulate(EquationCall,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 
 echo(false); // turns of output 
 res:=readSimulationResult("EquationCall_res.plt",{px, py},3); 
 echo(true); // turns on output
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf PointOnCircle.c PointOnCircle.exe PointOnCircle_.* EquationCall.plt EquationCall.exe EquationCall.c EquationCall_* output.log"); // remove tmp files.
 
 // Result:

@@ -10,7 +10,6 @@ simulate(FunctionInReinit, startTime=0.0, stopTime=1.0, method="rungekutta", tol
 val(x,0.0);
 val(x,0.03);
 val(x,0.07);
-readFile("output.log");
 
 // Result:
 // true
@@ -21,5 +20,4 @@ readFile("output.log");
 // 1.0
 // 0.97
 // 0.48
-// ""
 // endResult

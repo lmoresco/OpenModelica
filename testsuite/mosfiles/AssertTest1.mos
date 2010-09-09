@@ -12,7 +12,6 @@ res:=readSimulationResult("Test1_res.plt",{assertTest.x},size);
 x := res[1,1];
 echo(true); // turns on output
 x;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Test1_* Test1.exe Test1.cpp Test1.makefile Test1.libs Test1.log output.log"); // remove tmp files.
 // Result:
 // true

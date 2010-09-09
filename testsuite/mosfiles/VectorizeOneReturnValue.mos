@@ -22,7 +22,6 @@ echo(true); // turns on output
 s1/1000.0; // rounded value to 3 digits
 s21/1000.0;
 
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf OneReturnValue_* OneReturnValue.exe OneReturnValue.cpp OneReturnValue.makefile OneReturnValue.libs OneReturnValue.log output.log");
 // Result:
 // true

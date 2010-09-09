@@ -13,7 +13,6 @@ echo(false); // turns of output
 //res:=readSimulationResult("NamedCall_res.plt",{p},3); 
 echo(true); // turns on output
 val(p,0.5);
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -23,5 +22,4 @@ readFile("output.log"); // Check that output log is emtpy
 // end SimulationResult;
 // true
 // 38410.0
-// ""
 // endResult

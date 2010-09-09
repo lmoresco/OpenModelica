@@ -12,7 +12,6 @@ simulate(Enumeration8,startTime=0.0, stopTime=1.0, numberOfIntervals=500, tolera
 //val(s, 1.0);
 //val(ss, 1.0);
 
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf Enumeration8_* Enumeration8.exe Enumeration8.cpp Enumeration8.makefile Enumeration8.libs Enumeration8.log output.log");
 // Result:
 // true

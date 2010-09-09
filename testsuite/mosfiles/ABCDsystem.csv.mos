@@ -9,7 +9,6 @@
 loadFile("ABCDsystem.mo");
 simulate(ABCDsystem,startTime=0.0, stopTime=1.0, method="euler", numberOfIntervals=2, tolerance=1e-4, outputFormat="csv"); // 2 intervals == 3 values
 readFile("ABCDsystem_res.csv");
-readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
@@ -21,5 +20,4 @@ readFile("output.log"); // Check that output log is emtpy
 // 0.5,0,0,15,4,3,9,11,42,42,42,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 // 1,0,0,15,4,3,9,11,42,42,42,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 // "
-// ""
 // endResult

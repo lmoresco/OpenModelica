@@ -18,7 +18,6 @@ b := floor(b);
 echo(true);
 a/1000.0;
 b/1000.0;
-readFile("output.log");
 //system("rm -rf CondAssignFunc_* CondAssignFunc.* CondAssignFuncCall_* CondAssignFuncCall.exe CondAssignFuncCall.cpp CondAssignFuncCall.makefile CondAssignFuncCall.libs CondAssignFuncCall.log output.log");
 // Result:
 // true

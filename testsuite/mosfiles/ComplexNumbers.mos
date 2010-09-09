@@ -15,7 +15,6 @@ size := readSimulationResultSize("ComplexNumbers_res.plt");
 //x:=res[1];
 echo(true); // turns on output
 //x;
-readFile("output.log"); // Check that output log is emtpy
 
 // Result:
 // true
@@ -24,5 +23,4 @@ readFile("output.log"); // Check that output log is emtpy
 //     messages = ""
 // end SimulationResult;
 // true
-// ""
 // endResult

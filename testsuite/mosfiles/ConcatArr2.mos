@@ -23,7 +23,6 @@ echo(true); // turns on output
 x:=x/10.0; // rounded value to 1 digits
 y:=y/10.0;
 z:=z/10.0;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf ConcatArr2_* ConcatArr2.exe ConcatArr2.cpp ConcatArr2.makefile ConcatArr2.libs ConcatArr2.log output.log"); // remove tmp files.
 // Result:
 // true

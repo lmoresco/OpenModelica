@@ -23,7 +23,6 @@ xa3;
 xa4;
 y;
 
-readFile("output.log"); // Check that output log is emtpy
 //system("rm -rf AppendElement_* AppendElement.exe AppendElement.cpp AppendElement.makefile AppendElement.libs AppendElement.log output.log");
 // Result:
 // true

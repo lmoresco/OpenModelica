@@ -11,7 +11,6 @@ simulate(WhenPriority,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 
 echo(false); // turns of output 
 res:=readSimulationResult("WhenPriority_res.plt",{close},3); 
 echo(true); // turns on output
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf WhenPriority.plt WhenPriority.c WhenPriority.exe WhenPriority_* output.log"); // remove tmp files.
 
 // Result:

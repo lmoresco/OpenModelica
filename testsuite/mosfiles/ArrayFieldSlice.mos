@@ -16,7 +16,6 @@ echo(true); // turns on output
 name1;
 name2;
 name3;
-readFile("output.log"); // Check that output log is emtpy
 system("rm -rf getPerson_* getPerson.exe getPerson.cpp getPerson.makefile getPerson.libs getPerson.log output.log");
 // Result:
 // true
