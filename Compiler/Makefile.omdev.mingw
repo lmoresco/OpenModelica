@@ -90,16 +90,16 @@ install_scripts:
 
 install: install_scripts # install_doc
 	
-omc_release:
+omc_release: .depend
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_debug:
+omc_debug: .depend
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_profiler:
+omc_profiler: .depend
 	(cd omc_profiler && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_frontend:
+omc_frontend: .depend
 	(cd omc_frontend && $(MAKE) -f Makefile.omdev.mingw)
 
 vctarget:
