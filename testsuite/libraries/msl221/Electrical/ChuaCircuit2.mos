@@ -33,7 +33,8 @@ system("rm Modelica.Electrical.Analog.Examples.ChuaCircuit*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "Nr.v:"
 // 4.0

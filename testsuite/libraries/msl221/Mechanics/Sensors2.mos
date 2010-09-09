@@ -188,7 +188,8 @@ system("rm Modelica.Mechanics.Translational.Examples.Sensors*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.Sensors_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Sensors_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "ForceSensor1.flange_a.s:"
 // -0.5

@@ -292,7 +292,8 @@ system("rm Modelica.Mechanics.Translational.Examples.Oscillator*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.Oscillator_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Oscillator_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "SlidingMass1.s:"
 // -0.5

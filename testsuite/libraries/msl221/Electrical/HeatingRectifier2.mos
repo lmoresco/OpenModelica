@@ -76,7 +76,8 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingRectifier*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "HeatingDiode1.v:"
 // 0.0

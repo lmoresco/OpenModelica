@@ -349,7 +349,8 @@ system("rm Modelica.Mechanics.Translational.Examples.InitialConditions*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "M3.s:"
 // 4.5

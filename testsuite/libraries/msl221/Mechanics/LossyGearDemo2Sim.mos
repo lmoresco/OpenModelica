@@ -454,7 +454,8 @@ system("rm Modelica.Mechanics.Rotational.Examples.LossyGearDemo2*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.LossyGearDemo2_res.plt"
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.LossyGearDemo2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "PowerLoss:"
 // 0.0

@@ -180,7 +180,8 @@ system("rm Modelica.Mechanics.Translational.Examples.WhyArrows*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "Fixed3.flange_b.f:"
 // 9.9

@@ -33,7 +33,8 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingMOSInverter*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "Capacitor1.v:"
 // 0.0

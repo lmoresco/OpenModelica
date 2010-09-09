@@ -321,7 +321,8 @@ system("rm Modelica.Mechanics.Rotational.Examples.First*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.First_res.plt"
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.First_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "fixed.flange_b.tau:"
 // 0.0

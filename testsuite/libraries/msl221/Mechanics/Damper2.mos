@@ -321,7 +321,8 @@ system("rm Modelica.Mechanics.Translational.Examples.Damper*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.Damper_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Damper_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "SlidingMass1.s:"
 // 3.0

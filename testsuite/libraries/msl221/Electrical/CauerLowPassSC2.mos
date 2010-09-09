@@ -49,7 +49,8 @@ system("rm Modelica.Electrical.Analog.Examples.CauerLowPassSC*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "C5.v:"
 // -0.0

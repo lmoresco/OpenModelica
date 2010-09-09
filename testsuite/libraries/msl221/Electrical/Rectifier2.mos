@@ -13,7 +13,8 @@ system("rm Modelica.Electrical.Analog.Examples.Rectifier*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.Rectifier_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.Rectifier_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 565.685424949238
 // 516.772017805705

@@ -68,7 +68,8 @@ system("rm Modelica.Mechanics.Translational.Examples.Accelerate*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.Accelerate_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Accelerate_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "Accelerate1.v:"
 // 0.0

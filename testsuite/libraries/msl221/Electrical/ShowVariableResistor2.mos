@@ -42,7 +42,8 @@ system("rm Modelica.Electrical.Analog.Examples.ShowVariableResistor*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "Ramp1.y:"
 // 2.0

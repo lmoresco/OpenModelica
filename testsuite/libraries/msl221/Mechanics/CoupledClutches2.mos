@@ -671,7 +671,8 @@ system("rm Modelica.Mechanics.Rotational.Examples.CoupledClutches*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.CoupledClutches_res.plt"
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.CoupledClutches_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "J1.phi:"
 // 0.0

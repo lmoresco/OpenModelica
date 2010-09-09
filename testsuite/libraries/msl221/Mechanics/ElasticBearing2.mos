@@ -336,7 +336,8 @@ system("rm Modelica.Mechanics.Rotational.Examples.ElasticBearing*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.ElasticBearing_res.plt"
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.ElasticBearing_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "shaft.phi:"
 // 0.0

@@ -68,7 +68,8 @@ system("rm Modelica.Electrical.Analog.Examples.CharacteristicThyristors*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "IdealThyristor1.v:"
 // 0.0

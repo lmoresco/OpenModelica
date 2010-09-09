@@ -121,7 +121,8 @@ system("rm Modelica.Mechanics.Translational.Examples.SignConvention*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.SignConvention_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.SignConvention_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.03125

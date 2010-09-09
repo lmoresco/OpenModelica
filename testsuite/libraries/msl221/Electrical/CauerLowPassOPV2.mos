@@ -112,7 +112,8 @@ system("rm Modelica.Electrical.Analog.Examples.CauerLowPassOPV*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.plt"
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "R1.v:"
 // -0.0
