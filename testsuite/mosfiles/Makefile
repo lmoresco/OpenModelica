@@ -48,7 +48,6 @@ InlineSolverCodeGenerationEuler.mos \
 InlineSolverCodeGenerationRK.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
-invertedPendulum.mos \
 HelloWorld.mos \
 LinearSysEq.mos \
 LotkaVolterra.mos \

@@ -325,6 +325,7 @@ Integer.mo \
 IntMul.mo \
 IntPow.mo \
 IntSub.mo \
+InvertedPendulumTotal.mo \
 LessThanEqual.mo \
 LessThan.mo \
 Log10.mo \
