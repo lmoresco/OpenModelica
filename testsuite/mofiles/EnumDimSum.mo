@@ -24,6 +24,6 @@ end EnumDimSum;
 //   Real y;
 // equation
 //   x = X[EnumDimSum.E.one] + (X[EnumDimSum.E.two] + X[EnumDimSum.E.three]);
-//   y = X[EnumDimSum.one] ^ 2.0 + (X[EnumDimSum.two] ^ 2.0 + X[EnumDimSum.three] ^ 2.0);
+//   y = X[EnumDimSum.E.one] ^ 2.0 + (X[EnumDimSum.E.two] ^ 2.0 + X[EnumDimSum.E.three] ^ 2.0);
 // end EnumDimSum;
 // endResult

@@ -205,6 +205,7 @@ Enum7.mo \
 Enum8.mo \
 Enum9.mo \
 EnumDimSum.mo \
+EnumFor.mo \
 EnumInvalidLiteral.mo \
 EnumRange.mo \
 Equals.mo \

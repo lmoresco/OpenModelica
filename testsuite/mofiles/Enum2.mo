@@ -21,8 +21,8 @@ end Enumeration2;
 //   Real x[Enumeration2.Color.blue];
 //   Real x[Enumeration2.Color.yellow];
 // equation
-//   x[1] = 1.0;
-//   x[2] = 1.0;
-//   x[3] = 1.0;
+//   x[Enumeration2.Color.green] = 1.0;
+//   x[Enumeration2.Color.blue] = 1.0;
+//   x[Enumeration2.Color.yellow] = 1.0;
 // end Enumeration2;
 // endResult
