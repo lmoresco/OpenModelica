@@ -30,7 +30,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WhenStat3_res.plt"
+//     resultFile = "WhenStat3_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 1.0

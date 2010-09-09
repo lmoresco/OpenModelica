@@ -95,7 +95,8 @@ system("rm -rf tplTest*");
 // true
 // true
 // record SimulationResult
-//     resultFile = "TrapezoidTest_res.plt"
+//     resultFile = "TrapezoidTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.5
@@ -106,14 +107,16 @@ system("rm -rf tplTest*");
 // 0
 // true
 // record SimulationResult
-//     resultFile = "BearingFrictionTest_res.plt"
+//     resultFile = "BearingFrictionTest_res.plt",
+//     messages = ""
 // end SimulationResult;
-// {0.0,0.121904300704784,0.228947995320593,0.322942642831153,0.405478967735732,0.477953780340487,0.541593615408751,0.597475489208024,0.646545126226023,0.689632964007956,0.727468206966025}
+// {0.0,0.121915698909306,0.228954550798731,0.32294215609473,0.405471822793369,0.477946313512621,0.541587511889644,0.597471275143017,0.646542648508541,0.689632036913323,0.727468272989308}
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "LossyGearDemo1_res.plt"
+//     resultFile = "LossyGearDemo1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // -1.0
@@ -122,32 +125,35 @@ system("rm -rf tplTest*");
 // 0.0
 // -1.0
 // -1.0
-// 0.12337752370201
-// 0.422806001588781
+// 0.123397894329822
+// 0.422746889669435
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "InputOutput_res.plt"
+//     resultFile = "InputOutput_res.plt",
+//     messages = ""
 // end SimulationResult;
-// 0.316059910058819
+// 0.316065010021505
 // 1.0
 // 2.0
-// 4.31605991005882
+// 4.31606501002151
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "InitTest_res.plt"
+//     resultFile = "InitTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.500000000001762
-// 0.0150331845518451
-// 0.0152186132517958
+// 0.01503415769575
+// 0.0152217681027961
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "FuncCrossTest_res.plt"
+//     resultFile = "FuncCrossTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // -1.0
 // 5.0
@@ -156,7 +162,8 @@ system("rm -rf tplTest*");
 // 0
 // true
 // record SimulationResult
-//     resultFile = "MatrixTest_res.plt"
+//     resultFile = "MatrixTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 100.0
 // 132.0
@@ -165,13 +172,15 @@ system("rm -rf tplTest*");
 // 0
 // true
 // record SimulationResult
-//     resultFile = "avgtest_res.plt"
+//     resultFile = "avgtest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 3.6
 // 0
 // true
 // record SimulationResult
-//     resultFile = "tplTest_res.plt"
+//     resultFile = "tplTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // -1.0

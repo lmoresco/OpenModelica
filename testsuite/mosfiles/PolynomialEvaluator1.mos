@@ -19,7 +19,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PositionalCall_res.plt"
+//     resultFile = "PositionalCall_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 38410.0

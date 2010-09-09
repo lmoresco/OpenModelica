@@ -8,7 +8,6 @@
 loadFile("ModelicaUtilities.mo");
 ModelicaUtilities.myExtFunction("abc 123");
 simulate(ModelicaUtilities);
-readFile("output.log");
 
 // Result:
 // true
@@ -17,9 +16,9 @@ readFile("output.log");
 // "OK
 // "
 // record SimulationResult
-//     resultFile = "ModelicaUtilities_res.plt"
-// end SimulationResult;
-// "abc was normal - this is formatted abc
+//     resultFile = "ModelicaUtilities_res.plt",
+//     messages = "abc was normal - this is formatted abc
 // abc was error - this is formatted error abc
 // "
+// end SimulationResult;
 // endResult

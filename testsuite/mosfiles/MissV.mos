@@ -18,12 +18,12 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // "class MissV
-// Real pb(start = 12000000.0);
-// Real Qb;
-// Real pa(start = 12000000.0);
-// Real Qa;
-// parameter Real s = 0.001;
-// parameter Real v = 5000.0;
+//   Real pb(start = 12000000.0);
+//   Real Qb;
+//   Real pa(start = 12000000.0);
+//   Real Qa;
+//   parameter Real s = 0.001;
+//   parameter Real v = 5000.0;
 // equation
 //   der(pb) = (Qb - v) / s;
 //   der(pa) = (Qa - v) / s;
@@ -32,7 +32,8 @@ readFile("output.log"); // Check that output log is emtpy
 // end MissV;
 // "
 // record SimulationResult
-//     resultFile = "MissV_res.plt"
+//     resultFile = "MissV_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 7000000.0
 // 7000000.0

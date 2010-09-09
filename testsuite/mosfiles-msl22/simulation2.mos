@@ -105,65 +105,72 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TimeVaryingLinSys_res.plt"
+//     resultFile = "TimeVaryingLinSys_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.740874716990085
-// 2.00000000000034
+// 0.740982142486398
+// 2.00085125296138
 // 0.0
-// 0.707300226407899
-// 0.999999999999836
+// 0.707214286010267
+// 0.999318997629908
 // 0.0
-// 0.103650113203956
-// -1.03219861644569e-13
+// 0.103607143005508
+// -0.000340501184430301
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "NonLinSys_res.plt"
+//     resultFile = "NonLinSys_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.88088057724555
-// 0.854031363919528
+// 0.880890216829123
+// 0.854039214274526
 // 0
 // 0
 // record SimulationResult
-//     resultFile = "dae1_res.plt"
+//     resultFile = "dae1_res.plt",
+//     messages = ""
 // end SimulationResult;
-// 1.00066080211634
-// 0.000168488571094471
+// 1.00067064865227
+// 0.00016753680645046
 // record SimulationResult
-//     resultFile = "dae2_res.plt"
+//     resultFile = "dae2_res.plt",
+//     messages = ""
 // end SimulationResult;
-// 0.666665089163638
-// 0.5000014076278
+// 0.666665101830573
+// 0.50000115490964
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "NonLinSys3_res.plt"
+//     resultFile = "NonLinSys3_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
-// 1.21473014906086
-// 1.64262701835091
+// 1.21472971518614
+// 1.64262702204521
 // 2.0
-// 2.26876916721021
-// 2.92573132674558
+// 2.26876840858057
+// 2.92573133188799
 // 0
 // 0
 // true
 // true
 // record SimulationResult
-//     resultFile = "Test3PhaseSystems.Test3PhaseSystem_res.plt"
+//     resultFile = "Test3PhaseSystems.Test3PhaseSystem_res.plt",
+//     messages = ""
 // end SimulationResult;
-// -0.00869273954826455
-// -0.0218917584794523
-// 0.0305844980277178
+// -0.00869273954826425
+// -0.021891758479452
+// 0.0305844980277181
 // 0
 // 0
 // true
 // record SimulationResult
-//     resultFile = "BooleanModel_res.plt"
+//     resultFile = "BooleanModel_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // 1.0
@@ -175,10 +182,11 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 0
 // true
 // record SimulationResult
-//     resultFile = "LargeSteps_res.plt"
+//     resultFile = "LargeSteps_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
-// -0.762648169337983
+// -0.762647905757618
 // 0
 // 0
 // endResult

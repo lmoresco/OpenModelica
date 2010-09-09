@@ -9,14 +9,13 @@
 // 
 loadFile("ExtObjStringParam.mo");
 simulate(ExtObjStringParam, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
-readFile("output.log");
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ExtObjStringParam_res.plt"
-// end SimulationResult;
-// "constructors says 'sampledata.xml'
+//     resultFile = "ExtObjStringParam_res.plt",
+//     messages = "constructors says 'sampledata.xml'
 // destructor says 'sampledata.xml'
 // "
+// end SimulationResult;
 // endResult

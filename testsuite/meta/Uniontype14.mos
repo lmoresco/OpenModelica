@@ -12,7 +12,7 @@ e2 := Uniontype14.func(e1,-4);
 // Result:
 // true
 // record Uniontype14.INT
-//   int = 17
+//     int = 17
 // end Uniontype14.INT;
 // record Uniontype14.CALL
 //     args = {record Uniontype14.INT

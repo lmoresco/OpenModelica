@@ -10,10 +10,11 @@ loadFile("TupleReturn.mo");
 simulate(TupleReturn, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
 readFile("output.log");
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TupleReturn_res.plt"
+//     resultFile = "TupleReturn_res.plt",
+//     messages = ""
 // end SimulationResult;
 // endResult
-

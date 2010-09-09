@@ -17,12 +17,13 @@ val(y,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "DAEexample_res.plt"
+//     resultFile = "DAEexample_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.9
-// 0.981488318374134
-// 1.20168359652666
+// 0.981118176070861
+// 1.20107053151545
 // 0.512239999389552
-// 0.653185973887926
-// 1.02593908837436
+// 0.65309155009224
+// 1.02583623471825
 // endResult

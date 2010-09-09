@@ -11,7 +11,8 @@ val(r,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ExtendsBasic_res.plt"
+//     resultFile = "ExtendsBasic_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // endResult

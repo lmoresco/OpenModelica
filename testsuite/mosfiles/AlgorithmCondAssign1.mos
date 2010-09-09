@@ -24,7 +24,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "CondAssign_res.plt"
+//     resultFile = "CondAssign_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 400.0

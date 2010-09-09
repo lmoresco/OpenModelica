@@ -23,7 +23,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "DVSSTest_res.plt"
+//     resultFile = "DVSSTest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 56.0

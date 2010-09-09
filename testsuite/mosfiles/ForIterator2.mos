@@ -19,7 +19,8 @@ val(i4,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ForIterator2_res.plt"
+//     resultFile = "ForIterator2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 54.0
 // 10.5

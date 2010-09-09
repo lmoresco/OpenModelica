@@ -18,11 +18,12 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Delay_res.plt"
+//     resultFile = "Delay_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.59847214410396
 // 0.283662185463226
 // -0.961712903426793
-// 0.141120008059877
+// 0.141120008059867
 // ""
 // endResult

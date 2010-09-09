@@ -12,7 +12,8 @@ val(a,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "MatchCase5_res.plt"
+//     resultFile = "MatchCase5_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // endResult

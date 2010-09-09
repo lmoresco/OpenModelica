@@ -25,7 +25,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BouncingBall_res.plt"
+//     resultFile = "BouncingBall_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // {0.0,-0.001,-1.962,-3.924,-4.203,3.781,3.781,3.781,2.098,0.136,-1.826}

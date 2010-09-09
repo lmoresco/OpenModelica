@@ -30,13 +30,15 @@ readFile("output.log");
 // end TestPkg.R;
 // true
 // record SimulationResult
-//     resultFile = "m_res.plt"
+//     resultFile = "m_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 1.0
 // ""
 // record SimulationResult
-//     resultFile = "TestPkg.subm_res.plt"
+//     resultFile = "TestPkg.subm_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 0.0

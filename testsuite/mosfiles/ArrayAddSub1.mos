@@ -33,7 +33,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "AddSub1_res.plt"
+//     resultFile = "AddSub1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 2.0

@@ -20,10 +20,12 @@ val(zi[1],2.0);
 val(zi[2],2.0);
 val(zi[3],2.0);
 
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Cross_res.plt"
+//     resultFile = "Cross_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.0
@@ -38,4 +40,3 @@ val(zi[3],2.0);
 // 14.0
 // -22.0
 // endResult
-

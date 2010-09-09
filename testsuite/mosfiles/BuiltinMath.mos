@@ -24,7 +24,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BuiltinMath_res.plt"
+//     resultFile = "BuiltinMath_res.plt",
+//     messages = ""
 // end SimulationResult;
 // {0.0,0.841470984807897}
 // {1.0,0.54030230586814}

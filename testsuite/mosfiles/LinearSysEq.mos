@@ -33,23 +33,24 @@ readFile("output.log");
 // Result:
 // true
 // "class LinearSysEq
-// Real pu.port.pressure;
-// Real pu.port.flowrate;
-// Real pi.port.pressure;
-// Real pi.port.flowrate;
-// parameter Real pi.a = 1.0;
+//   Real pu.port.pressure;
+//   Real pu.port.flowrate;
+//   Real pi.port.pressure;
+//   Real pi.port.flowrate;
+//   parameter Real pi.a = 1.0;
 // equation
 //   pu.port.flowrate = pu.port.pressure - time;
 //   pi.port.pressure = pi.port.flowrate * pi.a;
 //   pu.port.flowrate + pi.port.flowrate = 0.0;
-// pu.port.pressure = pi.port.pressure;
+//   pu.port.pressure = pi.port.pressure;
 // end LinearSysEq;
 // "
 // record SimulationResult
-//     resultFile = "LinearSysEq_res.plt"
+//     resultFile = "LinearSysEq_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.0
+// -0.0
 // 0.0
 // 0.0
 // 0.25

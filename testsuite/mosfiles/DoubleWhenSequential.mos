@@ -17,7 +17,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "DoubleWhenSequential_res.plt"
+//     resultFile = "DoubleWhenSequential_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 0.0

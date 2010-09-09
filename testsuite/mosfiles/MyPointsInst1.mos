@@ -31,7 +31,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "MyPointsInst1_res.plt"
+//     resultFile = "MyPointsInst1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // {1.0,1.0,1.0,1.0}

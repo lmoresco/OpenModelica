@@ -13,7 +13,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ABCDsystem_res.empty"
+//     resultFile = "ABCDsystem_res.empty",
+//     messages = ""
 // end SimulationResult;
 // "No such file"
 // ""

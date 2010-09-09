@@ -12,6 +12,7 @@ BuiltinBoolean.func(true,true);
 BuiltinBoolean.func(false,true);
 BuiltinBoolean.func(false,false);
 
+
 // Result:
 // true
 // (false,true,false)
@@ -19,4 +20,3 @@ BuiltinBoolean.func(false,false);
 // (false,true,true)
 // (false,false,true)
 // endResult
-

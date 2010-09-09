@@ -12,7 +12,8 @@ val(area,1.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "PartialFn8_res.plt"
+//     resultFile = "PartialFn8_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 2.0

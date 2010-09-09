@@ -34,11 +34,12 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Switch_res.plt"
+//     resultFile = "Switch_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 1.0
-// 0.0
+// 4.58063459683278e-73
 // 0.0
 // 1.0
 // 1.0

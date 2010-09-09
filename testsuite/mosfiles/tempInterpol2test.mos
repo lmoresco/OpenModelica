@@ -11,12 +11,13 @@ simulate(tempInterpol2test, tolerance=1e-5, numberOfIntervals=100);
 val(y[1,1],0.0);
 val(y[1,2],0.0);
 
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "tempInterpol2test_res.plt"
+//     resultFile = "tempInterpol2test_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.6
 // 2.6
 // endResult
-

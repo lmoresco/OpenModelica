@@ -25,7 +25,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ArrayReduce_res.plt"
+//     resultFile = "ArrayReduce_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // -1.0

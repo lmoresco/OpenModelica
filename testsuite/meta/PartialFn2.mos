@@ -12,7 +12,8 @@ val(i2,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "PartialFn2_res.plt"
+//     resultFile = "PartialFn2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 3.0
 // endResult

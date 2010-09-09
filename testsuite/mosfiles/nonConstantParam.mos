@@ -11,8 +11,9 @@ getErrorString();
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica_Electrical_Machines_Examples_DCEE_start_res.plt"
+//     resultFile = "Modelica_Electrical_Machines_Examples_DCEE_start_res.plt",
+//     messages = ""
 // end SimulationResult;
-// {0.0,0.0,0.0,31.6586838204096,29.8375960850196,29.257507557906,29.4976233932397,29.4457525807494,29.4528255597077,29.4525971840022,29.4523796876553}
+// {0.0,0.0,4.14821445727266e-07,31.6586181679798,29.8375987655596,29.2573539431264,29.4976760992995,29.4457434812327,29.4528139199558,29.4525854828557,29.4523710914568}
 // ""
 // endResult

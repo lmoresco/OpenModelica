@@ -14,10 +14,11 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ideal_diode_res.plt"
+//     resultFile = "ideal_diode_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.0
-// 0.853901255599747
+// 0.853903940405634
 // ""
 // endResult

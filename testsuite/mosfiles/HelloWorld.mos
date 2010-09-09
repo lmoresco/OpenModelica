@@ -20,7 +20,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "HelloWorld_res.plt"
+//     resultFile = "HelloWorld_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // {1.0,0.999,0.606,0.367}

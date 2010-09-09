@@ -22,16 +22,17 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "testalgwhen_res.plt"
+//     resultFile = "testalgwhen_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
-// 2.20000000000009
-// 2.20000000000009
+// 2.20000000000005
+// 2.20000000000005
 // 1.0
-// 1.20000000000009
-// 3.91920622232044
+// 1.20000000000005
+// 3.91936946881424
 // 0.0
-// 0.594534891892803
-// 0.9000000000004
+// 0.594551972203662
+// 0.9000000000002
 // ""
 // endResult

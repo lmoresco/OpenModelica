@@ -13,7 +13,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ABCDsystem_res.csv"
+//     resultFile = "ABCDsystem_res.csv",
+//     messages = ""
 // end SimulationResult;
 // ""time","$dummy","der($dummy)","u[1]","u[2]","u[3]","u[4]","u[5]","y[1]","y[2]","y[3]","D[1,1]","D[1,2]","D[1,3]","D[1,4]","D[1,5]","D[2,1]","D[2,2]","D[2,3]","D[2,4]","D[2,5]","D[3,1]","D[3,2]","D[3,3]","D[3,4]","D[3,5]",
 // 0,0,0,15,4,3,9,11,42,42,42,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,

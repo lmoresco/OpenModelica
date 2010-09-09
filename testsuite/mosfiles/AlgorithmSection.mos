@@ -24,7 +24,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "AlgorithmSection_res.plt"
+//     resultFile = "AlgorithmSection_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 7.0

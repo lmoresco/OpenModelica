@@ -21,7 +21,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "when_sorting_res.plt"
+//     resultFile = "when_sorting_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // 1.0

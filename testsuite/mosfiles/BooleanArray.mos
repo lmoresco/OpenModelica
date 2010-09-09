@@ -18,7 +18,8 @@ val(resArr[5],0.5);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BooleanArray_res.plt"
+//     resultFile = "BooleanArray_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // 0.0

@@ -13,7 +13,8 @@ val(b,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "MatchCase8_res.plt"
+//     resultFile = "MatchCase8_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 7.0
 // 8.0

@@ -11,7 +11,8 @@ getErrorString(); // simulation failed, check error string.
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Simulation failed.
+//     resultFile = "",
+//     messages = "Simulation failed.
 // Error: Too many equations, overdetermined system. The model has 2 equation(s) and 1 variable(s)
 // "
 // end SimulationResult;

@@ -21,7 +21,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WhenEquation1_res.plt"
+//     resultFile = "WhenEquation1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 1.0

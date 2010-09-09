@@ -11,7 +11,8 @@ val(y,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PartialFn11_res.plt"
+//     resultFile = "PartialFn11_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 18.0
 // endResult

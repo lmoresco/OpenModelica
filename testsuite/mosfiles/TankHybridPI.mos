@@ -34,7 +34,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TankHybridPI_res.plt"
+//     resultFile = "TankHybridPI_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 0.439

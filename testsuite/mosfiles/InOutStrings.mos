@@ -33,14 +33,16 @@ system("rm -f c1.makefile c1.log c1.libs c1_init.txt c1_functions.cpp c1.cpp ext
 // 0
 // true
 // record SimulationResult
-//    resultFile = "c1_res.plt"
+//     resultFile = "c1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 4.0
 // 3
 // ""
 // record SimulationResult
-//    resultFile = "c2_res.plt"
+//     resultFile = "c2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 4.0

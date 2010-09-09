@@ -13,7 +13,8 @@ val(x[3,3],0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Identity_res.plt"
+//     resultFile = "Identity_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // 0.0

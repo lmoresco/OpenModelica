@@ -23,7 +23,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "EventIteration_res.plt"
+//     resultFile = "EventIteration_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // 2.0

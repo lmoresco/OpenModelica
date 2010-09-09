@@ -15,7 +15,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "FunctionIndirectRecursion_res.plt"
+//     resultFile = "FunctionIndirectRecursion_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 120.0

@@ -11,7 +11,8 @@ val(X[2,2],0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Riccati_res.plt"
+//     resultFile = "Riccati_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.582531754730548
 // -0.71650635094611

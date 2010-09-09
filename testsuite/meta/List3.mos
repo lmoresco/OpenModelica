@@ -12,7 +12,8 @@ val(c,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "List3_res.plt"
+//     resultFile = "List3_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 3.0
 // endResult

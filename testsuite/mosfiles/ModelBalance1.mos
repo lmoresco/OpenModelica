@@ -12,7 +12,8 @@ val(y,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ModelBalance1_res.plt"
+//     resultFile = "ModelBalance1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 4.0
 // endResult

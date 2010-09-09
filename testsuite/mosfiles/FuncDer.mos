@@ -39,7 +39,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "FuncDer_res.plt"
+//     resultFile = "FuncDer_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 150.413

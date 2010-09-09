@@ -33,7 +33,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ConstructFunc_res.plt"
+//     resultFile = "ConstructFunc_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 0.0

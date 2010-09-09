@@ -10,7 +10,8 @@ getErrorString(); // simulation failed, check error string.
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Simulation failed.
+//     resultFile = "",
+//     messages = "Simulation failed.
 // Error: Index out of bounds. Adressing position: p[1] and position p[2] and position p[3], while array length is: 3
 // Error: Error occured while flattening model CyclicPerm
 // "

@@ -15,7 +15,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "EnumArray_res.plt"
+//     resultFile = "EnumArray_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 4

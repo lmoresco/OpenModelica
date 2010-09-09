@@ -19,7 +19,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PolynomialEvaluator2_res.plt"
+//     resultFile = "PolynomialEvaluator2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 16.0

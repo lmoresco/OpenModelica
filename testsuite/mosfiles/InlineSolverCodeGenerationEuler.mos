@@ -24,7 +24,8 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "DerivativeCodeGeneration_res.plt"
+//     resultFile = "DerivativeCodeGeneration_res.plt",
+//     messages = ""
 // end SimulationResult;
 // ""
 // ""
@@ -38,14 +39,14 @@ val(z,0.0);val(z,1.0);val(z,2.0);
 // 4.0
 // "mixed.v1"
 // 0.0
-// -0.443713837342045
-// -0.753119957083125
+// -0.441132738433596
+// -0.749031214573482
 // "y"
 // 2.0
 // 3.0
 // 4.0
 // "z"
 // 15.0
-// 15.5
-// 17.0
+// 15.502
+// 17.004
 // endResult

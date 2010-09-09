@@ -20,16 +20,17 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "LinSys_res.plt"
+//     resultFile = "LinSys_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
-// 2.40070535352173
-// 3.41881965679033
+// 2.40070553464321
+// 3.41881905741416
 // 2.0
 // 2.0
 // 2.0
 // 3.0
-// 2.09929464647825
-// 1.58118034320971
+// 2.09929446535679
+// 1.58118094258584
 // ""
 // endResult

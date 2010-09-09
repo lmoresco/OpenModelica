@@ -24,7 +24,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PreAndAliasedVar_res.plt"
+//     resultFile = "PreAndAliasedVar_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 0.0

@@ -19,10 +19,12 @@ res2[1,1];
 (if res2[1,s]>59 and res2[1,s] < 100 then 1 else 0);
 (if res3[1,s] > -1e-2 then 1 else 0);
 readFile("output.log");
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BouncingBall_res.plt"
+//     resultFile = "BouncingBall_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 1.0
@@ -32,4 +34,3 @@ readFile("output.log");
 // 1
 // ""
 // endResult
-

@@ -20,14 +20,15 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "val_res.plt"
+//     resultFile = "val_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 2.0
-// 0.270672740527608
-// 0.0366312777773877
+// 0.270647459835805
+// 0.0366299451191233
 // 2.0
-// 0.270672740527608
-// 0.0366312777773877
+// 0.270647459835805
+// 0.0366299451191233
 // ""
 // endResult

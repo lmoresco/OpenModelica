@@ -25,19 +25,21 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BouncingBallExamples_res.plt"
+//     resultFile = "BouncingBallExamples_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 0.0
-// 0.225300948652579
+// 0.225275104799069
 // 0.0
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "BouncingBall_res.plt"
+//     resultFile = "BouncingBall_res.plt",
+//     messages = ""
 // end SimulationResult;
-// 0.345593132749336
-// 0.233930804142241
-// 0.100118046922844
+// 0.345548867170653
+// 0.233746322731428
+// 0.100130811193252
 // 0
 // endResult

@@ -24,12 +24,13 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "IfEquation3_res.plt"
+//     resultFile = "IfEquation3_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 1.0
 // 0.0
-// 0.0
+// -6.79036310017274e-53
 // 1.0
 // 1.0
 // 2.0

@@ -19,7 +19,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Interpol2Test_res.plt"
+//     resultFile = "Interpol2Test_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 10.5
 // 35.0

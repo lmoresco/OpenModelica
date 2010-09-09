@@ -14,15 +14,16 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // "class Sign
-// Real r1;
-// Real r2;
+//   Real r1;
+//   Real r2;
 // equation
-// r1 = sign(time);
-// r2 = sign(-time);
+//   r1 = sign(time);
+//   r2 = sign(-time);
 // end Sign;
 // "
 // record SimulationResult
-//     resultFile = "Sign_res.plt"
+//     resultFile = "Sign_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // -1.0

@@ -10,9 +10,9 @@ loadFile("Recursive.mo");
 i := Recursive.facMetaModelica(8);
 i := Recursive.facModelica(6);
 
+
 // Result:
 // true
 // 40320
 // 720
 // endResult
-

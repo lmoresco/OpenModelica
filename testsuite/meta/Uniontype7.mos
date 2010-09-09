@@ -12,7 +12,8 @@ val(a,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "Uniontype7_res.plt"
+//     resultFile = "Uniontype7_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 5.0
 // endResult

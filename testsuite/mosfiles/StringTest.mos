@@ -11,7 +11,8 @@ readFile("output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Simulation failed.
+//     resultFile = "",
+//     messages = "Simulation failed.
 // "
 // end SimulationResult;
 // "x reached 0.1 at time 0.101 b =true i =     66

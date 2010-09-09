@@ -48,7 +48,8 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Reductions_res.plt"
+//     resultFile = "Reductions_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // 45.0

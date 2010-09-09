@@ -17,13 +17,14 @@ x := floor(x);
 echo(true);
 x/1000.0;
 readFile("output.log");
+
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "DAEexample_res.plt"
+//     resultFile = "DAEexample_res.plt",
+//     messages = ""
 // end SimulationResult;
 // true
 // {0.588,0.588,0.631,0.749,0.919}
 // ""
 // endResult
-

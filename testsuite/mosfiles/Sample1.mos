@@ -19,7 +19,8 @@ val(storage,9.1);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Sample1_res.plt"
+//     resultFile = "Sample1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 0.0
 // 1000.0

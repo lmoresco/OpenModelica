@@ -32,19 +32,22 @@ simulate(Alg4);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Alg1_res.plt"
+//     resultFile = "Alg1_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 2.0
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "Alg2_res.plt"
+//     resultFile = "Alg2_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 1.0
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "Alg3_res.plt"
+//     resultFile = "Alg3_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 4.0
 // 3.0
@@ -52,7 +55,8 @@ simulate(Alg4);
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "Simulation failed.
+//     resultFile = "",
+//     messages = "Simulation failed.
 // Error: Internal error Inverse Algorithm needs to be solved for in   x := 1.0 + y;
 // . This is not implemented yet.
 // 

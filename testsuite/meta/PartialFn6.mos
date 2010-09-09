@@ -12,7 +12,8 @@ val(x,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "PartialFn6_res.plt"
+//     resultFile = "PartialFn6_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 5.0
 // endResult

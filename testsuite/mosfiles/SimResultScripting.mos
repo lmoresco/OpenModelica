@@ -24,7 +24,8 @@ rf + " " + String(c);
 // 1.0
 // 1.0
 // record SimulationResult
-//     resultFile = "SimResultScripting_res.plt"
+//     resultFile = "SimResultScripting_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "SimResultScripting_res.plt"
 // "SimResultScripting_res.plt"

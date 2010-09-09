@@ -17,11 +17,12 @@ readFile("output.log"); // Check that output log is emtpy
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "dertest_res.plt"
+//     resultFile = "dertest_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 10.0
-// 4.1982410203818
+// 4.19818865479138
 // -1.0
-// -1.42916997163095
+// -1.42916471588056
 // ""
 // endResult
