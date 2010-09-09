@@ -68,6 +68,7 @@ Sample1.mos \
 SemiLinear.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
+SimResultScripting.mos \
 simulation.mos \
 SliceAssignment.mos \
 StepAdvanced.mos \
