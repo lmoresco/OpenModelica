@@ -17,9 +17,9 @@ end Enumeration2;
 
 // Result:
 // class Enumeration2
-// Real x[Color.green];
-// Real x[Color.blue];
-// Real x[Color.yellow];
+//   Real x[Enumeration2.Color.green];
+//   Real x[Enumeration2.Color.blue];
+//   Real x[Enumeration2.Color.yellow];
 // equation
 //   x[1] = 1.0;
 //   x[2] = 1.0;

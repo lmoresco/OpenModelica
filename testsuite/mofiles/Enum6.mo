@@ -49,26 +49,26 @@ end Enumeration6;
 
 // Result:
 // class Enumeration6
-// Real t.hh[E.j];
-// Real t.hh[E.l];
-// Real t.hh[E.k];
-// parameter enumeration(world, frame_a, frame_resolve) frame_r_in = EE.frame_a;
-// parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
-// Real x(StateSelect = StateSelect.default);
-// Real z[EE.world];
-// Real z[EE.frame_a];
-// Real z[EE.frame_resolve];
-// enumeration(world, frame_a, frame_resolve) ee(start = EE.world);
-// enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = E.a, max = E.b, start = E.c, fixed = true);
+//   Real t.hh[P.h.E.j];
+//   Real t.hh[P.h.E.l];
+//   Real t.hh[P.h.E.k];
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_in = P.EE.frame_a;
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
+//   Real x(StateSelect = StateSelect.default);
+//   Real z[P.EE.world];
+//   Real z[P.EE.frame_a];
+//   Real z[P.EE.frame_resolve];
+//   enumeration(world, frame_a, frame_resolve) ee(start = P.EE.world);
+//   enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = P.E.a, max = P.E.b, start = P.E.c, fixed = true);
 // equation
-//   t.hh[E.j] = 1.0;
-//   t.hh[E.l] = 2.0;
-//   t.hh[E.k] = 3.0;
-//   x = if frame_r_out == EE.frame_a then 0.0 else 1.0;
-//   z[1] = if frame_r_out <= EE.frame_a then 0.0 else 1.0;
-//   z[2] = if frame_r_out <= EE.frame_a then 0.0 else 1.0;
-//   z[3] = if frame_r_out <= EE.frame_a then 0.0 else 1.0;
-//   ee = EE.frame_a;
-//   f = E.b;
+//   t.hh[P.h.E.j] = 1.0;
+//   t.hh[P.h.E.l] = 2.0;
+//   t.hh[P.h.E.k] = 3.0;
+//   x = if frame_r_out == P.EE.frame_a then 0.0 else 1.0;
+//   z[1] = if frame_r_out <= P.EE.frame_a then 0.0 else 1.0;
+//   z[2] = if frame_r_out <= P.EE.frame_a then 0.0 else 1.0;
+//   z[3] = if frame_r_out <= P.EE.frame_a then 0.0 else 1.0;
+//   ee = P.EE.frame_a;
+//   f = P.E.b;
 // end Enumeration6;
 // endResult

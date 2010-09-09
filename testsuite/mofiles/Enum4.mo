@@ -23,9 +23,9 @@ end Enumeration4;
 
 // Result:
 // class Enumeration4
-// parameter enumeration(e1, e2, e3) em = M.Enum.e1;
-// parameter enumeration(e3, e2, e1) en = N.Enum.e3;
-// enumeration(e1, e2, e3) test;
+//   parameter enumeration(e1, e2, e3) em = M.Enum.e1;
+//   parameter enumeration(e3, e2, e1) en = N.Enum.e3;
+//   enumeration(e1, e2, e3) test;
 // equation
 //   test = M.Enum.e1;
 // end Enumeration4;

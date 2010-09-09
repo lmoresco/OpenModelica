@@ -16,7 +16,7 @@ end EnumTest;
 
 // Result:
 // class EnumTest
-// Integer a;
+//   Integer a;
 // equation
 //   a = 2;
 // end EnumTest;

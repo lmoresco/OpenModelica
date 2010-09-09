@@ -84,22 +84,22 @@ end X;
 
 // Result:
 // class X
-// parameter enumeration(world, frame_a, frame_resolve) frame_r_in = ResolveInFrameA.frame_a;
-// parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
-// Real x;
-// enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
-// enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Size.medium;
-// enumeration(start, fixed, quantity, zero, one) enumtest.c(quantity = "Current", start = DigitalCurrent.one, fixed = true);
-// enumeration(zero, one) enumtest.choice(start = DigitalCurrentChoices.one, fixed = true);
-// Real enumtest.x[DigitalCurrentChoices.zero];
-// Real enumtest.x[DigitalCurrentChoices.one];
-// Real enumtest.xx[DigitalCurrentChoices.zero];
-// Real enumtest.xx[DigitalCurrentChoices.one];
-// Real enumtest.xxx[DigitalCurrentChoices.zero];
-// Real enumtest.xxx[DigitalCurrentChoices.one];
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_in = Types.ResolveInFrameA.frame_a;
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
+//   Real x;
+//   enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
+//   enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Types.EnumTest.Size.medium;
+//   enumeration(start, fixed, quantity, zero, one) enumtest.c(quantity = "Current", start = Types.EnumTest.DigitalCurrentChoices.one, fixed = true);
+//   enumeration(zero, one) enumtest.choice(start = Types.EnumTest.DigitalCurrentChoices.one, fixed = true);
+//   Real enumtest.x[Types.EnumTest.DigitalCurrentChoices.zero];
+//   Real enumtest.x[Types.EnumTest.DigitalCurrentChoices.one];
+//   Real enumtest.xx[Types.EnumTest.DigitalCurrentChoices.zero];
+//   Real enumtest.xx[Types.EnumTest.DigitalCurrentChoices.one];
+//   Real enumtest.xxx[Types.EnumTest.DigitalCurrentChoices.zero];
+//   Real enumtest.xxx[Types.EnumTest.DigitalCurrentChoices.one];
 // equation
-//   enumtest.c = DigitalCurrent.one;
-//   enumtest.choice = if enumtest.c == DigitalCurrent.zero then DigitalCurrent.one else DigitalCurrent.one;
+//   enumtest.c = Types.EnumTest.DigitalCurrentChoices.one;
+//   enumtest.choice = if enumtest.c == Types.EnumTest.DigitalCurrentChoices.zero then Types.EnumTest.DigitalCurrentChoices.one else Types.EnumTest.DigitalCurrentChoices.one;
 //   x = Real(if frame_r_out == frame_r_in then 0 else 1);
 //   f = enum.a;
 // algorithm
@@ -109,7 +109,7 @@ end X;
 //   for e in 1:2 loop
 //     enumtest.xx[e] := 0.0;
 //   end for;
-//   for e in DigitalCurrentChoices.zero:DigitalCurrentChoices.one loop
+//   for e in Types.EnumTest.DigitalCurrentChoices.zero:Types.EnumTest.DigitalCurrentChoices.one loop
 //     enumtest.xxx[e] := 0.0;
 //   end for;
 // end X;

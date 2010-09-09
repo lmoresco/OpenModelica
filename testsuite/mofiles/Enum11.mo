@@ -15,7 +15,7 @@ Integer i = Integer(A);
 end Enum11;
 // Result:
 // class Enum11
-//   enumeration(A, B, C) A = MyEnum.A;
+//   enumeration(A, B, C) A = Enum11.MyEnum.A;
 //   Integer i = Integer(A);
 // end Enum11;
 // endResult
