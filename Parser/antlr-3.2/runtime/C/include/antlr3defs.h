@@ -36,7 +36,7 @@
 /* Following are for generated code, they are not referenced internally!!!
  */
 #if !defined(ANTLR3_HUGE) && !defined(ANTLR3_AVERAGE) && !defined(ANTLR3_SMALL)
-#define	ANTLR3_AVERAGE
+#define	ANTLR3_HUGE
 #endif
 
 #ifdef	ANTLR3_HUGE
