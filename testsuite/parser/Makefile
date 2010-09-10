@@ -22,8 +22,10 @@ EmptyWithin.mo \
 Identifier.mo \
 MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
+MissingSemicolon.mo \
 ModifyConstant3.mo \
 OptionalOutput.mos \
+ParseCompilerSources.mos \
 ParseError1.mo \
 ParseError2.mo \
 ParseFullModelica3.1.mos \
