@@ -147,6 +147,7 @@ Constant9.mo \
 ConstantDeclConnector.mo \
 ConstantDeclRecord.mo \
 ConstantDeclType.mo \
+ConstantLogicalRelations.mo \
 ConstantReductions.mo \
 ConstantSize.mo \
 ConstrainingType1.mo \
