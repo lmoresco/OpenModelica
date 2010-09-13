@@ -109,40 +109,40 @@ end TestGravityAcceleration;
 // 
 // Result:
 // function Math.length
-// input Real[:] v "Vector";
-// output Real result "Length of vector v";
+//   input Real[:] v "Vector";
+//   output Real result "Length of vector v";
 // algorithm
 //   result := sqrt(v * v);
 // end Math.length;
 // 
 // function Math.normalize
-// input Real[:] v "Vector";
-// input Real eps = 1e-13 "if |v| < eps then result = v/eps";
-// output Real[size(v,1)] result "Input vector v normalized to length=1";
+//   input Real[:] v "Vector";
+//   input Real eps = 1e-13 "if |v| < eps then result = v/eps";
+//   output Real[size(v,1)] result "Input vector v normalized to length=1";
 // algorithm
 //   result := if Math.length(v) >= eps then v / Math.length(v) else v / eps;
 // end Math.normalize;
 // 
 // function TestGravityAcceleration.w.gravityAcceleration
-// input Real[3] r "Position vector from world frame to actual point, resolved in world frame";
-// input enumeration(NoGravity, UniformGravity, PointGravity) gravityType "Type of gravity field";
-// input Real[3] g "Constant gravity acceleration, resolved in world frame, if gravityType=1";
-// input Real mue(unit = "m3/s2") "Field constant of point gravity field, if gravityType=2";
-// output Real[3] gravity "Gravity acceleration at point r, resolved in world frame";
+//   input Real[3] r "Position vector from world frame to actual point, resolved in world frame";
+//   input enumeration(NoGravity, UniformGravity, PointGravity) gravityType "Type of gravity field";
+//   input Real[3] g "Constant gravity acceleration, resolved in world frame, if gravityType=1";
+//   input Real mue(unit = "m3/s2") "Field constant of point gravity field, if gravityType=2";
+//   output Real[3] gravity "Gravity acceleration at point r, resolved in world frame";
 // algorithm
-//   gravity := if gravityType == GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == GravityTypes.PointGravity then {-1.0 * (mue * r[1]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[2]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[3]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Types.GravityTypes.PointGravity then {-1.0 * (mue * r[1]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[2]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),-1.0 * (mue * r[3]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
 // end TestGravityAcceleration.w.gravityAcceleration;
 // 
 // class TestGravityAcceleration
-// parameter Real w.n[1](unit = "1") = 0.0;
-// parameter Real w.n[2](unit = "1") = -1.0;
-// parameter Real w.n[3](unit = "1") = 0.0;
-// parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000.0 "Gravity field constant (default = field constant of earth)";
-// parameter enumeration(NoGravity, UniformGravity, PointGravity) w.gravityType = Types.GravityTypes.UniformGravity;
-// parameter Real w.g = 9.81 "Constant gravity acceleration";
-// Real gravity[1];
-// Real gravity[2];
-// Real gravity[3];
+//   parameter Real w.n[1](unit = "1") = 0.0;
+//   parameter Real w.n[2](unit = "1") = -1.0;
+//   parameter Real w.n[3](unit = "1") = 0.0;
+//   parameter Real w.mue(unit = "m3/s2", min = 0.0) = 398600000000000.0 "Gravity field constant (default = field constant of earth)";
+//   parameter enumeration(NoGravity, UniformGravity, PointGravity) w.gravityType = Types.GravityTypes.UniformGravity;
+//   parameter Real w.g = 9.81 "Constant gravity acceleration";
+//   Real gravity[1];
+//   Real gravity[2];
+//   Real gravity[3];
 // equation
 //   gravity = w.gravityAcceleration({1.0,5.0,6.0},w.gravityType,w.g * Math.normalize({w.n[1],w.n[2],w.n[3]},1e-13),w.mue);
 // end TestGravityAcceleration;

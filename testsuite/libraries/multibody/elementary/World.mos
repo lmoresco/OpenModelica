@@ -117,7 +117,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Boolean animateGravity = true "= true, if gravity field shall be visualized (acceleration vector or field center)";
 //   parameter String label1 = "x" "Label of horizontal axis in icon";
 //   parameter String label2 = "y" "Label of vertical axis in icon";
-//   parameter enumeration(NoGravity, UniformGravity, PointGravity) gravityType = GravityTypes.UniformGravity "Type of gravity field";
+//   parameter enumeration(NoGravity, UniformGravity, PointGravity) gravityType = Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity "Type of gravity field";
 //   parameter Real g(quantity = "Acceleration", unit = "m/s2") = 9.81 "Constant gravity acceleration";
 //   parameter Real n[1](unit = "1") = 0.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
 //   parameter Real n[2](unit = "1") = -1.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";

@@ -395,7 +395,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   input Real mue(unit = "m3/s2") "Field constant of point gravity field, if gravityType=2";
 //   output Real[3] gravity(quantity = "Acceleration", unit = "m/s2") "Gravity acceleration at point r, resolved in world frame";
 // algorithm
-//   gravity := if gravityType == GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
 // end Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial
@@ -456,7 +456,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   parameter Boolean world.animateGravity = false "= true, if gravity field shall be visualized (acceleration vector or field center)";
 //   parameter String world.label1 = "x" "Label of horizontal axis in icon";
 //   parameter String world.label2 = "y" "Label of vertical axis in icon";
-//   parameter enumeration(NoGravity, UniformGravity, PointGravity) world.gravityType = GravityTypes.UniformGravity "Type of gravity field";
+//   parameter enumeration(NoGravity, UniformGravity, PointGravity) world.gravityType = Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity "Type of gravity field";
 //   parameter Real world.g(quantity = "Acceleration", unit = "m/s2") = 9.81 "Constant gravity acceleration";
 //   parameter Real world.n[1](unit = "1") = 0.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
 //   parameter Real world.n[2](unit = "1") = -1.0 "Direction of gravity resolved in world frame (gravity = g*n/length(n))";
@@ -21764,11 +21764,11 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   world.frame_b.r_0[3] = engine.frame_a.r_0[3];
 // end Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic;
 // "
-// "Warning: Parameter r has no value, and is fixed during initialization (fixed=true)
+// "Warning: Parameter engine.crank.r has no value, and is fixed during initialization (fixed=true)
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic completed successfully.
 // 
-// Warning: Parameter r has no value, and is fixed during initialization (fixed=true)
+// Warning: Parameter engine.crank.r has no value, and is fixed during initialization (fixed=true)
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic has 9073 equation(s) and 9491 variable(s).
 // 7058 of these are trivial equation(s).
