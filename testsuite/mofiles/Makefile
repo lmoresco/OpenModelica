@@ -481,6 +481,7 @@ TestGravityAcceleration.mo \
 Transpose2.mo \
 Transpose.mo \
 tupleSubset.mo \
+TupleSingleAssign.mo \
 Type10.mo \
 Type1.mo \
 Type3.mo \
