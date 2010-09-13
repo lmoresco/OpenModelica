@@ -45,13 +45,13 @@ int strcmp_omc_diff(const char* s1, const char* s2) {
       do *s1++; while (*s1 == ' ');
       do *s2++; while (*s2 == ' ');
     }
-    if (*s1 != *s2) return *s1 > *s2;
+    if (*s1 != *s2) return *s1 > *s2 ? 1 : -1;
     if (*s1 || *s2) {
       *s1++;
       *s2++;
     }
   }
-  return *s1 == *s2 ? 0 : *s1 > *s2;
+  return *s1 == *s2 ? 0 : *s1 > *s2 ? 1 : -1;
 }
 
 int lex_main(double eps, FILE* f1, FILE* f2) {
