@@ -27,6 +27,7 @@ MissingSemicolon.mo \
 ModifyConstant3.mo \
 OptionalOutput.mos \
 ParseCompilerSources.mos \
+ParseElementReplaceable.mo \
 ParseError1.mo \
 ParseError2.mo \
 ParseFullModelica3.1.mos \
