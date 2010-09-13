@@ -17,6 +17,7 @@ ConstructParameters1.mo \
 Declaration1.mo \
 Declaration2.mo \
 Declaration3.mo \
+DocumentationBackslash.mo \
 DotName.mos \
 EmptyWithin.mo \
 Identifier.mo \
