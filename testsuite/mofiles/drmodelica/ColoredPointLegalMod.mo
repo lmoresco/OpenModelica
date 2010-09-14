@@ -62,6 +62,6 @@ end A;
 //   cp.red + (cp.blue + cp.green) = 1.0;
 //   a = cp.x;
 // end A;
-// Warning: Parameter cp.x has no value, and is fixed during initialization (fixed=true)
+// Warning: Parameter cp.x has no value or start attribute, and is fixed during initialization (fixed=true)
 // 
 // endResult

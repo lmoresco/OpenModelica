@@ -86,5 +86,6 @@ getErrorString();
 // SaturatingInductance1.p.v = SineVoltage1.p.v;
 // end Modelica.Electrical.Analog.Examples.ShowSaturatingInductor;
 // "
-// ""
+// "Warning: Using available start value (start=SaturatingInductance1.Inom / 10.0) as default value for parameter SaturatingInductance1.Ipar that has no value
+// "
 // endResult

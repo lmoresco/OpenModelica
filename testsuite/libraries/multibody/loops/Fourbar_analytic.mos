@@ -4419,11 +4419,11 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   jointSSP.frame_im.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic;
 // "
-// "Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true)
+// "Warning: Using available start value (start=1.0) as default value for parameter jointSSP.rod1.rodLength that has no value
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic completed successfully.
 // 
-// Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true)
+// Warning: Using available start value (start=1.0) as default value for parameter jointSSP.rod1.rodLength that has no value
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic has 2216 equation(s) and 2238 variable(s).
 // 1442 of these are trivial equation(s).

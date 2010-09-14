@@ -1,9 +1,10 @@
 // name:     Delay7
 // keywords: builtin
-// status:   incorrect
+// status:   correct
 // 
 // Test flattening of the builtin function delay.
-// Should fail as b is not a parameter or constant.
+// Should issue a warning as b is not a parameter or constant.
+// Modelica.Electrical.Analog.Lines.TLine* uses delay(x, var)
 // 
 
 model Delay
@@ -14,15 +15,15 @@ equation
   y = delay(x, a, b);
 end Delay;
 // Result:
-// Error processing file: Delay7.mo
-// Error: Builtin function delay(expr,delayTime,delayMax*) failed in component <NO COMPONENT>:  use of delay: 
-//  delay(real, real, real as parameter/constant)
-//  or delay(real, real as parameter/constant).
-// Error: Wrong type or wrong number of arguments to delay(x, a, b)'.
-//  (in component <NO COMPONENT>)
+// class Delay
+//   Real x;
+//   Real y;
+//   Real a = 1.0;
+//   Real b = 2.0;
+// equation
+//   x = sin(time);
+//   y = delay(x,a,b);
+// end Delay;
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, b) where argument #3 has to be parameter or constant expression but is a variable
 // 
-// # Error encountered! Exiting...
-// # Please check the error message and the flags.
-// 
-// Execution failed!
 // endResult

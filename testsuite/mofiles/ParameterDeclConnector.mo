@@ -21,6 +21,6 @@ end ParameterDeclConnector;
 // equation
 //   pc.r = 1.0;
 // end ParameterDeclConnector;
-// Warning: Parameter pc.r has no value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pc.r has no value or start attribute, and is fixed during initialization (fixed=true)
 // 
 // endResult
