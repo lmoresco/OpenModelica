@@ -31,13 +31,13 @@ end Utilities;
 
 // Result:
 // function Modelica.Utilities.Files.fullPathName
-// input String name "Absolute or relative file or directory name";
-// output String fullName "Full path of 'name'";
+//   input String name "Absolute or relative file or directory name";
+//   output String fullName "Full path of 'name'";
 // 
 // external "C";
 // end Modelica.Utilities.Files.fullPathName;
 // 
-// class Utilities
-// constant String RootDir = Modelica.Utilities.Files.fullPathName(classDirectory() + "..");
+// class Utilities "Utility classes usually not directly utilized by the user"
+//   constant String RootDir = Modelica.Utilities.Files.fullPathName(classDirectory() + "..");
 // end Utilities;
 // endResult

@@ -27,16 +27,16 @@ equation
 end Multiplex3;
 
 // Result:
-// class Multiplex3
-// parameter Integer n1 = 1 "dimension of input signal connector 1";
-// parameter Integer n2 = 1 "dimension of input signal connector 2";
-// parameter Integer n3 = 1 "dimension of input signal connector 3";
-// input Real u1[1];
-// input Real u2[1];
-// input Real u3[1];
-// output Real y[1];
-// output Real y[2];
-// output Real y[3];
+// class Multiplex3 "Multiplexer block for three input connectors"
+//   parameter Integer n1 = 1 "dimension of input signal connector 1";
+//   parameter Integer n2 = 1 "dimension of input signal connector 2";
+//   parameter Integer n3 = 1 "dimension of input signal connector 3";
+//   input Real u1[1];
+//   input Real u2[1];
+//   input Real u3[1];
+//   output Real y[1];
+//   output Real y[2];
+//   output Real y[3];
 // equation
 //   y[1] = u1[1];
 //   y[2] = u2[1];

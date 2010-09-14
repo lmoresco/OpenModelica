@@ -21,12 +21,12 @@ end BouncingBall;
 
 
 // Result:
-// class BouncingBall
-// constant Real g = 9.81;
-// parameter Real c = 0.9;
-// parameter Real radius = 0.1;
-// Real height(start = 1.0);
-// Real velocity(start = 0.0);
+// class BouncingBall "The bouncing ball model"
+//   constant Real g = 9.81;
+//   parameter Real c = 0.9;
+//   parameter Real radius = 0.1;
+//   Real height(start = 1.0);
+//   Real velocity(start = 0.0);
 // equation
 //   der(height) = velocity;
 //   der(velocity) = -9.81;
