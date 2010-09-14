@@ -22,11 +22,3 @@ failingtest :
 	@echo Running failing tests...
 	@echo
 	@$(TEST) $(FAILINGTESTFILES) \
-
-sim:
-	@make -C Electrical -f Makefile test 
-	@make -C Mechanics -f Makefile test 
-
-simfailingtest:
-	@make -C Electrical -f Makefile failingtest
-	@make -C Mechanics -f Makefile failingtest

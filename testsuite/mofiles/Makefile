@@ -205,6 +205,7 @@ Enum6.mo \
 Enum7.mo \
 Enum8.mo \
 Enum9.mo \
+EnumConnectArray.mo \
 EnumDimSum.mo \
 EnumFor.mo \
 EnumInvalidLiteral.mo \
