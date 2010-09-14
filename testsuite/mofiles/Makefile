@@ -463,6 +463,7 @@ SimpleTypeExtend.mo \
 Simplify.mo \
 Sinh.mo \
 Sin.mo \
+Skew.mo \
 SmallLinsys.mo \
 Sqrt.mo \
 StringBoolean.mo \
