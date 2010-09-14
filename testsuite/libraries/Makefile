@@ -1,5 +1,5 @@
 LOGS = multibody.log msl221.log msl221additions.log biochem.log msl31.log
-.PHONY : all failingtest msl221.log msl221additions.log biochem.log multibody.log
+.PHONY : all failingtest msl221.log msl31.log msl221additions.log biochem.log multibody.log
 
 all : test
 test : $(LOGS)

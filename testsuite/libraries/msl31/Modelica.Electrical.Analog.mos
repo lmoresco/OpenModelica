@@ -89,11 +89,11 @@ checkModel(Modelica.Electrical.Analog.Lines.TLine2); getErrorString();
 instantiateModel(Modelica.Electrical.Analog.Lines.TLine3); getErrorString();
 checkModel(Modelica.Electrical.Analog.Lines.TLine3); getErrorString();
 
-// these are partial models
+// these are partial models, only checkModel works on them.
 //instantiateModel(Modelica.Electrical.Analog.Interfaces.VoltageSource); getErrorString();
-//checkModel(Modelica.Electrical.Analog.Interfaces.VoltageSource); getErrorString();
+checkModel(Modelica.Electrical.Analog.Interfaces.VoltageSource); getErrorString();
 //instantiateModel(Modelica.Electrical.Analog.Interfaces.CurrentSource); getErrorString();
-//checkModel(Modelica.Electrical.Analog.Interfaces.CurrentSource); getErrorString();
+checkModel(Modelica.Electrical.Analog.Interfaces.CurrentSource); getErrorString();
 
 instantiateModel(Modelica.Electrical.Analog.Basic.EMF); getErrorString();
 checkModel(Modelica.Electrical.Analog.Basic.EMF); getErrorString();
@@ -2181,6 +2181,24 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // Class Modelica.Electrical.Analog.Lines.TLine3 has 15 equation(s) and 15 variable(s).
 // 8 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Interfaces.VoltageSource completed successfully.
+// 
+// Warning: Forcing full instantiation of partial class VoltageSource during checkModel.
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Analog/Interfaces.mo:444:5-446:81:readonly] Warning: Variable signalSource: Forcing full instantiation of partial class SignalSource during checkModel.
+// 
+// Class Modelica.Electrical.Analog.Interfaces.VoltageSource has 6 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Interfaces.CurrentSource completed successfully.
+// 
+// Warning: Forcing full instantiation of partial class CurrentSource during checkModel.
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Analog/Interfaces.mo:485:5-487:65:readonly] Warning: Variable signalSource: Forcing full instantiation of partial class SignalSource during checkModel.
+// 
+// Class Modelica.Electrical.Analog.Interfaces.CurrentSource has 6 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Basic.EMF
