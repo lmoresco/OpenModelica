@@ -426,22 +426,36 @@ typedef ANTLR3_UINT32				ANTLR3_INTKEY;
 /// Default definition of ANTLR3_MALLOC. You can override this before including
 /// antlr3.h if you wish to use your own implementation.
 ///
+#ifdef MEMORY_PROFILE
 extern long unsigned int szMemoryUsed;
 #define	ANTLR3_MALLOC(request)	malloc((size_t)(request)); szMemoryUsed+=request
+#else
+#define ANTLR3_MALLOC(request)  malloc((size_t)(request));
+#endif
+
 #endif
 
 #ifndef ANTLR3_CALLOC
 /// Default definition of ANTLR3_CALLOC. You can override this before including
 /// antlr3.h if you wish to use your own implementation.
 ///
+#ifdef MEMORY_PROFILE
 #define	ANTLR3_CALLOC(numEl, elSize)			calloc(numEl, (size_t)(elSize)); szMemoryUsed+=numEl*elSize
+#else
+#endif
+#define ANTLR3_CALLOC(numEl, elSize)      calloc(numEl, (size_t)(elSize));
 #endif
 
 #ifndef ANTLR3_REALLOC
 /// Default definition of ANTLR3_REALLOC. You can override this before including
 /// antlr3.h if you wish to use your own implementation.
 ///
+#ifdef MEMORY_PROFILE
 #define ANTLR3_REALLOC(current, request)		realloc ((void *)(current), (size_t)(request)); szMemoryUsed+=request-sizeof((void*)current)
+#else
+#define ANTLR3_REALLOC(current, request)    realloc ((void *)(current), (size_t)(request));
+#endif
+
 #endif
 #ifndef ANTLR3_FREE
 /// Default definition of ANTLR3_FREE. You can override this before including
