@@ -475,6 +475,7 @@ StringReal.mo \
 StructuralParameter1.mo \
 SubScript1.mo \
 SubScript2.mo \
+Sum.mo \
 Switch.mo \
 Tanh.mo \
 Tan.mo \
