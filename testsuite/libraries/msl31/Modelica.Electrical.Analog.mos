@@ -1,0 +1,2432 @@
+//name:        Modelica.Electrical.Analog [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Electrical.Analog
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadFile("Modelica/package.mo"); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Examples.Utilities.RealSwitch); getErrorString();
+checkModel(Modelica.Electrical.Analog.Examples.Utilities.RealSwitch); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Examples.Utilities.Nand); getErrorString();
+checkModel(Modelica.Electrical.Analog.Examples.Utilities.Nand); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed); getErrorString();
+checkModel(Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.StepVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.StepVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.RampVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.RampVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.SineVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.SineVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.ExpSineVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.ExpSineVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.ExponentialsVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.ExponentialsVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.PulseVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.PulseVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.SawToothVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.SawToothVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.TrapezoidVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.TrapezoidVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.TableVoltage); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.TableVoltage); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.StepCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.StepCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.RampCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.RampCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.SineCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.SineCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.ExpSineCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.ExpSineCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.ExponentialsCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.ExponentialsCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.PulseCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.PulseCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.SawToothCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.SawToothCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.TrapezoidCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.TrapezoidCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sources.TableCurrent); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sources.TableCurrent); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Sensors.PowerSensor); getErrorString();
+checkModel(Modelica.Electrical.Analog.Sensors.PowerSensor); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Lines.OLine); getErrorString();
+checkModel(Modelica.Electrical.Analog.Lines.OLine); getErrorString();
+
+// this fails currently
+//instantiateModel(Modelica.Electrical.Analog.Lines.M_OLine); getErrorString();
+//checkModel(Modelica.Electrical.Analog.Lines.M_OLine); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Lines.ULine); getErrorString();
+checkModel(Modelica.Electrical.Analog.Lines.ULine); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Lines.TLine2); getErrorString();
+checkModel(Modelica.Electrical.Analog.Lines.TLine2); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Lines.TLine3); getErrorString();
+checkModel(Modelica.Electrical.Analog.Lines.TLine3); getErrorString();
+
+// these are partial models
+//instantiateModel(Modelica.Electrical.Analog.Interfaces.VoltageSource); getErrorString();
+//checkModel(Modelica.Electrical.Analog.Interfaces.VoltageSource); getErrorString();
+//instantiateModel(Modelica.Electrical.Analog.Interfaces.CurrentSource); getErrorString();
+//checkModel(Modelica.Electrical.Analog.Interfaces.CurrentSource); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Basic.EMF); getErrorString();
+checkModel(Modelica.Electrical.Analog.Basic.EMF); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Basic.TranslationalEMF); getErrorString();
+checkModel(Modelica.Electrical.Analog.Basic.TranslationalEMF); getErrorString();
+
+instantiateModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
+checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
+
+
+// Result:
+// true
+// ""
+// "class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch
+//   parameter Boolean S.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real S.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Fixed device temperature if useHeatPort = false";
+//   Real S.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real S.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real S.level(quantity = "ElectricPotential", unit = "V") = 2.5 "Switch level";
+//   parameter Real S.Ron(quantity = "Resistance", unit = "Ohm", min = 0.0) = 1e-05 "Closed switch resistance";
+//   parameter Real S.Goff(quantity = "Conductance", unit = "S", min = 0.0) = 1e-05 "Opened switch conductance";
+//   Real S.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real S.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real S.n2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real S.n2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real S.n1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real S.n1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real S.control.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real S.control.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   protected Real S.s1(unit = "1");
+//   protected Real S.s2(unit = "1") "Auxiliary variables";
+//   protected constant Real S.unitVoltage(quantity = "ElectricPotential", unit = "V") = 1.0;
+//   protected constant Real S.unitCurrent(quantity = "ElectricCurrent", unit = "A") = 1.0;
+//   Real R.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real R.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real R.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real R.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean R.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real R.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = R.T_ref "Fixed device temperature if useHeatPort = false";
+//   Real R.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real R.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real R.R(quantity = "Resistance", unit = "Ohm", start = 1.0) = 0.01 "Resistance at temperature T_ref";
+//   parameter Real R.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real R.alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R.R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real control.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real control.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// equation
+//   S.control.i = 0.0;
+//   0.0 = S.p.i + (S.n2.i + S.n1.i);
+//   S.p.v - S.n1.v = S.s1 * (if S.control.v > S.level then 1.0 else S.Ron);
+//   S.n1.i = (-S.s1) * (if S.control.v > S.level then S.Goff else 1.0);
+//   S.p.v - S.n2.v = S.s2 * (if S.control.v > S.level then S.Ron else 1.0);
+//   S.n2.i = (-S.s2) * (if S.control.v > S.level then 1.0 else S.Goff);
+//   S.LossPower = S.p.i * S.p.v + (S.n1.i * S.n1.v + S.n2.i * S.n2.v);
+//   S.T_heatPort = S.T;
+//   assert(1.0 + R.alpha * (R.T_heatPort - R.T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   R.R_actual = R.R * (1.0 + R.alpha * (R.T_heatPort - R.T_ref));
+//   R.v = R.R_actual * R.i;
+//   R.LossPower = R.v * R.i;
+//   R.i = R.p.i;
+//   0.0 = R.p.i + R.n.i;
+//   R.v = R.p.v - R.n.v;
+//   R.T_heatPort = R.T;
+//   (-control.i) + S.control.i = 0.0;
+//   control.v = S.control.v;
+//   (-n2.i) + S.n2.i = 0.0;
+//   n2.v = S.n2.v;
+//   (-n1.i) + S.n1.i = 0.0;
+//   n1.v = S.n1.v;
+//   R.n.i + S.p.i = 0.0;
+//   R.n.v = S.p.v;
+//   (-p.i) + R.p.i = 0.0;
+//   p.v = R.p.v;
+//   control.i = 0.0;
+//   p.i = 0.0;
+//   n2.i = 0.0;
+//   n1.i = 0.0;
+// end Modelica.Electrical.Analog.Examples.Utilities.RealSwitch;
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Examples.Utilities.RealSwitch completed successfully.
+// 
+// 
+// Class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch has 29 equation(s) and 29 variable(s).
+// 19 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Examples.Utilities.Nand
+//   parameter Boolean TP1.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real TP1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Fixed device temperature if useHeatPort = false";
+//   Real TP1.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real TP1.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   Real TP1.D.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP1.D.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP1.G.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP1.G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP1.S.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP1.S.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP1.B.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP1.B.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real TP1.W(quantity = "Length", unit = "m") = 6.5e-06 "Width";
+//   parameter Real TP1.L(quantity = "Length", unit = "m") = 3.1e-06 "Length";
+//   parameter Real TP1.Beta(quantity = "Transconductance", unit = "A/V2") = 1.05e-05 "Transconductance parameter";
+//   parameter Real TP1.Vt(quantity = "ElectricPotential", unit = "V") = -1.0 "Zero bias threshold voltage";
+//   parameter Real TP1.K2 = 0.41 "Bulk threshold parameter";
+//   parameter Real TP1.K5 = 0.8385 "Reduction of pinch-off region";
+//   parameter Real TP1.dW(quantity = "Length", unit = "m") = -2.5e-06 "Narrowing of channel";
+//   parameter Real TP1.dL(quantity = "Length", unit = "m") = -2.1e-06 "Shortening of channel";
+//   parameter Real TP1.RDS(quantity = "Resistance", unit = "Ohm") = 10000000.0 "Drain-Source-Resistance";
+//   protected Real TP1.v;
+//   protected Real TP1.uds;
+//   protected Real TP1.ubs;
+//   protected Real TP1.ugst;
+//   protected Real TP1.ud;
+//   protected Real TP1.us;
+//   protected Real TP1.id;
+//   protected Real TP1.gds;
+//   parameter Boolean TP2.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real TP2.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Fixed device temperature if useHeatPort = false";
+//   Real TP2.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real TP2.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   Real TP2.D.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP2.D.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP2.G.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP2.G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP2.S.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP2.S.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TP2.B.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TP2.B.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real TP2.W(quantity = "Length", unit = "m") = 6.5e-06 "Width";
+//   parameter Real TP2.L(quantity = "Length", unit = "m") = 3.1e-06 "Length";
+//   parameter Real TP2.Beta(quantity = "Transconductance", unit = "A/V2") = 1.05e-05 "Transconductance parameter";
+//   parameter Real TP2.Vt(quantity = "ElectricPotential", unit = "V") = -1.0 "Zero bias threshold voltage";
+//   parameter Real TP2.K2 = 0.41 "Bulk threshold parameter";
+//   parameter Real TP2.K5 = 0.8385 "Reduction of pinch-off region";
+//   parameter Real TP2.dW(quantity = "Length", unit = "m") = -2.5e-06 "Narrowing of channel";
+//   parameter Real TP2.dL(quantity = "Length", unit = "m") = -2.1e-06 "Shortening of channel";
+//   parameter Real TP2.RDS(quantity = "Resistance", unit = "Ohm") = 10000000.0 "Drain-Source-Resistance";
+//   protected Real TP2.v;
+//   protected Real TP2.uds;
+//   protected Real TP2.ubs;
+//   protected Real TP2.ugst;
+//   protected Real TP2.ud;
+//   protected Real TP2.us;
+//   protected Real TP2.id;
+//   protected Real TP2.gds;
+//   parameter Boolean TN1.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real TN1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Fixed device temperature if useHeatPort = false";
+//   Real TN1.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real TN1.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   Real TN1.D.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN1.D.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN1.G.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN1.G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN1.S.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN1.S.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN1.B.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN1.B.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real TN1.W(quantity = "Length", unit = "m") = 6.5e-06 "Width";
+//   parameter Real TN1.L(quantity = "Length", unit = "m") = 3.1e-06 "Length";
+//   parameter Real TN1.Beta(quantity = "Transconductance", unit = "A/V2") = 4.1e-05 "Transconductance parameter";
+//   parameter Real TN1.Vt(quantity = "ElectricPotential", unit = "V") = 0.8 "Zero bias threshold voltage";
+//   parameter Real TN1.K2 = 1.144 "Bulk threshold parameter";
+//   parameter Real TN1.K5 = 0.7311 "Reduction of pinch-off region";
+//   parameter Real TN1.dW(quantity = "Length", unit = "m") = -2.5e-06 "narrowing of channel";
+//   parameter Real TN1.dL(quantity = "Length", unit = "m") = -1.5e-06 "shortening of channel";
+//   parameter Real TN1.RDS(quantity = "Resistance", unit = "Ohm") = 10000000.0 "Drain-Source-Resistance";
+//   protected Real TN1.v;
+//   protected Real TN1.uds;
+//   protected Real TN1.ubs;
+//   protected Real TN1.ugst;
+//   protected Real TN1.ud;
+//   protected Real TN1.us;
+//   protected Real TN1.id;
+//   protected Real TN1.gds;
+//   parameter Boolean TN2.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real TN2.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Fixed device temperature if useHeatPort = false";
+//   Real TN2.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real TN2.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   Real TN2.D.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN2.D.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN2.G.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN2.G.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN2.S.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN2.S.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real TN2.B.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real TN2.B.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real TN2.W(quantity = "Length", unit = "m") = 6.5e-06 "Width";
+//   parameter Real TN2.L(quantity = "Length", unit = "m") = 3.1e-06 "Length";
+//   parameter Real TN2.Beta(quantity = "Transconductance", unit = "A/V2") = 4.1e-05 "Transconductance parameter";
+//   parameter Real TN2.Vt(quantity = "ElectricPotential", unit = "V") = 0.8 "Zero bias threshold voltage";
+//   parameter Real TN2.K2 = 1.144 "Bulk threshold parameter";
+//   parameter Real TN2.K5 = 0.7311 "Reduction of pinch-off region";
+//   parameter Real TN2.dW(quantity = "Length", unit = "m") = -2.5e-06 "narrowing of channel";
+//   parameter Real TN2.dL(quantity = "Length", unit = "m") = -1.5e-06 "shortening of channel";
+//   parameter Real TN2.RDS(quantity = "Resistance", unit = "Ohm") = 10000000.0 "Drain-Source-Resistance";
+//   protected Real TN2.v;
+//   protected Real TN2.uds;
+//   protected Real TN2.ubs;
+//   protected Real TN2.ugst;
+//   protected Real TN2.ud;
+//   protected Real TN2.us;
+//   protected Real TN2.id;
+//   protected Real TN2.gds;
+//   Real C4.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real C4.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real C4.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C4.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real C4.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C4.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real C4.C(quantity = "Capacitance", unit = "F", min = 0.0, start = 1.0) = 4e-14 "Capacitance";
+//   Real C7.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real C7.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real C7.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C7.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real C7.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C7.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real C7.C(quantity = "Capacitance", unit = "F", min = 0.0, start = 1.0) = 4e-14 "Capacitance";
+//   Real Gnd.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Gnd2.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd2.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Gnd3.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd3.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Gnd6.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd6.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Gnd7.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd7.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Gnd8.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Gnd8.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real x1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real x1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real x2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real x2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real Vdd.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Vdd.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real y.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real y.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+// equation
+//   TP1.gds = if TP1.RDS < 1e-20 AND TP1.RDS > -1e-20 then 1e+20 else 1.0 / TP1.RDS;
+//   TP1.v = TP1.Beta * (TP1.W + TP1.dW) / (TP1.L + TP1.dL);
+//   TP1.ud = if TP1.D.v > TP1.S.v then TP1.S.v else TP1.D.v;
+//   TP1.us = if TP1.D.v > TP1.S.v then TP1.D.v else TP1.S.v;
+//   TP1.uds = TP1.ud - TP1.us;
+//   TP1.ubs = if TP1.B.v < TP1.us then 0.0 else TP1.B.v - TP1.us;
+//   TP1.ugst = (TP1.G.v + (TP1.K2 * TP1.ubs + ((-TP1.Vt) + (-TP1.us)))) * TP1.K5;
+//   TP1.id = if TP1.ugst >= 0.0 then TP1.uds * TP1.gds else if TP1.ugst < TP1.uds then (-TP1.v) * (TP1.uds * (TP1.ugst - TP1.uds / 2.0)) + TP1.uds * TP1.gds else 0.5 * ((-TP1.v) * TP1.ugst ^ 2.0) + TP1.uds * TP1.gds;
+//   TP1.G.i = 0.0;
+//   TP1.D.i = if TP1.D.v > TP1.S.v then -TP1.id else TP1.id;
+//   TP1.S.i = if TP1.D.v > TP1.S.v then TP1.id else -TP1.id;
+//   TP1.B.i = 0.0;
+//   TP1.LossPower = TP1.D.i * (TP1.D.v - TP1.S.v);
+//   TP1.T_heatPort = TP1.T;
+//   TP2.gds = if TP2.RDS < 1e-20 AND TP2.RDS > -1e-20 then 1e+20 else 1.0 / TP2.RDS;
+//   TP2.v = TP2.Beta * (TP2.W + TP2.dW) / (TP2.L + TP2.dL);
+//   TP2.ud = if TP2.D.v > TP2.S.v then TP2.S.v else TP2.D.v;
+//   TP2.us = if TP2.D.v > TP2.S.v then TP2.D.v else TP2.S.v;
+//   TP2.uds = TP2.ud - TP2.us;
+//   TP2.ubs = if TP2.B.v < TP2.us then 0.0 else TP2.B.v - TP2.us;
+//   TP2.ugst = (TP2.G.v + (TP2.K2 * TP2.ubs + ((-TP2.Vt) + (-TP2.us)))) * TP2.K5;
+//   TP2.id = if TP2.ugst >= 0.0 then TP2.uds * TP2.gds else if TP2.ugst < TP2.uds then (-TP2.v) * (TP2.uds * (TP2.ugst - TP2.uds / 2.0)) + TP2.uds * TP2.gds else 0.5 * ((-TP2.v) * TP2.ugst ^ 2.0) + TP2.uds * TP2.gds;
+//   TP2.G.i = 0.0;
+//   TP2.D.i = if TP2.D.v > TP2.S.v then -TP2.id else TP2.id;
+//   TP2.S.i = if TP2.D.v > TP2.S.v then TP2.id else -TP2.id;
+//   TP2.B.i = 0.0;
+//   TP2.LossPower = TP2.D.i * (TP2.D.v - TP2.S.v);
+//   TP2.T_heatPort = TP2.T;
+//   TN1.gds = if TN1.RDS < 1e-20 AND TN1.RDS > -1e-20 then 1e+20 else 1.0 / TN1.RDS;
+//   TN1.v = TN1.Beta * (TN1.W + TN1.dW) / (TN1.L + TN1.dL);
+//   TN1.ud = if TN1.D.v < TN1.S.v then TN1.S.v else TN1.D.v;
+//   TN1.us = if TN1.D.v < TN1.S.v then TN1.D.v else TN1.S.v;
+//   TN1.uds = TN1.ud - TN1.us;
+//   TN1.ubs = if TN1.B.v > TN1.us then 0.0 else TN1.B.v - TN1.us;
+//   TN1.ugst = (TN1.G.v + (TN1.K2 * TN1.ubs + ((-TN1.Vt) + (-TN1.us)))) * TN1.K5;
+//   TN1.id = if TN1.ugst <= 0.0 then TN1.uds * TN1.gds else if TN1.ugst > TN1.uds then TN1.v * (TN1.uds * (TN1.ugst - TN1.uds / 2.0)) + TN1.uds * TN1.gds else 0.5 * (TN1.v * TN1.ugst ^ 2.0) + TN1.uds * TN1.gds;
+//   TN1.G.i = 0.0;
+//   TN1.D.i = if TN1.D.v < TN1.S.v then -TN1.id else TN1.id;
+//   TN1.S.i = if TN1.D.v < TN1.S.v then TN1.id else -TN1.id;
+//   TN1.B.i = 0.0;
+//   TN1.LossPower = TN1.D.i * (TN1.D.v - TN1.S.v);
+//   TN1.T_heatPort = TN1.T;
+//   TN2.gds = if TN2.RDS < 1e-20 AND TN2.RDS > -1e-20 then 1e+20 else 1.0 / TN2.RDS;
+//   TN2.v = TN2.Beta * (TN2.W + TN2.dW) / (TN2.L + TN2.dL);
+//   TN2.ud = if TN2.D.v < TN2.S.v then TN2.S.v else TN2.D.v;
+//   TN2.us = if TN2.D.v < TN2.S.v then TN2.D.v else TN2.S.v;
+//   TN2.uds = TN2.ud - TN2.us;
+//   TN2.ubs = if TN2.B.v > TN2.us then 0.0 else TN2.B.v - TN2.us;
+//   TN2.ugst = (TN2.G.v + (TN2.K2 * TN2.ubs + ((-TN2.Vt) + (-TN2.us)))) * TN2.K5;
+//   TN2.id = if TN2.ugst <= 0.0 then TN2.uds * TN2.gds else if TN2.ugst > TN2.uds then TN2.v * (TN2.uds * (TN2.ugst - TN2.uds / 2.0)) + TN2.uds * TN2.gds else 0.5 * (TN2.v * TN2.ugst ^ 2.0) + TN2.uds * TN2.gds;
+//   TN2.G.i = 0.0;
+//   TN2.D.i = if TN2.D.v < TN2.S.v then -TN2.id else TN2.id;
+//   TN2.S.i = if TN2.D.v < TN2.S.v then TN2.id else -TN2.id;
+//   TN2.B.i = 0.0;
+//   TN2.LossPower = TN2.D.i * (TN2.D.v - TN2.S.v);
+//   TN2.T_heatPort = TN2.T;
+//   C4.i = C4.C * der(C4.v);
+//   C4.v = C4.p.v - C4.n.v;
+//   0.0 = C4.p.i + C4.n.i;
+//   C4.i = C4.p.i;
+//   C7.i = C7.C * der(C7.v);
+//   C7.v = C7.p.v - C7.n.v;
+//   0.0 = C7.p.i + C7.n.i;
+//   C7.i = C7.p.i;
+//   Gnd.p.v = 0.0;
+//   Gnd2.p.v = 0.0;
+//   Gnd3.p.v = 0.0;
+//   Gnd6.p.v = 0.0;
+//   Gnd7.p.v = 0.0;
+//   Gnd8.p.v = 0.0;
+//   TP2.S.i + (TP1.S.i + (TN1.D.i + (C4.p.i + (-y.i)))) = 0.0;
+//   TP2.S.v = TP1.S.v;
+//   TP1.S.v = TN1.D.v;
+//   TN1.D.v = C4.p.v;
+//   C4.p.v = y.v;
+//   TP2.D.i + ((-Vdd.i) + TP1.D.i) = 0.0;
+//   TP2.D.v = Vdd.v;
+//   Vdd.v = TP1.D.v;
+//   TP1.G.i + (TN1.G.i + (-x2.i)) = 0.0;
+//   TP1.G.v = TN1.G.v;
+//   TN1.G.v = x2.v;
+//   TP2.G.i + ((-x1.i) + TN2.G.i) = 0.0;
+//   TP2.G.v = x1.v;
+//   x1.v = TN2.G.v;
+//   TP1.B.i + Gnd8.p.i = 0.0;
+//   TP1.B.v = Gnd8.p.v;
+//   TN1.B.i + Gnd7.p.i = 0.0;
+//   TN1.B.v = Gnd7.p.v;
+//   TP2.B.i + Gnd6.p.i = 0.0;
+//   TP2.B.v = Gnd6.p.v;
+//   C7.n.i + Gnd3.p.i = 0.0;
+//   C7.n.v = Gnd3.p.v;
+//   C4.n.i + Gnd2.p.i = 0.0;
+//   C4.n.v = Gnd2.p.v;
+//   TN2.S.i + (TN2.B.i + Gnd.p.i) = 0.0;
+//   TN2.S.v = TN2.B.v;
+//   TN2.B.v = Gnd.p.v;
+//   TN1.S.i + (TN2.D.i + C7.p.i) = 0.0;
+//   TN1.S.v = TN2.D.v;
+//   TN2.D.v = C7.p.v;
+//   Vdd.i = 0.0;
+//   y.i = 0.0;
+//   x2.i = 0.0;
+//   x1.i = 0.0;
+// end Modelica.Electrical.Analog.Examples.Utilities.Nand;
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Examples.Utilities.Nand completed successfully.
+// 
+// 
+// Class Modelica.Electrical.Analog.Examples.Utilities.Nand has 104 equation(s) and 104 variable(s).
+// 50 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit
+//   input Real v_source(quantity = "ElectricPotential", unit = "V");
+//   input Real v_out(quantity = "ElectricPotential", unit = "V");
+//   input Real Rout(quantity = "Resistance", unit = "Ohm");
+//   input Real Imaxsi_val(quantity = "ElectricCurrent", unit = "A");
+//   input Real Imaxso_val(quantity = "ElectricCurrent", unit = "A");
+//   output Real result(quantity = "ElectricCurrent", unit = "A");
+// algorithm
+//   if v_out > v_source + Rout * Imaxsi_val then
+//     result := Imaxsi_val;
+//   elseif v_out < v_source - Rout * Imaxso_val then
+//     result := -Imaxso_val;
+//   else
+//     result := (v_out - v_source) / Rout;
+//   end if;
+//   return;
+// end Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit;
+// 
+// function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit
+//   input Real q_sum(quantity = "ElectricPotential", unit = "V");
+//   input Real q_sum_ltf(quantity = "ElectricPotential", unit = "V");
+//   input Real v_pos(quantity = "ElectricPotential", unit = "V");
+//   input Real v_neg(quantity = "ElectricPotential", unit = "V");
+//   input Real vcp(quantity = "ElectricPotential", unit = "V");
+//   input Real vcm(quantity = "ElectricPotential", unit = "V");
+//   output Real result(quantity = "ElectricPotential", unit = "V");
+// algorithm
+//   if q_sum > v_pos - vcp AND q_sum_ltf >= v_pos - vcp then
+//     result := v_pos - vcp;
+//   elseif q_sum < v_neg + vcm AND q_sum_ltf <= v_neg + vcm then
+//     result := v_neg + vcm;
+//   else
+//     result := q_sum;
+//   end if;
+//   return;
+// end Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit;
+// 
+// function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed
+//   parameter Real opAmp.Rdm(quantity = "Resistance", unit = "Ohm") = 2000000.0 "input resistance (differential input mode)";
+//   parameter Real opAmp.Rcm(quantity = "Resistance", unit = "Ohm") = 2000000000.0 "input resistance (common mode)";
+//   parameter Real opAmp.Cin(quantity = "Capacitance", unit = "F", min = 0.0) = 1.4e-12 "input capacitance";
+//   parameter Real opAmp.Vos(quantity = "ElectricPotential", unit = "V") = 0.001 "input offset voltage";
+//   parameter Real opAmp.Ib(quantity = "ElectricCurrent", unit = "A") = 8e-08 "input bias current";
+//   parameter Real opAmp.Ios(quantity = "ElectricCurrent", unit = "A") = 2e-08 "input offset current";
+//   parameter Real opAmp.vcp(quantity = "ElectricPotential", unit = "V") = 0.0 "correction value for limiting by p_supply";
+//   parameter Real opAmp.vcm(quantity = "ElectricPotential", unit = "V") = 0.0 "correction value for limiting by msupply";
+//   parameter Real opAmp.Avd0 = 106.0 "differential amplifier [dB]";
+//   parameter Real opAmp.CMRR = 90.0 "common-mode rejection [dB]";
+//   parameter Real opAmp.fp1(quantity = "Frequency", unit = "Hz") = 5.0 "dominant pole";
+//   parameter Real opAmp.fp2(quantity = "Frequency", unit = "Hz") = 2000000.0 "pole frequency";
+//   parameter Real opAmp.fp3(quantity = "Frequency", unit = "Hz") = 20000000.0 "pole frequency";
+//   parameter Real opAmp.fp4(quantity = "Frequency", unit = "Hz") = 100000000.0 "pole frequency";
+//   parameter Real opAmp.fz(quantity = "Frequency", unit = "Hz") = 5000000.0 "zero frequency";
+//   parameter Real opAmp.sr_p(quantity = "VoltageSlope", unit = "V/s") = 500000.0 "slew rate for increase";
+//   parameter Real opAmp.sr_m(quantity = "VoltageSlope", unit = "V/s") = 500000.0 "slew rate for decrease";
+//   parameter Real opAmp.Rout(quantity = "Resistance", unit = "Ohm") = 75.0 "output resistance";
+//   parameter Real opAmp.Imaxso(quantity = "ElectricCurrent", unit = "A") = 0.025 "maximal output current (source current)";
+//   parameter Real opAmp.Imaxsi(quantity = "ElectricCurrent", unit = "A") = 0.025 "maximal output current (sink current)";
+//   parameter Real opAmp.Ts(quantity = "Time", unit = "s") = 1.2e-06 "sampling time";
+//   constant Real opAmp.Pi = 3.141592654;
+//   parameter Real opAmp.vcp_abs(quantity = "ElectricPotential", unit = "V") = abs(opAmp.vcp);
+//   parameter Real opAmp.vcm_abs(quantity = "ElectricPotential", unit = "V") = abs(opAmp.vcm);
+//   parameter Real opAmp.I1(quantity = "ElectricCurrent", unit = "A") = opAmp.Ib + opAmp.Ios / 2.0;
+//   parameter Real opAmp.I2(quantity = "ElectricCurrent", unit = "A") = opAmp.Ib - opAmp.Ios / 2.0;
+//   parameter Real opAmp.Avd0_val = 10.0 ^ (opAmp.Avd0 / 20.0) "differential mode gain";
+//   parameter Real opAmp.Avcm_val = opAmp.Avd0_val * 10.0 ^ ((-opAmp.CMRR) / 20.0) / 2.0 "common mode gain";
+//   parameter Real opAmp.sr_p_val(quantity = "VoltageSlope", unit = "V/s") = abs(opAmp.sr_p);
+//   parameter Real opAmp.sr_m_val(quantity = "VoltageSlope", unit = "V/s") = -abs(opAmp.sr_m);
+//   parameter Real opAmp.Imaxso_val(quantity = "ElectricCurrent", unit = "A") = abs(opAmp.Imaxso) "orientation out outp";
+//   parameter Real opAmp.Imaxsi_val(quantity = "ElectricCurrent", unit = "A") = abs(opAmp.Imaxsi) "orientation into outp";
+//   Real opAmp.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real opAmp.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real opAmp.m.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real opAmp.m.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real opAmp.outp.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real opAmp.outp.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real opAmp.p_supply.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real opAmp.p_supply.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real opAmp.m_supply.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real opAmp.m_supply.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real opAmp.v_pos(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_neg(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_vos(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_3(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_in(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_4(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.i_vos(quantity = "ElectricCurrent", unit = "A");
+//   Real opAmp.i_3(quantity = "ElectricCurrent", unit = "A");
+//   Real opAmp.i_r2(quantity = "ElectricCurrent", unit = "A");
+//   Real opAmp.i_c3(quantity = "ElectricCurrent", unit = "A");
+//   Real opAmp.i_4(quantity = "ElectricCurrent", unit = "A");
+//   Real opAmp.q_fr1;
+//   Real opAmp.q_fr2;
+//   Real opAmp.q_fr3;
+//   Real opAmp.q_sum(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.q_sum_help(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.q_fp1(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.v_source(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.x(quantity = "ElectricPotential", unit = "V") "auxiliary variable for slew rate";
+//   Real opAmp.v_out(quantity = "ElectricPotential", unit = "V");
+//   Real opAmp.i_out(quantity = "ElectricCurrent", unit = "A");
+//   Real resistor.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real resistor.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real resistor.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real resistor.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean resistor.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real resistor.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = resistor.T_ref "Fixed device temperature if useHeatPort = false";
+//   Real resistor.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real resistor.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real resistor.R(quantity = "Resistance", unit = "Ohm", start = 1.0) = 10000.0 "Resistance at temperature T_ref";
+//   parameter Real resistor.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real resistor.alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real resistor.R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real resistor1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real resistor1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real resistor1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real resistor1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean resistor1.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real resistor1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = resistor1.T_ref "Fixed device temperature if useHeatPort = false";
+//   Real resistor1.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real resistor1.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real resistor1.R(quantity = "Resistance", unit = "Ohm", start = 1.0) = 20000.0 "Resistance at temperature T_ref";
+//   parameter Real resistor1.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real resistor1.alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real resistor1.R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real resistor2.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real resistor2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real resistor2.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor2.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real resistor2.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real resistor2.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean resistor2.useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real resistor2.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = resistor2.T_ref "Fixed device temperature if useHeatPort = false";
+//   Real resistor2.LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real resistor2.T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real resistor2.R(quantity = "Resistance", unit = "Ohm", start = 1.0) = 10000.0 "Resistance at temperature T_ref";
+//   parameter Real resistor2.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real resistor2.alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real resistor2.R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real sineVoltage.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real sineVoltage.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real sineVoltage.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real sineVoltage.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real sineVoltage.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real sineVoltage.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real sineVoltage.offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real sineVoltage.startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real sineVoltage.signalSource.y "Connector of Real output signal";
+//   parameter Real sineVoltage.signalSource.amplitude = sineVoltage.V "Amplitude of sine wave";
+//   parameter Real sineVoltage.signalSource.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = sineVoltage.freqHz "Frequency of sine wave";
+//   parameter Real sineVoltage.signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = sineVoltage.phase "Phase of sine wave";
+//   parameter Real sineVoltage.signalSource.offset = sineVoltage.offset "Offset of output signal";
+//   parameter Real sineVoltage.signalSource.startTime(quantity = "Time", unit = "s") = sineVoltage.startTime "Output = offset for time < startTime";
+//   protected constant Real sineVoltage.signalSource.pi = 3.14159265358979;
+//   parameter Real sineVoltage.V(quantity = "ElectricPotential", unit = "V", start = 1.0) = 12.0 "Amplitude of sine wave";
+//   parameter Real sineVoltage.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real sineVoltage.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = 1000.0 "Frequency of sine wave";
+//   Real ground.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real ground.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real constantVoltage.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real constantVoltage.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real constantVoltage.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real constantVoltage.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real constantVoltage.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real constantVoltage.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real constantVoltage.V(quantity = "ElectricPotential", unit = "V", start = 1.0) = 15.0 "Value of constant voltage";
+//   Real constantVoltage1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real constantVoltage1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real constantVoltage1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real constantVoltage1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real constantVoltage1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real constantVoltage1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real constantVoltage1.V(quantity = "ElectricPotential", unit = "V", start = 1.0) = -15.0 "Value of constant voltage";
+// equation
+//   assert(opAmp.Rout > 0.0,"Rout must be > 0.0.");
+//   opAmp.v_pos = opAmp.p_supply.v;
+//   opAmp.v_neg = opAmp.m_supply.v;
+//   opAmp.p.i = opAmp.i_vos;
+//   opAmp.m.i = opAmp.i_4 - opAmp.i_r2 - opAmp.i_c3;
+//   0.0 = opAmp.i_3 + (opAmp.i_r2 + opAmp.i_c3) - opAmp.i_vos;
+//   opAmp.p.v - opAmp.m.v = opAmp.v_vos + opAmp.v_in;
+//   opAmp.v_4 = opAmp.m.v;
+//   opAmp.v_3 = opAmp.p.v - opAmp.v_vos;
+//   opAmp.v_vos = opAmp.Vos;
+//   opAmp.i_3 = opAmp.I1 + opAmp.v_3 / opAmp.Rcm;
+//   opAmp.v_in = opAmp.Rdm * opAmp.i_r2;
+//   opAmp.i_c3 = opAmp.Cin * der(opAmp.v_in);
+//   opAmp.i_4 = opAmp.I2 + opAmp.v_4 / opAmp.Rcm;
+//   der(opAmp.q_fr1) = 6.283185308 * (opAmp.fp2 * (opAmp.v_in - opAmp.q_fr1));
+//   opAmp.q_fr2 + der(opAmp.q_fr2) * 1.0 / opAmp.fp3 / 6.283185308 = opAmp.q_fr1 + der(opAmp.q_fr1) * 1.0 / opAmp.fz / 6.283185308;
+//   der(opAmp.q_fr3) = 6.283185308 * (opAmp.fp4 * (opAmp.q_fr2 - opAmp.q_fr3));
+//   opAmp.q_sum = opAmp.Avd0_val * opAmp.q_fr3 + opAmp.Avcm_val * (opAmp.v_3 + opAmp.v_4);
+//   opAmp.q_sum_help = Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit(opAmp.q_sum,opAmp.q_fp1,opAmp.v_pos,opAmp.v_neg,opAmp.vcp_abs,opAmp.vcm_abs);
+//   der(opAmp.q_fp1) = 6.283185308 * (opAmp.fp1 * (opAmp.q_sum_help - opAmp.q_fp1));
+//   if initial() then
+//   opAmp.v_source = opAmp.q_fp1;
+//   opAmp.x = 0.0;
+//   end if;
+//   der(opAmp.x) = (opAmp.q_fp1 - opAmp.v_source) / opAmp.Ts;
+//   der(opAmp.v_source) = if noEvent(der(opAmp.x) > opAmp.sr_p_val) then opAmp.sr_p_val else if noEvent(der(opAmp.x) < opAmp.sr_m_val) then opAmp.sr_m_val else der(opAmp.x);
+//   opAmp.v_out = opAmp.outp.v;
+//   opAmp.i_out = opAmp.outp.i;
+//   opAmp.i_out = Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit(opAmp.v_source,opAmp.v_out,opAmp.Rout,opAmp.Imaxsi_val,opAmp.Imaxso_val);
+//   opAmp.p_supply.i = 0.0;
+//   opAmp.m_supply.i = 0.0;
+//   assert(1.0 + resistor.alpha * (resistor.T_heatPort - resistor.T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   resistor.R_actual = resistor.R * (1.0 + resistor.alpha * (resistor.T_heatPort - resistor.T_ref));
+//   resistor.v = resistor.R_actual * resistor.i;
+//   resistor.LossPower = resistor.v * resistor.i;
+//   resistor.i = resistor.p.i;
+//   0.0 = resistor.p.i + resistor.n.i;
+//   resistor.v = resistor.p.v - resistor.n.v;
+//   resistor.T_heatPort = resistor.T;
+//   assert(1.0 + resistor1.alpha * (resistor1.T_heatPort - resistor1.T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   resistor1.R_actual = resistor1.R * (1.0 + resistor1.alpha * (resistor1.T_heatPort - resistor1.T_ref));
+//   resistor1.v = resistor1.R_actual * resistor1.i;
+//   resistor1.LossPower = resistor1.v * resistor1.i;
+//   resistor1.i = resistor1.p.i;
+//   0.0 = resistor1.p.i + resistor1.n.i;
+//   resistor1.v = resistor1.p.v - resistor1.n.v;
+//   resistor1.T_heatPort = resistor1.T;
+//   assert(1.0 + resistor2.alpha * (resistor2.T_heatPort - resistor2.T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   resistor2.R_actual = resistor2.R * (1.0 + resistor2.alpha * (resistor2.T_heatPort - resistor2.T_ref));
+//   resistor2.v = resistor2.R_actual * resistor2.i;
+//   resistor2.LossPower = resistor2.v * resistor2.i;
+//   resistor2.i = resistor2.p.i;
+//   0.0 = resistor2.p.i + resistor2.n.i;
+//   resistor2.v = resistor2.p.v - resistor2.n.v;
+//   resistor2.T_heatPort = resistor2.T;
+//   sineVoltage.signalSource.y = sineVoltage.signalSource.offset + (if time < sineVoltage.signalSource.startTime then 0.0 else sineVoltage.signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (sineVoltage.signalSource.freqHz * (time - sineVoltage.signalSource.startTime)) + sineVoltage.signalSource.phase));
+//   sineVoltage.v = sineVoltage.signalSource.y;
+//   sineVoltage.v = sineVoltage.p.v - sineVoltage.n.v;
+//   0.0 = sineVoltage.p.i + sineVoltage.n.i;
+//   sineVoltage.i = sineVoltage.p.i;
+//   ground.p.v = 0.0;
+//   constantVoltage.v = constantVoltage.V;
+//   constantVoltage.v = constantVoltage.p.v - constantVoltage.n.v;
+//   0.0 = constantVoltage.p.i + constantVoltage.n.i;
+//   constantVoltage.i = constantVoltage.p.i;
+//   constantVoltage1.v = constantVoltage1.V;
+//   constantVoltage1.v = constantVoltage1.p.v - constantVoltage1.n.v;
+//   0.0 = constantVoltage1.p.i + constantVoltage1.n.i;
+//   constantVoltage1.i = constantVoltage1.p.i;
+//   opAmp.outp.i + (resistor1.n.i + resistor2.p.i) = 0.0;
+//   opAmp.outp.v = resistor1.n.v;
+//   resistor1.n.v = resistor2.p.v;
+//   constantVoltage.n.i + (constantVoltage1.n.i + (resistor2.n.i + (opAmp.p.i + (sineVoltage.n.i + ground.p.i)))) = 0.0;
+//   constantVoltage.n.v = constantVoltage1.n.v;
+//   constantVoltage1.n.v = resistor2.n.v;
+//   resistor2.n.v = opAmp.p.v;
+//   opAmp.p.v = sineVoltage.n.v;
+//   sineVoltage.n.v = ground.p.v;
+//   opAmp.m_supply.i + constantVoltage1.p.i = 0.0;
+//   opAmp.m_supply.v = constantVoltage1.p.v;
+//   opAmp.p_supply.i + constantVoltage.p.i = 0.0;
+//   opAmp.p_supply.v = constantVoltage.p.v;
+//   resistor1.p.i + (resistor.n.i + opAmp.m.i) = 0.0;
+//   resistor1.p.v = resistor.n.v;
+//   resistor.n.v = opAmp.m.v;
+//   resistor.p.i + sineVoltage.p.i = 0.0;
+//   resistor.p.v = sineVoltage.p.v;
+// end Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed;
+// "
+// ""
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Analog/Basic.mo:1856:6-1859:12:writable] Error: If-equation with conditions that are not parameter expressions must have the same number of equations in each branch, equation count is {2,0} for each respective branch.
+// Error: The language feature if-equations is not supported. Suggested workaround: rewrite equations using if-expressions: equation
+//   if initial() then
+//   opAmp.v_source = opAmp.q_fp1;
+//   opAmp.x = 0.0;
+//   end if;
+// 
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.StepVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.offset = offset "Offset of output signal y";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output y = offset for time < startTime";
+//   parameter Real signalSource.height = V "Height of step";
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Height of step";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.height);
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.StepVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.StepVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.StepVoltage has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.RampVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.height = V "Height of ramps";
+//   parameter Real signalSource.duration(quantity = "Time", unit = "s", min = 1e-60, start = 2.0) = duration "Durations of ramp";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Height of ramp";
+//   parameter Real duration(quantity = "Time", unit = "s", min = 1e-60, start = 2.0) "Duration of ramp";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.duration then ((time - signalSource.startTime) * signalSource.height) / signalSource.duration else signalSource.height);
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.RampVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.RampVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.RampVoltage has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Electrical.Analog.Sources.SineVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = V "Amplitude of sine wave";
+//   parameter Real signalSource.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = freqHz "Frequency of sine wave";
+//   parameter Real signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected constant Real signalSource.pi = 3.14159265358979;
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Amplitude of sine wave";
+//   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency of sine wave";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.SineVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.SineVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.SineVoltage has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Electrical.Analog.Sources.ExpSineVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = V "Amplitude of sine wave";
+//   parameter Real signalSource.freqHz(quantity = "Frequency", unit = "Hz", start = 2.0) = freqHz "Frequency of sine wave";
+//   parameter Real signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
+//   parameter Real signalSource.damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) = damping "Damping coefficient of sine wave";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected constant Real signalSource.pi = 3.14159265358979;
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Amplitude of sine wave";
+//   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 2.0) "Frequency of sine wave";
+//   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) "Damping coefficient of sine wave";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (Modelica.Math.exp((signalSource.startTime - time) * signalSource.damping) * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.ExpSineVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.ExpSineVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.ExpSineVoltage has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// class Modelica.Electrical.Analog.Sources.ExponentialsVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.outMax = vMax "Height of output for infinite riseTime";
+//   parameter Real signalSource.riseTime(quantity = "Time", unit = "s", min = 0.0, start = 0.5) = riseTime "Rise time";
+//   parameter Real signalSource.riseTimeConst(quantity = "Time", unit = "s", min = 1e-60) = riseTimeConst "Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))";
+//   parameter Real signalSource.fallTimeConst(quantity = "Time", unit = "s", min = 1e-60) = fallTimeConst "Fall time constant";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.y_riseTime;
+//   parameter Real vMax(start = 1.0) "Upper bound for rising edge";
+//   parameter Real riseTime(quantity = "Time", unit = "s", min = 0.0, start = 0.5) "Rise time";
+//   parameter Real riseTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = 0.1) "Rise time constant";
+//   parameter Real fallTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = riseTimeConst) "Fall time constant";
+// equation
+//   signalSource.y_riseTime = signalSource.outMax * (1.0 - Modelica.Math.exp((-signalSource.riseTime) / signalSource.riseTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - Modelica.Math.exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * Modelica.Math.exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.ExponentialsVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter vMax that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.ExponentialsVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter vMax that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.ExponentialsVoltage has 8 equation(s) and 8 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.PulseVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = V "Amplitude of pulse";
+//   parameter Real signalSource.width(min = 1e-60, max = 100.0) = width "Width of pulse in % of period";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Real signalSource.offset = offset "Offset of output signals";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   protected Real signalSource.T_width(quantity = "Time", unit = "s") = signalSource.period * signalSource.width / 100.0;
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Amplitude of pulse";
+//   parameter Real width(min = 1e-60, max = 100.0, start = 50.0) "Width of pulse in % of period";
+//   parameter Real period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) "Time for one period";
+// equation
+//   when sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.PulseVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.PulseVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.PulseVoltage has 9 equation(s) and 9 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.SawToothVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = V "Amplitude of saw tooth";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Real signalSource.offset = offset "Offset of output signals";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Amplitude of saw tooth";
+//   parameter Real period(quantity = "Time", unit = "s", start = 1.0) "Time for one period";
+// equation
+//   when sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else (signalSource.amplitude * (time - signalSource.T0)) / signalSource.period);
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.SawToothVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.SawToothVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.SawToothVoltage has 8 equation(s) and 8 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.TrapezoidVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = V "Amplitude of trapezoid";
+//   parameter Real signalSource.rising(quantity = "Time", unit = "s", min = 0.0) = rising "Rising duration of trapezoid";
+//   parameter Real signalSource.width(quantity = "Time", unit = "s", min = 0.0) = width "Width duration of trapezoid";
+//   parameter Real signalSource.falling(quantity = "Time", unit = "s", min = 0.0) = falling "Falling duration of trapezoid";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Integer signalSource.nperiod = nperiod "Number of periods (< 0 means infinite number of periods)";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected parameter Real signalSource.T_rising(quantity = "Time", unit = "s") = signalSource.rising "End time of rising phase within one period";
+//   protected parameter Real signalSource.T_width(quantity = "Time", unit = "s") = signalSource.T_rising + signalSource.width "End time of width phase within one period";
+//   protected parameter Real signalSource.T_falling(quantity = "Time", unit = "s") = signalSource.T_width + signalSource.falling "End time of falling phase within one period";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   protected Integer signalSource.counter(start = signalSource.nperiod) "Period counter";
+//   protected Integer signalSource.counter2(start = signalSource.nperiod);
+//   parameter Real V(quantity = "ElectricPotential", unit = "V", start = 1.0) "Amplitude of trapezoid";
+//   parameter Real rising(quantity = "Time", unit = "s", min = 0.0, start = 0.0) "Rising duration of trapezoid";
+//   parameter Real width(quantity = "Time", unit = "s", min = 0.0, start = 0.5) "Width duration of trapezoid";
+//   parameter Real falling(quantity = "Time", unit = "s", min = 0.0, start = 0.0) "Falling duration of trapezoid";
+//   parameter Real period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) "Time for one period";
+//   parameter Integer nperiod(start = -1) "Number of periods (< 0 means infinite number of periods)";
+// equation
+//   when pre(signalSource.counter2) <> 0 AND sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   signalSource.counter2 = pre(signalSource.counter);
+//   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR signalSource.counter2 == 0 OR time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.TrapezoidVoltage;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.TrapezoidVoltage completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.TrapezoidVoltage has 10 equation(s) and 10 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+//   input Real[:, 2] table "Table for interpolation";
+//   input Real offset "y-offset";
+//   input Real startTime "time-offset";
+//   input Real t "Actual time instant";
+//   input Integer last "Last used lower grid index";
+//   input Real TimeEps "Relative epsilon to check for identical time instants";
+//   output Real a "Interpolation coefficients a (y=a*x + b)";
+//   output Real b "Interpolation coefficients b (y=a*x + b)";
+//   output Real nextEvent "Next event instant";
+//   output Integer next "New lower grid index";
+//   protected Integer columns = 2 "Column to be interpolated";
+//   protected Integer ncol = 2 "Number of columns to be interpolated";
+//   protected Integer nrow = size(table,1) "Number of table rows";
+//   protected Integer next0;
+//   protected Real tp;
+//   protected Real dt;
+// algorithm
+//   next := last;
+//   nextEvent := t - TimeEps * abs(t);
+//   tp := (t + TimeEps * abs(t)) - startTime;
+//   if tp < 0.0 then
+//     nextEvent := startTime;
+//     a := 0.0;
+//     b := offset;
+//   elseif nrow < 2 then
+//     a := 0.0;
+//     b := offset + table[1, columns];
+//   else
+//     while next < nrow AND tp >= table[next, 1] loop
+//       next := 1 + next;
+//     end while;
+//     if next < nrow then
+//       nextEvent := startTime + table[next, 1];
+//     end if;
+//     next0 := next - 1;
+//     dt := table[next, 1] - table[next0, 1];
+//     if dt <= TimeEps * abs(table[next, 1]) then
+//       a := 0.0;
+//       b := offset + table[next, columns];
+//     else
+//       a := (table[next, columns] - table[next0, columns]) / dt;
+//       b := (offset + table[next0, columns]) - a * table[next0, 1];
+//     end if;
+//   end if;
+//   b := b - a * startTime;
+// end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
+// 
+// class Modelica.Electrical.Analog.Sources.TableVoltage
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.table[1,1] = table[1,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[1,2] = table[1,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[2,1] = table[2,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[2,2] = table[2,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[3,1] = table[3,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[3,2] = table[3,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.a "Interpolation coefficients a of actual interval (y=a*x+b)";
+//   protected Real signalSource.b "Interpolation coefficients b of actual interval (y=a*x+b)";
+//   protected Integer signalSource.last(start = 1) "Last used lower grid index";
+//   protected Real signalSource.nextEvent(quantity = "Time", unit = "s", start = 0.0, fixed = true) "Next event instant";
+//   parameter Real table[1,1] = 0.0 "Table matrix (time = first column, voltage = second column)";
+//   parameter Real table[1,2] = 0.0 "Table matrix (time = first column, voltage = second column)";
+//   parameter Real table[2,1] = 1.0 "Table matrix (time = first column, voltage = second column)";
+//   parameter Real table[2,2] = 1.0 "Table matrix (time = first column, voltage = second column)";
+//   parameter Real table[3,1] = 2.0 "Table matrix (time = first column, voltage = second column)";
+//   parameter Real table[3,2] = 4.0 "Table matrix (time = first column, voltage = second column)";
+// equation
+//   signalSource.y = signalSource.a * time + signalSource.b;
+//   v = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// algorithm
+//   when {time >= pre(signalSource.nextEvent),initial()} then
+//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-13);
+//   end when;
+// end Modelica.Electrical.Analog.Sources.TableVoltage;
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Sources.TableVoltage completed successfully.
+// 
+// 
+// Class Modelica.Electrical.Analog.Sources.TableVoltage has 11 equation(s) and 11 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.StepCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.offset = offset "Offset of output signal y";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output y = offset for time < startTime";
+//   parameter Real signalSource.height = I "Height of step";
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Height of step";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.height);
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.StepCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.StepCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.StepCurrent has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.RampCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.height = I "Height of ramps";
+//   parameter Real signalSource.duration(quantity = "Time", unit = "s", min = 1e-60, start = 2.0) = duration "Durations of ramp";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Height of ramp";
+//   parameter Real duration(quantity = "Time", unit = "s", min = 1e-60, start = 2.0) "Duration of ramp";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.duration then ((time - signalSource.startTime) * signalSource.height) / signalSource.duration else signalSource.height);
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.RampCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.RampCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.RampCurrent has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Electrical.Analog.Sources.SineCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = I "Amplitude of sine wave";
+//   parameter Real signalSource.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = freqHz "Frequency of sine wave";
+//   parameter Real signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected constant Real signalSource.pi = 3.14159265358979;
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Amplitude of sine wave";
+//   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency of sine wave";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.SineCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.SineCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.SineCurrent has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Electrical.Analog.Sources.ExpSineCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = I "Amplitude of sine wave";
+//   parameter Real signalSource.freqHz(quantity = "Frequency", unit = "Hz", start = 2.0) = freqHz "Frequency of sine wave";
+//   parameter Real signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
+//   parameter Real signalSource.damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) = damping "Damping coefficient of sine wave";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected constant Real signalSource.pi = 3.14159265358979;
+//   parameter Real I(start = 1.0) "Amplitude of sine wave";
+//   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 2.0) "Frequency of sine wave";
+//   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) "Damping coefficient of sine wave";
+// equation
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (Modelica.Math.exp((signalSource.startTime - time) * signalSource.damping) * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.ExpSineCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.ExpSineCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.ExpSineCurrent has 7 equation(s) and 7 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// class Modelica.Electrical.Analog.Sources.ExponentialsCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.outMax = iMax "Height of output for infinite riseTime";
+//   parameter Real signalSource.riseTime(quantity = "Time", unit = "s", min = 0.0, start = 0.5) = riseTime "Rise time";
+//   parameter Real signalSource.riseTimeConst(quantity = "Time", unit = "s", min = 1e-60) = riseTimeConst "Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))";
+//   parameter Real signalSource.fallTimeConst(quantity = "Time", unit = "s", min = 1e-60) = fallTimeConst "Fall time constant";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.y_riseTime;
+//   parameter Real iMax(start = 1.0) "Upper bound for rising edge";
+//   parameter Real riseTime(quantity = "Time", unit = "s", min = 0.0, start = 0.5) "Rise time";
+//   parameter Real riseTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = 0.1) "Rise time constant";
+//   parameter Real fallTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = riseTimeConst) "Fall time constant";
+// equation
+//   signalSource.y_riseTime = signalSource.outMax * (1.0 - Modelica.Math.exp((-signalSource.riseTime) / signalSource.riseTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - Modelica.Math.exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * Modelica.Math.exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.ExponentialsCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter iMax that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.ExponentialsCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter iMax that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
+// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.ExponentialsCurrent has 8 equation(s) and 8 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.PulseCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = I "Amplitude of pulse";
+//   parameter Real signalSource.width(min = 1e-60, max = 100.0) = width "Width of pulse in % of period";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Real signalSource.offset = offset "Offset of output signals";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   protected Real signalSource.T_width(quantity = "Time", unit = "s") = signalSource.period * signalSource.width / 100.0;
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Amplitude of pulse";
+//   parameter Real width(min = 1e-60, max = 100.0, start = 50.0) "Width of pulse in % of period";
+//   parameter Real period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) "Time for one period";
+// equation
+//   when sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.PulseCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.PulseCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.PulseCurrent has 9 equation(s) and 9 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.SawToothCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = I "Amplitude of saw tooth";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Real signalSource.offset = offset "Offset of output signals";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Amplitude of saw tooth";
+//   parameter Real period(quantity = "Time", unit = "s", start = 1.0) "Time for one period";
+// equation
+//   when sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else (signalSource.amplitude * (time - signalSource.T0)) / signalSource.period);
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.SawToothCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.SawToothCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.SawToothCurrent has 8 equation(s) and 8 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sources.TrapezoidCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.amplitude = I "Amplitude of trapezoid";
+//   parameter Real signalSource.rising(quantity = "Time", unit = "s", min = 0.0) = rising "Rising duration of trapezoid";
+//   parameter Real signalSource.width(quantity = "Time", unit = "s", min = 0.0) = width "Width duration of trapezoid";
+//   parameter Real signalSource.falling(quantity = "Time", unit = "s", min = 0.0) = falling "Falling duration of trapezoid";
+//   parameter Real signalSource.period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) = period "Time for one period";
+//   parameter Integer signalSource.nperiod = nperiod "Number of periods (< 0 means infinite number of periods)";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected parameter Real signalSource.T_rising(quantity = "Time", unit = "s") = signalSource.rising "End time of rising phase within one period";
+//   protected parameter Real signalSource.T_width(quantity = "Time", unit = "s") = signalSource.T_rising + signalSource.width "End time of width phase within one period";
+//   protected parameter Real signalSource.T_falling(quantity = "Time", unit = "s") = signalSource.T_width + signalSource.falling "End time of falling phase within one period";
+//   protected Real signalSource.T0(quantity = "Time", unit = "s", start = signalSource.startTime) "Start time of current period";
+//   protected Integer signalSource.counter(start = signalSource.nperiod) "Period counter";
+//   protected Integer signalSource.counter2(start = signalSource.nperiod);
+//   parameter Real I(quantity = "ElectricCurrent", unit = "A", start = 1.0) "Amplitude of trapezoid";
+//   parameter Real rising(quantity = "Time", unit = "s", min = 0.0, start = 0.0) "Rising duration of trapezoid";
+//   parameter Real width(quantity = "Time", unit = "s", min = 0.0, start = 0.5) "Width duration of trapezoid";
+//   parameter Real falling(quantity = "Time", unit = "s", min = 0.0, start = 0.0) "Falling duration of trapezoid";
+//   parameter Real period(quantity = "Time", unit = "s", min = 1e-60, start = 1.0) "Time for one period";
+//   parameter Integer nperiod(start = -1) "Number of periods (< 0 means infinite number of periods)";
+// equation
+//   when pre(signalSource.counter2) <> 0 AND sample(signalSource.startTime,signalSource.period) then
+//   signalSource.T0 = time;
+//   signalSource.counter2 = pre(signalSource.counter);
+//   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
+//   end when;
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR signalSource.counter2 == 0 OR time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Sources.TrapezoidCurrent;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Sources.TrapezoidCurrent completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
+// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
+// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
+// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
+// 
+// Class Modelica.Electrical.Analog.Sources.TrapezoidCurrent has 10 equation(s) and 10 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+//   input Real[:, 2] table "Table for interpolation";
+//   input Real offset "y-offset";
+//   input Real startTime "time-offset";
+//   input Real t "Actual time instant";
+//   input Integer last "Last used lower grid index";
+//   input Real TimeEps "Relative epsilon to check for identical time instants";
+//   output Real a "Interpolation coefficients a (y=a*x + b)";
+//   output Real b "Interpolation coefficients b (y=a*x + b)";
+//   output Real nextEvent "Next event instant";
+//   output Integer next "New lower grid index";
+//   protected Integer columns = 2 "Column to be interpolated";
+//   protected Integer ncol = 2 "Number of columns to be interpolated";
+//   protected Integer nrow = size(table,1) "Number of table rows";
+//   protected Integer next0;
+//   protected Real tp;
+//   protected Real dt;
+// algorithm
+//   next := last;
+//   nextEvent := t - TimeEps * abs(t);
+//   tp := (t + TimeEps * abs(t)) - startTime;
+//   if tp < 0.0 then
+//     nextEvent := startTime;
+//     a := 0.0;
+//     b := offset;
+//   elseif nrow < 2 then
+//     a := 0.0;
+//     b := offset + table[1, columns];
+//   else
+//     while next < nrow AND tp >= table[next, 1] loop
+//       next := 1 + next;
+//     end while;
+//     if next < nrow then
+//       nextEvent := startTime + table[next, 1];
+//     end if;
+//     next0 := next - 1;
+//     dt := table[next, 1] - table[next0, 1];
+//     if dt <= TimeEps * abs(table[next, 1]) then
+//       a := 0.0;
+//       b := offset + table[next, columns];
+//     else
+//       a := (table[next, columns] - table[next0, columns]) / dt;
+//       b := (offset + table[next0, columns]) - a * table[next0, 1];
+//     end if;
+//   end if;
+//   b := b - a * startTime;
+// end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
+// 
+// class Modelica.Electrical.Analog.Sources.TableCurrent
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real offset(quantity = "ElectricCurrent", unit = "A") = 0.0 "Current offset";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real signalSource.y "Connector of Real output signal";
+//   parameter Real signalSource.table[1,1] = table[1,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[1,2] = table[1,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[2,1] = table[2,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[2,2] = table[2,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[3,1] = table[3,1] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.table[3,2] = table[3,2] "Table matrix (time = first column; e.g. table=[0, 0; 1, 1; 2, 4])";
+//   parameter Real signalSource.offset = offset "Offset of output signal";
+//   parameter Real signalSource.startTime(quantity = "Time", unit = "s") = startTime "Output = offset for time < startTime";
+//   protected Real signalSource.a "Interpolation coefficients a of actual interval (y=a*x+b)";
+//   protected Real signalSource.b "Interpolation coefficients b of actual interval (y=a*x+b)";
+//   protected Integer signalSource.last(start = 1) "Last used lower grid index";
+//   protected Real signalSource.nextEvent(quantity = "Time", unit = "s", start = 0.0, fixed = true) "Next event instant";
+//   parameter Real table[1,1] = 0.0 "Table matrix (time = first column, current = second column)";
+//   parameter Real table[1,2] = 0.0 "Table matrix (time = first column, current = second column)";
+//   parameter Real table[2,1] = 1.0 "Table matrix (time = first column, current = second column)";
+//   parameter Real table[2,2] = 1.0 "Table matrix (time = first column, current = second column)";
+//   parameter Real table[3,1] = 2.0 "Table matrix (time = first column, current = second column)";
+//   parameter Real table[3,2] = 4.0 "Table matrix (time = first column, current = second column)";
+// equation
+//   signalSource.y = signalSource.a * time + signalSource.b;
+//   i = signalSource.y;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// algorithm
+//   when {time >= pre(signalSource.nextEvent),initial()} then
+//     (signalSource.a, signalSource.b, signalSource.nextEvent, signalSource.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{signalSource.table[1,1],signalSource.table[1,2]},{signalSource.table[2,1],signalSource.table[2,2]},{signalSource.table[3,1],signalSource.table[3,2]}},signalSource.offset,signalSource.startTime,time,signalSource.last,1e-13);
+//   end when;
+// end Modelica.Electrical.Analog.Sources.TableCurrent;
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Sources.TableCurrent completed successfully.
+// 
+// 
+// Class Modelica.Electrical.Analog.Sources.TableCurrent has 11 equation(s) and 11 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Sensors.PowerSensor
+//   Real pc.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real pc.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real nc.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real nc.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real pv.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real pv.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real nv.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real nv.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   output Real power;
+//   Real voltageSensor.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real voltageSensor.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real voltageSensor.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real voltageSensor.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   output Real voltageSensor.v "Voltage between pin p and n (= p.v - n.v) as output signal";
+//   Real currentSensor.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real currentSensor.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real currentSensor.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real currentSensor.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   output Real currentSensor.i "current in the branch from p to n as output signal";
+//   input Real product.u1 "Connector of Real input signal 1";
+//   input Real product.u2 "Connector of Real input signal 2";
+//   output Real product.y "Connector of Real output signal";
+// equation
+//   voltageSensor.p.i = 0.0;
+//   voltageSensor.n.i = 0.0;
+//   voltageSensor.v = voltageSensor.p.v - voltageSensor.n.v;
+//   currentSensor.p.v = currentSensor.n.v;
+//   currentSensor.p.i = currentSensor.i;
+//   currentSensor.n.i = -currentSensor.i;
+//   product.y = product.u1 * product.u2;
+//   product.y = power;
+//   voltageSensor.v = product.u1;
+//   currentSensor.i = product.u2;
+//   currentSensor.n.i + (-nc.i) = 0.0;
+//   currentSensor.n.v = nc.v;
+//   (-pc.i) + currentSensor.p.i = 0.0;
+//   pc.v = currentSensor.p.v;
+//   voltageSensor.n.i + (-nv.i) = 0.0;
+//   voltageSensor.n.v = nv.v;
+//   (-pv.i) + voltageSensor.p.i = 0.0;
+//   pv.v = voltageSensor.p.v;
+//   nv.i = 0.0;
+//   nc.i = 0.0;
+//   pv.i = 0.0;
+//   pc.i = 0.0;
+// end Modelica.Electrical.Analog.Sensors.PowerSensor;
+// "
+// ""
+// "Check of Modelica.Electrical.Analog.Sensors.PowerSensor completed successfully.
+// 
+// 
+// Class Modelica.Electrical.Analog.Sensors.PowerSensor has 22 equation(s) and 22 variable(s).
+// 20 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Lines.OLine
+//   Real p1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p3.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p3.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real v13(quantity = "ElectricPotential", unit = "V");
+//   Real v23(quantity = "ElectricPotential", unit = "V");
+//   Real i1(quantity = "ElectricCurrent", unit = "A");
+//   Real i2(quantity = "ElectricCurrent", unit = "A");
+//   parameter Real r(unit = "Ohm/m", min = 1e-60, start = 1.0) "Resistance per meter";
+//   parameter Real l(unit = "H/m", min = 1e-60, start = 1.0) "Inductance per meter";
+//   parameter Real g(unit = "S/m", min = 1e-60, start = 1.0) "Conductance per meter";
+//   parameter Real c(unit = "F/m", min = 1e-60, start = 1.0) "Capacitance per meter";
+//   parameter Real length(quantity = "Length", unit = "m", min = 1e-60, start = 1.0) "Length of line";
+//   parameter Integer N(min = 1, start = 1) "Number of lumped segments";
+//   Real R[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real R[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real R[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real R[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean R[1].useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real R[1].T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = R[1].T_ref "Fixed device temperature if useHeatPort = false";
+//   Real R[1].LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real R[1].T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real R[1].R(quantity = "Resistance", unit = "Ohm", start = 1.0) = r * length / Real(1 + N) "Resistance at temperature T_ref";
+//   parameter Real R[1].T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real R[1].alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[1].R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[2].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real R[2].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real R[2].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[2].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real R[2].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[2].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean R[2].useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real R[2].T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = R[2].T_ref "Fixed device temperature if useHeatPort = false";
+//   Real R[2].LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real R[2].T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real R[2].R(quantity = "Resistance", unit = "Ohm", start = 1.0) = r * length / Real(1 + N) "Resistance at temperature T_ref";
+//   parameter Real R[2].T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real R[2].alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[2].R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real L[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real L[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real L[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real L[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real L[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real L[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real L[1].L(quantity = "Inductance", unit = "H", start = 1.0) = l * length / Real(1 + N) "Inductance";
+//   Real L[2].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real L[2].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real L[2].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real L[2].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real L[2].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real L[2].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real L[2].L(quantity = "Inductance", unit = "H", start = 1.0) = l * length / Real(1 + N) "Inductance";
+//   Real C[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real C[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real C[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real C[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real C[1].C(quantity = "Capacitance", unit = "F", min = 0.0, start = 1.0) = c * length / Real(N) "Capacitance";
+//   Real G[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real G[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real G[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real G[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real G[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real G[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean G[1].useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real G[1].T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = G[1].T_ref "Fixed device temperature if useHeatPort = false";
+//   Real G[1].LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real G[1].T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real G[1].G(quantity = "Conductance", unit = "S", start = 1.0) = g * length / Real(N) "Conductance at temperature T_ref";
+//   parameter Real G[1].T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real G[1].alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of conductance (G_actual = G/(1 + alpha*(T_heatPort - T_ref))";
+//   Real G[1].G_actual(quantity = "Conductance", unit = "S") "Actual conductance = G/(1 + alpha*(T_heatPort - T_ref))";
+// equation
+//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   R[1].R_actual = R[1].R * (1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref));
+//   R[1].v = R[1].R_actual * R[1].i;
+//   R[1].LossPower = R[1].v * R[1].i;
+//   R[1].i = R[1].p.i;
+//   0.0 = R[1].p.i + R[1].n.i;
+//   R[1].v = R[1].p.v - R[1].n.v;
+//   R[1].T_heatPort = R[1].T;
+//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   R[2].R_actual = R[2].R * (1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref));
+//   R[2].v = R[2].R_actual * R[2].i;
+//   R[2].LossPower = R[2].v * R[2].i;
+//   R[2].i = R[2].p.i;
+//   0.0 = R[2].p.i + R[2].n.i;
+//   R[2].v = R[2].p.v - R[2].n.v;
+//   R[2].T_heatPort = R[2].T;
+//   L[1].L * der(L[1].i) = L[1].v;
+//   L[1].v = L[1].p.v - L[1].n.v;
+//   0.0 = L[1].p.i + L[1].n.i;
+//   L[1].i = L[1].p.i;
+//   L[2].L * der(L[2].i) = L[2].v;
+//   L[2].v = L[2].p.v - L[2].n.v;
+//   0.0 = L[2].p.i + L[2].n.i;
+//   L[2].i = L[2].p.i;
+//   C[1].i = C[1].C * der(C[1].v);
+//   C[1].v = C[1].p.v - C[1].n.v;
+//   0.0 = C[1].p.i + C[1].n.i;
+//   C[1].i = C[1].p.i;
+//   assert(1.0 + G[1].alpha * (G[1].T_heatPort - G[1].T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   G[1].G_actual = G[1].G / (1.0 + G[1].alpha * (G[1].T_heatPort - G[1].T_ref));
+//   G[1].i = G[1].G_actual * G[1].v;
+//   G[1].LossPower = G[1].v * G[1].i;
+//   G[1].i = G[1].p.i;
+//   0.0 = G[1].p.i + G[1].n.i;
+//   G[1].v = G[1].p.v - G[1].n.v;
+//   G[1].T_heatPort = G[1].T;
+//   v13 = p1.v - p3.v;
+//   v23 = p2.v - p3.v;
+//   i1 = p1.i;
+//   i2 = p2.i;
+//   L[2].n.i + (-p2.i) = 0.0;
+//   L[2].n.v = p2.v;
+//   R[2].n.i + L[2].p.i = 0.0;
+//   R[2].n.v = L[2].p.v;
+//   L[1].n.i + (C[1].p.i + (G[1].p.i + R[2].p.i)) = 0.0;
+//   L[1].n.v = C[1].p.v;
+//   C[1].p.v = G[1].p.v;
+//   G[1].p.v = R[2].p.v;
+//   G[1].n.i + (C[1].n.i + (-p3.i)) = 0.0;
+//   G[1].n.v = C[1].n.v;
+//   C[1].n.v = p3.v;
+//   R[1].n.i + L[1].p.i = 0.0;
+//   R[1].n.v = L[1].p.v;
+//   (-p1.i) + R[1].p.i = 0.0;
+//   p1.v = R[1].p.v;
+//   p1.i = 0.0;
+//   p3.i = 0.0;
+//   p2.i = 0.0;
+// end Modelica.Electrical.Analog.Lines.OLine;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter r that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter l that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter g that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Lines.OLine completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter r that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter l that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter g that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// 
+// Class Modelica.Electrical.Analog.Lines.OLine has 55 equation(s) and 55 variable(s).
+// 33 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Lines.ULine
+//   Real p1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p3.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p3.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real v13(quantity = "ElectricPotential", unit = "V");
+//   Real v23(quantity = "ElectricPotential", unit = "V");
+//   Real i1(quantity = "ElectricCurrent", unit = "A");
+//   Real i2(quantity = "ElectricCurrent", unit = "A");
+//   parameter Real r(unit = "Ohm/m", min = 1e-60, start = 1.0) "Resistance per meter";
+//   parameter Real c(unit = "F/m", min = 1e-60, start = 1.0) "Capacitance per meter";
+//   parameter Real length(quantity = "Length", unit = "m", min = 1e-60, start = 1.0) "Length of line";
+//   parameter Integer N(min = 1, start = 1) "Number of lumped segments";
+//   Real R[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real R[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real R[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real R[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean R[1].useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real R[1].T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = R[1].T_ref "Fixed device temperature if useHeatPort = false";
+//   Real R[1].LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real R[1].T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real R[1].R(quantity = "Resistance", unit = "Ohm", start = 1.0) = r * length / Real(1 + N) "Resistance at temperature T_ref";
+//   parameter Real R[1].T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real R[1].alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[1].R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[2].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real R[2].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real R[2].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[2].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real R[2].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real R[2].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Boolean R[2].useHeatPort = false "=true, if HeatPort is enabled";
+//   parameter Real R[2].T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = R[2].T_ref "Fixed device temperature if useHeatPort = false";
+//   Real R[2].LossPower(quantity = "Power", unit = "W") "Loss power leaving component via HeatPort";
+//   Real R[2].T_heatPort(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Temperature of HeatPort";
+//   parameter Real R[2].R(quantity = "Resistance", unit = "Ohm", start = 1.0) = r * length / Real(1 + N) "Resistance at temperature T_ref";
+//   parameter Real R[2].T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 300.15 "Reference temperature";
+//   parameter Real R[2].alpha(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real R[2].R_actual(quantity = "Resistance", unit = "Ohm") "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))";
+//   Real C[1].v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real C[1].i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real C[1].p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C[1].p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real C[1].n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real C[1].n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real C[1].C(quantity = "Capacitance", unit = "F", min = 0.0, start = 1.0) = c * length / Real(N) "Capacitance";
+// equation
+//   assert(1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   R[1].R_actual = R[1].R * (1.0 + R[1].alpha * (R[1].T_heatPort - R[1].T_ref));
+//   R[1].v = R[1].R_actual * R[1].i;
+//   R[1].LossPower = R[1].v * R[1].i;
+//   R[1].i = R[1].p.i;
+//   0.0 = R[1].p.i + R[1].n.i;
+//   R[1].v = R[1].p.v - R[1].n.v;
+//   R[1].T_heatPort = R[1].T;
+//   assert(1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref) >= 1e-15,"Temperature outside scope of model!");
+//   R[2].R_actual = R[2].R * (1.0 + R[2].alpha * (R[2].T_heatPort - R[2].T_ref));
+//   R[2].v = R[2].R_actual * R[2].i;
+//   R[2].LossPower = R[2].v * R[2].i;
+//   R[2].i = R[2].p.i;
+//   0.0 = R[2].p.i + R[2].n.i;
+//   R[2].v = R[2].p.v - R[2].n.v;
+//   R[2].T_heatPort = R[2].T;
+//   C[1].i = C[1].C * der(C[1].v);
+//   C[1].v = C[1].p.v - C[1].n.v;
+//   0.0 = C[1].p.i + C[1].n.i;
+//   C[1].i = C[1].p.i;
+//   v13 = p1.v - p3.v;
+//   v23 = p2.v - p3.v;
+//   i1 = p1.i;
+//   i2 = p2.i;
+//   R[2].n.i + (-p2.i) = 0.0;
+//   R[2].n.v = p2.v;
+//   C[1].n.i + (-p3.i) = 0.0;
+//   C[1].n.v = p3.v;
+//   R[1].n.i + (R[2].p.i + C[1].p.i) = 0.0;
+//   R[1].n.v = R[2].p.v;
+//   R[2].p.v = C[1].p.v;
+//   (-p1.i) + R[1].p.i = 0.0;
+//   p1.v = R[1].p.v;
+//   p1.i = 0.0;
+//   p3.i = 0.0;
+//   p2.i = 0.0;
+// end Modelica.Electrical.Analog.Lines.ULine;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter r that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Lines.ULine completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter r that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
+// Warning: Using available start value (start=1) as default value for parameter N that has no value
+// 
+// Class Modelica.Electrical.Analog.Lines.ULine has 34 equation(s) and 34 variable(s).
+// 21 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Lines.TLine2
+//   Real v1(quantity = "ElectricPotential", unit = "V") "Voltage drop over the left port";
+//   Real v2(quantity = "ElectricPotential", unit = "V") "Voltage drop over the right port";
+//   Real i1(quantity = "ElectricCurrent", unit = "A") "Current flowing from pos. to neg. pin of the left port";
+//   Real i2(quantity = "ElectricCurrent", unit = "A") "Current flowing from pos. to neg. pin of the right port";
+//   Real p1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real Z0(quantity = "Resistance", unit = "Ohm", start = 1.0) "Characteristic impedance";
+//   parameter Real F(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency";
+//   parameter Real NL(start = 1.0) "Normalized length";
+//   protected Real er(quantity = "ElectricPotential", unit = "V");
+//   protected Real es(quantity = "ElectricPotential", unit = "V");
+//   protected Real TD(quantity = "Time", unit = "s");
+// equation
+//   assert(Z0 > 0.0,"Z0 has to be positive");
+//   assert(NL > 0.0,"NL has to be positive");
+//   assert(F > 0.0,"F  has to be positive");
+//   TD = NL / F;
+//   i1 = (v1 - es) / Z0;
+//   i2 = (v2 - er) / Z0;
+//   es = 2.0 * delay(v2,TD,TD) - delay(er,TD,TD);
+//   er = 2.0 * delay(v1,TD,TD) - delay(es,TD,TD);
+//   v1 = p1.v - n1.v;
+//   v2 = p2.v - n2.v;
+//   0.0 = p1.i + n1.i;
+//   0.0 = p2.i + n2.i;
+//   i1 = p1.i;
+//   i2 = p2.i;
+//   n2.i = 0.0;
+//   n1.i = 0.0;
+//   p2.i = 0.0;
+//   p1.i = 0.0;
+// end Modelica.Electrical.Analog.Lines.TLine2;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "
+// "Check of Modelica.Electrical.Analog.Lines.TLine2 completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// 
+// Class Modelica.Electrical.Analog.Lines.TLine2 has 15 equation(s) and 15 variable(s).
+// 8 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Lines.TLine3
+//   Real v1(quantity = "ElectricPotential", unit = "V") "Voltage drop over the left port";
+//   Real v2(quantity = "ElectricPotential", unit = "V") "Voltage drop over the right port";
+//   Real i1(quantity = "ElectricCurrent", unit = "A") "Current flowing from pos. to neg. pin of the left port";
+//   Real i2(quantity = "ElectricCurrent", unit = "A") "Current flowing from pos. to neg. pin of the right port";
+//   Real p1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n1.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n2.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n2.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real Z0(quantity = "Resistance", unit = "Ohm", start = 1.0) "Natural impedance";
+//   parameter Real F(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency";
+//   protected Real er(quantity = "ElectricPotential", unit = "V");
+//   protected Real es(quantity = "ElectricPotential", unit = "V");
+//   protected Real TD(quantity = "Time", unit = "s");
+// equation
+//   assert(Z0 > 0.0,"Z0 has to be positive");
+//   assert(F > 0.0,"F  has to be positive");
+//   TD = 1.0 / F / 4.0;
+//   i1 = (v1 - es) / Z0;
+//   i2 = (v2 - er) / Z0;
+//   es = 2.0 * delay(v2,TD,TD) - delay(er,TD,TD);
+//   er = 2.0 * delay(v1,TD,TD) - delay(es,TD,TD);
+//   v1 = p1.v - n1.v;
+//   v2 = p2.v - n2.v;
+//   0.0 = p1.i + n1.i;
+//   0.0 = p2.i + n2.i;
+//   i1 = p1.i;
+//   i2 = p2.i;
+//   n2.i = 0.0;
+//   n1.i = 0.0;
+//   p2.i = 0.0;
+//   p1.i = 0.0;
+// end Modelica.Electrical.Analog.Lines.TLine3;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "
+// "Check of Modelica.Electrical.Analog.Lines.TLine3 completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
+// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// 
+// Class Modelica.Electrical.Analog.Lines.TLine3 has 15 equation(s) and 15 variable(s).
+// 8 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Basic.EMF
+//   parameter Boolean useSupport = false "= true, if support flange enabled, otherwise implicitly grounded";
+//   parameter Real k(quantity = "ElectricalTorqueConstant", unit = "N.m/A", start = 1.0) "Transformation coefficient";
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from positive to negative pin";
+//   Real phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Angle of shaft flange with respect to support (= flange.phi - support.phi)";
+//   Real w(quantity = "AngularVelocity", unit = "rad/s") "Angular velocity of flange relative to support";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real flange.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+//   Real flange.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+//   parameter Real fixed.phi0(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Fixed offset angle of housing";
+//   Real fixed.flange.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+//   Real fixed.flange.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+//   input Real internalSupport.tau(quantity = "Torque", unit = "N.m") = -flange.tau "External support torque (must be computed via torque balance in model where InternalSupport is used; = flange.tau)";
+//   Real internalSupport.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "External support angle (= flange.phi)";
+//   Real internalSupport.flange.phi(quantity = "Angle", unit = "rad", displayUnit = "deg") "Absolute rotation angle of flange";
+//   Real internalSupport.flange.tau(quantity = "Torque", unit = "N.m") "Cut torque in the flange";
+// equation
+//   fixed.flange.phi = fixed.phi0;
+//   internalSupport.flange.tau = internalSupport.tau;
+//   internalSupport.flange.phi = internalSupport.phi;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   phi = flange.phi - internalSupport.phi;
+//   w = der(phi);
+//   k * w = v;
+//   flange.tau = (-k) * i;
+//   internalSupport.flange.tau + fixed.flange.tau = 0.0;
+//   internalSupport.flange.phi = fixed.flange.phi;
+//   flange.tau = 0.0;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Basic.EMF;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter k that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Basic.EMF completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter k that has no value
+// 
+// Class Modelica.Electrical.Analog.Basic.EMF has 16 equation(s) and 16 variable(s).
+// 11 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Electrical.Analog.Basic.TranslationalEMF
+//   parameter Boolean useSupport = false "= true, if support flange enabled, otherwise implicitly grounded";
+//   parameter Real k(quantity = "ElectricalForceConstant", unit = "N/A", start = 1.0) "Transformation coefficient";
+//   Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins";
+//   Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from positive to negative pin";
+//   Real s(quantity = "Length", unit = "m") "Position of flange relative to support";
+//   Real vel(quantity = "Velocity", unit = "m/s") "Velocity of flange relative to support";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real flange.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real flange.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   parameter Real fixed.s0(quantity = "Length", unit = "m") = 0.0 "fixed offset position of housing";
+//   Real fixed.flange.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real fixed.flange.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   input Real internalSupport.f(quantity = "Force", unit = "N") = -flange.f "External support force (must be computed via force balance in model where InternalSupport is used; = flange.f)";
+//   Real internalSupport.s(quantity = "Length", unit = "m") "External support position (= flange.s)";
+//   Real internalSupport.flange.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real internalSupport.flange.f(quantity = "Force", unit = "N") "cut force directed into flange";
+// equation
+//   fixed.flange.s = fixed.s0;
+//   internalSupport.flange.f = internalSupport.f;
+//   internalSupport.flange.s = internalSupport.s;
+//   v = p.v - n.v;
+//   0.0 = p.i + n.i;
+//   i = p.i;
+//   s = flange.s - internalSupport.s;
+//   vel = der(s);
+//   k * vel = v;
+//   flange.f = (-k) * i;
+//   internalSupport.flange.f + fixed.flange.f = 0.0;
+//   internalSupport.flange.s = fixed.flange.s;
+//   flange.f = 0.0;
+//   n.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Basic.TranslationalEMF;
+// "
+// "Warning: Using available start value (start=1.0) as default value for parameter k that has no value
+// "
+// "Check of Modelica.Electrical.Analog.Basic.TranslationalEMF completed successfully.
+// 
+// Warning: Using available start value (start=1.0) as default value for parameter k that has no value
+// 
+// Class Modelica.Electrical.Analog.Basic.TranslationalEMF has 16 equation(s) and 16 variable(s).
+// 11 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit
+//   input Real v_source(quantity = "ElectricPotential", unit = "V");
+//   input Real v_out(quantity = "ElectricPotential", unit = "V");
+//   input Real Rout(quantity = "Resistance", unit = "Ohm");
+//   input Real Imaxsi_val(quantity = "ElectricCurrent", unit = "A");
+//   input Real Imaxso_val(quantity = "ElectricCurrent", unit = "A");
+//   output Real result(quantity = "ElectricCurrent", unit = "A");
+// algorithm
+//   if v_out > v_source + Rout * Imaxsi_val then
+//     result := Imaxsi_val;
+//   elseif v_out < v_source - Rout * Imaxso_val then
+//     result := -Imaxso_val;
+//   else
+//     result := (v_out - v_source) / Rout;
+//   end if;
+//   return;
+// end Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit;
+// 
+// function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit
+//   input Real q_sum(quantity = "ElectricPotential", unit = "V");
+//   input Real q_sum_ltf(quantity = "ElectricPotential", unit = "V");
+//   input Real v_pos(quantity = "ElectricPotential", unit = "V");
+//   input Real v_neg(quantity = "ElectricPotential", unit = "V");
+//   input Real vcp(quantity = "ElectricPotential", unit = "V");
+//   input Real vcm(quantity = "ElectricPotential", unit = "V");
+//   output Real result(quantity = "ElectricPotential", unit = "V");
+// algorithm
+//   if q_sum > v_pos - vcp AND q_sum_ltf >= v_pos - vcp then
+//     result := v_pos - vcp;
+//   elseif q_sum < v_neg + vcm AND q_sum_ltf <= v_neg + vcm then
+//     result := v_neg + vcm;
+//   else
+//     result := q_sum;
+//   end if;
+//   return;
+// end Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit;
+// 
+// class Modelica.Electrical.Analog.Basic.OpAmpDetailed
+//   parameter Real Rdm(quantity = "Resistance", unit = "Ohm") = 2000000.0 "input resistance (differential input mode)";
+//   parameter Real Rcm(quantity = "Resistance", unit = "Ohm") = 2000000000.0 "input resistance (common mode)";
+//   parameter Real Cin(quantity = "Capacitance", unit = "F", min = 0.0) = 1.4e-12 "input capacitance";
+//   parameter Real Vos(quantity = "ElectricPotential", unit = "V") = 0.001 "input offset voltage";
+//   parameter Real Ib(quantity = "ElectricCurrent", unit = "A") = 8e-08 "input bias current";
+//   parameter Real Ios(quantity = "ElectricCurrent", unit = "A") = 2e-08 "input offset current";
+//   parameter Real vcp(quantity = "ElectricPotential", unit = "V") = 0.0 "correction value for limiting by p_supply";
+//   parameter Real vcm(quantity = "ElectricPotential", unit = "V") = 0.0 "correction value for limiting by msupply";
+//   parameter Real Avd0 = 106.0 "differential amplifier [dB]";
+//   parameter Real CMRR = 90.0 "common-mode rejection [dB]";
+//   parameter Real fp1(quantity = "Frequency", unit = "Hz") = 5.0 "dominant pole";
+//   parameter Real fp2(quantity = "Frequency", unit = "Hz") = 2000000.0 "pole frequency";
+//   parameter Real fp3(quantity = "Frequency", unit = "Hz") = 20000000.0 "pole frequency";
+//   parameter Real fp4(quantity = "Frequency", unit = "Hz") = 100000000.0 "pole frequency";
+//   parameter Real fz(quantity = "Frequency", unit = "Hz") = 5000000.0 "zero frequency";
+//   parameter Real sr_p(quantity = "VoltageSlope", unit = "V/s") = 500000.0 "slew rate for increase";
+//   parameter Real sr_m(quantity = "VoltageSlope", unit = "V/s") = 500000.0 "slew rate for decrease";
+//   parameter Real Rout(quantity = "Resistance", unit = "Ohm") = 75.0 "output resistance";
+//   parameter Real Imaxso(quantity = "ElectricCurrent", unit = "A") = 0.025 "maximal output current (source current)";
+//   parameter Real Imaxsi(quantity = "ElectricCurrent", unit = "A") = 0.025 "maximal output current (sink current)";
+//   parameter Real Ts(quantity = "Time", unit = "s") = 1.2e-06 "sampling time";
+//   constant Real Pi = 3.141592654;
+//   parameter Real vcp_abs(quantity = "ElectricPotential", unit = "V") = abs(vcp);
+//   parameter Real vcm_abs(quantity = "ElectricPotential", unit = "V") = abs(vcm);
+//   parameter Real I1(quantity = "ElectricCurrent", unit = "A") = Ib + Ios / 2.0;
+//   parameter Real I2(quantity = "ElectricCurrent", unit = "A") = Ib - Ios / 2.0;
+//   parameter Real Avd0_val = 10.0 ^ (Avd0 / 20.0) "differential mode gain";
+//   parameter Real Avcm_val = Avd0_val * 10.0 ^ ((-CMRR) / 20.0) / 2.0 "common mode gain";
+//   parameter Real sr_p_val(quantity = "VoltageSlope", unit = "V/s") = abs(sr_p);
+//   parameter Real sr_m_val(quantity = "VoltageSlope", unit = "V/s") = -abs(sr_m);
+//   parameter Real Imaxso_val(quantity = "ElectricCurrent", unit = "A") = abs(Imaxso) "orientation out outp";
+//   parameter Real Imaxsi_val(quantity = "ElectricCurrent", unit = "A") = abs(Imaxsi) "orientation into outp";
+//   Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real m.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real m.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real outp.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real outp.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real p_supply.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real p_supply.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real m_supply.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real m_supply.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real v_pos(quantity = "ElectricPotential", unit = "V");
+//   Real v_neg(quantity = "ElectricPotential", unit = "V");
+//   Real v_vos(quantity = "ElectricPotential", unit = "V");
+//   Real v_3(quantity = "ElectricPotential", unit = "V");
+//   Real v_in(quantity = "ElectricPotential", unit = "V");
+//   Real v_4(quantity = "ElectricPotential", unit = "V");
+//   Real i_vos(quantity = "ElectricCurrent", unit = "A");
+//   Real i_3(quantity = "ElectricCurrent", unit = "A");
+//   Real i_r2(quantity = "ElectricCurrent", unit = "A");
+//   Real i_c3(quantity = "ElectricCurrent", unit = "A");
+//   Real i_4(quantity = "ElectricCurrent", unit = "A");
+//   Real q_fr1;
+//   Real q_fr2;
+//   Real q_fr3;
+//   Real q_sum(quantity = "ElectricPotential", unit = "V");
+//   Real q_sum_help(quantity = "ElectricPotential", unit = "V");
+//   Real q_fp1(quantity = "ElectricPotential", unit = "V");
+//   Real v_source(quantity = "ElectricPotential", unit = "V");
+//   Real x(quantity = "ElectricPotential", unit = "V") "auxiliary variable for slew rate";
+//   Real v_out(quantity = "ElectricPotential", unit = "V");
+//   Real i_out(quantity = "ElectricCurrent", unit = "A");
+// equation
+//   assert(Rout > 0.0,"Rout must be > 0.0.");
+//   v_pos = p_supply.v;
+//   v_neg = m_supply.v;
+//   p.i = i_vos;
+//   m.i = i_4 - i_r2 - i_c3;
+//   0.0 = i_3 + (i_r2 + i_c3) - i_vos;
+//   p.v - m.v = v_vos + v_in;
+//   v_4 = m.v;
+//   v_3 = p.v - v_vos;
+//   v_vos = Vos;
+//   i_3 = I1 + v_3 / Rcm;
+//   v_in = Rdm * i_r2;
+//   i_c3 = Cin * der(v_in);
+//   i_4 = I2 + v_4 / Rcm;
+//   der(q_fr1) = 6.283185308 * (fp2 * (v_in - q_fr1));
+//   q_fr2 + der(q_fr2) * 1.0 / fp3 / 6.283185308 = q_fr1 + der(q_fr1) * 1.0 / fz / 6.283185308;
+//   der(q_fr3) = 6.283185308 * (fp4 * (q_fr2 - q_fr3));
+//   q_sum = Avd0_val * q_fr3 + Avcm_val * (v_3 + v_4);
+//   q_sum_help = Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit(q_sum,q_fp1,v_pos,v_neg,vcp_abs,vcm_abs);
+//   der(q_fp1) = 6.283185308 * (fp1 * (q_sum_help - q_fp1));
+//   if initial() then
+//   v_source = q_fp1;
+//   x = 0.0;
+//   end if;
+//   der(x) = (q_fp1 - v_source) / Ts;
+//   der(v_source) = if noEvent(der(x) > sr_p_val) then sr_p_val else if noEvent(der(x) < sr_m_val) then sr_m_val else der(x);
+//   v_out = outp.v;
+//   i_out = outp.i;
+//   i_out = Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit(v_source,v_out,Rout,Imaxsi_val,Imaxso_val);
+//   p_supply.i = 0.0;
+//   m_supply.i = 0.0;
+//   m.i = 0.0;
+//   outp.i = 0.0;
+//   m_supply.i = 0.0;
+//   p_supply.i = 0.0;
+//   p.i = 0.0;
+// end Modelica.Electrical.Analog.Basic.OpAmpDetailed;
+// "
+// ""
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Analog/Basic.mo:1856:6-1859:12:writable] Error: If-equation with conditions that are not parameter expressions must have the same number of equations in each branch, equation count is {2,0} for each respective branch.
+// Error: The language feature if-equations is not supported. Suggested workaround: rewrite equations using if-expressions: equation
+//   if initial() then
+//   v_source = q_fp1;
+//   x = 0.0;
+//   end if;
+// 
+// "
+// ""
+// endResult

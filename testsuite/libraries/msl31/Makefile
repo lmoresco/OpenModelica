@@ -2,7 +2,7 @@ TEST = ../../rtest -v
 
 TESTFILES = \
 Modelica.Electrical.Machines.Examples.mos Modelica.Electrical.MultiPhase.Examples.mos\
-Modelica.Math.mos
+Modelica.Math.mos Modelica.Electrical.Analog.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
