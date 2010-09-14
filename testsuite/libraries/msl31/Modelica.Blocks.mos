@@ -1,0 +1,389 @@
+//name:        Modelica.Electrical.Analog [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Blocks
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadFile("Modelica/package.mo"); getErrorString();
+
+instantiateModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
+checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
+
+instantiateModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
+checkModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
+
+instantiateModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
+checkModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
+
+instantiateModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
+checkModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
+
+instantiateModel(Modelica.Blocks.Tables.CombiTable1D); getErrorString();
+checkModel(Modelica.Blocks.Tables.CombiTable1D); getErrorString();
+
+instantiateModel(Modelica.Blocks.Tables.CombiTable1Ds); getErrorString();
+checkModel(Modelica.Blocks.Tables.CombiTable1Ds); getErrorString();
+
+instantiateModel(Modelica.Blocks.Tables.CombiTable2D); getErrorString();
+checkModel(Modelica.Blocks.Tables.CombiTable2D); getErrorString();
+
+instantiateModel(Modelica.Blocks.Sources.KinematicPTP); getErrorString();
+checkModel(Modelica.Blocks.Sources.KinematicPTP); getErrorString();
+
+instantiateModel(Modelica.Blocks.Sources.KinematicPTP2); getErrorString();
+checkModel(Modelica.Blocks.Sources.KinematicPTP2); getErrorString();
+
+instantiateModel(Modelica.Blocks.Sources.TimeTable); getErrorString();
+checkModel(Modelica.Blocks.Sources.TimeTable); getErrorString();
+
+instantiateModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
+checkModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
+
+instantiateModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
+checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
+
+// Result:
+// true
+// ""
+// ""
+// "Error: Error occured while flattening model Modelica.Blocks.Continuous.TransferFunction
+// "
+// "Error: Error occured while flattening model Modelica.Blocks.Continuous.TransferFunction
+// "
+// ""
+// ""
+// "Error: Array dimension must be integer expression in nin which has type Integer
+// Error: Error occured while flattening model Modelica.Blocks.Continuous.StateSpace
+// Error: Array dimension must be integer expression in nin which has type Integer
+// Error: Error occured while flattening model Modelica.Blocks.Continuous.StateSpace
+// "
+// "Error: Array dimension must be integer expression in nin which has type Integer
+// Error: Error occured while flattening model Modelica.Blocks.Continuous.StateSpace
+// "
+// ""
+// "function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Blocks.Examples.BusUsage
+//   output Integer integerStep.y "Connector of Integer output signal";
+//   parameter Integer integerStep.offset = 2 "Offset of output signal y";
+//   parameter Real integerStep.startTime(quantity = "Time", unit = "s") = 0.5 "Output y = offset for time < startTime";
+//   parameter Integer integerStep.height = 1 "Height of step";
+//   output Boolean booleanStep.y "Connector of Boolean output signal";
+//   parameter Real booleanStep.startTime(quantity = "Time", unit = "s") = 0.5 "Time instant of step start";
+//   parameter Boolean booleanStep.startValue = false "Output before startTime";
+//   output Real sine.y "Connector of Real output signal";
+//   parameter Real sine.amplitude = 1.0 "Amplitude of sine wave";
+//   parameter Real sine.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = 1.0 "Frequency of sine wave";
+//   parameter Real sine.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real sine.offset = 0.0 "Offset of output signal";
+//   parameter Real sine.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected constant Real sine.pi = 3.14159265358979;
+//   output Real part.realExpression.y = time "Value of Real output";
+//   output Boolean part.booleanExpression.y = time > 0.5 "Value of Boolean output";
+//   Real part.subControlBus.myRealSignal;
+//   Boolean part.subControlBus.myBooleanSignal;
+//   parameter Real gain.k(start = 1.0) = 1.0 "Gain value multiplied with input signal";
+//   input Real gain.u "Input signal connector";
+//   output Real gain.y "Output signal connector";
+//   Real controlBus.realSignal1;
+//   Boolean controlBus.booleanSignal;
+//   Integer controlBus.integerSignal;
+// equation
+//   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
+//   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   part.subControlBus.myBooleanSignal = part.booleanExpression.y;
+//   part.subControlBus.myRealSignal = part.realExpression.y;
+//   gain.y = gain.k * gain.u;
+//   gain.u = controlBus.realSignal1;
+//   controlBus.realSignal1 = sine.y;
+//   controlBus.subControlBus.myBooleanSignal = part.subControlBus.myBooleanSignal;
+//   controlBus.subControlBus.myRealSignal = part.subControlBus.myRealSignal;
+//   controlBus.integerSignal = integerStep.y;
+//   controlBus.booleanSignal = booleanStep.y;
+// end Modelica.Blocks.Examples.BusUsage;
+// "
+// "Error: Variable subControlBus.myRealSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable subControlBus.myBooleanSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable controlBus.realSignal1 not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.booleanSignal not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.integerSignal not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.subControlBus not found in scope Modelica.Blocks.Examples.BusUsage
+// "
+// "Check of Modelica.Blocks.Examples.BusUsage completed successfully.
+// 
+// Error: Variable subControlBus.myRealSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable subControlBus.myBooleanSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable controlBus.realSignal1 not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.booleanSignal not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.integerSignal not found in scope Modelica.Blocks.Examples.BusUsage
+// Error: Variable controlBus.subControlBus not found in scope Modelica.Blocks.Examples.BusUsage
+// 
+// Class Modelica.Blocks.Examples.BusUsage has 14 equation(s) and 12 variable(s).
+// 9 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Blocks.Examples.BusUsage_Utilities.Part
+//   output Real realExpression.y = time "Value of Real output";
+//   output Boolean booleanExpression.y = time > 0.5 "Value of Boolean output";
+//   Real subControlBus.myRealSignal;
+//   Boolean subControlBus.myBooleanSignal;
+// equation
+//   subControlBus.myBooleanSignal = booleanExpression.y;
+//   subControlBus.myRealSignal = realExpression.y;
+// end Modelica.Blocks.Examples.BusUsage_Utilities.Part;
+// "
+// "Error: Variable subControlBus.myRealSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable subControlBus.myBooleanSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// "
+// "Check of Modelica.Blocks.Examples.BusUsage_Utilities.Part completed successfully.
+// 
+// Error: Variable subControlBus.myRealSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// Error: Variable subControlBus.myBooleanSignal not found in scope Modelica.Blocks.Examples.BusUsage_Utilities.Part
+// 
+// Class Modelica.Blocks.Examples.BusUsage_Utilities.Part has 4 equation(s) and 4 variable(s).
+// 3 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Blocks.Tables.CombiTable1D.tableInit
+//   input String tableName;
+//   input String fileName;
+//   input Real table;
+//   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
+//   output Integer tableID;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable1D.tableInit;
+// 
+// function Modelica.Blocks.Tables.CombiTable1D.tableIpo
+//   input Integer tableID;
+//   input Integer icol;
+//   input Real u;
+//   output Real value;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable1D.tableIpo;
+// 
+// class Modelica.Blocks.Tables.CombiTable1D
+//   parameter Integer n = 1 "Number of inputs (= number of outputs)";
+//   input Real u[1] "Connector of Real input signals";
+//   output Real y[1] "Connector of Real output signals";
+//   parameter Boolean tableOnFile = false "true, if table is defined on file or in function usertab";
+//   parameter String tableName = "NoName" "table name on file or in function usertab (see docu)";
+//   parameter String fileName = "NoName" "file where matrix is stored";
+//   parameter Integer columns[1] = 2 "columns of table to be interpolated";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "smoothness of table interpolation";
+//   protected Integer tableID;
+// equation
+//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   y[1] = if  NOT tableOnFile AND false then $undefined else Modelica.Blocks.Tables.CombiTable1D.tableIpo(tableID,columns[1],u[1]);
+//   when initial() then
+//   tableID = Modelica.Blocks.Tables.CombiTable1D.tableInit(if tableOnFile then tableName else "NoName",if tableOnFile then fileName else "NoName",{{}},smoothness);
+//   end when;
+// end Modelica.Blocks.Tables.CombiTable1D;
+// "
+// "Error: Illegal subscript [1,columns[i]] for dimensions 0, 2 in component <NO COMPONENT>
+// Error: Variable table[1,columns[i]] not found in scope Modelica.Blocks.Tables.CombiTable1D.$for loop scope$.$for loop scope$
+// "
+// "Check of Modelica.Blocks.Tables.CombiTable1D completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Tables.CombiTable1D has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Blocks.Tables.CombiTable1Ds.tableInit
+//   input String tableName;
+//   input String fileName;
+//   input Real table;
+//   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
+//   output Integer tableID;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable1Ds.tableInit;
+// 
+// function Modelica.Blocks.Tables.CombiTable1Ds.tableIpo
+//   input Integer tableID;
+//   input Integer icol;
+//   input Real u;
+//   output Real value;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
+// 
+// class Modelica.Blocks.Tables.CombiTable1Ds
+//   parameter Integer nout = 1 "Number of outputs";
+//   input Real u "Connector of Real input signal";
+//   output Real y[1] "Connector of Real output signals";
+//   parameter Boolean tableOnFile = false "true, if table is defined on file or in function usertab";
+//   parameter String tableName = "NoName" "table name on file or in function usertab (see docu)";
+//   parameter String fileName = "NoName" "file where matrix is stored";
+//   parameter Integer columns[1] = 2 "columns of table to be interpolated";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "smoothness of table interpolation";
+//   protected Integer tableID;
+// equation
+//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   y[1] = if  NOT tableOnFile AND false then $undefined else Modelica.Blocks.Tables.CombiTable1Ds.tableIpo(tableID,columns[1],u);
+//   when initial() then
+//   tableID = Modelica.Blocks.Tables.CombiTable1Ds.tableInit(if tableOnFile then tableName else "NoName",if tableOnFile then fileName else "NoName",{{}},smoothness);
+//   end when;
+// end Modelica.Blocks.Tables.CombiTable1Ds;
+// "
+// "Error: Illegal subscript [1,columns[i]] for dimensions 0, 2 in component <NO COMPONENT>
+// Error: Variable table[1,columns[i]] not found in scope Modelica.Blocks.Tables.CombiTable1Ds.$for loop scope$.$for loop scope$
+// "
+// "Check of Modelica.Blocks.Tables.CombiTable1Ds completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Tables.CombiTable1Ds has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Blocks.Tables.CombiTable2D.tableInit
+//   input String tableName;
+//   input String fileName;
+//   input Real table;
+//   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
+//   output Integer tableID;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable2D.tableInit;
+// 
+// function Modelica.Blocks.Tables.CombiTable2D.tableIpo
+//   input Integer tableID;
+//   input Real u1;
+//   input Real u2;
+//   output Real value;
+// 
+// external "C";
+// end Modelica.Blocks.Tables.CombiTable2D.tableIpo;
+// 
+// class Modelica.Blocks.Tables.CombiTable2D
+//   input Real u1 "Connector of Real input signal 1";
+//   input Real u2 "Connector of Real input signal 2";
+//   output Real y "Connector of Real output signal";
+//   parameter Boolean tableOnFile = false "true, if table is defined on file or in function usertab";
+//   parameter String tableName = "NoName" "table name on file or in function usertab (see docu)";
+//   parameter String fileName = "NoName" "file where matrix is stored";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "smoothness of table interpolation";
+//   protected Integer tableID;
+// equation
+//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   y = Modelica.Blocks.Tables.CombiTable2D.tableIpo(tableID,u1,u2);
+//   when initial() then
+//   tableID = Modelica.Blocks.Tables.CombiTable2D.tableInit(if tableOnFile then tableName else "NoName",if tableOnFile then fileName else "NoName",{{}},smoothness);
+//   end when;
+// end Modelica.Blocks.Tables.CombiTable2D;
+// "
+// ""
+// "Check of Modelica.Blocks.Tables.CombiTable2D completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Tables.CombiTable2D has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// ""
+// "Error: Array dimension must be integer expression in nout which has type Integer(min=1)
+// Error: Error occured while flattening model Modelica.Blocks.Sources.KinematicPTP
+// Error: Array dimension must be integer expression in nout which has type Integer(min=1)
+// Error: Error occured while flattening model Modelica.Blocks.Sources.KinematicPTP
+// "
+// "Error: Array dimension must be integer expression in nout which has type Integer(min=1)
+// Error: Error occured while flattening model Modelica.Blocks.Sources.KinematicPTP
+// "
+// ""
+// ""
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.KinematicPTP2
+// "
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.KinematicPTP2
+// "
+// ""
+// ""
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.TimeTable
+// "
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.TimeTable
+// "
+// ""
+// "function Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit
+//   input String tableName;
+//   input String fileName;
+//   input Real table;
+//   input Real startTime;
+//   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
+//   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;
+//   output Integer tableID;
+// 
+// external "C";
+// end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
+// 
+// function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
+//   input Integer tableID;
+//   input Integer icol;
+//   input Real timeIn;
+//   output Real value;
+// 
+// external "C";
+// end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
+// 
+// function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
+//   input Integer tableID;
+//   output Real Tmax "maximum time value in table";
+// 
+// external "C";
+// end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
+// 
+// function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
+//   input Integer tableID;
+//   output Real Tmin "minimum time value in table";
+// 
+// external "C";
+// end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
+// 
+// class Modelica.Blocks.Sources.CombiTimeTable
+//   parameter Integer nout(min = 1) = 1 "Number of outputs";
+//   output Real y[1] "Connector of Real output signals";
+//   parameter Boolean tableOnFile = false "= true, if table is defined on file or in function usertab";
+//   parameter String tableName = "NoName" "Table name on file or in function usertab (see docu)";
+//   parameter String fileName = "NoName" "File where matrix is stored";
+//   parameter Integer columns[1] = 2 "Columns of table to be interpolated";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "Smoothness of table interpolation";
+//   parameter enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation = Modelica.Blocks.Types.Extrapolation.LastTwoPoints "Extrapolation of data outside the definition range";
+//   parameter Real offset[1] = 0.0 "Offsets of output signals";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   parameter Real t_min(fixed = false) "Minimum abscissa value defined in table";
+//   parameter Real t_max(fixed = false) "Maximum abscissa value defined in table";
+//   protected parameter Real p_offset[1] = offset[1];
+//   protected Integer tableID;
+// initial equation
+//   t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(tableID);
+//   t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(tableID);
+// equation
+//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   y[1] = p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(tableID,columns[1],time);
+//   when initial() then
+//   tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  NOT tableOnFile then "NoName" else tableName,if  NOT tableOnFile then "NoName" else fileName,{{}},startTime,smoothness,extrapolation);
+//   end when;
+// end Modelica.Blocks.Sources.CombiTimeTable;
+// "
+// ""
+// "Check of Modelica.Blocks.Sources.CombiTimeTable completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Sources.CombiTimeTable has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// ""
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.BooleanTable
+// "
+// "Error: Error occured while flattening model Modelica.Blocks.Sources.BooleanTable
+// "
+// ""
+// endResult
