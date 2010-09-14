@@ -1,0 +1,71 @@
+//name:        Modelica.Math [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Math
+//status:      correct
+//
+// instantiate example
+//
+
+loadFile("Modelica/package.mo"); getErrorString();
+
+checkModel(Modelica.Math.Vectors.norm); getErrorString();
+// checkModel(Modelica.Math.Matrices.norm); getErrorString();
+checkModel(Modelica.Math.Matrices.leastSquares); getErrorString();
+checkModel(Modelica.Math.Matrices.singularValues); getErrorString();
+checkModel(Modelica.Math.Matrices.det); getErrorString();
+checkModel(Modelica.Math.Matrices.rank); getErrorString();
+checkModel(Modelica.Math.Matrices.balance); getErrorString();
+// checkModel(Modelica.Math.Matrices.exp); getErrorString();
+// checkModel(Modelica.Math.Matrices.integralExp); getErrorString();
+// checkModel(Modelica.Math.Matrices.integralExpT); getErrorString();
+checkModel(Modelica.Math.Matrices.LAPACK.dgels_vec); getErrorString();
+checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
+
+// Result:
+// true
+// ""
+// "Check of Modelica.Math.Vectors.norm completed successfully.
+// 
+// Warning: In component <NO COMPONENT>, in relation p == 2.0,  ==  on Reals is only allowed inside functions.
+// Warning: In component <NO COMPONENT>, in relation p == 1e+60,  ==  on Reals is only allowed inside functions.
+// Warning: In component <NO COMPONENT>, in relation p == 1.0,  ==  on Reals is only allowed inside functions.
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.leastSquares completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.singularValues completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.det completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.rank completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.balance completed successfully.
+// 
+// Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
+// Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.LAPACK.dgels_vec completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.LAPACK.dgelsx_vec completed successfully.
+// 
+// 
+// "
+// ""
+// endResult
