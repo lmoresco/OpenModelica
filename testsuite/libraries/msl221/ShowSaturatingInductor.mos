@@ -11,60 +11,60 @@ getErrorString();
 // Result:
 // true
 // "function Modelica.Math.sin
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
 // 
 // external "C";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Examples.ShowSaturatingInductor
-// parameter Real Lzer(quantity = "Inductance", unit = "H") = 2.0;
-// parameter Real Lnom(quantity = "Inductance", unit = "H") = 1.0;
-// parameter Real Inom(quantity = "ElectricCurrent", unit = "A") = 1.0;
-// parameter Real Linf(quantity = "Inductance", unit = "H") = 0.5;
-// parameter Real U(quantity = "ElectricPotential", unit = "V") = 1.25;
-// parameter Real f(quantity = "Frequency", unit = "Hz") = 0.159154943091895;
-// parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 1.5707963267949;
-// output Real v(quantity = "ElectricPotential", unit = "V");
-// output Real i(quantity = "ElectricCurrent", unit = "A");
-// Real SaturatingInductance1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
-// Real SaturatingInductance1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
-// Real SaturatingInductance1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
-// Real SaturatingInductance1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
-// Real SaturatingInductance1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
-// Real SaturatingInductance1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
-// parameter Real SaturatingInductance1.Inom(quantity = "ElectricCurrent", unit = "A") = Inom "Nominal current";
-// parameter Real SaturatingInductance1.Lnom(quantity = "Inductance", unit = "H") = Lnom "Nominal inductance at Nominal current";
-// parameter Real SaturatingInductance1.Lzer(quantity = "Inductance", unit = "H") = Lzer "Inductance near current=0";
-// parameter Real SaturatingInductance1.Linf(quantity = "Inductance", unit = "H") = Linf "Inductance at large currents";
-// Real SaturatingInductance1.Lact(quantity = "Inductance", unit = "H", start = SaturatingInductance1.Lzer, StateSelect = StateSelect.avoid);
-// Real SaturatingInductance1.Psi(quantity = "MagneticFlux", unit = "Wb");
-// protected parameter Real SaturatingInductance1.Ipar(quantity = "ElectricCurrent", unit = "A", start = SaturatingInductance1.Inom / 10.0, fixed = false);
-// Real Ground1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
-// Real Ground1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
-// Real SineVoltage1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
-// Real SineVoltage1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
-// Real SineVoltage1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
-// Real SineVoltage1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
-// Real SineVoltage1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
-// Real SineVoltage1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
-// parameter Real SineVoltage1.offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
-// parameter Real SineVoltage1.startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
-// output Real SineVoltage1.signalSource.y "Connector of Real output signal";
-// parameter Real SineVoltage1.signalSource.amplitude = SineVoltage1.V "Amplitude of sine wave";
-// parameter Real SineVoltage1.signalSource.freqHz(quantity = "Frequency", unit = "Hz") = SineVoltage1.freqHz "Frequency of sine wave";
-// parameter Real SineVoltage1.signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = SineVoltage1.phase "Phase of sine wave";
-// parameter Real SineVoltage1.signalSource.offset = SineVoltage1.offset "Offset of output signal";
-// parameter Real SineVoltage1.signalSource.startTime(quantity = "Time", unit = "s") = SineVoltage1.startTime "Output = offset for time < startTime";
-// protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
-// parameter Real SineVoltage1.V(quantity = "ElectricPotential", unit = "V") = U "Amplitude of sine wave";
-// parameter Real SineVoltage1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
-// parameter Real SineVoltage1.freqHz(quantity = "Frequency", unit = "Hz") = f "Frequency of sine wave";
+//   parameter Real Lzer(quantity = "Inductance", unit = "H") = 2.0;
+//   parameter Real Lnom(quantity = "Inductance", unit = "H") = 1.0;
+//   parameter Real Inom(quantity = "ElectricCurrent", unit = "A") = 1.0;
+//   parameter Real Linf(quantity = "Inductance", unit = "H") = 0.5;
+//   parameter Real U(quantity = "ElectricPotential", unit = "V") = 1.25;
+//   parameter Real f(quantity = "Frequency", unit = "Hz") = 0.159154943091895;
+//   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 1.5707963267949;
+//   output Real v(quantity = "ElectricPotential", unit = "V");
+//   output Real i(quantity = "ElectricCurrent", unit = "A");
+//   Real SaturatingInductance1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real SaturatingInductance1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real SaturatingInductance1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real SaturatingInductance1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real SaturatingInductance1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real SaturatingInductance1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real SaturatingInductance1.Inom(quantity = "ElectricCurrent", unit = "A") = Inom "Nominal current";
+//   parameter Real SaturatingInductance1.Lnom(quantity = "Inductance", unit = "H") = Lnom "Nominal inductance at Nominal current";
+//   parameter Real SaturatingInductance1.Lzer(quantity = "Inductance", unit = "H") = Lzer "Inductance near current=0";
+//   parameter Real SaturatingInductance1.Linf(quantity = "Inductance", unit = "H") = Linf "Inductance at large currents";
+//   Real SaturatingInductance1.Lact(quantity = "Inductance", unit = "H", start = SaturatingInductance1.Lzer, StateSelect = StateSelect.avoid);
+//   Real SaturatingInductance1.Psi(quantity = "MagneticFlux", unit = "Wb");
+//   protected parameter Real SaturatingInductance1.Ipar(quantity = "ElectricCurrent", unit = "A", start = SaturatingInductance1.Inom / 10.0, fixed = false);
+//   Real Ground1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real Ground1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real SineVoltage1.v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
+//   Real SineVoltage1.i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
+//   Real SineVoltage1.p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real SineVoltage1.p.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   Real SineVoltage1.n.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
+//   Real SineVoltage1.n.i(quantity = "ElectricCurrent", unit = "A") "Current flowing into the pin";
+//   parameter Real SineVoltage1.offset(quantity = "ElectricPotential", unit = "V") = 0.0 "Voltage offset";
+//   parameter Real SineVoltage1.startTime(quantity = "Time", unit = "s") = 0.0 "Time offset";
+//   output Real SineVoltage1.signalSource.y "Connector of Real output signal";
+//   parameter Real SineVoltage1.signalSource.amplitude = SineVoltage1.V "Amplitude of sine wave";
+//   parameter Real SineVoltage1.signalSource.freqHz(quantity = "Frequency", unit = "Hz") = SineVoltage1.freqHz "Frequency of sine wave";
+//   parameter Real SineVoltage1.signalSource.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = SineVoltage1.phase "Phase of sine wave";
+//   parameter Real SineVoltage1.signalSource.offset = SineVoltage1.offset "Offset of output signal";
+//   parameter Real SineVoltage1.signalSource.startTime(quantity = "Time", unit = "s") = SineVoltage1.startTime "Output = offset for time < startTime";
+//   protected constant Real SineVoltage1.signalSource.pi = 3.14159265358979;
+//   parameter Real SineVoltage1.V(quantity = "ElectricPotential", unit = "V") = U "Amplitude of sine wave";
+//   parameter Real SineVoltage1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = phase "Phase of sine wave";
+//   parameter Real SineVoltage1.freqHz(quantity = "Frequency", unit = "Hz") = f "Frequency of sine wave";
 // initial equation
 //   SaturatingInductance1.Lnom - SaturatingInductance1.Linf = (SaturatingInductance1.Lzer - SaturatingInductance1.Linf) * (SaturatingInductance1.Ipar * (1.5707963267949 - atan(SaturatingInductance1.Ipar / SaturatingInductance1.Inom)) / SaturatingInductance1.Inom);
 // equation
-// assert(SaturatingInductance1.Lzer > 1e-15 + SaturatingInductance1.Lnom,"Lzer (= " + String(SaturatingInductance1.Lzer,0,true,6) + ") has to be > Lnom (= " + String(SaturatingInductance1.Lnom,0,true,6) + ")");
-// assert(SaturatingInductance1.Linf < SaturatingInductance1.Lnom - 1e-15,"Linf (= " + String(SaturatingInductance1.Linf,0,true,6) + ") has to be < Lnom (= " + String(SaturatingInductance1.Lnom,0,true,6) + ")");
+//   assert(SaturatingInductance1.Lzer > 1e-15 + SaturatingInductance1.Lnom,"Lzer (= " + String(SaturatingInductance1.Lzer,0,true,6) + ") has to be > Lnom (= " + String(SaturatingInductance1.Lnom,0,true,6) + ")");
+//   assert(SaturatingInductance1.Linf < SaturatingInductance1.Lnom - 1e-15,"Linf (= " + String(SaturatingInductance1.Linf,0,true,6) + ") has to be < Lnom (= " + String(SaturatingInductance1.Lnom,0,true,6) + ")");
 //   (SaturatingInductance1.Lact - SaturatingInductance1.Linf) * SaturatingInductance1.i / SaturatingInductance1.Ipar = (SaturatingInductance1.Lzer - SaturatingInductance1.Linf) * atan(SaturatingInductance1.i / SaturatingInductance1.Ipar);
 //   SaturatingInductance1.Psi = SaturatingInductance1.Lact * SaturatingInductance1.i;
 //   SaturatingInductance1.v = der(SaturatingInductance1.Psi);
@@ -80,12 +80,11 @@ getErrorString();
 //   v = SaturatingInductance1.v;
 //   i = SaturatingInductance1.i;
 //   SineVoltage1.n.i + (Ground1.p.i + SaturatingInductance1.n.i) = 0.0;
-// SineVoltage1.n.v = Ground1.p.v;
-// Ground1.p.v = SaturatingInductance1.n.v;
+//   SineVoltage1.n.v = Ground1.p.v;
+//   Ground1.p.v = SaturatingInductance1.n.v;
 //   SaturatingInductance1.p.i + SineVoltage1.p.i = 0.0;
-// SaturatingInductance1.p.v = SineVoltage1.p.v;
+//   SaturatingInductance1.p.v = SineVoltage1.p.v;
 // end Modelica.Electrical.Analog.Examples.ShowSaturatingInductor;
 // "
-// "Warning: Using available start value (start=SaturatingInductance1.Inom / 10.0) as default value for parameter SaturatingInductance1.Ipar that has no value
-// "
+// ""
 // endResult

@@ -777,13 +777,9 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   transformerR.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.TransformerYY;
 // "
-// "Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.n that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.Lm1 that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYY completed successfully.
 // 
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.n that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.Lm1 that has no value
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 293 equation(s) and 281 variable(s).
 // 223 of these are trivial equation(s).
@@ -1565,11 +1561,9 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   transformerR.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.TransformerYD;
 // "
-// "Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.Lm1 that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYD completed successfully.
 // 
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter idealTransformer.Lm1 that has no value
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYD has 297 equation(s) and 285 variable(s).
 // 225 of these are trivial equation(s).
@@ -2191,21 +2185,9 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   starS.pin_n.i = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.Rectifier;
 // "
-// "Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode1.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode1.Goff that has no value
-// Warning: Using available start value (start={0.0,0.0,0.0}) as default value for parameter idealDiode1.Vknee that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode2.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode2.Goff that has no value
-// Warning: Using available start value (start={0.0,0.0,0.0}) as default value for parameter idealDiode2.Vknee that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.MultiPhase.Examples.Rectifier completed successfully.
 // 
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode1.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode1.Goff that has no value
-// Warning: Using available start value (start={0.0,0.0,0.0}) as default value for parameter idealDiode1.Vknee that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode2.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealDiode2.Goff that has no value
-// Warning: Using available start value (start={0.0,0.0,0.0}) as default value for parameter idealDiode2.Vknee that has no value
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.Rectifier has 224 equation(s) and 218 variable(s).
 // 153 of these are trivial equation(s).

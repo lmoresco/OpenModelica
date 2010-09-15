@@ -764,11 +764,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.StepVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.StepVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.StepVoltage has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -800,13 +798,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.RampVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.RampVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.RampVoltage has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -848,13 +842,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.SineVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.SineVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.SineVoltage has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -905,15 +895,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.ExpSineVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.ExpSineVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.ExpSineVoltage has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -958,19 +942,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.ExponentialsVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter vMax that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.ExponentialsVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter vMax that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.ExponentialsVoltage has 8 equation(s) and 8 variable(s).
 // 5 of these are trivial equation(s).
@@ -1009,15 +983,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.PulseVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.PulseVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.PulseVoltage has 9 equation(s) and 9 variable(s).
 // 5 of these are trivial equation(s).
@@ -1053,13 +1021,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.SawToothVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.SawToothVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.SawToothVoltage has 8 equation(s) and 8 variable(s).
 // 5 of these are trivial equation(s).
@@ -1110,21 +1074,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.TrapezoidVoltage;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.TrapezoidVoltage completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter V that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.TrapezoidVoltage has 10 equation(s) and 10 variable(s).
 // 5 of these are trivial equation(s).
@@ -1252,11 +1204,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.StepCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.StepCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.StepCurrent has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -1288,13 +1238,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.RampCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.RampCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter duration that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.RampCurrent has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -1336,13 +1282,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.SineCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.SineCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter freqHz that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.SineCurrent has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -1393,15 +1335,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.ExpSineCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.ExpSineCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=2.0) as default value for parameter freqHz that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter damping that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.ExpSineCurrent has 7 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -1446,19 +1382,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.ExponentialsCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter iMax that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.ExponentialsCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter iMax that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter riseTime that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
-// Warning: Using available start value (start=riseTimeConst) as default value for parameter fallTimeConst that has no value
-// Warning: Using available start value (start=0.1) as default value for parameter riseTimeConst that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.ExponentialsCurrent has 8 equation(s) and 8 variable(s).
 // 5 of these are trivial equation(s).
@@ -1497,15 +1423,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.PulseCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.PulseCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter width that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.PulseCurrent has 9 equation(s) and 9 variable(s).
 // 5 of these are trivial equation(s).
@@ -1541,13 +1461,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.SawToothCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.SawToothCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.SawToothCurrent has 8 equation(s) and 8 variable(s).
 // 5 of these are trivial equation(s).
@@ -1598,21 +1514,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Sources.TrapezoidCurrent;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Sources.TrapezoidCurrent completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter I that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter rising that has no value
-// Warning: Using available start value (start=0.5) as default value for parameter width that has no value
-// Warning: Using available start value (start=0.0) as default value for parameter falling that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter period that has no value
-// Warning: Using available start value (start=-1) as default value for parameter nperiod that has no value
 // 
 // Class Modelica.Electrical.Analog.Sources.TrapezoidCurrent has 10 equation(s) and 10 variable(s).
 // 5 of these are trivial equation(s).
@@ -1913,33 +1817,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p2.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.OLine;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter r that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter l that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter g that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Lines.OLine completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter r that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter l that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter g that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
 // 
 // Class Modelica.Electrical.Analog.Lines.OLine has 55 equation(s) and 55 variable(s).
 // 33 of these are trivial equation(s).
@@ -5705,21 +5585,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p2.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.ULine;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter r that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Lines.ULine completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter r that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter c that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter length that has no value
-// Warning: Using available start value (start=1) as default value for parameter N that has no value
 // 
 // Class Modelica.Electrical.Analog.Lines.ULine has 34 equation(s) and 34 variable(s).
 // 21 of these are trivial equation(s).
@@ -5765,25 +5633,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine2;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // "
 // "Check of Modelica.Electrical.Analog.Lines.TLine2 completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter NL that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
@@ -5831,19 +5687,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine3;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // "
 // "Check of Modelica.Electrical.Analog.Lines.TLine3 completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter F that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter Z0 that has no value
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
 // Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
@@ -5909,11 +5759,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Basic.EMF;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter k that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Basic.EMF completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter k that has no value
 // 
 // Class Modelica.Electrical.Analog.Basic.EMF has 16 equation(s) and 16 variable(s).
 // 11 of these are trivial equation(s).
@@ -5957,11 +5805,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p.i = 0.0;
 // end Modelica.Electrical.Analog.Basic.TranslationalEMF;
 // "
-// "Warning: Using available start value (start=1.0) as default value for parameter k that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Basic.TranslationalEMF completed successfully.
 // 
-// Warning: Using available start value (start=1.0) as default value for parameter k that has no value
 // 
 // Class Modelica.Electrical.Analog.Basic.TranslationalEMF has 16 equation(s) and 16 variable(s).
 // 11 of these are trivial equation(s).

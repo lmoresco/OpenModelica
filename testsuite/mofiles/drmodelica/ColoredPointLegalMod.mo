@@ -48,20 +48,20 @@ end A;
 
 // Result:
 // class A
-// Real a;
-// Real b;
-// Real c;
-// Real cp.dummy;
-// protected Real cp.red;
-// protected parameter Real cp.blue = 3.5;
-// protected parameter Real cp.green = 5.0;
-// parameter Real cp.x;
-// protected parameter Real cp.y;
-// protected parameter Real cp.z;
+//   Real a;
+//   Real b;
+//   Real c;
+//   Real cp.dummy;
+//   protected Real cp.red;
+//   protected parameter Real cp.blue = 3.5;
+//   protected parameter Real cp.green = 5.0;
+//   parameter Real cp.x;
+//   protected parameter Real cp.y;
+//   protected parameter Real cp.z;
 // equation
 //   cp.red + (cp.blue + cp.green) = 1.0;
 //   a = cp.x;
 // end A;
-// Warning: Parameter cp.x has no value or start attribute, and is fixed during initialization (fixed=true)
+// Warning: Parameter cp.x has neither value nor start value, and is fixed during initialization (fixed=true)
 // 
 // endResult

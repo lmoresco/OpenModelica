@@ -1053,35 +1053,9 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMC_DOL;
 // "
-// "Warning: Using available start value (start=0.29) as default value for parameter aimc.Jr that has no value
-// Warning: Using available start value (start=aimc.Jr) as default value for parameter aimc.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aimc.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aimc.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aimc.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aimc.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lrsigma that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aimc.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMC_DOL completed successfully.
 // 
-// Warning: Using available start value (start=0.29) as default value for parameter aimc.Jr that has no value
-// Warning: Using available start value (start=aimc.Jr) as default value for parameter aimc.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aimc.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aimc.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aimc.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aimc.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lrsigma that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aimc.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_DOL has 402 equation(s) and 390 variable(s).
 // 289 of these are trivial equation(s).
@@ -2303,39 +2277,9 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMC_YD;
 // "
-// "Warning: Using available start value (start=0.29) as default value for parameter aimc.Jr that has no value
-// Warning: Using available start value (start=aimc.Jr) as default value for parameter aimc.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aimc.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aimc.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aimc.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aimc.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lrsigma that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aimc.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchYD.idealCommutingSwitch.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchYD.idealCommutingSwitch.Goff that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMC_YD completed successfully.
 // 
-// Warning: Using available start value (start=0.29) as default value for parameter aimc.Jr that has no value
-// Warning: Using available start value (start=aimc.Jr) as default value for parameter aimc.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aimc.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aimc.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aimc.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aimc.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aimc.fsNominal that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aimc.fsNominal / 6.28318530717959) as default value for parameter aimc.Lrsigma that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aimc.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchYD.idealCommutingSwitch.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchYD.idealCommutingSwitch.Goff that has no value
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_YD has 476 equation(s) and 458 variable(s).
 // 341 of these are trivial equation(s).
@@ -4057,87 +4001,9 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMS_Start;
 // "
-// "Warning: Using available start value (start=0.29) as default value for parameter aims.Jr that has no value
-// Warning: Using available start value (start=aims.Jr) as default value for parameter aims.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aims.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aims.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=true) as default value for parameter aims.useTurnsRatio that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter aims.turnsRatio that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter aims.VsNominal that has no value
-// Warning: Using available start value (start=628.318530717959 * (aims.fsNominal * aims.Lm / sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal ^ 2.0 * (aims.Lm + aims.Lssigma) ^ 2.0)))) as default value for parameter aims.VrLockedRotor that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lrsigma that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aims.rr.R that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aims.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchedRheostat.idealCommutingSwitch.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchedRheostat.idealCommutingSwitch.Goff that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMS_Start completed successfully.
 // 
-// Warning: Using available start value (start=0.29) as default value for parameter aims.Jr that has no value
-// Warning: Using available start value (start=aims.Jr) as default value for parameter aims.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aims.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter aims.p that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=true) as default value for parameter aims.useTurnsRatio that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter aims.turnsRatio that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter aims.VsNominal that has no value
-// Warning: Using available start value (start=628.318530717959 * (aims.fsNominal * aims.Lm / sqrt(aims.Rs ^ 2.0 + 39.4784176043574 * (aims.fsNominal ^ 2.0 * (aims.Lm + aims.Lssigma) ^ 2.0)))) as default value for parameter aims.VrLockedRotor that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter aims.Rs that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter aims.fsNominal that has no value
-// Warning: Using available start value (start=2.89822359385883 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lm that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lssigma that has no value
-// Warning: Using available start value (start=0.101776406141169 * 1.0 / aims.fsNominal / 6.28318530717959) as default value for parameter aims.Lrsigma that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter aims.rr.R that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter aims.Rr that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter idealCloser.Goff that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchedRheostat.idealCommutingSwitch.Ron that has no value
-// Warning: Using available start value (start={1e-05,1e-05,1e-05}) as default value for parameter switchedRheostat.idealCommutingSwitch.Goff that has no value
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMS_Start has 676 equation(s) and 646 variable(s).
 // 481 of these are trivial equation(s).
@@ -5423,119 +5289,9 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   terminalBox.starpoint.i = 0.0;
 // end Modelica.Electrical.Machines.Examples.SMEE_Generator;
 // "
-// "Warning: Using available start value (start=50.0) as default value for parameter fsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.29) as default value for parameter smee.Jr that has no value
-// Warning: Using available start value (start=smee.Jr) as default value for parameter smee.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter smee.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter smee.Rs that has no value
-// Warning: Using available start value (start=0.1 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmq that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter smee.VsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=10.0) as default value for parameter smee.IeOpenCircuit that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=0.025) as default value for parameter smee.sigmae that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter smee.re.R that has no value
-// Warning: Using available start value (start=2.5) as default value for parameter smee.Re that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter fsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.29) as default value for parameter smee.Jr that has no value
-// Warning: Using available start value (start=smee.Jr) as default value for parameter smee.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter smee.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter smee.Rs that has no value
-// Warning: Using available start value (start=0.1 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmq that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter smee.VsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=10.0) as default value for parameter smee.IeOpenCircuit that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=0.025) as default value for parameter smee.sigmae that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter smee.re.R that has no value
-// Warning: Using available start value (start=2.5) as default value for parameter smee.Re that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start="Y") as default value for parameter terminalBox.terminalConnection that has no value
-// "
+// ""
 // "Check of Modelica.Electrical.Machines.Examples.SMEE_Generator completed successfully.
 // 
-// Warning: Using available start value (start=50.0) as default value for parameter fsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.29) as default value for parameter smee.Jr that has no value
-// Warning: Using available start value (start=smee.Jr) as default value for parameter smee.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter smee.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter smee.Rs that has no value
-// Warning: Using available start value (start=0.1 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmq that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter smee.VsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=10.0) as default value for parameter smee.IeOpenCircuit that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=0.025) as default value for parameter smee.sigmae that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter smee.re.R that has no value
-// Warning: Using available start value (start=2.5) as default value for parameter smee.Re that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter fsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.29) as default value for parameter smee.Jr that has no value
-// Warning: Using available start value (start=smee.Jr) as default value for parameter smee.Js that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start={1.0,1.0,1.0}) as default value for parameter smee.rs.R that has no value
-// Warning: Using available start value (start=0.03) as default value for parameter smee.Rs that has no value
-// Warning: Using available start value (start=0.1 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lssigma that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / fsNominal / 6.28318530717959) as default value for parameter smee.Lmq that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=100.0) as default value for parameter smee.VsNominal that has no value
-// Warning: Using available start value (start=50.0) as default value for parameter smee.fsNominal that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=10.0) as default value for parameter smee.IeOpenCircuit that has no value
-// Warning: Using available start value (start=1.5 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lmd that has no value
-// Warning: Using available start value (start=0.025) as default value for parameter smee.sigmae that has no value
-// Warning: Using available start value (start=0.05 * 1.0 / smee.fsNominal / 6.28318530717959) as default value for parameter smee.Lrsigmad that has no value
-// Warning: Using available start value (start=0.04) as default value for parameter smee.Rrd that has no value
-// Warning: Using available start value (start=true) as default value for parameter smee.useDamperCage that has no value
-// Warning: Using available start value (start=1.0) as default value for parameter smee.re.R that has no value
-// Warning: Using available start value (start=2.5) as default value for parameter smee.Re that has no value
-// Warning: Using available start value (start=2) as default value for parameter smee.p that has no value
-// Warning: Using available start value (start="Y") as default value for parameter terminalBox.terminalConnection that has no value
 // 
 // Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 509 equation(s) and 501 variable(s).
 // 364 of these are trivial equation(s).
