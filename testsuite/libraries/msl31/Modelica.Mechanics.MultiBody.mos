@@ -1,0 +1,74 @@
+//name:        Modelica.Mechanics.MultiBody [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Mechanics.MultiBody
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadFile("Modelica/package.mo"); getErrorString();
+loadFile("ModelicaServices/package.mo"); // Needed for PartialLineForce
+getErrorString(); 
+
+checkModel(Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve1); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve2); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Frames.Quaternions.planarRotation); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.multipleResolve1); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.multipleResolve2); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce); 
+getErrorString();
+checkModel(Modelica.Mechanics.MultiBody.Types.RotationSequence); 
+getErrorString();
+// Result:
+// true
+// ""
+// true
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve1 completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve2 completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Frames.Quaternions.planarRotation completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.multipleResolve1 completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.multipleResolve2 completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce completed successfully.
+// 
+// Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
+// Warning: No corresponding 'inner' declaration found for component world declared as 'outer '.
+// 	Please declare an 'inner' component with the same name in the top scope.
+// 	Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1112 equation(s) and 1119 variable(s).
+// 635 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Types.RotationSequence completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Types.RotationSequence has 0 equation(s) and 0 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// endResult
