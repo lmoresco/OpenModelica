@@ -70,7 +70,7 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // 
 // Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
 // Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.exp.columnNorm(D + M - D) == 0.0,  ==  on Reals is only allowed inside functions.
+// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.exp.columnNorm({{D[1,1] + M[1,1] - D[1,1],D[1,2] + M[1,2] - D[1,2],D[1,3] + M[1,3] - D[1,3]},{D[2,1] + M[2,1] - D[2,1],D[2,2] + M[2,2] - D[2,2],D[2,3] + M[2,3] - D[2,3]},{D[3,1] + M[3,1] - D[3,1],D[3,2] + M[3,2] - D[3,2],D[3,3] + M[3,3] - D[3,3]}}) == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
@@ -78,7 +78,7 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // 
 // Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
 // Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.integralExp.columnNorm(Psi + M - Psi) == 0.0,  ==  on Reals is only allowed inside functions.
+// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.integralExp.columnNorm({{Psi[1,1] + M[1,1] - Psi[1,1],Psi[1,2] + M[1,2] - Psi[1,2],Psi[1,3] + M[1,3] - Psi[1,3]},{Psi[2,1] + M[2,1] - Psi[2,1],Psi[2,2] + M[2,2] - Psi[2,2],Psi[2,3] + M[2,3] - Psi[2,3]},{Psi[3,1] + M[3,1] - Psi[3,1],Psi[3,2] + M[3,2] - Psi[3,2],Psi[3,3] + M[3,3] - Psi[3,3]}}) == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
