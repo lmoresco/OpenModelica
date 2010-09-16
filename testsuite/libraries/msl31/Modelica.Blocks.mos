@@ -7,7 +7,7 @@
 // possible to instantiate them.
 //
 
-loadFile("/home/per/workspace/modelica/testsuite/libraries/msl31/Modelica/package.mo"); getErrorString();
+loadFile("Modelica/package.mo"); getErrorString();
 
 checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
 
