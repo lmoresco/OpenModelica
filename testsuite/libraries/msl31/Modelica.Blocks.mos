@@ -11,7 +11,7 @@ loadFile("Modelica/package.mo"); getErrorString();
 
 checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
 
-//checkModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
+checkModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
 
 //instantiateModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
 //checkModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
@@ -33,7 +33,7 @@ checkModel(Modelica.Blocks.Sources.TimeTable); getErrorString();
 instantiateModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
 checkModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
 
-//checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
+checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 
 // Result:
 // true
@@ -51,6 +51,27 @@ checkModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
 // Warning: Parameter a[{2,3}] has neither value nor start value, and is fixed during initialization (fixed=true)
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 5 equation(s) and 5 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.
+// 
+// Warning: Parameter A has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter B has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter A has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter A has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter B has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter B has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter A has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter A has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter B has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
+// 
+// Class Modelica.Blocks.Continuous.StateSpace has 6 equation(s) and 6 variable(s).
 // 0 of these are trivial equation(s).
 // "
 // ""
@@ -186,6 +207,17 @@ checkModel(Modelica.Blocks.Sources.CombiTimeTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Sources.CombiTimeTable has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Blocks.Sources.BooleanTable completed successfully.
+// 
+// Warning: Parameter table has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter table[index] has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter table has neither value nor start value, and is fixed during initialization (fixed=true)
+// Error: The language feature initial algorithm is not supported. Suggested workaround: rewrite initial algorithms to initial equations
+// 
+// Class Modelica.Blocks.Sources.BooleanTable has 3 equation(s) and 3 variable(s).
 // 0 of these are trivial equation(s).
 // "
 // ""
