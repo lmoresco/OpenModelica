@@ -9,7 +9,7 @@
 
 loadFile("Modelica/package.mo"); getErrorString();
 
-//checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
+checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
 
 checkModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
 
@@ -38,9 +38,18 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // Result:
 // true
 // ""
-// "Warning: Parameter B has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter C has neither value nor start value, and is fixed during initialization (fixed=true)
-// Error: Error occured while flattening model Modelica.Blocks.Continuous.StateSpace
+// "Check of Modelica.Blocks.Continuous.TransferFunction completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Continuous.StateSpace has 2 equation(s) and 2 variable(s).
+// 0 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Tables.CombiTable1D completed successfully.
@@ -103,7 +112,6 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Sources.TimeTable completed successfully.
 // 
-// Warning: Parameter table has neither value nor start value, and is fixed during initialization (fixed=true)
 // 
 // Class Modelica.Blocks.Sources.TimeTable has 5 equation(s) and 5 variable(s).
 // 0 of these are trivial equation(s).
@@ -180,9 +188,6 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Sources.BooleanTable completed successfully.
 // 
-// Warning: Parameter table has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter table[index] has neither value nor start value, and is fixed during initialization (fixed=true)
-// Warning: Parameter table has neither value nor start value, and is fixed during initialization (fixed=true)
 // Error: The language feature initial algorithm is not supported. Suggested workaround: rewrite initial algorithms to initial equations
 // 
 // Class Modelica.Blocks.Sources.BooleanTable has 3 equation(s) and 3 variable(s).
