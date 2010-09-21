@@ -370,6 +370,7 @@ ModifierClass.mo \
 ModifierExtends.mo \
 ModifierProblem.mo \
 ModifierRedeclare.mo \
+ModifierTypeError.mo \
 ModifierVariable.mo \
 ModifyConstant4.mo \
 ModifyConstant5.mo \
