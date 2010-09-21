@@ -25,8 +25,8 @@ checkModel(Modelica.Blocks.Tables.CombiTable1Ds); getErrorString();
 instantiateModel(Modelica.Blocks.Tables.CombiTable2D); getErrorString();
 checkModel(Modelica.Blocks.Tables.CombiTable2D); getErrorString();
 
-//checkModel(Modelica.Blocks.Sources.KinematicPTP); getErrorString();
-//checkModel(Modelica.Blocks.Sources.KinematicPTP2); getErrorString();
+checkModel(Modelica.Blocks.Sources.KinematicPTP); getErrorString();
+checkModel(Modelica.Blocks.Sources.KinematicPTP2); getErrorString();
 
 checkModel(Modelica.Blocks.Sources.TimeTable); getErrorString();
 
@@ -108,6 +108,20 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // Class Modelica.Blocks.Tables.CombiTable2D has 2 equation(s) and 2 variable(s).
 // 0 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Blocks.Sources.KinematicPTP completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Sources.KinematicPTP has 11 equation(s) and 11 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Blocks.Sources.KinematicPTP2 completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Sources.KinematicPTP2 has 31 equation(s) and 31 variable(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.TimeTable completed successfully.
