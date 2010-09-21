@@ -1,7 +1,10 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
 TEST = ../rtest
 
-TESTFILES = MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos MatchCase5.mos MatchCase6.mos MatchCase7.mos MatchCase8.mos MatchCase9.mos \
+TESTFILES = \
+MatchCase1.mos MatchCase2.mos MatchCase3.mos MatchCase4.mos \
+MatchCase5.mos MatchCase6.mos MatchCase7.mos MatchCase8.mos \
+MatchCase9.mos MatchCase10.mos MatchCase11.mos \
   List1.mos List2.mos List3.mos \
   OptionInteractive.mos ListInteractive.mos TupleInteractive.mos ComplicatedInteractive.mos \
   MatchCaseInteractive1.mos MatchCaseInteractive2.mos MatchCaseInteractive3.mos \

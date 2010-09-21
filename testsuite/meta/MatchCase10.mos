@@ -1,6 +1,8 @@
 // name:     MatchCase10
 // keywords: Match Cases
+// cflags: +g=MetaModelica
 // status:   correct
+// teardown_command: rm -rf MatchCase10_*
 //
 // Match Testing
 //
@@ -11,7 +13,8 @@ val(i,0.0);
 // Result:
 // true
 // record SimulationResult
-//    resultFile = "MatchCase9_res.plt"
+//     resultFile = "MatchCase10_res.plt",
+//     messages = ""
 // end SimulationResult;
 // 3.0
 // endResult
