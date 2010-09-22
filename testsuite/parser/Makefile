@@ -1,3 +1,5 @@
+OPENMODELICALIBRARY := ../../../libraries/msl31/
+
 TEST=../rtest -v
 
 ifeq ($(shell uname -m),x86_64)
@@ -31,6 +33,7 @@ ParseCompilerSources.mos \
 ParseElementReplaceable.mo \
 ParseError1.mo \
 ParseError2.mo \
+ParseFullModelica2.2.1.mos \
 ParseFullModelica3.1.mos \
 RealOpLexerModelica.mo \
 RealOpLexerMetaModelica.mo \

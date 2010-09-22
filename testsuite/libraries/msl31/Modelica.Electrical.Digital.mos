@@ -1,11 +1,12 @@
 //name:        Modelica.Electrical.Digital [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Electrical.Digital
 //status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadFile("Modelica/package.mo"); getErrorString();
+loadModel(Modelica); getErrorString();
 getErrorString(); 
 
 instantiateModel(Modelica.Electrical.Digital.Examples.Multiplexer); getErrorString();

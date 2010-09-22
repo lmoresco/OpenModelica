@@ -1,11 +1,12 @@
 //name:        Modelica.Thermal [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Thermal
 //status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadFile("Modelica/package.mo"); getErrorString();
+loadModel(Modelica); getErrorString();
 
 instantiateModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString();
 checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString();

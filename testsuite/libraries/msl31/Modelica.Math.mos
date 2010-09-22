@@ -1,11 +1,12 @@
 //name:        Modelica.Math [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Math
 //status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate example
 //
 
-loadFile("Modelica/package.mo"); getErrorString();
+loadModel(Modelica); getErrorString();
 
 checkModel(Modelica.Math.Vectors.norm); getErrorString();
 checkModel(Modelica.Math.Matrices.norm); getErrorString();

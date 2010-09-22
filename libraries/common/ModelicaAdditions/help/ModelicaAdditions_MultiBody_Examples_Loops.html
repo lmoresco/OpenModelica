@@ -1,0 +1,429 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.MultiBody.Examples.Loops"></A><A HREF="ModelicaAdditions_MultiBody_Examples.html#ModelicaAdditions.MultiBody.Examples"
+>ModelicaAdditions.MultiBody.Examples</A>.Loops</H2>
+<B>Example of mechanical systems with kinematic loops</B>
+<P>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops.Engine1"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops.Engine2"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoopI.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Loops_Utilities.html#ModelicaAdditions.MultiBody.Examples.Loops.Utilities"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.UtilitiesI.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Utilities" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This package contains multibody models with kinematic loops
+</p>
+<pre>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Loops.Engine1"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops"
+>ModelicaAdditions.MultiBody.Examples.Loops</A>.Engine1</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine1D.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine1">
+<H3>Information</H3>
+<PRE>Use the following settings:
+
+experiment StopTime=0.2 Interval=0.002 Tolerance=1.E-8
+
+
+Perform 'simulate' and then see animation in
+Animation window.
+
+  Plot the following variables:
+
+  AngVelDegS: Angular velocity of motor shaft [rev/min]
+  x         : position of cylinder [m]
+  press     : pressure in cylinder [bar]
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>D</TD><TD>0.1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>e</TD><TD>0.05</TD><TD>&nbsp;</TD></TR>
+<TR><TD>L</TD><TD>0.2</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Load</TD><TD>20</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> Engine1 
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints"
+>ModelicaAdditions.MultiBody.CutJoints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Loops_Utilities.html#ModelicaAdditions.MultiBody.Examples.Loops.Utilities"
+>ModelicaAdditions.MultiBody.Examples.Loops.Utilities</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Examples_Loops_Utilities.html#ModelicaAdditions.MultiBody.Examples.Loops.Utilities.Engine"
+>Utilities.Engine</A>;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> rodBody(
+    r={L,0,0}, 
+    rCM={L/2,0,0}, 
+    m=0.5, 
+    I33=0.0018, 
+    Width=0.02, 
+    Height=0.01);
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.ConnectingRod2"
+>CutJoints.ConnectingRod2</A> rod(
+    L=L, 
+    na={0,0,1}, 
+    r_rela(start={-0.2,0,0}, <font color="blue">each </font>fixed=false));
+<font color="blue">equation </font>
+  <font color="red">connect</font>(crank.frame_b, rod.frame_b);
+  <font color="red">connect</font>(rod.frame_a, cyl.frame_b);
+  <font color="red">connect</font>(rod.frame_c, rodBody.frame_a);
+<font color="blue">end </font>Engine1;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Loops.Engine2"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops"
+>ModelicaAdditions.MultiBody.Examples.Loops</A>.Engine2</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Engine2D.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Engine2">
+<H3>Information</H3>
+<PRE>Use the following settings:
+
+experiment StopTime=0.2 Interval=0.002 Tolerance=1.E-8
+
+
+Perform 'simulate' and then see animation in
+Animation window.
+
+  Plot the following variables:
+
+  AngVelDegS: Angular velocity of motor shaft [rev/min]
+  x         : position of cylinder [m]
+  press     : pressure in cylinder [bar]
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>D</TD><TD>0.1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>e</TD><TD>0.05</TD><TD>&nbsp;</TD></TR>
+<TR><TD>L</TD><TD>0.2</TD><TD>&nbsp;</TD></TR>
+<TR><TD>Load</TD><TD>20</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> Engine2 
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints"
+>ModelicaAdditions.MultiBody.CutJoints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints"
+>ModelicaAdditions.MultiBody.Joints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Loops_Utilities.html#ModelicaAdditions.MultiBody.Examples.Loops.Utilities"
+>ModelicaAdditions.MultiBody.Examples.Loops.Utilities</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Examples_Loops_Utilities.html#ModelicaAdditions.MultiBody.Examples.Loops.Utilities.Engine"
+>Utilities.Engine</A>;
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.Spherical"
+>CutJoints.Spherical</A> spherical;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> connectingRod(
+    r={-L,0,0}, 
+    rCM={-L/2,0,0}, 
+    m=0.5, 
+    I33=0.0018, 
+    Width=0.02, 
+    Height=0.01);
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Universal"
+>Joints.Universal</A> univ(nx={0,0,1}, ny={0,1,0});
+<font color="blue">equation </font>
+  <font color="red">connect</font>(crank.frame_b, spherical.frame_a);
+  <font color="red">connect</font>(spherical.frame_b, connectingRod.frame_b);
+  <font color="red">connect</font>(cyl.frame_b, univ.frame_a);
+  <font color="red">connect</font>(univ.frame_b, connectingRod.frame_a);
+<font color="blue">end </font>Engine2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops"
+>ModelicaAdditions.MultiBody.Examples.Loops</A>.Fourbar1</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1D.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar1">
+<H3>Information</H3>
+<PRE>Simulate for 1 second (100 output points)
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>L</TD><TD>(sqrt(1 + 0.3*0.3 + 0.1*0.1))</TD><TD>Length of connecting rod [m]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> Fourbar1 
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints"
+>ModelicaAdditions.MultiBody.CutJoints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints"
+>ModelicaAdditions.MultiBody.Joints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>;
+  <font color="blue">import </font>SI = <A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits"
+>Modelica.SIunits</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Length"
+>SI.Length</A> L=(<font color="red">sqrt</font>(1 + 0.3*0.3 + 0.1*0.1)) <font color="darkgreen">&quot;Length of connecting rod&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Angle"
+>SI.Angle</A> j1q <font color="darkgreen">&quot;angle of revolute joint j1&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Position"
+>SI.Position</A> j2q <font color="darkgreen">&quot;distance of prismatic joint j2&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.AngularVelocity"
+>SI.AngularVelocity</A> j1qd <font color="darkgreen">&quot;axis speed of revolute joint j1&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Velocity"
+>SI.Velocity</A> j2qd <font color="darkgreen">&quot;axis velocity of prismatic joint j2&quot;</font>;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.InertialSystem"
+>Parts.InertialSystem</A> inertial;
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> j1(
+    n={1,0,0}, 
+    qd(start=20), 
+    startValueFixed=true);
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Prismatic"
+>Joints.Prismatic</A> j2(n={1,0,0});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b1(r={0,0.5,0.1}, Radius=0.05);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b2(r={0,0.2,0}, Radius=0.05);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.BoxBody"
+>Parts.BoxBody</A> b0(
+    r={1,0,0}, 
+    Width=0.01, 
+    Height=0.01, 
+    Material={0,0,1,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b3(r={L,0,0}, Radius=0.05);
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.ConnectingRod2"
+>CutJoints.ConnectingRod2</A> barC(L=L, na={0,1,0});
+<font color="blue">equation </font>
+  <font color="red">connect</font>(inertial.frame_b, b0.frame_a);
+  <font color="red">connect</font>(b0.frame_b, j2.frame_a);
+  <font color="red">connect</font>(j2.frame_b, b2.frame_a);
+  <font color="red">connect</font>(j1.frame_b, b1.frame_a);
+  <font color="red">connect</font>(j1.frame_a, inertial.frame_b);
+  <font color="red">connect</font>(b1.frame_b, barC.frame_b);
+  <font color="red">connect</font>(barC.frame_a, b2.frame_b);
+  <font color="red">connect</font>(b3.frame_a, barC.frame_c);
+  j1q = j1.q;
+  j2q = j2.q;
+  j1qd = j1.qd;
+  j2qd = j2.qd;
+<font color="blue">end </font>Fourbar1;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops"
+>ModelicaAdditions.MultiBody.Examples.Loops</A>.Fourbar2</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2D.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.Fourbar2">
+<H3>Information</H3>
+<PRE>Simulate for 1 second (100 output points)
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> Fourbar2 
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints"
+>ModelicaAdditions.MultiBody.CutJoints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints"
+>ModelicaAdditions.MultiBody.Joints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>;
+  <font color="blue">import </font>SI = <A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits"
+>Modelica.SIunits</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Angle"
+>SI.Angle</A> j1q <font color="darkgreen">&quot;angle of revolute joint j1&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Position"
+>SI.Position</A> j2q <font color="darkgreen">&quot;distance of prismatic joint j2&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.AngularVelocity"
+>SI.AngularVelocity</A> j1qd <font color="darkgreen">&quot;axis speed of revolute joint j1&quot;</font>;
+  <font color="blue">output </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Velocity"
+>SI.Velocity</A> j2qd <font color="darkgreen">&quot;axis velocity of prismatic joint j2&quot;</font>;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.InertialSystem"
+>Parts.InertialSystem</A> inertial;
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> j1(
+    n={1,0,0}, 
+    qd(start=20), 
+    startValueFixed=true);
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Prismatic"
+>Joints.Prismatic</A> j2(n={1,0,0});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b1(r={0,0.5,0.1}, Radius=0.05);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b2(r={0,0.2,0}, Radius=0.05);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.BoxBody"
+>Parts.BoxBody</A> b0(
+    r={1,0,0}, 
+    Width=0.01, 
+    Height=0.01, 
+    Material={0,0,1,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.Spherical"
+>CutJoints.Spherical</A> sphereC;
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b3(
+    r={-1,0.3,0.1}, 
+    Radius=0.05, 
+    Material={0,1,0,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> rev(n={0,1,0});
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> rev1;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(inertial.frame_b, b0.frame_a);
+  <font color="red">connect</font>(b0.frame_b, j2.frame_a);
+  <font color="red">connect</font>(j2.frame_b, b2.frame_a);
+  <font color="red">connect</font>(b1.frame_b, sphereC.frame_a);
+  <font color="red">connect</font>(j1.frame_b, b1.frame_a);
+  <font color="red">connect</font>(rev.frame_a, b2.frame_b);
+  <font color="red">connect</font>(rev.frame_b, rev1.frame_a);
+  <font color="red">connect</font>(b3.frame_b, sphereC.frame_b);
+  <font color="red">connect</font>(rev1.frame_b, b3.frame_a);
+  <font color="red">connect</font>(inertial.frame_b, j1.frame_a);
+  j1q = j1.q;
+  j2q = j2.q;
+  j1qd = j1.qd;
+  j2qd = j2.qd;
+<font color="blue">end </font>Fourbar2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoopI.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Loops.html#ModelicaAdditions.MultiBody.Examples.Loops"
+>ModelicaAdditions.MultiBody.Examples.Loops</A>.TwoLoop</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoopD.png" ALT="ModelicaAdditions.MultiBody.Examples.Loops.TwoLoop">
+<H3>Information</H3>
+<PRE>Use
+
+experiment StopTime=1.6 NumberOfIntervals=200
+
+Perform 'simulate' and then see animation in
+Animation window.
+
+plot j1.q and j1.qd
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> TwoLoop 
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational"
+>Modelica.Mechanics.Rotational</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources"
+>Modelica.Blocks.Sources</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints"
+>ModelicaAdditions.MultiBody.CutJoints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints"
+>ModelicaAdditions.MultiBody.Joints</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts"
+>ModelicaAdditions.MultiBody.Parts</A>;
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.InertialSystem"
+>Parts.InertialSystem</A> inertial;
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> j1(n={0,0,1}, startValueFixed=true);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b1(r={0.1,0.5,-0.5}, Radius=0.02);
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.ConnectingRod2"
+>CutJoints.ConnectingRod2</A> j2(L=1.1, na={1,0,0});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b2(
+    r={1.1,0,0}, 
+    Radius=0.02, 
+    Material={0,1,0,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> b3(
+    r={-0.2,0,0}, 
+    Width=0.04, 
+    Height=0.04, 
+    Material={0,0,1,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Prismatic"
+>Joints.Prismatic</A> j3(n={1,0,0});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> b5(
+    r={1.8,0,0}, 
+    Width=0.02, 
+    Height=0.02, 
+    Material={0.5,0.5,0.5,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.CylinderBody"
+>Parts.CylinderBody</A> b6(r={0,-0.3,0}, Radius=0.03);
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Prismatic"
+>Joints.Prismatic</A> j5(n={0,0,1}, qq(start=-0.5, fixed=false));
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> b7(
+    r={0,0,-0.3}, 
+    Width=0.03, 
+    Height=0.03, 
+    Material={0,1,0,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_CutJoints.html#ModelicaAdditions.MultiBody.CutJoints.Spherical"
+>CutJoints.Spherical</A> j4;
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> j6(n={-1,0,0});
+  <A HREF="ModelicaAdditions_MultiBody_Joints.html#ModelicaAdditions.MultiBody.Joints.Revolute"
+>Joints.Revolute</A> j7(n={0,1,0});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.ShapeBody"
+>Parts.ShapeBody</A> b4(
+    r={0,0,0.5}, 
+    Width=0.02, 
+    Height=0.02, 
+    Material={0.5,0.5,0.5,0.5});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.Shape"
+>Parts.Shape</A> shape(
+    LengthDirection={0,0,0.4}, 
+    Width=0.02, 
+    Height=0.02);
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameAxes"
+>Parts.FrameAxes</A> frame(nx={1,-1,1});
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Torque"
+>Rotational.Torque</A> torque;
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.IdealGear"
+>Rotational.IdealGear</A> gear(ratio=10);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Inertia"
+>Rotational.Inertia</A> shaft(J=0.5);
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Sources.Constant</A> constIn(k={10});
+  <A HREF="ModelicaAdditions_MultiBody_Parts.html#ModelicaAdditions.MultiBody.Parts.FrameTranslation"
+>Parts.FrameTranslation</A> b8(r={-0.8,0,0});
+<font color="blue">equation </font>
+  <font color="red">connect</font>(b1.frame_a, j1.frame_b);
+  <font color="red">connect</font>(j2.frame_c, b2.frame_a);
+  <font color="red">connect</font>(b1.frame_b, j2.frame_a);
+  <font color="red">connect</font>(b5.frame_b, j3.frame_a);
+  <font color="red">connect</font>(b6.frame_b, j4.frame_b);
+  <font color="red">connect</font>(j5.frame_b, b6.frame_a);
+  <font color="red">connect</font>(b7.frame_b, j5.frame_a);
+  <font color="red">connect</font>(j6.frame_b, b7.frame_a);
+  <font color="red">connect</font>(j7.frame_b, j6.frame_a);
+  <font color="red">connect</font>(b5.frame_b, b4.frame_a);
+  <font color="red">connect</font>(b4.frame_b, j7.frame_a);
+  <font color="red">connect</font>(inertial.frame_b, frame.frame_a);
+  <font color="red">connect</font>(constIn.outPort, torque.inPort);
+  <font color="red">connect</font>(torque.flange_b, gear.flange_a);
+  <font color="red">connect</font>(gear.flange_b, shaft.flange_a);
+  <font color="red">connect</font>(shaft.flange_b, j1.axis);
+  <font color="red">connect</font>(j3.frame_b, j4.frame_a);
+  <font color="red">connect</font>(j3.frame_b, b3.frame_a);
+  <font color="red">connect</font>(b3.frame_b, j2.frame_b);
+  <font color="red">connect</font>(frame.frame_b, b8.frame_a);
+  <font color="red">connect</font>(b8.frame_b, b5.frame_a);
+  <font color="red">connect</font>(b8.frame_b, j1.frame_a);
+  <font color="red">connect</font>(j5.frame_b, shape.frame_a);
+<font color="blue">end </font>TwoLoop;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:37 2002
+.
+</address></BODY>
+</HTML>

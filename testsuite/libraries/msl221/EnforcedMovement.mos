@@ -1,6 +1,7 @@
 // name:     EnforcedMovement 
 // keywords: instantiate, Magnetic 
 // status:   correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl221
 // 
 //  instantiate Magnetic example
 //

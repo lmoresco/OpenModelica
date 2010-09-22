@@ -1,0 +1,357 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.MultiBody.Examples.Robots.r3"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Robots.html#ModelicaAdditions.MultiBody.Examples.Robots"
+>ModelicaAdditions.MultiBody.Examples.Robots</A>.r3</H2>
+<B>Models of the Manutec r3 robot</B>
+<P>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamics"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamicsI.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamics" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.robot"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.robotI.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.robot" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components"
+><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.ComponentsI.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.Components" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This package contains models of the robot r3 of the company Manutec.
+It is used to demonstrate in which way complex robot models should
+be built up by testing first the components of the model
+individually before composing them together. The following models are
+available:
+</p>
+
+<pre>
+   <b>axisType1</b>        Test one axis (controller, motor, gearbox) of structure 1.
+   <b>axisType2</b>        Test one axis (controller, motor, gearbox) of structure 2.
+   <b>inverseDynamics</b>  Test mechanical structure
+                    (predefined joint angle time functions).
+   <b>robot</b>            Test complete robot model.
+</pre>
+
+<p>
+The parameters of this robot have been determined by measurements
+in the laboratory of DLR. The measurement procedure is described in:
+</p>
+
+<pre>
+   Tuerk S. (1990): Zur Modellierung der Dynamik von Robotern mit
+       rotatorischen Gelenken. Fortschrittberichte VDI, Reihe 8, Nr. 211,
+       VDI-Verlag 1990.
+</pre>
+
+<p>
+The robot model is described in detail in
+</p>
+
+<pre>
+   Otter M. (1995): Objektorientierte Modellierung mechatronischer
+       Systeme am Beispiel geregelter Roboter. Dissertation,
+       Fortschrittberichte VDI, Reihe 20, Nr. 147, VDI-Verlag 1995.
+       This report can be downloaded as compressed postscript file
+       from: http://www.robotic.dlr.de/Martin.Otter/publications.html
+</pre>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>June 20, 2000</i>
+       by <a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a>:<br>
+       Realized.</li>
+</ul>
+<br>
+
+<p><b>Copyright &copy; 2000-2002, DLR.</b></p>
+
+<p><i>
+The Modelica package is <b>free</b> software; it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+
+<pre>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1I.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3</A>.axisType1</H2>
+<B>Test one axis of r3 robot (controller, motor, gearbox) of structure 1.</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1D.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType1">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+The robot r3 has 2 different model structures of its axes.
+Axis type 1 is checked with this model.
+Simulate for 0.8 s.
+</p>
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> axisType1 <font color="darkgreen">
+  &quot;Test one axis of r3 robot (controller, motor, gearbox) of structure 1.&quot;</font>
+   
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Constants.html#Modelica.Constants"
+>Modelica.Constants</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources"
+>Modelica.Blocks.Sources</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational"
+>Modelica.Mechanics.Rotational</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3.Components</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">output </font>Real refq <font color="darkgreen">&quot;reference joint angle in [deg]&quot;</font>;
+  <font color="blue">output </font>Real q <font color="darkgreen">&quot;actual joint angle in [deg]&quot;</font>;
+  <font color="blue">output </font>Real eq <font color="darkgreen">&quot;joint angle error in [deg]&quot;</font>;
+  <font color="blue">output </font>Real refqd <font color="darkgreen">&quot;reference joint angular velocity in [rad/s]&quot;</font>;
+  <font color="blue">output </font>Real qd <font color="darkgreen">&quot;actual joint angular velocity in [rad/s]&quot;</font>;
+  <font color="blue">output </font>Real eqd <font color="darkgreen">&quot;joint angular velocity error in [rad/s]&quot;</font>;
+  <font color="blue">constant </font>Real pi=Constants.pi;
+  <font color="blue">constant </font>Real rad2deg=180/pi;
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components.AxisType1"
+>Components.AxisType1</A> axis1;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.KinematicPTP"
+>Sources.KinematicPTP</A> PTP(
+    deltaq={pi/2}, 
+    qd_max={3}, 
+    qdd_max={50});
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Inertia"
+>Rotational.Inertia</A> load(J=5);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(PTP.outPort, axis1.inPort_a_ref);
+  <font color="red">connect</font>(axis1.flange, load.flange_a);
+  refq = axis1.phi_ref*rad2deg;
+  q = axis1.flange.phi*rad2deg;
+  eq = refq - q;
+  <font color="darkgreen"></font>
+  refqd = axis1.w_ref;
+  qd = <font color="red">der</font>(axis1.flange.phi);
+  eqd = refqd - qd;
+<font color="blue">end </font>axisType1;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2I.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3</A>.axisType2</H2>
+<B>Test one axis of r3 robot (controller, motor, gearbox) of structure 2.</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2D.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.axisType2">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+The robot r3 has 2 different model structures of its axes.
+Axis type 2 is checked with this model.
+Simulate for 0.8 s.
+</p>
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> axisType2 <font color="darkgreen">
+  &quot;Test one axis of r3 robot (controller, motor, gearbox) of structure 2.&quot;</font>
+   
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Constants.html#Modelica.Constants"
+>Modelica.Constants</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources"
+>Modelica.Blocks.Sources</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational"
+>Modelica.Mechanics.Rotational</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3.Components</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">output </font>Real refq <font color="darkgreen">&quot;reference joint angle in [deg]&quot;</font>;
+  <font color="blue">output </font>Real q <font color="darkgreen">&quot;actual joint angle in [deg]&quot;</font>;
+  <font color="blue">output </font>Real eq <font color="darkgreen">&quot;joint angle error in [deg]&quot;</font>;
+  <font color="blue">output </font>Real refqd <font color="darkgreen">&quot;reference joint angular velocity in [rad/s]&quot;</font>;
+  <font color="blue">output </font>Real qd <font color="darkgreen">&quot;actual joint angular velocity in [rad/s]&quot;</font>;
+  <font color="blue">output </font>Real eqd <font color="darkgreen">&quot;joint angular velocity error in [rad/s]&quot;</font>;
+  <font color="blue">constant </font>Real pi=Constants.pi;
+  <font color="blue">constant </font>Real rad2deg=180/pi;
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components.AxisType2"
+>Components.AxisType2</A> axis2;
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Inertia"
+>Rotational.Inertia</A> load(J=1);
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.KinematicPTP"
+>Sources.KinematicPTP</A> PTP(
+    deltaq={pi/2}, 
+    qd_max={3}, 
+    qdd_max={50});
+<font color="blue">equation </font>
+  <font color="red">connect</font>(axis2.flange, load.flange_a);
+  <font color="red">connect</font>(PTP.outPort, axis2.inPort_a_ref);
+  refq = axis2.phi_ref*rad2deg;
+  q = axis2.flange.phi*rad2deg;
+  eq = refq - q;
+  <font color="darkgreen"></font>
+  refqd = axis2.w_ref;
+  qd = <font color="red">der</font>(axis2.flange.phi);
+  eqd = refqd - qd;
+<font color="blue">end </font>axisType2;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamicsI.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamics" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamics"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3</A>.inverseDynamics</H2>
+<B>Test of the mechanical structure model using time-dependent joint motion</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamicsD.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.inverseDynamics">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This model is used to test the mechanical structure of the
+Manutec r3 robot. The 6 joints are forced to move according
+to a pre-defined motion, i.e., the inverse dynamics of the
+robot is computed. <br>
+Simulate for 1.2 seconds.
+</p>
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> inverseDynamics <font color="darkgreen">
+  &quot;Test of the mechanical structure model using time-dependent joint motion&quot;</font>
+   
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Constants.html#Modelica.Constants"
+>Modelica.Constants</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources"
+>Modelica.Blocks.Sources</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational"
+>Modelica.Mechanics.Rotational</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer"
+>ModelicaAdditions.Blocks.Multiplexer</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3.Components</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">constant </font>Real deg2rad=Constants.pi/180;
+  <font color="darkgreen"></font>
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components.MechanicalStructure"
+>Components.MechanicalStructure</A> mechanics;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.KinematicPTP"
+>Sources.KinematicPTP</A> PTP(
+    deltaq={180,180,-100,120,120,120}*deg2rad, 
+    qd_max={3,3,4.5,3,4,3}, 
+    qdd_max={50,50,50,50,50,50});
+  <A HREF="ModelicaAdditions_Blocks_Multiplexer.html#ModelicaAdditions.Blocks.Multiplexer.DeMultiplex6"
+>Multiplexer.DeMultiplex6</A> deMux;
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate1(phi_start=-120*deg2rad);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate2(phi_start=-90*deg2rad);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate3(phi_start=0);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate4(phi_start=-60*deg2rad);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate5(phi_start=-90*deg2rad);
+  <A HREF="../../Modelica/help/Modelica_Mechanics_Rotational.html#Modelica.Mechanics.Rotational.Accelerate"
+>Rotational.Accelerate</A> accelerate6(phi_start=-90*deg2rad);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(PTP.outPort, deMux.inPort);
+  <font color="red">connect</font>(deMux.outPort6, accelerate6.inPort);
+  <font color="red">connect</font>(deMux.outPort5, accelerate5.inPort);
+  <font color="red">connect</font>(deMux.outPort4, accelerate4.inPort);
+  <font color="red">connect</font>(deMux.outPort3, accelerate3.inPort);
+  <font color="red">connect</font>(deMux.outPort2, accelerate2.inPort);
+  <font color="red">connect</font>(accelerate1.inPort, deMux.outPort1);
+  <font color="red">connect</font>(accelerate2.flange_b, mechanics.axis2);
+  <font color="red">connect</font>(accelerate1.flange_b, mechanics.axis1);
+  <font color="red">connect</font>(accelerate3.flange_b, mechanics.axis3);
+  <font color="red">connect</font>(accelerate4.flange_b, mechanics.axis4);
+  <font color="red">connect</font>(accelerate5.flange_b, mechanics.axis5);
+  <font color="red">connect</font>(accelerate6.flange_b, mechanics.axis6);
+<font color="blue">end </font>inverseDynamics;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.robotI.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.robot" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Examples.Robots.r3.robot"></A><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3.html#ModelicaAdditions.MultiBody.Examples.Robots.r3"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3</A>.robot</H2>
+<B>Detailled model of Manutec r3 robot with reference path</B><p>
+<IMG SRC="ModelicaAdditions.MultiBody.Examples.Robots.r3.robotD.png" ALT="ModelicaAdditions.MultiBody.Examples.Robots.r3.robot">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+Complete model of Mantuec r3 robot, including
+controller, motor, gearbox, 3D-mechanics model.
+Simulate for 1.3 s.
+</p>
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> robot <font color="darkgreen">
+  &quot;Detailled model of Manutec r3 robot with reference path&quot;</font> 
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables"
+>ModelicaAdditions.Tables</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components"
+>ModelicaAdditions.MultiBody.Examples.Robots.r3.Components</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <A HREF="ModelicaAdditions_MultiBody_Examples_Robots_r3_Components.html#ModelicaAdditions.MultiBody.Examples.Robots.r3.Components.FullRobot"
+>Components.FullRobot</A> robot(q0={-1,0.43,1.57,0,-2,0});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref1(table=[0, 30; 0.1, 30; 0.1, 0; 0.74, 0; 0.74
+        , -13.96; 1.12, -13.96; 1.12, 28.75; 1.2, 28.75; 1.2, 0; 1.3, 0]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref2(table=[0, -15; 0.1, -15; 0.1, 0; 1.1, 0; 1.1
+        , 15; 1.2, 15; 1.2, 0; 1.3, 0]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref3(table=[0, 30; 0.15, 30; 0.15, -21.56; 0.6, -
+        21.56; 0.6, 0; 0.9, 0; 0.9, 17.33; 1.2, 17.33; 1.2, 0; 1.3, 0]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref4(table=[0, -80; 0.04, -80; 0.04, 0; 0.54, 0; 
+        0.54, 71.11; 0.63, 71.11; 0.63, 0; 1.14, 0; 1.14, -53.33; 1.2, -53.33; 
+        1.2, 0; 1.3, 0]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref5(table=[0, 105; 0.04, 105; 0.04, 0; 1.02, 0; 
+        1.02, -68.33; 1.14, -68.33; 1.14, 66.67; 1.2, 66.67; 1.2, 0; 1.3, 0]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> a_ref6(table=[0, -95; 0.04, -95; 0.04, 0; 0.54, 0; 
+        0.54, 84.44; 0.63, 84.44; 0.63, 0; 1.14, 0; 1.14, -63.33; 1.2, -63.33; 
+        1.2, 0; 1.3, 0]);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(a_ref1.outPort, robot.a_ref1);
+  <font color="red">connect</font>(a_ref2.outPort, robot.a_ref2);
+  <font color="red">connect</font>(a_ref3.outPort, robot.a_ref3);
+  <font color="red">connect</font>(a_ref4.outPort, robot.a_ref4);
+  <font color="red">connect</font>(a_ref5.outPort, robot.a_ref5);
+  <font color="red">connect</font>(a_ref6.outPort, robot.a_ref6);
+<font color="blue">end </font>robot;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:43 2002
+.
+</address></BODY>
+</HTML>

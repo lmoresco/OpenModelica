@@ -1,0 +1,111 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Tables.Examples"></A><A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables"
+>ModelicaAdditions.Tables</A>.Examples</H2>
+<B>Demonstration examples for tables</B>
+<P>
+<A HREF="ModelicaAdditions_Tables_Examples.html#ModelicaAdditions.Tables.Examples.allTables"
+><IMG SRC="ModelicaAdditions.Tables.Examples.allTablesI.png" ALT="ModelicaAdditions.Tables.Examples.allTables" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Tables.Examples.allTablesI.png" ALT="ModelicaAdditions.Tables.Examples.allTables" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Tables.Examples.allTables"></A><A HREF="ModelicaAdditions_Tables_Examples.html#ModelicaAdditions.Tables.Examples"
+>ModelicaAdditions.Tables.Examples</A>.allTables</H2>
+<B>Show usage of all tables</B><p>
+<IMG SRC="ModelicaAdditions.Tables.Examples.allTablesD.png" ALT="ModelicaAdditions.Tables.Examples.allTables">
+<H3>Information</H3>
+<PRE></pre>
+
+<p>
+The usage of the tables is demonstrated.
+Simulate for 7 s. In the range 0..1 and 3..5, the table outputs
+of table0, table1, table2 need to be identical. At the other
+time instants, different extrapolation formula are used.
+</p>
+
+<pre>
+
+
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>tab[:, :]</TD><TD>[2, 0.5, 1; 3, 2, 3; 4, 1, 2]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>offset</TD><TD>10</TD><TD>&nbsp;</TD></TR>
+<TR><TD>startTime</TD><TD>1</TD><TD>&nbsp;</TD></TR>
+<TR><TD>columns[:]</TD><TD>{2,3}</TD><TD>&nbsp;</TD></TR>
+<TR><TD>tab2[:, :]</TD><TD>[-1, -1; 0, 0; 0, 1; 1, 2]</TD><TD>&nbsp;</TD></TR>
+<TR><TD>tab3[:, :]</TD><TD>[0, 0; 0, 1; 1, 2]</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> allTables <font color="darkgreen">&quot;Show usage of all tables&quot;</font> 
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources"
+>Modelica.Blocks.Sources</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables"
+>ModelicaAdditions.Tables</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font>Real tab[:, :]=[2, 0.5, 1; 3, 2, 3; 4, 1, 2];
+  <font color="blue">parameter </font>Real offset=10;
+  <font color="blue">parameter </font>Real startTime=1;
+  <font color="blue">parameter </font>Integer columns[:]={2,3};
+  <font color="blue">parameter </font>Real tab2[:, :]=[-1, -1; 0, 0; 0, 1; 1, 2];
+  <font color="blue">parameter </font>Real tab3[:, :]=[0, 0; 0, 1; 1, 2];
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime2"
+>Tables.CombiTableTime2</A> table0(
+    table=tab, 
+    columns=columns, 
+    offset={offset}, 
+    extrapolation={0}, 
+    startTime={startTime});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime2"
+>Tables.CombiTableTime2</A> table1(
+    table=tab, 
+    columns=columns, 
+    offset={offset}, 
+    extrapolation={1}, 
+    startTime={startTime});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime2"
+>Tables.CombiTableTime2</A> table2(
+    table=tab, 
+    columns=columns, 
+    offset={offset}, 
+    extrapolation={2}, 
+    startTime={startTime});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime"
+>Tables.CombiTableTime</A> combiTableTime(table=tab2);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTable1D"
+>Tables.CombiTable1D</A> CombiTable1D1(table=[0, 0; 1, 1; 2, 4; 3, 9; 4, 16; 5
+        , 25; 6, 36]);
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTable1Ds"
+>Tables.CombiTable1Ds</A> CombiTable1Ds1(table=[0, 0, 0; 1, 1, 1; 2, 4, 8; 3, 9
+        , 27; 4, 16, 64; 5, 25, 125; 6, 36, 216], icol=2:3);
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Ramp"
+>Sources.Ramp</A> Ramp1(height={10}, duration={10});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTable2D"
+>Tables.CombiTable2D</A> CombiTable2D1;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Ramp"
+>Sources.Ramp</A> Ramp2(height={10}, duration={10});
+  <A HREF="../../Modelica/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Ramp"
+>Sources.Ramp</A> Ramp3(height={10}, duration={10});
+  <A HREF="ModelicaAdditions_Tables.html#ModelicaAdditions.Tables.CombiTableTime2"
+>Tables.CombiTableTime2</A> combiTableTime2(table=tab2);
+<font color="blue">equation </font>
+  <font color="red">connect</font>(Ramp1.outPort, CombiTable1D1.inPort);
+  <font color="red">connect</font>(Ramp1.outPort, CombiTable1Ds1.inPort);
+  <font color="red">connect</font>(Ramp2.outPort, CombiTable2D1.inPort1);
+  <font color="red">connect</font>(Ramp3.outPort, CombiTable2D1.inPort2);
+<font color="blue">end </font>allTables;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:19 2002
+.
+</address></BODY>
+</HTML>

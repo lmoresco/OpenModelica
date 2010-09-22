@@ -1,0 +1,784 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Logical"></A><A HREF="ModelicaAdditions_Blocks.html#ModelicaAdditions.Blocks"
+>ModelicaAdditions.Blocks</A>.Logical</H2>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.InterfacesI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NOTI.png" ALT="ModelicaAdditions.Blocks.Logical.NOT" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.OR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.ORI.png" ALT="ModelicaAdditions.Blocks.Logical.OR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.AND"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.ANDI.png" ALT="ModelicaAdditions.Blocks.Logical.AND" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.XOR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.XORI.png" ALT="ModelicaAdditions.Blocks.Logical.XOR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOR"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NORI.png" ALT="ModelicaAdditions.Blocks.Logical.NOR" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NAND"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.NANDI.png" ALT="ModelicaAdditions.Blocks.Logical.NAND" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LogicalSwitch"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchI.png" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Switch"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchI.png" ALT="ModelicaAdditions.Blocks.Logical.Switch" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.TriggeredTrapezoid"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoidI.png" ALT="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoid" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Boolean2Real"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealI.png" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.GreaterThan"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanI.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.GreaterEqual"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualI.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LessThan"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanI.png" ALT="ModelicaAdditions.Blocks.Logical.LessThan" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.LessEqual"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualI.png" ALT="ModelicaAdditions.Blocks.Logical.LessEqual" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Hysteresis"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.HysteresisI.png" ALT="ModelicaAdditions.Blocks.Logical.Hysteresis" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.OnOffController"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.OnOffControllerI.png" ALT="ModelicaAdditions.Blocks.Logical.OnOffController" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.Compare"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.CompareI.png" ALT="ModelicaAdditions.Blocks.Logical.Compare" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.ZeroCrossing"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.ZeroCrossingI.png" ALT="ModelicaAdditions.Blocks.Logical.ZeroCrossing" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This package contains components to operate on <b>Boolean signals</b>.
+</p>
+
+<p>
+This package is not part of the Modelica standard library, because it is
+planned to vectorize all components and to support alternatively
+the American symbols for the logical operators.
+</p>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>October 21, 2002</i>
+       by <a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a>
+       and <a href="http://www.robotic.dlr.de/Christian.Schweiger/">Christian Schweiger</a>:<br>
+       New components TriggeredTrapezoid, Hysteresis, OnOffController, Compare and ZeroCrossing added.
+       New interfaces BooleanMIRealMOs and RealMIBooleanMOs added.</li>
+<li><i>June 14, 2000</i>
+       by <a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a>:<br>
+       Realized based on an existing Dymola library of
+       Dieter Moormann and Hilding Elmqvist.</li>
+</ul>
+<br>
+
+
+<p><b>Copyright &copy; 2000-2002, DLR.</b></p>
+
+<p><i>
+The ModelicaAdditions.Blocks.Logical package is <b>free</b> software;
+it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<pre>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NOTI.png" ALT="ModelicaAdditions.Blocks.Logical.NOT" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NOT"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NOT</H2>
+<B>Logical NOT Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NOTD.png" ALT="ModelicaAdditions.Blocks.Logical.NOT">
+<H3>Information</H3>
+<PRE>
+Logical NOT Block
+
+The output y is true, if the input u is false.
+The output y is false, if the input u is true.
+
++---------------------------+
+|   input         output    |
+|            -&gt;             |
+|     u             y       |
++---------------------------+
+|    true          false    |
+|    false         true     |
++----------------------------
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> NOT <font color="darkgreen">&quot;Logical NOT Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanSISO"
+>Modelica.Blocks.Interfaces.BooleanSISO</A>;
+<font color="blue">equation </font>
+  y = <font color="blue">not </font>u;
+<font color="blue">end </font>NOT;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.ORI.png" ALT="ModelicaAdditions.Blocks.Logical.OR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.OR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.OR</H2>
+<B>Logical OR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.ORD.png" ALT="ModelicaAdditions.Blocks.Logical.OR">
+<H3>Information</H3>
+<PRE>
+Logical OR Block
+
+The output y is false, if the first input u1 and the
+second input u2 are both false.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          true     |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> OR <font color="darkgreen">&quot;Logical OR Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+<font color="blue">equation </font>
+  y = u1<font color="blue"> or </font>u2;
+<font color="blue">end </font>OR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.ANDI.png" ALT="ModelicaAdditions.Blocks.Logical.AND" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.AND"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.AND</H2>
+<B>Logical AND Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.ANDD.png" ALT="ModelicaAdditions.Blocks.Logical.AND">
+<H3>Information</H3>
+<PRE>
+Logical AND Block
+
+The output y is true, if the first input u1 and
+the second input u2 are both true.
+In all other cases the output y is false.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          true     |
+|   true   false         false    |
+|   false  true          false    |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> AND <font color="darkgreen">&quot;Logical AND Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+<font color="blue">equation </font>
+  y = u1<font color="blue"> and </font>u2;
+<font color="blue">end </font>AND;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.XORI.png" ALT="ModelicaAdditions.Blocks.Logical.XOR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.XOR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.XOR</H2>
+<B>Logical Exclusive OR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.XORD.png" ALT="ModelicaAdditions.Blocks.Logical.XOR">
+<H3>Information</H3>
+<PRE>
+Logical Exclusive OR Block
+
+The output y is false, if the first input u1 and
+the second input u2 are both false or both true.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         false    |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> XOR <font color="darkgreen">&quot;Logical Exclusive OR Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+<font color="blue">equation </font>
+  y = <font color="blue">if </font>(u1<font color="blue"> and </font>u2)<font color="blue"> or </font>(<font color="blue">not </font>u1<font color="blue"> and </font><font color="blue">not </font>u2)<font color="blue"> then </font>false<font color="blue"> else </font>true;
+<font color="blue">end </font>XOR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NORI.png" ALT="ModelicaAdditions.Blocks.Logical.NOR" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NOR"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NOR</H2>
+<B>Logical NOR Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NORD.png" ALT="ModelicaAdditions.Blocks.Logical.NOR">
+<H3>Information</H3>
+<PRE>
+Logical NOR Block
+
+The output y is true, if the first input u1 and
+the second input u2 are both false.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         false    |
+|   false  true          false    |
+|   false  false         true     |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> NOR <font color="darkgreen">&quot;Logical NOR Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+>NOT</A> logicalNOT;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.OR"
+>OR</A> logicalOR;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(logicalOR.outPort, logicalNOT.inPort);
+  <font color="red">connect</font>(logicalNOT.outPort, outPort);
+  <font color="red">connect</font>(inPort1, logicalOR.inPort1);
+  <font color="red">connect</font>(inPort2, logicalOR.inPort2);
+<font color="blue">end </font>NOR;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.NANDI.png" ALT="ModelicaAdditions.Blocks.Logical.NAND" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.NAND"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.NAND</H2>
+<B>Logical NAND Block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.NANDD.png" ALT="ModelicaAdditions.Blocks.Logical.NAND">
+<H3>Information</H3>
+<PRE>
+Logical NAND Block
+
+The output y is false, if the first input u1 and
+the second input u2 are both true.
+In all other cases the output y is true.
+
++---------------------------------+
+|     input             output    |
+|                  -&gt;             |
+|   u1     u2            y        |
++---------------------------------+
+|   true   true          false    |
+|   true   false         true     |
+|   false  true          true     |
+|   false  false         true     |
++---------------------------------+
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> NAND <font color="darkgreen">&quot;Logical NAND Block&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+>Interfaces.BooleanSI2SO</A>;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.NOT"
+>NOT</A> logicalNOT;
+  <A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical.AND"
+>AND</A> logicalAND;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(logicalNOT.outPort, outPort);
+  <font color="red">connect</font>(inPort1, logicalAND.inPort1);
+  <font color="red">connect</font>(inPort2, logicalAND.inPort2);
+  <font color="red">connect</font>(logicalAND.outPort, logicalNOT.inPort);
+<font color="blue">end </font>NAND;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchI.png" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LogicalSwitch"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LogicalSwitch</H2>
+<B>Logical Switch</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LogicalSwitchD.png" ALT="ModelicaAdditions.Blocks.Logical.LogicalSwitch">
+<H3>Information</H3>
+<PRE></pre>
+<p>The LogicalSwitch switches, depending on the
+Boolean inPort2 connector (the middle connector),
+between the two possible input signals
+inPort1 (upper connector) and inPort3 (lower connector).</p>
+
+<p>If inPort2 is true, outPort is set equal to
+inPort1, else it is set equal to inPort2.</p>
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> LogicalSwitch <font color="darkgreen">&quot;Logical Switch&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort1(<font color="blue">final </font>n=1, signal(<font color="blue">final </font>
+        start={true})) <font color="darkgreen">&quot;Connector of Boolean input signal 1&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort2(<font color="blue">final </font>n=1, signal(<font color="blue">final </font>
+        start={true})) <font color="darkgreen">&quot;Connector of Boolean input signal 2&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort3(<font color="blue">final </font>n=1, signal(<font color="blue">final </font>
+        start={true})) <font color="darkgreen">&quot;Connector of Boolean input signal 3&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(<font color="blue">final </font>n=1, signal(<font color="blue">final </font>
+        start={true})) <font color="darkgreen">&quot;Connector of Boolean output signal&quot;</font>;
+<font color="blue">protected </font>
+  Boolean u1(start=true) = inPort1.signal[1] <font color="darkgreen">&quot;Input signal 1&quot;</font>;
+  Boolean u2(start=true) = inPort2.signal[1] <font color="darkgreen">&quot;Input signal 2&quot;</font>;
+  Boolean u3(start=true) = inPort3.signal[1] <font color="darkgreen">&quot;Input signal 3&quot;</font>;
+  Boolean y(start=true) = outPort.signal[1] <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">equation </font>
+  <font color="darkgreen"></font>
+  y = <font color="blue">if </font>u2<font color="blue"> then </font>u1<font color="blue"> else </font>u3;
+<font color="blue">end </font>LogicalSwitch;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchI.png" ALT="ModelicaAdditions.Blocks.Logical.Switch" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Switch"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Switch</H2>
+<B>Switch between two Real signal vectors</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.SwitchD.png" ALT="ModelicaAdditions.Blocks.Logical.Switch">
+<H3>Information</H3>
+<PRE></pre>
+<p>The Logical.Switch switches, depending on the
+logical connector inPort2 (the middle connector)
+between the two possible input signals
+inPort1 (upper connector) and inPort3 (lower connector).</p>
+
+<p>If inPort2 is true, the outPort is set equal to
+inPort1, else it is set equal to inPort3.</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>size of input and output Real signal vectors</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Switch <font color="darkgreen">&quot;Switch between two Real signal vectors&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  <font color="blue">parameter </font>Integer n=1 <font color="darkgreen">&quot;size of input and output Real signal vectors&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort1(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real input signal 1&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort2(<font color="blue">final </font>n=1, signal(<font color="blue">final </font>
+        start={true})) <font color="darkgreen">&quot;Connector of Boolean input signal 2&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort3(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real input signal 3&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real output signal&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  Real u1[n]=inPort1.signal <font color="darkgreen">&quot;Input signal 1&quot;</font>;
+  Boolean u2(start=true) = inPort2.signal[1] <font color="darkgreen">&quot;Input signal 2&quot;</font>;
+  Real u3[n]=inPort3.signal <font color="darkgreen">&quot;Input signal 3&quot;</font>;
+  Real y[n]=outPort.signal <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">equation </font>
+  y = <font color="blue">if </font>u2<font color="blue"> then </font>u1<font color="blue"> else </font>u3;
+<font color="blue">end </font>Switch;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoidI.png" ALT="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoid" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoid"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.TriggeredTrapezoid</H2>
+<B>Triggered trapezoid generator</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoidD.png" ALT="ModelicaAdditions.Blocks.Logical.TriggeredTrapezoid">
+<H3>Information</H3>
+<PRE></pre>
+<p>The block TriggeredTrapezoid has a boolean input and a real
+output, both of size n, and requires the parameter vectors <i>amplitude</i>,
+<i>rising</i>, <i>falling</i> and <i>offset</i>, all of size n also. The
+output represents a trapezoidal signal dependent on the input.</p>
+
+<p>The behaviour is as follows: Assume the initial input to be false. In this
+case, the output will be <i>offset</i>. After a rising edge (i.e. the input
+changes from false to true), the output is rising during <i>rising</i> to the
+sum of <i>offset</i> and <i>amplitude</i>. In contrast, after a falling
+edge (i.e. the input changes from true to false), the output is falling
+during <i>falling</i> to a value of <i>offset</i>.</p>
+
+<p>Note, that the case of edges before expiration of rising or falling is
+handled properly.</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>amplitude[:]</TD><TD>{1}</TD><TD>Amplitudes of trapezoids</TD></TR>
+<TR><TD>rising[n]</TD><TD>zeros(n)</TD><TD>Rising durations of trapezoids [s]</TD></TR>
+<TR><TD>falling[n]</TD><TD>rising</TD><TD>Falling durations of trapezoids [s]</TD></TR>
+<TR><TD>offset[n]</TD><TD>zeros(n)</TD><TD>Offsets of output signals</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> TriggeredTrapezoid <font color="darkgreen">&quot;Triggered trapezoid generator&quot;</font> 
+  <font color="blue">parameter </font>Real amplitude[:]={1} <font color="darkgreen">&quot;Amplitudes of trapezoids&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> rising[n](<font color="blue">final </font>min=0) = <font color="red">zeros</font>(n) <font color="darkgreen">&quot;Rising durations of trapezoids&quot;</font>
+    ;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> falling[n](<font color="blue">final </font>min=0) = rising <font color="darkgreen">&quot;Falling durations of trapezoids&quot;</font>
+    ;
+  <font color="blue">parameter </font>Real offset[n]=<font color="red">zeros</font>(n) <font color="darkgreen">&quot;Offsets of output signals&quot;</font>;
+  <font color="darkgreen">/* A start value of y is set, because pre(y) is present 
+     to avoid a warning message from the compiler. However,
+     this setting does not have an effect, because y is initialized
+     correctly, before pre(y) is used
+  */</font>
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs"
+>Interfaces.BooleanMIRealMOs</A>(<font color="blue">final </font>n=<font color="red">size</font>(amplitude, 1), y(start=<font color="red">zeros</font>(n), 
+        fixed=<font color="red">fill</font>(true, n)));
+<font color="blue">protected </font>
+  <font color="blue">discrete </font>Real endValue[n] <font color="darkgreen">&quot;Value of y at time of recent edge&quot;</font>;
+  <font color="blue">discrete </font>Real rate[n] <font color="darkgreen">&quot;Current rising/falling rate&quot;</font>;
+  <font color="blue">discrete </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> T[n] <font color="darkgreen">&quot;Predicted time of output reaching endValue&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+    y[i] = <font color="blue">if </font>time &lt; T[i]<font color="blue"> then </font>endValue[i] - (T[i] - time)*rate[i]<font color="blue"> else </font>
+      endValue[i];
+    <font color="darkgreen"></font>
+    <font color="blue">when </font>{<font color="red">initial</font>(),u[i],<font color="blue">not </font>u[i]}<font color="blue"> then</font>
+      endValue[i] = <font color="blue">if </font>u[i]<font color="blue"> then </font>offset[i] + amplitude[i]<font color="blue"> else </font>offset[i];
+      rate[i] = <font color="blue">if </font>u[i]<font color="blue"> and </font>(rising[i] &gt; 0)<font color="blue"> then </font>amplitude[i]/rising[i]<font color="blue"> else </font><font color="blue">
+        if </font><font color="blue">not </font>u[i]<font color="blue"> and </font>(falling[i] &gt; 0)<font color="blue"> then </font>-amplitude[i]/falling[i]<font color="blue"> else </font>0;
+      T[i] = <font color="blue">if </font>u[i]<font color="blue"> and </font><font color="blue">not </font>(rising[i] &gt; 0)<font color="blue"> or </font><font color="blue">not </font>u[i]<font color="blue"> and </font><font color="blue">not </font>(falling[i] &gt; 
+        0)<font color="blue"> or </font><font color="blue">not </font><font color="red">abs</font>(amplitude[i]) &gt; 0<font color="blue"> or </font><font color="red">initial</font>()<font color="blue"> then </font>time<font color="blue"> else </font>time + (
+        endValue[i] - <font color="red">pre</font>(y[i]))/rate[i];
+    <font color="blue">end when</font>;
+  <font color="blue">end for</font>;
+<font color="blue">end </font>TriggeredTrapezoid;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealI.png" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Boolean2Real"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Boolean2Real</H2>
+<B>Convert Boolean to Real signals</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Boolean2RealD.png" ALT="ModelicaAdditions.Blocks.Logical.Boolean2Real">
+<H3>Information</H3>
+<PRE></pre>
+<p>The Boolean2Real block transforms Boolean to Real signals.</p>
+
+<p>If the Boolean input is true, the Real output is
+the value of parameter realTrue, otherwise it is realFalse.</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>size of input and output signal vectors</TD></TR>
+<TR><TD>realTrue</TD><TD>1.0</TD><TD>Output signal for true Boolean input</TD></TR>
+<TR><TD>realFalse</TD><TD>0.0</TD><TD>Output signal for false Boolean input</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Boolean2Real <font color="darkgreen">&quot;Convert Boolean to Real signals&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  <font color="blue">parameter </font>Integer n=1 <font color="darkgreen">&quot;size of input and output signal vectors&quot;</font>;
+  <font color="blue">parameter </font>Real realTrue=1.0 <font color="darkgreen">&quot;Output signal for true Boolean input&quot;</font>;
+  <font color="blue">parameter </font>Real realFalse=0.0 <font color="darkgreen">&quot;Output signal for false Boolean input&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Boolean input signals&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real output signals&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  Boolean u[n](start=<font color="red">fill</font>(true, n)) = inPort.signal <font color="darkgreen">&quot;Input signals&quot;</font>;
+  Real y[n]=outPort.signal <font color="darkgreen">&quot;Output signals&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+    y[i] = <font color="blue">if </font>u[i]<font color="blue"> then </font>realTrue<font color="blue"> else </font>realFalse;
+  <font color="blue">end for</font>;
+<font color="blue">end </font>Boolean2Real;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanI.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.GreaterThan"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.GreaterThan</H2>
+<B>Outputs true, if input is greater than threshold</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterThanD.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterThan">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> GreaterThan <font color="darkgreen">&quot;Outputs true, if input is greater than threshold&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"
+>Interfaces.Comparison</A>;
+<font color="blue">equation </font>
+  y = u &gt; threshold;
+<font color="blue">end </font>GreaterThan;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualI.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.GreaterEqual"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.GreaterEqual</H2>
+<B>Outputs true, if input is greater than or equal to threshold</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.GreaterEqualD.png" ALT="ModelicaAdditions.Blocks.Logical.GreaterEqual">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> GreaterEqual <font color="darkgreen">
+  &quot;Outputs true, if input is greater than or equal to threshold&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"
+>Interfaces.Comparison</A>;
+<font color="blue">equation </font>
+  y = u &gt;= threshold;
+<font color="blue">end </font>GreaterEqual;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanI.png" ALT="ModelicaAdditions.Blocks.Logical.LessThan" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LessThan"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LessThan</H2>
+<B>Outputs true, if input is less than threshold</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LessThanD.png" ALT="ModelicaAdditions.Blocks.Logical.LessThan">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> LessThan <font color="darkgreen">&quot;Outputs true, if input is less than threshold&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"
+>Interfaces.Comparison</A>;
+<font color="blue">equation </font>
+  y = u &lt; threshold;
+<font color="blue">end </font>LessThan;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualI.png" ALT="ModelicaAdditions.Blocks.Logical.LessEqual" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.LessEqual"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.LessEqual</H2>
+<B>Outputs true, if input is less than or equal to threshold</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.LessEqualD.png" ALT="ModelicaAdditions.Blocks.Logical.LessEqual">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> LessEqual <font color="darkgreen">
+  &quot;Outputs true, if input is less than or equal to threshold&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"
+>Interfaces.Comparison</A>;
+<font color="blue">equation </font>
+  y = u &lt;= threshold;
+<font color="blue">end </font>LessEqual;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.HysteresisI.png" ALT="ModelicaAdditions.Blocks.Logical.Hysteresis" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Hysteresis"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Hysteresis</H2>
+<B>Transform Real to Boolean with Hysteresis</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.HysteresisD.png" ALT="ModelicaAdditions.Blocks.Logical.Hysteresis">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This block transforms a <b>Real</b> input signal into a <b>Boolean</b>
+output signal:
+</p>
+
+<ul>
+<li> When the output was <b>false</b> and the input becomes
+     <b>greater</b> than parameter <b>uHigh</b>, the output
+     switches to <b>true</b>.</li>
+<li> When the output was <b>true</b> and the input becomes
+     <b>less</b> than parameter <b>uLow</b>, the output
+     switches to <b>false</b>.</li>
+</ul>
+
+<p>
+The fixed start value of the output is <b>false</b>.
+If needed, it can be changed via a modification, e.g.,
+</p>
+
+<pre>
+    Hysteresis hyst(y(start=<b>true</b>));
+</pre>
+
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>uLow[:]</TD><TD>{0}</TD><TD>if y=true and u&lt;=uLow, switch to y=false</TD></TR>
+<TR><TD>uHigh[n]</TD><TD>{1}</TD><TD>if y=false and u&gt;=uHigh, switch to y=true</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Hysteresis <font color="darkgreen">&quot;Transform Real to Boolean with Hysteresis&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs"
+>Interfaces.RealMIBooleanMOs</A>(<font color="blue">final </font>n=<font color="red">size</font>(uLow, 1), y(<font color="blue">each </font>start=false, <font color="blue">
+        each </font>fixed=true));
+  <font color="blue">parameter </font>Real[:] uLow={0} <font color="darkgreen">&quot;if y=true and u&lt;=uLow, switch to y=false&quot;</font>;
+  <font color="blue">parameter </font>Real[n] uHigh={1} <font color="darkgreen">&quot;if y=false and u&gt;=uHigh, switch to y=true&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+    y[i] = u[i] &gt; uHigh[i]<font color="blue"> or </font><font color="red">pre</font>(y[i])<font color="blue"> and </font>u[i] &gt;= uLow[i];
+  <font color="blue">end for</font>;
+<font color="blue">end </font>Hysteresis;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.OnOffControllerI.png" ALT="ModelicaAdditions.Blocks.Logical.OnOffController" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.OnOffController"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.OnOffController</H2>
+<B>On-off controller</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.OnOffControllerD.png" ALT="ModelicaAdditions.Blocks.Logical.OnOffController">
+<H3>Information</H3>
+<PRE></pre>
+<p>The block OnOffController sets the output signal to true when
+the input signal falls below the reference signal minus half of
+the bandwidth and sets the output signal to false when the input
+signal exceeds the reference signal plus half of the bandwidth.</p>
+
+<p>The reference signal is represented by inPort1 and the input
+signal by inPort2.</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>bandwidth</TD><TD>0.1</TD><TD>Bandwidth around reference signal</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> OnOffController <font color="darkgreen">&quot;On-off controller&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.MI2BooleanMOs"
+>Modelica.Blocks.Interfaces.MI2BooleanMOs</A>(<font color="blue">final </font>n=1);
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font>Real bandwidth=0.1 <font color="darkgreen">&quot;Bandwidth around reference signal&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  Real u=inPort2.signal[1] <font color="darkgreen">&quot;Input signal&quot;</font>;
+  Real uRef=inPort1.signal[1] <font color="darkgreen">&quot;Reference input signal&quot;</font>;
+  Boolean y=outPort.signal[1] <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">equation </font>
+  y = <font color="red">pre</font>(y)<font color="blue"> and </font>(u &lt; uRef + bandwidth/2)<font color="blue"> or </font>(u &lt; uRef - bandwidth/2);
+<font color="blue">end </font>OnOffController;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.CompareI.png" ALT="ModelicaAdditions.Blocks.Logical.Compare" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Compare"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Compare</H2>
+<B>True, if signal of inPort1 is larger than signal of inPort2</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.CompareD.png" ALT="ModelicaAdditions.Blocks.Logical.Compare">
+<H3>Information</H3>
+<PRE></pre>
+<p>Compares <b>u1</b> element-wise to <b>u2</b> and sets output y[i]=outPort.signal[i] to
+true, if u1[i]=inPort1.signal[i] is greater than u2[i]=inPort2.signal[i]:</p>
+
+<pre>    y[i] = u1[i] &gt; u2[i] ;
+</pre>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Dimension of input and output vectors.</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> Compare <font color="darkgreen">
+  &quot;True, if signal of inPort1 is larger than signal of inPort2&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.MI2BooleanMOs"
+>Modelica.Blocks.Interfaces.MI2BooleanMOs</A>;
+  <font color="darkgreen"></font>
+<font color="blue">equation </font>
+  <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+    outPort.signal[i] = inPort1.signal[i] &gt; inPort2.signal[i];
+  <font color="blue">end for</font>;
+<font color="blue">end </font>Compare;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.ZeroCrossingI.png" ALT="ModelicaAdditions.Blocks.Logical.ZeroCrossing" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.ZeroCrossing"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.ZeroCrossing</H2>
+<B>Trigger zero crossing of input signal</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.ZeroCrossingD.png" ALT="ModelicaAdditions.Blocks.Logical.ZeroCrossing">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+The output signal (= outPort.signal[1]) is <b>true</b> at the
+time instant when the input signal (= inPort.signal[1]) becomes
+zero, provided the enable input (= enable.signal[1]) is
+<b>true</b>. At all other time instants, the output signal is <b>false</b>.
+If the input signal is zero at a time instant when the enable
+input changes its value, then the output is <b>false</b>.
+</p>
+
+<p>
+Note, that in the plot window of a Modelica simulator, the output of
+this block is usually identically to <b>false</b>, because the output
+may only be <b>true</b> at an event instant, but not during
+continuous integration. In order to check that this component is
+actually working as expected, one should connect its output to, e.g.,
+component <i>ModelicaAdditions.Blocks.Discrete.TriggeredSampler</i>.
+</p>
+
+<pre></PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Number of inputs (= number of outputs)</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> ZeroCrossing <font color="darkgreen">&quot;Trigger zero crossing of input signal&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs"
+>Interfaces.RealMIBooleanMOs</A>(outPort(signal(<font color="blue">each </font>fixed=true)));
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> enable(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Zero input crossing is triggered if the enable input signal is true&quot;</font>;
+<font color="blue">protected </font>
+  Boolean enabled(fixed=true) = enable.signal[1];
+  Boolean disabled(fixed=true) = <font color="blue">not </font>enable.signal[1];
+  Boolean u_pos[n](<font color="blue">each </font>fixed=true);
+<font color="blue">equation </font>
+  <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+    u_pos[i] = enabled<font color="blue"> and </font>u[i] &gt;= 0;
+    y[i] = <font color="red">change</font>(u_pos[i])<font color="blue"> and </font><font color="blue">not </font><font color="red">edge</font>(enabled)<font color="blue"> and </font><font color="blue">not </font><font color="red">edge</font>(disabled);
+  <font color="blue">end for</font>;
+<font color="blue">end </font>ZeroCrossing;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 17 13:40:58 2002
+.
+</address></BODY>
+</HTML>

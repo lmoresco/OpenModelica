@@ -1,0 +1,217 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.MultiBody.Visualizers"></A><A HREF="ModelicaAdditions_MultiBody.html#ModelicaAdditions.MultiBody"
+>ModelicaAdditions.MultiBody</A>.Visualizers</H2>
+<B>For animation of across vector quantities.</B>
+<P>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.Velocity"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.VelocityI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Velocity" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.Acceleration"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AccelerationI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Acceleration" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.AngularVelocity"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularVelocityI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularVelocity" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.AngularAcceleration"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularAccelerationI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularAcceleration" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensor"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensor" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.ForceSensor"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceSensor" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers.TorqueSensor"
+><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.TorqueSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.TorqueSensor" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE>Special classes that store
+vector, acceleration, angular velocity,
+and angular acceleration at a cut.
+
+By connecting these to a cut they animate the
+relevant quantities in the cut.
+
+The class also contain sensors for forces, torques,
+and a sensor that measure both forces and torques.
+
+Note that these sensors measure the forces and torques
+transmitted through the sensor. This is necessary
+since forces and torques are flow quantities.
+
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.VelocityI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Velocity" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.Velocity"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.Velocity</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.VelocityD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Velocity">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Velocity 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>Interfaces.OneFrame_a</A>;
+  VisualVector velocity(
+    Material={0,0,1,0.5}, 
+    category=&quot;velocity&quot;, 
+    r=r0a, 
+    Size=va, 
+    S=Sa);
+<font color="blue">equation </font>
+  fa = <font color="red">zeros</font>(3);
+  ta = <font color="red">zeros</font>(3);
+<font color="blue">end </font>Velocity;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AccelerationI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Acceleration" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.Acceleration"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.Acceleration</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AccelerationD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.Acceleration">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> Acceleration 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>Interfaces.OneFrame_a</A>;
+  VisualVector acceleration(
+    Material={1,1,0,0.5}, 
+    category=&quot;acceleration&quot;, 
+    r=r0a, 
+    Size=aa, 
+    S=Sa);
+<font color="blue">equation </font>
+  fa = <font color="red">zeros</font>(3);
+  ta = <font color="red">zeros</font>(3);
+<font color="blue">end </font>Acceleration;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularVelocityI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularVelocity" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.AngularVelocity"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.AngularVelocity</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularVelocityD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularVelocity">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> AngularVelocity 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>Interfaces.OneFrame_a</A>;
+  VisualVector angular_velocity(
+    Material={0,1,1,0.5}, 
+    category=&quot;angular velocity&quot;, 
+    r=r0a, 
+    Size=wa, 
+    S=Sa);
+<font color="blue">equation </font>
+  fa = <font color="red">zeros</font>(3);
+  ta = <font color="red">zeros</font>(3);
+<font color="blue">end </font>AngularVelocity;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularAccelerationI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularAcceleration" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.AngularAcceleration"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.AngularAcceleration</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.AngularAccelerationD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.AngularAcceleration">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> AngularAcceleration 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.OneFrame_a"
+>Interfaces.OneFrame_a</A>;
+  VisualVector angular_acceleration(
+    Material={1,0,1,0.5}, 
+    category=&quot;angular acceleration&quot;, 
+    r=r0a, 
+    Size=za, 
+    S=Sa);
+<font color="blue">equation </font>
+  fa = <font color="red">zeros</font>(3);
+  ta = <font color="red">zeros</font>(3);
+<font color="blue">end </font>AngularAcceleration;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensor"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.ForceTorqueSensor</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensorD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceTorqueSensor">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ForceTorqueSensor 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>Interfaces.TwoTreeFrames</A>;
+  VisualVector force(
+    category=&quot;force&quot;, 
+    r=r0a, 
+    Size=fa, 
+    S=Sa);
+  VisualVector torque(
+    Material={0,1,0,0.5}, 
+    category=&quot;torque&quot;, 
+    r=r0a, 
+    Size=ta, 
+    S=Sa);
+<font color="blue">equation </font>
+  Sb = Sa;
+  wb = wa;
+  zb = za;
+  <font color="darkgreen"></font>
+  r0b = r0a;
+  vb = va;
+  ab = aa;
+  fa = fb;
+  ta = tb;
+<font color="blue">end </font>ForceTorqueSensor;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceSensor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.ForceSensor"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.ForceSensor</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.ForceSensorD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.ForceSensor">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> ForceSensor 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>Interfaces.TwoTreeFrames</A>;
+  VisualVector force(
+    category=&quot;force&quot;, 
+    r=r0a, 
+    Size=fa, 
+    S=Sa);
+<font color="blue">equation </font>
+  <font color="darkgreen">// Similar to FrameTranslation with r=0.</font>
+  Sb = Sa;
+  wb = wa;
+  zb = za;
+  <font color="darkgreen"></font>
+  r0b = r0a;
+  vb = va;
+  ab = aa;
+  fa = fb;
+  ta = tb;
+<font color="blue">end </font>ForceSensor;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.MultiBody.Visualizers.TorqueSensorI.png" ALT="ModelicaAdditions.MultiBody.Visualizers.TorqueSensor" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.MultiBody.Visualizers.TorqueSensor"></A><A HREF="ModelicaAdditions_MultiBody_Visualizers.html#ModelicaAdditions.MultiBody.Visualizers"
+>ModelicaAdditions.MultiBody.Visualizers</A>.TorqueSensor</H2>
+<IMG SRC="ModelicaAdditions.MultiBody.Visualizers.TorqueSensorD.png" ALT="ModelicaAdditions.MultiBody.Visualizers.TorqueSensor">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">model</font> TorqueSensor 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_MultiBody_Interfaces.html#ModelicaAdditions.MultiBody.Interfaces.TwoTreeFrames"
+>Interfaces.TwoTreeFrames</A>;
+  VisualVector torque(
+    Material={0,1,0,0.5}, 
+    category=&quot;torque&quot;, 
+    r=r0a, 
+    Size=ta, 
+    S=Sa);
+<font color="blue">equation </font>
+  <font color="darkgreen">// Similar to FrameTranslation with r=0.</font>
+  Sb = Sa;
+  wb = wa;
+  zb = za;
+  <font color="darkgreen"></font>
+  r0b = r0a;
+  vb = va;
+  ab = aa;
+  fa = fb;
+  ta = tb;
+<font color="blue">end </font>TorqueSensor;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:15 2002
+.
+</address></BODY>
+</HTML>

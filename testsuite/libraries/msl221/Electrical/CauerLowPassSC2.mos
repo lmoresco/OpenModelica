@@ -1,12 +1,13 @@
 //name:         CauerLowPassSC2
 //keyword:      simulation msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //teardown_command: rm -f Modelica.Electrical.Analog.Examples.CauerLowPassSC*
 //
 // instantiate example
 //
 
-loadFile("../Modelica/package.mo");
+loadModel(Modelica);
 simulate(Modelica.Electrical.Analog.Examples.CauerLowPassSC,stopTime=60,numberOfIntervals=1500,method="dassl");
 
 "C5.v:";

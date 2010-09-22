@@ -1,11 +1,12 @@
 //name:         CharacteristicThyristors2
 //keyword:      simulating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //
 // simulation example
 //
 
-loadFile("../Modelica/package.mo");
+loadModel(Modelica);
 simulate(Modelica.Electrical.Analog.Examples.CharacteristicThyristors,stopTime=2,method="dassl");
 
 "IdealThyristor1.v:";

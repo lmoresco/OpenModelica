@@ -1,0 +1,192 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Logical.Interfaces"></A><A HREF="ModelicaAdditions_Blocks_Logical.html#ModelicaAdditions.Blocks.Logical"
+>ModelicaAdditions.Blocks.Logical</A>.Interfaces</H2>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SOI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisonI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparison" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisionI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparision" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOsI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs"
+><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOsI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SOI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO"></A><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+>ModelicaAdditions.Blocks.Logical.Interfaces</A>.BooleanSI2SO</H2>
+<B>2 Single Input / 1 Single Output Boolean control block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SOD.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanSI2SO">
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> BooleanSI2SO <font color="darkgreen">
+  &quot;2 Single Input / 1 Single Output Boolean control block&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort1(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Boolean input signal 1&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort2(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Boolean input signal 2&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Boolean output signal&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  Boolean u1=inPort1.signal[1] <font color="darkgreen">&quot;Input signal 1&quot;</font>;
+  Boolean u2=inPort2.signal[1] <font color="darkgreen">&quot;Input signal 2&quot;</font>;
+  Boolean y=outPort.signal[1] <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">end </font>BooleanSI2SO;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOsI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs"></A><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+>ModelicaAdditions.Blocks.Logical.Interfaces</A>.BooleanMIRealMOs</H2>
+<B>Multiple Boolean Input Multiple Real Output continuous control block with same number of inputs and outputs</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOsD.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.BooleanMIRealMOs">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+Block has a Boolean input and a continuous output signal vector
+where the signal sizes of the input and output vector are identical.
+</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Number of inputs (= number of outputs)</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> BooleanMIRealMOs <font color="darkgreen">
+  &quot;Multiple Boolean Input Multiple Real Output continuous control block with same number of inputs and outputs&quot;</font>
+   
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BlockIcon"
+>Modelica.Blocks.Interfaces.BlockIcon</A>;
+  <font color="blue">parameter </font>Integer n=1 <font color="darkgreen">&quot;Number of inputs (= number of outputs)&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanInPort"
+>Modelica.Blocks.Interfaces.BooleanInPort</A> inPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Boolean input signals&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real output signals&quot;</font>;
+  <font color="blue">output </font>Real y[n] <font color="darkgreen">&quot;Output signals&quot;</font>;
+<font color="blue">protected </font>
+  Boolean u[n]=inPort.signal <font color="darkgreen">&quot;Boolean input signals&quot;</font>;
+<font color="blue">equation </font>
+  y = outPort.signal;
+<font color="blue">end </font>BooleanMIRealMOs;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisonI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparison" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Interfaces.Comparison"></A><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+>ModelicaAdditions.Blocks.Logical.Interfaces</A>.Comparison</H2>
+<B>Base class for compare operations</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisonD.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparison">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> Comparison <font color="darkgreen">&quot;Base class for compare operations&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font>Real threshold=0 <font color="darkgreen">&quot;Comparison with respect to threshold&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Real input signal&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Boolean output signal&quot;</font>;
+<font color="blue">protected </font>
+  Real u=inPort.signal[1] <font color="darkgreen">&quot;Input signal&quot;</font>;
+  Boolean y=outPort.signal[1] <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">end </font>Comparison;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOsI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs"></A><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+>ModelicaAdditions.Blocks.Logical.Interfaces</A>.RealMIBooleanMOs</H2>
+<B>Multiple Real Input Multiple Boolean Output continuous control block with same number of inputs and outputs</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOsD.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.RealMIBooleanMOs">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+Block has a continuous input and a Boolean output signal vector
+where the signal sizes of the input and output vector are identical.
+</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Number of inputs (= number of outputs)</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> RealMIBooleanMOs <font color="darkgreen">
+  &quot;Multiple Real Input Multiple Boolean Output continuous control block with same number of inputs and outputs&quot;</font>
+   
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <font color="blue">parameter </font>Integer n=1 <font color="darkgreen">&quot;Number of inputs (= number of outputs)&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Real input signals&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector of Boolean output signals&quot;</font>;
+  <font color="blue">output </font>Boolean y[n] <font color="darkgreen">&quot;Boolean output signals&quot;</font>;
+<font color="blue">protected </font>
+  Real u[n]=inPort.signal <font color="darkgreen">&quot;Input signals&quot;</font>;
+<font color="blue">equation </font>
+  y = outPort.signal;
+<font color="blue">end </font>RealMIBooleanMOs;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisionI.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparision" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Logical.Interfaces.Comparision"></A><A HREF="ModelicaAdditions_Blocks_Logical_Interfaces.html#ModelicaAdditions.Blocks.Logical.Interfaces"
+>ModelicaAdditions.Blocks.Logical.Interfaces</A>.Comparision</H2>
+<B>For compatibility reasons only (as identifier is wrong)</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Logical.Interfaces.ComparisionD.png" ALT="ModelicaAdditions.Blocks.Logical.Interfaces.Comparision">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>threshold</TD><TD>0</TD><TD>Comparison with respect to threshold</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> Comparision <font color="darkgreen">
+  &quot;For compatibility reasons only (as identifier is wrong)&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanBlockIcon"
+>Modelica.Blocks.Interfaces.BooleanBlockIcon</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font>Real threshold=0 <font color="darkgreen">&quot;Comparison with respect to threshold&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Real input signal&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.BooleanOutPort"
+>Modelica.Blocks.Interfaces.BooleanOutPort</A> outPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of Boolean output signal&quot;</font>;
+<font color="blue">protected </font>
+  Real u=inPort.signal[1] <font color="darkgreen">&quot;Input signal&quot;</font>;
+  Boolean y=outPort.signal[1] <font color="darkgreen">&quot;Output signal&quot;</font>;
+<font color="blue">end </font>Comparision;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:22 2002
+.
+</address></BODY>
+</HTML>

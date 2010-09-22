@@ -53,6 +53,7 @@ sub setbaselineone
     my ($f,%info) = @_;
     my $setup_command = $info{"setup_command"};
     my $cflags = $info{"cflags"};
+    my $env = $info{"env"};
     my $teardown_command = $info{"teardown_command"};
     
     $log = "$tmpdir/log-$f";
@@ -66,7 +67,10 @@ sub setbaselineone
     if (!$cflags) {
       $cflags = "";
     }
-    system "$OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
+    if (!$env) {
+      $env = "";
+    }
+    system "$env $OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
     if ($teardown_command) {
       system $teardown_command;
     }
@@ -109,6 +113,7 @@ sub runone
     my ($f,%info) = @_;
     my $setup_command = $info{"setup_command"};
     my $cflags = $info{"cflags"};
+    my $env = $info{"env"};
     my $teardown_command = $info{"teardown_command"};
     my $start_t = time;
     
@@ -123,7 +128,10 @@ sub runone
     if (!$cflags) {
       $cflags = "";
     }
-    system "$OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
+    if (!$env) {
+      $env = "";
+    }
+    system "$env $OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
     $retval = $?;
     if ($teardown_command) {
       system "$teardown_command >>$log 2>&1";
@@ -191,6 +199,7 @@ sub dofile
         "keywords" => "unknown",
         "setup_command" => "",
         "cflags" => "",
+        "env" => "",
         "teardown_command" => "");
     $log = "$tmpdir/log-$f";
     $tc_err = 1;

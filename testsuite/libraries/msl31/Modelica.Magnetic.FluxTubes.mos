@@ -1,11 +1,12 @@
 //name:        Modelica.Magnetic.FluxTubes [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Magnetic.FluxTubes
 //status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadFile("Modelica/package.mo"); getErrorString();
+loadModel(Modelica); getErrorString();
 
 instantiateModel(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor); getErrorString();
 checkModel(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor); getErrorString();

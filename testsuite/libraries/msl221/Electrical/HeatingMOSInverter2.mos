@@ -1,11 +1,12 @@
 //name:         HeatingMOSInverter
 //keyword:      simulating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //
 // simulation example
 //
 
-loadFile("../Modelica/package.mo");
+loadModel(Modelica);
 simulate(Modelica.Electrical.Analog.Examples.HeatingMOSInverter, stopTime=5, method="dassl");
 
 "Capacitor1.v:";

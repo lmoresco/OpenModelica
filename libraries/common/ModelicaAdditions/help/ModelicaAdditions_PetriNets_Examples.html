@@ -1,0 +1,120 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.PetriNets.Examples"></A><A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets"
+>ModelicaAdditions.PetriNets</A>.Examples</H2>
+<A HREF="ModelicaAdditions_PetriNets_Examples.html#ModelicaAdditions.PetriNets.Examples.Parallel"
+><IMG SRC="ModelicaAdditions.PetriNets.Examples.ParallelI.png" ALT="ModelicaAdditions.PetriNets.Examples.Parallel" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.PetriNets.Examples.ParallelI.png" ALT="ModelicaAdditions.PetriNets.Examples.Parallel" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.PetriNets.Examples.Parallel"></A><A HREF="ModelicaAdditions_PetriNets_Examples.html#ModelicaAdditions.PetriNets.Examples"
+>ModelicaAdditions.PetriNets.Examples</A>.Parallel</H2>
+<B>Example to demonstrate parallel activities described by a petri net  </B><p>
+<IMG SRC="ModelicaAdditions.PetriNets.Examples.ParallelD.png" ALT="ModelicaAdditions.PetriNets.Examples.Parallel">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This is an example to demonstrate in which way <b>parallel</b> activities
+can be modelled by a Petri net. When transition "Par1" fires
+(after 1 second), two branches are executed in parallel.
+After 6 seconds the two branches are synchronized in order to arrive
+at place "P6".
+</p>
+
+<p>
+Before simulating the model, try to figure out whether branch
+P2-P3-P5 or branch P2-P4-P5 is executed.
+</p>
+
+<p>Simulate for 7 seconds and plot the following variables:
+</p>
+
+<pre>
+  S1state, P1state, P2state, ..., P6state
+</pre>
+
+<pre>
+</PRE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">encapsulated </font><font color="blue">model</font> Parallel <font color="darkgreen">
+  &quot;Example to demonstrate parallel activities described by a petri net  &quot;</font>
+   
+  <font color="blue">import </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons"
+>Modelica.Icons</A>;
+  <font color="blue">import </font><A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets"
+>ModelicaAdditions.PetriNets</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Icons.Example</A>;
+  <font color="blue">output </font>Boolean S1state;
+  <font color="blue">output </font>Boolean P1state;
+  <font color="blue">output </font>Boolean P2state;
+  <font color="blue">output </font>Boolean P3state;
+  <font color="blue">output </font>Boolean P4state;
+  <font color="blue">output </font>Boolean P5state;
+  <font color="blue">output </font>Boolean P6state;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place01"
+>PetriNets.Place01</A> S1(initialState=true);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place11"
+>PetriNets.Place11</A> P1;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Parallel"
+>PetriNets.Parallel</A> Par1(condLabel=&quot;time&gt;1&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place12"
+>PetriNets.Place12</A> P2;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Transition"
+>PetriNets.Transition</A> T1(condLabel=&quot;time&gt;2&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Transition"
+>PetriNets.Transition</A> T2(condLabel=&quot;time&gt;3&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place11"
+>PetriNets.Place11</A> P3;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Transition"
+>PetriNets.Transition</A> T3(condLabel=&quot;time&gt;4&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place11"
+>PetriNets.Place11</A> P4;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Transition"
+>PetriNets.Transition</A> T4(condLabel=&quot;time&gt;5&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place21"
+>PetriNets.Place21</A> P5;
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Synchronize"
+>PetriNets.Synchronize</A> Sync1(condLabel=&quot;time&gt;6&quot;);
+  <A HREF="ModelicaAdditions_PetriNets.html#ModelicaAdditions.PetriNets.Place10"
+>PetriNets.Place10</A> P6;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(Par1.outTransition1, P1.inTransition);
+  <font color="red">connect</font>(T1.outTransition, P3.inTransition);
+  <font color="red">connect</font>(P3.outTransition, T3.inTransition);
+  <font color="red">connect</font>(P1.outTransition, Sync1.inTransition1);
+  <font color="red">connect</font>(Sync1.outTransition, P6.inTransition);
+  <font color="red">connect</font>(T2.outTransition, P4.inTransition);
+  <font color="red">connect</font>(P4.outTransition, T4.inTransition);
+  <font color="red">connect</font>(S1.outTransition, Par1.inTransition);
+  <font color="red">connect</font>(T3.outTransition, P5.inTransition1);
+  <font color="red">connect</font>(T4.outTransition, P5.inTransition2);
+  <font color="red">connect</font>(P2.outTransition2, T2.inTransition);
+  <font color="red">connect</font>(Par1.outTransition2, P2.inTransition);
+  <font color="red">connect</font>(P5.outTransition, Sync1.inTransition2);
+  <font color="red">connect</font>(P2.outTransition1, T1.inTransition);
+  Par1.condition = time &gt; 1;
+  T1.condition = time &gt; 2;
+  T2.condition = time &gt; 3;
+  T3.condition = time &gt; 4;
+  T4.condition = time &gt; 5;
+  Sync1.condition = time &gt; 6;
+  <font color="darkgreen"></font>
+  <font color="darkgreen">/*output variables*/</font>
+  S1state = S1.state;
+  P1state = P1.state;
+  P2state = P2.state;
+  P3state = P3.state;
+  P4state = P4.state;
+  P5state = P5.state;
+  P6state = P6.state;
+<font color="blue">end </font>Parallel;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:17 2002
+.
+</address></BODY>
+</HTML>

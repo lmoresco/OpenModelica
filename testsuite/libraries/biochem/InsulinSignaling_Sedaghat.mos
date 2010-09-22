@@ -5,8 +5,8 @@
 // instantiate example
 //
 
-loadFile("../msl221/Modelica/package.mo");
-loadFile("BioChem/package.mo");
+loadModel(Modelica);
+loadModel(BioChem);
 instantiateModel(BioChem.Examples.InsulinSignaling_Sedaghat);
 getErrorString();
 // Result:

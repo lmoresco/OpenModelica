@@ -1,11 +1,12 @@
 //name:        Modelica.Mechanics.MultiBody [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Mechanics.MultiBody
 //status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadFile("Modelica/package.mo"); getErrorString();
+loadModel(Modelica); getErrorString();
 loadFile("ModelicaServices/package.mo"); // Needed for PartialLineForce
 getErrorString(); 
 
@@ -26,7 +27,7 @@ getErrorString();
 // Result:
 // true
 // ""
-// true
+// false
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve1 completed successfully.
 // 
@@ -53,15 +54,13 @@ getErrorString();
 // 
 // "
 // ""
-// "Check of Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce completed successfully.
-// 
-// Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
+// "Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
 // Warning: No corresponding 'inner' declaration found for component world declared as 'outer '.
 // 	Please declare an 'inner' component with the same name in the top scope.
 // 	Continuing flattening by only considering the 'outer' component declaration.
-// 
-// Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1112 equation(s) and 1119 variable(s).
-// 635 of these are trivial equation(s).
+// [../../../libraries/msl31//Modelica/Mechanics/MultiBody/package.mo:1085:3-1093:63:readonly] Error: Variable world.x_arrowLine: Base class ModelicaServices.Animation.Shape not found in scope Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape
+// Error: Illegal to instantiate partial class PartialLineForce
+// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce
 // "
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Types.RotationSequence completed successfully.

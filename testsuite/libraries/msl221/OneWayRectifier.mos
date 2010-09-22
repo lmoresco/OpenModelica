@@ -1,6 +1,7 @@
 // name:     OneWayRectifier 
 // keywords: instantiate, bondlib
 // status:   correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl221
 // 
 //  instantiate OneWayRectifier BondLib Spice example
 //

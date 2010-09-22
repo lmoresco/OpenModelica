@@ -1,0 +1,225 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Nonlinear"></A><A HREF="ModelicaAdditions_Blocks.html#ModelicaAdditions.Blocks"
+>ModelicaAdditions.Blocks</A>.Nonlinear</H2>
+<A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear.FixedDelay"
+><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.FixedDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.FixedDelay" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear.PadeDelay"
+><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.PadeDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.PadeDelay" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear.VarDelay"
+><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.VarDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.VarDelay" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<H3>Information</H3>
+<PRE></pre>
+<p>
+This package contains delay components.
+</p>
+
+<p>
+This package is not part of the Modelica standard library.
+</p>
+
+<dl>
+<dt><b>Main Author:</b>
+<dd><a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a><br>
+    Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)<br>
+    Institut f&uuml;r Robotik und Mechatronik<br>
+    Postfach 1116<br>
+    D-82230 Wessling<br>
+    Germany<br>
+    email: <A HREF="mailto:Martin.Otter@dlr.de">Martin.Otter@dlr.de</A><br>
+</dl>
+<br>
+
+<p><b>Release Notes:</b></p>
+<ul>
+<li><i>February 13, 2001</i>
+       by <a href="http://www.robotic.dlr.de/Martin.Otter/">Martin Otter</a>:<br>
+</ul>
+<br>
+
+
+<p><b>Copyright &copy; 2001-2002, DLR.</b></p>
+
+<p><i>
+The ModelicaAdditions.Blocks.Nonlinear package is <b>free</b> software;
+it can be redistributed and/or modified
+under the terms of the <b>Modelica license</b>, see the license conditions
+and the accompanying <b>disclaimer</b> in the documentation of package
+Modelica in file "Modelica/package.mo".
+</i></p>
+<pre>
+</PRE><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.FixedDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.FixedDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Nonlinear.FixedDelay"></A><A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear"
+>ModelicaAdditions.Blocks.Nonlinear</A>.FixedDelay</H2>
+<B>Delay block with fixed DelayTime</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Nonlinear.FixedDelayD.png" ALT="ModelicaAdditions.Blocks.Nonlinear.FixedDelay">
+<H3>Information</H3>
+<PRE>
+The Input signal is delayed by a given time instant, or more precisely:
+
+   y = u(time - delayTime) for time  &gt; time.start + delayTime
+     = u(time.start)       for time &lt;= time.start + delayTime
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>delayTime</TD><TD>1</TD><TD>Delay time of output with respect to input signal [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> FixedDelay <font color="darkgreen">&quot;Delay block with fixed DelayTime&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.SISO"
+>Modelica.Blocks.Interfaces.SISO</A>;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> delayTime=1 <font color="darkgreen">&quot;Delay time of output with respect to input signal&quot;</font>;
+<font color="blue">equation </font>
+  y = <font color="red">delay</font>(u, delayTime);
+<font color="blue">end </font>FixedDelay;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.PadeDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.PadeDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Nonlinear.PadeDelay"></A><A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear"
+>ModelicaAdditions.Blocks.Nonlinear</A>.PadeDelay</H2>
+<B>Pade approximation of delay block with fixed DelayTime </B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Nonlinear.PadeDelayD.png" ALT="ModelicaAdditions.Blocks.Nonlinear.PadeDelay">
+<H3>Information</H3>
+<PRE>
+The Input signal is delayed by a given time instant, or more precisely:
+
+   y = u(time - delayTime) for time  &gt; time.start + delayTime
+     = u(time.start)       for time &lt;= time.start + delayTime
+
+The delay is approximated by a Pade approximation, i.e., by
+a transfer function
+
+           b[1]*s^m + b[2]*s^[m-1] + ... + b[m+1]
+   y(s) = --------------------------------------------- * u(s)
+           a[1]*s^n + a[2]*s^[n-1] + ... + a[n+1]
+
+where the coefficients b[:] and a[:] are calculated such that the
+coefficients of the Taylor expansion of the delay exp(-T*s) around s=0
+are identical upto order n+m.
+
+The main advantage of this approach is that the delay is
+approximated by a linear differential equation system, which
+is continuous and continuously differentiable. For example, it
+is uncritical to linearize a system containing a Pade-approximated
+delay.
+
+The standard text book version uses order &quot;m=n&quot;, which is
+also the default setting of this block. The setting
+&quot;m=n-1&quot; may yield a better approximation in certain cases.
+
+Literature:
+   Otto Foellinger: Regelungstechnik, 8. Auflage,
+   chapter 11.9, page 412-414, Huethig Verlag Heidelberg, 1994
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>delayTime</TD><TD>1</TD><TD>Delay time of output with respect to input signal [s]</TD></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Order of pade approximation</TD></TR>
+<TR><TD>m</TD><TD>n</TD><TD>Order of numerator</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> PadeDelay <font color="darkgreen">
+  &quot;Pade approximation of delay block with fixed DelayTime &quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.SISO"
+>Modelica.Blocks.Interfaces.SISO</A>;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> delayTime=1 <font color="darkgreen">&quot;Delay time of output with respect to input signal&quot;</font>;
+  <font color="blue">parameter </font>Integer n(min=1) = 1 <font color="darkgreen">&quot;Order of pade approximation&quot;</font>;
+  <font color="blue">parameter </font>Integer m(
+    min=1, 
+    max=n) = n <font color="darkgreen">&quot;Order of numerator&quot;</font>;
+  <font color="darkgreen"></font>
+<font color="blue">protected </font>
+  Real x1dot <font color="darkgreen">&quot;Derivative of first state of TransferFcn&quot;</font>;
+  Real xn <font color="darkgreen">&quot;Highest order state of TransferFcn&quot;</font>;
+  Real a[n + 1];
+  Real b[m + 1];
+  <font color="darkgreen"></font>
+<font color="blue">public </font>
+  <font color="blue">final </font><font color="blue">output </font>Real x[n] <font color="darkgreen">
+    &quot;State of transfer function from controller canonical form&quot;</font>;
+<font color="blue">protected </font>
+  <font color="blue">function</font> padeCoefficients 
+    <font color="blue">input </font>Real T <font color="darkgreen">&quot;delay time&quot;</font>;
+    <font color="blue">input </font>Integer n <font color="darkgreen">&quot;order of denominator&quot;</font>;
+    <font color="blue">input </font>Integer m <font color="darkgreen">&quot;order of numerator&quot;</font>;
+    <font color="blue">output </font>Real b[m + 1] <font color="darkgreen">&quot;numerator coefficients of transfer function&quot;</font>;
+    <font color="blue">output </font>Real a[n + 1] <font color="darkgreen">&quot;denominator coefficients of transfer function&quot;</font>;
+  <font color="blue">protected </font>
+    Real nm;
+  <font color="blue">algorithm </font>
+    a[1] := 1;
+    b[1] := 1;
+    nm := n + m;
+    <font color="darkgreen"></font>
+    <font color="blue">for </font>i<font color="blue"> in </font>1:n<font color="blue"> loop</font>
+      a[i + 1] := a[i]*(T*((n - i + 1)/(nm - i + 1))/i);
+      <font color="blue">if </font>i &lt;= m<font color="blue"> then</font>
+        b[i + 1] := -b[i]*(T*((m - i + 1)/(nm - i + 1))/i);
+      <font color="blue">end if</font>;
+    <font color="blue">end for</font>;
+    <font color="darkgreen"></font>
+    b := b[m + 1:-1:1];
+    a := a[n + 1:-1:1];
+  <font color="blue">end </font>padeCoefficients;
+<font color="blue">equation </font>
+  <font color="darkgreen"></font>
+  (b,a) = <font color="red">padeCoefficients</font>(delayTime, n, m);
+  <font color="darkgreen"></font>
+  [<font color="red">der</font>(x); xn] = [x1dot; x];
+  [u] = <font color="red">transpose</font>([a])*[x1dot; x];
+  [y] = <font color="red">transpose</font>([<font color="red">zeros</font>(n - m, 1); b])*[x1dot; x];
+  <font color="darkgreen"></font>
+<font color="blue">initial </font><font color="blue">equation </font>
+  x[n] = inPort.signal[1];
+<font color="blue">end </font>PadeDelay;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Nonlinear.VarDelayI.png" ALT="ModelicaAdditions.Blocks.Nonlinear.VarDelay" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Nonlinear.VarDelay"></A><A HREF="ModelicaAdditions_Blocks_Nonlinear.html#ModelicaAdditions.Blocks.Nonlinear"
+>ModelicaAdditions.Blocks.Nonlinear</A>.VarDelay</H2>
+<B>Delay block with variable DelayTime</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Nonlinear.VarDelayD.png" ALT="ModelicaAdditions.Blocks.Nonlinear.VarDelay">
+<H3>Information</H3>
+<PRE>
+The Input signal is delayed by a given time instant, or more precisely:
+
+   y = u(time - delayTime) for time  &gt; time.start + delayTime
+     = u(time.start)       for time &lt;= time.start + delayTime
+
+where delayTime is an additional input signal which must follow
+the following relationship:
+
+  0 &lt;= delayTime &lt;= delayMax.
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>delayMax</TD><TD>1</TD><TD>maximum delay time</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">block</font> VarDelay <font color="darkgreen">&quot;Delay block with variable DelayTime&quot;</font> 
+  <font color="blue">extends </font><A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.SISO"
+>Modelica.Blocks.Interfaces.SISO</A>;
+  <font color="blue">parameter </font>Real delayMax(min=0) = 1 <font color="darkgreen">&quot;maximum delay time&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> delayTime(<font color="blue">final </font>n=1);
+<font color="blue">equation </font>
+  y = <font color="red">delay</font>(u, delayTime.signal[1], delayMax);
+<font color="blue">end </font>VarDelay;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:33:35 2002
+.
+</address></BODY>
+</HTML>

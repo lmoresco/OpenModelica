@@ -1,11 +1,12 @@
 //name:         PumpDropOut
 //keyword:      instantiating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl221
 //
 // instantiate example
 //
 
-loadFile("Modelica/package.mo");
+loadModel(Modelica);
 instantiateModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut);
 getErrorString();
 // Result:

@@ -1,6 +1,7 @@
 // name:     DifferentialAmplifier 
 // keywords: instantiate, bondlib
 // status:   correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl221
 // 
 //  instantiate DifferentialAmplifier BondLib Spice example
 //

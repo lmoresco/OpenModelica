@@ -1,10 +1,11 @@
 //name:         SwitchWithArc
 //keyword:      simulating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //
 // simulation example
 //
 
-loadFile("../Modelica/package.mo");
+loadModel(Modelica);
 simulate(Modelica.Electrical.Analog.Examples.SwitchWithArc, stopTime=2, numberOfIntervals=0, outputInterval=0.00025, method="dassl", tolerance=1e-006);
 

@@ -1,11 +1,12 @@
 //name:         OvervoltageProtection2
 //keyword:      simulating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //
 // simulation example
 //
 
-loadFile("../Modelica/package.mo");
+loadModel(Modelica);
 simulation(Modelica.Electrical.Analog.Examples.OvervoltageProtection, stopTime=0.4, method="dassl");
 
 "zDiode_1.v:";

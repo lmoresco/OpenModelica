@@ -1,0 +1,14 @@
+loadModel(Modelica);
+loadModel(ModelicaAdditions);
+getErrorString();
+//instantiateModel(ModelicaAdditions.MultiBody.Examples.Pendulum);
+//getErrorString();
+//enableSendData(true);
+//getErrorString();
+simulate(ModelicaAdditions.MultiBody.Examples.Pendulum);
+getErrorString();
+//plot({revolute.q,revolute.qd});
+//getErrorString();
+plotAll(ModelicaAdditions.MultiBody.Examples.Pendulum);
+getErrorString();
+

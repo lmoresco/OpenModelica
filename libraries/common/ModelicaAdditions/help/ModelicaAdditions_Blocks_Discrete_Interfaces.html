@@ -1,0 +1,298 @@
+<HTML>
+<HEAD><META name="HTML-Generator" content="Dymola"><TITLE>ModelicaAdditions</TITLE></HEAD>
+<BODY><P>
+<H2><A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces"></A><A HREF="ModelicaAdditions_Blocks_Discrete.html#ModelicaAdditions.Blocks.Discrete"
+>ModelicaAdditions.Blocks.Discrete</A>.Interfaces</H2>
+<B>Interface definitions of sampled input/output blocks</B>
+<P>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIcon"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIconI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIcon" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISO"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISOI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISO" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMO"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMO" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOs"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOsI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOs" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscrete"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscreteI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscrete" WIDTH=80  HEIGHT=80 ></A>
+<A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscrete"
+><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscreteI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscrete" WIDTH=80  HEIGHT=80 ></A>
+<P><P>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOsI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOs" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOs"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.DiscreteMIMOs</H2>
+<B>Multiple Input Multiple Output discrete control block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOsD.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOs">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+Block has a continuous input and a continuous output signal vector
+where the signal sizes of the input and output vector are identical.
+These signals are sampled due to the defined <b>samplePeriod</b> parameter.
+</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>n</TD><TD>1</TD><TD>Number of inputs (= number of outputs)</TD></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> DiscreteMIMOs <font color="darkgreen">
+  &quot;Multiple Input Multiple Output discrete control block&quot;</font> 
+  <font color="blue">parameter </font>Integer n=1 <font color="darkgreen">&quot;Number of inputs (= number of outputs)&quot;</font>;
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+>DiscreteBlock</A>;
+  <font color="blue">output </font>Real u[n] <font color="darkgreen">&quot;Sampled input signals&quot;</font>;
+  <font color="blue">output </font>Real y[n] <font color="darkgreen">&quot;Sampled output signals&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector with input signals of type Real&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=n) <font color="darkgreen">
+    &quot;Connector with output signals of type Real&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">when </font>sampleTrigger<font color="blue"> then</font>
+    u = inPort.signal;
+  <font color="blue">end when</font>;
+  outPort.signal = y;
+<font color="blue">end </font>DiscreteMIMOs;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISOI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISO" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISO"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.DiscreteSISO</H2>
+<B>Single Input Single Output discrete control block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISOD.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteSISO">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> DiscreteSISO <font color="darkgreen">
+  &quot;Single Input Single Output discrete control block&quot;</font> 
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+>DiscreteBlock</A>;
+  <font color="blue">output </font>Real u <font color="darkgreen">&quot;sampled input signal&quot;</font>;
+  <font color="blue">output </font>Real y <font color="darkgreen">&quot;sampled output signal&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector with an input signal of type Real&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector with an output signal of type Real&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">when </font>sampleTrigger<font color="blue"> then</font>
+    u = inPort.signal[1];
+  <font color="blue">end when</font>;
+  y = outPort.signal[1];
+<font color="blue">end </font>DiscreteSISO;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMO" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMO"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.DiscreteMIMO</H2>
+<B>Multiple Input Multiple Output discrete control block</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMOD.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteMIMO">
+<H3>Information</H3>
+<PRE></pre>
+<p>
+Block has a continuous input and a continuous output signal vector
+which are sampled due to the defined <b>samplePeriod</b> parameter.
+</p>
+<pre>
+</PRE>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+<TR><TD>nin</TD><TD>1</TD><TD>Number of inputs</TD></TR>
+<TR><TD>nout</TD><TD>1</TD><TD>Number of outputs</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> DiscreteMIMO <font color="darkgreen">
+  &quot;Multiple Input Multiple Output discrete control block&quot;</font> 
+  <font color="darkgreen"></font>
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+>DiscreteBlock</A>;
+  <font color="blue">parameter </font>Integer nin=1 <font color="darkgreen">&quot;Number of inputs&quot;</font>;
+  <font color="blue">parameter </font>Integer nout=1 <font color="darkgreen">&quot;Number of outputs&quot;</font>;
+  <font color="blue">output </font>Real u[nin] <font color="darkgreen">&quot;Sampled input signals&quot;</font>;
+  <font color="blue">output </font>Real y[nout] <font color="darkgreen">&quot;Sampled output signals&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort(<font color="blue">final </font>n=nin) <font color="darkgreen">
+    &quot;Connector with input signals of type Real&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=nout) <font color="darkgreen">
+    &quot;Connector with output signals of type Real&quot;</font>;
+<font color="blue">equation </font>
+  <font color="blue">when </font>sampleTrigger<font color="blue"> then</font>
+    u = inPort.signal;
+  <font color="blue">end when</font>;
+  y = outPort.signal;
+<font color="blue">end </font>DiscreteMIMO;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIconI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIcon" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIcon"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.DiscreteBlockIcon</H2>
+<B>Graphical layout of discrete block component icon</B><p>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> DiscreteBlockIcon <font color="darkgreen">
+  &quot;Graphical layout of discrete block component icon&quot;</font> 
+<font color="blue">end </font>DiscreteBlockIcon;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.DiscreteBlock</H2>
+<B>Base class of discrete control blocks</B><p>
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> DiscreteBlock <font color="darkgreen">&quot;Base class of discrete control blocks&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlockIcon"
+>DiscreteBlockIcon</A>;
+  <font color="darkgreen"></font>
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> samplePeriod(min=100*Modelica.Constants.eps) = 0.1 <font color="darkgreen">
+    &quot;Sample period of component&quot;</font>;
+  <font color="blue">parameter </font><A HREF="../../Modelica/help/Modelica_SIunits.html#Modelica.SIunits.Time"
+>SI.Time</A> startTime=0 <font color="darkgreen">&quot;First sample time instant&quot;</font>;
+  <font color="blue">output </font>Boolean sampleTrigger <font color="darkgreen">&quot;True, if sample time instant&quot;</font>;
+  <font color="blue">output </font>Boolean firstTrigger <font color="darkgreen">&quot;Rising edge signals first sample instant&quot;</font>;
+<font color="blue">equation </font>
+  sampleTrigger = <font color="red">sample</font>(startTime, samplePeriod);
+  <font color="blue">when </font>sampleTrigger<font color="blue"> then</font>
+    firstTrigger = time &lt;= startTime + samplePeriod/2;
+  <font color="blue">end when</font>;
+<font color="blue">end </font>DiscreteBlock;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscreteI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscrete" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscrete"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.SVdiscrete</H2>
+<B>Discrete Single-Variable controller</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscreteD.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.SVdiscrete">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> SVdiscrete <font color="darkgreen">&quot;Discrete Single-Variable controller&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+>DiscreteBlock</A>;
+  <font color="blue">output </font>Real u_s <font color="darkgreen">&quot;Sampled, scalar setpoint input signal&quot;</font>;
+  <font color="blue">output </font>Real u_m <font color="darkgreen">&quot;Sampled, scalar measurement input signal&quot;</font>;
+  <font color="blue">output </font>Real y <font color="darkgreen">&quot;Scalar actuator output signal&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_Blocks_Discrete.html#ModelicaAdditions.Blocks.Discrete.Sampler"
+>Sampler</A> sampler_s(
+    <font color="blue">final </font>n=1, 
+    <font color="blue">final </font>samplePeriod=samplePeriod, 
+    <font color="blue">final </font>startTime=startTime);
+  <A HREF="ModelicaAdditions_Blocks_Discrete.html#ModelicaAdditions.Blocks.Discrete.Sampler"
+>Sampler</A> sampler_m(
+    <font color="blue">final </font>n=1, 
+    <font color="blue">final </font>samplePeriod=samplePeriod, 
+    <font color="blue">final </font>startTime=startTime);
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort_s(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of setpoint input signal&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort_m(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of measurement input signal&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=1) <font color="darkgreen">
+    &quot;Connector of actuator output signal&quot;</font>;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(inPort_s, sampler_s.inPort);
+  <font color="red">connect</font>(inPort_m, sampler_m.inPort);
+  u_s = sampler_s.u[1];
+  u_m = sampler_m.u[1];
+  y = outPort.signal[1];
+<font color="blue">end </font>SVdiscrete;
+</PRE>
+<HR>
+<H2><IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscreteI.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscrete" ALIGN=RIGHT BORDER=1 WIDTH=80  HEIGHT=80 >
+<A NAME="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscrete"></A><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces"
+>ModelicaAdditions.Blocks.Discrete.Interfaces</A>.MVdiscrete</H2>
+<B>Discrete Multi-Variable controller</B><p>
+<IMG SRC="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscreteD.png" ALT="ModelicaAdditions.Blocks.Discrete.Interfaces.MVdiscrete">
+<H3>Parameters</H3><P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>Name</TH><TH>Default</TH><TH>Description</TH></TR>
+<TR><TD>samplePeriod</TD><TD>0.1</TD><TD>Sample period of component [s]</TD></TR>
+<TR><TD>startTime</TD><TD>0</TD><TD>First sample time instant [s]</TD></TR>
+<TR><TD>nu_s</TD><TD>1</TD><TD>Number of setpoint inputs</TD></TR>
+<TR><TD>nu_m</TD><TD>1</TD><TD>Number of measurement inputs</TD></TR>
+<TR><TD>ny</TD><TD>1</TD><TD>Number of actuator outputs</TD></TR>
+</TABLE>
+<H3>Modelica definition</H3>
+<PRE>
+<font color="blue">partial </font><font color="blue">block</font> MVdiscrete <font color="darkgreen">&quot;Discrete Multi-Variable controller&quot;</font> 
+  <font color="blue">extends </font><A HREF="ModelicaAdditions_Blocks_Discrete_Interfaces.html#ModelicaAdditions.Blocks.Discrete.Interfaces.DiscreteBlock"
+>DiscreteBlock</A>;
+  <font color="blue">parameter </font>Integer nu_s=1 <font color="darkgreen">&quot;Number of setpoint inputs&quot;</font>;
+  <font color="blue">parameter </font>Integer nu_m=1 <font color="darkgreen">&quot;Number of measurement inputs&quot;</font>;
+  <font color="blue">parameter </font>Integer ny=1 <font color="darkgreen">&quot;Number of actuator outputs&quot;</font>;
+  <font color="blue">output </font>Real u_s[nu_s] <font color="darkgreen">&quot;Sampled setpoint input signals&quot;</font>;
+  <font color="blue">output </font>Real u_m[nu_m] <font color="darkgreen">&quot;Sampled measurement input signals&quot;</font>;
+  <font color="blue">output </font>Real y[ny] <font color="darkgreen">&quot;Actuator output signals&quot;</font>;
+  <font color="darkgreen"></font>
+  <A HREF="ModelicaAdditions_Blocks_Discrete.html#ModelicaAdditions.Blocks.Discrete.Sampler"
+>Sampler</A> sampler_s(
+    <font color="blue">final </font>n=nu_s, 
+    <font color="blue">final </font>samplePeriod=samplePeriod, 
+    <font color="blue">final </font>startTime=startTime);
+  <A HREF="ModelicaAdditions_Blocks_Discrete.html#ModelicaAdditions.Blocks.Discrete.Sampler"
+>Sampler</A> sampler_m(
+    <font color="blue">final </font>n=nu_m, 
+    <font color="blue">final </font>samplePeriod=samplePeriod, 
+    <font color="blue">final </font>startTime=startTime);
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort_s(<font color="blue">final </font>n=nu_s) <font color="darkgreen">
+    &quot;Connector of setpoint input signals&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.InPort"
+>Modelica.Blocks.Interfaces.InPort</A> inPort_m(<font color="blue">final </font>n=nu_m) <font color="darkgreen">
+    &quot;Connector of measurement input signals&quot;</font>;
+  <A HREF="../../Modelica/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.OutPort"
+>Modelica.Blocks.Interfaces.OutPort</A> outPort(<font color="blue">final </font>n=ny) <font color="darkgreen">
+    &quot;Connector of actuator output signals&quot;</font>;
+<font color="blue">equation </font>
+  <font color="red">connect</font>(inPort_s, sampler_s.inPort);
+  <font color="red">connect</font>(inPort_m, sampler_m.inPort);
+  u_s = sampler_s.u;
+  u_m = sampler_m.u;
+  y = outPort.signal;
+<font color="blue">end </font>MVdiscrete;
+</PRE>
+<HR>
+<address>HTML-documentation generated by <a href="http://www.dynasim.se/">Dymola</a> Tue Dec 10 16:34:21 2002
+.
+</address></BODY>
+</HTML>
