@@ -1,0 +1,563 @@
+//name:        Modelica.Electrical.Digital [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Electrical.Digital
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadFile("Modelica/package.mo"); getErrorString();
+getErrorString(); 
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Multiplexer); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Multiplexer); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.FlipFlop); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.FlipFlop); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.HalfAdder); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.HalfAdder); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.FullAdder); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.FullAdder); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Adder4); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Adder4); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Counter3); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Counter3); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Counter); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Counter); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.MUX4); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.MUX4); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.RS); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.RS); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.RSFF); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.RSFF); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.DFF); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.DFF); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.JKFF); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.JKFF); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.HalfAdder); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.HalfAdder); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.FullAdder); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.FullAdder); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.Adder); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.Adder); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.Counter3); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.Counter3); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Examples.Utilities.Counter); getErrorString();
+checkModel(Modelica.Electrical.Digital.Examples.Utilities.Counter); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Delay.TransportDelay); getErrorString();
+checkModel(Modelica.Electrical.Digital.Delay.TransportDelay); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Delay.InertialDelay); getErrorString();
+checkModel(Modelica.Electrical.Digital.Delay.InertialDelay); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Delay.InertialDelaySensitive); getErrorString();
+checkModel(Modelica.Electrical.Digital.Delay.InertialDelaySensitive); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Not); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Not); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.And); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.And); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Nand); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Nand); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Or); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Or); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Nor); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Nor); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Xor); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Xor); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Basic.Xnor); getErrorString();
+checkModel(Modelica.Electrical.Digital.Basic.Xnor); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.InvGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.InvGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.AndGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.AndGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.NandGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.NandGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.OrGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.OrGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.NorGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.NorGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.XorGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.XorGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.XnorGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.XnorGate); getErrorString();
+
+instantiateModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
+checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
+
+// Result:
+// true
+// ""
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Multiplexer
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Multiplexer
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2470:9-2470:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Multiplexer
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FlipFlop
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FlipFlop
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FlipFlop
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.HalfAdder
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.HalfAdder
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.HalfAdder
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FullAdder
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FullAdder
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.FullAdder
+// "
+// ""
+// "- Algorithm.makeAssignment failed
+//     Set.y := Set.x
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:3232:7-3232:13:writable] Error: Type mismatch in assignment in Set.y := Set.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Adder4
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:3232:7-3232:13:writable] Error: Type mismatch in assignment in Set.y := Set.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Adder4
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:3232:7-3232:13:writable] Error: Type mismatch in assignment in Set.y := Set.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Adder4
+// "
+// ""
+// "- Algorithm.makeAssignment failed
+//     Set.y := Set.x
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter3
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter3
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter3
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Counter
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.MUX4
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.MUX4
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2470:9-2470:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.MUX4
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RS
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RS
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RS
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RSFF
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RSFF
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.RSFF
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.DFF
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.DFF
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.DFF
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.JKFF
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.JKFF
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.JKFF
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.FullAdder
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.FullAdder
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.FullAdder
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Adder
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Adder
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Adder
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter3
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter3
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter3
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Examples.Utilities.Counter
+// "
+// ""
+// ""
+// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>:  use of delay: 
+//  delay(real, real, real as parameter/constant)
+//  or delay(real, real as parameter/constant).
+// Error: Wrong type or wrong number of arguments to delay(x, delayTime)'.
+//  (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to integer(delay(x, delayTime))'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.TransportDelay
+// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>:  use of delay: 
+//  delay(real, real, real as parameter/constant)
+//  or delay(real, real as parameter/constant).
+// Error: Wrong type or wrong number of arguments to delay(x, delayTime)'.
+//  (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to integer(delay(x, delayTime))'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.TransportDelay
+// "
+// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>:  use of delay: 
+//  delay(real, real, real as parameter/constant)
+//  or delay(real, real as parameter/constant).
+// Error: Wrong type or wrong number of arguments to delay(x, delayTime)'.
+//  (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to integer(delay(x, delayTime))'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.TransportDelay
+// "
+// ""
+// ""
+// "Error: Type in operand to change must be simple type in component <NO COMPONENT>
+// Error: First argument to change in component <NO COMPONENT> must be a variable
+// Error: Wrong type or wrong number of arguments to change(x)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelay
+// Error: Type in operand to change must be simple type in component <NO COMPONENT>
+// Error: First argument to change in component <NO COMPONENT> must be a variable
+// Error: Wrong type or wrong number of arguments to change(x)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelay
+// "
+// "Error: Type in operand to change must be simple type in component <NO COMPONENT>
+// Error: First argument to change in component <NO COMPONENT> must be a variable
+// Error: Wrong type or wrong number of arguments to change(x)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelay
+// "
+// ""
+// "- Algorithm.makeAssignment failed
+//     y_auxiliary := x
+// - Algorithm.makeAssignment failed
+//     y_auxiliary := x
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in y_auxiliary := x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelaySensitive
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in y_auxiliary := x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelaySensitive
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in y_auxiliary := x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Delay.InertialDelaySensitive
+// "
+// ""
+// "- Algorithm.makeAssignment failed
+//     y_auxiliary := x
+// - Algorithm.makeAssignment failed
+//     y_auxiliary := x
+// "
+// "Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component <NO COMPONENT> must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Not
+// Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component <NO COMPONENT> must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Not
+// "
+// "Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component <NO COMPONENT> must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component <NO COMPONENT>)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Not
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.And
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.And
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.And
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nand
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nand
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2420:9-2420:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nand
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Or
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Or
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2470:9-2470:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Or
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nor
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nor
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Nor
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xor
+// Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xor
+// "
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2562:9-2562:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.XorTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xor
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xnor
+// Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xnor
+// "
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2604:9-2604:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.XorTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Basic.Xnor
+// "
+// ""
+// ""
+// "Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component G1 must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component G1)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component G1)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.InvGate
+// Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component G1 must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component G1)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component G1)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.InvGate
+// "
+// "Error: No constant value for variable x in scope Modelica.Electrical.Digital.Basic.Not.
+// Error: Operand of pre in component G1 must be builtin-type in auxiliary
+// Error: Wrong type or wrong number of arguments to pre(auxiliary) (in component G1)
+// Error: Wrong type or wrong number of arguments to pre(auxiliary)'.
+//  (in component G1)
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.InvGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.AndGate
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.AndGate
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.And.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2378:9-2378:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.AndGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NandGate
+// Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NandGate
+// "
+// "Error: Variable D.Tables.AndTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nand.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2420:9-2420:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.AndTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NandGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.OrGate
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.OrGate
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Or.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2470:9-2470:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.OrGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NorGate
+// Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NorGate
+// "
+// "Error: Variable D.Tables.OrTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Nor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2512:9-2512:68:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.OrTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.NorGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XorGate
+// Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XorGate
+// "
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2562:9-2562:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.XorTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XorGate
+// "
+// ""
+// ""
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XnorGate
+// Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XnorGate
+// "
+// "Error: Variable D.Tables.XorTable[auxiliary[i],x[i + 1]] not found in scope Modelica.Electrical.Digital.Basic.Xnor.$for loop scope$.$for loop scope$
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2604:9-2604:69:writable] Error: Failed to instantiate equation auxiliary[i + 1] = D.Tables.XorTable[auxiliary[i],x[i + 1]];
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.XnorGate
+// "
+// ""
+// "- Algorithm.makeAssignment failed
+//     G1.y_auxiliary := G1.x
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in G1.y_auxiliary := G1.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.BufGate
+// [/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in G1.y_auxiliary := G1.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.BufGate
+// "
+// "[/testsuite/libraries/msl31/Modelica/../Modelica/Electrical/Digital.mo:2224:9-2224:25:writable] Error: Type mismatch in assignment in G1.y_auxiliary := G1.x of enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') := enumeration(start, fixed, 'U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-')
+// Error: Error occured while flattening model Modelica.Electrical.Digital.Gates.BufGate
+// "
+// ""
+// endResult
