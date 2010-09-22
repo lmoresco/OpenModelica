@@ -1,6 +1,6 @@
 // name: IntDiv
 // keywords: integer, division
-// status: erroneous
+// status: incorrect
 //
 // tests Integer division
 //
@@ -10,8 +10,9 @@ model IntDiv
 end IntDiv;
 
 // Result:
-// TODO: This needs a proper error message
 // Error processing file: IntDiv.mo
+// [IntDiv.mo:9:3-9:34:writable] Error: Type mismatch in binding i = 40.0, expected subtype of Integer, got type Real.
+// 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 

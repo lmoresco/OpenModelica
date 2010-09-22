@@ -1,6 +1,6 @@
 // name:     Real2Integer1
 // keywords: type
-// status:   erroneous
+// status:   incorrect
 //
 // No implicit conversion from 'Real' to 'Integer'. But integers are 
 // converted to reals in equations with real-expressions.
@@ -12,8 +12,9 @@ class Real2Integer1
 end Real2Integer1;
 
 // Result:
-// TODO: Needs a real error message
 // Error processing file: Real2Integer1.mo
+// [Real2Integer1.mo:11:3-11:16:writable] Error: Type mismatch in binding n = a, expected subtype of Integer, got type Real.
+// 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 
