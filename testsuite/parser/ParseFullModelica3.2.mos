@@ -1,0 +1,11 @@
+// name:     ParseFullModelica3.2
+// keywords: parse
+// status:   correct
+//
+// Parse/Unparse entire MSL 3.2
+//
+
+loadFile("../libraries/msl32/Modelica/package.mo");
+getErrorString();
+list();
+

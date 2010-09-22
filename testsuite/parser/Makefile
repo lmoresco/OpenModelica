@@ -13,6 +13,7 @@ Assign2.mo \
 Assign3.mo \
 Class3.mo \
 Class4.mo \
+Code.mo \
 ConstructParameters1.mo \
 Declaration1.mo \
 Declaration2.mo \
@@ -37,7 +38,8 @@ SimpleIntegrator4.mo \
 WildLexerModelica.mo \
 WildLexerMetaModelica.mo
 
-FAILINGTESTFILES=NONE\
+FAILINGTESTFILES= \
+ParseFullModelica3.2.mos
 
 .PHONY : test
 

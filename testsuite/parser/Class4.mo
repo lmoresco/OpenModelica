@@ -11,7 +11,7 @@ end;
 
 // Result:
 // Error processing file: Class4.mo
-// [Class4.mo:10:4-10:4:writable] Error: Missing token: IDENT
+// [Class4.mo:10:4-21:-1:writable] Error: No viable alternative near token: ;
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
