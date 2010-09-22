@@ -6,7 +6,8 @@ Modelica.Electrical.MultiPhase.Examples.mos \
 Modelica.Math.mos \
 Modelica.Electrical.Analog.mos \
 Modelica.Mechanics.MultiBody.mos \
-Modelica.Blocks.mos
+Modelica.Blocks.mos \
+Modelica.Magnetic.FluxTubes.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
