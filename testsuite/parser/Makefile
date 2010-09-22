@@ -39,7 +39,8 @@ RealOpLexerModelica.mo \
 RealOpLexerMetaModelica.mo \
 SimpleIntegrator4.mo \
 WildLexerModelica.mo \
-WildLexerMetaModelica.mo
+WildLexerMetaModelica.mo \
+ParseModel.mos
 
 FAILINGTESTFILES= \
 ParseFullModelica3.2.mos
