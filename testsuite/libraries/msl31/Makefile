@@ -5,6 +5,7 @@ Modelica.Electrical.Machines.Examples.mos \
 Modelica.Electrical.MultiPhase.Examples.mos \
 Modelica.Math.mos \
 Modelica.Electrical.Analog.mos \
+Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
 Modelica.Blocks.mos \
 Modelica.Magnetic.FluxTubes.mos \
