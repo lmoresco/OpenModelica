@@ -136,6 +136,7 @@ extern "C" {
     long _InterlockedCompareExchange(volatile long *, long, long);
     long _InterlockedExchangeAdd(volatile long *, long);
 }
+
 #  pragma intrinsic (_InterlockedIncrement)
 #  pragma intrinsic (_InterlockedDecrement)
 #  pragma intrinsic (_InterlockedExchange)
@@ -183,7 +184,8 @@ inline int q_atomic_fetch_and_add_int(volatile int *ptr, int value)
 
 #else
 
-#if !(defined Q_CC_BOR) || (__BORLANDC__ < 0x560)
+/* adrpo: 2010-09-22, fixes to compile with both MinGW gcc 3 and gcc 4 */
+#if (defined(__MINGW32__) && __GNUC__ < 4) && (!(defined Q_CC_BOR) || (__BORLANDC__ < 0x560))
 
 extern "C" {
     __declspec(dllimport) long __stdcall InterlockedCompareExchange(long *, long, long);
