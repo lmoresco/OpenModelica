@@ -7,7 +7,7 @@
 //
 loadFile("when_sorting.mo");
 
-simulate(when_sorting, tolerance=1e-5,startTime=0, stopTime=3,numberOfIntervals=30,method="euler");
+simulate(when_sorting, tolerance=1e-5,startTime=0, stopTime=3,numberOfIntervals=300,method="euler");
 val(v,0.0);
 val(v,3.0);
 val(w,0.0);
