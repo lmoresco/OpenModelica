@@ -1,7 +1,7 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
 TEST = ../rtest
 
-TESTFILES = DependencyChecking.mo
+TESTFILES = DependencyChecking.mos
 
 
 # test that currently fail. Move up when fixed. 
