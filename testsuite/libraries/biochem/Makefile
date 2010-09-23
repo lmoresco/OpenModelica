@@ -1,10 +1,3 @@
-ifdef OMDEV
-SEP=";"
-else
-SEP=":"
-endif
-OPENMODELICALIBRARY := ../../../libraries/msl221/$(SEP)../../../libraries/common/
-
 TESTFILES = \
 EnzMM.mos Glycolysis.mos InsulinSignaling_Sedaghat.mos \
 UniBi.mos UniUni.mos
