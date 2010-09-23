@@ -4247,5 +4247,6 @@ getErrorString();
 //   rev1.axis.tau = 0.0;
 // end MultiBody.Examples.Loops.Fourbar2;
 // "
-// ""
+// "Warning: Component Length has the same name as its type SI.Length . This is forbidden by Modelica specifications and may lead to lookup error
+// "
 // endResult

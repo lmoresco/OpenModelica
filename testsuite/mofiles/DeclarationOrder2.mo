@@ -24,15 +24,15 @@ package A
 end A;
 
 model DeclarationOrder2
-  A.D D;
+  A.D d;
 end DeclarationOrder2;
 
 // Result:
 // class DeclarationOrder2
-// Real D.c2[1].y(start = D.c2[1].x);
-// parameter Real D.c2[1].x = 3.14;
-// parameter Integer D.n = 1;
+// Real d.c2[1].y(start = d.c2[1].x);
+// parameter Real d.c2[1].x = 3.14;
+// parameter Integer d.n = 1;
 // equation
-//   der(D.c2[1].y) = D.c2[1].x;
+//   der(d.c2[1].y) = d.c2[1].x;
 // end DeclarationOrder2;
 // endResult

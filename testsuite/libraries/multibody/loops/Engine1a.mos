@@ -6313,9 +6313,11 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   Crank4.frame_b.t[3] = 0.0;
 // end Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a;
 // "
-// ""
+// "Warning: Component Inertia has the same name as its type Modelica.Mechanics.Rotational.Components.Inertia . This is forbidden by Modelica specifications and may lead to lookup error
+// "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a completed successfully.
 // 
+// Warning: Component Inertia has the same name as its type Modelica.Mechanics.Rotational.Components.Inertia . This is forbidden by Modelica specifications and may lead to lookup error
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a has 2977 equation(s) and 3032 variable(s).
 // 1930 of these are trivial equation(s).

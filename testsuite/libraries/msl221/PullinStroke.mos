@@ -317,5 +317,7 @@ getErrorString();
 //   STA_195205_129.ArmatureFlange.f = 0.0;
 // end Magnetic_Examples_PullinStroke;
 // "
-// ""
+// "Warning: Component Ground has the same name as its type Modelica.Electrical.Analog.Basic.Ground . This is forbidden by Modelica specifications and may lead to lookup error
+// Warning: Component STA_195205_129 has the same name as its type Magnetic.Solenoid.STA_195205_129 . This is forbidden by Modelica specifications and may lead to lookup error
+// "
 // endResult
