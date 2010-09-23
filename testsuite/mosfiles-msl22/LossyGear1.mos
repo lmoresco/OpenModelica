@@ -17,8 +17,6 @@ val(gear.mode,0.5);
 val(gear.mode,1.0);
 val(PowerLoss,0.3);
 val(PowerLoss,0.8);
-system("rm -f LossyGearDemo1_*");
-system("rm -f LossyGearDemo1.cpp LossyGearDemo1.exe LossyGearDemo1.makefile LossyGearDemo1.log LossyGearDemo1.libs");
 
 // Result:
 // true
