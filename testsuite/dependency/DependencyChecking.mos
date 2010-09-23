@@ -1,0 +1,72 @@
+//name:        DependencyChecking.mos
+//keyword:     checking if the omc +d=usedep works the same as without it.
+//status:      correct
+//
+// instantiate/check model example
+//
+
+
+loadFile("DependencyChecking.mo"); getErrorString();
+
+// check if instantiation works without +d=usedep
+instantiateModel(DependencyChecking);
+getErrorString();
+
+// check if instantiation breaks with +d=usedep but with wrong 
+// Integer wrong = 1.0; component with correct error message!
+setDebugFlags("usedep");
+instantiateModel(DependencyChecking);
+getErrorString();
+
+// check if instantiation works with +d=usedep with correct
+// Integer wrong = 1; component
+// set the modifier to 1 instead of 1.0
+setComponentModifierValue(Modelica.Constants,wrong,$Code(=1));
+getComponentModifierValue(Modelica.Constants,wrong);
+instantiateModel(DependencyChecking);
+getErrorString();
+
+
+// Result:
+// true
+// ""
+// "function DependencyChecking.func
+//   input Real x;
+//   output Real y;
+// algorithm
+//   y := 0.1 * x;
+// end DependencyChecking.func;
+// 
+// class DependencyChecking
+//   parameter Real u = 0.1;
+// end DependencyChecking;
+// "
+// ""
+// true
+// instantiateDaeFunction failed for func in scope: DependencyChecking
+// instantiateDaeFunction failed for func in scope: DependencyChecking
+// ""
+// "[DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
+// Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
+// Error: No matching function found for func(1) of type function(x:Integer) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
+// Error: Error occured while flattening model DependencyChecking
+// [DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
+// Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
+// Error: No matching function found for func(1) of type function(x:Integer) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
+// Error: Error occured while flattening model DependencyChecking
+// "
+// Ok
+// 1
+// "function DependencyChecking.func
+//   input Real x;
+//   output Real y;
+// algorithm
+//   y := 0.1 * x;
+// end DependencyChecking.func;
+// 
+// class DependencyChecking
+//   parameter Real u = 0.1;
+// end DependencyChecking;
+// "
+// ""
+// endResult
