@@ -14,12 +14,8 @@ getErrorString();
 // Result:
 // true
 // ""
-// "Error: trying to override final variable in class: p1.p2.AfunctionExtend
-// Error: trying to override final variable in class: p3.m3
-// Error: trying to override final variable in class: test1
+// "Error: trying to override final variable in class: test1
 // Error: Error occured while flattening model test1
-// Error: trying to override final variable in class: p1.p2.AfunctionExtend
-// Error: trying to override final variable in class: p3.m3
 // Error: trying to override final variable in class: test1
 // Error: Error occured while flattening model test1
 // "

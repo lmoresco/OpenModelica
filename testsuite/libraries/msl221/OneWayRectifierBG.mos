@@ -1456,6 +1456,5 @@ getErrorString();
 //   B5.eBondCon1.e = J0p5_1.BondCon4.e;
 // end BondLib_Examples_ModelicaSpice_OneWayRectifierBG;
 // "
-// "Warning: Parameter DS1.BVval has neither value nor start value, and is fixed during initialization (fixed=true)
-// "
+// ""
 // endResult

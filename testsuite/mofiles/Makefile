@@ -314,6 +314,7 @@ InheritanceSimple.mo \
 InnerOuter1.mo \
 InnerOuter2.mo \
 InnerOuterSystem.mo \
+InnerOuterWithExtends.mo \
 InOutArray2.mo \
 InOutArray.mo \
 InOutBool.mo \
