@@ -1,8 +1,9 @@
 // name:     Record-in-Record Constructor
 // keywords: algorithm
 // status:   correct
+// setup_command: gcc `if test "x86_64" = \`uname -m\`; then echo -fPIC; fi` -c -o External_C_RecordTest.o External_C_RecordTest.c
+// teardown_command: rm -f External_C_RecordTest.o
 
-system("gcc -c External_C_RecordTest.c");
 loadFile("RecordTest.mo");
 
 left:=RecordTest.ADD(1.0,2.0);
@@ -14,11 +15,8 @@ plus3:=RecordTest.mk_plus3(right,left);
 res:=RecordTest.mk_plus4(1.0,2.0,3.0,4.0);
 res:=RecordTest.mk_plus_ext(RecordTest.ADD(1.0,2.0),RecordTest.ADD(3.0,4.0));
 res:=RecordTest.MULT_PLUS(plus1,plus2,plus3);
-system("rm -f *.o");
-
 
 // Result:
-// 0
 // true
 // record RecordTest.ADD
 //     a1 = 1.0,
@@ -110,5 +108,4 @@ system("rm -f *.o");
 // end RecordTest.ADD;
 // end RecordTest.PLUS;
 // end RecordTest.MULT_PLUS;
-// 0
 // endResult

@@ -1,7 +1,7 @@
 // name:     ExternalFunction1
 // keywords: external function,code generation,constant propagation
 // status:   correct
-// setup_command: gcc -c -o ExternalFunction1_f.o ExternalFunction1_f.c
+// setup_command: gcc `if test "x86_64" = \`uname -m\`; then echo -fPIC; fi` -c -o ExternalFunction1_f.o ExternalFunction1_f.c
 // teardown_command: rm -f ExternalFunction1_f.o
 // 
 // Constant evaluation of function calls. Result of a function call with 

@@ -1,8 +1,9 @@
 // name:     Simple Record Constructor
 // keywords: algorithm
 // status:   correct
+// setup_command: gcc `if test "x86_64" = \`uname -m\`; then echo -fPIC; fi` -c -o External_C_RecordTest.o External_C_RecordTest.c
+// teardown_command: rm -f External_C_RecordTest.o
 
-system("gcc -c External_C_RecordTest.c");
 loadFile("RecordTest.mo");
 
 a:=RecordTest.mk_add1(1.0,2.0);
@@ -10,10 +11,8 @@ a:=RecordTest.mk_add2(1.0,2.0);
 a:=RecordTest.mk_add3();
 a:=RecordTest.mk_add_ext(1.0,2.0);
 a:=RecordTest.ADD(1.0,2.0);
-system("rm -f *.o");
 
 // Result:
-// 0
 // true
 // record RecordTest.ADD
 //     a1 = 1.0,
@@ -35,5 +34,4 @@ system("rm -f *.o");
 //     a1 = 1.0,
 //     a2 = 2.0
 // end RecordTest.ADD;
-// 0
 // endResult

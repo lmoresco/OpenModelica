@@ -1,8 +1,9 @@
 // name:     Empty Record Constructor
 // keywords: algorithm
 // status:   correct
+// setup_command: gcc `if test "x86_64" = \`uname -m\`; then echo -fPIC; fi` -c -o External_C_RecordTest.o External_C_RecordTest.c
+// teardown_command: rm -f External_C_RecordTest.o
 
-system("gcc -c External_C_RecordTest.c");
 loadFile("RecordTest.mo");
 
 a:=RecordTest.mk_empty1();
@@ -10,11 +11,7 @@ a:=RecordTest.mk_empty2();
 a:=RecordTest.mk_empty_ext();
 a:=RecordTest.EMPTY();
 
-system("rm -f *.o");
-
-
 // Result:
-// 0
 // true
 // record RecordTest.EMPTY
 // end RecordTest.EMPTY;
@@ -24,5 +21,4 @@ system("rm -f *.o");
 // end RecordTest.EMPTY;
 // record RecordTest.EMPTY
 // end RecordTest.EMPTY;
-// 0
 // endResult
