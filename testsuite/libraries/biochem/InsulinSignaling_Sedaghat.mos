@@ -1,6 +1,7 @@
 //name:         InsulinSignaling_Sedaghat
 //keyword:      instantiating msl221
 //status:       correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl221/:../../../libraries/common/
 //
 // instantiate example
 //
