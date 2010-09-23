@@ -1,7 +1,7 @@
 // name:     FuncCross
 // keywords: Simulation
 // status:   correct
-// teardown_command: rm -f FuncCross_* FuncCross.cpp FuncCross FuncCross.exe FuncCross.makefile FuncCross.log FuncCross.libs
+// teardown_command: rm -f FuncCrossTest_* FuncCrossTest.cpp FuncCrossTest FuncCrossTest.exe FuncCrossTest.makefile FuncCrossTest.log FuncCrossTest.libs
 // env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate models and read in data.

@@ -8,7 +8,6 @@ blockssystems.mos \
 FuncCross.mos \
 InitTest.mos \
 InputOutput.mos \
-LossyGear1.mos \
 MatrixTest.mos \
 rotationalgears.mos \
 rotationalspringinertia.mos \
@@ -19,7 +18,8 @@ tupleTest.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES=NONE
+FAILINGTESTFILES=\
+LossyGear1.mos
 
 .PHONY : test
 
