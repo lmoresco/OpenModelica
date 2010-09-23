@@ -1,6 +1,7 @@
 // name:     Simulation2
 // keywords: Simulation, Euler, Linear, Non-linear eqn systems.
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate models and read in data.
 //
@@ -64,7 +65,7 @@ system("rm -f NonLinSys3_*");
 system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log NonLinSys3.libs");
 
 
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("Test3PhaseSystemTotal.mo");
 simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20, tolerance=1e-5, numberOfIntervals=100);
 val(LR1.I1.i,0.0);

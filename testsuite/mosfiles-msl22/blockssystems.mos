@@ -1,10 +1,11 @@
 // name:     Blocks Systems
 // keywords: Simulate, readSimulationData
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate systems of blocks 
 //
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("TestModels.mo");
 
 // Circuit1

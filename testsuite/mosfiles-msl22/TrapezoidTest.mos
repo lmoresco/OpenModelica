@@ -1,0 +1,30 @@
+// name:     TrapezoidTest
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f TrapezoidTest_* TrapezoidTest.cpp TrapezoidTest TrapezoidTest.exe TrapezoidTest.makefile TrapezoidTest.log TrapezoidTest.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+loadModel(Modelica);
+loadFile("TrapezoidTest.mo");
+simulate(TrapezoidTest, numberOfIntervals=50, tolerance=1e-8);
+val(resistor1.v,0.0);
+val(resistor1.v,0.1);
+val(resistor1.v,0.5);
+val(resistor1.v,0.8);
+val(resistor1.v,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TrapezoidTest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.5
+// 1.0
+// 0.499999999999999
+// 0.0
+// endResult

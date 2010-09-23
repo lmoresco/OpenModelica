@@ -1,0 +1,27 @@
+// name:     BearingFrictionTest
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f BearingFrictionTest_* BearingFrictionTest.cpp BearingFrictionTest BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+
+loadModel(Modelica);
+// BearingFriction test (mixed system of equations in columb friction)
+
+loadFile("BearingFrictionTest.mo");
+simulate(BearingFrictionTest, numberOfIntervals=50, tolerance=1e-5);
+
+{val(BearingFriction1.w,0.0),val(BearingFriction1.w,0.1),val(BearingFriction1.w,0.2),val(BearingFriction1.w,0.3),val(BearingFriction1.w,0.4),val(BearingFriction1.w,0.5),
+val(BearingFriction1.w,0.6),val(BearingFriction1.w,0.7),val(BearingFriction1.w,0.8),val(BearingFriction1.w,0.9),val(BearingFriction1.w,1.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "BearingFrictionTest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}
+// endResult

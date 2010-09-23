@@ -1,0 +1,39 @@
+// name:     LossyGearDemo1
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f LossyGearDemo1_* LossyGearDemo1.cpp LossyGearDemo1 LossyGearDemo1.exe LossyGearDemo1.makefile LossyGearDemo1.log LossyGearDemo1.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// LossyGearDemo1 in Modelica.Mechanics.Rotational.Examples
+//
+loadModel(Modelica);
+loadFile("LossyGear1.mo");
+simulate(LossyGearDemo1, numberOfIntervals=200, tolerance=1e-8);
+val(gear.mode,0.0);
+val(gear.mode,0.05);
+val(gear.mode,0.1);
+val(gear.mode,0.2);
+val(gear.mode,0.4);
+val(gear.mode,0.5);
+val(gear.mode,1.0);
+val(PowerLoss,0.3);
+val(PowerLoss,0.8);
+system("rm -f LossyGearDemo1_*");
+system("rm -f LossyGearDemo1.cpp LossyGearDemo1.exe LossyGearDemo1.makefile LossyGearDemo1.log LossyGearDemo1.libs");
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "LossyGearDemo1_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// -1.0
+// -1.0
+// 0.123397894329822
+// 0.422746889669435
+// endResult

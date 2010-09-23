@@ -1,0 +1,26 @@
+// name:     FuncCross
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f FuncCross_* FuncCross.cpp FuncCross FuncCross.exe FuncCross.makefile FuncCross.log FuncCross.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+loadModel(Modelica);
+loadFile("FuncCross.mo");
+simulate(FuncCrossTest, numberOfIntervals=50, tolerance=1e-5);
+val(r[1],0.0);
+val(r[2],0.0);
+val(r[3],0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "FuncCrossTest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// -1.0
+// 5.0
+// -1.0
+// endResult

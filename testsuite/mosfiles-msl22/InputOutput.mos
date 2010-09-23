@@ -1,0 +1,30 @@
+// name:     InputOutput
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f InputOutput_* InputOutput.cpp InputOutput InputOutput.exe InputOutput.makefile InputOutput.log InputOutput.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//InputOutput - model containing inputs and outputs on top level
+// The inputs are considered know variables and are not calculated among
+// the algebraic variables.
+//
+loadModel(Modelica);
+loadFile("InputOutput.mo");
+simulate(InputOutput, numberOfIntervals=50, tolerance=1e-5);
+val(x,0.5);
+val(u,0.5);
+val(u2,0.5);
+val(y,0.5);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "InputOutput_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 0.316065010021505
+// 1.0
+// 2.0
+// 4.31606501002151
+// endResult

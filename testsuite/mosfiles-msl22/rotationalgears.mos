@@ -1,10 +1,11 @@
 // name:     Rotational Gears
 // keywords: Simulate, readSimulationData
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate Rotational gear models and simulate. 
 //
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("TestModels.mo");
 
 // IdealGear

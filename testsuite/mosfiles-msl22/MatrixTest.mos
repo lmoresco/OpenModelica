@@ -1,0 +1,26 @@
+// name:     MatrixTest
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f MatrixTest_* MatrixTest.cpp MatrixTest MatrixTest.exe MatrixTest.makefile MatrixTest.log MatrixTest.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+loadModel(Modelica);
+loadFile("MatrixTest.mo");
+simulate(MatrixTest, numberOfIntervals=50, tolerance=1e-5);
+val(F[1],0.0);
+val(F[2],0.0);
+val(F[3],0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "MatrixTest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 100.0
+// 132.0
+// 70.0
+// endResult

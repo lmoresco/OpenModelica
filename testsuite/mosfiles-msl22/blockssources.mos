@@ -1,10 +1,11 @@
 // name:     Blocks Sources
 // keywords: Simulate, readSimulationData
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate blocks sources and simulate.
 //
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("TestModels.mo");
 
 // ConstantTest

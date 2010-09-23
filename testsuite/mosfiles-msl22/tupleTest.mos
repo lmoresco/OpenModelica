@@ -1,0 +1,24 @@
+// name:     tupleTest
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f tplTest_* tplTest.cpp tplTest tplTest.exe tplTest.makefile tplTest.log tplTest.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+loadModel(Modelica);
+loadFile("tupleTest.mo");
+simulate(tplTest, stopTime=0.1, numberOfIntervals=50, tolerance=1e-5);
+val(x,0.0);
+val(y,0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "tplTest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// -1.0
+// endResult

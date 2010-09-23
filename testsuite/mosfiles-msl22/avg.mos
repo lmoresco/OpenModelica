@@ -1,0 +1,22 @@
+// name:     avg
+// keywords: Simulation
+// status:   correct
+// teardown_command: rm -f avgtest_* avgtest.cpp avgtest avgtest.exe avgtest.makefile avgtest.log avgtest.libs
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// 
+//  Simulate models and read in data.
+//
+loadModel(Modelica);
+loadFile("avg.mo");
+simulate(avgtest,stopTime=0.1,numberOfIntervals=5, tolerance=1e-5);
+val(x,0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "avgtest_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 3.6
+// endResult

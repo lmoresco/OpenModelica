@@ -1,10 +1,11 @@
 // name:     Rotational Systems
 // keywords: Simulate, readSimulationData
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate Rotational Systems
 //
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("TestModels.mo");
 
 // DCMotor

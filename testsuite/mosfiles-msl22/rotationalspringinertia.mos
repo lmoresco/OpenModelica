@@ -1,10 +1,11 @@
 // name:     Rotational Spring Inertias
 // keywords: Simulate, readSimulationData
 // status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate Rotational inertias with springs 
 //
-loadFile("Modelica.mo");
+loadModel(Modelica);
 loadFile("TestModels.mo");
 
 // BacklashTest
