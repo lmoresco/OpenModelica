@@ -9,9 +9,7 @@ TESTFILES = DependencyChecking.mos
 FAILINGTESTFILES= 
 
 # Remove executables on Linux (no extension)
-CLEAN = NONE
-# This removes all .mo-files afterwards !
-# $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
+CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
 
 .PHONY : test
 
