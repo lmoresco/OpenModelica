@@ -1,14 +1,11 @@
-Ubuntu 10.04 Cheat Sheet
-========================
+Debian/Ubuntu Compile Cheat Sheet (or read on for the full guide)
+=================================================================
 
-If you have a system with apt, the following is faster than reading the
-whole guide for all dependencies.
-
-$ echo deb-src deb-src http://www.ida.liu.se/~pelab/modelica/OpenModelica/releases/1.5.0/Linux deb/ >> /etc/apt/sources.list
+$ echo deb-src deb-src http://build.openmodelica.org/apt nightly contrib >> /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get build-dep openmodelica
-$ export RMLHOME=/usr
-$ export ANTLRHOME=/usr
+$ export RMLHOME=/usr # also put this in .profile
+$ export ANTLRHOME=/usr # also put this in .profile
 $ ./configure --with-omniORB=/usr
 $ make # or make omc if you only want the omc core
 
