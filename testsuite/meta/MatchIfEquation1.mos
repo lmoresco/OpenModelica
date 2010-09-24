@@ -1,0 +1,18 @@
+// name:     MatchIfEquation1
+// keywords: Match Cases
+// status:   correct
+// cflags: +g=MetaModelica
+// teardown_command: rm -f MatchIfEquation1_*
+//
+// Match Testing
+//
+loadFile("MatchIfEquation1.mo");
+MatchIfEquation1.func(1);
+MatchIfEquation1.func(2);
+
+// Result:
+// true
+// 42
+// Exception!!!
+// fail()
+// endResult
