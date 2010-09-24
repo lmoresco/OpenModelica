@@ -104,12 +104,18 @@ antlr3AsciiFileStreamNew(pANTLR3_UINT8 fileName)
 ANTLR3_API ANTLR3_UINT32
 antlr3readAscii(pANTLR3_INPUT_STREAM    input, pANTLR3_UINT8 fileName)
 {
+#if defined(__MINGW32__) || defined(_MSC_VER)
+  char *fileOpenMode = "rt"; /* on Windows do translation so that \n becomes \r\n */
+#else
+  char *fileOpenMode = "rb";  /* on Unixes don't bother, do it binary mode */
+#endif
+
 	ANTLR3_FDSC		    infile;
 	ANTLR3_UINT32	    fSize;
 
 	/* Open the OS file in read binary mode
 	*/
-	infile  = antlr3Fopen(fileName, "rb");
+	infile  = antlr3Fopen(fileName, fileOpenMode);
 
 	/* Check that it was there
 	*/
@@ -137,7 +143,7 @@ antlr3readAscii(pANTLR3_INPUT_STREAM    input, pANTLR3_UINT8 fileName)
 	/* Now we read the file. Characters are not converted to
 	* the internal ANTLR encoding until they are read from the buffer
 	*/
-	antlr3Fread(infile, fSize, input->data);
+	input->sizeBuf = antlr3Fread(infile, fSize, input->data);
 
 	/* And close the file handle
 	*/
@@ -166,18 +172,50 @@ antlr3Fclose(ANTLR3_FDSC fd)
 {
     fclose(fd);
 }
+
 ANTLR3_API ANTLR3_UINT32
 antlr3Fsize(pANTLR3_UINT8 fileName)
 {   
     struct _stat	statbuf;
-
     _stat((const char *)fileName, &statbuf);
-
     return (ANTLR3_UINT32)statbuf.st_size;
 }
 
 ANTLR3_API ANTLR3_UINT32
 antlr3Fread(ANTLR3_FDSC fdsc, ANTLR3_UINT32 count,  void * data)
 {
-    return  (ANTLR3_UINT32)fread(data, (size_t)count, 1, fdsc);
+  ANTLR3_UINT32 total = 0;
+#if defined(__MINGW32__) || defined(_MSC_VER)
+  /* adrpo: 2010-09-24
+   * in windows we cannot use fread(data, fileSize) as fileSize could be *MORE* than
+   * the contents of the file because \r\n is translated to \n
+   */
+  ANTLR3_UINT32 cnt = 0;
+  while( !feof( fdsc ) )
+  {
+     /* Attempt to read in count bytes: */
+     cnt = fread( data, sizeof(char), count, fdsc );
+     if( ferror( fdsc ) )
+     {
+        perror( "ANTLR3: File read error" );
+        total = 0;
+        break;
+     }
+     else
+     {
+       /* Total up actual bytes read */
+       total += cnt;
+     }
+  }
+#else
+  fread(data, (size_t)count, 1, fdsc);
+  if( ferror( fdsc ) )
+  {
+     perror( "ANTLR3: File read error" );
+     total = 0;
+  }
+  else
+    total = count;
+#endif
+  return total;
 }
