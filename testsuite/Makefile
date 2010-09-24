@@ -20,7 +20,7 @@ test-oldresult-summary:
 fast : omc-diff fast.logs
 	@cat drmodelica.log mofiles.log parser.log dependency.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log
 	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
-fast.logs: mosfiles.log mosfiles-msl22.log meta.log mofiles.log parser.log msl.log mmdev.log drmodelica.log mosfiles-nosim.log parser.log records.log dependency.log
+fast.logs: mosfiles.log mosfiles-msl22.log meta.log parser.log mofiles.log msl.log mmdev.log drmodelica.log mosfiles-nosim.log parser.log records.log dependency.log
 # java should probably also be part of 'fast'
 libraries.log: omc-diff
 	$(MAKE) -C libraries -f Makefile test > $@

@@ -5,9 +5,10 @@ test: $(LOGS)
 	@cat $(LOGS:=.log) | grep "^ + " > result.txt
 	@rm -f $(LOGS:=.log)
 	@cat result.txt
-	@echo == `grep -v -e ok -e warning result.txt | wc -l` out of `cat result.txt | wc -l` tests failed "[MetaModelica Course, time: $$((`date +%s`-`cat start.stamp`))]"
+	@echo == `grep -v -e ok -e warning result.txt | wc -l` out of `cat result.txt | wc -l` tests failed "[MetaModelica Course, time: $$((`date +%s`-`cat start.stamp.tmp`))]"
+	@rm -f start.stamp.tmp
 start.stamp:
-	@date +%s > $@
+	@date +%s > $@.tmp
 01: start.stamp
 	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
 02a: start.stamp

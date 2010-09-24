@@ -33,8 +33,10 @@ ParseCompilerSources.mos \
 ParseElementReplaceable.mo \
 ParseError1.mo \
 ParseError2.mo \
+ParseFullModelica1.6.mos \
 ParseFullModelica2.2.1.mos \
 ParseFullModelica3.1.mos \
+ParseFullModelica3.2.mos \
 RealOpLexerModelica.mo \
 RealOpLexerMetaModelica.mo \
 SimpleIntegrator4.mo \
@@ -43,7 +45,6 @@ WildLexerMetaModelica.mo \
 ParseModel.mos
 
 FAILINGTESTFILES= \
-ParseFullModelica3.2.mos
 
 .PHONY : test
 
