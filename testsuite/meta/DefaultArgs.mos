@@ -1,9 +1,0 @@
-// name:     DefaultArgs
-// keywords: DefaultArgs
-// status:   incorrect
-//
-// Partial Function Testing
-//
-loadFile("DefaultArgs.mo");
-simulate(DefaultArgs);
-val(i,0.0);
