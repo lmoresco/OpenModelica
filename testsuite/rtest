@@ -71,7 +71,7 @@ sub setbaselineone
       $env = "";
     }
     if ($ENV{'OMDEV'}) {
-      $env =~ s/:/;/g;
+      $env =~ s/:/\\;/g;
     }
     system "$env $OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
     if ($teardown_command) {
@@ -135,7 +135,7 @@ sub runone
       $env = "";
     }
     if ($ENV{'OMDEV'}) {
-      $env =~ s/:/;/g;
+      $env =~ s/:/\\;/g;
     }
     system "$env $OPENMODELICAHOME/bin/omc -- --running-testsuite $omcflags $cflags $f >>$log 2>&1";
     $retval = $?;
