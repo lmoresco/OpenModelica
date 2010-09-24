@@ -158,8 +158,6 @@ ConstructParameters.mo \
 Cosh.mo \
 Cos.mo \
 Cross.mo \
-CyclicBindingConst.mo \
-CyclicBindingParam.mo \
 DeclarationEquation1.mo \
 DeclarationEquation2.mo \
 DeclarationEquation3.mo \
@@ -255,7 +253,6 @@ Faculty5.mo \
 FillSize.mo \
 FinalParameterModification.mo \
 FixedFinalParameter.mo \
-FlatParse.mof \
 FlexibleShaftNonLinearTotal.mo \
 FloatingPoint.mo \
 Floor.mo \
@@ -537,12 +534,15 @@ Connect3.mo \
 ConnectConst1.mo \
 ConstrainingType2.mo \
 ConstrainingType3.mo \
+CyclicBindingConst.mo \
+CyclicBindingParam.mo \
 DeclareConstant1.mo \
 DeclareConstant2.mo \
 DeclareConstant3.mo \
 DisturbedResistance1.mo \
 DisturbedResistance2.mo \
 Faculty4.mo \
+FlatParse.mof \
 Function2.mo \
 Function4.mo \
 FunctionEval5.mo \
