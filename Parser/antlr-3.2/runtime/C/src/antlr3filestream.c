@@ -185,12 +185,12 @@ ANTLR3_API ANTLR3_UINT32
 antlr3Fread(ANTLR3_FDSC fdsc, ANTLR3_UINT32 count,  void * data)
 {
   ANTLR3_UINT32 total = 0;
+  ANTLR3_UINT32 cnt = 0;
 #if defined(__MINGW32__) || defined(_MSC_VER)
   /* adrpo: 2010-09-24
    * in windows we cannot use fread(data, fileSize) as fileSize could be *MORE* than
    * the contents of the file because \r\n is translated to \n
    */
-  ANTLR3_UINT32 cnt = 0;
   while( !feof( fdsc ) )
   {
      /* Attempt to read in count bytes: */
@@ -208,8 +208,8 @@ antlr3Fread(ANTLR3_FDSC fdsc, ANTLR3_UINT32 count,  void * data)
      }
   }
 #else
-  fread(data, (size_t)count, 1, fdsc);
-  if( ferror( fdsc ) )
+  cnt = fread(data, (size_t)count, 1, fdsc);
+  if( (cnt != 1) || ferror( fdsc ))
   {
      perror( "ANTLR3: File read error" );
      total = 0;
