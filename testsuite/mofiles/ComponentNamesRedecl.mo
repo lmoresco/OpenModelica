@@ -28,5 +28,4 @@ end IllegalRedeclaredComponentName;
 //   Real B.x;
 //   Real B.y;
 // end IllegalRedeclaredComponentName;
-// 
 // endResult
