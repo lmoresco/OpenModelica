@@ -15171,7 +15171,7 @@ list();
 //     constant Real eps = 1e-15 "Biggest number such that 1.0 + eps = 1.0";
 //     constant Real small = 1e-60 "Smallest number such that small and -small are representable on the machine";
 //     constant Real inf = 1e+60 "Biggest Real number such that inf and -inf are representable on the machine";
-//     constant Integer Integer_inf = 2147483647 "Biggest Integer number such that Integer_inf and -Integer_inf are representable on the machine";
+//     constant Integer Integer_inf = 1073741823 "Biggest Integer number such that Integer_inf and -Integer_inf are representable on the machine";
 //     constant SI.Velocity c = 299792458 "Speed of light in vacuum";
 //     constant SI.Acceleration g_n = 9.80665 "Standard acceleration of gravity on earth";
 //     constant Real G(final unit = "m3/(kg.s2)") = 6.673e-11 "Newtonian constant of gravitation";
