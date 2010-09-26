@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O3 -I..
+CFLAGS = -O3 -I.. -D_POSIX_ -Dstatic=
 OBJS = ModelicaInternal.o ModelicaStrings.o ModelicaTablesImpl.o 
 AR = ar -ru
 
