@@ -15,7 +15,6 @@ end SeveralArguments;
 
 // Result:
 // Error processing file: VectorizeSeveralArguments.mo
-// Error: Class atan2Add (its type)  not found in scope SeveralArguments.
 // Error: No matching function found for atan2Add in component <NO COMPONENT>
 // Error: Class atan2Add not found in scope SeveralArguments.
 // 

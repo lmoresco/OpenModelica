@@ -1356,7 +1356,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   protected parameter Real world.gravityHeadLength(quantity = "Length", unit = "m") = min(world.gravityArrowLength,4.0 * world.gravityArrowDiameter);
 //   protected parameter Real world.gravityHeadWidth(quantity = "Length", unit = "m") = 3.0 * world.gravityArrowDiameter;
 //   protected parameter Real world.gravityLineLength(quantity = "Length", unit = "m") = max(0.0,world.gravityArrowLength - world.gravityHeadLength);
-//   protected parameter Integer world.ndim_pointGravity = if world.enableAnimation AND world.animateGravity AND world.gravityType == 2 then 1 else 0;
+//   protected parameter Integer world.ndim_pointGravity = if world.enableAnimation AND world.animateGravity AND world.gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then 1 else 0;
 //   parameter String world.gravitySphere.shapeType = "sphere" "Type of shape (box, sphere, cylinder, pipecylinder, cone, pipe, beam, gearwheel, spring)";
 //   input Real world.gravitySphere.R.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
 //   input Real world.gravitySphere.R.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";

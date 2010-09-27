@@ -6,7 +6,7 @@ loadFile("../../Compiler/Util.mo");
 getErrorString();
 loadFile("UtilTest.mo");
 getErrorString();
-UtilTest.listRangeString(1, 25000);
+UtilTest.listRangeString(1, 22000);
 getErrorString();
 
 // Result:

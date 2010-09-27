@@ -89,7 +89,7 @@ end X;
 //   Real x;
 //   enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
 //   enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Types.EnumTest.Size.medium;
-//   enumeration(start, fixed, quantity, zero, one) enumtest.c(quantity = "Current", start = Types.EnumTest.DigitalCurrentChoices.one, fixed = true);
+//   enumeration(zero, one) enumtest.c(quantity = "Current", start = Types.EnumTest.DigitalCurrentChoices.one, fixed = true);
 //   enumeration(zero, one) enumtest.choice(start = Types.EnumTest.DigitalCurrentChoices.one, fixed = true);
 //   Real enumtest.x[Types.EnumTest.DigitalCurrentChoices.zero];
 //   Real enumtest.x[Types.EnumTest.DigitalCurrentChoices.one];

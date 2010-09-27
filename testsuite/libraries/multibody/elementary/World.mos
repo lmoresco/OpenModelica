@@ -1223,7 +1223,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   protected output Real gravityArrowHead.size[3](quantity = "Length", unit = "m") "{length,width,height} of shape";
 //   protected output Real gravityArrowHead.Material;
 //   protected output Real gravityArrowHead.Extra;
-//   protected parameter Integer ndim_pointGravity = if enableAnimation AND animateGravity AND gravityType == 2 then 1 else 0;
+//   protected parameter Integer ndim_pointGravity = if enableAnimation AND animateGravity AND gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then 1 else 0;
 // equation
 //   x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(x_arrowLine.shapeType);
 //   x_arrowLine.rxvisobj[1] = x_arrowLine.R.T[1,1] * x_arrowLine.e_x[1] + (x_arrowLine.R.T[2,1] * x_arrowLine.e_x[2] + x_arrowLine.R.T[3,1] * x_arrowLine.e_x[3]);

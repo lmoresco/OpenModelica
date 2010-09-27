@@ -45,6 +45,7 @@ $status = 0;
 $statusfilter = "all";
 $eps_mo = 1.0e-7;
 $eps_mos = 5e-3;
+$set_modelica_lib = 1;
 
 # Creates a baseline, i.e. the stores the actual result as the expected result
 sub setbaselineone
@@ -231,7 +232,9 @@ sub dofile
         # @adrpo - uncomment for debugging
         # print "Noticed: $1 = $2\n";        
         # $info{$1} = $value;
-        $info{$1} = $2;
+        if($1 ne "env" or $set_modelica_lib) {
+          $info{$1} = $2;
+        }
     } 
     }
     close IN;
@@ -337,6 +340,8 @@ while ($#ARGV >= 0) {
       $collectkeys = 1;
     } elsif ($arg eq "-L") {
       $collectcases = 1;
+    } elsif ($arg eq "-nolib") {
+      $set_modelica_lib = 0;
     } else {    
       $filearg = 1;
       dofile $arg;

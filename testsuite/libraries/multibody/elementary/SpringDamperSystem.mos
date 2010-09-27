@@ -1514,7 +1514,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   protected output Real world.gravityArrowHead.size[3](quantity = "Length", unit = "m") "{length,width,height} of shape";
 //   protected output Real world.gravityArrowHead.Material;
 //   protected output Real world.gravityArrowHead.Extra;
-//   protected parameter Integer world.ndim_pointGravity = if world.enableAnimation AND world.animateGravity AND world.gravityType == 2 then 1 else 0;
+//   protected parameter Integer world.ndim_pointGravity = if world.enableAnimation AND world.animateGravity AND world.gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then 1 else 0;
 //   parameter Boolean animation = true "= true, if animation shall be enabled";
 //   Real body1.frame_a.r_0[1](quantity = "Length", unit = "m") "Position vector from world frame to the connector frame origin, resolved in world frame";
 //   Real body1.frame_a.r_0[2](quantity = "Length", unit = "m") "Position vector from world frame to the connector frame origin, resolved in world frame";

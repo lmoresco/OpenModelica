@@ -18,6 +18,8 @@ my $test_full = $ARGV[0];
 # Build the full path to the temporary directory to run the test in.
 my $tmp_path_full = $test_dir . "/" . $test . "_temp";
 
+my $test_suit_path_rel = "../" x ($test_full =~ tr/\///);
+
 # Makes a symbolic link to a file.
 sub make_link {
 	my $file = shift;
@@ -112,6 +114,11 @@ sub enter_sandbox {
 					}
 				}
 			}
+      when (/env:\s*OPENMODELICALIBRARY\s*=\s*(.*)/) {
+        my $lib = $1;
+        $lib =~ s/((?:\.\.\/)+)/..\/$1/g;
+        $ENV{'OPENMODELICALIBRARY'} = $lib;
+      }
 		}
 	}
 }
@@ -127,7 +134,7 @@ sub exit_sandbox {
 enter_sandbox();
 
 # Determine the full path to rtest.
-my $rtest = "../" x ($test_full =~ tr/\///) . "rtest -v ";
+my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 # If we're in meta, append the MetaModelica flag to rtest.
 $rtest = $rtest . " +g=MetaModelica " if $test_dir eq "./meta";
 
@@ -150,6 +157,7 @@ while(<$test_log>) {
 			print color 'green';
 		} else {
 			if($erroneous == 0) {
+        system("cp $test.test_log ../$test.fail_log");
 				print color 'red';
 				$exit_status = 0;
 			} else {

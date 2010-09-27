@@ -5,7 +5,7 @@ CauerLowPassOPV2.mos \
 CauerLowPassSC2.mos \
 CharacteristicThyristors2.mos \
 ChuaCircuit2.mos \
-Rectifier2.mos \
+#Rectifier2.mos \
 HeatingMOSInverter2.mos \
 HeatingRectifier2.mos \
 ShowVariableResistor2.mos \
