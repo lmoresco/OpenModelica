@@ -53,4 +53,4 @@ MAKETARGET = Makefile.omdev.mingw
 include $(srcdir)/Makefile.compiler_subdirs.common
 
 $(PROG): $(SRCO) $(SUBDIRS) ../../build/lib/omc/libsendData.a
-	g++ -pg -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi
+	g++ -Wl,--large-address-aware -pg -o $(PROG) $(SRCO) $(AST) $(RTOBJ) $(LDFLAGS) $(PLTPKGFLAGS) -lshlwapi

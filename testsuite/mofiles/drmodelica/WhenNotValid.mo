@@ -27,9 +27,14 @@ end WhenNotValid;
 //   end when;
 // end WhenNotValid;
 // Result:
-// -verify_When_Equation FAILED
+// - DAEUtil.verifyWhenEquation FAILED on:equation
+//   2.0 * x + y = 7.0;
+// 
+// 
 // Error processing file: WhenNotValid.mo
-// [WhenNotValid.mo:15:3-17:11:writable] Error: Failed to instantiate equation EQ_WHEN(... not impl ...)
+// [WhenNotValid.mo:15:3-17:11:writable] Error: Failed to instantiate equation when sample(0, 2) then
+// 2 * x + y = 7;
+// end when;
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
