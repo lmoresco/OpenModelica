@@ -67,6 +67,7 @@ Uniontype11.mos \
 Uniontype12.mos \
 Uniontype13.mos \
 Uniontype14.mos \
+Uniontype15.mos \
 UtilTest.mos
 
 

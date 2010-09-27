@@ -5706,8 +5706,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.VoltageSource completed successfully.
 // 
-// Warning: Forcing full instantiation of partial class VoltageSource during checkModel.
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:444:5-446:81:readonly] Warning: Variable signalSource: Forcing full instantiation of partial class SignalSource during checkModel.
+// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:439:3-479:20:writable] Warning: Forcing full instantiation of partial class VoltageSource during checkModel.
+// [../../../libraries/msl31//Modelica/Blocks/Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
 // 
 // Class Modelica.Electrical.Analog.Interfaces.VoltageSource has 6 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -5715,8 +5715,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.CurrentSource completed successfully.
 // 
-// Warning: Forcing full instantiation of partial class CurrentSource during checkModel.
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:485:5-487:65:readonly] Warning: Variable signalSource: Forcing full instantiation of partial class SignalSource during checkModel.
+// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:481:3-519:20:writable] Warning: Forcing full instantiation of partial class CurrentSource during checkModel.
+// [../../../libraries/msl31//Modelica/Blocks/Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
 // 
 // Class Modelica.Electrical.Analog.Interfaces.CurrentSource has 6 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).

@@ -61,7 +61,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce completed successfully.
 // 
-// Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
+// [../../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:580:3-664:23:writable] Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
 // Warning: No corresponding 'inner' declaration found for component world declared as 'outer '.
 // 	Please declare an 'inner' component with the same name in the top scope.
 // 	Continuing flattening by only considering the 'outer' component declaration.
