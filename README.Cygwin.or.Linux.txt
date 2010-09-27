@@ -14,9 +14,6 @@ How to compile on Linux or Cygwin (all from source)
 
 You need:
     cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
-    antlr (http://www.antlr.org  - tested on v2.7.2->v2.7.7)
-        Note: for newer gcc compilers you might need to add #include <cstring>
-              in lib/cpp/antlr/CharScanner.hpp, if you compile antlr from sources.
     rml+mmc (http://www.ida.liu.se/~pelab/rml/)
         Just grab it from subversion:
         svn co https://openmodelica.org/svn/MetaModelica/trunk mmc
@@ -35,6 +32,7 @@ You need:
     gcc      (tested with most of the versions)
     readline & libreadlineX-dev, currently X=5
     liblpsolve: http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
+    sqlite3
 The latest OpenModelica uses Qt for potting and 3D functionality. You will also need:
     Qt 4.x.x (http://trolltech.com - tested with 4.4.3)
     Coin3D   (http://www.coin3d.org - tested with 3.0.0)
@@ -69,6 +67,8 @@ You need:
     liblpsolve55
       You can now use the version from the Ubuntu repository
         $ sudo aptitude install liblpsolve55-dev
+    sqlite3
+        $ sudo aptitude install sqlite3 libsqlite3-dev
         
       It is also possible to copy this library from the Compiler runtime:
         For 32-bit OSX:

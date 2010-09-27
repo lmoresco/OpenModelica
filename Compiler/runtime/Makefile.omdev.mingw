@@ -36,7 +36,10 @@ CPPSRC  = unitparser.cpp unitparserext.cpp ptolemyio.cpp daeext.cpp ErrorMessage
 optmanager.cpp systemimplmisc.cpp dynload_try.o $(CORBASRC)
 OBJ     = $(SRC:.c=.o) $(CPPSRC:.cpp=.o) $(CPPSRC:.cc=.o)
 
-all: $(OBJ)
+all: runtime.a
+runtime.a : $(OBJ)
+        rm -f $@
+        $(AR) -s -r $@ $(OBJ)
 
 omc_communication.cc omc_communication.h : omc_communication.idl
 	$(IDL) omc_communication.idl
