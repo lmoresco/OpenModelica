@@ -10,17 +10,15 @@ list();
 
 // Result:
 // true
-// "[DotName.mo:11:19-11:21:writable] Warning: Ignoring dot in front of component reference
-// [DotName.mo:12:22-12:32:writable] Warning: Ignoring dot in front of component reference
-// "
+// ""
 // "class DotName
 //   import A;
 //   import A.B;
 //   import a = A;
 //   import b = A.B;
 //   import A.B.C.*;
-//   constant R r = R(1.5);
-//   DotName.Real r2 = DotName.r;
+//   constant R r = .R(1.5);
+//   DotName.Real r2 = .DotName.r;
 //   class R
 //     Integer r;
 //   end R;
