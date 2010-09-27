@@ -26,7 +26,9 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
-#define HAVE_MALLOC_H 1
+#ifndef __APPLE_CC__
+  #define HAVE_MALLOC_H 1
+#endif
 
 /* Define to 1 if you have the `memmove' function. */
 #define HAVE_MEMMOVE 1
@@ -71,7 +73,9 @@
 #define HAVE_STRING_H 1
 
 /* Define to 1 if you have the <sys/malloc.h> header file. */
-/* #undef HAVE_SYS_MALLOC_H */
+#ifdef __APPLE_CC__
+#define HAVE_SYS_MALLOC_H 1
+#endif
 
 /* Define to 1 if you have the <sys/socket.h> header file. */
 #define HAVE_SYS_SOCKET_H 1
