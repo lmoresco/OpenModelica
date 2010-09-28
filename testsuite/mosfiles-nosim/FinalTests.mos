@@ -15,22 +15,30 @@ getErrorString();
 // true
 // ""
 // "Error: trying to override final variable in class: test1
+// 	by using modifiers: ( = 10,  = final 1.123456) that do not agree.
 // Error: Error occured while flattening model test1
 // Error: trying to override final variable in class: test1
+// 	by using modifiers: ( = 10,  = final 1.123456) that do not agree.
 // Error: Error occured while flattening model test1
 // "
 // ""
 // "[FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: test2
+// 	by using modifiers: ( = "deg",  = final "rad") that do not agree.
 // [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: Real
+// 	by using modifiers: a1( = "deg",  = final "rad") that do not agree.
 // Error: Error occured while flattening model test2
 // [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: test2
+// 	by using modifiers: ( = "deg",  = final "rad") that do not agree.
 // [FinalTests.mo:27:3-27:23:readonly] Error: Variable a1: trying to override final variable in class: Real
+// 	by using modifiers: a1( = "deg",  = final "rad") that do not agree.
 // Error: Error occured while flattening model test2
 // "
 // ""
 // "Error: trying to override final variable in class: PI
+// 	by using modifiers: c2( = {33},  = final {c2.k * c2.T,c2.k * 1.0}) that do not agree.
 // Error: Error occured while flattening model test3
 // Error: trying to override final variable in class: PI
+// 	by using modifiers: c2( = {33},  = final {c2.k * c2.T,c2.k * 1.0}) that do not agree.
 // Error: Error occured while flattening model test3
 // "
 // endResult

@@ -1,6 +1,6 @@
 // name:     ModifyConstant5
 // keywords: scoping,modification
-// status:   erroneous
+// status:   incorrect
 //
 // Finalized members can not be redeclared.
 //
@@ -21,9 +21,12 @@ class ModifyConstant5
   B b;
   C c;
 end ModifyConstant5;
+
 // Result:
-// TODO: Needs a real error message
 // Error processing file: ModifyConstant5.mo
+// [ModifyConstant5.mo:13:3-13:39:readonly] Error: Variable b.a: trying to override final variable in class: A
+// 	by using modifiers: b.a((redeclare COMPONENT(c in/out:  mod:  = 2.0 tp: Real var :CONST)),  = final 1.0) that do not agree.
+// 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 

@@ -60,6 +60,9 @@ ArrayIndex2.mo \
 ArrayMatrixSimplifier.mo \
 ArrayModification10.mo \
 ArrayModification11.mo \
+ArrayModification12.mo \
+ArrayModification13.mo \
+ArrayModification14.mo \
 ArrayModification1.mo \
 ArrayModification2.mo \
 ArrayModification3.mo \
@@ -360,6 +363,7 @@ Modification10.mo \
 Modification12.mo \
 Modification13.mo \
 Modification14.mo \
+Modification15.mo \
 Modification1.mo \
 Modification2.mo \
 Modification4.mo \
