@@ -1,0 +1,22 @@
+// name: ErrorMatchNumOutput
+// cflags: +g=MetaModelica
+// status: correct
+//
+// Tests the error message for imbalanced number of actual/expected output in
+// match expressions.
+
+loadFile("ErrorMatchNumOutput.mo");
+ErrorMatchNumOutput.func(1,2,3);
+getErrorString();
+// Result:
+// true
+// instantiateDaeFunction failed for ErrorMatchNumOutput.func in scope: <global scope>
+// 
+// "[ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Match expression has mismatched number of expected (3) and actual (2) outputs. The expressions were (o1,o2,o3) and (3,4).
+// Error: Tuple assignment only allowed when rhs is function call (in match (i1,i2)
+// 	case ((1,2)) then (3,4);
+// 	else then (5,6,7);
+// 	end match)
+// Error: No matching function found for ErrorMatchNumOutput.func(1, 2, 3) of type function(i1:Integer, i2:Integer, i3:Integer) => (Integer, Integer, Integer) in component <NO COMPONENT>, candidates are function(i1:Integer, i2:Integer, i3:Integer) => (Integer, Integer, Integer)
+// "
+// endResult

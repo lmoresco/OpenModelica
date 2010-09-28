@@ -12,6 +12,7 @@ BuiltinString.mos \
 ComplicatedInteractive.mos \
 Equality.mos \
 EqPatternm.mos \
+ErrorMatchNumOutput.mos \
 Failure.mos \
 List1.mos \
 List2.mos \
