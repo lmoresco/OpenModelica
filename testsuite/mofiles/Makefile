@@ -295,6 +295,7 @@ FunctionSimplex.mo \
 GreaterThanEqual.mo \
 GreaterThan.mo \
 IconsRecursiveTest.mo \
+IdenticalEquations.mo \
 if_then_elseif_else.mo \
 Import1.mo \
 Import2.mo \
