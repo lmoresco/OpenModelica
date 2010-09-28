@@ -2,6 +2,7 @@
 TEST = ../rtest
 
 TESTFILES = \
+AlgPatternm.mos \
 BuiltinArray.mos \
 BuiltinBoolean.mos \
 BuiltinInteger.mos \

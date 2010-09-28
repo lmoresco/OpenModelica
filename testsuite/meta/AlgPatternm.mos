@@ -1,0 +1,19 @@
+// name: AlgPatternm
+// cflags: +g=MetaModelica
+// status: correct
+
+loadFile("AlgPatternm.mo");
+getErrorString();
+AlgPatternm.f1(1);
+getErrorString();
+AlgPatternm.f2(1);
+getErrorString();
+
+// Result:
+// true
+// ""
+// (1,2)
+// ""
+// (1,2)
+// ""
+// endResult
