@@ -203,7 +203,6 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Sources.BooleanTable completed successfully.
 // 
-// Error: The language feature initial algorithm is not supported. Suggested workaround: rewrite initial algorithms to initial equations
 // 
 // Class Modelica.Blocks.Sources.BooleanTable has 3 equation(s) and 3 variable(s).
 // 0 of these are trivial equation(s).

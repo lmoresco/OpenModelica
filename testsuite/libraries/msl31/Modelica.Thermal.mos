@@ -405,7 +405,6 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 // ""
 // "Check of Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve completed successfully.
 // 
-// Error: The language feature initial algorithm is not supported. Suggested workaround: rewrite initial algorithms to initial equations
 // 
 // Class Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve has 114 equation(s) and 114 variable(s).
 // 53 of these are trivial equation(s).

@@ -732,13 +732,11 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // end Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed;
 // "
 // ""
-// "[../../../libraries/msl31//Modelica/Electrical/Analog/Basic.mo:1856:6-1859:12:writable] Error: If-equation with conditions that are not parameter expressions must have the same number of equations in each branch, equation count is {2,0} for each respective branch.
-// Error: The language feature if-equations is not supported. Suggested workaround: rewrite equations using if-expressions: equation
-//   if initial() then
-//   opAmp.v_source = opAmp.q_fp1;
-//   opAmp.x = 0.0;
-//   end if;
+// "Check of Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed completed successfully.
 // 
+// 
+// Class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed has 79 equation(s) and 79 variable(s).
+// 43 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.StepVoltage
@@ -5955,13 +5953,11 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // end Modelica.Electrical.Analog.Basic.OpAmpDetailed;
 // "
 // ""
-// "[../../../libraries/msl31//Modelica/Electrical/Analog/Basic.mo:1856:6-1859:12:writable] Error: If-equation with conditions that are not parameter expressions must have the same number of equations in each branch, equation count is {2,0} for each respective branch.
-// Error: The language feature if-equations is not supported. Suggested workaround: rewrite equations using if-expressions: equation
-//   if initial() then
-//   v_source = q_fp1;
-//   x = 0.0;
-//   end if;
+// "Check of Modelica.Electrical.Analog.Basic.OpAmpDetailed completed successfully.
 // 
+// 
+// Class Modelica.Electrical.Analog.Basic.OpAmpDetailed has 31 equation(s) and 31 variable(s).
+// 14 of these are trivial equation(s).
 // "
 // ""
 // endResult
