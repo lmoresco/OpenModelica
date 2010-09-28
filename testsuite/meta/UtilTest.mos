@@ -1,6 +1,7 @@
 // name: UtilTest
 // cflags: +g=MetaModelica
 // status: correct
+// teardown_command: rm -f Util_* UtilTest_*
 
 loadFile("../../Compiler/Util.mo");
 getErrorString();
