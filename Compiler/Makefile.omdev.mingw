@@ -44,7 +44,7 @@ PROGD = omcd
 PROGP = omcp
 PROGF = omcf
 
-SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin
+SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin openmodelica.lefty
 
 SUBDIRS	= runtime absyn_builder modpar
 
