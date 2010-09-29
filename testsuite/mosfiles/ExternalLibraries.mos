@@ -1,6 +1,7 @@
 // name: ExternalLibraries
 // keyword: external functions, libraries
 // status: correct
+// teardown_command: rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log
 //
 // External functions, Library and Include annotation.
 //
@@ -23,11 +24,6 @@ val(y,0.6);
 val(y,0.8);
 val(y,1.0);
 getErrorString();
-system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExternalFunc2.a ExternalLibraries1* output.log");
-
-
-
-
 
 // Result:
 // true
@@ -50,5 +46,4 @@ system("rm -rf ExternalFunc1_ext.o ExternalFunc2.a libExternalFunc1_ext.o libExt
 // 1.06963566764904
 // 1.03783726511909
 // ""
-// 0
 // endResult
