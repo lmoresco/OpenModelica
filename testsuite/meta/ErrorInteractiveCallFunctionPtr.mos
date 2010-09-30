@@ -1,0 +1,18 @@
+// name: ErrorInteractiveCallFunctionPtr
+// cflags: +g=MetaModelica +d=noevalfunc
+// teardown_command: rm -f ErrorInteractiveCallFunctionPtr_*
+// status: correct
+
+loadFile("ErrorInteractiveCallFunctionPtr.mo");
+generateCode(ErrorInteractiveCallFunctionPtr.func);
+getErrorString();
+ErrorInteractiveCallFunctionPtr.applyIntAdd(1,2);
+getErrorString();
+// Result:
+// true
+// 
+// "Error: ErrorInteractiveCallFunctionPtr_func has a function pointer as input. OpenModelica does not support this feature in the interactive environment. Suggested workaround: Call this function with the arguments you want from another function (that does not have function pointer input). Then call that function from the interactive environment instead.
+// "
+// 3
+// ""
+// endResult

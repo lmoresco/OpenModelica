@@ -13,6 +13,7 @@ BuiltinString.mos \
 ComplicatedInteractive.mos \
 Equality.mos \
 EqPatternm.mos \
+ErrorInteractiveCallFunctionPtr.mos \
 ErrorMatchNumOutput.mos \
 Failure.mos \
 List1.mos \
