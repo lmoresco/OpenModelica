@@ -21,7 +21,7 @@ end NdFeB;
 end HardMagnetic;
 
 class RecordExtends
-  HardMagnetic.NdFeB a = HardMagnetic.NdFeB();//HardMagnetic.NdFeB();
+  HardMagnetic.NdFeB a = HardMagnetic.NdFeB();
 end RecordExtends;
 
 // Result:

@@ -9,9 +9,9 @@ a:=PartialFn3.ApplyIntOp(PartialFn3.AddInt,4);
 
 // Result:
 // true
-//  metamodelica non implemented
-//  metamodelica non implemented
 // Error processing file: PartialFn3.mos
+// Error: Cannot evaluate function pointers (got PartialFn3.AddInt).
+// 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 
