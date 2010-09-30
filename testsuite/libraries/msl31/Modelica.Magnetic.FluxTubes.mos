@@ -951,9 +951,13 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmFixedPos.flange.s = pmActuator.flange.s;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour;
 // "
-// ""
+// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// "
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour completed successfully.
 // 
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour has 237 equation(s) and 237 variable(s).
 // 132 of these are trivial equation(s).
@@ -1465,9 +1469,13 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   source.n.v = actuator.n.v;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour;
 // "
-// ""
+// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// "
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour completed successfully.
 // 
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour has 150 equation(s) and 150 variable(s).
 // 77 of these are trivial equation(s).
@@ -2108,9 +2116,15 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmLoad.flange_b.f = 0.0;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke;
 // "
-// ""
+// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// "
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke completed successfully.
 // 
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke has 239 equation(s) and 239 variable(s).
 // 126 of these are trivial equation(s).
@@ -2460,9 +2474,11 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   p.i = 0.0;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator;
 // "
-// ""
+// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
+// "
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator completed successfully.
 // 
+// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator has 129 equation(s) and 129 variable(s).
 // 64 of these are trivial equation(s).
