@@ -1,0 +1,27 @@
+// name:     Lookup11
+// keywords: scoping, lookup, bug1165
+// status:   incorrect
+// 
+// Checks that lookup fails to find P.B from A, since it is only allowed to look
+// in the inner P package and not the outer.
+// 
+
+loadFile("LookupPackageFail.mo");
+instantiateModel(P.A);
+getErrorString();
+checkModel(P.A);
+getErrorString();
+
+// Result:
+// true
+// ""
+// "Error: Class P.B not found in scope P.A while instantiating b.
+// Error: Error occured while flattening model P.A
+// Error: Class P.B not found in scope P.A while instantiating b.
+// Error: Error occured while flattening model P.A
+// "
+// "Error: Class P.B not found in scope P.A while instantiating b.
+// Error: Error occured while flattening model P.A
+// "
+// ""
+// endResult
