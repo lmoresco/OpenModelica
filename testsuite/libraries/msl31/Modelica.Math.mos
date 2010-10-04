@@ -26,17 +26,11 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // ""
 // "Check of Modelica.Math.Vectors.norm completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation p == 2.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation p == 1e+60,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation p == 1.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
 // "Check of Modelica.Math.Matrices.norm completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation p == 1.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation p == 2.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation p == 1e+60,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
@@ -62,32 +56,21 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // ""
 // "Check of Modelica.Math.Matrices.balance completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
 // "Check of Modelica.Math.Matrices.exp completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.exp.columnNorm(D + M - D) == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
 // "Check of Modelica.Math.Matrices.integralExp completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.integralExp.columnNorm(Psi + M - Psi) == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
 // "Check of Modelica.Math.Matrices.integralExpT completed successfully.
 // 
-// Warning: In component <NO COMPONENT>, in relation CO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation RO == 0.0,  ==  on Reals is only allowed inside functions.
-// Warning: In component <NO COMPONENT>, in relation Modelica.Math.Matrices.exp.columnNorm(D + M - D) == 0.0,  ==  on Reals is only allowed inside functions.
 // 
 // "
 // ""
