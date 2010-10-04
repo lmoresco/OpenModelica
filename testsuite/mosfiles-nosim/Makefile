@@ -17,7 +17,7 @@ IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 interactive_api_param.mos interactive_api_classes.mos \
 interactive_api_loadsave.mos  interactive_api_attributes.mos \
 loadFileInteractiveQualified.mos \
-LookupPackageFail.mo \
+LookupPackageFail.mos \
 matrices.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
