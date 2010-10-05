@@ -12,15 +12,15 @@ getErrorString();
 // Result:
 // true
 // "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex
-// input Real[:] table "Vector of time instants";
-// input Real simulationStartTime(quantity = "Time", unit = "s") "Simulation start time";
-// input Boolean startValue "Value of y for y < table[1]";
-// output Integer index "First index to be used";
-// output Real nextTime(quantity = "Time", unit = "s") "Time instant of first event";
-// output Boolean y "Value of y at simulationStartTime";
-// protected Real t_last(quantity = "Time", unit = "s");
-// protected Integer j;
-// protected Integer n = size(table,1) "Number of table points";
+//   input Real[:] table "Vector of time instants";
+//   input Real simulationStartTime(quantity = "Time", unit = "s") "Simulation start time";
+//   input Boolean startValue "Value of y for y < table[1]";
+//   output Integer index "First index to be used";
+//   output Real nextTime(quantity = "Time", unit = "s") "Time instant of first event";
+//   output Boolean y "Value of y at simulationStartTime";
+//   protected Real t_last(quantity = "Time", unit = "s");
+//   protected Integer j;
+//   protected Integer n = size(table,1) "Number of table points";
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
@@ -38,7 +38,7 @@ getErrorString();
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true,6) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true,6) + "] = " + String(table[i],0,true,6));
+//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true) + "] = " + String(table[i],0,true,6));
 //     end for;
 //     j := 1;
 //     y := startValue;
@@ -60,30 +60,30 @@ getErrorString();
 // end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
 // 
 // class Modelica.Blocks.Examples.ShowLogicalSources
-// output Boolean table.y "Connector of Boolean output signal";
-// parameter Boolean table.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
-// parameter Real table.table[1](quantity = "Time", unit = "s") = 2.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table.table[2](quantity = "Time", unit = "s") = 4.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table.table[3](quantity = "Time", unit = "s") = 6.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table.table[4](quantity = "Time", unit = "s") = 8.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// protected parameter Integer table.n = 4 "Number of table points";
-// protected Real table.nextTime(quantity = "Time", unit = "s");
-// protected Integer table.index "Index of actual table entry";
-// output Boolean const.y "Connector of Boolean output signal";
-// parameter Boolean const.k = true "Constant output value";
-// output Boolean step.y "Connector of Boolean output signal";
-// parameter Real step.startTime(quantity = "Time", unit = "s") = 4.0 "Time instant of step start";
-// parameter Boolean step.startValue = false "Output before startTime";
-// output Boolean pulse.y "Connector of Boolean output signal";
-// parameter Real pulse.width(min = 1e-60, max = 100.0) = 50.0 "Width of pulse in % of period";
-// parameter Real pulse.period(quantity = "Time", unit = "s", min = 1e-60) = 1.5 "Time for one period";
-// parameter Real pulse.startTime(quantity = "Time", unit = "s") = 0.0 "Time instant of first pulse";
-// protected parameter Real pulse.Twidth(quantity = "Time", unit = "s") = pulse.period * pulse.width / 100.0 "width of one pulse";
-// protected discrete Real pulse.pulsStart(quantity = "Time", unit = "s") "Start time of pulse";
-// output Boolean sample.y "Connector of Boolean output signal";
-// parameter Real sample.period(quantity = "Time", unit = "s", min = 1e-60) = 0.5 "Sample period";
-// parameter Real sample.startTime(quantity = "Time", unit = "s") = 0.0 "Time instant of first sample trigger";
-// output Boolean booleanExpression.y = pulse.y AND step.y "Value of Boolean output";
+//   output Boolean table.y "Connector of Boolean output signal";
+//   parameter Boolean table.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
+//   parameter Real table.table[1](quantity = "Time", unit = "s") = 2.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table.table[2](quantity = "Time", unit = "s") = 4.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table.table[3](quantity = "Time", unit = "s") = 6.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table.table[4](quantity = "Time", unit = "s") = 8.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   protected parameter Integer table.n = 4 "Number of table points";
+//   protected Real table.nextTime(quantity = "Time", unit = "s");
+//   protected Integer table.index "Index of actual table entry";
+//   output Boolean const.y "Connector of Boolean output signal";
+//   parameter Boolean const.k = true "Constant output value";
+//   output Boolean step.y "Connector of Boolean output signal";
+//   parameter Real step.startTime(quantity = "Time", unit = "s") = 4.0 "Time instant of step start";
+//   parameter Boolean step.startValue = false "Output before startTime";
+//   output Boolean pulse.y "Connector of Boolean output signal";
+//   parameter Real pulse.width(min = 1e-60, max = 100.0) = 50.0 "Width of pulse in % of period";
+//   parameter Real pulse.period(quantity = "Time", unit = "s", min = 1e-60) = 1.5 "Time for one period";
+//   parameter Real pulse.startTime(quantity = "Time", unit = "s") = 0.0 "Time instant of first pulse";
+//   protected parameter Real pulse.Twidth(quantity = "Time", unit = "s") = pulse.period * pulse.width / 100.0 "width of one pulse";
+//   protected discrete Real pulse.pulsStart(quantity = "Time", unit = "s") "Start time of pulse";
+//   output Boolean sample.y "Connector of Boolean output signal";
+//   parameter Real sample.period(quantity = "Time", unit = "s", min = 1e-60) = 0.5 "Sample period";
+//   parameter Real sample.startTime(quantity = "Time", unit = "s") = 0.0 "Time instant of first sample trigger";
+//   output Boolean booleanExpression.y = pulse.y AND step.y "Value of Boolean output";
 // initial equation
 //   pulse.pulsStart = pulse.startTime;
 // initial algorithm

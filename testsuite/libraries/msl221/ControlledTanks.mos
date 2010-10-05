@@ -38,7 +38,7 @@ getErrorString();
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true,6) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true,6) + "] = " + String(table[i],0,true,6));
+//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true) + "] = " + String(table[i],0,true,6));
 //     end for;
 //     j := 1;
 //     y := startValue;

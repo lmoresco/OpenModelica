@@ -19,14 +19,14 @@ end StringBoolean;
 
 // Result:
 // class StringBoolean
-// String s1;
-// String s2;
-// Boolean b;
-// String s3;
+//   String s1;
+//   String s2;
+//   Boolean b;
+//   String s3;
 // equation
 //   s1 = "true";
 //   s2 = "false";
 //   b = true;
-//   s3 = String(b,0,true,6);
+//   s3 = String(b,0,true);
 // end StringBoolean;
 // endResult

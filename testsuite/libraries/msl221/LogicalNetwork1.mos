@@ -12,15 +12,15 @@ getErrorString();
 // Result:
 // true
 // "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex
-// input Real[:] table "Vector of time instants";
-// input Real simulationStartTime(quantity = "Time", unit = "s") "Simulation start time";
-// input Boolean startValue "Value of y for y < table[1]";
-// output Integer index "First index to be used";
-// output Real nextTime(quantity = "Time", unit = "s") "Time instant of first event";
-// output Boolean y "Value of y at simulationStartTime";
-// protected Real t_last(quantity = "Time", unit = "s");
-// protected Integer j;
-// protected Integer n = size(table,1) "Number of table points";
+//   input Real[:] table "Vector of time instants";
+//   input Real simulationStartTime(quantity = "Time", unit = "s") "Simulation start time";
+//   input Boolean startValue "Value of y for y < table[1]";
+//   output Integer index "First index to be used";
+//   output Real nextTime(quantity = "Time", unit = "s") "Time instant of first event";
+//   output Boolean y "Value of y at simulationStartTime";
+//   protected Real t_last(quantity = "Time", unit = "s");
+//   protected Integer j;
+//   protected Integer n = size(table,1) "Number of table points";
 // algorithm
 //   if size(table,1) == 0 then
 //     index := 0;
@@ -38,7 +38,7 @@ getErrorString();
 //   else
 //     t_last := table[1];
 //     for i in 2:n loop
-//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true,6) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true,6) + "] = " + String(table[i],0,true,6));
+//       assert( table[i] > t_last, "Time values of table not strict monotonically increasing: table[" + String(i - 1,0,true) + "] = " + String(table[i - 1],0,true,6) + "table[" + String(i,0,true) + "] = " + String(table[i],0,true,6));
 //     end for;
 //     j := 1;
 //     y := startValue;
@@ -60,35 +60,35 @@ getErrorString();
 // end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
 // 
 // class Modelica.Blocks.Examples.LogicalNetwork1
-// output Boolean table2.y "Connector of Boolean output signal";
-// parameter Boolean table2.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
-// parameter Real table2.table[1](quantity = "Time", unit = "s") = 1.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table2.table[2](quantity = "Time", unit = "s") = 3.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table2.table[3](quantity = "Time", unit = "s") = 5.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table2.table[4](quantity = "Time", unit = "s") = 7.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// protected parameter Integer table2.n = 4 "Number of table points";
-// protected Real table2.nextTime(quantity = "Time", unit = "s");
-// protected Integer table2.index "Index of actual table entry";
-// output Boolean table1.y "Connector of Boolean output signal";
-// parameter Boolean table1.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
-// parameter Real table1.table[1](quantity = "Time", unit = "s") = 2.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table1.table[2](quantity = "Time", unit = "s") = 4.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table1.table[3](quantity = "Time", unit = "s") = 6.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// parameter Real table1.table[4](quantity = "Time", unit = "s") = 8.0 "Vector of time points. At every time point, the output y gets its opposite value";
-// protected parameter Integer table1.n = 4 "Number of table points";
-// protected Real table1.nextTime(quantity = "Time", unit = "s");
-// protected Integer table1.index "Index of actual table entry";
-// input Boolean Not1.u "Connector of Boolean input signal";
-// output Boolean Not1.y "Connector of Boolean output signal";
-// input Boolean And1.u1 "Connector of first Boolean input signal";
-// input Boolean And1.u2 "Connector of second Boolean input signal";
-// output Boolean And1.y "Connector of Boolean output signal";
-// input Boolean Or1.u1 "Connector of first Boolean input signal";
-// input Boolean Or1.u2 "Connector of second Boolean input signal";
-// output Boolean Or1.y "Connector of Boolean output signal";
-// input Boolean Pre1.u "Connector of Boolean input signal";
-// output Boolean Pre1.y "Connector of Boolean output signal";
-// parameter Boolean Pre1.pre_u_start = false "Start value of pre(u) at initial time";
+//   output Boolean table2.y "Connector of Boolean output signal";
+//   parameter Boolean table2.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
+//   parameter Real table2.table[1](quantity = "Time", unit = "s") = 1.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table2.table[2](quantity = "Time", unit = "s") = 3.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table2.table[3](quantity = "Time", unit = "s") = 5.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table2.table[4](quantity = "Time", unit = "s") = 7.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   protected parameter Integer table2.n = 4 "Number of table points";
+//   protected Real table2.nextTime(quantity = "Time", unit = "s");
+//   protected Integer table2.index "Index of actual table entry";
+//   output Boolean table1.y "Connector of Boolean output signal";
+//   parameter Boolean table1.startValue = false "Start value of y. At time = table[1], y changes to 'not startValue'";
+//   parameter Real table1.table[1](quantity = "Time", unit = "s") = 2.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table1.table[2](quantity = "Time", unit = "s") = 4.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table1.table[3](quantity = "Time", unit = "s") = 6.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   parameter Real table1.table[4](quantity = "Time", unit = "s") = 8.0 "Vector of time points. At every time point, the output y gets its opposite value";
+//   protected parameter Integer table1.n = 4 "Number of table points";
+//   protected Real table1.nextTime(quantity = "Time", unit = "s");
+//   protected Integer table1.index "Index of actual table entry";
+//   input Boolean Not1.u "Connector of Boolean input signal";
+//   output Boolean Not1.y "Connector of Boolean output signal";
+//   input Boolean And1.u1 "Connector of first Boolean input signal";
+//   input Boolean And1.u2 "Connector of second Boolean input signal";
+//   output Boolean And1.y "Connector of Boolean output signal";
+//   input Boolean Or1.u1 "Connector of first Boolean input signal";
+//   input Boolean Or1.u2 "Connector of second Boolean input signal";
+//   output Boolean Or1.y "Connector of Boolean output signal";
+//   input Boolean Pre1.u "Connector of Boolean input signal";
+//   output Boolean Pre1.y "Connector of Boolean output signal";
+//   parameter Boolean Pre1.pre_u_start = false "Start value of pre(u) at initial time";
 // initial equation
 //   pre(Pre1.u) = Pre1.pre_u_start;
 // initial algorithm
@@ -99,12 +99,12 @@ getErrorString();
 //   And1.y = And1.u1 AND And1.u2;
 //   Or1.y = Or1.u1 OR Or1.u2;
 //   Pre1.y = pre(Pre1.u);
-// table2.y = Not1.u;
-// And1.y = Or1.u2;
-// table1.y = Or1.u1;
-// Not1.y = And1.u1;
-// Pre1.y = And1.u2;
-// Or1.y = Pre1.u;
+//   table2.y = Not1.u;
+//   And1.y = Or1.u2;
+//   table1.y = Or1.u1;
+//   Not1.y = And1.u1;
+//   Pre1.y = And1.u2;
+//   Or1.y = Pre1.u;
 // algorithm
 //   when time >= pre(table2.nextTime) AND table2.n > 0 then
 //     if table2.index < table2.n then
