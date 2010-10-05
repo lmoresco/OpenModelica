@@ -30,7 +30,7 @@ $setbaseline=0;
 $verbose="yes";
 $pager="cat";
 $log="";
-$tmpdir = "/tmp/omc-rtest/".getlogin()."-$dirname";
+$tmpdir = "/tmp/omc-rtest/".(getlogin()||getpwuid($<)||"unknown")."-$dirname";
 system "mkdir -p $tmpdir";
 $got = "$tmpdir/equations-got";
 $expected = "$tmpdir/equations-expected";
