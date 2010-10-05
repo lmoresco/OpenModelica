@@ -19,6 +19,7 @@ interactive_api_loadsave.mos  interactive_api_attributes.mos \
 loadFileInteractiveQualified.mos \
 LookupPackageFail.mos \
 matrices.mos \
+ModifierVariabilityError.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \

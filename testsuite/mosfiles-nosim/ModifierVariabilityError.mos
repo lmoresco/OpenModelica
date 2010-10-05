@@ -1,0 +1,22 @@
+// name:     ModifierVariabilityError
+// keywords: modifier variability bug1040
+// status:   correct
+// 
+//  Checks that the compiler gives an error if a modifier has higher variability
+//  than the component.
+//
+
+loadFile("ModifierVariabilityError.mo");
+checkModel(ModifierVariabilityErrorParam);
+checkModel(ModifierVariabilityErrorVar);
+
+// Result:
+// true
+// "[ModifierVariabilityError.mo:3:3-3:23:readonly] Error: Variable y: Component y of variability PARAM has binding x of higher variability VAR.
+// Error: Error occured while flattening model ModifierVariabilityErrorParam
+// "
+// "[ModifierVariabilityError.mo:8:3-8:20:readonly] Error: Variable y: Component start of variability PARAM has binding x of higher variability VAR.
+// [ModifierVariabilityError.mo:8:3-8:20:readonly] Error: Variable y: In modifier start = x, not processed in the built-in class Real
+// Error: Error occured while flattening model ModifierVariabilityErrorVar
+// "
+// endResult
