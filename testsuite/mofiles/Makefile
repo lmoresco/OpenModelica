@@ -522,6 +522,7 @@ VectorizeExtendedType.mo \
 VectorTest.mo \
 WhenElseNested.mo \
 WhenNested.mo \
+WhenNestedEquation.mo \
 WhenSemantics1.mo \
 While.mo \
 WillowForest.mo \
