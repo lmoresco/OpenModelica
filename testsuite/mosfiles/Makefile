@@ -50,6 +50,7 @@ Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
 HelloWorld.mos \
 LinearSysEq.mos \
+LocalVariableInit.mos \
 LotkaVolterra.mos \
 Matrix.mos  \
 MissV.mos \
