@@ -612,9 +612,6 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   transformerR.i[1] = transformerR.plug_p.pin[1].i;
 //   transformerR.i[2] = transformerR.plug_p.pin[2].i;
 //   transformerR.i[3] = transformerR.plug_p.pin[3].i;
-//   -transformerR.heatPort[3].Q_flow = 0.0;
-//   -transformerR.heatPort[2].Q_flow = 0.0;
-//   -transformerR.heatPort[1].Q_flow = 0.0;
 //   transformerR.resistor[3].n.i + (-transformerR.plug_n.pin[3].i) = 0.0;
 //   transformerR.resistor[3].n.v = transformerR.plug_n.pin[3].v;
 //   transformerR.resistor[2].n.i + (-transformerR.plug_n.pin[2].i) = 0.0;
@@ -687,9 +684,6 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   loadR.i[1] = loadR.plug_p.pin[1].i;
 //   loadR.i[2] = loadR.plug_p.pin[2].i;
 //   loadR.i[3] = loadR.plug_p.pin[3].i;
-//   -loadR.heatPort[3].Q_flow = 0.0;
-//   -loadR.heatPort[2].Q_flow = 0.0;
-//   -loadR.heatPort[1].Q_flow = 0.0;
 //   loadR.resistor[3].n.i + (-loadR.plug_n.pin[3].i) = 0.0;
 //   loadR.resistor[3].n.v = loadR.plug_n.pin[3].v;
 //   loadR.resistor[2].n.i + (-loadR.plug_n.pin[2].i) = 0.0;
@@ -769,21 +763,15 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   starT1.pin_n.v = groundT1.p.v;
 //   starS.pin_n.i + groundS.p.i = 0.0;
 //   starS.pin_n.v = groundS.p.v;
-//   loadR.heatPort[3].Q_flow = 0.0;
-//   loadR.heatPort[2].Q_flow = 0.0;
-//   loadR.heatPort[1].Q_flow = 0.0;
 //   starL.pin_n.i = 0.0;
-//   transformerR.heatPort[3].Q_flow = 0.0;
-//   transformerR.heatPort[2].Q_flow = 0.0;
-//   transformerR.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.TransformerYY;
 // "
 // ""
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYY completed successfully.
 // 
 // 
-// Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 293 equation(s) and 281 variable(s).
-// 223 of these are trivial equation(s).
+// Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 281 equation(s) and 281 variable(s).
+// 211 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.cos
@@ -1393,9 +1381,6 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   transformerR.i[1] = transformerR.plug_p.pin[1].i;
 //   transformerR.i[2] = transformerR.plug_p.pin[2].i;
 //   transformerR.i[3] = transformerR.plug_p.pin[3].i;
-//   -transformerR.heatPort[3].Q_flow = 0.0;
-//   -transformerR.heatPort[2].Q_flow = 0.0;
-//   -transformerR.heatPort[1].Q_flow = 0.0;
 //   transformerR.resistor[3].n.i + (-transformerR.plug_n.pin[3].i) = 0.0;
 //   transformerR.resistor[3].n.v = transformerR.plug_n.pin[3].v;
 //   transformerR.resistor[2].n.i + (-transformerR.plug_n.pin[2].i) = 0.0;
@@ -1468,9 +1453,6 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   loadR.i[1] = loadR.plug_p.pin[1].i;
 //   loadR.i[2] = loadR.plug_p.pin[2].i;
 //   loadR.i[3] = loadR.plug_p.pin[3].i;
-//   -loadR.heatPort[3].Q_flow = 0.0;
-//   -loadR.heatPort[2].Q_flow = 0.0;
-//   -loadR.heatPort[1].Q_flow = 0.0;
 //   loadR.resistor[3].n.i + (-loadR.plug_n.pin[3].i) = 0.0;
 //   loadR.resistor[3].n.v = loadR.plug_n.pin[3].v;
 //   loadR.resistor[2].n.i + (-loadR.plug_n.pin[2].i) = 0.0;
@@ -1554,20 +1536,14 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   groundT.p.v = starT.pin_n.v;
 //   groundS.p.i + starS.pin_n.i = 0.0;
 //   groundS.p.v = starS.pin_n.v;
-//   loadR.heatPort[3].Q_flow = 0.0;
-//   loadR.heatPort[2].Q_flow = 0.0;
-//   loadR.heatPort[1].Q_flow = 0.0;
-//   transformerR.heatPort[3].Q_flow = 0.0;
-//   transformerR.heatPort[2].Q_flow = 0.0;
-//   transformerR.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.TransformerYD;
 // "
 // ""
 // "Check of Modelica.Electrical.MultiPhase.Examples.TransformerYD completed successfully.
 // 
 // 
-// Class Modelica.Electrical.MultiPhase.Examples.TransformerYD has 297 equation(s) and 285 variable(s).
-// 225 of these are trivial equation(s).
+// Class Modelica.Electrical.MultiPhase.Examples.TransformerYD has 285 equation(s) and 285 variable(s).
+// 213 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.sin
@@ -2177,12 +2153,6 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   cDC1.n.i + (cDC2.p.i + groundDC.p.i) = 0.0;
 //   cDC1.n.v = cDC2.p.v;
 //   cDC2.p.v = groundDC.p.v;
-//   idealDiode2.heatPort[3].Q_flow = 0.0;
-//   idealDiode2.heatPort[2].Q_flow = 0.0;
-//   idealDiode2.heatPort[1].Q_flow = 0.0;
-//   idealDiode1.heatPort[3].Q_flow = 0.0;
-//   idealDiode1.heatPort[2].Q_flow = 0.0;
-//   idealDiode1.heatPort[1].Q_flow = 0.0;
 //   starS.pin_n.i = 0.0;
 // end Modelica.Electrical.MultiPhase.Examples.Rectifier;
 // "
@@ -2190,8 +2160,8 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 // "Check of Modelica.Electrical.MultiPhase.Examples.Rectifier completed successfully.
 // 
 // 
-// Class Modelica.Electrical.MultiPhase.Examples.Rectifier has 224 equation(s) and 218 variable(s).
-// 153 of these are trivial equation(s).
+// Class Modelica.Electrical.MultiPhase.Examples.Rectifier has 218 equation(s) and 218 variable(s).
+// 147 of these are trivial equation(s).
 // "
 // ""
 // endResult

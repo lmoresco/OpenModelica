@@ -687,9 +687,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aimc.rs.i[1] = aimc.rs.plug_p.pin[1].i;
 //   aimc.rs.i[2] = aimc.rs.plug_p.pin[2].i;
 //   aimc.rs.i[3] = aimc.rs.plug_p.pin[3].i;
-//   -aimc.rs.heatPort[3].Q_flow = 0.0;
-//   -aimc.rs.heatPort[2].Q_flow = 0.0;
-//   -aimc.rs.heatPort[1].Q_flow = 0.0;
 //   aimc.rs.resistor[3].n.i + (-aimc.rs.plug_n.pin[3].i) = 0.0;
 //   aimc.rs.resistor[3].n.v = aimc.rs.plug_n.pin[3].v;
 //   aimc.rs.resistor[2].n.i + (-aimc.rs.plug_n.pin[2].i) = 0.0;
@@ -823,9 +820,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aimc.airGapS.spacePhasor_r.i_[2] + aimc.squirrelCageR.spacePhasor_r.i_[2] = 0.0;
 //   aimc.airGapS.spacePhasor_r.v_[1] = aimc.squirrelCageR.spacePhasor_r.v_[1];
 //   aimc.airGapS.spacePhasor_r.v_[2] = aimc.squirrelCageR.spacePhasor_r.v_[2];
-//   aimc.rs.heatPort[3].Q_flow = 0.0;
-//   aimc.rs.heatPort[2].Q_flow = 0.0;
-//   aimc.rs.heatPort[1].Q_flow = 0.0;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.v = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.v;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
@@ -945,9 +939,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.i[1] = idealCloser.plug_p.pin[1].i;
 //   idealCloser.i[2] = idealCloser.plug_p.pin[2].i;
 //   idealCloser.i[3] = idealCloser.plug_p.pin[3].i;
-//   -idealCloser.heatPort[3].Q_flow = 0.0;
-//   -idealCloser.heatPort[2].Q_flow = 0.0;
-//   -idealCloser.heatPort[1].Q_flow = 0.0;
 //   idealCloser.control[1] = idealCloser.idealClosingSwitch[1].control;
 //   idealCloser.control[2] = idealCloser.idealClosingSwitch[2].control;
 //   idealCloser.control[3] = idealCloser.idealClosingSwitch[3].control;
@@ -1049,17 +1040,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   star.pin_n.i + ground.p.i = 0.0;
 //   star.pin_n.v = ground.p.v;
 //   aimc.internalSupport.tau = 0.0;
-//   idealCloser.heatPort[3].Q_flow = 0.0;
-//   idealCloser.heatPort[2].Q_flow = 0.0;
-//   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMC_DOL;
 // "
 // ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMC_DOL completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.AIMC_DOL has 402 equation(s) and 390 variable(s).
-// 289 of these are trivial equation(s).
+// Class Modelica.Electrical.Machines.Examples.AIMC_DOL has 390 equation(s) and 390 variable(s).
+// 277 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.atan2
@@ -1835,9 +1823,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aimc.rs.i[1] = aimc.rs.plug_p.pin[1].i;
 //   aimc.rs.i[2] = aimc.rs.plug_p.pin[2].i;
 //   aimc.rs.i[3] = aimc.rs.plug_p.pin[3].i;
-//   -aimc.rs.heatPort[3].Q_flow = 0.0;
-//   -aimc.rs.heatPort[2].Q_flow = 0.0;
-//   -aimc.rs.heatPort[1].Q_flow = 0.0;
 //   aimc.rs.resistor[3].n.i + (-aimc.rs.plug_n.pin[3].i) = 0.0;
 //   aimc.rs.resistor[3].n.v = aimc.rs.plug_n.pin[3].v;
 //   aimc.rs.resistor[2].n.i + (-aimc.rs.plug_n.pin[2].i) = 0.0;
@@ -1971,9 +1956,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aimc.airGapS.spacePhasor_r.i_[2] + aimc.squirrelCageR.spacePhasor_r.i_[2] = 0.0;
 //   aimc.airGapS.spacePhasor_r.v_[1] = aimc.squirrelCageR.spacePhasor_r.v_[1];
 //   aimc.airGapS.spacePhasor_r.v_[2] = aimc.squirrelCageR.spacePhasor_r.v_[2];
-//   aimc.rs.heatPort[3].Q_flow = 0.0;
-//   aimc.rs.heatPort[2].Q_flow = 0.0;
-//   aimc.rs.heatPort[1].Q_flow = 0.0;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.v = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.v;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
@@ -2093,9 +2075,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.i[1] = idealCloser.plug_p.pin[1].i;
 //   idealCloser.i[2] = idealCloser.plug_p.pin[2].i;
 //   idealCloser.i[3] = idealCloser.plug_p.pin[3].i;
-//   -idealCloser.heatPort[3].Q_flow = 0.0;
-//   -idealCloser.heatPort[2].Q_flow = 0.0;
-//   -idealCloser.heatPort[1].Q_flow = 0.0;
 //   idealCloser.control[1] = idealCloser.idealClosingSwitch[1].control;
 //   idealCloser.control[2] = idealCloser.idealClosingSwitch[2].control;
 //   idealCloser.control[3] = idealCloser.idealClosingSwitch[3].control;
@@ -2142,9 +2121,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   switchYD.idealCommutingSwitch.idealCommutingSwitch[3].n2.i = (-switchYD.idealCommutingSwitch.idealCommutingSwitch[3].s2) * (if switchYD.idealCommutingSwitch.idealCommutingSwitch[3].control then 1.0 else switchYD.idealCommutingSwitch.idealCommutingSwitch[3].Goff);
 //   switchYD.idealCommutingSwitch.idealCommutingSwitch[3].LossPower = switchYD.idealCommutingSwitch.idealCommutingSwitch[3].p.i * switchYD.idealCommutingSwitch.idealCommutingSwitch[3].p.v + (switchYD.idealCommutingSwitch.idealCommutingSwitch[3].n1.i * switchYD.idealCommutingSwitch.idealCommutingSwitch[3].n1.v + switchYD.idealCommutingSwitch.idealCommutingSwitch[3].n2.i * switchYD.idealCommutingSwitch.idealCommutingSwitch[3].n2.v);
 //   switchYD.idealCommutingSwitch.idealCommutingSwitch[3].T_heatPort = switchYD.idealCommutingSwitch.idealCommutingSwitch[3].T;
-//   -switchYD.idealCommutingSwitch.heatPort[3].Q_flow = 0.0;
-//   -switchYD.idealCommutingSwitch.heatPort[2].Q_flow = 0.0;
-//   -switchYD.idealCommutingSwitch.heatPort[1].Q_flow = 0.0;
 //   switchYD.idealCommutingSwitch.control[1] = switchYD.idealCommutingSwitch.idealCommutingSwitch[1].control;
 //   switchYD.idealCommutingSwitch.control[2] = switchYD.idealCommutingSwitch.idealCommutingSwitch[2].control;
 //   switchYD.idealCommutingSwitch.control[3] = switchYD.idealCommutingSwitch.idealCommutingSwitch[3].control;
@@ -2201,9 +2177,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   switchYD.delta.plug_p.pin[1].i + ((-switchYD.plugSupply.pin[1].i) + (-switchYD.plug_sp.pin[1].i)) = 0.0;
 //   switchYD.delta.plug_p.pin[1].v = switchYD.plugSupply.pin[1].v;
 //   switchYD.plugSupply.pin[1].v = switchYD.plug_sp.pin[1].v;
-//   switchYD.idealCommutingSwitch.heatPort[3].Q_flow = 0.0;
-//   switchYD.idealCommutingSwitch.heatPort[2].Q_flow = 0.0;
-//   switchYD.idealCommutingSwitch.heatPort[1].Q_flow = 0.0;
 //   switchYD.star.pin_n.i = 0.0;
 //   booleanStepYD[1].y = if time >= booleanStepYD[1].startTime then  NOT booleanStepYD[1].startValue else booleanStepYD[1].startValue;
 //   booleanStepYD[2].y = if time >= booleanStepYD[2].startTime then  NOT booleanStepYD[2].startValue else booleanStepYD[2].startValue;
@@ -2273,17 +2246,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   star.pin_n.i + ground.p.i = 0.0;
 //   star.pin_n.v = ground.p.v;
 //   aimc.internalSupport.tau = 0.0;
-//   idealCloser.heatPort[3].Q_flow = 0.0;
-//   idealCloser.heatPort[2].Q_flow = 0.0;
-//   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMC_YD;
 // "
 // ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMC_YD completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.AIMC_YD has 476 equation(s) and 458 variable(s).
-// 341 of these are trivial equation(s).
+// Class Modelica.Electrical.Machines.Examples.AIMC_YD has 458 equation(s) and 458 variable(s).
+// 323 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.atan2
@@ -3351,9 +3321,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aims.rs.i[1] = aims.rs.plug_p.pin[1].i;
 //   aims.rs.i[2] = aims.rs.plug_p.pin[2].i;
 //   aims.rs.i[3] = aims.rs.plug_p.pin[3].i;
-//   -aims.rs.heatPort[3].Q_flow = 0.0;
-//   -aims.rs.heatPort[2].Q_flow = 0.0;
-//   -aims.rs.heatPort[1].Q_flow = 0.0;
 //   aims.rs.resistor[3].n.i + (-aims.rs.plug_n.pin[3].i) = 0.0;
 //   aims.rs.resistor[3].n.v = aims.rs.plug_n.pin[3].v;
 //   aims.rs.resistor[2].n.i + (-aims.rs.plug_n.pin[2].i) = 0.0;
@@ -3518,9 +3485,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aims.rr.i[1] = aims.rr.plug_p.pin[1].i;
 //   aims.rr.i[2] = aims.rr.plug_p.pin[2].i;
 //   aims.rr.i[3] = aims.rr.plug_p.pin[3].i;
-//   -aims.rr.heatPort[3].Q_flow = 0.0;
-//   -aims.rr.heatPort[2].Q_flow = 0.0;
-//   -aims.rr.heatPort[1].Q_flow = 0.0;
 //   aims.rr.resistor[3].n.i + (-aims.rr.plug_n.pin[3].i) = 0.0;
 //   aims.rr.resistor[3].n.v = aims.rr.plug_n.pin[3].v;
 //   aims.rr.resistor[2].n.i + (-aims.rr.plug_n.pin[2].i) = 0.0;
@@ -3608,12 +3572,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   aims.rr.plug_n.pin[2].v = aims.lrsigma.plug_p.pin[2].v;
 //   aims.rr.plug_n.pin[1].i + aims.lrsigma.plug_p.pin[1].i = 0.0;
 //   aims.rr.plug_n.pin[1].v = aims.lrsigma.plug_p.pin[1].v;
-//   aims.rs.heatPort[3].Q_flow = 0.0;
-//   aims.rs.heatPort[2].Q_flow = 0.0;
-//   aims.rs.heatPort[1].Q_flow = 0.0;
-//   aims.rr.heatPort[3].Q_flow = 0.0;
-//   aims.rr.heatPort[2].Q_flow = 0.0;
-//   aims.rr.heatPort[1].Q_flow = 0.0;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.v = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.v;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i;
@@ -3733,9 +3691,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   idealCloser.i[1] = idealCloser.plug_p.pin[1].i;
 //   idealCloser.i[2] = idealCloser.plug_p.pin[2].i;
 //   idealCloser.i[3] = idealCloser.plug_p.pin[3].i;
-//   -idealCloser.heatPort[3].Q_flow = 0.0;
-//   -idealCloser.heatPort[2].Q_flow = 0.0;
-//   -idealCloser.heatPort[1].Q_flow = 0.0;
 //   idealCloser.control[1] = idealCloser.idealClosingSwitch[1].control;
 //   idealCloser.control[2] = idealCloser.idealClosingSwitch[2].control;
 //   idealCloser.control[3] = idealCloser.idealClosingSwitch[3].control;
@@ -3811,9 +3766,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].n2.i = (-switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].s2) * (if switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].control then 1.0 else switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].Goff);
 //   switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].LossPower = switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].p.i * switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].p.v + (switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].n1.i * switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].n1.v + switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].n2.i * switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].n2.v);
 //   switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].T_heatPort = switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].T;
-//   -switchedRheostat.idealCommutingSwitch.heatPort[3].Q_flow = 0.0;
-//   -switchedRheostat.idealCommutingSwitch.heatPort[2].Q_flow = 0.0;
-//   -switchedRheostat.idealCommutingSwitch.heatPort[1].Q_flow = 0.0;
 //   switchedRheostat.idealCommutingSwitch.control[1] = switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[1].control;
 //   switchedRheostat.idealCommutingSwitch.control[2] = switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[2].control;
 //   switchedRheostat.idealCommutingSwitch.control[3] = switchedRheostat.idealCommutingSwitch.idealCommutingSwitch[3].control;
@@ -3865,9 +3817,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   switchedRheostat.rheostat.i[1] = switchedRheostat.rheostat.plug_p.pin[1].i;
 //   switchedRheostat.rheostat.i[2] = switchedRheostat.rheostat.plug_p.pin[2].i;
 //   switchedRheostat.rheostat.i[3] = switchedRheostat.rheostat.plug_p.pin[3].i;
-//   -switchedRheostat.rheostat.heatPort[3].Q_flow = 0.0;
-//   -switchedRheostat.rheostat.heatPort[2].Q_flow = 0.0;
-//   -switchedRheostat.rheostat.heatPort[1].Q_flow = 0.0;
 //   switchedRheostat.rheostat.resistor[3].n.i + (-switchedRheostat.rheostat.plug_n.pin[3].i) = 0.0;
 //   switchedRheostat.rheostat.resistor[3].n.v = switchedRheostat.rheostat.plug_n.pin[3].v;
 //   switchedRheostat.rheostat.resistor[2].n.i + (-switchedRheostat.rheostat.plug_n.pin[2].i) = 0.0;
@@ -3925,12 +3874,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   switchedRheostat.plug_p.pin[2].v = switchedRheostat.idealCommutingSwitch.plug_p.pin[2].v;
 //   (-switchedRheostat.plug_p.pin[1].i) + switchedRheostat.idealCommutingSwitch.plug_p.pin[1].i = 0.0;
 //   switchedRheostat.plug_p.pin[1].v = switchedRheostat.idealCommutingSwitch.plug_p.pin[1].v;
-//   switchedRheostat.idealCommutingSwitch.heatPort[3].Q_flow = 0.0;
-//   switchedRheostat.idealCommutingSwitch.heatPort[2].Q_flow = 0.0;
-//   switchedRheostat.idealCommutingSwitch.heatPort[1].Q_flow = 0.0;
-//   switchedRheostat.rheostat.heatPort[3].Q_flow = 0.0;
-//   switchedRheostat.rheostat.heatPort[2].Q_flow = 0.0;
-//   switchedRheostat.rheostat.heatPort[1].Q_flow = 0.0;
 //   assert(sineVoltage.plug_n.m == star.plug_p.m,"automatically generated from connect");
 //   assert(sineVoltage.plug_p.m == idealCloser.plug_p.m,"automatically generated from connect");
 //   assert(idealCloser.plug_n.m == currentQuasiRMSSensor.plug_p.m,"automatically generated from connect");
@@ -3997,17 +3940,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   star.pin_n.i + ground.p.i = 0.0;
 //   star.pin_n.v = ground.p.v;
 //   aims.internalSupport.tau = 0.0;
-//   idealCloser.heatPort[3].Q_flow = 0.0;
-//   idealCloser.heatPort[2].Q_flow = 0.0;
-//   idealCloser.heatPort[1].Q_flow = 0.0;
 // end Modelica.Electrical.Machines.Examples.AIMS_Start;
 // "
 // ""
 // "Check of Modelica.Electrical.Machines.Examples.AIMS_Start completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.AIMS_Start has 676 equation(s) and 646 variable(s).
-// 481 of these are trivial equation(s).
+// Class Modelica.Electrical.Machines.Examples.AIMS_Start has 646 equation(s) and 646 variable(s).
+// 451 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor
@@ -4827,9 +4767,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   smee.rs.i[1] = smee.rs.plug_p.pin[1].i;
 //   smee.rs.i[2] = smee.rs.plug_p.pin[2].i;
 //   smee.rs.i[3] = smee.rs.plug_p.pin[3].i;
-//   -smee.rs.heatPort[3].Q_flow = 0.0;
-//   -smee.rs.heatPort[2].Q_flow = 0.0;
-//   -smee.rs.heatPort[1].Q_flow = 0.0;
 //   smee.rs.resistor[3].n.i + (-smee.rs.plug_n.pin[3].i) = 0.0;
 //   smee.rs.resistor[3].n.v = smee.rs.plug_n.pin[3].v;
 //   smee.rs.resistor[2].n.i + (-smee.rs.plug_n.pin[2].i) = 0.0;
@@ -4993,9 +4930,6 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   smee.pin_ep.v = smee.re.p.v;
 //   smee.electricalExcitation.pin_en.i + (-smee.pin_en.i) = 0.0;
 //   smee.electricalExcitation.pin_en.v = smee.pin_en.v;
-//   smee.rs.heatPort[3].Q_flow = 0.0;
-//   smee.rs.heatPort[2].Q_flow = 0.0;
-//   smee.rs.heatPort[1].Q_flow = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].p.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].n.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].v = rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].p.v - rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].n.v;
@@ -5294,8 +5228,8 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 // "Check of Modelica.Electrical.Machines.Examples.SMEE_Generator completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 509 equation(s) and 501 variable(s).
-// 364 of these are trivial equation(s).
+// Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 503 equation(s) and 501 variable(s).
+// 358 of these are trivial equation(s).
 // "
 // ""
 // endResult
