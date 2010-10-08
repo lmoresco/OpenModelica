@@ -12,10 +12,12 @@ model DoubleDeclaration
 equation
   x = 1;
 end DoubleDeclaration;
+
 // Result:
 // Error processing file: DoubleDeclaration.mo
-// Error: Duplicate elements (due to inherited elements) not identical, first element is:  Real x;
-// , second element is:  Integer x;
+// [DoubleDeclaration.mo:11:3-11:9:writable] Error: Duplicate elements (due to inherited elements) not identical:
+// 	first element is:  Real x ;
+// 	second element is: Integer x ;
 // 
 // 
 // # Error encountered! Exiting...
