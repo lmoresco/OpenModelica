@@ -1,6 +1,6 @@
 TESTFILES = \
 EnzMM.mos Glycolysis.mos InsulinSignaling_Sedaghat.mos \
-UniBi.mos UniUni.mos
+UniBi.mos UniUni.mos BiochemModels.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

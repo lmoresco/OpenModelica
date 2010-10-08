@@ -32,7 +32,9 @@ PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
 # Run make testfailing
 FAILINGTESTFILES=  \
 
-.PHONY : test
+.PHONY : test sim
+
+all: test sim
 
 test:
 	@echo

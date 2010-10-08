@@ -192,6 +192,11 @@ DisturbedResistance4.mo \
 Div.mo \
 DocString.mo \
 DoubleDeclaration.mo \
+DuplicateElements.mo \
+DuplicateElementsEquivalent.mo \
+DuplicateElementsNonEquivalent.mo \
+DuplicateElementsExtends.mo \
+DuplicateElementsExtendsEquivalent.mo \
 Each1.mo \
 Encapsulated1.mo \
 Encapsulated2.mo \
