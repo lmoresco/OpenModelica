@@ -914,11 +914,11 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
         rr=VmaxEF*s1.c/(KmLAC + s1.c);
       end vef_;
 
-      centralMetabolism.cytosol cytosol(bamp=bamp, badp=badp, kh=kh, pn=pn, atp=atp, kt=kt, nad=nad, cr=cr) annotation(Placement(visible=true, transformation(origin={1.221,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
+      centralMetabolism.cytosol cytosol_(bamp=bamp, badp=badp, kh=kh, pn=pn, atp=atp, kt=kt, nad=nad, cr=cr) annotation(Placement(visible=true, transformation(origin={1.221,-0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
       centralMetabolism.extra_cellular.vef_ vef "vef" annotation(Placement(visible=true, transformation(origin={40.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-360)));
       centralMetabolism.extra_cellular.LACext_ LACext(c.start=0) "Lactate" annotation(Placement(visible=true, transformation(origin={70.0,0.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
       inner Real default_V=V "Variable used to make the compartment volume accessible for inner components. Do not edit.";
-      inner Real cytosol_V=cytosol.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
+      inner Real cytosol_V=cytosol_.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
       parameter Real iv1=0.603855;
       parameter Real iv2=0.0999758;
       parameter Real iv3=0.07427;
@@ -952,16 +952,16 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
       Real nad;
     equation 
       connect(vef.p1,LACext.n1) annotation(Line(visible=true, origin={60.625,0.0}, points={{-9.375,0.0},{9.375,-0.0}}));
-      connect(cytosol.node_LAC,vef.s1) annotation(Line(visible=true, origin={21.2374,-0.0}, points={{-7.5126,0.0},{7.5126,-0.0}}));
-      badp=k2adp*kadp/(kadp + cytosol.ADP.c);
-      adpt=cytosol.ADP.c*badp;
-      atpt=tan - adpt - ampt - cytosol.IMP.c;
-      ampt=cytosol.AMP.c*bamp;
-      atp=atpt/cytosol.V;
-      pn=(PNt - atpt*3 - adpt*2 - ampt - cytosol.CP.c*2 - cytosol.IMP.c - (cytosol.G6P.c + cytosol.F6P.c + cytosol.FDP.c*2 + cytosol.G3P.c + cytosol.DHAP.c)*cytosol.V)/cytosol.V;
-      bamp=k2amp*kamp/(kamp + cytosol.AMP.c);
-      nad=0.7 - cytosol.NADH.c;
-      cr=tcr - cytosol.CP.c;
+      connect(cytosol_.node_LAC,vef.s1) annotation(Line(visible=true, origin={21.2374,-0.0}, points={{-7.5126,0.0},{7.5126,-0.0}}));
+      badp=k2adp*kadp/(kadp + cytosol_.ADP.c);
+      adpt=cytosol_.ADP.c*badp;
+      atpt=tan - adpt - ampt - cytosol_.IMP.c;
+      ampt=cytosol_.AMP.c*bamp;
+      atp=atpt/cytosol_.V;
+      pn=(PNt - atpt*3 - adpt*2 - ampt - cytosol_.CP.c*2 - cytosol_.IMP.c - (cytosol_.G6P.c + cytosol_.F6P.c + cytosol_.FDP.c*2 + cytosol_.G3P.c + cytosol_.DHAP.c)*cytosol_.V)/cytosol_.V;
+      bamp=k2amp*kamp/(kamp + cytosol_.AMP.c);
+      nad=0.7 - cytosol_.NADH.c;
+      cr=tcr - cytosol_.CP.c;
     end extra_cellular;
 
     model mitochondria
@@ -1036,10 +1036,10 @@ This model and data analysis are described in (Selivanov VA, de Atauri P, Centel
       extends BioChem.Compartments.MainCompartment(V(start=1));
       import BioChem.Math.*;
       import BioChem.Constants.*;
-      BioChem.Examples.CircadianOscillator.Nucleus Nucleus(k3t=k3t, k3d=k3d, k6t=k6t, k6d=k6d, k6a=k6a, k7a=k7a, k7d=k7d) annotation(Placement(visible=true, transformation(origin={-30.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
-      Cytoplasm Cytoplasm(trans_per2_cry=trans_per2_cry, k1d=k1d, k2b=k2b, q=q, k2d=k2d, k2t=k2t, trans_Bmal1=trans_Bmal1, k4d=k4d, k5b=k5b, k5d=k5d, k5t=k5t) annotation(Placement(visible=true, transformation(origin={21.5395,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-180)));
-      inner Real Nucleus_V=Nucleus.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
-      inner Real Cytoplasm_V=Cytoplasm.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
+      BioChem.Examples.CircadianOscillator.Nucleus nucleus(k3t=k3t, k3d=k3d, k6t=k6t, k6d=k6d, k6a=k6a, k7a=k7a, k7d=k7d) annotation(Placement(visible=true, transformation(origin={-30.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
+      Cytoplasm cytoplasm(trans_per2_cry=trans_per2_cry, k1d=k1d, k2b=k2b, q=q, k2d=k2d, k2t=k2t, trans_Bmal1=trans_Bmal1, k4d=k4d, k5b=k5b, k5d=k5d, k5t=k5t) annotation(Placement(visible=true, transformation(origin={21.5395,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-180)));
+      inner Real Nucleus_V=nucleus.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
+      inner Real Cytoplasm_V=cytoplasm.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
       inner Real Container_V=V "Variable used to make the compartment volume accessible for inner components. Do not edit.";
       Real trans_per2_cry(start=0);
       parameter Real v1b=9;
@@ -1087,13 +1087,13 @@ The simulation results are shown in the
 
 </html>", revisions=""), experiment(StartTime=0, StopTime=150, NumberOfIntervals=-1, Algorithm="dassl", Tolerance=1e-06));
     equation 
-      connect(Cytoplasm.y5_node,Nucleus.y5_node) annotation(Line(visible=true, origin={-4.2302,-19.0}, points={{14.7697,0.0},{-14.7697,0.0}}));
-      connect(Nucleus.y6_node,Cytoplasm.y6_node) annotation(Line(visible=true, origin={-4.2302,-1.0}, points={{-14.7697,0.0},{14.7697,0.0}}));
-      connect(Cytoplasm.y2_node,Nucleus.y2_node) annotation(Line(visible=true, origin={-4.2302,-7.0}, points={{14.7697,0.0},{-14.7697,0.0}}));
-      connect(Nucleus.y3_node,Cytoplasm.y3_node) annotation(Line(visible=true, origin={-4.2302,-13.0}, points={{-14.7697,0.0},{14.7697,0.0}}));
-      trans_per2_cry=v1b*(Nucleus.y7.c + c_sbml)/(k1b*(1 + (Nucleus.y3.c/k1i)^hill_coeff) + Nucleus.y7.c + c_sbml);
-      trans_Bmal1=v4b*Nucleus.y3.c^r_sbml/(k4b^r_sbml + Nucleus.y3.c^r_sbml);
-      y5_y6_y7=Cytoplasm.y5.c + Nucleus.y6.c + Nucleus.y7.c;
+      connect(cytoplasm.y5_node,nucleus.y5_node) annotation(Line(visible=true, origin={-4.2302,-19.0}, points={{14.7697,0.0},{-14.7697,0.0}}));
+      connect(nucleus.y6_node,cytoplasm.y6_node) annotation(Line(visible=true, origin={-4.2302,-1.0}, points={{-14.7697,0.0},{14.7697,0.0}}));
+      connect(cytoplasm.y2_node,nucleus.y2_node) annotation(Line(visible=true, origin={-4.2302,-7.0}, points={{14.7697,0.0},{-14.7697,0.0}}));
+      connect(nucleus.y3_node,cytoplasm.y3_node) annotation(Line(visible=true, origin={-4.2302,-13.0}, points={{-14.7697,0.0},{14.7697,0.0}}));
+      trans_per2_cry=v1b*(nucleus.y7.c + c_sbml)/(k1b*(1 + (nucleus.y3.c/k1i)^hill_coeff) + nucleus.y7.c + c_sbml);
+      trans_Bmal1=v4b*nucleus.y3.c^r_sbml/(k4b^r_sbml + nucleus.y3.c^r_sbml);
+      y5_y6_y7=cytoplasm.y5.c + nucleus.y6.c + nucleus.y7.c;
     end Container;
 
     model Nucleus "Nucleus"
@@ -2177,9 +2177,9 @@ The simulation results are shown in the
 <a name=\"fig1\"></a>
 <img src=\"../Images/cytosol.png\" alt=\"Fig1: Simulation results\">
 </html>", revisions=""));
-      Endoplasmic_Reticulum Endoplasmic_Reticulum(p1_sbml=p1_sbml, p2_sbml=p2_sbml, p3_sbml=p3_sbml) annotation(Placement(visible=true, transformation(origin={-28.4357,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
+      Endoplasmic_Reticulum endoplasmicReticulum(p1_sbml=p1_sbml, p2_sbml=p2_sbml, p3_sbml=p3_sbml) annotation(Placement(visible=true, transformation(origin={-28.4357,20.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
       inner Real Cytosol_V=V "Variable used to make the compartment volume accessible for inner components. Do not edit.";
-      inner Real Endoplasmic_Reticulum_V=Endoplasmic_Reticulum.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
+      inner Real Endoplasmic_Reticulum_V=endoplasmicReticulum.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
       Cytosol.Ca_Cyt_ Ca_Cyt(c(start=0)) annotation(Placement(visible=true, transformation(origin={-10.0,-40.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=0)));
       Real n_sbml(start=1);
       parameter Real n0=1;
@@ -2196,8 +2196,8 @@ The simulation results are shown in the
       parameter Real K3=0.7;
       Cytosol.Jpump_ Jpump annotation(Placement(visible=true, transformation(origin={50.0,-10.0}, extent={{-10.0,-10.0},{10.0,10.0}}, rotation=-270)));
     equation 
-      connect(Ca_Cyt.n1,Endoplasmic_Reticulum.Ca_Cyt_node) annotation(Line(visible=true, origin={-29.2619,-10.8}, points={{19.2619,-29.2},{19.2619,-16.2},{-14.175,-16.2},{-14.175,30.8},{-10.1738,30.8}}, smooth=Smooth.Bezier));
-      connect(Endoplasmic_Reticulum.CaER_node,Jpump.p1) annotation(Line(visible=true, origin={27.5214,13.75}, points={{-44.9571,6.25},{22.4786,6.25},{22.4786,-12.5}}, smooth=Smooth.Bezier));
+      connect(Ca_Cyt.n1,endoplasmicReticulum.Ca_Cyt_node) annotation(Line(visible=true, origin={-29.2619,-10.8}, points={{19.2619,-29.2},{19.2619,-16.2},{-14.175,-16.2},{-14.175,30.8},{-10.1738,30.8}}, smooth=Smooth.Bezier));
+      connect(endoplasmicReticulum.CaER_node,Jpump.p1) annotation(Line(visible=true, origin={27.5214,13.75}, points={{-44.9571,6.25},{22.4786,6.25},{22.4786,-12.5}}, smooth=Smooth.Bezier));
       connect(Ca_Cyt.n1,Jpump.s1) annotation(Line(visible=true, origin={30.0,-33.75}, points={{-40.0,-6.25},{20.0,-6.25},{20.0,12.5}}, smooth=Smooth.Bezier));
       n_sbml=n0*(exp((-kbN)*time) + kappa*(1 - exp((-kbN)*time)));
       p1_sbml=p11 + p12*n_sbml/(K1 + n_sbml);
@@ -2674,7 +2674,7 @@ The simulation results of the whole body level are shown in the  <a href=\"#fig2
         end TissueGlucose;
 
         package AdiposeTissue
-          extends GlucoseInsulinModel.Icons.Library;
+          extends BioChem.Icons.Library;
           model Adipocyte
             extends BioChem.Compartments.Compartment(V.start=1.0);
             annotation(Diagram(coordinateSystem(extent={{-148.5,-105},{148.5,105}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})), Documentation(info="", revisions=""));

@@ -4403,11 +4403,13 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Adder4.Adder1.XOR.G2.y := if Adder4.Adder1.XOR.G2.tLH > 0.0 OR Adder4.Adder1.XOR.G2.tHL > 0.0 then Adder4.Adder1.XOR.G2.y_auxiliary else Adder4.Adder1.XOR.G2.x;
 // end Modelica.Electrical.Digital.Examples.Adder4;
 // "
-// "Warning: Component Set has the same name as its type Sources.Set . This is forbidden by Modelica specifications and may lead to lookup error
+// "[../../../libraries/msl31//Modelica/Electrical/Digital.mo:499:7-503:28:writable] Warning: Component Set has the same name as its type Modelica.Electrical.Digital.Examples.Adder4.Sources.Set.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // "
 // "Check of Modelica.Electrical.Digital.Examples.Adder4 completed successfully.
 // 
-// Warning: Component Set has the same name as its type Sources.Set . This is forbidden by Modelica specifications and may lead to lookup error
+// [../../../libraries/msl31//Modelica/Electrical/Digital.mo:499:7-503:28:writable] Warning: Component Set has the same name as its type Modelica.Electrical.Digital.Examples.Adder4.Sources.Set.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Adder4 has 1617 equation(s) and 1617 variable(s).
 // 1512 of these are trivial equation(s).
@@ -4900,11 +4902,13 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Clock.y := if  NOT time >= Clock.startTime OR time >= Clock.t_i + Clock.t_width then Modelica.Electrical.Digital.Interfaces.Logic.'0' else Modelica.Electrical.Digital.Interfaces.Logic.'1';
 // end Modelica.Electrical.Digital.Examples.Counter3;
 // "
-// "Warning: Component Clock has the same name as its type D.Sources.Clock . This is forbidden by Modelica specifications and may lead to lookup error
+// "[../../../libraries/msl31//Modelica/Electrical/Digital.mo:610:7-611:51:writable] Warning: Component Clock has the same name as its type Modelica.Electrical.Digital.Examples.Counter3.D.Sources.Clock.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // "
 // "Check of Modelica.Electrical.Digital.Examples.Counter3 completed successfully.
 // 
-// Warning: Component Clock has the same name as its type D.Sources.Clock . This is forbidden by Modelica specifications and may lead to lookup error
+// [../../../libraries/msl31//Modelica/Electrical/Digital.mo:610:7-611:51:writable] Warning: Component Clock has the same name as its type Modelica.Electrical.Digital.Examples.Counter3.D.Sources.Clock.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Counter3 has 207 equation(s) and 207 variable(s).
 // 203 of these are trivial equation(s).
@@ -5608,13 +5612,17 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   Clock.y := if  NOT time >= Clock.startTime OR time >= Clock.t_i + Clock.t_width then Modelica.Electrical.Digital.Interfaces.Logic.'0' else Modelica.Electrical.Digital.Interfaces.Logic.'1';
 // end Modelica.Electrical.Digital.Examples.Counter;
 // "
-// "Warning: Component Clock has the same name as its type D.Sources.Clock . This is forbidden by Modelica specifications and may lead to lookup error
-// Warning: Component Counter has the same name as its type D.Examples.Utilities.Counter . This is forbidden by Modelica specifications and may lead to lookup error
+// "[../../../libraries/msl31//Modelica/Electrical/Digital.mo:646:7-647:51:writable] Warning: Component Clock has the same name as its type Modelica.Electrical.Digital.Examples.Counter.D.Sources.Clock.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// [../../../libraries/msl31//Modelica/Electrical/Digital.mo:648:7-650:28:writable] Warning: Component Counter has the same name as its type Modelica.Electrical.Digital.Examples.Counter.D.Examples.Utilities.Counter.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // "
 // "Check of Modelica.Electrical.Digital.Examples.Counter completed successfully.
 // 
-// Warning: Component Clock has the same name as its type D.Sources.Clock . This is forbidden by Modelica specifications and may lead to lookup error
-// Warning: Component Counter has the same name as its type D.Examples.Utilities.Counter . This is forbidden by Modelica specifications and may lead to lookup error
+// [../../../libraries/msl31//Modelica/Electrical/Digital.mo:646:7-647:51:writable] Warning: Component Clock has the same name as its type Modelica.Electrical.Digital.Examples.Counter.D.Sources.Clock.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// [../../../libraries/msl31//Modelica/Electrical/Digital.mo:648:7-650:28:writable] Warning: Component Counter has the same name as its type Modelica.Electrical.Digital.Examples.Counter.D.Examples.Utilities.Counter.
+// 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Counter has 282 equation(s) and 282 variable(s).
 // 274 of these are trivial equation(s).
