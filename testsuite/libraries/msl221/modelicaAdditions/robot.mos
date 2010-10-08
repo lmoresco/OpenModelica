@@ -54,6 +54,13 @@ getErrorString();
 // external "C";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.tempInterpol1
 //   input Real u "input value (first column of table)";
 //   input Real[:, :] table "table to be interpolated";

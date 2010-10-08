@@ -17,6 +17,13 @@ getErrorString();
 //   ov := {iv[1] / length,iv[2] / length,iv[3] / length};
 // end MCVisualShape.local_normalize;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function PackMaterial
 //   input Real r;
 //   input Real g;
