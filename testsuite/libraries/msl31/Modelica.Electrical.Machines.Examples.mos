@@ -23,7 +23,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 // Result:
 // true
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -1050,7 +1057,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 // 277 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -2256,7 +2270,14 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 // 323 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -3963,6 +3984,13 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 //   end for;
 //   y0 := 0.333333333333333 * (x[1] + x[2] + x[3]);
 // end Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
 //   input Real u1;

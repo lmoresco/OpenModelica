@@ -79,6 +79,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   mu_r := 1.0 + (-1.0 + mu_i + c_a * B_N) / (1.0 + c_b * B_N + B_N ^ n);
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
@@ -308,6 +322,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // input Real(quantity="RelativePermeability", unit="1") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
 // output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -1006,6 +1034,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -1504,6 +1546,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // input Real(quantity="RelativePermeability", unit="1") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
 // output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -2142,6 +2198,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -2743,6 +2813,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   B_N := abs(B / B_myMax);
 //   mu_r := 1.0 + (-1.0 + mu_i + c_a * B_N) / (1.0 + c_b * B_N + B_N ^ n);
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -4254,6 +4338,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   B_N := abs(B / B_myMax);
 //   mu_r := 1.0 + (-1.0 + mu_i + c_a * B_N) / (1.0 + c_b * B_N + B_N ^ n);
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -7768,6 +7866,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   mu_r := 1.0 + (-1.0 + mu_i + c_a * B_N) / (1.0 + c_b * B_N + B_N ^ n);
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -8323,6 +8435,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   B_N := abs(B / B_myMax);
 //   mu_r := 1.0 + (-1.0 + mu_i + c_a * B_N) / (1.0 + c_b * B_N + B_N ^ n);
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -9183,7 +9309,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 19 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// class Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign
 //   parameter Real rho_20(quantity = "Resistivity", unit = "Ohm.m") = 1.78e-08 "Resistivity of conductor material at 20ï¿½C (default: Copper)";
 //   parameter Real alpha_20(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0039 "Temperature coefficient of conductor material's resistivity at 20degC (default: Copper)";
 //   parameter Real T_op(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Operating temperature of winding";
