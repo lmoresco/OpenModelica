@@ -1328,42 +1328,49 @@ end BS9;
 // sine1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS9;
 // Result:
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.sin
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
 // 
 // external "C";
 // end Modelica.Math.sin;
 // 
 // class BS9
-// parameter Integer sine1.nout(min = 1) = 1 "Number of outputs";
-// parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
-// output Real sine1.outPort.signal[1] "Real output signals";
-// output Real sine1.y[1];
-// parameter Real sine1.amplitude[1] = 1.0 "Amplitudes of sine waves";
-// parameter Real sine1.freqHz[1](quantity = "Frequency", unit = "Hz") = 1.0 "Frequencies of sine waves";
-// parameter Real sine1.phase[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phases of sine waves";
-// parameter Real sine1.offset[1] = 0.0 "Offsets of output signals";
-// parameter Real sine1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-// protected constant Real sine1.pi = 3.14159265358979;
-// protected parameter Real sine1.p_amplitude[1] = sine1.amplitude[1];
-// protected parameter Real sine1.p_freqHz[1] = sine1.freqHz[1];
-// protected parameter Real sine1.p_phase[1] = sine1.phase[1];
-// protected parameter Real sine1.p_offset[1] = sine1.offset[1];
-// protected parameter Real sine1.p_startTime[1](quantity = "Time", unit = "s") = sine1.startTime[1];
-// parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
-// input Real der1.inPort.signal[1] "Real input signals";
-// parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
-// output Real der1.outPort.signal[1] "Real output signals";
-// output Real der1.y[1] "Output signals";
-// protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
+//   parameter Integer sine1.nout(min = 1) = 1 "Number of outputs";
+//   parameter Integer sine1.outPort.n = sine1.nout "Dimension of signal vector";
+//   output Real sine1.outPort.signal[1] "Real output signals";
+//   output Real sine1.y[1];
+//   parameter Real sine1.amplitude[1] = 1.0 "Amplitudes of sine waves";
+//   parameter Real sine1.freqHz[1](quantity = "Frequency", unit = "Hz") = 1.0 "Frequencies of sine waves";
+//   parameter Real sine1.phase[1](quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phases of sine waves";
+//   parameter Real sine1.offset[1] = 0.0 "Offsets of output signals";
+//   parameter Real sine1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected constant Real sine1.pi = 3.14159265358979;
+//   protected parameter Real sine1.p_amplitude[1] = sine1.amplitude[1];
+//   protected parameter Real sine1.p_freqHz[1] = sine1.freqHz[1];
+//   protected parameter Real sine1.p_phase[1] = sine1.phase[1];
+//   protected parameter Real sine1.p_offset[1] = sine1.offset[1];
+//   protected parameter Real sine1.p_startTime[1](quantity = "Time", unit = "s") = sine1.startTime[1];
+//   parameter Integer der1.n = 1 "Number of inputs (= number of outputs)";
+//   parameter Integer der1.inPort.n = der1.n "Dimension of signal vector";
+//   input Real der1.inPort.signal[1] "Real input signals";
+//   parameter Integer der1.outPort.n = der1.n "Dimension of signal vector";
+//   output Real der1.outPort.signal[1] "Real output signals";
+//   output Real der1.y[1] "Output signals";
+//   protected Real der1.u[1] = der1.inPort.signal[1] "Input signals";
 // equation
 //   sine1.outPort.signal[1] = sine1.p_offset[1] + (if time < sine1.p_startTime[1] then 0.0 else sine1.p_amplitude[1] * Modelica.Math.sin(6.28318530717959 * (sine1.p_freqHz[1] * (time - sine1.p_startTime[1])) + sine1.p_phase[1]));
 //   sine1.y[1] = sine1.outPort.signal[1];
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
-// assert(sine1.outPort.n == der1.inPort.n,"automatically generated from connect");
-// sine1.outPort.signal[1] = der1.inPort.signal[1];
+//   assert(sine1.outPort.n == der1.inPort.n,"automatically generated from connect");
+//   sine1.outPort.signal[1] = der1.inPort.signal[1];
 // end BS9;
 // endResult

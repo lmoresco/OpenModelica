@@ -34,13 +34,20 @@ end Extends10;
 
 // Result:
 // function Extends10.f
-// input Real r;
-// output Real out;
+//   input Real r;
+//   output Real out;
 // algorithm
 //   out := 1.0;
 // end Extends10.f;
 // 
+// function M.A.f
+//   input Real r;
+//   output Real out;
+// algorithm
+//   out := 1.0;
+// end M.A.f;
+// 
 // class Extends10
-// Real x = Extends10.f(time);
+//   Real x = Extends10.f(time);
 // end Extends10;
 // endResult

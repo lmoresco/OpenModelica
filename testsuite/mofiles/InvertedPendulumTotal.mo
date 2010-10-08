@@ -4129,6 +4129,13 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function PackMaterial
 //   input Real r;
 //   input Real g;
@@ -6856,6 +6863,6 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //     (controller.timeTable.a, controller.timeTable.b, controller.timeTable.nextEvent, controller.timeTable.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{controller.timeTable.table[1,1],controller.timeTable.table[1,2]},{controller.timeTable.table[2,1],controller.timeTable.table[2,2]},{controller.timeTable.table[3,1],controller.timeTable.table[3,2]},{controller.timeTable.table[4,1],controller.timeTable.table[4,2]},{controller.timeTable.table[5,1],controller.timeTable.table[5,2]},{controller.timeTable.table[6,1],controller.timeTable.table[6,2]},{controller.timeTable.table[7,1],controller.timeTable.table[7,2]}},controller.timeTable.offset,controller.timeTable.startTime,time,controller.timeTable.last,1e-13);
 //   end when;
 // end IntroductoryExamples_Systems_InvertedPendulum;
-// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring  assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.\n" + "However, the result is that the input u is not within the required limits:\n" + "  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
+// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.\n" + "However, the result is that the input u is not within the required limits:\n" + "  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 // 
 // endResult
