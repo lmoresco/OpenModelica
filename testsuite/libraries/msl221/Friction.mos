@@ -11,99 +11,106 @@ instantiateModel(Modelica.Mechanics.Translational.Examples.Friction);
 getErrorString();
 // Result:
 // true
-// "function Modelica.Math.sin
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
 // 
 // external "C";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Mechanics.Translational.Examples.Friction
-// Real Stop1.s(quantity = "Length", unit = "m", StateSelect = StateSelect.always) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
-// parameter Real Stop1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
-// Real Stop1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Stop1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// Real Stop1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Stop1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// parameter Real Stop1.smax(quantity = "Length", unit = "m") = 25.0 "right stop for (right end of) sliding mass";
-// parameter Real Stop1.smin(quantity = "Length", unit = "m") = -25.0 "left stop for (left end of) sliding mass";
-// parameter Real Stop1.v_small(quantity = "Velocity", unit = "m/s") = 0.001 "Relative velocity near to zero (see model info text)";
-// Real Stop1.v_relfric(quantity = "Velocity", unit = "m/s") "Relative velocity between frictional surfaces";
-// Real Stop1.a_relfric(quantity = "Acceleration", unit = "m/s2") "Relative acceleration between frictional surfaces";
-// Real Stop1.f(quantity = "Force", unit = "N") "Friction force (positive, if directed in opposite direction of v_rel)";
-// Real Stop1.f0(quantity = "Force", unit = "N") "Friction force for v=0 and forward sliding";
-// Real Stop1.f0_max(quantity = "Force", unit = "N") "Maximum friction force for v=0 and locked";
-// Boolean Stop1.free "true, if frictional element is not active";
-// Real Stop1.sa "Path parameter of friction characteristic f = f(a_relfric)";
-// Boolean Stop1.startForward "true, if v_rel=0 and start of forward sliding or v_rel > v_small";
-// Boolean Stop1.startBackward "true, if v_rel=0 and start of backward sliding or v_rel < -v_small";
-// Boolean Stop1.locked "true, if v_rel=0 and not sliding";
-// constant Integer Stop1.Unknown = 3 "Value of mode is not known";
-// constant Integer Stop1.Free = 2 "Element is not active";
-// constant Integer Stop1.Forward = 1 "v_rel > 0 (forward sliding)";
-// constant Integer Stop1.Stuck = 0 "v_rel = 0 (forward sliding, locked or backward sliding)";
-// constant Integer Stop1.Backward = -1 "v_rel < 0 (backward sliding)";
-// Integer Stop1.mode(min = -1, max = 3, start = 3);
-// Real Stop1.v(quantity = "Velocity", unit = "m/s", StateSelect = StateSelect.always) "Absolute velocity of flange_a and flange_b";
-// Real Stop1.a(quantity = "Acceleration", unit = "m/s2") "Absolute acceleration of flange_a and flange_b";
-// parameter Real Stop1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass";
-// parameter Real Stop1.F_prop(unit = "N/ (m/s)", min = 0.0) = 1.0 "velocity dependent friction";
-// parameter Real Stop1.F_Coulomb(quantity = "Force", unit = "N") = 5.0 "constant friction: Coulomb force";
-// parameter Real Stop1.F_Stribeck(quantity = "Force", unit = "N") = 10.0 "Stribeck effect";
-// parameter Real Stop1.fexp(unit = "1/ (m/s)", min = 0.0) = 2.0 "exponential decay";
-// Real Force1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Force1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// input Real Force1.f(quantity = "Force", unit = "N") "driving force as input signal";
-// output Real Sine1.y "Connector of Real output signal";
-// parameter Real Sine1.amplitude = 25.0 "Amplitude of sine wave";
-// parameter Real Sine1.freqHz(quantity = "Frequency", unit = "Hz") = 0.25 "Frequency of sine wave";
-// parameter Real Sine1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
-// parameter Real Sine1.offset = 0.0 "Offset of output signal";
-// parameter Real Sine1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-// protected constant Real Sine1.pi = 3.14159265358979;
-// Real Stop2.s(quantity = "Length", unit = "m", start = 0.0, StateSelect = StateSelect.always) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
-// parameter Real Stop2.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
-// Real Stop2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Stop2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// Real Stop2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Stop2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// parameter Real Stop2.smax(quantity = "Length", unit = "m") = 0.9 "right stop for (right end of) sliding mass";
-// parameter Real Stop2.smin(quantity = "Length", unit = "m") = -0.9 "left stop for (left end of) sliding mass";
-// parameter Real Stop2.v_small(quantity = "Velocity", unit = "m/s") = 0.001 "Relative velocity near to zero (see model info text)";
-// Real Stop2.v_relfric(quantity = "Velocity", unit = "m/s") "Relative velocity between frictional surfaces";
-// Real Stop2.a_relfric(quantity = "Acceleration", unit = "m/s2") "Relative acceleration between frictional surfaces";
-// Real Stop2.f(quantity = "Force", unit = "N") "Friction force (positive, if directed in opposite direction of v_rel)";
-// Real Stop2.f0(quantity = "Force", unit = "N") "Friction force for v=0 and forward sliding";
-// Real Stop2.f0_max(quantity = "Force", unit = "N") "Maximum friction force for v=0 and locked";
-// Boolean Stop2.free "true, if frictional element is not active";
-// Real Stop2.sa "Path parameter of friction characteristic f = f(a_relfric)";
-// Boolean Stop2.startForward "true, if v_rel=0 and start of forward sliding or v_rel > v_small";
-// Boolean Stop2.startBackward "true, if v_rel=0 and start of backward sliding or v_rel < -v_small";
-// Boolean Stop2.locked "true, if v_rel=0 and not sliding";
-// constant Integer Stop2.Unknown = 3 "Value of mode is not known";
-// constant Integer Stop2.Free = 2 "Element is not active";
-// constant Integer Stop2.Forward = 1 "v_rel > 0 (forward sliding)";
-// constant Integer Stop2.Stuck = 0 "v_rel = 0 (forward sliding, locked or backward sliding)";
-// constant Integer Stop2.Backward = -1 "v_rel < 0 (backward sliding)";
-// Integer Stop2.mode(min = -1, max = 3, start = 3);
-// Real Stop2.v(quantity = "Velocity", unit = "m/s", start = -5.0, StateSelect = StateSelect.always) "Absolute velocity of flange_a and flange_b";
-// Real Stop2.a(quantity = "Acceleration", unit = "m/s2") "Absolute acceleration of flange_a and flange_b";
-// parameter Real Stop2.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass";
-// parameter Real Stop2.F_prop(unit = "N/ (m/s)", min = 0.0) = 1.0 "velocity dependent friction";
-// parameter Real Stop2.F_Coulomb(quantity = "Force", unit = "N") = 3.0 "constant friction: Coulomb force";
-// parameter Real Stop2.F_Stribeck(quantity = "Force", unit = "N") = 5.0 "Stribeck effect";
-// parameter Real Stop2.fexp(unit = "1/ (m/s)", min = 0.0) = 2.0 "exponential decay";
-// Real Spring1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
-// Real Spring1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
-// Real Spring1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Spring1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// Real Spring1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Spring1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
-// parameter Real Spring1.s_rel0(quantity = "Length", unit = "m", min = 0.0) = 1.0 "unstretched spring length";
-// parameter Real Spring1.c(unit = "N/m", min = 0.0) = 500.0 "spring constant ";
-// parameter Real Fixed1.s0(quantity = "Length", unit = "m") = -1.75 "fixed offset position of housing";
-// Real Fixed1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
-// Real Fixed1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   Real Stop1.s(quantity = "Length", unit = "m", StateSelect = StateSelect.always) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+//   parameter Real Stop1.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+//   Real Stop1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Stop1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   Real Stop1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Stop1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   parameter Real Stop1.smax(quantity = "Length", unit = "m") = 25.0 "right stop for (right end of) sliding mass";
+//   parameter Real Stop1.smin(quantity = "Length", unit = "m") = -25.0 "left stop for (left end of) sliding mass";
+//   parameter Real Stop1.v_small(quantity = "Velocity", unit = "m/s") = 0.001 "Relative velocity near to zero (see model info text)";
+//   Real Stop1.v_relfric(quantity = "Velocity", unit = "m/s") "Relative velocity between frictional surfaces";
+//   Real Stop1.a_relfric(quantity = "Acceleration", unit = "m/s2") "Relative acceleration between frictional surfaces";
+//   Real Stop1.f(quantity = "Force", unit = "N") "Friction force (positive, if directed in opposite direction of v_rel)";
+//   Real Stop1.f0(quantity = "Force", unit = "N") "Friction force for v=0 and forward sliding";
+//   Real Stop1.f0_max(quantity = "Force", unit = "N") "Maximum friction force for v=0 and locked";
+//   Boolean Stop1.free "true, if frictional element is not active";
+//   Real Stop1.sa "Path parameter of friction characteristic f = f(a_relfric)";
+//   Boolean Stop1.startForward "true, if v_rel=0 and start of forward sliding or v_rel > v_small";
+//   Boolean Stop1.startBackward "true, if v_rel=0 and start of backward sliding or v_rel < -v_small";
+//   Boolean Stop1.locked "true, if v_rel=0 and not sliding";
+//   constant Integer Stop1.Unknown = 3 "Value of mode is not known";
+//   constant Integer Stop1.Free = 2 "Element is not active";
+//   constant Integer Stop1.Forward = 1 "v_rel > 0 (forward sliding)";
+//   constant Integer Stop1.Stuck = 0 "v_rel = 0 (forward sliding, locked or backward sliding)";
+//   constant Integer Stop1.Backward = -1 "v_rel < 0 (backward sliding)";
+//   Integer Stop1.mode(min = -1, max = 3, start = 3);
+//   Real Stop1.v(quantity = "Velocity", unit = "m/s", StateSelect = StateSelect.always) "Absolute velocity of flange_a and flange_b";
+//   Real Stop1.a(quantity = "Acceleration", unit = "m/s2") "Absolute acceleration of flange_a and flange_b";
+//   parameter Real Stop1.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass";
+//   parameter Real Stop1.F_prop(unit = "N/ (m/s)", min = 0.0) = 1.0 "velocity dependent friction";
+//   parameter Real Stop1.F_Coulomb(quantity = "Force", unit = "N") = 5.0 "constant friction: Coulomb force";
+//   parameter Real Stop1.F_Stribeck(quantity = "Force", unit = "N") = 10.0 "Stribeck effect";
+//   parameter Real Stop1.fexp(unit = "1/ (m/s)", min = 0.0) = 2.0 "exponential decay";
+//   Real Force1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Force1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   input Real Force1.f(quantity = "Force", unit = "N") "driving force as input signal";
+//   output Real Sine1.y "Connector of Real output signal";
+//   parameter Real Sine1.amplitude = 25.0 "Amplitude of sine wave";
+//   parameter Real Sine1.freqHz(quantity = "Frequency", unit = "Hz") = 0.25 "Frequency of sine wave";
+//   parameter Real Sine1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real Sine1.offset = 0.0 "Offset of output signal";
+//   parameter Real Sine1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected constant Real Sine1.pi = 3.14159265358979;
+//   Real Stop2.s(quantity = "Length", unit = "m", start = 0.0, StateSelect = StateSelect.always) "absolute position of center of component (s = flange_a.s + L/2 = flange_b.s - L/2)";
+//   parameter Real Stop2.L(quantity = "Length", unit = "m") = 1.0 "length of component from left flange to right flange (= flange_b.s - flange_a.s)";
+//   Real Stop2.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Stop2.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   Real Stop2.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Stop2.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   parameter Real Stop2.smax(quantity = "Length", unit = "m") = 0.9 "right stop for (right end of) sliding mass";
+//   parameter Real Stop2.smin(quantity = "Length", unit = "m") = -0.9 "left stop for (left end of) sliding mass";
+//   parameter Real Stop2.v_small(quantity = "Velocity", unit = "m/s") = 0.001 "Relative velocity near to zero (see model info text)";
+//   Real Stop2.v_relfric(quantity = "Velocity", unit = "m/s") "Relative velocity between frictional surfaces";
+//   Real Stop2.a_relfric(quantity = "Acceleration", unit = "m/s2") "Relative acceleration between frictional surfaces";
+//   Real Stop2.f(quantity = "Force", unit = "N") "Friction force (positive, if directed in opposite direction of v_rel)";
+//   Real Stop2.f0(quantity = "Force", unit = "N") "Friction force for v=0 and forward sliding";
+//   Real Stop2.f0_max(quantity = "Force", unit = "N") "Maximum friction force for v=0 and locked";
+//   Boolean Stop2.free "true, if frictional element is not active";
+//   Real Stop2.sa "Path parameter of friction characteristic f = f(a_relfric)";
+//   Boolean Stop2.startForward "true, if v_rel=0 and start of forward sliding or v_rel > v_small";
+//   Boolean Stop2.startBackward "true, if v_rel=0 and start of backward sliding or v_rel < -v_small";
+//   Boolean Stop2.locked "true, if v_rel=0 and not sliding";
+//   constant Integer Stop2.Unknown = 3 "Value of mode is not known";
+//   constant Integer Stop2.Free = 2 "Element is not active";
+//   constant Integer Stop2.Forward = 1 "v_rel > 0 (forward sliding)";
+//   constant Integer Stop2.Stuck = 0 "v_rel = 0 (forward sliding, locked or backward sliding)";
+//   constant Integer Stop2.Backward = -1 "v_rel < 0 (backward sliding)";
+//   Integer Stop2.mode(min = -1, max = 3, start = 3);
+//   Real Stop2.v(quantity = "Velocity", unit = "m/s", start = -5.0, StateSelect = StateSelect.always) "Absolute velocity of flange_a and flange_b";
+//   Real Stop2.a(quantity = "Acceleration", unit = "m/s2") "Absolute acceleration of flange_a and flange_b";
+//   parameter Real Stop2.m(quantity = "Mass", unit = "kg", min = 0.0) = 1.0 "mass";
+//   parameter Real Stop2.F_prop(unit = "N/ (m/s)", min = 0.0) = 1.0 "velocity dependent friction";
+//   parameter Real Stop2.F_Coulomb(quantity = "Force", unit = "N") = 3.0 "constant friction: Coulomb force";
+//   parameter Real Stop2.F_Stribeck(quantity = "Force", unit = "N") = 5.0 "Stribeck effect";
+//   parameter Real Stop2.fexp(unit = "1/ (m/s)", min = 0.0) = 2.0 "exponential decay";
+//   Real Spring1.s_rel(quantity = "Length", unit = "m", min = 0.0) "relative distance (= flange_b.s - flange_a.s)";
+//   Real Spring1.f(quantity = "Force", unit = "N") "forcee between flanges (positive in direction of flange axis R)";
+//   Real Spring1.flange_a.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Spring1.flange_a.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   Real Spring1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Spring1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
+//   parameter Real Spring1.s_rel0(quantity = "Length", unit = "m", min = 0.0) = 1.0 "unstretched spring length";
+//   parameter Real Spring1.c(unit = "N/m", min = 0.0) = 500.0 "spring constant ";
+//   parameter Real Fixed1.s0(quantity = "Length", unit = "m") = -1.75 "fixed offset position of housing";
+//   Real Fixed1.flange_b.s(quantity = "Length", unit = "m") "absolute position of flange";
+//   Real Fixed1.flange_b.f(quantity = "Force", unit = "N") "cut force directed into flange";
 // equation
 //   Stop1.f0 = Stop1.F_Coulomb + Stop1.F_Stribeck;
 //   Stop1.f0_max = 1.001 * Stop1.f0;
@@ -145,12 +152,12 @@ getErrorString();
 //   Spring1.flange_a.f = -Spring1.f;
 //   Fixed1.flange_b.s = Fixed1.s0;
 //   Force1.flange_b.f + Stop1.flange_a.f = 0.0;
-// Force1.flange_b.s = Stop1.flange_a.s;
+//   Force1.flange_b.s = Stop1.flange_a.s;
 //   Fixed1.flange_b.f + Spring1.flange_a.f = 0.0;
-// Fixed1.flange_b.s = Spring1.flange_a.s;
+//   Fixed1.flange_b.s = Spring1.flange_a.s;
 //   Spring1.flange_b.f + Stop2.flange_a.f = 0.0;
-// Spring1.flange_b.s = Stop2.flange_a.s;
-// Sine1.y = Force1.f;
+//   Spring1.flange_b.s = Stop2.flange_a.s;
+//   Sine1.y = Force1.f;
 //   Stop1.flange_b.f = 0.0;
 //   Stop2.flange_b.f = 0.0;
 // algorithm
@@ -158,15 +165,15 @@ getErrorString();
 //     assert(Stop1.s > Stop1.smin + Stop1.L / 2.0 OR Stop1.s >= Stop1.smin + Stop1.L / 2.0 AND Stop1.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");
 //     assert(Stop1.s < Stop1.smax - Stop1.L / 2.0 OR Stop1.s <= Stop1.smax - Stop1.L / 2.0 AND Stop1.v <= 0.0, "Error in initialization of hard stop. (s + L/2) must be <= smax ");
 //   end when;
-//   when NOT Stop1.s < Stop1.smax - Stop1.L / 2.0 then
+//   when  NOT Stop1.s < Stop1.smax - Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smax - Stop1.L / 2.0);
-//     if NOT initial() OR Stop1.v > 0.0 then
+//     if  NOT initial() OR Stop1.v > 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
-//   when NOT Stop1.s > Stop1.smin + Stop1.L / 2.0 then
+//   when  NOT Stop1.s > Stop1.smin + Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smin + Stop1.L / 2.0);
-//     if NOT initial() OR Stop1.v < 0.0 then
+//     if  NOT initial() OR Stop1.v < 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
@@ -174,15 +181,15 @@ getErrorString();
 //     assert(Stop2.s > Stop2.smin + Stop2.L / 2.0 OR Stop2.s >= Stop2.smin + Stop2.L / 2.0 AND Stop2.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");
 //     assert(Stop2.s < Stop2.smax - Stop2.L / 2.0 OR Stop2.s <= Stop2.smax - Stop2.L / 2.0 AND Stop2.v <= 0.0, "Error in initialization of hard stop. (s + L/2) must be <= smax ");
 //   end when;
-//   when NOT Stop2.s < Stop2.smax - Stop2.L / 2.0 then
+//   when  NOT Stop2.s < Stop2.smax - Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smax - Stop2.L / 2.0);
-//     if NOT initial() OR Stop2.v > 0.0 then
+//     if  NOT initial() OR Stop2.v > 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;
-//   when NOT Stop2.s > Stop2.smin + Stop2.L / 2.0 then
+//   when  NOT Stop2.s > Stop2.smin + Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smin + Stop2.L / 2.0);
-//     if NOT initial() OR Stop2.v < 0.0 then
+//     if  NOT initial() OR Stop2.v < 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;
