@@ -75,6 +75,7 @@ SliceAssignment.mos \
 StepAdvanced.mos \
 StringTest.mos \
 SumSeriesWhile.mos \
+SyncFilter.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TanksConnectedPI.mos TankHybridPID.mos TankHybridPI.mos \
 tempInterpol2test.mos \

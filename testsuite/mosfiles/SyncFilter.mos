@@ -1,0 +1,72 @@
+// name:     SyncFilter.mos
+// keywords: vector and when
+// status:  correct
+// teardown_command: rm -rf SyncFilter.exe SyncFilter.makefile SyncFilter_* SyncFilter.libs SyncFilter.cpp SyncFilter.log SyncFilter_res.plt output.log
+// env: OPENMODELICALIBRARY=../../libraries/msl31/
+// tests: bug reported here: https://www.openmodelica.org/index.php/forum/topic?id=74
+//
+
+loadModel(Modelica); getErrorString();
+loadFile("SyncFilter.mo"); getErrorString();
+instantiateModel(SyncFilter); getErrorString();
+simulate(SyncFilter, stopTime=0.0005);
+val(sampleTrigger, 4.2*10e-6);
+val(sampleTrigger, 6.2*10e-6);
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "class SyncFilter
+//   parameter Real samplePeriod(quantity = "Time", unit = "s", min = 1e-13, start = 0.1) = 1.0 / UpdateRate / Real(n) "Sample period of component";
+//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "First sample time instant";
+//   protected output Boolean sampleTrigger "True, if sample time instant";
+//   protected output Boolean firstTrigger "Rising edge signals first sample instant";
+//   input Real u "Continuous input signal";
+//   output Real y "Continuous output signal";
+//   parameter Real UpdateRate = 25000.0;
+//   parameter Integer n = 5;
+//   output Real x[1] "State of transfer function from controller canonical form";
+//   output Real x[2] "State of transfer function from controller canonical form";
+//   output Real x[3] "State of transfer function from controller canonical form";
+//   output Real x[4] "State of transfer function from controller canonical form";
+//   Real b[1] = 1.0 / Real(n);
+//   Real b[2] = 1.0 / Real(n);
+//   Real b[3] = 1.0 / Real(n);
+//   Real b[4] = 1.0 / Real(n);
+//   Real b[5] = 1.0 / Real(n);
+//   Real xext[1];
+//   Real xext[2];
+//   Real xext[3];
+//   Real xext[4];
+//   Real xext[5];
+//   Real x1;
+// equation
+//   when sampleTrigger then
+//   x1 = u;
+//   xext[1] = x1;
+//   xext[2] = x[1];
+//   xext[3] = x[2];
+//   xext[4] = x[3];
+//   xext[5] = x[4];
+//   x[1] = xext[1];
+//   x[2] = xext[2];
+//   x[3] = xext[3];
+//   x[4] = xext[4];
+//   y = b[1] * xext[1] + (b[2] * xext[2] + (b[3] * xext[3] + (b[4] * xext[4] + b[5] * xext[5])));
+//   end when;
+//   sampleTrigger = sample(startTime,samplePeriod);
+//   when sampleTrigger then
+//   firstTrigger = time <= startTime + samplePeriod / 2.0;
+//   end when;
+// end SyncFilter;
+// "
+// ""
+// record SimulationResult
+//     resultFile = "SyncFilter_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.0
+// endResult
