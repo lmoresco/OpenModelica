@@ -62,6 +62,7 @@ Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
 PolynomialEvaluator1.mos PolynomialEvaluator2.mos PolynomialEvaluator3.mos \
 PreAndAliasedVar.mos \
+Random.mos \
 Reductions.mos \
 Riccati.mos \
 Sample1.mos \
@@ -74,6 +75,7 @@ SliceAssignment.mos \
 StepAdvanced.mos \
 StringTest.mos \
 SumSeriesWhile.mos \
+SyncFilter.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TanksConnectedPI.mos TankHybridPID.mos TankHybridPI.mos \
 tempInterpol2test.mos \
