@@ -43,11 +43,9 @@ getErrorString();
 // "
 // ""
 // true
-// instantiateDaeFunction failed for func in scope: DependencyChecking
 // 
 // "[DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
 // Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
-// Error: No matching function found for func(1) of type function(x:Integer) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
 // Error: Error occured while flattening model DependencyChecking
 // [DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
 // Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
