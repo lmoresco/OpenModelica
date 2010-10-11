@@ -14,11 +14,11 @@ checkModel(Modelica.Blocks.Continuous.TransferFunction); getErrorString();
 
 checkModel(Modelica.Blocks.Continuous.StateSpace); getErrorString();
 
-//instantiateModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
-//checkModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
+instantiateModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
+checkModel(Modelica.Blocks.Examples.BusUsage); getErrorString();
 
-//instantiateModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
-//checkModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
+instantiateModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
+checkModel(Modelica.Blocks.Examples.BusUsage_Utilities.Part); getErrorString();
 
 checkModel(Modelica.Blocks.Tables.CombiTable1D); getErrorString();
 checkModel(Modelica.Blocks.Tables.CombiTable1Ds); getErrorString();
@@ -51,6 +51,81 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // Class Modelica.Blocks.Continuous.StateSpace has 2 equation(s) and 2 variable(s).
 // 0 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class Modelica.Blocks.Examples.BusUsage
+//   output Integer integerStep.y "Connector of Integer output signal";
+//   parameter Integer integerStep.offset = 2 "Offset of output signal y";
+//   parameter Real integerStep.startTime(quantity = "Time", unit = "s") = 0.5 "Output y = offset for time < startTime";
+//   parameter Integer integerStep.height = 1 "Height of step";
+//   output Boolean booleanStep.y "Connector of Boolean output signal";
+//   parameter Real booleanStep.startTime(quantity = "Time", unit = "s") = 0.5 "Time instant of step start";
+//   parameter Boolean booleanStep.startValue = false "Output before startTime";
+//   output Real sine.y "Connector of Real output signal";
+//   parameter Real sine.amplitude = 1.0 "Amplitude of sine wave";
+//   parameter Real sine.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = 1.0 "Frequency of sine wave";
+//   parameter Real sine.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real sine.offset = 0.0 "Offset of output signal";
+//   parameter Real sine.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected constant Real sine.pi = 3.14159265358979;
+//   output Real part.realExpression.y = time "Value of Real output";
+//   output Boolean part.booleanExpression.y = time > 0.5 "Value of Boolean output";
+//   Real part.subControlBus.myRealSignal "virtual variable in expandable connector";
+//   Boolean part.subControlBus.myBooleanSignal "virtual variable in expandable connector";
+//   parameter Real gain.k(start = 1.0) = 1.0 "Gain value multiplied with input signal";
+//   input Real gain.u "Input signal connector";
+//   output Real gain.y "Output signal connector";
+//   Real controlBus.realSignal1 "virtual variable in expandable connector";
+//   Boolean controlBus.booleanSignal "virtual variable in expandable connector";
+//   Integer controlBus.integerSignal "virtual variable in expandable connector";
+//   Real controlBus.subControlBus.myRealSignal "virtual variable in expandable connector";
+//   Boolean controlBus.subControlBus.myBooleanSignal "virtual variable in expandable connector";
+// equation
+//   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
+//   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   part.subControlBus.myBooleanSignal = part.booleanExpression.y;
+//   part.subControlBus.myRealSignal = part.realExpression.y;
+//   gain.y = gain.k * gain.u;
+//   gain.u = controlBus.realSignal1;
+//   controlBus.realSignal1 = sine.y;
+//   controlBus.subControlBus.myBooleanSignal = part.subControlBus.myBooleanSignal;
+//   controlBus.subControlBus.myRealSignal = part.subControlBus.myRealSignal;
+//   controlBus.integerSignal = integerStep.y;
+//   controlBus.booleanSignal = booleanStep.y;
+// end Modelica.Blocks.Examples.BusUsage;
+// "
+// ""
+// "Check of Modelica.Blocks.Examples.BusUsage completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Examples.BusUsage has 14 equation(s) and 14 variable(s).
+// 9 of these are trivial equation(s).
+// "
+// ""
+// "class Modelica.Blocks.Examples.BusUsage_Utilities.Part
+//   output Real realExpression.y = time "Value of Real output";
+//   output Boolean booleanExpression.y = time > 0.5 "Value of Boolean output";
+//   Real subControlBus.myRealSignal "virtual variable in expandable connector";
+//   Boolean subControlBus.myBooleanSignal "virtual variable in expandable connector";
+// equation
+//   subControlBus.myBooleanSignal = booleanExpression.y;
+//   subControlBus.myRealSignal = realExpression.y;
+// end Modelica.Blocks.Examples.BusUsage_Utilities.Part;
+// "
+// ""
+// "Check of Modelica.Blocks.Examples.BusUsage_Utilities.Part completed successfully.
+// 
+// 
+// Class Modelica.Blocks.Examples.BusUsage_Utilities.Part has 4 equation(s) and 4 variable(s).
+// 3 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Tables.CombiTable1D completed successfully.
