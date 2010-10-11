@@ -8,9 +8,10 @@
 
 loadFile("BuiltinArray.mo");
 BuiltinArray.test(3,2,1);
-
+getErrorString();
 
 // Result:
 // true
 // (meta_array(2,2,2),meta_array(3,2,2),3,3,{3,2,2},meta_array(4,3,2,2),meta_array(4,3,2,2,10))
+// ""
 // endResult
