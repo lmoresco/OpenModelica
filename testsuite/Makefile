@@ -1,14 +1,14 @@
-.PHONY : all omc-diff failingtest test fast fast.logs drmodelica.log mofiles.log parser.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log dependency.log
+.PHONY : all omc-diff failingtest test fast fast.logs drmodelica.log mofiles.log parser.log msl.log java.log records.log meta.log mmdev.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log libraries.log dependency.log expandable.log
 
 all : test
 
 omc-diff :
 	$(MAKE) -C difftool
 test : libraries.log fast.logs
-	@cat drmodelica.log mofiles.log parser.log dependency.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
+	@cat drmodelica.log mofiles.log parser.log dependency.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log expandable.log
 	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 test-oldresult:
-	@cat drmodelica.log mofiles.log parser.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log
+	@cat drmodelica.log mofiles.log parser.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log expandable.log
 test-oldresult-summary:
 	@cat drmodelica.log mofiles.log parser.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log libraries.log > test.log
 	@cat test.log
@@ -18,9 +18,9 @@ test-oldresult-summary:
 	@SUM=0; for i in `grep ^== test.log | grep failed | cut -d\  -f5`; do SUM=$$(($$SUM + $$i)); done; echo -n $$SUM
 	@echo " failed"
 fast : omc-diff fast.logs
-	@cat drmodelica.log mofiles.log parser.log dependency.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log
+	@cat drmodelica.log mofiles.log parser.log dependency.log msl.log mosfiles.log mosfiles-msl22.log mosfiles-nosim.log meta.log mmdev.log records.log expandable.log
 	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
-fast.logs: mosfiles.log mosfiles-msl22.log meta.log parser.log mofiles.log msl.log mmdev.log drmodelica.log mosfiles-nosim.log parser.log records.log dependency.log
+fast.logs: mosfiles.log mosfiles-msl22.log meta.log parser.log mofiles.log msl.log mmdev.log drmodelica.log mosfiles-nosim.log parser.log records.log dependency.log expandable.log
 # java should probably also be part of 'fast'
 libraries.log: omc-diff
 	$(MAKE) -C libraries -f Makefile test > $@
@@ -57,6 +57,9 @@ mmdev.log: omc-diff
 	@echo $@ done
 records.log: omc-diff
 	$(MAKE) -C records -f Makefile test > $@
+	@echo $@ done
+expandable.log: omc-diff
+	$(MAKE) -C expandable -f Makefile test > $@
 	@echo $@ done
 java.log: omc-diff
 	$(MAKE) -C java -f Makefile test > $@

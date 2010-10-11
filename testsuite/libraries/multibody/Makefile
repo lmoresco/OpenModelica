@@ -1,5 +1,5 @@
-LOGS = elementary.log loops.log rotational3deffects.log
-.PHONY : all failingtest elementary.log loops.log rotational3deffects.log
+LOGS = elementary.log loops.log rotational3deffects.log systems.log
+.PHONY : all failingtest elementary.log loops.log rotational3deffects.log systems.log
 
 all : test
 test : $(LOGS)
@@ -11,6 +11,8 @@ loops.log:
 	$(MAKE) -C loops -f Makefile test > $@
 rotational3deffects.log:
 	$(MAKE) -C rotational3deffects -f Makefile test > $@
+systems.log:
+	$(MAKE) -C systems -f Makefile test > $@
 
 	
 failingtest:
