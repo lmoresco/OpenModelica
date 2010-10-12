@@ -31,7 +31,7 @@ CC	= gcc
 IDL	= $(OMDEV)/bin/mico/idl
 CFLAGS	+= -I$(RMLINCLUDE) -I../../c_runtime -I../ $(CORBAINCL) -Ilpsolve
 CXXFLAGS = $(CFLAGS)
-SRC	= rtopts.c socketimpl.c printimpl.c systemimpl.c settingsimpl.c dynload.c SimulationResults.c IOStreamExt.c rtclock.c Database.c sqlite/sqlite3.c
+SRC	= rtopts.c socketimpl.c Print_rml.c systemimpl.c settingsimpl.c dynload.c SimulationResults.c IOStreamExt.c rtclock.c Database.c sqlite/sqlite3.c
 CPPSRC  = unitparser.cpp unitparserext.cpp ptolemyio.cpp daeext.cpp ErrorMessage.cpp errorext.cpp \
 optmanager.cpp systemimplmisc.cpp dynload_try.o $(CORBASRC)
 OBJ     = $(SRC:.c=.o) $(CPPSRC:.cpp=.o) $(CPPSRC:.cc=.o)
@@ -48,6 +48,7 @@ omc_communication.h: omc_communication_impl.cpp corbaimpl.cpp
 
 dynload.o: systemimpl.h ../Absyn.h ../Values.h dynload_try.h
 database.o : sqlite/sqlite3.h
+Print_rml.o : printimpl.c
 
 clean:
 	$(RM) -rf *.o omc_communication.cc omc_communication.h sqlite/*.o
