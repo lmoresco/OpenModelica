@@ -1,0 +1,59 @@
+// name:     Linearization of linear model
+// keywords: linearization, linear model
+// status:   correct
+// cflags: 	 +d=linearization
+// teardown_command: rm -rf linearmodel.* linearmodel_* output.log linear_linearmodel.* linear_linearmodel_* linear_linearmodel linearmodel
+// 
+//  Case for linearization of VanDerPol model
+//
+loadFile("linmodel.mo");
+simulate(linearmodel,numberOfIntervals=1); // 1 intervals == 2 values
+//linearize
+system("./linearmodel -l 0 ");
+loadFile("linear_linearmodel.mo");
+list(linear_linearmodel);
+simulate(linear_linearmodel,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+echo(false); // turns of output
+//system("rm -rf linearmodel linearmodel.cpp linearmodel.libs linearmodel.log linearmodel.makefile linearmodel_* output.log"); // remove tmp files.
+//system("rm -rf linear_linearmodel.mo linear_linearmodel linear_linearmodel.cpp linear_linearmodel.libs linear_linearmodel.log linear_linearmodel.makefile linear_linearmodel_* output.log"); // remove tmp files for linear model.
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "linearmodel_res.plt",
+//     messages = ""
+// end SimulationResult;
+// Linearization will performed at point of time: 0
+// Linear model is created!
+// 0
+// true
+// "model linear_linearmodel
+//   parameter Integer n = 4;
+//   parameter Integer k = 0;
+//   parameter Integer l = 0;
+//   parameter Real x0[4] = {1, -2,3, -5};
+//   parameter Real u0[0] = {};
+//   parameter Real A[4,4] = [ -3,2,0,0; -7,0, -5,1; -1,0, -1,4;0,1, -1,5];
+//   parameter Real B[4,0] = zeros(4, 0);
+//   parameter Real C[0,4] = zeros(0, 4);
+//   parameter Real D[0,0] = zeros(0, 0);
+//   Real x[4](start = x0);
+//   input Real u[0];
+//   output Real y[0];
+//   Real x_x1 = x[1];
+//   Real x_x2 = x[2];
+//   Real x_x3 = x[3];
+//   Real x_x4 = x[4];
+//	  
+// equation  
+//   der(x) = A * x + B * u;
+//   y = C * x + D * u;
+// end linear_linearmodel;
+// 
+// "
+// record SimulationResult
+//     resultFile = "linear_linearmodel_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult

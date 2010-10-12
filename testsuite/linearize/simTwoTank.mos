@@ -1,0 +1,57 @@
+// name:     twoflattankmodel linearization
+// keywords: twoflattankmodel, linearization
+// status:   correct
+// cflags:   +d=linearization
+// teardown_command: rm -rf twoflattankmodel.* twoflattankmodel_* output.log linear_twoflattankmodel.* linear_twoflattankmodel_* linear_twoflattankmodel twoflattankmodel
+// 
+//  Case for linearization of twoflattankmodel model
+//
+loadFile("modelTwoflattankmodel.mo");
+simulate(twoflattankmodel,numberOfIntervals=1); // 1 intervals == 2 values
+//linearize
+system("./twoflattankmodel -l 0");
+loadFile("linear_twoflattankmodel.mo");
+list(linear_twoflattankmodel);
+simulate(linear_twoflattankmodel,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+//echo(false); // turns of output
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "twoflattankmodel_res.plt",
+//		 messages = ""
+// end SimulationResult;
+// Linearization will performed at point of time: 0
+// Linear model is created!
+// 0
+// true
+// "model linear_twoflattankmodel
+//  parameter Integer n = 2;
+//  parameter Integer k = 1;
+//  parameter Integer l = 1;
+//  parameter Real x0[2] = {2,1};
+//  parameter Real u0[1] = {0};
+//  parameter Real A[2,2] = [ -0.5,0.5;2, -3];
+//  parameter Real B[2,1] = [0.5;0];
+//  parameter Real C[1,2] = [0,0.5];
+//  parameter Real D[1,1] = [0];
+//  Real x[2](start = x0);
+//  input Real u[1](start = u0);
+//  output Real y[1];
+//  Real x_h1 = x[1];
+//  Real x_h2 = x[2];
+//  Real u_F = u[1];
+//  Real y_F2 = y[1];
+//   
+// equation 
+//  der(x) = A * x + B * u;
+//  y = C * x + D * u;
+// end linear_twoflattankmodel;
+// 
+// "
+// record SimulationResult
+//     resultFile = "linear_twoflattankmodel_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult

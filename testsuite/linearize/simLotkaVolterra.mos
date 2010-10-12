@@ -1,0 +1,55 @@
+// name:     LotkaVolterra linearization
+// keywords: LotkaVolterra, linearization
+// status:   correct
+// cflags:   +d=linearization
+// teardown_command: rm -rf LotkaVolterra.* LotkaVolterra_* output.log linear_LotkaVolterra.* linear_LotkaVolterra_* linear_LotkaVolterra LotkaVolterra
+// 
+//  Case for linearization of LotkaVolterra model
+//
+loadFile("modelLotkaVolterra.mo");
+simulate(LotkaVolterra,numberOfIntervals=1); // 1 intervals == 2 values
+//linearize
+system("./LotkaVolterra -l 0");
+loadFile("linear_LotkaVolterra.mo");
+list(linear_LotkaVolterra);
+simulate(linear_LotkaVolterra,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+//echo(false); // turns of output
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "LotkaVolterra_res.plt",
+//     messages = ""
+// end SimulationResult;
+// Linearization will performed at point of time: 0
+// Linear model is created!
+// 0
+// true
+// "model linear_LotkaVolterra
+//  parameter Integer n = 2;
+//  parameter Integer k = 0;
+//  parameter Integer l = 0;
+//  parameter Real x0[2] = {5,3};
+//  parameter Real u0[0] = {};
+//  parameter Real A[2,2] = [ -4, -15;3,3];
+//  parameter Real B[2,0] = zeros(2, 0);
+//  parameter Real C[0,2] = zeros(0, 2);
+//  parameter Real D[0,0] = zeros(0, 0);
+//  Real x[2](start = x0);
+//  input Real u[0];
+//  output Real y[0];
+//  Real x_x = x[1];
+//  Real x_y = x[2];
+//  
+// equation 
+//  der(x) = A * x + B * u;
+//  y = C * x + D * u;
+// end linear_LotkaVolterra;
+//  
+// "
+// record SimulationResult
+//     resultFile = "linear_LotkaVolterra_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult
