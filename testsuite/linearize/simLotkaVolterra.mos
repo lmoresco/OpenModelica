@@ -9,7 +9,7 @@
 loadFile("modelLotkaVolterra.mo");
 simulate(LotkaVolterra,numberOfIntervals=1); // 1 intervals == 2 values
 //linearize
-system("./LotkaVolterra -l 0");
+system("LotkaVolterra -l 0");
 loadFile("linear_LotkaVolterra.mo");
 list(linear_LotkaVolterra);
 simulate(linear_LotkaVolterra,method="dassl2");

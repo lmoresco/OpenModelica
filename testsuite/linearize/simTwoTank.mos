@@ -9,7 +9,7 @@
 loadFile("modelTwoflattankmodel.mo");
 simulate(twoflattankmodel,numberOfIntervals=1); // 1 intervals == 2 values
 //linearize
-system("./twoflattankmodel -l 0");
+system("twoflattankmodel -l 0");
 loadFile("linear_twoflattankmodel.mo");
 list(linear_twoflattankmodel);
 simulate(linear_twoflattankmodel,method="dassl2");

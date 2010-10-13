@@ -9,7 +9,7 @@
 loadFile("modelVanDerPol.mo");
 simulate(VanDerPol,numberOfIntervals=1); // 1 intervals == 2 values
 //linearize
-system("./VanDerPol -l 0");
+system("VanDerPol -l 0");
 loadFile("linear_VanDerPol.mo");
 list(linear_VanDerPol);
 simulate(linear_VanDerPol,method="dassl2");
