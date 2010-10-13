@@ -1,0 +1,112 @@
+// name: DumpTest
+// cflags: +g=MetaModelica
+// status: correct
+
+loadFile("../../Compiler/Absyn.mo");getErrorString();
+loadFile("../../Compiler/Debug.mo");getErrorString();
+loadFile("../../Compiler/Dump.mo");getErrorString();
+loadFile("../../Compiler/DumpGraphviz.mo");getErrorString();
+loadFile("../../Compiler/Graphviz.mo");getErrorString();
+loadFile("../../Compiler/Print.mo");getErrorString();
+loadFile("../../Compiler/RTOpts.mo");getErrorString();
+loadFile("../../Compiler/System.mo");getErrorString();
+loadFile("../../Compiler/Util.mo");getErrorString();
+loadFile("DumpTest.mo");getErrorString();
+
+Dump.unparseRedeclarekeywords(Absyn.REDECLARE());
+Dump.unparseRedeclarekeywords(Absyn.REPLACEABLE());
+Dump.unparseRedeclarekeywords(Absyn.REDECLARE_REPLACEABLE());
+
+Dump.unparseElementPrefixKeywords(("a","b"),"c","d","e","f");
+getErrorString();
+
+Dump.unparseStringCommentOption(NONE());
+getErrorString();
+
+Dump.unparseStringCommentOption(SOME("myComment"));
+getErrorString();
+
+setLinkerFlags("-lc_runtime -lomcruntime");
+//setCompilerFlags("../../Compiler/runtime/printimpl.c ../../Compiler/runtime/Print_omc.cpp");
+echo(false);
+body:=Absyn.PARTS({},NONE());
+restr:=Absyn.R_FUNCTION();
+prog:=Absyn.PROGRAM({Absyn.CLASS("dummyClass",true,true,true,restr,body,Absyn.dummyInfo)},Absyn.TOP(),Absyn.dummyTimeStamp);
+echo(true);
+"DumpGraphviz.dump";
+DumpGraphviz.dump(prog);
+getErrorString();
+"Dump.dump";
+DumpTest.dump(prog);
+getErrorString();
+"Dump.unparseStr";
+Dump.unparseStr(prog,false);
+getErrorString();
+"Dump.getAstAsCorbaString";
+DumpTest.getAstAsCorbaString(prog);
+getErrorString();
+// Result:
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// ("redeclare ","")
+// ("","replaceable ")
+// ("redeclare ","replaceable ")
+// "acdbef"
+// ""
+// ""
+// ""
+// " "myComment""
+// ""
+// true
+// true
+// "DumpGraphviz.dump"
+// graph AST {
+// GVNOD0[label="ROOT"];GVNOD1[label="FUNCTION"];GVNOD1 -- GVNOD0;
+// }
+// 
+// ""
+// "Dump.dump"
+// RTOpts.debugFlag not yet implemented dumptr
+// "Absyn.PROGRAM([
+// Absyn.CLASS("dummyClass", true, true, true, Absyn.R_FUNCTION, Absyn.PARTS([], NONE()), Absyn.INFO("", false, 0, 0, 0, 0))
+// ],Absyn.TOP)
+// "
+// "Error: Tried to use function DumpTest.dump, but it was not instantiated.
+// "
+// "Dump.unparseStr"
+// "final encapsulated partial function dummyClass
+// end dummyClass;
+// 
+// "
+// ""
+// "Dump.getAstAsCorbaString"
+// record Absyn.PROGRAM
+// classes = {record Absyn.CLASS name = "dummyClass", partialPrefix = true, finalPrefix = true, encapsulatedPrefix = true, restriction = record Absyn.R_FUNCTION end Absyn.R_FUNCTION;, body = record Absyn.PARTS classParts = {}, comment = NONE() end Absyn.PARTS;, info = record Absyn.INFO fileName = "", isReadOnly = false, lineNumberStart = 0, columnNumberStart = 0, lineNumberEnd = 0, columnNumberEnd = 0, buildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP; end Absyn.INFO; end Absyn.CLASS;},
+// within_ = record Absyn.TOP end Absyn.TOP;,
+// globalBuildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP;
+// end Absyn.PROGRAM;"record Absyn.PROGRAM
+// classes = {record Absyn.CLASS name = "dummyClass", partialPrefix = true, finalPrefix = true, encapsulatedPrefix = true, restriction = record Absyn.R_FUNCTION end Absyn.R_FUNCTION;, body = record Absyn.PARTS classParts = {}, comment = NONE() end Absyn.PARTS;, info = record Absyn.INFO fileName = "", isReadOnly = false, lineNumberStart = 0, columnNumberStart = 0, lineNumberEnd = 0, columnNumberEnd = 0, buildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP; end Absyn.INFO; end Absyn.CLASS;},
+// within_ = record Absyn.TOP end Absyn.TOP;,
+// globalBuildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP;
+// end Absyn.PROGRAM;"
+// "Error: Tried to use function DumpTest.getAstAsCorbaString, but it was not instantiated.
+// "
+// endResult

@@ -11,6 +11,7 @@ BuiltinMisc.mos \
 BuiltinReal.mos \
 BuiltinString.mos \
 ComplicatedInteractive.mos \
+DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
