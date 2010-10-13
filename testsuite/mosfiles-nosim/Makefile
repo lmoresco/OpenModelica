@@ -6,6 +6,7 @@ BaseClass1.mos \
 DefaultComponentName.mos \
 differentiate.mos \
 EnzMM.mos \
+ErrorFunctionCallNumArgs.mos \
 ExtendsOrder.mos \
 ExternalFunctionResultOrder.mos\
 FinalTests.mos \

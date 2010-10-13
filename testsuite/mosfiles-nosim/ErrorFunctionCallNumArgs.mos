@@ -1,0 +1,20 @@
+// name: ErrorFunctionCallNumArgs
+// status: correct
+loadFile("ErrorFunctionCallNumArgs.mo");
+ErrorFunctionCallNumArgs.f0();
+getErrorString();
+ErrorFunctionCallNumArgs.f1();
+getErrorString();
+ErrorFunctionCallNumArgs.f2();
+getErrorString();
+// Result:
+// true
+// 
+// "Error: No matching function found for fn() of type function(i:Integer) => String in component <NO COMPONENT>, candidates are function(i:Integer) => String
+// "
+// "1"
+// ""
+// 
+// "Error: Failed to instantiate function ErrorFunctionCallNumArgs.f2 in scope <global scope>
+// "
+// endResult
