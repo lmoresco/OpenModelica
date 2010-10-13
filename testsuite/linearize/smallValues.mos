@@ -1,0 +1,56 @@
+// name:     small values in linearization
+// keywords: VanDerPol, linearization, small value
+// status:   correct
+// cflags:   +d=linearization
+// teardown_command: rm -rf VanDerPol.* VanDerPol_* output.log linear_VanDerPol.* linear_VanDerPol_* linear_VanDerPol VanDerPol
+// 
+//  Case for linearization of VanDerPol model
+//
+loadFile("smallValue.mo");
+simulate(VanDerPol,numberOfIntervals=1); // 1 intervals == 2 values
+//linearize
+system("./VanDerPol -l 0");
+loadFile("linear_VanDerPol.mo");
+list(linear_VanDerPol);
+simulate(linear_VanDerPol,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+//echo(false); // turns of output
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "VanDerPol_res.plt",
+//     messages = ""
+// end SimulationResult;
+// Linearization will performed at point of time: 0
+// Linear model is created!
+// 0
+// true
+// "model linear_VanDerPol
+//  parameter Integer n = 2;
+//  parameter Integer k = 0;
+//  parameter Integer l = 0;
+//  parameter Real x0[2] = {1,2};
+//  parameter Real u0[0] = {};
+//  parameter Real A[2,2] = [0,1; -2.200000000000004,0];
+//  parameter Real B[2,0] = zeros(2, 0);
+//  parameter Real C[0,2] = zeros(0, 2);
+//  parameter Real D[0,0] = zeros(0, 0);
+//  Real x[2](start = x0);
+//  input Real u[0];
+//  output Real y[0];
+//  Real x_x = x[1];
+//  Real x_y = x[2];
+//  
+// equation 
+//  der(x) = A * x + B * u;
+//  y = C * x + D * u;
+// end linear_VanDerPol;
+// 
+// "
+// record SimulationResult
+//     resultFile = "linear_VanDerPol_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult
+
