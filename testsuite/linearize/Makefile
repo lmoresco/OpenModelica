@@ -1,6 +1,6 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
 TEST = ../rtest
-PATH := ${PATH}:./
+PATH := ./:${PATH}
 
 TESTFILES = linmodel.mos \
 simVanDerPol.mos \
