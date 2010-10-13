@@ -10,7 +10,7 @@ getErrorString();
 // Result:
 // true
 // 
-// "Error: No matching function found for fn() of type function(i:Integer) => String in component <NO COMPONENT>, candidates are function(i:Integer) => String
+// "[ErrorFunctionCallNumArgs.mo:12:3-12:12:writable] Error: No matching function found for fn() of type function(i:Integer) => String in component <NO COMPONENT>, candidates are function(i:Integer) => String
 // "
 // "1"
 // ""

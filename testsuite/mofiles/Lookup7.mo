@@ -15,7 +15,7 @@ class Lookup7
 end Lookup7;
 // Result:
 // Error processing file: Lookup7.mo
-// [Lookup7.mo:14:3-14:6:readonly] Error: Variable a: Variable y not found in scope A
+// [Lookup7.mo:9:3-9:13:writable] Error: Variable y not found in scope A
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

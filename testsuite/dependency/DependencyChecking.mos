@@ -45,10 +45,10 @@ getErrorString();
 // true
 // 
 // "[DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
-// Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
+// [DependencyChecking.mo:21:5-21:36:writable] Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
 // Error: Error occured while flattening model DependencyChecking
 // [DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
-// Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
+// [DependencyChecking.mo:21:5-21:36:writable] Error: Variable Modelica.Constants.eps not found in scope DependencyChecking.func
 // "
 // Ok
 // 1

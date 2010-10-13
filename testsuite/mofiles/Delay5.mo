@@ -26,7 +26,7 @@ end Delay;
 //   y = delay(x,a,a);
 //   z = delay(x,a,a);
 // end Delay;
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, a) where argument #3 has to be parameter or constant expression but is a variable
+// [Delay5.mo:15:3-15:18:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a) where argument #2 has to be parameter or constant expression but is a variable
+// [Delay5.mo:16:3-16:21:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, a) where argument #3 has to be parameter or constant expression but is a variable
 // 
 // endResult

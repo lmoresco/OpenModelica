@@ -16,7 +16,7 @@ end A;
 // Result:
 // Error processing file: ModifierTypeError.mo
 // [ModifierTypeError.mo:9:3-9:27:writable] Error: Type mismatch in binding x = 1.0, expected subtype of Integer, got type Real.
-// Error: Variable X.x not found in scope A
+// [ModifierTypeError.mo:13:4-13:19:writable] Error: Variable X.x not found in scope A
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

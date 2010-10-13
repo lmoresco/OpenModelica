@@ -92,7 +92,7 @@
 
 // Result:
 // Error processing file: RefinedSimpleCircuitInvalid.mo
-// Error: Variable i not found in scope Capacitor
+// [RefinedSimpleCircuitInvalid.mo:63:5-63:17:writable] Error: Variable i not found in scope Capacitor
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

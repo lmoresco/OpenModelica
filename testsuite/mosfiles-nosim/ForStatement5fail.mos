@@ -13,7 +13,7 @@ a
 // Result:
 // 5
 // Error processing file: ForStatement5fail.mos
-// Error: Expression 2 in for-statement must be an array type
+// [ForStatement5fail.mos:8:1-10:8:writable] Error: Expression 2 in for-statement must be an array type
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

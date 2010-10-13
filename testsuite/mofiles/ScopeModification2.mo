@@ -15,7 +15,7 @@ class ScopeModification2
 end ScopeModification2;
 // Result:
 // Error processing file: ScopeModification2.mo
-// Error: Variable a not found in scope ScopeModification2
+// [ScopeModification2.mo:14:3-14:17:writable] Error: Variable a not found in scope ScopeModification2
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

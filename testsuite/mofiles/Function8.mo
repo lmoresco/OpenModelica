@@ -20,7 +20,7 @@ equation
 end Function8;
 // Result:
 // Error processing file: Function8.mo
-// Error: No matching function found for f(z) of type function(x:String) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
+// [Function8.mo:19:3-19:11:writable] Error: No matching function found for f(z) of type function(x:String) => Real in component <NO COMPONENT>, candidates are function(x:Real) => Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

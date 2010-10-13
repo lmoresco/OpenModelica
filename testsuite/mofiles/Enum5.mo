@@ -25,8 +25,8 @@ end Enumeration5;
 
 // Result:
 // Error processing file: Enum5.mo
-// Error: Illegal subscript [E.j] for dimensions 3 in component <NO COMPONENT>
-// Error: Variable hh[E.j] not found in scope P.h
+// [Enum5.mo:14:3-14:16:writable] Error: Illegal subscript [E.j] for dimensions 3 in component <NO COMPONENT>
+// [Enum5.mo:14:3-14:16:writable] Error: Variable hh[E.j] not found in scope P.h
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
