@@ -96,6 +96,7 @@
     <value key="Qt4ProjectManager.Qt4RunConfiguration.UseTerminal" type="bool">false</value>
     <valuelist key="Qt4ProjectManager.Qt4RunConfiguration.UserEnvironmentChanges" type="QVariantList">
      <value type="QString">OPENMODELICAHOME=C:\OpenModelica1.5.0</value>
+     <value type="QString">OPENMODELICALIBRARY=C:\OpenModelica1.5.0\ModelicaLibrary</value>
     </valuelist>
     <value key="Qt4ProjectManager.Qt4RunConfiguration.UserSetName" type="bool">false</value>
     <value key="Qt4ProjectManager.Qt4RunConfiguration.UserSetWorkingDirectory" type="bool">false</value>
