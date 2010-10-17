@@ -15,6 +15,7 @@ DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
+ErrorInvalidPattern.mo \
 ErrorMatchNumOutput.mos \
 Failure.mos \
 List1.mos \
