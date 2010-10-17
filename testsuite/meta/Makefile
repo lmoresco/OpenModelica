@@ -16,6 +16,9 @@ Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
 ErrorInvalidPattern.mo \
+ErrorMatchInOut1.mo \
+ErrorMatchInOut2.mo \
+ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
 Failure.mos \
 List1.mos \
