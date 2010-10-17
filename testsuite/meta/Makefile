@@ -37,6 +37,7 @@ MatchCase10.mos \
 MatchCase11.mos \
 MatchCase12.mos \
 MatchCase13.mos \
+MatchCase14.mo \
 MatchCaseInteractive1.mos \
 MatchCaseInteractive2.mos \
 MatchCaseInteractive3.mos \
