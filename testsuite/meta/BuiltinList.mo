@@ -14,7 +14,7 @@ package BuiltinList
     reverse := listReverse(lst);
     appendDupe := listAppend(lst,lst);
     len := listLength(lst);
-    hasMember := listMember(lst, i);
+    hasMember := listMember(i, lst);
     getIx := listGet(lst, i);
     getNthIx := listNth(lst, i);
     deleteIx := listDelete(lst, i);
@@ -43,7 +43,7 @@ package BuiltinList
     reverse := listReverse(lst);
     appendDupe := listAppend(lst,lst);
     len := listLength(lst);
-    hasMember := listMember(lst, member);
+    hasMember := listMember(member, lst);
     getIx := listGet(lst, i);
     getNthIx := listNth(lst, i);
     deleteIx := listDelete(lst, i);
