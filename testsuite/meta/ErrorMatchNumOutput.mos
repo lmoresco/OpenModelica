@@ -12,7 +12,7 @@ getErrorString();
 // true
 // 
 // "[ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Match expression has mismatched number of expected (3) and actual (2) outputs. The expressions were (o1,o2,o3) and (3,4).
-// Error: Tuple assignment only allowed when rhs is function call (in match (i1,i2)
+// [ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Tuple assignment only allowed when rhs is function call (in match (i1,i2)
 // 	case ((1,2)) then (3,4);
 // 	else then (5,6,7);
 // 	end match)

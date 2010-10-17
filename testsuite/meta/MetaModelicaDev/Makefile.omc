@@ -1,4 +1,4 @@
-LOGS = 01 02a 02b 03 04 05a 05b 08
+LOGS = 01 02a 02b 03 04 05a 05b 06 08
 .PHONY = 01 02a 02b 03 04 05a 05b 06 08 start.stamp.tmp
 
 test: $(LOGS)
