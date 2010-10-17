@@ -13,22 +13,22 @@ g:=Uniontype13.fooIdent(f);
 
 // Result:
 // true
-// record Uniontype13.REC1
+// record Uniontype13.UT.REC1
 //     x = 3
-// end Uniontype13.REC1;
+// end Uniontype13.UT.REC1;
 // record Uniontype13.foo
-//     ut = record Uniontype13.REC1
+//     ut = record Uniontype13.UT.REC1
 //     x = 3
-// end Uniontype13.REC1;
+// end Uniontype13.UT.REC1;
 // end Uniontype13.foo;
 // record Uniontype13.foo
-//     ut = record Uniontype13.REC1
+//     ut = record Uniontype13.UT.REC1
 //     x = 3
-// end Uniontype13.REC1;
+// end Uniontype13.UT.REC1;
 // end Uniontype13.foo;
 // record Uniontype13.foo
-//     ut = record Uniontype13.REC1
+//     ut = record Uniontype13.UT.REC1
 //     x = 3
-// end Uniontype13.REC1;
+// end Uniontype13.UT.REC1;
 // end Uniontype13.foo;
 // endResult

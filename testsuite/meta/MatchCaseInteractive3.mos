@@ -14,12 +14,12 @@ print("
 
 // Result:
 // true
-// record MatchCaseInteractive3.REC1
+// record MatchCaseInteractive3.UT.REC1
 //     x = 3
-// end MatchCaseInteractive3.REC1;
-// record MatchCaseInteractive3.REC1
+// end MatchCaseInteractive3.UT.REC1;
+// record MatchCaseInteractive3.UT.REC1
 //     x = 3
-// end MatchCaseInteractive3.REC1;
+// end MatchCaseInteractive3.UT.REC1;
 // ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
 // 
 // 

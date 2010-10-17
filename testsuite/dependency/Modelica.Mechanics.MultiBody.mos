@@ -270,8 +270,8 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// Error: No matching function found for Frames.resolve2 in component <NO COMPONENT>
-// Error: Class Frames.resolve2 not found in scope Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
+// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:613:5-613:68:writable] Error: No matching function found for Frames.resolve2 in component <NO COMPONENT>
+// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:613:5-613:68:writable] Error: Class Frames.resolve2 not found in scope Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
 // [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:580:3-664:23:writable] Error: Illegal to instantiate partial class PartialLineForce
 // Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce
 // "

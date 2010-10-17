@@ -20,6 +20,8 @@ Failure.mos \
 List1.mos \
 List2.mos \
 List3.mos \
+List4.mo \
+List5.mo \
 ListInteractive.mos \
 MatchCase1.mos \
 MatchCase2.mos \
@@ -79,7 +81,6 @@ UtilTest.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-List4.mos \
 PartialFn9.mos \
 
 # Remove executables on Linux (no extension)
@@ -96,7 +97,7 @@ test2:
 	@$(TEST) $(TESTFILES)
 
 clean:
-	@rm -f $(CLEAN)
+	@rm -f $(CLEAN:.mo=)
 failingtest :
 	@echo
 	@echo Running failing tests...

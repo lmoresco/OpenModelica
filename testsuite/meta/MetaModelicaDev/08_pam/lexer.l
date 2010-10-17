@@ -8,9 +8,9 @@
 #else
 #include "meta_modelica.h"
 
-extern struct record_description Pam_INT__desc;
+extern struct record_description Pam_Exp_INT__desc;
 
-#define Pam__INT(X1) (mmc_mk_box2(3,&Pam_INT__desc,(X1)))
+#define Pam__INT(X1) (mmc_mk_box2(3,&Pam_Exp_INT__desc,(X1)))
 
 #endif
 

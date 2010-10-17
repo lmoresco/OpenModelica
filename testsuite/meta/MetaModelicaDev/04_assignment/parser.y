@@ -29,35 +29,35 @@ void* getAST()
 
 
 /* Program */
-extern struct record_description Assignment_PROGRAM__desc;
-#define Assignment__PROGRAM(X1,X2) (mmc_mk_box3(3,&Assignment_PROGRAM__desc,(X1),(X2)))
+extern struct record_description Assignment_Program_PROGRAM__desc;
+#define Assignment__PROGRAM(X1,X2) (mmc_mk_box3(3,&Assignment_Program_PROGRAM__desc,(X1),(X2)))
 
 /* Exp */
-extern struct record_description Assignment_BINARY__desc;
-extern struct record_description Assignment_UNARY__desc;
-extern struct record_description Assignment_ASSIGN__desc;
-extern struct record_description Assignment_IDENT__desc;
+extern struct record_description Assignment_Exp_BINARY__desc;
+extern struct record_description Assignment_Exp_UNARY__desc;
+extern struct record_description Assignment_Exp_ASSIGN__desc;
+extern struct record_description Assignment_Exp_IDENT__desc;
 
-#define Assignment__BINARY(X1,OP,X2) (mmc_mk_box4(4,&Assignment_BINARY__desc,(X1),(OP),(X2)))
-#define Assignment__UNARY(OP,X1) (mmc_mk_box3(5,&Assignment_UNARY__desc,(OP),(X1)))
-#define Assignment__ASSIGN(X1,X2) (mmc_mk_box3(6,&Assignment_ASSIGN__desc,(X1),(X2)))
-#define Assignment__IDENT(X1) (mmc_mk_box2(7,&Assignment_IDENT__desc,(X1)))
+#define Assignment__BINARY(X1,OP,X2) (mmc_mk_box4(4,&Assignment_Exp_BINARY__desc,(X1),(OP),(X2)))
+#define Assignment__UNARY(OP,X1) (mmc_mk_box3(5,&Assignment_Exp_UNARY__desc,(OP),(X1)))
+#define Assignment__ASSIGN(X1,X2) (mmc_mk_box3(6,&Assignment_Exp_ASSIGN__desc,(X1),(X2)))
+#define Assignment__IDENT(X1) (mmc_mk_box2(7,&Assignment_Exp_IDENT__desc,(X1)))
 
 /* BinOp */
-extern struct record_description Assignment_ADD__desc;
-extern struct record_description Assignment_SUB__desc;
-extern struct record_description Assignment_MUL__desc;
-extern struct record_description Assignment_DIV__desc;
+extern struct record_description Assignment_BinOp_ADD__desc;
+extern struct record_description Assignment_BinOp_SUB__desc;
+extern struct record_description Assignment_BinOp_MUL__desc;
+extern struct record_description Assignment_BinOp_DIV__desc;
 
-#define Assignment__ADD (mmc_mk_box1(3,&Assignment_ADD__desc))
-#define Assignment__SUB (mmc_mk_box1(4,&Assignment_SUB__desc))
-#define Assignment__MUL (mmc_mk_box1(5,&Assignment_MUL__desc))
-#define Assignment__DIV (mmc_mk_box1(6,&Assignment_DIV__desc))
+#define Assignment__ADD (mmc_mk_box1(3,&Assignment_BinOp_ADD__desc))
+#define Assignment__SUB (mmc_mk_box1(4,&Assignment_BinOp_SUB__desc))
+#define Assignment__MUL (mmc_mk_box1(5,&Assignment_BinOp_MUL__desc))
+#define Assignment__DIV (mmc_mk_box1(6,&Assignment_BinOp_DIV__desc))
 
 /* UnOp */
-extern struct record_description Assignment_NEG__desc;
+extern struct record_description Assignment_UnOp_NEG__desc;
 
-#define Assignment__NEG (mmc_mk_box1(3,&Assignment_NEG__desc))
+#define Assignment__NEG (mmc_mk_box1(3,&Assignment_UnOp_NEG__desc))
 #endif
 
 %}

@@ -28,23 +28,23 @@ void* getAST()
 }
 
 /* Exp */
-extern struct record_description SymbolicDerivative_INT__desc;
-extern struct record_description SymbolicDerivative_ADD__desc;
-extern struct record_description SymbolicDerivative_SUB__desc;
-extern struct record_description SymbolicDerivative_MUL__desc;
-extern struct record_description SymbolicDerivative_DIV__desc;
-extern struct record_description SymbolicDerivative_NEG__desc;
-extern struct record_description SymbolicDerivative_IDENT__desc;
-extern struct record_description SymbolicDerivative_CALL__desc;
+extern struct record_description SymbolicDerivative_Exp_INT__desc;
+extern struct record_description SymbolicDerivative_Exp_ADD__desc;
+extern struct record_description SymbolicDerivative_Exp_SUB__desc;
+extern struct record_description SymbolicDerivative_Exp_MUL__desc;
+extern struct record_description SymbolicDerivative_Exp_DIV__desc;
+extern struct record_description SymbolicDerivative_Exp_NEG__desc;
+extern struct record_description SymbolicDerivative_Exp_IDENT__desc;
+extern struct record_description SymbolicDerivative_Exp_CALL__desc;
 
-#define SymbolicDerivative__INT(X1) (mmc_mk_box2(3,&SymbolicDerivative_INT__desc,(X1)))
-#define SymbolicDerivative__ADD(X1,X2) (mmc_mk_box3(4,&SymbolicDerivative_ADD__desc,(X1),(X2)))
-#define SymbolicDerivative__SUB(X1,X2) (mmc_mk_box3(5,&SymbolicDerivative_SUB__desc,(X1),(X2)))
-#define SymbolicDerivative__MUL(X1,X2) (mmc_mk_box3(6,&SymbolicDerivative_MUL__desc,(X1),(X2)))
-#define SymbolicDerivative__DIV(X1,X2) (mmc_mk_box3(7,&SymbolicDerivative_DIV__desc,(X1),(X2)))
-#define SymbolicDerivative__NEG(X1) (mmc_mk_box2(8,&SymbolicDerivative_NEG__desc,(X1)))
-#define SymbolicDerivative__IDENT(X1) (mmc_mk_box2(9,&SymbolicDerivative_IDENT__desc,(X1)))
-#define SymbolicDerivative__CALL(X1,X2) (mmc_mk_box3(10,&SymbolicDerivative_CALL__desc,(X1),(X2)))
+#define SymbolicDerivative__INT(X1) (mmc_mk_box2(3,&SymbolicDerivative_Exp_INT__desc,(X1)))
+#define SymbolicDerivative__ADD(X1,X2) (mmc_mk_box3(4,&SymbolicDerivative_Exp_ADD__desc,(X1),(X2)))
+#define SymbolicDerivative__SUB(X1,X2) (mmc_mk_box3(5,&SymbolicDerivative_Exp_SUB__desc,(X1),(X2)))
+#define SymbolicDerivative__MUL(X1,X2) (mmc_mk_box3(6,&SymbolicDerivative_Exp_MUL__desc,(X1),(X2)))
+#define SymbolicDerivative__DIV(X1,X2) (mmc_mk_box3(7,&SymbolicDerivative_Exp_DIV__desc,(X1),(X2)))
+#define SymbolicDerivative__NEG(X1) (mmc_mk_box2(8,&SymbolicDerivative_Exp_NEG__desc,(X1)))
+#define SymbolicDerivative__IDENT(X1) (mmc_mk_box2(9,&SymbolicDerivative_Exp_IDENT__desc,(X1)))
+#define SymbolicDerivative__CALL(X1,X2) (mmc_mk_box3(10,&SymbolicDerivative_Exp_CALL__desc,(X1),(X2)))
 #endif
 
 %}

@@ -9,6 +9,7 @@ loadFile("Types.mo");
 echo(false);
 Main.main({});
 echo(true);
+getErrorString();
 // Result:
 // Int String List:1 2 10 15 30 45 110 121 150 200 
 // Ordered String List:1 10 110 121 15 150 2 200 30 45 

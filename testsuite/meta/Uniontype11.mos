@@ -11,12 +11,12 @@ b:=Uniontype11.test(a);
 
 // Result:
 // true
-// record Uniontype11.REC1
+// record Uniontype11.UT.REC1
 //     x = 3
-// end Uniontype11.REC1;
-// record Uniontype11.REC2
-//     x = record Uniontype11.REC1
+// end Uniontype11.UT.REC1;
+// record Uniontype11.UT.REC2
+//     x = record Uniontype11.UT.REC1
 //     x = 3
-// end Uniontype11.REC1;
-// end Uniontype11.REC2;
+// end Uniontype11.UT.REC1;
+// end Uniontype11.UT.REC2;
 // endResult
