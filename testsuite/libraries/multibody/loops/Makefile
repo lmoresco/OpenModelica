@@ -8,9 +8,8 @@ Fourbar1.mos \
 Fourbar2.mos \
 Fourbar_analytic.mos \
 PlanarLoops_analytic.mos \
-# EngineV6.mos \
-# EngineV6_analytic.mos
-# v6 engines take *A LOT OF TIME* to flatten, enable later when faster
+EngineV6.mos \
+EngineV6_analytic.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
