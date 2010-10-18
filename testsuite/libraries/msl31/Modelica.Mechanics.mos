@@ -379,8 +379,8 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   supportFriction.locked =  NOT supportFriction.free AND  NOT (pre(supportFriction.mode) == 1 OR supportFriction.startForward OR pre(supportFriction.mode) == -1 OR supportFriction.startBackward);
 //   supportFriction.a_relfric = if supportFriction.locked then 0.0 else if supportFriction.free then supportFriction.sa else if supportFriction.startForward then supportFriction.sa - supportFriction.f0_max else if supportFriction.startBackward then supportFriction.sa + supportFriction.f0_max else if pre(supportFriction.mode) == 1 then supportFriction.sa - supportFriction.f0_max else supportFriction.sa + supportFriction.f0_max;
 //   supportFriction.mode = if supportFriction.free then 2 else if (pre(supportFriction.mode) == 1 OR pre(supportFriction.mode) == 2 OR supportFriction.startForward) AND supportFriction.v_relfric > 0.0 then 1 else if (pre(supportFriction.mode) == -1 OR pre(supportFriction.mode) == 2 OR supportFriction.startBackward) AND supportFriction.v_relfric < 0.0 then -1 else 0;
-//   sineForce.y = force.f;
 //   force.f = force2.f;
+//   force.f = sineForce.y;
 //   mass.flange_b.f + supportFriction.flange_a.f = 0.0;
 //   mass.flange_b.s = supportFriction.flange_a.s;
 //   force2.flange.f + mass.flange_a.f = 0.0;
@@ -388,12 +388,12 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   force.flange.f + stop1.flange_a.f = 0.0;
 //   force.flange.s = stop1.flange_a.s;
 //   spring.flange_a.f + fixed2.flange.f = 0.0;
-//   spring.flange_a.s = fixed2.flange.s;
+//   fixed2.flange.s = spring.flange_a.s;
 //   spring.flange_b.f + stop2.flange_a.f = 0.0;
 //   spring.flange_b.s = stop2.flange_a.s;
-//   stop1.flange_b.f = 0.0;
-//   stop2.flange_b.f = 0.0;
 //   supportFriction.flange_b.f = 0.0;
+//   stop2.flange_b.f = 0.0;
+//   stop1.flange_b.f = 0.0;
 // algorithm
 //   when initial() then
 //     assert(stop1.s > stop1.smin + stop1.L / 2.0 OR stop1.s >= stop1.smin + stop1.L / 2.0 AND stop1.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");

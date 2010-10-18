@@ -49,27 +49,27 @@ end ForceAndTorque;
 
 // Result:
 // class ForceAndTorque
-// input Real forceAndTorque.force[1](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// input Real forceAndTorque.force[2](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// input Real forceAndTorque.force[3](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// input Real forceAndTorque.basicForce.force[1](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// input Real forceAndTorque.basicForce.force[2](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// input Real forceAndTorque.basicForce.force[3](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
-// output Real force[1].y "Connector of Real output signal";
-// parameter Real force[1].k(start = 1.0) = 0 "Constant output value";
-// output Real force[2].y "Connector of Real output signal";
-// parameter Real force[2].k(start = 1.0) = 1000 "Constant output value";
-// output Real force[3].y "Connector of Real output signal";
-// parameter Real force[3].k(start = 1.0) = 0 "Constant output value";
+//   input Real forceAndTorque.force[1](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   input Real forceAndTorque.force[2](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   input Real forceAndTorque.force[3](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   input Real forceAndTorque.basicForce.force[1](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   input Real forceAndTorque.basicForce.force[2](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   input Real forceAndTorque.basicForce.force[3](quantity = "Force", unit = "N") "x-, y-, z-coordinates of force";
+//   output Real force[1].y "Connector of Real output signal";
+//   parameter Real force[1].k(start = 1.0) = 0.0 "Constant output value";
+//   output Real force[2].y "Connector of Real output signal";
+//   parameter Real force[2].k(start = 1.0) = 1000.0 "Constant output value";
+//   output Real force[3].y "Connector of Real output signal";
+//   parameter Real force[3].k(start = 1.0) = 0.0 "Constant output value";
 // equation
-// forceAndTorque.basicForce.force[1] = forceAndTorque.force[1];
-// forceAndTorque.basicForce.force[2] = forceAndTorque.force[2];
-// forceAndTorque.basicForce.force[3] = forceAndTorque.force[3];
 //   force[1].y = force[1].k;
 //   force[2].y = force[2].k;
 //   force[3].y = force[3].k;
-// force[1].y = forceAndTorque.force[1];
-// force[2].y = forceAndTorque.force[2];
-// force[3].y = forceAndTorque.force[3];
+//   forceAndTorque.basicForce.force[1] = forceAndTorque.force[1];
+//   forceAndTorque.basicForce.force[1] = force[1].y;
+//   forceAndTorque.basicForce.force[2] = forceAndTorque.force[2];
+//   forceAndTorque.basicForce.force[2] = force[2].y;
+//   forceAndTorque.basicForce.force[3] = forceAndTorque.force[3];
+//   forceAndTorque.basicForce.force[3] = force[3].y;
 // end ForceAndTorque;
 // endResult

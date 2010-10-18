@@ -76,7 +76,16 @@ sub enter_sandbox {
 	make_test_specific_links();
 
   # Parse the testscript to see if it has any special requirements.
-	open(my $in, "<", $test) or die "Couldn't open $test: $!\n";
+  my $open_ret = open(my $in, "<", $test);
+
+	unless($open_ret) {#or die "Couldn't open $test: $!\n";
+    print " ";
+    print color 'red on_blue';
+    print "[$test]";
+    print color 'reset';
+    exit_sandbox();
+    exit 0; 
+  }
 
 	my $stop_expr;
 
@@ -130,6 +139,8 @@ sub exit_sandbox {
   rmtree($test . "_temp") unless $test eq "RunScript.mos";
 }
 
+
+$ENV{'PATH'} = "./:" . $ENV{'PATH'};
 
 enter_sandbox();
 

@@ -12,45 +12,45 @@ getErrorString();
 // Result:
 // true
 // "function Modelica.SIunits.Conversions.from_degC
-// input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
-// output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
+//   input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
+//   output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
 // algorithm
 //   Kelvin := Celsius - -273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // function Modelica.SIunits.Conversions.to_degC
-// input Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
-// output Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
+//   input Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";
+//   output Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
 // algorithm
 //   Celsius := -273.15 + Kelvin;
 // end Modelica.SIunits.Conversions.to_degC;
 // 
 // class Modelica.Thermal.HeatTransfer.Examples.TwoMasses
-// parameter Real T_final_K(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, fixed = false) "Projected final temperature";
-// parameter Real T_final_degC(quantity = "ThermodynamicTemperature", unit = "degC", fixed = false) "Projected final temperature";
-// parameter Real mass1.C(quantity = "HeatCapacity", unit = "J/K") = 15.0 "Heat capacity of part (= cp*m)";
-// parameter Boolean mass1.steadyStateStart = false "true, if component shall start in steady state";
-// Real mass1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 373.15) "Temperature of part";
-// Real mass1.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real mass1.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
-// parameter Real mass2.C(quantity = "HeatCapacity", unit = "J/K") = 15.0 "Heat capacity of part (= cp*m)";
-// parameter Boolean mass2.steadyStateStart = false "true, if component shall start in steady state";
-// Real mass2.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 273.15) "Temperature of part";
-// Real mass2.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real mass2.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
-// Real conduction.Q_flow(quantity = "Power", unit = "W") "Heat flow rate from port_a -> port_b";
-// Real conduction.dT(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "port_a.T - port_b.T";
-// Real conduction.port_a.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real conduction.port_a.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
-// Real conduction.port_b.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real conduction.port_b.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
-// parameter Real conduction.G(quantity = "ThermalConductance", unit = "W/K") = 10.0 "Constant thermal conductance of material";
-// output Real Tsensor1.T(quantity = "ThermodynamicTemperature", unit = "degC");
-// Real Tsensor1.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real Tsensor1.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
-// output Real Tsensor2.T(quantity = "ThermodynamicTemperature", unit = "degC");
-// Real Tsensor2.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
-// Real Tsensor2.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   parameter Real T_final_K(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, fixed = false) "Projected final temperature";
+//   parameter Real T_final_degC(quantity = "ThermodynamicTemperature", unit = "degC", fixed = false) "Projected final temperature";
+//   parameter Real mass1.C(quantity = "HeatCapacity", unit = "J/K") = 15.0 "Heat capacity of part (= cp*m)";
+//   parameter Boolean mass1.steadyStateStart = false "true, if component shall start in steady state";
+//   Real mass1.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 373.15) "Temperature of part";
+//   Real mass1.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real mass1.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   parameter Real mass2.C(quantity = "HeatCapacity", unit = "J/K") = 15.0 "Heat capacity of part (= cp*m)";
+//   parameter Boolean mass2.steadyStateStart = false "true, if component shall start in steady state";
+//   Real mass2.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 273.15) "Temperature of part";
+//   Real mass2.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real mass2.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   Real conduction.Q_flow(quantity = "Power", unit = "W") "Heat flow rate from port_a -> port_b";
+//   Real conduction.dT(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "port_a.T - port_b.T";
+//   Real conduction.port_a.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real conduction.port_a.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   Real conduction.port_b.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real conduction.port_b.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   parameter Real conduction.G(quantity = "ThermalConductance", unit = "W/K") = 10.0 "Constant thermal conductance of material";
+//   output Real Tsensor1.T(quantity = "ThermodynamicTemperature", unit = "degC");
+//   Real Tsensor1.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real Tsensor1.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
+//   output Real Tsensor2.T(quantity = "ThermodynamicTemperature", unit = "degC");
+//   Real Tsensor2.port.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Port temperature";
+//   Real Tsensor2.port.Q_flow(quantity = "Power", unit = "W") "Heat flow rate (positive if flowing from outside into the component)";
 // initial equation
 //   T_final_K = (mass1.port.T * mass1.C + mass2.port.T * mass2.C) / (mass1.C + mass2.C);
 //   T_final_degC = Modelica.SIunits.Conversions.to_degC(T_final_K);
@@ -68,11 +68,11 @@ getErrorString();
 //   Tsensor2.T = Modelica.SIunits.Conversions.to_degC(Tsensor2.port.T);
 //   Tsensor2.port.Q_flow = 0.0;
 //   mass1.port.Q_flow + (Tsensor1.port.Q_flow + conduction.port_a.Q_flow) = 0.0;
-// mass1.port.T = Tsensor1.port.T;
-// Tsensor1.port.T = conduction.port_a.T;
+//   Tsensor1.port.T = conduction.port_a.T;
+//   Tsensor1.port.T = mass1.port.T;
 //   conduction.port_b.Q_flow + (mass2.port.Q_flow + Tsensor2.port.Q_flow) = 0.0;
-// conduction.port_b.T = mass2.port.T;
-// mass2.port.T = Tsensor2.port.T;
+//   Tsensor2.port.T = conduction.port_b.T;
+//   Tsensor2.port.T = mass2.port.T;
 // end Modelica.Thermal.HeatTransfer.Examples.TwoMasses;
 // "
 // ""

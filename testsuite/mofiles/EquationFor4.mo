@@ -21,19 +21,23 @@ end EquationFor4;
 
 // Result:
 // class EquationFor4
-// parameter Integer N = 4;
-// Real p[1].i;
-// Real p[1].v;
-// Real p[2].i;
-// Real p[2].v;
-// Real p[3].i;
-// Real p[3].v;
-// Real p[4].i;
-// Real p[4].v;
+//   parameter Integer N = 4;
+//   Real p[1].i;
+//   Real p[1].v;
+//   Real p[2].i;
+//   Real p[2].v;
+//   Real p[3].i;
+//   Real p[3].v;
+//   Real p[4].i;
+//   Real p[4].v;
 // equation
-//  p[1].v = p[2].v;
-//  p[2].v = p[3].v;
-//  p[3].v = p[4].v;
-//  (-p[1].i) + ((-p[2].i) + ((-p[3].i) + (-p[4].i))) = 0.0;
+//   p[1].v = p[2].v;
+//   p[1].v = p[3].v;
+//   p[1].v = p[4].v;
+//   (-p[1].i) + ((-p[2].i) + ((-p[3].i) + (-p[4].i))) = 0.0;
+//   p[4].i = 0.0;
+//   p[3].i = 0.0;
+//   p[2].i = 0.0;
+//   p[1].i = 0.0;
 // end EquationFor4;
 // endResult

@@ -34,15 +34,15 @@ end HeatTankExpanded;
 
 // Result:
 // class HeatTankExpanded
-// parameter Real Area = 1.0;
-// Real inlet.pressure;
-// Real inlet.volumeFlowRate;
-// Real inlet.temp;
-// Real outlet.pressure;
-// Real outlet.volumeFlowRate;
-// Real outlet.temp;
-// Real level(start = 2.0);
-// Real temp;
+//   parameter Real Area = 1.0;
+//   Real inlet.pressure;
+//   Real inlet.volumeFlowRate;
+//   Real inlet.temp;
+//   Real outlet.pressure;
+//   Real outlet.volumeFlowRate;
+//   Real outlet.temp;
+//   Real level(start = 2.0);
+//   Real temp;
 // equation
 //   inlet.volumeFlowRate = 1.0;
 //   inlet.pressure = 1.0;
@@ -52,7 +52,7 @@ end HeatTankExpanded;
 //   Area * (level * der(temp)) = inlet.volumeFlowRate * inlet.temp + outlet.volumeFlowRate * outlet.temp;
 //   outlet.temp = temp;
 //   outlet.volumeFlowRate = 2.0;
-//   inlet.volumeFlowRate = 0.0;
 //   outlet.volumeFlowRate = 0.0;
+//   inlet.volumeFlowRate = 0.0;
 // end HeatTankExpanded;
 // endResult

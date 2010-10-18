@@ -22,18 +22,18 @@ end Connect15;
 
 // Result:
 // class Connect15
-// Real t1.p[1].i;
-// Real t1.p[1].v;
-// Real t1.p[2].i;
-// Real t1.p[2].v;
-// Real t2.p[1].i;
-// Real t2.p[1].v;
-// Real t2.p[2].i;
-// Real t2.p[2].v;
+//   Real t1.p[1].i;
+//   Real t1.p[1].v;
+//   Real t1.p[2].i;
+//   Real t1.p[2].v;
+//   Real t2.p[1].i;
+//   Real t2.p[1].v;
+//   Real t2.p[2].i;
+//   Real t2.p[2].v;
 // equation
 //   t1.p[1].v = t2.p[2].v;
 //   t1.p[1].i + t2.p[2].i = 0.0;
-//   t1.p[2].i = 0.0;
 //   t2.p[1].i = 0.0;
+//   t1.p[2].i = 0.0;
 // end Connect15;
 // endResult
