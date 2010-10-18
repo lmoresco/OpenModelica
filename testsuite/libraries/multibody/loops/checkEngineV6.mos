@@ -9,8 +9,6 @@ loadFile("_LoopsTotal.mo"); getErrorString();
 
 checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6); getErrorString();
 
-checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6);
-getErrorString();
 system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
