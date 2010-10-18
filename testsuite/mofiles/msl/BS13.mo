@@ -981,21 +981,21 @@ end BS13;
 // end BS13;
 // Result:
 // class BS13
-// parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
-// parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
-// output Real integerToReal1.outPort.signal[1] "Real output signals";
-// parameter Integer integerToReal1.inPort.n = integerToReal1.n "Dimension of signal vector";
-// input Integer integerToReal1.inPort.signal[1] "Integer input signals";
-// parameter Integer integerConstant1.nout(min = 1) = 1 "Number of outputs";
-// parameter Integer integerConstant1.outPort.n = integerConstant1.nout "Dimension of signal vector";
-// output Integer integerConstant1.outPort.signal[1] "Integer output signals";
-// output Integer integerConstant1.y[1];
-// parameter Integer integerConstant1.k[1] = 1 "Constant output values";
+//   parameter Integer integerToReal1.n = 1 "Number of input signals (= number of output signals)";
+//   parameter Integer integerToReal1.outPort.n = integerToReal1.n "Dimension of signal vector";
+//   output Real integerToReal1.outPort.signal[1] "Real output signals";
+//   parameter Integer integerToReal1.inPort.n = integerToReal1.n "Dimension of signal vector";
+//   input Integer integerToReal1.inPort.signal[1] "Integer input signals";
+//   parameter Integer integerConstant1.nout(min = 1) = 1 "Number of outputs";
+//   parameter Integer integerConstant1.outPort.n = integerConstant1.nout "Dimension of signal vector";
+//   output Integer integerConstant1.outPort.signal[1] "Integer output signals";
+//   output Integer integerConstant1.y[1];
+//   parameter Integer integerConstant1.k[1] = 1 "Constant output values";
 // equation
 //   integerToReal1.outPort.signal[1] = Real(integerToReal1.inPort.signal[1]);
 //   integerConstant1.outPort.signal[1] = integerConstant1.k[1];
 //   integerConstant1.y[1] = integerConstant1.outPort.signal[1];
-// assert(integerToReal1.inPort.n == integerConstant1.outPort.n,"automatically generated from connect");
-// integerToReal1.inPort.signal[1] = integerConstant1.outPort.signal[1];
+//   assert(integerToReal1.inPort.n == integerConstant1.outPort.n,"automatically generated from connect");
+//   integerConstant1.outPort.signal[1] = integerToReal1.inPort.signal[1];
 // end BS13;
 // endResult

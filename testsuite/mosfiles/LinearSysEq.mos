@@ -41,7 +41,7 @@ val(pu.port.flowrate, 1.0);
 //   pu.port.flowrate = pu.port.pressure - time;
 //   pi.port.pressure = pi.port.flowrate * pi.a;
 //   pu.port.flowrate + pi.port.flowrate = 0.0;
-//   pu.port.pressure = pi.port.pressure;
+//   pi.port.pressure = pu.port.pressure;
 // end LinearSysEq;
 // "
 // record SimulationResult

@@ -99,11 +99,11 @@ getErrorString();
 //   And1.y = And1.u1 AND And1.u2;
 //   Or1.y = Or1.u1 OR Or1.u2;
 //   Pre1.y = pre(Pre1.u);
-//   table2.y = Not1.u;
+//   Not1.u = table2.y;
 //   And1.y = Or1.u2;
-//   table1.y = Or1.u1;
-//   Not1.y = And1.u1;
-//   Pre1.y = And1.u2;
+//   Or1.u1 = table1.y;
+//   And1.u1 = Not1.y;
+//   And1.u2 = Pre1.y;
 //   Or1.y = Pre1.u;
 // algorithm
 //   when time >= pre(table2.nextTime) AND table2.n > 0 then

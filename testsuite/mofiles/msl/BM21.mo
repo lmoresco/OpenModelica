@@ -1096,31 +1096,31 @@ end BM21;
 // end BM21;
 // Result:
 // function Modelica.Math.sin
-// input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
-// output Real y;
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
 // 
 // external "C";
 // end Modelica.Math.sin;
 // 
 // class BM21
-// parameter Integer sin1.n = 1 "Number of inputs (= number of outputs)";
-// parameter Integer sin1.inPort.n = sin1.n "Dimension of signal vector";
-// input Real sin1.inPort.signal[1] "Real input signals";
-// parameter Integer sin1.outPort.n = sin1.n "Dimension of signal vector";
-// output Real sin1.outPort.signal[1] "Real output signals";
-// output Real sin1.y[1] "Output signals";
-// protected Real sin1.u[1] = sin1.inPort.signal[1] "Input signals";
-// parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
-// parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
-// output Real constant1.outPort.signal[1] "Real output signals";
-// output Real constant1.y[1];
-// parameter Real constant1.k[1] = 1.0 "Constant output values";
+//   parameter Integer sin1.n = 1 "Number of inputs (= number of outputs)";
+//   parameter Integer sin1.inPort.n = sin1.n "Dimension of signal vector";
+//   input Real sin1.inPort.signal[1] "Real input signals";
+//   parameter Integer sin1.outPort.n = sin1.n "Dimension of signal vector";
+//   output Real sin1.outPort.signal[1] "Real output signals";
+//   output Real sin1.y[1] "Output signals";
+//   protected Real sin1.u[1] = sin1.inPort.signal[1] "Input signals";
+//   parameter Integer constant1.nout(min = 1) = 1 "Number of outputs";
+//   parameter Integer constant1.outPort.n = constant1.nout "Dimension of signal vector";
+//   output Real constant1.outPort.signal[1] "Real output signals";
+//   output Real constant1.y[1];
+//   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
 //   sin1.y[1] = Modelica.Math.sin(sin1.u[1]);
 //   sin1.y[1] = sin1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-// assert(sin1.inPort.n == constant1.outPort.n,"automatically generated from connect");
-// sin1.inPort.signal[1] = constant1.outPort.signal[1];
+//   assert(sin1.inPort.n == constant1.outPort.n,"automatically generated from connect");
+//   constant1.outPort.signal[1] = sin1.inPort.signal[1];
 // end BM21;
 // endResult

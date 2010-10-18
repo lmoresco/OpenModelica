@@ -223,16 +223,16 @@ getErrorString();
 //   Inertia1.flange_b.tau + gear.flange_a.tau = 0.0;
 //   Inertia1.flange_b.phi = gear.flange_a.phi;
 //   gear.flange_b.tau + Inertia2.flange_a.tau = 0.0;
-//   gear.flange_b.phi = Inertia2.flange_a.phi;
+//   Inertia2.flange_a.phi = gear.flange_b.phi;
 //   torque1.flange_b.tau + Inertia1.flange_a.tau = 0.0;
-//   torque1.flange_b.phi = Inertia1.flange_a.phi;
+//   Inertia1.flange_a.phi = torque1.flange_b.phi;
 //   torque2.flange_b.tau + Inertia2.flange_b.tau = 0.0;
-//   torque2.flange_b.phi = Inertia2.flange_b.phi;
+//   Inertia2.flange_b.phi = torque2.flange_b.phi;
 //   DriveSine.y = torque1.tau;
 //   load.y = torque2.tau;
+//   torque2.bearing.tau = 0.0;
 //   torque1.bearing.tau = 0.0;
 //   gear.bearing.tau = 0.0;
-//   torque2.bearing.tau = 0.0;
 // end Modelica.Mechanics.Rotational.Examples.LossyGearDemo1;
 // "
 // ""

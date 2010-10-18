@@ -98,15 +98,15 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
 //   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
 //   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
-//   part.subControlBus.myBooleanSignal = part.booleanExpression.y;
-//   part.subControlBus.myRealSignal = part.realExpression.y;
 //   gain.y = gain.k * gain.u;
-//   gain.u = controlBus.realSignal1;
+//   controlBus.realSignal1 = gain.u;
 //   controlBus.realSignal1 = sine.y;
+//   controlBus.subControlBus.myBooleanSignal = part.booleanExpression.y;
 //   controlBus.subControlBus.myBooleanSignal = part.subControlBus.myBooleanSignal;
+//   controlBus.subControlBus.myRealSignal = part.realExpression.y;
 //   controlBus.subControlBus.myRealSignal = part.subControlBus.myRealSignal;
 //   controlBus.integerSignal = integerStep.y;
-//   controlBus.booleanSignal = booleanStep.y;
+//   booleanStep.y = controlBus.booleanSignal;
 // end Modelica.Blocks.Examples.BusUsage;
 // "
 // ""
@@ -123,8 +123,8 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   Real subControlBus.myRealSignal "virtual variable in expandable connector";
 //   Boolean subControlBus.myBooleanSignal "virtual variable in expandable connector";
 // equation
-//   subControlBus.myBooleanSignal = booleanExpression.y;
-//   subControlBus.myRealSignal = realExpression.y;
+//   booleanExpression.y = subControlBus.myBooleanSignal;
+//   realExpression.y = subControlBus.myRealSignal;
 // end Modelica.Blocks.Examples.BusUsage_Utilities.Part;
 // "
 // ""

@@ -1371,6 +1371,6 @@ end BS9;
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
 //   assert(sine1.outPort.n == der1.inPort.n,"automatically generated from connect");
-//   sine1.outPort.signal[1] = der1.inPort.signal[1];
+//   der1.inPort.signal[1] = sine1.outPort.signal[1];
 // end BS9;
 // endResult

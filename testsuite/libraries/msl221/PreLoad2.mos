@@ -637,7 +637,8 @@ system("rm Modelica.Mechanics.Translational.Examples.PreLoad*");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.PreLoad_res.plt"
+//     resultFile = "Modelica.Mechanics.Translational.Examples.PreLoad_res.plt",
+//     messages = ""
 // end SimulationResult;
 // "InnerContactA.flange_a.s:"
 // -0.086
@@ -970,7 +971,7 @@ system("rm Modelica.Mechanics.Translational.Examples.PreLoad*");
 // -18.2268227997057
 // -19.4024215119905
 // "OuterContactB.v_rel:"
-// 0.0
+// -0.0
 // -4.71174750206869e-06
 // -4.71083860853524e-06
 // -4.70911898548321e-06

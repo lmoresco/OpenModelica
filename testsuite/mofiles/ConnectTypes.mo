@@ -30,23 +30,23 @@ end ConnectTypes;
 // Result
 // Result:
 // class ConnectTypes
-// Real a.c.e[1];
-// Integer a.c.d;
-// parameter Integer a.c.p = 4;
-// parameter Integer a.c.n = 1;
-// constant Real a.c.c = 2;
-// Real c.e[1];
-// Integer c.d;
-// parameter Integer c.p = 4;
-// parameter Integer c.n = 1;
-// constant Real c.c = 2;
+//   Real a.c.e[1];
+//   Integer a.c.d;
+//   parameter Integer a.c.p = 4;
+//   parameter Integer a.c.n = 1;
+//   constant Real a.c.c = 2.0;
+//   Real c.e[1];
+//   Integer c.d;
+//   parameter Integer c.p = 4;
+//   parameter Integer c.n = 1;
+//   constant Real c.c = 2.0;
 // equation
-// assert(c.p == a.c.p,"automatically generated from connect");
-// assert(c.n == a.c.n,"automatically generated from connect");
-// assert(c.c == a.c.c,"automatically generated from connect");
-// c.e[1] = time;
-// c.d = 4;
-// c.d = a.c.d;
-// c.e[1] = a.c.e[1];
+//   assert(c.p == a.c.p,"automatically generated from connect");
+//   assert(c.n == a.c.n,"automatically generated from connect");
+//   assert(c.c == a.c.c,"automatically generated from connect");
+//   c.e[1] = time;
+//   c.d = 4;
+//   a.c.d = c.d;
+//   a.c.e[1] = c.e[1];
 // end ConnectTypes;
 // endResult

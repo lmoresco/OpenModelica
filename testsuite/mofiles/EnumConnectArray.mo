@@ -34,8 +34,8 @@ end EnumConnectArray;
 //   input Real Block2.Out[TComponents.BB];
 //   input Real Block2.Out[TComponents.CC];
 // equation
-//   Block2.In[TComponents.AA] = Block1.Out[TComponents.AA];
-//   Block2.In[TComponents.BB] = Block1.Out[TComponents.BB];
-//   Block2.In[TComponents.CC] = Block1.Out[TComponents.CC];
+//   Block1.Out[TComponents.AA] = Block2.In[TComponents.AA];
+//   Block1.Out[TComponents.BB] = Block2.In[TComponents.BB];
+//   Block1.Out[TComponents.CC] = Block2.In[TComponents.CC];
 // end EnumConnectArray;
 // endResult

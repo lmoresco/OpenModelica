@@ -68,12 +68,12 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real ambient1.constantAmbientPressure(quantity = "Pressure", unit = "Pa", displayUnit = "bar", start = 0.0) "Ambient pressure";
 //   parameter Boolean ambient1.useTemperatureInput = false "enable / disable temperature input";
 //   parameter Real ambient1.constantAmbientTemperature(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 293.15) = TAmb "Ambient temperature";
+//   protected input Real ambient1.pAmbient;
+//   protected input Real ambient1.TAmbient;
 //   output Real ambient1.constPressure.y "Connector of Real output signal";
 //   parameter Real ambient1.constPressure.k(start = 1.0) = ambient1.constantAmbientPressure "Constant output value";
-//   protected input Real ambient1.pAmbient;
 //   output Real ambient1.constTemperature.y "Connector of Real output signal";
 //   parameter Real ambient1.constTemperature.k(start = 1.0) = ambient1.constantAmbientTemperature "Constant output value";
-//   protected input Real ambient1.TAmbient;
 //   parameter Real idealPump.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "Density";
 //   parameter Real idealPump.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant pressure";
 //   parameter Real idealPump.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant volume";
@@ -235,12 +235,12 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real ambient2.constantAmbientPressure(quantity = "Pressure", unit = "Pa", displayUnit = "bar", start = 0.0) "Ambient pressure";
 //   parameter Boolean ambient2.useTemperatureInput = false "enable / disable temperature input";
 //   parameter Real ambient2.constantAmbientTemperature(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = 293.15) = TAmb "Ambient temperature";
+//   protected input Real ambient2.pAmbient;
+//   protected input Real ambient2.TAmbient;
 //   output Real ambient2.constPressure.y "Connector of Real output signal";
 //   parameter Real ambient2.constPressure.k(start = 1.0) = ambient2.constantAmbientPressure "Constant output value";
-//   protected input Real ambient2.pAmbient;
 //   output Real ambient2.constTemperature.y "Connector of Real output signal";
 //   parameter Real ambient2.constTemperature.k(start = 1.0) = ambient2.constantAmbientTemperature "Constant output value";
-//   protected input Real ambient2.TAmbient;
 //   parameter Real heatCapacitor.C(quantity = "HeatCapacity", unit = "J/K") = 0.1 "Heat capacity of element (= cp*m)";
 //   Real heatCapacitor.T(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0, start = TAmb) "Temperature of element";
 //   Real heatCapacitor.der_T(quantity = "TemperatureSlope", unit = "K/s", start = 0.0) "Time derivative of temperature (= der(T))";
@@ -297,8 +297,6 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient1.flowPort.p = ambient1.pAmbient;
 //   ambient1.T = ambient1.TAmbient;
 //   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow,ambient1.flowPort.h,ambient1.h);
-//   ambient1.constTemperature.y = ambient1.TAmbient;
-//   ambient1.constPressure.y = ambient1.pAmbient;
 //   idealPump.dp1 = idealPump.dp0 * (sign(idealPump.w / idealPump.wNominal) * (idealPump.w / idealPump.wNominal) ^ 2.0);
 //   idealPump.V_flow1 = idealPump.V_flow0 * idealPump.w / idealPump.wNominal;
 //   if noEvent(abs(idealPump.w) < 1e-60) then
@@ -341,8 +339,6 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient2.flowPort.p = ambient2.pAmbient;
 //   ambient2.T = ambient2.TAmbient;
 //   ambient2.flowPort.H_flow = semiLinear(ambient2.flowPort.m_flow,ambient2.flowPort.h,ambient2.h);
-//   ambient2.constTemperature.y = ambient2.TAmbient;
-//   ambient2.constPressure.y = ambient2.pAmbient;
 //   heatCapacitor.T = heatCapacitor.port.T;
 //   heatCapacitor.der_T = der(heatCapacitor.T);
 //   heatCapacitor.C * der(heatCapacitor.T) = heatCapacitor.port.Q_flow;
@@ -381,13 +377,13 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   assert(valve.flowPort_b.medium.lamda == pipe.flowPort_a.medium.lamda,"automatically generated from connect");
 //   assert(valve.flowPort_b.medium.nue == pipe.flowPort_a.medium.nue,"automatically generated from connect");
 //   speed.flange.tau + idealPump.flange_a.tau = 0.0;
-//   speed.flange.phi = idealPump.flange_a.phi;
-//   valveRamp.y = valve.y;
-//   speedRamp.y = speed.w_ref;
+//   idealPump.flange_a.phi = speed.flange.phi;
+//   valve.y = valveRamp.y;
+//   speed.w_ref = speedRamp.y;
 //   valve.flowPort_b.H_flow + pipe.flowPort_a.H_flow = 0.0;
-//   valve.flowPort_b.h = pipe.flowPort_a.h;
+//   pipe.flowPort_a.h = valve.flowPort_b.h;
 //   valve.flowPort_b.m_flow + pipe.flowPort_a.m_flow = 0.0;
-//   valve.flowPort_b.p = pipe.flowPort_a.p;
+//   pipe.flowPort_a.p = valve.flowPort_b.p;
 //   idealPump.flowPort_b.H_flow + valve.flowPort_a.H_flow = 0.0;
 //   idealPump.flowPort_b.h = valve.flowPort_a.h;
 //   idealPump.flowPort_b.m_flow + valve.flowPort_a.m_flow = 0.0;
@@ -396,17 +392,21 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient1.flowPort.h = idealPump.flowPort_a.h;
 //   ambient1.flowPort.m_flow + idealPump.flowPort_a.m_flow = 0.0;
 //   ambient1.flowPort.p = idealPump.flowPort_a.p;
-//   thermalConductance.y = convection.Gc;
+//   convection.Gc = thermalConductance.y;
 //   pipe.heatPort.Q_flow + convection.fluid.Q_flow = 0.0;
-//   pipe.heatPort.T = convection.fluid.T;
+//   convection.fluid.T = pipe.heatPort.T;
 //   convection.solid.Q_flow + (prescribedHeatFlow.port.Q_flow + heatCapacitor.port.Q_flow) = 0.0;
+//   convection.solid.T = heatCapacitor.port.T;
 //   convection.solid.T = prescribedHeatFlow.port.T;
-//   prescribedHeatFlow.port.T = heatCapacitor.port.T;
 //   heatFlow.y = prescribedHeatFlow.Q_flow;
 //   pipe.flowPort_b.H_flow + ambient2.flowPort.H_flow = 0.0;
-//   pipe.flowPort_b.h = ambient2.flowPort.h;
+//   ambient2.flowPort.h = pipe.flowPort_b.h;
 //   pipe.flowPort_b.m_flow + ambient2.flowPort.m_flow = 0.0;
-//   pipe.flowPort_b.p = ambient2.flowPort.p;
+//   ambient2.flowPort.p = pipe.flowPort_b.p;
+//   ambient2.TAmbient = ambient2.constTemperature.y;
+//   ambient2.constPressure.y = ambient2.pAmbient;
+//   ambient1.TAmbient = ambient1.constTemperature.y;
+//   ambient1.constPressure.y = ambient1.pAmbient;
 // end Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve;
 // "
 // ""

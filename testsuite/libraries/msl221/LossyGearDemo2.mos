@@ -311,21 +311,21 @@ getErrorString();
 //   bearingFriction.mode = if bearingFriction.free then 2 else if (pre(bearingFriction.mode) == 1 OR pre(bearingFriction.mode) == 2 OR bearingFriction.startForward) AND bearingFriction.w_relfric > 0.0 then 1 else if (pre(bearingFriction.mode) == -1 OR pre(bearingFriction.mode) == 2 OR bearingFriction.startBackward) AND bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   PowerLoss = gear.flange_a.tau * der(gear.flange_a.phi) + gear.flange_b.tau * der(gear.flange_b.phi);
 //   torque2.flange_b.tau + Inertia2.flange_b.tau = 0.0;
-//   torque2.flange_b.phi = Inertia2.flange_b.phi;
+//   Inertia2.flange_b.phi = torque2.flange_b.phi;
 //   Inertia2.flange_a.tau + gear.flange_b.tau = 0.0;
 //   Inertia2.flange_a.phi = gear.flange_b.phi;
 //   gear.flange_a.tau + Inertia1.flange_b.tau = 0.0;
-//   gear.flange_a.phi = Inertia1.flange_b.phi;
+//   Inertia1.flange_b.phi = gear.flange_a.phi;
 //   Inertia1.flange_a.tau + bearingFriction.flange_b.tau = 0.0;
 //   Inertia1.flange_a.phi = bearingFriction.flange_b.phi;
 //   bearingFriction.flange_a.tau + torque1.flange_b.tau = 0.0;
 //   bearingFriction.flange_a.phi = torque1.flange_b.phi;
 //   DriveSine.y = torque1.tau;
 //   load.y = torque2.tau;
-//   torque1.bearing.tau = 0.0;
-//   gear.bearing.tau = 0.0;
 //   bearingFriction.bearing.tau = 0.0;
 //   torque2.bearing.tau = 0.0;
+//   torque1.bearing.tau = 0.0;
+//   gear.bearing.tau = 0.0;
 // end Modelica.Mechanics.Rotational.Examples.LossyGearDemo2;
 // "
 // ""

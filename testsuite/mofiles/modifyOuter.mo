@@ -37,20 +37,21 @@ end inn;
 
 // Result:
 // class inn
-// Real ip.i;
-// Real ip.v;
-// Real io.ip.i = 3.0;
-// Real io.ip.v;
-// Real io.x;
-// Real io.la.x;
-// Real io.y.i;
-// Real io.y.v;
+//   Real ip.i;
+//   Real ip.v;
+//   Real io.ip.i = 3.0;
+//   Real io.ip.v;
+//   Real io.x;
+//   Real io.la.x;
+//   Real io.y.i;
+//   Real io.y.v;
 // equation
 //   der(io.la.x) = io.ip.v;
 //   io.x = der(io.x) + ip.v;
 //   io.y.v = 2.4;
-// ip.v = io.y.v;
+//   io.y.v = ip.v;
 //   (-ip.i) + io.y.i = 0.0;
+//   io.ip.i = 0.0;
 //   ip.i = 0.0;
 // end inn;
 // [modifyOuter.mo:24:2-24:9:readonly] Warning: Variable io.la: Ignoring the modification on outer element: io.la.ip (i = 3), class or component i

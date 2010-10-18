@@ -86,15 +86,15 @@ getErrorString();
 //   PositionSensor2.s = PositionSensor2.flange_a.s;
 //   0.0 = PositionSensor2.flange_a.f;
 //   ForceSensor1.flange_b.f + (SlidingMass1.flange_a.f + (PositionSensor1.flange_a.f + (SpeedSensor1.flange_a.f + AccSensor1.flange_a.f))) = 0.0;
-//   ForceSensor1.flange_b.s = SlidingMass1.flange_a.s;
-//   SlidingMass1.flange_a.s = PositionSensor1.flange_a.s;
-//   PositionSensor1.flange_a.s = SpeedSensor1.flange_a.s;
-//   SpeedSensor1.flange_a.s = AccSensor1.flange_a.s;
+//   AccSensor1.flange_a.s = ForceSensor1.flange_b.s;
+//   AccSensor1.flange_a.s = PositionSensor1.flange_a.s;
+//   AccSensor1.flange_a.s = SlidingMass1.flange_a.s;
+//   AccSensor1.flange_a.s = SpeedSensor1.flange_a.s;
 //   SlidingMass1.flange_b.f + PositionSensor2.flange_a.f = 0.0;
-//   SlidingMass1.flange_b.s = PositionSensor2.flange_a.s;
+//   PositionSensor2.flange_a.s = SlidingMass1.flange_b.s;
 //   Force1.flange_b.f + ForceSensor1.flange_a.f = 0.0;
 //   Force1.flange_b.s = ForceSensor1.flange_a.s;
-//   Sine1.y = Force1.f;
+//   Force1.f = Sine1.y;
 // end Modelica.Mechanics.Translational.Examples.Sensors;
 // "
 // ""

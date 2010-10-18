@@ -136,18 +136,18 @@ getErrorString();
 //   transition2.inPort.reset = transition2.fire;
 //   transition2.outPort.set = transition2.fire;
 //   initialStep.subgraphStatePort.activeSteps + (step.subgraphStatePort.activeSteps + stateGraphRoot.subgraphStatePort.activeSteps) = 0.0;
+//   initialStep.subgraphStatePort.resume = stateGraphRoot.subgraphStatePort.resume;
 //   initialStep.subgraphStatePort.resume = step.subgraphStatePort.resume;
-//   step.subgraphStatePort.resume = stateGraphRoot.subgraphStatePort.resume;
+//   initialStep.subgraphStatePort.suspend = stateGraphRoot.subgraphStatePort.suspend;
 //   initialStep.subgraphStatePort.suspend = step.subgraphStatePort.suspend;
-//   step.subgraphStatePort.suspend = stateGraphRoot.subgraphStatePort.suspend;
 //   initialStep.outPort[1].reset = transition1.inPort.reset;
 //   initialStep.outPort[1].available = transition1.inPort.available;
-//   transition1.outPort.set = step.inPort[1].set;
-//   transition1.outPort.occupied = step.inPort[1].occupied;
+//   step.inPort[1].set = transition1.outPort.set;
+//   step.inPort[1].occupied = transition1.outPort.occupied;
 //   step.outPort[1].reset = transition2.inPort.reset;
 //   step.outPort[1].available = transition2.inPort.available;
-//   transition2.outPort.set = initialStep.inPort[1].set;
-//   transition2.outPort.occupied = initialStep.inPort[1].occupied;
+//   initialStep.inPort[1].set = transition2.outPort.set;
+//   initialStep.inPort[1].occupied = transition2.outPort.occupied;
 // end Modelica.StateGraph.Examples.FirstExample;
 // "
 // ""

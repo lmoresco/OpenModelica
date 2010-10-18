@@ -34,18 +34,18 @@ end ConnectInner3;
 
 // Result:
 // class ConnectInner3
-// Real global.c.e;
-// Real global.c.f;
-// Real b.a.my.e;
-// Real b.a.my.f;
-// Real a.my.e;
-// Real a.my.f;
+//   Real global.c.e;
+//   Real global.c.f;
+//   Real b.a.my.e;
+//   Real b.a.my.f;
+//   Real a.my.e;
+//   Real a.my.f;
 // equation
 //   b.a.my.f = 10.0 + b.a.my.e;
 //   a.my.f = 10.0 + a.my.e;
 //   global.c.e = 10.0;
 //   b.a.my.f + (global.c.f + a.my.f) = 0.0;
-// b.a.my.e = global.c.e;
-// global.c.e = a.my.e;
+//   b.a.my.e = a.my.e;
+//   b.a.my.e = global.c.e;
 // end ConnectInner3;
 // endResult

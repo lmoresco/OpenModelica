@@ -157,9 +157,9 @@ getErrorString();
 //   Fixed1.flange_b.s = Spring1.flange_a.s;
 //   Spring1.flange_b.f + Stop2.flange_a.f = 0.0;
 //   Spring1.flange_b.s = Stop2.flange_a.s;
-//   Sine1.y = Force1.f;
-//   Stop1.flange_b.f = 0.0;
+//   Force1.f = Sine1.y;
 //   Stop2.flange_b.f = 0.0;
+//   Stop1.flange_b.f = 0.0;
 // algorithm
 //   when initial() then
 //     assert(Stop1.s > Stop1.smin + Stop1.L / 2.0 OR Stop1.s >= Stop1.smin + Stop1.L / 2.0 AND Stop1.v >= 0.0, "Error in initialization of hard stop. (s - L/2) must be >= smin ");
