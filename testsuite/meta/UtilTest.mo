@@ -42,4 +42,12 @@ algorithm
   oss := Util.listMap1r(ss, stringAppend, s);
 end listMap1r;
 
+function listSplitOnTrue
+  input list<Option<Integer>> xs;
+  output list<Option<Integer>> somes;
+  output list<Option<Integer>> nones;
+algorithm
+  (somes,nones) := Util.listSplitOnTrue(xs, Util.isSome);
+end listSplitOnTrue;
+
 end UtilTest;

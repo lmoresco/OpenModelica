@@ -19,6 +19,8 @@ UtilTest.listMap1r({"abc","123"}, "Myprefix: ");
 getErrorString();
 Util.splitTuple2List({(1,2),(3,4),(5,6)});
 getErrorString();
+UtilTest.listSplitOnTrue({SOME(1),SOME(2),NONE(),NONE(),SOME(3),NONE()});
+getErrorString();
 
 // Result:
 // true
@@ -36,5 +38,7 @@ getErrorString();
 // {"Myprefix: abc","Myprefix: 123"}
 // ""
 // ({1,3,5},{2,4,6})
+// ""
+// ({SOME(1),SOME(2),SOME(3)},{NONE(),NONE(),NONE()})
 // ""
 // endResult
