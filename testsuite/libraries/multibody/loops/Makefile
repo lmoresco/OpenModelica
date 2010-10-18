@@ -8,8 +8,10 @@ Fourbar1.mos \
 Fourbar2.mos \
 Fourbar_analytic.mos \
 PlanarLoops_analytic.mos \
-EngineV6.mos \
-EngineV6_analytic.mos
+instEngineV6.mos \
+instEngineV6_analytic.mos \
+checkEngineV6.mos \
+checkEngineV6_analytic.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
