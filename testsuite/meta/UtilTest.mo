@@ -50,4 +50,11 @@ algorithm
   (somes,nones) := Util.listSplitOnTrue(xs, Util.isSome);
 end listSplitOnTrue;
 
+function listMapTuple21
+  input list<tuple<String,Integer>> xs;
+  output list<String> ys;
+algorithm
+  ys := Util.listMap(xs, Util.tuple21);
+end listMapTuple21;
+
 end UtilTest;
