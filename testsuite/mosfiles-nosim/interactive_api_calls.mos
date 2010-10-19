@@ -15,6 +15,7 @@ isFunction(A);
 isPackage(A);
 isClass(A);
 getErrorString();
+loadFile("interactive_api_param.mo");
 // Result:
 // true
 // ""
@@ -28,4 +29,5 @@ getErrorString();
 // false
 // false
 // ""
+// true
 // endResult
