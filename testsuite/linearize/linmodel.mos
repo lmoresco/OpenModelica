@@ -40,10 +40,10 @@ echo(false); // turns of output
 //   Real x[4](start = x0);
 //   input Real u[0];
 //   output Real y[0];
-//   Real x_x1 = x[1];
-//   Real x_x2 = x[2];
-//   Real x_x3 = x[3];
-//   Real x_x4 = x[4];
+//   Real x_Px1 = x[1];
+//   Real x_Px2 = x[2];
+//   Real x_Px3 = x[3];
+//   Real x_Px4 = x[4];
 //	  
 // equation  
 //   der(x) = A * x + B * u;
