@@ -12,9 +12,13 @@ loadFile("../../Compiler/Tpl.mo");
 loadFile("../../Compiler/TplMain.mo");
 loadFile("../../Compiler/TplParser.mo");
 loadFile("../../Compiler/Util.mo");
+loadFile("SusanTest.mo");
+getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
-TplMain.main("myFile.tpl");
+SusanTest.main({"+d=failtrace","myFile.tpl"});
+getErrorString();
+//TplMain.main("myFile.tpl");
 getErrorString();
 // Result:
 // true
@@ -29,10 +33,8 @@ getErrorString();
 // true
 // true
 // true
-// NYI: System__regularFileExists
-// NYI: System__regularFileExists
-// RTOpts.debugFlag not yet implemented failtrace
-// RTOpts.debugFlag not yet implemented failtrace
+// ""
+// true
 // 
 // Processing file 'myFile.tpl'
 // 
@@ -41,9 +43,12 @@ getErrorString();
 // 
 // ### translation of file 'myFile.tpl' failed!  ###
 // ### Error Buffer ###
+// TplParser.parseError msg: myFile.tpl:1.1-1.1 Error:(parser)No such file 'myFile.tpl'.(col 1)
+// Parse error - TplParser.templPackageFromFile failed for file 'myFile.tpl'.
 // 
 // ### End of Error Buffer ###
 // fail()
 // "Error: Found a component with same name when looking for type templPackage
 // "
+// ""
 // endResult

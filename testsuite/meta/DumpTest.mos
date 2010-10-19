@@ -84,7 +84,6 @@ getErrorString();
 // 
 // ""
 // "Dump.dump"
-// RTOpts.debugFlag not yet implemented dumptr
 // "Absyn.PROGRAM([
 // Absyn.CLASS("dummyClass", true, true, true, Absyn.R_FUNCTION, Absyn.PARTS([], NONE()), Absyn.INFO("", false, 0, 0, 0, 0))
 // ],Absyn.TOP)
