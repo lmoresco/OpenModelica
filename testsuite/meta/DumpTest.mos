@@ -1,33 +1,25 @@
 // name: DumpTest
-// cflags: +g=MetaModelica +d=rml
 // status: correct
 
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+
 loadFile("../../Compiler/Absyn.mo");getErrorString();
+loadFile("../../Compiler/ClassInf.mo");getErrorString();
+loadFile("../../Compiler/DAE.mo");getErrorString();
+loadFile("../../Compiler/DAEDump.mo");getErrorString();
 loadFile("../../Compiler/Debug.mo");getErrorString();
 loadFile("../../Compiler/Dump.mo");getErrorString();
 loadFile("../../Compiler/DumpGraphviz.mo");getErrorString();
+loadFile("../../Compiler/Exp.mo");getErrorString();
 loadFile("../../Compiler/Graphviz.mo");getErrorString();
 loadFile("../../Compiler/Print.mo");getErrorString();
 loadFile("../../Compiler/RTOpts.mo");getErrorString();
+loadFile("../../Compiler/SCode.mo");getErrorString();
 loadFile("../../Compiler/System.mo");getErrorString();
 loadFile("../../Compiler/Util.mo");getErrorString();
 loadFile("DumpTest.mo");getErrorString();
 
-Dump.unparseRedeclarekeywords(Absyn.REDECLARE());
-Dump.unparseRedeclarekeywords(Absyn.REPLACEABLE());
-Dump.unparseRedeclarekeywords(Absyn.REDECLARE_REPLACEABLE());
-
-Dump.unparseElementPrefixKeywords(("a","b"),"c","d","e","f");
-getErrorString();
-
-Dump.unparseStringCommentOption(NONE());
-getErrorString();
-
-Dump.unparseStringCommentOption(SOME("myComment"));
-getErrorString();
-
 setLinkerFlags("-lc_runtime -lomcruntime");
-//setCompilerFlags("../../Compiler/runtime/printimpl.c ../../Compiler/runtime/Print_omc.cpp");
 echo(false);
 body:=Absyn.PARTS({},NONE());
 restr:=Absyn.R_FUNCTION();
@@ -45,9 +37,19 @@ getErrorString();
 "Dump.getAstAsCorbaString";
 DumpTest.getAstAsCorbaString(prog);
 getErrorString();
+
+/*exp:=DAE.ICONST(42);
+getErrorString();
+Exp.printExpStr(exp);
+getErrorString();
+
+dae:=DAE.DAE({});
+getErrorString();
+DAEDump.dumpDebugDAE(dae);
+getErrorString();*/
+
 // Result:
 // true
-// ""
 // true
 // ""
 // true
@@ -66,14 +68,17 @@ getErrorString();
 // ""
 // true
 // ""
-// ("redeclare ","")
-// ("","replaceable ")
-// ("redeclare ","replaceable ")
-// "acdbef"
+// true
 // ""
+// true
 // ""
+// true
 // ""
-// " "myComment""
+// true
+// ""
+// true
+// ""
+// true
 // ""
 // true
 // true
