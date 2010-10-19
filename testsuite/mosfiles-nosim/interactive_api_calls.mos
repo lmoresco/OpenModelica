@@ -1,0 +1,31 @@
+// name: API-Interactive Calls
+// keywords: Graphical API, component attributes
+// status: correct
+// 
+//  Subset of the Graphical API for setting component attributes
+//
+
+createModel(A);                                                                           getErrorString();
+addComponent(x,Real,A);                                                                   getErrorString();
+isModel(A);
+isRecord(A);
+isBlock(A);
+isType(A);
+isFunction(A);
+isPackage(A);
+isClass(A);
+getErrorString();
+// Result:
+// true
+// ""
+// true
+// ""
+// true
+// false
+// false
+// false
+// false
+// false
+// false
+// ""
+// endResult

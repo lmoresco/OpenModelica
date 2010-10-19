@@ -5,30 +5,37 @@
 //  Subset of the Graphical API for setting component attributes
 //
 
-createModel(A);                                                                           getErrorString();
-addComponent(x,Real,A);                                                                   getErrorString();
-setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});             getErrorString();
-getComponents(A);                                                                         getErrorString();
+createModel(A);                                                                            getErrorString();
+addComponent(x,Real,A);                                                                    getErrorString();
+setComponentProperties(A ,x,{false,false,false,false},{""},{true,true},{""});              getErrorString();
+getComponents(A);                                                                          getErrorString();
 // test the setting of "stream"
-setComponentProperties(A ,x,{true,false,true,true,true},{""},{true,true},{"input"});      getErrorString();
-getComponents(A);                                                                         getErrorString();
-setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});   getErrorString();
-getComponents(A);                                                                         getErrorString();
-setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"}); getErrorString();
-getComponents(A);                                                                         getErrorString();
-setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});     getErrorString();
-getComponents(A);                                                                         getErrorString();
-updateComponent(x,Integer,A);                                                             getErrorString();
-getComponents(A);                                                                         getErrorString();
-setComponentComment(A,x,"comment for x");                                                 getErrorString();
-addConnection(a,b,A);                                                                     getErrorString();
-setConnectionComment(A,a,b,"connecting a and b");	                                        getErrorString();
-setClassComment(A,"this is the class A");                                                 getErrorString();
-getClassInformation(A);                                                                   getErrorString();
-getComponents(A);                                                                         getErrorString();
-addComponent(y,Real,A);                                                                   getErrorString();
-setComponentProperties(A ,y,{true,false,true,false,false},{""},{false,false},{""});       getErrorString();
-list(A);                                                                                  getErrorString();
+setComponentProperties(A ,x,{true,false,true,true,true},{""},{true,true},{"input"});       getErrorString();
+getComponents(A);                                                                          getErrorString();
+setComponentProperties(A ,x,{true,true,true,true},{"parameter"},{true,true},{"input"});    getErrorString();
+getComponents(A);                                                                          getErrorString();
+setComponentProperties(A ,x,{true,true,false,true},{"constant"},{false,true},{"output"});  getErrorString();
+getComponents(A);                                                                          getErrorString();
+setComponentProperties(A ,x,{true,false,false,false},{"discrete"},{true,false},{""});      getErrorString();
+getComponents(A);                                                                          getErrorString();
+updateComponent(x,Integer,A);                                                              getErrorString();
+getComponents(A);                                                                          getErrorString();
+setComponentComment(A,x,"comment for x");                                                  getErrorString();
+addConnection(a,b,A);                                                                      getErrorString();
+setConnectionComment(A,a,b,"connecting a and b");	                                         getErrorString();
+list();                                                                                    getErrorString();
+updateConnection(a, b, A, annotate=Line(points = {{-22.0,15.0},{32.0,15.0},{32.0,16.0}})); getErrorString();
+list();                                                                                    getErrorString();
+getConnectionCount(A);                                                                     getErrorString();
+getNthConnection(A, 1);                                                                    getErrorString();
+getNthConnectionAnnotation(A, 1);                                                          getErrorString();
+setClassComment(A,"this is the class A");                                                  getErrorString();
+getClassInformation(A);                                                                    getErrorString();
+getComponents(A);                                                                          getErrorString();
+addComponent(y,Real,A);                                                                    getErrorString();
+setComponentProperties(A ,y,{true,false,true,false,false},{""},{false,false},{""});        getErrorString();
+list(A);                                                                                   getErrorString();
+
 // Result:
 // true
 // ""
@@ -64,6 +71,32 @@ list(A);                                                                        
 // ""
 // Ok
 // ""
+// "model A
+//   final inner discrete Integer x "comment for x";
+// 
+// equation 
+//   connect(a,b) "connecting a and b";
+// end A;
+// 
+// "
+// ""
+// Ok
+// ""
+// "model A
+//   final inner discrete Integer x "comment for x";
+// 
+// equation 
+//   connect(a,b) annotation(Line(points = {{ -22.0,15.0},{32.0,15.0},{32.0,16.0}}));
+// end A;
+// 
+// "
+// ""
+// 1
+// ""
+// {a,b, ""}
+// ""
+// {Line(true,{{-22.0,15.0},{32.0,15.0},{32.0,16.0}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3.0,false)}
+// ""
 // Ok
 // ""
 // {"model","this is the class A","",{false,false,false},{"writable",0,0,0,0},{}}
@@ -79,7 +112,7 @@ list(A);                                                                        
 //   final stream Real y;
 // 
 // equation 
-//   connect(a,b) "connecting a and b";
+//   connect(a,b) annotation(Line(points = {{ -22.0,15.0},{32.0,15.0},{32.0,16.0}}));
 // end A;
 // 
 // "
