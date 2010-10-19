@@ -15,13 +15,6 @@ isFunction(A);
 isPackage(A);
 isClass(A);
 getErrorString();
-loadFile("interactive_api_param.mo");
-isClass(C);
-isRecord(B);
-isBlock(Mul);
-isType(Vector3D);
-isFunction(div);
-existClass(C);
 // Result:
 // true
 // ""
@@ -35,11 +28,4 @@ existClass(C);
 // false
 // false
 // ""
-// true
-// true
-// true
-// true
-// true
-// true
-// true
 // endResult
