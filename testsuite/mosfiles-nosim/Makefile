@@ -16,6 +16,7 @@ IfStatement.mos IfStatementIllegal.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 interactive_api_param.mos interactive_api_classes.mos \
 interactive_api_loadsave.mos  interactive_api_attributes.mos \
+interactive_api_calls.mos \
 loadFileInteractiveQualified.mos \
 LookupPackageFail.mos \
 matrices.mos \
