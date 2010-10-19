@@ -16475,3 +16475,12 @@ package Modelica_Mechanics_MultiBody_Examples_Elementary
     Tolerance=0.0001,
     Algorithm="dassl"),uses(Modelica(version="3.1")));
 end Modelica_Mechanics_MultiBody_Examples_Elementary;
+
+
+model DP
+  extends Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum;
+end DP;
+
+model P
+  extends Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum;
+end P;
