@@ -60,7 +60,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">Load the function bubblesort, either by using the pull-down menu File-&amp;gt;Load Model, or by explicitly giving the command:&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/bubblesort.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/bubblesort.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <TextCell style="Text" >
@@ -102,8 +102,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">It is also possible to give operating system commands via the system utility function. A command is provided as a string argument. The example below shows the system utility applied to the UNIX command cat, which here outputs the contents of the file bubblesort.mo to the output stream. &lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>cd("C:/OpenModelica1.5.0/testmodels")</Input>
-          <Output>"C:/OpenModelica1.5.0/testmodels"</Output>
+          <Input>cd("C:/OpenModelica1.5.1/testmodels")</Input>
+          <Output>"C:/OpenModelica1.5.1/testmodels"</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
           <Input>readFile("bubblesort.mo")</Input>
@@ -203,15 +203,15 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
           <Input>cd()</Input>
-          <Output>"C:/OpenModelica1.5.0/testmodels"</Output>
+          <Output>"C:/OpenModelica1.5.1/testmodels"</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
           <Input>cd("..")</Input>
-          <Output>"C:/OpenModelica1.5.0"</Output>
+          <Output>"C:/OpenModelica1.5.1"</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>cd("C:\\OpenModelica1.5.0\\testmodels")</Input>
-          <Output>"C:/OpenModelica1.5.0/testmodels"</Output>
+          <Input>cd("C:\\OpenModelica1.5.1\\testmodels")</Input>
+          <Output>"C:/OpenModelica1.5.1/testmodels"</Output>
         </GraphCell>
       </GroupCell>
       <GroupCell closed="false" >
@@ -250,7 +250,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times New Roman'; font-size:12pt; color:#000000;">We also load a file containing the dcmotor model:&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/dcmotor.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/dcmotor.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <TextCell style="Text" >
@@ -437,7 +437,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times New Roman'; font-size:12pt; color:#000000;">(Can also be loaded by: loadFile("C:/OpenModelica1.4.0/testmodels/BouncingBall.mo")&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
@@ -625,7 +625,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">We load another model, the VanDerPol model (or via the menu File-&amp;gt;Load Model):&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/VanDerPol.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/VanDerPol.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <TextCell style="Text" >
@@ -1172,7 +1172,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times New Roman'; font-size:12pt; color:#000000;">Below we show a few calls on the previously simulated BouncingBall model. The full documentation is available in the system documentation. First we load and list the model again to show its structure:&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
           </TextCell>
           <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
-            <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+            <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
             <Output>true</Output>
           </GraphCell>
           <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
@@ -1208,7 +1208,7 @@ end BouncingBall;
           </GraphCell>
           <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
             <Input>getClassInformation(BouncingBall)</Input>
-            <Output>{"model","","C:/OpenModelica1.5.0/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,22,17},{}}</Output>
+            <Output>{"model","","C:/OpenModelica1.5.1/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,22,17},{}}</Output>
           </GraphCell>
           <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
             <Input>isFunction(BouncingBall)</Input>
@@ -1244,7 +1244,7 @@ end BouncingBall;
           </GraphCell>
           <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
             <Input>getVersion()  // Get version of the currently running OMC</Input>
-            <Output>"1.5.0"</Output>
+            <Output>"1.5.1"</Output>
           </GraphCell>
         </GroupCell>
       </GroupCell>
@@ -1271,7 +1271,7 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAUsAAAAAAAEBYwAAAAAAAQGKgAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false" >
           <Input>getVersion() // use quit() to exit OpenModelica</Input>
-          <Output>"1.5.0"</Output>
+          <Output>"1.5.1"</Output>
         </GraphCell>
       </GroupCell>
     </GroupCell>

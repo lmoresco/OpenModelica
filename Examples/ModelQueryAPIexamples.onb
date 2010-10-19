@@ -40,7 +40,7 @@ p, li { white-space: pre-wrap; }
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
@@ -94,10 +94,10 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getSourceFile(BouncingBall)</Input>
-          <Output>C:/OpenModelica1.5.0/testmodels/BouncingBall.mo</Output>
+          <Output>C:/OpenModelica1.5.1/testmodels/BouncingBall.mo</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>setSourceFile(BouncingBall,"C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>Ok</Output>
         </GraphCell>
       </GroupCell>
@@ -124,15 +124,15 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-          <Output>C:\\OpenModelica1.5.0\\ModelicaLibrary</Output>
+          <Output>C:\\OpenModelica1.5.1\\ModelicaLibrary</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>setEnvironmentVar("OPENMODELICALIBRARY","C:\\OpenModelica1.5.0\\ModelicaLibrary")</Input>
+          <Input>setEnvironmentVar("OPENMODELICALIBRARY","C:\\OpenModelica1.5.1\\ModelicaLibrary")</Input>
           <Output>Ok</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getEnvironmentVar("OPENMODELICALIBRARY")</Input>
-          <Output>C:\\OpenModelica1.5.0\\ModelicaLibrary</Output>
+          <Output>C:\\OpenModelica1.5.1\\ModelicaLibrary</Output>
         </GraphCell>
       </GroupCell>
       <GroupCell closed="false">
@@ -157,15 +157,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">Calls related to classes and models:&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFileInteractiveQualified("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>loadFileInteractiveQualified("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>{BouncingBall}</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFileInteractive("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")</Input>
+          <Input>loadFileInteractive("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")</Input>
           <Output>{BouncingBall}</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
@@ -200,7 +200,7 @@ end BouncingBall;
 "</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>saveModel("C:\\OpenModelica1.5.0\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
+          <Input>saveModel("C:\\OpenModelica1.5.1\\testmodels\\BouncingBall2.mo", BouncingBall) //??Error in example</Input>
           <Output>false</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
@@ -216,7 +216,7 @@ end BouncingBall;
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo")  // Load it back</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo")  // Load it back</Input>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="3.81959242462681e-313" Antialiasing="false" MinorY="3.81959242462681e-313" Title="Plot title" LogX="false" LogY="false" MajorX="3.81959242462681e-313" MajorY="3.81959242462681e-313" closed="false" YLabel="y" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false">
@@ -260,14 +260,14 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getElementsInfo(BouncingBall)</Input>
-          <Output>{ { rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=54, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, stream=false, variability="parameter", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=49, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, stream=false, variability="parameter", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=37, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=57, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
-{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=9, elementStartColumn=3, elementEndLine=9, elementEndColumn=14, final=false, replaceable=false, inout="none", elementtype=component, typename=Integer, names={foo,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") }
+          <Output>{ { rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=2, elementStartColumn=3, elementEndLine=2, elementEndColumn=54, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={e,"coefficient of restitution"}, flow=false, stream=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=3, elementStartColumn=3, elementEndLine=3, elementEndColumn=49, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={g,"gravity acceleration"}, flow=false, stream=false, variability="parameter", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=4, elementStartColumn=3, elementEndLine=4, elementEndColumn=37, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={h,"height of ball"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=5, elementStartColumn=3, elementEndLine=5, elementEndColumn=28, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v,"velocity of ball"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=6, elementStartColumn=3, elementEndLine=6, elementEndColumn=57, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={flying,"true, if ball is flying"}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=7, elementStartColumn=3, elementEndLine=7, elementEndColumn=17, final=false, replaceable=false, inout="none", elementtype=component, typename=Boolean, names={impact,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=8, elementStartColumn=3, elementEndLine=8, elementEndColumn=13, final=false, replaceable=false, inout="none", elementtype=component, typename=Real, names={v_new,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") },
+{ rec(elementvisibility=public, elementfile="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", elementreadonly="writable", elementStartLine=9, elementStartColumn=3, elementEndLine=9, elementEndColumn=14, final=false, replaceable=false, inout="none", elementtype=component, typename=Integer, names={foo,""}, flow=false, stream=false, variability="unspecified", direction="unspecified") }
  }</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
@@ -361,7 +361,7 @@ getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getClassAttributes(BouncingBall) //?? Changed to rec(...) format</Input>
-          <Output>{ rec(name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="A Bouncing Ball Model", file="C:/OpenModelica1.5.0/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=22, endColumn=17) }</Output>
+          <Output>{ rec(name="BouncingBall", partial=false, final=false, encapsulated=false, restriction=MODEL, comment="A Bouncing Ball Model", file="C:/OpenModelica1.5.1/testmodels/BouncingBall.mo", readonly="writable", startLine=1, startColumn=1, endLine=22, endColumn=17) }</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getClassRestriction(BouncingBall) </Input>
@@ -369,7 +369,7 @@ getDocumentationAnnotation(BouncingBall) //currently no annotations</Input>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getClassInformation(BouncingBall)</Input>
-          <Output>{"model","A Bouncing Ball Model","C:/OpenModelica1.5.0/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,22,17},{}}</Output>
+          <Output>{"model","A Bouncing Ball Model","C:/OpenModelica1.5.1/testmodels/BouncingBall.mo",{false,false,false},{"writable",1,1,22,17},{}}</Output>
         </GraphCell>
       </GroupCell>
       <GroupCell closed="false">
@@ -489,7 +489,7 @@ p, li { white-space: pre-wrap; }
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getCrefInfo(BouncingBall)</Input>
-          <Output>{C:/OpenModelica1.5.0/testmodels/BouncingBall.mo,writable,1,1,22,17}</Output>
+          <Output>{C:/OpenModelica1.5.1/testmodels/BouncingBall.mo,writable,1,1,22,17}</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>addComponent(e2,Real,BouncingBall);
@@ -631,7 +631,7 @@ end BouncingBall;
 "</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
-          <Input>loadFile("C:/OpenModelica1.5.0/testmodels/BouncingBall.mo") //Reload model</Input>
+          <Input>loadFile("C:/OpenModelica1.5.1/testmodels/BouncingBall.mo") //Reload model</Input>
           <Output>true</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
@@ -786,7 +786,7 @@ p, li { white-space: pre-wrap; }
         </TextCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="0.1" Antialiasing="false" MinorY="0.1" Title="Plot by OpenModelica" LogX="false" LogY="false" MajorX="1" MajorY="1" closed="false" YLabel="" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="true" XLabel="" Legend="false">
           <Input>getVersion()</Input>
-          <Output>"1.5.0"</Output>
+          <Output>"1.5.1"</Output>
         </GraphCell>
         <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="-2.79209426596879e+306" Antialiasing="false" MinorY="-2.79209426596879e+306" Title="Plot title" LogX="false" LogY="false" MajorX="-2.79209426596879e+306" MajorY="-2.79209426596879e+306" closed="false" YLabel="y" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false">
           <Input>checkSettings()</Input>
