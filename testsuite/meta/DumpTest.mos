@@ -1,5 +1,5 @@
 // name: DumpTest
-// cflags: +g=MetaModelica
+// cflags: +g=MetaModelica +d=rml
 // status: correct
 
 loadFile("../../Compiler/Absyn.mo");getErrorString();
@@ -89,8 +89,7 @@ getErrorString();
 // Absyn.CLASS("dummyClass", true, true, true, Absyn.R_FUNCTION, Absyn.PARTS([], NONE()), Absyn.INFO("", false, 0, 0, 0, 0))
 // ],Absyn.TOP)
 // "
-// "Error: Tried to use function DumpTest.dump, but it was not instantiated.
-// "
+// ""
 // "Dump.unparseStr"
 // "final encapsulated partial function dummyClass
 // end dummyClass;
@@ -107,6 +106,5 @@ getErrorString();
 // within_ = record Absyn.TOP end Absyn.TOP;,
 // globalBuildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP;
 // end Absyn.PROGRAM;"
-// "Error: Tried to use function DumpTest.getAstAsCorbaString, but it was not instantiated.
-// "
+// ""
 // endResult
