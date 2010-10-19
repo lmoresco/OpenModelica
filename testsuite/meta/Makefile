@@ -94,14 +94,13 @@ CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFIL
 
 .PHONY : test
 
-test: test2 clean
-test2:
+test:
 	@echo
 	@echo Running tests...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
-
+	@rm -f $(CLEAN:.mo=)
 clean:
 	@rm -f $(CLEAN:.mo=)
 failingtest :
