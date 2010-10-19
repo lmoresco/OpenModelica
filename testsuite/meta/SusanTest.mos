@@ -26,8 +26,8 @@ getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
 // cd("../../Compiler/susan_codegen/SimCode/"); SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
-system("rm -f SusanTest_small.mo");
-SusanTest.main({"+d=failtrace","SusanTest_small.tpl"});
+system("rm -f SusanTestSmall.mo");
+SusanTest.main({"+d=failtrace","SusanTestSmall.tpl"});
 getErrorString();
 loadFile("SusanTest_small.mo");
 getErrorString();
@@ -62,11 +62,11 @@ getErrorString();
 // true
 // 0
 // 
-// Processing file 'SusanTest_small.tpl'
+// Processing file 'SusanTestSmall.tpl'
 // 
 // Susan parsing successful.
 // 
-// Writing result to file 'SusanTest_small.mo'
+// Writing result to file 'SusanTestSmall.mo'
 // ### Error Buffer ###
 // Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
 // Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
