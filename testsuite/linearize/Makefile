@@ -6,7 +6,8 @@ TESTFILES = linmodel.mos \
 simVanDerPol.mos \
 smallValues.mos \
 simLotkaVolterra.mos \
-simTwoTank.mos 
+simTwoTank.mos \
+simNonlinear.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
