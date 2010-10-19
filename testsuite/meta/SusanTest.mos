@@ -1,0 +1,49 @@
+// name: SusanTest
+// status: correct
+
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+loadFile("../../Compiler/Debug.mo");
+loadFile("../../Compiler/Print.mo");
+loadFile("../../Compiler/RTOpts.mo");
+loadFile("../../Compiler/System.mo");
+loadFile("../../Compiler/TplAbsyn.mo");
+loadFile("../../Compiler/TplCodegen.mo");
+loadFile("../../Compiler/Tpl.mo");
+loadFile("../../Compiler/TplMain.mo");
+loadFile("../../Compiler/TplParser.mo");
+loadFile("../../Compiler/Util.mo");
+
+setLinkerFlags("-lc_runtime -lomcruntime");
+TplMain.main("myFile.tpl");
+getErrorString();
+// Result:
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// NYI: System__regularFileExists
+// NYI: System__regularFileExists
+// RTOpts.debugFlag not yet implemented failtrace
+// RTOpts.debugFlag not yet implemented failtrace
+// 
+// Processing file 'myFile.tpl'
+// 
+// Susan parse error(s):
+// myFile.tpl:1.1-1.1 Error:(parser)No such file 'myFile.tpl'.(col 1)
+// 
+// ### translation of file 'myFile.tpl' failed!  ###
+// ### Error Buffer ###
+// 
+// ### End of Error Buffer ###
+// fail()
+// "Error: Found a component with same name when looking for type templPackage
+// "
+// endResult
