@@ -22,7 +22,6 @@ isBlock(Mul);
 isType(Vector3D);
 isFunction(div);
 existClass(C);
-renameClass(C, C1);
 // Result:
 // true
 // ""
@@ -43,5 +42,4 @@ renameClass(C, C1);
 // true
 // true
 // true
-// C1
 // endResult
