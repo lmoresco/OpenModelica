@@ -3,52 +3,82 @@
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 loadFile("../../Compiler/Debug.mo");
+getErrorString();
 loadFile("../../Compiler/Print.mo");
+getErrorString();
 loadFile("../../Compiler/RTOpts.mo");
+getErrorString();
 loadFile("../../Compiler/System.mo");
+getErrorString();
 loadFile("../../Compiler/TplAbsyn.mo");
+getErrorString();
 loadFile("../../Compiler/TplCodegen.mo");
+getErrorString();
 loadFile("../../Compiler/Tpl.mo");
+getErrorString();
 loadFile("../../Compiler/TplMain.mo");
+getErrorString();
 loadFile("../../Compiler/TplParser.mo");
+getErrorString();
 loadFile("../../Compiler/Util.mo");
 loadFile("SusanTest.mo");
 getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
-SusanTest.main({"+d=failtrace","myFile.tpl"});
+// cd("../../Compiler/susan_codegen/SimCode/"); SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
+system("rm -f SusanTest_small.mo");
+SusanTest.main({"+d=failtrace","SusanTest_small.tpl"});
 getErrorString();
-//TplMain.main("myFile.tpl");
+loadFile("SusanTest_small.mo");
 getErrorString();
+txt:=SusanTest_small.helloWorld(SusanTest_small.emptyTxt);
+getErrorString();
+Tpl.textString(txt);
+getErrorString();
+
 // Result:
-// true
-// true
-// true
-// true
-// true
-// true
-// true
-// true
-// true
-// true
 // true
 // true
 // ""
 // true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// true
+// ""
+// true
+// 0
 // 
-// Processing file 'myFile.tpl'
+// Processing file 'SusanTest_small.tpl'
 // 
-// Susan parse error(s):
-// myFile.tpl:1.1-1.1 Error:(parser)No such file 'myFile.tpl'.(col 1)
+// Susan parsing successful.
 // 
-// ### translation of file 'myFile.tpl' failed!  ###
-// ### Error Buffer ###
-// TplParser.parseError msg: myFile.tpl:1.1-1.1 Error:(parser)No such file 'myFile.tpl'.(col 1)
-// Parse error - TplParser.templPackageFromFile failed for file 'myFile.tpl'.
+// Writing result to file 'SusanTest_small.mo'
 // 
-// ### End of Error Buffer ###
-// fail()
 // "Error: Found a component with same name when looking for type templPackage
 // "
+// true
+// ""
+// record Tpl.Text.MEM_TEXT
+//     tokens = {record Tpl.StringToken.ST_STRING
+//     value = "Hello, World!"
+// end Tpl.StringToken.ST_STRING;},
+//     blocksStack = {}
+// end Tpl.Text.MEM_TEXT;
+// ""
+// "Hello, World!"
 // ""
 // endResult
