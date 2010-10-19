@@ -67,6 +67,24 @@ getErrorString();
 // Susan parsing successful.
 // 
 // Writing result to file 'SusanTest_small.mo'
+// ### Error Buffer ###
+// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
+// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
+// 
+//  TEXT_CREATE ident = x is fresh (reason = Unresolved path 'x'.)
+// 
+//  BOUND_VALUE resolved mmexp = i_x : Tpl.Text (dealiased: Tpl.Text)
+// 
+//  FUN_CALL fname = helloWorld
+//  FUN_CALL argList stmts generation passed
+//  FUN_CALL stmt =
+// txt = helloWorld(txt);
+// Error - typeAdaptMMArg failed
+//  arg BOUND_VALUE resolved mmexp = i_strs : list<String>
+// 
+//  BOUND_VALUE resolved mmexp = i_str : String (dealiased: String)
+// 
+// ### End of Error Buffer ###
 // 
 // "Error: Found a component with same name when looking for type templPackage
 // "
