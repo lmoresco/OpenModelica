@@ -5223,280 +5223,280 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   end for;
 // end Modelica.Electrical.Analog.Lines.M_OLine;
 // "
-// "[../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// "[Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // "
 // "Check of Modelica.Electrical.Analog.Lines.M_OLine completed successfully.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.M_OLine has 1270 equation(s) and 1330 variable(s).
@@ -5712,8 +5712,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.VoltageSource completed successfully.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:439:3-479:20:writable] Warning: Forcing full instantiation of partial class VoltageSource during checkModel.
-// [../../../libraries/msl31//Modelica/Blocks/Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
+// [Interfaces.mo:439:3-479:20:writable] Warning: Forcing full instantiation of partial class VoltageSource during checkModel.
+// [Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
 // 
 // Class Modelica.Electrical.Analog.Interfaces.VoltageSource has 6 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).
@@ -5721,8 +5721,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.CurrentSource completed successfully.
 // 
-// [../../../libraries/msl31//Modelica/Electrical/Analog/Interfaces.mo:481:3-519:20:writable] Warning: Forcing full instantiation of partial class CurrentSource during checkModel.
-// [../../../libraries/msl31//Modelica/Blocks/Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
+// [Interfaces.mo:481:3-519:20:writable] Warning: Forcing full instantiation of partial class CurrentSource during checkModel.
+// [Interfaces.mo:376:5-389:21:writable] Warning: Forcing full instantiation of partial class SignalSource during checkModel.
 // 
 // Class Modelica.Electrical.Analog.Interfaces.CurrentSource has 6 equation(s) and 7 variable(s).
 // 5 of these are trivial equation(s).

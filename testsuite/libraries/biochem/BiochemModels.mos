@@ -2035,7 +2035,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // "
 // "Check of BioChem.Examples.centralMetabolism.cytosol completed successfully.
 // 
-// [../../../libraries/common//BioChem/Examples/package.mo:798:7-798:182:writable] Warning: Component mitochondria has the same name as its type BioChem.Examples.centralMetabolism.cytosol.centralMetabolism.mitochondria.
+// [package.mo:798:7-798:182:writable] Warning: Component mitochondria has the same name as its type BioChem.Examples.centralMetabolism.cytosol.centralMetabolism.mitochondria.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class BioChem.Examples.centralMetabolism.cytosol has 320 equation(s) and 320 variable(s).
@@ -2086,29 +2086,29 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel completed successfully.
 // 
-// [../../../libraries/common//BioChem/Examples/package.mo:2395:7-2395:212:writable] Warning: Component GastroIntestinalTract has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GastroIntestinalTract.
+// [package.mo:2395:7-2395:212:writable] Warning: Component GastroIntestinalTract has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GastroIntestinalTract.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2396:7-2396:194:writable] Warning: Component TissueGlucose has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.TissueGlucose.
+// [package.mo:2396:7-2396:194:writable] Warning: Component TissueGlucose has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.TissueGlucose.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2397:7-2397:222:writable] Warning: Component GlucoseRenalExcretion has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GlucoseRenalExcretion.
+// [package.mo:2397:7-2397:222:writable] Warning: Component GlucoseRenalExcretion has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GlucoseRenalExcretion.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2398:7-2398:193:writable] Warning: Component PlasmaGlucose has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.PlasmaGlucose.
+// [package.mo:2398:7-2398:193:writable] Warning: Component PlasmaGlucose has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.PlasmaGlucose.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2399:7-2399:195:writable] Warning: Component PlasmaInsulin has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.PlasmaInsulin.
+// [package.mo:2399:7-2399:195:writable] Warning: Component PlasmaInsulin has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.PlasmaInsulin.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2400:7-2400:215:writable] Warning: Component UtilizationMuscleTissue has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.UtilizationMuscleTissue.
+// [package.mo:2400:7-2400:215:writable] Warning: Component UtilizationMuscleTissue has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.UtilizationMuscleTissue.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2402:7-2402:200:writable] Warning: Component LiverInsulin has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.LiverInsulin.
+// [package.mo:2402:7-2402:200:writable] Warning: Component LiverInsulin has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.LiverInsulin.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2403:7-2403:230:writable] Warning: Component EndogenousGlucoseProduction has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.EndogenousGlucoseProduction.
+// [package.mo:2403:7-2403:230:writable] Warning: Component EndogenousGlucoseProduction has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.EndogenousGlucoseProduction.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2405:7-2405:196:writable] Warning: Component BetaCell has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.BetaCell.
+// [package.mo:2405:7-2405:196:writable] Warning: Component BetaCell has the same name as its type BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel.BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.BetaCell.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2446:11-2446:189:writable] Warning: Component dirac has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GastroIntestinalTract.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.dirac.
+// [package.mo:2446:11-2446:189:writable] Warning: Component dirac has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.GastroIntestinalTract.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.dirac.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2656:11-2656:276:writable] Warning: Component UtilizationReaction has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.UtilizationMuscleTissue.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction.
+// [package.mo:2656:11-2656:276:writable] Warning: Component UtilizationReaction has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.UtilizationMuscleTissue.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
-// [../../../libraries/common//BioChem/Examples/package.mo:2580:11-2580:183:writable] Warning: Component m_3 has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.LiverInsulin.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.m_3.
+// [package.mo:2580:11-2580:183:writable] Warning: Component m_3 has the same name as its type BioChem.Examples.GlucoseInsulinModel.Utilities.Parts.LiverInsulin.BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.m_3.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel has 687 equation(s) and 687 variable(s).
