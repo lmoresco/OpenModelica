@@ -24,7 +24,6 @@ INPUT(
 ./debug\CornerItem.o
 ./debug\ConnectorWidget.o
 ./debug\Components.o
-./debug\SimulationWidget.o
 ./debug\PlotWidget.o
 ./debug\ModelicaEditor.o
 ./debug\VisualizationWidget.o
@@ -41,6 +40,9 @@ INPUT(
 ./debug\dataSelect.o
 ./debug\curve.o
 ./debug\compoundWidget.o
+./debug\IconParameters.o
+./debug\SimulationWidget.o
+./debug\IconProperties.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
@@ -53,7 +55,6 @@ INPUT(
 ./debug\moc_ComponentAnnotation.o
 ./debug\moc_CornerItem.o
 ./debug\moc_ConnectorWidget.o
-./debug\moc_SimulationWidget.o
 ./debug\moc_PlotWidget.o
 ./debug\moc_ModelicaEditor.o
 ./debug\moc_VisualizationWidget.o
@@ -63,4 +64,7 @@ INPUT(
 ./debug\moc_graphWindow.o
 ./debug\moc_graphWidget.o
 ./debug\moc_compoundWidget.o
+./debug\moc_SimulationWidget.o
+./debug\moc_IconProperties.o
+./debug\qrc_resource_omedit.o
 );
