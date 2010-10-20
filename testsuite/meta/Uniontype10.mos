@@ -9,7 +9,7 @@ loadFile("Uniontype10.mo");
 a:=REC1(1+2);
 b:=Uniontype10.test(a);
 f:=foo(1);
-c:=REC3(f);
+c:=REC3(foo(1));
 d:=Uniontype10.test(c);
 
 // Result:
