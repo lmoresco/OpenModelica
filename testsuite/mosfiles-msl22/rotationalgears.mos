@@ -52,14 +52,14 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 //     messages = ""
 // end SimulationResult;
 // ""
-// {0.0,0.0428007219053217,0.107445682214664,0.0913803271315843,-0.000782144980215061,-0.0623708688962204}
+// {0.0,0.0428007219053217,0.107445682214664,0.0913803271315843,-0.00078214498021506,-0.0623708688962204}
 // {0.0,0.0863368081569939,0.214428853175442,0.181921532634685,-0.00136475865901982,-0.123740910077574}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt",
 //     messages = ""
 // end SimulationResult;
-// "[../../libraries/msl221/Modelica/Mechanics/Rotational.mo:1952:3-1952:37:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// "[Rotational.mo:1952:3-1952:37:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
 // 	first element is:  parameter SI.Torque unitTorque  = 1;
 // 	second element is: parameter Modelica.SIunits.Torque unitTorque  = 1;
 // 	Modelica specification requires that elements are exactly identical.
@@ -87,10 +87,10 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // end SimulationResult;
 // ""
 // 0.240324980168263
-// 0.340820303815434
-// -0.287746786836413
+// 0.340820357315252
+// -0.287746786314949
 // -0.121565696009759
 // 0.182566607352621
-// -0.123890065034139
+// -0.12389006764183
 // 0
 // endResult

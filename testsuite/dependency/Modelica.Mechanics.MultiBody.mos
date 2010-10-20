@@ -82,7 +82,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce completed successfully.
 // 
-// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:580:3-664:23:writable] Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
+// [Interfaces.mo:580:3-664:23:writable] Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
 // Warning: No corresponding 'inner' declaration found for component world declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in the any of the parent scopes of 'outer' component's scope: Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
@@ -263,16 +263,16 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // "
 // ""
-// "[../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:580:3-664:23:writable] Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
+// "[Interfaces.mo:580:3-664:23:writable] Warning: Forcing full instantiation of partial class PartialLineForce during checkModel.
 // Warning: No corresponding 'inner' declaration found for component world declared as 'outer '.
 //   The existing 'inner' components are: 
 //     There are no 'inner' components defined in the model in the any of the parent scopes of 'outer' component's scope: Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:613:5-613:68:writable] Error: No matching function found for Frames.resolve2 in component <NO COMPONENT>
-// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:613:5-613:68:writable] Error: Class Frames.resolve2 not found in scope Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
-// [../../libraries/msl31//Modelica/Mechanics/MultiBody/Interfaces.mo:580:3-664:23:writable] Error: Illegal to instantiate partial class PartialLineForce
+// [Interfaces.mo:613:5-613:68:writable] Error: No matching function found for Frames.resolve2 in component <NO COMPONENT>
+// [Interfaces.mo:613:5-613:68:writable] Error: Class Frames.resolve2 not found in scope Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce.
+// [Interfaces.mo:580:3-664:23:writable] Error: Illegal to instantiate partial class PartialLineForce
 // Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce
 // "
 // ""
