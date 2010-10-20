@@ -17,10 +17,11 @@ loadFile("../../Compiler/RTOpts.mo");getErrorString();
 loadFile("../../Compiler/SCode.mo");getErrorString();
 loadFile("../../Compiler/System.mo");getErrorString();
 loadFile("../../Compiler/Util.mo");getErrorString();
+loadFile("../../Compiler/Values.mo");getErrorString();
 loadFile("DumpTest.mo");getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
-echo(false);
+/*echo(false);
 body:=Absyn.PARTS({},NONE());
 restr:=Absyn.R_FUNCTION();
 prog:=Absyn.PROGRAM({Absyn.CLASS("dummyClass",true,true,true,restr,body,Absyn.dummyInfo)},Absyn.TOP(),Absyn.dummyTimeStamp);
@@ -37,13 +38,13 @@ getErrorString();
 "Dump.getAstAsCorbaString";
 DumpTest.getAstAsCorbaString(prog);
 getErrorString();
-
-/*exp:=DAE.ICONST(42);
+*/
+exp:=DAE.ICONST(42);
 getErrorString();
 Exp.printExpStr(exp);
 getErrorString();
 
-dae:=DAE.DAE({});
+/*dae:=DAE.DAE({});
 getErrorString();
 DAEDump.dumpDebugDAE(dae);
 getErrorString();*/
