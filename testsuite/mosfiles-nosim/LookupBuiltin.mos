@@ -14,9 +14,6 @@ getErrorString();
 // 
 // "Error: Wrong type or wrong number of arguments to identity(str)'.
 //  (in component <NO COMPONENT>)
-// Error: No matching function found for LookupBuiltin.id in component <NO COMPONENT>
-// Error: Wrong type or wrong number of arguments to identity(str)'.
-//  (in component <NO COMPONENT>)
 // Error: Class LookupBuiltin.id not found in scope <global scope>.
 // "
 // endResult
