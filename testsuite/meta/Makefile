@@ -60,6 +60,7 @@ PartialFn11.mos \
 PartialFn12.mos \
 PartialFn13.mos \
 PartialFn14.mos \
+PartialFn15.mos \
 Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \

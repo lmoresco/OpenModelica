@@ -21,7 +21,7 @@ loadFile("../../Compiler/Values.mo");getErrorString();
 loadFile("DumpTest.mo");getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
-/*echo(false);
+echo(false);
 body:=Absyn.PARTS({},NONE());
 restr:=Absyn.R_FUNCTION();
 prog:=Absyn.PROGRAM({Absyn.CLASS("dummyClass",true,true,true,restr,body,Absyn.dummyInfo)},Absyn.TOP(),Absyn.dummyTimeStamp);
@@ -38,19 +38,23 @@ getErrorString();
 "Dump.getAstAsCorbaString";
 DumpTest.getAstAsCorbaString(prog);
 getErrorString();
-*/
+
 exp:=DAE.ICONST(42);
 getErrorString();
+"Exp.printExpStr";
 Exp.printExpStr(exp);
 getErrorString();
 
-/*dae:=DAE.DAE({});
+dae:=DAE.DAE({});
 getErrorString();
+"DAEDump.dumpDebugDAE";
 DAEDump.dumpDebugDAE(dae);
-getErrorString();*/
+getErrorString();
 
 // Result:
 // true
+// true
+// ""
 // true
 // ""
 // true
@@ -111,5 +115,19 @@ getErrorString();*/
 // within_ = record Absyn.TOP end Absyn.TOP;,
 // globalBuildTimes = record Absyn.TIMESTAMP lastBuildTime = 0, lastEditTime = 0 end Absyn.TIMESTAMP;
 // end Absyn.PROGRAM;"
+// ""
+// record DAE.Exp.ICONST
+//     integer = 42
+// end DAE.Exp.ICONST;
+// ""
+// "Exp.printExpStr"
+// "42"
+// ""
+// record DAE.DAElist.DAE
+//     elementLst = {}
+// end DAE.DAElist.DAE;
+// ""
+// "DAEDump.dumpDebugDAE"
+// ""
 // ""
 // endResult
