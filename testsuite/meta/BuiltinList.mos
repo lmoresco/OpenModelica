@@ -27,9 +27,16 @@ BuiltinList.funcTuple({(1,1.5,false,"tup1",ut1),(1,1.5,false,"tup2",ut2)},(1,1.5
 // true
 // 
 // "Error: Could not solve the polymorphism in the function call
-//     Input bindings: (Type_A: Real, Integer)
-//     Solved bindings: 
-//     Unsolved bindings: (Type_A: Real, Integer)
+//   Input bindings:
+//     Type_A:
+//       Real
+//       Integer
+//   Solved bindings:
+// 
+//   Unsolved bindings:
+//     Type_A:
+//       Real
+//       Integer
 // Error: No matching function found for listAppend({1,2,3}, {4.0,5.0,6.0}) of type function(x1:Integer[3], x2:Real[3]) => list<polymorphic<Type_A>> in component <NO COMPONENT>, candidates are function(x1:list<polymorphic<Type_A>>, x2:list<polymorphic<Type_A>>) => list<polymorphic<Type_A>>
 // "
 // {1.0,2.0,3.0,4.0,5.0,6.0}
