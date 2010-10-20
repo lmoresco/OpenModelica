@@ -1,8 +1,8 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
+meta.log \
 mosfiles.log \
 mosfiles-msl22.log \
-meta.log \
 parser.log \
 mofiles.log \
 msl.log \
