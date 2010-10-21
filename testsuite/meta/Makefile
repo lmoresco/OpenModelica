@@ -20,6 +20,7 @@ ErrorMatchInOut1.mo \
 ErrorMatchInOut2.mo \
 ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
+ErrorNone.mos \
 Failure.mos \
 HS2.mos \
 List1.mos \
