@@ -65,6 +65,7 @@ Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
+StrictRML.mos \
 SusanTest.mos \
 TupleInteractive.mos \
 Uniontype1.mos \
