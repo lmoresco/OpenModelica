@@ -1,5 +1,6 @@
 // name: SusanTest
 // status: correct
+// teardown_command: rm -f SusanTest_* Tpl_* SusanTestSmall_* SusanTestSmall.mo
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 loadFile("../../Compiler/Debug.mo");

@@ -1,5 +1,6 @@
 // name: DumpTest
 // status: correct
+// teardown_command: rm -f Dump_* DumpTest_* DAEDump_* Exp_* DumpGraphviz_*
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 

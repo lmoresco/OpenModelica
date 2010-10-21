@@ -27,7 +27,7 @@ parser.c parser.h:  parser.y
 	@mv parser.tab.h parser.h
 
 clean:
-	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest *~
+	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
 run2: $(DEPS)
 	$(TEST) SCRIPT.mos < program.txt
@@ -36,7 +36,7 @@ test: test2
 
 test2: $(DEPS)
 	$(TEST) $(SOLUTIONS) < program.txt
-	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c lexer.c rtest *~
+	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
 test-noclean: $(DEPS)
 	$(TEST) $(SOLUTIONS) < program.txt
