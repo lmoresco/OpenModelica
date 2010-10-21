@@ -1,6 +1,6 @@
 // name: HashTable Unit Testing
 // status: correct
-// teardown_command: rm -f HT2_*
+// teardown_command: rm -f HashTableTest_*
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 
@@ -101,9 +101,217 @@ loadFile("../../Compiler/ValuesUtil.mo"); getErrorString();
 loadFile("../../Compiler/VarTransform.mo"); getErrorString();
 loadFile("../../Compiler/XMLDump.mo"); getErrorString();
 
-loadFile("HT2.mo");
+loadFile("HashTableTest.mo");
 getErrorString();
 setLinkerFlags("-lc_runtime -lomcruntime");
 
-HT2.fn(1);
+HashTableTest.fn(1);
 getErrorString();
+// Result:
+// true
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// {record DAE.Exp.ICONST
+//     integer = 7
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 3
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 2
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 1
+// end DAE.Exp.ICONST;}
+// ""
+// endResult

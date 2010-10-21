@@ -22,7 +22,7 @@ ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
 ErrorNone.mos \
 Failure.mos \
-HS2.mos \
+HashTableTest.mos \
 List1.mos \
 List2.mos \
 List3.mos \
