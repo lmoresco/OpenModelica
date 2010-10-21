@@ -107,6 +107,8 @@ loadFile("../../Compiler/Values.mo"); getErrorString();
 loadFile("../../Compiler/ValuesUtil.mo"); getErrorString();
 loadFile("../../Compiler/VarTransform.mo"); getErrorString();
 loadFile("../../Compiler/XMLDump.mo"); getErrorString();
+
+strictRMLCheck();
 // Result:
 // true
 // ""
@@ -309,5 +311,6 @@ loadFile("../../Compiler/XMLDump.mo"); getErrorString();
 // true
 // ""
 // true
+// ""
 // ""
 // endResult
