@@ -34,7 +34,7 @@ algorithm
   print(realString(aliasVariable));
 end printAlias;
 
-// an option type which can be SOME(Alias) or NONE
+// an option type which can be SOME(Alias) or NONE()
 // type OptionType = Option<Alias>; 
 // constant OptionType optionAliasConstant = SOME(aliasConstant);
 function printOptionType
@@ -44,7 +44,7 @@ algorithm
     local Types.Alias alias;
     case NONE() 
       equation
-        print("NONE");
+        print("NONE()");
       then ();
     case SOME(alias)
       equation
@@ -80,7 +80,7 @@ end printTupleType;
 
 // a list type 
 //type ListType = list<TupleType>; 
-//constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE)};
+//constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE())};
 function printListType
   input Types.ListType listVar;
 algorithm

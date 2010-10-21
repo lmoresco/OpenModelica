@@ -19,9 +19,9 @@ print("
 // Calling Functions.test("other"): 0
 // Types.aliasConstant: 1
 // Types.optionAliasConstant: 1
-// Types.optionAliasConstantNone: NONE
+// Types.optionAliasConstantNone: NONE()
 // Types.tupleConstant: ("a tuple element", 1, 1)
-// Types.listConstant: {("a tuple element", 1, 1), ("another element", 2, NONE)}
+// Types.listConstant: {("a tuple element", 1, 1), ("another element", 2, NONE())}
 // Types.oneRecord: OneRecord("first element", 3)
 // Types.select: ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
 // endResult
