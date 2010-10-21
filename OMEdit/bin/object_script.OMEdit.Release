@@ -24,7 +24,6 @@ INPUT(
 ./release\CornerItem.o
 ./release\ConnectorWidget.o
 ./release\Components.o
-./release\SimulationWidget.o
 ./release\PlotWidget.o
 ./release\ModelicaEditor.o
 ./release\VisualizationWidget.o
@@ -41,6 +40,9 @@ INPUT(
 ./release\dataSelect.o
 ./release\curve.o
 ./release\compoundWidget.o
+./release\IconParameters.o
+./release\SimulationWidget.o
+./release\IconProperties.o
 ./release\moc_mainwindow.o
 ./release\moc_ProjectTabWidget.o
 ./release\moc_LibraryWidget.o
@@ -53,7 +55,6 @@ INPUT(
 ./release\moc_ComponentAnnotation.o
 ./release\moc_CornerItem.o
 ./release\moc_ConnectorWidget.o
-./release\moc_SimulationWidget.o
 ./release\moc_PlotWidget.o
 ./release\moc_ModelicaEditor.o
 ./release\moc_VisualizationWidget.o
@@ -63,4 +64,7 @@ INPUT(
 ./release\moc_graphWindow.o
 ./release\moc_graphWidget.o
 ./release\moc_compoundWidget.o
+./release\moc_SimulationWidget.o
+./release\moc_IconProperties.o
+./release\qrc_resource_omedit.o
 );
