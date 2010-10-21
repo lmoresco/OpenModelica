@@ -1,15 +1,15 @@
 // name: ErrorNone
 // cflags: +g=MetaModelica
-// status: correct
+// status: incorrect
 
-NONE();
-getErrorString();
 NONE;
-getErrorString();
+
 // Result:
-// NONE()
-// ""
+// Error processing file: ErrorNone.mos
+// [ErrorNone.mos:5:1-5:4:writable] Error: Parse error: NONE is not valid MetaModelica syntax regardless of what tricks RML has played on you! Use NONE() instead.
 // 
-// "Error: NONE is not acceptable syntax. Use NONE() instead.
-// "
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult
