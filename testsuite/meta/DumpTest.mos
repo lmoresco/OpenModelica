@@ -4,22 +4,7 @@
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 
-loadFile("../../Compiler/Absyn.mo");getErrorString();
-loadFile("../../Compiler/ClassInf.mo");getErrorString();
-loadFile("../../Compiler/DAE.mo");getErrorString();
-loadFile("../../Compiler/DAEDump.mo");getErrorString();
-loadFile("../../Compiler/Debug.mo");getErrorString();
-loadFile("../../Compiler/Dump.mo");getErrorString();
-loadFile("../../Compiler/DumpGraphviz.mo");getErrorString();
-loadFile("../../Compiler/Exp.mo");getErrorString();
-loadFile("../../Compiler/Graphviz.mo");getErrorString();
-loadFile("../../Compiler/Print.mo");getErrorString();
-loadFile("../../Compiler/RTOpts.mo");getErrorString();
-loadFile("../../Compiler/SCode.mo");getErrorString();
-loadFile("../../Compiler/System.mo");getErrorString();
-loadFile("../../Compiler/Util.mo");getErrorString();
-loadFile("../../Compiler/Values.mo");getErrorString();
-loadFile("../../Compiler/ValuesUtil.mo");getErrorString();
+runScript("LoadCompilerSources.mos");
 loadFile("DumpTest.mo");getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
@@ -61,38 +46,9 @@ getErrorString();
 
 // Result:
 // true
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
-// true
-// ""
+// Loaded all files without error
+// "true
+// "
 // true
 // ""
 // true
