@@ -1,0 +1,10 @@
+// name: SimplifyTest
+// status: erroneous
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+
+runScript("LoadCompilerSources.mos");
+loadFile("SimplifyTest.mo");
+
+// SimplifyTest.test();
+// Exp.simplify1(DAE.ICONST(1));
+getErrorString();

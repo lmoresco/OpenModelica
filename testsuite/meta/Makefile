@@ -67,6 +67,7 @@ Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
+SimplifyTest.mos \
 StrictRML.mos \
 SusanTest.mos \
 TupleInteractive.mos \
