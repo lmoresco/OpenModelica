@@ -47,7 +47,9 @@ getErrorString();
 // end ComplicatedInteractive.LI2.RecordWithComplicatedTypes;)
 // {(2,3.5),(2,3.5),(2,3.5),(1,7.5),(2,3.5),(2,3.5)}
 // 
-// "Error: In metarecord call ComplicatedInteractive.LI2.RecordWithComplicatedTypes: Failed to match types: Got ((Integer, list<tuple<Real, Option<list<Boolean>>>>)) but expected (tuple<Real, list<tuple<Real, Option<list<Integer>>>>>)
+// "Error: In metarecord call ComplicatedInteractive.LI2.RecordWithComplicatedTypes: Failed to match types:
+//     actual:   ((Integer, list<tuple<Real, Option<list<Boolean>>>>))
+//     expected: (tuple<Real, list<tuple<Real, Option<list<Integer>>>>>)
 // "
 // 
 // "Error: No matching function found for ComplicatedInteractive.NewComplicatedThingy(SOME(list(true))) of type function(opt:Option<list<Boolean>>) => tuple<Integer, ComplicatedInteractive.LI2> in component <NO COMPONENT>, candidates are function(opt:Option<list<Integer>>) => tuple<Integer, ComplicatedInteractive.LI2>
