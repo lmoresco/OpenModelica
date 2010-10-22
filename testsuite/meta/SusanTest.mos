@@ -26,7 +26,8 @@ loadFile("SusanTest.mo");
 getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
-// cd("../../Compiler/susan_codegen/SimCode/"); SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
+// cd("../../Compiler/susan_codegen/SimCode/");
+SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
 system("rm -f SusanTestSmall.mo");
 SusanTest.main({"+d=failtrace","SusanTestSmall.tpl"});
 getErrorString();

@@ -15,8 +15,6 @@ list(linear_linearmodel);
 simulate(linear_linearmodel,method="dassl2");
 readFile("output.log"); // Check that output log is emtpy
 echo(false); // turns of output
-//system("rm -rf linearmodel linearmodel.cpp linearmodel.libs linearmodel.log linearmodel.makefile linearmodel_* output.log"); // remove tmp files.
-//system("rm -rf linear_linearmodel.mo linear_linearmodel linear_linearmodel.cpp linear_linearmodel.libs linear_linearmodel.log linear_linearmodel.makefile linear_linearmodel_* output.log"); // remove tmp files for linear model.
 // Result:
 // true
 // record SimulationResult
