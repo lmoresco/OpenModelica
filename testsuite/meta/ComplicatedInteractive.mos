@@ -52,6 +52,6 @@ getErrorString();
 //     expected: (tuple<Real, list<tuple<Real, Option<list<Integer>>>>>)
 // "
 // 
-// "Error: No matching function found for ComplicatedInteractive.NewComplicatedThingy(SOME(list(true))) of type function(opt:Option<list<Boolean>>) => tuple<Integer, ComplicatedInteractive.LI2> in component <NO COMPONENT>, candidates are function(opt:Option<list<Integer>>) => tuple<Integer, ComplicatedInteractive.LI2>
+// "Error: No matching function found for ComplicatedInteractive.NewComplicatedThingy(SOME(List(true))) of type function(opt:Option<list<Boolean>>) => tuple<Integer, ComplicatedInteractive.LI2> in component <NO COMPONENT>, candidates are function(opt:Option<list<Integer>>) => tuple<Integer, ComplicatedInteractive.LI2>
 // "
 // endResult

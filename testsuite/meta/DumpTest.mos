@@ -19,6 +19,7 @@ loadFile("../../Compiler/SCode.mo");getErrorString();
 loadFile("../../Compiler/System.mo");getErrorString();
 loadFile("../../Compiler/Util.mo");getErrorString();
 loadFile("../../Compiler/Values.mo");getErrorString();
+loadFile("../../Compiler/ValuesUtil.mo");getErrorString();
 loadFile("DumpTest.mo");getErrorString();
 
 setLinkerFlags("-lc_runtime -lomcruntime");
@@ -52,8 +53,16 @@ getErrorString();
 DAEDump.dumpDebugDAE(dae);
 getErrorString();
 
+val:=Values.INTEGER(42);
+getErrorString();
+"ValuesUtil.valString";
+ValuesUtil.valString(val);
+getErrorString();
+
 // Result:
 // true
+// true
+// ""
 // true
 // ""
 // true
@@ -130,5 +139,12 @@ getErrorString();
 // ""
 // "DAEDump.dumpDebugDAE"
 // ""
+// ""
+// record Values.Value.INTEGER
+//     integer = 42
+// end Values.Value.INTEGER;
+// ""
+// "ValuesUtil.valString"
+// "42"
 // ""
 // endResult
