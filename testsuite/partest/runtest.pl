@@ -144,6 +144,9 @@ $ENV{'PATH'} = "./:" . $ENV{'PATH'};
 
 enter_sandbox();
 
+# Clean up fail logs from previous runs.
+unlink("../$test.fail_log");
+
 # Determine the full path to rtest.
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 # If we're in meta, append the MetaModelica flag to rtest.
