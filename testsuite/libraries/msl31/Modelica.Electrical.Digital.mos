@@ -314,59 +314,59 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Enable.y;
 // equation
 //   MUX.Or1.auxiliary[1] = MUX.Or1.x[1];
-//   MUX.Or1.auxiliary[2] = D.Tables.OrTable[MUX.Or1.auxiliary[1],MUX.Or1.x[2]];
-//   MUX.Or1.auxiliary[3] = D.Tables.OrTable[MUX.Or1.auxiliary[2],MUX.Or1.x[3]];
-//   MUX.Or1.auxiliary[4] = D.Tables.OrTable[MUX.Or1.auxiliary[3],MUX.Or1.x[4]];
+//   MUX.Or1.auxiliary[2] = D.Tables.OrTable[MUX.Or1.auxiliary[1], MUX.Or1.x[2]];
+//   MUX.Or1.auxiliary[3] = D.Tables.OrTable[MUX.Or1.auxiliary[2], MUX.Or1.x[3]];
+//   MUX.Or1.auxiliary[4] = D.Tables.OrTable[MUX.Or1.auxiliary[3], MUX.Or1.x[4]];
 //   MUX.Or1.y = pre(MUX.Or1.auxiliary[4]);
 //   MUX.And1.auxiliary[1] = MUX.And1.x[1];
-//   MUX.And1.auxiliary[2] = D.Tables.AndTable[MUX.And1.auxiliary[1],MUX.And1.x[2]];
-//   MUX.And1.auxiliary[3] = D.Tables.AndTable[MUX.And1.auxiliary[2],MUX.And1.x[3]];
+//   MUX.And1.auxiliary[2] = D.Tables.AndTable[MUX.And1.auxiliary[1], MUX.And1.x[2]];
+//   MUX.And1.auxiliary[3] = D.Tables.AndTable[MUX.And1.auxiliary[2], MUX.And1.x[3]];
 //   MUX.And1.y = pre(MUX.And1.auxiliary[3]);
 //   MUX.And2.auxiliary[1] = MUX.And2.x[1];
-//   MUX.And2.auxiliary[2] = D.Tables.AndTable[MUX.And2.auxiliary[1],MUX.And2.x[2]];
-//   MUX.And2.auxiliary[3] = D.Tables.AndTable[MUX.And2.auxiliary[2],MUX.And2.x[3]];
+//   MUX.And2.auxiliary[2] = D.Tables.AndTable[MUX.And2.auxiliary[1], MUX.And2.x[2]];
+//   MUX.And2.auxiliary[3] = D.Tables.AndTable[MUX.And2.auxiliary[2], MUX.And2.x[3]];
 //   MUX.And2.y = pre(MUX.And2.auxiliary[3]);
 //   MUX.And3.auxiliary[1] = MUX.And3.x[1];
-//   MUX.And3.auxiliary[2] = D.Tables.AndTable[MUX.And3.auxiliary[1],MUX.And3.x[2]];
-//   MUX.And3.auxiliary[3] = D.Tables.AndTable[MUX.And3.auxiliary[2],MUX.And3.x[3]];
+//   MUX.And3.auxiliary[2] = D.Tables.AndTable[MUX.And3.auxiliary[1], MUX.And3.x[2]];
+//   MUX.And3.auxiliary[3] = D.Tables.AndTable[MUX.And3.auxiliary[2], MUX.And3.x[3]];
 //   MUX.And3.y = pre(MUX.And3.auxiliary[3]);
 //   MUX.And4.auxiliary[1] = MUX.And4.x[1];
-//   MUX.And4.auxiliary[2] = D.Tables.AndTable[MUX.And4.auxiliary[1],MUX.And4.x[2]];
-//   MUX.And4.auxiliary[3] = D.Tables.AndTable[MUX.And4.auxiliary[2],MUX.And4.x[3]];
+//   MUX.And4.auxiliary[2] = D.Tables.AndTable[MUX.And4.auxiliary[1], MUX.And4.x[2]];
+//   MUX.And4.auxiliary[3] = D.Tables.AndTable[MUX.And4.auxiliary[2], MUX.And4.x[3]];
 //   MUX.And4.y = pre(MUX.And4.auxiliary[3]);
 //   MUX.Not1.auxiliary = D.Tables.NotTable[MUX.Not1.x];
 //   MUX.Not1.y = pre(MUX.Not1.auxiliary);
 //   MUX.Not2.auxiliary = D.Tables.NotTable[MUX.Not2.x];
 //   MUX.Not2.y = pre(MUX.Not2.auxiliary);
 //   FF.RS1.Nor1.auxiliary[1] = FF.RS1.Nor1.x[1];
-//   FF.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor1.auxiliary[1],FF.RS1.Nor1.x[2]];
+//   FF.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor1.auxiliary[1], FF.RS1.Nor1.x[2]];
 //   FF.RS1.Nor1.y = pre(D.Tables.NotTable[FF.RS1.Nor1.auxiliary[2]]);
 //   FF.RS1.Nor2.auxiliary[1] = FF.RS1.Nor2.x[1];
-//   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1],FF.RS1.Nor2.x[2]];
+//   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1], FF.RS1.Nor2.x[2]];
 //   FF.RS1.Nor2.y = pre(D.Tables.NotTable[FF.RS1.Nor2.auxiliary[2]]);
 //   FF.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
 //   FF.RS1.TD1.y = if FF.RS1.TD1.delayTime > 0.0 then if time >= FF.RS1.TD1.delayTime then FF.RS1.TD1.x_delayed else FF.RS1.TD1.y0 else pre(FF.RS1.TD1.x);
 //   FF.RS2.Nor1.auxiliary[1] = FF.RS2.Nor1.x[1];
-//   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1],FF.RS2.Nor1.x[2]];
+//   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1], FF.RS2.Nor1.x[2]];
 //   FF.RS2.Nor1.y = pre(D.Tables.NotTable[FF.RS2.Nor1.auxiliary[2]]);
 //   FF.RS2.Nor2.auxiliary[1] = FF.RS2.Nor2.x[1];
-//   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1],FF.RS2.Nor2.x[2]];
+//   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1], FF.RS2.Nor2.x[2]];
 //   FF.RS2.Nor2.y = pre(D.Tables.NotTable[FF.RS2.Nor2.auxiliary[2]]);
 //   FF.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
 //   FF.RS2.TD1.y = if FF.RS2.TD1.delayTime > 0.0 then if time >= FF.RS2.TD1.delayTime then FF.RS2.TD1.x_delayed else FF.RS2.TD1.y0 else pre(FF.RS2.TD1.x);
 //   FF.And1.auxiliary[1] = FF.And1.x[1];
-//   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1],FF.And1.x[2]];
-//   FF.And1.auxiliary[3] = D.Tables.AndTable[FF.And1.auxiliary[2],FF.And1.x[3]];
+//   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1], FF.And1.x[2]];
+//   FF.And1.auxiliary[3] = D.Tables.AndTable[FF.And1.auxiliary[2], FF.And1.x[3]];
 //   FF.And1.y = pre(FF.And1.auxiliary[3]);
 //   FF.And2.auxiliary[1] = FF.And2.x[1];
-//   FF.And2.auxiliary[2] = D.Tables.AndTable[FF.And2.auxiliary[1],FF.And2.x[2]];
-//   FF.And2.auxiliary[3] = D.Tables.AndTable[FF.And2.auxiliary[2],FF.And2.x[3]];
+//   FF.And2.auxiliary[2] = D.Tables.AndTable[FF.And2.auxiliary[1], FF.And2.x[2]];
+//   FF.And2.auxiliary[3] = D.Tables.AndTable[FF.And2.auxiliary[2], FF.And2.x[3]];
 //   FF.And2.y = pre(FF.And2.auxiliary[3]);
 //   FF.And3.auxiliary[1] = FF.And3.x[1];
-//   FF.And3.auxiliary[2] = D.Tables.AndTable[FF.And3.auxiliary[1],FF.And3.x[2]];
+//   FF.And3.auxiliary[2] = D.Tables.AndTable[FF.And3.auxiliary[1], FF.And3.x[2]];
 //   FF.And3.y = pre(FF.And3.auxiliary[2]);
 //   FF.And4.auxiliary[1] = FF.And4.x[1];
-//   FF.And4.auxiliary[2] = D.Tables.AndTable[FF.And4.auxiliary[1],FF.And4.x[2]];
+//   FF.And4.auxiliary[2] = D.Tables.AndTable[FF.And4.auxiliary[1], FF.And4.x[2]];
 //   FF.And4.y = pre(FF.And4.auxiliary[2]);
 //   FF.Not1.auxiliary = D.Tables.NotTable[FF.Not1.x];
 //   FF.Not1.y = pre(FF.Not1.auxiliary);
@@ -486,7 +486,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Multiplexer has 124 equation(s) and 124 variable(s).
-// 116 of these are trivial equation(s).
+// 72 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.FlipFlop
@@ -604,34 +604,34 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') K.y;
 // equation
 //   FF.RS1.Nor1.auxiliary[1] = FF.RS1.Nor1.x[1];
-//   FF.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor1.auxiliary[1],FF.RS1.Nor1.x[2]];
+//   FF.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor1.auxiliary[1], FF.RS1.Nor1.x[2]];
 //   FF.RS1.Nor1.y = pre(D.Tables.NotTable[FF.RS1.Nor1.auxiliary[2]]);
 //   FF.RS1.Nor2.auxiliary[1] = FF.RS1.Nor2.x[1];
-//   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1],FF.RS1.Nor2.x[2]];
+//   FF.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS1.Nor2.auxiliary[1], FF.RS1.Nor2.x[2]];
 //   FF.RS1.Nor2.y = pre(D.Tables.NotTable[FF.RS1.Nor2.auxiliary[2]]);
 //   FF.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS1.TD1.x),FF.RS1.TD1.delayTime,FF.RS1.TD1.delayTime)));
 //   FF.RS1.TD1.y = if FF.RS1.TD1.delayTime > 0.0 then if time >= FF.RS1.TD1.delayTime then FF.RS1.TD1.x_delayed else FF.RS1.TD1.y0 else pre(FF.RS1.TD1.x);
 //   FF.RS2.Nor1.auxiliary[1] = FF.RS2.Nor1.x[1];
-//   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1],FF.RS2.Nor1.x[2]];
+//   FF.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor1.auxiliary[1], FF.RS2.Nor1.x[2]];
 //   FF.RS2.Nor1.y = pre(D.Tables.NotTable[FF.RS2.Nor1.auxiliary[2]]);
 //   FF.RS2.Nor2.auxiliary[1] = FF.RS2.Nor2.x[1];
-//   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1],FF.RS2.Nor2.x[2]];
+//   FF.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF.RS2.Nor2.auxiliary[1], FF.RS2.Nor2.x[2]];
 //   FF.RS2.Nor2.y = pre(D.Tables.NotTable[FF.RS2.Nor2.auxiliary[2]]);
 //   FF.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF.RS2.TD1.x),FF.RS2.TD1.delayTime,FF.RS2.TD1.delayTime)));
 //   FF.RS2.TD1.y = if FF.RS2.TD1.delayTime > 0.0 then if time >= FF.RS2.TD1.delayTime then FF.RS2.TD1.x_delayed else FF.RS2.TD1.y0 else pre(FF.RS2.TD1.x);
 //   FF.And1.auxiliary[1] = FF.And1.x[1];
-//   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1],FF.And1.x[2]];
-//   FF.And1.auxiliary[3] = D.Tables.AndTable[FF.And1.auxiliary[2],FF.And1.x[3]];
+//   FF.And1.auxiliary[2] = D.Tables.AndTable[FF.And1.auxiliary[1], FF.And1.x[2]];
+//   FF.And1.auxiliary[3] = D.Tables.AndTable[FF.And1.auxiliary[2], FF.And1.x[3]];
 //   FF.And1.y = pre(FF.And1.auxiliary[3]);
 //   FF.And2.auxiliary[1] = FF.And2.x[1];
-//   FF.And2.auxiliary[2] = D.Tables.AndTable[FF.And2.auxiliary[1],FF.And2.x[2]];
-//   FF.And2.auxiliary[3] = D.Tables.AndTable[FF.And2.auxiliary[2],FF.And2.x[3]];
+//   FF.And2.auxiliary[2] = D.Tables.AndTable[FF.And2.auxiliary[1], FF.And2.x[2]];
+//   FF.And2.auxiliary[3] = D.Tables.AndTable[FF.And2.auxiliary[2], FF.And2.x[3]];
 //   FF.And2.y = pre(FF.And2.auxiliary[3]);
 //   FF.And3.auxiliary[1] = FF.And3.x[1];
-//   FF.And3.auxiliary[2] = D.Tables.AndTable[FF.And3.auxiliary[1],FF.And3.x[2]];
+//   FF.And3.auxiliary[2] = D.Tables.AndTable[FF.And3.auxiliary[1], FF.And3.x[2]];
 //   FF.And3.y = pre(FF.And3.auxiliary[2]);
 //   FF.And4.auxiliary[1] = FF.And4.x[1];
-//   FF.And4.auxiliary[2] = D.Tables.AndTable[FF.And4.auxiliary[1],FF.And4.x[2]];
+//   FF.And4.auxiliary[2] = D.Tables.AndTable[FF.And4.auxiliary[1], FF.And4.x[2]];
 //   FF.And4.y = pre(FF.And4.auxiliary[2]);
 //   FF.Not1.auxiliary = D.Tables.NotTable[FF.Not1.x];
 //   FF.Not1.y = pre(FF.Not1.auxiliary);
@@ -703,7 +703,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.FlipFlop has 71 equation(s) and 71 variable(s).
-// 66 of these are trivial equation(s).
+// 42 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.HalfAdder
@@ -964,10 +964,10 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   parameter Real c.value_m(start = 0.5) "value for digital m (Don't care)";
 // equation
 //   Adder.AND.G1.auxiliary[1] = Adder.AND.G1.x[1];
-//   Adder.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder.AND.G1.auxiliary[1],Adder.AND.G1.x[2]];
+//   Adder.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder.AND.G1.auxiliary[1], Adder.AND.G1.x[2]];
 //   Adder.AND.G1.y = pre(Adder.AND.G1.auxiliary[2]);
 //   Adder.XOR.G1.auxiliary[1] = Adder.XOR.G1.x[1];
-//   Adder.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder.XOR.G1.auxiliary[1],Adder.XOR.G1.x[2]];
+//   Adder.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder.XOR.G1.auxiliary[1], Adder.XOR.G1.x[2]];
 //   Adder.XOR.G1.y = pre(Adder.XOR.G1.auxiliary[2]);
 //   s.y[1] = if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'U' then s.value_U else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'X' then s.value_X else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'0' then s.value_0 else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'1' then s.value_1 else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'Z' then s.value_Z else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'W' then s.value_W else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'L' then s.value_L else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'H' then s.value_H else s.value_m;
 //   c.y[1] = if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'U' then c.value_U else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'X' then c.value_X else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'0' then c.value_0 else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'1' then c.value_1 else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'Z' then c.value_Z else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'W' then c.value_W else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'L' then c.value_L else if c.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'H' then c.value_H else c.value_m;
@@ -1043,7 +1043,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.HalfAdder has 202 equation(s) and 202 variable(s).
-// 186 of these are trivial equation(s).
+// 182 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.FullAdder
@@ -1775,115 +1775,115 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected Real CLK.t_width(quantity = "Time", unit = "s") = CLK.period * CLK.width / 100.0;
 // equation
 //   Adder1.Adder2.AND.G1.auxiliary[1] = Adder1.Adder2.AND.G1.x[1];
-//   Adder1.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder2.AND.G1.auxiliary[1],Adder1.Adder2.AND.G1.x[2]];
+//   Adder1.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder2.AND.G1.auxiliary[1], Adder1.Adder2.AND.G1.x[2]];
 //   Adder1.Adder2.AND.G1.y = pre(Adder1.Adder2.AND.G1.auxiliary[2]);
 //   Adder1.Adder2.XOR.G1.auxiliary[1] = Adder1.Adder2.XOR.G1.x[1];
-//   Adder1.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder2.XOR.G1.auxiliary[1],Adder1.Adder2.XOR.G1.x[2]];
+//   Adder1.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder2.XOR.G1.auxiliary[1], Adder1.Adder2.XOR.G1.x[2]];
 //   Adder1.Adder2.XOR.G1.y = pre(Adder1.Adder2.XOR.G1.auxiliary[2]);
 //   Adder1.Adder1.AND.G1.auxiliary[1] = Adder1.Adder1.AND.G1.x[1];
-//   Adder1.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder1.AND.G1.auxiliary[1],Adder1.Adder1.AND.G1.x[2]];
+//   Adder1.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder1.AND.G1.auxiliary[1], Adder1.Adder1.AND.G1.x[2]];
 //   Adder1.Adder1.AND.G1.y = pre(Adder1.Adder1.AND.G1.auxiliary[2]);
 //   Adder1.Adder1.XOR.G1.auxiliary[1] = Adder1.Adder1.XOR.G1.x[1];
-//   Adder1.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder1.XOR.G1.auxiliary[1],Adder1.Adder1.XOR.G1.x[2]];
+//   Adder1.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder1.XOR.G1.auxiliary[1], Adder1.Adder1.XOR.G1.x[2]];
 //   Adder1.Adder1.XOR.G1.y = pre(Adder1.Adder1.XOR.G1.auxiliary[2]);
 //   Adder1.OR.auxiliary[1] = Adder1.OR.x[1];
-//   Adder1.OR.auxiliary[2] = D.Tables.OrTable[Adder1.OR.auxiliary[1],Adder1.OR.x[2]];
+//   Adder1.OR.auxiliary[2] = D.Tables.OrTable[Adder1.OR.auxiliary[1], Adder1.OR.x[2]];
 //   Adder1.OR.y = pre(Adder1.OR.auxiliary[2]);
 //   s.y[1] = if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'U' then s.value_U else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'X' then s.value_X else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'0' then s.value_0 else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'1' then s.value_1 else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'Z' then s.value_Z else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'W' then s.value_W else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'L' then s.value_L else if s.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'H' then s.value_H else s.value_m;
 //   c_out.y[1] = if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'U' then c_out.value_U else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'X' then c_out.value_X else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'0' then c_out.value_0 else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'1' then c_out.value_1 else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'Z' then c_out.value_Z else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'W' then c_out.value_W else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'L' then c_out.value_L else if c_out.x[1] == Modelica.Electrical.Digital.Interfaces.Logic.'H' then c_out.value_H else c_out.value_m;
 //   Counter.FF1.RS1.Nor1.auxiliary[1] = Counter.FF1.RS1.Nor1.x[1];
-//   Counter.FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor1.auxiliary[1],Counter.FF1.RS1.Nor1.x[2]];
+//   Counter.FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor1.auxiliary[1], Counter.FF1.RS1.Nor1.x[2]];
 //   Counter.FF1.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF1.RS1.Nor2.auxiliary[1] = Counter.FF1.RS1.Nor2.x[1];
-//   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1],Counter.FF1.RS1.Nor2.x[2]];
+//   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1], Counter.FF1.RS1.Nor2.x[2]];
 //   Counter.FF1.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
 //   Counter.FF1.RS1.TD1.y = if Counter.FF1.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS1.TD1.delayTime then Counter.FF1.RS1.TD1.x_delayed else Counter.FF1.RS1.TD1.y0 else pre(Counter.FF1.RS1.TD1.x);
 //   Counter.FF1.RS2.Nor1.auxiliary[1] = Counter.FF1.RS2.Nor1.x[1];
-//   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1],Counter.FF1.RS2.Nor1.x[2]];
+//   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1], Counter.FF1.RS2.Nor1.x[2]];
 //   Counter.FF1.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF1.RS2.Nor2.auxiliary[1] = Counter.FF1.RS2.Nor2.x[1];
-//   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1],Counter.FF1.RS2.Nor2.x[2]];
+//   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1], Counter.FF1.RS2.Nor2.x[2]];
 //   Counter.FF1.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
 //   Counter.FF1.RS2.TD1.y = if Counter.FF1.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS2.TD1.delayTime then Counter.FF1.RS2.TD1.x_delayed else Counter.FF1.RS2.TD1.y0 else pre(Counter.FF1.RS2.TD1.x);
 //   Counter.FF1.And1.auxiliary[1] = Counter.FF1.And1.x[1];
-//   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1],Counter.FF1.And1.x[2]];
-//   Counter.FF1.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[2],Counter.FF1.And1.x[3]];
+//   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1], Counter.FF1.And1.x[2]];
+//   Counter.FF1.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[2], Counter.FF1.And1.x[3]];
 //   Counter.FF1.And1.y = pre(Counter.FF1.And1.auxiliary[3]);
 //   Counter.FF1.And2.auxiliary[1] = Counter.FF1.And2.x[1];
-//   Counter.FF1.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[1],Counter.FF1.And2.x[2]];
-//   Counter.FF1.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[2],Counter.FF1.And2.x[3]];
+//   Counter.FF1.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[1], Counter.FF1.And2.x[2]];
+//   Counter.FF1.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[2], Counter.FF1.And2.x[3]];
 //   Counter.FF1.And2.y = pre(Counter.FF1.And2.auxiliary[3]);
 //   Counter.FF1.And3.auxiliary[1] = Counter.FF1.And3.x[1];
-//   Counter.FF1.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And3.auxiliary[1],Counter.FF1.And3.x[2]];
+//   Counter.FF1.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And3.auxiliary[1], Counter.FF1.And3.x[2]];
 //   Counter.FF1.And3.y = pre(Counter.FF1.And3.auxiliary[2]);
 //   Counter.FF1.And4.auxiliary[1] = Counter.FF1.And4.x[1];
-//   Counter.FF1.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And4.auxiliary[1],Counter.FF1.And4.x[2]];
+//   Counter.FF1.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And4.auxiliary[1], Counter.FF1.And4.x[2]];
 //   Counter.FF1.And4.y = pre(Counter.FF1.And4.auxiliary[2]);
 //   Counter.FF1.Not1.auxiliary = D.Tables.NotTable[Counter.FF1.Not1.x];
 //   Counter.FF1.Not1.y = pre(Counter.FF1.Not1.auxiliary);
 //   Counter.FF2.RS1.Nor1.auxiliary[1] = Counter.FF2.RS1.Nor1.x[1];
-//   Counter.FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor1.auxiliary[1],Counter.FF2.RS1.Nor1.x[2]];
+//   Counter.FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor1.auxiliary[1], Counter.FF2.RS1.Nor1.x[2]];
 //   Counter.FF2.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF2.RS1.Nor2.auxiliary[1] = Counter.FF2.RS1.Nor2.x[1];
-//   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1],Counter.FF2.RS1.Nor2.x[2]];
+//   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1], Counter.FF2.RS1.Nor2.x[2]];
 //   Counter.FF2.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
 //   Counter.FF2.RS1.TD1.y = if Counter.FF2.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS1.TD1.delayTime then Counter.FF2.RS1.TD1.x_delayed else Counter.FF2.RS1.TD1.y0 else pre(Counter.FF2.RS1.TD1.x);
 //   Counter.FF2.RS2.Nor1.auxiliary[1] = Counter.FF2.RS2.Nor1.x[1];
-//   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1],Counter.FF2.RS2.Nor1.x[2]];
+//   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1], Counter.FF2.RS2.Nor1.x[2]];
 //   Counter.FF2.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF2.RS2.Nor2.auxiliary[1] = Counter.FF2.RS2.Nor2.x[1];
-//   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1],Counter.FF2.RS2.Nor2.x[2]];
+//   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1], Counter.FF2.RS2.Nor2.x[2]];
 //   Counter.FF2.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
 //   Counter.FF2.RS2.TD1.y = if Counter.FF2.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS2.TD1.delayTime then Counter.FF2.RS2.TD1.x_delayed else Counter.FF2.RS2.TD1.y0 else pre(Counter.FF2.RS2.TD1.x);
 //   Counter.FF2.And1.auxiliary[1] = Counter.FF2.And1.x[1];
-//   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1],Counter.FF2.And1.x[2]];
-//   Counter.FF2.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[2],Counter.FF2.And1.x[3]];
+//   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1], Counter.FF2.And1.x[2]];
+//   Counter.FF2.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[2], Counter.FF2.And1.x[3]];
 //   Counter.FF2.And1.y = pre(Counter.FF2.And1.auxiliary[3]);
 //   Counter.FF2.And2.auxiliary[1] = Counter.FF2.And2.x[1];
-//   Counter.FF2.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[1],Counter.FF2.And2.x[2]];
-//   Counter.FF2.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[2],Counter.FF2.And2.x[3]];
+//   Counter.FF2.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[1], Counter.FF2.And2.x[2]];
+//   Counter.FF2.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[2], Counter.FF2.And2.x[3]];
 //   Counter.FF2.And2.y = pre(Counter.FF2.And2.auxiliary[3]);
 //   Counter.FF2.And3.auxiliary[1] = Counter.FF2.And3.x[1];
-//   Counter.FF2.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And3.auxiliary[1],Counter.FF2.And3.x[2]];
+//   Counter.FF2.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And3.auxiliary[1], Counter.FF2.And3.x[2]];
 //   Counter.FF2.And3.y = pre(Counter.FF2.And3.auxiliary[2]);
 //   Counter.FF2.And4.auxiliary[1] = Counter.FF2.And4.x[1];
-//   Counter.FF2.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And4.auxiliary[1],Counter.FF2.And4.x[2]];
+//   Counter.FF2.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And4.auxiliary[1], Counter.FF2.And4.x[2]];
 //   Counter.FF2.And4.y = pre(Counter.FF2.And4.auxiliary[2]);
 //   Counter.FF2.Not1.auxiliary = D.Tables.NotTable[Counter.FF2.Not1.x];
 //   Counter.FF2.Not1.y = pre(Counter.FF2.Not1.auxiliary);
 //   Counter.FF3.RS1.Nor1.auxiliary[1] = Counter.FF3.RS1.Nor1.x[1];
-//   Counter.FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor1.auxiliary[1],Counter.FF3.RS1.Nor1.x[2]];
+//   Counter.FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor1.auxiliary[1], Counter.FF3.RS1.Nor1.x[2]];
 //   Counter.FF3.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF3.RS1.Nor2.auxiliary[1] = Counter.FF3.RS1.Nor2.x[1];
-//   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1],Counter.FF3.RS1.Nor2.x[2]];
+//   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1], Counter.FF3.RS1.Nor2.x[2]];
 //   Counter.FF3.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
 //   Counter.FF3.RS1.TD1.y = if Counter.FF3.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS1.TD1.delayTime then Counter.FF3.RS1.TD1.x_delayed else Counter.FF3.RS1.TD1.y0 else pre(Counter.FF3.RS1.TD1.x);
 //   Counter.FF3.RS2.Nor1.auxiliary[1] = Counter.FF3.RS2.Nor1.x[1];
-//   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1],Counter.FF3.RS2.Nor1.x[2]];
+//   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1], Counter.FF3.RS2.Nor1.x[2]];
 //   Counter.FF3.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF3.RS2.Nor2.auxiliary[1] = Counter.FF3.RS2.Nor2.x[1];
-//   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1],Counter.FF3.RS2.Nor2.x[2]];
+//   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1], Counter.FF3.RS2.Nor2.x[2]];
 //   Counter.FF3.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
 //   Counter.FF3.RS2.TD1.y = if Counter.FF3.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS2.TD1.delayTime then Counter.FF3.RS2.TD1.x_delayed else Counter.FF3.RS2.TD1.y0 else pre(Counter.FF3.RS2.TD1.x);
 //   Counter.FF3.And1.auxiliary[1] = Counter.FF3.And1.x[1];
-//   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1],Counter.FF3.And1.x[2]];
-//   Counter.FF3.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[2],Counter.FF3.And1.x[3]];
+//   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1], Counter.FF3.And1.x[2]];
+//   Counter.FF3.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[2], Counter.FF3.And1.x[3]];
 //   Counter.FF3.And1.y = pre(Counter.FF3.And1.auxiliary[3]);
 //   Counter.FF3.And2.auxiliary[1] = Counter.FF3.And2.x[1];
-//   Counter.FF3.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[1],Counter.FF3.And2.x[2]];
-//   Counter.FF3.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[2],Counter.FF3.And2.x[3]];
+//   Counter.FF3.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[1], Counter.FF3.And2.x[2]];
+//   Counter.FF3.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[2], Counter.FF3.And2.x[3]];
 //   Counter.FF3.And2.y = pre(Counter.FF3.And2.auxiliary[3]);
 //   Counter.FF3.And3.auxiliary[1] = Counter.FF3.And3.x[1];
-//   Counter.FF3.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And3.auxiliary[1],Counter.FF3.And3.x[2]];
+//   Counter.FF3.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And3.auxiliary[1], Counter.FF3.And3.x[2]];
 //   Counter.FF3.And3.y = pre(Counter.FF3.And3.auxiliary[2]);
 //   Counter.FF3.And4.auxiliary[1] = Counter.FF3.And4.x[1];
-//   Counter.FF3.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And4.auxiliary[1],Counter.FF3.And4.x[2]];
+//   Counter.FF3.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And4.auxiliary[1], Counter.FF3.And4.x[2]];
 //   Counter.FF3.And4.y = pre(Counter.FF3.And4.auxiliary[2]);
 //   Counter.FF3.Not1.auxiliary = D.Tables.NotTable[Counter.FF3.Not1.x];
 //   Counter.FF3.Not1.y = pre(Counter.FF3.Not1.auxiliary);
@@ -2096,7 +2096,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.FullAdder has 613 equation(s) and 613 variable(s).
-// 583 of these are trivial equation(s).
+// 501 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Adder4
@@ -3904,64 +3904,64 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder4.OR.auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   Adder1.Adder2.AND.G1.auxiliary[1] = Adder1.Adder2.AND.G1.x[1];
-//   Adder1.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder2.AND.G1.auxiliary[1],Adder1.Adder2.AND.G1.x[2]];
+//   Adder1.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder2.AND.G1.auxiliary[1], Adder1.Adder2.AND.G1.x[2]];
 //   Adder1.Adder2.AND.G1.y = pre(Adder1.Adder2.AND.G1.auxiliary[2]);
 //   Adder1.Adder2.XOR.G1.auxiliary[1] = Adder1.Adder2.XOR.G1.x[1];
-//   Adder1.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder2.XOR.G1.auxiliary[1],Adder1.Adder2.XOR.G1.x[2]];
+//   Adder1.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder2.XOR.G1.auxiliary[1], Adder1.Adder2.XOR.G1.x[2]];
 //   Adder1.Adder2.XOR.G1.y = pre(Adder1.Adder2.XOR.G1.auxiliary[2]);
 //   Adder1.Adder1.AND.G1.auxiliary[1] = Adder1.Adder1.AND.G1.x[1];
-//   Adder1.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder1.AND.G1.auxiliary[1],Adder1.Adder1.AND.G1.x[2]];
+//   Adder1.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.Adder1.AND.G1.auxiliary[1], Adder1.Adder1.AND.G1.x[2]];
 //   Adder1.Adder1.AND.G1.y = pre(Adder1.Adder1.AND.G1.auxiliary[2]);
 //   Adder1.Adder1.XOR.G1.auxiliary[1] = Adder1.Adder1.XOR.G1.x[1];
-//   Adder1.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder1.XOR.G1.auxiliary[1],Adder1.Adder1.XOR.G1.x[2]];
+//   Adder1.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.Adder1.XOR.G1.auxiliary[1], Adder1.Adder1.XOR.G1.x[2]];
 //   Adder1.Adder1.XOR.G1.y = pre(Adder1.Adder1.XOR.G1.auxiliary[2]);
 //   Adder1.OR.auxiliary[1] = Adder1.OR.x[1];
-//   Adder1.OR.auxiliary[2] = D.Tables.OrTable[Adder1.OR.auxiliary[1],Adder1.OR.x[2]];
+//   Adder1.OR.auxiliary[2] = D.Tables.OrTable[Adder1.OR.auxiliary[1], Adder1.OR.x[2]];
 //   Adder1.OR.y = pre(Adder1.OR.auxiliary[2]);
 //   Adder2.Adder2.AND.G1.auxiliary[1] = Adder2.Adder2.AND.G1.x[1];
-//   Adder2.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.Adder2.AND.G1.auxiliary[1],Adder2.Adder2.AND.G1.x[2]];
+//   Adder2.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.Adder2.AND.G1.auxiliary[1], Adder2.Adder2.AND.G1.x[2]];
 //   Adder2.Adder2.AND.G1.y = pre(Adder2.Adder2.AND.G1.auxiliary[2]);
 //   Adder2.Adder2.XOR.G1.auxiliary[1] = Adder2.Adder2.XOR.G1.x[1];
-//   Adder2.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.Adder2.XOR.G1.auxiliary[1],Adder2.Adder2.XOR.G1.x[2]];
+//   Adder2.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.Adder2.XOR.G1.auxiliary[1], Adder2.Adder2.XOR.G1.x[2]];
 //   Adder2.Adder2.XOR.G1.y = pre(Adder2.Adder2.XOR.G1.auxiliary[2]);
 //   Adder2.Adder1.AND.G1.auxiliary[1] = Adder2.Adder1.AND.G1.x[1];
-//   Adder2.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.Adder1.AND.G1.auxiliary[1],Adder2.Adder1.AND.G1.x[2]];
+//   Adder2.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.Adder1.AND.G1.auxiliary[1], Adder2.Adder1.AND.G1.x[2]];
 //   Adder2.Adder1.AND.G1.y = pre(Adder2.Adder1.AND.G1.auxiliary[2]);
 //   Adder2.Adder1.XOR.G1.auxiliary[1] = Adder2.Adder1.XOR.G1.x[1];
-//   Adder2.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.Adder1.XOR.G1.auxiliary[1],Adder2.Adder1.XOR.G1.x[2]];
+//   Adder2.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.Adder1.XOR.G1.auxiliary[1], Adder2.Adder1.XOR.G1.x[2]];
 //   Adder2.Adder1.XOR.G1.y = pre(Adder2.Adder1.XOR.G1.auxiliary[2]);
 //   Adder2.OR.auxiliary[1] = Adder2.OR.x[1];
-//   Adder2.OR.auxiliary[2] = D.Tables.OrTable[Adder2.OR.auxiliary[1],Adder2.OR.x[2]];
+//   Adder2.OR.auxiliary[2] = D.Tables.OrTable[Adder2.OR.auxiliary[1], Adder2.OR.x[2]];
 //   Adder2.OR.y = pre(Adder2.OR.auxiliary[2]);
 //   Adder3.Adder2.AND.G1.auxiliary[1] = Adder3.Adder2.AND.G1.x[1];
-//   Adder3.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder3.Adder2.AND.G1.auxiliary[1],Adder3.Adder2.AND.G1.x[2]];
+//   Adder3.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder3.Adder2.AND.G1.auxiliary[1], Adder3.Adder2.AND.G1.x[2]];
 //   Adder3.Adder2.AND.G1.y = pre(Adder3.Adder2.AND.G1.auxiliary[2]);
 //   Adder3.Adder2.XOR.G1.auxiliary[1] = Adder3.Adder2.XOR.G1.x[1];
-//   Adder3.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder3.Adder2.XOR.G1.auxiliary[1],Adder3.Adder2.XOR.G1.x[2]];
+//   Adder3.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder3.Adder2.XOR.G1.auxiliary[1], Adder3.Adder2.XOR.G1.x[2]];
 //   Adder3.Adder2.XOR.G1.y = pre(Adder3.Adder2.XOR.G1.auxiliary[2]);
 //   Adder3.Adder1.AND.G1.auxiliary[1] = Adder3.Adder1.AND.G1.x[1];
-//   Adder3.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder3.Adder1.AND.G1.auxiliary[1],Adder3.Adder1.AND.G1.x[2]];
+//   Adder3.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder3.Adder1.AND.G1.auxiliary[1], Adder3.Adder1.AND.G1.x[2]];
 //   Adder3.Adder1.AND.G1.y = pre(Adder3.Adder1.AND.G1.auxiliary[2]);
 //   Adder3.Adder1.XOR.G1.auxiliary[1] = Adder3.Adder1.XOR.G1.x[1];
-//   Adder3.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder3.Adder1.XOR.G1.auxiliary[1],Adder3.Adder1.XOR.G1.x[2]];
+//   Adder3.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder3.Adder1.XOR.G1.auxiliary[1], Adder3.Adder1.XOR.G1.x[2]];
 //   Adder3.Adder1.XOR.G1.y = pre(Adder3.Adder1.XOR.G1.auxiliary[2]);
 //   Adder3.OR.auxiliary[1] = Adder3.OR.x[1];
-//   Adder3.OR.auxiliary[2] = D.Tables.OrTable[Adder3.OR.auxiliary[1],Adder3.OR.x[2]];
+//   Adder3.OR.auxiliary[2] = D.Tables.OrTable[Adder3.OR.auxiliary[1], Adder3.OR.x[2]];
 //   Adder3.OR.y = pre(Adder3.OR.auxiliary[2]);
 //   Adder4.Adder2.AND.G1.auxiliary[1] = Adder4.Adder2.AND.G1.x[1];
-//   Adder4.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder4.Adder2.AND.G1.auxiliary[1],Adder4.Adder2.AND.G1.x[2]];
+//   Adder4.Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder4.Adder2.AND.G1.auxiliary[1], Adder4.Adder2.AND.G1.x[2]];
 //   Adder4.Adder2.AND.G1.y = pre(Adder4.Adder2.AND.G1.auxiliary[2]);
 //   Adder4.Adder2.XOR.G1.auxiliary[1] = Adder4.Adder2.XOR.G1.x[1];
-//   Adder4.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder4.Adder2.XOR.G1.auxiliary[1],Adder4.Adder2.XOR.G1.x[2]];
+//   Adder4.Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder4.Adder2.XOR.G1.auxiliary[1], Adder4.Adder2.XOR.G1.x[2]];
 //   Adder4.Adder2.XOR.G1.y = pre(Adder4.Adder2.XOR.G1.auxiliary[2]);
 //   Adder4.Adder1.AND.G1.auxiliary[1] = Adder4.Adder1.AND.G1.x[1];
-//   Adder4.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder4.Adder1.AND.G1.auxiliary[1],Adder4.Adder1.AND.G1.x[2]];
+//   Adder4.Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder4.Adder1.AND.G1.auxiliary[1], Adder4.Adder1.AND.G1.x[2]];
 //   Adder4.Adder1.AND.G1.y = pre(Adder4.Adder1.AND.G1.auxiliary[2]);
 //   Adder4.Adder1.XOR.G1.auxiliary[1] = Adder4.Adder1.XOR.G1.x[1];
-//   Adder4.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder4.Adder1.XOR.G1.auxiliary[1],Adder4.Adder1.XOR.G1.x[2]];
+//   Adder4.Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder4.Adder1.XOR.G1.auxiliary[1], Adder4.Adder1.XOR.G1.x[2]];
 //   Adder4.Adder1.XOR.G1.y = pre(Adder4.Adder1.XOR.G1.auxiliary[2]);
 //   Adder4.OR.auxiliary[1] = Adder4.OR.x[1];
-//   Adder4.OR.auxiliary[2] = D.Tables.OrTable[Adder4.OR.auxiliary[1],Adder4.OR.x[2]];
+//   Adder4.OR.auxiliary[2] = D.Tables.OrTable[Adder4.OR.auxiliary[1], Adder4.OR.x[2]];
 //   Adder4.OR.y = pre(Adder4.OR.auxiliary[2]);
 //   Adder4.Adder1.AND.G1.x[2] = Adder4.Adder1.AND.x[2];
 //   Adder4.Adder1.AND.G1.x[2] = Adder4.Adder1.XOR.G1.x[2];
@@ -4412,7 +4412,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Adder4 has 1617 equation(s) and 1617 variable(s).
-// 1512 of these are trivial equation(s).
+// 1472 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Counter3
@@ -4685,98 +4685,98 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Counter.q0;
 // equation
 //   Counter.FF1.RS1.Nor1.auxiliary[1] = Counter.FF1.RS1.Nor1.x[1];
-//   Counter.FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor1.auxiliary[1],Counter.FF1.RS1.Nor1.x[2]];
+//   Counter.FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor1.auxiliary[1], Counter.FF1.RS1.Nor1.x[2]];
 //   Counter.FF1.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF1.RS1.Nor2.auxiliary[1] = Counter.FF1.RS1.Nor2.x[1];
-//   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1],Counter.FF1.RS1.Nor2.x[2]];
+//   Counter.FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS1.Nor2.auxiliary[1], Counter.FF1.RS1.Nor2.x[2]];
 //   Counter.FF1.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS1.TD1.x),Counter.FF1.RS1.TD1.delayTime,Counter.FF1.RS1.TD1.delayTime)));
 //   Counter.FF1.RS1.TD1.y = if Counter.FF1.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS1.TD1.delayTime then Counter.FF1.RS1.TD1.x_delayed else Counter.FF1.RS1.TD1.y0 else pre(Counter.FF1.RS1.TD1.x);
 //   Counter.FF1.RS2.Nor1.auxiliary[1] = Counter.FF1.RS2.Nor1.x[1];
-//   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1],Counter.FF1.RS2.Nor1.x[2]];
+//   Counter.FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor1.auxiliary[1], Counter.FF1.RS2.Nor1.x[2]];
 //   Counter.FF1.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF1.RS2.Nor2.auxiliary[1] = Counter.FF1.RS2.Nor2.x[1];
-//   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1],Counter.FF1.RS2.Nor2.x[2]];
+//   Counter.FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF1.RS2.Nor2.auxiliary[1], Counter.FF1.RS2.Nor2.x[2]];
 //   Counter.FF1.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF1.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF1.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF1.RS2.TD1.x),Counter.FF1.RS2.TD1.delayTime,Counter.FF1.RS2.TD1.delayTime)));
 //   Counter.FF1.RS2.TD1.y = if Counter.FF1.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF1.RS2.TD1.delayTime then Counter.FF1.RS2.TD1.x_delayed else Counter.FF1.RS2.TD1.y0 else pre(Counter.FF1.RS2.TD1.x);
 //   Counter.FF1.And1.auxiliary[1] = Counter.FF1.And1.x[1];
-//   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1],Counter.FF1.And1.x[2]];
-//   Counter.FF1.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[2],Counter.FF1.And1.x[3]];
+//   Counter.FF1.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[1], Counter.FF1.And1.x[2]];
+//   Counter.FF1.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And1.auxiliary[2], Counter.FF1.And1.x[3]];
 //   Counter.FF1.And1.y = pre(Counter.FF1.And1.auxiliary[3]);
 //   Counter.FF1.And2.auxiliary[1] = Counter.FF1.And2.x[1];
-//   Counter.FF1.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[1],Counter.FF1.And2.x[2]];
-//   Counter.FF1.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[2],Counter.FF1.And2.x[3]];
+//   Counter.FF1.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[1], Counter.FF1.And2.x[2]];
+//   Counter.FF1.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF1.And2.auxiliary[2], Counter.FF1.And2.x[3]];
 //   Counter.FF1.And2.y = pre(Counter.FF1.And2.auxiliary[3]);
 //   Counter.FF1.And3.auxiliary[1] = Counter.FF1.And3.x[1];
-//   Counter.FF1.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And3.auxiliary[1],Counter.FF1.And3.x[2]];
+//   Counter.FF1.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And3.auxiliary[1], Counter.FF1.And3.x[2]];
 //   Counter.FF1.And3.y = pre(Counter.FF1.And3.auxiliary[2]);
 //   Counter.FF1.And4.auxiliary[1] = Counter.FF1.And4.x[1];
-//   Counter.FF1.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And4.auxiliary[1],Counter.FF1.And4.x[2]];
+//   Counter.FF1.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF1.And4.auxiliary[1], Counter.FF1.And4.x[2]];
 //   Counter.FF1.And4.y = pre(Counter.FF1.And4.auxiliary[2]);
 //   Counter.FF1.Not1.auxiliary = D.Tables.NotTable[Counter.FF1.Not1.x];
 //   Counter.FF1.Not1.y = pre(Counter.FF1.Not1.auxiliary);
 //   Counter.FF2.RS1.Nor1.auxiliary[1] = Counter.FF2.RS1.Nor1.x[1];
-//   Counter.FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor1.auxiliary[1],Counter.FF2.RS1.Nor1.x[2]];
+//   Counter.FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor1.auxiliary[1], Counter.FF2.RS1.Nor1.x[2]];
 //   Counter.FF2.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF2.RS1.Nor2.auxiliary[1] = Counter.FF2.RS1.Nor2.x[1];
-//   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1],Counter.FF2.RS1.Nor2.x[2]];
+//   Counter.FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS1.Nor2.auxiliary[1], Counter.FF2.RS1.Nor2.x[2]];
 //   Counter.FF2.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF2.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS1.TD1.x),Counter.FF2.RS1.TD1.delayTime,Counter.FF2.RS1.TD1.delayTime)));
 //   Counter.FF2.RS1.TD1.y = if Counter.FF2.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS1.TD1.delayTime then Counter.FF2.RS1.TD1.x_delayed else Counter.FF2.RS1.TD1.y0 else pre(Counter.FF2.RS1.TD1.x);
 //   Counter.FF2.RS2.Nor1.auxiliary[1] = Counter.FF2.RS2.Nor1.x[1];
-//   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1],Counter.FF2.RS2.Nor1.x[2]];
+//   Counter.FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor1.auxiliary[1], Counter.FF2.RS2.Nor1.x[2]];
 //   Counter.FF2.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF2.RS2.Nor2.auxiliary[1] = Counter.FF2.RS2.Nor2.x[1];
-//   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1],Counter.FF2.RS2.Nor2.x[2]];
+//   Counter.FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF2.RS2.Nor2.auxiliary[1], Counter.FF2.RS2.Nor2.x[2]];
 //   Counter.FF2.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF2.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF2.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF2.RS2.TD1.x),Counter.FF2.RS2.TD1.delayTime,Counter.FF2.RS2.TD1.delayTime)));
 //   Counter.FF2.RS2.TD1.y = if Counter.FF2.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF2.RS2.TD1.delayTime then Counter.FF2.RS2.TD1.x_delayed else Counter.FF2.RS2.TD1.y0 else pre(Counter.FF2.RS2.TD1.x);
 //   Counter.FF2.And1.auxiliary[1] = Counter.FF2.And1.x[1];
-//   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1],Counter.FF2.And1.x[2]];
-//   Counter.FF2.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[2],Counter.FF2.And1.x[3]];
+//   Counter.FF2.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[1], Counter.FF2.And1.x[2]];
+//   Counter.FF2.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And1.auxiliary[2], Counter.FF2.And1.x[3]];
 //   Counter.FF2.And1.y = pre(Counter.FF2.And1.auxiliary[3]);
 //   Counter.FF2.And2.auxiliary[1] = Counter.FF2.And2.x[1];
-//   Counter.FF2.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[1],Counter.FF2.And2.x[2]];
-//   Counter.FF2.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[2],Counter.FF2.And2.x[3]];
+//   Counter.FF2.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[1], Counter.FF2.And2.x[2]];
+//   Counter.FF2.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF2.And2.auxiliary[2], Counter.FF2.And2.x[3]];
 //   Counter.FF2.And2.y = pre(Counter.FF2.And2.auxiliary[3]);
 //   Counter.FF2.And3.auxiliary[1] = Counter.FF2.And3.x[1];
-//   Counter.FF2.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And3.auxiliary[1],Counter.FF2.And3.x[2]];
+//   Counter.FF2.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And3.auxiliary[1], Counter.FF2.And3.x[2]];
 //   Counter.FF2.And3.y = pre(Counter.FF2.And3.auxiliary[2]);
 //   Counter.FF2.And4.auxiliary[1] = Counter.FF2.And4.x[1];
-//   Counter.FF2.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And4.auxiliary[1],Counter.FF2.And4.x[2]];
+//   Counter.FF2.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF2.And4.auxiliary[1], Counter.FF2.And4.x[2]];
 //   Counter.FF2.And4.y = pre(Counter.FF2.And4.auxiliary[2]);
 //   Counter.FF2.Not1.auxiliary = D.Tables.NotTable[Counter.FF2.Not1.x];
 //   Counter.FF2.Not1.y = pre(Counter.FF2.Not1.auxiliary);
 //   Counter.FF3.RS1.Nor1.auxiliary[1] = Counter.FF3.RS1.Nor1.x[1];
-//   Counter.FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor1.auxiliary[1],Counter.FF3.RS1.Nor1.x[2]];
+//   Counter.FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor1.auxiliary[1], Counter.FF3.RS1.Nor1.x[2]];
 //   Counter.FF3.RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor1.auxiliary[2]]);
 //   Counter.FF3.RS1.Nor2.auxiliary[1] = Counter.FF3.RS1.Nor2.x[1];
-//   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1],Counter.FF3.RS1.Nor2.x[2]];
+//   Counter.FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS1.Nor2.auxiliary[1], Counter.FF3.RS1.Nor2.x[2]];
 //   Counter.FF3.RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS1.Nor2.auxiliary[2]]);
 //   Counter.FF3.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS1.TD1.x),Counter.FF3.RS1.TD1.delayTime,Counter.FF3.RS1.TD1.delayTime)));
 //   Counter.FF3.RS1.TD1.y = if Counter.FF3.RS1.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS1.TD1.delayTime then Counter.FF3.RS1.TD1.x_delayed else Counter.FF3.RS1.TD1.y0 else pre(Counter.FF3.RS1.TD1.x);
 //   Counter.FF3.RS2.Nor1.auxiliary[1] = Counter.FF3.RS2.Nor1.x[1];
-//   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1],Counter.FF3.RS2.Nor1.x[2]];
+//   Counter.FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor1.auxiliary[1], Counter.FF3.RS2.Nor1.x[2]];
 //   Counter.FF3.RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor1.auxiliary[2]]);
 //   Counter.FF3.RS2.Nor2.auxiliary[1] = Counter.FF3.RS2.Nor2.x[1];
-//   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1],Counter.FF3.RS2.Nor2.x[2]];
+//   Counter.FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF3.RS2.Nor2.auxiliary[1], Counter.FF3.RS2.Nor2.x[2]];
 //   Counter.FF3.RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF3.RS2.Nor2.auxiliary[2]]);
 //   Counter.FF3.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF3.RS2.TD1.x),Counter.FF3.RS2.TD1.delayTime,Counter.FF3.RS2.TD1.delayTime)));
 //   Counter.FF3.RS2.TD1.y = if Counter.FF3.RS2.TD1.delayTime > 0.0 then if time >= Counter.FF3.RS2.TD1.delayTime then Counter.FF3.RS2.TD1.x_delayed else Counter.FF3.RS2.TD1.y0 else pre(Counter.FF3.RS2.TD1.x);
 //   Counter.FF3.And1.auxiliary[1] = Counter.FF3.And1.x[1];
-//   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1],Counter.FF3.And1.x[2]];
-//   Counter.FF3.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[2],Counter.FF3.And1.x[3]];
+//   Counter.FF3.And1.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[1], Counter.FF3.And1.x[2]];
+//   Counter.FF3.And1.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And1.auxiliary[2], Counter.FF3.And1.x[3]];
 //   Counter.FF3.And1.y = pre(Counter.FF3.And1.auxiliary[3]);
 //   Counter.FF3.And2.auxiliary[1] = Counter.FF3.And2.x[1];
-//   Counter.FF3.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[1],Counter.FF3.And2.x[2]];
-//   Counter.FF3.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[2],Counter.FF3.And2.x[3]];
+//   Counter.FF3.And2.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[1], Counter.FF3.And2.x[2]];
+//   Counter.FF3.And2.auxiliary[3] = D.Tables.AndTable[Counter.FF3.And2.auxiliary[2], Counter.FF3.And2.x[3]];
 //   Counter.FF3.And2.y = pre(Counter.FF3.And2.auxiliary[3]);
 //   Counter.FF3.And3.auxiliary[1] = Counter.FF3.And3.x[1];
-//   Counter.FF3.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And3.auxiliary[1],Counter.FF3.And3.x[2]];
+//   Counter.FF3.And3.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And3.auxiliary[1], Counter.FF3.And3.x[2]];
 //   Counter.FF3.And3.y = pre(Counter.FF3.And3.auxiliary[2]);
 //   Counter.FF3.And4.auxiliary[1] = Counter.FF3.And4.x[1];
-//   Counter.FF3.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And4.auxiliary[1],Counter.FF3.And4.x[2]];
+//   Counter.FF3.And4.auxiliary[2] = D.Tables.AndTable[Counter.FF3.And4.auxiliary[1], Counter.FF3.And4.x[2]];
 //   Counter.FF3.And4.y = pre(Counter.FF3.And4.auxiliary[2]);
 //   Counter.FF3.Not1.auxiliary = D.Tables.NotTable[Counter.FF3.Not1.x];
 //   Counter.FF3.Not1.y = pre(Counter.FF3.Not1.auxiliary);
@@ -4911,7 +4911,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Counter3 has 207 equation(s) and 207 variable(s).
-// 203 of these are trivial equation(s).
+// 131 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Counter
@@ -5320,130 +5320,130 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   parameter Real Q3.value_m(start = 0.5) "value for digital m (Don't care)";
 // equation
 //   Counter.FF[1].RS1.Nor1.auxiliary[1] = Counter.FF[1].RS1.Nor1.x[1];
-//   Counter.FF[1].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS1.Nor1.auxiliary[1],Counter.FF[1].RS1.Nor1.x[2]];
+//   Counter.FF[1].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS1.Nor1.auxiliary[1], Counter.FF[1].RS1.Nor1.x[2]];
 //   Counter.FF[1].RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF[1].RS1.Nor1.auxiliary[2]]);
 //   Counter.FF[1].RS1.Nor2.auxiliary[1] = Counter.FF[1].RS1.Nor2.x[1];
-//   Counter.FF[1].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS1.Nor2.auxiliary[1],Counter.FF[1].RS1.Nor2.x[2]];
+//   Counter.FF[1].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS1.Nor2.auxiliary[1], Counter.FF[1].RS1.Nor2.x[2]];
 //   Counter.FF[1].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[1].RS1.Nor2.auxiliary[2]]);
 //   Counter.FF[1].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[1].RS1.TD1.x),Counter.FF[1].RS1.TD1.delayTime,Counter.FF[1].RS1.TD1.delayTime)));
 //   Counter.FF[1].RS1.TD1.y = if Counter.FF[1].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[1].RS1.TD1.delayTime then Counter.FF[1].RS1.TD1.x_delayed else Counter.FF[1].RS1.TD1.y0 else pre(Counter.FF[1].RS1.TD1.x);
 //   Counter.FF[1].RS2.Nor1.auxiliary[1] = Counter.FF[1].RS2.Nor1.x[1];
-//   Counter.FF[1].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor1.auxiliary[1],Counter.FF[1].RS2.Nor1.x[2]];
+//   Counter.FF[1].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor1.auxiliary[1], Counter.FF[1].RS2.Nor1.x[2]];
 //   Counter.FF[1].RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF[1].RS2.Nor1.auxiliary[2]]);
 //   Counter.FF[1].RS2.Nor2.auxiliary[1] = Counter.FF[1].RS2.Nor2.x[1];
-//   Counter.FF[1].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor2.auxiliary[1],Counter.FF[1].RS2.Nor2.x[2]];
+//   Counter.FF[1].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[1].RS2.Nor2.auxiliary[1], Counter.FF[1].RS2.Nor2.x[2]];
 //   Counter.FF[1].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[1].RS2.Nor2.auxiliary[2]]);
 //   Counter.FF[1].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[1].RS2.TD1.x),Counter.FF[1].RS2.TD1.delayTime,Counter.FF[1].RS2.TD1.delayTime)));
 //   Counter.FF[1].RS2.TD1.y = if Counter.FF[1].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[1].RS2.TD1.delayTime then Counter.FF[1].RS2.TD1.x_delayed else Counter.FF[1].RS2.TD1.y0 else pre(Counter.FF[1].RS2.TD1.x);
 //   Counter.FF[1].And1.auxiliary[1] = Counter.FF[1].And1.x[1];
-//   Counter.FF[1].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And1.auxiliary[1],Counter.FF[1].And1.x[2]];
-//   Counter.FF[1].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[1].And1.auxiliary[2],Counter.FF[1].And1.x[3]];
+//   Counter.FF[1].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And1.auxiliary[1], Counter.FF[1].And1.x[2]];
+//   Counter.FF[1].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[1].And1.auxiliary[2], Counter.FF[1].And1.x[3]];
 //   Counter.FF[1].And1.y = pre(Counter.FF[1].And1.auxiliary[3]);
 //   Counter.FF[1].And2.auxiliary[1] = Counter.FF[1].And2.x[1];
-//   Counter.FF[1].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And2.auxiliary[1],Counter.FF[1].And2.x[2]];
-//   Counter.FF[1].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[1].And2.auxiliary[2],Counter.FF[1].And2.x[3]];
+//   Counter.FF[1].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And2.auxiliary[1], Counter.FF[1].And2.x[2]];
+//   Counter.FF[1].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[1].And2.auxiliary[2], Counter.FF[1].And2.x[3]];
 //   Counter.FF[1].And2.y = pre(Counter.FF[1].And2.auxiliary[3]);
 //   Counter.FF[1].And3.auxiliary[1] = Counter.FF[1].And3.x[1];
-//   Counter.FF[1].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And3.auxiliary[1],Counter.FF[1].And3.x[2]];
+//   Counter.FF[1].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And3.auxiliary[1], Counter.FF[1].And3.x[2]];
 //   Counter.FF[1].And3.y = pre(Counter.FF[1].And3.auxiliary[2]);
 //   Counter.FF[1].And4.auxiliary[1] = Counter.FF[1].And4.x[1];
-//   Counter.FF[1].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And4.auxiliary[1],Counter.FF[1].And4.x[2]];
+//   Counter.FF[1].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[1].And4.auxiliary[1], Counter.FF[1].And4.x[2]];
 //   Counter.FF[1].And4.y = pre(Counter.FF[1].And4.auxiliary[2]);
 //   Counter.FF[1].Not1.auxiliary = D.Tables.NotTable[Counter.FF[1].Not1.x];
 //   Counter.FF[1].Not1.y = pre(Counter.FF[1].Not1.auxiliary);
 //   Counter.FF[2].RS1.Nor1.auxiliary[1] = Counter.FF[2].RS1.Nor1.x[1];
-//   Counter.FF[2].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS1.Nor1.auxiliary[1],Counter.FF[2].RS1.Nor1.x[2]];
+//   Counter.FF[2].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS1.Nor1.auxiliary[1], Counter.FF[2].RS1.Nor1.x[2]];
 //   Counter.FF[2].RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF[2].RS1.Nor1.auxiliary[2]]);
 //   Counter.FF[2].RS1.Nor2.auxiliary[1] = Counter.FF[2].RS1.Nor2.x[1];
-//   Counter.FF[2].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS1.Nor2.auxiliary[1],Counter.FF[2].RS1.Nor2.x[2]];
+//   Counter.FF[2].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS1.Nor2.auxiliary[1], Counter.FF[2].RS1.Nor2.x[2]];
 //   Counter.FF[2].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[2].RS1.Nor2.auxiliary[2]]);
 //   Counter.FF[2].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[2].RS1.TD1.x),Counter.FF[2].RS1.TD1.delayTime,Counter.FF[2].RS1.TD1.delayTime)));
 //   Counter.FF[2].RS1.TD1.y = if Counter.FF[2].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[2].RS1.TD1.delayTime then Counter.FF[2].RS1.TD1.x_delayed else Counter.FF[2].RS1.TD1.y0 else pre(Counter.FF[2].RS1.TD1.x);
 //   Counter.FF[2].RS2.Nor1.auxiliary[1] = Counter.FF[2].RS2.Nor1.x[1];
-//   Counter.FF[2].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor1.auxiliary[1],Counter.FF[2].RS2.Nor1.x[2]];
+//   Counter.FF[2].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor1.auxiliary[1], Counter.FF[2].RS2.Nor1.x[2]];
 //   Counter.FF[2].RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF[2].RS2.Nor1.auxiliary[2]]);
 //   Counter.FF[2].RS2.Nor2.auxiliary[1] = Counter.FF[2].RS2.Nor2.x[1];
-//   Counter.FF[2].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor2.auxiliary[1],Counter.FF[2].RS2.Nor2.x[2]];
+//   Counter.FF[2].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[2].RS2.Nor2.auxiliary[1], Counter.FF[2].RS2.Nor2.x[2]];
 //   Counter.FF[2].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[2].RS2.Nor2.auxiliary[2]]);
 //   Counter.FF[2].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[2].RS2.TD1.x),Counter.FF[2].RS2.TD1.delayTime,Counter.FF[2].RS2.TD1.delayTime)));
 //   Counter.FF[2].RS2.TD1.y = if Counter.FF[2].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[2].RS2.TD1.delayTime then Counter.FF[2].RS2.TD1.x_delayed else Counter.FF[2].RS2.TD1.y0 else pre(Counter.FF[2].RS2.TD1.x);
 //   Counter.FF[2].And1.auxiliary[1] = Counter.FF[2].And1.x[1];
-//   Counter.FF[2].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And1.auxiliary[1],Counter.FF[2].And1.x[2]];
-//   Counter.FF[2].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[2].And1.auxiliary[2],Counter.FF[2].And1.x[3]];
+//   Counter.FF[2].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And1.auxiliary[1], Counter.FF[2].And1.x[2]];
+//   Counter.FF[2].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[2].And1.auxiliary[2], Counter.FF[2].And1.x[3]];
 //   Counter.FF[2].And1.y = pre(Counter.FF[2].And1.auxiliary[3]);
 //   Counter.FF[2].And2.auxiliary[1] = Counter.FF[2].And2.x[1];
-//   Counter.FF[2].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And2.auxiliary[1],Counter.FF[2].And2.x[2]];
-//   Counter.FF[2].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[2].And2.auxiliary[2],Counter.FF[2].And2.x[3]];
+//   Counter.FF[2].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And2.auxiliary[1], Counter.FF[2].And2.x[2]];
+//   Counter.FF[2].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[2].And2.auxiliary[2], Counter.FF[2].And2.x[3]];
 //   Counter.FF[2].And2.y = pre(Counter.FF[2].And2.auxiliary[3]);
 //   Counter.FF[2].And3.auxiliary[1] = Counter.FF[2].And3.x[1];
-//   Counter.FF[2].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And3.auxiliary[1],Counter.FF[2].And3.x[2]];
+//   Counter.FF[2].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And3.auxiliary[1], Counter.FF[2].And3.x[2]];
 //   Counter.FF[2].And3.y = pre(Counter.FF[2].And3.auxiliary[2]);
 //   Counter.FF[2].And4.auxiliary[1] = Counter.FF[2].And4.x[1];
-//   Counter.FF[2].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And4.auxiliary[1],Counter.FF[2].And4.x[2]];
+//   Counter.FF[2].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[2].And4.auxiliary[1], Counter.FF[2].And4.x[2]];
 //   Counter.FF[2].And4.y = pre(Counter.FF[2].And4.auxiliary[2]);
 //   Counter.FF[2].Not1.auxiliary = D.Tables.NotTable[Counter.FF[2].Not1.x];
 //   Counter.FF[2].Not1.y = pre(Counter.FF[2].Not1.auxiliary);
 //   Counter.FF[3].RS1.Nor1.auxiliary[1] = Counter.FF[3].RS1.Nor1.x[1];
-//   Counter.FF[3].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS1.Nor1.auxiliary[1],Counter.FF[3].RS1.Nor1.x[2]];
+//   Counter.FF[3].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS1.Nor1.auxiliary[1], Counter.FF[3].RS1.Nor1.x[2]];
 //   Counter.FF[3].RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF[3].RS1.Nor1.auxiliary[2]]);
 //   Counter.FF[3].RS1.Nor2.auxiliary[1] = Counter.FF[3].RS1.Nor2.x[1];
-//   Counter.FF[3].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS1.Nor2.auxiliary[1],Counter.FF[3].RS1.Nor2.x[2]];
+//   Counter.FF[3].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS1.Nor2.auxiliary[1], Counter.FF[3].RS1.Nor2.x[2]];
 //   Counter.FF[3].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[3].RS1.Nor2.auxiliary[2]]);
 //   Counter.FF[3].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[3].RS1.TD1.x),Counter.FF[3].RS1.TD1.delayTime,Counter.FF[3].RS1.TD1.delayTime)));
 //   Counter.FF[3].RS1.TD1.y = if Counter.FF[3].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[3].RS1.TD1.delayTime then Counter.FF[3].RS1.TD1.x_delayed else Counter.FF[3].RS1.TD1.y0 else pre(Counter.FF[3].RS1.TD1.x);
 //   Counter.FF[3].RS2.Nor1.auxiliary[1] = Counter.FF[3].RS2.Nor1.x[1];
-//   Counter.FF[3].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor1.auxiliary[1],Counter.FF[3].RS2.Nor1.x[2]];
+//   Counter.FF[3].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor1.auxiliary[1], Counter.FF[3].RS2.Nor1.x[2]];
 //   Counter.FF[3].RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF[3].RS2.Nor1.auxiliary[2]]);
 //   Counter.FF[3].RS2.Nor2.auxiliary[1] = Counter.FF[3].RS2.Nor2.x[1];
-//   Counter.FF[3].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor2.auxiliary[1],Counter.FF[3].RS2.Nor2.x[2]];
+//   Counter.FF[3].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[3].RS2.Nor2.auxiliary[1], Counter.FF[3].RS2.Nor2.x[2]];
 //   Counter.FF[3].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[3].RS2.Nor2.auxiliary[2]]);
 //   Counter.FF[3].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[3].RS2.TD1.x),Counter.FF[3].RS2.TD1.delayTime,Counter.FF[3].RS2.TD1.delayTime)));
 //   Counter.FF[3].RS2.TD1.y = if Counter.FF[3].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[3].RS2.TD1.delayTime then Counter.FF[3].RS2.TD1.x_delayed else Counter.FF[3].RS2.TD1.y0 else pre(Counter.FF[3].RS2.TD1.x);
 //   Counter.FF[3].And1.auxiliary[1] = Counter.FF[3].And1.x[1];
-//   Counter.FF[3].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And1.auxiliary[1],Counter.FF[3].And1.x[2]];
-//   Counter.FF[3].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[3].And1.auxiliary[2],Counter.FF[3].And1.x[3]];
+//   Counter.FF[3].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And1.auxiliary[1], Counter.FF[3].And1.x[2]];
+//   Counter.FF[3].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[3].And1.auxiliary[2], Counter.FF[3].And1.x[3]];
 //   Counter.FF[3].And1.y = pre(Counter.FF[3].And1.auxiliary[3]);
 //   Counter.FF[3].And2.auxiliary[1] = Counter.FF[3].And2.x[1];
-//   Counter.FF[3].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And2.auxiliary[1],Counter.FF[3].And2.x[2]];
-//   Counter.FF[3].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[3].And2.auxiliary[2],Counter.FF[3].And2.x[3]];
+//   Counter.FF[3].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And2.auxiliary[1], Counter.FF[3].And2.x[2]];
+//   Counter.FF[3].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[3].And2.auxiliary[2], Counter.FF[3].And2.x[3]];
 //   Counter.FF[3].And2.y = pre(Counter.FF[3].And2.auxiliary[3]);
 //   Counter.FF[3].And3.auxiliary[1] = Counter.FF[3].And3.x[1];
-//   Counter.FF[3].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And3.auxiliary[1],Counter.FF[3].And3.x[2]];
+//   Counter.FF[3].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And3.auxiliary[1], Counter.FF[3].And3.x[2]];
 //   Counter.FF[3].And3.y = pre(Counter.FF[3].And3.auxiliary[2]);
 //   Counter.FF[3].And4.auxiliary[1] = Counter.FF[3].And4.x[1];
-//   Counter.FF[3].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And4.auxiliary[1],Counter.FF[3].And4.x[2]];
+//   Counter.FF[3].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[3].And4.auxiliary[1], Counter.FF[3].And4.x[2]];
 //   Counter.FF[3].And4.y = pre(Counter.FF[3].And4.auxiliary[2]);
 //   Counter.FF[3].Not1.auxiliary = D.Tables.NotTable[Counter.FF[3].Not1.x];
 //   Counter.FF[3].Not1.y = pre(Counter.FF[3].Not1.auxiliary);
 //   Counter.FF[4].RS1.Nor1.auxiliary[1] = Counter.FF[4].RS1.Nor1.x[1];
-//   Counter.FF[4].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS1.Nor1.auxiliary[1],Counter.FF[4].RS1.Nor1.x[2]];
+//   Counter.FF[4].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS1.Nor1.auxiliary[1], Counter.FF[4].RS1.Nor1.x[2]];
 //   Counter.FF[4].RS1.Nor1.y = pre(D.Tables.NotTable[Counter.FF[4].RS1.Nor1.auxiliary[2]]);
 //   Counter.FF[4].RS1.Nor2.auxiliary[1] = Counter.FF[4].RS1.Nor2.x[1];
-//   Counter.FF[4].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS1.Nor2.auxiliary[1],Counter.FF[4].RS1.Nor2.x[2]];
+//   Counter.FF[4].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS1.Nor2.auxiliary[1], Counter.FF[4].RS1.Nor2.x[2]];
 //   Counter.FF[4].RS1.Nor2.y = pre(D.Tables.NotTable[Counter.FF[4].RS1.Nor2.auxiliary[2]]);
 //   Counter.FF[4].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[4].RS1.TD1.x),Counter.FF[4].RS1.TD1.delayTime,Counter.FF[4].RS1.TD1.delayTime)));
 //   Counter.FF[4].RS1.TD1.y = if Counter.FF[4].RS1.TD1.delayTime > 0.0 then if time >= Counter.FF[4].RS1.TD1.delayTime then Counter.FF[4].RS1.TD1.x_delayed else Counter.FF[4].RS1.TD1.y0 else pre(Counter.FF[4].RS1.TD1.x);
 //   Counter.FF[4].RS2.Nor1.auxiliary[1] = Counter.FF[4].RS2.Nor1.x[1];
-//   Counter.FF[4].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor1.auxiliary[1],Counter.FF[4].RS2.Nor1.x[2]];
+//   Counter.FF[4].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor1.auxiliary[1], Counter.FF[4].RS2.Nor1.x[2]];
 //   Counter.FF[4].RS2.Nor1.y = pre(D.Tables.NotTable[Counter.FF[4].RS2.Nor1.auxiliary[2]]);
 //   Counter.FF[4].RS2.Nor2.auxiliary[1] = Counter.FF[4].RS2.Nor2.x[1];
-//   Counter.FF[4].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor2.auxiliary[1],Counter.FF[4].RS2.Nor2.x[2]];
+//   Counter.FF[4].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[Counter.FF[4].RS2.Nor2.auxiliary[1], Counter.FF[4].RS2.Nor2.x[2]];
 //   Counter.FF[4].RS2.Nor2.y = pre(D.Tables.NotTable[Counter.FF[4].RS2.Nor2.auxiliary[2]]);
 //   Counter.FF[4].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(Counter.FF[4].RS2.TD1.x),Counter.FF[4].RS2.TD1.delayTime,Counter.FF[4].RS2.TD1.delayTime)));
 //   Counter.FF[4].RS2.TD1.y = if Counter.FF[4].RS2.TD1.delayTime > 0.0 then if time >= Counter.FF[4].RS2.TD1.delayTime then Counter.FF[4].RS2.TD1.x_delayed else Counter.FF[4].RS2.TD1.y0 else pre(Counter.FF[4].RS2.TD1.x);
 //   Counter.FF[4].And1.auxiliary[1] = Counter.FF[4].And1.x[1];
-//   Counter.FF[4].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And1.auxiliary[1],Counter.FF[4].And1.x[2]];
-//   Counter.FF[4].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[4].And1.auxiliary[2],Counter.FF[4].And1.x[3]];
+//   Counter.FF[4].And1.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And1.auxiliary[1], Counter.FF[4].And1.x[2]];
+//   Counter.FF[4].And1.auxiliary[3] = D.Tables.AndTable[Counter.FF[4].And1.auxiliary[2], Counter.FF[4].And1.x[3]];
 //   Counter.FF[4].And1.y = pre(Counter.FF[4].And1.auxiliary[3]);
 //   Counter.FF[4].And2.auxiliary[1] = Counter.FF[4].And2.x[1];
-//   Counter.FF[4].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And2.auxiliary[1],Counter.FF[4].And2.x[2]];
-//   Counter.FF[4].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[4].And2.auxiliary[2],Counter.FF[4].And2.x[3]];
+//   Counter.FF[4].And2.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And2.auxiliary[1], Counter.FF[4].And2.x[2]];
+//   Counter.FF[4].And2.auxiliary[3] = D.Tables.AndTable[Counter.FF[4].And2.auxiliary[2], Counter.FF[4].And2.x[3]];
 //   Counter.FF[4].And2.y = pre(Counter.FF[4].And2.auxiliary[3]);
 //   Counter.FF[4].And3.auxiliary[1] = Counter.FF[4].And3.x[1];
-//   Counter.FF[4].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And3.auxiliary[1],Counter.FF[4].And3.x[2]];
+//   Counter.FF[4].And3.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And3.auxiliary[1], Counter.FF[4].And3.x[2]];
 //   Counter.FF[4].And3.y = pre(Counter.FF[4].And3.auxiliary[2]);
 //   Counter.FF[4].And4.auxiliary[1] = Counter.FF[4].And4.x[1];
-//   Counter.FF[4].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And4.auxiliary[1],Counter.FF[4].And4.x[2]];
+//   Counter.FF[4].And4.auxiliary[2] = D.Tables.AndTable[Counter.FF[4].And4.auxiliary[1], Counter.FF[4].And4.x[2]];
 //   Counter.FF[4].And4.y = pre(Counter.FF[4].And4.auxiliary[2]);
 //   Counter.FF[4].Not1.auxiliary = D.Tables.NotTable[Counter.FF[4].Not1.x];
 //   Counter.FF[4].Not1.y = pre(Counter.FF[4].Not1.auxiliary);
@@ -5625,7 +5625,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Electrical.Digital.Examples.Counter has 282 equation(s) and 282 variable(s).
-// 274 of these are trivial equation(s).
+// 178 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.MUX4
@@ -5688,25 +5688,25 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Not2.auxiliary(start = Modelica.Electrical.Digital.Interfaces.Logic.'0', fixed = true);
 // equation
 //   Or1.auxiliary[1] = Or1.x[1];
-//   Or1.auxiliary[2] = D.Tables.OrTable[Or1.auxiliary[1],Or1.x[2]];
-//   Or1.auxiliary[3] = D.Tables.OrTable[Or1.auxiliary[2],Or1.x[3]];
-//   Or1.auxiliary[4] = D.Tables.OrTable[Or1.auxiliary[3],Or1.x[4]];
+//   Or1.auxiliary[2] = D.Tables.OrTable[Or1.auxiliary[1], Or1.x[2]];
+//   Or1.auxiliary[3] = D.Tables.OrTable[Or1.auxiliary[2], Or1.x[3]];
+//   Or1.auxiliary[4] = D.Tables.OrTable[Or1.auxiliary[3], Or1.x[4]];
 //   Or1.y = pre(Or1.auxiliary[4]);
 //   And1.auxiliary[1] = And1.x[1];
-//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1],And1.x[2]];
-//   And1.auxiliary[3] = D.Tables.AndTable[And1.auxiliary[2],And1.x[3]];
+//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1], And1.x[2]];
+//   And1.auxiliary[3] = D.Tables.AndTable[And1.auxiliary[2], And1.x[3]];
 //   And1.y = pre(And1.auxiliary[3]);
 //   And2.auxiliary[1] = And2.x[1];
-//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1],And2.x[2]];
-//   And2.auxiliary[3] = D.Tables.AndTable[And2.auxiliary[2],And2.x[3]];
+//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1], And2.x[2]];
+//   And2.auxiliary[3] = D.Tables.AndTable[And2.auxiliary[2], And2.x[3]];
 //   And2.y = pre(And2.auxiliary[3]);
 //   And3.auxiliary[1] = And3.x[1];
-//   And3.auxiliary[2] = D.Tables.AndTable[And3.auxiliary[1],And3.x[2]];
-//   And3.auxiliary[3] = D.Tables.AndTable[And3.auxiliary[2],And3.x[3]];
+//   And3.auxiliary[2] = D.Tables.AndTable[And3.auxiliary[1], And3.x[2]];
+//   And3.auxiliary[3] = D.Tables.AndTable[And3.auxiliary[2], And3.x[3]];
 //   And3.y = pre(And3.auxiliary[3]);
 //   And4.auxiliary[1] = And4.x[1];
-//   And4.auxiliary[2] = D.Tables.AndTable[And4.auxiliary[1],And4.x[2]];
-//   And4.auxiliary[3] = D.Tables.AndTable[And4.auxiliary[2],And4.x[3]];
+//   And4.auxiliary[2] = D.Tables.AndTable[And4.auxiliary[1], And4.x[2]];
+//   And4.auxiliary[3] = D.Tables.AndTable[And4.auxiliary[2], And4.x[3]];
 //   And4.y = pre(And4.auxiliary[3]);
 //   Not1.auxiliary = D.Tables.NotTable[Not1.x];
 //   Not1.y = pre(Not1.auxiliary);
@@ -5738,7 +5738,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.MUX4 has 44 equation(s) and 44 variable(s).
-// 44 of these are trivial equation(s).
+// 24 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.RS
@@ -5767,10 +5767,10 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') TD1.x_delayed;
 // equation
 //   Nor1.auxiliary[1] = Nor1.x[1];
-//   Nor1.auxiliary[2] = D.Tables.OrTable[Nor1.auxiliary[1],Nor1.x[2]];
+//   Nor1.auxiliary[2] = D.Tables.OrTable[Nor1.auxiliary[1], Nor1.x[2]];
 //   Nor1.y = pre(D.Tables.NotTable[Nor1.auxiliary[2]]);
 //   Nor2.auxiliary[1] = Nor2.x[1];
-//   Nor2.auxiliary[2] = D.Tables.OrTable[Nor2.auxiliary[1],Nor2.x[2]];
+//   Nor2.auxiliary[2] = D.Tables.OrTable[Nor2.auxiliary[1], Nor2.x[2]];
 //   Nor2.y = pre(D.Tables.NotTable[Nor2.auxiliary[2]]);
 //   TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(TD1.x),TD1.delayTime,TD1.delayTime)));
 //   TD1.y = if TD1.delayTime > 0.0 then if time >= TD1.delayTime then TD1.x_delayed else TD1.y0 else pre(TD1.x);
@@ -5788,7 +5788,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.RS has 15 equation(s) and 15 variable(s).
-// 15 of these are trivial equation(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.RSFF
@@ -5836,18 +5836,18 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') And2.auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   RS1.Nor1.auxiliary[1] = RS1.Nor1.x[1];
-//   RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RS1.Nor1.auxiliary[1],RS1.Nor1.x[2]];
+//   RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RS1.Nor1.auxiliary[1], RS1.Nor1.x[2]];
 //   RS1.Nor1.y = pre(D.Tables.NotTable[RS1.Nor1.auxiliary[2]]);
 //   RS1.Nor2.auxiliary[1] = RS1.Nor2.x[1];
-//   RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RS1.Nor2.auxiliary[1],RS1.Nor2.x[2]];
+//   RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RS1.Nor2.auxiliary[1], RS1.Nor2.x[2]];
 //   RS1.Nor2.y = pre(D.Tables.NotTable[RS1.Nor2.auxiliary[2]]);
 //   RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(RS1.TD1.x),RS1.TD1.delayTime,RS1.TD1.delayTime)));
 //   RS1.TD1.y = if RS1.TD1.delayTime > 0.0 then if time >= RS1.TD1.delayTime then RS1.TD1.x_delayed else RS1.TD1.y0 else pre(RS1.TD1.x);
 //   And1.auxiliary[1] = And1.x[1];
-//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1],And1.x[2]];
+//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1], And1.x[2]];
 //   And1.y = pre(And1.auxiliary[2]);
 //   And2.auxiliary[1] = And2.x[1];
-//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1],And2.x[2]];
+//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1], And2.x[2]];
 //   And2.y = pre(And2.auxiliary[2]);
 //   RS1.Nor1.y = RS1.TD1.x;
 //   RS1.Nor1.y = RS1.qn;
@@ -5871,7 +5871,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.RSFF has 29 equation(s) and 29 variable(s).
-// 29 of these are trivial equation(s).
+// 19 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.DFF
@@ -5928,18 +5928,18 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Not1.auxiliary(start = Modelica.Electrical.Digital.Interfaces.Logic.'0', fixed = true);
 // equation
 //   RSFF1.RS1.Nor1.auxiliary[1] = RSFF1.RS1.Nor1.x[1];
-//   RSFF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RSFF1.RS1.Nor1.auxiliary[1],RSFF1.RS1.Nor1.x[2]];
+//   RSFF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RSFF1.RS1.Nor1.auxiliary[1], RSFF1.RS1.Nor1.x[2]];
 //   RSFF1.RS1.Nor1.y = pre(D.Tables.NotTable[RSFF1.RS1.Nor1.auxiliary[2]]);
 //   RSFF1.RS1.Nor2.auxiliary[1] = RSFF1.RS1.Nor2.x[1];
-//   RSFF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RSFF1.RS1.Nor2.auxiliary[1],RSFF1.RS1.Nor2.x[2]];
+//   RSFF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RSFF1.RS1.Nor2.auxiliary[1], RSFF1.RS1.Nor2.x[2]];
 //   RSFF1.RS1.Nor2.y = pre(D.Tables.NotTable[RSFF1.RS1.Nor2.auxiliary[2]]);
 //   RSFF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(RSFF1.RS1.TD1.x),RSFF1.RS1.TD1.delayTime,RSFF1.RS1.TD1.delayTime)));
 //   RSFF1.RS1.TD1.y = if RSFF1.RS1.TD1.delayTime > 0.0 then if time >= RSFF1.RS1.TD1.delayTime then RSFF1.RS1.TD1.x_delayed else RSFF1.RS1.TD1.y0 else pre(RSFF1.RS1.TD1.x);
 //   RSFF1.And1.auxiliary[1] = RSFF1.And1.x[1];
-//   RSFF1.And1.auxiliary[2] = D.Tables.AndTable[RSFF1.And1.auxiliary[1],RSFF1.And1.x[2]];
+//   RSFF1.And1.auxiliary[2] = D.Tables.AndTable[RSFF1.And1.auxiliary[1], RSFF1.And1.x[2]];
 //   RSFF1.And1.y = pre(RSFF1.And1.auxiliary[2]);
 //   RSFF1.And2.auxiliary[1] = RSFF1.And2.x[1];
-//   RSFF1.And2.auxiliary[2] = D.Tables.AndTable[RSFF1.And2.auxiliary[1],RSFF1.And2.x[2]];
+//   RSFF1.And2.auxiliary[2] = D.Tables.AndTable[RSFF1.And2.auxiliary[1], RSFF1.And2.x[2]];
 //   RSFF1.And2.y = pre(RSFF1.And2.auxiliary[2]);
 //   Not1.auxiliary = D.Tables.NotTable[Not1.x];
 //   Not1.y = pre(Not1.auxiliary);
@@ -5971,7 +5971,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.DFF has 37 equation(s) and 37 variable(s).
-// 37 of these are trivial equation(s).
+// 25 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.JKFF
@@ -6061,34 +6061,34 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Not1.auxiliary(start = Modelica.Electrical.Digital.Interfaces.Logic.'0', fixed = true);
 // equation
 //   RS1.Nor1.auxiliary[1] = RS1.Nor1.x[1];
-//   RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RS1.Nor1.auxiliary[1],RS1.Nor1.x[2]];
+//   RS1.Nor1.auxiliary[2] = D.Tables.OrTable[RS1.Nor1.auxiliary[1], RS1.Nor1.x[2]];
 //   RS1.Nor1.y = pre(D.Tables.NotTable[RS1.Nor1.auxiliary[2]]);
 //   RS1.Nor2.auxiliary[1] = RS1.Nor2.x[1];
-//   RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RS1.Nor2.auxiliary[1],RS1.Nor2.x[2]];
+//   RS1.Nor2.auxiliary[2] = D.Tables.OrTable[RS1.Nor2.auxiliary[1], RS1.Nor2.x[2]];
 //   RS1.Nor2.y = pre(D.Tables.NotTable[RS1.Nor2.auxiliary[2]]);
 //   RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(RS1.TD1.x),RS1.TD1.delayTime,RS1.TD1.delayTime)));
 //   RS1.TD1.y = if RS1.TD1.delayTime > 0.0 then if time >= RS1.TD1.delayTime then RS1.TD1.x_delayed else RS1.TD1.y0 else pre(RS1.TD1.x);
 //   RS2.Nor1.auxiliary[1] = RS2.Nor1.x[1];
-//   RS2.Nor1.auxiliary[2] = D.Tables.OrTable[RS2.Nor1.auxiliary[1],RS2.Nor1.x[2]];
+//   RS2.Nor1.auxiliary[2] = D.Tables.OrTable[RS2.Nor1.auxiliary[1], RS2.Nor1.x[2]];
 //   RS2.Nor1.y = pre(D.Tables.NotTable[RS2.Nor1.auxiliary[2]]);
 //   RS2.Nor2.auxiliary[1] = RS2.Nor2.x[1];
-//   RS2.Nor2.auxiliary[2] = D.Tables.OrTable[RS2.Nor2.auxiliary[1],RS2.Nor2.x[2]];
+//   RS2.Nor2.auxiliary[2] = D.Tables.OrTable[RS2.Nor2.auxiliary[1], RS2.Nor2.x[2]];
 //   RS2.Nor2.y = pre(D.Tables.NotTable[RS2.Nor2.auxiliary[2]]);
 //   RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(RS2.TD1.x),RS2.TD1.delayTime,RS2.TD1.delayTime)));
 //   RS2.TD1.y = if RS2.TD1.delayTime > 0.0 then if time >= RS2.TD1.delayTime then RS2.TD1.x_delayed else RS2.TD1.y0 else pre(RS2.TD1.x);
 //   And1.auxiliary[1] = And1.x[1];
-//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1],And1.x[2]];
-//   And1.auxiliary[3] = D.Tables.AndTable[And1.auxiliary[2],And1.x[3]];
+//   And1.auxiliary[2] = D.Tables.AndTable[And1.auxiliary[1], And1.x[2]];
+//   And1.auxiliary[3] = D.Tables.AndTable[And1.auxiliary[2], And1.x[3]];
 //   And1.y = pre(And1.auxiliary[3]);
 //   And2.auxiliary[1] = And2.x[1];
-//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1],And2.x[2]];
-//   And2.auxiliary[3] = D.Tables.AndTable[And2.auxiliary[2],And2.x[3]];
+//   And2.auxiliary[2] = D.Tables.AndTable[And2.auxiliary[1], And2.x[2]];
+//   And2.auxiliary[3] = D.Tables.AndTable[And2.auxiliary[2], And2.x[3]];
 //   And2.y = pre(And2.auxiliary[3]);
 //   And3.auxiliary[1] = And3.x[1];
-//   And3.auxiliary[2] = D.Tables.AndTable[And3.auxiliary[1],And3.x[2]];
+//   And3.auxiliary[2] = D.Tables.AndTable[And3.auxiliary[1], And3.x[2]];
 //   And3.y = pre(And3.auxiliary[2]);
 //   And4.auxiliary[1] = And4.x[1];
-//   And4.auxiliary[2] = D.Tables.AndTable[And4.auxiliary[1],And4.x[2]];
+//   And4.auxiliary[2] = D.Tables.AndTable[And4.auxiliary[1], And4.x[2]];
 //   And4.y = pre(And4.auxiliary[2]);
 //   Not1.auxiliary = D.Tables.NotTable[Not1.x];
 //   Not1.y = pre(Not1.auxiliary);
@@ -6130,7 +6130,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.JKFF has 63 equation(s) and 63 variable(s).
-// 63 of these are trivial equation(s).
+// 39 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
@@ -6349,10 +6349,10 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real XOR.G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   AND.G1.auxiliary[1] = AND.G1.x[1];
-//   AND.G1.auxiliary[2] = D.Tables.AndTable[AND.G1.auxiliary[1],AND.G1.x[2]];
+//   AND.G1.auxiliary[2] = D.Tables.AndTable[AND.G1.auxiliary[1], AND.G1.x[2]];
 //   AND.G1.y = pre(AND.G1.auxiliary[2]);
 //   XOR.G1.auxiliary[1] = XOR.G1.x[1];
-//   XOR.G1.auxiliary[2] = D.Tables.XorTable[XOR.G1.auxiliary[1],XOR.G1.x[2]];
+//   XOR.G1.auxiliary[2] = D.Tables.XorTable[XOR.G1.auxiliary[1], XOR.G1.x[2]];
 //   XOR.G1.y = pre(XOR.G1.auxiliary[2]);
 //   AND.G1.x[2] = AND.x[2];
 //   AND.G1.x[2] = XOR.G1.x[2];
@@ -6400,7 +6400,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder has 194 equation(s) and 194 variable(s).
-// 182 of these are trivial equation(s).
+// 178 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.FullAdder
@@ -6843,19 +6843,19 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') OR.auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   Adder2.AND.G1.auxiliary[1] = Adder2.AND.G1.x[1];
-//   Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.AND.G1.auxiliary[1],Adder2.AND.G1.x[2]];
+//   Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder2.AND.G1.auxiliary[1], Adder2.AND.G1.x[2]];
 //   Adder2.AND.G1.y = pre(Adder2.AND.G1.auxiliary[2]);
 //   Adder2.XOR.G1.auxiliary[1] = Adder2.XOR.G1.x[1];
-//   Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.XOR.G1.auxiliary[1],Adder2.XOR.G1.x[2]];
+//   Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder2.XOR.G1.auxiliary[1], Adder2.XOR.G1.x[2]];
 //   Adder2.XOR.G1.y = pre(Adder2.XOR.G1.auxiliary[2]);
 //   Adder1.AND.G1.auxiliary[1] = Adder1.AND.G1.x[1];
-//   Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.AND.G1.auxiliary[1],Adder1.AND.G1.x[2]];
+//   Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder1.AND.G1.auxiliary[1], Adder1.AND.G1.x[2]];
 //   Adder1.AND.G1.y = pre(Adder1.AND.G1.auxiliary[2]);
 //   Adder1.XOR.G1.auxiliary[1] = Adder1.XOR.G1.x[1];
-//   Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.XOR.G1.auxiliary[1],Adder1.XOR.G1.x[2]];
+//   Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder1.XOR.G1.auxiliary[1], Adder1.XOR.G1.x[2]];
 //   Adder1.XOR.G1.y = pre(Adder1.XOR.G1.auxiliary[2]);
 //   OR.auxiliary[1] = OR.x[1];
-//   OR.auxiliary[2] = D.Tables.OrTable[OR.auxiliary[1],OR.x[2]];
+//   OR.auxiliary[2] = D.Tables.OrTable[OR.auxiliary[1], OR.x[2]];
 //   OR.y = pre(OR.auxiliary[2]);
 //   Adder2.AND.G1.x[1] = Adder2.AND.x[1];
 //   Adder2.AND.G1.x[1] = Adder2.XOR.G1.x[1];
@@ -6949,7 +6949,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.FullAdder has 399 equation(s) and 399 variable(s).
-// 375 of these are trivial equation(s).
+// 365 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.Adder
@@ -7838,34 +7838,34 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') c_out;
 // equation
 //   Adder[1].Adder2.AND.G1.auxiliary[1] = Adder[1].Adder2.AND.G1.x[1];
-//   Adder[1].Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[1].Adder2.AND.G1.auxiliary[1],Adder[1].Adder2.AND.G1.x[2]];
+//   Adder[1].Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[1].Adder2.AND.G1.auxiliary[1], Adder[1].Adder2.AND.G1.x[2]];
 //   Adder[1].Adder2.AND.G1.y = pre(Adder[1].Adder2.AND.G1.auxiliary[2]);
 //   Adder[1].Adder2.XOR.G1.auxiliary[1] = Adder[1].Adder2.XOR.G1.x[1];
-//   Adder[1].Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[1].Adder2.XOR.G1.auxiliary[1],Adder[1].Adder2.XOR.G1.x[2]];
+//   Adder[1].Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[1].Adder2.XOR.G1.auxiliary[1], Adder[1].Adder2.XOR.G1.x[2]];
 //   Adder[1].Adder2.XOR.G1.y = pre(Adder[1].Adder2.XOR.G1.auxiliary[2]);
 //   Adder[1].Adder1.AND.G1.auxiliary[1] = Adder[1].Adder1.AND.G1.x[1];
-//   Adder[1].Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[1].Adder1.AND.G1.auxiliary[1],Adder[1].Adder1.AND.G1.x[2]];
+//   Adder[1].Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[1].Adder1.AND.G1.auxiliary[1], Adder[1].Adder1.AND.G1.x[2]];
 //   Adder[1].Adder1.AND.G1.y = pre(Adder[1].Adder1.AND.G1.auxiliary[2]);
 //   Adder[1].Adder1.XOR.G1.auxiliary[1] = Adder[1].Adder1.XOR.G1.x[1];
-//   Adder[1].Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[1].Adder1.XOR.G1.auxiliary[1],Adder[1].Adder1.XOR.G1.x[2]];
+//   Adder[1].Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[1].Adder1.XOR.G1.auxiliary[1], Adder[1].Adder1.XOR.G1.x[2]];
 //   Adder[1].Adder1.XOR.G1.y = pre(Adder[1].Adder1.XOR.G1.auxiliary[2]);
 //   Adder[1].OR.auxiliary[1] = Adder[1].OR.x[1];
-//   Adder[1].OR.auxiliary[2] = D.Tables.OrTable[Adder[1].OR.auxiliary[1],Adder[1].OR.x[2]];
+//   Adder[1].OR.auxiliary[2] = D.Tables.OrTable[Adder[1].OR.auxiliary[1], Adder[1].OR.x[2]];
 //   Adder[1].OR.y = pre(Adder[1].OR.auxiliary[2]);
 //   Adder[2].Adder2.AND.G1.auxiliary[1] = Adder[2].Adder2.AND.G1.x[1];
-//   Adder[2].Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[2].Adder2.AND.G1.auxiliary[1],Adder[2].Adder2.AND.G1.x[2]];
+//   Adder[2].Adder2.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[2].Adder2.AND.G1.auxiliary[1], Adder[2].Adder2.AND.G1.x[2]];
 //   Adder[2].Adder2.AND.G1.y = pre(Adder[2].Adder2.AND.G1.auxiliary[2]);
 //   Adder[2].Adder2.XOR.G1.auxiliary[1] = Adder[2].Adder2.XOR.G1.x[1];
-//   Adder[2].Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[2].Adder2.XOR.G1.auxiliary[1],Adder[2].Adder2.XOR.G1.x[2]];
+//   Adder[2].Adder2.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[2].Adder2.XOR.G1.auxiliary[1], Adder[2].Adder2.XOR.G1.x[2]];
 //   Adder[2].Adder2.XOR.G1.y = pre(Adder[2].Adder2.XOR.G1.auxiliary[2]);
 //   Adder[2].Adder1.AND.G1.auxiliary[1] = Adder[2].Adder1.AND.G1.x[1];
-//   Adder[2].Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[2].Adder1.AND.G1.auxiliary[1],Adder[2].Adder1.AND.G1.x[2]];
+//   Adder[2].Adder1.AND.G1.auxiliary[2] = D.Tables.AndTable[Adder[2].Adder1.AND.G1.auxiliary[1], Adder[2].Adder1.AND.G1.x[2]];
 //   Adder[2].Adder1.AND.G1.y = pre(Adder[2].Adder1.AND.G1.auxiliary[2]);
 //   Adder[2].Adder1.XOR.G1.auxiliary[1] = Adder[2].Adder1.XOR.G1.x[1];
-//   Adder[2].Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[2].Adder1.XOR.G1.auxiliary[1],Adder[2].Adder1.XOR.G1.x[2]];
+//   Adder[2].Adder1.XOR.G1.auxiliary[2] = D.Tables.XorTable[Adder[2].Adder1.XOR.G1.auxiliary[1], Adder[2].Adder1.XOR.G1.x[2]];
 //   Adder[2].Adder1.XOR.G1.y = pre(Adder[2].Adder1.XOR.G1.auxiliary[2]);
 //   Adder[2].OR.auxiliary[1] = Adder[2].OR.x[1];
-//   Adder[2].OR.auxiliary[2] = D.Tables.OrTable[Adder[2].OR.auxiliary[1],Adder[2].OR.x[2]];
+//   Adder[2].OR.auxiliary[2] = D.Tables.OrTable[Adder[2].OR.auxiliary[1], Adder[2].OR.x[2]];
 //   Adder[2].OR.y = pre(Adder[2].OR.auxiliary[2]);
 //   Adder[2].OR.y = Adder[2].c_out;
 //   Adder[2].OR.y = c_out;
@@ -8052,7 +8052,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.Adder has 807 equation(s) and 807 variable(s).
-// 759 of these are trivial equation(s).
+// 739 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.Counter3
@@ -8315,98 +8315,98 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') q0;
 // equation
 //   FF1.RS1.Nor1.auxiliary[1] = FF1.RS1.Nor1.x[1];
-//   FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF1.RS1.Nor1.auxiliary[1],FF1.RS1.Nor1.x[2]];
+//   FF1.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF1.RS1.Nor1.auxiliary[1], FF1.RS1.Nor1.x[2]];
 //   FF1.RS1.Nor1.y = pre(D.Tables.NotTable[FF1.RS1.Nor1.auxiliary[2]]);
 //   FF1.RS1.Nor2.auxiliary[1] = FF1.RS1.Nor2.x[1];
-//   FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF1.RS1.Nor2.auxiliary[1],FF1.RS1.Nor2.x[2]];
+//   FF1.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF1.RS1.Nor2.auxiliary[1], FF1.RS1.Nor2.x[2]];
 //   FF1.RS1.Nor2.y = pre(D.Tables.NotTable[FF1.RS1.Nor2.auxiliary[2]]);
 //   FF1.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF1.RS1.TD1.x),FF1.RS1.TD1.delayTime,FF1.RS1.TD1.delayTime)));
 //   FF1.RS1.TD1.y = if FF1.RS1.TD1.delayTime > 0.0 then if time >= FF1.RS1.TD1.delayTime then FF1.RS1.TD1.x_delayed else FF1.RS1.TD1.y0 else pre(FF1.RS1.TD1.x);
 //   FF1.RS2.Nor1.auxiliary[1] = FF1.RS2.Nor1.x[1];
-//   FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF1.RS2.Nor1.auxiliary[1],FF1.RS2.Nor1.x[2]];
+//   FF1.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF1.RS2.Nor1.auxiliary[1], FF1.RS2.Nor1.x[2]];
 //   FF1.RS2.Nor1.y = pre(D.Tables.NotTable[FF1.RS2.Nor1.auxiliary[2]]);
 //   FF1.RS2.Nor2.auxiliary[1] = FF1.RS2.Nor2.x[1];
-//   FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF1.RS2.Nor2.auxiliary[1],FF1.RS2.Nor2.x[2]];
+//   FF1.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF1.RS2.Nor2.auxiliary[1], FF1.RS2.Nor2.x[2]];
 //   FF1.RS2.Nor2.y = pre(D.Tables.NotTable[FF1.RS2.Nor2.auxiliary[2]]);
 //   FF1.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF1.RS2.TD1.x),FF1.RS2.TD1.delayTime,FF1.RS2.TD1.delayTime)));
 //   FF1.RS2.TD1.y = if FF1.RS2.TD1.delayTime > 0.0 then if time >= FF1.RS2.TD1.delayTime then FF1.RS2.TD1.x_delayed else FF1.RS2.TD1.y0 else pre(FF1.RS2.TD1.x);
 //   FF1.And1.auxiliary[1] = FF1.And1.x[1];
-//   FF1.And1.auxiliary[2] = D.Tables.AndTable[FF1.And1.auxiliary[1],FF1.And1.x[2]];
-//   FF1.And1.auxiliary[3] = D.Tables.AndTable[FF1.And1.auxiliary[2],FF1.And1.x[3]];
+//   FF1.And1.auxiliary[2] = D.Tables.AndTable[FF1.And1.auxiliary[1], FF1.And1.x[2]];
+//   FF1.And1.auxiliary[3] = D.Tables.AndTable[FF1.And1.auxiliary[2], FF1.And1.x[3]];
 //   FF1.And1.y = pre(FF1.And1.auxiliary[3]);
 //   FF1.And2.auxiliary[1] = FF1.And2.x[1];
-//   FF1.And2.auxiliary[2] = D.Tables.AndTable[FF1.And2.auxiliary[1],FF1.And2.x[2]];
-//   FF1.And2.auxiliary[3] = D.Tables.AndTable[FF1.And2.auxiliary[2],FF1.And2.x[3]];
+//   FF1.And2.auxiliary[2] = D.Tables.AndTable[FF1.And2.auxiliary[1], FF1.And2.x[2]];
+//   FF1.And2.auxiliary[3] = D.Tables.AndTable[FF1.And2.auxiliary[2], FF1.And2.x[3]];
 //   FF1.And2.y = pre(FF1.And2.auxiliary[3]);
 //   FF1.And3.auxiliary[1] = FF1.And3.x[1];
-//   FF1.And3.auxiliary[2] = D.Tables.AndTable[FF1.And3.auxiliary[1],FF1.And3.x[2]];
+//   FF1.And3.auxiliary[2] = D.Tables.AndTable[FF1.And3.auxiliary[1], FF1.And3.x[2]];
 //   FF1.And3.y = pre(FF1.And3.auxiliary[2]);
 //   FF1.And4.auxiliary[1] = FF1.And4.x[1];
-//   FF1.And4.auxiliary[2] = D.Tables.AndTable[FF1.And4.auxiliary[1],FF1.And4.x[2]];
+//   FF1.And4.auxiliary[2] = D.Tables.AndTable[FF1.And4.auxiliary[1], FF1.And4.x[2]];
 //   FF1.And4.y = pre(FF1.And4.auxiliary[2]);
 //   FF1.Not1.auxiliary = D.Tables.NotTable[FF1.Not1.x];
 //   FF1.Not1.y = pre(FF1.Not1.auxiliary);
 //   FF2.RS1.Nor1.auxiliary[1] = FF2.RS1.Nor1.x[1];
-//   FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF2.RS1.Nor1.auxiliary[1],FF2.RS1.Nor1.x[2]];
+//   FF2.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF2.RS1.Nor1.auxiliary[1], FF2.RS1.Nor1.x[2]];
 //   FF2.RS1.Nor1.y = pre(D.Tables.NotTable[FF2.RS1.Nor1.auxiliary[2]]);
 //   FF2.RS1.Nor2.auxiliary[1] = FF2.RS1.Nor2.x[1];
-//   FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF2.RS1.Nor2.auxiliary[1],FF2.RS1.Nor2.x[2]];
+//   FF2.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF2.RS1.Nor2.auxiliary[1], FF2.RS1.Nor2.x[2]];
 //   FF2.RS1.Nor2.y = pre(D.Tables.NotTable[FF2.RS1.Nor2.auxiliary[2]]);
 //   FF2.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF2.RS1.TD1.x),FF2.RS1.TD1.delayTime,FF2.RS1.TD1.delayTime)));
 //   FF2.RS1.TD1.y = if FF2.RS1.TD1.delayTime > 0.0 then if time >= FF2.RS1.TD1.delayTime then FF2.RS1.TD1.x_delayed else FF2.RS1.TD1.y0 else pre(FF2.RS1.TD1.x);
 //   FF2.RS2.Nor1.auxiliary[1] = FF2.RS2.Nor1.x[1];
-//   FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF2.RS2.Nor1.auxiliary[1],FF2.RS2.Nor1.x[2]];
+//   FF2.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF2.RS2.Nor1.auxiliary[1], FF2.RS2.Nor1.x[2]];
 //   FF2.RS2.Nor1.y = pre(D.Tables.NotTable[FF2.RS2.Nor1.auxiliary[2]]);
 //   FF2.RS2.Nor2.auxiliary[1] = FF2.RS2.Nor2.x[1];
-//   FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF2.RS2.Nor2.auxiliary[1],FF2.RS2.Nor2.x[2]];
+//   FF2.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF2.RS2.Nor2.auxiliary[1], FF2.RS2.Nor2.x[2]];
 //   FF2.RS2.Nor2.y = pre(D.Tables.NotTable[FF2.RS2.Nor2.auxiliary[2]]);
 //   FF2.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF2.RS2.TD1.x),FF2.RS2.TD1.delayTime,FF2.RS2.TD1.delayTime)));
 //   FF2.RS2.TD1.y = if FF2.RS2.TD1.delayTime > 0.0 then if time >= FF2.RS2.TD1.delayTime then FF2.RS2.TD1.x_delayed else FF2.RS2.TD1.y0 else pre(FF2.RS2.TD1.x);
 //   FF2.And1.auxiliary[1] = FF2.And1.x[1];
-//   FF2.And1.auxiliary[2] = D.Tables.AndTable[FF2.And1.auxiliary[1],FF2.And1.x[2]];
-//   FF2.And1.auxiliary[3] = D.Tables.AndTable[FF2.And1.auxiliary[2],FF2.And1.x[3]];
+//   FF2.And1.auxiliary[2] = D.Tables.AndTable[FF2.And1.auxiliary[1], FF2.And1.x[2]];
+//   FF2.And1.auxiliary[3] = D.Tables.AndTable[FF2.And1.auxiliary[2], FF2.And1.x[3]];
 //   FF2.And1.y = pre(FF2.And1.auxiliary[3]);
 //   FF2.And2.auxiliary[1] = FF2.And2.x[1];
-//   FF2.And2.auxiliary[2] = D.Tables.AndTable[FF2.And2.auxiliary[1],FF2.And2.x[2]];
-//   FF2.And2.auxiliary[3] = D.Tables.AndTable[FF2.And2.auxiliary[2],FF2.And2.x[3]];
+//   FF2.And2.auxiliary[2] = D.Tables.AndTable[FF2.And2.auxiliary[1], FF2.And2.x[2]];
+//   FF2.And2.auxiliary[3] = D.Tables.AndTable[FF2.And2.auxiliary[2], FF2.And2.x[3]];
 //   FF2.And2.y = pre(FF2.And2.auxiliary[3]);
 //   FF2.And3.auxiliary[1] = FF2.And3.x[1];
-//   FF2.And3.auxiliary[2] = D.Tables.AndTable[FF2.And3.auxiliary[1],FF2.And3.x[2]];
+//   FF2.And3.auxiliary[2] = D.Tables.AndTable[FF2.And3.auxiliary[1], FF2.And3.x[2]];
 //   FF2.And3.y = pre(FF2.And3.auxiliary[2]);
 //   FF2.And4.auxiliary[1] = FF2.And4.x[1];
-//   FF2.And4.auxiliary[2] = D.Tables.AndTable[FF2.And4.auxiliary[1],FF2.And4.x[2]];
+//   FF2.And4.auxiliary[2] = D.Tables.AndTable[FF2.And4.auxiliary[1], FF2.And4.x[2]];
 //   FF2.And4.y = pre(FF2.And4.auxiliary[2]);
 //   FF2.Not1.auxiliary = D.Tables.NotTable[FF2.Not1.x];
 //   FF2.Not1.y = pre(FF2.Not1.auxiliary);
 //   FF3.RS1.Nor1.auxiliary[1] = FF3.RS1.Nor1.x[1];
-//   FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF3.RS1.Nor1.auxiliary[1],FF3.RS1.Nor1.x[2]];
+//   FF3.RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF3.RS1.Nor1.auxiliary[1], FF3.RS1.Nor1.x[2]];
 //   FF3.RS1.Nor1.y = pre(D.Tables.NotTable[FF3.RS1.Nor1.auxiliary[2]]);
 //   FF3.RS1.Nor2.auxiliary[1] = FF3.RS1.Nor2.x[1];
-//   FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF3.RS1.Nor2.auxiliary[1],FF3.RS1.Nor2.x[2]];
+//   FF3.RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF3.RS1.Nor2.auxiliary[1], FF3.RS1.Nor2.x[2]];
 //   FF3.RS1.Nor2.y = pre(D.Tables.NotTable[FF3.RS1.Nor2.auxiliary[2]]);
 //   FF3.RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF3.RS1.TD1.x),FF3.RS1.TD1.delayTime,FF3.RS1.TD1.delayTime)));
 //   FF3.RS1.TD1.y = if FF3.RS1.TD1.delayTime > 0.0 then if time >= FF3.RS1.TD1.delayTime then FF3.RS1.TD1.x_delayed else FF3.RS1.TD1.y0 else pre(FF3.RS1.TD1.x);
 //   FF3.RS2.Nor1.auxiliary[1] = FF3.RS2.Nor1.x[1];
-//   FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF3.RS2.Nor1.auxiliary[1],FF3.RS2.Nor1.x[2]];
+//   FF3.RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF3.RS2.Nor1.auxiliary[1], FF3.RS2.Nor1.x[2]];
 //   FF3.RS2.Nor1.y = pre(D.Tables.NotTable[FF3.RS2.Nor1.auxiliary[2]]);
 //   FF3.RS2.Nor2.auxiliary[1] = FF3.RS2.Nor2.x[1];
-//   FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF3.RS2.Nor2.auxiliary[1],FF3.RS2.Nor2.x[2]];
+//   FF3.RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF3.RS2.Nor2.auxiliary[1], FF3.RS2.Nor2.x[2]];
 //   FF3.RS2.Nor2.y = pre(D.Tables.NotTable[FF3.RS2.Nor2.auxiliary[2]]);
 //   FF3.RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF3.RS2.TD1.x),FF3.RS2.TD1.delayTime,FF3.RS2.TD1.delayTime)));
 //   FF3.RS2.TD1.y = if FF3.RS2.TD1.delayTime > 0.0 then if time >= FF3.RS2.TD1.delayTime then FF3.RS2.TD1.x_delayed else FF3.RS2.TD1.y0 else pre(FF3.RS2.TD1.x);
 //   FF3.And1.auxiliary[1] = FF3.And1.x[1];
-//   FF3.And1.auxiliary[2] = D.Tables.AndTable[FF3.And1.auxiliary[1],FF3.And1.x[2]];
-//   FF3.And1.auxiliary[3] = D.Tables.AndTable[FF3.And1.auxiliary[2],FF3.And1.x[3]];
+//   FF3.And1.auxiliary[2] = D.Tables.AndTable[FF3.And1.auxiliary[1], FF3.And1.x[2]];
+//   FF3.And1.auxiliary[3] = D.Tables.AndTable[FF3.And1.auxiliary[2], FF3.And1.x[3]];
 //   FF3.And1.y = pre(FF3.And1.auxiliary[3]);
 //   FF3.And2.auxiliary[1] = FF3.And2.x[1];
-//   FF3.And2.auxiliary[2] = D.Tables.AndTable[FF3.And2.auxiliary[1],FF3.And2.x[2]];
-//   FF3.And2.auxiliary[3] = D.Tables.AndTable[FF3.And2.auxiliary[2],FF3.And2.x[3]];
+//   FF3.And2.auxiliary[2] = D.Tables.AndTable[FF3.And2.auxiliary[1], FF3.And2.x[2]];
+//   FF3.And2.auxiliary[3] = D.Tables.AndTable[FF3.And2.auxiliary[2], FF3.And2.x[3]];
 //   FF3.And2.y = pre(FF3.And2.auxiliary[3]);
 //   FF3.And3.auxiliary[1] = FF3.And3.x[1];
-//   FF3.And3.auxiliary[2] = D.Tables.AndTable[FF3.And3.auxiliary[1],FF3.And3.x[2]];
+//   FF3.And3.auxiliary[2] = D.Tables.AndTable[FF3.And3.auxiliary[1], FF3.And3.x[2]];
 //   FF3.And3.y = pre(FF3.And3.auxiliary[2]);
 //   FF3.And4.auxiliary[1] = FF3.And4.x[1];
-//   FF3.And4.auxiliary[2] = D.Tables.AndTable[FF3.And4.auxiliary[1],FF3.And4.x[2]];
+//   FF3.And4.auxiliary[2] = D.Tables.AndTable[FF3.And4.auxiliary[1], FF3.And4.x[2]];
 //   FF3.And4.y = pre(FF3.And4.auxiliary[2]);
 //   FF3.Not1.auxiliary = D.Tables.NotTable[FF3.Not1.x];
 //   FF3.Not1.y = pre(FF3.Not1.auxiliary);
@@ -8522,7 +8522,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.Counter3 has 201 equation(s) and 201 variable(s).
-// 201 of these are trivial equation(s).
+// 129 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Examples.Utilities.Counter
@@ -8788,98 +8788,98 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') q[3];
 // equation
 //   FF[1].RS1.Nor1.auxiliary[1] = FF[1].RS1.Nor1.x[1];
-//   FF[1].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[1].RS1.Nor1.auxiliary[1],FF[1].RS1.Nor1.x[2]];
+//   FF[1].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[1].RS1.Nor1.auxiliary[1], FF[1].RS1.Nor1.x[2]];
 //   FF[1].RS1.Nor1.y = pre(D.Tables.NotTable[FF[1].RS1.Nor1.auxiliary[2]]);
 //   FF[1].RS1.Nor2.auxiliary[1] = FF[1].RS1.Nor2.x[1];
-//   FF[1].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[1].RS1.Nor2.auxiliary[1],FF[1].RS1.Nor2.x[2]];
+//   FF[1].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[1].RS1.Nor2.auxiliary[1], FF[1].RS1.Nor2.x[2]];
 //   FF[1].RS1.Nor2.y = pre(D.Tables.NotTable[FF[1].RS1.Nor2.auxiliary[2]]);
 //   FF[1].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[1].RS1.TD1.x),FF[1].RS1.TD1.delayTime,FF[1].RS1.TD1.delayTime)));
 //   FF[1].RS1.TD1.y = if FF[1].RS1.TD1.delayTime > 0.0 then if time >= FF[1].RS1.TD1.delayTime then FF[1].RS1.TD1.x_delayed else FF[1].RS1.TD1.y0 else pre(FF[1].RS1.TD1.x);
 //   FF[1].RS2.Nor1.auxiliary[1] = FF[1].RS2.Nor1.x[1];
-//   FF[1].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[1].RS2.Nor1.auxiliary[1],FF[1].RS2.Nor1.x[2]];
+//   FF[1].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[1].RS2.Nor1.auxiliary[1], FF[1].RS2.Nor1.x[2]];
 //   FF[1].RS2.Nor1.y = pre(D.Tables.NotTable[FF[1].RS2.Nor1.auxiliary[2]]);
 //   FF[1].RS2.Nor2.auxiliary[1] = FF[1].RS2.Nor2.x[1];
-//   FF[1].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[1].RS2.Nor2.auxiliary[1],FF[1].RS2.Nor2.x[2]];
+//   FF[1].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[1].RS2.Nor2.auxiliary[1], FF[1].RS2.Nor2.x[2]];
 //   FF[1].RS2.Nor2.y = pre(D.Tables.NotTable[FF[1].RS2.Nor2.auxiliary[2]]);
 //   FF[1].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[1].RS2.TD1.x),FF[1].RS2.TD1.delayTime,FF[1].RS2.TD1.delayTime)));
 //   FF[1].RS2.TD1.y = if FF[1].RS2.TD1.delayTime > 0.0 then if time >= FF[1].RS2.TD1.delayTime then FF[1].RS2.TD1.x_delayed else FF[1].RS2.TD1.y0 else pre(FF[1].RS2.TD1.x);
 //   FF[1].And1.auxiliary[1] = FF[1].And1.x[1];
-//   FF[1].And1.auxiliary[2] = D.Tables.AndTable[FF[1].And1.auxiliary[1],FF[1].And1.x[2]];
-//   FF[1].And1.auxiliary[3] = D.Tables.AndTable[FF[1].And1.auxiliary[2],FF[1].And1.x[3]];
+//   FF[1].And1.auxiliary[2] = D.Tables.AndTable[FF[1].And1.auxiliary[1], FF[1].And1.x[2]];
+//   FF[1].And1.auxiliary[3] = D.Tables.AndTable[FF[1].And1.auxiliary[2], FF[1].And1.x[3]];
 //   FF[1].And1.y = pre(FF[1].And1.auxiliary[3]);
 //   FF[1].And2.auxiliary[1] = FF[1].And2.x[1];
-//   FF[1].And2.auxiliary[2] = D.Tables.AndTable[FF[1].And2.auxiliary[1],FF[1].And2.x[2]];
-//   FF[1].And2.auxiliary[3] = D.Tables.AndTable[FF[1].And2.auxiliary[2],FF[1].And2.x[3]];
+//   FF[1].And2.auxiliary[2] = D.Tables.AndTable[FF[1].And2.auxiliary[1], FF[1].And2.x[2]];
+//   FF[1].And2.auxiliary[3] = D.Tables.AndTable[FF[1].And2.auxiliary[2], FF[1].And2.x[3]];
 //   FF[1].And2.y = pre(FF[1].And2.auxiliary[3]);
 //   FF[1].And3.auxiliary[1] = FF[1].And3.x[1];
-//   FF[1].And3.auxiliary[2] = D.Tables.AndTable[FF[1].And3.auxiliary[1],FF[1].And3.x[2]];
+//   FF[1].And3.auxiliary[2] = D.Tables.AndTable[FF[1].And3.auxiliary[1], FF[1].And3.x[2]];
 //   FF[1].And3.y = pre(FF[1].And3.auxiliary[2]);
 //   FF[1].And4.auxiliary[1] = FF[1].And4.x[1];
-//   FF[1].And4.auxiliary[2] = D.Tables.AndTable[FF[1].And4.auxiliary[1],FF[1].And4.x[2]];
+//   FF[1].And4.auxiliary[2] = D.Tables.AndTable[FF[1].And4.auxiliary[1], FF[1].And4.x[2]];
 //   FF[1].And4.y = pre(FF[1].And4.auxiliary[2]);
 //   FF[1].Not1.auxiliary = D.Tables.NotTable[FF[1].Not1.x];
 //   FF[1].Not1.y = pre(FF[1].Not1.auxiliary);
 //   FF[2].RS1.Nor1.auxiliary[1] = FF[2].RS1.Nor1.x[1];
-//   FF[2].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[2].RS1.Nor1.auxiliary[1],FF[2].RS1.Nor1.x[2]];
+//   FF[2].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[2].RS1.Nor1.auxiliary[1], FF[2].RS1.Nor1.x[2]];
 //   FF[2].RS1.Nor1.y = pre(D.Tables.NotTable[FF[2].RS1.Nor1.auxiliary[2]]);
 //   FF[2].RS1.Nor2.auxiliary[1] = FF[2].RS1.Nor2.x[1];
-//   FF[2].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[2].RS1.Nor2.auxiliary[1],FF[2].RS1.Nor2.x[2]];
+//   FF[2].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[2].RS1.Nor2.auxiliary[1], FF[2].RS1.Nor2.x[2]];
 //   FF[2].RS1.Nor2.y = pre(D.Tables.NotTable[FF[2].RS1.Nor2.auxiliary[2]]);
 //   FF[2].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[2].RS1.TD1.x),FF[2].RS1.TD1.delayTime,FF[2].RS1.TD1.delayTime)));
 //   FF[2].RS1.TD1.y = if FF[2].RS1.TD1.delayTime > 0.0 then if time >= FF[2].RS1.TD1.delayTime then FF[2].RS1.TD1.x_delayed else FF[2].RS1.TD1.y0 else pre(FF[2].RS1.TD1.x);
 //   FF[2].RS2.Nor1.auxiliary[1] = FF[2].RS2.Nor1.x[1];
-//   FF[2].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[2].RS2.Nor1.auxiliary[1],FF[2].RS2.Nor1.x[2]];
+//   FF[2].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[2].RS2.Nor1.auxiliary[1], FF[2].RS2.Nor1.x[2]];
 //   FF[2].RS2.Nor1.y = pre(D.Tables.NotTable[FF[2].RS2.Nor1.auxiliary[2]]);
 //   FF[2].RS2.Nor2.auxiliary[1] = FF[2].RS2.Nor2.x[1];
-//   FF[2].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[2].RS2.Nor2.auxiliary[1],FF[2].RS2.Nor2.x[2]];
+//   FF[2].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[2].RS2.Nor2.auxiliary[1], FF[2].RS2.Nor2.x[2]];
 //   FF[2].RS2.Nor2.y = pre(D.Tables.NotTable[FF[2].RS2.Nor2.auxiliary[2]]);
 //   FF[2].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[2].RS2.TD1.x),FF[2].RS2.TD1.delayTime,FF[2].RS2.TD1.delayTime)));
 //   FF[2].RS2.TD1.y = if FF[2].RS2.TD1.delayTime > 0.0 then if time >= FF[2].RS2.TD1.delayTime then FF[2].RS2.TD1.x_delayed else FF[2].RS2.TD1.y0 else pre(FF[2].RS2.TD1.x);
 //   FF[2].And1.auxiliary[1] = FF[2].And1.x[1];
-//   FF[2].And1.auxiliary[2] = D.Tables.AndTable[FF[2].And1.auxiliary[1],FF[2].And1.x[2]];
-//   FF[2].And1.auxiliary[3] = D.Tables.AndTable[FF[2].And1.auxiliary[2],FF[2].And1.x[3]];
+//   FF[2].And1.auxiliary[2] = D.Tables.AndTable[FF[2].And1.auxiliary[1], FF[2].And1.x[2]];
+//   FF[2].And1.auxiliary[3] = D.Tables.AndTable[FF[2].And1.auxiliary[2], FF[2].And1.x[3]];
 //   FF[2].And1.y = pre(FF[2].And1.auxiliary[3]);
 //   FF[2].And2.auxiliary[1] = FF[2].And2.x[1];
-//   FF[2].And2.auxiliary[2] = D.Tables.AndTable[FF[2].And2.auxiliary[1],FF[2].And2.x[2]];
-//   FF[2].And2.auxiliary[3] = D.Tables.AndTable[FF[2].And2.auxiliary[2],FF[2].And2.x[3]];
+//   FF[2].And2.auxiliary[2] = D.Tables.AndTable[FF[2].And2.auxiliary[1], FF[2].And2.x[2]];
+//   FF[2].And2.auxiliary[3] = D.Tables.AndTable[FF[2].And2.auxiliary[2], FF[2].And2.x[3]];
 //   FF[2].And2.y = pre(FF[2].And2.auxiliary[3]);
 //   FF[2].And3.auxiliary[1] = FF[2].And3.x[1];
-//   FF[2].And3.auxiliary[2] = D.Tables.AndTable[FF[2].And3.auxiliary[1],FF[2].And3.x[2]];
+//   FF[2].And3.auxiliary[2] = D.Tables.AndTable[FF[2].And3.auxiliary[1], FF[2].And3.x[2]];
 //   FF[2].And3.y = pre(FF[2].And3.auxiliary[2]);
 //   FF[2].And4.auxiliary[1] = FF[2].And4.x[1];
-//   FF[2].And4.auxiliary[2] = D.Tables.AndTable[FF[2].And4.auxiliary[1],FF[2].And4.x[2]];
+//   FF[2].And4.auxiliary[2] = D.Tables.AndTable[FF[2].And4.auxiliary[1], FF[2].And4.x[2]];
 //   FF[2].And4.y = pre(FF[2].And4.auxiliary[2]);
 //   FF[2].Not1.auxiliary = D.Tables.NotTable[FF[2].Not1.x];
 //   FF[2].Not1.y = pre(FF[2].Not1.auxiliary);
 //   FF[3].RS1.Nor1.auxiliary[1] = FF[3].RS1.Nor1.x[1];
-//   FF[3].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[3].RS1.Nor1.auxiliary[1],FF[3].RS1.Nor1.x[2]];
+//   FF[3].RS1.Nor1.auxiliary[2] = D.Tables.OrTable[FF[3].RS1.Nor1.auxiliary[1], FF[3].RS1.Nor1.x[2]];
 //   FF[3].RS1.Nor1.y = pre(D.Tables.NotTable[FF[3].RS1.Nor1.auxiliary[2]]);
 //   FF[3].RS1.Nor2.auxiliary[1] = FF[3].RS1.Nor2.x[1];
-//   FF[3].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[3].RS1.Nor2.auxiliary[1],FF[3].RS1.Nor2.x[2]];
+//   FF[3].RS1.Nor2.auxiliary[2] = D.Tables.OrTable[FF[3].RS1.Nor2.auxiliary[1], FF[3].RS1.Nor2.x[2]];
 //   FF[3].RS1.Nor2.y = pre(D.Tables.NotTable[FF[3].RS1.Nor2.auxiliary[2]]);
 //   FF[3].RS1.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[3].RS1.TD1.x),FF[3].RS1.TD1.delayTime,FF[3].RS1.TD1.delayTime)));
 //   FF[3].RS1.TD1.y = if FF[3].RS1.TD1.delayTime > 0.0 then if time >= FF[3].RS1.TD1.delayTime then FF[3].RS1.TD1.x_delayed else FF[3].RS1.TD1.y0 else pre(FF[3].RS1.TD1.x);
 //   FF[3].RS2.Nor1.auxiliary[1] = FF[3].RS2.Nor1.x[1];
-//   FF[3].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[3].RS2.Nor1.auxiliary[1],FF[3].RS2.Nor1.x[2]];
+//   FF[3].RS2.Nor1.auxiliary[2] = D.Tables.OrTable[FF[3].RS2.Nor1.auxiliary[1], FF[3].RS2.Nor1.x[2]];
 //   FF[3].RS2.Nor1.y = pre(D.Tables.NotTable[FF[3].RS2.Nor1.auxiliary[2]]);
 //   FF[3].RS2.Nor2.auxiliary[1] = FF[3].RS2.Nor2.x[1];
-//   FF[3].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[3].RS2.Nor2.auxiliary[1],FF[3].RS2.Nor2.x[2]];
+//   FF[3].RS2.Nor2.auxiliary[2] = D.Tables.OrTable[FF[3].RS2.Nor2.auxiliary[1], FF[3].RS2.Nor2.x[2]];
 //   FF[3].RS2.Nor2.y = pre(D.Tables.NotTable[FF[3].RS2.Nor2.auxiliary[2]]);
 //   FF[3].RS2.TD1.x_delayed = DAE.CAST(ENUM TYPE, integer(delay(Real(FF[3].RS2.TD1.x),FF[3].RS2.TD1.delayTime,FF[3].RS2.TD1.delayTime)));
 //   FF[3].RS2.TD1.y = if FF[3].RS2.TD1.delayTime > 0.0 then if time >= FF[3].RS2.TD1.delayTime then FF[3].RS2.TD1.x_delayed else FF[3].RS2.TD1.y0 else pre(FF[3].RS2.TD1.x);
 //   FF[3].And1.auxiliary[1] = FF[3].And1.x[1];
-//   FF[3].And1.auxiliary[2] = D.Tables.AndTable[FF[3].And1.auxiliary[1],FF[3].And1.x[2]];
-//   FF[3].And1.auxiliary[3] = D.Tables.AndTable[FF[3].And1.auxiliary[2],FF[3].And1.x[3]];
+//   FF[3].And1.auxiliary[2] = D.Tables.AndTable[FF[3].And1.auxiliary[1], FF[3].And1.x[2]];
+//   FF[3].And1.auxiliary[3] = D.Tables.AndTable[FF[3].And1.auxiliary[2], FF[3].And1.x[3]];
 //   FF[3].And1.y = pre(FF[3].And1.auxiliary[3]);
 //   FF[3].And2.auxiliary[1] = FF[3].And2.x[1];
-//   FF[3].And2.auxiliary[2] = D.Tables.AndTable[FF[3].And2.auxiliary[1],FF[3].And2.x[2]];
-//   FF[3].And2.auxiliary[3] = D.Tables.AndTable[FF[3].And2.auxiliary[2],FF[3].And2.x[3]];
+//   FF[3].And2.auxiliary[2] = D.Tables.AndTable[FF[3].And2.auxiliary[1], FF[3].And2.x[2]];
+//   FF[3].And2.auxiliary[3] = D.Tables.AndTable[FF[3].And2.auxiliary[2], FF[3].And2.x[3]];
 //   FF[3].And2.y = pre(FF[3].And2.auxiliary[3]);
 //   FF[3].And3.auxiliary[1] = FF[3].And3.x[1];
-//   FF[3].And3.auxiliary[2] = D.Tables.AndTable[FF[3].And3.auxiliary[1],FF[3].And3.x[2]];
+//   FF[3].And3.auxiliary[2] = D.Tables.AndTable[FF[3].And3.auxiliary[1], FF[3].And3.x[2]];
 //   FF[3].And3.y = pre(FF[3].And3.auxiliary[2]);
 //   FF[3].And4.auxiliary[1] = FF[3].And4.x[1];
-//   FF[3].And4.auxiliary[2] = D.Tables.AndTable[FF[3].And4.auxiliary[1],FF[3].And4.x[2]];
+//   FF[3].And4.auxiliary[2] = D.Tables.AndTable[FF[3].And4.auxiliary[1], FF[3].And4.x[2]];
 //   FF[3].And4.y = pre(FF[3].And4.auxiliary[2]);
 //   FF[3].Not1.auxiliary = D.Tables.NotTable[FF[3].Not1.x];
 //   FF[3].Not1.y = pre(FF[3].Not1.auxiliary);
@@ -8995,7 +8995,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Examples.Utilities.Counter has 201 equation(s) and 201 variable(s).
-// 201 of these are trivial equation(s).
+// 129 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Delay.TransportDelay
@@ -9014,7 +9014,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Delay.TransportDelay has 2 equation(s) and 2 variable(s).
-// 2 of these are trivial equation(s).
+// 0 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Delay.InertialDelay
@@ -9172,7 +9172,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Not has 2 equation(s) and 2 variable(s).
-// 2 of these are trivial equation(s).
+// 0 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.And
@@ -9184,7 +9184,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.AndTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.AndTable[auxiliary[1], x[2]];
 //   y = pre(auxiliary[2]);
 // end Modelica.Electrical.Digital.Basic.And;
 // "
@@ -9193,7 +9193,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.And has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Nand
@@ -9205,7 +9205,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.AndTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.AndTable[auxiliary[1], x[2]];
 //   y = pre(D.Tables.NotTable[auxiliary[2]]);
 // end Modelica.Electrical.Digital.Basic.Nand;
 // "
@@ -9214,7 +9214,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Nand has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Or
@@ -9226,7 +9226,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.OrTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.OrTable[auxiliary[1], x[2]];
 //   y = pre(auxiliary[2]);
 // end Modelica.Electrical.Digital.Basic.Or;
 // "
@@ -9235,7 +9235,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Or has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Nor
@@ -9247,7 +9247,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.OrTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.OrTable[auxiliary[1], x[2]];
 //   y = pre(D.Tables.NotTable[auxiliary[2]]);
 // end Modelica.Electrical.Digital.Basic.Nor;
 // "
@@ -9256,7 +9256,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Nor has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Xor
@@ -9268,7 +9268,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.XorTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.XorTable[auxiliary[1], x[2]];
 //   y = pre(auxiliary[2]);
 // end Modelica.Electrical.Digital.Basic.Xor;
 // "
@@ -9277,7 +9277,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Xor has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Basic.Xnor
@@ -9289,7 +9289,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') auxiliary[2](start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true);
 // equation
 //   auxiliary[1] = x[1];
-//   auxiliary[2] = D.Tables.XorTable[auxiliary[1],x[2]];
+//   auxiliary[2] = D.Tables.XorTable[auxiliary[1], x[2]];
 //   y = pre(D.Tables.NotTable[auxiliary[2]]);
 // end Modelica.Electrical.Digital.Basic.Xnor;
 // "
@@ -9298,7 +9298,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Basic.Xnor has 3 equation(s) and 3 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.InvGate
@@ -9427,7 +9427,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.InvGate has 92 equation(s) and 92 variable(s).
-// 86 of these are trivial equation(s).
+// 84 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.AndGate
@@ -9537,7 +9537,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.AndTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.AndTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(G1.auxiliary[2]);
 //   G1.y = G2.x;
 //   G2.y = y;
@@ -9563,7 +9563,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.AndGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.NandGate
@@ -9673,7 +9673,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.AndTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.AndTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(D.Tables.NotTable[G1.auxiliary[2]]);
 //   G2.y = y;
 //   G1.y = G2.x;
@@ -9699,7 +9699,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.NandGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.OrGate
@@ -9809,7 +9809,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.OrTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.OrTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(G1.auxiliary[2]);
 //   G2.y = y;
 //   G1.x[1] = x[1];
@@ -9835,7 +9835,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.OrGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.NorGate
@@ -9945,7 +9945,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.OrTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.OrTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(D.Tables.NotTable[G1.auxiliary[2]]);
 //   G2.y = y;
 //   G1.x[1] = x[1];
@@ -9971,7 +9971,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.NorGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.XorGate
@@ -10081,7 +10081,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.XorTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.XorTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(G1.auxiliary[2]);
 //   G2.y = y;
 //   G1.y = G2.x;
@@ -10107,7 +10107,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.XorGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.XnorGate
@@ -10217,7 +10217,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   protected discrete Real G2.t_next(quantity = "Time", unit = "s");
 // equation
 //   G1.auxiliary[1] = G1.x[1];
-//   G1.auxiliary[2] = D.Tables.XorTable[G1.auxiliary[1],G1.x[2]];
+//   G1.auxiliary[2] = D.Tables.XorTable[G1.auxiliary[1], G1.x[2]];
 //   G1.y = pre(D.Tables.NotTable[G1.auxiliary[2]]);
 //   G1.y = G2.x;
 //   G2.y = y;
@@ -10243,7 +10243,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Digital.Gates.XnorGate has 94 equation(s) and 94 variable(s).
-// 88 of these are trivial equation(s).
+// 86 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Digital.Gates.BufGate
