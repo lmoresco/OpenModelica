@@ -14,21 +14,21 @@ StrictRML.fn6(1.0);getErrorString();
 // true
 // true
 // 
-// "[StrictRML.mo:2:3-10:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. Number of input arguments don't match.
+// "[StrictRML.mo:2:3-10:10:writable] Error: Number of input arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // 
-// "[StrictRML.mo:11:3-19:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. Number of output arguments don't match.
+// "[StrictRML.mo:11:3-19:10:writable] Error: Number of output arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // 
-// "[StrictRML.mo:20:3-28:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. Input expression was not a tuple of component references.
+// "[StrictRML.mo:20:3-28:10:writable] Error: Input expression was not a tuple of component references. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // 
-// "[StrictRML.mo:29:3-37:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. Output expression was not a tuple of component references.
+// "[StrictRML.mo:29:3-37:10:writable] Error: Output expression was not a tuple of component references. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // 
-// "[StrictRML.mo:38:3-46:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. The input does not match.
+// "[StrictRML.mo:38:3-46:10:writable] Error: The input does not match. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // 
-// "[StrictRML.mo:47:3-55:10:writable] Error: Strict RML enforces match expression input and output to be the same as the function's. The output does not match.
+// "[StrictRML.mo:47:3-55:10:writable] Error: The output does not match. Strict RML enforces match expression input and output to be the same as the function's.
 // "
 // endResult
