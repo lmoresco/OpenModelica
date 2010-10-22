@@ -4165,7 +4165,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   protected output Real bodyCylinder4.frameTranslation.shape.Material;
 //   protected output Real bodyCylinder4.frameTranslation.shape.Extra;
 //   parameter Boolean rotor1D.animation = true "= true, if animation shall be enabled (show rotor as cylinder)";
-//   parameter Real rotor1D.J(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0, start = 1.0) = bodyCylinder4.I[1,1] "Moment of inertia of rotor around its axis of rotation";
+//   parameter Real rotor1D.J(quantity = "MomentOfInertia", unit = "kg.m2", min = 0.0, start = 1.0) = bodyCylinder4.I[1, 1] "Moment of inertia of rotor around its axis of rotation";
 //   parameter Real rotor1D.n[1](unit = "1") = 1.0 "Axis of rotation resolved in frame_a";
 //   parameter Real rotor1D.n[2](unit = "1") = 0.0 "Axis of rotation resolved in frame_a";
 //   parameter Real rotor1D.n[3](unit = "1") = 0.0 "Axis of rotation resolved in frame_a";
