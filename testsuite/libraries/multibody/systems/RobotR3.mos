@@ -1075,7 +1075,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis has 374 equation(s) and 373 variable(s).
-// 234 of these are trivial equation(s).
+// 235 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Sources.KinematicPTP2.position "Inline after index reduction"
@@ -12882,7 +12882,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4829 equation(s) and 4828 variable(s).
-// 3293 of these are trivial equation(s).
+// 3299 of these are trivial equation(s).
 // "
 // ""
 // 0
