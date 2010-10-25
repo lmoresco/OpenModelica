@@ -16,10 +16,10 @@ package SimplifyTest "Run Exp.simplify on some sample expressions"
     list<Exp> base,simpl;
     list<String> baseStr,simplStr;
   algorithm
-    /*base     := {i1,i2,i3,add1_2};
+    base     := {i1,i2,i3,add1_2};
     simpl    := Util.listMap(base, Exp.simplify);
     baseStr  := Util.listMap(base, Exp.printExpStr);
     simplStr := Util.listMap(simpl, Exp.printExpStr);
-    Util.listMap0(Util.listThreadTuple(baseStr,simplStr), printResult);*/
+    Util.listMap0(Util.listThreadTuple(baseStr,simplStr), printResult);
   end test;
 end SimplifyTest;
