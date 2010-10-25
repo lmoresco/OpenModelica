@@ -1,3 +1,5 @@
+interface package SusanTestTV
+
 package builtin
   
   function listLength "Return the length of the list"
@@ -6,3 +8,5 @@ package builtin
   end listLength;
   
 end builtin;
+
+end SusanTestTV;

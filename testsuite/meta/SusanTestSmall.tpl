@@ -1,6 +1,6 @@
-spackage SusanTestSmall
+package SusanTestSmall
 
-typeview "SusanTestTV.mo"
+import interface SusanTestTV;
 
 template helloWorld()
 ::= "Hello, World!"
