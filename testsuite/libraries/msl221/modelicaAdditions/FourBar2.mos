@@ -4,6 +4,7 @@
 
 loadFile("FourBar2Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Fourbar2);
+checkModel(MultiBody.Examples.Loops.Fourbar2);
 getErrorString();
 
 // Result:
@@ -4199,7 +4200,9 @@ getErrorString();
 //   b1.frameTranslation.frame_b.r0[3] = b1.frame_b.r0[3];
 //   b1.frameTranslation.frame_b.r0[3] = sphereC.frame_a.r0[3];
 //   rev1.bearing.tau = 0.0;
+//   rev1.axis.tau = 0.0;
 //   rev.bearing.tau = 0.0;
+//   rev.axis.tau = 0.0;
 //   (-b3.frame_a.t[1]) + (b3.frameTranslation.frame_a.t[1] + b3.body.frame_a.t[1]) = 0.0;
 //   (-b3.frame_a.t[2]) + (b3.frameTranslation.frame_a.t[2] + b3.body.frame_a.t[2]) = 0.0;
 //   (-b3.frame_a.t[3]) + (b3.frameTranslation.frame_a.t[3] + b3.body.frame_a.t[3]) = 0.0;
@@ -4249,14 +4252,22 @@ getErrorString();
 //   b1.frameTranslation.frame_b.f[2] + (-b1.frame_b.f[2]) = 0.0;
 //   b1.frameTranslation.frame_b.f[3] + (-b1.frame_b.f[3]) = 0.0;
 //   j2.bearing.f = 0.0;
+//   j2.axis.f = 0.0;
 //   j1.bearing.tau = 0.0;
+//   j1.axis.tau = 0.0;
 // end MultiBody.Examples.Loops.Fourbar2;
 // "
-// "[FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
+// "Check of MultiBody.Examples.Loops.Fourbar2 completed successfully.
+// 
+// [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [FourBar2Total.mo:1941:7-1941:73:writable] Warning: Component Length has the same name as its type MultiBody.Parts.BoxBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 
+// Class MultiBody.Examples.Loops.Fourbar2 has 2522 equation(s) and 2525 variable(s).
+// 2008 of these are trivial equation(s).
 // "
+// ""
 // endResult

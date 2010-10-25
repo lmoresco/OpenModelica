@@ -4,6 +4,7 @@
 
 loadFile("FourBar1Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Fourbar1);
+checkModel(MultiBody.Examples.Loops.Fourbar1);
 getErrorString();
 
 // Result:
@@ -3920,14 +3921,22 @@ getErrorString();
 //   b1.frameTranslation.frame_b.f[2] + (-b1.frame_b.f[2]) = 0.0;
 //   b1.frameTranslation.frame_b.f[3] + (-b1.frame_b.f[3]) = 0.0;
 //   j2.bearing.f = 0.0;
+//   j2.axis.f = 0.0;
 //   j1.bearing.tau = 0.0;
+//   j1.axis.tau = 0.0;
 // end MultiBody.Examples.Loops.Fourbar1;
 // "
-// "[FourBar1Total.mo:2119:7-2119:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
+// "Check of MultiBody.Examples.Loops.Fourbar1 completed successfully.
+// 
+// [FourBar1Total.mo:2119:7-2119:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [FourBar1Total.mo:2039:7-2039:73:writable] Warning: Component Length has the same name as its type MultiBody.Parts.BoxBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [FourBar1Total.mo:2119:7-2119:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 
+// Class MultiBody.Examples.Loops.Fourbar1 has 2318 equation(s) and 2319 variable(s).
+// 1829 of these are trivial equation(s).
 // "
+// ""
 // endResult

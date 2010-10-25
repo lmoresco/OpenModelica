@@ -4,6 +4,7 @@
 
 loadFile("TwoLoopTotal.mo");
 instantiateModel(MultiBody.Examples.Loops.TwoLoop);
+checkModel(MultiBody.Examples.Loops.TwoLoop);
 getErrorString();
 
 // Result:
@@ -8884,7 +8885,9 @@ getErrorString();
 //   (-b4.body.frame_b.f[2]) + b4.body.frameTranslation.frame_b.f[2] = 0.0;
 //   (-b4.body.frame_b.f[3]) + b4.body.frameTranslation.frame_b.f[3] = 0.0;
 //   j7.bearing.tau = 0.0;
+//   j7.axis.tau = 0.0;
 //   j6.bearing.tau = 0.0;
+//   j6.axis.tau = 0.0;
 //   b7.vis.frame_a.t[1] + ((-b7.frame_a.t[1]) + b7.body.frame_a.t[1]) = 0.0;
 //   b7.vis.frame_a.t[2] + ((-b7.frame_a.t[2]) + b7.body.frame_a.t[2]) = 0.0;
 //   b7.vis.frame_a.t[3] + ((-b7.frame_a.t[3]) + b7.body.frame_a.t[3]) = 0.0;
@@ -8910,6 +8913,7 @@ getErrorString();
 //   (-b7.body.frame_b.f[2]) + b7.body.frameTranslation.frame_b.f[2] = 0.0;
 //   (-b7.body.frame_b.f[3]) + b7.body.frameTranslation.frame_b.f[3] = 0.0;
 //   j5.bearing.f = 0.0;
+//   j5.axis.f = 0.0;
 //   (-b6.frame_a.t[1]) + (b6.frameTranslation.frame_a.t[1] + b6.body.frame_a.t[1]) = 0.0;
 //   (-b6.frame_a.t[2]) + (b6.frameTranslation.frame_a.t[2] + b6.body.frame_a.t[2]) = 0.0;
 //   (-b6.frame_a.t[3]) + (b6.frameTranslation.frame_a.t[3] + b6.body.frame_a.t[3]) = 0.0;
@@ -8947,6 +8951,7 @@ getErrorString();
 //   (-b5.body.frame_b.f[2]) + b5.body.frameTranslation.frame_b.f[2] = 0.0;
 //   (-b5.body.frame_b.f[3]) + b5.body.frameTranslation.frame_b.f[3] = 0.0;
 //   j3.bearing.f = 0.0;
+//   j3.axis.f = 0.0;
 //   b3.vis.frame_a.t[1] + ((-b3.frame_a.t[1]) + b3.body.frame_a.t[1]) = 0.0;
 //   b3.vis.frame_a.t[2] + ((-b3.frame_a.t[2]) + b3.body.frame_a.t[2]) = 0.0;
 //   b3.vis.frame_a.t[3] + ((-b3.frame_a.t[3]) + b3.body.frame_a.t[3]) = 0.0;
@@ -9028,7 +9033,9 @@ getErrorString();
 //   j1.bearing.tau = 0.0;
 // end MultiBody.Examples.Loops.TwoLoop;
 // "
-// "[TwoLoopTotal.mo:2675:7-2675:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
+// "Check of MultiBody.Examples.Loops.TwoLoop completed successfully.
+// 
+// [TwoLoopTotal.mo:2675:7-2675:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [TwoLoopTotal.mo:2751:7-2751:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
@@ -9036,5 +9043,9 @@ getErrorString();
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // [TwoLoopTotal.mo:2751:7-2751:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 
+// Class MultiBody.Examples.Loops.TwoLoop has 5372 equation(s) and 5376 variable(s).
+// 4424 of these are trivial equation(s).
 // "
+// ""
 // endResult

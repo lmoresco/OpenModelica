@@ -4,6 +4,7 @@
 
 loadFile("Engine2Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Engine2);
+checkModel(MultiBody.Examples.Loops.Engine2);
 getErrorString();// Result:
 
 // endResult
@@ -4887,7 +4888,9 @@ getErrorString();// Result:
 //   univ.revolute1.frame_b.r0[2] = univ.revolute2.frame_a.r0[2];
 //   univ.revolute1.frame_b.r0[3] = univ.revolute2.frame_a.r0[3];
 //   univ.revolute2.bearing.tau = 0.0;
+//   univ.revolute2.axis.tau = 0.0;
 //   univ.revolute1.bearing.tau = 0.0;
+//   univ.revolute1.axis.tau = 0.0;
 //   connectingRod.vis.frame_a.t[1] + ((-connectingRod.frame_a.t[1]) + connectingRod.body.frame_a.t[1]) = 0.0;
 //   connectingRod.vis.frame_a.t[2] + ((-connectingRod.frame_a.t[2]) + connectingRod.body.frame_a.t[2]) = 0.0;
 //   connectingRod.vis.frame_a.t[3] + ((-connectingRod.frame_a.t[3]) + connectingRod.body.frame_a.t[3]) = 0.0;
@@ -5019,7 +5022,13 @@ getErrorString();// Result:
 //   r1.bearing.tau = 0.0;
 // end MultiBody.Examples.Loops.Engine2;
 // "
-// "[Engine2Total.mo:2606:7-2606:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
+// "Check of MultiBody.Examples.Loops.Engine2 completed successfully.
+// 
+// [Engine2Total.mo:2606:7-2606:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 
+// Class MultiBody.Examples.Loops.Engine2 has 2912 equation(s) and 2915 variable(s).
+// 2454 of these are trivial equation(s).
 // "
+// ""
 // endResult

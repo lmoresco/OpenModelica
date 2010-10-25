@@ -30,6 +30,7 @@ use Thread::Queue;
 use Term::ANSIColor;
 use List::Util 'shuffle';
 use Cwd;
+use File::Path qw(rmtree);
 
 my $fast = 0;
 my @test_list;
@@ -155,3 +156,6 @@ if(@failed_tests) {
 
 my $test_count = @test_list;
 print "\n$tests_failed of $test_count failed\n";
+
+# Clean up the temporary rtest directory, so it doesn't get overrun.
+rmtree("/tmp/omc-rtest");

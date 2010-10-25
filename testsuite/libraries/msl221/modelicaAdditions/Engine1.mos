@@ -4,6 +4,7 @@
 
 loadFile("Engine1Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Engine1);
+checkModel(MultiBody.Examples.Loops.Engine1);
 getErrorString();
 
 // Result:
@@ -4497,7 +4498,13 @@ getErrorString();
 //   r1.bearing.tau = 0.0;
 // end MultiBody.Examples.Loops.Engine1;
 // "
-// "[Engine1Total.mo:2665:7-2665:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
+// "Check of MultiBody.Examples.Loops.Engine1 completed successfully.
+// 
+// [Engine1Total.mo:2665:7-2665:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 
+// Class MultiBody.Examples.Loops.Engine1 has 2588 equation(s) and 2589 variable(s).
+// 2155 of these are trivial equation(s).
 // "
+// ""
 // endResult
