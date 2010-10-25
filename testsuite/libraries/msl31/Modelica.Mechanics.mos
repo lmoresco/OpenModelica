@@ -422,7 +422,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 // 
 // 
 // Class Modelica.Mechanics.Translational.Examples.Friction has 85 equation(s) and 85 variable(s).
-// 31 of these are trivial equation(s).
+// 36 of these are trivial equation(s).
 // "
 // ""
 // endResult

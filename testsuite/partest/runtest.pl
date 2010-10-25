@@ -15,8 +15,11 @@ use feature "switch";
 my $test_full = $ARGV[0];
 # Extract the directory and test name.
 (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
+# Add a random number to the temporary directory, to avoid problems with rtest
+# when we have two test cases with the same name in different directories.
+my $test_id = int(rand(9999));
 # Build the full path to the temporary directory to run the test in.
-my $tmp_path_full = $test_dir . "/" . $test . "_temp";
+my $tmp_path_full = $test_dir . "/" . $test . "_temp" . $test_id;
 
 my $test_suit_path_rel = "../" x ($test_full =~ tr/\///);
 
@@ -136,7 +139,7 @@ sub enter_sandbox {
 # directory.
 sub exit_sandbox {
 	chdir("..");
-  rmtree($test . "_temp") unless $test eq "RunScript.mos";
+  rmtree($test . "_temp" . $test_id) unless $test eq "RunScript.mos";
 }
 
 
