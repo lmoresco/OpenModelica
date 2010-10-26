@@ -74,10 +74,8 @@ ideal, i.e., it does not influence the fluid.
 This component monitors the density of the fluid passing its port.
 The sensor is ideal, i.e., it does not influence the fluid.
 </p>
-<p>If using the one port sensor please read the <a href = Modelica.Fluid.Sensors>Information</a>  first.</p>
 
-</HTML>
-"));
+</HTML>"));
   end Density;
 
   model DensityTwoPort "Ideal two port density sensor"
@@ -1007,12 +1005,11 @@ model the time constant of the sensor).
 the fluid library provides two different types of sensors: <b>regular one port</b> and <b>two port</b> sensors.</p>
 
 <ul>
-<li>
-The <b>regular one port</b> sensors have the advantage of easy introduction and removal from a model, as no connections have to be broken.
+<li>The <b>regular one port</b> sensors have the advantage of easy introduction and removal from a model, as no connections have to be broken.
 A potential drawback is that the obtained value jumps as flow reverts.
 </li>
 
-<li> The <b>two port</b> sensors offer the advantages of an adjustable regularized step function around zero flow.
+<li>The <b>two port</b> sensors offer the advantages of an adjustable regularized step function around zero flow.
 Moreover the obtained result is restricted to the value flowing into port_a if allowFlowReversal is false.</li>
 </ul>
 
@@ -1021,9 +1018,8 @@ Moreover the obtained result is restricted to the value flowing into port_a if a
 demonstrates the differences between one- and two-port sensor at hand of a
 simple example.
 </p>
-
 </html>
-",    revisions="<html>
+", revisions="<html>
 <ul>
 <li><i>22 Dec 2008</i>
     by R;uumldiger Franke<br>

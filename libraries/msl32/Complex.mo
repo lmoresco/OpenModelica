@@ -142,8 +142,8 @@ operator record Complex "Complex number with overloaded operators"
     input Complex c2 "Complex exponent";
     output Complex c3 "= c1^c2";
   protected
-    Real lnz=0.5*ln(c1.re*c1.re + c1.im*c1.im);
-    Real phi=arctan2(c1.im, c1.re);
+    Real lnz=0.5*log(c1.re*c1.re + c1.im*c1.im);
+    Real phi=atan2(c1.im, c1.re);
     Real re=lnz*c2.re - phi*c2.im;
     Real im=lnz*c2.im + phi*c2.re;
   algorithm
@@ -193,12 +193,11 @@ operator record Complex "Complex number with overloaded operators"
 
 annotation (__Dymola_Protection(hideFromBrowser=true),
 version="1.0",
-versionBuild=1,
-versionDate="2010-03-24",
-dateModified = "2010-01-26 19:32:58Z",
-revisionId="$Id:: Complex.mo 4117 2010-09-05 15:21:01Z #$",
+versionBuild=3,
+versionDate="2010-10-16",
+dateModified = "2010-10-16 20:53:07Z",
+revisionId="$Id:: Complex.mo 4321 2010-10-16 21:00:50Z #$",
 Documentation(info="<html>
 <p>Complex number defined as a record containing real and imaginary part, utilizing operator overloading.</p>
-</html>"),
-    uses(Modelica(version="3.2")));
+</html>"));
 end Complex;

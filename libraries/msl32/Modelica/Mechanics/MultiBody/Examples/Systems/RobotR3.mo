@@ -355,7 +355,7 @@ load inertia.
 <p>
 This is a detailed model of the robot. For animation CAD data
 is used. Translate and simulate with the default settings
-(default simulation time = 3 s). Use command script \"modelica://Modelica/Resources/Scripts/Dymola/ExamplesfullRobotPlot.mos\"
+(default simulation time = 3 s). Use command script \"modelica://Modelica/Resources/Scripts/Dymola/Mechanics/MultiBody/Examples/Systems/fullRobotPlot.mos\"
 to plot variables.
 </p>
 
@@ -373,18 +373,18 @@ to plot variables.
       extends Modelica.Icons.SignalSubBus;
       import SI = Modelica.SIunits;
 
-      Boolean motion_ref "= true, if reference motion is not in rest";
-      SI.Angle angle_ref "Reference angle of axis flange";
-      SI.Angle angle "Angle of axis flange";
-      SI.AngularVelocity speed_ref "Reference speed of axis flange";
-      SI.AngularVelocity speed "Speed of axis flange";
+      Boolean motion_ref "= true, if reference motion is not in rest" annotation(HideResult=false);
+      SI.Angle angle_ref "Reference angle of axis flange" annotation(HideResult=false);
+      SI.Angle angle "Angle of axis flange" annotation(HideResult=false);
+      SI.AngularVelocity speed_ref "Reference speed of axis flange" annotation(HideResult=false);
+      SI.AngularVelocity speed "Speed of axis flange" annotation(HideResult=false);
       SI.AngularAcceleration acceleration_ref
-        "Reference acceleration of axis flange";
-      SI.AngularAcceleration acceleration "Acceleration of axis flange";
-      SI.Current current_ref "Reference current of motor";
-      SI.Current current "Current of motor";
-      SI.Angle motorAngle "Angle of motor flange";
-      SI.AngularVelocity motorSpeed "Speed of motor flange";
+        "Reference acceleration of axis flange" annotation(HideResult=false);
+      SI.AngularAcceleration acceleration "Acceleration of axis flange" annotation(HideResult=false);
+      SI.Current current_ref "Reference current of motor" annotation(HideResult=false);
+      SI.Current current "Current of motor" annotation(HideResult=false);
+      SI.Angle motorAngle "Angle of motor flange" annotation(HideResult=false);
+      SI.AngularVelocity motorSpeed "Speed of motor flange" annotation(HideResult=false);
 
       annotation (defaultComponentPrefixes="protected",
                   Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
@@ -2011,7 +2011,7 @@ The robot model is described in detail in
        Systeme am Beispiel geregelter Roboter. Dissertation,
        Fortschrittberichte VDI, Reihe 20, Nr. 147, VDI-Verlag 1995.
        This report can be downloaded as compressed postscript file
-       from: <a href=\"http://www.robotic.dlr.de/Martin.Otter/publications.html\">http://www.robotic.dlr.de/Martin.Otter/publications.html</a>.
+       from: <a href=\"http://www.robotic.dlr.de/Martin.Otter\">http://www.robotic.dlr.de/Martin.Otter</a>.
 </pre>
 <p>
 The path planning is performed in a simple way by using essentially

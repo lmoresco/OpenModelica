@@ -39,7 +39,7 @@ With the optional
 second argument \"p\", any other p-norm can be computed:
 </p>
 <center>
-<IMG src=\"modelica://Modelica_LinearSystems2/Extras/Images/vectorNorm.png\" ALT=\"function Vectors.norm\">
+<IMG src=\"modelica://Modelica/Resources/Images/Math/Vectors/vectorNorm.png\" ALT=\"function Vectors.norm\">
 </center>
 <p>
 Besides the Euclidean norm (p=2), also the 1-norm and the
@@ -78,7 +78,7 @@ Note, for any vector norm the following inequality holds:
 
 <h4>See also</h4>
 <p>
-<a href=\"Modelica:Modelica.Math.Matrices.norm\">Matrices.norm</a>
+<a href=\"modelica://Modelica.Math.Matrices.norm\">Matrices.norm</a>
 </p>
 </HTML>"));
 end norm;
@@ -115,7 +115,7 @@ not the case with function norm(..).
 
 <h4>See also</h4>
 <p>
-<a href=\"Modelica:Modelica_LinearSystems2.Math.Vectors.norm\">Vectors.norm</a>
+<a href=\"modelica://Modelica.Math.Vectors.norm\">Vectors.norm</a>
 </p>
 </html>"));
 end length;
@@ -170,7 +170,7 @@ possible.
 
 <h4>See also</h4>
 <p>
-<a href=\"Modelica:Modelica_LinearSystems2.Math.Vectors.length\">Vectors.length</a>
+<a href=\"modelica://Modelica.Math.Vectors.length\">Vectors.length</a>
 </p>
 </html>"));
 end normalize;
@@ -184,11 +184,11 @@ extends Modelica.Icons.Function;
 algorithm
   result := {v[end-i+1] for i in 1:size(v,1)};
 annotation (Inline=true, Documentation(info="<html>
-<p><h4>Syntax</h4></p>
+<h4>Syntax</h4>
 <blockquote><pre>Vectors.<b>reverse</b>(v);</pre></blockquote>
-<p><h4>Description</h4></p>
-<pre>The function call &QUOT;Vectors.<b>reverse</b>(v)&QUOT; returns the complex vector elements in reverse order. </pre>
-<p><h4>Example</h4></p>
+<h4>Description</h4>
+The function call &quot;<code>Vectors.<b>reverse</b>(v)</code>&quot; returns the complex vector elements in reverse order.
+<h4>Example</h4>
 <blockquote><pre>  <b>reverse</b>({1,2,3,4});  // = {4,3,2,1}</pre></blockquote>
 </html>"));
 end reverse;

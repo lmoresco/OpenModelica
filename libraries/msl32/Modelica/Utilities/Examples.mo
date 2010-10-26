@@ -350,7 +350,7 @@ readRealParameter(\"test.txt\", \"w_rel0\")
     import SI = Modelica.SIunits;
     extends Modelica.Icons.Example;
 
-    parameter String file = "Modelica/Utilities/data/Examples_readRealParameters.txt"
+    parameter String file = "Modelica/Resources/Data/Utilities/Examples_readRealParameters.txt"
       "File on which data is present"
           annotation(Dialog(__Dymola_loadSelector(filter="Text files (*.txt)",
                         caption="Open text file to read parameters of the form \"name = value\"")));
@@ -367,7 +367,7 @@ Model that shows the usage of Examples.readRealParameter and Examples.expression
 The model has 3 parameters and the values of these parameters are read
 from a file.
 </p>
-</html>"));
+</html>"), experiment(StopTime=1.01));
   end readRealParameterModel;
   annotation (Documentation(info="<html>
 <p>

@@ -15,7 +15,7 @@ package UsersGuide "User's Guide of StateGraph Library"
 In this section, an overview of the most important features
 of this library is given.
 </p>
-<h4><font color=\"#008000\">Steps and Transitions</font></h4>
+<h4>Steps and Transitions</h4>
 <p>
 A <b>StateGraph</b> is an enhanced finite state machine.
 It is based on the JGraphChart method and
@@ -86,7 +86,7 @@ most practical to define the network from left to right,
 as in the example above, since then it is easy to read the
 labels on the icons.
 </p>
-<h4><font color=\"#008000\">Conditions and Actions</font></h4>
+<h4>Conditions and Actions</h4>
 <p>
 With the block <b>TransitionWithSignal</b>, the firing condition
 can be provided as Boolean input signal, instead as entry in the
@@ -226,7 +226,7 @@ As a result, the \"superstate1\" component can be used in
 another context, because it does not depend on the environment
 where it is used.
 </p>
-<h4><font color=\"#008000\">Execution Model</font></h4>
+<h4>Execution Model</h4>
 <p>
 The execution model of a StateGraph follows from its
 Modelica implementation: Given the states of all steps, i.e.,
@@ -250,7 +250,7 @@ be executed within a discrete controller that is called
 at regular time instants. In a future version of the StateGraph
 library, this might be more directly supported.
 </p>
-<h4><font color=\"#008000\">Parallel and Alternative Execution</font></h4>
+<h4>Parallel and Alternative Execution</h4>
 <p>
 Parallel activities can be defined by
 component <b>Parallel</b> and alternative activities
@@ -297,7 +297,7 @@ the vector index to which the component shall be connected:
 
 <img src=\"modelica://Modelica/Resources/Images/StateGraph/UsersGuide/Parallel3.png\">
 
-<h4><font color=\"#008000\">CompositeSteps, Suspend and Resume Port</font></h4>
+<h4>CompositeSteps, Suspend and Resume Port</h4>
 <p>
 A StateGraph can be hierarchically structured by using a <b>CompositeStep</b>.
 This is a component that inherits from <b>PartialCompositeStep</b>.
@@ -394,7 +394,7 @@ to fill and to empty the two tanks is processed:
 <li> When tank 1 is empty, valve 2 is closed. </li>
 <li> After a waiting time, valve 3 is opened and
      the fluid flows out of tank 2</li>
-<li> When tank 2 is empty, valve 3 is closed</liI>
+<li> When tank 2 is empty, valve 3 is closed</li>
 </ol>
 <p>
 The above \"normal\" process can be influenced by the following
@@ -404,7 +404,7 @@ buttons:
 <li> Button <b>start</b> starts the above process.
      When this button is pressed after a \"stop\" or
      \"shut\" operation, the process operation continues.
-     </li>.
+     </li>
 <li> Button <b>stop</b> stops the above process by
      closing all valves. Then, the controller waits for
      further input (either \"start\" or \"shut\" operation).</li>
@@ -591,7 +591,7 @@ based on the following references:
      </dd>
 
 <dt>Maraninchi F., R&eacute;mond, Y. (2002):</dt>
-<dd> <a href=\"http://www-verimag.imag.fr/~maraninx/SCP2002.htm\">Mode-Automata:
+<dd> <a href=\"http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B6V17-461XK2H-2-1&_cdi=5667&_user=100058&_pii=S016764230200093X&_origin=search&_coverDate=03%2F31%2F2003&_sk=999539996&view=c&wchp=dGLzVlz-zSkWA&md5=7ef5d0b715e52fa5deec5cca6e0a4d99&ie=/sdarticle.pdf\">Mode-Automata:
      A New Domain-Specific Construct for the Development of Safe Critical Systems</a>.<br>&nbsp;
      </dd>
 
@@ -1297,7 +1297,7 @@ The basic operation is to fill and empty the two tanks:
 <li> When tank 1 is empty, valve 2 is closed. </li>
 <li> After a waiting time, valve 3 is opened and
      the fluid flows out of tank 2</li>
-<li> When tank 3 is empty, valve 3 is closed</liI>
+<li> When tank 3 is empty, valve 3 is closed</li>
 </ol>
 <p>
 The above \"normal\" process can be influenced by three
@@ -1307,7 +1307,7 @@ buttons:
 <li> Button <b>start</b> starts the above process.
      When this button is pressed after a \"stop\" or
      \"shut\" operation, the process operation continues.
-     </li>.
+     </li>
 <li> Button <b>stop</b> stops the above process by
      closing all valves. Then, the controller waits for
      further input (either \"start\" or \"shut\" operation).</li>

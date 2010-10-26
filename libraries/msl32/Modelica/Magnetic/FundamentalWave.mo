@@ -158,7 +158,7 @@ Translational.Interfaces</a></li>
 <h5>Version 1.7.0, 2010-05-31</h5>
 
 <ul>
-<li>Changed <a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Components.SymmetricMultiPhaseWinding\">symmetric multi phase winding</a> model</li>
+<li>Changed <a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Components.SymmetricMultiPhaseWinding\">symmetric multi phase winding</a> model
   <ul>
       <li>Added zero sequence inductance based on
           <a href=\"modelica://Modelica.Electrical.MultiPhase.Basic.ZeroInductor\">zero inductor</a></li>
@@ -167,7 +167,7 @@ Translational.Interfaces</a></li>
           <a href=\"modelica://Modelica.Magnetic.FundamentalWave.Components.Reluctance\">reluctance</a> model</li>
       <li>Integrated cores <a href=\"modelica://Modelica.Magnetic.FundamentalWave.Components.EddyCurrent\">losses</a>
           and <a href=\"modelica://Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a\">heat port</a></li>
-  </ul>
+  </ul></li>
   <li>Added rotor core loss parameters in asynchronous induction machine with slip rings</li>
   <li>Renamed heat ports of <a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Components.SinglePhaseWinding\">single phase winding</a> and <a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Components.SymmetricMultiPhaseWinding\">symmetric multi phase winding</a>
      </li>
@@ -187,13 +187,13 @@ Translational.Interfaces</a></li>
 <h5>Version 1.6.0, 2010-05-05</h5>
 
 <ul>
-<li>Renamed all parameters <code>windingAngle</code> to <code>orientation</code>. The following classes are affected:</li>
+<li>Renamed all parameters <code>windingAngle</code> to <code>orientation</code>. The following classes are affected:
 <ul>
 <li><a href=\"modelica://Modelica.Magnetic.FundamentalWave.Components.SinglePhaseElectroMagneticConverter\">SinglePhaseElectroMagneticConverter</a></li>
 <li><a href=\"modelica://Modelica.Magnetic.FundamentalWave.Components.MultiPhaseElectroMagneticConverter\">MultiPhaseElectroMagneticConverter</a></li>
 <li><a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Components.SinglePhaseWinding\">SinglePhaseWinding</a></li>
 <li><a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.Functions.symmetricOrientation\">symmetricOrientation</a></li>
-</ul>
+</ul></li>
 <li>Update due to changed class names in <a href=\"modelica://Modelica.Electrical.Machines.Icons\">Machines.Icons</a></li>
 <li>Using <a href=\"modelica://Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPort\">HeatTransfer.Interfaces.PartialElementaryConditionalHeatPort</a> instead of
     <a href=\"modelica://Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort\">Analog.Interfaces.ConditionalHeatPort</a> in
@@ -551,9 +551,9 @@ For more details see the <a href=\"modelica://Modelica.Magnetic.FundamentalWave.
         annotation (
           Diagram(graphics),
           experiment(StopTime=40, Interval=0.01),
-          experimentSetupOutput,
           Documentation(info="<html>
-In this example the eddy current losses are implemented in two different ways. Compare the loss dissipation <code>powerb_e.power</code> and <code>powerb_m.power</code> of the two models indicated by power meters.
+<p>
+In this example the eddy current losses are implemented in two different ways. Compare the loss dissipation <code>powerb_e.power</code> and <code>powerb_m.power</code> of the two models indicated by power meters.</p>
 </html>"));
       end EddyCurrentLosses;
     end Components;
@@ -721,7 +721,7 @@ In this example the eddy current losses are implemented in two different ways. C
             StopTime=1.5,
             Interval=0.0002,
             Tolerance=1e-05),
-          experimentSetupOutput(doublePrecision=true),
+          __Dymola_experimentSetupOutput(doublePrecision=true),
           Documentation(info="<HTML>
 <h4>Direct on line (DOL) starting of an asynchronous induction machine with squirrel cage</h4>
 <p>
@@ -933,7 +933,7 @@ Simulate for 1.5 seconds and plot (versus time):
             StopTime=1.5,
             Interval=0.001,
             Tolerance=1e-05),
-          experimentSetupOutput(doublePrecision=true),
+          __Dymola_experimentSetupOutput(doublePrecision=true),
           Documentation(info="<HTML>
 <h4>Starting of an asynchronous induction machine with slipring rotor resistance starting</h4>
 <p>
@@ -1147,7 +1147,7 @@ Simulate for 1.5 seconds and plot (versus time):
             StopTime=1.5,
             Interval=0.0005,
             Tolerance=1e-005),
-          experimentSetupOutput(doublePrecision=true),
+          __Dymola_experimentSetupOutput(doublePrecision=true),
           Documentation(info="<HTML>
 <h4>Permanent magnet synchronous induction machine fed by an ideal inverter</h4>
 <p>
@@ -1163,7 +1163,7 @@ and accelerate the inertias.</p>
 
 <ul>
 <li><code>currentRMSsensorM|E.I</code>: equivalent RMS stator current</li>
-<licode>pmsmM|E.wMechanical</code>: machine speed</li>
+<li><code>pmsmM|E.wMechanical</code>: machine speed</li>
 <li><code>pmsmM|E.tauElectrical</code>: machine torque</li>
 <li><code>rotorAnglepmsmM|E.rotorDisplacementAngle</code>: rotor displacement angle</li>
 </ul>
@@ -1404,7 +1404,7 @@ and accelerate the inertias.</p>
             StopTime=30,
             Interval=0.005,
             Tolerance=1e-06),
-          experimentSetupOutput(doublePrecision=true),
+          __Dymola_experimentSetupOutput(doublePrecision=true),
           Documentation(info="<HTML>
 <h4>Electrical excited synchronous induction machine as generator</h4>
 <p>
@@ -1613,7 +1613,7 @@ Simulate for 30 seconds and plot (versus <code>rotorAngleM.rotorDisplacementAngl
             StopTime=1.5,
             Interval=0.001,
             Tolerance=1e-06),
-          experimentSetupOutput(doublePrecision=true),
+          __Dymola_experimentSetupOutput(doublePrecision=true),
           Documentation(info="<HTML>
 <h4>Synchronous induction machine with reluctance rotor fed by an ideal inverter</h4>
 <p>
@@ -1621,7 +1621,7 @@ An ideal frequency inverter is modeled by using a
 <a href=\"modelica://Modelica.Electrical.Machines.Utilities.VfController\">VfController</a>
 and a threephase <a href=\"modelica://Modelica.Electrical.MultiPhase.Sources.SignalVoltage\">SignalVoltage</a>.
 Frequency is raised by a ramp, causing the
-<a href=\"modelcia://Modelica.Magnetic.FundamentalWave.BasicMachines.SynchronousInductionMachines.SM_ReluctanceRotor\">reluctance machine</a> to start,
+<a href=\"modelica://Modelica.Magnetic.FundamentalWave.BasicMachines.SynchronousInductionMachines.SM_ReluctanceRotor\">reluctance machine</a> to start,
 and accelerating inertias. At time <code>tStep</code> a load step is applied.
 </p>
 
@@ -2616,7 +2616,6 @@ Resistances and stray inductances of the machine refer to the stator phases. The
 <li>core losses (only eddy current losses, no hysteresis losses)</li>
 <li>stray load losses</li>
 </ul>
-
 
 <h4>See also</h4>
 <p>
@@ -3879,8 +3878,7 @@ This package contains components for
         end if;
       annotation (Documentation(info="<html>
 <p>
-This function determines the orientation of the symmetrical winding with <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/m.png\"> phases. For an odd number of phases the difference of the windings angles of two adjacent phases is
-<img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/2pi_over_m.png\">. In case of an even number of phases the aligned orientation of winding is not modeled since they do not add any information. Instead the <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/m.png\"> windings are divided into two different groups. The first group refers to the indices <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/k_le_m_over_2.png\">. The second group covers the indices <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/k_gt_m_over_2.png\">. The difference of the windings angles of two adjacent phases - of both the first and the second group, respectively - is <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/4pi_over_m.png\">. The phase shift of the two groups <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/pi_over_2m.png\">.
+This function determines the orientation of the symmetrical winding with <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/m.png\"> phases. For an odd number of phases the difference of the windings angles of two adjacent phases is <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/2pi_over_m.png\">. In case of an even number of phases the aligned orientation of winding is not modeled since they do not add any information. Instead the <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/m.png\"> windings are divided into two different groups. The first group refers to the indices <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/k_le_m_over_2.png\">. The second group covers the indices <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/k_gt_m_over_2.png\">. The difference of the windings angles of two adjacent phases - of both the first and the second group, respectively - is <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/4pi_over_m.png\">. The phase shift of the two groups <img src=\"modelica://Modelica/Resources/Images/Magnetic/FundamentalWave/pi_over_2m.png\">.
 </p>
 </html>"));
       end symmetricOrientation;
@@ -4186,8 +4184,7 @@ Source of magnetic flux with complex signal input.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticPotentialDifferenceSensor\">
-   MagneticPotentialDifferenceSensor</a>
+<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticPotentialDifferenceSensor\">MagneticPotentialDifferenceSensor</a>
 </p>
 </html>"));
     end MagneticFluxSensor;
@@ -4250,8 +4247,7 @@ Source of magnetic flux with complex signal input.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticFluxSensor\">
-   MagneticFluxSensor</a>
+<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticFluxSensor\">MagneticFluxSensor</a>
 </p></html>"));
     end MagneticPotentialDifferenceSensor;
 
@@ -4305,8 +4301,7 @@ Source of magnetic flux with complex signal input.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticFluxSensor\">
-   MagneticFluxSensor</a>
+<a href=\"modelica://Modelica.Magnetic.FundamentalWave.Sensors.MagneticFluxSensor\">MagneticFluxSensor</a>
 </p></html>"));
     end MagneticPotentialSensor;
     annotation (Documentation(info="<html>
@@ -4749,7 +4744,7 @@ This model is mainly used to extend from in order build more complex - equation 
           color={191,0,0},
           smooth=Smooth.None));
       annotation (Documentation(info="<HTML>
-This partial model for induction machines contains elements common in all machine models.
+<p>This partial model for induction machines contains elements common in all machine models.</p>
 </HTML>"),
         Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
                 {100,100}}),

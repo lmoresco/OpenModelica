@@ -65,7 +65,7 @@ model Resistor "Ideal linear electrical resistor"
       "Resistance at temperature T_ref";
   parameter Modelica.SIunits.Temperature T_ref=300.15 "Reference temperature";
   parameter Modelica.SIunits.LinearTemperatureCoefficient alpha=0
-      "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(TheatPort - T_ref))";
+      "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
 
   extends Modelica.Electrical.Analog.Interfaces.OnePort;
   extends Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort(                    T = T_ref);
@@ -445,12 +445,12 @@ end Conductor;
             textString="%name",
             lineColor={0,0,255})}),                         Documentation(info="<html>
 <p>This model approximates the behaviour of an inductor with the influence of saturation, i.e., the value of the inductance depends on the current flowing through the inductor. The inductance decreases as current increases.</p><p>The parameters are:</p>
-<p><ul>
+<ul>
 <li>Inom...nominal current</li>
 <li>Lnom...nominal inductance at nominal current</li>
 <li>Lzer...inductance near current = 0; Lzer has to be greater than Lnom</li>
 <li>Linf...inductance at large currents; Linf has to be less than Lnom </li>
-</ul></p>
+</ul>
 </html>",
    revisions="<html>
 <dl>
@@ -503,9 +503,9 @@ end Conductor;
     annotation (
       Documentation(info="<html>
 <p>The transformer is a two port. The left port voltage <i>v1</i>, left port current <i>i1</i>, right port voltage <i>v2</i> and right port current <i>i2</i> are connected by the following relation:</p>
-<pre>         | v1 |         | L1   M  |  | i1&apos; |
+<pre>         | v1 |         | L1   M  |  | i1&#39;; |
          |    |    =    |         |  |     |
-         | v2 |         | M    L2 |  | i2&apos; |</pre>
+         | v2 |         | M    L2 |  | i2&#39;; |</pre>
 <p><i>L1</i>, <i>L2</i>, and <i>M</i> are the primary, secondary, and coupling inductances respectively.</p>
 </html>",
    revisions="<html>
@@ -714,17 +714,16 @@ equation
 Documentation(info="<html>
 <p>The model <i>M_Transformer</i> is a model of a transformer with the posibility to choose the number of inductors. Inside the model, an inductance matrix is built based on the inductance of the inductors and the coupling inductances between the inductors given as a parameter vector from the user of the model.</p>
 
-<p>An example shows that approach:<br/>
+<p>An example shows that approach:<br>
 The user chooses a model with <b>three</b> inductors, that means the parameter <i><b>N</b></i> has to be <b>3</b>. Then he has to specify the inductances of the three inductors and the three coupling inductances. The coupling inductances are no real existing devices, but effects that occur between two inductors. The inductivities (main diagonal of the inductance matrix) and the coupling inductivities have to be specified in the parameter vector <i>L</i>. The length <i>dimL</i> of the parameter vector is calculated as follows: <i><b>dimL=(N*(N+1))/2</b></i></p>
 
-<p>The following example shows how the parameter vector is used to fill in the inductance matrix. To specify the inductance matrix of a three inductances transformer (<i>N=3</i>):</p>
-<p>
+<p>The following example shows how the parameter vector is used to fill in the inductance matrix. To specify the inductance matrix of a three inductances transformer (<i>N=3</i>):<br>
+
 <img
  src=\"modelica://Modelica/Resources/Images/Electrical/Analog/Basic/M_Transformer-eq.png\"
  alt=\"L_m\">
-</p>
 
-<p>the user has to allocate the parameter vector <i>L[6] </i>, since <i>Nv=(N*(N+1))/2=(3*(3+1))/2=6</i>. The parameter vector must be filled like this: <i>L=[1,0.1,0.2,2,0.3,3] </i>.</p>
+<br>the user has to allocate the parameter vector <i>L[6] </i>, since <i>Nv=(N*(N+1))/2=(3*(3+1))/2=6</i>. The parameter vector must be filled like this: <i>L=[1,0.1,0.2,2,0.3,3] </i>.</p>
 <p>Inside the model, two loops are used to fill the inductance matrix to guarantee that it is filled in a symmetric way.</p>
 </html>",
 revisions="
@@ -1451,7 +1450,7 @@ end M_Transformer;
        < 0) then -f*vin else f*vin)));
     annotation (
       Documentation(info="<html>
-<p>The OpAmp is a simle nonideal model with a smooth out.v = f(vin) characteristic, where &QUOT;vin = in_p.v - in_n.v&QUOT;. The characteristic is limited by VMax.v and VMin.v. Its slope at vin=0 is the parameter Slope, which must be positive. (Therefore, the absolute value of Slope is taken into calculation.)</p>
+<p>The OpAmp is a simle nonideal model with a smooth out.v = f(vin) characteristic, where &quot;vin = in_p.v - in_n.v&quot;. The characteristic is limited by VMax.v and VMin.v. Its slope at vin=0 is the parameter Slope, which must be positive. (Therefore, the absolute value of Slope is taken into calculation.)</p>
 </html>",
    revisions="<html>
 <ul>
@@ -1689,6 +1688,9 @@ end M_Transformer;
 </html>"));
     end FCNq_sum_limit;
 
+  initial equation
+    v_source = q_fp1;
+    x = 0;
   equation
   assert(Rout > 0.0, "Rout must be > 0.0.");
 
@@ -1728,11 +1730,6 @@ end M_Transformer;
     der(q_fp1) = 2.0*Pi*fp1*(q_sum_help - q_fp1);
 
   // slew rate stage
-     if initial() then
-        v_source = q_fp1;
-        x = 0;
-     end if;
-
      der(x) = (q_fp1 - v_source)/Ts;
      der(v_source) = smooth(0,noEvent(
      if der(x) > sr_p_val then sr_p_val else
@@ -1755,7 +1752,7 @@ end M_Transformer;
     annotation (
       Documentation(info="<html>
 <p>The OpAmpDetailed model is a general operational amplifier model. The emphasis is on separating each important data sheet parameter into a sub-circuit independent of the other parameters. The model is broken down into five functional stages <b>input</b>, <b>frequency response</b>, <b>gain</b>, <b>slew rate</b> and an <b>output</b> stage. Each stage contains data sheet parameters to be modeled. This partitioning and the modelling of the separate submodels are based on the description in <b>[CP92]</b>.</p>
-<p>Using <b>[CP92]</b> Joachim Haase (Fraunhofer Institute for Integrated Circuits, Design Automation Division) transfered 2001 operational amplifier models into VHDL-AMS. Now one of these models, the model &QUOT;amp(macro)&QUOT; was transferred into Modelica.</p>
+<p>Using <b>[CP92]</b> Joachim Haase (Fraunhofer Institute for Integrated Circuits, Design Automation Division) transfered 2001 operational amplifier models into VHDL-AMS. Now one of these models, the model &quot;amp(macro)&quot; was transferred into Modelica.</p>
 <dl><dt><b>Reference:</b> </dt>
 <dd><b>[CP92]</b> Conelly, J.A.; Choi, P.: Macromodelling with SPICE. Englewood Cliffs: Prentice-Hall, 1992 </dd>
 </dl></html>",
@@ -1831,7 +1828,7 @@ end M_Transformer;
         parameter Modelica.SIunits.Temperature T_ref=300.15
       "Reference temperature";
         parameter Modelica.SIunits.LinearTemperatureCoefficient alpha=0
-      "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(TheatPort - T_ref))";
+      "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))";
         extends Modelica.Electrical.Analog.Interfaces.OnePort;
         extends Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort(                    T = T_ref);
         Modelica.SIunits.Resistance R_actual
@@ -1848,9 +1845,10 @@ end M_Transformer;
         LossPower = v*i;
         annotation (
           Documentation(info="<html>
-<p><br/>The linear resistor connects the branch voltage <i>v</i> with the branch current <i>i</i> by</p><p><br/><i><b>i*R = v</b></i></p>
-<p>The Resistance <i>R</i> is given as input signal.</p>
-<p><br/><b>Attention!!!</b></p><p><br/>It is recommended that the R signal should not cross the zero value. Otherwise depending on the surrounding circuit the probability of singularities is high.</p>
+<p>The linear resistor connects the branch voltage <i>v</i> with the branch current <i>i</i> by 
+<br><i><b>i*R = v</b></i>
+<br>The Resistance <i>R</i> is given as input signal.
+<br><br><b>Attention!!!</b><br>It is recommended that the R signal should not cross the zero value. Otherwise depending on the surrounding circuit the probability of singularities is high.</p>
 </html>",revisions="<html>
 <ul>
 <li><i> August 07, 2009   </i>
@@ -1901,7 +1899,7 @@ end M_Transformer;
         parameter Modelica.SIunits.Temperature T_ref=300.15
       "Reference temperature";
         parameter Modelica.SIunits.LinearTemperatureCoefficient alpha=0
-      "Temperature coefficient of conductance (G_actual = G/(1 + alpha*(TheatPort - T_ref))";
+      "Temperature coefficient of conductance (G_actual = G/(1 + alpha*(T_heatPort - T_ref))";
         extends Modelica.Electrical.Analog.Interfaces.OnePort;
         extends Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort(                    T = T_ref);
         Modelica.SIunits.Conductance G_actual
@@ -1918,9 +1916,11 @@ end M_Transformer;
         LossPower = v*i;
         annotation (
           Documentation(info="<html>
-<p><br/>The linear conductor connects the branch voltage <i>v</i> with the branch current <i>i</i> by</p><p><br/><i><b>i = G*v</b></i></p>
-<p>The Conductance <i>G</i> is given as input signal.</p>
-<p><br/><b>Attention!!!</b></p><p><br/>It is recommended that the G signal should not cross the zero value. Otherwise depending on the surrounding circuit the probability of singularities is high.</p>
+<p>The linear conductor connects the branch voltage <i>v</i> with the branch current <i>i</i> by
+<br><i><b>i = G*v</b></i>
+<br>The Conductance <i>G</i> is given as input signal.
+<br><br><b>Attention!!!</b>
+<br>It is recommended that the G signal should not cross the zero value. Otherwise depending on the surrounding circuit the probability of singularities is high.</p>
 </html>",revisions="<html>
 <ul>
 <li><i> August 07, 2009   </i>
@@ -1982,9 +1982,11 @@ end M_Transformer;
           i = der(Q);
           annotation (
             Documentation(info="<html>
-<p><br/>The linear capacitor connects the branch voltage <i>v</i> with the branch current <i>i</i> by</p><p><br/><i><b>i = dQ/dt</b></i> with <i><b>Q = C * v</b></i><b> </b>.</p>
-<p>The capacitance <i>C</i> is given as input signal.</p>
-<p>It is required that C &ge; 0, otherwise an assertion is raised. To avoid a variable index system,</p><p>C = Cmin, if 0 &le; C &LT; Cmin, where Cmin is a parameter with default value Modelica.Constants.eps.</p>
+<p>The linear capacitor connects the branch voltage <i>v</i> with the branch current <i>i</i> by
+<br><i><b>i = dQ/dt</b></i> with <i><b>Q = C * v</b></i><b> </b>.
+<br>The capacitance <i>C</i> is given as input signal. 
+It is required that C &ge; 0, otherwise an assertion is raised. To avoid a variable index system, 
+C = Cmin, if 0 &le; C &lt; Cmin, where Cmin is a parameter with default value Modelica.Constants.eps.</p>
 </html>",  revisions=
              "<html>
 <ul>
@@ -2047,9 +2049,10 @@ end M_Transformer;
           v = der(Psi);
           annotation (
             Documentation(info="<html>
-<p><br/>The linear inductor connects the branch voltage <i>v</i> with the branch current <i>i</i> by</p><p><br/><i><b>v = d Psi/dt </b></i>with <i><b>Psi = L * i </b></i>.</p>
-<p>The inductance <i>L</i> is as input signal.</p>
-<p>It is required that L &ge; 0, otherwise an assertion is raised. To avoid a variable index system,</p><p>L = Lmin, if 0 &le; L &LT; Lmin, where Lmin is a parameter with default value Modelica.Constants.eps.</p>
+<p>The linear inductor connects the branch voltage <i>v</i> with the branch current <i>i</i> by
+<br><i><b>v = d Psi/dt </b></i>with <i><b>Psi = L * i </b></i>.
+<br>The inductance <i>L</i> is as input signal.
+It is required that L &ge; 0, otherwise an assertion is raised. To avoid a variable index system, L = Lmin, if 0 &le; L &lt; Lmin, where Lmin is a parameter with default value Modelica.Constants.eps.</p>
 </html>",  revisions=
              "<html>
 <ul>

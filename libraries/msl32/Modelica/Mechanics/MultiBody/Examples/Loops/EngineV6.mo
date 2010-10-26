@@ -167,9 +167,8 @@ modeling of one cylinder, see example
 <a href=\"modelica://Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b\">Engine1b</a>.
 An animation of the engine is shown in the figure below.
 </p>
-<p align=\"center\">
+
 <IMG src=\"modelica://Modelica/Resources/Images/MultiBody/Examples/Loops/EngineV6.png\" ALT=\"model Examples.Loops.EngineV6\">
-</p>
 
 <p>
 Simulate for 5 s, and plot the variables <b>engineSpeed_rpm</b>,
@@ -177,5 +176,6 @@ Simulate for 5 s, and plot the variables <b>engineSpeed_rpm</b>,
 a size of about 50 Mbyte (for 5000 output intervalls).
 </p>
 </HTML>
-"));
+"),
+    experiment(StopTime=1.01));
 end EngineV6;
