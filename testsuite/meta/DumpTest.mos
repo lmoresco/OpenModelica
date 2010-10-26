@@ -1,6 +1,6 @@
 // name: DumpTest
 // status: correct
-// teardown_command: rm -f Dump_* DumpTest_* DAEDump_* Exp_* DumpGraphviz_*
+// teardown_command: rm -f Dump_* DumpTest_* DAEDump_* Expression_* DumpGraphviz_*
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 
@@ -28,8 +28,8 @@ getErrorString();
 
 exp:=DAE.ICONST(42);
 getErrorString();
-"Exp.printExpStr";
-Exp.printExpStr(exp);
+"ExpressionDump.printExpStr";
+ExpressionDump.printExpStr(exp);
 getErrorString();
 
 dae:=DAE.DAE({});
@@ -82,7 +82,7 @@ getErrorString();
 //     integer = 42
 // end DAE.Exp.ICONST;
 // ""
-// "Exp.printExpStr"
+// "ExpressionDump.printExpStr"
 // "42"
 // ""
 // record DAE.DAElist.DAE
