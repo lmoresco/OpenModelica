@@ -12,7 +12,7 @@ getErrorString(); // simulation failed, check error string.
 // record SimulationResult
 //     resultFile = "",
 //     messages = "Simulation failed.
-// Error: Index out of bounds. Adressing position: p[1] and position p[2] and position p[3], while array length is: 3
+// [CyclicPerm.mo:25:3-25:42:writable] Error: Type mismatch in assignment in W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}}) of Real[1, 3] := Real[1, 4]
 // Error: Error occured while flattening model CyclicPerm
 // "
 // end SimulationResult;
