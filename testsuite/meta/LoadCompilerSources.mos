@@ -8,6 +8,7 @@ loadFile("../../Compiler/BackendDAE.mo");
 loadFile("../../Compiler/BackendDAEUtil.mo");
 loadFile("../../Compiler/BackendDump.mo");
 loadFile("../../Compiler/BackendVarTransform.mo");
+loadFile("../../Compiler/BaseHashTable.mo");
 loadFile("../../Compiler/Builtin.mo");
 loadFile("../../Compiler/Cevalfunc.mo");
 loadFile("../../Compiler/Ceval.mo");
