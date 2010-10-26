@@ -6,5 +6,5 @@ runScript("LoadCompilerSources.mos");
 loadFile("SimplifyTest.mo");
 
 //SimplifyTest.test();
-Exp.simplify1(DAE.ICONST(1));
+ExpressionSimplify.simplify1(DAE.ICONST(1));
 getErrorString();

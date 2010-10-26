@@ -41,6 +41,8 @@ loadFile("../../Compiler/ErrorExt.mo");
 loadFile("../../Compiler/Error.mo");
 loadFile("../../Compiler/ExpandableConnectors.mo");
 loadFile("../../Compiler/Expression.mo");
+loadFile("../../Compiler/ExpressionSimplify.mo");
+loadFile("../../Compiler/ExpressionSolve.mo");
 loadFile("../../Compiler/ExpressionDump.mo");
 loadFile("../../Compiler/Graphviz.mo");
 loadFile("../../Compiler/HashTable2.mo");

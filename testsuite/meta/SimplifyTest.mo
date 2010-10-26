@@ -1,4 +1,4 @@
-package SimplifyTest "Run Exp.simplify on some sample expressions"
+package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions"
   import DAE.*;
   constant Exp i1 = ICONST(1);
   constant Exp i2 = ICONST(2);
