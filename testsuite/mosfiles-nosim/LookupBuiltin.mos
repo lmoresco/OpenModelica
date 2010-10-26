@@ -12,7 +12,7 @@ getErrorString();
 // "abc"
 // ""
 // 
-// "Error: Wrong type or wrong number of arguments to identity(str)'.
+// "[LookupBuiltin.mo:11:3-11:35:writable] Error: Wrong type or wrong number of arguments to identity(str)'.
 //  (in component <NO COMPONENT>)
 // Error: Class LookupBuiltin.id not found in scope <global scope> (looking for a function or record).
 // "
