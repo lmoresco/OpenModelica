@@ -114,7 +114,7 @@ The Electrical.Digital library is based on the following references:
     &lt;<A HREF=\"mailto:Christoph.Clauss@eas.iis.fraunhofer.de\">Christoph.Clauss@eas.iis.fraunhofer.de</A>&gt;<br>
     Andr&eacute; Schneider
     &lt;<A HREF=\"mailto:Andre.Schneider@eas.iis.fraunhofer.de\">Andre.Schneider@eas.iis.fraunhofer.de</A>&gt;<br>
-    <a href=\"http://people.eas.iis.fraunhofer.de/Ulrich.Donath/\">Ulrich Donath</a>
+    Ulrich Donath
     &lt;<A HREF=\"mailto:Ulrich.Donath@eas.iis.fraunhofer.de\">Ulrich.Donath@eas.iis.fraunhofer.de</A>&gt;<br>
     Fraunhofer Institute for Integrated Circuits (IIS)<br>
     Design Automation Department (EAS)<br>
@@ -317,9 +317,9 @@ the library and has the following content:
                 color={127,0,127}));
           annotation (
             Documentation(info="<HTML>
-<P>
+<p>
 This example demonstrates an adding circuit for binary numbers, which internally realizes the interconnection to
-And and to Xor in the final sum.
+And and to Xor in the final sum.</p>
 <br>
 <br>
 1 + 0 = 1<br>
@@ -341,21 +341,19 @@ And and to Xor in the final sum.
 <b>a</b> * <b>b</b> + <b>a</b> * <b>b</b> = <b>a</b> Xor <b>b</b> = <b>c</b>
 <br>(It is an interconnection to Xor.)
 <br>
-<br>
-<pre>  <b>a</b>     <b>b</b>     <b>c</b>      <b>s</b>     <b>t</b></pre>
+<pre>
+   <b>a</b>     <b>b</b>     <b>c</b>      <b>s</b>     <b>t</b>
 
- <pre>  1     0     1      0     1</pre>
- <pre>  0     1     1      0     2</pre>
- <pre>  1     1     0      1     3</pre>
- <pre>  0     0     0      0     4</pre>
-
-<br>
-<br>
+   1     0     1      0     1
+   0     1     1      0     2
+   1     1     0      1     3
+   0     0     0      0     4
+</pre>
+<p>
 <b>t</b> is the pick-up instant of the next bit(s) in the simulation.
 The simulation stop time should be 5 seconds.
-</P>
-</HTML>
-"),         Icon(coordinateSystem(
+</p>
+</HTML>"),         Icon(coordinateSystem(
                 preserveAspectRatio=true,
                 extent={{-100,-100},{100,100}},
                 grid={2,2}), graphics),
@@ -541,8 +539,9 @@ The simulation stop time should be 10 seconds.
               color={127,0,127}));
           annotation (
             Documentation(info="<HTML>
-<P>
+<p>
 Four Fulladders are combined to built a four bit adder unit.
+</p>
 <br>
 <br>
 In dependence on time five additions are carried out:
@@ -562,19 +561,18 @@ at t = 4
  b   +  1 1 1 0
  <b>s    0 0 1 0 1</b>
  </pre>
+<p>
 To show the influence of delay a large delay time of 0.1s is choosen.
 Furthermore, all signals are initialized with U, the unitialized value.
 Please remember, that the nine logic values are coded by the numbers 1,...,9.
 The summands a and b can be found at the output signals of the taba and tabb sources.
-The result can be seen in the output signals of the Fulladders according to:
+The result can be seen in the output signals of the Fulladders according to:</p>
 <pre>
       a                       <b>a4</b>.y      <b>a3</b>.y      <b>a2</b>.y      <b>a1</b>.y
       b                       <b>b4</b>.y      <b>b3</b>.y      <b>b2</b>.y      <b>b1</b>.y
       sum   <b>Adder4</b>.c_out  <b>Adder4.s</b>  <b>Adder3.s</b>  <b>Adder2.s</b>  <b>Adder1.s</b>
 </pre>
-The simulation stop time has to be 5s.
-
-</P>
+<p>The simulation stop time has to be 5s.</p>
 </HTML>
 "),         Icon(coordinateSystem(
                 preserveAspectRatio=true,
@@ -671,7 +669,7 @@ The simulation stop time has to be 5s.
             experiment(StopTime=100));
         end Counter;
 
-        model Delay_example "Vector delay"
+        model VectorDelay "Vector delay"
           extends Modelica.Icons.Example;
 
           Modelica.Electrical.Digital.Delay.InertialDelaySensitiveVector delay(
@@ -704,11 +702,11 @@ The simulation stop time has to be 5s.
             graphics),
         Documentation(info="<html>
 <p>This example is a simple test of the vector valued sensitive delay component. The delay times are chosen different from each other. To examine the rersults plot bothe the input vector x and the output vector y.</p>
-</html>"));
-        end Delay_example;
+</html>"),
+        experiment(StopTime=1.01));
+        end VectorDelay;
 
-        model DFFREG_example
-      "Pulse triggered D-Register-Bank, high active reset"
+        model DFFREG "Pulse triggered D-Register-Bank, high active reset"
           extends Modelica.Icons.Example;
 
           Modelica.Electrical.Digital.Sources.Table clock(x={3,4,3,4,3,4,3}, t={0,7,8,10,11,15,16})
@@ -746,14 +744,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DFFREG component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DFFREG component.</p>
 </html>"));
-        end DFFREG_example;
+        end DFFREG;
 
-        model DFFREGL_example
-      "Pulse triggered D-Register-Bank, low active reset"
+        model DFFREGL "Pulse triggered D-Register-Bank, low active reset"
           extends Modelica.Icons.Example;
 
           Modelica.Electrical.Digital.Sources.Table clock(x={3,4,3,4,3,4,3}, t={0,7,8,10,11,15,16})
@@ -795,13 +791,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DFFREGL component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DFFREGL component.</p>
 </html>"));
-        end DFFREGL_example;
+        end DFFREGL;
 
-        model DFFREGSRH_example
+        model DFFREGSRH
       "Pulse triggered D-Register-Bank, high active set and reset"
           extends Modelica.Icons.Example;
 
@@ -846,13 +841,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=15),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DFFREGSRH component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DFFREGSRH component.</p>
 </html>"));
-        end DFFREGSRH_example;
+        end DFFREGSRH;
 
-        model DFFREGSRL_example
+        model DFFREGSRL
       "Pulse triggered D-Register-Bank, low active set and reset"
           extends Modelica.Icons.Example;
 
@@ -896,14 +890,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=15),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DFFREGSRL component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DFFREGSRL component.</p>
 </html>"));
-        end DFFREGSRL_example;
+        end DFFREGSRL;
 
-        model DLATREG_example
-      "Level sensitive D-Register-Bank, high active reset"
+        model DLATREG "Level sensitive D-Register-Bank, high active reset"
           extends Modelica.Icons.Example;
 
           Modelica.Electrical.Digital.Sources.Table enable(x={3,4,3}, t={0,10,18})
@@ -942,14 +934,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DLATREG component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DLATREG component.</p>
 </html>"));
-        end DLATREG_example;
+        end DLATREG;
 
-        model DLATREGL_example
-      "Level sensitive D-Register-Bank, low active reset"
+        model DLATREGL "Level sensitive D-Register-Bank, low active reset"
           extends Modelica.Icons.Example;
 
           Modelica.Electrical.Digital.Sources.Table enable(x={3,4,3}, t={0,10,18})
@@ -987,13 +977,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DLATREGL component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DLATREGL component.</p>
 </html>"));
-        end DLATREGL_example;
+        end DLATREGL;
 
-        model DLATREGSRH_example
+        model DLATREGSRH
       "Level sensitive D-Register-Bank, high active set and reset"
           extends Modelica.Icons.Example;
 
@@ -1043,13 +1032,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DLATREGSRH component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DLATREGSRH component.</p>
 </html>"));
-        end DLATREGSRH_example;
+        end DLATREGSRH;
 
-        model DLATREGSRL_example
+        model DLATREGSRL
       "Level sensitive D-Register-Bank, low active set and reset"
           extends Modelica.Icons.Example;
 
@@ -1098,13 +1086,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
             graphics),
             experiment(StopTime=25),
-            experimentSetupOutput,
         Documentation(info="<html>
 <p>This example is a simple test of the Registers.DLATREGSRL component. The data width is set to two. After simulation plot both the dataIn and the dataOut vectors. To verify the results compare the the truth table which is documented in the DLATREGSRL component.</p>
 </html>"));
-        end DLATREGSRL_example;
+        end DLATREGSRL;
 
-        model NXFER_example "Functionality test of NXFERGATE"
+        model NXFER "Functionality test of NXFERGATE"
 
           Modelica.Electrical.Digital.Sources.Table e_table(
         y0=Modelica.Electrical.Digital.Interfaces.Logic.'U',
@@ -1140,13 +1127,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                 graphics),
             experiment(StopTime=12),
-            experimentSetupOutput,
             Documentation(info="<html>
 <p>This example is a simple test of the Tristates.NXFERGATE component.</p>
 </html>"));
-        end NXFER_example;
+        end NXFER;
 
-        model NRXFER_example "Functionality test of NRXFERGATE"
+        model NRXFER "Functionality test of NRXFERGATE"
 
           Modelica.Electrical.Digital.Sources.Table e_table(
         y0=Modelica.Electrical.Digital.Interfaces.Logic.'U',
@@ -1182,13 +1168,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                 graphics),
             experiment(StopTime=12),
-            experimentSetupOutput,
             Documentation(info="<html>
 <p>This example is a simple test of the Tristates.NRXFER component.  After simulation until 12 s plot x, enable, and y of the <code>nRXFERGATE </code>component. To verify the result compare to the truth table <code>NRXferTable</code>.</p>
 </html>"));
-        end NRXFER_example;
+        end NRXFER;
 
-        model BUF3S_example "Functionality test of BUF3S"
+        model BUF3S "Functionality test of BUF3S"
 
           Modelica.Electrical.Digital.Sources.Table e_table(
         y0=Modelica.Electrical.Digital.Interfaces.Logic.'U',
@@ -1226,13 +1211,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                 graphics),
             experiment(StopTime=12),
-            experimentSetupOutput,
             Documentation(info="<html>
 <p>This example is a simple test of the Tristates.BUF3S component.  After simulation until 12 s plot x, enable, and y of the bUF3S<code> </code>component. To verify the result compare to the truth table Buf3sTable.</p>
 </html>"));
-        end BUF3S_example;
+        end BUF3S;
 
-        model INV3S_example "Functionality test of INV3S"
+        model INV3S "Functionality test of INV3S"
 
           Modelica.Electrical.Digital.Sources.Table e_table(
         y0=Modelica.Electrical.Digital.Interfaces.Logic.'U',
@@ -1267,13 +1251,12 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                 graphics),
             experiment(StopTime=12),
-            experimentSetupOutput,
             Documentation(info="<html>
 <p>This example is a simple test of the Tristates.INV3S component. After simulation until 12 s plot x, enable, and y of the iNV3S<code> </code>component. To verify the result compare to the truth table <code>T.UX01Table</code>.</p>
 </html>"));
-        end INV3S_example;
+        end INV3S;
 
-        model WiredX_example "Functionality test of WiredX"
+        model WiredX "Functionality test of WiredX"
 
           Modelica.Electrical.Digital.Sources.Table e_table2(
         y0=Modelica.Electrical.Digital.Interfaces.Logic.'U',
@@ -1348,11 +1331,10 @@ The simulation stop time has to be 5s.
                   preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
                 graphics),
             experiment(StopTime=12),
-            experimentSetupOutput,
             Documentation(info="<html>
 <p>This example is a simple test of the Tristates.WiredX component. The input width is set to two. After simulation until 12 s plot x[1], x[2], and y of the WiredX component. To verify the result compare to the truth table  Tables.ResolutionTable.</p>
 </html>"));
-        end WiredX_example;
+        end WiredX;
 
       package Utilities "Utility components used by package Examples"
         extends Modelica.Icons.Package;
@@ -2048,10 +2030,10 @@ The simulation stop time has to be 5s.
 <p>Its logic behavior is like this:</p>
 <p><b>HalfAdder behavior</b></p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td valign=\"top\"><p><h4>input a</h4></p></td>
-<td valign=\"top\"><p><h4>input b</h4></p></td>
-<td valign=\"top\"><p><h4>sum s</h4></p></td>
-<td valign=\"top\"><p><h4>carry c</h4></p></td>
+<td valign=\"top\"><h4>input a</h4></td>
+<td valign=\"top\"><h4>input b</h4></td>
+<td valign=\"top\"><h4>sum s</h4></td>
+<td valign=\"top\"><h4>carry c</h4></td>
 </tr>
 <tr>
 <td valign=\"top\"><p>0</p></td>
@@ -2146,11 +2128,11 @@ The simulation stop time has to be 5s.
 <p>Its logic behavior is like this:</p>
 <p><b>FullAdder behavior</b></p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td valign=\"top\"><p><h4>input a</h4></p></td>
-<td valign=\"top\"><p><h4>input b</h4></p></td>
-<td valign=\"top\"><p><h4>input carry c_in</h4></p></td>
-<td valign=\"top\"><p><h4>sum s</h4></p></td>
-<td valign=\"top\"><p><h4>output carry c_out</h4></p></td>
+<td valign=\"top\"><h4>input a</h4></td>
+<td valign=\"top\"><h4>input b</h4></td>
+<td valign=\"top\"><h4>input carry c_in</h4></td>
+<td valign=\"top\"><h4>sum s</h4></td>
+<td valign=\"top\"><h4>output carry c_out</h4></td>
 </tr>
 <tr>
 <td valign=\"top\"><p>0</p></td>
@@ -2311,7 +2293,7 @@ The simulation stop time has to be 5s.
           connect(Adder[n].c_out,c_out);
           annotation (
             Documentation(info="<html>
-<p>The Adder is a generic n bit adder which is composed as a chain of FullAdder components. n can be chosen by the user, a and b are the n bit input vectors, s is the sum vector, and c_out is the carry bit of the &QUOT;highes&QUOT; FullAdder.   All components are built up by Gate components.</p>
+<p>The Adder is a generic n bit adder which is composed as a chain of FullAdder components. n can be chosen by the user, a and b are the n bit input vectors, s is the sum vector, and c_out is the carry bit of the &quot;highes&quot; FullAdder.   All components are built up by Gate components.</p>
 </html>"),  Icon(coordinateSystem(
                   preserveAspectRatio=true,
                   extent={{-100,-100},{100,100}},
@@ -3312,17 +3294,13 @@ is used, if it is zero, the input is not delayed.
             Documentation(info="<html>
 
 <p>
-<pre>
 The delay element <b>Inertial Delay Sensitive</b> is applied to a vector of n signals.
 The parameters <i>tLH</i> and <i>tHL</i> are valid for each of the n signals.
-</pre>
 </p>
 </html>",     revisions="<html>
 <ul>
-<pre>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</pre>
 </ul>
 </html>"));
         end InertialDelaySensitiveVector;
@@ -4593,19 +4571,19 @@ The number of periods is unlimited. The first pulse starts at startTime.
 <P>
 Conversion of a nine valued digital input into a X01 digital output without
 any delay according to IEEE 1164 To_X01 function.
-</P>
+</p>
 <p><b>Conversion Table:</b></p>
 <pre>
-                          input                  output
-                          'U' (coded by 1)       'X'  (coded by 2)
-                          'X' (coded by 2)       'X'  (coded by 2)
-                          '0' (coded by 3)       '0'  (coded by 3)
-                          '1' (coded by 4)       '1'  (coded by 4)
-                          'Z' (coded by 5)       'X'  (coded by 2)
-                          'W' (coded by 6)       'X'  (coded by 2)
-                          'L' (coded by 7)       '0'  (coded by 3)
-                          'H' (coded by 8)       '1'  (coded by 4)
-                          '-' (coded by 9)       'X'  (coded by 2)
+  input                  output
+  'U' (coded by 1)       'X'  (coded by 2)
+  'X' (coded by 2)       'X'  (coded by 2)
+  '0' (coded by 3)       '0'  (coded by 3)
+  '1' (coded by 4)       '1'  (coded by 4)
+  'Z' (coded by 5)       'X'  (coded by 2)
+  'W' (coded by 6)       'X'  (coded by 2)
+  'L' (coded by 7)       '0'  (coded by 3)
+  'H' (coded by 8)       '1'  (coded by 4)
+  '-' (coded by 9)       'X'  (coded by 2)
 </pre>
 <P>
 If the signal width is greater than 1 this conversion is done for each signal.
@@ -4674,16 +4652,16 @@ any delay according to IEEE 1164 To_X01Z function.
 </P>
 <p><b>Conversion Table:</b></p>
 <pre>
-                          input                  output
-                          'U' (coded by 1)       'X'  (coded by 2)
-                          'X' (coded by 2)       'X'  (coded by 2)
-                          '0' (coded by 3)       '0'  (coded by 3)
-                          '1' (coded by 4)       '1'  (coded by 4)
-                          'Z' (coded by 5)       'Z'  (coded by 5)
-                          'W' (coded by 6)       'X'  (coded by 2)
-                          'L' (coded by 7)       '0'  (coded by 3)
-                          'H' (coded by 8)       '1'  (coded by 4)
-                          '-' (coded by 9)       'X'  (coded by 2)
+ input                  output
+ 'U' (coded by 1)       'X'  (coded by 2)
+ 'X' (coded by 2)       'X'  (coded by 2)
+ '0' (coded by 3)       '0'  (coded by 3)
+ '1' (coded by 4)       '1'  (coded by 4)
+ 'Z' (coded by 5)       'Z'  (coded by 5)
+ 'W' (coded by 6)       'X'  (coded by 2)
+ 'L' (coded by 7)       '0'  (coded by 3)
+ 'H' (coded by 8)       '1'  (coded by 4)
+ '-' (coded by 9)       'X'  (coded by 2)
 </pre>
 <P>
 If the signal width is greater than 1 this conversion is done for each signal.
@@ -4751,16 +4729,16 @@ any delay according to IEEE 1164 To_UX01 function.
 </P>
 <p><b>Conversion Table:</b></p>
 <pre>
-                          input                  output
-                          'U' (coded by 1)       'U'  (coded by 1)
-                          'X' (coded by 2)       'X'  (coded by 2)
-                          '0' (coded by 3)       '0'  (coded by 3)
-                          '1' (coded by 4)       '1'  (coded by 4)
-                          'Z' (coded by 5)       'X'  (coded by 2)
-                          'W' (coded by 6)       'X'  (coded by 2)
-                          'L' (coded by 7)       '0'  (coded by 3)
-                          'H' (coded by 8)       '1'  (coded by 4)
-                          '-' (coded by 9)       'X'  (coded by 2)
+ input                  output
+ 'U' (coded by 1)       'U'  (coded by 1)
+ 'X' (coded by 2)       'X'  (coded by 2)
+ '0' (coded by 3)       '0'  (coded by 3)
+ '1' (coded by 4)       '1'  (coded by 4)
+ 'Z' (coded by 5)       'X'  (coded by 2)
+ 'W' (coded by 6)       'X'  (coded by 2)
+ 'L' (coded by 7)       '0'  (coded by 3)
+ 'H' (coded by 8)       '1'  (coded by 4)
+ '-' (coded by 9)       'X'  (coded by 2)
 </pre>
 <P>
 If the signal width is greater than 1 this conversion is done for each signal.
@@ -4825,9 +4803,9 @@ If the signal width is greater than 1 this conversion is done for each signal.
 Conversion of a Boolean input into a digital output without any delay according to:
 </P>
 <pre>
-                          input      output
-                          true       '1'  (coded by 4)
-                          false      '0'  (coded by 3)
+ input      output
+ true       '1'  (coded by 4)
+ false      '0'  (coded by 3)
 </pre>
 <P>
 If the signal width is greater than 1 this conversion is done for each signal.
@@ -4888,16 +4866,16 @@ If the signal width is greater than 1 this conversion is done for each signal.
 Conversion of a digital input into a Boolean output without any delay according to:
 </P>
 <pre>
-                          input                 output
-                          'U'  (coded by 1)     false
-                          'X'  (coded by 2)     false
-                          '0'  (coded by 3)     false
-                          '1'  (coded by 4)     true
-                          'Z'  (coded by 5)     false
-                          'W'  (coded by 6)     false
-                          'L'  (coded by 7)     false
-                          'H'  (coded by 8)     true
-                          '-'  (coded by 9)     false
+ input                 output
+ 'U'  (coded by 1)     false
+ 'X'  (coded by 2)     false
+ '0'  (coded by 3)     false
+ '1'  (coded by 4)     true
+ 'Z'  (coded by 5)     false
+ 'W'  (coded by 6)     false
+ 'L'  (coded by 7)     false
+ 'H'  (coded by 8)     true
+ '-'  (coded by 9)     false
 </pre>
 <P>
 If the signal width is greater than 1 this conversion is done for each signal.
@@ -5040,16 +5018,16 @@ If the signal width is greater than 1 this conversion is done for each signal.
 Conversion of a digital input into a Real output without any delay according to:
 </P>
 <pre>
-                          input                 output
-                          'U'  (coded by 1)     val_U
-                          'X'  (coded by 2)     val_X
-                          '0'  (coded by 3)     val_0
-                          '1'  (coded by 4)     val_1
-                          'Z'  (coded by 5)     val_Z
-                          'W'  (coded by 6)     val_W
-                          'L'  (coded by 7)     val_L
-                          'H'  (coded by 8)     val_H
-                          '-'  (coded by 9)     val_m
+  input                 output
+  'U'  (coded by 1)     val_U
+  'X'  (coded by 2)     val_X
+  '0'  (coded by 3)     val_0
+  '1'  (coded by 4)     val_1
+  'Z'  (coded by 5)     val_Z
+  'W'  (coded by 6)     val_W
+  'L'  (coded by 7)     val_L
+  'H'  (coded by 8)     val_H
+  '-'  (coded by 9)     val_m
 </pre>
 <P>
 The values val... are given by parameters.</P>
@@ -5267,7 +5245,6 @@ The values val... are given by parameters.</P>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">*</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> <td valign=\"top\">4</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   U  = L.'U'
@@ -5281,14 +5258,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",         revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"));
         end DFFR;
@@ -5409,7 +5382,7 @@ Clock transition definitions:
               lineColor={127,33,107},
               textString="high active")}),
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -5427,7 +5400,6 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">*</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   U  = L.'U'
@@ -5441,14 +5413,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",         revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"));
         end DFFREG;
@@ -5461,7 +5429,7 @@ Clock transition definitions:
               // 3: output := -dataInUX
               // 4: output := U-0X;
           annotation (Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -5479,7 +5447,6 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">*</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   U  = L.'U'
@@ -5493,14 +5460,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",         revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),         Icon(graphics={Rectangle(
               extent={{-30,30},{28,16}},
@@ -5693,7 +5656,7 @@ Clock transition definitions:
               lineColor={127,33,107},
               textString="set")}),
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table for high active set and reset</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -5741,10 +5704,8 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">X-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">X or U or NC</td> <td valign=\"top\">8</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">1-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">DataIn</td> <td valign=\"top\">8</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">0-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">NC</td> <td valign=\"top\">8</td> </tr>
-
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -5759,14 +5720,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",         revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"));
         end DFFSR;
@@ -5903,7 +5860,7 @@ Clock transition definitions:
               lineColor={127,0,127},
               textString="high active")}),
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -5925,10 +5882,8 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">X-Trns</td> <td valign=\"top\">0</td>  <td valign=\"top\">0</td> <td valign=\"top\">X or U or NC</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">1-Trns</td> <td valign=\"top\">0</td>  <td valign=\"top\">0</td> <td valign=\"top\">DataIn</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">0-Trns</td> <td valign=\"top\">0</td>  <td valign=\"top\">0</td> <td valign=\"top\">NC</td> </tr>
-
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -5943,14 +5898,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",     revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"));
         end DFFREGSRH;
@@ -5970,7 +5921,7 @@ Clock transition definitions:
               extent={{-30,38},{24,12}},
               lineColor={127,0,127},
               textString="low active")}),     Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 
 <p><b>Truth Table</b></p>
 
@@ -5993,10 +5944,8 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">X-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">X or U or NC</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">1-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">DataIn</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">0-Trns</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">NC</td> </tr>
-
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6011,14 +5960,10 @@ Clock transition definitions:
   0-Trns: ~ -> 0 or 1 -> * or X -> X|U or U -> X|U
   X-Trns: 0 -> X|U or X|U -> 1
 </PRE>
-</p>
-<br>
 </html>",     revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"));
         end DFFREGSRL;
@@ -6157,7 +6102,6 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">~U</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> <td valign=\"top\">4</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6167,15 +6111,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),            Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}),          graphics), Icon(coordinateSystem(
@@ -6293,7 +6232,7 @@ Clock transition definitions:
               smooth=Smooth.None));
            annotation (
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -6312,7 +6251,6 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">~U</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6322,15 +6260,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),            Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                     -100},{100,100}}),      graphics), Icon(coordinateSystem(
@@ -6393,7 +6326,7 @@ Clock transition definitions:
 
            annotation (
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -6412,7 +6345,6 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">~U</td> <td valign=\"top\">X</td> <td valign=\"top\">X or U or 0 or NC</td> </tr>
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6422,15 +6354,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),            Icon(graphics={Rectangle(
               extent={{-28,30},{30,18}},
@@ -6578,7 +6505,7 @@ Clock transition definitions:
           dataOut := nextstate;
            annotation (
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table for high active set and reset</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -6631,7 +6558,6 @@ Clock transition definitions:
 
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6641,15 +6567,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),            Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                     -100},{100,100}}),      graphics), Icon(coordinateSystem(
@@ -6787,7 +6708,7 @@ Clock transition definitions:
               smooth=Smooth.None));
            annotation (
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table:</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -6813,7 +6734,6 @@ Clock transition definitions:
 
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6823,15 +6743,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -100},{100,100}}),     graphics),
@@ -6903,7 +6818,7 @@ Clock transition definitions:
                    // Function selection by [reset, set] reading;
            annotation (
             Documentation(info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 
 <table border=1 cellspacing=0 cellpadding=2>
@@ -6926,10 +6841,8 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">X</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">X or U or NC</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">1</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">DataIn</td> </tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">0</td> <td valign=\"top\">1</td>  <td valign=\"top\">1</td> <td valign=\"top\">NC</td> </tr>
-
 </table>
 
-<p>
 <PRE>
   *  = don't care
   ~  = not equal
@@ -6939,15 +6852,10 @@ Clock transition definitions:
   X  = L.'X' or L.'W' or L.'Z' or L.'-'
   NC = no change
 </PRE>
-</p>
-<br>
-</HTML>
-",         revisions="<html>
+</HTML>", revisions="<html>
 <ul>
-<PRE>
 <li><i>September 11, 2009 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),            Icon(graphics={Rectangle(
               extent={{-40,30},{40,16}},
@@ -7032,13 +6940,11 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 15, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7056,12 +6962,10 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">DataIn</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
 </PRE>
-</p>
-
 </html>"));
     end NXFERGATE;
 
@@ -7126,13 +7030,11 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 15, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7150,12 +7052,11 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">DataIn, Strength Reduced</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UW</td></tr>
 </table>
-<p>
+
 <PRE>
   UW: if dataIn == U then U else W
   Strength Reduced: 0 -> L, 1 -> H, X -> W
 </PRE>
-</p>
 </html>"));
     end NRXFERGATE;
 
@@ -7219,13 +7120,11 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 15, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7243,7 +7142,7 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">Z</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
 </PRE>
@@ -7311,13 +7210,11 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 15, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7336,10 +7233,8 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UW</td></tr>
 </table>
 <p>
-<PRE>
   UW: if dataIn == U then U else W
   Strength Reduced: 0 -> L, 1 -> H, X -> W
-</PRE>
 </p>
 </html>"));
     end PRXFERGATE;
@@ -7400,14 +7295,12 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 22, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
-<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
+<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7425,13 +7318,11 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">DataIn</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
   DataOut*: Strength map for DataOut according to tristate table Buf3sTable
 </PRE>
-</p>
-
 </html>"));
     end BUF3S;
 
@@ -7491,14 +7382,12 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 22, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
-<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
+<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7516,13 +7405,11 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">Z</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
   DataOut*: Strength map for DataOut according to tristate table Buf3slTable
 </PRE>
-</p>
-
 </html>"));
     end BUF3SL;
 
@@ -7587,14 +7474,12 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 22, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
-<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
+<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7612,13 +7497,11 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">Not DataIn</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
   DataOut*: Strength map for DataOut according to tristate table Buf3sTable
 </PRE>
-</p>
-
 </html>"));
     end INV3S;
 
@@ -7683,14 +7566,12 @@ Clock transition definitions:
               extent={{-100,-100},{100,100}}), graphics),
         Documentation(revisions="<html>
 <ul>
-<PRE>
 <li><i>January 22, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>", info="<html>
-<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd<p>
-<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd<p>
+<p>Description in VHDL is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_entities.vhd</p>
+<p>and for tristate table http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd</p>
 <p><b>Truth Table</b></p>
 <table border=1 cellspacing=0 cellpadding=2>
   <tr><td valign=\"top\"><b>DataIn</b></td>
@@ -7708,13 +7589,11 @@ Clock transition definitions:
   <tr><td valign=\"top\">*</td> <td valign=\"top\">H</td> <td valign=\"top\">Z</td></tr>
   <tr><td valign=\"top\">*</td> <td valign=\"top\">-</td> <td valign=\"top\">UX</td></tr>
 </table>
-<p>
+
 <PRE>
   UX: if dataIn == U then U else X
   DataOut*: Strength map for DataOut according to tristate table Buf3slTable
 </PRE>
-</p>
-
 </html>"));
     end INV3SL;
 
@@ -7733,15 +7612,12 @@ Clock transition definitions:
 <P>
 Wires n input signals in one output signal, without delay.
 </P>
-<p>Resolution table is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd<p>
-</HTML>
-",   revisions=
-             "<html>
+<p>Resolution table is given by http://www.cs.sfu.ca/~ggbaker/reference/std_logic/src/std_logic_misc.vhd</p>
+</HTML>", revisions=
+          "<html>
 <ul>
-<PRE>
 <li><i>January 22, 2010 </i> created by Ulrich Donath<br>
        </li>
-</PRE>
 </ul>
 </html>"),
         Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{

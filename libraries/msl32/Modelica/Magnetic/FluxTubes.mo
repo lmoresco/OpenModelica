@@ -15,7 +15,7 @@ package UsersGuide "User's Guide"
     extends Modelica.Icons.Information;
 
     annotation (Documentation(info="<html>
-<h3><font color=\"#008000\" size=5>Overview of the Conept of Magnetic Flux Tubes</font></h3>
+<h4>Overview of the Concept of Magnetic Flux Tubes</h4>
 <p>
 Following below, the concept of magnetic flux tubes is outlined in short. For a detailed description of flux tube elements, please have a look at the listed literature. Magnetic flux tubes enable for modeling of magnetic fields with lumped networks. The figure below and the following equations illustrate the transition from the original magnetic field quantities described by <i>Maxwell</i>'s equations to network elements with a flow variable and an across variable:
 </p>
@@ -60,7 +60,7 @@ Network elements for sources of a magnetic potential difference or magnetomotive
     extends Modelica.Icons.Information;
 
     annotation (Documentation(info="<html>
-<h3><font color=\"#008000\" size=5>Calculation of reluctance forces from lumped magnetic network models</font></h3>
+<h4>Calculation of reluctance forces from lumped magnetic network models</h4>
 
 <p>
 Generally, the thrust <i>F</i> developed by a translatory electro-magneto-mechanical actuator (similar for the rotational case with torque and angular position) is equal to the change of magnetic co-energy <i>W<sub>m</sub><sup>*</sup></i> with armature position <i>x</i> according to
@@ -95,10 +95,9 @@ The sub-package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Shapes.Leakage\
     extends Modelica.Icons.References;
 
     annotation (Documentation(info="<html>
-<h3><font color=\"#008000\" size=5>Literature</font></h3>
+<h4>Literature</h4>
 <ul>
-<li>
-Usage of the Modelica Magnetic library is described in:
+<li> Usage of the Modelica Magnetic library is described in:
 <dl>
 <dt>[B&ouml;08] B&ouml;drich, T.:</dt>
 <dd> <b>Electromagnetic Actuator Modelling with the Extended Modelica Magnetic Library</b>.
@@ -109,8 +108,7 @@ Usage of the Modelica Magnetic library is described in:
      </dd>
 </dl>
 </li>
-<li>
-The method of magnetic flux tubes as well as derivation of the permeance of many flux tube shapes is explained in detail in:
+<li> The method of magnetic flux tubes as well as derivation of the permeance of many flux tube shapes is explained in detail in:
 <dl>
 <dt>[Ro41] Roters, H.:</dt>
 <dd> <b>Electromagnetic Devices</b>.
@@ -124,13 +122,12 @@ New York: John Wiley &amp; Sons 1941 (8th Printing 1961)
 <dd><b>Elektromagnete: Grundlagen, Berechnung, Entwurf und Anwendung</b>.
 3rd ed., Wiesbaden: Vieweg Teubner 2008 (in German)
 <br>&nbsp;</dd>
-<dt>[Ro00] Roschke, T.:</dt
+<dt>[Ro00] Roschke, T.:</dt>
 <dd><b>Entwurf geregelter elektromagnetischer Antriebe f&uuml;r Luftsch&uuml;tze</b>.
     Fortschritt-Berichte VDI, Reihe 21, Nr. 293, D&uuml;sseldorf: VDI-Verlag 2000 (in German)</dd>
 </dl>
 </li>
-<li>
-Application of the method of magnetic flux tubes to the design of rotational electrical machines is explained for example in:
+<li> Application of the method of magnetic flux tubes to the design of rotational electrical machines is explained for example in:
 <dl>
 <dt>[HM94] Hendershot, J.R. Jr.; Miller, T.J.E.:</dt>
 <dd> <b>Design of Brushless Permanent-Magnet Motors</b>.
@@ -149,12 +146,10 @@ Magna Physics Publishing and Oxford University Press 1994
     extends Modelica.Icons.Contact;
 
     annotation (Documentation(info="<html>
-<h3><font color=\"#008000\" size=5>Contact</font></h3>
+<h4>Contact</h4>
 
 <dl>
-<dt>
-<b>Main Author:</b></dt>
-<br>
+<dt><b>Main Author:</b></dt>
 <dd>
     <a href=\"http://www.ifte.de/mitarbeiter/boedrich.html\">Thomas B&ouml;drich</a><br>
     Dresden University of Technology<br>
@@ -164,20 +159,14 @@ Magna Physics Publishing and Oxford University Press 1994
     Fax: +49 - 351 - 463 37183<br>
     email: <A HREF=\"mailto:Thomas.Boedrich@mailbox.tu-dresden.de\">Thomas.Boedrich@mailbox.tu-dresden.de</A><br></dd>
 </dl>
-<br>
+
 <p><b>Acknowledgements:</b></p>
 <ul>
-
-<li>
-The magnetisation characteristics of the included soft magnetic materials were compiled and measured respectively by Thomas Roschke, now with Johnson Electric. Provision of this data is highly appreciated. He also formulated the approximation function used for description of the magnetisation characteristics of these materials.
+<li> The magnetisation characteristics of the included soft magnetic materials were compiled and measured respectively by Thomas Roschke, now with Johnson Electric. Provision of this data is highly appreciated. He also formulated the approximation function used for description of the magnetisation characteristics of these materials.
 </li>
-
-<li>
-Andr&eacute; Klick of then Dresden University of Technology, Dresden, Germany gave valuable support on the implementation of this library. His contribution is highly appreciated, too.
+<li> Andr&eacute; Klick of then Dresden University of Technology, Dresden, Germany gave valuable support on the implementation of this library. His contribution is highly appreciated, too.
 </li>
-
 </ul>
-
 </html>
 "));
   end Contact;
@@ -190,7 +179,7 @@ This library contains components for modelling of electromagnetic devices with l
 This user's guide gives a short introduction to the underlying concept of <b>magnetic flux tubes</b>, summarizes the calculation of magnetic <b>reluctance forces</b> from lumped magnetic network models and lists <b>reference literature</b>.
 </p>
 <p>
-<a href=\"modelica://Modelica.Magnetic.FluxTubes.Examples\">Examples</a> illustrates the usage of magnetic network models with simple models from different fields of application.
+<a href=\"modelica://Modelica.Magnetic.FluxTubes.Examples\">Examples</a> illustrates the usage of magnetic network models with simple models from different fields of application.</p>
 </html>"));
 end UsersGuide;
 
@@ -299,7 +288,7 @@ The magnetisation characteristics of the flux tube element representing the ferr
 <h4>Note</h4>
 
 <p>
-If the supply voltage has a zero-crossing when applied to the inductor at time t=0 (i.e., source.phase set to zero instead of pi/2), then the inrush current that is typical for switching of inductive loads can be observed.
+If the supply voltage has a zero-crossing when applied to the inductor at time t=0 (i.e., source.phase set to zero instead of &pi;/2), then the inrush current that is typical for switching of inductive loads can be observed.
 </p>
 </html>"),Icon(coordinateSystem(
           preserveAspectRatio=false,
@@ -1539,7 +1528,6 @@ Plot window for position:
 <p>
 The characteristic current drop during pull-in is due to both armature motion and increasing inductance with decreasing air gap length. Bouncing occurs when  armature and load of each model arrive at the stopper at minimum position. Although the pull-in times of the two magnetic network models are relatively close to the time obtained with the reference model, the accuracy of the advanced solenoid model is better, as one can tell from a comparison of the current rise at the beginning of the stroke.
 </p>
-
 </html>"));
       end ComparisonPullInStroke;
 
@@ -2510,14 +2498,14 @@ In translatory actuators with limited stroke, the armature with its inertia can 
         extends Modelica.Icons.Record;
 
         parameter SI.Resistivity rho_20 = 0.0178e-6
-          "Resistivity of conductor material at 20ï¿½C (default: Copper)";
+          "Resistivity of conductor material at 20 degC (default: Copper)";
         parameter Modelica.SIunits.LinearTemperatureCoefficient alpha_20=
                                                                       0.0039
-          "Temperature coefficient of conductor material's resistivity at 20degC (default: Copper)";
+          "Temperature coefficient of conductor material's resistivity at 20 degC (default: Copper)";
         parameter SI.Temperature T_op = 293.15
           "Operating temperature of winding";
 
-        final parameter SI.Resistivity rho = rho_20 * (1 + alpha_20 *(T_op - 20+273.15))
+        final parameter SI.Resistivity rho = rho_20 * (1 + alpha_20 *(T_op - (20 - Modelica.Constants.T_zero)))
           "Resistivity at operating temperature";
 
         parameter SI.Length h_w "Height of winding cross-section";
@@ -3122,7 +3110,7 @@ Please have a look at <a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuid
 Due to the restrictions on reluctance force calculation outlined there, flux tube elements with a possibly non-linear material characteristic mu_r(B) must have a fixed shape during simulation of converter motion. Hence, the dimensions of these flux tubes are defined as parameters in the model components that extend the base class <a href=\"modelica://Modelica.Magnetic.FluxTubes.Interfaces.PartialFixedShape\">Interfaces.PartialFixedShape</a>.</p>
 
 <p>
-For initial design of magnetic circuits, the relative permeability of possibly non-linear flux tube elements can easily be set to a constant value mu_rConst (non-linearPermeability set to false). In some cases, this can simplify the rough geometric design of a device's magnetic circuit. Once an initial geometry is found, the magnetic subsystem can be simulated and fine-tuned with more realistic non-linear characteristics of ferromagnetic materials. Doing so requires setting of the parameter non-linearPermeability to true and selection of one of the soft magnetic materials of <a href=\"Material.SoftMagnetic\">Material.SoftMagnetic</a>.
+For initial design of magnetic circuits, the relative permeability of possibly non-linear flux tube elements can easily be set to a constant value mu_rConst (non-linearPermeability set to false). In some cases, this can simplify the rough geometric design of a device's magnetic circuit. Once an initial geometry is found, the magnetic subsystem can be simulated and fine-tuned with more realistic non-linear characteristics of ferromagnetic materials. Doing so requires setting of the parameter non-linearPermeability to true and selection of one of the soft magnetic materials of <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">Material.SoftMagnetic</a>.
 </p>
 </html>"));
     end FixedShape;
@@ -3312,17 +3300,19 @@ Note that in <a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuide.Literat
 <p>
 Please have a look at <a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuide.ReluctanceForceCalculation\">UsersGuide.ReluctanceForceCalculation</a> for an explanation of the different flux tube categories and resulting sub-packages.
 </p>
+<p>
 Flux tube elements with generation of a reluctance force are intended for modelling of position-dependent air gap sections and permanent magnet sections respectively of translatory actuators. By default, the position co-ordinate of the mechanical connector flange.s is identical with the dimension l of the package's flux tube elements. l is the dimension changes with armature motion. If needed, the identity l=flange.s can be replaced by an actuator-specific equation, for example, when a flux tube length increases with decreasing armature position. The position co-ordinate of an element's translatory connector flange.s in turn will be identical with the armature position x in most cases, as the examples illustrate.</p>
 <p>
-The derivative of each element's permeance with respect to armature position dGmBydx is calculated from the derivative of the flux tube's permeance with respect to its varying dimension dGmBydl and the derivative of this dimension with respect to armature position dlBydx:</p>
+The derivative of each element's permeance with respect to armature position <code>dGmBydx</code> is calculated from the derivative of the flux tube's permeance with respect to its varying dimension dGmBydl and the derivative of this dimension with respect to armature position <code>dlBydx</code>:</p>
+
 <pre>
     dG_m   dG_m   dl
     ---- = ---- * --
      dx     dl    dx
 </pre>
-</p>
+
 <p>
-The parameter dlBydx must be set in each flux tube element to +1 or -1 according to the definition of the armature co-ordinate and the position of the element in a device's magnetic circuit. Proper match between armature motion and resulting variation of the flux tube length assures that the element's reluctance force acts in the right direction.
+The parameter <code>dlBydx</code> must be set in each flux tube element to +1 or -1 according to the definition of the armature co-ordinate and the position of the element in a device's magnetic circuit. Proper match between armature motion and resulting variation of the flux tube length assures that the element's reluctance force acts in the right direction.
 </p>
 <p>
 The shapes of the flux tubes defined in this package are rather simple. Only one dimenion varies with armature motion. Flux tubes with more complex variations of dimensions with armature motion can be defined by extending the base class <a href=\"modelica://Modelica.Magnetic.FluxTubes.Interfaces.PartialForce\">Interfaces.PartialForce</a>, if needed. Determination of the analytic derivative dGmBydl could become more complex for those flux tubes.
@@ -3590,7 +3580,7 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.036,
             c_a=43414,
             c_b=35.8,
-            n=14)
+            n=14);
           annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
@@ -3604,7 +3594,7 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.1,
             c_a=6450,
             c_b=3.65,
-            n=7.7)
+            n=7.7);
                   annotation (
             Documentation(info="<html>
 <p>
@@ -3619,7 +3609,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.05,
             c_a=27790,
             c_b=16,
-            n=10.4) annotation (
+            n=10.4);
+                     annotation (
             Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
@@ -3633,7 +3624,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.1,
             c_a=970,
             c_b=1.2,
-            n=8.3) annotation (Documentation(info="<html>
+            n=8.3);
+                    annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3646,7 +3638,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.17,
             c_a=8100,
             c_b=2.59,
-            n=10) annotation (Documentation(info="<html>
+            n=10);
+                   annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3659,7 +3652,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=0.94,
             c_a=5900,
             c_b=4.19,
-            n=6.4) annotation (Documentation(info="<html>
+            n=6.4);
+                    annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3681,7 +3675,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=0.7,
             c_a=24000,
             c_b=9.38,
-            n=9.6) annotation (Documentation(info="<html>
+            n=9.6);
+                    annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3697,7 +3692,8 @@ Sample: complete core after machining and packet assembling<br>
             B_myMax=1.16,
             c_a=24630,
             c_b=2.44,
-            n=14) annotation (Documentation(info="<html>
+            n=14);
+                   annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3714,7 +3710,8 @@ Measurement: Epstein frame
             B_myMax=1.25,
             c_a=12400,
             c_b=1.6,
-            n=13.5) annotation (Documentation(
+            n=13.5);
+                     annotation (Documentation(
               info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
@@ -3732,7 +3729,8 @@ Measurement: Epstein frame
             B_myMax=1.2,
             c_a=20750,
             c_b=3.55,
-            n=13.15) annotation (Documentation(
+            n=13.15);
+                      annotation (Documentation(
               info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
@@ -3750,7 +3748,8 @@ Measurement: Epstein frame
             B_myMax=1.26,
             c_a=17760,
             c_b=3.13,
-            n=13.9) annotation (Documentation(info="<html>
+            n=13.9);
+                     annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3777,7 +3776,8 @@ Please refer to the description of  the enclosing package <a href=\"modelica://M
             B_myMax=1.27,
             c_a=44410,
             c_b=6.4,
-            n=10) annotation (Documentation(info="<html>
+            n=10);
+                   annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3793,16 +3793,16 @@ Source of B(H) characteristics: Product catalogue <i>Magnequench</i>, 2000
             B_myMax=1.15,
             c_a=187000,
             c_b=4.24,
-            n=19) annotation (Documentation(info="<html>
+            n=19);
+                   annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
-<p>
-Source of B(H) characteristics:
-<dd>
-<p><i>Boll, R.</i>: Weichmagnetische Werkstoffe: Einf&uuml;hrung in den Magnetismus, VAC-Werkstoffe und ihre Anwendungen. 4th ed. Berlin, M&uuml;nchen: Siemens Aktiengesellschaft 1990</p>
-</dd>
-</p>
+<dl>
+<dt>Source of B(H) characteristics:</dt>
+    <dd><p><i>Boll, R.</i>: Weichmagnetische Werkstoffe: Einf&uuml;hrung in den Magnetismus, VAC-Werkstoffe und ihre Anwendungen. 4th ed. Berlin, M&uuml;nchen: Siemens Aktiengesellschaft 1990</p>
+    </dd>
+</dl>
 </html>"));
         end VacoferS2;
       end PureIron;
@@ -3816,7 +3816,8 @@ Source of B(H) characteristics:
             B_myMax=1.75,
             c_a=11790,
             c_b=2.63,
-            n=15.02) annotation (Documentation(info="<html>
+            n=15.02);
+                      annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3836,7 +3837,8 @@ Source of B(H) characteristics: VACUUMSCHMELZE GmbH &amp; Co. KG, Germany
             B_myMax=0.46,
             c_a=1037500,
             c_b=3.67,
-            n=10) annotation (Documentation(info="<html>
+            n=10);
+                   annotation (Documentation(info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
 </p>
@@ -3855,7 +3857,8 @@ Source of B(H) characteristics:
             B_myMax=0.67,
             c_a=50000,
             c_b=2.39,
-            n=9.3) annotation (Documentation(
+            n=9.3);
+                    annotation (Documentation(
               info="<html>
 <p>
 Please refer to the description of  the enclosing package <a href=\"modelica://Modelica.Magnetic.FluxTubes.Material.SoftMagnetic\">SoftMagnetic</a> for a description of all soft magnetic material characteristics of this package.
@@ -3900,14 +3903,12 @@ Source of B(H) characteristics:
         annotation (Documentation(info="<html>
 <p>
 The relative permeability mu_r as a function of flux density B for all soft magnetic materials currently included in this library is approximated with the following function <a href=\"modelica://Modelica.Magnetic.FluxTubes.UsersGuide.Literature\">[Ro00]</a>:
-<br>
-<dl>
-<dd>
-<IMG src=\"modelica://Modelica/Resources/Images/Magnetic/FluxTubes/Material/SoftMagnetic/eq_mu_rApprox.png\" ALT=\"Equation for approximation mu_r(B)\">
-</dd>
-</dl>
-<br>
-Two of the five parameters of this equation have a physical meaning, namely the initial relative permeability mu_i at B=0 and the magnetic flux density at maximum permeability B_myMax. B_N is the flux density normalized to latter parameter.
+</p>
+
+<IMG src=\"modelica://Modelica/Resources/Images/Magnetic/FluxTubes/Material/SoftMagnetic/eq_mu_rApprox.png\" ALT=\"Equation for approximation mu_r(B)\"/>
+
+<p>
+Two of the five parameters of this equation have a physical meaning, namely the initial relative permeability mu_i at B=0 and the magnetic flux density at maximum permeability B_myMax. B_N is the flux density normalized to latter parameter.</p>
 </html>"));
       end mu_rApprox;
       annotation (Documentation(info="<html>

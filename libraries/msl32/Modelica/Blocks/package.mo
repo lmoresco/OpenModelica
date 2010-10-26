@@ -2,7 +2,9 @@ within Modelica;
 package Blocks "Library of basic input/output control blocks (continuous, discrete, logical, table blocks)"
 import SI = Modelica.SIunits;
 
+
 extends Modelica.Icons.Package;
+
 
 package Examples
   "Library of examples to demonstrate the usage of package Blocks"
@@ -240,7 +242,6 @@ equation
       smooth=Smooth.None));
   annotation (Diagram(graphics),
       experiment(StopTime=0.9),
-      experimentSetupOutput,
     Icon(graphics={Text(
             extent={{-82,54},{86,22}},
             lineColor={0,0,0},
@@ -305,7 +306,6 @@ equation
         smooth=Smooth.None));
   annotation (Diagram(graphics),
       experiment(StopTime=0.9),
-      experimentSetupOutput,
     Icon(graphics={Text(
             extent={{-82,54},{86,22}},
             lineColor={0,0,0},
@@ -357,7 +357,6 @@ end FilterWithDifferentiation;
     annotation (
       Diagram(graphics),
       experiment(StopTime=4),
-      experimentSetupOutput,
       Documentation(info="<html>
 <p>
 Filters are usually parameterized with the cut-off frequency.
@@ -547,7 +546,8 @@ agreement. A typical simulation result is shown in the next figure:
 </p>
 
 <img src=\"modelica://Modelica/Resources/Images/Blocks/InverseModel.png\">
-</html>"));
+</html>"),
+      experiment(StopTime=1.0));
   end InverseModel;
 
      model ShowLogicalSources
@@ -726,8 +726,7 @@ Note, that
      \"circle\" is \"green\", the signal is <b>true</b>.</li>
 </ul>
 
-</html>"),
-      experimentSetupOutput);
+</html>"));
     end RealNetwork1;
 
     model IntegerNetwork1
@@ -847,8 +846,7 @@ Note, that
 
 </ul>
 
-</html>"),
-      experimentSetupOutput);
+</html>"));
     end IntegerNetwork1;
 
     model BooleanNetwork1
@@ -1043,8 +1041,7 @@ Note, that
 
 </ul>
 
-</html>"),
-      experimentSetupOutput);
+</html>"));
     end BooleanNetwork1;
 
     model Interaction1
@@ -1092,8 +1089,7 @@ from package <a href=\"Modelica.Blocks.Interaction\">Modelica.Blocks.Interaction
 to show how diagram animations can be constructed.
 </p>
 
-</html>"),
-      experimentSetupOutput);
+</html>"));
     end Interaction1;
 
   model BusUsage "Demonstrates the usage of a signal bus"
@@ -1224,7 +1220,7 @@ is generated and the \"controlBus\" contains the new signal \"realSignal1\". Mod
 may give more support in order to list potential signals for a connection.
 For example, in Dymola all variables are listed in the menu that are contained in
 connectors which are derived by inheritance from \"controlBus\". Therefore, in
-<a href=\"modelica://Modelica.Blocks.Examples.BusUsage_Utilities.Interfaces.InternalConnectors\">BusUsage_Utilities.Interfaces.InternalConnectors</a>
+<a href=\"modelica://Modelica.Blocks.Examples.BusUsage_Utilities.Interfaces\">BusUsage_Utilities.Interfaces</a>
 the expected implementation of the \"ControlBus\" and of the \"SubControlBus\" are given.
 For example \"Internal.ControlBus\" is defined as:
 </p>
@@ -1269,11 +1265,11 @@ just potential signals. The user might still add different signal names.
         "Control bus that is adapted to the signals connected to it"
         extends Modelica.Icons.SignalBus;
         import SI = Modelica.SIunits;
-        SI.AngularVelocity realSignal1 "First Real signal (angular velocity)";
-        SI.Velocity realSignal2 "Second Real signal";
-        Integer integerSignal "Integer signal";
-        Boolean booleanSignal "Boolean signal";
-        SubControlBus subControlBus "Combined signal";
+        SI.AngularVelocity realSignal1 "First Real signal (angular velocity)"  annotation(HideResult=false);
+        SI.Velocity realSignal2 "Second Real signal"  annotation(HideResult=false);
+        Integer integerSignal "Integer signal"  annotation(HideResult=false);
+        Boolean booleanSignal "Boolean signal"  annotation(HideResult=false);
+        SubControlBus subControlBus "Combined signal"  annotation(HideResult=false);
         annotation (
           Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{
                   100,100}}), graphics={Rectangle(
@@ -1299,8 +1295,8 @@ are determined from the connections to this bus).
       expandable connector SubControlBus
         "Sub-control bus that is adapted to the signals connected to it"
         extends Modelica.Icons.SignalSubBus;
-        Real myRealSignal;
-        Boolean myBooleanSignal;
+        Real myRealSignal  annotation(HideResult=false);
+        Boolean myBooleanSignal  annotation(HideResult=false);
         annotation (defaultComponentPrefixes="protected",
                     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                   -100},{100,100}}), graphics={Rectangle(
@@ -1389,6 +1385,7 @@ usage of package blocks.
 </HTML>
 "));
 end Examples;
+
 
 annotation (
   Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),

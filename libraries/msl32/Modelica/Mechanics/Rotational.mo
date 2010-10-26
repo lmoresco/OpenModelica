@@ -58,7 +58,7 @@ The two connectors are completely <b>identical</b>, with the only
 exception that the graphical layout is a little bit different in order
 to distinguish them for easier access of the connector variables.
 For example, <code>J1.flange_a.tau</code> is the cut-torque in the connector
-<code>flange_a</code> of component <tt>J1</tt>.
+<code>flange_a</code> of component <code>J1</code>.
 </p>
 <p>
 The components of this
@@ -360,7 +360,7 @@ Modelica translator is able to symbolically differentiate equations
 conditions; even if consistent initial conditions are present, most
 numerical DAE integrators can cope at most with index 2 DAEs).
 </p>
-</p>
+<p>
 The elements of this library can be connected together in an
 arbitrary way. However, difficulties may occur, if the elements which can <b>lock</b> the
 <b>relative motion</b> between two flanges are connected <b>rigidly</b>
@@ -529,7 +529,7 @@ in the housing on one side via component Fixed.</p>
 </html>"), Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}),
                    graphics),
-        experiment);
+        experiment(StopTime=1.0, Interval=0.001));
     end First;
 
     model FirstGrounded
@@ -609,7 +609,7 @@ in the housing on one side via component Fixed.</p>
 </HTML>"), Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}),
                    graphics),
-        experiment(StopTime=1));
+        experiment(StopTime=1.0, Interval=0.001));
     end FirstGrounded;
 
     model Friction "Drive train with clutch and brake"
@@ -739,7 +739,7 @@ values (defined already in the model):</p>
             preserveAspectRatio=true,
             extent={{-180,-100},{120,100}},
             grid={2,2}), graphics),
-        experiment(StopTime=3));
+        experiment(StopTime=3.0, Interval=0.001));
     end Friction;
 
     model CoupledClutches "Drive train with 3 dynamically coupled clutches"
@@ -864,7 +864,7 @@ locked, forward sliding.</p>
                 140,80}},
             grid={2,2}),
                 graphics),
-        experiment(StopTime=1.5));
+        experiment(StopTime=1.5, Interval=0.001));
     end CoupledClutches;
 
     model LossyGearDemo1
@@ -947,7 +947,7 @@ gear.mode  :  1 = forward rolling
 "), Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-80},{100,
                 80}}),
             graphics),
-        experiment(StopTime=0.5));
+        experiment(StopTime=0.5, Interval=0.001));
     end LossyGearDemo1;
 
     model LossyGearDemo2
@@ -1048,7 +1048,7 @@ as component LossyGear includes the functionality of component BearingFriction
 "), Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-80},{100,
                 80}}),
             graphics),
-        experiment(StopTime=0.5));
+        experiment(StopTime=0.5, Interval=0.001));
     end LossyGearDemo2;
 
     model LossyGearDemo3
@@ -1105,7 +1105,7 @@ as component LossyGear includes the functionality of component BearingFriction
           points={{79,10},{74.5,10},{74.5,10},{70,10}},
           color={0,0,127},
           smooth=Smooth.None));
-      annotation (uses(Modelica(version="3.0.1")),
+      annotation (
         Diagram(graphics),
         Documentation(info="<html>
 <p>
@@ -1114,7 +1114,8 @@ LossyGear model is not obvious.
 The version of LossyGear up to version 3.1 of package Modelica failed in this case
 (no convergence of the event iteration).
 </p>
-</html>"));
+</html>"),
+        experiment(StopTime=1.0, Interval=0.001));
     end LossyGearDemo3;
 
     model ElasticBearing "Example to show possible usage of support flange"
@@ -1188,9 +1189,9 @@ a spring-damper-system. This allows examination of the gearbox
 housing dynamics.</p>
 <p>
 Simulate for about 10 seconds and plot the angular velocities of the inertias <code>housing.w</code>,
-<code>shaft.w</code> and <tt>load.w</tt>.</p>
-</html>
-"));
+<code>shaft.w</code> and <code>load.w</code>.</p>
+</html>"),
+        experiment(StopTime=10, Interval=0.01));
     end ElasticBearing;
 
     model Backlash "Example to demonstrate backlash"
@@ -1249,8 +1250,8 @@ This model demonstrates the effect of a backlash on eigenfrequency, and
 also that the damping torque does not lead to unphysical pulling torques
 (since the ElastoBacklash model takes care of it).
 </p>
-</html>
-"));
+</html>"),
+        experiment(StopTime=1.0, Interval=0.001));
     end Backlash;
 
     model RollingWheel "Demonstrate coupling Rotational - Translational"
@@ -1302,7 +1303,7 @@ Du to a speed dependent force (like driving resistance), we find an eqilibrium a
 </html>"),
         Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
                 {100,100}}), graphics),
-        experiment(StopTime=5));
+        experiment(StopTime=5.0, Interval=0.001));
     end RollingWheel;
 
     model HeatLosses "Demonstrate the modeling of heat losses"
@@ -1507,8 +1508,6 @@ Du to a speed dependent force (like driving resistance), we find an eqilibrium a
       annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{180,140}}),      graphics), Icon(coordinateSystem(
               preserveAspectRatio=true, extent={{-100,-100},{100,100}})),
-        experiment(NumberOfIntervals=5000),
-        experimentSetupOutput,
         Documentation(info="<html>
 <p>
 This model demonstrates how to model the dissipated power of a drive train,
@@ -1517,7 +1516,8 @@ a convection element to the environment. The total heat flow generated by the
 elements of the drive train and transported to the environment
 is present in variable convection.fluid.
 </p>
-</html>"));
+</html>"),
+        experiment(StopTime=1.0, Interval=0.0001));
     end HeatLosses;
 
     model SimpleGearShift "Simple Gearshift"
@@ -1605,13 +1605,12 @@ is present in variable convection.fluid.
       annotation (
         Diagram(graphics),
         experiment(StopTime=5, Interval=0.01),
-        experimentSetupOutput,
         Documentation(info="<html>
 <p>This model shows how an automatic gear shift is built up from a planetary gear, a brake and a clutch. </p>
-<p><ul>
+<ul>
 <li>In the beginning, the clutch is free and the brake fixes the ring of the planetary. Thus we obtain a gearRatio = 1/(1 + planetary.ratio).</li>
 <li>At time = 2 s, the brake frees the ring of the planetary, whereas the clutch blocks the ring and the sun. Thus we obtain a gearRatio = 1.</li>
-</ul></p>
+</ul>
 </html>"));
     end SimpleGearShift;
     annotation ( Documentation(info="<html>
@@ -2159,7 +2158,7 @@ In the backlash region (-b/2 &le; flange_b.phi - flange_a.phi - phi_rel0 &le; b/
 is exerted (flange_b.tau = 0). Outside of this region, contact is present and
 the contact torque is basically computed with a linear
 spring/damper characteristic:
-</p
+</p>
 
 <pre>
    desiredContactTorque = c*phi_contact + d*<b>der</b>(phi_contact)
@@ -2231,7 +2230,6 @@ where the different effects are visualized:
 <li> Curve 3 (elastoBacklash3.tau) is the ElastoBacklash model of this library. No discontinuity and no
      pulling/sticking occurs.</li>
 </ol>
-
 
 <img src=\"modelica://Modelica/Resources/Images/Rotational/elastoBacklash1.png\">
 
@@ -3239,8 +3237,10 @@ connected to other elements in an appropriate way.
       Real interpolation_result[1, size(lossTable, 2) - 1];
       Real eta_mf1;
       Real eta_mf2;
-      Real tau_bf_a;
-      Real tau_eta;
+      Real tau_bf_a "Bearing friction torque on flange_a side";
+      Real tau_eta
+        "Torque that determines the driving side (= if forwardSliding then flange_a.tau-tau_bf_a else if backwardSliding then flange_a.tau+tau_bf_a else flange_a.tau)";
+
       Real tau_bf1;
       Real tau_bf2;
 
@@ -3263,6 +3263,8 @@ connected to other elements in an appropriate way.
       SI.Torque tauLossMax_p "Torque loss for positive speed";
       SI.Torque tauLossMin_m "Torque loss for negative speed";
 
+      Boolean tau_aPos(start=true)
+        "Only for backwards compatibility (was previously: true, if torque of flange_a is not negative)";
       Boolean tau_etaPos(start=true) "true, if torque tau_eta is not negative";
       Boolean startForward(start=false) "true, if starting to roll forward";
       Boolean startBackward(start=false) "true, if starting to roll backward";
@@ -3369,6 +3371,7 @@ connected to other elements in an appropriate way.
 
       // Torque Losses
       tau_etaPos = tau_eta >= 0;
+      tau_aPos   = tau_etaPos;
       tauLossMax = if tau_etaPos then quadrant1 else quadrant2;
       tauLossMin = if tau_etaPos then quadrant4 else quadrant3;
 
@@ -3552,7 +3555,7 @@ Deutsches Zentrum f&uuml;r Luft- und Raumfahrt e. V., March 18-19, 2002.</li>
 <li>Bertsch C. (2009):
 &quot;<a href=\"modelica://Modelica/Resources/Documentation/Mechanics/Lossy-Gear-Bug_Solution.pdf\">Problem
 with model LossyGear and a proposed solution</a>&quot;,
-Ticket <a href=\"https://trac.modelica.org/Modelica/ticket/108\">#108</a>,
+Ticket <a href=\"http://trac.modelica.org/Modelica/ticket/108\">#108</a>,
 Sept. 11, 2009.</li>
 </ul>
 
@@ -5622,18 +5625,13 @@ It is most convenient to utilize it
 <ul>
 <li> For models to be build graphically (i.e., the model is build up by drag-and-drop
      from elementary components):<br>
-     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialOneFlangeAndSupport\">
-     PartialOneFlangeAndSupport</a>,<br>
-     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlangesAndSupport\">
-     PartialTwoFlangesAndSupport</a>, <br> &nbsp; </li>
+     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialOneFlangeAndSupport\">PartialOneFlangeAndSupport</a>,<br>
+     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlangesAndSupport\">PartialTwoFlangesAndSupport</a>, <br> &nbsp; </li>
 
 <li> For models to be build textually (i.e., elementary models):<br>
-     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryOneFlangeAndSupport\">
-     PartialElementaryOneFlangeAndSupport</a>,<br>
-     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryTwoFlangesAndSupport\">
-     PartialElementaryTwoFlangesAndSupport</a>,<br>
-     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryRotationalToTranslational\">
-     PartialElementaryRotationalToTranslational</a>.</li>
+     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryOneFlangeAndSupport\">PartialElementaryOneFlangeAndSupport</a>,<br>
+     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryTwoFlangesAndSupport\">PartialElementaryTwoFlangesAndSupport</a>,<br>
+     <a href=\"modelica://Modelica.Mechanics.Rotational.Interfaces.PartialElementaryRotationalToTranslational\">PartialElementaryRotationalToTranslational</a>.</li>
 </ul>
 
 </html>"),     Icon(coordinateSystem(

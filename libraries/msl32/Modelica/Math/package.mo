@@ -1982,7 +1982,7 @@ in decreasing order and with all other elements zero
 (<font face=\"Symbol\">s</font><sub>1</sub> is the largest element). The function
 returns the singular values <font face=\"Symbol\">s</font><sub>i</sub>
 in vector <code>sigma</code> and the orthogonal matrices in
-matrices <code>U</code> and <tt>V</tt>.
+matrices <code>U</code> and <code>V</code>.
 </p>
 <h4>Example</h4>
 <blockquote><pre>
@@ -3906,7 +3906,7 @@ for more information.
 
 <p>
 The algorithm calls LAPACK routines <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dgehrd\">dgehrd</a> (to compute the upper Hessenberg matrix of <b>H</b>),
-<a href=\"modelica://Modelica.Math.Matrices.LAPACK. dorghr\">dorghr</a> (to calculate the orthogonal
+<a href=\"modelica://Modelica.Math.Matrices.LAPACK.dorghr\">dorghr</a> (to calculate the orthogonal
 matrix from the elementary reflectors as returned from dgehrd), <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dhseqr\">dhseqr</a>
 (to put transformed <b>H</b> to Schur form and to calculate the eigenvalues
 of the closed loop system) and <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dtrsen\">dtrsen</a> (to compute the ordered real Schur form and matrix <b>U</b>).
@@ -4486,7 +4486,7 @@ according to <b>S</b>, the solution <b>X</b> can be calculated by
 
 <p>
 The algorithm calls LAPACK routines <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dgehrd\">dgehrd</a> (to compute the upper Hessenberg matrix of <b>H</b>),
-<a href=\"modelica://Modelica.Math.Matrices.LAPACK. dorghr\">dorghr</a> (to calculate the orthogonal
+<a href=\"modelica://Modelica.Math.Matrices.LAPACK.dorghr\">dorghr</a> (to calculate the orthogonal
 matrix from the elementary reflectors as returned from dgehrd), <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dhseqr\">dhseqr</a>
 (to put transformed <b>H</b> to Schur form and to calculate the eigenvalues
 of the closed loop system) and <a href=\"modelica://Modelica.Math.Matrices.LAPACK.dtrsen\">dtrsen</a> (to compute the ordered real Schur form and matrix <b>U</b>).
@@ -4522,7 +4522,7 @@ X = [14.5623, 9.7082;
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Math.Matrices.care\">Matrices.continuousRiccati</a>
+<a href=\"modelica://Modelica.Math.Matrices.continuousRiccati\">Matrices.continuousRiccati</a>
 </p>
 </html>", revisions="<html>
 <ul>
@@ -9744,7 +9744,7 @@ This package contains a direct interface to the LAPACK subroutines
 <h4>Description</h4>
 <p>
 This function provides a Newton-like method for solving continuous algebraic Riccati equations (care). It utilizes Exact Line Search to improve the sometimes erratic
-convergence of Newton's method. Exact line search in this case means means, that at each iteration <code>i</code> a Newton step <tt><b>delta</b>_i</tt>
+convergence of Newton's method. Exact line search in this case means means, that at each iteration <code>i</code> a Newton step <code><b>delta</b>_i</code>
 </p>
 <blockquote><pre>
   <b>X</b>_i+1 = <b>X</b>_i + <b>delta</b>_i
@@ -9899,7 +9899,7 @@ The algorithm is taken from [1] and [2].
 <h4>Description</h4>
 <p>
 This function provides a Newton-like method for solving discrete-time algebraic Riccati equations. It uses Exact Line Search to improve the sometimes erratic
-convergence of Newton's method. Exact line search in this case means means, that at each iteration <code>i</code> a Newton step <tt><b>delta</b>_i</tt>
+convergence of Newton's method. Exact line search in this case means means, that at each iteration <code>i</code> a Newton step <code><b>delta</b>_i</code>
 </p>
 <blockquote><pre>
   <b>X</b>_i+1 = <b>X</b>_i + <b>delta</b>_i

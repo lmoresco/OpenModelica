@@ -660,7 +660,6 @@ package AST_BatchPlant
             "modelica://Modelica/Resources/Scripts/Dymola/Fluid/AST_BatchPlant_StandardWater/plot level.mos"
           "plot level"),
       Documentation(info="<html>
-
 <img src=\"modelica://Modelica/Resources/Images/Fluid/Examples/BatchPlant_StandardWater.png\" border=\"1\">
 </html>"));
   end BatchPlant_StandardWater;
@@ -1246,15 +1245,15 @@ handled properly.</p>
                       minimumLenght=1,
                       significantDigits=2)))}),
         Documentation(info="<HTML>
-<p>
 <p>This tank has the same geometric variables as TankWith3InletOutletArrays plus the feature of a HeatPort and the possibility of evaporation.
-(Assumption: The gas is condensed emidiatly afterwards so that a liquid boiling fluid is created.)
-<p>The tank can be initialized with the following options:
+(Assumption: The gas is condensed emidiatly afterwards so that a liquid boiling fluid is created.)</p>
+<p>The tank can be initialized with the following options:</p>
 <ul>
 <li>GuessValues: no explicit initial conditions
 <li>InitialValues: initial values of temperature (or specific enthalpy), composition and level are specified
 <li>SteadyStateHydraulic: initial values of temperature (or specific enthalpy) and composition are specified; the initial level is determined so that levels and pressure are at steady state.
 </ul>
+<p>
 Full steady state initialization is not supported, because the corresponding intial equations for temperature/enthalpy are undetermined (the flow rate through the port at steady state is zero).
 </p>
 </HTML>"),
@@ -1951,16 +1950,7 @@ end for;
          mC_flow_top[i,:]  = topPorts[i].m_flow*actualStream(topPorts[i].C_outflow);
          topPorts[i].p     = p_ambient;
          topPorts[i].h_outflow = h_start;
-         // <Hot fix>
-         // Normally, the following line should read
-         //   topPorts[i].Xi_outflow = X_start[1:Medium.nXi];
-         // In some Modelica tools, this produces an error however. Instead of wating
-         // for bug fixes for all tools, Modelica Association decided to include a
-         // simple reformulation to avoid this problem.
-         for j in 1:Medium.nXi loop
-           topPorts[i].Xi_outflow[j] = X_start[j];
-         end for;
-         // </Hot fix>
+         topPorts[i].Xi_outflow = X_start[1:Medium.nXi];
          topPorts[i].C_outflow  = C_start;
   /*
        assert(topPorts[i].m_flow > -1, "Mass flows out of tank via topPorts[" + String(i) + "]\n" +
@@ -1973,47 +1963,38 @@ end for;
          port_b_H_flow_bottom[i]   = ports[i].m_flow*actualStream(ports[i].h_outflow);
          port_b_mXi_flow_bottom[i,:] = ports[i].m_flow*actualStream(ports[i].Xi_outflow);
          port_b_mC_flow_bottom[i,:]  = ports[i].m_flow*actualStream(ports[i].C_outflow);
-          aboveLevel[i] = level >= (portsData_height2[i] + ports_emptyPipeHysteresis[i])
-                          or pre(aboveLevel[i]) and level >= (portsData_height2[i] - ports_emptyPipeHysteresis[i]);
-          levelAbovePort[i] = if aboveLevel[i] then level - portsData_height2[i] else 0;
-          ports[i].h_outflow = medium.h;
-          // <Hot fix>
-          // Normally, the following line should read
-          //   ports[i].Xi_outflow = medium.Xi;
-          // In some Modelica tools, this produces an error however. Instead of wating
-          // for bug fixes for all tools, Modelica Association decided to include a
-          // simple reformulation to avoid this problem.
-          for j in 1:Medium.nXi loop
-             ports[i].Xi_outflow[j] = medium.Xi[j];
-          end for;
-          // </Hot fix>
+         aboveLevel[i] = level >= (portsData_height2[i] + ports_emptyPipeHysteresis[i])
+                         or pre(aboveLevel[i]) and level >= (portsData_height2[i] - ports_emptyPipeHysteresis[i]);
+         levelAbovePort[i] = if aboveLevel[i] then level - portsData_height2[i] else 0;
+         ports[i].h_outflow = medium.h;
+         ports[i].Xi_outflow = medium.Xi;
          ports[i].C_outflow  = C;
 
          if stiffCharacteristicForEmptyPort then
             // If port is above fluid level, use large zeta if fluid flows out of port (= small mass flow rate)
-             zetas_out[i] = 1 + (if aboveLevel[i] then 0 else zetaLarge);
-             ports[i].p = p_ambient + levelAbovePort[i]*system.g*medium.d
-                                  + Modelica.Fluid.Utilities.regSquare2(ports[i].m_flow, m_flow_small,
-                                        lossConstant_D_zeta(portsData_diameter2[i], 0.01)/medium.d,
-                                        lossConstant_D_zeta(portsData_diameter2[i], zetas_out[i])/medium.d);
-             ports_m_flow_out[i] = false;
+            zetas_out[i] = 1 + (if aboveLevel[i] then 0 else zetaLarge);
+            ports[i].p = p_ambient + levelAbovePort[i]*system.g*medium.d
+                                 + Modelica.Fluid.Utilities.regSquare2(ports[i].m_flow, m_flow_small,
+                                       lossConstant_D_zeta(portsData_diameter2[i], 0.01)/medium.d,
+                                       lossConstant_D_zeta(portsData_diameter2[i], zetas_out[i])/medium.d);
+            ports_m_flow_out[i] = false;
 
          else
-             // Handling according to Remelhe/Poschlad
-             ports_m_flow_out[i] = (pre(ports_m_flow_out[i]) and not ports[i].p>p_ambient)
-                                        or ports[i].m_flow < -1e-6;
-            if aboveLevel[i] then
-                ports[i].p = p_ambient + levelAbovePort[i]*system.g*medium.d -
-                                  smooth(2,noEvent(if ports[i].m_flow < 0 then ports[i].m_flow^2/
-                                        (2*medium.d*bottomArea[i]^2) else 0));
-            else
-               if pre(ports_m_flow_out[i]) then
-                  ports[i].m_flow = 0;
-               else
-                  ports[i].p = p_ambient;
-               end if;
-            end if;
-             zetas_out[i] =0;
+            // Handling according to Remelhe/Poschlad
+            ports_m_flow_out[i] = (pre(ports_m_flow_out[i]) and not ports[i].p>p_ambient)
+                                       or ports[i].m_flow < -1e-6;
+           if aboveLevel[i] then
+               ports[i].p = p_ambient + levelAbovePort[i]*system.g*medium.d -
+                                 smooth(2,noEvent(if ports[i].m_flow < 0 then ports[i].m_flow^2/
+                                       (2*medium.d*bottomArea[i]^2) else 0));
+           else
+              if pre(ports_m_flow_out[i]) then
+                 ports[i].m_flow = 0;
+              else
+                 ports[i].p = p_ambient;
+              end if;
+           end if;
+            zetas_out[i] =0;
          end if;
        end for;
 

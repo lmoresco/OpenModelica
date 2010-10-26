@@ -81,6 +81,7 @@ equation
         extent={{-100,-100},{100,100}},
         grid={1,1}), graphics),
     Documentation(info="<HTML>
+<p>
 In this example the usage of the general force element
 \"<a href=\"modelica://Modelica.Mechanics.MultiBody.Forces.ForceAndTorque\">ForceAndTorque</a>\"
 is shown. A \"ForceAndTorque\" element is connected
@@ -101,5 +102,6 @@ forceAndTorque component):
 </p>
 <IMG src=\"modelica://Modelica/Resources/Images/MultiBody/Examples/Elementary/ForceAndTorque.png\">
 </HTML>
-"));
+"),
+    experiment(StopTime=1.01));
 end ForceAndTorque;

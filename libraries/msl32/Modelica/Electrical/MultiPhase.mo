@@ -1,5 +1,6 @@
 within Modelica.Electrical;
 
+
 package MultiPhase "Library for electrical components with 2, 3 or more phases"
   extends Modelica.Icons.Package;
 
@@ -95,7 +96,8 @@ Star-connected voltage source feeds via a Y-Y-transformer with internal impedanc
 Using f=5 Hz LT=3mH defines nominal voltage drop of approximately 10 %.<br>
 Simulate for 1 second (2 periods) and compare voltages and currents of source, transformer and load.
 </p>
-</HTML>"));
+</HTML>"),
+        experiment(StopTime=1.0, Interval=0.001));
     end TransformerYY;
 
     model TransformerYD "Test example with multiphase components"
@@ -190,7 +192,8 @@ Star-connected voltage source feeds via a Y-D-transformer with internal impedanc
 Using f=5 Hz LT=3mH defines nominal voltage drop of approximately 10 %.<br>
 Simulate for 1 second (2 periods) and compare voltages and currents of source, transformer and load.
 </p>
-</HTML>"));
+</HTML>"),
+        experiment(StopTime=1.0, Interval=0.001));
     end TransformerYD;
 
     model Rectifier "Test example with multiphase components"
@@ -285,7 +288,8 @@ Star-connected voltage source feeds via a line reactor a diode bridge rectifier 
 Using f=5 Hz, simulate for 1 second (2 periods) and compare voltages and currents of source and DC burden,
 neglecting initial transient.
 </p>
-</HTML>"));
+</HTML>"),
+        experiment(StopTime=1.0, Interval=0.0001));
     end Rectifier;
     annotation (Documentation(info="<HTML>
 <p>
@@ -294,7 +298,6 @@ This package contains test examples of analog electrical multiphase circuits.
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -302,22 +305,18 @@ This package contains test examples of analog electrical multiphase circuits.
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
   <li> v1.0 2004/10/01 Anton Haumer</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics));
@@ -1268,7 +1267,6 @@ This package contains basic analog electrical multiphase components.
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -1276,22 +1274,18 @@ This package contains basic analog electrical multiphase components.
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
   <li> v1.0 2004/10/01 Anton Haumer</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics={
@@ -1899,7 +1893,7 @@ Contains m ideal opening switches (Modelica.Electrical.Analog.Ideal.IdealOpening
 <p>
 Contains m ideal closing switches (Modelica.Electrical.Analog.Ideal.IdealClosingSwitch).
 </p><
-/HTML>"),
+</HTML>"),
         Diagram(coordinateSystem(preserveAspectRatio=true,  extent={{-100,-100},
                 {100,100}}),
                 graphics));
@@ -2049,7 +2043,6 @@ like thyristor, diode, switch, transformer.
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -2057,22 +2050,18 @@ like thyristor, diode, switch, transformer.
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
   <li> v1.0 2004/10/01 Anton Haumer</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics={
@@ -2337,7 +2326,6 @@ This package contains multiphase potential, voltage, and current sensors.
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -2345,8 +2333,6 @@ This package contains multiphase potential, voltage, and current sensors.
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
@@ -2355,14 +2341,12 @@ This package contains multiphase potential, voltage, and current sensors.
       added PowerSensor</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics));
@@ -2707,7 +2691,6 @@ This package contains time-dependend and controlled multiphase voltage and curre
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -2715,22 +2698,18 @@ This package contains time-dependend and controlled multiphase voltage and curre
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
   <li> v1.0 2004/10/01 Anton Haumer</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics));
@@ -2828,9 +2807,9 @@ Connector Plug is a composite connector containing m Pins (Modelica.Electrical.A
       annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
                 -100},{100,100}}),                                                                 graphics),
         Documentation(revisions="<html>
-<p><ul>
+<ul>
 <li><i>August 26, 2009 </i>by Anton Haumer initially implemented</li>
-</ul></p>
+</ul>
 </html>",     info="<html>
 <p>
 This partial model provides conditional heat ports for the connection to a thermal network.
@@ -2838,7 +2817,7 @@ This partial model provides conditional heat ports for the connection to a therm
 <ul>
 <li> If <b>useHeatPort</b> is set to <b>false</b> (default), no heat port is available, and the thermal
      loss power flows internally to the ground. In this case, the parameter <b>T</b> specifies
-     the fixed device temperatures.</li>.
+     the fixed device temperatures.</li>
 <li> If <b>useHeatPort</b> is set to <b>true</b>, all heat ports are available.</li>
 </ul>
 </html>"));
@@ -2932,7 +2911,6 @@ electrical multiphase components, based on Modelica.Electrical.Analog.
 
 </HTML>", revisions="<html>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
@@ -2940,8 +2918,6 @@ electrical multiphase components, based on Modelica.Electrical.Analog.
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
   </dd>
-</p>
-<p>
   <dt><b>Release Notes:</b></dt>
   <dd>
   <ul>
@@ -2950,14 +2926,12 @@ electrical multiphase components, based on Modelica.Electrical.Analog.
       removed annotation from pin of Interfaces.Plug</li>
   </ul>
   </dd>
-<p>
   <dt><b>Copyright:</b></dt>
   <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
   <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
   under the terms of the <b>Modelica license</b>, see the license conditions
   and the accompanying <b>disclaimer</b> in the documentation of package
   Modelica in file \"Modelica/package.mo\".</i></dd>
-</p>
 </dl>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics));
@@ -2977,7 +2951,7 @@ This package is intended to be used the same way as Modelica.Electrical.Analog
 but to make design of multiphase models easier.<br>
 The package is based on the plug: a composite connector containing m pins.<br>
 It is possible to connect plugs to plugs or single pins of a plug to single pins.<br>
-Potentials may be accessed as <code>plug.pin[].v</code>, currents may be accessed as <tt>plug.pin[].i</tt>.
+Potentials may be accessed as <code>plug.pin[].v</code>, currents may be accessed as <code>plug.pin[].i</code>.
 </p>
 <p>
 Further development:
@@ -2987,30 +2961,26 @@ Further development:
 </ul>
 </p>
 <dl>
-<p>
   <dt><b>Main Authors:</b></dt>
   <dd>
-  <p>
   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
   Technical Consulting &amp; Electrical Engineering<br>
   A-3423 St.Andrae-Woerdern<br>Austria<br>
   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
-</p>
-  <p>
-  Dr.Christian Kral<br>
-  Austrian Institute of Technology <a href=\"http://www.ait.ac.at/\">AIT</a><br>
-  Giefinggasse 2<br>
-  A-1210 Vienna, Austria
-</p>
   </dd>
-</p>
+  <dt><b>Release Notes:</b></dt>
+  <dd>
+  <ul>
+  <li> v1.0 2004/10/01 Anton Haumer</li>
+  </ul>
+  </dd>
+  <dt><b>Copyright:</b></dt>
+  <dd>Copyright &copy; 1998-2010, Modelica Association and Anton Haumer.<br>
+  <i>The Modelica package is <b>free</b> software; it can be redistributed and/or modified
+  under the terms of the <b>Modelica license</b>, see the license conditions
+  and the accompanying <b>disclaimer</b> in the documentation of package
+  Modelica in file \"Modelica/package.mo\".</i></dd>
 </dl>
-<p>
-Copyright &copy; 1998-2010, Modelica Association, Anton Haumer and AIT.
-</p>
-<p>
-<i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\"> http://www.modelica.org/licenses/ModelicaLicense2</a>.</i>
-</p>
 </HTML>", revisions="<html>
   <ul>
   <li>v1.0 2004/10/01 Anton Haumer</li>

@@ -2,6 +2,7 @@ within Modelica.Fluid;
 package Sources "Define fixed or prescribed boundary conditions"
   extends Modelica.Icons.SourcesPackage;
   model FixedBoundary "Boundary source component"
+    import Modelica.Media.Interfaces.PartialMedium.Choices.IndependentVariables;
     extends Sources.BaseClasses.PartialSource;
     parameter Boolean use_p=true "select p or d"
       annotation (Evaluate = true,
@@ -32,20 +33,60 @@ package Sources "Define fixed or prescribed boundary conditions"
          quantity=Medium.extraPropertiesNames)=fill(0, Medium.nC)
       "Boundary trace substances"
       annotation (Dialog(group = "Only for trace-substance flow", enable=Medium.nC > 0));
-
+  protected
+    Medium.ThermodynamicState state;
   equation
     Modelica.Fluid.Utilities.checkBoundary(Medium.mediumName, Medium.substanceNames,
                                           Medium.singleState, use_p, X,
                                           "FixedBoundary");
     if use_p or Medium.singleState then
-      medium.p = p;
+       // p given
+       if use_T then
+          // p,T,X given
+          state = Medium.setState_pTX(p, T, X);
+       else
+          // p,h,X given
+          state = Medium.setState_phX(p, h, X);
+       end if;
+
+       if Medium.ThermoStates == IndependentVariables.dTX then
+          medium.d = Medium.density(state);
+       else
+          medium.p = Medium.pressure(state);
+       end if;
+
+       if Medium.ThermoStates == IndependentVariables.ph or
+          Medium.ThermoStates == IndependentVariables.phX then
+          medium.h = Medium.specificEnthalpy(state);
+       else
+          medium.T = Medium.temperature(state);
+       end if;
+
     else
-      medium.d = d;
-    end if;
-    if use_T then
-      medium.T = T;
-    else
-      medium.h = h;
+       // d given
+       if use_T then
+          // d,T,X given
+          state = Medium.setState_dTX(d, T, X);
+
+          if Medium.ThermoStates == IndependentVariables.dTX then
+             medium.d = Medium.density(state);
+          else
+             medium.p = Medium.pressure(state);
+          end if;
+
+          if Medium.ThermoStates == IndependentVariables.ph or
+             Medium.ThermoStates == IndependentVariables.phX then
+             medium.h = Medium.specificEnthalpy(state);
+          else
+             medium.T = Medium.temperature(state);
+          end if;
+
+       else
+          // d,h,X given
+          medium.d = d;
+          medium.h = h;
+          state = Medium.setState_dTX(d,T,X);
+       end if;
     end if;
 
     medium.Xi = X[1:Medium.nXi];
@@ -84,6 +125,8 @@ with exception of boundary pressure, do not have an effect.
 
   model Boundary_pT
     "Boundary with prescribed pressure, temperature, composition and trace substances"
+    import Modelica.Media.Interfaces.PartialMedium.Choices.IndependentVariables;
+
     extends Sources.BaseClasses.PartialSource;
     parameter Boolean use_p_in = false
       "Get the pressure from the input connector"
@@ -161,9 +204,13 @@ with exception of boundary pressure, do not have an effect.
       C_in_internal = C;
     end if;
     medium.p = p_in_internal;
-    medium.T = T_in_internal;
+    if Medium.ThermoStates == IndependentVariables.ph or
+       Medium.ThermoStates == IndependentVariables.phX then
+       medium.h = Medium.specificEnthalpy(Medium.setState_pTX(p_in_internal, T_in_internal, X_in_internal));
+    else
+       medium.T = T_in_internal;
+    end if;
     medium.Xi = X_in_internal[1:Medium.nXi];
-
     ports.C_outflow = fill(C_in_internal, nPorts);
     annotation (defaultComponentName="boundary",
       Icon(coordinateSystem(
@@ -224,8 +271,8 @@ Defines prescribed values for boundary conditions:
 <li> Prescribed boundary temperature.</li>
 <li> Boundary composition (only for multi-substance or trace-substance flow).</li>
 </ul>
-<p>If <code>use_p_in</code> is false (default option), the <tt>p</tt> parameter
-is used as boundary pressure, and the <code>p_in</code> input connector is disabled; if <tt>use_p_in</tt> is true, then the <tt>p</tt> parameter is ignored, and the value provided by the input connector is used instead.</p>
+<p>If <code>use_p_in</code> is false (default option), the <code>p</code> parameter
+is used as boundary pressure, and the <code>p_in</code> input connector is disabled; if <code>use_p_in</code> is true, then the <code>p</code> parameter is ignored, and the value provided by the input connector is used instead.</p>
 <p>The same thing goes for the temperature, composition and trace substances.</p>
 <p>
 Note, that boundary temperature,
@@ -243,6 +290,7 @@ with exception of boundary pressure, do not have an effect.
 
   model Boundary_ph
     "Boundary with prescribed pressure, specific enthalpy, composition and trace substances"
+    import Modelica.Media.Interfaces.PartialMedium.Choices.IndependentVariables;
     extends Sources.BaseClasses.PartialSource;
     parameter Boolean use_p_in = false
       "Get the pressure from the input connector"
@@ -320,7 +368,12 @@ with exception of boundary pressure, do not have an effect.
       C_in_internal = C;
     end if;
     medium.p = p_in_internal;
-    medium.h = h_in_internal;
+    if Medium.ThermoStates == IndependentVariables.ph or
+       Medium.ThermoStates == IndependentVariables.phX then
+       medium.h = h_in_internal;
+    else
+       medium.T = Medium.temperature(Medium.setState_phX(p_in_internal, h_in_internal, X_in_internal));
+    end if;
     medium.Xi = X_in_internal[1:Medium.nXi];
     ports.C_outflow = fill(C_in_internal, nPorts);
     annotation (defaultComponentName="boundary",
@@ -382,8 +435,8 @@ Defines prescribed values for boundary conditions:
 <li> Prescribed boundary temperature.</li>
 <li> Boundary composition (only for multi-substance or trace-substance flow).</li>
 </ul>
-<p>If <code>use_p_in</code> is false (default option), the <tt>p</tt> parameter
-is used as boundary pressure, and the <code>p_in</code> input connector is disabled; if <tt>use_p_in</tt> is true, then the <tt>p</tt> parameter is ignored, and the value provided by the input connector is used instead.</p>
+<p>If <code>use_p_in</code> is false (default option), the <code>p</code> parameter
+is used as boundary pressure, and the <code>p_in</code> input connector is disabled; if <code>use_p_in</code> is true, then the <code>p</code> parameter is ignored, and the value provided by the input connector is used instead.</p>
 <p>The same thing goes for the specific enthalpy and composition</p>
 <p>
 Note, that boundary temperature,
@@ -548,8 +601,8 @@ Models an ideal flow source, with prescribed values of flow rate, temperature, c
 <li> Prescribed temperature.</li>
 <li> Boundary composition (only for multi-substance or trace-substance flow).</li>
 </ul>
-<p>If <code>use_m_flow_in</code> is false (default option), the <tt>m_flow</tt> parameter
-is used as boundary pressure, and the <code>m_flow_in</code> input connector is disabled; if <tt>use_m_flow_in</tt> is true, then the <tt>m_flow</tt> parameter is ignored, and the value provided by the input connector is used instead.</p>
+<p>If <code>use_m_flow_in</code> is false (default option), the <code>m_flow</code> parameter
+is used as boundary pressure, and the <code>m_flow_in</code> input connector is disabled; if <code>use_m_flow_in</code> is true, then the <code>m_flow</code> parameter is ignored, and the value provided by the input connector is used instead.</p>
 <p>The same thing goes for the temperature and composition</p>
 <p>
 Note, that boundary temperature,
@@ -714,8 +767,8 @@ Models an ideal flow source, with prescribed values of flow rate, temperature an
 <li> Prescribed specific enthalpy.</li>
 <li> Boundary composition (only for multi-substance or trace-substance flow).</li>
 </ul>
-<p>If <code>use_m_flow_in</code> is false (default option), the <tt>m_flow</tt> parameter
-is used as boundary pressure, and the <code>m_flow_in</code> input connector is disabled; if <tt>use_m_flow_in</tt> is true, then the <tt>m_flow</tt> parameter is ignored, and the value provided by the input connector is used instead.</p>
+<p>If <code>use_m_flow_in</code> is false (default option), the <code>m_flow</code> parameter
+is used as boundary pressure, and the <code>m_flow_in</code> input connector is disabled; if <code>use_m_flow_in</code> is true, then the <code>m_flow</code> parameter is ignored, and the value provided by the input connector is used instead.</p>
 <p>The same thing goes for the temperature and composition</p>
 <p>
 Note, that boundary temperature,
@@ -766,16 +819,7 @@ of the modeller. Increase nPorts to add an additional port.
 
        ports[i].p          = medium.p;
        ports[i].h_outflow  = medium.h;
-       // <Hot fix>
-       // Normally, the following line should read
-       //   ports[i].Xi_outflow = medium.Xi;
-       // In some Modelica tools, this produces an error however. Instead of wating
-       // for bug fixes for all tools, Modelica Association decided to include a
-       // simple reformulation to avoid this problem.
-       for j in 1:Medium.nXi loop
-         ports[i].Xi_outflow[j] = medium.Xi[j];
-       end for;
-       // <//Hot fix>
+       ports[i].Xi_outflow = medium.Xi;
     end for;
 
     annotation (defaultComponentName="boundary", Documentation(info="<html>

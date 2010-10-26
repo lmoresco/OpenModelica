@@ -87,7 +87,7 @@ to sinusoidal currents.</p>
       annotation (Documentation(info="<html>
 <p>
 A simple
-<a href=\"modelica://Modelica.Electrical.QuasiStationary.Examples.SeriesResonance\">
+<a href=\"modelica://Modelica.Electrical.QuasiStationary.SinglePhase.Examples.SeriesResonance\">
           example</a> of a series connection of a resistor, an inductor and a capacitor
 as depicted in Fig. 1 should be explained in the following. For various frequencies,
 the voltage drops across the resistor, the inductor and the capacitor should be determined.
@@ -151,7 +151,7 @@ add up to the total voltage
 </p>
 
 <p>
-as illustraed in the phasor diagram of Fig. 2.
+as illustrated in the phasor diagram of Fig. 2.
 </p>
 
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
@@ -165,6 +165,7 @@ as illustraed in the phasor diagram of Fig. 2.
 
 <p>Due to the series connection of the resistor, inductor and capacitor, the three currents are all equal:</p>
 
+<p>
 <IMG BORDER=\"0\"
  src=\"modelica://Modelica/Resources/Images/Electrical/QuasiStationary/UsersGuide/Overview/ACCircuit/img5.png\">
 </p>
@@ -192,7 +193,7 @@ Yet, there is instantaneous power exchanged with connecting network.
 </p>
 
 The
-<a href=\"modelica://Modelica.Electrical.QuasiStationary.Examples.SeriesResonance\">
+<a href=\"modelica://Modelica.Electrical.QuasiStationary.SinglePhase.Examples.SeriesResonance\">
           series resonance circuit</a> which was also adressed in the
 <a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Overview.ACCircuit\">
           AC circuit</a>
@@ -323,11 +324,11 @@ In this equation <sup>*</sup> represents the conjugate complex operator
 
       annotation (Documentation(info="<html>
 <p>
-The reference angle <eq>gamma</eq>:
+The reference angle <code>gamma</code>:
 </p>
 <ul>
-  <li>defines the angular frequency <eq>omega</eq> of the voltages and currents
-      of a circuit by means of <eq>omega = der(gamma)</eq>. </li>
+  <li>defines the angular frequency <code>omega</code> of the voltages and currents
+      of a circuit by means of <code>omega = der(gamma)</code>. </li>
   <li>is not a global quantity since it propagated through the connector.
       Therefore, independent circuits of different frequencies can be modeled in one model.</li>
   <li>is present only once in a multiphase connector;
@@ -363,21 +364,21 @@ voltages and currents. The main characteristics of the library are:
       Higher harmonic voltages and currents are not considered.</li>
   <li>Any electrical transient effects are negelcted.</li>
   <li>The electrical components of this library are strictly linear.</li>
-  <li>The angular frequency <eq>omega</eq> of the voltages and currents of
-      a circuit are determined from a reference angle <eq>gamma</eq> by means of
-      <eq>omega = der(gamma)</eq>. </li>
-  <li>The reference angle <eq>gamma</eq> is not a global quantity
+  <li>The angular frequency <code>omega</code> of the voltages and currents of
+      a circuit are determined from a reference angle <code>gamma</code> by means of
+      <code>omega = der(gamma)</code>. </li>
+  <li>The reference angle <code>gamma</code> is not a global quantity
       since it propagated through the connector.
       Therefore, independent circuits of different frequencies can be modeled in one model.</li>
   <li>The connectors contain the real and the imaginary part of the voltage and the current
-      <a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Phasor\">RMS phasors</a></li>
+      <a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Overview.Introduction\">RMS phasors</a></li>
 
 </ul>
 
 <p>
 The main intention of this library is the modeling of quasi stationary behavior
 of single and multi phase
-<a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.ACCircuit\">AC circuits</a>
+<a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.Overview.ACCircuit\">AC circuits</a>
 with fixed and variable frequency. Quasi stationary theory and applications can be
 found in
 [<a href=\"modelica://Modelica.Electrical.QuasiStationary.UsersGuide.References\">Dorf1993</a>],

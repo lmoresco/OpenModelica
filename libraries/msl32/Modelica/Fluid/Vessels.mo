@@ -40,7 +40,7 @@ Ideal heat transfer is assumed per default; the thermal port temperature is equa
 </p>
 <p>
 If <code>use_portsData=true</code>, the port pressures represent the pressures just after the outlet (or just before the inlet) in the attached pipe.
-The hydraulic resistances <code>portsData.zeta_in</code> and <tt>portsData.zeta_out</tt> determine the dissipative pressure drop between volume and port depending on
+The hydraulic resistances <code>portsData.zeta_in</code> and <code>portsData.zeta_out</code> determine the dissipative pressure drop between volume and port depending on
 the direction of mass flow. See <a href=\"modelica://Modelica.Fluid.Vessels.BaseClasses.VesselPortsData\">VesselPortsData</a> and <i>[Idelchik, Handbook of Hydraulic Resistance, 2004]</i>.
 </p>
 </html>"),
@@ -156,7 +156,7 @@ The following assumptions are made:
 </ul>
 <p>
 The port pressures represent the pressures just after the outlet (or just before the inlet) in the attached pipe.
-The hydraulic resistances <code>portsData.zeta_in</code> and <tt>portsData.zeta_out</tt> determine the dissipative pressure drop between tank and port depending on
+The hydraulic resistances <code>portsData.zeta_in</code> and <code>portsData.zeta_out</code> determine the dissipative pressure drop between tank and port depending on
 the direction of mass flow. See <a href=\"modelica://Modelica.Fluid.Vessels.BaseClasses.VesselPortsData\">VesselPortsData</a> and <i>[Idelchik, Handbook of Hydraulic Resistance, 2004]</i>.
 </p>
 <p>
@@ -375,16 +375,7 @@ of the modeller. Increase nPorts to add an additional port.
           end if;
 
           ports[i].h_outflow  = medium.h;
-          // <Hot fix>
-          // Normally, the following line should read
-          //   ports[i].Xi_outflow = medium.Xi;
-          // In some Modelica tools, this produces an error however. Instead of wating
-          // for bug fixes for all tools, Modelica Association decided to include a
-          // simple reformulation to avoid this problem.
-          for j in 1:Medium.nXi loop
-            ports[i].Xi_outflow[j] = medium.Xi[j];
-          end for;
-          // <Hot fix>
+          ports[i].Xi_outflow = medium.Xi;
           ports[i].C_outflow  = C;
 
           ports_H_flow[i] = ports[i].m_flow * actualStream(ports[i].h_outflow)
@@ -420,7 +411,7 @@ The following modeling assumption are made:
 <li>no kinetic energy in the fluid, i.e., kinetic energy dissipates into the internal energy,</li>
 <li>pressure loss definitions at vessel ports assume incompressible fluid,</li>
 <li>outflow of ambient media is prevented at each port assuming check valve behavior.
-    If <code> fluidlevel &lt; portsData_height[i] </code>and &nbsp; <tt> ports[i].p &lt; vessel_ps_static[i]</tt> massflow at the port is set to 0.</li>
+    If <code> fluidlevel &lt; portsData_height[i] </code>and &nbsp; <code> ports[i].p &lt; vessel_ps_static[i]</code> massflow at the port is set to 0.</li>
 </ul>
 </p>
 Each port has a (hydraulic) diameter and a height above the bottom of the vessel, which can be configured using the &nbsp;<b><code>portsData</code></b> record.
@@ -445,7 +436,7 @@ This is why an extending model with varying fluid level needs to define:
 <li><code>parameter fluidLevel_max (default: 1m)</code>, the maximum level that must not be exceeded. Ports at or above fluidLevel_max can only receive inflow.</li>
 </ul>
 An extending model should not access the <code>portsData</code> record defined in the configuration dialog,
-as an access to <code>portsData</code> may fail for <tt>use_portsData=false</tt> or <tt>nPorts=0</tt>.
+as an access to <code>portsData</code> may fail for <code>use_portsData=false</code> or <code>nPorts=0</code>.
 Instead the predefined variables
 <ul>
 <li><code>portsData_diameter[nPorts]</code></li>,
@@ -540,13 +531,13 @@ Heat transfer correlations for pipe models
       parameter Real zeta_in(min=0)=1.04
         "Hydraulic resistance into vessel, default 1.04 for small diameter mounted flush with the wall";
       annotation (preferredView="info", Documentation(info="<html>
-<h4><font color=\"#008000\" >Vessel Port Data</font></h4>
+<h4>Vessel Port Data</h4>
 <p>
 This record describes the <b>ports</b> of a <b>vessel</b>. The variables in it are mostly self-explanatory (see list below); only the &zeta;
 loss factors are discussed further. All data is quoted from Idelchik (1994).
 </p>
 
-<h4><font color=\"#008000\">Outlet Coefficients</font></h4>
+<h4>Outlet Coefficients</h4>
 
 <p>
 If a <b>straight pipe with constant cross section is mounted flush with the wall</b>, its outlet pressure loss coefficient will be <code>&zeta; = 0.5</code> (Idelchik, p. 160, Diagram 3-1, paragraph 2).
@@ -614,7 +605,7 @@ If a <b>straight pipe with a circular bellmouth inlet (collector) without baffle
   </tr>
 </table>
 
-<h4><font color=\"#008000\">Inlet Coefficients</font></h4>
+<h4>Inlet Coefficients</h4>
 
 <p>
 If a <b>straight pipe with constant circular cross section is mounted flush with the wall</b>, its vessel inlet pressure loss coefficient will be according to the following table (Idelchik, p. 209 f., Diagram 4-2 with <code>A_port/A_vessel = 0</code> and Idelchik, p. 640, Diagram 11-1, graph a). According to the text, <code>m = 9</code> is appropriate for fully developed turbulent flow.
@@ -650,7 +641,7 @@ For larger port diameters, relative to the area of the vessel, the inlet pressur
   </tr>
 </table>
 
-<h4><font color=\"#008000\">References</font></h4>
+<h4>References</h4>
 
 <dl><dt>Idelchik I.E. (1994):</dt>
     <dd><a href=\"http://www.bookfinder.com/dir/i/Handbook_of_Hydraulic_Resistance/0849399084/\"><b>Handbook

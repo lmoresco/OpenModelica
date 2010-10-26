@@ -264,7 +264,7 @@ The component may transport fluid and may have internal storage for a given flui
 </p>
 <p>
 An extending model providing direct access to internal storage of mass or energy through port_a or port_b
-should redefine the protected parameters <code><b>port_a_exposesState</b></code> and <tt><b>port_b_exposesState</b></tt> appropriately.
+should redefine the protected parameters <code><b>port_a_exposesState</b></code> and <code><b>port_b_exposesState</b></code> appropriately.
 This will be visualized at the port icons, in order to improve the understanding of fluid model diagrams.
 </p>
 </html>"),
@@ -398,12 +398,12 @@ Energy may be exchanged with the environment though, e.g., in the form of work.
 <code>PartialTwoPortTransport</code> is intended as base class for devices like orifices, valves and simple fluid machines.
 <p>
 Three equations need to be added by an extending class using this component:
+</p>
 <ul>
-<li>the momentum balance specifying the relationship between the pressure drop <code>dp</code> and the mass flow rate <tt>m_flow</tt></li>,
+<li>the momentum balance specifying the relationship between the pressure drop <code>dp</code> and the mass flow rate <code>m_flow</code></li>,
 <li><code>port_b.h_outflow</code> for flow in design direction, and</li>
 <li><code>port_a.h_outflow</code> for flow in reverse direction.</li>
 </ul>
-</p>
 </html>"),
     Icon(coordinateSystem(
           preserveAspectRatio=false,
@@ -523,14 +523,14 @@ end PartialTwoPortTransport;
     annotation (Documentation(info="<html>
 <p>
 This component is a common interface for heat transfer models. The heat flow rates <code>Q_flows[n]</code> through the boundaries of n flow segments
-are obtained as function of the thermodynamic <code>states</code> of the flow segments for a given fluid <tt>Medium</tt>,
-the <code>surfaceAreas[n]</code> and the boundary temperatures <tt>heatPorts[n].T</tt>.
+are obtained as function of the thermodynamic <code>states</code> of the flow segments for a given fluid <code>Medium</code>,
+the <code>surfaceAreas[n]</code> and the boundary temperatures <code>heatPorts[n].T</code>.
 </p>
 <p>
-The heat loss coefficient <code>k</code> can be used to model a thermal isolation between <tt>heatPorts.T</tt> and <tt>T_ambient</tt>.
+The heat loss coefficient <code>k</code> can be used to model a thermal isolation between <code>heatPorts.T</code> and <code>T_ambient</code>.</p>
 <p>
 An extending model implementing this interface needs to define one equation: the relation between the predefined fluid temperatures <code>Ts[n]</code>,
-the boundary temperatures <code>heatPorts[n].T</code>, and the heat flow rates <tt>Q_flows[n]</tt>.
+the boundary temperatures <code>heatPorts[n].T</code>, and the heat flow rates <code>Q_flows[n]</code>.
 </p>
 </html>"));
   end PartialHeatTransfer;
@@ -709,13 +709,17 @@ the boundary temperatures <code>heatPorts[n].T</code>, and the heat flow rates <
 
       annotation (
         Documentation(info="<html>
+<p>
 Interface and base class for an ideally mixed fluid volume with the ability to store mass and energy.
 The following boundary flow and source terms are part of the energy balance and must be specified in an extending class:
+</p>
 <ul>
 <li><code><b>Qb_flow</b></code>, e.g., convective or latent heat flow rate across segment boundary, and</li>
 <li><code><b>Wb_flow</b></code>, work term, e.g., p*der(fluidVolume) if the volume is not constant.</li>
 </ul>
+<p>
 The component volume <code><b>fluidVolume</b></code> is an input that needs to be set in the extending class to complete the model.
+</p>
 <p>
 Further source terms must be defined by an extending class for fluid flow across the segment boundary:
 </p>
@@ -797,11 +801,13 @@ of a given <code>Medium</code> in a flow model.
 </p>
 <p>
 The following boundary flow and force terms are part of the momentum balance and must be specified in an extending model (to zero if not considered):
+</p>
 <ul>
 <li><code><b>Ib_flow</b></code>, the flow of momentum across model boundaries,</li>
 <li><code><b>F_p[m]</b></code>, pressure force, and</li>
 <li><code><b>F_fg[m]</b></code>, friction and gravity forces.</li>
 </ul>
+</p>
 The length of the flow path <code><b>pathLength</b></code> is an input that needs to be set in an extending class to complete the model.
 </p>
 </html>"));
@@ -1020,14 +1026,18 @@ initial equation
                         Icon(coordinateSystem(preserveAspectRatio=true,
             extent={{-100,-100},{100,100}}), graphics),
       Documentation(info="<html>
+<p>
 Interface and base class for <code><b>n</b></code> ideally mixed fluid volumes with the ability to store mass and energy.
 It is inteded to model a one-dimensional spatial discretization of fluid flow according to the finite volume method.
 The following boundary flow and source terms are part of the energy balance and must be specified in an extending class:
+</p>
 <ul>
 <li><code><b>Qb_flows[n]</b></code>, heat flow term, e.g., conductive heat flows across segment boundaries, and</li>
 <li><code><b>Wb_flows[n]</b></code>, work term.</li>
 </ul>
+<p>
 The component volumes <code><b>fluidVolumes[n]</b></code> are an input that needs to be set in an extending class to complete the model.
+</p>
 <p>
 Further source terms must be defined by an extending class for fluid flow across the segment boundary:
 </p>
@@ -1104,16 +1114,18 @@ end PartialDistributedVolume;
         annotation (
            Documentation(info="<html>
 <p>
-Interface and base class for <code><b>m</b></code> momentum balances, defining the mass flow rates <tt><b>m_flows[m]</b></tt>
-of a given <code>Medium</code> in <tt><b>m</b></tt> flow segments.
+Interface and base class for <code><b>m</b></code> momentum balances, defining the mass flow rates <code><b>m_flows[m]</b></code>
+of a given <code>Medium</code> in <code><b>m</b></code> flow segments.
 </p>
 <p>
 The following boundary flow and force terms are part of the momentum balances and must be specified in an extending model (to zero if not considered):
+</p>
 <ul>
 <li><code><b>Ib_flows[m]</b></code>, the flows of momentum across segment boundaries,</li>
 <li><code><b>Fs_p[m]</b></code>, pressure forces, and</li>
 <li><code><b>Fs_fg[m]</b></code>, friction and gravity forces.</li>
 </ul>
+<p>
 The lengths along the flow path <code><b>pathLengths[m]</b></code> are an input that needs to be set in an extending class to complete the model.
 </p>
 </html>"));
