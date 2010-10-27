@@ -8,7 +8,6 @@ runScript("LoadCompilerSources.mos");
 
 loadFile("HashTableTest.mo");
 getErrorString();
-setLinkerFlags("-lc_runtime -lomcruntime");
 
 HashTableTest.fn(1);
 getErrorString();
@@ -19,7 +18,6 @@ getErrorString();
 // "
 // true
 // ""
-// true
 // {record DAE.Exp.ICONST
 //     integer = 7
 // end DAE.Exp.ICONST;,record DAE.Exp.ICONST

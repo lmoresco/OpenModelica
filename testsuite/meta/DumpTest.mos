@@ -7,7 +7,6 @@ setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 runScript("LoadCompilerSources.mos");
 loadFile("DumpTest.mo");getErrorString();
 
-setLinkerFlags("-lc_runtime -lomcruntime");
 echo(false);
 body:=Absyn.PARTS({},NONE());
 restr:=Absyn.R_FUNCTION();
@@ -51,7 +50,6 @@ getErrorString();
 // "
 // true
 // ""
-// true
 // true
 // "DumpGraphviz.dump"
 // graph AST {
