@@ -1,5 +1,5 @@
 // name: UtilTest
-// cflags: +g=MetaModelica
+// cflags: +g=MetaModelica +d=rml
 // status: correct
 // teardown_command: rm -f Util_* UtilTest_*
 
@@ -23,6 +23,8 @@ UtilTest.listSplitOnTrue({SOME(1),SOME(2),NONE(),NONE(),SOME(3),NONE()});
 getErrorString();
 UtilTest.listMapTuple21({("abc",123),("def",456)});
 getErrorString();
+UtilTest.listListMap({{1,2},{3,4,5}});
+getErrorString();
 
 // Result:
 // true
@@ -44,5 +46,7 @@ getErrorString();
 // ({SOME(1),SOME(2),SOME(3)},{NONE(),NONE(),NONE()})
 // ""
 // {"abc","def"}
+// ""
+// {{"1","2"},{"3","4","5"}}
 // ""
 // endResult

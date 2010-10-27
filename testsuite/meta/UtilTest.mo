@@ -57,4 +57,11 @@ algorithm
   ys := Util.listMap(xs, Util.tuple21);
 end listMapTuple21;
 
+function listListMap
+  input list<list<Integer>> xs;
+  output list<list<String>> ys;
+algorithm
+  ys := Util.listListMap(xs, intString);
+end listListMap;
+
 end UtilTest;
