@@ -7,6 +7,7 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
 
   function printResult
     input tuple<String,String> res;
+    String s1,s2;
   algorithm
     (s1,s2) := res;
     print(stringAppendList({"simplify(",s1,") = ",s2,"\n"}));
@@ -17,9 +18,9 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
     list<String> baseStr,simplStr;
   algorithm
     base     := {i1,i2,i3,add1_2};
-    simpl    := Util.listMap(base, Exp.simplify);
-    baseStr  := Util.listMap(base, Exp.printExpStr);
-    simplStr := Util.listMap(simpl, Exp.printExpStr);
+    simpl    := Util.listMap(base, ExpressionSimplify.simplify);
+    baseStr  := Util.listMap(base, ExpressionDump.printExpStr);
+    simplStr := Util.listMap(simpl, ExpressionDump.printExpStr);
     Util.listMap0(Util.listThreadTuple(baseStr,simplStr), printResult);
   end test;
 end SimplifyTest;
