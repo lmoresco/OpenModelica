@@ -1,4 +1,4 @@
-setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+setCommandLineOptions({"+g=MetaModelica","+d=rml"});
 
 runScript("LoadCompilerSources.mos");
 
