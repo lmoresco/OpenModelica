@@ -22,7 +22,7 @@ package BuiltinString
     str12_fn := stringAppend(str1,str2);
     str12_fn_length := stringLength(str12_fn);
     str1_2_comp := stringCompare(str1,str2);
-    str1_2_eq := stringEqual(str1,str2);
+    str1_2_eq := stringEq(str1,str2);
     str12_fn_char_i := stringGetStringChar(str12_fn,i);
     str12_int := stringInt(str12_fn);
     str12_chars := stringListStringChar(str12_fn);
