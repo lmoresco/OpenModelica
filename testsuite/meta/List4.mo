@@ -1,5 +1,5 @@
 // name: List4
-// cflags: +g=MetaModelica
+// cflags: +g=MetaModelica +d=noevalfunc
 // status: correct
 // teardown_command: rm -f List4_*
 model List4
@@ -42,10 +42,7 @@ model List4
     end matchcontinue; 
   end func1; 
   
-  Integer c1,c2;
-equation 
-  c1 = func1(7); 
-  c2 = func2(9); 
+  constant Integer c1=func1(7),c2=func2(9);
 end List4;
 // Result:
 // function List4.func1
@@ -74,10 +71,7 @@ end List4;
 // end List4.func3;
 // 
 // class List4
-//   Integer c1;
-//   Integer c2;
-// equation
-//   c1 = 7;
-//   c2 = 9;
+//   constant Integer c1 = 7;
+//   constant Integer c2 = 9;
 // end List4;
 // endResult

@@ -2,6 +2,7 @@ setCommandLineOptions({"+g=MetaModelica","+d=rml"});
 
 runScript("LoadCompilerSources.mos");
 
-Main.main({});
+//Main.main({});
+UnitAbsynBuilder.emptyInstStore();
 //DAE.ICONST(1);
 getErrorString();
