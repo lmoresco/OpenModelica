@@ -18,6 +18,19 @@ getErrorString();
 // simplify(2) = 2
 // simplify(3) = 3
 // simplify(1 + 2) = 3
+// simplify(1.0) = 1.0
+// simplify(x) = x
+// simplify(x * 1.0) = x
+// simplify(1.0 * x) = x
+// simplify(x * 1.0 + 1.0 * x) = 2.0 * x
+// simplify((x * 1.0 + 1.0 * x) * x) = 2.0 * x ^ 2.0
+// simplify(1.0 + 1.0) = 2.0
+// simplify(1.0 + (1.0 + 1.0)) = 3.0
+// simplify(1.0 + (1.0 + (1.0 + 1.0))) = 4.0
+// simplify(1.0 + (1.0 + (1.0 + (1.0 + 1.0)))) = 5.0
+// simplify(x * x) = x ^ 2.0
+// simplify(x * x * 1.0) = x ^ 2.0
+// simplify(x * 1.0 + 1.0 * x + (1.0 + (1.0 + (1.0 + (1.0 + 1.0))) + (x * 1.0 + 1.0 * x + (x * x * 1.0 + ((x * 1.0 + 1.0 * x) * x + (1.0 + (1.0 + 1.0))))))) = 8.0 + (4.0 * x + 3.0 * x ^ 2.0)
 // 
 // ""
 // endResult
