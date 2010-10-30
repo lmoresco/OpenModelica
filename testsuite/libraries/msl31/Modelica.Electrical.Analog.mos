@@ -5534,7 +5534,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // 
-// Class Modelica.Electrical.Analog.Lines.M_OLine has 1270 equation(s) and 1330 variable(s).
+// Class Modelica.Electrical.Analog.Lines.M_OLine has 1266 equation(s) and 1330 variable(s).
 // 765 of these are trivial equation(s).
 // "
 // ""

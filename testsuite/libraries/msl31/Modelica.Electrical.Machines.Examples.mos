@@ -5256,7 +5256,7 @@ checkModel(Modelica.Electrical.Machines.Examples.SMEE_Generator); getErrorString
 // "Check of Modelica.Electrical.Machines.Examples.SMEE_Generator completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 503 equation(s) and 501 variable(s).
+// Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 501 equation(s) and 501 variable(s).
 // 358 of these are trivial equation(s).
 // "
 // ""
