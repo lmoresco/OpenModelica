@@ -27,9 +27,9 @@ model List4
     output Integer out1;
   algorithm 
    out1 := matchcontinue (a)
+      local
+        Integer var5; 
       case (var5) 
-        local
-          Integer var5; 
         equation 
           //int1 = func2(7);
           //(9) = func2(9);
