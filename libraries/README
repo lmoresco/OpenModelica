@@ -1,0 +1,3 @@
+A collection of Modelica libraries.
+In Unix, set OPENMODELICALIBRARY=<libraries>/mslXX:<libraries>/common/
+In Windows, set OPENMODELICALIBRARY=<libraries>/mslXX;<libraries>/common/
