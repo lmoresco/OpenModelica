@@ -1,0 +1,30 @@
+﻿Build started 10/31/2010 11:10:28 PM.
+     1>Project "C:\Users\RJhansiR\Develop\OpenModelica\OMNotebook\Sketch1\Sketch\Sketch\Sketch.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\Sketch.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"c:/OMDev\include\mico-win32-msvc" /Ic:/OMDev\include /I"C:\Users\RJhansiR\Develop\OpenModelicaLibs\qt-everywhere-opensource-src-4.7.0-beta2\\include" /I"C:\Users\RJhansiR\Develop\OpenModelicaLibs\qt-everywhere-opensource-src-4.7.0-beta2\\include\QTGui" /I"C:\Users\RJhansiR\Develop\OpenModelicaLibs\qt-everywhere-opensource-src-4.7.0-beta2\\include\QTCore" /I"C:\Users\RJhansiR\Develop\OpenModelicaLibs\qt-everywhere-opensource-src-4.7.0-beta2\\mkspecs\win32-msvc2010" /IC:\Users\RJhansiR\Develop\OpenModelicaLibs\coin3d\include /IC:\Users\RJhansiR\Develop\OpenModelica\OMNotebook\OMNotebookQT4 /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Tools.cpp
+         Tools.cpp
+     1>Tools.cpp(328): warning C4101: 'rgb' : unreferenced local variable
+     1>Tools.cpp(519): warning C4101: 'ok' : unreferenced local variable
+       Lib:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\RJhansiR\Develop\OpenModelica\OMNotebook\OMNotebookQT4\Release\Sketch.lib" /NOLOGO /LTCG Release\Draw_Arc.obj
+         Release\Draw_ellep.obj
+         Release\Draw_line.obj
+         Release\Draw_polygon.obj
+         Release\Draw_rect.obj
+         Release\Draw_RoundRect.obj
+         Release\Graph_Scene.obj
+         Release\moc_Graph_Scene.obj
+         Release\moc_Tools.obj
+         Release\Scene_Objects.obj
+         Release\Tools.obj
+         Sketch.vcxproj -> C:\Users\RJhansiR\Develop\OpenModelica\OMNotebook\OMNotebookQT4\Release\Sketch.lib
+       FinalizeBuildStatus:
+         Deleting file "Release\Sketch.unsuccessfulbuild".
+         Touching "Release\Sketch.lastbuildstate".
+     1>Done Building Project "C:\Users\RJhansiR\Develop\OpenModelica\OMNotebook\Sketch1\Sketch\Sketch\Sketch.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.78
