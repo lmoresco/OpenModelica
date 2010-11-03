@@ -6,7 +6,7 @@
 //
 loadFile("Pam.mo");
 loadFile("Main.mo");
-loadFile("ParseOMC.mo");
+loadFile("Parse.mo");
 loadFile("Input.mo");
 getErrorString();
 i:=Main.main();
