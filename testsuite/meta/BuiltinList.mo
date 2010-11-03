@@ -40,6 +40,7 @@ package BuiltinList
     output T1 getIx;
     output T1 getNthIx;
     output list<T1> deleteIx;
+    output list<T1> consIx;
     Integer i2;
     Real r;
     Boolean b;
@@ -55,6 +56,7 @@ package BuiltinList
     getIx := listGet(lst, i);
     getNthIx := listNth(lst, i);
     deleteIx := listDelete(lst, i);
+    consIx := cons(member, {});
   end funcTuple;
 
 end BuiltinList;
