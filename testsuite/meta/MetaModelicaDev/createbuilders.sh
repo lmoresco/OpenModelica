@@ -1,7 +1,9 @@
 #!/bin/bash
 
 case $1 in
-  "win*" ) BUILDER=tool.launch.in.win32 ;;
+  "windows" ) BUILDER=tool.launch.in.win32 ;;
+  "win32" ) BUILDER=tool.launch.in.win32 ;;
+  "win" ) BUILDER=tool.launch.in.win32 ;;
   "omdev" ) BUILDER=tool.launch.in.win32 ;;
   "osx" )     BUILDER=tool.launch.in.osx ;;
   "linux" )   BUILDER=tool.launch.in.linux ;;
