@@ -16,7 +16,8 @@ TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $$O
 
 lexer.o:  lexer.c parser.h
 lexer.c:  lexer.l
-	flex -t -l lexer.l >lexer.c
+	flex -t -l lexer.l >lexer.c.tmp
+	@mv lexer.c.tmp lexer.c
 
 # PARSER
 
