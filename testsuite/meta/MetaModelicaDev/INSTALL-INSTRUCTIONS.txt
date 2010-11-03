@@ -4,7 +4,7 @@ Adrian Pop [adrpo@ida.liu.se]
 2009-10-22
 
 
-1. Install OpenModelica 1.4.5 or later
+1. Install OpenModelica 1.5.1 or later
 
 2. Unpack Eclipse+MDT anywhere you want (e.g. to C:\ -- C:\eclipse)
    DO NOT START ECLIPSE YET.
@@ -30,13 +30,17 @@ Adrian Pop [adrpo@ida.liu.se]
 5. Enjoy. (Start Eclipse e.g. by running the eclipse.bat file)
 
 
+Mac/Linux users
+---------------------------
+1. Modify createbuilders.sh (use ${system_path:make} instead of OMDEV)
+2. Run createbuilders.sh
 
 
 MetaModelica exercises pack
 ---------------------------
 
 For Windows you need to have installed:
-- OpenModelica 1.4.2 (1.5.0 or later recommended)
+- OpenModelica 1.5.1
 - Latest OMDev-mingw-msvc.zip unpacked, and OMDEV environment variable set.
 - Java 5.0
 - Eclipse 3.5 with the latest MDT
@@ -78,12 +82,3 @@ Adrian Pop or Martin Sjölund [{adrpo,marsj}@ida.liu.se]
 
 2009-10-21: Modified makefiles, added previosuly missing files and 03_symbolicderivative. Martin Sjölund.
 2007-08-28: Original version. Adrian Pop.
-
-
-
-
-
-
-
-
-

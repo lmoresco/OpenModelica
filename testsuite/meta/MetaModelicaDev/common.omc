@@ -10,7 +10,7 @@ endif
 CC = gcc
 run: run2 clean
 
-TEST = `if [ -f ../../../rtest ]; then echo ../../../rtest; else echo omc; fi` +d=rml +g=MetaModelica
+TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $$OPENMODELICAHOME/bin/omc; fi) +d=rml +g=MetaModelica
 
 # LEXER
 
