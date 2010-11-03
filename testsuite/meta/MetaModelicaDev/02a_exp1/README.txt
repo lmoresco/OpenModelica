@@ -11,7 +11,8 @@ ASSIGNMENT: add the following constructs to the language
 - search for // your code here within Exp1.mo
 
 NOTE: The parser/lexer are ready, but give parser errors for the new operators
-until they are added in Exp1.mo
+until they are added in Exp1.mo (add them last in the uniontype to avoid weird
+errors)
 
 SOLUTION.txt presents the solution to the assignment.
 

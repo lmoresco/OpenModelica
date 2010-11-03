@@ -65,6 +65,7 @@ algorithm
     local
       String id,id1,id2;
       Exp e1prim,e2prim,e1,e2;
+      Integer i1,i2;
     // der of constant
     case (INT(_), _) then INT(0);
     // der of time variable
@@ -118,8 +119,6 @@ algorithm
       then NEG(MUL(CALL("sin",{e1}),e1prim));
     // pow(e1,INT(i))' => i*e1'*pow(e1,INT(i-1))
     case (CALL("pow", {e1,INT(i1)}),id)
-      local
-        Integer i1,i2;
       equation
         e1prim = diff(e1,id);
         i2 = i1-1;
@@ -144,6 +143,8 @@ algorithm
   simpleExpr := matchcontinue (expr)
     local
       Exp e,e1,e2,sim1,sim2,res;
+      String id;
+      list<Exp> exprList,simpleExprList;
     case ADD(e1,e2)
       equation
         sim1 = simplifyExp(e1);
@@ -174,9 +175,6 @@ algorithm
         res = simplifyExp2(NEG(sim1));
       then res;
     case CALL(id,exprList)
-      local
-        String id;
-        list<Exp> exprList,simpleExprList;
       equation
         simpleExprList = simplifyExpList(exprList);
         res = simplifyExp2(CALL(id,simpleExprList));

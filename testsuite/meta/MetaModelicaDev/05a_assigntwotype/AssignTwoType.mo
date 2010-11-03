@@ -99,17 +99,19 @@ algorithm
   _:=
   matchcontinue (inValue)
     local
-      Ident x_1;
-      Integer x;
-    case (INTval(integer = x))
+      Ident str;
+      Integer i;
+      Real r;
+    case (INTval(integer = i))
       equation 
-        x_1 = intString(x);
-        print(x_1); then ();
-    case (REALval(real = x))
-      local Real x;
+        str = intString(i);
+        print(str);
+      then ();
+    case (REALval(real = r))
       equation 
-        x_1 = realString(x);
-        print(x_1); then ();
+        str = realString(r);
+        print(str);
+      then ();
   end matchcontinue;
 end printvalue;
 
@@ -164,7 +166,7 @@ algorithm
     local
       Env env,env2,env1;
       Integer ival,x,y,z;
-      Real rval;
+      Real rval,rx,ry,rz;
       String sval;
       Value value,v1,v2;
       Ident id;
@@ -186,24 +188,22 @@ algorithm
         z = applyIntBinop(binop, x, y); 
       then (env2,INTval(z));
     case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) "int/real binop int/real"
-      local Real x,y,z;
       equation 
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
-        REAL2(real1 = x,real2 = y) = typeLub(v1, v2);
-        z = applyRealBinop(binop, x, y); 
-      then (env2,REALval(z));
+        REAL2(real1 = rx,real2 = ry) = typeLub(v1, v2);
+        rz = applyRealBinop(binop, rx, ry);
+      then (env2,REALval(rz));
     case (env,UNARY(unOp = unop,exp = e)) "int unop exp"
       equation 
         (env1,INTval(integer = x)) = eval(env, e);
         y = applyIntUnop(unop, x); 
       then (env1,INTval(y));
     case (env,UNARY(unOp = unop,exp = e)) "real unop exp"
-      local Real x,y;
       equation 
-        (env1,REALval(real = x)) = eval(env, e);
-        y = applyRealUnop(unop, x); 
-      then (env1,REALval(y));
+        (env1,REALval(real = rx)) = eval(env, e);
+        ry = applyRealUnop(unop, rx); 
+      then (env1,REALval(ry));
     case (env,ASSIGN(ident = id,exp = exp)) "eval of an assignment node returns the updated environment and
     the assigned value id := exp"
       equation 
@@ -224,16 +224,16 @@ algorithm
       Integer x,y;
       Real x2,y2;
     case (INTval(integer = x),INTval(integer = y)) then INT2(x,y); 
-    case (INTval(integer = x),REALval(real = y))
-      local Real y;
+    case (INTval(integer = x),REALval(real = y2))
       equation 
-        x2 = intReal(x); then REAL2(x2,y);
-    case (REALval(real = x),INTval(integer = y))
-      local Real x;
+        x2 = intReal(x);
+      then REAL2(x2,y2);
+    case (REALval(real = x2),INTval(integer = y))
       equation 
-        y2 = intReal(y); then REAL2(x,y2);
-    case (REALval(real = x),REALval(real = y))
-      local Real x,y; then REAL2(x,y);
+        y2 = intReal(y);
+      then REAL2(x2,y2);
+    case (REALval(real = x2),REALval(real = y2))
+      then REAL2(x2,y2);
   end matchcontinue;
 end typeLub;
 

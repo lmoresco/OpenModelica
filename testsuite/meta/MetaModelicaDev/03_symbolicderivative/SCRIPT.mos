@@ -4,19 +4,32 @@
 //
 // OpenModelica Development Course at PELAB
 //
-echo(false);
 loadFile("SymbolicDerivative.mo");
 loadFile("Parse.mo");
+getErrorString();
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-exp := Parse.parse();
-i := SymbolicDerivative.main(exp);
+if true then
+  exp := Parse.parse();
+end if;
+// exp; // Uncomment if you want to debug the AST
+getErrorString();
+SymbolicDerivative.main(exp);
+getErrorString();
 
 // Result:
+// true
+// true
+// ""
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 
+// 
+// ""
 // f(x) = (((3*sin((x*1)))-(-cos(x)^2))+(x/2))
 // [Differentiating expression]
 // f'(x) = ((((0*sin((x*1)))+(3*(cos((x*1))*((1*1)+(x*0)))))-(-(2*((-(sin(x)*1))*cos(x)^1))))+(((1*2)-(x*0))/(2*2)))
 // [Simplifying expression]
 // f'(x) = (((3*cos(x))+(2*((-sin(x))*cos(x))))+(2/4))
+// 0
+// ""
 // endResult

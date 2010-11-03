@@ -265,10 +265,10 @@ algorithm
       Exp e1,e2;
       BinOp binop;
       RelOp relop;
+      Value val;
+      Boolean b;
     case (_,INT(integer = v)) then INTval(v);   /* integer constant */
     case (env,IDENT(ident = id)) "identifier id"
-      local
-        Value val;
       equation 
         val = lookup(env, id);
       then val;
@@ -281,13 +281,14 @@ algorithm
       equation 
         INTval(integer = v1) = eval(env, e1);
         INTval(integer = v2) = eval(env, e2);
-        v3 = applyBinop(binop, v1, v2); then INTval(v3);
+        v3 = applyBinop(binop, v1, v2);
+      then INTval(v3);
     case (env,RELATION(exp1 = e1,relOp2 = relop,exp3 = e2)) "expr1 relop expr2"
-      local Boolean v3;
       equation 
         INTval(integer = v1) = eval(env, e1);
         INTval(integer = v2) = eval(env, e2);
-        v3 = applyRelop(relop, v1, v2); then BOOLval(v3);
+        b = applyRelop(relop, v1, v2);
+      then BOOLval(b);
   end matchcontinue;
 end eval;
 

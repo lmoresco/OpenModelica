@@ -121,7 +121,8 @@ algorithm
       Value value;
     case (env,id)
       equation 
-        failure(v = lookup(env, id)); then ((id,0) :: env,0);
+        failure(_ = lookup(env, id));
+      then ((id,0) :: env,0);
     case (env,id)
       equation 
         value = lookup(env, id); then (env,value);
@@ -156,7 +157,7 @@ algorithm
     case (ADD(),v1,v2) then v1+v2; 
     case (SUB(),v1,v2) then v1-v2; 
     case (MUL(),v1,v2) then v1*v2; 
-    case (DIV(),v1,v2) then v1/v2; 
+    case (DIV(),v1,v2) then intDiv(v1,v2);
   end matchcontinue;
 end applyBinop;
 
