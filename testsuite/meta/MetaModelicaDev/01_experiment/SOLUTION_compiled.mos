@@ -5,13 +5,15 @@
 // OpenModelica Development Course at PELAB
 // Uses packages, aliases, etc
 //
-echo(false);
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
+getErrorString();
 i:=Main.main({"10"});
-print("
-");
+getErrorString();
 // Result:
+// true
+// true
+// ""
 // Factorial of 10 is: 3628800
 // Calling Functions.test("one"):   1
 // Calling Functions.test("two"):   2
@@ -24,4 +26,5 @@ print("
 // Types.listConstant: {("a tuple element", 1, 1), ("another element", 2, NONE())}
 // Types.oneRecord: OneRecord("first element", 3)
 // Types.select: ThirdAlternative(SecondAlternative(FirstAlternative("one", "First"), FirstAlternative("two", "Second")))
+// ""
 // endResult
