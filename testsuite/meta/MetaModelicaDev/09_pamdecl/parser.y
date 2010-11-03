@@ -19,74 +19,74 @@ void* parse()
 #include "meta_modelica.h"
 
 /* Namedecl */
-extern struct record_description Absyn_NAMEDECL__desc;
+extern struct record_description Absyn_Decl_NAMEDECL__desc;
 
-#define Absyn__NAMEDECL(X1,X2)       (mmc_mk_box3(3,&Absyn_NAMEDECL__desc,X1,X2))
+#define Absyn__NAMEDECL(X1,X2)       (mmc_mk_box3(3,&Absyn_Decl_NAMEDECL__desc,X1,X2))
 
 /* Program */
-extern struct record_description Absyn_PROG__desc;
+extern struct record_description Absyn_Prog_PROG__desc;
 
-#define Absyn__PROG(X1,X2)       (mmc_mk_box3(3,&Absyn_PROG__desc,X1,X2))
+#define Absyn__PROG(X1,X2)       (mmc_mk_box3(3,&Absyn_Prog_PROG__desc,X1,X2))
 
 /* BinOp */
-extern struct record_description Absyn_ADD__desc;
-extern struct record_description Absyn_SUB__desc;
-extern struct record_description Absyn_MUL__desc;
-extern struct record_description Absyn_DIV__desc;
+extern struct record_description Absyn_BinOp_ADD__desc;
+extern struct record_description Absyn_BinOp_SUB__desc;
+extern struct record_description Absyn_BinOp_MUL__desc;
+extern struct record_description Absyn_BinOp_DIV__desc;
 
-#define Absyn__ADD (mmc_mk_box1(3,&Absyn_ADD__desc))
-#define Absyn__SUB (mmc_mk_box1(4,&Absyn_SUB__desc))
-#define Absyn__MUL (mmc_mk_box1(5,&Absyn_MUL__desc))
-#define Absyn__DIV (mmc_mk_box1(6,&Absyn_DIV__desc))
+#define Absyn__ADD (mmc_mk_box1(3,&Absyn_BinOp_ADD__desc))
+#define Absyn__SUB (mmc_mk_box1(4,&Absyn_BinOp_SUB__desc))
+#define Absyn__MUL (mmc_mk_box1(5,&Absyn_BinOp_MUL__desc))
+#define Absyn__DIV (mmc_mk_box1(6,&Absyn_BinOp_DIV__desc))
 
 /* RelOp */
-extern struct record_description Absyn_EQ__desc;
-extern struct record_description Absyn_GT__desc;
-extern struct record_description Absyn_LT__desc;
-extern struct record_description Absyn_LE__desc;
-extern struct record_description Absyn_GE__desc;
-extern struct record_description Absyn_NE__desc;
+extern struct record_description Absyn_RelOp_EQ__desc;
+extern struct record_description Absyn_RelOp_GT__desc;
+extern struct record_description Absyn_RelOp_LT__desc;
+extern struct record_description Absyn_RelOp_LE__desc;
+extern struct record_description Absyn_RelOp_GE__desc;
+extern struct record_description Absyn_RelOp_NE__desc;
 
-#define Absyn__EQ (mmc_mk_box1(3,&Absyn_EQ__desc))
-#define Absyn__GT (mmc_mk_box1(4,&Absyn_GT__desc))
-#define Absyn__LT (mmc_mk_box1(5,&Absyn_LT__desc))
-#define Absyn__LE (mmc_mk_box1(6,&Absyn_LE__desc))
-#define Absyn__GE (mmc_mk_box1(7,&Absyn_GE__desc))
-#define Absyn__NE (mmc_mk_box1(8,&Absyn_NE__desc))
+#define Absyn__EQ (mmc_mk_box1(3,&Absyn_RelOp_EQ__desc))
+#define Absyn__GT (mmc_mk_box1(4,&Absyn_RelOp_GT__desc))
+#define Absyn__LT (mmc_mk_box1(5,&Absyn_RelOp_LT__desc))
+#define Absyn__LE (mmc_mk_box1(6,&Absyn_RelOp_LE__desc))
+#define Absyn__GE (mmc_mk_box1(7,&Absyn_RelOp_GE__desc))
+#define Absyn__NE (mmc_mk_box1(8,&Absyn_RelOp_NE__desc))
 
 /* UnOp */
-extern struct record_description Absyn_NEG__desc;
+extern struct record_description Absyn_UnOp_NEG__desc;
 
-#define Absyn__NEG (mmc_mk_box1(3,&Absyn_NEG__desc))
+#define Absyn__NEG (mmc_mk_box1(3,&Absyn_UnOp_NEG__desc))
 
 /* Expr */
-extern struct record_description Absyn_INTCONST__desc;
-extern struct record_description Absyn_REALCONST__desc;
-extern struct record_description Absyn_BINARY__desc;
-extern struct record_description Absyn_UNARY__desc;
-extern struct record_description Absyn_RELATION__desc;
-extern struct record_description Absyn_VARIABLE__desc;
+extern struct record_description Absyn_Expr_INTCONST__desc;
+extern struct record_description Absyn_Expr_REALCONST__desc;
+extern struct record_description Absyn_Expr_BINARY__desc;
+extern struct record_description Absyn_Expr_UNARY__desc;
+extern struct record_description Absyn_Expr_RELATION__desc;
+extern struct record_description Absyn_Expr_VARIABLE__desc;
 
-#define Absyn__INTCONST(X1)       (mmc_mk_box2(3,&Absyn_INTCONST__desc,X1))
-#define Absyn__REALCONST(X1)      (mmc_mk_box2(4,&Absyn_REALCONST__desc,X1))
-#define Absyn__BINARY(X1,OP,X2)   (mmc_mk_box4(5,&Absyn_BINARY__desc,X1,OP,X2))
-#define Absyn__UNARY(OP,X1)       (mmc_mk_box3(6,&Absyn_UNARY__desc,OP,X1))
-#define Absyn__RELATION(X1,OP,X2) (mmc_mk_box4(7,&Absyn_RELATION__desc,X1,OP,X2))
-#define Absyn__VARIABLE(X1)       (mmc_mk_box2(8,&Absyn_VARIABLE__desc,X1))
+#define Absyn__INTCONST(X1)       (mmc_mk_box2(3,&Absyn_Expr_INTCONST__desc,X1))
+#define Absyn__REALCONST(X1)      (mmc_mk_box2(4,&Absyn_Expr_REALCONST__desc,X1))
+#define Absyn__BINARY(X1,OP,X2)   (mmc_mk_box4(5,&Absyn_Expr_BINARY__desc,X1,OP,X2))
+#define Absyn__UNARY(OP,X1)       (mmc_mk_box3(6,&Absyn_Expr_UNARY__desc,OP,X1))
+#define Absyn__RELATION(X1,OP,X2) (mmc_mk_box4(7,&Absyn_Expr_RELATION__desc,X1,OP,X2))
+#define Absyn__VARIABLE(X1)       (mmc_mk_box2(8,&Absyn_Expr_VARIABLE__desc,X1))
 
 /* Stmt */
-extern struct record_description Absyn_ASSIGN__desc;
-extern struct record_description Absyn_WRITE__desc;
-extern struct record_description Absyn_NOOP__desc;
-extern struct record_description Absyn_IF__desc;
-extern struct record_description Absyn_WHILE__desc;
-extern struct record_description Absyn_VARIABLE__desc;
+extern struct record_description Absyn_Stmt_ASSIGN__desc;
+extern struct record_description Absyn_Stmt_WRITE__desc;
+extern struct record_description Absyn_Stmt_NOOP__desc;
+extern struct record_description Absyn_Stmt_IF__desc;
+extern struct record_description Absyn_Stmt_WHILE__desc;
+extern struct record_description Absyn_Stmt_VARIABLE__desc;
 
-#define Absyn__ASSIGN(X1,X2) (mmc_mk_box3(3,&Absyn_ASSIGN__desc,X1,X2))
-#define Absyn__WRITE(X1)     (mmc_mk_box2(4,&Absyn_WRITE__desc,X1))
-#define Absyn__NOOP          (mmc_mk_box1(5,&Absyn_NOOP__desc))
-#define Absyn__IF(X1,X2,X3)  (mmc_mk_box4(6,&Absyn_IF__desc,X1,X2,X3))
-#define Absyn__WHILE(X1,X2)  (mmc_mk_box3(7,&Absyn_WHILE__desc,X1,X2))
+#define Absyn__ASSIGN(X1,X2) (mmc_mk_box3(3,&Absyn_Stmt_ASSIGN__desc,X1,X2))
+#define Absyn__WRITE(X1)     (mmc_mk_box2(4,&Absyn_Stmt_WRITE__desc,X1))
+#define Absyn__NOOP          (mmc_mk_box1(5,&Absyn_Stmt_NOOP__desc))
+#define Absyn__IF(X1,X2,X3)  (mmc_mk_box4(6,&Absyn_Stmt_IF__desc,X1,X2,X3))
+#define Absyn__WHILE(X1,X2)  (mmc_mk_box3(7,&Absyn_Stmt_WHILE__desc,X1,X2))
 
 #endif 
 %}
@@ -217,3 +217,7 @@ expr_rel
             { $$ = Absyn__RELATION($1,Absyn__EQ,$3);}
  
 %%
+
+void yyerror(char *str) {
+        printf("%s on line %d!\n", str, -1);
+}
