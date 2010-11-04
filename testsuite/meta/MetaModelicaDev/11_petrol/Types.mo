@@ -72,6 +72,7 @@ algorithm
       Type_a r;
       Stamp sz,stamp,stamp_1;
       list<tuple<Ident, Ty>> bnds_1,bnds;
+      Record r;
     case ((ty as ARITH(_)),_) then ty; 
     case ((ty as PTRNIL()),_) then ty; 
     case (PTR(ty),r)
@@ -90,7 +91,6 @@ algorithm
       then
         REC(RECORD(stamp,bnds_1));
     case (UNFOLD(stamp),(r as RECORD(stamp_1,_)))
-      local Record r;
       equation 
         equality(stamp = stamp_1);
       then
@@ -124,7 +124,6 @@ algorithm
       then
         bnds_2;
     case (r,((id,ty) :: bnds),bnds_1)
-      local list<tuple<String, Ty>> bnds_2,bnds_1;
       equation 
         ty_1 = unfoldTy(ty, r);
         bnds_2 = unfoldBnds(r, bnds, ((id,ty_1) :: bnds_1));
@@ -213,8 +212,7 @@ algorithm
   outTCodeVarLst:=
   matchcontinue (inTplStringTyLst,inTCodeVarLst)
     local
-      replaceable type Type_a subtypeof Any;
-      list<Type_a> bnds_2,bnds_1;
+      list<TCode.Var> bnds_2,bnds_1;
       TCode.Ty ty_1;
       Ident var;
       Ty ty;
@@ -225,7 +223,6 @@ algorithm
       then
         bnds_2;
     case (((var,ty) :: bnds),bnds_1)
-      local list<TCode.Var> bnds_2,bnds_1;
       equation 
         ty_1 = tyCnv(ty);
         bnds_2 = bndsCnv(bnds, (TCode.VAR(var,ty_1) :: bnds_1));
@@ -275,41 +272,22 @@ algorithm
   outExp:=
   matchcontinue (inExp1,inATy2,inATy3)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a rhs;
+      TCode.Exp rhs;
     case (rhs,CHAR(),CHAR()) then rhs; 
     case (rhs,CHAR(),INT())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.CtoI(),rhs);
     case (rhs,CHAR(),REAL())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.ItoR(),TCode.UNARY(TCode.CtoI(),rhs));
     case (rhs,INT(),CHAR())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.ItoC(),rhs);
-    case (rhs,INT(),INT())
-      local TCode.Exp rhs;
-      then
-        rhs;
-    case (rhs,INT(),REAL())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.ItoR(),rhs);
-    case (rhs,REAL(),CHAR())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.ItoC(),TCode.UNARY(TCode.RtoI(),rhs));
-    case (rhs,REAL(),INT())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.RtoI(),rhs);
-    case (rhs,REAL(),REAL())
-      local TCode.Exp rhs;
-      then
-        rhs;
+    case (rhs,INT(),INT()) then rhs;
+    case (rhs,INT(),REAL()) then TCode.UNARY(TCode.ItoR(),rhs);
+    case (rhs,REAL(),CHAR()) then TCode.UNARY(TCode.ItoC(),TCode.UNARY(TCode.RtoI(),rhs));
+    case (rhs,REAL(),INT()) then TCode.UNARY(TCode.RtoI(),rhs);
+    case (rhs,REAL(),REAL()) then rhs;
   end matchcontinue;
 end asgCnv1;
 
@@ -456,17 +434,10 @@ algorithm
   outExp:=
   matchcontinue (inExp1,inATy2,inATy3)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a exp;
+      TCode.Exp exp;
     case (exp,INT(),INT()) then exp; 
-    case (exp,INT(),REAL())
-      local TCode.Exp exp;
-      then
-        TCode.UNARY(TCode.ItoR(),exp);
-    case (exp,REAL(),REAL())
-      local TCode.Exp exp;
-      then
-        exp;
+    case (exp,INT(),REAL()) then TCode.UNARY(TCode.ItoR(),exp);
+    case (exp,REAL(),REAL()) then exp;
   end matchcontinue;
 end arithWiden;
 
