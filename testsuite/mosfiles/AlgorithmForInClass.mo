@@ -16,7 +16,7 @@ model AlgorithmForInClass
 algorithm
 	accum_sum[1] := 1;
 	for i in 2:5 loop
-		accum_sum[i] := accum_sum[i] + i;
+		accum_sum[i] := accum_sum[i - 1] + i;
 	end for;
 
 	for i in 1:3 loop
