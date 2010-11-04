@@ -1351,7 +1351,5 @@ strictRMLCheck();
 // 
 // "true
 // "
-// "[CevalFunction.mo:209:11-229:20:writable] Error: Number of output arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.
-// [CevalFunction.mo:715:11-737:25:writable] Error: The output does not match. Strict RML enforces match expression input and output to be the same as the function's.
-// "
+// ""
 // endResult
