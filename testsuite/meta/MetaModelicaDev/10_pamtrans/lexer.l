@@ -1,16 +1,21 @@
 %{
+#include <stdlib.h>
+#define YYSTYPE void*
 #include "parser.h"
+
+
+#ifdef RML
 #include "yacclib.h"
 #include "Absyn.h"
-
-typedef void *rml_t;
-/* extern rml_t yylval; */ 
-
+#else
+#include "meta_modelica.h"
+extern struct record_description Absyn_Exp_INT__desc;
+#define Absyn__INT(X1)       (mmc_mk_box2(3,&Absyn_Exp_INT__desc,X1))
+#endif
+ 
 int absyn_integer(char *s);
 int absyn_ident_or_keyword(char *s);
-
 int yywrap();
-
 %}
 
 %option yylineno
@@ -22,14 +27,14 @@ letter       [a-zA-Z]
 ident           {letter}({letter}|{digit})*
 digit        [0-9]
 digits       {digit}+
-icon       {digits}
+icon         {digits}
 /* Lex style lexical syntax of tokens in the PAM language */
 
 %%
 
 
 {whitespace} ;
-{ident}         return absyn_ident_or_keyword(yytext); /* T_IDENT */
+{ident}      return absyn_ident_or_keyword(yytext); /* T_IDENT */
 {digits}     return absyn_integer(yytext);  /* T_INTCONST */
 ":="         return T_ASSIGN;
 "+"          return T_ADD;
@@ -57,7 +62,7 @@ icon       {digits}
     [^\n]    ;
     \n       ;
     <<EOF>>  {
-               yyerror("Unterminated comment");
+         yyerror("Unterminated comment");
 	       yyterminate();
 	     }
 }
@@ -69,7 +74,7 @@ icon       {digits}
  
 int absyn_integer(char *s)
 {
-  yylval=(int) Absyn__INT(mk_icon(atoi(s)));
+  yylval = Absyn__INT(mmc_mk_icon(atoi(s)));
   return T_INTCONST;
 }
  
@@ -109,7 +114,7 @@ int absyn_ident_or_keyword(char *s)
                 else
                         high = mid - 1;
         }
-        yylval = (int) mk_scon(s);
+        yylval = mmc_mk_scon(s);
         return T_IDENT;
 }
 

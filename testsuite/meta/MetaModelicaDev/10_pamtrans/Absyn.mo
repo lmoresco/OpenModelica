@@ -15,20 +15,19 @@ uniontype BinOp
 
 end BinOp;
 
+
+
+
+
+
 public 
 uniontype RelOp
   record EQ end EQ;
-
   record GT end GT;
-
   record LT end LT;
-
   record LE end LE;
-
   record GE end GE;
-
   record NE end NE;
-
 end RelOp;
 
 public 

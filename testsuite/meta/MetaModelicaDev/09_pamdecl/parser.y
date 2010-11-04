@@ -54,11 +54,6 @@ extern struct record_description Absyn_RelOp_NE__desc;
 #define Absyn__GE (mmc_mk_box1(7,&Absyn_RelOp_GE__desc))
 #define Absyn__NE (mmc_mk_box1(8,&Absyn_RelOp_NE__desc))
 
-/* UnOp */
-extern struct record_description Absyn_UnOp_NEG__desc;
-
-#define Absyn__NEG (mmc_mk_box1(3,&Absyn_UnOp_NEG__desc))
-
 /* Expr */
 extern struct record_description Absyn_Expr_INTCONST__desc;
 extern struct record_description Absyn_Expr_REALCONST__desc;

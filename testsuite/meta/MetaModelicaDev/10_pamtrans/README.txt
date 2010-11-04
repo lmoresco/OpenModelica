@@ -1,4 +1,4 @@
-09_pamtrans exercise
+10_pamtrans exercise
 --------------------
 
 Additional example exercise that translates the pam language with declarations to machine code.

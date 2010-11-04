@@ -1,7 +1,7 @@
-LOGS = 01 02a 02b 03 04 05a 05b 06 08 09
-.PHONY = 01 02a 02b 03 04 05a 05b 06 08 09 start.stamp.tmp
+LOGS = 01 02a 02b 03 04 05a 05b 06 08 09 10
+.PHONY = 01 02a 02b 03 04 05a 05b 06 08 09 10 start.stamp.tmp
 
-OPENMODELICAHOME:=../../../build/
+OPENMODELICAHOME:=
 
 test: $(LOGS)
 	@cat $(LOGS:=.log) | grep "^[= ][+=][ =]" | grep -v "tests failed" > result.txt
@@ -30,5 +30,7 @@ start.stamp.tmp:
 08: start.stamp.tmp
 	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
 09: start.stamp.tmp
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+10: start.stamp.tmp
 	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
 
