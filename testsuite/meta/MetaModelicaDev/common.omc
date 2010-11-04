@@ -1,5 +1,5 @@
 ifdef OMDEV
-CFLAGS = -I'$(OPENMODELICAHOME)/include/omc'
+CFLAGS = -I'../../../../build/include/omc'
 else
 ifndef OPENMODELICAHOME
 CFLAGS = -I'../../../../build/include/omc' -fPIC
