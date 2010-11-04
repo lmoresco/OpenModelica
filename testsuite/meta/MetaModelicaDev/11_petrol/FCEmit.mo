@@ -1026,9 +1026,7 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeTyOption,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs0;
+      RTree recs1,recs0,recs;
       FCode.Ty ty;
     case (NONE(),recs) then recs; 
     case (SOME(ty),recs0)
@@ -1069,12 +1067,9 @@ protected function expRecs
   input RTree inRTree;
   output RTree outRTree;
 algorithm 
-  outRTree:=
-  matchcontinue (inExp,inRTree)
+  outRTree := matchcontinue (inExp,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs1,recs2,recs0,recs;
       FCode.UnOp unop;
       FCode.Exp exp,exp1,exp2;
       list<FCode.Exp> exps;
@@ -1184,9 +1179,7 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeBlockOption,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs1,recs2,recs0,recs;
       FCode.Record r;
       FCode.Stmt stmt;
     case (NONE(),recs) then recs; 
@@ -1229,9 +1222,7 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeProcLst,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs,recs1,recs2,recs0;
       FCode.Proc proc;
       list<FCode.Proc> procs;
     case ({},recs) then recs; 

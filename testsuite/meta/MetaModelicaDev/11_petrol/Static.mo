@@ -299,10 +299,8 @@ algorithm
   _:=
   matchcontinue (inTplStringTypesTyLst)
     local
-      replaceable type Type_b subtypeof Any;
-      replaceable type Type_a subtypeof Any;
-      Type_b ty;
-      list<tuple<Type_a, Type_b>> bnds;
+      Types.Ty ty;
+      list<tuple<String, Types.Ty>> bnds;
     case {} then (); 
     case (((_,ty) :: bnds))
       equation 
@@ -435,7 +433,7 @@ end"
 algorithm 
   outTypeB:=
   matchcontinue (inTypeA,inTypeB)
-    local Type_a addr;
+    local Type_b addr;
     case (_,addr) then addr; 
   end matchcontinue;
 end lvalueId;
@@ -515,7 +513,7 @@ protected function elabArg
   input Absyn.Exp exp;
   input Types.Ty ty;
   output TCode.Exp exp_2;
-  TCode.Exp exp_1,exp_2;
+  TCode.Exp exp_1;
   Types.Ty ty_1;
 algorithm 
   (exp_1,ty_1) := elabRvalue(env, exp);
@@ -563,8 +561,8 @@ algorithm
   (outExp,outTy):=
   matchcontinue (inTplStringBndLst,inUnOp,inExp)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a exp_1,env,exp;
+      list<tuple<String, Bnd>> env;
+      Absyn.Exp exp;
       Types.Ty ty;
       TCode.Exp exp_1,exp_2;
       TCode.Ty ty_1;
@@ -646,7 +644,7 @@ algorithm
       then
         (exp3,rty3);
     case (env,Absyn.RELATION(exp1,relop,exp2))
-      equation 
+      equation
         (exp1_1,rty1) = elabRvalueDecay(env, exp1);
         (exp2_1,rty2) = elabRvalueDecay(env, exp2);
         exp3 = Types.relCnv(exp1_1, rty1, relop, exp2_1, rty2);
@@ -674,13 +672,12 @@ protected function elabRvalueDecay
   output TCode.Exp outExp;
   output Types.Ty outTy;
 algorithm 
-  (outExp,outTy):=
-  matchcontinue (inTplStringBndLst,inExp)
+  (outExp,outTy) := matchcontinue (inTplStringBndLst,inExp)
     local
-      replaceable type Type_a subtypeof Any;
       TCode.Exp exp_1,exp_2;
       Types.Ty ty,ty_1;
-      Type_a env,exp;
+      list<tuple<String, Bnd>> env;
+      Absyn.Exp exp;
     case (env,exp)
       equation 
         (exp_1,ty) = elabRvalue(env, exp);
@@ -765,8 +762,7 @@ protected function elabStmt "
   input Absyn.Stmt inStmt;
   output TCode.Stmt outStmt;
 algorithm 
-  outStmt:=
-  matchcontinue (inTypesTyOption,inTplStringBndLst,inStmt)
+  outStmt := matchcontinue (inTypesTyOption,inTplStringBndLst,inStmt)
     local
       TCode.Exp lval,rval,rval_1,exp_1,exp_2;
       Types.Ty lvalty,rvalty,ety,rty;
@@ -803,7 +799,7 @@ algorithm
         TCode.RETURN(SOME((rty_1,exp_2)));
     case (NONE(),env,Absyn.PRETURN()) then TCode.RETURN(NONE()); 
     case (oty,env,Absyn.WHILE(exp,stmt))
-      equation 
+      equation
         (exp_1,ety) = elabRvalueDecay(env, exp);
         exp_2 = Types.condCnv(exp_1, ety);
         stmt_1 = elabStmt(oty, env, stmt);
@@ -951,7 +947,7 @@ protected function snd
 algorithm 
   outTypeB:=
   matchcontinue (inTplTypeATypeB)
-    local Type_a y;
+    local Type_b y;
     case ((_,y)) then y; 
   end matchcontinue;
 end snd;
@@ -1081,8 +1077,7 @@ protected function elabBlock
   input Absyn.Block inBlock;
   output TCode.Block outBlock;
 algorithm 
-  outBlock:=
-  matchcontinue (inTypesTyOption,inTplStringBndLst,inBlock)
+  outBlock := matchcontinue (inTypesTyOption,inTplStringBndLst,inBlock)
     local
       list<tuple<String, Bnd>> env1,env2,varenv,env3,env4,env0;
       list<tuple<String, Types.Ty>> pre_vars;
@@ -1096,7 +1091,7 @@ algorithm
       list<Absyn.SubBnd> subbnds;
       Absyn.Stmt stmt;
     case (fty,env0,Absyn.BLOCK(consts,types,vars,subbnds,stmt))
-      equation 
+      equation
         env1 = elabConsts(env0, consts);
         env2 = elabTypes(env1, types);
         pre_vars = elabVars(env2, vars, {});

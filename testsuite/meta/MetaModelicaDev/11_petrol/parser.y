@@ -13,8 +13,18 @@
 #include "meta_modelica.h"
 #endif
 
-static void yyerror(const char*);
+typedef void *rml_t;
 void* absyntree;
+void yyerror(const char *msg);
+
+void* parse() {
+  absyntree = NULL;
+  if (yyparse() != 0) {
+    fprintf(stderr, "Error: Parsing failed\n");
+    absyntree = pu_PROG(mmc_mk_scon("#ERROR#"), pu_BLOCK(mmc_mk_nil(),mmc_mk_nil(),mmc_mk_nil(),mmc_mk_nil(),pu_Stmt_SKIP()));
+  }
+  return absyntree;
+}
 %}
 
 %union {
@@ -344,7 +354,7 @@ primary_exp	: T_IDENT
 extern int yydebug;
 #endif
 
-static void yyerror(const char *msg)
+void yyerror(const char *msg)
 {
 #if	YYDEBUG
     if( yydebug )

@@ -67,9 +67,8 @@ algorithm
   outTy:=
   matchcontinue (inTy,inRecord)
     local
-      replaceable type Type_a subtypeof Any;
       Ty ty,ty_1;
-      Type_a r;
+      Record r;
       Stamp sz,stamp,stamp_1;
       list<tuple<Ident, Ty>> bnds_1,bnds;
       Record r;
@@ -417,8 +416,7 @@ algorithm
   outATy:=
   matchcontinue (inATy1,inATy2)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a y;
+      ATy y;
     case (INT(),y) then y; 
     case (REAL(),_) then REAL(); 
   end matchcontinue;
@@ -561,8 +559,7 @@ protected function intRelop
   input Absyn.RelOp inRelOp;
   output TCode.BinOp outBinOp;
 algorithm 
-  outBinOp:=
-  matchcontinue (inRelOp)
+  outBinOp := matchcontinue (inRelOp)
     case Absyn.LT() then TCode.ILT(); 
     case Absyn.LE() then TCode.ILE(); 
   end matchcontinue;
@@ -590,7 +587,7 @@ algorithm
       TCode.BinOp bop;
       Absyn.RelOp rop;
     case (INT(),rop)
-      equation 
+      equation
         bop = intRelop(rop);
       then
         bop;
@@ -627,7 +624,7 @@ algorithm
       then
         TCode.BINARY(exp1,bop,exp2);
     case (exp1,ARITH(raty1),rop,exp2,ARITH(raty2))
-      equation 
+      equation
         (exp1_1,exp2_1,raty3) = arithCnv(exp1, raty1, exp2, raty2);
         bop = intOrRealRelop(raty3, rop);
       then
@@ -672,8 +669,7 @@ protected function addCnv
   output TCode.Exp outExp;
   output Ty outTy;
 algorithm 
-  (outExp,outTy):=
-  matchcontinue (inExp1,inTy2,inExp3,inTy4)
+  (outExp,outTy) := matchcontinue (inExp1,inTy2,inExp3,inTy4)
     local
       TCode.Exp exp3,exp1,exp2,exp1_1,exp2_1;
       Ty ty3,ty,ty1,ty2;
