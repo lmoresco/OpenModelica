@@ -401,6 +401,7 @@ MyPointsInst2.mo \
 NamedArguments.mo \
 NestedClasses.mo \
 NoEvent1.mo \
+NonExpArray1.mo \
 NotDependsRecursive.mo \
 NotEquals.mo \
 Not.mo \
