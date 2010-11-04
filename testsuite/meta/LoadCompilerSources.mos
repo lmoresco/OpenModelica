@@ -15,7 +15,6 @@ loadFile("../../Compiler/BackendVariable.mo");
 loadFile("../../Compiler/BackendVarTransform.mo");
 loadFile("../../Compiler/BaseHashTable.mo");
 loadFile("../../Compiler/Builtin.mo");
-loadFile("../../Compiler/Cevalfunc.mo");
 loadFile("../../Compiler/CevalFunction.mo");
 loadFile("../../Compiler/Ceval.mo");
 loadFile("../../Compiler/CevalScript.mo");
