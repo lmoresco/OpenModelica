@@ -1,15 +1,18 @@
-// name:     10  Pam Translator to Machine Code
+// name:     11  Petrol
 // keywords: MetaModelica
 // status:   correct
 //
 // OpenModelica Development Course at PELAB
 //
 loadFile("Absyn.mo");
-loadFile("Emit.mo");
+loadFile("FCEmit.mo");
+loadFile("FCode.mo");
+loadFile("Flatten.mo");
 loadFile("Main.mo");
-loadFile("Mcode.mo");
 loadFile("Parse.mo");
-loadFile("Trans.mo");
+loadFile("Static.mo");
+loadFile("TCode.mo");
+loadFile("Types.mo");
 getErrorString();
 Main.main();
 getErrorString();

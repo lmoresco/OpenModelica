@@ -52,6 +52,3 @@ begin
     write_int(fact(n));
     write(10);
 end.
-
-    
-    

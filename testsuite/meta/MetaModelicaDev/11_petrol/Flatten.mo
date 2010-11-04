@@ -163,7 +163,7 @@ algorithm
     local
       FCode.Ty ty_1;
       TCode.Ty ty;
-    case NONE then NONE; 
+    case NONE() then NONE(); 
     case (SOME(ty))
       equation 
         ty_1 = transTy(ty);
@@ -273,8 +273,8 @@ protected function transProcid
   replaceable type Type_a subtypeof Any;
 algorithm 
   id_1 := matchcontinue (env, id)
+    local String id_2;
     case (env, id) 
-      local String id_2;
       equation
         PROC(id_2) = lookup(env, id);
       then id_2;
@@ -290,7 +290,7 @@ algorithm
   matchcontinue (inTplStringBndLst,inExp)
     local
       Integer x,lev;
-      FCode.Record r;
+      FCode.Record rec;
       list<tuple<String, Bnd>> env;
       String id,id_1;
       FCode.UnOp unop_1;
@@ -301,17 +301,15 @@ algorithm
       TCode.BinOp binop;
       list<FCode.Exp> args_1;
       list<TCode.Exp> args;
+      Real r;
     case (_,TCode.ICON(x)) then FCode.ICON(x); 
-    case (_,TCode.RCON(x))
-      local Real x;
-      then
-        FCode.RCON(x);
+    case (_,TCode.RCON(r)) then FCode.RCON(r);
     case (env,TCode.ADDR(id))
       equation 
-        VAR(lev,r) = lookup(env, id);
+        VAR(lev,rec) = lookup(env, id);
       then
-        FCode.UNARY(FCode.OFFSET(r,id),
-          FCode.UNARY(FCode.TOPTR(FCode.REC(r)),FCode.DISPLAY(lev)));
+        FCode.UNARY(FCode.OFFSET(rec,id),
+          FCode.UNARY(FCode.TOPTR(FCode.REC(rec)),FCode.DISPLAY(lev)));
     case (env,TCode.UNARY(unop,exp))
       equation 
         unop_1 = transUnop(unop);
@@ -375,7 +373,7 @@ algorithm
       list<tuple<String, Bnd>> env;
       TCode.Ty ty;
       TCode.Exp exp;
-    case (_,NONE) then NONE; 
+    case (_,NONE()) then NONE(); 
     case (env,SOME((ty,exp)))
       equation 
         ty_1 = transTy(ty);
@@ -456,13 +454,13 @@ algorithm
   outTplStringTypeALst:=
   matchcontinue (inTplStringTypeALst,inTypeA,inFCodeVarLst)
     local
-      Type_a env,bnd;
+      Type_a bnd;
       list<tuple<String, Type_a>> env_1;
       String id;
       list<FCode.Var> vars;
+      list<tuple<String, Type_a>> env;
     case (env,_,{}) then env; 
     case (env,bnd,(FCode.VAR(id,_) :: vars))
-      local list<tuple<String, Type_a>> env;
       equation 
         env_1 = envPlusVars(((id,bnd) :: env), bnd, vars);
       then
@@ -493,12 +491,12 @@ algorithm
       FCode.Stmt stmt_1;
       list<TCode.Proc> procs;
       TCode.Stmt stmt;
-    case (_,env0,TCode.PROC(id,formals,tyopt,NONE),procs0)
+    case (_,env0,TCode.PROC(id,formals,tyopt,NONE()),procs0)
       equation 
         formals_1 = map(transVar, formals);
         tyopt_1 = transTyopt(tyopt);
       then
-        (((id,PROC(id)) :: env0),(FCode.PROC(id,formals_1,tyopt_1,NONE) :: procs0));
+        (((id,PROC(id)) :: env0),(FCode.PROC(id,formals_1,tyopt_1,NONE()) :: procs0));
     case (SCOPE(level0,prefix0),env0,TCode.PROC(id,formals,tyopt,SOME(TCode.BLOCK(locals,procs,stmt))),procs0)
       equation 
         level1 = level0 + 1;
@@ -558,7 +556,7 @@ algorithm
     case (TCode.PROG(id,block_))
       equation 
         (_,procs_1) = flattenProc(SCOPE(-1,""), envInit, 
-          TCode.PROC(id,{},NONE,SOME(block_)), {});
+          TCode.PROC(id,{},NONE(),SOME(block_)), {});
       then
         FCode.PROG(procs_1,id);
   end matchcontinue;
