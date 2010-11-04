@@ -24,6 +24,7 @@ loadFile("test.mo");
 getClassNames();
 getClassNames(A);
 system("rm -rf A.mo test.mo");
+
 // Result:
 // true
 // true
