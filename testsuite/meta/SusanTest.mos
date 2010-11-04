@@ -50,7 +50,124 @@ getErrorString();
 // true
 // ""
 // true
-// ""
+// "[../../Compiler/TplCodegen.mo:24:5-35:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:35:5-42:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:56:5-84:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:105:5-115:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:133:5-145:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:145:5-152:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:172:5-184:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:184:5-208:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:230:5-242:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:242:5-258:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:258:5-277:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:277:5-300:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:321:5-333:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:333:5-340:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:354:5-363:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:363:5-374:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:392:5-404:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:404:5-411:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:429:5-440:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:440:5-447:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:465:5-475:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:493:5-505:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:505:5-512:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:530:5-542:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:560:5-571:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:571:5-578:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:592:5-600:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:600:5-611:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:632:5-664:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:664:5-672:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:728:5-736:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:736:5-747:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:793:5-808:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:808:5-815:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:850:5-870:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:870:5-879:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:910:5-921:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:921:5-928:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:942:5-952:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:952:5-961:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:961:5-971:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:971:5-983:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:983:5-991:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1027:5-1037:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1058:5-1071:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1071:5-1078:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1098:5-1108:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1108:5-1118:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1118:5-1138:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1217:5-1225:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1246:5-1257:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1257:5-1265:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1296:5-1307:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1307:5-1314:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1328:5-1336:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1336:5-1347:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1368:5-1380:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1380:5-1388:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1404:5-1418:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1418:5-1433:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1433:5-1442:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1442:5-1451:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1451:5-1464:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1464:5-1473:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1495:5-1509:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1509:5-1516:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1534:5-1545:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1545:5-1552:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1570:5-1581:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1581:5-1588:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1602:5-1615:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1615:5-1623:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1623:5-1637:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1637:5-1647:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1653:5-1665:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1665:5-1677:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1677:5-1688:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1688:5-1698:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1698:5-1706:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1733:5-1745:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1745:5-1752:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1804:5-1816:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1816:5-1823:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1841:5-1870:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1870:5-1877:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1895:5-1907:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1907:5-1914:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1928:5-1957:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1978:5-1990:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:1990:5-1997:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2015:5-2031:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2031:5-2038:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2056:5-2072:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2072:5-2079:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2095:5-2115:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2115:5-2124:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2124:5-2137:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2137:5-2158:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2158:5-2171:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2203:5-2218:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2218:5-2225:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2243:5-2253:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2285:5-2296:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2318:5-2328:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2328:5-2335:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2353:5-2363:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2363:5-2370:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2388:5-2398:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2398:5-2405:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2463:5-2472:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2492:5-2502:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2502:5-2512:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2512:5-2522:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2543:5-2557:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2557:5-2564:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2609:5-2623:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [../../Compiler/TplCodegen.mo:2623:5-2630:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// "
 // true
 // ""
 // true
@@ -89,7 +206,9 @@ getErrorString();
 // "Error: Found a component with same name when looking for type templPackage
 // "
 // true
-// ""
+// "[SusanTestSmall.mo:31:5-42:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [SusanTestSmall.mo:42:5-49:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// "
 // record Tpl.Text.MEM_TEXT
 //     tokens = {record Tpl.StringToken.ST_STRING
 //     value = "Hello, World!"
