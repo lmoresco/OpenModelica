@@ -32,9 +32,8 @@ Adrian Pop [adrpo@ida.liu.se]
 
 Mac/Linux users
 ---------------------------
-1. Modify createbuilders.sh (use ${system_path:make} instead of OMDEV)
-2. Run createbuilders.sh
-
+1. Run (cd scripts/ && ./createbuilders.sh osx)
+   or  (cd scripts/ && ./createbuilders.sh linux)
 
 MetaModelica exercises pack
 ---------------------------
