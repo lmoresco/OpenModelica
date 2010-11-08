@@ -12,27 +12,27 @@ test: $(LOGS)
 start.stamp.tmp:
 	@date +%s > $@
 01: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 02a: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 02b: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 03: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 04: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 05a: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 05b: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 06: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 08: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 09: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 10: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 11: start.stamp.tmp
-	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log
+	@$(MAKE) -C $@_* -f Makefile.omc test > $@.log || echo == $@ failed
 
