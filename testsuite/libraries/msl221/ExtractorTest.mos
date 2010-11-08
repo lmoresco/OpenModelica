@@ -1,0 +1,68 @@
+//name:         ExtractorTest
+//keyword:      instantiating msl221
+//status:       correct
+//
+// instantiate example
+//
+
+loadFile("ExtractorTestTotal.mo");
+instantiateModel(ExtractorTest);
+getErrorString();
+
+// Result:
+// true
+// "function Modelica.Math.sin
+//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.sin;
+// 
+// class ExtractorTest
+//   parameter Integer extractor1.nin = 2 "Number of inputs";
+//   input Real extractor1.u[1] "Connector of Real input signals";
+//   input Real extractor1.u[2] "Connector of Real input signals";
+//   output Real extractor1.y "Connector of Real output signal";
+//   parameter Boolean extractor1.allowOutOfRange = false "Index may be out of range";
+//   parameter Real extractor1.outOfRangeValue = 10000000000.0 "Output signal if index is out of range";
+//   input Integer extractor1.index;
+//   protected Real extractor1.k[1];
+//   protected Real extractor1.k[2];
+//   output Integer integerStep1.y "Connector of Integer output signal";
+//   parameter Integer integerStep1.offset = 1 "offset of output signal";
+//   parameter Real integerStep1.startTime(quantity = "Time", unit = "s") = 5.0 "y = offset for time < startTime";
+//   parameter Integer integerStep1.height = 1 "Height of step";
+//   output Real sine1.y "Connector of Real output signal";
+//   parameter Real sine1.amplitude = 1.0 "Amplitude of sine wave";
+//   parameter Real sine1.freqHz(quantity = "Frequency", unit = "Hz") = 1.0 "Frequency of sine wave";
+//   parameter Real sine1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
+//   parameter Real sine1.offset = 0.0 "Offset of output signal";
+//   parameter Real sine1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected constant Real sine1.pi = 3.14159265358979;
+//   output Real pulse1.y "Connector of Real output signal";
+//   parameter Real pulse1.amplitude = 1.0 "Amplitude of pulse";
+//   parameter Real pulse1.width(min = 1e-60, max = 100.0) = 50.0 "Width of pulse in % of periods";
+//   parameter Real pulse1.period(quantity = "Time", unit = "s", min = 1e-60) = 1.0 "Time for one period";
+//   parameter Real pulse1.offset = 0.0 "Offset of output signals";
+//   parameter Real pulse1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   protected Real pulse1.T0(quantity = "Time", unit = "s", start = pulse1.startTime) "Start time of current period";
+//   protected Real pulse1.T_width(quantity = "Time", unit = "s") = pulse1.period * pulse1.width / 100.0;
+// equation
+//   when {initial(),change(extractor1.index)} then
+//   extractor1.k[1] = Real(if extractor1.index == 1 then 1 else 0);
+//   extractor1.k[2] = Real(if extractor1.index == 2 then 1 else 0);
+//   end when;
+//   extractor1.y = if  NOT extractor1.allowOutOfRange OR extractor1.index > 0 AND extractor1.index <= extractor1.nin then extractor1.k[1] * extractor1.u[1] + extractor1.k[2] * extractor1.u[2] else extractor1.outOfRangeValue;
+//   integerStep1.y = integerStep1.offset + (if time < integerStep1.startTime then 0 else integerStep1.height);
+//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
+//   when sample(pulse1.startTime,pulse1.period) then
+//   pulse1.T0 = time;
+//   end when;
+//   pulse1.y = pulse1.offset + (if time < pulse1.startTime OR time >= pulse1.T0 + pulse1.T_width then 0.0 else pulse1.amplitude);
+//   extractor1.u[1] = pulse1.y;
+//   extractor1.u[2] = sine1.y;
+//   extractor1.index = integerStep1.y;
+// end ExtractorTest;
+// "
+// ""
+// endResult
