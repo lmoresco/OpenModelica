@@ -1,5 +1,5 @@
 ifdef OMDEV
-FPIC=""
+FPIC=
 else
 FPIC=-fPIC
 endif
