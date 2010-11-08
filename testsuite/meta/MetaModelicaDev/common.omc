@@ -1,12 +1,15 @@
 ifdef OMDEV
-CFLAGS = -I'../../../../build/include/omc'
+FPIC=""
 else
+FPIC=-fPIC
+endif
+
 ifndef OPENMODELICAHOME
-CFLAGS = -I'../../../../build/include/omc' -fPIC
+CFLAGS = -I'../../../../build/include/omc' $(FPIC)
 else
-CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' -fPIC
+CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' $(FPIC)
 endif
-endif
+
 CC = gcc
 run: run2 clean
 
