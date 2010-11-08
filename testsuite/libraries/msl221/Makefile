@@ -1,32 +1,73 @@
 TEST = ../../rtest -v
 
 TESTFILES = \
-AIMC_DOL.mos FirstExample.mos PumpAndValve.mos\
-AIMC_Inverter.mos FirstExample_Variant2.mos  PumpDropOut.mos\
-AIMC_YD.mos FirstExample_Variant3.mos Rectifier.mos\
-Friction.mos SMEE_Gen.mos\
-AIMS_start.mos SMPM_Inverter.mos\
-Accelerate.mos HeatingMOSInverter.mos   SMR_Inverter.mos\
-BusUsage.mos HeatingRectifier.mos Sensors.mos\
-CauerLowPassAnalog.mos IndirectCooling.mos ShowCompositeStep.mos\
-CauerLowPassOPV.mos InitialConditions.mos ShowExceptions.mos\
-CauerLowPassSC.mos  ShowLogicalSources.mos\
-CharacteristicIdealDiodes.mos  LogicalNetwork1.mos  ShowSaturatingInductor.mos\
-CharacteristicThyristors.mos LossyGearDemo1.mos ShowVariableResistor.mos\
-ChuaCircuit.mos  LossyGearDemo2.mos   SignConvention.mos\
-ControlledTanks.mos Motor.mos SimpleCooling.mos\
-CoupledClutches.mos NandGate.mos TestNand.mos\
-DCEE_start.mos OneMass.mos TransformerYD.mos\
-DCPM_start.mos   OneWayRectifier.mos  TransformerYY.mos\
-DCSE_start.mos   OneWayRectifierBG.mos  TwoMass.mos\
-Damper.mos Oscillator.mos TwoMasses.mos\
-DifferentialAmplifier.mos PID_Controller.mos \
-ElasticBearing.mos ParallelCooling.mos \
-ParallelPumpDropOut.mos  WhyArrows.mos\
+AIMC_DOL.mos \
+AIMC_Inverter.mos \
+AIMC_YD.mos \
+AIMS_start.mos \
+Accelerate.mos \
+BusUsage.mos \
+CauerLowPassAnalog.mos \
+CauerLowPassOPV.mos \
+CauerLowPassSC.mos \
+CharacteristicIdealDiodes.mos \
+CharacteristicThyristors.mos \
+ChuaCircuit.mos \
+ControlledTanks.mos \
+CoupledClutches.mos \
+DCEE_start.mos \
+DCPM_start.mos \
+DCSE_start.mos \
+Damper.mos \
+DifferentialAmplifier.mos \
+ElasticBearing.mos \
+EnforcedMovement.mos \
 ExecutionPaths.mos \
-First.mos PreLoad.mos \
-PullinStroke.mos MotionCycleWithLoad.mos EnforcedMovement.mos
-
+ExtractorTest.mos \
+First.mos \
+FirstExample.mos \
+FirstExample_Variant2.mos \
+FirstExample_Variant3.mos \
+Friction.mos \
+HeatingMOSInverter.mos \
+HeatingRectifier.mos \
+IndirectCooling.mos \
+InitialConditions.mos \
+LogicalNetwork1.mos \
+LossyGearDemo1.mos \
+LossyGearDemo2.mos \
+MotionCycleWithLoad.mos \
+Motor.mos \
+NandGate.mos \
+OneMass.mos \
+OneWayRectifier.mos \
+OneWayRectifierBG.mos \
+Oscillator.mos \
+PID_Controller.mos \
+ParallelCooling.mos \
+ParallelPumpDropOut.mos \
+PreLoad.mos \
+PullinStroke.mos \
+PumpAndValve.mos \
+PumpDropOut.mos \
+Rectifier.mos \
+SMEE_Gen.mos \
+SMPM_Inverter.mos \
+SMR_Inverter.mos \
+Sensors.mos \
+ShowCompositeStep.mos \
+ShowExceptions.mos \
+ShowLogicalSources.mos \
+ShowSaturatingInductor.mos \
+ShowVariableResistor.mos \
+SignConvention.mos \
+SimpleCooling.mos \
+TestNand.mos \
+TransformerYD.mos \
+TransformerYY.mos \
+TwoMass.mos \
+TwoMasses.mos \
+WhyArrows.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
