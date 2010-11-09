@@ -15,6 +15,7 @@ DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
+ErrorInvalidComplexType.mo \
 ErrorInvalidPattern1.mo \
 ErrorInvalidPattern2.mo \
 ErrorInvalidPattern3.mo \

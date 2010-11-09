@@ -1,6 +1,6 @@
 // name: ErrorLocalElement
 // cflags: +g=MetaModelica
-// status: correct
+// status: incorrect
 
 class ErrorLocalElement
   function fn
