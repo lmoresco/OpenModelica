@@ -3,7 +3,5 @@ setCommandLineOptions({"+g=MetaModelica","+d=rml"});
 runScript("LoadCompilerSources.mos");
 getErrorString();
 
-Main.main({});
-//UnitAbsynBuilder.emptyInstStore();
-//DAE.ICONST(1);
+Static.elabExp(Env.emptyCache(),Env.newEnvironment(),Absyn.INTEGER(42),false,NONE(),false,Prefix.NOPRE(),Absyn.dummyInfo);
 getErrorString();

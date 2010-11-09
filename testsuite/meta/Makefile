@@ -18,6 +18,7 @@ ErrorInteractiveCallFunctionPtr.mos \
 ErrorInvalidPattern1.mo \
 ErrorInvalidPattern2.mo \
 ErrorInvalidPattern3.mo \
+ErrorLocalElement.mo \
 ErrorMatchInOut1.mo \
 ErrorMatchInOut2.mo \
 ErrorMatchInOut3.mo \
