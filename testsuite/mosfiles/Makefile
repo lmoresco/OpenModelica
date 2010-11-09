@@ -11,6 +11,7 @@ AlgorithmSection.mos \
 algorithms.mos \
 ArrayAddSub1.mos ArrayDivError.mos \
 ArrayEquation.mos ArrayMult.mos ArrayReduce.mos \
+ArrayParameterSize.mos \
 ArraySlice.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
