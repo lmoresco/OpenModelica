@@ -15,7 +15,9 @@ DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
-ErrorInvalidPattern.mo \
+ErrorInvalidPattern1.mo \
+ErrorInvalidPattern2.mo \
+ErrorInvalidPattern3.mo \
 ErrorMatchInOut1.mo \
 ErrorMatchInOut2.mo \
 ErrorMatchInOut3.mo \

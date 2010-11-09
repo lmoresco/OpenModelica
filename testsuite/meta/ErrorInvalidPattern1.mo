@@ -1,7 +1,8 @@
-// name: ErrorInvalidPattern
+// name: ErrorInvalidPattern1
 // cflags: +g=MetaModelica
 // status: incorrect
-package ErrorInvalidPattern
+
+package ErrorInvalidPattern1
 
 function fn
   input String str;
@@ -14,10 +15,11 @@ end fn;
 
 constant String str = fn("");
 
-end ErrorInvalidPattern;
+end ErrorInvalidPattern1;
+
 // Result:
-// Error processing file: ErrorInvalidPattern.mo
-// [ErrorInvalidPattern.mo:11:10-11:19:writable] Error: Invalid pattern: str + ""
+// Error processing file: ErrorInvalidPattern1.mo
+// [ErrorInvalidPattern1.mo:12:10-12:19:writable] Error: Invalid pattern: str + ""
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
