@@ -29,6 +29,7 @@ algorithm
   ht := add((wild,DAE.ICONST(i*9)),ht);
   ht := delete(wild,ht);
   failure(lst := get(wild,ht)::lst);
+  HashTableStringToPath.emptyHashTable() "verify that this also works";
 end fn;
 
 end HashTableTest;

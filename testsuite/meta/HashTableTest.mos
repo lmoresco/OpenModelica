@@ -11,6 +11,7 @@ getErrorString();
 
 HashTableTest.fn(1);
 getErrorString();
+
 // Result:
 // true
 // [../../Compiler/SimCodeC.mo:40:5-53:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
