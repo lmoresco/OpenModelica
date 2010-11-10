@@ -1,0 +1,92 @@
+// name:     extfunctions linearization
+// keywords: extfunctions, linearization
+// status:   correct
+// cflags:   +d=linearization
+// teardown_command: rm -rf extfunctions.* extfunctions_* output.log linear_extfunctions.* linear_extfunctions_* linear_extfunctions extfunctions
+// 
+//  Case for linearization of extfunctions model
+//
+loadFile("modelextfunction.mo");
+simulate(extfunction,numberOfIntervals=1); // 1 intervals == 2 values
+//linearize at point in time 0 
+system("extfunction -l 0");
+loadFile("linear_extfunction.mo");
+list(linear_extfunction);
+simulate(linear_extfunction,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+//linearize at point in time 1 
+system("extfunction -l 1");
+loadFile("linear_extfunction.mo");
+list(linear_extfunction);
+simulate(linear_extfunction,method="dassl2");
+readFile("output.log"); // Check that output log is emtpy
+//echo(false); // turns of output
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "extfunction_res.plt",
+//		 messages = ""
+// end SimulationResult;
+// Linearization will performed at point of time: 0
+// Linear model is created!
+// 0
+// true
+// "model linear_extfunction
+//  parameter Integer n = 2;
+//  parameter Integer k = 0;
+//  parameter Integer l = 0;
+//  parameter Real x0[2] = {1, -1};
+//  parameter Real u0[0] = {};
+//  parameter Real A[2,2] = [0.5403023058681398,0.841470981782777;0.841470981782777,0.5403023058681398];
+//  parameter Real B[2,0] = zeros(2, 0);
+//  parameter Real C[0,2] = zeros(0, 2);
+//  parameter Real D[0,0] = zeros(0, 0);
+//  Real x[2](start = x0);
+//  input Real u[0];
+//  output Real y[0];
+//  Real x_Px = x[1];
+//  Real x_Py = x[2];
+//   
+// equation 
+//  der(x) = A * x + B * u;
+//  y = C * x + D * u;
+// end linear_extfunction;
+// 
+// "
+// record SimulationResult
+//     resultFile = "linear_extfunction_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// Linearization will performed at point of time: 1
+// Linear model is created!
+// 0
+// true
+// "model linear_extfunction
+//  parameter Integer n = 2;
+//  parameter Integer k = 0;
+//  parameter Integer l = 0;
+//  parameter Real x0[2] = {1.398975261620134, -1.398975261620134};
+//  parameter Real u0[0] = {};
+//  parameter Real A[2,2] = [0.1709768816429697,1.378375416583033;1.378375416583033,0.1709768816429697];
+//  parameter Real B[2,0] = zeros(2, 0);
+//  parameter Real C[0,2] = zeros(0, 2);
+//  parameter Real D[0,0] = zeros(0, 0);
+//  Real x[2](start = x0);
+//  input Real u[0];
+//  output Real y[0];
+//  Real x_Px = x[1];
+//  Real x_Py = x[2];
+//   
+// equation 
+//  der(x) = A * x + B * u;
+//  y = C * x + D * u;
+// end linear_extfunction;
+// 
+// "
+// record SimulationResult
+//     resultFile = "linear_extfunction_res.plt",
+//     messages = ""
+// end SimulationResult;
+// ""
+// endResult

@@ -7,7 +7,9 @@ simVanDerPol.mos \
 smallValues.mos \
 simLotkaVolterra.mos \
 simTwoTank.mos \
-simNonlinear.mos
+simNonlinear.mos \
+simextfunction.mos 
+
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
