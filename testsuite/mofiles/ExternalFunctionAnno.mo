@@ -4,7 +4,6 @@
 // 
 
 function f1
-  annotation(derivative=df1);
   input Real a;
   output Real b;
   external b = myfoo(a) annotation(derivative=df1,Library="foo.o",Include="#include \"myfoo.h\"");
