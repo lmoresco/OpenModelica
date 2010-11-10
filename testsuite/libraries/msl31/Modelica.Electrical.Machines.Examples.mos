@@ -4001,7 +4001,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 451 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -4837,7 +4844,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 245 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -5871,7 +5885,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 300 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
@@ -8207,7 +8228,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 358 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Machines.Examples.DCPM_Start
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Machines.Examples.DCPM_Start
 //   parameter Real Va(quantity = "ElectricPotential", unit = "V") = 100.0 "actual armature voltage";
 //   parameter Real tStart(quantity = "Time", unit = "s") = 0.2 "armature voltage ramp";
 //   parameter Real tRamp(quantity = "Time", unit = "s") = 0.8 "armature voltage ramp";
@@ -8427,7 +8455,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 56 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Machines.Examples.DCEE_Start
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Machines.Examples.DCEE_Start
 //   parameter Real Va(quantity = "ElectricPotential", unit = "V") = 100.0 "actual armature voltage";
 //   parameter Real tStart(quantity = "Time", unit = "s") = 0.2 "armature voltage ramp";
 //   parameter Real tRamp(quantity = "Time", unit = "s") = 0.8 "armature voltage ramp";
@@ -8683,7 +8718,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 66 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Machines.Examples.DCSE_Start
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Machines.Examples.DCSE_Start
 //   parameter Real Va(quantity = "ElectricPotential", unit = "V") = 100.0 "actual armature voltage";
 //   parameter Real tStart(quantity = "Time", unit = "s") = 0.2 "armature voltage ramp";
 //   parameter Real tRamp(quantity = "Time", unit = "s") = 0.8 "armature voltage ramp";
@@ -8935,6 +8977,13 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   end for;
 //   y0 := 0.333333333333333 * (x[1] + x[2] + x[3]);
 // end Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
 //   input Real u1;
@@ -10655,11 +10704,18 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // "Check of Modelica.Electrical.Machines.Examples.TransformerTestbench completed successfully.
 // 
 // 
-// Class Modelica.Electrical.Machines.Examples.TransformerTestbench has 676 equation(s) and 672 variable(s).
+// Class Modelica.Electrical.Machines.Examples.TransformerTestbench has 672 equation(s) and 672 variable(s).
 // 518 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.sin
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
@@ -11940,7 +11996,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 359 of these are trivial equation(s).
 // "
 // 
-// "function Modelica.Math.sin
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
@@ -14176,7 +14239,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 622 of these are trivial equation(s).
 // "
 // 
-// "function Modelica.Math.sin
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 

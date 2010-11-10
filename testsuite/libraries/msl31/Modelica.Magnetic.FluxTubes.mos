@@ -354,10 +354,10 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real pmActuator.t(quantity = "Length", unit = "m") = 0.02 "Axial length of permanent magnet ring and air gap respectively";
 //   parameter Real pmActuator.l_air(quantity = "Length", unit = "m") = 0.003 "Total radial length of armature air gap";
 //   parameter Real pmActuator.l_FeOut(quantity = "Length", unit = "m") = 0.004 "Radial thickness of outer back iron (for estimation of leakage permeance)";
-//   parameter Real pmActuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 1.0 "Coercivity at reference temperature";
-//   parameter Real pmActuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 1.0 "Remanence at reference temperature";
+//   parameter Real pmActuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 400000.0 "Coercivity at reference temperature";
+//   parameter Real pmActuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 0.58 "Remanence at reference temperature";
 //   parameter Real pmActuator.material.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Reference temperature";
-//   parameter Real pmActuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of remanence at reference temperature";
+//   parameter Real pmActuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = -0.001 "Temperature coefficient of remanence at reference temperature";
 //   parameter Real pmActuator.material.T_op(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Operating temperature";
 //   parameter Real pmActuator.material.B_r(quantity = "MagneticFluxDensity", unit = "T") = pmActuator.material.B_rRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) "Remanence at operating temperature";
 //   parameter Real pmActuator.material.H_cB(quantity = "MagneticFieldStrength", unit = "A/m") = pmActuator.material.H_cBRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) "Coercivity at operating temperature";
@@ -979,13 +979,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.armature.limit_xMax.flange.s = pmActuator.armature.stopper_xMax.flange_b.s;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour;
 // "
-// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// "
+// ""
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour completed successfully.
 // 
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour has 237 equation(s) and 237 variable(s).
 // 132 of these are trivial equation(s).
@@ -1065,10 +1061,10 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real actuator.t(quantity = "Length", unit = "m") = 0.02 "Axial length of permanent magnet ring and air gap respectively";
 //   parameter Real actuator.l_air(quantity = "Length", unit = "m") = 0.003 "Total radial length of armature air gap";
 //   parameter Real actuator.l_FeOut(quantity = "Length", unit = "m") = 0.004 "Radial thickness of outer back iron (for estimation of leakage permeance)";
-//   parameter Real actuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 1.0 "Coercivity at reference temperature";
-//   parameter Real actuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 1.0 "Remanence at reference temperature";
+//   parameter Real actuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 400000.0 "Coercivity at reference temperature";
+//   parameter Real actuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 0.58 "Remanence at reference temperature";
 //   parameter Real actuator.material.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Reference temperature";
-//   parameter Real actuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of remanence at reference temperature";
+//   parameter Real actuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = -0.001 "Temperature coefficient of remanence at reference temperature";
 //   parameter Real actuator.material.T_op(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Operating temperature";
 //   parameter Real actuator.material.B_r(quantity = "MagneticFluxDensity", unit = "T") = actuator.material.B_rRef * (1.0 + actuator.material.alpha_Br * (actuator.material.T_op - actuator.material.T_ref)) "Remanence at operating temperature";
 //   parameter Real actuator.material.H_cB(quantity = "MagneticFieldStrength", unit = "A/m") = actuator.material.H_cBRef * (1.0 + actuator.material.alpha_Br * (actuator.material.T_op - actuator.material.T_ref)) "Coercivity at operating temperature";
@@ -1511,13 +1507,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.armature.limit_xMax.flange.s = actuator.armature.stopper_xMax.flange_b.s;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour;
 // "
-// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// "
+// ""
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour completed successfully.
 // 
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour has 150 equation(s) and 150 variable(s).
 // 77 of these are trivial equation(s).
@@ -1591,10 +1583,10 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real pmActuator.t(quantity = "Length", unit = "m") = 0.02 "Axial length of permanent magnet ring and air gap respectively";
 //   parameter Real pmActuator.l_air(quantity = "Length", unit = "m") = 0.003 "Total radial length of armature air gap";
 //   parameter Real pmActuator.l_FeOut(quantity = "Length", unit = "m") = 0.004 "Radial thickness of outer back iron (for estimation of leakage permeance)";
-//   parameter Real pmActuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 1.0 "Coercivity at reference temperature";
-//   parameter Real pmActuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 1.0 "Remanence at reference temperature";
+//   parameter Real pmActuator.material.H_cBRef(quantity = "MagneticFieldStrength", unit = "A/m") = 400000.0 "Coercivity at reference temperature";
+//   parameter Real pmActuator.material.B_rRef(quantity = "MagneticFluxDensity", unit = "T") = 0.58 "Remanence at reference temperature";
 //   parameter Real pmActuator.material.T_ref(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Reference temperature";
-//   parameter Real pmActuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = 0.0 "Temperature coefficient of remanence at reference temperature";
+//   parameter Real pmActuator.material.alpha_Br(quantity = "LinearTemperatureCoefficient", unit = "1/K") = -0.001 "Temperature coefficient of remanence at reference temperature";
 //   parameter Real pmActuator.material.T_op(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = 293.15 "Operating temperature";
 //   parameter Real pmActuator.material.B_r(quantity = "MagneticFluxDensity", unit = "T") = pmActuator.material.B_rRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) "Remanence at operating temperature";
 //   parameter Real pmActuator.material.H_cB(quantity = "MagneticFieldStrength", unit = "A/m") = pmActuator.material.H_cBRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) "Coercivity at operating temperature";
@@ -2172,15 +2164,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.armature.limit_xMax.flange.s = pmActuator.armature.stopper_xMax.flange_b.s;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke;
 // "
-// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// "
+// ""
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke completed successfully.
 // 
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke has 239 equation(s) and 239 variable(s).
 // 126 of these are trivial equation(s).
@@ -2544,11 +2530,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   armature.limit_xMax.flange.s = armature.stopper_xMax.flange_b.s;
 // end Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator;
 // "
-// "Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
-// "
+// ""
 // "Check of Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator completed successfully.
 // 
-// Error: Variable B_rRef not found in scope Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator has 129 equation(s) and 129 variable(s).
 // 64 of these are trivial equation(s).
