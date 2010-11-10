@@ -6,7 +6,7 @@
 // parameter.
 //
 
-loadFile("/home/per/workspace/sjoelund-functiontree/testsuite/mosfiles/ArrayParameterSize.mo");
+loadFile("ArrayParameterSize.mo");
 checkModel(ArrayParameterSize);
 getErrorString();
 
