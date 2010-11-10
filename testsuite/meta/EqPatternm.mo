@@ -37,6 +37,8 @@ package EqPatternm
         Real r;
         tuple<Integer,Real> tup;
         myTup a,b;
+        UT ut;
+        Boolean bool;
       case 1
         equation
           2 = 1+1;
@@ -74,8 +76,6 @@ package EqPatternm
           i = realInt(r);
         then i;
       case 9
-        local
-          UT ut;
         equation
           ut = UT1(1);
           UT1(i) = ut;
@@ -89,12 +89,10 @@ package EqPatternm
           x>=3 = true;
         then 1;
       case 12
-        local
-          Boolean b;
         equation
-          b = true;  // Assignment
-          b = false; // Assignment
-          false = b;
+          bool = true;  // Assignment
+          bool = false; // Assignment
+          false = bool; // Constraint
         then 1;
       case _
         then -1;
