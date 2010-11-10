@@ -25,7 +25,12 @@ algorithm
   binops := {realAdd,realSub,realMul,realDiv,realPow,realMax,realMin};
   while not listEmpty(binops) loop
     lst := match binops
-      case binop::binops then binop(r1,r2)::lst;
+      local
+        Real r;
+      case binop::binops
+        equation
+          r = binop(r1,r2);
+        then r::lst;
     end match;
   end while;
   lst := listReverse(lst); // Easier to read the results this way...
@@ -39,11 +44,11 @@ end PartialFn15;
 //   input Real r1;
 //   input Real r2;
 //   output list<Real> lst;
-//   protected list<function(r1:#boxed(Real)#, r2:#boxed(Real)#) => #boxed(Real)#> binops;
-//   protected function(r1:#boxed(Real)#, r2:#boxed(Real)#) => #boxed(Real)# binop;
+//   protected list<function(r1:#Real, r2:#Real) => #Real> binops;
+//   protected function(r1:#Real, r2:#Real) => #Real binop;
 // algorithm
-//   lst := list();
-//   binops := list(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
+//   lst := List();
+//   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
 //   while  NOT listEmpty(binops) loop
 //     _ := #VALUEBLOCK#;
 //   end while;
@@ -51,6 +56,6 @@ end PartialFn15;
 // end PartialFn15.elabRealBinOps;
 // 
 // class PartialFn15
-//   constant list<Real> rs = list(11.0,5.0,24.0,2.66666666666667,512.0,8.0,3.0);
+//   constant list<Real> rs = List(11.0,5.0,24.0,2.66666666666667,512.0,8.0,3.0);
 // end PartialFn15;
 // endResult
