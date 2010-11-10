@@ -25,6 +25,8 @@ UtilTest.listMapTuple21({("abc",123),("def",456)});
 getErrorString();
 UtilTest.listListMap({{1,2},{3,4,5}});
 getErrorString();
+Util.listSplit({1,2,3,4,5}, 3);
+getErrorString();
 
 // Result:
 // true
@@ -48,5 +50,7 @@ getErrorString();
 // {"abc","def"}
 // ""
 // {{"1","2"},{"3","4","5"}}
+// ""
+// ({1,2,3},{4,5})
 // ""
 // endResult
