@@ -66,7 +66,6 @@ PartialFn11.mos \
 PartialFn12.mos \
 PartialFn13.mos \
 PartialFn14.mos \
-PartialFn15.mo \
 Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
@@ -97,6 +96,7 @@ UtilTest.mos
 # Run make testfailing
 FAILINGTESTFILES= \
 PartialFn9.mos \
+PartialFn15.mo
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so

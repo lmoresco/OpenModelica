@@ -67,7 +67,13 @@ sub make_test_specific_links {
 		}
 		when ("PartialFn6.mos") { make_link("PartialFn6.ext_f.c"); };
     when ("RunScript.mos") { make_link("strings.mo"); };
-    when ("SusanTest.mos") { make_link("SusanTestSmall.tpl") };
+    when ("SusanTest.mos") { 
+      make_link("SusanTestSmall.tpl");
+      make_link("SusanTestTV.mo");
+    };
+    when ("ParseModel.mos") {
+      make_link("ParseModel-saved.mo");
+    }
 	}
 }
 
