@@ -17,10 +17,26 @@ loadModel(ModelicaServices); getErrorString();
 // I have tried it for Resistor, Conductor, EMF..........i am not sure how many more have this problem. 
 // Here is the output for 3 of them
 
-getIconAnnotation(Modelica.Electrical.Analog.Basic.Resistor);        getErrorString();
-getIconAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor); getErrorString();
-getIconAnnotation(Modelica.Electrical.Analog.Basic.EMF);             getErrorString();
-getIconAnnotation(Modelica.Electrical.Analog.Basic.Conductor);       getErrorString();
+
+getIconAnnotation(Modelica.Electrical.Analog.Basic.SaturatingInductor);           getErrorString();
+getDiagramAnnotation(Modelica.Electrical.Analog.Basic.SaturatingInductor);        getErrorString();
+getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.SaturatingInductor);  getErrorString();
+
+getIconAnnotation(Modelica.Electrical.Analog.Basic.Resistor);                     getErrorString();
+getDiagramAnnotation(Modelica.Electrical.Analog.Basic.Resistor);                  getErrorString();
+getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.Resistor);            getErrorString();
+
+getIconAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);              getErrorString();
+getDiagramAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);           getErrorString();
+getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);     getErrorString();
+
+getIconAnnotation(Modelica.Electrical.Analog.Basic.EMF);                          getErrorString();
+getDiagramAnnotation(Modelica.Electrical.Analog.Basic.EMF);                       getErrorString();
+getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.EMF);                 getErrorString();
+
+getIconAnnotation(Modelica.Electrical.Analog.Basic.Conductor);                    getErrorString();
+getDiagramAnnotation(Modelica.Electrical.Analog.Basic.Conductor);                 getErrorString();
+getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.Conductor);           getErrorString();
 
 // I am using MSL31.
 // One more thing, can someone tell me what is the output of getComponentAnnotations,
@@ -37,7 +53,7 @@ getParameterValue(Modelica.Electrical.Analog.Basic.Resistor, R);                
 // the the modification names
 getComponentModifierNames(Modelica.Electrical.Analog.Basic.Resistor, R);        getErrorString();
 // retrieve the start value
-getComponentModifierValue(Modelica.Electrical.Analog.Basic.Resistor, R.start); getErrorString();
+getComponentModifierValue(Modelica.Electrical.Analog.Basic.Resistor, R.start);  getErrorString();
 getParameterValue(Modelica.Electrical.Analog.Basic.Resistor, T_ref);            getErrorString();
 getComponentModifierNames(Modelica.Electrical.Analog.Basic.Resistor, T_ref);    getErrorString();
 getParameterValue(Modelica.Electrical.Analog.Basic.Resistor, alpha);            getErrorString();
@@ -63,13 +79,147 @@ getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.EMF); getErrorString
 // ""
 // true
 // ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,-50},{152,-80}},"Lnom=%Lnom",0),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,91},{152,51}},"%name",0)}}
+// ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-96,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0)}}
+// ""
+// {"<HTML>
+// <p>
+// This model approximates the behaviour of an inductor with the influence of saturation,
+// i.e. the value of the inductance depends on the current flowing through the inductor.
+// The inductance decreases as current increases.<br>
+// The parameters are:
+// <ul>
+// <li>Inom...nominal current</li>
+// <li>Lnom...nominal inductance at nominal current</li>
+// <li>Lzer...inductance near current = 0; Lzer has to be greater than Lnom</li>
+// <li>Linf...inductance at large currents; Linf has to be less than Lnom</li>
+// </ul>
+// </p>
+// </HTML>
+// ","<html>
+// <dl>
+// <p>
+//   <dt><b>Main Author:</b></dt>
+//   <dd>
+//   <a href=\"http://www.haumer.at/\">Anton Haumer</a><br>
+//   Technical Consulting & Electrical Engineering<br>
+//   A-3423 St.Andrae-Woerdern<br>Austria<br>
+//   email: <a href=\"mailto:a.haumer@haumer.at\">a.haumer@haumer.at</a>
+//   </dd>
+// </p>
+// <p>
+//   <dt><b>Release Notes:</b></dt>
+//   <dd>
+//   <ul>
+//   <li> May 27, 2004: Implemented by Anton Haumer</li>
+//   </ul>
+//   </dd>
+// </dl>
+// </html>"}
+// ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"R=%R",0),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0)}}
+// ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// ""
+// {"<HTML>
+// <P>
+// The linear resistor connects the branch voltage <i>v</i> with the
+// branch current <i>i</i> by <i>i*R = v</i>.
+// The Resistance <i>R</i> is allowed to be positive, zero, or negative.
+// </P>
+// </HTML>
+// ","<html>
+// <ul>
+// <li><i> August 07, 2009   </i>
+//        by Anton Haumer<br> temperature dependency of resistance added<br>
+//        </li>
+// <li><i> March 11, 2009   </i>
+//        by Christoph Clauss<br> conditional heat port added<br>
+//        </li>
+// <li><i> 1998   </i>
+//        by Christoph Clauss<br> initially implemented<br>
+//        </li>
+// </ul>
+// </html>"}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-52,-50},{48,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{0,0,255},{0,0,255},LinePattern.Solid,FillPattern.Solid,0.25,{{40,52},{50,42},{54,56},{40,52}},Smooth.None),Line(true,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-156,109},{144,69}},"%name",0)}}
 // ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Line(true,{0.0,0.0},0,{{-110,20},{-85,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-95,23},{-85,20},{-95,17},{-95,23}},Smooth.None),Line(true,{0.0,0.0},0,{{90,20},{115,20}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-125,0},{-115,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-120,-5},{-120,5}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-110,25},{-90,45}},"i",0),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{105,23},{115,20},{105,17},{105,23}},Smooth.None),Line(true,{0.0,0.0},0,{{115,0},{125,0}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{90,45},{110,25}},"i",0)}}
+// ""
+// {"<HTML>
+// <p>This is a model for an electrical resistor where the generated heat
+// is dissipated to the environment via connector <b>heatPort</b> and where
+// the resistance R is temperature dependent according to the following
+// equation:</p>
+// <pre>    R = R_ref*(1 + alpha*(heatPort.T - T_ref))
+// </pre>
+// <p><b>alpha</b> is the <b>temperature coefficient of resistance</b>, which
+// is often abbreviated as <b>TCR</b>. In resistor catalogues, it is usually
+// defined as <b>X [ppm/K]</b> (parts per million, similarly to per centage)
+// meaning <b>X*1.e-6 [1/K]</b>. Resistors are available for 1 .. 7000 ppm/K,
+// i.e., alpha = 1e-6 .. 7e-3 1/K;</p>
+// 
+// <p>
+// Via parameter <b>useHeatPort</b> the heatPort connector can be enabled and disabled
+// (default = enabled). If it is disabled, the generated heat is transported implicitly
+// to an internal temperature source with a fixed temperature of T_ref.<br>
+// If the heatPort connector is enabled, it must be connected.
+// </p>
+// 
+// </HTML>
+// ","<html>
+// <ul>
+// <li><i> August 07, 2009   </i>
+//        by Anton Haumer<br> temperature dependency of resistance added<br>
+//        </li>
+// <li><i> March 11, 2009   </i>
+//        by Christoph Clauss<br> conditional heat port added<br>
+//        </li>
+// <li><i> 2002   </i>
+//        by Anton Haumer<br> initially implemented<br>
+//        </li>
+// </ul>
+// </html>"}
+// ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{-85,10},{-36,-10}},0),Line(true,{0.0,0.0},0,{{0,90},{0,40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{192,192,192},LinePattern.Solid,FillPattern.HorizontalCylinder,0.25,BorderPattern.None,{{35,10},{100,-10}},0),Ellipse(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,{{-40,40},{40,-40}},0,360),Line(true,{0.0,0.0},0,{{0,-90},{0,-40}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-50},{199,-90}},"%name",0),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,80},{189,46}},"k=%k",0),Line(true,{0.0,0.0},0,{{-100,-30},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-100,-50},{-80,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-80,-50},{-60,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-60,-50},{-40,-30}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-70,-30},{-70,-10}},{0,0,0},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
 // ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,95},{-20,85},{-23,95},{-17,95}},Smooth.None),Line(true,{0.0,0.0},0,{{-20,110},{-20,85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,110},{-30,90}},"i",0),Line(true,{0.0,0.0},0,{{9,75},{19,75}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,-110},{-20,-85}},{160,160,164},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Polygon(true,{0.0,0.0},0,{160,160,164},{160,160,164},LinePattern.Solid,FillPattern.Solid,0.25,{{-17,-100},{-20,-110},{-23,-100},{-17,-100}},Smooth.None),Text(true,{0.0,0.0},0,{160,160,164},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-40,-110},{-30,-90}},"i",0),Line(true,{0.0,0.0},0,{{8,-79},{18,-79}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{14,80},{14,70}},{192,192,192},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None)}}
+// ""
+// {"<html>
+// <p>EMF transforms electrical energy into rotational mechanical energy. It is used as basic building block of an electrical motor. The mechanical connector flange can be connected to elements of the Modelica.Mechanics.Rotational library. flange.tau is the cut-torque, flange.phi is the angle at the rotational connection. </p>
+// </html>","<html>
+// <ul>
+// <li><i> 1998   </i>
+//        by Martin Otter<br> initially implemented<br>
+//        </li>
+// </ul>
+// </html>"}
+// ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Rectangle(true,{0.0,0.0},0,{0,0,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0),Line(true,{0.0,0.0},0,{{-90,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.None,FillPattern.None,0.25,{{-136,-42},{142,-74}},"G=%G",0),Line(false,{0.0,0.0},0,{{0,-100},{0,-30}},{127,0,0},LinePattern.Dot,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-152,87},{148,47}},"%name",0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-40},{142,-72}},"G=%G",0)}}
+// ""
+// {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-96,0},{-70,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{70,0},{96,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,BorderPattern.None,{{-70,30},{70,-30}},0)}}
+// ""
+// {"<HTML>
+// <P>
+// The linear conductor connects the branch voltage <i>v</i> with the
+// branch current <i>i</i> by <i>i = v*G</i>.
+// The Conductance <i>G</i> is allowed to be positive, zero, or negative.
+// </P>
+// </HTML>
+// ","<html>
+// <ul>
+// <li><i> August 07, 2009   </i>
+//        by Anton Haumer<br> temperature dependency of conductance added<br>
+//        </li>
+// <li><i> March 11, 2009   </i>
+//        by Christoph Clauss<br> conditional heat port added<br>
+//        </li>
+// <li><i> 1998   </i>
+//        by Christoph Clauss<br> initially implemented<br>
+//        </li>
+// </ul>
+// </html>"}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-60,50},{60,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,30},{40,30}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,10},{20,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,90},{0,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-19},{156,-59}},"%name",0)}}
 // ""
