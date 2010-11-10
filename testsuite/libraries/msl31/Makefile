@@ -10,7 +10,8 @@ Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
 Modelica.Blocks.mos \
 Modelica.Magnetic.FluxTubes.mos \
-Modelica.Thermal.mos
+Modelica.Thermal.mos \
+Modelica.Utilities.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

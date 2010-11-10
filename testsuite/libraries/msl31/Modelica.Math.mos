@@ -9,6 +9,7 @@
 loadModel(Modelica); getErrorString();
 
 checkModel(Modelica.Math.Vectors.norm); getErrorString();
+checkModel(Modelica.Math.Vectors.reverse); getErrorString();
 checkModel(Modelica.Math.Matrices.norm); getErrorString();
 checkModel(Modelica.Math.Matrices.leastSquares); getErrorString();
 checkModel(Modelica.Math.Matrices.singularValues); getErrorString();
@@ -25,6 +26,11 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // true
 // ""
 // "Check of Modelica.Math.Vectors.norm completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Vectors.reverse completed successfully.
 // 
 // 
 // "

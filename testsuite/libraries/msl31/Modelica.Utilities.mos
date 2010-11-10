@@ -1,0 +1,21 @@
+//name:        Modelica.Utilities [version 3.1]
+//keyword:     instantiating MSL 3.1 Modelica.Utilities
+//status:      correct
+//env: OPENMODELICALIBRARY=../../../libraries/msl31/
+//
+// instantiate example
+//
+
+loadModel(Modelica); getErrorString();
+
+checkModel(Modelica.Utilities.Streams.readFile); getErrorString();
+
+// Result:
+// true
+// ""
+// "Check of Modelica.Utilities.Streams.readFile completed successfully.
+// 
+// 
+// "
+// ""
+// endResult
