@@ -132,6 +132,8 @@ if(open(my $in, "<", "/proc/cpuinfo")) {
 # Make sure that omc-diff is generated before trying to run any tests.
 system("make -C difftool &> /dev/null");
 
+symlink('../Compiler', 'Compiler');
+
 # Run the tests by calling the run_tests function with multiple threads.
 for(my $i = 0; $i < $thread_count; $i++) {
 	threads->create(\&run_tests);
@@ -157,5 +159,6 @@ if(@failed_tests) {
 my $test_count = @test_list;
 print "\n$tests_failed of $test_count failed\n";
 
+unlink("Compiler");
 # Clean up the temporary rtest directory, so it doesn't get overrun.
 rmtree("/tmp/omc-rtest");
