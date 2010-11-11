@@ -12,7 +12,8 @@ mosfiles-nosim.log \
 records.log \
 dependency.log \
 expandable.log \
-linearize.log
+linearize.log \
+streams.log
 
 .PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) libraries.log
 
@@ -22,7 +23,7 @@ omc-diff :
 	$(MAKE) -C difftool
 test : libraries.log fast.logs
 	@cat `ls $(FASTLOGS) | sort` libraries.log
-	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 test-oldresult:
 	@cat `ls $(FASTLOGS) | sort` libraries.log
 test-oldresult-summary:
@@ -35,7 +36,7 @@ test-oldresult-summary:
 	@echo " failed"
 fast : omc-diff fast.logs
 	@cat `ls $(FASTLOGS) | sort`
-	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 fast.logs: $(FASTLOGS)
 # java should probably also be part of 'fast'
 libraries.log: omc-diff
@@ -43,6 +44,9 @@ libraries.log: omc-diff
 	@echo $@ done
 drmodelica.log: omc-diff
 	$(MAKE) -C mofiles/drmodelica -f Makefile test > drmodelica.log
+	@echo $@ done
+streams.log: omc-diff
+	$(MAKE) -C streams -f Makefile test > streams.log
 	@echo $@ done
 mofiles.log: omc-diff
 	$(MAKE) -C mofiles -f Makefile test > $@

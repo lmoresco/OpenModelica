@@ -9,11 +9,17 @@
 loadModel(Modelica); getErrorString();
 
 checkModel(Modelica.Utilities.Streams.readFile); getErrorString();
+checkModel(Modelica.Utilities.Files.list); getErrorString();
 
 // Result:
 // true
 // ""
 // "Check of Modelica.Utilities.Streams.readFile completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Utilities.Files.list completed successfully.
 // 
 // 
 // "
