@@ -12,8 +12,8 @@ end ArrayInvalidDims;
 
 // Result:
 // Error processing file: ArrayInvalidDims.mo
-// Error: Different dimension sizes in arguments to array in component <NO COMPONENT>
-// Error: Wrong type or wrong number of arguments to array({1,2,3}, {3,4})'.
+// [ArrayInvalidDims.mo:10:2-10:36:writable] Error: Different dimension sizes in arguments to array in component <NO COMPONENT>
+// [ArrayInvalidDims.mo:10:2-10:36:writable] Error: Wrong type or wrong number of arguments to array({1,2,3}, {3,4})'.
 //  (in component <NO COMPONENT>)
 // 
 // # Error encountered! Exiting...

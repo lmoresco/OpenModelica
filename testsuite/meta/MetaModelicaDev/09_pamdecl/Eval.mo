@@ -13,18 +13,17 @@ algorithm
   matchcontinue (inValue1,inValue2)
     local
       Integer v1,v2;
-      Real c1,c2;
+      Real r1,r2;
     case (Env.INTVAL(integer = v1),Env.INTVAL(integer = v2)) then Env.INTVAL2(v1,v2); 
-    case (Env.REALVAL(real = v1),Env.REALVAL(real = v2))
-      local Real v1,v2; then Env.REALVAL2(v1,v2);
-    case (Env.INTVAL(integer = v1),Env.REALVAL(real = v2))
-      local Real v2;
+    case (Env.REALVAL(real = r1),Env.REALVAL(real = r2)) then Env.REALVAL2(r1,r2);
+    case (Env.INTVAL(integer = v1),Env.REALVAL(real = r2))
       equation 
-        c1 = intReal(v1); then Env.REALVAL2(c1,v2);
-    case (Env.REALVAL(real = v1),Env.INTVAL(integer = v2))
-      local Real v1;
+        r1 = intReal(v1);
+      then Env.REALVAL2(r1,r2);
+    case (Env.REALVAL(real = r1),Env.INTVAL(integer = v2))
       equation 
-        c2 = intReal(v2); then Env.REALVAL2(v1,c2);
+        r2 = intReal(v2);
+      then Env.REALVAL2(r1,r2);
   end matchcontinue;
 end binaryLub;
 
@@ -37,15 +36,15 @@ algorithm
   matchcontinue (inValue,inType)
     local
       Integer v;
-      Real v2;
+      Real r;
+      Boolean b;
     case (Env.INTVAL(integer = v),Env.INTTYPE()) then Env.INTVAL(v); 
-    case (Env.REALVAL(real = v),Env.REALTYPE())
-      local Real v; then Env.REALVAL(v);
-    case (Env.BOOLVAL(boolean = v),Env.BOOLTYPE())
-      local Boolean v; then Env.BOOLVAL(v);
+    case (Env.REALVAL(real = r),Env.REALTYPE()) then Env.REALVAL(r);
+    case (Env.BOOLVAL(boolean = b),Env.BOOLTYPE()) then Env.BOOLVAL(b);
     case (Env.INTVAL(integer = v),Env.REALTYPE())
       equation 
-        v2 = intReal(v); then Env.REALVAL(v2);
+        r = intReal(v);
+      then Env.REALVAL(r);
   end matchcontinue;
 end promote;
 
@@ -55,13 +54,12 @@ protected function applyIntBinary "Auxiliary functions for applying the binary o
   input Integer inInteger3;
   output Integer outInteger;
 algorithm 
-  outInteger:=
-  matchcontinue (inBinOp1,inInteger2,inInteger3)
+  outInteger := matchcontinue (inBinOp1,inInteger2,inInteger3)
     local Integer v1,v2;
     case (Absyn.ADD(),v1,v2) then v1 + v2; 
     case (Absyn.SUB(),v1,v2) then v1 - v2; 
     case (Absyn.MUL(),v1,v2) then v1*v2; 
-    case (Absyn.DIV(),v1,v2) then v1/v2; 
+    case (Absyn.DIV(),v1,v2) then intDiv(v1,v2); 
   end matchcontinue;
 end applyIntBinary;
 
@@ -71,13 +69,12 @@ protected function applyRealBinary
   input Real inReal3;
   output Real outReal;
 algorithm 
-  outReal:=
-  matchcontinue (inBinOp1,inReal2,inReal3)
+  outReal := matchcontinue (inBinOp1,inReal2,inReal3)
     local Real v1,v2;
     case (Absyn.ADD(),v1,v2) then v1 +. v2; 
     case (Absyn.SUB(),v1,v2) then v1 -. v2; 
-    case (Absyn.MUL(),v1,v2) then v1*.v2; 
-    case (Absyn.DIV(),v1,v2) then v1/.v2; 
+    case (Absyn.MUL(),v1,v2) then v1 *. v2; 
+    case (Absyn.DIV(),v1,v2) then v1 /. v2; 
   end matchcontinue;
 end applyRealBinary;
 
@@ -101,7 +98,7 @@ algorithm
   outReal:=
   matchcontinue (inUnOp,inReal)
     local Real v1;
-    case (Absyn.NEG(),v1) then -.v1; 
+    case (Absyn.NEG(),v1) then -. v1; 
   end matchcontinue;
 end applyRealUnary;
 
@@ -158,67 +155,69 @@ algorithm
       Absyn.UnOp unop;
       Absyn.RelOp relop;
       String id;
+      Real r,r1,r2,r3;
+      Boolean b;
     case (env,Absyn.INTCONST(integer = v)) then Env.INTVAL(v); 
-    case (env,Absyn.REALCONST(real = v))
-      local Real v; then Env.REALVAL(v);
+    case (env,Absyn.REALCONST(real = r)) then Env.REALVAL(r);
     case (env,Absyn.BINARY(expr1 = e1,binOp2 = binop,expr3 = e2)) "Binary operators"
       equation 
         v1 = evalExpr(env, e1);
         v2 = evalExpr(env, e2);
         Env.INTVAL2(integer1 = c1,integer2 = c2) = binaryLub(v1, v2);
-        v3 = applyIntBinary(binop, c1, c2); then Env.INTVAL(v3);
+        v3 = applyIntBinary(binop, c1, c2);
+      then Env.INTVAL(v3);
     case (env,Absyn.BINARY(expr1 = e1,binOp2 = binop,expr3 = e2))
-      local Real c1,c2,v3;
       equation 
         v1 = evalExpr(env, e1);
         v2 = evalExpr(env, e2);
-        Env.REALVAL2(real1 = c1,real2 = c2) = binaryLub(v1, v2);
-        v3 = applyRealBinary(binop, c1, c2); then Env.REALVAL(v3);
+        Env.REALVAL2(real1 = r1,real2 = r2) = binaryLub(v1, v2);
+        r3 = applyRealBinary(binop, r1, r2);
+      then Env.REALVAL(r3);
     case (_,Absyn.BINARY(expr1 = _))
       equation 
         print("Error: binary operator applied to invalid type(s)\n"); then fail();
     case (env,Absyn.UNARY(unOp = unop,expr = e1)) "Unary operators"
-      local Integer v1,v2;
       equation 
-        Env.INTVAL(integer = v1) = evalExpr(env, e1);
-        v2 = applyIntUnary(unop, v1); then Env.INTVAL(v2);
+        Env.INTVAL(integer = c1) = evalExpr(env, e1);
+        c2 = applyIntUnary(unop, c1);
+      then Env.INTVAL(c2);
     case (env,Absyn.UNARY(unOp = unop,expr = e1))
-      local Real v1,v2;
       equation 
-        Env.REALVAL(real = v1) = evalExpr(env, e1);
-        v2 = applyRealUnary(unop, v1); then Env.REALVAL(v2);
+        Env.REALVAL(real = r1) = evalExpr(env, e1);
+        r2 = applyRealUnary(unop, r1);
+      then Env.REALVAL(r2);
     case (_,Absyn.UNARY(unOp = _))
       equation 
-        print("Error: unary operator applied to invalid type\n"); then fail();
+        print("Error: unary operator applied to invalid type\n");
+      then fail();
     case (env,Absyn.RELATION(expr1 = e1,relOp2 = relop,expr3 = e2)) "Relation operators"
-      local Boolean v3;
       equation 
         v1 = evalExpr(env, e1);
         v2 = evalExpr(env, e2);
         Env.INTVAL2(integer1 = c1,integer2 = c2) = binaryLub(v1, v2);
-        v3 = applyIntRelation(relop, c1, c2); then Env.BOOLVAL(v3);
+        b = applyIntRelation(relop, c1, c2);
+      then Env.BOOLVAL(b);
     case (env,Absyn.RELATION(expr1 = e1,relOp2 = relop,expr3 = e2))
-      local
-        Real c1,c2;
-        Boolean v3;
       equation 
         v1 = evalExpr(env, e1);
         v2 = evalExpr(env, e2);
-        Env.REALVAL2(real1 = c1,real2 = c2) = binaryLub(v1, v2);
-        v3 = applyRealRelation(relop, c1, c2); then Env.BOOLVAL(v3);
+        Env.REALVAL2(real1 = r1,real2 = r2) = binaryLub(v1, v2);
+        b = applyRealRelation(relop, r1, r2);
+      then Env.BOOLVAL(b);
     case (_,Absyn.RELATION(expr1 = _))
       equation 
         print("Error: relation operator applied to invalid type(s)\n"); then fail();
     case (env,Absyn.VARIABLE(ident = id)) "Variable lookup"
-      local Env.Value v;
       equation 
-        v = Env.lookup(env, id); then v;
+        v1 = Env.lookup(env, id);
+      then v1;
     case (env,Absyn.VARIABLE(ident = id))
       equation 
-        failure(v = Env.lookup(env, id));
+        failure(_ = Env.lookup(env, id));
         print("Error: undefined variable (");
         print(id);
-        print(")\n"); then fail();
+        print(")\n");
+      then fail();
   end matchcontinue;
 end evalExpr;
 
@@ -231,15 +230,15 @@ algorithm
     local
       String vstr;
       Integer v;
+      Real r;
     case (Env.INTVAL(integer = v))
       equation 
         vstr = intString(v);
         print(vstr);
         print("\n"); then ();
-    case Env.REALVAL(real = v)
-      local Real v;
-      equation 
-        vstr = realString(v);
+    case Env.REALVAL(real = r)
+      equation
+        vstr = realString(r);
         print(vstr);
         print("\n"); then ();
     case Env.BOOLVAL(boolean = true)

@@ -11,8 +11,8 @@ int lex_ident();
 #else
 #include "meta_modelica.h"
 
-extern struct record_description Assignment_INT__desc;
-#define Assignment__INT(X1) (mmc_mk_box2(3,&Assignment_INT__desc,(X1)))
+extern struct record_description Assignment_Exp_INT__desc;
+#define Assignment__INT(X1) (mmc_mk_box2(3,&Assignment_Exp_INT__desc,(X1)))
 #endif
 
 %}

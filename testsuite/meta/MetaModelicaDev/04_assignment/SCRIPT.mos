@@ -12,21 +12,31 @@
 // d+1
 // or something that generates the same output.
 //
-echo(false);
 loadFile("Assignment.mo");
 loadFile("Parse.mo");
+getErrorString();
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := Parse.parse();
-i:=Assignment.evalprogram(syntree);
-print(intString(i) + "
-");
+if true then
+  syntree := Parse.parse();
+end if;
+// syntree; // Uncomment if you want to debug the AST
+getErrorString();
+Assignment.evalprogram(syntree);
+getErrorString();
 
 // Result:
+// true
+// true
+// ""
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 
+// 
+// ""
 // 
 // The assignments: a = 1+2, c = 1, b = 1+c, d = a+b+c
 // The expression: d+1
 // The environment: d = 6, b = 2, c = 1, a = 3
 // 7
+// ""
 // endResult

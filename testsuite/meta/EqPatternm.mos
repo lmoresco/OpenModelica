@@ -6,6 +6,7 @@
 // Pattern matching in equations
 //
 loadFile("EqPatternm.mo");
+getErrorString();
 a:=EqPatternm.test(1);
 a:=EqPatternm.test(2);
 a:=EqPatternm.test(3);
@@ -21,6 +22,7 @@ a:=EqPatternm.test(12);
 
 // Result:
 // true
+// ""
 // 1
 // 1
 // 1

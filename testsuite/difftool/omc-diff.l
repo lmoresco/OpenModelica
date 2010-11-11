@@ -27,7 +27,7 @@ int yywrap (void ) {
   return 1;
 }
 
-#define VERSION_STRING "-v1.1"
+#define VERSION_STRING "-v1.2"
 
 int usage(char* exe, char* s1,char* s2) {
   printf("Error: %s%s.\n", s1, s2);
@@ -41,9 +41,9 @@ int usage(char* exe, char* s1,char* s2) {
 
 int strcmp_omc_diff(const char* s1, const char* s2) {
   while (*s1 || *s2) {
-    if (*s1 == ' ' && *s2 == ' ') {
-      do *s1++; while (*s1 == ' ');
-      do *s2++; while (*s2 == ' ');
+    if ((*s1 == ' ' || *s1 == '\t')  && (*s2 == ' ' || *s2 == '\t')) {
+      do *s1++; while ((*s1 == ' ') || (*s1 == '\t'));
+      do *s2++; while ((*s2 == ' ') || (*s2 == '\t'));
     }
     if (*s1 != *s2) return *s1 > *s2 ? 1 : -1;
     if (*s1 || *s2) {

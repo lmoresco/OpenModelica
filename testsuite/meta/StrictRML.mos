@@ -1,0 +1,34 @@
+// name: StrictRML
+// status: correct
+// teardown_command: rm -f StrictRML_*
+setCommandLineOptions({"+g=MetaModelica","+d=rml"});
+loadFile("StrictRML.mo");
+
+StrictRML.fn1(1.0);getErrorString();
+StrictRML.fn2(1.0);getErrorString();
+StrictRML.fn3(1.0);getErrorString();
+StrictRML.fn4(1.0);getErrorString();
+StrictRML.fn5(1.0);getErrorString();
+StrictRML.fn6(1.0);getErrorString();
+// Result:
+// true
+// true
+// 
+// "[StrictRML.mo:2:3-10:10:writable] Error: Number of input arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// 
+// "[StrictRML.mo:11:3-19:10:writable] Error: Number of output arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// 
+// "[StrictRML.mo:20:3-28:10:writable] Error: Input expression was not a tuple of component references. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// 
+// "[StrictRML.mo:29:3-37:10:writable] Error: Output expression was not a tuple of component references. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// 
+// "[StrictRML.mo:38:3-46:10:writable] Error: The input does not match. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// 
+// "[StrictRML.mo:47:3-55:10:writable] Error: The output does not match. Strict RML enforces match expression input and output to be the same as the function's.
+// "
+// endResult

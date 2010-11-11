@@ -1,22 +1,26 @@
 ifdef OMDEV
-CFLAGS = -I'$(OPENMODELICAHOME)/include/omc'
+FPIC=
 else
+FPIC=-fPIC
+endif
+
 ifndef OPENMODELICAHOME
-CFLAGS = -I'../../../../build/include/omc' -fPIC
+CFLAGS = -I'../../../../build/include/omc' $(FPIC)
 else
-CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' -fPIC
+CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' $(FPIC)
 endif
-endif
+
 CC = gcc
 run: run2 clean
 
-TEST = `if [ -f ../../../rtest ]; then echo ../../../rtest; else echo omc; fi` +d=rml +g=MetaModelica
+TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $$OPENMODELICAHOME/bin/omc; fi) +d=rml,noevalfunc +g=MetaModelica
 
 # LEXER
 
 lexer.o:  lexer.c parser.h
 lexer.c:  lexer.l
-	flex -t -l lexer.l >lexer.c
+	flex -t -l lexer.l >lexer.c.tmp
+	@mv lexer.c.tmp lexer.c
 
 # PARSER
 

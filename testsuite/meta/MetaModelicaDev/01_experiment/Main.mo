@@ -6,12 +6,11 @@ import Functions;
 public function main
  input list<String> arg;
 algorithm
- _ := 
- matchcontinue arg
-  case (n_str::_) 
-   local 
+ _ := matchcontinue arg
+  local 
     Integer i, n; 
     String str, n_str;
+  case (n_str::_) 
    equation
      // factorial 
      print("Factorial of " +& n_str +& " is: ");

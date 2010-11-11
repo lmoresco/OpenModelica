@@ -24,6 +24,6 @@ end Delay;
 //   x = sin(time);
 //   y = delay(x,a,b);
 // end Delay;
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, b) where argument #3 has to be parameter or constant expression but is a variable
+// [Delay7.mo:15:3-15:21:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, b) where argument #3 has to be parameter or constant expression but is a variable
 // 
 // endResult

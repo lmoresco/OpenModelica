@@ -1,0 +1,104 @@
+// name: SusanTest
+// status: correct
+// teardown_command: rm -f SusanTest_* Tpl_* SusanTestSmall_* SusanTestSmall.mo
+
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+loadFile("../../Compiler/Debug.mo");
+getErrorString();
+loadFile("../../Compiler/Print.mo");
+getErrorString();
+loadFile("../../Compiler/RTOpts.mo");
+getErrorString();
+loadFile("../../Compiler/System.mo");
+getErrorString();
+loadFile("../../Compiler/TplAbsyn.mo");
+getErrorString();
+loadFile("../../Compiler/TplCodegen.mo");
+if getErrorString() == "" then "" else "Errors in TplCodegen.mo";
+loadFile("../../Compiler/Tpl.mo");
+getErrorString();
+loadFile("../../Compiler/TplMain.mo");
+getErrorString();
+loadFile("../../Compiler/TplParser.mo");
+getErrorString();
+loadFile("../../Compiler/Util.mo");
+loadFile("SusanTest.mo");
+getErrorString();
+
+// cd("../../Compiler/susan_codegen/SimCode/");
+// SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
+system("rm -f SusanTestSmall.mo");
+SusanTest.main({"+d=failtrace","SusanTestSmall.tpl"});
+getErrorString();
+loadFile("SusanTestSmall.mo");
+getErrorString();
+txt:=SusanTestSmall.helloWorld(SusanTestSmall.emptyTxt);
+getErrorString();
+Tpl.textString(txt);
+getErrorString();
+
+// Result:
+// true
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// "Errors in TplCodegen.mo"
+// true
+// ""
+// true
+// ""
+// true
+// ""
+// true
+// true
+// ""
+// 0
+// 
+// Processing file 'SusanTestSmall.tpl'
+// 
+// Susan parsing successful.
+// 
+// Writing result to file 'SusanTestSmall.mo'
+// ### Error Buffer ###
+// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
+// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
+// 
+//  TEXT_CREATE ident = x is fresh (reason = Unresolved path 'x'.)
+// 
+//  BOUND_VALUE resolved mmexp = i_x : Tpl.Text (dealiased: Tpl.Text)
+// 
+//  FUN_CALL fname = helloWorld
+//  FUN_CALL argList stmts generation passed
+//  FUN_CALL stmt =
+// txt = helloWorld(txt);
+// Error - typeAdaptMMArg failed
+//  arg BOUND_VALUE resolved mmexp = i_strs : list<String>
+// 
+//  BOUND_VALUE resolved mmexp = i_str : String (dealiased: String)
+// 
+// ### End of Error Buffer ###
+// 
+// "Error: Found a component with same name when looking for type templPackage
+// "
+// true
+// "[SusanTestSmall.mo:31:5-42:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// [SusanTestSmall.mo:42:5-49:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
+// "
+// record Tpl.Text.MEM_TEXT
+//     tokens = {record Tpl.StringToken.ST_STRING
+//     value = "Hello, World!"
+// end Tpl.StringToken.ST_STRING;},
+//     blocksStack = {}
+// end Tpl.Text.MEM_TEXT;
+// ""
+// "Hello, World!"
+// ""
+// endResult

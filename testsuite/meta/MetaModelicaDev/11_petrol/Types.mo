@@ -67,11 +67,11 @@ algorithm
   outTy:=
   matchcontinue (inTy,inRecord)
     local
-      replaceable type Type_a subtypeof Any;
       Ty ty,ty_1;
-      Type_a r;
+      Record r;
       Stamp sz,stamp,stamp_1;
       list<tuple<Ident, Ty>> bnds_1,bnds;
+      Record r;
     case ((ty as ARITH(_)),_) then ty; 
     case ((ty as PTRNIL()),_) then ty; 
     case (PTR(ty),r)
@@ -90,7 +90,6 @@ algorithm
       then
         REC(RECORD(stamp,bnds_1));
     case (UNFOLD(stamp),(r as RECORD(stamp_1,_)))
-      local Record r;
       equation 
         equality(stamp = stamp_1);
       then
@@ -124,7 +123,6 @@ algorithm
       then
         bnds_2;
     case (r,((id,ty) :: bnds),bnds_1)
-      local list<tuple<String, Ty>> bnds_2,bnds_1;
       equation 
         ty_1 = unfoldTy(ty, r);
         bnds_2 = unfoldBnds(r, bnds, ((id,ty_1) :: bnds_1));
@@ -213,8 +211,7 @@ algorithm
   outTCodeVarLst:=
   matchcontinue (inTplStringTyLst,inTCodeVarLst)
     local
-      replaceable type Type_a subtypeof Any;
-      list<Type_a> bnds_2,bnds_1;
+      list<TCode.Var> bnds_2,bnds_1;
       TCode.Ty ty_1;
       Ident var;
       Ty ty;
@@ -225,7 +222,6 @@ algorithm
       then
         bnds_2;
     case (((var,ty) :: bnds),bnds_1)
-      local list<TCode.Var> bnds_2,bnds_1;
       equation 
         ty_1 = tyCnv(ty);
         bnds_2 = bndsCnv(bnds, (TCode.VAR(var,ty_1) :: bnds_1));
@@ -275,41 +271,22 @@ algorithm
   outExp:=
   matchcontinue (inExp1,inATy2,inATy3)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a rhs;
+      TCode.Exp rhs;
     case (rhs,CHAR(),CHAR()) then rhs; 
     case (rhs,CHAR(),INT())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.CtoI(),rhs);
     case (rhs,CHAR(),REAL())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.ItoR(),TCode.UNARY(TCode.CtoI(),rhs));
     case (rhs,INT(),CHAR())
-      local TCode.Exp rhs;
       then
         TCode.UNARY(TCode.ItoC(),rhs);
-    case (rhs,INT(),INT())
-      local TCode.Exp rhs;
-      then
-        rhs;
-    case (rhs,INT(),REAL())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.ItoR(),rhs);
-    case (rhs,REAL(),CHAR())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.ItoC(),TCode.UNARY(TCode.RtoI(),rhs));
-    case (rhs,REAL(),INT())
-      local TCode.Exp rhs;
-      then
-        TCode.UNARY(TCode.RtoI(),rhs);
-    case (rhs,REAL(),REAL())
-      local TCode.Exp rhs;
-      then
-        rhs;
+    case (rhs,INT(),INT()) then rhs;
+    case (rhs,INT(),REAL()) then TCode.UNARY(TCode.ItoR(),rhs);
+    case (rhs,REAL(),CHAR()) then TCode.UNARY(TCode.ItoC(),TCode.UNARY(TCode.RtoI(),rhs));
+    case (rhs,REAL(),INT()) then TCode.UNARY(TCode.RtoI(),rhs);
+    case (rhs,REAL(),REAL()) then rhs;
   end matchcontinue;
 end asgCnv1;
 
@@ -439,8 +416,7 @@ algorithm
   outATy:=
   matchcontinue (inATy1,inATy2)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a y;
+      ATy y;
     case (INT(),y) then y; 
     case (REAL(),_) then REAL(); 
   end matchcontinue;
@@ -456,17 +432,10 @@ algorithm
   outExp:=
   matchcontinue (inExp1,inATy2,inATy3)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a exp;
+      TCode.Exp exp;
     case (exp,INT(),INT()) then exp; 
-    case (exp,INT(),REAL())
-      local TCode.Exp exp;
-      then
-        TCode.UNARY(TCode.ItoR(),exp);
-    case (exp,REAL(),REAL())
-      local TCode.Exp exp;
-      then
-        exp;
+    case (exp,INT(),REAL()) then TCode.UNARY(TCode.ItoR(),exp);
+    case (exp,REAL(),REAL()) then exp;
   end matchcontinue;
 end arithWiden;
 
@@ -590,8 +559,7 @@ protected function intRelop
   input Absyn.RelOp inRelOp;
   output TCode.BinOp outBinOp;
 algorithm 
-  outBinOp:=
-  matchcontinue (inRelOp)
+  outBinOp := matchcontinue (inRelOp)
     case Absyn.LT() then TCode.ILT(); 
     case Absyn.LE() then TCode.ILE(); 
   end matchcontinue;
@@ -619,7 +587,7 @@ algorithm
       TCode.BinOp bop;
       Absyn.RelOp rop;
     case (INT(),rop)
-      equation 
+      equation
         bop = intRelop(rop);
       then
         bop;
@@ -656,7 +624,7 @@ algorithm
       then
         TCode.BINARY(exp1,bop,exp2);
     case (exp1,ARITH(raty1),rop,exp2,ARITH(raty2))
-      equation 
+      equation
         (exp1_1,exp2_1,raty3) = arithCnv(exp1, raty1, exp2, raty2);
         bop = intOrRealRelop(raty3, rop);
       then
@@ -701,8 +669,7 @@ protected function addCnv
   output TCode.Exp outExp;
   output Ty outTy;
 algorithm 
-  (outExp,outTy):=
-  matchcontinue (inExp1,inTy2,inExp3,inTy4)
+  (outExp,outTy) := matchcontinue (inExp1,inTy2,inExp3,inTy4)
     local
       TCode.Exp exp3,exp1,exp2,exp1_1,exp2_1;
       Ty ty3,ty,ty1,ty2;

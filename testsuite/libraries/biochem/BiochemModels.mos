@@ -1332,7 +1332,21 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // true
 // true
 // ""
-// "class BioChem_Examples_CircadianOscillator_Container
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// class BioChem_Examples_CircadianOscillator_Container
 //   Real V(quantity = "Volume", unit = "l", start = 1.0, StateSelect = StateSelect.prefer) "Compartment volume";
 //   Real Nucleus_V = nucleus.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
 //   Real Cytoplasm_V = cytoplasm.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";
@@ -1864,7 +1878,21 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // true
 // true
 // ""
-// "class BioChem_Examples_CaOscillations_Cytosol
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
+//   input Real u;
+//   output Real y;
+// 
+// external "C";
+// end Modelica.Math.exp;
+// 
+// class BioChem_Examples_CaOscillations_Cytosol
 //   Real V(quantity = "Volume", unit = "l", start = 1.0, StateSelect = StateSelect.prefer) "Compartment volume";
 //   Real Cytosol_V = V "Variable used to make the compartment volume accessible for inner components. Do not edit.";
 //   Real Endoplasmic_Reticulum_V = Endoplasmic_Reticulum.V "Variable used to make the compartment volume of inner compartments accessible. Do not edit.";

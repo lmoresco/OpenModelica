@@ -13,8 +13,8 @@ getErrorString();
 // Result:
 // true
 // ""
-// record Uniontype15.T1.R
+// record Uniontype15.T1.U.R
 //     i = 2
-// end Uniontype15.T1.R;
+// end Uniontype15.T1.U.R;
 // ""
 // endResult

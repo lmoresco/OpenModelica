@@ -34,7 +34,7 @@ algorithm
   print(realString(aliasVariable));
 end printAlias;
 
-// an option type which can be SOME(Alias) or NONE
+// an option type which can be SOME(Alias) or NONE()
 // type OptionType = Option<Alias>; 
 // constant OptionType optionAliasConstant = SOME(aliasConstant);
 function printOptionType
@@ -44,7 +44,7 @@ algorithm
     local Types.Alias alias;
     case NONE() 
       equation
-        print("NONE");
+        print("NONE()");
       then ();
     case SOME(alias)
       equation
@@ -80,7 +80,7 @@ end printTupleType;
 
 // a list type 
 //type ListType = list<TupleType>; 
-//constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE)};
+//constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE())};
 function printListType
   input Types.ListType listVar;
 algorithm
@@ -158,6 +158,7 @@ algorithm
   _ := matchcontinue(selectVar)
     local 
       String cmp1, cmp2;
+      Types.Select sel1, sel2;
     case (Types.FirstAlternative(cmp1, cmp2)) 
       equation
         print("FirstAlternative(");
@@ -166,22 +167,18 @@ algorithm
         print("\"" +& cmp2 +& "\"");
         print(")");
       then ();
-    case (Types.SecondAlternative(cmp1, cmp2)) 
-      local 
-        Types.Select cmp1, cmp2;
+    case (Types.SecondAlternative(sel1, sel2)) 
       equation
         print("SecondAlternative(");
-        printSelect(cmp1);
+        printSelect(sel1);
         print(", ");
-        printSelect(cmp2);
+        printSelect(sel2);
         print(")");
       then ();
-    case (Types.ThirdAlternative(cmp1)) 
-      local 
-        Types.Select cmp1;
+    case (Types.ThirdAlternative(sel1))
       equation
         print("ThirdAlternative(");
-        printSelect(cmp1);
+        printSelect(sel1);
         print(")");
       then ();
   end matchcontinue;
@@ -197,12 +194,11 @@ import Functions;
 function main
  input list<String> arg;
 algorithm
- _ := 
- matchcontinue arg
-  case (n_str::_) 
-   local 
+ _ := matchcontinue arg
+  local 
     Integer i, n; 
     String str, n_str;
+  case (n_str::_) 
    equation
      // factorial 
      print("Factorial of " +& n_str +& " is: ");

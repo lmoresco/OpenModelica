@@ -14,7 +14,7 @@ equation
 end SimpleIntegrator3;
 // Result:
 // Error processing file: SimpleIntegrator3.mo
-// Error: Variable x.start not found in scope SimpleIntegrator3
+// [SimpleIntegrator3.mo:12:3-12:16:writable] Error: Variable x.start not found in scope SimpleIntegrator3
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

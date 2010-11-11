@@ -9,8 +9,8 @@ void* absyn_integer(char *s);
 #include "Exp1.h"
 #else
 #include "meta_modelica.h"
-extern struct record_description Exp1_INTconst__desc;
-#define Exp1__INTconst(X1) (mmc_mk_box2(3,&Exp1_INTconst__desc,(X1)))
+extern struct record_description Exp1_Exp_INTconst__desc;
+#define Exp1__INTconst(X1) (mmc_mk_box2(3,&Exp1_Exp_INTconst__desc,(X1)))
 #endif
 
 %}

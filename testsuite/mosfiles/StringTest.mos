@@ -10,8 +10,11 @@ simulate(STest1, tolerance=1e-5, numberOfIntervals=100);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "",
-//     messages = "Simulation failed.
+//     resultFile = "STest1_res.plt",
+//    messages = "Simulation call assert() at time 0.101
+// Level : error
+// Message : x reached 0.1 at time 0.101 b =true i =     66
+// 
 // "
 // end SimulationResult;
 // endResult

@@ -14,7 +14,7 @@ end Abs;
 
 // Result:
 // Error processing file: Abs2.mo
-// Error: Wrong type or wrong number of arguments to abs(b)'.
+// [Abs2.mo:12:3-12:11:writable] Error: Wrong type or wrong number of arguments to abs(b)'.
 //  (in component <NO COMPONENT>)
 // 
 // # Error encountered! Exiting...

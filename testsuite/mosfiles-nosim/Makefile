@@ -6,6 +6,7 @@ BaseClass1.mos \
 DefaultComponentName.mos \
 differentiate.mos \
 EnzMM.mos \
+ErrorFunctionCallNumArgs.mos \
 ExtendsOrder.mos \
 ExternalFunctionResultOrder.mos\
 FinalTests.mos \
@@ -19,6 +20,7 @@ interactive_api_loadsave.mos  interactive_api_attributes.mos \
 interactive_api_calls.mos \
 interactive_api_annotations.mos \
 loadFileInteractiveQualified.mos \
+LookupBuiltin.mos \
 LookupPackageFail.mos \
 matrices.mos \
 ModifierVariabilityError.mos \

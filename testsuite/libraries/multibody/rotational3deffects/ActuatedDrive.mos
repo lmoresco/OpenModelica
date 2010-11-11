@@ -31,6 +31,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   result := if Modelica.Math.Vectors.length(v) >= eps then v / Modelica.Math.Vectors.length(v) else v / eps;
 // end Modelica.Math.Vectors.normalize;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;

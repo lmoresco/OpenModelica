@@ -1,0 +1,19 @@
+// name: LookupBuiltin
+// status: correct
+
+loadFile("LookupBuiltin.mo");
+LookupBuiltin.identity("abc");
+getErrorString();
+// This should actually work, but we can live without it for now
+LookupBuiltin.id("abc");
+getErrorString();
+// Result:
+// true
+// "abc"
+// ""
+// 
+// "[LookupBuiltin.mo:11:3-11:35:writable] Error: Wrong type or wrong number of arguments to identity(str)'.
+//  (in component <NO COMPONENT>)
+// Error: Class LookupBuiltin.id not found in scope <global scope> (looking for a function or record).
+// "
+// endResult

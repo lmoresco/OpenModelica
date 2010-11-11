@@ -1,0 +1,32 @@
+// name: HashTable Unit Testing
+// status: correct
+// teardown_command: rm -f HashTableTest_*
+
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+
+runScript("LoadCompilerSources.mos");
+
+loadFile("HashTableTest.mo");
+getErrorString();
+
+HashTableTest.fn(1);
+getErrorString();
+
+// Result:
+// true
+// Loaded all files without error
+// "true
+// "
+// true
+// ""
+// {record DAE.Exp.ICONST
+//     integer = 7
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 3
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 2
+// end DAE.Exp.ICONST;,record DAE.Exp.ICONST
+//     integer = 1
+// end DAE.Exp.ICONST;}
+// ""
+// endResult

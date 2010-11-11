@@ -46,7 +46,7 @@ PLTPKGFLAGS = -L../../build/lib/omc -lsendData -lQtNetwork-mingw -lQtCore-mingw 
 
 PROG = omc.exe
 RMLC = $(RMLHOME)/bin/rmlc -v
-RMLCFLAGS = -Wr,-ftrace
+RMLCFLAGS = -Wr,-ftrace,-Wshow-warnings
 
 MAKETARGET = Makefile.omdev.mingw
 include $(srcdir)/Makefile.compiler_subdirs.common

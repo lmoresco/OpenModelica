@@ -13,8 +13,8 @@ model ForIterator1
     output Integer y2;
     output Real y3; 
     output Real y4;     
-    Integer arrFunc1[4]; 
-    Real arrFunc2[4];
+    Integer arrFunc1[5]; 
+    Real arrFunc2[5];
     Integer arrFunc3[4,3]; 
     Real arrFunc4[4,3]; 
   algorithm

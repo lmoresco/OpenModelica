@@ -25,6 +25,13 @@ getErrorString();
 //   my_r := (myInit + ca * BN) / (1.0 + cb * BN + BN ^ n);
 // end Magnetic.Reluctance.NonlinearReluctance.my_r_Material;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;

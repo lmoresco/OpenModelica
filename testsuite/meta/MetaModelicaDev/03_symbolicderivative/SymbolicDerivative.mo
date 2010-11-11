@@ -117,6 +117,8 @@ algorithm
   simpleExpr := matchcontinue (expr)
     local
       Exp e,e1,e2,sim1,sim2,res;
+      String id;
+      list<Exp> exprList,simpleExprList;
     case ADD(e1,e2)
       equation
         sim1 = simplifyExp(e1);
@@ -147,9 +149,6 @@ algorithm
         res = simplifyExp2(NEG(sim1));
       then res;
     case CALL(id,exprList)
-      local
-        String id;
-        list<Exp> exprList,simpleExprList;
       equation
         simpleExprList = simplifyExpList(exprList);
         res = simplifyExp2(CALL(id,simpleExprList));

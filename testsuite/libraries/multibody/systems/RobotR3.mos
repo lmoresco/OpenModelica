@@ -51,6 +51,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   qdd := q_qd_qdd[3];
 // end Modelica.Blocks.Sources.KinematicPTP2.position_der2;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.tempInterpol1
 //   input Real u "input value (first column of table)";
 //   input Real[:, :] table "table to be interpolated";
@@ -1067,8 +1074,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // [RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis has 374 equation(s) and 373 variable(s).
-// 235 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis has 373 equation(s) and 373 variable(s).
+// 234 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Sources.KinematicPTP2.position "Inline after index reduction"
@@ -1112,6 +1119,13 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   result := if Modelica.Math.Vectors.length(v) >= eps then v / Modelica.Math.Vectors.length(v) else v / eps;
 // end Modelica.Math.Vectors.normalize;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
 //   input Real u1;
@@ -12867,8 +12881,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // [RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4829 equation(s) and 4828 variable(s).
-// 3299 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
+// 3293 of these are trivial equation(s).
 // "
 // ""
 // 0

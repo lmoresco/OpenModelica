@@ -11,7 +11,14 @@ instantiateModel(Modelica.Electrical.Machines.Examples.DCSE_start);
 getErrorString();
 // Result:
 // true
-// "function Modelica.SIunits.Conversions.from_rpm
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_rpm
 //   input Real rpm(quantity = "AngularVelocity", unit = "rev/min") "revolutions per minute value";
 //   output Real rs(quantity = "AngularVelocity", unit = "rad/s", displayUnit = "rev/min") "radian per second value";
 // algorithm

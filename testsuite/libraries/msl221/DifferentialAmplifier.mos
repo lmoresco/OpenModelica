@@ -46,6 +46,13 @@ getErrorString();
 //   ids0 := sig * Beta * if Vgst > 0.0 AND vds <= vdsat then cdlin else if Vgst > 0.0 AND vds > vdsat then cdsat else 0.0;
 // end BondLib.Spice.Utilities.JFETeq1;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;

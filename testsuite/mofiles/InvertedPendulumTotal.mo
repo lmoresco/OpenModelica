@@ -4129,6 +4129,13 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function PackMaterial
 //   input Real r;
 //   input Real g;

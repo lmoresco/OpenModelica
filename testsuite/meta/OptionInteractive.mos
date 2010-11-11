@@ -7,19 +7,26 @@
 //
 loadFile("OptionInteractive.mo");
 some := SOME(1);
-NONE;
+NONE();
 OptionInteractive.optionIdent(some);
-OptionInteractive.optionIdent(NONE);
+getErrorString();
+OptionInteractive.optionIdent(NONE());
+getErrorString();
 OptionInteractive.someToNone(some);
-OptionInteractive.someToNone(NONE);
-
+getErrorString();
+OptionInteractive.someToNone(NONE());
+getErrorString();
 
 // Result:
 // true
 // SOME(1)
 // NONE()
 // SOME(1)
+// ""
 // NONE()
+// ""
 // NONE()
+// ""
 // NONE()
+// ""
 // endResult

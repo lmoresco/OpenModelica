@@ -235,35 +235,27 @@ algorithm
   (outBase,outInvTy):=
   matchcontinue (inInvTy,inTy)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a ity;
       Base base;
-      InvTy ity_1;
+      InvTy ity,ity_1;
       FCode.Ty ty;
       Integer sz,stamp;
     case (ity,FCode.CHAR()) then (BASE("char"),ity); 
     case (ity,FCode.INT()) then (BASE("int"),ity); 
     case (ity,FCode.REAL()) then (BASE("double"),ity); 
     case (ity,FCode.PTR(ty))
-      local InvTy ity;
       equation 
         (base,ity_1) = invertTy(PTRity(ity), ty);
       then
         (base,ity_1);
     case (ity,FCode.ARR(sz,ty))
-      local InvTy ity;
       equation 
         (base,ity_1) = invertTy(ARRity(ity,sz), ty);
       then
         (base,ity_1);
     case (ity,FCode.REC(FCode.RECORD(stamp,_)))
-      local InvTy ity;
-      then
-        (REC(stamp),ity);
+      then (REC(stamp),ity);
     case (ity,FCode.UNFOLD(stamp))
-      local InvTy ity;
-      then
-        (REC(stamp),ity);
+      then (REC(stamp),ity);
   end matchcontinue;
 end invertTy;
 
@@ -529,7 +521,7 @@ algorithm
   _:=
   matchcontinue (inTplTypeAFCodeExpOption)
     local FCode.Exp exp;
-    case (NONE) then (); 
+    case (NONE()) then (); 
     case (SOME((_,exp)))
       equation 
         print("\tretval = ");
@@ -636,7 +628,7 @@ algorithm
       Base base;
       InvTy ity;
       FCode.Ty ty;
-    case (NONE,id,args)
+    case (NONE(),id,args)
       equation 
         print("void ");
         print(id);
@@ -702,7 +694,7 @@ algorithm
   _:=
   matchcontinue (inFCodeTyOption)
     local FCode.Ty ty;
-    case (NONE) then (); 
+    case (NONE()) then (); 
     case (SOME(ty))
       equation 
         emitVarBnd(FCode.VAR("retval",ty));
@@ -717,7 +709,7 @@ protected function emitReturnRetval
 algorithm 
   _:=
   matchcontinue (inTypeAOption)
-    case (NONE) then (); 
+    case (NONE()) then (); 
     case (SOME(_))
       equation 
         print("\treturn retval;\n");
@@ -813,7 +805,7 @@ algorithm
       Integer lev;
       FCode.Record r;
       FCode.Stmt stmt;
-    case (FCode.PROC(_,_,_,NONE)) then (); 
+    case (FCode.PROC(_,_,_,NONE())) then (); 
     case (FCode.PROC(id,formals,ty_opt,SOME(FCode.BLOCK(lev,r,stmt))))
       equation 
         formals_1 = map(convFormalDefn, formals);
@@ -976,10 +968,8 @@ algorithm
   outRTree:=
   matchcontinue (inTy,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs,recs1,recs0;
       FCode.Ty ty;
-      RTree recs2;
+      RTree recs2,recs1,recs0,recs;
       FCode.Record r;
       list<FCode.Var> bnds;
     case (FCode.CHAR(),recs) then recs; 
@@ -996,14 +986,12 @@ algorithm
       then
         recs1;
     case (FCode.REC((r as FCode.RECORD(_,bnds))),recs0)
-      local RTree recs1,recs0;
-      equation 
+      equation
         recs1 = insert(r, recs0);
         recs2 = varsRecs(bnds, recs1);
       then
         recs2;
     case (FCode.UNFOLD(_),recs)
-      local RTree recs;
       then
         recs;
   end matchcontinue;
@@ -1038,11 +1026,9 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeTyOption,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs0;
+      RTree recs1,recs0,recs;
       FCode.Ty ty;
-    case (NONE,recs) then recs; 
+    case (NONE(),recs) then recs; 
     case (SOME(ty),recs0)
       equation 
         recs1 = tyRecs(ty, recs0);
@@ -1081,12 +1067,9 @@ protected function expRecs
   input RTree inRTree;
   output RTree outRTree;
 algorithm 
-  outRTree:=
-  matchcontinue (inExp,inRTree)
+  outRTree := matchcontinue (inExp,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs1,recs2,recs0,recs;
       FCode.UnOp unop;
       FCode.Exp exp,exp1,exp2;
       list<FCode.Exp> exps;
@@ -1159,7 +1142,7 @@ algorithm
         recs1 = expsRecs(exps, recs0);
       then
         recs1;
-    case (FCode.RETURN(NONE),recs) then recs; 
+    case (FCode.RETURN(NONE()),recs) then recs; 
     case (FCode.RETURN(SOME((_,exp))),recs0)
       equation 
         recs1 = expRecs(exp, recs0);
@@ -1196,12 +1179,10 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeBlockOption,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs1,recs2,recs0,recs;
       FCode.Record r;
       FCode.Stmt stmt;
-    case (NONE,recs) then recs; 
+    case (NONE(),recs) then recs; 
     case (SOME(FCode.BLOCK(_,r,stmt)),recs0)
       equation 
         recs1 = insert(r, recs0);
@@ -1241,9 +1222,7 @@ algorithm
   outRTree:=
   matchcontinue (inFCodeProcLst,inRTree)
     local
-      replaceable type Type_a subtypeof Any;
-      Type_a recs;
-      RTree recs1,recs2,recs0;
+      RTree recs,recs1,recs2,recs0;
       FCode.Proc proc;
       list<FCode.Proc> procs;
     case ({},recs) then recs; 

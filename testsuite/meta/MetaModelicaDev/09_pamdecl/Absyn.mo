@@ -1,6 +1,9 @@
 package Absyn
 
 public 
+type Ident = String;
+
+public 
 uniontype BinOp
   record ADD end ADD;
 
@@ -26,9 +29,6 @@ uniontype RelOp
   record GE end GE;
   record NE end NE;
 end RelOp;
-
-public 
-type Ident = String;
 
 public 
 uniontype Expr

@@ -494,6 +494,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   return;
 // end Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNq_sum_limit;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
@@ -805,7 +812,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.sin
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
@@ -849,7 +863,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.exp
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
@@ -1245,7 +1266,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.sin
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
@@ -1289,7 +1317,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.exp
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
@@ -5499,7 +5534,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // 
-// Class Modelica.Electrical.Analog.Lines.M_OLine has 1270 equation(s) and 1330 variable(s).
+// Class Modelica.Electrical.Analog.Lines.M_OLine has 1266 equation(s) and 1330 variable(s).
 // 765 of these are trivial equation(s).
 // "
 // ""
@@ -5640,17 +5675,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine2;
 // "
-// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "[Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // "
 // "Check of Modelica.Electrical.Analog.Lines.TLine2 completed successfully.
 // 
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
 // Class Modelica.Electrical.Analog.Lines.TLine2 has 15 equation(s) and 15 variable(s).
 // 8 of these are trivial equation(s).
@@ -5694,17 +5729,17 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   p1.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine3;
 // "
-// "Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// "[Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // "
 // "Check of Modelica.Electrical.Analog.Lines.TLine3 completed successfully.
 // 
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
+// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
 // Class Modelica.Electrical.Analog.Lines.TLine3 has 15 equation(s) and 15 variable(s).
 // 8 of these are trivial equation(s).

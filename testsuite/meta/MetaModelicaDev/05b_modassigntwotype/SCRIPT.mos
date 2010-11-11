@@ -8,7 +8,7 @@ echo(false);
 loadFile("Absyn.mo");
 loadFile("Eval.mo");
 loadFile("Main.mo");
-loadFile("ParseOMC.mo");
+loadFile("Parse.mo");
 i:=Main.main({});
 // Result:
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]

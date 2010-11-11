@@ -8,8 +8,10 @@
 //
 loadFile("PartialFn14.mo");
 PartialFn14.printLst({"this"," is ","fun"});
+getErrorString();
 
 // Result:
 // true
 // this is fun
+// ""
 // endResult

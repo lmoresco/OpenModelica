@@ -3900,6 +3900,13 @@ end Gear;
 //   torque1.bearing.tau = 0.0;
 // end Gear;
 // Result:
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;

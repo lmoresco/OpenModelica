@@ -98,7 +98,7 @@ algorithm
       Value value;
     case (env,id)
       equation 
-        failure(value = lookup(env, id));
+        failure(_ = lookup(env, id));
       then ((id,0) :: env,0);
     case (env,id)
       equation 
@@ -275,21 +275,21 @@ algorithm
       Integer i;
       Exp exp1, exp2, exp;
       Ident id;
+      BinOp binop;
+      UnOp unop;
     case(INT(i)) 
       equation
         print(intString(i));
       then ();
-    case(BINARY(exp1, op, exp2)) 
-      local BinOp op;
+    case(BINARY(exp1, binop, exp2)) 
       equation
         printExp(exp1);
-        printBinaryOp(op);
+        printBinaryOp(binop);
         printExp(exp2);
       then ();
-    case (UNARY(op, exp))
-      local UnOp op;
+    case (UNARY(unop, exp))
       equation
-        printUnaryOp(op);
+        printUnaryOp(unop);
         printExp(exp);
       then ();
     case(ASSIGN(id, exp))

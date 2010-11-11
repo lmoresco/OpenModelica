@@ -301,6 +301,7 @@ FunctionEval7.mo \
 FunctionEval8.mo \
 FunctionEval9.mo \
 FunctionEvalBuiltin.mo \
+FunctionEvalSlice.mo \
 FunctionReturn.mo \
 FunctionSimple.mo \
 FunctionSimplex.mo \
@@ -401,6 +402,7 @@ MyPointsInst2.mo \
 NamedArguments.mo \
 NestedClasses.mo \
 NoEvent1.mo \
+NonExpArray1.mo \
 NotDependsRecursive.mo \
 NotEquals.mo \
 Not.mo \

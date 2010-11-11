@@ -1,4 +1,4 @@
-CLEAN={Absyn,FCEmit,FCode,Flatten,Main,Parse,Static,TCode,Types}.{c,h,o,srz} parsutil.o
+CLEAN=Absyn.c Absyn.h Absyn.o Absyn.o Absyn.srz executable FCEmit.c FCEmit.h FCEmit.o FCEmit.o FCEmit.srz FCode.c FCode.h FCode.o FCode.o FCode.srz Flatten.c Flatten.h Flatten.o Flatten.o Flatten.srz lexerPetrol.o Main.c Main.h Main.o Main.o Main.srz parser.c parser.h ParseRML.o parser.o Parse.srz parsutil.o parsutil.o Static.c Static.h Static.o Static.o Static.srz TCode.c TCode.h TCode.o TCode.o TCode.srz Types.c Types.h Types.o Types.o Types.srz
 HEADERS=Absyn.h
 OBJS=Absyn.o FCEmit.o FCode.o Flatten.o Main.o Static.o TCode.o Types.o ParseRML.o parsutil.o parser.o lexerPetrol.o 
 include ../common.rml

@@ -1,8 +1,8 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
+meta.log \
 mosfiles.log \
 mosfiles-msl22.log \
-meta.log \
 parser.log \
 mofiles.log \
 msl.log \
@@ -34,7 +34,7 @@ test-oldresult-summary:
 	@SUM=0; for i in `grep ^== test.log | grep failed | cut -d\  -f5`; do SUM=$$(($$SUM + $$i)); done; echo -n $$SUM
 	@echo " failed"
 fast : omc-diff fast.logs
-	@cat `ls $(FASTLOGS) libraries.log | sort`
+	@cat `ls $(FASTLOGS) | sort`
 	@rm -f {mofiles/drmodelica,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 fast.logs: $(FASTLOGS)
 # java should probably also be part of 'fast'

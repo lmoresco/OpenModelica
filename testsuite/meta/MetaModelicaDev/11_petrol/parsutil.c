@@ -1,7 +1,7 @@
 /* parsutil.c */
 #include <stdio.h>
 #include "yacclib.h"
-#include "absyn.h"
+#include "Absyn.h"
 #include "parsutil.h"
 
 void *pu_Constant_INTcon(void *icon)		/* Absyn.INTcon=BOX1 */

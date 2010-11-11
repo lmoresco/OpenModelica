@@ -13,31 +13,31 @@ e:=Uniontype12.ADD(lhs=Uniontype12.ICONST(value=2),rhs=Uniontype12.SUB(lhs=Union
 
 // Result:
 // true
-// record Uniontype12.REC1
+// record Uniontype12.UT.REC1
 //     x = 3
-// end Uniontype12.REC1;
-// record Uniontype12.ICONST
+// end Uniontype12.UT.REC1;
+// record Uniontype12.Expression.ICONST
 //     value = 1
-// end Uniontype12.ICONST;
-// record Uniontype12.ADD
-//     lhs = record Uniontype12.ICONST
+// end Uniontype12.Expression.ICONST;
+// record Uniontype12.Expression.ADD
+//     lhs = record Uniontype12.Expression.ICONST
 //     value = 1
-// end Uniontype12.ICONST;,
-//     rhs = record Uniontype12.ICONST
+// end Uniontype12.Expression.ICONST;,
+//     rhs = record Uniontype12.Expression.ICONST
 //     value = 1
-// end Uniontype12.ICONST;
-// end Uniontype12.ADD;
-// record Uniontype12.ADD
-//     lhs = record Uniontype12.ICONST
+// end Uniontype12.Expression.ICONST;
+// end Uniontype12.Expression.ADD;
+// record Uniontype12.Expression.ADD
+//     lhs = record Uniontype12.Expression.ICONST
 //     value = 2
-// end Uniontype12.ICONST;,
-//     rhs = record Uniontype12.SUB
-//     lhs = record Uniontype12.ICONST
+// end Uniontype12.Expression.ICONST;,
+//     rhs = record Uniontype12.Expression.SUB
+//     lhs = record Uniontype12.Expression.ICONST
 //     value = 5
-// end Uniontype12.ICONST;,
-//     rhs = record Uniontype12.ICONST
+// end Uniontype12.Expression.ICONST;,
+//     rhs = record Uniontype12.Expression.ICONST
 //     value = 1
-// end Uniontype12.ICONST;
-// end Uniontype12.SUB;
-// end Uniontype12.ADD;
+// end Uniontype12.Expression.ICONST;
+// end Uniontype12.Expression.SUB;
+// end Uniontype12.Expression.ADD;
 // endResult

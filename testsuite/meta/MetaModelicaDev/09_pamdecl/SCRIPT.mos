@@ -8,19 +8,20 @@ loadFile("Absyn.mo");
 loadFile("Env.mo");
 loadFile("Eval.mo");
 loadFile("Main.mo");
-loadFile("ScanParseOMC.mo");
+loadFile("ScanParse.mo");
 getErrorString();
-i:=Main.main();
-print("
-");
+Main.main();
+getErrorString();
+
 // Result:
-// [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
 // true
 // true
 // true
 // true
 // true
 // ""
-// 0
+// [Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 42.0
 // 
+// ""
 // endResult

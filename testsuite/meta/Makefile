@@ -11,14 +11,27 @@ BuiltinMisc.mos \
 BuiltinReal.mos \
 BuiltinString.mos \
 ComplicatedInteractive.mos \
+DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
+ErrorInvalidComplexType.mo \
+ErrorInvalidPattern1.mo \
+ErrorInvalidPattern2.mo \
+ErrorInvalidPattern3.mo \
+ErrorLocalElement.mo \
+ErrorMatchInOut1.mo \
+ErrorMatchInOut2.mo \
+ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
+ErrorNone.mos \
 Failure.mos \
+HashTableTest.mos \
 List1.mos \
 List2.mos \
 List3.mos \
+List4.mo \
+List5.mo \
 ListInteractive.mos \
 MatchCase1.mos \
 MatchCase2.mos \
@@ -33,6 +46,7 @@ MatchCase10.mos \
 MatchCase11.mos \
 MatchCase12.mos \
 MatchCase13.mos \
+MatchCase14.mo \
 MatchCaseInteractive1.mos \
 MatchCaseInteractive2.mos \
 MatchCaseInteractive3.mos \
@@ -52,10 +66,14 @@ PartialFn11.mos \
 PartialFn12.mos \
 PartialFn13.mos \
 PartialFn14.mos \
+PartialFn15.mo \
 Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
+SimplifyTest.mos \
+StrictRML.mos \
+SusanTest.mos \
 TupleInteractive.mos \
 Uniontype1.mos \
 Uniontype2.mos \
@@ -78,24 +96,22 @@ UtilTest.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-List4.mos \
-PartialFn9.mos \
+PartialFn9.mos
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
 
 .PHONY : test
 
-test: test2 clean
-test2:
+test:
 	@echo
 	@echo Running tests...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES)
-
+	@rm -f $(CLEAN:.mo=)
 clean:
-	@rm -f $(CLEAN)
+	@rm -f $(CLEAN:.mo=)
 failingtest :
 	@echo
 	@echo Running failing tests...

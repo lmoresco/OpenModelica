@@ -239,8 +239,8 @@ algorithm
         l1 = genlabel();
         l2 = genlabel();
         compcod = transComparison(comp, l2);
-        cod3 = listAppend5({Mcode.MLABEL(l1)}, compcod, bodycod, {Mcode.MJMP(l1)}, 
-          {Mcode.MLABEL(l2)}); then cod3;
+        cod3 = listAppend5({Mcode.MLABEL(l1)}, compcod, bodycod, {Mcode.MJMP(l1)}, {Mcode.MLABEL(l2)});
+      then cod3;
     case (Absyn.TODO(exp = e1,to = s1)) "TO e1 DO s1 .."
       equation 
         tocod = transExpr(e1);
@@ -272,7 +272,7 @@ public function transProgram
   output Mcode_MCodeLst programcode;
   type Mcode_MCodeLst = list<Mcode.MCode>;
   Mcode_MCodeLst cod1;
-algorithm 
+algorithm
   cod1 := transStmt(progbody);
   programcode := listAppend(cod1, {Mcode.MHALT()});
 end transProgram;

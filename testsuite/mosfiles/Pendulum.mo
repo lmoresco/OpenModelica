@@ -2,7 +2,7 @@ model Pendulum
   parameter Real m=0.5;
   parameter Real g=9.82;
   parameter Real L=1;
-  Real x,y,xd,yd;
+  Real x(start=L),y(start=0),xd,yd;
   Real Fo;
 equation
   der(y)=yd;

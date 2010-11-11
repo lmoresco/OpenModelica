@@ -12,7 +12,7 @@ equation
 end Type8;
 // Result:
 // Error processing file: Type8.mo
-// Error: Variable x.start not found in scope Type8
+// [Type8.mo:11:3-11:14:writable] Error: Variable x.start not found in scope Type8
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

@@ -14,7 +14,14 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 // Result:
 // true
 // ""
-// "function Modelica.Math.log
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 

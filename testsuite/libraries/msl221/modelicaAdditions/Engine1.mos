@@ -18,6 +18,13 @@ getErrorString();
 //   ov := {iv[1] / length,iv[2] / length,iv[3] / length};
 // end MCVisualShape.local_normalize;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.tempInterpol1
 //   input Real u "input value (first column of table)";
 //   input Real[:, :] table "table to be interpolated";
@@ -4497,7 +4504,7 @@ getErrorString();
 // 	This is forbidden by Modelica specifications and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.Engine1 has 2588 equation(s) and 2589 variable(s).
-// 2155 of these are trivial equation(s).
+// 2154 of these are trivial equation(s).
 // "
 // ""
 // endResult

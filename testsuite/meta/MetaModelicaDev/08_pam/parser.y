@@ -20,60 +20,60 @@ void* parse()
 #include "meta_modelica.h"
 
 /* BinOp */
-extern struct record_description Pam_ADD__desc;
-extern struct record_description Pam_SUB__desc;
-extern struct record_description Pam_MUL__desc;
-extern struct record_description Pam_DIV__desc;
+extern struct record_description Pam_BinOp_ADD__desc;
+extern struct record_description Pam_BinOp_SUB__desc;
+extern struct record_description Pam_BinOp_MUL__desc;
+extern struct record_description Pam_BinOp_DIV__desc;
 
-#define Pam__ADD (mmc_mk_box1(3,&Pam_ADD__desc))
-#define Pam__SUB (mmc_mk_box1(4,&Pam_SUB__desc))
-#define Pam__MUL (mmc_mk_box1(5,&Pam_MUL__desc))
-#define Pam__DIV (mmc_mk_box1(6,&Pam_DIV__desc))
+#define Pam__ADD (mmc_mk_box1(3,&Pam_BinOp_ADD__desc))
+#define Pam__SUB (mmc_mk_box1(4,&Pam_BinOp_SUB__desc))
+#define Pam__MUL (mmc_mk_box1(5,&Pam_BinOp_MUL__desc))
+#define Pam__DIV (mmc_mk_box1(6,&Pam_BinOp_DIV__desc))
 
 /* RelOp */
-extern struct record_description Pam_EQ__desc;
-extern struct record_description Pam_GT__desc;
-extern struct record_description Pam_LT__desc;
-extern struct record_description Pam_LE__desc;
-extern struct record_description Pam_GE__desc;
-extern struct record_description Pam_NE__desc;
+extern struct record_description Pam_RelOp_EQ__desc;
+extern struct record_description Pam_RelOp_GT__desc;
+extern struct record_description Pam_RelOp_LT__desc;
+extern struct record_description Pam_RelOp_LE__desc;
+extern struct record_description Pam_RelOp_GE__desc;
+extern struct record_description Pam_RelOp_NE__desc;
 
-#define Pam__EQ (mmc_mk_box1(3,&Pam_EQ__desc))
-#define Pam__GT (mmc_mk_box1(4,&Pam_GT__desc))
-#define Pam__LT (mmc_mk_box1(5,&Pam_LT__desc))
-#define Pam__LE (mmc_mk_box1(6,&Pam_LE__desc))
-#define Pam__GE (mmc_mk_box1(7,&Pam_GE__desc))
-#define Pam__NE (mmc_mk_box1(8,&Pam_NE__desc))
+#define Pam__EQ (mmc_mk_box1(3,&Pam_RelOp_EQ__desc))
+#define Pam__GT (mmc_mk_box1(4,&Pam_RelOp_GT__desc))
+#define Pam__LT (mmc_mk_box1(5,&Pam_RelOp_LT__desc))
+#define Pam__LE (mmc_mk_box1(6,&Pam_RelOp_LE__desc))
+#define Pam__GE (mmc_mk_box1(7,&Pam_RelOp_GE__desc))
+#define Pam__NE (mmc_mk_box1(8,&Pam_RelOp_NE__desc))
 
 /* Exp */
-extern struct record_description Pam_INT__desc;
-extern struct record_description Pam_IDENT__desc;
-extern struct record_description Pam_BINARY__desc;
-extern struct record_description Pam_RELATION__desc;
+extern struct record_description Pam_Exp_INT__desc;
+extern struct record_description Pam_Exp_IDENT__desc;
+extern struct record_description Pam_Exp_BINARY__desc;
+extern struct record_description Pam_Exp_RELATION__desc;
 
-#define Pam__INT(X1)            (mmc_mk_box2(3,&Pam_INT__desc,(X1)))
-#define Pam__IDENT(X1)          (mmc_mk_box2(4,&Pam_IDENT__desc,(X1)))
-#define Pam__BINARY(X1,X2,X3)   (mmc_mk_box4(5,&Pam_BINARY__desc,(X1),(X2),(X3)))
-#define Pam__RELATION(X1,X2,X3) (mmc_mk_box4(6,&Pam_RELATION__desc,(X1),(X2),(X3)))
+#define Pam__INT(X1)            (mmc_mk_box2(3,&Pam_Exp_INT__desc,(X1)))
+#define Pam__IDENT(X1)          (mmc_mk_box2(4,&Pam_Exp_IDENT__desc,(X1)))
+#define Pam__BINARY(X1,X2,X3)   (mmc_mk_box4(5,&Pam_Exp_BINARY__desc,(X1),(X2),(X3)))
+#define Pam__RELATION(X1,X2,X3) (mmc_mk_box4(6,&Pam_Exp_RELATION__desc,(X1),(X2),(X3)))
 
 /* Stmt */
-extern struct record_description Pam_ASSIGN__desc;
-extern struct record_description Pam_IF__desc;
-extern struct record_description Pam_WHILE__desc;
-extern struct record_description Pam_TODO__desc;
-extern struct record_description Pam_READ__desc;
-extern struct record_description Pam_WRITE__desc;
-extern struct record_description Pam_SEQ__desc;
-extern struct record_description Pam_SKIP__desc;
+extern struct record_description Pam_Stmt_ASSIGN__desc;
+extern struct record_description Pam_Stmt_IF__desc;
+extern struct record_description Pam_Stmt_WHILE__desc;
+extern struct record_description Pam_Stmt_TODO__desc;
+extern struct record_description Pam_Stmt_READ__desc;
+extern struct record_description Pam_Stmt_WRITE__desc;
+extern struct record_description Pam_Stmt_SEQ__desc;
+extern struct record_description Pam_Stmt_SKIP__desc;
 
-#define Pam__ASSIGN(X1,X2) (mmc_mk_box3(3,&Pam_ASSIGN__desc,(X1),(X2)))
-#define Pam__IF(X1,X2,X3)  (mmc_mk_box4(4,&Pam_IF__desc,(X1),(X2),(X3)))
-#define Pam__WHILE(X1,X2)  (mmc_mk_box3(5,&Pam_WHILE__desc,(X1),(X2)))
-#define Pam__TODO(X1,X2)   (mmc_mk_box3(6,&Pam_TODO__desc,(X1),(X2)))
-#define Pam__READ(X1)      (mmc_mk_box2(7,&Pam_READ__desc,(X1)))
-#define Pam__WRITE(X1)     (mmc_mk_box2(8,&Pam_WRITE__desc,(X1)))
-#define Pam__SEQ(X1,X2)    (mmc_mk_box3(9,&Pam_SEQ__desc,(X1),(X2)))
-#define Pam__SKIP          (mmc_mk_box1(10,&Pam_SKIP__desc))
+#define Pam__ASSIGN(X1,X2) (mmc_mk_box3(3,&Pam_Stmt_ASSIGN__desc,(X1),(X2)))
+#define Pam__IF(X1,X2,X3)  (mmc_mk_box4(4,&Pam_Stmt_IF__desc,(X1),(X2),(X3)))
+#define Pam__WHILE(X1,X2)  (mmc_mk_box3(5,&Pam_Stmt_WHILE__desc,(X1),(X2)))
+#define Pam__TODO(X1,X2)   (mmc_mk_box3(6,&Pam_Stmt_TODO__desc,(X1),(X2)))
+#define Pam__READ(X1)      (mmc_mk_box2(7,&Pam_Stmt_READ__desc,(X1)))
+#define Pam__WRITE(X1)     (mmc_mk_box2(8,&Pam_Stmt_WRITE__desc,(X1)))
+#define Pam__SEQ(X1,X2)    (mmc_mk_box3(9,&Pam_Stmt_SEQ__desc,(X1),(X2)))
+#define Pam__SKIP          (mmc_mk_box1(10,&Pam_Stmt_SKIP__desc))
 
 #endif
 

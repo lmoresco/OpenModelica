@@ -11,7 +11,14 @@ instantiateModel(Modelica.Electrical.Machines.Examples.AIMC_DOL);
 getErrorString();
 // Result:
 // true
-// "function Modelica.Math.atan2
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+// external "C";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.atan2
 //   input Real u1;
 //   input Real u2;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");

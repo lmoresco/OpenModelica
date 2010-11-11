@@ -4,17 +4,27 @@
 //
 // OpenModelica Development Course at PELAB
 //
-echo(false);
 loadFile("Exp1.mo");
 loadFile("Parse.mo");
+getErrorString();
 print("[Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
 ");
-syntree := Parse.parse();
+if true then
+  syntree := Parse.parse();
+end if;
+// syntree; // Uncomment if you want to debug the AST
+getErrorString();
 i := Exp1.eval(syntree);
-print(intString(i) + "
-");
+getErrorString();
 
 // Result:
+// true
+// true
+// ""
 // [Parse. Enter an expression, then press CTRL+z (Windows) or CTRL+d (Linux).]
+// 
+// 
+// ""
 // 8
+// ""
 // endResult
