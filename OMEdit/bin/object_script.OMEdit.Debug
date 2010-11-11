@@ -17,13 +17,9 @@ INPUT(
 ./debug\RectangleAnnotation.o
 ./debug\EllipseAnnotation.o
 ./debug\TextAnnotation.o
-./debug\IconAnnotation.o
-./debug\InheritanceAnnotation.o
-./debug\ComponentAnnotation.o
 ./debug\ComponentsProperties.o
 ./debug\CornerItem.o
 ./debug\ConnectorWidget.o
-./debug\Components.o
 ./debug\PlotWidget.o
 ./debug\ModelicaEditor.o
 ./debug\VisualizationWidget.o
@@ -43,6 +39,9 @@ INPUT(
 ./debug\IconParameters.o
 ./debug\SimulationWidget.o
 ./debug\IconProperties.o
+./debug\Component.o
+./debug\Transformation.o
+./debug\DocumentationWidget.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
@@ -50,9 +49,6 @@ INPUT(
 ./debug\moc_OMCProxy.o
 ./debug\moc_OMCThread.o
 ./debug\moc_ModelWidget.o
-./debug\moc_IconAnnotation.o
-./debug\moc_InheritanceAnnotation.o
-./debug\moc_ComponentAnnotation.o
 ./debug\moc_CornerItem.o
 ./debug\moc_ConnectorWidget.o
 ./debug\moc_PlotWidget.o
@@ -66,5 +62,6 @@ INPUT(
 ./debug\moc_compoundWidget.o
 ./debug\moc_SimulationWidget.o
 ./debug\moc_IconProperties.o
+./debug\moc_Component.o
 ./debug\qrc_resource_omedit.o
 );

@@ -17,13 +17,9 @@ INPUT(
 ./release\RectangleAnnotation.o
 ./release\EllipseAnnotation.o
 ./release\TextAnnotation.o
-./release\IconAnnotation.o
-./release\InheritanceAnnotation.o
-./release\ComponentAnnotation.o
 ./release\ComponentsProperties.o
 ./release\CornerItem.o
 ./release\ConnectorWidget.o
-./release\Components.o
 ./release\PlotWidget.o
 ./release\ModelicaEditor.o
 ./release\VisualizationWidget.o
@@ -43,6 +39,9 @@ INPUT(
 ./release\IconParameters.o
 ./release\SimulationWidget.o
 ./release\IconProperties.o
+./release\Component.o
+./release\Transformation.o
+./release\DocumentationWidget.o
 ./release\moc_mainwindow.o
 ./release\moc_ProjectTabWidget.o
 ./release\moc_LibraryWidget.o
@@ -50,9 +49,6 @@ INPUT(
 ./release\moc_OMCProxy.o
 ./release\moc_OMCThread.o
 ./release\moc_ModelWidget.o
-./release\moc_IconAnnotation.o
-./release\moc_InheritanceAnnotation.o
-./release\moc_ComponentAnnotation.o
 ./release\moc_CornerItem.o
 ./release\moc_ConnectorWidget.o
 ./release\moc_PlotWidget.o
@@ -66,5 +62,6 @@ INPUT(
 ./release\moc_compoundWidget.o
 ./release\moc_SimulationWidget.o
 ./release\moc_IconProperties.o
+./release\moc_Component.o
 ./release\qrc_resource_omedit.o
 );
