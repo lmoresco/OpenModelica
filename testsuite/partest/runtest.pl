@@ -37,7 +37,7 @@ sub make_link {
 	}
 }
 
-# Some tests use libraries that we need to symlink the corresponding heards for.
+# Some tests use libraries that we need to symlink the corresponding headers for.
 sub lib_to_header {
 	my $lib = shift;
 
@@ -75,6 +75,14 @@ sub make_test_specific_links {
       make_link("ParseModel-saved.mo");
     }
 	}
+}
+
+sub remove_test_specific_links {
+  given($test) {
+    when ("ParseModel.mos") {
+      unlink("ParseModel.mo");
+    }
+  }
 }
 
 # This functions sets up a sandbox for a tests by creating a temporary directory
@@ -140,6 +148,8 @@ sub enter_sandbox {
       }
 		}
 	}
+
+  remove_test_specific_links();
 }
 
 # Exit the sandbox by going up one directory level and delete the temporary

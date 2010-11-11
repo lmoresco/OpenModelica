@@ -17,6 +17,7 @@ BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 BuiltinMath.mos \
 ComplexNumbers.mos \
+ComplexTypeEquationCount.mos \
 ConstructFunc.mos \
 Cross.mos \
 CyclicPerm.mos \
