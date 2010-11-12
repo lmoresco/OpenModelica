@@ -86,8 +86,7 @@ getErrorString();
 // 
 // ### End of Error Buffer ###
 // 
-// "Error: Found a component with same name when looking for type templPackage
-// "
+// ""
 // true
 // "[SusanTestSmall.mo:31:5-42:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
 // [SusanTestSmall.mo:42:5-49:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.

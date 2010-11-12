@@ -15,7 +15,7 @@ end Lookup3;
 // Result:
 // Error processing file: Lookup3.mo
 // [Lookup3.mo:13:3-13:6:readonly] Error: Variable b: Variable a in package Lookup3 is not constant
-// [Lookup3.mo:13:3-13:6:readonly] Error: Variable b: Found a component with same name when looking for type a
+// [Lookup3.mo:11:5-11:15:writable] Error: Found a component with same name when looking for type a
 // [Lookup3.mo:13:3-13:6:readonly] Error: Variable b: Variable a in package Lookup3 is not constant
 // [Lookup3.mo:11:5-11:15:writable] Error: Variable a not found in scope Lookup3.B
 // 
