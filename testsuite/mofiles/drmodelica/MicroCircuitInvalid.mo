@@ -87,11 +87,10 @@ class InductorMicroCircuit =
 
 // Result:
 // Error processing file: MicroCircuitInvalid.mo
-// # Restriction violation: Inductor is not a TYPE
+// [MicroCircuitInvalid.mo:84:29-84:53:writable] Error: Restriction violation: Inductor is a model, not a TYPE
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
-// # Restriction violation: Inductor is not a TYPE
 // 
 // Execution failed!
 // endResult

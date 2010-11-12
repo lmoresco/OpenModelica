@@ -18,11 +18,10 @@ equation
 end TypeClass2;
 // Result:
 // Error processing file: TypeClass2.mo
-// # Restriction violation: IllegalClass is not a TYPE
+// [TypeClass2.mo:12:1-12:32:writable] Error: Restriction violation: IllegalClass is a new def, not a TYPE
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
-// # Restriction violation: IllegalClass is not a TYPE
 // 
 // Execution failed!
 // endResult
