@@ -30,6 +30,7 @@ algorithm
   ht := delete(wild,ht);
   failure(lst := get(wild,ht)::lst);
   HashTableStringToPath.emptyHashTable() "verify that this also works";
+  UnitAbsynBuilder.emptyInstStore() "verify that this also works; stores tuple<function> inside a metarecord";
 end fn;
 
 end HashTableTest;
