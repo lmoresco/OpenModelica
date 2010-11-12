@@ -64,4 +64,11 @@ algorithm
   ys := Util.listListMap(xs, intString);
 end listListMap;
 
+function listMapMap
+  input list<Integer> xs;
+  output list<String> ys;
+algorithm
+  ys := Util.listMapMap(xs, intReal, realString);
+end listMapMap;
+
 end UtilTest;
