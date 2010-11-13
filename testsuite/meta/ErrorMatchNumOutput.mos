@@ -11,6 +11,8 @@ getErrorString();
 // Result:
 // true
 // 
-// "[ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Match expression has mismatched number of expected (3) and actual (2) outputs. The expressions were (o1,o2,o3) and (3,4).
+// "[ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Match expression has mismatched result types:
+//   tuple<#Integer, #Integer>
+//   tuple<#Integer, #Integer, #Integer>
 // "
 // endResult

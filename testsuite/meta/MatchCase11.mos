@@ -8,8 +8,18 @@
 //
 loadFile("MatchCase11.mo");
 MatchCase11.func(1);
+getErrorString();
 
 // Result:
 // true
-// fail()
+// 
+// "[MatchCase11.mo:7:5-9:22:writable] Error: Type mismatch in assignment in b := matchcontinue(i)
+// #cases#
+// end matchcontinue of Integer := #NORETCALL#
+// [MatchCase11.mo:7:5-9:22:writable] Error: Type mismatch in pattern
+// actual type:
+//   Integer
+// expected type:
+//   #NORETCALL#
+// "
 // endResult

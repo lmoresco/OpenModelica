@@ -21,7 +21,9 @@ end MatchCase14;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm
-//   _ := #VALUEBLOCK#;
+//   outInt := match (i) 
+//     #cases#
+//   end match;
 // end MatchCase14.fn;
 // 
 // class MatchCase14

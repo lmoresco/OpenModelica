@@ -9,13 +9,17 @@
 loadFile("MatchElse1.mo");
 getErrorString();
 MatchElse1.func(1);
+getErrorString();
 MatchElse1.func(2);
+getErrorString();
 
 // Result:
 // true
 // ""
 // Sad thing
 // fail()
+// ""
 // Great success
 // 42
+// ""
 // endResult

@@ -50,7 +50,9 @@ end PartialFn15;
 //   lst := List();
 //   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
 //   while  NOT listEmpty(binops) loop
-//     _ := #VALUEBLOCK#;
+//     lst := match (binops) 
+//     #cases#
+//   end match;
 //   end while;
 //   lst := listReverse(lst);
 // end PartialFn15.elabRealBinOps;

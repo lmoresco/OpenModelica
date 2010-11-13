@@ -8,7 +8,7 @@ package Shadowing2
       local
         Integer x,z;
         Real x1;
-      case _ then 0;
+      case _ then 42;
     end matchcontinue;
   end test;
 

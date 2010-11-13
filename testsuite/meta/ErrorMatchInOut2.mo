@@ -10,6 +10,7 @@ algorithm
   "" := match str
     case str then str;
   end match;
+  outStr := "";
 end fn;
 
 constant String str = fn("");

@@ -20,7 +20,8 @@ end ErrorLocalElement;
 
 // Result:
 // Error processing file: ErrorLocalElement.mo
-// [ErrorLocalElement.mo:12:9-12:25:writable] Error: Only components are allowed in local declarations, got: type t = Integer;
+// [ErrorLocalElement.mo:10:5-15:14:writable] Error: Only components are allowed in local declarations, got: CLASSDEF(t,CLASS(t,_,_,TYPE,DERIVED(Integer,))
+// )
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

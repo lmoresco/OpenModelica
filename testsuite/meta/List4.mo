@@ -49,7 +49,9 @@ end List4;
 //   input Integer a;
 //   output Integer out1;
 // algorithm
-//   _ := #VALUEBLOCK#;
+//   out1 := matchcontinue (a) 
+//     #cases#
+//   end matchcontinue;
 // end List4.func1;
 // 
 // function List4.func2
