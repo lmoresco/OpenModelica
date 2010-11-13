@@ -19,6 +19,6 @@ getErrorString();
 // "1"
 // ""
 // 
-// "Error: Failed to instantiate function ErrorFunctionCallNumArgs.f2 in scope <global scope>
+// "[ErrorFunctionCallNumArgs.mo:22:3-22:15:writable] Error: Failed to elaborate rhs of s:=fn(1, 2);
 // "
 // endResult
