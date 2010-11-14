@@ -4,6 +4,7 @@
 // setup_command: rm -f SimCodeC_abc.c SimCodeC_abc.h SimCodeC_abc.makefile
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml"});
+setOption(envCache,false);
 
 runScript("LoadCompilerSources.mos");
 getErrorString();
@@ -17,6 +18,7 @@ readFile("SimCodeC_abc.c");
 readFile("SimCodeC_abc.makefile");
 
 // Result:
+// true
 // true
 // Loaded all files without error
 // "true
