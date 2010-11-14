@@ -4,7 +4,5 @@ runScript("LoadCompilerSources.mos");
 getErrorString();
 setOption(envCache,false);
 
-Main.main({});
-//UnitAbsynBuilder.emptyInstStore();
-//DAE.ICONST(1);
+generateCode(Main.main);
 getErrorString();
