@@ -1,4 +1,4 @@
-setCommandLineOptions({"+g=MetaModelica","+d=rml"});
+setCommandLineOptions({"+g=MetaModelica","+d=rml,dynload,cheat"});
 
 runScript("LoadCompilerSources.mos");
 getErrorString();
