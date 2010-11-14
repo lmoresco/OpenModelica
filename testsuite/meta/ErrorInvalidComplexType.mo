@@ -9,7 +9,7 @@ end ErrorInvalidComplexType;
 
 // Result:
 // Error processing file: ErrorInvalidComplexType.mo
-// [ErrorInvalidComplexType.mo:6:1-6:37:writable] Error: Invalid complex type name: option<...>
+// [ErrorInvalidComplexType.mo:6:1-6:37:writable] Error: Invalid complex type name: option<String>
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

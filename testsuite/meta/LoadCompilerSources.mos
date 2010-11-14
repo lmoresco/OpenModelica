@@ -2,7 +2,7 @@
 
 echo(false);
 loadFile("../../Compiler/SimCodeC.mo");
-loadFile("../../Compiler/SimCodeFMI.mo");
+loadFile("../../Compiler/SimCodeFMU.mo");
 loadFile("../../Compiler/SimCodeCSharp.mo");
 loadFile("../../Compiler/TplCodegen.mo");
 getErrorString(); // Ignore syntax errors in automatically generated files
