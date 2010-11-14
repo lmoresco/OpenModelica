@@ -1,3 +1,5 @@
+// name: MainTest
+// status: correct
 setCommandLineOptions({"+g=MetaModelica","+d=rml,dynload,cheat"});
 
 runScript("LoadCompilerSources.mos");
@@ -6,3 +8,14 @@ setOption(envCache,false);
 
 generateCode(Main.main);
 getErrorString();
+
+// Result:
+// true
+// Loaded all files without error
+// "true
+// "
+// ""
+// true
+// true
+// ""
+// endResult
