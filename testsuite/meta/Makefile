@@ -72,7 +72,7 @@ Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
-SimCodeCTest.mos \
+SimCodeTest.mos \
 SimplifyTest.mos \
 StrictRML.mos \
 SusanTest.mos \
