@@ -1,6 +1,6 @@
 // name: MainTest
 // status: correct
-setCommandLineOptions({"+g=MetaModelica","+d=rml,dynload,cheat"});
+setCommandLineOptions({"+g=MetaModelica","+d=rml,generateCodeCheat"});
 
 runScript("LoadCompilerSources.mos");
 getErrorString();
