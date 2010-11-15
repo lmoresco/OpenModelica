@@ -18,7 +18,8 @@ ErrorInvalidComplexType.mo \
 ErrorInvalidPattern1.mo \
 ErrorInvalidPattern2.mo \
 ErrorInvalidPattern3.mo \
-ErrorLocalElement.mo \
+ErrorLocalElement1.mo \
+ErrorLocalElement2.mo \
 ErrorMatchInOut1.mo \
 ErrorMatchInOut2.mo \
 ErrorMatchInOut3.mo \

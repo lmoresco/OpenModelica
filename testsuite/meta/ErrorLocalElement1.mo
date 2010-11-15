@@ -1,4 +1,4 @@
-// name: ErrorLocalElement
+// name: ErrorLocalElement1
 // cflags: +g=MetaModelica
 // status: incorrect
 
@@ -19,9 +19,11 @@ class ErrorLocalElement
 end ErrorLocalElement;
 
 // Result:
-// Error processing file: ErrorLocalElement.mo
-// [ErrorLocalElement.mo:10:5-15:14:writable] Error: Only components are allowed in local declarations, got: CLASSDEF(t,CLASS(t,_,_,TYPE,DERIVED(Integer,))
-// )
+// Error processing file: ErrorLocalElement1.mo
+// [ErrorLocalElement1.mo:10:5-15:14:writable] Error: Only components without direction are allowed in local declarations, got: class t
+// CLASS(t,_,_,TYPE,DERIVED(Integer,))
+// end t;
+// 
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
