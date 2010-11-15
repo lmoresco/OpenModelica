@@ -1,4 +1,4 @@
-LOGS = multibody.log msl221.log msl221additions.log biochem.log msl31.log
+LOGS = msl31.log multibody.log msl221.log msl221additions.log biochem.log
 .PHONY : all failingtest msl221.log msl31.log msl221additions.log biochem.log multibody.log
 
 all : test
