@@ -6,7 +6,7 @@
 // (for MDT).
 //
 
-runScript("../meta/LoadCompilerSources.mos");
+runScript("../bootstrapping/LoadCompilerSources.mos");
 strictRMLCheck();
 
 // Result:

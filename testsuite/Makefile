@@ -21,13 +21,13 @@ all : test
 
 omc-diff :
 	$(MAKE) -C difftool
-test : libraries.log fast.logs
-	@cat `ls $(FASTLOGS) | sort` libraries.log
+test : bootstrapping.log libraries.log fast.logs
+	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 test-oldresult:
-	@cat `ls $(FASTLOGS) | sort` libraries.log
+	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
 test-oldresult-summary:
-	@cat `ls $(FASTLOGS) | sort` libraries.log
+	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
 	@cat test.log
 	@echo -n "== Total: "
 	@SUM=0; for i in `grep ^== test.log | grep failed | cut -d\  -f2`; do SUM=$$(($$SUM + $$i)); done; echo -n $$SUM
@@ -86,6 +86,9 @@ linearize.log: omc-diff
 	@echo $@ done
 java.log: omc-diff
 	$(MAKE) -C java -f Makefile test > $@
+	@echo $@ done
+bootstrapping.log: omc-diff
+	$(MAKE) -C bootstrapping -f Makefile test > $@
 	@echo $@ done
 	
 failingtest: omc-diff

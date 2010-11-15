@@ -11,7 +11,6 @@ BuiltinMisc.mos \
 BuiltinReal.mos \
 BuiltinString.mos \
 ComplicatedInteractive.mos \
-DumpTest.mos \
 Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
@@ -26,14 +25,12 @@ ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
 ErrorNone.mos \
 Failure.mos \
-HashTableTest.mos \
 List1.mos \
 List2.mos \
 List3.mos \
 List4.mo \
 List5.mo \
 ListInteractive.mos \
-MainTest.mos \
 MatchCase1.mos \
 MatchCase2.mos \
 MatchCase3.mos \
@@ -73,10 +70,7 @@ Polymorphic.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
-SimCodeTest.mos \
-SimplifyTest.mos \
 StrictRML.mos \
-SusanTest.mos \
 TupleInteractive.mos \
 Uniontype1.mos \
 Uniontype2.mos \
@@ -92,9 +86,7 @@ Uniontype11.mos \
 Uniontype12.mos \
 Uniontype13.mos \
 Uniontype14.mos \
-Uniontype15.mos \
-UtilTest.mos
-
+Uniontype15.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
