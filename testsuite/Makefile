@@ -1,16 +1,16 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
-meta.log \
 mosfiles.log \
 mosfiles-msl22.log \
 parser.log \
+meta.log \
+dependency.log \
 mofiles.log \
 msl.log \
 mmdev.log \
 drmodelica.log \
 mosfiles-nosim.log \
 records.log \
-dependency.log \
 expandable.log \
 linearize.log \
 streams.log

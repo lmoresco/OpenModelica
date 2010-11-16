@@ -99,7 +99,10 @@ readFile("SimCodeC_abc.c");
 // #ifdef __cplusplus
 // }
 // #endif
-// #endif"
+// #endif
+// 
+// 
+// "
 // "#include "SimCodeC_abc.h"
 // #include <algorithm>
 // #define MODELICA_ASSERT(cond,msg) { if (!(cond)) fprintf(stderr,"Modelica Assert: %s!\n", msg); }
