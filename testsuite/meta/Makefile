@@ -21,8 +21,6 @@ ErrorInvalidPattern3.mo \
 ErrorLocalElement1.mo \
 ErrorLocalElement2.mo \
 ErrorMatchInOut1.mo \
-ErrorMatchInOut2.mo \
-ErrorMatchInOut3.mo \
 ErrorMatchNumOutput.mos \
 ErrorNone.mos \
 Failure.mos \
@@ -47,6 +45,8 @@ MatchCase12.mos \
 MatchCase13.mos \
 MatchCase14.mo \
 MatchCase15.mo \
+MatchCase16.mo \
+MatchCase17.mo \
 MatchCaseInteractive1.mos \
 MatchCaseInteractive2.mos \
 MatchCaseInteractive3.mos \

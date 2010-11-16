@@ -2,7 +2,7 @@
 // cflags: +g=MetaModelica
 // status: incorrect
 
-class ErrorLocalElement
+class ErrorLocalElement1
   function fn
     input Integer i;
     output Integer o;
@@ -16,7 +16,7 @@ class ErrorLocalElement
   end fn;
 
   constant Integer i = fn(1);
-end ErrorLocalElement;
+end ErrorLocalElement1;
 
 // Result:
 // Error processing file: ErrorLocalElement1.mo
