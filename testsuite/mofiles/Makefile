@@ -127,6 +127,7 @@ Connect6.mo \
 Connect7.mo \
 Connect8.mo \
 Connect9.mo \
+ConnectEnumArray.mo \
 ConnectFlowEffort.mo \
 ConnectHierarchical1.mo \
 ConnectHierarchical2.mo \
