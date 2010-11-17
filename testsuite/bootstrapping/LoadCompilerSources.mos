@@ -88,6 +88,7 @@ loadFile("../../Compiler/Print.mo");
 loadFile("../../Compiler/Refactor.mo");
 loadFile("../../Compiler/RTOpts.mo");
 loadFile("../../Compiler/SCode.mo");
+loadFile("../../Compiler/SCodeFlatten.mo");
 loadFile("../../Compiler/SCodeUtil.mo");
 loadFile("../../Compiler/Settings.mo");
 loadFile("../../Compiler/SimCode.mo");
