@@ -10,6 +10,7 @@ msl.log \
 mmdev.log \
 drmodelica.log \
 mosfiles-nosim.log \
+interactive.log \
 records.log \
 expandable.log \
 linearize.log \
@@ -23,7 +24,7 @@ omc-diff :
 	$(MAKE) -C difftool
 test : bootstrapping.log libraries.log fast.logs
 	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
-	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java,interactive,mosfiles-nosim}/*.{dll,so,exe};
 test-oldresult:
 	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
 test-oldresult-summary:
@@ -56,6 +57,9 @@ parser.log: omc-diff
 	@echo $@ done
 dependency.log: omc-diff
 	$(MAKE) -C dependency -f Makefile test > $@
+	@echo $@ done
+interactive.log: omc-diff
+	$(MAKE) -C interactive -f Makefile test > $@
 	@echo $@ done
 msl.log: omc-diff
 	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
