@@ -25,8 +25,18 @@ loadFile("../../Compiler/Util.mo");
 loadFile("SusanTest.mo");
 getErrorString();
 
-// cd("../../Compiler/susan_codegen/SimCode/");
-// SusanTest.main({"+d=failtrace","SimCodeC.tpl"});
+/* At the moment this uses too much stack to test properly.
+ * run ulimit -s 10000000000 and uncomment it and it will run.
+ */
+/*
+system("cp ../../Compiler/susan_codegen/SimCode/SimCodeC.tpl .");
+system("cp ../../Compiler/susan_codegen/SimCode/SimCodeTV.mo .");
+system("rm -f SimCodeC.mo");
+SusanTest.main({"SimCodeC.tpl"});
+system("diff -u SimCodeC.mo ../../Compiler/SimCodeC.mo > SimCodeC.diff");
+readFile("SimCodeC.diff");
+*/
+
 system("rm -f SusanTestSmall.mo");
 SusanTest.main({"+d=failtrace","SusanTestSmall.tpl"});
 getErrorString();
