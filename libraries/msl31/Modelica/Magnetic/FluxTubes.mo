@@ -4777,12 +4777,7 @@ This package contains sources of a magnetic potential difference or a magnetic f
             Line(points={{0,-100},{0,-70}}, color={0,0,0}),
             Line(points={{-70,0},{-90,0}}, color={0,0,0}),
             Line(points={{70,0},{90,0}}, color={0,0,0}),
-            Text(extent={{-29,-11},{30,-70}}, textString="Phi"),
-            Text(
-              extent=[-150,120; 150,80],
-              textString="%name",
-              lineColor={0,0,255}),
-            Line(points=[0,-90; 0,-70])}));
+            Text(extent={{-29,-11},{30,-70}}, textString="Phi")}));
 
   end MagneticFluxSensor;
     annotation (Documentation(info="<html>

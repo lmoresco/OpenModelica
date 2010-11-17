@@ -570,30 +570,11 @@ This leads to the following animation
 <IMG SRC=\"../Images/MultiBody/Forces/WorldForceAndTorque2.png\">
 </p>
 </HTML>
-"),   Coordsys(
-        extent=[-100, -100; 100, 100],
-        grid=[1, 1],
-        component=[20, 20]),
-      Documentation(info="
+"),   Documentation(info="
 An external force element exerts the inport signal
 as negative force on the connector frame (the force vector
 is resolved in the world frame).
-"),   Icon(Text(extent=[-132, 99; 128, 39], string="%name",
-          lineColor={0,0,255}),                              Polygon(points=[-100,
-               10; 49, 10; 49, 31; 100, 0; 49, -31; 49, -10; -100, -10; -100,
-              10], style(
-            color=0,
-            gradient=0,
-            fillColor=0,
-            fillPattern=1),
-          lineColor={0,0,255})),
-      Diagram(Polygon(points=[-90, 10; 40, 10; 40, 31; 91, 0; 40, -31; 40, -10;
-               -90, -10; -90, 10], style(
-            color=0,
-            gradient=0,
-            fillColor=0,
-            fillPattern=1),
-          lineColor={0,0,255})));
+"));
   end WorldForceAndTorque;
 
   model Force

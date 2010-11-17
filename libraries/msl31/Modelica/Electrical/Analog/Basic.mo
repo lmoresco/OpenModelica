@@ -642,10 +642,10 @@ model M_Transformer "Generic transformer with free number of inductors"
   parameter Modelica.SIunits.Inductance L[dimL]={1,0.1,0.2,2,0.3,3}
       "inductances and coupling inductances";
   Modelica.Electrical.Analog.Interfaces.PositivePin p[N] "Positive pin"
-              annotation (extent=[-80,-40; -62,40], Placement(transformation(
+              annotation (Placement(transformation(
           extent={{-80,-40},{-62,40}}, rotation=0)));
   Modelica.Electrical.Analog.Interfaces.NegativePin n[N] "Negative pin"
-              annotation (extent=[62,-40; 80,40], Placement(transformation(
+              annotation (Placement(transformation(
           extent={{62,-40},{80,40}}, rotation=0)));
 
   Modelica.SIunits.Voltage v[N];
@@ -733,66 +733,8 @@ equation
           Text(
             extent={{-150,103},{150,63}},
             textString="%name",
-            lineColor={0,0,255})},
-      Ellipse(extent=[-36,24; -18,42]),
-      Ellipse(extent=[18,24; 36,42]),
-      Ellipse(extent=[0,24; 18,42]),
-      Ellipse(extent=[-18,24; 0,42]),
-      Rectangle(extent=[42,24; -44,34], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255})),
-      Line(points=[-36,34; -62,34], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Line(points=[62,34; 36,34], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Ellipse(extent=[-36,8; -18,26]),
-      Ellipse(extent=[18,8; 36,26]),
-      Ellipse(extent=[0,8; 18,26]),
-      Ellipse(extent=[-18,8; 0,26]),
-      Rectangle(extent=[42,6; -44,18], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255})),
-      Line(points=[-36,18; -62,18], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Line(points=[62,18; 36,18], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Line(points=[-36,-29; -62,-29], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Ellipse(extent=[-36,-40; -18,-22]),
-      Ellipse(extent=[-18,-40; 0,-22]),
-      Ellipse(extent=[0,-40; 18,-22]),
-      Ellipse(extent=[18,-40; 36,-22]),
-      Line(points=[62,-29; 36,-29], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1)),
-      Rectangle(extent=[42,-42; -44,-30], style(
-          pattern=0,
-          fillColor=7,
-          rgbfillColor={255,255,255})),
-      Line(points=[0,8; 0,-18], style(
-          pattern=3,
-          fillColor=7,
-          rgbfillColor={255,255,255},
-          fillPattern=1))), Diagram(coordinateSystem(preserveAspectRatio=false,
+            lineColor={0,0,255})}), 
+          Diagram(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-100},{100,100}}),
                                     graphics),
 Documentation(info="<html>

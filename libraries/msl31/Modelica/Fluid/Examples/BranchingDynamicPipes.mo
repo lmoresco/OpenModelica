@@ -122,7 +122,7 @@ equation
       color={191,0,0},
       thickness=0.5));
 
-    annotation (extent=[-90,-86; -70,-66], Diagram(coordinateSystem(
+    annotation (Diagram(coordinateSystem(
           preserveAspectRatio=true,  extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
