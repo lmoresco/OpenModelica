@@ -1,3 +1,3 @@
-void* constructor(char* filename);
+void* constructor(const char* filename);
 void destructor(void* o);
 
