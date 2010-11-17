@@ -65,9 +65,9 @@ equation
 
   end for;
 
-
-
-
 end TestRenameComp2;
 
 
+model m1 
+ Modelica.Electrical.Analog.Basic.EMF emf1; 
+end m1;
