@@ -490,6 +490,7 @@ StringConcatenation.mo \
 StringConversion.mo \
 StringInteger.mo \
 StringLiterals.mo \
+StringPool.mo \
 StringReal.mo \
 StructuralParameter1.mo \
 SubScript1.mo \
