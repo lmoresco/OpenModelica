@@ -33,7 +33,7 @@ model A2
   Real x;
 end A2;
 model A3
-  annotation(defaultComponentPrefixes="outer replacable");
+  annotation(defaultComponentPrefixes="outer replaceable");
   Real a3;
 end A3;
 model B

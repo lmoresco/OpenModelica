@@ -15,7 +15,6 @@ loadFileInteractiveQualified.mos \
 matrices.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \
 Rename.mos \
-Return.mos \
 RunScript.mos \
 simplify.mos \
 strings.mos  \

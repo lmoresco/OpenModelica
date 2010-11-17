@@ -94,7 +94,7 @@ getClassNames(A);
 // ""
 // true
 // ""
-// 
+// { annotation(Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})})) }
 // ""
 // true
 // true
@@ -138,7 +138,7 @@ getClassNames(A);
 // ""
 // true
 // ""
-// 
+// { annotation(Icon(extent = {{0,0},{100,100}}, graphics = {Line(points = {{0,0},{100,100}})})) }
 // ""
 // true
 // true

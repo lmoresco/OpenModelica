@@ -33,13 +33,13 @@ getDefaultComponentPrefixes(A3);
 // "model B
 //   inner parameter A a;
 //   A2 a2;
-//   outer A3 a3 "foobar";
+//   outer replaceable A3 a3 "foobar";
 //   inner DefaultCompartment a5 "foo2";
 // end B;
 // 
 // "
 // "inner"
 // "inner parameter"
-// 
-// "outer replacable"
+// {}
+// "outer replaceable"
 // endResult
