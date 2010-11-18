@@ -35,15 +35,12 @@ omdev_extra_dlls:
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 
 omc: c_runtime docs omdev_extra_dlls
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
 
 omcd: c_runtime docs omdev_extra_dlls
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw debug)
 
 omc_profiler: c_runtime docs omdev_extra_dlls
-	(cd Compiler/rml2sig && $(MAKE) -f Makefile.omdev.mingw)
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw profiler)
 
 
