@@ -63,5 +63,6 @@ INPUT(
 ./release\moc_SimulationWidget.o
 ./release\moc_IconProperties.o
 ./release\moc_Component.o
+./release\moc_DocumentationWidget.o
 ./release\qrc_resource_omedit.o
 );
