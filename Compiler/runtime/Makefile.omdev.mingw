@@ -39,7 +39,7 @@ IDL	= $(OMDEV)/bin/mico/idl
 CFLAGS	+= -I$(RMLINCLUDE) -I../../c_runtime -I../ $(CORBAINCL) -Ilpsolve
 CXXFLAGS = $(CFLAGS)
 SRC	= RTOpts_rml.c socketimpl.c printimpl.c Print_rml.c System_rml.c Settings_rml.c dynload.c SimulationResults.c IOStreamExt_rml.c rtclock.c Database.c sqlite/sqlite3.c
-CPPSRC  = unitparser.cpp unitparserext.cpp ptolemyio.cpp daeext.cpp ErrorMessage.cpp Error_rml.cpp \
+CPPSRC  = unitparser.cpp unitparserext.cpp ptolemyio.cpp BackendDAEEXT.cpp ErrorMessage.cpp Error_rml.cpp \
 optmanager.cpp systemimplmisc.cpp dynload_try.o $(CORBASRC)
 OBJ     = $(SRC:.c=.o) $(CPPSRC:.cpp=.o) $(CPPSRC:.cc=.o)
 OMC_OBJ = Error_omc.o Print_omc.o RTOpts_omc.o System_omc.o Settings_omc.o IOStreamExt_omc.o ErrorMessage.o systemimplmisc.o rtclock.o
