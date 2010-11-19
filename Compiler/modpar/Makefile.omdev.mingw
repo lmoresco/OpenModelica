@@ -39,9 +39,11 @@ OBJECTS = Codegen.o \
 else
 OBJECTS = TaskGraphExt_stub.o
 endif
-all: .testvariables libmodpar.a
+all: .testvariables libmodpar.a libmodparomc.a
 libmodpar.a: $(OBJECTS)
 	ar -r $@ $(OBJECTS)
+libmodparomc.a: TaskGraphExt_stub_omc.o
+	ar -r $@ $<
 
 INCFLAGS =-I$(RMLINCLUDE) -I$(BOOST_HOME) -I../../mosh/src
 
