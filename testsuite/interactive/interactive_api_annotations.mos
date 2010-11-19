@@ -1,5 +1,5 @@
 // name: Test Interactive API for Annotations for MSL 3.1
-// keywords: Graphical API, component attributes
+// keywords: Graphical API, annotations
 // status: correct
 // env: OPENMODELICALIBRARY=../../libraries/msl31
 // Subset of the Graphical API for annotations

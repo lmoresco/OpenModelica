@@ -16,6 +16,7 @@ matrices.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \
 Rename.mos \
 RunScript.mos \
+setComponentComment.mos \
 simplify.mos \
 strings.mos  \
 variables.mos \
