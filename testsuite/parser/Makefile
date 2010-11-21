@@ -39,6 +39,7 @@ ParseFullModelica3.1.mos \
 ParseFullModelica3.2.mos \
 RealOpLexerModelica.mo \
 RealOpLexerMetaModelica.mo \
+Redeclare.mos \
 SimpleIntegrator4.mo \
 WildLexerModelica.mo \
 WildLexerMetaModelica.mo \
