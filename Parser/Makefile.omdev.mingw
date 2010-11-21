@@ -1,2 +1,3 @@
 RMLHOME=$(OMDEV)/tools/rml/
+OMC=../build/bin/omc.exe
 include Makefile.common
