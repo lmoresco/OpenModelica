@@ -1,6 +1,7 @@
 // name: External Function: Result Order
 // keyword: external functions, result
 // status: correct
+// teardiwn_command: rm -rf ExternalFunctionResultOrder_*.log ExternalFunctionResultOrder_*.makefile ExternalFunctionResultOrder*.libs ExternalFunctionResultOrder_*.c
 //
 // Verifies that the external call mapping works for different combinations,
 // and not only when the outputs are in the same order as the default mapping.
@@ -17,7 +18,6 @@ ExternalFunctionResultOrder.f2341();
 ExternalFunctionResultOrder.f1243();
 ExternalFunctionResultOrder.f4321();
 // do not delete .dlls as this test will fail on windows.
-system("rm -rf ExternalFunctionResultOrder_*.log ExternalFunctionResultOrder_*.makefile ExternalFunctionResultOrder*.libs ExternalFunctionResultOrder_*.c");
 
 // Result:
 // true
@@ -29,5 +29,4 @@ system("rm -rf ExternalFunctionResultOrder_*.log ExternalFunctionResultOrder_*.m
 // (2,3,4,1)
 // (1,2,4,3)
 // (4,3,2,1)
-// 0
 // endResult
