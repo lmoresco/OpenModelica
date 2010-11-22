@@ -18,7 +18,7 @@ BuiltinInteger.func(-1047483648);
 
 // Result:
 // true
-// (-14,-20,-51,-5,-2,3,-17)
+// (-14,-20,-51,-5,2,3,-17)
 // (false,true,true,false,true,false)
 // (true,true,false,true,false,false)
 // (false,false,false,true,true,true)
