@@ -28,6 +28,7 @@ INPUT(
 ./release\Component.o
 ./release\Transformation.o
 ./release\DocumentationWidget.o
+./release\OptionsWidget.o
 ./release\moc_mainwindow.o
 ./release\moc_ProjectTabWidget.o
 ./release\moc_LibraryWidget.o
@@ -43,5 +44,6 @@ INPUT(
 ./release\moc_IconProperties.o
 ./release\moc_Component.o
 ./release\moc_DocumentationWidget.o
+./release\moc_OptionsWidget.o
 ./release\qrc_resource_omedit.o
 );

@@ -28,6 +28,7 @@ INPUT(
 ./debug\Component.o
 ./debug\Transformation.o
 ./debug\DocumentationWidget.o
+./debug\OptionsWidget.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
@@ -43,5 +44,6 @@ INPUT(
 ./debug\moc_IconProperties.o
 ./debug\moc_Component.o
 ./debug\moc_DocumentationWidget.o
+./debug\moc_OptionsWidget.o
 ./debug\qrc_resource_omedit.o
 );
