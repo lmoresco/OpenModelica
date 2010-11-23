@@ -5258,280 +5258,280 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   end for;
 // end Modelica.Electrical.Analog.Lines.M_OLine;
 // "
-// "[Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// "[Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // "
 // "Check of Modelica.Electrical.Analog.Lines.M_OLine completed successfully.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:139:3-141:73:readonly] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:139:3-141:73:writable] Warning: Variable r: Non-array modification '"Ohm/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:143:3-146:40:readonly] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:143:3-146:40:writable] Warning: Variable l: Non-array modification '"H/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:148:3-151:49:readonly] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:148:3-151:49:writable] Warning: Variable g: Non-array modification '"S/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [Lines.mo:153:3-156:51:readonly] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
+// [Lines.mo:153:3-156:51:writable] Warning: Variable c: Non-array modification '"F/m"' for array component, possibly due to missing 'each'.
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.M_OLine has 1266 equation(s) and 1330 variable(s).

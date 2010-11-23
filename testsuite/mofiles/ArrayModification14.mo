@@ -18,7 +18,7 @@ end ArrayModification6;
 // Error processing file: ArrayModification14.mo
 // [ArrayModification14.mo:12:5-12:16:writable] Warning: Index modifications: (b.x[2] = 1.0, b.x[2,1] = 13.0) for array component: b.x are overlapping. 
 // 	The final bindings will be set by the last modifications given for the same index.
-// [ArrayModification14.mo:12:5-12:16:readonly] Warning: Variable b.x: Non-array modification '1.0' for array component, possibly due to missing 'each'.
+// [ArrayModification14.mo:12:5-12:16:writable] Warning: Variable b.x: Non-array modification '1.0' for array component, possibly due to missing 'each'.
 // 
 // [ArrayModification14.mo:12:5-12:16:writable] Error: Instantiation of array component: b.x failed because index modification: b(x[2]=1.0) is invalid. 
 // 	Array component: b.x[2] has more dimensions than binding 1.0.

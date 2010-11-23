@@ -1349,11 +1349,11 @@ end BS5;
 //   assert(kinematicPTP1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = kinematicPTP1.outPort.signal[1];
 // end BS5;
-// [BS5.mo:688:11-689:40:readonly] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS5.mo:686:11-687:36:readonly] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS5.mo:686:11-687:36:writable] Warning: Variable kinematicPTP1.qd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS5.mo:688:11-689:40:readonly] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS5.mo:688:11-689:40:writable] Warning: Variable kinematicPTP1.qdd_max: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

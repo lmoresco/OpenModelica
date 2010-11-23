@@ -1360,15 +1360,15 @@ end BS4;
 //   assert(exponentials1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = exponentials1.outPort.signal[1];
 // end BS4;
-// [BS4.mo:687:11-688:29:readonly] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:689:11-690:29:readonly] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:686:11-686:65:readonly] Warning: Variable exponentials1.riseTime: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS4.mo:686:11-686:65:writable] Warning: Variable exponentials1.riseTime: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:687:11-688:29:readonly] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS4.mo:687:11-688:29:writable] Warning: Variable exponentials1.riseTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS4.mo:689:11-690:29:readonly] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS4.mo:689:11-690:29:writable] Warning: Variable exponentials1.fallTimeConst: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

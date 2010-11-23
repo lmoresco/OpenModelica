@@ -1244,7 +1244,7 @@ end BS8;
 //   assert(sawTooth1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = sawTooth1.outPort.signal[1];
 // end BS8;
-// [BS8.mo:685:11-686:31:readonly] Warning: Variable sawTooth1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS8.mo:685:11-686:31:writable] Warning: Variable sawTooth1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

@@ -15,7 +15,7 @@ model ProtectedAccess
 end ProtectedAccess;
 // Result:
 // Error processing file: ProtectedAccess.mo
-// [ProtectedAccess.mo:14:3-14:22:readonly] Error: Variable tm: Attempt to modify protected element tm.x
+// [ProtectedAccess.mo:14:3-14:22:writable] Error: Variable tm: Attempt to modify protected element tm.x
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

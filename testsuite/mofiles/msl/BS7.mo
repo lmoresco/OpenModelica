@@ -1234,7 +1234,7 @@ end BS7;
 //   assert(ramp1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = ramp1.outPort.signal[1];
 // end BS7;
-// [BS7.mo:686:11-687:29:readonly] Warning: Variable ramp1.duration: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS7.mo:686:11-687:29:writable] Warning: Variable ramp1.duration: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

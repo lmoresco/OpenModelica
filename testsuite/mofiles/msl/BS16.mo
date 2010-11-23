@@ -1275,17 +1275,17 @@ end BS16;
 //   assert(booleanPulse1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
 //   booleanChange1.inPort.signal[1] = booleanPulse1.outPort.signal[1];
 // end BS16;
-// [BS16.mo:731:11-732:31:readonly] Warning: Variable booleanPulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS16.mo:731:11-732:31:writable] Warning: Variable booleanPulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS16.mo:729:11-730:42:readonly] Warning: Variable booleanPulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS16.mo:729:11-730:42:writable] Warning: Variable booleanPulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS16.mo:729:11-730:42:readonly] Warning: Variable booleanPulse1.width: Non-array modification '100' for array component, possibly due to missing 'each'.
+// [BS16.mo:729:11-730:42:writable] Warning: Variable booleanPulse1.width: Non-array modification '100' for array component, possibly due to missing 'each'.
 // 
-// [BS16.mo:729:11-730:42:readonly] Warning: Variable booleanPulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS16.mo:729:11-730:42:writable] Warning: Variable booleanPulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS16.mo:729:11-730:42:readonly] Warning: Variable booleanPulse1.width: Non-array modification '100' for array component, possibly due to missing 'each'.
+// [BS16.mo:729:11-730:42:writable] Warning: Variable booleanPulse1.width: Non-array modification '100' for array component, possibly due to missing 'each'.
 // 
-// [BS16.mo:731:11-732:31:readonly] Warning: Variable booleanPulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS16.mo:731:11-732:31:writable] Warning: Variable booleanPulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

@@ -1297,19 +1297,19 @@ end BS12;
 //   assert(trapezoid1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = trapezoid1.outPort.signal[1];
 // end BS12;
-// [BS12.mo:691:11-692:30:readonly] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS12.mo:691:11-692:30:writable] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:689:11-690:42:readonly] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS12.mo:689:11-690:42:writable] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:687:11-688:40:readonly] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS12.mo:687:11-688:40:writable] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:685:11-686:41:readonly] Warning: Variable trapezoid1.rising: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS12.mo:685:11-686:41:writable] Warning: Variable trapezoid1.rising: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:687:11-688:40:readonly] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS12.mo:687:11-688:40:writable] Warning: Variable trapezoid1.width: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:689:11-690:42:readonly] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
+// [BS12.mo:689:11-690:42:writable] Warning: Variable trapezoid1.falling: Non-array modification '0' for array component, possibly due to missing 'each'.
 // 
-// [BS12.mo:691:11-692:30:readonly] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
+// [BS12.mo:691:11-692:30:writable] Warning: Variable trapezoid1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // 
 // endResult

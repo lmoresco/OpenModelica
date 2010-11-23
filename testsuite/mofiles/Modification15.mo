@@ -28,7 +28,7 @@ end C3;
 //   Real b.x(unit = "V", displayUnit = "mV") = 5.0;
 //   Real c.x(unit = "V", displayUnit = "mV") = 5.0;
 // end C3;
-// [Modification15.mo:14:5-14:11:readonly] Warning: Variable c.x: Duplicate modifications for attribute: unit in modifier: (unit = "V", unit = "J"). 
+// [Modification15.mo:14:5-14:11:writable] Warning: Variable c.x: Duplicate modifications for attribute: unit in modifier: (unit = "V", unit = "J"). 
 // 	Considering only the first modification: (unit = "V") and ignoring the rest (unit = "J").
 // 
 // endResult

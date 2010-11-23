@@ -15,7 +15,7 @@ class ArraysInit
 end ArraysInit;
 // Result:
 // Error processing file: ArraysInitIllegal.mo
-// [ArraysInitIllegal.mo:13:3-13:35:readonly] Error: Variable A5: In modifier start, not processed in the built-in class Real
+// [ArraysInitIllegal.mo:13:3-13:35:writable] Error: Variable A5: In modifier start, not processed in the built-in class Real
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
