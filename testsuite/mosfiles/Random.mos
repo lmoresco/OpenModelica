@@ -270,8 +270,6 @@ simulate(testRandom2, stopTime=3); getErrorString();
 
 // time = 2.8, x = 0.674971
 
-// time = 3.0, x = 0.180925
-
 // "
 // end SimulationResult;
 // ""

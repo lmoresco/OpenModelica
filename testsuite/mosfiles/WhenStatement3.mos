@@ -7,7 +7,7 @@
 // Drmodelica: 9.1 When-Statements (p. 293)
 // 
 loadFile("WhenStatement3.mo");
-simulate(WhenStat3, tolerance=1e-10, numberOfIntervals=800);
+simulate(WhenStat3, tolerance=1e-10, numberOfIntervals=800,method="rungekutta");
 //plot2({x, y1, y2, y3});
 echo(false); // turns of output 
 size:=readSimulationResultSize("WhenStat3_res.plt");
