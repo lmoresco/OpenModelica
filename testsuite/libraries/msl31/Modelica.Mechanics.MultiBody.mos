@@ -29,6 +29,9 @@ getErrorString();
 instantiateModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorString();
 
+// even more checks here:
+checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorString();
+
 // Result:
 // true
 // ""
@@ -213,6 +216,13 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // Class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape has 37 equation(s) and 37 variable(s).
 // 17 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines completed successfully.
+// 
+// 
+// Class Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines has 33 equation(s) and 33 variable(s).
+// 12 of these are trivial equation(s).
 // "
 // ""
 // endResult
