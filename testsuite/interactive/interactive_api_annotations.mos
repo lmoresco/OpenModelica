@@ -13,6 +13,17 @@ getAnnotationVersion();
 loadModel(Modelica); getErrorString();
 loadModel(ModelicaServices); getErrorString();
 
+
+// test the annotation getting from UsersGuide
+getIconAnnotation(Modelica.UsersGuide);            getErrorString();
+getDiagramAnnotation(Modelica.UsersGuide);         getErrorString();
+getDocumentationAnnotation(Modelica.UsersGuide);   getErrorString();
+
+// test getting of non-standard annotation
+getNamedAnnotation(Modelica.UsersGuide, __Dymola_DocumentationClass); getErrorString();
+// test getting of non-standard annotation
+getNamedAnnotation(Modelica, __Dymola_DocumentationClass); getErrorString();
+
 // If we set the annotations version to 3, then the OMC API getIconAnnotation don't returns the flat model for some components. 
 // I have tried it for Resistor, Conductor, EMF..........i am not sure how many more have this problem. 
 // Here is the output for 3 of them
@@ -7209,6 +7220,77 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // true
 // ""
 // true
+// ""
+// {}
+// ""
+// {}
+// ""
+// {"<html>
+// <p>
+// Package <b>Modelica</b> is a <b>standardized</b> and <b>pre-defined</b> package
+// that is developed together with the Modelica language from the
+// Modelica Association, see
+// <a href=\"http://www.Modelica.org\">http://www.Modelica.org</a>.
+// It is also called <b>Modelica Standard Library</b>.
+// It provides constants, types, connectors, partial models and model
+// components in various disciplines.
+// </p>
+// <p>
+// This is a short <b>User's Guide</b> for
+// the overall library. Some of the main sublibraries have their own
+// User's Guides that can be accessed by the following links:
+// </p>
+// 
+// <table border=1 cellspacing=0 cellpadding=2>
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Electrical.Digital.UsersGuide\">Digital</a>
+//    </td>
+//    <td valign=\"top\">Library for digital electrical components based on the VHDL standard
+//    (2-,3-,4-,9-valued logic)</td>
+// </tr>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Magnetic.FluxTubes.UsersGuide\">FluxTubes</a>
+//     </td>
+//    <td valign=\"top\">Library for modelling of electromagnetic devices with lumped magnetic networks</td>
+// </tr>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Mechanics.MultiBody.UsersGuide\">MultiBody</a>
+//     </td>
+//    <td valign=\"top\">Library to model 3-dimensional mechanical systems</td>
+// </tr>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Mechanics.Rotational.UsersGuide\">Rotational</a>
+//     </td>
+//    <td valign=\"top\">Library to model 1-dimensional mechanical systems</td>
+// </tr>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Fluid.UsersGuide\">Fluid</a></td>
+//     <td valign=\"top\">Library of 1-dim. thermo-fluid flow models using the Modelica.Media media description</td>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Media.UsersGuide\">Media</a>
+//     </td>
+//    <td valign=\"top\">Library of media property models</td>
+// </tr>
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.SIunits.UsersGuide\">SIunits</a> </td>
+//    <td valign=\"top\">Library of type definitions based on SI units according to ISO 31-1992</td>
+// </tr>
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.StateGraph.UsersGuide\">StateGraph</a>
+//     </td>
+//    <td valign=\"top\">Library to model discrete event and reactive systems by hierarchical state machines</td>
+// </tr>
+// 
+// 
+// <tr><td valign=\"top\"><a href=\"Modelica://Modelica.Utilities.UsersGuide\">Utilities</a>
+//     </td>
+//    <td valign=\"top\">Library of utility functions especially for scripting (Files, Streams, Strings, System)</td>
+// </tr>
+// </table>
+// 
+// </html>"}
+// ""
+// {true}
+// ""
+// {}
 // ""
 // {-100.0,-100.0,100.0,100.0,true,0.1,1.0,1.0,{Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-60,-15},{-30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-30,-15},{0,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{0,-15},{30,15}},0,360),Ellipse(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{30,-15},{60,15}},0,360),Rectangle(true,{0.0,0.0},0,{255,255,255},{255,255,255},LinePattern.Solid,FillPattern.Solid,0.25,BorderPattern.None,{{-60,-20},{62,0}},0),Line(true,{0.0,0.0},0,{{60,0},{90,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-90,0},{-60,0}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Rectangle(true,{0.0,0.0},0,{0,0,0},{0,0,255},LinePattern.Solid,FillPattern.Sphere,0.25,BorderPattern.None,{{-60,-10},{60,-20}},0),Text(true,{0.0,0.0},0,{0,0,0},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,-50},{152,-80}},"Lnom=%Lnom",0,TextAlignment.Center),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-148,91},{152,51}},"%name",0,TextAlignment.Center)}}
 // ""
