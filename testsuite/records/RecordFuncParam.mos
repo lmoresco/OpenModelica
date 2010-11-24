@@ -8,8 +8,10 @@
 
 loadFile("RecordFuncParam.mo");
 buildModel(RecordFuncParam);
+getErrorString();
 
 // Result:
 // true
 // {"RecordFuncParam","RecordFuncParam_init.txt"}
+// ""
 // endResult
