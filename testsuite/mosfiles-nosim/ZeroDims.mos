@@ -37,6 +37,6 @@ instantiateModel(ZeroDims); getErrorString();
 //   parameter Integer n = 0;
 // end ZeroDims;
 // "
-// "Error: Type mismatch in modifier of component c[0].length, expected type Real, got modifier ={} of type Real[0]
+// "[ZeroDims.mo:4:5-4:32:writable] Error: Type mismatch in modifier of component c[0].length, expected type Real, got modifier ={} of type Real[0]
 // "
 // endResult
