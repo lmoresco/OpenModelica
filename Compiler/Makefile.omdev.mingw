@@ -79,6 +79,7 @@ install_scripts:
 	cd scripts; cp -puf $(SCRIPT_FILES) ../$(builddir_scripts)
 
 install: install_scripts # install_doc
+	cp OpenModelicaBootstrappingHeader.h $(top_builddir)/build/include/omc/
 	
 omc_release: .depend
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
