@@ -29,6 +29,12 @@ Util.listSplit({1,2,3,4,5}, 3);
 getErrorString();
 UtilTest.listMapMap({1,2,3,4,5});
 getErrorString();
+Util.listPosition(1,{1,2,3,4,5});
+getErrorString();
+Util.listDeleteMember({1,2,3,4,5},1);
+getErrorString();
+Util.listSetDifference({1,2,3,4,5},{1});
+getErrorString();
 
 // Result:
 // true
@@ -56,5 +62,11 @@ getErrorString();
 // ({1,2,3},{4,5})
 // ""
 // {"1.0","2.0","3.0","4.0","5.0"}
+// ""
+// 0
+// ""
+// {2,3,4,5}
+// ""
+// {2,3,4,5}
 // ""
 // endResult
