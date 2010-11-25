@@ -1,7 +1,7 @@
 CPPFLAGS=-I"/home/marsj/dev/trunk/build/include/omc"
 RECS=libmainrecords.a
 main: Main_main.o $(RECS) main.c
-	g++ -o main main.c Main_main.o $(CPPFLAGS) -L./ -march=native -mfpmath=sse -lomparse -lomcruntime -L"/home/marsj/dev/trunk/build/lib/omc" -lmodparomc -lc_runtime -lm -lrt -ldl -llpsolve55 -lcolamd -lsendDataHumbug -lantlr3 -lmainrecords
+	g++ -g -pg -o main main.c Main_main.o $(CPPFLAGS) -L./ -march=native -mfpmath=sse -lomparse -lomcruntime -L"/home/marsj/dev/trunk/build/lib/omc" -lmodparomc -lc_runtime -lm -lrt -ldl -llpsolve55 -lcolamd -lsendDataHumbug -lantlr3 -lmainrecords
 $(RECS): main_records.o
 	rm -f $@
 	ar -ru $@ $<
