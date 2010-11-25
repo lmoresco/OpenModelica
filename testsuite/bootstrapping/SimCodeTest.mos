@@ -123,13 +123,9 @@ readFile("SimCodeC_abc.c");
 // 
 // int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
 // {
-//   modelica_boolean __tmpFailure;
-//   __tmpFailure = 1; /* check for success */
-//   MMC_TRY();
+//   MMC_TRY_TOP()
 //   _SimCodeC_abc();
-//   __tmpFailure = 0;
-//   MMC_CATCH();
-//   if (__tmpFailure) return 1;
+//   MMC_CATCH_TOP(return 1)
 //   write_noretcall(outVar);
 //   return 0;
 // }
