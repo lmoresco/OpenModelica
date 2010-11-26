@@ -33,6 +33,7 @@ omdev_extra_dlls:
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
+	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
 
 omc: c_runtime docs omdev_extra_dlls
 	(cd Compiler && time $(MAKE) -f Makefile.omdev.mingw release)
