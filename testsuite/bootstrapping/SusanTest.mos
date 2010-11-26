@@ -60,7 +60,7 @@ getErrorString();
 // true
 // ""
 // true
-// "Errors in TplCodegen.mo"
+// ""
 // true
 // ""
 // true
@@ -78,19 +78,17 @@ getErrorString();
 // 
 // Writing result to file 'SusanTestSmall.mo'
 // ### Error Buffer ###
-// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
-// Error - getTypeInfo failed to lookup the type 'x' after looking up all AST definitions.
 // 
-//  TEXT_CREATE ident = x is fresh (reason = Unresolved path 'x'.)
+//  TEXT_CREATE ident = x
 // 
-//  BOUND_VALUE resolved mmexp = i_x : Tpl.Text (dealiased: Tpl.Text)
+//  BOUND_VALUE resolved mmexp = l_x : Tpl.Text (dealiased: Tpl.Text)
 // 
 //  FUN_CALL fname = helloWorld
 //  FUN_CALL argList stmts generation passed
 //  FUN_CALL stmt =
 // txt = helloWorld(txt);
 // Error - typeAdaptMMArg failed
-//  arg BOUND_VALUE resolved mmexp = i_strs : list<String>
+//  arg BOUND_VALUE resolved mmexp = a_strs : list<String>
 // 
 //  BOUND_VALUE resolved mmexp = i_str : String (dealiased: String)
 // 
@@ -98,9 +96,7 @@ getErrorString();
 // 
 // ""
 // true
-// "[SusanTestSmall.mo:29:5-40:5:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
-// [SusanTestSmall.mo:40:5-47:3:writable] Warning: case local declarations are deprecated. Move all case- and else-declarations to the match local declarations.
-// "
+// ""
 // record Tpl.Text.MEM_TEXT
 //     tokens = {record Tpl.StringToken.ST_STRING
 //     value = "Hello, World!"

@@ -1,13 +1,6 @@
 // Common file to load compiler sources, so only 1 piece of code needs to be changed
 
 echo(false);
-loadFile("../../Compiler/SimCodeC.mo");
-loadFile("../../Compiler/SimCodeFMU.mo");
-loadFile("../../Compiler/SimCodeCSharp.mo");
-loadFile("../../Compiler/TplCodegen.mo");
-loadFile("../../Compiler/Unparsing.mo");
-getErrorString(); // Ignore syntax errors in automatically generated files
-
 loadFile("../../Compiler/AbsynDep.mo");
 loadFile("../../Compiler/Absyn.mo");
 loadFile("../../Compiler/Algorithm.mo");
@@ -93,6 +86,9 @@ loadFile("../../Compiler/SCodeFlatten.mo");
 loadFile("../../Compiler/SCodeUtil.mo");
 loadFile("../../Compiler/Settings.mo");
 loadFile("../../Compiler/SimCode.mo");
+loadFile("../../Compiler/SimCodeC.mo");
+loadFile("../../Compiler/SimCodeFMU.mo");
+loadFile("../../Compiler/SimCodeCSharp.mo");
 loadFile("../../Compiler/SimulationResults.mo");
 loadFile("../../Compiler/Socket.mo");
 loadFile("../../Compiler/Static.mo");
@@ -101,6 +97,7 @@ loadFile("../../Compiler/TaskGraphExt.mo");
 loadFile("../../Compiler/TaskGraph.mo");
 loadFile("../../Compiler/TemplCG.mo");
 loadFile("../../Compiler/TplAbsyn.mo");
+loadFile("../../Compiler/TplCodegen.mo");
 loadFile("../../Compiler/TplMain.mo");
 loadFile("../../Compiler/Tpl.mo");
 loadFile("../../Compiler/TplParser.mo");
@@ -109,6 +106,7 @@ loadFile("../../Compiler/UnitAbsynBuilder.mo");
 loadFile("../../Compiler/UnitAbsyn.mo");
 loadFile("../../Compiler/UnitChecker.mo");
 loadFile("../../Compiler/UnitParserExt.mo");
+loadFile("../../Compiler/Unparsing.mo");
 loadFile("../../Compiler/Util.mo");
 loadFile("../../Compiler/Values.mo");
 loadFile("../../Compiler/ValuesUtil.mo");
