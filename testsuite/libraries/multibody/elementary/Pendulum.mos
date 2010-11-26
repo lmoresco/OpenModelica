@@ -2351,11 +2351,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body.frame_a.r_0[2] = rev.frame_b.r_0[2];
 //   body.frame_a.r_0[3] = rev.frame_b.r_0[3];
 //   rev.support.tau + damper.flange_a.tau = 0.0;
-//   damper.flange_a.phi = rev.fixed.flange.phi;
 //   damper.flange_a.phi = rev.support.phi;
 //   damper.flange_b.tau + rev.axis.tau = 0.0;
 //   damper.flange_b.phi = rev.axis.phi;
-//   damper.flange_b.phi = rev.internalAxis.flange.phi;
 //   world.frame_b.t[1] + rev.frame_a.t[1] = 0.0;
 //   world.frame_b.t[2] + rev.frame_a.t[2] = 0.0;
 //   world.frame_b.t[3] + rev.frame_a.t[3] = 0.0;
@@ -2378,7 +2376,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   rev.frame_a.r_0[2] = world.frame_b.r_0[2];
 //   rev.frame_a.r_0[3] = world.frame_b.r_0[3];
 //   rev.internalAxis.flange.tau + (-rev.axis.tau) = 0.0;
+//   rev.axis.phi = rev.internalAxis.flange.phi;
 //   rev.fixed.flange.tau + (-rev.support.tau) = 0.0;
+//   rev.fixed.flange.phi = rev.support.phi;
 // end Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum;
 // "
 // ""
@@ -4721,11 +4721,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   body.frame_a.r_0[2] = rev.frame_b.r_0[2];
 //   body.frame_a.r_0[3] = rev.frame_b.r_0[3];
 //   rev.support.tau + damper.flange_a.tau = 0.0;
-//   damper.flange_a.phi = rev.fixed.flange.phi;
 //   damper.flange_a.phi = rev.support.phi;
 //   damper.flange_b.tau + rev.axis.tau = 0.0;
 //   damper.flange_b.phi = rev.axis.phi;
-//   damper.flange_b.phi = rev.internalAxis.flange.phi;
 //   world.frame_b.t[1] + rev.frame_a.t[1] = 0.0;
 //   world.frame_b.t[2] + rev.frame_a.t[2] = 0.0;
 //   world.frame_b.t[3] + rev.frame_a.t[3] = 0.0;
@@ -4748,7 +4746,9 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   rev.frame_a.r_0[2] = world.frame_b.r_0[2];
 //   rev.frame_a.r_0[3] = world.frame_b.r_0[3];
 //   rev.internalAxis.flange.tau + (-rev.axis.tau) = 0.0;
+//   rev.axis.phi = rev.internalAxis.flange.phi;
 //   rev.fixed.flange.tau + (-rev.support.tau) = 0.0;
+//   rev.fixed.flange.phi = rev.support.phi;
 // end P;
 // "
 // ""

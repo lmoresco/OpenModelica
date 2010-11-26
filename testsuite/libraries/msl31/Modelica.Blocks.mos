@@ -101,12 +101,12 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   gain.y = gain.k * gain.u;
 //   controlBus.realSignal1 = gain.u;
 //   controlBus.realSignal1 = sine.y;
-//   controlBus.subControlBus.myBooleanSignal = part.booleanExpression.y;
 //   controlBus.subControlBus.myBooleanSignal = part.subControlBus.myBooleanSignal;
-//   controlBus.subControlBus.myRealSignal = part.realExpression.y;
 //   controlBus.subControlBus.myRealSignal = part.subControlBus.myRealSignal;
 //   controlBus.integerSignal = integerStep.y;
 //   booleanStep.y = controlBus.booleanSignal;
+//   part.booleanExpression.y = part.subControlBus.myBooleanSignal;
+//   part.realExpression.y = part.subControlBus.myRealSignal;
 // end Modelica.Blocks.Examples.BusUsage;
 // "
 // ""

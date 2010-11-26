@@ -266,10 +266,10 @@ getErrorString();
 //   Ambient2.flowPort.h = Pipe1.flowPort_b.h;
 //   Pipe1.flowPort_b.m_flow + Ambient2.flowPort.m_flow = 0.0;
 //   Ambient2.flowPort.p = Pipe1.flowPort_b.p;
-//   DoubleRamp1.Add1.y = DoubleRamp1.y;
-//   DoubleRamp1.Add1.y = Pump1.VolumeFlow;
+//   DoubleRamp1.y = Pump1.VolumeFlow;
 //   DoubleRamp1.Add1.u1 = DoubleRamp1.Ramp1.y;
 //   DoubleRamp1.Add1.u2 = DoubleRamp1.Ramp2.y;
+//   DoubleRamp1.Add1.y = DoubleRamp1.y;
 // end Modelica.Thermal.FluidHeatFlow.Examples.OneMass;
 // "
 // ""

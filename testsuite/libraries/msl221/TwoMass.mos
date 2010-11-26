@@ -445,10 +445,10 @@ getErrorString();
 //   HeatCapacitor2.port.T = ThermalConductor2.port_a.T;
 //   ThermalConductor2.port_b.Q_flow + Pipe2.heatPort.Q_flow = 0.0;
 //   Pipe2.heatPort.T = ThermalConductor2.port_b.T;
-//   DoubleRamp1.Add1.y = DoubleRamp1.y;
-//   DoubleRamp1.Add1.y = Pump1.VolumeFlow;
+//   DoubleRamp1.y = Pump1.VolumeFlow;
 //   DoubleRamp1.Add1.u1 = DoubleRamp1.Ramp1.y;
 //   DoubleRamp1.Add1.u2 = DoubleRamp1.Ramp2.y;
+//   DoubleRamp1.Add1.y = DoubleRamp1.y;
 // end Modelica.Thermal.FluidHeatFlow.Examples.TwoMass;
 // "
 // ""

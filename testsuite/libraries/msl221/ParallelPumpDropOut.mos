@@ -473,10 +473,10 @@ getErrorString();
 //   Ambient2.flowPort.h = Pipe3.flowPort_b.h;
 //   Pipe3.flowPort_b.m_flow + Ambient2.flowPort.m_flow = 0.0;
 //   Ambient2.flowPort.p = Pipe3.flowPort_b.p;
-//   Pump1.VolumeFlow = VolumeFlow.Add1.y;
 //   Pump1.VolumeFlow = VolumeFlow.y;
 //   VolumeFlow.Add1.u1 = VolumeFlow.Ramp1.y;
 //   VolumeFlow.Add1.u2 = VolumeFlow.Ramp2.y;
+//   VolumeFlow.Add1.y = VolumeFlow.y;
 // end Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut;
 // "
 // ""
