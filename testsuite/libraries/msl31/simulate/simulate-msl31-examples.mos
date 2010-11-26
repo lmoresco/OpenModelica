@@ -88,9 +88,6 @@ simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamp
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2);  getErrorString(); 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.PointMass);  getErrorString(); 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.SystemWithStandardBodies);  getErrorString(); 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.SystemWithStandardBodies.PointMass);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling);  getErrorString(); 
