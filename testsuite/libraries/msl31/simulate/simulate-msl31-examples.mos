@@ -73,12 +73,8 @@ simulate(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor);  getErrorStrin
 simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour);  getErrorString(); 
 simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour);  getErrorString(); 
 simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke);  getErrorString(); 
-simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator);  getErrorString(); 
-simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.ConstantActuator);  getErrorString(); 
 simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary);  getErrorString(); 
 simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke);  getErrorString(); 
-simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.SimpleSolenoid);  getErrorString(); 
-simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.AdvancedSolenoid);  getErrorString(); 
 
 
 // Modelica.Mechanics.MultiBody.Examples
