@@ -9036,13 +9036,13 @@ getErrorString();
 // "Check of MultiBody.Examples.Loops.TwoLoop completed successfully.
 // 
 // [TwoLoopTotal.mo:2675:7-2675:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // [TwoLoopTotal.mo:2751:7-2751:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // [TwoLoopTotal.mo:2675:7-2675:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // [TwoLoopTotal.mo:2751:7-2751:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.TwoLoop has 5372 equation(s) and 5376 variable(s).
 // 4424 of these are trivial equation(s).

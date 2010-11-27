@@ -325,8 +325,8 @@ getErrorString();
 // end Magnetic_Examples_PullinStroke;
 // "
 // "[PullinStrokeTotal.mo:1768:7-1768:90:writable] Warning: Component Ground has the same name as its type Magnetic_Examples_PullinStroke.Modelica.Electrical.Analog.Basic.Ground.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // [PullinStrokeTotal.mo:1770:7-1770:96:writable] Warning: Component STA_195205_129 has the same name as its type Magnetic_Examples_PullinStroke.Magnetic.Solenoid.STA_195205_129.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

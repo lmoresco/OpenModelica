@@ -148,6 +148,6 @@ getErrorString();
 // end Modelica.Electrical.Analog.Examples.ShowVariableResistor;
 // "
 // "[ShowVariableResistor.mo:24:3-24:179:writable] Warning: Component VariableResistor has the same name as its type Modelica.Electrical.Analog.Examples.ShowVariableResistor.Modelica.Electrical.Analog.Basic.VariableResistor.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

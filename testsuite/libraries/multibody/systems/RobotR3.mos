@@ -72,21 +72,21 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   n := size(table,1);
 //   if n <= 1 then
-//     y := table[1, icol];
+//     y := table[1,icol];
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i, 1] loop
+//       while i < n AND u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
 //     end if;
-//     u1 := table[i, 1];
-//     u2 := table[1 + i, 1];
-//     y1 := table[i, icol];
-//     y2 := table[1 + i, icol];
+//     u1 := table[i,1];
+//     u2 := table[1 + i,1];
+//     y1 := table[i,icol];
+//     y2 := table[1 + i,icol];
 //     assert( u2 > u1, "Table index must be increasing");
 //     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;
@@ -1067,12 +1067,12 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // end Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis;
 // "
 // "[RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis completed successfully.
 // 
 // [RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis has 373 equation(s) and 373 variable(s).
 // 235 of these are trivial equation(s).
@@ -1163,21 +1163,21 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // algorithm
 //   n := size(table,1);
 //   if n <= 1 then
-//     y := table[1, icol];
+//     y := table[1,icol];
 //   else
 //     if u <= table[1,1] then
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i, 1] loop
+//       while i < n AND u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
 //     end if;
-//     u1 := table[i, 1];
-//     u2 := table[1 + i, 1];
-//     y1 := table[i, icol];
-//     y2 := table[1 + i, icol];
+//     u1 := table[i,1];
+//     u2 := table[1 + i,1];
+//     y1 := table[i,icol];
+//     y2 := table[1 + i,icol];
 //     assert( u2 > u1, "Table index must be increasing");
 //     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
 //   end if;
@@ -12742,7 +12742,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // [RobotR3.mo:577:7-577:79:writable] Warning: Variable pathPlanning.angleEndDeg: Non-array modification '"deg"' for array component, possibly due to missing 'each'.
 // 
 // [RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // "Check of Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot completed successfully.
 // 
@@ -12879,7 +12879,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // [RobotR3.mo:577:7-577:79:writable] Warning: Variable pathPlanning.angleEndDeg: Non-array modification '"deg"' for array component, possibly due to missing 'each'.
 // 
 // [RobotR3.mo:1367:7-1369:21:writable] Warning: Component PI has the same name as its type Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.Components.Controller.Modelica.Blocks.Continuous.PI.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
 // 3296 of these are trivial equation(s).

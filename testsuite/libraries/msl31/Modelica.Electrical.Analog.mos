@@ -1129,22 +1129,22 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     b := offset;
 //   elseif nrow < 2 then
 //     a := 0.0;
-//     b := offset + table[1, columns];
+//     b := offset + table[1,columns];
 //   else
-//     while next < nrow AND tp >= table[next, 1] loop
+//     while next < nrow AND tp >= table[next,1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
-//       nextEvent := startTime + table[next, 1];
+//       nextEvent := startTime + table[next,1];
 //     end if;
 //     next0 := next - 1;
-//     dt := table[next, 1] - table[next0, 1];
-//     if dt <= TimeEps * abs(table[next, 1]) then
+//     dt := table[next,1] - table[next0,1];
+//     if dt <= TimeEps * abs(table[next,1]) then
 //       a := 0.0;
-//       b := offset + table[next, columns];
+//       b := offset + table[next,columns];
 //     else
-//       a := (table[next, columns] - table[next0, columns]) / dt;
-//       b := (offset + table[next0, columns]) - a * table[next0, 1];
+//       a := (table[next,columns] - table[next0,columns]) / dt;
+//       b := (offset + table[next0,columns]) - a * table[next0,1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;
@@ -1583,22 +1583,22 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     b := offset;
 //   elseif nrow < 2 then
 //     a := 0.0;
-//     b := offset + table[1, columns];
+//     b := offset + table[1,columns];
 //   else
-//     while next < nrow AND tp >= table[next, 1] loop
+//     while next < nrow AND tp >= table[next,1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
-//       nextEvent := startTime + table[next, 1];
+//       nextEvent := startTime + table[next,1];
 //     end if;
 //     next0 := next - 1;
-//     dt := table[next, 1] - table[next0, 1];
-//     if dt <= TimeEps * abs(table[next, 1]) then
+//     dt := table[next,1] - table[next0,1];
+//     if dt <= TimeEps * abs(table[next,1]) then
 //       a := 0.0;
-//       b := offset + table[next, columns];
+//       b := offset + table[next,columns];
 //     else
-//       a := (table[next, columns] - table[next0, columns]) / dt;
-//       b := (offset + table[next0, columns]) - a * table[next0, 1];
+//       a := (table[next,columns] - table[next0,columns]) / dt;
+//       b := (offset + table[next0,columns]) - a * table[next0,1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;
@@ -5228,32 +5228,32 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // algorithm
 //   for s in 1:s[1].inductance.N loop
 //     for z in 1:s[1].inductance.N loop
-//       s.inductance.Lm[1, z, s] := if z >= s then s[1].inductance.L[(s - 1) * s[1].inductance.N + z - div((s - 1) * s,2)] else s[1].inductance.Lm[s, z];
+//       s.inductance.Lm[1,z,s] := if z >= s then s[1].inductance.L[(s - 1) * s[1].inductance.N + z - div((s - 1) * s,2)] else s[1].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[2].inductance.N loop
 //     for z in 1:s[2].inductance.N loop
-//       s.inductance.Lm[2, z, s] := if z >= s then s[2].inductance.L[(s - 1) * s[2].inductance.N + z - div((s - 1) * s,2)] else s[2].inductance.Lm[s, z];
+//       s.inductance.Lm[2,z,s] := if z >= s then s[2].inductance.L[(s - 1) * s[2].inductance.N + z - div((s - 1) * s,2)] else s[2].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[3].inductance.N loop
 //     for z in 1:s[3].inductance.N loop
-//       s.inductance.Lm[3, z, s] := if z >= s then s[3].inductance.L[(s - 1) * s[3].inductance.N + z - div((s - 1) * s,2)] else s[3].inductance.Lm[s, z];
+//       s.inductance.Lm[3,z,s] := if z >= s then s[3].inductance.L[(s - 1) * s[3].inductance.N + z - div((s - 1) * s,2)] else s[3].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[4].inductance.N loop
 //     for z in 1:s[4].inductance.N loop
-//       s.inductance.Lm[4, z, s] := if z >= s then s[4].inductance.L[(s - 1) * s[4].inductance.N + z - div((s - 1) * s,2)] else s[4].inductance.Lm[s, z];
+//       s.inductance.Lm[4,z,s] := if z >= s then s[4].inductance.L[(s - 1) * s[4].inductance.N + z - div((s - 1) * s,2)] else s[4].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s_first.inductance.N loop
 //     for z in 1:s_first.inductance.N loop
-//       s_first.inductance.Lm[z, s] := if z >= s then s_first.inductance.L[(s - 1) * s_first.inductance.N + z - div((s - 1) * s,2)] else s_first.inductance.Lm[s, z];
+//       s_first.inductance.Lm[z,s] := if z >= s then s_first.inductance.L[(s - 1) * s_first.inductance.N + z - div((s - 1) * s,2)] else s_first.inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s_last.inductance.N loop
 //     for z in 1:s_last.inductance.N loop
-//       s_last.inductance.Lm[z, s] := if z >= s then s_last.inductance.L[(s - 1) * s_last.inductance.N + z - div((s - 1) * s,2)] else s_last.inductance.Lm[s, z];
+//       s_last.inductance.Lm[z,s] := if z >= s then s_last.inductance.L[(s - 1) * s_last.inductance.N + z - div((s - 1) * s,2)] else s_last.inductance.Lm[s,z];
 //     end for;
 //   end for;
 // end Modelica.Electrical.Analog.Lines.M_OLine;

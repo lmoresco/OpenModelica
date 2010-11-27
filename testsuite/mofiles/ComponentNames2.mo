@@ -20,6 +20,6 @@ end ComponentNames;
 //   Real R.x;
 // end ComponentNames;
 // [ComponentNames2.mo:15:3-15:8:writable] Warning: Component R has the same name as its type ComponentNames.P.R.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // endResult

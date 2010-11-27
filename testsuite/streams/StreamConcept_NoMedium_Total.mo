@@ -2304,6 +2304,6 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   valve_fixeddensity1.port_b.m_flow + watersink_ph_StreamConcept.port.m_flow = 0.0;
 // end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 // [StreamConcept_NoMedium_Total.mo:1575:9-1577:77:writable] Warning: Component watersink_ph_StreamConcept has the same name as its type SiemensPower_Components_Valves_Tests_valve_fixeddensity_test.SiemensPower.Boundaries.watersink_ph_StreamConcept.
-// 	This is forbidden by Modelica specifications and may lead to lookup errors.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // endResult
