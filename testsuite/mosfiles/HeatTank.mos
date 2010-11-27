@@ -12,7 +12,7 @@ getErrorString(); // simulation failed, check error string.
 // true
 // record SimulationResult
 //     resultFile = "",
-//     messages = "Simulation failed.
+//     messages = "Simulation failed for model: HeatTank
 // Error: Too many equations, overdetermined system. The model has 3 equation(s) and 1 variable(s)
 // "
 // end SimulationResult;

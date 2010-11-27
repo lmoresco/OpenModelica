@@ -12,7 +12,7 @@ simulate(ModelBalance3);
 // true
 // record SimulationResult
 //     resultFile = "",
-//     messages = "Simulation failed.
+//     messages = "Simulation failed for model: ModelBalance3
 // Error: Too many equations, overdetermined system. The model has 3 equation(s) and 2 variable(s)
 // "
 // end SimulationResult;
