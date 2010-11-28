@@ -19,10 +19,12 @@ deleteClass(Modelica.Mechanics.MultiBody);
 list(m1); getErrorString();
 renameComponentInClass(m1, emf1, emf2); getErrorString();
 list(m1); getErrorString();
-list(m1); getErrorString();
 renameComponent(m1, emf2, emf3); getErrorString();
 list(m1); getErrorString();
 
+loadFile("RenameRO.mo"); getErrorString();
+list(m1RO); getErrorString();
+renameComponent(m1RO, emf1, emf2); getErrorString();
 
 // Result:
 // true
@@ -70,12 +72,6 @@ list(m1); getErrorString();
 // 
 // "
 // ""
-// "model m1
-//   Modelica.Electrical.Analog.Basic.EMF emf2;
-// end m1;
-// 
-// "
-// ""
 // {m1}
 // ""
 // "model m1
@@ -83,5 +79,15 @@ list(m1); getErrorString();
 // end m1;
 // 
 // "
+// ""
+// true
+// ""
+// "model m1RO
+//   Modelica.Electrical.Analog.Basic.EMF emf1;
+// end m1RO;
+// 
+// "
+// ""
+// Error: class: m1RO is in a read only file!
 // ""
 // endResult

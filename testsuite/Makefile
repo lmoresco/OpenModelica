@@ -28,13 +28,9 @@ test : bootstrapping.log libraries.log fast.logs
 test-oldresult:
 	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
 test-oldresult-summary:
-	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
+	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log > test.log
 	@cat test.log
-	@echo -n "== Total: "
-	@SUM=0; for i in `grep ^== test.log | grep failed | cut -d\  -f2`; do SUM=$$(($$SUM + $$i)); done; echo -n $$SUM
-	@echo -n " out of "
-	@SUM=0; for i in `grep ^== test.log | grep failed | cut -d\  -f5`; do SUM=$$(($$SUM + $$i)); done; echo -n $$SUM
-	@echo " failed"
+	@grep ^== test.log | grep failed | gawk '{ fail += $$2; sum += $$5 } END {printf "== Total: %d out of %d failed\n",fail,sum}'
 fast : omc-diff fast.logs
 	@cat `ls $(FASTLOGS) | sort`
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
