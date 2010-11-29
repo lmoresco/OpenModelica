@@ -1,6 +1,6 @@
 // name:     Import2
 // keywords: import
-// status:   erroneous
+// status:   incorrect
 // 
 // Import is not inherited through extends.
 // 
@@ -42,8 +42,9 @@ class Import2
   MyC myc;
 end Import2;
 // Result:
-// TODO: This needs a proper error message
 // Error processing file: Import2.mo
+// Error: Class C not found in scope Import2 while instantiating c.
+// 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
 // 
