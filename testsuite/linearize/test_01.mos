@@ -1,0 +1,46 @@
+// name:     test_01.mos
+// keywords: <...>
+// status:   correct
+// cflags:   +d=linearization
+// teardown_command: rm -rf *simple_test* output.log
+// 
+// <insert description here>
+// 
+
+loadFile("test_01.mo");
+simulate(simple_test, startTime=0.0, stopTime=10.0);
+readFile("output.log");
+
+system("simple_test -l 0");
+
+loadFile("linear_simple_test.mo");
+simulate(linear_simple_test, startTime=0.0, stopTime=10.0, method="euler");
+readFile("output.log");
+
+list(linear_simple_test);
+
+// Result:
+// true
+// Failure: ...
+// Failure: ...
+// record SimulationResult
+//     resultFile = "",
+//     messages = "Simulation failed for model: simple_test
+// Error: Internal error createOdeSystem failed
+// Error: Internal error createEquations failed
+// Error: Internal error Generation of LinearModel Matrixes code using templates failed
+// Error: Internal error Generation of simulation using code using templates failed
+// "
+// end SimulationResult;
+// "No such file"
+// Der Befehl "simple_test" ist entweder falsch geschrieben oder
+// konnte nicht gefunden werden.
+// 1
+// false
+// record SimulationResult
+//     resultFile = "",
+//     messages = "Simulation Failed. Model: linear_simple_test does not exists! Please load it first before simulation."
+// end SimulationResult;
+// "No such file"
+// 
+// endResult
