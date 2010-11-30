@@ -2,6 +2,8 @@ TEST = ../../../rtest -v
 
 TESTFILES = \
 Modelica.Blocks.Examples.mos \
+Modelica.Electrical.Analog.Examples.mos \
+
 
 
 # test that currently fail. Move up when fixed. 
