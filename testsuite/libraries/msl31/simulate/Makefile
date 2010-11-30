@@ -4,6 +4,8 @@ TESTFILES = \
 Modelica.Blocks.Examples.mos \
 Modelica.Electrical.Analog.Examples.mos \
 Modelica.Electrical.Digital.Examples.mos \
+Modelica.Electrical.Machines.Examples.mos \
+Modelica.Electrical.MultiPhase.Examples.mos \
 
 
 # test that currently fail. Move up when fixed. 
