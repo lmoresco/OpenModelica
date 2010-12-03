@@ -456,6 +456,7 @@ RecordNonPublic.mo \
 RecordPrefixes.mo \
 RecordSimple.mo \
 RecursiveFunctionCall.mo \
+RecursiveShort.mo \
 Redeclare1.mo \
 Redeclare2.mo \
 Redeclare3.mo \
@@ -590,6 +591,7 @@ Modification3.mo \
 Modification8.mo \
 ModifyConstant1.mo \
 ModifyConstant2.mo \
+NonExpArray2.mo \
 OperatorComponents.mo \
 OperatorFunction1.mo \
 OperatorFunction2.mo \
