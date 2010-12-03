@@ -36,6 +36,11 @@ INPUT(
 ./debug\moc_OMCProxy.o
 ./debug\moc_OMCThread.o
 ./debug\moc_ModelWidget.o
+./debug\moc_ShapeAnnotation.o
+./debug\moc_LineAnnotation.o
+./debug\moc_PolygonAnnotation.o
+./debug\moc_RectangleAnnotation.o
+./debug\moc_EllipseAnnotation.o
 ./debug\moc_CornerItem.o
 ./debug\moc_ConnectorWidget.o
 ./debug\moc_PlotWidget.o

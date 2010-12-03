@@ -36,6 +36,11 @@ INPUT(
 ./release\moc_OMCProxy.o
 ./release\moc_OMCThread.o
 ./release\moc_ModelWidget.o
+./release\moc_ShapeAnnotation.o
+./release\moc_LineAnnotation.o
+./release\moc_PolygonAnnotation.o
+./release\moc_RectangleAnnotation.o
+./release\moc_EllipseAnnotation.o
 ./release\moc_CornerItem.o
 ./release\moc_ConnectorWidget.o
 ./release\moc_PlotWidget.o
