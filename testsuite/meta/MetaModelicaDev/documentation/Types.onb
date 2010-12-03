@@ -74,11 +74,12 @@ OMC-ERROR:
 "</Output>
     </GraphCell>
     <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="nan" Antialiasing="false" MinorY="nan" Title="Plot title" LogX="false" LogY="false" MajorX="nan" MajorY="nan" closed="false" YLabel="y" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false">
-      <Input>1::{2,3}</Input>
+      <Input>1::{2,3} // The cons operator</Input>
       <Output>{1,2,3}</Output>
     </GraphCell>
     <GraphCell AutoX="true" AutoY="true" style="Graph" MinorX="nan" Antialiasing="false" MinorY="nan" Title="Plot title" LogX="false" LogY="false" MajorX="nan" MajorY="nan" closed="false" YLabel="y" Area="wEgAAAAAAADAMAAAAAAAAEBZAAAAAAAAQD4AAAAAAAA=" ShowGraph="false" Grid="false" XLabel="x" Legend="false">
-      <Input>listAppend({1,2,3},{4}) // Expensive; creates listLength(lst) new cells</Input>
+      <Input>// Appending lists is expensive; it uses the cons operation once for each element in the first argument
+listAppend({1,2,3},{4})</Input>
       <Output>{1,2,3,4}</Output>
     </GraphCell>
     <TextCell style="Text">
@@ -406,6 +407,8 @@ p, li { white-space: pre-wrap; }
 &lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
 &lt;tr>
 &lt;td style="border: none;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>
