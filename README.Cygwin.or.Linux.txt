@@ -4,8 +4,6 @@ Debian/Ubuntu Compile Cheat Sheet (or read on for the full guide)
 $ echo deb-src deb-src http://build.openmodelica.org/apt nightly contrib >> /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get build-dep openmodelica
-$ export RMLHOME=/usr # also put this in .profile
-$ export ANTLRHOME=/usr # also put this in .profile
 $ ./configure --with-omniORB=/usr
 $ make # or make omc if you only want the omc core
 
