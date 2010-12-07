@@ -1,7 +1,7 @@
 // name:     AlgorithmArrayEqn
 // keywords: array slice
 // status: correct
-// teardown_command: rm -rf AlgorithmArrayEqn_* ArraySlice ArraySlice.exe ArraySlice.cpp ArraySlice.makefile ArraySlice.libs ArraySlice.log output.log
+// teardown_command: rm -rf AlgorithmArrayEqn_* AlgorithmArrayEqn.exe AlgorithmArrayEqn.cpp AlgorithmArrayEqn.makefile AlgorithmArrayEqn.libs AlgorithmArrayEqn.log output.log
 // 
 // Tests assignment of one slice to another slice.
 // 

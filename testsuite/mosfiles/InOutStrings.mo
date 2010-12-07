@@ -6,8 +6,9 @@ end ext1;
 
 class c1
   Integer x(start = 1);
+  parameter Integer b=4;
   equation
-    x = ext1({1, 2, 3, 4});
+    x = ext1({1, 2, 3, b});
 end c1;
 
 function ext2
