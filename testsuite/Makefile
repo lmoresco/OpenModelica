@@ -14,6 +14,7 @@ interactive.log \
 records.log \
 expandable.log \
 linearize.log \
+modelicaML.log \
 streams.log
 
 .PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) libraries.log
@@ -83,6 +84,9 @@ expandable.log: omc-diff
 	@echo $@ done
 linearize.log: omc-diff
 	$(MAKE) -C linearize -f Makefile test > $@
+	@echo $@ done
+modelicaML.log: omc-diff
+	$(MAKE) -C modelicaML -f Makefile test > $@
 	@echo $@ done
 java.log: omc-diff
 	$(MAKE) -C java -f Makefile test > $@

@@ -1,0 +1,46 @@
+// name:    Simulation ModelicaML model twotank
+// keywords:  ModelicaML, solver, dassl, rungekutta
+// status: correct
+// teardown_command: rm -f TwoTanksSystemExample.Simulations.TankSystemSimulation *.c *.plt *.makefile *.libs *.log *.h *.cpp *.txt
+// 
+// ModelicaML: 1.3.6 Examples from 29.Nov 2010
+//
+loadFile("./TwoTanksSystemExample/package.mo");  
+simulate(TwoTanksSystemExample.Simulations.TankSystemSimulation,method="rungekutta",stopTime=400,numberOfIntervals=4000);
+//plot2({dm.tank1.h,dm.tank2.h})
+
+val(dm.tank1.h,11);
+val(dm.tank1.h,49);
+val(dm.tank1.h,150);
+val(dm.tank1.h,164);
+val(dm.tank1.h,185);
+val(dm.tank1.h,193);
+val(dm.tank1.h,400);
+val(dm.tank2.h,43);
+val(dm.tank2.h,88);
+val(dm.tank2.h,122.5);
+val(dm.tank2.h,171);
+val(dm.tank2.h,193.3);
+val(dm.tank2.h,400);
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "TwoTanksSystemExample.Simulations.TankSystemSimulation_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 0.0163846177321214
+// 0.5406680081356291
+// 0.2518105588464127
+// 0.4506556578893787
+// 0.08000000327782612
+// 0.194205576480379
+// 0.2687851385383217
+// 0.0006400804072994672
+// 1.284361466685814
+// 0.2645110689672424
+// 0.6344034677690038
+// 0.08262278835160689
+// 0.4409798572207534
+// endResult

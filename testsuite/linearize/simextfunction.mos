@@ -2,7 +2,7 @@
 // keywords: extfunctions, linearization
 // status:   correct
 // cflags:   +d=linearization
-// teardown_command: rm -rf extfunctions.* extfunctions_* output.log linear_extfunctions.* linear_extfunctions_* linear_extfunctions extfunctions
+// teardown_command: rm -rf extfunction.* extfunction_* output.log linear_extfunction.* linear_extfunction_* linear_extfunction extfunction
 // 
 //  Case for linearization of extfunctions model
 //

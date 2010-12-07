@@ -1,0 +1,39 @@
+// name:    Simulation ModelicaML model watchdog
+// keywords:  ModelicaML, solver, dassl, rungekutta
+// status: correct
+// teardown_command: rm -f WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1 *.c *.plt *.makefile *.libs *.log *.h *.cpp *.txt
+// 
+// ModelicaML: 1.3.6 Examples from 29.Nov 2010
+
+
+loadFile("./WatchDogSystem/package.mo");
+simulate(WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1,method="dassl2",stopTime=150,numberofInterval=1500);
+
+val(dm.watch_dog.on,0);
+val(dm.watch_dog.on,10.1);
+val(dm.watch_dog.on,40.1);
+val(dm.watch_dog.on,45);
+val(dm.watch_dog.on,45.1);
+val(dm.watch_dog.on,150);
+val(dm.watch_dog.battery_level,0);
+val(dm.watch_dog.battery_level,40.1);
+val(dm.watch_dog.battery_level,45);
+val(dm.watch_dog.battery_level,150);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1_res.plt",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 100.0
+// 70.0
+// 70.0
+// 1.0
+// endResult
