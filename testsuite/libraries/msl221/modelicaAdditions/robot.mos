@@ -11918,7 +11918,7 @@ getErrorString();
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Robots.r3.robot has 6169 equation(s) and 6169 variable(s).
-// 4825 of these are trivial equation(s).
+// 4906 of these are trivial equation(s).
 // "
 // ""
 // endResult
