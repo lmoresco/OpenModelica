@@ -1,0 +1,78 @@
+//name:        Model1.mos Test for BUG 1238
+//keyword:     handling modifications
+//status:      correct
+//env: OPENMODELICALIBRARY=../../libraries/msl31/
+//
+// instantiate/check model example
+// Many of these models use parameters with unknown dimensions, so it's not
+// possible to instantiate them.
+//
+
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+loadFile("Model1.mo"); getErrorString();
+checkModel(Model1); getErrorString();
+
+
+// Result:
+// true
+// true
+// true
+// ""
+// "Check of Model1 completed successfully.
+// 
+// [parts.mo:1490:5-1493:76:writable] Warning: Variable bodyCylinder1.r_0: Non-array modification 'if bodyCylinder1.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:1494:5-1497:76:writable] Warning: Variable bodyCylinder1.v_0: Non-array modification 'if bodyCylinder1.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:600:5-603:76:writable] Warning: Variable bodyCylinder1.body.r_0: Non-array modification 'if bodyCylinder1.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:604:5-607:76:writable] Warning: Variable bodyCylinder1.body.v_0: Non-array modification 'if bodyCylinder1.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:682:5-686:65:writable] Warning: Variable bodyCylinder1.body.w_a: Non-array modification 'if bodyCylinder1.body.enforceStates then if bodyCylinder1.body.useQuaternions then StateSelect.always else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:697:5-700:119:writable] Warning: Variable bodyCylinder1.body.Q: Non-array modification 'if bodyCylinder1.body.enforceStates then if bodyCylinder1.body.useQuaternions then StateSelect.prefer else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:708:5-711:69:writable] Warning: Variable bodyCylinder1.body.phi: Non-array modification 'if bodyCylinder1.body.enforceStates then if bodyCylinder1.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:712:5-714:42:writable] Warning: Variable bodyCylinder1.body.phi_d: Non-array modification 'if bodyCylinder1.body.enforceStates then if bodyCylinder1.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:1490:5-1493:76:writable] Warning: Variable bodyCylinder2.r_0: Non-array modification 'if bodyCylinder2.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:1494:5-1497:76:writable] Warning: Variable bodyCylinder2.v_0: Non-array modification 'if bodyCylinder2.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:600:5-603:76:writable] Warning: Variable bodyCylinder2.body.r_0: Non-array modification 'if bodyCylinder2.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:604:5-607:76:writable] Warning: Variable bodyCylinder2.body.v_0: Non-array modification 'if bodyCylinder2.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:682:5-686:65:writable] Warning: Variable bodyCylinder2.body.w_a: Non-array modification 'if bodyCylinder2.body.enforceStates then if bodyCylinder2.body.useQuaternions then StateSelect.always else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:697:5-700:119:writable] Warning: Variable bodyCylinder2.body.Q: Non-array modification 'if bodyCylinder2.body.enforceStates then if bodyCylinder2.body.useQuaternions then StateSelect.prefer else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:708:5-711:69:writable] Warning: Variable bodyCylinder2.body.phi: Non-array modification 'if bodyCylinder2.body.enforceStates then if bodyCylinder2.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:712:5-714:42:writable] Warning: Variable bodyCylinder2.body.phi_d: Non-array modification 'if bodyCylinder2.body.enforceStates then if bodyCylinder2.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:1490:5-1493:76:writable] Warning: Variable bodyCylinder3.r_0: Non-array modification 'if bodyCylinder3.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:1494:5-1497:76:writable] Warning: Variable bodyCylinder3.v_0: Non-array modification 'if bodyCylinder3.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:600:5-603:76:writable] Warning: Variable bodyCylinder3.body.r_0: Non-array modification 'if bodyCylinder3.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:604:5-607:76:writable] Warning: Variable bodyCylinder3.body.v_0: Non-array modification 'if bodyCylinder3.body.enforceStates then StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:682:5-686:65:writable] Warning: Variable bodyCylinder3.body.w_a: Non-array modification 'if bodyCylinder3.body.enforceStates then if bodyCylinder3.body.useQuaternions then StateSelect.always else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:697:5-700:119:writable] Warning: Variable bodyCylinder3.body.Q: Non-array modification 'if bodyCylinder3.body.enforceStates then if bodyCylinder3.body.useQuaternions then StateSelect.prefer else StateSelect.never else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:708:5-711:69:writable] Warning: Variable bodyCylinder3.body.phi: Non-array modification 'if bodyCylinder3.body.enforceStates then if bodyCylinder3.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// [parts.mo:712:5-714:42:writable] Warning: Variable bodyCylinder3.body.phi_d: Non-array modification 'if bodyCylinder3.body.enforceStates then if bodyCylinder3.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
+// 
+// 
+// Class Model1 has 2278 equation(s) and 2278 variable(s).
+// 1470 of these are trivial equation(s).
+// "
+// ""
+// endResult

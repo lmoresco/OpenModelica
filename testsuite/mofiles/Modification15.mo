@@ -1,6 +1,6 @@
 // name:     Modification15
 // keywords: modification
-// status:   correct
+// status:   incorrect
 // 
 // This tests if a warning or an error is 
 // displayed when the same attribute is 
@@ -23,12 +23,11 @@ class C3
 end C3;
 
 // Result:
-// class C3
-//   Real a.x(unit = "V", displayUnit = "mV") = 5.0;
-//   Real b.x(unit = "V", displayUnit = "mV") = 5.0;
-//   Real c.x(unit = "V", displayUnit = "mV") = 5.0;
-// end C3;
-// [Modification15.mo:14:5-14:11:writable] Warning: Variable c.x: Duplicate modifications for attribute: unit in modifier: (unit = "V", unit = "J"). 
-// 	Considering only the first modification: (unit = "V") and ignoring the rest (unit = "J").
+// Error processing file: Modification15.mo
+// [Modification15.mo:14:5-14:11:writable] Error: Multiple modifers in same scope for element c.x.unit: unit = "V", from calling scope: c, duplicates are: c.x.unit: unit = "J", c.x.unit: unit = "K"
 // 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult
