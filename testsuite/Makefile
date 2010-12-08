@@ -5,31 +5,39 @@ mosfiles-msl22.log \
 parser.log \
 meta.log \
 dependency.log \
+biochem.log \
 mofiles.log \
 msl.log \
 mmdev.log \
-drmodelica.log \
 mosfiles-nosim.log \
 interactive.log \
 records.log \
 expandable.log \
 linearize.log \
 modelicaML.log \
+drmodelica.log \
 streams.log
 
-.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) libraries.log
+SLOWLOGS = \
+boostrapping.log \
+msl31.log \
+multibody.log \
+msl221.log \
+msl221additions.log
+
+.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) slow.logs
 
 all : test
 
 omc-diff :
 	$(MAKE) -C difftool
-test : bootstrapping.log libraries.log fast.logs
-	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
+test : bootstrapping.log slow.logs fast.logs
+	@cat `ls $(FASTLOGS) $(SLOWLOGS) | sort`
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java,interactive,mosfiles-nosim}/*.{dll,so,exe};
 test-oldresult:
-	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log
+	@cat `ls $(FASTLOGS) $(SLOWLOGS) bootstrapping.log | sort`
 test-oldresult-summary:
-	@cat `ls $(FASTLOGS) bootstrapping.log | sort` libraries.log > test.log
+	@cat `ls $(FASTLOGS) $(SLOWLOGS) bootstrapping.log | sort` > test.log
 	@cat test.log
 	@grep ^== test.log | grep failed | gawk '{ fail += $$2; sum += $$5 } END {printf "== Total: %d out of %d failed\n",fail,sum}'
 fast : omc-diff fast.logs
@@ -37,14 +45,12 @@ fast : omc-diff fast.logs
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
 fast.logs: $(FASTLOGS)
 # java should probably also be part of 'fast'
-libraries.log: omc-diff
-	$(MAKE) -C libraries -f Makefile test > $@
-	@echo $@ done
+slow.logs: $(SLOWLOGS)
 drmodelica.log: omc-diff
-	$(MAKE) -C mofiles/drmodelica -f Makefile test > drmodelica.log
+	$(MAKE) -C mofiles/drmodelica -f Makefile test > $@
 	@echo $@ done
 streams.log: omc-diff
-	$(MAKE) -C streams -f Makefile test > streams.log
+	$(MAKE) -C streams -f Makefile test > $@
 	@echo $@ done
 mofiles.log: omc-diff
 	$(MAKE) -C mofiles -f Makefile test > $@
@@ -94,7 +100,23 @@ java.log: omc-diff
 bootstrapping.log: omc-diff
 	$(MAKE) -C bootstrapping -f Makefile test > $@
 	@echo $@ done
-	
+msl221.log: omc-diff
+	$(MAKE) -C libraries/msl221 -f Makefile test > $@
+msl221additions.log: omc-diff
+	$(MAKE) -C libraries/msl221/modelicaAdditions -f Makefile test > $@
+biochem.log: omc-diff
+	$(MAKE) -C libraries/biochem -f Makefile test > $@
+multibody.log: omc-diff
+	$(MAKE) -C libraries/multibody -f Makefile test > $@
+msl31.log: omc-diff
+	$(MAKE) -C libraries/msl31 -f Makefile test > $@
+
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
+	cd ../libraries/msl221; $(MAKE) -f Makefile failingtest; \
+	cd ../msl221/modelicaAdditions; $(MAKE) -f Makefile failingtest; \
+	cd ../../biochem; $(MAKE) -f Makefile failingtest; \
+	cd ../multibody; $(MAKE) -f Makefile failingtest; \
+	cd ../msl31; $(MAKE) -f Makefile failingtest;
+
