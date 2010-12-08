@@ -2417,8 +2417,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity has 1336 equation(s) and 1358 variable(s).
-// 743 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity has 1358 equation(s) and 1358 variable(s).
+// 779 of these are trivial equation(s).
 // "
 // ""
 // 0

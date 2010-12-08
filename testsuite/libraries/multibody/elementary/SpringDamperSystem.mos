@@ -4197,8 +4197,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem has 2281 equation(s) and 2292 variable(s).
-// 1407 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem has 2292 equation(s) and 2292 variable(s).
+// 1438 of these are trivial equation(s).
 // "
 // ""
 // 0

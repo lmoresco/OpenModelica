@@ -4508,7 +4508,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2335 equation(s) and 2379 variable(s).
-// 1519 of these are trivial equation(s).
+// 1557 of these are trivial equation(s).
 // "
 // ""
 // 0

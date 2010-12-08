@@ -2485,8 +2485,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1363 equation(s) and 1374 variable(s).
-// 793 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1374 equation(s) and 1374 variable(s).
+// 814 of these are trivial equation(s).
 // "
 // ""
 // 0

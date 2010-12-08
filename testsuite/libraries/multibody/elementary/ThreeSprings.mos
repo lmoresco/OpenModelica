@@ -3674,8 +3674,8 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings has 2004 equation(s) and 2015 variable(s).
-// 1264 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings has 2015 equation(s) and 2015 variable(s).
+// 1284 of these are trivial equation(s).
 // "
 // ""
 // 0
