@@ -49,6 +49,7 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // ""
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGear_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -90,10 +91,10 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // end SimulationResult;
 // ""
 // 0.240324980168263
-// 0.340820357315252
-// -0.287746786314949
+// 0.340820303815434
+// -0.287746786836413
 // -0.121565696009759
 // 0.182566607352621
-// -0.12389006764183
+// -0.123890065034139
 // 0
 // endResult
