@@ -22,8 +22,8 @@ refactorClass(connecttest);
 //   Modelica.Electrical.Analog.Basic.Conductor conductor1 annotation(Placement(transformation(x = 79.0, y = 32.0, scale = 0.15, aspectRatio = 0.666666666666667, flipHorizontal = true, flipVertical = false, rotation = -45.0)));
 // 
 // equation 
-//   connect(resistor.n,conductor.p) annotation(Line(points = {{ -18,56},{14,56},{14,64},{24,64}}, color = {255,0,127}, pattern = LinePattern.Dash, arrow = {Arrow.Filled,Arrow.Filled}));
-//   connect(resistor.p,conductor1.p) annotation(Line(color = {0,0,255}, points = {{0,56},{ -20,56},{ -20, -40},{89.6066, -40},{89.6066,24.9289}}));
+//   connect(resistor.n,conductor.p) annotation(Line(points = {{-18,56},{14,56},{14,64},{24,64}}, color = {255,0,127}, pattern = LinePattern.Dash, arrow = {Arrow.Filled,Arrow.Filled}));
+//   connect(resistor.p,conductor1.p) annotation(Line(color = {0,0,255}, points = {{0,56},{-20,56},{-20,-40},{89.6066,-40},{89.6066,24.9289}}));
 //   connect(conductor1.n,conductor.n) annotation(Line(points = {{68.3934,39.0711},{68.3934,64},{44,64}}, color = {0,0,255}, thickness = 1.0));
 // end connecttest;
 // 
