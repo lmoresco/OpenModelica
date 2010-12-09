@@ -73,24 +73,24 @@ WhyArrows.mos \
 # Run make testfailing
 FAILINGTESTFILES=  \
 
-.PHONY : test sim
+.PHONY : test testflat testsim
 
-all: test sim
+test: testflat testsim
 
-test:
+testflat:
 	@echo
 	@echo Running tests...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES) \
 	
-failingtest :
+failingtest:
 	@echo
 	@echo Running failing tests...
 	@echo
 	@$(TEST) $(FAILINGTESTFILES) \
 
-sim:
+testsim:
 	@make -C Electrical -f Makefile test 
 	@make -C Mechanics -f Makefile test 
 

@@ -31,6 +31,7 @@ w/1000.0;
 // true
 // record SimulationResult
 //     resultFile = "FlatTank_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 150.0, numberOfIntervals = 150, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'FlatTank', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // true

@@ -106,7 +106,12 @@ sub setbaselineone
     open(DST,">$f");
     while(<SRC>) {
       print DST $_;
-    } 
+    }
+    
+    close DST;
+    
+    # system "dos2unix $f";
+     
     return 0;
 }
 
@@ -312,6 +317,9 @@ sub dofile
 $start_t = time;
 while ($#ARGV >= 0) {
     $arg = shift(@ARGV);
+    
+    # $setbaseline = 1;
+    
     if ($arg =~ m/^\+/) {
       $omcflags .= " $arg";
     } elsif ($arg eq "-v") {

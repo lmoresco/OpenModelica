@@ -10,6 +10,7 @@ interactive_api_param.mos interactive_api_classes.mos \
 interactive_api_loadsave.mos  interactive_api_attributes.mos \
 interactive_api_calls.mos \
 interactive_api_annotations.mos \
+interactive_api_simulations.mos \
 interactive_test.mos \
 loadFileInteractiveQualified.mos \
 matrices.mos \

@@ -47,6 +47,7 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.DCMotor_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.DCMotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.0172711480172265,0.0580145326172172,0.105827997375912,0.145784590603209,0.165737879321608}
@@ -54,6 +55,7 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.275863935348383,0.392417116970391,0.569744893496212,1.23073673905217,1.60127637718387}
@@ -61,6 +63,7 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.First', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,-0.15560418929093,-0.537477780553385,-0.693696161003548,-0.90158424392602,-1.12249284118502}
@@ -68,6 +71,7 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.Professional.WeakAxis_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.Professional.WeakAxis', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,1.55351025869842,0.963995111051157,1.49560074990992,0.179062784161782,-0.217278535570951}

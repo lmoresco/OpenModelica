@@ -19,6 +19,7 @@ echo(false); // turns of output
 // true
 // record SimulationResult
 //     resultFile = "linearmodel_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // Linearization will performed at point of time: 0
@@ -42,8 +43,8 @@ echo(false); // turns of output
 //   Real x_Px2 = x[2];
 //   Real x_Px3 = x[3];
 //   Real x_Px4 = x[4];
-//	  
-// equation  
+// 
+// equation 
 //   der(x) = A * x + B * u;
 //   y = C * x + D * u;
 // end linear_linearmodel;
@@ -51,6 +52,7 @@ echo(false); // turns of output
 // "
 // record SimulationResult
 //     resultFile = "linear_linearmodel_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'linear_linearmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // ""

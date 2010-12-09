@@ -57,6 +57,7 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // true
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Circuit1_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Circuit1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,-0.0241567375194052,0.0577053998994437,0.0687842115210824,0.070283596598756,0.0704864781476259}
@@ -65,6 +66,7 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotor_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.00126908885284295,0.00959550319993667,0.0306407307570597,0.0685773156082535,0.126182759507239}
@@ -72,6 +74,7 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.DCmotorDeadzone_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.DCmotorDeadzone', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.0811419490635226,0.226371627821236,0.337091350442629,0.415562882491085,0.46479410890229}
@@ -79,6 +82,7 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.SpringMass_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.SpringMass', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.841454863634451,0.304781501568817,-0.857330810623884,-1.02252909516144,0.0577056695509957}
@@ -86,6 +90,7 @@ system("rm -rf TestModels.BlockModels.SystemTests.Tank.* *Tank_* output.log");
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,3.87243571488101,7.70245387019044,9.54604622064544,9.42519260624459,9.30510888064587}

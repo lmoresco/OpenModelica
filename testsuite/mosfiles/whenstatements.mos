@@ -22,6 +22,7 @@ val(tt,0.91);
 // true
 // record SimulationResult
 //     resultFile = "testalgwhen_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'testalgwhen', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

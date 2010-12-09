@@ -28,6 +28,7 @@ val(dm.tank2.h,400);
 // true
 // record SimulationResult
 //     resultFile = "TwoTanksSystemExample.Simulations.TankSystemSimulation_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 400.0, numberOfIntervals = 4000, tolerance = 1e-06, method = 'rungekutta', fileNamePrefix = 'TwoTanksSystemExample.Simulations.TankSystemSimulation', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // 0.0163846177321214

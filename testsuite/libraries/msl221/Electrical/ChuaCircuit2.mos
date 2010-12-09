@@ -35,23 +35,24 @@ system("rm Modelica.Electrical.Analog.Examples.ChuaCircuit*");
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 50000.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ChuaCircuit', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // "Nr.v:"
 // 4.0
-// 3.98645463004395
-// 3.97332969315684
+// 4.00252335348274
+// 4.00504670696548
 // "Nr.i:"
 // -1.984849
-// -1.97930771105931
-// -1.97393841750323
+// -1.98588128119961
+// -1.98691356239921
 // "G.v:"
 // -4.0
-// -3.97519005686502
-// -3.95087152596704
+// -3.9993971214557
+// -3.99879424291141
 // "G.i:"
 // -2.26
-// -2.24598238212873
-// -2.23224241217138
+// -2.25965937362247
+// -2.25931874724494
 // 0
 // endResult

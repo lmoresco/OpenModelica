@@ -26,9 +26,9 @@ end N;
 // end N.ThermodynamicState;
 // 
 // class N
-// constant Real T = 1.0;
-// constant Real p = 2.0;
-// Real res.T = 1.0 "temperature";
-// Real res.p = 2.0 "pressure";
+//   constant Real T = 1.0;
+//   constant Real p = 2.0;
+//   Real res.T = 1.0 "temperature";
+//   Real res.p = 2.0 "pressure";
 // end N;
 // endResult

@@ -21,6 +21,7 @@ res[4,1];
 // true
 // record SimulationResult
 //     resultFile = "AlgorithmArrayEqn_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'AlgorithmArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // true

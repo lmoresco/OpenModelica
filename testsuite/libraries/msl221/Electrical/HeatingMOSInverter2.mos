@@ -35,23 +35,24 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingMOSInverter*");
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.HeatingMOSInverter', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // "Capacitor1.v:"
 // 0.0
-// 1.09025944546688
-// 4.99758243451762
+// 1.09025944536495
+// 4.99758243452122
 // "Capacitor1.i:"
-// -0.0
-// 0.000266156745360794
-// -1.17104527219002e-07
+// -2.04831001399245e-311
+// 0.0002661567453624
+// -1.17104527792551e-07
 // "TC1.dT:"
-// -3.28514656382498e-309
-// 0.104103008435652
-// 9.25090416070253e-08
+// -3.06320142127393e-316
+// 0.10410300843899
+// 9.25090413306378e-08
 // "HeatCapacitor1.T:"
 // 293.15
-// 299.462143027024
-// 299.974904213852
+// 299.462143025344
+// 299.974904215893
 // 0
 // endResult

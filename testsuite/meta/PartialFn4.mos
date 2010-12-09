@@ -13,6 +13,7 @@ val(i2,0.0);
 // true
 // record SimulationResult
 //     resultFile = "PartialFn4_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'PartialFn4', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // 2.0

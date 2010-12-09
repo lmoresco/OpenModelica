@@ -25,6 +25,7 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // true
 // record SimulationResult
 //     resultFile = "BouncingBallExamples_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-07, method = 'dassl', fileNamePrefix = 'BouncingBallExamples', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // true
@@ -34,6 +35,7 @@ system("rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall.ex
 // 0
 // record SimulationResult
 //     resultFile = "BouncingBall_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 8.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
 // 0.345548867170653

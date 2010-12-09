@@ -33,14 +33,14 @@ end RecordFuncParam;
 // end R;
 // 
 // function f
-// input R r;
-// output Real y;
+//   input R r;
+//   output Real y;
 // end f;
 // 
 // class RecordFuncParam
-// input Real r.x;
-// input Real r.y;
-// output Real y;
+//   input Real r.x;
+//   input Real r.y;
+//   output Real y;
 // equation
 //   r.x = time;
 //   r.y = 2.0 * r.x;

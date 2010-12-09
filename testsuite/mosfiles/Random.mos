@@ -176,100 +176,54 @@ simulate(testRandom2, stopTime=3); getErrorString();
 // x = 0.7684225743864566
 // record SimulationResult
 //     resultFile = "testRandom2_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'testRandom2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = "See if seed_start is OK
-
 // seed_start[1] = 23
-
 // seed_start[2] = 87
-
 // seed_start[3] = 187
-
 // See if seed is set from seed_start
-
 // seed[1] = 23
-
 // seed[2] = 87
-
 // seed[3] = 187
-
 // x = 0.6720613541740214
-
 // x = 0.3678597646977231
-
 // x = 0.6041085613242591
-
 // x = 0.1667374195729034
-
 // x = 0.4629589578171096
-
 // x = 0.9289893342375365
-
 // x = 0.6531921316126386
-
 // x = 0.5926293930235833
-
 // x = 0.5294703487946859
-
 // x = 0.7684225743864566
-
 // time = 0.0, x = 0.672061
-
 // time = 0.2, x = 0.367860
-
 // time = 0.2, x = 0.367860
-
 // time = 0.4, x = 0.604109
-
 // time = 0.4, x = 0.604109
-
 // time = 0.6, x = 0.166737
-
 // time = 0.6, x = 0.166737
-
 // time = 0.8, x = 0.462959
-
 // time = 0.8, x = 0.462959
-
 // time = 1.0, x = 0.928989
-
 // time = 1.0, x = 0.928989
-
 // time = 1.2, x = 0.653192
-
 // time = 1.2, x = 0.653192
-
 // time = 1.4, x = 0.592629
-
 // time = 1.4, x = 0.592629
-
 // time = 1.6, x = 0.529470
-
 // time = 1.6, x = 0.529470
-
 // time = 1.8, x = 0.768423
-
 // time = 1.8, x = 0.768423
-
 // time = 2.0, x = 0.673137
-
 // time = 2.0, x = 0.673137
-
 // time = 2.2, x = 0.677167
-
 // time = 2.2, x = 0.677167
-
 // time = 2.4, x = 0.042806
-
 // time = 2.4, x = 0.042806
-
 // time = 2.6, x = 0.064589
-
 // time = 2.6, x = 0.064589
-
 // time = 2.8, x = 0.674971
-
 // time = 2.8, x = 0.674971
-
 // "
 // end SimulationResult;
 // ""
