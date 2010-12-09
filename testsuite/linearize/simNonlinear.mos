@@ -33,7 +33,7 @@ readFile("output.log"); // Check that output log is emtpy
 //   parameter Integer l = 2;
 //   parameter Real x0[3] = {1,1,2};
 //   parameter Real u0[1] = {0};
-//   parameter Real A[3,3] = [0,0,0;0,6, -2;0,4, -6];
+//   parameter Real A[3,3] = [0,0,0;0,6,-2;0,4,-6];
 //   parameter Real B[3,1] = [0;0;0];
 //   parameter Real C[2,3] = [0,0,0;0,0,0];
 //   parameter Real D[2,1] = [0;0];

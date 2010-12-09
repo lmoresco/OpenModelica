@@ -43,7 +43,7 @@ list(linear_simple_test);
 //   parameter Integer l = 1;
 //   parameter Real x0[2] = {1,2};
 //   parameter Real u0[1] = {0};
-//   parameter Real A[2,2] = [0, -1; -2, -1];
+//   parameter Real A[2,2] = [0,-1;-2,-1];
 //   parameter Real B[2,1] = [0;0];
 //   parameter Real C[1,2] = [0,0];
 //   parameter Real D[1,1] = [3];

@@ -30,6 +30,7 @@ sub make_link {
   # Depending on how the path is given we need to use different rules for how
   # the symlink should be created.
 	given($file) {
+    when (/\.\/(\w*)\/package.mo/)    { symlink("../" . $1, $1); }
 		when (/\.\.\/([\w-]*)\//) { symlink("../" . $1, "../" . $1); }
 		when (/^(\w*)\/(.*)/) 	  { symlink("../" . $1, $1); }
 		when (/(.*)/)						  { symlink("../" . $1, $1); }

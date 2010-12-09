@@ -36,7 +36,7 @@ readFile("output.log"); // Check that output log is emtpy
 //   parameter Integer n = 2;
 //   parameter Integer k = 0;
 //   parameter Integer l = 0;
-//   parameter Real x0[2] = {1, -1};
+//   parameter Real x0[2] = {1,-1};
 //   parameter Real u0[0] = {};
 //   parameter Real A[2,2] = [0.54030230586814,0.841470984807897;0.841470981782777,0.54030230586814];
 //   parameter Real B[2,0] = zeros(2, 0);
@@ -68,7 +68,7 @@ readFile("output.log"); // Check that output log is emtpy
 //   parameter Integer n = 2;
 //   parameter Integer k = 0;
 //   parameter Integer l = 0;
-//   parameter Real x0[2] = {1.39896302261312, -1.39896302261312};
+//   parameter Real x0[2] = {1.39896302261312,-1.39896302261312};
 //   parameter Real u0[0] = {};
 //   parameter Real A[2,2] = [0.170988940418301,1.37836042157076;1.37836041191886,0.170988940418301];
 //   parameter Real B[2,0] = zeros(2, 0);

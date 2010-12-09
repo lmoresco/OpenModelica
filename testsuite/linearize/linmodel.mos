@@ -30,9 +30,9 @@ echo(false); // turns of output
 //   parameter Integer n = 4;
 //   parameter Integer k = 0;
 //   parameter Integer l = 0;
-//   parameter Real x0[4] = {1, -2,3, -5};
+//   parameter Real x0[4] = {1,-2,3,-5};
 //   parameter Real u0[0] = {};
-//   parameter Real A[4,4] = [ -3,2,0,0; -7,0, -5,1; -1,0, -1,4;0,1, -1,5];
+//   parameter Real A[4,4] = [-3,2,0,0;-7,0,-5,1;-1,0,-1,4;0,1,-1,5];
 //   parameter Real B[4,0] = zeros(4, 0);
 //   parameter Real C[0,4] = zeros(0, 4);
 //   parameter Real D[0,0] = zeros(0, 0);
