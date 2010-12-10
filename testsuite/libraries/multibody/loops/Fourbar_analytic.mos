@@ -4433,7 +4433,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // Warning: Parameter jointSSP.rod1.rodLength has no value, and is fixed during initialization (fixed=true), using available start value (start=1.0) as default value
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic has 2216 equation(s) and 2238 variable(s).
-// 1475 of these are trivial equation(s).
+// 1442 of these are trivial equation(s).
 // "
 // ""
 // 0

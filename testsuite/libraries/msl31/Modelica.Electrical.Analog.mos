@@ -5806,7 +5806,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Basic.EMF has 16 equation(s) and 16 variable(s).
-// 12 of these are trivial equation(s).
+// 11 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Basic.TranslationalEMF
@@ -5852,7 +5852,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Basic.TranslationalEMF has 16 equation(s) and 16 variable(s).
-// 12 of these are trivial equation(s).
+// 11 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit

@@ -6002,7 +6002,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects has 2895 equation(s) and 2972 variable(s).
-// 1898 of these are trivial equation(s).
+// 1832 of these are trivial equation(s).
 // "
 // ""
 // 0

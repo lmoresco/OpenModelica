@@ -1,4 +1,4 @@
-TEST = ../../../rtest -v
+TEST = ../../../rtest -b
 
 TESTFILES = Accelerate2.mos \
 ElasticBearing2.mos \

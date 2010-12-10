@@ -18,7 +18,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 has 12073 equation(s) and 12491 variable(s).
-// 9307 of these are trivial equation(s).
+// 8732 of these are trivial equation(s).
 // "
 // ""
 // 0

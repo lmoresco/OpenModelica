@@ -5344,7 +5344,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Mechanics.MultiBody.Parts.BodyCylinder has 3402 equation(s) and 3420 variable(s).
-// 1913 of these are trivial equation(s).
+// 1898 of these are trivial equation(s).
 // "
 // ""
 // 0

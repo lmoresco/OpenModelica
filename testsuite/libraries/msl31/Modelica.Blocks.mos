@@ -204,7 +204,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Sources.KinematicPTP2 has 31 equation(s) and 31 variable(s).
-// 3 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.TimeTable completed successfully.

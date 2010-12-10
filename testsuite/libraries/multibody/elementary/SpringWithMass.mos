@@ -2486,7 +2486,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass has 1374 equation(s) and 1374 variable(s).
-// 814 of these are trivial equation(s).
+// 802 of these are trivial equation(s).
 // "
 // ""
 // 0

@@ -4357,7 +4357,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive has 2385 equation(s) and 2462 variable(s).
-// 1530 of these are trivial equation(s).
+// 1501 of these are trivial equation(s).
 // "
 // ""
 // 0

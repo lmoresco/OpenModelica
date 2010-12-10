@@ -5098,7 +5098,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2542 equation(s) and 2674 variable(s).
-// 1658 of these are trivial equation(s).
+// 1599 of these are trivial equation(s).
 // "
 // ""
 // 0

@@ -2386,7 +2386,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum has 1380 equation(s) and 1380 variable(s).
-// 802 of these are trivial equation(s).
+// 789 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.Vectors.length "Inline before index reduction"
@@ -4756,7 +4756,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 
 // 
 // Class P has 1380 equation(s) and 1380 variable(s).
-// 802 of these are trivial equation(s).
+// 789 of these are trivial equation(s).
 // "
 // ""
 // 0
