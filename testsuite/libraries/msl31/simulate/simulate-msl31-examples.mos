@@ -98,18 +98,16 @@ simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings);  getErr
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic);  getErrorString(); 
-// infinite loop in the back-end
+// compile time to large
 //simulate(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6);  getErrorString(); 
-// infinite loop in the back-end
-//simulate(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);  getErrorString(); 
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);  getErrorString(); 
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis);  getErrorString(); 
-// infinite loop in the back-end
-// simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot);  getErrorString(); 
+simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive);  getErrorString(); 
 simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive);  getErrorString(); 
