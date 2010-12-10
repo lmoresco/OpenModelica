@@ -13,6 +13,7 @@ ArrayAddSub1.mos ArrayDivError.mos \
 ArrayEquation.mos ArrayMult.mos ArrayReduce.mos \
 ArrayParameterSize.mos \
 ArraySlice.mos \
+AsubCrefExpType.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 BuiltinMath.mos \
