@@ -5,26 +5,26 @@
 // Drmodelica: 
 // 
 
-function log "Natural logarithm"
+function mylog "Natural logarithm"
   input Real x;
   output Real y;
-  external "C";
-end log;
+  external "C" y=log(x);
+end mylog;
 
 model LogCall1
   Real res;
 equation
-  res = log(100);
+  res = mylog(100);
 end LogCall1;
 
 
 // Result:
-// function log
+// function mylog
 // input Real x;
 // output Real y;
 // 
 // external "C";
-// end log;
+// end mylog;
 // 
 // class LogCall1
 // Real res;
