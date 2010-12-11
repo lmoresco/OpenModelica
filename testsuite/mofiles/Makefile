@@ -257,6 +257,7 @@ ExternalFunction1.mo \
 ExternalFunction2.mo \
 ExternalFunction3.mo \
 ExternalFunction4.mo \
+ExternalFunction5.mo \
 ExternalFunctionAnno.mo \
 Faculty1.mo \
 Faculty2.mo \

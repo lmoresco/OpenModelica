@@ -47,31 +47,31 @@ end ExternalFunction4;
 
 // Result:
 // function ExternalFunction4.dgetrf
-// input Real A;
-// output Real LU = A;
-// output Integer pivots;
-// output Integer info;
+//   input Real A;
+//   output Real LU = A;
+//   output Integer pivots;
+//   output Integer info;
 // 
-// external "C";
+// external "FORTRAN 77";
 // end ExternalFunction4.dgetrf;
 // 
 // function ExternalFunction4.dgetri
-// input Real LU;
-// input Integer pivots;
-// output Real inv = LU;
-// protected Integer lwork = min(10,size(LU,1)) * (size(LU,1));
-// protected Real work;
-// protected Integer info;
+//   input Real LU;
+//   input Integer pivots;
+//   output Real inv = LU;
+//   protected Integer lwork = min(10,size(LU,1)) * (size(LU,1));
+//   protected Real work;
+//   protected Integer info;
 // 
-// external "C";
+// external "FORTRAN 77";
 // end ExternalFunction4.dgetri;
 // 
 // function ExternalFunction4.inv
-// input Real[2, 2] A;
-// output Real[2, 2] invA;
-// protected Integer info;
-// protected Integer[2] pivots;
-// protected Real[2, 2] LU;
+//   input Real[2, 2] A;
+//   output Real[2, 2] invA;
+//   protected Integer info;
+//   protected Integer[2] pivots;
+//   protected Real[2, 2] LU;
 // algorithm
 //   (LU, pivots, info) := ExternalFunction4.dgetrf({{A[1,1],A[1,2]},{A[2,1],A[2,2]}});
 //   assert( info == 0, "Calculating an inverse matrix with function \"Matrices.inv\" is not possible, since matrix A is singular.");
@@ -79,13 +79,13 @@ end ExternalFunction4;
 // end ExternalFunction4.inv;
 // 
 // class ExternalFunction4
-// constant Real r[1,1] = 1.0;
-// constant Real r[1,2] = 2.0;
-// constant Real r[2,1] = 3.0;
-// constant Real r[2,2] = 4.0;
-// Real r2[1,1] = 1.0;
-// Real r2[1,2] = 0.0;
-// Real r2[2,1] = 0.0;
-// Real r2[2,2] = 1.0;
+//   constant Real r[1,1] = 1.0;
+//   constant Real r[1,2] = 2.0;
+//   constant Real r[2,1] = 3.0;
+//   constant Real r[2,2] = 4.0;
+//   Real r2[1,1] = 1.0;
+//   Real r2[1,2] = 0.0;
+//   Real r2[2,1] = 0.0;
+//   Real r2[2,2] = 1.0;
 // end ExternalFunction4;
 // endResult
