@@ -57,62 +57,6 @@ end PartialFn15;
 //   lst := listReverse(lst);
 // end PartialFn15.elabRealBinOps;
 // 
-// function realAdd "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := r1 + r2;
-// end realAdd;
-// 
-// function realDiv "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := r1 / r2;
-// end realDiv;
-// 
-// function realMax "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := max(r1,r2);
-// end realMax;
-// 
-// function realMin "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := min(r1,r2);
-// end realMin;
-// 
-// function realMul "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := r1 * r2;
-// end realMul;
-// 
-// function realPow "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := r1 ^ r2;
-// end realPow;
-// 
-// function realSub "Inline before index reduction"
-//   input Real r1;
-//   input Real r2;
-//   output Real r;
-// algorithm
-//   r := r1 - r2;
-// end realSub;
-// 
 // class PartialFn15
 //   constant list<Real> rs = List(11.0,5.0,24.0,2.66666666666667,512.0,8.0,3.0);
 // end PartialFn15;
