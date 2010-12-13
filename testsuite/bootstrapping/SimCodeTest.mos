@@ -10,7 +10,7 @@ runScript("LoadCompilerSources.mos");
 getErrorString();
 
 path:=Absyn.QUALIFIED("SimCodeC",Absyn.IDENT("abc"));
-func:=DAE.FUNCTION(path,{DAE.FUNCTION_DEF({})},(DAE.T_FUNCTION({},DAE.T_NORETCALL_DEFAULT,DAE.NO_INLINE()),SOME(path)),false,DAE.NO_INLINE(),DAE.emptyElementSource);
+func:=DAE.FUNCTION(path,{DAE.FUNCTION_DEF({})},(DAE.T_FUNCTION({},DAE.T_NORETCALL_DEFAULT,DAE.FUNCTION_ATTRIBUTES_DEFAULT),SOME(path)),false,DAE.NO_INLINE(),DAE.emptyElementSource);
 SimCode.translateFunctions("SimCodeC_abc", func, {}, {});
 getErrorString();
 readFile("SimCodeC_abc.h");
@@ -45,8 +45,11 @@ readFile("SimCodeC_abc.c");
 //     funcArg = {},
 //     funcResultType = (record DAE.TType.T_NORETCALL
 // end DAE.TType.T_NORETCALL;,NONE()),
+//     functionAttributes = record DAE.FunctionAttributes.FUNCTION_ATTRIBUTES
 //     inline = record DAE.InlineType.NO_INLINE
-// end DAE.InlineType.NO_INLINE;
+// end DAE.InlineType.NO_INLINE;,
+//     isPure = true
+// end DAE.FunctionAttributes.FUNCTION_ATTRIBUTES;
 // end DAE.TType.T_FUNCTION;,SOME(record Absyn.Path.QUALIFIED
 //     name = "SimCodeC",
 //     path = record Absyn.Path.IDENT
