@@ -81,13 +81,13 @@ install_scripts:
 install: install_scripts # install_doc
 	cp OpenModelicaBootstrappingHeader.h $(top_builddir)/build/include/omc/
 	
-omc_release: 
+omc_release: simcode
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_debug: 
+omc_debug: simcode
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_profiler: 
+omc_profiler: simcode
 	(cd omc_profiler && $(MAKE) -f Makefile.omdev.mingw)
 
 vctarget:
@@ -146,7 +146,7 @@ else
 simcode: OpenModelicaBootstrappingHeader.h
 	$(MAKE) -C susan_codegen/
 	$(MAKE) -C susan_codegen/SimCode/
-OpenModelicaBootstrappingHeader.h: Absyn.mo Interactive.mo Values.mo GenerateOMCHeader.mos
+OpenModelicaBootstrappingHeader.h: FrontEnd/Absyn.mo Script/Interactive.mo FrontEnd/Values.mo GenerateOMCHeader.mos
 	../build/bin/omc +g=MetaModelica GenerateOMCHeader.mos > $@.log || (cat $@.log && false)
 	@mv $@.new $@
 endif
