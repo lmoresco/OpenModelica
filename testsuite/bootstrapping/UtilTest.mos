@@ -3,7 +3,7 @@
 // status: correct
 // teardown_command: rm -f Util_* UtilTest_*
 
-loadFile("../../Compiler/Util.mo");
+loadFile("../../Compiler/Util/Util.mo");
 getErrorString();
 loadFile("UtilTest.mo");
 getErrorString();

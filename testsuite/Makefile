@@ -19,7 +19,7 @@ drmodelica.log \
 streams.log
 
 SLOWLOGS = \
-boostrapping.log \
+bootstrapping.log \
 msl31.log \
 multibody.log \
 msl221.log \
@@ -31,13 +31,13 @@ all : test
 
 omc-diff :
 	$(MAKE) -C difftool
-test : bootstrapping.log slow.logs fast.logs
+test : slow.logs fast.logs
 	@cat `ls $(FASTLOGS) $(SLOWLOGS) | sort`
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java,interactive,mosfiles-nosim}/*.{dll,so,exe};
 test-oldresult:
-	@cat `ls $(FASTLOGS) $(SLOWLOGS) bootstrapping.log | sort`
+	@cat `ls $(FASTLOGS) $(SLOWLOGS) | sort`
 test-oldresult-summary:
-	@cat `ls $(FASTLOGS) $(SLOWLOGS) bootstrapping.log | sort` > test.log
+	@cat `ls $(FASTLOGS) $(SLOWLOGS) | sort` > test.log
 	@cat test.log
 	@grep ^== test.log | grep failed | gawk '{ fail += $$2; sum += $$5 } END {printf "== Total: %d out of %d failed\n",fail,sum}'
 fast : omc-diff fast.logs

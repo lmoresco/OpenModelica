@@ -3,25 +3,25 @@
 // teardown_command: rm -f SusanTest_* Tpl_* SusanTestSmall_* SusanTestSmall.mo
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
-loadFile("../../Compiler/Debug.mo");
+loadFile("../../Compiler/Util/Debug.mo");
 getErrorString();
-loadFile("../../Compiler/Print.mo");
+loadFile("../../Compiler/Util/Print.mo");
 getErrorString();
-loadFile("../../Compiler/RTOpts.mo");
+loadFile("../../Compiler/Util/RTOpts.mo");
 getErrorString();
-loadFile("../../Compiler/System.mo");
+loadFile("../../Compiler/Util/System.mo");
 getErrorString();
-loadFile("../../Compiler/TplAbsyn.mo");
+loadFile("../../Compiler/Template/TplAbsyn.mo");
 getErrorString();
-loadFile("../../Compiler/TplCodegen.mo");
+loadFile("../../Compiler/Template/TplCodegen.mo");
 if getErrorString() == "" then "" else "Errors in TplCodegen.mo";
-loadFile("../../Compiler/Tpl.mo");
+loadFile("../../Compiler/Template/Tpl.mo");
 getErrorString();
-loadFile("../../Compiler/TplMain.mo");
+loadFile("../../Compiler/Template/TplMain.mo");
 getErrorString();
-loadFile("../../Compiler/TplParser.mo");
+loadFile("../../Compiler/Template/TplParser.mo");
 getErrorString();
-loadFile("../../Compiler/Util.mo");
+loadFile("../../Compiler/Util/Util.mo");
 loadFile("SusanTest.mo");
 getErrorString();
 
