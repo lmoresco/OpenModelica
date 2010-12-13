@@ -1,0 +1,36 @@
+// name:     Modelica.Mechanics.Translational.Examples.PreLoad
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.PreLoad_* Modelica.Mechanics.Translational.Examples.PreLoad Modelica.Mechanics.Translational.Examples.PreLoad.exe Modelica.Mechanics.Translational.Examples.PreLoad.cpp Modelica.Mechanics.Translational.Examples.PreLoad.makefile Modelica.Mechanics.Translational.Examples.PreLoad.libs Modelica.Mechanics.Translational.Examples.PreLoad.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Translational.Examples.PreLoad);
+
+val(der(friction.v_rel),0.0);
+val(der(innerContactA.s_rel),0.0);
+val(der(innerContactB.s_rel),0.0);
+val(der(outerContactA.v_rel),0.0);
+val(der(outerContactB.s_rel),0.0);
+val(der(outerContactB.v_rel),0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.PreLoad_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.PreLoad', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -0.0001
+// -0.0001
+// 0.0
+// -6500
+// 0.0
+// -6500
+// endResult

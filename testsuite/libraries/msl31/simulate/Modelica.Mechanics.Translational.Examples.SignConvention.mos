@@ -1,0 +1,36 @@
+// name:     Modelica.Mechanics.Translational.Examples.SignConvention
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.SignConvention_* Modelica.Mechanics.Translational.Examples.SignConvention Modelica.Mechanics.Translational.Examples.SignConvention.exe Modelica.Mechanics.Translational.Examples.SignConvention.cpp Modelica.Mechanics.Translational.Examples.SignConvention.makefile Modelica.Mechanics.Translational.Examples.SignConvention.libs Modelica.Mechanics.Translational.Examples.SignConvention.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Translational.Examples.SignConvention);
+
+val(der(mass1.s),0.0);
+val(der(mass1.v),0.0);
+val(der(mass2.s),0.0);
+val(der(mass2.v),0.0);
+val(der(mass3.s),0.0);
+val(der(mass3.v),0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.SignConvention_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.SignConvention', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// endResult

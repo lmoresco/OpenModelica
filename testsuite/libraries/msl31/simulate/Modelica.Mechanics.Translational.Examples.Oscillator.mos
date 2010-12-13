@@ -1,0 +1,32 @@
+// name:     Modelica.Mechanics.Translational.Examples.Oscillator
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.Oscillator_* Modelica.Mechanics.Translational.Examples.Oscillator Modelica.Mechanics.Translational.Examples.Oscillator.exe Modelica.Mechanics.Translational.Examples.Oscillator.cpp Modelica.Mechanics.Translational.Examples.Oscillator.makefile Modelica.Mechanics.Translational.Examples.Oscillator.libs Modelica.Mechanics.Translational.Examples.Oscillator.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Translational.Examples.Oscillator);
+
+val(der(damper1.s_rel),0.0);
+val(der(damper1.v_rel),0.0);
+val(der(mass1.s),0.0);
+val(der(mass1.v),0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Oscillator_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Oscillator', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// endResult

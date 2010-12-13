@@ -1,0 +1,40 @@
+// name:     Modelica.Mechanics.Translational.Examples.InitialConditions
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.InitialConditions_* Modelica.Mechanics.Translational.Examples.InitialConditions Modelica.Mechanics.Translational.Examples.InitialConditions.exe Modelica.Mechanics.Translational.Examples.InitialConditions.cpp Modelica.Mechanics.Translational.Examples.InitialConditions.makefile Modelica.Mechanics.Translational.Examples.InitialConditions.libs Modelica.Mechanics.Translational.Examples.InitialConditions.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Translational.Examples.InitialConditions);
+
+val(der(m1.s),0.0);
+val(der(m1.v),0.0);
+val(der(m3.s),0.0);
+val(der(m3.v),0.0);
+val(der(sd1.s_rel),0.0);
+val(der(sd1.v_rel),0.0);
+val(der(sd2.s_rel),0.0);
+val(der(sd2.v_rel),0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.InitialConditions', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// endResult

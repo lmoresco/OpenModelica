@@ -1,0 +1,28 @@
+// name:     Modelica.Mechanics.Translational.Examples.Accelerate
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.Accelerate_* Modelica.Mechanics.Translational.Examples.Accelerate Modelica.Mechanics.Translational.Examples.Accelerate.exe Modelica.Mechanics.Translational.Examples.Accelerate.cpp Modelica.Mechanics.Translational.Examples.Accelerate.makefile Modelica.Mechanics.Translational.Examples.Accelerate.libs Modelica.Mechanics.Translational.Examples.Accelerate.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Translational.Examples.Accelerate);
+
+val(der(accelerate.s),0.0);
+val(der(accelerate.v),0.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Accelerate_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Accelerate', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 1.0
+// endResult
