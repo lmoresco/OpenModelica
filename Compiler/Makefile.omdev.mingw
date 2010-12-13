@@ -51,17 +51,17 @@ SUBDIRS	= runtime modpar
 
 .SUFFIXES:
 .SUFFIXES: .o .mo .h
-.PHONY:  .depend all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug omc_profiler
+.PHONY:  all subdirs report vctarget debug release clean dclean test reallyclean omc_release omc_debug omc_profiler
 
-all : .testvariables .depend release $(ALLMO)
+all : .testvariables release $(ALLMO)
 
 include Makefile.common
 
-debug:	.testvariables .depend  $(PROGD) install
+debug:	.testvariables $(PROGD) install
 
-profiler:	.testvariables .depend  $(PROGP) install
+profiler:	.testvariables $(PROGP) install
 
-release: .testvariables .depend $(PROG) install
+release: .testvariables $(PROG) install
 
 $(PROG): omc_release
 	echo Copying $(PROG)$(EXEEXT) into $(builddir_bin)
@@ -81,13 +81,13 @@ install_scripts:
 install: install_scripts # install_doc
 	cp OpenModelicaBootstrappingHeader.h $(top_builddir)/build/include/omc/
 	
-omc_release: .depend
+omc_release: 
 	(cd omc_release && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_debug: .depend
+omc_debug: 
 	(cd omc_debug && $(MAKE) -f Makefile.omdev.mingw)
 
-omc_profiler: .depend
+omc_profiler: 
 	(cd omc_profiler && $(MAKE) -f Makefile.omdev.mingw)
 
 vctarget:
@@ -97,7 +97,7 @@ test:
 	@(cd ../testsuite && $(MAKE) -f Makefile)
 
 
-clean: .depend
+clean: 
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
@@ -109,7 +109,7 @@ clean: .depend
 	-$(RM) -f $(builddir)/*.rdb
 	-cd $(builddir_bin) && rm -f $(SCRIPT_FILES)
 
-dclean: .depend
+dclean: 
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw clean) \
 	done
@@ -119,7 +119,7 @@ dclean: .depend
 	-$(RM) -f $(builddir)/$(PROGD)$(EXEEXT)
 	-cd $(builddir_bin) && rm -f $(SCRIPTS_FILES)
 
-reallyclean: .depend
+reallyclean: 
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
 	done
@@ -127,7 +127,7 @@ reallyclean: .depend
 	-$(RM) -f $(SRCH)
 	-$(RM) -f $(PROG)$(EXEEXT)
 
-dreallyclean: .depend
+dreallyclean: 
 	@for d in $(SUBDIRS); do \
 		(cd $$d ; $(MAKE) -f Makefile.omdev.mingw reallyclean) \
 	done
@@ -151,10 +151,6 @@ OpenModelicaBootstrappingHeader.h: Absyn.mo Interactive.mo Values.mo GenerateOMC
 	@mv $@.new $@
 endif
 $(SUSANMO): simcode
-
-.depend: $(ALLMO)
-	-$(RM) .depend
-	time $(RMLHOME)/bin/rml -fdump-depends $(SRCMO) > .depend
 
 #.PRECIOUS: Makefile.omdev.mingw
 #
