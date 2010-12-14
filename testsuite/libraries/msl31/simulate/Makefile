@@ -6,6 +6,7 @@ Modelica.Electrical.Analog.Examples.mos \
 Modelica.Electrical.Digital.Examples.mos \
 Modelica.Electrical.Machines.Examples.mos \
 Modelica.Electrical.MultiPhase.Examples.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
 Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
