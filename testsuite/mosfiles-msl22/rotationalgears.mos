@@ -66,23 +66,29 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 // 	second element is: parameter Modelica.SIunits.Torque unitTorque  = 1;
 // 	Modelica specification requires that elements are exactly identical.
 // "
-// 0.0116394146275981
-// 0.112673954144505
-// 0.0243515850286289
-// 0.224503276690454
+// -0.124750657909978
+// 0.168180883757212
+// 0.371803477293457
+// 0.335799716388475
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.Gear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
-//     messages = ""
+//     messages = "Error in initialization. System of initial equations are not consistent.
+
+// (Least Square function value is 1)
+
+// residual[17] = -1
+
+// "
 // end SimulationResult;
 // ""
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
+// -16.0791304159185
+// -0.30018310267053
+// -12.6695891849178
+// 8.14607442141547
+// 0.375106730793756
+// 6.03703120479463
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.Gear2_res.plt",
@@ -90,11 +96,11 @@ system("rm -rf *Gears.Gear2.* *Gears.Gear2_* output.log");
 //     messages = ""
 // end SimulationResult;
 // ""
-// 0.240324980168263
-// 0.340820303815434
-// -0.287746786836413
-// -0.121565696009759
-// 0.182566607352621
-// -0.123890065034139
+// 0.240324978947452
+// 0.340818240619255
+// -0.287746796731814
+// -0.121565695642017
+// 0.18256659722219
+// -0.123890082249151
 // 0
 // endResult

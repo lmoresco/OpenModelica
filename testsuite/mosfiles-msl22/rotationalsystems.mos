@@ -50,8 +50,8 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.DCMotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.0172711480172265,0.0580145326172172,0.105827997375912,0.145784590603209,0.165737879321608}
-// {0.0,-0.198603377183309,-0.388524336731096,-0.560622946984718,-0.706176601390361,-0.817829460047303}
+// {0.0,0.106672254470769,0.213815587665178,0.303704394359971,0.36194946299354,0.3787026392201}
+// {0.0,-0.197970873110146,-0.383797413231579,-0.545862408078944,-0.674161034893017,-0.761288944817563}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.ElasticBearing_res.plt",
@@ -66,8 +66,8 @@ system("rm -rf *WeakAxis.* *WeakAxis_* output.log TestModels.Professional.*");
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.First', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// {0.0,-0.15560418929093,-0.537477780553385,-0.693696161003548,-0.90158424392602,-1.12249284118502}
-// {0.0,-0.0155604191673736,-0.053747777604553,-0.0693696164388354,-0.090158423831254,-0.112249284527425}
+// {0.0,-0.155604189290931,-0.537477780553385,-0.693696161003548,-0.901584243925932,-1.12249284118511}
+// {0.0,-0.0155604191673737,-0.053747777604553,-0.0693696164388354,-0.0901584238312446,-0.112249284527475}
 // 0
 // record SimulationResult
 //     resultFile = "TestModels.Professional.WeakAxis_res.plt",
