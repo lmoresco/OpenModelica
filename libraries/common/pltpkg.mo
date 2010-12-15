@@ -17,7 +17,7 @@ package pltpkg
     output Boolean b;
     
     external "C" b = pltTable(table, size(table, 1), size(table, 2), columnLabels, size(legend, 1), title, yLabel,legend, grid, logX, logY, interpolation, points)
-    annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    annotation(Library = "sendData");
   end pltTable;
 
   function plt
@@ -36,7 +36,7 @@ package pltpkg
     output Boolean b;
 
     external "C" b = plt(var, mdl, title, xLabel, yLabel,legend, grid, logX, logY, interpolation,drawPoints, range) 
-    annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    annotation(Library = "sendData");
   end plt;
 
   function pltParametric
@@ -54,18 +54,18 @@ package pltpkg
     input Boolean drawPoints = true;
     input String range = "0.0,0.0,0.0,0.0";
     external "C" b = pltParametric(var1, var2, mdl, title, xLabel, yLabel,legend, grid, logX, logY, interpolation, drawPoints, range) 
-    annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    annotation(Library = "sendData");
   end pltParametric;
 
   function hold
     input Boolean on = true;
     output Boolean b;
-    external "C" b = hold(on) annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    external "C" b = hold(on) annotation(Library = "sendData");
   end hold;
 
   function clear
     output Boolean b;
-    external "C" b = clear() annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    external "C" b = clear() annotation(Library = "sendData");
   end clear;
 
   function ellipse
@@ -86,7 +86,7 @@ package pltpkg
     output Boolean b;
     
     external "C" b = ellipse(x0,y0, x1, y1, color,colorR, colorG, colorB, 3, fillColor, fillColorR, fillColorG, fillColorB,3) 
-    annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    annotation(Library = "sendData");
   end ellipse;
 
   function rect
@@ -105,7 +105,7 @@ package pltpkg
     output Boolean b;
     
     external "C" b = rect(x0, y0, x1, y1, color, colorR, colorG, colorB, fillColor, fillColorR, fillColorG, fillColorB)
-    annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    annotation(Library = "sendData");
   end rect;
 
   function line
@@ -131,7 +131,7 @@ package pltpkg
     input Integer msecs;
     output Boolean b;
     
-    external "C" b = pltWait(msecs) annotation(Library = "-L$OPENMODELICAHOME/lib -lsendData -lQtCore4 -lQtNetwork4 -lQtGui4");
+    external "C" b = pltWait(msecs) annotation(Library = "sendData");
   end wait;
 
 end pltpkg;
