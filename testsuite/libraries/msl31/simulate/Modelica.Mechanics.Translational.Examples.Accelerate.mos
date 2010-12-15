@@ -11,9 +11,30 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Accelerate);
-
+val(accelerate.s,0.0);
+val(accelerate.s,1.0);
 val(der(accelerate.s),0.0);
+val(der(accelerate.s),1.0);
+val(accelerate.flange.s,0.0);
+val(accelerate.flange.s,1.0);
+val(accelerate.v,0.0);
+val(accelerate.v,1.0);
 val(der(accelerate.v),0.0);
+val(der(accelerate.v),1.0);
+val(mass.s,0.0);
+val(mass.s,1.0);
+val(der(mass.s),0.0);
+val(der(mass.s),1.0);
+val(mass.flange_a.s,0.0);
+val(mass.flange_a.s,1.0);
+val(mass.flange_b.s,0.0);
+val(mass.flange_b.s,1.0);
+val(mass.v,0.0);
+val(mass.v,1.0);
+val(der(mass.v),0.0);
+val(der(mass.v),1.0);
+val(mass.a,0.0);
+val(mass.a,1.0);
 
 // Result:
 // true
@@ -24,5 +45,27 @@ val(der(accelerate.v),0.0);
 //     messages = ""
 // end SimulationResult;
 // 0.0
+// 0.5
+// 0.0
+// 1.0
+// 0.0
+// 0.5
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 0.5
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.5
+// 1.0
+// 1.5
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
 // 1.0
 // endResult

@@ -1,0 +1,1223 @@
+// name:     Modelica.Electrical.Machines.Examples.AIMC_Steinmetz
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_Steinmetz_* Modelica.Electrical.Machines.Examples.AIMC_Steinmetz Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.exe Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.cpp Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.makefile Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.libs Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz);
+val(aimc.phiMechanical,0.0);
+val(aimc.phiMechanical,1.5);
+val(der(aimc.phiMechanical),0.0);
+val(der(aimc.phiMechanical),1.5);
+val(aimc.wMechanical,0.0);
+val(aimc.wMechanical,1.5);
+val(aimc.tauElectrical,0.0);
+val(aimc.tauElectrical,1.5);
+val(aimc.tauShaft,0.0);
+val(aimc.tauShaft,1.5);
+val(aimc.flange.phi,0.0);
+val(aimc.flange.phi,1.5);
+val(aimc.flange.tau,0.0);
+val(aimc.flange.tau,1.5);
+val(aimc.inertiaRotor.flange_a.phi,0.0);
+val(aimc.inertiaRotor.flange_a.phi,1.5);
+val(aimc.inertiaRotor.flange_a.tau,0.0);
+val(aimc.inertiaRotor.flange_a.tau,1.5);
+val(aimc.inertiaRotor.flange_b.phi,0.0);
+val(aimc.inertiaRotor.flange_b.phi,1.5);
+val(aimc.inertiaRotor.flange_b.tau,0.0);
+val(aimc.inertiaRotor.flange_b.tau,1.5);
+val(aimc.inertiaRotor.phi,0.0);
+val(aimc.inertiaRotor.phi,1.5);
+val(der(aimc.inertiaRotor.phi),0.0);
+val(der(aimc.inertiaRotor.phi),1.5);
+val(aimc.inertiaRotor.w,0.0);
+val(aimc.inertiaRotor.w,1.5);
+val(der(aimc.inertiaRotor.w),0.0);
+val(der(aimc.inertiaRotor.w),1.5);
+val(aimc.inertiaRotor.a,0.0);
+val(aimc.inertiaRotor.a,1.5);
+val(aimc.support.tau,0.0);
+val(aimc.support.tau,1.5);
+val(aimc.inertiaStator.flange_a.tau,0.0);
+val(aimc.inertiaStator.flange_a.tau,1.5);
+val(aimc.inertiaStator.flange_b.tau,0.0);
+val(aimc.inertiaStator.flange_b.tau,1.5);
+val(aimc.vs[1],0.0);
+val(aimc.vs[1],1.5);
+val(aimc.vs[2],0.0);
+val(aimc.vs[2],1.5);
+val(aimc.vs[3],0.0);
+val(aimc.vs[3],1.5);
+val(aimc.is[1],0.0);
+val(aimc.is[1],1.5);
+val(aimc.is[2],0.0);
+val(aimc.is[2],1.5);
+val(aimc.is[3],0.0);
+val(aimc.is[3],1.5);
+val(aimc.i_0_s,0.0);
+val(aimc.i_0_s,1.5);
+val(der(aimc.i_0_s),0.0);
+val(der(aimc.i_0_s),1.5);
+val(aimc.idq_ss[1],0.0);
+val(aimc.idq_ss[1],1.5);
+val(aimc.idq_ss[2],0.0);
+val(aimc.idq_ss[2],1.5);
+val(aimc.idq_sr[1],0.0);
+val(aimc.idq_sr[1],1.5);
+val(der(aimc.idq_sr[1]),0.0);
+val(der(aimc.idq_sr[1]),1.5);
+val(aimc.idq_sr[2],0.0);
+val(aimc.idq_sr[2],1.5);
+val(der(aimc.idq_sr[2]),0.0);
+val(der(aimc.idq_sr[2]),1.5);
+val(aimc.idq_rs[1],0.0);
+val(aimc.idq_rs[1],1.5);
+val(aimc.idq_rs[2],0.0);
+val(aimc.idq_rs[2],1.5);
+val(aimc.idq_rr[1],0.0);
+val(aimc.idq_rr[1],1.5);
+val(der(aimc.idq_rr[1]),0.0);
+val(der(aimc.idq_rr[1]),1.5);
+val(aimc.idq_rr[2],0.0);
+val(aimc.idq_rr[2],1.5);
+val(der(aimc.idq_rr[2]),0.0);
+val(der(aimc.idq_rr[2]),1.5);
+val(aimc.plug_sp.pin[1].v,0.0);
+val(aimc.plug_sp.pin[1].v,1.5);
+val(aimc.plug_sp.pin[1].i,0.0);
+val(aimc.plug_sp.pin[1].i,1.5);
+val(aimc.plug_sp.pin[2].v,0.0);
+val(aimc.plug_sp.pin[2].v,1.5);
+val(aimc.plug_sp.pin[2].i,0.0);
+val(aimc.plug_sp.pin[2].i,1.5);
+val(aimc.plug_sp.pin[3].i,0.0);
+val(aimc.plug_sp.pin[3].i,1.5);
+val(aimc.plug_sn.pin[1].v,0.0);
+val(aimc.plug_sn.pin[1].v,1.5);
+val(aimc.plug_sn.pin[1].i,0.0);
+val(aimc.plug_sn.pin[1].i,1.5);
+val(aimc.plug_sn.pin[2].i,0.0);
+val(aimc.plug_sn.pin[2].i,1.5);
+val(aimc.plug_sn.pin[3].v,0.0);
+val(aimc.plug_sn.pin[3].v,1.5);
+val(aimc.plug_sn.pin[3].i,0.0);
+val(aimc.plug_sn.pin[3].i,1.5);
+val(aimc.rs.v[1],0.0);
+val(aimc.rs.v[1],1.5);
+val(aimc.rs.v[2],0.0);
+val(aimc.rs.v[2],1.5);
+val(aimc.rs.v[3],0.0);
+val(aimc.rs.v[3],1.5);
+val(aimc.rs.i[1],0.0);
+val(aimc.rs.i[1],1.5);
+val(aimc.rs.i[2],0.0);
+val(aimc.rs.i[2],1.5);
+val(aimc.rs.i[3],0.0);
+val(aimc.rs.i[3],1.5);
+val(aimc.rs.plug_p.pin[1].v,0.0);
+val(aimc.rs.plug_p.pin[1].v,1.5);
+val(aimc.rs.plug_p.pin[1].i,0.0);
+val(aimc.rs.plug_p.pin[1].i,1.5);
+val(aimc.rs.plug_p.pin[2].v,0.0);
+val(aimc.rs.plug_p.pin[2].v,1.5);
+val(aimc.rs.plug_p.pin[2].i,0.0);
+val(aimc.rs.plug_p.pin[2].i,1.5);
+val(aimc.rs.plug_p.pin[3].i,0.0);
+val(aimc.rs.plug_p.pin[3].i,1.5);
+val(aimc.rs.plug_n.pin[1].v,0.0);
+val(aimc.rs.plug_n.pin[1].v,1.5);
+val(aimc.rs.plug_n.pin[1].i,0.0);
+val(aimc.rs.plug_n.pin[1].i,1.5);
+val(aimc.rs.plug_n.pin[2].v,0.0);
+val(aimc.rs.plug_n.pin[2].v,1.5);
+val(aimc.rs.plug_n.pin[2].i,0.0);
+val(aimc.rs.plug_n.pin[2].i,1.5);
+val(aimc.rs.plug_n.pin[3].v,0.0);
+val(aimc.rs.plug_n.pin[3].v,1.5);
+val(aimc.rs.plug_n.pin[3].i,0.0);
+val(aimc.rs.plug_n.pin[3].i,1.5);
+val(aimc.rs.resistor[1].v,0.0);
+val(aimc.rs.resistor[1].v,1.5);
+val(aimc.rs.resistor[1].i,0.0);
+val(aimc.rs.resistor[1].i,1.5);
+val(aimc.rs.resistor[1].p.v,0.0);
+val(aimc.rs.resistor[1].p.v,1.5);
+val(aimc.rs.resistor[1].p.i,0.0);
+val(aimc.rs.resistor[1].p.i,1.5);
+val(aimc.rs.resistor[1].n.v,0.0);
+val(aimc.rs.resistor[1].n.v,1.5);
+val(aimc.rs.resistor[1].n.i,0.0);
+val(aimc.rs.resistor[1].n.i,1.5);
+val(aimc.rs.resistor[1].LossPower,0.0);
+val(aimc.rs.resistor[1].LossPower,1.5);
+val(aimc.rs.resistor[2].v,0.0);
+val(aimc.rs.resistor[2].v,1.5);
+val(aimc.rs.resistor[2].i,0.0);
+val(aimc.rs.resistor[2].i,1.5);
+val(aimc.rs.resistor[2].p.v,0.0);
+val(aimc.rs.resistor[2].p.v,1.5);
+val(aimc.rs.resistor[2].p.i,0.0);
+val(aimc.rs.resistor[2].p.i,1.5);
+val(aimc.rs.resistor[2].n.v,0.0);
+val(aimc.rs.resistor[2].n.v,1.5);
+val(aimc.rs.resistor[2].n.i,0.0);
+val(aimc.rs.resistor[2].n.i,1.5);
+val(aimc.rs.resistor[2].LossPower,0.0);
+val(aimc.rs.resistor[2].LossPower,1.5);
+val(aimc.rs.resistor[3].v,0.0);
+val(aimc.rs.resistor[3].v,1.5);
+val(aimc.rs.resistor[3].i,0.0);
+val(aimc.rs.resistor[3].i,1.5);
+val(aimc.rs.resistor[3].p.i,0.0);
+val(aimc.rs.resistor[3].p.i,1.5);
+val(aimc.rs.resistor[3].n.v,0.0);
+val(aimc.rs.resistor[3].n.v,1.5);
+val(aimc.rs.resistor[3].n.i,0.0);
+val(aimc.rs.resistor[3].n.i,1.5);
+val(aimc.rs.resistor[3].LossPower,0.0);
+val(aimc.rs.resistor[3].LossPower,1.5);
+val(aimc.lssigma.v[1],0.0);
+val(aimc.lssigma.v[1],1.5);
+val(aimc.lssigma.v[2],0.0);
+val(aimc.lssigma.v[2],1.5);
+val(aimc.lssigma.v[3],0.0);
+val(aimc.lssigma.v[3],1.5);
+val(aimc.lssigma.i[1],0.0);
+val(aimc.lssigma.i[1],1.5);
+val(aimc.lssigma.i[2],0.0);
+val(aimc.lssigma.i[2],1.5);
+val(aimc.lssigma.i[3],0.0);
+val(aimc.lssigma.i[3],1.5);
+val(aimc.lssigma.plug_p.pin[1].v,0.0);
+val(aimc.lssigma.plug_p.pin[1].v,1.5);
+val(aimc.lssigma.plug_p.pin[1].i,0.0);
+val(aimc.lssigma.plug_p.pin[1].i,1.5);
+val(aimc.lssigma.plug_p.pin[2].v,0.0);
+val(aimc.lssigma.plug_p.pin[2].v,1.5);
+val(aimc.lssigma.plug_p.pin[2].i,0.0);
+val(aimc.lssigma.plug_p.pin[2].i,1.5);
+val(aimc.lssigma.plug_p.pin[3].v,0.0);
+val(aimc.lssigma.plug_p.pin[3].v,1.5);
+val(aimc.lssigma.plug_p.pin[3].i,0.0);
+val(aimc.lssigma.plug_p.pin[3].i,1.5);
+val(aimc.lssigma.plug_n.pin[1].v,0.0);
+val(aimc.lssigma.plug_n.pin[1].v,1.5);
+val(aimc.lssigma.plug_n.pin[1].i,0.0);
+val(aimc.lssigma.plug_n.pin[1].i,1.5);
+val(aimc.lssigma.plug_n.pin[2].v,0.0);
+val(aimc.lssigma.plug_n.pin[2].v,1.5);
+val(aimc.lssigma.plug_n.pin[2].i,0.0);
+val(aimc.lssigma.plug_n.pin[2].i,1.5);
+val(aimc.lssigma.plug_n.pin[3].v,0.0);
+val(aimc.lssigma.plug_n.pin[3].v,1.5);
+val(aimc.lssigma.plug_n.pin[3].i,0.0);
+val(aimc.lssigma.plug_n.pin[3].i,1.5);
+val(aimc.lssigma.inductor[1].v,0.0);
+val(aimc.lssigma.inductor[1].v,1.5);
+val(aimc.lssigma.inductor[1].i,0.0);
+val(aimc.lssigma.inductor[1].i,1.5);
+val(der(aimc.lssigma.inductor[1].i),0.0);
+val(der(aimc.lssigma.inductor[1].i),1.5);
+val(aimc.lssigma.inductor[1].p.v,0.0);
+val(aimc.lssigma.inductor[1].p.v,1.5);
+val(aimc.lssigma.inductor[1].p.i,0.0);
+val(aimc.lssigma.inductor[1].p.i,1.5);
+val(aimc.lssigma.inductor[1].n.v,0.0);
+val(aimc.lssigma.inductor[1].n.v,1.5);
+val(aimc.lssigma.inductor[1].n.i,0.0);
+val(aimc.lssigma.inductor[1].n.i,1.5);
+val(aimc.lssigma.inductor[2].v,0.0);
+val(aimc.lssigma.inductor[2].v,1.5);
+val(aimc.lssigma.inductor[2].i,0.0);
+val(aimc.lssigma.inductor[2].i,1.5);
+val(der(aimc.lssigma.inductor[2].i),0.0);
+val(der(aimc.lssigma.inductor[2].i),1.5);
+val(aimc.lssigma.inductor[2].p.v,0.0);
+val(aimc.lssigma.inductor[2].p.v,1.5);
+val(aimc.lssigma.inductor[2].p.i,0.0);
+val(aimc.lssigma.inductor[2].p.i,1.5);
+val(aimc.lssigma.inductor[2].n.v,0.0);
+val(aimc.lssigma.inductor[2].n.v,1.5);
+val(aimc.lssigma.inductor[2].n.i,0.0);
+val(aimc.lssigma.inductor[2].n.i,1.5);
+val(aimc.lssigma.inductor[3].v,0.0);
+val(aimc.lssigma.inductor[3].v,1.5);
+val(aimc.lssigma.inductor[3].i,0.0);
+val(aimc.lssigma.inductor[3].i,1.5);
+val(der(aimc.lssigma.inductor[3].i),0.0);
+val(der(aimc.lssigma.inductor[3].i),1.5);
+val(aimc.lssigma.inductor[3].p.v,0.0);
+val(aimc.lssigma.inductor[3].p.v,1.5);
+val(aimc.lssigma.inductor[3].p.i,0.0);
+val(aimc.lssigma.inductor[3].p.i,1.5);
+val(aimc.lssigma.inductor[3].n.v,0.0);
+val(aimc.lssigma.inductor[3].n.v,1.5);
+val(aimc.lssigma.inductor[3].n.i,0.0);
+val(aimc.lssigma.inductor[3].n.i,1.5);
+val(aimc.spacePhasorS.v[1],0.0);
+val(aimc.spacePhasorS.v[1],1.5);
+val(aimc.spacePhasorS.v[2],0.0);
+val(aimc.spacePhasorS.v[2],1.5);
+val(aimc.spacePhasorS.v[3],0.0);
+val(aimc.spacePhasorS.v[3],1.5);
+val(aimc.spacePhasorS.i[1],0.0);
+val(aimc.spacePhasorS.i[1],1.5);
+val(aimc.spacePhasorS.i[2],0.0);
+val(aimc.spacePhasorS.i[2],1.5);
+val(aimc.spacePhasorS.i[3],0.0);
+val(aimc.spacePhasorS.i[3],1.5);
+val(aimc.spacePhasorS.plug_p.pin[1].v,0.0);
+val(aimc.spacePhasorS.plug_p.pin[1].v,1.5);
+val(aimc.spacePhasorS.plug_p.pin[1].i,0.0);
+val(aimc.spacePhasorS.plug_p.pin[1].i,1.5);
+val(aimc.spacePhasorS.plug_p.pin[2].v,0.0);
+val(aimc.spacePhasorS.plug_p.pin[2].v,1.5);
+val(aimc.spacePhasorS.plug_p.pin[2].i,0.0);
+val(aimc.spacePhasorS.plug_p.pin[2].i,1.5);
+val(aimc.spacePhasorS.plug_p.pin[3].v,0.0);
+val(aimc.spacePhasorS.plug_p.pin[3].v,1.5);
+val(aimc.spacePhasorS.plug_p.pin[3].i,0.0);
+val(aimc.spacePhasorS.plug_p.pin[3].i,1.5);
+val(aimc.spacePhasorS.plug_n.pin[1].v,0.0);
+val(aimc.spacePhasorS.plug_n.pin[1].v,1.5);
+val(aimc.spacePhasorS.plug_n.pin[1].i,0.0);
+val(aimc.spacePhasorS.plug_n.pin[1].i,1.5);
+val(aimc.spacePhasorS.plug_n.pin[2].i,0.0);
+val(aimc.spacePhasorS.plug_n.pin[2].i,1.5);
+val(aimc.spacePhasorS.plug_n.pin[3].v,0.0);
+val(aimc.spacePhasorS.plug_n.pin[3].v,1.5);
+val(aimc.spacePhasorS.plug_n.pin[3].i,0.0);
+val(aimc.spacePhasorS.plug_n.pin[3].i,1.5);
+val(aimc.spacePhasorS.zero.i,0.0);
+val(aimc.spacePhasorS.zero.i,1.5);
+val(aimc.spacePhasorS.ground.i,0.0);
+val(aimc.spacePhasorS.ground.i,1.5);
+val(aimc.spacePhasorS.gnd.p.i,0.0);
+val(aimc.spacePhasorS.gnd.p.i,1.5);
+val(aimc.spacePhasorS.spacePhasor.v_[1],0.0);
+val(aimc.spacePhasorS.spacePhasor.v_[1],1.5);
+val(aimc.spacePhasorS.spacePhasor.v_[2],0.0);
+val(aimc.spacePhasorS.spacePhasor.v_[2],1.5);
+val(aimc.spacePhasorS.spacePhasor.i_[1],0.0);
+val(aimc.spacePhasorS.spacePhasor.i_[1],1.5);
+val(aimc.spacePhasorS.spacePhasor.i_[2],0.0);
+val(aimc.spacePhasorS.spacePhasor.i_[2],1.5);
+val(aimc.airGapS.tauElectrical,0.0);
+val(aimc.airGapS.tauElectrical,1.5);
+val(aimc.airGapS.gamma,0.0);
+val(aimc.airGapS.gamma,1.5);
+val(der(aimc.airGapS.gamma),0.0);
+val(der(aimc.airGapS.gamma),1.5);
+val(aimc.airGapS.i_ss[1],0.0);
+val(aimc.airGapS.i_ss[1],1.5);
+val(aimc.airGapS.i_ss[2],0.0);
+val(aimc.airGapS.i_ss[2],1.5);
+val(der(aimc.airGapS.i_ss[1]),0.0);
+val(der(aimc.airGapS.i_ss[1]),1.5);
+val(der(aimc.airGapS.i_ss[2]),0.0);
+val(der(aimc.airGapS.i_ss[2]),1.5);
+val(aimc.airGapS.i_sr[1],0.0);
+val(aimc.airGapS.i_sr[1],1.5);
+val(aimc.airGapS.i_sr[2],0.0);
+val(aimc.airGapS.i_sr[2],1.5);
+val(aimc.airGapS.i_rs[1],0.0);
+val(aimc.airGapS.i_rs[1],1.5);
+val(aimc.airGapS.i_rs[2],0.0);
+val(aimc.airGapS.i_rs[2],1.5);
+val(der(aimc.airGapS.i_rs[1]),0.0);
+val(der(aimc.airGapS.i_rs[1]),1.5);
+val(der(aimc.airGapS.i_rs[2]),0.0);
+val(der(aimc.airGapS.i_rs[2]),1.5);
+val(aimc.airGapS.i_rr[1],0.0);
+val(aimc.airGapS.i_rr[1],1.5);
+val(aimc.airGapS.i_rr[2],0.0);
+val(aimc.airGapS.i_rr[2],1.5);
+val(aimc.airGapS.psi_ms[1],0.0);
+val(aimc.airGapS.psi_ms[1],1.5);
+val(aimc.airGapS.psi_ms[2],0.0);
+val(aimc.airGapS.psi_ms[2],1.5);
+val(der(aimc.airGapS.psi_ms[1]),0.0);
+val(der(aimc.airGapS.psi_ms[1]),1.5);
+val(der(aimc.airGapS.psi_ms[2]),0.0);
+val(der(aimc.airGapS.psi_ms[2]),1.5);
+val(aimc.airGapS.psi_mr[1],0.0);
+val(aimc.airGapS.psi_mr[1],1.5);
+val(aimc.airGapS.psi_mr[2],0.0);
+val(aimc.airGapS.psi_mr[2],1.5);
+val(der(aimc.airGapS.psi_mr[1]),0.0);
+val(der(aimc.airGapS.psi_mr[1]),1.5);
+val(der(aimc.airGapS.psi_mr[2]),0.0);
+val(der(aimc.airGapS.psi_mr[2]),1.5);
+val(aimc.airGapS.RotationMatrix[1,1],0.0);
+val(aimc.airGapS.RotationMatrix[1,1],1.5);
+val(aimc.airGapS.RotationMatrix[1,2],0.0);
+val(aimc.airGapS.RotationMatrix[1,2],1.5);
+val(aimc.airGapS.RotationMatrix[2,1],0.0);
+val(aimc.airGapS.RotationMatrix[2,1],1.5);
+val(aimc.airGapS.RotationMatrix[2,2],0.0);
+val(aimc.airGapS.RotationMatrix[2,2],1.5);
+val(der(aimc.airGapS.RotationMatrix[1,1]),0.0);
+val(der(aimc.airGapS.RotationMatrix[1,1]),1.5);
+val(der(aimc.airGapS.RotationMatrix[1,2]),0.0);
+val(der(aimc.airGapS.RotationMatrix[1,2]),1.5);
+val(der(aimc.airGapS.RotationMatrix[2,1]),0.0);
+val(der(aimc.airGapS.RotationMatrix[2,1]),1.5);
+val(der(aimc.airGapS.RotationMatrix[2,2]),0.0);
+val(der(aimc.airGapS.RotationMatrix[2,2]),1.5);
+val(aimc.airGapS.flange.phi,0.0);
+val(aimc.airGapS.flange.phi,1.5);
+val(aimc.airGapS.flange.tau,0.0);
+val(aimc.airGapS.flange.tau,1.5);
+val(aimc.airGapS.support.tau,0.0);
+val(aimc.airGapS.support.tau,1.5);
+val(aimc.airGapS.spacePhasor_s.v_[1],0.0);
+val(aimc.airGapS.spacePhasor_s.v_[1],1.5);
+val(aimc.airGapS.spacePhasor_s.v_[2],0.0);
+val(aimc.airGapS.spacePhasor_s.v_[2],1.5);
+val(aimc.airGapS.spacePhasor_s.i_[1],0.0);
+val(aimc.airGapS.spacePhasor_s.i_[1],1.5);
+val(aimc.airGapS.spacePhasor_s.i_[2],0.0);
+val(aimc.airGapS.spacePhasor_s.i_[2],1.5);
+val(aimc.airGapS.spacePhasor_r.v_[1],0.0);
+val(aimc.airGapS.spacePhasor_r.v_[1],1.5);
+val(aimc.airGapS.spacePhasor_r.v_[2],0.0);
+val(aimc.airGapS.spacePhasor_r.v_[2],1.5);
+val(aimc.airGapS.spacePhasor_r.i_[1],0.0);
+val(aimc.airGapS.spacePhasor_r.i_[1],1.5);
+val(aimc.airGapS.spacePhasor_r.i_[2],0.0);
+val(aimc.airGapS.spacePhasor_r.i_[2],1.5);
+val(aimc.airGapS.i_ms[1],0.0);
+val(aimc.airGapS.i_ms[1],1.5);
+val(aimc.airGapS.i_ms[2],0.0);
+val(aimc.airGapS.i_ms[2],1.5);
+val(der(aimc.airGapS.i_ms[1]),0.0);
+val(der(aimc.airGapS.i_ms[1]),1.5);
+val(der(aimc.airGapS.i_ms[2]),0.0);
+val(der(aimc.airGapS.i_ms[2]),1.5);
+val(aimc.squirrelCageR.spacePhasor_r.v_[1],0.0);
+val(aimc.squirrelCageR.spacePhasor_r.v_[1],1.5);
+val(aimc.squirrelCageR.spacePhasor_r.v_[2],0.0);
+val(aimc.squirrelCageR.spacePhasor_r.v_[2],1.5);
+val(aimc.squirrelCageR.spacePhasor_r.i_[1],0.0);
+val(aimc.squirrelCageR.spacePhasor_r.i_[1],1.5);
+val(aimc.squirrelCageR.spacePhasor_r.i_[2],0.0);
+val(aimc.squirrelCageR.spacePhasor_r.i_[2],1.5);
+val(der(aimc.squirrelCageR.spacePhasor_r.i_[1]),0.0);
+val(der(aimc.squirrelCageR.spacePhasor_r.i_[1]),1.5);
+val(der(aimc.squirrelCageR.spacePhasor_r.i_[2]),0.0);
+val(der(aimc.squirrelCageR.spacePhasor_r.i_[2]),1.5);
+val(sineVoltage.v,0.0);
+val(sineVoltage.v,1.5);
+val(sineVoltage.i,0.0);
+val(sineVoltage.i,1.5);
+val(sineVoltage.p.v,0.0);
+val(sineVoltage.p.v,1.5);
+val(sineVoltage.p.i,0.0);
+val(sineVoltage.p.i,1.5);
+val(sineVoltage.n.i,0.0);
+val(sineVoltage.n.i,1.5);
+val(sineVoltage.signalSource.y,0.0);
+val(sineVoltage.signalSource.y,1.5);
+val(ground.p.i,0.0);
+val(ground.p.i,1.5);
+val(booleanStep.y,0.0);
+val(booleanStep.y,1.5);
+val(idealCloser.v,0.0);
+val(idealCloser.v,1.5);
+val(idealCloser.i,0.0);
+val(idealCloser.i,1.5);
+val(idealCloser.p.v,0.0);
+val(idealCloser.p.v,1.5);
+val(idealCloser.p.i,0.0);
+val(idealCloser.p.i,1.5);
+val(idealCloser.n.v,0.0);
+val(idealCloser.n.v,1.5);
+val(idealCloser.n.i,0.0);
+val(idealCloser.n.i,1.5);
+val(idealCloser.LossPower,0.0);
+val(idealCloser.LossPower,1.5);
+val(idealCloser.control,0.0);
+val(idealCloser.control,1.5);
+val(loadInertia.flange_a.phi,0.0);
+val(loadInertia.flange_a.phi,1.5);
+val(loadInertia.flange_a.tau,0.0);
+val(loadInertia.flange_a.tau,1.5);
+val(loadInertia.flange_b.phi,0.0);
+val(loadInertia.flange_b.phi,1.5);
+val(loadInertia.flange_b.tau,0.0);
+val(loadInertia.flange_b.tau,1.5);
+val(loadInertia.phi,0.0);
+val(loadInertia.phi,1.5);
+val(der(loadInertia.phi),0.0);
+val(der(loadInertia.phi),1.5);
+val(loadInertia.w,0.0);
+val(loadInertia.w,1.5);
+val(der(loadInertia.w),0.0);
+val(der(loadInertia.w),1.5);
+val(loadInertia.a,0.0);
+val(loadInertia.a,1.5);
+val(quadraticLoadTorque.flange.phi,0.0);
+val(quadraticLoadTorque.flange.phi,1.5);
+val(quadraticLoadTorque.flange.tau,0.0);
+val(quadraticLoadTorque.flange.tau,1.5);
+val(quadraticLoadTorque.phi,0.0);
+val(quadraticLoadTorque.phi,1.5);
+val(der(quadraticLoadTorque.phi),0.0);
+val(der(quadraticLoadTorque.phi),1.5);
+val(quadraticLoadTorque.w,0.0);
+val(quadraticLoadTorque.w,1.5);
+val(quadraticLoadTorque.tau,0.0);
+val(quadraticLoadTorque.tau,1.5);
+val(TerminalBox1.plug_sp.pin[1].v,0.0);
+val(TerminalBox1.plug_sp.pin[1].v,1.5);
+val(TerminalBox1.plug_sp.pin[1].i,0.0);
+val(TerminalBox1.plug_sp.pin[1].i,1.5);
+val(TerminalBox1.plug_sp.pin[2].v,0.0);
+val(TerminalBox1.plug_sp.pin[2].v,1.5);
+val(TerminalBox1.plug_sp.pin[2].i,0.0);
+val(TerminalBox1.plug_sp.pin[2].i,1.5);
+val(TerminalBox1.plug_sp.pin[3].i,0.0);
+val(TerminalBox1.plug_sp.pin[3].i,1.5);
+val(TerminalBox1.plug_sn.pin[1].v,0.0);
+val(TerminalBox1.plug_sn.pin[1].v,1.5);
+val(TerminalBox1.plug_sn.pin[1].i,0.0);
+val(TerminalBox1.plug_sn.pin[1].i,1.5);
+val(TerminalBox1.plug_sn.pin[2].i,0.0);
+val(TerminalBox1.plug_sn.pin[2].i,1.5);
+val(TerminalBox1.plug_sn.pin[3].v,0.0);
+val(TerminalBox1.plug_sn.pin[3].v,1.5);
+val(TerminalBox1.plug_sn.pin[3].i,0.0);
+val(TerminalBox1.plug_sn.pin[3].i,1.5);
+val(TerminalBox1.delta.plug_p.pin[1].v,0.0);
+val(TerminalBox1.delta.plug_p.pin[1].v,1.5);
+val(TerminalBox1.delta.plug_p.pin[1].i,0.0);
+val(TerminalBox1.delta.plug_p.pin[1].i,1.5);
+val(TerminalBox1.delta.plug_p.pin[2].v,0.0);
+val(TerminalBox1.delta.plug_p.pin[2].v,1.5);
+val(TerminalBox1.delta.plug_p.pin[2].i,0.0);
+val(TerminalBox1.delta.plug_p.pin[2].i,1.5);
+val(TerminalBox1.delta.plug_p.pin[3].i,0.0);
+val(TerminalBox1.delta.plug_p.pin[3].i,1.5);
+val(TerminalBox1.delta.plug_n.pin[1].v,0.0);
+val(TerminalBox1.delta.plug_n.pin[1].v,1.5);
+val(TerminalBox1.delta.plug_n.pin[1].i,0.0);
+val(TerminalBox1.delta.plug_n.pin[1].i,1.5);
+val(TerminalBox1.delta.plug_n.pin[2].i,0.0);
+val(TerminalBox1.delta.plug_n.pin[2].i,1.5);
+val(TerminalBox1.delta.plug_n.pin[3].v,0.0);
+val(TerminalBox1.delta.plug_n.pin[3].v,1.5);
+val(TerminalBox1.delta.plug_n.pin[3].i,0.0);
+val(TerminalBox1.delta.plug_n.pin[3].i,1.5);
+val(TerminalBox1.plugSupply.pin[1].v,0.0);
+val(TerminalBox1.plugSupply.pin[1].v,1.5);
+val(TerminalBox1.plugSupply.pin[1].i,0.0);
+val(TerminalBox1.plugSupply.pin[1].i,1.5);
+val(TerminalBox1.plugSupply.pin[2].v,0.0);
+val(TerminalBox1.plugSupply.pin[2].v,1.5);
+val(TerminalBox1.plugSupply.pin[2].i,0.0);
+val(TerminalBox1.plugSupply.pin[2].i,1.5);
+val(TerminalBox1.plugSupply.pin[3].i,0.0);
+val(TerminalBox1.plugSupply.pin[3].i,1.5);
+val(plugToPin_p3.plug_p.pin[1].v,0.0);
+val(plugToPin_p3.plug_p.pin[1].v,1.5);
+val(plugToPin_p3.plug_p.pin[2].v,0.0);
+val(plugToPin_p3.plug_p.pin[2].v,1.5);
+val(plugToPin_p3.plug_p.pin[3].i,0.0);
+val(plugToPin_p3.plug_p.pin[3].i,1.5);
+val(plugToPin_p3.pin_p.i,0.0);
+val(plugToPin_p3.pin_p.i,1.5);
+val(plugToPin_p2.plug_p.pin[1].v,0.0);
+val(plugToPin_p2.plug_p.pin[1].v,1.5);
+val(plugToPin_p2.plug_p.pin[2].v,0.0);
+val(plugToPin_p2.plug_p.pin[2].v,1.5);
+val(plugToPin_p2.plug_p.pin[2].i,0.0);
+val(plugToPin_p2.plug_p.pin[2].i,1.5);
+val(plugToPin_p2.pin_p.v,0.0);
+val(plugToPin_p2.pin_p.v,1.5);
+val(plugToPin_p2.pin_p.i,0.0);
+val(plugToPin_p2.pin_p.i,1.5);
+val(plugToPin_p1.plug_p.pin[1].v,0.0);
+val(plugToPin_p1.plug_p.pin[1].v,1.5);
+val(plugToPin_p1.plug_p.pin[1].i,0.0);
+val(plugToPin_p1.plug_p.pin[1].i,1.5);
+val(plugToPin_p1.plug_p.pin[2].v,0.0);
+val(plugToPin_p1.plug_p.pin[2].v,1.5);
+val(plugToPin_p1.pin_p.v,0.0);
+val(plugToPin_p1.pin_p.v,1.5);
+val(plugToPin_p1.pin_p.i,0.0);
+val(plugToPin_p1.pin_p.i,1.5);
+val(cRun.v,0.0);
+val(cRun.v,1.5);
+val(der(cRun.v),0.0);
+val(der(cRun.v),1.5);
+val(cRun.i,0.0);
+val(cRun.i,1.5);
+val(cRun.p.v,0.0);
+val(cRun.p.v,1.5);
+val(cRun.p.i,0.0);
+val(cRun.p.i,1.5);
+val(cRun.n.v,0.0);
+val(cRun.n.v,1.5);
+val(cRun.n.i,0.0);
+val(cRun.n.i,1.5);
+val(cStart.v,0.0);
+val(cStart.v,1.5);
+val(der(cStart.v),0.0);
+val(der(cStart.v),1.5);
+val(cStart.i,0.0);
+val(cStart.i,1.5);
+val(cStart.p.v,0.0);
+val(cStart.p.v,1.5);
+val(cStart.p.i,0.0);
+val(cStart.p.i,1.5);
+val(cStart.n.v,0.0);
+val(cStart.n.v,1.5);
+val(cStart.n.i,0.0);
+val(cStart.n.i,1.5);
+val(idealOpener.v,0.0);
+val(idealOpener.v,1.5);
+val(idealOpener.i,0.0);
+val(idealOpener.i,1.5);
+val(idealOpener.p.v,0.0);
+val(idealOpener.p.v,1.5);
+val(idealOpener.p.i,0.0);
+val(idealOpener.p.i,1.5);
+val(idealOpener.n.v,0.0);
+val(idealOpener.n.v,1.5);
+val(idealOpener.n.i,0.0);
+val(idealOpener.n.i,1.5);
+val(idealOpener.LossPower,0.0);
+val(idealOpener.LossPower,1.5);
+val(idealOpener.control,0.0);
+val(idealOpener.control,1.5);
+val(greaterThreshold.u,0.0);
+val(greaterThreshold.u,1.5);
+val(greaterThreshold.y,0.0);
+val(greaterThreshold.y,1.5);
+val(fixed.flange.tau,0.0);
+val(fixed.flange.tau,1.5);
+val(relSpeedSensor.flange_b.phi,0.0);
+val(relSpeedSensor.flange_b.phi,1.5);
+val(relSpeedSensor.phi_rel,0.0);
+val(relSpeedSensor.phi_rel,1.5);
+val(der(relSpeedSensor.phi_rel),0.0);
+val(der(relSpeedSensor.phi_rel),1.5);
+val(relSpeedSensor.w_rel,0.0);
+val(relSpeedSensor.w_rel,1.5);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Machines.Examples.AIMC_Steinmetz_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Machines.Examples.AIMC_Steinmetz', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 165.708816528
+// 0.0
+// 153.142333984
+// 0.0
+// 153.142333984
+// 0.0
+// 52.5064125061
+// -0
+// 80.0459671021
+// 0.0
+// 165.708816528
+// 0.0
+// -80.0459671021
+// 0.0
+// 165.708816528
+// 0.0
+// 52.5064125061
+// 0.0
+// 165.708816528
+// 0.0
+// -80.0459671021
+// 0.0
+// 165.708816528
+// 0.0
+// 153.142333984
+// 0.0
+// 153.142333984
+// 0.0
+// -94.9639816284
+// 0.0
+// -94.9639816284
+// 0.0
+// 52.5064125061
+// -0
+// -52.5064125061
+// 0.0
+// 52.5064125061
+// 0.0
+// 125.87146759
+// 0.0
+// 0.000341327511705
+// -0
+// -125.871810913
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// -1.17422174414e-11
+// -0
+// 1.08654296671e-09
+// 0.0
+// 51.579914093
+// 0.0
+// -19.7065505981
+// 0.0
+// 18.6499843597
+// 0.0
+// -29708.703125
+// 0.0
+// 51.9712791443
+// 0.0
+// -2708.38525391
+// 0.0
+// -34.493309021
+// 0.0
+// -23.6029510498
+// 0.0
+// 24.3018569946
+// 0.0
+// 28599.0253906
+// 0.0
+// -34.0045204163
+// 0.0
+// 2758.93969727
+// 0.0
+// 125.871810913
+// -0
+// 51.579914093
+// 0.0
+// 0.000341327511705
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// 0.000341327511705
+// 0.0
+// -51.579914093
+// -0
+// 42.8563308716
+// 0.0
+// 125.871810913
+// 0.0
+// 8.72358322144
+// 0.0
+// 1.54739737511
+// 0.0
+// -1.28568994999
+// -0
+// -0.261707514524
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// 125.871810913
+// -0
+// 51.579914093
+// 0.0
+// 0.000341327511705
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// 124.324417114
+// 0.0
+// -51.579914093
+// 0.0
+// 1.28603124619
+// -0
+// 42.8563308716
+// 0.0
+// 0.261707514524
+// 0.0
+// 8.72358322144
+// -0
+// 1.54739737511
+// -0
+// 51.579914093
+// 0.0
+// 125.871810913
+// -0
+// 51.579914093
+// 0.0
+// 124.324417114
+// 0.0
+// -51.579914093
+// 0.0
+// 79.8146286011
+// 0.0
+// -1.28568994999
+// 0.0
+// -42.8563308716
+// 0.0
+// 0.000341327511705
+// 0.0
+// -42.8563308716
+// 0.0
+// 1.28603124619
+// -0
+// 42.8563308716
+// 0.0
+// 55.0999526978
+// -0
+// -0.261707514524
+// -0
+// -8.72358322144
+// -0
+// -8.72358322144
+// 0.0
+// 0.261707514524
+// 0.0
+// 8.72358322144
+// 0.0
+// 2.28302717209
+// 0.0
+// 1.2745360136
+// 0.0
+// 12.1439628601
+// 0.0
+// -13.4184989929
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// 124.324417114
+// -0
+// 51.579914093
+// 0.0
+// 1.28603124619
+// 0.0
+// -42.8563308716
+// 0.0
+// 0.261707514524
+// -0
+// -8.72358322144
+// 0.0
+// 123.049880981
+// 0.0
+// -51.579914093
+// 0.0
+// -10.8579311371
+// -0
+// 42.8563308716
+// -0
+// 13.6802062988
+// 0.0
+// 8.72358322144
+// 0.0
+// 1.2745360136
+// -0
+// 51.579914093
+// 0.0
+// 3934.18579102
+// 0.0
+// 124.324417114
+// -0
+// 51.579914093
+// 0.0
+// 123.049880981
+// 0.0
+// -51.579914093
+// 0.0
+// 12.1439628601
+// 0.0
+// -42.8563308716
+// 0.0
+// 37485.4882813
+// 0.0
+// 1.28603124619
+// 0.0
+// -42.8563308716
+// 0.0
+// -10.8579311371
+// -0
+// 42.8563308716
+// 0.0
+// -13.4184989929
+// -0
+// -8.72358322144
+// 0.0
+// -41419.6757813
+// 0.0
+// 0.261707514524
+// -0
+// -8.72358322144
+// -0
+// 13.6802062988
+// 0.0
+// 8.72358322144
+// 0.0
+// 123.049537659
+// 0.0
+// -10.8579311371
+// -0
+// -112.191604614
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// -0
+// -8.72358322144
+// 0.0
+// 123.049880981
+// -0
+// 51.579914093
+// 0.0
+// -10.8579311371
+// 0.0
+// -42.8563308716
+// -0
+// 13.6802062988
+// -0
+// -8.72358322144
+// 0.0
+// 0.000341327511705
+// 0.0
+// -51.579914093
+// -0
+// 42.8563308716
+// 0.0
+// 125.871810913
+// 0.0
+// 8.72358322144
+// 0.0
+// -1.17422174414e-11
+// -0
+// 1.17422174414e-11
+// -0
+// 1.17422174414e-11
+// 0.0
+// 123.049537659
+// 0.0
+// 58.5050239563
+// -0
+// -51.579914093
+// -0
+// 19.7065505981
+// 0.0
+// 52.5064125061
+// 0.0
+// 331.417633057
+// 0.0
+// 306.284667969
+// 0.0
+// 51.579914093
+// 0.0
+// -19.7065505981
+// -0
+// 3934.18579102
+// 0.0
+// 45555.9179688
+// 0.0
+// 18.6499843597
+// 0.0
+// 51.9712791443
+// 0.0
+// -34.493309021
+// 0.0
+// -23.6029510498
+// 0.0
+// 9404.03710938
+// 0.0
+// -39214.1367188
+// 0.0
+// 24.3018569946
+// 0.0
+// -34.0045204163
+// 0.0
+// 0.157629609108
+// 0.0
+// -0.399544537067
+// 0.0
+// 123.049537659
+// 0.0
+// 58.5050239563
+// 0.0
+// 0.396245002747
+// 0.0
+// 0.165749311447
+// 0.0
+// -10.2371397018
+// 0.0
+// 0.466382682323
+// 1.0
+// -0.020404541865
+// -0
+// 0.999791800976
+// 0.0
+// -0.999791800976
+// 1.0
+// -0.020404541865
+// -0
+// 306.220916748
+// -0
+// 6.24959850311
+// 0.0
+// -6.24959850311
+// -0
+// 306.220916748
+// 0.0
+// 165.708816528
+// -0
+// -52.5064125061
+// 0.0
+// 52.5064125061
+// 0.0
+// 123.049537659
+// 0.0
+// 58.5050239563
+// 0.0
+// 51.579914093
+// 0.0
+// -19.7065505981
+// 0.0
+// -10.2371397018
+// 0.0
+// 0.466382682323
+// 0.0
+// 24.3018569946
+// 0.0
+// -34.0045204163
+// 0.0
+// 17.086605072
+// 0.0
+// -43.3095016479
+// 0.0
+// 13338.2226563
+// 0.0
+// 6341.77978516
+// 0.0
+// -10.2371397018
+// 0.0
+// 0.466382682323
+// -0
+// -24.3018569946
+// -0
+// 34.0045204163
+// -0
+// -28599.0253906
+// -0
+// -2758.93969727
+// 0.0
+// 3.65916394407e-11
+// -0
+// 34.1327476501
+// 0.0
+// 3.65916394407e-11
+// -0
+// 34.1327476501
+// 0.0
+// -34.1327476501
+// 0.0
+// 3.65916394407e-11
+// -0
+// 7.1054273576e-15
+// 0.0
+// 1.0
+// 0.0
+// -0.000341327482602
+// 0.0
+// -34.1327476501
+// 0.0
+// 3.65916394407e-11
+// 0.0
+// -34.1327476501
+// 0.0
+// 0.000341327511705
+// -0
+// 34.1327476501
+// 0.0
+// 0.0116504449397
+// 0.0
+// 1.0
+// 0.0
+// 165.708816528
+// -0
+// 80.0459671021
+// 0.0
+// 165.708816528
+// -0
+// -107.585517883
+// 0.0
+// 165.708816528
+// 0.0
+// 153.142333984
+// 0.0
+// 153.142333984
+// 0.0
+// -94.9639816284
+// 0.0
+// -94.9639816284
+// 0.0
+// 165.708816528
+// 0.0
+// 107.585517883
+// 0.0
+// 165.708816528
+// 0.0
+// 153.142333984
+// 0.0
+// 153.142333984
+// -0
+// -107.585517883
+// 0.0
+// 125.871810913
+// 0.0
+// -51.579914093
+// 0.0
+// 0.000341327511705
+// -0
+// 42.8563308716
+// 0.0
+// 8.72358322144
+// 0.0
+// 0.000341327511705
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// 0.0
+// 125.871810913
+// -0
+// -8.72358322144
+// 0.0
+// 125.871810913
+// 0.0
+// 8.72358322144
+// 0.0
+// 0.000341327511705
+// 0.0
+// -51.579914093
+// -0
+// 42.8563308716
+// 0.0
+// 0.000341327511705
+// -0
+// 51.579914093
+// 0.0
+// -42.8563308716
+// 0.0
+// 125.871810913
+// -0
+// -8.72358322144
+// 0.0
+// 125.871810913
+// 0.0
+// 60.3034973145
+// 0.0
+// 0.000341327511705
+// 0.0
+// -94.4362487793
+// -0
+// 34.1327476501
+// 0.0
+// 125.871810913
+// 0.0
+// 0.000341327511705
+// 0.0
+// -34.1327476501
+// -0
+// 34.1327476501
+// 0.0
+// 125.871810913
+// 0.0
+// 0.000341327511705
+// -0
+// 94.4362487793
+// 0.0
+// 0.000341327511705
+// 0.0
+// -94.4362487793
+// 0.0
+// 125.871810913
+// -0
+// -60.3034973145
+// 0.0
+// 0.000341327511705
+// 0.0
+// 125.871810913
+// 0.0
+// 60.3034973145
+// 0.0
+// -125.87146759
+// 0.0
+// 17230.0078125
+// 0.0
+// 60.3050308228
+// 0.0
+// 0.000341327511705
+// 0.0
+// 60.3050308228
+// 0.0
+// 125.871810913
+// -0
+// -60.3050308228
+// 0.0
+// 27.3602218628
+// 0.0
+// -0.0875609666109
+// 0.0
+// -0.00153231690638
+// 0.0
+// 153.232040405
+// 0.0
+// -0.00153231690638
+// 0.0
+// 125.871810913
+// -0
+// 0.00153231690638
+// 0.0
+// -153.231689453
+// 0.0
+// -0.00153231690638
+// 0.0
+// 0.000341327511705
+// 0.0
+// -0.00153231690638
+// 0.0
+// 153.232040405
+// -0
+// 0.00153231690638
+// 0.0
+// 0.234799519181
+// 0.0
+// 1.0
+// 0.0
+// 153.142333984
+// 0.0
+// 1.0
+// -0
+// -52.5064125061
+// 0.0
+// 165.708816528
+// 0.0
+// 165.708816528
+// 0.0
+// 153.142333984
+// 0.0
+// 153.142333984
+// endResult

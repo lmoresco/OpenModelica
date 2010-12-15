@@ -11,13 +11,60 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.SignConvention);
-
+val(mass1.s,0.0);
+val(mass1.s,1.0);
 val(der(mass1.s),0.0);
+val(der(mass1.s),1.0);
+val(mass1.flange_a.s,0.0);
+val(mass1.flange_a.s,1.0);
+val(mass1.flange_b.s,0.0);
+val(mass1.flange_b.s,1.0);
+val(mass1.v,0.0);
+val(mass1.v,1.0);
 val(der(mass1.v),0.0);
+val(der(mass1.v),1.0);
+val(mass1.a,0.0);
+val(mass1.a,1.0);
+val(force1.s,0.0);
+val(force1.s,1.0);
+val(force1.flange.s,0.0);
+val(force1.flange.s,1.0);
+val(mass2.s,0.0);
+val(mass2.s,1.0);
 val(der(mass2.s),0.0);
+val(der(mass2.s),1.0);
+val(mass2.flange_a.s,0.0);
+val(mass2.flange_a.s,1.0);
+val(mass2.flange_b.s,0.0);
+val(mass2.flange_b.s,1.0);
+val(mass2.v,0.0);
+val(mass2.v,1.0);
 val(der(mass2.v),0.0);
+val(der(mass2.v),1.0);
+val(mass2.a,0.0);
+val(mass2.a,1.0);
+val(force2.s,0.0);
+val(force2.s,1.0);
+val(force2.flange.s,0.0);
+val(force2.flange.s,1.0);
+val(mass3.s,0.0);
+val(mass3.s,1.0);
 val(der(mass3.s),0.0);
+val(der(mass3.s),1.0);
+val(mass3.flange_a.s,0.0);
+val(mass3.flange_a.s,1.0);
+val(mass3.flange_b.s,0.0);
+val(mass3.flange_b.s,1.0);
+val(mass3.v,0.0);
+val(mass3.v,1.0);
 val(der(mass3.v),0.0);
+val(der(mass3.v),1.0);
+val(mass3.a,0.0);
+val(mass3.a,1.0);
+val(force3.s,0.0);
+val(force3.s,1.0);
+val(force3.flange.s,0.0);
+val(force3.flange.s,1.0);
 
 // Result:
 // true
@@ -28,9 +75,57 @@ val(der(mass3.v),0.0);
 //     messages = ""
 // end SimulationResult;
 // 0.0
+// 0.5
+// 0.0
+// 1.0
+// -0.5
+// 9.316236671e-11
+// 0.5
 // 1.0
 // 0.0
 // 1.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// -0.5
+// 9.316236671e-11
+// -0.5
+// 9.316236671e-11
 // 0.0
+// 0.5
+// 0.0
+// 1.0
+// -0.5
+// 9.316236671e-11
+// 0.5
+// 1.0
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// 0.5
+// 1.0
+// 0.5
+// 1.0
+// 0.0
+// 0.5
+// 0.0
+// 1.0
+// -0.5
+// 9.316236671e-11
+// 0.5
+// 1.0
+// 0.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// 1.0
+// 0.5
+// 1.0
+// 0.5
 // 1.0
 // endResult

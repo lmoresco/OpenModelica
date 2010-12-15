@@ -11,9 +11,66 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Sensors);
-
+val(forceSensor.flange_a.s,0.0);
+val(forceSensor.flange_a.s,1.0);
+val(forceSensor.flange_a.f,0.0);
+val(forceSensor.flange_a.f,1.0);
+val(forceSensor.flange_b.s,0.0);
+val(forceSensor.flange_b.s,1.0);
+val(forceSensor.flange_b.f,0.0);
+val(forceSensor.flange_b.f,1.0);
+val(forceSensor.f,0.0);
+val(forceSensor.f,1.0);
+val(speedSensor1.flange.s,0.0);
+val(speedSensor1.flange.s,1.0);
+val(der(speedSensor1.flange.s),0.0);
+val(der(speedSensor1.flange.s),1.0);
+val(speedSensor1.v,0.0);
+val(speedSensor1.v,1.0);
+val(positionSensor1.flange.s,0.0);
+val(positionSensor1.flange.s,1.0);
+val(positionSensor1.s,0.0);
+val(positionSensor1.s,1.0);
+val(accSensor1.flange.s,0.0);
+val(accSensor1.flange.s,1.0);
+val(der(accSensor1.flange.s),0.0);
+val(der(accSensor1.flange.s),1.0);
+val(accSensor1.v,0.0);
+val(accSensor1.v,1.0);
+val(der(accSensor1.v),0.0);
+val(der(accSensor1.v),1.0);
+val(accSensor1.a,0.0);
+val(accSensor1.a,1.0);
+val(mass.s,0.0);
+val(mass.s,1.0);
 val(der(mass.s),0.0);
+val(der(mass.s),1.0);
+val(mass.flange_a.s,0.0);
+val(mass.flange_a.s,1.0);
+val(mass.flange_a.f,0.0);
+val(mass.flange_a.f,1.0);
+val(mass.flange_b.s,0.0);
+val(mass.flange_b.s,1.0);
+val(mass.v,0.0);
+val(mass.v,1.0);
 val(der(mass.v),0.0);
+val(der(mass.v),1.0);
+val(mass.a,0.0);
+val(mass.a,1.0);
+val(force.s,0.0);
+val(force.s,1.0);
+val(force.flange.s,0.0);
+val(force.flange.s,1.0);
+val(force.flange.f,0.0);
+val(force.flange.f,1.0);
+val(force.f,0.0);
+val(force.f,1.0);
+val(sineForce.y,0.0);
+val(sineForce.y,1.0);
+val(positionSensor2.flange.s,0.0);
+val(positionSensor2.flange.s,1.0);
+val(positionSensor2.s,0.0);
+val(positionSensor2.s,1.0);
 
 // Result:
 // true
@@ -23,6 +80,64 @@ val(der(mass.v),0.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Sensors', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
+// -0.5
+// -0.10194671154
 // 0.0
+// 1.32311371061e-13
+// -0.5
+// -0.10194671154
+// -0
+// -1.32311371061e-13
 // 0.0
+// 1.32311371061e-13
+// -0.5
+// -0.10194671154
+// 0.0
+// 9.9610457255e-05
+// 0.0
+// 9.9610457255e-05
+// -0.5
+// -0.10194671154
+// -0.5
+// -0.10194671154
+// -0.5
+// -0.10194671154
+// 0.0
+// 9.9610457255e-05
+// 0.0
+// 9.9610457255e-05
+// 0.0
+// 1.32311371061e-13
+// 0.0
+// 1.32311371061e-13
+// 0.0
+// 0.39805328846
+// 0.0
+// 9.9610457255e-05
+// -0.5
+// -0.10194671154
+// 0.0
+// 1.32311371061e-13
+// 0.5
+// 0.89805328846
+// 0.0
+// 9.9610457255e-05
+// 0.0
+// 1.32311371061e-13
+// 0.0
+// 1.32311371061e-13
+// -0.5
+// -0.10194671154
+// -0.5
+// -0.10194671154
+// -0
+// -1.32311371061e-13
+// 0.0
+// 1.32311371061e-13
+// 0.0
+// 1.32311371061e-13
+// 0.5
+// 0.89805328846
+// 0.5
+// 0.89805328846
 // endResult

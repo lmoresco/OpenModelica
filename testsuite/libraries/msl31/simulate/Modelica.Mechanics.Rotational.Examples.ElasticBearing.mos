@@ -1,0 +1,243 @@
+// name:     Modelica.Mechanics.Rotational.Examples.ElasticBearing
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.ElasticBearing_* Modelica.Mechanics.Rotational.Examples.ElasticBearing Modelica.Mechanics.Rotational.Examples.ElasticBearing.exe Modelica.Mechanics.Rotational.Examples.ElasticBearing.cpp Modelica.Mechanics.Rotational.Examples.ElasticBearing.makefile Modelica.Mechanics.Rotational.Examples.ElasticBearing.libs Modelica.Mechanics.Rotational.Examples.ElasticBearing.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Rotational.Examples.ElasticBearing);
+val(shaft.flange_a.phi,0.0);
+val(shaft.flange_a.phi,1.0);
+val(shaft.flange_a.tau,0.0);
+val(shaft.flange_a.tau,1.0);
+val(shaft.flange_b.phi,0.0);
+val(shaft.flange_b.phi,1.0);
+val(shaft.flange_b.tau,0.0);
+val(shaft.flange_b.tau,1.0);
+val(shaft.phi,0.0);
+val(shaft.phi,1.0);
+val(der(shaft.phi),0.0);
+val(der(shaft.phi),1.0);
+val(shaft.w,0.0);
+val(shaft.w,1.0);
+val(der(shaft.w),0.0);
+val(der(shaft.w),1.0);
+val(shaft.a,0.0);
+val(shaft.a,1.0);
+val(load.flange_a.phi,0.0);
+val(load.flange_a.phi,1.0);
+val(load.flange_a.tau,0.0);
+val(load.flange_a.tau,1.0);
+val(load.flange_b.phi,0.0);
+val(load.flange_b.phi,1.0);
+val(load.phi,0.0);
+val(load.phi,1.0);
+val(der(load.phi),0.0);
+val(der(load.phi),1.0);
+val(load.w,0.0);
+val(load.w,1.0);
+val(der(load.w),0.0);
+val(der(load.w),1.0);
+val(load.a,0.0);
+val(load.a,1.0);
+val(spring.phi_rel,0.0);
+val(spring.phi_rel,1.0);
+val(spring.tau,0.0);
+val(spring.tau,1.0);
+val(spring.flange_a.phi,0.0);
+val(spring.flange_a.phi,1.0);
+val(spring.flange_a.tau,0.0);
+val(spring.flange_a.tau,1.0);
+val(spring.flange_b.phi,0.0);
+val(spring.flange_b.phi,1.0);
+val(spring.flange_b.tau,0.0);
+val(spring.flange_b.tau,1.0);
+val(fixed.flange.tau,0.0);
+val(fixed.flange.tau,1.0);
+val(springDamper.phi_rel,0.0);
+val(springDamper.phi_rel,1.0);
+val(der(springDamper.phi_rel),0.0);
+val(der(springDamper.phi_rel),1.0);
+val(springDamper.w_rel,0.0);
+val(springDamper.w_rel,1.0);
+val(der(springDamper.w_rel),0.0);
+val(der(springDamper.w_rel),1.0);
+val(springDamper.a_rel,0.0);
+val(springDamper.a_rel,1.0);
+val(springDamper.tau,0.0);
+val(springDamper.tau,1.0);
+val(springDamper.flange_a.tau,0.0);
+val(springDamper.flange_a.tau,1.0);
+val(springDamper.flange_b.phi,0.0);
+val(springDamper.flange_b.phi,1.0);
+val(springDamper.flange_b.tau,0.0);
+val(springDamper.flange_b.tau,1.0);
+val(torque.flange.phi,0.0);
+val(torque.flange.phi,1.0);
+val(torque.flange.tau,0.0);
+val(torque.flange.tau,1.0);
+val(torque.support.tau,0.0);
+val(torque.support.tau,1.0);
+val(torque.tau,0.0);
+val(torque.tau,1.0);
+val(ramp.y,0.0);
+val(ramp.y,1.0);
+val(idealGear.flange_a.phi,0.0);
+val(idealGear.flange_a.phi,1.0);
+val(idealGear.flange_a.tau,0.0);
+val(idealGear.flange_a.tau,1.0);
+val(idealGear.flange_b.phi,0.0);
+val(idealGear.flange_b.phi,1.0);
+val(idealGear.flange_b.tau,0.0);
+val(idealGear.flange_b.tau,1.0);
+val(idealGear.support.phi,0.0);
+val(idealGear.support.phi,1.0);
+val(idealGear.support.tau,0.0);
+val(idealGear.support.tau,1.0);
+val(idealGear.phi_a,0.0);
+val(idealGear.phi_a,1.0);
+val(idealGear.phi_b,0.0);
+val(idealGear.phi_b,1.0);
+val(housing.flange_a.phi,0.0);
+val(housing.flange_a.phi,1.0);
+val(housing.flange_a.tau,0.0);
+val(housing.flange_a.tau,1.0);
+val(housing.flange_b.phi,0.0);
+val(housing.flange_b.phi,1.0);
+val(housing.flange_b.tau,0.0);
+val(housing.flange_b.tau,1.0);
+val(housing.phi,0.0);
+val(housing.phi,1.0);
+val(der(housing.phi),0.0);
+val(der(housing.phi),1.0);
+val(housing.w,0.0);
+val(housing.w,1.0);
+val(der(housing.w),0.0);
+val(der(housing.w),1.0);
+val(housing.a,0.0);
+val(housing.a,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.ElasticBearing_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.648762226105
+// 0.0
+// 20.0
+// 0.0
+// 0.648762226105
+// 0.0
+// -18.3102073669
+// 0.0
+// 0.648762226105
+// 0.0
+// 1.60174286366
+// 0.0
+// 1.60174286366
+// 0.0
+// 1.68979299068
+// 0.0
+// 1.68979299068
+// 0.0
+// 0.161079213023
+// -0
+// 54.9306221008
+// 0.0
+// 0.161079213023
+// 0.0
+// 0.161079213023
+// 0.0
+// 0.503895401955
+// 0.0
+// 0.503895401955
+// -0
+// 1.09861242771
+// -0
+// 1.09861242771
+// 0.0
+// -0.0549306198955
+// 0.0
+// -54.9306221008
+// 0.0
+// 0.216009840369
+// -0
+// 54.9306221008
+// 0.0
+// 0.161079213023
+// 0.0
+// -54.9306221008
+// 0.0
+// -56.6360549927
+// 0.0
+// -0.000366350257536
+// 0.0
+// -0.000205793126952
+// 0.0
+// -0.000205793126952
+// 0.0
+// 0.00312827341259
+// 0.0
+// 0.00312827341259
+// 0.0
+// -36.6360549927
+// -0
+// 36.6360549927
+// 0.0
+// -0.000366350257536
+// 0.0
+// -36.6360549927
+// 0.0
+// 0.648762226105
+// -0
+// -20.0
+// 0.0
+// 20.0
+// 0.0
+// 20.0
+// 0.0
+// 20.0
+// 0.0
+// 0.648762226105
+// -0
+// 18.3102073669
+// 0.0
+// 0.216009840369
+// 0.0
+// -54.9306221008
+// 0.0
+// -0.000366350257536
+// -0
+// 36.6204147339
+// 0.0
+// 0.649128556252
+// 0.0
+// 0.216376185417
+// 0.0
+// -0.000366350257536
+// -0
+// 36.6360549927
+// 0.0
+// -0.000366350257536
+// 0.0
+// -36.6204147339
+// 0.0
+// -0.000366350257536
+// 0.0
+// -0.000205793126952
+// 0.0
+// -0.000205793126952
+// 0.0
+// 0.00312827341259
+// 0.0
+// 0.00312827341259
+// endResult

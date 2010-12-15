@@ -1,0 +1,1467 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2_* Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.exe Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.cpp Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.makefile Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.libs Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2);
+val(world.frame_b.f[1],0.0);
+val(world.frame_b.f[1],5.0);
+val(world.frame_b.f[2],0.0);
+val(world.frame_b.f[2],5.0);
+val(world.frame_b.f[3],0.0);
+val(world.frame_b.f[3],5.0);
+val(world.frame_b.t[1],0.0);
+val(world.frame_b.t[1],5.0);
+val(world.frame_b.t[2],0.0);
+val(world.frame_b.t[2],5.0);
+val(world.frame_b.t[3],0.0);
+val(world.frame_b.t[3],5.0);
+val(j1_phi,0.0);
+val(j1_phi,5.0);
+val(j2_s,0.0);
+val(j2_s,5.0);
+val(j1_w,0.0);
+val(j1_w,5.0);
+val(j2_v,0.0);
+val(j2_v,5.0);
+val(j1.frame_a.f[1],0.0);
+val(j1.frame_a.f[1],5.0);
+val(j1.frame_a.f[2],0.0);
+val(j1.frame_a.f[2],5.0);
+val(j1.frame_a.f[3],0.0);
+val(j1.frame_a.f[3],5.0);
+val(j1.frame_a.t[2],0.0);
+val(j1.frame_a.t[2],5.0);
+val(j1.frame_a.t[3],0.0);
+val(j1.frame_a.t[3],5.0);
+val(j1.frame_b.R.T[2,2],0.0);
+val(j1.frame_b.R.T[2,2],5.0);
+val(j1.frame_b.R.T[2,3],0.0);
+val(j1.frame_b.R.T[2,3],5.0);
+val(j1.frame_b.R.T[3,2],0.0);
+val(j1.frame_b.R.T[3,2],5.0);
+val(j1.frame_b.R.T[3,3],0.0);
+val(j1.frame_b.R.T[3,3],5.0);
+val(j1.frame_b.R.w[1],0.0);
+val(j1.frame_b.R.w[1],5.0);
+val(j1.frame_b.f[1],0.0);
+val(j1.frame_b.f[1],5.0);
+val(j1.frame_b.f[2],0.0);
+val(j1.frame_b.f[2],5.0);
+val(j1.frame_b.f[3],0.0);
+val(j1.frame_b.f[3],5.0);
+val(j1.frame_b.t[2],0.0);
+val(j1.frame_b.t[2],5.0);
+val(j1.frame_b.t[3],0.0);
+val(j1.frame_b.t[3],5.0);
+val(j1.phi,0.0);
+val(j1.phi,5.0);
+val(der(j1.phi),0.0);
+val(der(j1.phi),5.0);
+val(j1.w,0.0);
+val(j1.w,5.0);
+val(der(j1.w),0.0);
+val(der(j1.w),5.0);
+val(j1.a,0.0);
+val(j1.a,5.0);
+val(j1.angle,0.0);
+val(j1.angle,5.0);
+val(j2.frame_a.f[2],0.0);
+val(j2.frame_a.f[2],5.0);
+val(j2.frame_a.f[3],0.0);
+val(j2.frame_a.f[3],5.0);
+val(j2.frame_a.t[1],0.0);
+val(j2.frame_a.t[1],5.0);
+val(j2.frame_a.t[2],0.0);
+val(j2.frame_a.t[2],5.0);
+val(j2.frame_a.t[3],0.0);
+val(j2.frame_a.t[3],5.0);
+val(j2.frame_b.r_0[1],0.0);
+val(j2.frame_b.r_0[1],5.0);
+val(j2.frame_b.f[2],0.0);
+val(j2.frame_b.f[2],5.0);
+val(j2.frame_b.f[3],0.0);
+val(j2.frame_b.f[3],5.0);
+val(j2.frame_b.t[1],0.0);
+val(j2.frame_b.t[1],5.0);
+val(j2.frame_b.t[2],0.0);
+val(j2.frame_b.t[2],5.0);
+val(j2.frame_b.t[3],0.0);
+val(j2.frame_b.t[3],5.0);
+val(j2.s,0.0);
+val(j2.s,5.0);
+val(der(j2.s),0.0);
+val(der(j2.s),5.0);
+val(j2.v,0.0);
+val(j2.v,5.0);
+val(der(j2.v),0.0);
+val(der(j2.v),5.0);
+val(j2.a,0.0);
+val(j2.a,5.0);
+val(j2.box.size[1],0.0);
+val(j2.box.size[1],5.0);
+val(b1.frame_a.R.T[2,2],0.0);
+val(b1.frame_a.R.T[2,2],5.0);
+val(b1.frame_a.R.T[2,3],0.0);
+val(b1.frame_a.R.T[2,3],5.0);
+val(b1.frame_a.R.T[3,2],0.0);
+val(b1.frame_a.R.T[3,2],5.0);
+val(b1.frame_a.R.T[3,3],0.0);
+val(b1.frame_a.R.T[3,3],5.0);
+val(b1.frame_a.R.w[1],0.0);
+val(b1.frame_a.R.w[1],5.0);
+val(b1.frame_a.f[1],0.0);
+val(b1.frame_a.f[1],5.0);
+val(b1.frame_a.f[2],0.0);
+val(b1.frame_a.f[2],5.0);
+val(b1.frame_a.f[3],0.0);
+val(b1.frame_a.f[3],5.0);
+val(b1.frame_a.t[2],0.0);
+val(b1.frame_a.t[2],5.0);
+val(b1.frame_a.t[3],0.0);
+val(b1.frame_a.t[3],5.0);
+val(b1.frame_b.r_0[2],0.0);
+val(b1.frame_b.r_0[2],5.0);
+val(b1.frame_b.r_0[3],0.0);
+val(b1.frame_b.r_0[3],5.0);
+val(b1.frame_b.R.T[2,2],0.0);
+val(b1.frame_b.R.T[2,2],5.0);
+val(b1.frame_b.R.T[2,3],0.0);
+val(b1.frame_b.R.T[2,3],5.0);
+val(b1.frame_b.R.T[3,2],0.0);
+val(b1.frame_b.R.T[3,2],5.0);
+val(b1.frame_b.R.T[3,3],0.0);
+val(b1.frame_b.R.T[3,3],5.0);
+val(b1.frame_b.R.w[1],0.0);
+val(b1.frame_b.R.w[1],5.0);
+val(b1.frame_b.f[1],0.0);
+val(b1.frame_b.f[1],5.0);
+val(b1.frame_b.f[2],0.0);
+val(b1.frame_b.f[2],5.0);
+val(b1.frame_b.f[3],0.0);
+val(b1.frame_b.f[3],5.0);
+val(b1.body.frame_a.R.T[2,2],0.0);
+val(b1.body.frame_a.R.T[2,2],5.0);
+val(b1.body.frame_a.R.T[2,3],0.0);
+val(b1.body.frame_a.R.T[2,3],5.0);
+val(b1.body.frame_a.R.T[3,2],0.0);
+val(b1.body.frame_a.R.T[3,2],5.0);
+val(b1.body.frame_a.R.T[3,3],0.0);
+val(b1.body.frame_a.R.T[3,3],5.0);
+val(b1.body.frame_a.R.w[1],0.0);
+val(b1.body.frame_a.R.w[1],5.0);
+val(b1.body.frame_a.f[2],0.0);
+val(b1.body.frame_a.f[2],5.0);
+val(b1.body.frame_a.f[3],0.0);
+val(b1.body.frame_a.f[3],5.0);
+val(b1.body.frame_a.t[1],0.0);
+val(b1.body.frame_a.t[1],5.0);
+val(b1.body.frame_a.t[2],0.0);
+val(b1.body.frame_a.t[2],5.0);
+val(b1.body.frame_a.t[3],0.0);
+val(b1.body.frame_a.t[3],5.0);
+val(b1.body.w_a[1],0.0);
+val(b1.body.w_a[1],5.0);
+val(der(b1.body.w_a[1]),0.0);
+val(der(b1.body.w_a[1]),5.0);
+val(b1.body.z_a[1],0.0);
+val(b1.body.z_a[1],5.0);
+val(b1.frameTranslation.frame_a.R.T[2,2],0.0);
+val(b1.frameTranslation.frame_a.R.T[2,2],5.0);
+val(b1.frameTranslation.frame_a.R.T[2,3],0.0);
+val(b1.frameTranslation.frame_a.R.T[2,3],5.0);
+val(b1.frameTranslation.frame_a.R.T[3,2],0.0);
+val(b1.frameTranslation.frame_a.R.T[3,2],5.0);
+val(b1.frameTranslation.frame_a.R.T[3,3],0.0);
+val(b1.frameTranslation.frame_a.R.T[3,3],5.0);
+val(b1.frameTranslation.frame_a.R.w[1],0.0);
+val(b1.frameTranslation.frame_a.R.w[1],5.0);
+val(b1.frameTranslation.frame_a.f[1],0.0);
+val(b1.frameTranslation.frame_a.f[1],5.0);
+val(b1.frameTranslation.frame_a.f[2],0.0);
+val(b1.frameTranslation.frame_a.f[2],5.0);
+val(b1.frameTranslation.frame_a.f[3],0.0);
+val(b1.frameTranslation.frame_a.f[3],5.0);
+val(b1.frameTranslation.frame_a.t[1],0.0);
+val(b1.frameTranslation.frame_a.t[1],5.0);
+val(b1.frameTranslation.frame_a.t[2],0.0);
+val(b1.frameTranslation.frame_a.t[2],5.0);
+val(b1.frameTranslation.frame_a.t[3],0.0);
+val(b1.frameTranslation.frame_a.t[3],5.0);
+val(b1.frameTranslation.frame_b.r_0[2],0.0);
+val(b1.frameTranslation.frame_b.r_0[2],5.0);
+val(b1.frameTranslation.frame_b.r_0[3],0.0);
+val(b1.frameTranslation.frame_b.r_0[3],5.0);
+val(b1.frameTranslation.frame_b.R.T[2,2],0.0);
+val(b1.frameTranslation.frame_b.R.T[2,2],5.0);
+val(b1.frameTranslation.frame_b.R.T[2,3],0.0);
+val(b1.frameTranslation.frame_b.R.T[2,3],5.0);
+val(b1.frameTranslation.frame_b.R.T[3,2],0.0);
+val(b1.frameTranslation.frame_b.R.T[3,2],5.0);
+val(b1.frameTranslation.frame_b.R.T[3,3],0.0);
+val(b1.frameTranslation.frame_b.R.T[3,3],5.0);
+val(b1.frameTranslation.frame_b.R.w[1],0.0);
+val(b1.frameTranslation.frame_b.R.w[1],5.0);
+val(b1.frameTranslation.frame_b.f[1],0.0);
+val(b1.frameTranslation.frame_b.f[1],5.0);
+val(b1.frameTranslation.frame_b.f[2],0.0);
+val(b1.frameTranslation.frame_b.f[2],5.0);
+val(b1.frameTranslation.frame_b.f[3],0.0);
+val(b1.frameTranslation.frame_b.f[3],5.0);
+val(b1.frameTranslation.shape.rxvisobj[2],0.0);
+val(b1.frameTranslation.shape.rxvisobj[2],5.0);
+val(b1.frameTranslation.shape.rxvisobj[3],0.0);
+val(b1.frameTranslation.shape.rxvisobj[3],5.0);
+val(b1.frameTranslation.shape.ryvisobj[2],0.0);
+val(b1.frameTranslation.shape.ryvisobj[2],5.0);
+val(b1.frameTranslation.shape.ryvisobj[3],0.0);
+val(b1.frameTranslation.shape.ryvisobj[3],5.0);
+val(b2.frame_a.r_0[1],0.0);
+val(b2.frame_a.r_0[1],5.0);
+val(b2.frame_a.f[2],0.0);
+val(b2.frame_a.f[2],5.0);
+val(b2.frame_a.f[3],0.0);
+val(b2.frame_a.f[3],5.0);
+val(b2.frame_a.t[1],0.0);
+val(b2.frame_a.t[1],5.0);
+val(b2.frame_a.t[2],0.0);
+val(b2.frame_a.t[2],5.0);
+val(b2.frame_a.t[3],0.0);
+val(b2.frame_a.t[3],5.0);
+val(b2.frame_b.r_0[1],0.0);
+val(b2.frame_b.r_0[1],5.0);
+val(b2.frame_b.f[1],0.0);
+val(b2.frame_b.f[1],5.0);
+val(b2.frame_b.f[2],0.0);
+val(b2.frame_b.f[2],5.0);
+val(b2.frame_b.f[3],0.0);
+val(b2.frame_b.f[3],5.0);
+val(b2.frame_b.t[1],0.0);
+val(b2.frame_b.t[1],5.0);
+val(b2.frame_b.t[2],0.0);
+val(b2.frame_b.t[2],5.0);
+val(b2.frame_b.t[3],0.0);
+val(b2.frame_b.t[3],5.0);
+val(b2.r_0[1],0.0);
+val(b2.r_0[1],5.0);
+val(der(b2.r_0[1]),0.0);
+val(der(b2.r_0[1]),5.0);
+val(b2.v_0[1],0.0);
+val(b2.v_0[1],5.0);
+val(der(b2.v_0[1]),0.0);
+val(der(b2.v_0[1]),5.0);
+val(b2.a_0[1],0.0);
+val(b2.a_0[1],5.0);
+val(b2.body.frame_a.r_0[1],0.0);
+val(b2.body.frame_a.r_0[1],5.0);
+val(der(b2.body.frame_a.r_0[1]),0.0);
+val(der(b2.body.frame_a.r_0[1]),5.0);
+val(b2.body.frame_a.f[1],0.0);
+val(b2.body.frame_a.f[1],5.0);
+val(b2.body.frame_a.t[3],0.0);
+val(b2.body.frame_a.t[3],5.0);
+val(b2.body.r_0[1],0.0);
+val(b2.body.r_0[1],5.0);
+val(b2.body.v_0[1],0.0);
+val(b2.body.v_0[1],5.0);
+val(der(b2.body.v_0[1]),0.0);
+val(der(b2.body.v_0[1]),5.0);
+val(b2.body.a_0[1],0.0);
+val(b2.body.a_0[1],5.0);
+val(b2.frameTranslation.frame_a.r_0[1],0.0);
+val(b2.frameTranslation.frame_a.r_0[1],5.0);
+val(b2.frameTranslation.frame_a.f[1],0.0);
+val(b2.frameTranslation.frame_a.f[1],5.0);
+val(b2.frameTranslation.frame_a.f[2],0.0);
+val(b2.frameTranslation.frame_a.f[2],5.0);
+val(b2.frameTranslation.frame_a.f[3],0.0);
+val(b2.frameTranslation.frame_a.f[3],5.0);
+val(b2.frameTranslation.frame_a.t[1],0.0);
+val(b2.frameTranslation.frame_a.t[1],5.0);
+val(b2.frameTranslation.frame_a.t[2],0.0);
+val(b2.frameTranslation.frame_a.t[2],5.0);
+val(b2.frameTranslation.frame_a.t[3],0.0);
+val(b2.frameTranslation.frame_a.t[3],5.0);
+val(b2.frameTranslation.frame_b.r_0[1],0.0);
+val(b2.frameTranslation.frame_b.r_0[1],5.0);
+val(b2.frameTranslation.frame_b.f[1],0.0);
+val(b2.frameTranslation.frame_b.f[1],5.0);
+val(b2.frameTranslation.frame_b.f[2],0.0);
+val(b2.frameTranslation.frame_b.f[2],5.0);
+val(b2.frameTranslation.frame_b.f[3],0.0);
+val(b2.frameTranslation.frame_b.f[3],5.0);
+val(b2.frameTranslation.frame_b.t[1],0.0);
+val(b2.frameTranslation.frame_b.t[1],5.0);
+val(b2.frameTranslation.frame_b.t[2],0.0);
+val(b2.frameTranslation.frame_b.t[2],5.0);
+val(b2.frameTranslation.frame_b.t[3],0.0);
+val(b2.frameTranslation.frame_b.t[3],5.0);
+val(b2.frameTranslation.shape.rvisobj[1],0.0);
+val(b2.frameTranslation.shape.rvisobj[1],5.0);
+val(universalSpherical.frame_a.r_0[1],0.0);
+val(universalSpherical.frame_a.r_0[1],5.0);
+val(universalSpherical.frame_a.f[1],0.0);
+val(universalSpherical.frame_a.f[1],5.0);
+val(universalSpherical.frame_a.f[2],0.0);
+val(universalSpherical.frame_a.f[2],5.0);
+val(universalSpherical.frame_a.f[3],0.0);
+val(universalSpherical.frame_a.f[3],5.0);
+val(universalSpherical.frame_a.t[1],0.0);
+val(universalSpherical.frame_a.t[1],5.0);
+val(universalSpherical.frame_a.t[2],0.0);
+val(universalSpherical.frame_a.t[2],5.0);
+val(universalSpherical.frame_a.t[3],0.0);
+val(universalSpherical.frame_a.t[3],5.0);
+val(universalSpherical.frame_b.r_0[2],0.0);
+val(universalSpherical.frame_b.r_0[2],5.0);
+val(universalSpherical.frame_b.r_0[3],0.0);
+val(universalSpherical.frame_b.r_0[3],5.0);
+val(der(universalSpherical.frame_b.r_0[2]),0.0);
+val(der(universalSpherical.frame_b.r_0[2]),5.0);
+val(der(universalSpherical.frame_b.r_0[2],2),0.0);
+val(der(universalSpherical.frame_b.r_0[2],2),5.0);
+val(der(universalSpherical.frame_b.r_0[3]),0.0);
+val(der(universalSpherical.frame_b.r_0[3]),5.0);
+val(der(universalSpherical.frame_b.r_0[3],2),0.0);
+val(der(universalSpherical.frame_b.r_0[3],2),5.0);
+val(universalSpherical.frame_b.R.T[2,2],0.0);
+val(universalSpherical.frame_b.R.T[2,2],5.0);
+val(universalSpherical.frame_b.R.T[2,3],0.0);
+val(universalSpherical.frame_b.R.T[2,3],5.0);
+val(universalSpherical.frame_b.R.T[3,2],0.0);
+val(universalSpherical.frame_b.R.T[3,2],5.0);
+val(universalSpherical.frame_b.R.T[3,3],0.0);
+val(universalSpherical.frame_b.R.T[3,3],5.0);
+val(der(universalSpherical.frame_b.R.T[2,2]),0.0);
+val(der(universalSpherical.frame_b.R.T[2,2]),5.0);
+val(der(universalSpherical.frame_b.R.T[2,2],2),0.0);
+val(der(universalSpherical.frame_b.R.T[2,2],2),5.0);
+val(der(universalSpherical.frame_b.R.T[2,3]),0.0);
+val(der(universalSpherical.frame_b.R.T[2,3]),5.0);
+val(der(universalSpherical.frame_b.R.T[2,3],2),0.0);
+val(der(universalSpherical.frame_b.R.T[2,3],2),5.0);
+val(der(universalSpherical.frame_b.R.T[3,2]),0.0);
+val(der(universalSpherical.frame_b.R.T[3,2]),5.0);
+val(der(universalSpherical.frame_b.R.T[3,2],2),0.0);
+val(der(universalSpherical.frame_b.R.T[3,2],2),5.0);
+val(der(universalSpherical.frame_b.R.T[3,3]),0.0);
+val(der(universalSpherical.frame_b.R.T[3,3]),5.0);
+val(der(universalSpherical.frame_b.R.T[3,3],2),0.0);
+val(der(universalSpherical.frame_b.R.T[3,3],2),5.0);
+val(universalSpherical.frame_b.R.w[1],0.0);
+val(universalSpherical.frame_b.R.w[1],5.0);
+val(universalSpherical.frame_b.f[1],0.0);
+val(universalSpherical.frame_b.f[1],5.0);
+val(universalSpherical.frame_b.f[2],0.0);
+val(universalSpherical.frame_b.f[2],5.0);
+val(universalSpherical.frame_b.f[3],0.0);
+val(universalSpherical.frame_b.f[3],5.0);
+val(universalSpherical.frame_ia.r_0[1],0.0);
+val(universalSpherical.frame_ia.r_0[1],5.0);
+val(universalSpherical.frame_ia.R.T[1,1],0.0);
+val(universalSpherical.frame_ia.R.T[1,1],5.0);
+val(universalSpherical.frame_ia.R.T[1,2],0.0);
+val(universalSpherical.frame_ia.R.T[1,2],5.0);
+val(universalSpherical.frame_ia.R.T[1,3],0.0);
+val(universalSpherical.frame_ia.R.T[1,3],5.0);
+val(universalSpherical.frame_ia.R.T[2,1],0.0);
+val(universalSpherical.frame_ia.R.T[2,1],5.0);
+val(universalSpherical.frame_ia.R.T[2,2],0.0);
+val(universalSpherical.frame_ia.R.T[2,2],5.0);
+val(universalSpherical.frame_ia.R.T[2,3],0.0);
+val(universalSpherical.frame_ia.R.T[2,3],5.0);
+val(universalSpherical.frame_ia.R.T[3,1],0.0);
+val(universalSpherical.frame_ia.R.T[3,1],5.0);
+val(universalSpherical.frame_ia.R.T[3,2],0.0);
+val(universalSpherical.frame_ia.R.T[3,2],5.0);
+val(universalSpherical.frame_ia.R.T[3,3],0.0);
+val(universalSpherical.frame_ia.R.T[3,3],5.0);
+val(universalSpherical.frame_ia.R.w[1],0.0);
+val(universalSpherical.frame_ia.R.w[1],5.0);
+val(universalSpherical.frame_ia.R.w[2],0.0);
+val(universalSpherical.frame_ia.R.w[2],5.0);
+val(universalSpherical.frame_ia.R.w[3],0.0);
+val(universalSpherical.frame_ia.R.w[3],5.0);
+val(universalSpherical.f_rod,0.0);
+val(universalSpherical.f_rod,5.0);
+val(universalSpherical.eRod_a[1],0.0);
+val(universalSpherical.eRod_a[1],5.0);
+val(universalSpherical.eRod_a[2],0.0);
+val(universalSpherical.eRod_a[2],5.0);
+val(universalSpherical.eRod_a[3],0.0);
+val(universalSpherical.eRod_a[3],5.0);
+val(universalSpherical.rRod_0[1],0.0);
+val(universalSpherical.rRod_0[1],5.0);
+val(universalSpherical.rRod_0[2],0.0);
+val(universalSpherical.rRod_0[2],5.0);
+val(universalSpherical.rRod_0[3],0.0);
+val(universalSpherical.rRod_0[3],5.0);
+val(der(universalSpherical.rRod_0[1]),0.0);
+val(der(universalSpherical.rRod_0[1]),5.0);
+val(der(universalSpherical.rRod_0[2]),0.0);
+val(der(universalSpherical.rRod_0[2]),5.0);
+val(der(universalSpherical.rRod_0[3]),0.0);
+val(der(universalSpherical.rRod_0[3]),5.0);
+val(der(universalSpherical.rRod_0[1],2),0.0);
+val(der(universalSpherical.rRod_0[1],2),5.0);
+val(der(universalSpherical.rRod_0[2],2),0.0);
+val(der(universalSpherical.rRod_0[2],2),5.0);
+val(der(universalSpherical.rRod_0[3],2),0.0);
+val(der(universalSpherical.rRod_0[3],2),5.0);
+val(universalSpherical.rRod_a[1],0.0);
+val(universalSpherical.rRod_a[1],5.0);
+val(universalSpherical.rRod_a[2],0.0);
+val(universalSpherical.rRod_a[2],5.0);
+val(universalSpherical.rRod_a[3],0.0);
+val(universalSpherical.rRod_a[3],5.0);
+val(universalSpherical.rodShape.rxvisobj[1],0.0);
+val(universalSpherical.rodShape.rxvisobj[1],5.0);
+val(universalSpherical.rodShape.rxvisobj[2],0.0);
+val(universalSpherical.rodShape.rxvisobj[2],5.0);
+val(universalSpherical.rodShape.rxvisobj[3],0.0);
+val(universalSpherical.rodShape.rxvisobj[3],5.0);
+val(universalSpherical.rodShape.ryvisobj[1],0.0);
+val(universalSpherical.rodShape.ryvisobj[1],5.0);
+val(universalSpherical.rodShape.ryvisobj[2],0.0);
+val(universalSpherical.rodShape.ryvisobj[2],5.0);
+val(universalSpherical.rodShape.ryvisobj[3],0.0);
+val(universalSpherical.rodShape.ryvisobj[3],5.0);
+val(universalSpherical.rodShape.rvisobj[1],0.0);
+val(universalSpherical.rodShape.rvisobj[1],5.0);
+val(universalSpherical.sphericalShape_b.ryvisobj[2],0.0);
+val(universalSpherical.sphericalShape_b.ryvisobj[2],5.0);
+val(universalSpherical.sphericalShape_b.ryvisobj[3],0.0);
+val(universalSpherical.sphericalShape_b.ryvisobj[3],5.0);
+val(universalSpherical.sphericalShape_b.rvisobj[2],0.0);
+val(universalSpherical.sphericalShape_b.rvisobj[2],5.0);
+val(universalSpherical.sphericalShape_b.rvisobj[3],0.0);
+val(universalSpherical.sphericalShape_b.rvisobj[3],5.0);
+val(universalSpherical.universalShape1.rvisobj[1],0.0);
+val(universalSpherical.universalShape1.rvisobj[1],5.0);
+val(universalSpherical.universalShape2.rxvisobj[1],0.0);
+val(universalSpherical.universalShape2.rxvisobj[1],5.0);
+val(universalSpherical.universalShape2.rxvisobj[2],0.0);
+val(universalSpherical.universalShape2.rxvisobj[2],5.0);
+val(universalSpherical.universalShape2.rxvisobj[3],0.0);
+val(universalSpherical.universalShape2.rxvisobj[3],5.0);
+val(universalSpherical.universalShape2.ryvisobj[1],0.0);
+val(universalSpherical.universalShape2.ryvisobj[1],5.0);
+val(universalSpherical.universalShape2.ryvisobj[2],0.0);
+val(universalSpherical.universalShape2.ryvisobj[2],5.0);
+val(universalSpherical.universalShape2.ryvisobj[3],0.0);
+val(universalSpherical.universalShape2.ryvisobj[3],5.0);
+val(universalSpherical.universalShape2.rvisobj[1],0.0);
+val(universalSpherical.universalShape2.rvisobj[1],5.0);
+val(universalSpherical.universalShape2.rvisobj[2],0.0);
+val(universalSpherical.universalShape2.rvisobj[2],5.0);
+val(universalSpherical.universalShape2.rvisobj[3],0.0);
+val(universalSpherical.universalShape2.rvisobj[3],5.0);
+val(b3.frame_a.f[2],0.0);
+val(b3.frame_a.f[2],5.0);
+val(b3.frame_a.f[3],0.0);
+val(b3.frame_a.f[3],5.0);
+val(b3.frame_a.t[1],0.0);
+val(b3.frame_a.t[1],5.0);
+val(b3.frame_a.t[2],0.0);
+val(b3.frame_a.t[2],5.0);
+val(b3.frame_a.t[3],0.0);
+val(b3.frame_a.t[3],5.0);
+val(b3.frame_b.f[2],0.0);
+val(b3.frame_b.f[2],5.0);
+val(b3.frame_b.f[3],0.0);
+val(b3.frame_b.f[3],5.0);
+val(b3.frame_b.t[1],0.0);
+val(b3.frame_b.t[1],5.0);
+val(b3.frame_b.t[2],0.0);
+val(b3.frame_b.t[2],5.0);
+val(b3.frame_b.t[3],0.0);
+val(b3.frame_b.t[3],5.0);
+val(fixedFrame.frame_a.r_0[1],0.0);
+val(fixedFrame.frame_a.r_0[1],5.0);
+val(fixedFrame.frame_a.R.T[1,1],0.0);
+val(fixedFrame.frame_a.R.T[1,1],5.0);
+val(fixedFrame.frame_a.R.T[1,2],0.0);
+val(fixedFrame.frame_a.R.T[1,2],5.0);
+val(fixedFrame.frame_a.R.T[1,3],0.0);
+val(fixedFrame.frame_a.R.T[1,3],5.0);
+val(fixedFrame.frame_a.R.T[2,1],0.0);
+val(fixedFrame.frame_a.R.T[2,1],5.0);
+val(fixedFrame.frame_a.R.T[2,2],0.0);
+val(fixedFrame.frame_a.R.T[2,2],5.0);
+val(fixedFrame.frame_a.R.T[2,3],0.0);
+val(fixedFrame.frame_a.R.T[2,3],5.0);
+val(fixedFrame.frame_a.R.T[3,1],0.0);
+val(fixedFrame.frame_a.R.T[3,1],5.0);
+val(fixedFrame.frame_a.R.T[3,2],0.0);
+val(fixedFrame.frame_a.R.T[3,2],5.0);
+val(fixedFrame.frame_a.R.T[3,3],0.0);
+val(fixedFrame.frame_a.R.T[3,3],5.0);
+val(fixedFrame.frame_a.R.w[1],0.0);
+val(fixedFrame.frame_a.R.w[1],5.0);
+val(fixedFrame.frame_a.R.w[2],0.0);
+val(fixedFrame.frame_a.R.w[2],5.0);
+val(fixedFrame.frame_a.R.w[3],0.0);
+val(fixedFrame.frame_a.R.w[3],5.0);
+val(fixedFrame.x_arrowLine.rxvisobj[1],0.0);
+val(fixedFrame.x_arrowLine.rxvisobj[1],5.0);
+val(fixedFrame.x_arrowLine.rxvisobj[2],0.0);
+val(fixedFrame.x_arrowLine.rxvisobj[2],5.0);
+val(fixedFrame.x_arrowLine.rxvisobj[3],0.0);
+val(fixedFrame.x_arrowLine.rxvisobj[3],5.0);
+val(fixedFrame.x_arrowLine.ryvisobj[1],0.0);
+val(fixedFrame.x_arrowLine.ryvisobj[1],5.0);
+val(fixedFrame.x_arrowLine.ryvisobj[2],0.0);
+val(fixedFrame.x_arrowLine.ryvisobj[2],5.0);
+val(fixedFrame.x_arrowLine.ryvisobj[3],0.0);
+val(fixedFrame.x_arrowLine.ryvisobj[3],5.0);
+val(fixedFrame.x_arrowLine.rvisobj[1],0.0);
+val(fixedFrame.x_arrowLine.rvisobj[1],5.0);
+val(fixedFrame.x_arrowHead.rxvisobj[1],0.0);
+val(fixedFrame.x_arrowHead.rxvisobj[1],5.0);
+val(fixedFrame.x_arrowHead.rxvisobj[2],0.0);
+val(fixedFrame.x_arrowHead.rxvisobj[2],5.0);
+val(fixedFrame.x_arrowHead.rxvisobj[3],0.0);
+val(fixedFrame.x_arrowHead.rxvisobj[3],5.0);
+val(fixedFrame.x_arrowHead.ryvisobj[1],0.0);
+val(fixedFrame.x_arrowHead.ryvisobj[1],5.0);
+val(fixedFrame.x_arrowHead.ryvisobj[2],0.0);
+val(fixedFrame.x_arrowHead.ryvisobj[2],5.0);
+val(fixedFrame.x_arrowHead.ryvisobj[3],0.0);
+val(fixedFrame.x_arrowHead.ryvisobj[3],5.0);
+val(fixedFrame.x_arrowHead.rvisobj[1],0.0);
+val(fixedFrame.x_arrowHead.rvisobj[1],5.0);
+val(fixedFrame.x_arrowHead.rvisobj[2],0.0);
+val(fixedFrame.x_arrowHead.rvisobj[2],5.0);
+val(fixedFrame.x_arrowHead.rvisobj[3],0.0);
+val(fixedFrame.x_arrowHead.rvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[1].rxvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[1].ryvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[1].rvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[2].rxvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[2].ryvisobj[3],5.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[1],0.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[1],5.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[2],0.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[2],5.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[3],0.0);
+val(fixedFrame.x_label.cylinders[2].rvisobj[3],5.0);
+val(fixedFrame.y_arrowLine.rxvisobj[1],0.0);
+val(fixedFrame.y_arrowLine.rxvisobj[1],5.0);
+val(fixedFrame.y_arrowLine.rxvisobj[2],0.0);
+val(fixedFrame.y_arrowLine.rxvisobj[2],5.0);
+val(fixedFrame.y_arrowLine.rxvisobj[3],0.0);
+val(fixedFrame.y_arrowLine.rxvisobj[3],5.0);
+val(fixedFrame.y_arrowLine.ryvisobj[1],0.0);
+val(fixedFrame.y_arrowLine.ryvisobj[1],5.0);
+val(fixedFrame.y_arrowLine.ryvisobj[2],0.0);
+val(fixedFrame.y_arrowLine.ryvisobj[2],5.0);
+val(fixedFrame.y_arrowLine.ryvisobj[3],0.0);
+val(fixedFrame.y_arrowLine.ryvisobj[3],5.0);
+val(fixedFrame.y_arrowLine.rvisobj[1],0.0);
+val(fixedFrame.y_arrowLine.rvisobj[1],5.0);
+val(fixedFrame.y_arrowHead.rxvisobj[1],0.0);
+val(fixedFrame.y_arrowHead.rxvisobj[1],5.0);
+val(fixedFrame.y_arrowHead.rxvisobj[2],0.0);
+val(fixedFrame.y_arrowHead.rxvisobj[2],5.0);
+val(fixedFrame.y_arrowHead.rxvisobj[3],0.0);
+val(fixedFrame.y_arrowHead.rxvisobj[3],5.0);
+val(fixedFrame.y_arrowHead.ryvisobj[1],0.0);
+val(fixedFrame.y_arrowHead.ryvisobj[1],5.0);
+val(fixedFrame.y_arrowHead.ryvisobj[2],0.0);
+val(fixedFrame.y_arrowHead.ryvisobj[2],5.0);
+val(fixedFrame.y_arrowHead.ryvisobj[3],0.0);
+val(fixedFrame.y_arrowHead.ryvisobj[3],5.0);
+val(fixedFrame.y_arrowHead.rvisobj[1],0.0);
+val(fixedFrame.y_arrowHead.rvisobj[1],5.0);
+val(fixedFrame.y_arrowHead.rvisobj[2],0.0);
+val(fixedFrame.y_arrowHead.rvisobj[2],5.0);
+val(fixedFrame.y_arrowHead.rvisobj[3],0.0);
+val(fixedFrame.y_arrowHead.rvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[1].rxvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[1].ryvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[1].rvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[2].rxvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[2].ryvisobj[3],5.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[1],0.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[1],5.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[2],0.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[2],5.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[3],0.0);
+val(fixedFrame.y_label.cylinders[2].rvisobj[3],5.0);
+val(fixedFrame.z_arrowLine.rxvisobj[1],0.0);
+val(fixedFrame.z_arrowLine.rxvisobj[1],5.0);
+val(fixedFrame.z_arrowLine.rxvisobj[2],0.0);
+val(fixedFrame.z_arrowLine.rxvisobj[2],5.0);
+val(fixedFrame.z_arrowLine.rxvisobj[3],0.0);
+val(fixedFrame.z_arrowLine.rxvisobj[3],5.0);
+val(fixedFrame.z_arrowLine.ryvisobj[1],0.0);
+val(fixedFrame.z_arrowLine.ryvisobj[1],5.0);
+val(fixedFrame.z_arrowLine.ryvisobj[2],0.0);
+val(fixedFrame.z_arrowLine.ryvisobj[2],5.0);
+val(fixedFrame.z_arrowLine.ryvisobj[3],0.0);
+val(fixedFrame.z_arrowLine.ryvisobj[3],5.0);
+val(fixedFrame.z_arrowLine.rvisobj[1],0.0);
+val(fixedFrame.z_arrowLine.rvisobj[1],5.0);
+val(fixedFrame.z_arrowHead.rxvisobj[1],0.0);
+val(fixedFrame.z_arrowHead.rxvisobj[1],5.0);
+val(fixedFrame.z_arrowHead.rxvisobj[2],0.0);
+val(fixedFrame.z_arrowHead.rxvisobj[2],5.0);
+val(fixedFrame.z_arrowHead.rxvisobj[3],0.0);
+val(fixedFrame.z_arrowHead.rxvisobj[3],5.0);
+val(fixedFrame.z_arrowHead.ryvisobj[1],0.0);
+val(fixedFrame.z_arrowHead.ryvisobj[1],5.0);
+val(fixedFrame.z_arrowHead.ryvisobj[2],0.0);
+val(fixedFrame.z_arrowHead.ryvisobj[2],5.0);
+val(fixedFrame.z_arrowHead.ryvisobj[3],0.0);
+val(fixedFrame.z_arrowHead.ryvisobj[3],5.0);
+val(fixedFrame.z_arrowHead.rvisobj[1],0.0);
+val(fixedFrame.z_arrowHead.rvisobj[1],5.0);
+val(fixedFrame.z_arrowHead.rvisobj[2],0.0);
+val(fixedFrame.z_arrowHead.rvisobj[2],5.0);
+val(fixedFrame.z_arrowHead.rvisobj[3],0.0);
+val(fixedFrame.z_arrowHead.rvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[1].rxvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[1].ryvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[1].rvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[2].rxvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[2].ryvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[2].rvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[3].rxvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[3].ryvisobj[3],5.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[1],0.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[1],5.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[2],0.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[2],5.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[3],0.0);
+val(fixedFrame.z_label.cylinders[3].rvisobj[3],5.0);
+val(j1.axis.phi,0.0);
+val(j1.axis.phi,5.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 8.64905548096
+// -46.3477020264
+// -50.3744316101
+// -342.458282471
+// 0.177545592189
+// 126.030273438
+// 0.172981113195
+// -2.26775765419
+// -0
+// -1.7763568394e-15
+// -30.5282154083
+// -18.5505619049
+// 0.0
+// 40.2588996887
+// -0.20000000298
+// -0.418383538723
+// 5.23598766327
+// 11.6579771042
+// -0.104719758034
+// -0.570415854454
+// -8.64905548096
+// 46.3477020264
+// 23.3058376312
+// 352.68359375
+// 0.687359988689
+// -137.369064331
+// -0.864905595779
+// 8.8625831604
+// 4.32452774048
+// 21.9080600739
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// 8.64905548096
+// -46.3477020264
+// -23.3058376312
+// 370.146087646
+// -0.687359988689
+// 79.0434036255
+// 0.864905595779
+// -4.63477039337
+// -4.32452774048
+// 23.1738510132
+// 0.0
+// 40.2588996887
+// 5.23598766327
+// 11.6579771042
+// 5.23598766327
+// 11.6579771042
+// 5.39099168777
+// 14.1909008026
+// 5.39099168777
+// 14.1909008026
+// 0.0
+// 40.2588996887
+// 27.0685939789
+// -10.2253084183
+// -0.864905595779
+// 11.3387880325
+// -0.172981113195
+// 2.26775765419
+// -0.172981113195
+// 4.7439622879
+// -6.27862453461
+// 8.9128704071
+// 1.0
+// 0.781616449356
+// -27.0685939789
+// 10.2253084183
+// 0.864905595779
+// -11.3387880325
+// 0.172981113195
+// -2.26775765419
+// -0
+// -0
+// 0.864905595779
+// -4.63477039337
+// -0.20000000298
+// -0.418383538723
+// -0.104719758034
+// -0.570415854454
+// -0.104719758034
+// -0.570415854454
+// -2.86034274101
+// 15.3277215958
+// -2.86034274101
+// 15.3277215958
+// -0.20000000298
+// -0.418383538723
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// -8.64905548096
+// 46.3477020264
+// 23.3058376312
+// -370.146087646
+// 0.687359988689
+// -79.0434036255
+// -0.864905595779
+// 4.63477039337
+// 4.32452774048
+// -23.1738510132
+// 0.5
+// -0.472689241171
+// 0.10000000149
+// 0.191219478846
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// 8.64905548096
+// -46.3477020264
+// -2.59471678734
+// 39.5568580627
+// -0.864905595779
+// 12.4468870163
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// 20.7111206055
+// -330.589233398
+// -0.177545592189
+// -66.5965194702
+// -0.172981113195
+// 2.26775765419
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 5.23598766327
+// 11.6579771042
+// 5.39099168777
+// 14.1909008026
+// 5.39099168777
+// 14.1909008026
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// -8.64905548096
+// 46.3477020264
+// 2.59471678734
+// -39.5568580627
+// 0.864905595779
+// -12.4468870163
+// 0.172981113195
+// -2.26775765419
+// -0.864905595779
+// 4.63477039337
+// 4.32452774048
+// -23.1738510132
+// 0.5
+// -0.472689241171
+// 0.10000000149
+// 0.191219478846
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// 5.23598766327
+// 11.6579771042
+// 8.64905548096
+// -46.3477020264
+// -2.59471678734
+// 39.5568580627
+// -0.864905595779
+// 12.4468870163
+// 0.980580687523
+// -0.927019834518
+// 0.196116134524
+// 0.375012248755
+// 0.196116134524
+// 0.375012248755
+// -0.980580687523
+// 0.927019834518
+// 1.0
+// 0.781616449356
+// 27.0685939789
+// -10.2253084183
+// -0.864905595779
+// 11.3387880325
+// -0.172981113195
+// 2.26775765419
+// 0.0
+// 0.0
+// -0.864905595779
+// 4.63477039337
+// 1.0
+// 0.781616449356
+// -8.64905548096
+// 46.3477020264
+// 2.59471678734
+// 39.8886184692
+// 0.864905595779
+// -11.3387880325
+// -5.55111512313e-17
+// 1.7763568394e-15
+// -0
+// -0
+// 0.0
+// 3.5527136788e-15
+// 1.0
+// 0.781616449356
+// -0.104719758034
+// -0.570415854454
+// -0.104719758034
+// -0.570415854454
+// -2.86034274101
+// 15.3277215958
+// -2.86034274101
+// 15.3277215958
+// 1.0
+// 0.781616449356
+// -0.104719758034
+// -0.570415854454
+// -8.64905548096
+// 46.3477020264
+// 0.864905595779
+// -4.63477039337
+// 1.0
+// 0.781616449356
+// -0.104719758034
+// -0.570415854454
+// -2.86034274101
+// 15.3277215958
+// -2.86034274101
+// 15.3277215958
+// 1.0
+// 0.781616449356
+// 8.64905548096
+// -46.3477020264
+// -2.59471678734
+// -39.8886184692
+// -0.864905595779
+// 11.3387880325
+// -0.172981113195
+// 2.26775765419
+// 0.0
+// 0.0
+// -1.72981119156
+// 9.26954078674
+// 1.0
+// 0.781616449356
+// -8.64905548096
+// 46.3477020264
+// 2.59471678734
+// 39.8886184692
+// 0.864905595779
+// -11.3387880325
+// -5.55111512313e-17
+// 1.7763568394e-15
+// -0
+// -0
+// 0.0
+// 3.5527136788e-15
+// 1.0
+// 0.781616449356
+// 1.0
+// 0.781616449356
+// 8.64905548096
+// -46.3477020264
+// -2.59471678734
+// -39.8886184692
+// -0.864905595779
+// 11.3387880325
+// 5.55111512313e-17
+// -1.7763568394e-15
+// 0.0
+// 0.0
+// -0
+// -3.5527136788e-15
+// 0.5
+// -0.472689241171
+// 0.10000000149
+// 0.191219478846
+// -0.523598790169
+// -2.22923207283
+// -14.2468833923
+// 61.5288696289
+// 2.61799383163
+// -5.51060009003
+// -0.0460609197617
+// -32.6962242126
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// -0
+// -0.549533307552
+// 1.0
+// -0.83547180891
+// -0
+// -6.40644645691
+// -27.4155673981
+// 105.749282837
+// 5.23598766327
+// -9.73991107941
+// 5.39099168777
+// -86.5423049927
+// -5.23598766327
+// 9.73991107941
+// -5.39099168777
+// 86.5423049927
+// -0
+// -6.40644645691
+// -27.4155673981
+// 105.749282837
+// 5.23598766327
+// 11.6579771042
+// -8.64905548096
+// 46.3477020264
+// 2.59471678734
+// -39.5568580627
+// 0.864905595779
+// -12.4468870163
+// 1.0
+// 0.781616449356
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// 0.0518414638937
+// -5.1051363945
+// 2.6024415493
+// -3.57705807686
+// 0.518414616585
+// 3.29470920563
+// -9.07120609283
+// 62.1914749146
+// -0.953462600708
+// -0.745242059231
+// 0.286038786173
+// -0.641384005547
+// 0.0953462570906
+// 0.182320609689
+// -1.0
+// -0.781616449356
+// 0.300000011921
+// -0.672689259052
+// 0.10000000149
+// 0.191219478846
+// 0.104719758034
+// 0.570415854454
+// -0.523598790169
+// -2.22923207283
+// 2.61799383163
+// -5.51060009003
+// 2.86034274101
+// -15.3277215958
+// -14.2468833923
+// 61.5288696289
+// -0.0460609197617
+// -32.6962242126
+// -1.0
+// -0.781616449356
+// 0.300000011921
+// -0.672689259052
+// 0.10000000149
+// 0.191219478846
+// -0.953462600708
+// -0.745242059231
+// 0.286038786173
+// -0.641384005547
+// 0.0953462570906
+// 0.182320609689
+// 0.0995037183166
+// 0.237637981772
+// -6.93889390391e-18
+// 0.0
+// 0.995037198067
+// 0.971353769302
+// 1.0
+// 0.781616449356
+// 1.0
+// -0.83547180891
+// 0.0
+// 0.549533307552
+// 0.5
+// -0.472689241171
+// 0.10000000149
+// 0.191219478846
+// 1.0
+// 0.781616449356
+// 0.0995037183166
+// 0.237637981772
+// 0.0
+// 0.0
+// 0.995037198067
+// 0.971353769302
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 0.995024800301
+// 0.769734561443
+// 0.20000000298
+// 0.20000000298
+// -0.0497518591583
+// -0.0485676899552
+// 27.0685939789
+// -10.2253084183
+// -0.864905595779
+// 11.3387880325
+// -0.172981113195
+// 2.26775765419
+// 0.864905595779
+// -8.8625831604
+// 26.2036876678
+// -3.3574988842
+// -27.0685939789
+// 10.2253084183
+// 0.864905595779
+// -11.3387880325
+// 0.172981113195
+// -2.26775765419
+// 0.172981113195
+// -4.7439622879
+// 6.27862453461
+// -8.9128704071
+// 1.0
+// 0.781616449356
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// 0.0518414638937
+// -5.1051363945
+// 2.6024415493
+// -3.57705807686
+// 0.518414616585
+// 3.29470920563
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.781616449356
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.4375
+// 1.02525389194
+// 0.20000000298
+// 0.563081800938
+// 1.44198888941e-17
+// -0.0147882457823
+// 0.707106769085
+// -0.179083898664
+// 0.707106769085
+// 0.976941943169
+// 4.29322156562e-17
+// 0.116246923804
+// -0.707106769085
+// -0.966638863087
+// 0.707106769085
+// -0.196715608239
+// -3.67990403366e-18
+// 0.164049759507
+// 1.52499997616
+// 1.0739812851
+// 0.20000000298
+// 0.635698139668
+// 1.73038673346e-17
+// -0.0177458953112
+// 0.707106769085
+// 0.966638863087
+// -0.707106769085
+// 0.196715608239
+// 3.67990403366e-18
+// -0.164049759507
+// 0.707106769085
+// -0.179083898664
+// 0.707106769085
+// 0.976941943169
+// 4.29322156562e-17
+// 0.116246923804
+// 1.52499997616
+// 1.04360079765
+// 0.23749999702
+// 0.656387031078
+// 1.83447004276e-17
+// -0.010313407518
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// 1.0
+// 0.781616449356
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.556885421276
+// 5.55111512313e-16
+// 0.829901218414
+// 3.29597460436e-17
+// -0.0338017046452
+// 1.0
+// 0.427176594734
+// 0.637499988079
+// 0.441370218992
+// 1.21430643318e-17
+// 0.0867123603821
+// -0.832050323486
+// -0.91274613142
+// 0.554700195789
+// -0.38448959589
+// -1.20281433022e-17
+// 0.138066127896
+// 0.554700195789
+// -0.365179687738
+// 0.832050323486
+// 0.919391334057
+// 4.13768117021e-17
+// 0.146162286401
+// 1.0
+// 0.356288611889
+// 0.725000023842
+// 0.489644259214
+// 1.45716765365e-17
+// 0.104054830968
+// 0.832050323486
+// 0.0139672663063
+// 0.554700195789
+// 0.996549546719
+// 4.28201889314e-17
+// 0.0818166807294
+// -0.554700195789
+// -0.982988595963
+// 0.832050323486
+// -0.00130143610295
+// 4.81125715543e-18
+// 0.183661922812
+// 0.943750023842
+// 0.32496380806
+// 0.725000023842
+// 0.442962318659
+// 1.27176918141e-17
+// 0.105956181884
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.781616449356
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.861737906933
+// 0.20000000298
+// 0.163691818714
+// 0.4375
+// 0.428565651178
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.877762198448
+// 0.20000000298
+// 0.156430184841
+// 0.524999976158
+// 0.514278769493
+// 1.73472347598e-17
+// 0.183134675026
+// -5.55111512313e-17
+// -0.0829901248217
+// 1.0
+// 0.97957867384
+// -2.22044604925e-16
+// -0.81014829874
+// 1.0
+// 0.551703333855
+// 2.77555756156e-17
+// 0.198199689388
+// 1.0
+// 0.847381591797
+// 0.23749999702
+// 0.177119061351
+// 0.524999976158
+// 0.521711289883
+// 1.69275590512e-16
+// 0.702357113361
+// -0.707106769085
+// -0.448796063662
+// 0.707106769085
+// 0.552518367767
+// -1.44742895851e-16
+// -0.443365603685
+// 0.707106769085
+// 0.331430315971
+// 0.707106769085
+// 0.832815051079
+// 1.0
+// 0.847381591797
+// 0.23749999702
+// 0.177119061351
+// 0.524999976158
+// 0.521711289883
+// 0.0
+// 40.2588996887
+// endResult

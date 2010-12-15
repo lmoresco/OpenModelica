@@ -11,13 +11,218 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.PreLoad);
-
-val(der(friction.v_rel),0.0);
+val(innerContactA.s_rel,0.0);
+val(innerContactA.s_rel,100.0);
 val(der(innerContactA.s_rel),0.0);
+val(der(innerContactA.s_rel),100.0);
+val(innerContactA.v_rel,0.0);
+val(innerContactA.v_rel,100.0);
+val(der(innerContactA.v_rel),0.0);
+val(der(innerContactA.v_rel),100.0);
+val(innerContactA.f,0.0);
+val(innerContactA.f,100.0);
+val(innerContactA.flange_a.s,0.0);
+val(innerContactA.flange_a.s,100.0);
+val(innerContactA.flange_a.f,0.0);
+val(innerContactA.flange_a.f,100.0);
+val(innerContactA.flange_b.s,0.0);
+val(innerContactA.flange_b.s,100.0);
+val(innerContactA.flange_b.f,0.0);
+val(innerContactA.flange_b.f,100.0);
+val(innerContactA.contact,0.0);
+val(innerContactA.contact,100.0);
+val(innerContactB.s_rel,0.0);
+val(innerContactB.s_rel,100.0);
 val(der(innerContactB.s_rel),0.0);
+val(der(innerContactB.s_rel),100.0);
+val(innerContactB.v_rel,0.0);
+val(innerContactB.v_rel,100.0);
+val(der(innerContactB.v_rel),0.0);
+val(der(innerContactB.v_rel),100.0);
+val(innerContactB.f,0.0);
+val(innerContactB.f,100.0);
+val(innerContactB.flange_a.s,0.0);
+val(innerContactB.flange_a.s,100.0);
+val(innerContactB.flange_a.f,0.0);
+val(innerContactB.flange_a.f,100.0);
+val(innerContactB.flange_b.s,0.0);
+val(innerContactB.flange_b.s,100.0);
+val(innerContactB.flange_b.f,0.0);
+val(innerContactB.flange_b.f,100.0);
+val(innerContactB.contact,0.0);
+val(innerContactB.contact,100.0);
+val(spool.s,0.0);
+val(spool.s,100.0);
+val(der(spool.s),0.0);
+val(der(spool.s),100.0);
+val(spool.flange_a.s,0.0);
+val(spool.flange_a.s,100.0);
+val(spool.flange_a.f,0.0);
+val(spool.flange_a.f,100.0);
+val(spool.flange_b.s,0.0);
+val(spool.flange_b.s,100.0);
+val(spool.v,0.0);
+val(spool.v,100.0);
+val(der(spool.v),0.0);
+val(der(spool.v),100.0);
+val(spool.a,0.0);
+val(spool.a,100.0);
+val(fixedLe.flange.f,0.0);
+val(fixedLe.flange.f,100.0);
+val(springPlateA.s,0.0);
+val(springPlateA.s,100.0);
+val(der(springPlateA.s),0.0);
+val(der(springPlateA.s),100.0);
+val(springPlateA.flange_a.s,0.0);
+val(springPlateA.flange_a.s,100.0);
+val(springPlateA.flange_a.f,0.0);
+val(springPlateA.flange_a.f,100.0);
+val(springPlateA.flange_b.s,0.0);
+val(springPlateA.flange_b.s,100.0);
+val(springPlateA.flange_b.f,0.0);
+val(springPlateA.flange_b.f,100.0);
+val(springPlateA.v,0.0);
+val(springPlateA.v,100.0);
+val(der(springPlateA.v),0.0);
+val(der(springPlateA.v),100.0);
+val(springPlateA.a,0.0);
+val(springPlateA.a,100.0);
+val(springPlateB.s,0.0);
+val(springPlateB.s,100.0);
+val(der(springPlateB.s),0.0);
+val(der(springPlateB.s),100.0);
+val(springPlateB.flange_a.s,0.0);
+val(springPlateB.flange_a.s,100.0);
+val(springPlateB.flange_a.f,0.0);
+val(springPlateB.flange_a.f,100.0);
+val(springPlateB.flange_b.s,0.0);
+val(springPlateB.flange_b.s,100.0);
+val(springPlateB.flange_b.f,0.0);
+val(springPlateB.flange_b.f,100.0);
+val(springPlateB.v,0.0);
+val(springPlateB.v,100.0);
+val(der(springPlateB.v),0.0);
+val(der(springPlateB.v),100.0);
+val(springPlateB.a,0.0);
+val(springPlateB.a,100.0);
+val(spring.flange_a.s,0.0);
+val(spring.flange_a.s,100.0);
+val(spring.flange_a.f,0.0);
+val(spring.flange_a.f,100.0);
+val(spring.flange_b.s,0.0);
+val(spring.flange_b.s,100.0);
+val(spring.flange_b.f,0.0);
+val(spring.flange_b.f,100.0);
+val(spring.s_rel,0.0);
+val(spring.s_rel,100.0);
+val(spring.f,0.0);
+val(spring.f,100.0);
+val(outerContactA.s_rel,0.0);
+val(outerContactA.s_rel,100.0);
+val(der(outerContactA.s_rel),0.0);
+val(der(outerContactA.s_rel),100.0);
+val(outerContactA.v_rel,0.0);
+val(outerContactA.v_rel,100.0);
 val(der(outerContactA.v_rel),0.0);
+val(der(outerContactA.v_rel),100.0);
+val(outerContactA.f,0.0);
+val(outerContactA.f,100.0);
+val(outerContactA.flange_a.f,0.0);
+val(outerContactA.flange_a.f,100.0);
+val(outerContactA.flange_b.s,0.0);
+val(outerContactA.flange_b.s,100.0);
+val(outerContactA.flange_b.f,0.0);
+val(outerContactA.flange_b.f,100.0);
+val(outerContactA.contact,0.0);
+val(outerContactA.contact,100.0);
+val(outerContactB.s_rel,0.0);
+val(outerContactB.s_rel,100.0);
 val(der(outerContactB.s_rel),0.0);
+val(der(outerContactB.s_rel),100.0);
+val(outerContactB.v_rel,0.0);
+val(outerContactB.v_rel,100.0);
 val(der(outerContactB.v_rel),0.0);
+val(der(outerContactB.v_rel),100.0);
+val(outerContactB.f,0.0);
+val(outerContactB.f,100.0);
+val(outerContactB.flange_a.s,0.0);
+val(outerContactB.flange_a.s,100.0);
+val(outerContactB.flange_a.f,0.0);
+val(outerContactB.flange_a.f,100.0);
+val(outerContactB.flange_b.f,0.0);
+val(outerContactB.flange_b.f,100.0);
+val(outerContactB.contact,0.0);
+val(outerContactB.contact,100.0);
+val(rod1.s,0.0);
+val(rod1.s,100.0);
+val(rod1.flange_a.s,0.0);
+val(rod1.flange_a.s,100.0);
+val(rod1.flange_a.f,0.0);
+val(rod1.flange_a.f,100.0);
+val(rod1.flange_b.s,0.0);
+val(rod1.flange_b.s,100.0);
+val(rod1.flange_b.f,0.0);
+val(rod1.flange_b.f,100.0);
+val(friction.s_rel,0.0);
+val(friction.s_rel,100.0);
+val(der(friction.s_rel),0.0);
+val(der(friction.s_rel),100.0);
+val(friction.v_rel,0.0);
+val(friction.v_rel,100.0);
+val(der(friction.v_rel),0.0);
+val(der(friction.v_rel),100.0);
+val(friction.f,0.0);
+val(friction.f,100.0);
+val(friction.flange_a.f,0.0);
+val(friction.flange_a.f,100.0);
+val(friction.flange_b.s,0.0);
+val(friction.flange_b.s,100.0);
+val(friction.flange_b.f,0.0);
+val(friction.flange_b.f,100.0);
+val(force.s,0.0);
+val(force.s,100.0);
+val(force.flange.s,0.0);
+val(force.flange.s,100.0);
+val(force.flange.f,0.0);
+val(force.flange.f,100.0);
+val(force.f,0.0);
+val(force.f,100.0);
+val(housing.flange_a.f,0.0);
+val(housing.flange_a.f,100.0);
+val(housing.flange_b.f,0.0);
+val(housing.flange_b.f,100.0);
+val(rod3.s,0.0);
+val(rod3.s,100.0);
+val(rod3.flange_a.s,0.0);
+val(rod3.flange_a.s,100.0);
+val(rod3.flange_a.f,0.0);
+val(rod3.flange_a.f,100.0);
+val(rod3.flange_b.s,0.0);
+val(rod3.flange_b.s,100.0);
+val(rod3.flange_b.f,0.0);
+val(rod3.flange_b.f,100.0);
+val(rod4.s,0.0);
+val(rod4.s,100.0);
+val(rod4.flange_a.s,0.0);
+val(rod4.flange_a.s,100.0);
+val(rod4.flange_a.f,0.0);
+val(rod4.flange_a.f,100.0);
+val(rod4.flange_b.s,0.0);
+val(rod4.flange_b.s,100.0);
+val(rod4.flange_b.f,0.0);
+val(rod4.flange_b.f,100.0);
+val(rod2.s,0.0);
+val(rod2.s,100.0);
+val(rod2.flange_a.s,0.0);
+val(rod2.flange_a.s,100.0);
+val(rod2.flange_a.f,0.0);
+val(rod2.flange_a.f,100.0);
+val(rod2.flange_b.s,0.0);
+val(rod2.flange_b.s,100.0);
+val(rod2.flange_b.f,0.0);
+val(rod2.flange_b.f,100.0);
+val(sineForce.y,0.0);
+val(sineForce.y,100.0);
 
 // Result:
 // true
@@ -27,10 +232,216 @@ val(der(outerContactB.v_rel),0.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.PreLoad', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// -0.0001
-// -0.0001
+// 0.0010000000475
+// 0.000985307036899
 // 0.0
-// -6500
+// -4.71188604934e-06
 // 0.0
-// -6500
+// -4.71188604934e-06
+// -6500.0
+// -2.80321312829e-08
+// 0.0
+// -14.6941022873
+// -0.0860000029206
+// -0.0860000252724
+// -0
+// 14.6941022873
+// -0.0850000008941
+// -0.0850147157907
+// 0.0
+// -14.6941022873
+// 0.0
+// 1.0
+// 0.0027499999851
+// 0.000985281192698
+// 0.0
+// 4.71188604934e-06
+// 0.0
+// 4.71188604934e-06
+// -6500.0
+// 2.89812387422e-08
+// 0.0
+// -14.7176618576
+// -0.0772499963641
+// -0.075485303998
+// -0
+// 14.7176618576
+// -0.074500001967
+// -0.0745000243187
+// 0.0
+// -14.7176618576
+// 0.0
+// 1.0
+// 0.0147500000894
+// 0.0147499740124
+// 0.0
+// 9.42377209867e-06
+// -0.0802500024438
+// -0.0802500247955
+// -0
+// 8.69234995093e-09
+// 0.109750002623
+// 0.10974997282
+// 0.0
+// 9.42377209867e-06
+// -0
+// 5.79489984887e-08
+// -0
+// 5.79489984887e-08
+// 0.0
+// -9.2807015406e-09
+// -0.0930000022054
+// -0.0930147171021
+// 0.0
+// 4.71188604934e-06
+// -0.0939999967813
+// -0.0940147191286
+// -0
+// 14.7176618576
+// -0.0920000001788
+// -0.0920147225261
+// -65.0
+// -14.7176618576
+// 0.0
+// 4.71188604934e-06
+// -6500.0
+// 2.99168689821e-08
+// -6500.0
+// 2.99168689821e-08
+// -0.0692500025034
+// -0.0674853101373
+// 0.0
+// 4.71188604934e-06
+// -0.0702499970794
+// -0.0684853047132
+// 65.0
+// 14.6941022873
+// -0.0682500004768
+// -0.0664853081107
+// 0.0
+// -14.6941022873
+// 0.0
+// 4.71188604934e-06
+// 6500.0
+// 2.89677615228e-08
+// 6500.0
+// 2.89677615228e-08
+// -0.0920000001788
+// -0.0920147225261
+// 65.0
+// 29.4117641449
+// -0.0702499970794
+// -0.0684853047132
+// -65.0
+// -29.4117641449
+// 0.0217499993742
+// 0.0235294122249
+// -65.0
+// -29.4117641449
+// 0.00150000001304
+// 0.00148528115824
+// 0.0
+// 4.71188604934e-06
+// 0.0
+// 4.71188604934e-06
+// -6500.0
+// 2.99168689821e-08
+// 0.0
+// -14.7176618576
+// -0
+// 14.7176618576
+// -0.0939999967813
+// -0.0940147191286
+// 0.0
+// -14.7176618576
+// 0.0
+// 1.0
+// 0.00325000006706
+// 0.00148530711886
+// -0
+// -4.71188604934e-06
+// -0
+// -4.71188604934e-06
+// -6500.0
+// -2.89677615228e-08
+// 0.0
+// -14.6941022873
+// -0.0682500004768
+// -0.0664853081107
+// -0
+// 14.6941022873
+// 0.0
+// -14.6941022873
+// 0.0
+// 1.0
+// -0.0885000005364
+// -0.0885147154331
+// -0.0920000001788
+// -0.0920147225261
+// 0.0
+// -14.6941022873
+// -0.0850000008941
+// -0.0850147157907
+// -0
+// 14.6941022873
+// 0.00949999969453
+// 0.00949997454882
+// 0.0
+// 9.42377209867e-06
+// 0.0
+// 9.42377209867e-06
+// -0
+// 5.79489984887e-08
+// 0.0
+// 0.0235594306141
+// -0
+// -0.0235594306141
+// -0.0860000029206
+// -0.0860000252724
+// 0.0
+// 0.0235594306141
+// -0.0802500024438
+// -0.0802500247955
+// -0.0802500024438
+// -0.0802500247955
+// -0
+// -4.96167668583e-13
+// 0.0
+// 4.96167668583e-13
+// 0.0
+// -14.6941022873
+// -0
+// 14.6941022873
+// -0.0831250026822
+// -0.083125025034
+// -0.0860000029206
+// -0.0860000252724
+// 0.0
+// -14.7176618576
+// -0.0802500024438
+// -0.0802500247955
+// -0
+// 14.7176618576
+// -0.0773750022054
+// -0.0773750245571
+// -0.0802500024438
+// -0.0802500247955
+// 0.0
+// -14.7176618576
+// -0.074500001967
+// -0.0745000243187
+// -0
+// 14.7176618576
+// -0.0737499967217
+// -0.0719853043556
+// -0.0772499963641
+// -0.075485303998
+// 0.0
+// -14.7176618576
+// -0.0702499970794
+// -0.0684853047132
+// -0
+// 14.7176618576
+// 0.0
+// 4.96167668583e-13
 // endResult

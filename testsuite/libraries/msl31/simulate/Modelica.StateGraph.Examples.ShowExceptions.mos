@@ -1,0 +1,235 @@
+// name:     Modelica.StateGraph.Examples.ShowExceptions
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.StateGraph.Examples.ShowExceptions_* Modelica.StateGraph.Examples.ShowExceptions Modelica.StateGraph.Examples.ShowExceptions.exe Modelica.StateGraph.Examples.ShowExceptions.cpp Modelica.StateGraph.Examples.ShowExceptions.makefile Modelica.StateGraph.Examples.ShowExceptions.libs Modelica.StateGraph.Examples.ShowExceptions.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.StateGraph.Examples.ShowExceptions);
+val(stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(stateGraphRoot.subgraphStatePort.activeSteps,20.0);
+val(stateGraphRoot.activeSteps,0.0);
+val(stateGraphRoot.activeSteps,20.0);
+val(compositeStep.stateGraphRoot.suspend,0.0);
+val(compositeStep.stateGraphRoot.suspend,20.0);
+val(compositeStep.stateGraphRoot.resume,0.0);
+val(compositeStep.stateGraphRoot.resume,20.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.suspend,0.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.suspend,20.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.resume,0.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.resume,20.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.stateGraphRoot.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.active,0.0);
+val(compositeStep.active,20.0);
+val(compositeStep.outerState.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.outerState.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.transition1.condition,0.0);
+val(compositeStep.transition1.condition,20.0);
+val(compositeStep.transition1.enableFire,0.0);
+val(compositeStep.transition1.enableFire,20.0);
+val(compositeStep.initStep.active,0.0);
+val(compositeStep.initStep.active,20.0);
+val(compositeStep.exitStep.active,0.0);
+val(compositeStep.exitStep.active,20.0);
+val(compositeStep.compositeStep11.stateGraphRoot.suspend,0.0);
+val(compositeStep.compositeStep11.stateGraphRoot.suspend,20.0);
+val(compositeStep.compositeStep11.stateGraphRoot.resume,0.0);
+val(compositeStep.compositeStep11.stateGraphRoot.resume,20.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.suspend,0.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.suspend,20.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.resume,0.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.resume,20.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.compositeStep11.stateGraphRoot.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.compositeStep11.active,0.0);
+val(compositeStep.compositeStep11.active,20.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.suspend,0.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.suspend,20.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.resume,0.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.resume,20.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.compositeStep11.outerState.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.compositeStep11.transition.t,0.0);
+val(compositeStep.compositeStep11.transition.t,20.0);
+val(compositeStep.compositeStep11.transition.enableFire,0.0);
+val(compositeStep.compositeStep11.transition.enableFire,20.0);
+val(compositeStep.compositeStep11.initStep.active,0.0);
+val(compositeStep.compositeStep11.initStep.active,20.0);
+val(compositeStep.compositeStep11.exitStep.active,0.0);
+val(compositeStep.compositeStep11.exitStep.active,20.0);
+val(compositeStep.compositeStep12.stateGraphRoot.suspend,0.0);
+val(compositeStep.compositeStep12.stateGraphRoot.suspend,20.0);
+val(compositeStep.compositeStep12.stateGraphRoot.resume,0.0);
+val(compositeStep.compositeStep12.stateGraphRoot.resume,20.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.suspend,0.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.suspend,20.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.resume,0.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.resume,20.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.compositeStep12.stateGraphRoot.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.compositeStep12.active,0.0);
+val(compositeStep.compositeStep12.active,20.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.suspend,0.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.suspend,20.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.resume,0.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.resume,20.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.activeSteps,0.0);
+val(compositeStep.compositeStep12.outerState.subgraphStatePort.activeSteps,20.0);
+val(compositeStep.compositeStep12.transition.t,0.0);
+val(compositeStep.compositeStep12.transition.t,20.0);
+val(compositeStep.compositeStep12.transition.enableFire,0.0);
+val(compositeStep.compositeStep12.transition.enableFire,20.0);
+val(compositeStep.compositeStep12.initStep.active,0.0);
+val(compositeStep.compositeStep12.initStep.active,20.0);
+val(compositeStep.compositeStep12.exitStep.active,0.0);
+val(compositeStep.compositeStep12.exitStep.active,20.0);
+val(compositeStep.transition2.condition,0.0);
+val(compositeStep.transition2.condition,20.0);
+val(compositeStep.transition2.enableFire,0.0);
+val(compositeStep.transition2.enableFire,20.0);
+val(compositeStep.transition3.enableFire,0.0);
+val(compositeStep.transition3.enableFire,20.0);
+val(compositeStep.transition4.enableFire,0.0);
+val(compositeStep.transition4.enableFire,20.0);
+val(initialStep.active,0.0);
+val(initialStep.active,20.0);
+val(transition1.t,0.0);
+val(transition1.t,20.0);
+val(transition1.enableFire,0.0);
+val(transition1.enableFire,20.0);
+val(transition2.t,0.0);
+val(transition2.t,20.0);
+val(transition2.enableFire,0.0);
+val(transition2.enableFire,20.0);
+val(transition3.t,0.0);
+val(transition3.t,20.0);
+val(transition3.enableFire,0.0);
+val(transition3.enableFire,20.0);
+val(step1.active,0.0);
+val(step1.active,20.0);
+val(transition4.t,0.0);
+val(transition4.t,20.0);
+val(transition4.enableFire,0.0);
+val(transition4.enableFire,20.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.StateGraph.Examples.ShowExceptions_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.ShowExceptions', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -1.0
+// -1.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// endResult

@@ -1,0 +1,395 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem_* Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.exe Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.libs Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem);
+val(world.frame_b.f[2],0.0);
+val(world.frame_b.f[2],5.0);
+val(world.frame_b.t[1],0.0);
+val(world.frame_b.t[1],5.0);
+val(world.frame_b.t[3],0.0);
+val(world.frame_b.t[3],5.0);
+val(p1.frame_a.f[2],0.0);
+val(p1.frame_a.f[2],5.0);
+val(p1.frame_a.t[1],0.0);
+val(p1.frame_a.t[1],5.0);
+val(p1.frame_a.t[3],0.0);
+val(p1.frame_a.t[3],5.0);
+val(p1.frame_b.r_0[2],0.0);
+val(p1.frame_b.r_0[2],5.0);
+val(p1.frame_b.f[2],0.0);
+val(p1.frame_b.f[2],5.0);
+val(p1.frame_b.t[1],0.0);
+val(p1.frame_b.t[1],5.0);
+val(p1.frame_b.t[3],0.0);
+val(p1.frame_b.t[3],5.0);
+val(p1.s,0.0);
+val(p1.s,5.0);
+val(der(p1.s),0.0);
+val(der(p1.s),5.0);
+val(p1.v,0.0);
+val(p1.v,5.0);
+val(der(p1.v),0.0);
+val(der(p1.v),5.0);
+val(p1.a,0.0);
+val(p1.a,5.0);
+val(p1.f,0.0);
+val(p1.f,5.0);
+val(p1.box.size[1],0.0);
+val(p1.box.size[1],5.0);
+val(spring1.flange_a.f,0.0);
+val(spring1.flange_a.f,5.0);
+val(spring1.flange_b.s,0.0);
+val(spring1.flange_b.s,5.0);
+val(spring1.flange_b.f,0.0);
+val(spring1.flange_b.f,5.0);
+val(spring1.s_rel,0.0);
+val(spring1.s_rel,5.0);
+val(spring1.f,0.0);
+val(spring1.f,5.0);
+val(body1.frame_a.r_0[2],0.0);
+val(body1.frame_a.r_0[2],5.0);
+val(der(body1.frame_a.r_0[2]),0.0);
+val(der(body1.frame_a.r_0[2]),5.0);
+val(body1.frame_a.f[2],0.0);
+val(body1.frame_a.f[2],5.0);
+val(body1.frame_a.t[1],0.0);
+val(body1.frame_a.t[1],5.0);
+val(body1.frame_a.t[3],0.0);
+val(body1.frame_a.t[3],5.0);
+val(body1.r_0[2],0.0);
+val(body1.r_0[2],5.0);
+val(body1.v_0[2],0.0);
+val(body1.v_0[2],5.0);
+val(der(body1.v_0[2]),0.0);
+val(der(body1.v_0[2]),5.0);
+val(body1.a_0[2],0.0);
+val(body1.a_0[2],5.0);
+val(body1.cylinder.rvisobj[2],0.0);
+val(body1.cylinder.rvisobj[2],5.0);
+val(body1.sphere.rvisobj[2],0.0);
+val(body1.sphere.rvisobj[2],5.0);
+val(bar1.frame_a.f[2],0.0);
+val(bar1.frame_a.f[2],5.0);
+val(bar1.frame_a.t[1],0.0);
+val(bar1.frame_a.t[1],5.0);
+val(bar1.frame_a.t[3],0.0);
+val(bar1.frame_a.t[3],5.0);
+val(bar1.frame_b.f[2],0.0);
+val(bar1.frame_b.f[2],5.0);
+val(bar1.frame_b.t[1],0.0);
+val(bar1.frame_b.t[1],5.0);
+val(bar1.frame_b.t[3],0.0);
+val(bar1.frame_b.t[3],5.0);
+val(bar2.frame_a.f[2],0.0);
+val(bar2.frame_a.f[2],5.0);
+val(bar2.frame_a.t[1],0.0);
+val(bar2.frame_a.t[1],5.0);
+val(bar2.frame_a.t[3],0.0);
+val(bar2.frame_a.t[3],5.0);
+val(bar2.frame_b.f[2],0.0);
+val(bar2.frame_b.f[2],5.0);
+val(bar2.frame_b.t[1],0.0);
+val(bar2.frame_b.t[1],5.0);
+val(bar2.frame_b.t[3],0.0);
+val(bar2.frame_b.t[3],5.0);
+val(body2.frame_a.r_0[2],0.0);
+val(body2.frame_a.r_0[2],5.0);
+val(der(body2.frame_a.r_0[2]),0.0);
+val(der(body2.frame_a.r_0[2]),5.0);
+val(body2.frame_a.f[2],0.0);
+val(body2.frame_a.f[2],5.0);
+val(body2.frame_a.t[1],0.0);
+val(body2.frame_a.t[1],5.0);
+val(body2.frame_a.t[3],0.0);
+val(body2.frame_a.t[3],5.0);
+val(body2.r_0[2],0.0);
+val(body2.r_0[2],5.0);
+val(body2.v_0[2],0.0);
+val(body2.v_0[2],5.0);
+val(der(body2.v_0[2]),0.0);
+val(der(body2.v_0[2]),5.0);
+val(body2.a_0[2],0.0);
+val(body2.a_0[2],5.0);
+val(body2.cylinder.rvisobj[2],0.0);
+val(body2.cylinder.rvisobj[2],5.0);
+val(body2.sphere.rvisobj[2],0.0);
+val(body2.sphere.rvisobj[2],5.0);
+val(p2.frame_a.t[1],0.0);
+val(p2.frame_a.t[1],5.0);
+val(p2.frame_a.t[3],0.0);
+val(p2.frame_a.t[3],5.0);
+val(p2.frame_b.r_0[2],0.0);
+val(p2.frame_b.r_0[2],5.0);
+val(p2.frame_b.t[1],0.0);
+val(p2.frame_b.t[1],5.0);
+val(p2.frame_b.t[3],0.0);
+val(p2.frame_b.t[3],5.0);
+val(p2.s,0.0);
+val(p2.s,5.0);
+val(der(p2.s),0.0);
+val(der(p2.s),5.0);
+val(p2.v,0.0);
+val(p2.v,5.0);
+val(der(p2.v),0.0);
+val(der(p2.v),5.0);
+val(p2.a,0.0);
+val(p2.a,5.0);
+val(p2.box.size[1],0.0);
+val(p2.box.size[1],5.0);
+val(spring2.frame_a.f[2],0.0);
+val(spring2.frame_a.f[2],5.0);
+val(spring2.frame_b.r_0[2],0.0);
+val(spring2.frame_b.r_0[2],5.0);
+val(spring2.frame_b.f[2],0.0);
+val(spring2.frame_b.f[2],5.0);
+val(spring2.lineForce.frame_a.f[2],0.0);
+val(spring2.lineForce.frame_a.f[2],5.0);
+val(spring2.lineForce.frame_b.r_0[2],0.0);
+val(spring2.lineForce.frame_b.r_0[2],5.0);
+val(spring2.lineForce.frame_b.f[2],0.0);
+val(spring2.lineForce.frame_b.f[2],5.0);
+val(spring2.lineForce.flange_b.s,0.0);
+val(spring2.lineForce.flange_b.s,5.0);
+val(spring2.lineForce.flange_b.f,0.0);
+val(spring2.lineForce.flange_b.f,5.0);
+val(spring2.lineForce.flange_a.f,0.0);
+val(spring2.lineForce.flange_a.f,5.0);
+val(spring2.lineForce.length,0.0);
+val(spring2.lineForce.length,5.0);
+val(spring2.lineForce.r_rel_0[2],0.0);
+val(spring2.lineForce.r_rel_0[2],5.0);
+val(spring2.lineForce.e_rel_0[2],0.0);
+val(spring2.lineForce.e_rel_0[2],5.0);
+val(spring2.lineForce.lineShape.rxvisobj[1],0.0);
+val(spring2.lineForce.lineShape.rxvisobj[1],5.0);
+val(spring2.lineForce.lineShape.rxvisobj[2],0.0);
+val(spring2.lineForce.lineShape.rxvisobj[2],5.0);
+val(spring2.lineForce.lineShape.ryvisobj[1],0.0);
+val(spring2.lineForce.lineShape.ryvisobj[1],5.0);
+val(spring2.lineForce.lineShape.ryvisobj[2],0.0);
+val(spring2.lineForce.lineShape.ryvisobj[2],5.0);
+val(spring2.lineForce.lineShape.size[1],0.0);
+val(spring2.lineForce.lineShape.size[1],5.0);
+val(spring2.spring.flange_a.f,0.0);
+val(spring2.spring.flange_a.f,5.0);
+val(spring2.spring.flange_b.s,0.0);
+val(spring2.spring.flange_b.s,5.0);
+val(spring2.spring.flange_b.f,0.0);
+val(spring2.spring.flange_b.f,5.0);
+val(spring2.spring.s_rel,0.0);
+val(spring2.spring.s_rel,5.0);
+val(spring2.spring.f,0.0);
+val(spring2.spring.f,5.0);
+val(p1.axis.s,0.0);
+val(p1.axis.s,5.0);
+val(p1.axis.f,0.0);
+val(p1.axis.f,5.0);
+val(p1.support.f,0.0);
+val(p1.support.f,5.0);
+val(p2.axis.s,0.0);
+val(p2.axis.s,5.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -0
+// -31.9924659729
+// 0.0
+// 0.0
+// -0
+// -14.39661026
+// 0.0
+// 15.9962329865
+// -0
+// -0
+// 0.0
+// 0.0
+// -0.10000000149
+// -0.633207798004
+// -0
+// -15.9962329865
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 1.38527238369
+// 0.0
+// 1.38527238369
+// 9.81000041962
+// -6.18623352051
+// 9.81000041962
+// -6.18623352051
+// -0
+// -15.9962329865
+// 0.10000000149
+// 0.633207798004
+// -0
+// -15.9962329865
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 15.9962329865
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 15.9962329865
+// -0.10000000149
+// -0.633207798004
+// -0
+// -1.38527238369
+// 0.0
+// 15.9962329865
+// -0
+// -0
+// 0.0
+// 0.0
+// -0.10000000149
+// -0.633207798004
+// -0
+// -1.38527238369
+// -9.81000041962
+// 6.18623352051
+// -9.81000041962
+// 6.18623352051
+// -0.10000000149
+// -0.633207798004
+// -0.10000000149
+// -0.633207798004
+// 0.0
+// 31.9924659729
+// -0
+// -0
+// 0.0
+// 14.39661026
+// -0
+// -31.9924659729
+// 0.0
+// 0.0
+// -0
+// -4.79887008667
+// 0.0
+// 15.9962329865
+// -0
+// -0
+// 0.0
+// 4.79887008667
+// -0
+// -15.9962329865
+// 0.0
+// 0.0
+// -0
+// -0
+// -0.10000000149
+// -0.633207798004
+// -0
+// -1.38527238369
+// 0.0
+// 15.9962329865
+// -0
+// -0
+// 0.0
+// 0.0
+// -0.10000000149
+// -0.633207798004
+// -0
+// -1.38527238369
+// -9.81000041962
+// 6.18623352051
+// -9.81000041962
+// 6.18623352051
+// -0.10000000149
+// -0.633207798004
+// -0.10000000149
+// -0.633207798004
+// -0
+// -0
+// 0.0
+// 0.0
+// -0.10000000149
+// -0.633207798004
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 1.38527238369
+// 0.0
+// 1.38527238369
+// 9.81000041962
+// -6.18623352051
+// 9.81000041962
+// -6.18623352051
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 15.9962329865
+// -0.10000000149
+// -0.633207798004
+// -0
+// -15.9962329865
+// 0.0
+// 15.9962329865
+// -0.10000000149
+// -0.633207798004
+// -0
+// -15.9962329865
+// 0.10000000149
+// 0.633207798004
+// -0
+// -15.9962329865
+// 0.0
+// 15.9962329865
+// 0.10000000149
+// 0.633207798004
+// -0.10000000149
+// -0.633207798004
+// -1.0
+// -1.0
+// 0.0
+// 0.0
+// -1.0
+// -1.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.10000000149
+// 0.633207798004
+// -0
+// -15.9962329865
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 15.9962329865
+// 0.10000000149
+// 0.633207798004
+// 0.0
+// 15.9962329865
+// 0.10000000149
+// 0.633207798004
+// -0
+// -15.9962329865
+// 0.0
+// 15.9962329865
+// 0.10000000149
+// 0.633207798004
+// endResult

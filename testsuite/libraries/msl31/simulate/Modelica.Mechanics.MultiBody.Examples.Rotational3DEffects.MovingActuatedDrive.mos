@@ -1,0 +1,1419 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive_* Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.exe Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.cpp Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.makefile Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.libs Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive);
+val(world.frame_b.f[1],0.0);
+val(world.frame_b.f[1],1.10000002384);
+val(world.frame_b.f[2],0.0);
+val(world.frame_b.f[2],1.10000002384);
+val(world.frame_b.f[3],0.0);
+val(world.frame_b.f[3],1.10000002384);
+val(world.frame_b.t[1],0.0);
+val(world.frame_b.t[1],1.10000002384);
+val(world.frame_b.t[2],0.0);
+val(world.frame_b.t[2],1.10000002384);
+val(world.frame_b.t[3],0.0);
+val(world.frame_b.t[3],1.10000002384);
+val(bodyCylinder.frame_a.R.T[1,1],0.0);
+val(bodyCylinder.frame_a.R.T[1,1],1.10000002384);
+val(bodyCylinder.frame_a.R.T[1,3],0.0);
+val(bodyCylinder.frame_a.R.T[1,3],1.10000002384);
+val(bodyCylinder.frame_a.R.T[2,1],0.0);
+val(bodyCylinder.frame_a.R.T[2,1],1.10000002384);
+val(bodyCylinder.frame_a.R.T[2,2],0.0);
+val(bodyCylinder.frame_a.R.T[2,2],1.10000002384);
+val(bodyCylinder.frame_a.R.T[2,3],0.0);
+val(bodyCylinder.frame_a.R.T[2,3],1.10000002384);
+val(bodyCylinder.frame_a.R.T[3,1],0.0);
+val(bodyCylinder.frame_a.R.T[3,1],1.10000002384);
+val(bodyCylinder.frame_a.R.T[3,2],0.0);
+val(bodyCylinder.frame_a.R.T[3,2],1.10000002384);
+val(bodyCylinder.frame_a.R.T[3,3],0.0);
+val(bodyCylinder.frame_a.R.T[3,3],1.10000002384);
+val(bodyCylinder.frame_a.R.w[1],0.0);
+val(bodyCylinder.frame_a.R.w[1],1.10000002384);
+val(bodyCylinder.frame_a.R.w[2],0.0);
+val(bodyCylinder.frame_a.R.w[2],1.10000002384);
+val(bodyCylinder.frame_a.R.w[3],0.0);
+val(bodyCylinder.frame_a.R.w[3],1.10000002384);
+val(bodyCylinder.frame_a.f[1],0.0);
+val(bodyCylinder.frame_a.f[1],1.10000002384);
+val(bodyCylinder.frame_a.f[2],0.0);
+val(bodyCylinder.frame_a.f[2],1.10000002384);
+val(bodyCylinder.frame_a.f[3],0.0);
+val(bodyCylinder.frame_a.f[3],1.10000002384);
+val(bodyCylinder.frame_a.t[2],0.0);
+val(bodyCylinder.frame_a.t[2],1.10000002384);
+val(bodyCylinder.frame_a.t[3],0.0);
+val(bodyCylinder.frame_a.t[3],1.10000002384);
+val(bodyCylinder.frame_b.r_0[1],0.0);
+val(bodyCylinder.frame_b.r_0[1],1.10000002384);
+val(bodyCylinder.frame_b.r_0[3],0.0);
+val(bodyCylinder.frame_b.r_0[3],1.10000002384);
+val(bodyCylinder.frame_b.R.T[1,1],0.0);
+val(bodyCylinder.frame_b.R.T[1,1],1.10000002384);
+val(bodyCylinder.frame_b.R.T[1,3],0.0);
+val(bodyCylinder.frame_b.R.T[1,3],1.10000002384);
+val(bodyCylinder.frame_b.R.T[2,1],0.0);
+val(bodyCylinder.frame_b.R.T[2,1],1.10000002384);
+val(bodyCylinder.frame_b.R.T[2,2],0.0);
+val(bodyCylinder.frame_b.R.T[2,2],1.10000002384);
+val(bodyCylinder.frame_b.R.T[2,3],0.0);
+val(bodyCylinder.frame_b.R.T[2,3],1.10000002384);
+val(bodyCylinder.frame_b.R.T[3,1],0.0);
+val(bodyCylinder.frame_b.R.T[3,1],1.10000002384);
+val(bodyCylinder.frame_b.R.T[3,2],0.0);
+val(bodyCylinder.frame_b.R.T[3,2],1.10000002384);
+val(bodyCylinder.frame_b.R.T[3,3],0.0);
+val(bodyCylinder.frame_b.R.T[3,3],1.10000002384);
+val(bodyCylinder.frame_b.R.w[1],0.0);
+val(bodyCylinder.frame_b.R.w[1],1.10000002384);
+val(bodyCylinder.frame_b.R.w[2],0.0);
+val(bodyCylinder.frame_b.R.w[2],1.10000002384);
+val(bodyCylinder.frame_b.R.w[3],0.0);
+val(bodyCylinder.frame_b.R.w[3],1.10000002384);
+val(bodyCylinder.frame_b.t[1],0.0);
+val(bodyCylinder.frame_b.t[1],1.10000002384);
+val(bodyCylinder.frame_b.t[2],0.0);
+val(bodyCylinder.frame_b.t[2],1.10000002384);
+val(bodyCylinder.frame_b.t[3],0.0);
+val(bodyCylinder.frame_b.t[3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[1,1],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[1,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[1,3],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[1,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,1],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,2],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,3],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[2,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,1],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,2],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,3],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.T[3,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.w[1],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.w[1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.w[2],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.w[2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.R.w[3],0.0);
+val(bodyCylinder.frameTranslation.frame_a.R.w[3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.t[1],0.0);
+val(bodyCylinder.frameTranslation.frame_a.t[1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.t[2],0.0);
+val(bodyCylinder.frameTranslation.frame_a.t[2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_a.t[3],0.0);
+val(bodyCylinder.frameTranslation.frame_a.t[3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.r_0[1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.r_0[1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.r_0[3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.r_0[3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[1,1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[1,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[1,3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[1,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,2],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[2,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,2],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.T[3,3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.w[1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.w[1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.w[2],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.w[2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.R.w[3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.R.w[3],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.t[1],0.0);
+val(bodyCylinder.frameTranslation.frame_b.t[1],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.t[2],0.0);
+val(bodyCylinder.frameTranslation.frame_b.t[2],1.10000002384);
+val(bodyCylinder.frameTranslation.frame_b.t[3],0.0);
+val(bodyCylinder.frameTranslation.frame_b.t[3],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[1,1],0.0);
+val(bodyCylinder.body.frame_a.R.T[1,1],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[1,3],0.0);
+val(bodyCylinder.body.frame_a.R.T[1,3],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[2,1],0.0);
+val(bodyCylinder.body.frame_a.R.T[2,1],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[2,2],0.0);
+val(bodyCylinder.body.frame_a.R.T[2,2],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[2,3],0.0);
+val(bodyCylinder.body.frame_a.R.T[2,3],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[3,1],0.0);
+val(bodyCylinder.body.frame_a.R.T[3,1],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[3,2],0.0);
+val(bodyCylinder.body.frame_a.R.T[3,2],1.10000002384);
+val(bodyCylinder.body.frame_a.R.T[3,3],0.0);
+val(bodyCylinder.body.frame_a.R.T[3,3],1.10000002384);
+val(bodyCylinder.body.frame_a.R.w[1],0.0);
+val(bodyCylinder.body.frame_a.R.w[1],1.10000002384);
+val(bodyCylinder.body.frame_a.R.w[2],0.0);
+val(bodyCylinder.body.frame_a.R.w[2],1.10000002384);
+val(bodyCylinder.body.frame_a.R.w[3],0.0);
+val(bodyCylinder.body.frame_a.R.w[3],1.10000002384);
+val(bodyCylinder.body.frame_a.f[1],0.0);
+val(bodyCylinder.body.frame_a.f[1],1.10000002384);
+val(bodyCylinder.body.frame_a.f[2],0.0);
+val(bodyCylinder.body.frame_a.f[2],1.10000002384);
+val(bodyCylinder.body.frame_a.f[3],0.0);
+val(bodyCylinder.body.frame_a.f[3],1.10000002384);
+val(bodyCylinder.body.frame_a.t[1],0.0);
+val(bodyCylinder.body.frame_a.t[1],1.10000002384);
+val(bodyCylinder.body.frame_a.t[2],0.0);
+val(bodyCylinder.body.frame_a.t[2],1.10000002384);
+val(bodyCylinder.body.frame_a.t[3],0.0);
+val(bodyCylinder.body.frame_a.t[3],1.10000002384);
+val(bodyCylinder.body.w_a[1],0.0);
+val(bodyCylinder.body.w_a[1],1.10000002384);
+val(bodyCylinder.body.w_a[2],0.0);
+val(bodyCylinder.body.w_a[2],1.10000002384);
+val(bodyCylinder.body.w_a[3],0.0);
+val(bodyCylinder.body.w_a[3],1.10000002384);
+val(der(bodyCylinder.body.w_a[1]),0.0);
+val(der(bodyCylinder.body.w_a[1]),1.10000002384);
+val(der(bodyCylinder.body.w_a[2]),0.0);
+val(der(bodyCylinder.body.w_a[2]),1.10000002384);
+val(der(bodyCylinder.body.w_a[3]),0.0);
+val(der(bodyCylinder.body.w_a[3]),1.10000002384);
+val(bodyCylinder.body.z_a[1],0.0);
+val(bodyCylinder.body.z_a[1],1.10000002384);
+val(bodyCylinder.body.z_a[2],0.0);
+val(bodyCylinder.body.z_a[2],1.10000002384);
+val(bodyCylinder.body.z_a[3],0.0);
+val(bodyCylinder.body.z_a[3],1.10000002384);
+val(bodyCylinder.shape1.rxvisobj[1],0.0);
+val(bodyCylinder.shape1.rxvisobj[1],1.10000002384);
+val(bodyCylinder.shape1.rxvisobj[3],0.0);
+val(bodyCylinder.shape1.rxvisobj[3],1.10000002384);
+val(bodyCylinder.shape1.ryvisobj[1],0.0);
+val(bodyCylinder.shape1.ryvisobj[1],1.10000002384);
+val(bodyCylinder.shape1.ryvisobj[2],0.0);
+val(bodyCylinder.shape1.ryvisobj[2],1.10000002384);
+val(bodyCylinder.shape1.ryvisobj[3],0.0);
+val(bodyCylinder.shape1.ryvisobj[3],1.10000002384);
+val(bodyCylinder.shape1.rvisobj[1],0.0);
+val(bodyCylinder.shape1.rvisobj[1],1.10000002384);
+val(bodyCylinder.shape1.rvisobj[3],0.0);
+val(bodyCylinder.shape1.rvisobj[3],1.10000002384);
+val(revolute.frame_a.R.T[1,1],0.0);
+val(revolute.frame_a.R.T[1,1],1.10000002384);
+val(revolute.frame_a.R.T[1,3],0.0);
+val(revolute.frame_a.R.T[1,3],1.10000002384);
+val(revolute.frame_a.R.T[3,1],0.0);
+val(revolute.frame_a.R.T[3,1],1.10000002384);
+val(revolute.frame_a.R.T[3,3],0.0);
+val(revolute.frame_a.R.T[3,3],1.10000002384);
+val(revolute.frame_a.R.w[2],0.0);
+val(revolute.frame_a.R.w[2],1.10000002384);
+val(revolute.frame_a.f[1],0.0);
+val(revolute.frame_a.f[1],1.10000002384);
+val(revolute.frame_a.f[2],0.0);
+val(revolute.frame_a.f[2],1.10000002384);
+val(revolute.frame_a.f[3],0.0);
+val(revolute.frame_a.f[3],1.10000002384);
+val(revolute.frame_a.t[2],0.0);
+val(revolute.frame_a.t[2],1.10000002384);
+val(revolute.frame_a.t[3],0.0);
+val(revolute.frame_a.t[3],1.10000002384);
+val(revolute.frame_b.R.T[1,1],0.0);
+val(revolute.frame_b.R.T[1,1],1.10000002384);
+val(revolute.frame_b.R.T[1,3],0.0);
+val(revolute.frame_b.R.T[1,3],1.10000002384);
+val(revolute.frame_b.R.T[2,1],0.0);
+val(revolute.frame_b.R.T[2,1],1.10000002384);
+val(revolute.frame_b.R.T[2,2],0.0);
+val(revolute.frame_b.R.T[2,2],1.10000002384);
+val(revolute.frame_b.R.T[2,3],0.0);
+val(revolute.frame_b.R.T[2,3],1.10000002384);
+val(revolute.frame_b.R.T[3,1],0.0);
+val(revolute.frame_b.R.T[3,1],1.10000002384);
+val(revolute.frame_b.R.T[3,2],0.0);
+val(revolute.frame_b.R.T[3,2],1.10000002384);
+val(revolute.frame_b.R.T[3,3],0.0);
+val(revolute.frame_b.R.T[3,3],1.10000002384);
+val(revolute.frame_b.R.w[1],0.0);
+val(revolute.frame_b.R.w[1],1.10000002384);
+val(revolute.frame_b.R.w[2],0.0);
+val(revolute.frame_b.R.w[2],1.10000002384);
+val(revolute.frame_b.R.w[3],0.0);
+val(revolute.frame_b.R.w[3],1.10000002384);
+val(revolute.frame_b.f[1],0.0);
+val(revolute.frame_b.f[1],1.10000002384);
+val(revolute.frame_b.f[2],0.0);
+val(revolute.frame_b.f[2],1.10000002384);
+val(revolute.frame_b.f[3],0.0);
+val(revolute.frame_b.f[3],1.10000002384);
+val(revolute.frame_b.t[2],0.0);
+val(revolute.frame_b.t[2],1.10000002384);
+val(revolute.frame_b.t[3],0.0);
+val(revolute.frame_b.t[3],1.10000002384);
+val(revolute.phi,0.0);
+val(revolute.phi,1.10000002384);
+val(der(revolute.phi),0.0);
+val(der(revolute.phi),1.10000002384);
+val(revolute.w,0.0);
+val(revolute.w,1.10000002384);
+val(der(revolute.w),0.0);
+val(der(revolute.w),1.10000002384);
+val(revolute.a,0.0);
+val(revolute.a,1.10000002384);
+val(revolute.angle,0.0);
+val(revolute.angle,1.10000002384);
+val(revolute.cylinder.rxvisobj[1],0.0);
+val(revolute.cylinder.rxvisobj[1],1.10000002384);
+val(revolute.cylinder.rxvisobj[3],0.0);
+val(revolute.cylinder.rxvisobj[3],1.10000002384);
+val(revolute.cylinder.rvisobj[1],0.0);
+val(revolute.cylinder.rvisobj[1],1.10000002384);
+val(revolute.cylinder.rvisobj[3],0.0);
+val(revolute.cylinder.rvisobj[3],1.10000002384);
+val(torque.frame_a.R.T[1,1],0.0);
+val(torque.frame_a.R.T[1,1],1.10000002384);
+val(torque.frame_a.R.T[1,3],0.0);
+val(torque.frame_a.R.T[1,3],1.10000002384);
+val(torque.frame_a.R.T[3,1],0.0);
+val(torque.frame_a.R.T[3,1],1.10000002384);
+val(torque.frame_a.R.T[3,3],0.0);
+val(torque.frame_a.R.T[3,3],1.10000002384);
+val(torque.frame_a.R.w[2],0.0);
+val(torque.frame_a.R.w[2],1.10000002384);
+val(torque.frame_a.t[1],0.0);
+val(torque.frame_a.t[1],1.10000002384);
+val(torque.frame_a.t[2],0.0);
+val(torque.frame_a.t[2],1.10000002384);
+val(torque.frame_a.t[3],0.0);
+val(torque.frame_a.t[3],1.10000002384);
+val(torque.frame_b.r_0[1],0.0);
+val(torque.frame_b.r_0[1],1.10000002384);
+val(torque.frame_b.r_0[3],0.0);
+val(torque.frame_b.r_0[3],1.10000002384);
+val(torque.frame_b.R.T[1,1],0.0);
+val(torque.frame_b.R.T[1,1],1.10000002384);
+val(torque.frame_b.R.T[1,3],0.0);
+val(torque.frame_b.R.T[1,3],1.10000002384);
+val(torque.frame_b.R.T[2,1],0.0);
+val(torque.frame_b.R.T[2,1],1.10000002384);
+val(torque.frame_b.R.T[2,2],0.0);
+val(torque.frame_b.R.T[2,2],1.10000002384);
+val(torque.frame_b.R.T[2,3],0.0);
+val(torque.frame_b.R.T[2,3],1.10000002384);
+val(torque.frame_b.R.T[3,1],0.0);
+val(torque.frame_b.R.T[3,1],1.10000002384);
+val(torque.frame_b.R.T[3,2],0.0);
+val(torque.frame_b.R.T[3,2],1.10000002384);
+val(torque.frame_b.R.T[3,3],0.0);
+val(torque.frame_b.R.T[3,3],1.10000002384);
+val(torque.frame_b.R.w[1],0.0);
+val(torque.frame_b.R.w[1],1.10000002384);
+val(torque.frame_b.R.w[2],0.0);
+val(torque.frame_b.R.w[2],1.10000002384);
+val(torque.frame_b.R.w[3],0.0);
+val(torque.frame_b.R.w[3],1.10000002384);
+val(torque.frame_b.t[1],0.0);
+val(torque.frame_b.t[1],1.10000002384);
+val(torque.frame_b.t[2],0.0);
+val(torque.frame_b.t[2],1.10000002384);
+val(torque.frame_b.t[3],0.0);
+val(torque.frame_b.t[3],1.10000002384);
+val(torque.torque[1],0.0);
+val(torque.torque[1],1.10000002384);
+val(torque.torque[2],0.0);
+val(torque.torque[2],1.10000002384);
+val(torque.torque[3],0.0);
+val(torque.torque[3],1.10000002384);
+val(torque.torqueArrow.arrowLine.rxvisobj[1],0.0);
+val(torque.torqueArrow.arrowLine.rxvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowLine.rxvisobj[2],0.0);
+val(torque.torqueArrow.arrowLine.rxvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowLine.rxvisobj[3],0.0);
+val(torque.torqueArrow.arrowLine.rxvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowLine.ryvisobj[1],0.0);
+val(torque.torqueArrow.arrowLine.ryvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowLine.ryvisobj[2],0.0);
+val(torque.torqueArrow.arrowLine.ryvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowLine.ryvisobj[3],0.0);
+val(torque.torqueArrow.arrowLine.ryvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowLine.rvisobj[1],0.0);
+val(torque.torqueArrow.arrowLine.rvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowLine.rvisobj[2],0.0);
+val(torque.torqueArrow.arrowLine.rvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowLine.rvisobj[3],0.0);
+val(torque.torqueArrow.arrowLine.rvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowLine.size[1],0.0);
+val(torque.torqueArrow.arrowLine.size[1],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rxvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead1.rxvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rxvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead1.rxvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rxvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead1.rxvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead1.ryvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead1.ryvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead1.ryvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead1.ryvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead1.ryvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead1.ryvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead1.rvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead1.rvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead1.rvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead1.rvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead1.size[1],0.0);
+val(torque.torqueArrow.arrowHead1.size[1],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rxvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead2.rxvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rxvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead2.rxvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rxvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead2.rxvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead2.ryvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead2.ryvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead2.ryvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead2.ryvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead2.ryvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead2.ryvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rvisobj[1],0.0);
+val(torque.torqueArrow.arrowHead2.rvisobj[1],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rvisobj[2],0.0);
+val(torque.torqueArrow.arrowHead2.rvisobj[2],1.10000002384);
+val(torque.torqueArrow.arrowHead2.rvisobj[3],0.0);
+val(torque.torqueArrow.arrowHead2.rvisobj[3],1.10000002384);
+val(torque.torqueArrow.arrowHead2.size[1],0.0);
+val(torque.torqueArrow.arrowHead2.size[1],1.10000002384);
+val(torque.connectionLine.rxvisobj[1],0.0);
+val(torque.connectionLine.rxvisobj[1],1.10000002384);
+val(torque.connectionLine.rxvisobj[3],0.0);
+val(torque.connectionLine.rxvisobj[3],1.10000002384);
+val(torque.connectionLine.ryvisobj[1],0.0);
+val(torque.connectionLine.ryvisobj[1],1.10000002384);
+val(torque.connectionLine.ryvisobj[2],0.0);
+val(torque.connectionLine.ryvisobj[2],1.10000002384);
+val(torque.connectionLine.ryvisobj[3],0.0);
+val(torque.connectionLine.ryvisobj[3],1.10000002384);
+val(torque.connectionLine.size[1],0.0);
+val(torque.connectionLine.size[1],1.10000002384);
+val(torque.basicTorque.frame_a.R.T[1,1],0.0);
+val(torque.basicTorque.frame_a.R.T[1,1],1.10000002384);
+val(torque.basicTorque.frame_a.R.T[1,3],0.0);
+val(torque.basicTorque.frame_a.R.T[1,3],1.10000002384);
+val(torque.basicTorque.frame_a.R.T[3,1],0.0);
+val(torque.basicTorque.frame_a.R.T[3,1],1.10000002384);
+val(torque.basicTorque.frame_a.R.T[3,3],0.0);
+val(torque.basicTorque.frame_a.R.T[3,3],1.10000002384);
+val(torque.basicTorque.frame_a.R.w[2],0.0);
+val(torque.basicTorque.frame_a.R.w[2],1.10000002384);
+val(torque.basicTorque.frame_a.t[1],0.0);
+val(torque.basicTorque.frame_a.t[1],1.10000002384);
+val(torque.basicTorque.frame_a.t[2],0.0);
+val(torque.basicTorque.frame_a.t[2],1.10000002384);
+val(torque.basicTorque.frame_a.t[3],0.0);
+val(torque.basicTorque.frame_a.t[3],1.10000002384);
+val(torque.basicTorque.frame_b.r_0[1],0.0);
+val(torque.basicTorque.frame_b.r_0[1],1.10000002384);
+val(torque.basicTorque.frame_b.r_0[3],0.0);
+val(torque.basicTorque.frame_b.r_0[3],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[1,1],0.0);
+val(torque.basicTorque.frame_b.R.T[1,1],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[1,3],0.0);
+val(torque.basicTorque.frame_b.R.T[1,3],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[2,1],0.0);
+val(torque.basicTorque.frame_b.R.T[2,1],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[2,2],0.0);
+val(torque.basicTorque.frame_b.R.T[2,2],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[2,3],0.0);
+val(torque.basicTorque.frame_b.R.T[2,3],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[3,1],0.0);
+val(torque.basicTorque.frame_b.R.T[3,1],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[3,2],0.0);
+val(torque.basicTorque.frame_b.R.T[3,2],1.10000002384);
+val(torque.basicTorque.frame_b.R.T[3,3],0.0);
+val(torque.basicTorque.frame_b.R.T[3,3],1.10000002384);
+val(torque.basicTorque.frame_b.R.w[1],0.0);
+val(torque.basicTorque.frame_b.R.w[1],1.10000002384);
+val(torque.basicTorque.frame_b.R.w[2],0.0);
+val(torque.basicTorque.frame_b.R.w[2],1.10000002384);
+val(torque.basicTorque.frame_b.R.w[3],0.0);
+val(torque.basicTorque.frame_b.R.w[3],1.10000002384);
+val(torque.basicTorque.frame_b.t[1],0.0);
+val(torque.basicTorque.frame_b.t[1],1.10000002384);
+val(torque.basicTorque.frame_b.t[2],0.0);
+val(torque.basicTorque.frame_b.t[2],1.10000002384);
+val(torque.basicTorque.frame_b.t[3],0.0);
+val(torque.basicTorque.frame_b.t[3],1.10000002384);
+val(torque.basicTorque.torque[1],0.0);
+val(torque.basicTorque.torque[1],1.10000002384);
+val(torque.basicTorque.torque[2],0.0);
+val(torque.basicTorque.torque[2],1.10000002384);
+val(torque.basicTorque.torque[3],0.0);
+val(torque.basicTorque.torque[3],1.10000002384);
+val(torque.basicTorque.r_0[1],0.0);
+val(torque.basicTorque.r_0[1],1.10000002384);
+val(torque.basicTorque.r_0[3],0.0);
+val(torque.basicTorque.r_0[3],1.10000002384);
+val(torque.basicTorque.t_b_0[1],0.0);
+val(torque.basicTorque.t_b_0[1],1.10000002384);
+val(torque.basicTorque.t_b_0[2],0.0);
+val(torque.basicTorque.t_b_0[2],1.10000002384);
+val(torque.basicTorque.t_b_0[3],0.0);
+val(torque.basicTorque.t_b_0[3],1.10000002384);
+val(sine1[1].y,0.0);
+val(sine1[1].y,1.10000002384);
+val(sine1[2].y,0.0);
+val(sine1[2].y,1.10000002384);
+val(sine1[3].y,0.0);
+val(sine1[3].y,1.10000002384);
+val(rotor1D.phi,0.0);
+val(rotor1D.phi,1.10000002384);
+val(der(rotor1D.phi),0.0);
+val(der(rotor1D.phi),1.10000002384);
+val(rotor1D.w,0.0);
+val(rotor1D.w,1.10000002384);
+val(der(rotor1D.w),0.0);
+val(der(rotor1D.w),1.10000002384);
+val(rotor1D.a,0.0);
+val(rotor1D.a,1.10000002384);
+val(rotor1D.flange_a.phi,0.0);
+val(rotor1D.flange_a.phi,1.10000002384);
+val(rotor1D.flange_a.tau,0.0);
+val(rotor1D.flange_a.tau,1.10000002384);
+val(rotor1D.flange_b.phi,0.0);
+val(rotor1D.flange_b.phi,1.10000002384);
+val(rotor1D.frame_a.R.T[1,1],0.0);
+val(rotor1D.frame_a.R.T[1,1],1.10000002384);
+val(rotor1D.frame_a.R.T[1,3],0.0);
+val(rotor1D.frame_a.R.T[1,3],1.10000002384);
+val(rotor1D.frame_a.R.T[3,1],0.0);
+val(rotor1D.frame_a.R.T[3,1],1.10000002384);
+val(rotor1D.frame_a.R.T[3,3],0.0);
+val(rotor1D.frame_a.R.T[3,3],1.10000002384);
+val(rotor1D.frame_a.R.w[2],0.0);
+val(rotor1D.frame_a.R.w[2],1.10000002384);
+val(rotor1D.frame_a.t[1],0.0);
+val(rotor1D.frame_a.t[1],1.10000002384);
+val(rotor1D.frame_a.t[2],0.0);
+val(rotor1D.frame_a.t[2],1.10000002384);
+val(rotor1D.frame_a.t[3],0.0);
+val(rotor1D.frame_a.t[3],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[1],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[1],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[2],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[2],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[3],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rxvisobj[3],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[1],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[1],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[2],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[2],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[3],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.ryvisobj[3],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[1],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[1],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[2],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[2],1.10000002384);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[3],0.0);
+val(rotor1D.rotorWith3DEffects.cylinder.rvisobj[3],1.10000002384);
+val(torque1.flange.phi,0.0);
+val(torque1.flange.phi,1.10000002384);
+val(torque1.flange.tau,0.0);
+val(torque1.flange.tau,1.10000002384);
+val(torque1.support.tau,0.0);
+val(torque1.support.tau,1.10000002384);
+val(torque1.tau,0.0);
+val(torque1.tau,1.10000002384);
+val(mounting1D.flange_b.tau,0.0);
+val(mounting1D.flange_b.tau,1.10000002384);
+val(mounting1D.frame_a.R.T[1,1],0.0);
+val(mounting1D.frame_a.R.T[1,1],1.10000002384);
+val(mounting1D.frame_a.R.T[1,3],0.0);
+val(mounting1D.frame_a.R.T[1,3],1.10000002384);
+val(mounting1D.frame_a.R.T[3,1],0.0);
+val(mounting1D.frame_a.R.T[3,1],1.10000002384);
+val(mounting1D.frame_a.R.T[3,3],0.0);
+val(mounting1D.frame_a.R.T[3,3],1.10000002384);
+val(mounting1D.frame_a.R.w[2],0.0);
+val(mounting1D.frame_a.R.w[2],1.10000002384);
+val(mounting1D.frame_a.t[1],0.0);
+val(mounting1D.frame_a.t[1],1.10000002384);
+val(mounting1D.frame_a.t[2],0.0);
+val(mounting1D.frame_a.t[2],1.10000002384);
+val(mounting1D.frame_a.t[3],0.0);
+val(mounting1D.frame_a.t[3],1.10000002384);
+val(r1.frame_a.f[1],0.0);
+val(r1.frame_a.f[1],1.10000002384);
+val(r1.frame_a.f[2],0.0);
+val(r1.frame_a.f[2],1.10000002384);
+val(r1.frame_a.f[3],0.0);
+val(r1.frame_a.f[3],1.10000002384);
+val(r1.frame_a.t[1],0.0);
+val(r1.frame_a.t[1],1.10000002384);
+val(r1.frame_a.t[2],0.0);
+val(r1.frame_a.t[2],1.10000002384);
+val(r1.frame_a.t[3],0.0);
+val(r1.frame_a.t[3],1.10000002384);
+val(r1.frame_b.R.T[1,1],0.0);
+val(r1.frame_b.R.T[1,1],1.10000002384);
+val(r1.frame_b.R.T[1,3],0.0);
+val(r1.frame_b.R.T[1,3],1.10000002384);
+val(r1.frame_b.R.T[3,1],0.0);
+val(r1.frame_b.R.T[3,1],1.10000002384);
+val(r1.frame_b.R.T[3,3],0.0);
+val(r1.frame_b.R.T[3,3],1.10000002384);
+val(r1.frame_b.R.w[2],0.0);
+val(r1.frame_b.R.w[2],1.10000002384);
+val(r1.frame_b.f[1],0.0);
+val(r1.frame_b.f[1],1.10000002384);
+val(r1.frame_b.f[2],0.0);
+val(r1.frame_b.f[2],1.10000002384);
+val(r1.frame_b.f[3],0.0);
+val(r1.frame_b.f[3],1.10000002384);
+val(r1.frame_b.t[1],0.0);
+val(r1.frame_b.t[1],1.10000002384);
+val(r1.frame_b.t[2],0.0);
+val(r1.frame_b.t[2],1.10000002384);
+val(r1.frame_b.t[3],0.0);
+val(r1.frame_b.t[3],1.10000002384);
+val(r1.phi,0.0);
+val(r1.phi,1.10000002384);
+val(der(r1.phi),0.0);
+val(der(r1.phi),1.10000002384);
+val(r1.w,0.0);
+val(r1.w,1.10000002384);
+val(der(r1.w),0.0);
+val(der(r1.w),1.10000002384);
+val(r1.a,0.0);
+val(r1.a,1.10000002384);
+val(r1.tau,0.0);
+val(r1.tau,1.10000002384);
+val(r1.angle,0.0);
+val(r1.angle,1.10000002384);
+val(position1.flange.phi,0.0);
+val(position1.flange.phi,1.10000002384);
+val(position1.flange.tau,0.0);
+val(position1.flange.tau,1.10000002384);
+val(position1.support.tau,0.0);
+val(position1.support.tau,1.10000002384);
+val(position1.phi,0.0);
+val(position1.phi,1.10000002384);
+val(der(position1.phi),0.0);
+val(der(position1.phi),1.10000002384);
+val(position1.w,0.0);
+val(position1.w,1.10000002384);
+val(der(position1.w),0.0);
+val(der(position1.w),1.10000002384);
+val(position1.a,0.0);
+val(position1.a,1.10000002384);
+val(position1.phi_ref,0.0);
+val(position1.phi_ref,1.10000002384);
+val(sine2.y,0.0);
+val(sine2.y,1.10000002384);
+val(mounting1D1.flange_b.tau,0.0);
+val(mounting1D1.flange_b.tau,1.10000002384);
+val(mounting1D1.frame_a.t[1],0.0);
+val(mounting1D1.frame_a.t[1],1.10000002384);
+val(mounting1D1.frame_a.t[2],0.0);
+val(mounting1D1.frame_a.t[2],1.10000002384);
+val(mounting1D1.frame_a.t[3],0.0);
+val(mounting1D1.frame_a.t[3],1.10000002384);
+val(r2.frame_a.t[1],0.0);
+val(r2.frame_a.t[1],1.10000002384);
+val(r2.frame_a.t[2],0.0);
+val(r2.frame_a.t[2],1.10000002384);
+val(r2.frame_a.t[3],0.0);
+val(r2.frame_a.t[3],1.10000002384);
+val(r2.frame_b.R.T[1,1],0.0);
+val(r2.frame_b.R.T[1,1],1.10000002384);
+val(r2.frame_b.R.T[1,3],0.0);
+val(r2.frame_b.R.T[1,3],1.10000002384);
+val(r2.frame_b.R.T[3,1],0.0);
+val(r2.frame_b.R.T[3,1],1.10000002384);
+val(r2.frame_b.R.T[3,3],0.0);
+val(r2.frame_b.R.T[3,3],1.10000002384);
+val(r2.frame_b.R.w[2],0.0);
+val(r2.frame_b.R.w[2],1.10000002384);
+val(r2.frame_b.t[1],0.0);
+val(r2.frame_b.t[1],1.10000002384);
+val(r2.frame_b.t[2],0.0);
+val(r2.frame_b.t[2],1.10000002384);
+val(r2.frame_b.t[3],0.0);
+val(r2.frame_b.t[3],1.10000002384);
+val(r2.phi,0.0);
+val(r2.phi,1.10000002384);
+val(der(r2.phi),0.0);
+val(der(r2.phi),1.10000002384);
+val(r2.w,0.0);
+val(r2.w,1.10000002384);
+val(der(r2.w),0.0);
+val(der(r2.w),1.10000002384);
+val(r2.a,0.0);
+val(r2.a,1.10000002384);
+val(r2.tau,0.0);
+val(r2.tau,1.10000002384);
+val(r2.angle,0.0);
+val(r2.angle,1.10000002384);
+val(position2.flange.phi,0.0);
+val(position2.flange.phi,1.10000002384);
+val(position2.flange.tau,0.0);
+val(position2.flange.tau,1.10000002384);
+val(position2.support.tau,0.0);
+val(position2.support.tau,1.10000002384);
+val(position2.phi,0.0);
+val(position2.phi,1.10000002384);
+val(der(position2.phi),0.0);
+val(der(position2.phi),1.10000002384);
+val(position2.w,0.0);
+val(position2.w,1.10000002384);
+val(der(position2.w),0.0);
+val(der(position2.w),1.10000002384);
+val(position2.a,0.0);
+val(position2.a,1.10000002384);
+val(position2.phi_ref,0.0);
+val(position2.phi_ref,1.10000002384);
+val(mounting1D2.flange_b.tau,0.0);
+val(mounting1D2.flange_b.tau,1.10000002384);
+val(mounting1D2.frame_a.t[1],0.0);
+val(mounting1D2.frame_a.t[1],1.10000002384);
+val(mounting1D2.frame_a.t[2],0.0);
+val(mounting1D2.frame_a.t[2],1.10000002384);
+val(mounting1D2.frame_a.t[3],0.0);
+val(mounting1D2.frame_a.t[3],1.10000002384);
+val(fixed.frame_b.t[1],0.0);
+val(fixed.frame_b.t[1],1.10000002384);
+val(fixed.frame_b.t[2],0.0);
+val(fixed.frame_b.t[2],1.10000002384);
+val(fixed.frame_b.t[3],0.0);
+val(fixed.frame_b.t[3],1.10000002384);
+val(r1.axis.phi,0.0);
+val(r1.axis.phi,1.10000002384);
+val(r1.axis.tau,0.0);
+val(r1.axis.tau,1.10000002384);
+val(r2.axis.phi,0.0);
+val(r2.axis.phi,1.10000002384);
+val(r2.axis.tau,0.0);
+val(r2.axis.tau,1.10000002384);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0386530607939
+// 0.0
+// 0.0
+// -0
+// 0.667812645435
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0.0255517158657
+// -0
+// -0.318313360214
+// 0.5
+// 0.212906673551
+// -0
+// -0.452405512333
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// -0
+// -0.587785243988
+// -0
+// -0
+// -0
+// -0
+// 0.5
+// 0.212906673551
+// -0
+// -0.452405512333
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.587785243988
+// 0.0
+// -0.0255517158657
+// 0.0
+// -0.318313360214
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// 0.0
+// 0.293892621994
+// 0.0
+// -44.4297485352
+// -0
+// 3.40629172325
+// 0.0
+// 0.293892621994
+// 0.0
+// -44.4297485352
+// -0
+// 3.40629172325
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.10000000149
+// 0.0425813347101
+// -0
+// -0.0904811024666
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -0.319337248802
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// -0
+// -0
+// -0
+// -0
+// -0
+// -0
+// 0.0
+// 0.0255517158657
+// 0.0
+// 0.318313360214
+// 0.0
+// 0.08010045439
+// 0.0
+// 0.0154088856652
+// 0.0
+// 0.0154088856652
+// 0.0
+// 0.293892621994
+// 0.0
+// 0.293892621994
+// 0.0
+// 0.08010045439
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// -0.0500000007451
+// -0.0212906673551
+// 0.0
+// 0.0452405512333
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// -0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// -0
+// 0.5
+// 0.212906673551
+// -0
+// -0.452405512333
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// -0
+// -0.587785243988
+// -0
+// -0
+// -0
+// -0
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.425813347101
+// 0.0
+// 0.0
+// 0.0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.5
+// 0.212656393647
+// 0.0
+// 0.0
+// 0.0
+// -0.45187368989
+// 0.0
+// 0.0
+// 1.0
+// 0.425813347101
+// 0.0
+// 0.0
+// 0.0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.5
+// 0.212656393647
+// 0.0
+// 0.0
+// 0.0
+// -0.45187368989
+// 0.0
+// 0.000587785267271
+// 1.0
+// 0.425813347101
+// 0.0
+// 0.0
+// 0.0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.5
+// 0.212781533599
+// 0.0
+// 0.0
+// 0.0
+// -0.45213958621
+// 0.0
+// 0.000587785267271
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.5
+// 0.5
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// -0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// -0
+// 0.5
+// 0.212906673551
+// -0
+// -0.452405512333
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// 0.0
+// 0.901909887791
+// -0
+// -0.0800148323178
+// 1.0
+// 0.424448043108
+// 0.0
+// 0.0154088856652
+// 0.0
+// 10.3288898468
+// -0
+// -0.829122781754
+// -0
+// -0.587785243988
+// -0
+// -0
+// -0
+// -0
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.5
+// 0.212906673551
+// -0
+// -0.452405512333
+// -0
+// -0.250286817551
+// -0
+// -0
+// -0
+// 0.531834602356
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.08010045439
+// 0.0
+// 0.0154088856652
+// 0.0
+// 0.0154088856652
+// 0.0
+// 0.293892621994
+// 0.0
+// 0.293892621994
+// 0.0
+// 0.08010045439
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.08010045439
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// 0.0
+// 0.0
+// -0
+// 0.0
+// -0
+// -0.319337248802
+// 1.0
+// 0.425813347101
+// 0.0
+// 0.0
+// 0.0
+// -0.904811024666
+// 0.0
+// 0.0723982974887
+// 1.0
+// 0.996793687344
+// 0.0
+// 0.0340713821352
+// -0.10000000149
+// -0.0425813347101
+// 0.0
+// 0.0
+// 0.0
+// 0.0904811024666
+// 0.0
+// 0.08010045439
+// -0
+// -0.587785243988
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.587785243988
+// -0
+// -0.587785243988
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// 0.0
+// 0.587785243988
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -0
+// -0
+// -0.0386530607939
+// -0
+// -0
+// 0.0
+// -0.667812645435
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// -0
+// -0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// -0.587785243988
+// 0.0
+// 0.0
+// -0
+// 0.319337248802
+// 0.0
+// 1.13093566895
+// 0.0
+// 10.3621139526
+// 0.0
+// 10.3621139526
+// 0.0
+// -44.5598449707
+// 0.0
+// -44.5598449707
+// -0
+// -0
+// 0.0
+// 1.13093566895
+// 0.0
+// 1.13093566895
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 1.13093566895
+// 0.0
+// 10.3621139526
+// 0.0
+// 10.3621139526
+// 0.0
+// -44.5598449707
+// 0.0
+// -44.5598449707
+// 0.0
+// 1.17557048798
+// 0.0
+// 1.17557048798
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -0
+// -0
+// -0
+// 0.0
+// -0.0386530607939
+// 0.0
+// 0.0
+// -0
+// -0.667812645435
+// 1.0
+// 0.425813347101
+// -0
+// -0.904811024666
+// 0.0
+// 0.904811024666
+// 1.0
+// 0.425813347101
+// 0.0
+// 10.3621139526
+// -0
+// -0.587785243988
+// -0
+// -0
+// -0
+// 0.319337248802
+// 0.0
+// 1.13093566895
+// 0.0
+// 10.3621139526
+// 0.0
+// 10.3621139526
+// 0.0
+// -44.5598449707
+// 0.0
+// -44.5598449707
+// 0.0
+// 0.0
+// 0.0
+// 1.13093566895
+// 0.0
+// 1.13093566895
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 1.13093566895
+// 0.0
+// 10.3621139526
+// 0.0
+// 10.3621139526
+// 0.0
+// -44.5598449707
+// 0.0
+// -44.5598449707
+// 0.0
+// 1.17557048798
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// 0.0386530607939
+// -0
+// -0
+// -0
+// 0.667812645435
+// 0.0
+// 1.13093566895
+// -0
+// -0
+// 0.0
+// 1.13093566895
+// 0.0
+// 0.0
+// endResult

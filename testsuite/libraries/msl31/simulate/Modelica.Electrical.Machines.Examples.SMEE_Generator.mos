@@ -1,0 +1,1811 @@
+// name:     Modelica.Electrical.Machines.Examples.SMEE_Generator
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.SMEE_Generator_* Modelica.Electrical.Machines.Examples.SMEE_Generator Modelica.Electrical.Machines.Examples.SMEE_Generator.exe Modelica.Electrical.Machines.Examples.SMEE_Generator.cpp Modelica.Electrical.Machines.Examples.SMEE_Generator.makefile Modelica.Electrical.Machines.Examples.SMEE_Generator.libs Modelica.Electrical.Machines.Examples.SMEE_Generator.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Machines.Examples.SMEE_Generator);
+val(smee.phiMechanical,0.0);
+val(smee.phiMechanical,30.0);
+val(der(smee.phiMechanical),0.0);
+val(der(smee.phiMechanical),30.0);
+val(smee.wMechanical,0.0);
+val(smee.wMechanical,30.0);
+val(smee.tauElectrical,0.0);
+val(smee.tauElectrical,30.0);
+val(smee.tauShaft,0.0);
+val(smee.tauShaft,30.0);
+val(smee.flange.phi,0.0);
+val(smee.flange.phi,30.0);
+val(smee.flange.tau,0.0);
+val(smee.flange.tau,30.0);
+val(smee.inertiaRotor.flange_a.phi,0.0);
+val(smee.inertiaRotor.flange_a.phi,30.0);
+val(smee.inertiaRotor.flange_a.tau,0.0);
+val(smee.inertiaRotor.flange_a.tau,30.0);
+val(smee.inertiaRotor.flange_b.phi,0.0);
+val(smee.inertiaRotor.flange_b.phi,30.0);
+val(smee.inertiaRotor.flange_b.tau,0.0);
+val(smee.inertiaRotor.flange_b.tau,30.0);
+val(smee.inertiaRotor.phi,0.0);
+val(smee.inertiaRotor.phi,30.0);
+val(der(smee.inertiaRotor.phi),0.0);
+val(der(smee.inertiaRotor.phi),30.0);
+val(smee.inertiaRotor.w,0.0);
+val(smee.inertiaRotor.w,30.0);
+val(smee.support.tau,0.0);
+val(smee.support.tau,30.0);
+val(smee.inertiaStator.flange_a.tau,0.0);
+val(smee.inertiaStator.flange_a.tau,30.0);
+val(smee.inertiaStator.flange_b.tau,0.0);
+val(smee.inertiaStator.flange_b.tau,30.0);
+val(smee.vs[1],0.0);
+val(smee.vs[1],30.0);
+val(smee.vs[2],0.0);
+val(smee.vs[2],30.0);
+val(smee.vs[3],0.0);
+val(smee.vs[3],30.0);
+val(smee.is[1],0.0);
+val(smee.is[1],30.0);
+val(smee.is[2],0.0);
+val(smee.is[2],30.0);
+val(smee.is[3],0.0);
+val(smee.is[3],30.0);
+val(smee.i_0_s,0.0);
+val(smee.i_0_s,30.0);
+val(der(smee.i_0_s),0.0);
+val(der(smee.i_0_s),30.0);
+val(smee.idq_ss[1],0.0);
+val(smee.idq_ss[1],30.0);
+val(smee.idq_ss[2],0.0);
+val(smee.idq_ss[2],30.0);
+val(smee.idq_sr[1],0.0);
+val(smee.idq_sr[1],30.0);
+val(der(smee.idq_sr[1]),0.0);
+val(der(smee.idq_sr[1]),30.0);
+val(smee.idq_sr[2],0.0);
+val(smee.idq_sr[2],30.0);
+val(der(smee.idq_sr[2]),0.0);
+val(der(smee.idq_sr[2]),30.0);
+val(smee.idq_rs[1],0.0);
+val(smee.idq_rs[1],30.0);
+val(smee.idq_rs[2],0.0);
+val(smee.idq_rs[2],30.0);
+val(smee.idq_rr[1],0.0);
+val(smee.idq_rr[1],30.0);
+val(smee.idq_rr[2],0.0);
+val(smee.idq_rr[2],30.0);
+val(der(smee.idq_rr[2]),0.0);
+val(der(smee.idq_rr[2]),30.0);
+val(der(smee.idq_rr[1]),0.0);
+val(der(smee.idq_rr[1]),30.0);
+val(smee.plug_sp.pin[1].v,0.0);
+val(smee.plug_sp.pin[1].v,30.0);
+val(smee.plug_sp.pin[1].i,0.0);
+val(smee.plug_sp.pin[1].i,30.0);
+val(smee.plug_sp.pin[2].v,0.0);
+val(smee.plug_sp.pin[2].v,30.0);
+val(smee.plug_sp.pin[2].i,0.0);
+val(smee.plug_sp.pin[2].i,30.0);
+val(smee.plug_sp.pin[3].v,0.0);
+val(smee.plug_sp.pin[3].v,30.0);
+val(smee.plug_sp.pin[3].i,0.0);
+val(smee.plug_sp.pin[3].i,30.0);
+val(smee.plug_sn.pin[1].v,0.0);
+val(smee.plug_sn.pin[1].v,30.0);
+val(smee.plug_sn.pin[1].i,0.0);
+val(smee.plug_sn.pin[1].i,30.0);
+val(smee.plug_sn.pin[2].v,0.0);
+val(smee.plug_sn.pin[2].v,30.0);
+val(smee.plug_sn.pin[2].i,0.0);
+val(smee.plug_sn.pin[2].i,30.0);
+val(smee.plug_sn.pin[3].v,0.0);
+val(smee.plug_sn.pin[3].v,30.0);
+val(smee.plug_sn.pin[3].i,0.0);
+val(smee.plug_sn.pin[3].i,30.0);
+val(smee.rs.v[1],0.0);
+val(smee.rs.v[1],30.0);
+val(smee.rs.v[2],0.0);
+val(smee.rs.v[2],30.0);
+val(smee.rs.v[3],0.0);
+val(smee.rs.v[3],30.0);
+val(smee.rs.i[1],0.0);
+val(smee.rs.i[1],30.0);
+val(smee.rs.i[2],0.0);
+val(smee.rs.i[2],30.0);
+val(smee.rs.i[3],0.0);
+val(smee.rs.i[3],30.0);
+val(smee.rs.plug_p.pin[1].v,0.0);
+val(smee.rs.plug_p.pin[1].v,30.0);
+val(smee.rs.plug_p.pin[1].i,0.0);
+val(smee.rs.plug_p.pin[1].i,30.0);
+val(smee.rs.plug_p.pin[2].v,0.0);
+val(smee.rs.plug_p.pin[2].v,30.0);
+val(smee.rs.plug_p.pin[2].i,0.0);
+val(smee.rs.plug_p.pin[2].i,30.0);
+val(smee.rs.plug_p.pin[3].v,0.0);
+val(smee.rs.plug_p.pin[3].v,30.0);
+val(smee.rs.plug_p.pin[3].i,0.0);
+val(smee.rs.plug_p.pin[3].i,30.0);
+val(smee.rs.plug_n.pin[1].v,0.0);
+val(smee.rs.plug_n.pin[1].v,30.0);
+val(smee.rs.plug_n.pin[1].i,0.0);
+val(smee.rs.plug_n.pin[1].i,30.0);
+val(smee.rs.plug_n.pin[2].v,0.0);
+val(smee.rs.plug_n.pin[2].v,30.0);
+val(smee.rs.plug_n.pin[2].i,0.0);
+val(smee.rs.plug_n.pin[2].i,30.0);
+val(smee.rs.plug_n.pin[3].v,0.0);
+val(smee.rs.plug_n.pin[3].v,30.0);
+val(smee.rs.plug_n.pin[3].i,0.0);
+val(smee.rs.plug_n.pin[3].i,30.0);
+val(smee.rs.resistor[1].v,0.0);
+val(smee.rs.resistor[1].v,30.0);
+val(smee.rs.resistor[1].i,0.0);
+val(smee.rs.resistor[1].i,30.0);
+val(smee.rs.resistor[1].p.v,0.0);
+val(smee.rs.resistor[1].p.v,30.0);
+val(smee.rs.resistor[1].p.i,0.0);
+val(smee.rs.resistor[1].p.i,30.0);
+val(smee.rs.resistor[1].n.v,0.0);
+val(smee.rs.resistor[1].n.v,30.0);
+val(smee.rs.resistor[1].n.i,0.0);
+val(smee.rs.resistor[1].n.i,30.0);
+val(smee.rs.resistor[1].LossPower,0.0);
+val(smee.rs.resistor[1].LossPower,30.0);
+val(smee.rs.resistor[2].v,0.0);
+val(smee.rs.resistor[2].v,30.0);
+val(smee.rs.resistor[2].i,0.0);
+val(smee.rs.resistor[2].i,30.0);
+val(smee.rs.resistor[2].p.v,0.0);
+val(smee.rs.resistor[2].p.v,30.0);
+val(smee.rs.resistor[2].p.i,0.0);
+val(smee.rs.resistor[2].p.i,30.0);
+val(smee.rs.resistor[2].n.v,0.0);
+val(smee.rs.resistor[2].n.v,30.0);
+val(smee.rs.resistor[2].n.i,0.0);
+val(smee.rs.resistor[2].n.i,30.0);
+val(smee.rs.resistor[2].LossPower,0.0);
+val(smee.rs.resistor[2].LossPower,30.0);
+val(smee.rs.resistor[3].v,0.0);
+val(smee.rs.resistor[3].v,30.0);
+val(smee.rs.resistor[3].i,0.0);
+val(smee.rs.resistor[3].i,30.0);
+val(smee.rs.resistor[3].p.v,0.0);
+val(smee.rs.resistor[3].p.v,30.0);
+val(smee.rs.resistor[3].p.i,0.0);
+val(smee.rs.resistor[3].p.i,30.0);
+val(smee.rs.resistor[3].n.v,0.0);
+val(smee.rs.resistor[3].n.v,30.0);
+val(smee.rs.resistor[3].n.i,0.0);
+val(smee.rs.resistor[3].n.i,30.0);
+val(smee.rs.resistor[3].LossPower,0.0);
+val(smee.rs.resistor[3].LossPower,30.0);
+val(smee.lssigma.v[1],0.0);
+val(smee.lssigma.v[1],30.0);
+val(smee.lssigma.v[2],0.0);
+val(smee.lssigma.v[2],30.0);
+val(smee.lssigma.v[3],0.0);
+val(smee.lssigma.v[3],30.0);
+val(smee.lssigma.i[1],0.0);
+val(smee.lssigma.i[1],30.0);
+val(smee.lssigma.i[2],0.0);
+val(smee.lssigma.i[2],30.0);
+val(smee.lssigma.i[3],0.0);
+val(smee.lssigma.i[3],30.0);
+val(smee.lssigma.plug_p.pin[1].v,0.0);
+val(smee.lssigma.plug_p.pin[1].v,30.0);
+val(smee.lssigma.plug_p.pin[1].i,0.0);
+val(smee.lssigma.plug_p.pin[1].i,30.0);
+val(smee.lssigma.plug_p.pin[2].v,0.0);
+val(smee.lssigma.plug_p.pin[2].v,30.0);
+val(smee.lssigma.plug_p.pin[2].i,0.0);
+val(smee.lssigma.plug_p.pin[2].i,30.0);
+val(smee.lssigma.plug_p.pin[3].v,0.0);
+val(smee.lssigma.plug_p.pin[3].v,30.0);
+val(smee.lssigma.plug_p.pin[3].i,0.0);
+val(smee.lssigma.plug_p.pin[3].i,30.0);
+val(smee.lssigma.plug_n.pin[1].v,0.0);
+val(smee.lssigma.plug_n.pin[1].v,30.0);
+val(smee.lssigma.plug_n.pin[1].i,0.0);
+val(smee.lssigma.plug_n.pin[1].i,30.0);
+val(smee.lssigma.plug_n.pin[2].v,0.0);
+val(smee.lssigma.plug_n.pin[2].v,30.0);
+val(smee.lssigma.plug_n.pin[2].i,0.0);
+val(smee.lssigma.plug_n.pin[2].i,30.0);
+val(smee.lssigma.plug_n.pin[3].v,0.0);
+val(smee.lssigma.plug_n.pin[3].v,30.0);
+val(smee.lssigma.plug_n.pin[3].i,0.0);
+val(smee.lssigma.plug_n.pin[3].i,30.0);
+val(smee.lssigma.inductor[1].v,0.0);
+val(smee.lssigma.inductor[1].v,30.0);
+val(smee.lssigma.inductor[1].i,0.0);
+val(smee.lssigma.inductor[1].i,30.0);
+val(der(smee.lssigma.inductor[1].i),0.0);
+val(der(smee.lssigma.inductor[1].i),30.0);
+val(smee.lssigma.inductor[1].p.v,0.0);
+val(smee.lssigma.inductor[1].p.v,30.0);
+val(smee.lssigma.inductor[1].p.i,0.0);
+val(smee.lssigma.inductor[1].p.i,30.0);
+val(smee.lssigma.inductor[1].n.v,0.0);
+val(smee.lssigma.inductor[1].n.v,30.0);
+val(smee.lssigma.inductor[1].n.i,0.0);
+val(smee.lssigma.inductor[1].n.i,30.0);
+val(smee.lssigma.inductor[2].v,0.0);
+val(smee.lssigma.inductor[2].v,30.0);
+val(smee.lssigma.inductor[2].i,0.0);
+val(smee.lssigma.inductor[2].i,30.0);
+val(der(smee.lssigma.inductor[2].i),0.0);
+val(der(smee.lssigma.inductor[2].i),30.0);
+val(smee.lssigma.inductor[2].p.v,0.0);
+val(smee.lssigma.inductor[2].p.v,30.0);
+val(smee.lssigma.inductor[2].p.i,0.0);
+val(smee.lssigma.inductor[2].p.i,30.0);
+val(smee.lssigma.inductor[2].n.v,0.0);
+val(smee.lssigma.inductor[2].n.v,30.0);
+val(smee.lssigma.inductor[2].n.i,0.0);
+val(smee.lssigma.inductor[2].n.i,30.0);
+val(smee.lssigma.inductor[3].v,0.0);
+val(smee.lssigma.inductor[3].v,30.0);
+val(smee.lssigma.inductor[3].i,0.0);
+val(smee.lssigma.inductor[3].i,30.0);
+val(der(smee.lssigma.inductor[3].i),0.0);
+val(der(smee.lssigma.inductor[3].i),30.0);
+val(smee.lssigma.inductor[3].p.v,0.0);
+val(smee.lssigma.inductor[3].p.v,30.0);
+val(smee.lssigma.inductor[3].p.i,0.0);
+val(smee.lssigma.inductor[3].p.i,30.0);
+val(smee.lssigma.inductor[3].n.v,0.0);
+val(smee.lssigma.inductor[3].n.v,30.0);
+val(smee.lssigma.inductor[3].n.i,0.0);
+val(smee.lssigma.inductor[3].n.i,30.0);
+val(smee.spacePhasorS.v[1],0.0);
+val(smee.spacePhasorS.v[1],30.0);
+val(smee.spacePhasorS.v[2],0.0);
+val(smee.spacePhasorS.v[2],30.0);
+val(smee.spacePhasorS.v[3],0.0);
+val(smee.spacePhasorS.v[3],30.0);
+val(smee.spacePhasorS.i[1],0.0);
+val(smee.spacePhasorS.i[1],30.0);
+val(smee.spacePhasorS.i[2],0.0);
+val(smee.spacePhasorS.i[2],30.0);
+val(smee.spacePhasorS.i[3],0.0);
+val(smee.spacePhasorS.i[3],30.0);
+val(smee.spacePhasorS.plug_p.pin[1].v,0.0);
+val(smee.spacePhasorS.plug_p.pin[1].v,30.0);
+val(smee.spacePhasorS.plug_p.pin[1].i,0.0);
+val(smee.spacePhasorS.plug_p.pin[1].i,30.0);
+val(smee.spacePhasorS.plug_p.pin[2].v,0.0);
+val(smee.spacePhasorS.plug_p.pin[2].v,30.0);
+val(smee.spacePhasorS.plug_p.pin[2].i,0.0);
+val(smee.spacePhasorS.plug_p.pin[2].i,30.0);
+val(smee.spacePhasorS.plug_p.pin[3].v,0.0);
+val(smee.spacePhasorS.plug_p.pin[3].v,30.0);
+val(smee.spacePhasorS.plug_p.pin[3].i,0.0);
+val(smee.spacePhasorS.plug_p.pin[3].i,30.0);
+val(smee.spacePhasorS.plug_n.pin[1].v,0.0);
+val(smee.spacePhasorS.plug_n.pin[1].v,30.0);
+val(smee.spacePhasorS.plug_n.pin[1].i,0.0);
+val(smee.spacePhasorS.plug_n.pin[1].i,30.0);
+val(smee.spacePhasorS.plug_n.pin[2].v,0.0);
+val(smee.spacePhasorS.plug_n.pin[2].v,30.0);
+val(smee.spacePhasorS.plug_n.pin[2].i,0.0);
+val(smee.spacePhasorS.plug_n.pin[2].i,30.0);
+val(smee.spacePhasorS.plug_n.pin[3].v,0.0);
+val(smee.spacePhasorS.plug_n.pin[3].v,30.0);
+val(smee.spacePhasorS.plug_n.pin[3].i,0.0);
+val(smee.spacePhasorS.plug_n.pin[3].i,30.0);
+val(smee.spacePhasorS.zero.i,0.0);
+val(smee.spacePhasorS.zero.i,30.0);
+val(smee.spacePhasorS.ground.i,0.0);
+val(smee.spacePhasorS.ground.i,30.0);
+val(smee.spacePhasorS.gnd.p.i,0.0);
+val(smee.spacePhasorS.gnd.p.i,30.0);
+val(smee.spacePhasorS.spacePhasor.v_[1],0.0);
+val(smee.spacePhasorS.spacePhasor.v_[1],30.0);
+val(smee.spacePhasorS.spacePhasor.v_[2],0.0);
+val(smee.spacePhasorS.spacePhasor.v_[2],30.0);
+val(smee.spacePhasorS.spacePhasor.i_[1],0.0);
+val(smee.spacePhasorS.spacePhasor.i_[1],30.0);
+val(smee.spacePhasorS.spacePhasor.i_[2],0.0);
+val(smee.spacePhasorS.spacePhasor.i_[2],30.0);
+val(smee.airGapR.tauElectrical,0.0);
+val(smee.airGapR.tauElectrical,30.0);
+val(smee.airGapR.gamma,0.0);
+val(smee.airGapR.gamma,30.0);
+val(smee.airGapR.i_ss[1],0.0);
+val(smee.airGapR.i_ss[1],30.0);
+val(smee.airGapR.i_ss[2],0.0);
+val(smee.airGapR.i_ss[2],30.0);
+val(der(smee.airGapR.i_ss[1]),0.0);
+val(der(smee.airGapR.i_ss[1]),30.0);
+val(der(smee.airGapR.i_ss[2]),0.0);
+val(der(smee.airGapR.i_ss[2]),30.0);
+val(smee.airGapR.i_sr[1],0.0);
+val(smee.airGapR.i_sr[1],30.0);
+val(smee.airGapR.i_sr[2],0.0);
+val(smee.airGapR.i_sr[2],30.0);
+val(smee.airGapR.i_rs[1],0.0);
+val(smee.airGapR.i_rs[1],30.0);
+val(smee.airGapR.i_rs[2],0.0);
+val(smee.airGapR.i_rs[2],30.0);
+val(smee.airGapR.i_rr[1],0.0);
+val(smee.airGapR.i_rr[1],30.0);
+val(smee.airGapR.i_rr[2],0.0);
+val(smee.airGapR.i_rr[2],30.0);
+val(smee.airGapR.psi_ms[1],0.0);
+val(smee.airGapR.psi_ms[1],30.0);
+val(smee.airGapR.psi_ms[2],0.0);
+val(smee.airGapR.psi_ms[2],30.0);
+val(der(smee.airGapR.psi_ms[1]),0.0);
+val(der(smee.airGapR.psi_ms[1]),30.0);
+val(der(smee.airGapR.psi_ms[2]),0.0);
+val(der(smee.airGapR.psi_ms[2]),30.0);
+val(smee.airGapR.psi_mr[1],0.0);
+val(smee.airGapR.psi_mr[1],30.0);
+val(smee.airGapR.psi_mr[2],0.0);
+val(smee.airGapR.psi_mr[2],30.0);
+val(der(smee.airGapR.psi_mr[1]),0.0);
+val(der(smee.airGapR.psi_mr[1]),30.0);
+val(der(smee.airGapR.psi_mr[2]),0.0);
+val(der(smee.airGapR.psi_mr[2]),30.0);
+val(smee.airGapR.RotationMatrix[1,1],0.0);
+val(smee.airGapR.RotationMatrix[1,1],30.0);
+val(smee.airGapR.RotationMatrix[1,2],0.0);
+val(smee.airGapR.RotationMatrix[1,2],30.0);
+val(smee.airGapR.RotationMatrix[2,1],0.0);
+val(smee.airGapR.RotationMatrix[2,1],30.0);
+val(smee.airGapR.RotationMatrix[2,2],0.0);
+val(smee.airGapR.RotationMatrix[2,2],30.0);
+val(der(smee.airGapR.RotationMatrix[1,1]),0.0);
+val(der(smee.airGapR.RotationMatrix[1,1]),30.0);
+val(der(smee.airGapR.RotationMatrix[1,2]),0.0);
+val(der(smee.airGapR.RotationMatrix[1,2]),30.0);
+val(der(smee.airGapR.RotationMatrix[2,1]),0.0);
+val(der(smee.airGapR.RotationMatrix[2,1]),30.0);
+val(der(smee.airGapR.RotationMatrix[2,2]),0.0);
+val(der(smee.airGapR.RotationMatrix[2,2]),30.0);
+val(smee.airGapR.flange.phi,0.0);
+val(smee.airGapR.flange.phi,30.0);
+val(smee.airGapR.flange.tau,0.0);
+val(smee.airGapR.flange.tau,30.0);
+val(smee.airGapR.support.tau,0.0);
+val(smee.airGapR.support.tau,30.0);
+val(smee.airGapR.spacePhasor_s.v_[1],0.0);
+val(smee.airGapR.spacePhasor_s.v_[1],30.0);
+val(smee.airGapR.spacePhasor_s.v_[2],0.0);
+val(smee.airGapR.spacePhasor_s.v_[2],30.0);
+val(smee.airGapR.spacePhasor_s.i_[1],0.0);
+val(smee.airGapR.spacePhasor_s.i_[1],30.0);
+val(smee.airGapR.spacePhasor_s.i_[2],0.0);
+val(smee.airGapR.spacePhasor_s.i_[2],30.0);
+val(smee.airGapR.spacePhasor_r.v_[1],0.0);
+val(smee.airGapR.spacePhasor_r.v_[1],30.0);
+val(smee.airGapR.spacePhasor_r.v_[2],0.0);
+val(smee.airGapR.spacePhasor_r.v_[2],30.0);
+val(smee.airGapR.spacePhasor_r.i_[1],0.0);
+val(smee.airGapR.spacePhasor_r.i_[1],30.0);
+val(smee.airGapR.spacePhasor_r.i_[2],0.0);
+val(smee.airGapR.spacePhasor_r.i_[2],30.0);
+val(smee.airGapR.i_mr[1],0.0);
+val(smee.airGapR.i_mr[1],30.0);
+val(smee.airGapR.i_mr[2],0.0);
+val(smee.airGapR.i_mr[2],30.0);
+val(der(smee.airGapR.i_mr[1]),0.0);
+val(der(smee.airGapR.i_mr[1]),30.0);
+val(der(smee.airGapR.i_mr[2]),0.0);
+val(der(smee.airGapR.i_mr[2]),30.0);
+val(smee.idq_dr[1],0.0);
+val(smee.idq_dr[1],30.0);
+val(der(smee.idq_dr[1]),0.0);
+val(der(smee.idq_dr[1]),30.0);
+val(smee.idq_dr[2],0.0);
+val(smee.idq_dr[2],30.0);
+val(der(smee.idq_dr[2]),0.0);
+val(der(smee.idq_dr[2]),30.0);
+val(smee.ve,0.0);
+val(smee.ve,30.0);
+val(smee.ie,0.0);
+val(smee.ie,30.0);
+val(smee.damperCage.spacePhasor_r.v_[1],0.0);
+val(smee.damperCage.spacePhasor_r.v_[1],30.0);
+val(smee.damperCage.spacePhasor_r.v_[2],0.0);
+val(smee.damperCage.spacePhasor_r.v_[2],30.0);
+val(smee.damperCage.spacePhasor_r.i_[1],0.0);
+val(smee.damperCage.spacePhasor_r.i_[1],30.0);
+val(smee.damperCage.spacePhasor_r.i_[2],0.0);
+val(smee.damperCage.spacePhasor_r.i_[2],30.0);
+val(der(smee.damperCage.spacePhasor_r.i_[1]),0.0);
+val(der(smee.damperCage.spacePhasor_r.i_[1]),30.0);
+val(der(smee.damperCage.spacePhasor_r.i_[2]),0.0);
+val(der(smee.damperCage.spacePhasor_r.i_[2]),30.0);
+val(smee.electricalExcitation.ie,0.0);
+val(smee.electricalExcitation.ie,30.0);
+val(smee.electricalExcitation.ve,0.0);
+val(smee.electricalExcitation.ve,30.0);
+val(smee.electricalExcitation.spacePhasor_r.v_[1],0.0);
+val(smee.electricalExcitation.spacePhasor_r.v_[1],30.0);
+val(smee.electricalExcitation.spacePhasor_r.v_[2],0.0);
+val(smee.electricalExcitation.spacePhasor_r.v_[2],30.0);
+val(smee.electricalExcitation.spacePhasor_r.i_[1],0.0);
+val(smee.electricalExcitation.spacePhasor_r.i_[1],30.0);
+val(der(smee.electricalExcitation.spacePhasor_r.i_[1]),0.0);
+val(der(smee.electricalExcitation.spacePhasor_r.i_[1]),30.0);
+val(smee.electricalExcitation.pin_ep.v,0.0);
+val(smee.electricalExcitation.pin_ep.v,30.0);
+val(smee.electricalExcitation.pin_ep.i,0.0);
+val(smee.electricalExcitation.pin_ep.i,30.0);
+val(smee.electricalExcitation.pin_en.i,0.0);
+val(smee.electricalExcitation.pin_en.i,30.0);
+val(smee.re.v,0.0);
+val(smee.re.v,30.0);
+val(smee.re.i,0.0);
+val(smee.re.i,30.0);
+val(smee.re.p.v,0.0);
+val(smee.re.p.v,30.0);
+val(smee.re.p.i,0.0);
+val(smee.re.p.i,30.0);
+val(smee.re.n.v,0.0);
+val(smee.re.n.v,30.0);
+val(smee.re.n.i,0.0);
+val(smee.re.n.i,30.0);
+val(smee.re.LossPower,0.0);
+val(smee.re.LossPower,30.0);
+val(smee.lesigma.v,0.0);
+val(smee.lesigma.v,30.0);
+val(smee.lesigma.i,0.0);
+val(smee.lesigma.i,30.0);
+val(der(smee.lesigma.i),0.0);
+val(der(smee.lesigma.i),30.0);
+val(smee.lesigma.p.v,0.0);
+val(smee.lesigma.p.v,30.0);
+val(smee.lesigma.p.i,0.0);
+val(smee.lesigma.p.i,30.0);
+val(smee.lesigma.n.v,0.0);
+val(smee.lesigma.n.v,30.0);
+val(smee.lesigma.n.i,0.0);
+val(smee.lesigma.n.i,30.0);
+val(smee.pin_ep.v,0.0);
+val(smee.pin_ep.v,30.0);
+val(smee.pin_ep.i,0.0);
+val(smee.pin_ep.i,30.0);
+val(smee.pin_en.i,0.0);
+val(smee.pin_en.i,30.0);
+val(rotorDisplacementAngle.rotorDisplacementAngle,0.0);
+val(rotorDisplacementAngle.rotorDisplacementAngle,30.0);
+val(rotorDisplacementAngle.plug_p.pin[1].v,0.0);
+val(rotorDisplacementAngle.plug_p.pin[1].v,30.0);
+val(rotorDisplacementAngle.plug_p.pin[2].v,0.0);
+val(rotorDisplacementAngle.plug_p.pin[2].v,30.0);
+val(rotorDisplacementAngle.plug_p.pin[3].v,0.0);
+val(rotorDisplacementAngle.plug_p.pin[3].v,30.0);
+val(rotorDisplacementAngle.plug_n.pin[1].v,0.0);
+val(rotorDisplacementAngle.plug_n.pin[1].v,30.0);
+val(rotorDisplacementAngle.plug_n.pin[2].v,0.0);
+val(rotorDisplacementAngle.plug_n.pin[2].v,30.0);
+val(rotorDisplacementAngle.plug_n.pin[3].v,0.0);
+val(rotorDisplacementAngle.plug_n.pin[3].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[1].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[1].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[2].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[2].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[3].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_p.pin[3].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[1].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[1].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[2].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[2].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[3].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.plug_n.pin[3].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[1],0.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[1],30.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[2],0.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[2],30.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[3],0.0);
+val(rotorDisplacementAngle.VoltageSensor1.v[3],30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].p.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].p.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].n.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].n.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[1].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].p.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].p.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].n.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].n.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[2].v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.v,30.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].v,0.0);
+val(rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].v,30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[1],0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[1],30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[2],0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[2],30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[3],0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.u[3],30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.y[1],0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.y[1],30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.y[2],0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.y[2],30.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.zero,0.0);
+val(rotorDisplacementAngle.ToSpacePhasorVS.zero,30.0);
+val(rotorDisplacementAngle.flange.phi,0.0);
+val(rotorDisplacementAngle.flange.phi,30.0);
+val(rotorDisplacementAngle.relativeAngleSensor.flange_b.phi,0.0);
+val(rotorDisplacementAngle.relativeAngleSensor.flange_b.phi,30.0);
+val(rotorDisplacementAngle.relativeAngleSensor.phi_rel,0.0);
+val(rotorDisplacementAngle.relativeAngleSensor.phi_rel,30.0);
+val(rotorDisplacementAngle.add.u1,0.0);
+val(rotorDisplacementAngle.add.u1,30.0);
+val(rotorDisplacementAngle.add.y,0.0);
+val(rotorDisplacementAngle.add.y,30.0);
+val(rotorDisplacementAngle.rotatorVS2R.u[1],0.0);
+val(rotorDisplacementAngle.rotatorVS2R.u[1],30.0);
+val(rotorDisplacementAngle.rotatorVS2R.u[2],0.0);
+val(rotorDisplacementAngle.rotatorVS2R.u[2],30.0);
+val(rotorDisplacementAngle.rotatorVS2R.y[1],0.0);
+val(rotorDisplacementAngle.rotatorVS2R.y[1],30.0);
+val(rotorDisplacementAngle.rotatorVS2R.y[2],0.0);
+val(rotorDisplacementAngle.rotatorVS2R.y[2],30.0);
+val(rotorDisplacementAngle.rotatorVS2R.angle,0.0);
+val(rotorDisplacementAngle.rotatorVS2R.angle,30.0);
+val(rotorDisplacementAngle.ToPolarVSR.u[1],0.0);
+val(rotorDisplacementAngle.ToPolarVSR.u[1],30.0);
+val(rotorDisplacementAngle.ToPolarVSR.u[2],0.0);
+val(rotorDisplacementAngle.ToPolarVSR.u[2],30.0);
+val(rotorDisplacementAngle.ToPolarVSR.y[1],0.0);
+val(rotorDisplacementAngle.ToPolarVSR.y[1],30.0);
+val(rotorDisplacementAngle.ToPolarVSR.y[2],0.0);
+val(rotorDisplacementAngle.ToPolarVSR.y[2],30.0);
+val(rotorDisplacementAngle.deMultiplex2.u[1],0.0);
+val(rotorDisplacementAngle.deMultiplex2.u[1],30.0);
+val(rotorDisplacementAngle.deMultiplex2.u[2],0.0);
+val(rotorDisplacementAngle.deMultiplex2.u[2],30.0);
+val(rotorDisplacementAngle.deMultiplex2.y1[1],0.0);
+val(rotorDisplacementAngle.deMultiplex2.y1[1],30.0);
+val(rotorDisplacementAngle.deMultiplex2.y2[1],0.0);
+val(rotorDisplacementAngle.deMultiplex2.y2[1],30.0);
+val(constantSpeed.flange.phi,0.0);
+val(constantSpeed.flange.phi,30.0);
+val(constantSpeed.flange.tau,0.0);
+val(constantSpeed.flange.tau,30.0);
+val(constantSpeed.phi,0.0);
+val(constantSpeed.phi,30.0);
+val(der(constantSpeed.phi),0.0);
+val(der(constantSpeed.phi),30.0);
+val(constantSpeed.w,0.0);
+val(constantSpeed.w,30.0);
+val(mechanicalPowerSensor.flange_a.phi,0.0);
+val(mechanicalPowerSensor.flange_a.phi,30.0);
+val(mechanicalPowerSensor.flange_a.tau,0.0);
+val(mechanicalPowerSensor.flange_a.tau,30.0);
+val(mechanicalPowerSensor.flange_b.phi,0.0);
+val(mechanicalPowerSensor.flange_b.phi,30.0);
+val(mechanicalPowerSensor.flange_b.tau,0.0);
+val(mechanicalPowerSensor.flange_b.tau,30.0);
+val(mechanicalPowerSensor.P,0.0);
+val(mechanicalPowerSensor.P,30.0);
+val(mechanicalPowerSensor.torqueSensor.flange_a.phi,0.0);
+val(mechanicalPowerSensor.torqueSensor.flange_a.phi,30.0);
+val(mechanicalPowerSensor.torqueSensor.flange_a.tau,0.0);
+val(mechanicalPowerSensor.torqueSensor.flange_a.tau,30.0);
+val(mechanicalPowerSensor.torqueSensor.flange_b.phi,0.0);
+val(mechanicalPowerSensor.torqueSensor.flange_b.phi,30.0);
+val(mechanicalPowerSensor.torqueSensor.flange_b.tau,0.0);
+val(mechanicalPowerSensor.torqueSensor.flange_b.tau,30.0);
+val(mechanicalPowerSensor.torqueSensor.tau,0.0);
+val(mechanicalPowerSensor.torqueSensor.tau,30.0);
+val(mechanicalPowerSensor.product.u1,0.0);
+val(mechanicalPowerSensor.product.u1,30.0);
+val(mechanicalPowerSensor.product.u2,0.0);
+val(mechanicalPowerSensor.product.u2,30.0);
+val(mechanicalPowerSensor.product.y,0.0);
+val(mechanicalPowerSensor.product.y,30.0);
+val(mechanicalPowerSensor.relSpeedSensor.flange_b.phi,0.0);
+val(mechanicalPowerSensor.relSpeedSensor.flange_b.phi,30.0);
+val(mechanicalPowerSensor.relSpeedSensor.phi_rel,0.0);
+val(mechanicalPowerSensor.relSpeedSensor.phi_rel,30.0);
+val(der(mechanicalPowerSensor.relSpeedSensor.phi_rel),0.0);
+val(der(mechanicalPowerSensor.relSpeedSensor.phi_rel),30.0);
+val(mechanicalPowerSensor.relSpeedSensor.w_rel,0.0);
+val(mechanicalPowerSensor.relSpeedSensor.w_rel,30.0);
+val(electricalPowerSensor.P,0.0);
+val(electricalPowerSensor.P,30.0);
+val(electricalPowerSensor.Q,0.0);
+val(electricalPowerSensor.Q,30.0);
+val(electricalPowerSensor.plug_p.pin[1].v,0.0);
+val(electricalPowerSensor.plug_p.pin[1].v,30.0);
+val(electricalPowerSensor.plug_p.pin[1].i,0.0);
+val(electricalPowerSensor.plug_p.pin[1].i,30.0);
+val(electricalPowerSensor.plug_p.pin[2].v,0.0);
+val(electricalPowerSensor.plug_p.pin[2].v,30.0);
+val(electricalPowerSensor.plug_p.pin[2].i,0.0);
+val(electricalPowerSensor.plug_p.pin[2].i,30.0);
+val(electricalPowerSensor.plug_p.pin[3].v,0.0);
+val(electricalPowerSensor.plug_p.pin[3].v,30.0);
+val(electricalPowerSensor.plug_p.pin[3].i,0.0);
+val(electricalPowerSensor.plug_p.pin[3].i,30.0);
+val(electricalPowerSensor.plug_ni.pin[1].v,0.0);
+val(electricalPowerSensor.plug_ni.pin[1].v,30.0);
+val(electricalPowerSensor.plug_ni.pin[1].i,0.0);
+val(electricalPowerSensor.plug_ni.pin[1].i,30.0);
+val(electricalPowerSensor.plug_ni.pin[2].v,0.0);
+val(electricalPowerSensor.plug_ni.pin[2].v,30.0);
+val(electricalPowerSensor.plug_ni.pin[2].i,0.0);
+val(electricalPowerSensor.plug_ni.pin[2].i,30.0);
+val(electricalPowerSensor.plug_ni.pin[3].v,0.0);
+val(electricalPowerSensor.plug_ni.pin[3].v,30.0);
+val(electricalPowerSensor.plug_ni.pin[3].i,0.0);
+val(electricalPowerSensor.plug_ni.pin[3].i,30.0);
+val(electricalPowerSensor.plug_nv.pin[1].v,0.0);
+val(electricalPowerSensor.plug_nv.pin[1].v,30.0);
+val(electricalPowerSensor.plug_nv.pin[2].v,0.0);
+val(electricalPowerSensor.plug_nv.pin[2].v,30.0);
+val(electricalPowerSensor.plug_nv.pin[3].v,0.0);
+val(electricalPowerSensor.plug_nv.pin[3].v,30.0);
+val(currentQuasiRMSSensor.I,0.0);
+val(currentQuasiRMSSensor.I,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[1].v,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[1].v,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[1].i,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[1].i,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[2].v,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[2].v,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[2].i,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[2].i,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[3].v,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[3].v,30.0);
+val(currentQuasiRMSSensor.plug_p.pin[3].i,0.0);
+val(currentQuasiRMSSensor.plug_p.pin[3].i,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[1].v,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[1].v,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[1].i,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[1].i,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[2].v,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[2].v,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[2].i,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[2].i,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[3].v,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[3].v,30.0);
+val(currentQuasiRMSSensor.plug_n.pin[3].i,0.0);
+val(currentQuasiRMSSensor.plug_n.pin[3].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[1].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[1].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[1].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[1].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[2].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[2].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[2].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[2].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[3].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[3].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[3].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_p.pin[3].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[1].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[1].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[1].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[1].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[2].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[2].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[2].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[2].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[3].v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[3].v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[3].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.plug_n.pin[3].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[1],0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[1],30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[2],0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[2],30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[3],0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.i[3],30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].p.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].n.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[1].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].p.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].p.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].p.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].p.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].n.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].n.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].n.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].n.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[2].i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.v,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.v,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i,30.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i,0.0);
+val(currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i,30.0);
+val(currentQuasiRMSSensor.Gain1.u,0.0);
+val(currentQuasiRMSSensor.Gain1.u,30.0);
+val(currentQuasiRMSSensor.Gain1.y,0.0);
+val(currentQuasiRMSSensor.Gain1.y,30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[1],0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[1],30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[2],0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[2],30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[3],0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.u[3],30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.y[1],0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.y[1],30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.y[2],0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.y[2],30.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.zero,0.0);
+val(currentQuasiRMSSensor.ToSpacePhasor1.zero,30.0);
+val(currentQuasiRMSSensor.ToPolar1.u[1],0.0);
+val(currentQuasiRMSSensor.ToPolar1.u[1],30.0);
+val(currentQuasiRMSSensor.ToPolar1.u[2],0.0);
+val(currentQuasiRMSSensor.ToPolar1.u[2],30.0);
+val(currentQuasiRMSSensor.ToPolar1.y[1],0.0);
+val(currentQuasiRMSSensor.ToPolar1.y[1],30.0);
+val(currentQuasiRMSSensor.ToPolar1.y[2],0.0);
+val(currentQuasiRMSSensor.ToPolar1.y[2],30.0);
+val(sineVoltage.v[1],0.0);
+val(sineVoltage.v[1],30.0);
+val(sineVoltage.v[2],0.0);
+val(sineVoltage.v[2],30.0);
+val(sineVoltage.v[3],0.0);
+val(sineVoltage.v[3],30.0);
+val(sineVoltage.i[1],0.0);
+val(sineVoltage.i[1],30.0);
+val(sineVoltage.i[2],0.0);
+val(sineVoltage.i[2],30.0);
+val(sineVoltage.i[3],0.0);
+val(sineVoltage.i[3],30.0);
+val(sineVoltage.plug_p.pin[1].v,0.0);
+val(sineVoltage.plug_p.pin[1].v,30.0);
+val(sineVoltage.plug_p.pin[1].i,0.0);
+val(sineVoltage.plug_p.pin[1].i,30.0);
+val(sineVoltage.plug_p.pin[2].v,0.0);
+val(sineVoltage.plug_p.pin[2].v,30.0);
+val(sineVoltage.plug_p.pin[2].i,0.0);
+val(sineVoltage.plug_p.pin[2].i,30.0);
+val(sineVoltage.plug_p.pin[3].v,0.0);
+val(sineVoltage.plug_p.pin[3].v,30.0);
+val(sineVoltage.plug_p.pin[3].i,0.0);
+val(sineVoltage.plug_p.pin[3].i,30.0);
+val(sineVoltage.plug_n.pin[1].i,0.0);
+val(sineVoltage.plug_n.pin[1].i,30.0);
+val(sineVoltage.plug_n.pin[2].i,0.0);
+val(sineVoltage.plug_n.pin[2].i,30.0);
+val(sineVoltage.plug_n.pin[3].i,0.0);
+val(sineVoltage.plug_n.pin[3].i,30.0);
+val(sineVoltage.sineVoltage[1].v,0.0);
+val(sineVoltage.sineVoltage[1].v,30.0);
+val(sineVoltage.sineVoltage[1].i,0.0);
+val(sineVoltage.sineVoltage[1].i,30.0);
+val(sineVoltage.sineVoltage[1].p.v,0.0);
+val(sineVoltage.sineVoltage[1].p.v,30.0);
+val(sineVoltage.sineVoltage[1].p.i,0.0);
+val(sineVoltage.sineVoltage[1].p.i,30.0);
+val(sineVoltage.sineVoltage[1].n.i,0.0);
+val(sineVoltage.sineVoltage[1].n.i,30.0);
+val(sineVoltage.sineVoltage[1].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[1].signalSource.y,30.0);
+val(sineVoltage.sineVoltage[2].v,0.0);
+val(sineVoltage.sineVoltage[2].v,30.0);
+val(sineVoltage.sineVoltage[2].i,0.0);
+val(sineVoltage.sineVoltage[2].i,30.0);
+val(sineVoltage.sineVoltage[2].p.v,0.0);
+val(sineVoltage.sineVoltage[2].p.v,30.0);
+val(sineVoltage.sineVoltage[2].p.i,0.0);
+val(sineVoltage.sineVoltage[2].p.i,30.0);
+val(sineVoltage.sineVoltage[2].n.i,0.0);
+val(sineVoltage.sineVoltage[2].n.i,30.0);
+val(sineVoltage.sineVoltage[2].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[2].signalSource.y,30.0);
+val(sineVoltage.sineVoltage[3].v,0.0);
+val(sineVoltage.sineVoltage[3].v,30.0);
+val(sineVoltage.sineVoltage[3].i,0.0);
+val(sineVoltage.sineVoltage[3].i,30.0);
+val(sineVoltage.sineVoltage[3].p.v,0.0);
+val(sineVoltage.sineVoltage[3].p.v,30.0);
+val(sineVoltage.sineVoltage[3].p.i,0.0);
+val(sineVoltage.sineVoltage[3].p.i,30.0);
+val(sineVoltage.sineVoltage[3].n.i,0.0);
+val(sineVoltage.sineVoltage[3].n.i,30.0);
+val(sineVoltage.sineVoltage[3].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[3].signalSource.y,30.0);
+val(star.plug_p.pin[1].i,0.0);
+val(star.plug_p.pin[1].i,30.0);
+val(star.plug_p.pin[2].i,0.0);
+val(star.plug_p.pin[2].i,30.0);
+val(star.plug_p.pin[3].i,0.0);
+val(star.plug_p.pin[3].i,30.0);
+val(star.pin_n.i,0.0);
+val(star.pin_n.i,30.0);
+val(ground.p.i,0.0);
+val(ground.p.i,30.0);
+val(rampCurrent.v,0.0);
+val(rampCurrent.v,30.0);
+val(rampCurrent.i,0.0);
+val(rampCurrent.i,30.0);
+val(rampCurrent.p.i,0.0);
+val(rampCurrent.p.i,30.0);
+val(rampCurrent.n.v,0.0);
+val(rampCurrent.n.v,30.0);
+val(rampCurrent.n.i,0.0);
+val(rampCurrent.n.i,30.0);
+val(rampCurrent.signalSource.y,0.0);
+val(rampCurrent.signalSource.y,30.0);
+val(terminalBox.plug_sp.pin[1].v,0.0);
+val(terminalBox.plug_sp.pin[1].v,30.0);
+val(terminalBox.plug_sp.pin[1].i,0.0);
+val(terminalBox.plug_sp.pin[1].i,30.0);
+val(terminalBox.plug_sp.pin[2].v,0.0);
+val(terminalBox.plug_sp.pin[2].v,30.0);
+val(terminalBox.plug_sp.pin[2].i,0.0);
+val(terminalBox.plug_sp.pin[2].i,30.0);
+val(terminalBox.plug_sp.pin[3].v,0.0);
+val(terminalBox.plug_sp.pin[3].v,30.0);
+val(terminalBox.plug_sp.pin[3].i,0.0);
+val(terminalBox.plug_sp.pin[3].i,30.0);
+val(terminalBox.plug_sn.pin[1].v,0.0);
+val(terminalBox.plug_sn.pin[1].v,30.0);
+val(terminalBox.plug_sn.pin[1].i,0.0);
+val(terminalBox.plug_sn.pin[1].i,30.0);
+val(terminalBox.plug_sn.pin[2].v,0.0);
+val(terminalBox.plug_sn.pin[2].v,30.0);
+val(terminalBox.plug_sn.pin[2].i,0.0);
+val(terminalBox.plug_sn.pin[2].i,30.0);
+val(terminalBox.plug_sn.pin[3].v,0.0);
+val(terminalBox.plug_sn.pin[3].v,30.0);
+val(terminalBox.plug_sn.pin[3].i,0.0);
+val(terminalBox.plug_sn.pin[3].i,30.0);
+val(terminalBox.star.plug_p.pin[1].v,0.0);
+val(terminalBox.star.plug_p.pin[1].v,30.0);
+val(terminalBox.star.plug_p.pin[1].i,0.0);
+val(terminalBox.star.plug_p.pin[1].i,30.0);
+val(terminalBox.star.plug_p.pin[2].v,0.0);
+val(terminalBox.star.plug_p.pin[2].v,30.0);
+val(terminalBox.star.plug_p.pin[2].i,0.0);
+val(terminalBox.star.plug_p.pin[2].i,30.0);
+val(terminalBox.star.plug_p.pin[3].v,0.0);
+val(terminalBox.star.plug_p.pin[3].v,30.0);
+val(terminalBox.star.plug_p.pin[3].i,0.0);
+val(terminalBox.star.plug_p.pin[3].i,30.0);
+val(terminalBox.star.pin_n.v,0.0);
+val(terminalBox.star.pin_n.v,30.0);
+val(terminalBox.plugSupply.pin[1].v,0.0);
+val(terminalBox.plugSupply.pin[1].v,30.0);
+val(terminalBox.plugSupply.pin[1].i,0.0);
+val(terminalBox.plugSupply.pin[1].i,30.0);
+val(terminalBox.plugSupply.pin[2].v,0.0);
+val(terminalBox.plugSupply.pin[2].v,30.0);
+val(terminalBox.plugSupply.pin[2].i,0.0);
+val(terminalBox.plugSupply.pin[2].i,30.0);
+val(terminalBox.plugSupply.pin[3].v,0.0);
+val(terminalBox.plugSupply.pin[3].v,30.0);
+val(terminalBox.plugSupply.pin[3].i,0.0);
+val(terminalBox.plugSupply.pin[3].i,30.0);
+val(terminalBox.starpoint.v,0.0);
+val(terminalBox.starpoint.v,30.0);
+val(fixed.flange.tau,0.0);
+val(fixed.flange.tau,30.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Machines.Examples.SMEE_Generator_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Machines.Examples.SMEE_Generator', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -1.57079637051
+// 4707.67675781
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 0.0
+// -1.0400673151
+// 0.0
+// -1.0400673151
+// -1.57079637051
+// 4707.67675781
+// -0
+// 1.0400673151
+// -1.57079637051
+// 4707.67675781
+// 0.0
+// -1.0400673151
+// -1.57079637051
+// 4707.67675781
+// -0
+// 1.0400673151
+// -1.57079637051
+// 4707.67675781
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 0.0
+// -1.0400673151
+// -0
+// 1.0400673151
+// 0.0
+// -1.0400673151
+// -7.10681513638e-14
+// 7.26985693866e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// -0
+// -1.65793299364e-14
+// -2.36847585645e-15
+// -0
+// 0.0
+// 79.592918396
+// -0
+// -0.575643479824
+// 0.0
+// -79.592918396
+// -276.693969727
+// -0.76585149765
+// 0.0
+// 0.575643479824
+// 199.607788086
+// 18.4930095673
+// -94.2809066772
+// -179.168548584
+// -3.04630019127e-13
+// 2.20808076859
+// 94.2809066772
+// 179.168548584
+// 0.0
+// -2.20808076859
+// -193.168823242
+// 0.00519128143787
+// 295.140228271
+// 0.458774417639
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// -79.592918396
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// 40.2949829102
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 39.2979393005
+// 0.0
+// 2.38778758049
+// 0.0
+// -1.20884943008
+// 0.0
+// -1.17893815041
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 0.0
+// -2.38778758049
+// -0
+// -79.592918396
+// -122.474487305
+// -121.265640259
+// -0
+// 40.2949829102
+// 122.474487305
+// 123.653427124
+// 0.0
+// 39.2979393005
+// 0.0
+// 2.38778758049
+// 0.0
+// 79.592918396
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// 0.0
+// -2.38778758049
+// -0
+// -79.592918396
+// 0.0
+// 190.050994873
+// 0.0
+// -1.20884943008
+// 0.0
+// -40.2949829102
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// -122.474487305
+// -121.265640259
+// -0
+// 40.2949829102
+// 0.0
+// 48.7105674744
+// -0
+// -1.17893815041
+// -0
+// -39.2979393005
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 122.474487305
+// 123.653427124
+// 0.0
+// 39.2979393005
+// 0.0
+// 46.3298377991
+// 0.0880744233727
+// 0.0577697493136
+// -0.0990619808435
+// 6.85437107086
+// 0.0109875584021
+// -6.91214084625
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// 0.0
+// -2.38778758049
+// 0.0
+// 79.592918396
+// -122.474487305
+// -121.265640259
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 123.653427124
+// -0
+// -39.2979393005
+// -0.0880744233727
+// -2.44555735588
+// -0
+// -79.592918396
+// -122.375427246
+// -128.120010376
+// -0
+// 40.2949829102
+// 122.463500977
+// 130.565567017
+// 0.0
+// 39.2979393005
+// 0.0880744233727
+// 0.0577697493136
+// 0.0
+// 79.592918396
+// 276.693969727
+// 181.489028931
+// 0.0
+// -2.38778758049
+// 0.0
+// 79.592918396
+// -0.0880744233727
+// -2.44555735588
+// -0
+// -79.592918396
+// -0.0990619808435
+// 6.85437107086
+// 0.0
+// -40.2949829102
+// -311.212402344
+// 21533.6425781
+// -122.474487305
+// -121.265640259
+// 0.0
+// -40.2949829102
+// -122.375427246
+// -128.120010376
+// -0
+// 40.2949829102
+// 0.0109875584021
+// -6.91214084625
+// -0
+// -39.2979393005
+// 34.5184326172
+// -21715.1308594
+// 122.474487305
+// 123.653427124
+// -0
+// -39.2979393005
+// 122.463500977
+// 130.565567017
+// 0.0
+// 39.2979393005
+// -0.0880744233727
+// -2.44555735588
+// -122.375427246
+// -128.120010376
+// 122.463500977
+// 130.565567017
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// -0.0880744233727
+// -2.44555735588
+// 0.0
+// 79.592918396
+// -122.375427246
+// -128.120010376
+// 0.0
+// -40.2949829102
+// 122.463500977
+// 130.565567017
+// -0
+// -39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// -79.592918396
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// 40.2949829102
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 39.2979393005
+// -0
+// -1.65793299364e-14
+// 0.0
+// 1.65793299364e-14
+// 0.0
+// 1.65793299364e-14
+// -0.0880744233727
+// -2.44555735588
+// -141.357818604
+// -149.35218811
+// -0
+// -79.592918396
+// 0.0
+// 0.575643479824
+// 0.0
+// -1.0400673151
+// -3.14159274101
+// 9415.35351563
+// 0.0
+// 79.592918396
+// -0
+// -0.575643479824
+// 276.693969727
+// 181.489028931
+// -199.607788086
+// 24969.6914063
+// 0.0
+// -79.592918396
+// 0.0
+// 0.575643479824
+// -94.2809066772
+// -179.168548584
+// -3.04630019127e-13
+// 2.20808076859
+// 94.2809066772
+// 179.168548584
+// 0.0
+// -2.20808076859
+// -0.450158149004
+// -0.475438594818
+// -1.45450115422e-15
+// 0.00779431406409
+// -0.0880744233727
+// -2.44555735588
+// -141.357818604
+// -149.35218811
+// 0.450158149004
+// 0.475438594818
+// 0.0
+// -0.00779431406409
+// 0.0880744233727
+// -0.00146618497092
+// 0.030743772164
+// 0.0883224084973
+// -1.0
+// -1.0
+// 3.23108912774e-15
+// -8.77629999924e-12
+// -3.23108912774e-15
+// 8.77629999924e-12
+// -1.0
+// -1.0
+// 1.01439982716e-12
+// -2.75531775173e-09
+// 313.949829102
+// 313.949829102
+// -313.949829102
+// -313.949829102
+// 1.01439982716e-12
+// -2.75531775173e-09
+// -1.57079637051
+// 4707.67675781
+// -0
+// 1.0400673151
+// 0.0
+// -1.0400673151
+// -0.0880744233727
+// -2.44555735588
+// -141.357818604
+// -149.35218811
+// 0.0
+// 79.592918396
+// -0
+// -0.575643479824
+// 0.0880744233727
+// -0.00146618497092
+// 0.030743772164
+// 0.0883224084973
+// 94.2809066772
+// 179.168548584
+// 0.0
+// -2.20808076859
+// 94.2809066772
+// 99.5756225586
+// 0.0
+// -1.63243734837
+// 18.446264267
+// -0.307077080011
+// 6.43896055222
+// 18.4982013702
+// 0.0
+// -0.0348292216659
+// 553.387939453
+// -0.458774417639
+// -0
+// 2.20808076859
+// 193.168823242
+// -0.00519128143787
+// 27.7146835327
+// 47.4792633057
+// 10.0
+// 19.0
+// 0.0880744233727
+// -0.00146618497092
+// 0.030743772164
+// 0.0883224084973
+// 0.0
+// -0.0348292216659
+// -0
+// 2.20808076859
+// 553.387939453
+// -0.458774417639
+// 193.168823242
+// -0.00519128143787
+// 10.0
+// 19.0
+// 1.24556040764
+// -0.020734988153
+// 0.0880744233727
+// -0.00146618497092
+// 0.030743772164
+// 0.0883224084973
+// -94.2809066772
+// -179.133712769
+// -848.528137207
+// -0
+// 1.24556040764
+// -0.020734988153
+// 10.0
+// 19.0
+// -10.0
+// -19.0
+// 25.0
+// 47.5
+// 10.0
+// 19.0
+// 27.7146835327
+// 47.4792633057
+// 10.0
+// 19.0
+// 2.71468305588
+// -0.020734988153
+// -10.0
+// -19.0
+// 250.0
+// 902.5
+// 1.46912252903
+// 0.0
+// 10.0
+// 19.0
+// 90.0
+// 0.0
+// 2.71468305588
+// -0.020734988153
+// 10.0
+// 19.0
+// 1.24556040764
+// -0.020734988153
+// -10.0
+// -19.0
+// 27.7146835327
+// 47.4792633057
+// 10.0
+// 19.0
+// -10.0
+// -19.0
+// -8.12937330028e-15
+// 1.466030769e-11
+// 0.0
+// 6.99677316085e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 6.99677316085e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -7.10681513638e-14
+// 7.26985693866e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 0.0
+// 6.99677316085e-10
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -7.10681513638e-14
+// 7.26985693866e-10
+// -122.474487305
+// -122.474487305
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 122.474487305
+// 122.474487305
+// -7.10681513638e-14
+// 7.26985693866e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// -1.98951966013e-13
+// 7.26856796973e-10
+// -141.421356201
+// -141.421356201
+// 4.73695171291e-15
+// 4.73695171291e-15
+// -1.57079637051
+// 4707.67675781
+// -1.57079637051
+// 4707.67675781
+// -1.57079637051
+// 4707.67675781
+// -1.57079637051
+// 4707.67675781
+// -1.57079637051
+// 9416.92382813
+// -1.98951966013e-13
+// 7.26856796973e-10
+// -141.421356201
+// -141.421356201
+// 141.421356201
+// 141.421356201
+// -1.14966695018e-12
+// 2.07328065827e-09
+// -1.57079637051
+// 9416.92382813
+// 141.421356201
+// 141.421356201
+// -1.14966695018e-12
+// 2.07328065827e-09
+// 141.421356201
+// 141.421356201
+// -8.12937330028e-15
+// 1.466030769e-11
+// 141.421356201
+// 141.421356201
+// -8.12937330028e-15
+// 1.466030769e-11
+// 141.421356201
+// 141.421356201
+// -8.12937330028e-15
+// 1.466030769e-11
+// -1.57079637051
+// 4707.67675781
+// 0.0
+// -1.0400673151
+// -1.57079637051
+// 4707.67675781
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// -1.57079637051
+// 4707.67675781
+// 0.0
+// -1.0400673151
+// -1.57079637051
+// 4707.67675781
+// -0
+// 1.0400673151
+// 0.0
+// -163.264465332
+// -1.57079637051
+// 4707.67675781
+// 0.0
+// -1.0400673151
+// -1.57079637051
+// 4707.67675781
+// -0
+// 1.0400673151
+// 0.0
+// -1.0400673151
+// 156.974914551
+// 156.974914551
+// 0.0
+// -1.0400673151
+// 0.0
+// -163.264465332
+// -1.57079637051
+// 4707.67675781
+// -1.57079637051
+// 4707.67675781
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// 156.974914551
+// -0
+// 122.112426758
+// 0.0
+// -16884.2089844
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 56.2821655273
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// -0
+// -39.2979393005
+// 0.0
+// 79.5950012207
+// 0.0
+// 56.2821655273
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// 0.0
+// 79.592918396
+// 0.0
+// -0.575643479824
+// 0.0
+// 1.65793299364e-14
+// 0.0
+// 79.592918396
+// 0.0
+// -0.575643479824
+// 0.0
+// 79.5950012207
+// 0.0
+// -0.00723221944645
+// 0.0
+// 6.99677316085e-10
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// -0
+// -79.592918396
+// -0
+// 40.2949829102
+// 0.0
+// 39.2979393005
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 0.0
+// 79.592918396
+// 0.0
+// -40.2949829102
+// -0
+// -39.2979393005
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// 0.0
+// 79.592918396
+// 0.0
+// 6.99677316085e-10
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 0.0
+// -40.2949829102
+// -122.474487305
+// -122.474487305
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// -0
+// -39.2979393005
+// 122.474487305
+// 122.474487305
+// -0
+// -79.592918396
+// -0
+// 40.2949829102
+// 0.0
+// 39.2979393005
+// 0.0
+// 4.97379915032e-14
+// -0
+// -4.97379915032e-14
+// -27.7146835327
+// -47.4792633057
+// 10.0
+// 19.0
+// 10.0
+// 19.0
+// 27.7146835327
+// 47.4792633057
+// -10.0
+// -19.0
+// 10.0
+// 19.0
+// 0.0
+// 6.99677316085e-10
+// -0
+// -79.592918396
+// -122.474487305
+// -122.474487305
+// -0
+// 40.2949829102
+// 122.474487305
+// 122.474487305
+// 0.0
+// 39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 79.592918396
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// -40.2949829102
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// -39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 79.592918396
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// -40.2949829102
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// -39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// 0.0
+// 6.99677316085e-10
+// 0.0
+// 79.592918396
+// -122.474487305
+// -122.474487305
+// 0.0
+// -40.2949829102
+// 122.474487305
+// 122.474487305
+// -0
+// -39.2979393005
+// 7.10681513638e-14
+// -2.73083777813e-11
+// -0
+// 1.0400673151
+// endResult

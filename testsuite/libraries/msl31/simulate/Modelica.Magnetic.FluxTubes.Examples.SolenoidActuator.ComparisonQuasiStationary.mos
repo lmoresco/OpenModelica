@@ -1,0 +1,1743 @@
+// name:     Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary_* Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.exe Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.cpp Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.makefile Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.libs Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary);
+val(x_set.y,0.0);
+val(x_set.y,10.0);
+val(advancedGround.p.i,0.0);
+val(advancedGround.p.i,10.0);
+val(advancedSource.v,0.0);
+val(advancedSource.v,10.0);
+val(advancedSource.i,0.0);
+val(advancedSource.i,10.0);
+val(advancedSource.p.v,0.0);
+val(advancedSource.p.v,10.0);
+val(advancedSource.p.i,0.0);
+val(advancedSource.p.i,10.0);
+val(advancedSource.n.i,0.0);
+val(advancedSource.n.i,10.0);
+val(advancedSource.signalSource.y,0.0);
+val(advancedSource.signalSource.y,10.0);
+val(advancedSolenoid.x,0.0);
+val(advancedSolenoid.x,10.0);
+val(der(advancedSolenoid.x),0.0);
+val(der(advancedSolenoid.x),10.0);
+val(advancedSolenoid.Psi_tot,0.0);
+val(advancedSolenoid.Psi_tot,10.0);
+val(advancedSolenoid.L_statTot,0.0);
+val(advancedSolenoid.L_statTot,10.0);
+val(advancedSolenoid.ground.port.Phi,0.0);
+val(advancedSolenoid.ground.port.Phi,10.0);
+val(advancedSolenoid.coil1.port_p.V_m,0.0);
+val(advancedSolenoid.coil1.port_p.V_m,10.0);
+val(advancedSolenoid.coil1.port_p.Phi,0.0);
+val(advancedSolenoid.coil1.port_p.Phi,10.0);
+val(advancedSolenoid.coil1.port_n.V_m,0.0);
+val(advancedSolenoid.coil1.port_n.V_m,10.0);
+val(advancedSolenoid.coil1.port_n.Phi,0.0);
+val(advancedSolenoid.coil1.port_n.Phi,10.0);
+val(advancedSolenoid.coil1.p.v,0.0);
+val(advancedSolenoid.coil1.p.v,10.0);
+val(advancedSolenoid.coil1.p.i,0.0);
+val(advancedSolenoid.coil1.p.i,10.0);
+val(advancedSolenoid.coil1.n.v,0.0);
+val(advancedSolenoid.coil1.n.v,10.0);
+val(advancedSolenoid.coil1.n.i,0.0);
+val(advancedSolenoid.coil1.n.i,10.0);
+val(advancedSolenoid.coil1.v,0.0);
+val(advancedSolenoid.coil1.v,10.0);
+val(advancedSolenoid.coil1.i,0.0);
+val(advancedSolenoid.coil1.i,10.0);
+val(advancedSolenoid.coil1.V_m,0.0);
+val(advancedSolenoid.coil1.V_m,10.0);
+val(advancedSolenoid.coil1.Phi,0.0);
+val(advancedSolenoid.coil1.Phi,10.0);
+val(der(advancedSolenoid.coil1.Phi),0.0);
+val(der(advancedSolenoid.coil1.Phi),10.0);
+val(advancedSolenoid.coil1.Psi,0.0);
+val(advancedSolenoid.coil1.Psi,10.0);
+val(advancedSolenoid.coil1.L_stat,0.0);
+val(advancedSolenoid.coil1.L_stat,10.0);
+val(advancedSolenoid.r_1.v,0.0);
+val(advancedSolenoid.r_1.v,10.0);
+val(advancedSolenoid.r_1.i,0.0);
+val(advancedSolenoid.r_1.i,10.0);
+val(advancedSolenoid.r_1.p.v,0.0);
+val(advancedSolenoid.r_1.p.v,10.0);
+val(advancedSolenoid.r_1.p.i,0.0);
+val(advancedSolenoid.r_1.p.i,10.0);
+val(advancedSolenoid.r_1.n.v,0.0);
+val(advancedSolenoid.r_1.n.v,10.0);
+val(advancedSolenoid.r_1.n.i,0.0);
+val(advancedSolenoid.r_1.n.i,10.0);
+val(advancedSolenoid.r_1.LossPower,0.0);
+val(advancedSolenoid.r_1.LossPower,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.R_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.R_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.G_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.G_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.B,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.B,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.H,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.H,10.0);
+val(advancedSolenoid.g_mFeYokeSide1.mu_r,0.0);
+val(advancedSolenoid.g_mFeYokeSide1.mu_r,10.0);
+val(advancedSolenoid.g_mFeArm.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFeArm.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFeArm.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFeArm.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFeArm.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFeArm.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFeArm.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFeArm.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFeArm.V_m,0.0);
+val(advancedSolenoid.g_mFeArm.V_m,10.0);
+val(advancedSolenoid.g_mFeArm.Phi,0.0);
+val(advancedSolenoid.g_mFeArm.Phi,10.0);
+val(advancedSolenoid.g_mFeArm.R_m,0.0);
+val(advancedSolenoid.g_mFeArm.R_m,10.0);
+val(advancedSolenoid.g_mFeArm.G_m,0.0);
+val(advancedSolenoid.g_mFeArm.G_m,10.0);
+val(advancedSolenoid.g_mFeArm.B,0.0);
+val(advancedSolenoid.g_mFeArm.B,10.0);
+val(advancedSolenoid.g_mFeArm.H,0.0);
+val(advancedSolenoid.g_mFeArm.H,10.0);
+val(advancedSolenoid.g_mFeArm.mu_r,0.0);
+val(advancedSolenoid.g_mFeArm.mu_r,10.0);
+val(advancedSolenoid.g_mAirWork.port_p.V_m,0.0);
+val(advancedSolenoid.g_mAirWork.port_p.V_m,10.0);
+val(advancedSolenoid.g_mAirWork.port_p.Phi,0.0);
+val(advancedSolenoid.g_mAirWork.port_p.Phi,10.0);
+val(advancedSolenoid.g_mAirWork.port_n.V_m,0.0);
+val(advancedSolenoid.g_mAirWork.port_n.V_m,10.0);
+val(advancedSolenoid.g_mAirWork.port_n.Phi,0.0);
+val(advancedSolenoid.g_mAirWork.port_n.Phi,10.0);
+val(advancedSolenoid.g_mAirWork.V_m,0.0);
+val(advancedSolenoid.g_mAirWork.V_m,10.0);
+val(advancedSolenoid.g_mAirWork.Phi,0.0);
+val(advancedSolenoid.g_mAirWork.Phi,10.0);
+val(advancedSolenoid.g_mAirWork.F_m,0.0);
+val(advancedSolenoid.g_mAirWork.F_m,10.0);
+val(advancedSolenoid.g_mAirWork.s,0.0);
+val(advancedSolenoid.g_mAirWork.s,10.0);
+val(advancedSolenoid.g_mAirWork.R_m,0.0);
+val(advancedSolenoid.g_mAirWork.R_m,10.0);
+val(advancedSolenoid.g_mAirWork.G_m,0.0);
+val(advancedSolenoid.g_mAirWork.G_m,10.0);
+val(advancedSolenoid.g_mAirWork.dGmBydx,0.0);
+val(advancedSolenoid.g_mAirWork.dGmBydx,10.0);
+val(advancedSolenoid.g_mAirWork.flange.s,0.0);
+val(advancedSolenoid.g_mAirWork.flange.s,10.0);
+val(advancedSolenoid.g_mAirWork.flange.f,0.0);
+val(advancedSolenoid.g_mAirWork.flange.f,10.0);
+val(advancedSolenoid.g_mAirWork.l,0.0);
+val(advancedSolenoid.g_mAirWork.l,10.0);
+val(advancedSolenoid.g_mAirWork.B,0.0);
+val(advancedSolenoid.g_mAirWork.B,10.0);
+val(advancedSolenoid.g_mFeYokeBot.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeBot.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeBot.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeBot.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeBot.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeBot.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeBot.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeBot.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeBot.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeBot.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeBot.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeBot.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeBot.R_m,0.0);
+val(advancedSolenoid.g_mFeYokeBot.R_m,10.0);
+val(advancedSolenoid.g_mFeYokeBot.G_m,0.0);
+val(advancedSolenoid.g_mFeYokeBot.G_m,10.0);
+val(advancedSolenoid.g_mFeYokeBot.B,0.0);
+val(advancedSolenoid.g_mFeYokeBot.B,10.0);
+val(advancedSolenoid.g_mFeYokeBot.H,0.0);
+val(advancedSolenoid.g_mFeYokeBot.H,10.0);
+val(advancedSolenoid.g_mFeYokeBot.mu_r,0.0);
+val(advancedSolenoid.g_mFeYokeBot.mu_r,10.0);
+val(advancedSolenoid.g_mAirPar.port_p.Phi,0.0);
+val(advancedSolenoid.g_mAirPar.port_p.Phi,10.0);
+val(advancedSolenoid.g_mAirPar.port_n.V_m,0.0);
+val(advancedSolenoid.g_mAirPar.port_n.V_m,10.0);
+val(advancedSolenoid.g_mAirPar.port_n.Phi,0.0);
+val(advancedSolenoid.g_mAirPar.port_n.Phi,10.0);
+val(advancedSolenoid.g_mAirPar.V_m,0.0);
+val(advancedSolenoid.g_mAirPar.V_m,10.0);
+val(advancedSolenoid.g_mAirPar.Phi,0.0);
+val(advancedSolenoid.g_mAirPar.Phi,10.0);
+val(advancedSolenoid.g_mAirPar.B,0.0);
+val(advancedSolenoid.g_mAirPar.B,10.0);
+val(advancedSolenoid.g_mAirPar.H,0.0);
+val(advancedSolenoid.g_mAirPar.H,10.0);
+val(advancedSolenoid.g_mFePoleBot.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFePoleBot.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFePoleBot.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFePoleBot.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFePoleBot.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFePoleBot.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFePoleBot.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFePoleBot.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFePoleBot.V_m,0.0);
+val(advancedSolenoid.g_mFePoleBot.V_m,10.0);
+val(advancedSolenoid.g_mFePoleBot.Phi,0.0);
+val(advancedSolenoid.g_mFePoleBot.Phi,10.0);
+val(advancedSolenoid.g_mFePoleBot.R_m,0.0);
+val(advancedSolenoid.g_mFePoleBot.R_m,10.0);
+val(advancedSolenoid.g_mFePoleBot.G_m,0.0);
+val(advancedSolenoid.g_mFePoleBot.G_m,10.0);
+val(advancedSolenoid.g_mFePoleBot.B,0.0);
+val(advancedSolenoid.g_mFePoleBot.B,10.0);
+val(advancedSolenoid.g_mFePoleBot.H,0.0);
+val(advancedSolenoid.g_mFePoleBot.H,10.0);
+val(advancedSolenoid.g_mFePoleBot.mu_r,0.0);
+val(advancedSolenoid.g_mFePoleBot.mu_r,10.0);
+val(advancedSolenoid.g_mFePole.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFePole.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFePole.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFePole.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFePole.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFePole.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFePole.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFePole.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFePole.V_m,0.0);
+val(advancedSolenoid.g_mFePole.V_m,10.0);
+val(advancedSolenoid.g_mFePole.Phi,0.0);
+val(advancedSolenoid.g_mFePole.Phi,10.0);
+val(advancedSolenoid.g_mFePole.R_m,0.0);
+val(advancedSolenoid.g_mFePole.R_m,10.0);
+val(advancedSolenoid.g_mFePole.G_m,0.0);
+val(advancedSolenoid.g_mFePole.G_m,10.0);
+val(advancedSolenoid.g_mFePole.B,0.0);
+val(advancedSolenoid.g_mFePole.B,10.0);
+val(advancedSolenoid.g_mFePole.H,0.0);
+val(advancedSolenoid.g_mFePole.H,10.0);
+val(advancedSolenoid.g_mFePole.mu_r,0.0);
+val(advancedSolenoid.g_mFePole.mu_r,10.0);
+val(advancedSolenoid.armature.s,0.0);
+val(advancedSolenoid.armature.s,10.0);
+val(advancedSolenoid.armature.v,0.0);
+val(advancedSolenoid.armature.v,10.0);
+val(advancedSolenoid.armature.mass.s,0.0);
+val(advancedSolenoid.armature.mass.s,10.0);
+val(der(advancedSolenoid.armature.mass.s),0.0);
+val(der(advancedSolenoid.armature.mass.s),10.0);
+val(advancedSolenoid.armature.mass.flange_a.s,0.0);
+val(advancedSolenoid.armature.mass.flange_a.s,10.0);
+val(advancedSolenoid.armature.mass.flange_a.f,0.0);
+val(advancedSolenoid.armature.mass.flange_a.f,10.0);
+val(advancedSolenoid.armature.mass.flange_b.s,0.0);
+val(advancedSolenoid.armature.mass.flange_b.s,10.0);
+val(advancedSolenoid.armature.mass.flange_b.f,0.0);
+val(advancedSolenoid.armature.mass.flange_b.f,10.0);
+val(advancedSolenoid.armature.mass.v,0.0);
+val(advancedSolenoid.armature.mass.v,10.0);
+val(advancedSolenoid.armature.flange_a.s,0.0);
+val(advancedSolenoid.armature.flange_a.s,10.0);
+val(advancedSolenoid.armature.flange_a.f,0.0);
+val(advancedSolenoid.armature.flange_a.f,10.0);
+val(advancedSolenoid.armature.flange_b.s,0.0);
+val(advancedSolenoid.armature.flange_b.s,10.0);
+val(advancedSolenoid.armature.flange_b.f,0.0);
+val(advancedSolenoid.armature.flange_b.f,10.0);
+val(advancedSolenoid.armature.limit_xMin.flange.f,0.0);
+val(advancedSolenoid.armature.limit_xMin.flange.f,10.0);
+val(advancedSolenoid.armature.limit_xMax.flange.f,0.0);
+val(advancedSolenoid.armature.limit_xMax.flange.f,10.0);
+val(advancedSolenoid.armature.stopper_xMax.s_rel,0.0);
+val(advancedSolenoid.armature.stopper_xMax.s_rel,10.0);
+val(der(advancedSolenoid.armature.stopper_xMax.s_rel),0.0);
+val(der(advancedSolenoid.armature.stopper_xMax.s_rel),10.0);
+val(advancedSolenoid.armature.stopper_xMax.v_rel,0.0);
+val(advancedSolenoid.armature.stopper_xMax.v_rel,10.0);
+val(advancedSolenoid.armature.stopper_xMax.f,0.0);
+val(advancedSolenoid.armature.stopper_xMax.f,10.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_a.s,0.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_a.s,10.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_a.f,0.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_a.f,10.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_b.f,0.0);
+val(advancedSolenoid.armature.stopper_xMax.flange_b.f,10.0);
+val(advancedSolenoid.armature.stopper_xMax.contact,0.0);
+val(advancedSolenoid.armature.stopper_xMax.contact,10.0);
+val(advancedSolenoid.armature.stopper_xMin.s_rel,0.0);
+val(advancedSolenoid.armature.stopper_xMin.s_rel,10.0);
+val(der(advancedSolenoid.armature.stopper_xMin.s_rel),0.0);
+val(der(advancedSolenoid.armature.stopper_xMin.s_rel),10.0);
+val(advancedSolenoid.armature.stopper_xMin.v_rel,0.0);
+val(advancedSolenoid.armature.stopper_xMin.v_rel,10.0);
+val(advancedSolenoid.armature.stopper_xMin.f,0.0);
+val(advancedSolenoid.armature.stopper_xMin.f,10.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_a.f,0.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_a.f,10.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_b.s,0.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_b.s,10.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_b.f,0.0);
+val(advancedSolenoid.armature.stopper_xMin.flange_b.f,10.0);
+val(advancedSolenoid.armature.stopper_xMin.contact,0.0);
+val(advancedSolenoid.armature.stopper_xMin.contact,10.0);
+val(advancedSolenoid.g_mLeak1.port_p.Phi,0.0);
+val(advancedSolenoid.g_mLeak1.port_p.Phi,10.0);
+val(advancedSolenoid.g_mLeak1.port_n.V_m,0.0);
+val(advancedSolenoid.g_mLeak1.port_n.V_m,10.0);
+val(advancedSolenoid.g_mLeak1.port_n.Phi,0.0);
+val(advancedSolenoid.g_mLeak1.port_n.Phi,10.0);
+val(advancedSolenoid.g_mLeak1.V_m,0.0);
+val(advancedSolenoid.g_mLeak1.V_m,10.0);
+val(advancedSolenoid.g_mLeak1.Phi,0.0);
+val(advancedSolenoid.g_mLeak1.Phi,10.0);
+val(advancedSolenoid.g_mLeak2.port_p.Phi,0.0);
+val(advancedSolenoid.g_mLeak2.port_p.Phi,10.0);
+val(advancedSolenoid.g_mLeak2.port_n.V_m,0.0);
+val(advancedSolenoid.g_mLeak2.port_n.V_m,10.0);
+val(advancedSolenoid.g_mLeak2.port_n.Phi,0.0);
+val(advancedSolenoid.g_mLeak2.port_n.Phi,10.0);
+val(advancedSolenoid.g_mLeak2.V_m,0.0);
+val(advancedSolenoid.g_mLeak2.V_m,10.0);
+val(advancedSolenoid.g_mLeak2.Phi,0.0);
+val(advancedSolenoid.g_mLeak2.Phi,10.0);
+val(advancedSolenoid.coil2.port_p.V_m,0.0);
+val(advancedSolenoid.coil2.port_p.V_m,10.0);
+val(advancedSolenoid.coil2.port_p.Phi,0.0);
+val(advancedSolenoid.coil2.port_p.Phi,10.0);
+val(advancedSolenoid.coil2.port_n.Phi,0.0);
+val(advancedSolenoid.coil2.port_n.Phi,10.0);
+val(advancedSolenoid.coil2.p.v,0.0);
+val(advancedSolenoid.coil2.p.v,10.0);
+val(advancedSolenoid.coil2.p.i,0.0);
+val(advancedSolenoid.coil2.p.i,10.0);
+val(advancedSolenoid.coil2.n.i,0.0);
+val(advancedSolenoid.coil2.n.i,10.0);
+val(advancedSolenoid.coil2.v,0.0);
+val(advancedSolenoid.coil2.v,10.0);
+val(advancedSolenoid.coil2.i,0.0);
+val(advancedSolenoid.coil2.i,10.0);
+val(advancedSolenoid.coil2.V_m,0.0);
+val(advancedSolenoid.coil2.V_m,10.0);
+val(advancedSolenoid.coil2.Phi,0.0);
+val(advancedSolenoid.coil2.Phi,10.0);
+val(der(advancedSolenoid.coil2.Phi),0.0);
+val(der(advancedSolenoid.coil2.Phi),10.0);
+val(advancedSolenoid.coil2.Psi,0.0);
+val(advancedSolenoid.coil2.Psi,10.0);
+val(advancedSolenoid.coil2.L_stat,0.0);
+val(advancedSolenoid.coil2.L_stat,10.0);
+val(advancedSolenoid.c_par1.v,0.0);
+val(advancedSolenoid.c_par1.v,10.0);
+val(der(advancedSolenoid.c_par1.v),0.0);
+val(der(advancedSolenoid.c_par1.v),10.0);
+val(advancedSolenoid.c_par1.i,0.0);
+val(advancedSolenoid.c_par1.i,10.0);
+val(advancedSolenoid.c_par1.p.v,0.0);
+val(advancedSolenoid.c_par1.p.v,10.0);
+val(advancedSolenoid.c_par1.p.i,0.0);
+val(advancedSolenoid.c_par1.p.i,10.0);
+val(advancedSolenoid.c_par1.n.v,0.0);
+val(advancedSolenoid.c_par1.n.v,10.0);
+val(advancedSolenoid.c_par1.n.i,0.0);
+val(advancedSolenoid.c_par1.n.i,10.0);
+val(advancedSolenoid.G_mLeakRad.port_p.V_m,0.0);
+val(advancedSolenoid.G_mLeakRad.port_p.V_m,10.0);
+val(advancedSolenoid.G_mLeakRad.port_p.Phi,0.0);
+val(advancedSolenoid.G_mLeakRad.port_p.Phi,10.0);
+val(advancedSolenoid.G_mLeakRad.port_n.V_m,0.0);
+val(advancedSolenoid.G_mLeakRad.port_n.V_m,10.0);
+val(advancedSolenoid.G_mLeakRad.port_n.Phi,0.0);
+val(advancedSolenoid.G_mLeakRad.port_n.Phi,10.0);
+val(advancedSolenoid.G_mLeakRad.V_m,0.0);
+val(advancedSolenoid.G_mLeakRad.V_m,10.0);
+val(advancedSolenoid.G_mLeakRad.Phi,0.0);
+val(advancedSolenoid.G_mLeakRad.Phi,10.0);
+val(advancedSolenoid.G_mLeakRad.B,0.0);
+val(advancedSolenoid.G_mLeakRad.B,10.0);
+val(advancedSolenoid.G_mLeakRad.H,0.0);
+val(advancedSolenoid.G_mLeakRad.H,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_p.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_p.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_p.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_p.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_n.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_n.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_n.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.port_n.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.V_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.V_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.Phi,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.Phi,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.R_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.R_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.G_m,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.G_m,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.B,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.B,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.H,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.H,10.0);
+val(advancedSolenoid.g_mFeYokeSide2.mu_r,0.0);
+val(advancedSolenoid.g_mFeYokeSide2.mu_r,10.0);
+val(advancedSolenoid.c_par2.v,0.0);
+val(advancedSolenoid.c_par2.v,10.0);
+val(der(advancedSolenoid.c_par2.v),0.0);
+val(der(advancedSolenoid.c_par2.v),10.0);
+val(advancedSolenoid.c_par2.i,0.0);
+val(advancedSolenoid.c_par2.i,10.0);
+val(advancedSolenoid.c_par2.p.v,0.0);
+val(advancedSolenoid.c_par2.p.v,10.0);
+val(advancedSolenoid.c_par2.p.i,0.0);
+val(advancedSolenoid.c_par2.p.i,10.0);
+val(advancedSolenoid.c_par2.n.i,0.0);
+val(advancedSolenoid.c_par2.n.i,10.0);
+val(advancedSolenoid.r_par1.v,0.0);
+val(advancedSolenoid.r_par1.v,10.0);
+val(advancedSolenoid.r_par1.i,0.0);
+val(advancedSolenoid.r_par1.i,10.0);
+val(advancedSolenoid.r_par1.p.v,0.0);
+val(advancedSolenoid.r_par1.p.v,10.0);
+val(advancedSolenoid.r_par1.p.i,0.0);
+val(advancedSolenoid.r_par1.p.i,10.0);
+val(advancedSolenoid.r_par1.n.v,0.0);
+val(advancedSolenoid.r_par1.n.v,10.0);
+val(advancedSolenoid.r_par1.n.i,0.0);
+val(advancedSolenoid.r_par1.n.i,10.0);
+val(advancedSolenoid.r_par1.LossPower,0.0);
+val(advancedSolenoid.r_par1.LossPower,10.0);
+val(advancedSolenoid.r_par2.v,0.0);
+val(advancedSolenoid.r_par2.v,10.0);
+val(advancedSolenoid.r_par2.i,0.0);
+val(advancedSolenoid.r_par2.i,10.0);
+val(advancedSolenoid.r_par2.p.v,0.0);
+val(advancedSolenoid.r_par2.p.v,10.0);
+val(advancedSolenoid.r_par2.p.i,0.0);
+val(advancedSolenoid.r_par2.p.i,10.0);
+val(advancedSolenoid.r_par2.n.v,0.0);
+val(advancedSolenoid.r_par2.n.v,10.0);
+val(advancedSolenoid.r_par2.n.i,0.0);
+val(advancedSolenoid.r_par2.n.i,10.0);
+val(advancedSolenoid.r_par2.LossPower,0.0);
+val(advancedSolenoid.r_par2.LossPower,10.0);
+val(advancedSolenoid.r_2.v,0.0);
+val(advancedSolenoid.r_2.v,10.0);
+val(advancedSolenoid.r_2.i,0.0);
+val(advancedSolenoid.r_2.i,10.0);
+val(advancedSolenoid.r_2.p.v,0.0);
+val(advancedSolenoid.r_2.p.v,10.0);
+val(advancedSolenoid.r_2.p.i,0.0);
+val(advancedSolenoid.r_2.p.i,10.0);
+val(advancedSolenoid.r_2.n.v,0.0);
+val(advancedSolenoid.r_2.n.v,10.0);
+val(advancedSolenoid.r_2.n.i,0.0);
+val(advancedSolenoid.r_2.n.i,10.0);
+val(advancedSolenoid.r_2.LossPower,0.0);
+val(advancedSolenoid.r_2.LossPower,10.0);
+val(advancedSolenoid.g_mLeak3.port_p.Phi,0.0);
+val(advancedSolenoid.g_mLeak3.port_p.Phi,10.0);
+val(advancedSolenoid.g_mLeak3.port_n.V_m,0.0);
+val(advancedSolenoid.g_mLeak3.port_n.V_m,10.0);
+val(advancedSolenoid.g_mLeak3.port_n.Phi,0.0);
+val(advancedSolenoid.g_mLeak3.port_n.Phi,10.0);
+val(advancedSolenoid.g_mLeak3.V_m,0.0);
+val(advancedSolenoid.g_mLeak3.V_m,10.0);
+val(advancedSolenoid.g_mLeak3.Phi,0.0);
+val(advancedSolenoid.g_mLeak3.Phi,10.0);
+val(advancedSolenoid.g_mLeakWork.port_p.V_m,0.0);
+val(advancedSolenoid.g_mLeakWork.port_p.V_m,10.0);
+val(advancedSolenoid.g_mLeakWork.port_p.Phi,0.0);
+val(advancedSolenoid.g_mLeakWork.port_p.Phi,10.0);
+val(advancedSolenoid.g_mLeakWork.port_n.V_m,0.0);
+val(advancedSolenoid.g_mLeakWork.port_n.V_m,10.0);
+val(advancedSolenoid.g_mLeakWork.port_n.Phi,0.0);
+val(advancedSolenoid.g_mLeakWork.port_n.Phi,10.0);
+val(advancedSolenoid.g_mLeakWork.V_m,0.0);
+val(advancedSolenoid.g_mLeakWork.V_m,10.0);
+val(advancedSolenoid.g_mLeakWork.Phi,0.0);
+val(advancedSolenoid.g_mLeakWork.Phi,10.0);
+val(advancedSolenoid.g_mLeakWork.F_m,0.0);
+val(advancedSolenoid.g_mLeakWork.F_m,10.0);
+val(advancedSolenoid.g_mLeakWork.s,0.0);
+val(advancedSolenoid.g_mLeakWork.s,10.0);
+val(advancedSolenoid.g_mLeakWork.R_m,0.0);
+val(advancedSolenoid.g_mLeakWork.R_m,10.0);
+val(advancedSolenoid.g_mLeakWork.G_m,0.0);
+val(advancedSolenoid.g_mLeakWork.G_m,10.0);
+val(advancedSolenoid.g_mLeakWork.dGmBydx,0.0);
+val(advancedSolenoid.g_mLeakWork.dGmBydx,10.0);
+val(advancedSolenoid.g_mLeakWork.flange.s,0.0);
+val(advancedSolenoid.g_mLeakWork.flange.s,10.0);
+val(advancedSolenoid.g_mLeakWork.flange.f,0.0);
+val(advancedSolenoid.g_mLeakWork.flange.f,10.0);
+val(advancedSolenoid.g_mLeakWork.l,0.0);
+val(advancedSolenoid.g_mLeakWork.l,10.0);
+val(advancedSolenoid.p.v,0.0);
+val(advancedSolenoid.p.v,10.0);
+val(advancedSolenoid.p.i,0.0);
+val(advancedSolenoid.p.i,10.0);
+val(advancedSolenoid.n.i,0.0);
+val(advancedSolenoid.n.i,10.0);
+val(advancedSolenoid.flange.s,0.0);
+val(advancedSolenoid.flange.s,10.0);
+val(advancedSolenoid.flange.f,0.0);
+val(advancedSolenoid.flange.f,10.0);
+val(advancedFeed_x.s,0.0);
+val(advancedFeed_x.s,10.0);
+val(advancedFeed_x.flange.s,0.0);
+val(advancedFeed_x.flange.s,10.0);
+val(advancedFeed_x.flange.f,0.0);
+val(advancedFeed_x.flange.f,10.0);
+val(advancedFeed_x.s_ref,0.0);
+val(advancedFeed_x.s_ref,10.0);
+val(simpleSource.v,0.0);
+val(simpleSource.v,10.0);
+val(simpleSource.i,0.0);
+val(simpleSource.i,10.0);
+val(simpleSource.p.v,0.0);
+val(simpleSource.p.v,10.0);
+val(simpleSource.p.i,0.0);
+val(simpleSource.p.i,10.0);
+val(simpleSource.n.i,0.0);
+val(simpleSource.n.i,10.0);
+val(simpleSource.signalSource.y,0.0);
+val(simpleSource.signalSource.y,10.0);
+val(simpleSolenoid.x,0.0);
+val(simpleSolenoid.x,10.0);
+val(der(simpleSolenoid.x),0.0);
+val(der(simpleSolenoid.x),10.0);
+val(simpleSolenoid.ground.port.Phi,0.0);
+val(simpleSolenoid.ground.port.Phi,10.0);
+val(simpleSolenoid.coil.port_p.V_m,0.0);
+val(simpleSolenoid.coil.port_p.V_m,10.0);
+val(simpleSolenoid.coil.port_p.Phi,0.0);
+val(simpleSolenoid.coil.port_p.Phi,10.0);
+val(simpleSolenoid.coil.port_n.V_m,0.0);
+val(simpleSolenoid.coil.port_n.V_m,10.0);
+val(simpleSolenoid.coil.port_n.Phi,0.0);
+val(simpleSolenoid.coil.port_n.Phi,10.0);
+val(simpleSolenoid.coil.p.v,0.0);
+val(simpleSolenoid.coil.p.v,10.0);
+val(simpleSolenoid.coil.p.i,0.0);
+val(simpleSolenoid.coil.p.i,10.0);
+val(simpleSolenoid.coil.n.i,0.0);
+val(simpleSolenoid.coil.n.i,10.0);
+val(simpleSolenoid.coil.v,0.0);
+val(simpleSolenoid.coil.v,10.0);
+val(simpleSolenoid.coil.i,0.0);
+val(simpleSolenoid.coil.i,10.0);
+val(simpleSolenoid.coil.V_m,0.0);
+val(simpleSolenoid.coil.V_m,10.0);
+val(simpleSolenoid.coil.Phi,0.0);
+val(simpleSolenoid.coil.Phi,10.0);
+val(der(simpleSolenoid.coil.Phi),0.0);
+val(der(simpleSolenoid.coil.Phi),10.0);
+val(simpleSolenoid.coil.Psi,0.0);
+val(simpleSolenoid.coil.Psi,10.0);
+val(simpleSolenoid.coil.L_stat,0.0);
+val(simpleSolenoid.coil.L_stat,10.0);
+val(simpleSolenoid.r.v,0.0);
+val(simpleSolenoid.r.v,10.0);
+val(simpleSolenoid.r.i,0.0);
+val(simpleSolenoid.r.i,10.0);
+val(simpleSolenoid.r.p.v,0.0);
+val(simpleSolenoid.r.p.v,10.0);
+val(simpleSolenoid.r.p.i,0.0);
+val(simpleSolenoid.r.p.i,10.0);
+val(simpleSolenoid.r.n.v,0.0);
+val(simpleSolenoid.r.n.v,10.0);
+val(simpleSolenoid.r.n.i,0.0);
+val(simpleSolenoid.r.n.i,10.0);
+val(simpleSolenoid.r.LossPower,0.0);
+val(simpleSolenoid.r.LossPower,10.0);
+val(simpleSolenoid.g_mFeYokeSide.port_p.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeSide.port_p.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeSide.port_p.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeSide.port_p.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeSide.port_n.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeSide.port_n.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeSide.port_n.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeSide.port_n.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeSide.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeSide.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeSide.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeSide.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeSide.R_m,0.0);
+val(simpleSolenoid.g_mFeYokeSide.R_m,10.0);
+val(simpleSolenoid.g_mFeYokeSide.G_m,0.0);
+val(simpleSolenoid.g_mFeYokeSide.G_m,10.0);
+val(simpleSolenoid.g_mFeYokeSide.B,0.0);
+val(simpleSolenoid.g_mFeYokeSide.B,10.0);
+val(simpleSolenoid.g_mFeYokeSide.H,0.0);
+val(simpleSolenoid.g_mFeYokeSide.H,10.0);
+val(simpleSolenoid.g_mFeYokeSide.mu_r,0.0);
+val(simpleSolenoid.g_mFeYokeSide.mu_r,10.0);
+val(simpleSolenoid.g_mFeArm.port_p.Phi,0.0);
+val(simpleSolenoid.g_mFeArm.port_p.Phi,10.0);
+val(simpleSolenoid.g_mFeArm.port_n.V_m,0.0);
+val(simpleSolenoid.g_mFeArm.port_n.V_m,10.0);
+val(simpleSolenoid.g_mFeArm.port_n.Phi,0.0);
+val(simpleSolenoid.g_mFeArm.port_n.Phi,10.0);
+val(simpleSolenoid.g_mFeArm.V_m,0.0);
+val(simpleSolenoid.g_mFeArm.V_m,10.0);
+val(simpleSolenoid.g_mFeArm.Phi,0.0);
+val(simpleSolenoid.g_mFeArm.Phi,10.0);
+val(simpleSolenoid.g_mFeArm.R_m,0.0);
+val(simpleSolenoid.g_mFeArm.R_m,10.0);
+val(simpleSolenoid.g_mFeArm.G_m,0.0);
+val(simpleSolenoid.g_mFeArm.G_m,10.0);
+val(simpleSolenoid.g_mFeArm.B,0.0);
+val(simpleSolenoid.g_mFeArm.B,10.0);
+val(simpleSolenoid.g_mFeArm.H,0.0);
+val(simpleSolenoid.g_mFeArm.H,10.0);
+val(simpleSolenoid.g_mFeArm.mu_r,0.0);
+val(simpleSolenoid.g_mFeArm.mu_r,10.0);
+val(simpleSolenoid.g_mAirWork.port_p.V_m,0.0);
+val(simpleSolenoid.g_mAirWork.port_p.V_m,10.0);
+val(simpleSolenoid.g_mAirWork.port_p.Phi,0.0);
+val(simpleSolenoid.g_mAirWork.port_p.Phi,10.0);
+val(simpleSolenoid.g_mAirWork.port_n.V_m,0.0);
+val(simpleSolenoid.g_mAirWork.port_n.V_m,10.0);
+val(simpleSolenoid.g_mAirWork.port_n.Phi,0.0);
+val(simpleSolenoid.g_mAirWork.port_n.Phi,10.0);
+val(simpleSolenoid.g_mAirWork.V_m,0.0);
+val(simpleSolenoid.g_mAirWork.V_m,10.0);
+val(simpleSolenoid.g_mAirWork.Phi,0.0);
+val(simpleSolenoid.g_mAirWork.Phi,10.0);
+val(simpleSolenoid.g_mAirWork.F_m,0.0);
+val(simpleSolenoid.g_mAirWork.F_m,10.0);
+val(simpleSolenoid.g_mAirWork.s,0.0);
+val(simpleSolenoid.g_mAirWork.s,10.0);
+val(simpleSolenoid.g_mAirWork.R_m,0.0);
+val(simpleSolenoid.g_mAirWork.R_m,10.0);
+val(simpleSolenoid.g_mAirWork.G_m,0.0);
+val(simpleSolenoid.g_mAirWork.G_m,10.0);
+val(simpleSolenoid.g_mAirWork.dGmBydx,0.0);
+val(simpleSolenoid.g_mAirWork.dGmBydx,10.0);
+val(simpleSolenoid.g_mAirWork.flange.s,0.0);
+val(simpleSolenoid.g_mAirWork.flange.s,10.0);
+val(simpleSolenoid.g_mAirWork.flange.f,0.0);
+val(simpleSolenoid.g_mAirWork.flange.f,10.0);
+val(simpleSolenoid.g_mAirWork.l,0.0);
+val(simpleSolenoid.g_mAirWork.l,10.0);
+val(simpleSolenoid.g_mAirWork.B,0.0);
+val(simpleSolenoid.g_mAirWork.B,10.0);
+val(simpleSolenoid.g_mFeYokeBot.port_p.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeBot.port_p.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeBot.port_p.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeBot.port_p.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeBot.port_n.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeBot.port_n.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeBot.port_n.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeBot.port_n.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeBot.V_m,0.0);
+val(simpleSolenoid.g_mFeYokeBot.V_m,10.0);
+val(simpleSolenoid.g_mFeYokeBot.Phi,0.0);
+val(simpleSolenoid.g_mFeYokeBot.Phi,10.0);
+val(simpleSolenoid.g_mFeYokeBot.R_m,0.0);
+val(simpleSolenoid.g_mFeYokeBot.R_m,10.0);
+val(simpleSolenoid.g_mFeYokeBot.G_m,0.0);
+val(simpleSolenoid.g_mFeYokeBot.G_m,10.0);
+val(simpleSolenoid.g_mFeYokeBot.B,0.0);
+val(simpleSolenoid.g_mFeYokeBot.B,10.0);
+val(simpleSolenoid.g_mFeYokeBot.H,0.0);
+val(simpleSolenoid.g_mFeYokeBot.H,10.0);
+val(simpleSolenoid.g_mFeYokeBot.mu_r,0.0);
+val(simpleSolenoid.g_mFeYokeBot.mu_r,10.0);
+val(simpleSolenoid.g_mAirPar.port_p.Phi,0.0);
+val(simpleSolenoid.g_mAirPar.port_p.Phi,10.0);
+val(simpleSolenoid.g_mAirPar.port_n.V_m,0.0);
+val(simpleSolenoid.g_mAirPar.port_n.V_m,10.0);
+val(simpleSolenoid.g_mAirPar.port_n.Phi,0.0);
+val(simpleSolenoid.g_mAirPar.port_n.Phi,10.0);
+val(simpleSolenoid.g_mAirPar.V_m,0.0);
+val(simpleSolenoid.g_mAirPar.V_m,10.0);
+val(simpleSolenoid.g_mAirPar.Phi,0.0);
+val(simpleSolenoid.g_mAirPar.Phi,10.0);
+val(simpleSolenoid.g_mAirPar.B,0.0);
+val(simpleSolenoid.g_mAirPar.B,10.0);
+val(simpleSolenoid.g_mAirPar.H,0.0);
+val(simpleSolenoid.g_mAirPar.H,10.0);
+val(simpleSolenoid.g_mFePoleBot.port_p.V_m,0.0);
+val(simpleSolenoid.g_mFePoleBot.port_p.V_m,10.0);
+val(simpleSolenoid.g_mFePoleBot.port_p.Phi,0.0);
+val(simpleSolenoid.g_mFePoleBot.port_p.Phi,10.0);
+val(simpleSolenoid.g_mFePoleBot.port_n.V_m,0.0);
+val(simpleSolenoid.g_mFePoleBot.port_n.V_m,10.0);
+val(simpleSolenoid.g_mFePoleBot.port_n.Phi,0.0);
+val(simpleSolenoid.g_mFePoleBot.port_n.Phi,10.0);
+val(simpleSolenoid.g_mFePoleBot.V_m,0.0);
+val(simpleSolenoid.g_mFePoleBot.V_m,10.0);
+val(simpleSolenoid.g_mFePoleBot.Phi,0.0);
+val(simpleSolenoid.g_mFePoleBot.Phi,10.0);
+val(simpleSolenoid.g_mFePoleBot.R_m,0.0);
+val(simpleSolenoid.g_mFePoleBot.R_m,10.0);
+val(simpleSolenoid.g_mFePoleBot.G_m,0.0);
+val(simpleSolenoid.g_mFePoleBot.G_m,10.0);
+val(simpleSolenoid.g_mFePoleBot.B,0.0);
+val(simpleSolenoid.g_mFePoleBot.B,10.0);
+val(simpleSolenoid.g_mFePoleBot.H,0.0);
+val(simpleSolenoid.g_mFePoleBot.H,10.0);
+val(simpleSolenoid.g_mFePoleBot.mu_r,0.0);
+val(simpleSolenoid.g_mFePoleBot.mu_r,10.0);
+val(simpleSolenoid.g_mFePole.port_p.V_m,0.0);
+val(simpleSolenoid.g_mFePole.port_p.V_m,10.0);
+val(simpleSolenoid.g_mFePole.port_p.Phi,0.0);
+val(simpleSolenoid.g_mFePole.port_p.Phi,10.0);
+val(simpleSolenoid.g_mFePole.port_n.V_m,0.0);
+val(simpleSolenoid.g_mFePole.port_n.V_m,10.0);
+val(simpleSolenoid.g_mFePole.port_n.Phi,0.0);
+val(simpleSolenoid.g_mFePole.port_n.Phi,10.0);
+val(simpleSolenoid.g_mFePole.V_m,0.0);
+val(simpleSolenoid.g_mFePole.V_m,10.0);
+val(simpleSolenoid.g_mFePole.Phi,0.0);
+val(simpleSolenoid.g_mFePole.Phi,10.0);
+val(simpleSolenoid.g_mFePole.R_m,0.0);
+val(simpleSolenoid.g_mFePole.R_m,10.0);
+val(simpleSolenoid.g_mFePole.G_m,0.0);
+val(simpleSolenoid.g_mFePole.G_m,10.0);
+val(simpleSolenoid.g_mFePole.B,0.0);
+val(simpleSolenoid.g_mFePole.B,10.0);
+val(simpleSolenoid.g_mFePole.H,0.0);
+val(simpleSolenoid.g_mFePole.H,10.0);
+val(simpleSolenoid.g_mFePole.mu_r,0.0);
+val(simpleSolenoid.g_mFePole.mu_r,10.0);
+val(simpleSolenoid.armature.s,0.0);
+val(simpleSolenoid.armature.s,10.0);
+val(simpleSolenoid.armature.v,0.0);
+val(simpleSolenoid.armature.v,10.0);
+val(simpleSolenoid.armature.a,0.0);
+val(simpleSolenoid.armature.a,10.0);
+val(simpleSolenoid.armature.mass.s,0.0);
+val(simpleSolenoid.armature.mass.s,10.0);
+val(der(simpleSolenoid.armature.mass.s),0.0);
+val(der(simpleSolenoid.armature.mass.s),10.0);
+val(simpleSolenoid.armature.mass.flange_a.s,0.0);
+val(simpleSolenoid.armature.mass.flange_a.s,10.0);
+val(simpleSolenoid.armature.mass.flange_a.f,0.0);
+val(simpleSolenoid.armature.mass.flange_a.f,10.0);
+val(simpleSolenoid.armature.mass.flange_b.s,0.0);
+val(simpleSolenoid.armature.mass.flange_b.s,10.0);
+val(simpleSolenoid.armature.mass.flange_b.f,0.0);
+val(simpleSolenoid.armature.mass.flange_b.f,10.0);
+val(simpleSolenoid.armature.mass.v,0.0);
+val(simpleSolenoid.armature.mass.v,10.0);
+val(der(simpleSolenoid.armature.mass.v),0.0);
+val(der(simpleSolenoid.armature.mass.v),10.0);
+val(simpleSolenoid.armature.mass.a,0.0);
+val(simpleSolenoid.armature.mass.a,10.0);
+val(simpleSolenoid.armature.flange_a.s,0.0);
+val(simpleSolenoid.armature.flange_a.s,10.0);
+val(simpleSolenoid.armature.flange_a.f,0.0);
+val(simpleSolenoid.armature.flange_a.f,10.0);
+val(simpleSolenoid.armature.flange_b.s,0.0);
+val(simpleSolenoid.armature.flange_b.s,10.0);
+val(simpleSolenoid.armature.flange_b.f,0.0);
+val(simpleSolenoid.armature.flange_b.f,10.0);
+val(simpleSolenoid.armature.limit_xMin.flange.f,0.0);
+val(simpleSolenoid.armature.limit_xMin.flange.f,10.0);
+val(simpleSolenoid.armature.limit_xMax.flange.f,0.0);
+val(simpleSolenoid.armature.limit_xMax.flange.f,10.0);
+val(simpleSolenoid.armature.stopper_xMax.s_rel,0.0);
+val(simpleSolenoid.armature.stopper_xMax.s_rel,10.0);
+val(der(simpleSolenoid.armature.stopper_xMax.s_rel),0.0);
+val(der(simpleSolenoid.armature.stopper_xMax.s_rel),10.0);
+val(simpleSolenoid.armature.stopper_xMax.v_rel,0.0);
+val(simpleSolenoid.armature.stopper_xMax.v_rel,10.0);
+val(der(simpleSolenoid.armature.stopper_xMax.v_rel),0.0);
+val(der(simpleSolenoid.armature.stopper_xMax.v_rel),10.0);
+val(simpleSolenoid.armature.stopper_xMax.f,0.0);
+val(simpleSolenoid.armature.stopper_xMax.f,10.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_a.s,0.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_a.s,10.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_a.f,0.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_a.f,10.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_b.f,0.0);
+val(simpleSolenoid.armature.stopper_xMax.flange_b.f,10.0);
+val(simpleSolenoid.armature.stopper_xMax.contact,0.0);
+val(simpleSolenoid.armature.stopper_xMax.contact,10.0);
+val(simpleSolenoid.armature.stopper_xMin.s_rel,0.0);
+val(simpleSolenoid.armature.stopper_xMin.s_rel,10.0);
+val(der(simpleSolenoid.armature.stopper_xMin.s_rel),0.0);
+val(der(simpleSolenoid.armature.stopper_xMin.s_rel),10.0);
+val(simpleSolenoid.armature.stopper_xMin.v_rel,0.0);
+val(simpleSolenoid.armature.stopper_xMin.v_rel,10.0);
+val(der(simpleSolenoid.armature.stopper_xMin.v_rel),0.0);
+val(der(simpleSolenoid.armature.stopper_xMin.v_rel),10.0);
+val(simpleSolenoid.armature.stopper_xMin.f,0.0);
+val(simpleSolenoid.armature.stopper_xMin.f,10.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_a.f,0.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_a.f,10.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_b.s,0.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_b.s,10.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_b.f,0.0);
+val(simpleSolenoid.armature.stopper_xMin.flange_b.f,10.0);
+val(simpleSolenoid.armature.stopper_xMin.contact,0.0);
+val(simpleSolenoid.armature.stopper_xMin.contact,10.0);
+val(simpleSolenoid.g_mLeak1.port_p.Phi,0.0);
+val(simpleSolenoid.g_mLeak1.port_p.Phi,10.0);
+val(simpleSolenoid.g_mLeak1.port_n.V_m,0.0);
+val(simpleSolenoid.g_mLeak1.port_n.V_m,10.0);
+val(simpleSolenoid.g_mLeak1.port_n.Phi,0.0);
+val(simpleSolenoid.g_mLeak1.port_n.Phi,10.0);
+val(simpleSolenoid.g_mLeak1.V_m,0.0);
+val(simpleSolenoid.g_mLeak1.V_m,10.0);
+val(simpleSolenoid.g_mLeak1.Phi,0.0);
+val(simpleSolenoid.g_mLeak1.Phi,10.0);
+val(simpleSolenoid.g_mLeak2.port_p.Phi,0.0);
+val(simpleSolenoid.g_mLeak2.port_p.Phi,10.0);
+val(simpleSolenoid.g_mLeak2.port_n.V_m,0.0);
+val(simpleSolenoid.g_mLeak2.port_n.V_m,10.0);
+val(simpleSolenoid.g_mLeak2.port_n.Phi,0.0);
+val(simpleSolenoid.g_mLeak2.port_n.Phi,10.0);
+val(simpleSolenoid.g_mLeak2.V_m,0.0);
+val(simpleSolenoid.g_mLeak2.V_m,10.0);
+val(simpleSolenoid.g_mLeak2.Phi,0.0);
+val(simpleSolenoid.g_mLeak2.Phi,10.0);
+val(simpleSolenoid.g_mLeakWork.port_p.V_m,0.0);
+val(simpleSolenoid.g_mLeakWork.port_p.V_m,10.0);
+val(simpleSolenoid.g_mLeakWork.port_p.Phi,0.0);
+val(simpleSolenoid.g_mLeakWork.port_p.Phi,10.0);
+val(simpleSolenoid.g_mLeakWork.port_n.V_m,0.0);
+val(simpleSolenoid.g_mLeakWork.port_n.V_m,10.0);
+val(simpleSolenoid.g_mLeakWork.port_n.Phi,0.0);
+val(simpleSolenoid.g_mLeakWork.port_n.Phi,10.0);
+val(simpleSolenoid.g_mLeakWork.V_m,0.0);
+val(simpleSolenoid.g_mLeakWork.V_m,10.0);
+val(simpleSolenoid.g_mLeakWork.Phi,0.0);
+val(simpleSolenoid.g_mLeakWork.Phi,10.0);
+val(simpleSolenoid.g_mLeakWork.F_m,0.0);
+val(simpleSolenoid.g_mLeakWork.F_m,10.0);
+val(simpleSolenoid.g_mLeakWork.s,0.0);
+val(simpleSolenoid.g_mLeakWork.s,10.0);
+val(simpleSolenoid.g_mLeakWork.R_m,0.0);
+val(simpleSolenoid.g_mLeakWork.R_m,10.0);
+val(simpleSolenoid.g_mLeakWork.G_m,0.0);
+val(simpleSolenoid.g_mLeakWork.G_m,10.0);
+val(simpleSolenoid.g_mLeakWork.dGmBydx,0.0);
+val(simpleSolenoid.g_mLeakWork.dGmBydx,10.0);
+val(simpleSolenoid.g_mLeakWork.flange.s,0.0);
+val(simpleSolenoid.g_mLeakWork.flange.s,10.0);
+val(simpleSolenoid.g_mLeakWork.flange.f,0.0);
+val(simpleSolenoid.g_mLeakWork.flange.f,10.0);
+val(simpleSolenoid.g_mLeakWork.l,0.0);
+val(simpleSolenoid.g_mLeakWork.l,10.0);
+val(simpleSolenoid.p.v,0.0);
+val(simpleSolenoid.p.v,10.0);
+val(simpleSolenoid.p.i,0.0);
+val(simpleSolenoid.p.i,10.0);
+val(simpleSolenoid.n.i,0.0);
+val(simpleSolenoid.n.i,10.0);
+val(simpleSolenoid.flange.s,0.0);
+val(simpleSolenoid.flange.s,10.0);
+val(simpleSolenoid.flange.f,0.0);
+val(simpleSolenoid.flange.f,10.0);
+val(simpleFeed_x.s,0.0);
+val(simpleFeed_x.s,10.0);
+val(der(simpleFeed_x.s),0.0);
+val(der(simpleFeed_x.s),10.0);
+val(simpleFeed_x.flange.s,0.0);
+val(simpleFeed_x.flange.s,10.0);
+val(simpleFeed_x.flange.f,0.0);
+val(simpleFeed_x.flange.f,10.0);
+val(simpleFeed_x.v,0.0);
+val(simpleFeed_x.v,10.0);
+val(der(simpleFeed_x.v),0.0);
+val(der(simpleFeed_x.v),10.0);
+val(simpleFeed_x.a,0.0);
+val(simpleFeed_x.a,10.0);
+val(simpleFeed_x.s_ref,0.0);
+val(simpleFeed_x.s_ref,10.0);
+val(comparisonWithFEA.u,0.0);
+val(comparisonWithFEA.u,10.0);
+val(comparisonWithFEA.y[1],0.0);
+val(comparisonWithFEA.y[1],10.0);
+val(comparisonWithFEA.y[2],0.0);
+val(comparisonWithFEA.y[2],10.0);
+val(comparisonWithFEA.y[3],0.0);
+val(comparisonWithFEA.y[3],10.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// -0
+// 12.0
+// 12.0
+// -5.99999984843e-05
+// -1.19771242142
+// 12.0
+// 12.0
+// -5.99999984843e-05
+// -1.19771242142
+// 5.99999984843e-05
+// 1.19771242142
+// 12.0
+// 12.0
+// 0.00499999988824
+// 0.000250000011874
+// -0.000475000008009
+// 0.0
+// -0
+// -0.135484993458
+// 0.0
+// 0.11311981082
+// -0
+// 1.69406589451e-21
+// 0.0
+// 613.981201172
+// -0
+// -0.000145281795994
+// -0
+// 40.8758125305
+// 0.0
+// 0.000145281795994
+// 12.0
+// 6.01143789291
+// 0.0
+// 1.19771242142
+// 6.0
+// 5.99587488174
+// -0
+// -1.19771242142
+// 6.0
+// 0.0155631219968
+// 0.0
+// 1.19771242142
+// 0.0
+// 573.105407715
+// -0
+// -0.000145281795994
+// -0.0125391846523
+// -3.25248111039e-05
+// -0
+// -0.0695173367858
+// 0.0
+// 0.0580417625606
+// 0.0
+// 5.98856210709
+// 0.0
+// 1.19771242142
+// 12.0
+// 12.0
+// 0.0
+// 1.19771242142
+// 12.0
+// 6.01143789291
+// -0
+// -1.19771242142
+// 0.0
+// 7.17257499695
+// 0.0
+// 501.209136963
+// 0.0
+// 0.000145281795994
+// -0
+// 467.174987793
+// -0
+// -0.000145281795994
+// 0.0
+// 34.034160614
+// 0.0
+// 0.000145281795994
+// 233305.359375
+// 234263.078125
+// 4.28622797699e-06
+// 4.26870519732e-06
+// 0.0
+// 1.08174574375
+// 0.0
+// 2160.89916992
+// 400.0
+// 398.364685059
+// 0.0
+// 573.105407715
+// 0.0
+// 0.00013786344789
+// -0
+// 360.523071289
+// -0
+// -0.00013786344789
+// 0.0
+// 212.582321167
+// 0.0
+// 0.00013786344789
+// 566765.375
+// 1541977.375
+// 1.76439857569e-06
+// 6.48517925583e-07
+// 0.0
+// 1.7553319931
+// 0.0
+// 9500.88574219
+// 400.0
+// 147.022994995
+// -0
+// 360.523071289
+// -0
+// 0.000126191676827
+// -0
+// 40.8758125305
+// 0.0
+// -0.000126191676827
+// 0.0
+// 319.647247314
+// -0
+// 0.000126191676827
+// -0
+// -80.6736450195
+// 0.00499999988824
+// 0.000250000011874
+// 50660592.0
+// 2533029.5
+// 1.97392093781e-08
+// 3.94784166247e-07
+// -3.947841833e-06
+// -0.00157913670409
+// 0.00499999988824
+// 0.000250000011874
+// 0.0
+// 80.6736450195
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// 1.60672235489
+// 0.0
+// 424.115966797
+// 0.0
+// -0.00013786344789
+// -0
+// 434.964141846
+// -0
+// 0.00013786344789
+// 0.0
+// -10.8481521606
+// 0.0
+// -0.00013786344789
+// 78798.3984375
+// 78687.65625
+// 1.26906124933e-05
+// 1.27084731503e-05
+// 0.0
+// -0.654730319977
+// 0.0
+// -1300.71398926
+// 400.0
+// 400.562957764
+// -0
+// -9.58977761911e-05
+// 0.0
+// 424.115966797
+// 0.0
+// 9.58977761911e-05
+// -0
+// -424.115966797
+// -0
+// -9.58977761911e-05
+// -0
+// -0.818919122219
+// -0
+// -651675.125
+// 0.0
+// 514.244750977
+// 0.0
+// 0.000145281795994
+// 0.0
+// 501.209136963
+// -0
+// -0.000145281795994
+// 0.0
+// 13.0355958939
+// 0.0
+// 0.000145281795994
+// 89854.859375
+// 89726.2890625
+// 1.11290582936e-05
+// 1.11450062832e-05
+// 0.0
+// 0.714202821255
+// 0.0
+// 1418.82824707
+// 400.0
+// 400.573181152
+// 0.0
+// 613.981201172
+// 0.0
+// 0.000145281795994
+// 0.0
+// 514.244750977
+// -0
+// -0.000145281795994
+// 0.0
+// 99.7364730835
+// 0.0
+// 0.000145281795994
+// 164646.921875
+// 686503.5625
+// 6.07360288996e-06
+// 1.45665660511e-06
+// 0.0
+// 1.8497852087
+// 0.0
+// 15344.0722656
+// 400.0
+// 95.9336166382
+// 0.00499999988824
+// 0.000250000011874
+// -0.000475000008009
+// 0.0
+// 0.00499999988824
+// 0.000250000011874
+// -0.000475000008009
+// 0.0
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// -83.9256820679
+// 0.00499999988824
+// 0.000250000011874
+// 0.0
+// 83.9256820679
+// -0.000475000008009
+// 0.0
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// -83.9256820679
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// 83.9256820679
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.00474999984726
+// 0.000475000008009
+// -0
+// 0.000475000008009
+// -0
+// 0.0
+// 0.0
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.00474999984726
+// 2.16840434497e-19
+// -0.000475000008009
+// 0.0
+// -0.000475000008009
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.00499999988824
+// 0.000250000011874
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -9.27251039684e-06
+// 0.0
+// 424.115966797
+// -0
+// 9.27251039684e-06
+// -0
+// -424.115966797
+// 0.0
+// -9.27251039684e-06
+// 0.0
+// -2.34206509049e-05
+// 0.0
+// 424.115966797
+// -0
+// 2.34206509049e-05
+// -0
+// -424.115966797
+// 0.0
+// -2.34206509049e-05
+// 0.0
+// 573.105407715
+// -0
+// -0.00013786344789
+// 0.0
+// 0.00013786344789
+// 6.0
+// 0.00731266709045
+// 0.0
+// 1.19771242142
+// -0
+// -1.19771242142
+// 6.0
+// 0.00731266709045
+// 0.0
+// 1.19771242142
+// 0.0
+// 573.105407715
+// -0
+// -0.00013786344789
+// -0.0125391846523
+// -1.52824813995e-05
+// -0
+// -0.065967656672
+// 0.0
+// 0.055078048259
+// 0.0
+// 6.00412511826
+// 60000.0
+// 5.70654628973e-05
+// 5.99999984843e-05
+// 5.70654634657e-14
+// 6.0
+// 12.0
+// 5.99999984843e-05
+// 5.70654634657e-14
+// 6.0
+// 5.99587488174
+// -5.99999984843e-05
+// -5.70654634657e-14
+// -0
+// 360.523071289
+// -0
+// -7.41834583096e-06
+// -0
+// 467.174987793
+// 0.0
+// 7.41834583096e-06
+// -0
+// -106.651908875
+// -0
+// -7.41834583096e-06
+// -0
+// -0.0145873846486
+// -0
+// -11608.2714844
+// -0
+// 467.174987793
+// -0
+// 0.00013786344789
+// -0
+// 434.964141846
+// 0.0
+// -0.00013786344789
+// -0
+// 32.2108459473
+// -0
+// 0.00013786344789
+// 233305.359375
+// 233643.109375
+// 4.28622797699e-06
+// 4.28003204433e-06
+// -0
+// 1.02650988102
+// -0
+// 2045.13305664
+// 400.0
+// 399.42175293
+// 0.0
+// 5.99587488174
+// 60000.0
+// -5.70654628973e-05
+// 5.99999984843e-05
+// -5.70654634657e-14
+// 0.0
+// 5.99587488174
+// 5.99999984843e-05
+// -5.70654634657e-14
+// -5.99999984843e-05
+// 5.70654634657e-14
+// 6.0
+// 5.70654634657e-09
+// 5.99999984843e-05
+// 5.70654634657e-14
+// 12.0
+// 12.0
+// 5.99999984843e-05
+// 5.70654634657e-14
+// 6.0
+// 12.0
+// -5.99999984843e-05
+// -5.70654634657e-14
+// 0.000360000005458
+// 3.25646704167e-22
+// 6.0
+// -5.70654634657e-09
+// 5.99999984843e-05
+// -5.70654634657e-14
+// 6.0
+// 5.99587488174
+// 5.99999984843e-05
+// -5.70654634657e-14
+// 0.0
+// 5.99587488174
+// -5.99999984843e-05
+// 5.70654634657e-14
+// 0.000360000005458
+// 3.25646704167e-22
+// 0.0
+// 5.98856210709
+// 0.0
+// 1.19771242142
+// 6.0
+// 5.99587488174
+// 0.0
+// 1.19771242142
+// 6.0
+// 0.00731266709045
+// -0
+// -1.19771242142
+// 0.0
+// 7.17257499695
+// 0.0
+// -9.27251039684e-06
+// 0.0
+// 424.115966797
+// -0
+// 9.27251039684e-06
+// -0
+// -424.115966797
+// 0.0
+// -9.27251039684e-06
+// -0
+// 360.523071289
+// 0.0
+// 1.90901173482e-05
+// -0
+// 40.8758125305
+// -0
+// -1.90901173482e-05
+// 0.0
+// 319.647247314
+// 0.0
+// 1.90901173482e-05
+// -0
+// -3.25203561783
+// 0.00499999988824
+// 0.000250000011874
+// 57775264.0
+// 16744122.0
+// 1.73084462318e-08
+// 5.9722452761e-08
+// -2.1347409529e-06
+// -6.3656581915e-05
+// 0.00499999988824
+// 0.000250000011874
+// 0.0
+// 3.25203561783
+// 0.00499999988824
+// 0.000250000011874
+// 12.0
+// 12.0
+// 5.99999984843e-05
+// 1.19771242142
+// -5.99999984843e-05
+// -1.19771242142
+// 0.00499999988824
+// 0.000250000011874
+// -0
+// 83.9256820679
+// 0.00499999988824
+// 0.000250000011874
+// 0.00499999988824
+// 0.000250000011874
+// 0.0
+// -83.9256820679
+// 0.00499999988824
+// 0.000250000011874
+// 12.0
+// 12.0
+// -0
+// -1.19793009758
+// 12.0
+// 12.0
+// -0
+// -1.19793009758
+// 0.0
+// 1.19793009758
+// 12.0
+// 12.0
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// -0.000475000008009
+// -0
+// -3.38813178902e-21
+// 0.0
+// 918.764465332
+// -0
+// -0.000138977324241
+// -0
+// -227.654693604
+// 0.0
+// 0.000138977324241
+// 12.0
+// 0.0206986423582
+// 0.0
+// 1.19793009758
+// -0
+// -1.19793009758
+// 12.0
+// 0.0206986423582
+// 0.0
+// 1.19793009758
+// 0.0
+// 1146.41918945
+// -0
+// -0.000138977324241
+// -0.0125391846523
+// -2.1628675313e-05
+// -0
+// -0.133001297712
+// 0.0
+// 0.111025922
+// 0.0
+// 11.9793014526
+// 0.0
+// 1.19793009758
+// 12.0
+// 12.0
+// 0.0
+// 1.19793009758
+// 12.0
+// 0.0206986423582
+// -0
+// -1.19793009758
+// 0.0
+// 14.3503656387
+// 0.0
+// 534.270080566
+// 0.0
+// 0.000138977324241
+// 0.0
+// 469.307922363
+// -0
+// -0.000138977324241
+// 0.0
+// 64.9621734619
+// 0.0
+// 0.000138977324241
+// 466610.71875
+// 467430.0
+// 2.1431139885e-06
+// 2.13935777538e-06
+// 0.0
+// 1.03480362892
+// 0.0
+// 2062.29101563
+// 400.0
+// 399.298919678
+// 0.0
+// 0.000138977324241
+// -0
+// -227.654693604
+// -0
+// -0.000138977324241
+// 0.0
+// 227.654693604
+// 0.0
+// 0.000138977324241
+// 566765.375
+// 1638070.75
+// 1.76439857569e-06
+// 6.10474273799e-07
+// 0.0
+// 1.76951432228
+// 0.0
+// 10174.5117188
+// 400.0
+// 138.398269653
+// 0.0
+// 918.764465332
+// -0
+// 0.000120710828924
+// 0.0
+// 612.874450684
+// 0.0
+// -0.000120710828924
+// 0.0
+// 305.890014648
+// -0
+// 0.000120710828924
+// -0
+// -73.8180770874
+// 0.00499999988824
+// 0.000250102952123
+// 50660592.0
+// 2534072.5
+// 1.97392093781e-08
+// 3.94621679334e-07
+// -3.947841833e-06
+// -0.00157783704344
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 73.8180770874
+// 0.00499999988824
+// 0.000250102952123
+// -0
+// 1.53693795204
+// 0.0
+// 458.372161865
+// -0
+// -0.000138977324241
+// 0.0
+// 469.307922363
+// 0.0
+// 0.000138977324241
+// -0
+// -10.9357633591
+// -0
+// -0.000138977324241
+// 78798.3984375
+// 78687.390625
+// 1.26906124933e-05
+// 1.2708516806e-05
+// -0
+// -0.660020232201
+// -0
+// -1311.21875
+// 400.0
+// 400.564331055
+// -0
+// -0.000103643513285
+// 0.0
+// 458.372161865
+// 0.0
+// 0.000103643513285
+// -0
+// -458.372161865
+// -0
+// -0.000103643513285
+// -0
+// -0.885063886642
+// -0
+// -704311.4375
+// 0.0
+// 546.740112305
+// 0.0
+// 0.000138977324241
+// 0.0
+// 534.270080566
+// -0
+// -0.000138977324241
+// 0.0
+// 12.4700374603
+// 0.0
+// 0.000138977324241
+// 89854.859375
+// 89727.140625
+// 1.11290582936e-05
+// 1.11448998723e-05
+// 0.0
+// 0.683210134506
+// 0.0
+// 1357.2713623
+// 400.0
+// 400.569396973
+// 0.0
+// 612.874450684
+// 0.0
+// 0.000138977324241
+// 0.0
+// 546.740112305
+// -0
+// -0.000138977324241
+// 0.0
+// 66.1343231201
+// 0.0
+// 0.000138977324241
+// 164646.921875
+// 475864.125
+// 6.07360288996e-06
+// 2.10144025914e-06
+// 0.0
+// 1.76951432228
+// 0.0
+// 10174.5117188
+// 400.0
+// 138.398269653
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// -0.000475000008009
+// 0.0
+// 5.14004680832e-12
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// -0.000475000008009
+// 0.00499999988824
+// 0.000250102952123
+// -0
+// -76.7949523926
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 76.7949523926
+// 0.0
+// -0.000475000008009
+// 0.0
+// 5.14004680832e-12
+// 0.0
+// 5.14004680832e-12
+// 0.00499999988824
+// 0.000250102952123
+// -0
+// -76.7949523926
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 76.7949523926
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.00474989693612
+// -0
+// 0.000475000008009
+// -0
+// 0.000475000008009
+// -0
+// -5.14004680832e-12
+// 0.0
+// 0.0
+// 0.00499999988824
+// 0.000250102952123
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.00474999984726
+// 1.02942607327e-07
+// 0.0
+// -0.000475000008009
+// 0.0
+// -0.000475000008009
+// 0.0
+// 5.14004680832e-12
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -1.00214583654e-05
+// 0.0
+// 458.372161865
+// -0
+// 1.00214583654e-05
+// -0
+// -458.372161865
+// 0.0
+// -1.00214583654e-05
+// 0.0
+// -2.53123544098e-05
+// 0.0
+// 458.372161865
+// -0
+// 2.53123544098e-05
+// -0
+// -458.372161865
+// 0.0
+// -2.53123544098e-05
+// 0.0
+// 918.764465332
+// 0.0
+// 1.82664971362e-05
+// 0.0
+// 612.874450684
+// -0
+// -1.82664971362e-05
+// 0.0
+// 305.890014648
+// 0.0
+// 1.82664971362e-05
+// -0
+// -2.9768743515
+// 0.00499999988824
+// 0.000250102952123
+// 57775264.0
+// 16745959.0
+// 1.73084462318e-08
+// 5.9715901557e-08
+// -2.1347409529e-06
+// -6.36297045276e-05
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 2.9768743515
+// 0.00499999988824
+// 0.000250102952123
+// 12.0
+// 12.0
+// 0.0
+// 1.19793009758
+// -0
+// -1.19793009758
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// 76.7949523926
+// 0.00499999988824
+// 0.000250102952123
+// 0.0
+// -0.000475000008009
+// 0.00499999988824
+// 0.000250102952123
+// -0
+// -76.7949523926
+// 0.0
+// -0.000475000008009
+// 0.0
+// 5.14004680832e-12
+// 0.0
+// 5.14004680832e-12
+// 0.00499999988824
+// 0.000250000011874
+// 0.00499999988824
+// 0.000250000011874
+// -3.5868999958
+// -85.8619003296
+// 5.96909994783e-05
+// 0.000148210005136
+// 0.0394669994712
+// 0.119539998472
+// endResult

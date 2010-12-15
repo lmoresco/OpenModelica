@@ -1,0 +1,343 @@
+// name:     Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling_* Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.exe Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.cpp Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.makefile Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.libs Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling);
+val(dTSource1,0.0);
+val(dTSource1,1.0);
+val(dTtoPipe1,0.0);
+val(dTtoPipe1,1.0);
+val(dTCoolant1,0.0);
+val(dTCoolant1,1.0);
+val(dTSource2,0.0);
+val(dTSource2,1.0);
+val(dTtoPipe2,0.0);
+val(dTtoPipe2,1.0);
+val(dTCoolant2,0.0);
+val(dTCoolant2,1.0);
+val(dTmixedCoolant,0.0);
+val(dTmixedCoolant,1.0);
+val(ambient1.T_port,0.0);
+val(ambient1.T_port,1.0);
+val(ambient1.flowPort.h,0.0);
+val(ambient1.flowPort.h,1.0);
+val(ambient1.flowPort.H_flow,0.0);
+val(ambient1.flowPort.H_flow,1.0);
+val(pump.T,0.0);
+val(pump.T,1.0);
+val(pump.T_a,0.0);
+val(pump.T_a,1.0);
+val(pump.T_b,0.0);
+val(pump.T_b,1.0);
+val(pump.dT,0.0);
+val(pump.dT,1.0);
+val(pump.flowPort_a.h,0.0);
+val(pump.flowPort_a.h,1.0);
+val(pump.flowPort_a.H_flow,0.0);
+val(pump.flowPort_a.H_flow,1.0);
+val(pump.flowPort_b.h,0.0);
+val(pump.flowPort_b.h,1.0);
+val(pump.flowPort_b.H_flow,0.0);
+val(pump.flowPort_b.H_flow,1.0);
+val(pipe1.Q_flow,0.0);
+val(pipe1.Q_flow,1.0);
+val(pipe1.T,0.0);
+val(pipe1.T,1.0);
+val(der(pipe1.T),0.0);
+val(der(pipe1.T),1.0);
+val(pipe1.T_a,0.0);
+val(pipe1.T_a,1.0);
+val(pipe1.T_b,0.0);
+val(pipe1.T_b,1.0);
+val(pipe1.dT,0.0);
+val(pipe1.dT,1.0);
+val(pipe1.flowPort_a.h,0.0);
+val(pipe1.flowPort_a.h,1.0);
+val(pipe1.flowPort_a.H_flow,0.0);
+val(pipe1.flowPort_a.H_flow,1.0);
+val(pipe1.flowPort_b.h,0.0);
+val(pipe1.flowPort_b.h,1.0);
+val(pipe1.flowPort_b.H_flow,0.0);
+val(pipe1.flowPort_b.H_flow,1.0);
+val(pipe1.heatPort.T,0.0);
+val(pipe1.heatPort.T,1.0);
+val(pipe1.heatPort.Q_flow,0.0);
+val(pipe1.heatPort.Q_flow,1.0);
+val(pipe2.Q_flow,0.0);
+val(pipe2.Q_flow,1.0);
+val(pipe2.T,0.0);
+val(pipe2.T,1.0);
+val(der(pipe2.T),0.0);
+val(der(pipe2.T),1.0);
+val(pipe2.T_a,0.0);
+val(pipe2.T_a,1.0);
+val(pipe2.T_b,0.0);
+val(pipe2.T_b,1.0);
+val(pipe2.dT,0.0);
+val(pipe2.dT,1.0);
+val(pipe2.flowPort_a.h,0.0);
+val(pipe2.flowPort_a.h,1.0);
+val(pipe2.flowPort_a.H_flow,0.0);
+val(pipe2.flowPort_a.H_flow,1.0);
+val(pipe2.flowPort_b.h,0.0);
+val(pipe2.flowPort_b.h,1.0);
+val(pipe2.flowPort_b.H_flow,0.0);
+val(pipe2.flowPort_b.H_flow,1.0);
+val(pipe2.heatPort.T,0.0);
+val(pipe2.heatPort.T,1.0);
+val(pipe2.heatPort.Q_flow,0.0);
+val(pipe2.heatPort.Q_flow,1.0);
+val(pipe3.T,0.0);
+val(pipe3.T,1.0);
+val(der(pipe3.T),0.0);
+val(der(pipe3.T),1.0);
+val(pipe3.T_a,0.0);
+val(pipe3.T_a,1.0);
+val(pipe3.T_b,0.0);
+val(pipe3.T_b,1.0);
+val(pipe3.dT,0.0);
+val(pipe3.dT,1.0);
+val(pipe3.flowPort_a.h,0.0);
+val(pipe3.flowPort_a.h,1.0);
+val(pipe3.flowPort_a.H_flow,0.0);
+val(pipe3.flowPort_a.H_flow,1.0);
+val(pipe3.flowPort_b.h,0.0);
+val(pipe3.flowPort_b.h,1.0);
+val(pipe3.flowPort_b.H_flow,0.0);
+val(pipe3.flowPort_b.H_flow,1.0);
+val(ambient2.T_port,0.0);
+val(ambient2.T_port,1.0);
+val(ambient2.flowPort.h,0.0);
+val(ambient2.flowPort.h,1.0);
+val(ambient2.flowPort.H_flow,0.0);
+val(ambient2.flowPort.H_flow,1.0);
+val(heatCapacitor1.T,0.0);
+val(heatCapacitor1.T,1.0);
+val(der(heatCapacitor1.T),0.0);
+val(der(heatCapacitor1.T),1.0);
+val(heatCapacitor1.der_T,0.0);
+val(heatCapacitor1.der_T,1.0);
+val(heatCapacitor1.port.T,0.0);
+val(heatCapacitor1.port.T,1.0);
+val(heatCapacitor1.port.Q_flow,0.0);
+val(heatCapacitor1.port.Q_flow,1.0);
+val(prescribedHeatFlow1.port.T,0.0);
+val(prescribedHeatFlow1.port.T,1.0);
+val(prescribedHeatFlow1.port.Q_flow,0.0);
+val(prescribedHeatFlow1.port.Q_flow,1.0);
+val(convection1.Q_flow,0.0);
+val(convection1.Q_flow,1.0);
+val(convection1.dT,0.0);
+val(convection1.dT,1.0);
+val(convection1.solid.T,0.0);
+val(convection1.solid.T,1.0);
+val(convection1.solid.Q_flow,0.0);
+val(convection1.solid.Q_flow,1.0);
+val(convection1.fluid.T,0.0);
+val(convection1.fluid.T,1.0);
+val(convection1.fluid.Q_flow,0.0);
+val(convection1.fluid.Q_flow,1.0);
+val(heatCapacitor2.T,0.0);
+val(heatCapacitor2.T,1.0);
+val(der(heatCapacitor2.T),0.0);
+val(der(heatCapacitor2.T),1.0);
+val(heatCapacitor2.der_T,0.0);
+val(heatCapacitor2.der_T,1.0);
+val(heatCapacitor2.port.T,0.0);
+val(heatCapacitor2.port.T,1.0);
+val(heatCapacitor2.port.Q_flow,0.0);
+val(heatCapacitor2.port.Q_flow,1.0);
+val(prescribedHeatFlow2.port.T,0.0);
+val(prescribedHeatFlow2.port.T,1.0);
+val(prescribedHeatFlow2.port.Q_flow,0.0);
+val(prescribedHeatFlow2.port.Q_flow,1.0);
+val(convection2.Q_flow,0.0);
+val(convection2.Q_flow,1.0);
+val(convection2.dT,0.0);
+val(convection2.dT,1.0);
+val(convection2.solid.T,0.0);
+val(convection2.solid.T,1.0);
+val(convection2.solid.Q_flow,0.0);
+val(convection2.solid.Q_flow,1.0);
+val(convection2.fluid.T,0.0);
+val(convection2.fluid.T,1.0);
+val(convection2.fluid.Q_flow,0.0);
+val(convection2.fluid.Q_flow,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 13.4112653732
+// 0.0
+// 4.65170383453
+// 0.0
+// 8.7595615387
+// 0.0
+// 26.8225307465
+// 0.0
+// 9.30340766907
+// 0.0
+// 17.5191230774
+// 0.0
+// 12.6193151474
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 0.0
+// 0.0
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 0.0
+// 4.65170383453
+// 293.149993896
+// 301.909576416
+// 0.0
+// 2.71922945976
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 306.289337158
+// 0.0
+// 8.7595615387
+// 293.149993896
+// 293.149993896
+// 146.574996948
+// 146.574996948
+// 293.149993896
+// 306.289337158
+// -146.574996948
+// -150.954788208
+// 293.149993896
+// 301.909576416
+// 0.0
+// 4.65170383453
+// 0.0
+// 9.30340766907
+// 293.149993896
+// 310.669128418
+// 0.0
+// 5.43845891953
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 306.289337158
+// 0.0
+// 17.5191230774
+// 293.149993896
+// 293.149993896
+// 146.574996948
+// 146.574996948
+// 293.149993896
+// 306.289337158
+// -146.574996948
+// -155.334564209
+// 293.149993896
+// 310.669128418
+// 0.0
+// 9.30340766907
+// 293.149993896
+// 305.769317627
+// 0.0
+// 5.20027208328
+// 293.149993896
+// 306.289337158
+// 293.149993896
+// 305.769317627
+// 0.0
+// -0.520027220249
+// 293.149993896
+// 306.289337158
+// 293.149993896
+// 306.289337158
+// 293.149993896
+// 305.769317627
+// -293.149993896
+// -305.769317627
+// 293.149993896
+// 305.769317627
+// 293.149993896
+// 305.769317627
+// 293.149993896
+// 305.769317627
+// 293.149993896
+// 306.561279297
+// 50.0
+// 3.48296236992
+// 50.0
+// 3.48296236992
+// 293.149993896
+// 306.561279297
+// 5.0
+// 0.348296225071
+// 293.149993896
+// 306.561279297
+// -5.0
+// -5.0
+// 0.0
+// 4.65170383453
+// 0.0
+// 4.65170383453
+// 293.149993896
+// 306.561279297
+// 0.0
+// 4.65170383453
+// 293.149993896
+// 301.909576416
+// -0
+// -4.65170383453
+// 293.149993896
+// 319.97253418
+// 100.0
+// 6.96592473984
+// 100.0
+// 6.96592473984
+// 293.149993896
+// 319.97253418
+// 10.0
+// 0.696592450142
+// 293.149993896
+// 319.97253418
+// -10.0
+// -10.0
+// 0.0
+// 9.30340766907
+// 0.0
+// 9.30340766907
+// 293.149993896
+// 319.97253418
+// 0.0
+// 9.30340766907
+// 293.149993896
+// 310.669128418
+// -0
+// -9.30340766907
+// endResult

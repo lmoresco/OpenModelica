@@ -1,0 +1,387 @@
+// name:     Modelica.Mechanics.Rotational.Examples.Friction
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.Friction_* Modelica.Mechanics.Rotational.Examples.Friction Modelica.Mechanics.Rotational.Examples.Friction.exe Modelica.Mechanics.Rotational.Examples.Friction.cpp Modelica.Mechanics.Rotational.Examples.Friction.makefile Modelica.Mechanics.Rotational.Examples.Friction.libs Modelica.Mechanics.Rotational.Examples.Friction.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Rotational.Examples.Friction);
+val(tMotor,0.0);
+val(tMotor,3.0);
+val(tClutch,0.0);
+val(tClutch,3.0);
+val(tBrake,0.0);
+val(tBrake,3.0);
+val(tSpring,0.0);
+val(tSpring,3.0);
+val(torque.flange.phi,0.0);
+val(torque.flange.phi,3.0);
+val(torque.flange.tau,0.0);
+val(torque.flange.tau,3.0);
+val(torque.support.tau,0.0);
+val(torque.support.tau,3.0);
+val(torque.tau,0.0);
+val(torque.tau,3.0);
+val(inertia3.flange_a.phi,0.0);
+val(inertia3.flange_a.phi,3.0);
+val(inertia3.flange_a.tau,0.0);
+val(inertia3.flange_a.tau,3.0);
+val(inertia3.flange_b.phi,0.0);
+val(inertia3.flange_b.phi,3.0);
+val(inertia3.flange_b.tau,0.0);
+val(inertia3.flange_b.tau,3.0);
+val(inertia3.phi,0.0);
+val(inertia3.phi,3.0);
+val(der(inertia3.phi),0.0);
+val(der(inertia3.phi),3.0);
+val(inertia3.w,0.0);
+val(inertia3.w,3.0);
+val(der(inertia3.w),0.0);
+val(der(inertia3.w),3.0);
+val(inertia3.a,0.0);
+val(inertia3.a,3.0);
+val(clutch.phi_rel,0.0);
+val(clutch.phi_rel,3.0);
+val(der(clutch.phi_rel),0.0);
+val(der(clutch.phi_rel),3.0);
+val(clutch.w_rel,0.0);
+val(clutch.w_rel,3.0);
+val(der(clutch.w_rel),0.0);
+val(der(clutch.w_rel),3.0);
+val(clutch.a_rel,0.0);
+val(clutch.a_rel,3.0);
+val(clutch.tau,0.0);
+val(clutch.tau,3.0);
+val(clutch.flange_a.phi,0.0);
+val(clutch.flange_a.phi,3.0);
+val(clutch.flange_a.tau,0.0);
+val(clutch.flange_a.tau,3.0);
+val(clutch.flange_b.phi,0.0);
+val(clutch.flange_b.phi,3.0);
+val(clutch.flange_b.tau,0.0);
+val(clutch.flange_b.tau,3.0);
+val(clutch.w_relfric,0.0);
+val(clutch.w_relfric,3.0);
+val(clutch.a_relfric,0.0);
+val(clutch.a_relfric,3.0);
+val(clutch.sa,0.0);
+val(clutch.sa,3.0);
+val(clutch.startForward,0.0);
+val(clutch.startForward,3.0);
+val(clutch.startBackward,0.0);
+val(clutch.startBackward,3.0);
+val(clutch.locked,0.0);
+val(clutch.locked,3.0);
+val(clutch.mode,0.0);
+val(clutch.mode,3.0);
+val(inertia2.flange_a.phi,0.0);
+val(inertia2.flange_a.phi,3.0);
+val(inertia2.flange_a.tau,0.0);
+val(inertia2.flange_a.tau,3.0);
+val(inertia2.flange_b.phi,0.0);
+val(inertia2.flange_b.phi,3.0);
+val(inertia2.flange_b.tau,0.0);
+val(inertia2.flange_b.tau,3.0);
+val(inertia2.phi,0.0);
+val(inertia2.phi,3.0);
+val(der(inertia2.phi),0.0);
+val(der(inertia2.phi),3.0);
+val(inertia2.w,0.0);
+val(inertia2.w,3.0);
+val(der(inertia2.w),0.0);
+val(der(inertia2.w),3.0);
+val(inertia2.a,0.0);
+val(inertia2.a,3.0);
+val(spring.phi_rel,0.0);
+val(spring.phi_rel,3.0);
+val(der(spring.phi_rel),0.0);
+val(der(spring.phi_rel),3.0);
+val(spring.w_rel,0.0);
+val(spring.w_rel,3.0);
+val(der(spring.w_rel),0.0);
+val(der(spring.w_rel),3.0);
+val(spring.a_rel,0.0);
+val(spring.a_rel,3.0);
+val(spring.tau,0.0);
+val(spring.tau,3.0);
+val(spring.flange_a.phi,0.0);
+val(spring.flange_a.phi,3.0);
+val(spring.flange_a.tau,0.0);
+val(spring.flange_a.tau,3.0);
+val(spring.flange_b.phi,0.0);
+val(spring.flange_b.phi,3.0);
+val(spring.flange_b.tau,0.0);
+val(spring.flange_b.tau,3.0);
+val(inertia1.flange_a.phi,0.0);
+val(inertia1.flange_a.phi,3.0);
+val(inertia1.flange_a.tau,0.0);
+val(inertia1.flange_a.tau,3.0);
+val(inertia1.flange_b.phi,0.0);
+val(inertia1.flange_b.phi,3.0);
+val(inertia1.phi,0.0);
+val(inertia1.phi,3.0);
+val(der(inertia1.phi),0.0);
+val(der(inertia1.phi),3.0);
+val(inertia1.w,0.0);
+val(inertia1.w,3.0);
+val(der(inertia1.w),0.0);
+val(der(inertia1.w),3.0);
+val(inertia1.a,0.0);
+val(inertia1.a,3.0);
+val(brake.flange_a.phi,0.0);
+val(brake.flange_a.phi,3.0);
+val(brake.flange_a.tau,0.0);
+val(brake.flange_a.tau,3.0);
+val(brake.flange_b.phi,0.0);
+val(brake.flange_b.phi,3.0);
+val(brake.flange_b.tau,0.0);
+val(brake.flange_b.tau,3.0);
+val(brake.support.tau,0.0);
+val(brake.support.tau,3.0);
+val(brake.w_relfric,0.0);
+val(brake.w_relfric,3.0);
+val(brake.a_relfric,0.0);
+val(brake.a_relfric,3.0);
+val(brake.tau0,0.0);
+val(brake.tau0,3.0);
+val(brake.tau0_max,0.0);
+val(brake.tau0_max,3.0);
+val(brake.free,0.0);
+val(brake.free,3.0);
+val(brake.sa,0.0);
+val(brake.sa,3.0);
+val(brake.startForward,0.0);
+val(brake.startForward,3.0);
+val(brake.startBackward,0.0);
+val(brake.startBackward,3.0);
+val(brake.locked,0.0);
+val(brake.locked,3.0);
+val(brake.mode,0.0);
+val(brake.mode,3.0);
+val(brake.phi,0.0);
+val(brake.phi,3.0);
+val(der(brake.phi),0.0);
+val(der(brake.phi),3.0);
+val(brake.tau,0.0);
+val(brake.tau,3.0);
+val(brake.w,0.0);
+val(brake.w,3.0);
+val(der(brake.w),0.0);
+val(der(brake.w),3.0);
+val(brake.a,0.0);
+val(brake.a,3.0);
+val(brake.fn,0.0);
+val(brake.fn,3.0);
+val(brake.f_normalized,0.0);
+val(brake.f_normalized,3.0);
+val(step.y,0.0);
+val(step.y,3.0);
+val(step2.y,0.0);
+val(step2.y,3.0);
+val(sine.y,0.0);
+val(sine.y,3.0);
+val(product.u1,0.0);
+val(product.u1,3.0);
+val(product.u2,0.0);
+val(product.u2,3.0);
+val(product.y,0.0);
+val(product.y,3.0);
+val(fixed.flange.tau,0.0);
+val(fixed.flange.tau,3.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.Friction_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.Friction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// -0
+// -80.0
+// 27.6666374207
+// 0.0
+// -29.0499687195
+// 0.0
+// 29.0499687195
+// 0.0
+// 101.561843872
+// -0
+// 0.0
+// 0.0
+// -0
+// 0.0
+// -0
+// 0.0
+// 101.561843872
+// 0.0
+// -0
+// 0.0
+// 101.561843872
+// -80.0
+// 27.6666374207
+// 0.0
+// 101.561843872
+// 100.0
+// 2.29141449928
+// 100.0
+// 2.29141449928
+// -80.0
+// 27.6666374207
+// -80.0
+// 27.6666374207
+// 0.0
+// -47.2081222534
+// -10.0
+// 8.90944575196e-15
+// -10.0
+// 8.90944575196e-15
+// 1680.0
+// 0.0
+// 1680.0
+// 0.0
+// -80.0
+// 27.6666374207
+// 0.0
+// 101.561843872
+// 80.0
+// -27.6666374207
+// 0.0
+// 54.353717804
+// -80.0
+// 27.6666374207
+// -10.0
+// 8.90944575196e-15
+// 1680.0
+// 0.0
+// 1600.0
+// 27.6666374207
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// -1.0
+// 0.0
+// 0.0
+// 54.353717804
+// 80.0
+// -27.6666374207
+// 0.0
+// 54.353717804
+// 0.0
+// 29.0499687195
+// 0.0
+// 54.353717804
+// 90.0
+// 2.29141449928
+// 90.0
+// 2.29141449928
+// 1600.0
+// 27.6666374207
+// 1600.0
+// 27.6666374207
+// 0.0
+// 0.195883646607
+// 0.0
+// -2.29141449928
+// 0.0
+// -2.29141449928
+// -1600.0
+// -27.6666374207
+// -1600.0
+// -27.6666374207
+// 0.0
+// 29.0499687195
+// 0.0
+// 54.353717804
+// -0
+// -29.0499687195
+// 0.0
+// 54.5496025085
+// 0.0
+// 29.0499687195
+// 0.0
+// 54.5496025085
+// -0
+// 0.0
+// 0.0
+// 54.5496025085
+// 0.0
+// 54.5496025085
+// 90.0
+// -2.25437002399e-10
+// 90.0
+// -2.25437002399e-10
+// -0
+// 0.0
+// -0
+// 0.0
+// 0.0
+// 54.5496025085
+// -0
+// -29.0499687195
+// 0.0
+// 54.5496025085
+// 0.0
+// -0
+// 0.0
+// 29.0499687195
+// 90.0
+// -2.25437002399e-10
+// -0
+// 0.0
+// 0.0
+// 800.0
+// 0.0
+// 800.0
+// 1.0
+// 0.0
+// -0
+// -29.0499687195
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 2.0
+// 0.0
+// 0.0
+// 54.5496025085
+// 90.0
+// -2.25437002399e-10
+// 0.0
+// -29.0499687195
+// 90.0
+// -2.25437002399e-10
+// -0
+// 0.0
+// -0
+// 0.0
+// 0.0
+// 1600.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// -199.951171875
+// 0.0
+// -199.951171875
+// 1.0
+// 0.0
+// 0.0
+// -0
+// -0
+// -29.0499687195
+// endResult

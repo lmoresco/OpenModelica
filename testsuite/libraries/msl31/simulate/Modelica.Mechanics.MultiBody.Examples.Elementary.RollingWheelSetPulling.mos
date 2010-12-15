@@ -1,0 +1,2287 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling_* Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.exe Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.libs Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling);
+val(force.frame_b.r_0[1],0.0);
+val(force.frame_b.r_0[1],3.0);
+val(force.frame_b.r_0[2],0.0);
+val(force.frame_b.r_0[2],3.0);
+val(force.frame_b.R.T[1,1],0.0);
+val(force.frame_b.R.T[1,1],3.0);
+val(force.frame_b.R.T[1,2],0.0);
+val(force.frame_b.R.T[1,2],3.0);
+val(force.frame_b.R.T[2,1],0.0);
+val(force.frame_b.R.T[2,1],3.0);
+val(force.frame_b.R.T[2,2],0.0);
+val(force.frame_b.R.T[2,2],3.0);
+val(force.frame_b.R.w[3],0.0);
+val(force.frame_b.R.w[3],3.0);
+val(force.frame_b.f[1],0.0);
+val(force.frame_b.f[1],3.0);
+val(force.frame_b.f[2],0.0);
+val(force.frame_b.f[2],3.0);
+val(force.frame_b.f[3],0.0);
+val(force.frame_b.f[3],3.0);
+val(force.force[1],0.0);
+val(force.force[1],3.0);
+val(force.force[2],0.0);
+val(force.force[2],3.0);
+val(force.force[3],0.0);
+val(force.force[3],3.0);
+val(force.basicWorldForce.frame_b.r_0[1],0.0);
+val(force.basicWorldForce.frame_b.r_0[1],3.0);
+val(force.basicWorldForce.frame_b.r_0[2],0.0);
+val(force.basicWorldForce.frame_b.r_0[2],3.0);
+val(force.basicWorldForce.frame_b.R.T[1,1],0.0);
+val(force.basicWorldForce.frame_b.R.T[1,1],3.0);
+val(force.basicWorldForce.frame_b.R.T[1,2],0.0);
+val(force.basicWorldForce.frame_b.R.T[1,2],3.0);
+val(force.basicWorldForce.frame_b.R.T[2,1],0.0);
+val(force.basicWorldForce.frame_b.R.T[2,1],3.0);
+val(force.basicWorldForce.frame_b.R.T[2,2],0.0);
+val(force.basicWorldForce.frame_b.R.T[2,2],3.0);
+val(force.basicWorldForce.frame_b.R.w[3],0.0);
+val(force.basicWorldForce.frame_b.R.w[3],3.0);
+val(force.basicWorldForce.frame_b.f[1],0.0);
+val(force.basicWorldForce.frame_b.f[1],3.0);
+val(force.basicWorldForce.frame_b.f[2],0.0);
+val(force.basicWorldForce.frame_b.f[2],3.0);
+val(force.basicWorldForce.frame_b.f[3],0.0);
+val(force.basicWorldForce.frame_b.f[3],3.0);
+val(force.basicWorldForce.force[1],0.0);
+val(force.basicWorldForce.force[1],3.0);
+val(force.basicWorldForce.force[2],0.0);
+val(force.basicWorldForce.force[2],3.0);
+val(force.basicWorldForce.force[3],0.0);
+val(force.basicWorldForce.force[3],3.0);
+val(wheelSet.frameMiddle.r_0[1],0.0);
+val(wheelSet.frameMiddle.r_0[1],3.0);
+val(wheelSet.frameMiddle.r_0[2],0.0);
+val(wheelSet.frameMiddle.r_0[2],3.0);
+val(wheelSet.frameMiddle.R.T[1,1],0.0);
+val(wheelSet.frameMiddle.R.T[1,1],3.0);
+val(wheelSet.frameMiddle.R.T[1,2],0.0);
+val(wheelSet.frameMiddle.R.T[1,2],3.0);
+val(wheelSet.frameMiddle.R.T[2,1],0.0);
+val(wheelSet.frameMiddle.R.T[2,1],3.0);
+val(wheelSet.frameMiddle.R.T[2,2],0.0);
+val(wheelSet.frameMiddle.R.T[2,2],3.0);
+val(wheelSet.frameMiddle.R.w[3],0.0);
+val(wheelSet.frameMiddle.R.w[3],3.0);
+val(wheelSet.frameMiddle.f[1],0.0);
+val(wheelSet.frameMiddle.f[1],3.0);
+val(wheelSet.frameMiddle.f[2],0.0);
+val(wheelSet.frameMiddle.f[2],3.0);
+val(wheelSet.frameMiddle.f[3],0.0);
+val(wheelSet.frameMiddle.f[3],3.0);
+val(wheelSet.frameMiddle.t[1],0.0);
+val(wheelSet.frameMiddle.t[1],3.0);
+val(wheelSet.frameMiddle.t[2],0.0);
+val(wheelSet.frameMiddle.t[2],3.0);
+val(wheelSet.frameMiddle.t[3],0.0);
+val(wheelSet.frameMiddle.t[3],3.0);
+val(wheelSet.x,0.0);
+val(wheelSet.x,3.0);
+val(der(wheelSet.x),0.0);
+val(der(wheelSet.x),3.0);
+val(wheelSet.y,0.0);
+val(wheelSet.y,3.0);
+val(der(wheelSet.y),0.0);
+val(der(wheelSet.y),3.0);
+val(wheelSet.phi,0.0);
+val(wheelSet.phi,3.0);
+val(der(wheelSet.phi),0.0);
+val(der(wheelSet.phi),3.0);
+val(wheelSet.theta1,0.0);
+val(wheelSet.theta1,3.0);
+val(der(wheelSet.theta1),0.0);
+val(der(wheelSet.theta1),3.0);
+val(wheelSet.theta2,0.0);
+val(wheelSet.theta2,3.0);
+val(der(wheelSet.theta2),0.0);
+val(der(wheelSet.theta2),3.0);
+val(wheelSet.der_theta1,0.0);
+val(wheelSet.der_theta1,3.0);
+val(der(wheelSet.der_theta1),0.0);
+val(der(wheelSet.der_theta1),3.0);
+val(wheelSet.der_theta2,0.0);
+val(wheelSet.der_theta2,3.0);
+val(der(wheelSet.der_theta2),0.0);
+val(der(wheelSet.der_theta2),3.0);
+val(wheelSet.frame1.r_0[1],0.0);
+val(wheelSet.frame1.r_0[1],3.0);
+val(wheelSet.frame1.r_0[2],0.0);
+val(wheelSet.frame1.r_0[2],3.0);
+val(wheelSet.frame1.R.T[1,1],0.0);
+val(wheelSet.frame1.R.T[1,1],3.0);
+val(wheelSet.frame1.R.T[1,2],0.0);
+val(wheelSet.frame1.R.T[1,2],3.0);
+val(wheelSet.frame1.R.T[1,3],0.0);
+val(wheelSet.frame1.R.T[1,3],3.0);
+val(wheelSet.frame1.R.T[2,1],0.0);
+val(wheelSet.frame1.R.T[2,1],3.0);
+val(wheelSet.frame1.R.T[2,2],0.0);
+val(wheelSet.frame1.R.T[2,2],3.0);
+val(wheelSet.frame1.R.T[3,1],0.0);
+val(wheelSet.frame1.R.T[3,1],3.0);
+val(wheelSet.frame1.R.T[3,2],0.0);
+val(wheelSet.frame1.R.T[3,2],3.0);
+val(wheelSet.frame1.R.T[3,3],0.0);
+val(wheelSet.frame1.R.T[3,3],3.0);
+val(wheelSet.frame1.R.w[1],0.0);
+val(wheelSet.frame1.R.w[1],3.0);
+val(wheelSet.frame1.R.w[2],0.0);
+val(wheelSet.frame1.R.w[2],3.0);
+val(wheelSet.frame1.R.w[3],0.0);
+val(wheelSet.frame1.R.w[3],3.0);
+val(wheelSet.frame2.r_0[1],0.0);
+val(wheelSet.frame2.r_0[1],3.0);
+val(wheelSet.frame2.r_0[2],0.0);
+val(wheelSet.frame2.r_0[2],3.0);
+val(wheelSet.frame2.R.T[1,1],0.0);
+val(wheelSet.frame2.R.T[1,1],3.0);
+val(wheelSet.frame2.R.T[1,2],0.0);
+val(wheelSet.frame2.R.T[1,2],3.0);
+val(wheelSet.frame2.R.T[1,3],0.0);
+val(wheelSet.frame2.R.T[1,3],3.0);
+val(wheelSet.frame2.R.T[2,1],0.0);
+val(wheelSet.frame2.R.T[2,1],3.0);
+val(wheelSet.frame2.R.T[2,2],0.0);
+val(wheelSet.frame2.R.T[2,2],3.0);
+val(wheelSet.frame2.R.T[3,1],0.0);
+val(wheelSet.frame2.R.T[3,1],3.0);
+val(wheelSet.frame2.R.T[3,2],0.0);
+val(wheelSet.frame2.R.T[3,2],3.0);
+val(wheelSet.frame2.R.T[3,3],0.0);
+val(wheelSet.frame2.R.T[3,3],3.0);
+val(wheelSet.frame2.R.w[1],0.0);
+val(wheelSet.frame2.R.w[1],3.0);
+val(wheelSet.frame2.R.w[2],0.0);
+val(wheelSet.frame2.R.w[2],3.0);
+val(wheelSet.frame2.R.w[3],0.0);
+val(wheelSet.frame2.R.w[3],3.0);
+val(wheelSet.body2.frame_a.r_0[1],0.0);
+val(wheelSet.body2.frame_a.r_0[1],3.0);
+val(wheelSet.body2.frame_a.r_0[2],0.0);
+val(wheelSet.body2.frame_a.r_0[2],3.0);
+val(der(wheelSet.body2.frame_a.r_0[1]),0.0);
+val(der(wheelSet.body2.frame_a.r_0[1]),3.0);
+val(der(wheelSet.body2.frame_a.r_0[2]),0.0);
+val(der(wheelSet.body2.frame_a.r_0[2]),3.0);
+val(wheelSet.body2.frame_a.R.T[1,1],0.0);
+val(wheelSet.body2.frame_a.R.T[1,1],3.0);
+val(wheelSet.body2.frame_a.R.T[1,2],0.0);
+val(wheelSet.body2.frame_a.R.T[1,2],3.0);
+val(wheelSet.body2.frame_a.R.T[1,3],0.0);
+val(wheelSet.body2.frame_a.R.T[1,3],3.0);
+val(wheelSet.body2.frame_a.R.T[2,1],0.0);
+val(wheelSet.body2.frame_a.R.T[2,1],3.0);
+val(wheelSet.body2.frame_a.R.T[2,2],0.0);
+val(wheelSet.body2.frame_a.R.T[2,2],3.0);
+val(wheelSet.body2.frame_a.R.T[3,1],0.0);
+val(wheelSet.body2.frame_a.R.T[3,1],3.0);
+val(wheelSet.body2.frame_a.R.T[3,2],0.0);
+val(wheelSet.body2.frame_a.R.T[3,2],3.0);
+val(wheelSet.body2.frame_a.R.T[3,3],0.0);
+val(wheelSet.body2.frame_a.R.T[3,3],3.0);
+val(wheelSet.body2.frame_a.R.w[1],0.0);
+val(wheelSet.body2.frame_a.R.w[1],3.0);
+val(wheelSet.body2.frame_a.R.w[2],0.0);
+val(wheelSet.body2.frame_a.R.w[2],3.0);
+val(wheelSet.body2.frame_a.R.w[3],0.0);
+val(wheelSet.body2.frame_a.R.w[3],3.0);
+val(wheelSet.body2.frame_a.f[1],0.0);
+val(wheelSet.body2.frame_a.f[1],3.0);
+val(wheelSet.body2.frame_a.f[2],0.0);
+val(wheelSet.body2.frame_a.f[2],3.0);
+val(wheelSet.body2.frame_a.f[3],0.0);
+val(wheelSet.body2.frame_a.f[3],3.0);
+val(wheelSet.body2.frame_a.t[1],0.0);
+val(wheelSet.body2.frame_a.t[1],3.0);
+val(wheelSet.body2.frame_a.t[2],0.0);
+val(wheelSet.body2.frame_a.t[2],3.0);
+val(wheelSet.body2.frame_a.t[3],0.0);
+val(wheelSet.body2.frame_a.t[3],3.0);
+val(wheelSet.body2.r_0[1],0.0);
+val(wheelSet.body2.r_0[1],3.0);
+val(wheelSet.body2.r_0[2],0.0);
+val(wheelSet.body2.r_0[2],3.0);
+val(wheelSet.body2.v_0[1],0.0);
+val(wheelSet.body2.v_0[1],3.0);
+val(wheelSet.body2.v_0[2],0.0);
+val(wheelSet.body2.v_0[2],3.0);
+val(der(wheelSet.body2.v_0[1]),0.0);
+val(der(wheelSet.body2.v_0[1]),3.0);
+val(der(wheelSet.body2.v_0[2]),0.0);
+val(der(wheelSet.body2.v_0[2]),3.0);
+val(wheelSet.body2.a_0[1],0.0);
+val(wheelSet.body2.a_0[1],3.0);
+val(wheelSet.body2.a_0[2],0.0);
+val(wheelSet.body2.a_0[2],3.0);
+val(wheelSet.body2.w_a[1],0.0);
+val(wheelSet.body2.w_a[1],3.0);
+val(wheelSet.body2.w_a[2],0.0);
+val(wheelSet.body2.w_a[2],3.0);
+val(wheelSet.body2.w_a[3],0.0);
+val(wheelSet.body2.w_a[3],3.0);
+val(der(wheelSet.body2.w_a[1]),0.0);
+val(der(wheelSet.body2.w_a[1]),3.0);
+val(der(wheelSet.body2.w_a[2]),0.0);
+val(der(wheelSet.body2.w_a[2]),3.0);
+val(der(wheelSet.body2.w_a[3]),0.0);
+val(der(wheelSet.body2.w_a[3]),3.0);
+val(wheelSet.body2.z_a[1],0.0);
+val(wheelSet.body2.z_a[1],3.0);
+val(wheelSet.body2.z_a[2],0.0);
+val(wheelSet.body2.z_a[2],3.0);
+val(wheelSet.body2.z_a[3],0.0);
+val(wheelSet.body2.z_a[3],3.0);
+val(wheelSet.shape2.frame_a.r_0[1],0.0);
+val(wheelSet.shape2.frame_a.r_0[1],3.0);
+val(wheelSet.shape2.frame_a.r_0[2],0.0);
+val(wheelSet.shape2.frame_a.r_0[2],3.0);
+val(wheelSet.shape2.frame_a.R.T[1,1],0.0);
+val(wheelSet.shape2.frame_a.R.T[1,1],3.0);
+val(wheelSet.shape2.frame_a.R.T[1,2],0.0);
+val(wheelSet.shape2.frame_a.R.T[1,2],3.0);
+val(wheelSet.shape2.frame_a.R.T[1,3],0.0);
+val(wheelSet.shape2.frame_a.R.T[1,3],3.0);
+val(wheelSet.shape2.frame_a.R.T[2,1],0.0);
+val(wheelSet.shape2.frame_a.R.T[2,1],3.0);
+val(wheelSet.shape2.frame_a.R.T[2,2],0.0);
+val(wheelSet.shape2.frame_a.R.T[2,2],3.0);
+val(wheelSet.shape2.frame_a.R.T[3,1],0.0);
+val(wheelSet.shape2.frame_a.R.T[3,1],3.0);
+val(wheelSet.shape2.frame_a.R.T[3,2],0.0);
+val(wheelSet.shape2.frame_a.R.T[3,2],3.0);
+val(wheelSet.shape2.frame_a.R.T[3,3],0.0);
+val(wheelSet.shape2.frame_a.R.T[3,3],3.0);
+val(wheelSet.shape2.frame_a.R.w[1],0.0);
+val(wheelSet.shape2.frame_a.R.w[1],3.0);
+val(wheelSet.shape2.frame_a.R.w[2],0.0);
+val(wheelSet.shape2.frame_a.R.w[2],3.0);
+val(wheelSet.shape2.frame_a.R.w[3],0.0);
+val(wheelSet.shape2.frame_a.R.w[3],3.0);
+val(wheelSet.shape2.vis.rxvisobj[1],0.0);
+val(wheelSet.shape2.vis.rxvisobj[1],3.0);
+val(wheelSet.shape2.vis.rxvisobj[2],0.0);
+val(wheelSet.shape2.vis.rxvisobj[2],3.0);
+val(wheelSet.shape2.vis.ryvisobj[1],0.0);
+val(wheelSet.shape2.vis.ryvisobj[1],3.0);
+val(wheelSet.shape2.vis.ryvisobj[2],0.0);
+val(wheelSet.shape2.vis.ryvisobj[2],3.0);
+val(wheelSet.shape2.vis.ryvisobj[3],0.0);
+val(wheelSet.shape2.vis.ryvisobj[3],3.0);
+val(wheelSet.shape2.vis.rvisobj[1],0.0);
+val(wheelSet.shape2.vis.rvisobj[1],3.0);
+val(wheelSet.shape2.vis.rvisobj[2],0.0);
+val(wheelSet.shape2.vis.rvisobj[2],3.0);
+val(wheelSet.body1.frame_a.r_0[1],0.0);
+val(wheelSet.body1.frame_a.r_0[1],3.0);
+val(wheelSet.body1.frame_a.r_0[2],0.0);
+val(wheelSet.body1.frame_a.r_0[2],3.0);
+val(der(wheelSet.body1.frame_a.r_0[1]),0.0);
+val(der(wheelSet.body1.frame_a.r_0[1]),3.0);
+val(der(wheelSet.body1.frame_a.r_0[2]),0.0);
+val(der(wheelSet.body1.frame_a.r_0[2]),3.0);
+val(wheelSet.body1.frame_a.R.T[1,1],0.0);
+val(wheelSet.body1.frame_a.R.T[1,1],3.0);
+val(wheelSet.body1.frame_a.R.T[1,2],0.0);
+val(wheelSet.body1.frame_a.R.T[1,2],3.0);
+val(wheelSet.body1.frame_a.R.T[1,3],0.0);
+val(wheelSet.body1.frame_a.R.T[1,3],3.0);
+val(wheelSet.body1.frame_a.R.T[2,1],0.0);
+val(wheelSet.body1.frame_a.R.T[2,1],3.0);
+val(wheelSet.body1.frame_a.R.T[2,2],0.0);
+val(wheelSet.body1.frame_a.R.T[2,2],3.0);
+val(wheelSet.body1.frame_a.R.T[3,1],0.0);
+val(wheelSet.body1.frame_a.R.T[3,1],3.0);
+val(wheelSet.body1.frame_a.R.T[3,2],0.0);
+val(wheelSet.body1.frame_a.R.T[3,2],3.0);
+val(wheelSet.body1.frame_a.R.T[3,3],0.0);
+val(wheelSet.body1.frame_a.R.T[3,3],3.0);
+val(wheelSet.body1.frame_a.R.w[1],0.0);
+val(wheelSet.body1.frame_a.R.w[1],3.0);
+val(wheelSet.body1.frame_a.R.w[2],0.0);
+val(wheelSet.body1.frame_a.R.w[2],3.0);
+val(wheelSet.body1.frame_a.R.w[3],0.0);
+val(wheelSet.body1.frame_a.R.w[3],3.0);
+val(wheelSet.body1.frame_a.f[1],0.0);
+val(wheelSet.body1.frame_a.f[1],3.0);
+val(wheelSet.body1.frame_a.f[2],0.0);
+val(wheelSet.body1.frame_a.f[2],3.0);
+val(wheelSet.body1.frame_a.f[3],0.0);
+val(wheelSet.body1.frame_a.f[3],3.0);
+val(wheelSet.body1.frame_a.t[1],0.0);
+val(wheelSet.body1.frame_a.t[1],3.0);
+val(wheelSet.body1.frame_a.t[2],0.0);
+val(wheelSet.body1.frame_a.t[2],3.0);
+val(wheelSet.body1.frame_a.t[3],0.0);
+val(wheelSet.body1.frame_a.t[3],3.0);
+val(wheelSet.body1.r_0[1],0.0);
+val(wheelSet.body1.r_0[1],3.0);
+val(wheelSet.body1.r_0[2],0.0);
+val(wheelSet.body1.r_0[2],3.0);
+val(wheelSet.body1.v_0[1],0.0);
+val(wheelSet.body1.v_0[1],3.0);
+val(wheelSet.body1.v_0[2],0.0);
+val(wheelSet.body1.v_0[2],3.0);
+val(der(wheelSet.body1.v_0[1]),0.0);
+val(der(wheelSet.body1.v_0[1]),3.0);
+val(der(wheelSet.body1.v_0[2]),0.0);
+val(der(wheelSet.body1.v_0[2]),3.0);
+val(wheelSet.body1.a_0[1],0.0);
+val(wheelSet.body1.a_0[1],3.0);
+val(wheelSet.body1.a_0[2],0.0);
+val(wheelSet.body1.a_0[2],3.0);
+val(wheelSet.body1.w_a[1],0.0);
+val(wheelSet.body1.w_a[1],3.0);
+val(wheelSet.body1.w_a[2],0.0);
+val(wheelSet.body1.w_a[2],3.0);
+val(wheelSet.body1.w_a[3],0.0);
+val(wheelSet.body1.w_a[3],3.0);
+val(der(wheelSet.body1.w_a[1]),0.0);
+val(der(wheelSet.body1.w_a[1]),3.0);
+val(der(wheelSet.body1.w_a[2]),0.0);
+val(der(wheelSet.body1.w_a[2]),3.0);
+val(der(wheelSet.body1.w_a[3]),0.0);
+val(der(wheelSet.body1.w_a[3]),3.0);
+val(wheelSet.body1.z_a[1],0.0);
+val(wheelSet.body1.z_a[1],3.0);
+val(wheelSet.body1.z_a[2],0.0);
+val(wheelSet.body1.z_a[2],3.0);
+val(wheelSet.body1.z_a[3],0.0);
+val(wheelSet.body1.z_a[3],3.0);
+val(wheelSet.shape1.frame_a.r_0[1],0.0);
+val(wheelSet.shape1.frame_a.r_0[1],3.0);
+val(wheelSet.shape1.frame_a.r_0[2],0.0);
+val(wheelSet.shape1.frame_a.r_0[2],3.0);
+val(wheelSet.shape1.frame_a.R.T[1,1],0.0);
+val(wheelSet.shape1.frame_a.R.T[1,1],3.0);
+val(wheelSet.shape1.frame_a.R.T[1,2],0.0);
+val(wheelSet.shape1.frame_a.R.T[1,2],3.0);
+val(wheelSet.shape1.frame_a.R.T[1,3],0.0);
+val(wheelSet.shape1.frame_a.R.T[1,3],3.0);
+val(wheelSet.shape1.frame_a.R.T[2,1],0.0);
+val(wheelSet.shape1.frame_a.R.T[2,1],3.0);
+val(wheelSet.shape1.frame_a.R.T[2,2],0.0);
+val(wheelSet.shape1.frame_a.R.T[2,2],3.0);
+val(wheelSet.shape1.frame_a.R.T[3,1],0.0);
+val(wheelSet.shape1.frame_a.R.T[3,1],3.0);
+val(wheelSet.shape1.frame_a.R.T[3,2],0.0);
+val(wheelSet.shape1.frame_a.R.T[3,2],3.0);
+val(wheelSet.shape1.frame_a.R.T[3,3],0.0);
+val(wheelSet.shape1.frame_a.R.T[3,3],3.0);
+val(wheelSet.shape1.frame_a.R.w[1],0.0);
+val(wheelSet.shape1.frame_a.R.w[1],3.0);
+val(wheelSet.shape1.frame_a.R.w[2],0.0);
+val(wheelSet.shape1.frame_a.R.w[2],3.0);
+val(wheelSet.shape1.frame_a.R.w[3],0.0);
+val(wheelSet.shape1.frame_a.R.w[3],3.0);
+val(wheelSet.shape1.vis.rxvisobj[1],0.0);
+val(wheelSet.shape1.vis.rxvisobj[1],3.0);
+val(wheelSet.shape1.vis.rxvisobj[2],0.0);
+val(wheelSet.shape1.vis.rxvisobj[2],3.0);
+val(wheelSet.shape1.vis.ryvisobj[1],0.0);
+val(wheelSet.shape1.vis.ryvisobj[1],3.0);
+val(wheelSet.shape1.vis.ryvisobj[2],0.0);
+val(wheelSet.shape1.vis.ryvisobj[2],3.0);
+val(wheelSet.shape1.vis.ryvisobj[3],0.0);
+val(wheelSet.shape1.vis.ryvisobj[3],3.0);
+val(wheelSet.shape1.vis.rvisobj[1],0.0);
+val(wheelSet.shape1.vis.rvisobj[1],3.0);
+val(wheelSet.shape1.vis.rvisobj[2],0.0);
+val(wheelSet.shape1.vis.rvisobj[2],3.0);
+val(wheelSet.axis1.phi,0.0);
+val(wheelSet.axis1.phi,3.0);
+val(wheelSet.axis2.phi,0.0);
+val(wheelSet.axis2.phi,3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[1],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[1],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[2],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[2],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[3],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.f[3],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[1],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[1],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[2],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[2],3.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[3],0.0);
+val(wheelSet.wheelSetJoint.frameMiddle.t[3],3.0);
+val(wheelSet.wheelSetJoint.x,0.0);
+val(wheelSet.wheelSetJoint.x,3.0);
+val(wheelSet.wheelSetJoint.y,0.0);
+val(wheelSet.wheelSetJoint.y,3.0);
+val(wheelSet.wheelSetJoint.phi,0.0);
+val(wheelSet.wheelSetJoint.phi,3.0);
+val(wheelSet.wheelSetJoint.theta1,0.0);
+val(wheelSet.wheelSetJoint.theta1,3.0);
+val(der(wheelSet.wheelSetJoint.theta1),0.0);
+val(der(wheelSet.wheelSetJoint.theta1),3.0);
+val(wheelSet.wheelSetJoint.theta2,0.0);
+val(wheelSet.wheelSetJoint.theta2,3.0);
+val(der(wheelSet.wheelSetJoint.theta2),0.0);
+val(der(wheelSet.wheelSetJoint.theta2),3.0);
+val(wheelSet.wheelSetJoint.der_theta1,0.0);
+val(wheelSet.wheelSetJoint.der_theta1,3.0);
+val(wheelSet.wheelSetJoint.der_theta2,0.0);
+val(wheelSet.wheelSetJoint.der_theta2,3.0);
+val(wheelSet.wheelSetJoint.frame1.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.frame1.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.frame1.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.frame1.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.frame1.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.frame1.f[1],0.0);
+val(wheelSet.wheelSetJoint.frame1.f[1],3.0);
+val(wheelSet.wheelSetJoint.frame1.f[2],0.0);
+val(wheelSet.wheelSetJoint.frame1.f[2],3.0);
+val(wheelSet.wheelSetJoint.frame1.f[3],0.0);
+val(wheelSet.wheelSetJoint.frame1.f[3],3.0);
+val(wheelSet.wheelSetJoint.frame1.t[1],0.0);
+val(wheelSet.wheelSetJoint.frame1.t[1],3.0);
+val(wheelSet.wheelSetJoint.frame1.t[2],0.0);
+val(wheelSet.wheelSetJoint.frame1.t[2],3.0);
+val(wheelSet.wheelSetJoint.frame1.t[3],0.0);
+val(wheelSet.wheelSetJoint.frame1.t[3],3.0);
+val(wheelSet.wheelSetJoint.frame2.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.frame2.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.frame2.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.frame2.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.frame2.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.frame2.f[1],0.0);
+val(wheelSet.wheelSetJoint.frame2.f[1],3.0);
+val(wheelSet.wheelSetJoint.frame2.f[2],0.0);
+val(wheelSet.wheelSetJoint.frame2.f[2],3.0);
+val(wheelSet.wheelSetJoint.frame2.f[3],0.0);
+val(wheelSet.wheelSetJoint.frame2.f[3],3.0);
+val(wheelSet.wheelSetJoint.frame2.t[1],0.0);
+val(wheelSet.wheelSetJoint.frame2.t[1],3.0);
+val(wheelSet.wheelSetJoint.frame2.t[2],0.0);
+val(wheelSet.wheelSetJoint.frame2.t[2],3.0);
+val(wheelSet.wheelSetJoint.frame2.t[3],0.0);
+val(wheelSet.wheelSetJoint.frame2.t[3],3.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[2],0.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[2],3.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.fixed.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[2],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[2],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.rod1.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[2],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[2],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[2],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[2],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic1.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic1.s,0.0);
+val(wheelSet.wheelSetJoint.prismatic1.s,3.0);
+val(der(wheelSet.wheelSetJoint.prismatic1.s),0.0);
+val(der(wheelSet.wheelSetJoint.prismatic1.s),3.0);
+val(wheelSet.wheelSetJoint.prismatic1.v,0.0);
+val(wheelSet.wheelSetJoint.prismatic1.v,3.0);
+val(der(wheelSet.wheelSetJoint.prismatic1.v),0.0);
+val(der(wheelSet.wheelSetJoint.prismatic1.v),3.0);
+val(wheelSet.wheelSetJoint.prismatic1.a,0.0);
+val(wheelSet.wheelSetJoint.prismatic1.a,3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[2],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[2],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.t[2],0.0);
+val(wheelSet.wheelSetJoint.prismatic2.frame_b.t[2],3.0);
+val(wheelSet.wheelSetJoint.prismatic2.s,0.0);
+val(wheelSet.wheelSetJoint.prismatic2.s,3.0);
+val(der(wheelSet.wheelSetJoint.prismatic2.s),0.0);
+val(der(wheelSet.wheelSetJoint.prismatic2.s),3.0);
+val(wheelSet.wheelSetJoint.prismatic2.v,0.0);
+val(wheelSet.wheelSetJoint.prismatic2.v,3.0);
+val(der(wheelSet.wheelSetJoint.prismatic2.v),0.0);
+val(der(wheelSet.wheelSetJoint.prismatic2.v),3.0);
+val(wheelSet.wheelSetJoint.prismatic2.a,0.0);
+val(wheelSet.wheelSetJoint.prismatic2.a,3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.t[2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_a.t[2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[2],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.t[2],0.0);
+val(wheelSet.wheelSetJoint.revolute.frame_b.t[2],3.0);
+val(wheelSet.wheelSetJoint.revolute.phi,0.0);
+val(wheelSet.wheelSetJoint.revolute.phi,3.0);
+val(der(wheelSet.wheelSetJoint.revolute.phi),0.0);
+val(der(wheelSet.wheelSetJoint.revolute.phi),3.0);
+val(wheelSet.wheelSetJoint.revolute.w,0.0);
+val(wheelSet.wheelSetJoint.revolute.w,3.0);
+val(der(wheelSet.wheelSetJoint.revolute.w),0.0);
+val(der(wheelSet.wheelSetJoint.revolute.w),3.0);
+val(wheelSet.wheelSetJoint.revolute.a,0.0);
+val(wheelSet.wheelSetJoint.revolute.a,3.0);
+val(wheelSet.wheelSetJoint.revolute.angle,0.0);
+val(wheelSet.wheelSetJoint.revolute.angle,3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[2],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[2],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.rod2.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[2],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.revolute1.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.revolute1.phi,0.0);
+val(wheelSet.wheelSetJoint.revolute1.phi,3.0);
+val(der(wheelSet.wheelSetJoint.revolute1.phi),0.0);
+val(der(wheelSet.wheelSetJoint.revolute1.phi),3.0);
+val(wheelSet.wheelSetJoint.revolute1.w,0.0);
+val(wheelSet.wheelSetJoint.revolute1.w,3.0);
+val(der(wheelSet.wheelSetJoint.revolute1.w),0.0);
+val(der(wheelSet.wheelSetJoint.revolute1.w),3.0);
+val(wheelSet.wheelSetJoint.revolute1.a,0.0);
+val(wheelSet.wheelSetJoint.revolute1.a,3.0);
+val(wheelSet.wheelSetJoint.revolute1.angle,0.0);
+val(wheelSet.wheelSetJoint.revolute1.angle,3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[2],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[2],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.f[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.t[1],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.t[1],3.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.t[3],0.0);
+val(wheelSet.wheelSetJoint.revolute2.frame_b.t[3],3.0);
+val(wheelSet.wheelSetJoint.revolute2.phi,0.0);
+val(wheelSet.wheelSetJoint.revolute2.phi,3.0);
+val(der(wheelSet.wheelSetJoint.revolute2.phi),0.0);
+val(der(wheelSet.wheelSetJoint.revolute2.phi),3.0);
+val(wheelSet.wheelSetJoint.revolute2.w,0.0);
+val(wheelSet.wheelSetJoint.revolute2.w,3.0);
+val(der(wheelSet.wheelSetJoint.revolute2.w),0.0);
+val(der(wheelSet.wheelSetJoint.revolute2.w),3.0);
+val(wheelSet.wheelSetJoint.revolute2.a,0.0);
+val(wheelSet.wheelSetJoint.revolute2.a,3.0);
+val(wheelSet.wheelSetJoint.revolute2.angle,0.0);
+val(wheelSet.wheelSetJoint.revolute2.angle,3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[2],3.0);
+val(der(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[1]),0.0);
+val(der(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[1]),3.0);
+val(der(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[2]),0.0);
+val(der(wheelSet.wheelSetJoint.rolling1.frame_a.r_0[2]),3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.rolling1.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.rolling1.f_wheel_0[1],0.0);
+val(wheelSet.wheelSetJoint.rolling1.f_wheel_0[1],3.0);
+val(wheelSet.wheelSetJoint.rolling1.f_wheel_0[2],0.0);
+val(wheelSet.wheelSetJoint.rolling1.f_wheel_0[2],3.0);
+val(wheelSet.wheelSetJoint.rolling1.f_lat,0.0);
+val(wheelSet.wheelSetJoint.rolling1.f_lat,3.0);
+val(wheelSet.wheelSetJoint.rolling1.f_long,0.0);
+val(wheelSet.wheelSetJoint.rolling1.f_long,3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[2],3.0);
+val(der(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[1]),0.0);
+val(der(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[1]),3.0);
+val(der(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[2]),0.0);
+val(der(wheelSet.wheelSetJoint.rolling2.frame_a.r_0[2]),3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,3],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[1,3],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,3],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.T[3,3],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.R.w[3],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[3],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.f[3],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[3],0.0);
+val(wheelSet.wheelSetJoint.rolling2.frame_a.t[3],3.0);
+val(wheelSet.wheelSetJoint.rolling2.f_wheel_0[1],0.0);
+val(wheelSet.wheelSetJoint.rolling2.f_wheel_0[1],3.0);
+val(wheelSet.wheelSetJoint.rolling2.f_wheel_0[2],0.0);
+val(wheelSet.wheelSetJoint.rolling2.f_wheel_0[2],3.0);
+val(wheelSet.wheelSetJoint.rolling2.f_long,0.0);
+val(wheelSet.wheelSetJoint.rolling2.f_long,3.0);
+val(wheelSet.wheelSetJoint.axis1.phi,0.0);
+val(wheelSet.wheelSetJoint.axis1.phi,3.0);
+val(wheelSet.wheelSetJoint.axis2.phi,0.0);
+val(wheelSet.wheelSetJoint.axis2.phi,3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.r_0[1],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.r_0[1],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.r_0[2],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.r_0[2],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[1,1],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[1,1],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[1,2],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[1,2],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[2,1],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[2,1],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[2,2],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.T[2,2],3.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.w[3],0.0);
+val(wheelSet.wheelSetJoint.mounting1D.frame_a.R.w[3],3.0);
+val(body.frame_a.r_0[1],0.0);
+val(body.frame_a.r_0[1],3.0);
+val(body.frame_a.r_0[2],0.0);
+val(body.frame_a.r_0[2],3.0);
+val(der(body.frame_a.r_0[1]),0.0);
+val(der(body.frame_a.r_0[1]),3.0);
+val(der(body.frame_a.r_0[2]),0.0);
+val(der(body.frame_a.r_0[2]),3.0);
+val(body.frame_a.R.T[1,1],0.0);
+val(body.frame_a.R.T[1,1],3.0);
+val(body.frame_a.R.T[1,2],0.0);
+val(body.frame_a.R.T[1,2],3.0);
+val(body.frame_a.R.T[2,1],0.0);
+val(body.frame_a.R.T[2,1],3.0);
+val(body.frame_a.R.T[2,2],0.0);
+val(body.frame_a.R.T[2,2],3.0);
+val(body.frame_a.R.w[3],0.0);
+val(body.frame_a.R.w[3],3.0);
+val(body.frame_a.f[1],0.0);
+val(body.frame_a.f[1],3.0);
+val(body.frame_a.f[2],0.0);
+val(body.frame_a.f[2],3.0);
+val(body.frame_a.t[1],0.0);
+val(body.frame_a.t[1],3.0);
+val(body.frame_a.t[2],0.0);
+val(body.frame_a.t[2],3.0);
+val(body.frame_a.t[3],0.0);
+val(body.frame_a.t[3],3.0);
+val(body.r_0[1],0.0);
+val(body.r_0[1],3.0);
+val(body.r_0[2],0.0);
+val(body.r_0[2],3.0);
+val(body.v_0[1],0.0);
+val(body.v_0[1],3.0);
+val(body.v_0[2],0.0);
+val(body.v_0[2],3.0);
+val(der(body.v_0[1]),0.0);
+val(der(body.v_0[1]),3.0);
+val(der(body.v_0[2]),0.0);
+val(der(body.v_0[2]),3.0);
+val(body.a_0[1],0.0);
+val(body.a_0[1],3.0);
+val(body.a_0[2],0.0);
+val(body.a_0[2],3.0);
+val(body.w_a[3],0.0);
+val(body.w_a[3],3.0);
+val(der(body.w_a[3]),0.0);
+val(der(body.w_a[3]),3.0);
+val(body.z_a[3],0.0);
+val(body.z_a[3],3.0);
+val(combiTimeTable.y[1],0.0);
+val(combiTimeTable.y[1],3.0);
+val(combiTimeTable.y[2],0.0);
+val(combiTimeTable.y[2],3.0);
+val(combiTimeTable.y[3],0.0);
+val(combiTimeTable.y[3],3.0);
+val(fixedTranslation.frame_a.r_0[1],0.0);
+val(fixedTranslation.frame_a.r_0[1],3.0);
+val(fixedTranslation.frame_a.r_0[2],0.0);
+val(fixedTranslation.frame_a.r_0[2],3.0);
+val(fixedTranslation.frame_a.R.T[1,1],0.0);
+val(fixedTranslation.frame_a.R.T[1,1],3.0);
+val(fixedTranslation.frame_a.R.T[1,2],0.0);
+val(fixedTranslation.frame_a.R.T[1,2],3.0);
+val(fixedTranslation.frame_a.R.T[2,1],0.0);
+val(fixedTranslation.frame_a.R.T[2,1],3.0);
+val(fixedTranslation.frame_a.R.T[2,2],0.0);
+val(fixedTranslation.frame_a.R.T[2,2],3.0);
+val(fixedTranslation.frame_a.R.w[3],0.0);
+val(fixedTranslation.frame_a.R.w[3],3.0);
+val(fixedTranslation.frame_a.f[1],0.0);
+val(fixedTranslation.frame_a.f[1],3.0);
+val(fixedTranslation.frame_a.f[2],0.0);
+val(fixedTranslation.frame_a.f[2],3.0);
+val(fixedTranslation.frame_a.f[3],0.0);
+val(fixedTranslation.frame_a.f[3],3.0);
+val(fixedTranslation.frame_a.t[1],0.0);
+val(fixedTranslation.frame_a.t[1],3.0);
+val(fixedTranslation.frame_a.t[2],0.0);
+val(fixedTranslation.frame_a.t[2],3.0);
+val(fixedTranslation.frame_a.t[3],0.0);
+val(fixedTranslation.frame_a.t[3],3.0);
+val(fixedTranslation.frame_b.r_0[1],0.0);
+val(fixedTranslation.frame_b.r_0[1],3.0);
+val(fixedTranslation.frame_b.r_0[2],0.0);
+val(fixedTranslation.frame_b.r_0[2],3.0);
+val(fixedTranslation.frame_b.R.T[1,1],0.0);
+val(fixedTranslation.frame_b.R.T[1,1],3.0);
+val(fixedTranslation.frame_b.R.T[1,2],0.0);
+val(fixedTranslation.frame_b.R.T[1,2],3.0);
+val(fixedTranslation.frame_b.R.T[2,1],0.0);
+val(fixedTranslation.frame_b.R.T[2,1],3.0);
+val(fixedTranslation.frame_b.R.T[2,2],0.0);
+val(fixedTranslation.frame_b.R.T[2,2],3.0);
+val(fixedTranslation.frame_b.R.w[3],0.0);
+val(fixedTranslation.frame_b.R.w[3],3.0);
+val(fixedTranslation.frame_b.f[1],0.0);
+val(fixedTranslation.frame_b.f[1],3.0);
+val(fixedTranslation.frame_b.f[2],0.0);
+val(fixedTranslation.frame_b.f[2],3.0);
+val(fixedTranslation.frame_b.f[3],0.0);
+val(fixedTranslation.frame_b.f[3],3.0);
+val(fixedTranslation.frame_b.t[1],0.0);
+val(fixedTranslation.frame_b.t[1],3.0);
+val(fixedTranslation.frame_b.t[2],0.0);
+val(fixedTranslation.frame_b.t[2],3.0);
+val(fixedTranslation.frame_b.t[3],0.0);
+val(fixedTranslation.frame_b.t[3],3.0);
+val(fixedTranslation.shape.rxvisobj[1],0.0);
+val(fixedTranslation.shape.rxvisobj[1],3.0);
+val(fixedTranslation.shape.rxvisobj[2],0.0);
+val(fixedTranslation.shape.rxvisobj[2],3.0);
+val(fixedTranslation.shape.ryvisobj[1],0.0);
+val(fixedTranslation.shape.ryvisobj[1],3.0);
+val(fixedTranslation.shape.ryvisobj[2],0.0);
+val(fixedTranslation.shape.ryvisobj[2],3.0);
+val(fixedTranslation.shape.rvisobj[1],0.0);
+val(fixedTranslation.shape.rvisobj[1],3.0);
+val(fixedTranslation.shape.rvisobj[2],0.0);
+val(fixedTranslation.shape.rvisobj[2],3.0);
+val(shape.frame_a.r_0[1],0.0);
+val(shape.frame_a.r_0[1],3.0);
+val(shape.frame_a.r_0[2],0.0);
+val(shape.frame_a.r_0[2],3.0);
+val(shape.frame_a.R.T[1,1],0.0);
+val(shape.frame_a.R.T[1,1],3.0);
+val(shape.frame_a.R.T[1,2],0.0);
+val(shape.frame_a.R.T[1,2],3.0);
+val(shape.frame_a.R.T[2,1],0.0);
+val(shape.frame_a.R.T[2,1],3.0);
+val(shape.frame_a.R.T[2,2],0.0);
+val(shape.frame_a.R.T[2,2],3.0);
+val(shape.frame_a.R.w[3],0.0);
+val(shape.frame_a.R.w[3],3.0);
+val(shape.vis.rxvisobj[1],0.0);
+val(shape.vis.rxvisobj[1],3.0);
+val(shape.vis.rxvisobj[2],0.0);
+val(shape.vis.rxvisobj[2],3.0);
+val(shape.vis.ryvisobj[1],0.0);
+val(shape.vis.ryvisobj[1],3.0);
+val(shape.vis.ryvisobj[2],0.0);
+val(shape.vis.ryvisobj[2],3.0);
+val(shape.vis.rvisobj[1],0.0);
+val(shape.vis.rvisobj[1],3.0);
+val(shape.vis.rvisobj[2],0.0);
+val(shape.vis.rvisobj[2],3.0);
+val(wheelSet.wheelSetJoint.revolute1.axis.phi,0.0);
+val(wheelSet.wheelSetJoint.revolute1.axis.phi,3.0);
+val(wheelSet.wheelSetJoint.revolute2.axis.phi,0.0);
+val(wheelSet.wheelSetJoint.revolute2.axis.phi,3.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -1.0
+// -1.96025502682
+// -0
+// 0.396737039089
+// -0
+// -0
+// 1.0
+// 0.0
+// 0.0
+// 2.0
+// 0.0
+// 0.0
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -1.0
+// -1.96025502682
+// -0
+// 0.396737039089
+// -0
+// -0
+// 1.0
+// 0.0
+// 0.0
+// 2.0
+// 0.0
+// 0.0
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.99667775631
+// 1.95998668671
+// -1.57220118765e-20
+// -0.414153248072
+// -0.0980999991298
+// -0.0980999991298
+// -0
+// -0
+// 0.0196199994534
+// 0.0196199994534
+// 0.0
+// -0.0824681520462
+// 0.10000000149
+// 1.05228173733
+// 0.0
+// -0.20332685113
+// 0.10000000149
+// 0.708530545235
+// 0.0
+// 1.00462627411
+// 0.0
+// 1.77048945427
+// -0
+// 1.76988065243
+// 0.0
+// 9.09014034271
+// 0.0
+// 5.82525348663
+// 0.0
+// 17.9425888062
+// 0.0
+// 14.674656868
+// 0.0
+// 5.82525348663
+// 3.3222591877
+// 7.43953227997
+// 0.0
+// 14.674656868
+// 3.3222591877
+// 5.62704563141
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 0.0
+// -0.291099011898
+// 0.0
+// 1.43830347061
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// 0.166112959385
+// 4.03672218323
+// 0.0
+// 1.29861950874
+// 4.90500020981
+// 2.80054616928
+// 0.0
+// -0.165735766292
+// 0.0332225896418
+// 0.0562704540789
+// 1.57220125227e-19
+// 0.200101792812
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 0.0
+// -0.291099011898
+// 0.0
+// 1.43830347061
+// 0.33222591877
+// -2.65724825859
+// 0.0
+// 0.0363117195666
+// 0.33222591877
+// -2.65724825859
+// 0.0
+// 0.0363117195666
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// 0.0
+// -16.2880592346
+// 3.3222591877
+// 5.62704563141
+// 7.86100589946e-18
+// 20.2335262299
+// 0.0
+// -16.2880592346
+// 3.3222591877
+// 5.62704563141
+// 7.86100589946e-18
+// 20.2335262299
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// 0.10000000149
+// 1.30711495876
+// -0.159999996424
+// 0.760106384754
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 0.0
+// -0.115554697812
+// 0.0
+// 0.570949137211
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// 0.166112959385
+// -1.96227490902
+// 0.0
+// 0.515500187874
+// 4.90500020981
+// -4.51075029373
+// 0.0
+// 0.0997621044517
+// 0.0332225896418
+// 0.0743953213096
+// 1.57220125227e-19
+// -0.0270129926503
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 0.0
+// -0.115554697812
+// 0.0
+// 0.570949137211
+// 0.33222591877
+// -1.15808868408
+// 0.0
+// 0.524650990963
+// 0.33222591877
+// -1.15808868408
+// 0.0
+// 0.524650990963
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// 0.0
+// 9.85715675354
+// 3.3222591877
+// 7.43953227997
+// 7.86100589946e-18
+// -3.04368877411
+// 0.0
+// 9.85715675354
+// 3.3222591877
+// 7.43953227997
+// 7.86100589946e-18
+// -3.04368877411
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// 0.10000000149
+// 0.817051172256
+// 0.340000003576
+// 0.660922110081
+// 0.0
+// 9.09014034271
+// 0.0
+// 17.9425888062
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.99667775631
+// 1.95998668671
+// -1.57220118765e-20
+// -0.414153248072
+// -0.0980999991298
+// -0.0980999991298
+// -0
+// -0
+// 0.0196199994534
+// 0.0196199994534
+// 0.0
+// -0.0824681520462
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 0.0
+// 1.77048945427
+// 0.0
+// 9.09014034271
+// 0.0
+// 5.82525348663
+// 0.0
+// 17.9425888062
+// 0.0
+// 14.674656868
+// 0.0
+// 5.82525348663
+// 0.0
+// 14.674656868
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// -0.166112959385
+// 1.96227490902
+// -0
+// -0.515500187874
+// -4.90500020981
+// 4.51075029373
+// -0
+// -0.0997621044517
+// -0.0332225896418
+// -0.0743953213096
+// -1.57220125227e-19
+// 0.0270129926503
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// -0.166112959385
+// -4.03672218323
+// -0
+// -1.29861950874
+// -4.90500020981
+// -2.80054616928
+// -0
+// 0.165735766292
+// -0.0332225896418
+// -0.0562704540789
+// -1.57220125227e-19
+// -0.200101792812
+// -9.90810012817
+// -9.90810012817
+// -0.990809977055
+// -7.15559625626
+// 1.01042997837
+// 10.9962339401
+// -0
+// -0
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.498338878155
+// 1.115929842
+// -1.57220118765e-20
+// -1.71277272701
+// 4.90500020981
+// 4.90500020981
+// 1.22625005245
+// 0.900322675705
+// -0.124584719539
+// -0.286232411861
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -0.498338878155
+// -1.115929842
+// 1.57220118765e-20
+// 1.71277272701
+// -4.90500020981
+// -4.90500020981
+// 1.57220124823e-21
+// 0.325927317142
+// -1.57220125227e-19
+// 0.00724994763732
+// 9.90810012817
+// 9.90810012817
+// 0.990809977055
+// 7.15559625626
+// -1.01042997837
+// -10.9962339401
+// 0.0
+// 0.0
+// 0.10000000149
+// 1.05228173733
+// -9.90810012817
+// -9.90810012817
+// -0.990809977055
+// -7.15559625626
+// 0.0196199994534
+// 0.570120871067
+// 0.0
+// 0.0
+// 0.10000000149
+// 1.05228173733
+// 0.0
+// -0.20332685113
+// 0.0
+// -0.20332685113
+// 0.33222591877
+// -1.90766847134
+// 0.33222591877
+// -1.90766847134
+// 0.10000000149
+// 1.05228173733
+// 9.90810012817
+// 9.90810012817
+// 0.990809977055
+// 7.15559625626
+// -0.0196199994534
+// -0.570120871067
+// -0
+// -0
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// -9.90810012817
+// -9.90810012817
+// -0
+// -0.135404869914
+// 0.0196199994534
+// 0.570120871067
+// 0.10000000149
+// 0.708530545235
+// 0.0
+// 1.00462627411
+// 0.0
+// 1.00462627411
+// 0.0
+// 0.280481368303
+// 0.0
+// 0.280481368303
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 9.90810012817
+// 9.90810012817
+// 0.0
+// 0.135404869914
+// -0.0196199994534
+// -0.570120871067
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -9.90810012817
+// -9.90810012817
+// -0
+// 0.585651218891
+// 0.0196199994534
+// 0.0196199994534
+// 0.0
+// 1.77048945427
+// -0
+// 1.76988065243
+// -0
+// 1.76988065243
+// 7.86100589946e-18
+// -0.362497389317
+// 7.86100589946e-18
+// -0.362497389317
+// 0.0
+// 1.77048945427
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.498338878155
+// 0.844056844711
+// 0.0
+// 1.29861950874
+// 4.90500020981
+// 4.90500020981
+// -1.22625005245
+// -1.4859739542
+// 0.124584719539
+// 0.203764259815
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -0.498338878155
+// -0.844056844711
+// -0
+// -1.29861950874
+// -4.90500020981
+// -4.90500020981
+// -0
+// 0.259723901749
+// -1.57220125227e-19
+// 0.00724994763732
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.498338878155
+// 1.115929842
+// -1.57220118765e-20
+// -1.71277272701
+// 4.90500020981
+// 4.90500020981
+// -1.57220124823e-21
+// -0.325927317142
+// 1.57220125227e-19
+// -0.00724994763732
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// -0.498338878155
+// 2.66496062279
+// 1.57220118765e-20
+// 1.71277272701
+// -4.90500020981
+// 4.26641654968
+// 1.57220124823e-21
+// -0.310229063034
+// -1.57220125227e-19
+// 0.100195378065
+// 0.0
+// 9.09014034271
+// 0.0
+// 5.82525348663
+// 0.0
+// 5.82525348663
+// 3.3222591877
+// 7.43953227997
+// 3.3222591877
+// 7.43953227997
+// 0.0
+// 9.09014034271
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.498338878155
+// 0.844056844711
+// 0.0
+// 1.29861950874
+// 4.90500020981
+// 4.90500020981
+// 0.0
+// -0.259723901749
+// 1.57220125227e-19
+// -0.00724994763732
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// -0.498338878155
+// -4.38342523575
+// -0
+// -1.29861950874
+// -4.90500020981
+// -2.35733795166
+// -0
+// 0.165735766292
+// -1.57220125227e-19
+// -0.200101792812
+// 0.0
+// 17.9425888062
+// 0.0
+// 14.674656868
+// 0.0
+// 14.674656868
+// 3.3222591877
+// 5.62704563141
+// 3.3222591877
+// 5.62704563141
+// 0.0
+// 17.9425888062
+// 0.10000000149
+// 0.807249903679
+// 0.34999999404
+// 0.658938407898
+// 0.0
+// -0.115554697812
+// 0.0
+// 0.570949137211
+// 1.0
+// 0.187364935875
+// 0.0
+// -0.925759375095
+// -0
+// -0.328426510096
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// -0.0651494786143
+// 0.0
+// 0.321899831295
+// 1.0
+// -0.944529533386
+// 0.0
+// -0.581275701523
+// 0.0
+// 5.82525348663
+// -0
+// -1.67170453072
+// 0.33222591877
+// -0.702685773373
+// -1.57220118765e-20
+// -2.22827291489
+// -0
+// 0.244333952665
+// -1.57220124823e-21
+// 0.210466966033
+// -0.0332225896418
+// -0.0743953213096
+// -0
+// -0.0731823891401
+// -0.33222591877
+// -2.03641462326
+// 1.57220118765e-20
+// -1.17118823528
+// 1.57220118765e-20
+// 2.22827291489
+// 0.33222591877
+// 0.743953227997
+// 0.10000000149
+// 1.29731357098
+// -0.15000000596
+// 0.758122682571
+// 0.0
+// -0.291099011898
+// 0.0
+// 1.43830347061
+// 1.0
+// -0.12222211808
+// 0.0
+// 0.603892445564
+// -0
+// 0.787639260292
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.156242847443
+// 0.0
+// -0.77198690176
+// 1.0
+// 0.616136670113
+// 0.0
+// 1.39402747154
+// 0.0
+// 14.674656868
+// -0
+// 1.09048831463
+// 0.33222591877
+// 0.346702903509
+// -0
+// -1.38777878078e-17
+// 0.0
+// -0.443208217621
+// 0.0
+// -8.67361737988e-19
+// -0.0332225896418
+// -0.0562704540789
+// 0.0
+// 1.73472347598e-18
+// -0.33222591877
+// 0.111622869968
+// -0
+// -0.551522195339
+// 0.33222591877
+// 0.562704563141
+// 0.0
+// 9.09014034271
+// 0.0
+// 17.9425888062
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 0.0
+// -0.55026859045
+// 0.0
+// 0.934408545494
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.00332225905731
+// 0.000268334086286
+// 1.57220118765e-20
+// 0.0174162015319
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 7.86100593823e-21
+// -0.000362497376045
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 0.0
+// -0.55026859045
+// 0.0
+// 0.934408545494
+// 0.33222591877
+// -1.71233272552
+// 1.57220120057e-18
+// -0.319182485342
+// 0.33222591877
+// -1.71233272552
+// 1.57220120057e-18
+// -0.319182485342
+// -0
+// 1.76988065243
+// 7.86100589946e-18
+// -0.362497389317
+// 7.86100589946e-18
+// -0.362497389317
+// 1.0
+// 0.0
+// 0.0
+// 2.0
+// 0.0
+// 0.0
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -0.99667775631
+// -1.95998668671
+// 1.57220118765e-20
+// 0.414153248072
+// 0.0980999991298
+// 0.0980999991298
+// 0.0
+// 0.0
+// -0.0196199994534
+// -0.0196199994534
+// -0
+// 0.0824681520462
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// 0.99667775631
+// 1.95998668671
+// -1.57220118765e-20
+// -0.414153248072
+// -0.0980999991298
+// -0.0980999991298
+// -0
+// -0
+// -0
+// -0
+// -7.86100593823e-21
+// 0.000362497376045
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 0.10000000149
+// 1.05228173733
+// 0.10000000149
+// 0.708530545235
+// 0.300000011921
+// 1.0126080513
+// 0.10000000149
+// 0.904556035995
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// -0
+// 1.76988065243
+// -0
+// -0.980127513409
+// 1.0
+// -0.198368519545
+// 1.0
+// -0.198368519545
+// 0.0
+// 0.980127513409
+// 0.300000011921
+// 1.02240931988
+// 0.0900000035763
+// 0.906539738178
+// 0.0
+// 9.09014034271
+// 0.0
+// 17.9425888062
+// endResult

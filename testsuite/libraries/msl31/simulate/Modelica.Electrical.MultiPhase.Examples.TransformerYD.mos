@@ -1,0 +1,971 @@
+// name:     Modelica.Electrical.MultiPhase.Examples.TransformerYD
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.MultiPhase.Examples.TransformerYD_* Modelica.Electrical.MultiPhase.Examples.TransformerYD Modelica.Electrical.MultiPhase.Examples.TransformerYD.exe Modelica.Electrical.MultiPhase.Examples.TransformerYD.cpp Modelica.Electrical.MultiPhase.Examples.TransformerYD.makefile Modelica.Electrical.MultiPhase.Examples.TransformerYD.libs Modelica.Electrical.MultiPhase.Examples.TransformerYD.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.MultiPhase.Examples.TransformerYD);
+val(sineVoltage.v[1],0.0);
+val(sineVoltage.v[1],1.0);
+val(sineVoltage.v[2],0.0);
+val(sineVoltage.v[2],1.0);
+val(sineVoltage.v[3],0.0);
+val(sineVoltage.v[3],1.0);
+val(sineVoltage.i[1],0.0);
+val(sineVoltage.i[1],1.0);
+val(sineVoltage.i[2],0.0);
+val(sineVoltage.i[2],1.0);
+val(sineVoltage.i[3],0.0);
+val(sineVoltage.i[3],1.0);
+val(sineVoltage.plug_p.pin[1].v,0.0);
+val(sineVoltage.plug_p.pin[1].v,1.0);
+val(sineVoltage.plug_p.pin[1].i,0.0);
+val(sineVoltage.plug_p.pin[1].i,1.0);
+val(sineVoltage.plug_p.pin[2].v,0.0);
+val(sineVoltage.plug_p.pin[2].v,1.0);
+val(sineVoltage.plug_p.pin[2].i,0.0);
+val(sineVoltage.plug_p.pin[2].i,1.0);
+val(sineVoltage.plug_p.pin[3].v,0.0);
+val(sineVoltage.plug_p.pin[3].v,1.0);
+val(sineVoltage.plug_p.pin[3].i,0.0);
+val(sineVoltage.plug_p.pin[3].i,1.0);
+val(sineVoltage.plug_n.pin[1].i,0.0);
+val(sineVoltage.plug_n.pin[1].i,1.0);
+val(sineVoltage.plug_n.pin[2].i,0.0);
+val(sineVoltage.plug_n.pin[2].i,1.0);
+val(sineVoltage.plug_n.pin[3].i,0.0);
+val(sineVoltage.plug_n.pin[3].i,1.0);
+val(sineVoltage.sineVoltage[1].v,0.0);
+val(sineVoltage.sineVoltage[1].v,1.0);
+val(sineVoltage.sineVoltage[1].i,0.0);
+val(sineVoltage.sineVoltage[1].i,1.0);
+val(sineVoltage.sineVoltage[1].p.v,0.0);
+val(sineVoltage.sineVoltage[1].p.v,1.0);
+val(sineVoltage.sineVoltage[1].p.i,0.0);
+val(sineVoltage.sineVoltage[1].p.i,1.0);
+val(sineVoltage.sineVoltage[1].n.i,0.0);
+val(sineVoltage.sineVoltage[1].n.i,1.0);
+val(sineVoltage.sineVoltage[1].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[1].signalSource.y,1.0);
+val(sineVoltage.sineVoltage[2].v,0.0);
+val(sineVoltage.sineVoltage[2].v,1.0);
+val(sineVoltage.sineVoltage[2].i,0.0);
+val(sineVoltage.sineVoltage[2].i,1.0);
+val(sineVoltage.sineVoltage[2].p.v,0.0);
+val(sineVoltage.sineVoltage[2].p.v,1.0);
+val(sineVoltage.sineVoltage[2].p.i,0.0);
+val(sineVoltage.sineVoltage[2].p.i,1.0);
+val(sineVoltage.sineVoltage[2].n.i,0.0);
+val(sineVoltage.sineVoltage[2].n.i,1.0);
+val(sineVoltage.sineVoltage[2].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[2].signalSource.y,1.0);
+val(sineVoltage.sineVoltage[3].v,0.0);
+val(sineVoltage.sineVoltage[3].v,1.0);
+val(sineVoltage.sineVoltage[3].i,0.0);
+val(sineVoltage.sineVoltage[3].i,1.0);
+val(sineVoltage.sineVoltage[3].p.v,0.0);
+val(sineVoltage.sineVoltage[3].p.v,1.0);
+val(sineVoltage.sineVoltage[3].p.i,0.0);
+val(sineVoltage.sineVoltage[3].p.i,1.0);
+val(sineVoltage.sineVoltage[3].n.i,0.0);
+val(sineVoltage.sineVoltage[3].n.i,1.0);
+val(sineVoltage.sineVoltage[3].signalSource.y,0.0);
+val(sineVoltage.sineVoltage[3].signalSource.y,1.0);
+val(starS.plug_p.pin[1].i,0.0);
+val(starS.plug_p.pin[1].i,1.0);
+val(starS.plug_p.pin[2].i,0.0);
+val(starS.plug_p.pin[2].i,1.0);
+val(starS.plug_p.pin[3].i,0.0);
+val(starS.plug_p.pin[3].i,1.0);
+val(starS.pin_n.i,0.0);
+val(starS.pin_n.i,1.0);
+val(groundS.p.i,0.0);
+val(groundS.p.i,1.0);
+val(idealTransformer.v1[1],0.0);
+val(idealTransformer.v1[1],1.0);
+val(idealTransformer.v1[2],0.0);
+val(idealTransformer.v1[2],1.0);
+val(idealTransformer.v1[3],0.0);
+val(idealTransformer.v1[3],1.0);
+val(idealTransformer.v2[1],0.0);
+val(idealTransformer.v2[1],1.0);
+val(idealTransformer.v2[2],0.0);
+val(idealTransformer.v2[2],1.0);
+val(idealTransformer.v2[3],0.0);
+val(idealTransformer.v2[3],1.0);
+val(idealTransformer.i1[1],0.0);
+val(idealTransformer.i1[1],1.0);
+val(idealTransformer.i1[2],0.0);
+val(idealTransformer.i1[2],1.0);
+val(idealTransformer.i1[3],0.0);
+val(idealTransformer.i1[3],1.0);
+val(idealTransformer.i2[1],0.0);
+val(idealTransformer.i2[1],1.0);
+val(idealTransformer.i2[2],0.0);
+val(idealTransformer.i2[2],1.0);
+val(idealTransformer.i2[3],0.0);
+val(idealTransformer.i2[3],1.0);
+val(idealTransformer.plug_p1.pin[1].v,0.0);
+val(idealTransformer.plug_p1.pin[1].v,1.0);
+val(idealTransformer.plug_p1.pin[1].i,0.0);
+val(idealTransformer.plug_p1.pin[1].i,1.0);
+val(idealTransformer.plug_p1.pin[2].v,0.0);
+val(idealTransformer.plug_p1.pin[2].v,1.0);
+val(idealTransformer.plug_p1.pin[2].i,0.0);
+val(idealTransformer.plug_p1.pin[2].i,1.0);
+val(idealTransformer.plug_p1.pin[3].v,0.0);
+val(idealTransformer.plug_p1.pin[3].v,1.0);
+val(idealTransformer.plug_p1.pin[3].i,0.0);
+val(idealTransformer.plug_p1.pin[3].i,1.0);
+val(idealTransformer.plug_p2.pin[1].v,0.0);
+val(idealTransformer.plug_p2.pin[1].v,1.0);
+val(idealTransformer.plug_p2.pin[1].i,0.0);
+val(idealTransformer.plug_p2.pin[1].i,1.0);
+val(idealTransformer.plug_p2.pin[2].v,0.0);
+val(idealTransformer.plug_p2.pin[2].v,1.0);
+val(idealTransformer.plug_p2.pin[2].i,0.0);
+val(idealTransformer.plug_p2.pin[2].i,1.0);
+val(idealTransformer.plug_p2.pin[3].v,0.0);
+val(idealTransformer.plug_p2.pin[3].v,1.0);
+val(idealTransformer.plug_p2.pin[3].i,0.0);
+val(idealTransformer.plug_p2.pin[3].i,1.0);
+val(idealTransformer.plug_n1.pin[1].i,0.0);
+val(idealTransformer.plug_n1.pin[1].i,1.0);
+val(idealTransformer.plug_n1.pin[2].i,0.0);
+val(idealTransformer.plug_n1.pin[2].i,1.0);
+val(idealTransformer.plug_n1.pin[3].i,0.0);
+val(idealTransformer.plug_n1.pin[3].i,1.0);
+val(idealTransformer.plug_n2.pin[1].v,0.0);
+val(idealTransformer.plug_n2.pin[1].v,1.0);
+val(idealTransformer.plug_n2.pin[1].i,0.0);
+val(idealTransformer.plug_n2.pin[1].i,1.0);
+val(idealTransformer.plug_n2.pin[2].v,0.0);
+val(idealTransformer.plug_n2.pin[2].v,1.0);
+val(idealTransformer.plug_n2.pin[2].i,0.0);
+val(idealTransformer.plug_n2.pin[2].i,1.0);
+val(idealTransformer.plug_n2.pin[3].v,0.0);
+val(idealTransformer.plug_n2.pin[3].v,1.0);
+val(idealTransformer.plug_n2.pin[3].i,0.0);
+val(idealTransformer.plug_n2.pin[3].i,1.0);
+val(idealTransformer.idealTransformer[1].v1,0.0);
+val(idealTransformer.idealTransformer[1].v1,1.0);
+val(idealTransformer.idealTransformer[1].v2,0.0);
+val(idealTransformer.idealTransformer[1].v2,1.0);
+val(idealTransformer.idealTransformer[1].i1,0.0);
+val(idealTransformer.idealTransformer[1].i1,1.0);
+val(idealTransformer.idealTransformer[1].i2,0.0);
+val(idealTransformer.idealTransformer[1].i2,1.0);
+val(idealTransformer.idealTransformer[1].p1.v,0.0);
+val(idealTransformer.idealTransformer[1].p1.v,1.0);
+val(idealTransformer.idealTransformer[1].p1.i,0.0);
+val(idealTransformer.idealTransformer[1].p1.i,1.0);
+val(idealTransformer.idealTransformer[1].n1.i,0.0);
+val(idealTransformer.idealTransformer[1].n1.i,1.0);
+val(idealTransformer.idealTransformer[1].p2.v,0.0);
+val(idealTransformer.idealTransformer[1].p2.v,1.0);
+val(idealTransformer.idealTransformer[1].p2.i,0.0);
+val(idealTransformer.idealTransformer[1].p2.i,1.0);
+val(idealTransformer.idealTransformer[1].n2.v,0.0);
+val(idealTransformer.idealTransformer[1].n2.v,1.0);
+val(idealTransformer.idealTransformer[1].n2.i,0.0);
+val(idealTransformer.idealTransformer[1].n2.i,1.0);
+val(idealTransformer.idealTransformer[2].v1,0.0);
+val(idealTransformer.idealTransformer[2].v1,1.0);
+val(idealTransformer.idealTransformer[2].v2,0.0);
+val(idealTransformer.idealTransformer[2].v2,1.0);
+val(idealTransformer.idealTransformer[2].i1,0.0);
+val(idealTransformer.idealTransformer[2].i1,1.0);
+val(idealTransformer.idealTransformer[2].i2,0.0);
+val(idealTransformer.idealTransformer[2].i2,1.0);
+val(idealTransformer.idealTransformer[2].p1.v,0.0);
+val(idealTransformer.idealTransformer[2].p1.v,1.0);
+val(idealTransformer.idealTransformer[2].p1.i,0.0);
+val(idealTransformer.idealTransformer[2].p1.i,1.0);
+val(idealTransformer.idealTransformer[2].n1.i,0.0);
+val(idealTransformer.idealTransformer[2].n1.i,1.0);
+val(idealTransformer.idealTransformer[2].p2.v,0.0);
+val(idealTransformer.idealTransformer[2].p2.v,1.0);
+val(idealTransformer.idealTransformer[2].p2.i,0.0);
+val(idealTransformer.idealTransformer[2].p2.i,1.0);
+val(idealTransformer.idealTransformer[2].n2.v,0.0);
+val(idealTransformer.idealTransformer[2].n2.v,1.0);
+val(idealTransformer.idealTransformer[2].n2.i,0.0);
+val(idealTransformer.idealTransformer[2].n2.i,1.0);
+val(idealTransformer.idealTransformer[3].v1,0.0);
+val(idealTransformer.idealTransformer[3].v1,1.0);
+val(idealTransformer.idealTransformer[3].v2,0.0);
+val(idealTransformer.idealTransformer[3].v2,1.0);
+val(idealTransformer.idealTransformer[3].i1,0.0);
+val(idealTransformer.idealTransformer[3].i1,1.0);
+val(idealTransformer.idealTransformer[3].i2,0.0);
+val(idealTransformer.idealTransformer[3].i2,1.0);
+val(idealTransformer.idealTransformer[3].p1.v,0.0);
+val(idealTransformer.idealTransformer[3].p1.v,1.0);
+val(idealTransformer.idealTransformer[3].p1.i,0.0);
+val(idealTransformer.idealTransformer[3].p1.i,1.0);
+val(idealTransformer.idealTransformer[3].n1.i,0.0);
+val(idealTransformer.idealTransformer[3].n1.i,1.0);
+val(idealTransformer.idealTransformer[3].p2.v,0.0);
+val(idealTransformer.idealTransformer[3].p2.v,1.0);
+val(idealTransformer.idealTransformer[3].p2.i,0.0);
+val(idealTransformer.idealTransformer[3].p2.i,1.0);
+val(idealTransformer.idealTransformer[3].n2.v,0.0);
+val(idealTransformer.idealTransformer[3].n2.v,1.0);
+val(idealTransformer.idealTransformer[3].n2.i,0.0);
+val(idealTransformer.idealTransformer[3].n2.i,1.0);
+val(starT.plug_p.pin[1].i,0.0);
+val(starT.plug_p.pin[1].i,1.0);
+val(starT.plug_p.pin[2].i,0.0);
+val(starT.plug_p.pin[2].i,1.0);
+val(starT.plug_p.pin[3].i,0.0);
+val(starT.plug_p.pin[3].i,1.0);
+val(starT.pin_n.i,0.0);
+val(starT.pin_n.i,1.0);
+val(deltaT2.plug_p.pin[1].v,0.0);
+val(deltaT2.plug_p.pin[1].v,1.0);
+val(deltaT2.plug_p.pin[1].i,0.0);
+val(deltaT2.plug_p.pin[1].i,1.0);
+val(deltaT2.plug_p.pin[2].v,0.0);
+val(deltaT2.plug_p.pin[2].v,1.0);
+val(deltaT2.plug_p.pin[2].i,0.0);
+val(deltaT2.plug_p.pin[2].i,1.0);
+val(deltaT2.plug_p.pin[3].v,0.0);
+val(deltaT2.plug_p.pin[3].v,1.0);
+val(deltaT2.plug_p.pin[3].i,0.0);
+val(deltaT2.plug_p.pin[3].i,1.0);
+val(deltaT2.plug_n.pin[1].v,0.0);
+val(deltaT2.plug_n.pin[1].v,1.0);
+val(deltaT2.plug_n.pin[1].i,0.0);
+val(deltaT2.plug_n.pin[1].i,1.0);
+val(deltaT2.plug_n.pin[2].v,0.0);
+val(deltaT2.plug_n.pin[2].v,1.0);
+val(deltaT2.plug_n.pin[2].i,0.0);
+val(deltaT2.plug_n.pin[2].i,1.0);
+val(deltaT2.plug_n.pin[3].v,0.0);
+val(deltaT2.plug_n.pin[3].v,1.0);
+val(deltaT2.plug_n.pin[3].i,0.0);
+val(deltaT2.plug_n.pin[3].i,1.0);
+val(groundT.p.i,0.0);
+val(groundT.p.i,1.0);
+val(transformerR.v[1],0.0);
+val(transformerR.v[1],1.0);
+val(transformerR.v[2],0.0);
+val(transformerR.v[2],1.0);
+val(transformerR.v[3],0.0);
+val(transformerR.v[3],1.0);
+val(transformerR.i[1],0.0);
+val(transformerR.i[1],1.0);
+val(transformerR.i[2],0.0);
+val(transformerR.i[2],1.0);
+val(transformerR.i[3],0.0);
+val(transformerR.i[3],1.0);
+val(transformerR.plug_p.pin[1].v,0.0);
+val(transformerR.plug_p.pin[1].v,1.0);
+val(transformerR.plug_p.pin[1].i,0.0);
+val(transformerR.plug_p.pin[1].i,1.0);
+val(transformerR.plug_p.pin[2].v,0.0);
+val(transformerR.plug_p.pin[2].v,1.0);
+val(transformerR.plug_p.pin[2].i,0.0);
+val(transformerR.plug_p.pin[2].i,1.0);
+val(transformerR.plug_p.pin[3].v,0.0);
+val(transformerR.plug_p.pin[3].v,1.0);
+val(transformerR.plug_p.pin[3].i,0.0);
+val(transformerR.plug_p.pin[3].i,1.0);
+val(transformerR.plug_n.pin[1].v,0.0);
+val(transformerR.plug_n.pin[1].v,1.0);
+val(transformerR.plug_n.pin[1].i,0.0);
+val(transformerR.plug_n.pin[1].i,1.0);
+val(transformerR.plug_n.pin[2].v,0.0);
+val(transformerR.plug_n.pin[2].v,1.0);
+val(transformerR.plug_n.pin[2].i,0.0);
+val(transformerR.plug_n.pin[2].i,1.0);
+val(transformerR.plug_n.pin[3].v,0.0);
+val(transformerR.plug_n.pin[3].v,1.0);
+val(transformerR.plug_n.pin[3].i,0.0);
+val(transformerR.plug_n.pin[3].i,1.0);
+val(transformerR.resistor[1].v,0.0);
+val(transformerR.resistor[1].v,1.0);
+val(transformerR.resistor[1].i,0.0);
+val(transformerR.resistor[1].i,1.0);
+val(transformerR.resistor[1].p.v,0.0);
+val(transformerR.resistor[1].p.v,1.0);
+val(transformerR.resistor[1].p.i,0.0);
+val(transformerR.resistor[1].p.i,1.0);
+val(transformerR.resistor[1].n.v,0.0);
+val(transformerR.resistor[1].n.v,1.0);
+val(transformerR.resistor[1].n.i,0.0);
+val(transformerR.resistor[1].n.i,1.0);
+val(transformerR.resistor[1].LossPower,0.0);
+val(transformerR.resistor[1].LossPower,1.0);
+val(transformerR.resistor[2].v,0.0);
+val(transformerR.resistor[2].v,1.0);
+val(transformerR.resistor[2].i,0.0);
+val(transformerR.resistor[2].i,1.0);
+val(transformerR.resistor[2].p.v,0.0);
+val(transformerR.resistor[2].p.v,1.0);
+val(transformerR.resistor[2].p.i,0.0);
+val(transformerR.resistor[2].p.i,1.0);
+val(transformerR.resistor[2].n.v,0.0);
+val(transformerR.resistor[2].n.v,1.0);
+val(transformerR.resistor[2].n.i,0.0);
+val(transformerR.resistor[2].n.i,1.0);
+val(transformerR.resistor[2].LossPower,0.0);
+val(transformerR.resistor[2].LossPower,1.0);
+val(transformerR.resistor[3].v,0.0);
+val(transformerR.resistor[3].v,1.0);
+val(transformerR.resistor[3].i,0.0);
+val(transformerR.resistor[3].i,1.0);
+val(transformerR.resistor[3].p.v,0.0);
+val(transformerR.resistor[3].p.v,1.0);
+val(transformerR.resistor[3].p.i,0.0);
+val(transformerR.resistor[3].p.i,1.0);
+val(transformerR.resistor[3].n.v,0.0);
+val(transformerR.resistor[3].n.v,1.0);
+val(transformerR.resistor[3].n.i,0.0);
+val(transformerR.resistor[3].n.i,1.0);
+val(transformerR.resistor[3].LossPower,0.0);
+val(transformerR.resistor[3].LossPower,1.0);
+val(transformerL.v[1],0.0);
+val(transformerL.v[1],1.0);
+val(transformerL.v[2],0.0);
+val(transformerL.v[2],1.0);
+val(transformerL.v[3],0.0);
+val(transformerL.v[3],1.0);
+val(transformerL.i[1],0.0);
+val(transformerL.i[1],1.0);
+val(transformerL.i[2],0.0);
+val(transformerL.i[2],1.0);
+val(transformerL.i[3],0.0);
+val(transformerL.i[3],1.0);
+val(transformerL.plug_p.pin[1].v,0.0);
+val(transformerL.plug_p.pin[1].v,1.0);
+val(transformerL.plug_p.pin[1].i,0.0);
+val(transformerL.plug_p.pin[1].i,1.0);
+val(transformerL.plug_p.pin[2].v,0.0);
+val(transformerL.plug_p.pin[2].v,1.0);
+val(transformerL.plug_p.pin[2].i,0.0);
+val(transformerL.plug_p.pin[2].i,1.0);
+val(transformerL.plug_p.pin[3].v,0.0);
+val(transformerL.plug_p.pin[3].v,1.0);
+val(transformerL.plug_p.pin[3].i,0.0);
+val(transformerL.plug_p.pin[3].i,1.0);
+val(transformerL.plug_n.pin[1].v,0.0);
+val(transformerL.plug_n.pin[1].v,1.0);
+val(transformerL.plug_n.pin[1].i,0.0);
+val(transformerL.plug_n.pin[1].i,1.0);
+val(transformerL.plug_n.pin[2].v,0.0);
+val(transformerL.plug_n.pin[2].v,1.0);
+val(transformerL.plug_n.pin[2].i,0.0);
+val(transformerL.plug_n.pin[2].i,1.0);
+val(transformerL.plug_n.pin[3].v,0.0);
+val(transformerL.plug_n.pin[3].v,1.0);
+val(transformerL.plug_n.pin[3].i,0.0);
+val(transformerL.plug_n.pin[3].i,1.0);
+val(transformerL.inductor[1].v,0.0);
+val(transformerL.inductor[1].v,1.0);
+val(transformerL.inductor[1].i,0.0);
+val(transformerL.inductor[1].i,1.0);
+val(der(transformerL.inductor[1].i),0.0);
+val(der(transformerL.inductor[1].i),1.0);
+val(transformerL.inductor[1].p.v,0.0);
+val(transformerL.inductor[1].p.v,1.0);
+val(transformerL.inductor[1].p.i,0.0);
+val(transformerL.inductor[1].p.i,1.0);
+val(transformerL.inductor[1].n.v,0.0);
+val(transformerL.inductor[1].n.v,1.0);
+val(transformerL.inductor[1].n.i,0.0);
+val(transformerL.inductor[1].n.i,1.0);
+val(transformerL.inductor[2].v,0.0);
+val(transformerL.inductor[2].v,1.0);
+val(transformerL.inductor[2].i,0.0);
+val(transformerL.inductor[2].i,1.0);
+val(der(transformerL.inductor[2].i),0.0);
+val(der(transformerL.inductor[2].i),1.0);
+val(transformerL.inductor[2].p.v,0.0);
+val(transformerL.inductor[2].p.v,1.0);
+val(transformerL.inductor[2].p.i,0.0);
+val(transformerL.inductor[2].p.i,1.0);
+val(transformerL.inductor[2].n.v,0.0);
+val(transformerL.inductor[2].n.v,1.0);
+val(transformerL.inductor[2].n.i,0.0);
+val(transformerL.inductor[2].n.i,1.0);
+val(transformerL.inductor[3].v,0.0);
+val(transformerL.inductor[3].v,1.0);
+val(transformerL.inductor[3].i,0.0);
+val(transformerL.inductor[3].i,1.0);
+val(der(transformerL.inductor[3].i),0.0);
+val(der(transformerL.inductor[3].i),1.0);
+val(transformerL.inductor[3].p.v,0.0);
+val(transformerL.inductor[3].p.v,1.0);
+val(transformerL.inductor[3].p.i,0.0);
+val(transformerL.inductor[3].p.i,1.0);
+val(transformerL.inductor[3].n.v,0.0);
+val(transformerL.inductor[3].n.v,1.0);
+val(transformerL.inductor[3].n.i,0.0);
+val(transformerL.inductor[3].n.i,1.0);
+val(loadR.v[1],0.0);
+val(loadR.v[1],1.0);
+val(loadR.v[2],0.0);
+val(loadR.v[2],1.0);
+val(loadR.v[3],0.0);
+val(loadR.v[3],1.0);
+val(loadR.i[1],0.0);
+val(loadR.i[1],1.0);
+val(loadR.i[2],0.0);
+val(loadR.i[2],1.0);
+val(loadR.i[3],0.0);
+val(loadR.i[3],1.0);
+val(loadR.plug_p.pin[1].v,0.0);
+val(loadR.plug_p.pin[1].v,1.0);
+val(loadR.plug_p.pin[1].i,0.0);
+val(loadR.plug_p.pin[1].i,1.0);
+val(loadR.plug_p.pin[2].v,0.0);
+val(loadR.plug_p.pin[2].v,1.0);
+val(loadR.plug_p.pin[2].i,0.0);
+val(loadR.plug_p.pin[2].i,1.0);
+val(loadR.plug_p.pin[3].v,0.0);
+val(loadR.plug_p.pin[3].v,1.0);
+val(loadR.plug_p.pin[3].i,0.0);
+val(loadR.plug_p.pin[3].i,1.0);
+val(loadR.plug_n.pin[1].i,0.0);
+val(loadR.plug_n.pin[1].i,1.0);
+val(loadR.plug_n.pin[2].i,0.0);
+val(loadR.plug_n.pin[2].i,1.0);
+val(loadR.plug_n.pin[3].i,0.0);
+val(loadR.plug_n.pin[3].i,1.0);
+val(loadR.resistor[1].v,0.0);
+val(loadR.resistor[1].v,1.0);
+val(loadR.resistor[1].i,0.0);
+val(loadR.resistor[1].i,1.0);
+val(loadR.resistor[1].p.v,0.0);
+val(loadR.resistor[1].p.v,1.0);
+val(loadR.resistor[1].p.i,0.0);
+val(loadR.resistor[1].p.i,1.0);
+val(loadR.resistor[1].n.i,0.0);
+val(loadR.resistor[1].n.i,1.0);
+val(loadR.resistor[1].LossPower,0.0);
+val(loadR.resistor[1].LossPower,1.0);
+val(loadR.resistor[2].v,0.0);
+val(loadR.resistor[2].v,1.0);
+val(loadR.resistor[2].i,0.0);
+val(loadR.resistor[2].i,1.0);
+val(loadR.resistor[2].p.v,0.0);
+val(loadR.resistor[2].p.v,1.0);
+val(loadR.resistor[2].p.i,0.0);
+val(loadR.resistor[2].p.i,1.0);
+val(loadR.resistor[2].n.i,0.0);
+val(loadR.resistor[2].n.i,1.0);
+val(loadR.resistor[2].LossPower,0.0);
+val(loadR.resistor[2].LossPower,1.0);
+val(loadR.resistor[3].v,0.0);
+val(loadR.resistor[3].v,1.0);
+val(loadR.resistor[3].i,0.0);
+val(loadR.resistor[3].i,1.0);
+val(loadR.resistor[3].p.v,0.0);
+val(loadR.resistor[3].p.v,1.0);
+val(loadR.resistor[3].p.i,0.0);
+val(loadR.resistor[3].p.i,1.0);
+val(loadR.resistor[3].n.i,0.0);
+val(loadR.resistor[3].n.i,1.0);
+val(loadR.resistor[3].LossPower,0.0);
+val(loadR.resistor[3].LossPower,1.0);
+val(starL.plug_p.pin[1].i,0.0);
+val(starL.plug_p.pin[1].i,1.0);
+val(starL.plug_p.pin[2].i,0.0);
+val(starL.plug_p.pin[2].i,1.0);
+val(starL.plug_p.pin[3].i,0.0);
+val(starL.plug_p.pin[3].i,1.0);
+val(starL.pin_n.i,0.0);
+val(starL.pin_n.i,1.0);
+val(groundL.p.i,0.0);
+val(groundL.p.i,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.MultiPhase.Examples.TransformerYD_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.MultiPhase.Examples.TransformerYD', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 1.65389213826e-14
+// -0.866025388241
+// -0.866025388241
+// 0.866025388241
+// 0.866025388241
+// -0
+// 0.0848006531596
+// -0
+// 0.775792181492
+// -0
+// -0.860592842102
+// 0.0
+// 1.65389213826e-14
+// -0
+// 0.0848006531596
+// -0.866025388241
+// -0.866025388241
+// -0
+// 0.775792181492
+// 0.866025388241
+// 0.866025388241
+// -0
+// -0.860592842102
+// 0.0
+// -0.0848006531596
+// 0.0
+// -0.775792181492
+// 0.0
+// 0.860592842102
+// 0.0
+// 1.65389213826e-14
+// -0
+// 0.0848006531596
+// 0.0
+// 1.65389213826e-14
+// -0
+// 0.0848006531596
+// 0.0
+// -0.0848006531596
+// 0.0
+// 1.65389213826e-14
+// -0.866025388241
+// -0.866025388241
+// -0
+// 0.775792181492
+// -0.866025388241
+// -0.866025388241
+// -0
+// 0.775792181492
+// 0.0
+// -0.775792181492
+// -0.866025388241
+// -0.866025388241
+// 0.866025388241
+// 0.866025388241
+// -0
+// -0.860592842102
+// 0.866025388241
+// 0.866025388241
+// -0
+// -0.860592842102
+// 0.0
+// 0.860592842102
+// 0.866025388241
+// 0.866025388241
+// -0
+// 0.0848006531596
+// -0
+// 0.775792181492
+// -0
+// -0.860592842102
+// 0.0
+// -3.47499806708e-13
+// -0
+// 3.47499806708e-13
+// 0.0
+// 1.65389213826e-14
+// -0.866025388241
+// -0.866025388241
+// 0.866025388241
+// 0.866025388241
+// 0.0
+// 2.86437540353e-14
+// -1.5
+// -1.5
+// 1.5
+// 1.5
+// 0.0
+// -0.0848006531596
+// 0.0
+// -0.775792181492
+// 0.0
+// 0.860592842102
+// -0
+// 0.0489596799016
+// -0
+// 0.447903811932
+// -0
+// -0.496863514185
+// 0.0
+// 1.65389213826e-14
+// 0.0
+// -0.0848006531596
+// -0.866025388241
+// -0.866025388241
+// 0.0
+// -0.775792181492
+// 0.866025388241
+// 0.866025388241
+// 0.0
+// 0.860592842102
+// 0.0
+// -0.398944139481
+// -0
+// 0.0489596799016
+// -1.5
+// -0.555232703686
+// -0
+// 0.447903811932
+// 1.5
+// 0.954176843166
+// -0
+// -0.496863514185
+// -0
+// 0.0848006531596
+// -0
+// 0.775792181492
+// -0
+// -0.860592842102
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.0489596799016
+// 0.0
+// 0.944767296314
+// 0.0
+// -0.447903811932
+// 0.0
+// -0.545823156834
+// 0.0
+// 0.496863514185
+// 0.0
+// 1.65389213826e-14
+// 0.0
+// 2.86462510885e-14
+// 0.0
+// -0.0848006531596
+// -0
+// 0.0489596799016
+// 0.0
+// 1.65389213826e-14
+// 0.0
+// -0.0848006531596
+// -0
+// 0.0848006531596
+// 0.0
+// -0.398944139481
+// -0
+// 0.0489596799016
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.0489596799016
+// -0.866025388241
+// -0.866025388241
+// -1.5
+// -1.5
+// 0.0
+// -0.775792181492
+// -0
+// 0.447903811932
+// -0.866025388241
+// -0.866025388241
+// 0.0
+// -0.775792181492
+// -0
+// 0.775792181492
+// -1.5
+// -0.555232703686
+// -0
+// 0.447903811932
+// 0.0
+// 0.944767296314
+// 0.0
+// -0.447903811932
+// 0.866025388241
+// 0.866025388241
+// 1.5
+// 1.5
+// 0.0
+// 0.860592842102
+// -0
+// -0.496863514185
+// 0.866025388241
+// 0.866025388241
+// 0.0
+// 0.860592842102
+// -0
+// -0.860592842102
+// 1.5
+// 0.954176843166
+// -0
+// -0.496863514185
+// 0.0
+// -0.545823156834
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.0848006531596
+// 0.0
+// -0.775792181492
+// 0.0
+// 0.860592842102
+// -0
+// 3.47499806708e-13
+// 0.0
+// -0.545823156834
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.0489596799016
+// 0.0
+// 0.944767296314
+// 0.0
+// -0.447903811932
+// 0.0
+// -0.398944139481
+// -0
+// 0.0489596799016
+// 0.0
+// 0.944767296314
+// -0
+// 0.447903811932
+// 0.0
+// -0.545823156834
+// -0
+// -0.496863514185
+// 0.0
+// -3.47499806708e-13
+// 0.0
+// -0.00734395207837
+// 0.0
+// -0.0671855732799
+// 0.0
+// 0.0745295286179
+// 0.0
+// -0.0489596799016
+// 0.0
+// -0.447903811932
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.0489596799016
+// -1.5
+// -0.555232703686
+// 0.0
+// -0.447903811932
+// 1.5
+// 0.954176843166
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.391600191593
+// -0
+// 0.0489596799016
+// -1.5
+// -0.488047093153
+// -0
+// 0.447903811932
+// 1.5
+// 0.879647314548
+// -0
+// -0.496863514185
+// 0.0
+// -0.00734395207837
+// 0.0
+// -0.0489596799016
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.0489596799016
+// 0.0
+// -0.391600191593
+// -0
+// 0.0489596799016
+// 0.0
+// 0.000359557539923
+// 0.0
+// -0.0671855732799
+// 0.0
+// -0.447903811932
+// -1.5
+// -0.555232703686
+// 0.0
+// -0.447903811932
+// -1.5
+// -0.488047093153
+// -0
+// 0.447903811932
+// 0.0
+// 0.0300926752388
+// 0.0
+// 0.0745295286179
+// 0.0
+// 0.496863514185
+// 1.5
+// 0.954176843166
+// 0.0
+// 0.496863514185
+// 1.5
+// 0.879647314548
+// -0
+// -0.496863514185
+// 0.0
+// 0.0370310023427
+// 0.0
+// 0.154222995043
+// -1.5
+// -0.089102961123
+// 1.5
+// -0.0651200264692
+// 0.0
+// -0.0489596799016
+// 0.0
+// -0.447903811932
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.391600191593
+// 0.0
+// -0.0489596799016
+// -1.5
+// -0.488047093153
+// 0.0
+// -0.447903811932
+// 1.5
+// 0.879647314548
+// 0.0
+// 0.496863514185
+// 0.0
+// -0.545823156834
+// -0
+// 0.0489596799016
+// 0.0
+// -0.398944139481
+// -0
+// 0.447903811932
+// 0.0
+// 0.944767296314
+// -0
+// -0.496863514185
+// 0.0
+// 0.154222995043
+// 0.0
+// -0.0489596799016
+// 0.0
+// 17.135887146
+// 0.0
+// -0.391600191593
+// 0.0
+// -0.0489596799016
+// 0.0
+// -0.545823156834
+// -0
+// 0.0489596799016
+// -1.5
+// -0.089102961123
+// 0.0
+// -0.447903811932
+// -166.666671753
+// -9.90032863617
+// -1.5
+// -0.488047093153
+// 0.0
+// -0.447903811932
+// 0.0
+// -0.398944139481
+// -0
+// 0.447903811932
+// 1.5
+// -0.0651200264692
+// 0.0
+// 0.496863514185
+// 166.666671753
+// -7.23555898666
+// 1.5
+// 0.879647314548
+// 0.0
+// 0.496863514185
+// 0.0
+// 0.944767296314
+// -0
+// -0.496863514185
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.398944139481
+// 0.0
+// 0.944767296314
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.398944139481
+// 0.0
+// 0.944767296314
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.398944139481
+// 0.0
+// 0.944767296314
+// 0.0
+// 0.944767296314
+// -0
+// 0.545823156834
+// -0
+// 0.398944139481
+// -0
+// -0.944767296314
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.545823156834
+// -0
+// 0.545823156834
+// 0.0
+// 0.297922939062
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.398944139481
+// 0.0
+// -0.398944139481
+// -0
+// 0.398944139481
+// 0.0
+// 0.159156426787
+// 0.0
+// 0.944767296314
+// 0.0
+// 0.944767296314
+// 0.0
+// 0.944767296314
+// 0.0
+// 0.944767296314
+// -0
+// -0.944767296314
+// 0.0
+// 0.892585277557
+// 0.0
+// -0.545823156834
+// 0.0
+// -0.398944139481
+// 0.0
+// 0.944767296314
+// -0
+// -1.11022302463e-16
+// 0.0
+// 1.11022302463e-16
+// endResult

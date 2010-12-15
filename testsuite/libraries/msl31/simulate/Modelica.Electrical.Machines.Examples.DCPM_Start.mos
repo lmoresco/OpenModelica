@@ -1,0 +1,287 @@
+// name:     Modelica.Electrical.Machines.Examples.DCPM_Start
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.DCPM_Start_* Modelica.Electrical.Machines.Examples.DCPM_Start Modelica.Electrical.Machines.Examples.DCPM_Start.exe Modelica.Electrical.Machines.Examples.DCPM_Start.cpp Modelica.Electrical.Machines.Examples.DCPM_Start.makefile Modelica.Electrical.Machines.Examples.DCPM_Start.libs Modelica.Electrical.Machines.Examples.DCPM_Start.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Machines.Examples.DCPM_Start);
+val(dcpm.phiMechanical,0.0);
+val(dcpm.phiMechanical,2.0);
+val(der(dcpm.phiMechanical),0.0);
+val(der(dcpm.phiMechanical),2.0);
+val(dcpm.wMechanical,0.0);
+val(dcpm.wMechanical,2.0);
+val(dcpm.tauElectrical,0.0);
+val(dcpm.tauElectrical,2.0);
+val(dcpm.tauShaft,0.0);
+val(dcpm.tauShaft,2.0);
+val(dcpm.flange.phi,0.0);
+val(dcpm.flange.phi,2.0);
+val(dcpm.flange.tau,0.0);
+val(dcpm.flange.tau,2.0);
+val(dcpm.inertiaRotor.flange_a.phi,0.0);
+val(dcpm.inertiaRotor.flange_a.phi,2.0);
+val(dcpm.inertiaRotor.flange_a.tau,0.0);
+val(dcpm.inertiaRotor.flange_a.tau,2.0);
+val(dcpm.inertiaRotor.flange_b.phi,0.0);
+val(dcpm.inertiaRotor.flange_b.phi,2.0);
+val(dcpm.inertiaRotor.flange_b.tau,0.0);
+val(dcpm.inertiaRotor.flange_b.tau,2.0);
+val(dcpm.inertiaRotor.phi,0.0);
+val(dcpm.inertiaRotor.phi,2.0);
+val(der(dcpm.inertiaRotor.phi),0.0);
+val(der(dcpm.inertiaRotor.phi),2.0);
+val(dcpm.inertiaRotor.w,0.0);
+val(dcpm.inertiaRotor.w,2.0);
+val(der(dcpm.inertiaRotor.w),0.0);
+val(der(dcpm.inertiaRotor.w),2.0);
+val(dcpm.inertiaRotor.a,0.0);
+val(dcpm.inertiaRotor.a,2.0);
+val(dcpm.fixed.flange.tau,0.0);
+val(dcpm.fixed.flange.tau,2.0);
+val(dcpm.va,0.0);
+val(dcpm.va,2.0);
+val(dcpm.ia,0.0);
+val(dcpm.ia,2.0);
+val(dcpm.pin_ap.v,0.0);
+val(dcpm.pin_ap.v,2.0);
+val(dcpm.pin_ap.i,0.0);
+val(dcpm.pin_ap.i,2.0);
+val(dcpm.pin_an.i,0.0);
+val(dcpm.pin_an.i,2.0);
+val(dcpm.ra.v,0.0);
+val(dcpm.ra.v,2.0);
+val(dcpm.ra.i,0.0);
+val(dcpm.ra.i,2.0);
+val(dcpm.ra.p.v,0.0);
+val(dcpm.ra.p.v,2.0);
+val(dcpm.ra.p.i,0.0);
+val(dcpm.ra.p.i,2.0);
+val(dcpm.ra.n.v,0.0);
+val(dcpm.ra.n.v,2.0);
+val(dcpm.ra.n.i,0.0);
+val(dcpm.ra.n.i,2.0);
+val(dcpm.ra.LossPower,0.0);
+val(dcpm.ra.LossPower,2.0);
+val(dcpm.la.v,0.0);
+val(dcpm.la.v,2.0);
+val(dcpm.la.i,0.0);
+val(dcpm.la.i,2.0);
+val(der(dcpm.la.i),0.0);
+val(der(dcpm.la.i),2.0);
+val(dcpm.la.p.v,0.0);
+val(dcpm.la.p.v,2.0);
+val(dcpm.la.p.i,0.0);
+val(dcpm.la.p.i,2.0);
+val(dcpm.la.n.v,0.0);
+val(dcpm.la.n.v,2.0);
+val(dcpm.la.n.i,0.0);
+val(dcpm.la.n.i,2.0);
+val(dcpm.airGapDC.w,0.0);
+val(dcpm.airGapDC.w,2.0);
+val(dcpm.airGapDC.vai,0.0);
+val(dcpm.airGapDC.vai,2.0);
+val(dcpm.airGapDC.ia,0.0);
+val(dcpm.airGapDC.ia,2.0);
+val(dcpm.airGapDC.tauElectrical,0.0);
+val(dcpm.airGapDC.tauElectrical,2.0);
+val(dcpm.airGapDC.flange.phi,0.0);
+val(dcpm.airGapDC.flange.phi,2.0);
+val(der(dcpm.airGapDC.flange.phi),0.0);
+val(der(dcpm.airGapDC.flange.phi),2.0);
+val(dcpm.airGapDC.flange.tau,0.0);
+val(dcpm.airGapDC.flange.tau,2.0);
+val(dcpm.airGapDC.support.tau,0.0);
+val(dcpm.airGapDC.support.tau,2.0);
+val(dcpm.airGapDC.pin_ap.v,0.0);
+val(dcpm.airGapDC.pin_ap.v,2.0);
+val(dcpm.airGapDC.pin_ap.i,0.0);
+val(dcpm.airGapDC.pin_ap.i,2.0);
+val(dcpm.airGapDC.pin_an.i,0.0);
+val(dcpm.airGapDC.pin_an.i,2.0);
+val(ramp.y,0.0);
+val(ramp.y,2.0);
+val(signalVoltage.p.v,0.0);
+val(signalVoltage.p.v,2.0);
+val(signalVoltage.p.i,0.0);
+val(signalVoltage.p.i,2.0);
+val(signalVoltage.n.i,0.0);
+val(signalVoltage.n.i,2.0);
+val(signalVoltage.v,0.0);
+val(signalVoltage.v,2.0);
+val(signalVoltage.i,0.0);
+val(signalVoltage.i,2.0);
+val(loadInertia.flange_a.phi,0.0);
+val(loadInertia.flange_a.phi,2.0);
+val(loadInertia.flange_a.tau,0.0);
+val(loadInertia.flange_a.tau,2.0);
+val(loadInertia.flange_b.phi,0.0);
+val(loadInertia.flange_b.phi,2.0);
+val(loadInertia.flange_b.tau,0.0);
+val(loadInertia.flange_b.tau,2.0);
+val(loadInertia.phi,0.0);
+val(loadInertia.phi,2.0);
+val(der(loadInertia.phi),0.0);
+val(der(loadInertia.phi),2.0);
+val(loadInertia.w,0.0);
+val(loadInertia.w,2.0);
+val(der(loadInertia.w),0.0);
+val(der(loadInertia.w),2.0);
+val(loadInertia.a,0.0);
+val(loadInertia.a,2.0);
+val(loadTorqueStep.flange.phi,0.0);
+val(loadTorqueStep.flange.phi,2.0);
+val(loadTorqueStep.flange.tau,0.0);
+val(loadTorqueStep.flange.tau,2.0);
+val(loadTorqueStep.phi,0.0);
+val(loadTorqueStep.phi,2.0);
+val(loadTorqueStep.tau,0.0);
+val(loadTorqueStep.tau,2.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Machines.Examples.DCPM_Start_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Machines.Examples.DCPM_Start', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227478027
+// 0.0
+// 149.227478027
+// 0.0
+// 63.6494293213
+// -0
+// 63.654712677
+// 0.0
+// 210.225982666
+// 0.0
+// -63.654712677
+// 0.0
+// 210.225982666
+// 0.0
+// 63.6494293213
+// 0.0
+// 210.225982666
+// 0.0
+// -63.654712677
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227478027
+// 0.0
+// 149.227478027
+// 0.0
+// -0.0352415814996
+// 0.0
+// -0.0352415814996
+// -0
+// -63.6494293213
+// 0.0
+// 100.0
+// 0.0
+// 99.9802856445
+// 0.0
+// 100.0
+// 0.0
+// 99.9802856445
+// -0
+// -99.9802856445
+// 0.0
+// 4.99901437759
+// 0.0
+// 99.9802856445
+// 0.0
+// 100.0
+// 0.0
+// 99.9802856445
+// 0.0
+// 95.0009841919
+// -0
+// -99.9802856445
+// 0.0
+// 499.802886963
+// 0.0
+// -0.000175578723429
+// 0.0
+// 99.9802856445
+// 0.0
+// -0.117052488029
+// 0.0
+// 95.0009841919
+// 0.0
+// 99.9802856445
+// 0.0
+// 95.001159668
+// -0
+// -99.9802856445
+// 0.0
+// 149.227478027
+// 0.0
+// 95.001159668
+// 0.0
+// 99.9802856445
+// 0.0
+// 63.6494293213
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227478027
+// -0
+// -63.6494293213
+// 0.0
+// 63.6494293213
+// 0.0
+// 95.001159668
+// 0.0
+// 99.9802856445
+// -0
+// -99.9802856445
+// 0.0
+// 100.0
+// 0.0
+// 100.0
+// -0
+// -99.9802856445
+// 0.0
+// 99.9802856445
+// 0.0
+// 100.0
+// -0
+// -99.9802856445
+// 0.0
+// 210.225982666
+// -0
+// 63.654712677
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6599998474
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227478027
+// 0.0
+// 149.227478027
+// 0.0
+// -0.0352415814996
+// 0.0
+// -0.0352415814996
+// 0.0
+// 210.225982666
+// -0
+// 63.6599998474
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6599998474
+// endResult

@@ -1,0 +1,379 @@
+// name:     Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling_* Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.exe Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.cpp Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.makefile Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.libs Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling);
+val(dTSource,0.0);
+val(dTSource,1.5);
+val(dTtoPipe,0.0);
+val(dTtoPipe,1.5);
+val(dTinnerCoolant,0.0);
+val(dTinnerCoolant,1.5);
+val(dTCooler,0.0);
+val(dTCooler,1.5);
+val(dTouterCoolant,0.0);
+val(dTouterCoolant,1.5);
+val(ambient1.T_port,0.0);
+val(ambient1.T_port,1.5);
+val(ambient1.flowPort.h,0.0);
+val(ambient1.flowPort.h,1.5);
+val(ambient1.flowPort.H_flow,0.0);
+val(ambient1.flowPort.H_flow,1.5);
+val(outerPump.T,0.0);
+val(outerPump.T,1.5);
+val(outerPump.T_a,0.0);
+val(outerPump.T_a,1.5);
+val(outerPump.T_b,0.0);
+val(outerPump.T_b,1.5);
+val(outerPump.dT,0.0);
+val(outerPump.dT,1.5);
+val(outerPump.flowPort_a.h,0.0);
+val(outerPump.flowPort_a.h,1.5);
+val(outerPump.flowPort_a.H_flow,0.0);
+val(outerPump.flowPort_a.H_flow,1.5);
+val(outerPump.flowPort_b.h,0.0);
+val(outerPump.flowPort_b.h,1.5);
+val(outerPump.flowPort_b.H_flow,0.0);
+val(outerPump.flowPort_b.H_flow,1.5);
+val(ambient2.T_port,0.0);
+val(ambient2.T_port,1.5);
+val(ambient2.flowPort.h,0.0);
+val(ambient2.flowPort.h,1.5);
+val(ambient2.flowPort.H_flow,0.0);
+val(ambient2.flowPort.H_flow,1.5);
+val(thermalConductor.Q_flow,0.0);
+val(thermalConductor.Q_flow,1.5);
+val(thermalConductor.dT,0.0);
+val(thermalConductor.dT,1.5);
+val(thermalConductor.port_a.T,0.0);
+val(thermalConductor.port_a.T,1.5);
+val(thermalConductor.port_a.Q_flow,0.0);
+val(thermalConductor.port_a.Q_flow,1.5);
+val(thermalConductor.port_b.T,0.0);
+val(thermalConductor.port_b.T,1.5);
+val(thermalConductor.port_b.Q_flow,0.0);
+val(thermalConductor.port_b.Q_flow,1.5);
+val(heatCapacitor.T,0.0);
+val(heatCapacitor.T,1.5);
+val(der(heatCapacitor.T),0.0);
+val(der(heatCapacitor.T),1.5);
+val(heatCapacitor.der_T,0.0);
+val(heatCapacitor.der_T,1.5);
+val(heatCapacitor.port.T,0.0);
+val(heatCapacitor.port.T,1.5);
+val(heatCapacitor.port.Q_flow,0.0);
+val(heatCapacitor.port.Q_flow,1.5);
+val(prescribedHeatFlow.port.T,0.0);
+val(prescribedHeatFlow.port.T,1.5);
+val(prescribedHeatFlow.port.Q_flow,0.0);
+val(prescribedHeatFlow.port.Q_flow,1.5);
+val(pipe1.Q_flow,0.0);
+val(pipe1.Q_flow,1.5);
+val(pipe1.T,0.0);
+val(pipe1.T,1.5);
+val(der(pipe1.T),0.0);
+val(der(pipe1.T),1.5);
+val(pipe1.T_a,0.0);
+val(pipe1.T_a,1.5);
+val(pipe1.T_b,0.0);
+val(pipe1.T_b,1.5);
+val(pipe1.dT,0.0);
+val(pipe1.dT,1.5);
+val(pipe1.flowPort_a.h,0.0);
+val(pipe1.flowPort_a.h,1.5);
+val(pipe1.flowPort_a.H_flow,0.0);
+val(pipe1.flowPort_a.H_flow,1.5);
+val(pipe1.flowPort_b.h,0.0);
+val(pipe1.flowPort_b.h,1.5);
+val(pipe1.flowPort_b.H_flow,0.0);
+val(pipe1.flowPort_b.H_flow,1.5);
+val(pipe1.heatPort.T,0.0);
+val(pipe1.heatPort.T,1.5);
+val(pipe1.heatPort.Q_flow,0.0);
+val(pipe1.heatPort.Q_flow,1.5);
+val(absolutePressure.flowPort.h,0.0);
+val(absolutePressure.flowPort.h,1.5);
+val(innerPump.T,0.0);
+val(innerPump.T,1.5);
+val(innerPump.T_a,0.0);
+val(innerPump.T_a,1.5);
+val(innerPump.T_b,0.0);
+val(innerPump.T_b,1.5);
+val(innerPump.dT,0.0);
+val(innerPump.dT,1.5);
+val(innerPump.flowPort_a.h,0.0);
+val(innerPump.flowPort_a.h,1.5);
+val(innerPump.flowPort_a.H_flow,0.0);
+val(innerPump.flowPort_a.H_flow,1.5);
+val(innerPump.flowPort_b.h,0.0);
+val(innerPump.flowPort_b.h,1.5);
+val(innerPump.flowPort_b.H_flow,0.0);
+val(innerPump.flowPort_b.H_flow,1.5);
+val(outerPipe.Q_flow,0.0);
+val(outerPipe.Q_flow,1.5);
+val(outerPipe.T,0.0);
+val(outerPipe.T,1.5);
+val(der(outerPipe.T),0.0);
+val(der(outerPipe.T),1.5);
+val(outerPipe.T_a,0.0);
+val(outerPipe.T_a,1.5);
+val(outerPipe.T_b,0.0);
+val(outerPipe.T_b,1.5);
+val(outerPipe.dT,0.0);
+val(outerPipe.dT,1.5);
+val(outerPipe.flowPort_a.h,0.0);
+val(outerPipe.flowPort_a.h,1.5);
+val(outerPipe.flowPort_a.H_flow,0.0);
+val(outerPipe.flowPort_a.H_flow,1.5);
+val(outerPipe.flowPort_b.h,0.0);
+val(outerPipe.flowPort_b.h,1.5);
+val(outerPipe.flowPort_b.H_flow,0.0);
+val(outerPipe.flowPort_b.H_flow,1.5);
+val(outerPipe.heatPort.T,0.0);
+val(outerPipe.heatPort.T,1.5);
+val(outerPipe.heatPort.Q_flow,0.0);
+val(outerPipe.heatPort.Q_flow,1.5);
+val(innerPipe.Q_flow,0.0);
+val(innerPipe.Q_flow,1.5);
+val(innerPipe.T,0.0);
+val(innerPipe.T,1.5);
+val(der(innerPipe.T),0.0);
+val(der(innerPipe.T),1.5);
+val(innerPipe.T_a,0.0);
+val(innerPipe.T_a,1.5);
+val(innerPipe.T_b,0.0);
+val(innerPipe.T_b,1.5);
+val(innerPipe.dT,0.0);
+val(innerPipe.dT,1.5);
+val(innerPipe.flowPort_a.h,0.0);
+val(innerPipe.flowPort_a.h,1.5);
+val(innerPipe.flowPort_a.H_flow,0.0);
+val(innerPipe.flowPort_a.H_flow,1.5);
+val(innerPipe.flowPort_b.h,0.0);
+val(innerPipe.flowPort_b.h,1.5);
+val(innerPipe.flowPort_b.H_flow,0.0);
+val(innerPipe.flowPort_b.H_flow,1.5);
+val(innerPipe.heatPort.T,0.0);
+val(innerPipe.heatPort.T,1.5);
+val(innerPipe.heatPort.Q_flow,0.0);
+val(innerPipe.heatPort.Q_flow,1.5);
+val(innerConvection.Q_flow,0.0);
+val(innerConvection.Q_flow,1.5);
+val(innerConvection.dT,0.0);
+val(innerConvection.dT,1.5);
+val(innerConvection.solid.T,0.0);
+val(innerConvection.solid.T,1.5);
+val(innerConvection.solid.Q_flow,0.0);
+val(innerConvection.solid.Q_flow,1.5);
+val(innerConvection.fluid.T,0.0);
+val(innerConvection.fluid.T,1.5);
+val(innerConvection.fluid.Q_flow,0.0);
+val(innerConvection.fluid.Q_flow,1.5);
+val(outerConvection.Q_flow,0.0);
+val(outerConvection.Q_flow,1.5);
+val(outerConvection.dT,0.0);
+val(outerConvection.dT,1.5);
+val(outerConvection.solid.T,0.0);
+val(outerConvection.solid.T,1.5);
+val(outerConvection.solid.Q_flow,0.0);
+val(outerConvection.solid.Q_flow,1.5);
+val(outerConvection.fluid.T,0.0);
+val(outerConvection.fluid.T,1.5);
+val(outerConvection.fluid.Q_flow,0.0);
+val(outerConvection.fluid.Q_flow,1.5);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 36.6396102905
+// 0.0
+// 9.74418449402
+// 0.0
+// 9.27152442932
+// 0.0
+// 8.90981483459
+// 0.0
+// 8.71408843994
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 0.0
+// 0.0
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 293.149993896
+// 301.864074707
+// 293.149993896
+// 301.864074707
+// 293.149993896
+// 301.864074707
+// 0.0
+// 9.74418449402
+// 0.0
+// 9.74418449402
+// 293.149993896
+// 329.789611816
+// 0.0
+// 9.74418449402
+// 293.149993896
+// 320.045440674
+// -0
+// -9.74418449402
+// 293.149993896
+// 329.789611816
+// 200.0
+// 5.11631536484
+// 200.0
+// 5.11631536484
+// 293.149993896
+// 329.789611816
+// 10.0
+// 0.255815774202
+// 293.149993896
+// 329.789611816
+// -10.0
+// -10.0
+// 0.0
+// 9.74418449402
+// 293.149993896
+// 320.045440674
+// -0
+// 4.7265996933
+// 293.149993896
+// 310.773895264
+// 293.149993896
+// 320.045440674
+// 0.0
+// 9.27152442932
+// 293.149993896
+// 310.773895264
+// 293.149993896
+// 310.773895264
+// 293.149993896
+// 320.045440674
+// -293.149993896
+// -320.045440674
+// 293.149993896
+// 320.045440674
+// 0.0
+// 9.74418449402
+// 293.149993896
+// 310.773895264
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 320.045440674
+// 0.0
+// 0.0
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 320.045440674
+// -293.149993896
+// -320.045440674
+// 0.0
+// 8.90981483459
+// 293.149993896
+// 301.864074707
+// 0.0
+// 1.95727145672
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 301.864074707
+// 0.0
+// 8.71408843994
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 301.864074707
+// -293.149993896
+// -301.864074707
+// 293.149993896
+// 301.864074707
+// -0
+// 8.90981483459
+// 0.0
+// -8.90981483459
+// 293.149993896
+// 310.773895264
+// 0.0
+// 3.61709070206
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 310.773895264
+// 0.0
+// -9.27152442932
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 320.045440674
+// 293.149993896
+// 310.773895264
+// -293.149993896
+// -310.773895264
+// 293.149993896
+// 310.773895264
+// 0.0
+// -8.90981483459
+// 0.0
+// -8.90981483459
+// 0.0
+// -4.4549074173
+// 293.149993896
+// 306.319000244
+// 0.0
+// -8.90981483459
+// 293.149993896
+// 310.773895264
+// -0
+// 8.90981483459
+// -0
+// 8.90981483459
+// 0.0
+// 4.4549074173
+// 293.149993896
+// 306.319000244
+// -0
+// 8.90981483459
+// 293.149993896
+// 301.864074707
+// 0.0
+// -8.90981483459
+// endResult

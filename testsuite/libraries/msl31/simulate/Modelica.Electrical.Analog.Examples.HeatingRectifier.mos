@@ -1,0 +1,191 @@
+// name:     Modelica.Electrical.Analog.Examples.HeatingRectifier
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingRectifier_* Modelica.Electrical.Analog.Examples.HeatingRectifier Modelica.Electrical.Analog.Examples.HeatingRectifier.exe Modelica.Electrical.Analog.Examples.HeatingRectifier.cpp Modelica.Electrical.Analog.Examples.HeatingRectifier.makefile Modelica.Electrical.Analog.Examples.HeatingRectifier.libs Modelica.Electrical.Analog.Examples.HeatingRectifier.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Analog.Examples.HeatingRectifier);
+val(HeatingDiode1.v,0.0);
+val(HeatingDiode1.v,5.0);
+val(HeatingDiode1.i,0.0);
+val(HeatingDiode1.i,5.0);
+val(HeatingDiode1.p.v,0.0);
+val(HeatingDiode1.p.v,5.0);
+val(HeatingDiode1.p.i,0.0);
+val(HeatingDiode1.p.i,5.0);
+val(HeatingDiode1.n.v,0.0);
+val(HeatingDiode1.n.v,5.0);
+val(HeatingDiode1.n.i,0.0);
+val(HeatingDiode1.n.i,5.0);
+val(HeatingDiode1.heatPort.T,0.0);
+val(HeatingDiode1.heatPort.T,5.0);
+val(HeatingDiode1.heatPort.Q_flow,0.0);
+val(HeatingDiode1.heatPort.Q_flow,5.0);
+val(HeatingDiode1.LossPower,0.0);
+val(HeatingDiode1.LossPower,5.0);
+val(HeatingDiode1.T_heatPort,0.0);
+val(HeatingDiode1.T_heatPort,5.0);
+val(HeatingDiode1.vt_t,0.0);
+val(HeatingDiode1.vt_t,5.0);
+val(HeatingDiode1.id,0.0);
+val(HeatingDiode1.id,5.0);
+val(G.p.i,0.0);
+val(G.p.i,5.0);
+val(SineVoltage1.v,0.0);
+val(SineVoltage1.v,5.0);
+val(SineVoltage1.i,0.0);
+val(SineVoltage1.i,5.0);
+val(SineVoltage1.p.v,0.0);
+val(SineVoltage1.p.v,5.0);
+val(SineVoltage1.p.i,0.0);
+val(SineVoltage1.p.i,5.0);
+val(SineVoltage1.n.i,0.0);
+val(SineVoltage1.n.i,5.0);
+val(SineVoltage1.signalSource.y,0.0);
+val(SineVoltage1.signalSource.y,5.0);
+val(Capacitor1.v,0.0);
+val(Capacitor1.v,5.0);
+val(der(Capacitor1.v),0.0);
+val(der(Capacitor1.v),5.0);
+val(Capacitor1.i,0.0);
+val(Capacitor1.i,5.0);
+val(Capacitor1.p.v,0.0);
+val(Capacitor1.p.v,5.0);
+val(Capacitor1.p.i,0.0);
+val(Capacitor1.p.i,5.0);
+val(Capacitor1.n.i,0.0);
+val(Capacitor1.n.i,5.0);
+val(HeatCapacitor1.T,0.0);
+val(HeatCapacitor1.T,5.0);
+val(der(HeatCapacitor1.T),0.0);
+val(der(HeatCapacitor1.T),5.0);
+val(HeatCapacitor1.der_T,0.0);
+val(HeatCapacitor1.der_T,5.0);
+val(HeatCapacitor1.port.T,0.0);
+val(HeatCapacitor1.port.T,5.0);
+val(HeatCapacitor1.port.Q_flow,0.0);
+val(HeatCapacitor1.port.Q_flow,5.0);
+val(ThermalConductor1.Q_flow,0.0);
+val(ThermalConductor1.Q_flow,5.0);
+val(ThermalConductor1.dT,0.0);
+val(ThermalConductor1.dT,5.0);
+val(ThermalConductor1.port_a.T,0.0);
+val(ThermalConductor1.port_a.T,5.0);
+val(ThermalConductor1.port_a.Q_flow,0.0);
+val(ThermalConductor1.port_a.Q_flow,5.0);
+val(ThermalConductor1.port_b.T,0.0);
+val(ThermalConductor1.port_b.T,5.0);
+val(ThermalConductor1.port_b.Q_flow,0.0);
+val(ThermalConductor1.port_b.Q_flow,5.0);
+val(R.v,0.0);
+val(R.v,5.0);
+val(R.i,0.0);
+val(R.i,5.0);
+val(R.p.v,0.0);
+val(R.p.v,5.0);
+val(R.p.i,0.0);
+val(R.p.i,5.0);
+val(R.n.i,0.0);
+val(R.n.i,5.0);
+val(R.LossPower,0.0);
+val(R.LossPower,5.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.HeatingRectifier', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// -0.309362351894
+// 0.0
+// -3.97986042344e-07
+// 0.0
+// 1.65389213826e-14
+// 0.0
+// -3.97986042344e-07
+// 0.0
+// 0.309362351894
+// -0
+// 3.97986042344e-07
+// 293.149993896
+// 294.192840576
+// -0
+// -1.23121893125e-07
+// 0.0
+// 1.23121893125e-07
+// 293.149993896
+// 294.192840576
+// 0.0252617523074
+// 0.0253516174853
+// 0.0
+// -0.99999499321
+// 0.0
+// 2.32857298134e-17
+// 0.0
+// 1.65389213826e-14
+// -0
+// 3.97986042344e-07
+// 0.0
+// 1.65389213826e-14
+// -0
+// 3.97986042344e-07
+// 0.0
+// -3.97986042344e-07
+// 0.0
+// 1.65389213826e-14
+// 0.0
+// 0.309362351894
+// 0.0
+// -0.309362739325
+// 0.0
+// -0.309362739325
+// 0.0
+// 0.309362351894
+// 0.0
+// -0.309362739325
+// -0
+// 0.309362739325
+// 293.149993896
+// 294.192840576
+// 0.0
+// 1.23121893125e-07
+// 0.0
+// 1.23121893125e-07
+// 293.149993896
+// 294.192840576
+// 0.0
+// 1.23121893125e-07
+// 0.0
+// 1.23121893125e-07
+// 0.0
+// 1.23121708384e-08
+// 293.149993896
+// 294.192840576
+// 0.0
+// 1.23121893125e-07
+// 293.149993896
+// 294.192840576
+// -0
+// -1.23121893125e-07
+// 0.0
+// 0.309362351894
+// 0.0
+// 0.309362351894
+// 0.0
+// 0.309362351894
+// 0.0
+// 0.309362351894
+// -0
+// -0.309362351894
+// 0.0
+// 0.095705062151
+// endResult

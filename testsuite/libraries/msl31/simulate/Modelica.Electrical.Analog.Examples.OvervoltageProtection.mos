@@ -1,0 +1,179 @@
+// name:     Modelica.Electrical.Analog.Examples.OvervoltageProtection
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.OvervoltageProtection_* Modelica.Electrical.Analog.Examples.OvervoltageProtection Modelica.Electrical.Analog.Examples.OvervoltageProtection.exe Modelica.Electrical.Analog.Examples.OvervoltageProtection.cpp Modelica.Electrical.Analog.Examples.OvervoltageProtection.makefile Modelica.Electrical.Analog.Examples.OvervoltageProtection.libs Modelica.Electrical.Analog.Examples.OvervoltageProtection.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Analog.Examples.OvervoltageProtection);
+val(sineVoltage.v,0.0);
+val(sineVoltage.v,0.40000000596);
+val(sineVoltage.i,0.0);
+val(sineVoltage.i,0.40000000596);
+val(sineVoltage.p.v,0.0);
+val(sineVoltage.p.v,0.40000000596);
+val(sineVoltage.p.i,0.0);
+val(sineVoltage.p.i,0.40000000596);
+val(sineVoltage.n.i,0.0);
+val(sineVoltage.n.i,0.40000000596);
+val(sineVoltage.signalSource.y,0.0);
+val(sineVoltage.signalSource.y,0.40000000596);
+val(Rv.v,0.0);
+val(Rv.v,0.40000000596);
+val(Rv.i,0.0);
+val(Rv.i,0.40000000596);
+val(Rv.p.v,0.0);
+val(Rv.p.v,0.40000000596);
+val(Rv.p.i,0.0);
+val(Rv.p.i,0.40000000596);
+val(Rv.n.v,0.0);
+val(Rv.n.v,0.40000000596);
+val(Rv.n.i,0.0);
+val(Rv.n.i,0.40000000596);
+val(Rv.LossPower,0.0);
+val(Rv.LossPower,0.40000000596);
+val(RL.v,0.0);
+val(RL.v,0.40000000596);
+val(RL.i,0.0);
+val(RL.i,0.40000000596);
+val(RL.p.v,0.0);
+val(RL.p.v,0.40000000596);
+val(RL.p.i,0.0);
+val(RL.p.i,0.40000000596);
+val(RL.n.i,0.0);
+val(RL.n.i,0.40000000596);
+val(RL.LossPower,0.0);
+val(RL.LossPower,0.40000000596);
+val(zDiode_1.v,0.0);
+val(zDiode_1.v,0.40000000596);
+val(zDiode_1.i,0.0);
+val(zDiode_1.i,0.40000000596);
+val(zDiode_1.p.i,0.0);
+val(zDiode_1.p.i,0.40000000596);
+val(zDiode_1.n.v,0.0);
+val(zDiode_1.n.v,0.40000000596);
+val(zDiode_1.n.i,0.0);
+val(zDiode_1.n.i,0.40000000596);
+val(zDiode_1.LossPower,0.0);
+val(zDiode_1.LossPower,0.40000000596);
+val(zDiode_2.v,0.0);
+val(zDiode_2.v,0.40000000596);
+val(zDiode_2.i,0.0);
+val(zDiode_2.i,0.40000000596);
+val(zDiode_2.p.v,0.0);
+val(zDiode_2.p.v,0.40000000596);
+val(zDiode_2.p.i,0.0);
+val(zDiode_2.p.i,0.40000000596);
+val(zDiode_2.n.v,0.0);
+val(zDiode_2.n.v,0.40000000596);
+val(zDiode_2.n.i,0.0);
+val(zDiode_2.n.i,0.40000000596);
+val(zDiode_2.LossPower,0.0);
+val(zDiode_2.LossPower,0.40000000596);
+val(ground.p.i,0.0);
+val(ground.p.i,0.40000000596);
+val(CL.v,0.0);
+val(CL.v,0.40000000596);
+val(der(CL.v),0.0);
+val(der(CL.v),0.40000000596);
+val(CL.i,0.0);
+val(CL.i,0.40000000596);
+val(CL.p.v,0.0);
+val(CL.p.v,0.40000000596);
+val(CL.p.i,0.0);
+val(CL.p.i,0.40000000596);
+val(CL.n.i,0.0);
+val(CL.n.i,0.40000000596);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.OvervoltageProtection_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.OvervoltageProtection', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 6.61556855304e-14
+// -0
+// -3.07849441015e-05
+// 0.0
+// 6.61556855304e-14
+// -0
+// -3.07849441015e-05
+// 0.0
+// 3.07849441015e-05
+// 0.0
+// 6.61556855304e-14
+// 0.0
+// 0.000615698867477
+// 0.0
+// 3.07849441015e-05
+// 0.0
+// 6.61556855304e-14
+// 0.0
+// 3.07849441015e-05
+// 0.0
+// -0.000615698867477
+// -0
+// -3.07849441015e-05
+// 0.0
+// 1.89542568307e-08
+// 0.0
+// -0.000615698867477
+// 0.0
+// -3.07849433057e-07
+// 0.0
+// -0.000615698867477
+// 0.0
+// -3.07849433057e-07
+// -0
+// 3.07849433057e-07
+// 0.0
+// 1.89542562201e-10
+// 0.0
+// 0.000306665286189
+// -0
+// 7.69916308485e-09
+// -0
+// 7.69916308485e-09
+// -0
+// -0.000306665286189
+// 0.0
+// -7.69916308485e-09
+// -0
+// 2.36106598682e-12
+// 0.0
+// -0.000309033610392
+// 0.0
+// -7.69916308485e-09
+// 0.0
+// -0.000615698867477
+// 0.0
+// -7.69916308485e-09
+// -0
+// -0.000306665286189
+// -0
+// 7.69916308485e-09
+// 0.0
+// 2.37929988212e-12
+// -0
+// -4.46677530779e-23
+// 0.0
+// -0.000615698867477
+// -0
+// 311.004943848
+// -0
+// 3.11004914693e-05
+// 0.0
+// -0.000615698867477
+// -0
+// 3.11004914693e-05
+// 0.0
+// -3.11004914693e-05
+// endResult

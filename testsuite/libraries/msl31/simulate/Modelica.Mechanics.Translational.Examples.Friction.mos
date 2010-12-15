@@ -11,13 +11,162 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Friction);
-
-val(der(mass.s),0.0);
-val(der(mass.v),0.0);
+val(stop1.v_relfric,0.0);
+val(stop1.v_relfric,5.0);
+val(stop1.a_relfric,0.0);
+val(stop1.a_relfric,5.0);
+val(stop1.f,0.0);
+val(stop1.f,5.0);
+val(stop1.free,0.0);
+val(stop1.free,5.0);
+val(stop1.sa,0.0);
+val(stop1.sa,5.0);
+val(stop1.startForward,0.0);
+val(stop1.startForward,5.0);
+val(stop1.startBackward,0.0);
+val(stop1.startBackward,5.0);
+val(stop1.locked,0.0);
+val(stop1.locked,5.0);
+val(stop1.s,0.0);
+val(stop1.s,5.0);
 val(der(stop1.s),0.0);
+val(der(stop1.s),5.0);
+val(stop1.flange_a.s,0.0);
+val(stop1.flange_a.s,5.0);
+val(stop1.flange_a.f,0.0);
+val(stop1.flange_a.f,5.0);
+val(stop1.flange_b.s,0.0);
+val(stop1.flange_b.s,5.0);
+val(stop1.mode,0.0);
+val(stop1.mode,5.0);
+val(stop1.v,0.0);
+val(stop1.v,5.0);
 val(der(stop1.v),0.0);
+val(der(stop1.v),5.0);
+val(stop1.a,0.0);
+val(stop1.a,5.0);
+val(stop1.stopped,0.0);
+val(stop1.stopped,5.0);
+val(force.s,0.0);
+val(force.s,5.0);
+val(force.flange.s,0.0);
+val(force.flange.s,5.0);
+val(force.flange.f,0.0);
+val(force.flange.f,5.0);
+val(force.f,0.0);
+val(force.f,5.0);
+val(sineForce.y,0.0);
+val(sineForce.y,5.0);
+val(stop2.v_relfric,0.0);
+val(stop2.v_relfric,5.0);
+val(stop2.a_relfric,0.0);
+val(stop2.a_relfric,5.0);
+val(stop2.f,0.0);
+val(stop2.f,5.0);
+val(stop2.free,0.0);
+val(stop2.free,5.0);
+val(stop2.sa,0.0);
+val(stop2.sa,5.0);
+val(stop2.startForward,0.0);
+val(stop2.startForward,5.0);
+val(stop2.startBackward,0.0);
+val(stop2.startBackward,5.0);
+val(stop2.locked,0.0);
+val(stop2.locked,5.0);
+val(stop2.s,0.0);
+val(stop2.s,5.0);
 val(der(stop2.s),0.0);
+val(der(stop2.s),5.0);
+val(stop2.flange_a.s,0.0);
+val(stop2.flange_a.s,5.0);
+val(stop2.flange_a.f,0.0);
+val(stop2.flange_a.f,5.0);
+val(stop2.flange_b.s,0.0);
+val(stop2.flange_b.s,5.0);
+val(stop2.mode,0.0);
+val(stop2.mode,5.0);
+val(stop2.v,0.0);
+val(stop2.v,5.0);
 val(der(stop2.v),0.0);
+val(der(stop2.v),5.0);
+val(stop2.a,0.0);
+val(stop2.a,5.0);
+val(stop2.stopped,0.0);
+val(stop2.stopped,5.0);
+val(spring.flange_a.f,0.0);
+val(spring.flange_a.f,5.0);
+val(spring.flange_b.s,0.0);
+val(spring.flange_b.s,5.0);
+val(spring.flange_b.f,0.0);
+val(spring.flange_b.f,5.0);
+val(spring.s_rel,0.0);
+val(spring.s_rel,5.0);
+val(spring.f,0.0);
+val(spring.f,5.0);
+val(fixed2.flange.f,0.0);
+val(fixed2.flange.f,5.0);
+val(force2.s,0.0);
+val(force2.s,5.0);
+val(force2.flange.s,0.0);
+val(force2.flange.s,5.0);
+val(force2.flange.f,0.0);
+val(force2.flange.f,5.0);
+val(force2.f,0.0);
+val(force2.f,5.0);
+val(mass.s,0.0);
+val(mass.s,5.0);
+val(der(mass.s),0.0);
+val(der(mass.s),5.0);
+val(mass.flange_a.s,0.0);
+val(mass.flange_a.s,5.0);
+val(mass.flange_a.f,0.0);
+val(mass.flange_a.f,5.0);
+val(mass.flange_b.s,0.0);
+val(mass.flange_b.s,5.0);
+val(mass.flange_b.f,0.0);
+val(mass.flange_b.f,5.0);
+val(mass.v,0.0);
+val(mass.v,5.0);
+val(der(mass.v),0.0);
+val(der(mass.v),5.0);
+val(mass.a,0.0);
+val(mass.a,5.0);
+val(supportFriction.flange_a.s,0.0);
+val(supportFriction.flange_a.s,5.0);
+val(supportFriction.flange_a.f,0.0);
+val(supportFriction.flange_a.f,5.0);
+val(supportFriction.flange_b.s,0.0);
+val(supportFriction.flange_b.s,5.0);
+val(supportFriction.s_a,0.0);
+val(supportFriction.s_a,5.0);
+val(supportFriction.s_b,0.0);
+val(supportFriction.s_b,5.0);
+val(supportFriction.v_relfric,0.0);
+val(supportFriction.v_relfric,5.0);
+val(supportFriction.a_relfric,0.0);
+val(supportFriction.a_relfric,5.0);
+val(supportFriction.sa,0.0);
+val(supportFriction.sa,5.0);
+val(supportFriction.startForward,0.0);
+val(supportFriction.startForward,5.0);
+val(supportFriction.startBackward,0.0);
+val(supportFriction.startBackward,5.0);
+val(supportFriction.locked,0.0);
+val(supportFriction.locked,5.0);
+val(supportFriction.mode,0.0);
+val(supportFriction.mode,5.0);
+val(supportFriction.s,0.0);
+val(supportFriction.s,5.0);
+val(der(supportFriction.s),0.0);
+val(der(supportFriction.s),5.0);
+val(supportFriction.f,0.0);
+val(supportFriction.f,5.0);
+val(supportFriction.v,0.0);
+val(supportFriction.v,5.0);
+val(der(supportFriction.v),0.0);
+val(der(supportFriction.v),5.0);
+val(supportFriction.a,0.0);
+val(supportFriction.a,5.0);
 
 // Result:
 // true
@@ -28,9 +177,159 @@ val(der(stop2.v),0.0);
 //     messages = ""
 // end SimulationResult;
 // 0.0
+// 6.86482858658
+// 0.0
+// 13.1351604462
+// 0.0
+// 11.8648395538
 // 0.0
 // 0.0
+// 0.0
+// 28.1501598358
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.76591539383
+// 0.0
+// 6.86482858658
+// -0.5
+// 1.26591539383
+// 0.0
+// 25.0
+// 0.5
+// 2.26591539383
+// 0.0
+// 1.0
+// 0.0
+// 6.86482858658
+// 0.0
+// 13.1351604462
+// 0.0
+// 13.1351604462
+// 0.0
+// 0.0
+// -0.5
+// 1.26591539383
+// -0.5
+// 1.26591539383
+// -0
+// -25.0
+// 0.0
+// 25.0
+// 0.0
+// 25.0
+// -5.0
+// -1.04803069001e-10
+// -116.999771118
+// 0.0
+// -8.00022697449
+// -1.35161828995
+// 0.0
+// 0.0
+// -125.007774353
+// -1.35161828995
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// -0.247296765447
+// -5.0
+// -1.04803069001e-10
+// -0.5
+// -0.747296750546
+// -125.0
+// -1.35161828995
+// 0.5
+// 0.252703249454
+// -1.0
 // 0.0
 // -5.0
-// -117.0
+// -1.04803069001e-10
+// -116.999771118
+// 0.0
+// -116.999771118
+// 0.0
+// 0.0
+// 0.0
+// -125.0
+// -1.35161828995
+// -0.5
+// -0.747296750546
+// 125.0
+// 1.35161828995
+// 1.25
+// 1.00270318985
+// 125.0
+// 1.35161828995
+// 125.0
+// 1.35161828995
+// -0.5
+// 1.24486792088
+// -0.5
+// 1.24486792088
+// -0
+// -25.0
+// 0.0
+// 25.0
+// 0.0
+// 1.74486792088
+// 0.0
+// 6.84276199341
+// -0.5
+// 1.24486792088
+// 0.0
+// 25.0
+// 0.5
+// 2.24486780167
+// -0
+// -11.8427734375
+// 0.0
+// 6.84276199341
+// 0.0
+// 13.1572265625
+// 0.0
+// 13.1572265625
+// 0.5
+// 2.24486780167
+// 0.0
+// 11.8427734375
+// 0.5
+// 2.24486780167
+// 0.5
+// 2.24486780167
+// 0.5
+// 2.24486780167
+// 0.0
+// 6.84276199341
+// 0.0
+// 13.1572265625
+// 0.0
+// 28.1572265625
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.5
+// 2.24486780167
+// 0.0
+// 6.84276199341
+// 0.0
+// 11.8427734375
+// 0.0
+// 6.84276199341
+// 0.0
+// 13.1572265625
+// 0.0
+// 13.1572265625
 // endResult

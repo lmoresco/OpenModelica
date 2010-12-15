@@ -1,0 +1,223 @@
+// name:     Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor_* Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.exe Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.cpp Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.makefile Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.libs Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor);
+val(ground_m.port.Phi,0.0);
+val(ground_m.port.Phi,0.10000000149);
+val(source.v,0.0);
+val(source.v,0.10000000149);
+val(source.i,0.0);
+val(source.i,0.10000000149);
+val(source.p.v,0.0);
+val(source.p.v,0.10000000149);
+val(source.p.i,0.0);
+val(source.p.i,0.10000000149);
+val(source.n.i,0.0);
+val(source.n.i,0.10000000149);
+val(source.signalSource.y,0.0);
+val(source.signalSource.y,0.10000000149);
+val(r.v,0.0);
+val(r.v,0.10000000149);
+val(r.i,0.0);
+val(r.i,0.10000000149);
+val(r.p.v,0.0);
+val(r.p.v,0.10000000149);
+val(r.p.i,0.0);
+val(r.p.i,0.10000000149);
+val(r.n.v,0.0);
+val(r.n.v,0.10000000149);
+val(r.n.i,0.0);
+val(r.n.i,0.10000000149);
+val(r.LossPower,0.0);
+val(r.LossPower,0.10000000149);
+val(coil.port_p.V_m,0.0);
+val(coil.port_p.V_m,0.10000000149);
+val(coil.port_p.Phi,0.0);
+val(coil.port_p.Phi,0.10000000149);
+val(coil.port_n.Phi,0.0);
+val(coil.port_n.Phi,0.10000000149);
+val(coil.p.v,0.0);
+val(coil.p.v,0.10000000149);
+val(coil.p.i,0.0);
+val(coil.p.i,0.10000000149);
+val(coil.n.i,0.0);
+val(coil.n.i,0.10000000149);
+val(coil.v,0.0);
+val(coil.v,0.10000000149);
+val(coil.i,0.0);
+val(coil.i,0.10000000149);
+val(coil.V_m,0.0);
+val(coil.V_m,0.10000000149);
+val(coil.Phi,0.0);
+val(coil.Phi,0.10000000149);
+val(der(coil.Phi),0.0);
+val(der(coil.Phi),0.10000000149);
+val(coil.Psi,0.0);
+val(coil.Psi,0.10000000149);
+val(coil.L_stat,0.0);
+val(coil.L_stat,0.10000000149);
+val(r_mLeak.port_p.V_m,0.0);
+val(r_mLeak.port_p.V_m,0.10000000149);
+val(r_mLeak.port_p.Phi,0.0);
+val(r_mLeak.port_p.Phi,0.10000000149);
+val(r_mLeak.port_n.Phi,0.0);
+val(r_mLeak.port_n.Phi,0.10000000149);
+val(r_mLeak.V_m,0.0);
+val(r_mLeak.V_m,0.10000000149);
+val(r_mLeak.Phi,0.0);
+val(r_mLeak.Phi,0.10000000149);
+val(r_mAirPar.port_p.V_m,0.0);
+val(r_mAirPar.port_p.V_m,0.10000000149);
+val(r_mAirPar.port_p.Phi,0.0);
+val(r_mAirPar.port_p.Phi,0.10000000149);
+val(r_mAirPar.port_n.V_m,0.0);
+val(r_mAirPar.port_n.V_m,0.10000000149);
+val(r_mAirPar.port_n.Phi,0.0);
+val(r_mAirPar.port_n.Phi,0.10000000149);
+val(r_mAirPar.V_m,0.0);
+val(r_mAirPar.V_m,0.10000000149);
+val(r_mAirPar.Phi,0.0);
+val(r_mAirPar.Phi,0.10000000149);
+val(r_mAirPar.B,0.0);
+val(r_mAirPar.B,0.10000000149);
+val(r_mAirPar.H,0.0);
+val(r_mAirPar.H,0.10000000149);
+val(r_mFe.port_p.V_m,0.0);
+val(r_mFe.port_p.V_m,0.10000000149);
+val(r_mFe.port_p.Phi,0.0);
+val(r_mFe.port_p.Phi,0.10000000149);
+val(r_mFe.port_n.Phi,0.0);
+val(r_mFe.port_n.Phi,0.10000000149);
+val(r_mFe.V_m,0.0);
+val(r_mFe.V_m,0.10000000149);
+val(r_mFe.Phi,0.0);
+val(r_mFe.Phi,0.10000000149);
+val(r_mFe.R_m,0.0);
+val(r_mFe.R_m,0.10000000149);
+val(r_mFe.G_m,0.0);
+val(r_mFe.G_m,0.10000000149);
+val(r_mFe.B,0.0);
+val(r_mFe.B,0.10000000149);
+val(r_mFe.H,0.0);
+val(r_mFe.H,0.10000000149);
+val(r_mFe.mu_r,0.0);
+val(r_mFe.mu_r,0.10000000149);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 325.269134521
+// 325.269134521
+// 0.0
+// -0.0130533836782
+// 325.269134521
+// 325.269134521
+// 0.0
+// -0.0130533836782
+// -0
+// 0.0130533836782
+// 325.269134521
+// 325.269134521
+// -0
+// 0.0979003757238
+// -0
+// 0.0130533836782
+// 325.269134521
+// 325.269134521
+// -0
+// 0.0130533836782
+// 325.269134521
+// 325.171234131
+// 0.0
+// -0.0130533836782
+// 0.0
+// 0.00127793115098
+// -0
+// 7.83203029633
+// -0
+// -3.27357229253e-05
+// 0.0
+// 3.27357229253e-05
+// 325.269134521
+// 325.171234131
+// -0
+// 0.0130533836782
+// 0.0
+// -0.0130533836782
+// 325.269134521
+// 325.171234131
+// -0
+// 0.0130533836782
+// -0
+// 7.83203029633
+// -0
+// -3.27357229253e-05
+// -0.542115211487
+// -0.541952013969
+// -0
+// -0.0196414329112
+// 0.0
+// 1.5047005415
+// -0
+// 7.83203029633
+// -0
+// 6.52669177725e-06
+// 0.0
+// -6.52669177725e-06
+// -0
+// 7.83203029633
+// -0
+// 6.52669177725e-06
+// -0
+// 7.83203029633
+// 0.0
+// 2.62090306933e-05
+// 0.0
+// 4.494992733
+// -0
+// -2.62090306933e-05
+// -0
+// 3.33703756332
+// 0.0
+// 2.62090306933e-05
+// 0.0
+// 0.0419344492257
+// 0.0
+// 33370.375
+// 0.0
+// 4.494992733
+// 0.0
+// 2.62090306933e-05
+// -0
+// -2.62090306933e-05
+// 0.0
+// 4.494992733
+// 0.0
+// 2.62090306933e-05
+// 273588.65625
+// 171505.484375
+// 3.65512232747e-06
+// 5.83071732763e-06
+// 0.0
+// 0.0419344492257
+// 0.0
+// 17.288433075
+// 1210.0
+// 1930.21398926
+// endResult

@@ -1,0 +1,183 @@
+// name:     Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest_* Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.exe Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.cpp Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.makefile Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.libs Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);
+val(ground.p.i,0.0);
+val(ground.p.i,0.000199999994948);
+val(sineVoltage.v,0.0);
+val(sineVoltage.v,0.000199999994948);
+val(sineVoltage.i,0.0);
+val(sineVoltage.i,0.000199999994948);
+val(sineVoltage.p.v,0.0);
+val(sineVoltage.p.v,0.000199999994948);
+val(sineVoltage.p.i,0.0);
+val(sineVoltage.p.i,0.000199999994948);
+val(sineVoltage.n.i,0.0);
+val(sineVoltage.n.i,0.000199999994948);
+val(sineVoltage.signalSource.y,0.0);
+val(sineVoltage.signalSource.y,0.000199999994948);
+val(resistor.v,0.0);
+val(resistor.v,0.000199999994948);
+val(resistor.i,0.0);
+val(resistor.i,0.000199999994948);
+val(resistor.p.v,0.0);
+val(resistor.p.v,0.000199999994948);
+val(resistor.p.i,0.0);
+val(resistor.p.i,0.000199999994948);
+val(resistor.n.v,0.0);
+val(resistor.n.v,0.000199999994948);
+val(resistor.n.i,0.0);
+val(resistor.n.i,0.000199999994948);
+val(resistor.LossPower,0.0);
+val(resistor.LossPower,0.000199999994948);
+val(pulseCurrent.v,0.0);
+val(pulseCurrent.v,0.000199999994948);
+val(pulseCurrent.i,0.0);
+val(pulseCurrent.i,0.000199999994948);
+val(pulseCurrent.p.v,0.0);
+val(pulseCurrent.p.v,0.000199999994948);
+val(pulseCurrent.p.i,0.0);
+val(pulseCurrent.p.i,0.000199999994948);
+val(pulseCurrent.n.v,0.0);
+val(pulseCurrent.n.v,0.000199999994948);
+val(pulseCurrent.n.i,0.0);
+val(pulseCurrent.n.i,0.000199999994948);
+val(pulseCurrent.signalSource.y,0.0);
+val(pulseCurrent.signalSource.y,0.000199999994948);
+val(thyristor_v4_1.iGK,0.0);
+val(thyristor_v4_1.iGK,0.000199999994948);
+val(thyristor_v4_1.vGK,0.0);
+val(thyristor_v4_1.vGK,0.000199999994948);
+val(thyristor_v4_1.vAK,0.0);
+val(thyristor_v4_1.vAK,0.000199999994948);
+val(thyristor_v4_1.vControl,0.0);
+val(thyristor_v4_1.vControl,0.000199999994948);
+val(der(thyristor_v4_1.vControl),0.0);
+val(der(thyristor_v4_1.vControl),0.000199999994948);
+val(thyristor_v4_1.vContot,0.0);
+val(thyristor_v4_1.vContot,0.000199999994948);
+val(thyristor_v4_1.vConmain,0.0);
+val(thyristor_v4_1.vConmain,0.000199999994948);
+val(thyristor_v4_1.Anode.v,0.0);
+val(thyristor_v4_1.Anode.v,0.000199999994948);
+val(thyristor_v4_1.Anode.i,0.0);
+val(thyristor_v4_1.Anode.i,0.000199999994948);
+val(thyristor_v4_1.Cathode.v,0.0);
+val(thyristor_v4_1.Cathode.v,0.000199999994948);
+val(thyristor_v4_1.Cathode.i,0.0);
+val(thyristor_v4_1.Cathode.i,0.000199999994948);
+val(thyristor_v4_1.Gate.v,0.0);
+val(thyristor_v4_1.Gate.v,0.000199999994948);
+val(thyristor_v4_1.Gate.i,0.0);
+val(thyristor_v4_1.Gate.i,0.000199999994948);
+val(inductor.v,0.0);
+val(inductor.v,0.000199999994948);
+val(inductor.i,0.0);
+val(inductor.i,0.000199999994948);
+val(der(inductor.i),0.0);
+val(der(inductor.i),0.000199999994948);
+val(inductor.p.v,0.0);
+val(inductor.p.v,0.000199999994948);
+val(inductor.p.i,0.0);
+val(inductor.p.i,0.000199999994948);
+val(inductor.n.i,0.0);
+val(inductor.n.i,0.000199999994948);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 2.51757761773e-13
+// 0.0
+// 3.92219676876e-12
+// 0.0
+// 2.51757761773e-13
+// 0.0
+// 3.92219676876e-12
+// -0
+// -3.92219676876e-12
+// 0.0
+// 2.51757761773e-13
+// 0.0
+// -3.92219659529e-11
+// 0.0
+// -3.92219676876e-12
+// 0.0
+// 3.8452908484e-06
+// 0.0
+// -3.92219676876e-12
+// 0.0
+// 3.84533041142e-06
+// -0
+// 3.92219676876e-12
+// 0.0
+// 1.53836269998e-22
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 3.8452908484e-06
+// 0.0
+// 0.0
+// 0.0
+// 3.8452908484e-06
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -3.8452908484e-06
+// 0.0
+// 0.0275645125657
+// 0.0
+// -2880.30444336
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 2.51757761773e-13
+// -0
+// -3.92219676876e-12
+// 0.0
+// 3.8452908484e-06
+// -0
+// 3.92219676876e-12
+// 0.0
+// 3.8452908484e-06
+// 0.0
+// 0.0
+// 0.0
+// 3.84533041142e-06
+// 0.0
+// -3.92219676876e-12
+// 0.0
+// 1.92266511917
+// 0.0
+// 3.84533041142e-06
+// 0.0
+// -3.92219676876e-12
+// -0
+// 3.92219676876e-12
+// endResult

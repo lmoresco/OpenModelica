@@ -1,0 +1,247 @@
+// name:     Modelica.Electrical.Analog.Examples.NandGate
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.NandGate_* Modelica.Electrical.Analog.Examples.NandGate Modelica.Electrical.Analog.Examples.NandGate.exe Modelica.Electrical.Analog.Examples.NandGate.cpp Modelica.Electrical.Analog.Examples.NandGate.makefile Modelica.Electrical.Analog.Examples.NandGate.libs Modelica.Electrical.Analog.Examples.NandGate.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Analog.Examples.NandGate);
+val(VIN1.v,0.0);
+val(VIN1.v,1.00000001169e-07);
+val(VIN1.p.v,0.0);
+val(VIN1.p.v,1.00000001169e-07);
+val(VIN1.signalSource.y,0.0);
+val(VIN1.signalSource.y,1.00000001169e-07);
+val(VIN2.v,0.0);
+val(VIN2.v,1.00000001169e-07);
+val(VIN2.p.v,0.0);
+val(VIN2.p.v,1.00000001169e-07);
+val(VIN2.signalSource.y,0.0);
+val(VIN2.signalSource.y,1.00000001169e-07);
+val(VDD.v,0.0);
+val(VDD.v,1.00000001169e-07);
+val(VDD.i,0.0);
+val(VDD.i,1.00000001169e-07);
+val(VDD.p.v,0.0);
+val(VDD.p.v,1.00000001169e-07);
+val(VDD.p.i,0.0);
+val(VDD.p.i,1.00000001169e-07);
+val(VDD.n.i,0.0);
+val(VDD.n.i,1.00000001169e-07);
+val(VDD.signalSource.y,0.0);
+val(VDD.signalSource.y,1.00000001169e-07);
+val(Gnd1.p.i,0.0);
+val(Gnd1.p.i,1.00000001169e-07);
+val(Nand.TP1.D.v,0.0);
+val(Nand.TP1.D.v,1.00000001169e-07);
+val(Nand.TP1.D.i,0.0);
+val(Nand.TP1.D.i,1.00000001169e-07);
+val(Nand.TP1.G.v,0.0);
+val(Nand.TP1.G.v,1.00000001169e-07);
+val(Nand.TP1.S.v,0.0);
+val(Nand.TP1.S.v,1.00000001169e-07);
+val(Nand.TP1.S.i,0.0);
+val(Nand.TP1.S.i,1.00000001169e-07);
+val(Nand.TP1.LossPower,0.0);
+val(Nand.TP1.LossPower,1.00000001169e-07);
+val(Nand.TP2.D.v,0.0);
+val(Nand.TP2.D.v,1.00000001169e-07);
+val(Nand.TP2.D.i,0.0);
+val(Nand.TP2.D.i,1.00000001169e-07);
+val(Nand.TP2.G.v,0.0);
+val(Nand.TP2.G.v,1.00000001169e-07);
+val(Nand.TP2.S.v,0.0);
+val(Nand.TP2.S.v,1.00000001169e-07);
+val(Nand.TP2.S.i,0.0);
+val(Nand.TP2.S.i,1.00000001169e-07);
+val(Nand.TP2.LossPower,0.0);
+val(Nand.TP2.LossPower,1.00000001169e-07);
+val(Nand.TN1.D.v,0.0);
+val(Nand.TN1.D.v,1.00000001169e-07);
+val(Nand.TN1.D.i,0.0);
+val(Nand.TN1.D.i,1.00000001169e-07);
+val(Nand.TN1.G.v,0.0);
+val(Nand.TN1.G.v,1.00000001169e-07);
+val(Nand.TN1.S.v,0.0);
+val(Nand.TN1.S.v,1.00000001169e-07);
+val(Nand.TN1.S.i,0.0);
+val(Nand.TN1.S.i,1.00000001169e-07);
+val(Nand.TN1.LossPower,0.0);
+val(Nand.TN1.LossPower,1.00000001169e-07);
+val(Nand.TN2.D.v,0.0);
+val(Nand.TN2.D.v,1.00000001169e-07);
+val(Nand.TN2.D.i,0.0);
+val(Nand.TN2.D.i,1.00000001169e-07);
+val(Nand.TN2.G.v,0.0);
+val(Nand.TN2.G.v,1.00000001169e-07);
+val(Nand.TN2.S.i,0.0);
+val(Nand.TN2.S.i,1.00000001169e-07);
+val(Nand.TN2.LossPower,0.0);
+val(Nand.TN2.LossPower,1.00000001169e-07);
+val(Nand.C4.v,0.0);
+val(Nand.C4.v,1.00000001169e-07);
+val(der(Nand.C4.v),0.0);
+val(der(Nand.C4.v),1.00000001169e-07);
+val(Nand.C4.i,0.0);
+val(Nand.C4.i,1.00000001169e-07);
+val(Nand.C4.p.v,0.0);
+val(Nand.C4.p.v,1.00000001169e-07);
+val(Nand.C4.p.i,0.0);
+val(Nand.C4.p.i,1.00000001169e-07);
+val(Nand.C4.n.i,0.0);
+val(Nand.C4.n.i,1.00000001169e-07);
+val(Nand.C7.v,0.0);
+val(Nand.C7.v,1.00000001169e-07);
+val(der(Nand.C7.v),0.0);
+val(der(Nand.C7.v),1.00000001169e-07);
+val(Nand.C7.i,0.0);
+val(Nand.C7.i,1.00000001169e-07);
+val(Nand.C7.p.v,0.0);
+val(Nand.C7.p.v,1.00000001169e-07);
+val(Nand.C7.p.i,0.0);
+val(Nand.C7.p.i,1.00000001169e-07);
+val(Nand.C7.n.i,0.0);
+val(Nand.C7.n.i,1.00000001169e-07);
+val(Nand.Gnd.p.i,0.0);
+val(Nand.Gnd.p.i,1.00000001169e-07);
+val(Nand.Gnd2.p.i,0.0);
+val(Nand.Gnd2.p.i,1.00000001169e-07);
+val(Nand.Gnd3.p.i,0.0);
+val(Nand.Gnd3.p.i,1.00000001169e-07);
+val(Nand.x1.v,0.0);
+val(Nand.x1.v,1.00000001169e-07);
+val(Nand.x2.v,0.0);
+val(Nand.x2.v,1.00000001169e-07);
+val(Nand.Vdd.v,0.0);
+val(Nand.Vdd.v,1.00000001169e-07);
+val(Nand.Vdd.i,0.0);
+val(Nand.Vdd.i,1.00000001169e-07);
+val(Nand.y.v,0.0);
+val(Nand.y.v,1.00000001169e-07);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.NandGate_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.NandGate', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 3.5
+// 0.0
+// 3.5
+// 0.0
+// 3.5
+// 0.0
+// 5.0
+// -0
+// -3.94459732433e-07
+// 0.0
+// 5.0
+// -0
+// -3.94459732433e-07
+// 0.0
+// 3.94459732433e-07
+// 0.0
+// 5.0
+// -0
+// -3.94459732433e-07
+// 0.0
+// 5.0
+// 0.0
+// 4.39212648473e-08
+// 0.0
+// 3.5
+// 0.0
+// 4.99751234055
+// -0
+// -4.39212648473e-08
+// 0.0
+// 1.09257415615e-10
+// 0.0
+// 5.0
+// 0.0
+// 3.50538442717e-07
+// 0.0
+// 0.0
+// 0.0
+// 4.99751234055
+// -0
+// -3.50538442717e-07
+// 0.0
+// 8.71990535334e-10
+// 0.0
+// 4.99751234055
+// 0.0
+// 3.88963570686e-07
+// 0.0
+// 3.5
+// 0.0
+// 1.24875128269
+// -0
+// -3.88963570686e-07
+// 0.0
+// 1.45813157815e-06
+// 0.0
+// 1.24875128269
+// 0.0
+// 1.24875128904e-07
+// 0.0
+// 0.0
+// -0
+// -1.24875128904e-07
+// 0.0
+// 1.55937968316e-07
+// 0.0
+// 4.99751234055
+// -0
+// 137403.734375
+// -0
+// 5.49614931344e-09
+// 0.0
+// 4.99751234055
+// -0
+// 5.49614931344e-09
+// 0.0
+// -5.49614931344e-09
+// 0.0
+// 1.24875128269
+// -0
+// 6602211.0
+// -0
+// 2.64088441781e-07
+// 0.0
+// 1.24875128269
+// -0
+// 2.64088441781e-07
+// 0.0
+// -2.64088441781e-07
+// 0.0
+// 1.24875128904e-07
+// -0
+// 5.49614931344e-09
+// -0
+// 2.64088441781e-07
+// 0.0
+// 0.0
+// 0.0
+// 3.5
+// 0.0
+// 5.0
+// 0.0
+// 3.94459732433e-07
+// 0.0
+// 4.99751234055
+// endResult

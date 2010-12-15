@@ -11,15 +11,134 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.InitialConditions);
-
-val(der(m1.s),0.0);
-val(der(m1.v),0.0);
+val(fixed2.flange.f,0.0);
+val(fixed2.flange.f,5.0);
+val(s2.flange_a.f,0.0);
+val(s2.flange_a.f,5.0);
+val(s2.flange_b.s,0.0);
+val(s2.flange_b.s,5.0);
+val(s2.flange_b.f,0.0);
+val(s2.flange_b.f,5.0);
+val(s2.s_rel,0.0);
+val(s2.s_rel,5.0);
+val(s2.f,0.0);
+val(s2.f,5.0);
+val(m3.s,0.0);
+val(m3.s,5.0);
 val(der(m3.s),0.0);
+val(der(m3.s),5.0);
+val(m3.flange_a.s,0.0);
+val(m3.flange_a.s,5.0);
+val(m3.flange_a.f,0.0);
+val(m3.flange_a.f,5.0);
+val(m3.flange_b.s,0.0);
+val(m3.flange_b.s,5.0);
+val(m3.flange_b.f,0.0);
+val(m3.flange_b.f,5.0);
+val(m3.v,0.0);
+val(m3.v,5.0);
 val(der(m3.v),0.0);
-val(der(sd1.s_rel),0.0);
-val(der(sd1.v_rel),0.0);
+val(der(m3.v),5.0);
+val(m3.a,0.0);
+val(m3.a,5.0);
+val(sd2.s_rel,0.0);
+val(sd2.s_rel,5.0);
 val(der(sd2.s_rel),0.0);
+val(der(sd2.s_rel),5.0);
+val(sd2.v_rel,0.0);
+val(sd2.v_rel,5.0);
 val(der(sd2.v_rel),0.0);
+val(der(sd2.v_rel),5.0);
+val(sd2.f,0.0);
+val(sd2.f,5.0);
+val(sd2.flange_a.s,0.0);
+val(sd2.flange_a.s,5.0);
+val(sd2.flange_a.f,0.0);
+val(sd2.flange_a.f,5.0);
+val(sd2.flange_b.s,0.0);
+val(sd2.flange_b.s,5.0);
+val(sd2.flange_b.f,0.0);
+val(sd2.flange_b.f,5.0);
+val(m4.s,0.0);
+val(m4.s,5.0);
+val(der(m4.s),0.0);
+val(der(m4.s),5.0);
+val(m4.flange_a.s,0.0);
+val(m4.flange_a.s,5.0);
+val(m4.flange_a.f,0.0);
+val(m4.flange_a.f,5.0);
+val(m4.flange_b.s,0.0);
+val(m4.flange_b.s,5.0);
+val(m4.v,0.0);
+val(m4.v,5.0);
+val(der(m4.v),0.0);
+val(der(m4.v),5.0);
+val(m4.a,0.0);
+val(m4.a,5.0);
+val(fixed1.flange.f,0.0);
+val(fixed1.flange.f,5.0);
+val(s1.flange_a.f,0.0);
+val(s1.flange_a.f,5.0);
+val(s1.flange_b.s,0.0);
+val(s1.flange_b.s,5.0);
+val(s1.flange_b.f,0.0);
+val(s1.flange_b.f,5.0);
+val(s1.s_rel,0.0);
+val(s1.s_rel,5.0);
+val(s1.f,0.0);
+val(s1.f,5.0);
+val(m1.s,0.0);
+val(m1.s,5.0);
+val(der(m1.s),0.0);
+val(der(m1.s),5.0);
+val(m1.flange_a.s,0.0);
+val(m1.flange_a.s,5.0);
+val(m1.flange_a.f,0.0);
+val(m1.flange_a.f,5.0);
+val(m1.flange_b.s,0.0);
+val(m1.flange_b.s,5.0);
+val(m1.flange_b.f,0.0);
+val(m1.flange_b.f,5.0);
+val(m1.v,0.0);
+val(m1.v,5.0);
+val(der(m1.v),0.0);
+val(der(m1.v),5.0);
+val(m1.a,0.0);
+val(m1.a,5.0);
+val(sd1.s_rel,0.0);
+val(sd1.s_rel,5.0);
+val(der(sd1.s_rel),0.0);
+val(der(sd1.s_rel),5.0);
+val(sd1.v_rel,0.0);
+val(sd1.v_rel,5.0);
+val(der(sd1.v_rel),0.0);
+val(der(sd1.v_rel),5.0);
+val(sd1.f,0.0);
+val(sd1.f,5.0);
+val(sd1.flange_a.s,0.0);
+val(sd1.flange_a.s,5.0);
+val(sd1.flange_a.f,0.0);
+val(sd1.flange_a.f,5.0);
+val(sd1.flange_b.s,0.0);
+val(sd1.flange_b.s,5.0);
+val(sd1.flange_b.f,0.0);
+val(sd1.flange_b.f,5.0);
+val(m2.s,0.0);
+val(m2.s,5.0);
+val(der(m2.s),0.0);
+val(der(m2.s),5.0);
+val(m2.flange_a.s,0.0);
+val(m2.flange_a.s,5.0);
+val(m2.flange_a.f,0.0);
+val(m2.flange_a.f,5.0);
+val(m2.flange_b.s,0.0);
+val(m2.flange_b.s,5.0);
+val(m2.v,0.0);
+val(m2.v,5.0);
+val(der(m2.v),0.0);
+val(der(m2.v),5.0);
+val(m2.a,0.0);
+val(m2.a,5.0);
 
 // Result:
 // true
@@ -31,10 +150,130 @@ val(der(sd2.v_rel),0.0);
 // end SimulationResult;
 // 0.0
 // 0.0
+// -0
+// -0
+// 3.0
+// 3.0
+// 0.0
+// 0.0
+// 2.0
+// 2.0
+// 0.0
+// 0.0
+// 4.5
+// 4.5
+// 0.0
+// 0.0
+// 3.0
+// 3.0
+// -0
+// -0
+// 6.0
+// 6.0
 // 0.0
 // 0.0
 // 0.0
 // 0.0
 // 0.0
 // 0.0
+// 0.0
+// 0.0
+// 4.0
+// 4.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.0
+// 6.0
+// 6.0
+// -0
+// -0
+// 10.0
+// 10.0
+// 0.0
+// 0.0
+// 12.5
+// 12.5
+// 0.0
+// 0.0
+// 10.0
+// 10.0
+// -0
+// -0
+// 15.0
+// 15.0
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.5
+// 0.5
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// -0
+// -0
+// 2.0
+// 2.0
+// 0.0
+// 0.0
+// 3.0
+// 3.0
+// 0.0
+// 0.0
+// 2.0
+// 2.0
+// -0
+// -0
+// 4.0
+// 4.0
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -0
 // endResult

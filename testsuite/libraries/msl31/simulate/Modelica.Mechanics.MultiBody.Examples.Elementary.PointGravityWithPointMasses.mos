@@ -1,0 +1,579 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses_* Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.exe Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.libs Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses);
+val(body1.frame_a.r_0[1],0.0);
+val(body1.frame_a.r_0[1],2.0);
+val(body1.frame_a.r_0[2],0.0);
+val(body1.frame_a.r_0[2],2.0);
+val(body1.frame_a.r_0[3],0.0);
+val(body1.frame_a.r_0[3],2.0);
+val(body1.r_0[1],0.0);
+val(body1.r_0[1],2.0);
+val(der(body1.r_0[1]),0.0);
+val(der(body1.r_0[1]),2.0);
+val(body1.r_0[2],0.0);
+val(body1.r_0[2],2.0);
+val(der(body1.r_0[2]),0.0);
+val(der(body1.r_0[2]),2.0);
+val(body1.r_0[3],0.0);
+val(body1.r_0[3],2.0);
+val(der(body1.r_0[3]),0.0);
+val(der(body1.r_0[3]),2.0);
+val(body1.v_0[1],0.0);
+val(body1.v_0[1],2.0);
+val(der(body1.v_0[1]),0.0);
+val(der(body1.v_0[1]),2.0);
+val(body1.v_0[2],0.0);
+val(body1.v_0[2],2.0);
+val(der(body1.v_0[2]),0.0);
+val(der(body1.v_0[2]),2.0);
+val(body1.v_0[3],0.0);
+val(body1.v_0[3],2.0);
+val(der(body1.v_0[3]),0.0);
+val(der(body1.v_0[3]),2.0);
+val(body1.a_0[1],0.0);
+val(body1.a_0[1],2.0);
+val(body1.a_0[2],0.0);
+val(body1.a_0[2],2.0);
+val(body1.a_0[3],0.0);
+val(body1.a_0[3],2.0);
+val(body1.sphere.rvisobj[1],0.0);
+val(body1.sphere.rvisobj[1],2.0);
+val(body1.sphere.rvisobj[2],0.0);
+val(body1.sphere.rvisobj[2],2.0);
+val(body1.sphere.rvisobj[3],0.0);
+val(body1.sphere.rvisobj[3],2.0);
+val(body2.frame_a.r_0[1],0.0);
+val(body2.frame_a.r_0[1],2.0);
+val(body2.frame_a.r_0[2],0.0);
+val(body2.frame_a.r_0[2],2.0);
+val(body2.frame_a.r_0[3],0.0);
+val(body2.frame_a.r_0[3],2.0);
+val(body2.r_0[1],0.0);
+val(body2.r_0[1],2.0);
+val(der(body2.r_0[1]),0.0);
+val(der(body2.r_0[1]),2.0);
+val(body2.r_0[2],0.0);
+val(body2.r_0[2],2.0);
+val(der(body2.r_0[2]),0.0);
+val(der(body2.r_0[2]),2.0);
+val(body2.r_0[3],0.0);
+val(body2.r_0[3],2.0);
+val(der(body2.r_0[3]),0.0);
+val(der(body2.r_0[3]),2.0);
+val(body2.v_0[1],0.0);
+val(body2.v_0[1],2.0);
+val(der(body2.v_0[1]),0.0);
+val(der(body2.v_0[1]),2.0);
+val(body2.v_0[2],0.0);
+val(body2.v_0[2],2.0);
+val(der(body2.v_0[2]),0.0);
+val(der(body2.v_0[2]),2.0);
+val(body2.v_0[3],0.0);
+val(body2.v_0[3],2.0);
+val(der(body2.v_0[3]),0.0);
+val(der(body2.v_0[3]),2.0);
+val(body2.a_0[1],0.0);
+val(body2.a_0[1],2.0);
+val(body2.a_0[2],0.0);
+val(body2.a_0[2],2.0);
+val(body2.a_0[3],0.0);
+val(body2.a_0[3],2.0);
+val(body2.sphere.rvisobj[1],0.0);
+val(body2.sphere.rvisobj[1],2.0);
+val(body2.sphere.rvisobj[2],0.0);
+val(body2.sphere.rvisobj[2],2.0);
+val(body2.sphere.rvisobj[3],0.0);
+val(body2.sphere.rvisobj[3],2.0);
+val(body3.frame_a.r_0[1],0.0);
+val(body3.frame_a.r_0[1],2.0);
+val(body3.frame_a.r_0[2],0.0);
+val(body3.frame_a.r_0[2],2.0);
+val(body3.frame_a.r_0[3],0.0);
+val(body3.frame_a.r_0[3],2.0);
+val(body3.frame_a.f[1],0.0);
+val(body3.frame_a.f[1],2.0);
+val(body3.frame_a.f[2],0.0);
+val(body3.frame_a.f[2],2.0);
+val(body3.frame_a.f[3],0.0);
+val(body3.frame_a.f[3],2.0);
+val(body3.r_0[1],0.0);
+val(body3.r_0[1],2.0);
+val(der(body3.r_0[1]),0.0);
+val(der(body3.r_0[1]),2.0);
+val(body3.r_0[2],0.0);
+val(body3.r_0[2],2.0);
+val(der(body3.r_0[2]),0.0);
+val(der(body3.r_0[2]),2.0);
+val(body3.r_0[3],0.0);
+val(body3.r_0[3],2.0);
+val(der(body3.r_0[3]),0.0);
+val(der(body3.r_0[3]),2.0);
+val(body3.v_0[1],0.0);
+val(body3.v_0[1],2.0);
+val(der(body3.v_0[1]),0.0);
+val(der(body3.v_0[1]),2.0);
+val(body3.v_0[2],0.0);
+val(body3.v_0[2],2.0);
+val(der(body3.v_0[2]),0.0);
+val(der(body3.v_0[2]),2.0);
+val(body3.v_0[3],0.0);
+val(body3.v_0[3],2.0);
+val(der(body3.v_0[3]),0.0);
+val(der(body3.v_0[3]),2.0);
+val(body3.a_0[1],0.0);
+val(body3.a_0[1],2.0);
+val(body3.a_0[2],0.0);
+val(body3.a_0[2],2.0);
+val(body3.a_0[3],0.0);
+val(body3.a_0[3],2.0);
+val(body3.sphere.rvisobj[1],0.0);
+val(body3.sphere.rvisobj[1],2.0);
+val(body3.sphere.rvisobj[2],0.0);
+val(body3.sphere.rvisobj[2],2.0);
+val(body3.sphere.rvisobj[3],0.0);
+val(body3.sphere.rvisobj[3],2.0);
+val(body4.frame_a.r_0[1],0.0);
+val(body4.frame_a.r_0[1],2.0);
+val(body4.frame_a.r_0[2],0.0);
+val(body4.frame_a.r_0[2],2.0);
+val(body4.frame_a.r_0[3],0.0);
+val(body4.frame_a.r_0[3],2.0);
+val(body4.frame_a.f[1],0.0);
+val(body4.frame_a.f[1],2.0);
+val(body4.frame_a.f[2],0.0);
+val(body4.frame_a.f[2],2.0);
+val(body4.frame_a.f[3],0.0);
+val(body4.frame_a.f[3],2.0);
+val(body4.r_0[1],0.0);
+val(body4.r_0[1],2.0);
+val(der(body4.r_0[1]),0.0);
+val(der(body4.r_0[1]),2.0);
+val(body4.r_0[2],0.0);
+val(body4.r_0[2],2.0);
+val(der(body4.r_0[2]),0.0);
+val(der(body4.r_0[2]),2.0);
+val(body4.r_0[3],0.0);
+val(body4.r_0[3],2.0);
+val(der(body4.r_0[3]),0.0);
+val(der(body4.r_0[3]),2.0);
+val(body4.v_0[1],0.0);
+val(body4.v_0[1],2.0);
+val(der(body4.v_0[1]),0.0);
+val(der(body4.v_0[1]),2.0);
+val(body4.v_0[2],0.0);
+val(body4.v_0[2],2.0);
+val(der(body4.v_0[2]),0.0);
+val(der(body4.v_0[2]),2.0);
+val(body4.v_0[3],0.0);
+val(body4.v_0[3],2.0);
+val(der(body4.v_0[3]),0.0);
+val(der(body4.v_0[3]),2.0);
+val(body4.a_0[1],0.0);
+val(body4.a_0[1],2.0);
+val(body4.a_0[2],0.0);
+val(body4.a_0[2],2.0);
+val(body4.a_0[3],0.0);
+val(body4.a_0[3],2.0);
+val(body4.sphere.rvisobj[1],0.0);
+val(body4.sphere.rvisobj[1],2.0);
+val(body4.sphere.rvisobj[2],0.0);
+val(body4.sphere.rvisobj[2],2.0);
+val(body4.sphere.rvisobj[3],0.0);
+val(body4.sphere.rvisobj[3],2.0);
+val(spring.frame_a.r_0[1],0.0);
+val(spring.frame_a.r_0[1],2.0);
+val(spring.frame_a.r_0[2],0.0);
+val(spring.frame_a.r_0[2],2.0);
+val(spring.frame_a.r_0[3],0.0);
+val(spring.frame_a.r_0[3],2.0);
+val(spring.frame_a.f[1],0.0);
+val(spring.frame_a.f[1],2.0);
+val(spring.frame_a.f[2],0.0);
+val(spring.frame_a.f[2],2.0);
+val(spring.frame_a.f[3],0.0);
+val(spring.frame_a.f[3],2.0);
+val(spring.frame_b.r_0[1],0.0);
+val(spring.frame_b.r_0[1],2.0);
+val(spring.frame_b.r_0[2],0.0);
+val(spring.frame_b.r_0[2],2.0);
+val(spring.frame_b.r_0[3],0.0);
+val(spring.frame_b.r_0[3],2.0);
+val(spring.frame_b.f[1],0.0);
+val(spring.frame_b.f[1],2.0);
+val(spring.frame_b.f[2],0.0);
+val(spring.frame_b.f[2],2.0);
+val(spring.frame_b.f[3],0.0);
+val(spring.frame_b.f[3],2.0);
+val(spring.lineForce.frame_a.r_0[1],0.0);
+val(spring.lineForce.frame_a.r_0[1],2.0);
+val(spring.lineForce.frame_a.r_0[2],0.0);
+val(spring.lineForce.frame_a.r_0[2],2.0);
+val(spring.lineForce.frame_a.r_0[3],0.0);
+val(spring.lineForce.frame_a.r_0[3],2.0);
+val(spring.lineForce.frame_a.f[1],0.0);
+val(spring.lineForce.frame_a.f[1],2.0);
+val(spring.lineForce.frame_a.f[2],0.0);
+val(spring.lineForce.frame_a.f[2],2.0);
+val(spring.lineForce.frame_a.f[3],0.0);
+val(spring.lineForce.frame_a.f[3],2.0);
+val(spring.lineForce.frame_b.r_0[1],0.0);
+val(spring.lineForce.frame_b.r_0[1],2.0);
+val(spring.lineForce.frame_b.r_0[2],0.0);
+val(spring.lineForce.frame_b.r_0[2],2.0);
+val(spring.lineForce.frame_b.r_0[3],0.0);
+val(spring.lineForce.frame_b.r_0[3],2.0);
+val(spring.lineForce.frame_b.f[1],0.0);
+val(spring.lineForce.frame_b.f[1],2.0);
+val(spring.lineForce.frame_b.f[2],0.0);
+val(spring.lineForce.frame_b.f[2],2.0);
+val(spring.lineForce.frame_b.f[3],0.0);
+val(spring.lineForce.frame_b.f[3],2.0);
+val(spring.lineForce.flange_b.s,0.0);
+val(spring.lineForce.flange_b.s,2.0);
+val(spring.lineForce.flange_b.f,0.0);
+val(spring.lineForce.flange_b.f,2.0);
+val(spring.lineForce.flange_a.f,0.0);
+val(spring.lineForce.flange_a.f,2.0);
+val(spring.lineForce.length,0.0);
+val(spring.lineForce.length,2.0);
+val(spring.lineForce.r_rel_0[1],0.0);
+val(spring.lineForce.r_rel_0[1],2.0);
+val(spring.lineForce.r_rel_0[2],0.0);
+val(spring.lineForce.r_rel_0[2],2.0);
+val(spring.lineForce.r_rel_0[3],0.0);
+val(spring.lineForce.r_rel_0[3],2.0);
+val(spring.lineForce.e_rel_0[1],0.0);
+val(spring.lineForce.e_rel_0[1],2.0);
+val(spring.lineForce.e_rel_0[2],0.0);
+val(spring.lineForce.e_rel_0[2],2.0);
+val(spring.lineForce.e_rel_0[3],0.0);
+val(spring.lineForce.e_rel_0[3],2.0);
+val(spring.lineForce.lineShape.rxvisobj[1],0.0);
+val(spring.lineForce.lineShape.rxvisobj[1],2.0);
+val(spring.lineForce.lineShape.rxvisobj[2],0.0);
+val(spring.lineForce.lineShape.rxvisobj[2],2.0);
+val(spring.lineForce.lineShape.rxvisobj[3],0.0);
+val(spring.lineForce.lineShape.rxvisobj[3],2.0);
+val(spring.lineForce.lineShape.ryvisobj[1],0.0);
+val(spring.lineForce.lineShape.ryvisobj[1],2.0);
+val(spring.lineForce.lineShape.ryvisobj[2],0.0);
+val(spring.lineForce.lineShape.ryvisobj[2],2.0);
+val(spring.lineForce.lineShape.ryvisobj[3],0.0);
+val(spring.lineForce.lineShape.ryvisobj[3],2.0);
+val(spring.lineForce.lineShape.rvisobj[1],0.0);
+val(spring.lineForce.lineShape.rvisobj[1],2.0);
+val(spring.lineForce.lineShape.rvisobj[2],0.0);
+val(spring.lineForce.lineShape.rvisobj[2],2.0);
+val(spring.lineForce.lineShape.rvisobj[3],0.0);
+val(spring.lineForce.lineShape.rvisobj[3],2.0);
+val(spring.lineForce.lineShape.size[1],0.0);
+val(spring.lineForce.lineShape.size[1],2.0);
+val(spring.spring.flange_a.f,0.0);
+val(spring.spring.flange_a.f,2.0);
+val(spring.spring.flange_b.s,0.0);
+val(spring.spring.flange_b.s,2.0);
+val(spring.spring.flange_b.f,0.0);
+val(spring.spring.flange_b.f,2.0);
+val(spring.spring.s_rel,0.0);
+val(spring.spring.s_rel,2.0);
+val(spring.spring.f,0.0);
+val(spring.spring.f,2.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.228442549706
+// 0.600000023842
+// 0.521635234356
+// 0.0
+// 0.0
+// 0.0
+// 0.228442549706
+// 1.0
+// 0.856495678425
+// 0.600000023842
+// 0.521635234356
+// 0.0
+// -0.66675889492
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.856495678425
+// -0
+// -1.2370237112
+// 0.0
+// -0.66675889492
+// -2.77777767181
+// -2.82467150688
+// 0.0
+// 0.0
+// -0
+// -0
+// -0
+// -1.2370237112
+// -2.77777767181
+// -2.82467150688
+// -0
+// -0
+// -0.0500000007451
+// 0.178442552686
+// 0.600000023842
+// 0.521635234356
+// 0.0
+// 0.0
+// 0.600000023842
+// 0.437890946865
+// 0.600000023842
+// 0.569373607635
+// 0.0
+// 0.0
+// 0.600000023842
+// 0.437890946865
+// 0.600000023842
+// 0.838553845882
+// 0.600000023842
+// 0.569373607635
+// 0.0
+// 0.268789440393
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.600000023842
+// 0.838553845882
+// -0.982092738152
+// -1.18160879612
+// 0.0
+// 0.268789440393
+// -0.982092738152
+// -1.53640294075
+// 0.0
+// 0.0
+// -0
+// -0
+// -0.982092738152
+// -1.18160879612
+// -0.982092738152
+// -1.53640294075
+// -0
+// -0
+// 0.550000011921
+// 0.387890934944
+// 0.600000023842
+// 0.569373607635
+// 0.0
+// 0.0
+// 0.0
+// 0.149364694953
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// 0.0
+// 3.0
+// -2.13431835175
+// 0.0
+// -2.19299840927
+// 0.0
+// 0.0
+// 0.0
+// 0.149364694953
+// 0.600000023842
+// 1.78595709801
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// -1.12866508961
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.600000023842
+// 1.78595709801
+// 3.0
+// -2.94652867317
+// 0.0
+// -1.12866508961
+// -1.5625
+// -5.17671728134
+// 0.0
+// 0.0
+// -0
+// -0
+// 3.0
+// -2.94652867317
+// -1.5625
+// -5.17671728134
+// -0
+// -0
+// -0.0500000007451
+// 0.0993646979332
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// 0.0
+// 0.300000011921
+// -0.0640671402216
+// 0.800000011921
+// 0.329403191805
+// 0.0
+// 0.0
+// -3.0
+// 2.13431835175
+// -0
+// 2.19299840927
+// -0
+// -0
+// 0.300000011921
+// -0.0640671402216
+// 0.600000023842
+// -0.425578564405
+// 0.800000011921
+// 0.329403191805
+// 0.0
+// -0.785201191902
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.600000023842
+// -0.425578564405
+// -3.48099112511
+// 3.8296854496
+// 0.0
+// -0.785201191902
+// -1.28264272213
+// -6.52378416061
+// 0.0
+// 0.0
+// -0
+// -0
+// -3.48099112511
+// 3.8296854496
+// -1.28264272213
+// -6.52378416061
+// -0
+// -0
+// 0.25
+// -0.114067137241
+// 0.800000011921
+// 0.329403191805
+// 0.0
+// 0.0
+// 0.0
+// 0.149364694953
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// 0.0
+// -3.0
+// 2.13431835175
+// -0
+// 2.19299840927
+// -0
+// -0
+// 0.300000011921
+// -0.0640671402216
+// 0.800000011921
+// 0.329403191805
+// 0.0
+// 0.0
+// 3.0
+// -2.13431835175
+// 0.0
+// -2.19299840927
+// 0.0
+// 0.0
+// 0.0
+// 0.149364694953
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// 0.0
+// -3.0
+// 2.13431835175
+// -0
+// 2.19299840927
+// -0
+// -0
+// 0.300000011921
+// -0.0640671402216
+// 0.800000011921
+// 0.329403191805
+// 0.0
+// 0.0
+// 3.0
+// -2.13431835175
+// 0.0
+// -2.19299840927
+// 0.0
+// 0.0
+// 0.300000011921
+// 0.306015640497
+// -3.0
+// -3.06015634537
+// 3.0
+// 3.06015634537
+// 0.300000011921
+// 0.306015640497
+// 0.300000011921
+// -0.213431835175
+// 0.0
+// -0.219299837947
+// 0.0
+// 0.0
+// 1.0
+// -0.697454035282
+// 0.0
+// -0.716629505157
+// 0.0
+// 0.0
+// 1.0
+// -0.697454035282
+// 0.0
+// -0.716629505157
+// 0.0
+// 0.0
+// 0.0
+// -0.716629505157
+// 1.0
+// 0.697454035282
+// -0
+// 0.0
+// 0.0
+// 0.149364694953
+// 0.800000011921
+// 0.548703014851
+// 0.0
+// 0.0
+// 0.300000011921
+// 0.306015640497
+// -3.0
+// -3.06015634537
+// 0.300000011921
+// 0.306015640497
+// 3.0
+// 3.06015634537
+// 0.300000011921
+// 0.306015640497
+// 3.0
+// 3.06015634537
+// endResult

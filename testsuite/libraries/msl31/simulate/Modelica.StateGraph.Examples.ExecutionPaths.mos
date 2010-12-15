@@ -1,0 +1,147 @@
+// name:     Modelica.StateGraph.Examples.ExecutionPaths
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.StateGraph.Examples.ExecutionPaths_* Modelica.StateGraph.Examples.ExecutionPaths Modelica.StateGraph.Examples.ExecutionPaths.exe Modelica.StateGraph.Examples.ExecutionPaths.cpp Modelica.StateGraph.Examples.ExecutionPaths.makefile Modelica.StateGraph.Examples.ExecutionPaths.libs Modelica.StateGraph.Examples.ExecutionPaths.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.StateGraph.Examples.ExecutionPaths);
+val(stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(stateGraphRoot.subgraphStatePort.activeSteps,15.0);
+val(stateGraphRoot.activeSteps,0.0);
+val(stateGraphRoot.activeSteps,15.0);
+val(step0.active,0.0);
+val(step0.active,15.0);
+val(transition1.t,0.0);
+val(transition1.t,15.0);
+val(transition1.enableFire,0.0);
+val(transition1.enableFire,15.0);
+val(step1.active,0.0);
+val(step1.active,15.0);
+val(transition2.t,0.0);
+val(transition2.t,15.0);
+val(transition2.enableFire,0.0);
+val(transition2.enableFire,15.0);
+val(step6.active,0.0);
+val(step6.active,15.0);
+val(step2.active,0.0);
+val(step2.active,15.0);
+val(transition3.t,0.0);
+val(transition3.t,15.0);
+val(transition3.enableFire,0.0);
+val(transition3.enableFire,15.0);
+val(transition4.t,0.0);
+val(transition4.t,15.0);
+val(transition4.enableFire,0.0);
+val(transition4.enableFire,15.0);
+val(step3.active,0.0);
+val(step3.active,15.0);
+val(step4.active,0.0);
+val(step4.active,15.0);
+val(transition5.t,0.0);
+val(transition5.t,15.0);
+val(transition5.enableFire,0.0);
+val(transition5.enableFire,15.0);
+val(transition6.t,0.0);
+val(transition6.t,15.0);
+val(transition6.enableFire,0.0);
+val(transition6.enableFire,15.0);
+val(step5.active,0.0);
+val(step5.active,15.0);
+val(setReal.y,0.0);
+val(setReal.y,15.0);
+val(transition7.condition,0.0);
+val(transition7.condition,15.0);
+val(transition7.enableFire,0.0);
+val(transition7.enableFire,15.0);
+val(setCondition.y,0.0);
+val(setCondition.y,15.0);
+val(transition4a.t,0.0);
+val(transition4a.t,15.0);
+val(transition4a.enableFire,0.0);
+val(transition4a.enableFire,15.0);
+val(step4a.active,0.0);
+val(step4a.active,15.0);
+val(transition6a.t,0.0);
+val(transition6a.t,15.0);
+val(transition6a.enableFire,0.0);
+val(transition6a.enableFire,15.0);
+val(NumericValue1.Value,0.0);
+val(NumericValue1.Value,15.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.StateGraph.Examples.ExecutionPaths_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.ExecutionPaths', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -1.0
+// -2.0
+// 1.0
+// 2.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 15.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 15.0
+// endResult

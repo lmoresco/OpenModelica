@@ -1,0 +1,363 @@
+// name:     Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve_* Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.exe Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.cpp Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.makefile Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.libs Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve);
+val(dTSource,0.0);
+val(dTSource,2.0);
+val(dTtoPipe,0.0);
+val(dTtoPipe,2.0);
+val(dTCoolant,0.0);
+val(dTCoolant,2.0);
+val(ambient1.T_port,0.0);
+val(ambient1.T_port,2.0);
+val(ambient1.flowPort.m_flow,0.0);
+val(ambient1.flowPort.m_flow,2.0);
+val(ambient1.flowPort.h,0.0);
+val(ambient1.flowPort.h,2.0);
+val(ambient1.flowPort.H_flow,0.0);
+val(ambient1.flowPort.H_flow,2.0);
+val(idealPump.dp,0.0);
+val(idealPump.dp,2.0);
+val(idealPump.V_flow,0.0);
+val(idealPump.V_flow,2.0);
+val(idealPump.T,0.0);
+val(idealPump.T,2.0);
+val(idealPump.T_a,0.0);
+val(idealPump.T_a,2.0);
+val(idealPump.T_b,0.0);
+val(idealPump.T_b,2.0);
+val(idealPump.dT,0.0);
+val(idealPump.dT,2.0);
+val(idealPump.flowPort_a.m_flow,0.0);
+val(idealPump.flowPort_a.m_flow,2.0);
+val(idealPump.flowPort_a.h,0.0);
+val(idealPump.flowPort_a.h,2.0);
+val(idealPump.flowPort_a.H_flow,0.0);
+val(idealPump.flowPort_a.H_flow,2.0);
+val(idealPump.flowPort_b.p,0.0);
+val(idealPump.flowPort_b.p,2.0);
+val(idealPump.flowPort_b.m_flow,0.0);
+val(idealPump.flowPort_b.m_flow,2.0);
+val(idealPump.flowPort_b.h,0.0);
+val(idealPump.flowPort_b.h,2.0);
+val(idealPump.flowPort_b.H_flow,0.0);
+val(idealPump.flowPort_b.H_flow,2.0);
+val(idealPump.w,0.0);
+val(idealPump.w,2.0);
+val(idealPump.flange_a.phi,0.0);
+val(idealPump.flange_a.phi,2.0);
+val(der(idealPump.flange_a.phi),0.0);
+val(der(idealPump.flange_a.phi),2.0);
+val(idealPump.flange_a.tau,0.0);
+val(idealPump.flange_a.tau,2.0);
+val(valve.dp,0.0);
+val(valve.dp,2.0);
+val(valve.V_flow,0.0);
+val(valve.V_flow,2.0);
+val(valve.Q_flow,0.0);
+val(valve.Q_flow,2.0);
+val(valve.T,0.0);
+val(valve.T,2.0);
+val(valve.T_a,0.0);
+val(valve.T_a,2.0);
+val(valve.T_b,0.0);
+val(valve.T_b,2.0);
+val(valve.dT,0.0);
+val(valve.dT,2.0);
+val(valve.flowPort_a.p,0.0);
+val(valve.flowPort_a.p,2.0);
+val(valve.flowPort_a.m_flow,0.0);
+val(valve.flowPort_a.m_flow,2.0);
+val(valve.flowPort_a.h,0.0);
+val(valve.flowPort_a.h,2.0);
+val(valve.flowPort_a.H_flow,0.0);
+val(valve.flowPort_a.H_flow,2.0);
+val(valve.flowPort_b.p,0.0);
+val(valve.flowPort_b.p,2.0);
+val(valve.flowPort_b.m_flow,0.0);
+val(valve.flowPort_b.m_flow,2.0);
+val(valve.flowPort_b.h,0.0);
+val(valve.flowPort_b.h,2.0);
+val(valve.flowPort_b.H_flow,0.0);
+val(valve.flowPort_b.H_flow,2.0);
+val(valve.y,0.0);
+val(valve.y,2.0);
+val(pipe.dp,0.0);
+val(pipe.dp,2.0);
+val(pipe.V_flow,0.0);
+val(pipe.V_flow,2.0);
+val(pipe.Q_flow,0.0);
+val(pipe.Q_flow,2.0);
+val(pipe.T,0.0);
+val(pipe.T,2.0);
+val(der(pipe.T),0.0);
+val(der(pipe.T),2.0);
+val(pipe.T_a,0.0);
+val(pipe.T_a,2.0);
+val(pipe.T_b,0.0);
+val(pipe.T_b,2.0);
+val(pipe.dT,0.0);
+val(pipe.dT,2.0);
+val(pipe.flowPort_a.p,0.0);
+val(pipe.flowPort_a.p,2.0);
+val(pipe.flowPort_a.m_flow,0.0);
+val(pipe.flowPort_a.m_flow,2.0);
+val(pipe.flowPort_a.h,0.0);
+val(pipe.flowPort_a.h,2.0);
+val(pipe.flowPort_a.H_flow,0.0);
+val(pipe.flowPort_a.H_flow,2.0);
+val(pipe.flowPort_b.m_flow,0.0);
+val(pipe.flowPort_b.m_flow,2.0);
+val(pipe.flowPort_b.h,0.0);
+val(pipe.flowPort_b.h,2.0);
+val(pipe.flowPort_b.H_flow,0.0);
+val(pipe.flowPort_b.H_flow,2.0);
+val(pipe.pressureDrop,0.0);
+val(pipe.pressureDrop,2.0);
+val(pipe.volumeFlow,0.0);
+val(pipe.volumeFlow,2.0);
+val(pipe.Q_friction,0.0);
+val(pipe.Q_friction,2.0);
+val(pipe.heatPort.T,0.0);
+val(pipe.heatPort.T,2.0);
+val(pipe.heatPort.Q_flow,0.0);
+val(pipe.heatPort.Q_flow,2.0);
+val(ambient2.T_port,0.0);
+val(ambient2.T_port,2.0);
+val(ambient2.flowPort.m_flow,0.0);
+val(ambient2.flowPort.m_flow,2.0);
+val(ambient2.flowPort.h,0.0);
+val(ambient2.flowPort.h,2.0);
+val(ambient2.flowPort.H_flow,0.0);
+val(ambient2.flowPort.H_flow,2.0);
+val(heatCapacitor.T,0.0);
+val(heatCapacitor.T,2.0);
+val(der(heatCapacitor.T),0.0);
+val(der(heatCapacitor.T),2.0);
+val(heatCapacitor.der_T,0.0);
+val(heatCapacitor.der_T,2.0);
+val(heatCapacitor.port.T,0.0);
+val(heatCapacitor.port.T,2.0);
+val(heatCapacitor.port.Q_flow,0.0);
+val(heatCapacitor.port.Q_flow,2.0);
+val(prescribedHeatFlow.port.T,0.0);
+val(prescribedHeatFlow.port.T,2.0);
+val(prescribedHeatFlow.port.Q_flow,0.0);
+val(prescribedHeatFlow.port.Q_flow,2.0);
+val(convection.Q_flow,0.0);
+val(convection.Q_flow,2.0);
+val(convection.dT,0.0);
+val(convection.dT,2.0);
+val(convection.solid.T,0.0);
+val(convection.solid.T,2.0);
+val(convection.solid.Q_flow,0.0);
+val(convection.solid.Q_flow,2.0);
+val(convection.fluid.T,0.0);
+val(convection.fluid.T,2.0);
+val(convection.fluid.Q_flow,0.0);
+val(convection.fluid.Q_flow,2.0);
+val(speed.flange.phi,0.0);
+val(speed.flange.phi,2.0);
+val(speed.flange.tau,0.0);
+val(speed.flange.tau,2.0);
+val(speed.phi,0.0);
+val(speed.phi,2.0);
+val(der(speed.phi),0.0);
+val(der(speed.phi),2.0);
+val(speed.w,0.0);
+val(speed.w,2.0);
+val(speed.w_ref,0.0);
+val(speed.w_ref,2.0);
+val(speedRamp.y,0.0);
+val(speedRamp.y,2.0);
+val(valveRamp.y,0.0);
+val(valveRamp.y,2.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 20.7391204834
+// 0.0
+// 10.0966320038
+// 0.0
+// 10.6424894333
+// 293.149993896
+// 293.149993896
+// -0.160849526525
+// -0.954451143742
+// 293.149993896
+// 293.149993896
+// -47.1530380249
+// -279.797363281
+// -0.419575244188
+// -1.04554879665
+// 0.160849526525
+// 0.954451143742
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 0.0
+// 0.0
+// 0.160849526525
+// 0.954451143742
+// 293.149993896
+// 293.149993896
+// 47.1530380249
+// 279.797363281
+// 0.419575244188
+// 1.04554879665
+// -0.160849526525
+// -0.954451143742
+// 293.149993896
+// 293.149993896
+// -47.1530380249
+// -279.797363281
+// 0.5
+// 1.0
+// 0.0
+// 1.77499997616
+// 0.5
+// 1.0
+// 0.134976953268
+// 0.997925281525
+// 0.258725702763
+// 0.0910976976156
+// 0.160849526525
+// 0.954451143742
+// 0.0
+// 0.0
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 0.0
+// 0.0
+// 0.419575244188
+// 1.04554879665
+// 0.160849526525
+// 0.954451143742
+// 293.149993896
+// 293.149993896
+// 47.1530380249
+// 279.797363281
+// 0.160849526525
+// 0.954451143742
+// -0.160849526525
+// -0.954451143742
+// 293.149993896
+// 293.149993896
+// -47.1530380249
+// -279.797363281
+// 0.5
+// 1.0
+// 0.160849526525
+// 0.954451143742
+// 0.160849526525
+// 0.954451143742
+// 0.0
+// 10.0966320038
+// 293.149993896
+// 303.792480469
+// 0.0
+// -0.611040115356
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 303.792480469
+// 0.0
+// 10.6424894333
+// 0.160849526525
+// 0.954451143742
+// 0.160849526525
+// 0.954451143742
+// 293.149993896
+// 293.149993896
+// 47.1530380249
+// 279.797363281
+// -0.160849526525
+// -0.954451143742
+// 293.149993896
+// 303.792480469
+// -47.1530380249
+// -289.955078125
+// 0.160849526525
+// 0.954451143742
+// 0.160849526525
+// 0.954451143742
+// 0.0
+// 0.0
+// 293.149993896
+// 303.792480469
+// 0.0
+// 10.0966320038
+// 293.149993896
+// 303.792480469
+// 0.160849526525
+// 0.954451143742
+// 293.149993896
+// 303.792480469
+// 47.1530380249
+// 289.955078125
+// 293.149993896
+// 313.889129639
+// 100.0
+// -0.966319918633
+// 100.0
+// -0.966319918633
+// 293.149993896
+// 313.889129639
+// 10.0
+// -0.0966319963336
+// 293.149993896
+// 313.889129639
+// -10.0
+// -10.0
+// 0.0
+// 10.0966320038
+// 0.0
+// 10.0966320038
+// 293.149993896
+// 313.889129639
+// 0.0
+// 10.0966320038
+// 293.149993896
+// 303.792480469
+// -0
+// -10.0966320038
+// 0.0
+// 1.77499997616
+// -0.134976953268
+// -0.997925281525
+// 0.0
+// 1.77499997616
+// 0.5
+// 1.0
+// 0.5
+// 1.0
+// 0.5
+// 1.0
+// 0.5
+// 1.0
+// 0.5
+// 1.0
+// endResult

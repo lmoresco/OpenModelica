@@ -1,0 +1,231 @@
+// name:     Modelica.Mechanics.Rotational.Examples.FirstGrounded
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.FirstGrounded_* Modelica.Mechanics.Rotational.Examples.FirstGrounded Modelica.Mechanics.Rotational.Examples.FirstGrounded.exe Modelica.Mechanics.Rotational.Examples.FirstGrounded.cpp Modelica.Mechanics.Rotational.Examples.FirstGrounded.makefile Modelica.Mechanics.Rotational.Examples.FirstGrounded.libs Modelica.Mechanics.Rotational.Examples.FirstGrounded.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.Rotational.Examples.FirstGrounded);
+val(fixed.flange.tau,0.0);
+val(fixed.flange.tau,1.0);
+val(torque.flange.phi,0.0);
+val(torque.flange.phi,1.0);
+val(torque.flange.tau,0.0);
+val(torque.flange.tau,1.0);
+val(torque.tau,0.0);
+val(torque.tau,1.0);
+val(inertia1.flange_a.phi,0.0);
+val(inertia1.flange_a.phi,1.0);
+val(inertia1.flange_a.tau,0.0);
+val(inertia1.flange_a.tau,1.0);
+val(inertia1.flange_b.phi,0.0);
+val(inertia1.flange_b.phi,1.0);
+val(inertia1.flange_b.tau,0.0);
+val(inertia1.flange_b.tau,1.0);
+val(inertia1.phi,0.0);
+val(inertia1.phi,1.0);
+val(der(inertia1.phi),0.0);
+val(der(inertia1.phi),1.0);
+val(inertia1.w,0.0);
+val(inertia1.w,1.0);
+val(der(inertia1.w),0.0);
+val(der(inertia1.w),1.0);
+val(inertia1.a,0.0);
+val(inertia1.a,1.0);
+val(idealGear.flange_a.phi,0.0);
+val(idealGear.flange_a.phi,1.0);
+val(idealGear.flange_a.tau,0.0);
+val(idealGear.flange_a.tau,1.0);
+val(idealGear.flange_b.phi,0.0);
+val(idealGear.flange_b.phi,1.0);
+val(idealGear.flange_b.tau,0.0);
+val(idealGear.flange_b.tau,1.0);
+val(idealGear.phi_a,0.0);
+val(idealGear.phi_a,1.0);
+val(idealGear.phi_b,0.0);
+val(idealGear.phi_b,1.0);
+val(inertia2.flange_a.phi,0.0);
+val(inertia2.flange_a.phi,1.0);
+val(inertia2.flange_a.tau,0.0);
+val(inertia2.flange_a.tau,1.0);
+val(inertia2.flange_b.phi,0.0);
+val(inertia2.flange_b.phi,1.0);
+val(inertia2.flange_b.tau,0.0);
+val(inertia2.flange_b.tau,1.0);
+val(inertia2.phi,0.0);
+val(inertia2.phi,1.0);
+val(der(inertia2.phi),0.0);
+val(der(inertia2.phi),1.0);
+val(inertia2.w,0.0);
+val(inertia2.w,1.0);
+val(der(inertia2.w),0.0);
+val(der(inertia2.w),1.0);
+val(inertia2.a,0.0);
+val(inertia2.a,1.0);
+val(spring.phi_rel,0.0);
+val(spring.phi_rel,1.0);
+val(spring.tau,0.0);
+val(spring.tau,1.0);
+val(spring.flange_a.phi,0.0);
+val(spring.flange_a.phi,1.0);
+val(spring.flange_a.tau,0.0);
+val(spring.flange_a.tau,1.0);
+val(spring.flange_b.phi,0.0);
+val(spring.flange_b.phi,1.0);
+val(spring.flange_b.tau,0.0);
+val(spring.flange_b.tau,1.0);
+val(inertia3.flange_a.phi,0.0);
+val(inertia3.flange_a.phi,1.0);
+val(inertia3.flange_a.tau,0.0);
+val(inertia3.flange_a.tau,1.0);
+val(inertia3.flange_b.phi,0.0);
+val(inertia3.flange_b.phi,1.0);
+val(inertia3.phi,0.0);
+val(inertia3.phi,1.0);
+val(der(inertia3.phi),0.0);
+val(der(inertia3.phi),1.0);
+val(inertia3.w,0.0);
+val(inertia3.w,1.0);
+val(der(inertia3.w),0.0);
+val(der(inertia3.w),1.0);
+val(inertia3.a,0.0);
+val(inertia3.a,1.0);
+val(damper.phi_rel,0.0);
+val(damper.phi_rel,1.0);
+val(der(damper.phi_rel),0.0);
+val(der(damper.phi_rel),1.0);
+val(damper.w_rel,0.0);
+val(damper.w_rel,1.0);
+val(der(damper.w_rel),0.0);
+val(der(damper.w_rel),1.0);
+val(damper.a_rel,0.0);
+val(damper.a_rel,1.0);
+val(damper.tau,0.0);
+val(damper.tau,1.0);
+val(damper.flange_a.phi,0.0);
+val(damper.flange_a.phi,1.0);
+val(damper.flange_a.tau,0.0);
+val(damper.flange_a.tau,1.0);
+val(damper.flange_b.tau,0.0);
+val(damper.flange_b.tau,1.0);
+val(sine.y,0.0);
+val(sine.y,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.FirstGrounded_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.FirstGrounded', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// -1.10884857178
+// 0.0
+// 1.62316262722
+// -0
+// -1.65389213826e-13
+// 0.0
+// 1.65389213826e-13
+// 0.0
+// 1.62316262722
+// 0.0
+// 1.65389213826e-13
+// 0.0
+// 1.62316262722
+// -0
+// 0.528471887112
+// 0.0
+// 1.62316262722
+// 0.0
+// -1.10884857178
+// 0.0
+// -1.10884857178
+// 0.0
+// 5.28471899033
+// 0.0
+// 5.28471899033
+// 0.0
+// 1.62316262722
+// 0.0
+// -0.528471887112
+// 0.0
+// 0.162316262722
+// -0
+// 5.28471899033
+// 0.0
+// 1.62316262722
+// 0.0
+// 0.162316262722
+// 0.0
+// 0.162316262722
+// 0.0
+// -5.28471899033
+// 0.0
+// 0.162316262722
+// 0.0
+// 6.34166288376
+// 0.0
+// 0.162316262722
+// 0.0
+// -0.110884852707
+// 0.0
+// -0.110884852707
+// 0.0
+// 0.528471887112
+// 0.0
+// 0.528471887112
+// 0.0
+// 0.000523281400092
+// 0.0
+// 5.23281431198
+// 0.0
+// 0.162316262722
+// -0
+// -5.23281431198
+// 0.0
+// 0.1628395468
+// 0.0
+// 5.23281431198
+// 0.0
+// 0.1628395468
+// -0
+// -5.23281431198
+// 0.0
+// 0.1628395468
+// 0.0
+// 0.1628395468
+// 0.0
+// -0.14643523097
+// 0.0
+// -0.14643523097
+// -0
+// -2.61640715599
+// -0
+// -2.61640715599
+// 0.0
+// -0.162316262722
+// -0
+// 0.110884852707
+// -0
+// 0.110884852707
+// -0
+// -0.528471887112
+// -0
+// -0.528471887112
+// -0
+// 1.10884857178
+// 0.0
+// 0.162316262722
+// 0.0
+// -1.10884857178
+// -0
+// 1.10884857178
+// 0.0
+// 1.65389213826e-13
+// endResult

@@ -1,0 +1,43 @@
+// name:     Modelica.Blocks.Examples.ShowLogicalSources
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Blocks.Examples.ShowLogicalSources_* Modelica.Blocks.Examples.ShowLogicalSources Modelica.Blocks.Examples.ShowLogicalSources.exe Modelica.Blocks.Examples.ShowLogicalSources.cpp Modelica.Blocks.Examples.ShowLogicalSources.makefile Modelica.Blocks.Examples.ShowLogicalSources.libs Modelica.Blocks.Examples.ShowLogicalSources.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Blocks.Examples.ShowLogicalSources);
+val(table.y,0.0);
+val(table.y,10.0);
+val(step.y,0.0);
+val(step.y,10.0);
+val(pulse.y,0.0);
+val(pulse.y,10.0);
+val(sample.y,0.0);
+val(sample.y,10.0);
+val(booleanExpression.y,0.0);
+val(booleanExpression.y,10.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Blocks.Examples.ShowLogicalSources_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.ShowLogicalSources', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// endResult

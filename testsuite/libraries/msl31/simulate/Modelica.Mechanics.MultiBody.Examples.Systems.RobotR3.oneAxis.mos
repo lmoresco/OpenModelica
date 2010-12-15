@@ -1,0 +1,1199 @@
+// name:     Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis_* Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.exe Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.cpp Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.makefile Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.libs Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis);
+val(axis.flange.phi,0.0);
+val(axis.flange.phi,1.49813175201);
+val(axis.flange.tau,0.0);
+val(axis.flange.tau,1.49813175201);
+val(axis.gear.flange_a.phi,0.0);
+val(axis.gear.flange_a.phi,1.49813175201);
+val(axis.gear.flange_a.tau,0.0);
+val(axis.gear.flange_a.tau,1.49813175201);
+val(axis.gear.flange_b.phi,0.0);
+val(axis.gear.flange_b.phi,1.49813175201);
+val(axis.gear.flange_b.tau,0.0);
+val(axis.gear.flange_b.tau,1.49813175201);
+val(axis.gear.a_rel,0.0);
+val(axis.gear.a_rel,1.49813175201);
+val(axis.gear.gear.flange_a.phi,0.0);
+val(axis.gear.gear.flange_a.phi,1.49813175201);
+val(axis.gear.gear.flange_a.tau,0.0);
+val(axis.gear.gear.flange_a.tau,1.49813175201);
+val(axis.gear.gear.flange_b.phi,0.0);
+val(axis.gear.gear.flange_b.phi,1.49813175201);
+val(axis.gear.gear.flange_b.tau,0.0);
+val(axis.gear.gear.flange_b.tau,1.49813175201);
+val(axis.gear.gear.phi_a,0.0);
+val(axis.gear.gear.phi_a,1.49813175201);
+val(der(axis.gear.gear.phi_a),0.0);
+val(der(axis.gear.gear.phi_a),1.49813175201);
+val(der(axis.gear.gear.phi_a,2),0.0);
+val(der(axis.gear.gear.phi_a,2),1.49813175201);
+val(axis.gear.gear.phi_b,0.0);
+val(axis.gear.gear.phi_b,1.49813175201);
+val(axis.gear.spring.phi_rel,0.0);
+val(axis.gear.spring.phi_rel,1.49813175201);
+val(der(axis.gear.spring.phi_rel),0.0);
+val(der(axis.gear.spring.phi_rel),1.49813175201);
+val(axis.gear.spring.w_rel,0.0);
+val(axis.gear.spring.w_rel,1.49813175201);
+val(der(axis.gear.spring.w_rel),0.0);
+val(der(axis.gear.spring.w_rel),1.49813175201);
+val(axis.gear.spring.a_rel,0.0);
+val(axis.gear.spring.a_rel,1.49813175201);
+val(axis.gear.spring.tau,0.0);
+val(axis.gear.spring.tau,1.49813175201);
+val(axis.gear.spring.flange_a.phi,0.0);
+val(axis.gear.spring.flange_a.phi,1.49813175201);
+val(axis.gear.spring.flange_a.tau,0.0);
+val(axis.gear.spring.flange_a.tau,1.49813175201);
+val(axis.gear.spring.flange_b.phi,0.0);
+val(axis.gear.spring.flange_b.phi,1.49813175201);
+val(axis.gear.spring.flange_b.tau,0.0);
+val(axis.gear.spring.flange_b.tau,1.49813175201);
+val(axis.gear.bearingFriction.flange_a.phi,0.0);
+val(axis.gear.bearingFriction.flange_a.phi,1.49813175201);
+val(axis.gear.bearingFriction.flange_a.tau,0.0);
+val(axis.gear.bearingFriction.flange_a.tau,1.49813175201);
+val(axis.gear.bearingFriction.flange_b.phi,0.0);
+val(axis.gear.bearingFriction.flange_b.phi,1.49813175201);
+val(axis.gear.bearingFriction.flange_b.tau,0.0);
+val(axis.gear.bearingFriction.flange_b.tau,1.49813175201);
+val(axis.gear.bearingFriction.w_relfric,0.0);
+val(axis.gear.bearingFriction.w_relfric,1.49813175201);
+val(axis.gear.bearingFriction.a_relfric,0.0);
+val(axis.gear.bearingFriction.a_relfric,1.49813175201);
+val(axis.gear.bearingFriction.sa,0.0);
+val(axis.gear.bearingFriction.sa,1.49813175201);
+val(axis.gear.bearingFriction.startForward,0.0);
+val(axis.gear.bearingFriction.startForward,1.49813175201);
+val(axis.gear.bearingFriction.startBackward,0.0);
+val(axis.gear.bearingFriction.startBackward,1.49813175201);
+val(axis.gear.bearingFriction.locked,0.0);
+val(axis.gear.bearingFriction.locked,1.49813175201);
+val(axis.gear.bearingFriction.mode,0.0);
+val(axis.gear.bearingFriction.mode,1.49813175201);
+val(axis.gear.bearingFriction.phi,0.0);
+val(axis.gear.bearingFriction.phi,1.49813175201);
+val(der(axis.gear.bearingFriction.phi),0.0);
+val(der(axis.gear.bearingFriction.phi),1.49813175201);
+val(axis.gear.bearingFriction.tau,0.0);
+val(axis.gear.bearingFriction.tau,1.49813175201);
+val(axis.gear.bearingFriction.w,0.0);
+val(axis.gear.bearingFriction.w,1.49813175201);
+val(der(axis.gear.bearingFriction.w),0.0);
+val(der(axis.gear.bearingFriction.w),1.49813175201);
+val(axis.gear.bearingFriction.a,0.0);
+val(axis.gear.bearingFriction.a,1.49813175201);
+val(axis.motor.flange_motor.phi,0.0);
+val(axis.motor.flange_motor.phi,1.49813175201);
+val(axis.motor.flange_motor.tau,0.0);
+val(axis.motor.flange_motor.tau,1.49813175201);
+val(axis.motor.Vs.p.v,0.0);
+val(axis.motor.Vs.p.v,1.49813175201);
+val(axis.motor.Vs.p.i,0.0);
+val(axis.motor.Vs.p.i,1.49813175201);
+val(axis.motor.Vs.n.i,0.0);
+val(axis.motor.Vs.n.i,1.49813175201);
+val(axis.motor.Vs.v,0.0);
+val(axis.motor.Vs.v,1.49813175201);
+val(axis.motor.Vs.i,0.0);
+val(axis.motor.Vs.i,1.49813175201);
+val(axis.motor.diff.v2,0.0);
+val(axis.motor.diff.v2,1.49813175201);
+val(axis.motor.diff.i2,0.0);
+val(axis.motor.diff.i2,1.49813175201);
+val(axis.motor.diff.p1.v,0.0);
+val(axis.motor.diff.p1.v,1.49813175201);
+val(axis.motor.diff.n1.v,0.0);
+val(axis.motor.diff.n1.v,1.49813175201);
+val(axis.motor.diff.p2.v,0.0);
+val(axis.motor.diff.p2.v,1.49813175201);
+val(axis.motor.diff.p2.i,0.0);
+val(axis.motor.diff.p2.i,1.49813175201);
+val(axis.motor.diff.n2.i,0.0);
+val(axis.motor.diff.n2.i,1.49813175201);
+val(axis.motor.power.v2,0.0);
+val(axis.motor.power.v2,1.49813175201);
+val(axis.motor.power.i2,0.0);
+val(axis.motor.power.i2,1.49813175201);
+val(axis.motor.power.p1.v,0.0);
+val(axis.motor.power.p1.v,1.49813175201);
+val(axis.motor.power.n1.v,0.0);
+val(axis.motor.power.n1.v,1.49813175201);
+val(axis.motor.power.p2.v,0.0);
+val(axis.motor.power.p2.v,1.49813175201);
+val(axis.motor.power.p2.i,0.0);
+val(axis.motor.power.p2.i,1.49813175201);
+val(axis.motor.power.n2.i,0.0);
+val(axis.motor.power.n2.i,1.49813175201);
+val(axis.motor.emf.v,0.0);
+val(axis.motor.emf.v,1.49813175201);
+val(axis.motor.emf.i,0.0);
+val(axis.motor.emf.i,1.49813175201);
+val(axis.motor.emf.phi,0.0);
+val(axis.motor.emf.phi,1.49813175201);
+val(der(axis.motor.emf.phi),0.0);
+val(der(axis.motor.emf.phi),1.49813175201);
+val(axis.motor.emf.w,0.0);
+val(axis.motor.emf.w,1.49813175201);
+val(axis.motor.emf.p.v,0.0);
+val(axis.motor.emf.p.v,1.49813175201);
+val(axis.motor.emf.p.i,0.0);
+val(axis.motor.emf.p.i,1.49813175201);
+val(axis.motor.emf.n.i,0.0);
+val(axis.motor.emf.n.i,1.49813175201);
+val(axis.motor.emf.flange.phi,0.0);
+val(axis.motor.emf.flange.phi,1.49813175201);
+val(axis.motor.emf.flange.tau,0.0);
+val(axis.motor.emf.flange.tau,1.49813175201);
+val(axis.motor.La.v,0.0);
+val(axis.motor.La.v,1.49813175201);
+val(axis.motor.La.i,0.0);
+val(axis.motor.La.i,1.49813175201);
+val(der(axis.motor.La.i),0.0);
+val(der(axis.motor.La.i),1.49813175201);
+val(axis.motor.La.p.v,0.0);
+val(axis.motor.La.p.v,1.49813175201);
+val(axis.motor.La.p.i,0.0);
+val(axis.motor.La.p.i,1.49813175201);
+val(axis.motor.La.n.v,0.0);
+val(axis.motor.La.n.v,1.49813175201);
+val(axis.motor.La.n.i,0.0);
+val(axis.motor.La.n.i,1.49813175201);
+val(axis.motor.Ra.v,0.0);
+val(axis.motor.Ra.v,1.49813175201);
+val(axis.motor.Ra.i,0.0);
+val(axis.motor.Ra.i,1.49813175201);
+val(axis.motor.Ra.p.v,0.0);
+val(axis.motor.Ra.p.v,1.49813175201);
+val(axis.motor.Ra.p.i,0.0);
+val(axis.motor.Ra.p.i,1.49813175201);
+val(axis.motor.Ra.n.v,0.0);
+val(axis.motor.Ra.n.v,1.49813175201);
+val(axis.motor.Ra.n.i,0.0);
+val(axis.motor.Ra.n.i,1.49813175201);
+val(axis.motor.Ra.LossPower,0.0);
+val(axis.motor.Ra.LossPower,1.49813175201);
+val(axis.motor.Rd2.v,0.0);
+val(axis.motor.Rd2.v,1.49813175201);
+val(axis.motor.Rd2.i,0.0);
+val(axis.motor.Rd2.i,1.49813175201);
+val(axis.motor.Rd2.p.v,0.0);
+val(axis.motor.Rd2.p.v,1.49813175201);
+val(axis.motor.Rd2.p.i,0.0);
+val(axis.motor.Rd2.p.i,1.49813175201);
+val(axis.motor.Rd2.n.v,0.0);
+val(axis.motor.Rd2.n.v,1.49813175201);
+val(axis.motor.Rd2.n.i,0.0);
+val(axis.motor.Rd2.n.i,1.49813175201);
+val(axis.motor.Rd2.LossPower,0.0);
+val(axis.motor.Rd2.LossPower,1.49813175201);
+val(axis.motor.C.v,0.0);
+val(axis.motor.C.v,1.49813175201);
+val(der(axis.motor.C.v),0.0);
+val(der(axis.motor.C.v),1.49813175201);
+val(axis.motor.C.i,0.0);
+val(axis.motor.C.i,1.49813175201);
+val(axis.motor.C.p.i,0.0);
+val(axis.motor.C.p.i,1.49813175201);
+val(axis.motor.C.n.v,0.0);
+val(axis.motor.C.n.v,1.49813175201);
+val(axis.motor.C.n.i,0.0);
+val(axis.motor.C.n.i,1.49813175201);
+val(axis.motor.OpI.v2,0.0);
+val(axis.motor.OpI.v2,1.49813175201);
+val(axis.motor.OpI.i2,0.0);
+val(axis.motor.OpI.i2,1.49813175201);
+val(axis.motor.OpI.p2.v,0.0);
+val(axis.motor.OpI.p2.v,1.49813175201);
+val(axis.motor.OpI.p2.i,0.0);
+val(axis.motor.OpI.p2.i,1.49813175201);
+val(axis.motor.OpI.n2.i,0.0);
+val(axis.motor.OpI.n2.i,1.49813175201);
+val(axis.motor.Rd1.v,0.0);
+val(axis.motor.Rd1.v,1.49813175201);
+val(axis.motor.Rd1.i,0.0);
+val(axis.motor.Rd1.i,1.49813175201);
+val(axis.motor.Rd1.p.v,0.0);
+val(axis.motor.Rd1.p.v,1.49813175201);
+val(axis.motor.Rd1.p.i,0.0);
+val(axis.motor.Rd1.p.i,1.49813175201);
+val(axis.motor.Rd1.n.v,0.0);
+val(axis.motor.Rd1.n.v,1.49813175201);
+val(axis.motor.Rd1.n.i,0.0);
+val(axis.motor.Rd1.n.i,1.49813175201);
+val(axis.motor.Rd1.LossPower,0.0);
+val(axis.motor.Rd1.LossPower,1.49813175201);
+val(axis.motor.Ri.v,0.0);
+val(axis.motor.Ri.v,1.49813175201);
+val(axis.motor.Ri.i,0.0);
+val(axis.motor.Ri.i,1.49813175201);
+val(axis.motor.Ri.p.v,0.0);
+val(axis.motor.Ri.p.v,1.49813175201);
+val(axis.motor.Ri.p.i,0.0);
+val(axis.motor.Ri.p.i,1.49813175201);
+val(axis.motor.Ri.n.i,0.0);
+val(axis.motor.Ri.n.i,1.49813175201);
+val(axis.motor.Ri.LossPower,0.0);
+val(axis.motor.Ri.LossPower,1.49813175201);
+val(axis.motor.Rp1.v,0.0);
+val(axis.motor.Rp1.v,1.49813175201);
+val(axis.motor.Rp1.i,0.0);
+val(axis.motor.Rp1.i,1.49813175201);
+val(axis.motor.Rp1.p.v,0.0);
+val(axis.motor.Rp1.p.v,1.49813175201);
+val(axis.motor.Rp1.p.i,0.0);
+val(axis.motor.Rp1.p.i,1.49813175201);
+val(axis.motor.Rp1.n.v,0.0);
+val(axis.motor.Rp1.n.v,1.49813175201);
+val(axis.motor.Rp1.n.i,0.0);
+val(axis.motor.Rp1.n.i,1.49813175201);
+val(axis.motor.Rp1.LossPower,0.0);
+val(axis.motor.Rp1.LossPower,1.49813175201);
+val(axis.motor.Rp2.v,0.0);
+val(axis.motor.Rp2.v,1.49813175201);
+val(axis.motor.Rp2.i,0.0);
+val(axis.motor.Rp2.i,1.49813175201);
+val(axis.motor.Rp2.p.v,0.0);
+val(axis.motor.Rp2.p.v,1.49813175201);
+val(axis.motor.Rp2.p.i,0.0);
+val(axis.motor.Rp2.p.i,1.49813175201);
+val(axis.motor.Rp2.n.i,0.0);
+val(axis.motor.Rp2.n.i,1.49813175201);
+val(axis.motor.Rp2.LossPower,0.0);
+val(axis.motor.Rp2.LossPower,1.49813175201);
+val(axis.motor.Rd4.v,0.0);
+val(axis.motor.Rd4.v,1.49813175201);
+val(axis.motor.Rd4.i,0.0);
+val(axis.motor.Rd4.i,1.49813175201);
+val(axis.motor.Rd4.p.v,0.0);
+val(axis.motor.Rd4.p.v,1.49813175201);
+val(axis.motor.Rd4.p.i,0.0);
+val(axis.motor.Rd4.p.i,1.49813175201);
+val(axis.motor.Rd4.n.i,0.0);
+val(axis.motor.Rd4.n.i,1.49813175201);
+val(axis.motor.Rd4.LossPower,0.0);
+val(axis.motor.Rd4.LossPower,1.49813175201);
+val(axis.motor.hall2.p.v,0.0);
+val(axis.motor.hall2.p.v,1.49813175201);
+val(axis.motor.hall2.p.i,0.0);
+val(axis.motor.hall2.p.i,1.49813175201);
+val(axis.motor.hall2.n.i,0.0);
+val(axis.motor.hall2.n.i,1.49813175201);
+val(axis.motor.hall2.v,0.0);
+val(axis.motor.hall2.v,1.49813175201);
+val(axis.motor.hall2.i,0.0);
+val(axis.motor.hall2.i,1.49813175201);
+val(axis.motor.Rd3.v,0.0);
+val(axis.motor.Rd3.v,1.49813175201);
+val(axis.motor.Rd3.i,0.0);
+val(axis.motor.Rd3.i,1.49813175201);
+val(axis.motor.Rd3.p.v,0.0);
+val(axis.motor.Rd3.p.v,1.49813175201);
+val(axis.motor.Rd3.p.i,0.0);
+val(axis.motor.Rd3.p.i,1.49813175201);
+val(axis.motor.Rd3.n.v,0.0);
+val(axis.motor.Rd3.n.v,1.49813175201);
+val(axis.motor.Rd3.n.i,0.0);
+val(axis.motor.Rd3.n.i,1.49813175201);
+val(axis.motor.Rd3.LossPower,0.0);
+val(axis.motor.Rd3.LossPower,1.49813175201);
+val(axis.motor.g1.p.i,0.0);
+val(axis.motor.g1.p.i,1.49813175201);
+val(axis.motor.g2.p.i,0.0);
+val(axis.motor.g2.p.i,1.49813175201);
+val(axis.motor.g3.p.i,0.0);
+val(axis.motor.g3.p.i,1.49813175201);
+val(axis.motor.hall1.p.i,0.0);
+val(axis.motor.hall1.p.i,1.49813175201);
+val(axis.motor.hall1.n.i,0.0);
+val(axis.motor.hall1.n.i,1.49813175201);
+val(axis.motor.hall1.i,0.0);
+val(axis.motor.hall1.i,1.49813175201);
+val(axis.motor.g4.p.i,0.0);
+val(axis.motor.g4.p.i,1.49813175201);
+val(axis.motor.g5.p.i,0.0);
+val(axis.motor.g5.p.i,1.49813175201);
+val(axis.motor.phi.flange.phi,0.0);
+val(axis.motor.phi.flange.phi,1.49813175201);
+val(axis.motor.phi.phi,0.0);
+val(axis.motor.phi.phi,1.49813175201);
+val(axis.motor.speed.flange.phi,0.0);
+val(axis.motor.speed.flange.phi,1.49813175201);
+val(der(axis.motor.speed.flange.phi),0.0);
+val(der(axis.motor.speed.flange.phi),1.49813175201);
+val(axis.motor.speed.w,0.0);
+val(axis.motor.speed.w,1.49813175201);
+val(axis.motor.Jmotor.flange_a.phi,0.0);
+val(axis.motor.Jmotor.flange_a.phi,1.49813175201);
+val(axis.motor.Jmotor.flange_a.tau,0.0);
+val(axis.motor.Jmotor.flange_a.tau,1.49813175201);
+val(axis.motor.Jmotor.flange_b.phi,0.0);
+val(axis.motor.Jmotor.flange_b.phi,1.49813175201);
+val(axis.motor.Jmotor.flange_b.tau,0.0);
+val(axis.motor.Jmotor.flange_b.tau,1.49813175201);
+val(axis.motor.Jmotor.phi,0.0);
+val(axis.motor.Jmotor.phi,1.49813175201);
+val(der(axis.motor.Jmotor.phi),0.0);
+val(der(axis.motor.Jmotor.phi),1.49813175201);
+val(axis.motor.Jmotor.w,0.0);
+val(axis.motor.Jmotor.w,1.49813175201);
+val(der(axis.motor.Jmotor.w),0.0);
+val(der(axis.motor.Jmotor.w),1.49813175201);
+val(axis.motor.Jmotor.a,0.0);
+val(axis.motor.Jmotor.a,1.49813175201);
+val(axis.motor.convert1.u,0.0);
+val(axis.motor.convert1.u,1.49813175201);
+val(axis.motor.convert1.y,0.0);
+val(axis.motor.convert1.y,1.49813175201);
+val(axis.motor.convert2.u,0.0);
+val(axis.motor.convert2.u,1.49813175201);
+val(axis.motor.convert2.y,0.0);
+val(axis.motor.convert2.y,1.49813175201);
+val(axis.controller.gain1.u,0.0);
+val(axis.controller.gain1.u,1.49813175201);
+val(axis.controller.gain1.y,0.0);
+val(axis.controller.gain1.y,1.49813175201);
+val(axis.controller.PI.u,0.0);
+val(axis.controller.PI.u,1.49813175201);
+val(axis.controller.PI.y,0.0);
+val(axis.controller.PI.y,1.49813175201);
+val(axis.controller.PI.x,0.0);
+val(axis.controller.PI.x,1.49813175201);
+val(der(axis.controller.PI.x),0.0);
+val(der(axis.controller.PI.x),1.49813175201);
+val(axis.controller.feedback1.u1,0.0);
+val(axis.controller.feedback1.u1,1.49813175201);
+val(axis.controller.feedback1.u2,0.0);
+val(axis.controller.feedback1.u2,1.49813175201);
+val(axis.controller.feedback1.y,0.0);
+val(axis.controller.feedback1.y,1.49813175201);
+val(axis.controller.P.u,0.0);
+val(axis.controller.P.u,1.49813175201);
+val(axis.controller.P.y,0.0);
+val(axis.controller.P.y,1.49813175201);
+val(axis.controller.add3.u1,0.0);
+val(axis.controller.add3.u1,1.49813175201);
+val(axis.controller.add3.u2,0.0);
+val(axis.controller.add3.u2,1.49813175201);
+val(axis.controller.add3.u3,0.0);
+val(axis.controller.add3.u3,1.49813175201);
+val(axis.controller.add3.y,0.0);
+val(axis.controller.add3.y,1.49813175201);
+val(axis.controller.gain2.u,0.0);
+val(axis.controller.gain2.u,1.49813175201);
+val(axis.controller.gain2.y,0.0);
+val(axis.controller.gain2.y,1.49813175201);
+val(axis.angleSensor.flange.phi,0.0);
+val(axis.angleSensor.flange.phi,1.49813175201);
+val(axis.angleSensor.phi,0.0);
+val(axis.angleSensor.phi,1.49813175201);
+val(axis.speedSensor.flange.phi,0.0);
+val(axis.speedSensor.flange.phi,1.49813175201);
+val(der(axis.speedSensor.flange.phi),0.0);
+val(der(axis.speedSensor.flange.phi),1.49813175201);
+val(axis.speedSensor.w,0.0);
+val(axis.speedSensor.w,1.49813175201);
+val(axis.accSensor.flange.phi,0.0);
+val(axis.accSensor.flange.phi,1.49813175201);
+val(der(axis.accSensor.flange.phi),0.0);
+val(der(axis.accSensor.flange.phi),1.49813175201);
+val(axis.accSensor.w,0.0);
+val(axis.accSensor.w,1.49813175201);
+val(der(axis.accSensor.w),0.0);
+val(der(axis.accSensor.w),1.49813175201);
+val(axis.accSensor.a,0.0);
+val(axis.accSensor.a,1.49813175201);
+val(axis.initializeFlange.phi_start,0.0);
+val(axis.initializeFlange.phi_start,1.49813175201);
+val(axis.initializeFlange.w_start,0.0);
+val(axis.initializeFlange.w_start,1.49813175201);
+val(axis.initializeFlange.flange.phi,0.0);
+val(axis.initializeFlange.flange.phi,1.49813175201);
+val(axis.initializeFlange.phi_flange,0.0);
+val(axis.initializeFlange.phi_flange,1.49813175201);
+val(der(axis.initializeFlange.phi_flange),0.0);
+val(der(axis.initializeFlange.phi_flange),1.49813175201);
+val(axis.initializeFlange.w_flange,0.0);
+val(axis.initializeFlange.w_flange,1.49813175201);
+val(der(axis.initializeFlange.w_flange),0.0);
+val(der(axis.initializeFlange.w_flange),1.49813175201);
+val(load.flange_a.phi,0.0);
+val(load.flange_a.phi,1.49813175201);
+val(load.flange_a.tau,0.0);
+val(load.flange_a.tau,1.49813175201);
+val(load.flange_b.phi,0.0);
+val(load.flange_b.phi,1.49813175201);
+val(load.phi,0.0);
+val(load.phi,1.49813175201);
+val(der(load.phi),0.0);
+val(der(load.phi),1.49813175201);
+val(load.w,0.0);
+val(load.w,1.49813175201);
+val(der(load.w),0.0);
+val(der(load.w),1.49813175201);
+val(load.a,0.0);
+val(load.a,1.49813175201);
+val(pathPlanning.path.q[1],0.0);
+val(pathPlanning.path.q[1],1.49813175201);
+val(pathPlanning.path.qd[1],0.0);
+val(pathPlanning.path.qd[1],1.49813175201);
+val(pathPlanning.path.qdd[1],0.0);
+val(pathPlanning.path.qdd[1],1.49813175201);
+val(pathPlanning.path.moving[1],0.0);
+val(pathPlanning.path.moving[1],1.49813175201);
+val(pathPlanning.pathToAxis1.q[1],0.0);
+val(pathPlanning.pathToAxis1.q[1],1.49813175201);
+val(pathPlanning.pathToAxis1.qd[1],0.0);
+val(pathPlanning.pathToAxis1.qd[1],1.49813175201);
+val(pathPlanning.pathToAxis1.qdd[1],0.0);
+val(pathPlanning.pathToAxis1.qdd[1],1.49813175201);
+val(pathPlanning.pathToAxis1.moving[1],0.0);
+val(pathPlanning.pathToAxis1.moving[1],1.49813175201);
+val(pathPlanning.pathToAxis1.motion_ref_axisUsed.u,0.0);
+val(pathPlanning.pathToAxis1.motion_ref_axisUsed.u,1.49813175201);
+val(pathPlanning.pathToAxis1.motion_ref_axisUsed.y,0.0);
+val(pathPlanning.pathToAxis1.motion_ref_axisUsed.y,1.49813175201);
+val(pathPlanning.terminateSimulation.condition,0.0);
+val(pathPlanning.terminateSimulation.condition,1.49813175201);
+val(axis.motor.axisControlBus.motorAngle,0.0);
+val(axis.motor.axisControlBus.motorAngle,1.49813175201);
+val(axis.motor.axisControlBus.motorSpeed,0.0);
+val(axis.motor.axisControlBus.motorSpeed,1.49813175201);
+val(axis.motor.axisControlBus.current,0.0);
+val(axis.motor.axisControlBus.current,1.49813175201);
+val(axis.motor.axisControlBus.current_ref,0.0);
+val(axis.motor.axisControlBus.current_ref,1.49813175201);
+val(axis.controller.axisControlBus.speed_ref,0.0);
+val(axis.controller.axisControlBus.speed_ref,1.49813175201);
+val(axis.controller.axisControlBus.angle_ref,0.0);
+val(axis.controller.axisControlBus.angle_ref,1.49813175201);
+val(axis.controller.axisControlBus.motorAngle,0.0);
+val(axis.controller.axisControlBus.motorAngle,1.49813175201);
+val(axis.controller.axisControlBus.motorSpeed,0.0);
+val(axis.controller.axisControlBus.motorSpeed,1.49813175201);
+val(axis.controller.axisControlBus.current_ref,0.0);
+val(axis.controller.axisControlBus.current_ref,1.49813175201);
+val(axis.axisControlBus.angle,0.0);
+val(axis.axisControlBus.angle,1.49813175201);
+val(axis.axisControlBus.speed,0.0);
+val(axis.axisControlBus.speed,1.49813175201);
+val(axis.axisControlBus.acceleration,0.0);
+val(axis.axisControlBus.acceleration,1.49813175201);
+val(axis.axisControlBus.angle_ref,0.0);
+val(axis.axisControlBus.angle_ref,1.49813175201);
+val(axis.axisControlBus.speed_ref,0.0);
+val(axis.axisControlBus.speed_ref,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.motion_ref,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.motion_ref,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.acceleration_ref,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.acceleration_ref,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.speed_ref,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.speed_ref,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.angle_ref,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.angle_ref,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.acceleration_ref,0.0);
+val(pathPlanning.controlBus.axisControlBus1.acceleration_ref,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.angle_ref,0.0);
+val(pathPlanning.controlBus.axisControlBus1.angle_ref,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.motion_ref,0.0);
+val(pathPlanning.controlBus.axisControlBus1.motion_ref,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.speed_ref,0.0);
+val(pathPlanning.controlBus.axisControlBus1.speed_ref,1.49813175201);
+val(controlBus.axisControlBus1.acceleration,0.0);
+val(controlBus.axisControlBus1.acceleration,1.49813175201);
+val(controlBus.axisControlBus1.angle,0.0);
+val(controlBus.axisControlBus1.angle,1.49813175201);
+val(controlBus.axisControlBus1.angle_ref,0.0);
+val(controlBus.axisControlBus1.angle_ref,1.49813175201);
+val(controlBus.axisControlBus1.speed,0.0);
+val(controlBus.axisControlBus1.speed,1.49813175201);
+val(controlBus.axisControlBus1.speed_ref,0.0);
+val(controlBus.axisControlBus1.speed_ref,1.49813175201);
+val(axis.axisControlBus.acceleration_ref,0.0);
+val(axis.axisControlBus.acceleration_ref,1.49813175201);
+val(axis.axisControlBus.current,0.0);
+val(axis.axisControlBus.current,1.49813175201);
+val(axis.axisControlBus.current_ref,0.0);
+val(axis.axisControlBus.current_ref,1.49813175201);
+val(axis.axisControlBus.motion_ref,0.0);
+val(axis.axisControlBus.motion_ref,1.49813175201);
+val(axis.axisControlBus.motorAngle,0.0);
+val(axis.axisControlBus.motorAngle,1.49813175201);
+val(axis.axisControlBus.motorSpeed,0.0);
+val(axis.axisControlBus.motorSpeed,1.49813175201);
+val(axis.controller.axisControlBus.acceleration,0.0);
+val(axis.controller.axisControlBus.acceleration,1.49813175201);
+val(axis.controller.axisControlBus.acceleration_ref,0.0);
+val(axis.controller.axisControlBus.acceleration_ref,1.49813175201);
+val(axis.controller.axisControlBus.angle,0.0);
+val(axis.controller.axisControlBus.angle,1.49813175201);
+val(axis.controller.axisControlBus.current,0.0);
+val(axis.controller.axisControlBus.current,1.49813175201);
+val(axis.controller.axisControlBus.motion_ref,0.0);
+val(axis.controller.axisControlBus.motion_ref,1.49813175201);
+val(axis.controller.axisControlBus.speed,0.0);
+val(axis.controller.axisControlBus.speed,1.49813175201);
+val(axis.motor.axisControlBus.acceleration,0.0);
+val(axis.motor.axisControlBus.acceleration,1.49813175201);
+val(axis.motor.axisControlBus.acceleration_ref,0.0);
+val(axis.motor.axisControlBus.acceleration_ref,1.49813175201);
+val(axis.motor.axisControlBus.angle,0.0);
+val(axis.motor.axisControlBus.angle,1.49813175201);
+val(axis.motor.axisControlBus.angle_ref,0.0);
+val(axis.motor.axisControlBus.angle_ref,1.49813175201);
+val(axis.motor.axisControlBus.motion_ref,0.0);
+val(axis.motor.axisControlBus.motion_ref,1.49813175201);
+val(axis.motor.axisControlBus.speed,0.0);
+val(axis.motor.axisControlBus.speed,1.49813175201);
+val(axis.motor.axisControlBus.speed_ref,0.0);
+val(axis.motor.axisControlBus.speed_ref,1.49813175201);
+val(controlBus.axisControlBus1.acceleration_ref,0.0);
+val(controlBus.axisControlBus1.acceleration_ref,1.49813175201);
+val(controlBus.axisControlBus1.current,0.0);
+val(controlBus.axisControlBus1.current,1.49813175201);
+val(controlBus.axisControlBus1.current_ref,0.0);
+val(controlBus.axisControlBus1.current_ref,1.49813175201);
+val(controlBus.axisControlBus1.motion_ref,0.0);
+val(controlBus.axisControlBus1.motion_ref,1.49813175201);
+val(controlBus.axisControlBus1.motorAngle,0.0);
+val(controlBus.axisControlBus1.motorAngle,1.49813175201);
+val(controlBus.axisControlBus1.motorSpeed,0.0);
+val(controlBus.axisControlBus1.motorSpeed,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.acceleration,0.0);
+val(pathPlanning.controlBus.axisControlBus1.acceleration,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.angle,0.0);
+val(pathPlanning.controlBus.axisControlBus1.angle,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.current,0.0);
+val(pathPlanning.controlBus.axisControlBus1.current,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.current_ref,0.0);
+val(pathPlanning.controlBus.axisControlBus1.current_ref,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.motorAngle,0.0);
+val(pathPlanning.controlBus.axisControlBus1.motorAngle,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.motorSpeed,0.0);
+val(pathPlanning.controlBus.axisControlBus1.motorSpeed,1.49813175201);
+val(pathPlanning.controlBus.axisControlBus1.speed,0.0);
+val(pathPlanning.controlBus.axisControlBus1.speed,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.acceleration,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.acceleration,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.angle,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.angle,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.current,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.current,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.current_ref,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.current_ref,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.motorAngle,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.motorAngle,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.motorSpeed,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.motorSpeed,1.49813175201);
+val(pathPlanning.pathToAxis1.axisControlBus.speed,0.0);
+val(pathPlanning.pathToAxis1.axisControlBus.speed,1.49813175201);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.0186898019165
+// 0.0
+// 439.777893066
+// 0.0
+// 0.500071048737
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.0186898019165
+// -0
+// 0.452397525311
+// 0.0
+// 439.777893066
+// -0
+// -8.89990551514e-05
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.0186898019165
+// 0.0
+// 439.777893066
+// 0.0
+// 0.210517168045
+// -0
+// -0.20127479732
+// 0.0
+// 2.09418034554
+// 0.0
+// 8.06799653219e-06
+// 0.0
+// 0.00244550826028
+// 0.0
+// 0.00244550826028
+// -0
+// 0.452397525311
+// -0
+// 0.452397525311
+// 0.0
+// 8.89990551514e-05
+// 0.0
+// 439.777893066
+// -0
+// -8.89990551514e-05
+// 0.0
+// 439.777893066
+// 0.0
+// 8.89990551514e-05
+// 0.0
+// 439.777893066
+// 0.0
+// 0.500071048737
+// 0.0
+// 439.777893066
+// 0.0
+// 8.89990551514e-05
+// 0.0
+// 0.208071663976
+// 0.0
+// -0.653672337532
+// 0.0
+// -0.15367230773
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.500160038471
+// 0.0
+// 0.208071663976
+// 0.0
+// -0.653672337532
+// 0.0
+// -0.653672337532
+// 0.0
+// 439.777893066
+// -0
+// -0.500071048737
+// 0.0
+// 0.42976552248
+// -0
+// -0.00214880332351
+// 0.0
+// 0.00214880332351
+// 0.0
+// 0.42976552248
+// -0
+// -0.00214880332351
+// 0.0
+// 4.85294322061e-06
+// 0.0
+// 0.00214831810445
+// 0.0
+// 0.214885190129
+// 0.0
+// 0.214885190129
+// 0.0
+// 4.85294322061e-06
+// 0.0
+// 0.00214831810445
+// -0
+// -0.00214831810445
+// 0.0
+// 107.683586121
+// -0
+// -0.860504746437
+// 0.0
+// 21.5367164612
+// 0.0
+// 21.5367164612
+// 0.0
+// 107.683586121
+// -0
+// -0.860504746437
+// 0.0
+// 0.860504746437
+// 0.0
+// 0.241696044803
+// 0.0
+// 0.429770380259
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.241696044803
+// 0.0
+// 0.429770380259
+// -0
+// -0.429770380259
+// 0.0
+// 439.777893066
+// -0
+// -0.499221295118
+// 0.0
+// -0.00070785463322
+// 0.0
+// 0.429770380259
+// 0.0
+// -0.0186873618513
+// 0.0
+// 0.240988180041
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.241696044803
+// -0
+// -0.429770380259
+// 0.0
+// 107.442596436
+// 0.0
+// 0.429770380259
+// 0.0
+// 107.683586121
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.240988180041
+// -0
+// -0.429770380259
+// 0.0
+// 46.1756477356
+// 0.0
+// 0.214880347252
+// 0.0
+// 0.00214880332351
+// 0.0
+// 0.42976552248
+// 0.0
+// 0.00214880332351
+// 0.0
+// 0.214885190129
+// -0
+// -0.00214880332351
+// 0.0
+// 0.000461735617137
+// -0
+// -21.5367164612
+// 0.0
+// 1.11213290691
+// 0.0
+// 4.85294322061e-07
+// 0.0
+// 4.85294322061e-07
+// 0.0
+// 21.5367164612
+// -0
+// -4.85294322061e-07
+// 0.0
+// 21.5367164612
+// 0.0
+// 4.85294322061e-07
+// 0.0
+// 21.5367164612
+// 0.0
+// 4.85294322061e-07
+// -0
+// -4.85294322061e-07
+// 0.0
+// 0.214880347252
+// 0.0
+// 0.00214880332351
+// 0.0
+// 0.214885190129
+// 0.0
+// 0.00214880332351
+// 0.0
+// 4.85294322061e-06
+// -0
+// -0.00214880332351
+// 0.0
+// 0.000461735617137
+// 0.0
+// 4.85294322061e-06
+// 0.0
+// 4.85294322061e-07
+// 0.0
+// 4.85294322061e-06
+// 0.0
+// 4.85294322061e-07
+// -0
+// -4.85294322061e-07
+// 0.0
+// 2.35510591064e-12
+// -0
+// -86.1468658447
+// -0
+// -0.430734336376
+// 0.0
+// 21.5367164612
+// -0
+// -0.430734336376
+// 0.0
+// 107.683586121
+// 0.0
+// 0.430734336376
+// 0.0
+// 37.1064147949
+// 0.0
+// 21.5367164612
+// 0.0
+// 0.430734336376
+// 0.0
+// 21.5367164612
+// 0.0
+// 0.430734336376
+// -0
+// -0.430734336376
+// 0.0
+// 9.27660369873
+// 0.0
+// 0.214885190129
+// 0.0
+// 0.00214885198511
+// 0.0
+// 0.214885190129
+// 0.0
+// 0.00214885198511
+// -0
+// -0.00214885198511
+// 0.0
+// 0.000461756455479
+// 0.0
+// 0.429770380259
+// -0
+// -0.00214885198511
+// 0.0
+// 0.00214885198511
+// 0.0
+// 0.429770380259
+// -0
+// -0.00214885198511
+// 0.0
+// 0.214885190129
+// 0.0
+// 0.00214885198511
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.00214885198511
+// 0.0
+// 0.214885190129
+// -0
+// -0.00214885198511
+// 0.0
+// 0.000461756455479
+// -0
+// -0.00214880332351
+// -0
+// -0.00214885198511
+// 0.0
+// -0.856207072735
+// 0.0
+// 0.429770380259
+// -0
+// -0.429770380259
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.430734336376
+// 0.0
+// 439.777893066
+// 0.0
+// 439.777893066
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.208071663976
+// 0.0
+// 439.777893066
+// 0.0
+// 0.499221295118
+// 0.0
+// 439.777893066
+// -0
+// -0.500071048737
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.208071663976
+// 0.0
+// -0.653672337532
+// 0.0
+// -0.653672337532
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 0.0
+// 0.42976552248
+// 0.0
+// 2.09439516068
+// 0.0
+// 439.822967529
+// 0.0
+// 0.0173923410475
+// 0.0
+// 0.42976552248
+// -0
+// 0.842138707638
+// 0.0
+// 0.347846835852
+// 0.0
+// 439.822967529
+// 0.0
+// 439.777893066
+// 0.0
+// 0.0450927987695
+// 0.0
+// 0.0450927987695
+// 0.0
+// 0.225464001298
+// 0.0
+// 0.0
+// 0.0
+// 0.225464001298
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.0173923410475
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.00100246269722
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09439516068
+// 0.0
+// 0.0
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09418034554
+// -0
+// -0.0186898019165
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09439516068
+// 0.0
+// 0.0
+// 10.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 2.09439516068
+// 0.0
+// 0.0
+// 10.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 0.0
+// 0.0
+// 0.0
+// 2.09439516068
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.42976552248
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09439516068
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 10.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// 2.09439516068
+// 10.0
+// 0.0
+// 0.0
+// 2.09439516068
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09439516068
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.0
+// 10.0
+// 0.0
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 1.0
+// 0.0
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// -0
+// -0.00095845136093
+// 10.0
+// 0.0
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.429770380259
+// 1.0
+// 0.0
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// 10.0
+// 0.0
+// 0.0
+// 2.09418034554
+// 0.0
+// 2.09439516068
+// 1.0
+// 0.0
+// 0.0
+// 0.00100246269722
+// 0.0
+// 0.0
+// 10.0
+// 0.0
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 1.0
+// 0.0
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.00100246269722
+// -0
+// -0.00095845136093
+// 0.0
+// 2.09418034554
+// 0.0
+// 0.429770380259
+// 0.0
+// 0.42976552248
+// 0.0
+// 439.777893066
+// 0.0
+// 0.208071663976
+// 0.0
+// 0.00100246269722
+// endResult

@@ -1,0 +1,287 @@
+// name:     Modelica.Electrical.Analog.Examples.CauerLowPassAnalog
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_* Modelica.Electrical.Analog.Examples.CauerLowPassAnalog Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.exe Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.cpp Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.makefile Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.libs Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Analog.Examples.CauerLowPassAnalog);
+val(G.p.i,0.0);
+val(G.p.i,60.0);
+val(C1.v,0.0);
+val(C1.v,60.0);
+val(der(C1.v),0.0);
+val(der(C1.v),60.0);
+val(C1.i,0.0);
+val(C1.i,60.0);
+val(C1.p.v,0.0);
+val(C1.p.v,60.0);
+val(C1.p.i,0.0);
+val(C1.p.i,60.0);
+val(C1.n.i,0.0);
+val(C1.n.i,60.0);
+val(C2.v,0.0);
+val(C2.v,60.0);
+val(der(C2.v),0.0);
+val(der(C2.v),60.0);
+val(C2.i,0.0);
+val(C2.i,60.0);
+val(C2.p.v,0.0);
+val(C2.p.v,60.0);
+val(C2.p.i,0.0);
+val(C2.p.i,60.0);
+val(C2.n.v,0.0);
+val(C2.n.v,60.0);
+val(C2.n.i,0.0);
+val(C2.n.i,60.0);
+val(C3.v,0.0);
+val(C3.v,60.0);
+val(der(C3.v),0.0);
+val(der(C3.v),60.0);
+val(C3.i,0.0);
+val(C3.i,60.0);
+val(C3.p.v,0.0);
+val(C3.p.v,60.0);
+val(C3.p.i,0.0);
+val(C3.p.i,60.0);
+val(C3.n.i,0.0);
+val(C3.n.i,60.0);
+val(C4.v,0.0);
+val(C4.v,60.0);
+val(der(C4.v),0.0);
+val(der(C4.v),60.0);
+val(C4.i,0.0);
+val(C4.i,60.0);
+val(C4.p.v,0.0);
+val(C4.p.v,60.0);
+val(C4.p.i,0.0);
+val(C4.p.i,60.0);
+val(C4.n.v,0.0);
+val(C4.n.v,60.0);
+val(C4.n.i,0.0);
+val(C4.n.i,60.0);
+val(C5.v,0.0);
+val(C5.v,60.0);
+val(der(C5.v),0.0);
+val(der(C5.v),60.0);
+val(C5.i,0.0);
+val(C5.i,60.0);
+val(C5.p.v,0.0);
+val(C5.p.v,60.0);
+val(C5.p.i,0.0);
+val(C5.p.i,60.0);
+val(C5.n.i,0.0);
+val(C5.n.i,60.0);
+val(L1.v,0.0);
+val(L1.v,60.0);
+val(L1.i,0.0);
+val(L1.i,60.0);
+val(der(L1.i),0.0);
+val(der(L1.i),60.0);
+val(L1.p.v,0.0);
+val(L1.p.v,60.0);
+val(L1.p.i,0.0);
+val(L1.p.i,60.0);
+val(L1.n.v,0.0);
+val(L1.n.v,60.0);
+val(L1.n.i,0.0);
+val(L1.n.i,60.0);
+val(L2.v,0.0);
+val(L2.v,60.0);
+val(L2.i,0.0);
+val(L2.i,60.0);
+val(der(L2.i),0.0);
+val(der(L2.i),60.0);
+val(L2.p.v,0.0);
+val(L2.p.v,60.0);
+val(L2.p.i,0.0);
+val(L2.p.i,60.0);
+val(L2.n.v,0.0);
+val(L2.n.v,60.0);
+val(L2.n.i,0.0);
+val(L2.n.i,60.0);
+val(R1.v,0.0);
+val(R1.v,60.0);
+val(R1.i,0.0);
+val(R1.i,60.0);
+val(R1.p.v,0.0);
+val(R1.p.v,60.0);
+val(R1.p.i,0.0);
+val(R1.p.i,60.0);
+val(R1.n.v,0.0);
+val(R1.n.v,60.0);
+val(R1.n.i,0.0);
+val(R1.n.i,60.0);
+val(R1.LossPower,0.0);
+val(R1.LossPower,60.0);
+val(R2.v,0.0);
+val(R2.v,60.0);
+val(R2.i,0.0);
+val(R2.i,60.0);
+val(R2.p.v,0.0);
+val(R2.p.v,60.0);
+val(R2.p.i,0.0);
+val(R2.p.i,60.0);
+val(R2.n.i,0.0);
+val(R2.n.i,60.0);
+val(R2.LossPower,0.0);
+val(R2.LossPower,60.0);
+val(V.v,0.0);
+val(V.v,60.0);
+val(V.i,0.0);
+val(V.i,60.0);
+val(V.p.v,0.0);
+val(V.p.v,60.0);
+val(V.p.i,0.0);
+val(V.p.i,60.0);
+val(V.n.i,0.0);
+val(V.n.i,60.0);
+val(V.signalSource.y,0.0);
+val(V.signalSource.y,60.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassAnalog', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 0.0
+// 0.0
+// 0.499842762947
+// 0.0
+// 0.000531200377736
+// 0.0
+// 0.000569446827285
+// 0.0
+// 0.499842762947
+// 0.0
+// 0.000569446827285
+// -0
+// -0.000569446827285
+// 0.0
+// -0.00101312145125
+// 0.0
+// 0.000912135350518
+// 0.0
+// 0.000240622932324
+// 0.0
+// 0.499842762947
+// 0.0
+// 0.000240622932324
+// 0.0
+// 0.500855863094
+// -0
+// -0.000240622932324
+// 0.0
+// 0.500855863094
+// 0.0
+// -0.000380934943678
+// 0.0
+// -0.000640732585452
+// 0.0
+// 0.500855863094
+// 0.0
+// -0.000640732585452
+// -0
+// 0.000640732585452
+// 0.0
+// 0.00101326277945
+// 0.0
+// -0.000912331044674
+// 0.0
+// -0.000763199466746
+// 0.0
+// 0.500855863094
+// 0.0
+// -0.000763199466746
+// 0.0
+// 0.499842613935
+// -0
+// 0.000763199466746
+// 0.0
+// 0.499842613935
+// 0.0
+// 0.0005313961301
+// 0.0
+// 0.000385899853427
+// 0.0
+// 0.499842613935
+// 0.0
+// 0.000385899853427
+// -0
+// -0.000385899853427
+// 0.0
+// -0.00101312145125
+// 0.0
+// 0.499347180128
+// 0.0
+// -0.000776933622546
+// 0.0
+// 0.499842762947
+// 0.0
+// 0.499347180128
+// 0.0
+// 0.500855863094
+// -0
+// -0.499347180128
+// 0.0
+// 0.00101326277945
+// 0.0
+// 0.50099170208
+// 0.0
+// 0.00118013366591
+// 0.0
+// 0.500855863094
+// 0.0
+// 0.50099170208
+// 0.0
+// 0.499842613935
+// -0
+// -0.50099170208
+// 0.0
+// 0.500157237053
+// 0.0
+// 0.500157237053
+// 0.0
+// 1.0
+// 0.0
+// 0.500157237053
+// 0.0
+// 0.499842762947
+// -0
+// -0.500157237053
+// 0.0
+// 0.250157266855
+// 0.0
+// 0.499842613935
+// 0.0
+// 0.499842613935
+// 0.0
+// 0.499842613935
+// 0.0
+// 0.499842613935
+// -0
+// -0.499842613935
+// 0.0
+// 0.249842643738
+// 0.0
+// 1.0
+// -0
+// -0.500157237053
+// 0.0
+// 1.0
+// -0
+// -0.500157237053
+// 0.0
+// 0.500157237053
+// 0.0
+// 1.0
+// endResult

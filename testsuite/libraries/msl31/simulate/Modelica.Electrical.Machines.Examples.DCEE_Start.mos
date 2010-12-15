@@ -1,0 +1,363 @@
+// name:     Modelica.Electrical.Machines.Examples.DCEE_Start
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Machines.Examples.DCEE_Start_* Modelica.Electrical.Machines.Examples.DCEE_Start Modelica.Electrical.Machines.Examples.DCEE_Start.exe Modelica.Electrical.Machines.Examples.DCEE_Start.cpp Modelica.Electrical.Machines.Examples.DCEE_Start.makefile Modelica.Electrical.Machines.Examples.DCEE_Start.libs Modelica.Electrical.Machines.Examples.DCEE_Start.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Machines.Examples.DCEE_Start);
+val(dcee.phiMechanical,0.0);
+val(dcee.phiMechanical,2.0);
+val(der(dcee.phiMechanical),0.0);
+val(der(dcee.phiMechanical),2.0);
+val(dcee.wMechanical,0.0);
+val(dcee.wMechanical,2.0);
+val(dcee.tauElectrical,0.0);
+val(dcee.tauElectrical,2.0);
+val(dcee.tauShaft,0.0);
+val(dcee.tauShaft,2.0);
+val(dcee.flange.phi,0.0);
+val(dcee.flange.phi,2.0);
+val(dcee.flange.tau,0.0);
+val(dcee.flange.tau,2.0);
+val(dcee.inertiaRotor.flange_a.phi,0.0);
+val(dcee.inertiaRotor.flange_a.phi,2.0);
+val(dcee.inertiaRotor.flange_a.tau,0.0);
+val(dcee.inertiaRotor.flange_a.tau,2.0);
+val(dcee.inertiaRotor.flange_b.phi,0.0);
+val(dcee.inertiaRotor.flange_b.phi,2.0);
+val(dcee.inertiaRotor.flange_b.tau,0.0);
+val(dcee.inertiaRotor.flange_b.tau,2.0);
+val(dcee.inertiaRotor.phi,0.0);
+val(dcee.inertiaRotor.phi,2.0);
+val(der(dcee.inertiaRotor.phi),0.0);
+val(der(dcee.inertiaRotor.phi),2.0);
+val(dcee.inertiaRotor.w,0.0);
+val(dcee.inertiaRotor.w,2.0);
+val(der(dcee.inertiaRotor.w),0.0);
+val(der(dcee.inertiaRotor.w),2.0);
+val(dcee.inertiaRotor.a,0.0);
+val(dcee.inertiaRotor.a,2.0);
+val(dcee.fixed.flange.tau,0.0);
+val(dcee.fixed.flange.tau,2.0);
+val(dcee.va,0.0);
+val(dcee.va,2.0);
+val(dcee.ia,0.0);
+val(dcee.ia,2.0);
+val(dcee.pin_ap.v,0.0);
+val(dcee.pin_ap.v,2.0);
+val(dcee.pin_ap.i,0.0);
+val(dcee.pin_ap.i,2.0);
+val(dcee.pin_an.i,0.0);
+val(dcee.pin_an.i,2.0);
+val(dcee.ra.v,0.0);
+val(dcee.ra.v,2.0);
+val(dcee.ra.i,0.0);
+val(dcee.ra.i,2.0);
+val(dcee.ra.p.v,0.0);
+val(dcee.ra.p.v,2.0);
+val(dcee.ra.p.i,0.0);
+val(dcee.ra.p.i,2.0);
+val(dcee.ra.n.v,0.0);
+val(dcee.ra.n.v,2.0);
+val(dcee.ra.n.i,0.0);
+val(dcee.ra.n.i,2.0);
+val(dcee.ra.LossPower,0.0);
+val(dcee.ra.LossPower,2.0);
+val(dcee.la.v,0.0);
+val(dcee.la.v,2.0);
+val(dcee.la.i,0.0);
+val(dcee.la.i,2.0);
+val(der(dcee.la.i),0.0);
+val(der(dcee.la.i),2.0);
+val(dcee.la.p.v,0.0);
+val(dcee.la.p.v,2.0);
+val(dcee.la.p.i,0.0);
+val(dcee.la.p.i,2.0);
+val(dcee.la.n.v,0.0);
+val(dcee.la.n.v,2.0);
+val(dcee.la.n.i,0.0);
+val(dcee.la.n.i,2.0);
+val(dcee.airGapDC.w,0.0);
+val(dcee.airGapDC.w,2.0);
+val(dcee.airGapDC.vei,0.0);
+val(dcee.airGapDC.vei,2.0);
+val(dcee.airGapDC.ie,0.0);
+val(dcee.airGapDC.ie,2.0);
+val(dcee.airGapDC.psi_e,0.0);
+val(dcee.airGapDC.psi_e,2.0);
+val(der(dcee.airGapDC.psi_e),0.0);
+val(der(dcee.airGapDC.psi_e),2.0);
+val(dcee.airGapDC.vai,0.0);
+val(dcee.airGapDC.vai,2.0);
+val(dcee.airGapDC.ia,0.0);
+val(dcee.airGapDC.ia,2.0);
+val(dcee.airGapDC.tauElectrical,0.0);
+val(dcee.airGapDC.tauElectrical,2.0);
+val(dcee.airGapDC.flange.phi,0.0);
+val(dcee.airGapDC.flange.phi,2.0);
+val(der(dcee.airGapDC.flange.phi),0.0);
+val(der(dcee.airGapDC.flange.phi),2.0);
+val(dcee.airGapDC.flange.tau,0.0);
+val(dcee.airGapDC.flange.tau,2.0);
+val(dcee.airGapDC.support.tau,0.0);
+val(dcee.airGapDC.support.tau,2.0);
+val(dcee.airGapDC.pin_ap.v,0.0);
+val(dcee.airGapDC.pin_ap.v,2.0);
+val(dcee.airGapDC.pin_ap.i,0.0);
+val(dcee.airGapDC.pin_ap.i,2.0);
+val(dcee.airGapDC.pin_ep.v,0.0);
+val(dcee.airGapDC.pin_ep.v,2.0);
+val(dcee.airGapDC.pin_ep.i,0.0);
+val(dcee.airGapDC.pin_ep.i,2.0);
+val(dcee.airGapDC.pin_an.i,0.0);
+val(dcee.airGapDC.pin_an.i,2.0);
+val(dcee.airGapDC.pin_en.i,0.0);
+val(dcee.airGapDC.pin_en.i,2.0);
+val(dcee.ie,0.0);
+val(dcee.ie,2.0);
+val(dcee.re.v,0.0);
+val(dcee.re.v,2.0);
+val(dcee.re.i,0.0);
+val(dcee.re.i,2.0);
+val(dcee.re.p.i,0.0);
+val(dcee.re.p.i,2.0);
+val(dcee.re.n.v,0.0);
+val(dcee.re.n.v,2.0);
+val(dcee.re.n.i,0.0);
+val(dcee.re.n.i,2.0);
+val(dcee.re.LossPower,0.0);
+val(dcee.re.LossPower,2.0);
+val(dcee.pin_ep.i,0.0);
+val(dcee.pin_ep.i,2.0);
+val(dcee.pin_en.i,0.0);
+val(dcee.pin_en.i,2.0);
+val(ramp.y,0.0);
+val(ramp.y,2.0);
+val(signalVoltage.p.v,0.0);
+val(signalVoltage.p.v,2.0);
+val(signalVoltage.p.i,0.0);
+val(signalVoltage.p.i,2.0);
+val(signalVoltage.n.i,0.0);
+val(signalVoltage.n.i,2.0);
+val(signalVoltage.v,0.0);
+val(signalVoltage.v,2.0);
+val(signalVoltage.i,0.0);
+val(signalVoltage.i,2.0);
+val(constantVoltage.i,0.0);
+val(constantVoltage.i,2.0);
+val(constantVoltage.p.i,0.0);
+val(constantVoltage.p.i,2.0);
+val(constantVoltage.n.i,0.0);
+val(constantVoltage.n.i,2.0);
+val(loadInertia.flange_a.phi,0.0);
+val(loadInertia.flange_a.phi,2.0);
+val(loadInertia.flange_a.tau,0.0);
+val(loadInertia.flange_a.tau,2.0);
+val(loadInertia.flange_b.phi,0.0);
+val(loadInertia.flange_b.phi,2.0);
+val(loadInertia.flange_b.tau,0.0);
+val(loadInertia.flange_b.tau,2.0);
+val(loadInertia.phi,0.0);
+val(loadInertia.phi,2.0);
+val(der(loadInertia.phi),0.0);
+val(der(loadInertia.phi),2.0);
+val(loadInertia.w,0.0);
+val(loadInertia.w,2.0);
+val(der(loadInertia.w),0.0);
+val(der(loadInertia.w),2.0);
+val(loadInertia.a,0.0);
+val(loadInertia.a,2.0);
+val(loadTorqueStep.flange.phi,0.0);
+val(loadTorqueStep.flange.phi,2.0);
+val(loadTorqueStep.flange.tau,0.0);
+val(loadTorqueStep.flange.tau,2.0);
+val(loadTorqueStep.phi,0.0);
+val(loadTorqueStep.phi,2.0);
+val(loadTorqueStep.tau,0.0);
+val(loadTorqueStep.tau,2.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Machines.Examples.DCEE_Start_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Machines.Examples.DCEE_Start', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227996826
+// 0.0
+// 149.227996826
+// 0.0
+// 63.6451644897
+// -0
+// 63.6525802612
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6525802612
+// 0.0
+// 210.225982666
+// 0.0
+// 63.6451644897
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6525802612
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227996826
+// 0.0
+// 149.227996826
+// 0.0
+// -0.0494526699185
+// 0.0
+// -0.0494526699185
+// -0
+// -63.6451644897
+// 0.0
+// 100.0
+// 0.0
+// 99.9735870361
+// 0.0
+// 100.0
+// 0.0
+// 99.9735870361
+// -0
+// -99.9735870361
+// 0.0
+// 4.99867963791
+// 0.0
+// 99.9735870361
+// 0.0
+// 100.0
+// 0.0
+// 99.9735870361
+// 0.0
+// 95.0013198853
+// -0
+// -99.9735870361
+// 0.0
+// 499.735931396
+// 0.0
+// -0.000176592060598
+// 0.0
+// 99.9735870361
+// 0.0
+// -0.117728047073
+// 0.0
+// 95.0013198853
+// 0.0
+// 99.9735870361
+// 0.0
+// 95.0014953613
+// -0
+// -99.9735870361
+// 0.0
+// 149.227996826
+// 100.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 100.0
+// 0.0
+// 0.0
+// 95.0014953613
+// 0.0
+// 99.9735870361
+// 0.0
+// 63.6451644897
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227996826
+// -0
+// -63.6451644897
+// 0.0
+// 63.6451644897
+// 0.0
+// 95.0014953613
+// 0.0
+// 99.9735870361
+// 100.0
+// 0.0
+// 0.0
+// 1.0
+// -0
+// -99.9735870361
+// -0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// 100.0
+// 0.0
+// 1.0
+// 0.0
+// 1.0
+// 100.0
+// 0.0
+// -0
+// -1.0
+// 0.0
+// 100.0
+// 0.0
+// 1.0
+// -0
+// -1.0
+// 0.0
+// 100.0
+// 0.0
+// 100.0
+// -0
+// -99.9735870361
+// 0.0
+// 99.9735870361
+// 0.0
+// 100.0
+// -0
+// -99.9735870361
+// -0
+// -1.0
+// -0
+// -1.0
+// 0.0
+// 1.0
+// 0.0
+// 210.225982666
+// -0
+// 63.6525802612
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6599998474
+// 0.0
+// 210.225982666
+// 0.0
+// 149.227996826
+// 0.0
+// 149.227996826
+// 0.0
+// -0.0494526699185
+// 0.0
+// -0.0494526699185
+// 0.0
+// 210.225982666
+// -0
+// 63.6599998474
+// 0.0
+// 210.225982666
+// 0.0
+// -63.6599998474
+// endResult

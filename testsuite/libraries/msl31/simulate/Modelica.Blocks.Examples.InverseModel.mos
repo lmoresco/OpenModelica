@@ -1,0 +1,95 @@
+// name:     Modelica.Blocks.Examples.InverseModel
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Blocks.Examples.InverseModel_* Modelica.Blocks.Examples.InverseModel Modelica.Blocks.Examples.InverseModel.exe Modelica.Blocks.Examples.InverseModel.cpp Modelica.Blocks.Examples.InverseModel.makefile Modelica.Blocks.Examples.InverseModel.libs Modelica.Blocks.Examples.InverseModel.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Blocks.Examples.InverseModel);
+val(firstOrder1.u,0.0);
+val(firstOrder1.u,1.0);
+val(firstOrder1.y,0.0);
+val(firstOrder1.y,1.0);
+val(der(firstOrder1.y),0.0);
+val(der(firstOrder1.y),1.0);
+val(sine.y,0.0);
+val(sine.y,1.0);
+val(inverseBlockConstraints.u1,0.0);
+val(inverseBlockConstraints.u1,1.0);
+val(inverseBlockConstraints.u2,0.0);
+val(inverseBlockConstraints.u2,1.0);
+val(inverseBlockConstraints.y1,0.0);
+val(inverseBlockConstraints.y1,1.0);
+val(inverseBlockConstraints.y2,0.0);
+val(inverseBlockConstraints.y2,1.0);
+val(firstOrder2.u,0.0);
+val(firstOrder2.u,1.0);
+val(firstOrder2.y,0.0);
+val(firstOrder2.y,1.0);
+val(der(firstOrder2.y),0.0);
+val(der(firstOrder2.y),1.0);
+val(feedback.u1,0.0);
+val(feedback.u1,1.0);
+val(feedback.u2,0.0);
+val(feedback.u2,1.0);
+val(feedback.y,0.0);
+val(feedback.y,1.0);
+val(criticalDamping.u,0.0);
+val(criticalDamping.u,1.0);
+val(criticalDamping.y,0.0);
+val(criticalDamping.y,1.0);
+val(criticalDamping.x[1],0.0);
+val(criticalDamping.x[1],1.0);
+val(der(criticalDamping.x[1]),0.0);
+val(der(criticalDamping.x[1]),1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Blocks.Examples.InverseModel_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.InverseModel', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// -2.66446566582
+// 1.0
+// 0.428624093533
+// 0.0
+// -10.3102989197
+// 1.0
+// 0.412214756012
+// 1.0
+// 0.428624093533
+// 1.0
+// 0.428624093533
+// 1.0
+// -2.66446566582
+// 1.0
+// -2.66446566582
+// 1.0
+// -2.66446566582
+// 1.0
+// 0.428624093533
+// 0.0
+// -10.3102989197
+// 1.0
+// 0.428624093533
+// 1.0
+// 0.412214756012
+// 0.0
+// 0.0164093505591
+// 1.0
+// 0.412214756012
+// 1.0
+// 0.428624093533
+// 1.0
+// 0.428624093533
+// 0.0
+// -10.3102989197
+// endResult

@@ -1,0 +1,191 @@
+// name:     Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling_* Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.exe Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.cpp Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.makefile Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.libs Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling);
+val(dTSource,0.0);
+val(dTSource,1.0);
+val(dTtoPipe,0.0);
+val(dTtoPipe,1.0);
+val(dTCoolant,0.0);
+val(dTCoolant,1.0);
+val(ambient1.T_port,0.0);
+val(ambient1.T_port,1.0);
+val(ambient1.flowPort.h,0.0);
+val(ambient1.flowPort.h,1.0);
+val(ambient1.flowPort.H_flow,0.0);
+val(ambient1.flowPort.H_flow,1.0);
+val(pump.T,0.0);
+val(pump.T,1.0);
+val(pump.T_a,0.0);
+val(pump.T_a,1.0);
+val(pump.T_b,0.0);
+val(pump.T_b,1.0);
+val(pump.dT,0.0);
+val(pump.dT,1.0);
+val(pump.flowPort_a.h,0.0);
+val(pump.flowPort_a.h,1.0);
+val(pump.flowPort_a.H_flow,0.0);
+val(pump.flowPort_a.H_flow,1.0);
+val(pump.flowPort_b.h,0.0);
+val(pump.flowPort_b.h,1.0);
+val(pump.flowPort_b.H_flow,0.0);
+val(pump.flowPort_b.H_flow,1.0);
+val(pipe.Q_flow,0.0);
+val(pipe.Q_flow,1.0);
+val(pipe.T,0.0);
+val(pipe.T,1.0);
+val(der(pipe.T),0.0);
+val(der(pipe.T),1.0);
+val(pipe.T_a,0.0);
+val(pipe.T_a,1.0);
+val(pipe.T_b,0.0);
+val(pipe.T_b,1.0);
+val(pipe.dT,0.0);
+val(pipe.dT,1.0);
+val(pipe.flowPort_a.h,0.0);
+val(pipe.flowPort_a.h,1.0);
+val(pipe.flowPort_a.H_flow,0.0);
+val(pipe.flowPort_a.H_flow,1.0);
+val(pipe.flowPort_b.h,0.0);
+val(pipe.flowPort_b.h,1.0);
+val(pipe.flowPort_b.H_flow,0.0);
+val(pipe.flowPort_b.H_flow,1.0);
+val(pipe.heatPort.T,0.0);
+val(pipe.heatPort.T,1.0);
+val(pipe.heatPort.Q_flow,0.0);
+val(pipe.heatPort.Q_flow,1.0);
+val(ambient2.T_port,0.0);
+val(ambient2.T_port,1.0);
+val(ambient2.flowPort.h,0.0);
+val(ambient2.flowPort.h,1.0);
+val(ambient2.flowPort.H_flow,0.0);
+val(ambient2.flowPort.H_flow,1.0);
+val(heatCapacitor.T,0.0);
+val(heatCapacitor.T,1.0);
+val(der(heatCapacitor.T),0.0);
+val(der(heatCapacitor.T),1.0);
+val(heatCapacitor.der_T,0.0);
+val(heatCapacitor.der_T,1.0);
+val(heatCapacitor.port.T,0.0);
+val(heatCapacitor.port.T,1.0);
+val(heatCapacitor.port.Q_flow,0.0);
+val(heatCapacitor.port.Q_flow,1.0);
+val(prescribedHeatFlow.port.T,0.0);
+val(prescribedHeatFlow.port.T,1.0);
+val(prescribedHeatFlow.port.Q_flow,0.0);
+val(prescribedHeatFlow.port.Q_flow,1.0);
+val(convection.Q_flow,0.0);
+val(convection.Q_flow,1.0);
+val(convection.dT,0.0);
+val(convection.dT,1.0);
+val(convection.solid.T,0.0);
+val(convection.solid.T,1.0);
+val(convection.solid.Q_flow,0.0);
+val(convection.solid.Q_flow,1.0);
+val(convection.fluid.T,0.0);
+val(convection.fluid.T,1.0);
+val(convection.fluid.Q_flow,0.0);
+val(convection.fluid.Q_flow,1.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 19.5886116028
+// 0.0
+// 9.84288692474
+// 0.0
+// 9.74572467804
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 0.0
+// 0.0
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// -293.149993896
+// -293.149993896
+// 0.0
+// 9.84288692474
+// 293.149993896
+// 302.895721436
+// 0.0
+// 0.971626937389
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 302.895721436
+// 0.0
+// 9.74572467804
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 293.149993896
+// 302.895721436
+// -293.149993896
+// -302.895721436
+// 293.149993896
+// 302.895721436
+// 0.0
+// 9.84288692474
+// 293.149993896
+// 302.895721436
+// 293.149993896
+// 302.895721436
+// 293.149993896
+// 302.895721436
+// 293.149993896
+// 312.738616943
+// 100.0
+// 1.57112956047
+// 100.0
+// 1.57112956047
+// 293.149993896
+// 312.738616943
+// 10.0
+// 0.157112956047
+// 293.149993896
+// 312.738616943
+// -10.0
+// -10.0
+// 0.0
+// 9.84288692474
+// 0.0
+// 9.84288692474
+// 293.149993896
+// 312.738616943
+// 0.0
+// 9.84288692474
+// 293.149993896
+// 302.895721436
+// -0
+// -9.84288692474
+// endResult

@@ -1,0 +1,55 @@
+// name:     Modelica.StateGraph.Examples.FirstExample
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.StateGraph.Examples.FirstExample_* Modelica.StateGraph.Examples.FirstExample Modelica.StateGraph.Examples.FirstExample.exe Modelica.StateGraph.Examples.FirstExample.cpp Modelica.StateGraph.Examples.FirstExample.makefile Modelica.StateGraph.Examples.FirstExample.libs Modelica.StateGraph.Examples.FirstExample.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.StateGraph.Examples.FirstExample);
+val(stateGraphRoot.subgraphStatePort.activeSteps,0.0);
+val(stateGraphRoot.subgraphStatePort.activeSteps,5.0);
+val(stateGraphRoot.activeSteps,0.0);
+val(stateGraphRoot.activeSteps,5.0);
+val(initialStep.active,0.0);
+val(initialStep.active,5.0);
+val(transition1.t,0.0);
+val(transition1.t,5.0);
+val(transition1.enableFire,0.0);
+val(transition1.enableFire,5.0);
+val(step.active,0.0);
+val(step.active,5.0);
+val(transition2.t,0.0);
+val(transition2.t,5.0);
+val(transition2.enableFire,0.0);
+val(transition2.enableFire,5.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.StateGraph.Examples.FirstExample_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.FirstExample', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// -1.0
+// -1.0
+// 1.0
+// 1.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 1.0
+// endResult

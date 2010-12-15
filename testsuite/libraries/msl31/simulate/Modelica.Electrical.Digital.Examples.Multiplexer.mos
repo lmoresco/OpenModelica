@@ -1,0 +1,335 @@
+// name:     Modelica.Electrical.Digital.Examples.Multiplexer
+// keywords: simulation MSL Examples
+// status: correct
+// teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Multiplexer_* Modelica.Electrical.Digital.Examples.Multiplexer Modelica.Electrical.Digital.Examples.Multiplexer.exe Modelica.Electrical.Digital.Examples.Multiplexer.cpp Modelica.Electrical.Digital.Examples.Multiplexer.makefile Modelica.Electrical.Digital.Examples.Multiplexer.libs Modelica.Electrical.Digital.Examples.Multiplexer.log output.log
+//
+// Simulation Results 
+// Modelica Standard Library
+//
+
+loadModel(Modelica);
+loadModel(ModelicaServices);
+
+simulate(Modelica.Electrical.Digital.Examples.Multiplexer);
+val(CLK.y,0.0);
+val(CLK.y,250.0);
+val(D0.y,0.0);
+val(D0.y,250.0);
+val(D1.y,0.0);
+val(D1.y,250.0);
+val(MUX.d0,0.0);
+val(MUX.d0,250.0);
+val(MUX.d1,0.0);
+val(MUX.d1,250.0);
+val(MUX.d2,0.0);
+val(MUX.d2,250.0);
+val(MUX.d3,0.0);
+val(MUX.d3,250.0);
+val(MUX.a0,0.0);
+val(MUX.a0,250.0);
+val(MUX.a1,0.0);
+val(MUX.a1,250.0);
+val(MUX.d,0.0);
+val(MUX.d,250.0);
+val(MUX.Or1.x[1],0.0);
+val(MUX.Or1.x[1],250.0);
+val(MUX.Or1.x[2],0.0);
+val(MUX.Or1.x[2],250.0);
+val(MUX.Or1.x[3],0.0);
+val(MUX.Or1.x[3],250.0);
+val(MUX.Or1.x[4],0.0);
+val(MUX.Or1.x[4],250.0);
+val(MUX.Or1.y,0.0);
+val(MUX.Or1.y,250.0);
+val(MUX.And1.x[1],0.0);
+val(MUX.And1.x[1],250.0);
+val(MUX.And1.x[2],0.0);
+val(MUX.And1.x[2],250.0);
+val(MUX.And1.x[3],0.0);
+val(MUX.And1.x[3],250.0);
+val(MUX.And1.y,0.0);
+val(MUX.And1.y,250.0);
+val(MUX.And2.x[1],0.0);
+val(MUX.And2.x[1],250.0);
+val(MUX.And2.x[2],0.0);
+val(MUX.And2.x[2],250.0);
+val(MUX.And2.x[3],0.0);
+val(MUX.And2.x[3],250.0);
+val(MUX.And2.y,0.0);
+val(MUX.And2.y,250.0);
+val(MUX.And3.x[1],0.0);
+val(MUX.And3.x[1],250.0);
+val(MUX.And3.x[2],0.0);
+val(MUX.And3.x[2],250.0);
+val(MUX.And3.x[3],0.0);
+val(MUX.And3.x[3],250.0);
+val(MUX.And3.y,0.0);
+val(MUX.And3.y,250.0);
+val(MUX.And4.x[1],0.0);
+val(MUX.And4.x[1],250.0);
+val(MUX.And4.x[2],0.0);
+val(MUX.And4.x[2],250.0);
+val(MUX.And4.x[3],0.0);
+val(MUX.And4.x[3],250.0);
+val(MUX.And4.y,0.0);
+val(MUX.And4.y,250.0);
+val(MUX.Not1.x,0.0);
+val(MUX.Not1.x,250.0);
+val(MUX.Not1.y,0.0);
+val(MUX.Not1.y,250.0);
+val(MUX.Not2.x,0.0);
+val(MUX.Not2.x,250.0);
+val(MUX.Not2.y,0.0);
+val(MUX.Not2.y,250.0);
+val(D2.y,0.0);
+val(D2.y,250.0);
+val(D3.y,0.0);
+val(D3.y,250.0);
+val(FF.q,0.0);
+val(FF.q,250.0);
+val(FF.qn,0.0);
+val(FF.qn,250.0);
+val(FF.clk,0.0);
+val(FF.clk,250.0);
+val(FF.RS1.Nor1.x[1],0.0);
+val(FF.RS1.Nor1.x[1],250.0);
+val(FF.RS1.Nor1.x[2],0.0);
+val(FF.RS1.Nor1.x[2],250.0);
+val(FF.RS1.Nor1.y,0.0);
+val(FF.RS1.Nor1.y,250.0);
+val(FF.RS1.Nor2.x[1],0.0);
+val(FF.RS1.Nor2.x[1],250.0);
+val(FF.RS1.Nor2.x[2],0.0);
+val(FF.RS1.Nor2.x[2],250.0);
+val(FF.RS1.Nor2.y,0.0);
+val(FF.RS1.Nor2.y,250.0);
+val(FF.RS1.s,0.0);
+val(FF.RS1.s,250.0);
+val(FF.RS1.r,0.0);
+val(FF.RS1.r,250.0);
+val(FF.RS1.q,0.0);
+val(FF.RS1.q,250.0);
+val(FF.RS1.qn,0.0);
+val(FF.RS1.qn,250.0);
+val(FF.RS1.TD1.x,0.0);
+val(FF.RS1.TD1.x,250.0);
+val(FF.RS1.TD1.y,0.0);
+val(FF.RS1.TD1.y,250.0);
+val(FF.RS2.Nor1.x[1],0.0);
+val(FF.RS2.Nor1.x[1],250.0);
+val(FF.RS2.Nor1.x[2],0.0);
+val(FF.RS2.Nor1.x[2],250.0);
+val(FF.RS2.Nor1.y,0.0);
+val(FF.RS2.Nor1.y,250.0);
+val(FF.RS2.Nor2.x[1],0.0);
+val(FF.RS2.Nor2.x[1],250.0);
+val(FF.RS2.Nor2.x[2],0.0);
+val(FF.RS2.Nor2.x[2],250.0);
+val(FF.RS2.Nor2.y,0.0);
+val(FF.RS2.Nor2.y,250.0);
+val(FF.RS2.s,0.0);
+val(FF.RS2.s,250.0);
+val(FF.RS2.r,0.0);
+val(FF.RS2.r,250.0);
+val(FF.RS2.q,0.0);
+val(FF.RS2.q,250.0);
+val(FF.RS2.qn,0.0);
+val(FF.RS2.qn,250.0);
+val(FF.RS2.TD1.x,0.0);
+val(FF.RS2.TD1.x,250.0);
+val(FF.RS2.TD1.y,0.0);
+val(FF.RS2.TD1.y,250.0);
+val(FF.And1.x[1],0.0);
+val(FF.And1.x[1],250.0);
+val(FF.And1.x[3],0.0);
+val(FF.And1.x[3],250.0);
+val(FF.And1.y,0.0);
+val(FF.And1.y,250.0);
+val(FF.And2.x[1],0.0);
+val(FF.And2.x[1],250.0);
+val(FF.And2.x[3],0.0);
+val(FF.And2.x[3],250.0);
+val(FF.And2.y,0.0);
+val(FF.And2.y,250.0);
+val(FF.And3.x[1],0.0);
+val(FF.And3.x[1],250.0);
+val(FF.And3.x[2],0.0);
+val(FF.And3.x[2],250.0);
+val(FF.And3.y,0.0);
+val(FF.And3.y,250.0);
+val(FF.And4.x[1],0.0);
+val(FF.And4.x[1],250.0);
+val(FF.And4.x[2],0.0);
+val(FF.And4.x[2],250.0);
+val(FF.And4.y,0.0);
+val(FF.And4.y,250.0);
+val(FF.Not1.x,0.0);
+val(FF.Not1.x,250.0);
+val(FF.Not1.y,0.0);
+val(FF.Not1.y,250.0);
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "Modelica.Electrical.Digital.Examples.Multiplexer_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Digital.Examples.Multiplexer', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 4.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 3.0
+// 4.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 3.0
+// 4.0
+// 4.0
+// 4.0
+// 3.0
+// 4.0
+// 4.0
+// 3.0
+// 3.0
+// 4.0
+// endResult
