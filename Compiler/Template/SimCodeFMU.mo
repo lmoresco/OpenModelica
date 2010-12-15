@@ -1242,18 +1242,32 @@ algorithm
                                     "\n",
                                     "// include fmu header files, typedefs and macros\n",
                                     "#include \"fmiModelFunctions.h\"\n",
+                                    "#include \"fmu_model_interface.h\"\n",
+                                    "\n",
+                                    "void setStartValues(ModelInstance *comp);\n",
+                                    "void initialize(ModelInstance* comp, fmiEventInfo* eventInfo);\n",
+                                    "void getEventIndicator(ModelInstance* comp, int i);\n",
+                                    "void eventUpdate(ModelInstance* comp, fmiEventInfo* eventInfo);\n",
+                                    "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr);\n",
+                                    "\n"
+                                }, true));
+        txt = ModelDefineData(txt, i_modelInfo);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
                                     "// implementation of the Model Exchange functions\n",
                                     "#include \"fmu_model_interface.c\"\n",
                                     "\n"
                                 }, true));
-        txt = ModelDefineData(txt, i_modelInfo);
-        txt = Tpl.softNewLine(txt);
         txt = setStartValues(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = initializeFunction(txt, i_initialEquations);
         txt = Tpl.softNewLine(txt);
+        txt = getEventIndicatorFunction(txt, i_simCode);
+        txt = Tpl.softNewLine(txt);
         txt = eventUpdateFunction(txt, i_simCode);
+        txt = Tpl.softNewLine(txt);
+        txt = getRealFunction(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
@@ -1615,7 +1629,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_name) :: rest )
       equation
-        txt = SimCodeC.crefStr(txt, i_name);
+        txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
         txt = Tpl.nextIter(txt);
         txt = lm_58(txt, rest);
@@ -1874,7 +1888,7 @@ algorithm
       equation
         l_description = fun_62(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
-        txt = SimCodeC.crefStr(txt, i_name);
+        txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ "));
         txt = Tpl.writeStr(txt, a_prefix);
         txt = Tpl.writeStr(txt, intString(i_index));
@@ -2009,7 +2023,7 @@ algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "// Used to set the first time event, if any.\n",
                                    "void initialize(ModelInstance* comp, fmiEventInfo* eventInfo) {\n",
-                                   "{\n"
+                                   "\n"
                                }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_varDecls);
@@ -2055,7 +2069,64 @@ algorithm
   end matchcontinue;
 end eventUpdateFunction;
 
-protected function fun_69
+public function getEventIndicatorFunction
+  input Tpl.Text in_txt;
+  input SimCode.SimCode in_a_simCode;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_simCode)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           SimCode.SIMCODE(modelInfo = _) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "// Used to get event indicators\n",
+                                    "void getEventIndicator(ModelInstance* comp, int i) {\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getEventIndicatorFunction;
+
+public function getRealFunction
+  input Tpl.Text in_txt;
+  input SimCode.SimCode in_a_simCode;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_simCode)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           SimCode.SIMCODE(modelInfo = _) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr) {\n",
+                                    "  return 0.0;\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getRealFunction;
+
+protected function fun_71
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -2079,9 +2150,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_69;
+end fun_71;
 
-protected function lm_70
+protected function lm_72
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -2103,18 +2174,18 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_70(txt, rest);
+        txt = lm_72(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_70(txt, rest);
+        txt = lm_72(txt, rest);
       then txt;
   end matchcontinue;
-end lm_70;
+end lm_72;
 
-protected function fun_71
+protected function fun_73
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -2139,9 +2210,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_71;
+end fun_73;
 
-protected function fun_72
+protected function fun_74
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -2166,7 +2237,7 @@ algorithm
         txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
-end fun_72;
+end fun_74;
 
 public function fmuMakefile
   input Tpl.Text in_txt;
@@ -2198,12 +2269,12 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_69(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_71(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_70(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_72(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_71(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_72(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos1 = fun_73(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_74(Tpl.emptyTxt, l_dirExtra, l_libsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
