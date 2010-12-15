@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Blocks.Examples.ShowLogicalSources);
+simulate(Modelica.Blocks.Examples.ShowLogicalSources,stopTime=10.0);
 val(table.y,0.0);
 val(table.y,10.0);
 val(step.y,0.0);

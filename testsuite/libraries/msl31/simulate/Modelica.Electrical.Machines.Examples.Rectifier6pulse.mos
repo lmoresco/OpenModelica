@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.Rectifier6pulse);
+simulate(Modelica.Electrical.Machines.Examples.Rectifier6pulse,stopTime=0.10000000149);
 val(source.v[1],0.0);
 val(source.v[1],0.10000000149);
 val(source.v[2],0.0);

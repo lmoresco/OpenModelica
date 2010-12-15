@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor);
+simulate(Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor,stopTime=0.10000000149);
 val(ground_m.port.Phi,0.0);
 val(ground_m.port.Phi,0.10000000149);
 val(source.v,0.0);

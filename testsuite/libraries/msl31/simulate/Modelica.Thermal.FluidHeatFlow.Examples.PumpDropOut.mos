@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut);
+simulate(Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut,stopTime=2.0);
 val(dTSource,0.0);
 val(dTSource,2.0);
 val(dTtoPipe,0.0);

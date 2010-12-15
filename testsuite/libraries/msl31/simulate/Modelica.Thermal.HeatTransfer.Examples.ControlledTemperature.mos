@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature);
+simulate(Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature,stopTime=10.0);
 val(TRes,0.0);
 val(TRes,10.0);
 val(constantVoltage.i,0.0);

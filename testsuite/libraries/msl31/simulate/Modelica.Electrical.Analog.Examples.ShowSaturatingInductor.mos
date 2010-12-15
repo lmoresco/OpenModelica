@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.ShowSaturatingInductor);
+simulate(Modelica.Electrical.Analog.Examples.ShowSaturatingInductor,stopTime=,stopTime=6.28319978714);
 val(v,0.0);
 val(v,6.28319978714);
 val(i,0.0);

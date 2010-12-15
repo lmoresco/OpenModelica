@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Translational.Examples.ElastoGap);
+simulate(Modelica.Mechanics.Translational.Examples.ElastoGap,stopTime=10.0);
 val(fixed.flange.f,0.0);
 val(fixed.flange.f,10.0);
 val(rod1.flange_a.f,0.0);

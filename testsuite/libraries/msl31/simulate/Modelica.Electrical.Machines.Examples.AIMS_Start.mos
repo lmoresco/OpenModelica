@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.AIMS_Start);
+simulate(Modelica.Electrical.Machines.Examples.AIMS_Start,stopTime=1.5);
 val(aims.phiMechanical,0.0);
 val(aims.phiMechanical,1.5);
 val(der(aims.phiMechanical),0.0);

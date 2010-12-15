@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate);
+simulate(Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate,stopTime=200.0);
 val(HeatCapacitor1.T,0.0);
 val(HeatCapacitor1.T,200.0);
 val(der(HeatCapacitor1.T),0.0);

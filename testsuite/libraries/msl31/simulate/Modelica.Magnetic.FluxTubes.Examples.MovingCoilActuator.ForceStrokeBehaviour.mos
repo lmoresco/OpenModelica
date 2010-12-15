@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour);
+simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour,startTime=-4,stopTime=4.0);
 val(actuator.x,-4.0);
 val(actuator.x,4.0);
 val(der(actuator.x),-4.0);

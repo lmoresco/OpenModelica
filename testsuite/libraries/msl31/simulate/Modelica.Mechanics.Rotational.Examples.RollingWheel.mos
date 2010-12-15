@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Rotational.Examples.RollingWheel);
+simulate(Modelica.Mechanics.Rotational.Examples.RollingWheel,stopTime=5.0);
 val(idealRollingWheel.flangeR.phi,0.0);
 val(idealRollingWheel.flangeR.phi,5.0);
 val(idealRollingWheel.flangeR.tau,0.0);

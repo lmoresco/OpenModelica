@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.NandGate);
+simulate(Modelica.Electrical.Analog.Examples.NandGate,stopTime=1.00000001169e-07);
 val(VIN1.v,0.0);
 val(VIN1.v,1.00000001169e-07);
 val(VIN1.p.v,0.0);

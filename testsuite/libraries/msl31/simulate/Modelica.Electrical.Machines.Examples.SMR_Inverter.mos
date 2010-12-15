@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.SMR_Inverter);
+simulate(Modelica.Electrical.Machines.Examples.SMR_Inverter,stopTime=1.5);
 val(smr.phiMechanical,0.0);
 val(smr.phiMechanical,1.5);
 val(der(smr.phiMechanical),0.0);

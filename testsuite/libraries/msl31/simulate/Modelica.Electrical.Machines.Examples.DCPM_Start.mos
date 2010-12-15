@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.DCPM_Start);
+simulate(Modelica.Electrical.Machines.Examples.DCPM_Start,stopTime=2.0);
 val(dcpm.phiMechanical,0.0);
 val(dcpm.phiMechanical,2.0);
 val(der(dcpm.phiMechanical),0.0);

@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.Multiplexer);
+simulate(Modelica.Electrical.Digital.Examples.Multiplexer,stopTime=250.0);
 val(CLK.y,0.0);
 val(CLK.y,250.0);
 val(D0.y,0.0);

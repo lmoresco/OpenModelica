@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper);
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper,stopTime=10.0);
 val(world.frame_b.f[1],0.0);
 val(world.frame_b.f[1],10.0);
 val(world.frame_b.f[2],0.0);

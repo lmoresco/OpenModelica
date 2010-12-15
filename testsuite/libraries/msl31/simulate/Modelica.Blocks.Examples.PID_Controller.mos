@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Blocks.Examples.PID_Controller);
+simulate(Modelica.Blocks.Examples.PID_Controller,stopTime=4.0);
 val(PI.u_s,0.0);
 val(PI.u_s,4.0);
 val(PI.u_m,0.0);

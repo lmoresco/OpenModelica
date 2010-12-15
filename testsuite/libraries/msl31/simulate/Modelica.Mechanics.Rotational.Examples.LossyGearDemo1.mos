@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Rotational.Examples.LossyGearDemo1);
+simulate(Modelica.Mechanics.Rotational.Examples.LossyGearDemo1,stopTime=0.5);
 val(PowerLoss,0.0);
 val(PowerLoss,0.5);
 val(gear.flange_a.phi,0.0);

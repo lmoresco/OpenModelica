@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.HeatingRectifier);
+simulate(Modelica.Electrical.Analog.Examples.HeatingRectifier,stopTime=5.0);
 val(HeatingDiode1.v,0.0);
 val(HeatingDiode1.v,5.0);
 val(HeatingDiode1.i,0.0);

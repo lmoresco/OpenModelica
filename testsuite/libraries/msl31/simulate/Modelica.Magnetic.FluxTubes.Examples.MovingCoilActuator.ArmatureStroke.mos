@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke);
+simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke,stopTime=0.0500000007451);
 val(pmSource.v,0.0);
 val(pmSource.v,0.0500000007451);
 val(pmSource.i,0.0);

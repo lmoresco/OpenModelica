@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.HeatingResistor);
+simulate(Modelica.Electrical.Analog.Examples.HeatingResistor,stopTime=5.0);
 val(heatingResistor.v,0.0);
 val(heatingResistor.v,5.0);
 val(heatingResistor.i,0.0);

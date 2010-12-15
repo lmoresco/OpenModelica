@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary);
+simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary,stopTime=10.0);
 val(x_set.y,0.0);
 val(x_set.y,10.0);
 val(advancedGround.p.i,0.0);

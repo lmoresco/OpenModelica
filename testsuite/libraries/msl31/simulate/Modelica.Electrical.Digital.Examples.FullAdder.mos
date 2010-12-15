@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.FullAdder);
+simulate(Modelica.Electrical.Digital.Examples.FullAdder,stopTime=10.0);
 val(Adder1.Adder2.b,0.0);
 val(Adder1.Adder2.b,10.0);
 val(Adder1.Adder2.s,0.0);

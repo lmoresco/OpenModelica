@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Blocks.Examples.LogicalNetwork1);
+simulate(Modelica.Blocks.Examples.LogicalNetwork1,stopTime=10.0);
 val(table2.y,0.0);
 val(table2.y,10.0);
 val(table1.y,0.0);

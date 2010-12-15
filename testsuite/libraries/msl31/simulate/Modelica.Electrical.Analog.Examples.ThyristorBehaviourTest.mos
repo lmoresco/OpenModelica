@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);
+simulate(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest,stopTime=0.000199999994948);
 val(ground.p.i,0.0);
 val(ground.p.i,0.000199999994948);
 val(sineVoltage.v,0.0);

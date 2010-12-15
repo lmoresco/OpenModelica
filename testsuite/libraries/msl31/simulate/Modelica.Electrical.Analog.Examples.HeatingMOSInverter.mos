@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.HeatingMOSInverter);
+simulate(Modelica.Electrical.Analog.Examples.HeatingMOSInverter,stopTime=5.0);
 val(G.p.i,0.0);
 val(G.p.i,5.0);
 val(Sin.v,0.0);

@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive);
+simulate(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive,stopTime=1.10000002384);
 val(world.frame_b.f[2],0.0);
 val(world.frame_b.f[2],1.10000002384);
 val(world.frame_b.f[3],0.0);

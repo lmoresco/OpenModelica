@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed);
+simulate(Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed,stopTime=0.00300000002608);
 val(opAmp.p.i,0.0);
 val(opAmp.p.i,0.00300000002608);
 val(opAmp.m.v,0.0);

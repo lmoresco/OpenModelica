@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Rotational.Examples.Friction);
+simulate(Modelica.Mechanics.Rotational.Examples.Friction,stopTime=3.0);
 val(tMotor,0.0);
 val(tMotor,3.0);
 val(tClutch,0.0);

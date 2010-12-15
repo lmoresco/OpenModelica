@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke);
+simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke,stopTime=0.0500000007451);
 val(advancedGround.p.i,0.0);
 val(advancedGround.p.i,0.0500000007451);
 val(advancedSource.v,0.0);

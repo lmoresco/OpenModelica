@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic);
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic,stopTime=0.5);
 val(world.frame_b.f[1],0.0);
 val(world.frame_b.f[1],0.5);
 val(world.frame_b.f[2],0.0);

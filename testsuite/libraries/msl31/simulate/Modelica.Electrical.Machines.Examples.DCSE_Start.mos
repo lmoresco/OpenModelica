@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.DCSE_Start);
+simulate(Modelica.Electrical.Machines.Examples.DCSE_Start,stopTime=2.0);
 val(dcse.phiMechanical,0.0);
 val(dcse.phiMechanical,2.0);
 val(der(dcse.phiMechanical),0.0);

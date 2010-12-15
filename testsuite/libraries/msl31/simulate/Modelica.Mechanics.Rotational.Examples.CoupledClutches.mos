@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Rotational.Examples.CoupledClutches);
+simulate(Modelica.Mechanics.Rotational.Examples.CoupledClutches,stopTime=1.5);
 val(J1.flange_a.phi,0.0);
 val(J1.flange_a.phi,1.5);
 val(J1.flange_a.tau,0.0);

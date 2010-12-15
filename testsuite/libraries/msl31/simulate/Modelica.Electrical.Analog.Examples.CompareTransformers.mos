@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.CompareTransformers);
+simulate(Modelica.Electrical.Analog.Examples.CompareTransformers,stopTime=50.0);
 val(v1B,0.0);
 val(v1B,50.0);
 val(i1B,0.0);

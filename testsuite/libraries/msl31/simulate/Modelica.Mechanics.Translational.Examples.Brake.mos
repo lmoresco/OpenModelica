@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Translational.Examples.Brake);
+simulate(Modelica.Mechanics.Translational.Examples.Brake,stopTime=2.0);
 val(brake.flange_a.s,0.0);
 val(brake.flange_a.s,2.0);
 val(brake.flange_a.f,0.0);

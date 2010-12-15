@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Blocks.Examples.BusUsage);
+simulate(Modelica.Blocks.Examples.BusUsage,stopTime=2.0);
 val(integerStep.y,0.0);
 val(integerStep.y,2.0);
 val(booleanStep.y,0.0);

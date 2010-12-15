@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Translational.Examples.PreLoad);
+simulate(Modelica.Mechanics.Translational.Examples.PreLoad,stopTime=100.0);
 val(innerContactA.s_rel,0.0);
 val(innerContactA.s_rel,100.0);
 val(der(innerContactA.s_rel),0.0);

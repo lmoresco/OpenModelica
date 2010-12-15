@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.StateGraph.Examples.FirstExample);
+simulate(Modelica.StateGraph.Examples.FirstExample,stopTime=5.0);
 val(stateGraphRoot.subgraphStatePort.activeSteps,0.0);
 val(stateGraphRoot.subgraphStatePort.activeSteps,5.0);
 val(stateGraphRoot.activeSteps,0.0);

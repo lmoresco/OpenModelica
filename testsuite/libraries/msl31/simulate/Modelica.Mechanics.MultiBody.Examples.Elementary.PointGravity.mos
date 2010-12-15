@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity);
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity,stopTime=5.0);
 val(body1.frame_a.r_0[1],0.0);
 val(body1.frame_a.r_0[1],5.0);
 val(der(body1.frame_a.r_0[1]),0.0);

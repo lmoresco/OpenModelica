@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem);
+simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem,stopTime=5.0);
 val(world.frame_b.f[2],0.0);
 val(world.frame_b.f[2],5.0);
 val(world.frame_b.t[1],0.0);

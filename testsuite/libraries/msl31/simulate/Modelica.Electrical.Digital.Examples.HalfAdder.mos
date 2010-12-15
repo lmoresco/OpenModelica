@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.HalfAdder);
+simulate(Modelica.Electrical.Digital.Examples.HalfAdder,stopTime=5.0);
 val(a.y,0.0);
 val(a.y,5.0);
 val(b.y,0.0);

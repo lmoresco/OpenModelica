@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Thermal.HeatTransfer.Examples.Motor);
+simulate(Modelica.Thermal.HeatTransfer.Examples.Motor,stopTime=7200.0);
 val(lossTable.y[1],0.0);
 val(lossTable.y[1],7200.0);
 val(lossTable.y[2],0.0);

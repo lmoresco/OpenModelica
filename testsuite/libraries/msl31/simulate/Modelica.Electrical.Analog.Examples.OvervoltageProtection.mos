@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.OvervoltageProtection);
+simulate(Modelica.Electrical.Analog.Examples.OvervoltageProtection,stopTime=0.40000000596);
 val(sineVoltage.v,0.0);
 val(sineVoltage.v,0.40000000596);
 val(sineVoltage.i,0.0);

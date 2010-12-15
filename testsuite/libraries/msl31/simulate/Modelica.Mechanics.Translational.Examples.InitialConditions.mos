@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Translational.Examples.InitialConditions);
+simulate(Modelica.Mechanics.Translational.Examples.InitialConditions,stopTime=5.0);
 val(fixed2.flange.f,0.0);
 val(fixed2.flange.f,5.0);
 val(s2.flange_a.f,0.0);

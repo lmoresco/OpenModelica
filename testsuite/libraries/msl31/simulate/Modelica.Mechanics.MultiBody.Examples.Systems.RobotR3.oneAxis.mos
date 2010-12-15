@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis);
+simulate(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis,stopTime=1.49813175201);
 val(axis.flange.phi,0.0);
 val(axis.flange.phi,1.49813175201);
 val(axis.flange.tau,0.0);

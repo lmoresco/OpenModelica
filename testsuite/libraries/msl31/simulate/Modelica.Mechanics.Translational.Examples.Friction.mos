@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.Translational.Examples.Friction);
+simulate(Modelica.Mechanics.Translational.Examples.Friction,stopTime=5.0);
 val(stop1.v_relfric,0.0);
 val(stop1.v_relfric,5.0);
 val(stop1.a_relfric,0.0);

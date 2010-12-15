@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc);
+simulate(Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc,stopTime=6.0);
 val(constantVoltage1.i,0.0);
 val(constantVoltage1.i,6.0);
 val(constantVoltage1.p.i,0.0);

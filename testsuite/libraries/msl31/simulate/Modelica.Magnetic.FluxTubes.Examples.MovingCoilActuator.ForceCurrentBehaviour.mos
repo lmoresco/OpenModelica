@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour);
+simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour,stopTime=6.0);
 val(pmActuator.mmf_PM.port_p.Phi,0.0);
 val(pmActuator.mmf_PM.port_p.Phi,6.0);
 val(pmActuator.mmf_PM.port_n.Phi,0.0);

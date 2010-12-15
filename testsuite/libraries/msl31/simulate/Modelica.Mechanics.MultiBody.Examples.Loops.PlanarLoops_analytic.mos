@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic);
+simulate(Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic,stopTime=5.0);
 val(world.frame_b.f[1],0.0);
 val(world.frame_b.f[1],5.0);
 val(world.frame_b.f[2],0.0);

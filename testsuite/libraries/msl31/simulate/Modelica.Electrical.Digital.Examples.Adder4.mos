@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.Adder4);
+simulate(Modelica.Electrical.Digital.Examples.Adder4,stopTime=5.0);
 val(b4.y,0.0);
 val(b4.y,5.0);
 val(b1.y,0.0);

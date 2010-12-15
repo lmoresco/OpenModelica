@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.CharacteristicThyristors);
+simulate(Modelica.Electrical.Analog.Examples.CharacteristicThyristors,stopTime=2.0);
 val(IdealThyristor1.v,0.0);
 val(IdealThyristor1.v,2.0);
 val(IdealThyristor1.i,0.0);

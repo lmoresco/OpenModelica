@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.FlipFlop);
+simulate(Modelica.Electrical.Digital.Examples.FlipFlop,stopTime=250.0);
 val(FF.j,0.0);
 val(FF.j,250.0);
 val(FF.q,0.0);

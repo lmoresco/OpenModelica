@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.AIMC_YD);
+simulate(Modelica.Electrical.Machines.Examples.AIMC_YD,stopTime=2.5);
 val(aimc.phiMechanical,0.0);
 val(aimc.phiMechanical,2.5);
 val(der(aimc.phiMechanical),0.0);

@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Machines.Examples.SMEE_Generator);
+simulate(Modelica.Electrical.Machines.Examples.SMEE_Generator,stopTime=30.0);
 val(smee.phiMechanical,0.0);
 val(smee.phiMechanical,30.0);
 val(der(smee.phiMechanical),0.0);

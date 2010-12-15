@@ -10,7 +10,7 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Digital.Examples.Counter);
+simulate(Modelica.Electrical.Digital.Examples.Counter,stopTime=100.0);
 val(Enable.y,0.0);
 val(Enable.y,100.0);
 val(Clock.y,0.0);
