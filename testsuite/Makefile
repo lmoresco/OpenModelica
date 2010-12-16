@@ -20,6 +20,7 @@ streams.log
 
 SLOWLOGS = \
 bootstrapping.log \
+mosfiles-dassl2.log \
 msl31.log \
 multibody.log \
 msl221.log \
@@ -70,6 +71,9 @@ msl.log: omc-diff
 mosfiles.log: omc-diff
 	$(MAKE) -C mosfiles -f Makefile test > $@
 	@echo $@ done
+mosfiles-dassl2.log: omc-diff
+	$(MAKE) -C mosfiles-dassl2 -f Makefile test > $@
+	@echo $@ done
 mosfiles-msl22.log: omc-diff
 	$(MAKE) -C mosfiles-msl22 -f Makefile test > $@
 	@echo $@ done
@@ -113,6 +117,7 @@ msl31.log: omc-diff
 
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
+	cd mosfiles-dassl; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
 	cd ../libraries/msl221; $(MAKE) -f Makefile failingtest; \
 	cd ../msl221/modelicaAdditions; $(MAKE) -f Makefile failingtest; \

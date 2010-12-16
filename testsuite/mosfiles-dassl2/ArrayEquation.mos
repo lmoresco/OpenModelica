@@ -1,0 +1,66 @@
+// name:     ArrayEquation
+// keywords: Simulate, readSimulationData, arrays
+// status: correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf ArrayEqn.log ArrayEqn.cpp ArrayEqn.libs ArrayEqn.makefile ArrayEqn ArrayEqn.exe ArrayEqn_* output.log
+// 
+//  Simulate model with array equations
+//
+loadFile("ArrayEqn.mo");
+simulate(ArrayEqn, numberOfIntervals=50, tolerance=1e-5);
+val(x[1],0.0);
+val(x[1],0.2);
+val(x[1],0.4);
+val(x[1],0.6);
+val(x[1],0.8);
+val(x[1],1.0);
+val(x[2],0.0);
+val(x[2],0.2);
+val(x[2],0.4);
+val(x[2],0.6);
+val(x[2],0.8);
+val(x[2],1.0);
+val(x[3],0.0);
+val(x[3],0.2);
+val(x[3],0.4);
+val(x[3],0.6);
+val(x[3],0.8);
+val(x[3],1.0);
+val(y,0.0);
+val(y,0.2);
+val(y,0.4);
+val(y,0.6);
+val(y,0.8);
+val(y,1.0);
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "ArrayEqn_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 2.0
+// 0.898602694887637
+// 0.403761954540367
+// 0.181419153254115
+// 0.081515513051074
+// 0.0366299451191233
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 4.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 2.0
+// 1.0
+// 0.449301347443818
+// 0.201880977270183
+// 0.0907095766270577
+// 0.040757756525537
+// 0.0183149725595616
+// endResult

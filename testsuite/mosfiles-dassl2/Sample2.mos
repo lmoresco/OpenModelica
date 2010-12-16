@@ -1,0 +1,64 @@
+// name:     Sample2
+// keywords: events
+// status: correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf Sample2_* Sample2 Sample2.exe Sample2.cpp Sample2.makefile Sample2.libs Sample2.log output.log
+//
+// Event handling
+//
+//
+
+loadFile("Sample2.mo");
+simulate(Sample2,stopTime=5.0);
+val(y,0);
+val(y,0.5);
+val(y,1.5);
+val(y,2.5);
+val(y,3.5);
+val(y,4.5);
+val(y,5);
+val(x,0);
+val(x,0.5);
+val(x,1.5);
+val(x,2.5);
+val(x,3.5);
+val(x,4.5);
+val(x,5);
+val(b,0);
+val(b,0.5);
+val(b,1.5);
+val(b,2.5);
+val(b,3.5);
+val(b,4.5);
+val(b,5);
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Sample2_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 1.0
+// 9.4
+// 28.9
+// 58.4
+// 97.9
+// 121.4
+// 1.0
+// 1.87646918998893
+// 4.58806771380892
+// 42.8722947952007
+// 188.512320229709
+// 643.178289645006
+// 1132.40543599754
+// 0.0
+// 0.0
+// 1.0
+// 0.0
+// 0.0
+// 0.0
+// 0.0
+// endResult

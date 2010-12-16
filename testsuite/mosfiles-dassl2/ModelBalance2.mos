@@ -1,0 +1,21 @@
+// name: ModelBalance2
+// keywords: balance
+// status: correct
+// cflags: +d=SetNewDassl
+//
+// Tests a model with too few equations
+//
+
+loadFile("ModelBalance2.mo");
+simulate(ModelBalance2);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'ModelBalance2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = "Simulation failed for model: ModelBalance2
+// Error: Too few equations, underdetermined system. The model has 1 equation(s) and 2 variable(s)
+// "
+// end SimulationResult;
+// endResult

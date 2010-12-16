@@ -1,0 +1,32 @@
+// name:      SumSeriesWhile
+// keywords:  equation
+// status: correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf SumSeries_* SumSeries SumSeries.exe SumSeries.cpp SumSeries.makefile SumSeries.libs SumSeries.log output.log
+//
+// Drmodelica: 9.1 while-loop (p.290)
+// 
+loadFile("SumSeriesWhile.mo");
+simulate(SumSeries, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+echo(false);
+res:=readSimulationResult("SumSeries_res.plt",{sum,delta}, 3);
+sum := res[1];
+sum := 1000*sum;
+sum := floor(sum);
+delta := res[2];
+delta := 1000*delta;
+delta := floor(delta);
+echo(true);
+sum/1000.0;
+delta/1000.0;
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "SumSeries_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'SumSeries', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// true
+// {99.5,99.5,99.5}
+// {0.0,0.0,0.0}
+// endResult

@@ -1,0 +1,38 @@
+// name:     when-statements
+// keywords: Simulate, when-statements
+// status: correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf testalgwhen testalgwhen.exe testalgwhen.cpp testalgwhen_functions.cpp testalgwhen_functions.h testalgwhen_init.txt testalgwhen.libs testalgwhen.log testalgwhen.makefile testalgwhen_records.c testalgwhen_res.plt output.log 
+// 
+//  Simulate model containing algortithms with when-stamtements
+//
+loadFile("testalgwhen.mo");
+
+simulate(testalgwhen, tolerance=1e-5, numberOfIntervals=100);
+val(z,0.0);
+val(z,0.5);
+val(z,0.95);
+val(v,0.0);
+val(v,0.1);
+val(v,0.91);
+val(w,0.4);
+val(w,0.45);
+val(tt,0.91);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "testalgwhen_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'testalgwhen', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// 2.20000000000005
+// 2.20000000000005
+// 1.0
+// 1.20000000000005
+// 3.91936946881424
+// 0.0
+// 0.594551972203662
+// 0.9000000000002
+// endResult

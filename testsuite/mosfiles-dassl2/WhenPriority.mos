@@ -1,0 +1,27 @@
+// name:     WhenPriority
+// keywords: equations when
+// status:   correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf WhenPriority WhenPriority.exe WhenPriority.cpp WhenPriority_functions.cpp WhenPriority_functions.h WhenPriority_init.txt WhenPriority.libs WhenPriority.log WhenPriority.makefile WhenPriority_records.c WhenPriority_res.plt output.log 
+// 
+//  Tests when, elsewhen
+//
+// Drmodelica: 9.1 When-Statements (p. 293)
+// 
+loadFile("WhenPriority.mo");
+simulate(WhenPriority,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
+echo(false); // turns of output 
+res:=readSimulationResult("WhenPriority_res.plt",{close},3); 
+echo(true); // turns on output
+res;
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "WhenPriority_res.plt",
+//	simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'WhenPriority', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//	messages = ""
+// end SimulationResult;
+// true
+// {{1.0,1.0,1.0}}
+// endResult

@@ -1,0 +1,23 @@
+// name: Time
+// keywords: time
+// status: correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf Time Time.exe Time.cpp Time_functions.cpp Time_functions.h Time_init.txt Time.libs Time.log Time.makefile Time_records.c Time_res.plt output.log
+//
+// Testing the built-in variable time
+//
+
+loadFile("Time.mo");
+simulate(Time);
+val(x,0.0);
+
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Time_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'Time', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// 0.0
+// endResult

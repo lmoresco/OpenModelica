@@ -1,0 +1,32 @@
+// name:      AlgorithmCondAssign2
+// keywords:  for statement, if statement, function
+// status:    correct
+// cflags: +d=SetNewDassl
+// teardown_command: rm -rf CondAssignFunc_* CondAssignFunc.* CondAssignFuncCall_* CondAssignFuncCall CondAssignFuncCall.exe CondAssignFuncCall.cpp CondAssignFuncCall.makefile CondAssignFuncCall.libs CondAssignFuncCall.log output.log
+//
+// Drmodelica: 9.1  if-Statement (p. 292)
+//
+loadFile("AlgorithmCondAssign2.mo");
+simulate(CondAssignFuncCall, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+echo(false);
+a := val(a,0);
+a := 1000*a;
+a := floor(a);
+b := val(b,0);
+b := 1000*b;
+b := floor(b);
+echo(true);
+a/1000.0;
+b/1000.0;
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "CondAssignFuncCall_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'CondAssignFuncCall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// true
+// 400.0
+// 45.0
+// endResult
