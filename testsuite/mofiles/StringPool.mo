@@ -20,6 +20,7 @@ end weirdStrStuff;
 function weirdStrStuff1
   input String str;
   output String os;
+protected
   String os1,os2;
 algorithm
   (os1,os2) := weirdStrStuff(str);
@@ -43,8 +44,8 @@ end StringPool;
 // function StringPool.weirdStrStuff1
 //   input String str;
 //   output String os;
-//   String os1;
-//   String os2;
+//   protected String os1;
+//   protected String os2;
 // algorithm
 //   (os1, os2) := StringPool.weirdStrStuff(str);
 //   os := "overwritethecharpoolhere";

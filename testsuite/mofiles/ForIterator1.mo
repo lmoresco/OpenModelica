@@ -12,8 +12,9 @@ model ForIterator1
     output Integer y1; 
     output Integer y2;
     output Real y3; 
-    output Real y4;     
-    Integer arrFunc1[5]; 
+    output Real y4;
+  protected
+    Integer arrFunc1[5];
     Real arrFunc2[5];
     Integer arrFunc3[4,3]; 
     Real arrFunc4[4,3]; 
@@ -49,10 +50,10 @@ end ForIterator1;
 //   output Integer y2;
 //   output Real y3;
 //   output Real y4;
-//   Integer[5] arrFunc1;
-//   Real[5] arrFunc2;
-//   Integer[4, 3] arrFunc3;
-//   Real[4, 3] arrFunc4;
+//   protected Integer[5] arrFunc1;
+//   protected Real[5] arrFunc2;
+//   protected Integer[4, 3] arrFunc3;
+//   protected Real[4, 3] arrFunc4;
 // algorithm
 //   arrFunc1 := {6,7,8,9,10};
 //   arrFunc2 := {5.3,10.6,15.9,21.2,26.5};
