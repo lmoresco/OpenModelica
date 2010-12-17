@@ -2,6 +2,11 @@ Interactive simulation client code and application test
 =======================================================
 Last update: 2010-12-17 Adrian Pop [adrpo@ida.liu.se]
 
+Documentation:
+--------------
+See Chapter 5 in OpenModelica User's Guide for 
+more information on interactive simulation.
+
 Sample application:
 -------------------
 A complete application test is in:

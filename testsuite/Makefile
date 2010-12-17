@@ -24,7 +24,8 @@ mosfiles-dassl2.log \
 msl31.log \
 multibody.log \
 msl221.log \
-msl221additions.log
+msl221additions.log \
+interactive-simulation.log
 
 .PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) slow.logs
 
@@ -64,6 +65,9 @@ dependency.log: omc-diff
 	@echo $@ done
 interactive.log: omc-diff
 	$(MAKE) -C interactive -f Makefile test > $@
+	@echo $@ done
+interactive-simulation.log: omc-diff
+	$(MAKE) -C interactive-simulation -f Makefile test > $@
 	@echo $@ done
 msl.log: omc-diff
 	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
