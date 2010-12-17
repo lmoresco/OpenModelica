@@ -1,0 +1,3 @@
+loadFile("TwoTanks/package.mo"); getErrorString();
+buildModel(TwoTanks.TanksConnectedPI,numberOfIntervals=5); getErrorString();
+system("rm -f TwoTanks.TanksConnectedPI*.c* TwoTanks.TanksConnectedPI*.makefile TwoTanks.TanksConnectedPI*.libs TwoTanks.TanksConnectedPI*.h");
