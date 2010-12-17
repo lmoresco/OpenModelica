@@ -5,9 +5,9 @@ else
 endif
 
 
-all: client TwoTanks.TanksConnectedPI	
+all: client TwoTanks.TanksConnectedPI	interactive-simulation-commands.txt
 	./TwoTanks.TanksConnectedPI.exe -interactive > trace-server.txt 2>&1 &
-	(cat start-simulation.txt | ./client.exe) > trace-client.txt 2>&1
+	./client.exe interactive-simulation-commands.txt > trace-client.txt 2>&1
 
 TwoTanks.TanksConnectedPI: TwoTanks/* buildModel.mos
 	../../build/bin/omc buildModel.mos
