@@ -1,72 +1,26 @@
 TEST = ../../../rtest -v
 
-
-SIMULATETEST= \
-Modelica.Blocks.Examples.LogicalNetwork1.mos\
-Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
-Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mos \
-Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
-Modelica.Electrical.Analog.Examples.CompareTransformers.mos \
-Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
-Modelica.Electrical.Analog.Examples.HeatingMOSInverter.mos \
-Modelica.Electrical.Analog.Examples.NandGate.mos \
-Modelica.Electrical.Analog.Examples.OvervoltageProtection.mos \
-Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.mos \
-Modelica.Electrical.Machines.Examples.DCPM_Start.mos \
-Modelica.Electrical.Machines.Examples.DCEE_Start.mos \
-Modelica.Electrical.Machines.Examples.DCSE_Start.mos \
-Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
-Modelica.Electrical.MultiPhase.Examples.TransformerYY.mos \
-Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.mos\
-Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
-Modelica.Mechanics.Rotational.Examples.First.mos \
-Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
-Modelica.Mechanics.Rotational.Examples.Friction.mos \
-Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
-Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
-Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
-Modelica.Mechanics.Rotational.Examples.Backlash.mos \
-Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
-Modelica.Mechanics.Translational.Examples.SignConvention.mos \
-Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
-Modelica.Mechanics.Translational.Examples.Accelerate.mos \
-Modelica.Mechanics.Translational.Examples.Damper.mos \
-Modelica.Mechanics.Translational.Examples.Oscillator.mos \
-Modelica.Mechanics.Translational.Examples.Sensors.mos \
-Modelica.Mechanics.Translational.Examples.Friction.mos 
-Modelica.Mechanics.Translational.Examples.PreLoad.mos \
-Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
-Modelica.Mechanics.Translational.Examples.Brake.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
-Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
-Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
-Modelica.StateGraph.Examples.FirstExample.mos \
-Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
-Modelica.StateGraph.Examples.FirstExample_Variant3.mos \
-Modelica.StateGraph.Examples.ExecutionPaths.mos \
-Modelica.StateGraph.Examples.ShowCompositeStep.mos \
-Modelica.StateGraph.Examples.ShowExceptions.mos 
-
-
 TESTFILES = \
 Modelica.Blocks.Examples.mos \
 Modelica.Electrical.Analog.Examples.mos \
 Modelica.Electrical.Digital.Examples.mos \
 Modelica.Electrical.Machines.Examples.mos \
 Modelica.Electrical.MultiPhase.Examples.mos \
-Modelica.Blocks.Examples.InverseModel.mos
+Modelica.Blocks.Examples.InverseModel.mos \
 Modelica.Blocks.Examples.BusUsage.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassOPV.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mos \
 Modelica.Electrical.Analog.Examples.HeatingResistor.mos \
 Modelica.Electrical.Analog.Examples.ShowVariableResistor.mos \
-Modelica.Electrical.MultiPhase.Examples.TransformerYD.mos 
+Modelica.Electrical.MultiPhase.Examples.TransformerYD.mos \
+Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
+Modelica.Mechanics.Translational.Examples.SignConvention.mos \
+Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
+Modelica.Mechanics.Translational.Examples.Accelerate.mos \
+Modelica.Mechanics.Translational.Examples.Damper.mos \
+Modelica.Mechanics.Translational.Examples.Sensors.mos \
+Modelica.Mechanics.Translational.Examples.ElastoGap.mos 
 
 #compile time to large
 #Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6.mos 
@@ -75,7 +29,8 @@ Modelica.Electrical.MultiPhase.Examples.TransformerYD.mos
 # Run make testfailing
 FAILINGTESTFILES=  \
 $(NOTCOMPILETEST) \
-$(NOTSIMULATETEST) 
+$(NOTSIMULATETEST) \
+$(WRONGRESULTTEST)  
 
 
 NOTCOMPILETEST= \
@@ -120,7 +75,7 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos 
+Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
@@ -149,8 +104,51 @@ Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
 Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
 Modelica.StateGraph.Examples.ControlledTanks.mos \
-Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
+Modelica.Mechanics.Translational.Examples.InitialConditions.mos \ 
 
+WRONGRESULTTEST = \
+Modelica.Blocks.Examples.LogicalNetwork1.mos \
+Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
+Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mos \
+Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
+Modelica.Electrical.Analog.Examples.CompareTransformers.mos \
+Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
+Modelica.Electrical.Analog.Examples.HeatingMOSInverter.mos \
+Modelica.Electrical.Analog.Examples.NandGate.mos \
+Modelica.Electrical.Analog.Examples.OvervoltageProtection.mos \
+Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.mos \
+Modelica.Electrical.Machines.Examples.DCPM_Start.mos \
+Modelica.Electrical.Machines.Examples.DCEE_Start.mos \
+Modelica.Electrical.Machines.Examples.DCSE_Start.mos \
+Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
+Modelica.Electrical.MultiPhase.Examples.TransformerYY.mos \
+Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.mos \
+Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
+Modelica.Mechanics.Rotational.Examples.First.mos \
+Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
+Modelica.Mechanics.Rotational.Examples.Friction.mos \
+Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
+Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
+Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
+Modelica.Mechanics.Rotational.Examples.Backlash.mos \
+Modelica.Mechanics.Translational.Examples.Oscillator.mos \
+Modelica.Mechanics.Translational.Examples.Friction.mos \
+Modelica.Mechanics.Translational.Examples.PreLoad.mos \
+Modelica.Mechanics.Translational.Examples.Brake.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
+Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
+Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
+Modelica.StateGraph.Examples.FirstExample.mos \
+Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
+Modelica.StateGraph.Examples.FirstExample_Variant3.mos \
+Modelica.StateGraph.Examples.ExecutionPaths.mos \
+Modelica.StateGraph.Examples.ShowCompositeStep.mos \
+Modelica.StateGraph.Examples.ShowExceptions.mos \ 
 
 .PHONY : test
 
