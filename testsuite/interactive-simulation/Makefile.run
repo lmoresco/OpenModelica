@@ -1,21 +1,23 @@
 ifndef OMDEV
 	LDFLAGS=
+	EXT=
 else
 	LDFLAGS=-lwsock32
+	EXT=.exe
 endif
 
 
 all: run clean
 
-run: client TwoTanks.TanksConnectedPI	interactive-simulation-commands.txt
-	./TwoTanks.TanksConnectedPI -interactive > trace-server.txt 2>&1 &
-	./client interactive-simulation-commands.txt > trace-client.txt 2>&1
+run: client$(EXT) TwoTanks.TanksConnectedPI$(EXT)	interactive-simulation-commands.txt
+	./TwoTanks.TanksConnectedPI$(EXT) -interactive > trace-server.txt 2>&1 &
+	./client$(EXT) interactive-simulation-commands.txt > trace-client.txt 2>&1
 
-TwoTanks.TanksConnectedPI: TwoTanks/* buildModel.mos
+TwoTanks.TanksConnectedPI$(EXT): TwoTanks/* buildModel.mos
 	../../build/bin/omc buildModel.mos
 
-client: ../../c_runtime/interactive/*.c* ../../c_runtime/interactive/*.h*
-	g++ -o client ../../c_runtime/interactive/client.cpp -I../../c_runtime/interactive/ \
+client$(EXT): ../../c_runtime/interactive/*.c* ../../c_runtime/interactive/*.h*
+	g++ -o client$(EXT) ../../c_runtime/interactive/client.cpp -I../../c_runtime/interactive/ \
 	../../c_runtime/interactive/thread.cpp \
 	../../c_runtime/interactive/socket.cpp $(LDFLAGS)
 
