@@ -10,6 +10,7 @@ endif
 all: run clean
 
 run: client$(EXT) TwoTanks.TanksConnectedPI$(EXT)	interactive-simulation-commands.txt
+	test -f ./TwoTanks.TanksConnectedPI${EXE}
 	./TwoTanks.TanksConnectedPI$(EXT) -interactive > trace-server.txt 2>&1 &
 	./client$(EXT) interactive-simulation-commands.txt > trace-client.txt 2>&1
 
