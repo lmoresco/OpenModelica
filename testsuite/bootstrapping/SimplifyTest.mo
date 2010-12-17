@@ -7,6 +7,7 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
 
   function printResult
     input tuple<String,String> res;
+  protected
     String s1,s2;
   algorithm
     (s1,s2) := res;
@@ -14,6 +15,7 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
   end printResult;
 
   function test
+  protected
     list<Exp> base,simpl;
     list<String> baseStr,simplStr;
     Exp i1 = ICONST(1);

@@ -304,9 +304,11 @@ FunctionEval8.mo \
 FunctionEval9.mo \
 FunctionEvalBuiltin.mo \
 FunctionEvalSlice.mo \
+FunctionProtectedInput.mo \
 FunctionReturn.mo \
 FunctionSimple.mo \
 FunctionSimplex.mo \
+FunctionWithEquation.mo \
 GreaterThanEqual.mo \
 GreaterThan.mo \
 IconsRecursiveTest.mo \
