@@ -1,21 +1,31 @@
-ifndef OMDEV
-	LDFLAGS=
-else
-	LDFLAGS=-lwsock32
-endif
+# makefile for interactive simulation
+TEST = ../rtest
+PATH := ./:${PATH}
+
+TESTFILES = runInteractiveSimulation.mos
 
 
-all: client TwoTanks.TanksConnectedPI	interactive-simulation-commands.txt
-	./TwoTanks.TanksConnectedPI.exe -interactive > trace-server.txt 2>&1 &
-	./client.exe interactive-simulation-commands.txt > trace-client.txt 2>&1
+# test that currently fail. Move up when fixed. 
+# Run make testfailing
+FAILINGTESTFILES= 
 
-TwoTanks.TanksConnectedPI: TwoTanks/* buildModel.mos
-	../../build/bin/omc buildModel.mos
+# Remove executables on Linux (no extension)
+CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
 
-client: ../../c_runtime/interactive/*.c* ../../c_runtime/interactive/*.h*
-	g++ -o client ../../c_runtime/interactive/client.cpp -I../../c_runtime/interactive/ \
-	../../c_runtime/interactive/thread.cpp \
-	../../c_runtime/interactive/socket.cpp $(LDFLAGS)
+.PHONY : test
 
-clean: 
-	rm -f TwoTanks.TanksConnectedPI* client.* trace-client.txt trace-server.txt
+test: test2 clean
+test2:
+	@echo
+	@echo Running tests...
+	@echo
+	@echo OPENMODELICAHOME =" $(OPENMODELICAHOME) "
+	@$(TEST) $(TESTFILES)
+
+clean:
+	@rm -f $(CLEAN)
+failingtest :
+	@echo
+	@echo Running failing tests...
+	@echo
+	@$(TEST) $(FAILINGTESTFILES)
