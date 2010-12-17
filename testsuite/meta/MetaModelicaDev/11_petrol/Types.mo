@@ -490,6 +490,7 @@ protected function ptrEqNull
   input TCode.Exp exp;
   input Ty ty;
   output TCode.Exp outExp;
+protected
   TCode.Ty ty_1;
 algorithm 
   ty_1 := tyCnv(ty);

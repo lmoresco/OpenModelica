@@ -30,6 +30,7 @@ end parse2;
 
 public function parse
   output Absyn.Exp exp;
+protected
   Integer yyres;
 algorithm
   yyres := yyparse();

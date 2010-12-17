@@ -46,6 +46,7 @@ package Failure
 
   function myFailure2
     output Integer y;
+  protected
     list<Integer> x;
   algorithm
     x := {1,2};

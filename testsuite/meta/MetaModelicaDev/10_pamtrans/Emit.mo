@@ -77,6 +77,7 @@ end emitOpOperand;
 
 protected function emitInt
   input Integer i;
+protected
   String s;
 algorithm 
   s := intString(i);

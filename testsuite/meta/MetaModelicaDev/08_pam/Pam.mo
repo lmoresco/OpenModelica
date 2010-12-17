@@ -173,6 +173,7 @@ end inputItem;
 
 protected function outputItem
   input Integer i;
+protected
   Ident s;
 algorithm 
   s := intString(i);

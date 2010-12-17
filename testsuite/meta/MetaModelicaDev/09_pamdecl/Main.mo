@@ -5,6 +5,7 @@ import Eval;
 import Absyn;
 
 public function main
+protected
   Absyn.Prog ast;
 algorithm
   print("[Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]\n");    

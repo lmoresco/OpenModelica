@@ -23,6 +23,7 @@ encapsulated package T2
 
   function func
     output U u;
+  protected
     T1.U u1;
   algorithm
     u1 := T1.R(2);

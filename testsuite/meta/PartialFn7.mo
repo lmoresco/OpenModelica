@@ -36,6 +36,7 @@ function TestCreateTestRecord
   input Integer i;
   input Real r;
   output Integer o;
+protected
   TestRecord tr;
 
 algorithm

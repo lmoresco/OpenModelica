@@ -11,6 +11,7 @@ public function main "Parse and translate a PAM program into MCode,
   then emit it as textual assembly code.
 "
   type Mcode_MCodeLst = list<Mcode.MCode>;
+protected
   Absyn.Stmt program;
   Mcode_MCodeLst mcode;
 algorithm 

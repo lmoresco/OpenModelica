@@ -45,6 +45,7 @@ package Uniontype8
 function test
   input Integer s;
   output Integer k;
+protected
   UT re;
 algorithm
   re := REC1(66,2.5,"z");
@@ -80,6 +81,7 @@ end test4;
 function test5
   input Integer s;
   output UT u;
+protected
   foo f;
 algorithm  
   f := foo(1,2.5,"z");

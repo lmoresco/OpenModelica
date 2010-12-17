@@ -2,8 +2,8 @@ package MatchCaseInteractive1
   
   function func
     input Integer x;
-    input Boolean y;    
-    output Integer z;    
+    input Boolean y;
+    output Integer z;
   algorithm
     z :=
     matchcontinue (x,y)
@@ -18,7 +18,7 @@ package MatchCaseInteractive1
 
   function stringFunc
     input String s;
-    output Integer x;    
+    output Integer x;
   algorithm
     x :=
     matchcontinue (s)
@@ -32,8 +32,7 @@ package MatchCaseInteractive1
     end matchcontinue;
   end stringFunc;
 
-  public 
-  type AList = list<Integer>;
+  public type AList = list<Integer>;
   
   function listFunc
     input AList aList;
@@ -101,6 +100,7 @@ package MatchCaseInteractive1
   function optionFunc
     input Integer a; 
     output Integer b; 
+  protected
     MyType1 x1;
     MyType2 x2;
     MyType3 x3;

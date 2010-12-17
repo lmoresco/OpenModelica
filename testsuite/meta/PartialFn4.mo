@@ -9,6 +9,7 @@ model PartialFn4
 
 function VoidOp
   input Integer i;
+protected
   Integer j;
 algorithm
   j := i + 1;

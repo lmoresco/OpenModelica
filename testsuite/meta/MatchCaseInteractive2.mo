@@ -3,6 +3,7 @@ package MatchCaseInteractive2
   function matchInMatch
     input Integer x;
     output Integer z;
+  protected
     Integer y;
   algorithm
     y := x*2;
@@ -60,6 +61,7 @@ package MatchCaseInteractive2
   function matchUniontype
     input Integer x;
     output String s;
+  protected
     UT ut;
   algorithm
     ut := matchcontinue (x)

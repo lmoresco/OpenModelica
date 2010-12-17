@@ -4,6 +4,7 @@ public import FCode;
 
 protected function printInt
   input Integer i;
+protected
   String s;
 algorithm 
   s := intString(i);
@@ -1237,6 +1238,7 @@ end procsRecs;
 
 protected function emitRecordDefns
   input list<FCode.Proc> procs;
+protected
   RTree recs;
 algorithm 
   recs := procsRecs(procs, EMPTY());

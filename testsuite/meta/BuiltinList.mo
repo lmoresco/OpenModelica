@@ -41,6 +41,7 @@ package BuiltinList
     output T1 getNthIx;
     output list<T1> deleteIx;
     output list<T1> consIx;
+  protected
     Integer i2;
     Real r;
     Boolean b;

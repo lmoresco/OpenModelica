@@ -9,8 +9,9 @@ model MatchCase9
   type MyType4 = list<MyType1>;
 
   function func
-    input Integer a; 
-    output Integer b; 
+    input Integer a;
+    output Integer b;
+  protected 
     MyType1 x1;
     MyType2 x2;
     MyType3 x3;

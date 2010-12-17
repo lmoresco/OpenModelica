@@ -19,6 +19,7 @@ model Uniontype3
   function test
     input Integer s;
     output Integer k;
+  protected
     UT re;
   algorithm
     re := REC1(66);

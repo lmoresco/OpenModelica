@@ -57,6 +57,7 @@ end transBinop;
 
 protected function gentemp
   output Mcode.MOperand outMOperand;
+protected
   Integer no;
 algorithm 
   no := tick();
@@ -65,6 +66,7 @@ end gentemp;
 
 protected function genlabel
   output Mcode.MOperand outMOperand;
+protected
   Integer no;
 algorithm 
   no := tick();
@@ -78,6 +80,7 @@ protected function listAppend3
   output VType_aLst l13;
   replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
+protected
   VType_aLst l12;
 algorithm 
   l12 := listAppend(l1, l2);
@@ -93,6 +96,7 @@ protected function listAppend5
   output VType_aLst l15;
   replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
+protected
   VType_aLst l13;
 algorithm 
   l13 := listAppend3(l1, l2, l3);
@@ -109,6 +113,7 @@ protected function listAppend6
   output VType_aLst l16;
   replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
+protected
   VType_aLst l13,l46;
 algorithm 
   l13 := listAppend3(l1, l2, l3);
@@ -130,6 +135,7 @@ protected function listAppend10
   output VType_aLst l110;
   replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
+protected
   VType_aLst l15;
 algorithm 
   l15 := listAppend5(l1, l2, l3, l4, l5);
@@ -271,6 +277,7 @@ public function transProgram
   input Absyn.Stmt progbody;
   output Mcode_MCodeLst programcode;
   type Mcode_MCodeLst = list<Mcode.MCode>;
+protected
   Mcode_MCodeLst cod1;
 algorithm
   cod1 := transStmt(progbody);

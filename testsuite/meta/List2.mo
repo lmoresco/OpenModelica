@@ -3,6 +3,7 @@ model List2
   function func
     input Integer i;
     output Integer x1;
+  protected
     list<Integer> listInt1; 
     list<Integer> listInt2;
     Integer b;

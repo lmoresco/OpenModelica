@@ -442,6 +442,7 @@ protected function mkload
   input Types.Ty ty;
   input TCode.Exp addr;
   output TCode.Exp outExp;
+protected
   TCode.Ty ty_1;
 algorithm 
   ty_1 := Types.tyCnv(ty);
@@ -513,6 +514,7 @@ protected function elabArg
   input Absyn.Exp exp;
   input Types.Ty ty;
   output TCode.Exp exp_2;
+protected
   TCode.Exp exp_1;
   Types.Ty ty_1;
 algorithm 

@@ -6,6 +6,7 @@ model List3
   function func 
     input Integer a;
     output Integer b;
+  protected
     AList aList;
   algorithm 
     b := 3;
