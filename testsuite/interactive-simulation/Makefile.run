@@ -1,5 +1,5 @@
 ifndef OMDEV
-	LDFLAGS=
+	LDFLAGS=-lpthread
 	EXT=
 else
 	LDFLAGS=-lwsock32

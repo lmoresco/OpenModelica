@@ -1,6 +1,7 @@
 //name:         Interactive Simulation Testing
 //keyword:      testing interactive simulation
 //status:       correct
+//teardown_command: rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-trace-server.txt output.log
 //
 // interactive simulation test
 //
@@ -18,7 +19,6 @@ system("sort trace-client.txt > sorted-trace-client.txt");
 readFile("sorted-trace-client.txt");
 "Trace of server (simulation) (sorted alphabetically):";
 readFile("sorted-trace-server.txt");
-system("rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-trace-server.txt output.log");
 
 // Result:
 // 0
@@ -29,285 +29,145 @@ system("rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-t
 // 0
 // "Trace of the client (sorted alphabetically):"
 // "Command to delay the client for: 10 seconds.
-
 // Command to delay the client for: 2 seconds.
-
 // Command to delay the client for: 2 seconds.
-
 // Command to delay the client for: 2 seconds.
-
 // Command to delay the client for: 3 seconds.
-
 // Control server on: 127.0.0.1:10500
-
 // End delay of 10 seconds.
-
 // End delay of 2 seconds.
-
 // End delay of 2 seconds.
-
 // End delay of 2 seconds.
-
 // End delay of 3 seconds.
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Enter operation to be sent to server: 
-
 // Message to be send: changevalue#5#3.6#source.flowLevel=0.0004#end
-
 // Message to be send: setcontrolclienturl#1#127.0.0.1#10500#end
-
 // Message to be send: setfilter#3#tank1.h#source.flowLevel#end
-
 // Message to be send: settransferclienturl#2#127.0.0.1#10502#end
-
 // Message to be send: shutdown#6#end
-
 // Message to be send: start#4#end
-
 // Server recieved message: done#3#end
-
 // Server recieved message: done#4#end
-
 // Server recieved message: done#5#end
-
 // Server recieved message: result#0.2#tank1.h=0.08#source.flowLevel=0.02#end
-
 // Server recieved message: result#0.4#tank1.h=0.084#source.flowLevel=0.02#end
-
 // Server recieved message: result#0.6#tank1.h=0.088#source.flowLevel=0.02#end
-
 // Server recieved message: result#0.8#tank1.h=0.092#source.flowLevel=0.02#end
-
 // Server recieved message: result#1#tank1.h=0.096#source.flowLevel=0.02#end
-
 // Server recieved message: result#1.00009e-10#tank1.h=4.44089e-15#source.flowLevel=0.02#end
-
 // Server recieved message: result#1.2#tank1.h=0.1#source.flowLevel=0.02#end
-
 // Server recieved message: result#1.4#tank1.h=0.104#source.flowLevel=0.02#end
-
 // Server recieved message: result#1.6#tank1.h=0.108#source.flowLevel=0.02#end
-
 // Server recieved message: result#1.8#tank1.h=0.112#source.flowLevel=0.02#end
-
 // Server recieved message: result#10#tank1.h=0.14008#source.flowLevel=0.0004#end
-
 // Server recieved message: result#10.2#tank1.h=0.14016#source.flowLevel=0.0004#end
-
 // Server recieved message: result#10.4#tank1.h=0.14024#source.flowLevel=0.0004#end
-
 // Server recieved message: result#10.6#tank1.h=0.14032#source.flowLevel=0.0004#end
-
 // Server recieved message: result#10.8#tank1.h=0.1404#source.flowLevel=0.0004#end
-
 // Server recieved message: result#11#tank1.h=0.14048#source.flowLevel=0.0004#end
-
 // Server recieved message: result#11.2#tank1.h=0.14056#source.flowLevel=0.0004#end
-
 // Server recieved message: result#11.4#tank1.h=0.14064#source.flowLevel=0.0004#end
-
 // Server recieved message: result#11.6#tank1.h=0.14072#source.flowLevel=0.0004#end
-
 // Server recieved message: result#11.8#tank1.h=0.1408#source.flowLevel=0.0004#end
-
 // Server recieved message: result#12#tank1.h=0.14088#source.flowLevel=0.0004#end
-
 // Server recieved message: result#12.2#tank1.h=0.14096#source.flowLevel=0.0004#end
-
 // Server recieved message: result#12.4#tank1.h=0.14104#source.flowLevel=0.0004#end
-
 // Server recieved message: result#12.6#tank1.h=0.14112#source.flowLevel=0.0004#end
-
 // Server recieved message: result#12.8#tank1.h=0.1412#source.flowLevel=0.0004#end
-
 // Server recieved message: result#13#tank1.h=0.14128#source.flowLevel=0.0004#end
-
 // Server recieved message: result#13.2#tank1.h=0.14136#source.flowLevel=0.0004#end
-
 // Server recieved message: result#13.4#tank1.h=0.14144#source.flowLevel=0.0004#end
-
 // Server recieved message: result#2#tank1.h=0.116#source.flowLevel=0.02#end
-
 // Server recieved message: result#2.2#tank1.h=0.12#source.flowLevel=0.02#end
-
 // Server recieved message: result#2.4#tank1.h=0.124#source.flowLevel=0.02#end
-
 // Server recieved message: result#2.6#tank1.h=0.128#source.flowLevel=0.02#end
-
 // Server recieved message: result#2.8#tank1.h=0.132#source.flowLevel=0.02#end
-
 // Server recieved message: result#3.8#tank1.h=0.1376#source.flowLevel=0.0004#end
-
 // Server recieved message: result#4#tank1.h=0.13768#source.flowLevel=0.0004#end
-
 // Server recieved message: result#4.2#tank1.h=0.13776#source.flowLevel=0.0004#end
-
 // Server recieved message: result#4.4#tank1.h=0.13784#source.flowLevel=0.0004#end
-
 // Server recieved message: result#4.6#tank1.h=0.13792#source.flowLevel=0.0004#end
-
 // Server recieved message: result#4.8#tank1.h=0.138#source.flowLevel=0.0004#end
-
 // Server recieved message: result#5#tank1.h=0.13808#source.flowLevel=0.0004#end
-
 // Server recieved message: result#5.2#tank1.h=0.13816#source.flowLevel=0.0004#end
-
 // Server recieved message: result#5.4#tank1.h=0.13824#source.flowLevel=0.0004#end
-
 // Server recieved message: result#5.6#tank1.h=0.13832#source.flowLevel=0.0004#end
-
 // Server recieved message: result#5.8#tank1.h=0.1384#source.flowLevel=0.0004#end
-
 // Server recieved message: result#6#tank1.h=0.13848#source.flowLevel=0.0004#end
-
 // Server recieved message: result#6.2#tank1.h=0.13856#source.flowLevel=0.0004#end
-
 // Server recieved message: result#6.4#tank1.h=0.13864#source.flowLevel=0.0004#end
-
 // Server recieved message: result#6.6#tank1.h=0.13872#source.flowLevel=0.0004#end
-
 // Server recieved message: result#6.8#tank1.h=0.1388#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7#tank1.h=0.1372#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7#tank1.h=0.13888#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7.2#tank1.h=0.13896#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7.4#tank1.h=0.13904#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7.6#tank1.h=0.13912#source.flowLevel=0.0004#end
-
 // Server recieved message: result#7.8#tank1.h=0.1392#source.flowLevel=0.0004#end
-
 // Server recieved message: result#8#tank1.h=0.13928#source.flowLevel=0.0004#end
-
 // Server recieved message: result#8.2#tank1.h=0.13936#source.flowLevel=0.0004#end
-
 // Server recieved message: result#8.4#tank1.h=0.13944#source.flowLevel=0.0004#end
-
 // Server recieved message: result#8.6#tank1.h=0.13952#source.flowLevel=0.0004#end
-
 // Server recieved message: result#8.8#tank1.h=0.1396#source.flowLevel=0.0004#end
-
 // Server recieved message: result#9#tank1.h=0.13968#source.flowLevel=0.0004#end
-
 // Server recieved message: result#9.2#tank1.h=0.13976#source.flowLevel=0.0004#end
-
 // Server recieved message: result#9.4#tank1.h=0.13984#source.flowLevel=0.0004#end
-
 // Server recieved message: result#9.6#tank1.h=0.13992#source.flowLevel=0.0004#end
-
 // Server recieved message: result#9.8#tank1.h=0.14#source.flowLevel=0.0004#end
-
 // Shuting down in 3 seconds .... due to shutdown message: shutdown#6#end
-
 // Transfer server on: 127.0.0.1:10502
-
 // "
 // "Trace of server (simulation) (sorted alphabetically):"
 // "***** End store the DataNames *****
-
 // ***** Store the DataNames *****
-
 // 10500
-
 // 127.0.0.1
-
 // Client Message: changevalue#5#3.6#source.flowLevel=0.0004#end
-
 // Client Message: setcontrolclienturl#1#127.0.0.1#10500#end
-
 // Client Message: setfilter#3#tank1.h#source.flowLevel#end
-
 // Client Message: settransferclienturl#2#127.0.0.1#10502#end
-
 // Client Message: shutdown#6#end
-
 // Client Message: start#4#end
-
 // Connect to server with user specific ip and port, ip = 127.0.0.1, port = 10500
-
 // Control Client IP and Port: 127.0.0.1:10500
-
 // Creating producers and consumers!
-
 // Message send: done#3#end
-
 // Message send: done#4#end
-
 // Message send: done#5#end
-
 // Message send: done#6#end
-
 // Operation: changevalue
-
 // Operation: setcontrolclienturl
-
 // Operation: setfilter
-
 // Operation: settransferclienturl
-
 // Operation: shutdown
-
 // Operation: start
-
 // PARFILTERNAME: source.flowLevel
-
 // STATENAME: tank1.h
-
 // Type: p Name: source.flowLevel
-
 // Type: v Name: tank1.h
-
 // VARFILTERNAME: tank1.h
-
 // [-1 - 6.8]
-
 // changeParameterValues --> time: 3.6 parameter: source.flowLevel=0.0004
-
 // create client done...
-
 // create producer and consumer done...
-
 // filterstring: tank1.h#source.flowLevel
-
 // globalData->lastEmittedTime: 3.6
-
 // initialize done...
-
 // p_ssdAtChangedSimulationTime->forTimeStep: 3.6
-
 // pause done
-
 // simulation finished!
-
 // start done
-
 // start done
-
 // tank1.h#source.flowLevel
-
 // "
-// 0
 // endResult
