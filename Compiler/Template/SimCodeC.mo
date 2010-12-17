@@ -3560,10 +3560,12 @@ algorithm
                                     "    free(data->rawSampleExps);\n",
                                     "    data->rawSampleExps = 0;\n",
                                     "  }\n",
+                                    "  /* adrpo: 2010-12-17 THIS IS WRONG as WE DO NOT ALLOCATE THIS in function initializeDataStruc!\n",
                                     "  if(flags & RAWSAMPLES && data->sampleTimes) {\n",
                                     "    free(data->sampleTimes);\n",
                                     "    data->sampleTimes = 0;\n",
                                     "  }\n",
+                                    "  */\n",
                                     "}"
                                 }, false));
       then txt;
