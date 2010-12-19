@@ -6,6 +6,7 @@ else
 	EXT=.exe
 endif
 
+.PHONY: TwoTanks.TanksConnectedPI$(EXT)
 
 all: run clean
 

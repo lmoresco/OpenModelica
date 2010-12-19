@@ -19,6 +19,7 @@ INTERACTIVEMAKEFILE = Makefile.mingw
 EXTERNALCMAKEFILE = Makefile.omdev.mingw
 INTERACTIVELIBS = 
 LIBSENDDATA = libsendData.a
+CONFIG_H=$(top_builddir)/Compiler/runtime/config.h
 
 include Makefile.common
 
