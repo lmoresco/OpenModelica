@@ -12,14 +12,19 @@ system("rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-t
 system("make -f Makefile.run clean > out.log 2>&1");
 // run the interactive simulation
 system("make -f Makefile.run >> out.log 2>&1");
-// maybe we should sort the files?
-system("cat trace-server.txt | sort | uniq > sorted-trace-server.txt"); 
-system("cat trace-client.txt | sort | uniq > sorted-trace-client.txt");
-// system("cat trace-server.txt > sorted-trace-server.txt"); 
-// system("cat trace-client.txt > sorted-trace-client.txt");
-"Trace of the client (sorted alphabetically):";
+
+// take only non-result messages first
+system("cat trace-client.txt | grep -v result > sorted-trace-client.txt"); 
+// then take 2 results, before and after the change
+system("cat trace-client.txt | grep result#2# >> sorted-trace-client.txt"); 
+system("cat trace-client.txt | grep result#6# >> sorted-trace-client.txt"); 
+
+// take all from server
+system("cat trace-server.txt > sorted-trace-server.txt");
+
+"Trace of the client: ";
 readFile("sorted-trace-client.txt");
-"Trace of server (simulation) (sorted alphabetically):";
+"Trace of server (simulation): ";
 readFile("sorted-trace-server.txt");
 
 // Result:
@@ -28,158 +33,129 @@ readFile("sorted-trace-server.txt");
 // 0
 // 0
 // 0
-// "Trace of the client (sorted alphabetically):"
-// "Command to delay the client for: 10 seconds.
-
-// Command to delay the client for: 2 seconds.
-
-// Command to delay the client for: 3 seconds.
-
-// Control server on: 127.0.0.1:10500
-
-// End delay of 10 seconds.
-
-// End delay of 2 seconds.
-
-// End delay of 3 seconds.
-
-// Enter operation to be sent to server: 
-
-// Message to be send: changevalue#5#3.6#source.flowLevel=0.0004#end
-
-// Message to be send: setcontrolclienturl#1#127.0.0.1#10500#end
-
-// Message to be send: setfilter#3#tank1.h#source.flowLevel#end
-
-// Message to be send: settransferclienturl#2#127.0.0.1#10502#end
-
-// Message to be send: shutdown#6#end
-
-// Message to be send: start#4#end
-
-// Server recieved message: done#3#end
-
-// Server recieved message: done#4#end
-
-// Server recieved message: done#5#end
-
-// Server recieved message: done#6#end
-
-// Server recieved message: result#1#tank1.h=0.376613#source.flowLevel=0.02#end
-
-// Server recieved message: result#1.00142e-10#tank1.h=0.26#source.flowLevel=0.02#end
-
-// Server recieved message: result#10#tank1.h=0.254547#source.flowLevel=0.0004#end
-
-// Server recieved message: result#11#tank1.h=0.254063#source.flowLevel=0.0004#end
-
-// Server recieved message: result#12#tank1.h=0.253631#source.flowLevel=0.0004#end
-
-// Server recieved message: result#2#tank1.h=0.368666#source.flowLevel=0.02#end
-
-// Server recieved message: result#23#tank1.h=0.25999#source.flowLevel=0.0004#end
-
-// Server recieved message: result#4#tank1.h=0.258927#source.flowLevel=0.0004#end
-
-// Server recieved message: result#5#tank1.h=0.257977#source.flowLevel=0.0004#end
-
-// Server recieved message: result#6#tank1.h=0.257129#source.flowLevel=0.0004#end
-
-// Server recieved message: result#7#tank1.h=0.25637#source.flowLevel=0.0004#end
-
-// Server recieved message: result#8#tank1.h=0.255693#source.flowLevel=0.0004#end
-
-// Server recieved message: result#9#tank1.h=0.255087#source.flowLevel=0.0004#end
-
-// Shuting down in 3 seconds .... due to shutdown message: shutdown#6#end
-
+// 0
+// 0
+// "Trace of the client: "
+// "Control server on: 127.0.0.1:10500
 // Transfer server on: 127.0.0.1:10502
-
-// threadServerControl: Failed to recieve message!
-
+// Enter operation to be sent to server: 
+// Message to be send: setcontrolclienturl#1#127.0.0.1#10500#end
+// Enter operation to be sent to server: 
+// Command to delay the client for: 2 seconds.
+// End delay of 2 seconds.
+// Enter operation to be sent to server: 
+// Message to be send: settransferclienturl#2#127.0.0.1#10502#end
+// Enter operation to be sent to server: 
+// Command to delay the client for: 2 seconds.
+// End delay of 2 seconds.
+// Enter operation to be sent to server: 
+// Message to be send: setfilter#3#tank1.h#source.flowLevel#end
+// Enter operation to be sent to server: 
+// Command to delay the client for: 2 seconds.
+// Server recieved message: done#3#end
+// End delay of 2 seconds.
+// Enter operation to be sent to server: 
+// Message to be send: start#4#end
+// Enter operation to be sent to server: 
+// Command to delay the client for: 4 seconds.
+// Server recieved message: done#4#end
+// End delay of 4 seconds.
+// Enter operation to be sent to server: 
+// Message to be send: changevalue#5#3.6#source.flowLevel=0.0004#end
+// Enter operation to be sent to server: 
+// Command to delay the client for: 10 seconds.
+// Server recieved message: done#5#end
+// End delay of 10 seconds.
+// Enter operation to be sent to server: 
+// Message to be send: shutdown#6#end
+// Shuting down in 2 seconds .... due to shutdown message: shutdown#6#end
+// Server recieved message: result#2#tank1.h=0.368666#source.flowLevel=0.02#end
+// Server recieved message: result#6#tank1.h=0.256143#source.flowLevel=0.0004#end
 // "
-// "Trace of server (simulation) (sorted alphabetically):"
-// "
+// "Trace of server (simulation): "
+// "***** Store the DataNames *****
 
 // ***** End store the DataNames *****
 
-// ***** Store the DataNames *****
-
-// 10500
-
-// 127.0.0.1
-
-// Client Message: changevalue#5#3.6#source.flowLevel=0.0004#end
+// initialize done...
 
 // Client Message: setcontrolclienturl#1#127.0.0.1#10500#end
 
-// Client Message: setfilter#3#tank1.h#source.flowLevel#end
+// Operation: setcontrolclienturl
 
-// Client Message: settransferclienturl#2#127.0.0.1#10502#end
+// 127.0.0.1
 
-// Client Message: shutdown#6#end
-
-// Client Message: start#4#end
-
-// Connect to server with user specific ip and port, ip = 127.0.0.1, port = 10500
+// 10500
 
 // Control Client IP and Port: 127.0.0.1:10500
 
-// Creating producers and consumers!
+// create client done...
 
-// Message send: done#3#end
+// Connect to server with user specific ip and port, ip = 127.0.0.1, port = 10500
 
-// Message send: done#4#end
-
-// Message send: done#5#end
-
-// Message send: done#6#end
-
-// Operation: changevalue
-
-// Operation: setcontrolclienturl
-
-// Operation: setfilter
+// Client Message: settransferclienturl#2#127.0.0.1#10502#end
 
 // Operation: settransferclienturl
 
-// Operation: shutdown
-
-// Operation: start
-
-// PARFILTERNAME: source.flowLevel
-
-// STATENAME: tank1.h
-
-// Type: p Name: source.flowLevel
-
-// Type: v Name: tank1.h
-
-// VARFILTERNAME: tank1.h
-
-// [-1 - 22]
-
-// changeParameterValues --> time: 3.6 parameter: source.flowLevel=0.0004
-
-// create client done...
+// Creating producers and consumers!
 
 // create producer and consumer done...
 
+// Client Message: setfilter#3#tank1.h#source.flowLevel#end
+
+// Operation: setfilter
+
 // filterstring: tank1.h#source.flowLevel
 
-// globalData->lastEmittedTime: 3
+// tank1.h#source.flowLevel
 
-// initialize done...
+// Type: v Name: tank1.h
 
-// p_ssdAtChangedSimulationTime->forTimeStep: 3
+// STATENAME: tank1.h
 
-// pause done
+// VARFILTERNAME: tank1.h
 
-// simulation finished!
+// Type: p Name: source.flowLevel
+
+// PARFILTERNAME: source.flowLevel
+
+// Message send: done#3#end
+
+// Client Message: start#4#end
+
+// Operation: start
 
 // start done
 
-// tank1.h#source.flowLevel
+// Message send: done#4#end
+
+// 
+
+// Client Message: changevalue#5#3.6#source.flowLevel=0.0004#end
+
+// Operation: changevalue
+
+// changeParameterValues --> time: 3.6 parameter: source.flowLevel=0.0004
+
+// pause done
+
+// [-1 - 23]
+
+// p_ssdAtChangedSimulationTime->forTimeStep: 3
+
+// globalData->lastEmittedTime: 3
+
+// start done
+
+// Message send: done#5#end
+
+// Client Message: shutdown#6#end
+
+// Operation: shutdown
+
+// Message send: done#6#end
+
+// simulation finished!
 
 // "
 // endResult
