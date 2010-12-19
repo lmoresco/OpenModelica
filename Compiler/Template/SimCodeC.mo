@@ -2140,8 +2140,7 @@ algorithm
       Tpl.Text txt;
       String a_name;
       list<SimCode.SimVar> i_items;
-      Integer ret_1;
-      Tpl.Text l_itemsStr;
+      Integer ret_0;
 
     case ( txt,
            {},
@@ -2156,16 +2155,18 @@ algorithm
            i_items,
            a_name )
       equation
-        l_itemsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_itemsStr = lm_66(l_itemsStr, i_items);
-        l_itemsStr = Tpl.popIter(l_itemsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("const char* "));
         txt = Tpl.writeStr(txt, a_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_1 = listLength(i_items);
-        txt = Tpl.writeStr(txt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = {"));
-        txt = Tpl.writeText(txt, l_itemsStr);
+        ret_0 = listLength(i_items);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("] = {\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_LINE(",\n")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_66(txt, i_items);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("};"));
       then txt;
   end matchcontinue;
@@ -2229,8 +2230,7 @@ algorithm
       Tpl.Text txt;
       String a_name;
       list<SimCode.SimVar> i_items;
-      Integer ret_1;
-      Tpl.Text l_itemsStr;
+      Integer ret_0;
 
     case ( txt,
            {},
@@ -2245,16 +2245,18 @@ algorithm
            i_items,
            a_name )
       equation
-        l_itemsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_itemsStr = lm_69(l_itemsStr, i_items);
-        l_itemsStr = Tpl.popIter(l_itemsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("const char* "));
         txt = Tpl.writeStr(txt, a_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
-        ret_1 = listLength(i_items);
-        txt = Tpl.writeStr(txt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = {"));
-        txt = Tpl.writeText(txt, l_itemsStr);
+        ret_0 = listLength(i_items);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("] = {\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_LINE(",\n")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_69(txt, i_items);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("};"));
       then txt;
   end matchcontinue;
@@ -3027,7 +3029,7 @@ algorithm
                                    "  }\n",
                                    "\n",
                                    "  if (flags & PARAMETERS && returnData->stringVariables.nParameters) {\n",
-                                   "      returnData->stringVariables.parameters = (const char**)malloc(sizeof(char*)*returnData->stringVariables.nParameters);\n",
+                                   "    returnData->stringVariables.parameters = (const char**)malloc(sizeof(char*)*returnData->stringVariables.nParameters);\n",
                                    "      assert(returnData->stringVariables.parameters);\n",
                                    "      memset(returnData->stringVariables.parameters,0,sizeof(char*)*returnData->stringVariables.nParameters);\n",
                                    "  } else {\n",
@@ -3035,7 +3037,7 @@ algorithm
                                    "  }\n",
                                    "\n",
                                    "  if (flags & PARAMETERS && returnData->intVariables.nParameters) {\n",
-                                   "      returnData->intVariables.parameters = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nParameters);\n",
+                                   "    returnData->intVariables.parameters = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nParameters);\n",
                                    "      assert(returnData->intVariables.parameters);\n",
                                    "      memset(returnData->intVariables.parameters,0,sizeof(modelica_integer)*returnData->intVariables.nParameters);\n",
                                    "  } else {\n",
@@ -3043,7 +3045,7 @@ algorithm
                                    "  }\n",
                                    "\n",
                                    "  if (flags & PARAMETERS && returnData->boolVariables.nParameters) {\n",
-                                   "      returnData->boolVariables.parameters = (modelica_boolean*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nParameters);\n",
+                                   "    returnData->boolVariables.parameters = (modelica_boolean*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nParameters);\n",
                                    "      assert(returnData->boolVariables.parameters);\n",
                                    "      memset(returnData->boolVariables.parameters,0,sizeof(modelica_boolean)*returnData->boolVariables.nParameters);\n",
                                    "  } else {\n",
@@ -5748,7 +5750,7 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(10));
         txt = cref(txt, i_stateVar);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         txt = Tpl.writeText(txt, l_val);
@@ -5766,7 +5768,7 @@ algorithm
       equation
         l_preExp = Tpl.emptyTxt;
         (l_msgVar, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_message, SimCode.contextSimulationDiscrete, l_preExp, a_varDecls);
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(8));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(12));
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("MODELICA_TERMINATE("));
@@ -6735,18 +6737,18 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "(double *t, double *x, double *xd, double *jac)\n",
                                        "{\n",
-                                       "    state mem_state;\n",
+                                       "  state mem_state;\n",
                                        "\n",
-                                       "    double* statesBackup;\n",
-                                       "    double* statesDerivativesBackup;\n",
-                                       "    double timeBackup;\n",
+                                       "  double* statesBackup;\n",
+                                       "  double* statesDerivativesBackup;\n",
+                                       "  double timeBackup;\n",
                                        "\n",
-                                       "    timeBackup = localData->timeValue;\n",
-                                       "    statesBackup = localData->states;\n",
-                                       "    statesDerivativesBackup = localData->statesDerivatives;\n",
-                                       "    localData->timeValue = *t;\n",
-                                       "    localData->states = x;\n",
-                                       "    localData->statesDerivatives = xd;\n",
+                                       "  timeBackup = localData->timeValue;\n",
+                                       "  statesBackup = localData->states;\n",
+                                       "  statesDerivativesBackup = localData->statesDerivatives;\n",
+                                       "  localData->timeValue = *t;\n",
+                                       "  localData->states = x;\n",
+                                       "  localData->statesDerivatives = xd;\n",
                                        "\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
@@ -6766,8 +6768,8 @@ algorithm
                                        "restore_memory_state(mem_state);\n",
                                        "\n",
                                        "localData->states = statesBackup;\n",
-                                       "  localData->statesDerivatives = statesDerivativesBackup;\n",
-                                       "  localData->timeValue = timeBackup;\n",
+                                       "localData->statesDerivatives = statesDerivativesBackup;\n",
+                                       "localData->timeValue = timeBackup;\n",
                                        "\n",
                                        "return 0;\n"
                                    }, true));
@@ -27222,6 +27224,15 @@ algorithm
            a_varDecls )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("mmc_clock()"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "noEvent"), expLst = {i_e1}),
+           a_context,
+           a_preExp,
+           a_varDecls )
+      equation
+        (txt, a_preExp, a_varDecls) = daeExp(txt, i_e1, a_context, a_preExp, a_varDecls);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
