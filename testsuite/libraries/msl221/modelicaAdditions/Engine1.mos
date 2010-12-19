@@ -4,6 +4,7 @@
 
 loadFile("Engine1Total.mo");
 instantiateModel(MultiBody.Examples.Loops.Engine1);
+getErrorString();
 checkModel(MultiBody.Examples.Loops.Engine1);
 getErrorString();
 
@@ -4497,6 +4498,9 @@ getErrorString();
 //   piston.frame_b.f[1] = 0.0;
 //   r1.bearing.tau = 0.0;
 // end MultiBody.Examples.Loops.Engine1;
+// "
+// "[Engine1Total.mo:2665:7-2665:75:writable] Warning: Component Length has the same name as its type MultiBody.Parts.ShapeBody.SI.Length.
+// 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // "Check of MultiBody.Examples.Loops.Engine1 completed successfully.
 // 
