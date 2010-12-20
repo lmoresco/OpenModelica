@@ -27,14 +27,8 @@ end WhenNotValid;
 //   end when;
 // end WhenNotValid;
 // Result:
-// - DAEUtil.verifyWhenEquation FAILED on:equation
-//   2.0 * x + y = 7.0;
-// 
-// 
 // Error processing file: WhenNotValid.mo
-// [WhenNotValid.mo:15:3-17:11:writable] Error: Failed to instantiate equation when sample(0, 2) then
-// 2 * x + y = 7;
-// end when;
+// [WhenNotValid.mo:16:5-16:16:writable] Error: Invalid left-hand side of when-equation: 2.0 * x + y.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

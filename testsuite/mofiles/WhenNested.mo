@@ -21,19 +21,7 @@ end WhenNested;
 
 // Result:
 // Error processing file: WhenNested.mo
-// [WhenNested.mo:13:3-19:11:writable] Error: In scope WhenNested: Invalid nested when statements:
-// when sample(0, 1) then
-//   if time > 1 then 
-//     when x > 0 then
-//       y:=3;
-//   
-//   end when;
-// 
-//   else 
-//   end if;
-// 
-// end when;
-// 
+// [WhenNested.mo:13:3-19:11:writable] Error: Nested when statements are not allowed.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

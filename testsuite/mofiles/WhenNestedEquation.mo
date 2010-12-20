@@ -18,13 +18,7 @@ end ErrorNestedWhen;
 
 // Result:
 // Error processing file: WhenNestedEquation.mo
-// [WhenNestedEquation.mo:12:3-16:11:writable] Error: In scope ErrorNestedWhen: Invalid nested when statements:
-// when x > 2 then
-// when y1 > 3 then
-// y2 = sin(x);
-// end when;
-// end when;
-// 
+// [WhenNestedEquation.mo:12:3-16:11:writable] Error: Nested when statements are not allowed.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
