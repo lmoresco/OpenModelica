@@ -17,7 +17,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 has 12073 equation(s) and 12491 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6 has 12491 equation(s) and 12491 variable(s).
 // 8732 of these are trivial equation(s).
 // "
 // ""

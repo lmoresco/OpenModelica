@@ -3685,7 +3685,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive has 2056 equation(s) and 2089 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive has 2089 equation(s) and 2089 variable(s).
 // 1275 of these are trivial equation(s).
 // "
 // ""

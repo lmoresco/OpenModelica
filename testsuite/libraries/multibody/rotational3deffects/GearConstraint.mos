@@ -4507,7 +4507,7 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // "Check of Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2335 equation(s) and 2379 variable(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2379 equation(s) and 2379 variable(s).
 // 1519 of these are trivial equation(s).
 // "
 // ""
