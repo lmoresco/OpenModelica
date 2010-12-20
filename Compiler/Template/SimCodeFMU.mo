@@ -1235,10 +1235,10 @@ algorithm
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define MODEL_GUID \""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define MODEL_GUID \"{"));
         txt = Tpl.writeStr(txt, a_guid);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "\"\n",
+                                    "}\"\n",
                                     "\n",
                                     "// include fmu header files, typedefs and macros\n",
                                     "#include \"fmiModelFunctions.h\"\n",
