@@ -1,19 +1,25 @@
 ifndef OMDEV
 	LDFLAGS=-lpthread
 	EXT=
+	RUN=run-bash-guard
 else
 	LDFLAGS=-lwsock32
 	EXT=.exe
+	RUN=run
 endif
 
 .PHONY: TwoTanks.TanksConnectedPI$(EXT)
 
-all: run clean
+all: $(RUN) clean
 
 run: client$(EXT) TwoTanks.TanksConnectedPI$(EXT) interactive-simulation-commands.txt
 	test -f ./TwoTanks.TanksConnectedPI${EXE}
 	./TwoTanks.TanksConnectedPI$(EXT) -interactive > trace-server.txt 2>&1 &
-	./client$(EXT) interactive-simulation-commands.txt > trace-client.txt 2>&1
+	./client$(EXT)$(SHEXT) interactive-simulation-commands.txt > trace-client.txt 2>&1
+# With bash-loops cleaning up our shit... And timeout, so we don't run into an infinite loop...
+run-bash-guard: client$(EXT) TwoTanks.TanksConnectedPI$(EXT) interactive-simulation-commands.txt
+	test -f ./TwoTanks.TanksConnectedPI${EXE}
+	./run.sh
 
 TwoTanks.TanksConnectedPI$(EXT): TwoTanks/* buildModel.mos
 	../../build/bin/omc buildModel.mos
