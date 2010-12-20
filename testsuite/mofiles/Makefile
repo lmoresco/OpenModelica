@@ -238,6 +238,7 @@ EquationIf1.mo \
 EquationIf2.mo \
 EquationIf3.mo \
 EquationIf4.mo \
+ErrorMultipleClasses.mo \
 EventFunctions.mo \
 Exp.mo \
 Expressions.mo \
