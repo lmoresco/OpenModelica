@@ -90,7 +90,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real idealPump.T_b(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = idealPump.flowPort_b.h / idealPump.medium.cp "Temperature at flowPort_b";
 //   output Real idealPump.dT(quantity = "ThermodynamicTemperature", unit = "K") = if noEvent(idealPump.V_flow >= 0.0) then idealPump.T - idealPump.T_a else idealPump.T_b - idealPump.T "Temperature increase of coolant in flow direction";
 //   protected Real idealPump.h(quantity = "SpecificEnergy", unit = "J/kg") = idealPump.medium.cp * idealPump.T "Medium's specific enthalpy";
-//   protected Real idealPump.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = idealPump.T - sign(idealPump.V_flow) * ((1.0 - idealPump.tapT) * idealPump.dT) "Temperature relevant for heat exchange with ambient";
+//   protected Real idealPump.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = idealPump.T - Real(sign(idealPump.V_flow)) * ((1.0 - idealPump.tapT) * idealPump.dT) "Temperature relevant for heat exchange with ambient";
 //   parameter Real idealPump.flowPort_a.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "Density";
 //   parameter Real idealPump.flowPort_a.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant pressure";
 //   parameter Real idealPump.flowPort_a.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant volume";
@@ -133,7 +133,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real valve.T_b(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = valve.flowPort_b.h / valve.medium.cp "Temperature at flowPort_b";
 //   output Real valve.dT(quantity = "ThermodynamicTemperature", unit = "K") = if noEvent(valve.V_flow >= 0.0) then valve.T - valve.T_a else valve.T_b - valve.T "Temperature increase of coolant in flow direction";
 //   protected Real valve.h(quantity = "SpecificEnergy", unit = "J/kg") = valve.medium.cp * valve.T "Medium's specific enthalpy";
-//   protected Real valve.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = valve.T - sign(valve.V_flow) * ((1.0 - valve.tapT) * valve.dT) "Temperature relevant for heat exchange with ambient";
+//   protected Real valve.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = valve.T - Real(sign(valve.V_flow)) * ((1.0 - valve.tapT) * valve.dT) "Temperature relevant for heat exchange with ambient";
 //   parameter Real valve.flowPort_a.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "Density";
 //   parameter Real valve.flowPort_a.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant pressure";
 //   parameter Real valve.flowPort_a.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant volume";
@@ -182,7 +182,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   output Real pipe.T_b(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = pipe.flowPort_b.h / pipe.medium.cp "Temperature at flowPort_b";
 //   output Real pipe.dT(quantity = "ThermodynamicTemperature", unit = "K") = if noEvent(pipe.V_flow >= 0.0) then pipe.T - pipe.T_a else pipe.T_b - pipe.T "Temperature increase of coolant in flow direction";
 //   protected Real pipe.h(quantity = "SpecificEnergy", unit = "J/kg") = pipe.medium.cp * pipe.T "Medium's specific enthalpy";
-//   protected Real pipe.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = pipe.T - sign(pipe.V_flow) * ((1.0 - pipe.tapT) * pipe.dT) "Temperature relevant for heat exchange with ambient";
+//   protected Real pipe.T_q(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) = pipe.T - Real(sign(pipe.V_flow)) * ((1.0 - pipe.tapT) * pipe.dT) "Temperature relevant for heat exchange with ambient";
 //   parameter Real pipe.flowPort_a.medium.rho(quantity = "Density", unit = "kg/m3", displayUnit = "g/cm3", min = 0.0) = 1.0 "Density";
 //   parameter Real pipe.flowPort_a.medium.cp(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant pressure";
 //   parameter Real pipe.flowPort_a.medium.cv(quantity = "SpecificHeatCapacity", unit = "J/(kg.K)") = 1.0 "Specific heat capacity at constant volume";
@@ -297,7 +297,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient1.flowPort.p = ambient1.pAmbient;
 //   ambient1.T = ambient1.TAmbient;
 //   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow,ambient1.flowPort.h,ambient1.h);
-//   idealPump.dp1 = idealPump.dp0 * (sign(idealPump.w / idealPump.wNominal) * (idealPump.w / idealPump.wNominal) ^ 2.0);
+//   idealPump.dp1 = idealPump.dp0 * (Real(sign(idealPump.w / idealPump.wNominal)) * (idealPump.w / idealPump.wNominal) ^ 2.0);
 //   idealPump.V_flow1 = idealPump.V_flow0 * idealPump.w / idealPump.wNominal;
 //   if noEvent(abs(idealPump.w) < 1e-60) then
 //   idealPump.dp = 0.0;

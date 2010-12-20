@@ -16,8 +16,8 @@ val(r2, 1.0);
 //   Real r1;
 //   Real r2;
 // equation
-//   r1 = sign(time);
-//   r2 = sign(-time);
+//   r1 = Real(sign(time));
+//   r2 = Real(sign(-time));
 // end Sign;
 // "
 // record SimulationResult
