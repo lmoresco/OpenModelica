@@ -3,6 +3,7 @@ TEST = ../../../rtest -v
 TESTFILES = Accelerate2.mos \
 ElasticBearing2.mos \
 First2.mos \
+Friction2.mos \
 Oscillator2.mos \
 Sensors2.mos \
 SignConvention2.mos \
@@ -12,7 +13,6 @@ SignConvention2.mos \
 FAILINGTESTFILES=  \
 CoupledClutches2.mos \
 Damper2.mos \
-Friction2.mos \
 FrictionRotationalSim.mos \
 InitialConditions2.mos \
 LossyGearDemo1Sim.mos \
