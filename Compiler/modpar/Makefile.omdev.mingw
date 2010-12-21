@@ -39,7 +39,10 @@ OBJECTS = Codegen.o \
 else
 OBJECTS = TaskGraphExt_stub.o
 endif
-all: .testvariables libmodpar.a libmodparomc.a
+.PHONY: install
+install: .testvariables libmodpar.a libmodparomc.a
+        cp libmodparomc.a $(builddir_lib)/omc
+
 libmodpar.a: $(OBJECTS)
 	ar -r $@ $(OBJECTS)
 libmodparomc.a: TaskGraphExt_stub_omc.o
