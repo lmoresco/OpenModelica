@@ -21,6 +21,7 @@ checkModel(Modelica.Math.Matrices.integralExp); getErrorString();
 checkModel(Modelica.Math.Matrices.integralExpT); getErrorString();
 checkModel(Modelica.Math.Matrices.LAPACK.dgels_vec); getErrorString();
 checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
+checkModel(Modelica.Math.Matrices.inv); getErrorString();
 
 // Result:
 // true
@@ -86,6 +87,11 @@ checkModel(Modelica.Math.Matrices.LAPACK.dgelsx_vec); getErrorString();
 // "
 // ""
 // "Check of Modelica.Math.Matrices.LAPACK.dgelsx_vec completed successfully.
+// 
+// 
+// "
+// ""
+// "Check of Modelica.Math.Matrices.inv completed successfully.
 // 
 // 
 // "
