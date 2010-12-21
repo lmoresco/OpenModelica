@@ -41,7 +41,7 @@ OBJECTS = TaskGraphExt_stub.o
 endif
 .PHONY: install
 install: .testvariables libmodpar.a libmodparomc.a
-        cp libmodparomc.a $(builddir_lib)/omc
+	cp libmodparomc.a $(builddir_lib)/omc
 
 libmodpar.a: $(OBJECTS)
 	ar -r $@ $(OBJECTS)
