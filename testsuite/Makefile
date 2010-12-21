@@ -110,14 +110,19 @@ bootstrapping.log: omc-diff
 	@echo $@ done
 msl221.log: omc-diff
 	$(MAKE) -C libraries/msl221 -f Makefile test > $@
+	@echo $@ done
 msl221additions.log: omc-diff
 	$(MAKE) -C libraries/msl221/modelicaAdditions -f Makefile test > $@
+	@echo $@ done
 biochem.log: omc-diff
 	$(MAKE) -C libraries/biochem -f Makefile test > $@
+	@echo $@ done
 multibody.log: omc-diff
 	$(MAKE) -C libraries/multibody -f Makefile test > $@
+	@echo $@ done
 msl31.log: omc-diff
 	$(MAKE) -C libraries/msl31 -f Makefile test > $@
+	@echo $@ done
 
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
