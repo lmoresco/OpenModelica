@@ -23323,6 +23323,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(modelica_integer) "));
         txt = Tpl.writeStr(txt, intString(i_integer));
       then (txt, a_preExp, a_varDecls);
 
@@ -24099,7 +24100,7 @@ algorithm
            a_context )
       equation
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0), make_index_array(1, "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0), make_index_array(1, (int) "));
         txt = Tpl.writeText(txt, l_expPart);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("), \'S\'"));
       then (txt, a_varDecls, a_preExp);
@@ -24126,6 +24127,7 @@ algorithm
         a_preExp = Tpl.writeText(a_preExp, l_expPart);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(", 1);"));
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(int) "));
         txt = Tpl.writeText(txt, l_tmp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", integer_array_make_index_array(&"));
         txt = Tpl.writeText(txt, l_expPart);
