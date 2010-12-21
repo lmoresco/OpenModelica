@@ -34,6 +34,7 @@ ParseCompilerSources.mos \
 ParseElementReplaceable.mo \
 ParseError1.mo \
 ParseError2.mo \
+ParseError3.mo \
 ParseFullModelica1.6.mos \
 ParseFullModelica2.2.1.mos \
 ParseFullModelica3.1.mos \
