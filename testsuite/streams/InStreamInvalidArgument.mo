@@ -16,8 +16,6 @@ end InStreamInvalidArgument;
 // Result:
 // Error processing file: InStreamInvalidArgument.mo
 // [InStreamInvalidArgument.mo:13:3-13:25:writable] Error: Operand r to operator inStream is not a stream variable.
-// [InStreamInvalidArgument.mo:13:3-13:25:writable] Error: Wrong type or wrong number of arguments to inStream(r)'.
-//  (in component <NO COMPONENT>)
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
