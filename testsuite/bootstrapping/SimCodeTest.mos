@@ -112,6 +112,8 @@ readFile("SimCodeC_abc.c");
 // #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
 // 
 // extern "C" {
+// 
+// 
 // void _SimCodeC_abc()
 // {
 //   state tmp1;

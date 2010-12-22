@@ -7,30 +7,39 @@
 //
 loadFile("BuiltinMisc.mo");
 
-r := BuiltinMisc.myClock();
-i := BuiltinMisc.myTick();
-BuiltinMisc.myTick();
-BuiltinMisc.myTick();
-// BuiltinMisc.myClock(); // Disabled because it is not deterministic
+r := BuiltinMisc.myClock();getErrorString();
+i := BuiltinMisc.myTick();getErrorString();
+BuiltinMisc.myTick();getErrorString();
+BuiltinMisc.myTick();getErrorString();
+// BuiltinMisc.myClock();getErrorString(); // Disabled because it is not deterministic
 
-BuiltinMisc.myPrint("abc");
-BuiltinMisc.myTick();
-BuiltinMisc.myTick();
-BuiltinMisc.myPrint("def");
-BuiltinMisc.myTick();
-// BuiltinMisc.myClock(); // Disabled because it is not deterministic
+BuiltinMisc.myPrint("abc");getErrorString();
+BuiltinMisc.myTick();getErrorString();
+BuiltinMisc.myTick();getErrorString();
+BuiltinMisc.myPrint("def");getErrorString();
+BuiltinMisc.myTick();getErrorString();
+// BuiltinMisc.myClock();getErrorString(); // Disabled because it is not deterministic
 
 // Result:
 // true
 // 0.0
+// ""
 // 0
+// ""
 // 1
+// ""
 // 2
+// ""
 // abc
 // 
+// ""
 // 3
+// ""
 // 4
+// ""
 // def
 // 
+// ""
 // 5
+// ""
 // endResult
