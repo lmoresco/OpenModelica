@@ -58,6 +58,6 @@ end PartialFn15;
 // end PartialFn15.elabRealBinOps;
 // 
 // class PartialFn15
-//   constant list<#Real> rs = List(11.0,5.0,24.0,2.66666666666667,512.0,8.0,3.0);
+//   constant list<#Real> rs = List(#(11.0),#(5.0),#(24.0),#(2.66666666666667),#(512.0),#(8.0),#(3.0));
 // end PartialFn15;
 // endResult

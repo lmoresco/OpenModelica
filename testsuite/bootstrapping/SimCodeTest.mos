@@ -6,13 +6,11 @@
 setCommandLineOptions({"+g=MetaModelica","+d=rml"});
 setOption(envCache,false);
 
-runScript("LoadCompilerSources.mos");
-getErrorString();
+runScript("LoadCompilerSources.mos"); getErrorString();
+loadFile("SimCodeTest.mo");getErrorString();
 
-path:=Absyn.QUALIFIED("SimCodeC",Absyn.IDENT("abc"));
-func:=DAE.FUNCTION(path,{DAE.FUNCTION_DEF({})},(DAE.T_FUNCTION({},DAE.T_NORETCALL_DEFAULT,DAE.FUNCTION_ATTRIBUTES_DEFAULT),SOME(path)),false,DAE.NO_INLINE(),DAE.emptyElementSource);
-SimCode.translateFunctions("SimCodeC_abc", func, {}, {});
-getErrorString();
+SimCodeTest.test(); getErrorString();
+
 readFile("SimCodeC_abc.h");
 readFile("SimCodeC_abc.c");
 // Do not read the makefile; it's different depending on the OS
@@ -25,59 +23,8 @@ readFile("SimCodeC_abc.c");
 // "true
 // "
 // ""
-// record Absyn.Path.QUALIFIED
-//     name = "SimCodeC",
-//     path = record Absyn.Path.IDENT
-//     name = "abc"
-// end Absyn.Path.IDENT;
-// end Absyn.Path.QUALIFIED;
-// record DAE.Function.FUNCTION
-//     path = record Absyn.Path.QUALIFIED
-//     name = "SimCodeC",
-//     path = record Absyn.Path.IDENT
-//     name = "abc"
-// end Absyn.Path.IDENT;
-// end Absyn.Path.QUALIFIED;,
-//     functions = {record DAE.FunctionDefinition.FUNCTION_DEF
-//     body = {}
-// end DAE.FunctionDefinition.FUNCTION_DEF;},
-//     type_ = (record DAE.TType.T_FUNCTION
-//     funcArg = {},
-//     funcResultType = (record DAE.TType.T_NORETCALL
-// end DAE.TType.T_NORETCALL;,NONE()),
-//     functionAttributes = record DAE.FunctionAttributes.FUNCTION_ATTRIBUTES
-//     inline = record DAE.InlineType.NO_INLINE
-// end DAE.InlineType.NO_INLINE;,
-//     isPure = true
-// end DAE.FunctionAttributes.FUNCTION_ATTRIBUTES;
-// end DAE.TType.T_FUNCTION;,SOME(record Absyn.Path.QUALIFIED
-//     name = "SimCodeC",
-//     path = record Absyn.Path.IDENT
-//     name = "abc"
-// end Absyn.Path.IDENT;
-// end Absyn.Path.QUALIFIED;)),
-//     partialPrefix = false,
-//     inlineType = record DAE.InlineType.NO_INLINE
-// end DAE.InlineType.NO_INLINE;,
-//     source = record DAE.ElementSource.SOURCE
-//     info = record Absyn.Info.INFO
-//     fileName = "",
-//     isReadOnly = false,
-//     lineNumberStart = 0,
-//     columnNumberStart = 0,
-//     lineNumberEnd = 0,
-//     columnNumberEnd = 0,
-//     buildTimes = record Absyn.TimeStamp.TIMESTAMP
-//     lastBuildTime = 0.0,
-//     lastEditTime = 0.0
-// end Absyn.TimeStamp.TIMESTAMP;
-// end Absyn.Info.INFO;,
-//     partOfLst = {},
-//     instanceOptLst = {},
-//     connectEquationOptLst = {},
-//     typeLst = {}
-// end DAE.ElementSource.SOURCE;
-// end DAE.Function.FUNCTION;
+// true
+// ""
 // 
 // ""
 // "#ifndef SimCodeC_abc__H

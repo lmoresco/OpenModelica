@@ -29730,12 +29730,14 @@ algorithm
       SimCode.Context a_context;
       Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
+      DAE.Exp i_exp;
       DAE.Exp i_exp_exp;
+      String ret_2;
       Tpl.Text l_res;
       Tpl.Text l_ty;
 
     case ( txt,
-           DAE.BOX(exp = i_exp_exp),
+           (i_exp as DAE.BOX(exp = i_exp_exp)),
            a_context,
            a_preExp,
            a_varDecls )
@@ -29746,7 +29748,10 @@ algorithm
         txt = Tpl.writeText(txt, l_ty);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_res);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") /* "));
+        ret_2 = ExpressionDump.printExpStr(i_exp);
+        txt = Tpl.writeStr(txt, ret_2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33230,6 +33235,7 @@ algorithm
       Tpl.Text txt;
       DAE.Exp i_lit;
       Integer i_lit_index;
+      DAE.Exp i_exp;
       Boolean i_bool;
       Integer i_integer;
       String ret_0;
@@ -33263,6 +33269,12 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.BOX(exp = i_exp) )
+      equation
+        txt = literalExpConstBoxedVal(txt, i_exp);
+      then txt;
+
+    case ( txt,
            DAE.SHARED_LITERAL(ty = DAE.ET_STRING(), index = i_lit_index) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_OMC_LIT"));
@@ -33281,7 +33293,7 @@ algorithm
            i_lit )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#error \"literalExpConst2 failed: "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#error \"literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
