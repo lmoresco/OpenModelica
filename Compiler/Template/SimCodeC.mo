@@ -26952,6 +26952,23 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "mod"), expLst = {i_e1, i_e2}, ty = i_ty),
+           a_context,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
+        (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_mod_"));
+        txt = expTypeShort(txt, i_ty);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_var1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        txt = Tpl.writeText(txt, l_var2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
            DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_array}),
            a_context,
            a_preExp,
@@ -27086,7 +27103,7 @@ algorithm
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
         l_typeStr = expTypeFromExpShort(Tpl.emptyTxt, i_e1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("mod_"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_rem_"));
         txt = Tpl.writeText(txt, l_typeStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_var1);
