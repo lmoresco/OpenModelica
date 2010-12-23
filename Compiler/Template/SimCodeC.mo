@@ -29730,14 +29730,12 @@ algorithm
       SimCode.Context a_context;
       Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
-      DAE.Exp i_exp;
       DAE.Exp i_exp_exp;
-      String ret_2;
       Tpl.Text l_res;
       Tpl.Text l_ty;
 
     case ( txt,
-           (i_exp as DAE.BOX(exp = i_exp_exp)),
+           DAE.BOX(exp = i_exp_exp),
            a_context,
            a_preExp,
            a_varDecls )
@@ -29748,10 +29746,7 @@ algorithm
         txt = Tpl.writeText(txt, l_ty);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_res);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") /* "));
-        ret_2 = ExpressionDump.printExpStr(i_exp);
-        txt = Tpl.writeStr(txt, ret_2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -32996,7 +32991,40 @@ algorithm
   end matchcontinue;
 end lm_728;
 
-protected function fun_729
+protected function lm_729
+  input Tpl.Text in_txt;
+  input list<DAE.Exp> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.Exp> rest;
+      DAE.Exp i_exp;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_exp :: rest )
+      equation
+        txt = literalExpConstBoxedVal(txt, i_exp);
+        txt = Tpl.nextIter(txt);
+        txt = lm_729(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_729(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_729;
+
+protected function fun_730
   input Tpl.Text in_txt;
   input DAE.Exp in_a_lit;
   input Tpl.Text in_a_meta;
@@ -33013,6 +33041,9 @@ algorithm
       Tpl.Text a_tmp;
       Tpl.Text a_name;
       DAE.Exp i_lit;
+      Absyn.Path i_path;
+      list<DAE.Exp> i_args;
+      Integer i_index;
       DAE.Exp i_exp;
       list<DAE.Exp> i_listExp;
       DAE.Exp i_cdr;
@@ -33022,7 +33053,12 @@ algorithm
       Integer i_exp_integer;
       Integer i_ix;
       String i_string;
-      String ret_5;
+      String ret_10;
+      Integer ret_9;
+      Integer ret_8;
+      Integer ret_7;
+      Tpl.Text l_newIndex;
+      Integer ret_5;
       Integer ret_4;
       Integer ret_3;
       Integer ret_2;
@@ -33056,8 +33092,9 @@ algorithm
         txt = Tpl.writeText(txt, a_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         ret_3 = stringLength(i_string);
-        txt = Tpl.writeStr(txt, intString(ret_3));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("+1] = "));
+        ret_4 = intAdd(1, ret_3);
+        txt = Tpl.writeStr(txt, intString(ret_4));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
         txt = Tpl.writeText(txt, a_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "_data;\n",
@@ -33157,8 +33194,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("static const MMC_DEFSTRUCTLIT("));
         txt = Tpl.writeText(txt, a_tmp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
-        ret_4 = listLength(i_listExp);
-        txt = Tpl.writeStr(txt, intString(ret_4));
+        ret_5 = listLength(i_listExp);
+        txt = Tpl.writeStr(txt, intString(ret_5));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",0) {"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         txt = lm_728(txt, i_listExp);
@@ -33188,6 +33225,35 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.METARECORDCALL(index = i_index, args = i_args, path = i_path),
+           a_meta,
+           a_tmp,
+           _ )
+      equation
+        ret_7 = intAdd(i_index, 3);
+        l_newIndex = Tpl.writeStr(Tpl.emptyTxt, intString(ret_7));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("static const MMC_DEFSTRUCTLIT("));
+        txt = Tpl.writeText(txt, a_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        ret_8 = listLength(i_args);
+        ret_9 = intAdd(1, ret_8);
+        txt = Tpl.writeStr(txt, intString(ret_9));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        txt = Tpl.writeText(txt, l_newIndex);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") {&"));
+        txt = underscorePath(txt, i_path);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("__desc,"));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_729(txt, i_args);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("}};\n"));
+        txt = Tpl.writeText(txt, a_meta);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = MMC_REFSTRUCTLIT("));
+        txt = Tpl.writeText(txt, a_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+      then txt;
+
+    case ( txt,
            i_lit,
            _,
            _,
@@ -33195,13 +33261,13 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#error \"literalExpConst failed: "));
-        ret_5 = ExpressionDump.printExpStr(i_lit);
-        txt = Tpl.writeStr(txt, ret_5);
+        ret_10 = ExpressionDump.printExpStr(i_lit);
+        txt = Tpl.writeStr(txt, ret_10);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
   end matchcontinue;
-end fun_729;
+end fun_730;
 
 public function literalExpConst
   input Tpl.Text txt;
@@ -33220,7 +33286,7 @@ algorithm
   l_tmp := Tpl.writeStr(l_tmp, intString(a_index));
   l_meta := Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("static modelica_metatype const "));
   l_meta := Tpl.writeText(l_meta, l_name);
-  out_txt := fun_729(txt, a_lit, l_meta, l_tmp, l_name);
+  out_txt := fun_730(txt, a_lit, l_meta, l_tmp, l_name);
 end literalExpConst;
 
 public function literalExpConstBoxedVal
