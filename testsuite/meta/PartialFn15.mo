@@ -25,12 +25,7 @@ algorithm
   binops := {realAdd,realSub,realMul,realDiv,realPow,realMax,realMin};
   while not listEmpty(binops) loop
     lst := match binops
-      local
-        Real r;
-      case binop::binops
-        equation
-          r = binop(r1,r2);
-        then r::lst;
+      case binop::binops then binop(r1,r2)::lst;
     end match;
   end while;
   lst := listReverse(lst); // Easier to read the results this way...
