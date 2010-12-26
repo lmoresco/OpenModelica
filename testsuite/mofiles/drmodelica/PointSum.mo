@@ -14,7 +14,7 @@ end PointSum;
 
 // Result:
 // Error processing file: PointSum.mo
-// Error: Base class PointInst not found in scope PointSum
+// [PointSum.mo:9:3-9:52:writable] Error: Base class PointInst not found in scope PointSum
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
