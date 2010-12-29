@@ -15163,6 +15163,8 @@ algorithm
                                     "\n"
                                 }, true));
         txt = Tpl.writeText(txt, l_boxedFn);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
 
     case ( txt,
@@ -27210,6 +27212,18 @@ algorithm
 
     case ( txt,
            DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "integer"), expLst = {i_toBeCasted}),
+           a_context,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_castedVar, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_toBeCasted, a_context, a_preExp, a_varDecls);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("((modelica_integer)"));
+        txt = Tpl.writeText(txt, l_castedVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "Integer"), expLst = {i_toBeCasted}),
            a_context,
            a_preExp,
            a_varDecls )
