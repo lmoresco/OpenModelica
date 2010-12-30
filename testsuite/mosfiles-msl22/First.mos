@@ -1,0 +1,29 @@
+// name:     First
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModels_* output.log
+// 
+//  Simulate Rotational Systems
+//
+loadModel(Modelica);
+loadFile("TestModels.mo");
+
+// First
+simulate(TestModels.RotationalModels.SystemTests.First, tolerance=1e-10);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TestModels.RotationalModels.SystemTests.First_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.First', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// {0.0,-0.155604189290931,-0.537477780553385,-0.693696161003548,-0.901584243925932,-1.12249284118511}
+// {0.0,-0.0155604191673737,-0.053747777604553,-0.0693696164388354,-0.0901584238312446,-0.112249284527475}
+// endResult

@@ -5,16 +5,19 @@ avg.mos \
 BearingFrictionTest.mos \
 blockssources.mos \
 blockssystems.mos \
+DCMotor.mos \
+ElasticBearing.mos \
+First.mos \
 FuncCross.mos \
 InitTest.mos \
 InputOutput.mos \
 MatrixTest.mos \
 rotationalgears.mos \
 rotationalspringinertia.mos \
-rotationalsystems.mos \
 simulation2.mos \
 TrapezoidTest.mos \
-tupleTest.mos
+tupleTest.mos \
+WeakAxis.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

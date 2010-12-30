@@ -1,0 +1,32 @@
+// name:     WeakAxis
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModels_* output.log
+// 
+//  Simulate Rotational Systems
+//
+loadModel(Modelica);
+loadFile("TestModels.mo");
+
+// Professional.WeakAxis
+simulate(TestModels.Professional.WeakAxis,stopTime=200.0,tolerance=1e-10);
+{val(inertia1.w,0.0),val(inertia1.w,50.0),val(inertia1.w,100.0),
+val(inertia1.w,120.0),val(inertia1.w,180.0),val(inertia1.w,200.0)};
+{val(inertia2.w,0.0),val(inertia2.w,50.0),val(inertia2.w,100.0),
+val(inertia2.w,120.0),val(inertia2.w,180.0),val(inertia2.w,200.0)};
+{val(inertia3.w,0.0),val(inertia3.w,50.0),val(inertia3.w,100.0),
+val(inertia3.w,120.0),val(inertia3.w,180.0),val(inertia3.w,200.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TestModels.Professional.WeakAxis_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 500, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.Professional.WeakAxis', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// {0.0,1.55351025869842,0.963995111051157,1.49560074990992,0.179062784161782,-0.217278535570951}
+// {0.0,0.795686614398855,0.787859018094239,0.813524821714491,0.596000807971475,0.533702671058319}
+// {0.0,-0.349196875456189,0.248145868495684,-0.309125573983337,1.22493640550782,1.68357586215371}
+// endResult
