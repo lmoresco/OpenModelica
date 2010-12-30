@@ -1,0 +1,26 @@
+// name:     Shaft
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModelica_* output.log
+// 
+//  Simulate Rotational inertias with springs 
+//
+loadModel(Modelica);
+loadFile("TestModels.mo");
+
+// Shaft
+simulate(TestModels.RotationalModels.SpringInertia.Shaft, tolerance=1e-5, numberOfIntervals=100);
+{val(inertia3.w,0.0),val(inertia3.w,0.2),val(inertia3.w,0.4),
+val(inertia3.w,0.6),val(inertia3.w,0.8),val(inertia3.w,1.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TestModels.RotationalModels.SpringInertia.Shaft_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.Shaft', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// {0.0,-9.18020365653393e-05,-0.00227535736932753,-0.0119135644539943,-0.0269266212827776,-0.0274386535364465}
+// endResult

@@ -1,0 +1,29 @@
+// name:     SineTorque
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModelica_* output.log
+// 
+//  Simulate Rotational inertias with springs 
+//
+loadModel(Modelica);
+loadFile("TestModels.mo");
+
+// SineTorque
+simulate(TestModels.RotationalModels.SpringInertia.SineTorque, tolerance=1e-5, numberOfIntervals=100);
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia1.phi,0.0),val(inertia1.phi,0.2),val(inertia1.phi,0.4),
+val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TestModels.RotationalModels.SpringInertia.SineTorque_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.SineTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// {0.0,0.988608916712669,1.82179253902034,2.32371897306862,2.37841494500806,1.95593583119439}
+// {0.0,0.0998057079685496,0.385033434461738,0.806300560159726,1.28450286844314,1.72563389930562}
+// endResult

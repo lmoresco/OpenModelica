@@ -3,6 +3,7 @@ TEST = ../rtest -v
 TESTFILES = \
 avg.mos \
 BearingFrictionTest.mos \
+Backlash.mos \
 blockssources.mos \
 blockssystems.mos \
 DCMotor.mos \
@@ -13,8 +14,13 @@ InitTest.mos \
 InputOutput.mos \
 MatrixTest.mos \
 rotationalgears.mos \
-rotationalspringinertia.mos \
+Shaft.mos \
 simulation2.mos \
+SineAccelerate.mos \
+SineSpeed.mos \
+SineTorque.mos \
+SineTorque2inertias.mos \
+StepTorque.mos \
 TrapezoidTest.mos \
 tupleTest.mos \
 WeakAxis.mos
