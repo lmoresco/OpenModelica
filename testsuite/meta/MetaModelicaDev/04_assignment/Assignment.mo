@@ -135,14 +135,13 @@ protected function update
   input Value inValue;
   output Env outEnv;
 algorithm 
-  outEnv:=
-  matchcontinue (inEnv,inIdent,inValue)
+  outEnv := match (inEnv,inIdent,inValue)
     local
       Env env;
       Ident id;
       Value value;
     case (env,id,value) then (id,value) :: env; 
-  end matchcontinue;
+  end match;
 end update;
 
 protected function applyBinop
@@ -166,11 +165,10 @@ protected function applyUnop
   input Integer inInteger;
   output Integer outInteger;
 algorithm 
-  outInteger:=
-  matchcontinue (inUnOp,inInteger)
+  outInteger := match (inUnOp,inInteger)
     local Value v;
     case (NEG(),v) then -v; 
-  end matchcontinue;
+  end match;
 end applyUnop;
 
 protected function eval
@@ -244,8 +242,7 @@ public function evalprogram
   input Program inProgram;
   output Integer outInteger;
 algorithm 
-  outInteger:=
-  matchcontinue (inProgram)
+  outInteger := match (inProgram)
     local
       ExpLst assignments_1,assignments;
       Env env2;
@@ -265,7 +262,7 @@ algorithm
         // printEnvironment(env2);
         (_,value) = eval(env2, exp);
       then value;
-  end matchcontinue;
+  end match;
 end evalprogram;
 
 // your code here

@@ -6,7 +6,7 @@ import Functions;
 public function main
  input list<String> arg;
 algorithm
- _ := matchcontinue arg
+ _ := match arg
   local 
     Integer i, n; 
     String str, n_str;
@@ -60,7 +60,7 @@ algorithm
      // print("\nTypes.select: ");
      // Functions.printSelect(Types.select);
  then ();
- end matchcontinue; 
+ end match;
 end main;
 
 end Main;

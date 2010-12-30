@@ -2,7 +2,7 @@
 // status: correct
 // teardown_command: rm -f Dump_* DumpTest_* DAEDump_* Expression_* DumpGraphviz_*
 
-setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc,patternmAllInfo"});
 
 runScript("LoadCompilerSources.mos");
 loadFile("DumpTest.mo");getErrorString();

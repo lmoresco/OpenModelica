@@ -80,11 +80,10 @@ protected function applyUnop
   input Integer inInteger;
   output Integer outInteger;
 algorithm 
-  outInteger:=
-  matchcontinue (inUnOp,inInteger)
+  outInteger := match (inUnOp,inInteger)
     local Integer v;
     case (NEG(),v) then -v; 
-  end matchcontinue;
+  end match;
 end applyUnop;
 
 end Exp2;

@@ -59,7 +59,7 @@ end printOptionType;
 function printTupleType
   input Types.TupleType tupleVar;
 algorithm
-  _ := matchcontinue(tupleVar)
+  _ := match (tupleVar)
     local 
       Types.Alias alias;
       Types.OptionType optionAlias;
@@ -74,7 +74,7 @@ algorithm
         printOptionType(optionAlias);
         print(")");
       then ();
-  end matchcontinue;
+  end match;
 end printTupleType;
 
 
@@ -113,7 +113,7 @@ end printListType;
 function printOneRecord
   input Types.OneRecord oneRecordVar;
 algorithm
-  _ := matchcontinue(oneRecordVar)
+  _ := match (oneRecordVar)
     local 
       String cmp1;
       Types.Alias cmp2;      
@@ -125,7 +125,7 @@ algorithm
         printAlias(cmp2);
         print(")");
       then ();
-  end matchcontinue;
+  end match;
 end printOneRecord;
 
 
@@ -194,7 +194,7 @@ import Functions;
 function main
  input list<String> arg;
 algorithm
- _ := matchcontinue arg
+ _ := match arg
   local 
     Integer i, n; 
     String str, n_str;
@@ -241,7 +241,7 @@ algorithm
      print("\nTypes.select: ");
      Functions.printSelect(Types.select);
  then ();
- end matchcontinue; 
+ end match;
 end main;
 
 end Main;

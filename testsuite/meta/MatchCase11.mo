@@ -4,9 +4,9 @@ package MatchCase11
     input Integer i;
     output Integer b; 
   algorithm
-    b := matchcontinue (i)
+    b := match (i)
       case (1) then fail();
-    end matchcontinue;
+    end match;
   end func; 
 
 end MatchCase11;

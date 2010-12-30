@@ -72,10 +72,10 @@ package MatchCaseInteractive1
     input tuple<Integer,Integer> tup;
     output Integer out;
   algorithm 
-    out := matchcontinue (tup)
+    out := match (tup)
       local Integer i1,i2; 
       case (i1,i2) then i1+i2;
-    end matchcontinue;
+    end match;
   end simpleTupleFunc;
 
   function tupleFunc "Tests unboxing of all data types"
