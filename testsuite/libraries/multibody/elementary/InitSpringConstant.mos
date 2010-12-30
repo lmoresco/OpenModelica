@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the InitSpringConstant model
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringCons
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -3198,5 +3198,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1080 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

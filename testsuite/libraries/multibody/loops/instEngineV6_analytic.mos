@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic [instantiation]
 // keywords: multibody, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation 
 //
@@ -8,8 +9,6 @@
 loadFile("_LoopsTotal.mo"); getErrorString();
 
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic); getErrorString();
-
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -21748,5 +21747,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // end Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic;
 // "
 // ""
-// 0
 // endResult

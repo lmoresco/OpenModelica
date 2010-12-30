@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.SpringWithMass
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the SpringWithMass model
 //
@@ -12,7 +13,6 @@ getErrorString();
 // check model doesn't work yet as we need to fix implicit IF equations
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -2489,5 +2489,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 802 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the RollingWheelSetPulling model
 //
@@ -12,7 +13,6 @@ getErrorString();
 // check model doesn't work yet due to no support for implicit IF equations
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -5118,5 +5118,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1758 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

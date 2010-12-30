@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the PendulumWithSpringDamper model
 //  More work needs to be done here to fix the error reporting about prismatic.s component!
@@ -12,7 +13,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSp
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -3342,5 +3342,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1121 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

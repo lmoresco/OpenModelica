@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.FreeBody
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the FreeBody model
 //
@@ -12,7 +13,6 @@ getErrorString();
 // this doesn't work yet as we don't support implicit IF EQUATIONS
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -3301,5 +3301,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1114 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

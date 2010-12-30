@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the ForceAndTorque model
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -4197,5 +4197,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1439 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

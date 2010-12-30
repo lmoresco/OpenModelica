@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.Pendulum
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the Pendulum model
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum);
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // false
@@ -23,5 +23,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum
 // "
 // ""
-// 0
 // endResult

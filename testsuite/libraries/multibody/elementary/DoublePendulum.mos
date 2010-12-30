@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.DoublePendulum
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the DoublePendulum model
 //
@@ -13,8 +14,6 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum); get
 // check also that extends works fine!
 instantiateModel(DP); getErrorString();
 checkModel(DP); getErrorString();
-
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -6743,5 +6742,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1069 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

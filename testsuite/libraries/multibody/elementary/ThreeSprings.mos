@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.ThreeSprings
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the ThreeSprings model
 //
@@ -12,7 +13,6 @@ getErrorString();
 // check model not yet working on this model due to missing implicit IF equation functionality
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -3678,5 +3678,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1275 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

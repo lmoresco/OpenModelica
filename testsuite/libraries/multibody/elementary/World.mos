@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.World
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the World object 
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.World);
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.World);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -1536,5 +1536,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 592 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

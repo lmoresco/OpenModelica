@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking of the PointGravityWithPointMasses model
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWi
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -2610,5 +2610,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 954 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult

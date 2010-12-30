@@ -1,6 +1,7 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects
 // keywords: multibody, balancing, instantiation
 // status:   correct
+// teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 //  Modelica MultiBody 3.x: instantiation and balance checking
 //
@@ -11,7 +12,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.Gyros
 getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects);
 getErrorString();
-system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 
 // Result:
 // true
@@ -6005,5 +6005,4 @@ system("rm -f *.so *.dll *.log *.c* *.makefile *.libs");
 // 1832 of these are trivial equation(s).
 // "
 // ""
-// 0
 // endResult
