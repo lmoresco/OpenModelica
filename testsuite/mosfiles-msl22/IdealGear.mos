@@ -1,0 +1,32 @@
+// name:     IdealGear
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModels.RotationalModels.* output.log
+// 
+//  Simulate Rotational gear models and simulate. 
+//
+loadModel(Modelica); getErrorString();
+loadFile("TestModels.mo"); getErrorString();
+
+// IdealGear
+simulate(TestModels.RotationalModels.Gears.IdealGear, tolerance=1e-5, numberOfIntervals=100); getErrorString();
+{val(inertia1.w,0.0),val(inertia1.w,0.2),val(inertia1.w,0.4),
+val(inertia1.w,0.6),val(inertia1.w,0.8),val(inertia1.w,1.0)};
+{val(inertia2.w,0.0),val(inertia2.w,0.2),val(inertia2.w,0.4),
+val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
+
+// Result:
+// true
+// ""
+// true
+// ""
+// record SimulationResult
+//     resultFile = "TestModels.RotationalModels.Gears.IdealGear_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// ""
+// {0.0,0.0428007219053217,0.107445682214664,0.0913803271315843,-0.000782144980215061,-0.0623708688962204}
+// {0.0,0.0863368081569939,0.214428853175442,0.181921532634685,-0.00136475865901982,-0.123740910077574}
+// endResult

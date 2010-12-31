@@ -12,10 +12,13 @@ DCMotorRotational.mos \
 ElasticBearing.mos \
 First.mos \
 FuncCross.mos \
+Gear.mos \
+Gear2.mos \
+IdealGear.mos \
+IdealGearBrake.mos \
 InitTest.mos \
 InputOutput.mos \
 MatrixTest.mos \
-rotationalgears.mos \
 Shaft.mos \
 simulation2.mos \
 SineAccelerate.mos \

@@ -1,0 +1,43 @@
+// name:     Gear
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModels.RotationalModels.* output.log
+// 
+//  Simulate Rotational gear models and simulate. 
+//
+loadModel(Modelica); getErrorString();
+loadFile("TestModels.mo"); getErrorString();
+
+simulate(TestModels.RotationalModels.Gears.Gear, tolerance=1e-5, numberOfIntervals=100); getErrorString();
+val(inertia1.w,0.1);
+val(inertia1.w,0.4);
+val(inertia1.w,0.9);
+val(inertia2.w,0.1);
+val(inertia2.w,0.4);
+val(inertia2.w,0.9);
+
+// Result:
+// true
+// ""
+// true
+// ""
+// record SimulationResult
+//     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.Gear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = "Error in initialization. System of initial equations are not consistent.
+
+// (Least Square function value is 1)
+
+// residual[17] = -1
+
+// "
+// end SimulationResult;
+// ""
+// -16.0791304159185
+// -0.30018310267053
+// -12.6695891849178
+// 8.14607442141547
+// 0.375106730793756
+// 6.03703120479463
+// endResult
