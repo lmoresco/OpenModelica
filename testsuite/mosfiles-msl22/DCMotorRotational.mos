@@ -1,4 +1,4 @@
-// name:     DCMotor
+// name:     DCMotor (Rotational)
 // keywords: Simulate, readSimulationData
 // status:   correct
 // env: OPENMODELICALIBRARY=../../libraries/msl221

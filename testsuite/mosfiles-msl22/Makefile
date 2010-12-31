@@ -5,8 +5,10 @@ avg.mos \
 BearingFrictionTest.mos \
 Backlash.mos \
 blockssources.mos \
-blockssystems.mos \
-DCMotor.mos \
+Circuit1.mos \
+DCMotorBlocks.mos \
+DCMotorDeadzone.mos \
+DCMotorRotational.mos \
 ElasticBearing.mos \
 First.mos \
 FuncCross.mos \
@@ -20,7 +22,9 @@ SineAccelerate.mos \
 SineSpeed.mos \
 SineTorque.mos \
 SineTorque2inertias.mos \
+SpringMass.mos \
 StepTorque.mos \
+Tank.mos \
 TrapezoidTest.mos \
 tupleTest.mos \
 WeakAxis.mos

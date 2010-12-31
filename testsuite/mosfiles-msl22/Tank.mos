@@ -1,0 +1,29 @@
+// name:     Tank
+// keywords: Simulate, readSimulationData
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f TestModels.BlockModels* output.log
+// 
+//  Simulate systems of blocks 
+//
+loadModel(Modelica);
+loadFile("TestModels.mo");
+
+// Tank
+simulate(TestModels.BlockModels.SystemTests.Tank, tolerance=1e-10, numberOfIntervals=50);
+{val(gain2.y,0.0),val(gain2.y,0.2),val(gain2.y,0.4),
+val(gain2.y,0.6),val(gain2.y,0.8),val(gain2.y,1.0)};
+{val(gain3.y,0.0),val(gain3.y,0.2),val(gain3.y,0.4),
+val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
+
+// Result:
+// true
+// true
+// record SimulationResult
+//     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
+// end SimulationResult;
+// {0.0,3.87243571488101,7.70245387019044,9.54604622064544,9.42519260624459,9.30510888064587}
+// {0.0,0.0196785053164132,0.0277532950659745,0.0308966765537095,0.0307004765537029,0.0305042765536996}
+// endResult
