@@ -15164,7 +15164,10 @@ algorithm
                                 }, true));
         txt = Tpl.writeText(txt, l_boxedFn);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "\n"
+                                }, true));
       then txt;
 
     case ( txt,
@@ -16525,7 +16528,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("mmc_mk_scon("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("mmc_mk_string("));
         txt = Tpl.writeStr(txt, a_varName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then (txt, a_preExp, a_varDecls);
