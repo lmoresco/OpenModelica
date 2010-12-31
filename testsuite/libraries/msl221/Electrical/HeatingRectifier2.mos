@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.HeatingRectifier*
 //
 // simulation example
 //
@@ -72,8 +73,6 @@ val(SineVoltage1.i,3.0);
 val(SineVoltage1.i,4.25);
 val(SineVoltage1.i,5);
 
-system("rm Modelica.Electrical.Analog.Examples.HeatingRectifier*");
-
 // Result:
 // true
 // record SimulationResult
@@ -136,5 +135,4 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingRectifier*");
 // 3.75725639859608e-07
 // -1.34206948172047
 // 3.97999736096185e-07
-// 0
 // endResult

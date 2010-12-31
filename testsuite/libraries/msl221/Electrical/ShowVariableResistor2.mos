@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.ShowVariableResistor*
 //
 // simulation example
 //
@@ -37,9 +38,6 @@ val(R2.v,0.5);
 val(R2.v,0.75);
 val(R2.v,1.0);
 
-system("rm Modelica.Electrical.Analog.Examples.ShowVariableResistor*");
-
-
 // Result:
 // true
 // record SimulationResult
@@ -71,5 +69,4 @@ system("rm Modelica.Electrical.Analog.Examples.ShowVariableResistor*");
 // 5.93892068769669e-16
 // 0.333333333333333
 // -1.10259746934534e-15
-// 0
 // endResult

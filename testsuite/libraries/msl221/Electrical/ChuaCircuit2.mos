@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command rm Modelica.Electrical.Analog.Examples.ChuaCircuit*
 //
 // simulation example
 //
@@ -29,8 +30,6 @@ val(G.i,0.0);
 val(G.i,0.5);
 val(G.i,1.0);
 
-system("rm Modelica.Electrical.Analog.Examples.ChuaCircuit*");
-
 // Result:
 // true
 // record SimulationResult
@@ -54,5 +53,4 @@ system("rm Modelica.Electrical.Analog.Examples.ChuaCircuit*");
 // -2.26
 // -2.25965937362247
 // -2.25931874724494
-// 0
 // endResult

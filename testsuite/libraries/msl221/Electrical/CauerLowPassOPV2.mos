@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.CauerLowPassOPV*
 //
 // simulation example
 //
@@ -108,8 +109,6 @@ val(C5.i,0.5);
 val(C5.i,0.75);
 val(C5.i,1.0);
 
-system("rm Modelica.Electrical.Analog.Examples.CauerLowPassOPV*");
-
 // Result:
 // true
 // record SimulationResult
@@ -201,5 +200,4 @@ system("rm Modelica.Electrical.Analog.Examples.CauerLowPassOPV*");
 // 0.0
 // 0.0
 // 0.201993363653356
-// 0
 // endResult

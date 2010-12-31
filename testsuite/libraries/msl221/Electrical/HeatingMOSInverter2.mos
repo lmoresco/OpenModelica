@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.HeatingMOSInverter*
 //
 // simulation example
 //
@@ -29,8 +30,6 @@ val(HeatCapacitor1.T,0.0);
 val(HeatCapacitor1.T,2.5);
 val(HeatCapacitor1.T,5.0);
 
-system("rm Modelica.Electrical.Analog.Examples.HeatingMOSInverter*");
-
 // Result:
 // true
 // record SimulationResult
@@ -54,5 +53,4 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingMOSInverter*");
 // 293.650029802322
 // 299.503192204324
 // 299.97827383358
-// 0
 // endResult

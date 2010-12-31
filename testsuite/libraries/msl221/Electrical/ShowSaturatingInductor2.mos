@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.ShowSaturatingInductor*
 //
 // simulation example
 //
@@ -23,6 +24,4 @@ val(SaturatingInductance1.i,1);
 val(SaturatingInductance1.i,3);
 val(SaturatingInductance1.i,5);
 val(SaturatingInductance1.i,6);
-
-system("rm Modelica.Electrical.Analog.Examples.ShowSaturatingInductor*");
 

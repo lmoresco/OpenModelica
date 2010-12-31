@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.OvervoltageProtection*
 //
 // simulation example
 //
@@ -75,4 +76,3 @@ val(CL.i,0.3);
 val(CL.i,0.35);
 val(CL.i,0.4);
 
-system("rm Modelica.Electrical.Analog.Examples.OvervoltageProtection*");

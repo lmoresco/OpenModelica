@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.CharacteristicThyristors*
 //
 // simulation example
 //
@@ -63,9 +64,6 @@ val(R3.i,1.4);
 val(R3.i,1.6);
 val(R3.i,2.0);
 
-system("rm Modelica.Electrical.Analog.Examples.CharacteristicThyristors*");
-
-
 // Result:
 // true
 // record SimulationResult
@@ -120,5 +118,4 @@ system("rm Modelica.Electrical.Analog.Examples.CharacteristicThyristors*");
 // 4950.49505
 // 4950.49505
 // -4950.49504900984
-// 0
 // endResult

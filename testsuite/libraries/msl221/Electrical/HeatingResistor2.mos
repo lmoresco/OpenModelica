@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm Modelica.Electrical.Analog.Examples.HeatingResistor*
 //
 // simulation example
 //
@@ -41,9 +42,7 @@ val(thermalConductor.dT,2.25);
 val(thermalConductor.dT,3.75);
 val(thermalConductor.dT,5);
 
-system("rm Modelica.Electrical.Analog.Examples.HeatingResistor*");
 // Result:
-// rm: cannot remove `Modelica.Electrical.Analog.Examples.HeatingResistor*': No such file or directory
 // true
 // record SimulationResult
 //     resultFile = "Simulation Failed. Model: Modelica.Electrical.Analog.Examples.HeatingResistor does not exists! Please load it first before simulation."
@@ -76,5 +75,4 @@ system("rm Modelica.Electrical.Analog.Examples.HeatingResistor*");
 // 
 // 
 // 
-// 256
 // endResult
