@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -289,7 +290,6 @@ val(Damper1.v_rel,0.5);
 val(Damper1.v_rel,0.75);
 val(Damper1.v_rel,1.0);
 
-system("rm Modelica.Mechanics.Translational.Examples.Oscillator*");
 // Result:
 // true
 // record SimulationResult
@@ -537,5 +537,4 @@ system("rm Modelica.Mechanics.Translational.Examples.Oscillator*");
 // 0.0218522703664309
 // 0.0353830516843713
 // 0.0478697176327283
-// 0
 // endResult

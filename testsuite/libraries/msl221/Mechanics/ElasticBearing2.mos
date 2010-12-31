@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -332,8 +333,6 @@ val(housing.a,0.5);
 val(housing.a,0.75);
 val(housing.a,1.0);
 
-system("rm Modelica.Mechanics.Rotational.Examples.ElasticBearing*");
-
 // Result:
 // true
 // record SimulationResult
@@ -617,5 +616,4 @@ system("rm Modelica.Mechanics.Rotational.Examples.ElasticBearing*");
 // 0.0021668819901585
 // -0.00196706062261359
 // -0.0342008105957561
-// 0
 // endResult

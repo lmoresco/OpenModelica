@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -184,8 +185,6 @@ val(PositionSensor2.s,0.5);
 val(PositionSensor2.s,0.75);
 val(PositionSensor2.s,1.0);
 
-system("rm Modelica.Mechanics.Translational.Examples.Sensors*");
-
 // Result:
 // true
 // record SimulationResult
@@ -343,5 +342,4 @@ system("rm Modelica.Mechanics.Translational.Examples.Sensors*");
 // 0.699001934490564
 // 0.798477589215233
 // 0.897949365387151
-// 0
 // endResult

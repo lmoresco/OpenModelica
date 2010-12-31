@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -554,6 +555,4 @@ val(product.y,0.25);
 val(product.y,0.5);
 val(product.y,0.75);
 val(product.y,1.0);
-
-system("rm Modelica.Mechanics.Rotational.Examples.Friction*");
 

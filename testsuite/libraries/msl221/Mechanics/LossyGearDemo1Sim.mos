@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -324,8 +325,6 @@ val(load.y,0.5);
 val(load.y,0.75);
 val(load.y,1.0);
 
-system("rm Modelica.Mechanics.Rotational.Examples.LossyGearDemo1*");
-
 // Result:
 // true
 // record SimulationResult
@@ -602,5 +601,4 @@ system("rm Modelica.Mechanics.Rotational.Examples.LossyGearDemo1*");
 // -8.75
 // -8.125
 // -7.5
-// 0
 // endResult

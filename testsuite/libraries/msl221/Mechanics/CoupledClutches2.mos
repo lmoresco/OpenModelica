@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -667,8 +668,6 @@ val(step2.y,0.5);
 val(step2.y,0.75);
 val(step2.y,1.0);
 
-system("rm Modelica.Mechanics.Rotational.Examples.CoupledClutches*");
-
 // Result:
 // true
 // record SimulationResult
@@ -1239,5 +1238,4 @@ system("rm Modelica.Mechanics.Rotational.Examples.CoupledClutches*");
 // 0.0
 // 0.0
 // 1.0
-// 0
 // endResult

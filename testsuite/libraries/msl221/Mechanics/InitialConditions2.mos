@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -345,8 +346,6 @@ val(M2.a,0.5);
 val(M2.a,0.75);
 val(M2.a,1.0);
 
-system("rm Modelica.Mechanics.Translational.Examples.InitialConditions*");
-
 // Result:
 // true
 // record SimulationResult
@@ -641,5 +640,4 @@ system("rm Modelica.Mechanics.Translational.Examples.InitialConditions*");
 // 77.197410799755
 // 64.3570832327313
 // -163.20752905245
-// 0
 // endResult

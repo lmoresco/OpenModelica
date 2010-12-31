@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -290,8 +291,6 @@ val(Fixed1.flange_b.f,0.5);
 val(Fixed1.flange_b.f,0.75);
 val(Fixed1.flange_b.f,1.0);
 
-system("rm Modelica.Mechanics.Translational.Examples.Friction*");
-
 // Result:
 // true
 // record SimulationResult
@@ -539,5 +538,4 @@ system("rm Modelica.Mechanics.Translational.Examples.Friction*");
 // 80.3810716088564
 // -3.70510788545305
 // -54.3779864816136
-// 0
 // endResult

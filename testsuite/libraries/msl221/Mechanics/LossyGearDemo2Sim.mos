@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -450,8 +451,6 @@ val(bearingFriction.a,0.5);
 val(bearingFriction.a,0.75);
 val(bearingFriction.a,1.0);
 
-system("rm Modelica.Mechanics.Rotational.Examples.LossyGearDemo2*");
-
 // Result:
 // true
 // record SimulationResult
@@ -836,5 +835,4 @@ system("rm Modelica.Mechanics.Rotational.Examples.LossyGearDemo2*");
 // -2.14619709774604
 // -9.68483241427643
 // -0.484482423856074
-// 0
 // endResult

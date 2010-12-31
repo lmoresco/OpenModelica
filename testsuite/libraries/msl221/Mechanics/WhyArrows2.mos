@@ -2,6 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
+//teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
@@ -176,8 +177,6 @@ val(SlidingMass2.a,0.5);
 val(SlidingMass2.a,0.75);
 val(SlidingMass2.a,1.0);
 
-system("rm Modelica.Mechanics.Translational.Examples.WhyArrows*");
-
 // Result:
 // true
 // record SimulationResult
@@ -328,5 +327,4 @@ system("rm Modelica.Mechanics.Translational.Examples.WhyArrows*");
 // 0.86759785698525
 // 7.86125655310517
 // 9.75012135069509
-// 0
 // endResult
