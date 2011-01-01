@@ -1,5 +1,5 @@
 // name: UtilTest
-// cflags: +g=MetaModelica +d=rml,patternmAllInfo
+// cflags: +g=MetaModelica +d=rml
 // status: correct
 // teardown_command: rm -f Util_* UtilTest_*
 

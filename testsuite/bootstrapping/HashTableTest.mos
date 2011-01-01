@@ -2,7 +2,7 @@
 // status: correct
 // teardown_command: rm -f HashTableTest_*
 
-setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc,patternmAllInfo"});
+setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
 
 runScript("LoadCompilerSources.mos");
 
