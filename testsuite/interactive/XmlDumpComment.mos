@@ -22,9 +22,9 @@ dumpXMLDAE(XmlDumpComment);
 // "
 // {"<?xml version="1.0" encoding="UTF-8"?>
 // <dae xmlns:p1="http://www.w3.org/1998/Math/MathML"
-// xmlns:xlink="http://www.w3.org/1999/xlink"
-// xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-// xsi:noNamespaceSchemaLocation="http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd">
+//                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+//                                                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+//                                                 xsi:noNamespaceSchemaLocation="http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd">
 // <variables dimension="4">
 // <orderedVariables dimension="2">
 // <variablesList>
@@ -49,6 +49,10 @@ dumpXMLDAE(XmlDumpComment);
 // <knownVariables dimension="2">
 // <variablesList>
 // <variable id="1" name="B" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <bindValueExpression>
+// <bindExpression string="0.0">
+// </bindExpression>
+// </bindValueExpression>
 // <classesNames>
 // <element>
 // XmlDumpComment
@@ -59,6 +63,10 @@ dumpXMLDAE(XmlDumpComment);
 // </classesNames>
 // </variable>
 // <variable id="2" name="A" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <bindValueExpression>
+// <bindExpression string="0.0">
+// </bindExpression>
+// </bindValueExpression>
 // <classesNames>
 // <element>
 // XmlDumpComment
