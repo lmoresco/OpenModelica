@@ -35,7 +35,11 @@ end MatchCase15;
 //   output String outString;
 // algorithm
 //   outString := matchcontinue () 
-//     #cases#
+//     case ()
+//       algorithm
+//         "WIN32" := MatchCase15.platform();
+//       then "\"";
+//     case () then "";
 //   end matchcontinue;
 // end MatchCase15.winCitation;
 // 

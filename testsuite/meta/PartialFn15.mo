@@ -46,7 +46,7 @@ end PartialFn15;
 //   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
 //   while  NOT listEmpty(binops) loop
 //     lst := match (binops) 
-//     #cases#
+//     case (binop::binops) then listCons(binop(#(r1),#(r2)),lst);
 //   end match;
 //   end while;
 //   lst := listReverse(lst);

@@ -22,7 +22,7 @@ end MatchCase14;
 //   output Integer outInt;
 // algorithm
 //   outInt := match (i) 
-//     #cases#
+//     case (-3) then -3;
 //   end match;
 // end MatchCase14.fn;
 // 

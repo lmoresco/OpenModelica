@@ -24,7 +24,7 @@ end MatchCase16;
 //   output String outStr;
 // algorithm
 //   "" := match (str) 
-//     #cases#
+//     case (str) then str;
 //   end match;
 //   outStr := "";
 // end MatchCase16.fn;

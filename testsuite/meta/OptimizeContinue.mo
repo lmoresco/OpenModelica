@@ -43,16 +43,21 @@ end OptimizeContinue;
 //   output Real r;
 // algorithm
 //   r := match (OptimizeContinue.Ut.UT1()) 
-//     #cases#
+//     case (OptimizeContinue.Ut.UT1()) then 1.0;
+//     case (OptimizeContinue.Ut.UT2()) then 2.0;
+//     case (OptimizeContinue.Ut.UT3()) then 3.0;
 //   end match;
 //   r := match (OptimizeContinue.Ut2.UT4(#(1))) 
-//     #cases#
+//     case (OptimizeContinue.Ut2.UT4(1)) then 1.0;
+//     case (OptimizeContinue.Ut2.UT4(2)) then 2.0;
 //   end match;
 //   r := matchcontinue (OptimizeContinue.Ut.UT1()) 
-//     #cases#
+//     case (OptimizeContinue.Ut.UT1()) then 1.0;
+//     case (OptimizeContinue.Ut.UT1()) then 2.0;
 //   end matchcontinue;
 //   r := matchcontinue (OptimizeContinue.Ut2.UT4(#(1))) 
-//     #cases#
+//     case (OptimizeContinue.Ut2.UT4(1)) then 1.0;
+//     case (OptimizeContinue.Ut2.UT4(_)) then 2.0;
 //   end matchcontinue;
 // end OptimizeContinue.f;
 // 
