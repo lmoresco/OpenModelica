@@ -1031,7 +1031,7 @@ protected function smf_39
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1042,7 +1042,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_39;
 
 protected function smf_40
@@ -1052,7 +1052,7 @@ protected function smf_40
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1063,7 +1063,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_40;
 
 protected function smf_41
@@ -1073,7 +1073,7 @@ protected function smf_41
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1084,7 +1084,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_41;
 
 protected function smf_42
@@ -1094,7 +1094,7 @@ protected function smf_42
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1105,7 +1105,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_42;
 
 protected function smf_43
@@ -1115,7 +1115,7 @@ protected function smf_43
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1126,7 +1126,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_43;
 
 protected function smf_44
@@ -1136,7 +1136,7 @@ protected function smf_44
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1147,7 +1147,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_44;
 
 protected function smf_45
@@ -1157,7 +1157,7 @@ protected function smf_45
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1168,7 +1168,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_45;
 
 protected function smf_46
@@ -1178,7 +1178,7 @@ protected function smf_46
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1189,7 +1189,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_46;
 
 protected function lm_47
@@ -1559,7 +1559,7 @@ protected function smf_56
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1570,7 +1570,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_56;
 
 protected function smf_57
@@ -1580,7 +1580,7 @@ protected function smf_57
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1591,7 +1591,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_57;
 
 protected function smf_58
@@ -1601,7 +1601,7 @@ protected function smf_58
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1612,7 +1612,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_58;
 
 protected function smf_59
@@ -1622,7 +1622,7 @@ protected function smf_59
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1633,7 +1633,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_59;
 
 protected function smf_60
@@ -1643,7 +1643,7 @@ protected function smf_60
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1654,7 +1654,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_60;
 
 protected function smf_61
@@ -1664,7 +1664,7 @@ protected function smf_61
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1675,7 +1675,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_61;
 
 protected function smf_62
@@ -1685,7 +1685,7 @@ protected function smf_62
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1696,7 +1696,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_62;
 
 protected function smf_63
@@ -1706,7 +1706,7 @@ protected function smf_63
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1717,7 +1717,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_63;
 
 protected function smf_64
@@ -1727,7 +1727,7 @@ protected function smf_64
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1738,7 +1738,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_64;
 
 public function globalData
@@ -11510,7 +11510,7 @@ public function replaceDotAndUnderscore
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_a_str)
+  matchcontinue(in_txt, in_a_str)
     local
       Tpl.Text txt;
       String i_name;
@@ -11528,7 +11528,7 @@ algorithm
         l_str__underscores = Tpl.writeStr(Tpl.emptyTxt, ret_3);
         txt = Tpl.writeText(txt, l_str__underscores);
       then txt;
-  end match;
+  end matchcontinue;
 end replaceDotAndUnderscore;
 
 public function underscorePath
@@ -33233,6 +33233,89 @@ end assertCommon;
 
 protected function fun_734
   input Tpl.Text in_txt;
+  input Integer in_mArg;
+  input Tpl.Text in_a_meta;
+  input Tpl.Text in_a_tmp;
+  input Tpl.Text in_a_escstr;
+  input Tpl.Text in_a_name;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg, in_a_meta, in_a_tmp, in_a_escstr, in_a_name)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_meta;
+      Tpl.Text a_tmp;
+      Tpl.Text a_escstr;
+      Tpl.Text a_name;
+      Integer ret_0;
+
+    case ( txt,
+           0,
+           _,
+           _,
+           _,
+           a_name )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mmc_emptystring"));
+      then txt;
+
+    case ( txt,
+           1,
+           _,
+           _,
+           a_escstr,
+           a_name )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mmc_strings_len1[\""));
+        txt = Tpl.writeText(txt, a_escstr);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\"[0]]"));
+      then txt;
+
+    case ( txt,
+           _,
+           a_meta,
+           a_tmp,
+           a_escstr,
+           a_name )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_data \""));
+        txt = Tpl.writeText(txt, a_escstr);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\"\n",
+                                    "static const size_t "
+                                }, false));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_strlen = "));
+        ret_0 = System.unescapedStringLength(Tpl.textString(a_escstr));
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "static const MMC_DEFSTRINGLIT("
+                                }, false));
+        txt = Tpl.writeText(txt, a_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_strlen,"));
+        txt = Tpl.writeText(txt, a_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_data);\n"));
+        txt = Tpl.writeText(txt, a_meta);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = MMC_REFSTRINGLIT("));
+        txt = Tpl.writeText(txt, a_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+      then txt;
+  end matchcontinue;
+end fun_734;
+
+protected function fun_735
+  input Tpl.Text in_txt;
   input Boolean in_mArg;
   input Tpl.Text in_a_meta;
   input Tpl.Text in_a_tmp;
@@ -33298,37 +33381,13 @@ algorithm
            a_escstr,
            a_name )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
-        txt = Tpl.writeText(txt, a_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_data \""));
-        txt = Tpl.writeText(txt, a_escstr);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "\"\n",
-                                    "static const size_t "
-                                }, false));
-        txt = Tpl.writeText(txt, a_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_strlen = "));
         ret_3 = System.unescapedStringLength(Tpl.textString(a_escstr));
-        txt = Tpl.writeStr(txt, intString(ret_3));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "static const MMC_DEFSTRINGLIT("
-                                }, false));
-        txt = Tpl.writeText(txt, a_tmp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
-        txt = Tpl.writeText(txt, a_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_strlen,"));
-        txt = Tpl.writeText(txt, a_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_data);\n"));
-        txt = Tpl.writeText(txt, a_meta);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = MMC_REFSTRINGLIT("));
-        txt = Tpl.writeText(txt, a_tmp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+        txt = fun_734(txt, ret_3, a_meta, a_tmp, a_escstr, a_name);
       then txt;
   end matchcontinue;
-end fun_734;
+end fun_735;
 
-protected function fun_735
+protected function fun_736
   input Tpl.Text in_txt;
   input Boolean in_a_exp_bool;
 
@@ -33351,40 +33410,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("1"));
       then txt;
   end matchcontinue;
-end fun_735;
-
-protected function lm_736
-  input Tpl.Text in_txt;
-  input list<DAE.Exp> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<DAE.Exp> rest;
-      DAE.Exp i_exp;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_exp :: rest )
-      equation
-        txt = literalExpConstBoxedVal(txt, i_exp);
-        txt = Tpl.nextIter(txt);
-        txt = lm_736(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_736(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_736;
+end fun_736;
 
 protected function lm_737
   input Tpl.Text in_txt;
@@ -33419,7 +33445,40 @@ algorithm
   end matchcontinue;
 end lm_737;
 
-protected function fun_738
+protected function lm_738
+  input Tpl.Text in_txt;
+  input list<DAE.Exp> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.Exp> rest;
+      DAE.Exp i_exp;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_exp :: rest )
+      equation
+        txt = literalExpConstBoxedVal(txt, i_exp);
+        txt = Tpl.nextIter(txt);
+        txt = lm_738(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_738(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_738;
+
+protected function fun_739
   input Tpl.Text in_txt;
   input DAE.Exp in_a_lit;
   input Tpl.Text in_a_meta;
@@ -33466,7 +33525,7 @@ algorithm
         ret_1 = Util.escapeModelicaStringToCString(i_string);
         l_escstr = Tpl.writeStr(Tpl.emptyTxt, ret_1);
         ret_2 = RTOpts.acceptMetaModelicaGrammar();
-        txt = fun_734(txt, ret_2, a_meta, a_tmp, i_string, l_escstr, a_name);
+        txt = fun_735(txt, ret_2, a_meta, a_tmp, i_string, l_escstr, a_name);
       then txt;
 
     case ( txt,
@@ -33489,7 +33548,7 @@ algorithm
       equation
         txt = Tpl.writeText(txt, a_meta);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = MMC_IMMEDIATE(MMC_TAGFIXNUM("));
-        txt = fun_735(txt, i_exp_bool);
+        txt = fun_736(txt, i_exp_bool);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("));"));
       then txt;
 
@@ -33542,7 +33601,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(ret_3));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",0) {"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_736(txt, i_listExp);
+        txt = lm_737(txt, i_listExp);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("}};\n"));
         txt = Tpl.writeText(txt, a_meta);
@@ -33588,7 +33647,7 @@ algorithm
         txt = underscorePath(txt, i_path);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("__desc,"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_737(txt, i_args);
+        txt = lm_738(txt, i_args);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("}};\n"));
         txt = Tpl.writeText(txt, a_meta);
@@ -33611,7 +33670,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
   end matchcontinue;
-end fun_738;
+end fun_739;
 
 public function literalExpConst
   input Tpl.Text txt;
@@ -33630,7 +33689,7 @@ algorithm
   l_tmp := Tpl.writeStr(l_tmp, intString(a_index));
   l_meta := Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("static modelica_metatype const "));
   l_meta := Tpl.writeText(l_meta, l_name);
-  out_txt := fun_738(txt, a_lit, l_meta, l_tmp, l_name);
+  out_txt := fun_739(txt, a_lit, l_meta, l_tmp, l_name);
 end literalExpConst;
 
 public function literalExpConstBoxedVal

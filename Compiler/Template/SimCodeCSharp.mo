@@ -1051,7 +1051,7 @@ protected function smf_40
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1062,7 +1062,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_40;
 
 protected function smf_41
@@ -1072,7 +1072,7 @@ protected function smf_41
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1083,7 +1083,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_41;
 
 protected function smf_42
@@ -1093,7 +1093,7 @@ protected function smf_42
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1104,7 +1104,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_42;
 
 protected function smf_43
@@ -1114,7 +1114,7 @@ protected function smf_43
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1125,7 +1125,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_43;
 
 protected function smf_44
@@ -1135,7 +1135,7 @@ protected function smf_44
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1146,7 +1146,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_44;
 
 protected function smf_45
@@ -1156,7 +1156,7 @@ protected function smf_45
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1167,7 +1167,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_45;
 
 protected function smf_46
@@ -1177,7 +1177,7 @@ protected function smf_46
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1188,7 +1188,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_46;
 
 protected function smf_47
@@ -1198,7 +1198,7 @@ protected function smf_47
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1209,7 +1209,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_47;
 
 protected function fun_48
@@ -1451,7 +1451,7 @@ protected function smf_56
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1462,7 +1462,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_56;
 
 protected function smf_57
@@ -1472,7 +1472,7 @@ protected function smf_57
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1483,7 +1483,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_57;
 
 protected function smf_58
@@ -1493,7 +1493,7 @@ protected function smf_58
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1504,7 +1504,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_58;
 
 protected function smf_59
@@ -1514,7 +1514,7 @@ protected function smf_59
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1525,7 +1525,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_59;
 
 protected function smf_60
@@ -1535,7 +1535,7 @@ protected function smf_60
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1546,7 +1546,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_60;
 
 protected function smf_61
@@ -1556,7 +1556,7 @@ protected function smf_61
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1567,7 +1567,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_61;
 
 protected function smf_62
@@ -1577,7 +1577,7 @@ protected function smf_62
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1588,7 +1588,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_62;
 
 protected function smf_63
@@ -1598,7 +1598,7 @@ protected function smf_63
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  match(in_txt, in_it)
+  matchcontinue(in_txt, in_it)
     local
       Tpl.Text txt;
       Tpl.Text i_it;
@@ -1609,7 +1609,7 @@ algorithm
         txt = Tpl.writeText(txt, i_it);
         txt = Tpl.nextIter(txt);
       then txt;
-  end match;
+  end matchcontinue;
 end smf_63;
 
 public function modelDataMembers
