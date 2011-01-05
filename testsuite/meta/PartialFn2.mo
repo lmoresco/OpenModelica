@@ -1,6 +1,7 @@
 // name:     PartialFn2
 // keywords: PartialFn
 // status:  correct
+// cflags: +g=MetaModelica
 //
 // Using pointers to functions pointing to other functions.
 //
@@ -59,18 +60,44 @@ algorithm
   out := ApplyApplyIntOp(ApplyIntOp,AddInt,i1);
 end TestApplyApplyIntOp;
 
-Integer i1;
-Integer i2;
-equation
-  i1 = AddInt(1);
-  i2 = TestApplyApplyIntOp(i1);
+constant Integer i1 = AddInt(1);
+Integer i2 = TestApplyApplyIntOp(i1);
 end PartialFn2;
 
 // Result:
+// function PartialFn2.AddInt
+//   input Integer i;
+//   output Integer out;
+// algorithm
+//   out := 1 + i;
+// end PartialFn2.AddInt;
+// 
+// function PartialFn2.ApplyApplyIntOp
+//   input function(inFunc:function(in1:#Integer) => #Integer, in1:#Integer) => #Integer inFuncFunc;
+//   input function(in1:#Integer) => #Integer inFunc;
+//   input Integer i;
+//   output Integer outInt;
+// algorithm
+//   outInt := unbox(inFuncFunc(inFunc,#(i)));
+// end PartialFn2.ApplyApplyIntOp;
+// 
+// function PartialFn2.ApplyIntOp
+//   input function(in1:#Integer) => #Integer inFunc;
+//   input Integer i;
+//   output Integer outInt;
+// algorithm
+//   outInt := unbox(inFunc(#(i)));
+// end PartialFn2.ApplyIntOp;
+// 
+// function PartialFn2.TestApplyApplyIntOp
+//   input Integer i1;
+//   output Integer out;
+// algorithm
+//   out := PartialFn2.ApplyApplyIntOp(PartialFn2.ApplyIntOp,PartialFn2.AddInt,i1);
+// end PartialFn2.TestApplyApplyIntOp;
+// 
 // class PartialFn2
-// Integer i1;
-// Integer i2;
-// equation
-//   i1 = 2;
-//   i2 = PartialFn2.ApplyApplyIntOp(PartialFn2.ApplyIntOp,PartialFn2.AddInt,i1);
+//   constant Integer i1 = 2;
+//   Integer i2 = 3;
 // end PartialFn2;
+// endResult

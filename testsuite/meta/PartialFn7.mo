@@ -1,6 +1,7 @@
 // name:     PartialFn7
 // keywords: PartialFn
-// status:   incorrect
+// status:   correct
+// cflags:   +g=MetaModelica
 //
 // Passing record constructors
 //
@@ -46,21 +47,48 @@ algorithm
   
 end TestCreateTestRecord;
 
-Integer i;
-Real r;
+constant Integer i=1;
+constant Real r=2.0;
 Integer tr;
 
 equation
-  i = 1;
-  r = 2.0;
   tr = TestCreateTestRecord(i, r);
 end PartialFn7;
 
 // Result:
+// function PartialFn7.CreateTestRecord
+//   input Integer i;
+//   input Real r;
+//   input function(i:#Integer, r:#Real) => #record PartialFn7.TestRecord
+// Integer i;
+// Real r;
+// end PartialFn7.TestRecord; rc;
+//   output PartialFn7.TestRecord tr;
+// algorithm
+//   tr := mmc_unbox_record(rc(#(i),#(r)));
+// end PartialFn7.CreateTestRecord;
+// 
+// function PartialFn7.TestCreateTestRecord
+//   input Integer i;
+//   input Real r;
+//   output Integer o;
+//   protected PartialFn7.TestRecord tr;
+// algorithm
+//   tr := PartialFn7.CreateTestRecord(i,r,PartialFn7.TestRecord);
+//   o := 2;
+// end PartialFn7.TestCreateTestRecord;
+// 
+// function PartialFn7.TestRecord "Automatically generated record constructor for PartialFn7.TestRecord"
+// input Integer i;
+// input Real r;
+// output TestRecord res;
+// end PartialFn7.TestRecord;
+// 
 // class PartialFn7
-// Integer i1;
-// Integer i2;
+//   constant Integer i = 1;
+//   constant Real r = 2.0;
+//   Integer tr;
 // equation
-//   i1 = 2;
-//   i2 = PartialFn7.ApplyIntOp(PartialFn7.AddInt,i1);
+//   tr = 2;
 // end PartialFn7;
+// endResult

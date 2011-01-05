@@ -1,7 +1,7 @@
 // name:     PartialFn6
 // keywords: PartialFn
 // status:   correct
-// cflags:   PartialFn6_f.c
+// cflags:   +g=MetaModelica
 // 
 // Passing external functions as arguments to function calls
 
@@ -34,9 +34,38 @@ function ExtFunc
 end ExtFunc;
 
 model PartialFn6
-  Real x;
+  constant Real x = 5;
   Real y;
 equation
-  x = 5;
   y = TestApplyRealOp(x);
 end PartialFn6;
+// Result:
+// function ApplyRealOp
+//   input function(x:#Real) => #Real inFunc;
+//   input Real x;
+//   output Real y;
+// algorithm
+//   y := unbox(inFunc(#(x)));
+// end ApplyRealOp;
+// 
+// function ExtFunc
+//   input Real r;
+//   output Real out;
+// 
+// external "C";
+// end ExtFunc;
+// 
+// function TestApplyRealOp
+//   input Real x;
+//   output Real y;
+// algorithm
+//   y := ApplyRealOp(ExtFunc,x);
+// end TestApplyRealOp;
+// 
+// class PartialFn6
+//   constant Real x = 5.0;
+//   Real y;
+// equation
+//   y = 15.0;
+// end PartialFn6;
+// endResult

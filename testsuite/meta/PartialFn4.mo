@@ -1,6 +1,7 @@
 // name:     PartialFn4
 // keywords: PartialFn
 // status:  correct
+// cflags: +g=MetaModelica
 //
 // Using function pointers to non-returning functions
 //
@@ -39,11 +40,36 @@ algorithm
   j := ApplyVoidOp(VoidOp, i);
 end TestApplyVoidOp;
 
-Integer i1;
-Integer i2;
-
-equation
-  i1 = 1;
-  i2 = TestApplyVoidOp(i1);
+constant Integer i1=1;
+Integer i2=TestApplyVoidOp(i1);
 end PartialFn4;
 
+// Result:
+// function PartialFn4.ApplyVoidOp
+//   input function(i1:#Integer) => #NORETCALL# inFunc;
+//   input Integer i;
+//   output Integer j;
+// algorithm
+//   inFunc(#(i));
+//   j := 2;
+// end PartialFn4.ApplyVoidOp;
+// 
+// function PartialFn4.TestApplyVoidOp
+//   input Integer i;
+//   output Integer j;
+// algorithm
+//   j := PartialFn4.ApplyVoidOp(PartialFn4.VoidOp,i);
+// end PartialFn4.TestApplyVoidOp;
+// 
+// function PartialFn4.VoidOp
+//   input Integer i;
+//   protected Integer j;
+// algorithm
+//   j := 1 + i;
+// end PartialFn4.VoidOp;
+// 
+// class PartialFn4
+//   constant Integer i1 = 1;
+//   Integer i2 = 2;
+// end PartialFn4;
+// endResult

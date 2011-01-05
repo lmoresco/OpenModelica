@@ -1,6 +1,7 @@
 // name:     PartialFn5
 // keywords: PartialFn
 // status:  correct
+// cflags: +g=MetaModelica
 //
 // Using function pointers to builtin functions
 //
@@ -37,11 +38,40 @@ algorithm
   rout := ApplyRealOp(ceil_, rin);
 end TestApplyRealOp;
 
-Real r1;
+constant Real r1=1.2;
 Real r2;
 
 equation
-  r1 = 1.2;
   r2 = TestApplyRealOp(r1);
 end PartialFn5;
 
+// Result:
+// function PartialFn5.ApplyRealOp
+//   input function(r1:#Real) => #Real inFunc;
+//   input Real rin;
+//   output Real rout;
+// algorithm
+//   rout := unbox(inFunc(#(rin)));
+// end PartialFn5.ApplyRealOp;
+// 
+// function PartialFn5.TestApplyRealOp
+//   input Real rin;
+//   output Real rout;
+// algorithm
+//   rout := PartialFn5.ApplyRealOp(PartialFn5.ceil_,rin);
+// end PartialFn5.TestApplyRealOp;
+// 
+// function PartialFn5.ceil_
+//   input Real rin;
+//   output Real rout;
+// 
+// external "C";
+// end PartialFn5.ceil_;
+// 
+// class PartialFn5
+//   constant Real r1 = 1.2;
+//   Real r2;
+// equation
+//   r2 = 2.0;
+// end PartialFn5;
+// endResult
