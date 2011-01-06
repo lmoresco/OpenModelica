@@ -1,7 +1,7 @@
 #!/bin/sh
 # Refactor matchcontinue to match
 # Enable all debug output, but disable dead code elimination of matchcontinue expressions in the middle of the cases
-sed s/+d=/+d=patternmAllInfo,patternmSkipMCDCE,/ MainTest.mos > MainTestAllInfo.mos
+sed s/+d=/+d=patternmAllInfo,patternmSkipMCDCE,patternmSkipFilterUnusedAsBindings,patternmSkipMoveLastExp,/ MainTest.mos > MainTestAllInfo.mos
 OK=0
 FAILED=0
 omc MainTestAllInfo.mos > log
@@ -34,5 +34,52 @@ for l in `grep "Notification: This matchcontinue expression has no overlapping p
     fi
   fi
 done
-echo OK: $OK
-echo FAILED: $FAILED
+UOK=0
+UFAILED=0
+for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | sort`; do
+  FILE=`echo $l | cut -d: -f1 | cut -d[ -f2`
+  STARTL=`echo $l | cut -d: -f2`
+  STARTC=`echo $l | cut -d: -f3 | cut -d- -f1`
+  ENDL=`echo $l | cut -d: -f3 | cut -d- -f2`
+  ENDC=`echo $l | cut -d: -f4`
+  VAR=`echo $l | cut -d] -f2 | cut -d. -f1`
+  CNT=0
+  THISOK=0
+  if [ "$STARTL" -eq "$ENDL" ] ; then
+  LINE=`grep -n ^ "$FILE" | grep "$STARTL:" | cut -d: -f2`
+  else
+  LINE=""
+  fi
+  #echo $LINE
+  if echo $LINE | egrep -q "/|input|output|local|{|:" ; then
+    UFAILED=$((UFAILED+1))
+    THISOK=0
+  elif echo $LINE | grep -q " $VAR," ; then
+    sed -i "$STARTL s/ $VAR,/ /" "$FILE"
+    THISOK=1
+    UOK=$((UOK+1))
+  elif echo $LINE | grep -q ", ?$VAR,\$" ; then
+    sed -i "$STARTL s/, ?$VAR,/,/" "$FILE"
+    THISOK=1
+    UOK=$((UOK+1))
+  elif echo $LINE | grep -q ", ?$VAR;\$" ; then
+    sed -i "$STARTL s/, ?$VAR;/;/" "$FILE"
+    THISOK=1
+    UOK=$((UOK+1))
+  # This is rather dangerous to do...
+  #elif echo $LINE | grep -q " $VAR;\$" ; then
+  #  sed -i "$STARTLd" "$FILE"
+  #  THISOK=1
+  #  UOK=$((UOK+1))
+  else
+    UFAILED=$((UFAILED+1))
+    THISOK=0
+  fi
+  if [ "$THISOK" = "1" ] ; then
+    echo $FILE $STARTL $STARTC $ENDL $ENDC unused $VAR OK
+  else
+    echo $FILE $STARTL $STARTC $ENDL $ENDC unused $VAR failed
+  fi
+done
+echo Removing overlapping matchcontinue expression: $OK OK, $FAILED FAILED
+echo Removing unused local declarations: $UOK OK, $UFAILED FAILED
