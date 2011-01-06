@@ -36,7 +36,7 @@ for l in `grep "Notification: This matchcontinue expression has no overlapping p
 done
 UOK=0
 UFAILED=0
-for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | sort`; do
+for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | sort -nr -t: --key=2`; do
   FILE=`echo $l | cut -d: -f1 | cut -d[ -f2`
   STARTL=`echo $l | cut -d: -f2`
   STARTC=`echo $l | cut -d: -f3 | cut -d- -f1`
@@ -58,32 +58,33 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
     sed -i "$STARTL s/ $VAR,/ /" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", $VAR," ; then
-    sed -i "$STARTL s/, $VAR,/,/" "$FILE"
-    THISOK=1
+  elif echo $LINE | grep -q ", *$VAR," ; then
+    sed -i "$STARTL s/, *$VAR,/,/" "$FILE"
+    THISOK=2
     UOK=$((UOK+1))
   elif echo $LINE | grep -q ",$VAR," ; then
     sed -i "$STARTL s/,$VAR,/,/" "$FILE"
-    THISOK=1
+    THISOK=3
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", $VAR;" ; then
-    sed -i "$STARTL s/, $VAR;/;/" "$FILE"
-    THISOK=1
+  elif echo $LINE | grep -q ", *$VAR;" ; then
+    sed -i "$STARTL s/, *$VAR;/;/" "$FILE"
+    THISOK=4
     UOK=$((UOK+1))
   elif echo $LINE | grep -q ",$VAR;" ; then
     sed -i "$STARTL s/,$VAR;/;/" "$FILE"
-    THISOK=1
+    THISOK=5
     UOK=$((UOK+1))
-  #elif echo $LINE | grep -q "^ *$VAR;\$" ; then
-  #  sed -i "$STARTL s/^.*\$/____OMC____REMOVE___THIS____LINE___LATER/" "$FILE"
-  #  THISOK=1
-  #  UOK=$((UOK+1))
+  elif echo $LINE | grep -q "^ *[A-Za-z<>\.]* *$VAR;\$" ; then
+    sed -i "$STARTL"d "$FILE"
+    echo sed -i "$STARTL"d "$FILE"
+    THISOK=6
+    UOK=$((UOK+1))
   else
     UFAILED=$((UFAILED+1))
     THISOK=0
   fi
-  if [ "$THISOK" = "1" ] ; then
-    echo $FILE $STARTL $STARTC $ENDL $ENDC unused $VAR OK
+  if [ "$THISOK" != "0" ] ; then
+    echo $FILE $STARTL $STARTC $ENDL $ENDC unused $VAR OK "($THISOK)"
   else
     echo $FILE $STARTL $STARTC $ENDL $ENDC unused $VAR failed
   fi
