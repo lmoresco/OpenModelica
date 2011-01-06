@@ -24088,7 +24088,7 @@ algorithm
         txt = Tpl.writeText(txt, a_arrName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeText(txt, a_dimsValuesStr);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") /* DAE.CREF */"));
       then txt;
 
     case ( txt,
@@ -28262,7 +28262,7 @@ algorithm
         txt = Tpl.writeText(txt, l_e1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeText(txt, l_idx1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") /* DAE.ASUB */"));
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -30372,7 +30372,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_arrName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeText(txt, a_dimsValuesStr);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") /*arrayScalarRhs*/"));
       then txt;
 
     case ( txt,
