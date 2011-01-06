@@ -1,6 +1,7 @@
 #!/bin/sh
 # Refactor matchcontinue to match
-sed s/+d=/+d=patternmAllInfo,/ MainTest.mos > MainTestAllInfo.mos
+# Enable all debug output, but disable dead code elimination of matchcontinue expressions in the middle of the cases
+sed s/+d=/+d=patternmAllInfo,patternmSkipMCDCE,/ MainTest.mos > MainTestAllInfo.mos
 OK=0
 FAILED=0
 omc MainTestAllInfo.mos > log
