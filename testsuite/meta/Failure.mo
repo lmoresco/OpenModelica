@@ -1,4 +1,4 @@
-package Failure
+class Failure
   constant Integer iConst = 4;
 
   function twoIdent
@@ -61,5 +61,4 @@ package Failure
       case _ then 1;
     end matchcontinue;
   end myFailure2;
-
 end Failure;

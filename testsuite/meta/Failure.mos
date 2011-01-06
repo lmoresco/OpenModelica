@@ -6,19 +6,25 @@
 // Failure Testing
 //
 loadFile("Failure.mo");
-a:=Failure.myFailure(1);
-a:=Failure.myFailure(2);
-a:=Failure.myFailure(3);
-a:=Failure.myFailure(4);
-a:=Failure.myFailure(5);
-a:=Failure.myFailure2();
+a:=Failure.myFailure(1);getErrorString();
+a:=Failure.myFailure(2);getErrorString();
+a:=Failure.myFailure(3);getErrorString();
+a:=Failure.myFailure(4);getErrorString();
+a:=Failure.myFailure(5);getErrorString();
+a:=Failure.myFailure2();getErrorString();
 
 // Result:
 // true
 // 1
+// ""
 // 1
+// ""
 // 1
+// ""
 // 1
+// ""
 // 1
+// ""
 // 1
+// ""
 // endResult

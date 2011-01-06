@@ -20101,6 +20101,14 @@ algorithm
       DAE.Statement i_s;
 
     case ( txt,
+           (i_s as DAE.STMT_ASSIGN(exp1 = DAE.PATTERN(pattern = _))),
+           a_context,
+           a_varDecls )
+      equation
+        (txt, a_varDecls) = algStmtAssignPattern(txt, i_s, a_context, a_varDecls);
+      then (txt, a_varDecls);
+
+    case ( txt,
            (i_s as DAE.STMT_ASSIGN(type_ = _)),
            a_context,
            a_varDecls )
@@ -20122,14 +20130,6 @@ algorithm
            a_varDecls )
       equation
         (txt, a_varDecls) = algStmtTupleAssign(txt, i_s, a_context, a_varDecls);
-      then (txt, a_varDecls);
-
-    case ( txt,
-           (i_s as DAE.STMT_ASSIGN_PATTERN(lhs = _)),
-           a_context,
-           a_varDecls )
-      equation
-        (txt, a_varDecls) = algStmtAssignPattern(txt, i_s, a_context, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
@@ -32515,23 +32515,23 @@ algorithm
       Tpl.Text txt;
       SimCode.Context a_context;
       Tpl.Text a_varDecls;
-      DAE.Pattern i_lhs;
-      DAE.Exp i_rhs;
+      DAE.Pattern i_lhs_pattern;
+      DAE.Exp i_s_exp;
       Tpl.Text l_expPart;
       Tpl.Text l_assignments;
       Tpl.Text l_preExp;
 
     case ( txt,
-           DAE.STMT_ASSIGN_PATTERN(rhs = i_rhs, lhs = i_lhs),
+           DAE.STMT_ASSIGN(exp1 = DAE.PATTERN(pattern = i_lhs_pattern), exp = i_s_exp),
            a_context,
            a_varDecls )
       equation
         l_preExp = Tpl.emptyTxt;
         l_assignments = Tpl.emptyTxt;
-        (l_expPart, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_rhs, a_context, l_preExp, a_varDecls);
+        (l_expPart, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_s_exp, a_context, l_preExp, a_varDecls);
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
-        (txt, l_expPart, _, a_varDecls, l_assignments) = patternMatch(txt, i_lhs, l_expPart, Tpl.strTokText(Tpl.ST_STRING("MMC_THROW()")), a_varDecls, l_assignments);
+        (txt, l_expPart, _, a_varDecls, l_assignments) = patternMatch(txt, i_lhs_pattern, l_expPart, Tpl.strTokText(Tpl.ST_STRING("MMC_THROW()")), a_varDecls, l_assignments);
         txt = Tpl.writeText(txt, l_assignments);
       then (txt, a_varDecls);
 
