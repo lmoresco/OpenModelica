@@ -46,37 +46,36 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
   CNT=0
   THISOK=0
   if [ "$STARTL" -eq "$ENDL" ] ; then
-  LINE=`grep -n ^ "$FILE" | grep "$STARTL:" | cut -d: -f2`
+  LINE=`grep -n ^ "$FILE" | grep "^$STARTL:" | cut -d: -f2`
   else
   LINE=""
   fi
-  #echo $LINE
-  if echo $LINE | egrep -q "/|input|output|local|{|:" ; then
+  #echo "$LINE"
+  if echo "$LINE" | egrep -q "/|input|output|local|{|:" ; then
     UFAILED=$((UFAILED+1))
     THISOK=0
-  elif echo $LINE | grep -q " $VAR," ; then
+  elif echo "$LINE" | grep -q " $VAR," ; then
     sed -i "$STARTL s/ $VAR,/ /" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", *$VAR," ; then
+  elif echo "$LINE" | grep -q ", *$VAR," ; then
     sed -i "$STARTL s/, *$VAR,/,/" "$FILE"
     THISOK=2
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ",$VAR," ; then
+  elif echo "$LINE" | grep -q ",$VAR," ; then
     sed -i "$STARTL s/,$VAR,/,/" "$FILE"
     THISOK=3
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", *$VAR;" ; then
+  elif echo "$LINE" | grep -q ", *$VAR;" ; then
     sed -i "$STARTL s/, *$VAR;/;/" "$FILE"
     THISOK=4
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ",$VAR;" ; then
+  elif echo "$LINE" | grep -q ",$VAR;" ; then
     sed -i "$STARTL s/,$VAR;/;/" "$FILE"
     THISOK=5
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q "^ *[A-Za-z<>\.]* *$VAR;\$" ; then
+  elif echo "$LINE" | grep -q "^ *[A-Za-z<>\.,]* *$VAR;\$" ; then
     sed -i "$STARTL"d "$FILE"
-    echo sed -i "$STARTL"d "$FILE"
     THISOK=6
     UOK=$((UOK+1))
   else
