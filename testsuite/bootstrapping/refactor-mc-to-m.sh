@@ -58,17 +58,24 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
     sed -i "$STARTL s/ $VAR,/ /" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", ?$VAR,\$" ; then
-    sed -i "$STARTL s/, ?$VAR,/,/" "$FILE"
+  elif echo $LINE | grep -q ", $VAR," ; then
+    sed -i "$STARTL s/, $VAR,/,/" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
-  elif echo $LINE | grep -q ", ?$VAR;\$" ; then
-    sed -i "$STARTL s/, ?$VAR;/;/" "$FILE"
+  elif echo $LINE | grep -q ",$VAR," ; then
+    sed -i "$STARTL s/,$VAR,/,/" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
-  # This is rather dangerous to do...
-  #elif echo $LINE | grep -q " $VAR;\$" ; then
-  #  sed -i "$STARTLd" "$FILE"
+  elif echo $LINE | grep -q ", $VAR;" ; then
+    sed -i "$STARTL s/, $VAR;/;/" "$FILE"
+    THISOK=1
+    UOK=$((UOK+1))
+  elif echo $LINE | grep -q ",$VAR;" ; then
+    sed -i "$STARTL s/,$VAR;/;/" "$FILE"
+    THISOK=1
+    UOK=$((UOK+1))
+  #elif echo $LINE | grep -q "^ *$VAR;\$" ; then
+  #  sed -i "$STARTL s/^.*\$/____OMC____REMOVE___THIS____LINE___LATER/" "$FILE"
   #  THISOK=1
   #  UOK=$((UOK+1))
   else
