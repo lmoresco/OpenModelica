@@ -14,6 +14,7 @@ Assign1.mo \
 Assign2.mo \
 Assign3.mo \
 Assign4.mo \
+CheckSourcesForTabs.mos \
 Class3.mo \
 Class4.mo \
 Code.mo \

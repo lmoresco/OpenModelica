@@ -1,0 +1,28 @@
+// name: Check Compiler sources for tabs
+// status: correct
+// teardown_command: rm -f CheckSourcesForTabs.count
+
+system("bash -c 'grep \	 ../../Compiler/*/*.mo' | wc -l > CheckSourcesForTabs.count");
+if readFile("CheckSourcesForTabs.count") == "0
+" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' Compiler/*/*.mo";
+
+system("bash -c 'grep \	 ../../Compiler/*/*.{cpp,c,h,hpp} ../../c_runtime/{*/,}*.{cpp,c,h}' | wc -l > CheckSourcesForTabs.count");
+if readFile("CheckSourcesForTabs.count") == "0
+" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' Compiler/*/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h}";
+
+system("bash -c 'grep \	 ../../OMShell/*.{cpp,h} ../../OMNotebook/*/*.{cpp,h,hpp}' ../../OMEdit/OMEditGUI/*.{cpp,h} | wc -l > CheckSourcesForTabs.count");
+if readFile("CheckSourcesForTabs.count") == "0
+" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' OMShell/*.{cpp,h} OMNotebook/*/*.{cpp,h,hpp} OMEdit/OMEditGUI/*.{cpp,h}";
+
+// Result:
+// [CheckSourcesForTabs.mos:5:16-5:17:writable] Warning: Lexer treating \ as \\, since \	 is not a valid Modelica escape sequence.
+// [CheckSourcesForTabs.mos:9:16-9:17:writable] Warning: Lexer treating \ as \\, since \	 is not a valid Modelica escape sequence.
+// [CheckSourcesForTabs.mos:13:16-13:17:writable] Warning: Lexer treating \ as \\, since \	 is not a valid Modelica escape sequence.
+// 
+// 0
+// "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' Compiler/*/*.mo"
+// 0
+// "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' Compiler/*/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h}"
+// 0
+// "Found tabs in the source; to fix this, backup your work and run: sed -i 's/\t/  /g' OMShell/*.{cpp,h} OMNotebook/*/*.{cpp,h,hpp} OMEdit/OMEditGUI/*.{cpp,h}"
+// endResult
