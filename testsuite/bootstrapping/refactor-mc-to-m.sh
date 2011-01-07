@@ -51,10 +51,11 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
   LINE=""
   fi
   #echo "$LINE"
-  if echo "$LINE" | egrep -q "/|input|output|local|{|:" ; then
-    UFAILED=$((UFAILED+1))
-    THISOK=0
-  elif echo "$LINE" | grep -q " $VAR," ; then
+  # Used until we had removed ~8000 declarations so it was easier to see if something was done wrong...
+  #if echo "$LINE" | egrep -q "/|input|output|local|{|:" ; then
+  #  UFAILED=$((UFAILED+1))
+  #  THISOK=0
+  if echo "$LINE" | grep -q " $VAR," ; then
     sed -i "$STARTL s/ $VAR,/ /" "$FILE"
     THISOK=1
     UOK=$((UOK+1))
@@ -74,7 +75,7 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
     sed -i "$STARTL s/,$VAR;/;/" "$FILE"
     THISOK=5
     UOK=$((UOK+1))
-  elif echo "$LINE" | grep -q "^ *[A-Za-z<>\.,]* *$VAR; *\$" ; then
+  elif echo "$LINE" | grep -E -q "^ *([A-Za-z.<>,]|, )* *$VAR *(\"[A-Za-z0-9]*\")* *; *\$" ; then
     sed -i "$STARTL"d "$FILE"
     THISOK=6
     UOK=$((UOK+1))
