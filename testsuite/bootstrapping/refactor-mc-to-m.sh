@@ -74,7 +74,7 @@ for l in `grep "Notification: Unused local variable: " log | sed "s/ .*: //" | s
     sed -i "$STARTL s/,$VAR;/;/" "$FILE"
     THISOK=5
     UOK=$((UOK+1))
-  elif echo "$LINE" | grep -q "^ *[A-Za-z<>\.,]* *$VAR;\$" ; then
+  elif echo "$LINE" | grep -q "^ *[A-Za-z<>\.,]* *$VAR; *\$" ; then
     sed -i "$STARTL"d "$FILE"
     THISOK=6
     UOK=$((UOK+1))
