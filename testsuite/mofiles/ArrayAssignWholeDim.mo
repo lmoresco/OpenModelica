@@ -27,7 +27,7 @@ end ArrayAssignWholeDim;
 //   a[:,1] := x;
 //   a[1,:] := {10.0,20.0,30.0,40.0};
 //   a[size(x,1),:] := {0.1,0.2,0.3,0.4};
-//   a[{2,3},2] := x[{2,3}];
+//   a[{2,3},2] := {x[2],x[3]};
 // end ArrayAssignWholeDim.GetA;
 // 
 // class ArrayAssignWholeDim

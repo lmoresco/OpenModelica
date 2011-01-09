@@ -114,7 +114,7 @@ getErrorString();
 //   Vfb := VFB + /*REAL*/(Type) * (PHIval / 2.0 + -PHI / 2.0 + EGref / 2.0 + -EGval / 2.0);
 //   KPval := KP / facTemp;
 //   BETA := KPval * W / L;
-//   Sarg := if vbs <= 0.0 then sqrt(PHIval - vbs) else sqrt(PHIval) / (1.0 + vbs * 1.0 / PHIval / 2.0);
+//   Sarg := if vbs <= 0.0 then sqrt(PHIval - vbs) else sqrt(PHIval) / (1.0 + vbs / (PHIval * 2.0));
 //   if XJ > 0.0 then
 //     Wp := Sarg * XD;
 //     WpXJ := Wp / XJ;
@@ -128,7 +128,7 @@ getErrorString();
 //   Vbody := GAMMA * Fs * Sarg + Fn * Sarg ^ 2.0;
 //   Vth := Vfb + /*REAL*/(Type) * (PHIval + -SIGMA * vds + Vbody);
 //   if NFS > 0.0 then
-//     CB := if noEvent(Vbody > 0.0) AND noEvent(Sarg > 0.0) then Vbody * Sarg ^ -2.0 / 2.0 else 0.0;
+//     CB := if noEvent(Vbody > 0.0) AND noEvent(Sarg > 0.0) then (Vbody * Sarg ^ -2.0) / 2.0 else 0.0;
 //     N := 1.0 + 1.6021892e-19 * NFS / COX + CB;
 //     Von := /*REAL*/(Type) * Vth + N * Vt;
 //   else
@@ -153,7 +153,7 @@ getErrorString();
 //     if VMAX > 0.0 then
 //       idsat := idlin;
 //       gdsat := idsat * (1.0 - Fd) / Vb;
-//       Ep := idsat * 1.0 / L / gdsat;
+//       Ep := idsat * 1.0 / gdsat / L;
 //       ALPHA := XD ^ 2.0;
 //       DLfac := Ep * ALPHA / 2.0;
 //       DL := sqrt(DLfac ^ 2.0 + KAPPA * ALPHA * (vds - vdsat)) - DLfac;
@@ -163,12 +163,12 @@ getErrorString();
 //   else
 //     DL := 0.0;
 //   end if;
-//   DLval := if DL > 0.5 * L then L - L ^ 2.0 * 1.0 / DL / 4.0 else DL;
+//   DLval := if DL > 0.5 * L then L - L ^ 2.0 / (DL * 4.0) else DL;
 //   LAMBDAval := DLval / L;
 //   Lfact := 1.0 / (1.0 - LAMBDAval);
 //   Beta := Lfact * BETAeff;
 //   cdsat := cdlin;
-//   et := (vgs - Von) * 1.0 / Vt / N;
+//   et := (vgs - Von) * 1.0 / N / Vt;
 //   cdsub := cdlin * if et < EMin then ExMin * (1.0 + et - EMin) else if et > EMax then ExMax * (1.0 + et - EMax) else exp(et);
 //   ids := sig * Beta * if vdsx > 0.0 AND vds <= vdsat then cdlin else if vdsx > 0.0 AND vds > vdsat AND Vgst >= 0.0 then cdsat else if vdsx > 0.0 AND vds > vdsat AND Vgst < 0.0 then cdsub else 0.0;
 //   ids0 := if NFS == 0.0 AND Vgst <= 0.0 then 0.0 else ids;
