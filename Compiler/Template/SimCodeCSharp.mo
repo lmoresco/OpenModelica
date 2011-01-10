@@ -1,4 +1,4 @@
-package	SimCodeCSharp
+encapsulated package	SimCodeCSharp
 
 public	import	Tpl;
 

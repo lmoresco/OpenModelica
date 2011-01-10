@@ -1,4 +1,4 @@
-package	SimCodeC
+encapsulated package	SimCodeC
 
 public	import	Tpl;
 

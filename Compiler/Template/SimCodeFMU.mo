@@ -1,4 +1,4 @@
-package	SimCodeFMU
+encapsulated package	SimCodeFMU
 
 public	import	Tpl;
 
