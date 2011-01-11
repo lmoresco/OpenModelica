@@ -1,5 +1,6 @@
 CPPFLAGS=-I"/home/marsj/dev/trunk/build/include/omc"
 RECS=libmainrecords.a
+CC=$(CXX)
 
 main: Main_main.o $(RECS) main.c
 	$(CXX) -o main main.c Main_main.o $(CPPFLAGS) -L./ -march=native -mfpmath=sse -lomparse -lomcruntime -L"/home/marsj/dev/trunk/build/lib/omc" -lmodparomc -lc_runtime -lm -lrt -ldl -llpsolve55 -lcolamd -lantlr3 -lmainrecords -lomniORB4 -lomnithread
