@@ -1,0 +1,6 @@
+runScript("LoadCompilerSources.mos");
+setOption(envCache,false);
+system("mkdir -p compilerTmp");
+cd("compilerTmp");
+generateSeparateCode();getErrorString();
+generateHeader("All.c");
