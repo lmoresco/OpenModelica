@@ -363,13 +363,13 @@ algorithm
     local
       Tpl.Text txt;
       SimCode.SimCode i_simCode;
-      list<SimCode.Function> i_functions;
+      list<SimCode.Function> i_modelInfo_functions;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = _), functions = i_functions)) )
+           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(functions = i_modelInfo_functions))) )
       equation
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_21(txt, i_functions, i_simCode);
+        txt = lm_21(txt, i_modelInfo_functions, i_simCode);
         txt = Tpl.popIter(txt);
       then txt;
 
