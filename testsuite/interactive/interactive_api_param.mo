@@ -83,17 +83,23 @@ model A
   parameter Integer p2=32,p4; 
 end A;
 
+model B
+  A a1;
+  A a2;
+end B;
+
 model C
   B b1(a1(p1=0,p2=0),a2.p2=3);
 end C;
+
 model A2
   parameter Real x=1;
-Real y=11;
+  Real y=11;
 end A2;
 
 model B2 
   parameter Real f=1;
- A a(x=3);
+  A2 a(x=3);
 end B2;
 
 model C2
@@ -102,9 +108,11 @@ model C2
 end C2;
 
 model D2 
+  Real y = 2;
   extends B2(a(x=2*y),f=1);
   extends C2(m=1,n=2);
 end D2;
+
 model E
   A a(p1=1,p2=2);
 end E;
