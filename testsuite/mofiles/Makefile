@@ -316,6 +316,8 @@ GreaterThan.mo \
 IconsRecursiveTest.mo \
 IdenticalEquations.mo \
 if_then_elseif_else.mo \
+IfExpCombiTable1.mo \
+IfExpCombiTable2.mo \
 Import1.mo \
 Import2.mo \
 Import3.mo \
