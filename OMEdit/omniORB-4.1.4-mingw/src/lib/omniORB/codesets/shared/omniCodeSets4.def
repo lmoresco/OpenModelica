@@ -1,0 +1,79 @@
+EXPORTS
+    _CRT_MT @1 DATA
+    _ZN4omni11omniCodeSet4BaseD0Ev @2
+    _ZN4omni11omniCodeSet4BaseD1Ev @3
+    _ZN4omni11omniCodeSet5NCS_CD0Ev @4
+    _ZN4omni11omniCodeSet5NCS_CD1Ev @5
+    _ZN4omni15omniCodeSetUtil6allocCEm @6
+    _ZN4omni15omniCodeSetUtil7BufferCD1Ev @7
+    _ZN4omni9NCS_C_GBK11marshalCharER9cdrStreamPNS_11omniCodeSet5TCS_CEh @8
+    _ZN4omni9NCS_C_GBK13marshalStringER9cdrStreamPNS_11omniCodeSet5TCS_CEmmPKc @9
+    _ZN4omni9NCS_C_GBK13unmarshalCharER9cdrStreamPNS_11omniCodeSet5TCS_CE @10
+    _ZN4omni9NCS_C_GBK15unmarshalStringER9cdrStreamPNS_11omniCodeSet5TCS_CEmRPc @11
+    _ZN4omni9NCS_C_GBKD0Ev @12
+    _ZN4omni9NCS_C_GBKD1Ev @13
+    _ZN4omni9TCS_C_GBK11marshalCharER9cdrStreamw @14
+    _ZN4omni9TCS_C_GBK13marshalStringER9cdrStreammmPKw @15
+    _ZN4omni9TCS_C_GBK13unmarshalCharER9cdrStream @16
+    _ZN4omni9TCS_C_GBK15fastMarshalCharER9cdrStreamPNS_11omniCodeSet5NCS_CEh @17
+    _ZN4omni9TCS_C_GBK15unmarshalStringER9cdrStreammRPw @18
+    _ZN4omni9TCS_C_GBK17fastMarshalStringER9cdrStreamPNS_11omniCodeSet5NCS_CEmmPKc @19
+    _ZN4omni9TCS_C_GBK17fastUnmarshalCharER9cdrStreamPNS_11omniCodeSet5NCS_CERh @20
+    _ZN4omni9TCS_C_GBK19fastUnmarshalStringER9cdrStreamPNS_11omniCodeSet5NCS_CEmRmRPc @21
+    _ZN4omni9TCS_C_GBKD0Ev @22
+    _ZN4omni9TCS_C_GBKD1Ev @23
+    _ZN5CORBA14IDLType_Helper6is_nilEPNS_15_objref_IDLTypeE @24
+    _ZN5CORBA14IDLType_Helper7releaseEPNS_15_objref_IDLTypeE @25
+    _ZN5CORBA15TypeCode_memberD1Ev @26
+    _ZN5CORBA15TypeCode_memberD2Ev @27
+    _ZN5CORBA16Contained_Helper6is_nilEPNS_17_objref_ContainedE @28
+    _ZN5CORBA16Contained_Helper7releaseEPNS_17_objref_ContainedE @29
+    _ZN5CORBA19ExceptionDef_Helper6is_nilEPNS_20_objref_ExceptionDefE @30
+    _ZN5CORBA19ExceptionDef_Helper7releaseEPNS_20_objref_ExceptionDefE @31
+    _ZN5CORBA19InterfaceDef_Helper6is_nilEPNS_20_objref_InterfaceDefE @32
+    _ZN5CORBA19InterfaceDef_Helper7releaseEPNS_20_objref_InterfaceDefE @33
+    _ZN5CORBA3AnyD1Ev @34
+    _ZN5CORBA3AnyD2Ev @35
+    _ZTIN4omni11omniCodeSet4BaseE @36 DATA
+    _ZTIN4omni11omniCodeSet5NCS_CE @37 DATA
+    _ZTIN4omni11omniCodeSet5TCS_CE @38 DATA
+    _ZTIN4omni9NCS_C_GBKE @39 DATA
+    _ZTIN4omni9TCS_C_GBKE @40 DATA
+    _ZTSN4omni11omniCodeSet4BaseE @41 DATA
+    _ZTSN4omni11omniCodeSet5NCS_CE @42 DATA
+    _ZTSN4omni11omniCodeSet5TCS_CE @43 DATA
+    _ZTSN4omni9NCS_C_GBKE @44 DATA
+    _ZTSN4omni9TCS_C_GBKE @45 DATA
+    _ZTVN4omni11omniCodeSet4BaseE @46 DATA
+    _ZTVN4omni11omniCodeSet5NCS_CE @47 DATA
+    _ZTVN4omni9NCS_C_GBKE @48 DATA
+    _ZTVN4omni9TCS_C_GBKE @49 DATA
+    _omni_CS_037_should_be_linked_but_is_not_ @50 DATA
+    _omni_CS_500_should_be_linked_but_is_not_ @51 DATA
+    _omni_CS_8859_10_should_be_linked_but_is_not_ @52 DATA
+    _omni_CS_8859_11_should_be_linked_but_is_not_ @53 DATA
+    _omni_CS_8859_13_should_be_linked_but_is_not_ @54 DATA
+    _omni_CS_8859_14_should_be_linked_but_is_not_ @55 DATA
+    _omni_CS_8859_15_should_be_linked_but_is_not_ @56 DATA
+    _omni_CS_8859_16_should_be_linked_but_is_not_ @57 DATA
+    _omni_CS_8859_2_should_be_linked_but_is_not_ @58 DATA
+    _omni_CS_8859_3_should_be_linked_but_is_not_ @59 DATA
+    _omni_CS_8859_4_should_be_linked_but_is_not_ @60 DATA
+    _omni_CS_8859_5_should_be_linked_but_is_not_ @61 DATA
+    _omni_CS_8859_6_should_be_linked_but_is_not_ @62 DATA
+    _omni_CS_8859_7_should_be_linked_but_is_not_ @63 DATA
+    _omni_CS_8859_8_should_be_linked_but_is_not_ @64 DATA
+    _omni_CS_8859_9_should_be_linked_but_is_not_ @65 DATA
+    _omni_CS_CP1250_should_be_linked_but_is_not_ @66 DATA
+    _omni_CS_CP1251_should_be_linked_but_is_not_ @67 DATA
+    _omni_CS_CP1252_should_be_linked_but_is_not_ @68 DATA
+    _omni_CS_CP1253_should_be_linked_but_is_not_ @69 DATA
+    _omni_CS_CP1254_should_be_linked_but_is_not_ @70 DATA
+    _omni_CS_CP1255_should_be_linked_but_is_not_ @71 DATA
+    _omni_CS_CP1256_should_be_linked_but_is_not_ @72 DATA
+    _omni_CS_CP1257_should_be_linked_but_is_not_ @73 DATA
+    _omni_CS_CP1258_should_be_linked_but_is_not_ @74 DATA
+    _omni_CS_EDF_4_should_be_linked_but_is_not_ @75 DATA
+    _omni_CS_GBK_should_be_linked_but_is_not_ @76 DATA
+    _omni_CS_UCS_4_should_be_linked_but_is_not_ @77 DATA
+    _omni_omniCodeSets_should_be_linked_but_is_not_ @78 DATA
