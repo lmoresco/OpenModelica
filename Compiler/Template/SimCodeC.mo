@@ -24162,7 +24162,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           (i_e as DAE.LIST(ty = _)),
+           (i_e as DAE.LIST(valList = _)),
            a_context,
            a_preExp,
            a_varDecls )
@@ -24171,7 +24171,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           (i_e as DAE.CONS(ty = _)),
+           (i_e as DAE.CONS(car = _)),
            a_context,
            a_preExp,
            a_varDecls )
@@ -32734,14 +32734,14 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CONS(ty = _),
+           DAE.CONS(car = _),
            a_flag )
       equation
         txt = fun_736(txt, a_flag);
       then txt;
 
     case ( txt,
-           DAE.LIST(ty = _),
+           DAE.LIST(valList = _),
            a_flag )
       equation
         txt = fun_737(txt, a_flag);

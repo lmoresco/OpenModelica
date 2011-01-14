@@ -6955,7 +6955,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.LIST(ty = _),
+           DAE.LIST(valList = _),
            _,
            a_preExp,
            _ )
@@ -6964,7 +6964,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CONS(ty = _),
+           DAE.CONS(car = _),
            _,
            a_preExp,
            _ )
