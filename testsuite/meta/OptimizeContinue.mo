@@ -42,11 +42,11 @@ end OptimizeContinue;
 // function OptimizeContinue.f
 //   output Real r;
 // algorithm
-//   r := match (OptimizeContinue.Ut.UT1()) 
+//   r := match /* switch */ (OptimizeContinue.Ut.UT1()) 
 //     case (OptimizeContinue.Ut.UT1()) then 1.0;
 //     case (OptimizeContinue.Ut.UT2()) then 2.0;
 //     case (OptimizeContinue.Ut.UT3()) then 3.0;
-//   end match;
+//   end match /* switch */;
 //   r := match (OptimizeContinue.Ut2.UT4(#(1))) 
 //     case (OptimizeContinue.Ut2.UT4(1)) then 1.0;
 //     case (OptimizeContinue.Ut2.UT4(2)) then 2.0;
@@ -65,6 +65,7 @@ end OptimizeContinue;
 //   constant Real r = 1.0;
 // end OptimizeContinue;
 // [OptimizeContinue.mo:21:5-25:22:writable] Notification: This matchcontinue expression has no overlapping patterns and should be using match instead of matchcontinue.
+// [OptimizeContinue.mo:21:5-25:22:writable] Notification: Converted match expression to switch.
 // [OptimizeContinue.mo:26:5-29:22:writable] Notification: This matchcontinue expression has no overlapping patterns and should be using match instead of matchcontinue.
 // 
 // endResult
