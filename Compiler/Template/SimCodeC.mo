@@ -29846,11 +29846,11 @@ algorithm
            a_varDeclsInner,
            a_prefix )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_mod_integer(stringHashDjb2("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("stringHashDjb2Mod("));
         txt = Tpl.writeText(txt, a_prefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_in"));
         txt = Tpl.writeStr(txt, intString(i_switchIndex));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("),"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeStr(txt, intString(i_div));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then (txt, a_varDeclsInner);
@@ -30780,7 +30780,6 @@ algorithm
       Integer a_extraArg;
       String i_e_string;
       Integer i_index;
-      Integer ret_2;
       Integer ret_1;
       Integer ret_0;
 
@@ -30798,9 +30797,11 @@ algorithm
            a_extraArg )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
-        ret_1 = stringHashDjb2(i_e_string);
-        ret_2 = intMod(ret_1, a_extraArg);
-        txt = Tpl.writeStr(txt, intString(ret_2));
+        ret_1 = System.stringHashDjb2Mod(i_e_string, a_extraArg);
+        txt = Tpl.writeStr(txt, intString(ret_1));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* "));
+        txt = Tpl.writeStr(txt, i_e_string);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
       then txt;
 
     case ( txt,
