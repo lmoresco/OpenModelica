@@ -102,6 +102,7 @@ loadFile("../../Compiler/Util/HashTableCG.mo");
 loadFile("../../Compiler/Util/HashTable.mo");
 loadFile("../../Compiler/Util/HashTableStringToPath.mo");
 loadFile("../../Compiler/Util/HashTableExpToIndex.mo");
+loadFile("../../Compiler/Util/HashTableExpType.mo");
 loadFile("../../Compiler/Util/IOStreamExt.mo");
 loadFile("../../Compiler/Util/IOStream.mo");
 loadFile("../../Compiler/Util/OptManager.mo");
