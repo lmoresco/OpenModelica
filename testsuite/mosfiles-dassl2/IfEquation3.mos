@@ -5,6 +5,7 @@
 // teardown_command: rm -rf IfEquation3_* IfEquation3 IfEquation3.exe IfEquation3.cpp IfEquation3.makefile IfEquation3.libs IfEquation3.log output.log
 // 
 // Checks that if-equations which have another if-equation in one of the branches are transformed correctly
+// TODO: these "if equation" could rewrited better without algebraic loop
 // 
 loadFile("IfEquation3.mo");
 simulate(IfEquation3,startTime=0.0, stopTime=2.0, numberOfIntervals=8, tolerance=1e-5); 
@@ -26,12 +27,14 @@ val(y,1.75);
 // record SimulationResult
 //     resultFile = "IfEquation3_res.plt",
 //     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 8, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'IfEquation3', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
-//     messages = ""
+//     messages = "Error sovling linear system of equations (no. 98) at time 0.500000, system is singular.
+// Error sovling linear system of equations (no. 98) at time 1.500000, system is singular.
+// "
 // end SimulationResult;
 // true
 // 1.0
 // 0.0
-// -6.79036310017274e-53
+// 0.0
 // 1.0
 // 1.0
 // 2.0

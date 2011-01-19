@@ -11,7 +11,7 @@
 loadFile("Delay.mo");
 simulate(Delay, startTime=0, tolerance=1e-5, stopTime=10);
 val(x, 5);
-val(y, 5);
+val(y, 5.0001);
 val(z, 5);
 val(w, 5);
 

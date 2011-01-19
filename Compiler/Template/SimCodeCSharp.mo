@@ -3191,6 +3191,7 @@ algorithm
       DAE.Exp i_interval;
       DAE.Exp i_start;
       DAE.Operator i_operator;
+      Integer i_index;
       DAE.Exp i_exp2;
       DAE.Exp i_exp1;
       Tpl.Text l_eInterval;
@@ -3200,8 +3201,8 @@ algorithm
       Tpl.Text l_preExp;
 
     case ( txt,
-           DAE.RELATION(exp1 = i_exp1, exp2 = i_exp2, operator = i_operator),
-           a_index,
+           DAE.RELATION(exp1 = i_exp1, exp2 = i_exp2, index = i_index, operator = i_operator),
+           _,
            a_simCode )
       equation
         l_preExp = Tpl.emptyTxt;
@@ -3210,9 +3211,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("{"));
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("var _zen = zeroCrossingEnabled["));
-        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("]; //ZEROCROSSING("));
-        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = zeroCrossingOpFunc(txt, i_operator);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
@@ -3223,7 +3224,7 @@ algorithm
                                     "));\n",
                                     "gout["
                                 }, false));
-        txt = Tpl.writeStr(txt, intString(a_index));
+        txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = (_zen != 0) ? _zen * ("));
         txt = fun_97(txt, i_operator, l_e2, l_e1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(") : 1.0; }"));

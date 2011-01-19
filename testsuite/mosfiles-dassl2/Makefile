@@ -19,11 +19,13 @@ AsubCrefExpType.mos \
 BooleanArray.mos \
 BouncingBall.mos BouncingBall2.mos BouncingBallExamples.mos \
 BuiltinMath.mos \
+CheckEvents.mos \
 ComplexNumbers.mos \
 ComplexTypeEquationCount.mos \
 ConstructFunc.mos \
 Cross.mos \
 CyclicPerm.mos \
+Delay.mos \
 DAEexample.mos DAEexample2.mos \
 dertest.mos  \
 DiscreteVectorStateSpace.mos \
@@ -32,6 +34,7 @@ EnumArray.mos \
 EquationCallIntegerArray.mos \
 EqualityEquations.mos \
 EqualityEquationsCorrect.mos \
+EventIteration.mos \
 ExtendsBasic.mos  \
 ExternalLibraries.mos \
 ExtObj.mos ExtObjStringParam.mos \
@@ -83,7 +86,7 @@ StringTest.mos \
 SumSeriesWhile.mos \
 SyncFilter.mos \
 Switch.mos \
-Tank.mos TankPI.mos TankPID.mos TankHybridPID.mos TankHybridPI.mos \
+Tank.mos TankPI.mos TankPID.mos TankHybridPID.mos TankHybridPI.mos TanksConnectedPI.mos \
 tempInterpol2test.mos \
 Time.mos \
 TupleReturn.mos \
@@ -92,9 +95,9 @@ val.mos \
 VectorizeOneReturnValue.mos \
 WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos \
 WhenEquation.mos WhenEquation1.mos WhenPriority.mos \
+when_sorting.mos \
 WhenStatement1.mos WhenStatement2.mos WhenStatement3.mos whenstatements.mos \
 Xpowers1.mos Xpowers2.mos Xpowers3.mos  \
-when_sorting.mos EventIteration.mos \
  
 
 
@@ -108,7 +111,6 @@ AppendElement.mos \
 DimConvert.mos \
 Epidemics1.mos \
 ActivateWhenEquation.mos Enum8.mos  \
-Delay.mos TanksConnectedPI.mos
 
 .PHONY : test
 
