@@ -55,7 +55,7 @@ package EqPatternm
         then i;
       case 4
         equation
-          (1,r) = (1,1);
+          (1,r) = (1,1.0);
           i = realInt(r);
         then i;
       case 5
@@ -72,8 +72,7 @@ package EqPatternm
         then 1;
       case 8
         equation
-          ((3,4),(3,r)) = twoTup((3,4),(3,1));
-          i = realInt(r);
+          ((3,4),(3,i)) = twoTup((3,4),(3,1));
         then i;
       case 9
         equation
