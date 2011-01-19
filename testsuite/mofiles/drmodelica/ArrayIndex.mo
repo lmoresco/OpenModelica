@@ -19,16 +19,16 @@ end ArrayIndex;
 
 // Result:
 // class ArrayIndex
-// Real A[1,1] = 2.0;
-// Real A[1,2] = 3.0;
-// Real A[2,1] = 4.0;
-// Real A[2,2] = 5.0;
-// Real A_Retrieval = A[2,2];
-// Real B[1,1];
-// Real B[1,2];
-// Real B[2,1];
-// Real B[2,2];
-// Real c;
+//   Real A[1,1] = 2.0;
+//   Real A[1,2] = 3.0;
+//   Real A[2,1] = 4.0;
+//   Real A[2,2] = 5.0;
+//   Real A_Retrieval = A[2,2];
+//   Real B[1,1];
+//   Real B[1,2];
+//   Real B[2,1];
+//   Real B[2,2];
+//   Real c;
 // algorithm
 //   B := {{1.0,1.0},{1.0,1.0}};
 //   B[2,1] := 8.0;

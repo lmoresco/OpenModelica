@@ -17,11 +17,11 @@ end WhenValidResult;
 
 // Result:
 // class WhenValidResult
-// Real x;
-// Real y;
+//   Real x;
+//   Real y;
 // equation
 //   x + y = 5.0;
-//   when sample(0,2) then
+//   when sample(0.0,2.0) then
 //   y = 7.0;
 //   end when;
 // end WhenValidResult;

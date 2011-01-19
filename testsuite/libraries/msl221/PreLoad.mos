@@ -222,7 +222,7 @@ getErrorString();
 //   0.0 = Rod2.flange_a.f + Rod2.flange_b.f;
 //   Rod2.flange_a.s = Rod2.s - Rod2.L / 2.0;
 //   Rod2.flange_b.s = Rod2.s + Rod2.L / 2.0;
-//   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (Sine1.freqHz * (time - Sine1.startTime)) + Sine1.phase));
+//   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * sin(6.28318530717959 * (Sine1.freqHz * (time - Sine1.startTime)) + Sine1.phase));
 //   OuterContactA.flange_b.f + SpringPlateA.flange_a.f = 0.0;
 //   OuterContactA.flange_b.s = SpringPlateA.flange_a.s;
 //   SpringPlateA.flange_b.f + (Rod1.flange_a.f + Spring.flange_a.f) = 0.0;

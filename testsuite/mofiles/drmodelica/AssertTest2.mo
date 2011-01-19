@@ -19,10 +19,10 @@ end Test2;
 
 // Result:
 // class Test2
-// parameter Real assertTest.lowlimit = 6;
-// parameter Real assertTest.highlimit = 20;
-// Real assertTest.x = 5.0;
+//   parameter Real assertTest.lowlimit = 6.0;
+//   parameter Real assertTest.highlimit = 20.0;
+//   Real assertTest.x = 5.0;
 // equation
-// assert(assertTest.x >= assertTest.lowlimit AND assertTest.x <= assertTest.highlimit,"Variable x out of limit");
+//   assert(assertTest.x >= assertTest.lowlimit AND assertTest.x <= assertTest.highlimit,"Variable x out of limit");
 // end Test2;
 // endResult

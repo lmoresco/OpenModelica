@@ -17,12 +17,12 @@ end HideVariable;
 
 // Result:
 // class HideVariable
-// constant Integer k = 4;
-// Real z[1];
-// Real z[2];
-// Real z[3];
-// Real z[4];
-// Real z[5];
+//   constant Integer k = 4;
+//   Real z[1];
+//   Real z[2];
+//   Real z[3];
+//   Real z[4];
+//   Real z[5];
 // algorithm
 //   for k in 1:5 loop
 //     z[k] := Real(k);

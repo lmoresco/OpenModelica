@@ -90,7 +90,7 @@ getErrorString();
 //   input Modelica.Mechanics.MultiBody.Frames.Orientation R2 "Orientation object to rotate frame 0 into frame 2";
 //   output Real[3] residue "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)";
 // algorithm
-//   residue := {Modelica.Math.atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),Modelica.Math.atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),Modelica.Math.atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
+//   residue := {atan2((R1.T[1,2] * R1.T[2,3] - R1.T[1,3] * R1.T[2,2]) * R2.T[2,1] + (R1.T[1,3] * R1.T[2,1] - R1.T[1,1] * R1.T[2,3]) * R2.T[2,2] + (R1.T[1,1] * R1.T[2,2] - R1.T[1,2] * R1.T[2,1]) * R2.T[2,3],R1.T[1,1] * R2.T[1,1] + R1.T[1,2] * R2.T[1,2] + R1.T[1,3] * R2.T[1,3]),atan2((R1.T[1,3] * R1.T[2,2] - R1.T[1,2] * R1.T[2,3]) * R2.T[1,1] + (R1.T[1,1] * R1.T[2,3] - R1.T[1,3] * R1.T[2,1]) * R2.T[1,2] + (R1.T[1,2] * R1.T[2,1] - R1.T[1,1] * R1.T[2,2]) * R2.T[1,3],R1.T[2,1] * R2.T[2,1] + R1.T[2,2] * R2.T[2,2] + R1.T[2,3] * R2.T[2,3]),atan2(R1.T[2,1] * R2.T[1,1] + R1.T[2,2] * R2.T[1,2] + R1.T[2,3] * R2.T[1,3],R1.T[3,1] * R2.T[3,1] + R1.T[3,2] * R2.T[3,2] + R1.T[3,3] * R2.T[3,3])};
 // end Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2 "Inline before index reduction"
@@ -166,7 +166,7 @@ getErrorString();
 //   input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along 'axis' of frame 1";
 //   output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,Modelica.Math.cos(angle),Modelica.Math.sin(angle);0.0,-Modelica.Math.sin(angle),Modelica.Math.cos(angle)] else if axis == 2 then <matrix>[Modelica.Math.cos(angle),0.0,-Modelica.Math.sin(angle);0.0,1.0,0.0;Modelica.Math.sin(angle),0.0,Modelica.Math.cos(angle)] else <matrix>[Modelica.Math.cos(angle),Modelica.Math.sin(angle),0.0;-Modelica.Math.sin(angle),Modelica.Math.cos(angle),0.0;0.0,0.0,1.0];
+//   T := if axis == 1 then <matrix>[1.0,0.0,0.0;0.0,cos(angle),sin(angle);0.0,-sin(angle),cos(angle)] else if axis == 2 then <matrix>[cos(angle),0.0,-sin(angle);0.0,1.0,0.0;sin(angle),0.0,cos(angle)] else <matrix>[cos(angle),sin(angle),0.0;-sin(angle),cos(angle),0.0;0.0,0.0,1.0];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.from_nxy
@@ -188,7 +188,7 @@ getErrorString();
 //   input Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along axis e";
 //   output Real[3, 3] T "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   T := <matrix>[e[1] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + Modelica.Math.cos(angle) * -e[1] * e[2]) - -Modelica.Math.sin(angle) * e[3],(e[1] * e[3] + Modelica.Math.cos(angle) * -e[1] * e[3]) - Modelica.Math.sin(angle) * e[2];(e[2] * e[1] + Modelica.Math.cos(angle) * -e[2] * e[1]) - Modelica.Math.sin(angle) * e[3],e[2] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + Modelica.Math.cos(angle) * -e[2] * e[3]) - -Modelica.Math.sin(angle) * e[1];(e[3] * e[1] + Modelica.Math.cos(angle) * -e[3] * e[1]) - -Modelica.Math.sin(angle) * e[2],(e[3] * e[2] + Modelica.Math.cos(angle) * -e[3] * e[2]) - Modelica.Math.sin(angle) * e[1],e[3] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[3] ^ 2.0)];
+//   T := <matrix>[e[1] ^ 2.0 + cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + cos(angle) * -e[1] * e[2]) - -sin(angle) * e[3],(e[1] * e[3] + cos(angle) * -e[1] * e[3]) - sin(angle) * e[2];(e[2] * e[1] + cos(angle) * -e[2] * e[1]) - sin(angle) * e[3],e[2] ^ 2.0 + cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + cos(angle) * -e[2] * e[3]) - -sin(angle) * e[1];(e[3] * e[1] + cos(angle) * -e[3] * e[1]) - -sin(angle) * e[2],(e[3] * e[2] + cos(angle) * -e[3] * e[2]) - sin(angle) * e[1],e[3] ^ 2.0 + cos(angle) * (1.0 - e[3] ^ 2.0)];
 // end Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.resolve1 "Inline before index reduction"
@@ -263,8 +263,8 @@ getErrorString();
 //   if abs(A) <= 1e-12 AND abs(B) <= 1e-12 then
 //     angles[1] := guessAngle1;
 //   else
-//     angle_1a := Modelica.Math.atan2(A,-B);
-//     angle_1b := Modelica.Math.atan2(-A,B);
+//     angle_1a := atan2(A,-B);
+//     angle_1b := atan2(-A,B);
 //     angles[1] := if abs(angle_1a - guessAngle1) <= abs(angle_1b - guessAngle1) then angle_1a else angle_1b;
 //   end if;
 //   T_1a := Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.planarRotation({e1_1[1],e1_1[2],e1_1[3]},angles[1]);
@@ -299,7 +299,7 @@ getErrorString();
 //   input Real der_angle(quantity = "AngularVelocity", unit = "rad/s") "= der(angle)";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R "Orientation object to rotate frame 1 into frame 2";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[e[1] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + Modelica.Math.cos(angle) * -e[1] * e[2]) - -Modelica.Math.sin(angle) * e[3],(e[1] * e[3] + Modelica.Math.cos(angle) * -e[1] * e[3]) - Modelica.Math.sin(angle) * e[2];(e[2] * e[1] + Modelica.Math.cos(angle) * -e[2] * e[1]) - Modelica.Math.sin(angle) * e[3],e[2] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + Modelica.Math.cos(angle) * -e[2] * e[3]) - -Modelica.Math.sin(angle) * e[1];(e[3] * e[1] + Modelica.Math.cos(angle) * -e[3] * e[1]) - -Modelica.Math.sin(angle) * e[2],(e[3] * e[2] + Modelica.Math.cos(angle) * -e[3] * e[2]) - Modelica.Math.sin(angle) * e[1],e[3] ^ 2.0 + Modelica.Math.cos(angle) * (1.0 - e[3] ^ 2.0)],{der_angle * e[1],der_angle * e[2],der_angle * e[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[e[1] ^ 2.0 + cos(angle) * (1.0 - e[1] ^ 2.0),(e[1] * e[2] + cos(angle) * -e[1] * e[2]) - -sin(angle) * e[3],(e[1] * e[3] + cos(angle) * -e[1] * e[3]) - sin(angle) * e[2];(e[2] * e[1] + cos(angle) * -e[2] * e[1]) - sin(angle) * e[3],e[2] ^ 2.0 + cos(angle) * (1.0 - e[2] ^ 2.0),(e[2] * e[3] + cos(angle) * -e[2] * e[3]) - -sin(angle) * e[1];(e[3] * e[1] + cos(angle) * -e[3] * e[1]) - -sin(angle) * e[2],(e[3] * e[2] + cos(angle) * -e[3] * e[2]) - sin(angle) * e[1],e[3] ^ 2.0 + cos(angle) * (1.0 - e[3] ^ 2.0)],{der_angle * e[1],der_angle * e[2],der_angle * e[3]});
 // end Modelica.Mechanics.MultiBody.Frames.planarRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.planarRotationAngle "Inline before index reduction"
@@ -308,7 +308,7 @@ getErrorString();
 //   input Real[3] v2 "Vector v resolved in frame 2, i.e., v2 = resolve2(planarRotation(e,angle),v1)";
 //   output Real angle(quantity = "Angle", unit = "rad", displayUnit = "deg") "Rotation angle to rotate frame 1 into frame 2 along axis e in the range: -pi <= angle <= pi";
 // algorithm
-//   angle := Modelica.Math.atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],(v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3]) - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
+//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],(v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3]) - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
 // end Modelica.Mechanics.MultiBody.Frames.planarRotationAngle;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.resolve1 "Inline after index reduction"
@@ -4316,8 +4316,8 @@ getErrorString();
 //   0.0 = fixedTranslation.frame_a.t[1] + (fixedTranslation.frame_b.t[1] + (fixedTranslation.r[2] * fixedTranslation.frame_b.f[3] + (-fixedTranslation.r[3] * fixedTranslation.frame_b.f[2])));
 //   0.0 = fixedTranslation.frame_a.t[2] + (fixedTranslation.frame_b.t[2] + (fixedTranslation.r[3] * fixedTranslation.frame_b.f[1] + (-fixedTranslation.r[1] * fixedTranslation.frame_b.f[3])));
 //   0.0 = fixedTranslation.frame_a.t[3] + (fixedTranslation.frame_b.t[3] + (fixedTranslation.r[1] * fixedTranslation.frame_b.f[2] + (-fixedTranslation.r[2] * fixedTranslation.frame_b.f[1])));
-//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
-//   sine2.y = sine2.offset + (if time < sine2.startTime then 0.0 else sine2.amplitude * Modelica.Math.sin(6.28318530717959 * (sine2.freqHz * (time - sine2.startTime)) + sine2.phase));
+//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
+//   sine2.y = sine2.offset + (if time < sine2.startTime then 0.0 else sine2.amplitude * sin(6.28318530717959 * (sine2.freqHz * (time - sine2.startTime)) + sine2.phase));
 //   torque1.flange_a.tau = torque1.tau;
 //   torque1.flange_b.tau = -torque1.tau;
 //   torque2.flange_a.tau = torque2.tau;

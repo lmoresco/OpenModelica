@@ -2015,7 +2015,7 @@ getErrorString();
 //   V0.B2.BondCon2.f = V0.B2.BondCon1.f;
 //   V0.B2.BondCon1.d = -1.0;
 //   V0.B2.BondCon2.d = 1.0;
-//   V0.V1.Sine1.y = V0.V1.Sine1.offset + (if time < V0.V1.Sine1.startTime then 0.0 else V0.V1.Sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (V0.V1.Sine1.freqHz * (time - V0.V1.Sine1.startTime)) + V0.V1.Sine1.phase));
+//   V0.V1.Sine1.y = V0.V1.Sine1.offset + (if time < V0.V1.Sine1.startTime then 0.0 else V0.V1.Sine1.amplitude * sin(6.28318530717959 * (V0.V1.Sine1.freqHz * (time - V0.V1.Sine1.startTime)) + V0.V1.Sine1.phase));
 //   V0.V1.e = V0.V1.Sine1.y;
 //   V0.V1.e = V0.V1.BondCon1.e;
 //   V0.V1.f = (-V0.V1.BondCon1.d) * V0.V1.BondCon1.f;

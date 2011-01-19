@@ -15,11 +15,11 @@ end FiveForEquations;
 
 // Result:
 // class FiveForEquations
-// Real x[1];
-// Real x[2];
-// Real x[3];
-// Real x[4];
-// Real x[5];
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
+//   Real x[4];
+//   Real x[5];
 // equation
 //   x[1] = 2.0;
 //   x[2] = 3.0;

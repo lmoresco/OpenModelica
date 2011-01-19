@@ -1115,7 +1115,7 @@ end BM25;
 //   output Real constant1.y[1];
 //   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
-//   tan1.y[1] = Modelica.Math.tan(tan1.u[1]);
+//   tan1.y[1] = tan(tan1.u[1]);
 //   tan1.y[1] = tan1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

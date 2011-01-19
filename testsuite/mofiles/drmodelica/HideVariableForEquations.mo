@@ -16,12 +16,12 @@ end HideVariableForEquations;
 
 // Result:
 // class HideVariableForEquations
-// constant Integer k = 4;
-// Real x[1];
-// Real x[2];
-// Real x[3];
-// Real x[4];
-// Real x[5];
+//   constant Integer k = 4;
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
+//   Real x[4];
+//   Real x[5];
 // equation
 //   x[1] = 1.0;
 //   x[2] = 2.0;

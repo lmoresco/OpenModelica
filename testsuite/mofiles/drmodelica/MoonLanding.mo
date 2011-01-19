@@ -48,22 +48,22 @@ end MoonLanding;
 
 // Result:
 // class MoonLanding
-// parameter Real force1 = 36350.0;
-// parameter Real force2 = 1308.0;
-// parameter Real thrustEndTime = 210.0;
-// parameter Real thrustDecreaseTime = 43.2;
-// Real apollo.mass(start = 1038.358);
-// String apollo.name = "Apollo13";
-// Real apollo.altitude(start = 59404.0);
-// Real apollo.velocity(start = -2003.0);
-// Real apollo.acceleration;
-// Real apollo.thrust;
-// Real apollo.gravity;
-// parameter Real apollo.massLossRate = 0.000277;
-// Real moon.mass = 7.382e+22;
-// String moon.name = "moon";
-// constant Real moon.g = 6.672e-11;
-// parameter Real moon.radius = 1738000.0;
+//   parameter Real force1 = 36350.0;
+//   parameter Real force2 = 1308.0;
+//   parameter Real thrustEndTime = 210.0;
+//   parameter Real thrustDecreaseTime = 43.2;
+//   Real apollo.mass(start = 1038.358);
+//   String apollo.name = "Apollo13";
+//   Real apollo.altitude(start = 59404.0);
+//   Real apollo.velocity(start = -2003.0);
+//   Real apollo.acceleration;
+//   Real apollo.thrust;
+//   Real apollo.gravity;
+//   parameter Real apollo.massLossRate = 0.000277;
+//   Real moon.mass = 7.382e+22;
+//   String moon.name = "moon";
+//   constant Real moon.g = 6.672e-11;
+//   parameter Real moon.radius = 1738000.0;
 // equation
 //   (apollo.thrust - apollo.mass * apollo.gravity) / apollo.mass = apollo.acceleration;
 //   der(apollo.mass) = (-apollo.massLossRate) * abs(apollo.thrust);

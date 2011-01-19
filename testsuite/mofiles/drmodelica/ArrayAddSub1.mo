@@ -13,12 +13,12 @@ end AddSub1;
 
 // Result:
 // class AddSub1
-// Real Add3[1,1] = 2.0;
-// Real Add3[1,2] = 3.0;
-// Real Add3[2,1] = 5.0;
-// Real Add3[2,2] = 6.0;
-// Real Sub1[1] = 0.0;
-// Real Sub1[2] = 0.0;
-// Real Sub1[3] = 3.0;
+//   Real Add3[1,1] = 2.0;
+//   Real Add3[1,2] = 3.0;
+//   Real Add3[2,1] = 5.0;
+//   Real Add3[2,2] = 6.0;
+//   Real Sub1[1] = 0.0;
+//   Real Sub1[2] = 0.0;
+//   Real Sub1[3] = 3.0;
 // end AddSub1;
 // endResult

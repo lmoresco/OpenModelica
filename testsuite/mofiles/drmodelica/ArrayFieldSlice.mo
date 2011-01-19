@@ -45,10 +45,10 @@ end getPerson;
 
 // Result:
 // function mkperson
-// input String name;
-// input Integer age;
-// input String[2] children;
-// output Person p;
+//   input String name;
+//   input Integer age;
+//   input String[2] children;
+//   output Person p;
 // algorithm
 //   p.name := name;
 //   p.age := age;
@@ -56,30 +56,30 @@ end getPerson;
 // end mkperson;
 // 
 // class getPerson
-// String pList.persons[1].name = "John";
-// Integer pList.persons[1].age = 35;
-// String pList.persons[1].children[1] = "Carl";
-// String pList.persons[1].children[2] = "Eva";
-// String pList.persons[2].name = "Karin";
-// Integer pList.persons[2].age = 40;
-// String pList.persons[2].children[1] = "Anders";
-// String pList.persons[2].children[2] = "Dan";
-// String pList.persons[3].name = "Lisa";
-// Integer pList.persons[3].age = 37;
-// String pList.persons[3].children[1] = "John";
-// String pList.persons[3].children[2] = "Daniel";
-// String name[1];
-// String name[2];
-// String name[3];
-// Integer age[1];
-// Integer age[2];
-// Integer age[3];
-// String children[1,1];
-// String children[1,2];
-// String children[2,1];
-// String children[2,2];
-// String children[3,1];
-// String children[3,2];
+//   String pList.persons[1].name = "John";
+//   Integer pList.persons[1].age = 35;
+//   String pList.persons[1].children[1] = "Carl";
+//   String pList.persons[1].children[2] = "Eva";
+//   String pList.persons[2].name = "Karin";
+//   Integer pList.persons[2].age = 40;
+//   String pList.persons[2].children[1] = "Anders";
+//   String pList.persons[2].children[2] = "Dan";
+//   String pList.persons[3].name = "Lisa";
+//   Integer pList.persons[3].age = 37;
+//   String pList.persons[3].children[1] = "John";
+//   String pList.persons[3].children[2] = "Daniel";
+//   String name[1];
+//   String name[2];
+//   String name[3];
+//   Integer age[1];
+//   Integer age[2];
+//   Integer age[3];
+//   String children[1,1];
+//   String children[1,2];
+//   String children[2,1];
+//   String children[2,2];
+//   String children[3,1];
+//   String children[3,2];
 // equation
 //   name[1] = pList.persons[1].name;
 //   name[2] = pList.persons[2].name;

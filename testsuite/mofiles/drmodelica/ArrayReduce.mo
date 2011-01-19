@@ -15,10 +15,10 @@ end ArrayReduce;
 
 // Result:
 // class ArrayReduce
-// Real minimum;
-// Real maximum;
-// Real summ;
-// Real prod;
+//   Real minimum;
+//   Real maximum;
+//   Real summ;
+//   Real prod;
 // equation
 //   minimum = -1.0;
 //   maximum = 6.0;

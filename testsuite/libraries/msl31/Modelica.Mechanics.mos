@@ -340,7 +340,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   stop1.flange_b.s = stop1.s + stop1.L / 2.0;
 //   force.flange.f = -force.f;
 //   force.s_support = 0.0;
-//   sineForce.y = sineForce.offset + (if time < sineForce.startTime then 0.0 else sineForce.amplitude * Modelica.Math.sin(6.28318530717959 * (sineForce.freqHz * (time - sineForce.startTime)) + sineForce.phase));
+//   sineForce.y = sineForce.offset + (if time < sineForce.startTime then 0.0 else sineForce.amplitude * sin(6.28318530717959 * (sineForce.freqHz * (time - sineForce.startTime)) + sineForce.phase));
 //   stop2.f0 = stop2.F_Coulomb + stop2.F_Stribeck;
 //   stop2.f0_max = 1.001 * stop2.f0;
 //   stop2.free = stop2.f0 <= 0.0 AND stop2.F_prop <= 0.0 AND stop2.s > stop2.smin + stop2.L / 2.0 AND stop2.s < stop2.smax - stop2.L / 2.0;

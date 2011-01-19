@@ -32,10 +32,10 @@ end WhenStat3;
 
 // Result:
 // class WhenStat3
-// Real x(start = 1.0);
-// Real y1;
-// Real y2;
-// Real y3;
+//   Real x(start = 1.0);
+//   Real y1;
+//   Real y2;
+//   Real y3;
 // equation
 //   der(x) = 2.0 * x;
 //   y2 = sin(y1);

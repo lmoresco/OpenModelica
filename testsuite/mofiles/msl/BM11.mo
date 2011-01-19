@@ -1113,7 +1113,7 @@ end BM11;
 //   output Real constant1.y[1];
 //   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
-//   exp1.y[1] = Modelica.Math.exp(exp1.u[1]);
+//   exp1.y[1] = exp(exp1.u[1]);
 //   exp1.y[1] = exp1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

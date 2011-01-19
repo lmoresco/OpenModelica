@@ -704,7 +704,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   0.0 = resistor2.p.i + resistor2.n.i;
 //   resistor2.v = resistor2.p.v - resistor2.n.v;
 //   resistor2.T_heatPort = resistor2.T;
-//   sineVoltage.signalSource.y = sineVoltage.signalSource.offset + (if time < sineVoltage.signalSource.startTime then 0.0 else sineVoltage.signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (sineVoltage.signalSource.freqHz * (time - sineVoltage.signalSource.startTime)) + sineVoltage.signalSource.phase));
+//   sineVoltage.signalSource.y = sineVoltage.signalSource.offset + (if time < sineVoltage.signalSource.startTime then 0.0 else sineVoltage.signalSource.amplitude * sin(6.28318530717959 * (sineVoltage.signalSource.freqHz * (time - sineVoltage.signalSource.startTime)) + sineVoltage.signalSource.phase));
 //   sineVoltage.v = sineVoltage.signalSource.y;
 //   sineVoltage.v = sineVoltage.p.v - sineVoltage.n.v;
 //   0.0 = sineVoltage.p.i + sineVoltage.n.i;
@@ -846,7 +846,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
 //   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency of sine wave";
 // equation
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -906,7 +906,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
 //   parameter Real damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) "Damping coefficient of sine wave";
 // equation
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (Modelica.Math.exp((signalSource.startTime - time) * signalSource.damping) * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (exp((signalSource.startTime - time) * signalSource.damping) * sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -952,8 +952,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real riseTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = 0.1) "Rise time constant";
 //   parameter Real fallTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = riseTimeConst) "Fall time constant";
 // equation
-//   signalSource.y_riseTime = signalSource.outMax * (1.0 - Modelica.Math.exp((-signalSource.riseTime) / signalSource.riseTimeConst));
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - Modelica.Math.exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * Modelica.Math.exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1300,7 +1300,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
 //   parameter Real freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) "Frequency of sine wave";
 // equation
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1360,7 +1360,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
 //   parameter Real damping(quantity = "DampingCoefficient", unit = "s-1", start = 1.0) "Damping coefficient of sine wave";
 // equation
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (Modelica.Math.exp((signalSource.startTime - time) * signalSource.damping) * Modelica.Math.sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else signalSource.amplitude * (exp((signalSource.startTime - time) * signalSource.damping) * sin(6.28318530717959 * (signalSource.freqHz * (time - signalSource.startTime)) + signalSource.phase)));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1406,8 +1406,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real riseTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = 0.1) "Rise time constant";
 //   parameter Real fallTimeConst(quantity = "Time", unit = "s", min = 1e-60, start = riseTimeConst) "Fall time constant";
 // equation
-//   signalSource.y_riseTime = signalSource.outMax * (1.0 - Modelica.Math.exp((-signalSource.riseTime) / signalSource.riseTimeConst));
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - Modelica.Math.exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * Modelica.Math.exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;

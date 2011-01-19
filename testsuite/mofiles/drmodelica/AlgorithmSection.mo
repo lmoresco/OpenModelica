@@ -23,14 +23,14 @@ end AlgorithmSection;
 
 // Result:
 // class AlgorithmSection
-// Real x;
-// Real z;
-// Real u;
-// parameter Real w = 3.0;
-// parameter Real y = 2.0;
-// Real x1;
-// Real x2;
-// Real x3;
+//   Real x;
+//   Real z;
+//   Real u;
+//   parameter Real w = 3.0;
+//   parameter Real y = 2.0;
+//   Real x1;
+//   Real x2;
+//   Real x3;
 // equation
 //   u = x1 + x2;
 //   x = 2.0 * y;

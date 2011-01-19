@@ -141,7 +141,7 @@ getErrorString();
 //   inertia3.J * inertia3.a = inertia3.flange_a.tau + inertia3.flange_b.tau;
 //   inertia3.flange_a.phi = inertia3.phi;
 //   inertia3.flange_b.phi = inertia3.phi;
-//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   damper.w_rel = der(damper.phi_rel);
 //   damper.tau = damper.d * damper.w_rel;
 //   damper.phi_rel = damper.flange_b.phi - damper.flange_a.phi;

@@ -233,7 +233,7 @@ getErrorString();
 //   H_NMOS.S.i = if H_NMOS.D.v < H_NMOS.S.v then H_NMOS.id else -H_NMOS.id;
 //   H_NMOS.B.i = 0.0;
 //   H_NMOS.heatPort.Q_flow = (-H_NMOS.D.i) * (H_NMOS.D.v - H_NMOS.S.v);
-//   Sin.signalSource.y = Sin.signalSource.offset + (if time < Sin.signalSource.startTime then 0.0 else Sin.signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (Sin.signalSource.freqHz * (time - Sin.signalSource.startTime)) + Sin.signalSource.phase));
+//   Sin.signalSource.y = Sin.signalSource.offset + (if time < Sin.signalSource.startTime then 0.0 else Sin.signalSource.amplitude * sin(6.28318530717959 * (Sin.signalSource.freqHz * (time - Sin.signalSource.startTime)) + Sin.signalSource.phase));
 //   Sin.v = Sin.signalSource.y;
 //   Sin.v = Sin.p.v - Sin.n.v;
 //   0.0 = Sin.p.i + Sin.n.i;

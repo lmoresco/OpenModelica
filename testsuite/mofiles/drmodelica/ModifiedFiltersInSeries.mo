@@ -28,12 +28,12 @@ end ModifiedFiltersInSeries;
 
 // Result:
 // class ModifiedFiltersInSeries
-// parameter Real F12.F1.T = 6.0;
-// Real F12.F1.u;
-// Real F12.F1.y(start = 1.0);
-// parameter Real F12.F2.T = 11.0;
-// Real F12.F2.u;
-// Real F12.F2.y(start = 1.0);
+//   parameter Real F12.F1.T = 6.0;
+//   Real F12.F1.u;
+//   Real F12.F1.y(start = 1.0);
+//   parameter Real F12.F2.T = 11.0;
+//   Real F12.F2.u;
+//   Real F12.F2.y(start = 1.0);
 // equation
 //   F12.F1.T * der(F12.F1.y) + F12.F1.y = F12.F1.u;
 //   F12.F2.T * der(F12.F2.y) + F12.F2.y = F12.F2.u;

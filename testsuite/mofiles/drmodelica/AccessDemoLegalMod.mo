@@ -30,16 +30,16 @@ end B;
 
 // Result:
 // class B
-// parameter Real a = 2.0;
-// Real x;
-// Real z;
-// parameter Real y;
-// protected parameter Real w;
-// protected parameter Real u;
-// protected Real u2;
-// Real u3;
-// Real p;
-// Real q;
+//   parameter Real a = 2.0;
+//   Real x;
+//   Real z;
+//   parameter Real y;
+//   protected parameter Real w;
+//   protected parameter Real u;
+//   protected Real u2;
+//   Real u3;
+//   Real p;
+//   Real q;
 // equation
 //   u2 = p;
 //   u3 = q;

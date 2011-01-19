@@ -217,7 +217,7 @@ getErrorString();
 //   torque1.bearing.phi = 0.0;
 //   torque2.flange_b.tau = -torque2.tau;
 //   torque2.bearing.phi = 0.0;
-//   DriveSine.y = DriveSine.offset + (if time < DriveSine.startTime then 0.0 else DriveSine.amplitude * Modelica.Math.sin(6.28318530717959 * (DriveSine.freqHz * (time - DriveSine.startTime)) + DriveSine.phase));
+//   DriveSine.y = DriveSine.offset + (if time < DriveSine.startTime then 0.0 else DriveSine.amplitude * sin(6.28318530717959 * (DriveSine.freqHz * (time - DriveSine.startTime)) + DriveSine.phase));
 //   load.y = load.offset + (if time < load.startTime then 0.0 else if time < load.startTime + load.duration then ((time - load.startTime) * load.height) / load.duration else load.height);
 //   PowerLoss = gear.flange_a.tau * der(gear.flange_a.phi) + gear.flange_b.tau * der(gear.flange_b.phi);
 //   Inertia1.flange_b.tau + gear.flange_a.tau = 0.0;

@@ -294,7 +294,7 @@ getErrorString();
 //   IdealPump1.flowPort_a.H_flow + (IdealPump1.flowPort_b.H_flow + IdealPump1.Q_flow) = 0.0;
 //   IdealPump1.flowPort_a.H_flow = semiLinear(IdealPump1.flowPort_a.m_flow,IdealPump1.flowPort_a.h,IdealPump1.h);
 //   IdealPump1.flowPort_b.H_flow = semiLinear(IdealPump1.flowPort_b.m_flow,IdealPump1.flowPort_b.h,IdealPump1.h);
-//   Valve1.Kv / Valve1.Kv1 = if Valve1.LinearCharacteristic then Valve1.kv0 + (1.0 - Valve1.kv0) * Valve1.yLim / Valve1.y1 else Valve1.kv0 * exp((Modelica.Math.log(1.0 / Valve1.kv0) * Valve1.yLim) / Valve1.y1);
+//   Valve1.Kv / Valve1.Kv1 = if Valve1.LinearCharacteristic then Valve1.kv0 + (1.0 - Valve1.kv0) * Valve1.yLim / Valve1.y1 else Valve1.kv0 * exp((log(1.0 / Valve1.kv0) * Valve1.yLim) / Valve1.y1);
 //   Valve1.dp / Valve1.dp0 = Valve1.medium.rho * (Valve1.V_flow * (abs(Valve1.V_flow / Valve1.Kv) * 1.0 / Valve1.rho0 / Valve1.Kv));
 //   Valve1.Q_flow = Valve1.frictionLoss * (Valve1.V_flow * Valve1.dp);
 //   Valve1.flowPort_a.m_flow + Valve1.flowPort_b.m_flow = 0.0;

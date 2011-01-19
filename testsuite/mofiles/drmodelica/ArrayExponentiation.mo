@@ -19,14 +19,14 @@ end Exp;
 
 // Result:
 // class Exp
-// Real e1[1,1];
-// Real e1[1,2];
-// Real e1[2,1];
-// Real e1[2,2];
-// Real e2[1,1];
-// Real e2[1,2];
-// Real e2[2,1];
-// Real e2[2,2];
+//   Real e1[1,1];
+//   Real e1[1,2];
+//   Real e1[2,1];
+//   Real e1[2,2];
+//   Real e2[1,1];
+//   Real e2[1,2];
+//   Real e2[2,1];
+//   Real e2[2,2];
 // equation
 //   e1[1,1] = 1.0;
 //   e1[1,2] = 0.0;

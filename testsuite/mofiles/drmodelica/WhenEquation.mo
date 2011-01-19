@@ -18,10 +18,10 @@ end WhenEquation;
 
 // Result:
 // class WhenEquation
-// Real x(start = 1.0);
-// discrete Real y1;
-// parameter Real y2 = 3.0;
-// discrete Real y3;
+//   Real x(start = 1.0);
+//   discrete Real y1;
+//   parameter Real y2 = 3.0;
+//   discrete Real y3;
 // equation
 //   x = time - y2;
 //   when x > 2.0 then

@@ -21,7 +21,7 @@ end DoubleWhenSequential;
 
 // Result:
 // class DoubleWhenSequential
-// Boolean close;
+//   Boolean close;
 // algorithm
 //   when time <= 2.0 then
 //     close := true;

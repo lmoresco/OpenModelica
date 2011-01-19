@@ -27,9 +27,9 @@ end CondAssignFuncCall;
 
 // Result:
 // function CondAssignFunc
-// input Real z;
-// output Real x = 35.0;
-// output Real y = 45.0;
+//   input Real z;
+//   output Real x = 35.0;
+//   output Real y = 45.0;
 // algorithm
 //   if x > 5.0 then
 //     x := 400.0;
@@ -40,8 +40,8 @@ end CondAssignFuncCall;
 // end CondAssignFunc;
 // 
 // class CondAssignFuncCall
-// Real a;
-// Real b;
+//   Real a;
+//   Real b;
 // equation
 //   (a,b) = (400.0,45.0);
 // end CondAssignFuncCall;

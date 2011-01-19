@@ -32,14 +32,14 @@ end myTanCall;
 
 // Result:
 // function myTan
-// input Real x;
-// output Real result;
+//   input Real x;
+//   output Real result;
 // algorithm
 //   result := sin(x) / cos(x);
 // end myTan;
 // 
 // class myTanCall
-// Real t;
+//   Real t;
 // equation
 //   t = 1.5574077246549;
 // end myTanCall;

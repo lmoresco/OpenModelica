@@ -15,9 +15,9 @@ end HelloWorld;
 
 // Result:
 // class HelloWorld
-// Real x(start = 1.0);
-// parameter Real a = 1;
+//   Real x(start = 1.0);
+//   parameter Real a = 1.0;
 // equation
-//    der(x) = (-a) * x;
+//   der(x) = (-a) * x;
 // end HelloWorld;
 // endResult

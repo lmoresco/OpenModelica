@@ -1114,7 +1114,7 @@ end BM26;
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];
-//   tanh1.y[1] = Modelica.Math.tanh(tanh1.u[1]);
+//   tanh1.y[1] = tanh(tanh1.u[1]);
 //   tanh1.y[1] = tanh1.outPort.signal[1];
 //   assert(tanh1.inPort.n == constant1.outPort.n,"automatically generated from connect");
 //   constant1.outPort.signal[1] = tanh1.inPort.signal[1];

@@ -54,39 +54,39 @@ end FuncDer;
 //
 // Result:
 // function h0
-// input Integer i1;
-// input Real x;
-// input Boolean linear;
-// output Real y;
+//   input Integer i1;
+//   input Real x;
+//   input Boolean linear;
+//   output Real y;
 // algorithm
 //   y := exp(x) + /*REAL*/(i1);
 // end h0;
 // 
 // function h1
-// input Integer i1;
-// input Real x;
-// input Boolean linear;
-// input Real der_x;
-// output Real der_y;
+//   input Integer i1;
+//   input Real x;
+//   input Boolean linear;
+//   input Real der_x;
+//   output Real der_y;
 // algorithm
 //   der_y := exp(x) * der_x;
 // end h1;
 // 
 // function h2
-// input Integer i1;
-// input Real x;
-// input Boolean linear;
-// input Real der_x;
-// input Real der_2_x;
-// output Real der_2_y;
+//   input Integer i1;
+//   input Real x;
+//   input Boolean linear;
+//   input Real der_x;
+//   input Real der_2_x;
+//   output Real der_2_y;
 // algorithm
 //   der_2_y := exp(x) * der_x ^ 2.0 + exp(x) * der_2_x;
 // end h2;
 // 
 // class FuncDer
-// Real fn0;
-// Real fn1;
-// Real fn2;
+//   Real fn0;
+//   Real fn1;
+//   Real fn2;
 // algorithm
 //   fn0 := 150.413159102577;
 //   fn1 := h1(2,5.0,true,fn0);

@@ -1120,7 +1120,7 @@ end BM15;
 //   output Real constant1.y[1];
 //   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
-//   log101.y[1] = Modelica.Math.log10(log101.u[1]);
+//   log101.y[1] = log10(log101.u[1]);
 //   log101.y[1] = log101.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

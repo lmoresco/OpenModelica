@@ -4112,7 +4112,7 @@ end Gear;
 //   inertia2.flange_b.phi = inertia2.phi;
 //   torque1.flange_b.tau = -torque1.tau;
 //   torque1.bearing.phi = 0.0;
-//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
+//   sine1.y = sine1.offset + (if time < sine1.startTime then 0.0 else sine1.amplitude * sin(6.28318530717959 * (sine1.freqHz * (time - sine1.startTime)) + sine1.phase));
 //   gear1.adapter.flange_a.phi = gear1.adapter.flange_b.phi;
 //   0.0 = gear1.adapter.flange_a.phi;
 //   gear1.gearRatio.phi_a = gear1.gearRatio.ratio * gear1.gearRatio.phi_b;

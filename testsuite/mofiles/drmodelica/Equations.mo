@@ -15,8 +15,8 @@ end Equations;
 
 // Result:
 // class Equations
-// Real x(start = 2.0);
-// constant Integer one = 1;
+//   Real x(start = 2.0);
+//   constant Integer one = 1;
 // equation
 //   x = 3.0;
 // end Equations;

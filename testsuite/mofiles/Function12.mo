@@ -33,19 +33,13 @@ equation
   end when;
 end BaseSampler;
 // Result:
-// function BaseSampler.f
-// input Real u1;
-// input Real u2;
-// output Real y;
-// end BaseSampler.f;
-// 
 // class BaseSampler
-// input Real u;
-// Boolean doSample;
-// protected discrete Real x;
+//   input Real u;
+//   Boolean doSample;
+//   protected discrete Real x;
 // equation
 //   when doSample then
-//   x = BaseSampler.f(pre(x),u);
+//   x = atan2(pre(x),u);
 //   end when;
 // end BaseSampler;
 // endResult

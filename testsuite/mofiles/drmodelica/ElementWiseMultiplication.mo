@@ -21,19 +21,19 @@ end ElementWiseMultiplication;
 
 // Result:
 // function ewm
-// input Real[3] positionvector;
-// output Real[3] result;
+//   input Real[3] positionvector;
+//   output Real[3] result;
 // algorithm
 //   result := {2.0 * positionvector[1],2.0 * positionvector[2],2.0 * positionvector[3]};
 // end ewm;
 // 
 // class ElementWiseMultiplication
-// Real inVector[1] = 3.0;
-// Real inVector[2] = 6.0;
-// Real inVector[3] = 1.0;
-// Real result[1];
-// Real result[2];
-// Real result[3];
+//   Real inVector[1] = 3.0;
+//   Real inVector[2] = 6.0;
+//   Real inVector[3] = 1.0;
+//   Real result[1];
+//   Real result[2];
+//   Real result[3];
 // equation
 //   result = ewm({inVector[1],inVector[2],inVector[3]});
 // end ElementWiseMultiplication;

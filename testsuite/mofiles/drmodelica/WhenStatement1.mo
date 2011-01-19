@@ -22,10 +22,10 @@ end WhenStat;
 
 // Result:
 // class WhenStat
-// Real x(start = 1.0);
-// Real y1;
-// parameter Real y2 = 5.0;
-// Real y3;
+//   Real x(start = 1.0);
+//   Real y1;
+//   parameter Real y2 = 5.0;
+//   Real y3;
 // equation
 //   der(x) = 2.0 * x;
 // algorithm

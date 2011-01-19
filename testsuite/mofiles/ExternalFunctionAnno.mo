@@ -115,7 +115,7 @@ end extfunction;
 //   y1 = f1(t);
 //   y2 = der(y1);
 //   der(x) = y1 + y2;
-//   z[1] = FooFunctions.foo0(exp(time));
+//   z[1] = sin(exp(time));
 //   der(z[1]) = z[2];
 //   der(z[2]) = z[3];
 //   z[3] = u[3];

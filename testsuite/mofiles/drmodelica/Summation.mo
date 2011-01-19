@@ -23,13 +23,13 @@ end Summation;
 
 // Result:
 // class Summation
-// Real sum;
-// Integer n;
-// Real a[1] = 1.0;
-// Real a[2] = 3.0;
-// Real a[3] = 6.0;
-// Real a[4] = 9.0;
-// Real a[5] = 12.0;
+//   Real sum;
+//   Integer n;
+//   Real a[1] = 1.0;
+//   Real a[2] = 3.0;
+//   Real a[3] = 6.0;
+//   Real a[4] = 9.0;
+//   Real a[5] = 12.0;
 // algorithm
 //   sum := 0.0;
 //   n := 5;

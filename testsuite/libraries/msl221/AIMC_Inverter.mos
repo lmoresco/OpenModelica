@@ -504,7 +504,7 @@ getErrorString();
 //   CurrentRMSsensor1.ToSpacePhasor1.y[1] = CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[1,1] * CurrentRMSsensor1.ToSpacePhasor1.u[1] + (CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[1,2] * CurrentRMSsensor1.ToSpacePhasor1.u[2] + CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[1,3] * CurrentRMSsensor1.ToSpacePhasor1.u[3]);
 //   CurrentRMSsensor1.ToSpacePhasor1.y[2] = CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[2,1] * CurrentRMSsensor1.ToSpacePhasor1.u[1] + (CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[2,2] * CurrentRMSsensor1.ToSpacePhasor1.u[2] + CurrentRMSsensor1.ToSpacePhasor1.TransformationMatrix[2,3] * CurrentRMSsensor1.ToSpacePhasor1.u[3]);
 //   CurrentRMSsensor1.ToPolar1.y[1] = sqrt(CurrentRMSsensor1.ToPolar1.u[1] ^ 2.0 + CurrentRMSsensor1.ToPolar1.u[2] ^ 2.0);
-//   CurrentRMSsensor1.ToPolar1.y[2] = if noEvent(CurrentRMSsensor1.ToPolar1.y[1] <= 1e-60) then 0.0 else Modelica.Math.atan2(CurrentRMSsensor1.ToPolar1.u[2],CurrentRMSsensor1.ToPolar1.u[1]);
+//   CurrentRMSsensor1.ToPolar1.y[2] = if noEvent(CurrentRMSsensor1.ToPolar1.y[1] <= 1e-60) then 0.0 else atan2(CurrentRMSsensor1.ToPolar1.u[2],CurrentRMSsensor1.ToPolar1.u[1]);
 //   CurrentRMSsensor1.Gain1.y = CurrentRMSsensor1.Gain1.k * CurrentRMSsensor1.Gain1.u;
 //   assert(CurrentRMSsensor1.CurrentSensor1.plug_n.m == CurrentRMSsensor1.plug_n.m,"automatically generated from connect");
 //   assert(CurrentRMSsensor1.plug_p.m == CurrentRMSsensor1.CurrentSensor1.plug_p.m,"automatically generated from connect");

@@ -23,9 +23,9 @@ end CondAssign;
 
 // Result:
 // class CondAssign
-// Real x(start = 35.0);
-// Real y(start = 45.0);
-// parameter Real z = 0.0;
+//   Real x(start = 35.0);
+//   Real y(start = 45.0);
+//   parameter Real z = 0.0;
 // algorithm
 //   if x > 5.0 then
 //     x := 400.0;

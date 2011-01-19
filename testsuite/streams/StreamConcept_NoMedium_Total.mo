@@ -2286,7 +2286,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   valve_fixeddensity1.dp = valve_fixeddensity1.port_a.p - valve_fixeddensity1.port_b.p;
 //   watersink_ph_StreamConcept.port.p = watersink_ph_StreamConcept.p_in;
 //   watersink_ph_StreamConcept.port.h_outflow = watersink_ph_StreamConcept.h0;
-//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   ramp2.y = ramp2.offset + (if time < ramp2.startTime then 0.0 else if time < ramp2.startTime + ramp2.duration then ((time - ramp2.startTime) * ramp2.height) / ramp2.duration else ramp2.height);
 //   ramp3.y = ramp3.offset + (if time < ramp3.startTime then 0.0 else if time < ramp3.startTime + ramp3.duration then ((time - ramp3.startTime) * ramp3.height) / ramp3.duration else ramp3.height);
 //   watersink_ph_StreamConcept1.port.p = watersink_ph_StreamConcept1.p_in;

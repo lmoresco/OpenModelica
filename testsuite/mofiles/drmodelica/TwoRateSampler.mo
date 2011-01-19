@@ -32,11 +32,11 @@ end TwoRateSampler;
 
 // Result:
 // class TwoRateSampler
-// discrete Real x;
-// discrete Real y;
-// Boolean fastSample;
-// Boolean slowSample;
-// Integer cyCounter(start = 0);
+//   discrete Real x;
+//   discrete Real y;
+//   Boolean fastSample;
+//   Boolean slowSample;
+//   Integer cyCounter(start = 0);
 // equation
 //   when slowSample then
 //   y = log(time);
@@ -44,7 +44,7 @@ end TwoRateSampler;
 //   when fastSample then
 //   x = sin(time);
 //   end when;
-//  fastSample = sample(0,1);
+//   fastSample = sample(0.0,1.0);
 //   when fastSample then
 //   cyCounter = if pre(cyCounter) < 5 then 1 + pre(cyCounter) else 0;
 //   slowSample = pre(cyCounter) == 0;

@@ -1,6 +1,7 @@
 // Common file to load compiler sources, so only 1 piece of code needs to be changed
 
 echo(false);
+"BackEnd";
 loadFile("../../Compiler/BackEnd/BackendDAECreate.mo");
 loadFile("../../Compiler/BackEnd/BackendDAEEXT.mo");
 loadFile("../../Compiler/BackEnd/BackendDAE.mo");
@@ -19,6 +20,7 @@ loadFile("../../Compiler/BackEnd/SimCode.mo");
 loadFile("../../Compiler/BackEnd/TaskGraphExt.mo");
 loadFile("../../Compiler/BackEnd/TaskGraph.mo");
 loadFile("../../Compiler/BackEnd/XMLDump.mo");
+"FrontEnd";
 loadFile("../../Compiler/FrontEnd/AbsynDep.mo");
 loadFile("../../Compiler/FrontEnd/Absyn.mo");
 loadFile("../../Compiler/FrontEnd/Algorithm.mo");
@@ -71,10 +73,13 @@ loadFile("../../Compiler/FrontEnd/UnitChecker.mo");
 loadFile("../../Compiler/FrontEnd/UnitParserExt.mo");
 loadFile("../../Compiler/FrontEnd/Values.mo");
 loadFile("../../Compiler/FrontEnd/ValuesUtil.mo");
+"Main";
 loadFile("../../Compiler/Main/Main.mo");
+"Script";
 loadFile("../../Compiler/Script/CevalScript.mo");
 loadFile("../../Compiler/Script/Interactive.mo");
 loadFile("../../Compiler/Script/Refactor.mo");
+"Template";
 loadFile("../../Compiler/Template/CompiledTemplates.mo");
 loadFile("../../Compiler/Template/SimCodeC.mo");
 loadFile("../../Compiler/Template/SimCodeCSharp.mo");
@@ -86,6 +91,7 @@ loadFile("../../Compiler/Template/TplMain.mo");
 loadFile("../../Compiler/Template/Tpl.mo");
 loadFile("../../Compiler/Template/TplParser.mo");
 loadFile("../../Compiler/Template/Unparsing.mo");
+"Util";
 loadFile("../../Compiler/Util/BaseHashTable.mo");
 loadFile("../../Compiler/Util/Corba.mo");
 loadFile("../../Compiler/Util/Database.mo");

@@ -20,8 +20,8 @@ end WhenPriority;
 
 // Result:
 // class WhenPriority
-// Boolean close;
-// parameter Real x = 5.0;
+//   Boolean close;
+//   parameter Real x = 5.0;
 // algorithm
 //   when x >= 5.0 then
 //     close := true;

@@ -6892,7 +6892,7 @@ getErrorString();
 //   Vin.B3.eBondCon1.f = Vin.B3.fBondCon1.f;
 //   Vin.B3.eBondCon1.d = -1.0;
 //   Vin.B3.fBondCon1.d = 1.0;
-//   Vin.V1.Sine1.y = Vin.V1.Sine1.offset + (if time < Vin.V1.Sine1.startTime then 0.0 else Vin.V1.Sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (Vin.V1.Sine1.freqHz * (time - Vin.V1.Sine1.startTime)) + Vin.V1.Sine1.phase));
+//   Vin.V1.Sine1.y = Vin.V1.Sine1.offset + (if time < Vin.V1.Sine1.startTime then 0.0 else Vin.V1.Sine1.amplitude * sin(6.28318530717959 * (Vin.V1.Sine1.freqHz * (time - Vin.V1.Sine1.startTime)) + Vin.V1.Sine1.phase));
 //   Vin.V1.e = Vin.V1.Sine1.y;
 //   Vin.V1.e = Vin.V1.BondCon1.e;
 //   Vin.V1.f = (-Vin.V1.BondCon1.d) * Vin.V1.BondCon1.f;

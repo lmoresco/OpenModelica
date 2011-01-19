@@ -122,7 +122,7 @@ getErrorString();
 //   R5.v = R5.p.v - R5.n.v;
 //   0.0 = R5.p.i + R5.n.i;
 //   R5.i = R5.p.i;
-//   SineVoltage1.signalSource.y = SineVoltage1.signalSource.offset + (if time < SineVoltage1.signalSource.startTime then 0.0 else SineVoltage1.signalSource.amplitude * Modelica.Math.sin(6.28318530717959 * (SineVoltage1.signalSource.freqHz * (time - SineVoltage1.signalSource.startTime)) + SineVoltage1.signalSource.phase));
+//   SineVoltage1.signalSource.y = SineVoltage1.signalSource.offset + (if time < SineVoltage1.signalSource.startTime then 0.0 else SineVoltage1.signalSource.amplitude * sin(6.28318530717959 * (SineVoltage1.signalSource.freqHz * (time - SineVoltage1.signalSource.startTime)) + SineVoltage1.signalSource.phase));
 //   SineVoltage1.v = SineVoltage1.signalSource.y;
 //   SineVoltage1.v = SineVoltage1.p.v - SineVoltage1.n.v;
 //   0.0 = SineVoltage1.p.i + SineVoltage1.n.i;

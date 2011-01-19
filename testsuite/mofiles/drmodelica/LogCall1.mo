@@ -20,14 +20,14 @@ end LogCall1;
 
 // Result:
 // function mylog
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // 
 // external "C";
 // end mylog;
 // 
 // class LogCall1
-// Real res;
+//   Real res;
 // equation
 //   res = 4.60517018598809;
 // end LogCall1;

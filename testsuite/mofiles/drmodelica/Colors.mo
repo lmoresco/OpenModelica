@@ -24,10 +24,10 @@ equation
 end Colors;
 // Result:
 // class Colors
-// parameter Real c.red = 0.7;
-// parameter Real c.blue = 0.1;
-// Real c.green;
-// Real k;
+//   parameter Real c.red = 0.7;
+//   parameter Real c.blue = 0.1;
+//   Real c.green;
+//   Real k;
 // equation
 //   c.red + (c.blue + c.green) = 1.0;
 //   k = c.green;

@@ -143,7 +143,7 @@ end TankHybridPI;
 //   Real tank.h(unit = "m", start = 0.0) "Tank level";
 // equation
 //   source.qOut.lflow = if time > 150.0 then 3.0 * source.flowLevel else source.flowLevel;
-//   when sample(0,piDiscrete.Ts) then
+//   when sample(0.0,piDiscrete.Ts) then
 //   piDiscrete.x = pre(piDiscrete.x) + piDiscrete.error * piDiscrete.Ts / piDiscrete.T;
 //   piDiscrete.outCtr = piDiscrete.K * (piDiscrete.x + piDiscrete.error);
 //   end when;

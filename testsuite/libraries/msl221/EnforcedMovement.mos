@@ -294,7 +294,7 @@ getErrorString();
 //   STA_195205_129.R_mFeArm.V_mag = STA_195205_129.R_mFeArm.p.V_mag - STA_195205_129.R_mFeArm.n.V_mag;
 //   0.0 = STA_195205_129.R_mFeArm.p.Phi + STA_195205_129.R_mFeArm.n.Phi;
 //   STA_195205_129.R_mFeArm.Phi = STA_195205_129.R_mFeArm.p.Phi;
-//   STA_195205_129.R_mAirParasitic.R_mag = Modelica.Math.log(STA_195205_129.R_mAirParasitic.d_out / STA_195205_129.R_mAirParasitic.d_in) * 1.0 / STA_195205_129.R_mAirParasitic.l / 7.89568352087149e-06;
+//   STA_195205_129.R_mAirParasitic.R_mag = log(STA_195205_129.R_mAirParasitic.d_out / STA_195205_129.R_mAirParasitic.d_in) * 1.0 / STA_195205_129.R_mAirParasitic.l / 7.89568352087149e-06;
 //   STA_195205_129.R_mAirParasitic.R_mag * STA_195205_129.R_mAirParasitic.Phi = STA_195205_129.R_mAirParasitic.V_mag;
 //   STA_195205_129.R_mAirParasitic.V_mag = STA_195205_129.R_mAirParasitic.p.V_mag - STA_195205_129.R_mAirParasitic.n.V_mag;
 //   0.0 = STA_195205_129.R_mAirParasitic.p.Phi + STA_195205_129.R_mAirParasitic.n.Phi;

@@ -17,15 +17,15 @@ end Activate;
 
 // Result:
 // class Activate
-// constant Real x = 4;
-// Real y;
-// Real z;
+//   constant Real x = 4.0;
+//   Real y;
+//   Real z;
 // equation
-//  when initial() then
-//  y = 7.0;
-//  end when;
-//  when terminal() then
-//  z = 2.0;
-//  end when;
+//   when initial() then
+//   y = 7.0;
+//   end when;
+//   when terminal() then
+//   z = 2.0;
+//   end when;
 // end Activate;
 // endResult

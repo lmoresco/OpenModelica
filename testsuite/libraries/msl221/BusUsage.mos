@@ -66,7 +66,7 @@ getErrorString();
 //   restBus.bus.realSignal2 = 0.0;
 //   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
 //   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
-//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * Modelica.Math.sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
+//   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   part.multiSignal.myRealSignal = time;
 //   part.multiSignal.myBooleanSignal = time > 0.5;
 //   gain.y = gain.k * gain.u;

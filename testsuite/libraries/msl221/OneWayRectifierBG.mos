@@ -859,7 +859,7 @@ getErrorString();
 //   output Real B5.eBondCon1.f "Bondgraphic flow variable";
 //   output Real B5.eBondCon1.d "Direction variable";
 // equation
-//   V0.Sine1.y = V0.Sine1.offset + (if time < V0.Sine1.startTime then 0.0 else V0.Sine1.amplitude * Modelica.Math.sin(6.28318530717959 * (V0.Sine1.freqHz * (time - V0.Sine1.startTime)) + V0.Sine1.phase));
+//   V0.Sine1.y = V0.Sine1.offset + (if time < V0.Sine1.startTime then 0.0 else V0.Sine1.amplitude * sin(6.28318530717959 * (V0.Sine1.freqHz * (time - V0.Sine1.startTime)) + V0.Sine1.phase));
 //   V0.e = V0.Sine1.y;
 //   V0.e = V0.BondCon1.e;
 //   V0.f = (-V0.BondCon1.d) * V0.BondCon1.f;

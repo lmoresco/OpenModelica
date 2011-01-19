@@ -1164,7 +1164,7 @@ end BM7;
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   constant2.outPort.signal[1] = constant2.k[1];
 //   constant2.y[1] = constant2.outPort.signal[1];
-//   atan21.y[1] = Modelica.Math.atan2(atan21.u1[1],atan21.u2[1]);
+//   atan21.y[1] = atan2(atan21.u1[1],atan21.u2[1]);
 //   atan21.y[1] = atan21.outPort.signal[1];
 //   assert(atan21.inPort2.n == constant2.outPort.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == atan21.inPort1.n,"automatically generated from connect");

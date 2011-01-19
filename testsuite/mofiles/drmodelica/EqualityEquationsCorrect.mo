@@ -32,11 +32,11 @@ end EqualityEquationsCorrect;
 
 // Result:
 // function f
-// input Real a;
-// input Real b;
-// output Real c;
-// output Real d;
-// output Real e;
+//   input Real a;
+//   input Real b;
+//   output Real c;
+//   output Real d;
+//   output Real e;
 // algorithm
 //   c := a + b;
 //   d := a - b;
@@ -44,11 +44,11 @@ end EqualityEquationsCorrect;
 // end f;
 // 
 // class EqualityEquationsCorrect
-// Real x;
-// Real y;
-// Real z;
-// Real u;
-// Real v = 2.0;
+//   Real x;
+//   Real y;
+//   Real z;
+//   Real u;
+//   Real v = 2.0;
 // equation
 //   u = v;
 //   (x,y,z) = (3.0,-1.0,2.0);
