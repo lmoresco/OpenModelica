@@ -1,11 +1,12 @@
 Debian/Ubuntu Compile Cheat Sheet (or read on for the full guide)
 =================================================================
 
-$ echo deb-src deb-src http://build.openmodelica.org/apt nightly contrib >> /etc/apt/sources.list
+$ sudo su -c "echo deb http://build.openmodelica.org/apt nightly contrib >> /etc/apt/sources.list"
+$ sudo su -c "echo deb-src http://build.openmodelica.org/apt nightly contrib >> /etc/apt/sources.list"
 $ sudo apt-get update
 $ sudo apt-get build-dep openmodelica
-$ ./configure --with-omniORB=/usr
-$ make # or make omc if you only want the omc core
+$ ./configure --with-omniORB
+$ make # or make omc if you only want the omc core and not the qtclients
 
 How to compile on Linux or Cygwin (all from source)
 ===================================================
@@ -270,4 +271,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2010-02-17
+Last updated 2011-01-20
