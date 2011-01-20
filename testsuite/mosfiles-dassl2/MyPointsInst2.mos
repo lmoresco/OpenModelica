@@ -9,24 +9,15 @@
 // 
 loadFile("MyPointsInst2.mo");
 simulate(MyPointsInst2,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
-echo(false); // turns of output 
-size:=readSimulationResultSize("MyPointsInst2_res.plt");
-
-res:=readSimulationResult("MyPointsInst2_res.plt",{x,y,z},size);
- 
-x:=res[1];
-y:=res[2];
-z:=res[3];
-x:=1000*x;
-y:=1000*y;
-z:=1000*z;
-x:=floor(x);
-y:=floor(y);
-z:=floor(z);
-echo(true); // turns on output
-x/1000.0; // rounded value to 3 digits
-y/1000.0;
-z/1000.0;
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+val(y,0.0);
+val(y,0.5);
+val(y,1.0);
+val(z,0.0);
+val(z,0.5);
+val(z,1.0);
 
 // Result:
 // true
@@ -35,8 +26,13 @@ z/1000.0;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'MyPointsInst2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// {1.0,1.0,1.0}
-// {2.0,2.0,2.0}
-// {3.0,3.0,3.0}
+// 1.0
+// 1.0
+// 1.0
+// 2.0
+// 2.0
+// 2.0
+// 3.0
+// 3.0
+// 3.0
 // endResult

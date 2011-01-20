@@ -12,28 +12,18 @@ instantiateModel(AlgorithmForInClass);
 getErrorString();
 simulate(AlgorithmForInClass,numberOfIntervals=2); // 2 intervals == 3 values
 getErrorString();
-echo(false); // turns of output 
-
-res:=readSimulationResult("AlgorithmForInClass_res.plt",{accum_sum[5], S[2],
-sum2[6], sum3[2,2]},3); 
-accum_sum := res[1];
-S := res[2];
-sum2 := res[3];
-sum3 := res[4];
-accum_sum := 1000*accum_sum;
-S := 1000*S;
-sum2 := 1000*sum2;
-sum3 := 1000*sum3;
-accum_sum := floor(accum_sum);
-S := floor(S);
-sum2 := floor(sum2);
-sum3 := floor(sum3);
-echo(true); // turns on output
-accum_sum/1000.0; // rounded value to 3 digits
-S/1000.0;
-sum2/1000.0;
-sum3/1000.0;
-
+val(accum_sum[5],0.0); 
+val(accum_sum[5],0.5);
+val(accum_sum[5],1.0);
+val(S[2],0.0); 
+val(S[2],0.5);
+val(S[2],1.0);
+val(sum2[6],0.0); 
+val(sum2[6],0.5);
+val(sum2[6],1.0);
+val(sum3[2,2],0.0); 
+val(sum3[2,2],0.5);
+val(sum3[2,2],1.0);
 
 // Result:
 // true
@@ -93,9 +83,16 @@ sum3/1000.0;
 //     messages = ""
 // end SimulationResult;
 // ""
-// true
-// {15.0,15.0,15.0}
-// {13.0,13.0,13.0}
-// {5.0,5.0,5.0}
-// {13.0,13.0,13.0}
+// 15.0
+// 15.0
+// 15.0
+// 13.0
+// 13.0
+// 13.0
+// 5.0
+// 5.0
+// 5.0
+// 13.0
+// 13.0
+// 13.0
 // endResult

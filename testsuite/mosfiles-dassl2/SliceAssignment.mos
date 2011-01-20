@@ -8,10 +8,6 @@
 // 
 loadFile("SliceAssignment.mo");
 simulate(SliceAssignment, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
-echo(false);
-size:=readSimulationResultSize("SliceAssignment_res.plt");
-echo(true);
-size;
 // Result:
 // true
 // record SimulationResult
@@ -19,6 +15,4 @@ size;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'SliceAssignment', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// 3
 // endResult

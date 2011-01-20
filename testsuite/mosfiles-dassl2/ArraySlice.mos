@@ -9,10 +9,16 @@
 
 loadFile("ArraySlice.mo");
 simulate(ArraySlice,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
-echo(false); // turns of output 
-size := readSimulationResultSize("ArraySlice_res.plt");
-echo(true); // turns on output
-size;
+val(T[1],0.0);
+val(T[1],0.5);
+val(T[1],1.0);
+val(T[15],0.0);
+val(T[15],0.5);
+val(T[15],1.0);
+val(T[30],0.0);
+val(T[30],0.5);
+val(T[30],1.0);
+
 
 // Result:
 // true
@@ -21,6 +27,13 @@ size;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ArraySlice', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// 3
+// 200.0
+// 250.0
+// 300.0
+// 200.0
+// 329.747885242075
+// 543.664291199501
+// 200.0
+// 329.747885242075
+// 543.664291199501
 // endResult

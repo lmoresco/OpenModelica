@@ -98,7 +98,7 @@ WhenEquation.mos WhenEquation1.mos WhenPriority.mos \
 when_sorting.mos \
 WhenStatement1.mos WhenStatement2.mos WhenStatement3.mos whenstatements.mos \
 Xpowers1.mos Xpowers2.mos Xpowers3.mos  \
- 
+ZeroCross.mos \
 
 
 # test that currently fail. Move up when fixed. 

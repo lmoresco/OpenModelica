@@ -10,10 +10,12 @@
 // 
 loadFile("OneArgBaseFunction.mo");
 simulate(myTanCall,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
-echo(false); // turns of output 
-res:=readSimulationResult("myTanCall_res.plt",{t,t1},3); 
-echo(true); // turns on output
-res
+val(t,0.0);
+val(t,0.5);
+val(t,1.0);
+val(t1,0.0);
+val(t1,0.5);
+val(t1,1.0);
 
 // Result:
 // true
@@ -22,6 +24,10 @@ res
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'myTanCall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// {{1.5574077246549,1.5574077246549,1.5574077246549},{11.5574077246549,11.5574077246549,11.5574077246549}}
+// 1.5574077246549
+// 1.5574077246549
+// 1.5574077246549
+// 11.5574077246549
+// 11.5574077246549
+// 11.5574077246549
 // endResult

@@ -5,13 +5,10 @@
 // teardown_command: rm -rf EnumArray_* EnumArray EnumArray.exe EnumArray.cpp EnumArray.makefile EnumArray.libs EnumArray.log output.log
 //
 // Code generation for assignment of arrays indexed with enumerations.
+// TODO: in resultfile are subscript for UNKNOWN
 // 
 loadFile("EnumArray.mo");
 simulate(EnumArray, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
-echo(false);
-size:=readSimulationResultSize("EnumArray_res.plt");
-echo(true);
-size;
 // Result:
 // true
 // record SimulationResult
@@ -19,6 +16,4 @@ size;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'EnumArray', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// 3
 // endResult

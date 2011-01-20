@@ -10,18 +10,19 @@
 
 loadFile("BouncingBall2.mo");
 simulate(BouncingBall,numberOfIntervals=5, tolerance=1e-5); // 2 intervals == 3 values
-echo(false); // turns of output 
-s:=readSimulationResultSize("BouncingBall_res.plt");
-res:=readSimulationResult("BouncingBall_res.plt",{height, velocity},s); 
-height:=res[2];
-velocity:=res[1];
-height:=1000*height;
-velocity:=1000*velocity;
-height:=floor(height);
-velocity:=floor(velocity);
-echo(true); // turns on output
-height/1000.0; 
-velocity/1000.0;
+val(height,0.0);
+val(height,0.2);
+val(height,0.4);
+val(height,0.6);
+val(height,0.8);
+val(height,1.0);
+val(velocity,0.0);
+val(velocity,0.2);
+val(velocity,0.4);
+val(velocity,0.6);
+val(velocity,0.8);
+val(velocity,1.0);
+
 // Result:
 // true
 // record SimulationResult
@@ -29,7 +30,16 @@ velocity/1000.0;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// true
-// {0.0,-1.963,-3.925,-4.155,3.738,3.738,3.738,2.007,0.045,-1.917}
-// {1.0,0.803,0.215,0.1,0.099,0.099,0.1,0.607,0.812,0.625}
+// 1.0
+// 0.803799999888946
+// 0.215199999878429
+// 0.607150026537681
+// 0.812421013259892
+// 0.625292000011256
+// 0.0
+// -1.962
+// -3.924
+// 2.00735493393358
+// 0.0453549339335817
+// -1.91664506606642
 // endResult
