@@ -413,6 +413,7 @@ NamedArguments.mo \
 NestedClasses.mo \
 NoEvent1.mo \
 NonExpArray1.mo \
+NonExpArray3.mo \
 NotDependsRecursive.mo \
 NotEquals.mo \
 Not.mo \
