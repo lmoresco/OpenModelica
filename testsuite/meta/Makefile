@@ -53,6 +53,7 @@ MatchCaseInteractive3.mos \
 MatchElse1.mos \
 MatchIfEquation1.mos \
 OptimizeContinue.mo \
+OptimizeMatchToIfExp.mo \
 OptionInteractive.mos \
 PartialFn1.mo \
 PartialFn2.mo \
