@@ -31145,6 +31145,26 @@ algorithm
       then (txt, a_varDeclsInner);
 
     case ( txt,
+           DAE.MATCH(switch = SOME((i_switchIndex, DAE.ET_INT(), _))),
+           a_varDeclsInner,
+           a_prefix )
+      equation
+        txt = Tpl.writeText(txt, a_prefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_in"));
+        txt = Tpl.writeStr(txt, intString(i_switchIndex));
+      then (txt, a_varDeclsInner);
+
+    case ( txt,
+           DAE.MATCH(switch = SOME(_)),
+           a_varDeclsInner,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#error \"unknown switch\""));
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+      then (txt, a_varDeclsInner);
+
+    case ( txt,
            _,
            a_varDeclsInner,
            _ )
@@ -32055,6 +32075,7 @@ algorithm
     local
       Tpl.Text txt;
       Integer a_extraArg;
+      Integer i_e_integer;
       String i_e_string;
       Integer i_index;
       Integer ret_1;
@@ -32079,6 +32100,14 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" /* "));
         txt = Tpl.writeStr(txt, i_e_string);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" */"));
+      then txt;
+
+    case ( txt,
+           DAE.PAT_CONSTANT(exp = DAE.ICONST(integer = i_e_integer)),
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
+        txt = Tpl.writeStr(txt, intString(i_e_integer));
       then txt;
 
     case ( txt,
