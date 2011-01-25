@@ -17,7 +17,7 @@ readFile("SimCodeC_abc.c");
 // readFile("SimCodeC_abc.makefile");
 
 // Result:
-// true
+// {true,true}
 // true
 // Loaded all files without error
 // "true

@@ -44,7 +44,7 @@ ValuesUtil.valString(val);
 getErrorString();
 
 // Result:
-// true
+// {true,true}
 // Loaded all files without error
 // "true
 // "

@@ -11,7 +11,7 @@ StrictRML.fn4(1.0);getErrorString();
 StrictRML.fn5(1.0);getErrorString();
 StrictRML.fn6(1.0);getErrorString();
 // Result:
-// true
+// {true,true}
 // true
 // 
 // "[StrictRML.mo:2:3-10:10:writable] Error: Number of input arguments don't match. Strict RML enforces match expression input and output to be the same as the function's.

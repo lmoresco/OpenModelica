@@ -13,7 +13,7 @@ HashTableTest.fn(1);
 getErrorString();
 
 // Result:
-// true
+// {true,true}
 // Loaded all files without error
 // "true
 // "
