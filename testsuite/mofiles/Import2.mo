@@ -43,7 +43,7 @@ class Import2
 end Import2;
 // Result:
 // Error processing file: Import2.mo
-// Error: Class C not found in scope Import2 while instantiating c.
+// [Import2.mo:39:3-39:6:writable] Error: Class C not found in scope Import2 while instantiating c.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
