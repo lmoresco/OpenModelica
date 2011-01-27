@@ -29,6 +29,7 @@ INPUT(
 ./debug\Transformation.o
 ./debug\DocumentationWidget.o
 ./debug\OptionsWidget.o
+./debug\BitmapAnnotation.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
@@ -41,6 +42,7 @@ INPUT(
 ./debug\moc_PolygonAnnotation.o
 ./debug\moc_RectangleAnnotation.o
 ./debug\moc_EllipseAnnotation.o
+./debug\moc_TextAnnotation.o
 ./debug\moc_CornerItem.o
 ./debug\moc_ConnectorWidget.o
 ./debug\moc_PlotWidget.o
@@ -50,5 +52,6 @@ INPUT(
 ./debug\moc_Component.o
 ./debug\moc_DocumentationWidget.o
 ./debug\moc_OptionsWidget.o
+./debug\moc_BitmapAnnotation.o
 ./debug\qrc_resource_omedit.o
 );
