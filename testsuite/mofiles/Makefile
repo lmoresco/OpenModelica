@@ -36,6 +36,7 @@ ArrayAsAlias.mo \
 ArrayAssignWholeDim.mo \
 ArrayBrackets.mo \
 Array_builtin.mo \
+ArrayCall.mo \
 ArrayCurlyBrackets.mo \
 ArrayDeclaration1.mo \
 ArrayDeclaration2.mo \
