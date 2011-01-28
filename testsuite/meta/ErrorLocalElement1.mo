@@ -9,7 +9,7 @@ class ErrorLocalElement1
   algorithm
     o := match i
       local
-        type t = Integer;
+        type T = Integer;
         T t;
       case t then t;
     end match;
@@ -20,9 +20,9 @@ end ErrorLocalElement1;
 
 // Result:
 // Error processing file: ErrorLocalElement1.mo
-// [ErrorLocalElement1.mo:10:5-15:14:writable] Error: Only components without direction are allowed in local declarations, got: class t
-// CLASS(t,_,_,TYPE,DERIVED(Integer,))
-// end t;
+// [ErrorLocalElement1.mo:10:5-15:14:writable] Error: Only components without direction are allowed in local declarations, got: class T
+// CLASS(T,_,_,TYPE,DERIVED(Integer,))
+// end T;
 // 
 // 
 // # Error encountered! Exiting...
