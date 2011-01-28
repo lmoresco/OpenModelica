@@ -55,7 +55,7 @@ readFile("SimCodeC_abc.c");
 // "
 // "#include "SimCodeC_abc.h"
 // #include <algorithm>
-// #define MODELICA_ASSERT(msg) { fprintf(stderr,"Modelica Assert: %s!\n", msg); }
+// #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,"Modelica Assert: %s!\n", msg); }
 // #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
 // 
 // extern "C" {

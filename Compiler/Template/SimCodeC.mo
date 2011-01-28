@@ -1872,8 +1872,6 @@ algorithm
       list<SimCode.SimVar> i_vars_intParamVars;
       list<SimCode.SimVar> i_vars_intAlgVars;
       list<SimCode.SimVar> i_vars_paramVars;
-      list<SimCode.SimVar> i_vars_outputVars;
-      list<SimCode.SimVar> i_vars_inputVars;
       list<SimCode.SimVar> i_vars_algVars;
       list<SimCode.SimVar> i_vars_derivativeVars;
       list<SimCode.SimVar> i_vars_stateVars;
@@ -1917,7 +1915,7 @@ algorithm
       Integer ret_0;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numJacobianVars = i_varInfo_numJacobianVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, inputVars = i_vars_inputVars, outputVars = i_vars_outputVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, jacobianVars = i_vars_jacobianVars, extObjVars = i_vars_extObjVars), functions = i_functions, name = i_name, directory = i_directory) )
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numJacobianVars = i_varInfo_numJacobianVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, jacobianVars = i_vars_jacobianVars, extObjVars = i_vars_extObjVars), functions = i_functions, name = i_name, directory = i_directory) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define NHELP "));
         txt = Tpl.writeStr(txt, intString(i_varInfo_numHelpVars));
@@ -2036,10 +2034,6 @@ algorithm
         txt = globalDataVarInfoArray(txt, "derivative_names", i_vars_derivativeVars);
         txt = Tpl.softNewLine(txt);
         txt = globalDataVarInfoArray(txt, "algvars_names", i_vars_algVars);
-        txt = Tpl.softNewLine(txt);
-        txt = globalDataVarInfoArray(txt, "input_names", i_vars_inputVars);
-        txt = Tpl.softNewLine(txt);
-        txt = globalDataVarInfoArray(txt, "output_names", i_vars_outputVars);
         txt = Tpl.softNewLine(txt);
         txt = globalDataVarInfoArray(txt, "param_names", i_vars_paramVars);
         txt = Tpl.softNewLine(txt);
@@ -3392,18 +3386,6 @@ algorithm
                                    "    returnData->bool_param_names = bool_param_names;\n",
                                    "  } else {\n",
                                    "    returnData->bool_param_names = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if(flags & INPUTNAMES) {\n",
-                                   "    returnData->inputNames = input_names;\n",
-                                   "  } else {\n",
-                                   "    returnData->inputNames = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if(flags & OUTPUTNAMES) {\n",
-                                   "    returnData->outputNames = output_names;\n",
-                                   "  } else {\n",
-                                   "    returnData->outputNames = 0;\n",
                                    "  }\n",
                                    "\n",
                                    "  if(flags & JACOBIANNAMES) {\n",
