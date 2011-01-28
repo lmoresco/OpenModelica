@@ -373,6 +373,7 @@ MatrixAddition.mo \
 MatrixBrackets.mo \
 MatrixPow.mo\
 MatrixRowIndexing.mo \
+MaxArray.mo \
 MinMax.mo \
 ModelAccess.mo \
 modelica_1_1_Array9.mo \

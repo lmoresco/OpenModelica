@@ -30864,13 +30864,13 @@ algorithm
     case ( txt,
            "modelica_integer" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("intAdd"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("reduction_sum"));
       then txt;
 
     case ( txt,
            "modelica_real" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("realAdd"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("reduction_sum"));
       then txt;
 
     case ( txt,
@@ -30895,13 +30895,13 @@ algorithm
     case ( txt,
            "modelica_integer" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("intMul"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("reduction_product"));
       then txt;
 
     case ( txt,
            "modelica_real" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("realMul"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("reduction_product"));
       then txt;
 
     case ( txt,

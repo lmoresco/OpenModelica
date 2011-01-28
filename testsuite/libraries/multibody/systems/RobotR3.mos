@@ -817,8 +817,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   load.J * load.a = load.flange_a.tau + load.flange_b.tau;
 //   pathPlanning.path.aux1[1] = pathPlanning.path.p_deltaq[1] / pathPlanning.path.p_qd_max[1];
 //   pathPlanning.path.aux2[1] = pathPlanning.path.p_deltaq[1] / pathPlanning.path.p_qdd_max[1];
-//   pathPlanning.path.sd_max_inv = max({abs(pathPlanning.path.aux1[1])});
-//   pathPlanning.path.sdd_max_inv = max({abs(pathPlanning.path.aux2[1])});
+//   pathPlanning.path.sd_max_inv = abs(pathPlanning.path.aux1[1]);
+//   pathPlanning.path.sdd_max_inv = abs(pathPlanning.path.aux2[1]);
 //   if pathPlanning.path.sd_max_inv <= 1e-14 OR pathPlanning.path.sdd_max_inv <= 1e-14 then
 //   pathPlanning.path.sd_max = 0.0;
 //   pathPlanning.path.sdd_max = 0.0;
@@ -839,8 +839,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.r_sd = 0.0;
 //   pathPlanning.path.r_s = 0.0;
 //   else
-//   pathPlanning.path.sd_max = 1.0 / max({abs(pathPlanning.path.aux1[1])});
-//   pathPlanning.path.sdd_max = 1.0 / max({abs(pathPlanning.path.aux2[1])});
+//   pathPlanning.path.sd_max = 1.0 / abs(pathPlanning.path.aux1[1]);
+//   pathPlanning.path.sdd_max = 1.0 / abs(pathPlanning.path.aux2[1]);
 //   pathPlanning.path.Ta1 = sqrt(1.0 / pathPlanning.path.sdd_max);
 //   pathPlanning.path.Ta2 = pathPlanning.path.sd_max / pathPlanning.path.sdd_max;
 //   pathPlanning.path.noWphase = pathPlanning.path.Ta2 >= pathPlanning.path.Ta1;
