@@ -45,7 +45,6 @@ loadFile("../../Compiler/FrontEnd/ExpandableConnectors.mo");
 loadFile("../../Compiler/FrontEnd/ExpressionDump.mo");
 loadFile("../../Compiler/FrontEnd/Expression.mo");
 loadFile("../../Compiler/FrontEnd/ExpressionSimplify.mo");
-loadFile("../../Compiler/FrontEnd/ExpressionSolve.mo");
 loadFile("../../Compiler/FrontEnd/Graphviz.mo");
 loadFile("../../Compiler/FrontEnd/Inline.mo");
 loadFile("../../Compiler/FrontEnd/InnerOuter.mo");
