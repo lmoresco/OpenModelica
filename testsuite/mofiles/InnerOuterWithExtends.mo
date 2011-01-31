@@ -29,8 +29,8 @@ package InnerOuterWithExtends
 end InnerOuterWithExtends;
 
 model InnerOuterWithExtendsTest
-   import InnerOuterWithExtends.*;
-   extends C1;
+  import InnerOuterWithExtends.*;
+  extends C1;
 end InnerOuterWithExtendsTest;
 
 // Result:

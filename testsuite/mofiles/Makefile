@@ -557,6 +557,7 @@ WillowForest.mo \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=\
+InvalidExtends1.mo \
 Algorithm4.mo \
 Array5.mo \
 Array6.mo \

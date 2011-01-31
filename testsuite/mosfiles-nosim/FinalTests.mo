@@ -1,12 +1,12 @@
 model extendOverride
-  parameter Real p1 = 1.1*2/4+4;
+  parameter Real pr1 = 1.1*2/4+4;
   final parameter Real p_finalPrefix5 = 1.123456;
 end extendOverride;
 
 package p1
  package p2
   model AfunctionExtend
-  extends extendOverride(p1 = 100,p_finalPrefix5=10);
+    extends extendOverride(pr1 = 100,p_finalPrefix5=10);
   end AfunctionExtend;
  end p2;
 end p1;
