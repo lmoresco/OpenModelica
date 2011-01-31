@@ -6,6 +6,7 @@
 
 within MetaModelicaMatchElse;
 function f1
+  input Integer x, y, z;
 algorithm
   _ := match x case 1 then ();  end match;
   _ := match (x,y,z) case 1 then (); end match;
