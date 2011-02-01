@@ -26,6 +26,7 @@ end ErrorInvalidPattern2;
 // Result:
 // Error processing file: ErrorInvalidPattern2.mo
 // [ErrorInvalidPattern2.mo:17:10-17:22:writable] Error: Invalid named fields: exp
+// [ErrorInvalidPattern2.mo:17:10-17:22:writable] Error: Invalid pattern: UT(exp = 1) of type ErrorInvalidPattern2.Ut
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
