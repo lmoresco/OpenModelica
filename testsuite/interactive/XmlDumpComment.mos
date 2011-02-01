@@ -85,5 +85,7 @@ dumpXMLDAE(XmlDumpComment);
 // <equation id="2">der($dummy) = 0.0
 // </equation>
 // </equations>
+// <functions>
+// </functions>
 // </dae>","The model has been dumped to xml file: XmlDumpComment.xml"}
 // endResult
