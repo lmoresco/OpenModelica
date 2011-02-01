@@ -12,6 +12,7 @@ record Orientation "Orientation object defining rotation from a frame 1 into a f
   Real T[3,3] "Transformation matrix from world frame to local frame" ;
   AngularVelocity w[3] "Absolute angular velocity of local frame, resolved in local frame" ;
   encapsulated function equalityConstraint "Return the constraint residues to express that two frames have the same orientation"
+    import Orientation;
     input Orientation R1 "Orientation object to rotate frame 0 into frame 1" ;
     input Orientation R2 "Orientation object to rotate frame 0 into frame 2" ;
     output Real residue[3] "The rotation angles around x-, y-, and z-axis of frame 1 to rotate frame 1 into frame 2 for a small rotation (should be zero)" ;

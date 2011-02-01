@@ -205,6 +205,7 @@ Each1.mo \
 Encapsulated1.mo \
 Encapsulated2.mo \
 Encapsulated3.mo \
+Encapsulated4.mo \
 EngineSAAB95Total.mo \
 Enum10.mo \
 Enum11.mo \
