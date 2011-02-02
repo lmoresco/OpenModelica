@@ -11,8 +11,8 @@ loadFile("SimCodeTest.mo");getErrorString();
 
 SimCodeTest.test(); getErrorString();
 
-readFile("SimCodeC_abc.h");
-readFile("SimCodeC_abc.c");
+readFileShowLineNumbers("SimCodeC_abc.h");
+readFileShowLineNumbers("SimCodeC_abc.c");
 // Do not read the makefile; it's different depending on the OS
 // readFile("SimCodeC_abc.makefile");
 
@@ -27,62 +27,48 @@ readFile("SimCodeC_abc.c");
 // ""
 // 
 // ""
-// "#ifndef SimCodeC_abc__H
-// #define SimCodeC_abc__H
-// #include "modelica.h"
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <errno.h>
-// 
-// #if defined(_MSC_VER)
-//   #define DLLExport   __declspec( dllexport )
-// #else
-//   #define DLLExport /* nothing */
-// #endif
-// #ifdef __cplusplus
-// extern "C" {
-// #endif
-// 
-// 
-// void _SimCodeC_abc();
-// 
-// #ifdef __cplusplus
-// }
-// #endif
-// #endif
-// 
-// 
 // "
-// "#include "SimCodeC_abc.h"
-// #include <algorithm>
-// #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,"Modelica Assert: %s!\n", msg); }
-// #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
-// 
-// extern "C" {
-// 
-// 
-// void _SimCodeC_abc()
-// {
-//   state tmp1;
-//   tmp1 = get_memory_state();
-// 
-// 
-//   
-//   _return:
-//   restore_memory_state(tmp1);
-//   return;
-// }
-// 
-// int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
-// {
-//   MMC_TRY_TOP()
-//   _SimCodeC_abc();
-//   MMC_CATCH_TOP(return 1)
-//   write_noretcall(outVar);
-//   return 0;
-// }
-// 
-// }
-// 
+// 1: #ifndef SimCodeC_abc__H
+// 2: #define SimCodeC_abc__H
+// 3: #include "modelica.h"
+// 4: #include <stdio.h>
+// 5: #include <stdlib.h>
+// 6: #include <errno.h>
+// 7: #if defined(_MSC_VER)
+// 8:   #define DLLExport   __declspec( dllexport )
+// 9: #else
+// 10:   #define DLLExport /* nothing */
+// 11: #endif
+// 12: #ifdef __cplusplus
+// 13: extern "C" {
+// 14: #endif
+// 15: void _SimCodeC_abc();
+// 16: #ifdef __cplusplus
+// 17: }
+// 18: #endif
+// 19: #endif"
 // "
+// 1: #include "SimCodeC_abc.h"
+// 2: #include <algorithm>
+// 3: #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,"Modelica Assert: %s!\n", msg); }
+// 4: #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
+// 5: extern "C" {
+// 6: void _SimCodeC_abc()
+// 7: {
+// 8:   state tmp1;
+// 9:   tmp1 = get_memory_state();
+// 10:   
+// 11:   _return:
+// 12:   restore_memory_state(tmp1);
+// 13:   return;
+// 14: }
+// 15: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
+// 16: {
+// 17:   MMC_TRY_TOP()
+// 18:   _SimCodeC_abc();
+// 19:   MMC_CATCH_TOP(return 1)
+// 20:   write_noretcall(outVar);
+// 21:   return 0;
+// 22: }
+// 23: }"
 // endResult
