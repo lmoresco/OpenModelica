@@ -11,6 +11,6 @@ end NonConstantReduction;
 
 // Result:
 // class NonConstantReduction
-//   Integer i = <reduction>min(i for i in {1 + integer(time)});
+//   Integer i = 1 + integer(time);
 // end NonConstantReduction;
 // endResult

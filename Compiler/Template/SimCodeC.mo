@@ -31519,13 +31519,13 @@ algorithm
     case ( txt,
            "modelica_integer" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("1073741823"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("LONG_MAX"));
       then txt;
 
     case ( txt,
            "modelica_real" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("1.e60"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("DBL_MAX"));
       then txt;
 
     case ( txt,
@@ -31550,13 +31550,13 @@ algorithm
     case ( txt,
            "modelica_integer" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-1073741823"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("LONG_MIN"));
       then txt;
 
     case ( txt,
            "modelica_real" )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-1.e60"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("DBL_MIN"));
       then txt;
 
     case ( txt,
