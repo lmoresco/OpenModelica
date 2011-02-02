@@ -8,7 +8,7 @@
 loadFile("nonConstantParam.mo");
 simulate(Modelica_Electrical_Machines_Examples_DCEE_start,stopTime=1);
 //val(DCEE1.TurnsRatio,0);
-val(DCEE1.tau_shaft,0:0.1:1);
+val(DCEE1.tau_shaft,{x for x in 0:0.1:1});
 getErrorString();
 // Result:
 // true
