@@ -494,6 +494,7 @@ SimpleIntegrator2.mo \
 SimpleIntegrator3.mo \
 SimpleTypeExtend.mo \
 Simplify.mo \
+SimplifyRangeInCall.mo \
 Sinh.mo \
 Sin.mo \
 Skew.mo \
