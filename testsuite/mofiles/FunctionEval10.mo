@@ -1,6 +1,7 @@
 // name:     FunctionEval10
 // keywords: function, ceval, resizing
 // status:   correct
+// cflags: +d=nogen
 // 
 // Tests constant evaluation of functions with protected variables with flexible
 // dimension sizes.
