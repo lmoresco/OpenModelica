@@ -15,6 +15,7 @@ interactive_test.mos \
 loadFileInteractiveQualified.mos \
 matrices.mos \
 refactorGraphAnn1.mos refactorGraphAnn2.mos \
+regex.mos \
 Rename.mos \
 RunScript.mos \
 setComponentComment.mos \
