@@ -55,45 +55,45 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "function Modelica.Math.asin
 //   input Real u;
-//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
-//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Blocks.Examples.BusUsage
-//   output Integer integerStep.y "Connector of Integer output signal";
-//   parameter Integer integerStep.offset = 2 "Offset of output signal y";
-//   parameter Real integerStep.startTime(quantity = "Time", unit = "s") = 0.5 "Output y = offset for time < startTime";
-//   parameter Integer integerStep.height = 1 "Height of step";
-//   output Boolean booleanStep.y "Connector of Boolean output signal";
-//   parameter Real booleanStep.startTime(quantity = "Time", unit = "s") = 0.5 "Time instant of step start";
-//   parameter Boolean booleanStep.startValue = false "Output before startTime";
-//   output Real sine.y "Connector of Real output signal";
-//   parameter Real sine.amplitude = 1.0 "Amplitude of sine wave";
-//   parameter Real sine.freqHz(quantity = "Frequency", unit = "Hz", start = 1.0) = 1.0 "Frequency of sine wave";
-//   parameter Real sine.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
-//   parameter Real sine.offset = 0.0 "Offset of output signal";
-//   parameter Real sine.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   output Integer integerStep.y \"Connector of Integer output signal\";
+//   parameter Integer integerStep.offset = 2 \"Offset of output signal y\";
+//   parameter Real integerStep.startTime(quantity = \"Time\", unit = \"s\") = 0.5 \"Output y = offset for time < startTime\";
+//   parameter Integer integerStep.height = 1 \"Height of step\";
+//   output Boolean booleanStep.y \"Connector of Boolean output signal\";
+//   parameter Real booleanStep.startTime(quantity = \"Time\", unit = \"s\") = 0.5 \"Time instant of step start\";
+//   parameter Boolean booleanStep.startValue = false \"Output before startTime\";
+//   output Real sine.y \"Connector of Real output signal\";
+//   parameter Real sine.amplitude = 1.0 \"Amplitude of sine wave\";
+//   parameter Real sine.freqHz(quantity = \"Frequency\", unit = \"Hz\", start = 1.0) = 1.0 \"Frequency of sine wave\";
+//   parameter Real sine.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
+//   parameter Real sine.offset = 0.0 \"Offset of output signal\";
+//   parameter Real sine.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   protected constant Real sine.pi = 3.14159265358979;
-//   output Real part.realExpression.y = time "Value of Real output";
-//   output Boolean part.booleanExpression.y = time > 0.5 "Value of Boolean output";
-//   Real part.subControlBus.myRealSignal "virtual variable in expandable connector";
-//   Boolean part.subControlBus.myBooleanSignal "virtual variable in expandable connector";
-//   parameter Real gain.k(start = 1.0) = 1.0 "Gain value multiplied with input signal";
-//   input Real gain.u "Input signal connector";
-//   output Real gain.y "Output signal connector";
-//   Real controlBus.realSignal1 "virtual variable in expandable connector";
-//   Boolean controlBus.booleanSignal "virtual variable in expandable connector";
-//   Integer controlBus.integerSignal "virtual variable in expandable connector";
-//   Real controlBus.subControlBus.myRealSignal "virtual variable in expandable connector";
-//   Boolean controlBus.subControlBus.myBooleanSignal "virtual variable in expandable connector";
+//   output Real part.realExpression.y = time \"Value of Real output\";
+//   output Boolean part.booleanExpression.y = time > 0.5 \"Value of Boolean output\";
+//   Real part.subControlBus.myRealSignal \"virtual variable in expandable connector\";
+//   Boolean part.subControlBus.myBooleanSignal \"virtual variable in expandable connector\";
+//   parameter Real gain.k(start = 1.0) = 1.0 \"Gain value multiplied with input signal\";
+//   input Real gain.u \"Input signal connector\";
+//   output Real gain.y \"Output signal connector\";
+//   Real controlBus.realSignal1 \"virtual variable in expandable connector\";
+//   Boolean controlBus.booleanSignal \"virtual variable in expandable connector\";
+//   Integer controlBus.integerSignal \"virtual variable in expandable connector\";
+//   Real controlBus.subControlBus.myRealSignal \"virtual variable in expandable connector\";
+//   Boolean controlBus.subControlBus.myBooleanSignal \"virtual variable in expandable connector\";
 // equation
 //   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
 //   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
@@ -118,10 +118,10 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // "
 // ""
 // "class Modelica.Blocks.Examples.BusUsage_Utilities.Part
-//   output Real realExpression.y = time "Value of Real output";
-//   output Boolean booleanExpression.y = time > 0.5 "Value of Boolean output";
-//   Real subControlBus.myRealSignal "virtual variable in expandable connector";
-//   Boolean subControlBus.myBooleanSignal "virtual variable in expandable connector";
+//   output Real realExpression.y = time \"Value of Real output\";
+//   output Boolean booleanExpression.y = time > 0.5 \"Value of Boolean output\";
+//   Real subControlBus.myRealSignal \"virtual variable in expandable connector\";
+//   Boolean subControlBus.myBooleanSignal \"virtual variable in expandable connector\";
 // equation
 //   booleanExpression.y = subControlBus.myBooleanSignal;
 //   realExpression.y = subControlBus.myRealSignal;
@@ -156,7 +156,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Tables.CombiTable2D.tableInit;
 // 
 // function Modelica.Blocks.Tables.CombiTable2D.tableIpo
@@ -165,23 +165,23 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input Real u2;
 //   output Real value;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Tables.CombiTable2D.tableIpo;
 // 
 // class Modelica.Blocks.Tables.CombiTable2D
-//   input Real u1 "Connector of Real input signal 1";
-//   input Real u2 "Connector of Real input signal 2";
-//   output Real y "Connector of Real output signal";
-//   parameter Boolean tableOnFile = false "true, if table is defined on file or in function usertab";
-//   parameter String tableName = "NoName" "table name on file or in function usertab (see docu)";
-//   parameter String fileName = "NoName" "file where matrix is stored";
-//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "smoothness of table interpolation";
+//   input Real u1 \"Connector of Real input signal 1\";
+//   input Real u2 \"Connector of Real input signal 2\";
+//   output Real y \"Connector of Real output signal\";
+//   parameter Boolean tableOnFile = false \"true, if table is defined on file or in function usertab\";
+//   parameter String tableName = \"NoName\" \"table name on file or in function usertab (see docu)\";
+//   parameter String fileName = \"NoName\" \"file where matrix is stored\";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
 //   protected Integer tableID;
 // equation
-//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   assert(false,\"tableOnFile = false and parameter table is an empty matrix\");
 //   y = Modelica.Blocks.Tables.CombiTable2D.tableIpo(tableID,u1,u2);
 //   when initial() then
-//   tableID = Modelica.Blocks.Tables.CombiTable2D.tableInit(if tableOnFile then tableName else "NoName",if tableOnFile then fileName else "NoName",{{}},smoothness);
+//   tableID = Modelica.Blocks.Tables.CombiTable2D.tableInit(if tableOnFile then tableName else \"NoName\",if tableOnFile then fileName else \"NoName\",{{}},smoothness);
 //   end when;
 // end Modelica.Blocks.Tables.CombiTable2D;
 // "
@@ -223,7 +223,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;
 //   output Integer tableID;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -232,46 +232,46 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input Real timeIn;
 //   output Real value;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
-//   output Real Tmax "maximum time value in table";
+//   output Real Tmax \"maximum time value in table\";
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
-//   output Real Tmin "minimum time value in table";
+//   output Real Tmin \"minimum time value in table\";
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // class Modelica.Blocks.Sources.CombiTimeTable
-//   parameter Integer nout(min = 1) = 1 "Number of outputs";
-//   output Real y[1] "Connector of Real output signals";
-//   parameter Boolean tableOnFile = false "= true, if table is defined on file or in function usertab";
-//   parameter String tableName = "NoName" "Table name on file or in function usertab (see docu)";
-//   parameter String fileName = "NoName" "File where matrix is stored";
-//   parameter Integer columns[1] = 2 "Columns of table to be interpolated";
-//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments "Smoothness of table interpolation";
-//   parameter enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation = Modelica.Blocks.Types.Extrapolation.LastTwoPoints "Extrapolation of data outside the definition range";
-//   parameter Real offset[1] = 0.0 "Offsets of output signals";
-//   parameter Real startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-//   parameter Real t_min(fixed = false) "Minimum abscissa value defined in table";
-//   parameter Real t_max(fixed = false) "Maximum abscissa value defined in table";
+//   parameter Integer nout(min = 1) = 1 \"Number of outputs\";
+//   output Real y[1] \"Connector of Real output signals\";
+//   parameter Boolean tableOnFile = false \"= true, if table is defined on file or in function usertab\";
+//   parameter String tableName = \"NoName\" \"Table name on file or in function usertab (see docu)\";
+//   parameter String fileName = \"NoName\" \"File where matrix is stored\";
+//   parameter Integer columns[1] = 2 \"Columns of table to be interpolated\";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"Smoothness of table interpolation\";
+//   parameter enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation = Modelica.Blocks.Types.Extrapolation.LastTwoPoints \"Extrapolation of data outside the definition range\";
+//   parameter Real offset[1] = 0.0 \"Offsets of output signals\";
+//   parameter Real startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
+//   parameter Real t_min(fixed = false) \"Minimum abscissa value defined in table\";
+//   parameter Real t_max(fixed = false) \"Maximum abscissa value defined in table\";
 //   protected parameter Real p_offset[1] = offset[1];
 //   protected Integer tableID;
 // initial equation
 //   t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(tableID);
 //   t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(tableID);
 // equation
-//   assert(false,"tableOnFile = false and parameter table is an empty matrix");
+//   assert(false,\"tableOnFile = false and parameter table is an empty matrix\");
 //   y[1] = p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(tableID,columns[1],time);
 //   when initial() then
-//   tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  NOT tableOnFile then "NoName" else tableName,if  NOT tableOnFile then "NoName" else fileName,{{}},startTime,smoothness,extrapolation);
+//   tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  NOT tableOnFile then \"NoName\" else tableName,if  NOT tableOnFile then \"NoName\" else fileName,{{}},startTime,smoothness,extrapolation);
 //   end when;
 // end Modelica.Blocks.Sources.CombiTimeTable;
 // "

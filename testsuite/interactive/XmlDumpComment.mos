@@ -15,20 +15,20 @@ dumpXMLDAE(XmlDumpComment);
 // "class XmlDumpComment
 //   parameter Real A;
 //   parameter Real B;
-//   Real x "evaluated to 0 if A < B";
+//   Real x \"evaluated to 0 if A < B\";
 // equation
 //   x = Real(if A < B then 0 else 1);
 // end XmlDumpComment;
 // "
-// {"<?xml version="1.0" encoding="UTF-8"?>
-// <dae xmlns:p1="http://www.w3.org/1998/Math/MathML"
-//                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-//                                                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-//                                                 xsi:noNamespaceSchemaLocation="http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd">
-// <variables dimension="4">
-// <orderedVariables dimension="2">
+// {"<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+// <dae xmlns:p1=\"http://www.w3.org/1998/Math/MathML\"
+//                                                 xmlns:xlink=\"http://www.w3.org/1999/xlink\"
+//                                                 xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+//                                                 xsi:noNamespaceSchemaLocation=\"http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd\">
+// <variables dimension=\"4\">
+// <orderedVariables dimension=\"2\">
 // <variablesList>
-// <variable id="1" name="x" variability="continuous" direction="none" type="Real" index="-1" fixed="false" flow="NonConnector" stream="NonStreamConnector" comment="evaluated to 0 if A &lt; B">
+// <variable id=\"1\" name=\"x\" variability=\"continuous\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"false\" flow=\"NonConnector\" stream=\"NonStreamConnector\" comment=\"evaluated to 0 if A &lt; B\">
 // <classesNames>
 // <element>
 // XmlDumpComment
@@ -38,19 +38,19 @@ dumpXMLDAE(XmlDumpComment);
 // </element>
 // </classesNames>
 // </variable>
-// <variable id="2" name="$dummy" variability="continuousState" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStream">
+// <variable id=\"2\" name=\"$dummy\" variability=\"continuousState\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStream\">
 // <attributesValues>
-// <fixed string="true">
+// <fixed string=\"true\">
 // </fixed>
 // </attributesValues>
 // </variable>
 // </variablesList>
 // </orderedVariables>
-// <knownVariables dimension="2">
+// <knownVariables dimension=\"2\">
 // <variablesList>
-// <variable id="1" name="B" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <variable id=\"1\" name=\"B\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
 // <bindValueExpression>
-// <bindExpression string="0.0">
+// <bindExpression string=\"0.0\">
 // </bindExpression>
 // </bindValueExpression>
 // <classesNames>
@@ -62,9 +62,9 @@ dumpXMLDAE(XmlDumpComment);
 // </element>
 // </classesNames>
 // </variable>
-// <variable id="2" name="A" variability="parameter" direction="none" type="Real" index="-1" fixed="true" flow="NonConnector" stream="NonStreamConnector">
+// <variable id=\"2\" name=\"A\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
 // <bindValueExpression>
-// <bindExpression string="0.0">
+// <bindExpression string=\"0.0\">
 // </bindExpression>
 // </bindValueExpression>
 // <classesNames>
@@ -79,10 +79,10 @@ dumpXMLDAE(XmlDumpComment);
 // </variablesList>
 // </knownVariables>
 // </variables>
-// <equations dimension="2">
-// <equation id="1">x = if A &lt; B then 0.0 else 1.0
+// <equations dimension=\"2\">
+// <equation id=\"1\">x = if A &lt; B then 0.0 else 1.0
 // </equation>
-// <equation id="2">der($dummy) = 0.0
+// <equation id=\"2\">der($dummy) = 0.0
 // </equation>
 // </equations>
 // <functions>

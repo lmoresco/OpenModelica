@@ -27,10 +27,9 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // ""
 // 
 // ""
-// "
-// 1: #ifndef SimCodeC_abc__H
+// "1: #ifndef SimCodeC_abc__H
 // 2: #define SimCodeC_abc__H
-// 3: #include "modelica.h"
+// 3: #include \"modelica.h\"
 // 4: #include <stdio.h>
 // 5: #include <stdlib.h>
 // 6: #include <errno.h>
@@ -40,19 +39,19 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 10:   #define DLLExport /* nothing */
 // 11: #endif
 // 12: #ifdef __cplusplus
-// 13: extern "C" {
+// 13: extern \"C\" {
 // 14: #endif
 // 15: void _SimCodeC_abc();
 // 16: #ifdef __cplusplus
 // 17: }
 // 18: #endif
-// 19: #endif"
+// 19: #endif
 // "
-// 1: #include "SimCodeC_abc.h"
+// "1: #include \"SimCodeC_abc.h\"
 // 2: #include <algorithm>
-// 3: #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,"Modelica Assert: %s!\n", msg); }
-// 4: #define MODELICA_TERMINATE(msg) { fprintf(stderr,"Modelica Terminate: %s!\n", msg); fflush(stderr); }
-// 5: extern "C" {
+// 3: #define MODELICA_ASSERT(info,msg) { printInfo(stderr,info); fprintf(stderr,\"Modelica Assert: %s!\\n\", msg); }
+// 4: #define MODELICA_TERMINATE(msg) { fprintf(stderr,\"Modelica Terminate: %s!\\n\", msg); fflush(stderr); }
+// 5: extern \"C\" {
 // 6: void _SimCodeC_abc()
 // 7: {
 // 8:   state tmp1;
@@ -70,5 +69,6 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 20:   write_noretcall(outVar);
 // 21:   return 0;
 // 22: }
-// 23: }"
+// 23: }
+// "
 // endResult

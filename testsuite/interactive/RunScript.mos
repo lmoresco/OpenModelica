@@ -4,11 +4,11 @@
 //
 runScript("strings.mos");
 // Result:
-// ""foo"
-// "bar"
-// "foobar"
+// "\"foo\"
+// \"bar\"
+// \"foobar\"
 // true
-// "foobar"
+// \"foobar\"
 // 0
 // "
 // endResult

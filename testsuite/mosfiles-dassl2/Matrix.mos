@@ -34,7 +34,7 @@ simulate(tt,numberOfIntervals=1);
 //   input Real x;
 //   output Real y;
 // 
-// external "C";
+// external \"C\";
 // end Trans;
 // 
 // class tt

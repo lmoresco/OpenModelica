@@ -119,10 +119,10 @@ list(A);                                                                        
 // Ok
 // ""
 // "model A
-//   final inner discrete Integer x "comment for x";
+//   final inner discrete Integer x \"comment for x\";
 // 
 // equation 
-//   connect(a,b) "connecting a and b";
+//   connect(a,b) \"connecting a and b\";
 // end A;
 // 
 // "
@@ -130,7 +130,7 @@ list(A);                                                                        
 // Ok
 // ""
 // "model A
-//   final inner discrete Integer x "comment for x";
+//   final inner discrete Integer x \"comment for x\";
 // 
 // equation 
 //   connect(a,b) annotation(Line(points = {{-22.0,15.0},{32.0,15.0},{32.0,16.0}}));
@@ -202,10 +202,10 @@ list(A);                                                                        
 // Ok
 // ""
 // "model A
-//   final inner discrete Integer x "comment for x";
+//   final inner discrete Integer x \"comment for x\";
 // 
 // equation 
-//   connect(a,b) "connecting a and b";
+//   connect(a,b) \"connecting a and b\";
 // end A;
 // 
 // "
@@ -213,7 +213,7 @@ list(A);                                                                        
 // Ok
 // ""
 // "model A
-//   final inner discrete Integer x "comment for x";
+//   final inner discrete Integer x \"comment for x\";
 // 
 // equation 
 //   connect(a,b) annotation(Line(points = {{-22.0,15.0},{32.0,15.0},{32.0,16.0}}));

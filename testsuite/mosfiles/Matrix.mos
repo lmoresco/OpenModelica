@@ -33,7 +33,7 @@ system("rm -f libFunc.a output.log tt_*.* tt.log tt.libs tt.makefile tt.exe tt.c
 //   input Real x;
 //   output Real y;
 // 
-// external "C";
+// external \"C\";
 // end Trans;
 // 
 // class tt
