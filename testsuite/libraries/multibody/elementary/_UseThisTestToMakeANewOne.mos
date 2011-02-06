@@ -19,8 +19,6 @@ getErrorString();
 // "Unknown model.
 // "
 // ""
-// "Error: No classes are loaded.
-// Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum
-// "
+// "Internal error, check of model failed with no error message."
 // ""
 // endResult
