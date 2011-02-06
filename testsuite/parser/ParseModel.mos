@@ -18,11 +18,9 @@ system("cp ./ParseModel-saved.mo ./ParseModel.mo"); /* copy the saved model agai
 // 0
 // true
 // "model A
-//   annotation(Documentation(info = "line1
-
+//   annotation(Documentation(info = \"line1
 // 
-
-//   line2"));
+//   line2\"));
 // end A;
 // 
 // "
