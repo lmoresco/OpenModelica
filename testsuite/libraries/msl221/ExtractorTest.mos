@@ -13,47 +13,47 @@ getErrorString();
 // true
 // "function Modelica.Math.asin
 //   input Real u;
-//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
-//   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
+//   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external "C";
+// external \"C\";
 // end Modelica.Math.sin;
 // 
 // class ExtractorTest
-//   parameter Integer extractor1.nin = 2 "Number of inputs";
-//   input Real extractor1.u[1] "Connector of Real input signals";
-//   input Real extractor1.u[2] "Connector of Real input signals";
-//   output Real extractor1.y "Connector of Real output signal";
-//   parameter Boolean extractor1.allowOutOfRange = false "Index may be out of range";
-//   parameter Real extractor1.outOfRangeValue = 10000000000.0 "Output signal if index is out of range";
+//   parameter Integer extractor1.nin = 2 \"Number of inputs\";
+//   input Real extractor1.u[1] \"Connector of Real input signals\";
+//   input Real extractor1.u[2] \"Connector of Real input signals\";
+//   output Real extractor1.y \"Connector of Real output signal\";
+//   parameter Boolean extractor1.allowOutOfRange = false \"Index may be out of range\";
+//   parameter Real extractor1.outOfRangeValue = 10000000000.0 \"Output signal if index is out of range\";
 //   input Integer extractor1.index;
 //   protected Real extractor1.k[1];
 //   protected Real extractor1.k[2];
-//   output Integer integerStep1.y "Connector of Integer output signal";
-//   parameter Integer integerStep1.offset = 1 "offset of output signal";
-//   parameter Real integerStep1.startTime(quantity = "Time", unit = "s") = 5.0 "y = offset for time < startTime";
-//   parameter Integer integerStep1.height = 1 "Height of step";
-//   output Real sine1.y "Connector of Real output signal";
-//   parameter Real sine1.amplitude = 1.0 "Amplitude of sine wave";
-//   parameter Real sine1.freqHz(quantity = "Frequency", unit = "Hz") = 1.0 "Frequency of sine wave";
-//   parameter Real sine1.phase(quantity = "Angle", unit = "rad", displayUnit = "deg") = 0.0 "Phase of sine wave";
-//   parameter Real sine1.offset = 0.0 "Offset of output signal";
-//   parameter Real sine1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
+//   output Integer integerStep1.y \"Connector of Integer output signal\";
+//   parameter Integer integerStep1.offset = 1 \"offset of output signal\";
+//   parameter Real integerStep1.startTime(quantity = \"Time\", unit = \"s\") = 5.0 \"y = offset for time < startTime\";
+//   parameter Integer integerStep1.height = 1 \"Height of step\";
+//   output Real sine1.y \"Connector of Real output signal\";
+//   parameter Real sine1.amplitude = 1.0 \"Amplitude of sine wave\";
+//   parameter Real sine1.freqHz(quantity = \"Frequency\", unit = \"Hz\") = 1.0 \"Frequency of sine wave\";
+//   parameter Real sine1.phase(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") = 0.0 \"Phase of sine wave\";
+//   parameter Real sine1.offset = 0.0 \"Offset of output signal\";
+//   parameter Real sine1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   protected constant Real sine1.pi = 3.14159265358979;
-//   output Real pulse1.y "Connector of Real output signal";
-//   parameter Real pulse1.amplitude = 1.0 "Amplitude of pulse";
-//   parameter Real pulse1.width(min = 1e-60, max = 100.0) = 50.0 "Width of pulse in % of periods";
-//   parameter Real pulse1.period(quantity = "Time", unit = "s", min = 1e-60) = 1.0 "Time for one period";
-//   parameter Real pulse1.offset = 0.0 "Offset of output signals";
-//   parameter Real pulse1.startTime(quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-//   protected Real pulse1.T0(quantity = "Time", unit = "s", start = pulse1.startTime) "Start time of current period";
-//   protected Real pulse1.T_width(quantity = "Time", unit = "s") = pulse1.period * pulse1.width / 100.0;
+//   output Real pulse1.y \"Connector of Real output signal\";
+//   parameter Real pulse1.amplitude = 1.0 \"Amplitude of pulse\";
+//   parameter Real pulse1.width(min = 1e-60, max = 100.0) = 50.0 \"Width of pulse in % of periods\";
+//   parameter Real pulse1.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 1.0 \"Time for one period\";
+//   parameter Real pulse1.offset = 0.0 \"Offset of output signals\";
+//   parameter Real pulse1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
+//   protected Real pulse1.T0(quantity = \"Time\", unit = \"s\", start = pulse1.startTime) \"Start time of current period\";
+//   protected Real pulse1.T_width(quantity = \"Time\", unit = \"s\") = pulse1.period * pulse1.width / 100.0;
 // equation
 //   when {initial(),change(extractor1.index)} then
 //   extractor1.k[1] = Real(if extractor1.index == 1 then 1 else 0);
