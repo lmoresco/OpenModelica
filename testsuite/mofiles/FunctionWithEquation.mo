@@ -17,9 +17,7 @@ end FunctionWithEquation;
 
 // Result:
 // Error processing file: FunctionWithEquation.mo
-// [FunctionWithEquation.mo:6:1-11:7:writable] Error: Element is not allowed in function context: equation
-//   assert(true,"This really should succeed ;)");
-// 
+// [FunctionWithEquation.mo:10:3-10:48:writable] Error: Equations are not allowed in function.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
