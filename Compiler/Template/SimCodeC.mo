@@ -10711,7 +10711,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(i_vi_numAlgVars));
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" // n alg vars\n"));
         txt = Tpl.writeStr(txt, intString(i_vi_numParams));
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" //n parameters\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" // n parameters\n"));
         txt = Tpl.writeStr(txt, intString(i_vi_numIntParams));
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" // n int parameters\n"));
         txt = Tpl.writeStr(txt, intString(i_vi_numIntAlgVars));
