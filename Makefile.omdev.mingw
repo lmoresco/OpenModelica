@@ -31,6 +31,7 @@ settings:
 omdev_extra_dlls:
 	echo Copying needed .dlls to the build/bin directory
 	(cp -puf $(OMDEV)/tools/mingw/bin/mingwm10.dll $(builddir_bin)/)
+	(cp -puf $(OMDEV)/tools/mingw/bin/libgnurx-0.dll $(builddir_bin)/)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
