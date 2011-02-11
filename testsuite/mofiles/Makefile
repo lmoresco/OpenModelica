@@ -418,6 +418,7 @@ NestedClasses.mo \
 NoEvent1.mo \
 NonConstantReduction.mo \
 NonExpArray1.mo \
+NonExpArray2.mo \
 NonExpArray3.mo \
 NotDependsRecursive.mo \
 NotEquals.mo \
@@ -608,7 +609,6 @@ Modification3.mo \
 Modification8.mo \
 ModifyConstant1.mo \
 ModifyConstant2.mo \
-NonExpArray2.mo \
 OperatorComponents.mo \
 OperatorFunction1.mo \
 OperatorFunction2.mo \
