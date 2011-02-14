@@ -9,15 +9,15 @@ model IfEquation3
  Real x;
  Real y;
 equation
- if time<1 then
-  if time>0.5 then
+ if noEvent(time<1) then
+  if noEvent(time>0.5) then
    x=0;
    y=1;
   else
    y=0;
    x=1;
   end if;
- elseif time<1.5 then
+ elseif noEvent(time<1.5) then
   x=1;
   y=2;
  else

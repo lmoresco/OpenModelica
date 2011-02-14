@@ -22,7 +22,7 @@ val(y,1);
 //     messages = " DASSL--  AT T (=R1) SOME ELEMENT OF WT
 //       In above message,  R1 =   .1001739280611E+01
 //  DASSL--  HAS BECOME .LE. 0.0
-// [:0:0-0:0:readonly] Simulation call assert() at time 1.00051
+// [:0:0-0:0:writable] Simulation call assert() at time 1.00051
 // Level : error
 // Message : Model error: Argument of sqrt should be >= 0
 // 

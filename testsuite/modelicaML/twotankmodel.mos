@@ -7,7 +7,7 @@
 //
 loadFile("./TwoTanksSystemExample/package.mo");  
 simulate(TwoTanksSystemExample.Simulations.TankSystemSimulation,method="rungekutta",stopTime=400,numberOfIntervals=4000);
-//plot2({dm.tank1.h,dm.tank2.h})
+//plot2({dm.tank1.h,dm.tank2.h});
 
 val(dm.tank1.h,11);
 val(dm.tank1.h,49);
@@ -31,17 +31,18 @@ val(dm.tank2.h,400);
 //     simulationOptions = "startTime = 0.0, stopTime = 400.0, numberOfIntervals = 4000, tolerance = 1e-06, method = 'rungekutta', fileNamePrefix = 'TwoTanksSystemExample.Simulations.TankSystemSimulation', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
 //     messages = ""
 // end SimulationResult;
-// 0.0163846177321214
-// 0.5406680081356291
-// 0.2518105588464127
-// 0.4506556578893787
-// 0.08000000327782612
-// 0.194205576480379
-// 0.2687851385383217
-// 0.0006400804072994672
-// 1.284361466685814
-// 0.2645110689672424
-// 0.6344034677690038
-// 0.08262278835160689
-// 0.4409798572207534
+// 0.0153846153832492
+// 0.540775399011131
+// 0.251813677594977
+// 0.450656921204178
+// 0.0840001813072016
+// 0.194235544276821
+// 0.26875780390731
+// 0.000542019205800008
+// 1.28466880856868
+// 0.26446193263178
+// 0.634440476178816
+// 0.0835334273876057
+// 0.440978901391924
 // endResult
+
