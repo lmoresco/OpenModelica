@@ -1,4 +1,4 @@
-CPPFLAGS=-I"/home/marsj/dev/trunk/build/include/omc"
+CPPFLAGS=-I"../../build/include/omc"
 RECS=libmainrecords.a
 CC=$(CXX)
 
@@ -12,6 +12,6 @@ main_records.o: main_records.c ../../build/include/omc/OpenModelicaBootstrapping
 	$(CXX) $(CFLAGS) -c -fPIC $(CPPFLAGS) -march=native -mfpmath=sse -o $@ $<
 Main_main2.o: Main_main2.c
 	$(CXX) $(CFLAGS) -c -fPIC $(CPPFLAGS) -march=native -mfpmath=sse -o Main_main2.o Main_main2.c
-Main_main2.c: Main_main.c convert_lines.pl
-	./convert_lines.pl $< $@.tmp
+Main_main2.c: Main_main.c
+	perl ../../build/share/omc/scripts/convert_lines.pl $< $@.tmp
 	mv $@.tmp $@
