@@ -5096,8 +5096,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2674 equation(s) and 2674 variable(s).
-// 1599 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2791 equation(s) and 2791 variable(s).
+// 1608 of these are trivial equation(s).
 // "
 // ""
 // endResult

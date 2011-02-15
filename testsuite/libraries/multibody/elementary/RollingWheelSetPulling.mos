@@ -5114,8 +5114,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling has 2677 equation(s) and 2677 variable(s).
-// 1758 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling has 2740 equation(s) and 2740 variable(s).
+// 1779 of these are trivial equation(s).
 // "
 // ""
 // endResult

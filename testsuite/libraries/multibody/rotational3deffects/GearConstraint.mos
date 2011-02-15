@@ -4507,8 +4507,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2379 equation(s) and 2379 variable(s).
-// 1519 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2478 equation(s) and 2478 variable(s).
+// 1528 of these are trivial equation(s).
 // "
 // ""
 // endResult

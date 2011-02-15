@@ -3338,8 +3338,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper has 1845 equation(s) and 1845 variable(s).
-// 1121 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper has 1881 equation(s) and 1881 variable(s).
+// 1136 of these are trivial equation(s).
 // "
 // ""
 // endResult

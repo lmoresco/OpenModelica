@@ -16,8 +16,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic); getEr
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic has 9491 equation(s) and 9491 variable(s).
-// 7058 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic has 9938 equation(s) and 9938 variable(s).
+// 7151 of these are trivial equation(s).
 // "
 // ""
 // endResult

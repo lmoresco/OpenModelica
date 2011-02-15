@@ -3674,8 +3674,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings has 2015 equation(s) and 2015 variable(s).
-// 1275 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings has 2048 equation(s) and 2048 variable(s).
+// 1296 of these are trivial equation(s).
 // "
 // ""
 // endResult

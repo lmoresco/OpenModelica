@@ -9394,8 +9394,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic has 5034 equation(s) and 5034 variable(s).
-// 3227 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic has 5241 equation(s) and 5241 variable(s).
+// 3263 of these are trivial equation(s).
 // "
 // ""
 // endResult

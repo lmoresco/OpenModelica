@@ -4356,8 +4356,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive has 2462 equation(s) and 2462 variable(s).
-// 1501 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive has 2552 equation(s) and 2552 variable(s).
+// 1507 of these are trivial equation(s).
 // "
 // ""
 // endResult

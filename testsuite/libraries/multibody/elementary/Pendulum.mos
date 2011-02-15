@@ -2384,8 +2384,8 @@ checkModel(P); getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum has 1380 equation(s) and 1380 variable(s).
-// 789 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum has 1392 equation(s) and 1392 variable(s).
+// 792 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.Vectors.length \"Inline before index reduction\"
@@ -4754,8 +4754,8 @@ checkModel(P); getErrorString();
 // "Check of P completed successfully.
 // 
 // 
-// Class P has 1380 equation(s) and 1380 variable(s).
-// 789 of these are trivial equation(s).
+// Class P has 1392 equation(s) and 1392 variable(s).
+// 792 of these are trivial equation(s).
 // "
 // ""
 // endResult
