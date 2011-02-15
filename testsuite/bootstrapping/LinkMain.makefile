@@ -3,7 +3,7 @@ RECS=libmainrecords.a
 CC=$(CXX)
 
 main: Main_main2.o $(RECS) main.c
-	$(CXX) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) -L./ -march=native -mfpmath=sse -lomparse -lomcruntime -L"/home/marsj/dev/trunk/build/lib/omc" -lmodparomc -lc_runtime -lm -lrt -ldl -llpsolve55 -lcolamd -lantlr3 -lmainrecords -lomniORB4 -lomnithread
+	$(CXX) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) -L./ -march=native -mfpmath=sse -lomparse -lomcruntime -L"../../build/lib/omc" -lmodparomc -lc_runtime -lm -lrt -ldl -llpsolve55 -lcolamd -lantlr3 -lmainrecords -lomniORB4 -lomnithread
 $(RECS): main_records.o
 	rm -f $@
 	ar -ru $@ $<
