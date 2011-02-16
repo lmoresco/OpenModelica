@@ -92,6 +92,7 @@ Time.mos \
 TupleReturn.mos \
 TwoRateSampler.mos \
 val.mos \
+VariableFilter.mos \
 VectorizeOneReturnValue.mos \
 WatchDog1AlgorithmWhen.mos WatchDog2EquationWhen.mos \
 WhenEquation.mos WhenEquation1.mos WhenPriority.mos \

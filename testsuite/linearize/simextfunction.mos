@@ -25,7 +25,7 @@ readFile("output.log"); // Check that output log is emtpy
 // true
 // record SimulationResult
 //     resultFile = "extfunction_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // Linearization will performed at point of time: 0
@@ -56,7 +56,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_extfunction_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -68,9 +68,9 @@ readFile("output.log"); // Check that output log is emtpy
 //   parameter Integer n = 2;
 //   parameter Integer k = 0;
 //   parameter Integer l = 0;
-//   parameter Real x0[2] = {1.39896302261312,-1.39896302261312};
+//   parameter Real x0[2] = {1.39896302261306,-1.39896302261306};
 //   parameter Real u0[0] = {};
-//   parameter Real A[2,2] = [0.170988940418301,1.37836042157076;1.37836041191886,0.170988940418301];
+//   parameter Real A[2,2] = [0.170988940418353,1.37836042157069;1.37836041191886,0.170988940418353];
 //   parameter Real B[2,0] = zeros(2, 0);
 //   parameter Real C[0,2] = zeros(0, 2);
 //   parameter Real D[0,0] = zeros(0, 0);
@@ -88,7 +88,7 @@ readFile("output.log"); // Check that output log is emtpy
 // "
 // record SimulationResult
 //     resultFile = "linear_extfunction_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'linear_extfunction', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // ""

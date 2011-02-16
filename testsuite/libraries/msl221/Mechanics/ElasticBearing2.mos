@@ -337,7 +337,7 @@ val(housing.a,1.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Rotational.Examples.ElasticBearing_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.ElasticBearing', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // "shaft.phi:"
@@ -399,7 +399,7 @@ val(housing.a,1.0);
 // 11.390869221349
 // 27.9307780124529
 // 34.6775403850951
-// 55.0079925880558
+// 55.0079925880557
 // "load.flange_b.phi:"
 // 0.0
 // 0.000908293204388017
@@ -429,7 +429,7 @@ val(housing.a,1.0);
 // -11.390869221349
 // -27.9307780124529
 // -34.6775403850951
-// -55.0079925880558
+// -55.0079925880557
 // "spring.flange_a.phi:"
 // 0.0
 // 0.012299162425737
@@ -441,7 +441,7 @@ val(housing.a,1.0);
 // 11.390869221349
 // 27.9307780124529
 // 34.6775403850951
-// 55.0079925880558
+// 55.0079925880557
 // "spring.flange_b.phi:"
 // 0.0
 // 0.000908293204388017
@@ -453,7 +453,7 @@ val(housing.a,1.0);
 // -11.390869221349
 // -27.9307780124529
 // -34.6775403850951
-// -55.0079925880558
+// -55.0079925880557
 // "fixed.flange_b.tau:"
 // 0.0
 // -7.58798589642978
@@ -543,12 +543,12 @@ val(housing.a,1.0);
 // -11.390869221349
 // -27.9307780124529
 // -34.6775403850951
-// -55.0079925880558
+// -55.0079925880557
 // "idealGear.tau_support:"
 // -0.0
 // 7.59391281423268
 // 18.6205186749686
-// 23.1183602567301
+// 23.11836025673
 // 36.6719950587038
 // "idealGear.bearing.phi:"
 // 0.0
@@ -560,7 +560,7 @@ val(housing.a,1.0);
 // -0.0
 // 7.59391281423268
 // 18.6205186749686
-// 23.1183602567301
+// 23.11836025673
 // 36.6719950587038
 // "idealGear.phi_a:"
 // 0.0
@@ -602,7 +602,7 @@ val(housing.a,1.0);
 // 0.0
 // -7.59391281423268
 // -18.6205186749686
-// -23.1183602567301
+// -23.11836025673
 // -36.6719950587038
 // "housing.w:"
 // 0.0

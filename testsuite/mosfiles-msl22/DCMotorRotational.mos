@@ -21,7 +21,7 @@ val(inertia2.w,0.6),val(inertia2.w,0.8),val(inertia2.w,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SystemTests.DCMotor_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.DCMotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SystemTests.DCMotor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.106672254470769,0.213815587665178,0.303704394359971,0.36194946299354,0.3787026392201}

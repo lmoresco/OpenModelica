@@ -21,7 +21,7 @@ val(inertia1.phi,0.6),val(inertia1.phi,0.8),val(inertia1.phi,1.0)};
 // true
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.SpringInertia.BacklashTest_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.BacklashTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.SpringInertia.BacklashTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,0.109973081043417,0.287950839731115,0.287948365964486,0.110001212227011,4.54102166517533e-06}

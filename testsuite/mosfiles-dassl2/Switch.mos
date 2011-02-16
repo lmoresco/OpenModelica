@@ -35,12 +35,12 @@ open2;
 // true
 // record SimulationResult
 //     resultFile = "Switch_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'Switch', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'Switch', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true
 // 1.0
-// 4.58063459683278e-73
+// 0.0
 // 0.0
 // 1.0
 // 1.0

@@ -50,39 +50,39 @@ val(Op2.out.i,60.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassSC', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassSC', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // "C5.v:"
 // -0.0
-// 0.496953423131184
-// 0.500614439919471
-// 0.501127733652465
-// 0.498999050620074
-// 0.5006720131771
-// 0.499601196031154
+// 0.496953417989019
+// 0.500614443530155
+// 0.501127731998353
+// 0.498999051362967
+// 0.500672012847797
+// 0.499601196174849
 // "C5.i:"
 // -0.0
-// 1.38431087307116e-32
-// -1.71095034166429e-22
-// -1.71095034154955e-22
-// 0.0
-// -6.74937241441106e-13
-// 8.85966618400059e-14
+// -1.30535151780023e-32
+// -1.71095034153376e-22
+// -1.71095034168009e-22
+// 7.89593552709309e-34
+// -5.1423942827015e-13
+// 8.85382207975219e-14
 // "Op2.out.v:"
 // -0.0
-// 0.551528037077839
-// 0.468383310570105
-// 0.512534477252587
-// 0.495092395819077
-// 0.50184310549513
-// 0.499349249587276
+// 0.551528044559787
+// 0.46838330686325
+// 0.512534479301048
+// 0.495092394762191
+// 0.501843106025826
+// 0.499349249326814
 // "Op2.out.i:"
 // -0.0
-// -1.10305607404537e-05
-// -9.36766621046534e-06
-// -1.02506895440267e-05
-// -9.90184791539135e-06
-// -1.00368611703601e-05
-// -9.98698145103583e-06
+// -1.10305608900927e-05
+// -9.36766613632823e-06
+// -1.02506895849959e-05
+// -9.90184789425363e-06
+// -1.00368667267822e-05
+// -9.98698144843122e-06
 // endResult

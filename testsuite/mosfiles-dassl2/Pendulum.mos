@@ -19,13 +19,13 @@ val(y,3.0);
 // true
 // record SimulationResult
 //     resultFile = "Pendulum_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 300, tolerance = 1e-10, method = 'dassl2', fileNamePrefix = 'Pendulum', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 300, tolerance = 1e-10, method = 'dassl2', fileNamePrefix = 'Pendulum', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// -0.986116992285595
-// 0.793710867421572
-// -0.185919560292389
-// -0.165589936450056
-// -0.607631778467661
-// -0.98301650717383
+// -0.986244350174751
+// 0.795749990051649
+// -0.185352094317095
+// -0.164834372078963
+// -0.604962726621468
+// -0.982014657703227
 // endResult

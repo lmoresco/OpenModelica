@@ -107,77 +107,77 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // true
 // record SimulationResult
 //     resultFile = "TimeVaryingLinSys_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TimeVaryingLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TimeVaryingLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.740982142486398
-// 2.00085125296138
+// 0.740997524905435
+// 2.00090554273757
 // 0.0
-// 0.707214286010267
-// 0.999318997629908
+// 0.707201980074254
+// 0.99927556580793
 // 0.0
-// 0.103607143005508
-// -0.000340501184430301
+// 0.103600990038519
+// -0.000362217094133394
 // 0
 // 0
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.880890216829123
-// 0.854039214274526
+// 0.880890216829124
+// 0.854039214274534
 // 0
 // 0
 // record SimulationResult
 //     resultFile = "dae1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// 1.00067064865227
-// 0.00016753680645046
+// 1.00066814093011
+// 0.000168232310026539
 // record SimulationResult
 //     resultFile = "dae2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// 0.666665101830573
-// 0.50000115490964
+// 0.666664673523273
+// 0.500002021720641
 // 0
 // 0
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys3_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0
 // 1.21472971518614
-// 1.64262702204521
+// 1.6426270220452
 // 2.0
 // 2.26876840858057
-// 2.92573133188799
+// 2.92573133188797
 // 0
 // 0
 // true
 // true
 // record SimulationResult
 //     resultFile = "Test3PhaseSystems.Test3PhaseSystem_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 20.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3PhaseSystems.Test3PhaseSystem', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 20.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3PhaseSystems.Test3PhaseSystem', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// -0.00869273954826425
-// -0.021891758479452
-// 0.0305844980277181
+// -0.00869273954826396
+// -0.0218917584794517
+// 0.0305844980277184
 // 0
 // 0
 // true
 // record SimulationResult
 //     resultFile = "BooleanModel_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BooleanModel', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BooleanModel', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0
@@ -191,11 +191,11 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // true
 // record SimulationResult
 //     resultFile = "LargeSteps_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'LargeSteps', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'LargeSteps', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// -0.762647905757618
+// -0.762647913820604
 // 0
 // 0
 // endResult

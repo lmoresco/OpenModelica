@@ -1,5 +1,5 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
-TEST = ../rtest
+TEST = ../rtest -b
 
 TESTFILES = \
 AlgPatternm.mos \
@@ -15,6 +15,7 @@ Equality.mos \
 EqPatternm.mos \
 ErrorInteractiveCallFunctionPtr.mos \
 ErrorInvalidComplexType.mo \
+ErrorInvalidMetarecord.mo \
 ErrorInvalidPattern1.mo \
 ErrorInvalidPattern2.mo \
 ErrorInvalidPattern3.mo \

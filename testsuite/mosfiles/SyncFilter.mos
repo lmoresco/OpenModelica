@@ -65,7 +65,7 @@ val(sampleTrigger, 6.2*10e-6);
 // ""
 // record SimulationResult
 //     resultFile = "SyncFilter_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.0005, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'SyncFilter', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0005, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'SyncFilter', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0

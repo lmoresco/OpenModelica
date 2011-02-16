@@ -37,7 +37,7 @@ val(b,5);
 // true
 // record SimulationResult
 //     resultFile = "Sample2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0
@@ -49,11 +49,11 @@ val(b,5);
 // 121.4
 // 1.0
 // 1.87646557354107
-// 4.58786074927475
-// 42.8722723477537
-// 188.518188181187
-// 643.211417682828
-// 1132.44206650682
+// 4.58785861898649
+// 42.8722665464415
+// 188.518172410187
+// 643.211374809138
+// 1132.4419958171
 // 0.0
 // 0.0
 // 1.0

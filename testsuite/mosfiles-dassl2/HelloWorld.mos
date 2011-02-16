@@ -19,13 +19,13 @@ val(der(x),1.0);
 // true
 // record SimulationResult
 //     resultFile = "HelloWorld_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'HelloWorld', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'HelloWorld', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.606
-// 0.367
+// 0.606540253453921
+// 0.367885530477953
 // -1.0
-// -0.607
-// -0.368
+// -0.606540253453921
+// -0.367885530477953
 // endResult

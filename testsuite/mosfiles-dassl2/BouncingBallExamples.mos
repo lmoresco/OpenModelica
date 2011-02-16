@@ -24,19 +24,19 @@ val(x,8.0);
 // true
 // record SimulationResult
 //     resultFile = "BouncingBallExamples_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-07, method = 'dassl2', fileNamePrefix = 'BouncingBallExamples', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 500, tolerance = 1e-07, method = 'dassl2', fileNamePrefix = 'BouncingBallExamples', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true
 // 0.0
-// 0.225275104799069
+// 0.225267379077486
 // 0.0
 // record SimulationResult
 //     resultFile = "BouncingBall_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 8.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 8.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// 0.345548867170653
-// 0.233746322731428
-// 0.100130811193252
+// 0.345772270111802
+// 0.233846715348441
+// 0.100033242109377
 // endResult

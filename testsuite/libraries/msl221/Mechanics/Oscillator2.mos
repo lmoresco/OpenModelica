@@ -294,7 +294,7 @@ val(Damper1.v_rel,1.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Translational.Examples.Oscillator_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Oscillator', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 0.0001, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Oscillator', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // "SlidingMass1.s:"
@@ -409,7 +409,7 @@ val(Damper1.v_rel,1.0);
 // -1.0
 // -1.00070774232737
 // -1.00088081433529
-// -1.00089388009382
+// -1.00089388009381
 // -1.0008518938624
 // "SlidingMass2.flange_a.f:"
 // 0.0
@@ -463,7 +463,7 @@ val(Damper1.v_rel,1.0);
 // 1.0
 // 1.00070774232737
 // 1.00088081433529
-// 1.00089388009382
+// 1.00089388009381
 // 1.0008518938624
 // "Spring2.f:"
 // 0.0
@@ -481,7 +481,7 @@ val(Damper1.v_rel,1.0);
 // -1.0
 // -1.00070774232737
 // -1.00088081433529
-// -1.00089388009382
+// -1.00089388009381
 // -1.0008518938624
 // "Force2.flange_b.f:"
 // -0.0
@@ -523,7 +523,7 @@ val(Damper1.v_rel,1.0);
 // 1.0
 // 1.00070774232737
 // 1.00088081433529
-// 1.00089388009382
+// 1.00089388009381
 // 1.0008518938624
 // "Damper1.f:"
 // -0.0

@@ -32,20 +32,20 @@ getErrorString();
 // 0
 // record SimulationResult
 //     resultFile = "ExternalLibraries1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ExternalLibraries1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ExternalLibraries1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.600904090311591
-// 0.403974873386304
-// 0.288498967241287
-// 0.213846186385224
-// 0.162498706282156
+// 0.600856216657394
+// 0.403950305566205
+// 0.288487010203944
+// 0.21383109175653
+// 0.1624770197271
 // 2.0
-// 1.47708236678021
-// 1.24430159476124
-// 1.12932910341657
-// 1.06963566764904
-// 1.03783726511909
+// 1.47702861915093
+// 1.24427877474115
+// 1.12932060688604
+// 1.06962080454224
+// 1.03781597225023
 // ""
 // endResult

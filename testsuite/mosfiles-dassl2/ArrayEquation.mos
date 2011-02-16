@@ -36,15 +36,15 @@ val(y,1.0);
 // true
 // record SimulationResult
 //     resultFile = "ArrayEqn_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl2', fileNamePrefix = 'ArrayEqn', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 2.0
-// 0.898602694887637
-// 0.403761954540367
-// 0.181419153254115
-// 0.081515513051074
-// 0.0366299451191233
+// 0.898671261867596
+// 0.403803492405332
+// 0.181452068318726
+// 0.0815294953387675
+// 0.0366331922171308
 // 4.0
 // 4.0
 // 4.0
@@ -58,9 +58,9 @@ val(y,1.0);
 // 2.0
 // 2.0
 // 1.0
-// 0.449301347443818
-// 0.201880977270183
-// 0.0907095766270577
-// 0.040757756525537
-// 0.0183149725595616
+// 0.449335630933798
+// 0.201901746202666
+// 0.0907260341593628
+// 0.0407647476693837
+// 0.0183165961085654
 // endResult
