@@ -56,6 +56,7 @@ InlineSolverCodeGenerationEuler.mos \
 InlineSolverCodeGenerationRK.mos \
 Interpolation.mos \
 InOutStrings.mos InOutRecord.mos \
+JapaneseBouncingBall.mos \
 HelloWorld.mos \
 LinearSysEq.mos \
 LocalVariableInit.mos \

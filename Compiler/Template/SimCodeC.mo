@@ -234,18 +234,19 @@ algorithm
       SimCode.ExtObjInfo i_extObjInfo;
       list<SimCode.SimEqSystem> i_allEquationsPlusWhen;
       list<SimCode.JacobianMatrix> i_JacobianMatrixes;
+      String i_fileNamePrefix;
       SimCode.ModelInfo i_modelInfo;
       SimCode.SimCode i_simCode;
       list<SimCode.SimEqSystem> ret_1;
       list<SimCode.SimEqSystem> ret_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = i_modelInfo, JacobianMatrixes = i_JacobianMatrixes, allEquationsPlusWhen = i_allEquationsPlusWhen, extObjInfo = i_extObjInfo, allEquations = i_allEquations, nonStateContEquations = i_nonStateContEquations, removedEquations = i_removedEquations, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts, nonStateDiscEquations = i_nonStateDiscEquations, zeroCrossings = i_zeroCrossings, zeroCrossingsNeedSave = i_zeroCrossingsNeedSave, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, helpVarInfo = i_helpVarInfo, delayedExps = i_delayedExps, whenClauses = i_whenClauses, stateContEquations = i_stateContEquations, initialEquations = i_initialEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, discreteModelVars = i_discreteModelVars, odeEquations = i_odeEquations, algebraicEquations = i_algebraicEquations, discreteModelVars2 = i_discreteModelVars2)) )
+           (i_simCode as SimCode.SIMCODE(modelInfo = i_modelInfo, fileNamePrefix = i_fileNamePrefix, JacobianMatrixes = i_JacobianMatrixes, allEquationsPlusWhen = i_allEquationsPlusWhen, extObjInfo = i_extObjInfo, allEquations = i_allEquations, nonStateContEquations = i_nonStateContEquations, removedEquations = i_removedEquations, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts, nonStateDiscEquations = i_nonStateDiscEquations, zeroCrossings = i_zeroCrossings, zeroCrossingsNeedSave = i_zeroCrossingsNeedSave, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, helpVarInfo = i_helpVarInfo, delayedExps = i_delayedExps, whenClauses = i_whenClauses, stateContEquations = i_stateContEquations, initialEquations = i_initialEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, discreteModelVars = i_discreteModelVars, odeEquations = i_odeEquations, algebraicEquations = i_algebraicEquations, discreteModelVars2 = i_discreteModelVars2)) )
       equation
         txt = simulationFileHeader(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = globalData(txt, i_modelInfo);
+        txt = globalData(txt, i_modelInfo, i_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         ret_0 = SimCode.appendAllequation(i_JacobianMatrixes);
@@ -1859,13 +1860,15 @@ end smf_69;
 public function globalData
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
+  input String in_a_fileNamePrefix;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
+  matchcontinue(in_txt, in_a_modelInfo, in_a_fileNamePrefix)
     local
       Tpl.Text txt;
+      String a_fileNamePrefix;
       list<SimCode.SimVar> i_vars_extObjVars;
       list<SimCode.SimVar> i_vars_jacobianVars;
       list<SimCode.SimVar> i_vars_stringParamVars;
@@ -1918,7 +1921,8 @@ algorithm
       Integer ret_0;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numJacobianVars = i_varInfo_numJacobianVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, jacobianVars = i_vars_jacobianVars, extObjVars = i_vars_extObjVars), functions = i_functions, name = i_name, directory = i_directory) )
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numHelpVars = i_varInfo_numHelpVars, numZeroCrossings = i_varInfo_numZeroCrossings, numTimeEvents = i_varInfo_numTimeEvents, numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numOutVars = i_varInfo_numOutVars, numInVars = i_varInfo_numInVars, numResiduals = i_varInfo_numResiduals, numExternalObjects = i_varInfo_numExternalObjects, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numJacobianVars = i_varInfo_numJacobianVars), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, jacobianVars = i_vars_jacobianVars, extObjVars = i_vars_extObjVars), functions = i_functions, name = i_name, directory = i_directory),
+           a_fileNamePrefix )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define NHELP "));
         txt = Tpl.writeStr(txt, intString(i_varInfo_numHelpVars));
@@ -2016,6 +2020,11 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("const char *model_name=\""));
         txt = dotPath(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\";\n",
+                                    "const char *model_fileprefix=\""
+                                }, false));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\";\n",
                                     "const char *model_dir=\""
@@ -2200,6 +2209,7 @@ algorithm
       then txt;
 
     case ( txt,
+           _,
            _ )
       then txt;
   end matchcontinue;
@@ -3347,6 +3357,7 @@ algorithm
                                    "\n",
                                    "  returnData->initFixed = init_fixed;\n",
                                    "  returnData->modelName = model_name;\n",
+                                   "  returnData->modelFilePrefix = model_fileprefix;\n",
                                    "  returnData->statesNames = state_names;\n",
                                    "  returnData->stateDerivativesNames = derivative_names;\n",
                                    "  returnData->algebraicsNames = algvars_names;\n",
@@ -11549,18 +11560,22 @@ algorithm
       DAE.ComponentRef i_componentRef;
       list<DAE.Subscript> i_subscriptLst;
       DAE.Ident i_ident;
+      String ret_1;
+      String ret_0;
 
     case ( txt,
            DAE.CREF_IDENT(ident = i_ident, subscriptLst = i_subscriptLst) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_0 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_0);
         txt = subscriptsToCStr(txt, i_subscriptLst);
       then txt;
 
     case ( txt,
            DAE.CREF_QUAL(ident = i_ident, subscriptLst = i_subscriptLst, componentRef = i_componentRef) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_1 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_1);
         txt = subscriptsToCStr(txt, i_subscriptLst);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
         txt = crefToCStr(txt, i_componentRef);
@@ -11769,18 +11784,22 @@ algorithm
       DAE.ComponentRef i_componentRef;
       list<DAE.Subscript> i_subscriptLst;
       DAE.Ident i_ident;
+      String ret_1;
+      String ret_0;
 
     case ( txt,
            DAE.CREF_IDENT(ident = i_ident, subscriptLst = i_subscriptLst) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_0 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_0);
         txt = subscriptsToMStr(txt, i_subscriptLst);
       then txt;
 
     case ( txt,
            DAE.CREF_QUAL(ident = i_ident, subscriptLst = i_subscriptLst, componentRef = i_componentRef) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_1 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_1);
         txt = subscriptsToMStr(txt, i_subscriptLst);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("P"));
         txt = crefToMStr(txt, i_componentRef);
@@ -11983,17 +12002,21 @@ algorithm
       Tpl.Text txt;
       DAE.ComponentRef i_componentRef;
       DAE.Ident i_ident;
+      String ret_1;
+      String ret_0;
 
     case ( txt,
            DAE.CREF_IDENT(ident = i_ident) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_0 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_0);
       then txt;
 
     case ( txt,
            DAE.CREF_QUAL(ident = i_ident, componentRef = i_componentRef) )
       equation
-        txt = Tpl.writeStr(txt, i_ident);
+        ret_1 = System.unquoteIdentifier(i_ident);
+        txt = Tpl.writeStr(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
         txt = arrayCrefCStr2(txt, i_componentRef);
       then txt;
@@ -12186,21 +12209,25 @@ algorithm
       Tpl.Text txt;
       DAE.ComponentRef i_componentRef;
       DAE.Ident i_ident;
+      String ret_3;
+      String ret_2;
       String ret_1;
       String ret_0;
 
     case ( txt,
            DAE.CREF_IDENT(ident = i_ident) )
       equation
-        ret_0 = System.stringReplace(i_ident, "_", "__");
-        txt = Tpl.writeStr(txt, ret_0);
+        ret_0 = System.unquoteIdentifier(i_ident);
+        ret_1 = System.stringReplace(ret_0, "_", "__");
+        txt = Tpl.writeStr(txt, ret_1);
       then txt;
 
     case ( txt,
            DAE.CREF_QUAL(ident = i_ident, componentRef = i_componentRef) )
       equation
-        ret_1 = System.stringReplace(i_ident, "_", "__");
-        txt = Tpl.writeStr(txt, ret_1);
+        ret_2 = System.unquoteIdentifier(i_ident);
+        ret_3 = System.stringReplace(ret_2, "_", "__");
+        txt = Tpl.writeStr(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
         txt = crefFunctionName(txt, i_componentRef);
       then txt;
