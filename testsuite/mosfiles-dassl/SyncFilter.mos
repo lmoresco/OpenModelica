@@ -71,7 +71,7 @@ val(syncFilter.y, 6.2*10e-6);
 // ""
 // record SimulationResult
 //     resultFile = "SyncFilterTest_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.0005, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl2', fileNamePrefix = 'SyncFilterTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.0005, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'SyncFilterTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 4.0000000000111e-05
