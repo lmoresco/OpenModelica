@@ -22,7 +22,7 @@ val(inertia2.w,0.5);
 // ""
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.IdealGearBrake_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGearBrake', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGearBrake', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // "[Rotational.mo:1952:3-1952:37:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
@@ -30,8 +30,8 @@ val(inertia2.w,0.5);
 // 	second element is: parameter Modelica.SIunits.Torque unitTorque  = 1;
 // 	Modelica specification requires that elements are exactly identical.
 // "
-// -0.124750657909978
-// 0.168180883757212
-// 0.371803477293457
-// 0.335799716388475
+// -0.124721639648818
+// 0.168199524230536
+// 0.371789162472409
+// 0.335785050103144
 // endResult

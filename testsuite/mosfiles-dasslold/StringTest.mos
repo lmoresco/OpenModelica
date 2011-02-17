@@ -1,0 +1,22 @@
+// name:     StringTest 
+// keywords: String, assert 
+// status: correct
+// cflags: +d=SetOldDassl
+// teardown_command: rm -rf STest1.cpp STest1 STest1.exe STest1.libs STest1.log STest1_functions.cpp STest1.makefile STest1_init.txt STest1_res.plt
+// 
+//  Using String() functions to create strings in assert.
+//
+loadFile("StringTest.mo");
+simulate(STest1, tolerance=1e-5, numberOfIntervals=100);
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "STest1_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'STest1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = "[StringTest.mo:8:1-14:56:writable] Simulation call assert() at time 0.101
+// Level : error
+// Message : x reached 0.1 at time 0.101 b =true i =     66
+// 
+// "
+// end SimulationResult;
+// endResult

@@ -1,0 +1,52 @@
+// name:     InlineSolverCodeGenerationRK
+// keywords: events
+// status: correct
+// cflags: +d=SetOldDassl
+// teardown_command: rm -rf DerivativeCodeGeneration_* DerivativeCodeGeneration DerivativeCodeGeneration.exe DerivativeCodeGeneration.cpp DerivativeCodeGeneration.makefile DerivativeCodeGeneration.libs DerivativeCodeGeneration.log output.log
+//
+// Tests code generation for the inline euler solver. Uses a model designed to create every equation block that omc generates $DER crefs for.
+// 
+
+loadFile("DerivativeCodeGeneration.mo");
+simulate(DerivativeCodeGeneration,method="inline-rungekutta",numberOfIntervals=10000,stopTime=4.0);
+getErrorString();
+"x[1]";
+val(x[1],0.0);val(x[1],1.0);val(x[1],2.0);
+"x[2]";
+val(x[2],0.0);val(x[2],1.0);val(x[2],2.0);
+"mixed.v1";
+val(mixed.v1,0.0);val(mixed.v1,1.0);val(mixed.v1,2.0);
+"y";
+val(y,0.0);val(y,1.0);val(y,2.0);
+"z";
+val(z,0.0);val(z,1.0);val(z,2.0);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "DerivativeCodeGeneration_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 10000, tolerance = 1e-06, method = 'inline-rungekutta', fileNamePrefix = 'DerivativeCodeGeneration', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// ""
+// "x[1]"
+// 0.0
+// 1.00081692708345
+// 2.00133958333345
+// "x[2]"
+// 0.0
+// 2.0016338541669
+// 4.0026791666669
+// "mixed.v1"
+// 0.0
+// -0.44097259249721
+// -0.748674522384433
+// "y"
+// 2.0
+// 3.00081692708342
+// 4.00133958333342
+// "z"
+// 15.0
+// 15.5007438206102
+// 17.0018993774941
+// endResult

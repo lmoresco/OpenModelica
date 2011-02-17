@@ -1,0 +1,45 @@
+// name:     Record arguments
+// keywords: array, record
+// status:   correct
+// cflags: +d=SetOldDassl
+
+loadFile("InOutRecord.mo");
+
+test := TestPkg.mk_r(true, "not");
+TestPkg.fkn(test);
+
+simulate(m);
+echo(false);
+s:=readSimulationResultSize("m_res.plt");
+res:=readSimulationResult("m_res.plt",{q},s);
+echo(true);
+res[1,1];
+
+simulate(TestPkg.subm);
+echo(false);
+s:=readSimulationResultSize("TestPkg.subm_res.plt");
+res:=readSimulationResult("TestPkg.subm_res.plt",{q},s);
+echo(true);
+res[1,1];
+// Result:
+// true
+// record TestPkg.R
+//     a = true,
+//     tmp = "not"
+// end TestPkg.R;
+// true
+// record SimulationResult
+//     resultFile = "m_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'm', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// true
+// 1.0
+// record SimulationResult
+//     resultFile = "TestPkg.subm_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'TestPkg.subm', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// true
+// 0.0
+// endResult

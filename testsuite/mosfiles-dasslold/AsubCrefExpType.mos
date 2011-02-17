@@ -1,0 +1,20 @@
+// name:     AsubCrefExpType
+// keywords: asub cref type
+// status: correct
+// cflags: +d=SetOldDassl
+// teardown_command: rm -rf AsubCrefExpType_* AsubCrefExpType.exe AsubCrefExpType.cpp AsubCrefExpType.makefile AsubCrefExpType.libs AsubCrefExpType.log output.log
+// 
+// Tests assignment of one slice to another slice.
+// 
+
+loadFile("AsubCrefExpType.mo");
+simulate(AsubCrefExpType,startTime=0.0, stopTime=1.0, numberOfIntervals=2);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "AsubCrefExpType_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'AsubCrefExpType', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// endResult

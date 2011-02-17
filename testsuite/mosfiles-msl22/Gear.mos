@@ -9,7 +9,7 @@
 loadModel(Modelica); getErrorString();
 loadFile("TestModels.mo"); getErrorString();
 
-simulate(TestModels.RotationalModels.Gears.Gear, tolerance=1e-5, numberOfIntervals=100); getErrorString();
+simulate(TestModels.RotationalModels.Gears.Gear, tolerance=1e-5, numberOfIntervals=500); getErrorString();
 val(inertia1.w,0.1);
 val(inertia1.w,0.4);
 val(inertia1.w,0.9);
@@ -24,20 +24,14 @@ val(inertia2.w,0.9);
 // ""
 // record SimulationResult
 //     resultFile = "TestModels.RotationalModels.Gears.Gear_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.Gear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
-//     messages = "Error in initialization. System of initial equations are not consistent.
-
-// (Least Square function value is 1)
-
-// residual[17] = -1
-
-// "
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.Gear', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
 // end SimulationResult;
 // ""
-// -16.0791304159185
-// -0.30018310267053
-// -12.6695891849178
-// 8.14607442141547
-// 0.375106730793756
-// 6.03703120479463
+// -0.4462979156404
+// -0.181713191082318
+// 0.000121786993126856
+// -0.890742746193923
+// -0.363479339246289
+// 4.19650093997578e-08
 // endResult

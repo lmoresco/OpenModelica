@@ -111,14 +111,14 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// 0.740997524905435
-// 2.00090554273757
+// 0.740917955838652
+// 2.00023063033581
 // 0.0
-// 0.707201980074254
-// 0.99927556580793
+// 0.707265635328147
+// 0.99981549572689
 // 0.0
-// 0.103600990038519
-// -0.000362217094133394
+// 0.103632817666132
+// -9.22521266639408e-05
 // 0
 // 0
 // true
@@ -128,8 +128,8 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.880890216829124
-// 0.854039214274534
+// 0.880883555692253
+// 0.854023850807132
 // 0
 // 0
 // record SimulationResult
@@ -137,15 +137,15 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// 1.00066814093011
-// 0.000168232310026539
+// 1.00066822930865
+// 0.00016810539448119
 // record SimulationResult
 //     resultFile = "dae2_res.plt",
 //     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// 0.666664673523273
-// 0.500002021720641
+// 0.666664660297425
+// 0.500001465301158
 // 0
 // 0
 // true
@@ -155,11 +155,11 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 1.21472971518614
-// 1.6426270220452
+// 1.21474279743755
+// 1.64263509095622
 // 2.0
-// 2.26876840858057
-// 2.92573133188797
+// 2.26878869394865
+// 2.92574180241184
 // 0
 // 0
 // true
@@ -181,10 +181,10 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 1.0
+// 0.999999635838321
 // 0.0
 // 2.0
-// 2.0
+// 1.00000036416168
 // 0.0
 // 0
 // 0
@@ -195,7 +195,7 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// -0.762647913820604
+// -0.761642684240409
 // 0
 // 0
 // endResult

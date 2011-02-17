@@ -22,10 +22,7 @@ val(BearingFriction1.w,0.6),val(BearingFriction1.w,0.7),val(BearingFriction1.w,0
 // record SimulationResult
 //     resultFile = "BearingFrictionTest_res.plt",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BearingFrictionTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
-//     messages = "Error in initialization. System of initial equations are not consistent.
-// (Least Square function value is 0.49)
-// residual[3] = -0.7
-// "
+//     messages = ""
 // end SimulationResult;
-// {0.26302082809713,0.352870158921351,0.431754602463575,0.500994990689461,0.561846550162325,0.615266296819496,0.662163305958612,0.703351752145411,0.739518220826162,0.771273352160848,0.799157477524368}
+// {0.25,0.341439970154827,0.421719930287777,0.492182893467902,0.554098572765232,0.608452425521361,0.656177864683761,0.698083610943614,0.734882634907287,0.767201274318889,0.795580591782357}
 // endResult

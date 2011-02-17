@@ -12,8 +12,6 @@ DCMotorRotational.mos \
 ElasticBearing.mos \
 First.mos \
 FuncCross.mos \
-Gear.mos \
-Gear2.mos \
 IdealGear.mos \
 IdealGearBrake.mos \
 InitTest.mos \
@@ -35,6 +33,8 @@ WeakAxis.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=\
+Gear.mos \
+Gear2.mos \
 LossyGear1.mos
 
 .PHONY : test

@@ -1,6 +1,6 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
-mosfiles.log \
+mosfiles-dassl.log \
 mosfiles-msl22.log \
 parser.log \
 meta.log \
@@ -20,7 +20,7 @@ streams.log
 
 SLOWLOGS = \
 bootstrapping.log \
-mosfiles-dassl2.log \
+mosfiles-dasslold.log \
 msl31.log \
 multibody.log \
 msl221.log \
@@ -72,11 +72,11 @@ interactive-simulation.log: omc-diff
 msl.log: omc-diff
 	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
 	@echo $@ done
-mosfiles.log: omc-diff
-	$(MAKE) -C mosfiles -f Makefile test > $@
+mosfiles-dassl.log: omc-diff
+	$(MAKE) -C mosfiles-dassl -f Makefile test > $@
 	@echo $@ done
-mosfiles-dassl2.log: omc-diff
-	$(MAKE) -C mosfiles-dassl2 -f Makefile test > $@
+mosfiles-dasslold.log: omc-diff
+	$(MAKE) -C mosfiles-dasslold -f Makefile test > $@
 	@echo $@ done
 mosfiles-msl22.log: omc-diff
 	$(MAKE) -C mosfiles-msl22 -f Makefile test > $@
@@ -126,7 +126,7 @@ msl31.log: omc-diff
 
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
-	cd mosfiles-dassl; $(MAKE) -f Makefile failingtest; \
+	cd mosfiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
 	cd ../libraries/msl221; $(MAKE) -f Makefile failingtest; \
 	cd ../msl221/modelicaAdditions; $(MAKE) -f Makefile failingtest; \

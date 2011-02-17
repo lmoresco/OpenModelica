@@ -22,9 +22,13 @@ val(slidingMass1.s,3.9540);
 //     messages = "Error in initialization. System of initial equations are not consistent.
 // (Least Square function value is 0.0004)
 // residual[25] = -0.02
+//  DASSL--  AT CURRENT T (=R1)  500 STEPS
+//       In above message,  R1 =   .1871510534806E+00
+//  DASSL--  TAKEN ON THIS CALL BEFORE REACHING TOUT
+// DDASRT: A large amount of work has been expended.(About 500 steps). Trying to continue ...
 // "
 // end SimulationResult;
 // 0.0
-// 0.0149938753773772
-// 0.014951406623791
+// 0.0142957092583268
+// 0.0142770117903304
 // endResult

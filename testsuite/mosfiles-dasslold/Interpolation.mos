@@ -1,0 +1,32 @@
+// name:     Interpolation
+// keywords: Simulate, readSimulationData
+// status: correct
+// cflags: +d=SetOldDassl
+// teardown_command: rm -rf Interpol2Test.* Interpol2Test_* output.log
+// 
+//  Simulate Modelica.Math.tempInterpol functions
+//
+
+loadFile("Interpol2.mo");
+simulate(Interpol2Test, tolerance=1e-5, numberOfIntervals=100);
+val(x,0.0);
+val(y,0.0);
+val(z,0.0);
+val(x2,0.0);
+val(y2,0.0);
+val(z2,0.0);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Interpol2Test_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Interpol2Test', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// 10.5
+// 35.0
+// 60.0
+// 105.0
+// 350.0
+// 600.0
+// endResult

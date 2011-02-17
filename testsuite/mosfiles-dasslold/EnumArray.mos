@@ -1,0 +1,24 @@
+// name:     EnumArray
+// keywords: enum array
+// status: correct
+// cflags: +d=SetOldDassl
+// teardown_command: rm -rf EnumArray_* EnumArray EnumArray.exe EnumArray.cpp EnumArray.makefile EnumArray.libs EnumArray.log output.log
+//
+// Code generation for assignment of arrays indexed with enumerations.
+// 
+loadFile("EnumArray.mo");
+simulate(EnumArray, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+echo(false);
+size:=readSimulationResultSize("EnumArray_res.plt");
+echo(true);
+size;
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "EnumArray_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'EnumArray', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     messages = ""
+// end SimulationResult;
+// true
+// 4
+// endResult
