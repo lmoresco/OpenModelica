@@ -12,39 +12,9 @@ val(a,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Uniontype7', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
-//     messages = "Simulation failed for model: Uniontype7
-// Error: Error building simulator. Buildlog: make[2]: Entering directory `/home/marsj/dev/trunk/testsuite/meta'
-// make[2]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
-// \"perl\" /home/marsj/dev/trunk/build/share/omc/scripts/convert_lines.pl Uniontype7_test.c Uniontype7_test.conv.c.tmp
-// g++ -shared -export-dynamic -fPIC -o Uniontype7_test.so Uniontype7_test.conv.c  -I\"/home/marsj/dev/trunk/build/include/omc\" -march=native -mfpmath=sse  -L\"/home/marsj/dev/trunk/build/lib/omc\" -lc_runtime -lrt -lpthread -lm Uniontype7_test_records.c
-// In file included from Uniontype7_test.c:1:
-// Uniontype7_test.h:39: error: field ‘targ1’ has incomplete type
-// Uniontype7_test.c: In function ‘Uniontype7_test_rettype _Uniontype7_test(modelica_integer)’:
-// Uniontype7_test.c:28: error: aggregate ‘Uniontype7_foo _f’ has incomplete type and cannot be defined
-// Uniontype7_test.c:36: error: ‘struct Uniontype7_foo_rettype’ has no member named ‘targ1’
-// Uniontype7_test.c: In function ‘Uniontype7_foo_rettype _Uniontype7_foo(modelica_integer, modelica_real, void*, modelica_boolean)’:
-// Uniontype7_test.c:82: error: aggregate ‘Uniontype7_foo tmp2’ has incomplete type and cannot be defined
-// Uniontype7_test.c:87: error: ‘struct Uniontype7_foo_rettype’ has no member named ‘targ1’
-// make[2]: *** [Uniontype7_test] Error 1
-// make[2]: Leaving directory `/home/marsj/dev/trunk/testsuite/meta'
-// 
-// Error: Error building simulator. Buildlog: command g++ not found. Check $OPENMODELICAHOME
-// Error: Error building simulator. Buildlog: command \"/home/marsj/dev/trunk/build/share/omc/scripts/Compile\" not found. Check $OPENMODELICAHOME
-// Error: Error building simulator. Buildlog: make[2]: Entering directory `/home/marsj/dev/trunk/testsuite/meta'
-// make[2]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
-// \"perl\" /home/marsj/dev/trunk/build/share/omc/scripts/convert_lines.pl Uniontype7.cpp Uniontype7.conv.cpp.tmp
-// g++ -I. -o Uniontype7 Uniontype7.conv.cpp Uniontype7_functions.cpp    -lsim -linteractive -I\"/home/marsj/dev/trunk/build/include/omc\" -march=native -mfpmath=sse  -lrt -lpthread -L\"/home/marsj/dev/trunk/build/lib/omc\" -lc_runtime -lf2c Uniontype7_records.c
-// Uniontype7_functions.cpp: In function ‘Uniontype7_test_rettype _Uniontype7_test(modelica_integer)’:
-// Uniontype7_functions.cpp:19: error: invalid conversion from ‘const void*’ to ‘void*’
-// Uniontype7_functions.cpp:19: error:   initializing argument 3 of ‘Uniontype7_foo_rettype _Uniontype7_foo(modelica_integer, modelica_real, void*, modelica_boolean)’
-// make[2]: *** [Uniontype7] Error 1
-// make[2]: Leaving directory `/home/marsj/dev/trunk/testsuite/meta'
-// 
-// Error: Error building simulator. Buildlog: command g++ not found. Check $OPENMODELICAHOME
-// Error: Error building simulator. Buildlog: command \"/home/marsj/dev/trunk/build/share/omc/scripts/Compile\" not found. Check $OPENMODELICAHOME
-// "
+//     resultFile = "Uniontype7_res.plt",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Uniontype7', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     messages = ""
 // end SimulationResult;
-// 
+// 5.0
 // endResult
