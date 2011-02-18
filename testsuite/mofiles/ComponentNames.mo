@@ -21,9 +21,9 @@ end ComponentNames;
 //   parameter Integer TestClass.x = 2;
 //   Integer Integer;
 // end ComponentNames;
-// [ComponentNames.mo:15:3-15:29:writable] Warning: Component TestClass has the same name as its type ComponentNames.TestClass.
+// [ComponentNames.mo:15:3-15:29:writable] Warning: Component TestClass has the same name as its type TestClass.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [ComponentNames.mo:16:3-16:18:writable] Warning: Component Integer has the same name as its type ComponentNames.Integer.
+// [ComponentNames.mo:16:3-16:18:writable] Warning: Component Integer has the same name as its type Integer.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // endResult

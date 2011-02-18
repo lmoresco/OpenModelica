@@ -4259,11 +4259,11 @@ getErrorString();
 // "
 // "Check of MultiBody.Examples.Loops.Fourbar2 completed successfully.
 // 
-// [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
+// [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type SI.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [FourBar2Total.mo:1941:7-1941:73:writable] Warning: Component Length has the same name as its type MultiBody.Parts.BoxBody.SI.Length.
+// [FourBar2Total.mo:1941:7-1941:73:writable] Warning: Component Length has the same name as its type SI.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type MultiBody.Parts.CylinderBody.SI.Length.
+// [FourBar2Total.mo:2021:7-2021:70:writable] Warning: Component Length has the same name as its type SI.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.Fourbar2 has 2522 equation(s) and 2525 variable(s).

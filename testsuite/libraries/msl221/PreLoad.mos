@@ -256,7 +256,7 @@ getErrorString();
 //   Spool.flange_b.f = 0.0;
 // end Modelica.Mechanics.Translational.Examples.PreLoad;
 // "
-// "[Translational.mo:448:7-448:166:writable] Warning: Component Spring has the same name as its type Modelica.Mechanics.Translational.Examples.PreLoad.Translational.Spring.
+// "[Translational.mo:448:7-448:166:writable] Warning: Component Spring has the same name as its type Translational.Spring.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

@@ -366,9 +366,9 @@ getErrorString();
 //   STA_195205_129.Armature.Stopper_xMin.flange_a.s = STA_195205_129.Armature.limit_xMin.flange_b.s;
 // end Magnetic_Examples_MotionCycleWithLoad;
 // "
-// "[MotionCycleWithLoadTotal.mo:1793:7-1793:90:writable] Warning: Component Ground has the same name as its type Magnetic_Examples_MotionCycleWithLoad.Modelica.Electrical.Analog.Basic.Ground.
+// "[MotionCycleWithLoadTotal.mo:1793:7-1793:90:writable] Warning: Component Ground has the same name as its type Modelica.Electrical.Analog.Basic.Ground.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [MotionCycleWithLoadTotal.mo:1794:7-1794:111:writable] Warning: Component STA_195205_129 has the same name as its type Magnetic_Examples_MotionCycleWithLoad.Magnetic.Solenoid.STA_195205_129.
+// [MotionCycleWithLoadTotal.mo:1794:7-1794:111:writable] Warning: Component STA_195205_129 has the same name as its type Magnetic.Solenoid.STA_195205_129.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult
