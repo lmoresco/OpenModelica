@@ -195,7 +195,6 @@ DisturbedResistance3.mo \
 DisturbedResistance4.mo \
 Div.mo \
 DocString.mo \
-DoubleDeclaration.mo \
 DuplicateElements.mo \
 DuplicateElementsEquivalent.mo \
 DuplicateElementsNonEquivalent.mo \
@@ -497,6 +496,7 @@ SimpleIntegrator2.mo \
 SimpleIntegrator3.mo \
 SimpleTypeExtend.mo \
 Simplify.mo \
+Simplify2.mo \
 SimplifyRangeInCall.mo \
 Sinh.mo \
 Sin.mo \
