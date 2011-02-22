@@ -686,12 +686,6 @@ has a 3D icon (e.g. used in Blocks.Logical library).
     model AdaptorReal "Adaptor between 'old' and 'new' Real signal connectors"
       RealPort oldReal(final n=1) annotation(extent=[-120,-10;-100,10]);
       annotation(structurallyIncomplete, Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-100,-40},{100,40}}),Text(visible=true, extent={{-144,46},{144,96}}, textString="", fontName="Arial"),Text(visible=true, fillColor={0,0,255}, extent={{-88,-24},{88,22}}, textString="adaptor", fontName="Arial"),Text(visible=true, extent={{-216,-80},{36,-58}}, textString="port.signal", fontName="Arial")}), Documentation(info=""), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
-      connector RealPort "Connector with signals of type Real"
-        parameter Integer n=1 "Dimension of signal vector" annotation(Hide=true);
-        replaceable type SignalType= Real "type of signal";
-        SignalType signal[n] "Real signals" annotation(Hide=true);
-      end RealPort;
-
       RealSignal newReal annotation(Placement(visible=true, transformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0), iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0)));
     protected 
       connector RealPort "Connector with signals of type Real"
@@ -707,12 +701,6 @@ has a 3D icon (e.g. used in Blocks.Logical library).
     model AdaptorBoolean "Adaptor between 'old' and 'new' Boolean signal connectors"
       BooleanPort oldBoolean(final n=1) annotation(extent=[-120,-10;-100,10]);
       annotation(structurallyIncomplete, Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, lineColor={255,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-100,-40},{100,40}}),Text(visible=true, extent={{-144,46},{144,96}}, textString="", fontName="Arial"),Text(visible=true, fillColor={255,0,255}, extent={{-88,-24},{88,22}}, textString="adaptor", fontName="Arial"),Text(visible=true, extent={{-216,-80},{36,-58}}, textString="port.signal", fontName="Arial")}), Documentation(info=""), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
-      connector BooleanPort "Connector with signals of type Boolean"
-        parameter Integer n=1 "Dimension of signal vector" annotation(Hide=true);
-        replaceable type SignalType= Boolean "type of signal";
-        SignalType signal[n] "Boolean signals" annotation(Hide=true);
-      end BooleanPort;
-
       BooleanSignal newBoolean annotation(Placement(visible=true, transformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0), iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0)));
     protected 
       connector BooleanPort "Connector with signals of type Boolean"
@@ -729,12 +717,6 @@ has a 3D icon (e.g. used in Blocks.Logical library).
       IntegerPort oldInteger(final n=1) annotation(extent=[-120,-10;-100,10]);
       annotation(structurallyIncomplete, Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, lineColor={255,127,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-100,-40},{100,40}}),Text(visible=true, extent={{-144,46},{144,96}}, textString="", fontName="Arial"),Text(visible=true, fillColor={255,127,0}, extent={{-88,-24},{88,22}}, textString="adaptor", fontName="Arial"),Text(visible=true, extent={{-216,-80},{36,-58}}, textString="port.signal", fontName="Arial")}), Documentation(info="
 "), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
-      connector IntegerPort "Connector with signals of type Integer"
-        parameter Integer n=1 "Dimension of signal vector" annotation(Hide=true);
-        replaceable type SignalType= Integer "type of signal";
-        SignalType signal[n] "Integer signals" annotation(Hide=true);
-      end IntegerPort;
-
       IntegerSignal newInteger annotation(Placement(visible=true, transformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0), iconTransformation(origin={110,0}, extent={{-10,-10},{10,10}}, rotation=0)));
     protected 
       connector IntegerPort "Connector with signals of type Integer"

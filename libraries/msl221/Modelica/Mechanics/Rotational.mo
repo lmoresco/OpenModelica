@@ -1094,19 +1094,6 @@ It is used e.g. to build up equation-based parts of a drive train.</p>
 
     partial model TwoFlangesAndBearingH "Base class for a hierarchically composed component with two rotational 1D flanges and one rotational bearing flange"
       extends Bearing;
-      encapsulated model Adapter
-        import Modelica.Mechanics.Rotational.Interfaces.TwoFlanges;
-        extends TwoFlanges;
-        parameter Boolean bearingConnected;
-        annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-90,10},{90,-10}}, fillPattern=FillPattern.Solid, lineColor={192,192,192}, fillColor={192,192,192}),Text(extent={{-150,60},{150,20}}, textString="%name")}), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
-      equation 
-        flange_a.phi=flange_b.phi;
-        if bearingConnected then
-          0=flange_a.tau + flange_b.tau;
-        else
-          0=flange_a.phi;
-        end if;
-      end Adapter;
 
       annotation(Icon(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})), Diagram(coordinateSystem(extent={{-100,100},{100,-100}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})));
       Adapter adapter(bearingConnected=cardinality(bearing) > 1) annotation(Placement(visible=true, transformation(origin={0,-60}, extent={{-10,-10},{10,10}}, rotation=-90)));
