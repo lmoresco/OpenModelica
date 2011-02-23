@@ -18,7 +18,7 @@ You need:
         svn co https://openmodelica.org/svn/MetaModelica/trunk mmc
         user: anonymous
         pass: none
-    rml needs smlnj: http://www.smlnj.org (working version v110.xx) or mlton (mlton.org)
+    rml needs smlnj: http://www.smlnj.org (working version v110.xx) and/or mlton (mlton.org)
     mico or omniORB:
         omniORB:
           Is better maintained by Linux distributions, but doesn't print as
