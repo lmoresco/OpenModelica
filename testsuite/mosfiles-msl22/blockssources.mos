@@ -83,6 +83,6 @@ system("rm -rf *PulseTest.* *PulseTest_* output.log");
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SourceTests.PulseTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
-// {1.0,1.0,1.0,1.0,1.0}
+// {1.0,0.0,1.0,0.0,1.0}
 // 0
 // endResult

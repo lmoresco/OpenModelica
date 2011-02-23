@@ -7,7 +7,7 @@ equation
   end when;
   der(x) = x+y;
   when x > 5 or sample(1,1) then
-    b = not b;
+    b = not pre(b);
   end when;
   when b then
     reinit(x,0.1);

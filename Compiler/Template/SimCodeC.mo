@@ -3212,16 +3212,19 @@ algorithm
                                    "    returnData->statesDerivativesFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nStates);\n",
                                    "    returnData->statesDerivatives_old = (double*) malloc(sizeof(double)*returnData->nStates);\n",
                                    "    returnData->statesDerivatives_old2 = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    assert(returnData->statesDerivatives&&returnData->statesDerivatives_old&&returnData->statesDerivatives_old2);\n",
+                                   "    returnData->statesDerivativesBackup = (double*) malloc(sizeof(double)*returnData->nStates);\n",
+                                   "    assert(returnData->statesDerivatives&&returnData->statesDerivatives_old&&returnData->statesDerivatives_old2&&returnData->statesDerivativesBackup);\n",
                                    "    memset(returnData->statesDerivatives,0,sizeof(double)*returnData->nStates);\n",
                                    "    memset(returnData->statesDerivativesFilterOutput,0,sizeof(modelica_boolean)*returnData->nStates);\n",
                                    "    memset(returnData->statesDerivatives_old,0,sizeof(double)*returnData->nStates);\n",
                                    "    memset(returnData->statesDerivatives_old2,0,sizeof(double)*returnData->nStates);\n",
+                                   "    memset(returnData->statesDerivativesBackup,0,sizeof(double)*returnData->nStates);\n",
                                    "  } else {\n",
                                    "    returnData->statesDerivatives = 0;\n",
                                    "    returnData->statesDerivativesFilterOutput = 0;\n",
                                    "    returnData->statesDerivatives_old = 0;\n",
                                    "    returnData->statesDerivatives_old2 = 0;\n",
+                                   "    returnData->statesDerivativesBackup = 0;\n",
                                    "  }\n",
                                    "\n",
                                    "  if (returnData->nHelpVars) {\n",
@@ -6623,40 +6626,24 @@ algorithm
                                    "int functionODE_residual(double *t, double *x, double *xd, double *delta,\n",
                                    "                    fortran_integer *ires, double *rpar, fortran_integer *ipar)\n",
                                    "{\n",
-                                   "  int i;\n",
-                                   "  double temp_xd[NX];\n",
-                                   "  double* statesBackup;\n",
-                                   "  double* statesDerivativesBackup;\n",
                                    "  double timeBackup;\n",
+                                   "  double* statesBackup;\n",
                                    "\n",
                                    "  timeBackup = localData->timeValue;\n",
                                    "  statesBackup = localData->states;\n",
-                                   "  statesDerivativesBackup = localData->statesDerivatives;\n",
                                    "\n",
                                    "  localData->timeValue = *t;\n",
                                    "  localData->states = x;\n",
-                                   "  localData->statesDerivatives = temp_xd;\n",
-                                   "\n",
-                                   "  memcpy(localData->statesDerivatives, statesDerivativesBackup, localData->nStates*sizeof(double));\n",
-                                   "\n",
                                    "  functionODE_new();\n",
                                    "\n",
                                    "  /* get the difference between the temp_xd(=localData->statesDerivatives)\n",
                                    "     and xd(=statesDerivativesBackup) */\n",
-                                   "  for (i=0; i < localData->nStates; i++) {\n",
-                                   "    delta[i] = localData->statesDerivatives[i] - statesDerivativesBackup[i];\n",
+                                   "  for (int i=0; i < localData->nStates; i++) {\n",
+                                   "    delta[i] = localData->statesDerivatives[i] - xd[i];\n",
                                    "  }\n",
                                    "\n",
                                    "  localData->states = statesBackup;\n",
-                                   "  localData->statesDerivatives = statesDerivativesBackup;\n",
                                    "  localData->timeValue = timeBackup;\n",
-                                   "\n",
-                                   "  if (modelErrorCode) {\n",
-                                   "    if (ires) {\n",
-                                   "      *ires = -1;\n",
-                                   "    }\n",
-                                   "    modelErrorCode =0;\n",
-                                   "  }\n",
                                    "\n",
                                    "  return 0;\n",
                                    "}"
@@ -7175,25 +7162,13 @@ algorithm
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("int functionJac"));
   out_txt := Tpl.writeStr(out_txt, a_MatrixName);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
-                                       "(double *t, double *x, double *xd, double *jac)\n",
+                                       "( double *jac)\n",
                                        "{\n",
                                        "  state mem_state;\n",
                                        "\n",
-                                       "  double* statesBackup;\n",
-                                       "  double* statesDerivativesBackup;\n",
-                                       "  double timeBackup;\n",
-                                       "\n",
-                                       "  timeBackup = localData->timeValue;\n",
-                                       "  statesBackup = localData->states;\n",
-                                       "  statesDerivativesBackup = localData->statesDerivatives;\n",
-                                       "  localData->timeValue = *t;\n",
-                                       "  localData->states = x;\n",
-                                       "  localData->statesDerivatives = xd;\n",
                                        "\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
-  out_txt := Tpl.writeText(out_txt, l_Vars__);
-  out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeText(out_txt, l_varDecls);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
@@ -7206,10 +7181,6 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
                                        "restore_memory_state(mem_state);\n",
-                                       "\n",
-                                       "localData->states = statesBackup;\n",
-                                       "localData->statesDerivatives = statesDerivativesBackup;\n",
-                                       "localData->timeValue = timeBackup;\n",
                                        "\n",
                                        "return 0;\n"
                                    }, true));
@@ -11877,52 +11848,38 @@ end subscriptsToMStr;
 protected function fun_300
   input Tpl.Text in_txt;
   input DAE.Subscript in_a_subscript;
-  input Tpl.Text in_a_varDecls;
-  input Tpl.Text in_a_preExp;
 
   output Tpl.Text out_txt;
-  output Tpl.Text out_a_varDecls;
-  output Tpl.Text out_a_preExp;
 algorithm
-  (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_subscript, in_a_varDecls, in_a_preExp)
+  out_txt :=
+  matchcontinue(in_txt, in_a_subscript)
     local
       Tpl.Text txt;
-      Tpl.Text a_varDecls;
-      Tpl.Text a_preExp;
-      DAE.Exp i_exp;
+      Integer i_i;
 
     case ( txt,
-           DAE.INDEX(exp = i_exp),
-           a_varDecls,
-           a_preExp )
+           DAE.INDEX(exp = DAE.ICONST(integer = i_i)) )
       equation
-        (txt, a_preExp, a_varDecls) = daeExp(txt, i_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls);
-      then (txt, a_varDecls, a_preExp);
+        txt = Tpl.writeStr(txt, intString(i_i));
+      then txt;
 
     case ( txt,
-           DAE.SLICE(exp = i_exp),
-           a_varDecls,
-           a_preExp )
+           DAE.SLICE(exp = DAE.ICONST(integer = i_i)) )
       equation
-        (txt, a_preExp, a_varDecls) = daeExp(txt, i_exp, SimCode.contextSimulationNonDiscrete, a_preExp, a_varDecls);
-      then (txt, a_varDecls, a_preExp);
+        txt = Tpl.writeStr(txt, intString(i_i));
+      then txt;
 
     case ( txt,
-           DAE.WHOLEDIM(),
-           a_varDecls,
-           a_preExp )
+           DAE.WHOLEDIM() )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("WHOLEDIM"));
-      then (txt, a_varDecls, a_preExp);
+      then txt;
 
     case ( txt,
-           _,
-           a_varDecls,
-           a_preExp )
+           _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("UNKNOWN_SUBSCRIPT"));
-      then (txt, a_varDecls, a_preExp);
+      then txt;
   end matchcontinue;
 end fun_300;
 
@@ -11937,7 +11894,7 @@ protected
 algorithm
   l_preExp := Tpl.emptyTxt;
   l_varDecls := Tpl.emptyTxt;
-  (out_txt, l_varDecls, l_preExp) := fun_300(txt, a_subscript, l_varDecls, l_preExp);
+  out_txt := fun_300(txt, a_subscript);
 end subscriptToMStr;
 
 protected function fun_302

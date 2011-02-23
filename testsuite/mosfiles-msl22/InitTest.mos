@@ -23,7 +23,7 @@ val(slidingMass1.s,3.9540);
 // (Least Square function value is 0.0004)
 // residual[25] = -0.02
 //  DASSL--  AT CURRENT T (=R1)  500 STEPS
-//       In above message,  R1 =   .1871510534806E+00
+//       In above message,  R1 =   .1871510514537E+00
 //  DASSL--  TAKEN ON THIS CALL BEFORE REACHING TOUT
 // DDASRT: A large amount of work has been expended.(About 500 steps). Trying to continue ...
 // "
