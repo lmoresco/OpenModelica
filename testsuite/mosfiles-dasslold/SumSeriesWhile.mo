@@ -9,6 +9,7 @@ model SumSeries
 	Integer i;
   Real sum;
   Real delta;
+  Real delta2 = delta*3;
 algorithm
 	sum := 0;
   i := 1;

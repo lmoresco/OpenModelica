@@ -7,8 +7,9 @@
 // 
 loadFile("SumSeriesWhile.mo");
 simulate(SumSeries, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
+readSimulationResultSize("SumSeries_res.mat");
 echo(false);
-res:=readSimulationResult("SumSeries_res.mat",{sum,delta}, 4);
+res:=readSimulationResult("SumSeries_res.mat",{sum,delta},4);
 sum := res[1];
 sum := 1000*sum;
 sum := floor(sum);
@@ -25,6 +26,7 @@ delta/1000.0;
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'SumSeries', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
+// 4
 // true
 // {99.5,99.5,99.5,99.5}
 // {0.0,0.0,0.0,0.0}
