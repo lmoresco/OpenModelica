@@ -1,7 +1,6 @@
 // name:     ArrayIndex
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 // Drmodelica: 7.4 Array Indexing operator (p. 216) 
@@ -28,7 +27,7 @@ system("rm -rf ArrayIndex_* ArrayIndex.exe ArrayIndex.cpp ArrayIndex.makefile Ar
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ArrayIndex_res.plt"
+//     resultFile = "ArrayIndex_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

@@ -1,7 +1,6 @@
 // name:     WatchDog2EquationWhen
 // keywords: watchdog equation-when
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  ??Error - not yet implemented
 //
@@ -10,8 +9,8 @@
 loadFile("WatchDog2EquationWhen.mo");
 simulate( WatchDogSystem2, stopTime=4, tolerance=1e-5, numberOfIntervals=100);
 echo(false); // turns of output 
-size:=readSimulationResultSize("WatchDogSystem2_res.plt");
-res:=readSimulationResult("WatchDogSystem2_res.plt",{watchdog.internalTime1,watchdog.internalTime2,watchdog.dAlarm.signal},size); 
+size:=readSimulationResultSize("WatchDogSystem2_res.mat");
+res:=readSimulationResult("WatchDogSystem2_res.mat",{watchdog.internalTime1,watchdog.internalTime2,watchdog.dAlarm.signal},size); 
 i11:=res[1,1];
 i12:=res[2,450];
 i21:=res[1,1];
@@ -31,7 +30,7 @@ system("rm -rf WatchDogSystem2_* WatchDogSystem2.exe WatchDogSystem2.cpp WatchDo
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WatchDogSystem2_res.plt"
+//     resultFile = "WatchDogSystem2_res.mat"
 // end SimulationResult;
 // true
 // 0.0

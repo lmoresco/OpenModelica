@@ -1,7 +1,6 @@
 // name:     ABCDsystem.csv
 // keywords: array
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf ABCDsystem_* ABCDsystem ABCDsystem.exe ABCDsystem.cpp ABCDsystem.makefile ABCDsystem.libs ABCDsystem.log output.log
 // 
 // Using empty arrays

@@ -1,7 +1,6 @@
 // name:     TankPID
 // keywords: <insert keywords here>
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf TankPID_* TankPID TankPID.exe TankPID.cpp TankPID.makefile TankPID.libs TankPID.log output.log
 // 
 //  <insert description here>
@@ -12,7 +11,7 @@ loadFile("TankPID.mo");
 simulate(TankPID,stopTime=250,numberOfIntervals=250,tolerance=1e-5,outputFormat="mat"); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-//res:=readSimulationResult("TankPID_res.plt",{x,y,z},3); 
+//res:=readSimulationResult("TankPID_res.mat",{x,y,z},3); 
 x:=val(tank.h,25.0);
 y:=val(tank.h,100.0);
 z:=val(tank.h,150.0);

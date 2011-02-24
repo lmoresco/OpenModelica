@@ -1,7 +1,6 @@
 // name:     HydrogenIodide
 // keywords: der
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf HydrogenIodide_* HydrogenIodide HydrogenIodide.exe HydrogenIodide.cpp HydrogenIodide.makefile HydrogenIodide.libs HydrogenIodide.log output.log
 // 
 //  <insert description here>
@@ -10,8 +9,8 @@
 loadFile("HydrogenIodide.mo");
 simulate(HydrogenIodide, startTime=0.0, stopTime=3.0, numberOfIntervals=480, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output
-//size:=readSimulationResultSize("HydrogenIodide_res.plt");
-//res:=readSimulationResult("HydrogenIodide_res.plt",{HI,H2,I2},size); 
+//size:=readSimulationResultSize("HydrogenIodide_res.mat");
+//res:=readSimulationResult("HydrogenIodide_res.mat",{HI,H2,I2},size); 
 
 x:=val(HI,0.132);
 x2:=val(HI,0.666);
@@ -43,8 +42,8 @@ z2/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "HydrogenIodide_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 480, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'HydrogenIodide', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "HydrogenIodide_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 480, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'HydrogenIodide', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

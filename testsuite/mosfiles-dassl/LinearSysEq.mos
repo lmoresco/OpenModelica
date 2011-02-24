@@ -1,7 +1,6 @@
 // name:     LinearSysEq (test bug 1012)
 // keywords: linear system of equations
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf LinearSysEq_* LinearSysEq LinearSysEq.exe LinearSysEq.cpp LinearSysEq.makefile LinearSysEq.libs LinearSysEq.log output.log
 //
 // Solving of a linear system of equations
@@ -46,8 +45,8 @@ val(pu.port.flowrate, 1.0);
 // end LinearSysEq;
 // "
 // record SimulationResult
-//     resultFile = "LinearSysEq_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'LinearSysEq', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "LinearSysEq_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'LinearSysEq', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

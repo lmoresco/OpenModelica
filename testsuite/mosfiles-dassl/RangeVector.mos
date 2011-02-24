@@ -1,7 +1,6 @@
 // name:     RangeVector
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 //
@@ -29,7 +28,7 @@ system("rm -rf RangeVector_* RangeVector.exe RangeVector.cpp RangeVector.makefil
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "RangeVector_res.plt"
+//     resultFile = "RangeVector_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

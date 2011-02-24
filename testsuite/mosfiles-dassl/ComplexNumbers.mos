@@ -1,7 +1,6 @@
 // Name:     ComplexNumbers
 // keywords: equations when
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf ComplexNumbers ComplexNumbers.exe ComplexNumbers.c ComplexNumbers.cpp ComplexNumbers.libs ComplexNumbers.log ComplexNumbers.makefile ComplexNumbers.plt ComplexNumbers_* output.log
 // 
 //  
@@ -11,8 +10,8 @@
 loadFile("ComplexNumbers.mo");
 simulate(ComplexNumbers,numberOfIntervals=1, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size := readSimulationResultSize("ComplexNumbers_res.plt");
-//res:=readSimulationResult("ComplexNumbers_res.plt",{z},size); 
+size := readSimulationResultSize("ComplexNumbers_res.mat");
+//res:=readSimulationResult("ComplexNumbers_res.mat",{z},size); 
 //x:=res[1];
 echo(true); // turns on output
 //x;
@@ -20,8 +19,8 @@ echo(true); // turns on output
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ComplexNumbers_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ComplexNumbers', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ComplexNumbers_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ComplexNumbers', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

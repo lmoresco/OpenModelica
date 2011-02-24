@@ -13,7 +13,7 @@ val(uDC,0.1); //dymola 517
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.Rectifier_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.Rectifier_res.mat",
 //     messages = ""
 // end SimulationResult;
 // 565.685424949238

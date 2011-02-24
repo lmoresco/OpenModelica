@@ -1,7 +1,6 @@
 // name:     <XXX>
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  <insert description here>
 //
@@ -9,7 +8,7 @@ loadFile("<XXX>.mo");
 simulate(<XXX>,numberOfIntervals=2); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-res:=readSimulationResult("<XXX>_res.plt",{x,y,z},3); 
+res:=readSimulationResult("<XXX>_res.mat",{x,y,z},3); 
 x:=res[1];
 y:=res[2];
 z:=res[3];
@@ -27,7 +26,7 @@ system("rm -rf <XXX>.* <XXX>_* output.log"); // remove tmp files.
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "LinSys_res.plt"
+//     resultFile = "LinSys_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

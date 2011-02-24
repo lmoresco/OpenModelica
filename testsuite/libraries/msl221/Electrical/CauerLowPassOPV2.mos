@@ -112,8 +112,8 @@ val(C5.i,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 600, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 600, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassOPV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // "R1.v:"

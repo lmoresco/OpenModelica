@@ -1,7 +1,6 @@
 // name:     AssertTest
 // keywords: assert
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf AssertTestInst_* AssertTestInst AssertTestInst.exe AssertTestInst.cpp AssertTestInst.makefile AssertTestInst.libs AssertTestInst.log output.log
 // 
 // Error! Assertion does not cancel simulation.
@@ -15,6 +14,6 @@ echo(false); // turns of output
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "AssertTestInst_res.plt"
+//     resultFile = "AssertTestInst_res.mat"
 // end SimulationResult;
 // endResult

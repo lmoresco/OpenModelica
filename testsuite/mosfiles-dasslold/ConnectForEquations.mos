@@ -1,7 +1,6 @@
 // name:     ConnectForEquations
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 // Drmodelica: 8.2  connect equations (p. 244)
@@ -28,7 +27,7 @@ system("rm -rf ConnectForEquations_* ConnectForEquations.exe ConnectForEquations
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ConnectForEquations_res.plt"
+//     resultFile = "ConnectForEquations_res.mat"
 // end SimulationResult;
 // true
 // -1.0

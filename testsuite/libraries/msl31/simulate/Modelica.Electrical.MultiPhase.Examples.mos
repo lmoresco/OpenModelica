@@ -25,7 +25,7 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier);  getErrorString()
 simulate(Modelica.Electrical.MultiPhase.Examples.Rectifier);  getErrorString(); 
 
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.plt");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
 
 
 // Result:
@@ -793,7 +793,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.MultiPhase.Examples.TransformerYY_res.plt",
+//     resultFile = "Modelica.Electrical.MultiPhase.Examples.TransformerYY_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable idealTransformer.Lm1[3] not found in scope <global scope>
@@ -1583,7 +1583,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.MultiPhase.Examples.TransformerYD_res.plt",
+//     resultFile = "Modelica.Electrical.MultiPhase.Examples.TransformerYD_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable idealTransformer.Lm1[3] not found in scope <global scope>

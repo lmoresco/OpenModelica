@@ -1,7 +1,6 @@
 // name:     Sample1
 // keywords: events
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf Sample1_* Sample1 Sample1.exe Sample1.cpp Sample1.makefile Sample1.libs Sample1.log output.log
 //
 // Event handling
@@ -20,8 +19,8 @@ val(storage,9.1);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Sample1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Sample1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Sample1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Sample1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

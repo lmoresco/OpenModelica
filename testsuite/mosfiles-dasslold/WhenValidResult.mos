@@ -1,15 +1,14 @@
 // name:     WhenValidResult
 // keywords: when
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 // Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
 // 
 loadFile("WhenValidResult.mo");
 simulate(WhenValidResult,startTime=0.0, stopTime=3.0, tolerance=1e-5, numberOfIntervals=100); // 2 intervals == 3 values
 echo(false); // turns of output 
-//size := readSimulationResultSize("WhenValidResult_res.plt");
-//res:=readSimulationResult("WhenValidResult_res.plt",{y},size); 
+//size := readSimulationResultSize("WhenValidResult_res.mat");
+//res:=readSimulationResult("WhenValidResult_res.mat",{y},size); 
 y1:=val(y,1.0);
 y2:=val(y,2.5);
 x1:=val(x,1.0);
@@ -23,7 +22,7 @@ system("rm -rf WhenValidResult_* WhenValidResult.exe WhenValidResult.cpp WhenVal
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WhenValidResult_res.plt"
+//     resultFile = "WhenValidResult_res.mat"
 // end SimulationResult;
 // true
 // 0.0

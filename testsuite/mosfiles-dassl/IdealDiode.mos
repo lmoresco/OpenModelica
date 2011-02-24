@@ -1,7 +1,6 @@
 // name:     IdealDiode 
 // keywords: events, mixed systems
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf ideal_diode_* ideal_diode ideal_diode.exe ideal_diode.log ideal_diode.cpp ideal_diode.makefile ideal_diode.libs output.log
 //
 // Event handling
@@ -14,8 +13,8 @@ val(i0,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ideal_diode_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ideal_diode', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ideal_diode_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'ideal_diode', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

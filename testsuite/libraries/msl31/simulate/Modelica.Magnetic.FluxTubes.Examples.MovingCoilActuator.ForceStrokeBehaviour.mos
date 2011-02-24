@@ -178,8 +178,8 @@ val(comparisonWithFEA.y[3],4.0);
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour_res.plt",
-//     simulationOptions = "startTime = -4.0, stopTime = 4.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour_res.mat",
+//     simulationOptions = "startTime = -4.0, stopTime = 4.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
 //     messages = ""
 // end SimulationResult;
 // -0.00399499991909

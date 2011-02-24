@@ -30,7 +30,7 @@ instantiateModel(Modelica.Blocks.Examples.BusUsage);  getErrorString();
 checkModel(Modelica.Blocks.Examples.BusUsage);  getErrorString(); 
 simulate(Modelica.Blocks.Examples.BusUsage);  getErrorString(); 
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.plt");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
 
 
 // Result:
@@ -274,7 +274,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Blocks.Examples.PID_Controller_res.plt",
+//     resultFile = "Modelica.Blocks.Examples.PID_Controller_res.mat",
 //     messages = "Error in initialization. System of initial equations are not consistent.
 
 // (Least Square function value is 0.000766894)
@@ -390,7 +390,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Blocks.Examples.InverseModel_res.plt",
+//     resultFile = "Modelica.Blocks.Examples.InverseModel_res.mat",
 //     messages = "Error in initialization. System of initial equations are not consistent.
 
 // (Least Square function value is 1.84895)
@@ -722,7 +722,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Blocks.Examples.BusUsage_res.plt",
+//     resultFile = "Modelica.Blocks.Examples.BusUsage_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""

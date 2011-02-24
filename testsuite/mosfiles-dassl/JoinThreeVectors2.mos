@@ -1,7 +1,6 @@
 // name:     JoinThreeVectors2
 // keywords: equations when
 // status:   correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf JoinThreeVectors2.plt JoinThreeVectors2.exe JoinThreeVectors2.c JoinThreeVectors2_* output.log
 // 
 //  Tests when, elsewhen
@@ -11,13 +10,13 @@
 loadFile("JoinThreeVectors2.mo");
 simulate(JoinThreeVectors,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-res:=readSimulationResult("JoinThreeVectors2_res.plt",{x},3); 
+res:=readSimulationResult("JoinThreeVectors2_res.mat",{x},3); 
 echo(true); // turns on output
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "JoinThreeVectors2_res.plt"
+//     resultFile = "JoinThreeVectors2_res.mat"
 // end SimulationResult;
 // true
 // ""

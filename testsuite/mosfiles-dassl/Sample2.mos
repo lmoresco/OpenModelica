@@ -1,7 +1,6 @@
 // name:     Sample2
 // keywords: events
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf Sample2_* Sample2 Sample2.exe Sample2.cpp Sample2.makefile Sample2.libs Sample2.log output.log
 //
 // Event handling
@@ -10,6 +9,7 @@
 
 loadFile("Sample2.mo");
 simulate(Sample2,stopTime=5.0);
+"y";
 val(y,0);
 val(y,0.5);
 val(y,1.5);
@@ -17,6 +17,7 @@ val(y,2.5);
 val(y,3.5);
 val(y,4.5);
 val(y,5);
+"x";
 val(x,0);
 val(x,0.5);
 val(x,1.5);
@@ -24,6 +25,7 @@ val(x,2.5);
 val(x,3.5);
 val(x,4.5);
 val(x,5);
+"b";
 val(b,0);
 val(b,0.5);
 val(b,1.5);
@@ -36,10 +38,11 @@ val(b,5);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Sample2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Sample2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Sample2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
+// "y"
 // 0.0
 // 1.0
 // 9.4
@@ -47,6 +50,7 @@ val(b,5);
 // 58.4
 // 102.4
 // 126.4
+// "x"
 // 1.0
 // 1.87646791693592
 // 4.58793482854333
@@ -54,6 +58,7 @@ val(b,5);
 // 188.505113768709
 // 643.162196845627
 // 1132.35799880914
+// "b"
 // 0.0
 // 0.0
 // 1.0

@@ -1,7 +1,6 @@
 // name:     ArraySlice
 // keywords: array slice
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf ArraySlice_* ArraySlice ArraySlice.exe ArraySlice.cpp ArraySlice.makefile ArraySlice.libs ArraySlice.log output.log
 // 
 // Tests assignment of one slice to another slice.
@@ -10,15 +9,15 @@
 loadFile("ArraySlice.mo");
 simulate(ArraySlice,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size := readSimulationResultSize("ArraySlice_res.plt");
+size := readSimulationResultSize("ArraySlice_res.mat");
 echo(true); // turns on output
 size;
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ArraySlice_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ArraySlice', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ArraySlice_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ArraySlice', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

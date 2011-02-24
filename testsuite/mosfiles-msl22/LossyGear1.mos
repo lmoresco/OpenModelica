@@ -22,7 +22,7 @@ val(PowerLoss,0.8);
 // true
 // true
 // record SimulationResult
-//     resultFile = "LossyGearDemo1_res.plt",
+//     resultFile = "LossyGearDemo1_res.mat",
 //     messages = ""
 // end SimulationResult;
 // 0.0

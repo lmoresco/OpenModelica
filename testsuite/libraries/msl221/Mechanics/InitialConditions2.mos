@@ -349,7 +349,7 @@ val(M2.a,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.plt",
+//     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "M3.s:"

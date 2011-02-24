@@ -20,8 +20,8 @@ val(gain3.y,0.6),val(gain3.y,0.8),val(gain3.y,1.0)};
 // true
 // true
 // record SimulationResult
-//     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "TestModels.BlockModels.SystemTests.Tank_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'TestModels.BlockModels.SystemTests.Tank', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // {0.0,3.87243571488101,7.70245387019044,9.54604622064632,9.42519260624546,9.30510888064674}

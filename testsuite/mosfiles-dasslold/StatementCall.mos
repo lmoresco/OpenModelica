@@ -1,7 +1,6 @@
 // name:     StatementCall
 // keywords: equations when
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  Tests when, elsewhen
 //
@@ -10,14 +9,14 @@
 loadFile("StatementCall.mo");
 simulate(StatementCall,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-res:=readSimulationResult("StatementCall_res.plt",{height, velocity},3); 
+res:=readSimulationResult("StatementCall_res.mat",{height, velocity},3); 
 echo(true); // turns on output
 system("rm -rf StatementCall.plt StatementCall.exe StatementCall.c StatementCall_* output.log"); // remove tmp files.
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "StatementCall_res.plt"
+//     resultFile = "StatementCall_res.mat"
 // end SimulationResult;
 // true
 // ""

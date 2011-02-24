@@ -116,8 +116,8 @@ val(r_mFe.mu_r,0.10000000149);
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.10000000149, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     resultFile = "Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.10000000149, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

@@ -1,7 +1,6 @@
 // name:     when-sorting
 // keywords: Simulate, when-sorting
 // status: correct
-// cflags: +d=SetOldDassl
 // cflags: +d=SetNewDassl
 // teardown_command: rm -rf when_sorting when_sorting.exe when_sorting.cpp when_sorting.makefile when_sorting_* output.log when_sorting.libs when_sorting.log 
 // 
@@ -22,8 +21,8 @@ val(y,2.1);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "when_sorting_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 30, tolerance = 1e-05, method = 'rungekutta', fileNamePrefix = 'when_sorting', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "when_sorting_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 3.0, numberOfIntervals = 30, tolerance = 1e-05, method = 'rungekutta', fileNamePrefix = 'when_sorting', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0

@@ -1,7 +1,6 @@
 // name:     ColorPixel
 // keywords: <insert keywords here>
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf ColorPixel_* ColorPixel ColorPixel.exe ColorPixel.cpp ColorPixel.makefile ColorPixel.libs ColorPixel.log output.log
 // 
 // Drmodelica: 7.1 Type Checking (p. 209)
@@ -9,8 +8,8 @@
 loadFile("ColorPixel.mo");
 simulate(ColorPixel,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size:=readSimulationResultSize("ColorPixel_res.plt");
-res:=readSimulationResult("ColorPixel_res.plt",{},size); 
+size:=readSimulationResultSize("ColorPixel_res.mat");
+res:=readSimulationResult("ColorPixel_res.mat",{},size); 
 //x:=res[1];
 //y:=res[2];
 //z:=res[3];
@@ -27,7 +26,7 @@ echo(true); // turns on output
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ColorPixel_res.plt"
+//     resultFile = "ColorPixel_res.mat"
 // end SimulationResult;
 // true
 // ""

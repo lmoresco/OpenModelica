@@ -1,7 +1,6 @@
 // name:     ConcatArr4
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 // Drmodelica: 7.3 General Array concatenation (p. 213)
@@ -28,7 +27,7 @@ system("rm -rf ConcatArr4_* ConcatArr4.exe ConcatArr4.cpp ConcatArr4.makefile Co
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ConcatArr4_res.plt"
+//     resultFile = "ConcatArr4_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

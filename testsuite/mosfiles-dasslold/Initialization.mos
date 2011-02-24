@@ -1,7 +1,6 @@
 // name:     Initialization 
 // keywords: Simulate, Initialization 
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  Simulate models with initial conditions.
 //
@@ -26,8 +25,8 @@ system("rm -rf Init3.* Init3_* output.log");
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Init1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Init1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 5.0
@@ -35,8 +34,8 @@ system("rm -rf Init3.* Init3_* output.log");
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "Init2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Init2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 5.0
@@ -44,8 +43,8 @@ system("rm -rf Init3.* Init3_* output.log");
 // ""
 // 0
 // record SimulationResult
-//     resultFile = "Init3_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init3', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Init3_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Init3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 3.0

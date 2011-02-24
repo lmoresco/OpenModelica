@@ -1,7 +1,6 @@
 // name:     MyPointsInst1
 // keywords: <insert keywords here>
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf MyPointsInst1_* MyPointsInst1 MyPointsInst1.exe MyPointsInst1.cpp MyPointsInst1.makefile MyPointsInst1.libs MyPointsInst1.log output.log
 // 
 //  <insert description here>
@@ -22,8 +21,8 @@ val(z,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "MyPointsInst1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MyPointsInst1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "MyPointsInst1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MyPointsInst1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0

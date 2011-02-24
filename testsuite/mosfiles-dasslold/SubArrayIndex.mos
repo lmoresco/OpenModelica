@@ -1,7 +1,6 @@
 // name:     SubArrayIndex
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 //
@@ -29,7 +28,7 @@ system("rm -rf SubArrayIndex_* SubArrayIndex.exe SubArrayIndex.cpp SubArrayIndex
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "SubArrayIndex_res.plt"
+//     resultFile = "SubArrayIndex_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

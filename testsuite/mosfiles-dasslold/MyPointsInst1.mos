@@ -1,7 +1,6 @@
 // name:     MyPointsInst1
 // keywords: <insert keywords here>
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf MyPointsInst1_* MyPointsInst1 MyPointsInst1.exe MyPointsInst1.cpp MyPointsInst1.makefile MyPointsInst1.libs MyPointsInst1.log output.log
 // 
 //  <insert description here>
@@ -10,9 +9,9 @@
 loadFile("MyPointsInst1.mo");
 simulate(MyPointsInst1,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size:=readSimulationResultSize("MyPointsInst1_res.plt");
+size:=readSimulationResultSize("MyPointsInst1_res.mat");
 
-res:=readSimulationResult("MyPointsInst1_res.plt",{x,y,z},size);
+res:=readSimulationResult("MyPointsInst1_res.mat",{x,y,z},size);
  
 x:=res[1];
 y:=res[2];
@@ -31,8 +30,8 @@ z/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "MyPointsInst1_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'MyPointsInst1', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "MyPointsInst1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'MyPointsInst1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

@@ -1,7 +1,6 @@
 // name:     WillowForest
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 //
@@ -29,7 +28,7 @@ system("rm -rf WillowForest WillowForest.exe WillowForest_* output.log"); // rem
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WillowForest_res.plt"
+//     resultFile = "WillowForest_res.mat"
 // end SimulationResult;
 // true
 // 4

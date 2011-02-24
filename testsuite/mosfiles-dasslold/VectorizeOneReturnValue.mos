@@ -1,7 +1,6 @@
 // name:     VectorizeOneReturnValue
 // keywords: array
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 // not yet implmeneted
 //
@@ -10,8 +9,8 @@
 loadFile("VectorizeOneReturnValue.mo");
 simulate(OneReturnValue,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size := readSimulationResultSize("OneReturnValue_res.plt");
-res:=readSimulationResult("OneReturnValue_res.plt",{s[1],s[2,1]},size); 
+size := readSimulationResultSize("OneReturnValue_res.mat");
+res:=readSimulationResult("OneReturnValue_res.mat",{s[1],s[2,1]},size); 
 s1 := res[1,1];
 s21 := res[2,1];
 s1:=1000*s1;
@@ -27,7 +26,7 @@ system("rm -rf OneReturnValue_* OneReturnValue.exe OneReturnValue.cpp OneReturnV
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "OneReturnValue_res.plt"
+//     resultFile = "OneReturnValue_res.mat"
 // end SimulationResult;
 // true
 // 0.841

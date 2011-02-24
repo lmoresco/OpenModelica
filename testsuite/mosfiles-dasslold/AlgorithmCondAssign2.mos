@@ -1,15 +1,14 @@
 // name:      AlgorithmCondAssign2
 // keywords:  for statement, if statement, function
 // status:    correct
-// cflags: +d=SetOldDassl
 //
 // Drmodelica: 9.1  if-Statement (p. 292)
 //
 loadFile("AlgorithmCondAssign2.mo");
 simulate(CondAssignFuncCall, startTime=0.0, stopTime=1.0, numberOfIntervals=2);
 echo(false);
-size := readSimulationResultSize("CondAssignFuncCall_res.plt");
-res:=readSimulationResult("CondAssignFuncCall_res.plt",{a,b},size);
+size := readSimulationResultSize("CondAssignFuncCall_res.mat");
+res:=readSimulationResult("CondAssignFuncCall_res.mat",{a,b},size);
 a := res[1];
 a := 1000*a;
 a := floor(a);
@@ -23,7 +22,7 @@ b/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "CondAssignFuncCall_res.plt"
+//     resultFile = "CondAssignFuncCall_res.mat"
 // end SimulationResult;
 // true
 // 400.0

@@ -26,8 +26,8 @@ val(booleanExpression.y,10.0);
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Blocks.Examples.ShowLogicalSources_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.ShowLogicalSources', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     resultFile = "Modelica.Blocks.Examples.ShowLogicalSources_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.ShowLogicalSources', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
 //     messages = ""
 // end SimulationResult;
 // 0.0

@@ -124,7 +124,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  g
 checkModel(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  getErrorString(); 
 simulate(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  getErrorString(); 
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.plt");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
 
 
 // Result:
@@ -615,7 +615,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable V.V not found in scope <global scope>
@@ -1201,7 +1201,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassOPV_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable V.V not found in scope <global scope>
@@ -2602,7 +2602,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable V.V not found in scope <global scope>
@@ -2719,7 +2719,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC.Rn_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC.Rn_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -2835,7 +2835,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC.Rp_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC.Rp_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -3098,7 +3098,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable SineVoltage3.freqHz not found in scope <global scope>
@@ -3271,7 +3271,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable SineVoltage1.freqHz not found in scope <global scope>
@@ -3395,7 +3395,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -3743,7 +3743,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CompareTransformers_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CompareTransformers_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -4567,7 +4567,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.DifferenceAmplifier_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.DifferenceAmplifier_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -4845,7 +4845,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Error: Variable Sin.freqHz not found in scope <global scope>
@@ -5315,7 +5315,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate_res.mat",
 //     messages = "Error sovling linear system of equations (no. 155) at time 0.000000, system is singular.
 
 // Error sovling linear system of equations (no. 276) at time 0.000000, system is singular.
@@ -12361,7 +12361,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.mat",
 //     messages = "ERROR: Division by zero in partial equation: HeatingDiode1.v / (HeatingDiode1.vt_t * HeatingDiode1.N) because HeatingDiode1.vt_t * HeatingDiode1.N == 0.
 
 // "
@@ -12474,7 +12474,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingResistor_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingResistor_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -13041,7 +13041,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.OvervoltageProtection_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.OvervoltageProtection_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -13526,7 +13526,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ShowSaturatingInductor_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.ShowSaturatingInductor_res.mat",
 //     messages = ""
 // end SimulationResult;
 // ""
@@ -13745,7 +13745,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // "
 // ""
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "[ShowVariableResistor.mo:5:3-7:24:writable] Warning: Component VariableResistor has the same name as its type Modelica.Electrical.Analog.Examples.ShowVariableResistor.Modelica.Electrical.Analog.Basic.VariableResistor.

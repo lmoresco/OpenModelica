@@ -180,7 +180,7 @@ val(SlidingMass2.a,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.plt",
+//     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "Fixed3.flange_b.f:"

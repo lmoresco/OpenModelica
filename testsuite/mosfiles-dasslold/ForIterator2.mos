@@ -1,7 +1,6 @@
 // name:     ForIterator2
 // keywords: for iterators
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf ForIterator2_* ForIterator2 ForIterator2.exe ForIterator2.cpp ForIterator2.makefile ForIterator2.libs ForIterator2.log output.log
 //
 // For Iterator handling
@@ -20,8 +19,8 @@ val(i4,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ForIterator2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ForIterator2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ForIterator2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ForIterator2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 54.0

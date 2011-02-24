@@ -1,7 +1,6 @@
 // name:     Concat3
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  MORE WORK HAS TO BE DONE!
 // Drmodelica: 7.3 General Array concatenation (p. 213)
@@ -28,7 +27,7 @@ system("rm -rf Concat3_* Concat3.exe Concat3.cpp Concat3.makefile Concat3.libs C
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Concat3_res.plt"
+//     resultFile = "Concat3_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

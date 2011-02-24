@@ -1,7 +1,6 @@
 // name:     Enumeration8
 // keywords: Enumeration enum String string
 // status:   correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf Enumeration8_*  Enumeration8 Enumeration8.exe Enumeration8.cpp Enumeration8.makefile Enumeration8.libs Enumeration8.log output.log
 //
 // String(Enum.e1)
@@ -26,7 +25,7 @@ simulate(Enumeration8,startTime=0.0, stopTime=1.0, numberOfIntervals=500, tolera
 // end Enumeration8;
 // "
 // record SimulationResult
-//     resultFile = "Enumeration8_res.plt"
+//     resultFile = "Enumeration8_res.mat"
 // end SimulationResult;
 // ""
 // endResult

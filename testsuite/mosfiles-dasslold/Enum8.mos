@@ -1,7 +1,6 @@
 // name:     Enumeration8
 // keywords: Enumeration enum String string
 // status:   correct
-// cflags: +d=SetOldDassl
 //
 // String(Enum.e1)
 //
@@ -26,7 +25,7 @@ system("rm -rf Enumeration8_* Enumeration8.exe Enumeration8.cpp Enumeration8.mak
 // end Enumeration8;
 // "
 // record SimulationResult
-//     resultFile = "Enumeration8_res.plt"
+//     resultFile = "Enumeration8_res.mat"
 // end SimulationResult;
 // ""
 // 0

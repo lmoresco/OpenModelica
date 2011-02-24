@@ -1,7 +1,6 @@
 // name:     Reductions
 // keywords: reduction
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf Reductions Reductions.libs Reductions.log Reductions.makefile Reductions.cpp Reductions_* output.log
 // 
 // Test reduction expression.
@@ -11,7 +10,7 @@ loadFile("Reductions.mo");
 simulate(Reductions,numberOfIntervals=1); 
 echo(false); // turns of output 
 
-res:=readSimulationResult("Reductions_res.plt",{x,y,z,w,erx,ery,erz,erw},3); 
+res:=readSimulationResult("Reductions_res.mat",{x,y,z,w,erx,ery,erz,erw},3); 
 x:=res[1,1];
 y:=res[2,1];
 z:=res[3,1];
@@ -48,8 +47,8 @@ erw/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Reductions_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Reductions', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Reductions_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 1, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Reductions', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

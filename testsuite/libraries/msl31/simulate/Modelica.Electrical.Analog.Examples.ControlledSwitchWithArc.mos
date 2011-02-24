@@ -110,8 +110,8 @@ val(sineVoltage.signalSource.y,6.0);
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 6.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     resultFile = "Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 6.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
 //     messages = ""
 // end SimulationResult;
 // -0

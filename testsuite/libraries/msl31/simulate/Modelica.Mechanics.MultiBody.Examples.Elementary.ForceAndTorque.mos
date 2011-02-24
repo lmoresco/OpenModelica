@@ -600,8 +600,8 @@ val(fixed2.frame_b.t[3],1.0);
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt'",
+//     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
 //     messages = ""
 // end SimulationResult;
 // 1.0

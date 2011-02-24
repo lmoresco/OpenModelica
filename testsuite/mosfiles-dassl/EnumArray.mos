@@ -1,7 +1,6 @@
 // name:     EnumArray
 // keywords: enum array
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf EnumArray_* EnumArray EnumArray.exe EnumArray.cpp EnumArray.makefile EnumArray.libs EnumArray.log output.log
 //
 // Code generation for assignment of arrays indexed with enumerations.
@@ -12,8 +11,8 @@ simulate(EnumArray, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "EnumArray_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'EnumArray', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "EnumArray_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'EnumArray', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // endResult

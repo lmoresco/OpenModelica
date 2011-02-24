@@ -1,7 +1,6 @@
 // name:     TanksConnectedPI
 // keywords: <insert keywords here>
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf TanksConnectedPI_* TanksConnectedPI TanksConnectedPI.exe TanksConnectedPI.cpp TanksConnectedPI.makefile TanksConnectedPI.libs TanksConnectedPI.log output.log
 // 
 //  <insert description here>
@@ -12,7 +11,7 @@ loadFile("TanksConnectedPI.mo");
 simulate(TanksConnectedPI,stopTime=210,numberOfIntervals=250, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-//res:=readSimulationResult("TanksConnectedPI_res.plt",{x,y,z},3); 
+//res:=readSimulationResult("TanksConnectedPI_res.mat",{x,y,z},3); 
 x:=val(tank1.h,25.0);
 y:=val(tank1.h,100.0);
 z:=val(tank1.h,150.0);
@@ -50,8 +49,8 @@ w2/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TanksConnectedPI_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 210.0, numberOfIntervals = 250, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'TanksConnectedPI', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "TanksConnectedPI_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 210.0, numberOfIntervals = 250, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'TanksConnectedPI', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

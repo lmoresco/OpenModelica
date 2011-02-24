@@ -1,7 +1,6 @@
 // name:     Xpowers1
 // keywords: events
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf Xpowers1_* Xpowers1 Xpowers1.exe Xpowers1.cpp Xpowers1.makefile Xpowers1.libs Xpowers1.log output.log
 //
 // Event handling

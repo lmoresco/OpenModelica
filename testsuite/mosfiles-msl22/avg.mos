@@ -12,8 +12,8 @@ val(x,0.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "avgtest_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 0.1, numberOfIntervals = 5, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'avgtest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "avgtest_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 0.1, numberOfIntervals = 5, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'avgtest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 3.6

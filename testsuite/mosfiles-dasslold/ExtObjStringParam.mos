@@ -1,7 +1,6 @@
 // name:     External Object with String parameter input
 // keywords: initialization
 // status:   correct
-// cflags: +d=SetOldDassl
 // setup_command: gcc -c -o ExtObjStringParam.ext.o ExtObjStringParam.ext.c
 // teardown_command: rm -rf ExtObjStringParam_* ExtObjStringParam ExtObjStringParam.exe ExtObjStringParam.ext.o ExtObjStringParam.cpp ExtObjStringParam.makefile ExtObjStringParam.libs ExtObjStringParam.log output.log
 //
@@ -14,8 +13,8 @@ simulate(ExtObjStringParam, startTime=0.0, stopTime=1.0, numberOfIntervals=2, to
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ExtObjStringParam_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ExtObjStringParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ExtObjStringParam_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ExtObjStringParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = "constructors says 'sampledata.xml'
 // destructor says 'sampledata.xml'
 // "

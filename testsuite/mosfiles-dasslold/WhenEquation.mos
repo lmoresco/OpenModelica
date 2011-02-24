@@ -1,7 +1,6 @@
 // name:     WhenEquation
 // keywords: when
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf WhenEquation_* WhenEquation WhenEquation.exe WhenEquation.cpp WhenEquation.makefile WhenEquation.libs WhenEquation.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with when-Equations (p. 246)
@@ -10,8 +9,8 @@ loadFile("WhenEquation.mo");
 simulate(WhenEquation, startTime=0.0, stopTime=10.0, tolerance=1e-5, numberOfIntervals=400); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-size := readSimulationResultSize("WhenEquation_res.plt");
-res:=readSimulationResult("WhenEquation_res.plt",{x,y1,y3},size); 
+size := readSimulationResultSize("WhenEquation_res.mat");
+res:=readSimulationResult("WhenEquation_res.mat",{x,y1,y3},size); 
 
 x1:=res[1,1];
 x2:=res[1,size];
@@ -45,8 +44,8 @@ y32/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "WhenEquation_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 400, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'WhenEquation', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "WhenEquation_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 400, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'WhenEquation', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

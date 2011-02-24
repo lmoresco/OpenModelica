@@ -1,7 +1,6 @@
 // name:     IfEquation2
 // keywords: equation
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf IfEquation2_* IfEquation2 IfEquation2.exe IfEquation2.cpp IfEquation2.makefile IfEquation2.libs IfEquation2.log output.log
 // 
 // Drmodelica: 8.2 Conditional Equations with if-Equations (p. 245)
@@ -9,15 +8,15 @@
 loadFile("IfEquation2.mo");
 simulate(IfEquation2,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size := readSimulationResultSize("IfEquation2_res.plt");
-res:=readSimulationResult("IfEquation2_res.plt",{x,y},size); 
+size := readSimulationResultSize("IfEquation2_res.mat");
+res:=readSimulationResult("IfEquation2_res.mat",{x,y},size); 
 echo(true); // turns on output
 val(z,0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "IfEquation2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'IfEquation2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "IfEquation2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'IfEquation2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

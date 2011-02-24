@@ -328,7 +328,7 @@ val(load.y,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.LossyGearDemo1_res.plt",
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.LossyGearDemo1_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "PowerLoss:"

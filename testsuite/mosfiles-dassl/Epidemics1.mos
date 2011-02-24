@@ -1,8 +1,7 @@
 // name:     Epidemics1
 // keywords: der terminate
 // status:   correct
-// cflags: +d=SetNewDassl
-// teardown_command: rm -rf Epidemics1 Epidemics1.exe Epidemics1.cpp Epidemics1_functions.cpp Epidemics1_functions.h Epidemics1_init.txt Epidemics1.libs Epidemics1.log Epidemics1.makefile Epidemics1_records.c Epidemics1_res.plt output.log 
+// teardown_command: rm -rf Epidemics1 Epidemics1.exe Epidemics1.cpp Epidemics1_functions.cpp Epidemics1_functions.h Epidemics1_init.txt Epidemics1.libs Epidemics1.log Epidemics1.makefile Epidemics1_records.c Epidemics1_res.mat output.log 
 // 
 // Drmodelica: 
 // 
@@ -10,8 +9,8 @@
 loadFile("Epidemics1.mo");
 simulate(Epidemics1,startTime=0.0, stopTime=52.0, tolerance=1e-5, numberOfIntervals=100); // 2 intervals == 3 values
 echo(false); // turns of output
-//size:=readSimulationResultSize("Epidemics1_res.plt");
-//res:=readSimulationResult("Epidemics1_res.plt",{Indv,S,R},size);
+//size:=readSimulationResultSize("Epidemics1_res.mat");
+//res:=readSimulationResult("Epidemics1_res.mat",{Indv,S,R},size);
 
 x:=val(Indv,6.0);
 x2:=val(Indv,11.4);
@@ -49,7 +48,7 @@ z2/1000.0;
 
 // Result:
 // record SimulationResult
-//     resultFile = "Epidemics1_res.plt"
+//     resultFile = "Epidemics1_res.mat"
 // end SimulationResult;
 // true
 // 0.106

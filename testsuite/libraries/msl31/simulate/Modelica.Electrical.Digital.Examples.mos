@@ -44,7 +44,7 @@ instantiateModel(Modelica.Electrical.Digital.Examples.Counter);  getErrorString(
 checkModel(Modelica.Electrical.Digital.Examples.Counter);  getErrorString();
 simulate(Modelica.Electrical.Digital.Examples.Counter);  getErrorString();
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.plt");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
 
 
 // Result:

@@ -1,7 +1,6 @@
 // name:     dertest 
 // keywords: Simulate, der(expr) 
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf dertest_* dertest dertest.exe dertest.cpp dertest.makefile dertest.libs dertest.log output.log
 // 
 //  Simulate model containing der(expr).
@@ -17,8 +16,8 @@ val(y,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "dertest_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'dertest', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "dertest_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'dertest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 10.0

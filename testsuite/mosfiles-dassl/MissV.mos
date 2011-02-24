@@ -1,7 +1,6 @@
 // name:     MissV  (test bug 1110)
 // keywords: linear system of equations
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf MissV_* MissV MissV.exe MissV.cpp MissV.makefile MissV.libs MissV.log output.log
 //
 // Solving of a linear system of equations
@@ -32,8 +31,8 @@ val(pb, 1.0);
 // end MissV;
 // "
 // record SimulationResult
-//     resultFile = "MissV_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MissV', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "MissV_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MissV', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 7000000.0

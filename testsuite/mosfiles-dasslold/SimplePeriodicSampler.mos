@@ -1,7 +1,6 @@
 // name:     SimplePeriodicSampler
 // keywords: sample
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf Sampler_* Sampler Sampler.exe Sampler.cpp Sampler.makefile Sampler.libs Sampler.log output.log
 // 
 //  <insert description here>
@@ -12,8 +11,8 @@ loadFile("SimplePeriodicSampler.mo");
 simulate(Sampler,startTime=0.0, stopTime=10.0,numberOfIntervals=345, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-size:=readSimulationResultSize("Sampler_res.plt");
-res:=readSimulationResult("Sampler_res.plt",{x,y},size);
+size:=readSimulationResultSize("Sampler_res.mat");
+res:=readSimulationResult("Sampler_res.mat",{x,y},size);
 //x1:=res[1,99];
 //y1:=res[2,99];
 //x2:=res[1,344];
@@ -42,8 +41,8 @@ y2/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Sampler_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 345, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Sampler', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Sampler_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 345, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Sampler', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

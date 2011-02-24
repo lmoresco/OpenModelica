@@ -1,7 +1,6 @@
 // name:     Oscillator
 // keywords: modelica library
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK ON THIS FILE HAS TO BE DONE!
 //
@@ -29,7 +28,7 @@ system("rm -rf Oscillator_* Oscillator.exe Oscillator.cpp Oscillator.makefile Os
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Oscillator_res.plt"
+//     resultFile = "Oscillator_res.mat"
 // end SimulationResult;
 // true
 // -9490.7

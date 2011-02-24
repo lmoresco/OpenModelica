@@ -1,7 +1,6 @@
 // name:     TempResistor3
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 //  MORE WORK ON THIS FILE HAS TO BE DONE!
 //
@@ -34,7 +33,7 @@ system("rm -rf TempResistor3_* TempResistor3.exe TempResistor3.cpp TempResistor3
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TempResistor3_res.plt"
+//     resultFile = "TempResistor3_res.mat"
 // end SimulationResult;
 // true
 // 111

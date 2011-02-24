@@ -1,7 +1,6 @@
 // Name:     OneArgBaseFunction
 // keywords: equations when
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  Tests when, elsewhen
 //
@@ -10,14 +9,14 @@
 loadFile("OneArgBaseFunction.mo");
 simulate(OneArgBaseFunction,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-res:=readSimulationResult("OneArgBaseFunction_res.plt",{t},3); 
+res:=readSimulationResult("OneArgBaseFunction_res.mat",{t},3); 
 echo(true); // turns on output
 system("rm -rf OneArgBaseFunction.plt OneArgBaseFunction.exe OneArgBaseFunction.c neArgBaseFunction_* output.log"); // remove tmp files.
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "OneArgBaseFunction_res.plt"
+//     resultFile = "OneArgBaseFunction_res.mat"
 // end SimulationResult;
 // true
 // ""

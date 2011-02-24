@@ -1,7 +1,6 @@
 // name:     ArrayAlgebraFunc
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetOldDassl
 // 
 //  MORE WORK HAS TO BE DONE ON THIS FILE!
 // Drmodelica: 7.7 Built-in Functions (p. 225)
@@ -28,7 +27,7 @@ system("rm -rf ArrayAlgebraFunc_* ArrayAlgebraFunc.exe ArrayAlgebraFunc.cpp Arra
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ArrayAlgebraFunc_res.plt"
+//     resultFile = "ArrayAlgebraFunc_res.mat"
 // end SimulationResult;
 // true
 // {1.0,1.654,2.169,2.62,3.032,3.418}

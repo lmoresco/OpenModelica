@@ -1,7 +1,6 @@
 // name:     FunctionIndirectRecursion2
 // keywords: function,recursion
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf facIndirect.c facIndirect.libs facIndirect.log facIndirect.makefile facIndirect.so
 // 
 // Indirectly recursive function call

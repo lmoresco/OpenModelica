@@ -1,4 +1,4 @@
-TEST = ../rtest -v
+TEST = ../rtest +d=SetOldDassl -v
 
 TESTFILES = \
 ABCDsystem.csv.mos \

@@ -1,7 +1,6 @@
 // name:     Xpowers2
 // keywords: events
 // status: correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf Xpowers2_* Xpowers2 Xpowers2.exe Xpowers2.cpp Xpowers2.makefile Xpowers2.libs Xpowers2.log output.log
 //
 // Event handling
@@ -11,8 +10,8 @@
 loadFile("Xpowers2.mo");
 simulate(Xpowers2, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
-size:=readSimulationResultSize("Xpowers2_res.plt");
-res:=readSimulationResult("Xpowers2_res.plt",{xpowers[1],xpowers[2], xpowers[3],xpowers[4],xpowers[5]},size);
+size:=readSimulationResultSize("Xpowers2_res.mat");
+res:=readSimulationResult("Xpowers2_res.mat",{xpowers[1],xpowers[2], xpowers[3],xpowers[4],xpowers[5]},size);
 x1 := res[1,1];
 x1 := 1000*x1;
 x1 := floor(x1);
@@ -38,8 +37,8 @@ x5/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Xpowers2_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Xpowers2', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "Xpowers2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Xpowers2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

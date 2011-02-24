@@ -1,7 +1,6 @@
 // name:      SumForLoop
 // keywords:  for statment
 // status: incorrect
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf SumForLoop_* SumForLoop SumForLoop.exe SumForLoop.cpp SumForLoop.makefile SumForLoop.libs SumForLoop.log output.log
 //
 // for statment handling
@@ -11,7 +10,7 @@
 loadFile("SumForLoop.mo");
 simulate(SumZ, startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5);
 echo(false);
-res:=readSimulationResult("SumForLoop_res.plt",{z[1],z[2],z[3],z[4],z[5],sum},3);
+res:=readSimulationResult("SumForLoop_res.mat",{z[1],z[2],z[3],z[4],z[5],sum},3);
 z1 := res[1];
 z1 := 1000*z1;
 z1 := floor(z1);
@@ -40,7 +39,7 @@ x/1000.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "SumForLoop_res.plt"
+//     resultFile = "SumForLoop_res.mat"
 // end SimulationResult;
 // true
 // {10.0,10.0,10.0}

@@ -76,7 +76,7 @@ val(SineVoltage1.i,5);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.HeatingRectifier_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "HeatingDiode1.v:"

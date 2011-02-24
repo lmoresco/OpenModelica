@@ -1,7 +1,6 @@
 // name:     MoonLanding
 // keywords: <insert keywords here>
 // status:   correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf MoonLanding_* MoonLanding.exe MoonLanding.cpp MoonLanding.makefile MoonLanding.libs MoonLanding.log output.log
 // 
 //  MORE WORK ON THIS FILE HAS TO BE DONE!
@@ -11,8 +10,8 @@
 loadFile("MoonLanding.mo");
 simulate(MoonLanding,numberOfIntervals=100, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-//size:=readSimulationResultSize("MoonLanding_res.plt");
-//res:=readSimulationResult("MoonLanding_res.plt",{apollo.mass,apollo.altitude,apollo.acceleration},size); 
+//size:=readSimulationResultSize("MoonLanding_res.mat");
+//res:=readSimulationResult("MoonLanding_res.mat",{apollo.mass,apollo.altitude,apollo.acceleration},size); 
 x:=val(apollo.mass,0.5);
 y:=val(apollo.altitude,0.75);
 z:=val(apollo.acceleration,0.25);
@@ -29,7 +28,7 @@ z:=z/1.0;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "MoonLanding_res.plt"
+//     resultFile = "MoonLanding_res.mat"
 // end SimulationResult;
 // true
 // 1033.0

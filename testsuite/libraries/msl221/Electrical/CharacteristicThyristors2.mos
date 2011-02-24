@@ -67,7 +67,7 @@ val(R3.i,2.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.plt",
+//     resultFile = "Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "IdealThyristor1.v:"

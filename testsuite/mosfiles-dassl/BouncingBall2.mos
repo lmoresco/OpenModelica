@@ -1,7 +1,6 @@
 // Name:     BouncingBall2
 // keywords: equations when
 // status:   correct
-// cflags: +d=SetNewDassl
 // teardown_command: rm -rf BouncingBall.makefile BouncingBall.libs BouncingBall.log BouncingBall BouncingBall.exe BouncingBall.cpp BouncingBall.plt BouncingBall_* output.log 
 // 
 //  Tests when, elsewhen
@@ -26,8 +25,8 @@ val(velocity,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "BouncingBall_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "BouncingBall_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 5, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BouncingBall', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // 1.0

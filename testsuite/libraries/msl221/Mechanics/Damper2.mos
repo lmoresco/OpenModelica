@@ -321,7 +321,7 @@ val(SpringDamper1.v_rel,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Translational.Examples.Damper_res.plt",
+//     resultFile = "Modelica.Mechanics.Translational.Examples.Damper_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "SlidingMass1.s:"

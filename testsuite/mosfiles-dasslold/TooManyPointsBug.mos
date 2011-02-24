@@ -1,7 +1,6 @@
 // name:     Fixes for Too Many Points Bug
 // keywords: events
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf TooManyPointsBug_* TooManyPointsBug TooManyPointsBug.exe TooManyPointsBug.cpp TooManyPointsBug.makefile TooManyPointsBug.libs TooManyPointsBug.log output.log
 //
 // Event handling
@@ -13,7 +12,7 @@ simulate(TooManyPointsBug, stopTime=50);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TooManyPointsBug_res.plt"
+//     resultFile = "TooManyPointsBug_res.mat"
 // end SimulationResult;
 // ""
 // endResult

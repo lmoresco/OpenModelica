@@ -671,7 +671,7 @@ val(step2.y,1.0);
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "Modelica.Mechanics.Rotational.Examples.CoupledClutches_res.plt",
+//     resultFile = "Modelica.Mechanics.Rotational.Examples.CoupledClutches_res.mat",
 //     messages = ""
 // end SimulationResult;
 // "J1.phi:"

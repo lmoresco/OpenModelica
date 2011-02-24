@@ -1,7 +1,6 @@
 // name:     ArrayIndex2
 // keywords: array indexing
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf ArrayIndex2_* ArrayIndex2 ArrayIndex2.exe ArrayIndex2.cpp ArrayIndex2.makefile ArrayIndex2.libs ArrayIndex2.log output.log
 //
 // Tests array indexing with arrays.

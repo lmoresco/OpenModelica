@@ -1,7 +1,6 @@
 // name:     ConstructFunc
 // keywords: array
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf ConstructFunc_* ConstructFunc ConstructFunc.exe ConstructFunc.cpp ConstructFunc.makefile ConstructFunc.libs ConstructFunc.log output.log
 // 
 // Drmodelica: 7.7 Built-in Functions (p. 225)
@@ -9,8 +8,8 @@
 loadFile("ConstructFunc.mo");
 simulate(ConstructFunc,startTime=0.0, stopTime=1.0, numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
-size := readSimulationResultSize("ConstructFunc_res.plt");
-res:=readSimulationResult("ConstructFunc_res.plt",{z[2,2],o[2],f[2,1],check[2,4],id[1,1],di[3,2],ls[3]},size); 
+size := readSimulationResultSize("ConstructFunc_res.mat");
+res:=readSimulationResult("ConstructFunc_res.mat",{z[2,2],o[2],f[2,1],check[2,4],id[1,1],di[3,2],ls[3]},size); 
 z:=res[1,1];
 o:=res[2,1];
 f:=res[3,1];
@@ -33,8 +32,8 @@ ls;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "ConstructFunc_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ConstructFunc', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "ConstructFunc_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'ConstructFunc', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

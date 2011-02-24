@@ -1,7 +1,6 @@
 // name:     FuncDer
 // keywords: Function Annotations
 // status: correct
-// cflags: +d=SetOldDassl
 // teardown_command: rm -rf FuncDer_* FuncDer.exe FuncDer.cpp FuncDer.makefile FuncDer.libs FuncDer.log h0.c h0.exe output.log
 // 
 //  undefined reference to `read_modelica_boolean'
@@ -12,9 +11,9 @@ loadFile("FuncDer.mo");
 simulate(FuncDer,numberOfIntervals=2, tolerance=1e-5); // 2 intervals == 3 values
 echo(false); // turns of output 
 
-size:=readSimulationResultSize("FuncDer_res.plt");
+size:=readSimulationResultSize("FuncDer_res.mat");
 
-res:=readSimulationResult("FuncDer_res.plt",{fn0,fn1,fn2},size); 
+res:=readSimulationResult("FuncDer_res.mat",{fn0,fn1,fn2},size); 
 
 fn0:=res[1,1];
 fn1:=res[2,1];
@@ -39,8 +38,8 @@ fn2;
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "FuncDer_res.plt",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'FuncDer', storeInTemp = false, noClean = false, options = '', outputFormat = 'plt', variableFilter = '.*'",
+//     resultFile = "FuncDer_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'FuncDer', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
 //     messages = ""
 // end SimulationResult;
 // true

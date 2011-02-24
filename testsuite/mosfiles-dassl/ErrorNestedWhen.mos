@@ -1,7 +1,6 @@
 // name:     ErrorNestedWhen
 // keywords: When
 // status:   correct
-// cflags: +d=SetNewDassl
 // 
 // Drmodelica:   8.2 Conditional Equations with when-Equations (p. 246) 
 //
