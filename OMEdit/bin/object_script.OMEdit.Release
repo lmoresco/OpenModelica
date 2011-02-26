@@ -30,6 +30,7 @@ INPUT(
 ./release\DocumentationWidget.o
 ./release\OptionsWidget.o
 ./release\BitmapAnnotation.o
+./release\read_matlab4.o
 ./release\moc_mainwindow.o
 ./release\moc_ProjectTabWidget.o
 ./release\moc_LibraryWidget.o

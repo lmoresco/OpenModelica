@@ -30,6 +30,7 @@ INPUT(
 ./debug\DocumentationWidget.o
 ./debug\OptionsWidget.o
 ./debug\BitmapAnnotation.o
+./debug\read_matlab4.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
