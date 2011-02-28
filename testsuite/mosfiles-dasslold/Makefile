@@ -1,9 +1,6 @@
 TEST = ../rtest +d=SetOldDassl -v
 
 TESTFILES = \
-ABCDsystem.csv.mos \
-ABCDsystem.empty.mos \
-ABCDsystem.plt.mos \
 AlgorithmArrayEqn.mos \
 AlgorithmCondAssign1.mos \
 AlgorithmForInClass.mos \
