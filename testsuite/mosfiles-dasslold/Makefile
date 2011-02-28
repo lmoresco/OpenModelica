@@ -33,7 +33,6 @@ DoubleWhenSequential.mos \
 EnumArray.mos \
 EqualityEquations.mos \
 EquationCallIntegerArray.mos \
-EventIteration.mos \
 ExtendsBasic.mos  \
 ExternalLibraries.mos \
 ExtObj.mos \
@@ -45,7 +44,6 @@ ForIterator2.mos \
 FuncDer.mos  \
 FunctionIndirectRecursion2.mos \
 FunctionIndirectRecursion.mos \
-FunctionInReinit.mos \
 HeatTankExpanded.mos \
 HeatTank.mos \
 HelloWorld.mos \
@@ -57,8 +55,6 @@ IfEquation2.mos \
 IfEquation3.mos \
 IfEquation.mos \
 Initialization.mos \
-InlineSolverCodeGenerationEuler.mos \
-InlineSolverCodeGenerationRK.mos \
 InOutStrings.mos InOutRecord.mos \
 Interpolation.mos \
 LinearSysEq.mos \
@@ -108,10 +104,8 @@ TwoRateSampler.mos \
 val.mos \
 WhenEquation1.mos \
 WhenEquation.mos \
-when_sorting.mos \
 WhenStatement1.mos \
 WhenStatement2.mos \
-WhenStatement3.mos \
 whenstatements.mos \
 Xpowers1.mos \
 Xpowers2.mos \
