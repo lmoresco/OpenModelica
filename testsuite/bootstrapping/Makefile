@@ -3,6 +3,7 @@ TEST = ../rtest
 
 TESTFILES = \
 DumpTest.mos \
+GraphTest.mos \
 HashTableTest.mos \
 MainTest.mos \
 SimCodeTest.mos \

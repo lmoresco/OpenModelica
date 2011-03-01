@@ -102,6 +102,7 @@ loadFile("../../Compiler/Util/Debug.mo");
 loadFile("../../Compiler/Util/DynLoad.mo");
 loadFile("../../Compiler/Util/ErrorExt.mo");
 loadFile("../../Compiler/Util/Error.mo");
+loadFile("../../Compiler/Util/Graph.mo");
 loadFile("../../Compiler/Util/HashTable2.mo");
 loadFile("../../Compiler/Util/HashTable3.mo");
 // loadFile("../../Compiler/Util/HashTable4.mo");

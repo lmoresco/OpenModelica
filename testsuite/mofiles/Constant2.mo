@@ -17,11 +17,11 @@ end Constant2;
 
 // Result:
 // class Constant2
-// constant Real A = 5.0;
-// constant Real B = 5.0;
-// constant Real C = 6.0;
-// constant Real D = 1.0;
-// constant Integer E = 3;
-// constant Integer F = 7;
+//   constant Real A = 5.0;
+//   constant Integer E = 3;
+//   constant Real B = 5.0;
+//   constant Integer F = 7;
+//   constant Real C = 6.0;
+//   constant Real D = 1.0;
 // end Constant2;
 // endResult

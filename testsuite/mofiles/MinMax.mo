@@ -32,9 +32,9 @@ end MinMax;
 //   parameter Integer m = 4;
 //   constant Boolean b1 = false;
 //   constant Boolean b2 = false;
-//   constant Boolean b3 = true;
 //   constant Boolean b4 = true;
 //   constant Boolean b5 = true;
+//   constant Boolean b3 = true;
 //   constant Boolean b6 = false;
 // equation
 //   x[1] = 1.0;

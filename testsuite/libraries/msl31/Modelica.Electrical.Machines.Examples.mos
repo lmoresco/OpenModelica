@@ -9664,8 +9664,6 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   output Real transformer.i2[1](quantity = \"ElectricCurrent\", unit = \"A\") = transformer.plug2.pin[1].i \"Secondary current\";
 //   output Real transformer.i2[2](quantity = \"ElectricCurrent\", unit = \"A\") = transformer.plug2.pin[2].i \"Secondary current\";
 //   output Real transformer.i2[3](quantity = \"ElectricCurrent\", unit = \"A\") = transformer.plug2.pin[3].i \"Secondary current\";
-//   protected constant String transformer.C1 = \"Y\";
-//   protected constant String transformer.C2 = \"d\";
 //   protected parameter Real transformer.ni = 1.15470053837925 * transformer.n;
 //   parameter Integer transformer.plug1.m(min = 1) = 3 \"number of phases\";
 //   Real transformer.plug1.pin[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -10018,6 +10016,8 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   Real transformer.Delta2.plug_n.pin[2].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real transformer.Delta2.plug_n.pin[3].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real transformer.Delta2.plug_n.pin[3].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
+//   protected constant String transformer.C1 = \"Y\";
+//   protected constant String transformer.C2 = \"d\";
 // equation
 //   source.sineVoltage[1].signalSource.y = source.sineVoltage[1].signalSource.offset + (if time < source.sineVoltage[1].signalSource.startTime then 0.0 else source.sineVoltage[1].signalSource.amplitude * sin(6.28318530717959 * (source.sineVoltage[1].signalSource.freqHz * (time - source.sineVoltage[1].signalSource.startTime)) + source.sineVoltage[1].signalSource.phase));
 //   source.sineVoltage[1].v = source.sineVoltage[1].signalSource.y;
@@ -11133,8 +11133,6 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   output Real transformer1.i2[1](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[1].i \"Secondary current\";
 //   output Real transformer1.i2[2](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[2].i \"Secondary current\";
 //   output Real transformer1.i2[3](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[3].i \"Secondary current\";
-//   protected constant String transformer1.C1 = \"D\";
-//   protected constant String transformer1.C2 = \"y\";
 //   protected parameter Real transformer1.ni = 3.46410161513775 * transformer1.n;
 //   parameter Integer transformer1.plug1.m(min = 1) = 3 \"number of phases\";
 //   Real transformer1.plug1.pin[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -11502,6 +11500,8 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   Real transformer1.Rot2.plug_n.pin[2].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real transformer1.Rot2.plug_n.pin[3].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real transformer1.Rot2.plug_n.pin[3].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
+//   protected constant String transformer1.C1 = \"D\";
+//   protected constant String transformer1.C2 = \"y\";
 // equation
 //   source.sineVoltage[1].signalSource.y = source.sineVoltage[1].signalSource.offset + (if time < source.sineVoltage[1].signalSource.startTime then 0.0 else source.sineVoltage[1].signalSource.amplitude * sin(6.28318530717959 * (source.sineVoltage[1].signalSource.freqHz * (time - source.sineVoltage[1].signalSource.startTime)) + source.sineVoltage[1].signalSource.phase));
 //   source.sineVoltage[1].v = source.sineVoltage[1].signalSource.y;
@@ -12421,8 +12421,6 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   output Real transformer1.i2[1](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[1].i \"Secondary current\";
 //   output Real transformer1.i2[2](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[2].i \"Secondary current\";
 //   output Real transformer1.i2[3](quantity = \"ElectricCurrent\", unit = \"A\") = transformer1.plug2.pin[3].i \"Secondary current\";
-//   protected constant String transformer1.C1 = \"D\";
-//   protected constant String transformer1.C2 = \"y\";
 //   protected parameter Real transformer1.ni = 3.46410161513775 * transformer1.n;
 //   parameter Integer transformer1.plug1.m(min = 1) = 3 \"number of phases\";
 //   Real transformer1.plug1.pin[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -12790,6 +12788,8 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   Real transformer1.Rot2.plug_n.pin[2].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real transformer1.Rot2.plug_n.pin[3].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real transformer1.Rot2.plug_n.pin[3].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
+//   protected constant String transformer1.C1 = \"D\";
+//   protected constant String transformer1.C2 = \"y\";
 //   parameter Integer diode3.m(min = 1) = 3 \"number of phases\";
 //   Real diode3.v[1](quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drops between the two plugs\";
 //   Real diode3.v[2](quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drops between the two plugs\";
@@ -13001,8 +13001,6 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   output Real transformer2.i2[1](quantity = \"ElectricCurrent\", unit = \"A\") = transformer2.plug2.pin[1].i \"Secondary current\";
 //   output Real transformer2.i2[2](quantity = \"ElectricCurrent\", unit = \"A\") = transformer2.plug2.pin[2].i \"Secondary current\";
 //   output Real transformer2.i2[3](quantity = \"ElectricCurrent\", unit = \"A\") = transformer2.plug2.pin[3].i \"Secondary current\";
-//   protected constant String transformer2.C1 = \"D\";
-//   protected constant String transformer2.C2 = \"d\";
 //   protected parameter Real transformer2.ni = 2.0 * transformer2.n;
 //   parameter Integer transformer2.plug1.m(min = 1) = 3 \"number of phases\";
 //   Real transformer2.plug1.pin[1].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -13358,6 +13356,8 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   Real transformer2.Delta2.plug_n.pin[2].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real transformer2.Delta2.plug_n.pin[3].v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real transformer2.Delta2.plug_n.pin[3].i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
+//   protected constant String transformer2.C1 = \"D\";
+//   protected constant String transformer2.C2 = \"d\";
 //   parameter Real transformerData2.f(quantity = \"Frequency\", unit = \"Hz\", start = 50.0) \"nominal frequency\";
 //   parameter Real transformerData2.V1(quantity = \"ElectricPotential\", unit = \"V\", start = 100.0) \"primary nominal line-to-line voltage (RMS)\";
 //   parameter String transformerData2.C1(start = \"Y\") = \"D\" \"choose primary connection\";

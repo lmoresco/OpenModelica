@@ -161,11 +161,11 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real valve.frictionLoss(min = 0.0, max = 1.0, start = 0.0) \"Part of friction losses fed to medium\";
 //   protected constant Real valve.unitVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1.0;
 //   protected constant Real valve.small = 1e-60;
-//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1e-15;
 //   protected constant Real valve.eps = 1e-15;
 //   protected Real valve.yLim = max(min(valve.y,valve.y1),0.0) \"Limited valve opening\";
 //   protected Real valve.Kv(quantity = \"VolumeFlowRate\", unit = \"m3/s\") \"Standard flow rate\";
 //   input Real valve.y;
+//   protected constant Real valve.smallVolumeFlowRate(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = 1e-15;
 //   parameter Real pipe.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = 1.0 \"Density\";
 //   parameter Real pipe.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant pressure\";
 //   parameter Real pipe.medium.cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant volume\";
