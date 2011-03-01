@@ -10793,7 +10793,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_makefileParams_senddatalibs);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "PERL=\"perl\"\n",
+                                    "PERL=perl\n",
                                     "\n",
                                     ".PHONY: "
                                 }, false));
@@ -11456,7 +11456,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_makefileParams_senddatalibs);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "PERL=\"perl\"\n",
+                                    "PERL=perl\n",
                                     "\n",
                                     ".PHONY: "
                                 }, false));
