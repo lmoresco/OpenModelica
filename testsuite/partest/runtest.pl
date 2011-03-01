@@ -172,6 +172,7 @@ unlink("../$test.fail_log");
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 # If we're in meta, append the MetaModelica flag to rtest.
 $rtest = $rtest . " +g=MetaModelica " if $test_dir eq "./meta";
+$rtest = $rtest . " +d=SetOldDassl " if $test_dir eq "./mosfiles-dasslold";
 
 # Run the testscript and redirect output to a logfile.
 system("$rtest $test &> $test.test_log");
@@ -183,7 +184,7 @@ my $exit_status = 1;
 my $erroneous = 0;
 
 while(<$test_log>) {
-	if(/... erroneous/) {
+	if(/\.\.\. erroneous/) {
 		$erroneous = 1;
 	}
 	if(/== (\d) out of 1 tests failed.*time: (\d*)/) {
@@ -196,6 +197,7 @@ while(<$test_log>) {
 				print color 'red';
 				$exit_status = 0;
 			} else {
+        system("cp $test.test_log ../$test.fail_log");
 				print color 'magenta';
 			}
 		}

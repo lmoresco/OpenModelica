@@ -288,7 +288,6 @@ Function10.mo \
 Function11.mo \
 Function12.mo \
 Function1.mo \
-Function3.mo \
 Function5.mo \
 Function5_test.mo \
 Function6.mo \
