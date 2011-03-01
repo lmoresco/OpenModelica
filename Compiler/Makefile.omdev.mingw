@@ -45,7 +45,7 @@ PROGD = omcd
 PROGP = omcp
 PROGF = omcf
 
-SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin openmodelica.lefty convert_lines.pl
+SCRIPT_FILES = Compile Compile.bat doPlot doPlot.bat doPlot.Cygwin openmodelica.lefty convert_lines.pl default_profiling.xsl
 
 SUBDIRS	= runtime modpar
 
