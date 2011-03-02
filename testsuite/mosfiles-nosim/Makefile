@@ -2,7 +2,6 @@ TEST = ../rtest -v
 
 TESTFILES = \
 Array1.mos \
-attributes.mos \
 BaseClass1.mos \
 EnzMM.mos \
 ErrorFunctionCallNumArgs.mos \
