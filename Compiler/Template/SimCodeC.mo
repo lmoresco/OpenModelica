@@ -35669,6 +35669,7 @@ algorithm
         l_preExp = Tpl.emptyTxt;
         l_assignments = Tpl.emptyTxt;
         (l_expPart, l_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_s_exp, a_context, l_preExp, a_varDecls);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* Pattern-matching assignment */\n"));
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
         (txt, l_expPart, _, a_varDecls, l_assignments) = patternMatch(txt, i_lhs_pattern, l_expPart, Tpl.strTokText(Tpl.ST_STRING("MMC_THROW()")), a_varDecls, l_assignments);

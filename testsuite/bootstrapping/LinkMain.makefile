@@ -13,7 +13,7 @@ CC=$(CXX)
 
 main: Main_main2.o $(RECS) main.c
 	@echo $(UNAME)
-	$(CXX) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) $(LDFLAGS) -L./ -lomparse -lomcruntime -L"../../build/lib/omc" -lmodparomc -lc_runtime -lm -ldl -lantlr3 -lmainrecords -lomniORB4 -lomnithread
+	$(CXX) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) -L./ -lomparse -lomcruntime -L"../../build/lib/omc" -lmodparomc -lc_runtime $(LDFLAGS) -lm -ldl -lantlr3 -lmainrecords -lomniORB4 -lomnithread
 $(RECS): main_records.o
 	rm -f $@
 	ar -ru $@ $<
