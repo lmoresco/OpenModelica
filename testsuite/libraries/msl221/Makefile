@@ -71,7 +71,8 @@ WhyArrows.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES=  \
+FAILINGTESTFILES=\
+PreLoad2.mos \
 
 .PHONY : test testflat testsim
 

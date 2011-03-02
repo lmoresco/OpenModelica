@@ -1022,9 +1022,9 @@ end BC10;
 //   parameter Real stateSpace1.B[2,1] = 1.0 "Matrix B of state space model";
 //   parameter Real stateSpace1.C[1,1] = 1.0 "Matrix C of state space model";
 //   parameter Real stateSpace1.C[1,2] = 1.0 "Matrix C of state space model";
-//   parameter Real stateSpace1.D[1,1] = 0.0 "Matrix D of state space model";
 //   output Real stateSpace1.x[1] "State vector";
 //   output Real stateSpace1.x[2] "State vector";
+//   parameter Real stateSpace1.D[1,1] = 0.0 "Matrix D of state space model";
 // equation
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

@@ -65,23 +65,23 @@ end FunctionEval7;
 // 
 // Result:
 // function test
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := test3(x) + test3(4.0);
 // end test;
 // 
 // function test3
-// input Real a;
-// output Real x = 5.0 + a;
+//   input Real a;
+//   output Real x = 5.0 + a;
 // end test3;
 // 
 // class FunctionEval7
-// parameter Real a = 5.0;
-// parameter Real b = sqrt(a);
-// Real x1 = test(a);
-// Real x3 = test(test3(sin(x1)));
-// Real y;
+//   parameter Real a = 5.0;
+//   Real x1 = test(a);
+//   Real x3 = test(test3(sin(x1)));
+//   Real y;
+//   parameter Real b = sqrt(a);
 // equation
 //   y = test(x1 + x3);
 // end FunctionEval7;

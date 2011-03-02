@@ -18,11 +18,11 @@ end StructuralParam;
 
 // Result:
 // class StructuralParam
-// parameter Integer m = n;
-// parameter Integer n = 1;
-// Real x[1];
-// Real y[1];
+//   parameter Integer n = 1;
+//   Real x[1];
+//   Real y[1];
+//   parameter Integer m = n;
 // equation
-//  x[1] = y[1];
+//   x[1] = y[1];
 // end StructuralParam;
 // endResult

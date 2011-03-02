@@ -85,7 +85,6 @@ end X;
 // Result:
 // class X
 //   parameter enumeration(world, frame_a, frame_resolve) frame_r_in = Types.ResolveInFrameA.frame_a;
-//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 //   Real x;
 //   enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = enum.a, max = enum.b, start = enum.c, fixed = true);
 //   enumeration(small, medium, large, xlarge) enumtest.t_shirt_size = Types.EnumTest.Size.medium;
@@ -97,6 +96,7 @@ end X;
 //   Real enumtest.xx[Types.EnumTest.DigitalCurrentChoices.one];
 //   Real enumtest.xxx[Types.EnumTest.DigitalCurrentChoices.zero];
 //   Real enumtest.xxx[Types.EnumTest.DigitalCurrentChoices.one];
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 // equation
 //   enumtest.c = Types.EnumTest.DigitalCurrentChoices.one;
 //   enumtest.choice = if enumtest.c == Types.EnumTest.DigitalCurrentChoices.zero then Types.EnumTest.DigitalCurrentChoices.one else Types.EnumTest.DigitalCurrentChoices.one;

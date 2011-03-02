@@ -53,13 +53,13 @@ end Enumeration6;
 //   Real t.hh[P.h.E.l];
 //   Real t.hh[P.h.E.k];
 //   parameter enumeration(world, frame_a, frame_resolve) frame_r_in = P.EE.frame_a;
-//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 //   Real x(StateSelect = StateSelect.default);
 //   Real z[P.EE.world];
 //   Real z[P.EE.frame_a];
 //   Real z[P.EE.frame_resolve];
 //   enumeration(world, frame_a, frame_resolve) ee(start = P.EE.world);
 //   enumeration(a, b, c) f(quantity = "quant_str_enumeration", min = P.E.a, max = P.E.b, start = P.E.c, fixed = true);
+//   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 // equation
 //   t.hh[P.h.E.j] = 1.0;
 //   t.hh[P.h.E.l] = 2.0;

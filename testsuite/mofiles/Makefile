@@ -166,6 +166,8 @@ ConstructParameters.mo \
 Cosh.mo \
 Cos.mo \
 Cross.mo \
+CyclicBindingConst.mo \
+CyclicBindingParam.mo \
 DeclarationEquation1.mo \
 DeclarationEquation2.mo \
 DeclarationEquation3.mo \
@@ -574,8 +576,6 @@ Connect3.mo \
 ConnectConst1.mo \
 ConstrainingType2.mo \
 ConstrainingType3.mo \
-CyclicBindingConst.mo \
-CyclicBindingParam.mo \
 DeclareConstant1.mo \
 DeclareConstant2.mo \
 DeclareConstant3.mo \

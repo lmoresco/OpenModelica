@@ -28,11 +28,11 @@ end example;
 //   constant Integer x.a = 1;
 //   constant Integer x.b = 2;
 //   constant Integer x.c = 3;
-//   parameter Integer y.a = 4;
-//   parameter Integer y.b = 26;
-//   constant Integer y.c = 3;
 //   Integer z.a = 2;
 //   parameter Integer z.b = 13;
 //   constant Integer z.c = 3;
+//   parameter Integer y.a = 4;
+//   parameter Integer y.b = 26;
+//   constant Integer y.c = 3;
 // end example;
 // endResult

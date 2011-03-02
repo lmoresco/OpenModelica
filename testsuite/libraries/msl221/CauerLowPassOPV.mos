@@ -15,9 +15,7 @@ getErrorString();
 //   parameter Real l1 = 1.304;
 //   parameter Real l2 = 0.8586;
 //   parameter Real c1 = 1.072;
-//   parameter Real c2 = 1.0 / l1 / 2.906997720064;
 //   parameter Real c3 = 1.682;
-//   parameter Real c4 = 1.0 / l2 / 1.392270203025;
 //   parameter Real c5 = 0.7262;
 //   Real C1.v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real C1.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
@@ -252,6 +250,8 @@ getErrorString();
 //   Real p4.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real n14.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real n14.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
+//   parameter Real c2 = 1.0 / l1 / 2.906997720064;
+//   parameter Real c4 = 1.0 / l2 / 1.392270203025;
 // equation
 //   C1.i = C1.C * der(C1.v);
 //   C1.v = C1.p.v - C1.n.v;

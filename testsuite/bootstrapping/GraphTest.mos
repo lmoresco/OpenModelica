@@ -42,6 +42,26 @@ GraphTest.topologicalSortTest({
     (10, {})});
 getErrorString();
 
+GraphTest.topologicalSortTestDetectCycles({(1, {2}), (2, {})});
+getErrorString();
+
+GraphTest.topologicalSortTestDetectCycles({(1, {2}), (2, {1})});
+getErrorString();
+
+GraphTest.topologicalSortTestDetectCycles({(1, {2}), (2, {1, 3}), (3, {2})});
+getErrorString();
+
+GraphTest.topologicalSortTestDetectCycles({
+    (7, {11, 8}),
+    (5, {11}),
+    (3, {8, 10}),
+    (11, {2, 9}),
+    (8, {9}),
+    (2, {7}),
+    (9, {}),
+    (10, {})});
+getErrorString();
+
 // Result:
 // true
 // ""
@@ -56,5 +76,13 @@ getErrorString();
 // ({2,9,10,11,8,5,7,3},{})
 // ""
 // ({9,10,8,3},{(7,{11}),(5,{11}),(11,{2}),(2,{7})})
+// ""
+// ({2,1},{})
+// ""
+// ({},{{2,1}})
+// ""
+// ({},{{2,1},{2,3}})
+// ""
+// ({9,10,8,3},{{2,11,7}})
 // ""
 // endResult

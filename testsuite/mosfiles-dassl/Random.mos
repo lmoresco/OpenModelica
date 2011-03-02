@@ -155,8 +155,8 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   Integer seed[1](start = seed_start[1], fixed = true);
 //   Integer seed[2](start = seed_start[2], fixed = true);
 //   Integer seed[3](start = seed_start[3], fixed = true);
-//   parameter Real y = testRandom3({seed_start[1],seed_start[2],seed_start[3]});
 //   Real x;
+//   parameter Real y = testRandom3({seed_start[1],seed_start[2],seed_start[3]});
 // algorithm
 //   when sample(0.0,0.2) then
 //     (x, seed) := random({pre(seed[1]),pre(seed[2]),pre(seed[3])});

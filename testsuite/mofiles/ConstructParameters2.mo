@@ -27,20 +27,20 @@ end ConstructParameters2;
 
 // Result:
 // function fc
-// output Prec p;
-// input Real p1;
-// input Real p2;
+//   output Prec p;
+//   input Real p1;
+//   input Real p2;
 // algorithm
 //   p.p3 := p1 * p2;
 //   p.p4 := p.p3 * p1 + p2;
 // end fc;
 // 
 // class ConstructParameters2
-// parameter Real p1 = 2.0;
-// parameter Real p2 = 3.0;
-// parameter Real prec.p3 = 6.0;
-// parameter Real prec.p4 = 15.0;
-// protected parameter Real p3 = prec.p3;
-// protected parameter Real p4 = prec.p4;
+//   parameter Real p1 = 2.0;
+//   parameter Real p2 = 3.0;
+//   protected parameter Real p3 = prec.p3;
+//   protected parameter Real p4 = prec.p4;
+//   parameter Real prec.p3 = 6.0;
+//   parameter Real prec.p4 = 15.0;
 // end ConstructParameters2;
 // endResult

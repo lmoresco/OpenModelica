@@ -35,11 +35,11 @@ end PolyEvaluate2;
 //   parameter Real polyeval.c[4] = 4.0;
 //   input Real polyeval.x = time;
 //   output Real polyeval.y = p;
-//   protected parameter Integer polyeval.n = 3;
 //   protected Real polyeval.xpowers[1];
 //   protected Real polyeval.xpowers[2];
 //   protected Real polyeval.xpowers[3];
 //   protected Real polyeval.xpowers[4];
+//   protected parameter Integer polyeval.n = 3;
 // equation
 //   polyeval.xpowers[1] = 1.0;
 //   polyeval.xpowers[2] = polyeval.xpowers[1] * polyeval.x;

@@ -28,12 +28,12 @@ end MinMax;
 //   Real y[2];
 //   Real y[3];
 //   Real y[4];
-//   parameter Integer n = min(m,3);
 //   parameter Integer m = 4;
 //   constant Boolean b1 = false;
 //   constant Boolean b2 = false;
 //   constant Boolean b4 = true;
 //   constant Boolean b5 = true;
+//   parameter Integer n = min(m,3);
 //   constant Boolean b3 = true;
 //   constant Boolean b6 = false;
 // equation

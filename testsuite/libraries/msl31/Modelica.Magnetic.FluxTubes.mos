@@ -732,9 +732,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real comparisonWithFEA.table[13,2] = 13.07415 \"table matrix (grid = first column; e.g., table=[0,2])\";
 //   parameter String comparisonWithFEA.tableName = \"NoName\" \"table name on file or in function usertab (see docu)\";
 //   parameter String comparisonWithFEA.fileName = \"NoName\" \"file where matrix is stored\";
-//   parameter Integer comparisonWithFEA.columns[1] = 2 \"columns of table to be interpolated\";
 //   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
 //   protected Integer comparisonWithFEA.tableID;
+//   parameter Integer comparisonWithFEA.columns[1] = 2 \"columns of table to be interpolated\";
 //   Real iSensor.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real iSensor.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real iSensor.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1272,9 +1272,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real feedX.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, StateSelect = StateSelect.default) \"If exact=false, absolute velocity of flange_b else dummy\";
 //   Real feedX.a(quantity = \"Acceleration\", unit = \"m/s2\", start = 0.0) \"If exact=false, absolute acceleration of flange_b else dummy\";
 //   input Real feedX.s_ref \"reference position of flange as input signal\";
-//   protected parameter Real feedX.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * feedX.f_crit \"Critical frequency\";
 //   protected constant Real feedX.af = 1.3617 \"s coefficient of Bessel filter\";
 //   protected constant Real feedX.bf = 0.618 \"s*s coefficient of Bessel filter\";
+//   protected parameter Real feedX.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * feedX.f_crit \"Critical frequency\";
 //   parameter Integer comparisonWithFEA.nout = 3 \"Number of outputs\";
 //   input Real comparisonWithFEA.u \"Connector of Real input signal\";
 //   output Real comparisonWithFEA.y[1] \"Connector of Real output signals\";
@@ -1351,11 +1351,11 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real comparisonWithFEA.table[17,4] = 0.00638 \"table matrix (grid = first column; e.g., table=[0,2])\";
 //   parameter String comparisonWithFEA.tableName = \"NoName\" \"table name on file or in function usertab (see docu)\";
 //   parameter String comparisonWithFEA.fileName = \"NoName\" \"file where matrix is stored\";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
+//   protected Integer comparisonWithFEA.tableID;
 //   parameter Integer comparisonWithFEA.columns[1] = 2 \"columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[2] = 3 \"columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[3] = 4 \"columns of table to be interpolated\";
-//   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
-//   protected Integer comparisonWithFEA.tableID;
 // equation
 //   ground.p.v = 0.0;
 //   actuator.mmf_PM.V_m = actuator.mmf_PM.port_p.V_m - actuator.mmf_PM.port_n.V_m;
@@ -3297,9 +3297,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedFeed_x.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, StateSelect = StateSelect.default) \"If exact=false, absolute velocity of flange_b else dummy\";
 //   Real advancedFeed_x.a(quantity = \"Acceleration\", unit = \"m/s2\", start = 0.0) \"If exact=false, absolute acceleration of flange_b else dummy\";
 //   input Real advancedFeed_x.s_ref \"reference position of flange as input signal\";
-//   protected parameter Real advancedFeed_x.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * advancedFeed_x.f_crit \"Critical frequency\";
 //   protected constant Real advancedFeed_x.af = 1.3617 \"s coefficient of Bessel filter\";
 //   protected constant Real advancedFeed_x.bf = 0.618 \"s*s coefficient of Bessel filter\";
+//   protected parameter Real advancedFeed_x.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * advancedFeed_x.f_crit \"Critical frequency\";
 //   Real simpleGround.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real simpleGround.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real simpleSource.v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
@@ -3642,9 +3642,9 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleFeed_x.v(quantity = \"Velocity\", unit = \"m/s\", start = 0.0, StateSelect = StateSelect.prefer) \"If exact=false, absolute velocity of flange_b else dummy\";
 //   Real simpleFeed_x.a(quantity = \"Acceleration\", unit = \"m/s2\", start = 0.0) \"If exact=false, absolute acceleration of flange_b else dummy\";
 //   input Real simpleFeed_x.s_ref \"reference position of flange as input signal\";
-//   protected parameter Real simpleFeed_x.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * simpleFeed_x.f_crit \"Critical frequency\";
 //   protected constant Real simpleFeed_x.af = 1.3617 \"s coefficient of Bessel filter\";
 //   protected constant Real simpleFeed_x.bf = 0.618 \"s*s coefficient of Bessel filter\";
+//   protected parameter Real simpleFeed_x.w_crit(quantity = \"AngularFrequency\", unit = \"rad/s\") = 6.28318530717959 * simpleFeed_x.f_crit \"Critical frequency\";
 //   parameter Integer comparisonWithFEA.nout = 3 \"Number of outputs\";
 //   input Real comparisonWithFEA.u \"Connector of Real input signal\";
 //   output Real comparisonWithFEA.y[1] \"Connector of Real output signals\";
@@ -3733,11 +3733,11 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real comparisonWithFEA.table[20,4] = 0.039467 \"table matrix (grid = first column; e.g., table=[0,2])\";
 //   parameter String comparisonWithFEA.tableName = \"NoName\" \"table name on file or in function usertab (see docu)\";
 //   parameter String comparisonWithFEA.fileName = \"NoName\" \"file where matrix is stored\";
+//   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
+//   protected Integer comparisonWithFEA.tableID;
 //   parameter Integer comparisonWithFEA.columns[1] = 2 \"columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[2] = 3 \"columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[3] = 4 \"columns of table to be interpolated\";
-//   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"smoothness of table interpolation\";
-//   protected Integer comparisonWithFEA.tableID;
 // initial equation
 //   simpleFeed_x.s = simpleFeed_x.s_ref;
 // equation
@@ -7286,19 +7286,19 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real comparisonWithFEA.table[530,4] = 0.000220178 \"Table matrix (time = first column; e.g. table=[0,2])\";
 //   parameter String comparisonWithFEA.tableName = \"NoName\" \"Table name on file or in function usertab (see docu)\";
 //   parameter String comparisonWithFEA.fileName = \"NoName\" \"File where matrix is stored\";
-//   parameter Integer comparisonWithFEA.columns[1] = 2 \"Columns of table to be interpolated\";
-//   parameter Integer comparisonWithFEA.columns[2] = 3 \"Columns of table to be interpolated\";
-//   parameter Integer comparisonWithFEA.columns[3] = 4 \"Columns of table to be interpolated\";
 //   parameter enumeration(LinearSegments, ContinuousDerivative) comparisonWithFEA.smoothness = Modelica.Blocks.Types.Smoothness.LinearSegments \"Smoothness of table interpolation\";
 //   parameter enumeration(HoldLastPoint, LastTwoPoints, Periodic) comparisonWithFEA.extrapolation = Modelica.Blocks.Types.Extrapolation.HoldLastPoint \"Extrapolation of data outside the definition range\";
 //   parameter Real comparisonWithFEA.offset[1] = 0.0 \"Offsets of output signals\";
 //   parameter Real comparisonWithFEA.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   parameter Real comparisonWithFEA.t_min(fixed = false) \"Minimum abscissa value defined in table\";
 //   parameter Real comparisonWithFEA.t_max(fixed = false) \"Maximum abscissa value defined in table\";
+//   protected Integer comparisonWithFEA.tableID;
+//   parameter Integer comparisonWithFEA.columns[1] = 2 \"Columns of table to be interpolated\";
+//   parameter Integer comparisonWithFEA.columns[2] = 3 \"Columns of table to be interpolated\";
+//   parameter Integer comparisonWithFEA.columns[3] = 4 \"Columns of table to be interpolated\";
 //   protected parameter Real comparisonWithFEA.p_offset[1] = comparisonWithFEA.offset[1];
 //   protected parameter Real comparisonWithFEA.p_offset[2] = comparisonWithFEA.offset[1];
 //   protected parameter Real comparisonWithFEA.p_offset[3] = comparisonWithFEA.offset[1];
-//   protected Integer comparisonWithFEA.tableID;
 // initial equation
 //   comparisonWithFEA.t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(comparisonWithFEA.tableID);
 //   comparisonWithFEA.t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(comparisonWithFEA.tableID);
@@ -9311,26 +9311,26 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 1.78e-08 \"Resistivity of conductor material at 20ï¿½C (default: Copper)\";
 //   parameter Real alpha_20(quantity = \"LinearTemperatureCoefficient\", unit = \"1/K\") = 0.0039 \"Temperature coefficient of conductor material's resistivity at 20degC (default: Copper)\";
 //   parameter Real T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature of winding\";
-//   parameter Real rho(quantity = \"Resistivity\", unit = \"Ohm.m\") = rho_20 * (1.0 + alpha_20 * (253.15 + T_op)) \"Resistivity at operating temperature\";
 //   parameter Real h_w(quantity = \"Length\", unit = \"m\") \"Height of winding cross-section\";
 //   parameter Real b_w(quantity = \"Length\", unit = \"m\") \"Width of winding cross-section\";
-//   parameter Real A_w(quantity = \"Area\", unit = \"m2\") = h_w * b_w \"Cross-section area of winding\";
 //   parameter Real l_avg(quantity = \"Length\", unit = \"m\") \"Average length of one turn\";
 //   parameter Real V_op(quantity = \"ElectricPotential\", unit = \"V\") \"Operating voltage (nominal/ minimum/ maximum voltage depending on design objective)\";
 //   parameter Real J_desired(quantity = \"CurrentDensity\", unit = \"A/m2\") = 4000000.0 \"DESIRED current density at operating temperature and voltage resp.\";
 //   parameter Real c_condFillChosen = 0.6 \"CHOSEN conductor filling factor = total conductor area without insulation/ total winding area\";
+//   parameter Real rho(quantity = \"Resistivity\", unit = \"Ohm.m\") = rho_20 * (1.0 + alpha_20 * (253.15 + T_op)) \"Resistivity at operating temperature\";
+//   parameter Real A_w(quantity = \"Area\", unit = \"m2\") = h_w * b_w \"Cross-section area of winding\";
 //   parameter Real N_calculated = V_op * 1.0 / J_desired / l_avg / rho \"CALCULATED number of turns\";
 //   parameter Real d_wireCalculated(quantity = \"Length\", unit = \"m\", min = 0.0) = sqrt((4.0 * (A_w * c_condFillChosen)) / (N_calculated * 3.14159265358979)) \"CALCULATED wire diameter (without insulation)\";
-//   parameter Real A_wireCalculated(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireCalculated ^ 2.0 \"Calculated wire cross-section area\";
-//   parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = rho * (N_calculated * l_avg / A_wireCalculated) \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
-//   parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
-//   parameter Real d_wireChosen(quantity = \"Length\", unit = \"m\", min = 0.0) = d_wireCalculated \"CHOSEN available wire diameter (without insulation)\";
 //   parameter Real N_chosen = N_calculated \"CHOSEN number of turns\";
+//   parameter Real A_wireCalculated(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireCalculated ^ 2.0 \"Calculated wire cross-section area\";
+//   parameter Real d_wireChosen(quantity = \"Length\", unit = \"m\", min = 0.0) = d_wireCalculated \"CHOSEN available wire diameter (without insulation)\";
+//   parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = rho * (N_calculated * l_avg / A_wireCalculated) \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
 //   parameter Real A_wireChosen(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireChosen ^ 2.0 \"Wire cross-section area resulting from CHOSEN wire diameter\";
+//   parameter Real c_condFillActual = 3.14159265358979 * (N_chosen * (d_wireChosen ^ 2.0 * 1.0 / A_w / 4.0)) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
+//   parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
 //   parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = rho * (N_chosen * l_avg / A_wireChosen) \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 //   parameter Real P_actual(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_actual \"Winding's ohmic losses at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 //   parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = 4.0 * (V_op * d_wireChosen ^ -2.0 / R_actual / 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
-//   parameter Real c_condFillActual = 3.14159265358979 * (N_chosen * (d_wireChosen ^ 2.0 * 1.0 / A_w / 4.0)) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
 // end Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign;
 // "
 // "Warning: Parameter h_w has neither value nor start value, and is fixed during initialization (fixed=true)
