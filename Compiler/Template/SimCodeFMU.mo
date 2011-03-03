@@ -1806,7 +1806,6 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_prefix);
         txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
       then txt;
 
     case ( txt,
@@ -2224,7 +2223,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("0.0 //default"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("0.0; //default"));
       then txt;
   end matchcontinue;
 end fun_74;
