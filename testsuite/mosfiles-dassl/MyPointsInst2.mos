@@ -22,7 +22,7 @@ val(z,1.0);
 // true
 // record SimulationResult
 //     resultFile = "MyPointsInst2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MyPointsInst2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'MyPointsInst2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 1.0

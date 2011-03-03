@@ -30,21 +30,21 @@ simulate(Alg4);
 // true
 // record SimulationResult
 //     resultFile = "Alg1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Alg1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 10, tolerance = 1e-05, method = 'dasslold', fileNamePrefix = 'Alg1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 2.0
 // 0
 // record SimulationResult
 //     resultFile = "Alg2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 1.0
 // 0
 // record SimulationResult
 //     resultFile = "Alg3_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 4.0
@@ -53,7 +53,7 @@ simulate(Alg4);
 // 0
 // record SimulationResult
 //     resultFile = "",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg4', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dasslold', fileNamePrefix = 'Alg4', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = "Simulation failed for model: Alg4
 // Error: Internal error Inverse Algorithm needs to be solved for in   x := 1.0 + y;
 // . This is not implemented yet.

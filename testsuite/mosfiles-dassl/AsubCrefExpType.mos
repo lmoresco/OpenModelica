@@ -13,7 +13,7 @@ simulate(AsubCrefExpType,startTime=0.0, stopTime=1.0, numberOfIntervals=2);
 // true
 // record SimulationResult
 //     resultFile = "AsubCrefExpType_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'AsubCrefExpType', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*'",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'AsubCrefExpType', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // endResult
