@@ -1290,6 +1290,11 @@ algorithm
                                     "// include fmu header files, typedefs and macros\n",
                                     "#include \"fmiModelFunctions.h\"\n",
                                     "#include \"fmu_model_interface.h\"\n",
+                                    "#include \""
+                                }, false));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_functions.h\"\n",
                                     "\n",
                                     "void setStartValues(ModelInstance *comp);\n",
                                     "fmiReal getEventIndicator(ModelInstance* comp, int i);\n",
@@ -1302,6 +1307,7 @@ algorithm
                                     "fmiStatus setBoolean(ModelInstance* comp, const fmiValueReference vr, const fmiBoolean value);\n",
                                     "fmiString getString(ModelInstance* comp, const fmiValueReference vr);\n",
                                     "fmiStatus setString(ModelInstance* comp, const fmiValueReference vr, const fmiString value);\n",
+                                    "fmiStatus setExternalFunction(ModelInstance* c, const fmiValueReference vr, const void* value);\n",
                                     "\n"
                                 }, true));
         txt = ModelDefineData(txt, i_modelInfo);
@@ -1334,10 +1340,9 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = setStringFunction(txt, i_modelInfo);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "\n",
-                                    "\n"
-                                }, true));
+        txt = setExternalFunction(txt, i_modelInfo);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
 
     case ( txt,
@@ -1819,6 +1824,7 @@ algorithm
         txt = Tpl.writeText(txt, l_numberOfBooleans);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "#define NUMBER_OF_EXTERNALFUNCTIONS 0\n",
                                     "\n",
                                     "// define variable data for model\n"
                                 }, true));
@@ -3563,7 +3569,39 @@ algorithm
   end matchcontinue;
 end setStringFunction;
 
-protected function fun_110
+public function setExternalFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = _)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiStatus setExternalFunction(ModelInstance* c, const fmiValueReference vr, const void* value){\n",
+                                    "  switch (vr) {\n",
+                                    "      default:\n",
+                                    "          return fmiError;\n",
+                                    "  }\n",
+                                    "  return fmiOK;\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end setExternalFunction;
+
+protected function fun_111
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -3587,7 +3625,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_110;
+end fun_111;
 
 public function SwitchVars
   input Tpl.Text in_txt;
@@ -3610,7 +3648,7 @@ algorithm
            SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
            a_arrayName )
       equation
-        l_description = fun_110(Tpl.emptyTxt, i_comment);
+        l_description = fun_111(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : return globalData->"));
@@ -3627,7 +3665,7 @@ algorithm
   end matchcontinue;
 end SwitchVars;
 
-protected function fun_112
+protected function fun_113
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -3651,7 +3689,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_112;
+end fun_113;
 
 public function SwitchVarsSet
   input Tpl.Text in_txt;
@@ -3674,7 +3712,7 @@ algorithm
            SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
            a_arrayName )
       equation
-        l_description = fun_112(Tpl.emptyTxt, i_comment);
+        l_description = fun_113(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : globalData->"));
@@ -3691,7 +3729,7 @@ algorithm
   end matchcontinue;
 end SwitchVarsSet;
 
-protected function fun_114
+protected function fun_115
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -3715,9 +3753,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_114;
+end fun_115;
 
-protected function lm_115
+protected function lm_116
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -3739,43 +3777,16 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_115(txt, rest);
+        txt = lm_116(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_115(txt, rest);
+        txt = lm_116(txt, rest);
       then txt;
   end matchcontinue;
-end lm_115;
-
-protected function fun_116
-  input Tpl.Text in_txt;
-  input Tpl.Text in_a_dirExtra;
-  input Tpl.Text in_a_libsStr;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
-    local
-      Tpl.Text txt;
-      Tpl.Text a_libsStr;
-
-    case ( txt,
-           Tpl.MEM_TEXT(tokens = {}),
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
-      then txt;
-  end matchcontinue;
-end fun_116;
+end lm_116;
 
 protected function fun_117
   input Tpl.Text in_txt;
@@ -3792,6 +3803,33 @@ algorithm
 
     case ( txt,
            Tpl.MEM_TEXT(tokens = {}),
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
+      then txt;
+
+    case ( txt,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end fun_117;
+
+protected function fun_118
+  input Tpl.Text in_txt;
+  input Tpl.Text in_a_dirExtra;
+  input Tpl.Text in_a_libsStr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_libsStr;
+
+    case ( txt,
+           Tpl.MEM_TEXT(tokens = {}),
            _ )
       then txt;
 
@@ -3802,7 +3840,7 @@ algorithm
         txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
-end fun_117;
+end fun_118;
 
 public function fmuMakefile
   input Tpl.Text in_txt;
@@ -3834,12 +3872,12 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_114(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_115(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_115(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_116(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_116(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_117(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos1 = fun_117(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_118(Tpl.emptyTxt, l_dirExtra, l_libsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
