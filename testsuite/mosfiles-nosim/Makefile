@@ -12,6 +12,8 @@ FuncNamespace.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 LookupBuiltin.mos \
 LookupPackageFail.mos \
+Model1.mos \
+Model2.mos \
 ModifierVariabilityError.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
@@ -22,8 +24,7 @@ ModifierProblem.mos \
 TransformerYY.mos \
 AIMC_DOL.mos \
 ZeroDims.mos \
-Model1.mos \
-Model2.mos 
+ZeroRange.mos
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing

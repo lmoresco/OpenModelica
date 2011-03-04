@@ -23059,8 +23059,26 @@ algorithm
         txt = Tpl.writeText(txt, l_stopValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ";\n",
-                                    "{\n"
-                                }, true));
+                                    "if (!"
+                                }, false));
+        txt = Tpl.writeText(txt, l_stepVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ") {\n",
+                                    "  MODELICA_ASSERT(omc_dummyFileInfo, \"assertion range step != 0 failed\");\n",
+                                    "} else if (!((("
+                                }, false));
+        txt = Tpl.writeText(txt, l_stepVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" > 0) && ("));
+        txt = Tpl.writeText(txt, l_startVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" > "));
+        txt = Tpl.writeText(txt, l_stopVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")) || (("));
+        txt = Tpl.writeText(txt, l_stepVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" < 0) && ("));
+        txt = Tpl.writeText(txt, l_startVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" < "));
+        txt = Tpl.writeText(txt, l_stopVar);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(")))) {\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("for("));
         txt = Tpl.writeStr(txt, a_type);
@@ -26001,7 +26019,10 @@ algorithm
         (l_expPart, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_exp, a_context, a_preExp, a_varDecls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("(0), make_index_array(1, (int) "));
         txt = Tpl.writeText(txt, l_expPart);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("), \'S\'"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "), \'S\'\n",
+                                    "\n"
+                                }, true));
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
