@@ -62,6 +62,7 @@ LinearSysEq.mos \
 LocalVariableInit.mos \
 LotkaVolterra.mos \
 Matrix.mos  \
+MeasureTime.mos \
 MissV.mos \
 ModelicaUtilities.mos \
 MyPointsInst1.mos MyPointsInst2.mos \
