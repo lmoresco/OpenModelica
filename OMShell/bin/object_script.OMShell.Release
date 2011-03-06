@@ -1,0 +1,12 @@
+INPUT(
+./release\commandcompletion.o
+./release\omc_communication.o
+./release\omc_communicator.o
+./release\omcinteractiveenvironment.o
+./release\oms.o
+./release\main.o
+./release\moc_commandcompletion.o
+./release\moc_omc_communicator.o
+./release\moc_oms.o
+./release\qrc_oms.o
+);
