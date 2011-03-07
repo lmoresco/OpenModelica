@@ -106,6 +106,7 @@ ClassExtends1.mo \
 ClassExtends2.mo \
 ClassExtends3.mo \
 ClassExtends4.mo \
+ClassExtends5.mo \
 Comment1.mo \
 Comment2.mo \
 ComponentNames.mo \
