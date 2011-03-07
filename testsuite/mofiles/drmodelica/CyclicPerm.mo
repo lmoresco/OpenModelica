@@ -35,19 +35,10 @@ end CyclicPerm;
 
 // Result:
 // Error processing file: CyclicPerm.mo
-// - Algorithm.makeAssignment failed
-//     W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}})
-// - Algorithm.makeAssignment failed
-//     W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}})
-// 
 // [CyclicPerm.mo:26:3-26:42:writable] Error: Type mismatch in assignment in W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}}) of Real[1, 3] := Real[1, 4]
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
-// - Algorithm.makeAssignment failed
-//     W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}})
-// - Algorithm.makeAssignment failed
-//     W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}})
 // 
 // Execution failed!
 // endResult
