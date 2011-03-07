@@ -5197,11 +5197,11 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#ifdef _OMC_MEASURE_TIME\n",
-                                    "SIM_PROF_TICK_EQ(SIM_PROF_EQ_"
+                                    "SIM_PROF_ADD_NCALL_EQ(SIM_PROF_EQ_"
                                 }, false));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ");\n",
+                                    ",1);\n",
                                     "#endif\n",
                                     "mem_state = get_memory_state();\n"
                                 }, true));
@@ -5211,17 +5211,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_body);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "restore_memory_state(mem_state);\n",
-                                    "#ifdef _OMC_MEASURE_TIME\n",
-                                    "SIM_PROF_ACC_EQ(SIM_PROF_EQ_"
-                                }, false));
-        txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ");\n",
-                                    "#endif"
-                                }, false));
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("restore_memory_state(mem_state);\n"));
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}"));
         txt = Tpl.nextIter(txt);
@@ -5767,7 +5757,8 @@ algorithm
                                        "\n",
                                        "mem_state = get_memory_state();\n",
                                        "\n",
-                                       "switch(i) {\n"
+                                       "switch(i) {\n",
+                                       "\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
   out_txt := Tpl.writeText(out_txt, l_cases);
@@ -9949,7 +9940,24 @@ algorithm
       equation
         ret_1 = listLength(i_crefs);
         l_size = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("start_nonlinear_system("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "#ifdef _OMC_MEASURE_TIME\n",
+                                    "SIM_PROF_TICK_EQ(SIM_PROF_EQ_"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
+                                    "SIM_PROF_ADD_NCALL_EQ(SIM_PROF_EQ_"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ",-1);\n",
+                                    "#endif"
+                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "start_nonlinear_system("
+                                }, false));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(");\n"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -9967,6 +9975,17 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("end_nonlinear_system();"));
         txt = inlineCrefs(txt, a_context, i_crefs);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "#ifdef _OMC_MEASURE_TIME\n",
+                                    "SIM_PROF_ACC_EQ(SIM_PROF_EQ_"
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
+                                    "#endif"
+                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
       then txt;
 
     case ( txt,
