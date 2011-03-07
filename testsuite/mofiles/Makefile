@@ -309,6 +309,7 @@ FunctionEval7.mo \
 FunctionEval8.mo \
 FunctionEval9.mo \
 FunctionEval10.mo \
+FunctionEval11.mo \
 FunctionEvalBuiltin.mo \
 FunctionEvalSlice.mo \
 FunctionProtectedInput.mo \
