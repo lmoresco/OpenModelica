@@ -1139,7 +1139,7 @@ algorithm
            _,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Enumeration/>"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer/>"));
       then txt;
 
     case ( txt,
