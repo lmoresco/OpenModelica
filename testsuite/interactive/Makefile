@@ -21,6 +21,7 @@ RunScript.mos \
 setComponentComment.mos \
 simplify.mos \
 strings.mos  \
+showDoc.mos \
 variables.mos \
 XmlDumpComment.mos
 
