@@ -18,7 +18,7 @@ getErrorString();
 //   input Integer expoType;
 //   input String tableName;
 //   input String fileName;
-//   input Real table;
+//   input Real[:, :] table;
 //   input Integer colWise;
 //   output Integer tableID;
 // 

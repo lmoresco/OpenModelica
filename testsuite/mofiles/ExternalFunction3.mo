@@ -26,26 +26,26 @@ end ExternalFunction3;
 
 // Result:
 // function ExternalFunction3.addmatrices
-// input Real a;
-// input Real b;
-// output Real c;
+//   input Real[:, :] a;
+//   input Real[size(a,1), size(a,2)] b;
+//   output Real[size(a,1), size(a,2)] c;
 // 
 // external "C";
 // end ExternalFunction3.addmatrices;
 // 
 // class ExternalFunction3
-// constant Real a[1,1] = 1.0;
-// constant Real a[1,2] = 2.0;
-// constant Real a[2,1] = 3.0;
-// constant Real a[2,2] = 4.0;
-// constant Real b[1,1] = 5.0;
-// constant Real b[1,2] = 6.0;
-// constant Real b[2,1] = 7.0;
-// constant Real b[2,2] = 8.0;
-// Real c[1,1];
-// Real c[1,2];
-// Real c[2,1];
-// Real c[2,2];
+//   constant Real a[1,1] = 1.0;
+//   constant Real a[1,2] = 2.0;
+//   constant Real a[2,1] = 3.0;
+//   constant Real a[2,2] = 4.0;
+//   constant Real b[1,1] = 5.0;
+//   constant Real b[1,2] = 6.0;
+//   constant Real b[2,1] = 7.0;
+//   constant Real b[2,2] = 8.0;
+//   Real c[1,1];
+//   Real c[1,2];
+//   Real c[2,1];
+//   Real c[2,2];
 // equation
 //   c[1,1] = 6.0;
 //   c[1,2] = 8.0;

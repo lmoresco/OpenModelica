@@ -32,12 +32,12 @@ end LeastSquares;
 
 // Result:
 // function ls
-//   input Real A;
-//   input Real B;
-//   output Real Ares = A;
-//   output Real x;
+//   input Real[:, :] A;
+//   input Real[:, :] B;
+//   output Real[size(A,1), size(A,2)] Ares = A;
+//   output Real[size(A,2), size(B,2)] x;
 //   protected Integer lwork = min(size(A,1),size(A,2)) + 32 * max(max(size(A,1),size(A,2)),size(B,2));
-//   protected Real work;
+//   protected Real[lwork] work;
 //   protected Integer info;
 //   protected String transposed = "NNNN";
 // 

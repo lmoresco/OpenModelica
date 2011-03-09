@@ -23,21 +23,21 @@ end ExternalFunction2;
 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real[:] x;
+//   output Real[size(x,1)] y;
 // 
 // external "C";
 // end f;
 // 
 // class ExternalFunction2
-// constant Real x[1] = 3.0;
-// constant Real x[2] = 4.0;
-// constant Real x[3] = 5.0;
-// constant Real x[4] = 6.0;
-// Real y[1];
-// Real y[2];
-// Real y[3];
-// Real y[4];
+//   constant Real x[1] = 3.0;
+//   constant Real x[2] = 4.0;
+//   constant Real x[3] = 5.0;
+//   constant Real x[4] = 6.0;
+//   Real y[1];
+//   Real y[2];
+//   Real y[3];
+//   Real y[4];
 // equation
 //   y[1] = 9.0;
 //   y[2] = 12.0;

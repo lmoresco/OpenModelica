@@ -26,10 +26,10 @@ end joinThreeVectors;
 
 // Result:
 // function joinThreeVectors2
-//   input Real v1;
-//   input Real v2;
-//   input Real v3;
-//   output Real vres;
+//   input Real[:] v1;
+//   input Real[:] v2;
+//   input Real[:] v3;
+//   output Real[(size(v1,1)) + (size(v2,1)) + (size(v3,1))] vres;
 // 
 // external "C";
 // end joinThreeVectors2;

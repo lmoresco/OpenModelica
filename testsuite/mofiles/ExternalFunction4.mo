@@ -47,20 +47,20 @@ end ExternalFunction4;
 
 // Result:
 // function ExternalFunction4.dgetrf
-//   input Real A;
-//   output Real LU = A;
-//   output Integer pivots;
+//   input Real[:, :] A;
+//   output Real[size(A,1), size(A,2)] LU = A;
+//   output Integer[min(size(A,1),size(A,2))] pivots;
 //   output Integer info;
 // 
 // external "FORTRAN 77";
 // end ExternalFunction4.dgetrf;
 // 
 // function ExternalFunction4.dgetri
-//   input Real LU;
-//   input Integer pivots;
-//   output Real inv = LU;
+//   input Real[:, :] LU;
+//   input Integer[size(LU,1)] pivots;
+//   output Real[size(LU,1), size(LU,2)] inv = LU;
 //   protected Integer lwork = min(10,size(LU,1)) * (size(LU,1));
-//   protected Real work;
+//   protected Real[lwork] work;
 //   protected Integer info;
 // 
 // external "FORTRAN 77";
@@ -85,7 +85,7 @@ end ExternalFunction4;
 //   constant Real r[2,2] = 4.0;
 //   Real r2[1,1] = 1.0;
 //   Real r2[1,2] = 0.0;
-//   Real r2[2,1] = 0.0;
+//   Real r2[2,1] = 8.88178419700125e-16;
 //   Real r2[2,2] = 1.0;
 // end ExternalFunction4;
 // endResult

@@ -1,15 +1,16 @@
 TEST = ../../rtest -v
 
 TESTFILES = \
-Modelica.Electrical.Machines.Examples.mos \
-Modelica.Electrical.MultiPhase.Examples.mos \
-Modelica.Math.mos \
+Modelica.Blocks.mos \
 Modelica.Electrical.Analog.mos \
 Modelica.Electrical.Digital.mos \
+Modelica.Electrical.Machines.Examples.mos \
+Modelica.Electrical.MultiPhase.Examples.mos \
+Modelica.Magnetic.FluxTubes.mos \
+Modelica.Math.mos \
 Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
-Modelica.Blocks.mos \
-Modelica.Magnetic.FluxTubes.mos \
+Modelica.Media.mos \
 Modelica.Thermal.mos \
 Modelica.Utilities.mos
 

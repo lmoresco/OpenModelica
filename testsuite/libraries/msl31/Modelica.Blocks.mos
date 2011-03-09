@@ -157,7 +157,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // "function Modelica.Blocks.Tables.CombiTable2D.tableInit
 //   input String tableName;
 //   input String fileName;
-//   input Real table;
+//   input Real[:, :] table;
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
@@ -230,7 +230,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // "function Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit
 //   input String tableName;
 //   input String fileName;
-//   input Real table;
+//   input Real[:, :] table;
 //   input Real startTime;
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;

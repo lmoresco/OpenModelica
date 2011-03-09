@@ -20,7 +20,7 @@ getErrorString();
 // "function Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit
 //   input String tableName;
 //   input String fileName;
-//   input Real table;
+//   input Real[:, :] table;
 //   input Real startTime;
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;
