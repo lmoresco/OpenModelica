@@ -33,4 +33,4 @@ Main_main.c: MainTest.mos
 	../rtest -v MainTest.mos 
 
 clean:
-	rm *.o *.a *.exe *.dll 
+	rm -f *.o *.a *.exe *.dll 
