@@ -27,15 +27,15 @@ You need:
           http://www.mico.org - tested on 2.3.11, 2.3.12, 2.3.13
           Note: for newer gcc compilers you might need to add
             #include <limits.h> in orb/fast_array.cc
-    sun-java version > 1.4
-    gcc      (tested with most of the versions)
+    java     version > 1.4
+    gcc      (tested with most of the versions; 4.4 or 4.6 recommended over 4.5)
     readline & libreadlineX-dev, currently X=5
     liblpsolve: http://www.cs.sunysb.edu/~algorith/implement/lpsolve/distrib/lp_solve_5.5.0.11_source.tar.gz
     sqlite3
 The latest OpenModelica uses Qt for potting and 3D functionality. You will also need:
-    Qt 4.x.x (http://trolltech.com - tested with 4.4.3)
-    Coin3D   (http://www.coin3d.org - tested with 3.0.0)
-    SoQt     (http://www.coin3d.org - tested with 1.4.1)
+    Qt 4.x.x (http://trolltech.com - >= 4.6)
+    Coin3D   (http://www.coin3d.org - tested with 3.0.0; deprecated)
+    SoQt     (http://www.coin3d.org - tested with 1.4.1; deprecated)
         Note: for Ubuntu 8.10 you will need to change the code
               in src/Inventor/Qt/SoQtComponent.cpp from:
                static void delete_dict_value(unsigned long key, void * value)
@@ -90,11 +90,8 @@ NOTE:
 
 Setting your environment for compiling OpenModelica
 ===================================================
-  Set ANTLRHOME to antlr installation, e.g. /usr/local/antlr-2.7.7
-  ( Note: We default to /usr/, so if you use e.g. the Ubuntu pre-built package,
-    you can skip this. )
-
-  Set RMLHOME to rml installation, e.g. /usr/local/rml/x86-linux-gcc/
+  If rmlc is not on the PATH, set RMLHOME to rml installation, e.g.
+  /usr/local/rml/x86-linux-gcc/
 
   If you plan to use mico corba with OMC you need to:
   - set the PATH to path/to/mico/bin (for the idl compiler and mico-cpp)
@@ -102,8 +99,8 @@ Setting your environment for compiling OpenModelica
   - set the PATH: $ export PATH=${PATH}/path/to/installed/mico/bin
     + this is for executables: idl, mico-cpp and mico-config
 
-  For the new Qt based plotting functionality you will need to:
-  - Configure with-Qt-sendData
+  For the deprecated Qt-based plotting functionality you will need to:
+  - Configure with-sendData-Qt
   - Have Qt installed and qmake on the PATH.
         NOTE: if you don't, you won't be able to plot
               using plot and plotParameteric but it will work with
@@ -143,13 +140,6 @@ To Compile OpenModelica
 
 How to run
 ==========
-To be able to use OMShell-terminal you must
-set the OPENMODELICAHOME environment variable
-to point to the root directory of OpenModelica, e.g,
-    $ export OPENMODELICAHOME=path/to/trunk/build
-Also, you have to set the OPENMODELICALIBRARY environment variable:
-    $ export OPENMODELICALIBRARY=path/to/trunk/build/ModelicaLibrary
-
 For debugging purposes it can be useful to start OMShell and omc in two different termnials.
 For this use:
 trunk/build/bin/omc +d=interactive      (if you configured with --without-CORBA) or
@@ -271,4 +261,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2011-01-20
+Last updated 2011-03-09
