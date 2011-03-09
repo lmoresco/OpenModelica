@@ -1,0 +1,36 @@
+CPPFLAGS=-I../../build/include/omc
+
+LDFLAGS=-L../../build/lib/omc -L./ -lomcruntime -lc_runtime -lomparse ../../Compiler/modpar/libmodparomc.a -lm \
+-lantlr3 -lmainrecords -lmico2313 -lregex -lwsock32 ../../Compiler/runtime/lpsolve/lpsolve55.lib \
+-lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4 -lshlwapi \
+-Wl,--stack,7340032,--large-address-aware
+CFLAGS=-O1 -falign-functions 
+
+RECS=libmainrecords.a
+CC=$(CXX)
+
+main: Main_main2.o $(RECS) main.c
+	@echo $(UNAME)
+	$(CXX) -o main main.c Main_main2.o $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+	cp ../../build/bin/*.dll .
+	 
+$(RECS): main_records.o
+	rm -f $@
+	ar -ru $@ $<
+	ranlib $@
+main_records.o: main_records.c ../../build/include/omc/OpenModelicaBootstrappingHeader.h
+	$(CXX) $(CFLAGS) -c $(CPPFLAGS) -o $@ $<
+Main_main2.o: Main_main2.c
+	$(CXX) -c -o Main_main2.o Main_main2.c $(CFLAGS) $(CPPFLAGS)
+Main_main2.c: Main_main.c
+	perl ../../build/share/omc/scripts/convert_lines.pl $< $@.tmp
+	mv $@.tmp $@
+
+test: main
+	./main +g=MetaModelica +d=rml,failtrace +showErrorMessages UtilTest.mos 
+
+Main_main.c: MainTest.mos
+	../rtest -v MainTest.mos 
+
+clean:
+	rm *.o *.a *.exe *.dll 
