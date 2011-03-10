@@ -5,6 +5,8 @@
 // env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate models and read in data.
+//  wbraun: The results do not fit to them of dymola.
+//          They differs after initialization.
 //
 
 loadModel(Modelica);

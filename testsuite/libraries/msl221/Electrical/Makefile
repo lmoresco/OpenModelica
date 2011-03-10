@@ -1,18 +1,18 @@
 TEST = ../../../rtest -v
 
 TESTFILES = \
+CauerLowPassOPV2.mos \
+CauerLowPassSC2.mos \
 ChuaCircuit2.mos \
-HeatingMOSInverter2.mos \
+HeatingRectifier2.mos \
 ShowVariableResistor2.mos \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-CauerLowPassOPV2.mos \
-CauerLowPassSC2.mos \
 CharacteristicThyristors2.mos \
 HeatingNPN_OrGate2.mos \
-HeatingRectifier2.mos \
+HeatingMOSInverter2.mos \
 HeatingResistor.mos \
 OvervoltageProtection2.mos \
 Rectifier2.mos \

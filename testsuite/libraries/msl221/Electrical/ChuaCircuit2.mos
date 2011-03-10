@@ -2,7 +2,7 @@
 //keyword:      simulating msl221
 //status:       correct
 //env: OPENMODELICALIBRARY=../../../../libraries/msl221
-//teardown_command rm Modelica.Electrical.Analog.Examples.ChuaCircuit*
+//teardown_command: rm Modelica.Electrical.Analog.Examples.ChuaCircuit* output.log
 //
 // simulation example
 //

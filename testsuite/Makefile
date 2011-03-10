@@ -1,6 +1,6 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
-mosfiles-dassl.log \
+mosfiles.log \
 mosfiles-msl22.log \
 parser.log \
 meta.log \
@@ -20,7 +20,6 @@ streams.log
 
 SLOWLOGS = \
 bootstrapping.log \
-mosfiles-dasslold.log \
 msl31.log \
 multibody.log \
 msl221.log \
@@ -72,11 +71,8 @@ interactive-simulation.log: omc-diff
 msl.log: omc-diff
 	$(MAKE) -C mofiles/msl -f Makefile test > msl.log
 	@echo $@ done
-mosfiles-dassl.log: omc-diff
-	$(MAKE) -C mosfiles-dassl -f Makefile test > $@
-	@echo $@ done
-mosfiles-dasslold.log: omc-diff
-	$(MAKE) -C mosfiles-dasslold -f Makefile test > $@
+mosfiles.log: omc-diff
+	$(MAKE) -C mosfiles -f Makefile test > $@
 	@echo $@ done
 mosfiles-msl22.log: omc-diff
 	$(MAKE) -C mosfiles-msl22 -f Makefile test > $@
