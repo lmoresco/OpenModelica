@@ -1,13 +1,13 @@
 CPPFLAGS=-I"../../build/include/omc"
 UNAME=$(shell uname)
-DIST=$(shell uname -r)
+DIST=$(shell uname -r | cut -d- -f2)
 
 ifeq (Darwin,$(UNAME))
 CFLAGS=-O3 -g -mfpmath=sse -fPIC
 LDFLAGS=-L/opt/openmodelica/lib/ -llpsolve55
 else
 #Hack: don't link agains colamd on ArchLinux.
-ifeq ("2.6.36-ARCH","$(DIST)")
+ifeq ("ARCH","$(DIST)")
 CFLAGS=-O3 -g -mfpmath=sse -fPIC
 LDFLAGS= -lrt -llpsolve55
 else
