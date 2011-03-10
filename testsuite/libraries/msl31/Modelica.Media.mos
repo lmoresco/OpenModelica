@@ -10,10 +10,182 @@ loadModel(Modelica); getErrorString();
 
 setDebugFlags("scodeFlatten");
 
+// Not working - No constant value for variable waterConstants
 //instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
+//checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
+//checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
+
+// Not working - No constant value for variable waterConstants
+//instantiateModel(Modelica.Media.Examples.WaterIF97); getErrorString();
+//checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.MixtureGases); getErrorString();
+//checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
+
+// Not working - Class Air.MoistAir not found
+//instantiateModel(Modelica.Media.Examples.MoistAir); getErrorString();
+//checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
+//checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
+//checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
+//checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
+
+// Not working - Variable state.T not found
+//instantiateModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
+
+// Not working
+//instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
+//checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
+
+// Working
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort); getErrorString();
+
+// Working
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort_a); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+
+// Working
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+
+// Not working - Trying to redeclare class Medium but class not declared as replaceable
+//             - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
+
+// Not working - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
+
+// Not working - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
+
+// Working - Trying to redeclare class Medium but class not declared as replaceable
+//instantiateModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
+
+// Not working - Error in generated function code
+//checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel); getErrorString();
+
+// Not working - Illegal to instantiate partial class PartialTestModel2
+//checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getErrorString();
+
+// Not working - Class setState_pTX not found
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
+
+// Not working - Variable state.T not found
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
+
+// Not working - Variable state.T not found
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650); getErrorString();
+
+// Not working - Variable state.T not found
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getErrorString();
+
+// Not working - Variable state.T not found
+//             - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph); getErrorString();
+
+// Not working - Class setState_pTX not found
+//             - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); getErrorString();
+
+// Not working - Class setState_pTX not found
+//             - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); getErrorString();
+
+// Not working - Variable state.T not found
+//             - Illegal to instantiate partial class BaseProperties
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFLuid.LinearColdWater); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
+//checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
+
+// Not working - fixLocalIdents failed
+//instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
+//checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
+//checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
+
+// Not working - Variable state.T not found
+//instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
+//checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
+
+// Not working - Infinite loop
+//instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
+//checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
+
+// Working
 instantiateModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 
+// Not working - Variable medium.Xi: Wrong type on builtin attribute start
 //instantiateModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 
@@ -21,6 +193,81 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 // true
 // ""
 // true
+// "function Modelica.SIunits.Conversions.from_degC
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius - -273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.SIunits.Conversions.from_degC
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius - -273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort_a
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_a;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.SIunits.Conversions.from_degC
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius - -273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort_b
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_b;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
 // "function Modelica.Math.Matrices.LAPACK.dgelsx_vec
 //   input Real[:, :] A;
 //   input Real[size(A,1)] b;
