@@ -750,6 +750,138 @@ algorithm
   end matchcontinue;
 end lm_39;
 
+protected function lm_40
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = ScalarVariable(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_40(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_40(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_40;
+
+protected function lm_41
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = ScalarVariable(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_41(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_41(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_41;
+
+protected function lm_42
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = ScalarVariable(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_42(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_42(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_42;
+
+protected function lm_43
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = ScalarVariable(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_43(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_43(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_43;
+
 public function ModelVariables
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
@@ -760,19 +892,23 @@ algorithm
   matchcontinue(in_txt, in_a_modelInfo)
     local
       Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_stringAliasVars;
       list<SimCode.SimVar> i_vars_stringParamVars;
       list<SimCode.SimVar> i_vars_stringAlgVars;
+      list<SimCode.SimVar> i_vars_boolAliasVars;
       list<SimCode.SimVar> i_vars_boolParamVars;
       list<SimCode.SimVar> i_vars_boolAlgVars;
+      list<SimCode.SimVar> i_vars_intAliasVars;
       list<SimCode.SimVar> i_vars_intParamVars;
       list<SimCode.SimVar> i_vars_intAlgVars;
+      list<SimCode.SimVar> i_vars_aliasVars;
       list<SimCode.SimVar> i_vars_paramVars;
       list<SimCode.SimVar> i_vars_algVars;
       list<SimCode.SimVar> i_vars_derivativeVars;
       list<SimCode.SimVar> i_vars_stateVars;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars)) )
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, aliasVars = i_vars_aliasVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, intAliasVars = i_vars_intAliasVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, boolAliasVars = i_vars_boolAliasVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("<ModelVariables>\n"));
         System.tmpTickReset(0);
@@ -793,34 +929,50 @@ algorithm
         txt = lm_33(txt, i_vars_paramVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
-        System.tmpTickReset(0);
-        txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_34(txt, i_vars_intAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_35(txt, i_vars_intParamVars);
+        txt = lm_34(txt, i_vars_aliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         System.tmpTickReset(0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_36(txt, i_vars_boolAlgVars);
+        txt = lm_35(txt, i_vars_intAlgVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_37(txt, i_vars_boolParamVars);
+        txt = lm_36(txt, i_vars_intParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_37(txt, i_vars_intAliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         System.tmpTickReset(0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_38(txt, i_vars_stringAlgVars);
+        txt = lm_38(txt, i_vars_boolAlgVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_39(txt, i_vars_stringParamVars);
+        txt = lm_39(txt, i_vars_boolParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_40(txt, i_vars_boolAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        System.tmpTickReset(0);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_41(txt, i_vars_stringAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_42(txt, i_vars_stringParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_43(txt, i_vars_stringAliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("</ModelVariables>"));
@@ -868,7 +1020,7 @@ algorithm
   end matchcontinue;
 end ScalarVariable;
 
-protected function fun_42
+protected function fun_46
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -892,7 +1044,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_42;
+end fun_46;
 
 public function ScalarVariableAttribute
   input Tpl.Text in_txt;
@@ -922,7 +1074,7 @@ algorithm
         ret_1 = System.tmpTick();
         l_valueReference = Tpl.writeStr(Tpl.emptyTxt, intString(ret_1));
         l_variability = getVariablity(Tpl.emptyTxt, i_varKind);
-        l_description = fun_42(Tpl.emptyTxt, i_comment);
+        l_description = fun_46(Tpl.emptyTxt, i_comment);
         l_alias = getAliasVar(Tpl.emptyTxt, i_aliasvar);
         l_caus = getCausality(Tpl.emptyTxt, i_causality);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("name=\""));
@@ -1188,7 +1340,7 @@ algorithm
   end matchcontinue;
 end ScalarVariableTypeCommonAttribute;
 
-protected function fun_49
+protected function fun_53
   input Tpl.Text in_txt;
   input String in_a_unit;
 
@@ -1212,9 +1364,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_49;
+end fun_53;
 
-protected function fun_50
+protected function fun_54
   input Tpl.Text in_txt;
   input String in_a_displayUnit;
 
@@ -1238,7 +1390,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_50;
+end fun_54;
 
 public function ScalarVariableTypeRealAttribute
   input Tpl.Text txt;
@@ -1250,8 +1402,8 @@ protected
   Tpl.Text l_displayUnit__;
   Tpl.Text l_unit__;
 algorithm
-  l_unit__ := fun_49(Tpl.emptyTxt, a_unit);
-  l_displayUnit__ := fun_50(Tpl.emptyTxt, a_displayUnit);
+  l_unit__ := fun_53(Tpl.emptyTxt, a_unit);
+  l_displayUnit__ := fun_54(Tpl.emptyTxt, a_displayUnit);
   out_txt := Tpl.writeText(txt, l_unit__);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(" "));
   out_txt := Tpl.writeText(out_txt, l_displayUnit__);
@@ -1353,138 +1505,6 @@ algorithm
       then txt;
   end matchcontinue;
 end fmumodel_identifierFile;
-
-protected function lm_53
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = DefineVariables(txt, i_var);
-        txt = Tpl.nextIter(txt);
-        txt = lm_53(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_53(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_53;
-
-protected function lm_54
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = DefineVariables(txt, i_var);
-        txt = Tpl.nextIter(txt);
-        txt = lm_54(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_54(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_54;
-
-protected function lm_55
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = DefineVariables(txt, i_var);
-        txt = Tpl.nextIter(txt);
-        txt = lm_55(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_55(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_55;
-
-protected function lm_56
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = DefineVariables(txt, i_var);
-        txt = Tpl.nextIter(txt);
-        txt = lm_56(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_56(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_56;
 
 protected function lm_57
   input Tpl.Text in_txt;
@@ -1695,17 +1715,16 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      DAE.ComponentRef i_name;
+      SimCode.SimVar i_var;
 
     case ( txt,
            {} )
       then txt;
 
     case ( txt,
-           SimCode.SIMVAR(name = i_name) :: rest )
+           i_var :: rest )
       equation
-        txt = SimCodeC.cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
+        txt = DefineVariables(txt, i_var);
         txt = Tpl.nextIter(txt);
         txt = lm_63(txt, rest);
       then txt;
@@ -1729,17 +1748,16 @@ algorithm
     local
       Tpl.Text txt;
       list<SimCode.SimVar> rest;
-      DAE.ComponentRef i_name;
+      SimCode.SimVar i_var;
 
     case ( txt,
            {} )
       then txt;
 
     case ( txt,
-           SimCode.SIMVAR(name = i_name) :: rest )
+           i_var :: rest )
       equation
-        txt = SimCodeC.cref(txt, i_name);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
+        txt = DefineVariables(txt, i_var);
         txt = Tpl.nextIter(txt);
         txt = lm_64(txt, rest);
       then txt;
@@ -1752,6 +1770,272 @@ algorithm
   end matchcontinue;
 end lm_64;
 
+protected function lm_65
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_65(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_65(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_65;
+
+protected function lm_66
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_66(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_66(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_66;
+
+protected function lm_67
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_67(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_67(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_67;
+
+protected function lm_68
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_68(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_68(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_68;
+
+protected function lm_69
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_69(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_69(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_69;
+
+protected function lm_70
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = DefineVariables(txt, i_var);
+        txt = Tpl.nextIter(txt);
+        txt = lm_70(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_70(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_70;
+
+protected function lm_71
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      DAE.ComponentRef i_name;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           SimCode.SIMVAR(name = i_name) :: rest )
+      equation
+        txt = SimCodeC.cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_71(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_71(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_71;
+
+protected function lm_72
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      DAE.ComponentRef i_name;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           SimCode.SIMVAR(name = i_name) :: rest )
+      equation
+        txt = SimCodeC.cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
+        txt = Tpl.nextIter(txt);
+        txt = lm_72(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_72(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_72;
+
 public function ModelDefineData
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
@@ -1762,48 +2046,64 @@ algorithm
   matchcontinue(in_txt, in_a_modelInfo)
     local
       Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_stringAliasVars;
       list<SimCode.SimVar> i_vars_stringParamVars;
       list<SimCode.SimVar> i_vars_stringAlgVars;
+      list<SimCode.SimVar> i_vars_boolAliasVars;
       list<SimCode.SimVar> i_vars_boolParamVars;
       list<SimCode.SimVar> i_vars_boolAlgVars;
+      list<SimCode.SimVar> i_vars_intAliasVars;
       list<SimCode.SimVar> i_vars_intParamVars;
       list<SimCode.SimVar> i_vars_intAlgVars;
+      list<SimCode.SimVar> i_vars_aliasVars;
       list<SimCode.SimVar> i_vars_paramVars;
       list<SimCode.SimVar> i_vars_algVars;
       list<SimCode.SimVar> i_vars_derivativeVars;
       list<SimCode.SimVar> i_vars_stateVars;
       Integer i_varInfo_numZeroCrossings;
+      Integer i_varInfo_numBoolAliasVars;
       Integer i_varInfo_numBoolParams;
       Integer i_varInfo_numBoolAlgVars;
+      Integer i_varInfo_numStringAliasVars;
       Integer i_varInfo_numStringParamVars;
       Integer i_varInfo_numStringAlgVars;
+      Integer i_varInfo_numIntAliasVars;
       Integer i_varInfo_numIntParams;
       Integer i_varInfo_numIntAlgVars;
+      Integer i_varInfo_numAlgAliasVars;
       Integer i_varInfo_numParams;
       Integer i_varInfo_numAlgVars;
       Integer i_varInfo_numStateVars;
-      Integer ret_8;
+      Integer ret_12;
+      Integer ret_11;
       Tpl.Text l_numberOfBooleans;
-      Integer ret_6;
+      Integer ret_9;
+      Integer ret_8;
       Tpl.Text l_numberOfStrings;
-      Integer ret_4;
+      Integer ret_6;
+      Integer ret_5;
       Tpl.Text l_numberOfIntegers;
+      Integer ret_3;
       Integer ret_2;
       Integer ret_1;
       Tpl.Text l_numberOfReals;
 
     case ( txt,
-           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numZeroCrossings = i_varInfo_numZeroCrossings), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars)) )
+           SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_varInfo_numStateVars, numAlgVars = i_varInfo_numAlgVars, numParams = i_varInfo_numParams, numAlgAliasVars = i_varInfo_numAlgAliasVars, numIntAlgVars = i_varInfo_numIntAlgVars, numIntParams = i_varInfo_numIntParams, numIntAliasVars = i_varInfo_numIntAliasVars, numStringAlgVars = i_varInfo_numStringAlgVars, numStringParamVars = i_varInfo_numStringParamVars, numStringAliasVars = i_varInfo_numStringAliasVars, numBoolAlgVars = i_varInfo_numBoolAlgVars, numBoolParams = i_varInfo_numBoolParams, numBoolAliasVars = i_varInfo_numBoolAliasVars, numZeroCrossings = i_varInfo_numZeroCrossings), vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, aliasVars = i_vars_aliasVars, intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, intAliasVars = i_vars_intAliasVars, boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, boolAliasVars = i_vars_boolAliasVars, stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars)) )
       equation
-        ret_1 = intAdd(i_varInfo_numAlgVars, i_varInfo_numParams);
-        ret_2 = intAdd(i_varInfo_numStateVars, ret_1);
-        l_numberOfReals = Tpl.writeStr(Tpl.emptyTxt, intString(ret_2));
-        ret_4 = intAdd(i_varInfo_numIntAlgVars, i_varInfo_numIntParams);
-        l_numberOfIntegers = Tpl.writeStr(Tpl.emptyTxt, intString(ret_4));
-        ret_6 = intAdd(i_varInfo_numStringAlgVars, i_varInfo_numStringParamVars);
-        l_numberOfStrings = Tpl.writeStr(Tpl.emptyTxt, intString(ret_6));
-        ret_8 = intAdd(i_varInfo_numBoolAlgVars, i_varInfo_numBoolParams);
-        l_numberOfBooleans = Tpl.writeStr(Tpl.emptyTxt, intString(ret_8));
+        ret_1 = intAdd(i_varInfo_numParams, i_varInfo_numAlgAliasVars);
+        ret_2 = intAdd(i_varInfo_numAlgVars, ret_1);
+        ret_3 = intAdd(i_varInfo_numStateVars, ret_2);
+        l_numberOfReals = Tpl.writeStr(Tpl.emptyTxt, intString(ret_3));
+        ret_5 = intAdd(i_varInfo_numIntParams, i_varInfo_numIntAliasVars);
+        ret_6 = intAdd(i_varInfo_numIntAlgVars, ret_5);
+        l_numberOfIntegers = Tpl.writeStr(Tpl.emptyTxt, intString(ret_6));
+        ret_8 = intAdd(i_varInfo_numStringParamVars, i_varInfo_numStringAliasVars);
+        ret_9 = intAdd(i_varInfo_numStringAlgVars, ret_8);
+        l_numberOfStrings = Tpl.writeStr(Tpl.emptyTxt, intString(ret_9));
+        ret_11 = intAdd(i_varInfo_numBoolParams, i_varInfo_numBoolAliasVars);
+        ret_12 = intAdd(i_varInfo_numBoolAlgVars, ret_11);
+        l_numberOfBooleans = Tpl.writeStr(Tpl.emptyTxt, intString(ret_12));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "// define model size\n",
                                     "#define NUMBER_OF_STATES "
@@ -1833,65 +2133,82 @@ algorithm
         System.tmpTickReset(0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_53(txt, i_vars_stateVars);
+        txt = lm_57(txt, i_vars_stateVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_54(txt, i_vars_derivativeVars);
+        txt = lm_58(txt, i_vars_derivativeVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_55(txt, i_vars_algVars);
+        txt = lm_59(txt, i_vars_algVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_56(txt, i_vars_paramVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        System.tmpTickReset(0);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_57(txt, i_vars_intAlgVars);
+        txt = lm_60(txt, i_vars_paramVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_58(txt, i_vars_intParamVars);
+        txt = lm_61(txt, i_vars_aliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         System.tmpTickReset(0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_59(txt, i_vars_boolAlgVars);
+        txt = lm_62(txt, i_vars_intAlgVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_60(txt, i_vars_boolParamVars);
+        txt = lm_63(txt, i_vars_intParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_64(txt, i_vars_intAliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         System.tmpTickReset(0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_61(txt, i_vars_stringAlgVars);
+        txt = lm_65(txt, i_vars_boolAlgVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_62(txt, i_vars_stringParamVars);
+        txt = lm_66(txt, i_vars_boolParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_67(txt, i_vars_boolAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        System.tmpTickReset(0);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_68(txt, i_vars_stringAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_69(txt, i_vars_stringParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_70(txt, i_vars_stringAliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
                                     "\n",
                                     "// define initial state vector as vector of value references\n",
                                     "#define STATES { "
                                 }, false));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_63(txt, i_vars_stateVars);
+        txt = lm_71(txt, i_vars_stateVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " }\n",
                                     "#define STATESDERIVATIVES { "
                                 }, false));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_64(txt, i_vars_derivativeVars);
+        txt = lm_72(txt, i_vars_derivativeVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " }\n",
@@ -1931,7 +2248,7 @@ algorithm
   end matchcontinue;
 end dervativeNameCStyle;
 
-protected function fun_67
+protected function fun_75
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -1955,7 +2272,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_67;
+end fun_75;
 
 public function DefineVariables
   input Tpl.Text in_txt;
@@ -1975,7 +2292,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(comment = i_comment, name = i_name) )
       equation
-        l_description = fun_67(Tpl.emptyTxt, i_comment);
+        l_description = fun_75(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define "));
         txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ "));
@@ -2049,7 +2366,7 @@ algorithm
   end matchcontinue;
 end setStartValues;
 
-protected function lm_70
+protected function lm_78
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
   input Tpl.Text in_a_varDecls;
@@ -2076,19 +2393,19 @@ algorithm
       equation
         (txt, a_varDecls) = SimCodeC.equation_(txt, i_eq, SimCode.contextOther, a_varDecls);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_70(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_78(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_70(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_78(txt, rest, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_70;
+end lm_78;
 
-protected function lm_71
+protected function lm_79
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
 
@@ -2114,16 +2431,16 @@ algorithm
         txt = SimCodeC.cref(txt, i_cref);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("); }"));
         txt = Tpl.nextIter(txt);
-        txt = lm_71(txt, rest);
+        txt = lm_79(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_71(txt, rest);
+        txt = lm_79(txt, rest);
       then txt;
   end matchcontinue;
-end lm_71;
+end lm_79;
 
 public function initializeFunction
   input Tpl.Text txt;
@@ -2136,7 +2453,7 @@ protected
 algorithm
   l_varDecls := Tpl.emptyTxt;
   l_eqPart := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (l_eqPart, l_varDecls) := lm_70(l_eqPart, a_allEquations, l_varDecls);
+  (l_eqPart, l_varDecls) := lm_78(l_eqPart, a_allEquations, l_varDecls);
   l_eqPart := Tpl.popIter(l_eqPart);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "// Used to set the first time event, if any.\n",
@@ -2150,7 +2467,7 @@ algorithm
   out_txt := Tpl.writeText(out_txt, l_eqPart);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_71(out_txt, a_allEquations);
+  out_txt := lm_79(out_txt, a_allEquations);
   out_txt := Tpl.popIter(out_txt);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
@@ -2158,7 +2475,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
 end initializeFunction;
 
-protected function fun_73
+protected function fun_81
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_initialValue;
   input String in_a_prefix;
@@ -2186,9 +2503,9 @@ algorithm
         txt = setDefaultVal(txt, a_prefix);
       then txt;
   end matchcontinue;
-end fun_73;
+end fun_81;
 
-protected function lm_74
+protected function lm_82
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
   input String in_a_prefix;
@@ -2222,10 +2539,10 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
-        txt = fun_73(txt, i_initialValue, a_prefix);
+        txt = fun_81(txt, i_initialValue, a_prefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.nextIter(txt);
-        txt = lm_74(txt, rest, a_prefix, a_arrayName);
+        txt = lm_82(txt, rest, a_prefix, a_arrayName);
       then txt;
 
     case ( txt,
@@ -2233,10 +2550,10 @@ algorithm
            a_prefix,
            a_arrayName )
       equation
-        txt = lm_74(txt, rest, a_prefix, a_arrayName);
+        txt = lm_82(txt, rest, a_prefix, a_arrayName);
       then txt;
   end matchcontinue;
-end lm_74;
+end lm_82;
 
 public function initVals
   input Tpl.Text txt;
@@ -2247,7 +2564,7 @@ public function initVals
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_74(out_txt, a_varsLst, a_prefix, a_arrayName);
+  out_txt := lm_82(out_txt, a_varsLst, a_prefix, a_arrayName);
   out_txt := Tpl.popIter(out_txt);
 end initVals;
 
@@ -2292,7 +2609,7 @@ algorithm
   end matchcontinue;
 end setDefaultVal;
 
-protected function fun_77
+protected function fun_85
   input Tpl.Text in_txt;
   input Option<DAE.Exp> in_a_initialValue;
 
@@ -2316,9 +2633,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("0.0; //default"));
       then txt;
   end matchcontinue;
-end fun_77;
+end fun_85;
 
-protected function lm_78
+protected function lm_86
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -2342,19 +2659,19 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("globalData->statesDerivatives["));
         txt = Tpl.writeStr(txt, intString(i_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = "));
-        txt = fun_77(txt, i_initialValue);
+        txt = fun_85(txt, i_initialValue);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.nextIter(txt);
-        txt = lm_78(txt, rest);
+        txt = lm_86(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_78(txt, rest);
+        txt = lm_86(txt, rest);
       then txt;
   end matchcontinue;
-end lm_78;
+end lm_86;
 
 public function initDerivativeVals
   input Tpl.Text txt;
@@ -2363,11 +2680,11 @@ public function initDerivativeVals
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_78(out_txt, a_varsLst);
+  out_txt := lm_86(out_txt, a_varsLst);
   out_txt := Tpl.popIter(out_txt);
 end initDerivativeVals;
 
-protected function fun_80
+protected function fun_88
   input Tpl.Text in_txt;
   input Boolean in_a_bool;
 
@@ -2390,7 +2707,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("true"));
       then txt;
   end matchcontinue;
-end fun_80;
+end fun_88;
 
 public function initVal
   input Tpl.Text in_txt;
@@ -2434,7 +2751,7 @@ algorithm
     case ( txt,
            DAE.BCONST(bool = i_bool) )
       equation
-        txt = fun_80(txt, i_bool);
+        txt = fun_88(txt, i_bool);
       then txt;
 
     case ( txt,
@@ -2505,11 +2822,7 @@ algorithm
                                     "// Used to get event indicators\n",
                                     "fmiReal getEventIndicator(ModelInstance* comp, int i) {\n",
                                     "switch(i)\n",
-                                    "{\n"
-                                }, true));
-        txt = Tpl.writeText(txt, l_zeroCrossingsCode);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "{\n",
                                     "default:\n",
                                     "    return 0.0;\n",
                                     "}\n",
@@ -2524,7 +2837,7 @@ algorithm
   end matchcontinue;
 end getEventIndicatorFunction;
 
-protected function lm_84
+protected function lm_92
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Tpl.Text in_a_varDecls;
@@ -2553,17 +2866,17 @@ algorithm
         x_i0 = Tpl.getIteri_i0(txt);
         (txt, a_varDecls) = zeroCrossingTpl2_fmu(txt, x_i0, i_relation__, a_varDecls);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_84(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_92(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_84(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_92(txt, rest, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_84;
+end lm_92;
 
 public function zeroCrossingsTpl2_fmu
   input Tpl.Text txt;
@@ -2574,11 +2887,11 @@ public function zeroCrossingsTpl2_fmu
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_84(out_txt, a_zeroCrossings, a_varDecls);
+  (out_txt, out_a_varDecls) := lm_92(out_txt, a_zeroCrossings, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end zeroCrossingsTpl2_fmu;
 
-protected function fun_86
+protected function fun_94
   input Tpl.Text in_txt;
   input DAE.Exp in_a_relation;
   input Integer in_a_index1;
@@ -2648,7 +2961,7 @@ algorithm
         txt = Tpl.writeStr(txt, intString(a_index1));
       then (txt, a_varDecls);
   end matchcontinue;
-end fun_86;
+end fun_94;
 
 public function zeroCrossingTpl2_fmu
   input Tpl.Text txt;
@@ -2659,7 +2972,7 @@ public function zeroCrossingTpl2_fmu
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls) := fun_86(txt, a_relation, a_index1, a_varDecls);
+  (out_txt, out_a_varDecls) := fun_94(txt, a_relation, a_index1, a_varDecls);
 end zeroCrossingTpl2_fmu;
 
 public function zeroCrossingOpFunc_fmu
@@ -2715,7 +3028,7 @@ algorithm
   end matchcontinue;
 end zeroCrossingOpFunc_fmu;
 
-protected function lm_89
+protected function lm_97
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -2737,18 +3050,18 @@ algorithm
       equation
         txt = SwitchVars(txt, i_var, "states");
         txt = Tpl.nextIter(txt);
-        txt = lm_89(txt, rest);
+        txt = lm_97(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_89(txt, rest);
+        txt = lm_97(txt, rest);
       then txt;
   end matchcontinue;
-end lm_89;
+end lm_97;
 
-protected function lm_90
+protected function lm_98
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -2770,329 +3083,16 @@ algorithm
       equation
         txt = SwitchVars(txt, i_var, "statesDerivatives");
         txt = Tpl.nextIter(txt);
-        txt = lm_90(txt, rest);
+        txt = lm_98(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_90(txt, rest);
+        txt = lm_98(txt, rest);
       then txt;
   end matchcontinue;
-end lm_90;
-
-protected function lm_91
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVars(txt, i_var, "algebraics");
-        txt = Tpl.nextIter(txt);
-        txt = lm_91(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_91(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_91;
-
-protected function lm_92
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVars(txt, i_var, "parameters");
-        txt = Tpl.nextIter(txt);
-        txt = lm_92(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_92(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_92;
-
-public function getRealFunction
-  input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_paramVars;
-      list<SimCode.SimVar> i_vars_algVars;
-      list<SimCode.SimVar> i_vars_derivativeVars;
-      list<SimCode.SimVar> i_vars_stateVars;
-
-    case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_89(txt, i_vars_stateVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_90(txt, i_vars_derivativeVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_91(txt, i_vars_algVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_92(txt, i_vars_paramVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return 0.0;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end getRealFunction;
-
-protected function lm_94
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVarsSet(txt, i_var, "states");
-        txt = Tpl.nextIter(txt);
-        txt = lm_94(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_94(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_94;
-
-protected function lm_95
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVarsSet(txt, i_var, "statesDerivatives");
-        txt = Tpl.nextIter(txt);
-        txt = lm_95(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_95(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_95;
-
-protected function lm_96
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVarsSet(txt, i_var, "algebraics");
-        txt = Tpl.nextIter(txt);
-        txt = lm_96(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_96(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_96;
-
-protected function lm_97
-  input Tpl.Text in_txt;
-  input list<SimCode.SimVar> in_items;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_items)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> rest;
-      SimCode.SimVar i_var;
-
-    case ( txt,
-           {} )
-      then txt;
-
-    case ( txt,
-           i_var :: rest )
-      equation
-        txt = SwitchVarsSet(txt, i_var, "parameters");
-        txt = Tpl.nextIter(txt);
-        txt = lm_97(txt, rest);
-      then txt;
-
-    case ( txt,
-           _ :: rest )
-      equation
-        txt = lm_97(txt, rest);
-      then txt;
-  end matchcontinue;
-end lm_97;
-
-public function setRealFunction
-  input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_paramVars;
-      list<SimCode.SimVar> i_vars_algVars;
-      list<SimCode.SimVar> i_vars_derivativeVars;
-      list<SimCode.SimVar> i_vars_stateVars;
-
-    case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiStatus setReal(ModelInstance* comp, const fmiValueReference vr, const fmiReal value) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_94(txt, i_vars_stateVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_95(txt, i_vars_derivativeVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_96(txt, i_vars_algVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_97(txt, i_vars_paramVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return fmiError;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "  return fmiOK;\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end setRealFunction;
+end lm_98;
 
 protected function lm_99
   input Tpl.Text in_txt;
@@ -3114,7 +3114,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "intVariables.algebraics");
+        txt = SwitchVars(txt, i_var, "algebraics");
         txt = Tpl.nextIter(txt);
         txt = lm_99(txt, rest);
       then txt;
@@ -3147,7 +3147,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "intVariables.parameters");
+        txt = SwitchVars(txt, i_var, "parameters");
         txt = Tpl.nextIter(txt);
         txt = lm_100(txt, rest);
       then txt;
@@ -3160,54 +3160,7 @@ algorithm
   end matchcontinue;
 end lm_100;
 
-public function getIntegerFunction
-  input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_intParamVars;
-      list<SimCode.SimVar> i_vars_intAlgVars;
-
-    case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiInteger getInteger(ModelInstance* comp, const fmiValueReference vr) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_99(txt, i_vars_intAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_100(txt, i_vars_intParamVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return 0;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end getIntegerFunction;
-
-protected function lm_102
+protected function lm_101
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -3227,18 +3180,80 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "intVariables.algebraics");
+        txt = SwitchAliasVars(txt, i_var, "realAlias", "-");
         txt = Tpl.nextIter(txt);
-        txt = lm_102(txt, rest);
+        txt = lm_101(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_102(txt, rest);
+        txt = lm_101(txt, rest);
       then txt;
   end matchcontinue;
-end lm_102;
+end lm_101;
+
+public function getRealFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_aliasVars;
+      list<SimCode.SimVar> i_vars_paramVars;
+      list<SimCode.SimVar> i_vars_algVars;
+      list<SimCode.SimVar> i_vars_derivativeVars;
+      list<SimCode.SimVar> i_vars_stateVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, aliasVars = i_vars_aliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_97(txt, i_vars_stateVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_98(txt, i_vars_derivativeVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_99(txt, i_vars_algVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_100(txt, i_vars_paramVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_101(txt, i_vars_aliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return 0.0;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getRealFunction;
 
 protected function lm_103
   input Tpl.Text in_txt;
@@ -3260,7 +3275,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "intVariables.parameters");
+        txt = SwitchVarsSet(txt, i_var, "states");
         txt = Tpl.nextIter(txt);
         txt = lm_103(txt, rest);
       then txt;
@@ -3273,53 +3288,38 @@ algorithm
   end matchcontinue;
 end lm_103;
 
-public function setIntegerFunction
+protected function lm_104
   input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
+  input list<SimCode.SimVar> in_items;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
+  matchcontinue(in_txt, in_items)
     local
       Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_intParamVars;
-      list<SimCode.SimVar> i_vars_intAlgVars;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiStatus setInteger(ModelInstance* comp, const fmiValueReference vr, const fmiInteger value) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_102(txt, i_vars_intAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_103(txt, i_vars_intParamVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return fmiError;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "  return fmiOK;\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
+           {} )
       then txt;
 
     case ( txt,
-           _ )
+           i_var :: rest )
+      equation
+        txt = SwitchVarsSet(txt, i_var, "statesDerivatives");
+        txt = Tpl.nextIter(txt);
+        txt = lm_104(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_104(txt, rest);
       then txt;
   end matchcontinue;
-end setIntegerFunction;
+end lm_104;
 
 protected function lm_105
   input Tpl.Text in_txt;
@@ -3341,7 +3341,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "boolVariables.algebraics");
+        txt = SwitchVarsSet(txt, i_var, "algebraics");
         txt = Tpl.nextIter(txt);
         txt = lm_105(txt, rest);
       then txt;
@@ -3374,7 +3374,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "boolVariables.parameters");
+        txt = SwitchVarsSet(txt, i_var, "parameters");
         txt = Tpl.nextIter(txt);
         txt = lm_106(txt, rest);
       then txt;
@@ -3387,54 +3387,7 @@ algorithm
   end matchcontinue;
 end lm_106;
 
-public function getBooleanFunction
-  input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_boolParamVars;
-      list<SimCode.SimVar> i_vars_boolAlgVars;
-
-    case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiBoolean getBoolean(ModelInstance* comp, const fmiValueReference vr) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_105(txt, i_vars_boolAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_106(txt, i_vars_boolParamVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return 0;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end getBooleanFunction;
-
-protected function lm_108
+protected function lm_107
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -3454,18 +3407,81 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "boolVariables.algebraics");
+        txt = SwitchAliasVarsSet(txt, i_var, "realAlias");
         txt = Tpl.nextIter(txt);
-        txt = lm_108(txt, rest);
+        txt = lm_107(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_108(txt, rest);
+        txt = lm_107(txt, rest);
       then txt;
   end matchcontinue;
-end lm_108;
+end lm_107;
+
+public function setRealFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_aliasVars;
+      list<SimCode.SimVar> i_vars_paramVars;
+      list<SimCode.SimVar> i_vars_algVars;
+      list<SimCode.SimVar> i_vars_derivativeVars;
+      list<SimCode.SimVar> i_vars_stateVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stateVars = i_vars_stateVars, derivativeVars = i_vars_derivativeVars, algVars = i_vars_algVars, paramVars = i_vars_paramVars, aliasVars = i_vars_aliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiStatus setReal(ModelInstance* comp, const fmiValueReference vr, const fmiReal value) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_103(txt, i_vars_stateVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_104(txt, i_vars_derivativeVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_105(txt, i_vars_algVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_106(txt, i_vars_paramVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_107(txt, i_vars_aliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return fmiError;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "  return fmiOK;\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end setRealFunction;
 
 protected function lm_109
   input Tpl.Text in_txt;
@@ -3487,7 +3503,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "boolVariables.parameters");
+        txt = SwitchVars(txt, i_var, "intVariables.algebraics");
         txt = Tpl.nextIter(txt);
         txt = lm_109(txt, rest);
       then txt;
@@ -3500,53 +3516,38 @@ algorithm
   end matchcontinue;
 end lm_109;
 
-public function setBooleanFunction
+protected function lm_110
   input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
+  input list<SimCode.SimVar> in_items;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
+  matchcontinue(in_txt, in_items)
     local
       Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_boolParamVars;
-      list<SimCode.SimVar> i_vars_boolAlgVars;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiStatus setBoolean(ModelInstance* comp, const fmiValueReference vr, const fmiBoolean value) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_108(txt, i_vars_boolAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_109(txt, i_vars_boolParamVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return fmiError;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "  return fmiOK;\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
+           {} )
       then txt;
 
     case ( txt,
-           _ )
+           i_var :: rest )
+      equation
+        txt = SwitchVars(txt, i_var, "intVariables.parameters");
+        txt = Tpl.nextIter(txt);
+        txt = lm_110(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_110(txt, rest);
       then txt;
   end matchcontinue;
-end setBooleanFunction;
+end lm_110;
 
 protected function lm_111
   input Tpl.Text in_txt;
@@ -3568,7 +3569,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "stringVariables.algebraics");
+        txt = SwitchAliasVars(txt, i_var, "intVariables.alias", "-");
         txt = Tpl.nextIter(txt);
         txt = lm_111(txt, rest);
       then txt;
@@ -3581,7 +3582,59 @@ algorithm
   end matchcontinue;
 end lm_111;
 
-protected function lm_112
+public function getIntegerFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_intAliasVars;
+      list<SimCode.SimVar> i_vars_intParamVars;
+      list<SimCode.SimVar> i_vars_intAlgVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, intAliasVars = i_vars_intAliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiInteger getInteger(ModelInstance* comp, const fmiValueReference vr) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_109(txt, i_vars_intAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_110(txt, i_vars_intParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_111(txt, i_vars_intAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return 0;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getIntegerFunction;
+
+protected function lm_113
   input Tpl.Text in_txt;
   input list<SimCode.SimVar> in_items;
 
@@ -3601,65 +3654,18 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVars(txt, i_var, "stringVariables.parameters");
+        txt = SwitchVarsSet(txt, i_var, "intVariables.algebraics");
         txt = Tpl.nextIter(txt);
-        txt = lm_112(txt, rest);
+        txt = lm_113(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_112(txt, rest);
+        txt = lm_113(txt, rest);
       then txt;
   end matchcontinue;
-end lm_112;
-
-public function getStringFunction
-  input Tpl.Text in_txt;
-  input SimCode.ModelInfo in_a_modelInfo;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_modelInfo)
-    local
-      Tpl.Text txt;
-      list<SimCode.SimVar> i_vars_stringParamVars;
-      list<SimCode.SimVar> i_vars_stringAlgVars;
-
-    case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars)) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "fmiString getString(ModelInstance* comp, const fmiValueReference vr) {\n",
-                                    "  switch (vr) {\n"
-                                }, true));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_111(txt, i_vars_stringAlgVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_112(txt, i_vars_stringParamVars);
-        txt = Tpl.popIter(txt);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "default:\n",
-                                    "    return 0;\n"
-                                }, true));
-        txt = Tpl.popBlock(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "  }\n",
-                                    "}\n",
-                                    "\n"
-                                }, true));
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end getStringFunction;
+end lm_113;
 
 protected function lm_114
   input Tpl.Text in_txt;
@@ -3681,7 +3687,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "stringVariables.algebraics");
+        txt = SwitchVarsSet(txt, i_var, "intVariables.parameters");
         txt = Tpl.nextIter(txt);
         txt = lm_114(txt, rest);
       then txt;
@@ -3714,7 +3720,7 @@ algorithm
     case ( txt,
            i_var :: rest )
       equation
-        txt = SwitchVarsSet(txt, i_var, "stringVariables.parameters");
+        txt = SwitchAliasVarsSet(txt, i_var, "intVariables.alias");
         txt = Tpl.nextIter(txt);
         txt = lm_115(txt, rest);
       then txt;
@@ -3727,6 +3733,612 @@ algorithm
   end matchcontinue;
 end lm_115;
 
+public function setIntegerFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_intAliasVars;
+      list<SimCode.SimVar> i_vars_intParamVars;
+      list<SimCode.SimVar> i_vars_intAlgVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(intAlgVars = i_vars_intAlgVars, intParamVars = i_vars_intParamVars, intAliasVars = i_vars_intAliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiStatus setInteger(ModelInstance* comp, const fmiValueReference vr, const fmiInteger value) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_113(txt, i_vars_intAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_114(txt, i_vars_intParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_115(txt, i_vars_intAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return fmiError;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "  return fmiOK;\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end setIntegerFunction;
+
+protected function lm_117
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVars(txt, i_var, "boolVariables.algebraics");
+        txt = Tpl.nextIter(txt);
+        txt = lm_117(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_117(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_117;
+
+protected function lm_118
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVars(txt, i_var, "boolVariables.parameters");
+        txt = Tpl.nextIter(txt);
+        txt = lm_118(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_118(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_118;
+
+protected function lm_119
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchAliasVars(txt, i_var, "boolVariables.alias", "!");
+        txt = Tpl.nextIter(txt);
+        txt = lm_119(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_119(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_119;
+
+public function getBooleanFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_boolAliasVars;
+      list<SimCode.SimVar> i_vars_boolParamVars;
+      list<SimCode.SimVar> i_vars_boolAlgVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, boolAliasVars = i_vars_boolAliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiBoolean getBoolean(ModelInstance* comp, const fmiValueReference vr) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_117(txt, i_vars_boolAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_118(txt, i_vars_boolParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_119(txt, i_vars_boolAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return 0;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getBooleanFunction;
+
+protected function lm_121
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVarsSet(txt, i_var, "boolVariables.algebraics");
+        txt = Tpl.nextIter(txt);
+        txt = lm_121(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_121(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_121;
+
+protected function lm_122
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVarsSet(txt, i_var, "boolVariables.parameters");
+        txt = Tpl.nextIter(txt);
+        txt = lm_122(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_122(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_122;
+
+protected function lm_123
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchAliasVarsSet(txt, i_var, "boolVariables.alias");
+        txt = Tpl.nextIter(txt);
+        txt = lm_123(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_123(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_123;
+
+public function setBooleanFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_boolAliasVars;
+      list<SimCode.SimVar> i_vars_boolParamVars;
+      list<SimCode.SimVar> i_vars_boolAlgVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(boolAlgVars = i_vars_boolAlgVars, boolParamVars = i_vars_boolParamVars, boolAliasVars = i_vars_boolAliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiStatus setBoolean(ModelInstance* comp, const fmiValueReference vr, const fmiBoolean value) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_121(txt, i_vars_boolAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_122(txt, i_vars_boolParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_123(txt, i_vars_boolAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return fmiError;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "  return fmiOK;\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end setBooleanFunction;
+
+protected function lm_125
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVars(txt, i_var, "stringVariables.algebraics");
+        txt = Tpl.nextIter(txt);
+        txt = lm_125(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_125(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_125;
+
+protected function lm_126
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVars(txt, i_var, "stringVariables.parameters");
+        txt = Tpl.nextIter(txt);
+        txt = lm_126(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_126(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_126;
+
+protected function lm_127
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchAliasVars(txt, i_var, "stringVariables.alias", "");
+        txt = Tpl.nextIter(txt);
+        txt = lm_127(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_127(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_127;
+
+public function getStringFunction
+  input Tpl.Text in_txt;
+  input SimCode.ModelInfo in_a_modelInfo;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_modelInfo)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_stringAliasVars;
+      list<SimCode.SimVar> i_vars_stringParamVars;
+      list<SimCode.SimVar> i_vars_stringAlgVars;
+
+    case ( txt,
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars)) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiString getString(ModelInstance* comp, const fmiValueReference vr) {\n",
+                                    "  switch (vr) {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_125(txt, i_vars_stringAlgVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_126(txt, i_vars_stringParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_127(txt, i_vars_stringAliasVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "default:\n",
+                                    "    return 0;\n"
+                                }, true));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
+                                    "}\n",
+                                    "\n"
+                                }, true));
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end getStringFunction;
+
+protected function lm_129
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVarsSet(txt, i_var, "stringVariables.algebraics");
+        txt = Tpl.nextIter(txt);
+        txt = lm_129(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_129(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_129;
+
+protected function lm_130
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchVarsSet(txt, i_var, "stringVariables.parameters");
+        txt = Tpl.nextIter(txt);
+        txt = lm_130(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_130(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_130;
+
+protected function lm_131
+  input Tpl.Text in_txt;
+  input list<SimCode.SimVar> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<SimCode.SimVar> rest;
+      SimCode.SimVar i_var;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        txt = SwitchAliasVarsSet(txt, i_var, "stringVariables.alias");
+        txt = Tpl.nextIter(txt);
+        txt = lm_131(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_131(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_131;
+
 public function setStringFunction
   input Tpl.Text in_txt;
   input SimCode.ModelInfo in_a_modelInfo;
@@ -3737,11 +4349,12 @@ algorithm
   matchcontinue(in_txt, in_a_modelInfo)
     local
       Tpl.Text txt;
+      list<SimCode.SimVar> i_vars_stringAliasVars;
       list<SimCode.SimVar> i_vars_stringParamVars;
       list<SimCode.SimVar> i_vars_stringAlgVars;
 
     case ( txt,
-           SimCode.MODELINFO(vars = SimCode.SIMVARS(stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars)) )
+           SimCode.MODELINFO(vars = SimCode.SIMVARS(stringAlgVars = i_vars_stringAlgVars, stringParamVars = i_vars_stringParamVars, stringAliasVars = i_vars_stringAliasVars)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "fmiStatus setString(ModelInstance* comp, const fmiValueReference vr, const fmiString value) {\n",
@@ -3749,11 +4362,15 @@ algorithm
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(6));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_114(txt, i_vars_stringAlgVars);
+        txt = lm_129(txt, i_vars_stringAlgVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_115(txt, i_vars_stringParamVars);
+        txt = lm_130(txt, i_vars_stringParamVars);
+        txt = Tpl.popIter(txt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_131(txt, i_vars_stringAliasVars);
         txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -3807,7 +4424,7 @@ algorithm
   end matchcontinue;
 end setExternalFunction;
 
-protected function fun_118
+protected function fun_134
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -3831,7 +4448,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_118;
+end fun_134;
 
 public function SwitchVars
   input Tpl.Text in_txt;
@@ -3854,7 +4471,7 @@ algorithm
            SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
            a_arrayName )
       equation
-        l_description = fun_118(Tpl.emptyTxt, i_comment);
+        l_description = fun_134(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : return globalData->"));
@@ -3871,7 +4488,7 @@ algorithm
   end matchcontinue;
 end SwitchVars;
 
-protected function fun_120
+protected function fun_136
   input Tpl.Text in_txt;
   input String in_a_comment;
 
@@ -3895,7 +4512,85 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_120;
+end fun_136;
+
+public function SwitchAliasVars
+  input Tpl.Text in_txt;
+  input SimCode.SimVar in_a_simVar;
+  input String in_a_arrayName;
+  input String in_a_negator;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_simVar, in_a_arrayName, in_a_negator)
+    local
+      Tpl.Text txt;
+      String a_arrayName;
+      String a_negator;
+      Integer i_index;
+      DAE.ComponentRef i_name;
+      String i_comment;
+      Tpl.Text l_description;
+
+    case ( txt,
+           SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
+           a_arrayName,
+           a_negator )
+      equation
+        l_description = fun_136(Tpl.emptyTxt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
+        txt = SimCodeC.cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : return (globalData->"));
+        txt = Tpl.writeStr(txt, a_arrayName);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].negate?*(globalData->"));
+        txt = Tpl.writeStr(txt, a_arrayName);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].alias):"));
+        txt = Tpl.writeStr(txt, a_negator);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*(globalData->"));
+        txt = Tpl.writeStr(txt, a_arrayName);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].alias)); break;"));
+      then txt;
+
+    case ( txt,
+           _,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end SwitchAliasVars;
+
+protected function fun_138
+  input Tpl.Text in_txt;
+  input String in_a_comment;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_comment)
+    local
+      Tpl.Text txt;
+      String i_comment;
+
+    case ( txt,
+           "" )
+      then txt;
+
+    case ( txt,
+           i_comment )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("// \""));
+        txt = Tpl.writeStr(txt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
+      then txt;
+  end matchcontinue;
+end fun_138;
 
 public function SwitchVarsSet
   input Tpl.Text in_txt;
@@ -3918,7 +4613,7 @@ algorithm
            SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
            a_arrayName )
       equation
-        l_description = fun_120(Tpl.emptyTxt, i_comment);
+        l_description = fun_138(Tpl.emptyTxt, i_comment);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
         txt = SimCodeC.cref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : globalData->"));
@@ -3935,7 +4630,71 @@ algorithm
   end matchcontinue;
 end SwitchVarsSet;
 
-protected function fun_122
+protected function fun_140
+  input Tpl.Text in_txt;
+  input String in_a_comment;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_comment)
+    local
+      Tpl.Text txt;
+      String i_comment;
+
+    case ( txt,
+           "" )
+      then txt;
+
+    case ( txt,
+           i_comment )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("// \""));
+        txt = Tpl.writeStr(txt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
+      then txt;
+  end matchcontinue;
+end fun_140;
+
+public function SwitchAliasVarsSet
+  input Tpl.Text in_txt;
+  input SimCode.SimVar in_a_simVar;
+  input String in_a_arrayName;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_simVar, in_a_arrayName)
+    local
+      Tpl.Text txt;
+      String a_arrayName;
+      Integer i_index;
+      DAE.ComponentRef i_name;
+      String i_comment;
+      Tpl.Text l_description;
+
+    case ( txt,
+           SimCode.SIMVAR(comment = i_comment, name = i_name, index = i_index),
+           a_arrayName )
+      equation
+        l_description = fun_140(Tpl.emptyTxt, i_comment);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
+        txt = SimCodeC.cref(txt, i_name);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_ : *(globalData->"));
+        txt = Tpl.writeStr(txt, a_arrayName);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
+        txt = Tpl.writeStr(txt, intString(i_index));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].alias)=value; break;"));
+      then txt;
+
+    case ( txt,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end SwitchAliasVarsSet;
+
+protected function fun_142
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -3959,9 +4718,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_122;
+end fun_142;
 
-protected function lm_123
+protected function lm_143
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -3983,18 +4742,18 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_123(txt, rest);
+        txt = lm_143(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_123(txt, rest);
+        txt = lm_143(txt, rest);
       then txt;
   end matchcontinue;
-end lm_123;
+end lm_143;
 
-protected function fun_124
+protected function fun_144
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -4019,9 +4778,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_124;
+end fun_144;
 
-protected function fun_125
+protected function fun_145
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -4046,7 +4805,7 @@ algorithm
         txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
-end fun_125;
+end fun_145;
 
 public function fmuMakefile
   input Tpl.Text in_txt;
@@ -4078,12 +4837,12 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_122(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_142(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_123(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_143(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_124(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_125(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos1 = fun_144(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_145(Tpl.emptyTxt, l_dirExtra, l_libsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
