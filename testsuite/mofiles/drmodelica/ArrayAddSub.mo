@@ -19,7 +19,7 @@ end AddSub;
 
 // Result:
 // Error processing file: ArrayAddSub.mo
-// Error: Cannot resolve type of expression {1,2,3} + 1 (expressions :{1,2,3}, 1 types: Integer[3], Integer) in component <NO COMPONENT>
+// [ArrayAddSub.mo:9:2-9:27:writable] Error: Cannot resolve type of expression {1,2,3} + 1 (expressions :{1,2,3}, 1 types: Integer[3], Integer) in component <NO COMPONENT>
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
