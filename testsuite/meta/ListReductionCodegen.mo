@@ -1,4 +1,4 @@
-// name: ListReduction
+// name: ListReductionCodegen
 // cflags: +g=MetaModelica +d=noevalfunc
 // status: correct
 // teardown_command: rm -rf ListReduction_*

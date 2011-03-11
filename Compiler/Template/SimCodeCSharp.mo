@@ -6312,7 +6312,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.REDUCTION(path = _),
+           DAE.REDUCTION(reductionInfo = _),
            _,
            a_preExp,
            _ )
