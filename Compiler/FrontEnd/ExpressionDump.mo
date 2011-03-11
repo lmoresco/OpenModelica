@@ -562,7 +562,7 @@ algorithm
       String s,s_1,s_2,sym,s1,s2,s3,s4,res,fs,argstr,s_4,res2,str,crstr,dimstr,expstr,iterstr,id,s1_1,s2_1,cs,ts,cs_1,ts_1,fs_1,s3_1;
       Integer ival,i,pe1,p1,p2,pc,pt,pf,p,pstop,pstart,pstep;
       Real rval,r;
-      ComponentRef c;
+      ComponentRef c,c1;
       Type t,tp;
       DAE.Exp e1,e2,e,start,stop,step,cr,dim,exp,iterexp,cond,tb,fb;
       Operator op;
@@ -846,6 +846,13 @@ algorithm
         str = stringAppendList({"<reduction>",fs,"(",expstr," for ",id," in ",iterstr,")"});
       then
         str;
+    
+    case (DAE.PARTIALDERIVATIVE(Var = c, wrtVar = c1), _, _, _)
+      equation
+        c = ComponentReference.createCreffromPartialDifferentiate(c,c1);
+        s = ComponentReference.printComponentRefStr(c);
+      then
+        s;
     
     // MetaModelica tuple
     case (DAE.META_TUPLE(es), _, _, _)

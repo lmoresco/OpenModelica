@@ -45,6 +45,8 @@ public import HashTable2;
 public import HashTable3;
 public import SCode;
 public import Values;
+//protected import Expression;
+protected import BackendDAEOptimize;
 
 public
 uniontype VariableReplacements 
@@ -1514,7 +1516,7 @@ algorithm
   outExp:=
   matchcontinue (inExp,inVariableReplacements,inFuncTypeExpExpToBooleanOption)
     local
-      DAE.ComponentRef cr;
+      DAE.ComponentRef cr,cr1;
       DAE.Exp e,e1_1,e2_1,e1,e2,e3_1,e3,r_1,r;
       DAE.ExpType t,tp,ety;
       VariableReplacements repl;
@@ -1662,6 +1664,15 @@ algorithm
         r_1 = replaceExp(r, repl, cond);
       then
         DAE.REDUCTION(p,e1_1,id,NONE(),r_1,v);
+    case ((e as DAE.PARTIALDERIVATIVE(Var= cr1,wrtVar=cr)),repl,cond)
+      equation
+        true = replaceExpCond(cond, e);
+        (e1) = getReplacement(repl, cr);
+        e2 = avoidDoubleHashLookup(e1,DAE.ET_REAL());
+        cr = Expression.expCref(e2);
+        cr = BackendDAEOptimize.differentiateVarWithRespectToX(cr1,cr);
+      then
+        DAE.CREF(cr,DAE.ET_REAL());
     case (e,repl,cond)
       equation
         //Debug.fprintln("failtrace", "- VarTransform.replaceExp failed on: " +& ExpressionDump.printExpStr(e));

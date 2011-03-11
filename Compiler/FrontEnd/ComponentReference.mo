@@ -48,6 +48,7 @@ public import DAE;
 protected import ClassInf;
 protected import Debug;
 protected import Dump;
+protected import Error;
 protected import Expression;
 protected import ExpressionDump;
 protected import Print;
@@ -57,6 +58,7 @@ protected import Util;
 
 // do not make this public. instead use the function below.
 protected constant DAE.ComponentRef dummyCref = DAE.CREF_IDENT("dummy", DAE.ET_OTHER(), {});
+public constant String partialDerivativeNamePrefix="$pDER";
 
 // global root index for cref memory 
 public 
@@ -196,6 +198,35 @@ algorithm
   outCrefQual := DAE.CREF_QUAL(ident, identType, subscriptLst, componentRef);
 end makeCrefQual;
 
+
+public function createCreffromPartialDifferentiate
+  // function: createCreffromPartialDifferentiate
+  // author: lochel
+  input DAE.ComponentRef inCref;
+  input DAE.ComponentRef inX;
+  output DAE.ComponentRef outCref;
+algorithm
+  outCref := matchcontinue(inCref, inX)
+    local
+      DAE.ComponentRef cref, x;
+      String id,str;
+    
+    // d(no state)/d(x)
+    case(cref, x) equation
+      id = printComponentRefStr(cref) +& partialDerivativeNamePrefix +& printComponentRefStr(x);
+      id = Util.stringReplaceChar(id, ",", "$K");
+      id = Util.stringReplaceChar(id, ".", "$P");
+      id = Util.stringReplaceChar(id, "[", "$lB");
+      id = Util.stringReplaceChar(id, "]", "$rB");
+    then makeCrefIdent(id, DAE.ET_REAL(), {});
+      
+    case(cref, _)
+      equation
+        str = "createCreffromPartialDifferentiate failed: " +&  printComponentRefStr(cref);
+        Error.addMessage(Error.INTERNAL_ERROR, {str});
+      then fail();
+  end matchcontinue;
+end createCreffromPartialDifferentiate;
 
 /***************************************************/
 /* transform to other types */

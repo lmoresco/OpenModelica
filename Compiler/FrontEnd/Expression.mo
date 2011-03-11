@@ -1532,6 +1532,7 @@ algorithm
     case (DAE.END()) then DAE.ET_OTHER();  /* Can be any type. */
     case (DAE.SIZE(_,NONE())) then DAE.ET_INT();
     case (DAE.SIZE(_,SOME(_))) then DAE.ET_ARRAY(DAE.ET_INT(),{DAE.DIM_UNKNOWN()});
+    case (DAE.PARTIALDERIVATIVE(Var = _)) then DAE.ET_REAL();
     
     // MetaModelica extension
     case (DAE.LIST(valList = _)) then DAE.ET_METATYPE();
