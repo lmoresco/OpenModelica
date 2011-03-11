@@ -47,6 +47,7 @@ public import SCode;
 public import Values;
 //protected import Expression;
 protected import BackendDAEOptimize;
+protected import Debug;
 
 public
 uniontype VariableReplacements 
@@ -1434,7 +1435,7 @@ algorithm
   end matchcontinue;
 end replaceExpOpt;
 
-protected function avoidDoubleHashLookup "
+public function avoidDoubleHashLookup "
 Author BZ 200X-XX modified 2008-06
 When adding replacement rules, we might not have the correct type availible at the moment.
 Then DAE.ET_OTHER() is used, so when replacing exp and finding DAE.ET_OTHER(), we use the
@@ -1664,6 +1665,7 @@ algorithm
         r_1 = replaceExp(r, repl, cond);
       then
         DAE.REDUCTION(p,e1_1,id,NONE(),r_1,v);
+
     case ((e as DAE.PARTIALDERIVATIVE(Var= cr1,wrtVar=cr)),repl,cond)
       equation
         true = replaceExpCond(cond, e);
@@ -1673,6 +1675,7 @@ algorithm
         cr = BackendDAEOptimize.differentiateVarWithRespectToX(cr1,cr);
       then
         DAE.CREF(cr,DAE.ET_REAL());
+        
     case (e,repl,cond)
       equation
         //Debug.fprintln("failtrace", "- VarTransform.replaceExp failed on: " +& ExpressionDump.printExpStr(e));

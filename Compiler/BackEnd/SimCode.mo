@@ -872,6 +872,7 @@ algorithm
   Debug.fcall("execstat",print, "*** SimCode -> generateFunctions: " +& realString(clock()) +& "\n" );
   (libs, includes, recordDecls, functions, outIndexedBackendDAE, _) :=
   createFunctions(dae, inBackendDAE, functionTree, className);
+  Debug.fcall("execstat",print, "*** SimCode -> generateSimCode: " +& realString(clock()) +& "\n" );
   simCode := createSimCode(functionTree, outIndexedBackendDAE, equationIndices,
     variableIndices, incidenceMatrix, incidenceMatrixT, strongComponents,
     className, filenamePrefix, fileDir, functions, includes, libs, simSettingsOpt, recordDecls);
@@ -1002,6 +1003,7 @@ algorithm
   Debug.fcall("execstat",print, "*** SimCode -> generateFunctions: " +& realString(clock()) +& "\n" );
   (libs, includes, recordDecls, functions, outIndexedBackendDAE, _) :=
   createFunctions(dae, inBackendDAE, functionTree, className);
+  Debug.fcall("execstat",print, "*** SimCode -> generateSimCode: " +& realString(clock()) +& "\n" );
   simCode := createSimCode(functionTree, outIndexedBackendDAE, equationIndices, 
     variableIndices, incidenceMatrix, incidenceMatrixT, strongComponents, 
     className, filenamePrefix, fileDir, functions, includes, libs, simSettingsOpt, recordDecls); 
@@ -1974,11 +1976,11 @@ algorithm
         // Replace variables in nonlinear equation systems with xloc[index]
         // variables.
         allEquations = applyResidualReplacements(allEquations);
-        
+        Debug.fcall("execstat",print, "*** SimCode -> generate analytical Jacobians: " +& realString(clock()) +& "\n" );
         LinearMats = createLinearModelMatrixes(functionTree,dlow,ass1,ass2);
         
         modelInfo = expandModelInfoVars(LinearMats,modelInfo);
-        
+        Debug.fcall("execstat",print, "*** SimCode -> generate analytical Jacobians done!: " +& realString(clock()) +& "\n" );
         crefToSimVarHT = createCrefToSimVarHT(modelInfo);
         
         simCode = SIMCODE(modelInfo,
@@ -2113,6 +2115,7 @@ algorithm
         Debug.fcall("linmodel",print,"Differentiate System w.r.t. states.\n");   
         deriveddlow1 = BackendDAEOptimize.generateSymbolicJacobian(dlow, functions, comref_states, states, inputvars, paramvars); 
         Debug.fcall("linmodel",print,"Done! Create now Matrixes A and C for linear model.\n");
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> generated system for A and C : " +& realString(clock()) +& "\n" );
         
         // create Matrix A and variables
         Debug.fcall("jacdump2", print, "Dump of daelow for Matrix A.\n");
@@ -2122,6 +2125,7 @@ algorithm
         v = BackendVariable.daeVars(deriveddlow2);
         ((JacAVars,_)) =  BackendVariable.traverseBackendDAEVars(v,traversingdlowvarToSimvar,({},kv));
         JacAVars = listReverse(JacAVars);
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> created system A: " +& realString(clock()) +& "\n" );
         // create Matrix C and variables
         Debug.fcall("jacdump2", print, "Dump of daelow for Matrix C.\n");
         (deriveddlow2, v1, v2, comps1) = BackendDAEOptimize.generateLinearMatrix(deriveddlow1,functions,comref_outputvars,comref_states,varlst);
@@ -2130,10 +2134,12 @@ algorithm
         v = BackendVariable.daeVars(deriveddlow2);
         ((JacCVars,_)) =  BackendVariable.traverseBackendDAEVars(v,traversingdlowvarToSimvar,({},kv));
         JacAVars = listReverse(JacAVars);
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> created system C: " +& realString(clock()) +& "\n" );
         // Differentiate the System w.r.t states for matrices B and D
         Debug.fcall("linmodel",print,"Differentiate System w.r.t. inputs.\n");
         deriveddlow1 = BackendDAEOptimize.generateSymbolicJacobian(dlow, functions, comref_inputvars, states, inputvars, paramvars);
         Debug.fcall("linmodel",print,"Done! Create now Matrixes B and D for linear model.\n");
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> generated system for B and D : " +& realString(clock()) +& "\n" );
         
         // create Matrix B and variables
         Debug.fcall("jacdump2", print, "Dump of daelow for Matrix B.\n");
@@ -2142,6 +2148,7 @@ algorithm
         v = BackendVariable.daeVars(deriveddlow2);
         ((JacBVars,_)) =  BackendVariable.traverseBackendDAEVars(v,traversingdlowvarToSimvar,({},kv));
         JacBVars = listReverse(JacBVars);
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> created system B: " +& realString(clock()) +& "\n" );
         // create Matrix D and variables
         Debug.fcall("jacdump2", print, "Dump of daelow for Matrix D.\n");
         (deriveddlow2, v1, v2, comps1) = BackendDAEOptimize.generateLinearMatrix(deriveddlow1,functions,comref_outputvars,comref_inputvars,varlst);
@@ -2149,6 +2156,7 @@ algorithm
         v = BackendVariable.daeVars(deriveddlow2);
         ((JacDVars,_)) =  BackendVariable.traverseBackendDAEVars(v,traversingdlowvarToSimvar,({},kv));
         JacDVars = listReverse(JacDVars);
+        Debug.fcall("execstat",print, "*** analytical Jacobians -> created system D: " +& realString(clock()) +& "\n" );
         LinearMats = {(JacAEquations,JacAVars,"A"),(JacBEquations,JacBVars,"B"),(JacCEquations,JacCVars,"C"),(JacDEquations,JacDVars,"D")};  
         
       then
@@ -4622,7 +4630,7 @@ algorithm
         c = listNth(crefs,s-1);
         var = listNth(varlst,s-1);
         eqn = listNth(eqnLst,e-1);
-        {eqn1} = BackendVarTransform.replaceEquations({eqn},repl);
+        {eqn1} = BackendVarTransform.replaceEquations({eqn},repl,NONE());
         (eqnLst1,varlst1) = getRelaxedResidualEqns(block_,ass2,crefs,varlst,eqnLst,repl);  
       then 
         ((eqn1::eqnLst1),(var::varlst1));

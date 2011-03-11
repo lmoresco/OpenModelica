@@ -44,21 +44,139 @@ public import DAE;
 public import VarTransform;
 
 protected import Absyn;
+protected import BackendDAEOptimize;
+protected import Debug;
 protected import Expression;
+protected import ExpressionDump;
 protected import ExpressionSimplify;
 protected import Util;
 
+public function replaceEquationsPartial
+"function: replaceEquations
+  This function takes a list of equations and a set of variable
+  replacements and applies the replacements on all equations.
+  The function returns the updated list of equations"
+  input list<BackendDAE.Equation> inBackendDAEEquationLst;
+  input DAE.ComponentRef inVariableReplacements;
+  output list<BackendDAE.Equation> outBackendDAEEquationLst;
+algorithm
+  outBackendDAEEquationLst:=
+  match (inBackendDAEEquationLst,inVariableReplacements)
+    local
+      DAE.Exp e1_1,e2_1,e1_2,e2_2,e1,e2,e_1,e_2,e;
+      list<BackendDAE.Equation> es_1,es;
+      DAE.ComponentRef repl;
+      BackendDAE.Equation a;
+      DAE.ComponentRef cr;
+      Integer indx;
+      list<DAE.Exp> expl,expl1,expl2;
+      BackendDAE.WhenEquation whenEqn,whenEqn1;
+      DAE.ElementSource source "the origin of the element";
+      String str;
+
+    case ({},_) then {};
+/*
+    case ((BackendDAE.ARRAY_EQUATION(indx,expl,source)::es),repl)
+      equation
+        ((expl1,_)) = Util.listMap1(expl,Expression.traverseExp,repl);
+        expl2 = Util.listMap(expl1,ExpressionSimplify.simplify);
+        es_1 = replaceEquationsPartial(es,repl);
+      then
+         (BackendDAE.ARRAY_EQUATION(indx,expl2,source)::es_1);
+*/
+    case ((BackendDAE.EQUATION(exp = e1,scalar = e2,source = source) :: es),repl)
+      equation
+        ((e1_1,_)) = Expression.traverseExpTopDown(e1,replaceExpPartial, repl);
+        //print("*** VarTransform.replaceExp : " +& ExpressionDump.printExpStr(e1) +& " | " +& ExpressionDump.printExpStr(e1_1) +&"\n");
+        ((e2_1,_)) = Expression.traverseExpTopDown(e2,replaceExpPartial, repl);
+        //print("*** VarTransform.replaceExp : " +& ExpressionDump.printExpStr(e2) +& " | " +& ExpressionDump.printExpStr(e2_1) +&"\n");
+        e1_2 = ExpressionSimplify.simplify(e1_1);
+        e2_2 = ExpressionSimplify.simplify(e2_1);
+        es_1 = replaceEquationsPartial(es, repl);
+      then
+        (BackendDAE.EQUATION(e1_2,e2_2,source) :: es_1);
+
+    case (((BackendDAE.ALGORITHM(index=indx,in_=expl,out=expl1,source = source)) :: es),repl)
+      equation
+        // original algorithm is done by replaceAlgorithms
+        // inputs and ouputs are updated from DEALow.updateAlgorithmInputsOutputs       
+        es_1 = replaceEquationsPartial(es, repl);
+      then
+        (BackendDAE.ALGORITHM(indx,expl,expl1,source) :: es_1);
+
+    case ((BackendDAE.SOLVED_EQUATION(componentRef = cr,exp = e,source = source) :: es),repl)
+      equation
+        ((e_1,_)) = Expression.traverseExpTopDown(e,replaceExpPartial, repl);
+        e_2 = ExpressionSimplify.simplify(e_1);
+        es_1 = replaceEquationsPartial(es, repl);
+      then
+        (BackendDAE.SOLVED_EQUATION(cr,e_2,source) :: es_1);
+
+    case ((BackendDAE.RESIDUAL_EQUATION(exp = e,source = source) :: es),repl)
+      equation
+        ((e_1,_)) = Expression.traverseExpTopDown(e,replaceExpPartial, repl);
+        e_2 = ExpressionSimplify.simplify(e_1);
+        es_1 = replaceEquationsPartial(es, repl);
+      then
+        (BackendDAE.RESIDUAL_EQUATION(e_2,source) :: es_1);
+
+    case ((a :: es),repl)
+      equation
+        print("blub");
+        es_1 = replaceEquationsPartial(es, repl);
+      then
+        (a :: es_1);
+  end match;
+end replaceEquationsPartial;
+
+public function replaceExpPartial "function: replaceExp
+
+  Takes a set of replacement rules and an expression and a function
+  giving a boolean value for an expression.
+  The function replaces all variables in the expression using
+  the replacement rules, if the boolean value is true children of the
+  expression is visited (including the expression itself). If it is false,
+  no replacemet is performed."
+  input tuple<DAE.Exp,DAE.ComponentRef> inTpl;
+  output tuple<DAE.Exp,Boolean,DAE.ComponentRef> outTpl;
+algorithm
+  outTpl:=
+  match (inTpl)
+    local
+      DAE.ComponentRef cr,cr1,cr_repl;
+      DAE.Exp e,e1,e2;
+            
+    case ((e as DAE.PARTIALDERIVATIVE(Var= cr1,wrtVar=cr),cr_repl))
+      equation
+        //print("*** VarTransform.replaceExp : " +& ExpressionDump.printExpStr(e) +& "\n");
+        cr = BackendDAEOptimize.differentiateVarWithRespectToX(cr1,cr_repl);
+      then
+        ((DAE.CREF(cr,DAE.ET_REAL()),true,cr_repl));
+        
+    case ((e,cr_repl))
+      equation
+        //print("#### VarTransform.replaceExp : " +& ExpressionDump.printExpStr(e) +& "\n");
+        //Debug.fprintln("failtrace", "- VarTransform.replaceExp failed on: " +& ExpressionDump.printExpStr(e));
+      then ((e,true,cr_repl));
+  end match;
+end replaceExpPartial;
+
 public function replaceEquations
 "function: replaceEquations
-  This function takes a list of equations ana a set of variable
+  This function takes a list of equations and a set of variable
   replacements and applies the replacements on all equations.
   The function returns the updated list of equations"
   input list<BackendDAE.Equation> inBackendDAEEquationLst;
   input VarTransform.VariableReplacements inVariableReplacements;
+  input Option<FuncTypeExp_ExpToBoolean> inFuncTypeExpExpToBooleanOption;
+  partial function FuncTypeExp_ExpToBoolean
+    input DAE.Exp inExp;
+    output Boolean outBoolean;
+  end FuncTypeExp_ExpToBoolean;  
   output list<BackendDAE.Equation> outBackendDAEEquationLst;
 algorithm
   outBackendDAEEquationLst:=
-  matchcontinue (inBackendDAEEquationLst,inVariableReplacements)
+  matchcontinue (inBackendDAEEquationLst,inVariableReplacements,inFuncTypeExpExpToBooleanOption)
     local
       DAE.Exp e1_1,e2_1,e1_2,e2_2,e1,e2,e_1,e_2,e;
       list<BackendDAE.Equation> es_1,es;
@@ -69,60 +187,61 @@ algorithm
       list<DAE.Exp> expl,expl1,expl2;
       BackendDAE.WhenEquation whenEqn,whenEqn1;
       DAE.ElementSource source "the origin of the element";
+      Option<FuncTypeExp_ExpToBoolean> condfunc;
 
-    case ({},_) then {};
-    case ((BackendDAE.ARRAY_EQUATION(indx,expl,source)::es),repl)
+    case ({},_,_) then {};
+    case ((BackendDAE.ARRAY_EQUATION(indx,expl,source)::es),repl,condfunc)
       equation
-        expl1 = Util.listMap2(expl,VarTransform.replaceExp,repl,NONE());
+        expl1 = Util.listMap2(expl,VarTransform.replaceExp,repl,condfunc);
         expl2 = Util.listMap(expl1,ExpressionSimplify.simplify);
-        es_1 = replaceEquations(es,repl);
+        es_1 = replaceEquations(es,repl, condfunc);
       then
          (BackendDAE.ARRAY_EQUATION(indx,expl2,source)::es_1);
 
-    case ((BackendDAE.EQUATION(exp = e1,scalar = e2,source = source) :: es),repl)
+    case ((BackendDAE.EQUATION(exp = e1,scalar = e2,source = source) :: es),repl, condfunc)
       equation
-        e1_1 = VarTransform.replaceExp(e1, repl,NONE());
-        e2_1 = VarTransform.replaceExp(e2, repl,NONE());
+        e1_1 = VarTransform.replaceExp(e1, repl,condfunc);
+        e2_1 = VarTransform.replaceExp(e2, repl,condfunc);
         e1_2 = ExpressionSimplify.simplify(e1_1);
         e2_2 = ExpressionSimplify.simplify(e2_1);
-        es_1 = replaceEquations(es, repl);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (BackendDAE.EQUATION(e1_2,e2_2,source) :: es_1);
 
-    case (((BackendDAE.ALGORITHM(index=indx,in_=expl,out=expl1,source = source)) :: es),repl)
+    case (((BackendDAE.ALGORITHM(index=indx,in_=expl,out=expl1,source = source)) :: es),repl, condfunc)
       equation
         // original algorithm is done by replaceAlgorithms
         // inputs and ouputs are updated from DEALow.updateAlgorithmInputsOutputs       
-        es_1 = replaceEquations(es, repl);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (BackendDAE.ALGORITHM(indx,expl,expl1,source) :: es_1);
 
-    case ((BackendDAE.SOLVED_EQUATION(componentRef = cr,exp = e,source = source) :: es),repl)
+    case ((BackendDAE.SOLVED_EQUATION(componentRef = cr,exp = e,source = source) :: es),repl, condfunc)
       equation
-        e_1 = VarTransform.replaceExp(e, repl,NONE());
+        e_1 = VarTransform.replaceExp(e, repl,condfunc);
         e_2 = ExpressionSimplify.simplify(e_1);
-        es_1 = replaceEquations(es, repl);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (BackendDAE.SOLVED_EQUATION(cr,e_2,source) :: es_1);
 
-    case ((BackendDAE.RESIDUAL_EQUATION(exp = e,source = source) :: es),repl)
+    case ((BackendDAE.RESIDUAL_EQUATION(exp = e,source = source) :: es),repl, condfunc)
       equation
-        e_1 = VarTransform.replaceExp(e, repl,NONE());
+        e_1 = VarTransform.replaceExp(e, repl,condfunc);
         e_2 = ExpressionSimplify.simplify(e_1);
-        es_1 = replaceEquations(es, repl);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (BackendDAE.RESIDUAL_EQUATION(e_2,source) :: es_1);
 
-    case ((BackendDAE.WHEN_EQUATION(whenEqn,source) :: es),repl)
+    case ((BackendDAE.WHEN_EQUATION(whenEqn,source) :: es),repl, condfunc)
       equation
-        whenEqn1 = replaceWhenEquation(whenEqn,repl);
-        es_1 = replaceEquations(es, repl);
+        whenEqn1 = replaceWhenEquation(whenEqn,repl, condfunc);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (BackendDAE.WHEN_EQUATION(whenEqn1,source) :: es_1);
 
-    case ((a :: es),repl)
+    case ((a :: es),repl, condfunc)
       equation
-        es_1 = replaceEquations(es, repl);
+        es_1 = replaceEquations(es, repl, condfunc);
       then
         (a :: es_1);
   end matchcontinue;
@@ -131,42 +250,48 @@ end replaceEquations;
 protected function replaceWhenEquation "Replaces variables in a when equation"
   input BackendDAE.WhenEquation whenEqn;
   input VarTransform.VariableReplacements repl;
+  input Option<FuncTypeExp_ExpToBoolean> inFuncTypeExpExpToBooleanOption;
+  partial function FuncTypeExp_ExpToBoolean
+    input DAE.Exp inExp;
+    output Boolean outBoolean;
+  end FuncTypeExp_ExpToBoolean;  
   output BackendDAE.WhenEquation outWhenEqn;
 algorithm
-  outWhenEqn := matchcontinue(whenEqn,repl)
+  outWhenEqn := matchcontinue(whenEqn,repl,inFuncTypeExpExpToBooleanOption)
   local Integer i;
     DAE.ComponentRef cr,cr1;
     DAE.Exp e,e1,e2;
     DAE.ExpType tp;
     BackendDAE.WhenEquation elsePart,elsePart2;
+    Option<FuncTypeExp_ExpToBoolean> condfunc;
 
-    case (BackendDAE.WHEN_EQ(i,cr,e,NONE()),repl) equation
-        e1 = VarTransform.replaceExp(e, repl,NONE());
+    case (BackendDAE.WHEN_EQ(i,cr,e,NONE()), repl, condfunc) equation
+        e1 = VarTransform.replaceExp(e, repl,condfunc);
         e2 = ExpressionSimplify.simplify(e1);
-        DAE.CREF(cr1,_) = VarTransform.replaceExp(Expression.crefExp(cr),repl,NONE());
+        DAE.CREF(cr1,_) = VarTransform.replaceExp(Expression.crefExp(cr),repl,condfunc);
     then 
       BackendDAE.WHEN_EQ(i,cr1,e2,NONE());
 
     // Replacements makes cr negative, a = -b
-    case (BackendDAE.WHEN_EQ(i,cr,e,NONE()),repl) equation
-        DAE.UNARY(DAE.UMINUS(tp),DAE.CREF(cr1,_)) = VarTransform.replaceExp(Expression.crefExp(cr),repl,NONE());
-        e1 = VarTransform.replaceExp(e, repl,NONE());
+    case (BackendDAE.WHEN_EQ(i,cr,e,NONE()), repl, condfunc) equation
+        DAE.UNARY(DAE.UMINUS(tp),DAE.CREF(cr1,_)) = VarTransform.replaceExp(Expression.crefExp(cr),repl,condfunc);
+        e1 = VarTransform.replaceExp(e, repl,condfunc);
         e2 = ExpressionSimplify.simplify(DAE.UNARY(DAE.UMINUS(tp),e1));
     then 
       BackendDAE.WHEN_EQ(i,cr1,e2,NONE());
 
-    case (BackendDAE.WHEN_EQ(i,cr,e,SOME(elsePart)),repl) equation
-        elsePart2 = replaceWhenEquation(elsePart,repl);
-        e1 = VarTransform.replaceExp(e, repl,NONE());
+    case (BackendDAE.WHEN_EQ(i,cr,e,SOME(elsePart)), repl, condfunc) equation
+        elsePart2 = replaceWhenEquation(elsePart, repl, condfunc);
+        e1 = VarTransform.replaceExp(e, repl,condfunc);
         e2 = ExpressionSimplify.simplify(e1);
-        DAE.CREF(cr1,_) = VarTransform.replaceExp(Expression.crefExp(cr),repl,NONE());
+        DAE.CREF(cr1,_) = VarTransform.replaceExp(Expression.crefExp(cr),repl,condfunc);
     then BackendDAE.WHEN_EQ(i,cr1,e2,SOME(elsePart2));
 
     // Replacements makes cr negative, a = -b
-    case (BackendDAE.WHEN_EQ(i,cr,e,SOME(elsePart)),repl) equation
-        elsePart2 = replaceWhenEquation(elsePart,repl);
-        DAE.UNARY(DAE.UMINUS(tp),DAE.CREF(cr1,_)) = VarTransform.replaceExp(Expression.crefExp(cr),repl,NONE());
-        e1 = VarTransform.replaceExp(e, repl,NONE());
+    case (BackendDAE.WHEN_EQ(i,cr,e,SOME(elsePart)), repl, condfunc) equation
+        elsePart2 = replaceWhenEquation(elsePart, repl, condfunc);
+        DAE.UNARY(DAE.UMINUS(tp),DAE.CREF(cr1,_)) = VarTransform.replaceExp(Expression.crefExp(cr),repl,condfunc);
+        e1 = VarTransform.replaceExp(e, repl,condfunc);
         e2 = ExpressionSimplify.simplify(DAE.UNARY(DAE.UMINUS(tp),e1));
     then BackendDAE.WHEN_EQ(i,cr1,e2,SOME(elsePart2));
 

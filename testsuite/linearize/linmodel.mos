@@ -9,12 +9,13 @@
 loadFile("linmodel.mo");
 simulate(linearmodel,numberOfIntervals=1); // 1 intervals == 2 values
 //linearize
-system("linearmodel -l 0");
+system("./linearmodel -l 0");
 loadFile("linear_linearmodel.mo");
 list(linear_linearmodel);
 simulate(linear_linearmodel,method="dassl2");
 readFile("output.log"); // Check that output log is emtpy
 echo(false); // turns of output
+
 // Result:
 // true
 // record SimulationResult
