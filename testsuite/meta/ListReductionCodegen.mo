@@ -30,6 +30,7 @@ algorithm
   s := s + anyString(realMax(1.5*r for r guard false or true in reals1));s := s + "\n";
   s := s + anyString(sum(3.5*r for r guard r>0 in reals2));s := s + "\n";
   s := s + anyString(product(3.5*r for r guard r>0 in reals2));s := s + "\n";
+  s := s + anyString(realMin(r for r guard r>2 in reals1));s := s + "\n";
   sList := s; s := "\n";
 
   s := s + anyString(list(1.0*r for r in realsArr1));s := s + "\n";
@@ -46,6 +47,7 @@ algorithm
   s := s + anyString(realMax(1.5*r for r guard false or true in realsArr1));s := s + "\n";
   s := s + anyString(sum(3.5*r for r guard r>0 in realsArr2));s := s + "\n";
   s := s + anyString(product(3.5*r for r guard r>0 in realsArr2));s := s + "\n";
+  s := s + anyString(realMin(r for r guard r>2 in realsArr1));s := s + "\n";
   sArr := s;
   assert(sList == sArr, "Reductions are different:\nArray:\n" + sArr + "\nList:\n" + sList + "\n");
 end f;
