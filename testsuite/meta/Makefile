@@ -31,7 +31,8 @@ List3.mos \
 List4.mo \
 List5.mo \
 ListInteractive.mos \
-ListReduction.mo \
+ListReductionCodegen.mo \
+ListReductionInterpret.mo \
 MatchCase1.mos \
 MatchCase2.mos \
 MatchCase3.mos \
