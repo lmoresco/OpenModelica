@@ -107,6 +107,9 @@ end ListReduction;
 //   s := s + anyString(#(<reduction>product(3.5 * (unbox(r)) for r guard (unbox(r)) > (0.0) in List(#(-3.0),#(-2.0),#(-1.0),#(0.0),#(1.0),#(2.0),#(3.0)))));
 //   s := s + "
 // ";
+//   s := s + anyString(#(<reduction>realMin(unbox(r) for r guard (unbox(r)) > (2.0) in List(#(1.0),#(2.0),#(3.0)))));
+//   s := s + "
+// ";
 //   sList := s;
 //   s := "
 // ";
@@ -150,6 +153,9 @@ end ListReduction;
 //   s := s + anyString(#(<reduction>product(3.5 * r for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0})));
 //   s := s + "
 // ";
+//   s := s + anyString(#(<reduction>realMin(r for r guard r > 2.0 in {1.0,2.0,3.0})));
+//   s := s + "
+// ";
 //   sArr := s;
 //   assert( sList == sArr, "Reductions are different:
 // Array:
@@ -180,6 +186,7 @@ end ListReduction;
 // 4.5
 // 21
 // 257.25
+// 3
 // ";
 // end ListReduction;
 // endResult
