@@ -32,6 +32,7 @@ List4.mo \
 List5.mo \
 ListInteractive.mos \
 ListReductionCodegen.mo \
+ListReductionDimError.mo \
 ListReductionInterpret.mo \
 MatchCase1.mos \
 MatchCase2.mos \
