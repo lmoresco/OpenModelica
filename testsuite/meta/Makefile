@@ -75,6 +75,7 @@ PartialFn13.mos \
 PartialFn14.mos \
 PartialFn15.mo \
 Polymorphic.mos \
+Polymorphic2.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \
