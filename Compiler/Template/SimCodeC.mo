@@ -31520,7 +31520,7 @@ end fun_712;
 
 protected function fun_713
   input Tpl.Text in_txt;
-  input Option<DAE.Exp> in_a_r_guardExp;
+  input Option<DAE.Exp> in_a_iter_guardExp;
   input Tpl.Text in_a_tmpVarDecls;
   input Tpl.Text in_a_guardExpPre;
   input SimCode.Context in_a_context;
@@ -31530,7 +31530,7 @@ protected function fun_713
   output Tpl.Text out_a_guardExpPre;
 algorithm
   (out_txt, out_a_tmpVarDecls, out_a_guardExpPre) :=
-  matchcontinue(in_txt, in_a_r_guardExp, in_a_tmpVarDecls, in_a_guardExpPre, in_a_context)
+  matchcontinue(in_txt, in_a_iter_guardExp, in_a_tmpVarDecls, in_a_guardExpPre, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_tmpVarDecls;
@@ -32304,14 +32304,14 @@ algorithm
       SimCode.Context a_context;
       Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
-      DAE.Ident i_ri_ident;
+      String i_iter_id;
       Option<DAE.Exp> i_ri_foldExp;
       DAE.Exp i_r_expr;
-      Option<DAE.Exp> i_r_guardExp;
+      Option<DAE.Exp> i_iter_guardExp;
       Option<Values.Value> i_ri_defaultValue;
       Absyn.Path i_ri_path;
       DAE.Exp i_r;
-      DAE.Exp i_r_range;
+      DAE.Exp i_iter_exp;
       String str_39;
       Tpl.Text l_loopTail;
       String str_37;
@@ -32354,7 +32354,7 @@ algorithm
       Tpl.Text l_tmpVarDecls;
 
     case ( txt,
-           (i_r as DAE.REDUCTION(reductionInfo = DAE.REDUCTIONINFO(path = i_ri_path, defaultValue = i_ri_defaultValue, foldExp = i_ri_foldExp, ident = i_ri_ident), range = i_r_range, guardExp = i_r_guardExp, expr = i_r_expr)),
+           (i_r as DAE.REDUCTION(reductionInfo = DAE.REDUCTIONINFO(path = i_ri_path, defaultValue = i_ri_defaultValue, foldExp = i_ri_foldExp), iterators = {DAE.REDUCTIONITER(exp = i_iter_exp, guardExp = i_iter_guardExp, id = i_iter_id)}, expr = i_r_expr)),
            a_context,
            a_preExp,
            a_varDecls )
@@ -32366,8 +32366,8 @@ algorithm
         l_rangeExpPre = Tpl.emptyTxt;
         ret_6 = RTOpts.acceptMetaModelicaGrammar();
         (l_stateVar, a_varDecls) = fun_705(Tpl.emptyTxt, ret_6, a_varDecls);
-        l_identType = expTypeFromExpModelica(Tpl.emptyTxt, i_r_range);
-        l_arrayType = expTypeFromExpArray(Tpl.emptyTxt, i_r_range);
+        l_identType = expTypeFromExpModelica(Tpl.emptyTxt, i_iter_exp);
+        l_arrayType = expTypeFromExpArray(Tpl.emptyTxt, i_iter_exp);
         l_arrayTypeResult = expTypeFromExpArray(Tpl.emptyTxt, i_r);
         str_11 = Tpl.textString(l_identType);
         (l_loopVar, l_tmpVarDecls) = fun_706(Tpl.emptyTxt, str_11, l_arrayType, l_tmpVarDecls, l_identType);
@@ -32375,7 +32375,7 @@ algorithm
         (l_firstIndex, l_tmpVarDecls) = fun_707(Tpl.emptyTxt, str_13, l_tmpVarDecls);
         (l_arrIndex, l_tmpVarDecls) = fun_708(Tpl.emptyTxt, i_ri_path, l_tmpVarDecls);
         (l_foundFirst, l_tmpVarDecls) = fun_709(Tpl.emptyTxt, i_ri_defaultValue, l_tmpVarDecls);
-        (l_rangeExp, l_rangeExpPre, l_tmpVarDecls) = daeExp(Tpl.emptyTxt, i_r_range, a_context, l_rangeExpPre, l_tmpVarDecls);
+        (l_rangeExp, l_rangeExpPre, l_tmpVarDecls) = daeExp(Tpl.emptyTxt, i_iter_exp, a_context, l_rangeExpPre, l_tmpVarDecls);
         ret_18 = Expression.typeof(i_r);
         l_resType = expTypeArrayIf(Tpl.emptyTxt, ret_18);
         l_res = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("_$reductionFoldTmpB"));
@@ -32388,7 +32388,7 @@ algorithm
         l_preDefault = Tpl.emptyTxt;
         (l_resTail, l_tmpVarDecls) = fun_710(Tpl.emptyTxt, i_ri_path, l_tmpVarDecls);
         (l_defaultValue, l_tmpVarDecls, l_preDefault) = fun_712(Tpl.emptyTxt, i_ri_path, l_tmpVarDecls, l_preDefault, a_context, i_ri_defaultValue);
-        (l_guardCond, l_tmpVarDecls, l_guardExpPre) = fun_713(Tpl.emptyTxt, i_r_guardExp, l_tmpVarDecls, l_guardExpPre, a_context);
+        (l_guardCond, l_tmpVarDecls, l_guardExpPre) = fun_713(Tpl.emptyTxt, i_iter_guardExp, l_tmpVarDecls, l_guardExpPre, a_context);
         str_26 = Tpl.textString(l_identType);
         l_empty = fun_714(Tpl.emptyTxt, str_26, l_loopVar);
         str_28 = Tpl.textString(l_identType);
@@ -32409,7 +32409,7 @@ algorithm
         l_bodyExpPre = Tpl.writeTok(l_bodyExpPre, Tpl.ST_NEW_LINE());
         (l_foldExp, l_tmpVarDecls, l_bodyExpPre) = fun_718(Tpl.emptyTxt, i_ri_path, l_foundFirst, i_ri_defaultValue, l_tmpVarDecls, l_bodyExpPre, a_context, i_ri_foldExp, l_arrIndex, l_arrayTypeResult, l_res, l_reductionBodyExpr, l_resTail);
         l_firstValue = fun_720(Tpl.emptyTxt, i_ri_path, l_defaultValue, l_preDefault, l_foundFirst, i_ri_defaultValue, l_length, l_res, l_arrayTypeResult, l_arrIndex);
-        l_iteratorName = contextIteratorName(Tpl.emptyTxt, i_ri_ident, a_context);
+        l_iteratorName = contextIteratorName(Tpl.emptyTxt, i_iter_id, a_context);
         str_37 = Tpl.textString(l_identType);
         l_loopHead = fun_722(Tpl.emptyTxt, str_37, l_stateVar, l_arrayType, l_firstIndex, l_loopVar, l_iteratorName, l_identType, l_empty);
         str_39 = Tpl.textString(l_identType);

@@ -122,7 +122,7 @@ end ListReduction;
 //   s := s + anyString(<reduction>listReverse(#(r) for r in {1.0,2.0,3.0}));
 //   s := s + "
 // ";
-//   s := s + anyString(<reduction>list(#(r) for r guard true in {1.0,2.0,3.0}));
+//   s := s + anyString(<reduction>list(#(r) for r in {1.0,2.0,3.0}));
 //   s := s + "
 // ";
 //   s := s + anyString(<reduction>list(#(3.5 * r) for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0}));
@@ -144,7 +144,7 @@ end ListReduction;
 //   s := s + anyString(#(max({1.0,2.0,3.0})));
 //   s := s + "
 // ";
-//   s := s + anyString(#(<reduction>realMax(1.5 * r for r guard true in {1.0,2.0,3.0})));
+//   s := s + anyString(#(<reduction>realMax(1.5 * r for r in {1.0,2.0,3.0})));
 //   s := s + "
 // ";
 //   s := s + anyString(#(<reduction>sum(3.5 * r for r guard r > 0.0 in {-3.0,-2.0,-1.0,0.0,1.0,2.0,3.0})));
