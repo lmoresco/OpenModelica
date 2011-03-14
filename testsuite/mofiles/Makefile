@@ -471,6 +471,7 @@ RecordAssignment.mo \
 RecordConnections.mo \
 RecordConstant1.mo \
 RecordConstant2.mo \
+RecordConstant3.mo \
 RecordConstructors.mo \
 RecordConstructorVectorization.mo \
 RecordNonPublic.mo \
