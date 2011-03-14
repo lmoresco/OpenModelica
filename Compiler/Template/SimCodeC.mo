@@ -29397,14 +29397,14 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), ty = DAE.ET_REAL(), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls )
       equation
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("std::max("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("fmax("));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
         txt = Tpl.writeText(txt, l_var2);
@@ -29412,29 +29412,14 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, ty = DAE.ET_INT(), path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls )
       equation
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("std::min((modelica_integer)"));
-        txt = Tpl.writeText(txt, l_var1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",(modelica_integer)"));
-        txt = Tpl.writeText(txt, l_var2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then (txt, a_preExp, a_varDecls);
-
-    case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, ty = DAE.ET_ENUMERATION(path = _), path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
-           a_context,
-           a_preExp,
-           a_varDecls )
-      equation
-        (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
-        (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("std::min((modelica_integer)"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_integer_max((modelica_integer)"));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",(modelica_integer)"));
         txt = Tpl.writeText(txt, l_var2);
@@ -29449,9 +29434,24 @@ algorithm
       equation
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("std::min("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("fmin("));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        txt = Tpl.writeText(txt, l_var2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
+           a_context,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
+        (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_integer_min((modelica_integer)"));
+        txt = Tpl.writeText(txt, l_var1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",(modelica_integer)"));
         txt = Tpl.writeText(txt, l_var2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then (txt, a_preExp, a_varDecls);
@@ -29463,7 +29463,7 @@ algorithm
            a_varDecls )
       equation
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("std::abs("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("labs("));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then (txt, a_preExp, a_varDecls);
