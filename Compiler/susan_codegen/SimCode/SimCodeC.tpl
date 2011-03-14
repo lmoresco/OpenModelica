@@ -1438,7 +1438,6 @@ template functionJac(list<SimEqSystem> JacEquations, list<SimVar> JacVars, Strin
   let Vars_ = (JacVars |> var => 
       defvars(var)
       ;separator="\n")
-      
   let writeJac_ = (JacVars |> var => 
       writejac(var)
     ;separator="\n")   
@@ -1447,7 +1446,7 @@ template functionJac(list<SimEqSystem> JacEquations, list<SimVar> JacVars, Strin
   {
     state mem_state;
     
-
+    <%Vars_%>
     <%varDecls%>
   
     mem_state = get_memory_state();

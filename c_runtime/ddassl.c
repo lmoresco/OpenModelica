@@ -1,3 +1,4 @@
+
 /* ddassl.f -- translated by f2c (version 20041007).
    You must link the resulting object file with libf2c:
   on Microsoft Windows system, link with libf2c.lib;
@@ -3742,6 +3743,28 @@ L100:
   wm[npdm1 + i__] = 0.;
     }
     (*jac)(x, &y[1], &yprime[1], &wm[1], cj, &rpar[1], &ipar[1]);
+    /*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*/
+        /*   nrow = npdm1;
+           i__1 = *neq;
+           i__2 = *neq;
+           // printf("cj: %g and the states\n", *cj);
+           //for (k=0;k<*neq;k++) {
+           //    printf("%g ", y[k+1]);
+           //}
+
+
+           printf("analytical jacobian\n");
+           printf("at point in time : %lf \n",*x);
+           for (i__ = 1; i__ <= i__1; ++i__) {
+                    for (l = 1; l <= i__2; ++l) {
+                        printf("%g  ",wm[nrow + l]);
+                    }
+                printf("\n");
+                    nrow += *neq;
+           }
+           */
+           //exit(0);
+        /*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*/
     goto L230;
 
 
@@ -3779,7 +3802,24 @@ L200:
   yprime[i__] = ypsave;
 /* L210: */
     }
+    /*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*/
+      /* nrow = npdm1;
+       i__1 = *neq;
+       i__2 = *neq;
+       k = 1;
+       printf("numerical jacobian\n");
+       printf("at point in time : %g \n",*x);
+       for (i__ = 1; i__ <= i__1; ++i__) {
+                for (l = 1; l <= i__2; ++l) {
+                    printf("%g  ",wm[nrow + l]);
+                }
+            printf("\n");
+                nrow += *neq;
+       }
 
+       */
+      //exit(0);
+    /*BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB*/
 
 /*     DO DENSE-MATRIX LU DECOMPOSITION ON PD */
 L230:

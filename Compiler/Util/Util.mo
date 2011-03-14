@@ -3272,6 +3272,100 @@ algorithm
   end match;
 end listThreadMap;
 
+public function listThreadMap1 "function: listThreadMap
+  Takes two lists and a function and threads (interleaves) and maps the elements of the two lists
+  creating a new list.
+  the argument 4 is passed to the functioncall
+  Example: listThreadMap({1,2},{3,4},intAdd) => {1+3, 2+4}"
+  input list<Type_a> inTypeALst;
+  input list<Type_b> inTypeBLst;
+  input FuncTypeType_aType_bToType_c inFuncTypeTypeATypeBToTypeC;
+  input Type_d inTypeD;
+  output list<Type_c> outTypeCLst;
+  replaceable type Type_a subtypeof Any;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  partial function FuncTypeType_aType_bToType_c
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_d inTypeD;
+    output Type_c outTypeC;
+    replaceable type Type_c subtypeof Any;
+  end FuncTypeType_aType_bToType_c;
+  replaceable type Type_c subtypeof Any;
+algorithm
+  outTypeCLst:=
+  match (inTypeALst,inTypeBLst,inFuncTypeTypeATypeBToTypeC,inTypeD)
+    local
+      Type_c fr;
+      list<Type_c> res;
+      Type_a fa;
+      list<Type_a> ra;
+      Type_b fb;
+      list<Type_b> rb;
+      FuncTypeType_aType_bToType_c fn;
+      Type_d fd;
+    case ({},{},_,_) then {};
+    case ((fa :: ra),(fb :: rb),fn,fd)
+      equation
+        fr = fn(fa, fb, fd);
+        res = listThreadMap1(ra, rb, fn, fd);
+      then
+        (fr :: res);
+  end match;
+end listThreadMap1;
+
+
+public function listThreadMap3 "function: listThreadMap
+  Takes two lists and a function and threads (interleaves) and maps the elements of the two lists
+  creating a new list.
+  the argument 4 - 6 are passed to the functioncall
+  Example: listThreadMap({1,2},{3,4},intAdd) => {1+3, 2+4}"
+  input list<Type_a> inTypeALst;
+  input list<Type_b> inTypeBLst;
+  input FuncTypeType_aType_bToType_c inFuncTypeTypeATypeBToTypeC;
+  input Type_d inTypeD;
+  input Type_e inTypeE;
+  input Type_f inTypeF;
+  output list<Type_c> outTypeCLst;
+  replaceable type Type_a subtypeof Any;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  partial function FuncTypeType_aType_bToType_c
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_d inTypeD;
+    input Type_e inTypeE;
+    input Type_f inTypeF;
+    output Type_c outTypeC;
+    replaceable type Type_c subtypeof Any;
+  end FuncTypeType_aType_bToType_c;
+  replaceable type Type_c subtypeof Any;
+algorithm
+  outTypeCLst:=
+  match (inTypeALst,inTypeBLst,inFuncTypeTypeATypeBToTypeC,inTypeD,inTypeE,inTypeF)
+    local
+      Type_c fr;
+      list<Type_c> res;
+      Type_a fa;
+      list<Type_a> ra;
+      Type_b fb;
+      list<Type_b> rb;
+      FuncTypeType_aType_bToType_c fn;
+      Type_d fd;
+      Type_e fe;
+      Type_f ff;
+    case ({},{},_,_,_,_) then {};
+    case ((fa :: ra),(fb :: rb),fn,fd,fe,ff)
+      equation
+        fr = fn(fa, fb, fd, fe, ff);
+        res = listThreadMap3(ra, rb, fn, fd, fe, ff);
+      then
+        (fr :: res);
+  end match;
+end listThreadMap3;
+
+
 public function listThreadMap32 "function: listThreadMap32
   Takes three lists and a function and threads (interleaves) and maps the elements of the three lists
   creating two new lists.

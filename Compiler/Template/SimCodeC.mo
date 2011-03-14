@@ -6130,10 +6130,11 @@ algorithm
                                        "( double *jac)\n",
                                        "{\n",
                                        "  state mem_state;\n",
-                                       "\n",
                                        "\n"
                                    }, true));
   out_txt := Tpl.pushBlock(out_txt, Tpl.BT_INDENT(2));
+  out_txt := Tpl.writeText(out_txt, l_Vars__);
+  out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeText(out_txt, l_varDecls);
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
