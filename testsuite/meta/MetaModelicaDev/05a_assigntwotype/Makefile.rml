@@ -1,4 +1,0 @@
-CLEAN=AssignTwoType.{c,h,o,srz}
-HEADERS=AssignTwoType.h
-OBJS=AssignTwoType.o main.o lexer.o parser.o
-include ../common.rml
