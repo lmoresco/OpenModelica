@@ -3,6 +3,7 @@ TEST = ../rtest -v
 
 TESTFILES = \
 AlgPatternm.mos \
+AllWild.mos \
 BuiltinArray.mos \
 BuiltinBoolean.mos \
 BuiltinInteger.mos \
