@@ -75,7 +75,7 @@ algorithm
       Ident id2,id;
       Value value;
       Env rest;
-    case ((id2,value) :: _,id)
+    case ((id2,value) :: rest,id)
       then if id == id2 then value else lookup(rest, id);
   end matchcontinue;
 end lookup;
