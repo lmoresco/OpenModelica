@@ -2147,11 +2147,11 @@ algorithm
                                     "if (data->nAlias)\n",
                                     "  memcpy(data->realAlias,omc__realAlias,sizeof(DATA_REAL_ALIAS)*data->nAlias);\n",
                                     "if (data->stringVariables.nAlias)\n",
-                                    "  memcpy(data->intVariables.nAlias,omc__realAlias,sizeof(DATA_INT_ALIAS)*data->intVariables.nAlias);\n",
+                                    "  memcpy(data->intVariables.alias,omc__intAlias,sizeof(DATA_INT_ALIAS)*data->intVariables.nAlias);\n",
                                     "if (data->stringVariables.nAlias)\n",
-                                    "  memcpy(data->boolVariables.nAlias,omc__realAlias,sizeof(DATA_BOOL_ALIAS)*data->boolVariables.nAlias);\n",
+                                    "  memcpy(data->boolVariables.alias,omc__boolAlias,sizeof(DATA_BOOL_ALIAS)*data->boolVariables.nAlias);\n",
                                     "if (data->stringVariables.nAlias)\n",
-                                    "  memcpy(data->stringVariables.alias,omc__realAlias,sizeof(DATA_STRING_ALIAS)*data->stringVariables.nAlias);\n",
+                                    "  memcpy(data->stringVariables.alias,omc__stringAlias,sizeof(DATA_STRING_ALIAS)*data->stringVariables.nAlias);\n",
                                     "};\n",
                                     "\n",
                                     "static char init_fixed[NX+NX+NY+NYINT+NYBOOL+NYSTR+NP+NPINT+NPBOOL+NPSTR] = {\n"
@@ -37691,6 +37691,7 @@ algorithm
       DAE.Exp i_exp;
       Boolean i_bool;
       Integer i_integer;
+      Tpl.Text txt_0;
       String ret_0;
 
     case ( txt,
@@ -37737,12 +37738,10 @@ algorithm
     case ( txt,
            i_lit )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("#error \"literalExpConstBoxedVal failed: "));
+        txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
-        txt = Tpl.writeStr(txt, ret_0);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt_0 = Tpl.writeStr(txt_0, ret_0);
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6338, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -38354,5 +38353,43 @@ algorithm
       then txt;
   end matchcontinue;
 end equationInfo;
+
+public function error
+  input Tpl.Text txt;
+  input Absyn.Info a_srcInfo;
+  input String a_errMessage;
+
+  output Tpl.Text out_txt;
+protected
+  String ret_0;
+algorithm
+  Tpl.addSourceTemplateError(a_errMessage, a_srcInfo);
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                   "\n",
+                                   "#error \""
+                               }, false));
+  ret_0 := Error.infoStr(a_srcInfo);
+  out_txt := Tpl.writeStr(out_txt, ret_0);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(" "));
+  out_txt := Tpl.writeStr(out_txt, a_errMessage);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+end error;
+
+public function errorMsg
+  input Tpl.Text txt;
+  input String a_errMessage;
+
+  output Tpl.Text out_txt;
+algorithm
+  Tpl.addTemplateError(a_errMessage);
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                   "\n",
+                                   "#error \""
+                               }, false));
+  out_txt := Tpl.writeStr(out_txt, a_errMessage);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("\""));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
+end errorMsg;
 
 end SimCodeC;
