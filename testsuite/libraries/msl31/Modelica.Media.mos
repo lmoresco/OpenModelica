@@ -10,19 +10,21 @@ loadModel(Modelica); getErrorString();
 
 setDebugFlags("scodeFlatten,failtrace");
 
-// Not working - No constant value for variable waterConstants
+// Not working - Wrong type on builtin attribute start of type Real[0]
+//       check - Variable state.h not found in scope
 //instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 
-// Not working - No constant value for variable waterConstants
+// Not working - Wrong type on builtin attribute start of type Real[0]
+//       check - Variable state.h not found in scope
 //instantiateModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.instElement failed
 //instantiateModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 
@@ -30,31 +32,35 @@ setDebugFlags("scodeFlatten,failtrace");
 //instantiateModel(Modelica.Media.Examples.MoistAir); getErrorString();
 //checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 
-// Not working - Infinite loop
+// Working
+instantiateModel(Modelica.Media.Water.StandardWater); getErrorString();
+checkModel(Modelica.Media.Water.StandardWater); getErrorString();
+
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 
@@ -62,7 +68,7 @@ setDebugFlags("scodeFlatten,failtrace");
 //instantiateModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
 
-// Not working
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 
@@ -105,27 +111,27 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 
@@ -161,7 +167,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFLuid.LinearColdWater); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, CevalFunction failed?
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 
@@ -169,7 +175,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponenInEnv failed
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 
@@ -177,7 +183,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 
-// Not working - Infinite loop
+// Not working - Infinite loop, Inst.updateComponenInEnv failed
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
 
@@ -186,6 +192,7 @@ instantiateModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorStrin
 checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 
 // Not working - Variable medium.Xi: Wrong type on builtin attribute start
+// Check fails - Variable state.T not found in scope ...BaseProperties.
 //instantiateModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 
@@ -197,6 +204,69 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // true
 // ""
 // true
+// "function Modelica.SIunits.Conversions.from_degC
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius - -273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Water.StandardWater
+//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Water.WaterIF97_ph.Choices.IndependentVariables.ph \"Enumeration type for independent variables\";
+//   constant String mediumName = \"WaterIF97\" \"Name of the medium\";
+//   constant Boolean singleState = false \"= true, if u and d are not a function of pressure\";
+//   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
+//   constant Boolean fixedX = true \"= true if medium contains the equation X = reference_X\";
+//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Default value for temperature of medium (for initialization)\";
+//   constant Boolean smoothModel = false \"true if the (derived) model should not generate state events\";
+//   constant Boolean onePhase = false \"true if the (derived) model should never be called with two-phase inputs\";
+//   constant String fluidConstants[1].iupacName = \"oxidane\" \"complete IUPAC name (or common name, if non-existent)\";
+//   constant String fluidConstants[1].casRegistryNumber = \"7732-18-5\" \"chemical abstracts sequencing number (if it exists)\";
+//   constant String fluidConstants[1].chemicalFormula = \"H2O\" \"Chemical formula, (brutto, nomenclature according to Hill\";
+//   constant String fluidConstants[1].structureFormula = \"H2O\" \"Chemical structure formula\";
+//   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.018015268 \"molar mass\";
+//   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 647.096 \"critical temperature\";
+//   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 22064000.0 \"critical pressure\";
+//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-06, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-05 \"critical molar Volume\";
+//   constant Real fluidConstants[1].acentricFactor = 0.344 \"Pitzer acentric factor\";
+//   constant Real fluidConstants[1].triplePointTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.16 \"triple point temperature\";
+//   constant Real fluidConstants[1].triplePointPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 611.657 \"triple point pressure\";
+//   constant Real fluidConstants[1].meltingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.15 \"melting point at 101325 Pa\";
+//   constant Real fluidConstants[1].normalBoilingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 373.124 \"normal boiling point (at 101325 Pa)\";
+//   constant Real fluidConstants[1].dipoleMoment(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) = 1.8 \"dipole moment of molecule in Debye (1 debye = 3.33564e10-30 C.m)\";
+//   constant Boolean fluidConstants[1].hasIdealGasHeatCapacity = false \"true if ideal gas heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasCriticalData = true \"true if critical data are known\";
+//   constant Boolean fluidConstants[1].hasDipoleMoment = false \"true if a dipole moment known\";
+//   constant Boolean fluidConstants[1].hasFundamentalEquation = false \"true if a fundamental equation\";
+//   constant Boolean fluidConstants[1].hasLiquidHeatCapacity = false \"true if liquid heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasSolidHeatCapacity = false \"true if solid heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasAccurateViscosityData = false \"true if accurate data for a viscosity function is available\";
+//   constant Boolean fluidConstants[1].hasAccurateConductivityData = false \"true if accurate data for thermal conductivity is available\";
+//   constant Boolean fluidConstants[1].hasVapourPressureCurve = false \"true if vapour pressure data, e.g. Antoine coefficents are known\";
+//   constant Boolean fluidConstants[1].hasAcentricFactor = false \"true if Pitzer accentric factor is known\";
+//   constant Real fluidConstants[1].HCRIT0(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"Critical specific enthalpy of the fundamental equation\";
+//   constant Real fluidConstants[1].SCRIT0(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = 0.0 \"Critical specific entropy of the fundamental equation\";
+//   constant Real fluidConstants[1].deltah(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"Difference between specific enthalpy model (h_m) and f.eq. (h_f) (h_m - h_f)\";
+//   constant Real fluidConstants[1].deltas(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = 0.0 \"Difference between specific enthalpy model (s_m) and f.eq. (s_f) (s_m - s_f)\";
+//   constant Boolean ph_explicit = true \"true if explicit in pressure and specific enthalpy\";
+//   constant Boolean dT_explicit = false \"true if explicit in density and temperature\";
+//   constant Boolean pT_explicit = false \"true if explicit in pressure and temperature\";
+//   constant String substanceNames[1] = \"water\" \"Names of the mixture substances. Set substanceNames={mediumName} if only one substance.\";
+//   constant Integer nS = 1 \"Number of substances\";
+//   constant Integer nX = 1 \"Number of mass fractions\";
+//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
+//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
+// end Modelica.Media.Water.StandardWater;
+// "
+// ""
+// "Check of Modelica.Media.Water.StandardWater completed successfully.
+// 
+// 
+// Class Modelica.Media.Water.StandardWater has 0 equation(s) and 0 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
 // "function Modelica.SIunits.Conversions.from_degC
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
