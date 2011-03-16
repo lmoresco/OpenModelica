@@ -30,7 +30,7 @@ INPUT(
 ./release\DocumentationWidget.o
 ./release\OptionsWidget.o
 ./release\BitmapAnnotation.o
-./release\read_matlab4.o
+./release\InetractiveSimulationTabWidget.o
 ./release\moc_mainwindow.o
 ./release\moc_ProjectTabWidget.o
 ./release\moc_LibraryWidget.o
@@ -54,5 +54,6 @@ INPUT(
 ./release\moc_DocumentationWidget.o
 ./release\moc_OptionsWidget.o
 ./release\moc_BitmapAnnotation.o
+./release\moc_InteractiveSimulationTabWidget.o
 ./release\qrc_resource_omedit.o
 );
