@@ -1451,7 +1451,7 @@ algorithm
                                     "_functions.h\"\n",
                                     "\n",
                                     "void setStartValues(ModelInstance *comp);\n",
-                                    "fmiReal getEventIndicator(ModelInstance* comp, int i);\n",
+                                    "fmiReal getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]);\n",
                                     "void eventUpdate(ModelInstance* comp, fmiEventInfo* eventInfo);\n",
                                     "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr);\n",
                                     "fmiStatus setReal(ModelInstance* comp, const fmiValueReference vr, const fmiReal value);\n",
@@ -2820,12 +2820,11 @@ algorithm
         (l_zeroCrossingsCode, l_varDecls) = zeroCrossingsTpl2_fmu(Tpl.emptyTxt, i_zeroCrossings, l_varDecls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "// Used to get event indicators\n",
-                                    "fmiReal getEventIndicator(ModelInstance* comp, int i) {\n",
-                                    "switch(i)\n",
-                                    "{\n",
-                                    "default:\n",
-                                    "    return 0.0;\n",
-                                    "}\n",
+                                    "fmiReal getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]) {\n"
+                                }, true));
+        txt = Tpl.writeText(txt, l_zeroCrossingsCode);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "}\n",
                                     "\n"
                                 }, true));
@@ -2916,7 +2915,7 @@ algorithm
 
     case ( txt,
            DAE.RELATION(exp1 = i_exp1, operator = i_operator, exp2 = i_exp2),
-           _,
+           a_index1,
            a_varDecls )
       equation
         l_preExp = Tpl.emptyTxt;
@@ -2925,23 +2924,15 @@ algorithm
         (l_e2, l_preExp, a_varDecls) = SimCodeC.daeExp(Tpl.emptyTxt, i_exp2, SimCode.contextOther, l_preExp, a_varDecls);
         txt = Tpl.writeText(txt, l_preExp);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("//globalData->states["));
-        txt = Tpl.writeText(txt, l_e1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_] "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("FMIZEROCROSSING("));
+        txt = Tpl.writeStr(txt, intString(a_index1));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_op);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeText(txt, l_e2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ";\n",
-                                    "case "
-                                }, false));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_e1);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_:\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_, "));
         txt = Tpl.writeText(txt, l_e2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("));"));
       then (txt, a_varDecls);
 
     case ( txt,
@@ -2989,37 +2980,25 @@ algorithm
     case ( txt,
            DAE.LESS(ty = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("FmiLess"));
       then txt;
 
     case ( txt,
            DAE.GREATER(ty = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(">"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("FmiGreater"));
       then txt;
 
     case ( txt,
            DAE.LESSEQ(ty = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<="));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("FmiLessEq"));
       then txt;
 
     case ( txt,
            DAE.GREATEREQ(ty = _) )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(">="));
-      then txt;
-
-    case ( txt,
-           DAE.EQUAL(ty = _) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("="));
-      then txt;
-
-    case ( txt,
-           DAE.NEQUAL(ty = _) )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("!="));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("FmiGreaterEq"));
       then txt;
 
     case ( txt,
