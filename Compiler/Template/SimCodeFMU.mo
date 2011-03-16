@@ -1451,7 +1451,7 @@ algorithm
                                     "_functions.h\"\n",
                                     "\n",
                                     "void setStartValues(ModelInstance *comp);\n",
-                                    "fmiReal getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]);\n",
+                                    "fmiStatus getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]);\n",
                                     "void eventUpdate(ModelInstance* comp, fmiEventInfo* eventInfo);\n",
                                     "fmiReal getReal(ModelInstance* comp, const fmiValueReference vr);\n",
                                     "fmiStatus setReal(ModelInstance* comp, const fmiValueReference vr, const fmiReal value);\n",
@@ -2820,11 +2820,10 @@ algorithm
         (l_zeroCrossingsCode, l_varDecls) = zeroCrossingsTpl2_fmu(Tpl.emptyTxt, i_zeroCrossings, l_varDecls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "// Used to get event indicators\n",
-                                    "fmiReal getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]) {\n"
-                                }, true));
-        txt = Tpl.writeText(txt, l_zeroCrossingsCode);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "fmiStatus getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]) {\n",
+                                    "int res = function_onlyZeroCrossings(eventIndicators, &globalData->timeValue);\n",
+                                    "if (res == 0) return fmiOK;\n",
+                                    "return fmiError;\n",
                                     "}\n",
                                     "\n"
                                 }, true));
@@ -4893,6 +4892,24 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -shared -lsim -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) -lf2c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv modelDescription.xml  "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries/\n"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.cpp: "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);

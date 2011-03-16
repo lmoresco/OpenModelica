@@ -2144,6 +2144,14 @@ algorithm
         txt = globalDataAliasVarArray(txt, "DATA_STRING_ALIAS", "omc__stringAlias", i_vars_stringAliasVars);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "if (data->nAlias)\n",
+                                    "  memcpy(data->realAlias,omc__realAlias,sizeof(DATA_REAL_ALIAS)*data->nAlias);\n",
+                                    "if (data->stringVariables.nAlias)\n",
+                                    "  memcpy(data->intVariables.nAlias,omc__realAlias,sizeof(DATA_INT_ALIAS)*data->intVariables.nAlias);\n",
+                                    "if (data->stringVariables.nAlias)\n",
+                                    "  memcpy(data->boolVariables.nAlias,omc__realAlias,sizeof(DATA_BOOL_ALIAS)*data->boolVariables.nAlias);\n",
+                                    "if (data->stringVariables.nAlias)\n",
+                                    "  memcpy(data->stringVariables.alias,omc__realAlias,sizeof(DATA_STRING_ALIAS)*data->stringVariables.nAlias);\n",
                                     "};\n",
                                     "\n",
                                     "static char init_fixed[NX+NX+NY+NYINT+NYBOOL+NYSTR+NP+NPINT+NPBOOL+NPSTR] = {\n"
