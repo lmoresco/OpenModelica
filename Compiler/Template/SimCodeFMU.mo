@@ -4523,13 +4523,13 @@ algorithm
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].negate?*(globalData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].negate?"));
+        txt = Tpl.writeStr(txt, a_negator);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*(globalData->"));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].alias):"));
-        txt = Tpl.writeStr(txt, a_negator);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*(globalData->"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("].alias):*(globalData->"));
         txt = Tpl.writeStr(txt, a_arrayName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeStr(txt, intString(i_index));
