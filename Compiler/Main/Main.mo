@@ -707,7 +707,7 @@ algorithm
                                         InnerOuter.emptyInstHierarchy,
                                         s);
       then
-      (c, Env.emptyEnv, d, s, Absyn.lastClassname(program));
+        (c, Env.emptyEnv, d, s, Absyn.lastClassname(program));
     case (_)
       equation
         // If a class to instantiate was given on the command line, instantiate
@@ -721,7 +721,7 @@ algorithm
                                              InnerOuter.emptyInstHierarchy,
                                              s,
                                              class_path);
-     then
+      then
         (c, e, d, s, class_path);
   end matchcontinue;
 end instantiate;
@@ -779,7 +779,8 @@ algorithm
         dlow = BackendDAECreate.lower(dae,funcs,true);
         preOptModules = {"removeSimpleEquations","removeParameterEqns","expandDerOperator"};
         pastOptModules = Util.listConsOnTrue(RTOpts.debugFlag("dumpcompgraph"),"dumpComponentsGraphStr",{});
-        pastOptModules = "removeSimpleEquations"::("lateInline"::pastOptModules);
+        pastOptModules = Util.listConsOnTrue(RTOpts.debugFlag("removeAliasEquations"),"removeAliasEquations",pastOptModules);
+        pastOptModules = "lateInline"::("removeSimpleEquations"::pastOptModules);
         (dlow_1,m,mT,v1,v2,comps) = BackendDAEUtil.getSolvedSystem(cache,env,dlow,funcs,preOptModules,BackendDAETransform.dummyDerivative,pastOptModules);
         modpar(dlow_1,v1,v2,comps);
         simcodegen(dlow_1,funcs,classname,p,ap,daeimpl,m,mT,v1,v2,comps);
@@ -894,9 +895,7 @@ algorithm
         Print.clearErrorBuf();
         Print.clearBuf();
         cname_str = Absyn.pathString(classname);
-        methodflag = RTOpts.debugFlag("SetOldDassl");
-        methodbyflag = Util.if_(methodflag,"dasslold","dassl");
-        simSettings = SimCode.createSimulationSettings(0.0, 1.0, 500, 1e-6,methodbyflag,"","mat",".*",false);
+        simSettings = SimCode.createSimulationSettings(0.0, 1.0, 500, 1e-6,"dassl","","mat",".*",false);
         (_,_,_,_,_,_) = SimCode.generateModelCode(dlow,functionTree,ap,dae,classname,cname_str,SOME(simSettings),m,mt,ass1,ass2,comps);
       then
         ();

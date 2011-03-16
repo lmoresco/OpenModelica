@@ -4,7 +4,7 @@
 extern "C" {
 
 // array of value references of states
-#if NUMBER_OF_REALS>0
+#if NUMBER_OF_STATES>0
 fmiValueReference vrStates[NUMBER_OF_STATES] = STATES;
 fmiValueReference vrStatesDerivatives[NUMBER_OF_STATES] = STATESDERIVATIVES;
 #endif
@@ -289,7 +289,7 @@ fmiStatus fmiSetContinuousStates(fmiComponent c, const fmiReal x[], size_t nx){
     return fmiError;
   if (nullPointer(comp, "fmiSetContinuousStates", "x[]", x))
     return fmiError;
-#if NUMBER_OF_REALS>0
+#if NUMBER_OF_STATES>0
   comp->eventInfo.stateValuesChanged = fmiTrue;
   comp->outputsvalid = fmiFalse;
   for (i=0; i<nx; i++) {
@@ -318,12 +318,16 @@ fmiStatus fmiGetReal(fmiComponent c, const fmiValueReference vr[], size_t nvr, f
   if (nvr>0 && nullPointer(comp, "fmiGetReal", "value[]", value))
     return fmiError;
 #if NUMBER_OF_REALS>0
+  // calculate new values
+  if (comp->eventInfo.stateValuesChanged == fmiTrue)
+  {
+    int needToIterate = 0;
+    functionDAE(&needToIterate);
+    comp->eventInfo.stateValuesChanged = fmiFalse;
+  }
   if (comp->outputsvalid == fmiFalse)
   {
-     acceptedStep=1;
-     functionDAE_output();
-     functionDAE_output2();
-     acceptedStep=0;  
+     functionAliasEquations();
      comp->outputsvalid = fmiTrue;
   }
   for (i=0; i<nvr; i++) {
@@ -349,13 +353,17 @@ fmiStatus fmiGetInteger(fmiComponent c, const fmiValueReference vr[], size_t nvr
   if (nvr>0 && nullPointer(comp, "fmiGetInteger", "value[]", value))
     return fmiError;
 #if NUMBER_OF_INTEGERS>0
+  // calculate new values
+  if (comp->eventInfo.stateValuesChanged == fmiTrue)
+  {
+    int needToIterate = 0;
+    functionDAE(&needToIterate);
+    comp->eventInfo.stateValuesChanged = fmiFalse;
+  }
   if (comp->outputsvalid == fmiFalse)
   {
-    acceptedStep=1;
-    functionDAE_output();
-    functionDAE_output2();
-    acceptedStep=0;  
-    comp->outputsvalid = fmiTrue;
+     functionAliasEquations();
+     comp->outputsvalid = fmiTrue;
   }
   for (i=0; i<nvr; i++) {
     if (vrOutOfRange(comp, "fmiGetInteger", vr[i], NUMBER_OF_INTEGERS))
@@ -380,13 +388,17 @@ fmiStatus fmiGetBoolean(fmiComponent c, const fmiValueReference vr[], size_t nvr
   if (nvr>0 && nullPointer(comp, "fmiGetBoolean", "value[]", value))
     return fmiError;
 #if NUMBER_OF_BOOLEANS>0
+  // calculate new values
+  if (comp->eventInfo.stateValuesChanged == fmiTrue)
+  {
+    int needToIterate = 0;
+    functionDAE(&needToIterate);
+    comp->eventInfo.stateValuesChanged = fmiFalse;
+  }
   if (comp->outputsvalid == fmiFalse)
   {
-    acceptedStep=1;
-    functionDAE_output();
-    functionDAE_output2();
-    acceptedStep=0;  
-    comp->outputsvalid = fmiTrue;
+     functionAliasEquations();
+     comp->outputsvalid = fmiTrue;
   }
   for (i=0; i<nvr; i++) {
     if (vrOutOfRange(comp, "fmiGetBoolean", vr[i], NUMBER_OF_BOOLEANS))
@@ -411,13 +423,17 @@ fmiStatus fmiGetString(fmiComponent c, const fmiValueReference vr[], size_t nvr,
   if (nvr>0 && nullPointer(comp, "fmiGetString", "value[]", value))
     return fmiError;
 #if NUMBER_OF_STRINGS>0
+  // calculate new values
+  if (comp->eventInfo.stateValuesChanged == fmiTrue)
+  {
+    functionODE();
+    comp->eventInfo.stateValuesChanged == fmiFalse;
+  }
   if (comp->outputsvalid == fmiFalse)
   {
-    acceptedStep=1;
-    functionDAE_output();
-    functionDAE_output2();
-    acceptedStep=0;  
-    comp->outputsvalid = fmiTrue;
+     functionAlgebraics();
+     functionAliasEquations();
+     comp->outputsvalid = fmiTrue;
   }
   for (i=0; i<nvr; i++) {
     if (vrOutOfRange(comp, "fmiGetString", vr[i], NUMBER_OF_STRINGS))
@@ -441,7 +457,7 @@ fmiStatus fmiGetStateValueReferences(fmiComponent c, fmiValueReference vrx[], si
     return fmiError;
   if (nullPointer(comp, "fmiGetStateValueReferences", "vrx[]", vrx))
     return fmiError;
-#if NUMBER_OF_REALS>0
+#if NUMBER_OF_STATES>0
   for (i=0; i<nx; i++) {
     vrx[i] = vrStates[i];
     if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
@@ -460,7 +476,7 @@ fmiStatus fmiGetContinuousStates(fmiComponent c, fmiReal states[], size_t nx){
     return fmiError;
   if (nullPointer(comp, "fmiGetContinuousStates", "states[]", states))
     return fmiError;
-#if NUMBER_OF_REALS>0
+#if NUMBER_OF_STATES>0
   for (i=0; i<nx; i++) {
     fmiValueReference vr = vrStates[i];
     states[i] = getReal(comp, vr); // to be implemented by the includer of this file
@@ -501,7 +517,8 @@ fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
   if (comp->eventInfo.stateValuesChanged == fmiTrue)
   {
     // calculate new values
-    function_updateDependents();
+    int needToIterate = 0;
+    functionDAE(&needToIterate);
     for (i=0; i<nx; i++) {
       fmiValueReference vr = vrStatesDerivatives[i];
       derivatives[i] = getReal(comp, vr); // to be implemented by the includer of this file
@@ -509,7 +526,6 @@ fmiStatus fmiGetDerivatives(fmiComponent c, fmiReal derivatives[], size_t nx) {
         "fmiGetDerivatives: #r%d# = %.16g", vr, derivatives[i]);
     }
     comp->eventInfo.stateValuesChanged = fmiFalse;
-    comp->outputsvalid = fmiFalse;
   }
 #endif
   return fmiOK;
@@ -523,10 +539,15 @@ fmiStatus fmiGetEventIndicators(fmiComponent c, fmiReal eventIndicators[], size_
   if (invalidNumber(comp, "fmiGetEventIndicators", "ni", ni, NUMBER_OF_EVENT_INDICATORS))
     return fmiError;
 #if NUMBER_OF_EVENT_INDICATORS>0
-  for (i=0; i<ni; i++) {
-    eventIndicators[i] = getEventIndicator(comp, i); // to be implemented by the includer of this file
-    if (comp->loggingOn) comp->functions.logger(c, comp->instanceName, fmiOK, "log",
+ // for (i=0; i<ni; i++) {
+    //eventIndicators[i] = getEventIndicator(comp, i); // to be implemented by the includer of this file
+    getEventIndicator(comp, eventIndicators); // to be implemented by the includer of this file
+    if (comp->loggingOn)
+      {
+      for (i=0; i<ni; i++) {
+        comp->functions.logger(c, comp->instanceName, fmiOK, "log",
       "fmiGetEventIndicators: z%d = %.16g", i, eventIndicators[i]);
+      }
   }
 #endif
   return fmiOK;
@@ -566,28 +587,53 @@ fmiStatus fmiInitialize(fmiComponent c, fmiBoolean toleranceControlled, fmiReal 
               storeExtrapolationData();
               storeExtrapolationData();
 
+              int sampleEvent_actived = 0;
+              int needToIterate = 0;
+              int IterationNum = 0;
+              functionDAE(&needToIterate);
+              functionAliasEquations();
+
+              while (checkForDiscreteChanges() || needToIterate)
+              {
+                saveall();
+                functionDAE(&needToIterate);
+                IterationNum++;
+                if (IterationNum > IterationMax) return fmiError;
+              }
+
               if (initialize(NULL))  return fmiError;
 
-              // Need to check for events at init=1 since e.g. initial() generate event at initialization.
-              //calcEnabledZeroCrossings();
-              function_updateDependents();
-              CheckForInitialEvents(&globalData->timeValue);
-              StartEventIteration(&globalData->timeValue);
+              SaveZeroCrossings();
+              saveall();
 
-              // Calculate initial derivatives
-              if(functionODE())  return fmiError;
-              // Calculate initial output values
-              acceptedStep = 1;
-              if(functionDAE_output()|| functionDAE_output2())  return fmiError;
+              // Calculate stable discrete state
+              // and initial ZeroCrossings
+              if (globalData->curSampleTimeIx < globalData->nSampleTimes)
+              {
+                sampleEvent_actived = checkForSampleEvent();
+                activateSampleEvents();
+              }
+              //Activate sample and evaluate again
+              needToIterate = 0;
+              IterationNum = 0;
+              functionDAE(&needToIterate);
 
-              function_updateDependents();
+              while (checkForDiscreteChanges() || needToIterate)
+              {
+                saveall();
+                functionDAE(&needToIterate);
+                IterationNum++;
+                if (IterationNum > IterationMax) return fmiError;
+                }
+              functionAliasEquations();
+              SaveZeroCrossings();
+              if (sampleEvent_actived)
+              {
+                deactivateSampleEventsandEquations();
+                sampleEvent_actived = 0;
+              }
 
               saveall();
-              checkTermination();
-              function_storeDelayed();
-
-              calcEnabledZeroCrossings();
-              globalData->init = 0;
               // Initialization complete
 
               comp->state = modelInitialized;
@@ -665,5 +711,32 @@ fmiStatus fmiSetExternalFunction(fmiComponent c, fmiValueReference vr[], size_t 
 };
 
 }
+
+
+// relation functions used in zero crossing detection
+fmiReal
+FmiLess(fmiReal a, fmiReal b)
+{
+  return a - b;
+}
+
+fmiReal
+FmiLessEq(fmiReal a, fmiReal b)
+{
+  return a - b;
+}
+
+fmiReal
+FmiGreater(fmiReal a, fmiReal b)
+{
+  return b - a;
+}
+
+fmiReal
+FmiGreaterEq(fmiReal a, fmiReal b)
+{
+  return b - a;
+}
+
 
 #endif

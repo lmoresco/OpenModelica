@@ -598,7 +598,7 @@ uniontype Attributes "- Attributes"
     Boolean flowPrefix "flow" ;
     Boolean streamPrefix "stream" ;
     SCode.Accessibility accessibility "accessibility" ;
-    SCode.Variability parameter_ "parameter" ;
+    SCode.Variability variability "variability" ;
     Absyn.Direction direction "direction" ;
     Absyn.InnerOuter innerOuter "inner, outer,  inner outer or unspecified";
   end ATTR;
@@ -1123,12 +1123,9 @@ uniontype Exp "Expressions
   end CODE;
 
   record REDUCTION "e.g. sum(i*i+1 for i in 1:4)"
-    Absyn.Path path "array, sum,..";
+    ReductionInfo reductionInfo;
     Exp expr "expr, e.g i*i+1" ;
-    Ident ident "e.g. i";
-    Option<Exp> guardExp "Boolean guard-expression";
-    Exp range "range Reduction expression e.g. 1:4" ;
-    Option<Values.Value> defaultValue "if there is no default value, the reduction is not defined for 0-length arrays/lists";
+    ReductionIterators iterators;
   end REDUCTION;
 
   record END "array index to last element, e.g. a{end}:=1;" end END;
@@ -1200,6 +1197,26 @@ uniontype Exp "Expressions
   /* --- */
 
 end Exp;
+
+public uniontype ReductionInfo
+  record REDUCTIONINFO "A separate uniontype containing the information not required by traverseExp, etc"
+    Absyn.Path path "array, sum,..";
+    Type exprType;
+    Option<Values.Value> defaultValue "if there is no default value, the reduction is not defined for 0-length arrays/lists";
+    Option<Exp> foldExp "For example, max(ident,$res) or ident+$res; array() does not use this feature; DO NOT TRAVERSE THIS EXPRESSION!";
+  end REDUCTIONINFO;
+end ReductionInfo;
+
+public uniontype ReductionIterator
+  record REDUCTIONITER
+    String id;
+    Exp exp;
+    Option<Exp> guardExp;
+    Type ty;
+  end REDUCTIONITER;
+end ReductionIterator;
+
+public type ReductionIterators = list<ReductionIterator> "NOTE: OMC only handles one iterator for now";
 
 public uniontype MatchCase
   record CASE

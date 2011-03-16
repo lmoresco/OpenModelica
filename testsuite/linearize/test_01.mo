@@ -11,17 +11,21 @@ model simple_test
   Real z;		// = Int(y) = Int(e^x) = e^x
   Real fac;		// = n!
   Real j;
-  parameter Integer n=4;
+  Integer n(start=4);
 algorithm
+  y := 0;
   fac := 1;
-  for i in 0:n loop
+  for i in 1:n loop
     j := i;
-    if j > 0 then
+    if noEvent(j > 0) then
       fac := fac * j;
     end if;
     y := y + (x^j)/fac;
   end for;
 equation
+ when sample(0,1) then 
+   n = pre(n) + 1; 
+ end when;
   x = time+1;
   der(z) = y;
 end simple_test;

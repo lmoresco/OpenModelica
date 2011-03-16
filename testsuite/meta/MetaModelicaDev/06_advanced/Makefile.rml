@@ -1,3 +1,0 @@
-CLEAN={Main,Functions,Types}.{c,h,o,srz}
-OBJS=Main.o Functions.o Types.o
-include ../common.rml

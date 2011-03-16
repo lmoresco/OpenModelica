@@ -101,8 +101,6 @@ case SIMCODE(__) then
   
   <%functionGetName(modelInfo)%>
   
-  <%functionDivisionError()%>
-  
   <%functionSetLocalData()%>
   
   <%functionInitializeDataStruc()%>
@@ -183,8 +181,9 @@ case MODELINFO(varInfo=VARINFO(__), vars=SIMVARS(__)) then
   #define NHELP <%varInfo.numHelpVars%>
   #define NG <%varInfo.numZeroCrossings%> // number of zero crossings
   #define NG_SAM <%varInfo.numTimeEvents%> // number of zero crossings that are samples
-  #define NX <%varInfo.numStateVars%>
-  #define NY <%varInfo.numAlgVars%>
+  #define NX <%varInfo.numStateVars%>  // number of states
+  #define NY <%varInfo.numAlgVars%>  // number of real variables
+  #define NA <%varInfo.numAlgAliasVars%>  // number of alias variables
   #define NP <%varInfo.numParams%> // number of parameters
   #define NO <%varInfo.numOutVars%> // number of outputvar on topmodel
   #define NI <%varInfo.numInVars%> // number of inputvar on topmodel
@@ -193,10 +192,13 @@ case MODELINFO(varInfo=VARINFO(__), vars=SIMVARS(__)) then
   #define NFUNC <%listLength(functions)%> // number of functions used by the simulation
   #define MAXORD 5
   #define NYSTR <%varInfo.numStringAlgVars%> // number of alg. string variables
+  #define NASTR <%varInfo.numStringAliasVars%> // number of alias string variables
   #define NPSTR <%varInfo.numStringParamVars%> // number of alg. string variables
   #define NYINT <%varInfo.numIntAlgVars%> // number of alg. int variables
+  #define NAINT <%varInfo.numIntAliasVars%> // number of alias int variables
   #define NPINT <%varInfo.numIntParams%> // number of alg. int variables
   #define NYBOOL <%varInfo.numBoolAlgVars%> // number of alg. bool variables
+  #define NABOOL <%varInfo.numBoolAliasVars%> // number of alias bool variables
   #define NPBOOL <%varInfo.numBoolParams%> // number of alg. bool variables
   #define NJACVARS <%varInfo.numJacobianVars%> // number of jacobian variables
   
@@ -220,12 +222,16 @@ case MODELINFO(varInfo=VARINFO(__), vars=SIMVARS(__)) then
   <%globalDataVarInfoArray("derivative_names", vars.derivativeVars)%>
   <%globalDataVarInfoArray("algvars_names", vars.algVars)%>
   <%globalDataVarInfoArray("param_names", vars.paramVars)%>
+  <%globalDataVarInfoArray("alias_names", vars.aliasVars)%>
   <%globalDataVarInfoArray("int_alg_names", vars.intAlgVars)%>
   <%globalDataVarInfoArray("int_param_names", vars.intParamVars)%>
+  <%globalDataVarInfoArray("int_alias_names", vars.intAliasVars)%>
   <%globalDataVarInfoArray("bool_alg_names", vars.boolAlgVars)%>
   <%globalDataVarInfoArray("bool_param_names", vars.boolParamVars)%>
+  <%globalDataVarInfoArray("bool_alias_names", vars.boolAliasVars)%>
   <%globalDataVarInfoArray("string_alg_names", vars.stringAlgVars)%>
   <%globalDataVarInfoArray("string_param_names", vars.stringParamVars)%>
+  <%globalDataVarInfoArray("string_alias_names", vars.stringAliasVars)%>
   <%globalDataVarInfoArray("jacobian_names", vars.jacobianVars)%>
   <%globalDataFunctionInfoArray("function_names", functions)%>
   
@@ -266,6 +272,14 @@ case MODELINFO(varInfo=VARINFO(__), vars=SIMVARS(__)) then
     globalDataVarDefine(var, "jacobianVars")
   ;separator="\n"%>  
   <%functions |> fn hasindex i0 => '#define <%functionName(fn,false)%>_index <%i0%>'; separator="\n"%>
+  
+  void init_Alias(DATA* data)
+  {
+  <%globalDataAliasVarArray("DATA_REAL_ALIAS","omc__realAlias", vars.aliasVars)%>
+  <%globalDataAliasVarArray("DATA_INT_ALIAS","omc__intAlias", vars.intAliasVars)%>
+  <%globalDataAliasVarArray("DATA_BOOL_ALIAS","omc__boolAlias", vars.boolAliasVars)%>
+  <%globalDataAliasVarArray("DATA_STRING_ALIAS","omc__stringAlias", vars.stringAliasVars)%>  
+  };
   
   static char init_fixed[NX+NX+NY+NYINT+NYBOOL+NYSTR+NP+NPINT+NPBOOL+NPSTR] = {
     <%{(vars.stateVars |> SIMVAR(__) =>
@@ -368,28 +382,61 @@ template globalDataVarDefine(SimVar simVar, String arrayName)
 match arrayName
 case "jacobianVars" then
   match simVar
-  case SIMVAR(__) then
+  case SIMVAR(aliasvar=NOALIAS()) then
     <<
     #define <%cref(name)%> localData-><%arrayName%>[<%index%>]
     >> 
   end match
 case _ then
   match simVar
-  case SIMVAR(arrayCref=SOME(c)) then
+  case SIMVAR(arrayCref=SOME(c),aliasvar=NOALIAS()) then
     <<
     #define <%cref(c)%> localData-><%arrayName%>[<%index%>]
     #define <%cref(name)%> localData-><%arrayName%>[<%index%>]
     #define $P$old<%cref(name)%> localData-><%arrayName%>_old[<%index%>]
     #define $P$old2<%cref(name)%> localData-><%arrayName%>_old2[<%index%>]
     >>
-  case SIMVAR(__) then
+  case SIMVAR(aliasvar=NOALIAS()) then
     <<
     #define <%cref(name)%> localData-><%arrayName%>[<%index%>]
     #define $P$old<%cref(name)%> localData-><%arrayName%>_old[<%index%>]
     #define $P$old2<%cref(name)%> localData-><%arrayName%>_old2[<%index%>]
-    >>
+    >>  
 end globalDataVarDefine;
 
+template globalDataAliasVarArray(String type, String _name, list<SimVar> items)
+ "Generates array with variable names in global data section."
+::=
+  match items
+  case {} then
+    <<
+      <%type%> <%_name%>[1] = {{0,false}};
+    >>
+  case items then
+    <<
+      <%type%> <%_name%>[<%listLength(items)%>] = {
+        <%items |> var as SIMVAR(__) => '{<%aliasVarNameType(aliasvar)%>,<%index%>}'; separator=",\n"%>
+      };
+    >>
+end globalDataAliasVarArray;
+
+template aliasVarNameType(AliasVariable var)
+ "Generates type of alias."
+::=
+  match var
+  case NOALIAS() then
+    <<
+    0,0
+    >>
+  case ALIAS(__) then
+    <<
+    &<%cref(varName)%>,false
+    >>
+  case NEGATEDALIAS(__) then
+    <<
+    &<%cref(varName)%>,true
+    >>    
+end aliasVarNameType;
 
 template globalDataFixedInt(Boolean isFixed)
  "Generates integer for use in arrays in global data section."
@@ -480,30 +527,6 @@ case MODELINFO(vars=SIMVARS(__)) then
 end functionGetName;
 
 
-template functionDivisionError()
- "Generates function in simulation file."
-::=
-  <<
-  /* Commented out by Frenkel TUD because there is a new implementation of
-     division by zero problem. */
-  /*
-  #define DIVISION(a,b,c) ((b != 0) ? a / b : a / division_error(b,c))
-  
-  int encounteredDivisionByZero = 0;
-  
-  double division_error(double b, const char* division_str)
-  {
-    if(!encounteredDivisionByZero) {
-      fprintf(stderr, "ERROR: Division by zero in partial equation: %s.\n",division_str);
-      encounteredDivisionByZero = 1;
-    }
-    return b;
-  }
-  */
-  >>
-end functionDivisionError;
-
-
 template functionSetLocalData()
  "Generates function in simulation file."
 ::=
@@ -511,6 +534,7 @@ template functionSetLocalData()
   void setLocalData(DATA* data)
   {
     localData = data;
+    init_Alias(data);
   }
   >>
 end functionSetLocalData;
@@ -530,6 +554,7 @@ template functionInitializeDataStruc()
     memset(returnData,0,sizeof(DATA));
     returnData->nStates = NX;
     returnData->nAlgebraic = NY;
+    returnData->nAlias = NA;
     returnData->nParameters = NP;
     returnData->nInputVars = NI;
     returnData->nOutputVars = NO;
@@ -542,10 +567,13 @@ template functionInitializeDataStruc()
     returnData->nHelpVars = NHELP;
     returnData->stringVariables.nParameters = NPSTR;
     returnData->stringVariables.nAlgebraic = NYSTR;
+    returnData->stringVariables.nAlias = NASTR;
     returnData->intVariables.nParameters = NPINT;
     returnData->intVariables.nAlgebraic = NYINT;
+    returnData->intVariables.nAlias = NAINT;
     returnData->boolVariables.nParameters = NPBOOL;
     returnData->boolVariables.nAlgebraic = NYBOOL;
+    returnData->boolVariables.nAlias = NABOOL;
     returnData->nJacobianvars = NJACVARS;
   
     if (returnData->nStates) {
@@ -659,7 +687,7 @@ template functionInitializeDataStruc()
     } else {
       returnData->parameters = 0;
     }
-  
+ 
     if (returnData->stringVariables.nParameters) {
       returnData->stringVariables.parameters = (const char**)malloc(sizeof(char*)*returnData->stringVariables.nParameters);
         assert(returnData->stringVariables.parameters);
@@ -700,7 +728,51 @@ template functionInitializeDataStruc()
       returnData->inputVars = 0;
     }
   
-   if (returnData->nJacobianvars) {
+    if (returnData->nAlias) {
+      returnData->realAlias = (DATA_REAL_ALIAS*) malloc(sizeof(DATA_REAL_ALIAS)*returnData->nAlias);
+      assert(returnData->realAlias);
+      returnData->aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nAlias);
+      assert(returnData->aliasFilterOutput);
+      memset(returnData->realAlias,0,sizeof(DATA_REAL_ALIAS)*returnData->nAlias);
+      memset(returnData->aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->nAlias);
+    } else {
+      returnData->realAlias = 0;
+      returnData->aliasFilterOutput = 0;
+    }
+
+    if (returnData->intVariables.nAlias) {
+      returnData->intVariables.alias = (sim_DATA_INT_ALIAS*) malloc(sizeof(sim_DATA_INT_ALIAS)*returnData->intVariables.nAlias);
+      assert(returnData->intVariables.alias);
+      returnData->intVariables.aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->intVariables.nAlias);
+      assert(returnData->intVariables.aliasFilterOutput);
+      memset(returnData->intVariables.alias,0,sizeof(sim_DATA_INT_ALIAS)*returnData->intVariables.nAlias);
+      memset(returnData->intVariables.aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->intVariables.nAlias);
+    } else {
+      returnData->intVariables.alias = 0;
+      returnData->intVariables.aliasFilterOutput=0;
+    }
+
+    if (returnData->boolVariables.nAlias) {
+      returnData->boolVariables.alias = (DATA_BOOL_ALIAS*) malloc(sizeof(DATA_BOOL_ALIAS)*returnData->boolVariables.nAlias);
+      assert(returnData->boolVariables.alias);
+      returnData->boolVariables.aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlias);
+      assert(returnData->boolVariables.aliasFilterOutput);
+      memset(returnData->boolVariables.alias,0,sizeof(DATA_BOOL_ALIAS)*returnData->boolVariables.nAlias);
+      memset(returnData->boolVariables.aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlias);
+    } else {
+      returnData->boolVariables.alias = 0;
+      returnData->boolVariables.aliasFilterOutput=0;
+    }
+
+    if (returnData->stringVariables.nAlias) {
+      returnData->stringVariables.alias = (DATA_STRING_ALIAS*) malloc(sizeof(DATA_STRING_ALIAS)*returnData->stringVariables.nAlias);
+      assert(returnData->stringVariables.alias);
+      memset(returnData->stringVariables.alias,0,sizeof(DATA_STRING_ALIAS)*returnData->stringVariables.nAlias);
+    } else {
+      returnData->stringVariables.alias = 0;
+    }
+      
+    if (returnData->nJacobianvars) {
       returnData->jacobianVars = (double*) malloc(sizeof(double)*returnData->nJacobianvars);
       assert(returnData->jacobianVars);
       memset(returnData->jacobianVars,0,sizeof(double)*returnData->nJacobianvars);
@@ -729,6 +801,10 @@ template functionInitializeDataStruc()
     returnData->int_param_names = int_param_names;
     returnData->bool_param_names = bool_param_names;
     returnData->string_param_names = string_param_names;
+    returnData->alias_names = alias_names;
+    returnData->int_alias_names = int_alias_names;
+    returnData->bool_alias_names = bool_alias_names;
+    returnData->string_alias_names = string_alias_names;
     returnData->jacobian_names = jacobian_names;
     returnData->functionNames = function_names;
     returnData->equationInfo = equation_info;
@@ -856,6 +932,56 @@ case EXTOBJINFO(__) then
       data->outputVars = 0;
     }
     
+    if (data->intVariables.algebraics) {
+      free(data->intVariables.algebraics);
+      data->intVariables.algebraics = 0;
+    }
+  
+    if (data->intVariables.algebraics_old) {
+      free(data->intVariables.algebraics_old);
+      data->intVariables.algebraics_old = 0;
+    }
+
+    if (data->intVariables.algebraics_old2) {
+      free(data->intVariables.algebraics_old2);
+      data->intVariables.algebraics_old2 = 0;
+    }
+
+    if (data->boolVariables.algebraics) {
+      free(data->boolVariables.algebraics);
+      data->boolVariables.algebraics = 0;
+    }
+
+    if (data->boolVariables.algebraics_old) {
+      free(data->boolVariables.algebraics_old);
+      data->boolVariables.algebraics_old = 0;
+    }
+
+    if (data->boolVariables.algebraics_old2) {
+      free(data->boolVariables.algebraics_old2);
+      data->boolVariables.algebraics_old2 = 0;
+    }
+
+    if (data->realAlias) {
+      free(data->realAlias);
+      data->realAlias = 0;
+    }
+
+    if (data->intVariables.alias) {
+      free(data->intVariables.alias);
+      data->intVariables.alias = 0;
+    }
+
+    if (data->boolVariables.alias) {
+      free(data->boolVariables.alias);
+      data->boolVariables.alias = 0;
+    }
+
+    if (data->stringVariables.alias) {
+      free(data->stringVariables.alias);
+      data->stringVariables.alias = 0;
+    }
+
     if (data->jacobianVars) {
       free(data->jacobianVars);
       data->jacobianVars = 0;
@@ -1602,6 +1728,8 @@ case 0 then
   case 0 then
       <<
       string def_vector<%name%>("  Real <%name%>[<%numIn%>];\n");
+
+
       >>
   case _ then
       <<
@@ -1857,7 +1985,7 @@ case eqn as SES_ARRAY_CALL_ASSIGN(__) then
     >>
   case "integer" then
     let tvar = tempDecl("integer_array", &varDecls /*BUFD*/)
-    let &preExp += 'cast_integer_array_to_real(&<%expPart%>, &<%tvar%>);<%\n%>'
+    //let &preExp += 'cast_integer_array_to_real(&<%expPart%>, &<%tvar%>);<%\n%>'
     <<
     <%preExp%>
     copy_integer_array_data_mem(&<%expPart%>, &<%cref(eqn.componentRef)%>);<%inlineArray(context,tvar,eqn.componentRef)%>
@@ -4137,6 +4265,7 @@ template algStatementWhenPre(DAE.Statement stmt, Text &varDecls /*BUFP*/)
         ""
     let &preExp = buffer "" /*BUFD*/
 
+
     let assignments = algStatementWhenPreAssigns(el, helpVarIndices,
                                                &preExp /*BUFC*/,
                                                &varDecls /*BUFD*/)
@@ -4824,33 +4953,33 @@ template daeExpCall(Exp call, Context context, Text &preExp /*BUFP*/,
     '<%retVar%>'
   
   case CALL(tuple_=false, builtin=true,
+            path=IDENT(name="max"), ty = ET_REAL(), expLst={e1,e2}) then
+    let var1 = daeExp(e1, context, &preExp, &varDecls)
+    let var2 = daeExp(e2, context, &preExp, &varDecls)
+    'fmax(<%var1%>,<%var2%>)'
+
+  case CALL(tuple_=false, builtin=true,
             path=IDENT(name="max"), expLst={e1,e2}) then
     let var1 = daeExp(e1, context, &preExp, &varDecls)
     let var2 = daeExp(e2, context, &preExp, &varDecls)
-    'std::max(<%var1%>,<%var2%>)'
-  
-  case CALL(tuple_=false, builtin=true, ty = ET_INT(),
-            path=IDENT(name="min"), expLst={e1,e2}) then
-    let var1 = daeExp(e1, context, &preExp, &varDecls)
-    let var2 = daeExp(e2, context, &preExp, &varDecls)
-    'std::min((modelica_integer)<%var1%>,(modelica_integer)<%var2%>)'
-  
-  case CALL(tuple_=false, builtin=true, ty = ET_ENUMERATION(__),
-            path=IDENT(name="min"), expLst={e1,e2}) then
-    let var1 = daeExp(e1, context, &preExp, &varDecls)
-    let var2 = daeExp(e2, context, &preExp, &varDecls)
-    'std::min((modelica_integer)<%var1%>,(modelica_integer)<%var2%>)'  
+    'modelica_integer_max((modelica_integer)<%var1%>,(modelica_integer)<%var2%>)'
   
   case CALL(tuple_=false, builtin=true, ty = ET_REAL(),
             path=IDENT(name="min"), expLst={e1,e2}) then
     let var1 = daeExp(e1, context, &preExp, &varDecls)
     let var2 = daeExp(e2, context, &preExp, &varDecls)
-    'std::min(<%var1%>,<%var2%>)'
+    'fmin(<%var1%>,<%var2%>)'
+  
+  case CALL(tuple_=false, builtin=true,
+            path=IDENT(name="min"), expLst={e1,e2}) then
+    let var1 = daeExp(e1, context, &preExp, &varDecls)
+    let var2 = daeExp(e2, context, &preExp, &varDecls)
+    'modelica_integer_min((modelica_integer)<%var1%>,(modelica_integer)<%var2%>)'
   
   case CALL(tuple_=false, builtin=true,
             path=IDENT(name="abs"), expLst={e1}, ty = ET_INT()) then
     let var1 = daeExp(e1, context, &preExp, &varDecls)
-    'std::abs(<%var1%>)'
+    'labs(<%var1%>)'
   
   case CALL(tuple_=false, builtin=true,
             path=IDENT(name="abs"), expLst={e1}) then
@@ -5308,109 +5437,130 @@ end daeExpSize;
 
 template daeExpReduction(Exp exp, Context context, Text &preExp /*BUFP*/,
                          Text &varDecls /*BUFP*/)
- "Generates code for a reduction expression."
+ "Generates code for a reduction expression. The code is quite messy because it handles all
+  special reduction functions (list, listReverse, array) and handles both list and array as input"
 ::=
-match exp
-case REDUCTION(path = IDENT(name = name as "listReverse"), range = range)
-case REDUCTION(path = IDENT(name = name as "list"), range = range) then
+  match exp
+  case r as REDUCTION(reductionInfo=ri as REDUCTIONINFO(__),iterators={iter as REDUCTIONITER(__)}) then
   let &tmpVarDecls = buffer ""
   let &tmpExpPre = buffer ""
   let &bodyExpPre = buffer ""
   let &guardExpPre = buffer ""
-  let acc = tempDecl("modelica_metatype", &tmpVarDecls)
-  let resHead = tempDecl("modelica_metatype", &varDecls)
-  let resTail = match name case "list" then tempDecl("modelica_metatype*", &tmpVarDecls)
-  let lstExp = daeExp(range, context, &tmpExpPre, &tmpVarDecls)
-  let bodyExp = daeExp(expr, context, &bodyExpPre, &tmpVarDecls)
-  let guardCond = match guardExp case SOME(grd) then daeExp(grd, context, &guardExpPre, &tmpVarDecls)
-  let iteratorName = contextIteratorName(ident, context)
-  let &preExp += <<
-  { /* "<%name%>" reduction */
-    <%tmpVarDecls%>
-    modelica_metatype <%iteratorName%>;
-    <%tmpExpPre%>
-    <%acc%> = <%lstExp%>;
-    <% match name
-       case "list" then
-         <<
-         <%resHead%> = 0;
-         <%resTail%> = &<%resHead%>;
-         >>
-       case "listReverse" then
-         '<%resHead%> = mmc_mk_nil();'
-    %>
-    while (!listEmpty(<%acc%>)) {
-      <%iteratorName%> = MMC_CAR(<%acc%>);
-      <% if guardExp then
+  let &rangeExpPre = buffer ""
+  let stateVar = if not acceptMetaModelicaGrammar() then tempDecl("state", &varDecls /*BUFD*/)
+  let identType = expTypeFromExpModelica(iter.exp)
+  let arrayType = expTypeFromExpArray(iter.exp)
+  let arrayTypeResult = expTypeFromExpArray(r)
+  let loopVar = match identType
+    case "modelica_metatype" then tempDecl(identType,&tmpVarDecls)
+    else tempDecl(arrayType,&tmpVarDecls)
+  let firstIndex = match identType case "modelica_metatype" then "" else tempDecl("int",&tmpVarDecls)
+  let arrIndex = match ri.path case IDENT(name="array") then tempDecl("int",&tmpVarDecls)
+  let foundFirst = if not ri.defaultValue then tempDecl("int",&tmpVarDecls)
+  let rangeExp = daeExp(iter.exp,context,&rangeExpPre,&tmpVarDecls)
+  let resType = expTypeArrayIf(typeof(exp))
+  let res = "_$reductionFoldTmpB"
+  let &tmpVarDecls += '<%resType%> <%res%>;<%\n%>'
+  let resTmp = tempDecl(resType,&varDecls)
+  let &preDefault = buffer ""
+  let resTail = match ri.path case IDENT(name="list") then tempDecl("modelica_metatype*",&tmpVarDecls)
+  let defaultValue = match ri.path case IDENT(name="array") then "" else match ri.defaultValue
+    case SOME(v) then daeExp(valueExp(v),context,&preDefault,&tmpVarDecls)
+    end match
+  let guardCond = match iter.guardExp case SOME(grd) then daeExp(grd, context, &guardExpPre, &tmpVarDecls) else "1"
+  let empty = match identType case "modelica_metatype" then 'listEmpty(<%loopVar%>)' else '0 == size_of_dimension_base_array(<%loopVar%>, 1)'
+  let length = match identType case "modelica_metatype" then 'listLength(<%loopVar%>)' else 'size_of_dimension_base_array(<%loopVar%>, 1)'
+  let reductionBodyExpr = "_$reductionFoldTmpA"
+  let bodyExprType = expTypeArrayIf(typeof(r.expr))
+  let reductionBodyExprWork = daeExp(r.expr, context, &bodyExpPre, &tmpVarDecls)
+  let &tmpVarDecls += '<%bodyExprType%> <%reductionBodyExpr%>;<%\n%>'
+  let &bodyExpPre += '<%reductionBodyExpr%> = <%reductionBodyExprWork%>;<%\n%>'
+  let foldExp = match ri.path
+    case IDENT(name="list") then
+    <<
+    *<%resTail%> = mmc_mk_cons(<%reductionBodyExpr%>,0);
+    <%resTail%> = &MMC_CDR(*<%resTail%>);
+    >>
+    case IDENT(name="listReverse") then // This is too easy; the damn list is already in the correct order
+      '<%res%> = mmc_mk_cons(<%reductionBodyExpr%>,<%res%>);'
+    case IDENT(name="array") then
+      '*(<%arrayTypeResult%>_element_addr1(&<%res%>, 1, <%arrIndex%>++)) = <%reductionBodyExpr%>;'
+    else match ri.foldExp case SOME(fExp) then
+      let &foldExpPre = buffer ""
+      let fExpStr = daeExp(fExp, context, &bodyExpPre, &tmpVarDecls)
+      if not ri.defaultValue then
       <<
+      if (<%foundFirst%>) {
+        <%res%> = <%fExpStr%>;
+      } else {
+        <%res%> = <%reductionBodyExpr%>;
+        <%foundFirst%> = 1;
+      }
+      >>
+      else '<%res%> = <%fExpStr%>;'
+  let firstValue = match ri.path
+     case IDENT(name="array") then
+     <<
+     <%arrIndex%> = 1;
+     simple_alloc_1d_<%arrayTypeResult%>(&<%res%>,<%length%>);
+     >>
+     else if ri.defaultValue then
+     <<
+     <%&preDefault%>
+     <%res%> = <%defaultValue%>; /* defaultValue */
+     >>
+     else
+     <<
+     <%foundFirst%> = 0; /* <%dotPath(ri.path)%> lacks default-value */
+     >>
+  let iteratorName = contextIteratorName(iter.id, context)
+  let loopHead = match identType
+    case "modelica_metatype" then
+    <<
+    while (!<%empty%>) {
+      <%identType%> <%iteratorName%>;
+      <%iteratorName%> = MMC_CAR(<%loopVar%>);
+      <%loopVar%> = MMC_CDR(<%loopVar%>);
+    >>
+    else
+    <<
+    while (<%firstIndex%> <= size_of_dimension_<%arrayType%>(<%loopVar%>, 1)) {
+      <%identType%> <%iteratorName%>;
+      <%iteratorName%> = *(<%arrayType%>_element_addr1(&<%loopVar%>, 1, <%firstIndex%>++));
+      <%if not acceptMetaModelicaGrammar() then '<%stateVar%> = get_memory_state();'%>
+    >>
+  let loopTail = match identType
+     case "modelica_metatype" then "}"
+     else if not acceptMetaModelicaGrammar() then 'restore_memory_state(<%stateVar%>);<%\n%>}' else "}"
+  let &preExp += <<
+  {
+    <%&tmpVarDecls%>
+    <%&rangeExpPre%>
+    <%loopVar%> = <%rangeExp%>;
+    <% if firstIndex then '<%firstIndex%> = 1;' %>
+    <%firstValue%>
+    <% if resTail then '<%resTail%> = &<%res%>;' %>
+    <%loopHead%>
       <%&guardExpPre%>
       if (<%guardCond%>) {
-      >>
-      else '{' %>
-        <%bodyExpPre%>
-        <% match name
-         case "list" then // Let's save some bytes from being garbage by using runtime trickery. We get a little bit of overhead from filling the CDR with 0 and patching it as we go, but lower memory overhead should make up for it.
-           <<
-           *<%resTail%> = mmc_mk_cons(<%bodyExp%>,0);
-           <%resTail%> = &MMC_CDR(*<%resTail%>);
-           >>
-         case "listReverse" then // This is too easy; the damn list is already in the correct order
-           '<%resHead%> = mmc_mk_cons(<%bodyExp%>,<%resHead%>);'
-        %>
+        <%&bodyExpPre%>
+        <%foldExp%>
       }
-      <%acc%> = MMC_CDR(<%acc%>);
-    }
-    <% match name case "list" then '*<%resTail%> = mmc_mk_nil();' %>
+    <%loopTail%>
+    <% if not ri.defaultValue then 'if (!<%foundFirst%>) MMC_THROW();' %>
+    <% if resTail then '*<%resTail%> = mmc_mk_nil();' %>
+    <% resTmp %> = <% res %>;
   }<%\n%>
   >>
-  resHead
-// Array reductions
-case REDUCTION(path = IDENT(name = op)) then
-  let identType = expTypeFromExpModelica(expr)
-  let accFun = daeExpReductionFnName(op, identType)
-  let startValue = match defaultValue
-    case SOME(v) then daeExp(valueExp(v),context,&preExp,&varDecls)
-    else 'UNKNOWN_START_VALUE;<%\n%>'
-  let res = tempDecl(identType, &varDecls)
-  let &tmpExpPre = buffer ""
-  let tmpExpVar = daeExp(expr, context, &tmpExpPre, &varDecls)
-  let cast = match accFun case "max" then "(modelica_real)"
-                          case "min" then "(modelica_real)"
-                          else ""
-  let body =
-    <<
-    <%tmpExpPre%>
-    <%res%> = <%accFun%>(<%cast%>(<%res%>), <%cast%>(<%tmpExpVar%>));
-    >>
-  let &preExp +=
-    <<
-    <%res%> = <%startValue%>;
-    <%daeExpReductionLoop(exp, body, context, &varDecls)%><%\n%>
-    >>
-  res
+  resTmp
 end daeExpReduction;
 
-template daeExpReductionLoop(Exp exp, Text &body, Context context, Text &varDecls)
- "Generates code for the loop part of a reduction expression by using the
-  appropriate for loop template."
-::=
-match exp
-
-case REDUCTION(range = RANGE(__)) then
-  let identType = expTypeModelica(range.ty)
-  let identTypeShort = expTypeFromExpShort(expr)
-  algStmtForRange_impl(range, ident, identType, identTypeShort, body, context, &varDecls)
-case REDUCTION(range = range) then
-  let identType = expTypeFromExpModelica(expr)
-  let arrayType = expTypeFromExpArray(expr)
-  algStmtForGeneric_impl(range, ident, identType, arrayType, false, body, context, &varDecls)
-end daeExpReductionLoop;
-  
-
-template daeExpReductionFnName(String reduction_op, String type)
+template daeExpReductionFnName(Path path, String type)
  "Helper to daeExpReduction."
 ::=
-  match reduction_op
+  match path
+  case id as IDENT(__) then
+  match id.name
   case "sum" then
     match type
     case "modelica_integer" then "reduction_sum"
@@ -5423,7 +5573,9 @@ template daeExpReductionFnName(String reduction_op, String type)
     case "modelica_real" then "reduction_product"
     else "INVALID_TYPE"
     end match  
-  else reduction_op
+  else id.name
+  end match
+  else '<%\n%>#error "daeExpReductionFnName not implemented for <%dotPath(path)%>"<%\n%>'
 end daeExpReductionFnName;
 
 
@@ -5905,7 +6057,7 @@ template expTypeFromExpFlag(Exp exp, Integer flag)
   case c as CREF(__)
   case c as CODE(__)     then expTypeFlag(c.ty, flag)
   case ASUB(__)          then expTypeFromExpFlag(exp, flag)
-  case REDUCTION(__)     then expTypeFromExpFlag(expr, flag)
+  case REDUCTION(__)     then expTypeFlag(typeof(exp), flag)
   case BOX(__)
   case CONS(__)
   case LIST(__)
@@ -6090,7 +6242,7 @@ template assertCommon(Exp condition, Exp message, Context context, Text &varDecl
   if (!<%condVar%>) {
     <%preExpMsg%>
     omc_fileInfo info = {<%infoArgs(info)%>};
-    MODELICA_ASSERT(info, <%msgVar%>);
+    MODELICA_ASSERT(info, <%if acceptMetaModelicaGrammar() then 'MMC_STRINGDATA(<%msgVar%>)' else msgVar%>);
   }
   >>
 end assertCommon;
@@ -6100,6 +6252,7 @@ template literalExpConst(Exp lit, Integer index) "These should all be declared s
   let name = '_OMC_LIT<%index%>'
   let tmp = '_OMC_LIT_STRUCT<%index%>'
   let meta = 'static modelica_metatype /* const */ <%name%>'
+
   match lit
   case SCONST(__) then
     let escstr = Util.escapeModelicaStringToCString(string)

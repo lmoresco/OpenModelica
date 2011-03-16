@@ -4,27 +4,49 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
 
 TARGET = OMPlot
 TEMPLATE = app
 
-SOURCES += main.cpp\
-        plotwindow.cpp \
-    ../../c_runtime/read_matlab4.c
+SOURCES += main.cpp \
+    ../../c_runtime/read_matlab4.c \
+    Plot.cpp \
+    PlotCanvas.cpp \
+    PlotZoomer.cpp \
+    Legend.cpp \
+    PlotPanner.cpp \
+    PlotGrid.cpp \
+    PlotCurve.cpp \
+    PlotPicker.cpp \
+    PlotWindow.cpp
 
-HEADERS  +=\
-plotwindow.h \
-    ../../c_runtime/read_matlab4.h
-
+HEADERS  += ../../c_runtime/read_matlab4.h \
+    Plot.h \
+    PlotCanvas.h \
+    PlotZoomer.h \
+    Legend.h \
+    PlotPanner.h \
+    PlotGrid.h \
+    PlotCurve.h \
+    PlotPicker.h \
+    PlotWindow.h
 
 win32 {
-  LIBS += -L $$(OMDEV)/lib/qwt-6.0.0-mingw/lib \ 
-        -lqwtd
-
-  INCLUDEPATH += $$(OMDEV)/lib/qwt-6.0.0-mingw/include
+LIBS += -L$$(OMDEV)/lib/qwt-5.2.1-mingw/lib -lqwtd5
+INCLUDEPATH += $$(OMDEV)/lib/qwt-5.2.1-mingw/include
 } else {
   include(OMPlotGUI.config)
 }
 
+INCLUDEPATH += .
+
+CONFIG += warn_off
+
 DESTDIR = ../bin
+
+UI_DIR = ../generatedfiles/ui
+
+MOC_DIR = ../generatedfiles/moc
+
+RCC_DIR = ../generatedfiles/rcc

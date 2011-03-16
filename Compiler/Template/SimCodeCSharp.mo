@@ -227,7 +227,7 @@ algorithm
   matchcontinue(in_txt, in_a_modelName)
     local
       Tpl.Text txt;
-      Absyn.Ident i_name;
+      String i_name;
       Absyn.Path i_path;
 
     case ( txt,
@@ -5066,6 +5066,7 @@ algorithm
   matchcontinue(in_txt, in_a_it)
     local
       Tpl.Text txt;
+      String i_name_1;
       Absyn.Path i_path;
       Absyn.Ident i_name;
 
@@ -5078,9 +5079,9 @@ algorithm
       then txt;
 
     case ( txt,
-           Absyn.IDENT(name = i_name) )
+           Absyn.IDENT(name = i_name_1) )
       equation
-        txt = Tpl.writeStr(txt, i_name);
+        txt = Tpl.writeStr(txt, i_name_1);
       then txt;
 
     case ( txt,
@@ -5105,6 +5106,7 @@ algorithm
   matchcontinue(in_txt, in_a_it)
     local
       Tpl.Text txt;
+      String i_name_1;
       Absyn.Path i_path;
       Absyn.Ident i_name;
       String ret_1;
@@ -5120,9 +5122,9 @@ algorithm
       then txt;
 
     case ( txt,
-           Absyn.IDENT(name = i_name) )
+           Absyn.IDENT(name = i_name_1) )
       equation
-        ret_1 = System.stringReplace(i_name, "_", "__");
+        ret_1 = System.stringReplace(i_name_1, "_", "__");
         txt = Tpl.writeStr(txt, ret_1);
       then txt;
 
@@ -6310,7 +6312,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.REDUCTION(path = _),
+           DAE.REDUCTION(reductionInfo = _),
            _,
            a_preExp,
            _ )

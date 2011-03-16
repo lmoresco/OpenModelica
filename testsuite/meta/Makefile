@@ -3,6 +3,7 @@ TEST = ../rtest -v
 
 TESTFILES = \
 AlgPatternm.mos \
+AllWild.mos \
 BuiltinArray.mos \
 BuiltinBoolean.mos \
 BuiltinInteger.mos \
@@ -31,7 +32,9 @@ List3.mos \
 List4.mo \
 List5.mo \
 ListInteractive.mos \
-ListReduction.mo \
+ListReductionCodegen.mo \
+ListReductionDimError.mo \
+ListReductionInterpret.mo \
 MatchCase1.mos \
 MatchCase2.mos \
 MatchCase3.mos \
@@ -72,6 +75,7 @@ PartialFn13.mos \
 PartialFn14.mos \
 PartialFn15.mo \
 Polymorphic.mos \
+Polymorphic2.mos \
 Recursive.mos \
 Shadowing1.mos \
 Shadowing2.mos \

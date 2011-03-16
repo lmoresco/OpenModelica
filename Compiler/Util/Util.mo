@@ -2198,6 +2198,117 @@ algorithm
   end matchcontinue;
 end listMap8;
 
+
+/* TODO: listMap9 ... listMapN can also be created upon request... */
+public function listMap7list "function listMap7
+  Takes a list and a function and seven extra arguments passed to the function.
+  The function produces one new value which is used for creating a new list."
+  input list<Type_a> lst;
+  input listMap7Func func;
+  input Type_b a1;
+  input Type_c a2;
+  input Type_d a3;
+  input Type_e a4;
+  input Type_f a5;
+  input Type_g a6;
+  input Type_h a7;
+  output list<list<Type_i>> outLst;
+  replaceable type Type_a subtypeof Any;
+  partial function listMap7Func
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_c inTypeC;
+    input Type_d inTypeD;
+    input Type_e inTypeE;
+    input Type_f inTypeF;
+    input Type_g inTypeG;
+    input Type_h inTypeH;
+    output list<Type_i> outTypeI;
+  end listMap7Func;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_c subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  replaceable type Type_e subtypeof Any;
+  replaceable type Type_f subtypeof Any;
+  replaceable type Type_g subtypeof Any;
+  replaceable type Type_h subtypeof Any;
+  replaceable type Type_i subtypeof Any;
+algorithm
+  outLst:=
+  matchcontinue (lst,func,a1,a2,a3,a4,a5,a6,a7)
+    local
+      list<Type_i> f_1;
+      list<Type_i> r_1;
+      Type_a f;
+      list<Type_a> r;
+
+    case ({},_,_,_,_,_,_,_,_) then {};
+    case ((f :: r),func,a1,a2,a3,a4,a5,a6,a7)
+      equation
+        f_1 = func(f, a1,a2,a3,a4,a5,a6,a7);
+        r_1 = listMap7list(r, func, a1,a2,a3,a4,a5,a6,a7);
+      then
+        (f_1 :: r_1);
+  end matchcontinue;
+end listMap7list;
+
+/* TODO: listMap9 ... listMapN can also be created upon request... */
+public function listMap8list "function listMap7
+  Takes a list and a function and seven extra arguments passed to the function.
+  The function produces one new value which is used for creating a new list."
+  input list<Type_a> lst;
+  input listMap7Func func;
+  input Type_b a1;
+  input Type_c a2;
+  input Type_d a3;
+  input Type_e a4;
+  input Type_f a5;
+  input Type_g a6;
+  input Type_h a7;
+  input Type_i a8;
+  output list<list<Type_j>> outLst;
+  partial function listMap7Func
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_c inTypeC;
+    input Type_d inTypeD;
+    input Type_e inTypeE;
+    input Type_f inTypeF;
+    input Type_g inTypeG;
+    input Type_h inTypeH;
+    input Type_i inTypeI;
+    output list<Type_j> outTypeI;
+  end listMap7Func;
+  replaceable type Type_a subtypeof Any;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_c subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  replaceable type Type_e subtypeof Any;
+  replaceable type Type_f subtypeof Any;
+  replaceable type Type_g subtypeof Any;
+  replaceable type Type_h subtypeof Any;
+  replaceable type Type_i subtypeof Any;
+  replaceable type Type_j subtypeof Any;
+algorithm
+  outLst:=
+  matchcontinue (lst,func,a1,a2,a3,a4,a5,a6,a7,a8)
+    local
+      list<Type_i> f_1;
+      list<Type_i> r_1;
+      Type_a f;
+      list<Type_a> r;
+
+    case ({},_,_,_,_,_,_,_,_,_) then {};
+    case ((f :: r),func,a1,a2,a3,a4,a5,a6,a7,a8)
+      equation
+        f_1 = func(f, a1,a2,a3,a4,a5,a6,a7,a8);
+        r_1 = listMap8list(r, func, a1,a2,a3,a4,a5,a6,a7,a8);
+      then
+        (f_1 :: r_1);
+  end matchcontinue;
+end listMap8list;
+
+
 public function listMap32 "function listMap32
   Takes a list and a function and three extra arguments passed to the function.
   The function produces two values which is used for creating two new lists."
@@ -3331,6 +3442,8 @@ public function listThreadMap3 "function: listThreadMap
   replaceable type Type_a subtypeof Any;
   replaceable type Type_b subtypeof Any;
   replaceable type Type_d subtypeof Any;
+  replaceable type Type_e subtypeof Any;
+  replaceable type Type_f subtypeof Any;
   partial function FuncTypeType_aType_bToType_c
     input Type_a inTypeA;
     input Type_b inTypeB;
@@ -3364,6 +3477,121 @@ algorithm
         (fr :: res);
   end match;
 end listThreadMap3;
+
+
+public function listThread3Map3 "function: listThreadMap
+  Takes two lists and a function and threads (interleaves) and maps the elements of the two lists
+  creating a new list.
+  the argument 4 - 6 are passed to the functioncall
+  Example: listThreadMap({1,2},{3,4},intAdd) => {1+3, 2+4}"
+  input list<Type_a> inTypeALst;
+  input list<Type_b> inTypeBLst;
+  input list<Type_c> inTypeCLst;
+  input FuncTypeType_aType_bType_cTotypeH inFuncTypeTypeATypeBToTypeH;
+  input Type_d inTypeD;
+  input Type_e inTypeE;
+  input Type_f inTypeF;
+  output list<Type_h> outTypeHLst;
+  replaceable type Type_a subtypeof Any;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_c subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  replaceable type Type_e subtypeof Any;
+  replaceable type Type_f subtypeof Any;
+  replaceable type Type_h subtypeof Any;
+  partial function FuncTypeType_aType_bType_cTotypeH
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_c inTypeC;
+    input Type_d inTypeD;
+    input Type_e inTypeE;
+    input Type_f inTypeF;
+    output Type_h outTypeH;
+  end FuncTypeType_aType_bType_cTotypeH;
+algorithm
+  outTypeHLst:=
+  match (inTypeALst,inTypeBLst,inTypeCLst,inFuncTypeTypeATypeBToTypeH,inTypeD,inTypeE,inTypeF)
+    local
+      Type_c fc;
+      list<Type_c> rc;
+      Type_a fa;
+      list<Type_a> ra;
+      Type_b fb;
+      list<Type_b> rb;
+      FuncTypeType_aType_bType_cTotypeH fn;
+      Type_d fd;
+      Type_e fe;
+      Type_f ff;
+      Type_h fr;
+      list<Type_h> res;
+    case ({},{},_,_,_,_,_) then {};
+    case ((fa :: ra),(fb :: rb),(fc :: rc),fn,fd,fe,ff)
+      equation
+        fr = fn(fa, fb, fc, fd, fe, ff);
+        res = listThread3Map3(ra, rb, rc, fn, fd, fe, ff);
+      then
+        (fr :: res);
+  end match;
+end listThread3Map3;
+
+public function listlistThreadMap4 "function: listThreadMap
+  Takes two lists and a function and threads (interleaves) and maps the elements of the two lists
+  creating a new list.
+  the argument 4 - 6 are passed to the functioncall
+  Example: listThreadMap({1,2},{3,4},intAdd) => {1+3, 2+4}"
+  input list<Type_a> inTypeALst;
+  input list<Type_b> inTypeBLst;
+  input list<Type_c> inTypeCLst;
+  input FuncTypeType_aType_bType_cTotypeH inFuncTypeTypeATypeBToTypeH;
+  input Type_d inTypeD;
+  input Type_e inTypeE;
+  input Type_f inTypeF;
+  input Type_g inTypeG;
+  output list<Type_h> outTypeHLst;
+  replaceable type Type_a subtypeof Any;
+  replaceable type Type_b subtypeof Any;
+  replaceable type Type_c subtypeof Any;
+  replaceable type Type_d subtypeof Any;
+  replaceable type Type_e subtypeof Any;
+  replaceable type Type_f subtypeof Any;
+  replaceable type Type_g subtypeof Any;
+  replaceable type Type_h subtypeof Any;
+  partial function FuncTypeType_aType_bType_cTotypeH
+    input Type_a inTypeA;
+    input Type_b inTypeB;
+    input Type_c inTypeB;
+    input Type_d inTypeD;
+    input Type_e inTypeE;
+    input Type_f inTypeF;
+    input Type_g inTypeG;
+    output Type_h outTypeH;
+  end FuncTypeType_aType_bType_cTotypeH;
+algorithm
+  outTypeHLst:=
+  match (inTypeALst,inTypeBLst,inTypeCLst,inFuncTypeTypeATypeBToTypeH,inTypeD,inTypeE,inTypeF,inTypeG)
+    local
+      Type_c fc;
+      list<Type_c> rc;
+      Type_a fa;
+      list<Type_a> ra;
+      Type_b fb;
+      list<Type_b> rb;
+      FuncTypeType_aType_bType_cTotypeH fn;
+      Type_d fd;
+      Type_e fe;
+      Type_f ff;
+      Type_g fg;
+      Type_h fr;
+      list<Type_h> res;
+    case ({},{},_,_,_,_,_,_) then {};
+    case ((fa :: ra),(fb :: rb),(fc :: rc),fn,fd,fe,ff,fg)
+      equation
+        fr = fn(fa, fb, fc, fd, fe, ff,fg);
+        res = listlistThreadMap4(ra, rb, rc, fn, fd, fe, ff,fg);
+      then
+        (fr :: res);
+  end match;
+end listlistThreadMap4;
 
 
 public function listThreadMap32 "function: listThreadMap32
@@ -6154,33 +6382,99 @@ algorithm inOption := matchcontinue (unOption)
   end matchcontinue;
 end makeOptIfNonEmptyList;
 
-public function listSplitOnTrue "Splits a list into two sublists depending on predicate function"
-  input list<Type_a> lst;
-  input predicateFunc f;
-  output list<Type_a> tlst;
-  output list<Type_a> flst;
+public function listSplitOnTrue
+  "Splits a list into two sublists depending on predicate function."
+  input list<Type_a> inList;
+  input PredicateFunc inFunc;
+  output list<Type_a> outTrueList;
+  output list<Type_a> outFalseList;
 
   replaceable type Type_a subtypeof Any;
-  partial function predicateFunc
-    input Type_a inTypeA1;
-    output Boolean outBoolean;
-  end predicateFunc;
+
+  partial function PredicateFunc
+    input Type_a inElement;
+    output Boolean outResult;
+  end PredicateFunc;
 algorithm
-  (tlst,flst) := matchcontinue(lst,f)
-  local Type_a l;
-    case({},f) then ({},{});
-
-    case(l::lst,f) equation
-      true = f(l);
-      (tlst,flst) = listSplitOnTrue(lst,f);
-    then (l::tlst,flst);
-
-    case(l::lst,f) equation
-      false = f(l);
-      (tlst,flst) = listSplitOnTrue(lst,f);
-    then (tlst,l::flst);
-  end matchcontinue;
+  (outTrueList, outFalseList) := 
+    listSplitOnTrue_tail(inList, inFunc, {}, {});
 end listSplitOnTrue;
+  
+public function listSplitOnTrue_tail
+  "Helper function to listSplitOnTrue."
+  input list<Type_a> inList;
+  input PredicateFunc inFunc;
+  input list<Type_a> inTrueList;
+  input list<Type_a> inFalseList;
+  output list<Type_a> outTrueList;
+  output list<Type_a> outFalseList;
+
+  replaceable type Type_a subtypeof Any;
+
+  partial function PredicateFunc
+    input Type_a inElement;
+    output Boolean outResult;
+  end PredicateFunc;
+algorithm
+  (outTrueList, outFalseList) := 
+  match(inList, inFunc, inTrueList, inFalseList)
+    local
+      Type_a e;
+      list<Type_a> rest_e, tl, fl;
+      Boolean pred;
+
+    case ({}, _, tl, fl) 
+      then (listReverse(tl), listReverse(fl));
+
+    case (e :: rest_e, _, tl, fl)
+      equation
+        pred = inFunc(e);
+        (tl, fl) = listSplitOnTrue_tail2(e, rest_e, pred, inFunc, tl, fl);
+      then
+        (tl, fl);
+  end match;
+end listSplitOnTrue_tail;
+
+public function listSplitOnTrue_tail2
+  "Helper function to listSplitOnTrue."
+  input Type_a inHead;
+  input list<Type_a> inRest;
+  input Boolean inPred;
+  input PredicateFunc inFunc;
+  input list<Type_a> inTrueList;
+  input list<Type_a> inFalseList;
+  output list<Type_a> outTrueList;
+  output list<Type_a> outFalseList;
+
+  replaceable type Type_a subtypeof Any;
+
+  partial function PredicateFunc
+    input Type_a inElement;
+    output Boolean outResult;
+  end PredicateFunc;
+algorithm
+  (outTrueList, outFalseList) := 
+  match(inHead, inRest, inPred, inFunc, inTrueList, inFalseList)
+    local
+      Boolean pred;
+      Type_a e;
+      list<Type_a> rl, tl, fl;
+
+    case (_, _, true, _, tl, fl)
+      equation
+        tl = inHead :: tl;
+        (tl, fl) = listSplitOnTrue_tail(inRest, inFunc, tl, fl);
+      then
+        (tl, fl);
+
+    case (_, _, false, _, tl, fl)
+      equation
+        fl = inHead :: fl;
+        (tl, fl) = listSplitOnTrue_tail(inRest, inFunc, tl, fl);
+      then
+        (tl, fl);
+  end match;
+end listSplitOnTrue_tail2;
 
 public function listSplitOnTrue1 "Splits a list into two sublists depending on predicate function
 which takes one extra argument "
@@ -6795,7 +7089,6 @@ algorithm
   // C cannot handle newline in string constants
   cString := System.stringReplace(System.escapedString(modelicaString), "\n", "\\n");
 end escapeModelicaStringToCString;
-
 
 public function listlistTranspose "{{1,2,3}{4,5,6}} => {{1,4},{2,5},{3,6}}"
   input list<list<Type_a>> inLst;

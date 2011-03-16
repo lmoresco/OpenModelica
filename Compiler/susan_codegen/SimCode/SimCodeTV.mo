@@ -225,23 +225,27 @@ package SimCode
 
   uniontype VarInfo
 	  record VARINFO
-	    Integer numHelpVars;
-	    Integer numZeroCrossings;
-	    Integer numTimeEvents;
-	    Integer numStateVars;
-	    Integer numAlgVars;
-	    Integer numIntAlgVars;
-	    Integer numBoolAlgVars;
-	    Integer numParams;
-	    Integer numIntParams;
-	    Integer numBoolParams;
-	    Integer numOutVars;
-	    Integer numInVars;
-	    Integer numResiduals;
-	    Integer numExternalObjects;
-	    Integer numStringAlgVars;
-	    Integer numStringParamVars;
-	    Integer numJacobianVars;
+      Integer numHelpVars;
+      Integer numZeroCrossings;
+      Integer numTimeEvents;
+      Integer numStateVars;
+      Integer numAlgVars;
+      Integer numIntAlgVars;
+      Integer numBoolAlgVars;
+      Integer numAlgAliasVars;
+      Integer numIntAliasVars;
+      Integer numBoolAliasVars;
+      Integer numParams;
+      Integer numIntParams;
+      Integer numBoolParams;
+      Integer numOutVars;
+      Integer numInVars;
+      Integer numResiduals;
+      Integer numExternalObjects;
+      Integer numStringAlgVars;
+      Integer numStringParamVars;
+      Integer numStringAliasVars;
+      Integer numJacobianVars;
 	  end VARINFO;
 	end VarInfo;
 	
@@ -254,11 +258,15 @@ package SimCode
 	    list<SimVar> boolAlgVars;
 	    list<SimVar> inputVars;
 	    list<SimVar> outputVars;
+      list<SimVar> aliasVars;
+      list<SimVar> intAliasVars;
+      list<SimVar> boolAliasVars;	    
 	    list<SimVar> paramVars;
 	    list<SimVar> intParamVars;
 	    list<SimVar> boolParamVars;
 	    list<SimVar> stringAlgVars;
 	    list<SimVar> stringParamVars;
+	    list<SimVar> stringAliasVars;
 	    list<SimVar> extObjVars;
 	    list<SimVar> jacobianVars; //all vars for the matrices A,B,C,D
 	  end SIMVARS;
@@ -479,6 +487,13 @@ package SimCode
       input Integer i;
       output String s;
     end twodigit;
+    
+    function templateError 
+    "Reports a template error via the Error module."
+      input String inErrMsg;
+      output String outErrMsg;
+    end templateError;
+
 end SimCode;
 
 
@@ -598,7 +613,7 @@ package Absyn
       Path path;
     end QUALIFIED;
     record IDENT
-      Ident name;
+      String name;
     end IDENT;
     record FULLYQUALIFIED
       Path path;
@@ -755,12 +770,9 @@ package DAE
       ExpType ty;
     end CODE;
     record REDUCTION
-      Absyn.Path path;
+      ReductionInfo reductionInfo;
       Exp expr;
-      Ident ident;
-      Option<Exp> guardExp;
-      Exp range;
-      Option<Values.Value> defaultValue;
+      ReductionIterators iterators;
     end REDUCTION;
     record END end END;
     record LIST
@@ -805,6 +817,26 @@ package DAE
     end PATTERN;
   end Exp;
   
+  uniontype ReductionIterator
+    record REDUCTIONITER
+      String id;
+      Exp exp;
+      Option<Exp> guardExp;
+      Type ty;
+    end REDUCTIONITER;
+  end ReductionIterator;
+
+  type ReductionIterators = list<ReductionIterator>;
+  
+  uniontype ReductionInfo
+    record REDUCTIONINFO "A separate uniontype containing the information not required by traverseExp, etc"
+      Absyn.Path path "array, sum,..";
+      Type exprType;
+      Option<Values.Value> defaultValue "if there is no default value, the reduction is not defined for 0-length arrays/lists";
+      Option<Exp> foldExp "For example, max(ident,$res) or ident+$res; array() does not use this feature; DO NOT TRAVERSE THIS EXPRESSION!";
+    end REDUCTIONINFO;
+  end ReductionInfo;
+
   uniontype MatchCase
     record CASE
       list<Pattern> patterns "ELSE is handled by not doing pattern-matching";

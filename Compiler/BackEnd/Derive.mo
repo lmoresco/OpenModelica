@@ -350,9 +350,11 @@ algorithm
       Absyn.Path fname;
       DAE.FunctionTree functions;
       list<list<tuple<DAE.Exp, Boolean>>> explstlst,explstlst1;
-      Option<DAE.Exp> guardExp;
+      Option<DAE.Exp> guardExp,foldExp;
       Option<Values.Value> v;
       list<DAE.ExpVar> varLst;
+      DAE.ReductionInfo reductionInfo;
+      DAE.ReductionIterators iters;
 
     case (DAE.ICONST(integer = _),_) then DAE.RCONST(0.0);
     case (DAE.RCONST(real = _),_) then DAE.RCONST(0.0);
@@ -716,12 +718,11 @@ algorithm
       then
         Expression.makeASUB(e,sub);
     
-    case (DAE.REDUCTION(path = a,expr = e1,ident = str,guardExp = guardExp,range = e2,defaultValue = v),(timevars,functions))
+    case (DAE.REDUCTION(reductionInfo = reductionInfo,expr = e1,iterators = iters),(timevars,functions))
       equation
         e1_1 = differentiateExpTime(e1, (timevars,functions));
-        e2_1 = differentiateExpTime(e2, (timevars,functions));
       then
-        DAE.REDUCTION(a,e1_1,str,guardExp,e2_1,v);
+        DAE.REDUCTION(reductionInfo,e1_1,iters);
     
     case (e,_)
       equation
@@ -1217,8 +1218,10 @@ algorithm
       String e_str,s,s2,str,name;
       list<DAE.Exp> expl_1,expl,sub;
       list<Boolean> bLst;
-      Option<DAE.Exp> guardExp;
+      Option<DAE.Exp> guardExp,foldExp;
       Option<Values.Value> v;
+      DAE.ReductionInfo reductionInfo;
+      DAE.ReductionIterators riters;
     
     case (DAE.ICONST(integer = _),_,_) then DAE.RCONST(0.0);
 
@@ -1427,12 +1430,12 @@ algorithm
       then
         Expression.makeASUB(e_1,sub);
     
-    case (DAE.REDUCTION(path = a,expr = e1,ident = str,guardExp = guardExp, range = e2, defaultValue = v),tv,differentiateIfExp)
+      // TODO: Check if we are differentiating a local iterator?
+    case (DAE.REDUCTION(reductionInfo=reductionInfo,expr = e1,iterators = riters),tv,differentiateIfExp)
       equation
         e1_1 = differentiateExp(e1, tv, differentiateIfExp);
-        e2_1 = differentiateExp(e2, tv, differentiateIfExp);
       then
-        DAE.REDUCTION(a,e1_1,str,guardExp,e2_1,v);
+        DAE.REDUCTION(reductionInfo,e1_1,riters);
     
     // derivative of arbitrary function, not dependent of variable, i.e. constant
     /* Caught by rule below...

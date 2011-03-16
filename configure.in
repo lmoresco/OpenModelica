@@ -10,6 +10,7 @@ AC_SUBST(omc_antlr_jar)
 AC_SUBST(antlrinc)
 AC_SUBST(antlrlib)
 AC_SUBST(with_qwt)
+AC_SUBST(with_qwt_suffix)
 AC_SUBST(LIBSOCKET)
 AC_SUBST(LIBNSL)
 AC_SUBST(LIBLPSOLVE55)
@@ -33,6 +34,7 @@ AC_SUBST(WITH_SENDDATA)
 AC_SUBST(QMAKE)
 AC_SUBST(EXE)
 AC_SUBST(RML_TRACE)
+AC_SUBST(SOURCE_REVISION)
 
 if test x"$prefix" = xNONE; then
   PREFIX=`pwd`/build
@@ -318,13 +320,18 @@ AC_CHECK_PROGS(QMAKE,qmake-qt4 qmake-mac qmake,"")
 if test -n "$QMAKE"; then
   AC_MSG_CHECKING([for qmake arguments])
   if test "Darwin" = `uname`; then
-    QMAKE="$QMAKE && \
-      cat Makefile | \
-      sed 's/-arch i386/OMC_ARCH_i386/g' | \
-      sed 's/-arch x86_64/OMC_ARCH_x86_64/g' | \
-      sed 's/-arch//g' | \
-      sed 's/OMC_ARCH_/-arch /' > Makefile.fixed && \
-      mv Makefile.fixed Makefile"
+    echo "#!/bin/sh -x" > ./qmake.sh
+    echo "$QMAKE \$*" >> ./qmake.sh
+    echo 'MAKEFILE=`echo -- $* | grep -o "Makefile@<:@A-Z.a-z@:>@*"`' >> ./qmake.sh
+    echo 'if test -z "$MAKEFILE"; then MAKEFILE=Makefile; fi' >> ./qmake.sh
+    # echo 'echo $MAKEFILE' >> ./qmake.sh
+    echo 'cat $MAKEFILE | \
+      sed "s/-arch i386/OMC_ARCH_i386/g" | \
+      sed "s/-arch x86_64/OMC_ARCH_x86_64/g" | \
+      sed "s/-arch//g" | \
+      sed "s/OMC_ARCH_/-arch /" > $MAKEFILE.fixed && \
+      mv $MAKEFILE.fixed $MAKEFILE' >> qmake.sh
+    QMAKE="sh `pwd`/qmake.sh"
   fi
   AC_MSG_RESULT([$QMAKE])
 fi
@@ -335,9 +342,11 @@ if test -n "$QMAKE"; then
 
   if test x"$with_qwt" = "xcheck"; then
     with_qwt_checked=""
+    with_qwt_suffix=""
     for f in {/usr,/opt,$PREFIX}/include/{qwt,qwt-qt4}/; do
       test -f "$f/qwt.h" && with_qwt="$f" || with_qwt_checked="$with_qwt_checked $f"
     done
+    echo $with_qwt | grep -q -- -qt4 && with_qwt_suffix="-qt4"
   fi
 
   if test x"$with_qwt" = "xno"; then
@@ -434,6 +443,15 @@ AC_ARG_WITH(BOOST, [  --with-BOOST=DIR        With BOOST library in DIR],
 ], [
 AC_MSG_RESULT([Not compiling with BOOST]); USE_MODPAR=""; BOOSTHOME=""
 ])
+
+AC_MSG_CHECKING([for revision])
+SOURCE_REVISION=""
+test -f REVISION && SOURCE_REVISION=`head -n1 REVISION | grep -o @<:@0-9@:>@*`
+test -z "$SOURCE_REVISION" && SOURCE_REVISION=`svn info 2>&1 | grep ^Revision: | cut -d\  -f2`
+test -z "$SOURCE_REVISION" && SOURCE_REVISION="????"
+
+AC_MSG_RESULT([$SOURCE_REVISION])
+
 date=`date "+%Y-%m-%d %H:%M:%S"`
 
 GENERATED_AUTOCONF_FILES="Makefile c_runtime/Makefile mosh/src/Makefile \

@@ -1,3 +1,0 @@
-CLEAN=SymbolicDerivative.{c,h,o,srz} main.o
-OBJS=SymbolicDerivative.o lexer.o parser.o main.o
-include ../common.rml

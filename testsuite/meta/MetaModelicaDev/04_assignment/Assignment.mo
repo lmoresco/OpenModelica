@@ -63,49 +63,22 @@ type VarBnd = tuple<Ident,Value> "Bindings and environments";
 public 
 type Env = list<VarBnd>;
 
-protected function lookup
+protected function lookup "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail."
   input Env inEnv;
   input Ident inIdent;
   output Value outValue;
 algorithm 
-  outValue:=
+  outValue :=
   matchcontinue (inEnv,inIdent)
     local
       Ident id2,id;
       Value value;
       Env rest;
-    case ((id2,value) :: _,id) "lookup returns the value associated with an identifier.
-  If no association is present, lookup will fail."
-      equation 
-        equality(id = id2); then value;
-    case ((id2,_) :: rest,id)
-      equation 
-        failure(equality(id = id2));
-        value = lookup(rest, id); then value;
+    case ((id2,value) :: rest,id)
+      then if id == id2 then value else lookup(rest, id);
   end matchcontinue;
 end lookup;
-
-/* lookup function using if expression 
- * doesn't work in the RML MetaModelica version
- * because both then part and else part are evaluated 
- * disregarding the condition.
- * It does however work in the OMC implementation, but the function
- * needs to work in both implementations.
- */
-/*
-function lookup
-  input Env inEnv;
-  input Ident inIdent;
-  output Value outInteger;
-algorithm
- outInteger:=
-  matchcontinue (inEnv,inIdent)
-    local  Ident id2,id;  Value value;  Env rest;
-    case ( (id2,value) :: rest, id)
-      then  if id ==& id2 then value else lookup(rest,id);
-  end matchcontinue;
-end lookup;
-*/
 
 protected function lookupextend
   input Env inEnv;
@@ -120,28 +93,23 @@ algorithm
       Ident id;
       Value value;
     case (env,id)
-      equation 
+      equation
         failure(_ = lookup(env, id));
       then ((id,0) :: env,0);
     case (env,id)
       equation 
-        value = lookup(env, id); then (env,value);
+        value = lookup(env, id);
+      then (env,value);
   end matchcontinue;
 end lookupextend;
 
 protected function update
-  input Env inEnv;
-  input Ident inIdent;
-  input Value inValue;
+  input Env env;
+  input Ident id;
+  input Value value;
   output Env outEnv;
 algorithm 
-  outEnv := match (inEnv,inIdent,inValue)
-    local
-      Env env;
-      Ident id;
-      Value value;
-    case (env,id,value) then (id,value) :: env; 
-  end match;
+  outEnv := (id,value) :: env;
 end update;
 
 protected function applyBinop
@@ -219,7 +187,7 @@ protected function evals
   input ExpLst inExpLst;
   output Env outEnv;
 algorithm 
-  outEnv:=
+  outEnv :=
   matchcontinue (inEnv,inExpLst)
     local
       Env e,env2,env3,env;

@@ -219,15 +219,15 @@ algorithm
       list<Absyn.EnumLiteral> l;
       Absyn.EnumDef ENUM_COLON;
       Absyn.Path fname;
-      list<Ident> vars;
+      list<Ident> vars,typeVars;
       tuple<String,String> re;
-      String   partialStr, encapsulatedStr, restrictionStr, prefixKeywords;      
+      String   partialStr, encapsulatedStr, restrictionStr, prefixKeywords, tvs;
       
     // adrpo: BEWARE! the prefix keywords HAVE TO BE IN A SPECIFIC ORDER:
     //  ([final] | [redeclare] [final] [inner] [outer]) [replaceable] [encapsulated] [partial] [restriction] name
     // if the order is not the one above the parser will give errors!
     case (i,Absyn.CLASS(name = n,partialPrefix = p,finalPrefix = f,encapsulatedPrefix = e,restriction = r,
-                        body = Absyn.PARTS(classParts = parts,comment = optcmt)),fi,re,io)
+                        body = Absyn.PARTS(typeVars = typeVars,classParts = parts,comment = optcmt)),fi,re,io)
       equation
         is = indentStr(i);
         encapsulatedStr = selectString(e, "encapsulated ", "");
@@ -239,7 +239,8 @@ algorithm
         s5 = unparseStringCommentOption(optcmt);
         // the prefix keywords MUST be in the order below given below! See the function comment.
         prefixKeywords = unparseElementPrefixKeywords(re, finalStr, innerouterStr, encapsulatedStr, partialStr);
-        str = stringAppendList({is,prefixKeywords,restrictionStr," ",n,s5,"\n",s4,is,"end ",n});
+        tvs = Util.if_(Util.isListEmpty(typeVars),"","<"+&Util.stringDelimitList(typeVars,",")+&">");
+        str = stringAppendList({is,prefixKeywords,restrictionStr," ",n,tvs,s5,"\n",s4,is,"end ",n});
       then
         str;
     
@@ -3482,6 +3483,11 @@ algorithm
         Print.printBuf("Absyn.WILD");
       then
         ();
+    case Absyn.ALLWILD()
+      equation
+        Print.printBuf("Absyn.ALLWILD");
+      then
+        ();
 
     case Absyn.CREF_INVALID(componentRef = cr)
       equation
@@ -3552,6 +3558,8 @@ algorithm
       then
         s_3;
     
+    case Absyn.ALLWILD() then "__";
+
     case Absyn.WILD() then "_";
 
     case Absyn.CREF_INVALID(componentRef = cr)
@@ -5295,6 +5303,10 @@ algorithm
         printListAsCorbaString(subscripts, printSubscriptAsCorbaString, ",");
         Print.printBuf(" end Absyn.CREF_IDENT;");
       then ();
+    case Absyn.ALLWILD()
+      equation
+        Print.printBuf("record Absyn.ALLWILD end Absyn.ALLWILD;");
+      then ();
     case Absyn.WILD()
       equation
         Print.printBuf("record Absyn.WILD end Absyn.WILD;");
@@ -5421,10 +5433,12 @@ algorithm
       list<Absyn.Path> functionNames;
       String baseClassName;
       Absyn.Path functionName;
-      list<String> vars;
-    case Absyn.PARTS(classParts,optString)
+      list<String> typeVars,vars;
+    case Absyn.PARTS(typeVars,classParts,optString)
       equation
-        Print.printBuf("record Absyn.PARTS classParts = ");
+        Print.printBuf("record Absyn.PARTS typeVars = {");
+        Print.printBuf(Util.stringDelimitList(typeVars, ","));
+        Print.printBuf("}, classParts = ");
         printListAsCorbaString(classParts, printClassPartAsCorbaString, ",");
         Print.printBuf(", comment = ");
         printStringCommentOption(optString);
