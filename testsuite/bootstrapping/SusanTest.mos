@@ -3,6 +3,8 @@
 // teardown_command: rm -f SusanTest_* Tpl_* SusanTestSmall_* SusanTestSmall.mo
 
 setCommandLineOptions({"+g=MetaModelica","+d=rml,noevalfunc"});
+loadFile("../../Compiler/FrontEnd/Absyn.mo");
+getErrorString();
 loadFile("../../Compiler/Util/Debug.mo");
 getErrorString();
 loadFile("../../Compiler/Util/Error.mo");
@@ -53,6 +55,8 @@ getErrorString();
 
 // Result:
 // {true,true}
+// true
+// ""
 // true
 // ""
 // true
