@@ -4891,25 +4891,40 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -shared -lsim -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) -lf2c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.c -Wl,--out-implib,lib"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".a\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv lib"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".a "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ".lib\n",
+                                    "\n"
+                                }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv modelDescription.xml  "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(" mkdir -p binaries\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " mkdir -p binaries/win32\n",
+                                    "\n"
+                                }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("$(DLLEXT) binaries/win32/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".lib binaries/win32/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" zip -r "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ".fmu binaries modelDescription.xml\n",
+                                    "\n"
+                                }, true));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.cpp: "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);

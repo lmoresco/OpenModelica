@@ -4454,7 +4454,7 @@ algorithm
     case ( txt,
            SimCode.SES_SIMPLE_ASSIGN(cref = i_cref) :: rest )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (sim_verbose) { printf(\"Setting variable start value: %s(start=%f)\\n\", \""));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (sim_verbose >= LOG_SOLVER) { printf(\"Setting variable start value: %s(start=%f)\\n\", \""));
         txt = cref(txt, i_cref);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\", "));
         txt = cref(txt, i_cref);
@@ -6075,7 +6075,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (change("));
         txt = cref(txt, i_var);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")) { if (sim_verbose) { cout << \"Discrete Var "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")) { if (sim_verbose >= LOG_EVENTS) { cout << \"Discrete Var "));
         txt = crefStr(txt, i_var);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : \" << ("));
         txt = crefType(txt, i_var);
@@ -6093,7 +6093,7 @@ algorithm
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("if (change("));
         txt = cref(txt, i_var);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")) { if (sim_verbose) { cout << \"Discrete Var "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")) { if (sim_verbose >= LOG_EVENTS) { cout << \"Discrete Var "));
         txt = crefStr(txt, i_var);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" : \" << ("));
         txt = crefType(txt, i_var);
