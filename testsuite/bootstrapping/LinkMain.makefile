@@ -11,7 +11,7 @@ ifeq ("ARCH","$(DIST)")
 CFLAGS=-O3 -g -mfpmath=sse -fPIC
 LDFLAGS= -lrt -llpsolve55
 else
-CFLAGS=-O3 -g -march=native -mfpmath=sse -fPIC
+CFLAGS=-O0 -g -falign-functions -march=native -mfpmath=sse -fPIC
 LDFLAGS= -lrt -llpsolve55 -lcolamd
 endif
 endif
@@ -33,3 +33,7 @@ Main_main2.o: Main_main2.c
 Main_main2.c: Main_main.c
 	perl ../../build/share/omc/scripts/convert_lines.pl $< $@.tmp
 	mv $@.tmp $@
+
+pre:
+	$(CXX) $(CFLAGS) -E $(CPPFLAGS) Main_main.c
+  

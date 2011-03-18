@@ -344,7 +344,7 @@ checkModel(DP); getErrorString();
 //   Q := Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T(<matrix>[R.T[1,1],R.T[1,2],R.T[1,3];R.T[2,1],R.T[2,2],R.T[2,3];R.T[3,1],R.T[3,2],R.T[3,3]],{Q_guess[1],Q_guess[2],Q_guess[3],Q_guess[4]});
 // end Modelica.Mechanics.MultiBody.Frames.to_Q;
 // 
-// function Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration
+// function Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration
 //   input Real[3] r(quantity = \"Length\", unit = \"m\") \"Position vector from world frame to actual point, resolved in world frame\";
 //   input enumeration(NoGravity, UniformGravity, PointGravity) gravityType \"Type of gravity field\";
 //   input Real[3] g(quantity = \"Acceleration\", unit = \"m/s2\") \"Constant gravity acceleration, resolved in world frame, if gravityType=1\";
@@ -352,7 +352,7 @@ checkModel(DP); getErrorString();
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
 //   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
-// end Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration;
+// end Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
 //   input Real material1;
@@ -2925,7 +2925,7 @@ checkModel(DP); getErrorString();
 //   boxBody1.body.Q[3] = 0.0;
 //   boxBody1.body.Q[4] = 1.0;
 //   end if;
-//   boxBody1.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration({boxBody1.body.frame_a.r_0[1],boxBody1.body.frame_a.r_0[2],boxBody1.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody1.body.frame_a.R,{boxBody1.body.r_CM[1],boxBody1.body.r_CM[2],boxBody1.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
+//   boxBody1.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration({boxBody1.body.frame_a.r_0[1],boxBody1.body.frame_a.r_0[2],boxBody1.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody1.body.frame_a.R,{boxBody1.body.r_CM[1],boxBody1.body.r_CM[2],boxBody1.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
 //   boxBody1.body.v_0[1] = der(boxBody1.body.frame_a.r_0[1]);
 //   boxBody1.body.v_0[2] = der(boxBody1.body.frame_a.r_0[2]);
 //   boxBody1.body.v_0[3] = der(boxBody1.body.frame_a.r_0[3]);
@@ -3084,7 +3084,7 @@ checkModel(DP); getErrorString();
 //   boxBody2.body.Q[3] = 0.0;
 //   boxBody2.body.Q[4] = 1.0;
 //   end if;
-//   boxBody2.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration({boxBody2.body.frame_a.r_0[1],boxBody2.body.frame_a.r_0[2],boxBody2.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody2.body.frame_a.R,{boxBody2.body.r_CM[1],boxBody2.body.r_CM[2],boxBody2.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
+//   boxBody2.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration({boxBody2.body.frame_a.r_0[1],boxBody2.body.frame_a.r_0[2],boxBody2.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody2.body.frame_a.R,{boxBody2.body.r_CM[1],boxBody2.body.r_CM[2],boxBody2.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
 //   boxBody2.body.v_0[1] = der(boxBody2.body.frame_a.r_0[1]);
 //   boxBody2.body.v_0[2] = der(boxBody2.body.frame_a.r_0[2]);
 //   boxBody2.body.v_0[3] = der(boxBody2.body.frame_a.r_0[3]);
@@ -3706,7 +3706,7 @@ checkModel(DP); getErrorString();
 //   Q := Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T(<matrix>[R.T[1,1],R.T[1,2],R.T[1,3];R.T[2,1],R.T[2,2],R.T[2,3];R.T[3,1],R.T[3,2],R.T[3,3]],{Q_guess[1],Q_guess[2],Q_guess[3],Q_guess[4]});
 // end Modelica.Mechanics.MultiBody.Frames.to_Q;
 // 
-// function Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration
+// function Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration
 //   input Real[3] r(quantity = \"Length\", unit = \"m\") \"Position vector from world frame to actual point, resolved in world frame\";
 //   input enumeration(NoGravity, UniformGravity, PointGravity) gravityType \"Type of gravity field\";
 //   input Real[3] g(quantity = \"Acceleration\", unit = \"m/s2\") \"Constant gravity acceleration, resolved in world frame, if gravityType=1\";
@@ -3714,7 +3714,7 @@ checkModel(DP); getErrorString();
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
 //   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
-// end Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration;
+// end Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
 //   input Real material1;
@@ -6287,7 +6287,7 @@ checkModel(DP); getErrorString();
 //   boxBody1.body.Q[3] = 0.0;
 //   boxBody1.body.Q[4] = 1.0;
 //   end if;
-//   boxBody1.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration({boxBody1.body.frame_a.r_0[1],boxBody1.body.frame_a.r_0[2],boxBody1.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody1.body.frame_a.R,{boxBody1.body.r_CM[1],boxBody1.body.r_CM[2],boxBody1.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
+//   boxBody1.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration({boxBody1.body.frame_a.r_0[1],boxBody1.body.frame_a.r_0[2],boxBody1.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody1.body.frame_a.R,{boxBody1.body.r_CM[1],boxBody1.body.r_CM[2],boxBody1.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
 //   boxBody1.body.v_0[1] = der(boxBody1.body.frame_a.r_0[1]);
 //   boxBody1.body.v_0[2] = der(boxBody1.body.frame_a.r_0[2]);
 //   boxBody1.body.v_0[3] = der(boxBody1.body.frame_a.r_0[3]);
@@ -6446,7 +6446,7 @@ checkModel(DP); getErrorString();
 //   boxBody2.body.Q[3] = 0.0;
 //   boxBody2.body.Q[4] = 1.0;
 //   end if;
-//   boxBody2.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world.gravityAcceleration({boxBody2.body.frame_a.r_0[1],boxBody2.body.frame_a.r_0[2],boxBody2.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody2.body.frame_a.R,{boxBody2.body.r_CM[1],boxBody2.body.r_CM[2],boxBody2.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
+//   boxBody2.body.g_0 = Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration({boxBody2.body.frame_a.r_0[1],boxBody2.body.frame_a.r_0[2],boxBody2.body.frame_a.r_0[3]} + Modelica.Mechanics.MultiBody.Frames.resolve1(boxBody2.body.frame_a.R,{boxBody2.body.r_CM[1],boxBody2.body.r_CM[2],boxBody2.body.r_CM[3]}),world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue);
 //   boxBody2.body.v_0[1] = der(boxBody2.body.frame_a.r_0[1]);
 //   boxBody2.body.v_0[2] = der(boxBody2.body.frame_a.r_0[2]);
 //   boxBody2.body.v_0[3] = der(boxBody2.body.frame_a.r_0[3]);

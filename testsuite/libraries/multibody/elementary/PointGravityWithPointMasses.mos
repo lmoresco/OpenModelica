@@ -157,7 +157,7 @@ getErrorString();
 //   v2 := {R.T[1,1] * v1[1] + R.T[1,2] * v1[2] + R.T[1,3] * v1[3],R.T[2,1] * v1[1] + R.T[2,2] * v1[2] + R.T[2,3] * v1[3],R.T[3,1] * v1[1] + R.T[3,2] * v1[2] + R.T[3,3] * v1[3]};
 // end Modelica.Mechanics.MultiBody.Frames.resolve2;
 // 
-// function Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration
+// function Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration
 //   input Real[3] r(quantity = \"Length\", unit = \"m\") \"Position vector from world frame to actual point, resolved in world frame\";
 //   input enumeration(NoGravity, UniformGravity, PointGravity) gravityType \"Type of gravity field\";
 //   input Real[3] g(quantity = \"Acceleration\", unit = \"m/s2\") \"Constant gravity acceleration, resolved in world frame, if gravityType=1\";
@@ -165,7 +165,7 @@ getErrorString();
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
 //   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
-// end Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration;
+// end Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
 //   input Real material1;
@@ -2198,7 +2198,7 @@ getErrorString();
 //   body1.a_0[1] = der(body1.v_0[1]);
 //   body1.a_0[2] = der(body1.v_0[2]);
 //   body1.a_0[3] = der(body1.v_0[3]);
-//   body1.frame_a.f = body1.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body1.frame_a.R,{body1.a_0[1],body1.a_0[2],body1.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration({body1.r_0[1],body1.r_0[2],body1.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
+//   body1.frame_a.f = body1.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body1.frame_a.R,{body1.a_0[1],body1.a_0[2],body1.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration({body1.r_0[1],body1.r_0[2],body1.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
 //   body2.sphere.R.T[1,1] = body2.frame_a.R.T[1,1];
 //   body2.sphere.R.T[1,2] = body2.frame_a.R.T[1,2];
 //   body2.sphere.R.T[1,3] = body2.frame_a.R.T[1,3];
@@ -2264,7 +2264,7 @@ getErrorString();
 //   body2.a_0[1] = der(body2.v_0[1]);
 //   body2.a_0[2] = der(body2.v_0[2]);
 //   body2.a_0[3] = der(body2.v_0[3]);
-//   body2.frame_a.f = body2.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body2.frame_a.R,{body2.a_0[1],body2.a_0[2],body2.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration({body2.r_0[1],body2.r_0[2],body2.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
+//   body2.frame_a.f = body2.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body2.frame_a.R,{body2.a_0[1],body2.a_0[2],body2.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration({body2.r_0[1],body2.r_0[2],body2.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
 //   body3.sphere.R.T[1,1] = body3.frame_a.R.T[1,1];
 //   body3.sphere.R.T[1,2] = body3.frame_a.R.T[1,2];
 //   body3.sphere.R.T[1,3] = body3.frame_a.R.T[1,3];
@@ -2330,7 +2330,7 @@ getErrorString();
 //   body3.a_0[1] = der(body3.v_0[1]);
 //   body3.a_0[2] = der(body3.v_0[2]);
 //   body3.a_0[3] = der(body3.v_0[3]);
-//   body3.frame_a.f = body3.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body3.frame_a.R,{body3.a_0[1],body3.a_0[2],body3.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration({body3.r_0[1],body3.r_0[2],body3.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
+//   body3.frame_a.f = body3.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body3.frame_a.R,{body3.a_0[1],body3.a_0[2],body3.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration({body3.r_0[1],body3.r_0[2],body3.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
 //   body4.sphere.R.T[1,1] = body4.frame_a.R.T[1,1];
 //   body4.sphere.R.T[1,2] = body4.frame_a.R.T[1,2];
 //   body4.sphere.R.T[1,3] = body4.frame_a.R.T[1,3];
@@ -2396,7 +2396,7 @@ getErrorString();
 //   body4.a_0[1] = der(body4.v_0[1]);
 //   body4.a_0[2] = der(body4.v_0[2]);
 //   body4.a_0[3] = der(body4.v_0[3]);
-//   body4.frame_a.f = body4.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body4.frame_a.R,{body4.a_0[1],body4.a_0[2],body4.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world.gravityAcceleration({body4.r_0[1],body4.r_0[2],body4.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
+//   body4.frame_a.f = body4.m * Modelica.Mechanics.MultiBody.Frames.resolve2(body4.frame_a.R,{body4.a_0[1],body4.a_0[2],body4.a_0[3]} - Modelica.Mechanics.MultiBody.Parts.PointMass.world__gravityAcceleration({body4.r_0[1],body4.r_0[2],body4.r_0[3]},world.gravityType,world.g * Modelica.Math.Vectors.normalize({world.n[1],world.n[2],world.n[3]},1e-13),world.mue));
 //   spring.lineForce.lineShape.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(spring.lineForce.lineShape.shapeType);
 //   spring.lineForce.lineShape.rxvisobj[1] = spring.lineForce.lineShape.R.T[1,1] * spring.lineForce.lineShape.e_x[1] + (spring.lineForce.lineShape.R.T[2,1] * spring.lineForce.lineShape.e_x[2] + spring.lineForce.lineShape.R.T[3,1] * spring.lineForce.lineShape.e_x[3]);
 //   spring.lineForce.lineShape.rxvisobj[2] = spring.lineForce.lineShape.R.T[1,2] * spring.lineForce.lineShape.e_x[1] + (spring.lineForce.lineShape.R.T[2,2] * spring.lineForce.lineShape.e_x[2] + spring.lineForce.lineShape.R.T[3,2] * spring.lineForce.lineShape.e_x[3]);
