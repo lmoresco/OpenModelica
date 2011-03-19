@@ -33,19 +33,14 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 4: #include <stdio.h>
 // 5: #include <stdlib.h>
 // 6: #include <errno.h>
-// 7: #if defined(_MSC_VER)
-// 8:   #define DLLExport   __declspec( dllexport )
-// 9: #else
-// 10:   #define DLLExport /* nothing */
-// 11: #endif
-// 12: #ifdef __cplusplus
-// 13: extern \"C\" {
+// 7: #ifdef __cplusplus
+// 8: extern \"C\" {
+// 9: #endif
+// 10: void _SimCodeC_abc();
+// 11: #ifdef __cplusplus
+// 12: }
+// 13: #endif
 // 14: #endif
-// 15: void _SimCodeC_abc();
-// 16: #ifdef __cplusplus
-// 17: }
-// 18: #endif
-// 19: #endif
 // "
 // "1: #include \"SimCodeC_abc.h\"
 // 2: #include <algorithm>
@@ -54,28 +49,38 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 5: extern \"C\" {
 // 6: void _SimCodeC_abc()
 // 7: {
-// 8:   /* disable GC for now
-// 9:   */
+// 8:   /* GC: save roots mark when you enter the function */
+// 9:   /* GC: adding inputs as roots! */
 // 10:   
-// 11:   state tmp1;
-// 12:   tmp1 = get_memory_state();
-// 13:   
-// 14:   _return:
-// 15:   restore_memory_state(tmp1);
-// 16:   
-// 17:   /* disable GC for now
-// 18:   */
-// 19:   
-// 20:   return;
-// 21: }
-// 22: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
-// 23: {
-// 24:   MMC_TRY_TOP()
-// 25:   _SimCodeC_abc();
-// 26:   MMC_CATCH_TOP(return 1)
-// 27:   write_noretcall(outVar);
-// 28:   return 0;
-// 29: }
-// 30: }
+// 11:   /* GC: do garbage collection */
+// 12:   
+// 13:   /* arguments */
+// 14:   /* locals */
+// 15:   state tmp1;
+// 16:   /* out inits */
+// 17:   tmp1 = get_memory_state();
+// 18:   
+// 19:   /* var inits */
+// 20:   /* body */
+// 21:   
+// 22:   _return:
+// 23:   /* out var copy */
+// 24:   restore_memory_state(tmp1);
+// 25:   /* out var assign */
+// 26:   
+// 27:   /* GC: pop the mark! */
+// 28:   
+// 29:   /* return the outs */
+// 30:   return ;
+// 31: }
+// 32: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
+// 33: {
+// 34:   MMC_TRY_TOP()
+// 35:   _SimCodeC_abc();
+// 36:   MMC_CATCH_TOP(return 1)
+// 37:   write_noretcall(outVar);
+// 38:   return 0;
+// 39: }
+// 40: }
 // "
 // endResult
