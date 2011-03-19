@@ -6,6 +6,6 @@ setfilter#3#tank1.h#source.flowLevel#end
 delay2
 start#4#end
 delay4
-changevalue#5#3.6#source.flowLevel=0.0004#end
+changevalue#5#0.1#source.flowLevel=0.0004#end
 delay10
 shutdown#6#end 
