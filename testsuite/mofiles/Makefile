@@ -284,6 +284,7 @@ ForceAndTorque.mo \
 ForIf.mo \
 ForIterator1.mo \
 ForIterator2.mo \
+ForIterator3.mo \
 ForIteratorType.mo \
 ForNested.mo \
 ForSimple.mo \

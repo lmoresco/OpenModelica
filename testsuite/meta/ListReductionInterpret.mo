@@ -56,7 +56,7 @@ algorithm
   s := s + anyString(product(3.5*r for r guard r>0 in realsArr2));s := s + "\n";
   s := s + anyString(realMin(r for r guard r>2 in realsArr1));s := s + "\n";
   sArr := s;
-  assert(sList == sArr, "Reductions are different:\nArray:\n" + sArr + "\nList:\n" + sList + "\n");
+  s := if sList <> sArr then "Reductions are different:\nArray:\n" + sArr + "\nList:\n" + sList + "\n" else s;
 end f;
 
   constant String s = f();
@@ -158,12 +158,12 @@ end ListReduction;
 //   s := s + "
 // ";
 //   sArr := s;
-//   assert( sList == sArr, "Reductions are different:
+//   s := if sList <> sArr then "Reductions are different:
 // Array:
 // " + sArr + "
 // List:
 // " + sList + "
-// ");
+// " else s;
 // end ListReduction.f;
 // 
 // class ListReduction

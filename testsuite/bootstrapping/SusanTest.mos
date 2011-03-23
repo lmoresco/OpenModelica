@@ -93,6 +93,8 @@ getErrorString();
 // 
 //  TEXT_CREATE ident = x
 // 
+//  BOUND_VALUE resolving boundPath = x
+// 
 //  BOUND_VALUE resolved mmexp = l_x : Tpl.Text (dealiased: Tpl.Text)
 // 
 //  FUN_CALL fname = helloWorld
@@ -100,7 +102,8 @@ getErrorString();
 //  FUN_CALL stmt =
 // txt = helloWorld(txt);
 // Error - typeAdaptMMArg failed
-//  arg BOUND_VALUE resolved mmexp = a_strs : list<String>
+// 
+//  BOUND_VALUE resolving boundPath = str
 // 
 //  BOUND_VALUE resolved mmexp = i_str : String (dealiased: String)
 // 

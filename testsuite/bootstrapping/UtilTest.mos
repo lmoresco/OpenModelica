@@ -46,6 +46,8 @@ Util.listSetDifference({1,2,3,4,5},{1});
 getErrorString();
 Util.listSetDifference({1,2,3,4,5},{3});
 getErrorString();
+Util.listPartition({1,2,3,4},2);
+getErrorString();
 
 // Result:
 // true
@@ -90,5 +92,7 @@ getErrorString();
 // {2,3,4,5}
 // ""
 // {1,2,4,5}
+// ""
+// {{1,2},{3,4}}
 // ""
 // endResult
