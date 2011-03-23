@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-void* constructor(char* filename)
+void* constructor(const void* filename)
 {
-  printf("constructors says '%s'\n", filename);
-  return filename;
+  /* This is quite unsafe :) */
+  printf("constructors says '%s'\n", (char*)filename);
+  return (void*) filename;
 }
 
 void destructor(void* o)
