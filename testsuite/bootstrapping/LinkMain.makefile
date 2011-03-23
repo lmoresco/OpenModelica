@@ -8,7 +8,7 @@ LDFLAGS=-L/opt/openmodelica/lib/ -llpsolve55
 else
 #Hack: don't link agains colamd on ArchLinux.
 ifeq ("ARCH","$(DIST)")
-CFLAGS=-O3 -g -mfpmath=sse -fPIC
+CFLAGS=-O0 -g -falign-functions -march=native -mfpmath=sse -fPIC
 LDFLAGS= -lrt -llpsolve55
 else
 CFLAGS=-O0 -g -falign-functions -march=native -mfpmath=sse -fPIC
