@@ -4197,8 +4197,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem has 2343 equation(s) and 2343 variable(s).
-// 1442 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem has 2292 equation(s) and 2292 variable(s).
+// 1420 of these are trivial equation(s).
 // "
 // ""
 // endResult

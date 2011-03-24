@@ -4193,8 +4193,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque has 2376 equation(s) and 2376 variable(s).
-// 1454 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque has 2337 equation(s) and 2337 variable(s).
+// 1461 of these are trivial equation(s).
 // "
 // ""
 // endResult

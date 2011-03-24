@@ -3727,8 +3727,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem has 2086 equation(s) and 2086 variable(s).
-// 1280 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem has 2050 equation(s) and 2050 variable(s).
+// 1272 of these are trivial equation(s).
 // "
 // ""
 // endResult

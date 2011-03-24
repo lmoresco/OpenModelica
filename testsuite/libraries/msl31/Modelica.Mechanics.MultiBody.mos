@@ -72,8 +72,8 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorStr
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
-// Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1124 equation(s) and 1131 variable(s).
-// 643 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1112 equation(s) and 1119 variable(s).
+// 637 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Types.RotationSequence completed successfully.

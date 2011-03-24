@@ -70,8 +70,8 @@ checkModel(Model2); getErrorString();
 // [parts.mo:712:5-714:42:writable] Warning: Variable bodyCylinder3.body.phi_d: Non-array modification 'if bodyCylinder3.body.enforceStates then if bodyCylinder3.body.useQuaternions then StateSelect.never else StateSelect.always else StateSelect.avoid' for array component, possibly due to missing 'each'.
 // 
 // 
-// Class Model2 has 2335 equation(s) and 2335 variable(s).
-// 1431 of these are trivial equation(s).
+// Class Model2 has 2278 equation(s) and 2278 variable(s).
+// 1445 of these are trivial equation(s).
 // "
 // ""
 // endResult

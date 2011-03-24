@@ -7148,8 +7148,8 @@ getErrorString();
 // [_LoopsTotal.mo:1407:15-1414:38:writable] Warning: Component Inertia has the same name as its type Modelica.Mechanics.Rotational.Components.Inertia.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic has 3485 equation(s) and 3485 variable(s).
-// 2238 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_analytic has 3326 equation(s) and 3326 variable(s).
+// 2217 of these are trivial equation(s).
 // "
 // ""
 // endResult

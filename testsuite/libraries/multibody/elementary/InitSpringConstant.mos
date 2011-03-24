@@ -3194,8 +3194,8 @@ getErrorString();
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant completed successfully.
 // 
 // 
-// Class Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant has 1776 equation(s) and 1776 variable(s).
-// 1089 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant has 1755 equation(s) and 1755 variable(s).
+// 1091 of these are trivial equation(s).
 // "
 // ""
 // endResult

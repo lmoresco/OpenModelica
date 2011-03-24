@@ -5343,8 +5343,8 @@ getErrorString();
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
-// Class Modelica.Mechanics.MultiBody.Parts.BodyCylinder has 3414 equation(s) and 3432 variable(s).
-// 1901 of these are trivial equation(s).
+// Class Modelica.Mechanics.MultiBody.Parts.BodyCylinder has 3402 equation(s) and 3402 variable(s).
+// 1898 of these are trivial equation(s).
 // "
 // ""
 // endResult
