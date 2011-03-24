@@ -4,6 +4,7 @@ TESTFILES = \
 CauerLowPassOPV2.mos \
 CauerLowPassSC2.mos \
 ChuaCircuit2.mos \
+HeatingMOSInverter2.mos \
 HeatingRectifier2.mos \
 ShowVariableResistor2.mos \
 
@@ -12,7 +13,6 @@ ShowVariableResistor2.mos \
 FAILINGTESTFILES=  \
 CharacteristicThyristors2.mos \
 HeatingNPN_OrGate2.mos \
-HeatingMOSInverter2.mos \
 HeatingResistor.mos \
 OvervoltageProtection2.mos \
 Rectifier2.mos \

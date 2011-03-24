@@ -245,9 +245,9 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#ifdef _OMC_MEASURE_TIME\n",
-                                    "const int measure_time_flag = 1;\n",
+                                    "int measure_time_flag = 1;\n",
                                     "#else\n",
-                                    "const int measure_time_flag = 0;\n",
+                                    "int measure_time_flag = 0;\n",
                                     "#endif\n"
                                 }, true));
         txt = globalData(txt, i_modelInfo, i_fileNamePrefix);

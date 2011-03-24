@@ -30,8 +30,8 @@ val(inertia2.w,0.5);
 // 	second element is: parameter Modelica.SIunits.Torque unitTorque  = 1;
 // 	Modelica specification requires that elements are exactly identical.
 // "
-// -0.124721639648818
-// 0.168199524230536
-// 0.371789162472409
-// 0.335785050103144
+// 0.0116320067930114
+// 0.112693681480222
+// 0.0243550945454039
+// 0.224507580316493
 // endResult

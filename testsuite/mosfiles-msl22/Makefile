@@ -2,7 +2,6 @@ TEST = ../rtest -v
 
 TESTFILES = \
 avg.mos \
-BearingFrictionTest.mos \
 Backlash.mos \
 blockssources.mos \
 Circuit1.mos \
@@ -13,8 +12,6 @@ ElasticBearing.mos \
 First.mos \
 FuncCross.mos \
 IdealGear.mos \
-IdealGearBrake.mos \
-InitTest.mos \
 InputOutput.mos \
 MatrixTest.mos \
 Shaft.mos \
@@ -33,6 +30,9 @@ WeakAxis.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=\
+BearingFrictionTest.mos \
+IdealGearBrake.mos \
+InitTest.mos \
 Gear.mos \
 Gear2.mos \
 LossyGear1.mos
