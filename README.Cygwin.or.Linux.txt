@@ -41,6 +41,9 @@ The latest OpenModelica uses Qt for potting and 3D functionality. You will also 
                static void delete_dict_value(unsigned long key, void * value)
               to
                static void delete_dict_value(uintptr_t key, void * value)
+OMOptim uses some packages for its optimization algorithms
+    paradisEO (http://paradiseo.gforge.inria.fr/ - tested with 1.3)
+      or sudo apt-get install paradiseo (using the OpenModelica repository)
 
 
 How to compile on Ubuntu Linux (using available binary packages for dependencies)
@@ -48,26 +51,26 @@ How to compile on Ubuntu Linux (using available binary packages for dependencies
 
 You need:
     antlr
-        $ sudo aptitude install antlr libantlr-dev
+        $ sudo apt-get install antlr libantlr-dev
     rml+mmc see above and:
-        $ sudo aptitude install libsmlnj-smlnj
+        $ sudo apt-get install libsmlnj-smlnj
         or if you like to use mlton
-        $ sudo aptitude install mlton
+        $ sudo apt-get install mlton
     java
         you need to install OpenJDK Java runtime or Sun Java runtime
-        $ sudo aptitude install openjdk-6-jre
+        $ sudo apt-get install openjdk-6-jre
         $ sudo update-java-alternatives -s java-6-openjdk
         or
-        $ sudo aptitude install sun-java6-jre
+        $ sudo apt-get install sun-java6-jre
         $ sudo update-java-alternatives -s java-6-sun
     Qt+Coin3D+SoQt
         you need readline and Qt dev stuff to compile omc and mosh (OMShell)
-        $ sudo aptitude install libreadline5-dev libsoqt4-dev
+        $ sudo apt-get install libreadline5-dev libsoqt4-dev
     liblpsolve55
       You can now use the version from the Ubuntu repository
-        $ sudo aptitude install liblpsolve55-dev
+        $ sudo apt-get install liblpsolve55-dev
     sqlite3
-        $ sudo aptitude install sqlite3 libsqlite3-dev
+        $ sudo apt-get install sqlite3 libsqlite3-dev
         
       It is also possible to copy this library from the Compiler runtime:
         For 32-bit OSX:
@@ -261,4 +264,4 @@ GENERAL NOTES:
     $ cd ../Examples
     $ ../build/bin/omc sim_dcmotor.mos
 
-Last updated 2011-03-09
+Last updated 2011-03-24
