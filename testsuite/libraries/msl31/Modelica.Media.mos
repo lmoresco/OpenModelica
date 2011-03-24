@@ -13,7 +13,7 @@ setDebugFlags("scodeFlatten,failtrace");
 // Not working - Wrong type on builtin attribute start of type Real[0]
 //       check - Variable state.h not found in scope
 //instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
-//checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
+checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 
 // Not working - Infinite loop, Inst.updateComponentInEnv failed
 //instantiateModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
@@ -204,6 +204,13 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // true
 // ""
 // true
+// "Check of Modelica.Media.Examples.SimpleLiquidWater completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
+// 14 of these are trivial equation(s).
+// "
+// ""
 // "function Modelica.SIunits.Conversions.from_degC
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
