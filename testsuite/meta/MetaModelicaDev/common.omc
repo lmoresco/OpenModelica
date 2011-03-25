@@ -13,7 +13,8 @@ endif
 CC = gcc
 run: run2 clean
 
-TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $$OPENMODELICAHOME/bin/omc; fi) +d=rml,noevalfunc +g=MetaModelica
+OMC = ${OPENMODELICAHOME}/bin/omc +d=rml,noevalfunc +g=MetaModelica
+TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $(OMC); fi) +d=rml,noevalfunc +g=MetaModelica
 
 # LEXER
 
@@ -34,7 +35,10 @@ clean:
 	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
 run2: $(DEPS)
-	$(TEST) SCRIPT.mos < program.txt
+	@echo "***   program   ***"
+	@cat program.txt
+	@echo "*** end program ***"
+	$(OMC) SCRIPT.mos < program.txt
 
 test: test2
 
