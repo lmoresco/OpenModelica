@@ -16,6 +16,7 @@ AlgorithmFor3.mo \
 AlgorithmFor4.mo \
 AlgorithmFor5.mo \
 AlgorithmFor6.mo \
+AlgorithmNoRetCall.mo \
 And.mo \
 Array10.mo \
 Array11.mo \
