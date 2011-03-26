@@ -10,11 +10,29 @@ loadFile("Main.mo");
 loadFile("Mcode.mo");
 loadFile("Parse.mo");
 loadFile("Trans.mo");
+// Template dependencies
+loadFile("Debug.mo");
+loadFile("Error.mo");
+loadFile("ErrorExt.mo");
+loadFile("Print.mo");
+loadFile("RTOpts.mo");
+loadFile("System.mo");
+loadFile("Tpl.mo");
+loadFile("Util.mo");
 getErrorString();
+
 Main.main();
 getErrorString();
 
 // Result:
+// true
+// true
+// true
+// true
+// true
+// true
+// true
+// true
 // true
 // true
 // true

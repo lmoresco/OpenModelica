@@ -11,6 +11,7 @@ CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' $(FPIC)
 endif
 
 CC = gcc
+.SUFFIXES : .mo .tpl
 run: run2 clean
 
 OMC = ${OPENMODELICAHOME}/bin/omc +d=rml,noevalfunc +g=MetaModelica
@@ -48,3 +49,6 @@ test2: $(DEPS)
 
 test-noclean: $(DEPS)
 	$(TEST) $(SOLUTIONS) < program.txt
+
+%.mo: %.tpl
+	$(OMC) $<

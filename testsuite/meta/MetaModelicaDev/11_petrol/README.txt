@@ -1,4 +1,4 @@
-10_petrol exercise
+11_petrol exercise
 ------------------
 
 Additional example exercise implements a compiler for a pascal like language.

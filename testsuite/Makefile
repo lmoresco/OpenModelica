@@ -84,7 +84,7 @@ meta.log: omc-diff
 	$(MAKE) -C meta -f Makefile test > $@
 	@echo $@ done
 mmdev.log: omc-diff
-	$(MAKE) -C meta/MetaModelicaDev -f Makefile.omc test > $@
+	$(MAKE) -C meta/MetaModelicaDev -f Makefile test > $@
 	@echo $@ done
 records.log: omc-diff
 	$(MAKE) -C records -f Makefile test > $@

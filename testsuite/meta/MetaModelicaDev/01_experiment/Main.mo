@@ -13,16 +13,16 @@ algorithm
   case (n_str::_) 
    equation
      // factorial 
-     print("Factorial of " +& n_str +& " is: ");
+     print("Factorial of " + n_str + " is: ");
      n = stringInt(n_str);    
      i = Functions.factorial(n);
      str = intString(i);
      print(str); 
      // test function
-     print("\nCalling Functions.test(\"one\"):   " +& intString(Functions.test("one")));
-     print("\nCalling Functions.test(\"two\"):   " +& intString(Functions.test("two")));
-     print("\nCalling Functions.test(\"three\"): " +& intString(Functions.test("three")));
-     print("\nCalling Functions.test(\"other\"): " +& intString(Functions.test("other")));
+     print("\nCalling Functions.test(\"one\"):   " + intString(Functions.test("one")));
+     print("\nCalling Functions.test(\"two\"):   " + intString(Functions.test("two")));
+     print("\nCalling Functions.test(\"three\"): " + intString(Functions.test("three")));
+     print("\nCalling Functions.test(\"other\"): " + intString(Functions.test("other")));
                     
      // print Types.aliasConstant
      // your code here -- uncomment these when you wrote the functions     

@@ -2,6 +2,8 @@
 
 DIR=/tmp/make-package-sh-$$/
 
+cp ../../../../Compiler/Template/Tpl.mo ../10_pamtrans/
+
 mkdir -p $DIR
 
 svn export .. $DIR/MetaModelica

@@ -18,7 +18,7 @@ algorithm
   print("[Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]\n");  
   program := Parse.parse();
   mcode := Trans.transProgram(program);
-  Emit.emitAssembly(mcode);
+  print(Tpl.tplString(Emit.emitAssembly,mcode));
 end main;
 end Main;
 

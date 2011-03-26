@@ -17,7 +17,7 @@ nl := "
 
 // factorial 
 n_str := "10";
-print("Factorial of " +& n_str +& " is: ");
+print("Factorial of " + n_str + " is: ");
 n := stringInt(n_str);    
 i := Functions.factorial(n);
 str := intString(i);
@@ -25,13 +25,13 @@ print(str);
 print(nl);
 
 // test function
-print("Calling Functions.test('one'):   " +& intString(Functions.test("one")));
+print("Calling Functions.test('one'):   " + intString(Functions.test("one")));
 print(nl);
-print("Calling Functions.test('two'):   " +& intString(Functions.test("two")));
+print("Calling Functions.test('two'):   " + intString(Functions.test("two")));
 print(nl);
-print("Calling Functions.test('three'): " +& intString(Functions.test("three")));
+print("Calling Functions.test('three'): " + intString(Functions.test("three")));
 print(nl);
-print("Calling Functions.test('other'): " +& intString(Functions.test("other")));
+print("Calling Functions.test('other'): " + intString(Functions.test("other")));
 print(nl);
 
 print("Types.aliasConstant: ");

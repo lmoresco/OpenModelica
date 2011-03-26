@@ -1,4 +1,4 @@
-05_advanced exercise
+06_advanced exercise
 --------------------
 
 In this exercise you can experiment with MetaModelica:

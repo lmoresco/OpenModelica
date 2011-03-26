@@ -9,6 +9,7 @@ AddReal1.mo \
 Algorithm1.mo \
 Algorithm2.mo \
 Algorithm3.mo \
+AlgorithmElseOpt.mo \
 AlgorithmFor1.mo \
 AlgorithmFor2.mo \
 AlgorithmFor3.mo \

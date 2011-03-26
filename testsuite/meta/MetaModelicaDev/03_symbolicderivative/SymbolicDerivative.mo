@@ -246,20 +246,20 @@ algorithm
     case SUB(lhs,rhs) then binExpStr(lhs,"-",rhs);
     case MUL(lhs,rhs) then binExpStr(lhs,"*",rhs);
     case DIV(lhs,rhs) then binExpStr(lhs,"/",rhs);
-    case NEG(e) then "(-" +& expStr(e) +& ")";
+    case NEG(e) then "(-" + expStr(e) + ")";
     case IDENT(id) then id;
     case CALL("der",{e})
       equation
         res = expStr(e);
-      then "(" +& res +& ")'";
+      then "(" + res + ")'";
     case CALL("pow",{e,INT(i)})
       equation
         res = expStr(e);
-      then res +& "^" +& intString(i);
+      then res + "^" + intString(i);
     case CALL(id,expList)
       equation
         res = expListStr(expList);
-      then id +& "(" +& res +& ")";
+      then id + "(" + res + ")";
     case _ then "#UNKNOWN_EXP#";
   end matchcontinue;
 end expStr;
@@ -280,7 +280,7 @@ algorithm
       equation
         res_1 = expStr(e);
         res_2 = expListStr(rest);
-      then res_1 +& "," +& res_2;
+      then res_1 + "," + res_2;
   end matchcontinue;
 end expListStr;
 
@@ -291,7 +291,7 @@ protected function binExpStr
   input Exp rhs;
   output String str;
 algorithm
-  str := "(" +& expStr(lhs) +& op +& expStr(rhs) +& ")";
+  str := "(" + expStr(lhs) + op + expStr(rhs) + ")";
 end binExpStr;
 
 end SymbolicDerivative;

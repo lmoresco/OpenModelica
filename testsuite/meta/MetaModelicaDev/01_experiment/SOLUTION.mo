@@ -67,7 +67,7 @@ algorithm
     case ((str, alias, optionAlias)) 
       equation
         print("(");
-        print("\"" +& str +& "\"");
+        print("\"" + str + "\"");
         print(", ");
         printAlias(alias);
         print(", ");        
@@ -120,7 +120,7 @@ algorithm
     case (Types.OneRecord(cmp1, cmp2)) 
       equation
         print("OneRecord(");
-        print("\"" +& cmp1 +& "\"");
+        print("\"" + cmp1 + "\"");
         print(", ");
         printAlias(cmp2);
         print(")");
@@ -162,9 +162,9 @@ algorithm
     case (Types.FirstAlternative(cmp1, cmp2)) 
       equation
         print("FirstAlternative(");
-        print("\"" +& cmp1 +& "\"");
+        print("\"" + cmp1 + "\"");
         print(", ");
-        print("\"" +& cmp2 +& "\"");
+        print("\"" + cmp2 + "\"");
         print(")");
       then ();
     case (Types.SecondAlternative(sel1, sel2)) 
@@ -201,16 +201,16 @@ algorithm
   case (n_str::_) 
    equation
      // factorial 
-     print("Factorial of " +& n_str +& " is: ");
+     print("Factorial of " + n_str + " is: ");
      n = stringInt(n_str);    
      i = Functions.factorial(n);
      str = intString(i);
      print(str); 
      // test function
-     print("\nCalling Functions.test(\"one\"):   " +& intString(Functions.test("one")));
-     print("\nCalling Functions.test(\"two\"):   " +& intString(Functions.test("two")));
-     print("\nCalling Functions.test(\"three\"): " +& intString(Functions.test("three")));
-     print("\nCalling Functions.test(\"other\"): " +& intString(Functions.test("other")));
+     print("\nCalling Functions.test(\"one\"):   " + intString(Functions.test("one")));
+     print("\nCalling Functions.test(\"two\"):   " + intString(Functions.test("two")));
+     print("\nCalling Functions.test(\"three\"): " + intString(Functions.test("three")));
+     print("\nCalling Functions.test(\"other\"): " + intString(Functions.test("other")));
                     
      // print Types.aliasConstant
      print("\nTypes.aliasConstant: ");

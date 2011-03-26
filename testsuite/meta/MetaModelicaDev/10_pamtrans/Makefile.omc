@@ -1,4 +1,0 @@
-SOLUTIONS=SCRIPT.mos
-CLEAN=Absyn_* Emit_* Main_* Mcode_* Parse_* Trans_*
-DEPS=lexer.o parser.o
-include ../common.omc

@@ -71,10 +71,10 @@ protected function applyRealBinary
 algorithm 
   outReal := matchcontinue (inBinOp1,inReal2,inReal3)
     local Real v1,v2;
-    case (Absyn.ADD(),v1,v2) then v1 +. v2; 
-    case (Absyn.SUB(),v1,v2) then v1 -. v2; 
-    case (Absyn.MUL(),v1,v2) then v1 *. v2; 
-    case (Absyn.DIV(),v1,v2) then v1 /. v2; 
+    case (Absyn.ADD(),v1,v2) then v1 + v2; 
+    case (Absyn.SUB(),v1,v2) then v1 - v2; 
+    case (Absyn.MUL(),v1,v2) then v1 * v2; 
+    case (Absyn.DIV(),v1,v2) then v1 / v2; 
   end matchcontinue;
 end applyRealBinary;
 

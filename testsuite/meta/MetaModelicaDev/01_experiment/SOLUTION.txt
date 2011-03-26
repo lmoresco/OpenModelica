@@ -42,7 +42,7 @@ algorithm
     case ((str, alias, optionAlias)) 
       equation
         print("(");
-        print("\"" +& str +& "\"");
+        print("\"" + str + "\"");
         print(", ");
         printAlias(alias);
         print(", ");        
@@ -95,7 +95,7 @@ algorithm
     case (Types.OneRecord(cmp1, cmp2)) 
       equation
         print("OneRecord(");
-        print("\"" +& cmp1 +& "\"");
+        print("\"" + cmp1 + "\"");
         print(", ");
         printAlias(cmp2);
         print(")");
@@ -136,9 +136,9 @@ algorithm
     case (Types.FirstAlternative(cmp1, cmp2)) 
       equation
         print("FirstAlternative(");
-        print("\"" +& cmp1 +& "\"");
+        print("\"" + cmp1 + "\"");
         print(", ");
-        print("\"" +& cmp2 +& "\"");
+        print("\"" + cmp2 + "\"");
         print(")");
       then ();
     case (Types.SecondAlternative(cmp1, cmp2)) 

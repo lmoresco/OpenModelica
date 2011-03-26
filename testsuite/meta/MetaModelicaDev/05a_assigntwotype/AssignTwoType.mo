@@ -262,10 +262,10 @@ algorithm
   outReal:=
   matchcontinue (inBinOp1,inReal2,inReal3)
     local Real x,y;
-    case (ADD(),x,y) then x +. y;  
-    case (SUB(),x,y) then x -. y;  
-    case (MUL(),x,y) then x *. y;  
-    case (DIV(),x,y) then x /. y; 
+    case (ADD(),x,y) then x + y;  
+    case (SUB(),x,y) then x - y;  
+    case (MUL(),x,y) then x * y;  
+    case (DIV(),x,y) then x / y; 
   end matchcontinue;
 end applyRealBinop;
 

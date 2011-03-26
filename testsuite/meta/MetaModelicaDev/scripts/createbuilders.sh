@@ -14,7 +14,7 @@ MMDIRS="01_experiment 02a_exp1 02b_exp2 03_symbolicderivative 04_assignment 05a_
 
 for DIR in $MMDIRS; do
   sed s/%NAME%/$DIR/ project.in > ../$DIR/.project
-  sed s/%TARGET%/Makefile.omc/ $BUILDER | sed s/%ENABLED%/true/ > ../$DIR/.externalToolBuilders/OMC.launch
+  sed s/%TARGET%/Makefile/ $BUILDER | sed s/%ENABLED%/true/ > ../$DIR/.externalToolBuilders/OMC.launch
   sed s/%TARGET%/Makefile.rml/ $BUILDER | sed s/%ENABLED%/false/ > ../$DIR/.externalToolBuilders/RML.launch
 done
 
