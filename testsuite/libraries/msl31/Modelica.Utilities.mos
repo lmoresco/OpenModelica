@@ -2,6 +2,7 @@
 //keyword:     instantiating MSL 3.1 Modelica.Utilities
 //status:      correct
 //env: OPENMODELICALIBRARY=../../../libraries/msl31/
+//teardown_command: rm -f Modelica_Utilities_Strings_*
 //
 // instantiate example
 //
@@ -10,6 +11,14 @@ loadModel(Modelica); getErrorString();
 
 checkModel(Modelica.Utilities.Streams.readFile); getErrorString();
 checkModel(Modelica.Utilities.Files.list); getErrorString();
+
+// Test code generation of substring and friends
+setCommandLineOptions("+d=noevalfunc");
+Modelica.Utilities.Strings.syntaxError("abc 123",1,"This is my message");getErrorString();
+
+// Test interpretation of substring
+setCommandLineOptions("+d=nogen");
+Modelica.Utilities.Strings.substring("abc 123",5,7);getErrorString();
 
 // Result:
 // true
@@ -23,5 +32,14 @@ checkModel(Modelica.Utilities.Files.list); getErrorString();
 // 
 // 
 // "
+// ""
+// true
+// Syntax error at character 1 of
+// abc 123
+// *
+// This is my message
+// ""
+// true
+// "123"
 // ""
 // endResult
