@@ -16,7 +16,8 @@ expandable.log \
 linearize.log \
 modelicaML.log \
 drmodelica.log \
-streams.log
+streams.log \
+redeclare.log
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -52,6 +53,9 @@ drmodelica.log: omc-diff
 	@echo $@ done
 streams.log: omc-diff
 	$(MAKE) -C streams -f Makefile test > $@
+	@echo $@ done
+redeclare.log: omc-diff
+	$(MAKE) -C redeclare -f Makefile test > $@
 	@echo $@ done
 mofiles.log: omc-diff
 	$(MAKE) -C mofiles -f Makefile test > $@

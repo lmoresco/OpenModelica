@@ -104,11 +104,6 @@ Circle.mo \
 Circuit1.mo \
 Class1.mo \
 Class2.mo \
-ClassExtends1.mo \
-ClassExtends2.mo \
-ClassExtends3.mo \
-ClassExtends4.mo \
-ClassExtends5.mo \
 Comment1.mo \
 Comment2.mo \
 ComponentNames.mo \
@@ -484,12 +479,6 @@ RecordPrefixes.mo \
 RecordSimple.mo \
 RecursiveFunctionCall.mo \
 RecursiveShort.mo \
-Redeclare1.mo \
-Redeclare2.mo \
-Redeclare3.mo \
-Redeclare4.mo \
-Redeclare5.mo \
-RedeclareFlowEffort.mo \
 Reductions.mo \
 reinit.mo \
 ReinitArray.mo \
