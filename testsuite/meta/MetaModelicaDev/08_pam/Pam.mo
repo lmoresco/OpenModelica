@@ -159,14 +159,12 @@ protected function inputItem
   output Integer i;
 algorithm
   i := matchcontinue ()
-    /* Disabled due to OpenModelica trying to ceval Input.read()
     case ()
       equation
         print("input: ");
         i = Input.read();
         print("\n");
       then i;
-    */
     case () then -1;
   end matchcontinue;
 end inputItem;
