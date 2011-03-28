@@ -129,12 +129,12 @@ algorithm
   outBoolean:=
   matchcontinue (inRelOp1,inReal2,inReal3)
     local Real v1,v2;
-    case (Absyn.LT(),v1,v2) then (v1 <. v2); 
-    case (Absyn.LE(),v1,v2) then (v1 <=. v2); 
-    case (Absyn.GT(),v1,v2) then (v1 >. v2); 
-    case (Absyn.GE(),v1,v2) then (v1 >=. v2); 
-    case (Absyn.NE(),v1,v2) then (v1 <>. v2); 
-    case (Absyn.EQ(),v1,v2) then (v1 ==. v2); 
+    case (Absyn.LT(),v1,v2) then (v1 < v2); 
+    case (Absyn.LE(),v1,v2) then (v1 <= v2); 
+    case (Absyn.GT(),v1,v2) then (v1 > v2); 
+    case (Absyn.GE(),v1,v2) then (v1 >= v2); 
+    case (Absyn.NE(),v1,v2) then (v1 <> v2); 
+    case (Absyn.EQ(),v1,v2) then (v1 == v2); 
   end matchcontinue;
 end applyRealRelation;
 

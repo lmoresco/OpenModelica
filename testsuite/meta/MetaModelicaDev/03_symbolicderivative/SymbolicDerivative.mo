@@ -70,7 +70,7 @@ algorithm
     // der of time variable
     case(IDENT(id1), id2)
       equation
-        true = id1 ==& id2;
+        true = id1 == id2;
       then INT(1);
     // der of time-independent variable
     case (IDENT(_), _) then INT(0);

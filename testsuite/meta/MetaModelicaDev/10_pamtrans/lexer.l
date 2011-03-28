@@ -69,7 +69,7 @@ icon         {digits}
 
 %%
 
-/* Make an RML integer from a C string representation (decimal),
+/* Make a boxed integer from a C string representation (decimal),
    box it for our abstract syntax, put in yylval and return constant token. */
  
 int absyn_integer(char *s)
@@ -78,7 +78,7 @@ int absyn_integer(char *s)
   return T_INTCONST;
 }
  
-/* Make an RML Ident or a keyword token from a C string */
+/* Make a String or a keyword token from a C string */
 /* Reserved words: if,then,else,endif,while,do,end,to,read,write */
  
 static struct keyword_s

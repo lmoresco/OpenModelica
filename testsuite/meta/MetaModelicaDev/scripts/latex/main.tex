@@ -1,4 +1,4 @@
-\documentclass[10pt,a4]{article}
+\documentclass[10.5pt,a4]{article}
 
 \usepackage{listings}
 \lstdefinelanguage{modelica}
@@ -45,17 +45,20 @@
 \begin{document}
 \appendix
 
-%\section*{Appendix B stuff}
-%\subsection*{Interface to the Standard MetaModelica Package}
-%\lstinputlisting{MetaModelicaBuiltin.mo}
+\section{Dummy}
+...
 
-\section*{Complete Small Language Specifications}
+\section{A lot of stuff is missing here compared to the book...}
+\subsection{Interface to the Standard MetaModelica Package}
+\lstinputlisting{MetaModelicaBuiltin.mo}
+
+\section{Complete Small Language Specifications}
 This appendix contains several small language specifications, both interpretive and translational.
 
-\subsection*{The Complete Interpretive Semantics for PAM}
+\subsection{The Complete Interpretive Semantics for PAM}
 \lstinputlisting{../../08_pam/Pam.mo}
 
-\subsection*{Complete PAMDECL Interpretive Specification}
+\subsection{Complete PAMDECL Interpretive Specification}
 The complete PAMDECL interpretive specifiation is presented below. The packages/files are shown in the following order, starting with the more interesting semantics packages, ending with the lexer and parsing files.
 
 Main
@@ -67,75 +70,75 @@ lexer.l
 parser.y
 Makefile
 
-\subsubsection*{PAMDECL Main Package}
+\subsubsection{PAMDECL Main Package}
 The main package implements the read-eval-print function as the function evalprog, which accepts the initial environment initial containing only true and false exported from package Eval.
 The main package of the PamDecl evaluator calls ScanParse to read and parse text from the standard input, and Eval to evaluate and print the results.
 \lstinputlisting{../../09_pamdecl/Main.mo}
 
-\subsubsection*{PAMDECL ScanParse}
+\subsubsection{PAMDECL ScanParse}
 The ScanParse package contains only one function scanparse, which is an external function implemented in C to scan and parse text written in the PamDecl language.
 \lstinputlisting{../../09_pamdecl/ScanParse.mo}
 
-\subsubsection*{PAMDECL Absyn}
+\subsubsection{PAMDECL Absyn}
 The Absyn package specifies the abstract syntax used by the rest of the specification, i.e., the other packages.
 \lstinputlisting{../../09_pamdecl/Absyn.mo}
 
-\subsubsection*{PAMDECL Env}
+\subsubsection{PAMDECL Env}
 The Env package contains functions and types for describing and handling environments in a declarative way, including building environments and performing lookup on environments.
 \lstinputlisting{../../09_pamdecl/Env.mo}
 
-\subsubsection*{PAMDECL Eval}
+\subsubsection{PAMDECL Eval}
 The Eval package contains the interpretive semantic cases, collected in functions, for all the constructs in PAMDECL, including expressions, statements, and declarations.
 \lstinputlisting{../../09_pamdecl/Eval.mo}
 
 \lstset{language=}
-\subsubsection*{PAMDECL lexer.l}
+\subsubsection{PAMDECL lexer.l}
 \lstinputlisting{../../09_pamdecl/lexer.l}
 
-\subsubsection*{PAMDECL parser.y}
+\subsubsection{PAMDECL parser.y}
 \lstinputlisting{../../09_pamdecl/parser.y}
 \lstset{language=modelica}
 
-\subsubsection*{PAMDECL Makefile}
+\subsubsection{PAMDECL Makefile}
 \lstinputlisting{../../09_pamdecl/Makefile}
 
-\subsection*{The Complete PAM Translational Specification}
+\subsection{The Complete PAM Translational Specification}
 The following files are needed for building the PAM translator: Absyn.mo, Trans.mo, Mcode.mo, Emit.mo, lexer.l, parser.y, Main.mo, Parse.mo and Makefile.
 
-\subsubsection*{PAMTRANS Absyn.mo}
+\subsubsection{PAMTRANS Absyn.mo}
 \lstinputlisting{../../10_pamtrans/Absyn.mo}
 
-\subsubsection*{PAMTRANS Trans.mo}
+\subsubsection{PAMTRANS Trans.mo}
 \lstinputlisting{../../10_pamtrans/Trans.mo}
 
-\subsubsection*{PAMTRANS Mcode.mo}
+\subsubsection{PAMTRANS Mcode.mo}
 \lstinputlisting{../../10_pamtrans/Mcode.mo}
 
-\subsubsection*{PAMTRANS Emit.mo}
+\subsubsection{PAMTRANS Emit.mo}
 \lstinputlisting{../../10_pamtrans/Emit.mo}
 
 \lstset{language=}
-\subsubsection*{PAMTRANS lexer.l}
+\subsubsection{PAMTRANS lexer.l}
 \lstinputlisting{../../10_pamtrans/lexer.l}
 
-\subsubsection*{PAMTRANS parser.y}
+\subsubsection{PAMTRANS parser.y}
 \lstinputlisting{../../10_pamtrans/parser.y}
 \lstset{language=modelica}
 
-\subsubsection*{PAMTRANS Main.mo}
+\subsubsection{PAMTRANS Main.mo}
 \lstinputlisting{../../10_pamtrans/Main.mo}
 
-\subsubsection*{PAMTRANS Parse.mo}
+\subsubsection{PAMTRANS Parse.mo}
 \lstinputlisting{../../10_pamtrans/Parse.mo}
 
-\subsubsection*{PAMTRANS Makefile}
+\subsubsection{PAMTRANS Makefile}
 \lstinputlisting{../../10_pamtrans/Makefile}
 
-\section*{Exercises}
+\section{Exercises}
 
-\subsection*{Exercises - Introduction and Interpretive Semantics}
+\subsection{Exercises - Introduction and Interpretive Semantics}
 
-\subsubsection*{Exercise 01 Experiment – Types, Functions, Constants, Printing Values}
+\subsubsection{Exercise 01 Experiment – Types, Functions, Constants, Printing Values}
 \lstset{language=}
 \lstinputlisting{01/README.txt}
 \lstset{language=modelica}
@@ -145,85 +148,85 @@ The files where you should add your code are Functions.mo and Main.mo, also show
 \lstinputlisting{01/Main.mo}
 
 
-\subsubsection*{Exercise 02a Exp1 –  Adding New Features to a Small Language}
+\subsubsection{Exercise 02a Exp1 –  Adding New Features to a Small Language}
 \lstset{language=}
 \lstinputlisting{02a/README.txt}
 \lstset{language=modelica}
 \lstinputlisting{02a/Exp1.mo}
 
-\subsubsection*{Exercise 02b Exp2 –  Adding New Features to a Small Language}
+\subsubsection{Exercise 02b Exp2 –  Adding New Features to a Small Language}
 \lstset{language=}
 \lstinputlisting{02b/README.txt}
 \lstset{language=modelica}
 \lstinputlisting{02b/Exp2.mo}
 
-\subsubsection*{Exercise 03 Symbolic Derivative –  Differentating an Expression Using Symbolic Manipulation}
+\subsubsection{Exercise 03 Symbolic Derivative –  Differentiating an Expression Using Symbolic Manipulation}
 \lstset{language=}
 \lstinputlisting{03/README.txt}
 \lstset{language=modelica}
 \lstinputlisting{03/SymbolicDerivative.mo}
 
-\subsubsection*{Exercise 04 Assignment – Printing AST and Environments}
+\subsubsection{Exercise 04 Assignment – Printing AST and Environments}
 \lstset{language=}
 \lstinputlisting{04/README.txt}
 \lstset{language=modelica}
 \lstinputlisting{04/Assignment.mo}
 
-\subsubsection*{Exercise 05a AssignTwoType – Adding a New Type to a Language}
+\subsubsection{Exercise 05a AssignTwoType – Adding a New Type to a Language}
 \lstset{language=}
 \lstinputlisting{05a/README.txt}
 \lstset{language=modelica}
 \lstinputlisting{05a/AssignTwoType.mo}
 
-\subsubsection*{Exercise 05b ModAssignTwoType – Adding a New Type to a Language}
+\subsubsection{Exercise 05b ModAssignTwoType – Adding a New Type to a Language}
 In this exercise you will explore a different way to structure your code
 within different packages. The code from AssignTwoType is now split over 4 packages.
 Otherwise the exercise is the same.
 
-\subsection*{Exercises – Translational Semantics}
-\subsubsection*{Exercise 10 PAMTRANS – Small Translational Semantics}
+\subsection{Exercises – Translational Semantics}
+\subsubsection{Exercise 10 PAMTRANS – Small Translational Semantics}
 \lstset{language=}
 \lstinputlisting{10/README.txt}
 \lstset{language=modelica}
 
-\subsubsection*{Exercise 11 Petrol – Large Translational Semantics}
+\subsubsection{Exercise 11 Petrol – Large Translational Semantics}
 \lstset{language=}
 \lstinputlisting{11/README.txt}
 \lstset{language=modelica}
 
-\subsection*{Exercises – Advanced}
-\subsubsection*{Exercise 06 Advanced – Polymorphic Types and Higher Order Functions}
+\subsection{Exercises – Advanced}
+\subsubsection{Exercise 06 Advanced – Polymorphic Types and Higher Order Functions}
 \lstset{language=}
 \lstinputlisting{06/README.txt}
 \lstset{language=modelica}
 
-\section*{Solutions to Exercises}
+\section{Solutions to Exercises}
 
-\subsection*{Solution 01 Experiment – Types, Functions, Constants, Printing Values}
+\subsection{Solution 01 Experiment – Types, Functions, Constants, Printing Values}
 \lstinputlisting{01/SOLUTION.mo}
 
-\subsection*{Solution 02a Exp1 –  Adding New Features to a Small Language}
+\subsection{Solution 02a Exp1 –  Adding New Features to a Small Language}
 \lstinputlisting{02a/SOLUTION.txt}
 
-\subsection*{Solution 02b Exp2 –  Adding New Features to a Small Language}
+\subsection{Solution 02b Exp2 –  Adding New Features to a Small Language}
 Analogous to 02a Exp1.
 
-\subsection*{Solution 03 Symbolic Derivative –  Differentating an Expression Using Symbolic Manipulation}
+\subsection{Solution 03 Symbolic Derivative –  Differentating an Expression Using Symbolic Manipulation}
 \lstinputlisting{03/SOLUTION.mo}
 
-\subsection*{Solution 04 Assignment – Printing AST and Environments}
+\subsection{Solution 04 Assignment – Printing AST and Environments}
 \lstinputlisting{04/SOLUTION.mo}
 
-\subsection*{Solution 05a AssignTwoType – Adding a New Type to a Language}
+\subsection{Solution 05a AssignTwoType – Adding a New Type to a Language}
 \lstinputlisting{05a/SOLUTION.mo}
 
-\subsection*{Solution 05b ModAssignTwoType – Adding a New Type to a Language}
+\subsection{Solution 05b ModAssignTwoType – Adding a New Type to a Language}
 Analogous to 05a AssignTwoType.
 
-\subsection*{Solution 06 Advanced – Polymorphic Types and Higher Order Functions}
+\subsection{Solution 06 Advanced – Polymorphic Types and Higher Order Functions}
 \lstinputlisting{06/SOLUTION.mo}
 
-\subsection*{Solution 08-11 – PAM,Petrol}
+\subsection{Solution 08-11 – PAM,Petrol}
 These were not really exercises and thus have no solution. Hope you had fun exploring the programs.
 
 \end{document}

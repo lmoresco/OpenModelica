@@ -9,6 +9,7 @@ MainTest.mos \
 SimCodeTest.mos \
 SimplifyTest.mos \
 SusanTest.mos \
+System.mos \
 UtilTest.mos
 
 

@@ -72,7 +72,7 @@ icon         {digits}
 ";"          return T_SEMIC;
 %%
 
-/* Make an RML integer from a C string representation (decimal),
+/* Make a boxed integer from a C string representation (decimal),
    box it for our abstract syntax, put in yylval and return constant token. */
  
 long absyn_integer(char *s)
@@ -81,7 +81,7 @@ long absyn_integer(char *s)
   return T_INTCONST;
 }
  
-/* Make an RML Ident or a keyword token from a C string */
+/* Make an String or a keyword token from a C string */
 /* Reserved words: if,then,else,endif,while,do,end,to,read,write */
  
 static struct keyword_s
@@ -90,16 +90,16 @@ static struct keyword_s
   int token;
 } kw[] =
 {
-  {"do",        T_DO},
-  {"else",      T_ELSE},
-  {"end",       T_END},
-  {"endif",       T_ENDIF},
-  {"if",        T_IF},
+  {"do",     T_DO},
+  {"else",   T_ELSE},
+  {"end",    T_END},
+  {"endif",  T_ENDIF},
+  {"if",     T_IF},
   {"read",   T_READ},
-  {"then",      T_THEN},
-  {"to",        T_TO},
-  {"while",     T_WHILE},
-  {"write",     T_WRITE},
+  {"then",   T_THEN},
+  {"to",     T_TO},
+  {"while",  T_WHILE},
+  {"write",  T_WRITE},
 };
 
 long absyn_ident_or_keyword(char *s)
@@ -112,12 +112,12 @@ long absyn_ident_or_keyword(char *s)
     int cmp = strcmp(kw[mid].name, yytext);
     if( cmp == 0 )
     {
-            return kw[mid].token;
+      return kw[mid].token;
     }
     else if( cmp < 0 )
-            low = mid + 1;
+      low = mid + 1;
     else
-            high = mid - 1;
+      high = mid - 1;
   }
   yylval = mmc_mk_scon(s);
   return T_IDENT;

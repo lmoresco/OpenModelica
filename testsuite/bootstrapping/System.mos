@@ -1,0 +1,13 @@
+// name: System
+// cflags: +g=MetaModelica
+// status: correct
+
+loadFile("../../Compiler/Util/System.mo");
+
+"System.getCurrentTimeStr";""<>System.getCurrentTimeStr();getErrorString();
+// Result:
+// true
+// "System.getCurrentTimeStr"
+// true
+// ""
+// endResult

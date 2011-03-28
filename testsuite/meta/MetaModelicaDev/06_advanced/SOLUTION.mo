@@ -49,6 +49,7 @@ function compareInt
   input Integer i2;
   output Boolean b;
 algorithm
+  // Note that using the builtin intLt function also works
   b := i1 < i2;
 end compareInt;
 
@@ -57,7 +58,7 @@ function compareReal
   input Real r2;
   output Boolean b;
 algorithm
-  b := r1 <. r2;
+  b := r1 < r2;
 end compareReal;
 
 function compareString

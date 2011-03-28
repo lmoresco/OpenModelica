@@ -92,7 +92,7 @@ junk            .|\n
 
 %%
  
-/* Make an RML integer from a C string representation (decimal),
+/* Make a boxed integer from a C string representation (decimal),
    box it for our abstract syntax, put in yylval and return constant token. */
  
 int absyn_integer(char *s)
@@ -101,7 +101,7 @@ int absyn_integer(char *s)
   return T_CONST_INT;
 }
  
-/* Make an RML real from a C string representation,
+/* Make a boxed real from a C string representation,
    box it for our abstract syntax, put in yylval and return constant token. */
  
 int absyn_real(char *s)
@@ -110,7 +110,7 @@ int absyn_real(char *s)
   return T_CONST_REAL;
 }
  
-/* Make an RML Ident or a keyword token from a C string */
+/* Make a String or a keyword token from a C string */
  
 static struct keyword_s
 {
