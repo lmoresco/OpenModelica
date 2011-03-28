@@ -498,6 +498,7 @@ SimpleIntegrator3.mo \
 SimpleTypeExtend.mo \
 Simplify.mo \
 Simplify2.mo \
+SimplifyBinary.mo \
 SimplifyRangeInCall.mo \
 Sinh.mo \
 Sin.mo \
