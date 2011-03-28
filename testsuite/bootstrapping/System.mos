@@ -3,11 +3,26 @@
 // status: correct
 
 loadFile("../../Compiler/Util/System.mo");
+loadFile("SystemTest.mo");
 
 "System.getCurrentTimeStr";""<>System.getCurrentTimeStr();getErrorString();
+"SystemTest.substringTest";SystemTest.substringTest("abc def ghi",1,4,7);getErrorString();
+"SystemTest.substringTest";SystemTest.substringTest("abc def ghi",1,1,1);getErrorString();
+"SystemTest.substringTest";SystemTest.substringTest("abc def ghi",13,13,13);getErrorString();
+
 // Result:
+// true
 // true
 // "System.getCurrentTimeStr"
 // true
+// ""
+// "SystemTest.substringTest"
+// ("abc "," def","abc def")
+// ""
+// "SystemTest.substringTest"
+// ("a","a","a")
+// ""
+// "SystemTest.substringTest"
+// (fail(),fail(),fail())
 // ""
 // endResult
