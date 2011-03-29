@@ -1,5 +1,6 @@
 \documentclass[10.5pt,a4]{article}
 
+\usepackage{verbatim}
 \usepackage{listings}
 \lstdefinelanguage{modelica}
 {
@@ -45,30 +46,28 @@
 \begin{document}
 \appendix
 
+\begin{comment}
 \section{Dummy}
 ...
 
 \section{A lot of stuff is missing here compared to the book...}
 \subsection{Interface to the Standard MetaModelica Package}
 \lstinputlisting{MetaModelicaBuiltin.mo}
+\end{comment}
+
+\addtocounter{section}{2}
 
 \section{Complete Small Language Specifications}
 This appendix contains several small language specifications, both interpretive and translational.
 
 \subsection{The Complete Interpretive Semantics for PAM}
+\label{listings:pam}
 \lstinputlisting{../../08_pam/Pam.mo}
 
 \subsection{Complete PAMDECL Interpretive Specification}
-The complete PAMDECL interpretive specifiation is presented below. The packages/files are shown in the following order, starting with the more interesting semantics packages, ending with the lexer and parsing files.
+The complete PAMDECL interpretive specifiation is presented below. The packages/files are shown starting with the more interesting semantics packages, ending with the lexer and parsing files.
 
-Main
-ScanParse
-Absyn
-Env
-Eval
-lexer.l
-parser.y
-Makefile
+\label{listings:pamdecl}
 
 \subsubsection{PAMDECL Main Package}
 The main package implements the read-eval-print function as the function evalprog, which accepts the initial environment initial containing only true and false exported from package Eval.
@@ -104,6 +103,7 @@ The Eval package contains the interpretive semantic cases, collected in function
 
 \subsection{The Complete PAM Translational Specification}
 The following files are needed for building the PAM translator: \code{Absyn.mo}, \code{Trans.mo}, \code{Mcode.mo}, \code{Emit.mo}, \code{lexer.l}, \code{parser.y}, \code{Main.mo}, \code{Parse.mo} and \code{Makefile}.
+\label{listings:pamtrans}
 
 \subsubsection{PAMTRANS Absyn.mo}
 \lstinputlisting{../../10_pamtrans/Absyn.mo}
@@ -117,22 +117,70 @@ The following files are needed for building the PAM translator: \code{Absyn.mo},
 \subsubsection{PAMTRANS Emit.mo}
 \lstinputlisting{../../10_pamtrans/Emit.mo}
 
-\lstset{language=}
-\subsubsection{PAMTRANS lexer.l}
-\lstinputlisting{../../10_pamtrans/lexer.l}
-
-\subsubsection{PAMTRANS parser.y}
-\lstinputlisting{../../10_pamtrans/parser.y}
-\lstset{language=modelica}
-
 \subsubsection{PAMTRANS Main.mo}
 \lstinputlisting{../../10_pamtrans/Main.mo}
 
 \subsubsection{PAMTRANS Parse.mo}
 \lstinputlisting{../../10_pamtrans/Parse.mo}
 
+\lstset{language=}
+\subsubsection{PAMTRANS lexer.l}
+\lstinputlisting{../../10_pamtrans/lexer.l}
+
+\subsubsection{PAMTRANS parser.y}
+\lstinputlisting{../../10_pamtrans/parser.y}
+
 \subsubsection{PAMTRANS Makefile}
 \lstinputlisting{../../10_pamtrans/Makefile}
+\lstset{language=modelica}
+
+\begin{comment}
+\section{Petrol}
+
+Petrol is a Pascal-like language. The complete implementation is presented below.
+\label{listings:petrol}
+
+\subsection{Petrol Abstract.mo}
+\lstinputlisting{../../11_petrol/Absyn.mo}
+
+\subsection{Petrol FCode.mo}
+\lstinputlisting{../../11_petrol/FCode.mo}
+
+\subsection{Petrol FCEmit.mo}
+\lstinputlisting{../../11_petrol/FCEmit.mo}
+
+\subsection{Petrol Flatten.mo}
+\lstinputlisting{../../11_petrol/Flatten.mo}
+
+\subsection{Petrol Static.mo}
+\lstinputlisting{../../11_petrol/Static.mo}
+
+\subsection{Petrol TCode.mo}
+\lstinputlisting{../../11_petrol/TCode.mo}
+
+\subsection{Petrol Types.mo}
+\lstinputlisting{../../11_petrol/Types.mo}
+
+\subsection{Petrol Main.mo}
+\lstinputlisting{../../11_petrol/Main.mo}
+
+\subsection{Petrol Parse.mo}
+\lstinputlisting{../../11_petrol/Parse.mo}
+
+\lstset{language=}
+\subsection{Petrol lexerPetrol.c}
+\lstinputlisting{../../11_petrol/lexerPetrol.c}
+
+\subsection{Petrol lexerPetrol.h}
+\lstinputlisting{../../11_petrol/lexerPetrol.h}
+
+\subsection{Petrol parser.y}
+\lstinputlisting{../../11_petrol/parser.y}
+
+\subsection{Petrol Makefile}
+\lstinputlisting{../../11_petrol/Makefile}
+\lstset{language=modelica}
+\end{comment}
 
 \section{Exercises}
 
@@ -166,26 +214,19 @@ The files where you should add your code are Functions.mo and Main.mo, also show
 \input{05a/README}
 \lstinputlisting{05a/AssignTwoType.mo}
 
-\subsubsection{Exercise 05b ModAssignTwoType – Adding a New Type to a Language}
-In this exercise you will explore a different way to structure your code
-within different packages. The code from AssignTwoType is now split over 4 packages.
-Otherwise the exercise is the same.
+\subsubsection{Exercise 05b ModAssignTwoType – Modularized Specification}
+\input{05b/README}
 
 \subsection{Exercises – Translational Semantics}
 \subsubsection{Exercise 10 PAMTRANS – Small Translational Semantics}
-\lstset{language=}
-\lstinputlisting{10/README.txt}
-\lstset{language=modelica}
+\input{10/README}
 
 \subsubsection{Exercise 11 Petrol – Large Translational Semantics}
-\lstset{language=}
-\lstinputlisting{11/README.txt}
-\lstset{language=modelica}
+\input{11/README}
 
 \subsection{Exercises – Advanced}
 \subsubsection{Exercise 06 Advanced – Polymorphic Types and Higher Order Functions}
-\lstset{language=}
-\lstinputlisting{06/README.txt}
+\input{06/README}
 \lstset{language=modelica}
 
 \section{Solutions to Exercises}
@@ -214,7 +255,16 @@ Analogous to 05a AssignTwoType.
 \subsection{Solution 06 Advanced – Polymorphic Types and Higher Order Functions}
 \lstinputlisting{06/SOLUTION.mo}
 
-\subsection{Solution 07-11 – Java,PAM,Petrol}
-These were not really exercises and thus have no solution. Hope you had fun exploring the programs.
+\subsection{Solution 08 pam – A small Language}
+The solution is available in Appendix~\ref{listings:pam}.
+
+\subsection{Solution 09 pamdecl – Pam with Declarations}
+The solution is available in Appendix~\ref{listings:pamdecl}.
+
+\subsection{Solution 10 pamtrans – Small Translational Semantics}
+The solution is available in Appendix~\ref{listings:pamtrans}.
+
+%\subsection{Solution 11 petrol – Large Translational Semantics}
+%The solution is available in Appendix~\ref{listings:petrol}.
 
 \end{document}
