@@ -9,6 +9,7 @@ loadFile("SystemTest.mo");
 "SystemTest.substringTest";SystemTest.substringTest("abc def ghi",1,4,7);getErrorString();
 "SystemTest.substringTest";SystemTest.substringTest("abc def ghi",1,1,1);getErrorString();
 "SystemTest.substringTest";SystemTest.substringTest("abc def ghi",13,13,13);getErrorString();
+SystemTest.timerTest()>=0;getErrorString();
 
 // Result:
 // true
@@ -24,5 +25,7 @@ loadFile("SystemTest.mo");
 // ""
 // "SystemTest.substringTest"
 // (fail(),fail(),fail())
+// ""
+// true
 // ""
 // endResult
