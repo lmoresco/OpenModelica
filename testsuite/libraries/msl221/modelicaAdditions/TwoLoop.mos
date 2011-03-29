@@ -9045,7 +9045,7 @@ getErrorString();
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.TwoLoop has 5372 equation(s) and 5376 variable(s).
-// 4424 of these are trivial equation(s).
+// 4436 of these are trivial equation(s).
 // "
 // ""
 // endResult

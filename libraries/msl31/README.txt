@@ -2,6 +2,9 @@ A full copy of Modelica Standard Library 3.1 from:
  https://svn.modelica.org/projects/Modelica/branches/maintenance/3.1
 Revision 4084
 
+Added by Frenkel TUD, 2011-03-19
+Changed:
+- reimplement Functions PackShape and PackMaterial with useful behaviour
 Added by Adrian Pop, 2010-09-14
 Changed: 
 - ModelicaServices/package.mo to include dummy functions PackShape and PackMaterial.

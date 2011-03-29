@@ -17,7 +17,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic); getEr
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic has 9491 equation(s) and 9491 variable(s).
-// 7058 of these are trivial equation(s).
+// 7264 of these are trivial equation(s).
 // "
 // ""
 // endResult

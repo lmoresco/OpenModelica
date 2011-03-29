@@ -91,7 +91,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   Continuing flattening by only considering the 'outer' component declaration.
 // 
 // Class Modelica.Mechanics.MultiBody.Interfaces.PartialLineForce has 1112 equation(s) and 1119 variable(s).
-// 637 of these are trivial equation(s).
+// 622 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Types.RotationSequence completed successfully.
@@ -137,20 +137,37 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // end Modelica.Mechanics.MultiBody.Frames.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
-//   input Real material1;
-//   input Real material2;
-//   input Real material3;
-//   input Real sp;
-//   output Real mat;
+//   input Real c1;
+//   input Real c2;
+//   input Real c3;
+//   input Real sc;
+//   output Real m;
+//   protected Real cc1;
+//   protected Real cc2;
+//   protected Real cc3;
+//   protected Real cc4;
+//   protected Real csc;
+//   protected Real yc1;
+//   protected Real yc2;
+//   protected Real yc3;
+//   protected Real ysc;
 // algorithm
-//   mat := material1 + material2 + material3 + sp;
+//   cc1 := if c1 > 1.0 then 1.0 else if c1 < 0.005 then 0.01 else c1;
+//   yc1 := /*REAL*/(100000 * integer(mod(100.0 * cc1 - 0.5,100.0)));
+//   cc2 := if c2 > 1.0 then 1.0 else if c2 < 0.005 then 0.01 else c2;
+//   yc2 := /*REAL*/(1000 * integer(mod(100.0 * cc2 - 0.5,100.0)));
+//   cc3 := if c3 > 1.0 then 1.0 else if c3 < 0.005 then 0.01 else c3;
+//   yc3 := /*REAL*/(10 * integer(mod(100.0 * cc3 - 0.5,100.0)));
+//   csc := if sc > 1.0 then 1.0 else if sc < 0.05 then 0.1 else sc;
+//   ysc := /*REAL*/(integer(mod(10.0 * csc - 0.5,10.0)));
+//   m := yc1 + yc2 + yc3 + ysc;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape \"Inline before index reduction\"
 //   input String shapeType;
 //   output Real pack;
 // algorithm
-//   pack := 1.2;
+//   pack := if shapeType == \"box\" then 101.0 else if shapeType == \"sphere\" then 102.0 else if shapeType == \"cylinder\" then 103.0 else if shapeType == \"pipecylinder\" then 110.0 else if shapeType == \"cone\" then 104.0 else if shapeType == \"pipe\" then 105.0 else if shapeType == \"beam\" then 106.0 else if shapeType == \"gearwheel\" then 108.0 else if shapeType == \"spring\" then 111.0 else 1.2;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape;
 // 
 // class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape
@@ -233,7 +250,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape has 37 equation(s) and 37 variable(s).
-// 17 of these are trivial equation(s).
+// 16 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -315,20 +332,37 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // end Modelica.Mechanics.MultiBody.Frames.nullRotation;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
-//   input Real material1;
-//   input Real material2;
-//   input Real material3;
-//   input Real sp;
-//   output Real mat;
+//   input Real c1;
+//   input Real c2;
+//   input Real c3;
+//   input Real sc;
+//   output Real m;
+//   protected Real cc1;
+//   protected Real cc2;
+//   protected Real cc3;
+//   protected Real cc4;
+//   protected Real csc;
+//   protected Real yc1;
+//   protected Real yc2;
+//   protected Real yc3;
+//   protected Real ysc;
 // algorithm
-//   mat := material1 + material2 + material3 + sp;
+//   cc1 := if c1 > 1.0 then 1.0 else if c1 < 0.005 then 0.01 else c1;
+//   yc1 := /*REAL*/(100000 * integer(mod(100.0 * cc1 - 0.5,100.0)));
+//   cc2 := if c2 > 1.0 then 1.0 else if c2 < 0.005 then 0.01 else c2;
+//   yc2 := /*REAL*/(1000 * integer(mod(100.0 * cc2 - 0.5,100.0)));
+//   cc3 := if c3 > 1.0 then 1.0 else if c3 < 0.005 then 0.01 else c3;
+//   yc3 := /*REAL*/(10 * integer(mod(100.0 * cc3 - 0.5,100.0)));
+//   csc := if sc > 1.0 then 1.0 else if sc < 0.05 then 0.1 else sc;
+//   ysc := /*REAL*/(integer(mod(10.0 * csc - 0.5,10.0)));
+//   m := yc1 + yc2 + yc3 + ysc;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape \"Inline before index reduction\"
 //   input String shapeType;
 //   output Real pack;
 // algorithm
-//   pack := 1.2;
+//   pack := if shapeType == \"box\" then 101.0 else if shapeType == \"sphere\" then 102.0 else if shapeType == \"cylinder\" then 103.0 else if shapeType == \"pipecylinder\" then 110.0 else if shapeType == \"cone\" then 104.0 else if shapeType == \"pipe\" then 105.0 else if shapeType == \"beam\" then 106.0 else if shapeType == \"gearwheel\" then 108.0 else if shapeType == \"spring\" then 111.0 else 1.2;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape;
 // 
 // class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape
@@ -411,7 +445,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape has 37 equation(s) and 37 variable(s).
-// 17 of these are trivial equation(s).
+// 16 of these are trivial equation(s).
 // "
 // ""
 // endResult

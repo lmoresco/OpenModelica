@@ -3936,7 +3936,7 @@ getErrorString();
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.Fourbar1 has 2318 equation(s) and 2319 variable(s).
-// 1829 of these are trivial equation(s).
+// 1833 of these are trivial equation(s).
 // "
 // ""
 // endResult
