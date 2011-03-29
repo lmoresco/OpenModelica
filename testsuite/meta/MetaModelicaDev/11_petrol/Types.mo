@@ -465,7 +465,7 @@ algorithm
   end matchcontinue;
 end arithCnv;
 
-protected function chooseIntReal "Elaborate an equality expression.
+protected function chooseIntReal<Type_a> "Elaborate an equality expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening
   or instantiation of the polymorphic nil pointer.
@@ -476,7 +476,6 @@ protected function chooseIntReal "Elaborate an equality expression.
   input Type_a inTypeA2;
   input Type_a inTypeA3;
   output Type_a outTypeA;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   outTypeA:=
   matchcontinue (inATy1,inTypeA2,inTypeA3)
@@ -633,7 +632,7 @@ algorithm
   end matchcontinue;
 end relCnv;
 
-protected function ptrAddIntCnv "Elaborate an addition expression.
+protected function ptrAddIntCnv<Type_a> "Elaborate an addition expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening.
   Choose int, real, or ptr/int version of the addition operator.
@@ -645,7 +644,6 @@ protected function ptrAddIntCnv "Elaborate an addition expression.
   input TCode.Exp inExp4;
   output TCode.Exp outExp;
   output Type_a outTypeA;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   (outExp,outTypeA):=
   matchcontinue (inExp1,inTypeA2,inTy3,inExp4)

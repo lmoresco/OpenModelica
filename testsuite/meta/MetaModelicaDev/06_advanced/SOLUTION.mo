@@ -85,8 +85,7 @@ algorithm
   end matchcontinue;
 end compareString;
 
-function quicksort
-  replaceable type Type_a subtypeof Any;
+function quicksort<Type_a>
   input  list<Type_a> inList;
   input  list<Type_a> accList;  
   partial function FuncType 
@@ -112,8 +111,7 @@ algorithm
   end matchcontinue;
 end quicksort;
   
-function partition 
-  replaceable type Type_a subtypeof Any;
+function partition<Type_a>
   input  Type_a inList;
   input  list<Type_a> accList;
   partial function FuncType 
@@ -143,8 +141,7 @@ algorithm
   end matchcontinue;
 end partition;
 
-function orderList
-  replaceable type Type_a subtypeof Any;
+function orderList<Type_a>
   input  list<Type_a> inList;
   partial function FuncType 
     input Type_a el1;
@@ -187,9 +184,7 @@ algorithm
 end transformReal2String;
 
 // mapping functions
-function map1
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
+function map1<Type_a,Type_b>
   input  list<Type_a> inList;
   partial function FuncType 
     input  Type_a elIn;
@@ -213,8 +208,7 @@ algorithm
   end matchcontinue;
 end map1;
 
-function map0
-  replaceable type Type_a subtypeof Any;
+function map0<Type_a>
   input  list<Type_a> inList;
   partial function FuncType 
     input  Type_a elIn;

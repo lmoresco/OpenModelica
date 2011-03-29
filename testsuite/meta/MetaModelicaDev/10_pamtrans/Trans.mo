@@ -73,12 +73,11 @@ algorithm
   outMOperand := Mcode.L(no);
 end genlabel;
 
-protected function listAppend3
+protected function listAppend3<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
   output VType_aLst l13;
-  replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
 protected
   VType_aLst l12;
@@ -87,14 +86,13 @@ algorithm
   l13 := listAppend(l12, l3);
 end listAppend3;
 
-protected function listAppend5
+protected function listAppend5<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
   input VType_aLst l4;
   input VType_aLst l5;
   output VType_aLst l15;
-  replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
 protected
   VType_aLst l13;
@@ -103,7 +101,7 @@ algorithm
   l15 := listAppend3(l13, l4, l5);
 end listAppend5;
 
-protected function listAppend6
+protected function listAppend6<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -111,7 +109,6 @@ protected function listAppend6
   input VType_aLst l5;
   input VType_aLst l6;
   output VType_aLst l16;
-  replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
 protected
   VType_aLst l13,l46;
@@ -121,7 +118,7 @@ algorithm
   l16 := listAppend(l13, l46);
 end listAppend6;
 
-protected function listAppend10
+protected function listAppend10<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -133,7 +130,6 @@ protected function listAppend10
   input VType_aLst l9;
   input VType_aLst l10;
   output VType_aLst l110;
-  replaceable type Type_a subtypeof Any;
   type VType_aLst = list<Type_a>;
 protected
   VType_aLst l15;

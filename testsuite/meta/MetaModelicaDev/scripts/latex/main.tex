@@ -21,7 +21,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{url}
-\lstset{breaklines=true,language=modelica}
+\lstset{breaklines=true,language=modelica,basicstyle=\small}
 \usepackage{graphicx}
 \usepackage{color}
 
@@ -103,7 +103,7 @@ The Eval package contains the interpretive semantic cases, collected in function
 \lstinputlisting{../../09_pamdecl/Makefile}
 
 \subsection{The Complete PAM Translational Specification}
-The following files are needed for building the PAM translator: Absyn.mo, Trans.mo, Mcode.mo, Emit.mo, lexer.l, parser.y, Main.mo, Parse.mo and Makefile.
+The following files are needed for building the PAM translator: \code{Absyn.mo}, \code{Trans.mo}, \code{Mcode.mo}, \code{Emit.mo}, \code{lexer.l}, \code{parser.y}, \code{Main.mo}, \code{Parse.mo} and \code{Makefile}.
 
 \subsubsection{PAMTRANS Absyn.mo}
 \lstinputlisting{../../10_pamtrans/Absyn.mo}
@@ -151,27 +151,19 @@ The files where you should add your code are Functions.mo and Main.mo, also show
 \lstinputlisting{02a/Exp1.mo}
 
 \subsubsection{Exercise 02b Exp2 –  Adding New Features to a Small Language}
-\lstset{language=}
-\lstinputlisting{02b/README.txt}
-\lstset{language=modelica}
+\input{02b/README}
 \lstinputlisting{02b/Exp2.mo}
 
 \subsubsection{Exercise 03 Symbolic Derivative –  Differentiating an Expression Using Symbolic Manipulation}
-\lstset{language=}
-\lstinputlisting{03/README.txt}
-\lstset{language=modelica}
+\input{03/README}
 \lstinputlisting{03/SymbolicDerivative.mo}
 
 \subsubsection{Exercise 04 Assignment – Printing AST and Environments}
-\lstset{language=}
-\lstinputlisting{04/README.txt}
-\lstset{language=modelica}
+\input{04/README}
 \lstinputlisting{04/Assignment.mo}
 
 \subsubsection{Exercise 05a AssignTwoType – Adding a New Type to a Language}
-\lstset{language=}
-\lstinputlisting{05a/README.txt}
-\lstset{language=modelica}
+\input{05a/README}
 \lstinputlisting{05a/AssignTwoType.mo}
 
 \subsubsection{Exercise 05b ModAssignTwoType – Adding a New Type to a Language}
@@ -222,7 +214,7 @@ Analogous to 05a AssignTwoType.
 \subsection{Solution 06 Advanced – Polymorphic Types and Higher Order Functions}
 \lstinputlisting{06/SOLUTION.mo}
 
-\subsection{Solution 08-11 – PAM,Petrol}
+\subsection{Solution 07-11 – Java,PAM,Petrol}
 These were not really exercises and thus have no solution. Hope you had fun exploring the programs.
 
 \end{document}

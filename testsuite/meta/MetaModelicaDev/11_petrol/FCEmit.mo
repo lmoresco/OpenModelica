@@ -11,14 +11,12 @@ algorithm
   print(s);
 end printInt;
 
-protected function foreach
+protected function foreach<Type_a>
   input FuncTypeType_aTo inFuncTypeTypeATo;
   input list<Type_a> inTypeALst;
   partial function FuncTypeType_aTo
     input Type_a inTypeA;
-    replaceable type Type_a subtypeof Any;
   end FuncTypeType_aTo;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   _:=
   matchcontinue (inFuncTypeTypeATo,inTypeALst)
@@ -36,18 +34,14 @@ algorithm
   end matchcontinue;
 end foreach;
 
-protected function map
+protected function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
   partial function FuncTypeType_aToType_b
     input Type_a inTypeA;
     output Type_b outTypeB;
-    replaceable type Type_a subtypeof Any;
-    replaceable type Type_b subtypeof Any;
   end FuncTypeType_aToType_b;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeBLst:=
   matchcontinue (inFuncTypeTypeAToTypeB,inTypeALst)
@@ -515,9 +509,8 @@ algorithm
   end matchcontinue;
 end emitExps;
 
-protected function emitAssignRetval
+protected function emitAssignRetval<Type_a>
   input Option<tuple<Type_a, FCode.Exp>> inTplTypeAFCodeExpOption;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   _:=
   matchcontinue (inTplTypeAFCodeExpOption)
@@ -704,9 +697,8 @@ algorithm
   end matchcontinue;
 end emitDeclRetval;
 
-protected function emitReturnRetval
+protected function emitReturnRetval<Type_a>
   input Option<Type_a> inTypeAOption;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   _:=
   matchcontinue (inTypeAOption)

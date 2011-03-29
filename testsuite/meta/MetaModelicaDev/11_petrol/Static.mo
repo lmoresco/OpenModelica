@@ -5,18 +5,14 @@ public import TCode;
 
 protected import Types;
 
-protected function map
+protected function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
   partial function FuncTypeType_aToType_b
     input Type_a inTypeA;
     output Type_b outTypeB;
-    replaceable type Type_a subtypeof Any;
-    replaceable type Type_b subtypeof Any;
   end FuncTypeType_aToType_b;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeBLst:=
   matchcontinue (inFuncTypeTypeAToTypeB,inTypeALst)
@@ -83,12 +79,10 @@ protected constant list<tuple<String, Bnd>> envInit={("integer",TYPEbnd(Types.AR
           ("trunc",
           FUNCbnd({Types.ARITH(Types.REAL())},Types.ARITH(Types.INT()))),("nil",NILbnd())};
 
-protected function lookup
+protected function lookup<Type_a,Type_b>
   input list<tuple<Type_a, Type_b>> inTplTypeATypeBLst;
   input Type_a inTypeA;
   output Type_b outTypeB;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeB:=
   matchcontinue (inTplTypeATypeBLst,inTypeA)
@@ -413,7 +407,7 @@ algorithm
   end matchcontinue;
 end elabTypes;
 
-protected function lvalueId "
+protected function lvalueId<Type_a,Type_b> "
   Expressions
 
   function lvalueId =
@@ -428,8 +422,6 @@ end"
   input Type_a inTypeA;
   input Type_b inTypeB;
   output Type_b outTypeB;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeB:=
   matchcontinue (inTypeA,inTypeB)
@@ -895,10 +887,9 @@ algorithm
   end matchcontinue;
 end mkvar;
 
-protected function mkvarbnd
+protected function mkvarbnd<Type_a>
   input tuple<Type_a, Types.Ty> inTplTypeATypesTy;
   output tuple<Type_a, Bnd> outTplTypeABnd;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   outTplTypeABnd:=
   matchcontinue (inTplTypeATypesTy)
@@ -923,10 +914,9 @@ algorithm
   end matchcontinue;
 end decayFormalTy;
 
-protected function decayFormal
+protected function decayFormal<Type_a>
   input tuple<Type_a, Types.Ty> inTplTypeATypesTy;
   output tuple<Type_a, Types.Ty> outTplTypeATypesTy;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   outTplTypeATypesTy:=
   matchcontinue (inTplTypeATypesTy)
@@ -941,11 +931,9 @@ algorithm
   end matchcontinue;
 end decayFormal;
 
-protected function snd
+protected function snd<Type_a,Type_b>
   input tuple<Type_a, Type_b> inTplTypeATypeB;
   output Type_b outTypeB;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeB:=
   matchcontinue (inTplTypeATypeB)

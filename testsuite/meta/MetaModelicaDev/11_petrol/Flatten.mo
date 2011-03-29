@@ -53,18 +53,14 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function map
+protected function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
   partial function FuncTypeType_aToType_b
     input Type_a inTypeA;
     output Type_b outTypeB;
-    replaceable type Type_a subtypeof Any;
-    replaceable type Type_b subtypeof Any;
   end FuncTypeType_aToType_b;
-  replaceable type Type_a subtypeof Any;
-  replaceable type Type_b subtypeof Any;
 algorithm 
   outTypeBLst:=
   matchcontinue (inFuncTypeTypeAToTypeB,inTypeALst)
@@ -266,11 +262,10 @@ algorithm
   end matchcontinue;
 end transBinop;
 
-protected function transProcid
+protected function transProcid<Type_a>
   input list<tuple<String, Bnd>> env;
   input String id;
   output String id_1;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   id_1 := matchcontinue (env, id)
     local String id_2;
@@ -444,12 +439,11 @@ algorithm
   end matchcontinue;
 end transStmt;
 
-protected function envPlusVars
+protected function envPlusVars<Type_a>
   input list<tuple<String, Type_a>> inTplStringTypeALst;
   input Type_a inTypeA;
   input list<FCode.Var> inFCodeVarLst;
   output list<tuple<String, Type_a>> outTplStringTypeALst;
-  replaceable type Type_a subtypeof Any;
 algorithm 
   outTplStringTypeALst:=
   matchcontinue (inTplStringTypeALst,inTypeA,inFCodeVarLst)
