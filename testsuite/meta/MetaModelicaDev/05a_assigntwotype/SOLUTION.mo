@@ -296,7 +296,9 @@ algorithm
   end matchcontinue;
 end applyRealUnop;
 
-protected function lookup
+protected function lookup "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail.
+  Identifier id is found in the first pair of the list, and value is returned."
   input Env inEnv;
   input Ident inIdent;
   output Value outValue;
@@ -307,17 +309,8 @@ algorithm
       Ident id2,id;
       Value value;
       Env rest;
-    case ((id2,value) :: _,id) "lookup returns the value associated with an identifier.
-  If no association is present, lookup will fail. Identifier id is found in the first pair of the list, and value
-  is returned."
-      equation 
-        equality(id = id2); then value;
-    case ((id2,_) :: rest,id) "id is not found in the first pair of the list, and lookup will
-  recursively search the rest of the list. If found, value is returned.
-"
-      equation 
-        failure(equality(id = id2));
-        value = lookup(rest, id); then value;
+    case ((id2,value) :: rest, id)
+      then if valueEq(id,id2) then value else lookup(rest, id);
   end matchcontinue;
 end lookup;
 
@@ -335,11 +328,13 @@ algorithm
       Ident id;
     case (env,id) "Return value of id in env. If id not present, add id and return 0"
       equation 
-        failure(value = lookup(env, id));
-        value = INTval(0); then ((id,value) :: env,value);
+        failure(_ = lookup(env, id));
+        value = INTval(0);
+      then ((id,value) :: env,value);
     case (env,id)
       equation 
-        value = lookup(env, id); then (env,value);
+        value = lookup(env, id);
+      then (env,value);
   end matchcontinue;
 end lookupextend;
 

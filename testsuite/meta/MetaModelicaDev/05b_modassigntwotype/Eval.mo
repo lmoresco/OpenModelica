@@ -29,52 +29,45 @@ uniontype Ty2 " Ty2 is an auxiliary datatype used to handle types during evaluat
   end REAL2;
 end Ty2;
 
-protected function lookup "************** Auxiliary functions **************"
-  input Env in_env;
-  input Absyn.Ident in_ident;
-  output Value out_value;
+protected function lookup "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail.
+  Identifier id is found in the first pair of the list, and value is returned."
+  input Env inEnv;
+  input String inIdent;
+  output Value outValue;
 algorithm 
-  out_value:=
-  matchcontinue (in_env,in_ident)
+  outValue:=
+  matchcontinue (inEnv,inIdent)
     local
       String id2,id;
       Value value;
-      list<tuple<String,Value>> rest;
-    case ((id2,value) :: _,id) " lookup returns the value associated with an identifier.
- * If no association is present, lookup will fail. 
-   Identifier id is found in the first pair of the list, and value
-   * is returned. 
-   "
-      equation 
-        equality(id = id2); then value;
-    case ((id2,_) :: rest,id) " id is not found in the first pair of the list, and lookup will
-   * recursively search the rest of the list. If found, value is returned.
-   "
-      equation 
-        failure(equality(id = id2));
-        value = lookup(rest, id); then value;
+      Env rest;
+    case ((id2,value) :: rest, id)
+      then if valueEq(id,id2) then value else lookup(rest, id);
   end matchcontinue;
 end lookup;
 
 protected function lookupextend
-  input Env in_env;
-  input Absyn.Ident in_ident;
-  output Env out_env;
-  output Value out_value;
+  input Env inEnv;
+  input String inIdent;
+  output Env outEnv;
+  output Value outValue;
 algorithm 
-  (out_env,out_value):=
-  matchcontinue (in_env,in_ident)
+  (outEnv,outValue):=
+  matchcontinue (inEnv,inIdent)
     local
       Value value;
-      list<tuple<String,Value>> env;
+      Env env;
       String id;
-    case (env,id) " Return value of id in env. If id not present, add id and return 0 "
+    case (env,id) "Return value of id in env. If id not present, add id and return 0"
       equation 
-        failure(value = lookup(env, id));
-        value = INTval(0); then ((id,value) :: env,value);
+        failure(_ = lookup(env, id));
+        value = INTval(0);
+      then ((id,value) :: env,value);
     case (env,id)
       equation 
-        value = lookup(env, id); then (env,value);
+        value = lookup(env, id);
+      then (env,value);
   end matchcontinue;
 end lookupextend;
 

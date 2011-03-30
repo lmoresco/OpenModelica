@@ -90,17 +90,8 @@ algorithm
       Type_a key1,key0;
       Type_b bnd;
       list<tuple<Type_a, Type_b>> env;
-    case (((key1,bnd) :: _),key0)
-      equation 
-        equality(key1 = key0);
-      then
-        bnd;
-    case (((key1,_) :: env),key0)
-      equation 
-        failure(equality(key1 = key0));
-        bnd = lookup(env, key0);
-      then
-        bnd;
+    case (((key1,bnd) :: env),key0)
+      then if valueEq(key1, key0) then bnd else lookup(env, key0);
   end matchcontinue;
 end lookup;
 

@@ -39,17 +39,8 @@ algorithm
       String key1,key0;
       Bnd bnd;
       list<tuple<String, Bnd>> env;
-    case (((key1,bnd) :: _),key0)
-      equation 
-        equality(key1 = key0);
-      then
-        bnd;
-    case (((key1,_) :: env),key0)
-      equation 
-        failure(equality(key1 = key0));
-        bnd = lookup(env, key0);
-      then
-        bnd;
+    case (((key1,bnd) :: env),key0)
+      then if key1 == key0 then bnd else lookup(env, key0);
   end matchcontinue;
 end lookup;
 

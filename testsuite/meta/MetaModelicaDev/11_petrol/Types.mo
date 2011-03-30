@@ -89,16 +89,8 @@ algorithm
         bnds_1 = unfoldBnds(r, bnds, {});
       then
         REC(RECORD(stamp,bnds_1));
-    case (UNFOLD(stamp),(r as RECORD(stamp_1,_)))
-      equation 
-        equality(stamp = stamp_1);
-      then
-        REC(r);
-    case ((ty as UNFOLD(stamp)),RECORD(stamp_1,_))
-      equation 
-        failure(equality(stamp = stamp_1));
-      then
-        ty;
+    case (ty as UNFOLD(stamp),(r as RECORD(stamp_1,_)))
+      then if stamp == stamp_1 then REC(r) else ty;
   end matchcontinue;
 end unfoldTy;
 
@@ -311,12 +303,12 @@ algorithm
         rhs_1;
     case (rhs,PTR(ty1),PTR(ty2))
       equation 
-        equality(ty1 = ty2);
+        true = valueEq(ty1, ty2);
       then
         rhs;
     case (rhs,ARR(_,ty1),PTR(ty2))
       equation 
-        equality(ty1 = ty2);
+        true = valueEq(ty1, ty2);
       then
         rhs;
     case (_,PTRNIL(),PTR(ty))
@@ -326,7 +318,7 @@ algorithm
         TCode.UNARY(TCode.TOPTR(ty_1),TCode.ICON(0));
     case (rhs,REC(RECORD(stamp1,_)),REC(RECORD(stamp2,_)))
       equation 
-        equality(stamp1 = stamp2);
+        true = valueEq(ty1, ty2);
       then
         rhs;
   end matchcontinue;
@@ -514,7 +506,7 @@ algorithm
       TCode.BinOp bop;
     case (exp1,PTR(ty1),exp2,PTR(ty2))
       equation 
-        equality(ty1 = ty2);
+        true = valueEq(ty1, ty2);
         ty_1 = tyCnv(ty1);
       then
         TCode.BINARY(exp1,TCode.PEQ(ty_1),exp2);
@@ -618,7 +610,7 @@ algorithm
       ATy raty3,raty1,raty2;
     case (exp1,PTR(ty1),rop,exp2,PTR(ty2))
       equation 
-        equality(ty1 = ty2);
+        true = valueEq(ty1, ty2);
         ty_1 = tyCnv(ty1);
         bop = ptrRelop(rop, ty_1);
       then
@@ -716,7 +708,7 @@ algorithm
       TCode.BinOp bop;
     case (exp1,PTR(ty1),exp2,PTR(ty2))
       equation 
-        equality(ty1 = ty2);
+        true = valueEq(ty1, ty2);
         ty1_1 = tyCnv(ty1);
       then
         (TCode.BINARY(exp1,TCode.PDIFF(ty1_1),exp2),ARITH(INT()));

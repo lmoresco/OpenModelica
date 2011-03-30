@@ -178,25 +178,21 @@ algorithm
   print(s);
 end outputItem;
 
-protected function lookup
+protected function lookup "lookup returns the value associated with an identifier.
+  If no association is present, lookup will fail.
+  Identifier id is found in the first pair of the list, and value is returned."
   input Env inEnv;
-  input Ident inIdent;
+  input String inIdent;
   output Value outValue;
 algorithm 
   outValue:=
   matchcontinue (inEnv,inIdent)
     local
-      Ident id2,id;
+      String id2,id;
       Value value;
-      State rest;
-    case ((id2,value) :: _,id) "lookup returns the value associated with an identifier.
-  If no association is present, lookup will fail. id first in list"
-      equation 
-        equality(id = id2); then value;
-    case ((id2,_) :: rest,id) "id in rest of list"
-      equation 
-        failure(equality(id = id2));
-        value = lookup(rest, id); then value;
+      Env rest;
+    case ((id2,value) :: rest, id)
+      then if valueEq(id,id2) then value else lookup(rest, id);
   end matchcontinue;
 end lookup;
 

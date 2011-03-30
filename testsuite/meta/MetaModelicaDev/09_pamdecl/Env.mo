@@ -78,13 +78,8 @@ algorithm
       Ident idenv,id;
       Value v;
       Env rest;
-    case ((BIND(ident = idenv,value = v) :: _),id)
-      equation 
-        equality(id = idenv); then v;
-    case ((BIND(ident = idenv) :: rest),id)
-      equation 
-        failure(equality(id = idenv));
-        v = lookup(rest, id); then v;
+    case ((BIND(ident = idenv,value = v) :: rest),id)
+      then if id == idenv then v else lookup(rest, id);
   end matchcontinue;
 end lookup;
 
@@ -99,13 +94,8 @@ algorithm
       Ident idenv,id;
       Type t;
       Env rest;
-    case ((BIND(ident = idenv,type_ = t) :: _),id)
-      equation 
-        equality(id = idenv); then t;
-    case ((BIND(ident = idenv) :: rest),id)
-      equation 
-        failure(equality(id = idenv));
-        t = lookuptype(rest, id); then t;
+    case ((BIND(ident = idenv,type_ = t) :: rest),id)
+      then if id == idenv then t else lookuptype(rest, id);
   end matchcontinue;
 end lookuptype;
 
