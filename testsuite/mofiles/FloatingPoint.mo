@@ -22,7 +22,7 @@ equation
 end FloatingPoint;
 
 // Result:
-// [FloatingPoint.mo:17:5-17:6:writable] Warning: Treating .13E2 as 0.13E2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [FloatingPoint.mo:17:22-17:27:writable] Warning: Treating .13E2 as 0.13E2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // 
 // class FloatingPoint
 //   constant Real r1 = 1.79769313486232e+308;

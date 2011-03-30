@@ -14,8 +14,8 @@ end A;
 
 // Result:
 // Error processing file: RealOpLexerModelica.mo
-// [RealOpLexerModelica.mo:10:2-10:3:writable] Warning: Treating .2 as 0.2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [RealOpLexerModelica.mo:12:2-12:3:writable] Warning: Treating .2 as 0.2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [RealOpLexerModelica.mo:10:21-10:23:writable] Warning: Treating .2 as 0.2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [RealOpLexerModelica.mo:12:22-12:24:writable] Warning: Treating .2 as 0.2. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
 // [RealOpLexerModelica.mo:11:23-11:24:writable] Error: No viable alternative near token: 2
 // 
 // # Error encountered! Exiting...
