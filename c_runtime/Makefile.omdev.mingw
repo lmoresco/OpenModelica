@@ -13,7 +13,7 @@ builddir_inc=$(top_builddir)/build/include/omc
 
 CC = gcc
 FC = g77
-CFLAGS = -g -falign-functions -msse2 -mfpmath=sse
+CFLAGS = -O3 -falign-functions -msse2 -mfpmath=sse
 
 LIBF2CMAKEFILE = makefile.mingw
 JAVAMAKEFILE = Makefile.omdev.mingw
