@@ -8,11 +8,11 @@
 // 
 class WillowForest
   parameter Real h = 0.95 "Harvest fraction";
-  parameter Real[4] e = {.73,.80,.66,.55} "Radiation efficiency fraction";
-  parameter Real[4] a = {.59,.73,.76,.74} "Intercepted radiation fraction";
+  parameter Real[4] e = {0.73,0.80,0.66,0.55} "Radiation efficiency fraction";
+  parameter Real[4] a = {0.59,0.73,0.76,0.74} "Intercepted radiation fraction";
   parameter Integer[10] growthCycles = {1,2,1,2,3,4,1,2,3,4};
   parameter Integer[10] r = {2097, 2328, 1942, 2359, 2493, 2290, 2008, 2356, 2323, 2540} "Solar radiation(MJ/m2) 1985-1994";
-  parameter Real[10] m = {.1, .1, .5, .1, .1, .1, .1, .1, .1, .1} "Mortality fraction 1985-1994";
+  parameter Real[10] m = {0.1, 0.1, 0.5, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1} "Mortality fraction 1985-1994";
   parameter Integer[10] mbiomasses = {786, 1091, 539, 980, 1139, 589, 723, 1457, 1004, 845} "Measured biomass 1985-1994";
   Integer t (start = 0) "Years since the forest was planted";
   Integer c "Year in growth cycle";

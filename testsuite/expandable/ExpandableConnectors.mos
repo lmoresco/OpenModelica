@@ -68,7 +68,18 @@ checkModel(QHP_Electrolytes_test_T2); getErrorString();
 // "
 // ""
 // true
-// ""
+// "[ElectrolytesT2Total.mo:3040:5-3040:6:writable] Warning: Treating .0015 as 0.0015. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3082:2-3082:3:writable] Warning: Treating .7 as 0.7. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3151:3-3151:4:writable] Warning: Treating .03 as 0.03. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3878:4-3878:5:writable] Warning: Treating .002 as 0.002. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3917:4-3917:5:writable] Warning: Treating .002 as 0.002. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3933:3-3933:4:writable] Warning: Treating .05 as 0.05. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:3981:3-3981:4:writable] Warning: Treating .03 as 0.03. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:4496:5-4496:6:writable] Warning: Treating .0015 as 0.0015. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:4843:2-4843:3:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:5111:2-5111:3:writable] Warning: Treating .5 as 0.5. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// [ElectrolytesT2Total.mo:5442:3-5442:4:writable] Warning: Treating .12 as 0.12. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
+// "
 // "function QHP.Library.Curves.SplineSlope
 //   input Real[:] x;
 //   input Real[:] y;

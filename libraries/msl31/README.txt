@@ -2,6 +2,11 @@ A full copy of Modelica Standard Library 3.1 from:
  https://svn.modelica.org/projects/Modelica/branches/maintenance/3.1
 Revision 4084
 
+Added by sjoelund.se, 2011-03-30
+Fixed the following warning:
+[libraries/msl31/Modelica/Media/Water/IF97_Utilities.mo:3820:8-3820:9:writable]
+Warning: Treating .5132047 as 0.5132047. This is not standard Modelica...
+
 Added by Frenkel TUD, 2011-03-19
 Changed:
 - reimplement Functions PackShape and PackMaterial with useful behaviour
