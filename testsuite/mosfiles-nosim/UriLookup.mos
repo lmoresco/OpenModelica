@@ -1,0 +1,38 @@
+// name: UriLookup
+// status: correct
+// env: OPENMODELICALIBRARY=./UriLookup
+// setup_command: rm -rf UriLookup && mkdir -p UriLookup/A
+// teardown_command: rm -rf UriLookup/A
+
+uriToFilename("modelica://A.B.C/D.jpeg");getErrorString();
+uriToFilename("Modelica://A.B.C/Resources/Icons/D.jpeg");getErrorString();
+uriToFilename("Modelica:///A.B.C/Resources/Icons/D.jpeg");getErrorString();
+uriToFilename("modelica://X.B.C/D.jpeg");getErrorString();
+uriToFilename("file:///tmp/D%20E.jpeg");getErrorString();
+uriToFilename("FilE://D%20.jpeg");getErrorString();
+uriToFilename("FilE://localhost/D%20.jpeg");getErrorString();
+uriToFilename("Modelicax://A.B.C/Resources/Icons/D.jpeg");getErrorString();
+
+// Result:
+// "./UriLookup/A/B/C//D.jpeg"
+// ""
+// "./UriLookup/A/B/C//Resources/Icons/D.jpeg"
+// ""
+// ""
+// "Error: Modelica URI lacks classname: Modelica:///A.B.C/Resources/Icons/D.jpeg
+// "
+// ""
+// "Error: Could not resolve modelica://X with MODELICAPATH: ./UriLookup
+// "
+// "/tmp/D E.jpeg"
+// ""
+// ""
+// "Error: File URI has no path: FilE://D%20.jpeg
+// "
+// ""
+// "Error: File URI using hostnames is not supported: FilE://localhost/D%20.jpeg
+// "
+// ""
+// "Error: Unknown uri: Modelicax://A.B.C/Resources/Icons/D.jpeg
+// "
+// endResult

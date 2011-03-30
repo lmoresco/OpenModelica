@@ -9,6 +9,7 @@ ExtendsOrder.mos \
 ExternalFunctionResultOrder.mos\
 FinalTests.mos \
 FuncNamespace.mos \
+GroupImport.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 LookupBuiltin.mos \
 LookupPackageFail.mos \
@@ -19,6 +20,7 @@ NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
 Return.mos \
 UnpOpPrecedence.mos \
+UriLookup.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
 ModifierProblem.mos \
 TransformerYY.mos \

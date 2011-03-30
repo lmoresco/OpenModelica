@@ -1,0 +1,26 @@
+// name: GroupImport
+// status: correct
+
+loadFile("GroupImport.mo");
+list();getErrorString();
+instantiateModel(GroupImport);getErrorString();
+
+// Result:
+// true
+// "class GroupImport
+//   import B.{c,e = d};
+//   Real r = c + e;
+// end GroupImport;
+// package B
+//   constant Real c = 1,d = 2;
+// end B;
+// 
+// "
+// "[GroupImport.mo:6:10-6:19:writable] Warning: Group imports are an OpenModelica extension, not standard Modelica.
+// "
+// "class GroupImport
+//   Real r = 3.0;
+// end GroupImport;
+// "
+// ""
+// endResult
