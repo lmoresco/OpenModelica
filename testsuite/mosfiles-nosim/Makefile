@@ -7,6 +7,7 @@ EnzMM.mos \
 ErrorFunctionCallNumArgs.mos \
 ExtendsOrder.mos \
 ExternalFunctionResultOrder.mos\
+ExternalLibraryFunction.mos\
 FinalTests.mos \
 FuncNamespace.mos \
 GroupImport.mos \

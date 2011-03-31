@@ -1,0 +1,23 @@
+// name: ExternalLibraryFunction
+// status: correct
+// env: OPENMODELICALIBRARY=./TestLibrary/
+// setup_command: gcc -o ./TestLibrary/Resources/Library/ext1.o -c ./TestLibrary/Resources/Library/ext1.c && ar -cru ./TestLibrary/Resources/Library/libext1.a ./TestLibrary/Resources/Library/ext1.o && gcc -o ./TestLibrary/Resources/SpecialLib/ext2.o -c ./TestLibrary/Resources/SpecialLib/ext2.c && ar -cru ./TestLibrary/Resources/SpecialLib/libext2.a ./TestLibrary/Resources/SpecialLib/ext2.o
+// teardown_command: rm -f ./TestLibrary/Resources/Library/ext1.o ./TestLibrary/Resources/Library/libext1.a ./TestLibrary/Resources/SpecialLib/ext2.o ./TestLibrary/Resources/SpecialLib/libext2.a Test_ext*
+
+loadModel(Test);
+Test.ext1();getErrorString();
+Test.ext2();getErrorString();
+Test.ext3();getErrorString();
+Test.ext4();getErrorString();
+
+// Result:
+// true
+// 42.1
+// ""
+// 42.2
+// ""
+// 42.3
+// ""
+// 42.4
+// ""
+// endResult
