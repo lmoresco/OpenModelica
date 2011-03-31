@@ -2,7 +2,7 @@
 // keywords: Simulate, readSimulationData
 // status:   correct
 // env: OPENMODELICALIBRARY=../../libraries/msl221
-// teardown_command: rm -f ConstantTest_* ExponentialsTest_* SineTest_* PulseTest_*
+// teardown_command: rm -f *ConstantTest_* ExpSineTest_* *ExponentialsTest_* *SineTest_* *PulseTest_*
 //  Simulate blocks sources and simulate.
 //
 loadModel(Modelica);
