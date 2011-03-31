@@ -89,6 +89,7 @@ loadFile("../../Compiler/Script/Refactor.mo");
 loadFile("../../Compiler/Template/SimCodeC.mo");
 loadFile("../../Compiler/Template/SimCodeCSharp.mo");
 loadFile("../../Compiler/Template/SimCodeFMU.mo");
+loadFile("../../Compiler/Template/SimCodeCpp.mo");
 loadFile("../../Compiler/Template/SimCodeQSS.mo");
 loadFile("../../Compiler/Template/TplAbsyn.mo");
 loadFile("../../Compiler/Template/TplCodegen.mo");
