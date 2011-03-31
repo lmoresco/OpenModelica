@@ -1,6 +1,7 @@
 TEST = ../../../rtest -v
 
 TESTFILES = \
+Accelerate2.mos \
 ElasticBearing2.mos \
 First2.mos \
 Oscillator2.mos \
@@ -10,7 +11,6 @@ SignConvention2.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
-Accelerate2.mos \
 CoupledClutches2.mos \
 Damper2.mos \
 Friction2.mos \

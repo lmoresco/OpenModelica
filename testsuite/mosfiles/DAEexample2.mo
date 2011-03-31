@@ -6,7 +6,7 @@
 //
 
 model DAEexample
-  Real x(start = 0.9);
+  Real x(start = 0.9,fixed=true);
   Real y;
   parameter Real a=2;
 equation

@@ -12,7 +12,9 @@ ElasticBearing.mos \
 First.mos \
 FuncCross.mos \
 IdealGear.mos \
+IdealGearBrake.mos \
 InputOutput.mos \
+InitTest.mos \
 MatrixTest.mos \
 Shaft.mos \
 simulation2.mos \
@@ -31,8 +33,6 @@ WeakAxis.mos
 # Run make testfailing
 FAILINGTESTFILES=\
 BearingFrictionTest.mos \
-IdealGearBrake.mos \
-InitTest.mos \
 Gear.mos \
 Gear2.mos \
 LossyGear1.mos

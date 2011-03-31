@@ -21,10 +21,10 @@ val(y,3.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 300, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'Pendulum', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
-// -0.991356501496503
-// 0.743488842121833
-// 0.0451465107141673
-// -0.130478595973399
-// -0.668013154271638
-// -0.998273001598539
+// -0.986244467740892
+// 0.795749284723257
+// -0.18534733443848
+// -0.164833666528254
+// -0.604963651390373
+// -0.982015553417969
 // endResult
