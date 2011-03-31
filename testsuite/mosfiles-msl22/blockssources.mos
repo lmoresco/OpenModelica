@@ -2,7 +2,7 @@
 // keywords: Simulate, readSimulationData
 // status:   correct
 // env: OPENMODELICALIBRARY=../../libraries/msl221
-// 
+// teardown_command: rm -f ConstantTest_* ExponentialsTest_* SineTest_* PulseTest_*
 //  Simulate blocks sources and simulate.
 //
 loadModel(Modelica);
@@ -12,7 +12,7 @@ loadFile("TestModels.mo");
 simulate(TestModels.BlockModels.SourceTests.ConstantTest, tolerance=1e-5, numberOfIntervals=100);
 {val(constant1.y,0.0),val(constant1.y,0.5)};
 {val(derivative1.y,0.0),val(derivative1.y,0.5)};
-system("rm -rf *ConstantTest.* *ConstantTest_* output.log");
+system("rm -rf *ConstantTest.* output.log");
 
 //ExpSineTest
 simulate(TestModels.BlockModels.SourceTests.ExpSineTest, tolerance=1e-7, numberOfIntervals=200);
@@ -28,7 +28,7 @@ simulate(TestModels.BlockModels.SourceTests.ExponentialsTest, tolerance=1e-8, nu
 val(exponentials1.y,0.6),val(exponentials1.y,0.8),val(exponentials1.y,1.0)};
 {val(derivative1.y,0.0),val(derivative1.y,0.2),val(derivative1.y,0.4)
 ,val(derivative1.y,0.6),val(derivative1.y,0.8),val(derivative1.y,1.0)};
-system("rm -rf *ExponentialsTest.* *ExponentialsTest_* output.log");
+system("rm -rf *ExponentialsTest.* output.log");
 
 // SineTest
 simulate(TestModels.BlockModels.SourceTests.SineTest, tolerance=1e-5, numberOfIntervals=100);
@@ -36,12 +36,12 @@ simulate(TestModels.BlockModels.SourceTests.SineTest, tolerance=1e-5, numberOfIn
 val(sine1.y,0.6),val(sine1.y,0.8),val(sine1.y,1.0)};
 {val(transferFunction1.y,0.0),val(transferFunction1.y,0.2),val(transferFunction1.y,0.4)
 ,val(transferFunction1.y,0.6),val(transferFunction1.y,0.8),val(transferFunction1.y,1.0)};
-system("rm -rf *SineTest.* *SineTest_* output.log");
+system("rm -rf *SineTest.* output.log");
 
 // PulseTest
 simulate(TestModels.BlockModels.SourceTests.PulseTest, tolerance=1e-5, numberOfIntervals=100);
 {val(p.y,0.0),val(p.y,0.4),val(p.y,0.4000001),val(p.y,0.8),val(p.y,0.8000001)};
-system("rm -rf *PulseTest.* *PulseTest_* output.log");
+system("rm -rf *PulseTest.* output.log");
 
 
 // Result:

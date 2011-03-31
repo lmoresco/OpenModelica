@@ -2,7 +2,7 @@
 // keywords: Simulation, Euler, Linear, Non-linear eqn systems.
 // status:   correct
 // env: OPENMODELICALIBRARY=../../libraries/msl221
-// 
+// teardown_command: rm -f TimeVaryingLinSys_* NonLinSys_* dae1_* dae2_* NonLinSys2_* LargeSteps_* NonLinSys4_* BooleanModel_* NonLinSys3_* Test3PhaseSystems.Test3PhaseSystem_* 
 //  Simulate models and read in data.
 //
 loadFile("TimeVaryingLinsys.mo");
@@ -16,7 +16,6 @@ val(y,1.0);
 val(z,0.0);
 val(z,0.5);
 val(z,1.0);
-system("rm -f TimeVaryingLinSys_*");
 system("rm -f TimeVaryingLinSys.cpp TimeVaryingLinSys.exe TimeVaryingLinSys.makefile TimeVaryingLinSys.log TimeVaryingLinSys.libs");
 
 loadFile("NonLinSys.mo");
@@ -24,7 +23,6 @@ simulate(NonLinSys, tolerance=1e-5, numberOfIntervals=100);
 val(x,0.0);
 val(x,0.5);
 val(x,1.0);
-system("rm -f NonLinSys_*");
 system("rm -f NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLinSys.libs");
 
 
@@ -35,8 +33,8 @@ val(x2,15.0);
 simulate(dae2,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
 val(x1,15.0);
 val(x2,15.0);
-system("rm -f dae1.* dae1_* dae1.log dae1.libs");
-system("rm -f dae2.* dae2_* dae2.log dae2.libs");
+system("rm -f dae1.* dae1.log dae1.libs");
+system("rm -f dae2.* dae2.log dae2.libs");
 
 
 /* TODO: Does not work since DASSL calls residual function for negative values when
@@ -49,7 +47,6 @@ val(x,1.0);
 val(y,0.0);
 val(y,0.5);
 val(y,1.0);
-system("rm -f NonLinSys2_*");
 system("rm -f NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log NonLinSys2.libs");
 */
 
@@ -61,7 +58,6 @@ val(x,1.0);
 val(y,0.0);
 val(y,0.5);
 val(y,1.0);
-system("rm -f NonLinSys3_*");
 system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log NonLinSys3.libs");
 
 
@@ -73,7 +69,6 @@ simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20, tolerance=1e-5, numberO
 val(LR1.I1.i,0.0);
 val(LR1.I2.i,0.0);
 val(LR1.I3.i,0.0);
-system("rm -f Test3PhaseSystems.Test3PhaseSystem_*");
 system("rm -f Test3Phasesystems.Test3PhaseSystem.cpp Test3PhaseSystems.Test3PhaseSystem.exe Test3PhaseSystems.Test3PhaseSystem.makefile Test3PhaseSystems.Test3PhaseSystem.log Test3PhaseSystems.Test3PhaseSystem.libs");
 */
 
@@ -86,7 +81,6 @@ val(startForward,0.9);
 val(mode,0.0);
 val(mode,0.5);
 val(mode,0.9);
-system("rm -f BooleanModel_*");
 system("rm -f BooleanModel.cpp BooleanModel.exe BooleanModel.makefile BooleanModel.log BooleanModel.libs");
 
 
@@ -95,16 +89,13 @@ loadFile("NonLinSys4.mo");
 simulate(NonLinSys4,numberOfIntervals=5, tolerance=1e-5);
 size:=readSimulationResultSize("NonLinSys4_res.mat");
 readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
-system("rm -f NonLinSys4_*");
 system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
 */
 loadFile("LargeSteps.mo");
 simulate(LargeSteps,stopTime=200,numberOfIntervals=100,tolerance=1e-10);
 val(x,0.0);
 val(x,200.0);
-system("rm -f LargeSteps_*");
 system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log LargeSteps.libs"); 
-
 
 // Result:
 // true
@@ -123,7 +114,6 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 0.103632817666132
 // -9.22521266639408e-05
 // 0
-// 0
 // true
 // record SimulationResult
 //     resultFile = "NonLinSys_res.mat",
@@ -133,7 +123,6 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 1.0
 // 0.880883555692253
 // 0.854023850807132
-// 0
 // 0
 // record SimulationResult
 //     resultFile = "dae1_res.mat",
@@ -164,7 +153,6 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 2.26878869394865
 // 2.92574180241184
 // 0
-// 0
 // true
 // record SimulationResult
 //     resultFile = "BooleanModel_res.mat",
@@ -178,7 +166,6 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // 1.00000036416168
 // 0.0
 // 0
-// 0
 // true
 // record SimulationResult
 //     resultFile = "LargeSteps_res.mat",
@@ -187,6 +174,5 @@ system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log L
 // end SimulationResult;
 // 0.0
 // -0.761642684240409
-// 0
 // 0
 // endResult
