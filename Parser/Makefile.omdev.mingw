@@ -1,3 +1,7 @@
+REAL_CC=gcc
+CC=g++
+CXX=g++
+
 RMLHOME=$(OMDEV)/tools/rml/
 OMC=../build/bin/omc.exe
 include Makefile.common
