@@ -14,9 +14,9 @@ uriToFilename("FilE://localhost/D%20.jpeg");getErrorString();
 uriToFilename("Modelicax://A.B.C/Resources/Icons/D.jpeg");getErrorString();
 
 // Result:
-// "./UriLookup/A/B/C//D.jpeg"
+// "./UriLookup/D.jpeg"
 // ""
-// "./UriLookup/A/B/C//Resources/Icons/D.jpeg"
+// "./UriLookup/Resources/Icons/D.jpeg"
 // ""
 // ""
 // "Error: Modelica URI lacks classname: Modelica:///A.B.C/Resources/Icons/D.jpeg
