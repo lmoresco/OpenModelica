@@ -1,0 +1,364 @@
+// name:     Test3PhaseSystemTotal
+// keywords: initialization, overdetermined, additial equations.
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f Test3Phase.Test3Phase* output.log
+//  Simulate models and read in data.
+//
+
+loadFile("InitTest3Phase.mo");
+simulate(Test3Phase.Test3PhaseStart,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
+
+"i_abc[:] at 0.0";
+val(i_abc[1],0.0);
+val(i_abc[2],0.0);
+val(i_abc[3],0.0);
+
+"i_dq0[:] at 0.0";
+val(i_dq0[1],0.0);
+val(i_dq0[2],0.0);
+val(i_dq0[3],0.0);
+
+"i_abc[:] at 10.0";
+val(i_abc[1],10.0);
+val(i_abc[2],10.0);
+val(i_abc[3],10.0);
+
+"i_dq0[:] at 10.0:";
+val(i_dq0[1],10.0);
+val(i_dq0[2],10.0);
+val(i_dq0[3],10.0);
+
+"u_abc[:] at 0.0";
+val(u_abc[1],0.0);
+val(u_abc[2],0.0);
+val(u_abc[3],0.0);
+
+"u_dq0[:] at 0.0";
+val(u_dq0[1],0.0);
+val(u_dq0[2],0.0);
+val(u_dq0[3],0.0);
+
+"u_abc[:] at 10.0";
+val(u_abc[1],10.0);
+val(u_abc[2],10.0);
+val(u_abc[3],10.0);
+
+"u_dq0[:] at 10.0:";
+val(u_dq0[1],10.0);
+val(u_dq0[2],10.0);
+val(u_dq0[3],10.0);
+
+"power :";
+val(power,0);
+val(power,10);
+
+simulate(Test3Phase.Test3PhaseInit,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
+
+"i_abc[:] at 0.0";
+val(i_abc[1],0.0);
+val(i_abc[2],0.0);
+val(i_abc[3],0.0);
+
+"i_dq0[:] at 0.0";
+val(i_dq0[1],0.0);
+val(i_dq0[2],0.0);
+val(i_dq0[3],0.0);
+
+"i_abc[:] at 10.0";
+val(i_abc[1],10.0);
+val(i_abc[2],10.0);
+val(i_abc[3],10.0);
+
+"i_dq0[:] at 10.0:";
+val(i_dq0[1],10.0);
+val(i_dq0[2],10.0);
+val(i_dq0[3],10.0);
+
+"u_abc[:] at 0.0";
+val(u_abc[1],0.0);
+val(u_abc[2],0.0);
+val(u_abc[3],0.0);
+
+"u_dq0[:] at 0.0";
+val(u_dq0[1],0.0);
+val(u_dq0[2],0.0);
+val(u_dq0[3],0.0);
+
+"u_abc[:] at 10.0";
+val(u_abc[1],10.0);
+val(u_abc[2],10.0);
+val(u_abc[3],10.0);
+
+"u_dq0[:] at 10.0:";
+val(u_dq0[1],10.0);
+val(u_dq0[2],10.0);
+val(u_dq0[3],10.0);
+
+"power :";
+val(power,0);
+val(power,10);
+
+simulate(Test3Phase.Test3PhaseInitOver,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
+
+"i_abc[:] at 0.0";
+val(i_abc[1],0.0);
+val(i_abc[2],0.0);
+val(i_abc[3],0.0);
+
+"i_dq0[:] at 0.0";
+val(i_dq0[1],0.0);
+val(i_dq0[2],0.0);
+val(i_dq0[3],0.0);
+
+"i_abc[:] at 10.0";
+val(i_abc[1],10.0);
+val(i_abc[2],10.0);
+val(i_abc[3],10.0);
+
+"i_dq0[:] at 10.0:";
+val(i_dq0[1],10.0);
+val(i_dq0[2],10.0);
+val(i_dq0[3],10.0);
+
+"u_abc[:] at 0.0";
+val(u_abc[1],0.0);
+val(u_abc[2],0.0);
+val(u_abc[3],0.0);
+
+"u_dq0[:] at 0.0";
+val(u_dq0[1],0.0);
+val(u_dq0[2],0.0);
+val(u_dq0[3],0.0);
+
+"u_abc[:] at 10.0";
+val(u_abc[1],10.0);
+val(u_abc[2],10.0);
+val(u_abc[3],10.0);
+
+"u_dq0[:] at 10.0:";
+val(u_dq0[1],10.0);
+val(u_dq0[2],10.0);
+val(u_dq0[3],10.0);
+
+"power :";
+val(power,0);
+val(power,10);
+
+
+//TODO: fix initialization for parameters
+/*
+simulate(Test3Phase.Test3PhaseInitParam,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
+
+"i_abc[:] at 0.0";
+val(i_abc[1],0.0);
+val(i_abc[2],0.0);
+val(i_abc[3],0.0);
+
+"i_dq0[:] at 0.0";
+val(i_dq0[1],0.0);
+val(i_dq0[2],0.0);
+val(i_dq0[3],0.0);
+
+"i_abc[:] at 10.0";
+val(i_abc[1],10.0);
+val(i_abc[2],10.0);
+val(i_abc[3],10.0);
+
+"i_dq0[:] at 10.0:";
+val(i_dq0[1],10.0);
+val(i_dq0[2],10.0);
+val(i_dq0[3],10.0);
+
+"u_abc[:] at 0.0";
+val(u_abc[1],0.0);
+val(u_abc[2],0.0);
+val(u_abc[3],0.0);
+
+"u_dq0[:] at 0.0";
+val(u_dq0[1],0.0);
+val(u_dq0[2],0.0);
+val(u_dq0[3],0.0);
+
+"u_abc[:] at 10.0";
+val(u_abc[1],10.0);
+val(u_abc[2],10.0);
+val(u_abc[3],10.0);
+
+"u_dq0[:] at 10.0:";
+val(u_dq0[1],10.0);
+val(u_dq0[2],10.0);
+val(u_dq0[3],10.0);
+
+"power :";
+val(power,0);
+val(power,10);
+*/
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "Test3Phase.Test3PhaseStart_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseStart', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// "i_abc[:] at 0.0"
+// 0.0
+// 0.0
+// 0.0
+// "i_dq0[:] at 0.0"
+// 0.0
+// 0.0
+// 0.0
+// "i_abc[:] at 10.0"
+// 0.29690261724633
+// -0.222242906029362
+// -0.0746597112173256
+// "i_dq0[:] at 10.0:"
+// -0.104357077840754
+// 0.363629957775333
+// -2.06501482580279e-13
+// "u_abc[:] at 0.0"
+// 0.0
+// 0.866025403784436
+// -0.866025403784438
+// "u_dq0[:] at 0.0"
+// 1.22474487139158
+// -1.27675647831893e-15
+// -9.43689570931383e-16
+// "u_abc[:] at 10.0"
+// 3.30778431897103e-14
+// 0.86602540378442
+// -0.866025403784456
+// "u_dq0[:] at 10.0:"
+// 1.22474487139159
+// -2.80154234232352e-15
+// -1.94122464685524e-15
+// "power :"
+// 0.0
+// -0.127810795878877
+// record SimulationResult
+//     resultFile = "Test3Phase.Test3PhaseInit_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// "i_abc[:] at 0.0"
+// 0.298921369788142
+// -0.223735580850882
+// -0.0751857912202251
+// "i_dq0[:] at 0.0"
+// -0.105040563591672
+// 0.366102415529393
+// -1.31807073588952e-09
+// "i_abc[:] at 10.0"
+// 0.298921000290797
+// -0.223737508073897
+// -0.0751834922322878
+// "i_dq0[:] at 10.0:"
+// -0.105043551974083
+// 0.366101962063683
+// -8.88411566535297e-12
+// "u_abc[:] at 0.0"
+// 0.0
+// 0.866025403784436
+// -0.866025403784438
+// "u_dq0[:] at 0.0"
+// 1.22474487139158
+// -1.27675647831893e-15
+// -9.43689570931383e-16
+// "u_abc[:] at 10.0"
+// 3.30778431897103e-14
+// 0.86602540378442
+// -0.866025403784456
+// "u_dq0[:] at 10.0:"
+// 1.22474487139159
+// -2.80154234232352e-15
+// -1.94122464685524e-15
+// "power :"
+// -0.128647891546983
+// -0.128651551553015
+// record SimulationResult
+//     resultFile = "Test3Phase.Test3PhaseInitOver_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitOver', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// "i_abc[:] at 0.0"
+// 0.298921369788142
+// -0.223735580850882
+// -0.0751857912202251
+// "i_dq0[:] at 0.0"
+// -0.105040563591672
+// 0.366102415529393
+// -1.31807073588952e-09
+// "i_abc[:] at 10.0"
+// 0.298921000290797
+// -0.223737508073897
+// -0.0751834922322878
+// "i_dq0[:] at 10.0:"
+// -0.105043551974083
+// 0.366101962063683
+// -8.88411566535297e-12
+// "u_abc[:] at 0.0"
+// 0.0
+// 0.866025403784436
+// -0.866025403784438
+// "u_dq0[:] at 0.0"
+// 1.22474487139158
+// -1.27675647831893e-15
+// -9.43689570931383e-16
+// "u_abc[:] at 10.0"
+// 3.30778431897103e-14
+// 0.86602540378442
+// -0.866025403784456
+// "u_dq0[:] at 10.0:"
+// 1.22474487139159
+// -2.80154234232352e-15
+// -1.94122464685524e-15
+// "power :"
+// -0.128647891546983
+// -0.128651551553015
+// endResult
+
+// TODO: actived if initialization for parameter is fixed
+// record SimulationResult
+//     resultFile = "",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// "i_abc[:] at 0.0"
+// 0.0
+// 0.0
+// 0.0
+// "i_dq0[:] at 0.0"
+// 0.0
+// 0.0
+// 0.0
+// "i_abc[:] at 10.0"
+// 0.29690261724633
+// -0.222242906029362
+// -0.0746597112173256
+// "i_dq0[:] at 10.0:"
+// -0.104357077840754
+// 0.363629957775333
+// -2.06501482580279e-13
+// "u_abc[:] at 0.0"
+// 0.0
+// 0.866025403784436
+// -0.866025403784438
+// "u_dq0[:] at 0.0"
+// 1.22474487139158
+// -1.27675647831893e-15
+// -9.43689570931383e-16
+// "u_abc[:] at 10.0"
+// 3.30778431897103e-14
+// 0.86602540378442
+// -0.866025403784456
+// "u_dq0[:] at 10.0:"
+// 1.22474487139159
+// -2.80154234232352e-15
+// -1.94122464685524e-15
+// "power :"
+// 0.0
+// -0.127810795878877
+// endResult
+

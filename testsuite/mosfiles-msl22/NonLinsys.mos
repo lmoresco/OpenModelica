@@ -1,0 +1,97 @@
+// name:     NonLinSystems
+// keywords: Simulation, Non-linear eqn systems.
+// status:   correct
+// env: OPENMODELICALIBRARY=../../libraries/msl221
+// teardown_command: rm -f NonLinSys* NonLinSys2* NonLinSys3* NonLinSys4* dae1* dae2* output.log
+//  Simulate models and read in data.
+//
+loadFile("NonLinsys.mo");
+simulate(NonLinSys, tolerance=1e-5, numberOfIntervals=100);
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+
+// Nonlinear systems also in NonLinSys.mo
+simulate(dae1,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
+val(x1,15.0);
+val(x2,15.0);
+simulate(dae2,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
+val(x1,15.0);
+val(x2,15.0);
+
+// TODO: Does not work since DASSL calls residual function for negative values when
+//it calculates numerical jacobian. 
+loadFile("NonLinsys2.mo");
+simulate(NonLinSys2, tolerance=1e-5, numberOfIntervals=100); 
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+val(y,0.0);
+val(y,0.5);
+val(y,1.0);
+
+loadFile("NonLinsys3.mo");
+simulate(NonLinSys3, tolerance=1e-10, numberOfIntervals=100); 
+val(x,0.0);
+val(x,0.5);
+val(x,1.0);
+val(y,0.0);
+val(y,0.5);
+val(y,1.0);
+
+/*
+loadFile("NonLinsys4.mo");
+simulate(NonLinSys4,numberOfIntervals=5, tolerance=1e-5);
+size:=readSimulationResultSize("NonLinSys4_res.mat");
+readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
+*/
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "NonLinSys_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.880883555664383
+// 0.854023850799674
+// record SimulationResult
+//     resultFile = "dae1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// 1.00066822930857
+// 0.000168105394453882
+// record SimulationResult
+//     resultFile = "dae2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// 0.666664660297344
+// 0.50000146530108
+// true
+// record SimulationResult
+//     resultFile = "NonLinSys2_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.880901096069746
+// 0.854038535782886
+// 2.0
+// 1.89815782983909
+// 1.87209043695346
+// true
+// record SimulationResult
+//     resultFile = "NonLinSys3_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 1.21474279743756
+// 1.64263509095628
+// 2.0
+// 2.26878869394866
+// 2.92574180241193
+// endResult

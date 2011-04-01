@@ -1,7 +1,7 @@
 // name:     LossyGearDemo1
 // keywords: Simulation
 // status:   correct
-// teardown_command: rm -f LossyGearDemo1_* LossyGearDemo1.cpp LossyGearDemo1 LossyGearDemo1.exe LossyGearDemo1.makefile LossyGearDemo1.log LossyGearDemo1.libs
+// teardown_command: rm -f LossyGearDemo1* output.log
 // env: OPENMODELICALIBRARY=../../libraries/msl221
 // LossyGearDemo1 in Modelica.Mechanics.Rotational.Examples
 //
@@ -23,15 +23,16 @@ val(PowerLoss,0.8);
 // true
 // record SimulationResult
 //     resultFile = "LossyGearDemo1_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 200, tolerance = 1e-08, method = 'dassl', fileNamePrefix = 'LossyGearDemo1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 0.0
 // -1.0
-// 0.0
+// 0.999999963938535
 // 1.0
-// 0.0
+// 0.999998375278665
 // -1.0
 // -1.0
-// 0.123397894329822
-// 0.422746889669435
+// 0.123372099023778
+// 0.422947242932571
 // endResult

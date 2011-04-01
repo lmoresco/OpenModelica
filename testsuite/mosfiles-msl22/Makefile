@@ -15,7 +15,10 @@ IdealGear.mos \
 IdealGearBrake.mos \
 InputOutput.mos \
 InitTest.mos \
+InitTest2.mos \
+LossyGear1.mos \
 MatrixTest.mos \
+NonLinsys.mos \
 Shaft.mos \
 simulation2.mos \
 SineAccelerate.mos \
@@ -25,6 +28,7 @@ SineTorque2inertias.mos \
 SpringMass.mos \
 StepTorque.mos \
 Tank.mos \
+TimeVaryingLinsys.mos \
 TrapezoidTest.mos \
 tupleTest.mos \
 WeakAxis.mos
@@ -35,7 +39,6 @@ FAILINGTESTFILES=\
 BearingFrictionTest.mos \
 Gear.mos \
 Gear2.mos \
-LossyGear1.mos
 
 .PHONY : test
 

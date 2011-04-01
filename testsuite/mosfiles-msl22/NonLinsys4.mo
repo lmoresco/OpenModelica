@@ -24,7 +24,7 @@ equation
   V=H0/ti - v0/2 - ((1 - epsp)*psii)/2/epsp;
   deltahi=(1 - eps0)/(1 - epsp)*H0 - (v0*ti)/(2*(1 - epsp)) - (psii*ti)/(2*epsp);
   v0=(12*muc)/(0.53*rhoc*phi0)*(-1 + sqrt(1 + (0.53*rhoc*deltarho*g*phi0^3*(1 - eps0))/(108*muc^2*(1 + 4.56*eps0^0.73))));
-  (1 - eps0)/(1 - epsp)*H0 - (epsp*v0*ti)/(2*(1 - epsp)) - (psii*ti)/2=H0 - V*ti - (psii*ti)/Modelica.Math.log(1 - psii/V);
-  delta=H0 - V*time + (V*deltahi)/psii*(1 - Modelica.Math.exp(-(psii*time)/deltahi));
+  (1 - eps0)/(1 - epsp)*H0 - (epsp*v0*ti)/(2*(1 - epsp)) - (psii*ti)/2=H0 - V*ti - (psii*ti)/log(1 - psii/V);
+  delta=H0 - V*time + (V*deltahi)/psii*(1 - exp(-(psii*time)/deltahi));
 end NonLinSys4;
 

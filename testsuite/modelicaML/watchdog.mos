@@ -1,7 +1,7 @@
 // name:    Simulation ModelicaML model watchdog
 // keywords:  ModelicaML, solver, dassl, rungekutta
 // status: correct
-// teardown_command: rm -f WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1 *.c *.plt *.makefile *.libs *.log *.h *.cpp *.txt
+// teardown_command: rm -f WatchDogSystem.SystemSimulations.WatchDogSystemSimulation_1 *.c *.plt *.mat *.makefile *.libs *.log *.h *.cpp *.txt
 // 
 // ModelicaML: 1.3.6 Examples from 29.Nov 2010
 

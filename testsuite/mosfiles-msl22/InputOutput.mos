@@ -1,7 +1,7 @@
 // name:     InputOutput
 // keywords: Simulation
 // status:   correct
-// teardown_command: rm -f InputOutput_* InputOutput.cpp InputOutput InputOutput.exe InputOutput.makefile InputOutput.log InputOutput.libs
+// teardown_command: rm -f InputOutput_*  InputOutput.conv.cpp  InputOutput.cpp InputOutput InputOutput.exe InputOutput.makefile InputOutput.log InputOutput.libs
 // 
 //InputOutput - model containing inputs and outputs on top level
 // The inputs are considered know variables and are not calculated among

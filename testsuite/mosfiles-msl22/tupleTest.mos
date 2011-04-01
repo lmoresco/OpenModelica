@@ -1,7 +1,7 @@
 // name:     tupleTest
 // keywords: Simulation
 // status:   correct
-// teardown_command: rm -f tplTest_* tplTest.cpp tplTest tplTest.exe tplTest.makefile tplTest.log tplTest.libs
+// teardown_command: rm -f tplTest* tplTest.cpp tplTest tplTest.exe tplTest.makefile tplTest.log tplTest.libs
 // 
 //  Simulate models and read in data.
 //

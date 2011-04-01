@@ -1,7 +1,7 @@
 // name:     MatrixTest
 // keywords: Simulation
 // status:   correct
-// teardown_command: rm -f MatrixTest_* MatrixTest.cpp MatrixTest MatrixTest.exe MatrixTest.makefile MatrixTest.log MatrixTest.libs
+// teardown_command: rm -f MatrixTest_* MatrixTest.cpp MatrixTest MatrixTest.conv.cpp MatrixTest.exe MatrixTest.makefile MatrixTest.log MatrixTest.libs
 // 
 //  Simulate models and read in data.
 //

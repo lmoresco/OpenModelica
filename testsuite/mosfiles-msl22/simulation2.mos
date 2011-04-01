@@ -1,178 +1,44 @@
 // name:     Simulation2
-// keywords: Simulation, Euler, Linear, Non-linear eqn systems.
+// keywords: Simulation, BooleanModel, LargeSteps
 // status:   correct
 // env: OPENMODELICALIBRARY=../../libraries/msl221
-// teardown_command: rm -f TimeVaryingLinSys_* NonLinSys_* dae1_* dae2_* NonLinSys2_* LargeSteps_* NonLinSys4_* BooleanModel_* NonLinSys3_* Test3PhaseSystems.Test3PhaseSystem_* 
-//  Simulate models and read in data.
+// teardown_command: rm -f Booleanmodel* Largesteps* output.log
 //
-loadFile("TimeVaryingLinsys.mo");
-simulate(TimeVaryingLinSys, tolerance=1e-5, numberOfIntervals=100); 
-val(x,0.0);
-val(x,0.5);
-val(x,1.0);
-val(y,0.0);
-val(y,0.5);
-val(y,1.0);
-val(z,0.0);
-val(z,0.5);
-val(z,1.0);
-system("rm -f TimeVaryingLinSys.cpp TimeVaryingLinSys.exe TimeVaryingLinSys.makefile TimeVaryingLinSys.log TimeVaryingLinSys.libs");
-
-loadFile("NonLinSys.mo");
-simulate(NonLinSys, tolerance=1e-5, numberOfIntervals=100);
-val(x,0.0);
-val(x,0.5);
-val(x,1.0);
-system("rm -f NonLinSys.cpp NonLinSys.exe NonLinSys.makefile NonLinSys.log NonLinSys.libs");
-
-
-// Nonlinear systems also in NonLinSys.mo
-simulate(dae1,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
-val(x1,15.0);
-val(x2,15.0);
-simulate(dae2,stopTime=15, tolerance=1e-5, numberOfIntervals=100);
-val(x1,15.0);
-val(x2,15.0);
-system("rm -f dae1.* dae1.log dae1.libs");
-system("rm -f dae2.* dae2.log dae2.libs");
-
-
-/* TODO: Does not work since DASSL calls residual function for negative values when
-it calculates numerical jacobian. 
-loadFile("NonLinSys2.mo");
-simulate(NonLinSys2, tolerance=1e-5, numberOfIntervals=100); 
-val(x,0.0);
-val(x,0.5);
-val(x,1.0);
-val(y,0.0);
-val(y,0.5);
-val(y,1.0);
-system("rm -f NonLinSys2.cpp NonLinSys2.exe NonLinSys2.makefile NonLinSys2.log NonLinSys2.libs");
-*/
-
-loadFile("NonLinSys3.mo");
-simulate(NonLinSys3, tolerance=1e-10, numberOfIntervals=100); 
-val(x,0.0);
-val(x,0.5);
-val(x,1.0);
-val(y,0.0);
-val(y,0.5);
-val(y,1.0);
-system("rm -f NonLinSys3.cpp NonLinSys3.exe NonLinSys3.makefile NonLinSys3.log NonLinSys3.libs");
-
-
-/* TODO: Find initialization bug in initial_residual()
-				 deactivate for now.
-loadModel(Modelica);
-loadFile("Test3PhaseSystemTotal.mo");
-simulate(Test3PhaseSystems.Test3PhaseSystem,stopTime=20, tolerance=1e-5, numberOfIntervals=100);
-val(LR1.I1.i,0.0);
-val(LR1.I2.i,0.0);
-val(LR1.I3.i,0.0);
-system("rm -f Test3Phasesystems.Test3PhaseSystem.cpp Test3PhaseSystems.Test3PhaseSystem.exe Test3PhaseSystems.Test3PhaseSystem.makefile Test3PhaseSystems.Test3PhaseSystem.log Test3PhaseSystems.Test3PhaseSystem.libs");
-*/
 
 // Model that tests discrete equations that do not contain zero crossings, e.g n = 1;
 loadFile("BooleanModel.mo");
-simulate(BooleanModel, tolerance=1e-5, numberOfIntervals=100);
+simulate(Booleanmodel, tolerance=1e-5, numberOfIntervals=100);
 val(startForward,0.0);
 val(startForward,0.5);
 val(startForward,0.9);
 val(mode,0.0);
 val(mode,0.5);
 val(mode,0.9);
-system("rm -f BooleanModel.cpp BooleanModel.exe BooleanModel.makefile BooleanModel.log BooleanModel.libs");
 
-
-/*
-loadFile("NonLinSys4.mo");
-simulate(NonLinSys4,numberOfIntervals=5, tolerance=1e-5);
-size:=readSimulationResultSize("NonLinSys4_res.mat");
-readSimulationResult("NonLinSys4_res.mat",{psii,delta},size);
-system("rm -f NonLinSys4.cpp NonLinSys4.exe NonLinSys4.makefile NonLinSys4.log NonLinSys4.libs");
-*/
 loadFile("LargeSteps.mo");
-simulate(LargeSteps,stopTime=200,numberOfIntervals=100,tolerance=1e-10);
+simulate(Largesteps,stopTime=200,numberOfIntervals=100,tolerance=1e-10);
 val(x,0.0);
 val(x,200.0);
-system("rm -f LargeSteps.cpp LargeSteps.exe LargeSteps.makefile LargeSteps.log LargeSteps.libs"); 
 
 // Result:
 // true
 // record SimulationResult
-//     resultFile = "TimeVaryingLinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TimeVaryingLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
-//     messages = ""
-// end SimulationResult;
-// 0.0
-// 0.740917955838652
-// 2.00023063033581
-// 0.0
-// 0.707265635328147
-// 0.99981549572689
-// 0.0
-// 0.103632817666132
-// -9.22521266639408e-05
-// 0
-// true
-// record SimulationResult
-//     resultFile = "NonLinSys_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'NonLinSys', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     resultFile = "Booleanmodel_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Booleanmodel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 1.0
-// 0.880883555692253
-// 0.854023850807132
-// 0
-// record SimulationResult
-//     resultFile = "dae1_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae1', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
-//     messages = ""
-// end SimulationResult;
-// 1.00066822930865
-// 0.00016810539448119
-// record SimulationResult
-//     resultFile = "dae2_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'dae2', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
-//     messages = ""
-// end SimulationResult;
-// 0.666664660297425
-// 0.500001465301158
-// 0
-// 0
-// true
-// record SimulationResult
-//     resultFile = "NonLinSys3_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'NonLinSys3', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
-//     messages = ""
-// end SimulationResult;
 // 1.0
-// 1.21474279743755
-// 1.64263509095622
-// 2.0
-// 2.26878869394865
-// 2.92574180241184
-// 0
-// true
-// record SimulationResult
-//     resultFile = "BooleanModel_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BooleanModel', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
-//     messages = ""
-// end SimulationResult;
-// 1.0
-// 0.999999635838321
 // 0.0
 // 2.0
-// 1.00000036416168
+// 1.0000000003638
 // 0.0
-// 0
 // true
 // record SimulationResult
-//     resultFile = "LargeSteps_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'LargeSteps', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     resultFile = "Largesteps_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 200.0, numberOfIntervals = 100, tolerance = 1e-10, method = 'dassl', fileNamePrefix = 'Largesteps', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // 0.0
-// -0.761642684240409
-// 0
+// -0.761640946616617
 // endResult
