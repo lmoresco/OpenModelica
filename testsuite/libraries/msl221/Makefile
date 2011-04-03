@@ -76,7 +76,7 @@ PreLoad2.mos \
 
 .PHONY : test testflat testsim
 
-test: testflat testsim
+test: testflat
 
 testflat:
 	@echo

@@ -24,10 +24,17 @@ bootstrapping.log \
 msl31.log \
 multibody.log \
 msl221.log \
+msl221simulation.log \
 msl221additions.log \
 interactive-simulation.log
 
-.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) slow.logs
+
+SIMULATIONLOGS = \
+mosfiles.log \
+mosfiles-msl22.log \
+msl221simulation.log 
+
+.PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) $(SIMULATIONLOGS) slow.logs
 
 all : test
 
@@ -45,9 +52,14 @@ test-oldresult-summary:
 fast : omc-diff fast.logs
 	@cat `ls $(FASTLOGS) | sort`
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java}/*.{dll,so,exe};
+simulation: omc-diff simulation.logs
+	@cat `ls $(SIMULATIONLOGS) | sort` > simulation.log
+	@cat simulation.log
+	@grep ^== simulation.log | grep failed | gawk '{ fail += $$2; sum += $$5 } END {printf "== Total: %d out of %d failed\n",fail,sum}'
 fast.logs: $(FASTLOGS)
 # java should probably also be part of 'fast'
 slow.logs: $(SLOWLOGS)
+simulation.logs: $(SIMULATIONLOGS)
 drmodelica.log: omc-diff
 	$(MAKE) -C mofiles/drmodelica -f Makefile test > $@
 	@echo $@ done
@@ -111,6 +123,9 @@ bootstrapping.log: omc-diff
 msl221.log: omc-diff
 	$(MAKE) -C libraries/msl221 -f Makefile test > $@
 	@echo $@ done
+msl221simulation.log: omc-diff
+	$(MAKE) -C libraries/msl221 -f Makefile testsim > $@
+	@echo $@ done
 msl221additions.log: omc-diff
 	$(MAKE) -C libraries/msl221/modelicaAdditions -f Makefile test > $@
 	@echo $@ done
@@ -129,6 +144,7 @@ failingtest: omc-diff
 	cd mosfiles; $(MAKE) -f Makefile failingtest; \
 	cd msl; $(MAKE) -f Makefile failingtest; \
 	cd ../libraries/msl221; $(MAKE) -f Makefile failingtest; \
+	cd ../libraries/msl221; $(MAKE) -f Makefile simfailingtest; \
 	cd ../msl221/modelicaAdditions; $(MAKE) -f Makefile failingtest; \
 	cd ../../biochem; $(MAKE) -f Makefile failingtest; \
 	cd ../multibody; $(MAKE) -f Makefile failingtest; \
