@@ -144,6 +144,6 @@ end TestGravityAcceleration;
 //   Real gravity[2];
 //   Real gravity[3];
 // equation
-//   gravity = w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,w.g * Math.normalize({w.n[1],w.n[2],w.n[3]},1e-13),w.mue);
+//   gravity = TestGravityAcceleration.w__gravityAcceleration({1.0,5.0,6.0},w.gravityType,w.g * Math.normalize({w.n[1],w.n[2],w.n[3]},1e-13),w.mue);
 // end TestGravityAcceleration;
 // endResult
