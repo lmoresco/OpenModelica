@@ -505,6 +505,7 @@ Sin.mo \
 Skew.mo \
 SmallLinsys.mo \
 Sqrt.mo \
+StaticAssertSuccess.mo \
 StringBoolean.mo \
 StringConcatenation.mo \
 StringConversion.mo \
