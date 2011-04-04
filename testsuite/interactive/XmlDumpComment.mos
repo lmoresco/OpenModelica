@@ -38,37 +38,37 @@ dumpXMLDAE(XmlDumpComment);
 // </orderedVariables>
 // <knownVariables dimension=\"3\">
 // <variablesList>
-// <variable id=\"1\" name=\"x\" variability=\"continuous\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"false\" flow=\"NonConnector\" stream=\"NonStreamConnector\" comment=\"evaluated to 0 if A &lt; B\">
+// <variable id=\"1\" name=\"B\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
+// <bindValueExpression>
+// <bindExpression string=\"0.0\">
+// </bindExpression>
+// </bindValueExpression>
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
+// <variable id=\"2\" name=\"A\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
+// <bindValueExpression>
+// <bindExpression string=\"0.0\">
+// </bindExpression>
+// </bindValueExpression>
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
+// <variable id=\"3\" name=\"x\" variability=\"continuous\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"false\" flow=\"NonConnector\" stream=\"NonStreamConnector\" comment=\"evaluated to 0 if A &lt; B\">
 // <bindValueExpression>
 // <bindExpression string=\"if A < B then 0.0 else 1.0\">
-// </bindExpression>
-// </bindValueExpression>
-// <classesNames>
-// <element>
-// XmlDumpComment
-// </element>
-// <element>
-// Real
-// </element>
-// </classesNames>
-// </variable>
-// <variable id=\"2\" name=\"B\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
-// <bindValueExpression>
-// <bindExpression string=\"0.0\">
-// </bindExpression>
-// </bindValueExpression>
-// <classesNames>
-// <element>
-// XmlDumpComment
-// </element>
-// <element>
-// Real
-// </element>
-// </classesNames>
-// </variable>
-// <variable id=\"3\" name=\"A\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
-// <bindValueExpression>
-// <bindExpression string=\"0.0\">
 // </bindExpression>
 // </bindValueExpression>
 // <classesNames>
