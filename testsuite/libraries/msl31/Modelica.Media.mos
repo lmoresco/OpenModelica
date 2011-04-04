@@ -10,21 +10,22 @@ loadModel(Modelica); getErrorString();
 
 setDebugFlags("scodeFlatten,failtrace");
 
-// Not working - Wrong type on builtin attribute start of type Real[0]
-//       check - Variable state.h not found in scope
+// Working - Wrong type on builtin attribute start of type Real[0]
+//   check - OK
 //instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
+//             - Class Medium.ThermodynamicState not found in scope Modelica.Media.IdealGases.Common.FluidData
 //instantiateModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 
 // Not working - Wrong type on builtin attribute start of type Real[0]
-//       check - Variable state.h not found in scope
+//       check - Class setState_pT not found in scope Modelica.Media.Interfaces.PartialPureSubstance
 //instantiateModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 //checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 
-// Not working - Infinite loop, Inst.instElement failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 
@@ -32,7 +33,8 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //instantiateModel(Modelica.Media.Examples.MoistAir); getErrorString();
 //checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Class setState_pTX not found in scope Modelica.Media.Interfaces.PartialTwoPhaseMedium.specificEnthalpy_pTX
+//             - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 
@@ -40,27 +42,31 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 instantiateModel(Modelica.Media.Water.StandardWater); getErrorString();
 checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Class density_ph not found in scope Modelica.Media.Interfaces.PartialTwhoPhaseMedium
+//             - Class DynamicViscosity not found in scope Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Class density_ph not found in scope Modelica.Media.Interfaces.PartialTwhoPhaseMedium
+//             - Class DynamicViscosity not found in scope Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
+//             - Class Medium.BaseProperties not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir
 //instantiateModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
+//             - Class Medium.ThermodynamicState not found in scope Modelica.Media.Examples.TestOnly.FlueGas
 //instantiateModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.FlueGas); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 //checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 
@@ -111,27 +117,27 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Air); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponentInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 
@@ -167,7 +173,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFLuid.LinearColdWater); getErrorString();
 
-// Not working - Infinite loop, CevalFunction failed?
+// Not working - Class setState_pT not found in scope Modelica.Media.Iterfaces.PartialPureSubstance
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 
@@ -175,7 +181,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponenInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 
@@ -183,7 +189,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 
-// Not working - Infinite loop, Inst.updateComponenInEnv failed
+// Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_TX); getErrorString();
 

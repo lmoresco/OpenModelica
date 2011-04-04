@@ -75,6 +75,9 @@ sub make_test_specific_links {
     when ("ParseModel.mos") {
       make_link("ParseModel-saved.mo");
     }
+    when ("ExternalLibraryFunction") {
+      make_link("TestLibrary");
+    }
 	}
 }
 

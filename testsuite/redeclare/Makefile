@@ -17,6 +17,9 @@ RedeclareFlowEffort.mo \
 # Run make testfailing
 FAILINGTESTFILES=\
 ConstrainingType1.mo \
+RedeclareClass1.mo \
+RedeclareClass2.mo \
+RedeclareClass3.mo \
 RedeclareComponent1.mo \
 RedeclareComponent2.mo \
 RedeclareComponent3.mo \
