@@ -384,11 +384,11 @@ getErrorString();
 //   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
 //   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar;
 //   end if;
 //   Pipe1.Q_friction = Pipe1.frictionLoss * (Pipe1.VolumeFlow * Pipe1.pressureDrop);
 //   AbsolutePressure1.flowPort.p = AbsolutePressure1.p;
@@ -407,11 +407,11 @@ getErrorString();
 //   outerPipe.flowPort_a.H_flow + (outerPipe.flowPort_b.H_flow + outerPipe.Q_flow) = outerPipe.m * (outerPipe.medium.cv * der(outerPipe.T));
 //   outerPipe.flowPort_a.m_flow + outerPipe.flowPort_b.m_flow = 0.0;
 //   if outerPipe.VolumeFlow > outerPipe.V_flowLaminar then
-//   outerPipe.pressureDrop = outerPipe.dpLaminar * outerPipe.VolumeFlow / outerPipe.V_flowLaminar + outerPipe.k * (outerPipe.VolumeFlow - outerPipe.V_flowLaminar) ^ 2.0;
+//   outerPipe.pressureDrop = (outerPipe.dpLaminar * outerPipe.VolumeFlow) / outerPipe.V_flowLaminar + outerPipe.k * (outerPipe.VolumeFlow - outerPipe.V_flowLaminar) ^ 2.0;
 //   elseif outerPipe.VolumeFlow < -outerPipe.V_flowLaminar then
-//   outerPipe.pressureDrop = outerPipe.dpLaminar * outerPipe.VolumeFlow / outerPipe.V_flowLaminar - outerPipe.k * (outerPipe.VolumeFlow + outerPipe.V_flowLaminar) ^ 2.0;
+//   outerPipe.pressureDrop = (outerPipe.dpLaminar * outerPipe.VolumeFlow) / outerPipe.V_flowLaminar - outerPipe.k * (outerPipe.VolumeFlow + outerPipe.V_flowLaminar) ^ 2.0;
 //   else
-//   outerPipe.pressureDrop = outerPipe.dpLaminar * outerPipe.VolumeFlow / outerPipe.V_flowLaminar;
+//   outerPipe.pressureDrop = (outerPipe.dpLaminar * outerPipe.VolumeFlow) / outerPipe.V_flowLaminar;
 //   end if;
 //   outerPipe.Q_friction = outerPipe.frictionLoss * (outerPipe.VolumeFlow * outerPipe.pressureDrop);
 //   innerPipe.VolumeFlow = innerPipe.V_flow;
@@ -423,11 +423,11 @@ getErrorString();
 //   innerPipe.flowPort_a.H_flow + (innerPipe.flowPort_b.H_flow + innerPipe.Q_flow) = innerPipe.m * (innerPipe.medium.cv * der(innerPipe.T));
 //   innerPipe.flowPort_a.m_flow + innerPipe.flowPort_b.m_flow = 0.0;
 //   if innerPipe.VolumeFlow > innerPipe.V_flowLaminar then
-//   innerPipe.pressureDrop = innerPipe.dpLaminar * innerPipe.VolumeFlow / innerPipe.V_flowLaminar + innerPipe.k * (innerPipe.VolumeFlow - innerPipe.V_flowLaminar) ^ 2.0;
+//   innerPipe.pressureDrop = (innerPipe.dpLaminar * innerPipe.VolumeFlow) / innerPipe.V_flowLaminar + innerPipe.k * (innerPipe.VolumeFlow - innerPipe.V_flowLaminar) ^ 2.0;
 //   elseif innerPipe.VolumeFlow < -innerPipe.V_flowLaminar then
-//   innerPipe.pressureDrop = innerPipe.dpLaminar * innerPipe.VolumeFlow / innerPipe.V_flowLaminar - innerPipe.k * (innerPipe.VolumeFlow + innerPipe.V_flowLaminar) ^ 2.0;
+//   innerPipe.pressureDrop = (innerPipe.dpLaminar * innerPipe.VolumeFlow) / innerPipe.V_flowLaminar - innerPipe.k * (innerPipe.VolumeFlow + innerPipe.V_flowLaminar) ^ 2.0;
 //   else
-//   innerPipe.pressureDrop = innerPipe.dpLaminar * innerPipe.VolumeFlow / innerPipe.V_flowLaminar;
+//   innerPipe.pressureDrop = (innerPipe.dpLaminar * innerPipe.VolumeFlow) / innerPipe.V_flowLaminar;
 //   end if;
 //   innerPipe.Q_friction = innerPipe.frictionLoss * (innerPipe.VolumeFlow * innerPipe.pressureDrop);
 //   innerConvection.dT = innerConvection.solid.T - innerConvection.fluid.T;

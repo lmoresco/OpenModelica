@@ -331,11 +331,11 @@ getErrorString();
 //   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
 //   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar;
 //   end if;
 //   Pipe1.Q_friction = Pipe1.frictionLoss * (Pipe1.VolumeFlow * Pipe1.pressureDrop);
 //   Pipe2.VolumeFlow = Pipe2.V_flow;
@@ -347,11 +347,11 @@ getErrorString();
 //   Pipe2.flowPort_a.H_flow + (Pipe2.flowPort_b.H_flow + Pipe2.Q_flow) = Pipe2.m * (Pipe2.medium.cv * der(Pipe2.T));
 //   Pipe2.flowPort_a.m_flow + Pipe2.flowPort_b.m_flow = 0.0;
 //   if Pipe2.VolumeFlow > Pipe2.V_flowLaminar then
-//   Pipe2.pressureDrop = Pipe2.dpLaminar * Pipe2.VolumeFlow / Pipe2.V_flowLaminar + Pipe2.k * (Pipe2.VolumeFlow - Pipe2.V_flowLaminar) ^ 2.0;
+//   Pipe2.pressureDrop = (Pipe2.dpLaminar * Pipe2.VolumeFlow) / Pipe2.V_flowLaminar + Pipe2.k * (Pipe2.VolumeFlow - Pipe2.V_flowLaminar) ^ 2.0;
 //   elseif Pipe2.VolumeFlow < -Pipe2.V_flowLaminar then
-//   Pipe2.pressureDrop = Pipe2.dpLaminar * Pipe2.VolumeFlow / Pipe2.V_flowLaminar - Pipe2.k * (Pipe2.VolumeFlow + Pipe2.V_flowLaminar) ^ 2.0;
+//   Pipe2.pressureDrop = (Pipe2.dpLaminar * Pipe2.VolumeFlow) / Pipe2.V_flowLaminar - Pipe2.k * (Pipe2.VolumeFlow + Pipe2.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe2.pressureDrop = Pipe2.dpLaminar * Pipe2.VolumeFlow / Pipe2.V_flowLaminar;
+//   Pipe2.pressureDrop = (Pipe2.dpLaminar * Pipe2.VolumeFlow) / Pipe2.V_flowLaminar;
 //   end if;
 //   Pipe2.Q_friction = Pipe2.frictionLoss * (Pipe2.VolumeFlow * Pipe2.pressureDrop);
 //   Pipe3.VolumeFlow = Pipe3.V_flow;
@@ -362,11 +362,11 @@ getErrorString();
 //   Pipe3.flowPort_a.H_flow + (Pipe3.flowPort_b.H_flow + Pipe3.Q_flow) = Pipe3.m * (Pipe3.medium.cv * der(Pipe3.T));
 //   Pipe3.flowPort_a.m_flow + Pipe3.flowPort_b.m_flow = 0.0;
 //   if Pipe3.VolumeFlow > Pipe3.V_flowLaminar then
-//   Pipe3.pressureDrop = Pipe3.dpLaminar * Pipe3.VolumeFlow / Pipe3.V_flowLaminar + Pipe3.k * (Pipe3.VolumeFlow - Pipe3.V_flowLaminar) ^ 2.0;
+//   Pipe3.pressureDrop = (Pipe3.dpLaminar * Pipe3.VolumeFlow) / Pipe3.V_flowLaminar + Pipe3.k * (Pipe3.VolumeFlow - Pipe3.V_flowLaminar) ^ 2.0;
 //   elseif Pipe3.VolumeFlow < -Pipe3.V_flowLaminar then
-//   Pipe3.pressureDrop = Pipe3.dpLaminar * Pipe3.VolumeFlow / Pipe3.V_flowLaminar - Pipe3.k * (Pipe3.VolumeFlow + Pipe3.V_flowLaminar) ^ 2.0;
+//   Pipe3.pressureDrop = (Pipe3.dpLaminar * Pipe3.VolumeFlow) / Pipe3.V_flowLaminar - Pipe3.k * (Pipe3.VolumeFlow + Pipe3.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe3.pressureDrop = Pipe3.dpLaminar * Pipe3.VolumeFlow / Pipe3.V_flowLaminar;
+//   Pipe3.pressureDrop = (Pipe3.dpLaminar * Pipe3.VolumeFlow) / Pipe3.V_flowLaminar;
 //   end if;
 //   Pipe3.Q_friction = Pipe3.frictionLoss * (Pipe3.VolumeFlow * Pipe3.pressureDrop);
 //   Ambient2.flowPort.p = Ambient2.p_Ambient;

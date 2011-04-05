@@ -48,7 +48,6 @@ getIconAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);            
 getDiagramAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);           getErrorString();
 getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.HeatingResistor);     getErrorString();
 
-
 getIconAnnotation(Modelica.Electrical.Analog.Basic.EMF);                          getErrorString();
 getDiagramAnnotation(Modelica.Electrical.Analog.Basic.EMF);                       getErrorString();
 getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.EMF);                 getErrorString();
@@ -58,7 +57,7 @@ getIconAnnotation(Modelica.Electrical.Analog.Basic.Conductor);                  
 getDiagramAnnotation(Modelica.Electrical.Analog.Basic.Conductor);                 getErrorString();
 getDocumentationAnnotation(Modelica.Electrical.Analog.Basic.Conductor);           getErrorString();
 
-// I am using MSL31.
+"I am using MSL31";
 // One more thing, can someone tell me what is the output of getComponentAnnotations,
 
 getIconAnnotation(Modelica.Electrical.Analog.Basic.Ground); getErrorString();
@@ -8102,6 +8101,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // </ul>
 // </html>"}
 // ""
+// "I am using MSL31"
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-60,50},{60,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,30},{40,30}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,10},{20,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,90},{0,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-19},{156,-59}},"%name",0,TextAlignment.Center)}}
 // ""
 // {{true,0.0,100.0,10.0,-10.0,-10.0,10.0,270.0,0.0,0.0,-,-,-,-,0.0}}

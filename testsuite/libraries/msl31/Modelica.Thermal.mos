@@ -298,7 +298,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   ambient1.T = ambient1.TAmbient;
 //   ambient1.flowPort.H_flow = semiLinear(ambient1.flowPort.m_flow,ambient1.flowPort.h,ambient1.h);
 //   idealPump.dp1 = idealPump.dp0 * (Real(sign(idealPump.w / idealPump.wNominal)) * (idealPump.w / idealPump.wNominal) ^ 2.0);
-//   idealPump.V_flow1 = idealPump.V_flow0 * idealPump.w / idealPump.wNominal;
+//   idealPump.V_flow1 = (idealPump.V_flow0 * idealPump.w) / idealPump.wNominal;
 //   if noEvent(abs(idealPump.w) < 1e-60) then
 //   idealPump.dp = 0.0;
 //   idealPump.flange_a.tau = 0.0;
@@ -311,8 +311,8 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   idealPump.flowPort_a.H_flow + (idealPump.flowPort_b.H_flow + idealPump.Q_flow) = 0.0;
 //   idealPump.flowPort_a.H_flow = semiLinear(idealPump.flowPort_a.m_flow,idealPump.flowPort_a.h,idealPump.h);
 //   idealPump.flowPort_b.H_flow = semiLinear(idealPump.flowPort_b.m_flow,idealPump.flowPort_b.h,idealPump.h);
-//   valve.Kv / valve.Kv1 = if valve.LinearCharacteristic then valve.kv0 + (1.0 - valve.kv0) * valve.yLim / valve.y1 else valve.kv0 * exp((log(1.0 / valve.kv0) * valve.yLim) / valve.y1);
-//   valve.dp / valve.dp0 = valve.medium.rho * (valve.V_flow * (abs(valve.V_flow / valve.Kv) * 1.0 / valve.Kv / valve.rho0));
+//   valve.Kv / valve.Kv1 = if valve.LinearCharacteristic then valve.kv0 + ((1.0 - valve.kv0) * valve.yLim) / valve.y1 else valve.kv0 * exp((log(1.0 / valve.kv0) * valve.yLim) / valve.y1);
+//   valve.dp / valve.dp0 = (valve.medium.rho * (valve.V_flow * abs(valve.V_flow / valve.Kv))) / (valve.Kv * valve.rho0);
 //   valve.Q_flow = valve.frictionLoss * (valve.V_flow * valve.dp);
 //   valve.flowPort_a.m_flow + valve.flowPort_b.m_flow = 0.0;
 //   valve.flowPort_a.H_flow + (valve.flowPort_b.H_flow + valve.Q_flow) = 0.0;
@@ -327,11 +327,11 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   pipe.flowPort_a.H_flow + (pipe.flowPort_b.H_flow + pipe.Q_flow) = pipe.m * (pipe.medium.cv * der(pipe.T));
 //   pipe.flowPort_a.m_flow + pipe.flowPort_b.m_flow = 0.0;
 //   if pipe.volumeFlow > pipe.V_flowLaminar then
-//   pipe.pressureDrop = pipe.dpLaminar * pipe.volumeFlow / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
+//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
 //   elseif pipe.volumeFlow < -pipe.V_flowLaminar then
-//   pipe.pressureDrop = pipe.dpLaminar * pipe.volumeFlow / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
+//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
 //   else
-//   pipe.pressureDrop = pipe.dpLaminar * pipe.volumeFlow / pipe.V_flowLaminar;
+//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar;
 //   end if;
 //   pipe.Q_friction = pipe.frictionLoss * (pipe.volumeFlow * pipe.pressureDrop);
 //   ambient2.constPressure.y = ambient2.constPressure.k;

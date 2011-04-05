@@ -4,7 +4,6 @@ setCommandLineOptions({"+g=MetaModelica","+d=rml,generateCodeCheat"});
 
 runScript("LoadCompilerSources.mos");
 getErrorString();
-setOption(envCache,false);
 
 generateCode(Main.main);
 getErrorString();
@@ -15,7 +14,6 @@ getErrorString();
 // "true
 // "
 // ""
-// true
 // true
 // ""
 // endResult

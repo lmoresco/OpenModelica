@@ -662,14 +662,14 @@ getErrorString();
 //   tankController.T6.enableFire = tankController.T6.localCondition AND tankController.T6.inPort.available AND  NOT tankController.T6.outPort.occupied;
 //   tankController.T6.inPort.reset = tankController.T6.fire;
 //   tankController.T6.outPort.set = tankController.T6.fire;
-//   der(tank1.level) = (tank1.inflow1.Fi - tank1.outflow1.Fo) * 1.0 / tank1.A / tank1.hmax;
+//   der(tank1.level) = (tank1.inflow1.Fi - tank1.outflow1.Fo) / (tank1.A * tank1.hmax);
 //   if tank1.outflow1.open then
 //   tank1.outflow1.Fo = sqrt(19.6133 * (tank1.hmax * tank1.level)) * tank1.a;
 //   else
 //   tank1.outflow1.Fo = 0.0;
 //   end if;
 //   tank1.levelSensor = tank1.level;
-//   der(tank2.level) = (tank2.inflow1.Fi - tank2.outflow1.Fo) * 1.0 / tank2.A / tank2.hmax;
+//   der(tank2.level) = (tank2.inflow1.Fi - tank2.outflow1.Fo) / (tank2.A * tank2.hmax);
 //   if tank2.outflow1.open then
 //   tank2.outflow1.Fo = sqrt(19.6133 * (tank2.hmax * tank2.level)) * tank2.a;
 //   else

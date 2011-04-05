@@ -7081,7 +7081,7 @@ getErrorString();
 //   position.phi = position.flange.phi - position.phi_support;
 //   position.w = der(position.phi);
 //   position.a = der(position.w);
-//   position.a = ((position.phi_ref - position.phi) * position.w_crit - 1.3617 * position.w) * position.w_crit / 0.618;
+//   position.a = (((position.phi_ref - position.phi) * position.w_crit - 1.3617 * position.w) * position.w_crit) / 0.618;
 //   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   jointRRR2.jointUSR.revolute.axis.tau = jointRRR2.jointUSR.revolute.tau;
 //   jointRRR2.jointUSR.revolute.axis.phi = jointRRR2.jointUSR.revolute.phi;

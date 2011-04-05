@@ -3468,7 +3468,7 @@ getErrorString();
 //   crank.vis.ta[3] = 0.0;
 //   gasForce.x = 1.0 - gasForce.s_rel / gasForce.L;
 //   gasForce.v_rel = der(gasForce.s_rel);
-//   gasForce.press = if gasForce.v_rel < 0.0 then if gasForce.x < 0.987 then 2.4 + (177.4132 * gasForce.x ^ 4.0 + (-287.2189 * gasForce.x ^ 3.0 + (151.8252 * gasForce.x ^ 2.0 + (-24.9973 * gasForce.x)))) else 2129670.0 + (2836360.0 * gasForce.x ^ 4.0 + (-10569296.0 * gasForce.x ^ 3.0 + (14761814.0 * gasForce.x ^ 2.0 + (-9158505.0 * gasForce.x)))) else if gasForce.x > 0.93 then -3929704.0 * gasForce.x ^ 4.0 + (14748765.0 * gasForce.x ^ 3.0 + (-20747000.0 * gasForce.x ^ 2.0 + 12964477.0 * gasForce.x)) - 3036495.0 else 2.4 + (145.93 * gasForce.x ^ 4.0 + (-131.707 * gasForce.x ^ 3.0 + (17.3438 * gasForce.x ^ 2.0 + 17.9272 * gasForce.x)));
+//   gasForce.press = if gasForce.v_rel < 0.0 then if gasForce.x < 0.987 then 2.4 + (177.4132 * gasForce.x ^ 4.0 + (-287.2189 * gasForce.x ^ 3.0 + (151.8252 * gasForce.x ^ 2.0 + -24.9973 * gasForce.x))) else 2129670.0 + (2836360.0 * gasForce.x ^ 4.0 + (-10569296.0 * gasForce.x ^ 3.0 + (14761814.0 * gasForce.x ^ 2.0 + -9158505.0 * gasForce.x))) else if gasForce.x > 0.93 then -3929704.0 * gasForce.x ^ 4.0 + (14748765.0 * gasForce.x ^ 3.0 + (-20747000.0 * gasForce.x ^ 2.0 + 12964477.0 * gasForce.x)) - 3036495.0 else 2.4 + (145.93 * gasForce.x ^ 4.0 + (-131.707 * gasForce.x ^ 3.0 + (17.3438 * gasForce.x ^ 2.0 + 17.9272 * gasForce.x)));
 //   gasForce.f = -78539.8163397448 * (gasForce.press * gasForce.d ^ 2.0);
 //   gasForce.V = gasForce.k0 + gasForce.k1 * (1.0 - gasForce.x);
 //   gasForce.dens = 1.0 / gasForce.V;

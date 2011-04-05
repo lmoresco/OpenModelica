@@ -281,7 +281,7 @@ getErrorString();
 //   Ambient1.T = Ambient1.T_Ambient;
 //   Ambient1.flowPort.H_flow = semiLinear(Ambient1.flowPort.m_flow,Ambient1.flowPort.h,Ambient1.h);
 //   IdealPump1.dp1 = IdealPump1.dp0 * (Real(sign(IdealPump1.w / IdealPump1.w_Nominal)) * (IdealPump1.w / IdealPump1.w_Nominal) ^ 2.0);
-//   IdealPump1.V_flow1 = IdealPump1.V_flow0 * IdealPump1.w / IdealPump1.w_Nominal;
+//   IdealPump1.V_flow1 = (IdealPump1.V_flow0 * IdealPump1.w) / IdealPump1.w_Nominal;
 //   if noEvent(abs(IdealPump1.w) < 1e-60) then
 //   IdealPump1.dp = 0.0;
 //   IdealPump1.flange_a.tau = 0.0;
@@ -294,8 +294,8 @@ getErrorString();
 //   IdealPump1.flowPort_a.H_flow + (IdealPump1.flowPort_b.H_flow + IdealPump1.Q_flow) = 0.0;
 //   IdealPump1.flowPort_a.H_flow = semiLinear(IdealPump1.flowPort_a.m_flow,IdealPump1.flowPort_a.h,IdealPump1.h);
 //   IdealPump1.flowPort_b.H_flow = semiLinear(IdealPump1.flowPort_b.m_flow,IdealPump1.flowPort_b.h,IdealPump1.h);
-//   Valve1.Kv / Valve1.Kv1 = if Valve1.LinearCharacteristic then Valve1.kv0 + (1.0 - Valve1.kv0) * Valve1.yLim / Valve1.y1 else Valve1.kv0 * exp((log(1.0 / Valve1.kv0) * Valve1.yLim) / Valve1.y1);
-//   Valve1.dp / Valve1.dp0 = Valve1.medium.rho * (Valve1.V_flow * (abs(Valve1.V_flow / Valve1.Kv) * 1.0 / Valve1.rho0 / Valve1.Kv));
+//   Valve1.Kv / Valve1.Kv1 = if Valve1.LinearCharacteristic then Valve1.kv0 + ((1.0 - Valve1.kv0) * Valve1.yLim) / Valve1.y1 else Valve1.kv0 * exp((log(1.0 / Valve1.kv0) * Valve1.yLim) / Valve1.y1);
+//   Valve1.dp / Valve1.dp0 = (Valve1.medium.rho * (Valve1.V_flow * abs(Valve1.V_flow / Valve1.Kv))) / (Valve1.rho0 * Valve1.Kv);
 //   Valve1.Q_flow = Valve1.frictionLoss * (Valve1.V_flow * Valve1.dp);
 //   Valve1.flowPort_a.m_flow + Valve1.flowPort_b.m_flow = 0.0;
 //   Valve1.flowPort_a.H_flow + (Valve1.flowPort_b.H_flow + Valve1.Q_flow) = 0.0;
@@ -310,11 +310,11 @@ getErrorString();
 //   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
 //   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe1.pressureDrop = Pipe1.dpLaminar * Pipe1.VolumeFlow / Pipe1.V_flowLaminar;
+//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar;
 //   end if;
 //   Pipe1.Q_friction = Pipe1.frictionLoss * (Pipe1.VolumeFlow * Pipe1.pressureDrop);
 //   Ambient2.flowPort.p = Ambient2.p_Ambient;

@@ -780,7 +780,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.airGapS.spacePhasor_s.v_[2] = der(aimc.airGapS.psi_ms[2]);
 //   aimc.airGapS.spacePhasor_r.v_[1] = der(aimc.airGapS.psi_mr[1]);
 //   aimc.airGapS.spacePhasor_r.v_[2] = der(aimc.airGapS.psi_mr[2]);
-//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * (aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1] - aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0);
+//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * ((aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1]) / 2.0 - (aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0));
 //   aimc.airGapS.flange.tau = -aimc.airGapS.tauElectrical;
 //   aimc.airGapS.support.tau = aimc.airGapS.tauElectrical;
 //   aimc.squirrelCageR.spacePhasor_r.v_[1] = aimc.squirrelCageR.Rr * aimc.squirrelCageR.spacePhasor_r.i_[1] + aimc.squirrelCageR.Lrsigma * der(aimc.squirrelCageR.spacePhasor_r.i_[1]);
@@ -1923,7 +1923,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.airGapS.spacePhasor_s.v_[2] = der(aimc.airGapS.psi_ms[2]);
 //   aimc.airGapS.spacePhasor_r.v_[1] = der(aimc.airGapS.psi_mr[1]);
 //   aimc.airGapS.spacePhasor_r.v_[2] = der(aimc.airGapS.psi_mr[2]);
-//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * (aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1] - aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0);
+//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * ((aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1]) / 2.0 - (aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0));
 //   aimc.airGapS.flange.tau = -aimc.airGapS.tauElectrical;
 //   aimc.airGapS.support.tau = aimc.airGapS.tauElectrical;
 //   aimc.squirrelCageR.spacePhasor_r.v_[1] = aimc.squirrelCageR.Rr * aimc.squirrelCageR.spacePhasor_r.i_[1] + aimc.squirrelCageR.Lrsigma * der(aimc.squirrelCageR.spacePhasor_r.i_[1]);
@@ -3428,7 +3428,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aims.airGapS.spacePhasor_s.v_[2] = der(aims.airGapS.psi_ms[2]);
 //   aims.airGapS.spacePhasor_r.v_[1] = der(aims.airGapS.psi_mr[1]);
 //   aims.airGapS.spacePhasor_r.v_[2] = der(aims.airGapS.psi_mr[2]);
-//   aims.airGapS.tauElectrical = Real(aims.airGapS.m) * (Real(aims.airGapS.p) * (aims.airGapS.spacePhasor_s.i_[2] * aims.airGapS.psi_ms[1] - aims.airGapS.spacePhasor_s.i_[1] * aims.airGapS.psi_ms[2]) / 2.0);
+//   aims.airGapS.tauElectrical = Real(aims.airGapS.m) * (Real(aims.airGapS.p) * ((aims.airGapS.spacePhasor_s.i_[2] * aims.airGapS.psi_ms[1]) / 2.0 - (aims.airGapS.spacePhasor_s.i_[1] * aims.airGapS.psi_ms[2]) / 2.0));
 //   aims.airGapS.flange.tau = -aims.airGapS.tauElectrical;
 //   aims.airGapS.support.tau = aims.airGapS.tauElectrical;
 //   aims.spacePhasorR.gnd.p.v = 0.0;
@@ -4592,7 +4592,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.airGapS.spacePhasor_s.v_[2] = der(aimc.airGapS.psi_ms[2]);
 //   aimc.airGapS.spacePhasor_r.v_[1] = der(aimc.airGapS.psi_mr[1]);
 //   aimc.airGapS.spacePhasor_r.v_[2] = der(aimc.airGapS.psi_mr[2]);
-//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * (aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1] - aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0);
+//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * ((aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1]) / 2.0 - (aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0));
 //   aimc.airGapS.flange.tau = -aimc.airGapS.tauElectrical;
 //   aimc.airGapS.support.tau = aimc.airGapS.tauElectrical;
 //   aimc.squirrelCageR.spacePhasor_r.v_[1] = aimc.squirrelCageR.Rr * aimc.squirrelCageR.spacePhasor_r.i_[1] + aimc.squirrelCageR.Lrsigma * der(aimc.squirrelCageR.spacePhasor_r.i_[1]);
@@ -5554,7 +5554,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smr.airGapR.spacePhasor_s.v_[2] = der(smr.airGapR.psi_ms[2]);
 //   smr.airGapR.spacePhasor_r.v_[1] = der(smr.airGapR.psi_mr[1]);
 //   smr.airGapR.spacePhasor_r.v_[2] = der(smr.airGapR.psi_mr[2]);
-//   smr.airGapR.tauElectrical = Real(smr.airGapR.m) * (Real(smr.airGapR.p) * (smr.airGapR.spacePhasor_s.i_[2] * smr.airGapR.psi_ms[1] - smr.airGapR.spacePhasor_s.i_[1] * smr.airGapR.psi_ms[2]) / 2.0);
+//   smr.airGapR.tauElectrical = Real(smr.airGapR.m) * (Real(smr.airGapR.p) * ((smr.airGapR.spacePhasor_s.i_[2] * smr.airGapR.psi_ms[1]) / 2.0 - (smr.airGapR.spacePhasor_s.i_[1] * smr.airGapR.psi_ms[2]) / 2.0));
 //   smr.airGapR.flange.tau = -smr.airGapR.tauElectrical;
 //   smr.airGapR.support.tau = smr.airGapR.tauElectrical;
 //   smr.fixed.flange.phi = smr.fixed.phi0;
@@ -6604,7 +6604,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smpm.airGapR.spacePhasor_s.v_[2] = der(smpm.airGapR.psi_ms[2]);
 //   smpm.airGapR.spacePhasor_r.v_[1] = der(smpm.airGapR.psi_mr[1]);
 //   smpm.airGapR.spacePhasor_r.v_[2] = der(smpm.airGapR.psi_mr[2]);
-//   smpm.airGapR.tauElectrical = Real(smpm.airGapR.m) * (Real(smpm.airGapR.p) * (smpm.airGapR.spacePhasor_s.i_[2] * smpm.airGapR.psi_ms[1] - smpm.airGapR.spacePhasor_s.i_[1] * smpm.airGapR.psi_ms[2]) / 2.0);
+//   smpm.airGapR.tauElectrical = Real(smpm.airGapR.m) * (Real(smpm.airGapR.p) * ((smpm.airGapR.spacePhasor_s.i_[2] * smpm.airGapR.psi_ms[1]) / 2.0 - (smpm.airGapR.spacePhasor_s.i_[1] * smpm.airGapR.psi_ms[2]) / 2.0));
 //   smpm.airGapR.flange.tau = -smpm.airGapR.tauElectrical;
 //   smpm.airGapR.support.tau = smpm.airGapR.tauElectrical;
 //   smpm.permanentMagnet.spacePhasor_r.i_[1] = -smpm.permanentMagnet.Ie;
@@ -7815,7 +7815,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smee.airGapR.spacePhasor_s.v_[2] = der(smee.airGapR.psi_ms[2]);
 //   smee.airGapR.spacePhasor_r.v_[1] = der(smee.airGapR.psi_mr[1]);
 //   smee.airGapR.spacePhasor_r.v_[2] = der(smee.airGapR.psi_mr[2]);
-//   smee.airGapR.tauElectrical = Real(smee.airGapR.m) * (Real(smee.airGapR.p) * (smee.airGapR.spacePhasor_s.i_[2] * smee.airGapR.psi_ms[1] - smee.airGapR.spacePhasor_s.i_[1] * smee.airGapR.psi_ms[2]) / 2.0);
+//   smee.airGapR.tauElectrical = Real(smee.airGapR.m) * (Real(smee.airGapR.p) * ((smee.airGapR.spacePhasor_s.i_[2] * smee.airGapR.psi_ms[1]) / 2.0 - (smee.airGapR.spacePhasor_s.i_[1] * smee.airGapR.psi_ms[2]) / 2.0));
 //   smee.airGapR.flange.tau = -smee.airGapR.tauElectrical;
 //   smee.airGapR.support.tau = smee.airGapR.tauElectrical;
 //   smee.electricalExcitation.pin_ep.i + smee.electricalExcitation.pin_en.i = 0.0;
@@ -14809,7 +14809,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.airGapS.spacePhasor_s.v_[2] = der(aimc.airGapS.psi_ms[2]);
 //   aimc.airGapS.spacePhasor_r.v_[1] = der(aimc.airGapS.psi_mr[1]);
 //   aimc.airGapS.spacePhasor_r.v_[2] = der(aimc.airGapS.psi_mr[2]);
-//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * (aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1] - aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0);
+//   aimc.airGapS.tauElectrical = Real(aimc.airGapS.m) * (Real(aimc.airGapS.p) * ((aimc.airGapS.spacePhasor_s.i_[2] * aimc.airGapS.psi_ms[1]) / 2.0 - (aimc.airGapS.spacePhasor_s.i_[1] * aimc.airGapS.psi_ms[2]) / 2.0));
 //   aimc.airGapS.flange.tau = -aimc.airGapS.tauElectrical;
 //   aimc.airGapS.support.tau = aimc.airGapS.tauElectrical;
 //   aimc.squirrelCageR.spacePhasor_r.v_[1] = aimc.squirrelCageR.Rr * aimc.squirrelCageR.spacePhasor_r.i_[1] + aimc.squirrelCageR.Lrsigma * der(aimc.squirrelCageR.spacePhasor_r.i_[1]);

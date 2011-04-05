@@ -6270,7 +6270,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   pendulum.pendulum.box.Sshape[3,3] = pendulum.pendulum.Scyl[3,3];
 //   pendulum.pendulum.mo = 3141.59265358979 * (pendulum.pendulum.rho * (pendulum.pendulum.length * pendulum.pendulum.Radius ^ 2.0));
 //   pendulum.pendulum.mi = 3141.59265358979 * (pendulum.pendulum.rho * (pendulum.pendulum.length * pendulum.pendulum.InnerRadius ^ 2.0));
-//   pendulum.pendulum.I22 = pendulum.pendulum.mo * (pendulum.pendulum.length ^ 2.0 + 3.0 * pendulum.pendulum.Radius ^ 2.0) / 12.0 - pendulum.pendulum.mi * (pendulum.pendulum.length ^ 2.0 + 3.0 * pendulum.pendulum.InnerRadius ^ 2.0) / 12.0;
+//   pendulum.pendulum.I22 = pendulum.pendulum.mo * (pendulum.pendulum.length ^ 2.0 / 12.0 + 0.25 * pendulum.pendulum.Radius ^ 2.0) - pendulum.pendulum.mi * (pendulum.pendulum.length ^ 2.0 / 12.0 + 0.25 * pendulum.pendulum.InnerRadius ^ 2.0);
 //   pendulum.pendulum.body.m = pendulum.pendulum.mo - pendulum.pendulum.mi;
 //   pendulum.pendulum.body.rCM[1] = pendulum.pendulum.r0[1] + pendulum.pendulum.length * pendulum.pendulum.box.nLength[1] / 2.0;
 //   pendulum.pendulum.body.rCM[2] = pendulum.pendulum.r0[2] + pendulum.pendulum.length * pendulum.pendulum.box.nLength[2] / 2.0;

@@ -99,7 +99,7 @@ end X;
 //   parameter enumeration(world, frame_a, frame_resolve) frame_r_out = frame_r_in;
 // equation
 //   enumtest.c = Types.EnumTest.DigitalCurrentChoices.one;
-//   enumtest.choice = if enumtest.c == Types.EnumTest.DigitalCurrentChoices.zero then Types.EnumTest.DigitalCurrentChoices.one else Types.EnumTest.DigitalCurrentChoices.one;
+//   enumtest.choice = Types.EnumTest.DigitalCurrentChoices.one;
 //   x = Real(if frame_r_out == frame_r_in then 0 else 1);
 //   f = enum.a;
 // algorithm

@@ -851,7 +851,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tvs = pathPlanning.path.Tv + pathPlanning.path.startTime;
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
-//   pathPlanning.path.s1 = pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0) / 2.0;
+//   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
 //   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) - (pathPlanning.path.sdd_max * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
 //   pathPlanning.path.s3 = pathPlanning.path.s2 + pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 - pathPlanning.path.Tv / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv));
 //   if time < pathPlanning.path.startTime then
@@ -9630,7 +9630,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tvs = pathPlanning.path.Tv + pathPlanning.path.startTime;
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
-//   pathPlanning.path.s1 = pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0) / 2.0;
+//   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
 //   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) - (pathPlanning.path.sdd_max * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
 //   pathPlanning.path.s3 = pathPlanning.path.s2 + pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 - pathPlanning.path.Tv / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv));
 //   if time < pathPlanning.path.startTime then
