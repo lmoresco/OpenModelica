@@ -1003,7 +1003,7 @@ end BC5;
 //   output Real constant1.y[1];
 //   parameter Real constant1.k[1] = 1.0 "Constant output values";
 // equation
-//   der(limIntegrator1.y[1]) = if limIntegrator1.y[1] < limIntegrator1.p_outMin[1] AND limIntegrator1.u[1] < 0.0 OR limIntegrator1.y[1] > limIntegrator1.p_outMax[1] AND limIntegrator1.u[1] > 0.0 then 0.0 else limIntegrator1.p_k[1] * limIntegrator1.u[1];
+//   der(limIntegrator1.y[1]) = if limIntegrator1.y[1] < limIntegrator1.p_outMin[1] and limIntegrator1.u[1] < 0.0 or limIntegrator1.y[1] > limIntegrator1.p_outMax[1] and limIntegrator1.u[1] > 0.0 then 0.0 else limIntegrator1.p_k[1] * limIntegrator1.u[1];
 //   limIntegrator1.y[1] = limIntegrator1.outPort.signal[1];
 //   constant1.outPort.signal[1] = constant1.k[1];
 //   constant1.y[1] = constant1.outPort.signal[1];

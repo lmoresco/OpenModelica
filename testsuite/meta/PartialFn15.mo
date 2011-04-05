@@ -44,7 +44,7 @@ end PartialFn15;
 // algorithm
 //   lst := List();
 //   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);
-//   while  NOT listEmpty(binops) loop
+//   while  not listEmpty(binops) loop
 //     lst := match (binops) 
 //     case (binop::binops) then listCons(binop(#(r1),#(r2)),lst);
 //   end match;

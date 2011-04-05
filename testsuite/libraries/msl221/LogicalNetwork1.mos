@@ -42,16 +42,16 @@ getErrorString();
 //     end for;
 //     j := 1;
 //     y := startValue;
-//     while j < n AND table[j] <= simulationStartTime loop
-//       y :=  NOT y;
+//     while j < n and table[j] <= simulationStartTime loop
+//       y :=  not y;
 //       j := 1 + j;
 //     end while;
 //     if j == 1 then
 //       nextTime := table[1];
 //       y := startValue;
-//     elseif j == n AND table[n] <= simulationStartTime then
+//     elseif j == n and table[n] <= simulationStartTime then
 //       nextTime := simulationStartTime - 1.0;
-//       y :=  NOT y;
+//       y :=  not y;
 //     else
 //       nextTime := table[j];
 //     end if;
@@ -95,9 +95,9 @@ getErrorString();
 //   (table2.index, table2.nextTime, table2.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table2.table[1],table2.table[2],table2.table[3],table2.table[4]},time,table2.startValue);
 //   (table1.index, table1.nextTime, table1.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table1.table[1],table1.table[2],table1.table[3],table1.table[4]},time,table1.startValue);
 // equation
-//   Not1.y =  NOT Not1.u;
-//   And1.y = And1.u1 AND And1.u2;
-//   Or1.y = Or1.u1 OR Or1.u2;
+//   Not1.y =  not Not1.u;
+//   And1.y = And1.u1 and And1.u2;
+//   Or1.y = Or1.u1 or Or1.u2;
 //   Pre1.y = pre(Pre1.u);
 //   Not1.u = table2.y;
 //   And1.y = Or1.u2;
@@ -106,24 +106,24 @@ getErrorString();
 //   And1.u2 = Pre1.y;
 //   Or1.y = Pre1.u;
 // algorithm
-//   when time >= pre(table2.nextTime) AND table2.n > 0 then
+//   when time >= pre(table2.nextTime) and table2.n > 0 then
 //     if table2.index < table2.n then
 //       table2.index := 1 + table2.index;
 //       table2.nextTime := table2.table[table2.index];
-//       table2.y :=  NOT table2.y;
+//       table2.y :=  not table2.y;
 //     elseif table2.index == table2.n then
 //       table2.index := 1 + table2.index;
-//       table2.y :=  NOT table2.y;
+//       table2.y :=  not table2.y;
 //     end if;
 //   end when;
-//   when time >= pre(table1.nextTime) AND table1.n > 0 then
+//   when time >= pre(table1.nextTime) and table1.n > 0 then
 //     if table1.index < table1.n then
 //       table1.index := 1 + table1.index;
 //       table1.nextTime := table1.table[table1.index];
-//       table1.y :=  NOT table1.y;
+//       table1.y :=  not table1.y;
 //     elseif table1.index == table1.n then
 //       table1.index := 1 + table1.index;
-//       table1.y :=  NOT table1.y;
+//       table1.y :=  not table1.y;
 //     end if;
 //   end when;
 // end Modelica.Blocks.Examples.LogicalNetwork1;

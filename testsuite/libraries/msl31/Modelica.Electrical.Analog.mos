@@ -343,7 +343,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real y.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real y.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 // equation
-//   TP1.gds = if TP1.RDS < 1e-20 AND TP1.RDS > -1e-20 then 1e+20 else 1.0 / TP1.RDS;
+//   TP1.gds = if TP1.RDS < 1e-20 and TP1.RDS > -1e-20 then 1e+20 else 1.0 / TP1.RDS;
 //   TP1.v = (TP1.Beta * (TP1.W + TP1.dW)) / (TP1.L + TP1.dL);
 //   TP1.ud = if TP1.D.v > TP1.S.v then TP1.S.v else TP1.D.v;
 //   TP1.us = if TP1.D.v > TP1.S.v then TP1.D.v else TP1.S.v;
@@ -357,7 +357,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP1.B.i = 0.0;
 //   TP1.LossPower = TP1.D.i * (TP1.D.v - TP1.S.v);
 //   TP1.T_heatPort = TP1.T;
-//   TP2.gds = if TP2.RDS < 1e-20 AND TP2.RDS > -1e-20 then 1e+20 else 1.0 / TP2.RDS;
+//   TP2.gds = if TP2.RDS < 1e-20 and TP2.RDS > -1e-20 then 1e+20 else 1.0 / TP2.RDS;
 //   TP2.v = (TP2.Beta * (TP2.W + TP2.dW)) / (TP2.L + TP2.dL);
 //   TP2.ud = if TP2.D.v > TP2.S.v then TP2.S.v else TP2.D.v;
 //   TP2.us = if TP2.D.v > TP2.S.v then TP2.D.v else TP2.S.v;
@@ -371,7 +371,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP2.B.i = 0.0;
 //   TP2.LossPower = TP2.D.i * (TP2.D.v - TP2.S.v);
 //   TP2.T_heatPort = TP2.T;
-//   TN1.gds = if TN1.RDS < 1e-20 AND TN1.RDS > -1e-20 then 1e+20 else 1.0 / TN1.RDS;
+//   TN1.gds = if TN1.RDS < 1e-20 and TN1.RDS > -1e-20 then 1e+20 else 1.0 / TN1.RDS;
 //   TN1.v = (TN1.Beta * (TN1.W + TN1.dW)) / (TN1.L + TN1.dL);
 //   TN1.ud = if TN1.D.v < TN1.S.v then TN1.S.v else TN1.D.v;
 //   TN1.us = if TN1.D.v < TN1.S.v then TN1.D.v else TN1.S.v;
@@ -385,7 +385,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TN1.B.i = 0.0;
 //   TN1.LossPower = TN1.D.i * (TN1.D.v - TN1.S.v);
 //   TN1.T_heatPort = TN1.T;
-//   TN2.gds = if TN2.RDS < 1e-20 AND TN2.RDS > -1e-20 then 1e+20 else 1.0 / TN2.RDS;
+//   TN2.gds = if TN2.RDS < 1e-20 and TN2.RDS > -1e-20 then 1e+20 else 1.0 / TN2.RDS;
 //   TN2.v = (TN2.Beta * (TN2.W + TN2.dW)) / (TN2.L + TN2.dL);
 //   TN2.ud = if TN2.D.v < TN2.S.v then TN2.S.v else TN2.D.v;
 //   TN2.us = if TN2.D.v < TN2.S.v then TN2.D.v else TN2.S.v;
@@ -484,9 +484,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real vcm(quantity = \"ElectricPotential\", unit = \"V\");
 //   output Real result(quantity = \"ElectricPotential\", unit = \"V\");
 // algorithm
-//   if q_sum > v_pos - vcp AND q_sum_ltf >= v_pos - vcp then
+//   if q_sum > v_pos - vcp and q_sum_ltf >= v_pos - vcp then
 //     result := v_pos - vcp;
-//   elseif q_sum < v_neg + vcm AND q_sum_ltf <= v_neg + vcm then
+//   elseif q_sum < v_neg + vcm and q_sum_ltf <= v_neg + vcm then
 //     result := v_neg + vcm;
 //   else
 //     result := q_sum;
@@ -994,7 +994,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   when sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1080,12 +1080,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   parameter Integer nperiod(start = -1) \"Number of periods (< 0 means infinite number of periods)\";
 // equation
-//   when pre(signalSource.counter2) <> 0 AND sample(signalSource.startTime,signalSource.period) then
+//   when pre(signalSource.counter2) <> 0 and sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   signalSource.counter2 = pre(signalSource.counter);
 //   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR signalSource.counter2 == 0 OR time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1131,7 +1131,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     a := 0.0;
 //     b := offset + table[1,columns];
 //   else
-//     while next < nrow AND tp >= table[next,1] loop
+//     while next < nrow and tp >= table[next,1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
@@ -1448,7 +1448,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   when sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or time >= signalSource.T0 + signalSource.T_width then 0.0 else signalSource.amplitude);
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1534,12 +1534,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) \"Time for one period\";
 //   parameter Integer nperiod(start = -1) \"Number of periods (< 0 means infinite number of periods)\";
 // equation
-//   when pre(signalSource.counter2) <> 0 AND sample(signalSource.startTime,signalSource.period) then
+//   when pre(signalSource.counter2) <> 0 and sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   signalSource.counter2 = pre(signalSource.counter);
 //   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime OR signalSource.counter2 == 0 OR time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1585,7 +1585,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     a := 0.0;
 //     b := offset + table[1,columns];
 //   else
-//     while next < nrow AND tp >= table[next,1] loop
+//     while next < nrow and tp >= table[next,1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
@@ -5882,9 +5882,9 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real vcm(quantity = \"ElectricPotential\", unit = \"V\");
 //   output Real result(quantity = \"ElectricPotential\", unit = \"V\");
 // algorithm
-//   if q_sum > v_pos - vcp AND q_sum_ltf >= v_pos - vcp then
+//   if q_sum > v_pos - vcp and q_sum_ltf >= v_pos - vcp then
 //     result := v_pos - vcp;
-//   elseif q_sum < v_neg + vcm AND q_sum_ltf <= v_neg + vcm then
+//   elseif q_sum < v_neg + vcm and q_sum_ltf <= v_neg + vcm then
 //     result := v_neg + vcm;
 //   else
 //     result := q_sum;

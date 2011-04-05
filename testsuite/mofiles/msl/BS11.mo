@@ -1404,7 +1404,7 @@ end BS11;
 //       a := 0.0;
 //       b := offset + table[1,columns];
 //     else
-//       while next < nrow AND tp >= table[next,1] loop
+//       while next < nrow and tp >= table[next,1] loop
 //         next := 1 + next;
 //       end while;
 //       if next < nrow then

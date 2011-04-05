@@ -3934,7 +3934,7 @@ end Gear;
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i,1] loop
+//       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
@@ -4150,11 +4150,11 @@ end Gear;
 //   gear1.bearingFriction.phi_a = gear1.bearingFriction.flange_a.phi - gear1.bearingFriction.bearing.phi;
 //   0.0 = gear1.bearingFriction.flange_a.tau + (gear1.bearingFriction.flange_b.tau + gear1.bearingFriction.tau_support);
 //   gear1.bearingFriction.bearing.tau = gear1.bearingFriction.tau_support;
-//   gear1.bearingFriction.startForward = pre(gear1.bearingFriction.mode) == 0 AND (gear1.bearingFriction.sa > gear1.bearingFriction.tau0_max OR pre(gear1.bearingFriction.startForward) AND gear1.bearingFriction.sa > gear1.bearingFriction.tau0) OR pre(gear1.bearingFriction.mode) == -1 AND gear1.bearingFriction.w_relfric > gear1.bearingFriction.w_small OR initial() AND gear1.bearingFriction.w_relfric > 0.0;
-//   gear1.bearingFriction.startBackward = pre(gear1.bearingFriction.mode) == 0 AND (gear1.bearingFriction.sa < -gear1.bearingFriction.tau0_max OR pre(gear1.bearingFriction.startBackward) AND gear1.bearingFriction.sa < -gear1.bearingFriction.tau0) OR pre(gear1.bearingFriction.mode) == 1 AND gear1.bearingFriction.w_relfric < -gear1.bearingFriction.w_small OR initial() AND gear1.bearingFriction.w_relfric < 0.0;
-//   gear1.bearingFriction.locked =  NOT gear1.bearingFriction.free AND  NOT (pre(gear1.bearingFriction.mode) == 1 OR gear1.bearingFriction.startForward OR pre(gear1.bearingFriction.mode) == -1 OR gear1.bearingFriction.startBackward);
+//   gear1.bearingFriction.startForward = pre(gear1.bearingFriction.mode) == 0 and (gear1.bearingFriction.sa > gear1.bearingFriction.tau0_max or pre(gear1.bearingFriction.startForward) and gear1.bearingFriction.sa > gear1.bearingFriction.tau0) or pre(gear1.bearingFriction.mode) == -1 and gear1.bearingFriction.w_relfric > gear1.bearingFriction.w_small or initial() and gear1.bearingFriction.w_relfric > 0.0;
+//   gear1.bearingFriction.startBackward = pre(gear1.bearingFriction.mode) == 0 and (gear1.bearingFriction.sa < -gear1.bearingFriction.tau0_max or pre(gear1.bearingFriction.startBackward) and gear1.bearingFriction.sa < -gear1.bearingFriction.tau0) or pre(gear1.bearingFriction.mode) == 1 and gear1.bearingFriction.w_relfric < -gear1.bearingFriction.w_small or initial() and gear1.bearingFriction.w_relfric < 0.0;
+//   gear1.bearingFriction.locked =  not gear1.bearingFriction.free and  not (pre(gear1.bearingFriction.mode) == 1 or gear1.bearingFriction.startForward or pre(gear1.bearingFriction.mode) == -1 or gear1.bearingFriction.startBackward);
 //   gear1.bearingFriction.a_relfric = if gear1.bearingFriction.locked then 0.0 else if gear1.bearingFriction.free then gear1.bearingFriction.sa else if gear1.bearingFriction.startForward then gear1.bearingFriction.sa - gear1.bearingFriction.tau0 else if gear1.bearingFriction.startBackward then gear1.bearingFriction.sa + gear1.bearingFriction.tau0 else if pre(gear1.bearingFriction.mode) == 1 then gear1.bearingFriction.sa - gear1.bearingFriction.tau0 else gear1.bearingFriction.sa + gear1.bearingFriction.tau0;
-//   gear1.bearingFriction.mode = if gear1.bearingFriction.free then 2 else if (pre(gear1.bearingFriction.mode) == 1 OR pre(gear1.bearingFriction.mode) == 2 OR gear1.bearingFriction.startForward) AND gear1.bearingFriction.w_relfric > 0.0 then 1 else if (pre(gear1.bearingFriction.mode) == -1 OR pre(gear1.bearingFriction.mode) == 2 OR gear1.bearingFriction.startBackward) AND gear1.bearingFriction.w_relfric < 0.0 then -1 else 0;
+//   gear1.bearingFriction.mode = if gear1.bearingFriction.free then 2 else if (pre(gear1.bearingFriction.mode) == 1 or pre(gear1.bearingFriction.mode) == 2 or gear1.bearingFriction.startForward) and gear1.bearingFriction.w_relfric > 0.0 then 1 else if (pre(gear1.bearingFriction.mode) == -1 or pre(gear1.bearingFriction.mode) == 2 or gear1.bearingFriction.startBackward) and gear1.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   gear1.tau_support = -gear1.adapter.flange_b.tau;
 //   springDamper1.flange_b.tau + fixed1.flange_b.tau = 0.0;
 //   fixed1.flange_b.phi = springDamper1.flange_b.phi;

@@ -45,7 +45,7 @@ getErrorString();
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i,1] loop
+//       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
@@ -66,7 +66,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   if size(A,1) == size(B,1) AND size(A,2) == size(B,2) then
+//   if size(A,1) == size(B,1) and size(A,2) == size(B,2) then
 //     result := true;
 //     for i in 1:size(A,1) loop
 //       for j in 1:size(A,2) loop
@@ -190,15 +190,15 @@ getErrorString();
 //   gear.quadrant2 = (1.0 - 1.0 / gear.eta_mf2) * gear.flange_a.tau + gear.tau_bf2;
 //   gear.quadrant4 = (1.0 - 1.0 / gear.eta_mf2) * gear.flange_a.tau - gear.tau_bf2;
 //   gear.quadrant3 = (1.0 - gear.eta_mf1) * gear.flange_a.tau - gear.tau_bf1;
-//   gear.tau_aPos = gear.ideal OR gear.flange_a.tau >= 0.0;
+//   gear.tau_aPos = gear.ideal or gear.flange_a.tau >= 0.0;
 //   gear.tauLossMax = if gear.tau_aPos then gear.quadrant1 else gear.quadrant2;
 //   gear.tauLossMin = if gear.tau_aPos then gear.quadrant4 else gear.quadrant3;
-//   gear.startForward = pre(gear.mode) == 0 AND gear.sa > gear.tauLossMax / gear.unitTorque OR initial() AND gear.w_a > 0.0;
-//   gear.startBackward = pre(gear.mode) == 0 AND gear.sa < gear.tauLossMin / gear.unitTorque OR initial() AND gear.w_a < 0.0;
-//   gear.locked =  NOT (gear.ideal OR pre(gear.mode) == 1 OR gear.startForward OR pre(gear.mode) == -1 OR gear.startBackward);
-//   gear.tauLoss = if gear.ideal then 0.0 else if gear.locked then gear.sa * gear.unitTorque else if gear.startForward OR pre(gear.mode) == 1 then gear.tauLossMax else gear.tauLossMin;
+//   gear.startForward = pre(gear.mode) == 0 and gear.sa > gear.tauLossMax / gear.unitTorque or initial() and gear.w_a > 0.0;
+//   gear.startBackward = pre(gear.mode) == 0 and gear.sa < gear.tauLossMin / gear.unitTorque or initial() and gear.w_a < 0.0;
+//   gear.locked =  not (gear.ideal or pre(gear.mode) == 1 or gear.startForward or pre(gear.mode) == -1 or gear.startBackward);
+//   gear.tauLoss = if gear.ideal then 0.0 else if gear.locked then gear.sa * gear.unitTorque else if gear.startForward or pre(gear.mode) == 1 then gear.tauLossMax else gear.tauLossMin;
 //   gear.a_a = gear.unitAcceleration * (if gear.locked then 0.0 else gear.sa - gear.tauLoss / gear.unitTorque);
-//   gear.mode = if gear.ideal then 2 else if (pre(gear.mode) == 1 OR gear.startForward) AND gear.w_a > 0.0 then 1 else if (pre(gear.mode) == -1 OR gear.startBackward) AND gear.w_a < 0.0 then -1 else 0;
+//   gear.mode = if gear.ideal then 2 else if (pre(gear.mode) == 1 or gear.startForward) and gear.w_a > 0.0 then 1 else if (pre(gear.mode) == -1 or gear.startBackward) and gear.w_a < 0.0 then -1 else 0;
 //   gear.bearing.phi = 0.0;
 //   0.0 = gear.flange_a.tau + (gear.flange_b.tau + gear.tau_support);
 //   gear.phi_a = gear.flange_a.phi - gear.bearing.phi;

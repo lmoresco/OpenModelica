@@ -45,7 +45,7 @@ getErrorString();
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i,1] loop
+//       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
@@ -79,7 +79,7 @@ getErrorString();
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i,1] loop
+//       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
@@ -100,7 +100,7 @@ getErrorString();
 //   output Boolean result;
 // algorithm
 //   result := false;
-//   if size(A,1) == size(B,1) AND size(A,2) == size(B,2) then
+//   if size(A,1) == size(B,1) and size(A,2) == size(B,2) then
 //     result := true;
 //     for i in 1:size(A,1) loop
 //       for j in 1:size(A,2) loop
@@ -260,15 +260,15 @@ getErrorString();
 //   gear.quadrant2 = (1.0 - 1.0 / gear.eta_mf2) * gear.flange_a.tau + gear.tau_bf2;
 //   gear.quadrant4 = (1.0 - 1.0 / gear.eta_mf2) * gear.flange_a.tau - gear.tau_bf2;
 //   gear.quadrant3 = (1.0 - gear.eta_mf1) * gear.flange_a.tau - gear.tau_bf1;
-//   gear.tau_aPos = gear.ideal OR gear.flange_a.tau >= 0.0;
+//   gear.tau_aPos = gear.ideal or gear.flange_a.tau >= 0.0;
 //   gear.tauLossMax = if gear.tau_aPos then gear.quadrant1 else gear.quadrant2;
 //   gear.tauLossMin = if gear.tau_aPos then gear.quadrant4 else gear.quadrant3;
-//   gear.startForward = pre(gear.mode) == 0 AND gear.sa > gear.tauLossMax / gear.unitTorque OR initial() AND gear.w_a > 0.0;
-//   gear.startBackward = pre(gear.mode) == 0 AND gear.sa < gear.tauLossMin / gear.unitTorque OR initial() AND gear.w_a < 0.0;
-//   gear.locked =  NOT (gear.ideal OR pre(gear.mode) == 1 OR gear.startForward OR pre(gear.mode) == -1 OR gear.startBackward);
-//   gear.tauLoss = if gear.ideal then 0.0 else if gear.locked then gear.sa * gear.unitTorque else if gear.startForward OR pre(gear.mode) == 1 then gear.tauLossMax else gear.tauLossMin;
+//   gear.startForward = pre(gear.mode) == 0 and gear.sa > gear.tauLossMax / gear.unitTorque or initial() and gear.w_a > 0.0;
+//   gear.startBackward = pre(gear.mode) == 0 and gear.sa < gear.tauLossMin / gear.unitTorque or initial() and gear.w_a < 0.0;
+//   gear.locked =  not (gear.ideal or pre(gear.mode) == 1 or gear.startForward or pre(gear.mode) == -1 or gear.startBackward);
+//   gear.tauLoss = if gear.ideal then 0.0 else if gear.locked then gear.sa * gear.unitTorque else if gear.startForward or pre(gear.mode) == 1 then gear.tauLossMax else gear.tauLossMin;
 //   gear.a_a = gear.unitAcceleration * (if gear.locked then 0.0 else gear.sa - gear.tauLoss / gear.unitTorque);
-//   gear.mode = if gear.ideal then 2 else if (pre(gear.mode) == 1 OR gear.startForward) AND gear.w_a > 0.0 then 1 else if (pre(gear.mode) == -1 OR gear.startBackward) AND gear.w_a < 0.0 then -1 else 0;
+//   gear.mode = if gear.ideal then 2 else if (pre(gear.mode) == 1 or gear.startForward) and gear.w_a > 0.0 then 1 else if (pre(gear.mode) == -1 or gear.startBackward) and gear.w_a < 0.0 then -1 else 0;
 //   gear.bearing.phi = 0.0;
 //   0.0 = gear.flange_a.tau + (gear.flange_b.tau + gear.tau_support);
 //   gear.phi_a = gear.flange_a.phi - gear.bearing.phi;
@@ -304,11 +304,11 @@ getErrorString();
 //   bearingFriction.phi_a = bearingFriction.flange_a.phi - bearingFriction.bearing.phi;
 //   0.0 = bearingFriction.flange_a.tau + (bearingFriction.flange_b.tau + bearingFriction.tau_support);
 //   bearingFriction.bearing.phi = 0.0;
-//   bearingFriction.startForward = pre(bearingFriction.mode) == 0 AND (bearingFriction.sa > bearingFriction.tau0_max OR pre(bearingFriction.startForward) AND bearingFriction.sa > bearingFriction.tau0) OR pre(bearingFriction.mode) == -1 AND bearingFriction.w_relfric > bearingFriction.w_small OR initial() AND bearingFriction.w_relfric > 0.0;
-//   bearingFriction.startBackward = pre(bearingFriction.mode) == 0 AND (bearingFriction.sa < -bearingFriction.tau0_max OR pre(bearingFriction.startBackward) AND bearingFriction.sa < -bearingFriction.tau0) OR pre(bearingFriction.mode) == 1 AND bearingFriction.w_relfric < -bearingFriction.w_small OR initial() AND bearingFriction.w_relfric < 0.0;
-//   bearingFriction.locked =  NOT bearingFriction.free AND  NOT (pre(bearingFriction.mode) == 1 OR bearingFriction.startForward OR pre(bearingFriction.mode) == -1 OR bearingFriction.startBackward);
+//   bearingFriction.startForward = pre(bearingFriction.mode) == 0 and (bearingFriction.sa > bearingFriction.tau0_max or pre(bearingFriction.startForward) and bearingFriction.sa > bearingFriction.tau0) or pre(bearingFriction.mode) == -1 and bearingFriction.w_relfric > bearingFriction.w_small or initial() and bearingFriction.w_relfric > 0.0;
+//   bearingFriction.startBackward = pre(bearingFriction.mode) == 0 and (bearingFriction.sa < -bearingFriction.tau0_max or pre(bearingFriction.startBackward) and bearingFriction.sa < -bearingFriction.tau0) or pre(bearingFriction.mode) == 1 and bearingFriction.w_relfric < -bearingFriction.w_small or initial() and bearingFriction.w_relfric < 0.0;
+//   bearingFriction.locked =  not bearingFriction.free and  not (pre(bearingFriction.mode) == 1 or bearingFriction.startForward or pre(bearingFriction.mode) == -1 or bearingFriction.startBackward);
 //   bearingFriction.a_relfric = bearingFriction.unitAngularAcceleration * (if bearingFriction.locked then 0.0 else if bearingFriction.free then bearingFriction.sa else if bearingFriction.startForward then bearingFriction.sa - bearingFriction.tau0_max / bearingFriction.unitTorque else if bearingFriction.startBackward then bearingFriction.sa + bearingFriction.tau0_max / bearingFriction.unitTorque else if pre(bearingFriction.mode) == 1 then bearingFriction.sa - bearingFriction.tau0 / bearingFriction.unitTorque else bearingFriction.sa + bearingFriction.tau0 / bearingFriction.unitTorque);
-//   bearingFriction.mode = if bearingFriction.free then 2 else if (pre(bearingFriction.mode) == 1 OR pre(bearingFriction.mode) == 2 OR bearingFriction.startForward) AND bearingFriction.w_relfric > 0.0 then 1 else if (pre(bearingFriction.mode) == -1 OR pre(bearingFriction.mode) == 2 OR bearingFriction.startBackward) AND bearingFriction.w_relfric < 0.0 then -1 else 0;
+//   bearingFriction.mode = if bearingFriction.free then 2 else if (pre(bearingFriction.mode) == 1 or pre(bearingFriction.mode) == 2 or bearingFriction.startForward) and bearingFriction.w_relfric > 0.0 then 1 else if (pre(bearingFriction.mode) == -1 or pre(bearingFriction.mode) == 2 or bearingFriction.startBackward) and bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   PowerLoss = gear.flange_a.tau * der(gear.flange_a.phi) + gear.flange_b.tau * der(gear.flange_b.phi);
 //   torque2.flange_b.tau + Inertia2.flange_b.tau = 0.0;
 //   Inertia2.flange_b.phi = torque2.flange_b.phi;

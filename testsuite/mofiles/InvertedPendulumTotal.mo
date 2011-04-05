@@ -4110,7 +4110,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //     a := 0.0;
 //     b := offset + table[1,columns];
 //   else
-//     while next < nrow AND tp >= table[next,1] loop
+//     while next < nrow and tp >= table[next,1] loop
 //       next := 1 + next;
 //     end while;
 //     if next < nrow then
@@ -6020,13 +6020,13 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   when sample(controller.pulse.startTime,controller.pulse.period) then
 //   controller.pulse.T0 = time;
 //   end when;
-//   controller.pulse.y = controller.pulse.offset + (if time < controller.pulse.startTime OR time >= controller.pulse.T0 + controller.pulse.T_width then 0.0 else controller.pulse.amplitude);
+//   controller.pulse.y = controller.pulse.offset + (if time < controller.pulse.startTime or time >= controller.pulse.T0 + controller.pulse.T_width then 0.0 else controller.pulse.amplitude);
 //   controller.switch1.y = if controller.switch1.u2 then controller.switch1.u1 else controller.switch1.u3;
 //   controller.ConstantQ.y = controller.ConstantQ.k;
 //   assert(controller.limiter.uMax >= controller.limiter.uMin,"Limiter: Limits must be consistent. However, uMax (=" + String(controller.limiter.uMax,0,true,6) + ") < uMin (=" + String(controller.limiter.uMin,0,true,6) + ")");
-//   if initial() AND  NOT controller.limiter.limitsAtInit then
+//   if initial() and  not controller.limiter.limitsAtInit then
 //   controller.limiter.y = controller.limiter.u;
-//   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.
+//   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.
 // However, the result is that the input u is not within the required limits:
 //   u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 //   else
@@ -6865,6 +6865,6 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //     (controller.timeTable.a, controller.timeTable.b, controller.timeTable.nextEvent, controller.timeTable.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{controller.timeTable.table[1,1],controller.timeTable.table[1,2]},{controller.timeTable.table[2,1],controller.timeTable.table[2,2]},{controller.timeTable.table[3,1],controller.timeTable.table[3,2]},{controller.timeTable.table[4,1],controller.timeTable.table[4,2]},{controller.timeTable.table[5,1],controller.timeTable.table[5,2]},{controller.timeTable.table[6,1],controller.timeTable.table[6,2]},{controller.timeTable.table[7,1],controller.timeTable.table[7,2]}},controller.timeTable.offset,controller.timeTable.startTime,time,controller.timeTable.last,1e-13);
 //   end when;
 // end IntroductoryExamples_Systems_InvertedPendulum;
-// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) AND controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.However, the result is that the input u is not within the required limits:  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
+// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.However, the result is that the input u is not within the required limits:  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 // 
 // endResult

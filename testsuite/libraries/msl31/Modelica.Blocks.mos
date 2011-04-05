@@ -101,7 +101,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   Boolean controlBus.subControlBus.myBooleanSignal \"virtual variable in expandable connector\";
 // equation
 //   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
-//   booleanStep.y = if time >= booleanStep.startTime then  NOT booleanStep.startValue else booleanStep.startValue;
+//   booleanStep.y = if time >= booleanStep.startTime then  not booleanStep.startValue else booleanStep.startValue;
 //   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   gain.y = gain.k * gain.u;
 //   controlBus.realSignal1 = gain.u;
@@ -284,7 +284,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   assert(false,\"tableOnFile = false and parameter table is an empty matrix\");
 //   y[1] = p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(tableID,columns[1],time);
 //   when initial() then
-//   tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  NOT tableOnFile then \"NoName\" else tableName,if  NOT tableOnFile then \"NoName\" else fileName,{{}},startTime,smoothness,extrapolation);
+//   tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  not tableOnFile then \"NoName\" else tableName,if  not tableOnFile then \"NoName\" else fileName,{{}},startTime,smoothness,extrapolation);
 //   end when;
 // end Modelica.Blocks.Sources.CombiTimeTable;
 // "

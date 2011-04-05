@@ -1269,7 +1269,7 @@ end BS16;
 //   when sample(booleanPulse1.p_startTime[1],booleanPulse1.p_period[1]) then
 //   booleanPulse1.T0[1] = time;
 //   end when;
-//   booleanPulse1.outPort.signal[1] = time >= booleanPulse1.T0[1] AND time < booleanPulse1.T0[1] + booleanPulse1.Twidth[1];
+//   booleanPulse1.outPort.signal[1] = time >= booleanPulse1.T0[1] and time < booleanPulse1.T0[1] + booleanPulse1.Twidth[1];
 //   booleanChange1.y[1] = change(booleanChange1.u[1]);
 //   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
 //   assert(booleanPulse1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");

@@ -78,7 +78,7 @@ end WatchDogSystem1;
 //     watchdog.watchdogActive := false;
 //     watchdog.dAlarm.signal := false;
 //   end when;
-//   when change(watchdog.dDeadline.signal) AND watchdog.watchdogActive then
+//   when change(watchdog.dDeadline.signal) and watchdog.watchdogActive then
 //     watchdog.dAlarm.signal := true;
 //   end when;
 // end WatchDogSystem1;

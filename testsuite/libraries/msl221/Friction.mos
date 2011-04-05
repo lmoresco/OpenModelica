@@ -114,36 +114,36 @@ getErrorString();
 // equation
 //   Stop1.f0 = Stop1.F_Coulomb + Stop1.F_Stribeck;
 //   Stop1.f0_max = 1.001 * Stop1.f0;
-//   Stop1.free = Stop1.f0 <= 0.0 AND Stop1.F_prop <= 0.0 AND Stop1.s > Stop1.smin + Stop1.L / 2.0 AND Stop1.s < Stop1.smax - Stop1.L / 2.0;
+//   Stop1.free = Stop1.f0 <= 0.0 and Stop1.F_prop <= 0.0 and Stop1.s > Stop1.smin + Stop1.L / 2.0 and Stop1.s < Stop1.smax - Stop1.L / 2.0;
 //   Stop1.v = der(Stop1.s);
 //   Stop1.a = der(Stop1.v);
 //   Stop1.v_relfric = Stop1.v;
 //   Stop1.a_relfric = Stop1.a;
 //   0.0 = Stop1.flange_a.f + Stop1.flange_b.f - Stop1.f - Stop1.m * der(Stop1.v);
 //   Stop1.f = if Stop1.locked then Stop1.sa else if Stop1.free then 0.0 else if Stop1.startForward then Stop1.F_prop * Stop1.v + (Stop1.F_Coulomb + Stop1.F_Stribeck) else if Stop1.startBackward then Stop1.F_prop * Stop1.v - Stop1.F_Coulomb - Stop1.F_Stribeck else if pre(Stop1.mode) == 1 then Stop1.F_prop * Stop1.v + (Stop1.F_Coulomb + Stop1.F_Stribeck * exp((-Stop1.fexp) * abs(Stop1.v))) else Stop1.F_prop * Stop1.v - Stop1.F_Coulomb - Stop1.F_Stribeck * exp((-Stop1.fexp) * abs(Stop1.v));
-//   Stop1.mode = if Stop1.free then 2 else if (pre(Stop1.mode) == 1 OR pre(Stop1.mode) == 2 OR Stop1.startForward) AND Stop1.v_relfric > 0.0 AND Stop1.s < Stop1.smax - Stop1.L / 2.0 then 1 else if (pre(Stop1.mode) == -1 OR pre(Stop1.mode) == 2 OR Stop1.startBackward) AND Stop1.v_relfric < 0.0 AND Stop1.s > Stop1.smin + Stop1.L / 2.0 then -1 else 0;
+//   Stop1.mode = if Stop1.free then 2 else if (pre(Stop1.mode) == 1 or pre(Stop1.mode) == 2 or Stop1.startForward) and Stop1.v_relfric > 0.0 and Stop1.s < Stop1.smax - Stop1.L / 2.0 then 1 else if (pre(Stop1.mode) == -1 or pre(Stop1.mode) == 2 or Stop1.startBackward) and Stop1.v_relfric < 0.0 and Stop1.s > Stop1.smin + Stop1.L / 2.0 then -1 else 0;
 //   Stop1.a_relfric = if Stop1.locked then 0.0 else if Stop1.free then Stop1.sa else if Stop1.startForward then Stop1.sa - Stop1.f0_max else if Stop1.startBackward then Stop1.sa + Stop1.f0_max else if pre(Stop1.mode) == 1 then Stop1.sa - Stop1.f0 else Stop1.sa + Stop1.f0;
-//   Stop1.locked =  NOT Stop1.free AND  NOT (pre(Stop1.mode) == 1 OR Stop1.startForward OR pre(Stop1.mode) == -1 OR Stop1.startBackward);
-//   Stop1.startBackward = pre(Stop1.mode) == 0 AND (Stop1.sa < -Stop1.f0_max AND Stop1.s > Stop1.smin + Stop1.L / 2.0 OR pre(Stop1.startBackward) AND Stop1.sa < -Stop1.f0 AND Stop1.s > Stop1.smin + Stop1.L / 2.0) OR pre(Stop1.mode) == 1 AND Stop1.v_relfric < -Stop1.v_small OR initial() AND Stop1.v_relfric < 0.0;
-//   Stop1.startForward = pre(Stop1.mode) == 0 AND (Stop1.sa > Stop1.f0_max AND Stop1.s < Stop1.smax - Stop1.L / 2.0 OR pre(Stop1.startForward) AND Stop1.sa > Stop1.f0 AND Stop1.s < Stop1.smax - Stop1.L / 2.0) OR pre(Stop1.mode) == -1 AND Stop1.v_relfric > Stop1.v_small OR initial() AND Stop1.v_relfric > 0.0;
+//   Stop1.locked =  not Stop1.free and  not (pre(Stop1.mode) == 1 or Stop1.startForward or pre(Stop1.mode) == -1 or Stop1.startBackward);
+//   Stop1.startBackward = pre(Stop1.mode) == 0 and (Stop1.sa < -Stop1.f0_max and Stop1.s > Stop1.smin + Stop1.L / 2.0 or pre(Stop1.startBackward) and Stop1.sa < -Stop1.f0 and Stop1.s > Stop1.smin + Stop1.L / 2.0) or pre(Stop1.mode) == 1 and Stop1.v_relfric < -Stop1.v_small or initial() and Stop1.v_relfric < 0.0;
+//   Stop1.startForward = pre(Stop1.mode) == 0 and (Stop1.sa > Stop1.f0_max and Stop1.s < Stop1.smax - Stop1.L / 2.0 or pre(Stop1.startForward) and Stop1.sa > Stop1.f0 and Stop1.s < Stop1.smax - Stop1.L / 2.0) or pre(Stop1.mode) == -1 and Stop1.v_relfric > Stop1.v_small or initial() and Stop1.v_relfric > 0.0;
 //   Stop1.flange_a.s = Stop1.s - Stop1.L / 2.0;
 //   Stop1.flange_b.s = Stop1.s + Stop1.L / 2.0;
 //   Force1.flange_b.f = -Force1.f;
 //   Sine1.y = Sine1.offset + (if time < Sine1.startTime then 0.0 else Sine1.amplitude * sin(6.28318530717959 * (Sine1.freqHz * (time - Sine1.startTime)) + Sine1.phase));
 //   Stop2.f0 = Stop2.F_Coulomb + Stop2.F_Stribeck;
 //   Stop2.f0_max = 1.001 * Stop2.f0;
-//   Stop2.free = Stop2.f0 <= 0.0 AND Stop2.F_prop <= 0.0 AND Stop2.s > Stop2.smin + Stop2.L / 2.0 AND Stop2.s < Stop2.smax - Stop2.L / 2.0;
+//   Stop2.free = Stop2.f0 <= 0.0 and Stop2.F_prop <= 0.0 and Stop2.s > Stop2.smin + Stop2.L / 2.0 and Stop2.s < Stop2.smax - Stop2.L / 2.0;
 //   Stop2.v = der(Stop2.s);
 //   Stop2.a = der(Stop2.v);
 //   Stop2.v_relfric = Stop2.v;
 //   Stop2.a_relfric = Stop2.a;
 //   0.0 = Stop2.flange_a.f + Stop2.flange_b.f - Stop2.f - Stop2.m * der(Stop2.v);
 //   Stop2.f = if Stop2.locked then Stop2.sa else if Stop2.free then 0.0 else if Stop2.startForward then Stop2.F_prop * Stop2.v + (Stop2.F_Coulomb + Stop2.F_Stribeck) else if Stop2.startBackward then Stop2.F_prop * Stop2.v - Stop2.F_Coulomb - Stop2.F_Stribeck else if pre(Stop2.mode) == 1 then Stop2.F_prop * Stop2.v + (Stop2.F_Coulomb + Stop2.F_Stribeck * exp((-Stop2.fexp) * abs(Stop2.v))) else Stop2.F_prop * Stop2.v - Stop2.F_Coulomb - Stop2.F_Stribeck * exp((-Stop2.fexp) * abs(Stop2.v));
-//   Stop2.mode = if Stop2.free then 2 else if (pre(Stop2.mode) == 1 OR pre(Stop2.mode) == 2 OR Stop2.startForward) AND Stop2.v_relfric > 0.0 AND Stop2.s < Stop2.smax - Stop2.L / 2.0 then 1 else if (pre(Stop2.mode) == -1 OR pre(Stop2.mode) == 2 OR Stop2.startBackward) AND Stop2.v_relfric < 0.0 AND Stop2.s > Stop2.smin + Stop2.L / 2.0 then -1 else 0;
+//   Stop2.mode = if Stop2.free then 2 else if (pre(Stop2.mode) == 1 or pre(Stop2.mode) == 2 or Stop2.startForward) and Stop2.v_relfric > 0.0 and Stop2.s < Stop2.smax - Stop2.L / 2.0 then 1 else if (pre(Stop2.mode) == -1 or pre(Stop2.mode) == 2 or Stop2.startBackward) and Stop2.v_relfric < 0.0 and Stop2.s > Stop2.smin + Stop2.L / 2.0 then -1 else 0;
 //   Stop2.a_relfric = if Stop2.locked then 0.0 else if Stop2.free then Stop2.sa else if Stop2.startForward then Stop2.sa - Stop2.f0_max else if Stop2.startBackward then Stop2.sa + Stop2.f0_max else if pre(Stop2.mode) == 1 then Stop2.sa - Stop2.f0 else Stop2.sa + Stop2.f0;
-//   Stop2.locked =  NOT Stop2.free AND  NOT (pre(Stop2.mode) == 1 OR Stop2.startForward OR pre(Stop2.mode) == -1 OR Stop2.startBackward);
-//   Stop2.startBackward = pre(Stop2.mode) == 0 AND (Stop2.sa < -Stop2.f0_max AND Stop2.s > Stop2.smin + Stop2.L / 2.0 OR pre(Stop2.startBackward) AND Stop2.sa < -Stop2.f0 AND Stop2.s > Stop2.smin + Stop2.L / 2.0) OR pre(Stop2.mode) == 1 AND Stop2.v_relfric < -Stop2.v_small OR initial() AND Stop2.v_relfric < 0.0;
-//   Stop2.startForward = pre(Stop2.mode) == 0 AND (Stop2.sa > Stop2.f0_max AND Stop2.s < Stop2.smax - Stop2.L / 2.0 OR pre(Stop2.startForward) AND Stop2.sa > Stop2.f0 AND Stop2.s < Stop2.smax - Stop2.L / 2.0) OR pre(Stop2.mode) == -1 AND Stop2.v_relfric > Stop2.v_small OR initial() AND Stop2.v_relfric > 0.0;
+//   Stop2.locked =  not Stop2.free and  not (pre(Stop2.mode) == 1 or Stop2.startForward or pre(Stop2.mode) == -1 or Stop2.startBackward);
+//   Stop2.startBackward = pre(Stop2.mode) == 0 and (Stop2.sa < -Stop2.f0_max and Stop2.s > Stop2.smin + Stop2.L / 2.0 or pre(Stop2.startBackward) and Stop2.sa < -Stop2.f0 and Stop2.s > Stop2.smin + Stop2.L / 2.0) or pre(Stop2.mode) == 1 and Stop2.v_relfric < -Stop2.v_small or initial() and Stop2.v_relfric < 0.0;
+//   Stop2.startForward = pre(Stop2.mode) == 0 and (Stop2.sa > Stop2.f0_max and Stop2.s < Stop2.smax - Stop2.L / 2.0 or pre(Stop2.startForward) and Stop2.sa > Stop2.f0 and Stop2.s < Stop2.smax - Stop2.L / 2.0) or pre(Stop2.mode) == -1 and Stop2.v_relfric > Stop2.v_small or initial() and Stop2.v_relfric > 0.0;
 //   Stop2.flange_a.s = Stop2.s - Stop2.L / 2.0;
 //   Stop2.flange_b.s = Stop2.s + Stop2.L / 2.0;
 //   Spring1.f = Spring1.c * (Spring1.s_rel - Spring1.s_rel0);
@@ -162,34 +162,34 @@ getErrorString();
 //   Stop1.flange_b.f = 0.0;
 // algorithm
 //   when initial() then
-//     assert(Stop1.s > Stop1.smin + Stop1.L / 2.0 OR Stop1.s >= Stop1.smin + Stop1.L / 2.0 AND Stop1.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
-//     assert(Stop1.s < Stop1.smax - Stop1.L / 2.0 OR Stop1.s <= Stop1.smax - Stop1.L / 2.0 AND Stop1.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
+//     assert(Stop1.s > Stop1.smin + Stop1.L / 2.0 or Stop1.s >= Stop1.smin + Stop1.L / 2.0 and Stop1.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
+//     assert(Stop1.s < Stop1.smax - Stop1.L / 2.0 or Stop1.s <= Stop1.smax - Stop1.L / 2.0 and Stop1.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
 //   end when;
-//   when  NOT Stop1.s < Stop1.smax - Stop1.L / 2.0 then
+//   when  not Stop1.s < Stop1.smax - Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smax - Stop1.L / 2.0);
-//     if  NOT initial() OR Stop1.v > 0.0 then
+//     if  not initial() or Stop1.v > 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
-//   when  NOT Stop1.s > Stop1.smin + Stop1.L / 2.0 then
+//   when  not Stop1.s > Stop1.smin + Stop1.L / 2.0 then
 //     reinit(Stop1.s, Stop1.smin + Stop1.L / 2.0);
-//     if  NOT initial() OR Stop1.v < 0.0 then
+//     if  not initial() or Stop1.v < 0.0 then
 //       reinit(Stop1.v, 0.0);
 //     end if;
 //   end when;
 //   when initial() then
-//     assert(Stop2.s > Stop2.smin + Stop2.L / 2.0 OR Stop2.s >= Stop2.smin + Stop2.L / 2.0 AND Stop2.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
-//     assert(Stop2.s < Stop2.smax - Stop2.L / 2.0 OR Stop2.s <= Stop2.smax - Stop2.L / 2.0 AND Stop2.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
+//     assert(Stop2.s > Stop2.smin + Stop2.L / 2.0 or Stop2.s >= Stop2.smin + Stop2.L / 2.0 and Stop2.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
+//     assert(Stop2.s < Stop2.smax - Stop2.L / 2.0 or Stop2.s <= Stop2.smax - Stop2.L / 2.0 and Stop2.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
 //   end when;
-//   when  NOT Stop2.s < Stop2.smax - Stop2.L / 2.0 then
+//   when  not Stop2.s < Stop2.smax - Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smax - Stop2.L / 2.0);
-//     if  NOT initial() OR Stop2.v > 0.0 then
+//     if  not initial() or Stop2.v > 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;
-//   when  NOT Stop2.s > Stop2.smin + Stop2.L / 2.0 then
+//   when  not Stop2.s > Stop2.smin + Stop2.L / 2.0 then
 //     reinit(Stop2.s, Stop2.smin + Stop2.L / 2.0);
-//     if  NOT initial() OR Stop2.v < 0.0 then
+//     if  not initial() or Stop2.v < 0.0 then
 //       reinit(Stop2.v, 0.0);
 //     end if;
 //   end when;

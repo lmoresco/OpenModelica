@@ -46,7 +46,7 @@ getErrorString();// Result:
 //       i := 1;
 //     else
 //       i := 2;
-//       while i < n AND u >= table[i,1] loop
+//       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
 //       i := i - 1;
@@ -3843,11 +3843,11 @@ getErrorString();// Result:
 //   torque.phi_a = torque.flange_a.phi - torque.bearing.phi;
 //   0.0 = torque.flange_a.tau + (torque.flange_b.tau + torque.tau_support);
 //   torque.bearing.phi = 0.0;
-//   torque.startForward = pre(torque.mode) == 0 AND (torque.sa > torque.tau0_max OR pre(torque.startForward) AND torque.sa > torque.tau0) OR pre(torque.mode) == -1 AND torque.w_relfric > torque.w_small OR initial() AND torque.w_relfric > 0.0;
-//   torque.startBackward = pre(torque.mode) == 0 AND (torque.sa < -torque.tau0_max OR pre(torque.startBackward) AND torque.sa < -torque.tau0) OR pre(torque.mode) == 1 AND torque.w_relfric < -torque.w_small OR initial() AND torque.w_relfric < 0.0;
-//   torque.locked =  NOT torque.free AND  NOT (pre(torque.mode) == 1 OR torque.startForward OR pre(torque.mode) == -1 OR torque.startBackward);
+//   torque.startForward = pre(torque.mode) == 0 and (torque.sa > torque.tau0_max or pre(torque.startForward) and torque.sa > torque.tau0) or pre(torque.mode) == -1 and torque.w_relfric > torque.w_small or initial() and torque.w_relfric > 0.0;
+//   torque.startBackward = pre(torque.mode) == 0 and (torque.sa < -torque.tau0_max or pre(torque.startBackward) and torque.sa < -torque.tau0) or pre(torque.mode) == 1 and torque.w_relfric < -torque.w_small or initial() and torque.w_relfric < 0.0;
+//   torque.locked =  not torque.free and  not (pre(torque.mode) == 1 or torque.startForward or pre(torque.mode) == -1 or torque.startBackward);
 //   torque.a_relfric = torque.unitAngularAcceleration * (if torque.locked then 0.0 else if torque.free then torque.sa else if torque.startForward then torque.sa - torque.tau0_max / torque.unitTorque else if torque.startBackward then torque.sa + torque.tau0_max / torque.unitTorque else if pre(torque.mode) == 1 then torque.sa - torque.tau0 / torque.unitTorque else torque.sa + torque.tau0 / torque.unitTorque);
-//   torque.mode = if torque.free then 2 else if (pre(torque.mode) == 1 OR pre(torque.mode) == 2 OR torque.startForward) AND torque.w_relfric > 0.0 then 1 else if (pre(torque.mode) == -1 OR pre(torque.mode) == 2 OR torque.startBackward) AND torque.w_relfric < 0.0 then -1 else 0;
+//   torque.mode = if torque.free then 2 else if (pre(torque.mode) == 1 or pre(torque.mode) == 2 or torque.startForward) and torque.w_relfric > 0.0 then 1 else if (pre(torque.mode) == -1 or pre(torque.mode) == 2 or torque.startBackward) and torque.w_relfric < 0.0 then -1 else 0;
 //   spherical.constraintResidue[1] = spherical.r_rela[1];
 //   spherical.constraintResidue[2] = spherical.r_rela[2];
 //   spherical.constraintResidue[3] = spherical.r_rela[3];

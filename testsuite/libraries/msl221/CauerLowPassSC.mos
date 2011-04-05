@@ -792,7 +792,7 @@ getErrorString();
 //   when sample(R4.BooleanPulse1.startTime,R4.BooleanPulse1.period) then
 //   R4.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R4.BooleanPulse1.y = time >= R4.BooleanPulse1.pulsStart AND time < R4.BooleanPulse1.pulsStart + R4.BooleanPulse1.Twidth;
+//   R4.BooleanPulse1.y = time >= R4.BooleanPulse1.pulsStart and time < R4.BooleanPulse1.pulsStart + R4.BooleanPulse1.Twidth;
 //   R4.Capacitor1.i = R4.Capacitor1.C * der(R4.Capacitor1.v);
 //   R4.Capacitor1.v = R4.Capacitor1.p.v - R4.Capacitor1.n.v;
 //   0.0 = R4.Capacitor1.p.i + R4.Capacitor1.n.i;
@@ -812,7 +812,7 @@ getErrorString();
 //   when sample(R5.BooleanPulse1.startTime,R5.BooleanPulse1.period) then
 //   R5.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R5.BooleanPulse1.y = time >= R5.BooleanPulse1.pulsStart AND time < R5.BooleanPulse1.pulsStart + R5.BooleanPulse1.Twidth;
+//   R5.BooleanPulse1.y = time >= R5.BooleanPulse1.pulsStart and time < R5.BooleanPulse1.pulsStart + R5.BooleanPulse1.Twidth;
 //   R5.Capacitor1.i = R5.Capacitor1.C * der(R5.Capacitor1.v);
 //   R5.Capacitor1.v = R5.Capacitor1.p.v - R5.Capacitor1.n.v;
 //   0.0 = R5.Capacitor1.p.i + R5.Capacitor1.n.i;
@@ -832,7 +832,7 @@ getErrorString();
 //   when sample(R8.BooleanPulse1.startTime,R8.BooleanPulse1.period) then
 //   R8.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R8.BooleanPulse1.y = time >= R8.BooleanPulse1.pulsStart AND time < R8.BooleanPulse1.pulsStart + R8.BooleanPulse1.Twidth;
+//   R8.BooleanPulse1.y = time >= R8.BooleanPulse1.pulsStart and time < R8.BooleanPulse1.pulsStart + R8.BooleanPulse1.Twidth;
 //   R8.Capacitor1.i = R8.Capacitor1.C * der(R8.Capacitor1.v);
 //   R8.Capacitor1.v = R8.Capacitor1.p.v - R8.Capacitor1.n.v;
 //   0.0 = R8.Capacitor1.p.i + R8.Capacitor1.n.i;
@@ -852,7 +852,7 @@ getErrorString();
 //   when sample(R9.BooleanPulse1.startTime,R9.BooleanPulse1.period) then
 //   R9.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R9.BooleanPulse1.y = time >= R9.BooleanPulse1.pulsStart AND time < R9.BooleanPulse1.pulsStart + R9.BooleanPulse1.Twidth;
+//   R9.BooleanPulse1.y = time >= R9.BooleanPulse1.pulsStart and time < R9.BooleanPulse1.pulsStart + R9.BooleanPulse1.Twidth;
 //   R9.Capacitor1.i = R9.Capacitor1.C * der(R9.Capacitor1.v);
 //   R9.Capacitor1.v = R9.Capacitor1.p.v - R9.Capacitor1.n.v;
 //   0.0 = R9.Capacitor1.p.i + R9.Capacitor1.n.i;
@@ -872,7 +872,7 @@ getErrorString();
 //   when sample(R1.BooleanPulse1.startTime,R1.BooleanPulse1.period) then
 //   R1.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R1.BooleanPulse1.y = time >= R1.BooleanPulse1.pulsStart AND time < R1.BooleanPulse1.pulsStart + R1.BooleanPulse1.Twidth;
+//   R1.BooleanPulse1.y = time >= R1.BooleanPulse1.pulsStart and time < R1.BooleanPulse1.pulsStart + R1.BooleanPulse1.Twidth;
 //   R1.Capacitor1.i = R1.Capacitor1.C * der(R1.Capacitor1.v);
 //   R1.Capacitor1.v = R1.Capacitor1.p.v - R1.Capacitor1.n.v;
 //   0.0 = R1.Capacitor1.p.i + R1.Capacitor1.n.i;
@@ -892,7 +892,7 @@ getErrorString();
 //   when sample(R2.BooleanPulse1.startTime,R2.BooleanPulse1.period) then
 //   R2.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R2.BooleanPulse1.y = time >= R2.BooleanPulse1.pulsStart AND time < R2.BooleanPulse1.pulsStart + R2.BooleanPulse1.Twidth;
+//   R2.BooleanPulse1.y = time >= R2.BooleanPulse1.pulsStart and time < R2.BooleanPulse1.pulsStart + R2.BooleanPulse1.Twidth;
 //   R2.Capacitor1.i = R2.Capacitor1.C * der(R2.Capacitor1.v);
 //   R2.Capacitor1.v = R2.Capacitor1.p.v - R2.Capacitor1.n.v;
 //   0.0 = R2.Capacitor1.p.i + R2.Capacitor1.n.i;
@@ -912,7 +912,7 @@ getErrorString();
 //   when sample(R3.BooleanPulse1.startTime,R3.BooleanPulse1.period) then
 //   R3.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R3.BooleanPulse1.y = time >= R3.BooleanPulse1.pulsStart AND time < R3.BooleanPulse1.pulsStart + R3.BooleanPulse1.Twidth;
+//   R3.BooleanPulse1.y = time >= R3.BooleanPulse1.pulsStart and time < R3.BooleanPulse1.pulsStart + R3.BooleanPulse1.Twidth;
 //   R3.Capacitor1.i = R3.Capacitor1.C * der(R3.Capacitor1.v);
 //   R3.Capacitor1.v = R3.Capacitor1.p.v - R3.Capacitor1.n.v;
 //   0.0 = R3.Capacitor1.p.i + R3.Capacitor1.n.i;
@@ -932,7 +932,7 @@ getErrorString();
 //   when sample(Rp1.BooleanPulse1.startTime,Rp1.BooleanPulse1.period) then
 //   Rp1.BooleanPulse1.pulsStart = time;
 //   end when;
-//   Rp1.BooleanPulse1.y = time >= Rp1.BooleanPulse1.pulsStart AND time < Rp1.BooleanPulse1.pulsStart + Rp1.BooleanPulse1.Twidth;
+//   Rp1.BooleanPulse1.y = time >= Rp1.BooleanPulse1.pulsStart and time < Rp1.BooleanPulse1.pulsStart + Rp1.BooleanPulse1.Twidth;
 //   Rp1.Capacitor1.i = Rp1.Capacitor1.C * der(Rp1.Capacitor1.v);
 //   Rp1.Capacitor1.v = Rp1.Capacitor1.p.v - Rp1.Capacitor1.n.v;
 //   0.0 = Rp1.Capacitor1.p.i + Rp1.Capacitor1.n.i;
@@ -952,7 +952,7 @@ getErrorString();
 //   when sample(R7.BooleanPulse1.startTime,R7.BooleanPulse1.period) then
 //   R7.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R7.BooleanPulse1.y = time >= R7.BooleanPulse1.pulsStart AND time < R7.BooleanPulse1.pulsStart + R7.BooleanPulse1.Twidth;
+//   R7.BooleanPulse1.y = time >= R7.BooleanPulse1.pulsStart and time < R7.BooleanPulse1.pulsStart + R7.BooleanPulse1.Twidth;
 //   R7.Capacitor1.i = R7.Capacitor1.C * der(R7.Capacitor1.v);
 //   R7.Capacitor1.v = R7.Capacitor1.p.v - R7.Capacitor1.n.v;
 //   0.0 = R7.Capacitor1.p.i + R7.Capacitor1.n.i;
@@ -972,7 +972,7 @@ getErrorString();
 //   when sample(R10.BooleanPulse1.startTime,R10.BooleanPulse1.period) then
 //   R10.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R10.BooleanPulse1.y = time >= R10.BooleanPulse1.pulsStart AND time < R10.BooleanPulse1.pulsStart + R10.BooleanPulse1.Twidth;
+//   R10.BooleanPulse1.y = time >= R10.BooleanPulse1.pulsStart and time < R10.BooleanPulse1.pulsStart + R10.BooleanPulse1.Twidth;
 //   R10.Capacitor1.i = R10.Capacitor1.C * der(R10.Capacitor1.v);
 //   R10.Capacitor1.v = R10.Capacitor1.p.v - R10.Capacitor1.n.v;
 //   0.0 = R10.Capacitor1.p.i + R10.Capacitor1.n.i;
@@ -992,7 +992,7 @@ getErrorString();
 //   when sample(R11.BooleanPulse1.startTime,R11.BooleanPulse1.period) then
 //   R11.BooleanPulse1.pulsStart = time;
 //   end when;
-//   R11.BooleanPulse1.y = time >= R11.BooleanPulse1.pulsStart AND time < R11.BooleanPulse1.pulsStart + R11.BooleanPulse1.Twidth;
+//   R11.BooleanPulse1.y = time >= R11.BooleanPulse1.pulsStart and time < R11.BooleanPulse1.pulsStart + R11.BooleanPulse1.Twidth;
 //   R11.Capacitor1.i = R11.Capacitor1.C * der(R11.Capacitor1.v);
 //   R11.Capacitor1.v = R11.Capacitor1.p.v - R11.Capacitor1.n.v;
 //   0.0 = R11.Capacitor1.p.i + R11.Capacitor1.n.i;

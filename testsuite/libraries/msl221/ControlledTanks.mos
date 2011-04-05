@@ -42,16 +42,16 @@ getErrorString();
 //     end for;
 //     j := 1;
 //     y := startValue;
-//     while j < n AND table[j] <= simulationStartTime loop
-//       y :=  NOT y;
+//     while j < n and table[j] <= simulationStartTime loop
+//       y :=  not y;
 //       j := 1 + j;
 //     end while;
 //     if j == 1 then
 //       nextTime := table[1];
 //       y := startValue;
-//     elseif j == n AND table[n] <= simulationStartTime then
+//     elseif j == n and table[n] <= simulationStartTime then
 //       nextTime := simulationStartTime - 1.0;
-//       y :=  NOT y;
+//       y :=  not y;
 //     else
 //       nextTime := table[j];
 //     end if;
@@ -65,7 +65,7 @@ getErrorString();
 // algorithm
 //   result := false;
 //   for i in 1:size(b,1) loop
-//     result := result OR b[i];
+//     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
 // 
@@ -93,8 +93,8 @@ getErrorString();
 //   protected Boolean tankController.s1.newActive \"Value of active in the next iteration\";
 //   protected Boolean tankController.s1.oldActive \"Value of active when CompositeStep was aborted\";
 //   output Boolean tankController.s1.active \"= true if step is active, otherwise the step is not active\";
-//   output Boolean tankController.makeProduct.stateGraphRoot.suspend = Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.suspend[1].reset}) OR tankController.makeProduct.outerState.subgraphStatePort.suspend;
-//   output Boolean tankController.makeProduct.stateGraphRoot.resume = Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.resume[1].set}) OR tankController.makeProduct.outerState.subgraphStatePort.resume;
+//   output Boolean tankController.makeProduct.stateGraphRoot.suspend = Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.suspend[1].reset}) or tankController.makeProduct.outerState.subgraphStatePort.suspend;
+//   output Boolean tankController.makeProduct.stateGraphRoot.resume = Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.resume[1].set}) or tankController.makeProduct.outerState.subgraphStatePort.resume;
 //   output Boolean tankController.makeProduct.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
 //   output Boolean tankController.makeProduct.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
 //   input Real tankController.makeProduct.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
@@ -349,8 +349,8 @@ getErrorString();
 //   output Boolean tankController.valve2;
 //   output Boolean tankController.valve3;
 //   output Boolean tankController.setValve1.y = tankController.makeProduct.fillTank1.active \"Value of Boolean output\";
-//   output Boolean tankController.setValve2.y = tankController.makeProduct.fillTank2.active OR tankController.emptyTanks.active \"Value of Boolean output\";
-//   output Boolean tankController.setValve3.y = tankController.makeProduct.emptyTank2.active OR tankController.emptyTanks.active \"Value of Boolean output\";
+//   output Boolean tankController.setValve2.y = tankController.makeProduct.fillTank2.active or tankController.emptyTanks.active \"Value of Boolean output\";
+//   output Boolean tankController.setValve3.y = tankController.makeProduct.emptyTank2.active or tankController.emptyTanks.active \"Value of Boolean output\";
 //   parameter Real start.buttonTimeTable[1](quantity = \"Time\", unit = \"s\") = 1.0 \"Time instants where button is pressend and released\";
 //   parameter Real start.buttonTimeTable[2](quantity = \"Time\", unit = \"s\") = 13.0 \"Time instants where button is pressend and released\";
 //   parameter Real start.buttonTimeTable[3](quantity = \"Time\", unit = \"s\") = 15.0 \"Time instants where button is pressend and released\";
@@ -476,20 +476,20 @@ getErrorString();
 //   assert(true,\"Connector inPort[2] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.s1.localActive = pre(tankController.s1.newActive);
-//   tankController.s1.newActive = if tankController.s1.subgraphStatePort.resume then tankController.s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s1.inPort[1].set,tankController.s1.inPort[2].set}) OR tankController.s1.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.s1.outPort[1].reset})) AND  NOT tankController.s1.subgraphStatePort.suspend;
+//   tankController.s1.newActive = if tankController.s1.subgraphStatePort.resume then tankController.s1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s1.inPort[1].set,tankController.s1.inPort[2].set}) or tankController.s1.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.s1.outPort[1].reset})) and  not tankController.s1.subgraphStatePort.suspend;
 //   when tankController.s1.subgraphStatePort.suspend then
 //   tankController.s1.oldActive = tankController.s1.localActive;
 //   end when;
 //   tankController.s1.subgraphStatePort.activeSteps = if tankController.s1.localActive then 1.0 else 0.0;
 //   tankController.s1.inPort[1].occupied = tankController.s1.localActive;
-//   tankController.s1.inPort[2].occupied = tankController.s1.inPort[1].occupied OR tankController.s1.inPort[1].set;
+//   tankController.s1.inPort[2].occupied = tankController.s1.inPort[1].occupied or tankController.s1.inPort[1].set;
 //   tankController.s1.outPort[1].available = tankController.s1.localActive;
 //   tankController.makeProduct.stateGraphRoot.suspend = tankController.makeProduct.stateGraphRoot.subgraphStatePort.suspend;
 //   tankController.makeProduct.stateGraphRoot.resume = tankController.makeProduct.stateGraphRoot.subgraphStatePort.resume;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.makeProduct.fillTank1.localActive = pre(tankController.makeProduct.fillTank1.newActive);
-//   tankController.makeProduct.fillTank1.newActive = if tankController.makeProduct.fillTank1.subgraphStatePort.resume then tankController.makeProduct.fillTank1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank1.inPort[1].set}) OR tankController.makeProduct.fillTank1.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank1.outPort[1].reset})) AND  NOT tankController.makeProduct.fillTank1.subgraphStatePort.suspend;
+//   tankController.makeProduct.fillTank1.newActive = if tankController.makeProduct.fillTank1.subgraphStatePort.resume then tankController.makeProduct.fillTank1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank1.inPort[1].set}) or tankController.makeProduct.fillTank1.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank1.outPort[1].reset})) and  not tankController.makeProduct.fillTank1.subgraphStatePort.suspend;
 //   when tankController.makeProduct.fillTank1.subgraphStatePort.suspend then
 //   tankController.makeProduct.fillTank1.oldActive = tankController.makeProduct.fillTank1.localActive;
 //   end when;
@@ -502,13 +502,13 @@ getErrorString();
 //   tankController.makeProduct.T1.t_dummy = 0.0;
 //   tankController.makeProduct.T1.t = 0.0;
 //   tankController.makeProduct.T1.fire = tankController.makeProduct.T1.enableFire;
-//   tankController.makeProduct.T1.enableFire = tankController.makeProduct.T1.localCondition AND tankController.makeProduct.T1.inPort.available AND  NOT tankController.makeProduct.T1.outPort.occupied;
+//   tankController.makeProduct.T1.enableFire = tankController.makeProduct.T1.localCondition and tankController.makeProduct.T1.inPort.available and  not tankController.makeProduct.T1.outPort.occupied;
 //   tankController.makeProduct.T1.inPort.reset = tankController.makeProduct.T1.fire;
 //   tankController.makeProduct.T1.outPort.set = tankController.makeProduct.T1.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.makeProduct.fillTank2.localActive = pre(tankController.makeProduct.fillTank2.newActive);
-//   tankController.makeProduct.fillTank2.newActive = if tankController.makeProduct.fillTank2.subgraphStatePort.resume then tankController.makeProduct.fillTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank2.inPort[1].set}) OR tankController.makeProduct.fillTank2.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank2.outPort[1].reset})) AND  NOT tankController.makeProduct.fillTank2.subgraphStatePort.suspend;
+//   tankController.makeProduct.fillTank2.newActive = if tankController.makeProduct.fillTank2.subgraphStatePort.resume then tankController.makeProduct.fillTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank2.inPort[1].set}) or tankController.makeProduct.fillTank2.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.fillTank2.outPort[1].reset})) and  not tankController.makeProduct.fillTank2.subgraphStatePort.suspend;
 //   when tankController.makeProduct.fillTank2.subgraphStatePort.suspend then
 //   tankController.makeProduct.fillTank2.oldActive = tankController.makeProduct.fillTank2.localActive;
 //   end when;
@@ -521,13 +521,13 @@ getErrorString();
 //   tankController.makeProduct.T3.t_dummy = 0.0;
 //   tankController.makeProduct.T3.t = 0.0;
 //   tankController.makeProduct.T3.fire = tankController.makeProduct.T3.enableFire;
-//   tankController.makeProduct.T3.enableFire = tankController.makeProduct.T3.localCondition AND tankController.makeProduct.T3.inPort.available AND  NOT tankController.makeProduct.T3.outPort.occupied;
+//   tankController.makeProduct.T3.enableFire = tankController.makeProduct.T3.localCondition and tankController.makeProduct.T3.inPort.available and  not tankController.makeProduct.T3.outPort.occupied;
 //   tankController.makeProduct.T3.inPort.reset = tankController.makeProduct.T3.fire;
 //   tankController.makeProduct.T3.outPort.set = tankController.makeProduct.T3.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.makeProduct.emptyTank2.localActive = pre(tankController.makeProduct.emptyTank2.newActive);
-//   tankController.makeProduct.emptyTank2.newActive = if tankController.makeProduct.emptyTank2.subgraphStatePort.resume then tankController.makeProduct.emptyTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.emptyTank2.inPort[1].set}) OR tankController.makeProduct.emptyTank2.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.emptyTank2.outPort[1].reset})) AND  NOT tankController.makeProduct.emptyTank2.subgraphStatePort.suspend;
+//   tankController.makeProduct.emptyTank2.newActive = if tankController.makeProduct.emptyTank2.subgraphStatePort.resume then tankController.makeProduct.emptyTank2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.emptyTank2.inPort[1].set}) or tankController.makeProduct.emptyTank2.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.emptyTank2.outPort[1].reset})) and  not tankController.makeProduct.emptyTank2.subgraphStatePort.suspend;
 //   when tankController.makeProduct.emptyTank2.subgraphStatePort.suspend then
 //   tankController.makeProduct.emptyTank2.oldActive = tankController.makeProduct.emptyTank2.localActive;
 //   end when;
@@ -537,7 +537,7 @@ getErrorString();
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.makeProduct.wait1.localActive = pre(tankController.makeProduct.wait1.newActive);
-//   tankController.makeProduct.wait1.newActive = if tankController.makeProduct.wait1.subgraphStatePort.resume then tankController.makeProduct.wait1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait1.inPort[1].set}) OR tankController.makeProduct.wait1.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait1.outPort[1].reset})) AND  NOT tankController.makeProduct.wait1.subgraphStatePort.suspend;
+//   tankController.makeProduct.wait1.newActive = if tankController.makeProduct.wait1.subgraphStatePort.resume then tankController.makeProduct.wait1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait1.inPort[1].set}) or tankController.makeProduct.wait1.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait1.outPort[1].reset})) and  not tankController.makeProduct.wait1.subgraphStatePort.suspend;
 //   when tankController.makeProduct.wait1.subgraphStatePort.suspend then
 //   tankController.makeProduct.wait1.oldActive = tankController.makeProduct.wait1.localActive;
 //   end when;
@@ -551,14 +551,14 @@ getErrorString();
 //   end when;
 //   tankController.makeProduct.T2.t_dummy = time - tankController.makeProduct.T2.t_start;
 //   tankController.makeProduct.T2.t = if tankController.makeProduct.T2.enableFire then tankController.makeProduct.T2.t_dummy else 0.0;
-//   tankController.makeProduct.T2.fire = tankController.makeProduct.T2.enableFire AND time >= tankController.makeProduct.T2.t_start + tankController.makeProduct.T2.waitTime;
-//   tankController.makeProduct.T2.enableFire = tankController.makeProduct.T2.localCondition AND tankController.makeProduct.T2.inPort.available AND  NOT tankController.makeProduct.T2.outPort.occupied;
+//   tankController.makeProduct.T2.fire = tankController.makeProduct.T2.enableFire and time >= tankController.makeProduct.T2.t_start + tankController.makeProduct.T2.waitTime;
+//   tankController.makeProduct.T2.enableFire = tankController.makeProduct.T2.localCondition and tankController.makeProduct.T2.inPort.available and  not tankController.makeProduct.T2.outPort.occupied;
 //   tankController.makeProduct.T2.inPort.reset = tankController.makeProduct.T2.fire;
 //   tankController.makeProduct.T2.outPort.set = tankController.makeProduct.T2.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.makeProduct.wait2.localActive = pre(tankController.makeProduct.wait2.newActive);
-//   tankController.makeProduct.wait2.newActive = if tankController.makeProduct.wait2.subgraphStatePort.resume then tankController.makeProduct.wait2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait2.inPort[1].set}) OR tankController.makeProduct.wait2.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait2.outPort[1].reset})) AND  NOT tankController.makeProduct.wait2.subgraphStatePort.suspend;
+//   tankController.makeProduct.wait2.newActive = if tankController.makeProduct.wait2.subgraphStatePort.resume then tankController.makeProduct.wait2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait2.inPort[1].set}) or tankController.makeProduct.wait2.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.wait2.outPort[1].reset})) and  not tankController.makeProduct.wait2.subgraphStatePort.suspend;
 //   when tankController.makeProduct.wait2.subgraphStatePort.suspend then
 //   tankController.makeProduct.wait2.oldActive = tankController.makeProduct.wait2.localActive;
 //   end when;
@@ -572,14 +572,14 @@ getErrorString();
 //   end when;
 //   tankController.makeProduct.T4.t_dummy = time - tankController.makeProduct.T4.t_start;
 //   tankController.makeProduct.T4.t = if tankController.makeProduct.T4.enableFire then tankController.makeProduct.T4.t_dummy else 0.0;
-//   tankController.makeProduct.T4.fire = tankController.makeProduct.T4.enableFire AND time >= tankController.makeProduct.T4.t_start + tankController.makeProduct.T4.waitTime;
-//   tankController.makeProduct.T4.enableFire = tankController.makeProduct.T4.localCondition AND tankController.makeProduct.T4.inPort.available AND  NOT tankController.makeProduct.T4.outPort.occupied;
+//   tankController.makeProduct.T4.fire = tankController.makeProduct.T4.enableFire and time >= tankController.makeProduct.T4.t_start + tankController.makeProduct.T4.waitTime;
+//   tankController.makeProduct.T4.enableFire = tankController.makeProduct.T4.localCondition and tankController.makeProduct.T4.inPort.available and  not tankController.makeProduct.T4.outPort.occupied;
 //   tankController.makeProduct.T4.inPort.reset = tankController.makeProduct.T4.fire;
 //   tankController.makeProduct.T4.outPort.set = tankController.makeProduct.T4.fire;
 //   tankController.makeProduct.outerState.subgraphStatePort.activeSteps = if tankController.makeProduct.active then 1.0 else 0.0;
 //   tankController.makeProduct.activeSteps = -integer(tankController.makeProduct.stateGraphRoot.subgraphStatePort.activeSteps);
 //   tankController.makeProduct.active = pre(tankController.makeProduct.newActive);
-//   tankController.makeProduct.newActive = tankController.makeProduct.activeSteps > 0 AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.suspend[1].reset}) AND  NOT tankController.makeProduct.outerState.subgraphStatePort.suspend OR Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.resume[1].set}) OR tankController.makeProduct.outerState.subgraphStatePort.resume;
+//   tankController.makeProduct.newActive = tankController.makeProduct.activeSteps > 0 and  not Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.suspend[1].reset}) and  not tankController.makeProduct.outerState.subgraphStatePort.suspend or Modelica.StateGraph.Temporary.anyTrue({tankController.makeProduct.resume[1].set}) or tankController.makeProduct.outerState.subgraphStatePort.resume;
 //   tankController.makeProduct.resume[1].occupied = tankController.makeProduct.active;
 //   tankController.makeProduct.suspend[1].available = tankController.makeProduct.active;
 //   assert(true,\"Connector suspend[1] of the CompositeStep is connected to more than one transition\");
@@ -592,7 +592,7 @@ getErrorString();
 //   tankController.T1.t_dummy = 0.0;
 //   tankController.T1.t = 0.0;
 //   tankController.T1.fire = tankController.T1.enableFire;
-//   tankController.T1.enableFire = tankController.T1.localCondition AND tankController.T1.inPort.available AND  NOT tankController.T1.outPort.occupied;
+//   tankController.T1.enableFire = tankController.T1.localCondition and tankController.T1.inPort.available and  not tankController.T1.outPort.occupied;
 //   tankController.T1.inPort.reset = tankController.T1.fire;
 //   tankController.T1.outPort.set = tankController.T1.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
@@ -601,7 +601,7 @@ getErrorString();
 //   tankController.T2.t_dummy = 0.0;
 //   tankController.T2.t = 0.0;
 //   tankController.T2.fire = tankController.T2.enableFire;
-//   tankController.T2.enableFire = tankController.T2.localCondition AND tankController.T2.inPort.available AND  NOT tankController.T2.outPort.occupied;
+//   tankController.T2.enableFire = tankController.T2.localCondition and tankController.T2.inPort.available and  not tankController.T2.outPort.occupied;
 //   tankController.T2.inPort.reset = tankController.T2.fire;
 //   tankController.T2.outPort.set = tankController.T2.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
@@ -610,28 +610,28 @@ getErrorString();
 //   tankController.T3.t_dummy = 0.0;
 //   tankController.T3.t = 0.0;
 //   tankController.T3.fire = tankController.T3.enableFire;
-//   tankController.T3.enableFire = tankController.T3.localCondition AND tankController.T3.inPort.available AND  NOT tankController.T3.outPort.occupied;
+//   tankController.T3.enableFire = tankController.T3.localCondition and tankController.T3.inPort.available and  not tankController.T3.outPort.occupied;
 //   tankController.T3.inPort.reset = tankController.T3.fire;
 //   tankController.T3.outPort.set = tankController.T3.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[2] of the step is connected to more than one transition\");
 //   tankController.s2.localActive = pre(tankController.s2.newActive);
-//   tankController.s2.newActive = if tankController.s2.subgraphStatePort.resume then tankController.s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s2.inPort[1].set}) OR tankController.s2.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.s2.outPort[1].reset,tankController.s2.outPort[2].reset})) AND  NOT tankController.s2.subgraphStatePort.suspend;
+//   tankController.s2.newActive = if tankController.s2.subgraphStatePort.resume then tankController.s2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.s2.inPort[1].set}) or tankController.s2.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.s2.outPort[1].reset,tankController.s2.outPort[2].reset})) and  not tankController.s2.subgraphStatePort.suspend;
 //   when tankController.s2.subgraphStatePort.suspend then
 //   tankController.s2.oldActive = tankController.s2.localActive;
 //   end when;
 //   tankController.s2.subgraphStatePort.activeSteps = if tankController.s2.localActive then 1.0 else 0.0;
 //   tankController.s2.inPort[1].occupied = tankController.s2.localActive;
 //   tankController.s2.outPort[1].available = tankController.s2.localActive;
-//   tankController.s2.outPort[2].available = tankController.s2.outPort[1].available AND  NOT tankController.s2.outPort[1].reset;
+//   tankController.s2.outPort[2].available = tankController.s2.outPort[1].available and  not tankController.s2.outPort[1].reset;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
 //   assert(true,\"Connector outPort is not connected to exactly one other connector\");
 //   tankController.T4.t_start = 0.0;
 //   tankController.T4.t_dummy = 0.0;
 //   tankController.T4.t = 0.0;
 //   tankController.T4.fire = tankController.T4.enableFire;
-//   tankController.T4.enableFire = tankController.T4.localCondition AND tankController.T4.inPort.available AND  NOT tankController.T4.outPort.occupied;
+//   tankController.T4.enableFire = tankController.T4.localCondition and tankController.T4.inPort.available and  not tankController.T4.outPort.occupied;
 //   tankController.T4.inPort.reset = tankController.T4.fire;
 //   tankController.T4.outPort.set = tankController.T4.fire;
 //   assert(true,\"Connector inPort is not connected to exactly one other connector\");
@@ -640,13 +640,13 @@ getErrorString();
 //   tankController.T5.t_dummy = 0.0;
 //   tankController.T5.t = 0.0;
 //   tankController.T5.fire = tankController.T5.enableFire;
-//   tankController.T5.enableFire = tankController.T5.localCondition AND tankController.T5.inPort.available AND  NOT tankController.T5.outPort.occupied;
+//   tankController.T5.enableFire = tankController.T5.localCondition and tankController.T5.inPort.available and  not tankController.T5.outPort.occupied;
 //   tankController.T5.inPort.reset = tankController.T5.fire;
 //   tankController.T5.outPort.set = tankController.T5.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   tankController.emptyTanks.localActive = pre(tankController.emptyTanks.newActive);
-//   tankController.emptyTanks.newActive = if tankController.emptyTanks.subgraphStatePort.resume then tankController.emptyTanks.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.inPort[1].set}) OR tankController.emptyTanks.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.outPort[1].reset})) AND  NOT tankController.emptyTanks.subgraphStatePort.suspend;
+//   tankController.emptyTanks.newActive = if tankController.emptyTanks.subgraphStatePort.resume then tankController.emptyTanks.oldActive else (Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.inPort[1].set}) or tankController.emptyTanks.localActive and  not Modelica.StateGraph.Temporary.anyTrue({tankController.emptyTanks.outPort[1].reset})) and  not tankController.emptyTanks.subgraphStatePort.suspend;
 //   when tankController.emptyTanks.subgraphStatePort.suspend then
 //   tankController.emptyTanks.oldActive = tankController.emptyTanks.localActive;
 //   end when;
@@ -659,7 +659,7 @@ getErrorString();
 //   tankController.T6.t_dummy = 0.0;
 //   tankController.T6.t = 0.0;
 //   tankController.T6.fire = tankController.T6.enableFire;
-//   tankController.T6.enableFire = tankController.T6.localCondition AND tankController.T6.inPort.available AND  NOT tankController.T6.outPort.occupied;
+//   tankController.T6.enableFire = tankController.T6.localCondition and tankController.T6.inPort.available and  not tankController.T6.outPort.occupied;
 //   tankController.T6.inPort.reset = tankController.T6.fire;
 //   tankController.T6.outPort.set = tankController.T6.fire;
 //   der(tank1.level) = (tank1.inflow1.Fi - tank1.outflow1.Fo) / (tank1.A * tank1.hmax);
@@ -772,42 +772,42 @@ getErrorString();
 //   tankController.makeProduct.fillTank1.inPort[1].set = tankController.makeProduct.inPort.set;
 //   tankController.makeProduct.fillTank1.inPort[1].occupied = tankController.makeProduct.inPort.occupied;
 // algorithm
-//   when time >= pre(start.table.nextTime) AND start.table.n > 0 then
+//   when time >= pre(start.table.nextTime) and start.table.n > 0 then
 //     if start.table.index < start.table.n then
 //       start.table.index := 1 + start.table.index;
 //       start.table.nextTime := start.table.table[start.table.index];
-//       start.table.y :=  NOT start.table.y;
+//       start.table.y :=  not start.table.y;
 //     elseif start.table.index == start.table.n then
 //       start.table.index := 1 + start.table.index;
-//       start.table.y :=  NOT start.table.y;
+//       start.table.y :=  not start.table.y;
 //     end if;
 //   end when;
 //   start.on := start.table.y;
 //   when {pre(start.reset[1]),pre(start.reset[2])} then
 //     start.on := false;
 //   end when;
-//   when time >= pre(stop.table.nextTime) AND stop.table.n > 0 then
+//   when time >= pre(stop.table.nextTime) and stop.table.n > 0 then
 //     if stop.table.index < stop.table.n then
 //       stop.table.index := 1 + stop.table.index;
 //       stop.table.nextTime := stop.table.table[stop.table.index];
-//       stop.table.y :=  NOT stop.table.y;
+//       stop.table.y :=  not stop.table.y;
 //     elseif stop.table.index == stop.table.n then
 //       stop.table.index := 1 + stop.table.index;
-//       stop.table.y :=  NOT stop.table.y;
+//       stop.table.y :=  not stop.table.y;
 //     end if;
 //   end when;
 //   stop.on := stop.table.y;
 //   when {pre(stop.reset[1]),pre(stop.reset[2])} then
 //     stop.on := false;
 //   end when;
-//   when time >= pre(shut.table.nextTime) AND shut.table.n > 0 then
+//   when time >= pre(shut.table.nextTime) and shut.table.n > 0 then
 //     if shut.table.index < shut.table.n then
 //       shut.table.index := 1 + shut.table.index;
 //       shut.table.nextTime := shut.table.table[shut.table.index];
-//       shut.table.y :=  NOT shut.table.y;
+//       shut.table.y :=  not shut.table.y;
 //     elseif shut.table.index == shut.table.n then
 //       shut.table.index := 1 + shut.table.index;
-//       shut.table.y :=  NOT shut.table.y;
+//       shut.table.y :=  not shut.table.y;
 //     end if;
 //   end when;
 //   shut.on := shut.table.y;

@@ -42,16 +42,16 @@ getErrorString();
 //     end for;
 //     j := 1;
 //     y := startValue;
-//     while j < n AND table[j] <= simulationStartTime loop
-//       y :=  NOT y;
+//     while j < n and table[j] <= simulationStartTime loop
+//       y :=  not y;
 //       j := 1 + j;
 //     end while;
 //     if j == 1 then
 //       nextTime := table[1];
 //       y := startValue;
-//     elseif j == n AND table[n] <= simulationStartTime then
+//     elseif j == n and table[n] <= simulationStartTime then
 //       nextTime := simulationStartTime - 1.0;
-//       y :=  NOT y;
+//       y :=  not y;
 //     else
 //       nextTime := table[j];
 //     end if;
@@ -83,28 +83,28 @@ getErrorString();
 //   output Boolean sample.y \"Connector of Boolean output signal\";
 //   parameter Real sample.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 0.5 \"Sample period\";
 //   parameter Real sample.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Time instant of first sample trigger\";
-//   output Boolean booleanExpression.y = pulse.y AND step.y \"Value of Boolean output\";
+//   output Boolean booleanExpression.y = pulse.y and step.y \"Value of Boolean output\";
 // initial equation
 //   pulse.pulsStart = pulse.startTime;
 // initial algorithm
 //   (table.index, table.nextTime, table.y) := Modelica.Blocks.Sources.BooleanTable.getFirstIndex({table.table[1],table.table[2],table.table[3],table.table[4]},time,table.startValue);
 // equation
 //   const.y = const.k;
-//   step.y = if time >= step.startTime then  NOT step.startValue else step.startValue;
+//   step.y = if time >= step.startTime then  not step.startValue else step.startValue;
 //   when sample(pulse.startTime,pulse.period) then
 //   pulse.pulsStart = time;
 //   end when;
-//   pulse.y = time >= pulse.pulsStart AND time < pulse.pulsStart + pulse.Twidth;
+//   pulse.y = time >= pulse.pulsStart and time < pulse.pulsStart + pulse.Twidth;
 //   sample.y = sample(sample.startTime,sample.period);
 // algorithm
-//   when time >= pre(table.nextTime) AND table.n > 0 then
+//   when time >= pre(table.nextTime) and table.n > 0 then
 //     if table.index < table.n then
 //       table.index := 1 + table.index;
 //       table.nextTime := table.table[table.index];
-//       table.y :=  NOT table.y;
+//       table.y :=  not table.y;
 //     elseif table.index == table.n then
 //       table.index := 1 + table.index;
-//       table.y :=  NOT table.y;
+//       table.y :=  not table.y;
 //     end if;
 //   end when;
 // end Modelica.Blocks.Examples.ShowLogicalSources;

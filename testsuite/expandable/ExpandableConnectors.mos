@@ -104,7 +104,7 @@ checkModel(QHP_Electrolytes_test_T2); getErrorString();
 //     yVal := (xVal * slope[size(slope,1)] + y[size(y,1)]) - x[size(x,1)] * slope[size(slope,1)];
 //   else
 //     index := 1;
-//     while xVal > x[index] AND index <= size(x,1) loop
+//     while xVal > x[index] and index <= size(x,1) loop
 //       index := 1 + index;
 //     end while;
 //     x1 := x[index - 1];
@@ -1909,7 +1909,7 @@ checkModel(QHP_Electrolytes_test_T2); getErrorString();
 //   electrolytes.sodium.PT.Outflow.q + (electrolytes.sodium.PT.Inflow.q + electrolytes.sodium.PT.Reabsorbtion.q) = 0.0;
 //   electrolytes.sodium.PT.Outflow.conc = electrolytes.sodium.PT.Inflow.conc;
 //   electrolytes.sodium.PT.Reabsorbtion.q = -min(electrolytes.sodium.PT.ReabFract * electrolytes.sodium.PT.Inflow.q,electrolytes.sodium.PT.MaxReab);
-//   electrolytes.sodium.PT.ReabFract = if electrolytes.sodium.PT.Normal <= 0.0 OR electrolytes.sodium.PT.Effects <= 0.0 then 0.0 else if electrolytes.sodium.PT.Normal > 1.0 then 1.0 else electrolytes.sodium.PT.Normal ^ (1.0 / electrolytes.sodium.PT.Effects);
+//   electrolytes.sodium.PT.ReabFract = if electrolytes.sodium.PT.Normal <= 0.0 or electrolytes.sodium.PT.Effects <= 0.0 then 0.0 else if electrolytes.sodium.PT.Normal > 1.0 then 1.0 else electrolytes.sodium.PT.Normal ^ (1.0 / electrolytes.sodium.PT.Effects);
 //   electrolytes.sodium.const1.y = electrolytes.sodium.const1.k / 100.0;
 //   electrolytes.sodium.IFPEffect.curve.val = QHP.Library.Curves.SplineSlope({electrolytes.sodium.IFPEffect.curve.x[1],electrolytes.sodium.IFPEffect.curve.x[2],electrolytes.sodium.IFPEffect.curve.x[3]},{electrolytes.sodium.IFPEffect.curve.y[1],electrolytes.sodium.IFPEffect.curve.y[2],electrolytes.sodium.IFPEffect.curve.y[3]},{electrolytes.sodium.IFPEffect.curve.slope[1],electrolytes.sodium.IFPEffect.curve.slope[2],electrolytes.sodium.IFPEffect.curve.slope[3]},electrolytes.sodium.IFPEffect.curve.u);
 //   electrolytes.sodium.IFPEffect.product.y = electrolytes.sodium.IFPEffect.product.u1 * electrolytes.sodium.IFPEffect.product.u2;
@@ -1922,16 +1922,16 @@ checkModel(QHP_Electrolytes_test_T2); getErrorString();
 //   electrolytes.sodium.LH.Outflow.q + (electrolytes.sodium.LH.Inflow.q + electrolytes.sodium.LH.Reabsorbtion.q) = 0.0;
 //   electrolytes.sodium.LH.Outflow.conc = electrolytes.sodium.LH.Inflow.conc;
 //   electrolytes.sodium.LH.Reabsorbtion.q = -min(electrolytes.sodium.LH.ReabFract * electrolytes.sodium.LH.Inflow.q,electrolytes.sodium.LH.MaxReab);
-//   electrolytes.sodium.LH.ReabFract = if electrolytes.sodium.LH.Normal <= 0.0 OR electrolytes.sodium.LH.Effects <= 0.0 then 0.0 else if electrolytes.sodium.LH.Normal > 1.0 then 1.0 else electrolytes.sodium.LH.Normal ^ (1.0 / electrolytes.sodium.LH.Effects);
+//   electrolytes.sodium.LH.ReabFract = if electrolytes.sodium.LH.Normal <= 0.0 or electrolytes.sodium.LH.Effects <= 0.0 then 0.0 else if electrolytes.sodium.LH.Normal > 1.0 then 1.0 else electrolytes.sodium.LH.Normal ^ (1.0 / electrolytes.sodium.LH.Effects);
 //   electrolytes.sodium.const2.y = electrolytes.sodium.const2.k / 100.0;
 //   electrolytes.sodium.DT.Outflow.q + (electrolytes.sodium.DT.Inflow.q + electrolytes.sodium.DT.Reabsorbtion.q) = 0.0;
 //   electrolytes.sodium.DT.Outflow.conc = electrolytes.sodium.DT.Inflow.conc;
 //   electrolytes.sodium.DT.Reabsorbtion.q = -min(electrolytes.sodium.DT.ReabFract * electrolytes.sodium.DT.Inflow.q,electrolytes.sodium.DT.MaxReab);
-//   electrolytes.sodium.DT.ReabFract = if electrolytes.sodium.DT.Normal <= 0.0 OR electrolytes.sodium.DT.Effects <= 0.0 then 0.0 else if electrolytes.sodium.DT.Normal > 1.0 then 1.0 else electrolytes.sodium.DT.Normal ^ (1.0 / electrolytes.sodium.DT.Effects);
+//   electrolytes.sodium.DT.ReabFract = if electrolytes.sodium.DT.Normal <= 0.0 or electrolytes.sodium.DT.Effects <= 0.0 then 0.0 else if electrolytes.sodium.DT.Normal > 1.0 then 1.0 else electrolytes.sodium.DT.Normal ^ (1.0 / electrolytes.sodium.DT.Effects);
 //   electrolytes.sodium.CD.Outflow.q + (electrolytes.sodium.CD.Inflow.q + electrolytes.sodium.CD.Reabsorbtion.q) = 0.0;
 //   electrolytes.sodium.CD.Outflow.conc = electrolytes.sodium.CD.Inflow.conc;
 //   electrolytes.sodium.CD.Reabsorbtion.q = -min(electrolytes.sodium.CD.ReabFract * electrolytes.sodium.CD.Inflow.q,electrolytes.sodium.CD.MaxReab);
-//   electrolytes.sodium.CD.ReabFract = if electrolytes.sodium.CD.Normal <= 0.0 OR electrolytes.sodium.CD.Effects <= 0.0 then 0.0 else if electrolytes.sodium.CD.Normal > 1.0 then 1.0 else electrolytes.sodium.CD.Normal ^ (1.0 / electrolytes.sodium.CD.Effects);
+//   electrolytes.sodium.CD.ReabFract = if electrolytes.sodium.CD.Normal <= 0.0 or electrolytes.sodium.CD.Effects <= 0.0 then 0.0 else if electrolytes.sodium.CD.Normal > 1.0 then 1.0 else electrolytes.sodium.CD.Normal ^ (1.0 / electrolytes.sodium.CD.Effects);
 //   electrolytes.sodium.const3.y = electrolytes.sodium.const3.k / 100.0;
 //   electrolytes.sodium.const4.y = electrolytes.sodium.const4.k / 100.0;
 //   electrolytes.sodium.Bladder.q_out.conc = if electrolytes.sodium.Bladder.SolventVolume > 0.0 then electrolytes.sodium.Bladder.SoluteMass / electrolytes.sodium.Bladder.SolventVolume else 0.0;

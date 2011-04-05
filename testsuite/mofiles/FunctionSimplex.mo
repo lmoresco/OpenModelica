@@ -133,25 +133,25 @@ end FunctionSimplex;
 //   p := 0;
 //   q := 0;
 //   a := pivot1(a,1 + p,1 + q);
-//   while  NOT (q == M OR p == N) loop
+//   while  not (q == M or p == N) loop
 //     q := 0;
-//     while  NOT (q == M OR a[1,1 + q] > 1.0) loop
+//     while  not (q == M or a[1,1 + q] > 1.0) loop
 //       q := 1 + q;
 //     end while;
 //     p := 0;
-//     while  NOT (p == N OR a[1 + p,1 + q] > 0.1) loop
+//     while  not (p == N or a[1 + p,1 + q] > 0.1) loop
 //       p := 1 + p;
 //     end while;
-//     if q < M AND p < N AND p > 0 AND q > 0 then
+//     if q < M and p < N and p > 0 and q > 0 then
 //       a := pivot1(a,p,q);
 //     end if;
-//     if p <= 0 AND q <= 0 then
+//     if p <= 0 and q <= 0 then
 //       a := pivot1(a,1 + p,1 + q);
 //     end if;
-//     if p <= 0 AND q > 0 then
+//     if p <= 0 and q > 0 then
 //       a := pivot1(a,1 + p,q);
 //     end if;
-//     if p > 0 AND q <= 0 then
+//     if p > 0 and q <= 0 then
 //       a := pivot1(a,p,1 + q);
 //     end if;
 //   end while;
@@ -177,7 +177,7 @@ end FunctionSimplex;
 //   M := size(a,2) - 1;
 //   for j in 1:N loop
 //     for k in 1:M loop
-//       if j <> p AND k <> q then
+//       if j <> p and k <> q then
 //         a[j,k] := a[j,k] - 0.3 * /*REAL*/(j);
 //       end if;
 //     end for;

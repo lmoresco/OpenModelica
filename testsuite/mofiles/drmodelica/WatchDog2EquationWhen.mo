@@ -75,7 +75,7 @@ end WatchDogSystem2;
 //   when change(watchdog.dOff.signal) then
 //   watchdog.internalTime2 = time;
 //   end when;
-//   when change(watchdog.dDeadline.signal) AND time > watchdog.internalTime1 AND watchdog.internalTime1 > watchdog.internalTime2 then
+//   when change(watchdog.dDeadline.signal) and time > watchdog.internalTime1 and watchdog.internalTime1 > watchdog.internalTime2 then
 //   watchdog.dAlarm.signal = true;
 //   end when;
 //   deadlineEmitter.dOutput.signal = watchdog.dDeadline.signal;

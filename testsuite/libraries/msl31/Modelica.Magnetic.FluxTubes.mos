@@ -7682,7 +7682,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   comparisonWithFEA.y[2] = comparisonWithFEA.p_offset[2] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[2],time);
 //   comparisonWithFEA.y[3] = comparisonWithFEA.p_offset[3] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[3],time);
 //   when initial() then
-//   comparisonWithFEA.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  NOT comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.tableName,if  NOT comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.fileName,comparisonWithFEA.table,comparisonWithFEA.startTime,comparisonWithFEA.smoothness,comparisonWithFEA.extrapolation);
+//   comparisonWithFEA.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.tableName,if  not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.fileName,comparisonWithFEA.table,comparisonWithFEA.startTime,comparisonWithFEA.smoothness,comparisonWithFEA.extrapolation);
 //   end when;
 //   simpleSolenoid.flange.f + simpleLoad.flange_a.f = 0.0;
 //   simpleLoad.flange_a.s = simpleSolenoid.flange.s;

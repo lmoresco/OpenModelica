@@ -305,7 +305,7 @@ getErrorString();
 //   when sample(U_pulse.signalSource.startTime,U_pulse.signalSource.period) then
 //   U_pulse.signalSource.T0 = time;
 //   end when;
-//   U_pulse.signalSource.y = U_pulse.signalSource.offset + (if time < U_pulse.signalSource.startTime OR time >= U_pulse.signalSource.T0 + U_pulse.signalSource.T_width then 0.0 else U_pulse.signalSource.amplitude);
+//   U_pulse.signalSource.y = U_pulse.signalSource.offset + (if time < U_pulse.signalSource.startTime or time >= U_pulse.signalSource.T0 + U_pulse.signalSource.T_width then 0.0 else U_pulse.signalSource.amplitude);
 //   U_pulse.v = U_pulse.signalSource.y;
 //   U_pulse.v = U_pulse.p.v - U_pulse.n.v;
 //   0.0 = U_pulse.p.i + U_pulse.n.i;

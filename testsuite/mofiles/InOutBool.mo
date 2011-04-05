@@ -27,21 +27,21 @@ end Booltest;
 
 // Result:
 // function testBool
-// input Integer x;
-// input Integer y;
-// input Boolean should_be_equal;
-// output Boolean t;
+//   input Integer x;
+//   input Integer y;
+//   input Boolean should_be_equal;
+//   output Boolean t;
 // algorithm
 //   t := false;
-//   if x == y AND should_be_equal then
+//   if x == y and should_be_equal then
 //     t := true;
-//   elseif x <> y AND  NOT should_be_equal then
+//   elseif x <> y and  not should_be_equal then
 //     t := true;
 //   end if;
 // end testBool;
 // 
 // class Booltest
-// Boolean t;
+//   Boolean t;
 // equation
 //   t = false;
 //   t = true;

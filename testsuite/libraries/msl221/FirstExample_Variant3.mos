@@ -17,7 +17,7 @@ getErrorString();
 // algorithm
 //   result := false;
 //   for i in 1:size(b,1) loop
-//     result := result OR b[i];
+//     result := result or b[i];
 //   end for;
 // end Modelica.StateGraph.Temporary.anyTrue;
 // 
@@ -102,7 +102,7 @@ getErrorString();
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   initialStep.localActive = pre(initialStep.newActive);
-//   initialStep.newActive = if initialStep.subgraphStatePort.resume then initialStep.oldActive else (Modelica.StateGraph.Temporary.anyTrue({initialStep.inPort[1].set}) OR initialStep.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({initialStep.outPort[1].reset})) AND  NOT initialStep.subgraphStatePort.suspend;
+//   initialStep.newActive = if initialStep.subgraphStatePort.resume then initialStep.oldActive else (Modelica.StateGraph.Temporary.anyTrue({initialStep.inPort[1].set}) or initialStep.localActive and  not Modelica.StateGraph.Temporary.anyTrue({initialStep.outPort[1].reset})) and  not initialStep.subgraphStatePort.suspend;
 //   when initialStep.subgraphStatePort.suspend then
 //   initialStep.oldActive = initialStep.localActive;
 //   end when;
@@ -116,14 +116,14 @@ getErrorString();
 //   end when;
 //   transition1.t_dummy = time - transition1.t_start;
 //   transition1.t = if transition1.enableFire then transition1.t_dummy else 0.0;
-//   transition1.fire = transition1.enableFire AND time >= transition1.t_start + transition1.waitTime;
-//   transition1.enableFire = transition1.localCondition AND transition1.inPort.available AND  NOT transition1.outPort.occupied;
+//   transition1.fire = transition1.enableFire and time >= transition1.t_start + transition1.waitTime;
+//   transition1.enableFire = transition1.localCondition and transition1.inPort.available and  not transition1.outPort.occupied;
 //   transition1.inPort.reset = transition1.fire;
 //   transition1.outPort.set = transition1.fire;
 //   assert(true,\"Connector inPort[1] of the step is connected to more than one transition\");
 //   assert(true,\"Connector outPort[1] of the step is connected to more than one transition\");
 //   step.localActive = pre(step.newActive);
-//   step.newActive = if step.subgraphStatePort.resume then step.oldActive else (Modelica.StateGraph.Temporary.anyTrue({step.inPort[1].set}) OR step.localActive AND  NOT Modelica.StateGraph.Temporary.anyTrue({step.outPort[1].reset})) AND  NOT step.subgraphStatePort.suspend;
+//   step.newActive = if step.subgraphStatePort.resume then step.oldActive else (Modelica.StateGraph.Temporary.anyTrue({step.inPort[1].set}) or step.localActive and  not Modelica.StateGraph.Temporary.anyTrue({step.outPort[1].reset})) and  not step.subgraphStatePort.suspend;
 //   when step.subgraphStatePort.suspend then
 //   step.oldActive = step.localActive;
 //   end when;
@@ -136,7 +136,7 @@ getErrorString();
 //   transition2.t_dummy = 0.0;
 //   transition2.t = 0.0;
 //   transition2.fire = transition2.enableFire;
-//   transition2.enableFire = transition2.localCondition AND transition2.inPort.available AND  NOT transition2.outPort.occupied;
+//   transition2.enableFire = transition2.localCondition and transition2.inPort.available and  not transition2.outPort.occupied;
 //   transition2.inPort.reset = transition2.fire;
 //   transition2.outPort.set = transition2.fire;
 //   when timer.u then

@@ -43,7 +43,7 @@ getErrorString();
 //   Beta := BETAval * (1.0 + LAMBDA * vds);
 //   cdlin := vds * (2.0 * Vgst - vds);
 //   cdsat := Vgst ^ 2.0;
-//   ids0 := sig * Beta * if Vgst > 0.0 AND vds <= vdsat then cdlin else if Vgst > 0.0 AND vds > vdsat then cdsat else 0.0;
+//   ids0 := sig * Beta * if Vgst > 0.0 and vds <= vdsat then cdlin else if Vgst > 0.0 and vds > vdsat then cdsat else 0.0;
 // end BondLib.Spice.Utilities.JFETeq1;
 // 
 // function Modelica.Math.asin

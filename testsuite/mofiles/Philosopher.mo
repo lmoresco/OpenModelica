@@ -281,7 +281,7 @@ end Philosopher_DiningTable;
 // algorithm
 //   s1 := {si[1],si[2],si[3]};
 //   u2 := 1.0;
-//   while  NOT my_break loop
+//   while  not my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
 //     z := 1.71552776992141 * (u1 - 0.5) / u2;
@@ -300,13 +300,13 @@ end Philosopher_DiningTable;
 //   so[1] := abs(rem(171.0 * si[1],30269.0));
 //   so[2] := abs(rem(172.0 * si[2],30307.0));
 //   so[3] := abs(rem(170.0 * si[3],30323.0));
-//   if so[1] <= 0.0 AND so[1] >= 0.0 then
+//   if so[1] <= 0.0 and so[1] >= 0.0 then
 //     so[1] := 1.0;
 //   end if;
-//   if so[2] <= 0.0 AND so[2] >= 0.0 then
+//   if so[2] <= 0.0 and so[2] >= 0.0 then
 //     so[2] := 1.0;
 //   end if;
-//   if so[3] <= 0.0 AND so[3] >= 0.0 then
+//   if so[3] <= 0.0 and so[3] >= 0.0 then
 //     so[3] := 1.0;
 //   end if;
 //   x := rem(so[1] / 30269.0 + so[2] / 30307.0 + so[3] / 3023.0,1.0);
@@ -499,25 +499,25 @@ end Philosopher_DiningTable;
 //   Boolean t.fork[5].right.busy;
 // equation
 //   t.phil[1].timeToChangeState = t.phil[1].timeOfNextChange <= time;
-//   t.phil[1].canEat = t.phil[1].state == 1 AND  NOT (t.phil[1].left.busy OR t.phil[1].right.busy);
-//   t.phil[1].timeToGetHungry = t.phil[1].state == 0 AND t.phil[1].timeToChangeState;
-//   t.phil[1].doneEating = t.phil[1].state == 2 AND t.phil[1].timeToChangeState;
+//   t.phil[1].canEat = t.phil[1].state == 1 and  not (t.phil[1].left.busy or t.phil[1].right.busy);
+//   t.phil[1].timeToGetHungry = t.phil[1].state == 0 and t.phil[1].timeToChangeState;
+//   t.phil[1].doneEating = t.phil[1].state == 2 and t.phil[1].timeToChangeState;
 //   t.phil[2].timeToChangeState = t.phil[2].timeOfNextChange <= time;
-//   t.phil[2].canEat = t.phil[2].state == 1 AND  NOT (t.phil[2].left.busy OR t.phil[2].right.busy);
-//   t.phil[2].timeToGetHungry = t.phil[2].state == 0 AND t.phil[2].timeToChangeState;
-//   t.phil[2].doneEating = t.phil[2].state == 2 AND t.phil[2].timeToChangeState;
+//   t.phil[2].canEat = t.phil[2].state == 1 and  not (t.phil[2].left.busy or t.phil[2].right.busy);
+//   t.phil[2].timeToGetHungry = t.phil[2].state == 0 and t.phil[2].timeToChangeState;
+//   t.phil[2].doneEating = t.phil[2].state == 2 and t.phil[2].timeToChangeState;
 //   t.phil[3].timeToChangeState = t.phil[3].timeOfNextChange <= time;
-//   t.phil[3].canEat = t.phil[3].state == 1 AND  NOT (t.phil[3].left.busy OR t.phil[3].right.busy);
-//   t.phil[3].timeToGetHungry = t.phil[3].state == 0 AND t.phil[3].timeToChangeState;
-//   t.phil[3].doneEating = t.phil[3].state == 2 AND t.phil[3].timeToChangeState;
+//   t.phil[3].canEat = t.phil[3].state == 1 and  not (t.phil[3].left.busy or t.phil[3].right.busy);
+//   t.phil[3].timeToGetHungry = t.phil[3].state == 0 and t.phil[3].timeToChangeState;
+//   t.phil[3].doneEating = t.phil[3].state == 2 and t.phil[3].timeToChangeState;
 //   t.phil[4].timeToChangeState = t.phil[4].timeOfNextChange <= time;
-//   t.phil[4].canEat = t.phil[4].state == 1 AND  NOT (t.phil[4].left.busy OR t.phil[4].right.busy);
-//   t.phil[4].timeToGetHungry = t.phil[4].state == 0 AND t.phil[4].timeToChangeState;
-//   t.phil[4].doneEating = t.phil[4].state == 2 AND t.phil[4].timeToChangeState;
+//   t.phil[4].canEat = t.phil[4].state == 1 and  not (t.phil[4].left.busy or t.phil[4].right.busy);
+//   t.phil[4].timeToGetHungry = t.phil[4].state == 0 and t.phil[4].timeToChangeState;
+//   t.phil[4].doneEating = t.phil[4].state == 2 and t.phil[4].timeToChangeState;
 //   t.phil[5].timeToChangeState = t.phil[5].timeOfNextChange <= time;
-//   t.phil[5].canEat = t.phil[5].state == 1 AND  NOT (t.phil[5].left.busy OR t.phil[5].right.busy);
-//   t.phil[5].timeToGetHungry = t.phil[5].state == 0 AND t.phil[5].timeToChangeState;
-//   t.phil[5].doneEating = t.phil[5].state == 2 AND t.phil[5].timeToChangeState;
+//   t.phil[5].canEat = t.phil[5].state == 1 and  not (t.phil[5].left.busy or t.phil[5].right.busy);
+//   t.phil[5].timeToGetHungry = t.phil[5].state == 0 and t.phil[5].timeToChangeState;
+//   t.phil[5].doneEating = t.phil[5].state == 2 and t.phil[5].timeToChangeState;
 //   t.mutex.port[1].ok = t.mutex.ok[1];
 //   t.mutex.request[1] = t.mutex.port[1].request;
 //   t.mutex.release[1] = t.mutex.port[1].release;
@@ -735,7 +735,7 @@ end Philosopher_DiningTable;
 //     t.phil[5].timeOfNextChange := time + abs(t.phil[5].T);
 //   end when;
 //   when t.mutex.request[1] then
-//     if  NOT t.mutex.occupied then
+//     if  not t.mutex.occupied then
 //       t.mutex.ok[1] := true;
 //       t.mutex.waiting[1] := false;
 //     else
@@ -744,7 +744,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     t.mutex.occupied := true;
 //   end when;
-//   when pre(t.mutex.waiting[1]) AND  NOT t.mutex.occupied then
+//   when pre(t.mutex.waiting[1]) and  not t.mutex.occupied then
 //     t.mutex.occupied := true;
 //     t.mutex.ok[1] := true;
 //     t.mutex.waiting[1] := false;
@@ -754,7 +754,7 @@ end Philosopher_DiningTable;
 //     t.mutex.occupied := false;
 //   end when;
 //   when t.mutex.request[2] then
-//     if  NOT t.mutex.occupied then
+//     if  not t.mutex.occupied then
 //       t.mutex.ok[2] := true;
 //       t.mutex.waiting[2] := false;
 //     else
@@ -763,7 +763,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     t.mutex.occupied := true;
 //   end when;
-//   when pre(t.mutex.waiting[2]) AND  NOT t.mutex.occupied then
+//   when pre(t.mutex.waiting[2]) and  not t.mutex.occupied then
 //     t.mutex.occupied := true;
 //     t.mutex.ok[2] := true;
 //     t.mutex.waiting[2] := false;
@@ -773,7 +773,7 @@ end Philosopher_DiningTable;
 //     t.mutex.occupied := false;
 //   end when;
 //   when t.mutex.request[3] then
-//     if  NOT t.mutex.occupied then
+//     if  not t.mutex.occupied then
 //       t.mutex.ok[3] := true;
 //       t.mutex.waiting[3] := false;
 //     else
@@ -782,7 +782,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     t.mutex.occupied := true;
 //   end when;
-//   when pre(t.mutex.waiting[3]) AND  NOT t.mutex.occupied then
+//   when pre(t.mutex.waiting[3]) and  not t.mutex.occupied then
 //     t.mutex.occupied := true;
 //     t.mutex.ok[3] := true;
 //     t.mutex.waiting[3] := false;
@@ -792,7 +792,7 @@ end Philosopher_DiningTable;
 //     t.mutex.occupied := false;
 //   end when;
 //   when t.mutex.request[4] then
-//     if  NOT t.mutex.occupied then
+//     if  not t.mutex.occupied then
 //       t.mutex.ok[4] := true;
 //       t.mutex.waiting[4] := false;
 //     else
@@ -801,7 +801,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     t.mutex.occupied := true;
 //   end when;
-//   when pre(t.mutex.waiting[4]) AND  NOT t.mutex.occupied then
+//   when pre(t.mutex.waiting[4]) and  not t.mutex.occupied then
 //     t.mutex.occupied := true;
 //     t.mutex.ok[4] := true;
 //     t.mutex.waiting[4] := false;
@@ -811,7 +811,7 @@ end Philosopher_DiningTable;
 //     t.mutex.occupied := false;
 //   end when;
 //   when t.mutex.request[5] then
-//     if  NOT t.mutex.occupied then
+//     if  not t.mutex.occupied then
 //       t.mutex.ok[5] := true;
 //       t.mutex.waiting[5] := false;
 //     else
@@ -820,7 +820,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     t.mutex.occupied := true;
 //   end when;
-//   when pre(t.mutex.waiting[5]) AND  NOT t.mutex.occupied then
+//   when pre(t.mutex.waiting[5]) and  not t.mutex.occupied then
 //     t.mutex.occupied := true;
 //     t.mutex.ok[5] := true;
 //     t.mutex.waiting[5] := false;
