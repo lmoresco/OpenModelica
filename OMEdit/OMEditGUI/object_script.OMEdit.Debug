@@ -30,7 +30,8 @@ INPUT(
 ./debug\DocumentationWidget.o
 ./debug\OptionsWidget.o
 ./debug\BitmapAnnotation.o
-./debug\InetractiveSimulationTabWidget.o
+./debug\InteractiveSimulationTabWidget.o
+./debug\PlotWindowContainer.o
 ./debug\moc_mainwindow.o
 ./debug\moc_ProjectTabWidget.o
 ./debug\moc_LibraryWidget.o
@@ -55,5 +56,6 @@ INPUT(
 ./debug\moc_OptionsWidget.o
 ./debug\moc_BitmapAnnotation.o
 ./debug\moc_InteractiveSimulationTabWidget.o
+./debug\moc_PlotWindowContainer.o
 ./debug\qrc_resource_omedit.o
 );

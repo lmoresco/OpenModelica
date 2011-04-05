@@ -91,7 +91,7 @@
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
     <value key="Qt4ProjectManager.Qt4RunConfiguration.BaseEnvironmentBase" type="int">2</value>
     <valuelist key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments" type="QVariantList">
-     <value type="QString">c:/OpenModelica1.7.0/tmp/OMEdit/HelloWorld_res.plt</value>
+     <value type="QString">c:/OpenModelica1.7.0/tmp/OMEdit/DCMotor_res.mat</value>
      <value type="QString">OpenModelicaPlot</value>
      <value type="QString">true</value>
      <value type="QString">true</value>
@@ -104,8 +104,8 @@
      <value type="QString">1</value>
      <value type="QString">0</value>
      <value type="QString">1</value>
-     <value type="QString">x</value>
-     <value type="QString">der(x)</value>
+     <value type="QString">emf1.i</value>
+     <value type="QString">emf1.phi</value>
      <value type="QString">-ew</value>
      <value type="QString">true</value>
     </valuelist>
