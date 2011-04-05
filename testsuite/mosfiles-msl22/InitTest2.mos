@@ -7,6 +7,7 @@
 //
 
 loadFile("InitTest3Phase.mo");
+
 simulate(Test3Phase.Test3PhaseStart,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
 
 "i_abc[:] at 0.0";
@@ -145,9 +146,6 @@ val(u_dq0[3],10.0);
 val(power,0);
 val(power,10);
 
-
-//TODO: fix initialization for parameters
-/*
 simulate(Test3Phase.Test3PhaseInitParam,stopTime=10, tolerance=1e-5, numberOfIntervals=1000);
 
 "i_abc[:] at 0.0";
@@ -193,7 +191,7 @@ val(u_dq0[3],10.0);
 "power :";
 val(power,0);
 val(power,10);
-*/
+
 
 // Result:
 // true
@@ -317,30 +315,27 @@ val(power,10);
 // "power :"
 // -0.128647891546983
 // -0.128651551553015
-// endResult
-
-// TODO: actived if initialization for parameter is fixed
 // record SimulationResult
-//     resultFile = "",
+//     resultFile = "Test3Phase.Test3PhaseInitParam_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"
-// 0.0
-// 0.0
-// 0.0
+// 0.298920575922557
+// -0.223736515528953
+// -0.0751843657385363
 // "i_dq0[:] at 0.0"
-// 0.0
-// 0.0
-// 0.0
+// -0.105042232476643
+// 0.366101566971119
+// -1.76290979064797e-07
 // "i_abc[:] at 10.0"
-// 0.29690261724633
-// -0.222242906029362
-// -0.0746597112173256
+// 0.298920297362897
+// -0.223738327591378
+// -0.0751819718289173
 // "i_dq0[:] at 10.0:"
-// -0.104357077840754
-// 0.363629957775333
-// -2.06501482580279e-13
+// -0.105045206547985
+// 0.366101101989991
+// -1.18783943792167e-09
 // "u_abc[:] at 0.0"
 // 0.0
 // 0.866025403784436
@@ -358,7 +353,6 @@ val(power,10);
 // -2.80154234232352e-15
 // -1.94122464685524e-15
 // "power :"
-// 0.0
-// -0.127810795878877
+// -0.128649935505292
+// -0.128653577983916
 // endResult
-
