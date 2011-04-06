@@ -15,7 +15,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Desktop</value>
    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Target.DesktopTarget</value>
-   <value key="ProjectExplorer.Target.ActiveBuildConfiguration" type="int">0</value>
+   <value key="ProjectExplorer.Target.ActiveBuildConfiguration" type="int">1</value>
    <value key="ProjectExplorer.Target.ActiveRunConfiguration" type="int">0</value>
    <valuemap key="ProjectExplorer.Target.BuildConfiguration.0" type="QVariantMap">
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStep.0" type="QVariantMap">
@@ -101,9 +101,9 @@
      <value type="QString">time</value>
      <value type="QString">x</value>
      <value type="QString">0</value>
-     <value type="QString">1</value>
      <value type="QString">0</value>
-     <value type="QString">1</value>
+     <value type="QString">0</value>
+     <value type="QString">0</value>
      <value type="QString">emf1.i</value>
      <value type="QString">emf1.phi</value>
      <value type="QString">-ew</value>
