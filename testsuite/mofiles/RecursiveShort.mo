@@ -21,9 +21,7 @@ end RecursiveShort;
 
 // Result:
 // Error processing file: RecursiveShort.mo
-// [RecursiveShort.mo:15:5-15:23:writable] Error: Class Env.Env not found in scope RecursiveShort.A.Env.
 // [RecursiveShort.mo:15:5-15:23:writable] Error: Recursive short class definition of Env in terms of Env.Env
-// [RecursiveShort.mo:15:5-15:23:writable] Error: Class Env.Env not found in scope RecursiveShort.A.Env.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

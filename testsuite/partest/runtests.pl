@@ -49,7 +49,7 @@ sub read_makefile {
 	open(my $in, "<", "$dir/Makefile") or die "Couldn't open $dir/Makefile: $!";
 
 	while(<$in>) {
-		if(/(\S+) -f Makefile test/) {  # Recursively parse makefiles.
+		if(/(\S+) -f Makefile test[^s]/) {  # Recursively parse makefiles.
 			read_makefile("$dir/$1");
 		}
 		elsif(/^TESTFILES.*=.*$/) { # Found a list of tests, parse them.
