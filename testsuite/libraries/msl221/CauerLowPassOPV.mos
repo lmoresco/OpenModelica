@@ -250,8 +250,8 @@ getErrorString();
 //   Real p4.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real n14.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real n14.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   parameter Real c2 = 1.0 / l1 / 2.906997720064;
-//   parameter Real c4 = 1.0 / l2 / 1.392270203025;
+//   parameter Real c2 = 1.0 / (l1 * 2.906997720064);
+//   parameter Real c4 = 1.0 / (l2 * 1.392270203025);
 // equation
 //   C1.i = C1.C * der(C1.v);
 //   C1.v = C1.p.v - C1.n.v;

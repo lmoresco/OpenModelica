@@ -332,7 +332,7 @@ end Philosopher_DiningTable;
 //   while  not my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
-//     z := 1.71552776992141 * (u1 - 0.5) / u2;
+//     z := (1.71552776992141 * (u1 - 0.5)) / u2;
 //     zz := z ^ 2.0 / 4.0;
 //     my_break := zz <= -log(u2);
 //   end while;

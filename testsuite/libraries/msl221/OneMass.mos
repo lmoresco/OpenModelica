@@ -194,7 +194,7 @@ getErrorString();
 //   parameter Real ThermalConductor1.G(quantity = \"ThermalConductance\", unit = \"W/K\") = 1.0 \"Constant thermal conductance of material\";
 // initial algorithm
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   Pipe1.k := Pipe1.dpLaminar * Pipe1.V_flowNominal / Pipe1.V_flowLaminar;
+//   Pipe1.k := (Pipe1.dpLaminar * Pipe1.V_flowNominal) / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) * (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ -2.0;
 // equation

@@ -100,7 +100,7 @@ end X;
 // equation
 //   enumtest.c = Types.EnumTest.DigitalCurrentChoices.one;
 //   enumtest.choice = Types.EnumTest.DigitalCurrentChoices.one;
-//   x = Real(if frame_r_out == frame_r_in then 0 else 1);
+//   x = if frame_r_out == frame_r_in then 0.0 else 1.0;
 //   f = enum.a;
 // algorithm
 //   for e in {Types.EnumTest.DigitalCurrentChoices.zero,Types.EnumTest.DigitalCurrentChoices.one} loop

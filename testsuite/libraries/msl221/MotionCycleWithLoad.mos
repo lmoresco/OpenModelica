@@ -208,7 +208,7 @@ getErrorString();
 //   parameter Real U_pulse.signalSource.offset = U_pulse.offset \"Offset of output signals\";
 //   parameter Real U_pulse.signalSource.startTime(quantity = \"Time\", unit = \"s\") = U_pulse.startTime \"Output = offset for time < startTime\";
 //   protected Real U_pulse.signalSource.T0(quantity = \"Time\", unit = \"s\", start = U_pulse.signalSource.startTime) \"Start time of current period\";
-//   protected Real U_pulse.signalSource.T_width(quantity = \"Time\", unit = \"s\") = U_pulse.signalSource.period * U_pulse.signalSource.width / 100.0;
+//   protected Real U_pulse.signalSource.T_width(quantity = \"Time\", unit = \"s\") = (U_pulse.signalSource.period * U_pulse.signalSource.width) / 100.0;
 //   parameter Real U_pulse.V(quantity = \"ElectricPotential\", unit = \"V\") = 13.2 \"Amplitude of pulse\";
 //   parameter Real U_pulse.width(min = 1e-60, max = 100.0) = 5.0 \"Width of pulse in % of period\";
 //   parameter Real U_pulse.period(quantity = \"Time\", unit = \"s\", min = 1e-60) = 1.0 \"Time for one period\";

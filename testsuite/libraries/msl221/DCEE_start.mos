@@ -162,7 +162,7 @@ getErrorString();
 //   Real DCEE1.airGapDC.pin_an.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real DCEE1.airGapDC.pin_en.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real DCEE1.airGapDC.pin_en.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   protected parameter Real DCEE1.TurnsRatio = (DCEE1.VaNominal - DCEE1.Ra * DCEE1.IaNominal) * 1.0 / DCEE1.IeNominal / DCEE1.Le / Modelica.SIunits.Conversions.from_rpm(DCEE1.rpmNominal) \"Ratio of armature turns over number of turns of the excitation winding\";
+//   protected parameter Real DCEE1.TurnsRatio = (DCEE1.VaNominal - DCEE1.Ra * DCEE1.IaNominal) / (DCEE1.IeNominal * DCEE1.Le * Modelica.SIunits.Conversions.from_rpm(DCEE1.rpmNominal)) \"Ratio of armature turns over number of turns of the excitation winding\";
 //   Real SignalVoltage1.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real SignalVoltage1.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real SignalVoltage1.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";

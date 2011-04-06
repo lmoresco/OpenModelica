@@ -126,7 +126,7 @@ getErrorString();
 //   Real DCSE1.airGapDC.pin_an.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real DCSE1.airGapDC.pin_en.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real DCSE1.airGapDC.pin_en.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
-//   protected parameter Real DCSE1.TurnsRatio = (DCSE1.VaNominal - (DCSE1.Ra + DCSE1.Re) * DCSE1.IaNominal) * 1.0 / DCSE1.IaNominal / DCSE1.Le / Modelica.SIunits.Conversions.from_rpm(DCSE1.rpmNominal) \"Ratio of armature turns over number of turns of the excitation winding\";
+//   protected parameter Real DCSE1.TurnsRatio = (DCSE1.VaNominal - (DCSE1.Ra + DCSE1.Re) * DCSE1.IaNominal) / (DCSE1.IaNominal * DCSE1.Le * Modelica.SIunits.Conversions.from_rpm(DCSE1.rpmNominal)) \"Ratio of armature turns over number of turns of the excitation winding\";
 //   output Real Ramp1.y \"Connector of Real output signal\";
 //   parameter Real Ramp1.height = Va \"Height of ramps\";
 //   parameter Real Ramp1.duration(min = 1e-60) = tRamp \"Durations of ramp\";

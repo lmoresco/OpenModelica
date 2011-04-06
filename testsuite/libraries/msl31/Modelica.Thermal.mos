@@ -213,7 +213,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real pipe.h_g(quantity = \"Length\", unit = \"m\", start = 0.0) \"Geodetic height (heigth difference from flowPort_a to flowPort_b)\";
 //   Real pipe.heatPort.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real pipe.heatPort.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
-//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = pipe.dpLaminar * pipe.V_flowNominal / pipe.V_flowLaminar;
+//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = (pipe.dpLaminar * pipe.V_flowNominal) / pipe.V_flowLaminar;
 //   parameter Real ambient2.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = 1.0 \"Density\";
 //   parameter Real ambient2.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant pressure\";
 //   parameter Real ambient2.medium.cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant volume\";

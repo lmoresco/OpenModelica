@@ -74,7 +74,7 @@ getErrorString();
 //   output Real PI.addSat.y \"Connector of Real output signal\";
 //   parameter Real PI.addSat.k1 = 1.0 \"Gain of upper input\";
 //   parameter Real PI.addSat.k2 = -1.0 \"Gain of lower input\";
-//   parameter Real PI.gainTrack.k = 1.0 / PI.Ni / PI.k \"Gain value multiplied with input signal\";
+//   parameter Real PI.gainTrack.k = 1.0 / (PI.Ni * PI.k) \"Gain value multiplied with input signal\";
 //   input Real PI.gainTrack.u \"Input signal connector\";
 //   output Real PI.gainTrack.y \"Output signal connector\";
 //   output Real PI.Dzero.y \"Connector of Real output signal\";

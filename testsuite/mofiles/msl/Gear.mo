@@ -3944,7 +3944,7 @@ end Gear;
 //     y1 := table[i,icol];
 //     y2 := table[1 + i,icol];
 //     assert( u2 > u1, "Table index must be increasing");
-//     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
+//     y := y1 + (y2 - y1 * (u - u1)) / (u2 - u1);
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 

@@ -1060,7 +1060,7 @@ end Toneco_PEXPipe;
 //   parameter Real h_g(quantity = "Length", unit = "m") = 0.0 "geodetic height (heigth difference from flowPort_a to flowPort_b)";
 // initial algorithm
 //   assert(V_flowNominal > V_flowLaminar, "SimpleFriction: V_flowNominal has to be > V_flowLaminar!");
-//   k := dpLaminar * V_flowNominal / V_flowLaminar;
+//   k := (dpLaminar * V_flowNominal) / V_flowLaminar;
 //   assert(dpNominal >= k, "SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!");
 //   k := (dpNominal - k) * (V_flowNominal - V_flowLaminar) ^ -2.0;
 // equation

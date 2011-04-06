@@ -682,7 +682,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Real cytosol.G6P.n1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
 //   Real cytosol.G6P.n1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   output Real cytosol.G6P.n1.V(quantity = \"Volume\", unit = \"l\");
-//   Real cytosol.F6P.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0, start = 0.603855 * cytosol.kh / (1.0 + cytosol.kh), StateSelect = StateSelect.prefer) \"Current concentration of substance (mM)\";
+//   Real cytosol.F6P.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0, start = (0.603855 * cytosol.kh) / (1.0 + cytosol.kh), StateSelect = StateSelect.prefer) \"Current concentration of substance (mM)\";
 //   Real cytosol.F6P.rNet(quantity = \"Molar flow rate\", unit = \"mol/s\") \"Net flow rate of substance into the node\";
 //   Real cytosol.F6P.n(quantity = \"AmountOfSubstance\", unit = \"mol\", min = 0.0, StateSelect = StateSelect.prefer) \"Number of moles of substance in pool (mol)\";
 //   Real cytosol.F6P.n1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
@@ -773,7 +773,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Real cytosol.jak.p1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   input Real cytosol.jak.p1.V(quantity = \"Volume\", unit = \"l\");
 //   Real cytosol.jak.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = cytosol.cytosol_V / cytosol.jak.bamp \"Stoichiometric coefficient for the substrate\";
-//   Real cytosol.jak.nP1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 2.0 * cytosol.cytosol_V / cytosol.jak.badp \"Stoichiometric coefficient for the product\";
+//   Real cytosol.jak.nP1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = (2.0 * cytosol.cytosol_V) / cytosol.jak.badp \"Stoichiometric coefficient for the product\";
 //   Real cytosol.jak.m1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
 //   Real cytosol.jak.m1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   input Real cytosol.jak.m1.V(quantity = \"Volume\", unit = \"l\");
@@ -861,7 +861,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Real cytosol.mitochondria.jox.p1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
 //   Real cytosol.mitochondria.jox.p1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   input Real cytosol.mitochondria.jox.p1.V(quantity = \"Volume\", unit = \"l\");
-//   Real cytosol.mitochondria.jox.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 2.5 * cytosol.cytosol_V / cytosol.mitochondria.jox.badp \"Stoichiometric coefficient for substrate 1\";
+//   Real cytosol.mitochondria.jox.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = (2.5 * cytosol.cytosol_V) / cytosol.mitochondria.jox.badp \"Stoichiometric coefficient for substrate 1\";
 //   Real cytosol.mitochondria.jox.nS2(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for substrate 2\";
 //   Real cytosol.mitochondria.jox.nP1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for product 1\";
 //   Real cytosol.mitochondria.jox.nP2(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for product 2\";
@@ -929,7 +929,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Real cytosol.DHAP.n1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
 //   Real cytosol.DHAP.n1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   output Real cytosol.DHAP.n1.V(quantity = \"Volume\", unit = \"l\");
-//   Real cytosol.G3P.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0, start = 0.07427 * cytosol.kt / (1.0 + cytosol.kt), StateSelect = StateSelect.prefer) \"Current concentration of substance (mM)\";
+//   Real cytosol.G3P.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0, start = (0.07427 * cytosol.kt) / (1.0 + cytosol.kt), StateSelect = StateSelect.prefer) \"Current concentration of substance (mM)\";
 //   Real cytosol.G3P.rNet(quantity = \"Molar flow rate\", unit = \"mol/s\") \"Net flow rate of substance into the node\";
 //   Real cytosol.G3P.n(quantity = \"AmountOfSubstance\", unit = \"mol\", min = 0.0, StateSelect = StateSelect.prefer) \"Number of moles of substance in pool (mol)\";
 //   Real cytosol.G3P.n1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
@@ -948,7 +948,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Real cytosol.vgpdh_1.p1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
 //   Real cytosol.vgpdh_1.p1.r(quantity = \"Molar flow rate\", unit = \"mol/s\");
 //   input Real cytosol.vgpdh_1.p1.V(quantity = \"Volume\", unit = \"l\");
-//   Real cytosol.vgpdh_1.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 2.0 * cytosol.cytosol_V / cytosol.vgpdh_1.badp \"Stoichiometric coefficient for substrate 1\";
+//   Real cytosol.vgpdh_1.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = (2.0 * cytosol.cytosol_V) / cytosol.vgpdh_1.badp \"Stoichiometric coefficient for substrate 1\";
 //   Real cytosol.vgpdh_1.nS2(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for substrate 2\";
 //   Real cytosol.vgpdh_1.nP1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for product 1\";
 //   Real cytosol.vgpdh_1.nP2(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for product 2\";

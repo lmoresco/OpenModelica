@@ -348,15 +348,15 @@ getErrorString();
 //   input Real outerConvection.Gc(quantity = \"ThermalConductance\", unit = \"W/K\") \"Signal representing the convective thermal conductance in [W/K]\";
 // initial algorithm
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   Pipe1.k := Pipe1.dpLaminar * Pipe1.V_flowNominal / Pipe1.V_flowLaminar;
+//   Pipe1.k := (Pipe1.dpLaminar * Pipe1.V_flowNominal) / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) * (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ -2.0;
 //   assert(outerPipe.V_flowNominal > outerPipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   outerPipe.k := outerPipe.dpLaminar * outerPipe.V_flowNominal / outerPipe.V_flowLaminar;
+//   outerPipe.k := (outerPipe.dpLaminar * outerPipe.V_flowNominal) / outerPipe.V_flowLaminar;
 //   assert(outerPipe.dpNominal >= outerPipe.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   outerPipe.k := (outerPipe.dpNominal - outerPipe.k) * (outerPipe.V_flowNominal - outerPipe.V_flowLaminar) ^ -2.0;
 //   assert(innerPipe.V_flowNominal > innerPipe.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   innerPipe.k := innerPipe.dpLaminar * innerPipe.V_flowNominal / innerPipe.V_flowLaminar;
+//   innerPipe.k := (innerPipe.dpLaminar * innerPipe.V_flowNominal) / innerPipe.V_flowLaminar;
 //   assert(innerPipe.dpNominal >= innerPipe.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   innerPipe.k := (innerPipe.dpNominal - innerPipe.k) * (innerPipe.V_flowNominal - innerPipe.V_flowLaminar) ^ -2.0;
 // equation

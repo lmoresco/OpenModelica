@@ -53,11 +53,11 @@ getErrorString();
 //   parameter Real pulse1.offset = 0.0 \"Offset of output signals\";
 //   parameter Real pulse1.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   protected Real pulse1.T0(quantity = \"Time\", unit = \"s\", start = pulse1.startTime) \"Start time of current period\";
-//   protected Real pulse1.T_width(quantity = \"Time\", unit = \"s\") = pulse1.period * pulse1.width / 100.0;
+//   protected Real pulse1.T_width(quantity = \"Time\", unit = \"s\") = (pulse1.period * pulse1.width) / 100.0;
 // equation
 //   when {initial(),change(extractor1.index)} then
-//   extractor1.k[1] = Real(if extractor1.index == 1 then 1 else 0);
-//   extractor1.k[2] = Real(if extractor1.index == 2 then 1 else 0);
+//   extractor1.k[1] = if extractor1.index == 1 then 1.0 else 0.0;
+//   extractor1.k[2] = if extractor1.index == 2 then 1.0 else 0.0;
 //   end when;
 //   extractor1.y = if  not extractor1.allowOutOfRange or extractor1.index > 0 and extractor1.index <= extractor1.nin then extractor1.k[1] * extractor1.u[1] + extractor1.k[2] * extractor1.u[2] else extractor1.outOfRangeValue;
 //   integerStep1.y = integerStep1.offset + (if time < integerStep1.startTime then 0 else integerStep1.height);

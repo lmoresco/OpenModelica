@@ -361,7 +361,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real pmActuator.material.T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature\";
 //   parameter Real pmActuator.material.B_r(quantity = \"MagneticFluxDensity\", unit = \"T\") = pmActuator.material.B_rRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) \"Remanence at operating temperature\";
 //   parameter Real pmActuator.material.H_cB(quantity = \"MagneticFieldStrength\", unit = \"A/m\") = pmActuator.material.H_cBRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) \"Coercivity at operating temperature\";
-//   parameter Real pmActuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = pmActuator.material.B_r * 1.0 / pmActuator.material.H_cB / 1.25663706143592e-06 \"Relative permeability\";
+//   parameter Real pmActuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = pmActuator.material.B_r / (pmActuator.material.H_cB * 1.25663706143592e-06) \"Relative permeability\";
 //   parameter Real pmActuator.m_a(quantity = \"Mass\", unit = \"kg\", min = 0.0) = 0.012 \"Mass of armature\";
 //   parameter Real pmActuator.c(quantity = \"TranslationalSpringConstant\", unit = \"N/m\") = 100000000000.0 \"Spring stiffness between impact partners\";
 //   parameter Real pmActuator.d(quantity = \"TranslationalDampingConstant\", unit = \"N.s/m\") = 400.0 \"Damping coefficient between impact partners\";
@@ -1068,7 +1068,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real actuator.material.T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature\";
 //   parameter Real actuator.material.B_r(quantity = \"MagneticFluxDensity\", unit = \"T\") = actuator.material.B_rRef * (1.0 + actuator.material.alpha_Br * (actuator.material.T_op - actuator.material.T_ref)) \"Remanence at operating temperature\";
 //   parameter Real actuator.material.H_cB(quantity = \"MagneticFieldStrength\", unit = \"A/m\") = actuator.material.H_cBRef * (1.0 + actuator.material.alpha_Br * (actuator.material.T_op - actuator.material.T_ref)) \"Coercivity at operating temperature\";
-//   parameter Real actuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = actuator.material.B_r * 1.0 / actuator.material.H_cB / 1.25663706143592e-06 \"Relative permeability\";
+//   parameter Real actuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = actuator.material.B_r / (actuator.material.H_cB * 1.25663706143592e-06) \"Relative permeability\";
 //   parameter Real actuator.m_a(quantity = \"Mass\", unit = \"kg\", min = 0.0) = 0.012 \"Mass of armature\";
 //   parameter Real actuator.c(quantity = \"TranslationalSpringConstant\", unit = \"N/m\") = 100000000000.0 \"Spring stiffness between impact partners\";
 //   parameter Real actuator.d(quantity = \"TranslationalDampingConstant\", unit = \"N.s/m\") = 400.0 \"Damping coefficient between impact partners\";
@@ -1590,7 +1590,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real pmActuator.material.T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature\";
 //   parameter Real pmActuator.material.B_r(quantity = \"MagneticFluxDensity\", unit = \"T\") = pmActuator.material.B_rRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) \"Remanence at operating temperature\";
 //   parameter Real pmActuator.material.H_cB(quantity = \"MagneticFieldStrength\", unit = \"A/m\") = pmActuator.material.H_cBRef * (1.0 + pmActuator.material.alpha_Br * (pmActuator.material.T_op - pmActuator.material.T_ref)) \"Coercivity at operating temperature\";
-//   parameter Real pmActuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = pmActuator.material.B_r * 1.0 / pmActuator.material.H_cB / 1.25663706143592e-06 \"Relative permeability\";
+//   parameter Real pmActuator.material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = pmActuator.material.B_r / (pmActuator.material.H_cB * 1.25663706143592e-06) \"Relative permeability\";
 //   parameter Real pmActuator.m_a(quantity = \"Mass\", unit = \"kg\", min = 0.0) = 0.012 \"Mass of armature\";
 //   parameter Real pmActuator.c(quantity = \"TranslationalSpringConstant\", unit = \"N/m\") = 100000000000.0 \"Spring stiffness between impact partners\";
 //   parameter Real pmActuator.d(quantity = \"TranslationalDampingConstant\", unit = \"N.s/m\") = 400.0 \"Damping coefficient between impact partners\";
@@ -2220,7 +2220,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real material.T_op(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Operating temperature\";
 //   parameter Real material.B_r(quantity = \"MagneticFluxDensity\", unit = \"T\") = material.B_rRef * (1.0 + material.alpha_Br * (material.T_op - material.T_ref)) \"Remanence at operating temperature\";
 //   parameter Real material.H_cB(quantity = \"MagneticFieldStrength\", unit = \"A/m\") = material.H_cBRef * (1.0 + material.alpha_Br * (material.T_op - material.T_ref)) \"Coercivity at operating temperature\";
-//   parameter Real material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = material.B_r * 1.0 / material.H_cB / 1.25663706143592e-06 \"Relative permeability\";
+//   parameter Real material.mu_r(quantity = \"RelativePermeability\", unit = \"1\") = material.B_r / (material.H_cB * 1.25663706143592e-06) \"Relative permeability\";
 //   parameter Real m_a(quantity = \"Mass\", unit = \"kg\", min = 0.0) = 0.012 \"Mass of armature\";
 //   parameter Real c(quantity = \"TranslationalSpringConstant\", unit = \"N/m\") = 100000000000.0 \"Spring stiffness between impact partners\";
 //   parameter Real d(quantity = \"TranslationalDampingConstant\", unit = \"N.s/m\") = 400.0 \"Damping coefficient between impact partners\";
@@ -9319,18 +9319,18 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real c_condFillChosen = 0.6 \"CHOSEN conductor filling factor = total conductor area without insulation/ total winding area\";
 //   parameter Real rho(quantity = \"Resistivity\", unit = \"Ohm.m\") = rho_20 * (1.0 + alpha_20 * (253.15 + T_op)) \"Resistivity at operating temperature\";
 //   parameter Real A_w(quantity = \"Area\", unit = \"m2\") = h_w * b_w \"Cross-section area of winding\";
-//   parameter Real N_calculated = V_op * 1.0 / J_desired / l_avg / rho \"CALCULATED number of turns\";
+//   parameter Real N_calculated = V_op / (J_desired * l_avg * rho) \"CALCULATED number of turns\";
 //   parameter Real d_wireCalculated(quantity = \"Length\", unit = \"m\", min = 0.0) = sqrt((4.0 * (A_w * c_condFillChosen)) / (N_calculated * 3.14159265358979)) \"CALCULATED wire diameter (without insulation)\";
 //   parameter Real N_chosen = N_calculated \"CHOSEN number of turns\";
 //   parameter Real A_wireCalculated(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireCalculated ^ 2.0 \"Calculated wire cross-section area\";
 //   parameter Real d_wireChosen(quantity = \"Length\", unit = \"m\", min = 0.0) = d_wireCalculated \"CHOSEN available wire diameter (without insulation)\";
-//   parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = rho * (N_calculated * l_avg / A_wireCalculated) \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
+//   parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_calculated * l_avg)) / A_wireCalculated \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
 //   parameter Real A_wireChosen(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireChosen ^ 2.0 \"Wire cross-section area resulting from CHOSEN wire diameter\";
-//   parameter Real c_condFillActual = 3.14159265358979 * (N_chosen * (d_wireChosen ^ 2.0 * 1.0 / A_w / 4.0)) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
+//   parameter Real c_condFillActual = (3.14159265358979 * (N_chosen * d_wireChosen ^ 2.0)) / (A_w * 4.0) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
 //   parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
-//   parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = rho * (N_chosen * l_avg / A_wireChosen) \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_chosen * l_avg)) / A_wireChosen \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 //   parameter Real P_actual(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_actual \"Winding's ohmic losses at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
-//   parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = 4.0 * (V_op * d_wireChosen ^ -2.0 / R_actual / 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = (4.0 * (V_op * d_wireChosen ^ -2.0)) / (R_actual * 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 // end Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign;
 // "
 // "Warning: Parameter h_w has neither value nor start value, and is fixed during initialization (fixed=true)

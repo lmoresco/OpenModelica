@@ -273,7 +273,7 @@ getErrorString();
 //   assert(Valve1.kv0 > 1e-60, \"Valve characteristic: kv0 has to be > 0 !\");
 //   assert(Valve1.kv0 < 0.999999999999999, \"Valve characteristic: kv0 has to be < 1 !\");
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   Pipe1.k := Pipe1.dpLaminar * Pipe1.V_flowNominal / Pipe1.V_flowLaminar;
+//   Pipe1.k := (Pipe1.dpLaminar * Pipe1.V_flowNominal) / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) * (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ -2.0;
 // equation

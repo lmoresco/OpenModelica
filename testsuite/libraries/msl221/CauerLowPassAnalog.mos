@@ -95,8 +95,8 @@ getErrorString();
 //   Real R1.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real R1.n.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   parameter Real R1.R(quantity = \"Resistance\", unit = \"Ohm\") = 1.0 \"Resistance\";
-//   parameter Real c2 = 1.0 / l1 / 2.906997720064;
-//   parameter Real c4 = 1.0 / l2 / 1.392270203025;
+//   parameter Real c2 = 1.0 / (l1 * 2.906997720064);
+//   parameter Real c4 = 1.0 / (l2 * 1.392270203025);
 // equation
 //   G.p.v = 0.0;
 //   C1.i = C1.C * der(C1.v);

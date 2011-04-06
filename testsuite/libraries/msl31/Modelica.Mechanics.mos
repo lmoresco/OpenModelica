@@ -60,7 +60,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //     y1 := table[i,icol];
 //     y2 := table[1 + i,icol];
 //     assert( u2 > u1, \"Table index must be increasing\");
-//     y := y1 + (y2 - y1) * (u - u1) / (u2 - u1);
+//     y := y1 + (y2 - y1 * (u - u1)) / (u2 - u1);
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
@@ -74,7 +74,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   output Real[nTable, 2] table \"Friction table\";
 // algorithm
 //   for i in 1:nTable loop
-//     table[i,1] := v_max * /*REAL*/(i - 1) / /*REAL*/(nTable - 1);
+//     table[i,1] := (v_max * /*REAL*/(i - 1)) / /*REAL*/(nTable - 1);
 //     table[i,2] := F_Coulomb + F_prop * table[i,1] + F_Stribeck * exp(-fexp * table[i,1]);
 //   end for;
 // end Modelica.Mechanics.Translational.Examples.Utilities.GenerateStribeckFrictionTable;
@@ -288,13 +288,13 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   parameter Real supportFriction.f_pos[35,2] = 13.3265311979344 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[36,1] = 8.57142857142857 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[36,2] = 13.5714289303106 \"[v, f] Positive sliding friction characteristic (v>=0)\";
-//   parameter Real supportFriction.f_pos[37,1] = 8.81632653061225 \"[v, f] Positive sliding friction characteristic (v>=0)\";
+//   parameter Real supportFriction.f_pos[37,1] = 8.81632653061224 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[37,2] = 13.8163267505177 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[38,1] = 9.06122448979592 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[38,2] = 14.0612246245433 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[39,1] = 9.30612244897959 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[39,2] = 14.3061225315463 \"[v, f] Positive sliding friction characteristic (v>=0)\";
-//   parameter Real supportFriction.f_pos[40,1] = 9.55102040816326 \"[v, f] Positive sliding friction characteristic (v>=0)\";
+//   parameter Real supportFriction.f_pos[40,1] = 9.55102040816327 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[40,2] = 14.5510204587561 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[41,1] = 9.79591836734694 \"[v, f] Positive sliding friction characteristic (v>=0)\";
 //   parameter Real supportFriction.f_pos[41,2] = 14.7959183983478 \"[v, f] Positive sliding friction characteristic (v>=0)\";
