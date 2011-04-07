@@ -153,7 +153,7 @@ getErrorString();
 //     if VMAX > 0.0 then
 //       idsat := idlin;
 //       gdsat := (idsat * (1.0 - Fd)) / Vb;
-//       Ep := idsat / (gdsat * L);
+//       Ep := idsat / (L * gdsat);
 //       ALPHA := XD ^ 2.0;
 //       DLfac := (Ep * ALPHA) / 2.0;
 //       DL := sqrt(DLfac ^ 2.0 + KAPPA * ALPHA * (vds - vdsat)) - DLfac;
@@ -168,7 +168,7 @@ getErrorString();
 //   Lfact := 1.0 / (1.0 - LAMBDAval);
 //   Beta := Lfact * BETAeff;
 //   cdsat := cdlin;
-//   et := (vgs - Von) / (N * Vt);
+//   et := (vgs - Von) / (Vt * N);
 //   cdsub := cdlin * if et < EMin then ExMin * (1.0 + et - EMin) else if et > EMax then ExMax * (1.0 + et - EMax) else exp(et);
 //   ids := sig * Beta * if vdsx > 0.0 and vds <= vdsat then cdlin else if vdsx > 0.0 and vds > vdsat and Vgst >= 0.0 then cdsat else if vdsx > 0.0 and vds > vdsat and Vgst < 0.0 then cdsub else 0.0;
 //   ids0 := if NFS == 0.0 and Vgst <= 0.0 then 0.0 else ids;
