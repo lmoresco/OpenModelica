@@ -16,14 +16,14 @@ end ArrayCall;
 // Result:
 // class ArrayCall
 //   Real x[1] = cos(time);
-//   Real x[2] = cos(2.0 * time);
-//   Real x[3] = cos(3.0 * time);
-//   Real x[4] = cos(4.0 * time);
-//   Real x[5] = cos(5.0 * time);
-//   Real x[6] = cos(6.0 * time);
-//   Real x[7] = cos(7.0 * time);
-//   Real x[8] = cos(8.0 * time);
-//   Real x[9] = cos(9.0 * time);
-//   Real x[10] = cos(10.0 * time);
+//   Real x[2] = cos(time * 2.0);
+//   Real x[3] = cos(time * 3.0);
+//   Real x[4] = cos(time * 4.0);
+//   Real x[5] = cos(time * 5.0);
+//   Real x[6] = cos(time * 6.0);
+//   Real x[7] = cos(time * 7.0);
+//   Real x[8] = cos(time * 8.0);
+//   Real x[9] = cos(time * 9.0);
+//   Real x[10] = cos(time * 10.0);
 // end ArrayCall;
 // endResult

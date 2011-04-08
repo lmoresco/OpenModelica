@@ -19,21 +19,21 @@ equation
 end ArrayMulMatrixSimplifier;
 // Result:
 // class ArrayMulMatrixSimplifier
-// parameter Real A[1,1] = 1.0;
-// parameter Real A[1,2] = 0.0;
-// parameter Real A[2,1] = 0.0;
-// parameter Real A[2,2] = 1.0;
-// parameter Real B[1,1] = 1.0;
-// parameter Real B[2,1] = 1.0;
-// output Real x[1];
-// output Real x[2];
-// output Real y[1];
-// output Real y[2];
-// Real u[1];
+//   parameter Real A[1,1] = 1.0;
+//   parameter Real A[1,2] = 0.0;
+//   parameter Real A[2,1] = 0.0;
+//   parameter Real A[2,2] = 1.0;
+//   parameter Real B[1,1] = 1.0;
+//   parameter Real B[2,1] = 1.0;
+//   output Real x[1];
+//   output Real x[2];
+//   output Real y[1];
+//   output Real y[2];
+//   Real u[1];
 // equation
 //   x[1] = pre(x[1]) * A[1,1] + pre(x[2]) * A[2,1] + B[1,1] * u[1];
 //   x[2] = pre(x[1]) * A[1,2] + pre(x[2]) * A[2,2] + B[2,1] * u[1];
-//   y[1] = A[1,1] * pre(x[1]) + (A[1,2] * pre(x[2]) + B[1,1] * u[1]);
-//   y[2] = A[2,1] * pre(x[1]) + (A[2,2] * pre(x[2]) + B[2,1] * u[1]);
+//   y[1] = A[1,1] * pre(x[1]) + A[1,2] * pre(x[2]) + B[1,1] * u[1];
+//   y[2] = A[2,1] * pre(x[1]) + A[2,2] * pre(x[2]) + B[2,1] * u[1];
 // end ArrayMulMatrixSimplifier;
 // endResult

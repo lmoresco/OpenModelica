@@ -101,7 +101,6 @@ getErrorString();
 //  FUN_CALL argList stmts generation passed
 //  FUN_CALL stmt =
 // txt = helloWorld(txt);
-// Error - typeAdaptMMArg failed
 // 
 //  BOUND_VALUE resolving boundPath = str
 // 

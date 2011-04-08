@@ -604,12 +604,39 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Info a_info;
+      DAE.Exp i_target;
+      DAE.Exp i_source;
+      DAE.Exp i_after;
+      DAE.Exp i_before;
+      String ret_3;
+      String ret_2;
+      String ret_1;
+      String ret_0;
 
     case ( txt,
-           DAE.SIMPLIFY(before = _),
+           DAE.SIMPLIFY(before = i_before, after = i_after),
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("SIMPLIFY!"));
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  simplify: "));
+        ret_0 = ExpressionDump.printExpStr(i_before);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" => "));
+        ret_1 = ExpressionDump.printExpStr(i_after);
+        txt = Tpl.writeStr(txt, ret_1);
+      then txt;
+
+    case ( txt,
+           DAE.SUBSTITUTION(source = i_source, target = i_target),
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  subst: "));
+        ret_2 = ExpressionDump.printExpStr(i_source);
+        txt = Tpl.writeStr(txt, ret_2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" => "));
+        ret_3 = ExpressionDump.printExpStr(i_target);
+        txt = Tpl.writeStr(txt, ret_3);
       then txt;
 
     case ( txt,

@@ -37,7 +37,7 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
     Exp bigExp = BINARY(rxAddrx,ADD(ET_REAL()),BINARY(add5r1,ADD(ET_REAL()),BINARY(rxAddrx,ADD(ET_REAL()),BINARY(rxPow2Mul1,ADD(ET_REAL()),BINARY(rxAddrxMulrx,ADD(ET_REAL()),add3r1)))));
   algorithm
     base     := {i1,i2,i3,add1_2,r1,rx,rxMulr1,r1Mulrx,rxAddrx,rxAddrxMulrx,add2r1,add3r1,add4r1,add5r1,rxPow2,rxPow2Mul1,bigExp};
-    simpl    := Util.listMap(base, ExpressionSimplify.simplify);
+    simpl    := ExpressionSimplify.simplifyList(base,{});
     baseStr  := Util.listMap(base, ExpressionDump.printExpStr);
     simplStr := Util.listMap(simpl, ExpressionDump.printExpStr);
     Util.listMap0(Util.listThreadTuple(baseStr,simplStr), printResult);

@@ -1601,7 +1601,7 @@ end BC8;
 //   PID1.gain.u[1] = PID1.gain.inPort.signal[1];
 //   PID1.gain.y[1] = PID1.gain.outPort.signal[1];
 //   PID1.gain.y[1] = PID1.gain.k[1] * PID1.gain.u[1];
-//   PID1.Add.outPort.signal[1] = PID1.Add.k1 * PID1.Add.inPort1.signal[1] + (PID1.Add.k2 * PID1.Add.inPort2.signal[1] + PID1.Add.k3 * PID1.Add.inPort3.signal[1]);
+//   PID1.Add.outPort.signal[1] = PID1.Add.k1 * PID1.Add.inPort1.signal[1] + PID1.Add.k2 * PID1.Add.inPort2.signal[1] + PID1.Add.k3 * PID1.Add.inPort3.signal[1];
 //   assert(PID1.P.outPort.n == PID1.Add.inPort1.n,"automatically generated from connect");
 //   assert(PID1.I.outPort.n == PID1.Add.inPort2.n,"automatically generated from connect");
 //   assert(PID1.D.outPort.n == PID1.Add.inPort3.n,"automatically generated from connect");
