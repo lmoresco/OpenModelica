@@ -325,7 +325,7 @@ val(stateSelect.set1.P[3,4],5.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // -0

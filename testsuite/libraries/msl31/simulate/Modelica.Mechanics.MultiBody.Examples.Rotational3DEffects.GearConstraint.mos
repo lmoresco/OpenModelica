@@ -609,7 +609,7 @@ val(gearConstraint.actuatedRevolute_b.axis.tau,5.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat'",
+//     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
 //     messages = ""
 // end SimulationResult;
 // -0
