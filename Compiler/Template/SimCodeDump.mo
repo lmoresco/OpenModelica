@@ -661,6 +661,41 @@ algorithm
   end matchcontinue;
 end dumpElementSource;
 
+protected function lm_39
+  input Tpl.Text in_txt;
+  input list<DAE.Exp> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.Exp> rest;
+      DAE.Exp i_cond;
+      String ret_0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_cond :: rest )
+      equation
+        ret_0 = ExpressionDump.printExpStr(i_cond);
+        txt = Tpl.writeStr(txt, ret_0);
+        txt = Tpl.nextIter(txt);
+        txt = lm_39(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_39(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_39;
+
 public function dumpOperation
   input Tpl.Text in_txt;
   input DAE.SymbolicOperation in_a_op;
@@ -673,6 +708,7 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Info a_info;
+      list<DAE.Exp> i_op_assertConds;
       DAE.Exp i_op_res;
       DAE.ComponentRef i_op_cr;
       DAE.Exp i_op_exp2;
@@ -716,7 +752,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.SOLVE(exp1 = i_op_exp1, exp2 = i_op_exp2, cr = i_op_cr, res = i_op_res),
+           DAE.SOLVE(exp1 = i_op_exp1, exp2 = i_op_exp2, cr = i_op_cr, res = i_op_res, assertConds = i_op_assertConds),
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -735,6 +771,13 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         ret_6 = ExpressionDump.printExpStr(i_op_res);
         txt = Tpl.writeStr(txt, ret_6);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("  added assertions:\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_39(txt, i_op_assertConds);
+        txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
       then txt;
 

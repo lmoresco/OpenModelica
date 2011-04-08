@@ -91,6 +91,7 @@ SyncFilter.mos \
 Switch.mos \
 Tank.mos TankPI.mos TankPID.mos TankHybridPID.mos TankHybridPI.mos TanksConnectedPI.mos \
 tempInterpol2test.mos \
+TestSolve.mos \
 Time.mos \
 TupleReturn.mos \
 TwoRateSampler.mos \
