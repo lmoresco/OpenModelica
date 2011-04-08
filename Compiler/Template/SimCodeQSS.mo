@@ -21,10 +21,11 @@ public import Values;
 public import ValuesUtil;
 public import BackendQSS;
 public import DAEDump;
+public import Algorithm;
 protected import SimCodeC;
 protected import SimCodeDump;
 
-protected function fun_23
+protected function fun_24
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_simulationSettingsOpt;
   input String in_a_fileNamePrefix;
@@ -58,7 +59,7 @@ algorithm
         Tpl.textFile(txt_0, Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
-end fun_23;
+end fun_24;
 
 public function translateModel
   input Tpl.Text in_txt;
@@ -113,7 +114,7 @@ algorithm
         Tpl.textFile(txt_8, Tpl.textString(txt_9));
         txt_10 = structureFile(Tpl.emptyTxt, i_simCode);
         Tpl.textFile(txt_10, "modelica_struct.pds");
-        txt = fun_23(txt, i_simulationSettingsOpt, i_fileNamePrefix, i_simCode);
+        txt = fun_24(txt, i_simulationSettingsOpt, i_fileNamePrefix, i_simCode);
       then txt;
 
     case ( txt,
@@ -325,7 +326,7 @@ algorithm
   end matchcontinue;
 end simulationFile;
 
-protected function fun_26
+protected function fun_27
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
   input Tpl.Text in_a_connections;
@@ -394,7 +395,7 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_26;
+end fun_27;
 
 public function structureFile
   input Tpl.Text txt;
@@ -407,7 +408,7 @@ protected
 algorithm
   l_models := Tpl.emptyTxt;
   l_connections := generateConnections(Tpl.emptyTxt);
-  out_txt := fun_26(txt, a_simCode, l_connections);
+  out_txt := fun_27(txt, a_simCode, l_connections);
 end structureFile;
 
 public function functionQssSample
@@ -446,7 +447,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
 end functionQssSample;
 
-protected function lm_29
+protected function lm_30
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Tpl.Text in_a_varDecls;
@@ -476,17 +477,17 @@ algorithm
         x_i0 = Tpl.getIteri_i0(txt);
         (txt, a_varDecls) = functionQssSample3(txt, x_i0, i_start, i_interval, a_varDecls);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_29(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_30(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_29(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_30(txt, rest, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_29;
+end lm_30;
 
 public function functionQssSample2
   input Tpl.Text txt;
@@ -497,7 +498,7 @@ public function functionQssSample2
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_29(out_txt, a_zeroCrossings, a_varDecls);
+  (out_txt, out_a_varDecls) := lm_30(out_txt, a_zeroCrossings, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end functionQssSample2;
 
@@ -576,7 +577,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
 end functionQssWhen;
 
-protected function lm_33
+protected function lm_34
   input Tpl.Text in_txt;
   input list<SimCode.SimWhenClause> in_items;
   input list<BackendDAE.ZeroCrossing> in_a_zeroCrossings;
@@ -641,7 +642,7 @@ algorithm
                                 }, false));
         txt = Tpl.popBlock(txt);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_33(txt, rest, a_zeroCrossings, a_varDecls);
+        (txt, a_varDecls) = lm_34(txt, rest, a_zeroCrossings, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
@@ -649,10 +650,10 @@ algorithm
            a_zeroCrossings,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_33(txt, rest, a_zeroCrossings, a_varDecls);
+        (txt, a_varDecls) = lm_34(txt, rest, a_zeroCrossings, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_33;
+end lm_34;
 
 public function functionQssWhen2
   input Tpl.Text txt;
@@ -665,11 +666,11 @@ public function functionQssWhen2
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_33(out_txt, a_whenClauses, a_zeroCrossings, a_varDecls);
+  (out_txt, out_a_varDecls) := lm_34(out_txt, a_whenClauses, a_zeroCrossings, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end functionQssWhen2;
 
-protected function fun_35
+protected function fun_36
   input Tpl.Text in_txt;
   input Option<BackendDAE.WhenEquation> in_a_whenEq;
   input list<BackendDAE.WhenOperator> in_a_reinits;
@@ -717,7 +718,7 @@ algorithm
            a_varDecls )
       then (txt, a_varDecls);
   end matchcontinue;
-end fun_35;
+end fun_36;
 
 public function generateWhenEquations
   input Tpl.Text txt;
@@ -728,10 +729,10 @@ public function generateWhenEquations
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls) := fun_35(txt, a_whenEq, a_reinits, a_varDecls);
+  (out_txt, out_a_varDecls) := fun_36(txt, a_whenEq, a_reinits, a_varDecls);
 end generateWhenEquations;
 
-protected function lm_37
+protected function lm_38
   input Tpl.Text in_txt;
   input list<BackendDAE.WhenOperator> in_items;
   input Tpl.Text in_a_varDecls;
@@ -767,17 +768,17 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("; // Reinit of var "));
         txt = SimCodeC.cref(txt, i_stateVar);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_37(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_38(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_37(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_38(txt, rest, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_37;
+end lm_38;
 
 public function generateReinits
   input Tpl.Text txt;
@@ -788,11 +789,11 @@ public function generateReinits
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_37(out_txt, a_reinits, a_varDecls);
+  (out_txt, out_a_varDecls) := lm_38(out_txt, a_reinits, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end generateReinits;
 
-protected function fun_39
+protected function fun_40
   input Tpl.Text in_txt;
   input DAE.Exp in_a_e;
   input Integer in_a_hvar;
@@ -845,9 +846,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("])"));
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
-end fun_39;
+end fun_40;
 
-protected function lm_40
+protected function lm_41
   input Tpl.Text in_txt;
   input list<tuple<DAE.Exp, Integer>> in_items;
   input Tpl.Text in_a_varDecls;
@@ -878,9 +879,9 @@ algorithm
            a_varDecls,
            a_preExp )
       equation
-        (txt, a_varDecls, a_preExp) = fun_39(txt, i_e, i_hvar, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = fun_40(txt, i_e, i_hvar, a_varDecls, a_preExp);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_40(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_41(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -888,10 +889,10 @@ algorithm
            a_varDecls,
            a_preExp )
       equation
-        (txt, a_varDecls, a_preExp) = lm_40(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_41(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
-end lm_40;
+end lm_41;
 
 public function functionPreWhenCondition
   input Tpl.Text txt;
@@ -905,7 +906,7 @@ public function functionPreWhenCondition
   output Tpl.Text out_a_preExp;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" || ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls, out_a_preExp) := lm_40(out_txt, a_conditions, a_varDecls, a_preExp);
+  (out_txt, out_a_varDecls, out_a_preExp) := lm_41(out_txt, a_conditions, a_varDecls, a_preExp);
   out_txt := Tpl.popIter(out_txt);
 end functionPreWhenCondition;
 
@@ -952,7 +953,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
 end functionQssStaticBlocks;
 
-protected function fun_43
+protected function fun_44
   input Tpl.Text in_txt;
   input SimCode.SimEqSystem in_a_eq;
   input Tpl.Text in_a_varDecls;
@@ -1012,9 +1013,9 @@ algorithm
            _ )
       then (txt, a_varDecls);
   end matchcontinue;
-end fun_43;
+end fun_44;
 
-protected function lm_44
+protected function lm_45
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1045,9 +1046,9 @@ algorithm
            a_zeroCrossings )
       equation
         x_i0 = Tpl.getIteri_i0(txt);
-        (txt, a_varDecls) = fun_43(txt, i_eq, a_varDecls, a_zeroCrossings, x_i0);
+        (txt, a_varDecls) = fun_44(txt, i_eq, a_varDecls, a_zeroCrossings, x_i0);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_44(txt, rest, a_varDecls, a_zeroCrossings);
+        (txt, a_varDecls) = lm_45(txt, rest, a_varDecls, a_zeroCrossings);
       then (txt, a_varDecls);
 
     case ( txt,
@@ -1055,10 +1056,10 @@ algorithm
            a_varDecls,
            a_zeroCrossings )
       equation
-        (txt, a_varDecls) = lm_44(txt, rest, a_varDecls, a_zeroCrossings);
+        (txt, a_varDecls) = lm_45(txt, rest, a_varDecls, a_zeroCrossings);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_44;
+end lm_45;
 
 public function generateStaticFunc
   input Tpl.Text txt;
@@ -1070,11 +1071,11 @@ public function generateStaticFunc
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_44(out_txt, a_odeEq, a_varDecls, a_zeroCrossings);
+  (out_txt, out_a_varDecls) := lm_45(out_txt, a_odeEq, a_varDecls, a_zeroCrossings);
   out_txt := Tpl.popIter(out_txt);
 end generateStaticFunc;
 
-protected function fun_46
+protected function fun_47
   input Tpl.Text in_txt;
   input DAE.Exp in_a_relation__;
   input Tpl.Text in_a_zcExp;
@@ -1150,9 +1151,9 @@ algorithm
         txt = Tpl.popBlock(txt);
       then txt;
   end matchcontinue;
-end fun_46;
+end fun_47;
 
-protected function lm_47
+protected function lm_48
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Integer in_a_offset;
@@ -1187,9 +1188,9 @@ algorithm
         x_i0 = Tpl.getIteri_i0(txt);
         l_preExp = Tpl.emptyTxt;
         (l_zcExp, l_preExp, a_varDecls) = SimCodeC.daeExp(Tpl.emptyTxt, i_relation__, SimCode.contextSimulationDiscrete, l_preExp, a_varDecls);
-        txt = fun_46(txt, i_relation__, l_zcExp, l_preExp, a_offset, x_i0);
+        txt = fun_47(txt, i_relation__, l_zcExp, l_preExp, a_offset, x_i0);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_47(txt, rest, a_offset, a_varDecls);
+        (txt, a_varDecls) = lm_48(txt, rest, a_offset, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
@@ -1197,10 +1198,10 @@ algorithm
            a_offset,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_47(txt, rest, a_offset, a_varDecls);
+        (txt, a_varDecls) = lm_48(txt, rest, a_offset, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_47;
+end lm_48;
 
 public function generateZeroCrossingsEq
   input Tpl.Text txt;
@@ -1212,11 +1213,11 @@ public function generateZeroCrossingsEq
   output Tpl.Text out_a_varDecls;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, out_a_varDecls) := lm_47(out_txt, a_zeroCrossings, a_offset, a_varDecls);
+  (out_txt, out_a_varDecls) := lm_48(out_txt, a_zeroCrossings, a_offset, a_varDecls);
   out_txt := Tpl.popIter(out_txt);
 end generateZeroCrossingsEq;
 
-protected function lm_49
+protected function lm_50
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1249,7 +1250,7 @@ algorithm
         ret_0 = BackendQSS.replaceZC(i_eq, a_zeroCrossings);
         (txt, a_varDecls) = generateDiscUpdate(txt, ret_0, a_zeroCrossings, a_varDecls);
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_49(txt, rest, a_varDecls, a_zeroCrossings);
+        (txt, a_varDecls) = lm_50(txt, rest, a_varDecls, a_zeroCrossings);
       then (txt, a_varDecls);
 
     case ( txt,
@@ -1257,10 +1258,10 @@ algorithm
            a_varDecls,
            a_zeroCrossings )
       equation
-        (txt, a_varDecls) = lm_49(txt, rest, a_varDecls, a_zeroCrossings);
+        (txt, a_varDecls) = lm_50(txt, rest, a_varDecls, a_zeroCrossings);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_49;
+end lm_50;
 
 public function functionQssUpdateDiscrete
   input Tpl.Text txt;
@@ -1274,7 +1275,7 @@ protected
 algorithm
   l_varDecls := Tpl.emptyTxt;
   l_eqs := Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (l_eqs, l_varDecls) := lm_49(l_eqs, a_allEquationsPlusWhen, l_varDecls, a_zeroCrossings);
+  (l_eqs, l_varDecls) := lm_50(l_eqs, a_allEquationsPlusWhen, l_varDecls, a_zeroCrossings);
   l_eqs := Tpl.popIter(l_eqs);
   out_txt := Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                    "void functionQssUpdateDiscrete(double time)\n",
@@ -1292,7 +1293,7 @@ algorithm
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING("}"));
 end functionQssUpdateDiscrete;
 
-protected function lm_51
+protected function lm_52
   input Tpl.Text in_txt;
   input list<SimCode.SimEqSystem> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1329,19 +1330,19 @@ algorithm
         txt = Tpl.writeText(txt, l_expPart);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls) = lm_51(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_52(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_varDecls )
       equation
-        (txt, a_varDecls) = lm_51(txt, rest, a_varDecls);
+        (txt, a_varDecls) = lm_52(txt, rest, a_varDecls);
       then (txt, a_varDecls);
   end matchcontinue;
-end lm_51;
+end lm_52;
 
-protected function fun_52
+protected function fun_53
   input Tpl.Text in_txt;
   input SimCode.SimEqSystem in_a_eq;
   input Tpl.Text in_a_varDecls;
@@ -1362,7 +1363,7 @@ algorithm
            a_varDecls )
       equation
         l_disc = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        (l_disc, a_varDecls) = lm_51(l_disc, i_discEqs, a_varDecls);
+        (l_disc, a_varDecls) = lm_52(l_disc, i_discEqs, a_varDecls);
         l_disc = Tpl.popIter(l_disc);
         txt = Tpl.writeText(txt, l_disc);
       then (txt, a_varDecls);
@@ -1372,7 +1373,7 @@ algorithm
            a_varDecls )
       then (txt, a_varDecls);
   end matchcontinue;
-end fun_52;
+end fun_53;
 
 public function generateDiscUpdate
   input Tpl.Text txt;
@@ -1383,7 +1384,7 @@ public function generateDiscUpdate
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls) := fun_52(txt, a_eq, a_varDecls);
+  (out_txt, out_a_varDecls) := fun_53(txt, a_eq, a_varDecls);
 end generateDiscUpdate;
 
 public function generateIntegrators
@@ -1414,7 +1415,7 @@ algorithm
                                }, false));
 end generateStaticBlocks;
 
-protected function lm_56
+protected function lm_57
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1462,7 +1463,7 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  }"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_56(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_57(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -1470,10 +1471,10 @@ algorithm
            a_varDecls,
            a_preExp )
       equation
-        (txt, a_varDecls, a_preExp) = lm_56(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_57(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
-end lm_56;
+end lm_57;
 
 public function generateZeroCrossingFunctions
   input Tpl.Text txt;
@@ -1487,11 +1488,11 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   l_preExp := Tpl.emptyTxt;
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, l_varDecls, l_preExp) := lm_56(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
+  (out_txt, l_varDecls, l_preExp) := lm_57(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
   out_txt := Tpl.popIter(out_txt);
 end generateZeroCrossingFunctions;
 
-protected function lm_58
+protected function lm_59
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1539,7 +1540,7 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  }"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_58(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_59(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -1547,10 +1548,10 @@ algorithm
            a_varDecls,
            a_preExp )
       equation
-        (txt, a_varDecls, a_preExp) = lm_58(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_59(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
-end lm_58;
+end lm_59;
 
 public function generateCrossingDetectors
   input Tpl.Text txt;
@@ -1564,11 +1565,11 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   l_preExp := Tpl.emptyTxt;
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, l_varDecls, l_preExp) := lm_58(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
+  (out_txt, l_varDecls, l_preExp) := lm_59(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
   out_txt := Tpl.popIter(out_txt);
 end generateCrossingDetectors;
 
-protected function lm_60
+protected function lm_61
   input Tpl.Text in_txt;
   input list<SimCode.SimWhenClause> in_items;
 
@@ -1603,16 +1604,16 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  }"));
         txt = Tpl.nextIter(txt);
-        txt = lm_60(txt, rest);
+        txt = lm_61(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_60(txt, rest);
+        txt = lm_61(txt, rest);
       then txt;
   end matchcontinue;
-end lm_60;
+end lm_61;
 
 public function generateWhenBlocks
   input Tpl.Text txt;
@@ -1622,11 +1623,11 @@ public function generateWhenBlocks
   output Tpl.Text out_txt;
 algorithm
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  out_txt := lm_60(out_txt, a_whenClauses);
+  out_txt := lm_61(out_txt, a_whenClauses);
   out_txt := Tpl.popIter(out_txt);
 end generateWhenBlocks;
 
-protected function lm_62
+protected function lm_63
   input Tpl.Text in_txt;
   input list<BackendDAE.ZeroCrossing> in_items;
   input Tpl.Text in_a_varDecls;
@@ -1683,7 +1684,7 @@ algorithm
         txt = Tpl.popBlock(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("  }"));
         txt = Tpl.nextIter(txt);
-        (txt, a_varDecls, a_preExp) = lm_62(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_63(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
 
     case ( txt,
@@ -1691,10 +1692,10 @@ algorithm
            a_varDecls,
            a_preExp )
       equation
-        (txt, a_varDecls, a_preExp) = lm_62(txt, rest, a_varDecls, a_preExp);
+        (txt, a_varDecls, a_preExp) = lm_63(txt, rest, a_varDecls, a_preExp);
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
-end lm_62;
+end lm_63;
 
 public function generateSampleBlocks
   input Tpl.Text txt;
@@ -1708,7 +1709,7 @@ algorithm
   l_varDecls := Tpl.emptyTxt;
   l_preExp := Tpl.emptyTxt;
   out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-  (out_txt, l_varDecls, l_preExp) := lm_62(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
+  (out_txt, l_varDecls, l_preExp) := lm_63(out_txt, a_zeroCrossings, l_varDecls, l_preExp);
   out_txt := Tpl.popIter(out_txt);
 end generateSampleBlocks;
 
