@@ -2279,6 +2279,9 @@ algorithm
       Absyn.Info i_info;
       String i_var_comment;
       DAE.ComponentRef i_var_name;
+      String ret_3;
+      String ret_2;
+      Tpl.Text txt_1;
       Integer ret_0;
 
     case ( txt,
@@ -2292,9 +2295,12 @@ algorithm
         ret_0 = System.tmpTick();
         txt = Tpl.writeStr(txt, intString(ret_0));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",\""));
-        txt = crefStr(txt, i_var_name);
+        txt_1 = crefStr(Tpl.emptyTxt, i_var_name);
+        ret_2 = System.escapedString(Tpl.textString(txt_1));
+        txt = Tpl.writeStr(txt, ret_2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",\""));
-        txt = Tpl.writeStr(txt, i_var_comment);
+        ret_3 = System.escapedString(i_var_comment);
+        txt = Tpl.writeStr(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",{"));
         txt = infoArgs(txt, i_info);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("}}"));
