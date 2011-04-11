@@ -13,11 +13,10 @@ loadFile("../../Compiler/Util/Util.mo");
 writeFile("GenerateDocumentation.b.mos","getClassNames()");
 strs:=strtok(OpenModelica.Scripting.runScript("GenerateDocumentation.b.mos"),",\n}{");
 loadFile("GenerateDocumentation.mo");
-res:="<table><tr><th>Module</th><th>Short description</th><th>Description</th></tr>";
 lst:={};
 for s in strs loop
   writeFile("GenerateDocumentation.b.mos","getClassInformation("+s+");getErrorString()");
   lst := parseClassComment(OpenModelica.Scripting.runScript("GenerateDocumentation.b.mos")) :: lst;
 end for;
-writeFile("a.html",res+sortAppendLst(lst)+"</table>");
+writeFile("a.html",sortAppendLst(lst));
 getErrorString();
