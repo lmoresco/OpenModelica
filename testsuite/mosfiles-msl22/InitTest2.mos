@@ -197,7 +197,7 @@ val(power,10);
 // true
 // record SimulationResult
 //     resultFile = "Test3Phase.Test3PhaseStart_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseStart', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseStart', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"
@@ -237,7 +237,7 @@ val(power,10);
 // -0.127810795878877
 // record SimulationResult
 //     resultFile = "Test3Phase.Test3PhaseInit_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"
@@ -277,7 +277,7 @@ val(power,10);
 // -0.128651551553015
 // record SimulationResult
 //     resultFile = "Test3Phase.Test3PhaseInitOver_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitOver', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitOver', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"
@@ -317,7 +317,7 @@ val(power,10);
 // -0.128651551553015
 // record SimulationResult
 //     resultFile = "Test3Phase.Test3PhaseInitParam_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 1000, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'Test3Phase.Test3PhaseInitParam', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "i_abc[:] at 0.0"

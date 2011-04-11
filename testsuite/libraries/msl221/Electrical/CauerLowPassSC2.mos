@@ -50,7 +50,7 @@ val(Op2.out.i,60.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.CauerLowPassSC_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassSC', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 60.0, numberOfIntervals = 1500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CauerLowPassSC', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "C5.v:"

@@ -23,7 +23,7 @@ val(BearingFriction1.w,0.6),val(BearingFriction1.w,0.7),val(BearingFriction1.w,0
 // true
 // record SimulationResult
 //     resultFile = "BearingFrictionTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BearingFrictionTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 50, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'BearingFrictionTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // {0.25,0.341439970154827,0.421719930287777,0.492182893467902,0.554098572765232,0.608452425521361,0.656177864683761,0.698083610943614,0.734882634907287,0.767201274318889,0.795580591782357}

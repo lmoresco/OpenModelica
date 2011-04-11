@@ -259,7 +259,7 @@ val(volumeFlow.ramp2.y,2.0);
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false",
+//     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 0.0
