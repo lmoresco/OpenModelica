@@ -1,6 +1,7 @@
 // name: GenerateDocumentation
 // status: correct
 
+setCommandLineOptions({"+g=MetaModelica","+d=noevalfunc"});
 runScript("LoadCompilerSources.mos");
 /*
 loadFile("../../Compiler/BackEnd/BackendDAECreate.mo");
