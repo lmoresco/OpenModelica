@@ -1,0 +1,21 @@
+// name: GenerateDocumentation
+// status: correct
+
+runScript("LoadCompilerSources.mos");
+/*
+loadFile("../../Compiler/BackEnd/BackendDAECreate.mo");
+loadFile("../../Compiler/BackEnd/BackendDAEEXT.mo");
+loadFile("../../Compiler/FrontEnd/Absyn.mo");
+loadFile("../../Compiler/Util/System.mo");
+loadFile("../../Compiler/Util/Util.mo");
+*/
+strs:=strtok(OpenModelica.Scripting.runScript("b.mos"),",\n}{");
+loadFile("GenerateDocumentation.mo");
+res:="<table><tr><th>Module</th><th>Short description</th><th>Description</th></tr>";
+lst:={};
+for s in strs loop
+  writeFile("c.mos","getClassInformation("+s+");getErrorString()");
+  lst := parseClassComment(OpenModelica.Scripting.runScript("c.mos")) :: lst;
+end for;
+writeFile("a.html",res+sortAppendLst(lst)+"</table>");
+getErrorString();
