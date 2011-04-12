@@ -37,7 +37,7 @@ end ArrayConstruct1;
 //   Real d[1,1,3] = 3.0;
 //   Real v[1] = 1.0;
 //   Real v[2] = 2.0;
-//   Real v[3] = Real(3.0);
+//   Real v[3] = 3.0;
 //   parameter Real alpha(unit = "rad") = 2.0;
 //   Real f[1] = alpha;
 //   Real f[2] = 2;
