@@ -2,7 +2,7 @@ package FCEmit "fcemit.rml"
 
 import FCode;
 
-protected function printInt
+function printInt
   input Integer i;
 protected
   String s;
@@ -11,7 +11,7 @@ algorithm
   print(s);
 end printInt;
 
-protected function foreach<Type_a>
+function foreach<Type_a>
   input FuncTypeType_aTo inFuncTypeTypeATo;
   input list<Type_a> inTypeALst;
   partial function FuncTypeType_aTo
@@ -34,7 +34,7 @@ algorithm
   end matchcontinue;
 end foreach;
 
-protected function map<Type_a,Type_b>
+function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
@@ -104,14 +104,14 @@ uniontype Arg
 
 end Arg;
 
-protected function emitStruct
+function emitStruct
   input Integer stamp;
 algorithm 
   print("struct rec");
   printInt(stamp);
 end emitStruct;
 
-protected function emitBase
+function emitBase
   input Base inBase;
 algorithm 
   _:=
@@ -132,7 +132,7 @@ algorithm
   end matchcontinue;
 end emitBase;
 
-protected function emitInvty
+function emitInvty
   input InvTy inInvTy;
 algorithm 
   _:=
@@ -174,7 +174,7 @@ algorithm
   end matchcontinue;
 end emitInvty;
 
-protected function emitArgs
+function emitArgs
   input list<Arg> inArgLst;
 algorithm 
   _:=
@@ -196,7 +196,7 @@ algorithm
   end matchcontinue;
 end emitArgs;
 
-protected function emitArg
+function emitArg
   input Arg inArg;
 algorithm 
   _:=
@@ -214,14 +214,14 @@ algorithm
   end matchcontinue;
 end emitArg;
 
-protected function emitCommaArg
+function emitCommaArg
   input Arg arg;
 algorithm 
   print(", ");
   emitArg(arg);
 end emitCommaArg;
 
-protected function invertTy
+function invertTy
   input InvTy inInvTy;
   input FCode.Ty inTy;
   output Base outBase;
@@ -254,7 +254,7 @@ algorithm
   end matchcontinue;
 end invertTy;
 
-protected function emitVar
+function emitVar
   input FCode.Var inVar;
 algorithm 
   _:=
@@ -275,7 +275,7 @@ algorithm
   end matchcontinue;
 end emitVar;
 
-protected function emitVarBnd
+function emitVarBnd
   input FCode.Var var;
 algorithm 
   print("\t");
@@ -283,7 +283,7 @@ algorithm
   print(";\n");
 end emitVarBnd;
 
-protected function emitRecBnds
+function emitRecBnds
   input list<FCode.Var> inFCodeVarLst;
   input String inString;
 algorithm 
@@ -304,7 +304,7 @@ algorithm
   end matchcontinue;
 end emitRecBnds;
 
-protected function emitRecord
+function emitRecord
   input FCode.Record inRecord;
 algorithm 
   _:=
@@ -328,7 +328,7 @@ algorithm
   end matchcontinue;
 end emitRecord;
 
-protected function emitUnop
+function emitUnop
   input FCode.UnOp inUnOp;
 algorithm 
   _:=
@@ -391,7 +391,7 @@ algorithm
   end matchcontinue;
 end emitUnop;
 
-protected function binopToStr
+function binopToStr
   input FCode.BinOp inBinOp;
   output String outString;
 algorithm 
@@ -423,7 +423,7 @@ algorithm
   end matchcontinue;
 end binopToStr;
 
-protected function emitExp
+function emitExp
   input FCode.Exp inExp;
 algorithm 
   _:=
@@ -484,14 +484,14 @@ algorithm
   end matchcontinue;
 end emitExp;
 
-protected function emitCommaExp
+function emitCommaExp
   input FCode.Exp exp;
 algorithm 
   print(", ");
   emitExp(exp);
 end emitCommaExp;
 
-protected function emitExps
+function emitExps
   input list<FCode.Exp> inFCodeExpLst;
 algorithm 
   _:=
@@ -509,7 +509,7 @@ algorithm
   end matchcontinue;
 end emitExps;
 
-protected function emitAssignRetval<Type_a>
+function emitAssignRetval<Type_a>
   input Option<tuple<Type_a, FCode.Exp>> inTplTypeAFCodeExpOption;
 algorithm 
   _:=
@@ -526,7 +526,7 @@ algorithm
   end matchcontinue;
 end emitAssignRetval;
 
-protected function emitStmt
+function emitStmt
   input FCode.Stmt inStmt;
 algorithm 
   _:=
@@ -591,7 +591,7 @@ algorithm
   end matchcontinue;
 end emitStmt;
 
-protected function convFormalDecl
+function convFormalDecl
   input FCode.Var inVar;
   output Arg outArg;
 algorithm 
@@ -609,7 +609,7 @@ algorithm
   end matchcontinue;
 end convFormalDecl;
 
-protected function emitProcHead
+function emitProcHead
   input Option<FCode.Ty> inFCodeTyOption;
   input String inString;
   input list<Arg> inArgLst;
@@ -642,7 +642,7 @@ algorithm
   end matchcontinue;
 end emitProcHead;
 
-protected function emitProcDecl
+function emitProcDecl
   input FCode.Proc inProc;
 algorithm 
   _:=
@@ -663,7 +663,7 @@ algorithm
   end matchcontinue;
 end emitProcDecl;
 
-protected function convFormalDefn
+function convFormalDefn
   input FCode.Var inVar;
   output Arg outArg;
 algorithm 
@@ -682,7 +682,7 @@ algorithm
   end matchcontinue;
 end convFormalDefn;
 
-protected function emitDeclRetval
+function emitDeclRetval
   input Option<FCode.Ty> inFCodeTyOption;
 algorithm 
   _:=
@@ -697,7 +697,7 @@ algorithm
   end matchcontinue;
 end emitDeclRetval;
 
-protected function emitReturnRetval<Type_a>
+function emitReturnRetval<Type_a>
   input Option<Type_a> inTypeAOption;
 algorithm 
   _:=
@@ -711,7 +711,7 @@ algorithm
   end matchcontinue;
 end emitReturnRetval;
 
-protected function emitLoadFormals
+function emitLoadFormals
   input list<FCode.Var> inFCodeVarLst;
   input String inString;
 algorithm 
@@ -736,7 +736,7 @@ algorithm
   end matchcontinue;
 end emitLoadFormals;
 
-protected function emitSetupDisplay
+function emitSetupDisplay
   input Integer inInteger;
   input list<FCode.Var> inFCodeVarLst;
   input FCode.Record inRecord;
@@ -767,7 +767,7 @@ algorithm
   end matchcontinue;
 end emitSetupDisplay;
 
-protected function emitRestoreDisplay
+function emitRestoreDisplay
   input Integer inInteger;
   input FCode.Record inRecord;
 algorithm 
@@ -785,7 +785,7 @@ algorithm
   end matchcontinue;
 end emitRestoreDisplay;
 
-protected function emitProcDefn
+function emitProcDefn
   input FCode.Proc inProc;
 algorithm 
   _:=
@@ -828,7 +828,7 @@ uniontype Cmp "
 
 end Cmp;
 
-protected function compare1
+function compare1
   input Integer inInteger1;
   input Integer inInteger2;
   output Cmp outCmp;
@@ -849,7 +849,7 @@ algorithm
   end matchcontinue;
 end compare1;
 
-protected function compare
+function compare
   input Integer inInteger1;
   input Integer inInteger2;
   output Cmp outCmp;
@@ -885,7 +885,7 @@ uniontype RTree
 
 end RTree;
 
-protected function insert
+function insert
   input FCode.Record inRecord;
   input RTree inRTree;
   output RTree outRTree;
@@ -907,7 +907,7 @@ algorithm
   end matchcontinue;
 end insert;
 
-protected function insert1
+function insert1
   input Cmp inCmp1;
   input FCode.Record inRecord2;
   input RTree inRTree3;
@@ -934,7 +934,7 @@ algorithm
   end matchcontinue;
 end insert1;
 
-protected function emitRecTree
+function emitRecTree
   input RTree inRTree;
 algorithm 
   _:=
@@ -953,7 +953,7 @@ algorithm
   end matchcontinue;
 end emitRecTree;
 
-protected function tyRecs
+function tyRecs
   input FCode.Ty inTy;
   input RTree inRTree;
   output RTree outRTree;
@@ -990,7 +990,7 @@ algorithm
   end matchcontinue;
 end tyRecs;
 
-protected function varsRecs
+function varsRecs
   input list<FCode.Var> inFCodeVarLst;
   input RTree inRTree;
   output RTree outRTree;
@@ -1011,7 +1011,7 @@ algorithm
   end matchcontinue;
 end varsRecs;
 
-protected function tyOptRecs
+function tyOptRecs
   input Option<FCode.Ty> inFCodeTyOption;
   input RTree inRTree;
   output RTree outRTree;
@@ -1030,7 +1030,7 @@ algorithm
   end matchcontinue;
 end tyOptRecs;
 
-protected function unopRecs
+function unopRecs
   input FCode.UnOp inUnOp;
   input RTree inRTree;
   output RTree outRTree;
@@ -1055,7 +1055,7 @@ algorithm
   end matchcontinue;
 end unopRecs;
 
-protected function expRecs
+function expRecs
   input FCode.Exp inExp;
   input RTree inRTree;
   output RTree outRTree;
@@ -1089,7 +1089,7 @@ algorithm
   end matchcontinue;
 end expRecs;
 
-protected function expsRecs
+function expsRecs
   input list<FCode.Exp> inFCodeExpLst;
   input RTree inRTree;
   output RTree outRTree;
@@ -1110,7 +1110,7 @@ algorithm
   end matchcontinue;
 end expsRecs;
 
-protected function stmtRecs
+function stmtRecs
   input FCode.Stmt inStmt;
   input RTree inRTree;
   output RTree outRTree;
@@ -1164,7 +1164,7 @@ algorithm
   end matchcontinue;
 end stmtRecs;
 
-protected function blockOptRecs
+function blockOptRecs
   input Option<FCode.Block> inFCodeBlockOption;
   input RTree inRTree;
   output RTree outRTree;
@@ -1185,7 +1185,7 @@ algorithm
   end matchcontinue;
 end blockOptRecs;
 
-protected function procRecs
+function procRecs
   input FCode.Proc inProc;
   input RTree inRTree;
   output RTree outRTree;
@@ -1207,7 +1207,7 @@ algorithm
   end matchcontinue;
 end procRecs;
 
-protected function procsRecs
+function procsRecs
   input list<FCode.Proc> inFCodeProcLst;
   input RTree inRTree;
   output RTree outRTree;
@@ -1228,7 +1228,7 @@ algorithm
   end matchcontinue;
 end procsRecs;
 
-protected function emitRecordDefns
+function emitRecordDefns
   input list<FCode.Proc> procs;
 protected
   RTree recs;

@@ -28,7 +28,7 @@ end Bnd;
 protected constant list<tuple<String, Bnd>> envInit={("read",PROC("petrol_read")),
           ("write",PROC("petrol_write")),("trunc",PROC("petrol_trunc"))};
 
-protected function lookup
+function lookup
   input list<tuple<String, Bnd>> inTplTypeATypeBLst;
   input String inTypeA;
   output Bnd outTypeB;
@@ -44,7 +44,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function map<Type_a,Type_b>
+function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
@@ -71,7 +71,7 @@ algorithm
   end matchcontinue;
 end map;
 
-protected function transTy ""
+function transTy ""
   input TCode.Ty inTy;
   output FCode.Ty outTy;
 algorithm 
@@ -105,7 +105,7 @@ algorithm
   end matchcontinue;
 end transTy;
 
-protected function transRec
+function transRec
   input TCode.Record inRecord;
   output FCode.Record outRecord;
 algorithm 
@@ -123,7 +123,7 @@ algorithm
   end matchcontinue;
 end transRec;
 
-protected function transVar
+function transVar
   input TCode.Var inVar;
   output FCode.Var outVar;
 algorithm 
@@ -141,7 +141,7 @@ algorithm
   end matchcontinue;
 end transVar;
 
-protected function transTyopt
+function transTyopt
   input Option<TCode.Ty> inTCodeTyOption;
   output Option<FCode.Ty> outFCodeTyOption;
 algorithm 
@@ -159,7 +159,7 @@ algorithm
   end matchcontinue;
 end transTyopt;
 
-protected function transUnop
+function transUnop
   input TCode.UnOp inUnOp;
   output FCode.UnOp outUnOp;
 algorithm 
@@ -194,7 +194,7 @@ algorithm
   end matchcontinue;
 end transUnop;
 
-protected function transBinop
+function transBinop
   input TCode.BinOp inBinOp;
   output FCode.BinOp outBinOp;
 algorithm 
@@ -253,7 +253,7 @@ algorithm
   end matchcontinue;
 end transBinop;
 
-protected function transProcid<Type_a>
+function transProcid<Type_a>
   input list<tuple<String, Bnd>> env;
   input String id;
   output String id_1;
@@ -267,7 +267,7 @@ algorithm
   end matchcontinue;
 end transProcid;
 
-protected function transExp
+function transExp
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input TCode.Exp inExp;
   output FCode.Exp outExp;
@@ -318,7 +318,7 @@ algorithm
   end matchcontinue;
 end transExp;
 
-protected function transArgs
+function transArgs
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<TCode.Exp> inTCodeExpLst;
   input list<FCode.Exp> inFCodeExpLst;
@@ -346,7 +346,7 @@ algorithm
   end matchcontinue;
 end transArgs;
 
-protected function transReturn
+function transReturn
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Option<tuple<TCode.Ty, TCode.Exp>> inTplTCodeTyTCodeExpOption;
   output Option<tuple<FCode.Ty, FCode.Exp>> outTplFCodeTyFCodeExpOption;
@@ -369,7 +369,7 @@ algorithm
   end matchcontinue;
 end transReturn;
 
-protected function transStmt
+function transStmt
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input TCode.Stmt inStmt;
   output FCode.Stmt outStmt;
@@ -430,7 +430,7 @@ algorithm
   end matchcontinue;
 end transStmt;
 
-protected function envPlusVars<Type_a>
+function envPlusVars<Type_a>
   input list<tuple<String, Type_a>> inTplStringTypeALst;
   input Type_a inTypeA;
   input list<FCode.Var> inFCodeVarLst;
@@ -453,7 +453,7 @@ algorithm
   end matchcontinue;
 end envPlusVars;
 
-protected function flattenProc
+function flattenProc
   input Scope inScope;
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input TCode.Proc inProc;
@@ -502,7 +502,7 @@ algorithm
   end matchcontinue;
 end flattenProc;
 
-protected function flattenProcs
+function flattenProcs
   input Scope inScope;
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<TCode.Proc> inTCodeProcLst;

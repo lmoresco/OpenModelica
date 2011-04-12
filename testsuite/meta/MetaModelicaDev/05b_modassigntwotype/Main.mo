@@ -4,7 +4,7 @@ import Absyn;
 import Parse;
 import Eval;
 
-protected function printvalue
+function printvalue
   input Eval.Value in_value;
 algorithm 
   _ :=
@@ -30,7 +30,7 @@ algorithm
   end matchcontinue;
 end printvalue;
 
-protected function eval_loop
+function eval_loop
   input Eval.Env in_env;
 algorithm 
   _ :=

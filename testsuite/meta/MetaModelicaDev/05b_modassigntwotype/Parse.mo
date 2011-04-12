@@ -8,17 +8,17 @@ import Absyn;
 // The OpenModelica implementation of RML knows how to generate stubs for
 // external C functions, and works fine there.
 
-protected function yyparse
+function yyparse
   output Integer i;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end yyparse;
 
-protected function getAST
+function getAST
   output Absyn.Exp exp;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;
 
-protected function parse2
+function parse2
   input Integer yyres;
   output Absyn.Exp out;
 algorithm

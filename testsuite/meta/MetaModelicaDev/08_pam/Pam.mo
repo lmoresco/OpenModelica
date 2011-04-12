@@ -105,7 +105,7 @@ type State = Env;
 
 import Input;
 
-protected function repeatEval "Auxiliary utility functions"
+function repeatEval "Auxiliary utility functions"
   input State inState;
   input Integer inInteger;
   input Stmt inStmt;
@@ -129,7 +129,7 @@ algorithm
   end matchcontinue;
 end repeatEval;
 
-protected function error
+function error
   input String inString1;
   input String inString2;
 algorithm 
@@ -146,7 +146,7 @@ algorithm
   end matchcontinue;
 end error;
 
-protected function inputItem
+function inputItem
   output Integer i;
 algorithm
   i := matchcontinue ()
@@ -160,7 +160,7 @@ algorithm
   end matchcontinue;
 end inputItem;
 
-protected function outputItem
+function outputItem
   input Integer i;
 protected
   Ident s;
@@ -169,7 +169,7 @@ algorithm
   print(s);
 end outputItem;
 
-protected function lookup "lookup returns the value associated with an identifier.
+function lookup "lookup returns the value associated with an identifier.
   If no association is present, lookup will fail.
   Identifier id is found in the first pair of the list, and value is returned."
   input Env inEnv;
@@ -187,7 +187,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function update
+function update
   input Env inEnv;
   input Ident inIdent;
   input Value inValue;
@@ -203,7 +203,7 @@ algorithm
   end matchcontinue;
 end update;
 
-protected function applyBinop "Arithmetic and functional operators"
+function applyBinop "Arithmetic and functional operators"
   input BinOp inBinOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -219,7 +219,7 @@ algorithm
   end matchcontinue;
 end applyBinop;
 
-protected function applyRelop
+function applyRelop
   input RelOp inRelOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -237,7 +237,7 @@ algorithm
   end matchcontinue;
 end applyRelop;
 
-protected function eval "Expression evaluation"
+function eval "Expression evaluation"
   input Env inEnv;
   input Exp inExp;
   output Value outValue;

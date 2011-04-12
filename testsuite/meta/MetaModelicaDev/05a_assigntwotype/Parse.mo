@@ -2,12 +2,12 @@ package Parse
 
 import AssignTwoType;
 
-protected function yyparse
+function yyparse
   output Integer i;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end yyparse;
 
-protected function getAST
+function getAST
   output AssignTwoType.Program program;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;

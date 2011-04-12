@@ -4,7 +4,7 @@ import Absyn;
 
 import Env;
 
-protected function binaryLub "Type lattice;  int --> real"
+function binaryLub "Type lattice;  int --> real"
   input Env.Value inValue1;
   input Env.Value inValue2;
   output Env.Value2 outValue2;
@@ -27,7 +27,7 @@ algorithm
   end matchcontinue;
 end binaryLub;
 
-protected function promote "Promotion and type check"
+function promote "Promotion and type check"
   input Env.Value inValue;
   input Env.Type inType;
   output Env.Value outValue;
@@ -48,7 +48,7 @@ algorithm
   end matchcontinue;
 end promote;
 
-protected function applyIntBinary "Auxiliary functions for applying the binary operators"
+function applyIntBinary "Auxiliary functions for applying the binary operators"
   input Absyn.BinOp inBinOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -63,7 +63,7 @@ algorithm
   end matchcontinue;
 end applyIntBinary;
 
-protected function applyRealBinary
+function applyRealBinary
   input Absyn.BinOp inBinOp1;
   input Real inReal2;
   input Real inReal3;
@@ -78,7 +78,7 @@ algorithm
   end matchcontinue;
 end applyRealBinary;
 
-protected function applyIntUnary "Auxiliary functions for applying the unary operators"
+function applyIntUnary "Auxiliary functions for applying the unary operators"
   input Absyn.UnOp inUnOp;
   input Integer inInteger;
   output Integer outInteger;
@@ -90,7 +90,7 @@ algorithm
   end matchcontinue;
 end applyIntUnary;
 
-protected function applyRealUnary
+function applyRealUnary
   input Absyn.UnOp inUnOp;
   input Real inReal;
   output Real outReal;
@@ -102,7 +102,7 @@ algorithm
   end matchcontinue;
 end applyRealUnary;
 
-protected function applyIntRelation "Auxiliary functions for applying the function operators"
+function applyIntRelation "Auxiliary functions for applying the function operators"
   input Absyn.RelOp inRelOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -120,7 +120,7 @@ algorithm
   end matchcontinue;
 end applyIntRelation;
 
-protected function applyRealRelation
+function applyRealRelation
   input Absyn.RelOp inRelOp1;
   input Real inReal2;
   input Real inReal3;
@@ -138,7 +138,7 @@ algorithm
   end matchcontinue;
 end applyRealRelation;
 
-protected function evalExpr "EVALUATE A SINGLE EXPRESSION in an environment. Return
+function evalExpr "EVALUATE A SINGLE EXPRESSION in an environment. Return
    the new value. Expressions do not change environments."
   input Env.Env inEnv;
   input Absyn.Expr inExpr;
@@ -221,7 +221,7 @@ algorithm
   end matchcontinue;
 end evalExpr;
 
-protected function printValue "EVALUATING STATEMENTS
+function printValue "EVALUATING STATEMENTS
   Print a value - the \"write\" statement"
   input Env.Value inValue;
 algorithm 
@@ -250,7 +250,7 @@ algorithm
   end matchcontinue;
 end printValue;
 
-protected function evalStmt "Evaluate a single statement. Pass environment forward."
+function evalStmt "Evaluate a single statement. Pass environment forward."
   input Env.Env inEnv;
   input Absyn.Stmt inStmt;
   output Env.Env outEnv;
@@ -310,7 +310,7 @@ algorithm
   end matchcontinue;
 end evalStmt;
 
-protected function evalStmtList "Evaluate a list of statements in an environent.
+function evalStmtList "Evaluate a list of statements in an environent.
    Pass environment forward"
   input Env.Env inEnv;
   input Absyn.StmtList inStmtList;
@@ -330,7 +330,7 @@ algorithm
   end matchcontinue;
 end evalStmtList;
 
-protected function evalDecl "EVALUATING DECLARATIONS
+function evalDecl "EVALUATING DECLARATIONS
   Evaluate a single statement. Pass environment forward."
   input Env.Env inEnv;
   input Absyn.Decl inDecl;
@@ -353,7 +353,7 @@ algorithm
   end matchcontinue;
 end evalDecl;
 
-protected function evalDeclList "Evaluate a list of declarations, extending the environent."
+function evalDeclList "Evaluate a list of declarations, extending the environent."
   input Env.Env inEnv;
   input Absyn.DeclList inDeclList;
   output Env.Env outEnv;

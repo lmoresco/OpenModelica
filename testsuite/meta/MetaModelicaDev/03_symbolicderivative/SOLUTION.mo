@@ -56,7 +56,7 @@ algorithm
   i := 0;
 end main;
 
-protected function diff
+function diff
   input Exp expr;
   input String timevar;
   output Exp diffExpr;
@@ -129,7 +129,7 @@ algorithm
   end matchcontinue;
 end diff;
 
-protected function simplifyExp
+function simplifyExp
 "When differentating an expression, you often end up with lots of expressions
 that you can simplify (e.g. 1*x = x).
 simplifyExp simplifies leaf nodes first because if we did everything in one
@@ -183,7 +183,7 @@ algorithm
   end matchcontinue;
 end simplifyExp;
 
-protected function simplifyExpList
+function simplifyExpList
   input list<Exp> exprList;
   output list<Exp> simpleExprList;
 algorithm
@@ -200,7 +200,7 @@ algorithm
   end matchcontinue;
 end simplifyExpList;
 
-protected function simplifyExp2
+function simplifyExp2
   input Exp expr;
   output Exp simpleExpr;
 algorithm
@@ -266,7 +266,7 @@ algorithm
   print(str);
 end printExp;
   
-protected function expStr
+function expStr
 "Translates an Exp into a String"
   input Exp exp;
   output String str;
@@ -300,7 +300,7 @@ algorithm
   end matchcontinue;
 end expStr;
 
-protected function expListStr
+function expListStr
 "Translates a list of Exp into a comma-separated String"
   input list<Exp> expList;
   output String str;
@@ -320,7 +320,7 @@ algorithm
   end matchcontinue;
 end expListStr;
 
-protected function binExpStr
+function binExpStr
 "Translates a binary expression (lhs op rhs) into a String"
   input Exp lhs;
   input String op;

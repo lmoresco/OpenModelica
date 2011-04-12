@@ -84,7 +84,7 @@ uniontype Ty2 "Ty2 is an auxiliary datatype used to handle types during evaluati
     
 end Ty2;
 
-protected function printvalue
+function printvalue
   input Value inValue;
 algorithm 
   _:=
@@ -127,7 +127,7 @@ algorithm
   end matchcontinue;
 end evalprogram;
 
-protected function evals
+function evals
   input Env inEnv;
   input ExpLst inExpLst;
   output Env outEnv;
@@ -146,7 +146,7 @@ algorithm
   end matchcontinue;
 end evals;
 
-protected function eval
+function eval
   input Env inEnv;
   input Exp inExp;
   output Env outEnv;
@@ -204,7 +204,7 @@ algorithm
   end matchcontinue;
 end eval;
 
-protected function typeLub
+function typeLub
   input Value inValue1;
   input Value inValue2;
   output Ty2 outTy2;
@@ -228,7 +228,7 @@ algorithm
   end matchcontinue;
 end typeLub;
 
-protected function applyIntBinop
+function applyIntBinop
   input BinOp inBinOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -244,7 +244,7 @@ algorithm
   end matchcontinue;
 end applyIntBinop;
 
-protected function applyRealBinop
+function applyRealBinop
   input BinOp inBinOp1;
   input Real inReal2;
   input Real inReal3;
@@ -260,7 +260,7 @@ algorithm
   end matchcontinue;
 end applyRealBinop;
 
-protected function applyIntUnop
+function applyIntUnop
   input UnOp inUnOp;
   input Integer inInteger;
   output Integer outInteger;
@@ -272,7 +272,7 @@ algorithm
   end matchcontinue;
 end applyIntUnop;
 
-protected function applyRealUnop
+function applyRealUnop
   input UnOp inUnOp;
   input Real inReal;
   output Real outReal;
@@ -284,7 +284,7 @@ algorithm
   end matchcontinue;
 end applyRealUnop;
 
-protected function lookup "lookup returns the value associated with an identifier.
+function lookup "lookup returns the value associated with an identifier.
   If no association is present, lookup will fail.
   Identifier id is found in the first pair of the list, and value is returned."
   input Env inEnv;
@@ -302,7 +302,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function lookupextend
+function lookupextend
   input Env inEnv;
   input Ident inIdent;
   output Env outEnv;
@@ -326,7 +326,7 @@ algorithm
   end matchcontinue;
 end lookupextend;
 
-protected function update
+function update
   input Env inEnv;
   input Ident inIdent;
   input Value inValue;

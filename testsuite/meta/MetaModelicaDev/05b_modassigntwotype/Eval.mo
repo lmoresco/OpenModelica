@@ -29,7 +29,7 @@ uniontype Ty2 " Ty2 is an auxiliary datatype used to handle types during evaluat
   end REAL2;
 end Ty2;
 
-protected function lookup "lookup returns the value associated with an identifier.
+function lookup "lookup returns the value associated with an identifier.
   If no association is present, lookup will fail.
   Identifier id is found in the first pair of the list, and value is returned."
   input Env inEnv;
@@ -47,7 +47,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function lookupextend
+function lookupextend
   input Env inEnv;
   input String inIdent;
   output Env outEnv;
@@ -71,7 +71,7 @@ algorithm
   end matchcontinue;
 end lookupextend;
 
-protected function update
+function update
   input Env in_env;
   input Absyn.Ident in_ident;
   input Value in_value;
@@ -87,7 +87,7 @@ algorithm
   end matchcontinue;
 end update;
 
-protected function type_lub
+function type_lub
   input Value in_value1;
   input Value in_value2;
   output Ty2 out_ty2;
@@ -111,7 +111,7 @@ algorithm
   end matchcontinue;
 end type_lub;
 
-protected function apply_int_binop "************** Binary and unary operators **************"
+function apply_int_binop "************** Binary and unary operators **************"
   input Absyn.BinOp in_binop1;
   input Integer in_integer2;
   input Integer in_integer3;
@@ -127,7 +127,7 @@ algorithm
   end matchcontinue;
 end apply_int_binop;
 
-protected function apply_real_binop
+function apply_real_binop
   input Absyn.BinOp in_binop1;
   input Real in_real2;
   input Real in_real3;
@@ -143,7 +143,7 @@ algorithm
   end matchcontinue;
 end apply_real_binop;
 
-protected function apply_int_unop
+function apply_int_unop
   input Absyn.UnOp AbsynNEG;
   input Integer x;
   output Integer y;
@@ -151,7 +151,7 @@ algorithm
   y := -x;
 end apply_int_unop;
 
-protected function apply_real_unop
+function apply_real_unop
   input Absyn.UnOp AbsynNEG;
   input Real x;
   output Real y;

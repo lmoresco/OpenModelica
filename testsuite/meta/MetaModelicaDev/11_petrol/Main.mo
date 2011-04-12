@@ -9,7 +9,7 @@ import Static;
 import Flatten;
 import FCEmit;
 
-protected function emit
+function emit
   input FCode.Prog inProg;
 algorithm 
   _:=
@@ -29,7 +29,7 @@ algorithm
   end matchcontinue;
 end emit;
 
-protected function flatten
+function flatten
   input TCode.Prog inProg;
 algorithm 
   _:=
@@ -52,7 +52,7 @@ algorithm
   end matchcontinue;
 end flatten;
 
-protected function static
+function static
   input Absyn.Prog inProg;
 algorithm 
   _:=

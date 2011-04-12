@@ -53,7 +53,7 @@ uniontype Record
 
 end Record;
 
-protected function unfoldTy "Inspect a record by unfolding it one level
+function unfoldTy "Inspect a record by unfolding it one level
 "
   input Ty inTy;
   input Record inRecord;
@@ -89,7 +89,7 @@ algorithm
   end matchcontinue;
 end unfoldTy;
 
-protected function unfoldBnds
+function unfoldBnds
   input Record inRecord1;
   input list<tuple<String, Ty>> inTplStringTyLst2;
   input list<tuple<String, Ty>> inTplStringTyLst3;
@@ -190,7 +190,7 @@ algorithm
   end matchcontinue;
 end recCnv;
 
-protected function bndsCnv
+function bndsCnv
   input list<tuple<String, Ty>> inTplStringTyLst;
   input list<TCode.Var> inTCodeVarLst;
   output list<TCode.Var> outTCodeVarLst;
@@ -245,7 +245,7 @@ algorithm
   end matchcontinue;
 end decay;
 
-protected function asgCnv1 "Convert the rhs of an assignment to the type of the lhs.
+function asgCnv1 "Convert the rhs of an assignment to the type of the lhs.
   Ditto for return <exp>.
   Arithmetic types are widened or narrowed as necessary.
   The generic null pointer is made type-specific.
@@ -394,7 +394,7 @@ algorithm
   end matchcontinue;
 end condCnv;
 
-protected function arithLub "Compute the least upper bound of two decayed arithmetic rvalue types
+function arithLub "Compute the least upper bound of two decayed arithmetic rvalue types
 "
   input ATy inATy1;
   input ATy inATy2;
@@ -409,7 +409,7 @@ algorithm
   end matchcontinue;
 end arithLub;
 
-protected function arithWiden "Widen a decayed arithmetic rvalue
+function arithWiden "Widen a decayed arithmetic rvalue
 "
   input TCode.Exp inExp1;
   input ATy inATy2;
@@ -426,7 +426,7 @@ algorithm
   end matchcontinue;
 end arithWiden;
 
-protected function arithCnv "Usual arithmetic conversions.
+function arithCnv "Usual arithmetic conversions.
   Widen two decayed arithmetic rvalues to their lub.
 "
   input TCode.Exp inExp1;
@@ -452,7 +452,7 @@ algorithm
   end matchcontinue;
 end arithCnv;
 
-protected function chooseIntReal<Type_a> "Elaborate an equality expression.
+function chooseIntReal<Type_a> "Elaborate an equality expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening
   or instantiation of the polymorphic nil pointer.
@@ -472,7 +472,7 @@ algorithm
   end matchcontinue;
 end chooseIntReal;
 
-protected function ptrEqNull
+function ptrEqNull
   input TCode.Exp exp;
   input Ty ty;
   output TCode.Exp outExp;
@@ -524,7 +524,7 @@ algorithm
   end matchcontinue;
 end eqCnv;
 
-protected function ptrRelop "Elaborate a function expression.
+function ptrRelop "Elaborate a function expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening.
   Choose int, real, or ptr/ptr version of function operator.
@@ -542,7 +542,7 @@ algorithm
   end matchcontinue;
 end ptrRelop;
 
-protected function intRelop
+function intRelop
   input Absyn.RelOp inRelOp;
   output TCode.BinOp outBinOp;
 algorithm 
@@ -552,7 +552,7 @@ algorithm
   end matchcontinue;
 end intRelop;
 
-protected function realRelop
+function realRelop
   input Absyn.RelOp inRelOp;
   output TCode.BinOp outBinOp;
 algorithm 
@@ -563,7 +563,7 @@ algorithm
   end matchcontinue;
 end realRelop;
 
-protected function intOrRealRelop
+function intOrRealRelop
   input ATy inATy;
   input Absyn.RelOp inRelOp;
   output TCode.BinOp outBinOp;
@@ -619,7 +619,7 @@ algorithm
   end matchcontinue;
 end relCnv;
 
-protected function ptrAddIntCnv<Type_a> "Elaborate an addition expression.
+function ptrAddIntCnv<Type_a> "Elaborate an addition expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening.
   Choose int, real, or ptr/int version of the addition operator.
@@ -647,7 +647,7 @@ algorithm
   end matchcontinue;
 end ptrAddIntCnv;
 
-protected function addCnv
+function addCnv
   input TCode.Exp inExp1;
   input Ty inTy2;
   input TCode.Exp inExp3;
@@ -680,7 +680,7 @@ algorithm
   end matchcontinue;
 end addCnv;
 
-protected function subCnv "Elaborate a subtraction expression.
+function subCnv "Elaborate a subtraction expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening.
   Choose int, real, ptr/int, or ptr/ptr version of the subtraction operator.
@@ -721,7 +721,7 @@ algorithm
   end matchcontinue;
 end subCnv;
 
-protected function mulCnv "Elaborate a multiplication expression.
+function mulCnv "Elaborate a multiplication expression.
   The arguments are already elaborated as decayed rvalues.
   Make arguments compatible, if necessary by arithmetic widening.
   Choose int or real version of the multiplication operator.
@@ -749,7 +749,7 @@ algorithm
   end matchcontinue;
 end mulCnv;
 
-protected function rdivCnv "Elaborate a real division expression.
+function rdivCnv "Elaborate a real division expression.
   The arguments are already elaborated as decayed rvalues.
   Widen both arguments to reals.
   Return elaborated expression and its type (always real).
@@ -775,7 +775,7 @@ algorithm
   end matchcontinue;
 end rdivCnv;
 
-protected function intopCnv "Elaborate an integer operator expression.
+function intopCnv "Elaborate an integer operator expression.
   The arguments are already elaborated as decayed rvalues.
   Verify arguments. Return elaborated expression and its type (always int).
 "

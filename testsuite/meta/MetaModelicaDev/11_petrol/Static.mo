@@ -5,7 +5,7 @@ import TCode;
 
 import Types;
 
-protected function map<Type_a,Type_b>
+function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
   input list<Type_a> inTypeALst;
   output list<Type_b> outTypeBLst;
@@ -79,7 +79,7 @@ protected constant list<tuple<String, Bnd>> envInit={("integer",TYPEbnd(Types.AR
           ("trunc",
           FUNCbnd({Types.ARITH(Types.REAL())},Types.ARITH(Types.INT()))),("nil",NILbnd())};
 
-protected function lookup<Type_a,Type_b>
+function lookup<Type_a,Type_b>
   input list<tuple<Type_a, Type_b>> inTplTypeATypeBLst;
   input Type_a inTypeA;
   output Type_b outTypeB;
@@ -95,7 +95,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function elabConstant "Constants and Types
+function elabConstant "Constants and Types
 "
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Constant inConstant;
@@ -119,7 +119,7 @@ algorithm
   end matchcontinue;
 end elabConstant;
 
-protected function elabConst
+function elabConst
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.ConBnd inConBnd;
   output list<tuple<String, Bnd>> outTplStringBndLst;
@@ -139,7 +139,7 @@ algorithm
   end matchcontinue;
 end elabConst;
 
-protected function elabConsts
+function elabConsts
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.ConBnd> inAbsynConBndLst;
   output list<tuple<String, Bnd>> outTplStringBndLst;
@@ -161,7 +161,7 @@ algorithm
   end matchcontinue;
 end elabConsts;
 
-protected function elabTy
+function elabTy
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Ty inTy;
   output Types.Ty outTy;
@@ -202,7 +202,7 @@ algorithm
   end matchcontinue;
 end elabTy;
 
-protected function elabTyBnds
+function elabTyBnds
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.VarBnd> inAbsynVarBndLst;
   input list<tuple<String, Types.Ty>> inTplStringTypesTyLst;
@@ -231,7 +231,7 @@ algorithm
   end matchcontinue;
 end elabTyBnds;
 
-protected function isunfold
+function isunfold
   input Types.Ty inTy;
   output Boolean outBoolean;
 algorithm 
@@ -245,7 +245,7 @@ algorithm
   end matchcontinue;
 end isunfold;
 
-protected function checkTy
+function checkTy
   input Types.Ty inTy;
 algorithm 
   _:=
@@ -278,7 +278,7 @@ algorithm
   end matchcontinue;
 end checkTy;
 
-protected function checkBnds
+function checkBnds
   input list<tuple<String, Types.Ty>> inTplStringTypesTyLst;
 algorithm 
   _:=
@@ -308,7 +308,7 @@ uniontype IsRec
 
 end IsRec;
 
-protected function isrec
+function isrec
   input Absyn.Ty inTy;
   output IsRec outIsRec;
 algorithm 
@@ -324,7 +324,7 @@ algorithm
   end matchcontinue;
 end isrec;
 
-protected function elabTybnd1
+function elabTybnd1
   input IsRec inIsRec;
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input String inString;
@@ -355,7 +355,7 @@ algorithm
   end matchcontinue;
 end elabTybnd1;
 
-protected function elabTybnd
+function elabTybnd
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.TyBnd inTyBnd;
   output list<tuple<String, Bnd>> outTplStringBndLst;
@@ -377,7 +377,7 @@ algorithm
   end matchcontinue;
 end elabTybnd;
 
-protected function elabTypes
+function elabTypes
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.TyBnd> inAbsynTyBndLst;
   output list<tuple<String, Bnd>> outTplStringBndLst;
@@ -398,7 +398,7 @@ algorithm
   end matchcontinue;
 end elabTypes;
 
-protected function lvalueId<Type_a,Type_b> "
+function lvalueId<Type_a,Type_b> "
   Expressions
 
   function lvalueId =
@@ -421,7 +421,7 @@ algorithm
   end matchcontinue;
 end lvalueId;
 
-protected function mkload
+function mkload
   input Types.Ty ty;
   input TCode.Exp addr;
   output TCode.Exp outExp;
@@ -432,7 +432,7 @@ algorithm
   outExp := TCode.UNARY(TCode.LOAD(ty_1),addr);
 end mkload;
 
-protected function rvalueVar
+function rvalueVar
   input Types.Ty inTy;
   input TCode.Exp inExp;
   output TCode.Exp outExp;
@@ -467,7 +467,7 @@ algorithm
   end matchcontinue;
 end rvalueVar;
 
-protected function rvalueId
+function rvalueId
   input Bnd inBnd;
   input String inString;
   output TCode.Exp outExp;
@@ -492,7 +492,7 @@ algorithm
   end matchcontinue;
 end rvalueId;
 
-protected function elabArg
+function elabArg
   input list<tuple<String, Bnd>> env;
   input Absyn.Exp exp;
   input Types.Ty ty;
@@ -505,7 +505,7 @@ algorithm
   exp_2 := Types.asgCnv(exp_1, ty_1, ty) "no auto decay" ;
 end elabArg;
 
-protected function elabArgs
+function elabArgs
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.Exp> inAbsynExpLst;
   input list<Types.Ty> inTypesTyLst;
@@ -536,7 +536,7 @@ algorithm
   end matchcontinue;
 end elabArgs;
 
-protected function elabUnaryRvalue
+function elabUnaryRvalue
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.UnOp inUnOp;
   input Absyn.Exp inExp;
@@ -571,7 +571,7 @@ algorithm
   end matchcontinue;
 end elabUnaryRvalue;
 
-protected function elabRvalue
+function elabRvalue
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Exp inExp;
   output TCode.Exp outExp;
@@ -651,7 +651,7 @@ algorithm
   end matchcontinue;
 end elabRvalue;
 
-protected function elabRvalueDecay
+function elabRvalueDecay
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Exp inExp;
   output TCode.Exp outExp;
@@ -672,7 +672,7 @@ algorithm
   end matchcontinue;
 end elabRvalueDecay;
 
-protected function elabLvalue "
+function elabLvalue "
   LValue Expressions.
   Elaboration results in (exp,ty), where exp evaluates to
   _a_pointer_to_ the lvalue, and ty is its type.
@@ -709,7 +709,7 @@ algorithm
   end matchcontinue;
 end elabLvalue;
 
-protected function elabField
+function elabField
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Exp inExp;
   input String inString;
@@ -739,7 +739,7 @@ algorithm
   end matchcontinue;
 end elabField;
 
-protected function elabStmt "
+function elabStmt "
   Statements
 "
   input Option<Types.Ty> inTypesTyOption;
@@ -808,7 +808,7 @@ algorithm
   end matchcontinue;
 end elabStmt;
 
-protected function elabVar "
+function elabVar "
   Declarations
 "
   input list<tuple<String, Bnd>> inTplStringBndLst;
@@ -831,7 +831,7 @@ algorithm
   end matchcontinue;
 end elabVar;
 
-protected function elabVars
+function elabVars
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.VarBnd> inAbsynVarBndLst;
   input list<tuple<String, Types.Ty>> inTplStringTypesTyLst;
@@ -860,7 +860,7 @@ algorithm
   end matchcontinue;
 end elabVars;
 
-protected function mkvar
+function mkvar
   input tuple<String, Types.Ty> inTplStringTypesTy;
   output TCode.Var outVar;
 algorithm 
@@ -878,7 +878,7 @@ algorithm
   end matchcontinue;
 end mkvar;
 
-protected function mkvarbnd<Type_a>
+function mkvarbnd<Type_a>
   input tuple<Type_a, Types.Ty> inTplTypeATypesTy;
   output tuple<Type_a, Bnd> outTplTypeABnd;
 algorithm 
@@ -891,7 +891,7 @@ algorithm
   end matchcontinue;
 end mkvarbnd;
 
-protected function decayFormalTy
+function decayFormalTy
   input Types.Ty inTy;
   output Types.Ty outTy;
 algorithm 
@@ -905,7 +905,7 @@ algorithm
   end matchcontinue;
 end decayFormalTy;
 
-protected function decayFormal<Type_a>
+function decayFormal<Type_a>
   input tuple<Type_a, Types.Ty> inTplTypeATypesTy;
   output tuple<Type_a, Types.Ty> outTplTypeATypesTy;
 algorithm 
@@ -922,7 +922,7 @@ algorithm
   end matchcontinue;
 end decayFormal;
 
-protected function snd<Type_a,Type_b>
+function snd<Type_a,Type_b>
   input tuple<Type_a, Type_b> inTplTypeATypeB;
   output Type_b outTypeB;
 algorithm 
@@ -933,7 +933,7 @@ algorithm
   end matchcontinue;
 end snd;
 
-protected function elabFormals
+function elabFormals
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.VarBnd> inAbsynVarBndLst;
   output list<TCode.Var> outTCodeVarLst;
@@ -960,7 +960,7 @@ algorithm
   end matchcontinue;
 end elabFormals;
 
-protected function elabSubbnd
+function elabSubbnd
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.SubBnd inSubBnd;
   output list<tuple<String, Bnd>> outTplStringBndLst;
@@ -1001,7 +1001,7 @@ algorithm
   end matchcontinue;
 end elabSubbnd;
 
-protected function elabSubbnds
+function elabSubbnds
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input list<Absyn.SubBnd> inAbsynSubBndLst;
   input list<TCode.Proc> inTCodeProcLst;
@@ -1030,7 +1030,7 @@ algorithm
   end matchcontinue;
 end elabSubbnds;
 
-protected function elabBody
+function elabBody
   input Option<Types.Ty> inTypesTyOption;
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Option<Absyn.Block> inAbsynBlockOption;
@@ -1052,7 +1052,7 @@ algorithm
   end matchcontinue;
 end elabBody;
 
-protected function elabBlock
+function elabBlock
   input Option<Types.Ty> inTypesTyOption;
   input list<tuple<String, Bnd>> inTplStringBndLst;
   input Absyn.Block inBlock;

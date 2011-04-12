@@ -56,7 +56,7 @@ algorithm
   end matchcontinue;
 end eval;
 
-protected function applyBinop
+function applyBinop
   input BinOp inBinOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -72,7 +72,7 @@ algorithm
   end matchcontinue;
 end applyBinop;
 
-protected function applyUnop
+function applyUnop
   input UnOp inUnOp;
   input Integer inInteger;
   output Integer outInteger;

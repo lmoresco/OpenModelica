@@ -2,12 +2,12 @@ package Parse
 
 import Assignment;
 
-protected function yyparse
+function yyparse
   output Integer i;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end yyparse;
 
-protected function getAST
+function getAST
   output Assignment.Program program;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;

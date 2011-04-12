@@ -3,7 +3,7 @@ package Trans
 import Absyn;
 import Mcode;
 
-protected function transExpr "Arithmetic expression translation
+function transExpr "Arithmetic expression translation
   Evaluation of expressions in the current environment"
   input Absyn.Exp inExp;
   output Mcode_MCodeLst outMcodeMCodeLst;
@@ -42,7 +42,7 @@ algorithm
   end matchcontinue;
 end transExpr;
 
-protected function transBinop
+function transBinop
   input Absyn.BinOp inBinOp;
   output Mcode.MBinOp outMBinOp;
 algorithm 
@@ -55,7 +55,7 @@ algorithm
   end matchcontinue;
 end transBinop;
 
-protected function gentemp
+function gentemp
   output Mcode.MOperand outMOperand;
 protected
   Integer no;
@@ -64,7 +64,7 @@ algorithm
   outMOperand := Mcode.T(no);
 end gentemp;
 
-protected function genlabel
+function genlabel
   output Mcode.MOperand outMOperand;
 protected
   Integer no;
@@ -73,7 +73,7 @@ algorithm
   outMOperand := Mcode.L(no);
 end genlabel;
 
-protected function listAppend3<Type_a>
+function listAppend3<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -86,7 +86,7 @@ algorithm
   l13 := listAppend(l12, l3);
 end listAppend3;
 
-protected function listAppend5<Type_a>
+function listAppend5<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -101,7 +101,7 @@ algorithm
   l15 := listAppend3(l13, l4, l5);
 end listAppend5;
 
-protected function listAppend6<Type_a>
+function listAppend6<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -118,7 +118,7 @@ algorithm
   l16 := listAppend(l13, l46);
 end listAppend6;
 
-protected function listAppend10<Type_a>
+function listAppend10<Type_a>
   input VType_aLst l1;
   input VType_aLst l2;
   input VType_aLst l3;
@@ -138,7 +138,7 @@ algorithm
   l110 := listAppend6(l15, l6, l7, l8, l9, l10);
 end listAppend10;
 
-protected function transComparison
+function transComparison
   input Absyn.Comparison inComparison;
   input Mcode.MOperand inMOperand;
   output Mcode_MCodeLst outMcodeMCodeLst;
@@ -186,7 +186,7 @@ algorithm
   end matchcontinue;
 end transComparison;
 
-protected function transRelop
+function transRelop
   input Absyn.RelOp inRelOp;
   output Mcode.MCondJmp outMCondJmp;
 algorithm 
@@ -201,7 +201,7 @@ algorithm
   end matchcontinue;
 end transRelop;
 
-protected function transStmt "Statement translation"
+function transStmt "Statement translation"
   input Absyn.Stmt inStmt;
   output Mcode_MCodeLst outMcodeMCodeLst;
   type Mcode_MCodeLst = list<Mcode.MCode>;

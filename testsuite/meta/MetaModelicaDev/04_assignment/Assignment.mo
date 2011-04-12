@@ -55,7 +55,7 @@ type VarBnd = tuple<Ident,Value> "Bindings and environments";
 
 type Env = list<VarBnd>;
 
-protected function lookup "lookup returns the value associated with an identifier.
+function lookup "lookup returns the value associated with an identifier.
   If no association is present, lookup will fail."
   input Env inEnv;
   input Ident inIdent;
@@ -72,7 +72,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-protected function lookupextend
+function lookupextend
   input Env inEnv;
   input Ident inIdent;
   output Env outEnv;
@@ -95,7 +95,7 @@ algorithm
   end matchcontinue;
 end lookupextend;
 
-protected function update
+function update
   input Env env;
   input Ident id;
   input Value value;
@@ -104,7 +104,7 @@ algorithm
   outEnv := (id,value) :: env;
 end update;
 
-protected function applyBinop
+function applyBinop
   input BinOp inBinOp1;
   input Integer inInteger2;
   input Integer inInteger3;
@@ -120,7 +120,7 @@ algorithm
   end matchcontinue;
 end applyBinop;
 
-protected function applyUnop
+function applyUnop
   input UnOp inUnOp;
   input Integer inInteger;
   output Integer outInteger;
@@ -131,7 +131,7 @@ algorithm
   end match;
 end applyUnop;
 
-protected function eval
+function eval
   input Env inEnv;
   input Exp inExp;
   output Env outEnv;
@@ -174,7 +174,7 @@ algorithm
   end matchcontinue;
 end eval;
 
-protected function evals
+function evals
   input Env inEnv;
   input ExpLst inExpLst;
   output Env outEnv;
