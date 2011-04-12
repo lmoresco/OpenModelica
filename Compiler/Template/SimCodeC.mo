@@ -11483,6 +11483,7 @@ algorithm
     local
       Tpl.Text txt;
       DAE.ComponentRef i_componentRef;
+      list<DAE.Subscript> i_subscriptLst;
       DAE.Ident i_ident;
       String ret_1;
       String ret_0;
@@ -11495,10 +11496,11 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CREF_QUAL(ident = i_ident, componentRef = i_componentRef) )
+           DAE.CREF_QUAL(ident = i_ident, subscriptLst = i_subscriptLst, componentRef = i_componentRef) )
       equation
         ret_1 = System.unquoteIdentifier(i_ident);
         txt = Tpl.writeStr(txt, ret_1);
+        txt = subscriptsToCStr(txt, i_subscriptLst);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("$P"));
         txt = arrayCrefCStr2(txt, i_componentRef);
       then txt;

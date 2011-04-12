@@ -42,6 +42,7 @@ ExtObj.mos ExtObjStringParam.mos \
 FiveForEquations.mos \
 FlatTank.mos \
 ForIterator1.mos ForIterator2.mos \
+FrameTest.mos \
 FuncDer.mos  \
 FunctionIndirectRecursion.mos \
 FunctionIndirectRecursion2.mos \
