@@ -26,7 +26,7 @@ $(RECS): main_records.o
 	rm -f $@
 	ar -ru $@ $<
 	ranlib $@
-main_records.o: main_records.c ../../build/include/omc/OpenModelicaBootstrappingHeader.h
+main_records.o: main_records.c ../../build/include/omc/OpenModelicaBootstrappingHeader.h Main_main_records.c
 	$(CXX) $(CFLAGS) -c $(CPPFLAGS) -o $@ $<
 Main_main2.o: Main_main2.c
 	$(CXX) $(CFLAGS) -c $(CPPFLAGS) -o Main_main2.o Main_main2.c
