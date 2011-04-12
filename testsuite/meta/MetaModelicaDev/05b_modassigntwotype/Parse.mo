@@ -28,7 +28,7 @@ algorithm
  end matchcontinue;
 end parse2;
 
-public function parse
+function parse
   output Absyn.Exp exp;
 protected
   Integer yyres;

@@ -1,8 +1,8 @@
 package ScanParse
 
-public import Absyn;
+import Absyn;
 
-public function scanparse
+function scanparse
   output Absyn.Prog outProg;
 external "C" outProg = parse() annotation(Library = {"lexer.o","parser.o"});
 end scanparse;

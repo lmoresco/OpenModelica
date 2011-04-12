@@ -1,7 +1,7 @@
 package Trans
 
-public import Absyn;
-public import Mcode;
+import Absyn;
+import Mcode;
 
 protected function transExpr "Arithmetic expression translation
   Evaluation of expressions in the current environment"
@@ -269,7 +269,7 @@ algorithm
   end matchcontinue;
 end transStmt;
 
-public function transProgram
+function transProgram
   input Absyn.Stmt progbody;
   output Mcode_MCodeLst programcode;
   type Mcode_MCodeLst = list<Mcode.MCode>;

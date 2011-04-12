@@ -8,10 +8,8 @@ package Absyn "Absyn.mo
  	exp1 > exp2	==> exp2 < exp1
 "
 
-public 
 type Ident = String;
 
-public 
 uniontype Constant
   record INTcon
     Integer integer;
@@ -26,7 +24,6 @@ uniontype Constant
   end IDENTcon;
 end Constant;
 
-public 
 uniontype ConBnd
   record CONBND
     Ident ident;
@@ -35,7 +32,6 @@ uniontype ConBnd
 
 end ConBnd;
 
-public 
 uniontype Ty
   record NAME
     Ident ident;
@@ -56,7 +52,6 @@ uniontype Ty
 
 end Ty;
 
-public 
 uniontype VarBnd
   record VARBND
     Ident ident;
@@ -65,7 +60,6 @@ uniontype VarBnd
 
 end VarBnd;
 
-public 
 uniontype TyBnd
   record TYBND
     Ident ident;
@@ -74,14 +68,12 @@ uniontype TyBnd
 
 end TyBnd;
 
-public 
 uniontype UnOp
   record ADDR end ADDR;
   record INDIR end INDIR;
   record NOT end NOT;
 end UnOp;
 
-public 
 uniontype BinOp
   record ADD end ADD;
   record SUB end SUB;
@@ -93,13 +85,11 @@ uniontype BinOp
   record IOR end IOR;
 end BinOp;
 
-public 
 uniontype RelOp
   record LT end LT;
   record LE end LE;
 end RelOp;
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -152,7 +142,6 @@ uniontype Exp
 
 end Exp;
 
-public 
 uniontype Stmt
   record ASSIGN
     Exp exp1;
@@ -190,7 +179,6 @@ uniontype Stmt
 
 end Stmt;
 
-public 
 uniontype SubBnd
   record FUNCBND
     Ident ident;
@@ -206,7 +194,6 @@ uniontype SubBnd
   end PROCBND;
 end SubBnd;
 
-public 
 uniontype Block
   record BLOCK
     list<ConBnd> conBndLst;
@@ -217,7 +204,6 @@ uniontype Block
   end BLOCK;
 end Block;
 
-public 
 uniontype Prog
   record PROG
     Ident ident;

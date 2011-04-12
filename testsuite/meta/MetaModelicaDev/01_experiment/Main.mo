@@ -3,7 +3,7 @@ package Main
 import Types;
 import Functions;
 
-public function main
+function main
  input list<String> arg;
 algorithm
  _ := match arg

@@ -1,6 +1,5 @@
 package Assignment "Assignment.mo"
 
-public 
 type ExpLst = list<Exp>;
 
 uniontype Program "Abstract syntax for the Assignments language"
@@ -10,7 +9,6 @@ uniontype Program "Abstract syntax for the Assignments language"
   end PROGRAM;
 end Program;
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -37,7 +35,6 @@ uniontype Exp
   end IDENT;
 end Exp;
  
-public 
 uniontype BinOp
   record ADD end ADD;
   record SUB end SUB;
@@ -45,22 +42,17 @@ uniontype BinOp
   record DIV end DIV;
 end BinOp;
 
-public 
 uniontype UnOp
   record NEG end NEG;
 
 end UnOp;
 
-public 
 type Ident = String;
 
-public 
 type Value = Integer "Values stored in environments";
 
-public 
 type VarBnd = tuple<Ident,Value> "Bindings and environments";
 
-public 
 type Env = list<VarBnd>;
 
 protected function lookup "lookup returns the value associated with an identifier.
@@ -206,7 +198,7 @@ algorithm
   end matchcontinue;
 end evals;
 
-public function evalprogram
+function evalprogram
   input Program inProgram;
   output Integer outInteger;
 algorithm 

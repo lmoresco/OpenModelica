@@ -1,6 +1,6 @@
 package FCEmit "fcemit.rml"
 
-public import FCode;
+import FCode;
 
 protected function printInt
   input Integer i;
@@ -1237,7 +1237,7 @@ algorithm
   emitRecTree(recs);
 end emitRecordDefns;
 
-public function emit "
+function emit "
   PROGRAMS
 "
   input FCode.Prog inProg;

@@ -1,12 +1,9 @@
 package TCode "tcode.rml"
 
-public 
 type Ident = String;
 
-public 
 type Stamp = Integer;
 
-public 
 uniontype Ty
   record CHAR end CHAR;
 
@@ -33,7 +30,6 @@ uniontype Ty
 
 end Ty;
 
-public 
 uniontype Record
   record RECORD
     Stamp stamp;
@@ -42,7 +38,6 @@ uniontype Record
 
 end Record;
 
-public 
 uniontype Var
   record VAR
     Ident ident;
@@ -51,7 +46,6 @@ uniontype Var
 
 end Var;
 
-public 
 uniontype UnOp
   record CtoI end CtoI;
 
@@ -78,7 +72,6 @@ uniontype UnOp
 
 end UnOp;
 
-public 
 uniontype BinOp
   record IADD end IADD;
 
@@ -140,7 +133,6 @@ uniontype BinOp
 
 end BinOp;
 
-public 
 uniontype Exp
   record ICON
     Integer integer;
@@ -172,7 +164,6 @@ uniontype Exp
 
 end Exp;
 
-public 
 uniontype Stmt
   record STORE
     Ty ty1;
@@ -209,7 +200,6 @@ uniontype Stmt
 
 end Stmt;
 
-public 
 uniontype Proc
   record PROC
     Ident ident;
@@ -220,7 +210,6 @@ uniontype Proc
 
 end Proc;
 
-public 
 uniontype Block
   record BLOCK
     list<Var> varLst;
@@ -230,7 +219,6 @@ uniontype Block
 
 end Block;
 
-public 
 uniontype Prog
   record PROG
     Ident ident;

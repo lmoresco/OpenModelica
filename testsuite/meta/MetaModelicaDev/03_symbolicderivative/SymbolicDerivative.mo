@@ -32,7 +32,7 @@ uniontype Exp
   end CALL;
 end Exp;
 
-public function main
+function main
 "Prints the expression and its derivative"
   input Exp expr;
   output Integer i;
@@ -221,7 +221,7 @@ end simplifyExp2;
  * Functions for printing expressions
  */
 
-public function printExp
+function printExp
   input Exp exp;
 protected
   String str;

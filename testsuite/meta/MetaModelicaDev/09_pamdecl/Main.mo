@@ -4,7 +4,7 @@ import ScanParse;
 import Eval;
 import Absyn;
 
-public function main
+function main
 protected
   Absyn.Prog ast;
 algorithm

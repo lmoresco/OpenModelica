@@ -1,15 +1,12 @@
 package Types "types.rml"
 
-public import Absyn;
-public import TCode "import RelOp and BinOp" ;
+import Absyn;
+import TCode "import RelOp and BinOp" ;
 
-public 
 type Ident = String;
 
-public 
 type Stamp = Integer;
 
-public 
 uniontype ATy
   record CHAR end CHAR;
 
@@ -19,7 +16,6 @@ uniontype ATy
 
 end ATy;
 
-public 
 uniontype Ty
   record ARITH
     ATy aTy;
@@ -46,7 +42,6 @@ uniontype Ty
 
 end Ty;
 
-public 
 uniontype Record
   record RECORD
     Stamp stamp;
@@ -123,7 +118,7 @@ algorithm
   end matchcontinue;
 end unfoldBnds;
 
-public function unfoldRec
+function unfoldRec
   input Record inRecord;
   output list<tuple<String, Ty>> outTplStringTyLst;
 algorithm 
@@ -141,7 +136,7 @@ algorithm
   end matchcontinue;
 end unfoldRec;
 
-public function tyCnv "Convert one of our types to a TCode type.
+function tyCnv "Convert one of our types to a TCode type.
   PTRNIL is intentionally excluded.
 "
   input Ty inTy;
@@ -177,7 +172,7 @@ algorithm
   end matchcontinue;
 end tyCnv;
 
-public function recCnv
+function recCnv
   input Record inRecord;
   output TCode.Record outRecord;
 algorithm 
@@ -222,7 +217,7 @@ algorithm
   end matchcontinue;
 end bndsCnv;
 
-public function decay "Apply the usual CHAR->INT and ARR->PTR decay
+function decay "Apply the usual CHAR->INT and ARR->PTR decay
   to an rvalue.
 "
   input TCode.Exp inExp;
@@ -282,7 +277,7 @@ algorithm
   end matchcontinue;
 end asgCnv1;
 
-public function asgCnv
+function asgCnv
   input TCode.Exp inExp1;
   input Ty inTy2;
   input Ty inTy3;
@@ -324,7 +319,7 @@ algorithm
   end matchcontinue;
 end asgCnv;
 
-public function castCnv
+function castCnv
   input TCode.Exp inExp1;
   input Ty inTy2;
   input Ty inTy3;
@@ -371,7 +366,7 @@ algorithm
   end matchcontinue;
 end castCnv;
 
-public function condCnv "Convert a decayed rvalue to a boolean:
+function condCnv "Convert a decayed rvalue to a boolean:
   reals are compared with zero: x != 0.0, i.e. (x == 0.0) == 0
   pointers are compared with null: p != <nil>, i.e. (p == <nil>) == 0
 "
@@ -489,7 +484,7 @@ algorithm
           TCode.UNARY(TCode.TOPTR(ty_1),TCode.ICON(0)));
 end ptrEqNull;
 
-public function eqCnv
+function eqCnv
   input TCode.Exp inExp1;
   input Ty inTy2;
   input TCode.Exp inExp3;
@@ -591,7 +586,7 @@ algorithm
   end matchcontinue;
 end intOrRealRelop;
 
-public function relCnv
+function relCnv
   input TCode.Exp inExp1;
   input Ty inTy2;
   input Absyn.RelOp inRelOp3;
@@ -801,7 +796,7 @@ algorithm
   end matchcontinue;
 end intopCnv;
 
-public function binCnv "Elaborate a binary operator expression.
+function binCnv "Elaborate a binary operator expression.
   The arguments are already elaborated as decayed rvalues.
   Return elaborated expression and its type.
 "

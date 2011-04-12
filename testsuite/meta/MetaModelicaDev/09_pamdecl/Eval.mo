@@ -1,8 +1,8 @@
 package Eval
 
-public import Absyn;
+import Absyn;
 
-public import Env;
+import Env;
 
 protected function binaryLub "Type lattice;  int --> real"
   input Env.Value inValue1;
@@ -372,7 +372,7 @@ algorithm
   end matchcontinue;
 end evalDeclList;
 
-public function evalprog "EVALUTATING A PROGRAM means to evaluate the list of statements,
+function evalprog "EVALUTATING A PROGRAM means to evaluate the list of statements,
    with an initial environment containing just standard defs."
   input Absyn.Prog inProg;
 algorithm 

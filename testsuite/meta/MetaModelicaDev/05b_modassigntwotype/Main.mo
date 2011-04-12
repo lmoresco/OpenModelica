@@ -50,7 +50,7 @@ algorithm
   end matchcontinue;
 end eval_loop;
 
-public function main "Main"
+function main "Main"
   input StringList in_stringlist;
   output Integer i;
 protected 

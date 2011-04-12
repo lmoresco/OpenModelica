@@ -12,7 +12,7 @@ protected function getAST
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end getAST;
 
-public function parse
+function parse
   output Exp2.Exp exp;
 algorithm
   0 := yyparse();

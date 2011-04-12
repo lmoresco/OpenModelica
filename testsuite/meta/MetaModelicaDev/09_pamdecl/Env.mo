@@ -1,9 +1,7 @@
 package Env
 
-public 
 type Ident = String;
 
-public 
 uniontype Value
   record INTVAL
     Integer integer;
@@ -19,7 +17,6 @@ uniontype Value
 
 end Value;
 
-public 
 uniontype Value2
   record INTVAL2
     Integer integer1;
@@ -33,7 +30,6 @@ uniontype Value2
 
 end Value2;
 
-public 
 uniontype Type
   record INTTYPE end INTTYPE;
 
@@ -43,7 +39,6 @@ uniontype Type
 
 end Type;
 
-public 
 uniontype Bind
   record BIND
     Ident ident;
@@ -53,10 +48,9 @@ uniontype Bind
 
 end Bind;
 
-public 
 type Env = list<Bind>;
 
-public function initial_
+function initial_
   output BindLst outBindLst;
   type BindLst = list<Bind>;
 algorithm 
@@ -67,7 +61,7 @@ algorithm
   end matchcontinue;
 end initial_;
 
-public function lookup
+function lookup
   input Env inEnv;
   input Ident inIdent;
   output Value outValue;
@@ -83,7 +77,7 @@ algorithm
   end matchcontinue;
 end lookup;
 
-public function lookuptype
+function lookuptype
   input Env inEnv;
   input Ident inIdent;
   output Type outType;
@@ -99,7 +93,7 @@ algorithm
   end matchcontinue;
 end lookuptype;
 
-public function update
+function update
   input Env env;
   input Ident id;
   input Type ty;

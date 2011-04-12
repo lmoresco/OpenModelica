@@ -1,6 +1,5 @@
 package Exp1 
 
-public 
 uniontype Exp
   record INTconst
     Integer integer;
@@ -38,7 +37,7 @@ uniontype Exp
   /* Add FACop here */ // your code here
 end Exp;
 
-public function eval "Abstract syntax of the language Exp1: Evaluation semantics  of Exp1"
+function eval "Abstract syntax of the language Exp1: Evaluation semantics  of Exp1"
   input Exp inExp;
   output Integer outInteger;
 algorithm 

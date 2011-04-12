@@ -1,8 +1,8 @@
 package Parse
 
-public import Pam;
+import Pam;
 
-public function parse
+function parse
   output Pam.Stmt outStmt;
 external "C" annotation(Library = {"lexer.o","parser.o"});
 end parse;

@@ -3,10 +3,8 @@ package Pam "This version differs from the one in the book. The State is just th
  Input is done through the function read which just calls a c function doing
  a call to scanf. Works if no backtracking occurs, as when print is used."
 
-public 
 type Ident = String "Semantics oriented abstract syntax for the PAM language";
 
-public 
 uniontype BinOp
   record ADD end ADD;
   record SUB end SUB;
@@ -14,7 +12,6 @@ uniontype BinOp
   record DIV end DIV;
 end BinOp;
 
-public 
 uniontype RelOp
   record EQ end EQ;
   record GT end GT;
@@ -24,7 +21,6 @@ uniontype RelOp
   record NE end NE;
 end RelOp;
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -48,7 +44,6 @@ uniontype Exp
 
 end Exp;
 
-public 
 type IdentLst = list<Ident>;
 
 uniontype Stmt
@@ -90,14 +85,11 @@ uniontype Stmt
 
 end Stmt;
 
-public 
 type VarBnd = tuple<Ident,Value> "Types needed for modeling static and dynamic semantics
 Variable binding and environment type";
 
-public 
 type Env = list<VarBnd>;
 
-public 
 uniontype Value "Value type needed for evaluation"
   record INTval
     Integer integer;
@@ -109,10 +101,9 @@ uniontype Value "Value type needed for evaluation"
 
 end Value;
 
-public 
 type State = Env;
 
-protected import Input;
+import Input;
 
 protected function repeatEval "Auxiliary utility functions"
   input State inState;
@@ -287,7 +278,7 @@ algorithm
   end matchcontinue;
 end eval;
 
-public function evalStmt "Statement evaluation"
+function evalStmt "Statement evaluation"
   input State inState;
   input Stmt inStmt;
   output State outState;

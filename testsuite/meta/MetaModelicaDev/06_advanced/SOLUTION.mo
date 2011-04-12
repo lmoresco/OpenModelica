@@ -89,7 +89,6 @@ function quicksort<Type_a>
   input  list<Type_a> accList; 
   input FuncType comparator; 
   output list<Type_a> outList;
-public
   partial function FuncType 
     input Type_a el1; 
     input Type_a el2; 
@@ -117,7 +116,6 @@ function partition<Type_a>
   input FuncType comparator; 
   output list<Type_a> outList1; 
   output list<Type_a> outList2;
-public
   partial function FuncType 
     input Type_a el1; 
     input Type_a el2; 
@@ -146,7 +144,6 @@ function orderList<Type_a>
   input  list<Type_a> inList; 
   input FuncType comparator; 
   output list<Type_a> outList;
-public
   partial function FuncType 
     input Type_a el1; 
     input Type_a el2; 
@@ -190,7 +187,6 @@ function map1<Type_a,Type_b>
   input  list<Type_a> inList; 
   input FuncType f; 
   output list<Type_b> outList;
-public
   partial function FuncType 
     input  Type_a elIn; 
     output Type_b elOut; 
@@ -214,7 +210,6 @@ end map1;
 function map0<Type_a>  
   input  list<Type_a> inList; 
   input FuncType f;
-public
   partial function FuncType 
     input  Type_a elIn; 
   end FuncType;  

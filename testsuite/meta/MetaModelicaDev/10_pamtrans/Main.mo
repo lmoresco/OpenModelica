@@ -1,13 +1,13 @@
 package Main
 
-public import Mcode;
-public import Absyn;
+import Mcode;
+import Absyn;
 
-protected import Parse;
-protected import Trans;
-protected import Emit;
+import Parse;
+import Trans;
+import Emit;
 
-public function main "Parse and translate a PAM program into MCode,
+function main "Parse and translate a PAM program into MCode,
   then emit it as textual assembly code.
 "
   type Mcode_MCodeLst = list<Mcode.MCode>;

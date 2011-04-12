@@ -1,9 +1,9 @@
 package Main
 
-protected import Parse;
-protected import Pam;
+import Parse;
+import Pam;
 
-public function main "Parse and translate a PAM program into MCode,
+function main "Parse and translate a PAM program into MCode,
   then emit it as textual assembly code.
 "
   output Integer out;

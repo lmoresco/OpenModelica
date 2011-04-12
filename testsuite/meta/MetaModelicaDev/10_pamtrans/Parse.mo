@@ -1,8 +1,8 @@
 package Parse
 
-public import Absyn;
+import Absyn;
 
-public function parse
+function parse
   output Absyn.Stmt outStmt;
 
   external "C" outStmt = parse() annotation(Library={"lexer.o","parser.o"});

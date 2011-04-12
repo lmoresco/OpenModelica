@@ -1,6 +1,6 @@
 package Input
 
-public function read
+function read
   output Integer outInteger;
 
   external "C" outInteger = getchar();

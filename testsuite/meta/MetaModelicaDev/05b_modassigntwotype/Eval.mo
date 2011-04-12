@@ -159,7 +159,7 @@ algorithm
   y := -. x;
 end apply_real_unop;
 
-public function eval "************** Expression evaluation **************"
+function eval "************** Expression evaluation **************"
   input Env in_env;
   input Absyn.Exp in_exp;
   output Env out_env;

@@ -1,6 +1,5 @@
 package AssignTwoType "file AssignTwoType.mo"
 
-public 
 type ExpLst = list<Exp>;
 
 uniontype Program "Abstract syntax for the Assigntwotype language"
@@ -10,7 +9,6 @@ uniontype Program "Abstract syntax for the Assigntwotype language"
   end PROGRAM;
 end Program;
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -45,7 +43,6 @@ uniontype Exp
 
 end Exp;
 
-public 
 uniontype BinOp
   record ADD end ADD;
   record SUB end SUB;
@@ -53,15 +50,12 @@ uniontype BinOp
   record DIV end DIV;
 end BinOp;
 
-public 
 uniontype UnOp
   record NEG end NEG;
 end UnOp;
 
-public 
 type Ident = String;
 
-public 
 uniontype Value "Values stored in environments"
   record INTval
     Integer integer;
@@ -72,13 +66,10 @@ uniontype Value "Values stored in environments"
   end REALval;
 end Value;
 
-public 
 type VarBnd = tuple<Ident,Value> "Bindings and environments";
 
-public 
 type Env = list<VarBnd>;
 
-public 
 uniontype Ty2 "Ty2 is an auxiliary datatype used to handle types during evaluation"
   
   record INT2
@@ -115,7 +106,7 @@ algorithm
   end matchcontinue;
 end printvalue;
 
-public function evalprogram
+function evalprogram
   input Program inProgram;
 algorithm 
   _:=

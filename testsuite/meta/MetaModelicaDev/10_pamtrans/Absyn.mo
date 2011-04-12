@@ -1,9 +1,7 @@
 package Absyn "Semantics oriented abstract syntax for the PAM language"
 
-public 
 type Ident = String;
 
-public 
 uniontype BinOp
   record ADD end ADD;
 
@@ -20,7 +18,6 @@ end BinOp;
 
 
 
-public 
 uniontype RelOp
   record EQ end EQ;
   record GT end GT;
@@ -30,7 +27,6 @@ uniontype RelOp
   record NE end NE;
 end RelOp;
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -54,10 +50,8 @@ uniontype Exp
 
 end Exp;
 
-public 
 type Comparison = Exp;
 
-public 
 type IdentLst = list<Ident>;
 
 uniontype Stmt

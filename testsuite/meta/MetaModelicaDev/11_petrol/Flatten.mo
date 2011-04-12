@@ -1,7 +1,7 @@
 package Flatten "flatten.rml"
 
-public import TCode;
-public import FCode;
+import TCode;
+import FCode;
 
 protected 
 uniontype Scope
@@ -528,7 +528,7 @@ algorithm
   end matchcontinue;
 end flattenProcs;
 
-public function flatten
+function flatten
   input TCode.Prog inProg;
   output FCode.Prog outProg;
 algorithm 

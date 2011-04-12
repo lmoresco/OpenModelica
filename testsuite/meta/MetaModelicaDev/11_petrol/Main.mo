@@ -4,10 +4,10 @@ import FCode;
 import Absyn;
 import TCode;
 
-protected import Parse;
-protected import Static;
-protected import Flatten;
-protected import FCEmit;
+import Parse;
+import Static;
+import Flatten;
+import FCEmit;
 
 protected function emit
   input FCode.Prog inProg;
@@ -75,7 +75,7 @@ algorithm
   end matchcontinue;
 end static;
 
-public function main
+function main
   input list<String> inStringLst;
 algorithm 
   _:=

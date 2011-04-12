@@ -1,6 +1,5 @@
 package Exp2
 
-public 
 uniontype Exp
   record INT
     Integer integer;
@@ -18,7 +17,6 @@ uniontype Exp
   end UNARY;
 end Exp;
 
-public 
 uniontype BinOp
   record ADD end ADD;
   record SUB end SUB;
@@ -27,13 +25,12 @@ uniontype BinOp
   /* Add POW here */
 end BinOp;
 
-public 
 uniontype UnOp
   record NEG end NEG;
   /* Add FAC here */
 end UnOp;
 
-public function eval
+function eval
   input Exp inExp;
   output Integer outInteger;
 algorithm 

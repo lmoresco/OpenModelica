@@ -1,9 +1,9 @@
 package Static "static.rml"
 
-public import Absyn;
-public import TCode;
+import Absyn;
+import TCode;
 
-protected import Types;
+import Types;
 
 protected function map<Type_a,Type_b>
   input FuncTypeType_aToType_b inFuncTypeTypeAToTypeB;
@@ -1086,7 +1086,7 @@ algorithm
   end matchcontinue;
 end elabBlock;
 
-public function elaborate
+function elaborate
   input Absyn.Prog inProg;
   output TCode.Prog outProg;
 algorithm 

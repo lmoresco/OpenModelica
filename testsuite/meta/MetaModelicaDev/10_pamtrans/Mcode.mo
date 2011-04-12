@@ -1,9 +1,7 @@
 package Mcode
 
-public 
 type Id = String;
 
-public 
 uniontype MBinOp
   record MADD end MADD;
 
@@ -15,7 +13,6 @@ uniontype MBinOp
 
 end MBinOp;
 
-public 
 uniontype MCondJmp
   record MJNP end MJNP;
 
@@ -31,7 +28,6 @@ uniontype MCondJmp
 
 end MCondJmp;
 
-public 
 uniontype MOperand
   record I
     Id id;
@@ -55,7 +51,6 @@ type MIdTemp  =  I of Id | T of int
 
 end MOperand;
 
-public 
 uniontype MCode "datatype MLab     =  L of int
 type MTemp    =  T of int
 type MIdent   =  I of Id

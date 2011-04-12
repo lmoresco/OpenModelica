@@ -1,9 +1,7 @@
 package Absyn
 
-public 
 type Ident = String;
 
-public 
 uniontype BinOp
   record ADD end ADD;
 
@@ -15,12 +13,10 @@ uniontype BinOp
 
 end BinOp;
 
-public 
 uniontype UnOp
   record NEG end NEG;
 end UnOp;
 
-public 
 uniontype RelOp
   record EQ end EQ;
   record GT end GT;
@@ -30,7 +26,6 @@ uniontype RelOp
   record NE end NE;
 end RelOp;
 
-public 
 uniontype Expr
   record INTCONST
     Integer integer;
@@ -63,7 +58,6 @@ uniontype Expr
 
 end Expr;
 
-public 
 type StmtLst = list<Stmt>;
 
 uniontype Stmt
@@ -91,10 +85,8 @@ uniontype Stmt
 
 end Stmt;
 
-public 
 type StmtList = list<Stmt>;
 
-public 
 uniontype Decl
   record NAMEDECL
     Ident ident1;
@@ -103,10 +95,8 @@ uniontype Decl
 
 end Decl;
 
-public 
 type DeclList = list<Decl>;
 
-public 
 uniontype Prog
   record PROG
     DeclList declList;
