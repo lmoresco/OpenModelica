@@ -12,7 +12,7 @@ end P1;
 
 class P2
   extends P1;
-  redeclare class extends C Real r2; end C;
+  redeclare replaceable class extends C Real r2; end C;
   C c2;
 end P2;
 

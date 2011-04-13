@@ -15,12 +15,12 @@ partial package A
     b := part2(part(a));
   end usePart;
 
-  partial function part
+  replaceable partial function part
     input Integer a;
     output Integer b;
   end part;
 
-  partial function part2
+  replaceable partial function part2
     input Integer a;
     output Integer b;
   end part2;
