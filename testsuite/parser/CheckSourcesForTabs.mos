@@ -4,15 +4,15 @@
 
 system("bash -c 'grep \\	 ../../Compiler/{BackEnd,FrontEnd,Main,Script,Util}/*.mo' | wc -l > CheckSourcesForTabs.count");
 if readFile("CheckSourcesForTabs.count") == "0
-" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/	/  /g' Compiler/{BackEnd,FrontEnd,Main,Script,Util}/*.mo";
+" then "OK" else "Found tabs in the source: Compiler/{BackEnd,FrontEnd,Main,Script,Util}/*.mo";
 
-system("bash -c 'grep \\	 ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} ../../c_runtime/*.{cpp,c,h}' | wc -l > CheckSourcesForTabs.count");
+system("bash -c 'grep \\	 ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} ../../c_runtime/{*/,}*.{cpp,c,h}' | wc -l > CheckSourcesForTabs.count");
 if readFile("CheckSourcesForTabs.count") == "0
-" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/	/  /g' ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h}";
+" then "OK" else "Found tabs in the source: ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h}";
 
 system("bash -c 'grep \\	 ../../OMShell/OMShellGUI/*.{cpp,h} ../../OMNotebook/*/*.{cpp,h,hpp} ../../OMEdit/OMEditGUI/*.{cpp,h}' | wc -l > CheckSourcesForTabs.count");
 if readFile("CheckSourcesForTabs.count") == "0
-" then "OK" else "Found tabs in the source; to fix this, backup your work and run: sed -i 's/	/  /g' OMShell/*.{cpp,h} OMNotebook/*/*.{cpp,h,hpp} OMEdit/OMEditGUI/*.{cpp,h}";
+" then "OK" else "Found tabs in the source: OMShell/*.{cpp,h} OMNotebook/*/*.{cpp,h,hpp} OMEdit/OMEditGUI/*.{cpp,h}";
 
 // Result:
 // 0
