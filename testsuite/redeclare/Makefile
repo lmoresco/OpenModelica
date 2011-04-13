@@ -6,7 +6,6 @@ ClassExtends2.mo \
 ClassExtends3.mo \
 ClassExtends4.mo \
 ClassExtends5.mo \
-Modification1.mo \
 Redeclare1.mo \
 Redeclare2.mo \
 Redeclare3.mo \
@@ -18,6 +17,7 @@ RedeclareFlowEffort.mo \
 # Run make testfailing
 FAILINGTESTFILES=\
 ConstrainingType1.mo \
+Modification1.mo \
 Modification2.mo \
 RedeclareClass1.mo \
 RedeclareClass2.mo \

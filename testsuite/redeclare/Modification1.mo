@@ -20,6 +20,6 @@ end Modification1;
 
 // Result:
 // class Modification1
-//   Real x(min = 3.0, start = 2.0);
+//   Real x(min = 3.0);
 // end Modification1;
 // endResult
