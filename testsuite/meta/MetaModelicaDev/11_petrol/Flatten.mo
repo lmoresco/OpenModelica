@@ -61,7 +61,7 @@ algorithm
       FuncTypeType_aToType_b F;
       Type_a x;
       list<Type_a> xs;
-    case (_,{}) then {}; 
+    case (_,{}) then {};
     case (F,(x :: xs))
       equation 
         y = F(x);
@@ -83,9 +83,9 @@ algorithm
       Integer sz,stamp;
       FCode.Record r_1;
       TCode.Record r;
-    case (TCode.CHAR()) then FCode.CHAR(); 
-    case (TCode.INT()) then FCode.INT(); 
-    case (TCode.REAL()) then FCode.REAL(); 
+    case (TCode.CHAR()) then FCode.CHAR();
+    case (TCode.INT()) then FCode.INT();
+    case (TCode.REAL()) then FCode.REAL();
     case (TCode.PTR(ty))
       equation 
         ty_1 = transTy(ty);
@@ -101,7 +101,7 @@ algorithm
         r_1 = transRec(r);
       then
         FCode.REC(r_1);
-    case (TCode.UNFOLD(stamp)) then FCode.UNFOLD(stamp); 
+    case (TCode.UNFOLD(stamp)) then FCode.UNFOLD(stamp);
   end matchcontinue;
 end transTy;
 
@@ -150,7 +150,7 @@ algorithm
     local
       FCode.Ty ty_1;
       TCode.Ty ty;
-    case NONE() then NONE(); 
+    case NONE() then NONE();
     case (SOME(ty))
       equation 
         ty_1 = transTy(ty);
@@ -171,11 +171,11 @@ algorithm
       FCode.Record r_1;
       TCode.Record r;
       String id;
-    case (TCode.CtoI()) then FCode.CtoI(); 
-    case (TCode.ItoR()) then FCode.ItoR(); 
-    case (TCode.RtoI()) then FCode.RtoI(); 
-    case (TCode.ItoC()) then FCode.ItoC(); 
-    case (TCode.PtoI()) then FCode.PtoI(); 
+    case (TCode.CtoI()) then FCode.CtoI();
+    case (TCode.ItoR()) then FCode.ItoR();
+    case (TCode.RtoI()) then FCode.RtoI();
+    case (TCode.ItoC()) then FCode.ItoC();
+    case (TCode.PtoI()) then FCode.PtoI();
     case (TCode.TOPTR(ty))
       equation 
         ty_1 = transTy(ty);
@@ -203,23 +203,23 @@ algorithm
     local
       FCode.Ty ty_1;
       TCode.Ty ty;
-    case (TCode.IADD()) then FCode.IADD(); 
-    case (TCode.ISUB()) then FCode.ISUB(); 
-    case (TCode.IMUL()) then FCode.IMUL(); 
-    case (TCode.IDIV()) then FCode.IDIV(); 
-    case (TCode.IMOD()) then FCode.IMOD(); 
-    case (TCode.IAND()) then FCode.IAND(); 
-    case (TCode.IOR()) then FCode.IOR(); 
-    case (TCode.ILT()) then FCode.ILT(); 
-    case (TCode.ILE()) then FCode.ILE(); 
-    case (TCode.IEQ()) then FCode.IEQ(); 
-    case (TCode.RADD()) then FCode.RADD(); 
-    case (TCode.RSUB()) then FCode.RSUB(); 
-    case (TCode.RMUL()) then FCode.RMUL(); 
-    case (TCode.RDIV()) then FCode.RDIV(); 
-    case (TCode.RLT()) then FCode.RLT(); 
-    case (TCode.RLE()) then FCode.RLE(); 
-    case (TCode.REQ()) then FCode.REQ(); 
+    case (TCode.IADD()) then FCode.IADD();
+    case (TCode.ISUB()) then FCode.ISUB();
+    case (TCode.IMUL()) then FCode.IMUL();
+    case (TCode.IDIV()) then FCode.IDIV();
+    case (TCode.IMOD()) then FCode.IMOD();
+    case (TCode.IAND()) then FCode.IAND();
+    case (TCode.IOR()) then FCode.IOR();
+    case (TCode.ILT()) then FCode.ILT();
+    case (TCode.ILE()) then FCode.ILE();
+    case (TCode.IEQ()) then FCode.IEQ();
+    case (TCode.RADD()) then FCode.RADD();
+    case (TCode.RSUB()) then FCode.RSUB();
+    case (TCode.RMUL()) then FCode.RMUL();
+    case (TCode.RDIV()) then FCode.RDIV();
+    case (TCode.RLT()) then FCode.RLT();
+    case (TCode.RLE()) then FCode.RLE();
+    case (TCode.REQ()) then FCode.REQ();
     case (TCode.PADD(ty))
       equation 
         ty_1 = transTy(ty);
@@ -288,7 +288,7 @@ algorithm
       list<FCode.Exp> args_1;
       list<TCode.Exp> args;
       Real r;
-    case (_,TCode.ICON(x)) then FCode.ICON(x); 
+    case (_,TCode.ICON(x)) then FCode.ICON(x);
     case (_,TCode.RCON(r)) then FCode.RCON(r);
     case (env,TCode.ADDR(id))
       equation 
@@ -359,7 +359,7 @@ algorithm
       list<tuple<String, Bnd>> env;
       TCode.Ty ty;
       TCode.Exp exp;
-    case (_,NONE()) then NONE(); 
+    case (_,NONE()) then NONE();
     case (env,SOME((ty,exp)))
       equation 
         ty_1 = transTy(ty);
@@ -426,7 +426,7 @@ algorithm
         stmt2_1 = transStmt(env, stmt2);
       then
         FCode.SEQ(stmt1_1,stmt2_1);
-    case (_,TCode.SKIP()) then FCode.SKIP(); 
+    case (_,TCode.SKIP()) then FCode.SKIP();
   end matchcontinue;
 end transStmt;
 
@@ -444,7 +444,7 @@ algorithm
       String id;
       list<FCode.Var> vars;
       list<tuple<String, Type_a>> env;
-    case (env,_,{}) then env; 
+    case (env,_,{}) then env;
     case (env,bnd,(FCode.VAR(id,_) :: vars))
       equation 
         env_1 = envPlusVars(((id,bnd) :: env), bnd, vars);
@@ -518,7 +518,7 @@ algorithm
       Scope scope;
       TCode.Proc proc;
       list<TCode.Proc> procs;
-    case (_,env0,{},procs0) then (env0,procs0); 
+    case (_,env0,{},procs0) then (env0,procs0);
     case (scope,env0,(proc :: procs),procs0)
       equation 
         (env1,procs1) = flattenProc(scope, env0, proc, procs0);

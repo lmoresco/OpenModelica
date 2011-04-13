@@ -24,7 +24,7 @@ algorithm
       FuncTypeType_aTo F;
       Type_a x;
       list<Type_a> xs;
-    case (_,{}) then (); 
+    case (_,{}) then ();
     case (F,(x :: xs))
       equation 
         F(x);
@@ -51,7 +51,7 @@ algorithm
       FuncTypeType_aToType_b F;
       Type_a x;
       list<Type_a> xs;
-    case (_,{}) then {}; 
+    case (_,{}) then {};
     case (F,(x :: xs))
       equation 
         y = F(x);
@@ -234,9 +234,9 @@ algorithm
       InvTy ity,ity_1;
       FCode.Ty ty;
       Integer sz,stamp;
-    case (ity,FCode.CHAR()) then (BASE("char"),ity); 
-    case (ity,FCode.INT()) then (BASE("int"),ity); 
-    case (ity,FCode.REAL()) then (BASE("double"),ity); 
+    case (ity,FCode.CHAR()) then (BASE("char"),ity);
+    case (ity,FCode.INT()) then (BASE("int"),ity);
+    case (ity,FCode.REAL()) then (BASE("double"),ity);
     case (ity,FCode.PTR(ty))
       equation 
         (base,ity_1) = invertTy(PTRity(ity), ty);
@@ -293,7 +293,7 @@ algorithm
       String id_1,id,prefix;
       FCode.Ty ty;
       list<FCode.Var> bnds;
-    case ({},_) then (); 
+    case ({},_) then ();
     case ((FCode.VAR(id,ty) :: bnds),prefix)
       equation 
         id_1 = stringAppend(prefix, id);
@@ -313,7 +313,7 @@ algorithm
       String stamp1,prefix0,prefix1;
       Integer stamp0;
       list<FCode.Var> bnds;
-    case (FCode.RECORD(_,{})) then (); 
+    case (FCode.RECORD(_,{})) then ();
     case (FCode.RECORD(stamp0,(bnds as (_ :: _))))
       equation 
         emitStruct(stamp0);
@@ -397,29 +397,29 @@ function binopToStr
 algorithm 
   outString:=
   matchcontinue (inBinOp)
-    case (FCode.IADD()) then " + "; 
-    case (FCode.ISUB()) then " - "; 
-    case (FCode.IMUL()) then " * "; 
-    case (FCode.IDIV()) then " / "; 
-    case (FCode.IMOD()) then " % "; 
-    case (FCode.IAND()) then " && "; 
-    case (FCode.IOR()) then " || "; 
-    case (FCode.ILT()) then " < "; 
-    case (FCode.ILE()) then " <= "; 
-    case (FCode.IEQ()) then " == "; 
-    case (FCode.RADD()) then " + "; 
-    case (FCode.RSUB()) then " - "; 
-    case (FCode.RMUL()) then " * "; 
-    case (FCode.RDIV()) then " / "; 
-    case (FCode.RLT()) then " < "; 
-    case (FCode.RLE()) then " <= "; 
-    case (FCode.REQ()) then " == "; 
-    case (FCode.PADD(_)) then " + "; 
-    case (FCode.PSUB(_)) then " - "; 
-    case (FCode.PDIFF(_)) then " - "; 
-    case (FCode.PLT(_)) then " < "; 
-    case (FCode.PLE(_)) then " <= "; 
-    case (FCode.PEQ(_)) then " == "; 
+    case (FCode.IADD()) then " + ";
+    case (FCode.ISUB()) then " - ";
+    case (FCode.IMUL()) then " * ";
+    case (FCode.IDIV()) then " / ";
+    case (FCode.IMOD()) then " % ";
+    case (FCode.IAND()) then " && ";
+    case (FCode.IOR()) then " || ";
+    case (FCode.ILT()) then " < ";
+    case (FCode.ILE()) then " <= ";
+    case (FCode.IEQ()) then " == ";
+    case (FCode.RADD()) then " + ";
+    case (FCode.RSUB()) then " - ";
+    case (FCode.RMUL()) then " * ";
+    case (FCode.RDIV()) then " / ";
+    case (FCode.RLT()) then " < ";
+    case (FCode.RLE()) then " <= ";
+    case (FCode.REQ()) then " == ";
+    case (FCode.PADD(_)) then " + ";
+    case (FCode.PSUB(_)) then " - ";
+    case (FCode.PDIFF(_)) then " - ";
+    case (FCode.PLT(_)) then " < ";
+    case (FCode.PLE(_)) then " <= ";
+    case (FCode.PEQ(_)) then " == ";
   end matchcontinue;
 end binopToStr;
 
@@ -499,7 +499,7 @@ algorithm
     local
       FCode.Exp exp;
       list<FCode.Exp> exps;
-    case {} then (); 
+    case {} then ();
     case ((exp :: exps))
       equation 
         emitExp(exp);
@@ -515,7 +515,7 @@ algorithm
   _:=
   matchcontinue (inTplTypeAFCodeExpOption)
     local FCode.Exp exp;
-    case (NONE()) then (); 
+    case (NONE()) then ();
     case (SOME((_,exp)))
       equation 
         print("\tretval = ");
@@ -587,7 +587,7 @@ algorithm
         emitStmt(stmt2);
       then
         ();
-    case (FCode.SKIP()) then (); 
+    case (FCode.SKIP()) then ();
   end matchcontinue;
 end emitStmt;
 
@@ -688,7 +688,7 @@ algorithm
   _:=
   matchcontinue (inFCodeTyOption)
     local FCode.Ty ty;
-    case (NONE()) then (); 
+    case (NONE()) then ();
     case (SOME(ty))
       equation 
         emitVarBnd(FCode.VAR("retval",ty));
@@ -702,7 +702,7 @@ function emitReturnRetval<Type_a>
 algorithm 
   _:=
   matchcontinue (inTypeAOption)
-    case (NONE()) then (); 
+    case (NONE()) then ();
     case (SOME(_))
       equation 
         print("\treturn retval;\n");
@@ -720,7 +720,7 @@ algorithm
     local
       String id,stamp;
       list<FCode.Var> formals;
-    case ({},_) then (); 
+    case ({},_) then ();
     case ((FCode.VAR(id,_) :: formals),stamp)
       equation 
         print("\tframe.rec");
@@ -747,7 +747,7 @@ algorithm
       String lev_1,stamp_1;
       Integer lev,stamp;
       list<FCode.Var> formals,vars;
-    case (_,_,FCode.RECORD(_,{})) then (); 
+    case (_,_,FCode.RECORD(_,{})) then ();
     case (lev,formals,FCode.RECORD(stamp,(vars as (_ :: _))))
       equation 
         print("\t");
@@ -774,7 +774,7 @@ algorithm
   _:=
   matchcontinue (inInteger,inRecord)
     local Integer lev;
-    case (_,FCode.RECORD(_,{})) then (); 
+    case (_,FCode.RECORD(_,{})) then ();
     case (lev,FCode.RECORD(_,(_ :: _)))
       equation 
         print("\tdisplay[");
@@ -798,7 +798,7 @@ algorithm
       Integer lev;
       FCode.Record r;
       FCode.Stmt stmt;
-    case (FCode.PROC(_,_,_,NONE())) then (); 
+    case (FCode.PROC(_,_,_,NONE())) then ();
     case (FCode.PROC(id,formals,ty_opt,SOME(FCode.BLOCK(lev,r,stmt))))
       equation 
         formals_1 = map(convFormalDefn, formals);
@@ -897,7 +897,7 @@ algorithm
       Cmp cmp;
       RTree left_1,right_1,left,right;
       Integer stamp_1,stamp;
-    case (r,EMPTY()) then NODE(EMPTY(),r,EMPTY()); 
+    case (r,EMPTY()) then NODE(EMPTY(),r,EMPTY());
     case ((r_1 as FCode.RECORD(stamp_1,_)),NODE(left,(r as FCode.RECORD(stamp,_)),right))
       equation 
         cmp = compare(stamp_1, stamp);
@@ -920,7 +920,7 @@ algorithm
     local
       RTree left,right,left_1,right_1;
       FCode.Record r_1;
-    case (EQ(),_,left,right) then (left,right); 
+    case (EQ(),_,left,right) then (left,right);
     case (LT(),r_1,left,right)
       equation 
         left_1 = insert(r_1, left);
@@ -942,7 +942,7 @@ algorithm
     local
       RTree left,right;
       FCode.Record r;
-    case (EMPTY()) then (); 
+    case (EMPTY()) then ();
     case (NODE(left,r,right))
       equation 
         emitRecTree(left);
@@ -965,9 +965,9 @@ algorithm
       RTree recs2,recs1,recs0,recs;
       FCode.Record r;
       list<FCode.Var> bnds;
-    case (FCode.CHAR(),recs) then recs; 
-    case (FCode.INT(),recs) then recs; 
-    case (FCode.REAL(),recs) then recs; 
+    case (FCode.CHAR(),recs) then recs;
+    case (FCode.INT(),recs) then recs;
+    case (FCode.REAL(),recs) then recs;
     case (FCode.PTR(ty),recs0)
       equation 
         recs1 = tyRecs(ty, recs0);
@@ -1001,7 +1001,7 @@ algorithm
       RTree recs,recs1,recs2,recs0;
       FCode.Ty ty;
       list<FCode.Var> vars;
-    case ({},recs) then recs; 
+    case ({},recs) then recs;
     case ((FCode.VAR(_,ty) :: vars),recs0)
       equation 
         recs1 = tyRecs(ty, recs0);
@@ -1021,7 +1021,7 @@ algorithm
     local
       RTree recs1,recs0,recs;
       FCode.Ty ty;
-    case (NONE(),recs) then recs; 
+    case (NONE(),recs) then recs;
     case (SOME(ty),recs0)
       equation 
         recs1 = tyRecs(ty, recs0);
@@ -1045,13 +1045,13 @@ algorithm
         recs1 = tyRecs(ty, recs0);
       then
         recs1;
-    case (FCode.CtoI(),recs) then recs; 
-    case (FCode.ItoR(),recs) then recs; 
-    case (FCode.RtoI(),recs) then recs; 
-    case (FCode.ItoC(),recs) then recs; 
-    case (FCode.PtoI(),recs) then recs; 
-    case (FCode.LOAD(_),recs) then recs; 
-    case (FCode.OFFSET(_,_),recs) then recs; 
+    case (FCode.CtoI(),recs) then recs;
+    case (FCode.ItoR(),recs) then recs;
+    case (FCode.RtoI(),recs) then recs;
+    case (FCode.ItoC(),recs) then recs;
+    case (FCode.PtoI(),recs) then recs;
+    case (FCode.LOAD(_),recs) then recs;
+    case (FCode.OFFSET(_,_),recs) then recs;
   end matchcontinue;
 end unopRecs;
 
@@ -1066,9 +1066,9 @@ algorithm
       FCode.UnOp unop;
       FCode.Exp exp,exp1,exp2;
       list<FCode.Exp> exps;
-    case (FCode.ICON(_),recs) then recs; 
-    case (FCode.RCON(_),recs) then recs; 
-    case (FCode.DISPLAY(_),recs) then recs; 
+    case (FCode.ICON(_),recs) then recs;
+    case (FCode.RCON(_),recs) then recs;
+    case (FCode.DISPLAY(_),recs) then recs;
     case (FCode.UNARY(unop,exp),recs0)
       equation 
         recs1 = unopRecs(unop, recs0);
@@ -1100,7 +1100,7 @@ algorithm
       RTree recs,recs1,recs2,recs0;
       FCode.Exp exp;
       list<FCode.Exp> exps;
-    case ({},recs) then recs; 
+    case ({},recs) then recs;
     case ((exp :: exps),recs0)
       equation 
         recs1 = expRecs(exp, recs0);
@@ -1135,7 +1135,7 @@ algorithm
         recs1 = expsRecs(exps, recs0);
       then
         recs1;
-    case (FCode.RETURN(NONE()),recs) then recs; 
+    case (FCode.RETURN(NONE()),recs) then recs;
     case (FCode.RETURN(SOME((_,exp))),recs0)
       equation 
         recs1 = expRecs(exp, recs0);
@@ -1160,7 +1160,7 @@ algorithm
         recs2 = stmtRecs(stmt2, recs1);
       then
         recs2;
-    case (FCode.SKIP(),recs) then recs; 
+    case (FCode.SKIP(),recs) then recs;
   end matchcontinue;
 end stmtRecs;
 
@@ -1175,7 +1175,7 @@ algorithm
       RTree recs1,recs2,recs0,recs;
       FCode.Record r;
       FCode.Stmt stmt;
-    case (NONE(),recs) then recs; 
+    case (NONE(),recs) then recs;
     case (SOME(FCode.BLOCK(_,r,stmt)),recs0)
       equation 
         recs1 = insert(r, recs0);
@@ -1218,7 +1218,7 @@ algorithm
       RTree recs,recs1,recs2,recs0;
       FCode.Proc proc;
       list<FCode.Proc> procs;
-    case ({},recs) then recs; 
+    case ({},recs) then recs;
     case ((proc :: procs),recs0)
       equation 
         recs1 = procRecs(proc, recs0);

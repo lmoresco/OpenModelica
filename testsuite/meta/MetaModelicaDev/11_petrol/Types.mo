@@ -67,8 +67,8 @@ algorithm
       Stamp sz,stamp,stamp_1;
       list<tuple<Ident, Ty>> bnds_1,bnds;
       Record r;
-    case ((ty as ARITH(_)),_) then ty; 
-    case ((ty as PTRNIL()),_) then ty; 
+    case ((ty as ARITH(_)),_) then ty;
+    case ((ty as PTRNIL()),_) then ty;
     case (PTR(ty),r)
       equation 
         ty_1 = unfoldTy(ty, r);
@@ -150,9 +150,9 @@ algorithm
       Stamp sz,stamp;
       TCode.Record r_1;
       Record r;
-    case (ARITH(CHAR())) then TCode.CHAR(); 
-    case (ARITH(INT())) then TCode.INT(); 
-    case (ARITH(REAL())) then TCode.REAL(); 
+    case (ARITH(CHAR())) then TCode.CHAR();
+    case (ARITH(INT())) then TCode.INT();
+    case (ARITH(REAL())) then TCode.REAL();
     case (PTR(ty))
       equation 
         ty_1 = tyCnv(ty);
@@ -168,7 +168,7 @@ algorithm
         r_1 = recCnv(r);
       then
         TCode.REC(r_1);
-    case (UNFOLD(stamp)) then TCode.UNFOLD(stamp); 
+    case (UNFOLD(stamp)) then TCode.UNFOLD(stamp);
   end matchcontinue;
 end tyCnv;
 
@@ -231,12 +231,12 @@ algorithm
       TCode.Exp exp;
       Ty ty;
       TCode.Ty ty_1;
-    case (exp,ARITH(CHAR())) then (TCode.UNARY(TCode.CtoI(),exp),ARITH(INT())); 
-    case (exp,(ty as ARITH(INT()))) then (exp,ty); 
-    case (exp,(ty as ARITH(REAL()))) then (exp,ty); 
-    case (exp,(ty as PTR(_))) then (exp,ty); 
-    case (exp,(ty as REC(_))) then (exp,ty); 
-    case (exp,(ty as PTRNIL())) then (exp,ty); 
+    case (exp,ARITH(CHAR())) then (TCode.UNARY(TCode.CtoI(),exp),ARITH(INT()));
+    case (exp,(ty as ARITH(INT()))) then (exp,ty);
+    case (exp,(ty as ARITH(REAL()))) then (exp,ty);
+    case (exp,(ty as PTR(_))) then (exp,ty);
+    case (exp,(ty as REC(_))) then (exp,ty);
+    case (exp,(ty as PTRNIL())) then (exp,ty);
     case (exp,ARR(_,ty))
       equation 
         ty_1 = tyCnv(ty);
@@ -259,7 +259,7 @@ algorithm
   matchcontinue (inExp1,inATy2,inATy3)
     local
       TCode.Exp rhs;
-    case (rhs,CHAR(),CHAR()) then rhs; 
+    case (rhs,CHAR(),CHAR()) then rhs;
     case (rhs,CHAR(),INT())
       then
         TCode.UNARY(TCode.CtoI(),rhs);
@@ -380,10 +380,10 @@ algorithm
       TCode.Exp exp;
       TCode.Ty ty_1;
       Ty ty;
-    case (_,PTRNIL()) then TCode.ICON(0); 
-    case (exp,ARITH(INT())) then exp; 
+    case (_,PTRNIL()) then TCode.ICON(0);
+    case (exp,ARITH(INT())) then exp;
     case (exp,ARITH(REAL())) then TCode.BINARY(TCode.BINARY(exp,TCode.REQ(),TCode.RCON(0.0)),TCode.IEQ(),
-          TCode.ICON(0)); 
+          TCode.ICON(0));
     case (exp,PTR(ty))
       equation 
         ty_1 = tyCnv(ty);
@@ -404,8 +404,8 @@ algorithm
   matchcontinue (inATy1,inATy2)
     local
       ATy y;
-    case (INT(),y) then y; 
-    case (REAL(),_) then REAL(); 
+    case (INT(),y) then y;
+    case (REAL(),_) then REAL();
   end matchcontinue;
 end arithLub;
 
@@ -420,7 +420,7 @@ algorithm
   matchcontinue (inExp1,inATy2,inATy3)
     local
       TCode.Exp exp;
-    case (exp,INT(),INT()) then exp; 
+    case (exp,INT(),INT()) then exp;
     case (exp,INT(),REAL()) then TCode.UNARY(TCode.ItoR(),exp);
     case (exp,REAL(),REAL()) then exp;
   end matchcontinue;
@@ -467,8 +467,8 @@ algorithm
   outTypeA:=
   matchcontinue (inATy1,inTypeA2,inTypeA3)
     local Type_a x,y;
-    case (INT(),x,_) then x; 
-    case (REAL(),_,y) then y; 
+    case (INT(),x,_) then x;
+    case (REAL(),_,y) then y;
   end matchcontinue;
 end chooseIntReal;
 
@@ -537,8 +537,8 @@ algorithm
   outBinOp:=
   matchcontinue (inRelOp,inTy)
     local TCode.Ty ty;
-    case (Absyn.LT(),ty) then TCode.PLT(ty); 
-    case (Absyn.LE(),ty) then TCode.PLE(ty); 
+    case (Absyn.LT(),ty) then TCode.PLT(ty);
+    case (Absyn.LE(),ty) then TCode.PLE(ty);
   end matchcontinue;
 end ptrRelop;
 
@@ -547,8 +547,8 @@ function intRelop
   output TCode.BinOp outBinOp;
 algorithm 
   outBinOp := matchcontinue (inRelOp)
-    case Absyn.LT() then TCode.ILT(); 
-    case Absyn.LE() then TCode.ILE(); 
+    case Absyn.LT() then TCode.ILT();
+    case Absyn.LE() then TCode.ILE();
   end matchcontinue;
 end intRelop;
 
@@ -558,8 +558,8 @@ function realRelop
 algorithm 
   outBinOp:=
   matchcontinue (inRelOp)
-    case Absyn.LT() then TCode.RLT(); 
-    case Absyn.LE() then TCode.RLE(); 
+    case Absyn.LT() then TCode.RLT();
+    case Absyn.LE() then TCode.RLE();
   end matchcontinue;
 end realRelop;
 
@@ -792,7 +792,7 @@ algorithm
     local
       TCode.Exp exp1,exp2;
       TCode.BinOp bop;
-    case (exp1,ARITH(INT()),bop,exp2,ARITH(INT())) then (TCode.BINARY(exp1,bop,exp2),ARITH(INT())); 
+    case (exp1,ARITH(INT()),bop,exp2,ARITH(INT())) then (TCode.BINARY(exp1,bop,exp2),ARITH(INT()));
   end matchcontinue;
 end intopCnv;
 

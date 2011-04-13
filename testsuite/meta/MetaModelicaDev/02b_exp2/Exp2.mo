@@ -41,7 +41,7 @@ algorithm
       Exp e1,e2,e;
       BinOp binop;
       UnOp unop;
-    case (INT(integer = ival)) then ival; 
+    case (INT(integer = ival)) then ival;
     case (BINARY(exp1 = e1,binOp2 = binop,exp3 = e2))
       equation 
         v1 = eval(e1);
@@ -51,7 +51,7 @@ algorithm
     case (UNARY(unOp = unop,exp = e))
       equation 
         v1 = eval(e);
-        v2 = applyUnop(unop, v1); 
+        v2 = applyUnop(unop, v1);
       then v2;
   end matchcontinue;
 end eval;
@@ -65,10 +65,10 @@ algorithm
   outInteger:=
   matchcontinue (inBinOp1,inInteger2,inInteger3)
     local Integer v1,v2;
-    case (ADD(),v1,v2) then v1+v2; 
-    case (SUB(),v1,v2) then v1-v2; 
-    case (MUL(),v1,v2) then v1*v2; 
-    case (DIV(),v1,v2) then intDiv(v1,v2); 
+    case (ADD(),v1,v2) then v1+v2;
+    case (SUB(),v1,v2) then v1-v2;
+    case (MUL(),v1,v2) then v1*v2;
+    case (DIV(),v1,v2) then intDiv(v1,v2);
   end matchcontinue;
 end applyBinop;
 
@@ -79,7 +79,7 @@ function applyUnop
 algorithm 
   outInteger := match (inUnOp,inInteger)
     local Integer v;
-    case (NEG(),v) then -v; 
+    case (NEG(),v) then -v;
   end match;
 end applyUnop;
 

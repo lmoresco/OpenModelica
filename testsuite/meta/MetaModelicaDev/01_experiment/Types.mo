@@ -7,20 +7,20 @@ package Types "Types in MetaModelica"
  */
  
 // an alias for the Real type 
-type Alias = Real; 
+type Alias = Real;
 constant Alias aliasConstant = 1.0;
 
 // an option type which can be SOME(Alias) or NONE()
-type OptionType = Option<Alias>; 
+type OptionType = Option<Alias>;
 constant OptionType optionAliasConstant = SOME(aliasConstant);
 constant OptionType optionAliasConstantNone = NONE();
 
 // a tuple type with 3 elements
-type TupleType = tuple<String, Alias, OptionType>; 
+type TupleType = tuple<String, Alias, OptionType>;
 constant TupleType tupleConstant = ("a tuple element", aliasConstant, optionAliasConstant);
 
 // a list type 
-type ListType = list<TupleType>; 
+type ListType = list<TupleType>;
 constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE())};
 
 // complex record types
@@ -52,7 +52,7 @@ constant Select select =
 	ThirdAlternative(
 	  SecondAlternative(
 	    FirstAlternative("one", "First"),
-	    FirstAlternative("two", "Second"))); 
+	    FirstAlternative("two", "Second")));
 
 end Types;
 

@@ -113,9 +113,9 @@ algorithm
   outInteger:=
   matchcontinue (inBinOp1,inInteger2,inInteger3)
     local Value v1,v2;
-    case (ADD(),v1,v2) then v1+v2; 
-    case (SUB(),v1,v2) then v1-v2; 
-    case (MUL(),v1,v2) then v1*v2; 
+    case (ADD(),v1,v2) then v1+v2;
+    case (SUB(),v1,v2) then v1-v2;
+    case (MUL(),v1,v2) then v1*v2;
     case (DIV(),v1,v2) then intDiv(v1,v2);
   end matchcontinue;
 end applyBinop;
@@ -127,7 +127,7 @@ function applyUnop
 algorithm 
   outInteger := match (inUnOp,inInteger)
     local Value v;
-    case (NEG(),v) then -v; 
+    case (NEG(),v) then -v;
   end match;
 end applyUnop;
 
@@ -157,19 +157,19 @@ algorithm
     case (env,ASSIGN(ident = id,exp = exp)) 
       equation 
         (env2,value) = eval(env, exp);
-        env3 = update(env2, id, value); 
+        env3 = update(env2, id, value);
       then (env3,value);
     /* eval of a node e1,ADD,e2 , etc. in an environment env */   
     case (env1,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) 
       equation 
         (env2,v1) = eval(env1, e1);
         (env3,v2) = eval(env2, e2);
-        v3 = applyBinop(binop, v1, v2); 
+        v3 = applyBinop(binop, v1, v2);
       then (env3,v3);
     case (env1,UNARY(unOp = unop,exp = e))
       equation 
         (env2,v1) = eval(env1, e);
-        v2 = applyUnop(unop, v1); 
+        v2 = applyUnop(unop, v1);
       then (env2,v2);
   end matchcontinue;
 end eval;
@@ -193,7 +193,7 @@ algorithm
                            // list is evaluated. the last environment is returned 
       equation 
         (env2,v) = eval(env, exp);
-        env3 = evals(env2, expl); 
+        env3 = evals(env2, expl);
       then env3;
   end matchcontinue;
 end evals;
@@ -212,10 +212,10 @@ algorithm
       equation 
         assignments_1 = listReverse(assignments);
         // your code here -> print assignments_1 and exp
-        // print("The assignments: ");        
+        // print("The assignments: ");
         // printAssignments(assignments_1);
         // print("The expression: ");
-        // printAssignments({exp});        
+        // printAssignments({exp});
         env2 = evals({}, assignments_1);
         // your code here -> print env2
         // print("The environment: ");

@@ -139,7 +139,7 @@ algorithm
       Env e,env2,env3,env;
       Exp exp;
       ExpLst expl;
-    case (e,{}) then e; 
+    case (e,{}) then e;
     case (env,exp :: expl)
       equation 
         (env2,_) = eval(env, exp);
@@ -165,8 +165,8 @@ algorithm
       Exp e1,e2,e,exp;
       BinOp binop;
       UnOp unop;
-    case (env,INT(integer = ival)) then (env,INTval(ival)); 
-    case (env,REAL(real = rval)) then (env,REALval(rval)); 
+    case (env,INT(integer = ival)) then (env,INTval(ival));
+    case (env,REAL(real = rval)) then (env,REALval(rval));
     case (env,STRING(string = sval))
       equation
         ival = stringInt(sval);
@@ -186,12 +186,12 @@ algorithm
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         REAL2(real1 = rx,real2 = ry) = typeLub(v1, v2);
-        rz = applyRealBinop(binop, rx, ry); 
+        rz = applyRealBinop(binop, rx, ry);
       then (env2,REALval(rz));
     case (env,UNARY(unOp = unop,exp = e)) "int unop exp"
       equation 
         (env1,INTval(integer = x)) = eval(env, e);
-        y = applyIntUnop(unop, x); 
+        y = applyIntUnop(unop, x);
       then (env1,INTval(y));
     case (env,UNARY(unOp = unop,exp = e)) "real unop exp"
       equation 
@@ -202,7 +202,7 @@ algorithm
     the assigned value id := exp"
       equation 
         (env1,value) = eval(env, exp);
-        env2 = update(env1, id, value); 
+        env2 = update(env1, id, value);
       then (env2,value);
   end matchcontinue;
 end eval;
@@ -217,7 +217,7 @@ algorithm
     local
       Integer x,y;
       Real x2,y2;
-    case (INTval(integer = x),INTval(integer = y)) then INT2(x,y); 
+    case (INTval(integer = x),INTval(integer = y)) then INT2(x,y);
     case (INTval(integer = x),REALval(real = y2))
       equation 
         x2 = intReal(x);
@@ -256,10 +256,10 @@ algorithm
   outReal:=
   matchcontinue (inBinOp1,inReal2,inReal3)
     local Real x,y;
-    case (ADD(),x,y) then x + y;  
-    case (SUB(),x,y) then x - y;  
-    case (MUL(),x,y) then x * y;  
-    case (DIV(),x,y) then x / y; 
+    case (ADD(),x,y) then x + y;
+    case (SUB(),x,y) then x - y;
+    case (MUL(),x,y) then x * y;
+    case (DIV(),x,y) then x / y;
   end matchcontinue;
 end applyRealBinop;
 
@@ -271,7 +271,7 @@ algorithm
   outInteger:=
   matchcontinue (inUnOp,inInteger)
     local Integer x;
-    case (NEG(),x) then -x; 
+    case (NEG(),x) then -x;
   end matchcontinue;
 end applyIntUnop;
 
@@ -341,7 +341,7 @@ algorithm
       Env env;
       Ident id;
       Value value;
-    case (env,id,value) then (id,value) :: env; 
+    case (env,id,value) then (id,value) :: env;
   end matchcontinue;
 end update;
 

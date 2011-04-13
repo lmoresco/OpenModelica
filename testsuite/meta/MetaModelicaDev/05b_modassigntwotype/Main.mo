@@ -60,7 +60,7 @@ algorithm
   matchcontinue (in_stringlist)
     case _
       equation 
-        eval_loop(Eval.init_env); 
+        eval_loop(Eval.init_env);
       then 0;
   end matchcontinue;
 end main;

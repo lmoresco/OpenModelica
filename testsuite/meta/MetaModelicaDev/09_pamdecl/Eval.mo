@@ -14,7 +14,7 @@ algorithm
     local
       Integer v1,v2;
       Real r1,r2;
-    case (Env.INTVAL(integer = v1),Env.INTVAL(integer = v2)) then Env.INTVAL2(v1,v2); 
+    case (Env.INTVAL(integer = v1),Env.INTVAL(integer = v2)) then Env.INTVAL2(v1,v2);
     case (Env.REALVAL(real = r1),Env.REALVAL(real = r2)) then Env.REALVAL2(r1,r2);
     case (Env.INTVAL(integer = v1),Env.REALVAL(real = r2))
       equation 
@@ -38,7 +38,7 @@ algorithm
       Integer v;
       Real r;
       Boolean b;
-    case (Env.INTVAL(integer = v),Env.INTTYPE()) then Env.INTVAL(v); 
+    case (Env.INTVAL(integer = v),Env.INTTYPE()) then Env.INTVAL(v);
     case (Env.REALVAL(real = r),Env.REALTYPE()) then Env.REALVAL(r);
     case (Env.BOOLVAL(boolean = b),Env.BOOLTYPE()) then Env.BOOLVAL(b);
     case (Env.INTVAL(integer = v),Env.REALTYPE())
@@ -56,10 +56,10 @@ function applyIntBinary "Auxiliary functions for applying the binary operators"
 algorithm 
   outInteger := matchcontinue (inBinOp1,inInteger2,inInteger3)
     local Integer v1,v2;
-    case (Absyn.ADD(),v1,v2) then v1 + v2; 
-    case (Absyn.SUB(),v1,v2) then v1 - v2; 
-    case (Absyn.MUL(),v1,v2) then v1*v2; 
-    case (Absyn.DIV(),v1,v2) then intDiv(v1,v2); 
+    case (Absyn.ADD(),v1,v2) then v1 + v2;
+    case (Absyn.SUB(),v1,v2) then v1 - v2;
+    case (Absyn.MUL(),v1,v2) then v1*v2;
+    case (Absyn.DIV(),v1,v2) then intDiv(v1,v2);
   end matchcontinue;
 end applyIntBinary;
 
@@ -71,10 +71,10 @@ function applyRealBinary
 algorithm 
   outReal := matchcontinue (inBinOp1,inReal2,inReal3)
     local Real v1,v2;
-    case (Absyn.ADD(),v1,v2) then v1 + v2; 
-    case (Absyn.SUB(),v1,v2) then v1 - v2; 
-    case (Absyn.MUL(),v1,v2) then v1 * v2; 
-    case (Absyn.DIV(),v1,v2) then v1 / v2; 
+    case (Absyn.ADD(),v1,v2) then v1 + v2;
+    case (Absyn.SUB(),v1,v2) then v1 - v2;
+    case (Absyn.MUL(),v1,v2) then v1 * v2;
+    case (Absyn.DIV(),v1,v2) then v1 / v2;
   end matchcontinue;
 end applyRealBinary;
 
@@ -86,7 +86,7 @@ algorithm
   outInteger:=
   matchcontinue (inUnOp,inInteger)
     local Integer v1;
-    case (Absyn.NEG(),v1) then -v1; 
+    case (Absyn.NEG(),v1) then -v1;
   end matchcontinue;
 end applyIntUnary;
 
@@ -98,7 +98,7 @@ algorithm
   outReal:=
   matchcontinue (inUnOp,inReal)
     local Real v1;
-    case (Absyn.NEG(),v1) then -. v1; 
+    case (Absyn.NEG(),v1) then -. v1;
   end matchcontinue;
 end applyRealUnary;
 
@@ -111,12 +111,12 @@ algorithm
   outBoolean:=
   matchcontinue (inRelOp1,inInteger2,inInteger3)
     local Integer v1,v2;
-    case (Absyn.LT(),v1,v2) then (v1 < v2); 
-    case (Absyn.LE(),v1,v2) then (v1 <= v2); 
-    case (Absyn.GT(),v1,v2) then (v1 > v2); 
-    case (Absyn.GE(),v1,v2) then (v1 >= v2); 
-    case (Absyn.NE(),v1,v2) then (v1 <> v2); 
-    case (Absyn.EQ(),v1,v2) then (v1 == v2); 
+    case (Absyn.LT(),v1,v2) then (v1 < v2);
+    case (Absyn.LE(),v1,v2) then (v1 <= v2);
+    case (Absyn.GT(),v1,v2) then (v1 > v2);
+    case (Absyn.GE(),v1,v2) then (v1 >= v2);
+    case (Absyn.NE(),v1,v2) then (v1 <> v2);
+    case (Absyn.EQ(),v1,v2) then (v1 == v2);
   end matchcontinue;
 end applyIntRelation;
 
@@ -129,12 +129,12 @@ algorithm
   outBoolean:=
   matchcontinue (inRelOp1,inReal2,inReal3)
     local Real v1,v2;
-    case (Absyn.LT(),v1,v2) then (v1 < v2); 
-    case (Absyn.LE(),v1,v2) then (v1 <= v2); 
-    case (Absyn.GT(),v1,v2) then (v1 > v2); 
-    case (Absyn.GE(),v1,v2) then (v1 >= v2); 
-    case (Absyn.NE(),v1,v2) then (v1 <> v2); 
-    case (Absyn.EQ(),v1,v2) then (v1 == v2); 
+    case (Absyn.LT(),v1,v2) then (v1 < v2);
+    case (Absyn.LE(),v1,v2) then (v1 <= v2);
+    case (Absyn.GT(),v1,v2) then (v1 > v2);
+    case (Absyn.GE(),v1,v2) then (v1 >= v2);
+    case (Absyn.NE(),v1,v2) then (v1 <> v2);
+    case (Absyn.EQ(),v1,v2) then (v1 == v2);
   end matchcontinue;
 end applyRealRelation;
 
@@ -157,7 +157,7 @@ algorithm
       String id;
       Real r,r1,r2,r3;
       Boolean b;
-    case (env,Absyn.INTCONST(integer = v)) then Env.INTVAL(v); 
+    case (env,Absyn.INTCONST(integer = v)) then Env.INTVAL(v);
     case (env,Absyn.REALCONST(real = r)) then Env.REALVAL(r);
     case (env,Absyn.BINARY(expr1 = e1,binOp2 = binop,expr3 = e2)) "Binary operators"
       equation 
@@ -278,7 +278,7 @@ algorithm
       equation 
         v = evalExpr(env, e);
         printValue(v); then env;
-    case (env,Absyn.NOOP()) then env; 
+    case (env,Absyn.NOOP()) then env;
     case (env,Absyn.IF(expr1 = e,stmtLst2 = c))
       equation 
         Env.BOOLVAL(boolean = true) = evalExpr(env, e);
@@ -322,7 +322,7 @@ algorithm
       list<Env.Bind> env,env1,env2;
       Absyn.Stmt s;
       list<Absyn.Stmt> ss;
-    case (env,{}) then env; 
+    case (env,{}) then env;
     case (env,(s :: ss))
       equation 
         env1 = evalStmt(env, s);
@@ -364,7 +364,7 @@ algorithm
       list<Env.Bind> env,env1,env2;
       Absyn.Decl s;
       list<Absyn.Decl> ss;
-    case (env,{}) then env; 
+    case (env,{}) then env;
     case (env,(s :: ss))
       equation 
         env1 = evalDecl(env, s);

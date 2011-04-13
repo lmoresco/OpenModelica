@@ -57,7 +57,7 @@ algorithm
   outBindLst:=
   matchcontinue ()
     case () then {BIND("false",BOOLTYPE(),BOOLVAL(false)),
-          BIND("true",BOOLTYPE(),BOOLVAL(true))}; 
+          BIND("true",BOOLTYPE(),BOOLVAL(true))};
   end matchcontinue;
 end initial_;
 

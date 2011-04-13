@@ -9,8 +9,8 @@ algorithm
   _ := matchcontinue arg
     local 
       list<Integer> orderedIntList;
-      list<String> orderedStringList, stringList, strRealLst, strIntLst;      
-      list<Real> orderedRealList, realList;            
+      list<String> orderedStringList, stringList, strRealLst, strIntLst;
+      list<Real> orderedRealList, realList;
     case (_) 
       equation
         // your code here:
@@ -37,7 +37,7 @@ algorithm
         // Functions.map0(strIntLst, Functions.printElement);
         print("\n");
       then ();
-  end matchcontinue; 
+  end matchcontinue;
 end main;
 
 end Main;

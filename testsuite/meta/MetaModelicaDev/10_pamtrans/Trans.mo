@@ -20,9 +20,9 @@ algorithm
       Absyn.Exp e1,e2;
       Absyn.BinOp binop;
     /* integer constant */
-    case (Absyn.INT(integer = v)) then {Mcode.MLOAD(Mcode.N(v))};  
+    case (Absyn.INT(integer = v)) then {Mcode.MLOAD(Mcode.N(v))};
     /* identifier id */  
-    case (Absyn.IDENT(ident = id)) then {Mcode.MLOAD(Mcode.I(id))};  
+    case (Absyn.IDENT(ident = id)) then {Mcode.MLOAD(Mcode.I(id))};
     /* Arith binop: simple case, expr2 is just an identifier or constant expr1 binop expr2 */  
     case (Absyn.BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) 
       equation 
@@ -48,10 +48,10 @@ function transBinop
 algorithm 
   outMBinOp:=
   matchcontinue (inBinOp)
-    case (Absyn.ADD()) then Mcode.MADD(); 
-    case (Absyn.SUB()) then Mcode.MSUB(); 
-    case (Absyn.MUL()) then Mcode.MMULT(); 
-    case (Absyn.DIV()) then Mcode.MDIV(); 
+    case (Absyn.ADD()) then Mcode.MADD();
+    case (Absyn.SUB()) then Mcode.MSUB();
+    case (Absyn.MUL()) then Mcode.MMULT();
+    case (Absyn.DIV()) then Mcode.MDIV();
   end matchcontinue;
 end transBinop;
 

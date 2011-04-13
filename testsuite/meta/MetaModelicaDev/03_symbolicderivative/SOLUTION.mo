@@ -85,7 +85,7 @@ algorithm
     case (DIV(e1,e2),id)
       equation
         e1prim = diff(e1,id);
-        e2prim = diff(e2,id); 
+        e2prim = diff(e2,id);
       then DIV(SUB(MUL(e1prim,e2),MUL(e1,e2prim)), MUL(e2,e2));
     // (-e1)' => -(e1')
     case (NEG(e1),id)
@@ -99,13 +99,13 @@ algorithm
     case (SUB(e1,e2),id)
       equation
         e1prim = diff(e1,id);
-        e2prim = diff(e2,id); 
+        e2prim = diff(e2,id);
       then SUB(e1prim,e2prim);
     // (e1*e2)' => e1'*e2 + e1*e2'
     case (MUL(e1,e2),id)
       equation
         e1prim = diff(e1,id);
-        e2prim = diff(e2,id); 
+        e2prim = diff(e2,id);
       then ADD(MUL(e1prim,e2),MUL(e1,e2prim));
     // sin(e1)' => cos(e1)*e1'
     case (CALL("sin", {e1}),id)
@@ -150,13 +150,13 @@ algorithm
         sim1 = simplifyExp(e1);
         sim2 = simplifyExp(e2);
         res = simplifyExp2(ADD(sim1,sim2));
-      then res; 
+      then res;
     case SUB(e1,e2)
       equation
         sim1 = simplifyExp(e1);
         sim2 = simplifyExp(e2);
         res = simplifyExp2(SUB(sim1,sim2));
-      then res; 
+      then res;
     case MUL(e1,e2)
       equation
         sim1 = simplifyExp(e1);

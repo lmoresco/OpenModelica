@@ -83,7 +83,7 @@ algorithm
       list<tuple<String,Value>> env;
       String id;
       Value value;
-    case (env,id,value) then (id,value) :: env; 
+    case (env,id,value) then (id,value) :: env;
   end matchcontinue;
 end update;
 
@@ -97,7 +97,7 @@ algorithm
     local
       Integer x,y;
       Real x2,y2;
-    case (INTval(x),INTval(y)) then INT2(x,y); 
+    case (INTval(x),INTval(y)) then INT2(x,y);
     case (INTval(x),REALval(y))
       local Real y;
       equation 
@@ -176,8 +176,8 @@ algorithm
       Absyn.Exp e1,e2,e,exp;
       Absyn.BinOp binop;
       Absyn.UnOp unop;
-    case (env,Absyn.INT(ival)) then (env,INTval(ival)); 
-    case (env,Absyn.REAL(rval)) then (env,REALval(rval)); 
+    case (env,Absyn.INT(ival)) then (env,INTval(ival));
+    case (env,Absyn.REAL(rval)) then (env,REALval(rval));
     case (env,Absyn.IDENT(id)) " variable id "
       equation 
         (env2,value) = lookupextend(env, id); then (env2,value);

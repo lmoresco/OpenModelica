@@ -138,7 +138,7 @@ algorithm
       Env e,env2,env3,env;
       Exp exp;
       ExpLst expl;
-    case (e,{}) then e; 
+    case (e,{}) then e;
     case (env,exp :: expl)
       equation 
         (env2,_) = eval(env, exp);
@@ -164,8 +164,8 @@ algorithm
       Exp e1,e2,e,exp;
       BinOp binop;
       UnOp unop;
-    case (env,INT(integer = ival)) then (env,INTval(ival)); 
-    case (env,REAL(real = rval)) then (env,REALval(rval)); 
+    case (env,INT(integer = ival)) then (env,INTval(ival));
+    case (env,REAL(real = rval)) then (env,REALval(rval));
     // your code here
     // case (env, STRING(...)) ...
     case (env,IDENT(ident = id)) "variable id"
@@ -176,7 +176,7 @@ algorithm
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         INT2(integer1 = x,integer2 = y) = typeLub(v1, v2);
-        z = applyIntBinop(binop, x, y); 
+        z = applyIntBinop(binop, x, y);
       then (env2,INTval(z));
     case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) "int/real binop int/real"
       equation 
@@ -188,18 +188,18 @@ algorithm
     case (env,UNARY(unOp = unop,exp = e)) "int unop exp"
       equation 
         (env1,INTval(integer = x)) = eval(env, e);
-        y = applyIntUnop(unop, x); 
+        y = applyIntUnop(unop, x);
       then (env1,INTval(y));
     case (env,UNARY(unOp = unop,exp = e)) "real unop exp"
       equation 
         (env1,REALval(real = rx)) = eval(env, e);
-        ry = applyRealUnop(unop, rx); 
+        ry = applyRealUnop(unop, rx);
       then (env1,REALval(ry));
     case (env,ASSIGN(ident = id,exp = exp)) "eval of an assignment node returns the updated environment and
     the assigned value id := exp"
       equation 
         (env1,value) = eval(env, exp);
-        env2 = update(env1, id, value); 
+        env2 = update(env1, id, value);
       then (env2,value);
   end matchcontinue;
 end eval;
@@ -214,7 +214,7 @@ algorithm
     local
       Integer x,y;
       Real x2,y2;
-    case (INTval(integer = x),INTval(integer = y)) then INT2(x,y); 
+    case (INTval(integer = x),INTval(integer = y)) then INT2(x,y);
     case (INTval(integer = x),REALval(real = y2))
       equation 
         x2 = intReal(x);
@@ -253,10 +253,10 @@ algorithm
   outReal:=
   matchcontinue (inBinOp1,inReal2,inReal3)
     local Real x,y;
-    case (ADD(),x,y) then x + y;  
-    case (SUB(),x,y) then x - y;  
-    case (MUL(),x,y) then x * y;  
-    case (DIV(),x,y) then x / y; 
+    case (ADD(),x,y) then x + y;
+    case (SUB(),x,y) then x - y;
+    case (MUL(),x,y) then x * y;
+    case (DIV(),x,y) then x / y;
   end matchcontinue;
 end applyRealBinop;
 
@@ -338,7 +338,7 @@ algorithm
       Env env;
       Ident id;
       Value value;
-    case (env,id,value) then (id,value) :: env; 
+    case (env,id,value) then (id,value) :: env;
   end matchcontinue;
 end update;
 

@@ -199,7 +199,7 @@ algorithm
       State env;
       Ident id;
       Value value;
-    case (env,id,value) then (id,value) :: env; 
+    case (env,id,value) then (id,value) :: env;
   end matchcontinue;
 end update;
 

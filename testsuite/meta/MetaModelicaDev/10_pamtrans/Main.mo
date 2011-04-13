@@ -15,7 +15,7 @@ protected
   Absyn.Stmt program;
   Mcode_MCodeLst mcode;
 algorithm 
-  print("[Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]\n");  
+  print("[Parse. Enter a program, then press CTRL+z (Windows) or CTRL+d (Linux).]\n");
   program := Parse.parse();
   mcode := Trans.transProgram(program);
   print(Tpl.tplString(Emit.emitAssembly,mcode));

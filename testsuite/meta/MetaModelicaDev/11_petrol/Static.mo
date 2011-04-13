@@ -22,7 +22,7 @@ algorithm
       FuncTypeType_aToType_b R;
       Type_a x;
       list<Type_a> xs;
-    case (_,{}) then {}; 
+    case (_,{}) then {};
     case (R,(x :: xs))
       equation 
         y = R(x);
@@ -110,7 +110,7 @@ algorithm
       String id;
       list<tuple<String, Bnd>> env;
     case (env,Absyn.INTcon(i)) then INTcon(i);  /* env |- Const => Con */ 
-    case (env,Absyn.REALcon(r)) then REALcon(r); 
+    case (env,Absyn.REALcon(r)) then REALcon(r);
     case (env,Absyn.IDENTcon(id))
       equation 
         CONSTbnd(c) = lookup(env, id);
@@ -237,11 +237,11 @@ function isunfold
 algorithm 
   outBoolean:=
   matchcontinue (inTy)
-    case (Types.UNFOLD(_)) then true; 
-    case (Types.ARITH(_)) then false; 
-    case (Types.PTR(_)) then false; 
-    case (Types.ARR(_,_)) then false; 
-    case (Types.REC(_)) then false; 
+    case (Types.UNFOLD(_)) then true;
+    case (Types.ARITH(_)) then false;
+    case (Types.PTR(_)) then false;
+    case (Types.ARR(_,_)) then false;
+    case (Types.REC(_)) then false;
   end matchcontinue;
 end isunfold;
 
@@ -253,7 +253,7 @@ algorithm
     local
       Types.Ty ty;
       list<tuple<String, Types.Ty>> bnds;
-    case (Types.ARITH(_)) then (); 
+    case (Types.ARITH(_)) then ();
     case (Types.ARR(_,ty))
       equation 
         checkTy(ty);
@@ -286,7 +286,7 @@ algorithm
     local
       Types.Ty ty;
       list<tuple<String, Types.Ty>> bnds;
-    case {} then (); 
+    case {} then ();
     case (((_,ty) :: bnds))
       equation 
         checkTy(ty);
@@ -317,10 +317,10 @@ algorithm
     local
       Absyn.Ty ty;
       list<Absyn.VarBnd> bnds;
-    case ((ty as Absyn.NAME(_))) then NOREC(ty); 
-    case ((ty as Absyn.PTR(_))) then NOREC(ty); 
-    case ((ty as Absyn.ARR(_,_))) then NOREC(ty); 
-    case (Absyn.REC(bnds)) then ISREC(bnds); 
+    case ((ty as Absyn.NAME(_))) then NOREC(ty);
+    case ((ty as Absyn.PTR(_))) then NOREC(ty);
+    case ((ty as Absyn.ARR(_,_))) then NOREC(ty);
+    case (Absyn.REC(bnds)) then ISREC(bnds);
   end matchcontinue;
 end isrec;
 
@@ -388,7 +388,7 @@ algorithm
       Absyn.TyBnd tybnd;
       list<Absyn.TyBnd> tybnds;
       list<tuple<String, Bnd>> env,env_1,env_2;
-    case (env,{}) then env; 
+    case (env,{}) then env;
     case (env,(tybnd :: tybnds))
       equation 
         env_1 = elabTybnd(env, tybnd);
@@ -417,7 +417,7 @@ algorithm
   outTypeB:=
   matchcontinue (inTypeA,inTypeB)
     local Type_b addr;
-    case (_,addr) then addr; 
+    case (_,addr) then addr;
   end matchcontinue;
 end lvalueId;
 
@@ -481,9 +481,9 @@ algorithm
       TCode.Exp exp_1;
       Types.Ty ty_1,ty;
       String id;
-    case (CONSTbnd(INTcon(i)),_) then (TCode.ICON(i),Types.ARITH(Types.INT())); 
-    case (CONSTbnd(REALcon(r)),_) then (TCode.RCON(r),Types.ARITH(Types.REAL())); 
-    case (NILbnd(),_) then (TCode.ICON(0),Types.PTRNIL()); 
+    case (CONSTbnd(INTcon(i)),_) then (TCode.ICON(i),Types.ARITH(Types.INT()));
+    case (CONSTbnd(REALcon(r)),_) then (TCode.RCON(r),Types.ARITH(Types.REAL()));
+    case (NILbnd(),_) then (TCode.ICON(0),Types.PTRNIL());
     case (VARbnd(ty),id)
       equation 
         (exp_1,ty_1) = rvalueVar(ty, TCode.ADDR(id));
@@ -595,8 +595,8 @@ algorithm
       list<Absyn.Exp> args;
       list<tuple<String, Bnd>> env;
       Absyn.Ty aty;
-    case (env,Absyn.INT(i)) then (TCode.ICON(i),Types.ARITH(Types.INT())); 
-    case (env,Absyn.REAL(r)) then (TCode.RCON(r),Types.ARITH(Types.REAL())); 
+    case (env,Absyn.INT(i)) then (TCode.ICON(i),Types.ARITH(Types.INT()));
+    case (env,Absyn.REAL(r)) then (TCode.RCON(r),Types.ARITH(Types.REAL()));
     case (env,Absyn.IDENT(id))
       equation 
         bnd = lookup(env, id);
@@ -782,7 +782,7 @@ algorithm
         rty_1 = Types.tyCnv(rty);
       then
         TCode.RETURN(SOME((rty_1,exp_2)));
-    case (NONE(),env,Absyn.PRETURN()) then TCode.RETURN(NONE()); 
+    case (NONE(),env,Absyn.PRETURN()) then TCode.RETURN(NONE());
     case (oty,env,Absyn.WHILE(exp,stmt))
       equation
         (exp_1,ety) = elabRvalueDecay(env, exp);
@@ -887,7 +887,7 @@ algorithm
     local
       Type_a id;
       Types.Ty ty;
-    case ((id,ty)) then ((id,VARbnd(ty))); 
+    case ((id,ty)) then ((id,VARbnd(ty)));
   end matchcontinue;
 end mkvarbnd;
 
@@ -898,10 +898,10 @@ algorithm
   outTy:=
   matchcontinue (inTy)
     local Types.Ty ty;
-    case (Types.ARR(_,ty)) then Types.PTR(ty); 
-    case ((ty as Types.ARITH(_))) then ty; 
-    case ((ty as Types.PTR(_))) then ty; 
-    case ((ty as Types.REC(_))) then ty; 
+    case (Types.ARR(_,ty)) then Types.PTR(ty);
+    case ((ty as Types.ARITH(_))) then ty;
+    case ((ty as Types.PTR(_))) then ty;
+    case ((ty as Types.REC(_))) then ty;
   end matchcontinue;
 end decayFormalTy;
 
@@ -929,7 +929,7 @@ algorithm
   outTypeB:=
   matchcontinue (inTplTypeATypeB)
     local Type_b y;
-    case ((_,y)) then y; 
+    case ((_,y)) then y;
   end matchcontinue;
 end snd;
 
@@ -1043,7 +1043,7 @@ algorithm
       Option<Types.Ty> fty;
       list<tuple<String, Bnd>> env;
       Absyn.Block block_;
-    case (_,_,NONE()) then NONE(); 
+    case (_,_,NONE()) then NONE();
     case (fty,env,SOME(block_))
       equation 
         block_1 = elabBlock(fty, env, block_);

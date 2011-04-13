@@ -26,7 +26,7 @@ algorithm
 end factorial;
 
 // an alias for the Real type 
-// type Alias = Real; 
+// type Alias = Real;
 // constant Alias aliasConstant = 1.0;
 function printAlias
   input Types.Alias aliasVariable;
@@ -35,7 +35,7 @@ algorithm
 end printAlias;
 
 // an option type which can be SOME(Alias) or NONE()
-// type OptionType = Option<Alias>; 
+// type OptionType = Option<Alias>;
 // constant OptionType optionAliasConstant = SOME(aliasConstant);
 function printOptionType
   input Types.OptionType oVar;
@@ -54,7 +54,7 @@ algorithm
 end printOptionType;
 
 // a tuple type with 3 elements
-//type TupleType = tuple<String, Alias, OptionType>; 
+//type TupleType = tuple<String, Alias, OptionType>;
 //constant TupleType tupleConstant = ("a tuple element", aliasConstant, optionAliasConstant);
 function printTupleType
   input Types.TupleType tupleVar;
@@ -70,7 +70,7 @@ algorithm
         print("\"" + str + "\"");
         print(", ");
         printAlias(alias);
-        print(", ");        
+        print(", ");
         printOptionType(optionAlias);
         print(")");
       then ();
@@ -79,7 +79,7 @@ end printTupleType;
 
 
 // a list type 
-//type ListType = list<TupleType>; 
+//type ListType = list<TupleType>;
 //constant ListType listConstant = {tupleConstant, ("another element", 2.0, NONE())};
 function printListType
   input Types.ListType listVar;
@@ -116,7 +116,7 @@ algorithm
   _ := match (oneRecordVar)
     local 
       String cmp1;
-      Types.Alias cmp2;      
+      Types.Alias cmp2;
     case (Types.OneRecord(cmp1, cmp2)) 
       equation
         print("OneRecord(");
@@ -151,7 +151,7 @@ end printOneRecord;
 //	ThirdAlternative(
 //	  SecondAlternative(
 //	    FirstAlternative("one", "First"),
-//	    FirstAlternative("two", "Second"))); 
+//	    FirstAlternative("two", "Second")));
 function printSelect
   input Types.Select selectVar;
 algorithm
@@ -196,16 +196,16 @@ function main
 algorithm
  _ := match arg
   local 
-    Integer i, n; 
+    Integer i, n;
     String str, n_str;
   case (n_str::_) 
    equation
      // factorial 
      print("Factorial of " + n_str + " is: ");
-     n = stringInt(n_str);    
+     n = stringInt(n_str);
      i = Functions.factorial(n);
      str = intString(i);
-     print(str); 
+     print(str);
      // test function
      print("\nCalling Functions.test(\"one\"):   " + intString(Functions.test("one")));
      print("\nCalling Functions.test(\"two\"):   " + intString(Functions.test("two")));

@@ -8,16 +8,16 @@ function main
 algorithm
  _ := match arg
   local 
-    Integer i, n; 
+    Integer i, n;
     String str, n_str;
   case (n_str::_) 
    equation
      // factorial 
      print("Factorial of " + n_str + " is: ");
-     n = stringInt(n_str);    
+     n = stringInt(n_str);
      i = Functions.factorial(n);
      str = intString(i);
-     print(str); 
+     print(str);
      // test function
      print("\nCalling Functions.test(\"one\"):   " + intString(Functions.test("one")));
      print("\nCalling Functions.test(\"two\"):   " + intString(Functions.test("two")));

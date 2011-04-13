@@ -55,27 +55,27 @@ algorithm
     */      
     case (ADDop(exp1 = e1,exp2 = e2)) 
       equation
-        v1 = eval(e1); 
+        v1 = eval(e1);
         v2 = eval(e2);
       then v1 + v2;
     case (SUBop(exp1 = e1,exp2 = e2))
       equation 
         v1 = eval(e1);
-        v2 = eval(e2); 
+        v2 = eval(e2);
       then v1 - v2;
     case (MULop(exp1 = e1,exp2 = e2))
       equation 
         v1 = eval(e1);
-        v2 = eval(e2); 
+        v2 = eval(e2);
       then v1*v2;
     case (DIVop(exp1 = e1,exp2 = e2))
       equation 
         v1 = eval(e1);
-        v2 = eval(e2); 
+        v2 = eval(e2);
       then intDiv(v1,v2);
     case (NEGop(exp = e))
       equation 
-        v1 = eval(e); 
+        v1 = eval(e);
       then -v1;
     // your code here
     // add evaluation handlers for the new operators
