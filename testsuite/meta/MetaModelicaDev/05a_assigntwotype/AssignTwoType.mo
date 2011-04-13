@@ -2,39 +2,41 @@ package AssignTwoType "file AssignTwoType.mo"
 
 type ExpLst = list<Exp>;
 
-uniontype Program "Abstract syntax for the Assigntwotype language"
+// Abstract syntax for the Assigntwotype language 
+
+uniontype Program "a program"
   record PROGRAM
     ExpLst expLst;
     Exp exp;
   end PROGRAM;
 end Program;
 
-uniontype Exp
-  record INT
+uniontype Exp "expressions"
+  record INT "literal integers"
     Integer integer;
   end INT;
 
-  record REAL
+  record REAL "literal reals"
     Real real;
   end REAL;
   
-  record BINARY
+  record BINARY "binary expressions"
     Exp exp1;
     BinOp binOp2;
     Exp exp3;
   end BINARY;
 
-  record UNARY
+  record UNARY "unary expressions"
     UnOp unOp;
     Exp exp;
   end UNARY;
 
-  record ASSIGN
+  record ASSIGN "assignment expressions"
     Ident ident;
     Exp exp;
   end ASSIGN;
 
-  record IDENT
+  record IDENT "identifiers"
     Ident ident;
   end IDENT;
 
@@ -43,25 +45,25 @@ uniontype Exp
 
 end Exp;
 
-uniontype BinOp
-  record ADD end ADD;
-  record SUB end SUB;
-  record MUL end MUL;
-  record DIV end DIV;
+uniontype BinOp "binary operators"
+  record ADD "addition operator" end ADD;
+  record SUB "subtraction operator" end SUB;
+  record MUL "multiplication operator" end MUL;
+  record DIV "divition operator" end DIV;
 end BinOp;
 
-uniontype UnOp
-  record NEG end NEG;
+uniontype UnOp "unary operators"
+  record NEG "negation operator" end NEG;
 end UnOp;
 
 type Ident = String;
 
 uniontype Value "Values stored in environments"
-  record INTval
+  record INTval "integer values"
     Integer integer;
   end INTval;
 
-  record REALval
+  record REALval "real values"
     Real real;
   end REALval;
 end Value;
@@ -164,39 +166,47 @@ algorithm
       Exp e1,e2,e,exp;
       BinOp binop;
       UnOp unop;
+    // handle int
     case (env,INT(integer = ival)) then (env,INTval(ival));
+    // handle real
     case (env,REAL(real = rval)) then (env,REALval(rval));
     // your code here
     // case (env, STRING(...)) ...
-    case (env,IDENT(ident = id)) "variable id"
+    // variable id
+    case (env,IDENT(ident = id))
       equation 
         (env2,value) = lookupextend(env, id); then (env2,value);
-    case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) "int binop int"
+    // int binop int
+    case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2))
       equation 
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         INT2(integer1 = x,integer2 = y) = typeLub(v1, v2);
         z = applyIntBinop(binop, x, y);
       then (env2,INTval(z));
-    case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) "int/real binop int/real"
+    // int/real binop int/real
+    case (env,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2))
       equation 
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         REAL2(real1 = rx,real2 = ry) = typeLub(v1, v2);
         rz = applyRealBinop(binop, rx, ry);
       then (env2,REALval(rz));
-    case (env,UNARY(unOp = unop,exp = e)) "int unop exp"
+    // int unop exp
+    case (env,UNARY(unOp = unop,exp = e))
       equation 
         (env1,INTval(integer = x)) = eval(env, e);
         y = applyIntUnop(unop, x);
       then (env1,INTval(y));
-    case (env,UNARY(unOp = unop,exp = e)) "real unop exp"
+    // real unop exp
+    case (env,UNARY(unOp = unop,exp = e))
       equation 
         (env1,REALval(real = rx)) = eval(env, e);
         ry = applyRealUnop(unop, rx);
       then (env1,REALval(ry));
-    case (env,ASSIGN(ident = id,exp = exp)) "eval of an assignment node returns the updated environment and
-    the assigned value id := exp"
+    // eval of an assignment node returns the updated
+    // environment and the assigned value id := exp
+    case (env,ASSIGN(ident = id,exp = exp))
       equation 
         (env1,value) = eval(env, exp);
         env2 = update(env1, id, value);
@@ -314,7 +324,8 @@ algorithm
       Value value;
       Env env;
       Ident id;
-    case (env,id) "Return value of id in env. If id not present, add id and return 0"
+    // Return value of id in env. If id not present, add id and return 0
+    case (env,id)
       equation 
         failure(_ = lookup(env, id));
         value = INTval(0);

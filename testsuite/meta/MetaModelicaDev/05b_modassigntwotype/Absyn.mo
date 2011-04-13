@@ -3,38 +3,38 @@ package Absyn " file: Absyn.mo
 
 type Ident = String;
 
-uniontype BinOp
-  record ADD  end ADD;
-  record SUB  end SUB;
-  record MUL  end MUL;
-  record DIV  end DIV;
+uniontype BinOp "binary operators"
+  record ADD "addition" end ADD;
+  record SUB "subtraction" end SUB;
+  record MUL "multiplication" end MUL;
+  record DIV "division" end DIV;
 end BinOp;
 
-uniontype UnOp
-  record NEG  end NEG;
+uniontype UnOp "unary operators"
+  record NEG "negation" end NEG;
 end UnOp;
 
-uniontype Exp
-  record INT
+uniontype Exp "expressions"
+  record INT "literal integers"
     Integer x1;
   end INT;
-  record REAL
+  record REAL "literal reals"
     Real x1;
   end REAL;
-  record BINARY
+  record BINARY "binary expressions"
     Exp x1;
     BinOp x2;
     Exp x3;
   end BINARY;
-  record UNARY
+  record UNARY "unary expressions"
     UnOp x1;
     Exp x2;
   end UNARY;
-  record ASSIGN
+  record ASSIGN "assignment expressions"
     Ident x1;
     Exp x2;
   end ASSIGN;
-  record IDENT
+  record IDENT "identifiers"
     Ident x1;
   end IDENT;
 end Exp;

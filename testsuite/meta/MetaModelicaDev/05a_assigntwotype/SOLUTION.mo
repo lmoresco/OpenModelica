@@ -2,67 +2,69 @@ package AssignTwoType "file AssignTwoType.mo"
 
 type ExpLst = list<Exp>;
 
-uniontype Program "Abstract syntax for the Assigntwotype language"
+// Abstract syntax for the Assigntwotype language 
+
+uniontype Program "a program"
   record PROGRAM
     ExpLst expLst;
     Exp exp;
   end PROGRAM;
 end Program;
 
-uniontype Exp
-  record INT
+uniontype Exp "expressions"
+  record INT "literal integers"
     Integer integer;
   end INT;
 
-  record REAL
+  record REAL "literal reals"
     Real real;
   end REAL;
   
-  record BINARY
+  record BINARY "binary expressions"
     Exp exp1;
     BinOp binOp2;
     Exp exp3;
   end BINARY;
 
-  record UNARY
+  record UNARY "unary expressions"
     UnOp unOp;
     Exp exp;
   end UNARY;
 
-  record ASSIGN
+  record ASSIGN "assignment expressions"
     Ident ident;
     Exp exp;
   end ASSIGN;
 
-  record IDENT
+  record IDENT "identifiers"
     Ident ident;
   end IDENT;
 
-  record STRING
+  record STRING "literal strings"
     String string;
   end STRING;
 
 end Exp;
 
-uniontype BinOp
-  record ADD end ADD;
-  record SUB end SUB;
-  record MUL end MUL;
-  record DIV end DIV;
+uniontype BinOp "binary operators"
+  record ADD "addition operator" end ADD;
+  record SUB "subtraction operator" end SUB;
+  record MUL "multiplication operator" end MUL;
+  record DIV "divition operator" end DIV;
 end BinOp;
 
-uniontype UnOp
-  record NEG end NEG;
+uniontype UnOp "unary operators"
+  record NEG "negation operator" end NEG;
 end UnOp;
 
 type Ident = String;
 
 uniontype Value "Values stored in environments"
-  record INTval
+  record INTval "integer values"
     Integer integer;
   end INTval;
 
-  record REALval
+  record REALval "real values"
     Real real;
   end REALval;
 end Value;
@@ -317,7 +319,8 @@ algorithm
       Value value;
       Env env;
       Ident id;
-    case (env,id) "Return value of id in env. If id not present, add id and return 0"
+    // Return value of id in env. If id not present, add id and return 0
+    case (env,id)
       equation 
         failure(_ = lookup(env, id));
         value = INTval(0);

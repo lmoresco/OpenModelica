@@ -3,10 +3,10 @@ package Eval
 import Absyn;
 
 uniontype Value " Values, bindings and environment "
-  record INTval
+  record INTval "integer values"
     Integer x1;
   end INTval;
-  record REALval
+  record REALval "real values"
     Real x1;
   end REALval;
 end Value;
@@ -59,13 +59,16 @@ algorithm
       Value value;
       Env env;
       String id;
-    case (env,id) "Return value of id in env. If id not present, add id and return 0"
+    // Return value of id in env. If id not present, add id and return 0
+    case (env,id)
       equation 
         failure(_ = lookup(env, id));
+        // failed to find id
         value = INTval(0);
       then ((id,value) :: env,value);
     case (env,id)
-      equation 
+      equation
+        // found id, return it
         value = lookup(env, id);
       then (env,value);
   end matchcontinue;
@@ -176,35 +179,43 @@ algorithm
       Absyn.Exp e1,e2,e,exp;
       Absyn.BinOp binop;
       Absyn.UnOp unop;
+    // handle int
     case (env,Absyn.INT(ival)) then (env,INTval(ival));
+    // handle real
     case (env,Absyn.REAL(rval)) then (env,REALval(rval));
-    case (env,Absyn.IDENT(id)) " variable id "
+    // variable id
+    case (env,Absyn.IDENT(id))
       equation 
         (env2,value) = lookupextend(env, id); then (env2,value);
-    case (env,Absyn.BINARY(e1,binop,e2)) " int binop int "
+    // int binop int
+    case (env,Absyn.BINARY(e1,binop,e2))
       equation 
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         INT2(x,y) = type_lub(v1, v2);
         z = apply_int_binop(binop, x, y); then (env2,INTval(z));
-    case (env,Absyn.BINARY(e1,binop,e2)) " int/real binop int/real "
+    // int/real binop int/real
+    case (env,Absyn.BINARY(e1,binop,e2))
       local Real x,y,z;
       equation 
         (env1,v1) = eval(env, e1);
         (env2,v2) = eval(env, e2);
         REAL2(x,y) = type_lub(v1, v2);
         z = apply_real_binop(binop, x, y); then (env2,REALval(z));
-    case (env,Absyn.UNARY(unop,e)) " int unop exp "
+    // int unop exp
+    case (env,Absyn.UNARY(unop,e))
       equation
         (env1,INTval(x)) = eval(env, e);
         y = apply_int_unop(unop, x); then (env1,INTval(y));
-    case (env,Absyn.UNARY(unop,e)) " real unop exp "
+    // real unop exp
+    case (env,Absyn.UNARY(unop,e))
       local Real x,y;
       equation 
         (env1,REALval(x)) = eval(env, e);
         y = apply_real_unop(unop, x); then (env1,REALval(y));
-    case (env,Absyn.ASSIGN(id,exp)) " eval of an assignment node returns the updated environment and
-   * the assigned value   id := exp "
+    // eval of an assignment node returns the updated
+    // environment and the assigned value id := exp
+    case (env,Absyn.ASSIGN(id,exp))
       equation
         (env1,value) = eval(env, exp);
         env2 = update(env1, id, value); then (env2,value);
