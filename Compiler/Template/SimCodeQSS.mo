@@ -199,8 +199,8 @@ algorithm
                                     "// fbergero, xfloros: Code for QSS methods\n",
                                     "#ifdef _OMC_QSS\n",
                                     "\n",
-                                    "int startNonInteractiveSimulation(int, char**);\n",
-                                    "int initRuntimeAndSimulation(int, char**);\n",
+                                    "void init_ompd();\n",
+                                    "void clean_ompd();\n",
                                     "\n",
                                     "\n",
                                     "bool cond["
@@ -219,7 +219,15 @@ algorithm
                                     "\n",
                                     "double state_values(int state)\n",
                                     "{\n",
-                                    "  return 0.0;\n",
+                                    "  switch (state)\n",
+                                    "  {\n"
+                                }, true));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
+        txt = generateStateValues(txt, a_qssInfo);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "  }\n",
                                     "}\n",
                                     "\n",
                                     "double quantum_values(int state)\n",
@@ -243,21 +251,22 @@ algorithm
                                     "\n",
                                     "int init_runtime()\n",
                                     "{\n",
-                                    "  int retVal = -1;\n",
                                     "  static bool init=false;\n",
-                                    "  if (init)\n",
-                                    "    return 0;\n",
-                                    "\n",
-                                    "  if (initRuntimeAndSimulation(0,NULL)) //initRuntimeAndSimulation returns 1 if an error occurs\n",
-                                    "    return 1;\n",
-                                    "  init=true;\n",
-                                    "  return startNonInteractiveSimulation(0,NULL);\n",
+                                    "  if (!init)\n",
+                                    "  {\n",
+                                    "    init=true;\n",
+                                    "    init_ompd();\n",
+                                    "  }\n",
                                     "}\n",
                                     "\n",
                                     "void clean_runtime()\n",
                                     "{\n",
-                                    "  deInitializeDataStruc(globalData);\n",
-                                    "  free(globalData);\n",
+                                    "  static bool clean=false;\n",
+                                    "  if (!clean)\n",
+                                    "  {\n",
+                                    "    clean=true;\n",
+                                    "    clean_ompd();\n",
+                                    "  }\n",
                                     "}\n"
                                 }, true));
         txt = functionQssStaticBlocks(txt, i_odeEquations, i_zeroCrossings, a_qssInfo, i_modelInfo_varInfo_numStateVars);
@@ -2184,7 +2193,65 @@ algorithm
   out_txt := Tpl.popIter(out_txt);
 end generateConnections;
 
-protected function fun_74
+protected function lm_74
+  input Tpl.Text in_txt;
+  input list<BackendDAE.Var> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<BackendDAE.Var> rest;
+      Integer x_i0;
+      BackendDAE.Var i_var;
+      DAE.ComponentRef ret_0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_var :: rest )
+      equation
+        x_i0 = Tpl.getIteri_i0(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("case "));
+        txt = Tpl.writeStr(txt, intString(x_i0));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(":\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("return  "));
+        ret_0 = BackendVariable.varCref(i_var);
+        txt = SimCodeC.cref(txt, ret_0);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
+        txt = Tpl.popBlock(txt);
+        txt = Tpl.nextIter(txt);
+        txt = lm_74(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_74(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_74;
+
+public function generateStateValues
+  input Tpl.Text txt;
+  input BackendQSS.QSSinfo a_qssInfo;
+
+  output Tpl.Text out_txt;
+protected
+  list<BackendDAE.Var> ret_0;
+algorithm
+  ret_0 := BackendQSS.getStates(a_qssInfo);
+  out_txt := Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_74(out_txt, ret_0);
+  out_txt := Tpl.popIter(out_txt);
+end generateStateValues;
+
+protected function fun_76
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -2208,9 +2275,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_74;
+end fun_76;
 
-protected function lm_75
+protected function lm_77
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -2232,72 +2299,72 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_75(txt, rest);
+        txt = lm_77(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_75(txt, rest);
+        txt = lm_77(txt, rest);
       then txt;
   end matchcontinue;
-end lm_75;
-
-protected function fun_76
-  input Tpl.Text in_txt;
-  input Tpl.Text in_a_dirExtra;
-  input Tpl.Text in_a_libsStr;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
-    local
-      Tpl.Text txt;
-      Tpl.Text a_libsStr;
-
-    case ( txt,
-           Tpl.MEM_TEXT(tokens = {}),
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
-      then txt;
-
-    case ( txt,
-           _,
-           _ )
-      then txt;
-  end matchcontinue;
-end fun_76;
-
-protected function fun_77
-  input Tpl.Text in_txt;
-  input Tpl.Text in_a_dirExtra;
-  input Tpl.Text in_a_libsStr;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
-    local
-      Tpl.Text txt;
-      Tpl.Text a_libsStr;
-
-    case ( txt,
-           Tpl.MEM_TEXT(tokens = {}),
-           _ )
-      then txt;
-
-    case ( txt,
-           _,
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
-      then txt;
-  end matchcontinue;
-end fun_77;
+end lm_77;
 
 protected function fun_78
+  input Tpl.Text in_txt;
+  input Tpl.Text in_a_dirExtra;
+  input Tpl.Text in_a_libsStr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_libsStr;
+
+    case ( txt,
+           Tpl.MEM_TEXT(tokens = {}),
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
+      then txt;
+
+    case ( txt,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end fun_78;
+
+protected function fun_79
+  input Tpl.Text in_txt;
+  input Tpl.Text in_a_dirExtra;
+  input Tpl.Text in_a_libsStr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_libsStr;
+
+    case ( txt,
+           Tpl.MEM_TEXT(tokens = {}),
+           _ )
+      then txt;
+
+    case ( txt,
+           _,
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
+      then txt;
+  end matchcontinue;
+end fun_79;
+
+protected function fun_80
   input Tpl.Text in_txt;
   input Boolean in_a_s_measureTime;
 
@@ -2318,9 +2385,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("-D_OMC_MEASURE_TIME "));
       then txt;
   end matchcontinue;
-end fun_78;
+end fun_80;
 
-protected function fun_79
+protected function fun_81
   input Tpl.Text in_txt;
   input String in_a_s_method;
 
@@ -2347,9 +2414,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_79;
+end fun_81;
 
-protected function fun_80
+protected function fun_82
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -2365,18 +2432,18 @@ algorithm
     case ( txt,
            SOME(SimCode.SIMULATION_SETTINGS(measureTime = i_s_measureTime, method = i_s_method)) )
       equation
-        txt = fun_78(txt, i_s_measureTime);
+        txt = fun_80(txt, i_s_measureTime);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_79(txt, i_s_method);
+        txt = fun_81(txt, i_s_method);
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end fun_80;
+end fun_82;
 
-protected function fun_81
+protected function fun_83
   input Tpl.Text in_txt;
   input String in_mArg;
 
@@ -2399,7 +2466,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
       then txt;
   end matchcontinue;
-end fun_81;
+end fun_83;
 
 public function simulationMakefile
   input Tpl.Text in_txt;
@@ -2434,13 +2501,13 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_74(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_76(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_75(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_77(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_76(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_77(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_extraCflags = fun_80(Tpl.emptyTxt, i_sopt);
+        l_libsPos1 = fun_78(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_79(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_extraCflags = fun_82(Tpl.emptyTxt, i_sopt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
@@ -2512,7 +2579,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
         ret_5 = System.os();
-        txt = fun_81(txt, ret_5);
+        txt = fun_83(txt, ret_5);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
