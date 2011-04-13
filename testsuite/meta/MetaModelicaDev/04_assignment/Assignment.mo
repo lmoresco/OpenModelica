@@ -1,59 +1,59 @@
 package Assignment "Assignment.mo"
 
-type ExpLst = list<Exp>;
+type ExpLst = list<Exp> "a list of expressions";
 
-uniontype Program "Abstract syntax for the Assignments language"
+// Abstract syntax for the Assignments language
+uniontype Program "a program"
   record PROGRAM
     ExpLst expLst;
     Exp exp;
   end PROGRAM;
 end Program;
 
-uniontype Exp
-  record INT
+uniontype Exp "expressions"
+  record INT "integer literals"
     Integer integer;
   end INT;
 
-  record BINARY
+  record BINARY "binary expressions"
     Exp exp1;
     BinOp binOp2;
     Exp exp3;
   end BINARY;
 
-  record UNARY
+  record UNARY "unary expresions"
     UnOp unOp;
     Exp exp;
   end UNARY;
 
-  record ASSIGN
+  record ASSIGN "assignment expressions"
     Ident ident;
     Exp exp;
   end ASSIGN;
 
-  record IDENT
+  record IDENT "identifiers"
     Ident ident;
   end IDENT;
 end Exp;
  
-uniontype BinOp
-  record ADD end ADD;
-  record SUB end SUB;
-  record MUL end MUL;
-  record DIV end DIV;
+uniontype BinOp "binary operators"
+  record ADD "addition" end ADD;
+  record SUB "substraction" end SUB;
+  record MUL "multiplication" end MUL;
+  record DIV "division" end DIV;
 end BinOp;
 
-uniontype UnOp
-  record NEG end NEG;
-
+uniontype UnOp "unary operators"
+  record NEG "negation operator" end NEG;
 end UnOp;
 
 type Ident = String;
 
 type Value = Integer "Values stored in environments";
 
-type VarBnd = tuple<Ident,Value> "Bindings and environments";
+type VarBnd = tuple<Ident,Value> "a binding is a tuple of id and value";
 
-type Env = list<VarBnd>;
+type Env = list<VarBnd> "an environment is a list of bindings";
 
 function lookup "lookup returns the value associated with an identifier.
   If no association is present, lookup will fail."
@@ -146,26 +146,28 @@ algorithm
       Exp exp,e1,e2,e;
       BinOp binop;
       UnOp unop;
+    // eval of integer record returns the integer value
     case (env,INT(integer = ival)) then (env,ival);
-    /* eval of an identifier node will lookup the identifier and return a
-    value if present; otherwise insert a binding to zero, and return zero. */       
+    // eval of an identifier node will lookup the identifier and return a
+    // value if present; otherwise insert a binding to zero, and return zero.
     case (env,IDENT(ident = id)) 
       equation 
         (env2,value) = lookupextend(env, id);
       then (env2,value);
-    /* eval of an assignment node returns the updated environment and the assigned value. */
+    // eval of an assignment node returns the updated environment and the assigned value.
     case (env,ASSIGN(ident = id,exp = exp)) 
       equation 
         (env2,value) = eval(env, exp);
         env3 = update(env2, id, value);
       then (env3,value);
-    /* eval of a node e1,ADD,e2 , etc. in an environment env */   
+    // eval of a node e1,ADD,e2 , etc. in an environment env
     case (env1,BINARY(exp1 = e1,binOp2 = binop,exp3 = e2)) 
       equation 
         (env2,v1) = eval(env1, e1);
         (env3,v2) = eval(env2, e2);
         v3 = applyBinop(binop, v1, v2);
       then (env3,v3);
+    // eval of a node NEG,e etc. in an environment env
     case (env1,UNARY(unOp = unop,exp = e))
       equation 
         (env2,v1) = eval(env1, e);
@@ -187,10 +189,12 @@ algorithm
       Ident s;
       Exp exp;
       ExpLst expl;
-    case (e,{}) then e;    // the environment stay the same if there are no expressions 
-    case (env,exp :: expl) // the head expression is evaluated in the current environment
-                           // generating a new environment in which the rest of the expression
-                           // list is evaluated. the last environment is returned 
+    // the environment stay the same if there are no expressions 
+    case (e,{}) then e;
+    // the head expression is evaluated in the current environment
+    // generating a new environment in which the rest of the expression
+    // list is evaluated. the last environment is returned 
+    case (env,exp :: expl)
       equation 
         (env2,v) = eval(env, exp);
         env3 = evals(env2, expl);
