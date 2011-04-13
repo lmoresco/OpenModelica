@@ -1,32 +1,32 @@
 package SymbolicDerivative
   
-uniontype Exp
-  record INT
+uniontype Exp "expressions"
+  record INT "literal integers"
     Integer integer;
   end INT;
-  record ADD
+  record ADD "additions"
     Exp exp1;
     Exp exp2;
   end ADD;
-  record SUB
-  Exp exp1;
+  record SUB "subtractions"
+    Exp exp1;
     Exp exp2;
   end SUB;
-  record MUL
+  record MUL "multiplications"
     Exp exp1;
     Exp exp2;
   end MUL;
-  record DIV
+  record DIV "divisions"
     Exp exp1;
     Exp exp2;
   end DIV;
-  record NEG
+  record NEG "negation"
     Exp exp;
   end NEG;
-  record IDENT
+  record IDENT "identifiers"
     String id;
   end IDENT;
-  record CALL
+  record CALL "function calls"
     String id;
     list<Exp> args;
   end CALL;
@@ -217,9 +217,7 @@ algorithm
   end matchcontinue;
 end simplifyExp2;
 
-/*
- * Functions for printing expressions
- */
+// Functions for printing expressions
 
 function printExp
   input Exp exp;
