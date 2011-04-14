@@ -202,7 +202,6 @@ algorithm
                                     "void init_ompd();\n",
                                     "void clean_ompd();\n",
                                     "\n",
-                                    "\n",
                                     "bool cond["
                                 }, false));
         txt = Tpl.writeStr(txt, intString(i_modelInfo_varInfo_numZeroCrossings));

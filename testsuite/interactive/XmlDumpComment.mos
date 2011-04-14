@@ -26,19 +26,9 @@ dumpXMLDAE(XmlDumpComment);
 //                                                 xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
 //                                                 xsi:noNamespaceSchemaLocation=\"http://home.dei.polimi.it/donida/Projects/AutoEdit/Images/DAE.xsd\">
 // <variables dimension=\"4\">
-// <orderedVariables dimension=\"2\">
+// <orderedVariables dimension=\"1\">
 // <variablesList>
-// <variable id=\"1\" name=\"x\" variability=\"continuous\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"false\" flow=\"NonConnector\" stream=\"NonStreamConnector\" comment=\"evaluated to 0 if A &lt; B\">
-// <classesNames>
-// <element>
-// XmlDumpComment
-// </element>
-// <element>
-// Real
-// </element>
-// </classesNames>
-// </variable>
-// <variable id=\"2\" name=\"$dummy\" variability=\"continuousState\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStream\">
+// <variable id=\"1\" name=\"$dummy\" variability=\"continuousState\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStream\">
 // <attributesValues>
 // <fixed string=\"true\">
 // </fixed>
@@ -46,7 +36,7 @@ dumpXMLDAE(XmlDumpComment);
 // </variable>
 // </variablesList>
 // </orderedVariables>
-// <knownVariables dimension=\"2\">
+// <knownVariables dimension=\"3\">
 // <variablesList>
 // <variable id=\"1\" name=\"B\" variability=\"parameter\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"true\" flow=\"NonConnector\" stream=\"NonStreamConnector\">
 // <bindValueExpression>
@@ -76,13 +66,25 @@ dumpXMLDAE(XmlDumpComment);
 // </element>
 // </classesNames>
 // </variable>
+// <variable id=\"3\" name=\"x\" variability=\"continuous\" direction=\"none\" type=\"Real\" index=\"-1\" fixed=\"false\" flow=\"NonConnector\" stream=\"NonStreamConnector\" comment=\"evaluated to 0 if A &lt; B\">
+// <bindValueExpression>
+// <bindExpression string=\"if A < B then 0.0 else 1.0\">
+// </bindExpression>
+// </bindValueExpression>
+// <classesNames>
+// <element>
+// XmlDumpComment
+// </element>
+// <element>
+// Real
+// </element>
+// </classesNames>
+// </variable>
 // </variablesList>
 // </knownVariables>
 // </variables>
-// <equations dimension=\"2\">
-// <equation id=\"1\">x = if A &lt; B then 0.0 else 1.0
-// </equation>
-// <equation id=\"2\">der($dummy) = 0.0
+// <equations dimension=\"1\">
+// <equation id=\"1\">der($dummy) = 0.0
 // </equation>
 // </equations>
 // <functions>

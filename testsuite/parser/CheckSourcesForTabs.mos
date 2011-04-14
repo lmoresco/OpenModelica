@@ -6,7 +6,7 @@ system("bash -c 'grep \\	 ../../Compiler/{BackEnd,FrontEnd,Main,Script,Util}/*.m
 if readFile("CheckSourcesForTabs.count") == "0
 " then "OK" else "Found tabs in the source: Compiler/{BackEnd,FrontEnd,Main,Script,Util}/*.mo";
 
-system("bash -c 'grep \\	 ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} ../../c_runtime/{*/,}*.{cpp,c,h}' | wc -l > CheckSourcesForTabs.count");
+system("bash -c 'grep \\	 `echo ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h} | tr \" \" \"\\n\" | grep -v \\*`' | wc -l > CheckSourcesForTabs.count");
 if readFile("CheckSourcesForTabs.count") == "0
 " then "OK" else "Found tabs in the source: ../../Compiler/modpar/*.{cpp,hpp} ../../Compiler/runtime/*.{cpp,c,h,hpp} c_runtime/{*/,}*.{cpp,c,h}";
 
