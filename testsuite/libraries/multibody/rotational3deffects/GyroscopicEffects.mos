@@ -6002,7 +6002,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects has 2950 equation(s) and 2972 variable(s).
-// 1898 of these are trivial equation(s).
+// 2508 of these are trivial equation(s).
 // "
 // ""
 // endResult

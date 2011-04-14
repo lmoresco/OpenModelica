@@ -2601,9 +2601,11 @@ getErrorString();
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel completed successfully.
 // 
+// Warning: Alias variables ground.length = ground.ground.width have start values 1.0 != 0.1. Use value from ground.length because this is fixed.
+// 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel has 1501 equation(s) and 1501 variable(s).
-// 903 of these are trivial equation(s).
+// 1427 of these are trivial equation(s).
 // "
 // ""
 // endResult

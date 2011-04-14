@@ -214,7 +214,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 
 // 
 // Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
-// 16 of these are trivial equation(s).
+// 19 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.SIunits.Conversions.from_degC

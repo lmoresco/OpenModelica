@@ -1084,7 +1084,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_DOL has 390 equation(s) and 390 variable(s).
-// 287 of these are trivial equation(s).
+// 284 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -2297,7 +2297,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_YD has 458 equation(s) and 458 variable(s).
-// 333 of these are trivial equation(s).
+// 330 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -3998,7 +3998,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMS_Start has 646 equation(s) and 646 variable(s).
-// 461 of these are trivial equation(s).
+// 475 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -4841,7 +4841,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_Inverter has 337 equation(s) and 337 variable(s).
-// 254 of these are trivial equation(s).
+// 250 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -5882,7 +5882,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.SMR_Inverter has 416 equation(s) and 416 variable(s).
-// 309 of these are trivial equation(s).
+// 313 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -6936,7 +6936,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.SMPM_Inverter has 422 equation(s) and 422 variable(s).
-// 313 of these are trivial equation(s).
+// 317 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor
@@ -8225,7 +8225,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 501 equation(s) and 501 variable(s).
-// 369 of these are trivial equation(s).
+// 381 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -8715,7 +8715,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.DCEE_Start has 101 equation(s) and 101 variable(s).
-// 72 of these are trivial equation(s).
+// 73 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -8961,7 +8961,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.DCSE_Start has 94 equation(s) and 94 variable(s).
-// 67 of these are trivial equation(s).
+// 63 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor
@@ -10705,7 +10705,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.TransformerTestbench has 672 equation(s) and 672 variable(s).
-// 518 of these are trivial equation(s).
+// 555 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -11993,7 +11993,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.Rectifier6pulse has 491 equation(s) and 491 variable(s).
-// 359 of these are trivial equation(s).
+// 374 of these are trivial equation(s).
 // "
 // 
 // "function Modelica.Math.asin
@@ -14236,7 +14236,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.Rectifier12pulse has 870 equation(s) and 870 variable(s).
-// 622 of these are trivial equation(s).
+// 643 of these are trivial equation(s).
 // "
 // 
 // "function Modelica.Math.asin
@@ -15035,7 +15035,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 
 // 
 // Class Modelica.Electrical.Machines.Examples.AIMC_Steinmetz has 315 equation(s) and 315 variable(s).
-// 210 of these are trivial equation(s).
+// 205 of these are trivial equation(s).
 // "
 // 
 // endResult

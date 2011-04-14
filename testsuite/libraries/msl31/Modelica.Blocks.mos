@@ -46,7 +46,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Continuous.mo:1211:5-1213:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).
-// 0 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.
@@ -55,7 +55,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Continuous.mo:1331:5-1334:31:writable] Warning: Failed to deduce dimensions of y_start due to unknown dimensions of modifier fill(0,ny).
 // 
 // Class Modelica.Blocks.Continuous.StateSpace has 2 equation(s) and 2 variable(s).
-// 0 of these are trivial equation(s).
+// 1 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.asin
@@ -119,7 +119,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Examples.BusUsage has 14 equation(s) and 14 variable(s).
-// 9 of these are trivial equation(s).
+// 8 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Blocks.Examples.BusUsage_Utilities.Part
@@ -137,7 +137,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // 
 // 
 // Class Modelica.Blocks.Examples.BusUsage_Utilities.Part has 4 equation(s) and 4 variable(s).
-// 3 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Tables.CombiTable1D completed successfully.
@@ -205,7 +205,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Sources.mo:1497:9-1498:38:writable] Warning: Failed to deduce dimensions of p_qdd_max due to unknown dimensions of modifier if (size(qdd_max,1)) == (1) then DAE.CAST(/tp:REAL[:]/, fill(1,nout)) * qdd_max[1] else qdd_max.
 // 
 // Class Modelica.Blocks.Sources.KinematicPTP has 11 equation(s) and 11 variable(s).
-// 0 of these are trivial equation(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.KinematicPTP2 completed successfully.
@@ -217,7 +217,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Sources.mo:1690:5-1690:54:writable] Warning: Failed to deduce dimensions of p_deltaq due to unknown dimensions of modifier p_q_end - p_q_begin.
 // 
 // Class Modelica.Blocks.Sources.KinematicPTP2 has 31 equation(s) and 31 variable(s).
-// 3 of these are trivial equation(s).
+// 20 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.TimeTable completed successfully.

@@ -5097,7 +5097,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar1 has 2674 equation(s) and 2674 variable(s).
-// 1658 of these are trivial equation(s).
+// 2198 of these are trivial equation(s).
 // "
 // ""
 // endResult

@@ -5113,9 +5113,11 @@ getErrorString();
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling completed successfully.
 // 
+// Warning: Alias variables ground.length = ground.ground.width have start values 1.0 != 0.1. Use value from ground.length because this is fixed.
+// 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling has 2677 equation(s) and 2677 variable(s).
-// 1836 of these are trivial equation(s).
+// 2438 of these are trivial equation(s).
 // "
 // ""
 // endResult

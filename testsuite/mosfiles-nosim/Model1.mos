@@ -72,7 +72,7 @@ checkModel(Model1); getErrorString();
 // 
 // 
 // Class Model1 has 2278 equation(s) and 2278 variable(s).
-// 1476 of these are trivial equation(s).
+// 2072 of these are trivial equation(s).
 // "
 // ""
 // endResult

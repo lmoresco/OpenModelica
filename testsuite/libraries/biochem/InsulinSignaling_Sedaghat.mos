@@ -301,7 +301,7 @@ checkModel(BioChem.Examples.InsulinSignaling_Sedaghat); getErrorString();
 // 
 // 
 // Class BioChem.Examples.InsulinSignaling_Sedaghat has 141 equation(s) and 141 variable(s).
-// 87 of these are trivial equation(s).
+// 106 of these are trivial equation(s).
 // "
 // ""
 // endResult

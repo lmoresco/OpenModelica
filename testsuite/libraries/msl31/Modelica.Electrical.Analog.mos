@@ -188,7 +188,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch has 29 equation(s) and 29 variable(s).
-// 19 of these are trivial equation(s).
+// 25 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Examples.Utilities.Nand
@@ -454,7 +454,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Examples.Utilities.Nand has 104 equation(s) and 104 variable(s).
-// 50 of these are trivial equation(s).
+// 64 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Electrical.Analog.Basic.OpAmpDetailed.FCNiout_limit
@@ -743,7 +743,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed has 79 equation(s) and 79 variable(s).
-// 43 of these are trivial equation(s).
+// 52 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.StepVoltage
@@ -967,7 +967,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.ExponentialsVoltage has 8 equation(s) and 8 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.PulseVoltage
@@ -1008,7 +1008,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.PulseVoltage has 9 equation(s) and 9 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.SawToothVoltage
@@ -1421,7 +1421,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.ExponentialsCurrent has 8 equation(s) and 8 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.PulseCurrent
@@ -1462,7 +1462,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sources.PulseCurrent has 9 equation(s) and 9 variable(s).
-// 5 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Sources.SawToothCurrent
@@ -1707,7 +1707,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Sensors.PowerSensor has 22 equation(s) and 22 variable(s).
-// 20 of these are trivial equation(s).
+// 21 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.OLine
@@ -1856,7 +1856,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.OLine has 55 equation(s) and 55 variable(s).
-// 33 of these are trivial equation(s).
+// 35 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.M_OLine
@@ -5535,7 +5535,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.M_OLine has 1266 equation(s) and 1330 variable(s).
-// 765 of these are trivial equation(s).
+// 883 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.ULine
@@ -5632,7 +5632,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 
 // 
 // Class Modelica.Electrical.Analog.Lines.ULine has 34 equation(s) and 34 variable(s).
-// 21 of these are trivial equation(s).
+// 30 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.TLine2
@@ -5688,7 +5688,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
 // Class Modelica.Electrical.Analog.Lines.TLine2 has 15 equation(s) and 15 variable(s).
-// 8 of these are trivial equation(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.TLine3
@@ -5742,7 +5742,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
 // Class Modelica.Electrical.Analog.Lines.TLine3 has 15 equation(s) and 15 variable(s).
-// 8 of these are trivial equation(s).
+// 9 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.VoltageSource completed successfully.
