@@ -151,37 +151,54 @@ algorithm
       list<SimCode.SimEqSystem> i_removedEquations;
       list<SimCode.SimEqSystem> i_algebraicEquations;
       list<SimCode.SimEqSystem> i_parameterEquations;
-      list<SimCode.SimEqSystem> i_residualEquations;
       list<SimCode.SimEqSystem> i_initialEquations;
       SimCode.DelayedExpression i_delayedExps;
       list<SimCode.SimEqSystem> i_sampleEquations;
       list<SimCode.SampleCondition> i_sampleConditions;
       SimCode.ExtObjInfo i_extObjInfo;
-      list<SimCode.JacobianMatrix> i_JacobianMatrixes;
-      list<SimCode.SimEqSystem> i_allEquations;
       list<SimCode.HelpVarInfo> i_helpVarInfo;
       list<SimCode.SimWhenClause> i_whenClauses;
       Integer i_modelInfo_varInfo_numStateVars;
       list<BackendDAE.ZeroCrossing> i_zeroCrossings;
       list<SimCode.SimEqSystem> i_odeEquations;
       Integer i_modelInfo_varInfo_numZeroCrossings;
+      list<String> i_externalFunctionIncludes;
+      list<SimCode.SimEqSystem> i_residualEquations;
+      list<SimCode.SimEqSystem> i_allEquations;
+      list<SimCode.JacobianMatrix> i_JacobianMatrixes;
       String i_fileNamePrefix;
       SimCode.ModelInfo i_modelInfo;
-      list<String> i_externalFunctionIncludes;
       SimCode.SimCode i_simCode;
-      list<SimCode.SimEqSystem> ret_2;
+      list<SimCode.SimWhenClause> ret_2;
       list<SimCode.SimEqSystem> ret_1;
-      list<SimCode.SimWhenClause> ret_0;
+      list<SimCode.SimEqSystem> ret_0;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numZeroCrossings = i_modelInfo_varInfo_numZeroCrossings, numStateVars = i_modelInfo_varInfo_numStateVars))), externalFunctionIncludes = i_externalFunctionIncludes, fileNamePrefix = i_fileNamePrefix, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, allEquations = i_allEquations, JacobianMatrixes = i_JacobianMatrixes, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, initialEquations = i_initialEquations, residualEquations = i_residualEquations, parameterEquations = i_parameterEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
+           (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numZeroCrossings = i_modelInfo_varInfo_numZeroCrossings, numStateVars = i_modelInfo_varInfo_numStateVars))), fileNamePrefix = i_fileNamePrefix, JacobianMatrixes = i_JacobianMatrixes, allEquations = i_allEquations, residualEquations = i_residualEquations, externalFunctionIncludes = i_externalFunctionIncludes, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, initialEquations = i_initialEquations, parameterEquations = i_parameterEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
            a_qssInfo )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.simulationFileHeader(txt, i_simCode);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = SimCodeC.globalData(txt, i_modelInfo, i_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        ret_0 = SimCode.appendAllequation(i_JacobianMatrixes);
+        ret_1 = SimCode.appendLists(ret_0, i_allEquations);
+        txt = SimCodeC.equationInfo(txt, ret_1);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = SimCodeC.functionInitialResidual(txt, i_residualEquations);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = SimCodeC.functionExtraResiduals(txt, i_allEquations);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.externalFunctionIncludes(txt, i_externalFunctionIncludes);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = SimCodeC.functionODE_residual(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
@@ -190,15 +207,44 @@ algorithm
                                     "#else\n",
                                     "int measure_time_flag = 0;\n",
                                     "#endif\n",
-                                    "\n"
-                                }, true));
-        txt = SimCodeC.globalData(txt, i_modelInfo, i_fileNamePrefix);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
                                     "// fbergero, xfloros: Code for QSS methods\n",
                                     "#ifdef _OMC_QSS\n",
                                     "\n",
+                                    "int\n",
+                                    "startInteractiveSimulation(int, char**);\n",
+                                    "int\n",
+                                    "startNonInteractiveSimulation(int, char**);\n",
+                                    "int\n",
+                                    "initRuntimeAndSimulation(int, char**);\n",
+                                    "extern bool interactiveSimuation;\n",
+                                    "char incidenceMatrix[0];\n",
+                                    "char inputMatrix[0];\n",
+                                    "char outputMatrix[0];\n",
+                                    "\n",
+                                    "#ifndef _OMC_OMPD_\n",
+                                    "int\n",
+                                    "main(int argc, char**argv)\n",
+                                    "{\n",
+                                    "  int retVal = -1;\n",
+                                    "\n",
+                                    "  if (initRuntimeAndSimulation(argc, argv)) //initRuntimeAndSimulation returns 1 if an error occurs\n",
+                                    "    return 1;\n",
+                                    "\n",
+                                    "  if (interactiveSimuation) {\n",
+                                    "    //cout << \"startInteractiveSimulation: \" << version << endl;\n",
+                                    "    retVal = startInteractiveSimulation(argc, argv);\n",
+                                    "  } else {\n",
+                                    "    //cout << \"startNonInteractiveSimulation: \" << version << endl;\n",
+                                    "    retVal = startNonInteractiveSimulation(argc, argv);\n",
+                                    "  }\n",
+                                    "\n",
+                                    "  deInitializeDataStruc(globalData);\n",
+                                    "  free(globalData);\n",
+                                    "  fflush(NULL);\n",
+                                    "  EXIT(retVal);\n",
+                                    "}\n",
+                                    "#endif\n",
                                     "void init_ompd();\n",
                                     "void clean_ompd();\n",
                                     "\n",
@@ -271,8 +317,8 @@ algorithm
         txt = functionQssStaticBlocks(txt, i_odeEquations, i_zeroCrossings, a_qssInfo, i_modelInfo_varInfo_numStateVars);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        ret_0 = BackendQSS.replaceCondWhens(i_whenClauses, i_helpVarInfo, i_zeroCrossings);
-        txt = functionQssWhen(txt, ret_0, i_helpVarInfo, i_zeroCrossings);
+        ret_2 = BackendQSS.replaceCondWhens(i_whenClauses, i_helpVarInfo, i_zeroCrossings);
+        txt = functionQssWhen(txt, ret_2, i_helpVarInfo, i_zeroCrossings);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = functionQssSample(txt, i_zeroCrossings);
@@ -285,11 +331,6 @@ algorithm
                                     "#endif\n",
                                     "\n"
                                 }, true));
-        ret_1 = SimCode.appendAllequation(i_JacobianMatrixes);
-        ret_2 = SimCode.appendLists(ret_1, i_allEquations);
-        txt = SimCodeC.equationInfo(txt, ret_2);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionGetName(txt, i_modelInfo);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
@@ -303,9 +344,6 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionDeInitializeDataStruc(txt, i_extObjInfo);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = SimCodeC.functionExtraResiduals(txt, i_allEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionInput(txt, i_modelInfo);
@@ -326,16 +364,10 @@ algorithm
         txt = SimCodeC.functionInitial(txt, i_initialEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = SimCodeC.functionInitialResidual(txt, i_residualEquations);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionBoundParameters(txt, i_parameterEquations);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionODE(txt, i_odeEquations);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = SimCodeC.functionODE_residual(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = SimCodeC.functionAlgebraic(txt, i_algebraicEquations);
@@ -1003,7 +1035,11 @@ algorithm
         ret_4 = listLength(i_eqs);
         (l_zeroCross, l_varDecls) = generateZeroCrossingsEq(Tpl.emptyTxt, ret_4, a_zeroCrossings, l_varDecls);
         (l_staticFun, l_varDecls) = generateStaticFunc(Tpl.emptyTxt, a_derivativEquations, a_zeroCrossings, l_varDecls, i_DEVSstructure, i_eqs, i_outVarLst, a_nStates);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("int staticBlocks = "));
+        txt = Tpl.writeText(txt, l_numStatic);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ";\n",
+                                    "\n",
                                     "void function_staticBlocks(int staticFunctionIndex, double t, double *in, double *out)\n",
                                     "{\n",
                                     "  state mem_state;\n"
@@ -1697,7 +1733,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "Simulator\n",
                                     "  {\n",
-                                    "    Path = modelica/modelica_integrator.h\n"
+                                    "    Path = modelica/modelica_qss_integrator.h\n"
                                 }, true));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(4));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("Parameters = "));
@@ -2511,7 +2547,7 @@ algorithm
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
                                     "# Simulations use -O3 by default\n",
-                                    "SIM_OR_DYNLOAD_OPT_LEVEL=-O3\n",
+                                    "SIM_OR_DYNLOAD_OPT_LEVEL=\n",
                                     "CC="
                                 }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_ccompiler);
@@ -2536,7 +2572,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" "));
         txt = Tpl.writeStr(txt, i_makefileParams_cflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " -D_OMC_QSS -D_OMC_OMPD\n",
+                                    " -D_OMC_QSS -g\n",
                                     "LDFLAGS=-L\""
                                 }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
@@ -2576,7 +2612,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim_ompd -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
         ret_5 = System.os();
         txt = fun_83(txt, ret_5);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
