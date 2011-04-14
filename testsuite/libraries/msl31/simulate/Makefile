@@ -20,7 +20,10 @@ Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
 Modelica.Mechanics.Translational.Examples.Damper.mos \
 Modelica.Mechanics.Translational.Examples.Sensors.mos \
-Modelica.Mechanics.Translational.Examples.ElastoGap.mos 
+Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
+Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos 
 
 #compile time to large
 #Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6.mos 
@@ -80,7 +83,6 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ThreeSprings.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Engine1a.mos \
@@ -123,9 +125,7 @@ Modelica.Electrical.Machines.Examples.DCSE_Start.mos \
 Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Electrical.MultiPhase.Examples.TransformerYY.mos \
 Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.mos \
 Modelica.Mechanics.Rotational.Examples.First.mos \
