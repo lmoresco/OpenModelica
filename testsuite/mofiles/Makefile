@@ -165,6 +165,7 @@ ConstructParameters.mo \
 Cosh.mo \
 Cos.mo \
 Cross.mo \
+CyclicBindingConditional.mo \
 CyclicBindingConst.mo \
 CyclicBindingParam.mo \
 DeclarationEquation1.mo \
