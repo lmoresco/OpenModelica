@@ -222,7 +222,7 @@ algorithm
                                     "char inputMatrix[0];\n",
                                     "char outputMatrix[0];\n",
                                     "\n",
-                                    "#ifndef _OMC_OMPD_\n",
+                                    "#ifndef _OMC_OMPD\n",
                                     "int\n",
                                     "main(int argc, char**argv)\n",
                                     "{\n",

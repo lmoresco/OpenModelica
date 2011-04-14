@@ -40,6 +40,7 @@ ParseFullModelica1.6.mos \
 ParseFullModelica2.2.1.mos \
 ParseFullModelica3.1.mos \
 ParseFullModelica3.2.mos \
+ParseString.mos \
 RealOpLexerModelica.mo \
 RealOpLexerMetaModelica.mo \
 Redeclare.mos \
