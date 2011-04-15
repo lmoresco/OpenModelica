@@ -16,10 +16,10 @@ getErrorString();
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica_Electrical_Machines_Examples_DCEE_start', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// {0.0,0.0,0.0,31.6587896254987,29.8378370385118,29.2561821072561,29.4981854327594,29.4456536173178,29.4528571632564,29.4524399401789,29.452458727935}
-// "Warning: Alias variables TorqueStep1.flange.phi = DCEE1.inertiaRotor.phi have start values LoadInertia.phi_start != DCEE1.inertiaRotor.phi_start. Use value from TorqueStep1.flange.phi.
+// {0.0,0.0,0.0,31.6587896254987,29.8378370385118,29.2561821072561,29.4981854327595,29.4456536173178,29.4528571632565,29.4524399401789,29.452458727935}
+// "Warning: Alias variables LoadInertia.phi = DCEE1.inertiaRotor.phi have start values LoadInertia.phi_start != DCEE1.inertiaRotor.phi_start. Use value from LoadInertia.phi.
 // 
-// Warning: Alias variables LoadInertia.w = $DER.DCEE1.inertiaRotor.phi have start values LoadInertia.w_start != DCEE1.inertiaRotor.w_start. Use value from LoadInertia.w.
+// Warning: Alias variables LoadInertia.w = DCEE1.inertiaRotor.w have start values LoadInertia.w_start != DCEE1.inertiaRotor.w_start. Use value from LoadInertia.w.
 // 
 // "
 // endResult
