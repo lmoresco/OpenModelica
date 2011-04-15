@@ -789,7 +789,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // 
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYY has 281 equation(s) and 281 variable(s).
-// 211 of these are trivial equation(s).
+// 235 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult
@@ -1574,7 +1574,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // 
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.TransformerYD has 285 equation(s) and 285 variable(s).
-// 213 of these are trivial equation(s).
+// 237 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult
@@ -2205,7 +2205,7 @@ system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res
 // 
 // 
 // Class Modelica.Electrical.MultiPhase.Examples.Rectifier has 218 equation(s) and 218 variable(s).
-// 147 of these are trivial equation(s).
+// 150 of these are trivial equation(s).
 // "
 // ""
 // record SimulationResult
