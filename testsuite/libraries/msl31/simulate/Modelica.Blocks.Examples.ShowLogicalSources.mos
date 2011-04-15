@@ -11,16 +11,12 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Blocks.Examples.ShowLogicalSources,stopTime=10.0);
-val(table.y,0.0);
-val(table.y,10.0);
-val(step.y,0.0);
-val(step.y,10.0);
-val(pulse.y,0.0);
-val(pulse.y,10.0);
-val(sample.y,0.0);
-val(sample.y,10.0);
-val(booleanExpression.y,0.0);
-val(booleanExpression.y,10.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.ShowLogicalSources.mat",
+  "Modelica.Blocks.Examples.ShowLogicalSources.mat","Modelica.Blocks.Examples.ShowLogicalSourcesdiff.csv",0.01,0.0001,{"table.y",
+"step.y",
+"pulse.y",
+"sample.y",
+"booleanExpression.y"});
 
 // Result:
 // true
@@ -30,14 +26,5 @@ val(booleanExpression.y,10.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.ShowLogicalSources', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 1.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
+// "Files Equal!"
 // endResult

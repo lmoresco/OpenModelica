@@ -11,140 +11,74 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Blocks.Examples.PID_Controller,stopTime=4.0);
-val(PI.u_s,0.0);
-val(PI.u_s,4.0);
-val(PI.u_m,0.0);
-val(PI.u_m,4.0);
-val(PI.y,0.0);
-val(PI.y,4.0);
-val(PI.controlError,0.0);
-val(PI.controlError,4.0);
-val(PI.addP.u1,0.0);
-val(PI.addP.u1,4.0);
-val(PI.addP.u2,0.0);
-val(PI.addP.u2,4.0);
-val(PI.addP.y,0.0);
-val(PI.addP.y,4.0);
-val(PI.P.u,0.0);
-val(PI.P.u,4.0);
-val(PI.P.y,0.0);
-val(PI.P.y,4.0);
-val(PI.gainPID.u,0.0);
-val(PI.gainPID.u,4.0);
-val(PI.gainPID.y,0.0);
-val(PI.gainPID.y,4.0);
-val(PI.addPID.u1,0.0);
-val(PI.addPID.u1,4.0);
-val(PI.addPID.u3,0.0);
-val(PI.addPID.u3,4.0);
-val(PI.addPID.y,0.0);
-val(PI.addPID.y,4.0);
-val(PI.limiter.u,0.0);
-val(PI.limiter.u,4.0);
-val(PI.limiter.y,0.0);
-val(PI.limiter.y,4.0);
-val(inertia1.flange_a.phi,0.0);
-val(inertia1.flange_a.phi,4.0);
-val(inertia1.flange_a.tau,0.0);
-val(inertia1.flange_a.tau,4.0);
-val(inertia1.flange_b.phi,0.0);
-val(inertia1.flange_b.phi,4.0);
-val(inertia1.flange_b.tau,0.0);
-val(inertia1.flange_b.tau,4.0);
-val(inertia1.phi,0.0);
-val(inertia1.phi,4.0);
-val(der(inertia1.phi),0.0);
-val(der(inertia1.phi),4.0);
-val(inertia1.w,0.0);
-val(inertia1.w,4.0);
-val(der(inertia1.w),0.0);
-val(der(inertia1.w),4.0);
-val(inertia1.a,0.0);
-val(inertia1.a,4.0);
-val(torque.flange.phi,0.0);
-val(torque.flange.phi,4.0);
-val(torque.flange.tau,0.0);
-val(torque.flange.tau,4.0);
-val(torque.tau,0.0);
-val(torque.tau,4.0);
-val(spring.phi_rel,0.0);
-val(spring.phi_rel,4.0);
-val(der(spring.phi_rel),0.0);
-val(der(spring.phi_rel),4.0);
-val(spring.w_rel,0.0);
-val(spring.w_rel,4.0);
-val(der(spring.w_rel),0.0);
-val(der(spring.w_rel),4.0);
-val(spring.a_rel,0.0);
-val(spring.a_rel,4.0);
-val(spring.tau,0.0);
-val(spring.tau,4.0);
-val(spring.flange_a.phi,0.0);
-val(spring.flange_a.phi,4.0);
-val(spring.flange_a.tau,0.0);
-val(spring.flange_a.tau,4.0);
-val(spring.flange_b.phi,0.0);
-val(spring.flange_b.phi,4.0);
-val(spring.flange_b.tau,0.0);
-val(spring.flange_b.tau,4.0);
-val(inertia2.flange_a.phi,0.0);
-val(inertia2.flange_a.phi,4.0);
-val(inertia2.flange_a.tau,0.0);
-val(inertia2.flange_a.tau,4.0);
-val(inertia2.flange_b.phi,0.0);
-val(inertia2.flange_b.phi,4.0);
-val(inertia2.phi,0.0);
-val(inertia2.phi,4.0);
-val(der(inertia2.phi),0.0);
-val(der(inertia2.phi),4.0);
-val(inertia2.w,0.0);
-val(inertia2.w,4.0);
-val(der(inertia2.w),0.0);
-val(der(inertia2.w),4.0);
-val(inertia2.a,0.0);
-val(inertia2.a,4.0);
-val(kinematicPTP.y[1],0.0);
-val(kinematicPTP.y[1],4.0);
-val(integrator.u,0.0);
-val(integrator.u,4.0);
-val(integrator.y,0.0);
-val(integrator.y,4.0);
-val(der(integrator.y),0.0);
-val(der(integrator.y),4.0);
-val(speedSensor.flange.phi,0.0);
-val(speedSensor.flange.phi,4.0);
-val(der(speedSensor.flange.phi),0.0);
-val(der(speedSensor.flange.phi),4.0);
-val(speedSensor.w,0.0);
-val(speedSensor.w,4.0);
-val(loadTorque.flange.phi,0.0);
-val(loadTorque.flange.phi,4.0);
-val(loadTorque.phi,0.0);
-val(loadTorque.phi,4.0);
-val(PI.I.u,0.0);
-val(PI.I.u,4.0);
-val(PI.I.y,0.0);
-val(PI.I.y,4.0);
-val(der(PI.I.y),0.0);
-val(der(PI.I.y),4.0);
-val(PI.addI.u1,0.0);
-val(PI.addI.u1,4.0);
-val(PI.addI.u2,0.0);
-val(PI.addI.u2,4.0);
-val(PI.addI.u3,0.0);
-val(PI.addI.u3,4.0);
-val(PI.addI.y,0.0);
-val(PI.addI.y,4.0);
-val(PI.addSat.u1,0.0);
-val(PI.addSat.u1,4.0);
-val(PI.addSat.u2,0.0);
-val(PI.addSat.u2,4.0);
-val(PI.addSat.y,0.0);
-val(PI.addSat.y,4.0);
-val(PI.gainTrack.u,0.0);
-val(PI.gainTrack.u,4.0);
-val(PI.gainTrack.y,0.0);
-val(PI.gainTrack.y,4.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.PID_Controller_res.mat",
+  "Modelica.Blocks.Examples.PID_Controller.mat","Modelica.Blocks.Examples.PID_Controllerdiff.csv",0.01,0.0001,{"PI.u_s",
+"PI.u_m",
+"PI.y",
+"PI.controlError",
+"PI.addP.u1",
+"PI.addP.u2",
+"PI.addP.y",
+"PI.P.u",
+"PI.P.y",
+"PI.gainPID.u",
+"PI.gainPID.y",
+"PI.addPID.u1",
+"PI.addPID.u3",
+"PI.addPID.y",
+"PI.limiter.u",
+"PI.limiter.y",
+"inertia1.flange_a.phi",
+"inertia1.flange_a.tau",
+"inertia1.flange_b.phi",
+"inertia1.flange_b.tau",
+"inertia1.phi",
+"der(inertia1.phi)",
+"inertia1.w",
+"der(inertia1.w)",
+"inertia1.a",
+"torque.flange.phi",
+"torque.flange.tau",
+"torque.tau",
+"spring.phi_rel",
+"der(spring.phi_rel)",
+"spring.w_rel",
+"der(spring.w_rel)",
+"spring.a_rel",
+"spring.tau",
+"spring.flange_a.phi",
+"spring.flange_a.tau",
+"spring.flange_b.phi",
+"spring.flange_b.tau",
+"inertia2.flange_a.phi",
+"inertia2.flange_a.tau",
+"inertia2.flange_b.phi",
+"inertia2.phi",
+"der(inertia2.phi)",
+"inertia2.w",
+"der(inertia2.w)",
+"inertia2.a",
+"kinematicPTP.y[1]",
+"integrator.u",
+"integrator.y",
+"der(integrator.y)",
+"speedSensor.flange.phi",
+"der(speedSensor.flange.phi)",
+"speedSensor.w",
+"loadTorque.flange.phi",
+"loadTorque.phi",
+"PI.I.u",
+"PI.I.y",
+"der(PI.I.y)",
+"PI.addI.u1",
+"PI.addI.u2",
+"PI.addI.u3",
+"PI.addI.y",
+"PI.addSat.u1",
+"PI.addSat.u2",
+"PI.addSat.y",
+"PI.gainTrack.u",
+"PI.gainTrack.y"});
 
 // Result:
 // true
@@ -154,138 +88,5 @@ val(PI.gainTrack.y,4.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 4.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.PID_Controller', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// -1.28022592527e-15
-// 0.0
-// -1.44595142046e-05
-// -10.0
-// -9.99916267395
-// 0.0
-// 1.44595142046e-05
-// 0.0
-// -1.28022592527e-15
-// 0.0
-// -1.44595142046e-05
-// 0.0
-// 1.44595142046e-05
-// 0.0
-// 1.44595142046e-05
-// 0.0
-// 1.44595142046e-05
-// -0.10000000149
-// -0.0999916270375
-// -10.0
-// -9.99916267395
-// 0.0
-// 1.44595142046e-05
-// -0.10000000149
-// -0.100006081164
-// -0.10000000149
-// -0.0999916270375
-// -10.0
-// -9.99916267395
-// -10.0
-// -9.99916267395
-// 0.0
-// 1.83446609974
-// -10.0
-// -9.99916267395
-// 0.0
-// 1.83446609974
-// 10.0
-// 9.99945068359
-// 0.0
-// 1.83446609974
-// 0.0
-// -1.44595142046e-05
-// 0.0
-// -1.44595142046e-05
-// 0.0
-// 0.000288710580207
-// 0.0
-// 0.000288710580207
-// 0.0
-// 1.83446609974
-// 10.0
-// 9.99916267395
-// -10.0
-// -9.99916267395
-// 0.0010000000475
-// 0.000999934156425
-// 0.0
-// 1.09695861283e-06
-// 0.0
-// 1.09695861283e-06
-// 0.0
-// -1.42358694575e-05
-// 0.0
-// -1.42358694575e-05
-// 10.0
-// 9.99945068359
-// 0.0
-// 1.83446609974
-// -10.0
-// -9.99945068359
-// 0.0010000000475
-// 1.83546602726
-// 10.0
-// 9.99945068359
-// 0.0010000000475
-// 1.83546602726
-// -10.0
-// -9.99945068359
-// 0.0010000000475
-// 1.83546602726
-// 0.0010000000475
-// 1.83546602726
-// 0.0
-// -1.33625553644e-05
-// 0.0
-// -1.33625553644e-05
-// 0.0
-// 0.000274474732578
-// 0.0
-// 0.000274474732578
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// -1.28022592527e-15
-// 0.0
-// 0.0
-// 0.0
-// 1.83446609974
-// 0.0
-// -1.44595142046e-05
-// 0.0
-// -1.44595142046e-05
-// 0.0010000000475
-// 1.83546602726
-// 0.0010000000475
-// 1.83546602726
-// 0.0
-// 1.44595142046e-05
-// -0.10000000149
-// -0.100006081164
-// 0.0
-// 0.000144595149322
-// 0.0
-// -1.28022592527e-15
-// 0.0
-// -1.44595142046e-05
-// 0.0
-// 0.0
-// 0.0
-// 1.44595142046e-05
-// -10.0
-// -9.99916267395
-// -10.0
-// -9.99916267395
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
+// "Files Equal!"
 // endResult

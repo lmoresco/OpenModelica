@@ -11,34 +11,10 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Blocks.Examples.BusUsage,stopTime=2.0);
-val(integerStep.y,0.0);
-val(integerStep.y,2.0);
-val(booleanStep.y,0.0);
-val(booleanStep.y,2.0);
-val(sine.y,0.0);
-val(sine.y,2.0);
-val(part.realExpression.y,0.0);
-val(part.realExpression.y,2.0);
-val(part.booleanExpression.y,0.0);
-val(part.booleanExpression.y,2.0);
-val(gain.u,0.0);
-val(gain.u,2.0);
-val(gain.y,0.0);
-val(gain.y,2.0);
-val(part.subControlBus.myRealSignal,0.0);
-val(part.subControlBus.myRealSignal,2.0);
-val(part.subControlBus.myBooleanSignal,0.0);
-val(part.subControlBus.myBooleanSignal,2.0);
-val(controlBus.realSignal1,0.0);
-val(controlBus.realSignal1,2.0);
-val(controlBus.booleanSignal,0.0);
-val(controlBus.booleanSignal,2.0);
-val(controlBus.integerSignal,0.0);
-val(controlBus.integerSignal,2.0);
-val(controlBus.subControlBus.myBooleanSignal,0.0);
-val(controlBus.subControlBus.myBooleanSignal,2.0);
-val(controlBus.subControlBus.myRealSignal,0.0);
-val(controlBus.subControlBus.myRealSignal,2.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.BusUsage_res.mat",
+  "Modelica.Blocks.Examples.BusUsage.mat","Modelica.Blocks.Examples.BusUsagediff.csv",0.01,0.00001,{"integerStep.y","booleanStep.y","sine.y","part.realExpression.y","part.booleanExpression.y",
+  "gain.u","gain.y","part.subControlBus.myRealSignal","part.subControlBus.myBooleanSignal","controlBus.realSignal1","controlBus.booleanSignal","controlBus.integerSignal",
+  "controlBus.subControlBus.myBooleanSignal","controlBus.subControlBus.myRealSignal"});
 
 // Result:
 // true
@@ -48,32 +24,5 @@ val(controlBus.subControlBus.myRealSignal,2.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 2.0
-// 3.0
-// 0.0
-// 1.0
-// 0.0
-// 6.61556872245e-15
-// 0.0
-// 2.0
-// 0.0
-// 1.0
-// 0.0
-// 6.61556872245e-15
-// 0.0
-// 6.61556872245e-15
-// 0.0
-// 2.0
-// 0.0
-// 1.0
-// 0.0
-// 6.61556872245e-15
-// 0.0
-// 1.0
-// 2.0
-// 3.0
-// 0.0
-// 1.0
-// 0.0
-// 2.0
+// "Files Equal!"
 // endResult
