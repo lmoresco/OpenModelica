@@ -69,6 +69,7 @@ loadFile("../../Compiler/FrontEnd/SCodeFlattenImports.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlatten.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlattenRedeclare.mo");
 loadFile("../../Compiler/FrontEnd/SCodeLookup.mo");
+loadFile("../../Compiler/FrontEnd/SCodeHashTable.mo");
 loadFile("../../Compiler/FrontEnd/SCode.mo");
 loadFile("../../Compiler/FrontEnd/SCodeCheck.mo");
 loadFile("../../Compiler/FrontEnd/SCodeUtil.mo");
