@@ -5,13 +5,12 @@ Modelica.Blocks.Examples.BusUsage.mos \
 Modelica.Blocks.Examples.InverseModel.mos \
 Modelica.Blocks.Examples.LogicalNetwork1.mos \
 Modelica.Blocks.Examples.ShowLogicalSources.mos \
+Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.mos \
 Modelica.Electrical.Digital.Examples.mos \
 Modelica.Electrical.Machines.Examples.mos \
 Modelica.Electrical.MultiPhase.Examples.mos \
-Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassOPV.mos \
-Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mos \
 Modelica.Electrical.Analog.Examples.HeatingResistor.mos \
 Modelica.Electrical.Analog.Examples.ShowVariableResistor.mos \
 Modelica.Electrical.MultiPhase.Examples.TransformerYD.mos \
@@ -51,7 +50,6 @@ Modelica.Utilities.Examples.readRealParameterModel.mos
 
 
 NOTSIMULATETEST= \
-Modelica.Blocks.Examples.PID_Controller.mos \
 Modelica.Electrical.Analog.Examples.DifferenceAmplifier.mos \
 Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.mos \
 Modelica.Electrical.Analog.Examples.HeatingRectifier.mos \
@@ -110,7 +108,9 @@ Modelica.StateGraph.Examples.ControlledTanks.mos \
 Modelica.Mechanics.Translational.Examples.InitialConditions.mos \ 
 
 WRONGRESULTTEST = \
+Modelica.Blocks.Examples.PID_Controller.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
+Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.CompareTransformers.mos \

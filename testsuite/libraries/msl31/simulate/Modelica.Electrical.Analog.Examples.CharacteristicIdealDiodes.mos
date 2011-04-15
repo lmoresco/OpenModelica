@@ -11,128 +11,37 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes);
-val(Ideal.v,0.0);
-val(Ideal.v,1.0);
-val(Ideal.i,0.0);
-val(Ideal.i,1.0);
-val(Ideal.p.v,0.0);
-val(Ideal.p.v,1.0);
-val(Ideal.p.i,0.0);
-val(Ideal.p.i,1.0);
-val(Ideal.n.v,0.0);
-val(Ideal.n.v,1.0);
-val(Ideal.n.i,0.0);
-val(Ideal.n.i,1.0);
-val(Ideal.LossPower,0.0);
-val(Ideal.LossPower,1.0);
-val(Ideal.off,0.0);
-val(Ideal.off,1.0);
-val(With_Ron_Goff.v,0.0);
-val(With_Ron_Goff.v,1.0);
-val(With_Ron_Goff.i,0.0);
-val(With_Ron_Goff.i,1.0);
-val(With_Ron_Goff.p.v,0.0);
-val(With_Ron_Goff.p.v,1.0);
-val(With_Ron_Goff.p.i,0.0);
-val(With_Ron_Goff.p.i,1.0);
-val(With_Ron_Goff.n.v,0.0);
-val(With_Ron_Goff.n.v,1.0);
-val(With_Ron_Goff.n.i,0.0);
-val(With_Ron_Goff.n.i,1.0);
-val(With_Ron_Goff.LossPower,0.0);
-val(With_Ron_Goff.LossPower,1.0);
-val(With_Ron_Goff.off,0.0);
-val(With_Ron_Goff.off,1.0);
-val(With_Ron_Goff_Vknee.v,0.0);
-val(With_Ron_Goff_Vknee.v,1.0);
-val(With_Ron_Goff_Vknee.i,0.0);
-val(With_Ron_Goff_Vknee.i,1.0);
-val(With_Ron_Goff_Vknee.p.v,0.0);
-val(With_Ron_Goff_Vknee.p.v,1.0);
-val(With_Ron_Goff_Vknee.p.i,0.0);
-val(With_Ron_Goff_Vknee.p.i,1.0);
-val(With_Ron_Goff_Vknee.n.v,0.0);
-val(With_Ron_Goff_Vknee.n.v,1.0);
-val(With_Ron_Goff_Vknee.n.i,0.0);
-val(With_Ron_Goff_Vknee.n.i,1.0);
-val(With_Ron_Goff_Vknee.LossPower,0.0);
-val(With_Ron_Goff_Vknee.LossPower,1.0);
-val(With_Ron_Goff_Vknee.off,0.0);
-val(With_Ron_Goff_Vknee.off,1.0);
-val(SineVoltage1.v,0.0);
-val(SineVoltage1.v,1.0);
-val(SineVoltage1.i,0.0);
-val(SineVoltage1.i,1.0);
-val(SineVoltage1.p.v,0.0);
-val(SineVoltage1.p.v,1.0);
-val(SineVoltage1.p.i,0.0);
-val(SineVoltage1.p.i,1.0);
-val(SineVoltage1.n.i,0.0);
-val(SineVoltage1.n.i,1.0);
-val(SineVoltage1.signalSource.y,0.0);
-val(SineVoltage1.signalSource.y,1.0);
-val(Ground1.p.i,0.0);
-val(Ground1.p.i,1.0);
-val(R1.v,0.0);
-val(R1.v,1.0);
-val(R1.i,0.0);
-val(R1.i,1.0);
-val(R1.p.v,0.0);
-val(R1.p.v,1.0);
-val(R1.p.i,0.0);
-val(R1.p.i,1.0);
-val(R1.n.i,0.0);
-val(R1.n.i,1.0);
-val(R1.LossPower,0.0);
-val(R1.LossPower,1.0);
-val(R2.v,0.0);
-val(R2.v,1.0);
-val(R2.i,0.0);
-val(R2.i,1.0);
-val(R2.p.v,0.0);
-val(R2.p.v,1.0);
-val(R2.p.i,0.0);
-val(R2.p.i,1.0);
-val(R2.n.i,0.0);
-val(R2.n.i,1.0);
-val(R2.LossPower,0.0);
-val(R2.LossPower,1.0);
-val(R3.v,0.0);
-val(R3.v,1.0);
-val(R3.i,0.0);
-val(R3.i,1.0);
-val(R3.p.v,0.0);
-val(R3.p.v,1.0);
-val(R3.p.i,0.0);
-val(R3.p.i,1.0);
-val(R3.n.i,0.0);
-val(R3.n.i,1.0);
-val(R3.LossPower,0.0);
-val(R3.LossPower,1.0);
-val(SineVoltage2.v,0.0);
-val(SineVoltage2.v,1.0);
-val(SineVoltage2.i,0.0);
-val(SineVoltage2.i,1.0);
-val(SineVoltage2.p.v,0.0);
-val(SineVoltage2.p.v,1.0);
-val(SineVoltage2.p.i,0.0);
-val(SineVoltage2.p.i,1.0);
-val(SineVoltage2.n.i,0.0);
-val(SineVoltage2.n.i,1.0);
-val(SineVoltage2.signalSource.y,0.0);
-val(SineVoltage2.signalSource.y,1.0);
-val(SineVoltage3.v,0.0);
-val(SineVoltage3.v,1.0);
-val(SineVoltage3.i,0.0);
-val(SineVoltage3.i,1.0);
-val(SineVoltage3.p.v,0.0);
-val(SineVoltage3.p.v,1.0);
-val(SineVoltage3.p.i,0.0);
-val(SineVoltage3.p.i,1.0);
-val(SineVoltage3.n.i,0.0);
-val(SineVoltage3.n.i,1.0);
-val(SineVoltage3.signalSource.y,0.0);
-val(SineVoltage3.signalSource.y,1.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes_res.mat",
+  "Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mat","Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodesdiff.csv",0.01,0.00001,
+  {"Ideal.v",
+  "Ideal.LossPower",
+  "With_Ron_Goff.v",
+  "With_Ron_Goff.p.v",
+  "With_Ron_Goff.n.v",
+  "With_Ron_Goff.LossPower",
+  "With_Ron_Goff_Vknee.v",
+  "With_Ron_Goff_Vknee.p.v",
+  "With_Ron_Goff_Vknee.n.v",
+  "With_Ron_Goff_Vknee.LossPower",
+  "Ground1.p.i",
+  "R1.p.v",
+  "R1.n.i",
+  "R1.LossPower",
+  "R2.n.i",
+  "R2.LossPower",
+  "R3.n.i",
+  "R3.LossPower",
+  "SineVoltage2.p.v",
+  "SineVoltage1.n.v",
+  "Ground1.p.v",
+  "R1.n.v",
+  "R2.n.v",
+  "R3.n.v",
+  "SineVoltage2.n.v",
+  "SineVoltage3.n.v",
+  "R3.R_actual",
+  "R2.R_actual",
+  "R1.R_actual"});
 
 // Result:
 // true
@@ -142,126 +51,5 @@ val(SineVoltage3.signalSource.y,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// 0.0
-// 0.0
-// 3.30778425484e-11
-// 0.0
-// 3.30778427652e-14
-// 0.0
-// 3.30778425484e-11
-// 0.0
-// 3.30778427652e-14
-// -0
-// -3.30778425484e-11
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// -8.99909973145
-// -8.99909973145
-// -0.899910032749
-// -0.899910032749
-// -9.0
-// -9.0
-// -0.899910032749
-// -0.899910032749
-// -0.000899909995496
-// -0.000899909995496
-// 0.899910032749
-// 0.899910032749
-// 8.09838008881
-// 8.09838008881
-// 1.0
-// 1.0
-// 0.0
-// 3.3071513735e-14
-// 0.0
-// 6.32827124036e-15
-// 0.0
-// 3.30778427652e-14
-// 0.0
-// 6.32827124036e-15
-// 0.0
-// 6.32827124367e-18
-// -0
-// -6.32827124036e-15
-// 0.0
-// 2.09285510749e-28
-// 1.0
-// 1.0
-// -9.0
-// -9.0
-// 0.899910032749
-// 0.899910032749
-// -9.0
-// -9.0
-// 0.899910032749
-// 0.899910032749
-// -0.899910032749
-// -0.899910032749
-// -9.0
-// -9.0
-// -0
-// 3.0583669734e-17
-// 0.0
-// 3.30778427652e-14
-// 0.0
-// 3.30778425484e-11
-// 0.0
-// 3.30778427652e-14
-// 0.0
-// 3.30778425484e-11
-// -0
-// -3.30778425484e-11
-// 0.0
-// 1.09414366605e-24
-// -0.000899909995496
-// -0.000899909995496
-// -0.899910032749
-// -0.899910032749
-// -0.000899909995496
-// -0.000899909995496
-// -0.899910032749
-// -0.899910032749
-// 0.899910032749
-// 0.899910032749
-// 0.000809838005807
-// 0.000809838005807
-// 0.0
-// 6.32827124367e-18
-// 0.0
-// 6.32827124036e-15
-// 0.0
-// 6.32827124367e-18
-// 0.0
-// 6.32827124036e-15
-// -0
-// -6.32827124036e-15
-// 0.0
-// 4.0047017785e-32
-// 0.0
-// 3.30778427652e-14
-// -0
-// -3.30778425484e-11
-// 0.0
-// 3.30778427652e-14
-// -0
-// -3.30778425484e-11
-// 0.0
-// 3.30778425484e-11
-// 0.0
-// 3.30778427652e-14
-// 0.0
-// 3.30778427652e-14
-// -0
-// -6.32827124036e-15
-// 0.0
-// 3.30778427652e-14
-// -0
-// -6.32827124036e-15
-// 0.0
-// 6.32827124036e-15
-// 0.0
-// 3.30778427652e-14
+// "Files Equal!"
 // endResult

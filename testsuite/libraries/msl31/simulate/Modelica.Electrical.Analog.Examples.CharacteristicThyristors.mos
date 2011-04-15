@@ -11,84 +11,29 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.CharacteristicThyristors,stopTime=2.0);
-val(IdealThyristor1.v,0.0);
-val(IdealThyristor1.v,2.0);
-val(IdealThyristor1.i,0.0);
-val(IdealThyristor1.i,2.0);
-val(IdealThyristor1.p.v,0.0);
-val(IdealThyristor1.p.v,2.0);
-val(IdealThyristor1.p.i,0.0);
-val(IdealThyristor1.p.i,2.0);
-val(IdealThyristor1.n.v,0.0);
-val(IdealThyristor1.n.v,2.0);
-val(IdealThyristor1.n.i,0.0);
-val(IdealThyristor1.n.i,2.0);
-val(IdealThyristor1.LossPower,0.0);
-val(IdealThyristor1.LossPower,2.0);
-val(IdealThyristor1.off,0.0);
-val(IdealThyristor1.off,2.0);
-val(IdealThyristor1.fire,0.0);
-val(IdealThyristor1.fire,2.0);
-val(SineVoltage1.v,0.0);
-val(SineVoltage1.v,2.0);
-val(SineVoltage1.i,0.0);
-val(SineVoltage1.i,2.0);
-val(SineVoltage1.p.v,0.0);
-val(SineVoltage1.p.v,2.0);
-val(SineVoltage1.p.i,0.0);
-val(SineVoltage1.p.i,2.0);
-val(SineVoltage1.n.i,0.0);
-val(SineVoltage1.n.i,2.0);
-val(SineVoltage1.signalSource.y,0.0);
-val(SineVoltage1.signalSource.y,2.0);
-val(Ground1.p.i,0.0);
-val(Ground1.p.i,2.0);
-val(R3.v,0.0);
-val(R3.v,2.0);
-val(R3.i,0.0);
-val(R3.i,2.0);
-val(R3.p.v,0.0);
-val(R3.p.v,2.0);
-val(R3.p.i,0.0);
-val(R3.p.i,2.0);
-val(R3.n.i,0.0);
-val(R3.n.i,2.0);
-val(R3.LossPower,0.0);
-val(R3.LossPower,2.0);
-val(BooleanStep1.y,0.0);
-val(BooleanStep1.y,2.0);
-val(IdealGTOThyristor1.v,0.0);
-val(IdealGTOThyristor1.v,2.0);
-val(IdealGTOThyristor1.i,0.0);
-val(IdealGTOThyristor1.i,2.0);
-val(IdealGTOThyristor1.p.v,0.0);
-val(IdealGTOThyristor1.p.v,2.0);
-val(IdealGTOThyristor1.p.i,0.0);
-val(IdealGTOThyristor1.p.i,2.0);
-val(IdealGTOThyristor1.n.v,0.0);
-val(IdealGTOThyristor1.n.v,2.0);
-val(IdealGTOThyristor1.n.i,0.0);
-val(IdealGTOThyristor1.n.i,2.0);
-val(IdealGTOThyristor1.LossPower,0.0);
-val(IdealGTOThyristor1.LossPower,2.0);
-val(IdealGTOThyristor1.off,0.0);
-val(IdealGTOThyristor1.off,2.0);
-val(IdealGTOThyristor1.fire,0.0);
-val(IdealGTOThyristor1.fire,2.0);
-val(R1.v,0.0);
-val(R1.v,2.0);
-val(R1.i,0.0);
-val(R1.i,2.0);
-val(R1.p.v,0.0);
-val(R1.p.v,2.0);
-val(R1.p.i,0.0);
-val(R1.p.i,2.0);
-val(R1.n.i,0.0);
-val(R1.n.i,2.0);
-val(R1.LossPower,0.0);
-val(R1.LossPower,2.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.mat",
+  "Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mat","Modelica.Electrical.Analog.Examples.CharacteristicThyristorsdiff.csv",0.01,0.00001,
+  {"IdealThyristor1.v",
+  "IdealThyristor1.LossPower",
+  "SineVoltage1.p.v",
+  "SineVoltage1.p.i",
+  "Ground1.p.i",
+  "R3.p.v",
+  "R3.n.i",
+  "R3.LossPower",
+  "IdealGTOThyristor1.v",
+  "IdealGTOThyristor1.LossPower",
+  "R1.p.v",
+  "R1.n.i",
+  "R1.LossPower",
+  "SineVoltage1.n.v",
+  "Ground1.p.v",
+  "R3.n.v",
+  "R1.n.v",
+  "R1.R_actual",
+  "R3.R_actual"});
 
-// Result:
+// Result:sult:
 // true
 // true
 // record SimulationResult
@@ -96,80 +41,5 @@ val(R1.LossPower,2.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.CharacteristicThyristors', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// 6.61556855304e-14
-// 0.0
-// 6.57297567069e-19
-// 0.0
-// 6.61556855304e-14
-// 0.0
-// 6.57297567069e-19
-// 0.0
-// 6.57297586456e-22
-// -0
-// -6.57297567069e-19
-// 0.0
-// 4.3483972249e-32
-// 1.0
-// 1.0
-// 0.0
-// 1.0
-// 0.0
-// 6.61556855304e-14
-// -0
-// -6.55006812678e-11
-// 0.0
-// 6.61556855304e-14
-// -0
-// -6.55006812678e-11
-// 0.0
-// 6.55006812678e-11
-// 0.0
-// 6.61556855304e-14
-// 0.0
-// 0.0
-// 0.0
-// 6.57297586456e-22
-// 0.0
-// 6.57297567069e-19
-// 0.0
-// 6.57297586456e-22
-// 0.0
-// 6.57297567069e-19
-// -0
-// -6.57297567069e-19
-// 0.0
-// 4.3203993473e-40
-// 0.0
-// 1.0
-// 0.0
-// 6.55006819403e-16
-// 0.0
-// 6.55006812678e-11
-// 0.0
-// 6.61556855304e-14
-// 0.0
-// 6.55006812678e-11
-// 0.0
-// 6.55006783404e-14
-// -0
-// -6.55006812678e-11
-// 0.0
-// 4.29033897848e-26
-// 1.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 6.55006783404e-14
-// 0.0
-// 6.55006812678e-11
-// 0.0
-// 6.55006783404e-14
-// 0.0
-// 6.55006812678e-11
-// -0
-// -6.55006812678e-11
-// 0.0
-// 4.29033915104e-24
+// "Files Equal!"
 // endResult
