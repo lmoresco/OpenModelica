@@ -11,100 +11,39 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc,stopTime=6.0);
-val(constantVoltage1.i,0.0);
-val(constantVoltage1.i,6.0);
-val(constantVoltage1.p.i,0.0);
-val(constantVoltage1.p.i,6.0);
-val(constantVoltage1.n.i,0.0);
-val(constantVoltage1.n.i,6.0);
-val(inductor1.v,0.0);
-val(inductor1.v,6.0);
-val(inductor1.i,0.0);
-val(inductor1.i,6.0);
-val(der(inductor1.i),0.0);
-val(der(inductor1.i),6.0);
-val(inductor1.p.v,0.0);
-val(inductor1.p.v,6.0);
-val(inductor1.p.i,0.0);
-val(inductor1.p.i,6.0);
-val(inductor1.n.v,0.0);
-val(inductor1.n.v,6.0);
-val(inductor1.n.i,0.0);
-val(inductor1.n.i,6.0);
-val(resistor1.v,0.0);
-val(resistor1.v,6.0);
-val(resistor1.i,0.0);
-val(resistor1.i,6.0);
-val(resistor1.p.v,0.0);
-val(resistor1.p.v,6.0);
-val(resistor1.p.i,0.0);
-val(resistor1.p.i,6.0);
-val(resistor1.n.i,0.0);
-val(resistor1.n.i,6.0);
-val(resistor1.LossPower,0.0);
-val(resistor1.LossPower,6.0);
-val(switch1.LossPower,0.0);
-val(switch1.LossPower,6.0);
-val(switch1.p.i,0.0);
-val(switch1.p.i,6.0);
-val(switch1.n.v,0.0);
-val(switch1.n.v,6.0);
-val(switch1.n.i,0.0);
-val(switch1.n.i,6.0);
-val(switch1.control.v,0.0);
-val(switch1.control.v,6.0);
-val(constantVoltage2.i,0.0);
-val(constantVoltage2.i,6.0);
-val(constantVoltage2.p.i,0.0);
-val(constantVoltage2.p.i,6.0);
-val(constantVoltage2.n.i,0.0);
-val(constantVoltage2.n.i,6.0);
-val(inductor2.v,0.0);
-val(inductor2.v,6.0);
-val(inductor2.i,0.0);
-val(inductor2.i,6.0);
-val(der(inductor2.i),0.0);
-val(der(inductor2.i),6.0);
-val(inductor2.p.v,0.0);
-val(inductor2.p.v,6.0);
-val(inductor2.p.i,0.0);
-val(inductor2.p.i,6.0);
-val(inductor2.n.v,0.0);
-val(inductor2.n.v,6.0);
-val(inductor2.n.i,0.0);
-val(inductor2.n.i,6.0);
-val(resistor2.v,0.0);
-val(resistor2.v,6.0);
-val(resistor2.i,0.0);
-val(resistor2.i,6.0);
-val(resistor2.p.v,0.0);
-val(resistor2.p.v,6.0);
-val(resistor2.p.i,0.0);
-val(resistor2.p.i,6.0);
-val(resistor2.n.i,0.0);
-val(resistor2.n.i,6.0);
-val(resistor2.LossPower,0.0);
-val(resistor2.LossPower,6.0);
-val(switch2.LossPower,0.0);
-val(switch2.LossPower,6.0);
-val(switch2.p.i,0.0);
-val(switch2.p.i,6.0);
-val(switch2.n.v,0.0);
-val(switch2.n.v,6.0);
-val(switch2.n.i,0.0);
-val(switch2.n.i,6.0);
-val(switch2.control.v,0.0);
-val(switch2.control.v,6.0);
-val(switch2.i,0.0);
-val(switch2.i,6.0);
-val(switch2.v,0.0);
-val(switch2.v,6.0);
-val(sineVoltage.v,0.0);
-val(sineVoltage.v,6.0);
-val(sineVoltage.p.v,0.0);
-val(sineVoltage.p.v,6.0);
-val(sineVoltage.signalSource.y,0.0);
-val(sineVoltage.signalSource.y,6.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc_res.mat",
+  "Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mat","Modelica.Electrical.Analog.Examples.ControlledSwitchWithArcdiff.csv",0.01,0.00001,
+  {"inductor1.i",
+  "inductor2.i",
+  "der(inductor1.i)",
+  "der(inductor2.i)",
+  "ground1.p.i",
+  "inductor1.v",
+  "resistor1.p.v",
+  "resistor1.LossPower",
+  "switch1.LossPower",
+  "switch1.n.v",
+  "ground2.p.i",
+  "inductor2.v",
+  "resistor2.p.v",
+  "resistor2.LossPower",
+  "switch2.LossPower",
+  "switch2.n.v",
+  "switch2.control.v",
+  "switch2.v",
+  "ground1.p.v",
+  "constantVoltage1.n.v",
+  "resistor1.n.v",
+  "switch1.control.i",
+  "ground2.p.v",
+  "constantVoltage2.n.v",
+  "resistor2.n.v",
+  "switch2.control.i",
+  "sineVoltage.p.i",
+  "sineVoltage.n.v",
+  "ground.p.v",
+  "resistor2.R_actual",
+  "resistor1.R_actual"});
 
 // Result:
 // true
@@ -114,98 +53,5 @@ val(sineVoltage.signalSource.y,6.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 6.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -0
-// -0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 0.00049999501789
-// 50.0
-// 1.23704215274e-14
-// 0.0
-// 0.00049999501789
-// 500.0
-// 1.23704215274e-13
-// 50.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 2.49994997148e-07
-// 0.0
-// 0.024999499321
-// 0.0
-// 0.00049999501789
-// 50.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 1.98467053203e-14
-// -0
-// -0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 0.00049999501789
-// 50.0
-// -1.84054160801e-15
-// 0.0
-// 0.00049999501789
-// 500.0
-// -1.84054160801e-14
-// 50.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// 0.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 2.49994997148e-07
-// 0.0
-// 0.024999499321
-// 0.0
-// 0.00049999501789
-// 50.0
-// 0.00049999501789
-// -0
-// -0.00049999501789
-// 0.0
-// 1.98467053203e-14
-// 0.0
-// 0.00049999501789
-// 0.0
-// 49.9995002747
-// 0.0
-// 1.98467053203e-14
-// 0.0
-// 1.98467053203e-14
-// 0.0
-// 1.98467053203e-14
+// "Files Equal!"
 // endResult

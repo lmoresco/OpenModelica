@@ -11,121 +11,65 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.HeatingMOSInverter,stopTime=5.0);
-val(G.p.i,0.0);
-val(G.p.i,5.0);
-val(Sin.v,0.0);
-val(Sin.v,5.0);
-val(Sin.p.v,0.0);
-val(Sin.p.v,5.0);
-val(Sin.signalSource.y,0.0);
-val(Sin.signalSource.y,5.0);
-val(Capacitor1.v,0.0);
-val(Capacitor1.v,5.0);
-val(der(Capacitor1.v),0.0);
-val(der(Capacitor1.v),5.0);
-val(Capacitor1.i,0.0);
-val(Capacitor1.i,5.0);
-val(Capacitor1.p.v,0.0);
-val(Capacitor1.p.v,5.0);
-val(Capacitor1.p.i,0.0);
-val(Capacitor1.p.i,5.0);
-val(Capacitor1.n.i,0.0);
-val(Capacitor1.n.i,5.0);
-val(HeatCapacitor1.T,0.0);
-val(HeatCapacitor1.T,5.0);
-val(der(HeatCapacitor1.T),0.0);
-val(der(HeatCapacitor1.T),5.0);
-val(HeatCapacitor1.der_T,0.0);
-val(HeatCapacitor1.der_T,5.0);
-val(HeatCapacitor1.port.T,0.0);
-val(HeatCapacitor1.port.T,5.0);
-val(HeatCapacitor1.port.Q_flow,0.0);
-val(HeatCapacitor1.port.Q_flow,5.0);
-val(TC1.Q_flow,0.0);
-val(TC1.Q_flow,5.0);
-val(TC1.dT,0.0);
-val(TC1.dT,5.0);
-val(TC1.port_a.T,0.0);
-val(TC1.port_a.T,5.0);
-val(TC1.port_a.Q_flow,0.0);
-val(TC1.port_a.Q_flow,5.0);
-val(TC1.port_b.T,0.0);
-val(TC1.port_b.T,5.0);
-val(TC1.port_b.Q_flow,0.0);
-val(TC1.port_b.Q_flow,5.0);
-val(H_PMOS.D.v,0.0);
-val(H_PMOS.D.v,5.0);
-val(H_PMOS.D.i,0.0);
-val(H_PMOS.D.i,5.0);
-val(H_PMOS.G.v,0.0);
-val(H_PMOS.G.v,5.0);
-val(H_PMOS.S.v,0.0);
-val(H_PMOS.S.v,5.0);
-val(H_PMOS.S.i,0.0);
-val(H_PMOS.S.i,5.0);
-val(H_PMOS.B.v,0.0);
-val(H_PMOS.B.v,5.0);
-val(H_PMOS.heatPort.T,0.0);
-val(H_PMOS.heatPort.T,5.0);
-val(H_PMOS.heatPort.Q_flow,0.0);
-val(H_PMOS.heatPort.Q_flow,5.0);
-val(H_PMOS.LossPower,0.0);
-val(H_PMOS.LossPower,5.0);
-val(H_PMOS.T_heatPort,0.0);
-val(H_PMOS.T_heatPort,5.0);
-val(H_NMOS.D.v,0.0);
-val(H_NMOS.D.v,5.0);
-val(H_NMOS.D.i,0.0);
-val(H_NMOS.D.i,5.0);
-val(H_NMOS.G.v,0.0);
-val(H_NMOS.G.v,5.0);
-val(H_NMOS.S.i,0.0);
-val(H_NMOS.S.i,5.0);
-val(H_NMOS.heatPort.T,0.0);
-val(H_NMOS.heatPort.T,5.0);
-val(H_NMOS.heatPort.Q_flow,0.0);
-val(H_NMOS.heatPort.Q_flow,5.0);
-val(H_NMOS.LossPower,0.0);
-val(H_NMOS.LossPower,5.0);
-val(H_NMOS.T_heatPort,0.0);
-val(H_NMOS.T_heatPort,5.0);
-val(V.v,0.0);
-val(V.v,5.0);
-val(V.i,0.0);
-val(V.i,5.0);
-val(V.p.v,0.0);
-val(V.p.v,5.0);
-val(V.p.i,0.0);
-val(V.p.i,5.0);
-val(V.n.i,0.0);
-val(V.n.i,5.0);
-val(V.signalSource.y,0.0);
-val(V.signalSource.y,5.0);
-val(TC2.Q_flow,0.0);
-val(TC2.Q_flow,5.0);
-val(TC2.dT,0.0);
-val(TC2.dT,5.0);
-val(TC2.port_a.T,0.0);
-val(TC2.port_a.T,5.0);
-val(TC2.port_a.Q_flow,0.0);
-val(TC2.port_a.Q_flow,5.0);
-val(TC2.port_b.T,0.0);
-val(TC2.port_b.T,5.0);
-val(TC2.port_b.Q_flow,0.0);
-val(TC2.port_b.Q_flow,5.0);
-val(FixedTemperature1.port.Q_flow,0.0);
-val(FixedTemperature1.port.Q_flow,5.0);
-val(TC3.Q_flow,0.0);
-val(TC3.Q_flow,5.0);
-val(TC3.dT,0.0);
-val(TC3.dT,5.0);
-val(TC3.port_a.T,0.0);
-val(TC3.port_a.T,5.0);
-val(TC3.port_a.Q_flow,0.0);
-val(TC3.port_a.Q_flow,5.0);
-val(TC3.port_b.Q_flow,0.0);
-val(TC3.port_b.Q_flow,5.0);
-
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.HeatingMOSInverter_res.mat",
+  "Modelica.Electrical.Analog.Examples.HeatingMOSInverter.mat","Modelica.Electrical.Analog.Examples.HeatingMOSInverterdiff.csv",0.01,0.00001,
+  {"Capacitor1.v",
+  "HeatCapacitor1.T",
+  "der(Capacitor1.v)",
+  "der(HeatCapacitor1.T)",
+  "G.p.i",
+  "Sin.p.v",
+  "Capacitor1.p.i",
+  "HeatCapacitor1.der_T",
+  "HeatCapacitor1.port.Q_flow",
+  "TC1.dT",
+  "TC1.port_a.T",
+  "H_PMOS.LossPower",
+  "H_PMOS.S.i",
+  "H_PMOS.v",
+  "H_PMOS.uds",
+  "H_PMOS.ubs",
+  "H_PMOS.ugst",
+  "H_PMOS.ud",
+  "H_PMOS.us",
+  "H_PMOS.id",
+  "H_PMOS.beta_t",
+  "H_PMOS.vt_t",
+  "H_PMOS.k2_t",
+  "H_NMOS.LossPower",
+  "H_NMOS.D.i",
+  "H_NMOS.S.i",
+  "H_NMOS.v",
+  "H_NMOS.uds",
+  "H_NMOS.ubs",
+  "H_NMOS.ugst",
+  "H_NMOS.ud",
+  "H_NMOS.us",
+  "H_NMOS.id",
+  "H_NMOS.beta_t",
+  "H_NMOS.vt_t",
+  "H_NMOS.k2_t",
+  "V.p.v",
+  "V.p.i",
+  "TC2.dT",
+  "TC2.port_a.T",
+  "TC3.Q_flow",
+  "TC3.dT",
+  "G.p.v",
+  "Sin.p.i",
+  "Sin.n.v",
+  "Capacitor1.n.v",
+  "H_PMOS.G.i",
+  "H_PMOS.B.i",
+  "H_NMOS.G.i",
+  "H_NMOS.S.v",
+  "H_NMOS.B.v",
+  "H_NMOS.B.i",
+  "V.n.v",
+  "H_NMOS.gds",
+  "H_PMOS.gds"});
+  
+  
 // Result:
 // true
 // true
@@ -134,118 +78,5 @@ val(TC3.port_b.Q_flow,5.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.HeatingMOSInverter', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -0
-// -0
-// 0.0
-// 8.2694606913e-14
-// 0.0
-// 8.2694606913e-14
-// 0.0
-// 8.2694606913e-14
-// 0.0
-// 4.9976348877
-// -0
-// -0.0125371254981
-// -0
-// -1.25371258264e-07
-// 0.0
-// 4.9976348877
-// -0
-// -1.25371258264e-07
-// 0.0
-// 1.25371258264e-07
-// 293.149993896
-// 299.974700928
-// 6.84999990463
-// 0.025560785085
-// 6.84999990463
-// 0.025560785085
-// 293.149993896
-// 299.974700928
-// 0.0684999972582
-// 0.000255607854342
-// 0.0
-// 8.85568729458e-10
-// 0.0
-// 8.8556873834e-08
-// 293.149993896
-// 299.974700928
-// 0.0
-// 8.85568729458e-10
-// 293.149993896
-// 299.974700928
-// -0
-// -8.85568729458e-10
-// 0.0
-// 5.0
-// 0.0
-// 3.74392215008e-07
-// 0.0
-// 8.2694606913e-14
-// 0.0
-// 4.9976348877
-// -0
-// -3.74392215008e-07
-// 0.0
-// 5.0
-// 293.149993896
-// 299.974700928
-// -0
-// -8.85568729458e-10
-// 0.0
-// 8.85568729458e-10
-// 293.149993896
-// 299.974700928
-// 0.0
-// 4.9976348877
-// 0.0
-// 4.99763473272e-07
-// 0.0
-// 8.2694606913e-14
-// -0
-// -4.99763473272e-07
-// 293.149993896
-// 299.974945068
-// -0
-// -2.49763525062e-06
-// 0.0
-// 2.49763525062e-06
-// 293.149993896
-// 299.974945068
-// 0.0
-// 5.0
-// -0
-// -3.74392215008e-07
-// 0.0
-// 5.0
-// -0
-// -3.74392215008e-07
-// 0.0
-// 3.74392215008e-07
-// 0.0
-// 5.0
-// 0.0
-// 2.49763525062e-06
-// 0.0
-// 0.000249763514148
-// 293.149993896
-// 299.974945068
-// 0.0
-// 2.49763525062e-06
-// 293.149993896
-// 299.974700928
-// -0
-// -2.49763525062e-06
-// -0.0684999972582
-// -0.000253109319601
-// -0.0684999972582
-// -0.000253109319601
-// -6.84999990463
-// -0.0253109335899
-// 293.149993896
-// 299.974700928
-// -0.0684999972582
-// -0.000253109319601
-// 0.0684999972582
-// 0.000253109319601
+// "Files Equal!"
 // endResult

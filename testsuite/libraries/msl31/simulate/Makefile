@@ -6,6 +6,8 @@ Modelica.Blocks.Examples.InverseModel.mos \
 Modelica.Blocks.Examples.LogicalNetwork1.mos \
 Modelica.Blocks.Examples.ShowLogicalSources.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
+Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
+Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
 Modelica.Electrical.Analog.Examples.mos \
 Modelica.Electrical.Digital.Examples.mos \
 Modelica.Electrical.Machines.Examples.mos \
@@ -50,8 +52,6 @@ Modelica.Utilities.Examples.readRealParameterModel.mos
 
 
 NOTSIMULATETEST= \
-Modelica.Electrical.Analog.Examples.DifferenceAmplifier.mos \
-Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.mos \
 Modelica.Electrical.Analog.Examples.HeatingRectifier.mos \
 Modelica.Electrical.Analog.Examples.Rectifier.mos \
 Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.mos \
@@ -112,10 +112,10 @@ Modelica.Blocks.Examples.PID_Controller.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassSC.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicIdealDiodes.mos \
 Modelica.Electrical.Analog.Examples.CharacteristicThyristors.mos \
-Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.CompareTransformers.mos \
-Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
+Modelica.Electrical.Analog.Examples.DifferenceAmplifier.mos \
 Modelica.Electrical.Analog.Examples.HeatingMOSInverter.mos \
+Modelica.Electrical.Analog.Examples.HeatingNPN_OrGate.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
 Modelica.Electrical.Analog.Examples.OvervoltageProtection.mos \
 Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.mos \

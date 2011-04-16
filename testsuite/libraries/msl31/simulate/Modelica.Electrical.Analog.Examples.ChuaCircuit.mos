@@ -11,83 +11,33 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit);
-val(L.v,0.0);
-val(L.v,1.0);
-val(L.i,0.0);
-val(L.i,1.0);
-val(der(L.i),0.0);
-val(der(L.i),1.0);
-val(L.p.v,0.0);
-val(L.p.v,1.0);
-val(L.p.i,0.0);
-val(L.p.i,1.0);
-val(L.n.v,0.0);
-val(L.n.v,1.0);
-val(L.n.i,0.0);
-val(L.n.i,1.0);
-val(Ro.v,0.0);
-val(Ro.v,1.0);
-val(Ro.i,0.0);
-val(Ro.i,1.0);
-val(Ro.p.v,0.0);
-val(Ro.p.v,1.0);
-val(Ro.p.i,0.0);
-val(Ro.p.i,1.0);
-val(Ro.n.i,0.0);
-val(Ro.n.i,1.0);
-val(Ro.LossPower,0.0);
-val(Ro.LossPower,1.0);
-val(G.v,0.0);
-val(G.v,1.0);
-val(G.i,0.0);
-val(G.i,1.0);
-val(G.p.v,0.0);
-val(G.p.v,1.0);
-val(G.p.i,0.0);
-val(G.p.i,1.0);
-val(G.n.v,0.0);
-val(G.n.v,1.0);
-val(G.n.i,0.0);
-val(G.n.i,1.0);
-val(G.LossPower,0.0);
-val(G.LossPower,1.0);
-val(C1.v,0.0);
-val(C1.v,1.0);
-val(der(C1.v),0.0);
-val(der(C1.v),1.0);
-val(C1.i,0.0);
-val(C1.i,1.0);
-val(C1.p.v,0.0);
-val(C1.p.v,1.0);
-val(C1.p.i,0.0);
-val(C1.p.i,1.0);
-val(C1.n.i,0.0);
-val(C1.n.i,1.0);
-val(C2.v,0.0);
-val(C2.v,1.0);
-val(der(C2.v),0.0);
-val(der(C2.v),1.0);
-val(C2.i,0.0);
-val(C2.i,1.0);
-val(C2.p.v,0.0);
-val(C2.p.v,1.0);
-val(C2.p.i,0.0);
-val(C2.p.i,1.0);
-val(C2.n.i,0.0);
-val(C2.n.i,1.0);
-val(Nr.v,0.0);
-val(Nr.v,1.0);
-val(Nr.i,0.0);
-val(Nr.i,1.0);
-val(Nr.p.v,0.0);
-val(Nr.p.v,1.0);
-val(Nr.p.i,0.0);
-val(Nr.p.i,1.0);
-val(Nr.n.i,0.0);
-val(Nr.n.i,1.0);
-val(Gnd.p.i,0.0);
-val(Gnd.p.i,1.0);
-
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",
+  "Modelica.Electrical.Analog.Examples.ChuaCircuit.mat","Modelica.Electrical.Analog.Examples.ChuaCircuitdiff.csv",0.01,0.00001,
+  {"L.i",
+   "C1.v",
+   "C2.v",
+   "der(L.i)",
+   "der(C1.v)",
+   "der(C2.v)",
+   "L.v",
+   "Ro.p.v",
+   "Ro.LossPower",
+   "G.v",
+   "G.n.i",
+   "G.LossPower",
+   "C1.p.i",
+   "C2.p.i",
+   "Nr.p.i",
+   "Gnd.p.i",
+   "Ro.n.v",
+   "C1.n.v",
+   "C2.n.v",
+   "Nr.n.v",
+   "Gnd.p.v",
+   "G.G_actual",
+   "Ro.R_actual"});
+  
+  
 // Result:
 // true
 // true
@@ -96,80 +46,5 @@ val(Gnd.p.i,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ChuaCircuit', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// 0.0224503558129
-// 0.0
-// 0.00062451598933
-// 0.0
-// 0.00124724197667
-// 0.0
-// 0.0224581621587
-// 0.0
-// 0.00062451598933
-// 0.0
-// 7.80645041232e-06
-// -0
-// -0.00062451598933
-// 0.0
-// 7.80645041232e-06
-// 0.0
-// 0.00062451598933
-// 0.0
-// 7.80645041232e-06
-// 0.0
-// 0.00062451598933
-// -0
-// -0.00062451598933
-// 0.0
-// 4.87525309012e-09
-// -4.0
-// -3.95087146759
-// -2.25999999046
-// -2.23224234581
-// 0.0
-// 0.0224581621587
-// -2.25999999046
-// -2.23224234581
-// 4.0
-// 3.97332954407
-// 2.25999999046
-// 2.23224234581
-// 9.03999996185
-// 8.8193025589
-// 4.0
-// 3.97332954407
-// -0.0275151003152
-// -0.0258303973824
-// -0.275151014328
-// -0.258303970098
-// 4.0
-// 3.97332954407
-// -0.275151014328
-// -0.258303970098
-// 0.275151014328
-// 0.258303970098
-// 0.0
-// 0.0224581621587
-// 0.0226000007242
-// 0.0223161783069
-// 2.25999999046
-// 2.23161768913
-// 0.0
-// 0.0224581621587
-// 2.25999999046
-// 2.23161768913
-// -2.25999999046
-// -2.23161768913
-// 4.0
-// 3.97332954407
-// -1.98484897614
-// -1.97393834591
-// 4.0
-// 3.97332954407
-// -1.98484897614
-// -1.97393834591
-// 1.98484897614
-// 1.97393834591
-// 0.0
-// -6.79794762148e-17
+// "Files Equal!"
 // endResult
