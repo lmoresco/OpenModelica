@@ -48,21 +48,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // true
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
-// input Real c_a = 1.0;
-// input Real c_b = 1.0;
-// input Real n = 1.0;
-// output BaseData res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
+//   input Real c_a = 1.0;
+//   input Real c_b = 1.0;
+//   input Real n = 1.0;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.ElectricSheet.M350_50A \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.ElectricSheet.M350_50A\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1210.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.16;
-// input Real c_a = 24630.0;
-// input Real c_b = 2.44;
-// input Real n = 14.0;
-// output M350_50A res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1210.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.16;
+//   input Real c_a = 24630.0;
+//   input Real c_b = 2.44;
+//   input Real n = 14.0;
+//   output M350_50A res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.ElectricSheet.M350_50A;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
@@ -300,27 +300,27 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output BaseData res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output PlasticNdFeB res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
 // function Modelica.Math.asin
@@ -1007,27 +1007,27 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output BaseData res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output PlasticNdFeB res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
 // function Modelica.Math.asin
@@ -1516,27 +1516,27 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output BaseData res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output PlasticNdFeB res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 400000.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 0.58;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = -0.001;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
 // function Modelica.Math.asin
@@ -2173,15 +2173,15 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
-// input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
-// input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
-// output BaseData res;
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cBRef = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_rRef = 1.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_ref = 293.15;
+//   input Real(quantity=\"LinearTemperatureCoefficient\", unit=\"1/K\") alpha_Br = 0.0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") T_op = 293.15;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_r = B_rRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"MagneticFieldStrength\", unit=\"A/m\") H_cB = H_cBRef * (1.0 + alpha_Br * (T_op - T_ref));
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r * 1.0 / H_cB / 1.25663706143592e-06;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
 // function Modelica.Math.asin
@@ -2767,21 +2767,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
-// input Real c_a = 1.0;
-// input Real c_b = 1.0;
-// input Real n = 1.0;
-// output BaseData res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
+//   input Real c_a = 1.0;
+//   input Real c_b = 1.0;
+//   input Real n = 1.0;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28 \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
-// input Real c_a = 1200.0;
-// input Real c_b = 3.0;
-// input Real n = 12.5;
-// output Steel_9SMnPb28 res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
+//   input Real c_a = 1200.0;
+//   input Real c_b = 3.0;
+//   input Real n = 12.5;
+//   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
@@ -4292,21 +4292,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
-// input Real c_a = 1.0;
-// input Real c_b = 1.0;
-// input Real n = 1.0;
-// output BaseData res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
+//   input Real c_a = 1.0;
+//   input Real c_b = 1.0;
+//   input Real n = 1.0;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28 \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
-// input Real c_a = 1200.0;
-// input Real c_b = 3.0;
-// input Real n = 12.5;
-// output Steel_9SMnPb28 res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
+//   input Real c_a = 1200.0;
+//   input Real c_b = 3.0;
+//   input Real n = 12.5;
+//   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
@@ -7819,21 +7819,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
-// input Real c_a = 1.0;
-// input Real c_b = 1.0;
-// input Real n = 1.0;
-// output BaseData res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
+//   input Real c_a = 1.0;
+//   input Real c_b = 1.0;
+//   input Real n = 1.0;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28 \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
-// input Real c_a = 1200.0;
-// input Real c_b = 3.0;
-// input Real n = 12.5;
-// output Steel_9SMnPb28 res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
+//   input Real c_a = 1200.0;
+//   input Real c_b = 3.0;
+//   input Real n = 12.5;
+//   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
@@ -8389,21 +8389,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
-// input Real c_a = 1.0;
-// input Real c_b = 1.0;
-// input Real n = 1.0;
-// output BaseData res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 1.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.0;
+//   input Real c_a = 1.0;
+//   input Real c_b = 1.0;
+//   input Real n = 1.0;
+//   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28 \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28\"
-// input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
-// input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
-// input Real c_a = 1200.0;
-// input Real c_b = 3.0;
-// input Real n = 12.5;
-// output Steel_9SMnPb28 res;
+//   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_i = 400.0;
+//   input Real(quantity=\"MagneticFluxDensity\", unit=\"T\") B_myMax = 1.488;
+//   input Real c_a = 1200.0;
+//   input Real c_b = 3.0;
+//   input Real n = 12.5;
+//   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
@@ -9317,20 +9317,20 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real V_op(quantity = \"ElectricPotential\", unit = \"V\") \"Operating voltage (nominal/ minimum/ maximum voltage depending on design objective)\";
 //   parameter Real J_desired(quantity = \"CurrentDensity\", unit = \"A/m2\") = 4000000.0 \"DESIRED current density at operating temperature and voltage resp.\";
 //   parameter Real c_condFillChosen = 0.6 \"CHOSEN conductor filling factor = total conductor area without insulation/ total winding area\";
-//   parameter Real rho(quantity = \"Resistivity\", unit = \"Ohm.m\") = rho_20 * (1.0 + alpha_20 * (253.15 + T_op)) \"Resistivity at operating temperature\";
-//   parameter Real A_w(quantity = \"Area\", unit = \"m2\") = h_w * b_w \"Cross-section area of winding\";
-//   parameter Real N_calculated = V_op / (J_desired * l_avg * rho) \"CALCULATED number of turns\";
-//   parameter Real d_wireCalculated(quantity = \"Length\", unit = \"m\", min = 0.0) = sqrt((4.0 * (A_w * c_condFillChosen)) / (N_calculated * 3.14159265358979)) \"CALCULATED wire diameter (without insulation)\";
+//   final parameter Real rho(quantity = \"Resistivity\", unit = \"Ohm.m\") = rho_20 * (1.0 + alpha_20 * (253.15 + T_op)) \"Resistivity at operating temperature\";
+//   final parameter Real A_w(quantity = \"Area\", unit = \"m2\") = h_w * b_w \"Cross-section area of winding\";
+//   final parameter Real N_calculated = V_op / (J_desired * l_avg * rho) \"CALCULATED number of turns\";
+//   final parameter Real d_wireCalculated(quantity = \"Length\", unit = \"m\", min = 0.0) = sqrt((4.0 * (A_w * c_condFillChosen)) / (N_calculated * 3.14159265358979)) \"CALCULATED wire diameter (without insulation)\";
 //   parameter Real N_chosen = N_calculated \"CHOSEN number of turns\";
-//   parameter Real A_wireCalculated(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireCalculated ^ 2.0 \"Calculated wire cross-section area\";
+//   final parameter Real A_wireCalculated(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireCalculated ^ 2.0 \"Calculated wire cross-section area\";
 //   parameter Real d_wireChosen(quantity = \"Length\", unit = \"m\", min = 0.0) = d_wireCalculated \"CHOSEN available wire diameter (without insulation)\";
-//   parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_calculated * l_avg)) / A_wireCalculated \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
-//   parameter Real A_wireChosen(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireChosen ^ 2.0 \"Wire cross-section area resulting from CHOSEN wire diameter\";
-//   parameter Real c_condFillActual = (3.14159265358979 * (N_chosen * d_wireChosen ^ 2.0)) / (A_w * 4.0) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
-//   parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
-//   parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_chosen * l_avg)) / A_wireChosen \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
-//   parameter Real P_actual(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_actual \"Winding's ohmic losses at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
-//   parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = (4.0 * (V_op * d_wireChosen ^ -2.0)) / (R_actual * 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   final parameter Real R_calculated(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_calculated * l_avg)) / A_wireCalculated \"Winding resistance at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
+//   final parameter Real A_wireChosen(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * d_wireChosen ^ 2.0 \"Wire cross-section area resulting from CHOSEN wire diameter\";
+//   final parameter Real c_condFillActual = (3.14159265358979 * (N_chosen * d_wireChosen ^ 2.0)) / (A_w * 4.0) \"Conductor filling factor resulting from CHOSEN number of turns and wire diameter\";
+//   final parameter Real P_calculated(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_calculated \"Winding's ohmic losses at operating temperature and voltage resp. with CALCULATED number of turns and wire diameter\";
+//   final parameter Real R_actual(quantity = \"Resistance\", unit = \"Ohm\") = (rho * (N_chosen * l_avg)) / A_wireChosen \"Winding resistance at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   final parameter Real P_actual(quantity = \"Power\", unit = \"W\") = V_op ^ 2.0 / R_actual \"Winding's ohmic losses at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
+//   final parameter Real J_actual(quantity = \"CurrentDensity\", unit = \"A/m2\") = (4.0 * (V_op * d_wireChosen ^ -2.0)) / (R_actual * 3.14159265358979) \"Current density at operating temperature and voltage resp. resulting from CHOSEN number of turns and wire diameter\";
 // end Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign;
 // "
 // "Warning: Parameter h_w has neither value nor start value, and is fixed during initialization (fixed=true)

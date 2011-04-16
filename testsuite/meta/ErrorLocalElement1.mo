@@ -20,7 +20,7 @@ end ErrorLocalElement1;
 
 // Result:
 // Error processing file: ErrorLocalElement1.mo
-// [ErrorLocalElement1.mo:10:5-15:14:writable] Error: Only components without direction are allowed in local declarations, got: class CLASS(T, partial = false, encapsulated = false, TYPE, DERIVED(Integer,))
+// [ErrorLocalElement1.mo:10:5-15:14:writable] Error: Only components without direction are allowed in local declarations, got: class CLASS(T, partial = false, encapsulated = false, prefixes: public , TYPE, DERIVED(Integer,))
 // ;
 // 
 // 

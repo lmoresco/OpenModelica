@@ -15,10 +15,10 @@ end FinalParameterModification;
 
 // Result:
 // class FinalParameterModification
-// parameter Real p[1](unit = "1", fixed = false);
-// parameter Real p[2](unit = "1", fixed = false);
-// parameter Real p[3](unit = "1", fixed = false);
-// Real x(start = 1.0);
+//   final parameter Real p[1](unit = "1", fixed = false);
+//   final parameter Real p[2](unit = "1", fixed = false);
+//   final parameter Real p[3](unit = "1", fixed = false);
+//   Real x(start = 1.0);
 // equation
 //   der(x) = (-p[1]) * x;
 // end FinalParameterModification;

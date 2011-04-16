@@ -71,9 +71,9 @@ getErrorString();
 // end Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"
-// input Real[3, 3] T;
-// input Real(quantity=\"AngularVelocity\", unit=\"rad/s\")[3] w;
-// output Orientation res;
+//   input Real[3, 3] T;
+//   input Real(quantity=\"AngularVelocity\", unit=\"rad/s\")[3] w;
+//   output Orientation res;
 // end Modelica.Mechanics.MultiBody.Frames.Orientation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint \"Inline before index reduction\"
@@ -6230,15 +6230,15 @@ getErrorString();
 //   Real mounting1D.housing.frame_a.t[1](quantity = \"Torque\", unit = \"N.m\") \"Cut-torque resolved in connector frame\";
 //   Real mounting1D.housing.frame_a.t[2](quantity = \"Torque\", unit = \"N.m\") \"Cut-torque resolved in connector frame\";
 //   Real mounting1D.housing.frame_a.t[3](quantity = \"Torque\", unit = \"N.m\") \"Cut-torque resolved in connector frame\";
-//   parameter Real r1a[1](quantity = \"Length\", unit = \"m\") = r1b[1] + rh[1] - rv[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
-//   parameter Real r1a[2](quantity = \"Length\", unit = \"m\") = r1b[2] + rh[2] - rv[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
-//   parameter Real r1a[3](quantity = \"Length\", unit = \"m\") = r1b[3] + rh[3] - rv[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
-//   parameter Real r2a[1](quantity = \"Length\", unit = \"m\") = r2b[1] + rh[1] - r1b[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
-//   parameter Real r2a[2](quantity = \"Length\", unit = \"m\") = r2b[2] + rh[2] - r1b[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
-//   parameter Real r2a[3](quantity = \"Length\", unit = \"m\") = r2b[3] + rh[3] - r1b[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
-//   parameter Real r3a[1](quantity = \"Length\", unit = \"m\") = r3b[1] + rh[1] - r2b[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
-//   parameter Real r3a[2](quantity = \"Length\", unit = \"m\") = r3b[2] + rh[2] - r2b[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
-//   parameter Real r3a[3](quantity = \"Length\", unit = \"m\") = r3b[3] + rh[3] - r2b[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
+//   final parameter Real r1a[1](quantity = \"Length\", unit = \"m\") = r1b[1] + rh[1] - rv[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
+//   final parameter Real r1a[2](quantity = \"Length\", unit = \"m\") = r1b[2] + rh[2] - rv[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
+//   final parameter Real r1a[3](quantity = \"Length\", unit = \"m\") = r1b[3] + rh[3] - rv[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the first loop\";
+//   final parameter Real r2a[1](quantity = \"Length\", unit = \"m\") = r2b[1] + rh[1] - r1b[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
+//   final parameter Real r2a[2](quantity = \"Length\", unit = \"m\") = r2b[2] + rh[2] - r1b[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
+//   final parameter Real r2a[3](quantity = \"Length\", unit = \"m\") = r2b[3] + rh[3] - r1b[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the second loop\";
+//   final parameter Real r3a[1](quantity = \"Length\", unit = \"m\") = r3b[1] + rh[1] - r2b[1] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
+//   final parameter Real r3a[2](quantity = \"Length\", unit = \"m\") = r3b[2] + rh[2] - r2b[2] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
+//   final parameter Real r3a[3](quantity = \"Length\", unit = \"m\") = r3b[3] + rh[3] - r2b[3] \"Position vector from 'upper left' revolute to 'upper right' revolute joint in the third loop\";
 // initial equation
 //   jointRRR1.jointUSR.revolute.positiveBranch = Modelica.Mechanics.MultiBody.Joints.Internal.RevoluteWithLengthConstraint.selectBranch(jointRRR1.jointUSR.revolute.lengthConstraint,{jointRRR1.jointUSR.revolute.e[1],jointRRR1.jointUSR.revolute.e[2],jointRRR1.jointUSR.revolute.e[3]},Modelica.SIunits.Conversions.from_deg(jointRRR1.jointUSR.revolute.phi_offset + jointRRR1.jointUSR.revolute.phi_guess),{jointRRR1.jointUSR.revolute.r_a[1],jointRRR1.jointUSR.revolute.r_a[2],jointRRR1.jointUSR.revolute.r_a[3]},{jointRRR1.jointUSR.revolute.r_b[1],jointRRR1.jointUSR.revolute.r_b[2],jointRRR1.jointUSR.revolute.r_b[3]});
 //   jointRRR1.n_b = Modelica.Mechanics.MultiBody.Frames.resolve2(jointRRR1.frame_b.R,Modelica.Mechanics.MultiBody.Frames.resolve1(jointRRR1.frame_a.R,{jointRRR1.n_a[1],jointRRR1.n_a[2],jointRRR1.n_a[3]}));

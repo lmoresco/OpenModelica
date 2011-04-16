@@ -40,6 +40,7 @@ ExtendsBasic.mos  \
 ExternalLibraries.mos \
 ExtObj.mos ExtObjStringParam.mos \
 FiveForEquations.mos \
+FinalPropagation.mos \
 FlatTank.mos \
 ForIterator1.mos ForIterator2.mos \
 FrameTest.mos \
