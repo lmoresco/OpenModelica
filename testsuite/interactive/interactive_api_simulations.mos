@@ -37,7 +37,7 @@ readFile("plt-files.txt");
 // true
 // ""
 // {StopTime=2}
-// {0.0, 2.0, 500, 1e-06, "dassl", "Modelica.Blocks.Examples.BusUsage", false, false, "", "mat", ".*", false} /* startTime, stopTime, numberOfIntervals, tolerance, method, fileNamePrefix, storeInTemp, noClean, options, outputFormat */
+// {0.0, 2.0, 500, 1e-06, "dassl", "Modelica.Blocks.Examples.BusUsage", false, false, "", "mat", ".*", false, ""} /* startTime, stopTime, numberOfIntervals, tolerance, method, fileNamePrefix, storeInTemp, noClean, options, outputFormat */
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.empty",
 //     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Blocks.Examples.BusUsage', storeInTemp = false, noClean = false, options = '', outputFormat = 'empty', variableFilter = '.*', measureTime = false, cflags = ''",
@@ -67,7 +67,7 @@ readFile("plt-files.txt");
 
 // "
 // "CSV file"
-// "\"time\",\"sine.y\",\"gain.y\",\"part.realExpression.y\",\"controlBus.realSignal1\",\"gain.u\",\"controlBus.subControlBus.myRealSignal\",\"part.subControlBus.myRealSignal\",\"integerStep.y\",\"controlBus.integerSignal\",\"part.subControlBus.myBooleanSignal\",\"controlBus.booleanSignal\",\"controlBus.subControlBus.myBooleanSignal\",\"booleanStep.y\",\"part.booleanExpression.y\",
+// "\"time\",\"sine.y\",\"gain.y\",\"controlBus.subControlBus.myRealSignal\",\"controlBus.realSignal1\",\"gain.u\",\"part.realExpression.y\",\"part.subControlBus.myRealSignal\",\"integerStep.y\",\"controlBus.integerSignal\",\"controlBus.booleanSignal\",\"controlBus.subControlBus.myBooleanSignal\",\"part.booleanExpression.y\",\"booleanStep.y\",\"part.subControlBus.myBooleanSignal\",
 
 // 0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,
 
