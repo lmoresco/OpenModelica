@@ -221,7 +221,7 @@ algorithm
                                     "startNonInteractiveSimulation(int, char**);\n",
                                     "int\n",
                                     "initRuntimeAndSimulation(int, char**);\n",
-                                    "extern bool interactiveSimuation;\n",
+                                    "extern int interactiveSimulation;\n",
                                     "char incidenceMatrix[0];\n",
                                     "char inputMatrix[0];\n",
                                     "char outputMatrix[0];\n",

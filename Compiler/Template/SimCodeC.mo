@@ -8850,7 +8850,7 @@ algorithm
     case ( txt,
            SimCode.SIMVAR(name = i_name) :: rest )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(double*)&"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("(modelica_boolean*)&"));
         txt = cref(txt, i_name);
         txt = Tpl.nextIter(txt);
         txt = lm_231(txt, rest);
@@ -8920,7 +8920,7 @@ algorithm
         txt = Tpl.writeText(txt, l_numDiscVarsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ");\n",
-                                    "double values["
+                                    "modelica_boolean values["
                                 }, false));
         txt = Tpl.writeText(txt, l_valuesLenStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = {"));
@@ -8953,7 +8953,7 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("{\n"));
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("double *loc_ptrs["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_boolean *loc_ptrs["));
         txt = Tpl.writeText(txt, l_numDiscVarsStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = {"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
