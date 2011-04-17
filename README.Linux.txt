@@ -8,11 +8,10 @@ $ sudo apt-get build-dep openmodelica
 $ ./configure --with-omniORB
 $ make # or make omc if you only want the omc core and not the qtclients
 
-How to compile on Linux or Cygwin (all from source)
+How to compile on Linux (all from source)
 ===================================================
 
 You need:
-    cygwin (http://www.cygwin.com) make sure to install gcc, make, readline lib.
     rml+mmc (http://www.ida.liu.se/~pelab/rml/)
         Just grab it from subversion:
         svn co https://openmodelica.org/svn/MetaModelica/trunk mmc
@@ -156,16 +155,6 @@ trunk/build/bin/OMShell-terminal -noserv -corba  (if you configured with --with-
 If you want to change the port number of the socket connection you
 will have to do it manually in mosh.cpp and Compiler/Main.mo.
 
-Plotting on Cygwin
-==================
-To be able to plot in Linux you will have to replace:
-    $(OPENMODELICAHOME)/bin/doPlot
-with
-    $(OPENMODELICAHOME)/bin/doPlot.Cygwin
-You can achieve this using:
-    $ cp $(OPENMODELICAHOME)/bin/doPlot.Cygwin $(OPENMODELICAHOME)/bin/doPlot
-    $ chmod +x $(OPENMODELICAHOME)/bin/doPlot
-
 Example Session
 ===============
 Here is a short example session.
@@ -180,7 +169,7 @@ To get help on using OMShell and OpenModelica, type "help()" and press enter.
 true
 
 >> instantiateModel(Modelica.Electrical.Analog.Basic.Resistor)
-"fclass Modelica.Electrical.Analog.Basic.Resistor
+"class Modelica.Electrical.Analog.Basic.Resistor
 Real v(quantity = "ElectricPotential", unit = "V") "Voltage drop between the two pins (= p.v - n.v)";
 Real i(quantity = "ElectricCurrent", unit = "A") "Current flowing from pin p to pin n";
 Real p.v(quantity = "ElectricPotential", unit = "V") "Potential at the pin";
