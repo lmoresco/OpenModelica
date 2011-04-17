@@ -11,50 +11,20 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.HeatingResistor,stopTime=5.0);
-val(heatingResistor.v,0.0);
-val(heatingResistor.v,5.0);
-val(heatingResistor.i,0.0);
-val(heatingResistor.i,5.0);
-val(heatingResistor.p.v,0.0);
-val(heatingResistor.p.v,5.0);
-val(heatingResistor.p.i,0.0);
-val(heatingResistor.p.i,5.0);
-val(heatingResistor.n.i,0.0);
-val(heatingResistor.n.i,5.0);
-val(heatingResistor.heatPort.T,0.0);
-val(heatingResistor.heatPort.T,5.0);
-val(heatingResistor.heatPort.Q_flow,0.0);
-val(heatingResistor.heatPort.Q_flow,5.0);
-val(heatingResistor.LossPower,0.0);
-val(heatingResistor.LossPower,5.0);
-val(heatingResistor.T_heatPort,0.0);
-val(heatingResistor.T_heatPort,5.0);
-val(heatingResistor.R,0.0);
-val(heatingResistor.R,5.0);
-val(SineVoltage1.v,0.0);
-val(SineVoltage1.v,5.0);
-val(SineVoltage1.i,0.0);
-val(SineVoltage1.i,5.0);
-val(SineVoltage1.p.v,0.0);
-val(SineVoltage1.p.v,5.0);
-val(SineVoltage1.p.i,0.0);
-val(SineVoltage1.p.i,5.0);
-val(SineVoltage1.n.i,0.0);
-val(SineVoltage1.n.i,5.0);
-val(SineVoltage1.signalSource.y,0.0);
-val(SineVoltage1.signalSource.y,5.0);
-val(thermalConductor.Q_flow,0.0);
-val(thermalConductor.Q_flow,5.0);
-val(thermalConductor.dT,0.0);
-val(thermalConductor.dT,5.0);
-val(thermalConductor.port_a.T,0.0);
-val(thermalConductor.port_a.T,5.0);
-val(thermalConductor.port_a.Q_flow,0.0);
-val(thermalConductor.port_a.Q_flow,5.0);
-val(thermalConductor.port_b.Q_flow,0.0);
-val(thermalConductor.port_b.Q_flow,5.0);
-val(fixedTemperature.port.Q_flow,0.0);
-val(fixedTemperature.port.Q_flow,5.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.HeatingResistor_res.mat",
+  "Modelica.Electrical.Analog.Examples.HeatingResistor.mat","Modelica.Electrical.Analog.Examples.HeatingResistordiff.csv",0.01,0.00001,
+  {"heatingResistor.p.v",
+  "heatingResistor.n.i",
+  "heatingResistor.LossPower",
+  "heatingResistor.R",
+  "G.p.i",
+  "thermalConductor.dT",
+  "thermalConductor.port_a.T",
+  "heatingResistor.n.v",
+  "G.p.v",
+  "SineVoltage1.n.v",
+  "fixedTemperature.port.T"});
+  
 
 // Result:
 // true
@@ -64,48 +34,5 @@ val(fixedTemperature.port.Q_flow,5.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.HeatingResistor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
-// 3.63856254154e-12
-// 0.0
-// 3.6385628397e-14
-// 0.0
-// 3.63856254154e-12
-// 0.0
-// 3.6385628397e-14
-// -0
-// -3.6385628397e-14
-// 293.149993896
-// 293.149993896
-// -0
-// -1.32391394932e-25
-// 0.0
-// 1.32391394932e-25
-// 293.149993896
-// 293.149993896
-// 100.0
-// 100.0
-// 0.0
-// 3.63856254154e-12
-// -0
-// -3.6385628397e-14
-// 0.0
-// 3.63856254154e-12
-// -0
-// -3.6385628397e-14
-// 0.0
-// 3.6385628397e-14
-// 0.0
-// 3.63856254154e-12
-// 0.0
-// 1.32391394932e-25
-// 0.0
-// 0.0
-// 293.149993896
-// 293.149993896
-// 0.0
-// 1.32391394932e-25
-// -0
-// -1.32391394932e-25
-// 0.0
-// 1.32391394932e-25
+// "Files Equal!"
 // endResult

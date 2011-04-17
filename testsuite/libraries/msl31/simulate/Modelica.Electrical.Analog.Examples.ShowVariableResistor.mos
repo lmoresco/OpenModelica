@@ -10,109 +10,39 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.Electrical.Analog.Examples.ShowVariableResistor);
-val(VariableResistor.v,0.0);
-val(VariableResistor.v,1.0);
-val(VariableResistor.i,0.0);
-val(VariableResistor.i,1.0);
-val(VariableResistor.p.v,0.0);
-val(VariableResistor.p.v,1.0);
-val(VariableResistor.p.i,0.0);
-val(VariableResistor.p.i,1.0);
-val(VariableResistor.n.v,0.0);
-val(VariableResistor.n.v,1.0);
-val(VariableResistor.n.i,0.0);
-val(VariableResistor.n.i,1.0);
-val(VariableResistor.LossPower,0.0);
-val(VariableResistor.LossPower,1.0);
-val(VariableResistor.R_actual,0.0);
-val(VariableResistor.R_actual,1.0);
-val(VariableResistor.R,0.0);
-val(VariableResistor.R,1.0);
-val(Ground1.p.i,0.0);
-val(Ground1.p.i,1.0);
-val(Ground2.p.i,0.0);
-val(Ground2.p.i,1.0);
-val(R1.v,0.0);
-val(R1.v,1.0);
-val(R1.i,0.0);
-val(R1.i,1.0);
-val(R1.p.v,0.0);
-val(R1.p.v,1.0);
-val(R1.p.i,0.0);
-val(R1.p.i,1.0);
-val(R1.n.v,0.0);
-val(R1.n.v,1.0);
-val(R1.n.i,0.0);
-val(R1.n.i,1.0);
-val(R1.LossPower,0.0);
-val(R1.LossPower,1.0);
-val(R2.v,0.0);
-val(R2.v,1.0);
-val(R2.i,0.0);
-val(R2.i,1.0);
-val(R2.p.v,0.0);
-val(R2.p.v,1.0);
-val(R2.p.i,0.0);
-val(R2.p.i,1.0);
-val(R2.n.v,0.0);
-val(R2.n.v,1.0);
-val(R2.n.i,0.0);
-val(R2.n.i,1.0);
-val(R2.LossPower,0.0);
-val(R2.LossPower,1.0);
-val(R3.v,0.0);
-val(R3.v,1.0);
-val(R3.i,0.0);
-val(R3.i,1.0);
-val(R3.p.v,0.0);
-val(R3.p.v,1.0);
-val(R3.p.i,0.0);
-val(R3.p.i,1.0);
-val(R3.n.i,0.0);
-val(R3.n.i,1.0);
-val(R3.LossPower,0.0);
-val(R3.LossPower,1.0);
-val(R4.v,0.0);
-val(R4.v,1.0);
-val(R4.i,0.0);
-val(R4.i,1.0);
-val(R4.p.v,0.0);
-val(R4.p.v,1.0);
-val(R4.p.i,0.0);
-val(R4.p.i,1.0);
-val(R4.n.v,0.0);
-val(R4.n.v,1.0);
-val(R4.n.i,0.0);
-val(R4.n.i,1.0);
-val(R4.LossPower,0.0);
-val(R4.LossPower,1.0);
-val(R5.v,0.0);
-val(R5.v,1.0);
-val(R5.i,0.0);
-val(R5.i,1.0);
-val(R5.p.v,0.0);
-val(R5.p.v,1.0);
-val(R5.p.i,0.0);
-val(R5.p.i,1.0);
-val(R5.n.i,0.0);
-val(R5.n.i,1.0);
-val(R5.LossPower,0.0);
-val(R5.LossPower,1.0);
-val(SineVoltage1.v,0.0);
-val(SineVoltage1.v,1.0);
-val(SineVoltage1.i,0.0);
-val(SineVoltage1.i,1.0);
-val(SineVoltage1.p.i,0.0);
-val(SineVoltage1.p.i,1.0);
-val(SineVoltage1.n.v,0.0);
-val(SineVoltage1.n.v,1.0);
-val(SineVoltage1.n.i,0.0);
-val(SineVoltage1.n.i,1.0);
-val(SineVoltage1.signalSource.y,0.0);
-val(SineVoltage1.signalSource.y,1.0);
-val(Ramp1.y,0.0);
-val(Ramp1.y,1.0);
+//simulate(Modelica.Electrical.Analog.Examples.ShowVariableResistor);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ShowVariableResistor_res.mat",
+  "Modelica.Electrical.Analog.Examples.ShowVariableResistor.mat","Modelica.Electrical.Analog.Examples.ShowVariableResistordiff.csv",0.01,0.00001,
+  {"VariableResistor.v",
+  "VariableResistor.p.v",
+  "VariableResistor.n.v",
+  "VariableResistor.LossPower",
+  "VariableResistor.R_actual",
+  "VariableResistor.R",
+  "Ground2.p.i",
+  "R1.v",
+  "R1.LossPower",
+  "R2.v",
+  "R2.p.v",
+  "R2.LossPower",
+  "R3.p.v",
+  "R3.n.i",
+  "R4.v",
+  "R4.LossPower",
+  "R5.n.i",
+  "R5.LossPower",
+  "SineVoltage1.p.i",
+  "SineVoltage1.n.v",
+  "Ground1.p.v",
+  "Ground2.p.v",
+  "R3.n.v",
+  "R5.n.v",
+  "SineVoltage1.p.v",
+  "R5.R_actual",
+  "R4.R_actual",
+  "R3.R_actual",
+  "R2.R_actual",
+  "R1.R_actual"});
 
 // Result:
 // true
@@ -122,106 +52,5 @@ val(Ramp1.y,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ShowVariableResistor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -0
-// -2.29000460664e-15
-// -0
-// -5.08889877293e-16
-// -0
-// -2.79889437805e-15
-// -0
-// -5.08889877293e-16
-// -0
-// -5.08889877293e-16
-// 0.0
-// 5.08889877293e-16
-// 0.0
-// 1.16536017892e-30
-// 2.0
-// 4.5
-// 2.0
-// 4.5
-// 0.0
-// 1.61148462907e-15
-// -0
-// -1.61148462907e-15
-// -0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// -0
-// -3.30778436122e-15
-// -0
-// -1.10259475178e-15
-// 0.0
-// -2.20518950356e-15
-// 0.0
-// 1.10259475178e-15
-// 0.0
-// 1.21571525361e-30
-// 0.0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// 0.0
-// -2.20518950356e-15
-// -0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// 0.0
-// 1.10259475178e-15
-// -0
-// 1.21571525361e-30
-// -0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// -0
-// -1.10259475178e-15
-// 0.0
-// 1.10259475178e-15
-// 0.0
-// 1.21571525361e-30
-// 0.0
-// -5.08889877293e-16
-// -0
-// -5.08889877293e-16
-// -0
-// -3.30778436122e-15
-// -0
-// -5.08889877293e-16
-// -0
-// -2.79889437805e-15
-// 0.0
-// 5.08889877293e-16
-// -0
-// 2.5896892865e-31
-// -0
-// -5.08889877293e-16
-// -0
-// -5.08889877293e-16
-// -0
-// -5.08889877293e-16
-// -0
-// -5.08889877293e-16
-// 0.0
-// 5.08889877293e-16
-// 0.0
-// 2.5896892865e-31
-// 0.0
-// 3.30778436122e-15
-// -0
-// -1.61148462907e-15
-// -0
-// -1.61148462907e-15
-// -0
-// -3.30778436122e-15
-// 0.0
-// 1.61148462907e-15
-// 0.0
-// 3.30778436122e-15
-// 2.0
-// 4.5
+// "Files Equal!"
 // endResult

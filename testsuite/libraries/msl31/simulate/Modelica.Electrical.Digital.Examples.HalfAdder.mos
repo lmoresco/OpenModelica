@@ -11,58 +11,7 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Digital.Examples.HalfAdder,stopTime=5.0);
-val(a.y,0.0);
-val(a.y,5.0);
-val(b.y,0.0);
-val(b.y,5.0);
-val(Adder.b,0.0);
-val(Adder.b,5.0);
-val(Adder.s,0.0);
-val(Adder.s,5.0);
-val(Adder.a,0.0);
-val(Adder.a,5.0);
-val(Adder.c,0.0);
-val(Adder.c,5.0);
-val(Adder.AND.x[1],0.0);
-val(Adder.AND.x[1],5.0);
-val(Adder.AND.x[2],0.0);
-val(Adder.AND.x[2],5.0);
-val(Adder.AND.y,0.0);
-val(Adder.AND.y,5.0);
-val(Adder.AND.G1.x[1],0.0);
-val(Adder.AND.G1.x[1],5.0);
-val(Adder.AND.G1.x[2],0.0);
-val(Adder.AND.G1.x[2],5.0);
-val(Adder.AND.G1.y,0.0);
-val(Adder.AND.G1.y,5.0);
-val(Adder.AND.G2.x,0.0);
-val(Adder.AND.G2.x,5.0);
-val(Adder.AND.G2.y,0.0);
-val(Adder.AND.G2.y,5.0);
-val(Adder.XOR.x[1],0.0);
-val(Adder.XOR.x[1],5.0);
-val(Adder.XOR.x[2],0.0);
-val(Adder.XOR.x[2],5.0);
-val(Adder.XOR.y,0.0);
-val(Adder.XOR.y,5.0);
-val(Adder.XOR.G1.x[1],0.0);
-val(Adder.XOR.G1.x[1],5.0);
-val(Adder.XOR.G1.x[2],0.0);
-val(Adder.XOR.G1.x[2],5.0);
-val(Adder.XOR.G1.y,0.0);
-val(Adder.XOR.G1.y,5.0);
-val(Adder.XOR.G2.x,0.0);
-val(Adder.XOR.G2.x,5.0);
-val(Adder.XOR.G2.y,0.0);
-val(Adder.XOR.G2.y,5.0);
-val(s.x[1],0.0);
-val(s.x[1],5.0);
-val(s.y[1],0.0);
-val(s.y[1],5.0);
-val(c.x[1],0.0);
-val(c.x[1],5.0);
-val(c.y[1],0.0);
-val(c.y[1],5.0);
+
 
 // Result:
 // true
@@ -72,56 +21,5 @@ val(c.y[1],5.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 5.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Digital.Examples.HalfAdder', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 3.0
-// 1.0
-// 3.0
-// 1.0
-// 3.0
-// 0.5
-// 0.0
-// 1.0
-// 3.0
-// 0.5
-// 0.0
+// ""
 // endResult

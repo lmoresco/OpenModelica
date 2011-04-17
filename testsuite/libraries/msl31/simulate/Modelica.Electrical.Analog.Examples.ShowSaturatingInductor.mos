@@ -11,38 +11,17 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.ShowSaturatingInductor,stopTime=6.28319978714);
-val(v,0.0);
-val(v,6.28319978714);
-val(i,0.0);
-val(i,6.28319978714);
-val(SineVoltage1.v,0.0);
-val(SineVoltage1.v,6.28319978714);
-val(SineVoltage1.i,0.0);
-val(SineVoltage1.i,6.28319978714);
-val(SineVoltage1.p.v,0.0);
-val(SineVoltage1.p.v,6.28319978714);
-val(SineVoltage1.p.i,0.0);
-val(SineVoltage1.p.i,6.28319978714);
-val(SineVoltage1.n.i,0.0);
-val(SineVoltage1.n.i,6.28319978714);
-val(SineVoltage1.signalSource.y,0.0);
-val(SineVoltage1.signalSource.y,6.28319978714);
-val(SaturatingInductance1.v,0.0);
-val(SaturatingInductance1.v,6.28319978714);
-val(SaturatingInductance1.i,0.0);
-val(SaturatingInductance1.i,6.28319978714);
-val(SaturatingInductance1.p.v,0.0);
-val(SaturatingInductance1.p.v,6.28319978714);
-val(SaturatingInductance1.p.i,0.0);
-val(SaturatingInductance1.p.i,6.28319978714);
-val(SaturatingInductance1.n.i,0.0);
-val(SaturatingInductance1.n.i,6.28319978714);
-val(SaturatingInductance1.Lact,0.0);
-val(SaturatingInductance1.Lact,6.28319978714);
-val(SaturatingInductance1.Psi,0.0);
-val(SaturatingInductance1.Psi,6.28319978714);
-val(der(SaturatingInductance1.Psi),0.0);
-val(der(SaturatingInductance1.Psi),6.28319978714);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ShowSaturatingInductor_res.mat",
+  "Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.mat","Modelica.Electrical.Analog.Examples.ShowSaturatingInductordiff.csv",0.01,0.00001,
+  {"SaturatingInductance1.Psi",
+  "der(SaturatingInductance1.Psi)",
+  "v",
+  "i",
+  "Ground1.p.i",
+  "SaturatingInductance1.Lact",
+  "SineVoltage1.n.v",
+  "Ground1.p.v",
+  "SaturatingInductance1.n.v"});
 
 // Result:
 // true
@@ -52,36 +31,5 @@ val(der(SaturatingInductance1.Psi),6.28319978714);
 //     simulationOptions = "startTime = 0.0, stopTime = 6.28319978714, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Analog.Examples.ShowSaturatingInductor', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 1.25
-// 1.25
-// 0.0
-// 0.00025276109227
-// 1.25
-// 1.25
-// -0
-// -0.00025276109227
-// 1.25
-// 1.25
-// -0
-// -0.00025276109227
-// 0.0
-// 0.00025276109227
-// 1.25
-// 1.25
-// 1.25
-// 1.25
-// 0.0
-// 0.00025276109227
-// 1.25
-// 1.25
-// 0.0
-// 0.00025276109227
-// -0
-// -0.00025276109227
-// 2.0
-// 1.99999952316
-// 0.0
-// 0.000505522009917
-// 1.25
-// 1.25
+// "Files Equal!"
 // endResult

@@ -15,7 +15,7 @@ res := OpenModelica.Scripting.compareSimulationResults(
   "Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum_res.mat",
   "Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mat",
   "Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulumdiff.csv",
-  0.01,{"rev.phi","rev.w","der(rev.w)"});
+  0.01,0.00001,{"rev.phi","rev.w","der(rev.w)"});
 
 // Result:
 // true
