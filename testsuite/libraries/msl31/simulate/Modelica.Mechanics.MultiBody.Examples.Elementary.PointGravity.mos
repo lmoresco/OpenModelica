@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity_res.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravitydiff.csv",0.01,0.00001,
+  "Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity_diff.csv",0.01,0.00001,
   {"body1.frame_a.r_0[1]",
   "body1.frame_a.r_0[2]",
   "body1.frame_a.r_0[3]",

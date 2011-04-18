@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Blocks.Examples.ShowLogicalSources,stopTime=10.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.ShowLogicalSources.mat",
-  "Modelica.Blocks.Examples.ShowLogicalSources.mat","Modelica.Blocks.Examples.ShowLogicalSourcesdiff.csv",0.01,0.0001,{"table.y",
+  "Modelica.Blocks.Examples.ShowLogicalSources.mat","Modelica.Blocks.Examples.ShowLogicalSources_diff.csv",0.01,0.0001,{"table.y",
 "step.y",
 "pulse.y",
 "sample.y",

@@ -13,7 +13,7 @@ loadModel(ModelicaServices);
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem_res.mat",
   "Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystemdiff.csv",0.01,0.0001,{"p1.s","p1.v","der(p1.v)","p2.s","p2.v","der(p2.v)"});
+  "Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem_diff.csv",0.01,0.0001,{"p1.s","p1.v","der(p1.v)","p2.s","p2.v","der(p2.v)"});
 
 // Result:
 // true

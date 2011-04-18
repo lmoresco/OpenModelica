@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Rotational.Examples.ElasticBearing);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.ElasticBearing_res.mat",
-  "Modelica.Mechanics.Rotational.Examples.ElasticBearing.mat","Modelica.Mechanics.Rotational.Examples.ElasticBearingdiff.csv",0.01,0.0001,
+  "Modelica.Mechanics.Rotational.Examples.ElasticBearing.mat","Modelica.Mechanics.Rotational.Examples.ElasticBearing_diff.csv",0.01,0.0001,
   {"shaft.phi",
   "shaft.w",
   "load.phi",

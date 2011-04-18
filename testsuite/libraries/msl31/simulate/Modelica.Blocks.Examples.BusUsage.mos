@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Blocks.Examples.BusUsage,stopTime=2.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.BusUsage_res.mat",
-  "Modelica.Blocks.Examples.BusUsage.mat","Modelica.Blocks.Examples.BusUsagediff.csv",0.01,0.00001,{"integerStep.y","booleanStep.y","sine.y","part.realExpression.y","part.booleanExpression.y",
+  "Modelica.Blocks.Examples.BusUsage.mat","Modelica.Blocks.Examples.BusUsage_diff.csv",0.01,0.00001,{"integerStep.y","booleanStep.y","sine.y","part.realExpression.y","part.booleanExpression.y",
   "gain.u","gain.y","part.subControlBus.myRealSignal","part.subControlBus.myBooleanSignal","controlBus.realSignal1","controlBus.booleanSignal","controlBus.integerSignal",
   "controlBus.subControlBus.myBooleanSignal","controlBus.subControlBus.myRealSignal"});
 

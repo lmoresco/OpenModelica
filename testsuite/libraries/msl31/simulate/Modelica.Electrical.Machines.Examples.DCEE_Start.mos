@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Machines.Examples.DCEE_Start,stopTime=2.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Machines.Examples.DCEE_Start_res.mat",
-  "Modelica.Electrical.Machines.Examples.DCEE_Start.mat","Modelica.Electrical.Machines.Examples.DCEE_Startdiff.csv",0.01,0.00001,
+  "Modelica.Electrical.Machines.Examples.DCEE_Start.mat","Modelica.Electrical.Machines.Examples.DCEE_Start_diff.csv",0.01,0.00001,
   {"dcee.inertiaRotor.phi",
   "dcee.inertiaRotor.w",
   "dcee.la.i",
@@ -30,5 +30,5 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Mach
 //     simulationOptions = "startTime = 0.0, stopTime = 2.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Electrical.Machines.Examples.DCEE_Start', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// ""
+// "Files Equal!"
 // endResult

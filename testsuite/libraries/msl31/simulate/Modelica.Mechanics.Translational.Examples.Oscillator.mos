@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Oscillator);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Oscillator_res.mat",
-  "Modelica.Mechanics.Translational.Examples.Oscillator.mat","Modelica.Mechanics.Translational.Examples.Oscillatordiff.csv",0.01,0.0001,
+  "Modelica.Mechanics.Translational.Examples.Oscillator.mat","Modelica.Mechanics.Translational.Examples.Oscillator_diff.csv",0.01,0.0001,
   {"mass1.s",
   "mass1.v",
   "damper1.s_rel",

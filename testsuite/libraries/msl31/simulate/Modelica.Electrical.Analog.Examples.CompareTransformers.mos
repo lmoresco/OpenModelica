@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Electrical.Analog.Examples.CompareTransformers,stopTime=50.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.CompareTransformers_res.mat",
-  "Modelica.Electrical.Analog.Examples.CompareTransformers.mat","Modelica.Electrical.Analog.Examples.CompareTransformersdiff.csv",0.01,0.00001,
+  "Modelica.Electrical.Analog.Examples.CompareTransformers.mat","Modelica.Electrical.Analog.Examples.CompareTransformers_diff.csv",0.01,0.00001,
   {"inductor21.i",
   "basicTransformer.i1",
   "basicTransformer.i2",

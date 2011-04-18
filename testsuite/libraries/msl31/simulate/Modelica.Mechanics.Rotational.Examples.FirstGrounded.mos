@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Rotational.Examples.FirstGrounded);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.FirstGrounded_res.mat",
-  "Modelica.Mechanics.Rotational.Examples.FirstGrounded.mat","Modelica.Mechanics.Rotational.Examples.FirstGroundeddiff.csv",0.01,0.0001,
+  "Modelica.Mechanics.Rotational.Examples.FirstGrounded.mat","Modelica.Mechanics.Rotational.Examples.FirstGrounded_diff.csv",0.01,0.0001,
   {"inertia3.phi",
   "inertia3.w",
   "damper.phi_rel",

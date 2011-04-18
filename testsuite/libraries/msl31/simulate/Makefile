@@ -7,7 +7,6 @@ Modelica.Blocks.Examples.LogicalNetwork1.mos \
 Modelica.Blocks.Examples.ShowLogicalSources.mos \
 Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
-Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
 Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
@@ -18,9 +17,9 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
 Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
-Modelica.Mechanics.Translational.Examples.InitialConditions.mos \ 
+Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
-Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
+Modelica.Mechanics.Translational.Examples.WhyArrows.mos
 
 
 #compile time to large
@@ -51,6 +50,7 @@ Modelica.Utilities.Examples.readRealParameterModel.mos
 
 
 NOTSIMULATETEST= \
+Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
 Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.mos \
 Modelica.Electrical.Analog.Examples.SwitchWithArc.mos \
 Modelica.Electrical.Machines.Examples.AIMC_DOL.mos \
@@ -145,7 +145,7 @@ Modelica.StateGraph.Examples.FirstExample.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant3.mos \
 Modelica.StateGraph.Examples.ShowCompositeStep.mos \
-Modelica.StateGraph.Examples.ShowExceptions.mos \ 
+Modelica.StateGraph.Examples.ShowExceptions.mos \
 Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
 Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos 
 

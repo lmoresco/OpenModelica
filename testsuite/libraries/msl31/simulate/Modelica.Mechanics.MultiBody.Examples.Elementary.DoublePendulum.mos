@@ -13,7 +13,7 @@ loadModel(ModelicaServices);
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum,stopTime=3.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum_res.mat",
   "Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulumdiff.csv",0.01,0.0001,
+  "Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum_diff.csv",0.01,0.0001,
   {"revolute1.phi","revolute1.w","der(revolute1.w)","revolute2.phi","revolute2.w","der(revolute2.w)"});
 
 // Result:

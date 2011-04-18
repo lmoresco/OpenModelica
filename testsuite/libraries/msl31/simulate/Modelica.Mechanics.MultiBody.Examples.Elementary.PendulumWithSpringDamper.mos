@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper,stopTime=10.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper_res.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamperdiff.csv",0.01,0.00001,
+  "Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper_diff.csv",0.01,0.00001,
   {"revolute.phi",
   "revolute.w",
   "prismatic.s",

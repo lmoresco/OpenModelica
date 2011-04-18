@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b,stopTime=0.5);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_res.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mat","Modelica.Mechanics.MultiBody.Examples.Loops.Engine1bdiff.csv",0.01,0.00001,
+  "Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.mat","Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_diff.csv",0.01,0.00001,
   {"Inertia.phi",
   "Inertia.w",
   "der(Inertia.phi)",

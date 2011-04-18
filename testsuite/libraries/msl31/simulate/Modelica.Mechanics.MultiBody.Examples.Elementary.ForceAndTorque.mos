@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque,stopTime=0.1);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque_res.mat",
-  "Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorquediff.csv",0.01,0.00001,
+  "Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mat","Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque_diff.csv",0.01,0.00001,
   {"revolute2.phi",
   "revolute2.w",
   "revolute1.phi",
@@ -30,5 +30,5 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Multi
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// ""
+// "Files Equal!"
 // endResult
