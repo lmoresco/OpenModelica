@@ -9,19 +9,19 @@ Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.mos \
 Modelica.Electrical.Analog.Examples.ChuaCircuit.mos \
 Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
 Modelica.Electrical.Analog.Examples.NandGate.mos \
-Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
-Modelica.Mechanics.Translational.Examples.SignConvention.mos \
-Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
-Modelica.Mechanics.Translational.Examples.Accelerate.mos \
-Modelica.Mechanics.Translational.Examples.Damper.mos \
-Modelica.Mechanics.Translational.Examples.Sensors.mos \
-Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
+Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.DoublePendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.InitSpringConstant.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
-Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos 
+Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
+Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
+Modelica.Mechanics.Translational.Examples.Accelerate.mos \
+Modelica.Mechanics.Translational.Examples.InitialConditions.mos \ 
+Modelica.Mechanics.Translational.Examples.SignConvention.mos \
+Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
+
 
 #compile time to large
 #Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6.mos 
@@ -43,7 +43,6 @@ Modelica.Electrical.Digital.Examples.FlipFlop.mos \
 Modelica.Electrical.Digital.Examples.FullAdder.mos \
 Modelica.Electrical.Digital.Examples.HalfAdder.mos \
 Modelica.Electrical.Digital.Examples.Multiplexer.mos \
-Modelica.Electrical.Machines.Examples.TransformerTestbench.mos \
 Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos \
@@ -76,7 +75,8 @@ Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.mos \
 Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.mos \
-Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
+Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
+Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
@@ -84,7 +84,7 @@ Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
 Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
 Modelica.StateGraph.Examples.ControlledTanks.mos \
-Modelica.Mechanics.Translational.Examples.InitialConditions.mos \ 
+
 
 WRONGRESULTTEST = \
 Modelica.Blocks.Examples.PID_Controller.mos \
@@ -125,17 +125,19 @@ Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GyroscopicEffects.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.mos \
+Modelica.Mechanics.Rotational.Examples.Backlash.mos \
+Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
 Modelica.Mechanics.Rotational.Examples.First.mos \
 Modelica.Mechanics.Rotational.Examples.FirstGrounded.mos \
 Modelica.Mechanics.Rotational.Examples.Friction.mos \
-Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
+Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
-Modelica.Mechanics.Rotational.Examples.ElasticBearing.mos \
-Modelica.Mechanics.Rotational.Examples.Backlash.mos \
-Modelica.Mechanics.Translational.Examples.Oscillator.mos \
-Modelica.Mechanics.Translational.Examples.Friction.mos \
-Modelica.Mechanics.Translational.Examples.PreLoad.mos \
 Modelica.Mechanics.Translational.Examples.Brake.mos \
+Modelica.Mechanics.Translational.Examples.Damper.mos \
+Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
+Modelica.Mechanics.Translational.Examples.Friction.mos \
+Modelica.Mechanics.Translational.Examples.Oscillator.mos \
+Modelica.Mechanics.Translational.Examples.Sensors.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
 Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \

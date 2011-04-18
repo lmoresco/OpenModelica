@@ -11,118 +11,20 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Damper);
-val(mass1.s,0.0);
-val(mass1.s,1.0);
-val(der(mass1.s),0.0);
-val(der(mass1.s),1.0);
-val(mass1.flange_a.s,0.0);
-val(mass1.flange_a.s,1.0);
-val(mass1.flange_b.s,0.0);
-val(mass1.flange_b.s,1.0);
-val(mass1.flange_b.f,0.0);
-val(mass1.flange_b.f,1.0);
-val(mass1.v,0.0);
-val(mass1.v,1.0);
-val(der(mass1.v),0.0);
-val(der(mass1.v),1.0);
-val(mass1.a,0.0);
-val(mass1.a,1.0);
-val(damper1.s_rel,0.0);
-val(damper1.s_rel,1.0);
-val(der(damper1.s_rel),0.0);
-val(der(damper1.s_rel),1.0);
-val(damper1.v_rel,0.0);
-val(damper1.v_rel,1.0);
-val(der(damper1.v_rel),0.0);
-val(der(damper1.v_rel),1.0);
-val(damper1.f,0.0);
-val(damper1.f,1.0);
-val(damper1.flange_a.s,0.0);
-val(damper1.flange_a.s,1.0);
-val(damper1.flange_a.f,0.0);
-val(damper1.flange_a.f,1.0);
-val(damper1.flange_b.f,0.0);
-val(damper1.flange_b.f,1.0);
-val(fixed1.flange.f,0.0);
-val(fixed1.flange.f,1.0);
-val(mass2.s,0.0);
-val(mass2.s,1.0);
-val(der(mass2.s),0.0);
-val(der(mass2.s),1.0);
-val(mass2.flange_a.s,0.0);
-val(mass2.flange_a.s,1.0);
-val(mass2.flange_b.s,0.0);
-val(mass2.flange_b.s,1.0);
-val(mass2.flange_b.f,0.0);
-val(mass2.flange_b.f,1.0);
-val(mass2.v,0.0);
-val(mass2.v,1.0);
-val(der(mass2.v),0.0);
-val(der(mass2.v),1.0);
-val(mass2.a,0.0);
-val(mass2.a,1.0);
-val(damper2.s_rel,0.0);
-val(damper2.s_rel,1.0);
-val(der(damper2.s_rel),0.0);
-val(der(damper2.s_rel),1.0);
-val(damper2.v_rel,0.0);
-val(damper2.v_rel,1.0);
-val(der(damper2.v_rel),0.0);
-val(der(damper2.v_rel),1.0);
-val(damper2.f,0.0);
-val(damper2.f,1.0);
-val(damper2.flange_a.s,0.0);
-val(damper2.flange_a.s,1.0);
-val(damper2.flange_a.f,0.0);
-val(damper2.flange_a.f,1.0);
-val(damper2.flange_b.f,0.0);
-val(damper2.flange_b.f,1.0);
-val(fixed2.flange.f,0.0);
-val(fixed2.flange.f,1.0);
-val(mass3.s,0.0);
-val(mass3.s,1.0);
-val(der(mass3.s),0.0);
-val(der(mass3.s),1.0);
-val(mass3.flange_a.s,0.0);
-val(mass3.flange_a.s,1.0);
-val(mass3.flange_b.s,0.0);
-val(mass3.flange_b.s,1.0);
-val(mass3.flange_b.f,0.0);
-val(mass3.flange_b.f,1.0);
-val(mass3.v,0.0);
-val(mass3.v,1.0);
-val(der(mass3.v),0.0);
-val(der(mass3.v),1.0);
-val(mass3.a,0.0);
-val(mass3.a,1.0);
-val(fixed3.flange.f,0.0);
-val(fixed3.flange.f,1.0);
-val(spring2.flange_a.s,0.0);
-val(spring2.flange_a.s,1.0);
-val(spring2.flange_a.f,0.0);
-val(spring2.flange_a.f,1.0);
-val(spring2.flange_b.f,0.0);
-val(spring2.flange_b.f,1.0);
-val(spring2.s_rel,0.0);
-val(spring2.s_rel,1.0);
-val(spring2.f,0.0);
-val(spring2.f,1.0);
-val(springDamper3.s_rel,0.0);
-val(springDamper3.s_rel,1.0);
-val(der(springDamper3.s_rel),0.0);
-val(der(springDamper3.s_rel),1.0);
-val(springDamper3.v_rel,0.0);
-val(springDamper3.v_rel,1.0);
-val(der(springDamper3.v_rel),0.0);
-val(der(springDamper3.v_rel),1.0);
-val(springDamper3.f,0.0);
-val(springDamper3.f,1.0);
-val(springDamper3.flange_a.s,0.0);
-val(springDamper3.flange_a.s,1.0);
-val(springDamper3.flange_a.f,0.0);
-val(springDamper3.flange_a.f,1.0);
-val(springDamper3.flange_b.f,0.0);
-val(springDamper3.flange_b.f,1.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Damper_res.mat",
+  "Modelica.Mechanics.Translational.Examples.Damper.mat","Modelica.Mechanics.Translational.Examples.Damperdiff.csv",0.01,0.0001,
+  {"damper1.s_rel",
+  "damper1.v_rel",
+  "damper2.s_rel",
+  "damper2.v_rel",
+  "springDamper3.s_rel",
+  "springDamper3.v_rel",
+  "der(damper1.s_rel)",
+  "der(damper1.v_rel)",
+  "der(damper2.s_rel)",
+  "der(damper2.v_rel)",
+  "der(springDamper3.s_rel)",
+  "der(springDamper3.v_rel)"});
 
 // Result:
 // true
@@ -132,116 +34,5 @@ val(springDamper3.flange_b.f,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.Damper', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 3.0
-// 3.40000009537
-// 10.0
-// -3.1824615121e-07
-// 2.5
-// 2.90000009537
-// 3.5
-// 3.90000009537
-// -250.0
-// 7.95615324023e-06
-// 10.0
-// -3.1824615121e-07
-// -250.0
-// 7.95615324023e-06
-// -250.0
-// 7.95615324023e-06
-// 1.0
-// 0.599999964237
-// -10.0
-// 3.1824615121e-07
-// -10.0
-// 3.1824615121e-07
-// 250.0
-// -7.95615324023e-06
-// -250.0
-// 7.95615324023e-06
-// 3.5
-// 3.90000009537
-// 250.0
-// -7.95615324023e-06
-// -250.0
-// 7.95615324023e-06
-// 250.0
-// -7.95615324023e-06
-// 3.0
-// 3.38554525375
-// 10.0
-// -0.0154468854889
-// 2.5
-// 2.88554525375
-// 3.5
-// 3.88554525375
-// -250.0
-// 0.000626926135737
-// 10.0
-// -0.0154468854889
-// -250.0
-// 0.000626926135737
-// -250.0
-// 0.000626926135737
-// 1.0
-// 0.614454805851
-// -10.0
-// 0.0154468854889
-// -10.0
-// 0.0154468854889
-// 250.0
-// -0.000626926135737
-// -250.0
-// 0.386172145605
-// 3.5
-// 3.88554525375
-// 250.0
-// -0.386172145605
-// -250.0
-// 0.386172145605
-// 250.0
-// -0.000626926135737
-// 3.0
-// 3.38554525375
-// 10.0
-// -0.0154468854889
-// 2.5
-// 2.88554525375
-// 3.5
-// 3.88554525375
-// -250.0
-// 0.000626926135737
-// 10.0
-// -0.0154468854889
-// -250.0
-// 0.000626926135737
-// -250.0
-// 0.000626926135737
-// 250.0
-// -0.000626926135737
-// 3.5
-// 3.88554525375
-// -0
-// 0.385545194149
-// 0.0
-// -0.385545194149
-// 1.0
-// 0.614454805851
-// 0.0
-// -0.385545194149
-// 1.0
-// 0.614454805851
-// -10.0
-// 0.0154468854889
-// -10.0
-// 0.0154468854889
-// 250.0
-// -0.000626926135737
-// -250.0
-// 0.000626926135737
-// 3.5
-// 3.88554525375
-// 250.0
-// -0.000626926135737
-// -250.0
-// 0.000626926135737
+// "Files Equal!"
 // endResult

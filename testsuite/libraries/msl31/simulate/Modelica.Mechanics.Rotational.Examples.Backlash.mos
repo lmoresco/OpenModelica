@@ -11,78 +11,24 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Rotational.Examples.Backlash);
-val(fixed1.flange.tau,0.0);
-val(fixed1.flange.tau,1.0);
-val(springDamper.phi_rel,0.0);
-val(springDamper.phi_rel,1.0);
-val(der(springDamper.phi_rel),0.0);
-val(der(springDamper.phi_rel),1.0);
-val(springDamper.w_rel,0.0);
-val(springDamper.w_rel,1.0);
-val(der(springDamper.w_rel),0.0);
-val(der(springDamper.w_rel),1.0);
-val(springDamper.a_rel,0.0);
-val(springDamper.a_rel,1.0);
-val(springDamper.tau,0.0);
-val(springDamper.tau,1.0);
-val(springDamper.flange_a.tau,0.0);
-val(springDamper.flange_a.tau,1.0);
-val(springDamper.flange_b.phi,0.0);
-val(springDamper.flange_b.phi,1.0);
-val(springDamper.flange_b.tau,0.0);
-val(springDamper.flange_b.tau,1.0);
-val(inertia1.flange_a.phi,0.0);
-val(inertia1.flange_a.phi,1.0);
-val(inertia1.flange_a.tau,0.0);
-val(inertia1.flange_a.tau,1.0);
-val(inertia1.flange_b.phi,0.0);
-val(inertia1.flange_b.phi,1.0);
-val(inertia1.phi,0.0);
-val(inertia1.phi,1.0);
-val(der(inertia1.phi),0.0);
-val(der(inertia1.phi),1.0);
-val(inertia1.w,0.0);
-val(inertia1.w,1.0);
-val(der(inertia1.w),0.0);
-val(der(inertia1.w),1.0);
-val(inertia1.a,0.0);
-val(inertia1.a,1.0);
-val(fixed2.flange.tau,0.0);
-val(fixed2.flange.tau,1.0);
-val(elastoBacklash.phi_rel,0.0);
-val(elastoBacklash.phi_rel,1.0);
-val(der(elastoBacklash.phi_rel),0.0);
-val(der(elastoBacklash.phi_rel),1.0);
-val(elastoBacklash.w_rel,0.0);
-val(elastoBacklash.w_rel,1.0);
-val(der(elastoBacklash.w_rel),0.0);
-val(der(elastoBacklash.w_rel),1.0);
-val(elastoBacklash.a_rel,0.0);
-val(elastoBacklash.a_rel,1.0);
-val(elastoBacklash.tau,0.0);
-val(elastoBacklash.tau,1.0);
-val(elastoBacklash.flange_a.tau,0.0);
-val(elastoBacklash.flange_a.tau,1.0);
-val(elastoBacklash.flange_b.phi,0.0);
-val(elastoBacklash.flange_b.phi,1.0);
-val(elastoBacklash.flange_b.tau,0.0);
-val(elastoBacklash.flange_b.tau,1.0);
-val(inertia2.flange_a.phi,0.0);
-val(inertia2.flange_a.phi,1.0);
-val(inertia2.flange_a.tau,0.0);
-val(inertia2.flange_a.tau,1.0);
-val(inertia2.flange_b.phi,0.0);
-val(inertia2.flange_b.phi,1.0);
-val(inertia2.phi,0.0);
-val(inertia2.phi,1.0);
-val(der(inertia2.phi),0.0);
-val(der(inertia2.phi),1.0);
-val(inertia2.w,0.0);
-val(inertia2.w,1.0);
-val(der(inertia2.w),0.0);
-val(der(inertia2.w),1.0);
-val(inertia2.a,0.0);
-val(inertia2.a,1.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.Backlash_res.mat",
+  "Modelica.Mechanics.Rotational.Examples.Backlash.mat","Modelica.Mechanics.Rotational.Examples.Backlashdiff.csv",0.01,0.0001,
+  {"springDamper.phi_rel",
+  "springDamper.w_rel",
+  "elastoBacklash.phi_rel",
+  "elastoBacklash.w_rel",
+  "der(springDamper.phi_rel)",
+  "der(springDamper.w_rel)",
+  "der(elastoBacklash.phi_rel)",
+  "der(elastoBacklash.w_rel)",
+  "der(inertia2.w)",
+  "der(inertia1.w)",
+  "inertia1.flange_a.tau",
+  "inertia1.phi",
+  "inertia2.flange_a.tau",
+  "inertia2.phi",
+  "inertia1.flange_b.tau",
+  "inertia2.flange_b.tau"});
 
 // Result:
 // true
@@ -92,76 +38,5 @@ val(inertia2.a,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Rotational.Examples.Backlash', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 31415.9257813
-// 204.027099609
-// 1.57079637051
-// 0.0105584347621
-// 0.0
-// -0.142831847072
-// 0.0
-// -0.142831847072
-// -6283.18554688
-// -40.8054199219
-// -6283.18554688
-// -40.8054199219
-// 31415.9257813
-// 204.027099609
-// -31415.9257813
-// -204.027099609
-// 1.57079637051
-// 0.0105584347621
-// 31415.9257813
-// 204.027099609
-// 1.57079637051
-// 0.0105584347621
-// -31415.9257813
-// -204.027099609
-// 1.57079637051
-// 0.0105584347621
-// 1.57079637051
-// 0.0105584347621
-// 0.0
-// -0.142831847072
-// 0.0
-// -0.142831847072
-// -6283.18554688
-// -40.8054199219
-// -6283.18554688
-// -40.8054199219
-// 23561.9453125
-// 0.0
-// 1.57079637051
-// -0.166477590799
-// 0.0
-// -7.05326223373
-// 0.0
-// -7.05326223373
-// -4712.38916016
-// -0
-// -4712.38916016
-// -0
-// 23561.9453125
-// 0.0
-// -23561.9453125
-// -0
-// 1.57079637051
-// -0.166477590799
-// 23561.9453125
-// 0.0
-// 1.57079637051
-// -0.166477590799
-// -23561.9453125
-// -0
-// 1.57079637051
-// -0.166477590799
-// 1.57079637051
-// -0.166477590799
-// 0.0
-// -7.05326223373
-// 0.0
-// -7.05326223373
-// -4712.38916016
-// -0
-// -4712.38916016
-// -0
+// "Files Equal!"
 // endResult
