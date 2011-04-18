@@ -47,7 +47,6 @@ Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.mos \
 Modelica.Utilities.Examples.readRealParameterModel.mos 
 
 
@@ -77,13 +76,16 @@ Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.mos \
 Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.mos \
 Modelica.Mechanics.Rotational.Examples.CoupledClutches.mos \
 Modelica.Mechanics.Translational.Examples.PreLoad.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
-Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
 Modelica.StateGraph.Examples.ControlledTanks.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.IndirectCooling.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.ParallelPumpDropOut.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
+Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
+Modelica.Thermal.HeatTransfer.Examples.Motor.mos 
 
 
 WRONGRESULTTEST = \
@@ -138,16 +140,14 @@ Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
 Modelica.Mechanics.Translational.Examples.Friction.mos \
 Modelica.Mechanics.Translational.Examples.Oscillator.mos \
 Modelica.Mechanics.Translational.Examples.Sensors.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
-Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
-Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
+Modelica.StateGraph.Examples.ExecutionPaths.mos \
 Modelica.StateGraph.Examples.FirstExample.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant2.mos \
 Modelica.StateGraph.Examples.FirstExample_Variant3.mos \
-Modelica.StateGraph.Examples.ExecutionPaths.mos \
 Modelica.StateGraph.Examples.ShowCompositeStep.mos \
 Modelica.StateGraph.Examples.ShowExceptions.mos \ 
+Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
+Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos 
 
 .PHONY : test
 

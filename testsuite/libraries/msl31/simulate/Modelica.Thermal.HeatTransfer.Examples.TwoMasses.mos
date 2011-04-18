@@ -11,46 +11,12 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Thermal.HeatTransfer.Examples.TwoMasses);
-val(mass1.T,0.0);
-val(mass1.T,1.0);
-val(der(mass1.T),0.0);
-val(der(mass1.T),1.0);
-val(mass1.der_T,0.0);
-val(mass1.der_T,1.0);
-val(mass1.port.T,0.0);
-val(mass1.port.T,1.0);
-val(mass1.port.Q_flow,0.0);
-val(mass1.port.Q_flow,1.0);
-val(mass2.T,0.0);
-val(mass2.T,1.0);
-val(der(mass2.T),0.0);
-val(der(mass2.T),1.0);
-val(mass2.der_T,0.0);
-val(mass2.der_T,1.0);
-val(mass2.port.T,0.0);
-val(mass2.port.T,1.0);
-val(mass2.port.Q_flow,0.0);
-val(mass2.port.Q_flow,1.0);
-val(conduction.Q_flow,0.0);
-val(conduction.Q_flow,1.0);
-val(conduction.dT,0.0);
-val(conduction.dT,1.0);
-val(conduction.port_a.T,0.0);
-val(conduction.port_a.T,1.0);
-val(conduction.port_a.Q_flow,0.0);
-val(conduction.port_a.Q_flow,1.0);
-val(conduction.port_b.T,0.0);
-val(conduction.port_b.T,1.0);
-val(conduction.port_b.Q_flow,0.0);
-val(conduction.port_b.Q_flow,1.0);
-val(Tsensor1.T,0.0);
-val(Tsensor1.T,1.0);
-val(Tsensor1.port.T,0.0);
-val(Tsensor1.port.T,1.0);
-val(Tsensor2.T,0.0);
-val(Tsensor2.T,1.0);
-val(Tsensor2.port.T,0.0);
-val(Tsensor2.port.T,1.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Thermal.HeatTransfer.Examples.TwoMasses_res.mat",
+  "Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mat","Modelica.Thermal.HeatTransfer.Examples.TwoMassesdiff.csv",0.01,0.0001,
+  {"mass1.T",
+  "mass2.T",
+  "der(mass1.T)",
+  "der(mass2.T)"});
 
 // Result:
 // true
@@ -60,44 +26,5 @@ val(Tsensor2.port.T,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.HeatTransfer.Examples.TwoMasses', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 373.149993896
-// 336.327484131
-// -66.6666641235
-// -17.5699901581
-// -66.6666641235
-// -17.5699901581
-// 373.149993896
-// 336.327484131
-// -1000.0
-// -263.549865723
-// 273.149993896
-// 309.972503662
-// 66.6666641235
-// 17.5699901581
-// 66.6666641235
-// 17.5699901581
-// 273.149993896
-// 309.972503662
-// 1000.0
-// 263.549865723
-// 1000.0
-// 263.549865723
-// 100.0
-// 26.3549861908
-// 373.149993896
-// 336.327484131
-// 1000.0
-// 263.549865723
-// 273.149993896
-// 309.972503662
-// -1000.0
-// -263.549865723
-// 100.0
-// 63.1774940491
-// 373.149993896
-// 336.327484131
-// 0.0
-// 36.8225059509
-// 273.149993896
-// 309.972503662
+// "Files Equal!"
 // endResult

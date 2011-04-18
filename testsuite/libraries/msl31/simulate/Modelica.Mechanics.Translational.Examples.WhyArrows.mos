@@ -11,62 +11,16 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.WhyArrows);
-val(fixed1.flange.f,0.0);
-val(fixed1.flange.f,1.0);
-val(spring1.flange_a.f,0.0);
-val(spring1.flange_a.f,1.0);
-val(spring1.flange_b.s,0.0);
-val(spring1.flange_b.s,1.0);
-val(spring1.flange_b.f,0.0);
-val(spring1.flange_b.f,1.0);
-val(spring1.s_rel,0.0);
-val(spring1.s_rel,1.0);
-val(spring1.f,0.0);
-val(spring1.f,1.0);
-val(mass1.s,0.0);
-val(mass1.s,1.0);
-val(der(mass1.s),0.0);
-val(der(mass1.s),1.0);
-val(mass1.flange_a.s,0.0);
-val(mass1.flange_a.s,1.0);
-val(mass1.flange_b.s,0.0);
-val(mass1.flange_b.s,1.0);
-val(mass1.flange_b.f,0.0);
-val(mass1.flange_b.f,1.0);
-val(mass1.v,0.0);
-val(mass1.v,1.0);
-val(der(mass1.v),0.0);
-val(der(mass1.v),1.0);
-val(mass1.a,0.0);
-val(mass1.a,1.0);
-val(fixed2.flange.f,0.0);
-val(fixed2.flange.f,1.0);
-val(spring2.flange_a.f,0.0);
-val(spring2.flange_a.f,1.0);
-val(spring2.flange_b.s,0.0);
-val(spring2.flange_b.s,1.0);
-val(spring2.flange_b.f,0.0);
-val(spring2.flange_b.f,1.0);
-val(spring2.s_rel,0.0);
-val(spring2.s_rel,1.0);
-val(spring2.f,0.0);
-val(spring2.f,1.0);
-val(inertia2.s,0.0);
-val(inertia2.s,1.0);
-val(der(inertia2.s),0.0);
-val(der(inertia2.s),1.0);
-val(inertia2.flange_a.s,0.0);
-val(inertia2.flange_a.s,1.0);
-val(inertia2.flange_b.s,0.0);
-val(inertia2.flange_b.s,1.0);
-val(inertia2.flange_b.f,0.0);
-val(inertia2.flange_b.f,1.0);
-val(inertia2.v,0.0);
-val(inertia2.v,1.0);
-val(der(inertia2.v),0.0);
-val(der(inertia2.v),1.0);
-val(inertia2.a,0.0);
-val(inertia2.a,1.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.WhyArrows_res.mat",
+  "Modelica.Mechanics.Translational.Examples.WhyArrows.mat","Modelica.Mechanics.Translational.Examples.WhyArrowsdiff.csv",0.01,0.001,
+  {"mass1.s",
+  "mass1.v",
+  "inertia2.s",
+  "inertia2.v",
+  "der(mass1.s)",
+  "der(mass1.v)",
+  "der(inertia2.s)",
+  "der(inertia2.v)"});
 
 // Result:
 // true
@@ -76,60 +30,5 @@ val(inertia2.a,1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Mechanics.Translational.Examples.WhyArrows', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 9.89999961853
-// -9.75130271912
-// -9.89999961853
-// 9.75130271912
-// 1.0
-// -0.786482036114
-// 9.89999961853
-// -9.75130271912
-// 2.90000009537
-// 1.11351799965
-// 9.89999961853
-// -9.75130271912
-// 0.0
-// -1.78648209572
-// 0.0
-// 0.521421611309
-// -1.0
-// -2.78648209572
-// 1.0
-// -0.786482036114
-// -9.89999961853
-// 9.75130271912
-// 0.0
-// 0.521421611309
-// -9.89999961853
-// 9.75130271912
-// -9.89999961853
-// 9.75130271912
-// 9.89999961853
-// -9.75130271912
-// -9.89999961853
-// 9.75130271912
-// 1.0
-// -0.786482036114
-// 9.89999961853
-// -9.75130271912
-// 2.90000009537
-// 1.11351799965
-// 9.89999961853
-// -9.75130271912
-// 0.0
-// -1.78648209572
-// 0.0
-// 0.521421611309
-// -1.0
-// -2.78648209572
-// 1.0
-// -0.786482036114
-// -9.89999961853
-// 9.75130271912
-// 0.0
-// 0.521421611309
-// -9.89999961853
-// 9.75130271912
-// -9.89999961853
-// 9.75130271912
+// "Files Equal!"
 // endResult

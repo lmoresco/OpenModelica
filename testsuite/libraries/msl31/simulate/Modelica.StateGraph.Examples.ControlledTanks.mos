@@ -10,9 +10,9 @@
 loadModel(Modelica);
 loadModel(ModelicaServices);
 
-simulate(Modelica.StateGraph.Examples.ExecutionPaths,stopTime=15.0);
-res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ExecutionPaths_res.mat",
-  "Modelica.StateGraph.Examples.ExecutionPaths.mat","Modelica.StateGraph.Examples.ExecutionPathsdiff.csv",0.01,0.0001,
+simulate(Modelica.StateGraph.Examples.ControlledTanks,stopTime=100.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ControlledTanks_res.mat",
+  "Modelica.StateGraph.Examples.ControlledTanks.mat","Modelica.StateGraph.Examples.ControlledTanksdiff.csv",0.01,0.0001,
   {"stateGraphRoot.subgraphStatePort.activeSteps",
   "transition1.t",
   "transition2.t",
@@ -29,8 +29,8 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Exam
 // true
 // true
 // record SimulationResult
-//     resultFile = "Modelica.StateGraph.Examples.ExecutionPaths_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.ExecutionPaths', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     resultFile = "Modelica.StateGraph.Examples.ControlledTanks.mos_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 100.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.ExecutionPaths', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // "Files Equal!"

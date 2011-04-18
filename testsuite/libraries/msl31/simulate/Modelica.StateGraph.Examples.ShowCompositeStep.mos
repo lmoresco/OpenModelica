@@ -11,70 +11,18 @@ loadModel(Modelica);
 loadModel(ModelicaServices);
 
 simulate(Modelica.StateGraph.Examples.ShowCompositeStep,stopTime=15.0);
-val(stateGraphRoot.subgraphStatePort.activeSteps,0.0);
-val(stateGraphRoot.subgraphStatePort.activeSteps,15.0);
-val(stateGraphRoot.activeSteps,0.0);
-val(stateGraphRoot.activeSteps,15.0);
-val(compositeStep.stateGraphRoot.subgraphStatePort.activeSteps,0.0);
-val(compositeStep.stateGraphRoot.subgraphStatePort.activeSteps,15.0);
-val(compositeStep.active,0.0);
-val(compositeStep.active,15.0);
-val(compositeStep.outerState.subgraphStatePort.activeSteps,0.0);
-val(compositeStep.outerState.subgraphStatePort.activeSteps,15.0);
-val(compositeStep.transition3.t,0.0);
-val(compositeStep.transition3.t,15.0);
-val(compositeStep.transition3.enableFire,0.0);
-val(compositeStep.transition3.enableFire,15.0);
-val(compositeStep.transition4.t,0.0);
-val(compositeStep.transition4.t,15.0);
-val(compositeStep.transition4.enableFire,0.0);
-val(compositeStep.transition4.enableFire,15.0);
-val(compositeStep.step3.active,0.0);
-val(compositeStep.step3.active,15.0);
-val(compositeStep.step4.active,0.0);
-val(compositeStep.step4.active,15.0);
-val(compositeStep.transition5.t,0.0);
-val(compositeStep.transition5.t,15.0);
-val(compositeStep.transition5.enableFire,0.0);
-val(compositeStep.transition5.enableFire,15.0);
-val(compositeStep.transition6.t,0.0);
-val(compositeStep.transition6.t,15.0);
-val(compositeStep.transition6.enableFire,0.0);
-val(compositeStep.transition6.enableFire,15.0);
-val(compositeStep.transition4a.t,0.0);
-val(compositeStep.transition4a.t,15.0);
-val(compositeStep.transition4a.enableFire,0.0);
-val(compositeStep.transition4a.enableFire,15.0);
-val(compositeStep.step4a.active,0.0);
-val(compositeStep.step4a.active,15.0);
-val(compositeStep.transition6a.t,0.0);
-val(compositeStep.transition6a.t,15.0);
-val(compositeStep.transition6a.enableFire,0.0);
-val(compositeStep.transition6a.enableFire,15.0);
-val(compositeStep.initStep.active,0.0);
-val(compositeStep.initStep.active,15.0);
-val(compositeStep.exitStep.active,0.0);
-val(compositeStep.exitStep.active,15.0);
-val(step0.active,0.0);
-val(step0.active,15.0);
-val(transition1.t,0.0);
-val(transition1.t,15.0);
-val(transition1.enableFire,0.0);
-val(transition1.enableFire,15.0);
-val(step1.active,0.0);
-val(step1.active,15.0);
-val(transition2.t,0.0);
-val(transition2.t,15.0);
-val(transition2.enableFire,0.0);
-val(transition2.enableFire,15.0);
-val(step6.active,0.0);
-val(step6.active,15.0);
-val(transition7.condition,0.0);
-val(transition7.condition,15.0);
-val(transition7.enableFire,0.0);
-val(transition7.enableFire,15.0);
-val(setCondition.y,0.0);
-val(setCondition.y,15.0);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ShowCompositeStep_res.mat",
+  "Modelica.StateGraph.Examples.ShowCompositeStep.mat","Modelica.StateGraph.Examples.ShowCompositeStepdiff.csv",0.01,0.0001,
+  {"stateGraphRoot.subgraphStatePort.activeSteps",
+  "compositeStep.transition3.t",
+  "compositeStep.transition4.t",
+  "compositeStep.transition5.t",
+  "compositeStep.transition6.t",
+  "compositeStep.transition4a.t",
+  "compositeStep.transition6a.t",
+  "transition1.t",
+  "transition2.t",
+  "transition7.t"});
 
 // Result:
 // true
@@ -84,68 +32,5 @@ val(setCondition.y,15.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 15.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.StateGraph.Examples.ShowCompositeStep', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// -1.0
-// -2.0
-// 1.0
-// 2.0
-// -0
-// -1.0
-// 0.0
-// 1.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
-// 0.0
-// 0.0
-// 0.0
-// 1.0
+// "Files Equal!"
 // endResult
