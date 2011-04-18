@@ -29,7 +29,7 @@ getErrorString();
 // Result:
 // true
 // 
-// "Error: Could not solve the polymorphism in the function call to listAppend
+// "Error: Could not solve the polymorphism in the function call to .listAppend
 //   Input bindings:
 //     $A:
 //       #Real

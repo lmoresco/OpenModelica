@@ -2159,14 +2159,14 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.sin;
 // 
 // function SiemensPower.Utilities.Functions.der_sqrtReg
@@ -2303,7 +2303,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   valve_fixeddensity1.port_b.p = watersink_ph_StreamConcept.port.p;
 //   valve_fixeddensity1.port_b.m_flow + watersink_ph_StreamConcept.port.m_flow = 0.0;
 // end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
-// [StreamConcept_NoMedium_Total.mo:1575:9-1577:77:writable] Warning: Component watersink_ph_StreamConcept has the same name as its type SiemensPower.Boundaries.watersink_ph_StreamConcept.
+// [StreamConcept_NoMedium_Total.mo:1575:9-1577:77:writable] Warning: Component watersink_ph_StreamConcept has the same name as its type .SiemensPower.Boundaries.watersink_ph_StreamConcept.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // endResult

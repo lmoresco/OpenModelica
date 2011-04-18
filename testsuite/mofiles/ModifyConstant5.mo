@@ -25,7 +25,7 @@ end ModifyConstant5;
 // Result:
 // Error processing file: ModifyConstant5.mo
 // [ModifyConstant5.mo:13:3-13:39:writable] Error: Variable b.a: trying to override final variable in class: A
-// 	by using modifiers: b.a((redeclare COMPONENT(c in/out:  mod:  = 2.0 tp: Real var :CONST prefixes: public )),  = final 1.0) that do not agree.
+// 	by using modifiers: b.a((redeclare COMPONENT(c in/out:  mod:  = 2.0 tp: .Real var :CONST prefixes: public )),  = final 1.0) that do not agree.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

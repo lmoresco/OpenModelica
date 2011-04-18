@@ -25,7 +25,7 @@ end DisturbedResistance3;
 // Error processing file: DisturbedResistance3.mo
 // [DisturbedResistance3.mo:20:3-20:31:writable] Error: Duplicate elements (due to inherited elements) not identical:
 // 	first element is:  Real R  = 1.0 + 0.1 * sin(time);
-// 	second element is: parameter Real R  = 1.0;
+// 	second element is: parameter .Real R  = 1.0;
 // 
 // 
 // # Error encountered! Exiting...
