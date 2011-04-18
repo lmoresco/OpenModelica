@@ -44,8 +44,7 @@ Modelica.Electrical.Digital.Examples.HalfAdder.mos \
 Modelica.Electrical.Digital.Examples.Multiplexer.mos \
 Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
 Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
-Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos \
-Modelica.Utilities.Examples.readRealParameterModel.mos 
+Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos 
 
 
 NOTSIMULATETEST= \
@@ -147,7 +146,9 @@ Modelica.StateGraph.Examples.FirstExample_Variant3.mos \
 Modelica.StateGraph.Examples.ShowCompositeStep.mos \
 Modelica.StateGraph.Examples.ShowExceptions.mos \
 Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.mos \
-Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos 
+Modelica.Thermal.HeatTransfer.Examples.TwoMasses.mos \
+Modelica.Utilities.Examples.readRealParameterModel.mos 
+
 
 .PHONY : test
 
