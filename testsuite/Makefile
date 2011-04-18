@@ -32,7 +32,8 @@ interactive-simulation.log
 SIMULATIONLOGS = \
 mosfiles.log \
 mosfiles-msl22.log \
-msl221simulation.log 
+msl221simulation.log  \
+msl31simulation.log
 
 .PHONY : all omc-diff failingtest test fast fast.logs $(FASTLOGS) $(SLOWLOGS) $(SIMULATIONLOGS) slow.logs
 
@@ -137,6 +138,9 @@ multibody.log: omc-diff
 	@echo $@ done
 msl31.log: omc-diff
 	$(MAKE) -C libraries/msl31 -f Makefile test > $@
+	@echo $@ done
+msl31simulation.log: omc-diff
+	$(MAKE) -C libraries/msl31/simulate -f Makefile test > $@
 	@echo $@ done
 
 failingtest: omc-diff
