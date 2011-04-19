@@ -41,10 +41,7 @@ Modelica.Electrical.Digital.Examples.Counter3.mos \
 Modelica.Electrical.Digital.Examples.FlipFlop.mos \
 Modelica.Electrical.Digital.Examples.FullAdder.mos \
 Modelica.Electrical.Digital.Examples.HalfAdder.mos \
-Modelica.Electrical.Digital.Examples.Multiplexer.mos \
-Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
-Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
-Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos 
+Modelica.Electrical.Digital.Examples.Multiplexer.mos
 
 
 NOTSIMULATETEST= \
@@ -64,6 +61,8 @@ Modelica.Electrical.Machines.Examples.SMR_Inverter.mos \
 Modelica.Electrical.MultiPhase.Examples.Rectifier.mos \
 Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour.mos \
 Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour.mos \
+Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.mos \
+Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses2.mos \
 Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.MovingActuatedDrive.mos \
@@ -109,6 +108,7 @@ Modelica.Electrical.Machines.Examples.DCSE_Start.mos \
 Modelica.Electrical.MultiPhase.Examples.TransformerYD.mos \
 Modelica.Electrical.MultiPhase.Examples.TransformerYY.mos \
 Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke.mos \
+Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.mos \

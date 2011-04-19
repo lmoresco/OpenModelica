@@ -984,7 +984,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour has 237 equation(s) and 237 variable(s).
-// 152 of these are trivial equation(s).
+// 165 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Tables.CombiTable1Ds.tableInit
@@ -1512,7 +1512,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour has 150 equation(s) and 150 variable(s).
-// 94 of these are trivial equation(s).
+// 104 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
@@ -2535,7 +2535,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator has 129 equation(s) and 129 variable(s).
-// 78 of these are trivial equation(s).
+// 87 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.ConstantActuator
@@ -4253,7 +4253,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary has 510 equation(s) and 510 variable(s).
-// 290 of these are trivial equation(s).
+// 291 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit
@@ -8385,7 +8385,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 
 // 
 // Class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.SimpleSolenoid has 192 equation(s) and 192 variable(s).
-// 104 of these are trivial equation(s).
+// 111 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
