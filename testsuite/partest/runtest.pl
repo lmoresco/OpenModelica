@@ -79,6 +79,13 @@ sub make_test_specific_links {
       make_link("TestLibrary");
     }
 	}
+
+  given($test_dir) {
+    when ("./libraries/msl31/simulate") {
+      (my $test_name) = $test =~ /(.*)\.mos$/;
+      make_link("$test_name.mat");
+    }
+  }
 }
 
 sub remove_test_specific_links {
@@ -173,6 +180,7 @@ unlink("../$test.fail_log");
 
 # Determine the full path to rtest.
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
+
 # If we're in meta, append the MetaModelica flag to rtest.
 $rtest = $rtest . " +g=MetaModelica " if $test_dir eq "./meta";
 $rtest = $rtest . " +d=SetOldDassl " if $test_dir eq "./mosfiles-dasslold";

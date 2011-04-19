@@ -6,6 +6,8 @@ ClassExtends2.mo \
 ClassExtends3.mo \
 ClassExtends4.mo \
 ClassExtends5.mo \
+ClassExtendsInvalid1.mo \
+ClassExtendsInvalid2.mo \
 Redeclare1.mo \
 Redeclare2.mo \
 Redeclare3.mo \

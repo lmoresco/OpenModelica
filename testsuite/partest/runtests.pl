@@ -84,7 +84,7 @@ sub add_tests {
 # Run the tests by dequeuing them from the list of tests and calling the
 # runtest.pl script.
 sub run_tests {
-	while(defined(my $test_full = $test_queue->dequeue_nb())) {
+  while(defined(my $test_full = $test_queue->dequeue_nb())) {
 		(my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
 		system("$testscript $test_full");
     if($? >> 8 == 0) { # Add the test to the list of failed tests if it failed.
@@ -93,7 +93,7 @@ sub run_tests {
       lock(@failed_tests);
       push @failed_tests, $test_full;
     }
-	}
+  }
 }
 
 # Check for the -f flag.

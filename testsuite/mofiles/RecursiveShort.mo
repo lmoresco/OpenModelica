@@ -1,6 +1,7 @@
 // name:     RecursiveShort
 // keywords: Recursive Short Class Definition
 // status:   incorrect
+// cflags:   +d=scodeFlatten
 // 
 // Checks that compiler does not enter infinite lookup loop in the case
 // of recursive short class definition (like type Env = Env.Env; here)
@@ -21,7 +22,7 @@ end RecursiveShort;
 
 // Result:
 // Error processing file: RecursiveShort.mo
-// [RecursiveShort.mo:15:5-15:23:writable] Error: Recursive short class definition of Env in terms of Env.Env
+// [RecursiveShort.mo:16:5-16:23:writable] Error: Recursive short class definition of Env in terms of Env.Env
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

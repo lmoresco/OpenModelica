@@ -212,6 +212,14 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // true
 // "Check of Modelica.Media.Examples.SimpleLiquidWater completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
 // 19 of these are trivial equation(s).
@@ -272,9 +280,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
 // end Modelica.Media.Water.StandardWater;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Water.StandardWater completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Water.StandardWater has 0 equation(s) and 0 variable(s).
 // 0 of these are trivial equation(s).
@@ -297,9 +321,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   m_flow = 0.0;
 // end Modelica.Media.Examples.Tests.Components.FluidPort;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Examples.Tests.Components.FluidPort completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Examples.Tests.Components.FluidPort has 2 equation(s) and 4 variable(s).
 // 2 of these are trivial equation(s).
@@ -322,9 +362,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   m_flow = 0.0;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
 // 2 of these are trivial equation(s).
@@ -347,9 +403,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   m_flow = 0.0;
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
 // 2 of these are trivial equation(s).
@@ -370,7 +442,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   protected Real[nrow, ncol] Awork = A;
 //   protected Integer[ncol] jpvt = fill(0,ncol);
 // 
-// external \"FORTRAN 77\";
+//   external \"FORTRAN 77\";
 // end Modelica.Math.Matrices.LAPACK.dgelsx_vec;
 // 
 // function Modelica.Math.Matrices.leastSquares
@@ -531,7 +603,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   final constant Real invTK[5] = 0.00341122292341805;
 //   final constant Real invTK[6] = 0.00319335781574325;
 //   final constant Real invTK[7] = 0.0030016509079994;
-//   final constant Real invTK[8] = 0.00283165793572137;
+//   final constant Real invTK[8] = 0.00283165793572136;
 //   final constant Real invTK[9] = 0.00267988744472732;
 //   final constant Integer nS = 1 \"Number of substances\";
 //   final constant Real poly_rho[1] = 0.0;
@@ -545,9 +617,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
 // end Modelica.Media.Incompressible.Examples.Glycol47;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Incompressible.Examples.Glycol47 completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Incompressible.Examples.Glycol47 has 0 equation(s) and 0 variable(s).
 // 0 of these are trivial equation(s).
@@ -598,9 +686,25 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
 // end Modelica.Media.Air.SimpleAir;
 // "
-// ""
+// "[package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
+// "
 // "Check of Modelica.Media.Air.SimpleAir completed successfully.
 // 
+// [package.mo:4482:5-4483:68:writable] Notification: From here:
+// [package.mo:4474:17-4480:37:writable] Error: Base class isobaricExpansionCoefficient is replaceable.
+// [package.mo:4423:5-4424:34:writable] Notification: From here:
+// [package.mo:4414:17-4421:31:writable] Error: Base class specificHeatCapacityCp is replaceable.
+// [package.mo:4435:5-4436:34:writable] Notification: From here:
+// [package.mo:4426:17-4433:31:writable] Error: Base class specificHeatCapacityCv is replaceable.
+// [package.mo:4493:5-4494:64:writable] Notification: From here:
+// [package.mo:4485:17-4491:34:writable] Error: Base class isothermalCompressibility is replaceable.
 // 
 // Class Modelica.Media.Air.SimpleAir has 0 equation(s) and 0 variable(s).
 // 0 of these are trivial equation(s).
