@@ -46,7 +46,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Continuous.mo:1211:5-1213:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).
-// 1 of these are trivial equation(s).
+// 0 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.

@@ -2067,7 +2067,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class BioChem.Examples.centralMetabolism.cytosol has 320 equation(s) and 320 variable(s).
-// 238 of these are trivial equation(s).
+// 223 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Container completed successfully.
@@ -2088,7 +2088,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Cytoplasm has 140 equation(s) and 142 variable(s).
-// 112 of these are trivial equation(s).
+// 110 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CellDivison.cell completed successfully.
@@ -2109,7 +2109,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.CaOscillations.Endoplasmic_Reticulum has 34 equation(s) and 35 variable(s).
-// 29 of these are trivial equation(s).
+// 26 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel completed successfully.
