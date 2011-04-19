@@ -1,0 +1,14 @@
+// name:     BouncingBall
+// keywords: fmu export
+// status: correct
+// teardown_command: rm -rf BouncingBall_* BouncingBall.log BouncingBall.libs BouncingBall BouncingBall.exe BouncingBall.cpp BouncingBall.makefile output.log BouncingBall/*
+//
+// Event handling
+//
+loadFile("BouncingBall.mo");
+translateModelFMU(BouncingBall);
+
+// Result:
+// true
+// "SimCode: The model BouncingBall has been translated to FMU"
+// endResult

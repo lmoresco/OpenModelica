@@ -17,7 +17,8 @@ linearize.log \
 modelicaML.log \
 drmodelica.log \
 streams.log \
-redeclare.log
+redeclare.log \
+fmi.log
 
 SLOWLOGS = \
 bootstrapping.log \
@@ -142,7 +143,9 @@ msl31.log: omc-diff
 msl31simulation.log: omc-diff
 	$(MAKE) -C libraries/msl31/simulate -f Makefile test > $@
 	@echo $@ done
-
+fmi.log: omc-diff
+	$(MAKE) -C fmi -f Makefile test > $@
+	@echo $@ done
 failingtest: omc-diff
 	cd mofiles; $(MAKE) -f Makefile failingtest; \
 	cd mosfiles; $(MAKE) -f Makefile failingtest; \
