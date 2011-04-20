@@ -13511,8 +13511,11 @@ algorithm
   matchcontinue(in_txt, in_a_type)
     local
       Tpl.Text txt;
+      DAE.ExpType i_type;
       Absyn.Path i_rname;
       DAE.ExpType i_ty;
+      Tpl.Text txt_0;
+      String ret_0;
 
     case ( txt,
            DAE.ET_INT() )
@@ -13576,9 +13579,12 @@ algorithm
       then txt;
 
     case ( txt,
-           _ )
+           i_type )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("OTHER_EXT_TYPE"));
+        txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external type "));
+        ret_0 = ExpressionDump.typeString(i_type);
+        txt_0 = Tpl.writeStr(txt_0, ret_0);
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2927, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end extType;
@@ -13593,7 +13599,10 @@ algorithm
   matchcontinue(in_txt, in_a_type)
     local
       Tpl.Text txt;
+      DAE.ExpType i_type;
       Absyn.Path i_rname;
+      Tpl.Text txt_0;
+      String ret_0;
 
     case ( txt,
            DAE.ET_INT() )
@@ -13651,9 +13660,12 @@ algorithm
       then txt;
 
     case ( txt,
-           _ )
+           i_type )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("OTHER_EXT_TYPE"));
+        txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external type "));
+        ret_0 = ExpressionDump.typeString(i_type);
+        txt_0 = Tpl.writeStr(txt_0, ret_0);
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2944, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end extTypeF77;
