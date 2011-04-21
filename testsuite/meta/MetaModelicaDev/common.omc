@@ -27,8 +27,9 @@ lexer.c:  lexer.l
 
 # PARSER
 
-parser.o:  parser.c parser.h
-parser.c parser.h:  parser.y
+parser.o: parser.c parser.h
+parser.h: parser.c
+parser.c:  parser.y
 	bison -d parser.y
 	@mv parser.tab.c parser.c
 	@mv parser.tab.h parser.h
