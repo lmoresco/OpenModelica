@@ -16,20 +16,20 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Trans
   {"m3.s",
   "m3.v",
   "sd2.s_rel",
-  "sd2.v_rel",
+  "m4.v",
   "m1.s",
   "m1.v",
   "sd1.s_rel",
-  "sd1.v_rel",
+  "m2.v",
   "der(m3.s)",
-  "der(m3.v)",
   "der(sd2.s_rel)",
-  "der(sd2.v_rel)",
+  "der(m4.v)",
   "der(m1.s)",
   "der(m1.v)",
   "der(sd1.s_rel)",
-  "der(sd1.v_rel)"});
+  "der(m2.v)"});
 
+  
 // Result:
 // true
 // true
