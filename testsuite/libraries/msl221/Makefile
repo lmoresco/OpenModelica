@@ -91,10 +91,13 @@ failingtest:
 	@echo
 	@$(TEST) $(FAILINGTESTFILES) \
 
-testsim:
-	@make -C Electrical -f Makefile test 
-	@make -C Mechanics -f Makefile test 
+testsim: electrical mechanical
+
+electrical:
+	@$(MAKE) -C Electrical -f Makefile test 
+mechanical:
+	@$(MAKE) -C Mechanics -f Makefile test 
 
 simfailingtest:
-	@make -C Electrical -f Makefile failingtest
-	@make -C Mechanics -f Makefile failingtest
+	@$(MAKE) -C Electrical -f Makefile failingtest
+	@$(MAKE) -C Mechanics -f Makefile failingtest
