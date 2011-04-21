@@ -2607,7 +2607,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses has 1569 equation(s) and 1569 variable(s).
-// 1502 of these are trivial equation(s).
+// 1505 of these are trivial equation(s).
 // "
 // ""
 // endResult
