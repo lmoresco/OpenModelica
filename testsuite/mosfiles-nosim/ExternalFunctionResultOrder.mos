@@ -8,25 +8,32 @@
 //
 
 loadFile("ExternalFunctionResultOrder.mo");
-ExternalFunctionResultOrder.c1234();
-ExternalFunctionResultOrder.c2341();
-ExternalFunctionResultOrder.c1243();
-ExternalFunctionResultOrder.c4321();
+ExternalFunctionResultOrder.c1234();getErrorString();
+ExternalFunctionResultOrder.c2341();getErrorString();
+ExternalFunctionResultOrder.c1243();getErrorString();
+ExternalFunctionResultOrder.c4321();getErrorString();
 
-ExternalFunctionResultOrder.f1234();
-ExternalFunctionResultOrder.f2341();
-ExternalFunctionResultOrder.f1243();
-ExternalFunctionResultOrder.f4321();
-// do not delete .dlls as this test will fail on windows.
+ExternalFunctionResultOrder.f1234();getErrorString();
+ExternalFunctionResultOrder.f2341();getErrorString();
+ExternalFunctionResultOrder.f1243();getErrorString();
+ExternalFunctionResultOrder.f4321();getErrorString();
 
 // Result:
 // true
 // (1,2,3,4)
+// ""
 // (2,3,4,1)
+// ""
 // (1,2,4,3)
+// ""
 // (4,3,2,1)
+// ""
 // (1,2,3,4)
+// ""
 // (2,3,4,1)
+// ""
 // (1,2,4,3)
+// ""
 // (4,3,2,1)
+// ""
 // endResult

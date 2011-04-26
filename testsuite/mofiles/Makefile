@@ -264,6 +264,8 @@ ExternalFunction3.mo \
 ExternalFunction4.mo \
 ExternalFunction5.mo \
 ExternalFunction6.mo \
+ExternalFunction7.mo \
+ExternalFunction8.mo \
 ExternalFunctionAnno.mo \
 ExternalFunctionBuiltin.mo \
 ExternalFunctionExtends.mo \
