@@ -54,8 +54,8 @@ getErrorString();
 // 
 // "Error: No matching function found for ComplicatedInteractive.NewComplicatedThingy(SOME(List(#(true))))
 // of type
-//   function(opt:Option<list<#Boolean>>) => tuple<#Integer, ComplicatedInteractive.LI2> in component <NO COMPONENT>
+//   .ComplicatedInteractive.NewComplicatedThingy<function>(opt:Option<list<#Boolean>>) => tuple<#Integer, ComplicatedInteractive.LI2> in component <NO COMPONENT>
 // candidates are 
-//   function(opt:Option<list<#Integer>>) => tuple<#Integer, ComplicatedInteractive.LI2>
+//   .ComplicatedInteractive.NewComplicatedThingy<function>(opt:Option<list<#Integer>>) => tuple<#Integer, ComplicatedInteractive.LI2>
 // "
 // endResult

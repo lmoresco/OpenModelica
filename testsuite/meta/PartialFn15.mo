@@ -39,8 +39,8 @@ end PartialFn15;
 //   input Real r1;
 //   input Real r2;
 //   output list<#Real> lst;
-//   protected list<function(r1:#Real, r2:#Real) => #Real> binops;
-//   protected function(r1:#Real, r2:#Real) => #Real binop;
+//   protected list<.PartialFn15.elabRealBinOps.RealBinOp<function>(r1:#Real, r2:#Real) => #Real> binops;
+//   protected binop<function>(r1:#Real, r2:#Real) => #Real binop;
 // algorithm
 //   lst := List();
 //   binops := List(realAdd,realSub,realMul,realDiv,realPow,realMax,realMin);

@@ -42,9 +42,9 @@ getErrorString();
 //       #Integer
 // Error: No matching function found for listAppend({1,2,3}, {4.0,5.0,6.0})
 // of type
-//   function(lst1:Integer[3], lst2:Real[3]) => list<polymorphic<A>> in component <NO COMPONENT>
+//   .listAppend<function>(lst1:Integer[3], lst2:Real[3]) => list<polymorphic<A>> in component <NO COMPONENT>
 // candidates are 
-//   function(lst1:list<polymorphic<A>>, lst2:list<polymorphic<A>>) => list<polymorphic<A>>
+//   .listAppend<function>(lst1:list<polymorphic<A>>, lst2:list<polymorphic<A>>) => list<polymorphic<A>>
 // "
 // {1.0,2.0,3.0,4.0,5.0,6.0}
 // ""

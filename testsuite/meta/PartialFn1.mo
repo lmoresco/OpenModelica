@@ -52,7 +52,7 @@ end PartialFn1;
 // end PartialFn1.AddInt;
 // 
 // function PartialFn1.ApplyIntOp
-//   input function(in1:#Integer) => #Integer inFunc;
+//   input inFunc<function>(in1:#Integer) => #Integer inFunc;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm

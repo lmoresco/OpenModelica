@@ -59,7 +59,7 @@ end PartialFn7;
 // function PartialFn7.CreateTestRecord
 //   input Integer i;
 //   input Real r;
-//   input function(i:#Integer, r:#Real) => #record PartialFn7.TestRecord
+//   input rc<function>(i:#Integer, r:#Real) => #record PartialFn7.TestRecord
 // Integer i;
 // Real r;
 // end PartialFn7.TestRecord; rc;
@@ -79,9 +79,9 @@ end PartialFn7;
 // end PartialFn7.TestCreateTestRecord;
 // 
 // function PartialFn7.TestRecord "Automatically generated record constructor for PartialFn7.TestRecord"
-// input Integer i;
-// input Real r;
-// output TestRecord res;
+//   input Integer i;
+//   input Real r;
+//   output TestRecord res;
 // end PartialFn7.TestRecord;
 // 
 // class PartialFn7

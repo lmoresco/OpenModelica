@@ -47,7 +47,7 @@ end PartialFn5;
 
 // Result:
 // function PartialFn5.ApplyRealOp
-//   input function(r1:#Real) => #Real inFunc;
+//   input inFunc<function>(r1:#Real) => #Real inFunc;
 //   input Real rin;
 //   output Real rout;
 // algorithm
@@ -65,7 +65,7 @@ end PartialFn5;
 //   input Real rin;
 //   output Real rout;
 // 
-// external "C";
+//   external "C";
 // end PartialFn5.ceil_;
 // 
 // class PartialFn5

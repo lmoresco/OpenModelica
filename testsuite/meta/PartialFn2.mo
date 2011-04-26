@@ -73,8 +73,8 @@ end PartialFn2;
 // end PartialFn2.AddInt;
 // 
 // function PartialFn2.ApplyApplyIntOp
-//   input function(inFunc:function(in1:#Integer) => #Integer, in1:#Integer) => #Integer inFuncFunc;
-//   input function(in1:#Integer) => #Integer inFunc;
+//   input inFuncFunc<function>(inFunc:.PartialFn2.ApplyApplyIntOp.FuncIntToInt<function>(in1:#Integer) => #Integer, in1:#Integer) => #Integer inFuncFunc;
+//   input inFunc<function>(in1:#Integer) => #Integer inFunc;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm
@@ -82,7 +82,7 @@ end PartialFn2;
 // end PartialFn2.ApplyApplyIntOp;
 // 
 // function PartialFn2.ApplyIntOp
-//   input function(in1:#Integer) => #Integer inFunc;
+//   input inFunc<function>(in1:#Integer) => #Integer inFunc;
 //   input Integer i;
 //   output Integer outInt;
 // algorithm

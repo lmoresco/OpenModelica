@@ -41,7 +41,7 @@ equation
 end PartialFn6;
 // Result:
 // function ApplyRealOp
-//   input function(x:#Real) => #Real inFunc;
+//   input inFunc<function>(x:#Real) => #Real inFunc;
 //   input Real x;
 //   output Real y;
 // algorithm
@@ -52,7 +52,7 @@ end PartialFn6;
 //   input Real r;
 //   output Real out;
 // 
-// external "C";
+//   external "C";
 // end ExtFunc;
 // 
 // function TestApplyRealOp

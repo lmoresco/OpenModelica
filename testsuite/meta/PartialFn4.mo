@@ -46,7 +46,7 @@ end PartialFn4;
 
 // Result:
 // function PartialFn4.ApplyVoidOp
-//   input function(i1:#Integer) => #NORETCALL# inFunc;
+//   input inFunc<function>(i1:#Integer) => #NORETCALL# inFunc;
 //   input Integer i;
 //   output Integer j;
 // algorithm
