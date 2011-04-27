@@ -1,5 +1,5 @@
 // name: ExternalFunction8
-// status: correct
+// status: incorrect
 // teardown_command: rm -f ExternalFunction8_*
 
 class ExternalFunction8
@@ -12,14 +12,12 @@ class ExternalFunction8
 end ExternalFunction8;
 
 // Result:
-// function ExternalFunction6.fn
-//   input Integer i1;
-//   output Integer i;
+// Error processing file: ExternalFunction8.mo
+// [ExternalFunction8.mo:6:3-9:9:writable] Error: The lhs (result) of the external function declaration has array type (Real[3]), but this is not allowed in the specification. You need to pass it as an input to the function (preferably also with a size()-expression to avoid out-of-bounds errors in the external call).
+// [ExternalFunction8.mo:11:3-11:29:writable] Error: Class fn not found in scope ExternalFunction8 (looking for a function or record).
 // 
-//   external "C";
-// end ExternalFunction6.fn;
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
 // 
-// class ExternalFunction6
-//   constant Integer i = 4;
-// end ExternalFunction6;
+// Execution failed!
 // endResult
