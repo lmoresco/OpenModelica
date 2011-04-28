@@ -17,6 +17,7 @@ Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetPulling.mos \
 Modelica.Mechanics.MultiBody.Examples.Elementary.SpringMassSystem.mos \
 Modelica.Mechanics.Rotational.Examples.RollingWheel.mos \
 Modelica.Mechanics.Translational.Examples.Accelerate.mos \
+Modelica.Mechanics.Translational.Examples.Damper.mos \
 Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
 Modelica.Mechanics.Translational.Examples.WhyArrows.mos
@@ -134,7 +135,6 @@ Modelica.Mechanics.Rotational.Examples.Friction.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo1.mos \
 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.mos \
 Modelica.Mechanics.Translational.Examples.Brake.mos \
-Modelica.Mechanics.Translational.Examples.Damper.mos \
 Modelica.Mechanics.Translational.Examples.ElastoGap.mos \
 Modelica.Mechanics.Translational.Examples.Friction.mos \
 Modelica.Mechanics.Translational.Examples.Oscillator.mos \

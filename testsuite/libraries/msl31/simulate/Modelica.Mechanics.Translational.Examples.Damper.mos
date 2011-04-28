@@ -12,7 +12,7 @@ loadModel(ModelicaServices);
 
 simulate(Modelica.Mechanics.Translational.Examples.Damper);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Damper_res.mat",
-  "Modelica.Mechanics.Translational.Examples.Damper.mat","Modelica.Mechanics.Translational.Examples.Damper_diff.csv",0.01,0.0001,
+  "Modelica.Mechanics.Translational.Examples.Damper.mat","Modelica.Mechanics.Translational.Examples.Damper_diff.csv",0.01,0.00001,
   {"damper1.s_rel",
   "damper1.v_rel",
   "damper2.s_rel",
@@ -20,11 +20,8 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Trans
   "springDamper3.s_rel",
   "springDamper3.v_rel",
   "der(damper1.s_rel)",
-  "der(damper1.v_rel)",
   "der(damper2.s_rel)",
-  "der(damper2.v_rel)",
-  "der(springDamper3.s_rel)",
-  "der(springDamper3.v_rel)"});
+  "der(springDamper3.s_rel)"});
 
 // Result:
 // true
