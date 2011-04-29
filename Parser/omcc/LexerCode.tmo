@@ -1,0 +1,68 @@
+package %LexerCode% // Generated %time%
+  /* 
+   Template for Lexer Code
+   replace keywords:
+   %LexerCode
+   %time
+   %Token
+   %Lexer
+   %ParseTable
+   %constant
+   %nameSpan
+   %functions
+   %caseAction
+  */
+import Types;
+import %Token%;
+import %Lexer%;
+import %ParseTable%;
+
+%constant%
+
+ function action
+    input Integer act;
+    input %Lexer%.Env env;
+    output Option<Types.Token> token;
+    output %Lexer%.Env env2;
+    Integer mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,mm_flinenr;
+    list<Integer> buffer,bkBuffer,tb;
+    Types.Info info;
+    array<String> tokName;
+    String sToken,fileNm;
+    Integer nameSpan, act2;
+    Boolean debug;
+  algorithm
+    %Lexer%.ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
+     linenr=mm_linenr,buff=buffer,bkBuf=bkBuffer,isDebugging=debug,fileName=fileNm) := env;
+     buffer := listReverse(buffer);
+     tb := buffer;
+     sToken := %Lexer%.printBuffer(tb,"");
+     tokName := listArray(%ParseTable%.yytname);
+     nameSpan := %nameSpan%;
+     tb := buffer;
+     //(tb,mm_flinenr) := %Lexer%.lineUpd(tb,mm_flinenr);
+     info := %Lexer%.getInfo(tb,mm_sPos,mm_linenr,fileNm);
+     //info := Types.INFO(fileNm,false,mm_linenr,mm_sPos,mm_flinenr,mm_pos);
+    // print("\n" + intString(act) + ":");
+     act2 := act;
+     
+     (token) := matchcontinue (act)
+       local 
+         Types.Token tok;
+%caseAction%
+       case (_)
+         equation
+          // print("[enter else]");
+           print("ERROR TOKEN NOT FOUND:['" + sToken + "' TK:" + intString(act)  + "," + tokName[act2] + "]");
+           tok = Types.TOKEN(tokName[act2],act,buffer,info);
+         then (NONE());
+     end matchcontinue;
+     env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,{},bkBuffer,{mm_startSt},debug,fileNm);
+     if (debug==true) then 
+       print("\n[TOKEN:'" + sToken + "' ("+ intString(mm_sPos) + ":" + intString(mm_linenr) +") id:" + intString(act2)  + "]");
+     end if;   
+  end action;  
+   
+%functions%
+
+end %LexerCode%;

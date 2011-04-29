@@ -1,0 +1,72 @@
+package %ParseCode% // Generated %time%
+import Absyn;
+import Types;
+
+%prologue%
+
+uniontype AstStack
+  record ASTSTACK
+%astStack%  end ASTSTACK;
+  record EMPTY end EMPTY;
+end AstStack;
+
+function initAstStack
+  input AstStack astStack;
+  output AstStack astStack2;
+ algorithm 
+   astStack2 := ASTSTACK(%initStack%);
+end initAstStack;
+
+function getAST "returns the AST built by the parsing"
+  input AstStack astStk "MultiTypedStack used by the parser";
+  output AstTree ast "returns the AST in the final type of the tree";
+  list<%astTree%> retStk;
+  algorithm
+    ASTSTACK(stack%astTree%=retStk) := astStk;
+    ast::_ := retStk;
+end getAST;  
+
+function actionRed
+  input Integer act;
+  input AstStack astStk;
+  output AstStack astStk2;
+  // env variables       
+  // AstStack 
+%astStackVar%
+
+  
+algorithm
+ 
+ /*  ASTSTACK(identStack=idStk,intStack=inStk,binOpStack=boStk,
+      relOpStack=roStk,expStack=exStk,identLstStack=ilStk,stmtStack=stStk) := astStk; */
+    %GETASTSTACK%  
+  (_) := matchcontinue(act,astStk)
+    local
+      //local variables
+%caseAction%    
+    case (_,_) 
+      equation
+        print("FAIL: Ilegal action");
+        //lAST = intString(act);
+      then ();
+  end matchcontinue;
+    %PUTASTSTACK% 
+ /* astStk2 := ASTSTACK(idStk,inStk,boStk,roStk,exStk,ilStk,stStk); */
+  
+end actionRed;  
+
+function push
+  input AstStack astStk;
+  input String inVal;
+  output AstStack astStk2;
+  // AstStack 
+%astStackVar%
+algorithm
+ %GETASTSTACK%
+    skString := inVal::skString;
+  %PUTASTSTACK%
+end push;
+
+%epilogue%
+
+end %ParseCode%;
