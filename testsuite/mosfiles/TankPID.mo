@@ -68,7 +68,7 @@ model Tank
   parameter Real area(unit = "m2")       =  0.5;
   parameter Real flowGain(unit = "m2/s") = 0.05;
   parameter Real minV= 0, maxV = 10;    // Limits for output valve flow
-  Real           h(start = 0.0, unit = "m")   "Tank level";
+  Real           h(start = 0.0, unit = "m",stateSelect=StateSelect.prefer)   "Tank level";
  equation
   assert(minV>=0,"minV - minimum Valve level must be >= 0 ");
   der(h)      = (qIn.lflow - qOut.lflow)/area;    // Mass balance equation
