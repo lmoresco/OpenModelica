@@ -714,6 +714,39 @@ algorithm
   end matchcontinue;
 end lm_40;
 
+protected function lm_41
+  input Tpl.Text in_txt;
+  input list<DAE.ComponentRef> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<DAE.ComponentRef> rest;
+      DAE.ComponentRef i_cr;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_cr :: rest )
+      equation
+        txt = SimCodeC.crefStr(txt, i_cr);
+        txt = Tpl.nextIter(txt);
+        txt = lm_41(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_41(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_41;
+
 public function dumpOperation
   input Tpl.Text in_txt;
   input DAE.SymbolicOperation in_a_op;
@@ -726,6 +759,8 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.Info a_info;
+      list<DAE.ComponentRef> i_op_candidates;
+      DAE.ComponentRef i_op_chosen;
       list<DAE.Exp> i_op_assertConds;
       DAE.Exp i_op_res;
       DAE.Exp i_op_exp2;
@@ -828,6 +863,19 @@ algorithm
         txt = lm_40(txt, i_op_assertConds);
         txt = Tpl.popIter(txt);
         txt = Tpl.popBlock(txt);
+      then txt;
+
+    case ( txt,
+           DAE.NEW_DUMMY_DER(chosen = i_op_chosen, candidates = i_op_candidates),
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  dummy derivative: "));
+        txt = SimCodeC.crefStr(txt, i_op_chosen);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" from candidates: "));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_41(txt, i_op_candidates);
+        txt = Tpl.popIter(txt);
       then txt;
 
     case ( txt,
