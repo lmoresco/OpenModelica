@@ -6,6 +6,6 @@ loadFile("System.mo");
 loadFile("LexerGenerator.mo");
 loadFile("ParserGenerator.mo");
 
-OMCC.main({"10"});
+OMCC.main({"Modelica"});
 
 getErrorString();

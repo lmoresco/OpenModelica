@@ -34,20 +34,58 @@ package LexerGenerator
 	    if (debug==true) then
 	       print("\nBuild LexerCode ...");
 	    end if;
-	    resBol := buildLexerCode(flexCode,outFileName);
+	    resBol := buildLexerCode(flexCode,grammarFile,outFileName);
 	    result := "Lexer Built";
     else
       result := "Invalid language grammar name";
     end if;
   end genLexer;
 
+ function readPrologEpilog
+   input String lexerCode;
+   input String grammarFileName;
+   output String lexerCodeIncluded;
+   String grammarFile,epilog,prolog,re,ar1,astRootType;
+   Integer numMatches,pos1,pos2;
+   list<String> resultRegex;
+  algorithm
+     grammarFile := System.readFile(grammarFileName);
+      
+    //find prologue
+     
+    pos1 := System.stringFind(grammarFile,"%{");
+    pos2 := System.stringFind(grammarFile,"%}");
+    
+    ar1 := System.substring(grammarFile,pos1+3,pos2-1);
+    lexerCodeIncluded := System.stringReplace(lexerCode,"%prologue%",ar1);
+    
+    //
+  /*  ar1 := System.stringFindString(grammarFile,"AstTree");
+    pos1 := System.stringFind(ar1,"=");
+    pos2 := System.stringFind(ar1,";");
+    astRootType := System.substring(ar1,pos1+2,pos2);
+    astRootType := System.trim(astRootType," ");
+    parserCodeIncluded := System.stringReplace(parserCodeIncluded,"%astTree%",astRootType); */
+    
+    //find epilogue
+    re := "%%";
+    ar1 := System.stringFindString(grammarFile,re);
+    ar1 := System.substring(ar1,3,stringLength(ar1));
+    ar1 := System.stringFindString(ar1,re);
+	  ar1 := System.substring(ar1,3,stringLength(ar1));
+    lexerCodeIncluded := System.stringReplace(lexerCodeIncluded,"%epilogue%",ar1);
+    
+  
+ end readPrologEpilog;   
+
   function buildLexerCode
     input String flexCode;
+    input String grammarFile;
     input String outFileName;
     output Boolean buildResult;
     list<String> resTable;
     String lexCode,result,rest,stTime,cp,caseAction,re; 
-    Integer i,numRules,pos,pos2,posBegin,valBegin;
+    Integer i,numRules,pos,pos2,posBegin,posReturn,posKeepBuffer,posBreak,valBegin;
   algorithm
     lexCode := System.readFile("LexerCode.tmo");
     stTime := leyend + getCurrentTimeStr();
@@ -56,9 +94,9 @@ package LexerGenerator
     result := System.stringReplace(result,"%Token%","Token" + outFileName);
     result := System.stringReplace(result,"%Lexer%","Lexer" + outFileName);
     result := System.stringReplace(result,"%ParseTable%","ParseTable" + outFileName);
-    result := System.stringReplace(result,"%constant%","");
-    result := System.stringReplace(result,"%functions%","");
     result := System.stringReplace(result,"%nameSpan%","255");
+    result := readPrologEpilog(result,grammarFile);
+    
     caseAction := "";
       resTable := {};
       //print("\nFind value ...");
@@ -76,51 +114,67 @@ package LexerGenerator
 		    
 		    re := "case " + intString(i) + ":";
 		    rest := System.stringFindString(flexCode,re);
-		    //print("\n" +re); 
+		    print("\n" +re); 
+		    printAny("\n" +re); 
 		    re := "#line";
 		    pos := System.stringFind(rest,re);
 		    pos2 := System.stringFind(rest,".l");
 		    cp := substring2(rest,pos+1,pos2+3); 
 		    resTable := cp::resTable;
-		    
-		    pos := System.stringFind(rest,"return ");
-		    pos2 := System.stringFind(rest,"YY_BREAK");
+		    //posReturn,posKeepBuffer,posBreak
+		    posReturn := System.stringFind(rest,"return ");
+		    posBreak := System.stringFind(rest,"YY_BREAK");
 		    posBegin := System.stringFind(rest,"BEGIN");
+		    posKeepBuffer := System.stringFind(rest,"keepBuffer");
 		    //print("\n pos:" + intString(pos) + ":" + "pos2:" + intString(pos2) + ":" + "posB:" + intString(posBegin) ); 
-		    if (pos2 > pos and pos2< posBegin) then
-		        cp := "\n         equation \n           act2 = Token";
+		    if (posBegin < posBreak and posBegin>=0) then // starts BEGIN switch start state
+				    // find token
+            pos := System.stringFind(rest,"(");
+				    pos2 := System.stringFind(rest,")");
+				    cp := substring2(rest,pos+2,pos2); 
+				   
+            valBegin := findValue(flexCode,cp);
+            valBegin := 1+2*valBegin;
+            if (debug==true) then
+				       print("\n BEGIN at" + intString(valBegin));
+				    end if; 
+            cp := "\n         equation \n           mm_startSt = " + intString(valBegin) +";";
 				    resTable := cp::resTable;
+				end if; 
+				
+				if (posKeepBuffer < posBreak and posKeepBuffer>=0) then // starts keepbuffer switch start state
+				    // print keep buffer
+				    if (debug==true) then
+				       print("\n keepbuffer");
+				    end if; 
+				    if(posBreak < posBegin) then
+		         cp := "\n         equation";
+				     resTable := cp::resTable;
+		        end if;
+            cp := "\n           bufferRet = listReverse(buffer);";
+				    resTable := cp::resTable;
+				end if;
+				 
+		   if (posBreak > posReturn) then
+		       if(posBreak < posBegin and posBreak < posKeepBuffer) then
+		         cp := "\n         equation";
+				     resTable := cp::resTable;
+		       end if;
+             
+		        cp := "\n           act2 = Token";
+				    resTable := cp::resTable;  
 				    resTable := outFileName::resTable;
 				    cp := ".";
 				    resTable := cp::resTable;
 				    // find token
 				    pos2 := System.stringFind(rest,";");
-				    cp := substring2(rest,pos+8,pos2);
+				    cp := substring2(rest,posReturn+8,pos2);
 				    if (debug==true) then
 				       print("\nFound token:" + cp);
 				    end if;    
 		        resTable := cp::resTable;
 		        cp := ";\n           tok = Types.TOKEN(tokName[act2-nameSpan],act2,buffer,info);\n         then (SOME(tok));\n ";
 		        resTable := cp::resTable;
-
-		    elseif (posBegin < pos2 and posBegin>=0) then // starts BEGIN switch start state
-				   // mm_startSt = 3;
-           // env2 = %Lexer%.ENV(mm_startSt,mm_startSt,mm_startSt,mm_pos,mm_pos,mm_pos,mm_linenr,{},bkBuffer,{mm_startSt});
-            // find token
-            pos := System.stringFind(rest,"(");
-				    pos2 := System.stringFind(rest,")");
-				    cp := substring2(rest,pos+2,pos2); 
-				   // print(cp);
-            valBegin := findValue(flexCode,cp);
-            cp := "\n         equation \n           mm_startSt = " + intString(1+2*valBegin) +";\n";
-				    resTable := cp::resTable;
-            cp := "           env2 = Lexer";
-           /* resTable := cp::resTable;
-            resTable := outFileName::resTable;
-            cp := ".ENV(mm_startSt,mm_startSt,mm_startSt,mm_pos,mm_pos,mm_pos,mm_linenr,{},bkBuffer,{mm_startSt});\n         then (NONE(),env2);\n";
-				    resTable := cp::resTable; */
-				    cp := "         then (NONE());\n";
-				    resTable := cp::resTable;
 				else
 				    //print("NONE");
 		        cp := "\n         then (NONE());\n";

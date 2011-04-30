@@ -84,7 +84,20 @@ function printShortToken
   strTk := "'" +  printBuffer(val,"") +"'";
 end printShortToken;
 
-
+function printShortToken2
+  input Token token;
+  output String strTk;
+  String tokName;
+  Integer idtk,lns,cns,lne,cne;
+  list<Integer> val;
+  Info info;
+ algorithm
+  TOKEN(name=tokName,id=idtk,value=val,loc=info) := token;
+  INFO(lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
+  
+  strTk := "[" + tokName + " '" +  printBuffer(val,"") +"']";
+  //strTk := "'" +  printBuffer(val,"") +"'";
+end printShortToken2;
 
 function printTokens
     input list<Token> inList;
@@ -102,7 +115,7 @@ function printTokens
       else
         equation
            c::rest = inList;
-           new = cBuff + printShortToken(c);
+           new = cBuff + printShortToken2(c);
            (tout) = printTokens(rest,new);
         then (tout);
      end matchcontinue;     
