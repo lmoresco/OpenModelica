@@ -47,6 +47,27 @@ function scan "Scan starts the lexical analysis, load the tables and consume the
     end matchcontinue;
 end scan; 
 
+function scanString "Scan starts the lexical analysis, load the tables and consume the program to output the tokens"
+  input String fileSource "input source code file";
+  input Boolean debug "flag to activate the debug mode";
+  output list<Types.Token> tokens "return list of tokens";
+  
+ algorithm
+    // load program
+   (tokens) := matchcontinue(fileSource,debug)
+      local
+         list<Types.Token> resTokens;
+         list<Integer> streamInteger;
+         list<String> chars;
+     case (_,_)
+       equation
+          chars = stringListStringChar(fileSource);
+          streamInteger = Util.listMap(chars, stringCharInt);
+          resTokens = lex("<StringSource>",streamInteger,debug);
+       then (resTokens);   
+    end matchcontinue;
+end scanString; 
+
 function loadSourceCode
    input String fileName "input source code file";
    output list<Integer> program;
@@ -95,6 +116,7 @@ algorithm
   env := ENV(1,1,1,0,1,1,{},{},{1},debug,fileName);
   if (debug==true) then
      print("\nLexer analyzer LexerCode..." + fileName + "\n");
+     printAny("\nLexer analyzer LexerCode..." + fileName + "\n");
   end if;   
   tokens := consume(env,program,lexTables,{});
   tokens := listReverse(tokens);
@@ -189,7 +211,7 @@ algorithm
         program = bkBuffer;
         //(buffer,mm_linenr) = lineUpd(buffer,mm_linenr);
         //restart current state
-        env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,{},program,{mm_startSt},debug,fileNm); 
+        env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,program,{mm_startSt},debug,fileNm); 
         //printAny(buffer);
         lToken = Util.listConsOption(otok,tokens);
         lToken = consume(env2,program,lexTables,lToken);
