@@ -17,7 +17,7 @@ import %Token%;
 import %Lexer%;
 import %ParseTable%;
 
-%constant%
+%prologue%
 
  function action
     input Integer act;
@@ -25,7 +25,7 @@ import %ParseTable%;
     output Option<Types.Token> token;
     output %Lexer%.Env env2;
     Integer mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,mm_flinenr;
-    list<Integer> buffer,bkBuffer,tb;
+    list<Integer> buffer,bkBuffer,tb,bufferRet;
     Types.Info info;
     array<String> tokName;
     String sToken,fileNm;
@@ -45,7 +45,7 @@ import %ParseTable%;
      //info := Types.INFO(fileNm,false,mm_linenr,mm_sPos,mm_flinenr,mm_pos);
     // print("\n" + intString(act) + ":");
      act2 := act;
-     
+     bufferRet := {};
      (token) := matchcontinue (act)
        local 
          Types.Token tok;
@@ -57,12 +57,12 @@ import %ParseTable%;
            tok = Types.TOKEN(tokName[act2],act,buffer,info);
          then (NONE());
      end matchcontinue;
-     env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,{},bkBuffer,{mm_startSt},debug,fileNm);
+     env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,bufferRet,bkBuffer,{mm_startSt},debug,fileNm);
      if (debug==true) then 
        print("\n[TOKEN:'" + sToken + "' ("+ intString(mm_sPos) + ":" + intString(mm_linenr) +") id:" + intString(act2)  + "]");
      end if;   
   end action;  
    
-%functions%
+%epilogue%
 
 end %LexerCode%;
