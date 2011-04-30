@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis_* Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.exe Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.cpp Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.makefile Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.libs Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis.log output.log
 //
 // Simulation Results 

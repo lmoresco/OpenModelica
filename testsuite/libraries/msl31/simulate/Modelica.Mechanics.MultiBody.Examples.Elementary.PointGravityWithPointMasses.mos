@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses_* Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.exe Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.libs Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravityWithPointMasses.log output.log
 //
 // Simulation Results 

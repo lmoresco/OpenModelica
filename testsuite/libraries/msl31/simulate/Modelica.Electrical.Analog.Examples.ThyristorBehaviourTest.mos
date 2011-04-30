@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest_* Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.exe Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.cpp Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.makefile Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.libs Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest.log output.log
 //
 // Simulation Results 

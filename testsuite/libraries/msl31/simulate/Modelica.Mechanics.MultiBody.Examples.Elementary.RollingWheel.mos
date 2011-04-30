@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel_* Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.exe Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.libs Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheel.log output.log
 //
 // Simulation Results 

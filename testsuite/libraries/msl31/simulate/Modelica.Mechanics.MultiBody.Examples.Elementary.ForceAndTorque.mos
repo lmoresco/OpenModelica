@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque_* Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.exe Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.libs Modelica.Mechanics.MultiBody.Examples.Elementary.ForceAndTorque.log output.log
 //
 // Simulation Results 

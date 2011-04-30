@@ -1,6 +1,7 @@
 // name:     Modelica.Blocks.Examples.LogicalNetwork1
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Blocks.Examples.LogicalNetwork1_* Modelica.Blocks.Examples.LogicalNetwork1 Modelica.Blocks.Examples.LogicalNetwork1.exe Modelica.Blocks.Examples.LogicalNetwork1.cpp Modelica.Blocks.Examples.LogicalNetwork1.makefile Modelica.Blocks.Examples.LogicalNetwork1.libs Modelica.Blocks.Examples.LogicalNetwork1.log output.log
 //
 // Simulation Results 

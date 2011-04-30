@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMC_Inverter
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_Inverter_* Modelica.Electrical.Machines.Examples.AIMC_Inverter Modelica.Electrical.Machines.Examples.AIMC_Inverter.exe Modelica.Electrical.Machines.Examples.AIMC_Inverter.cpp Modelica.Electrical.Machines.Examples.AIMC_Inverter.makefile Modelica.Electrical.Machines.Examples.AIMC_Inverter.libs Modelica.Electrical.Machines.Examples.AIMC_Inverter.log output.log
 //
 // Simulation Results 

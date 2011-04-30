@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.Multiplexer
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Multiplexer_* Modelica.Electrical.Digital.Examples.Multiplexer Modelica.Electrical.Digital.Examples.Multiplexer.exe Modelica.Electrical.Digital.Examples.Multiplexer.cpp Modelica.Electrical.Digital.Examples.Multiplexer.makefile Modelica.Electrical.Digital.Examples.Multiplexer.libs Modelica.Electrical.Digital.Examples.Multiplexer.log output.log
 //
 // Simulation Results 

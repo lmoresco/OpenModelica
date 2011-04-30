@@ -1,6 +1,7 @@
 // name:     Modelica.StateGraph.Examples.ShowExceptions
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.StateGraph.Examples.ShowExceptions_* Modelica.StateGraph.Examples.ShowExceptions Modelica.StateGraph.Examples.ShowExceptions.exe Modelica.StateGraph.Examples.ShowExceptions.cpp Modelica.StateGraph.Examples.ShowExceptions.makefile Modelica.StateGraph.Examples.ShowExceptions.libs Modelica.StateGraph.Examples.ShowExceptions.log output.log
 //
 // Simulation Results 

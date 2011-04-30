@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2_* Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2 Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.exe Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.cpp Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.makefile Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.libs Modelica.Mechanics.MultiBody.Examples.Loops.Fourbar2.log output.log
 //
 // Simulation Results 

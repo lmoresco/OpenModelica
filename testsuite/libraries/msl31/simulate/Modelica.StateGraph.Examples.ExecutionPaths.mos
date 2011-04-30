@@ -1,6 +1,7 @@
 // name:     Modelica.StateGraph.Examples.ExecutionPaths
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.StateGraph.Examples.ExecutionPaths_* Modelica.StateGraph.Examples.ExecutionPaths Modelica.StateGraph.Examples.ExecutionPaths.exe Modelica.StateGraph.Examples.ExecutionPaths.cpp Modelica.StateGraph.Examples.ExecutionPaths.makefile Modelica.StateGraph.Examples.ExecutionPaths.libs Modelica.StateGraph.Examples.ExecutionPaths.log output.log
 //
 // Simulation Results 

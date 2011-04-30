@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.TransformerTestbench
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.TransformerTestbench_* Modelica.Electrical.Machines.Examples.TransformerTestbench Modelica.Electrical.Machines.Examples.TransformerTestbench.exe Modelica.Electrical.Machines.Examples.TransformerTestbench.cpp Modelica.Electrical.Machines.Examples.TransformerTestbench.makefile Modelica.Electrical.Machines.Examples.TransformerTestbench.libs Modelica.Electrical.Machines.Examples.TransformerTestbench.log output.log
 //
 // Simulation Results 

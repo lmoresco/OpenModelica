@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot_* Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.exe Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.cpp Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.makefile Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.libs Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot.log output.log
 //
 // Simulation Results 

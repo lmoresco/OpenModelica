@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.InitialConditions
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.InitialConditions_* Modelica.Mechanics.Translational.Examples.InitialConditions Modelica.Mechanics.Translational.Examples.InitialConditions.exe Modelica.Mechanics.Translational.Examples.InitialConditions.cpp Modelica.Mechanics.Translational.Examples.InitialConditions.makefile Modelica.Mechanics.Translational.Examples.InitialConditions.libs Modelica.Mechanics.Translational.Examples.InitialConditions.log output.log
 //
 // Simulation Results 

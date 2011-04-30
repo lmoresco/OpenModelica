@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.HeatingMOSInverter
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingMOSInverter_* Modelica.Electrical.Analog.Examples.HeatingMOSInverter Modelica.Electrical.Analog.Examples.HeatingMOSInverter.exe Modelica.Electrical.Analog.Examples.HeatingMOSInverter.cpp Modelica.Electrical.Analog.Examples.HeatingMOSInverter.makefile Modelica.Electrical.Analog.Examples.HeatingMOSInverter.libs Modelica.Electrical.Analog.Examples.HeatingMOSInverter.log output.log
 //
 // Simulation Results 

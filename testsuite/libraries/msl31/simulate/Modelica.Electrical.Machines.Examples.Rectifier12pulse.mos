@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.Rectifier12pulse
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.Rectifier12pulse_* Modelica.Electrical.Machines.Examples.Rectifier12pulse Modelica.Electrical.Machines.Examples.Rectifier12pulse.exe Modelica.Electrical.Machines.Examples.Rectifier12pulse.cpp Modelica.Electrical.Machines.Examples.Rectifier12pulse.makefile Modelica.Electrical.Machines.Examples.Rectifier12pulse.libs Modelica.Electrical.Machines.Examples.Rectifier12pulse.log output.log
 //
 // Simulation Results 

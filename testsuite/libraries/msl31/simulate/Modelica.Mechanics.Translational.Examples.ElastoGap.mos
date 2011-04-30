@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.ElastoGap
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.ElastoGap_* Modelica.Mechanics.Translational.Examples.ElastoGap Modelica.Mechanics.Translational.Examples.ElastoGap.exe Modelica.Mechanics.Translational.Examples.ElastoGap.cpp Modelica.Mechanics.Translational.Examples.ElastoGap.makefile Modelica.Mechanics.Translational.Examples.ElastoGap.libs Modelica.Mechanics.Translational.Examples.ElastoGap.log output.log
 //
 // Simulation Results 

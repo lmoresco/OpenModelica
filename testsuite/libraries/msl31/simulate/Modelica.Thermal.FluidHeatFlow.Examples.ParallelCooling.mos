@@ -1,6 +1,7 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling_* Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.exe Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.cpp Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.makefile Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.libs Modelica.Thermal.FluidHeatFlow.Examples.ParallelCooling.log output.log
 //
 // Simulation Results 

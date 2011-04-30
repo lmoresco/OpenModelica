@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.NandGate
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.NandGate_* Modelica.Electrical.Analog.Examples.NandGate Modelica.Electrical.Analog.Examples.NandGate.exe Modelica.Electrical.Analog.Examples.NandGate.cpp Modelica.Electrical.Analog.Examples.NandGate.makefile Modelica.Electrical.Analog.Examples.NandGate.libs Modelica.Electrical.Analog.Examples.NandGate.log output.log
 //
 // Simulation Results 

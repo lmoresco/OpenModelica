@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass_* Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.exe Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.libs Modelica.Mechanics.MultiBody.Examples.Elementary.SpringWithMass.log output.log
 //
 // Simulation Results 

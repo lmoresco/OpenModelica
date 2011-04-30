@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMC_DOL
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_DOL_* Modelica.Electrical.Machines.Examples.AIMC_DOL Modelica.Electrical.Machines.Examples.AIMC_DOL.exe Modelica.Electrical.Machines.Examples.AIMC_DOL.cpp Modelica.Electrical.Machines.Examples.AIMC_DOL.makefile Modelica.Electrical.Machines.Examples.AIMC_DOL.libs Modelica.Electrical.Machines.Examples.AIMC_DOL.log output.log
 //
 // Simulation Results 

@@ -1,6 +1,7 @@
 // name:     Modelica.Thermal.HeatTransfer.Examples.Motor
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.HeatTransfer.Examples.Motor_* Modelica.Thermal.HeatTransfer.Examples.Motor Modelica.Thermal.HeatTransfer.Examples.Motor.exe Modelica.Thermal.HeatTransfer.Examples.Motor.cpp Modelica.Thermal.HeatTransfer.Examples.Motor.makefile Modelica.Thermal.HeatTransfer.Examples.Motor.libs Modelica.Thermal.HeatTransfer.Examples.Motor.log output.log
 //
 // Simulation Results 

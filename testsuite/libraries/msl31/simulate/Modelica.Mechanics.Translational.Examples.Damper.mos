@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Translational.Examples.Damper
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.Damper_* Modelica.Mechanics.Translational.Examples.Damper Modelica.Mechanics.Translational.Examples.Damper.exe Modelica.Mechanics.Translational.Examples.Damper.cpp Modelica.Mechanics.Translational.Examples.Damper.makefile Modelica.Mechanics.Translational.Examples.Damper.libs Modelica.Mechanics.Translational.Examples.Damper.log output.log
 //
 // Simulation Results 

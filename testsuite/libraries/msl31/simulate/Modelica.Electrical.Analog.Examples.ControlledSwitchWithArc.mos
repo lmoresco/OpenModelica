@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc_* Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.exe Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.cpp Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.makefile Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.libs Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.log output.log
 //
 // Simulation Results 

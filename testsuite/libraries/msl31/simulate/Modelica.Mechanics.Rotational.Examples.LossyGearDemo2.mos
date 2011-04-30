@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Rotational.Examples.LossyGearDemo2
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.LossyGearDemo2_* Modelica.Mechanics.Rotational.Examples.LossyGearDemo2 Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.exe Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.cpp Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.makefile Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.libs Modelica.Mechanics.Rotational.Examples.LossyGearDemo2.log output.log
 //
 // Simulation Results 

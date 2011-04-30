@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.Rectifier
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.Rectifier_* Modelica.Electrical.Analog.Examples.Rectifier Modelica.Electrical.Analog.Examples.Rectifier.exe Modelica.Electrical.Analog.Examples.Rectifier.cpp Modelica.Electrical.Analog.Examples.Rectifier.makefile Modelica.Electrical.Analog.Examples.Rectifier.libs Modelica.Electrical.Analog.Examples.Rectifier.log output.log
 //
 // Simulation Results 

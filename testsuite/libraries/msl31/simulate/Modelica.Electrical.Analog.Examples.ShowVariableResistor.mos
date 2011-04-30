@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.ShowVariableResistor
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ShowVariableResistor_* Modelica.Electrical.Analog.Examples.ShowVariableResistor Modelica.Electrical.Analog.Examples.ShowVariableResistor.exe Modelica.Electrical.Analog.Examples.ShowVariableResistor.cpp Modelica.Electrical.Analog.Examples.ShowVariableResistor.makefile Modelica.Electrical.Analog.Examples.ShowVariableResistor.libs Modelica.Electrical.Analog.Examples.ShowVariableResistor.log output.log
 //
 // Simulation Results 

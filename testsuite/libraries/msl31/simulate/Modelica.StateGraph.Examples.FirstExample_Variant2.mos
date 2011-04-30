@@ -1,6 +1,7 @@
 // name:     Modelica.StateGraph.Examples.FirstExample_Variant2
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.StateGraph.Examples.FirstExample_Variant2_* Modelica.StateGraph.Examples.FirstExample_Variant2 Modelica.StateGraph.Examples.FirstExample_Variant2.exe Modelica.StateGraph.Examples.FirstExample_Variant2.cpp Modelica.StateGraph.Examples.FirstExample_Variant2.makefile Modelica.StateGraph.Examples.FirstExample_Variant2.libs Modelica.StateGraph.Examples.FirstExample_Variant2.log output.log
 //
 // Simulation Results 

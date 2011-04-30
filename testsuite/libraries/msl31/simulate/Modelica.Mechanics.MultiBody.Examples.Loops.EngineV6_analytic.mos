@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic_* Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.exe Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.cpp Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.makefile Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.libs Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic.log output.log
 //
 // Simulation Results 

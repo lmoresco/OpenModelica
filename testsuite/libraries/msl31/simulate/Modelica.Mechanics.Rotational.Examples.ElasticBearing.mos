@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Rotational.Examples.ElasticBearing
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.ElasticBearing_* Modelica.Mechanics.Rotational.Examples.ElasticBearing Modelica.Mechanics.Rotational.Examples.ElasticBearing.exe Modelica.Mechanics.Rotational.Examples.ElasticBearing.cpp Modelica.Mechanics.Rotational.Examples.ElasticBearing.makefile Modelica.Mechanics.Rotational.Examples.ElasticBearing.libs Modelica.Mechanics.Rotational.Examples.ElasticBearing.log output.log
 //
 // Simulation Results 

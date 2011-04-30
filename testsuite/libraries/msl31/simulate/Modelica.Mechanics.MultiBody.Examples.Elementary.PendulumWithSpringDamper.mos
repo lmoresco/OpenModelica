@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper_* Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.exe Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.libs Modelica.Mechanics.MultiBody.Examples.Elementary.PendulumWithSpringDamper.log output.log
 //
 // Simulation Results 

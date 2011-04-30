@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum_* Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.exe Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.libs Modelica.Mechanics.MultiBody.Examples.Elementary.Pendulum.log output.log
 //
 // Simulation Results 

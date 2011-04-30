@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Digital.Examples.Counter
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Counter_* Modelica.Electrical.Digital.Examples.Counter Modelica.Electrical.Digital.Examples.Counter.exe Modelica.Electrical.Digital.Examples.Counter.cpp Modelica.Electrical.Digital.Examples.Counter.makefile Modelica.Electrical.Digital.Examples.Counter.libs Modelica.Electrical.Digital.Examples.Counter.log output.log
 //
 // Simulation Results 

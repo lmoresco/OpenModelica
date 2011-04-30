@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Rotational.Examples.First
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.First_* Modelica.Mechanics.Rotational.Examples.First Modelica.Mechanics.Rotational.Examples.First.exe Modelica.Mechanics.Rotational.Examples.First.cpp Modelica.Mechanics.Rotational.Examples.First.makefile Modelica.Mechanics.Rotational.Examples.First.libs Modelica.Mechanics.Rotational.Examples.First.log output.log
 //
 // Simulation Results 

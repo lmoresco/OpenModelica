@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.MultiPhase.Examples.Rectifier
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.MultiPhase.Examples.Rectifier_* Modelica.Electrical.MultiPhase.Examples.Rectifier Modelica.Electrical.MultiPhase.Examples.Rectifier.exe Modelica.Electrical.MultiPhase.Examples.Rectifier.cpp Modelica.Electrical.MultiPhase.Examples.Rectifier.makefile Modelica.Electrical.MultiPhase.Examples.Rectifier.libs Modelica.Electrical.MultiPhase.Examples.Rectifier.log output.log
 //
 // Simulation Results 

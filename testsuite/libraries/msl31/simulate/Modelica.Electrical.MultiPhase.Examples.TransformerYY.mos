@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.MultiPhase.Examples.TransformerYY
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.MultiPhase.Examples.TransformerYY_* Modelica.Electrical.MultiPhase.Examples.TransformerYY Modelica.Electrical.MultiPhase.Examples.TransformerYY.exe Modelica.Electrical.MultiPhase.Examples.TransformerYY.cpp Modelica.Electrical.MultiPhase.Examples.TransformerYY.makefile Modelica.Electrical.MultiPhase.Examples.TransformerYY.libs Modelica.Electrical.MultiPhase.Examples.TransformerYY.log output.log
 //
 // Simulation Results 

@@ -1,6 +1,7 @@
 // name:     Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke_* Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.exe Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.cpp Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.makefile Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.libs Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke.log output.log
 //
 // Simulation Results 

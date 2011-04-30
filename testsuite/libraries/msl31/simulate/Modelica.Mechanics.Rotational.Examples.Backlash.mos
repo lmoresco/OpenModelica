@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.Rotational.Examples.Backlash
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.Backlash_* Modelica.Mechanics.Rotational.Examples.Backlash Modelica.Mechanics.Rotational.Examples.Backlash.exe Modelica.Mechanics.Rotational.Examples.Backlash.cpp Modelica.Mechanics.Rotational.Examples.Backlash.makefile Modelica.Mechanics.Rotational.Examples.Backlash.libs Modelica.Mechanics.Rotational.Examples.Backlash.log output.log
 //
 // Simulation Results 

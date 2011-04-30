@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody_* Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.exe Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.libs Modelica.Mechanics.MultiBody.Examples.Elementary.FreeBody.log output.log
 //
 // Simulation Results 

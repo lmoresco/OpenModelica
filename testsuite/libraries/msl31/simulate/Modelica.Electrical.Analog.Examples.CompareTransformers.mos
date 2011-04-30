@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.CompareTransformers
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CompareTransformers_* Modelica.Electrical.Analog.Examples.CompareTransformers Modelica.Electrical.Analog.Examples.CompareTransformers.exe Modelica.Electrical.Analog.Examples.CompareTransformers.cpp Modelica.Electrical.Analog.Examples.CompareTransformers.makefile Modelica.Electrical.Analog.Examples.CompareTransformers.libs Modelica.Electrical.Analog.Examples.CompareTransformers.log output.log
 //
 // Simulation Results 

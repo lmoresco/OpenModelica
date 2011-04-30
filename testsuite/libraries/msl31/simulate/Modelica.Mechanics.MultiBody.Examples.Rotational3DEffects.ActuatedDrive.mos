@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive_* Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.exe Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.cpp Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.makefile Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.libs Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.ActuatedDrive.log output.log
 //
 // Simulation Results 

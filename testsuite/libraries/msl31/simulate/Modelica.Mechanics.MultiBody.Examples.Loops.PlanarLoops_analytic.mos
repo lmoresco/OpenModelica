@@ -1,6 +1,7 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic_* Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.exe Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.cpp Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.makefile Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.libs Modelica.Mechanics.MultiBody.Examples.Loops.PlanarLoops_analytic.log output.log
 //
 // Simulation Results 

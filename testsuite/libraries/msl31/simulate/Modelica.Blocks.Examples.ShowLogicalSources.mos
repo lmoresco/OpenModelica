@@ -1,6 +1,7 @@
 // name:     Modelica.Blocks.Examples.ShowLogicalSources
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Blocks.Examples.ShowLogicalSources_* Modelica.Blocks.Examples.ShowLogicalSources Modelica.Blocks.Examples.ShowLogicalSources.exe Modelica.Blocks.Examples.ShowLogicalSources.cpp Modelica.Blocks.Examples.ShowLogicalSources.makefile Modelica.Blocks.Examples.ShowLogicalSources.libs Modelica.Blocks.Examples.ShowLogicalSources.log output.log
 //
 // Simulation Results 

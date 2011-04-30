@@ -1,6 +1,7 @@
 // name:     Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor_* Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.exe Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.cpp Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.makefile Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.libs Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor.log output.log
 //
 // Simulation Results 

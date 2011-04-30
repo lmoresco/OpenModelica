@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.OvervoltageProtection
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.OvervoltageProtection_* Modelica.Electrical.Analog.Examples.OvervoltageProtection Modelica.Electrical.Analog.Examples.OvervoltageProtection.exe Modelica.Electrical.Analog.Examples.OvervoltageProtection.cpp Modelica.Electrical.Analog.Examples.OvervoltageProtection.makefile Modelica.Electrical.Analog.Examples.OvervoltageProtection.libs Modelica.Electrical.Analog.Examples.OvervoltageProtection.log output.log
 //
 // Simulation Results 

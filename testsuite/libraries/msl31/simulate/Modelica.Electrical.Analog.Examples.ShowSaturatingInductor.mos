@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.ShowSaturatingInductor
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ShowSaturatingInductor_* Modelica.Electrical.Analog.Examples.ShowSaturatingInductor Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.exe Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.cpp Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.makefile Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.libs Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.log output.log
 //
 // Simulation Results 

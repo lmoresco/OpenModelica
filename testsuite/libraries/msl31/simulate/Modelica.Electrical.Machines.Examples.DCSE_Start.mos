@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Machines.Examples.DCSE_Start
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.DCSE_Start_* Modelica.Electrical.Machines.Examples.DCSE_Start Modelica.Electrical.Machines.Examples.DCSE_Start.exe Modelica.Electrical.Machines.Examples.DCSE_Start.cpp Modelica.Electrical.Machines.Examples.DCSE_Start.makefile Modelica.Electrical.Machines.Examples.DCSE_Start.libs Modelica.Electrical.Machines.Examples.DCSE_Start.log output.log
 //
 // Simulation Results 

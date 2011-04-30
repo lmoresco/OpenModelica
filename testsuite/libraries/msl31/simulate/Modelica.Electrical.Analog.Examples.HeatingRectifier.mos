@@ -1,6 +1,7 @@
 // name:     Modelica.Electrical.Analog.Examples.HeatingRectifier
 // keywords: simulation MSL Examples
 // status: correct
+// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingRectifier_* Modelica.Electrical.Analog.Examples.HeatingRectifier Modelica.Electrical.Analog.Examples.HeatingRectifier.exe Modelica.Electrical.Analog.Examples.HeatingRectifier.cpp Modelica.Electrical.Analog.Examples.HeatingRectifier.makefile Modelica.Electrical.Analog.Examples.HeatingRectifier.libs Modelica.Electrical.Analog.Examples.HeatingRectifier.log output.log
 //
 // Simulation Results 
