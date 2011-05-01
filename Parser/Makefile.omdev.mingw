@@ -1,6 +1,7 @@
 REAL_CC=gcc
 CC=g++
 CXX=g++
+CFLAGS=-O3
 
 RMLHOME=$(OMDEV)/tools/rml/
 OMC=../build/bin/omc.exe
