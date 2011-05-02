@@ -35,7 +35,7 @@ function scan "Scan starts the lexical analysis, load the tables and consume the
   
  algorithm
     // load program
-   (tokens) := matchcontinue(fileName,debug)
+   (tokens) := match(fileName,debug)
       local
          list<Types.Token> resTokens;
          list<Integer> streamInteger;
@@ -44,7 +44,7 @@ function scan "Scan starts the lexical analysis, load the tables and consume the
           streamInteger = loadSourceCode(fileName);
           resTokens = lex(fileName,streamInteger,debug);
        then (resTokens);   
-    end matchcontinue;
+    end match;
 end scan; 
 
 function scanString "Scan starts the lexical analysis, load the tables and consume the program to output the tokens"
@@ -54,7 +54,7 @@ function scanString "Scan starts the lexical analysis, load the tables and consu
   
  algorithm
     // load program
-   (tokens) := matchcontinue(fileSource,debug)
+   (tokens) := match(fileSource,debug)
       local
          list<Types.Token> resTokens;
          list<Integer> streamInteger;
@@ -65,14 +65,14 @@ function scanString "Scan starts the lexical analysis, load the tables and consu
           streamInteger = Util.listMap(chars, stringCharInt);
           resTokens = lex("<StringSource>",streamInteger,debug);
        then (resTokens);   
-    end matchcontinue;
+    end match;
 end scanString; 
 
 function loadSourceCode
    input String fileName "input source code file";
    output list<Integer> program;
  algorithm
-   (program) := matchcontinue(fileName)
+   (program) := match(fileName)
      local
        list<Integer> streamInteger;
        list<String> chars;
@@ -85,7 +85,7 @@ function loadSourceCode
            chars = stringListStringChar(System.readFile(fileName));
            streamInteger = Util.listMap(chars, stringCharInt);  
          then (streamInteger);
-   end matchcontinue;  
+   end match;  
 end loadSourceCode;
 
 function lex "Scan starts the lexical analysis, load the tables and consume the program to output the tokens"
@@ -117,8 +117,16 @@ algorithm
   if (debug==true) then
      print("\nLexer analyzer LexerCode..." + fileName + "\n");
      printAny("\nLexer analyzer LexerCode..." + fileName + "\n");
-  end if;   
-  tokens := consume(env,program,lexTables,{});
+  end if;
+  
+  tokens := {};
+  while (Util.isListEmpty(program)==false) loop
+	   if (debug) then 
+	     print("\nChars remaining:");
+	     print(intString(listLength(program)));   
+     end if;
+     (tokens,env,program) := consume(env,program,lexTables,tokens);
+  end while;
   tokens := listReverse(tokens);
 end lex;   
 
@@ -128,6 +136,8 @@ function consume
   input LexerTable lexTables;
   input list<Types.Token> tokens;
   output list<Types.Token> resToken;
+  output Env env2;
+  output list<Integer> program2;
   array<Integer> mm_accept,mm_ec,mm_meta,mm_base,mm_def,mm_nxt,mm_chk,mm_acclist; 
   Integer mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr;
   list<Integer> buffer,bkBuffer,states;
@@ -147,7 +157,7 @@ algorithm
     print("\nSTATE STACK:{" + printStack(states,"") + "} ");
     print("base:" + intString(baseCond) + " st:" + intString(mm_currSt)+" ");
   end if;
-  (resToken) := matchcontinue (program,mm_finish == baseCond)
+  (resToken) := match (program,mm_finish == baseCond)
     local 
       Integer c,d,act,val,c2,curr2,fchar;
       list<Integer> rest;
@@ -155,7 +165,6 @@ algorithm
       String sToken;
       Boolean emptyToken;
       Option<Types.Token> otok;
-      Env env2;
     case ({},_) // EOF
       equation
         fchar = mm_pos;
@@ -214,8 +223,13 @@ algorithm
         env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,program,{mm_startSt},debug,fileNm); 
         //printAny(buffer);
         lToken = Util.listConsOption(otok,tokens);
-        lToken = consume(env2,program,lexTables,lToken);
-        
+        if(debug) then
+          print("\n CountTokens:" + intString(listLength(lToken)));
+        end if;
+        program2 = program;
+        if (listLength(program2)==0) then // recursive in the last token
+          lToken = consume(env2,program,lexTables,lToken);
+        end if;
       then lToken;       
     case (_::_,false) // loop tokens
       equation
@@ -259,11 +273,16 @@ algorithm
           //  print("[c" + intString(c) + ",s"+ intString(mm_currSt)+"]");
           //  print("[B:" + intString(mm_base[mm_currSt])+"]");
           env2 = ENV(mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,buffer,rest,states,debug,fileNm);
-          lToken = consume(env2,rest,lexTables,tokens);
           
+          program2 = rest; // consume the character
+          if (listLength(program2)==0) then // recursive in the last token
+            lToken = consume(env2,rest,lexTables,tokens);
+          else
+            lToken = tokens;
+          end if;
         then lToken;
           
-  end matchcontinue;
+  end match;
   
 end consume;
 
@@ -295,7 +314,7 @@ algorithm
   st := intGt(lp,0) and intLt(lp,lp1);
   //  print("STATE:[" + intString(mm_currSt)+ " pos:" + intString(mm_pos) + "]");
   // printAny(st);       
-  (env2,action) := matchcontinue(states,st)
+  (env2,action) := match(states,st)
     local
       Integer act,cp;
       list<Integer> restBuff,restStates;
@@ -331,7 +350,7 @@ algorithm
         (env2,act) = findRule(lexTables,env2);
       then (env2,act);
         
-  end matchcontinue;
+  end match;
 end findRule;
 
 function evalState
@@ -350,7 +369,7 @@ algorithm
   val := mm_chk[chk];
   val2 := mm_base[cState] + c;
   //   print("{val2=" + intString(val2) + "}\n");
-  (new_state,new_c) := matchcontinue (cState==val)
+  (new_state,new_c) := match (cState==val)
     local
       Integer s,c2;
     case (true)
@@ -371,7 +390,7 @@ algorithm
             (cState,c) = evalState(lexTables,cState,c);
           end if;  
           then (cState,c);
-  end matchcontinue;
+  end match;
   
 end evalState;
 
@@ -407,7 +426,7 @@ function printBuffer
   output String outList;
   list<Integer> inList2;
 algorithm 
-  (outList) := matchcontinue(inList,cBuff)
+  (outList) := match(inList,cBuff)
     local
       Integer c;
       String new,tout;
@@ -420,7 +439,7 @@ algorithm
         new = cBuff + intStringChar(c);
         (tout) = printBuffer(rest,new);
       then (tout);
-  end matchcontinue;     
+  end match;     
 end printBuffer;  
 
 function printStack
@@ -429,7 +448,7 @@ function printStack
     output String outList;
     list<Integer> inList2;
    algorithm 
-    (outList) := matchcontinue(inList,cBuff)
+    (outList) := match(inList,cBuff)
       local
         Integer c;
         String new,tout;
@@ -442,7 +461,7 @@ function printStack
            new = cBuff + "|" + intString(c);
            (tout) = printStack(rest,new);
         then (tout);
-     end matchcontinue;     
+     end match;     
   end printStack;
   
   
