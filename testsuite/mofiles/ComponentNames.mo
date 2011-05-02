@@ -1,6 +1,6 @@
 // name: ComponentNames
 // keywords: component
-// status: correct
+// status: incorrect
 //
 // THIS TEST SHOULD FAIL according to Modelica Specifications.
 // But MSL contains such errors, so the test only results in a warning
@@ -17,13 +17,11 @@ model ComponentNames
 end ComponentNames;
 
 // Result:
-// class ComponentNames
-//   parameter Integer TestClass.x = 2;
-//   Integer Integer;
-// end ComponentNames;
-// [ComponentNames.mo:15:3-15:29:writable] Warning: Component TestClass has the same name as its type TestClass.
-// 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [ComponentNames.mo:16:3-16:18:writable] Warning: Component Integer has the same name as its type Integer.
-// 	This is forbidden by Modelica specification and may lead to lookup errors.
+// Error processing file: ComponentNames.mo
+// [ComponentNames.mo:15:3-15:29:writable] Error: Found a component with same name when looking for type TestClass
 // 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

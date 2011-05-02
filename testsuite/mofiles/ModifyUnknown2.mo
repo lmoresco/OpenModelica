@@ -12,6 +12,7 @@ end A;
 class ModifyUnknown2 = A(redeclare Real b = 5);
 // Result:
 // Error processing file: ModifyUnknown2.mo
+// [ModifyUnknown2.mo:12:26-12:46:writable] Error: Variable b not found in scope A
 // Error: In modifier  redeclare(b), class or component b not found in <A>
 // 
 // # Error encountered! Exiting...

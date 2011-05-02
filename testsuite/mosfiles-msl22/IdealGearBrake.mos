@@ -25,11 +25,7 @@ val(inertia2.w,0.5);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 100, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'TestModels.RotationalModels.Gears.IdealGearBrake', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// "[Rotational.mo:1939:3-1939:37:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  parameter SI.Torque unitTorque  = 1;
-// 	second element is: parameter .Modelica.SIunits.Torque unitTorque  = 1;
-// 	Modelica specification requires that elements are exactly identical.
-// Warning: Alias variables inertia1.w = -$DER.springDamper1.phi_rel have start values inertia1.w_start != springDamper1.w_rel_start. Use value from inertia1.w.
+// "Warning: Alias variables inertia1.w = -$DER.springDamper1.phi_rel have start values inertia1.w_start != springDamper1.w_rel_start. Use value from inertia1.w.
 // 
 // "
 // 0.0116320042834763

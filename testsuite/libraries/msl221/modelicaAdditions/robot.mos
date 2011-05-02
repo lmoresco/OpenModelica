@@ -29,7 +29,7 @@ getErrorString();
 //   input Integer colWise;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -38,28 +38,28 @@ getErrorString();
 //   input Real timeIn;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
 //   output Real Tmax \"maximum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
 //   output Real Tmin \"minimum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.tempInterpol1
@@ -281,7 +281,6 @@ getErrorString();
 //   Real robot.mechanics.inertial.frame_b.t[2](quantity = \"Torque\", unit = \"N.m\");
 //   Real robot.mechanics.inertial.frame_b.t[3](quantity = \"Torque\", unit = \"N.m\");
 //   constant Real robot.mechanics.r1.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r1.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r1.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r1.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r1.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r1.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r1.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r1.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -445,7 +444,6 @@ getErrorString();
 //   Real robot.mechanics.r1.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real robot.mechanics.r1.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real robot.mechanics.r2.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r2.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r2.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r2.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r2.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r2.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r2.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r2.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -609,7 +607,6 @@ getErrorString();
 //   Real robot.mechanics.r2.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real robot.mechanics.r2.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real robot.mechanics.r3.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r3.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r3.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r3.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r3.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r3.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r3.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r3.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -773,7 +770,6 @@ getErrorString();
 //   Real robot.mechanics.r3.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real robot.mechanics.r3.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real robot.mechanics.r4.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r4.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r4.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r4.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r4.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r4.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r4.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r4.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -937,7 +933,6 @@ getErrorString();
 //   Real robot.mechanics.r4.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real robot.mechanics.r4.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real robot.mechanics.r5.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r5.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r5.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r5.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r5.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r5.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r5.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r5.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1101,7 +1096,6 @@ getErrorString();
 //   Real robot.mechanics.r5.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real robot.mechanics.r5.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real robot.mechanics.r6.pi = 3.14159265358979;
-//   constant Real robot.mechanics.r6.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.r6.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.r6.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r6.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.r6.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.r6.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.r6.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1467,7 +1461,6 @@ getErrorString();
 //   protected output Real robot.mechanics.b0.vis.mcShape.Material;
 //   protected output Real robot.mechanics.b0.vis.mcShape.Extra;
 //   constant Real robot.mechanics.b1.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b1.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b1.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1616,7 +1609,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b1.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real robot.mechanics.b1.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real robot.mechanics.b1.body.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b1.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b1.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1751,7 +1743,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b1.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b1.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real robot.mechanics.b1.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b1.I32 \"(3,2) element of inertia tensor\";
 //   constant Real robot.mechanics.b1.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b1.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b1.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b1.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b1.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2158,7 +2149,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b1.LengthDirection[3](quantity = \"Length\", unit = \"m\") = 0.0 \"Vector in length direction, resolved in frame_a\";
 //   parameter Real robot.mechanics.b1.Length(quantity = \"Length\", unit = \"m\") = 0.25 \"Length of shape\";
 //   constant Real robot.mechanics.b2.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b2.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b2.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2307,7 +2297,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b2.Material[4] = 1.0 \"Color and specular coefficient\";
 //   parameter Real robot.mechanics.b2.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real robot.mechanics.b2.body.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b2.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b2.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2442,7 +2431,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b2.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b2.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real robot.mechanics.b2.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b2.I32 \"(3,2) element of inertia tensor\";
 //   constant Real robot.mechanics.b2.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b2.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b2.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b2.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b2.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2849,7 +2837,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b2.LengthDirection[3](quantity = \"Length\", unit = \"m\") = 0.0 \"Vector in length direction, resolved in frame_a\";
 //   parameter Real robot.mechanics.b2.Length(quantity = \"Length\", unit = \"m\") = 0.5 \"Length of shape\";
 //   constant Real robot.mechanics.b3.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b3.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b3.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2998,7 +2985,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b3.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real robot.mechanics.b3.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real robot.mechanics.b3.body.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b3.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b3.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3133,7 +3119,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b3.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b3.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real robot.mechanics.b3.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b3.I32 \"(3,2) element of inertia tensor\";
 //   constant Real robot.mechanics.b3.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b3.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b3.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b3.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b3.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3540,7 +3525,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b3.LengthDirection[3](quantity = \"Length\", unit = \"m\") = 0.0 \"Vector in length direction, resolved in frame_a\";
 //   parameter Real robot.mechanics.b3.Length(quantity = \"Length\", unit = \"m\") = 0.15 \"Length of shape\";
 //   constant Real robot.mechanics.b4.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b4.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b4.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3689,7 +3673,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b4.Material[4] = 1.0 \"Color and specular coefficient\";
 //   parameter Real robot.mechanics.b4.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real robot.mechanics.b4.body.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b4.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b4.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3824,7 +3807,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b4.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b4.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real robot.mechanics.b4.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b4.I32 \"(3,2) element of inertia tensor\";
 //   constant Real robot.mechanics.b4.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b4.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b4.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b4.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b4.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -4231,7 +4213,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b4.LengthDirection[3](quantity = \"Length\", unit = \"m\") = 0.0 \"Vector in length direction, resolved in frame_a\";
 //   parameter Real robot.mechanics.b4.Length(quantity = \"Length\", unit = \"m\") = 0.73 \"Length of shape\";
 //   constant Real robot.mechanics.b5.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b5.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b5.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -4380,7 +4361,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b5.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real robot.mechanics.b5.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real robot.mechanics.b5.body.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b5.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b5.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -4515,7 +4495,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b5.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b5.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real robot.mechanics.b5.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = robot.mechanics.b5.I32 \"(3,2) element of inertia tensor\";
 //   constant Real robot.mechanics.b5.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.b5.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.b5.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.b5.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.b5.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -4922,7 +4901,6 @@ getErrorString();
 //   parameter Real robot.mechanics.b5.LengthDirection[3](quantity = \"Length\", unit = \"m\") = 0.0 \"Vector in length direction, resolved in frame_a\";
 //   parameter Real robot.mechanics.b5.Length(quantity = \"Length\", unit = \"m\") = 0.225 \"Length of shape\";
 //   constant Real robot.mechanics.load.pi = 3.14159265358979;
-//   constant Real robot.mechanics.load.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.load.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.load.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.load.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -5193,7 +5171,6 @@ getErrorString();
 //   protected output Real robot.mechanics.load.box.mcShape.Material;
 //   protected output Real robot.mechanics.load.box.mcShape.Extra;
 //   constant Real robot.mechanics.load.frameTranslation.pi = 3.14159265358979;
-//   constant Real robot.mechanics.load.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real robot.mechanics.load.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.load.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real robot.mechanics.load.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = robot.mechanics.load.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -11912,9 +11889,9 @@ getErrorString();
 // "
 // "Check of MultiBody.Examples.Robots.r3.robot completed successfully.
 // 
-// [robotTotal.mo:4190:7-4190:75:writable] Warning: Component Length has the same name as its type SI.Length.
+// [robotTotal.mo:4190:7-4190:75:writable] Warning: Component Length has the same name as its type .Modelica.SIunits.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [robotTotal.mo:4100:7-4100:73:writable] Warning: Component Length has the same name as its type SI.Length.
+// [robotTotal.mo:4100:7-4100:73:writable] Warning: Component Length has the same name as its type .Modelica.SIunits.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Robots.r3.robot has 6169 equation(s) and 6169 variable(s).

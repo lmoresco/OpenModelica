@@ -2207,8 +2207,6 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   protected Real valve_fixeddensity1.h(quantity = "SpecificEnergy", unit = "J/kg");
 //   protected Real valve_fixeddensity1.fromleft;
 //   constant Real valve_fixeddensity1.pi = 3.14159265358979;
-//   constant Real valve_fixeddensity1.a = 0.536851 "Flow coefficient for steam valve";
-//   constant Real valve_fixeddensity1.b = 0.478107 "Flow coefficient for steam valve";
 //   parameter Real valve_fixeddensity1.d(quantity = "Length", unit = "m") = 0.2 "Diameter";
 //   parameter Real valve_fixeddensity1.Kv = 0.001 "Hydraulic conductance at full opening for simple linear valve: mflow = Kv Y dp";
 //   parameter Real valve_fixeddensity1.Y0 = 1.0 "Opening Y (if not set from outide)";

@@ -22,9 +22,4 @@ end DuplicateElementsExtendsEquivalent;
 // class DuplicateElementsExtendsEquivalent
 //   Real x;
 // end DuplicateElementsExtendsEquivalent;
-// [DuplicateElementsExtendsEquivalent.mo:18:2-18:7:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  C.X x ;
-// 	second element is: .Crap.X x ;
-// 	Modelica specification requires that elements are exactly identical.
-// 
 // endResult

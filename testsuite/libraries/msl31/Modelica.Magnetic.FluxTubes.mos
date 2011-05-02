@@ -83,21 +83,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.SaturatedInductor
@@ -287,7 +280,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableInit;
 // 
 // function Modelica.Blocks.Tables.CombiTable1Ds.tableIpo
@@ -296,7 +289,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
@@ -327,21 +320,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceCurrentBehaviour
@@ -994,7 +980,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableInit;
 // 
 // function Modelica.Blocks.Tables.CombiTable1Ds.tableIpo
@@ -1003,7 +989,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData\"
@@ -1034,21 +1020,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ForceStrokeBehaviour
@@ -1543,21 +1522,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke
@@ -2188,21 +2160,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.PermeanceActuator
@@ -2754,7 +2719,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableInit;
 // 
 // function Modelica.Blocks.Tables.CombiTable1Ds.tableIpo
@@ -2763,7 +2728,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Tables.CombiTable1Ds.tableIpo;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
@@ -2802,21 +2767,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary
@@ -4265,7 +4223,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -4274,21 +4232,21 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real timeIn;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
 //   output Real Tmax \"maximum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
 //   output Real Tmin \"minimum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData \"Automatically generated record constructor for Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.BaseData\"
@@ -4327,21 +4285,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonPullInStroke
@@ -7854,21 +7805,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.SimpleSolenoid
@@ -8424,21 +8368,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.log;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.Components.AdvancedSolenoid
@@ -9297,15 +9234,8 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
-// 
-// function Modelica.Math.exp
-//   input Real u;
-//   output Real y;
-// 
-// external \"C\";
-// end Modelica.Math.exp;
 // 
 // class Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign
 //   parameter Real rho_20(quantity = \"Resistivity\", unit = \"Ohm.m\") = 1.78e-08 \"Resistivity of conductor material at 20ï¿½C (default: Copper)\";

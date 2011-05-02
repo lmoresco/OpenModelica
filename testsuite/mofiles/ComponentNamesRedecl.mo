@@ -1,6 +1,6 @@
 // name: RedeclarationComponentNames
 // keywords: component
-// status: correct
+// status: incorrect
 //
 // This test should produce a warning (or even fail, according to Modelica Specifications)
 // Tests whether or not a component can have the same name as its type specifier in a redeclaraton
@@ -24,8 +24,11 @@ model IllegalRedeclaredComponentName
 end IllegalRedeclaredComponentName;
 
 // Result:
-// class IllegalRedeclaredComponentName
-//   Real B.x;
-//   Real B.y;
-// end IllegalRedeclaredComponentName;
+// Error processing file: ComponentNamesRedecl.mo
+// [ComponentNamesRedecl.mo:23:17-23:30:writable] Error: Found a component with same name when looking for type B
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

@@ -1,6 +1,6 @@
 // name:     DuplicateElementsEquivalent
 // keywords: check if duplicate elements are the same even with when having named imports!
-// status:   correct
+// status:   incorrect
 
 
 package Crap
@@ -16,12 +16,11 @@ model DuplicateElementsEquivalent
 end DuplicateElementsEquivalent;
 
 // Result:
-// class DuplicateElementsEquivalent
-//   Real x;
-// end DuplicateElementsEquivalent;
-// [DuplicateElementsEquivalent.mo:15:2-15:10:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  Crap.X x ;
-// 	second element is: C.X x ;
-// 	Modelica specification requires that elements are exactly identical.
+// Error processing file: DuplicateElementsEquivalent.mo
+// [DuplicateElementsEquivalent.mo:15:2-15:10:writable] Error: An element with name x is already declared in this scope.
 // 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

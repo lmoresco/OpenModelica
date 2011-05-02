@@ -1,8 +1,8 @@
 // name:     MultipleDeclarations2
 // keywords: declaration
-// status:   correct
+// status:   incorrect
 // 
-// Multiple declarations must be identical and should only generate one instance.
+// Multiple declarations are not allowed.
 //
 
 
@@ -12,7 +12,11 @@ model MultipleDeclarations2
 end MultipleDeclarations2;
 
 // Result:
-// class MultipleDeclarations2
-//   Real x;
-// end MultipleDeclarations2;
+// Error processing file: MultipleDeclarations2.mo
+// [MultipleDeclarations2.mo:11:3-11:9:writable] Error: An element with name x is already declared in this scope.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

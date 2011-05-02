@@ -3,17 +3,18 @@
 // status: correct
 //
 // Tests the built-in integer function
-// This test is not really correct...
-// The flattened model output is completely wrong
 //
 
-model Integer
+model IntegerTest
   Real r;
 equation
   r = integer(4.5);
-end Integer;
+end IntegerTest;
 
 // Result:
-// class Integer
-// end Integer;
+// class IntegerTest
+//   Real r;
+// equation
+//   r = 4.0;
+// end IntegerTest;
 // endResult

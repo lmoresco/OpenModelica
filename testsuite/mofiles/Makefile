@@ -347,7 +347,6 @@ InheritanceSimple.mo \
 InnerOuter1.mo \
 InnerOuter2.mo \
 InnerOuterSystem.mo \
-InnerOuterWithExtends.mo \
 InOutArray2.mo \
 InOutArray.mo \
 InOutBool.mo \
@@ -600,6 +599,7 @@ Inline4.mo \
 Inline5.mo \
 Inline6.mo \
 InnerClass1.mo \
+InnerOuterWithExtends.mo \
 ListTest.mo \
 Lookup8.mo \
 Match1.mo \

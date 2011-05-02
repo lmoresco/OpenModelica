@@ -34,7 +34,6 @@ end Lookup10;
 
 // Result:
 // class Lookup10
-// constant Integer i = 4;
-// constant Integer n_of_surf_orient_def = 4;
+//   constant Integer i = 4;
 // end Lookup10;
 // endResult

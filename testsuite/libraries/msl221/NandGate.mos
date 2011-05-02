@@ -361,7 +361,7 @@ getErrorString();
 //   Nand.y.i = 0.0;
 // end Modelica.Electrical.Analog.Examples.NandGate;
 // "
-// "[NandGate.mo:54:3-54:128:writable] Warning: Component Nand has the same name as its type Utilities.Nand.
+// "[NandGate.mo:54:3-54:128:writable] Warning: Component Nand has the same name as its type .Modelica.Electrical.Analog.Examples.Utilities.Nand.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // "
 // endResult

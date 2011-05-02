@@ -9,6 +9,7 @@ model EnumInvalidLiteral
   type enum = enumeration(one, start);
   type enum2 = enumeration(quantity, two);
   enum e;
+  enum2 e2;
 end EnumInvalidLiteral;
 
 

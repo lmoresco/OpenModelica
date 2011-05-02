@@ -23,7 +23,7 @@ getErrorString();// Result:
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.tempInterpol1
@@ -135,7 +135,6 @@ getErrorString();// Result:
 //   parameter Real L = 0.2;
 //   parameter Real Load = 20.0;
 //   constant Real pi = 3.14159265358979;
-//   constant Real PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   output Real AngVelDegS;
 //   output Real x;
 //   output Real press;
@@ -182,7 +181,6 @@ getErrorString();// Result:
 //   Real inertial.frame_b.t[2](quantity = \"Torque\", unit = \"N.m\");
 //   Real inertial.frame_b.t[3](quantity = \"Torque\", unit = \"N.m\");
 //   constant Real r1.pi = 3.14159265358979;
-//   constant Real r1.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real r1.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = r1.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real r1.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = r1.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real r1.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = r1.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -346,7 +344,6 @@ getErrorString();// Result:
 //   Real r1.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real r1.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real cyl.pi = 3.14159265358979;
-//   constant Real cyl.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real cyl.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = cyl.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real cyl.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = cyl.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real cyl.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = cyl.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -511,7 +508,6 @@ getErrorString();// Result:
 //   Real cyl.bearing.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real cyl.bearing.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   constant Real trans.pi = 3.14159265358979;
-//   constant Real trans.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real trans.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = trans.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real trans.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = trans.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real trans.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = trans.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -639,7 +635,6 @@ getErrorString();// Result:
 //   protected Real trans.vaux[2](quantity = \"Velocity\", unit = \"m/s\");
 //   protected Real trans.vaux[3](quantity = \"Velocity\", unit = \"m/s\");
 //   constant Real piston.pi = 3.14159265358979;
-//   constant Real piston.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real piston.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = piston.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = piston.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = piston.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -788,7 +783,6 @@ getErrorString();// Result:
 //   parameter Real piston.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real piston.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real piston.body.pi = 3.14159265358979;
-//   constant Real piston.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real piston.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = piston.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = piston.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = piston.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -923,7 +917,6 @@ getErrorString();// Result:
 //   parameter Real piston.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = piston.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real piston.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = piston.I32 \"(3,2) element of inertia tensor\";
 //   constant Real piston.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real piston.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real piston.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = piston.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = piston.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real piston.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = piston.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1330,7 +1323,6 @@ getErrorString();// Result:
 //   parameter Real piston.LengthDirection[3](quantity = \"Length\", unit = \"m\") = piston.r[3] - piston.r0[3] \"Vector in length direction, resolved in frame_a\";
 //   parameter Real piston.Length(quantity = \"Length\", unit = \"m\") = sqrt((piston.r[1] - piston.r0[1]) ^ 2.0 + ((piston.r[2] - piston.r0[2]) ^ 2.0 + (piston.r[3] - piston.r0[3]) ^ 2.0)) \"Length of shape\";
 //   constant Real crank.pi = 3.14159265358979;
-//   constant Real crank.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real crank.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = crank.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = crank.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = crank.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1479,7 +1471,6 @@ getErrorString();// Result:
 //   parameter Real crank.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real crank.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real crank.body.pi = 3.14159265358979;
-//   constant Real crank.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real crank.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = crank.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = crank.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = crank.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -1614,7 +1605,6 @@ getErrorString();// Result:
 //   parameter Real crank.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = crank.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real crank.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = crank.I32 \"(3,2) element of inertia tensor\";
 //   constant Real crank.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real crank.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real crank.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = crank.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = crank.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real crank.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = crank.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2032,7 +2022,6 @@ getErrorString();// Result:
 //   parameter Real gasForce.k1 = 1.0;
 //   parameter Real gasForce.k = 1.0;
 //   constant Real gasForce.pi = 3.14159265358979;
-//   constant Real gasForce.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   Real gasForce.x(quantity = \"Length\", unit = \"m\");
 //   Real gasForce.dens(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0);
 //   Real gasForce.press(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"cylinder pressure\";
@@ -2086,8 +2075,6 @@ getErrorString();// Result:
 //   Real torque.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   Real torque.w(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"Absolute angular velocity of flange_a and flange_b\";
 //   Real torque.a(quantity = \"AngularAcceleration\", unit = \"rad/s2\") \"Absolute angular acceleration of flange_a and flange_b\";
-//   constant Real spherical.pi = 3.14159265358979;
-//   constant Real spherical.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real spherical.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = spherical.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real spherical.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = spherical.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real spherical.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = spherical.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2248,7 +2235,6 @@ getErrorString();// Result:
 //   protected Real spherical.constraintResidue_dd[2];
 //   protected Real spherical.constraintResidue_dd[3];
 //   constant Real connectingRod.pi = 3.14159265358979;
-//   constant Real connectingRod.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real connectingRod.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = connectingRod.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = connectingRod.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = connectingRod.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2397,7 +2383,6 @@ getErrorString();// Result:
 //   parameter Real connectingRod.Material[4] = 0.5 \"Color and specular coefficient\";
 //   parameter Real connectingRod.Extra = 0.0 \"Additional parameter for cone and pipe\";
 //   constant Real connectingRod.body.pi = 3.14159265358979;
-//   constant Real connectingRod.body.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real connectingRod.body.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = connectingRod.body.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.body.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = connectingRod.body.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.body.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = connectingRod.body.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2532,7 +2517,6 @@ getErrorString();// Result:
 //   parameter Real connectingRod.body.I31(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = connectingRod.I31 \"(3,1) element of inertia tensor\";
 //   parameter Real connectingRod.body.I32(quantity = \"MomentOfInertia\", unit = \"kg.m2\") = connectingRod.I32 \"(3,2) element of inertia tensor\";
 //   constant Real connectingRod.body.frameTranslation.pi = 3.14159265358979;
-//   constant Real connectingRod.body.frameTranslation.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real connectingRod.body.frameTranslation.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = connectingRod.body.frameTranslation.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.body.frameTranslation.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = connectingRod.body.frameTranslation.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real connectingRod.body.frameTranslation.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = connectingRod.body.frameTranslation.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -2939,7 +2923,6 @@ getErrorString();// Result:
 //   parameter Real connectingRod.LengthDirection[3](quantity = \"Length\", unit = \"m\") = connectingRod.r[3] - connectingRod.r0[3] \"Vector in length direction, resolved in frame_a\";
 //   parameter Real connectingRod.Length(quantity = \"Length\", unit = \"m\") = sqrt((connectingRod.r[1] - connectingRod.r0[1]) ^ 2.0 + ((connectingRod.r[2] - connectingRod.r0[2]) ^ 2.0 + (connectingRod.r[3] - connectingRod.r0[3]) ^ 2.0)) \"Length of shape\";
 //   constant Real univ.pi = 3.14159265358979;
-//   constant Real univ.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real univ.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = univ.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = univ.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = univ.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3070,7 +3053,6 @@ getErrorString();// Result:
 //   parameter Real univ.qy0 = 0.0 \"Rotation angle offset in direction of ny (see info) in [deg]\";
 //   parameter Boolean univ.startValueFixed = false \"true, if start values of q, qd are fixed\";
 //   constant Real univ.revolute1.pi = 3.14159265358979;
-//   constant Real univ.revolute1.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real univ.revolute1.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = univ.revolute1.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.revolute1.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = univ.revolute1.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.revolute1.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = univ.revolute1.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -3234,7 +3216,6 @@ getErrorString();// Result:
 //   Real univ.revolute1.bearing.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real univ.revolute1.bearing.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
 //   constant Real univ.revolute2.pi = 3.14159265358979;
-//   constant Real univ.revolute2.PI = 3.14159265358979 \"Only for compatibility reasons\";
 //   input Real univ.revolute2.frame_a.r0[1](quantity = \"Length\", unit = \"m\") = univ.revolute2.r0a[1] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.revolute2.frame_a.r0[2](quantity = \"Length\", unit = \"m\") = univ.revolute2.r0a[2] \"Position vector from inertial system to frame origin, resolved in inertial system\";
 //   input Real univ.revolute2.frame_a.r0[3](quantity = \"Length\", unit = \"m\") = univ.revolute2.r0a[3] \"Position vector from inertial system to frame origin, resolved in inertial system\";
@@ -5024,7 +5005,7 @@ getErrorString();// Result:
 // "
 // "Check of MultiBody.Examples.Loops.Engine2 completed successfully.
 // 
-// [Engine2Total.mo:2606:7-2606:75:writable] Warning: Component Length has the same name as its type SI.Length.
+// [Engine2Total.mo:2606:7-2606:75:writable] Warning: Component Length has the same name as its type .Modelica.SIunits.Length.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.Engine2 has 2912 equation(s) and 2915 variable(s).
