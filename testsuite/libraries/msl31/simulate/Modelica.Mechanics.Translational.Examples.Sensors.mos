@@ -14,19 +14,26 @@ loadModel(ModelicaServices);
 simulate(Modelica.Mechanics.Translational.Examples.Sensors);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Sensors_res.mat",
   "Modelica.Mechanics.Translational.Examples.Sensors.mat","Modelica.Mechanics.Translational.Examples.Sensors_diff.csv",0.01,0.0001,
-  {"accSensor1.v",
-  "mass.s",
+  {"speedSensor1.flange.s",
+  "accSensor1.v",
+  "der(speedSensor1.flange.s)",
   "der(accSensor1.v)",
-  "der(mass.s)",
   "der(mass.v)",
-  "accSensor1.flange.s",
+  "mass.s",
   "sineForce.y",
   "positionSensor2.s",
   "speedSensor1.flange.f",
   "positionSensor1.flange.f",
   "accSensor1.flange.f",
   "mass.flange_b.f",
-  "positionSensor2.flange.f"});
+  "positionSensor2.flange.f",
+  "mass.L",
+  "mass.m",
+  "sineForce.amplitude",
+  "sineForce.freqHz",
+  "sineForce.phase",
+  "sineForce.offset",
+  "sineForce.startTime"});
 
 // Result:
 // true
