@@ -1,18 +1,18 @@
 // name: FrameTest
 // status: correct
-// teardown_command: rm -f FrameTest_*
+// teardown_command: rm -f ModelFrameTest* output.log
 
 loadFile("FrameTest.mo");
 setCommandLineOptions("+v=1");
-simulate(FrameTest);
+simulate(ModelFrameTest);
 val(element[2].angle,0.5);getErrorString();
 
 // Result:
 // true
 // true
 // record SimulationResult
-//     resultFile = "FrameTest_res.mat",
-//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'FrameTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     resultFile = "ModelFrameTest_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'ModelFrameTest', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
 // 5.0

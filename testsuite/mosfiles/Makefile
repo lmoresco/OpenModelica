@@ -79,7 +79,7 @@ PreAndAliasedVar.mos \
 Random.mos \
 Reductions.mos \
 Riccati.mos \
-Sample1.mos Sample2.mos \
+Sample1.mos Sample2.mos Sample3.mos	\
 SemiLinear.mos \
 Sign.mos \
 SimplePeriodicSampler.mos \
