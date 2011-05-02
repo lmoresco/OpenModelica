@@ -15,8 +15,8 @@ end EnumInvalidLiteral;
 
 // Result:
 // Error processing file: EnumInvalidLiteral.mo
-// Error: [EnumInvalidLiteral.mo:9:3-9:38] Invalid use of reserved attribute name start as enumeration literal.
-// Error: [EnumInvalidLiteral.mo:10:3-10:42] Invalid use of reserved attribute name quantity as enumeration literal.
+// [EnumInvalidLiteral.mo:9:3-9:38:writable] Error: Invalid use of reserved attribute name start as enumeration literal.
+// [EnumInvalidLiteral.mo:10:3-10:42:writable] Error: Invalid use of reserved attribute name quantity as enumeration literal.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
