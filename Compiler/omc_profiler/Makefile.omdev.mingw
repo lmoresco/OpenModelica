@@ -25,7 +25,7 @@ CORBAHOME = $(OMDEV)
 
 SHELL	= /bin/sh
 CC	= gcc
-CFLAGS	= $(USE_CORBA)
+CFLAGS	= $(USE_CORBA) -pg
 RMLHOME	= $(OMDEV)/tools/rml
 RMLINC  = -I$(RMLHOME)/include/plain
 

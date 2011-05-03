@@ -21,7 +21,7 @@ LIBSOCKET = -lsocket
 
 SHELL	= /bin/sh
 CC	= gcc
-CFLAGS	= $(USE_CORBA)
+CFLAGS	= $(USE_CORBA) -O0
 RMLHOME	= $(OMDEV)/tools/rml
 RMLINC  = -I$(RMLHOME)/include/plain
 
