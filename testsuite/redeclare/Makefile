@@ -8,6 +8,7 @@ ClassExtends4.mo \
 ClassExtends5.mo \
 ClassExtendsInvalid1.mo \
 ClassExtendsInvalid2.mo \
+ConstantRedeclareModifier.mo \
 FinalRedeclareModifier.mo \
 Redeclare1.mo \
 Redeclare2.mo \
@@ -17,6 +18,7 @@ Redeclare5.mo \
 RedeclareFlowEffort.mo \
 RedeclareModifierInvalid1.mo \
 RedeclareModifierInvalid2.mo \
+RedeclareVisibility.mo \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
