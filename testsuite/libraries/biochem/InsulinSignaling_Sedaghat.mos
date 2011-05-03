@@ -101,7 +101,7 @@ checkModel(BioChem.Examples.InsulinSignaling_Sedaghat); getErrorString();
 //   input Real uur5.p1.V(quantity = \"Volume\", unit = \"l\");
 //   Real uur5.nS1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for the substrate\";
 //   Real uur5.nP1(quantity = \"Stoichiometric coefficient\", unit = \"1\") = 1.0 \"Stoichiometric coefficient for the product\";
-//   parameter Real uur5.k1(quantity = \"Reaction coefficient\", unit = \"1\") = 5.55555555555555e-06 \"Forwards reaction coefficient for the reaction\";
+//   parameter Real uur5.k1(quantity = \"Reaction coefficient\", unit = \"1\") = 5.55555555555556e-06 \"Forwards reaction coefficient for the reaction\";
 //   parameter Real uur5.k2(quantity = \"Reaction coefficient\", unit = \"1\") = 5e-05 \"Backwards reaction coefficient for the reaction\";
 //   Real uur3.rr(quantity = \"Reaction rate\", unit = \"mol/s\") \"Rate of the reaction\";
 //   Real uur3.s1.c(quantity = \"Concentration\", unit = \"mol/l\", min = 0.0);
@@ -301,7 +301,7 @@ checkModel(BioChem.Examples.InsulinSignaling_Sedaghat); getErrorString();
 // 
 // 
 // Class BioChem.Examples.InsulinSignaling_Sedaghat has 141 equation(s) and 141 variable(s).
-// 106 of these are trivial equation(s).
+// 95 of these are trivial equation(s).
 // "
 // ""
 // endResult

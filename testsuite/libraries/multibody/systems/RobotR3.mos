@@ -1074,7 +1074,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis has 373 equation(s) and 373 variable(s).
-// 287 of these are trivial equation(s).
+// 261 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Blocks.Sources.KinematicPTP2.position \"Inline after index reduction\"
@@ -12902,7 +12902,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot has 4828 equation(s) and 4828 variable(s).
-// 3887 of these are trivial equation(s).
+// 3638 of these are trivial equation(s).
 // "
 // ""
 // endResult

@@ -205,7 +205,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Sources.mo:1497:9-1498:38:writable] Warning: Failed to deduce dimensions of p_qdd_max due to unknown dimensions of modifier if (size(qdd_max,1)) == (1) then DAE.CAST(/tp:REAL[:]/, fill(1,nout)) * qdd_max[1] else qdd_max.
 // 
 // Class Modelica.Blocks.Sources.KinematicPTP has 11 equation(s) and 11 variable(s).
-// 9 of these are trivial equation(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.KinematicPTP2 completed successfully.
@@ -217,7 +217,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // [Sources.mo:1690:5-1690:54:writable] Warning: Failed to deduce dimensions of p_deltaq due to unknown dimensions of modifier p_q_end - p_q_begin.
 // 
 // Class Modelica.Blocks.Sources.KinematicPTP2 has 31 equation(s) and 31 variable(s).
-// 20 of these are trivial equation(s).
+// 5 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Blocks.Sources.TimeTable completed successfully.

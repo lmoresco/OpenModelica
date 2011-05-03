@@ -4508,7 +4508,7 @@ getErrorString();
 // 
 // 
 // Class Modelica.Mechanics.MultiBody.Examples.Rotational3DEffects.GearConstraint has 2379 equation(s) and 2379 variable(s).
-// 2057 of these are trivial equation(s).
+// 1586 of these are trivial equation(s).
 // "
 // ""
 // endResult

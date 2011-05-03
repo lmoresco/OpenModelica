@@ -586,7 +586,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
-// 202 of these are trivial equation(s).
+// 175 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -1326,7 +1326,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class BioChem_Examples_centralMetabolism_extra_cellular has 353 equation(s) and 353 variable(s).
-// 257 of these are trivial equation(s).
+// 246 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -1858,7 +1858,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem_Examples_CircadianOscillator_Container has 252 equation(s) and 252 variable(s).
-// 202 of these are trivial equation(s).
+// 175 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -1991,7 +1991,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem_Examples_CaOscillations_Cytosol has 60 equation(s) and 60 variable(s).
-// 45 of these are trivial equation(s).
+// 41 of these are trivial equation(s).
 // "
 // ""
 // true
@@ -2003,14 +2003,14 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.InsulinSignaling_Sedaghat has 141 equation(s) and 141 variable(s).
-// 106 of these are trivial equation(s).
+// 95 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.Glycolysis completed successfully.
 // 
 // 
 // Class BioChem.Examples.Glycolysis has 170 equation(s) and 170 variable(s).
-// 125 of these are trivial equation(s).
+// 116 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.EnzMM completed successfully.
@@ -2024,7 +2024,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.GMO.cell has 96 equation(s) and 96 variable(s).
-// 74 of these are trivial equation(s).
+// 63 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.centralMetabolism completed successfully.
@@ -2039,49 +2039,49 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class BioChem.Examples.centralMetabolism.cytosol has 320 equation(s) and 320 variable(s).
-// 223 of these are trivial equation(s).
+// 213 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Container completed successfully.
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Container has 252 equation(s) and 252 variable(s).
-// 202 of these are trivial equation(s).
+// 175 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Nucleus completed successfully.
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Nucleus has 99 equation(s) and 101 variable(s).
-// 78 of these are trivial equation(s).
+// 68 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CircadianOscillator.Cytoplasm completed successfully.
 // 
 // 
 // Class BioChem.Examples.CircadianOscillator.Cytoplasm has 140 equation(s) and 142 variable(s).
-// 110 of these are trivial equation(s).
+// 96 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CellDivison.cell completed successfully.
 // 
 // 
 // Class BioChem.Examples.CellDivison.cell has 148 equation(s) and 148 variable(s).
-// 113 of these are trivial equation(s).
+// 99 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CaOscillations.Cytosol completed successfully.
 // 
 // 
 // Class BioChem.Examples.CaOscillations.Cytosol has 60 equation(s) and 60 variable(s).
-// 45 of these are trivial equation(s).
+// 41 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.CaOscillations.Endoplasmic_Reticulum completed successfully.
 // 
 // 
 // Class BioChem.Examples.CaOscillations.Endoplasmic_Reticulum has 34 equation(s) and 35 variable(s).
-// 26 of these are trivial equation(s).
+// 22 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel completed successfully.
@@ -2112,28 +2112,28 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.GlucoseInsulinModel has 687 equation(s) and 687 variable(s).
-// 548 of these are trivial equation(s).
+// 511 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction completed successfully.
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.FlowReaction has 7 equation(s) and 7 variable(s).
-// 6 of these are trivial equation(s).
+// 4 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction completed successfully.
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.UtilizationReaction has 11 equation(s) and 11 variable(s).
-// 8 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance completed successfully.
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.signaltosubstance has 7 equation(s) and 7 variable(s).
-// 7 of these are trivial equation(s).
+// 5 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.U_ii_reaction completed successfully.
@@ -2147,21 +2147,21 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.ActivationReaction has 9 equation(s) and 9 variable(s).
-// 8 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.MM_insulin completed successfully.
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.MM_insulin has 9 equation(s) and 9 variable(s).
-// 8 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.GlucoseUptakeReaction completed successfully.
 // 
 // 
 // Class BioChem.Examples.GlucoseInsulinModel.Utilities.Reactions.GlucoseUptakeReaction has 9 equation(s) and 9 variable(s).
-// 8 of these are trivial equation(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MassAction.UniUni completed successfully.
@@ -2182,7 +2182,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.GlucoseMetabolism has 385 equation(s) and 385 variable(s).
-// 287 of these are trivial equation(s).
+// 267 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.BigCompartmentReversible completed successfully.
@@ -2203,14 +2203,14 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.Utilities.TCA has 206 equation(s) and 206 variable(s).
-// 154 of these are trivial equation(s).
+// 146 of these are trivial equation(s).
 // "
 // ""
 // "Check of BioChem.Examples.MultiCompartments.Utilities.SmallCompartment completed successfully.
 // 
 // 
 // Class BioChem.Examples.MultiCompartments.Utilities.SmallCompartment has 10 equation(s) and 10 variable(s).
-// 6 of these are trivial equation(s).
+// 8 of these are trivial equation(s).
 // "
 // ""
 // endResult

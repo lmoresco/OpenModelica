@@ -5009,7 +5009,7 @@ getErrorString();// Result:
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // 
 // Class MultiBody.Examples.Loops.Engine2 has 2912 equation(s) and 2915 variable(s).
-// 2618 of these are trivial equation(s).
+// 2494 of these are trivial equation(s).
 // "
 // ""
 // endResult
