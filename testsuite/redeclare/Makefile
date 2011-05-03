@@ -19,6 +19,7 @@ RedeclareFlowEffort.mo \
 RedeclareModifierInvalid1.mo \
 RedeclareModifierInvalid2.mo \
 RedeclareVisibility.mo \
+RedeclareVisibility2.mo \
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
