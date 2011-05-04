@@ -41,42 +41,42 @@ my $testscript = cwd() . "/runtest.pl";
 
 # Parse a makefile
 sub read_makefile {
-	my $dir = shift;
+  my $dir = shift;
 
-	return if $dir eq "./java"; # Skip the java tests, since they don't work.
+  return if $dir eq "./java"; # Skip the java tests, since they don't work.
   return if($fast == 1 and $dir eq "./libraries"); # Skip libraries if -f is given.
 
-	open(my $in, "<", "$dir/Makefile") or die "Couldn't open $dir/Makefile: $!";
+  open(my $in, "<", "$dir/Makefile") or die "Couldn't open $dir/Makefile: $!";
 
-	while(<$in>) {
-		if(/(\S+) -f Makefile test[^s]/) {  # Recursively parse makefiles.
-			read_makefile("$dir/$1");
-		}
-		elsif(/^TESTFILES.*=.*$/) { # Found a list of tests, parse them.
-			seek($in, -length($_), 1);
-			parse_testfiles($in, $dir);
-		}
-	}
-}	
+  while(<$in>) {
+    if(/(\S+) -f Makefile test[^s]/) {  # Recursively parse makefiles.
+      read_makefile("$dir/$1");
+    }
+    elsif(/^TESTFILES.*=.*$/) { # Found a list of tests, parse them.
+      seek($in, -length($_), 1);
+      parse_testfiles($in, $dir);
+    }
+  }
+} 
 
 # Parse a list of tests given in a makefile by TESTFILES.
 sub parse_testfiles {
-	my $in = shift;
-	my $path = shift;
+  my $in = shift;
+  my $path = shift;
 
-	while(<$in>) {
-		add_tests($_, $path) unless /#.*/; # Skip lines beginning with #
-		last unless /\\/; # If the line doesn't end with \, stop.
-	}
+  while(<$in>) {
+    add_tests($_, $path) unless /#.*/; # Skip lines beginning with #
+    last unless /\\/; # If the line doesn't end with \, stop.
+  }
 }
 
 # Extract all files beginning with .mo|.mof|.mos from a line.
 sub add_tests {
-	my @tests = split(/\s|=|\\/, shift);
-	my $path = shift;
+  my @tests = split(/\s|=|\\/, shift);
+  my $path = shift;
 
-	@tests = grep(/\.mo|\.mof|\.mos/, @tests);
-	@tests = map { $_ = "$path/$_" } @tests; 
+  @tests = grep(/\.mo|\.mof|\.mos/, @tests);
+  @tests = map { $_ = "$path/$_" } @tests; 
 
   push @test_list, @tests;
 }
@@ -85,8 +85,8 @@ sub add_tests {
 # runtest.pl script.
 sub run_tests {
   while(defined(my $test_full = $test_queue->dequeue_nb())) {
-		(my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
-		system("$testscript $test_full");
+    (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
+    system("$testscript $test_full");
     if($? >> 8 == 0) { # Add the test to the list of failed tests if it failed.
       lock($tests_failed);
       $tests_failed++;
@@ -112,7 +112,7 @@ read_makefile(".");
 # before the much slower libraries tests.
 @test_list = reverse(@test_list);
 foreach(@test_list) {
-	$test_queue->enqueue($_);
+  $test_queue->enqueue($_);
 }
 
 # Default is two threads.
@@ -121,12 +121,12 @@ my $thread_count = 2;
 # Check if we can open /proc/cpuinfo to see how many cores are available, and
 # use that many threads instead.
 if(open(my $in, "<", "/proc/cpuinfo")) {
-	$thread_count = 0;
+  $thread_count = 0;
 
-	while(<$in>) {
-		$thread_count++ if /processor/;
-	}
-	print "$thread_count threads\n";
+  while(<$in>) {
+    $thread_count++ if /processor/;
+  }
+  print "$thread_count threads\n";
 }
 
 # Make sure that omc-diff is generated before trying to run any tests.
@@ -136,12 +136,12 @@ symlink('../Compiler', 'Compiler');
 
 # Run the tests by calling the run_tests function with multiple threads.
 for(my $i = 0; $i < $thread_count; $i++) {
-	threads->create(\&run_tests);
+  threads->create(\&run_tests);
 }
 
 # Wait for the tests to finish.
 foreach my $thr (threads->list()) {
-	$thr->join();
+  $thr->join();
 }
 
 # Print out the list of tests that failed, and a summary of how many failed.
