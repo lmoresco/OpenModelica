@@ -66,6 +66,9 @@ sub make_test_specific_links {
 		when ("ExternalFunctionResultOrder.mos") {
 			make_link("ext_ExternalFunctionResultOrder.c");
 		}
+    when ("ExternalLibraryFunction.mos") {
+      make_link("TestLibrary");
+    }
 		when ("PartialFn6.mo") { make_link("PartialFn6.ext_f.c"); };
     when ("RunScript.mos") { make_link("strings.mo"); };
     when ("SusanTest.mos") { 
@@ -74,9 +77,6 @@ sub make_test_specific_links {
     };
     when ("ParseModel.mos") {
       make_link("ParseModel-saved.mo");
-    }
-    when ("ExternalLibraryFunction") {
-      make_link("TestLibrary");
     }
 	}
 
