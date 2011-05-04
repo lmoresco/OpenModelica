@@ -130,7 +130,7 @@ if(open(my $in, "<", "/proc/cpuinfo")) {
 }
 
 # Make sure that omc-diff is generated before trying to run any tests.
-system("make -C difftool &> /dev/null");
+system("make -C difftool > /dev/null 2>&1");
 
 symlink('../Compiler', 'Compiler');
 

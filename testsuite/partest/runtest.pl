@@ -183,10 +183,9 @@ my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
 
 # If we're in meta, append the MetaModelica flag to rtest.
 $rtest = $rtest . " +g=MetaModelica " if $test_dir eq "./meta";
-$rtest = $rtest . " +d=SetOldDassl " if $test_dir eq "./mosfiles-dasslold";
 
 # Run the testscript and redirect output to a logfile.
-system("$rtest $test &> $test.test_log");
+system("$rtest $test > $test.test_log 2>&1");
 
 # Read the logfile and see if the test succeeded or failed.
 open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.log: $!\n";
