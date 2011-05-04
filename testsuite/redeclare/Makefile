@@ -10,6 +10,7 @@ ClassExtendsInvalid1.mo \
 ClassExtendsInvalid2.mo \
 ConstantRedeclareModifier.mo \
 FinalRedeclareModifier.mo \
+FinalRedeclareModifier2.mo \
 Redeclare1.mo \
 Redeclare2.mo \
 Redeclare3.mo \
