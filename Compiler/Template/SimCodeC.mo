@@ -38879,7 +38879,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6432, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6433, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_862;
@@ -38994,7 +38994,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6450, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6451, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
