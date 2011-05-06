@@ -31,6 +31,8 @@ use Term::ANSIColor;
 use List::Util 'shuffle';
 use Cwd;
 use File::Path qw(rmtree);
+use MLDBM;
+use Fcntl;
 
 my $fast = 0;
 my @test_list;
@@ -38,13 +40,20 @@ my $test_queue = Thread::Queue->new();
 my $tests_failed :shared = 0;
 my @failed_tests :shared;
 my $testscript = cwd() . "/runtest.pl";
+my %test_map :shared;
+{
+  tie (my %db_map, "MLDBM", "../runtest.db", O_RDWR|O_CREAT, 0664);
+  %test_map = %db_map;
+}
 
 # Parse a makefile
 sub read_makefile {
   my $dir = shift;
 
   return if $dir eq "./java"; # Skip the java tests, since they don't work.
-  return if($fast == 1 and $dir eq "./libraries"); # Skip libraries if -f is given.
+  return if($fast == 1 and $dir =~ m"^./libraries"); # Skip libraries if -f is given.
+  return if($fast == 1 and $dir eq "./bootstrapping"); # Skip libraries if -f is given.
+  return if($fast == 1 and $dir eq "./meta"); # Skip libraries if -f is given.
 
   open(my $in, "<", "$dir/Makefile") or die "Couldn't open $dir/Makefile: $!";
 
@@ -54,6 +63,7 @@ sub read_makefile {
     }
     elsif(/^TESTFILES.*=.*$/) { # Found a list of tests, parse them.
       seek($in, -length($_), 1);
+      return if($fast == 1 and $dir ne "./linearize"); # Very fast :D
       parse_testfiles($in, $dir);
     }
   }
@@ -86,12 +96,15 @@ sub add_tests {
 sub run_tests {
   while(defined(my $test_full = $test_queue->dequeue_nb())) {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
-    system("$testscript $test_full");
-    if($? >> 8 == 0) { # Add the test to the list of failed tests if it failed.
+    my $x = system("$testscript $test_full") >> 8;
+    if($x == 0) { # Add the test to the list of failed tests if it failed.
       lock($tests_failed);
       $tests_failed++;
       lock(@failed_tests);
       push @failed_tests, $test_full;
+    } else {
+      lock(%test_map);
+      $test_map{$test_full} = $x;
     }
   }
 }
@@ -108,9 +121,15 @@ for(@ARGV){
 chdir("..");
 read_makefile(".");
 
-# Reverse the list of tests, because I prefer to have mofiles and mosfiles run
-# before the much slower libraries tests.
-@test_list = reverse(@test_list);
+# Sort most expensive operations first
+@test_list = sort {
+  my $la = $test_map{$a};
+  my $lb = $test_map{$b};
+  $la = defined($la)?$la:5;
+  $lb = defined($lb)?$lb:5;
+  $lb <=> $la
+} @test_list;
+
 foreach(@test_list) {
   $test_queue->enqueue($_);
 }
@@ -158,6 +177,10 @@ if(@failed_tests) {
 
 my $test_count = @test_list;
 print "\n$tests_failed of $test_count failed\n";
+{
+  tie (my %db_map, "MLDBM", "runtest.db", O_RDWR|O_CREAT, 0664);
+  %db_map = %test_map;
+}
 
 unlink("Compiler");
 # Clean up the temporary rtest directory, so it doesn't get overrun.

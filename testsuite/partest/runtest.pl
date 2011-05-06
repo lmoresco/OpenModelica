@@ -192,13 +192,14 @@ open(my $test_log, "<", "$test.test_log") or die "Couldn't open test log $test.l
 
 my $exit_status = 1;
 my $erroneous = 0;
+my $time = 0;
 
 while(<$test_log>) {
   if(/\.\.\. erroneous/) {
     $erroneous = 1;
   }
   if(/== (\d) out of 1 tests failed.*time: (\d*)/) {
-    my $time = $2;
+    $time = $2;
     if($1 =~ /0/) {
       print color 'green';
     } else {
@@ -217,4 +218,14 @@ while(<$test_log>) {
 }
 
 exit_sandbox();
-exit $exit_status;
+if ($exit_status == 0) {
+  exit 0;
+} else {
+  if ($time < 1) {
+    exit 1;
+  } elsif ($time > 100) {
+    exit 100;
+  }
+  exit $time
+}
+
