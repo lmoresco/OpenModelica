@@ -31,20 +31,43 @@ use Term::ANSIColor;
 use List::Util 'shuffle';
 use Cwd;
 use File::Path qw(rmtree);
-use MLDBM;
-use Fcntl;
 use Time::HiRes qw( usleep ualarm gettimeofday tv_interval nanosleep
                       clock_gettime clock_getres clock_nanosleep clock
                       stat );
+use Fcntl;
 
+my $use_db = 1;
 my $fast = 0;
+
+# Check for the -f flag.
+for(@ARGV){
+  if(/-f/) {
+    $fast = 1;
+  }
+  elsif(/-nodb/) {
+    $use_db = 0;
+  }
+}
+
+if ($use_db) {
+  eval { require MLDBM; 1; };
+
+  if(!$@) {
+    MLDBM->import();
+  } else {
+    print "Could not load MLDBM module, falling back to nodb mode.\n";
+    $use_db = 0;
+  }
+}
+
 my @test_list;
 my $test_queue = Thread::Queue->new();
 my $tests_failed :shared = 0;
 my @failed_tests :shared;
 my $testscript = cwd() . "/runtest.pl";
 my %test_map :shared;
-{
+
+if($use_db) {
   tie (my %db_map, "MLDBM", "../runtest.db", O_RDWR|O_CREAT, 0664);
   %test_map = %db_map;
 }
@@ -98,11 +121,16 @@ sub add_tests {
 sub run_tests {
   while(defined(my $test_full = $test_queue->dequeue_nb())) {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
+
     my $t0 = [gettimeofday];
     my $x = system("$testscript $test_full") >> 8;
     my $elapsed = tv_interval ( $t0, [gettimeofday]);
-    lock(%test_map);
-    $test_map{$test_full} = $elapsed;
+
+    if($use_db) {
+      lock(%test_map);
+      $test_map{$test_full} = $elapsed;
+    }
+
     if($x == 0) { # Add the test to the list of failed tests if it failed.
       lock($tests_failed);
       $tests_failed++;
@@ -112,27 +140,23 @@ sub run_tests {
   }
 }
 
-# Check for the -f flag.
-for(@ARGV){
-  if(/-f/) {
-    $fast = 1;
-  }
-}
-
 # Assume that we are in a subdirectory of the testsuite, so go up one level and
 # parse the makefile there.
 chdir("..");
 read_makefile(".");
 
-# Sort most expensive operations first
-@test_list = reverse @test_list;
-@test_list = sort {
-  my $la = $test_map{$a};
-  my $lb = $test_map{$b};
-  $la = defined($la) ? $la : 20;
-  $lb = defined($lb) ? $lb : 20;
-  $lb <=> $la
-} @test_list;
+
+if($use_db) {
+  # Sort most expensive operations first
+  @test_list = reverse @test_list;
+  @test_list = sort {
+    my $la = $test_map{$a};
+    my $lb = $test_map{$b};
+    $la = defined($la) ? $la : 20;
+    $lb = defined($lb) ? $lb : 20;
+    $lb <=> $la
+  } @test_list;
+}
 
 foreach(@test_list) {
   $test_queue->enqueue($_);
@@ -181,7 +205,8 @@ if(@failed_tests) {
 
 my $test_count = @test_list;
 print "\n$tests_failed of $test_count failed\n";
-{
+
+if($use_db) {
   tie (my %db_map, "MLDBM", "runtest.db", O_RDWR|O_CREAT, 0664);
   %db_map = %test_map;
 }
