@@ -3833,42 +3833,39 @@ protected function lm_111
   input list<SimCode.ExtConstructor> in_items;
   input Tpl.Text in_a_funDecls;
   input Tpl.Text in_a_varDecls;
-  input Tpl.Text in_a_preExp;
 
   output Tpl.Text out_txt;
   output Tpl.Text out_a_funDecls;
   output Tpl.Text out_a_varDecls;
-  output Tpl.Text out_a_preExp;
 algorithm
-  (out_txt, out_a_funDecls, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_items, in_a_funDecls, in_a_varDecls, in_a_preExp)
+  (out_txt, out_a_funDecls, out_a_varDecls) :=
+  matchcontinue(in_txt, in_items, in_a_funDecls, in_a_varDecls)
     local
       Tpl.Text txt;
       list<SimCode.ExtConstructor> rest;
       Tpl.Text a_funDecls;
       Tpl.Text a_varDecls;
-      Tpl.Text a_preExp;
       DAE.ComponentRef i_var;
       String i_fnName;
       list<DAE.Exp> i_args;
       Tpl.Text l_typesStr;
       Tpl.Text l_argsStr;
+      Tpl.Text l_preExp;
 
     case ( txt,
            {},
            a_funDecls,
-           a_varDecls,
-           a_preExp )
-      then (txt, a_funDecls, a_varDecls, a_preExp);
+           a_varDecls )
+      then (txt, a_funDecls, a_varDecls);
 
     case ( txt,
            (i_var, i_fnName, i_args) :: rest,
            a_funDecls,
-           a_varDecls,
-           a_preExp )
+           a_varDecls )
       equation
+        l_preExp = Tpl.emptyTxt;
         l_argsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        (l_argsStr, a_varDecls, a_preExp) = lm_109(l_argsStr, i_args, a_varDecls, a_preExp);
+        (l_argsStr, a_varDecls, l_preExp) = lm_109(l_argsStr, i_args, a_varDecls, l_preExp);
         l_argsStr = Tpl.popIter(l_argsStr);
         l_typesStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         l_typesStr = lm_110(l_typesStr, i_args);
@@ -3879,24 +3876,28 @@ algorithm
         a_funDecls = Tpl.writeText(a_funDecls, l_typesStr);
         a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_STRING(");"));
         a_funDecls = Tpl.writeTok(a_funDecls, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeText(txt, l_preExp);
+        txt = Tpl.softNewLine(txt);
         txt = cref(txt, i_var);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" = "));
         txt = Tpl.writeStr(txt, i_fnName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_argsStr);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ");\n",
+                                    "restore_memory_state(mem_state);"
+                                }, false));
         txt = Tpl.nextIter(txt);
-        (txt, a_funDecls, a_varDecls, a_preExp) = lm_111(txt, rest, a_funDecls, a_varDecls, a_preExp);
-      then (txt, a_funDecls, a_varDecls, a_preExp);
+        (txt, a_funDecls, a_varDecls) = lm_111(txt, rest, a_funDecls, a_varDecls);
+      then (txt, a_funDecls, a_varDecls);
 
     case ( txt,
            _ :: rest,
            a_funDecls,
-           a_varDecls,
-           a_preExp )
+           a_varDecls )
       equation
-        (txt, a_funDecls, a_varDecls, a_preExp) = lm_111(txt, rest, a_funDecls, a_varDecls, a_preExp);
-      then (txt, a_funDecls, a_varDecls, a_preExp);
+        (txt, a_funDecls, a_varDecls) = lm_111(txt, rest, a_funDecls, a_varDecls);
+      then (txt, a_funDecls, a_varDecls);
   end matchcontinue;
 end lm_111;
 
@@ -3950,7 +3951,6 @@ algorithm
       list<SimCode.ExtAlias> i_aliases;
       list<SimCode.ExtConstructor> i_constructors;
       Tpl.Text l_ctorCalls;
-      Tpl.Text l_preExp;
       Tpl.Text l_varDecls;
       Tpl.Text l_funDecls;
 
@@ -3959,9 +3959,8 @@ algorithm
       equation
         l_funDecls = Tpl.emptyTxt;
         l_varDecls = Tpl.emptyTxt;
-        l_preExp = Tpl.emptyTxt;
         l_ctorCalls = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        (l_ctorCalls, l_funDecls, l_varDecls, l_preExp) = lm_111(l_ctorCalls, i_constructors, l_funDecls, l_varDecls, l_preExp);
+        (l_ctorCalls, l_funDecls, l_varDecls) = lm_111(l_ctorCalls, i_constructors, l_funDecls, l_varDecls);
         l_ctorCalls = Tpl.popIter(l_ctorCalls);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "/* Has to be performed after _init.txt file has been read */\n",
@@ -3978,8 +3977,10 @@ algorithm
         txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
         txt = Tpl.writeText(txt, l_varDecls);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeText(txt, l_preExp);
-        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "state mem_state;\n",
+                                    "mem_state = get_memory_state();\n"
+                                }, true));
         txt = Tpl.writeText(txt, l_ctorCalls);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -8273,7 +8274,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("No runtime support for this sort of array call: "));
         ret_1 = ExpressionDump.printExpStr(a_eqn_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2026, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2029, 14), Tpl.textString(txt_1));
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_218;
@@ -10657,7 +10658,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2383, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2386, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initVal;
@@ -13520,7 +13521,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2900, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2903, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_351;
@@ -13640,7 +13641,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2908, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2911, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_355;
@@ -13688,13 +13689,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2917, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2920, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2918, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2921, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -13795,7 +13796,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2937, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2940, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_358;
@@ -14024,7 +14025,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external F77 type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2956, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2959, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_364;
@@ -18628,7 +18629,7 @@ algorithm
            a_varDecls,
            a_varInits )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3477, 12), "Unknown local variable type");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3480, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits);
   end matchcontinue;
 end varInit;
@@ -22192,7 +22193,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3865, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3868, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_561;
@@ -23009,7 +23010,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4019, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4022, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -25929,7 +25930,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4529, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4532, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -33400,7 +33401,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5646, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5649, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -33737,7 +33738,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5691, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5694, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -37320,7 +37321,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6192, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6195, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -38967,7 +38968,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6437, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6440, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_864;
@@ -39082,7 +39083,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6455, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6458, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
