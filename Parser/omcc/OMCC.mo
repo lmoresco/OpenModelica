@@ -3,7 +3,7 @@ class OMCC
 import Util;
 import RTOpts;
 import System;
-
+import Absyn;
 import LexerGenerator;
 import ParserGenerator;
 
@@ -48,8 +48,15 @@ end main;
 public function printUsage
   Integer n;
   List<String> strs;
+  Absyn.Program prog;
+  Absyn.Class mClass;
+  Absyn.ClassDef mCDef;
 algorithm
-  print("\nOMCC v0.7 (OpenModelica Compiler- Compiler) \nCopyright 2011 Open Souce Modelica Consorsium (OSMC) ");
+ /* mCDef := Absyn.OVERLOAD({Absyn.IDENT("fname")},NONE());
+  mClass := Absyn.CLASS("ctest",false,false,false,Absyn.R_CLASS(),mCDef);
+  prog := Absyn.PROGRAM({mClass},Absyn.WITHIN(Absyn.IDENT("test")),Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime()));
+  printAny(prog); */
+  print("\nOMCC v0.8 (OpenModelica Compiler- Compiler) \nCopyright 2011 Open Souce Modelica Consorsium (OSMC) ");
 end printUsage;
 
 protected function readSettings

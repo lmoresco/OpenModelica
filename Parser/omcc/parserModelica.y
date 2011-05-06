@@ -1,21 +1,40 @@
 %{
-type AstTree = Absyn.Stmt;
-type Stmt = Absyn.Stmt;
-type IdentLst = Absyn.IdentLst;
+import Absyn;
+
+type AstTree = Absyn.Program;
+type Token = Types.Token;  
+type Program = Absyn.Program;
+type Within = Absyn.Within;
+type lstClass = list<Absyn.Class>;
+type Class = Absyn.Class;
 type Ident = Absyn.Ident;
-type Exp = Absyn.Exp;
-type BinOp = Absyn.BinOp;
-type RelOp = Absyn.RelOp;
+type Path = Absyn.Path;
+type ClassDef  = Absyn.ClassDef;
 
 constant list<String> lstSemValue2 = {};
 
 constant list<String> lstSemValue = {
-  "error","undetermined","read",   "write", ":=", 
-  "if",  "then",         "endif",  "else",  "to", 
-  "do",  "end",          "while",  "(",      ")", 
-  "Identity", "Integer", "=",      "<=",     "<",
-  ">",    ">=",          "<>",     "+",      "-", 
-  "*",     "/",          ";",      "" };
+  "error", "$undefined", "T_READ", "T_WRITE", "T_ASSIGN", "T_IF",
+  "T_THEN", "T_ENDIF", "T_ELSE", "T_TO", "T_DO", "T_WHILE", "T_LPAREN",
+  "T_RPAREN", "T_IDENT", "T_INTCONST", "T_EQ", "T_LE", "T_LT", "T_GT",
+  "T_GE", "T_NE", "T_ADD", "T_SUB", "T_MUL", "T_DIV", "T_SEMIC",
+  "T_ALGORITHM", "T_AND", "T_ANNOTATION", "BLOCK", "CLASS", "CONNECT",
+  "CONNECTOR", "CONSTANT", "DISCRETE", "DER", "DEFINEUNIT", "EACH", "ELSE",
+  "ELSEIF", "ELSEWHEN", "T_END", "ENUMERATION", "EQUATION", "ENCAPSULATED",
+  "EXPANDABLE", "EXTENDS", "CONSTRAINEDBY", "EXTERNAL", "T_FALSE", "FINAL",
+  "FLOW", "FOR", "FUNCTION", "IF", "IMPORT", "T_IN", "INITIAL", "INNER",
+  "T_INPUT", "LOOP", "MODEL", "T_NOT", "T_OUTER", "OPERATOR", "OVERLOAD",
+  "T_OR", "T_OUTPUT", "T_PACKAGE", "PARAMETER", "PARTIAL", "PROTECTED",
+  "PUBLIC", "RECORD", "REDECLARE", "REPLACEABLE", "RESULTS", "THEN",
+  "T_TRUE", "TYPE", "UNSIGNED_REAL", "WHEN", "WHILE", "WITHIN", "RETURN",
+  "BREAK", "DOT", "LPAR", "RPAR", "LBRACK", "RBRACK", "LBRACE", "RBRACE",
+  "EQUALS", "ASSIGN", "COMMA", "COLON", "SEMICOLON", "CODE", "CODE_NAME",
+  "CODE_EXP", "CODE_VAR", "PURE", "IMPURE", "IDENT", "DIGIT", "STAR",
+  "MINUS", "PLUS", "LESSEQ", "LESSGT", "LESS", "GREATER", "GREATEREQ",
+  "EQEQ", "POWER", "SLASH", "STRING", "PLUS_EW", "MINUS_EW", "STAR_EW",
+  "SLASH_EW", "POWER_EW", "STREAM", "AS", "CASE", "EQUALITY", "FAILURE",
+  "GUARD", "LOCAL", "MATCH", "MATCHCONTINUE", "UNIONTYPE", "ALLWILD",
+  "WILD", "SUBTYPEOF", "COLONCOLON", "MOD" };
 
 %}
 
@@ -147,111 +166,101 @@ constant list<String> lstSemValue = {
 
 %token STREAM
 
+%token AS
+%token CASE
+%token EQUALITY
+%token FAILURE
+%token GUARD
+%token LOCAL
+%token MATCH
+%token MATCHCONTINUE
+%token UNIONTYPE
+%token ALLWILD
+%token WILD
+%token SUBTYPEOF
+%token COLONCOLON
+%token MOD
+
 %%
 
 /* Yacc BNF grammar of the PAM language */
 
-program/*Stmt*/             :  series
-                                { (absyntree)[Stmt] = $1[Stmt]; }
-series/*Stmt*/                :  statement 
-                              { $$[Stmt] = Absyn.SEQ($1[Stmt], Absyn.SKIP()); } 
-                      |  statement series
-                                { $$[Stmt] = Absyn.SEQ($1[Stmt], $2[Stmt]); }
+program             :  classes_list 
+                                { (absyntree)[Program] = Absyn.PROGRAM($1[lstClass],Absyn.TOP(),Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime())); }
+                       | within classes_list 
+                                { (absyntree)[Program] = Absyn.PROGRAM($2[lstClass],$1[Within],Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime())); }
+                               
 
-statement/*Stmt*/             :  input_statement T_SEMIC
-                                { $$[Stmt] = $1[Stmt]; }
-                      |  output_statement T_SEMIC
-                                { $$[Stmt] = $1[Stmt]; }
-                      |  assignment_statement T_SEMIC
-                                { $$[Stmt] = $1[Stmt]; }
-                      |  conditional_statement
-                                { $$[Stmt] = $1[Stmt]; }
-                      |  definite_loop
-                                { $$[Stmt] = $1[Stmt]; }
-                      |  while_loop
-                                { $$[Stmt] = $1[Stmt]; }
+within              :  WITHIN path { $$[Within] = Absyn.WITHIN($2[Path]); }
 
-input_statement/*Stmt*/ :  T_READ  variable_list
-                                { $$[Stmt] = Absyn.READ($2[IdentLst]); }
+classes_list            : class { $$[lstClass] = $1[Class]::{}; } 
+                        | class classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
 
-output_statement/*Stmt*/  :  T_WRITE  variable_list
-                                { $$[Stmt] = Absyn.WRITE($2[IdentLst]); }
+class                      : CLASS Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_CLASS(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }
+                           | MODEL Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_MODEL(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | RECORD Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_RECORD(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | T_PACKAGE Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_PACKAGE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | FUNCTION Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_FUNCTION(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | TYPE Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_TYPE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | UNIONTYPE Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_UNIONTYPE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | BLOCK Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_BLOCK(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | CONNECTOR Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_CONNECTOR(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           | ENUMERATION Ident classdef T_END Ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_ENUMERATION(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
+                           
+classdef             : path { $$[ClassDef] = Absyn.OVERLOAD({$1[Path]},NONE());}
 
-variable_list/*IdentLst*/     :  variable
-                                { $$[IdentLst] = $1[Ident]::{}; }
-                      |  variable variable_list
-                                { $$[IdentLst] = $1[Ident]::$2[IdentLst]; }
-
-assignment_statement/*Stmt*/  :  variable  T_ASSIGN  expression
-                                { $$[Stmt] = Absyn.ASSIGN($1[Ident], $3[Exp]); }
-
-conditional_statement/*Stmt*/ :  T_IF comparison T_THEN series T_ENDIF
-                                { $$[Stmt] = Absyn.IF($2[Exp], $4[Stmt], Absyn.SKIP()); }
-                      |  T_IF comparison T_THEN series 
-                                         T_ELSE series T_ENDIF
-                                { $$[Stmt] = Absyn.IF($2[Exp], $4[Stmt], $6[Stmt]); }
-
-definite_loop/*Stmt*/         :  T_TO expression T_DO series T_END
-                                { $$[Stmt] = Absyn.TODO($2[Exp], $4[Stmt]); }
-
-while_loop/*Stmt*/            :  T_WHILE comparison T_DO series T_END
-                                { $$[Stmt] = Absyn.WHILE($2[Exp], $4[Stmt]); }
-
-expression/*Exp*/       :  term
-                                { $$[Exp] = $1[Exp]; }
-                 |  expression  weak_operator  term
-                                { $$[Exp] = Absyn.BINARY($1[Exp], $2[BinOp], $3[Exp]); }
-
-term/*Exp*/             :  element
-                                { $$[Exp] = $1[Exp]; }
-                 |  term  strong_operator  element
-                                { $$[Exp] = Absyn.BINARY($1[Exp], $2[BinOp], $3[Exp]); }
-
-element/*Exp*/          :  constant
-                                { $$[Exp] = Absyn.INT($1[Integer]); }
-                 |  variable
-                                { $$[Exp] = Absyn.IDENT($1[Ident]); }
-                 |  T_LPAREN  expression  T_RPAREN
-                                { $$[Exp] = $2[Exp]; }
-
-comparison/*Exp*/       :  expression  relation  expression
-                                { $$[Exp] = Absyn.RELATION($1[Exp], $2[RelOp], $3[Exp]); }
-
-variable/*String*/         :  T_IDENT
+path                 : IDENT { $$[Path] = Absyn.IDENT($1); }
+                                
+Ident                  :  IDENT
                                 { $$[Ident] = $1; }
-constant/*Integer*/         :  T_INTCONST
+
+constant                :  DIGIT
                                 { $$[Integer] = $1; }
 
-relation/*RelOp*/         : T_EQ { $$[RelOp] = Absyn.EQ();}
-                 | T_LE { $$[RelOp] = Absyn.LE();}
-                 | T_LT { $$[RelOp] = Absyn.LT();}
-                 | T_GT { $$[RelOp] = Absyn.GT();}
-                 | T_GE { $$[RelOp] = Absyn.GE();}
-                 | T_NE { $$[RelOp] = Absyn.NE();}
-
-weak_operator/*BinOp*/    : T_ADD { $$[BinOp] = Absyn.ADD();}
-                 | T_SUB { $$[BinOp] = Absyn.SUB();}
-
-strong_operator/*BinOp*/  : T_MUL { $$[BinOp] = Absyn.MUL();}
-                 | T_DIV { $$[BinOp] = Absyn.DIV();}
 
 %%
 
-function printAST "print the AST built by the parsing"
-  input AstStack astStk "MultiTypedStack used by the parser";
-  output AstTree ast "returns the AST in the final type of the tree";
-  list<Absyn.Stmt> retStk;
-  algorithm
-    ASTSTACK(stackStmt=retStk) := astStk;
-    printAny(ast);
-    ast::_ := retStk;
-end printAST;
-
-function getSemValue "retrieves semval from tokens"
-  input Integer tokenId;
-  output String tokenSemValue "returns semantic value of the token";
-  array<String> values;
-  algorithm
-    values := listArray(lstSemValue);
-   tokenSemValue := values[tokenId];
-end getSemValue;
+function printContentStack
+  input AstStack astStk;
+   list<Token> skToken;
+  list<Path> skPath;
+   list<ClassDef> skClassDef;
+   list<Ident> skIdent;
+   list<Class> skClass;
+   list<Program> skProgram;
+   list<lstClass> sklstClass;
+   list<String> skString;
+   list<Integer> skInteger;
+algorithm
+ ASTSTACK(stackToken=skToken,stackPath=skPath,stackClassDef=skClassDef,stackIdent=skIdent,stackClass=skClass,stackProgram=skProgram,stacklstClass=sklstClass,stackString=skString,stackInteger=skInteger) := astStk;
+  
+  print("\n Stack content:");
+  print(" skToken:");
+  print(intString(listLength(skToken)));
+  print(" skPath:");
+  print(intString(listLength(skPath)));
+  print(" skClassDef:");
+  print(intString(listLength(skClassDef)));
+  print(" skIdent:");
+  print(intString(listLength(skIdent)));
+  print(" skClass:");
+  print(intString(listLength(skClass)));
+  print(" skProgram:");
+  print(intString(listLength(skProgram)));
+  print(" sklstClass:");
+  print(intString(listLength(sklstClass)));
+  print(" skString:");
+  print(intString(listLength(skString)));
+  print(" skInteger:");
+  print(intString(listLength(skInteger)));
+end printContentStack;

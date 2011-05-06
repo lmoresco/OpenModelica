@@ -1,5 +1,6 @@
 package Types
 import Absyn;
+import INFO = Absyn.INFO;
 
 uniontype Token
   record TOKEN
@@ -10,8 +11,10 @@ uniontype Token
   end TOKEN; 
  
 end Token;
+
+type Info = Absyn.Info;
   
-uniontype Info
+/*uniontype Info
 "@author adrpo
  added 2005-10-29, changed 2006-02-05
  The Info attribute provides location information for elements and classes."
@@ -23,10 +26,16 @@ uniontype Info
     Integer columnNumberStart "columnNumberStart" ;
     Integer lineNumberEnd "lineNumberEnd" ;
     Integer columnNumberEnd "columnNumberEnd" ;
-    //TimeStamp buildTimes "Build and edit times";
+    Absyn.TimeStamp buildTimes "Build and edit times";
   end INFO;
 
-end Info;
+end Info; */
+
+function getTimeStamp
+   output Absyn.TimeStamp timeStamp;
+ algorithm
+    timeStamp := Absyn.dummyTimeStamp;
+end getTimeStamp;
 
 function printToken
   input Token token;
@@ -105,7 +114,7 @@ function printTokens
     output String outList;
     list<Token> inList2;
    algorithm 
-    (outList) := matchcontinue(inList,cBuff)
+    (outList) := match(inList,cBuff)
       local
         Token c;
         String new,tout;
@@ -118,8 +127,34 @@ function printTokens
            new = cBuff + printShortToken2(c);
            (tout) = printTokens(rest,new);
         then (tout);
-     end matchcontinue;     
+     end match;     
   end printTokens; 
+  
+ function countTokens
+    input list<Token> inList;
+    input Integer sValue;
+    output Integer outTotal;
+    list<Token> inList2;
+   algorithm 
+     //printAny("\nhere1");
+    (outTotal) := match(inList,sValue)
+      local
+        Token c;
+        Integer new,tout;
+        list<Token> rest;
+      case ({},_) 
+        then (sValue+1);
+      else
+        equation
+           //printAny("\nhere2");
+           c::rest = inList;
+           //printAny("\nhere3");
+           new = sValue + 1;
+           (tout) = countTokens(rest,new);
+        then (tout);
+     end match;     
+     //printAny("\nhere4");
+  end countTokens;  
   
 function printBuffer
   input list<Integer> inList;
@@ -127,7 +162,7 @@ function printBuffer
   output String outList;
   list<Integer> inList2;
 algorithm 
-  (outList) := matchcontinue(inList,cBuff)
+  (outList) := match(inList,cBuff)
     local
       Integer c;
       String new,tout;
@@ -140,7 +175,7 @@ algorithm
         new = cBuff + intStringChar(c);
         (tout) = printBuffer(rest,new);
       then (tout);
-  end matchcontinue;     
+  end match;     
 end printBuffer; 
  
 end Types;

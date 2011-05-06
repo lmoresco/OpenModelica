@@ -3,16 +3,17 @@
 getInstallationDirectoryPath();
 //setCommandLineOptions("+g=MetaModelica","+d=rml,noevalfunc");
 loadFile("Absyn.mo");
+loadFile("AbsynPAM.mo");
 loadFile("Types.mo");
 
-loadFile("Token.mo");
+/* loadFile("Token.mo");
 loadFile("LexTable.mo");
 loadFile("LexerCode.mo");
 loadFile("Lexer.mo");
 loadFile("ParseCode.mo");
 loadFile("Parser.mo");
 loadFile("ParseTable.mo");
-loadFile("Error.mo");
+loadFile("Error.mo"); */
 
 loadFile("TokenModelica.mo");
 loadFile("LexTableModelica.mo");
@@ -22,12 +23,12 @@ loadFile("ParseCodeModelica.mo");
 loadFile("ParserModelica.mo");
 loadFile("ParseTableModelica.mo");
 
+loadFile("Parser10.mo");
+loadFile("LexerCode10.mo");
+loadFile("ParseCode10.mo");
 loadFile("Token10.mo");
 loadFile("LexTable10.mo");
-loadFile("LexerCode10.mo");
 loadFile("Lexer10.mo");
-loadFile("ParseCode10.mo");
-loadFile("Parser10.mo");
 loadFile("ParseTable10.mo"); 
 
 loadFile("Main.mo");

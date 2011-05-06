@@ -51,6 +51,7 @@ constant Integer ERR_TYPE_REPLACE = 3;
 constant Integer ERR_TYPE_INSEND = 4;
 constant Integer ERR_TYPE_MERGE = 5;
 
+type AstTree = ParseCode.AstTree;
 
 function parse "realize the syntax analysis over the list of tokens and generates the AST tree"
   input list<Types.Token> tokens "list of tokens from the lexer";
@@ -372,7 +373,7 @@ function processToken
 	           cSt = n;
 	           stateStk = cSt::stateStk;
 	           idVal = semVal;
-	           (astStk) = ParseCode.push(astStk,idVal);
+	           (astStk) = ParseCode.push(astStk,idVal,cTok);
 	           astSkBk = astStk;
 	           stateSkBk = stateStk;
 	           if (errSt<>0) then // reduce the shift error lookup
@@ -604,7 +605,7 @@ function checkToken
    
    if (debug) then
       print("\n **** Checking TOKEN: " + intString(chkTok) + " action:" + intString(action));
-      printAny("\n **** Checking TOKEN: " + intString(chkTok) + " action:" + intString(action));
+      //printAny("\n **** Checking TOKEN: " + intString(chkTok) + " action:" + intString(action));
    end if; 
   // restore back up configuration and run the machine again to check candidate
    if (Util.isListEmpty(prog)==false) then 
@@ -612,13 +613,13 @@ function checkToken
 	   if (debug) then
 	      print("\n **** Last token: " + Types.printToken(cTok));
 	   end if;   
-	   info := Types.INFO("",false,1,1,1,1); //fake position
+	   info := Types.INFO("",false,1,1,1,1,Types.getTimeStamp()); //fake position
 	   candTok := Types.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    else
      if (debug) then
 	      print("\n Creating Fake Token position");
 	   end if; 
-     info := Types.INFO("",false,1,1,1,1); //fake position
+     info := Types.INFO("",false,1,1,1,1,Types.getTimeStamp()); //fake position
      candTok := Types.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    end if;
    

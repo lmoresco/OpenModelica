@@ -15,7 +15,7 @@ import System;
 import Types;
 
 
-import Absyn;
+import AbsynPAM;
 import LexerGenerator;
 import ParserGenerator;
 
@@ -29,10 +29,11 @@ public function main
   start the translation."
   input list<String> inStringLst;
   list<Types.Token> tokens;
-  ParseCode.AstTree astTree;
+  ParseCode10.AstTree astTree10;
+  ParserModelica.AstTree astTreeModelica;
   type Mcode_MCodeLst = list<Mcode.MCode>;
 protected
-  Absyn.Stmt program;
+  AbsynPAM.Stmt program;
   Mcode_MCodeLst mcode;
 algorithm
   
@@ -75,29 +76,33 @@ algorithm
      case args as _::_
       equation
         {filename,parser} = RTOpts.args(args);
-       // System.startTimer();
+        System.startTimer();
          "Modelica" = parser;
          false=(0==stringLength(filename));
-         print("case Modelica\n");
+         print("\nParsing Modelica with file " + filename + "\n");
         
         // call the lexer
   	    //tokens = LexerModelica.scanString("Hello",true); 
   	    tokens = LexerModelica.scan(filename,false);
   	    
   	    print(Types.printTokens(tokens,""));
+  	    print("\n Tokens processed:");
+  	    print(intString(listLength(tokens)));
   	    // call the parser
-  	   // (ast,astTree) = Parser.parse(tokens,filename);
+  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
   	    // print the AST
-  	  //  printAny(program.astProgram);
+  	    if (result) then
+  	     printAny(astTreeModelica);
+  	    end if;
   	    // Run the machine for exercise 10 
   	   
 	    
 	      
   	   // printAny(astTree);        
   	    print("\nargs:" + filename);
-       // System.stopTimer();
+        System.stopTimer();
        //  print(str::args_1);
-         //printAny(System.getTimerIntervalTime());
+        print("\n Total time:" + realString(System.getTimerIntervalTime()));
          printUsage();
       then ();
    case args as _::_
@@ -110,14 +115,14 @@ algorithm
         // call the lexer
   	   tokens = Lexer10.scan(filename,false); 
   	    // call the parser
-  	    (result,astTree) = Parser10.parse(tokens,filename,false);
+  	    (result,astTree10) = Parser10.parse(tokens,filename,false);
   	    // print the AST
-  	    printAny(astTree);
+  	    printAny(astTree10);
   	    if (result) then
 		  	    
 		  	    // Run the machine for exercise 10 
 		  	    print("\nRun the machine for exercise 10\n");
-		  	    program = astTree;
+		  	    program = astTree10;
 				     mcode = Trans.transProgram(program); 
 			       Emit.emitAssembly(mcode); 
 			     //  print("\n" + ast);
@@ -137,17 +142,17 @@ algorithm
          "" = parser;
           false=(0==stringLength(filename));
         // call the lexer
-  	    tokens = Lexer.scan(filename,true); 
+  	   // tokens = Lexer.scan(filename,true); 
   	    printAny(tokens);
   	    // call the parser
-  	    (result,astTree) = Parser.parse(tokens,filename,false);
+  	   // (result,astTree) = Parser.parse(tokens,filename,false);
   	    // print the AST
   	  //  printAny(program.astProgram);
   	    // Run the machine for exercise 10 
   	    print("\nRun the machine for exercise 10\n");
-  	    program = astTree;
-		     mcode = Trans.transProgram(program); 
-	       Emit.emitAssembly(mcode);
+  	    //program = astTree;
+		    // mcode = Trans.transProgram(program); 
+	      // Emit.emitAssembly(mcode);
 	      // print("\n" + ast);
 	    
 	      
@@ -175,7 +180,7 @@ public function printUsage
   Integer n;
   List<String> strs;
 algorithm
-  print("\nOMCC v0.6.1 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
+  print("\nOMCC v0.8 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
 end printUsage;
 
 protected function readSettings

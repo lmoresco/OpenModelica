@@ -1,5 +1,4 @@
 package %ParseCode% // Generated %time%
-import Absyn;
 import Types;
 
 %prologue%
@@ -30,16 +29,15 @@ function actionRed
   input Integer act;
   input AstStack astStk;
   output AstStack astStk2;
+  Types.Info info;
   // env variables       
   // AstStack 
 %astStackVar%
 
   
 algorithm
- 
- /*  ASTSTACK(identStack=idStk,intStack=inStk,binOpStack=boStk,
-      relOpStack=roStk,expStack=exStk,identLstStack=ilStk,stmtStack=stStk) := astStk; */
-    %GETASTSTACK%  
+   printContentStack(astStk);
+   %GETASTSTACK%  
   (_) := matchcontinue(act,astStk)
     local
       //local variables
@@ -55,15 +53,42 @@ algorithm
   
 end actionRed;  
 
+function getInfo
+  input list<Token> skToken;
+  input Integer nTokens;
+  output Types.Info info;
+  output list<Token> skTokenRes;
+  Token token;
+  Types.Info tmpInfo;
+  Integer lns,cns,lne,cne;
+  String fn;
+algorithm  
+  for i in 1:nTokens loop
+     token::skToken := skToken;
+     Types.TOKEN(loc=info) := token;
+     if (i==nTokens) then
+        Types.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns) := info;
+     end if;
+     if (i==1) then
+        Types.INFO(lineNumberEnd=lne,columnNumberEnd=cne) := info;
+     end if;
+  end for;
+  info := Types.INFO(fn,false,lns,cns,lne,cne,Types.getTimeStamp()); 
+  token := Types.TOKEN("grupped",0,{},info);
+  skTokenRes := token::skToken; 
+end getInfo;
+
 function push
   input AstStack astStk;
   input String inVal;
+  input Types.Token token;
   output AstStack astStk2;
   // AstStack 
 %astStackVar%
 algorithm
  %GETASTSTACK%
-    skString := inVal::skString;
+  skString := inVal::skString;
+  skToken := token::skToken;
   %PUTASTSTACK%
 end push;
 

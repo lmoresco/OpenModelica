@@ -414,7 +414,7 @@ algorithm
           mm_sPos := mm_sPos - 1;
       end if;
   end while;
-  info := Types.INFO(programName,false,mm_linenr,mm_sPos+1,flineNr,frPos+1);
+  info := Types.INFO(programName,false,mm_linenr,mm_sPos+1,flineNr,frPos+1,Types.getTimeStamp());
   /*if (true) then
      print("\nTOKEN file:" +programName + " p(" + intString(mm_sPos) + ":" + intString(mm_linenr) + ")-(" + intString(frPos) + ":" + intString(flineNr) + ")");
   end if; */

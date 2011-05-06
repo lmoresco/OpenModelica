@@ -8,7 +8,8 @@
 
 whitespace   [ \t\n]+
 letter       [a-zA-Z]
-ident        {letter}({letter}|{digit})*
+wild         [_]
+ident        {letter}({letter}|{digit}|{wild})*
 digit        [0-9]
 digits       {digit}+
 /* Lex style lexical syntax of tokens in the MODELICA language */
@@ -83,9 +84,11 @@ digits       {digit}+
 "]" return RBRACK;
 "{" return LBRACE;
 "}" return RBRACE;
+"==" return EQEQ;
 "=" return EQUALS;
-":=" return ASSIGN;
 "," return COMMA;
+":=" return ASSIGN;
+"::" return COLONCOLON;
 ":" return COLON;
 ";" return SEMICOLON;
 
@@ -112,9 +115,23 @@ digits       {digit}+
 "<"  return LESS;
 ">"  return GREATER;
 ">="  return GREATEREQ;
-"==" return EQEQ;
+
 "^" return POWER;
 "/" return SLASH;
+
+"as" return AS;
+"case" return CASE;
+"equality" return EQUALITY;
+"failure" return FAILURE;
+"guard" return GUARD;
+"local" return LOCAL;
+"match" return MATCH;
+"matchcontinue" return MATCHCONTINUE;
+"uniontype" return UNIONTYPE;
+"__" return ALLWILD;
+"_" return WILD;
+"subtypeof" return SUBTYPEOF;
+"\%" return MOD;
 
 "stream" return STREAM;
 
@@ -130,6 +147,7 @@ digits       {digit}+
              }
 <c_string>
 {
+    "\\\""    { keepBuffer; }
     "\""    { BEGIN(INITIAL) return STRING; }
     [^\n]   {keepBuffer;};
     \n       {yyerror("Unterminated string in line")
