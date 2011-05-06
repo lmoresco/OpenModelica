@@ -71,6 +71,7 @@ ModelicaUtilities.mos \
 MyPointsInst1.mos MyPointsInst2.mos \
 ModelBalance1.mos ModelBalance2.mos ModelBalance3.mos \
 nonConstantParam.mos \
+NonLinearMixed.mos \
 OneArgBaseFunction.mos \
 Pendulum.mos \
 PolynomialEvaluatorA.mos PolynomialEvaluatorB.mos \
