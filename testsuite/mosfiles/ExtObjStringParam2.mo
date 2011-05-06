@@ -5,6 +5,7 @@ model ExtObjStringParam2
 
     function constructor
       input String fileName;
+      input String dummy := "";
       output MyData table;
       external "C" table = constructor(fileName) annotation(Include = "#include \"ExtObjStringParam.ext.c\"");
     end constructor;
@@ -25,6 +26,6 @@ model ExtObjStringParam2
   end testMyData;
 
   parameter String DataFile = "sampledata.xml"; 
-  MyData table = MyData(DataFile);
+  MyData table = MyData(DataFile,"");
   Real r1 = testMyData(table,time);
 end ExtObjStringParam2;

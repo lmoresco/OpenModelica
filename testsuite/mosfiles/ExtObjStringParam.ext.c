@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void* constructor(const char* filename)
+void* constructor(const char* filename,const char* dummy)
 {
   /* This is quite unsafe :) */
   printf("constructors says '%s'\n", (char*)filename);
