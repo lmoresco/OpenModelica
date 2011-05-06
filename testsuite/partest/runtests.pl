@@ -33,6 +33,9 @@ use Cwd;
 use File::Path qw(rmtree);
 use MLDBM;
 use Fcntl;
+use Time::HiRes qw( usleep ualarm gettimeofday tv_interval nanosleep
+                      clock_gettime clock_getres clock_nanosleep clock
+                      stat );
 
 my $fast = 0;
 my @test_list;
@@ -63,7 +66,6 @@ sub read_makefile {
     }
     elsif(/^TESTFILES.*=.*$/) { # Found a list of tests, parse them.
       seek($in, -length($_), 1);
-      return if($fast == 1 and $dir ne "./linearize"); # Very fast :D
       parse_testfiles($in, $dir);
     }
   }
@@ -96,15 +98,16 @@ sub add_tests {
 sub run_tests {
   while(defined(my $test_full = $test_queue->dequeue_nb())) {
     (my $test_dir, my $test) = $test_full =~ /(.*)\/([^\/]*)$/;
+    my $t0 = [gettimeofday];
     my $x = system("$testscript $test_full") >> 8;
+    my $elapsed = tv_interval ( $t0, [gettimeofday]);
+    lock(%test_map);
+    $test_map{$test_full} = $elapsed;
     if($x == 0) { # Add the test to the list of failed tests if it failed.
       lock($tests_failed);
       $tests_failed++;
       lock(@failed_tests);
       push @failed_tests, $test_full;
-    } else {
-      lock(%test_map);
-      $test_map{$test_full} = $x;
     }
   }
 }
@@ -122,11 +125,12 @@ chdir("..");
 read_makefile(".");
 
 # Sort most expensive operations first
+@test_list = reverse @test_list;
 @test_list = sort {
   my $la = $test_map{$a};
   my $lb = $test_map{$b};
-  $la = defined($la)?$la:5;
-  $lb = defined($lb)?$lb:5;
+  $la = defined($la) ? $la : 20;
+  $lb = defined($lb) ? $lb : 20;
   $lb <=> $la
 } @test_list;
 
