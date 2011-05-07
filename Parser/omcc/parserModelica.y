@@ -10,15 +10,25 @@ type Class = Absyn.Class;
 type Ident = Absyn.Ident;
 type Path = Absyn.Path;
 type ClassDef  = Absyn.ClassDef;
+type ClassPart = Absyn.ClassPart;
+type ClassParts = list<ClassPart>;
+type Import  = Absyn.Import;
+type ElementItem = Absyn.ElementItem;
+type ElementItems = list<Absyn.ElementItem>;
+type Element = Absyn.Element;
+type ElementSpec = Absyn.ElementSpec;
+type ElementAttributes = Absyn.ElementAttributes;
+type Comment = Absyn.Comment;
+type Direction = Absyn.Direction;
+type Exp = Absyn.Exp;
+type Subscript = Absyn.Subscript;
+type ArrayDim = list<Subscript>;
+type Operator = Absyn.Operator;
 
 constant list<String> lstSemValue2 = {};
 
 constant list<String> lstSemValue = {
-  "error", "$undefined", "T_READ", "T_WRITE", "T_ASSIGN", "T_IF",
-  "T_THEN", "T_ENDIF", "T_ELSE", "T_TO", "T_DO", "T_WHILE", "T_LPAREN",
-  "T_RPAREN", "T_IDENT", "T_INTCONST", "T_EQ", "T_LE", "T_LT", "T_GT",
-  "T_GE", "T_NE", "T_ADD", "T_SUB", "T_MUL", "T_DIV", "T_SEMIC",
-  "T_ALGORITHM", "T_AND", "T_ANNOTATION", "BLOCK", "CLASS", "CONNECT",
+  "error", "$undefined","T_ALGORITHM", "T_AND", "T_ANNOTATION", "BLOCK", "CLASS", "CONNECT",
   "CONNECTOR", "CONSTANT", "DISCRETE", "DER", "DEFINEUNIT", "EACH", "ELSE",
   "ELSEIF", "ELSEWHEN", "T_END", "ENUMERATION", "EQUATION", "ENCAPSULATED",
   "EXPANDABLE", "EXTENDS", "CONSTRAINEDBY", "EXTERNAL", "T_FALSE", "FINAL",
@@ -34,35 +44,13 @@ constant list<String> lstSemValue = {
   "EQEQ", "POWER", "SLASH", "STRING", "PLUS_EW", "MINUS_EW", "STAR_EW",
   "SLASH_EW", "POWER_EW", "STREAM", "AS", "CASE", "EQUALITY", "FAILURE",
   "GUARD", "LOCAL", "MATCH", "MATCHCONTINUE", "UNIONTYPE", "ALLWILD",
-  "WILD", "SUBTYPEOF", "COLONCOLON", "MOD" };
+  "WILD", "SUBTYPEOF", "COLONCOLON", "MOD", "$accept", "program", "within",
+  "classes_list", "class", "classdef", "classparts", "classpart",
+  "elementItems", "elementItem", "element", "elementspec", "import",
+  "path", "Ident", "comment"};
 
 %}
 
-%token T_READ
-%token T_WRITE
-%token T_ASSIGN
-%token T_IF
-%token T_THEN
-%token T_ENDIF
-%token T_ELSE
-%token T_TO
-%token T_DO
-%token T_WHILE
-%token T_LPAREN
-%token T_RPAREN
-%token T_IDENT
-%token T_INTCONST
-%token T_EQ
-%token T_LE
-%token T_LT
-%token T_GT
-%token T_GE
-%token T_NE
-%token T_ADD
-%token T_SUB
-%token T_MUL
-%token T_DIV
-%token T_SEMIC
 %token T_ALGORITHM 
 %token T_AND 
 %token T_ANNOTATION 
@@ -181,9 +169,13 @@ constant list<String> lstSemValue = {
 %token COLONCOLON
 %token MOD
 
+%expect 6
+
+
+
 %%
 
-/* Yacc BNF grammar of the PAM language */
+/* Yacc BNF grammar of the Modelica+MetaModelica language */
 
 program             :  classes_list 
                                 { (absyntree)[Program] = Absyn.PROGRAM($1[lstClass],Absyn.TOP(),Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime())); }
@@ -191,41 +183,132 @@ program             :  classes_list
                                 { (absyntree)[Program] = Absyn.PROGRAM($2[lstClass],$1[Within],Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime())); }
                                
 
-within              :  WITHIN path { $$[Within] = Absyn.WITHIN($2[Path]); }
+within              :  WITHIN path SEMICOLON { $$[Within] = Absyn.WITHIN($2[Path]); }
 
 classes_list            : class { $$[lstClass] = $1[Class]::{}; } 
                         | class classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
 
-class                      : CLASS Ident classdef T_END Ident SEMICOLON
+class                      : CLASS ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_CLASS(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }
-                           | MODEL Ident classdef T_END Ident SEMICOLON
+                           | PARTIAL CLASS ident classdef T_END ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],true,false,false,Absyn.R_CLASS(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }
+                           | FINAL CLASS ident classdef T_END ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,true,false,Absyn.R_CLASS(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }
+                           | ENCAPSULATED CLASS ident classdef T_END ident SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,true,Absyn.R_CLASS(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }
+                           | MODEL ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_MODEL(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | RECORD Ident classdef T_END Ident SEMICOLON
+                           | RECORD ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_RECORD(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | T_PACKAGE Ident classdef T_END Ident SEMICOLON
+                           | T_PACKAGE ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_PACKAGE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | FUNCTION Ident classdef T_END Ident SEMICOLON
+                           | FUNCTION ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_FUNCTION(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | TYPE Ident classdef T_END Ident SEMICOLON
-                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_TYPE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | UNIONTYPE Ident classdef T_END Ident SEMICOLON
+                           | TYPE ident classdef SEMICOLON
+                                { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_TYPE(),$3[ClassDef],info); }      
+                           | UNIONTYPE ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_UNIONTYPE(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | BLOCK Ident classdef T_END Ident SEMICOLON
+                           | BLOCK ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_BLOCK(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | CONNECTOR Ident classdef T_END Ident SEMICOLON
+                           | CONNECTOR ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_CONNECTOR(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           | ENUMERATION Ident classdef T_END Ident SEMICOLON
+                           | ENUMERATION ident classdef T_END ident SEMICOLON
                                 { $$[Class] = Absyn.CLASS($2[Ident],false,false,false,Absyn.R_ENUMERATION(),$3[ClassDef],info); true=($5[Ident] == $2[Ident]); }      
-                           
+
+
+                            
 classdef             : path { $$[ClassDef] = Absyn.OVERLOAD({$1[Path]},NONE());}
+                      | path comment { $$[ClassDef] = Absyn.OVERLOAD({$1[Path]},SOME($2[Comment])); }
+                      | classparts { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); }
+
+classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
+                      | classpart classparts { $$[ClassParts] = $1[ClassPart]::$2[ClassParts]; }
+
+classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
+
+elementItems           : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
+                      | elementItem elementItems { $$[ElementItems] = $1[ElementItem]::$2[ElementItems]; }
+
+elementItem         : element { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
+
+element             : elementspec { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.INNER(),"",$1[ElementSpec],info,NONE()); }
+
+elementspec         : import { $$[ElementSpec] = Absyn.IMPORT($1[Import],NONE(),info); }
+                     | elementattributes { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],Absyn.TPATH(Absyn.IDENT(""),NONE()),{}); }
+
+elementattributes   : direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],$2[ArrayDim]); }
+                     | arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),$1[ArrayDim]); }   
+                     | PARAMETER arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.PARAM(), Absyn.BIDIR(),$1[ArrayDim]); }   
+                     | CONSTANT arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.CONST(), Absyn.BIDIR(),$1[ArrayDim]); }   
+                     
+arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
+                     | exp COLON arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
+
+direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); } 
+                     | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }                                       
+
+import              : IMPORT path SEMICOLON { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
 path                 : IDENT { $$[Path] = Absyn.IDENT($1); }
                                 
-Ident                  :  IDENT
-                                { $$[Ident] = $1; }
+ident                  :  IDENT { $$[Ident] = $1; }
 
-constant                :  DIGIT
-                                { $$[Integer] = $1; }
+comment                : STRING { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
+                       
+exp					: logicexp { $$[Exp] = $1[Exp]; }
+
+logicexp          : logicterm { $$[Exp] = $1[Exp]; }
+                   | logicterm T_OR logicterm { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.OR(),$2[Exp]); }
+
+logicterm          : logfactor { $$[Exp] = $1[Exp]; }
+                   | logfactor T_AND logfactor { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.AND(),$2[Exp]); }
+
+logfactor         : T_NOT relterm { $$[Exp] = Absyn.LUNARY(Absyn.NOT(),$1[Exp]); }  
+
+relterm            : addterm { $$[Exp] = $1[Exp]; }
+                   | addterm relOperator addterm { $$[Exp] = Absyn.RELATION($1[Exp],$2[Operator],$3[Exp]); }
+
+addterm             : term { $$[Exp] = $1[Exp]; }
+                    | woperator term { $$[Exp] = Absyn.UNARY($1[Operator],$2[Exp]); }
+                    | term woperator term { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
+
+
+term               : factor { $$[Exp] = $1[Exp]; }
+					| factor soperator factor { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
+
+factor              : expElement { $$[Exp] = $1[Exp]; }
+					| expElement power expElement { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                    
+
+expElement          : constant { $$[Exp] = Absyn.INTEGER($1[Integer]); }
+                     | name { $$[Exp] = Absyn.INTEGER($1[Integer]); }
+                     | T_FALSE { $$[Exp] = Absyn.BOOL(false); }
+                     | T_TRUE { $$[Exp] = Absyn.BOOL(true); }
+                     | STRING { $$[Exp] = Absyn.STRING($1); }
+                     
+name                : ident { $$[Ident] = $1[Ident]; }
+                     
+woperator			: PLUS { $$[Operator] = Absyn.ADD(); }
+                     | MINUS { $$[Operator] = Absyn.SUB(); }
+                     |  PLUS_EW { $$[Operator] = Absyn.ADD_EW(); }
+                     | MINUS_EW { $$[Operator] = Absyn.SUB_EW(); }
+                    
+
+soperator			: STAR { $$[Operator] = Absyn.MUL(); }
+                     | SLASH { $$[Operator] = Absyn.DIV(); }
+                     | STAR_EW { $$[Operator] = Absyn.MUL_EW(); }
+                     | SLASH_EW { $$[Operator] = Absyn.DIV_EW(); }
+
+power              : POWER  { $$[Operator] = Absyn.POW(); } 
+                     | POWER_EW { $$[Operator] = Absyn.POW_EW(); }                                         
+
+relOperator			: LESS { $$[Operator] = Absyn.LESS(); }
+                     | LESSEQ { $$[Operator] = Absyn.LESSEQ(); }
+                     | GREATER { $$[Operator] = Absyn.GREATER(); }
+                     | GREATEREQ { $$[Operator] = Absyn.GREATEREQ(); }
+                     | EQEQ { $$[Operator] = Absyn.EQUAL(); }
+                     | LESSGT { $$[Operator] = Absyn.NEQUAL(); }
+                                                           
+constant                :  DIGIT { $$[Integer] = $1; }
 
 
 %%
