@@ -153,6 +153,7 @@ package ParserGenerator
 		    re := "case " + intString(i) + ":";
 		    if (debug==true) then
 		       print("\n" + re);
+		       //printAny("\n" + re);  
 		    end if;   
 		    rest := System.stringFindString(bisonCode,re);
 		     
@@ -191,8 +192,7 @@ package ParserGenerator
         resTable := listReverse(resTable);
         caseAction := stringCharListString(resTable);
        
-        
-    
+      
      // generate variables and typesStack
      astStack := "";
      astStack := "";
