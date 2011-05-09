@@ -498,14 +498,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed
@@ -562,16 +562,16 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real opAmp.x(quantity = \"ElectricPotential\", unit = \"V\") \"auxiliary variable for slew rate\";
 //   Real opAmp.v_out(quantity = \"ElectricPotential\", unit = \"V\");
 //   Real opAmp.i_out(quantity = \"ElectricCurrent\", unit = \"A\");
-//   parameter Real opAmp.I1(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib + opAmp.Ios / 2.0;
-//   parameter Real opAmp.I2(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib - opAmp.Ios / 2.0;
-//   parameter Real opAmp.vcp_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcp);
-//   parameter Real opAmp.vcm_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcm);
-//   parameter Real opAmp.Avd0_val = 10.0 ^ (opAmp.Avd0 / 20.0) \"differential mode gain\";
-//   parameter Real opAmp.sr_p_val(quantity = \"VoltageSlope\", unit = \"V/s\") = abs(opAmp.sr_p);
-//   parameter Real opAmp.sr_m_val(quantity = \"VoltageSlope\", unit = \"V/s\") = -abs(opAmp.sr_m);
-//   parameter Real opAmp.Imaxso_val(quantity = \"ElectricCurrent\", unit = \"A\") = abs(opAmp.Imaxso) \"orientation out outp\";
-//   parameter Real opAmp.Imaxsi_val(quantity = \"ElectricCurrent\", unit = \"A\") = abs(opAmp.Imaxsi) \"orientation into outp\";
-//   parameter Real opAmp.Avcm_val = (opAmp.Avd0_val * 10.0 ^ ((-opAmp.CMRR) / 20.0)) / 2.0 \"common mode gain\";
+//   final parameter Real opAmp.I1(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib + opAmp.Ios / 2.0;
+//   final parameter Real opAmp.I2(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib - opAmp.Ios / 2.0;
+//   final parameter Real opAmp.vcp_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcp);
+//   final parameter Real opAmp.vcm_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcm);
+//   final parameter Real opAmp.Avd0_val = 10.0 ^ (opAmp.Avd0 / 20.0) \"differential mode gain\";
+//   final parameter Real opAmp.sr_p_val(quantity = \"VoltageSlope\", unit = \"V/s\") = abs(opAmp.sr_p);
+//   final parameter Real opAmp.sr_m_val(quantity = \"VoltageSlope\", unit = \"V/s\") = -abs(opAmp.sr_m);
+//   final parameter Real opAmp.Imaxso_val(quantity = \"ElectricCurrent\", unit = \"A\") = abs(opAmp.Imaxso) \"orientation out outp\";
+//   final parameter Real opAmp.Imaxsi_val(quantity = \"ElectricCurrent\", unit = \"A\") = abs(opAmp.Imaxsi) \"orientation into outp\";
+//   final parameter Real opAmp.Avcm_val = (opAmp.Avd0_val * 10.0 ^ ((-opAmp.CMRR) / 20.0)) / 2.0 \"common mode gain\";
 //   Real resistor.v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real resistor.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real resistor.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -816,14 +816,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Sources.SineVoltage
@@ -867,21 +867,21 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Sources.ExpSineVoltage
@@ -927,7 +927,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.exp;
 // 
 // class Modelica.Electrical.Analog.Sources.ExponentialsVoltage
@@ -1270,14 +1270,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Sources.SineCurrent
@@ -1321,21 +1321,21 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Analog.Sources.ExpSineCurrent
@@ -1381,7 +1381,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   input Real u;
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.exp;
 // 
 // class Modelica.Electrical.Analog.Sources.ExponentialsCurrent

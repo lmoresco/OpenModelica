@@ -22,7 +22,7 @@ getErrorString();
 //   input Integer colWise;
 //   output Integer tableID;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -31,21 +31,21 @@ getErrorString();
 //   input Real timeIn;
 //   output Real value;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
 //   output Real Tmax \"maximum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
 //   output Real Tmin \"minimum time value in table\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // function Modelica.SIunits.Conversions.from_degC
@@ -131,13 +131,13 @@ getErrorString();
 //   parameter Integer lossTable.extrapolation = 2 \"extrapolation of data outside the definition range\";
 //   parameter Real lossTable.offset[1] = 0.0 \"Offsets of output signals\";
 //   parameter Real lossTable.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
-//   parameter Real lossTable.t_min(fixed = false);
-//   parameter Real lossTable.t_max(fixed = false);
+//   final parameter Real lossTable.t_min(fixed = false);
+//   final parameter Real lossTable.t_max(fixed = false);
 //   protected Integer lossTable.tableID;
 //   parameter Integer lossTable.columns[1] = 2 \"columns of table to be interpolated\";
 //   parameter Integer lossTable.columns[2] = 3 \"columns of table to be interpolated\";
-//   protected parameter Real lossTable.p_offset[1] = lossTable.offset[1];
-//   protected parameter Real lossTable.p_offset[2] = lossTable.offset[1];
+//   protected final parameter Real lossTable.p_offset[1] = lossTable.offset[1];
+//   protected final parameter Real lossTable.p_offset[2] = lossTable.offset[1];
 // initial equation
 //   lossTable.t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(lossTable.tableID);
 //   lossTable.t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(lossTable.tableID);

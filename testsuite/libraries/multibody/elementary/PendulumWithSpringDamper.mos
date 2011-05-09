@@ -37,21 +37,21 @@ getErrorString();
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.cos
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.cos;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent
@@ -107,9 +107,9 @@ getErrorString();
 // end Modelica.Mechanics.MultiBody.Frames.Internal.resolve2_der;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"
-// input Real[3, 3] T;
-// input Real(quantity=\"AngularVelocity\", unit=\"rad/s\")[3] w;
-// output Orientation res;
+//   input Real[3, 3] T;
+//   input Real(quantity=\"AngularVelocity\", unit=\"rad/s\")[3] w;
+//   output Orientation res;
 // end Modelica.Mechanics.MultiBody.Frames.Orientation;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation.equalityConstraint \"Inline before index reduction\"
@@ -1674,27 +1674,27 @@ getErrorString();
 //   protected output Real body1.cylinder.size[3](quantity = \"Length\", unit = \"m\") \"{length,width,height} of shape\";
 //   protected output Real body1.cylinder.Material;
 //   protected output Real body1.cylinder.Extra;
-//   parameter Real body1.I[1,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_11 \"inertia tensor\";
-//   parameter Real body1.I[1,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_21 \"inertia tensor\";
-//   parameter Real body1.I[1,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_31 \"inertia tensor\";
-//   parameter Real body1.I[2,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_21 \"inertia tensor\";
-//   parameter Real body1.I[2,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_22 \"inertia tensor\";
-//   parameter Real body1.I[2,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_32 \"inertia tensor\";
-//   parameter Real body1.I[3,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_31 \"inertia tensor\";
-//   parameter Real body1.I[3,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_32 \"inertia tensor\";
-//   parameter Real body1.I[3,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_33 \"inertia tensor\";
-//   parameter Real body1.R_start.T[1,1] = 1.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[1,2] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[1,3] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[2,1] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[2,2] = 1.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[2,3] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[3,1] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[3,2] = 0.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.T[3,3] = 1.0 \"Transformation matrix from world frame to local frame\";
-//   parameter Real body1.R_start.w[1](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
-//   parameter Real body1.R_start.w[2](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
-//   parameter Real body1.R_start.w[3](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
+//   final parameter Real body1.I[1,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_11 \"inertia tensor\";
+//   final parameter Real body1.I[1,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_21 \"inertia tensor\";
+//   final parameter Real body1.I[1,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_31 \"inertia tensor\";
+//   final parameter Real body1.I[2,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_21 \"inertia tensor\";
+//   final parameter Real body1.I[2,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_22 \"inertia tensor\";
+//   final parameter Real body1.I[2,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_32 \"inertia tensor\";
+//   final parameter Real body1.I[3,1](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_31 \"inertia tensor\";
+//   final parameter Real body1.I[3,2](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_32 \"inertia tensor\";
+//   final parameter Real body1.I[3,3](quantity = \"MomentOfInertia\", unit = \"kg.m2\") = body1.I_33 \"inertia tensor\";
+//   final parameter Real body1.R_start.T[1,1] = 1.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[1,2] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[1,3] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[2,1] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[2,2] = 1.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[2,3] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[3,1] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[3,2] = 0.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.T[3,3] = 1.0 \"Transformation matrix from world frame to local frame\";
+//   final parameter Real body1.R_start.w[1](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
+//   final parameter Real body1.R_start.w[2](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
+//   final parameter Real body1.R_start.w[3](quantity = \"AngularVelocity\", unit = \"rad/s\") = 0.0 \"Absolute angular velocity of local frame, resolved in local frame\";
 //   parameter Real body1.cylinderDiameter(quantity = \"Length\", unit = \"m\", min = 0.0) = 0.05 \"Diameter of cylinder\";
 //   parameter String body1.sphere.shapeType = \"sphere\" \"Type of shape (box, sphere, cylinder, pipecylinder, cone, pipe, beam, gearwheel, spring)\";
 //   input Real body1.sphere.R.T[1,1] \"Transformation matrix from world frame to local frame\";
@@ -1754,9 +1754,9 @@ getErrorString();
 //   protected output Real body1.sphere.size[3](quantity = \"Length\", unit = \"m\") \"{length,width,height} of shape\";
 //   protected output Real body1.sphere.Material;
 //   protected output Real body1.sphere.Extra;
-//   parameter Real body1.z_a_start[1](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[1] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
-//   parameter Real body1.z_a_start[2](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[2] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
-//   parameter Real body1.z_a_start[3](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[3] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
+//   final parameter Real body1.z_a_start[1](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[1] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
+//   final parameter Real body1.z_a_start[2](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[2] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
+//   final parameter Real body1.z_a_start[3](quantity = \"AngularAcceleration\", unit = \"rad/s2\") = Modelica.Mechanics.MultiBody.Frames.resolve2(body1.R_start,{body1.z_0_start[1],body1.z_0_start[2],body1.z_0_start[3]})[3] \"Initial values of angular acceleration z_a = der(w_a), i.e., time derivative of angular velocity resolved in frame_a\";
 //   protected parameter Real body1.Q_start[1] = Modelica.Mechanics.MultiBody.Frames.to_Q(body1.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[1] \"Quaternion orientation object from world frame to frame_a at initial time\";
 //   protected parameter Real body1.Q_start[2] = Modelica.Mechanics.MultiBody.Frames.to_Q(body1.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[2] \"Quaternion orientation object from world frame to frame_a at initial time\";
 //   protected parameter Real body1.Q_start[3] = Modelica.Mechanics.MultiBody.Frames.to_Q(body1.R_start,Modelica.Mechanics.MultiBody.Frames.Quaternions.nullRotation())[3] \"Quaternion orientation object from world frame to frame_a at initial time\";
@@ -2438,9 +2438,9 @@ getErrorString();
 //   protected output Real prismatic.box.size[3](quantity = \"Length\", unit = \"m\") \"{length,width,height} of shape\";
 //   protected output Real prismatic.box.Material;
 //   protected output Real prismatic.box.Extra;
-//   parameter Real prismatic.e[1](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[1] \"Unit vector in direction of prismatic axis n\";
-//   parameter Real prismatic.e[2](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[2] \"Unit vector in direction of prismatic axis n\";
-//   parameter Real prismatic.e[3](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[3] \"Unit vector in direction of prismatic axis n\";
+//   final parameter Real prismatic.e[1](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[1] \"Unit vector in direction of prismatic axis n\";
+//   final parameter Real prismatic.e[2](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[2] \"Unit vector in direction of prismatic axis n\";
+//   final parameter Real prismatic.e[3](unit = \"1\") = Modelica.Math.Vectors.normalize({prismatic.n[1],prismatic.n[2],prismatic.n[3]},1e-13)[3] \"Unit vector in direction of prismatic axis n\";
 //   parameter Real prismatic.boxHeight(quantity = \"Length\", unit = \"m\", min = 0.0) = prismatic.boxWidth \"Height of prismatic joint box\";
 // equation
 //   world.x_arrowLine.Form = 9.87e+25 + 1e+20 * Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackShape(world.x_arrowLine.shapeType);
