@@ -30,10 +30,11 @@ type MatchType = Absyn.MatchType;
 type Restriction = Absyn.Restriction;
 type InnerOuter = Absyn.InnerOuter;
 type ComponentRef = Absyn.ComponentRef;
+type Variability = Absyn.Variability;
 
-constant list<String> lstSemValue2 = {};
+constant list<String> lstSemValue = {};
 
-constant list<String> lstSemValue = {
+constant list<String> lstSemValue3 = {
   "error", "$undefined","T_ALGORITHM", "T_AND", "T_ANNOTATION", "BLOCK", "CLASS", "CONNECT",
   "CONNECTOR", "CONSTANT", "DISCRETE", "DER", "DEFINEUNIT", "EACH", "ELSE",
   "ELSEIF", "ELSEWHEN", "T_END", "ENUMERATION", "EQUATION", "ENCAPSULATED",
@@ -136,7 +137,8 @@ constant list<String> lstSemValue = {
 %token PURE 
 %token IMPURE
 %token IDENT
-%token DIGIT 
+%token DIGIT
+%token UNSIGNED_INTEGER
 
 %token  STAR
 %token  MINUS
@@ -175,7 +177,7 @@ constant list<String> lstSemValue = {
 %token COLONCOLON
 %token MOD
 
-%expect 45
+//%expect 35
 
 
 
@@ -193,35 +195,48 @@ within              :  WITHIN path SEMICOLON { $$[Within] = Absyn.WITHIN($2[Path
 
 classes_list            : class { $$[lstClass] = $1[Class]::{}; } 
                         | class classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
-
-class                      : restriction IDENT classdef T_END IDENT SEMICOLON
+                          /* restriction IDENT classdef T_END IDENT SEMICOLON
+                                { if (not stringEqual($2,$5) ) then print(Types.printInfoError(info) + " Error: The identifier at start and end are different '" + $2 + "'");
+                                   true = ($2 == $5);
+                                  end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
+                          */
+class                      : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
-                           | PARTIAL restriction IDENT classdef T_END IDENT SEMICOLON
-                                { $$[Class] = Absyn.CLASS($2,true,false,false,$1[Restriction],$3[ClassDef],info); }
-                           | FINAL restriction IDENT classdef T_END IDENT SEMICOLON
-                                { $$[Class] = Absyn.CLASS($2,false,true,false,$1[Restriction],$3[ClassDef],info); }
-                           | ENCAPSULATED restriction IDENT classdef T_END IDENT SEMICOLON
-                                { $$[Class] = Absyn.CLASS($2,false,false,true,$1[Restriction],$3[ClassDef],info); }
+                           | PARTIAL restriction IDENT classdef 
+                                { $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); }
+                           | FINAL restriction IDENT classdef
+                                { $$[Class] = Absyn.CLASS($3,false,true,false,$2[Restriction],$4[ClassDef],info); }
+                           | ENCAPSULATED restriction IDENT classdef 
+                                { $$[Class] = Absyn.CLASS($3,false,false,true,$2[Restriction],$4[ClassDef],info); }
+                           | FINAL ENCAPSULATED restriction IDENT classdef 
+                                { $$[Class] = Absyn.CLASS($4,true,true,false,$3[Restriction],$5[ClassDef],info); }
+                           | FINAL PARTIAL restriction IDENT classdef
+                                { $$[Class] = Absyn.CLASS($4,true,false,true,$3[Restriction],$5[ClassDef],info); }
+                           | ENCAPSULATED PARTIAL restriction IDENT classdef
+                                { $$[Class] = Absyn.CLASS($4,false,true,true,$3[Restriction],$5[ClassDef],info); }
+                           | FINAL ENCAPSULATED PARTIAL restriction IDENT classdef 
+                                { $$[Class] = Absyn.CLASS($5,true,true,true,$4[Restriction],$6[ClassDef],info); } 
+                        
+
                            
 restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
-						| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
-						| RECORD { $$[Restriction] = Absyn.R_RECORD(); }
-						| T_PACKAGE { $$[Restriction] = Absyn.R_PACKAGE(); }
-						| TYPE { $$[Restriction] = Absyn.R_TYPE(); }
-						| FUNCTION { $$[Restriction] = Absyn.R_FUNCTION(); }
-						| UNIONTYPE { $$[Restriction] = Absyn.R_UNIONTYPE(); }
-						| BLOCK { $$[Restriction] = Absyn.R_BLOCK(); }
-						| CONNECTOR { $$[Restriction] = Absyn.R_CONNECTOR(); }
-						| EXPANDABLE CONNECTOR { $$[Restriction] = Absyn.R_EXP_CONNECTOR(); }
-						| ENUMERATION { $$[Restriction] = Absyn.R_ENUMERATION(); }
-						| OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
-						| OPERATOR FUNCTION { $$[Restriction] = Absyn.R_OPERATOR_FUNCTION(); }
-						| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
-
-//class_specifier		: IDENT comment composition T_END IDENT SEMICOLON { $$ = 1$; }
-                            
-classdef             : classparts { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); }
-                     | STRING classparts { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+					| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
+					| RECORD { $$[Restriction] = Absyn.R_RECORD(); }
+					| T_PACKAGE { $$[Restriction] = Absyn.R_PACKAGE(); }
+					| TYPE { $$[Restriction] = Absyn.R_TYPE(); }
+					| FUNCTION { $$[Restriction] = Absyn.R_FUNCTION(); }
+					| UNIONTYPE { $$[Restriction] = Absyn.R_UNIONTYPE(); }
+					| BLOCK { $$[Restriction] = Absyn.R_BLOCK(); }
+					| CONNECTOR { $$[Restriction] = Absyn.R_CONNECTOR(); }
+					| EXPANDABLE CONNECTOR { $$[Restriction] = Absyn.R_EXP_CONNECTOR(); }
+					| ENUMERATION { $$[Restriction] = Absyn.R_ENUMERATION(); }
+					| OPERATOR FUNCTION { $$[Restriction] = Absyn.R_OPERATOR_FUNCTION(); }
+					| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
+	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
+						
+classdef             : classparts T_END IDENT SEMICOLON { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
+                     | STRING classparts T_END IDENT SEMICOLON { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+                    // | EQUALS variability
 
 classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
                       | classpart classparts { $$[ClassParts] = $1[ClassPart]::$2[ClassParts]; }
@@ -229,8 +244,9 @@ classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
 classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                      | restClass { $$[ClassPart] = $1[ClassPart]; }
                      
+                     
 restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
-                        | PROTECTED elementItems { $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
+                        | PROTECTED elementItems { print("test"); $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
                        /* | EQUATION elementItems { $$[ClassPart] = Absyn.EQUATIONS($1[ElementItems]); }  
                         | T_ALGORITHM elementItems { $$[ClassPart] = Absyn.ALGORITHMS($1[ElementItems]); } 
                         | EXTERNAL externalDecl annotation    */
@@ -244,7 +260,7 @@ element             : innerouter elementspec { $$[Element] = Absyn.ELEMENT(true,
                     | elementspec { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"",$1[ElementSpec],info,NONE()); }
                   
 
-innerouter			: INNER { $$[InnerOuter] = Absyn.INNER(); }
+innerouter		 : INNER { $$[InnerOuter] = Absyn.INNER(); }
                      | T_OUTER { $$[InnerOuter] = Absyn.OUTER(); }
                      | INNER T_OUTER { $$[InnerOuter] = Absyn.INNER_OUTER(); }
                      
@@ -254,29 +270,38 @@ elementspec         : import { $$[ElementSpec] = Absyn.IMPORT($1[Import],NONE(),
                      | REPLACEABLE class { $$[ElementSpec] = Absyn.CLASSDEF(true,$2[Class]); }
                      | class { $$[ElementSpec] = Absyn.CLASSDEF(false,$1[Class]); }
 
-elementattributes   : direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],$2[ArrayDim]); }
-                     | arrayDim   { $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),$1[ArrayDim]); }   
-                     | PARAMETER arrayDim  {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.PARAM(), Absyn.BIDIR(),$1[ArrayDim]); }   
-                     | CONSTANT arrayDim  {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.CONST(), Absyn.BIDIR(),$1[ArrayDim]); }   
+elementattributes   :   arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),$1[ArrayDim]); }
+                      | direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],$2[ArrayDim]); }
+                      | variability arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], Absyn.BIDIR(),$2[ArrayDim]); }
+                      | variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], $2[Direction],$3[ArrayDim]); }
+                      | FLOW variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(true,false,$1[Variability], $2[Direction],$3[ArrayDim]); }
+                      | STREAM variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,true,$1[Variability], $2[Direction],$3[ArrayDim]); }
 
+                       
+variability          : PARAMETER { $$[Variability] = Absyn.PARAM(); } 
+                      | CONSTANT { $$[Variability] = Absyn.CONST(); } 
+                      | DISCRETE { $$[Variability] = Absyn.DISCRETE(); }
+                      //| /* empty */ { $$[Variability] = Absyn.VAR(); } 
+
+arraySubscripts     : LBRACK arrayDim RBRACK { $$[ArrayDim] = $1[ArrayDim]; }                    
                      
 arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
-                     | exp COLON arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
+                     | exp COMMA arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
 
 direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); } 
-                     | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }                                       
+                     | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }
+                    // | /* empty */ { $$[Direction] = Absyn.BIDIR(); }
+
+
+                                                            
 
 import              : IMPORT path SEMICOLON { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
-path                 : IDENT { $$[Path] = Absyn.IDENT($1); }
+path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
+                      | ident DOT path { $$[Path] = Absyn.QUALIFIED($1[Ident],$2[Path]); }
+                      | DOT path { $$[Path] = Absyn.FULLYQUALIFIED($2[Path]); } 
                                 
-ident                  :  IDENT { $$[Ident] = $1; }
-                       | ident dotident { $$[Ident] = $1 + $2; }
-
-dotident               : DOT IDENT { $$[Ident] = $1; }
-
-//componentreference    : WILD { $$[ComponentRef] = Absyn.WILD();}    
-//                        | ALLWILD { $$[ComponentRef] = Absyn.ALLWILD();}                       
+ident                  :  IDENT { $$[Ident] = $1; }                      
 
 //comment                : STRING { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
                      
@@ -316,13 +341,21 @@ term               : factor { $$[Exp] = $1[Exp]; }
 factor              : expElement { $$[Exp] = $1[Exp]; }
 					| expElement power expElement { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                    
 
-expElement          : constant { $$[Exp] = Absyn.INTEGER($1[Integer]); }
-                     | name { $$[Exp] = Absyn.CREF(Absyn.CREF_IDENT($1[Ident],{})); }
+expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1)); }
+                     | cref { $$[Exp] = Absyn.CREF($1[ComponentRef]); }
                      | T_FALSE { $$[Exp] = Absyn.BOOL(false); }
                      | T_TRUE { $$[Exp] = Absyn.BOOL(true); }
                      | STRING { $$[Exp] = Absyn.STRING($1); }
+                     |  UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); } 
+                    // | name { $$[Exp] = Absyn.CREF($1[ComponentRef]); }
                      
-name                : ident { $$[Ident] = $1[Ident]; }
+cref                : ident { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],{}); }
+                     | ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
+                     | ident DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],{},$3[ComponentRef]); }
+                     | ident arraySubscripts DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],$2[ArrayDim],$4[ComponentRef]); }  
+                     | DOT cref  { $$[ComponentRef] = Absyn.CREF_FULLYQUALIFIED($2[ComponentRef]); }
+                     | WILD { $$[ComponentRef] = Absyn.WILD();}    
+                     | ALLWILD { $$[ComponentRef] = Absyn.ALLWILD();}                   
                      
 woperator			: PLUS { $$[Operator] = Absyn.ADD(); }
                      | MINUS { $$[Operator] = Absyn.SUB(); }
@@ -345,7 +378,7 @@ relOperator			: LESS { $$[Operator] = Absyn.LESS(); }
                      | EQEQ { $$[Operator] = Absyn.EQUAL(); }
                      | LESSGT { $$[Operator] = Absyn.NEQUAL(); }
                                                            
-constant                :  DIGIT { $$[Integer] = $1; }
+                     
 
 
 %%
