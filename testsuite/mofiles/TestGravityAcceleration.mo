@@ -108,14 +108,14 @@ end TestGravityAcceleration;
 // end TestGravityAcceleration.w__gravityAcceleration;
 // 
 // Result:
-// function Math.length
+// function Math.length "Return length of a vectorReturn length of a vector (better as norm(), if further symbolic processing is performed)"
 //   input Real[:] v "Vector";
 //   output Real result "Length of vector v";
 // algorithm
 //   result := sqrt(v * v);
 // end Math.length;
 // 
-// function Math.normalize
+// function Math.normalize "Return normalized vector such that length = 1Return normalized vector such that length = 1 and prevent zero-division for zero vector"
 //   input Real[:] v "Vector";
 //   input Real eps = 1e-13 "if |v| < eps then result = v/eps";
 //   output Real[size(v,1)] result "Input vector v normalized to length=1";
@@ -123,7 +123,7 @@ end TestGravityAcceleration;
 //   result := if Math.length(v) >= eps then v / Math.length(v) else v / eps;
 // end Math.normalize;
 // 
-// function TestGravityAcceleration.w__gravityAcceleration
+// function TestGravityAcceleration.w__gravityAcceleration "Gravity field acceleration depending on field type and position"
 //   input Real[3] r "Position vector from world frame to actual point, resolved in world frame";
 //   input enumeration(NoGravity, UniformGravity, PointGravity) gravityType "Type of gravity field";
 //   input Real[3] g "Constant gravity acceleration, resolved in world frame, if gravityType=1";

@@ -11,7 +11,7 @@ instantiateModel(BondLib_Examples_ModelicaSpice_NandGate_TestNand);
 getErrorString();
 // Result:
 // true
-// "function BondLib.Spice.Utilities.MOSeq3
+// "function BondLib.Spice.Utilities.MOSeq3 \"Computation of injected drain-source current for Level=3\"
 //   input Real vds(quantity = \"ElectricPotential\", unit = \"V\") \"Drain-source voltage\";
 //   input Real vgs(quantity = \"ElectricPotential\", unit = \"V\") \"Gate-source voltage\";
 //   input Real vbs(quantity = \"ElectricPotential\", unit = \"V\") \"Bulk-source voltage\";

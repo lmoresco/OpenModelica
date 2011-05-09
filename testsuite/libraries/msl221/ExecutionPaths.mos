@@ -11,7 +11,7 @@ instantiateModel(Modelica.StateGraph.Examples.ExecutionPaths);
 getErrorString();
 // Result:
 // true
-// "function Modelica.StateGraph.Temporary.allTrue
+// "function Modelica.StateGraph.Temporary.allTrue \"Returns true, if all elements of the Boolean input vector are true\"
 //   input Boolean[:] b;
 //   output Boolean result;
 // algorithm
@@ -21,7 +21,7 @@ getErrorString();
 //   end for;
 // end Modelica.StateGraph.Temporary.allTrue;
 // 
-// function Modelica.StateGraph.Temporary.anyTrue
+// function Modelica.StateGraph.Temporary.anyTrue \"Returns true, if at least on element of the Boolean input vector is true\"
 //   input Boolean[:] b;
 //   output Boolean result;
 // algorithm

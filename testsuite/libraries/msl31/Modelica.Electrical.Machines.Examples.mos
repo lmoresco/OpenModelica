@@ -6939,7 +6939,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 314 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor
+// "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor \"Conversion: three phase -> space phasor\"
 //   constant Integer m = 3 \"number of phases\";
 //   constant Real pi = 3.14159265358979;
 //   input Real[3] x;
@@ -8964,7 +8964,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 // 67 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor
+// "function Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor \"Conversion: three phase -> space phasor\"
 //   constant Integer m = 3 \"number of phases\";
 //   constant Real pi = 3.14159265358979;
 //   input Real[3] x;

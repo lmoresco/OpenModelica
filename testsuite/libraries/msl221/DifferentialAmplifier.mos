@@ -12,7 +12,7 @@ getErrorString();
 
 // Result:
 // true
-// "function BondLib.Spice.Utilities.JFETeq1
+// "function BondLib.Spice.Utilities.JFETeq1 \"Computation of injected drain-source current for Level = 1\"
 //   input Real vds(quantity = \"ElectricPotential\", unit = \"V\") \"Drain-source voltage\";
 //   input Real vgs(quantity = \"ElectricPotential\", unit = \"V\") \"Gate-source voltage\";
 //   input Real Tdev(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Device temperature\";
@@ -50,14 +50,14 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class BondLib_Examples_ModelicaSpice_DifferentialAmplifier

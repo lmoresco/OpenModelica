@@ -1102,7 +1102,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients \"Determine interpolation coefficients and next time event\"
 //   input Real[:, 2] table \"Table for interpolation\";
 //   input Real offset \"y-offset\";
 //   input Real startTime \"time-offset\";
@@ -1556,7 +1556,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// "function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients \"Determine interpolation coefficients and next time event\"
 //   input Real[:, 2] table \"Table for interpolation\";
 //   input Real offset \"y-offset\";
 //   input Real startTime \"time-offset\";

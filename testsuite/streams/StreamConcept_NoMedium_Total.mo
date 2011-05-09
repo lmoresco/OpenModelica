@@ -2169,7 +2169,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   external "C";
 // end Modelica.Math.sin;
 // 
-// function SiemensPower.Utilities.Functions.der_sqrtReg
+// function SiemensPower.Utilities.Functions.der_sqrtReg "Time derivative of sqrtReg"
 //   input Real x;
 //   input Real delta = 0.01 "Range of significant deviation from sqrt(x)";
 //   input Real dx "Derivative of x";
@@ -2178,7 +2178,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   dy := 0.5 * dx * (x ^ 2.0 + 2.0 * delta ^ 2.0) * (x ^ 2.0 + delta ^ 2.0) ^ -1.25;
 // end SiemensPower.Utilities.Functions.der_sqrtReg;
 // 
-// function SiemensPower.Utilities.Functions.sqrtReg
+// function SiemensPower.Utilities.Functions.sqrtReg "Symmetric square root approximation with finite derivative in zero"
 //   input Real x;
 //   input Real delta = 0.01 "Range of significant deviation from sqrt(x)";
 //   output Real y;

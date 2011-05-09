@@ -4081,7 +4081,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   ov := {iv[1] / length,iv[2] / length,iv[3] / length};
 // end MCVisualShape.local_normalize;
 // 
-// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients "Determine interpolation coefficients and next time event"
 //   input Real[:, 2] table "Table for interpolation";
 //   input Real offset "y-offset";
 //   input Real startTime "time-offset";

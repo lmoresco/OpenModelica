@@ -217,7 +217,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 19 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -280,7 +280,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 0 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -305,7 +305,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 2 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -330,7 +330,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 2 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -373,7 +373,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   external \"FORTRAN 77\";
 // end Modelica.Math.Matrices.LAPACK.dgelsx_vec;
 // 
-// function Modelica.Math.Matrices.leastSquares
+// function Modelica.Math.Matrices.leastSquares \"Solve overdetermined or underdetermined real system of linear equations A*x=b in a least squares sense (A may be rank deficient)\"
 //   input Real[:, :] A \"Matrix A\";
 //   input Real[size(A,1)] b \"Vector b\";
 //   output Real[size(A,2)] x \"Vector x such that min|A*x-b|^2 if size(A,1) >= size(A,2) or min|x|^2 and A*x=b, if size(A,1) < size(A,2)\";
@@ -387,7 +387,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
 // end Modelica.Math.Matrices.leastSquares;
 // 
-// function Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting
+// function Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting \"Computes the coefficients of a polynomial that fits a set of data points in a least-squares sense\"
 //   input Real[:] u \"Abscissa data values\";
 //   input Real[size(u,1)] y \"Ordinate data values\";
 //   input Integer n(min = 1) \"Order of desired polynomial that fits the data points (u,y)\";
@@ -401,7 +401,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   p := Modelica.Math.Matrices.leastSquares(V,y);
 // end Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting;
 // 
-// function Modelica.Media.Incompressible.Examples.Glycol47.invertTemp
+// function Modelica.Media.Incompressible.Examples.Glycol47.invertTemp \"function to invert temperatures\"
 //   input Real[:] table \"table temperature data\";
 //   input Boolean Tink \"flag for Celsius or Kelvin\";
 //   output Real[size(table,1)] invTable \"inverted temperatures\";
@@ -411,7 +411,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   end for;
 // end Modelica.Media.Incompressible.Examples.Glycol47.invertTemp;
 // 
-// function Modelica.SIunits.Conversions.from_degC
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -562,7 +562,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output FluidConstants res;
 // end Modelica.Media.Air.SimpleAir.FluidConstants;
 // 
-// function Modelica.SIunits.Conversions.from_degC
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm

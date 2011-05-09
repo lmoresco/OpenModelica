@@ -13,7 +13,7 @@ instantiateModel(Magnetic_Examples_PullinStroke);
 getErrorString();
 // Result:
 // true
-// "function Magnetic.Reluctance.NonlinearReluctance.my_r_Material
+// "function Magnetic.Reluctance.NonlinearReluctance.my_r_Material \"Free cutting steel 9SMn28K\"
 //   input Real B;
 //   output Real my_r;
 //   protected parameter Real myInit = 6.875;

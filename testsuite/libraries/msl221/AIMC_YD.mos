@@ -15,7 +15,7 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -23,24 +23,24 @@ getErrorString();
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
-// function Modelica.SIunits.Conversions.from_rpm
+// function Modelica.SIunits.Conversions.from_rpm \"Convert from revolutions per minute to radian per second\"
 //   input Real rpm(quantity = \"AngularVelocity\", unit = \"rev/min\") \"revolutions per minute value\";
 //   output Real rs(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"radian per second value\";
 // algorithm
 //   rs := 0.10471975511966 * rpm;
 // end Modelica.SIunits.Conversions.from_rpm;
 // 
-// function Modelica.SIunits.Conversions.to_rpm
+// function Modelica.SIunits.Conversions.to_rpm \"Convert from radian per second to revolutions per minute\"
 //   input Real rs(quantity = \"AngularVelocity\", unit = \"rad/s\", displayUnit = \"rev/min\") \"radian per second value\";
 //   output Real rpm(quantity = \"AngularVelocity\", unit = \"rev/min\") \"revolutions per minute value\";
 // algorithm

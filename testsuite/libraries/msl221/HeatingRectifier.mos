@@ -11,7 +11,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.HeatingRectifier);
 getErrorString();
 // Result:
 // true
-// "function Modelica.Electrical.Analog.Semiconductors.exlin
+// "function Modelica.Electrical.Analog.Semiconductors.exlin \"Exponential function linearly continued for x > Maxexp\"
 //   input Real x;
 //   input Real Maxexp;
 //   output Real z;
@@ -19,7 +19,7 @@ getErrorString();
 //   z := if x > Maxexp then exp(Maxexp) * (1.0 + x - Maxexp) else exp(x);
 // end Modelica.Electrical.Analog.Semiconductors.exlin;
 // 
-// function Modelica.Electrical.Analog.Semiconductors.pow
+// function Modelica.Electrical.Analog.Semiconductors.pow \"Just a helper function for x^y in order that a symbolic engine can apply some transformations more easily\"
 //   input Real x;
 //   input Real y;
 //   output Real z;
@@ -31,17 +31,17 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
-// function Modelica.SIunits.Conversions.from_degC
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm

@@ -101,10 +101,10 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   input String string = \"\" \"String to be printed\";
 //   input String fileName = \"\" \"File where to print (empty string is the terminal)\";
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Utilities.Streams.print;
 // 
-// function random
+// function random \"Pseudo random number generator\"
 //   input Integer[3] seedIn \"Seed from last call\";
 //   output Real x \"Random number between 0 and 1\";
 //   output Integer[3] seedOut \"Modified seed for next call\";

@@ -1374,7 +1374,7 @@ end BS11;
 //   end when;
 // end BS11;
 // Result:
-// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients
+// function Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients "Determine interpolation coefficients and next time event"
 //   input Real[:, 2] table "Table for interpolation";
 //   input Real offset "y-offset";
 //   input Real startTime "time-offset";

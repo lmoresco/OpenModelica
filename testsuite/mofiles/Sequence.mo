@@ -50,53 +50,53 @@ end Sequence;
 
 // Result:
 // function Orientation "Automatically generated record constructor for Orientation"
-// input Real[3, 3] T;
-// input Real[3] w;
-// output Orientation res;
+//   input Real[3, 3] T;
+//   input Real[3] w;
+//   output Orientation res;
 // end Orientation;
 // 
 // function axesRot
-// input Integer[3] sequence = {1,2,3};
-// input Real[3] angles = {4.0,5.0,6.0};
-// output Real r;
+//   input Integer[3] sequence = {1,2,3};
+//   input Real[3] angles = {4.0,5.0,6.0};
+//   output Real r;
 // algorithm
 //   r := /*REAL*/(sequence[1]) * angles[3] + /*REAL*/(sequence[2]) * angles[2] + /*REAL*/(sequence[3]) * angles[1];
 // end axesRot;
 // 
-// function axesRotations "Inline before index reduction"
-// input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
-// input Real[3] angles "Rotation angles around the axes defined in 'sequence'";
-// input Real[3] der_angles "= der(angles)";
-// output Orientation R "Orientation object to rotate frame 1 into frame 2";
+// function axesRotations "Inline before index reduction" "Return fixed rotation object to rotate in sequence around fixed angles along 3 axes"
+//   input Integer[3] sequence = {1,2,3} "Sequence of rotations from frame 1 to frame 2 along axis sequence[i]";
+//   input Real[3] angles "Rotation angles around the axes defined in 'sequence'";
+//   input Real[3] der_angles "= der(angles)";
+//   output Orientation R "Orientation object to rotate frame 1 into frame 2";
 // algorithm
 //   R := Orientation({{1.0,0.0,0.0},{0.0,1.0,0.0},{0.0,0.0,1.0}},{angles[1],angles[2],angles[3]});
 // end axesRotations;
 // 
 // class Sequence
-// Real r.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
-// Real r.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[2,1] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[2,2] = 1.0 "Transformation matrix from world frame to local frame";
-// Real r.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
-// Real r.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
-// Real r.w[1] = 4.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real r.w[2] = 5.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real r.w[3] = 6.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real rOther.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[2,1] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[2,2] = 1.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
-// Real rOther.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
-// Real rOther.w[1] = 4.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real rOther.w[2] = 5.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real rOther.w[3] = 6.0 "Absolute angular velocity of local frame, resolved in local frame";
-// Real x = 28.0;
+//   Real r.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[2,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[2,2] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real r.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real r.w[1] = 4.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real r.w[2] = 5.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real r.w[3] = 6.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real rOther.T[1,1] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[1,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[1,3] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[2,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[2,2] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[2,3] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[3,1] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[3,2] = 0.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.T[3,3] = 1.0 "Transformation matrix from world frame to local frame";
+//   Real rOther.w[1] = 4.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real rOther.w[2] = 5.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real rOther.w[3] = 6.0 "Absolute angular velocity of local frame, resolved in local frame";
+//   Real x = 28.0;
 // end Sequence;
 // endResult

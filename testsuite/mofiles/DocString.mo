@@ -20,7 +20,7 @@ algorithm
 end f;
 
 // Result:
-// function f
+// function f "Function f"
 //   input Real x "input Real named x";
 //   output Real y "output Real named y";
 // algorithm

@@ -11,7 +11,7 @@ instantiateModel(Modelica.Blocks.Examples.LogicalNetwork1);
 getErrorString();
 // Result:
 // true
-// "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex
+// "function Modelica.Blocks.Sources.BooleanTable.getFirstIndex \"Get first index of table and check table\"
 //   input Real[:] table \"Vector of time instants\";
 //   input Real simulationStartTime(quantity = \"Time\", unit = \"s\") \"Simulation start time\";
 //   input Boolean startValue \"Value of y for y < table[1]\";

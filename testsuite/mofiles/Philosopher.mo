@@ -265,7 +265,7 @@ end Philosopher_DiningTable;
 // end Philosopher.Random.normalvariate;
 // 
 // Result:
-// function Philosopher.Random.normalvariate
+// function Philosopher.Random.normalvariate "normally distributed random variable"
 //   input Real mu "mean value";
 //   input Real sigma "standard deviation";
 //   input Real[3] si "input random seed";

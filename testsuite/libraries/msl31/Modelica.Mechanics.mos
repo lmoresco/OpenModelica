@@ -20,17 +20,17 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
-// function Modelica.Math.tempInterpol1
+// function Modelica.Math.tempInterpol1 \"Temporary function for linear interpolation (will be removed)\"
 //   input Real u \"input value (first column of table)\";
 //   input Real[:, :] table \"table to be interpolated\";
 //   input Integer icol \"column of table to be interpolated\";
@@ -64,7 +64,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   end if;
 // end Modelica.Math.tempInterpol1;
 // 
-// function Modelica.Mechanics.Translational.Examples.Utilities.GenerateStribeckFrictionTable
+// function Modelica.Mechanics.Translational.Examples.Utilities.GenerateStribeckFrictionTable \"Generate stribeck friction table for example Friction for the SupportFriction\"
 //   input Real F_prop(unit = \"N.s/m\", min = 0.0) \"Velocity dependent friction coefficient\";
 //   input Real F_Coulomb(quantity = \"Force\", unit = \"N\") \"Constant friction: Coulomb force\";
 //   input Real F_Stribeck(quantity = \"Force\", unit = \"N\") \"Stribeck effect\";

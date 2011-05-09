@@ -65,7 +65,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output M350_50A res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.ElectricSheet.M350_50A;
 // 
-// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
+// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox \"Approximation of relative permeability mu_r as a function of flux density B for soft magnetic materials\"
 //   input Real B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density in ferromagnetic flux tube element\";
 //   input Real mu_i(quantity = \"RelativePermeability\", unit = \"1\") \"Initial relative permeability at B=0\";
 //   input Real B_myMax(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density at maximum relative permeability\";
@@ -2749,7 +2749,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
-// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
+// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox \"Approximation of relative permeability mu_r as a function of flux density B for soft magnetic materials\"
 //   input Real B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density in ferromagnetic flux tube element\";
 //   input Real mu_i(quantity = \"RelativePermeability\", unit = \"1\") \"Initial relative permeability at B=0\";
 //   input Real B_myMax(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density at maximum relative permeability\";
@@ -4267,7 +4267,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
-// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
+// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox \"Approximation of relative permeability mu_r as a function of flux density B for soft magnetic materials\"
 //   input Real B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density in ferromagnetic flux tube element\";
 //   input Real mu_i(quantity = \"RelativePermeability\", unit = \"1\") \"Initial relative permeability at B=0\";
 //   input Real B_myMax(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density at maximum relative permeability\";
@@ -7787,7 +7787,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
-// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
+// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox \"Approximation of relative permeability mu_r as a function of flux density B for soft magnetic materials\"
 //   input Real B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density in ferromagnetic flux tube element\";
 //   input Real mu_i(quantity = \"RelativePermeability\", unit = \"1\") \"Initial relative permeability at B=0\";
 //   input Real B_myMax(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density at maximum relative permeability\";
@@ -8350,7 +8350,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output Steel_9SMnPb28 res;
 // end Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.Steel.Steel_9SMnPb28;
 // 
-// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox
+// function Modelica.Magnetic.FluxTubes.Material.SoftMagnetic.mu_rApprox \"Approximation of relative permeability mu_r as a function of flux density B for soft magnetic materials\"
 //   input Real B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density in ferromagnetic flux tube element\";
 //   input Real mu_i(quantity = \"RelativePermeability\", unit = \"1\") \"Initial relative permeability at B=0\";
 //   input Real B_myMax(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Flux density at maximum relative permeability\";

@@ -62,7 +62,7 @@ getErrorString();
 //   external \"C\";
 // end Modelica.Math.asin;
 // 
-// function Modelica.Math.tempInterpol1
+// function Modelica.Math.tempInterpol1 \"temporary routine for linear interpolation (will be removed)\"
 //   input Real u \"input value (first column of table)\";
 //   input Real[:, :] table \"table to be interpolated\";
 //   input Integer icol \"column of table to be interpolated\";
