@@ -337,6 +337,7 @@ Import4.mo \
 Import5.mo \
 Import6.mo \
 Import7.mo \
+ImportSelf1.mo \
 Influenza.mo \
 InheritanceClassMod.mo \
 InheritanceDiamond.mo \
