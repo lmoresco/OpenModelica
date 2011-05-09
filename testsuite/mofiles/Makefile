@@ -315,6 +315,7 @@ FunctionEval9.mo \
 FunctionEval10.mo \
 FunctionEval11.mo \
 FunctionEvalBuiltin.mo \
+FunctionEvalFail.mo \
 FunctionEvalSlice.mo \
 FunctionProtectedInput.mo \
 FunctionReturn.mo \
