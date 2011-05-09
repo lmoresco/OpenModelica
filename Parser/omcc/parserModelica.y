@@ -31,7 +31,13 @@ type Restriction = Absyn.Restriction;
 type InnerOuter = Absyn.InnerOuter;
 type ComponentRef = Absyn.ComponentRef;
 type Variability = Absyn.Variability;
-
+type RedeclareKeywords = Absyn.RedeclareKeywords;
+type NamedArg=Absyn.NamedArg;
+type TypeSpec=Absyn.TypeSpec;
+type ComponentItem=Absyn.ComponentItem;
+type ComponentItems=list<ComponentItem>;
+type Component=Absyn.Component;
+ 
 constant list<String> lstSemValue = {};
 
 constant list<String> lstSemValue3 = {
@@ -193,13 +199,14 @@ program             :  classes_list
 
 within              :  WITHIN path SEMICOLON { $$[Within] = Absyn.WITHIN($2[Path]); }
 
-classes_list            : class { $$[lstClass] = $1[Class]::{}; } 
-                        | class classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
+classes_list            : class SEMICOLON { $$[lstClass] = $1[Class]::{}; } 
+                        | class SEMICOLON classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
                           /* restriction IDENT classdef T_END IDENT SEMICOLON
                                 { if (not stringEqual($2,$5) ) then print(Types.printInfoError(info) + " Error: The identifier at start and end are different '" + $2 + "'");
                                    true = ($2 == $5);
                                   end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                           */
+                          
 class                      : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                            | PARTIAL restriction IDENT classdef 
@@ -220,22 +227,22 @@ class                      : restriction IDENT classdef
 
                            
 restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
-					| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
-					| RECORD { $$[Restriction] = Absyn.R_RECORD(); }
-					| T_PACKAGE { $$[Restriction] = Absyn.R_PACKAGE(); }
-					| TYPE { $$[Restriction] = Absyn.R_TYPE(); }
-					| FUNCTION { $$[Restriction] = Absyn.R_FUNCTION(); }
-					| UNIONTYPE { $$[Restriction] = Absyn.R_UNIONTYPE(); }
-					| BLOCK { $$[Restriction] = Absyn.R_BLOCK(); }
-					| CONNECTOR { $$[Restriction] = Absyn.R_CONNECTOR(); }
-					| EXPANDABLE CONNECTOR { $$[Restriction] = Absyn.R_EXP_CONNECTOR(); }
-					| ENUMERATION { $$[Restriction] = Absyn.R_ENUMERATION(); }
-					| OPERATOR FUNCTION { $$[Restriction] = Absyn.R_OPERATOR_FUNCTION(); }
-					| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
+						| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
+						| RECORD { $$[Restriction] = Absyn.R_RECORD(); }
+						| T_PACKAGE { $$[Restriction] = Absyn.R_PACKAGE(); }
+						| TYPE { $$[Restriction] = Absyn.R_TYPE(); }
+						| FUNCTION { $$[Restriction] = Absyn.R_FUNCTION(); }
+						| UNIONTYPE { $$[Restriction] = Absyn.R_UNIONTYPE(); }
+						| BLOCK { $$[Restriction] = Absyn.R_BLOCK(); }
+						| CONNECTOR { $$[Restriction] = Absyn.R_CONNECTOR(); }
+						| EXPANDABLE CONNECTOR { $$[Restriction] = Absyn.R_EXP_CONNECTOR(); }
+						| ENUMERATION { $$[Restriction] = Absyn.R_ENUMERATION(); }
+						| OPERATOR FUNCTION { $$[Restriction] = Absyn.R_OPERATOR_FUNCTION(); }
+						| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
 	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
 						
-classdef             : classparts T_END IDENT SEMICOLON { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
-                     | STRING classparts T_END IDENT SEMICOLON { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+classdef             : classparts T_END IDENT  { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
+                     | STRING classparts T_END IDENT { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
                     // | EQUALS variability
 
 classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
@@ -254,48 +261,96 @@ restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[E
 elementItems           : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
                       | elementItem elementItems { $$[ElementItems] = $1[ElementItem]::$2[ElementItems]; }
 
-elementItem         : element { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
+elementItem         : element SEMICOLON { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
 
-element             : innerouter elementspec { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],"",$2[ElementSpec],info,NONE()); }
-                    | elementspec { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"",$1[ElementSpec],info,NONE()); }
-                  
+element             : componentclause 
+                        { $$[Element] = $1[Element]; }
+                    | importelementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"IMPORT",$1[ElementSpec],info,NONE()); }
+                    | classelementspec  
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
+
+componentclause      : innerouter elementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
+                    | elementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
+                    | FINAL innerouter ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$3[Ident],$2[ElementSpec],info,NONE()); }
+                    | FINAL ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$2[Ident],$3[ElementSpec],info,NONE()); }
+                    | redeclarekeywords innerouter ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,SOME($1[RedeclareKeywords]),$2[InnerOuter],$3[Ident],$4[ElementSpec],info,NONE()); }
+                    | redeclarekeywords ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),$2[Ident],$3[ElementSpec],info,NONE()); }
+                    | redeclarekeywords FINAL innerouter ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,SOME($1[RedeclareKeywords]),$3[InnerOuter],$4[Ident],$5[ElementSpec],info,NONE()); }
+                    | redeclarekeywords FINAL ident elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),$3[Ident],$4[ElementSpec],info,NONE()); }
+
+componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}; }
+                    | componentitem COMMA componentitems { $$[ComponentItems] = $1[ComponentItem]::$2[ComponentItems]; }
+
+componentitem       : component { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),NONE()); }
+                    | component comment { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),SOME($2[Comment])); }
+
+component           : ident { $$[Component] = Absyn.COMPONENT($1[Ident],{},NONE()); }                                                                 
+                    
+redeclarekeywords   : REDECLARE { $$[RedeclareKeywords] = Absyn.REDECLARE(); }
+                    | REPLACEABLE { $$[RedeclareKeywords] = Absyn.REPLACEABLE(); }
+                    | REDECLARE REPLACEABLE { $$[RedeclareKeywords] = Absyn.REDECLARE_REPLACEABLE(); }                  
 
 innerouter		 : INNER { $$[InnerOuter] = Absyn.INNER(); }
                      | T_OUTER { $$[InnerOuter] = Absyn.OUTER(); }
                      | INNER T_OUTER { $$[InnerOuter] = Absyn.INNER_OUTER(); }
                      
+importelementspec    :  import { $$[ElementSpec] = Absyn.IMPORT($1[Import],NONE(),info); }
+                     | import comment { $$[ElementSpec] = Absyn.IMPORT($1[Import],SOME($2[Comment]),info); }
 
-elementspec         : import { $$[ElementSpec] = Absyn.IMPORT($1[Import],NONE(),info); }
-                     | elementattributes SEMICOLON { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],Absyn.TPATH(Absyn.IDENT(""),NONE()),{}); }
-                     | REPLACEABLE class { $$[ElementSpec] = Absyn.CLASSDEF(true,$2[Class]); }
-                     | class { $$[ElementSpec] = Absyn.CLASSDEF(false,$1[Class]); }
+classelementspec    : class { $$[ElementSpec] = Absyn.CLASSDEF(false,$1[Class]); }                     
+                    | REPLACEABLE class { $$[ElementSpec] = Absyn.CLASSDEF(true,$2[Class]); }
+                                                            
+import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
+                     | IMPORT path DOT STAR { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
-elementattributes   :   arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),$1[ArrayDim]); }
-                      | direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],$2[ArrayDim]); }
-                      | variability arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], Absyn.BIDIR(),$2[ArrayDim]); }
-                      | variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], $2[Direction],$3[ArrayDim]); }
-                      | FLOW variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(true,false,$1[Variability], $2[Direction],$3[ArrayDim]); }
-                      | STREAM variability direction arrayDim {  $$[ElementAttributes] = Absyn.ATTR(false,true,$1[Variability], $2[Direction],$3[ArrayDim]); }
-
+elementspec          :  elementAttr typespec componentitems
+                        { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
+                      |  typespec componentitems
+                        { $$[ElementSpec] = Absyn.COMPONENTS(Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),$1[TypeSpec],$2[ComponentItems]); }
                        
+                       
+elementAttr          : direction 
+                         { $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],{}); }
+                      | variability  
+                         { $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], Absyn.BIDIR(),{}); }
+                      | variability direction 
+                         { $$[ElementAttributes] = Absyn.ATTR(false,false,$1[Variability], $2[Direction],{}); }
+                      | STREAM variability direction 
+                         { $$[ElementAttributes] = Absyn.ATTR(false,true,$2[Variability], $3[Direction],{}); }
+                      | FLOW variability direction 
+                         { $$[ElementAttributes] = Absyn.ATTR(true,false,$2[Variability], $3[Direction],{}); } 
+
 variability          : PARAMETER { $$[Variability] = Absyn.PARAM(); } 
                       | CONSTANT { $$[Variability] = Absyn.CONST(); } 
                       | DISCRETE { $$[Variability] = Absyn.DISCRETE(); }
-                      //| /* empty */ { $$[Variability] = Absyn.VAR(); } 
+                     // | /* empty */ { $$[Variability] = Absyn.VAR(); } 
+
+direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); } 
+                     | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }
+                    // | /* empty */ { $$[Direction] = Absyn.BIDIR(); }              
+
+typespec             : path { $$[TypeSpec] = Absyn.TPATH($1[Path],NONE()); }
+                     | path arraySubscripts { $$[TypeSpec] = Absyn.TPATH($1[Path],SOME($2[ArrayDim])); }
+
+
 
 arraySubscripts     : LBRACK arrayDim RBRACK { $$[ArrayDim] = $1[ArrayDim]; }                    
                      
 arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
                      | exp COMMA arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
 
-direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); } 
-                     | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }
-                    // | /* empty */ { $$[Direction] = Absyn.BIDIR(); }
 
 
-                                                            
 
-import              : IMPORT path SEMICOLON { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
 path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
                       | ident DOT path { $$[Path] = Absyn.QUALIFIED($1[Ident],$2[Path]); }
@@ -303,7 +358,9 @@ path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
                                 
 ident                  :  IDENT { $$[Ident] = $1; }                      
 
-//comment                : STRING { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
+comment                : STRING { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
+
+namedarg            : ident EQUALS exp { $$[NamedArg] = Absyn.NAMEDARG($1[Ident],$2[Exp]); }
                      
 exp					: logicexp { $$[Exp] = $1[Exp]; }
                      | IF exp THEN exp ELSE exp T_END IF SEMICOLON { $$[Exp] = Absyn.IFEXP($2[Exp],$4[Exp],$6[Exp],{}); }
