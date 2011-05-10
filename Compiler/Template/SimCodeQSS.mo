@@ -152,7 +152,10 @@ algorithm
       String i_modelInfo_directory;
       Absyn.Path i_modelInfo_name;
       SimCode.SimCode i_simCode;
-      list<SimCode.SimWhenClause> ret_2;
+      list<SimCode.SimWhenClause> ret_5;
+      list<Integer> ret_4;
+      list<Integer> ret_3;
+      list<list<Integer>> ret_2;
       list<SimCode.SimEqSystem> ret_1;
       list<SimCode.SimEqSystem> ret_0;
 
@@ -220,11 +223,19 @@ algorithm
                                     "int\n",
                                     "startNonInteractiveSimulation(int, char**);\n",
                                     "int\n",
-                                    "initRuntimeAndSimulation(int, char**);\n",
-                                    "extern int interactiveSimulation;\n",
-                                    "char incidenceMatrix[0];\n",
-                                    "char inputMatrix[0];\n",
-                                    "char outputMatrix[0];\n",
+                                    "initRuntimeAndSimulation(int, char**);\n"
+                                }, true));
+        ret_2 = BackendQSS.generateConnections(a_qssInfo);
+        txt = generateIncidenceMatrix(txt, ret_2);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("extern int interactiveSimulation;\n"));
+        ret_3 = BackendQSS.getAllInputs(a_qssInfo);
+        txt = generateInputVars(txt, ret_3);
+        txt = Tpl.softNewLine(txt);
+        ret_4 = BackendQSS.getAllOutputs(a_qssInfo);
+        txt = generateOutputVars(txt, ret_4);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "\n",
                                     "#ifndef _OMC_OMPD\n",
                                     "int\n",
@@ -235,7 +246,7 @@ algorithm
                                     "  if (initRuntimeAndSimulation(argc, argv)) //initRuntimeAndSimulation returns 1 if an error occurs\n",
                                     "    return 1;\n",
                                     "\n",
-                                    "  if (interactiveSimuation) {\n",
+                                    "  if (interactiveSimulation) {\n",
                                     "    //cout << \"startInteractiveSimulation: \" << version << endl;\n",
                                     "    retVal = startInteractiveSimulation(argc, argv);\n",
                                     "  } else {\n",
@@ -324,8 +335,8 @@ algorithm
         txt = functionQssStaticBlocks(txt, i_odeEquations, i_zeroCrossings, a_qssInfo, i_modelInfo_varInfo_numStateVars);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        ret_2 = BackendQSS.replaceCondWhens(i_whenClauses, i_helpVarInfo, i_zeroCrossings);
-        txt = functionQssWhen(txt, ret_2, i_helpVarInfo, i_zeroCrossings);
+        ret_5 = BackendQSS.replaceCondWhens(i_whenClauses, i_helpVarInfo, i_zeroCrossings);
+        txt = functionQssWhen(txt, ret_5, i_helpVarInfo, i_zeroCrossings);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = functionQssSample(txt, i_zeroCrossings);
@@ -1554,6 +1565,13 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
+           DAE.CALL(path = Absyn.IDENT(name = "sample")),
+           _,
+           a_preExp,
+           a_varDecls )
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
            i_exp,
            _,
            a_preExp,
@@ -1562,7 +1580,7 @@ algorithm
         txt_3 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unhandled expression in SimCodeQSS.generateZCExp: "));
         ret_3 = ExpressionDump.printExpStr(i_exp);
         txt_3 = Tpl.writeStr(txt_3, ret_3);
-        txt = SimCodeC.error(txt, Tpl.sourceInfo("SimCodeQSS.tpl", 545, 23), Tpl.textString(txt_3));
+        txt = SimCodeC.error(txt, Tpl.sourceInfo("SimCodeQSS.tpl", 548, 23), Tpl.textString(txt_3));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end generateZCExp;
@@ -2790,6 +2808,7 @@ algorithm
         txt = fun_84(txt, i_s_measureTime);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = fun_85(txt, i_s_method);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -D_OMC_OMPD_LIB"));
       then txt;
 
     case ( txt,
@@ -2892,7 +2911,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" "));
         txt = Tpl.writeStr(txt, i_makefileParams_cflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    " -D_OMC_QSS -g\n",
+                                    " -D_OMC_QSS -g -D_OMC_OMPD\n",
                                     "LDFLAGS=-L\""
                                 }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
@@ -2939,9 +2958,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.cpp: "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".cpp\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".conv.cpp: modelica_funcs.cpp\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(PERL) "));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
@@ -3055,5 +3072,177 @@ algorithm
                                        "\n"
                                    }, true));
 end simulationFunctionsFile;
+
+protected function lm_92
+  input Tpl.Text in_txt;
+  input list<list<Integer>> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<list<Integer>> rest;
+      list<Integer> i_c;
+      Integer ret_1;
+      Integer ret_0;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_c :: rest )
+      equation
+        ret_0 = listNth(i_c, 0);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
+        ret_1 = listNth(i_c, 2);
+        txt = Tpl.writeStr(txt, intString(ret_1));
+        txt = Tpl.nextIter(txt);
+        txt = lm_92(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_92(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_92;
+
+public function generateIncidenceMatrix
+  input Tpl.Text txt;
+  input list<list<Integer>> a_conns;
+
+  output Tpl.Text out_txt;
+protected
+  Integer ret_0;
+algorithm
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("int incidenceRows = "));
+  ret_0 := listLength(a_conns);
+  out_txt := Tpl.writeStr(out_txt, intString(ret_0));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       ";\n",
+                                       "int incidenceMatrix[] = { "
+                                   }, false));
+  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_92(out_txt, a_conns);
+  out_txt := Tpl.popIter(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(" };"));
+end generateIncidenceMatrix;
+
+protected function lm_94
+  input Tpl.Text in_txt;
+  input list<Integer> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<Integer> rest;
+      Integer i_i;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_i :: rest )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_i));
+        txt = Tpl.nextIter(txt);
+        txt = lm_94(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_94(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_94;
+
+public function generateInputVars
+  input Tpl.Text txt;
+  input list<Integer> a_vars__tuple;
+
+  output Tpl.Text out_txt;
+protected
+  Integer ret_1;
+  Integer ret_0;
+algorithm
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("int inputMatrix[] = { "));
+  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_94(out_txt, a_vars__tuple);
+  out_txt := Tpl.popIter(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       " };\n",
+                                       "int inputRows = "
+                                   }, false));
+  ret_0 := listLength(a_vars__tuple);
+  ret_1 := intDiv(ret_0, 2);
+  out_txt := Tpl.writeStr(out_txt, intString(ret_1));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(";"));
+end generateInputVars;
+
+protected function lm_96
+  input Tpl.Text in_txt;
+  input list<Integer> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<Integer> rest;
+      Integer i_i;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_i :: rest )
+      equation
+        txt = Tpl.writeStr(txt, intString(i_i));
+        txt = Tpl.nextIter(txt);
+        txt = lm_96(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_96(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_96;
+
+public function generateOutputVars
+  input Tpl.Text txt;
+  input list<Integer> a_vars__tuple;
+
+  output Tpl.Text out_txt;
+protected
+  Integer ret_1;
+  Integer ret_0;
+algorithm
+  out_txt := Tpl.writeTok(txt, Tpl.ST_STRING("int outputMatrix[] = { "));
+  out_txt := Tpl.pushIter(out_txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(",")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+  out_txt := lm_96(out_txt, a_vars__tuple);
+  out_txt := Tpl.popIter(out_txt);
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING_LIST({
+                                       " };\n",
+                                       "int outputRows = "
+                                   }, false));
+  ret_0 := listLength(a_vars__tuple);
+  ret_1 := intDiv(ret_0, 2);
+  out_txt := Tpl.writeStr(out_txt, intString(ret_1));
+  out_txt := Tpl.writeTok(out_txt, Tpl.ST_STRING(";"));
+end generateOutputVars;
 
 end SimCodeQSS;
