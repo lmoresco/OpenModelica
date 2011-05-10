@@ -153,7 +153,7 @@ package ParserGenerator
 		    re := "case " + intString(i) + ":";
 		    if (debug==true) then
 		       print("\n" + re);
-		       //printAny("\n" + re);  
+		       printAny("\n" + re);  
 		    end if;   
 		    pos := System.stringFind(bisonCode,re);
 		    if (pos<0) then
@@ -277,25 +277,29 @@ package ParserGenerator
        cp := "           // reduce \n";
        resTable := cp::resTable;
        numTk := numTokens(rule);
-       
-       cp := "           (info,skToken) = getInfo(skToken,"+ intString(numTk) +"); \n";
-       resTable := cp::resTable;
-       
        types2 := types;
-      i := numTk;   
-      while (i>0) loop
-           cp := reduceToken(rule,i);
-           resTable := cp::resTable;
-           typeTok := findTypeToken(rule,i);
-           if (Util.listContains(typeTok,types2)==false) then
-               types2 := typeTok::types2;
-           end if;
-         i := i-1;
-       end while;
+       cp := "           (info,skToken) = getInfo(skToken,mm_r2[act]); \n";
+       resTable := cp::resTable;  
+       if (numTk==0) then
+         cp := "           skString = reduceStringStack(skString,mm_r2[act]); \n";
+         resTable := cp::resTable; 
+       else
+         i := numTk;   
+	       while (i>0) loop
+	           cp := reduceToken(rule,i);
+	           resTable := cp::resTable;
+	           typeTok := findTypeToken(rule,i);
+	           if (Util.listContains(typeTok,types2)==false) then
+	               types2 := typeTok::types2;
+	           end if;
+	         i := i-1;
+	       end while;
+       end if;
        
        cp := "           // build \n";
        resTable := cp::resTable;
        tokRes := findTypeResult(rule);
+       
        if (Util.listContains(tokRes,types2)==false) then
            types2 := tokRes::types2;
        end if;
@@ -303,13 +307,16 @@ package ParserGenerator
        re := "(yyval)";
        pos1 :=  System.stringFind(rule,re);
        if (pos1>=0) then
+         
          cp := rule;
-	       for i in 1:numTk loop
-	           cp := replaceTokenVal(cp,i);
-	           if (debug==true) then
-	              print("\n" + cp);
-	           end if;   
-	       end for;
+         if (numTk>0) then 
+		       for i in 1:numTk loop
+		           cp := replaceTokenVal(cp,i);
+		           if (debug==true) then
+		              print("\n" + cp);
+		           end if;   
+		       end for;
+		     end if;
 	       //replace result type
 	       re := "(yyval)[" + tokRes + "]";
 	       cp := System.stringReplace(cp,re,"v" + tokRes);
@@ -330,12 +337,14 @@ package ParserGenerator
 	     else
 	         // root node
 	        cp := rule;
-	       for i in 1:numTk loop
-	           cp := replaceTokenVal(cp,i);
-	           if (debug==true) then
-	             print("\n" + cp);
-	           end if;  
-	       end for; 
+	       if (numTk>0) then 
+		       for i in 1:numTk loop
+		           cp := replaceTokenVal(cp,i);
+		           if (debug==true) then
+		             print("\n" + cp);
+		           end if;  
+		       end for;
+		     end if;  
 	       //replace result type
 	       re := "{ (absyntree)[" + tokRes + "]";
 	       cp := System.stringReplace(cp,re,"           v" + tokRes);
@@ -458,7 +467,7 @@ package ParserGenerator
     pos := System.stringFind(rule,re);
     
     if (pos<0) then
-       num := 1;
+       num := 0;
     else
 	    rest := System.stringFindString(rule,re);
 	    pos2 := System.stringFind(rest,")]");
