@@ -132,6 +132,7 @@ sub enter_sandbox {
     given($_) {
       when (/$stop_expr/)               { last; }
       when (/setup_command.*\s(.*\.c)/) { make_link($1); }
+      when (/loadFile.*\(\"linear_simple_test\.mo\"\)/) {}
       when (/loadFile.*\(\"(.*)\"\)/)   { make_link($1); }
       when (/runScript.*\(\"(.*)\"\)/)  { make_link($1); }
       when (/system\(\"(gcc|g\+\+).*\s(\w*\.\w*)\s(\w*\.\w*)/) {
