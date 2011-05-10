@@ -21,6 +21,7 @@ type ElementAttributes = Absyn.ElementAttributes;
 type Comment = Absyn.Comment;
 type Direction = Absyn.Direction;
 type Exp = Absyn.Exp;
+type Exps = list<Exp>;
 type Subscript = Absyn.Subscript;
 type ArrayDim = list<Subscript>;
 type Operator = Absyn.Operator;
@@ -37,6 +38,11 @@ type TypeSpec=Absyn.TypeSpec;
 type ComponentItem=Absyn.ComponentItem;
 type ComponentItems=list<ComponentItem>;
 type Component=Absyn.Component;
+type EquationItem = Absyn.EquationItem;
+type EquationItems = list<EquationItem>;
+type Equation = Absyn.Equation;
+type Elseif = tuple<Exp, list<EquationItem>>;
+type Elseifs = list<Elseif>;
  
 constant list<String> lstSemValue = {};
 
@@ -242,7 +248,7 @@ restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
 						
 classdef             : classparts T_END IDENT  { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
-                     | STRING classparts T_END IDENT { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+                     | string classparts T_END IDENT { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
                     // | EQUALS variability
 
 classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
@@ -254,11 +260,38 @@ classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItem
                      
 restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                         | PROTECTED elementItems { print("test"); $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
-                       /* | EQUATION elementItems { $$[ClassPart] = Absyn.EQUATIONS($1[ElementItems]); }  
-                        | T_ALGORITHM elementItems { $$[ClassPart] = Absyn.ALGORITHMS($1[ElementItems]); } 
+                        | EQUATION equationsection { $$[ClassPart] = Absyn.EQUATIONS($1[EquationItems]); }
+                        | INITIAL EQUATION equationsection { $$[ClassPart] = Absyn.INITIALEQUATIONS($1[EquationItems]); }  
+                       /* | T_ALGORITHM elementItems { $$[ClassPart] = Absyn.ALGORITHMS($1[ElementItems]); } 
                         | EXTERNAL externalDecl annotation    */
 
-elementItems           : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
+equationsection        :  equationitem { $$[EquationItems] = $1[EquationItem]::{}; }
+                        | equationitem equationsection { $$[EquationItems] = $1[EquationItem]::$2[EquationItems]; }
+
+equationitem           : equation SEMICOLON 
+                          { $$[EquationItem] = Absyn.EQUATIONITEM($1[Equation],NONE(),info); }
+                        | equation comment SEMICOLON 
+                          { $$[EquationItem] = Absyn.EQUATIONITEM($1[Equation],SOME($2[Comment]),info); }  
+
+equation               : exp EQUALS exp 
+                             { $$[Equation] = Absyn.EQ_EQUALS($1[Exp],$2[Exp]); }
+                        | if_equation 
+                             { $$[Equation] = $1[Equation]; }
+                        | CONNECT LPAR cref COMMA cref RPAR 
+                             { $$[Equation] = Absyn.EQ_CONNECT($3[ComponentRef],$5[ComponentRef]); }
+
+
+if_equation           : IF exp THEN equationsection T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},{}); } 
+                      | IF exp THEN equationsection ELSE equationsection T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},$6[EquationItems]); }
+                      | IF exp THEN equationsection elseifs T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],{}); }
+                      | IF exp THEN equationsection elseifs ELSE equationsection T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],$7[EquationItems]); }
+
+elseifs               :  elseif { $$[Elseifs] = $1[Elseif]::{}; }
+                        | elseif elseifs { $$[Elseifs] = $1[Elseif]::$2[Elseifs]; }
+
+elseif               : ELSEIF exp THEN equationsection  { $$[Elseif] = ($2[Exp],$4[EquationItems]); }                    
+
+elementItems         : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
                       | elementItem elementItems { $$[ElementItems] = $1[ElementItem]::$2[ElementItems]; }
 
 elementItem         : element SEMICOLON { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
@@ -317,7 +350,6 @@ elementspec          :  elementAttr typespec componentitems
                       |  typespec componentitems
                         { $$[ElementSpec] = Absyn.COMPONENTS(Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),$1[TypeSpec],$2[ComponentItems]); }
                        
-                       
 elementAttr          : direction 
                          { $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],{}); }
                       | variability  
@@ -328,7 +360,7 @@ elementAttr          : direction
                          { $$[ElementAttributes] = Absyn.ATTR(false,true,$2[Variability], $3[Direction],{}); }
                       | FLOW variability direction 
                          { $$[ElementAttributes] = Absyn.ATTR(true,false,$2[Variability], $3[Direction],{}); } 
-
+                         
 variability          : PARAMETER { $$[Variability] = Absyn.PARAM(); } 
                       | CONSTANT { $$[Variability] = Absyn.CONST(); } 
                       | DISCRETE { $$[Variability] = Absyn.DISCRETE(); }
@@ -341,16 +373,10 @@ direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); }
 typespec             : path { $$[TypeSpec] = Absyn.TPATH($1[Path],NONE()); }
                      | path arraySubscripts { $$[TypeSpec] = Absyn.TPATH($1[Path],SOME($2[ArrayDim])); }
 
-
-
 arraySubscripts     : LBRACK arrayDim RBRACK { $$[ArrayDim] = $1[ArrayDim]; }                    
                      
 arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
                      | exp COMMA arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
-
-
-
-
 
 path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
                       | ident DOT path { $$[Path] = Absyn.QUALIFIED($1[Ident],$2[Path]); }
@@ -358,7 +384,9 @@ path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
                                 
 ident                  :  IDENT { $$[Ident] = $1; }                      
 
-comment                : STRING { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
+string                : STRING { $$ = System.substring($1,2,stringLength($1)-1); } // trim the quote of the string
+
+comment                : string { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
 
 namedarg            : ident EQUALS exp { $$[NamedArg] = Absyn.NAMEDARG($1[Ident],$2[Exp]); }
                      
@@ -402,10 +430,13 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | cref { $$[Exp] = Absyn.CREF($1[ComponentRef]); }
                      | T_FALSE { $$[Exp] = Absyn.BOOL(false); }
                      | T_TRUE { $$[Exp] = Absyn.BOOL(true); }
-                     | STRING { $$[Exp] = Absyn.STRING($1); }
+                     | string { $$[Exp] = Absyn.STRING($1); }
                      |  UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); } 
-                    // | name { $$[Exp] = Absyn.CREF($1[ComponentRef]); }
-                     
+                     | LPAR output_explist RPAR { $$[Exp] = Absyn.TUPLE($2[Exps]); }
+                    
+output_explist      : exp { $$[Exps] = $1[Exp]::{};  }
+                    | exp COMMA output_explist { $$[Exps] = $1[Exp]::$2[Exps]; }
+                    
 cref                : ident { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],{}); }
                      | ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
                      | ident DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],{},$3[ComponentRef]); }
