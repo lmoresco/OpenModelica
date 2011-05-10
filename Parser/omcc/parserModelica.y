@@ -59,6 +59,10 @@ type AlgElsewhen = tuple<Exp, list<AlgorithmItem>>;
 type AlgElsewhens = list<AlgElsewhen>;
 type ExpElseif = tuple<Exp, Exp>;
 type ExpElseifs = list<ExpElseif>;
+type EnumDef = Absyn.EnumDef;
+type EnumLiteral = Absyn.EnumLiteral;
+type EnumLiterals = list<EnumLiteral>;
+type Modification = Absyn.Modification;
 
 constant list<String> lstSemValue = {};
 
@@ -247,6 +251,7 @@ class                      : restriction IDENT classdef
                                 { $$[Class] = Absyn.CLASS($5,true,true,true,$4[Restriction],$6[ClassDef],info); } 
                         
 
+
                            
 restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
@@ -263,21 +268,52 @@ restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
 	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
 						
-classdef             : classparts T_END IDENT  { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
-                     | string classparts T_END IDENT { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
-                    // | EQUALS variability
+classdef             : classparts T_END IDENT  
+                          { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
+                     | string classparts T_END IDENT 
+                          { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+                     |   classdefenumeration   
+                          { $$[ClassDef] = $1[ClassDef]; };
+                     |   classdefderived   
+                          { $$[ClassDef] = $1[ClassDef]; };
+                     
+classdefenumeration  : EQUALS ENUMERATION RPAR enumeration LPAR 
+                          { $$[ClassDef] = Absyn.ENUMERATION($4[EnumDef],NONE()); }
+                     | EQUALS ENUMERATION RPAR enumeration LPAR comment
+                          { $$[ClassDef] = Absyn.ENUMERATION($4[EnumDef],SOME($6[Comment])); }
+                                                 
+classdefderived     : EQUALS typespec 
+                        { $$[ClassDef] = Absyn.DERIVED($2[TypeSpec],Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),{},NONE()); }   
+                    | EQUALS typespec comment 
+                        { $$[ClassDef] = Absyn.DERIVED($2[TypeSpec],Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),{},SOME($3[Comment])); }   
+                    |  EQUALS elementAttr typespec
+                        { $$[ClassDef] = Absyn.DERIVED($3[TypeSpec],$2[ElementAttributes],{},NONE()); }
+                    | EQUALS elementAttr typespec comment
+                        { $$[ClassDef] = Absyn.DERIVED($3[TypeSpec],$2[ElementAttributes],{},SOME($4[Comment])); }                    
+
+enumeration         : enumlist { $$[EnumDef] = Absyn.ENUMLITERALS($1[EnumLiterals]); }
+                     | COLON { $$[EnumDef] = Absyn.ENUM_COLON(); }
+                     
+enumlist          :  enumliteral { $$[EnumLiterals] = $1[EnumLiteral]::{}; }
+                   | enumliteral COMMA enumlist { $$[EnumLiterals] = $1[EnumLiteral]::$3[EnumLiterals]; }
+
+enumliteral          : ident { $$[EnumLiteral] = Absyn.ENUMLITERAL($1[Ident],NONE()); }
+                     | ident comment { $$[EnumLiteral] = Absyn.ENUMLITERAL($1[Ident],SOME($2[Comment])); }
 
 classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
                       | classpart classparts { $$[ClassParts] = $1[ClassPart]::$2[ClassParts]; }
 
 classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                      | restClass { $$[ClassPart] = $1[ClassPart]; }
+
                      
                      
 restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                         | PROTECTED elementItems { $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
+                        | EQUATION { $$[ClassPart] = Absyn.EQUATIONS({}); }
                         | EQUATION equationsection { $$[ClassPart] = Absyn.EQUATIONS($1[EquationItems]); }
                         | INITIAL EQUATION equationsection { $$[ClassPart] = Absyn.INITIALEQUATIONS($1[EquationItems]); }  
+                        | T_ALGORITHM { $$[ClassPart] = Absyn.ALGORITHMS({}); }
                         | T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.ALGORITHMS($1[AlgorithmItems]); } 
                         | INITIAL T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.INITIALALGORITHMS($1[AlgorithmItems]); }
                        /* | EXTERNAL externalDecl annotation    */
@@ -292,8 +328,8 @@ algorithmitem           : algorithm SEMICOLON
                         | algorithm comment SEMICOLON 
                           { $$[AlgorithmItem] = Absyn.ALGORITHMITEM($1[Algorithm],SOME($2[Comment]),info); }  
 
-algorithm              :  cref ASSIGN exp
-                            { $$[Algorithm] = Absyn.ALG_ASSIGN(Absyn.CREF($1[ComponentRef]),$2[Exp]); }
+algorithm              :  simpleExp ASSIGN exp  // TOREV: cref or any exp?  { $$[Algorithm] = Absyn.ALG_ASSIGN(Absyn.CREF($1[ComponentRef]),$2[Exp]); }
+                            { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$2[Exp]); }
                         | cref functioncall 
                             { $$[Algorithm] = Absyn.ALG_NORETCALL($1[ComponentRef],$2[FunctionArgs]); }     
                         | LPAR explist RPAR ASSIGN exp
@@ -311,7 +347,8 @@ algorithm              :  cref ASSIGN exp
                         | WHILE exp LOOP  algorithmsection T_END WHILE
                             { $$[Algorithm] = Absyn.ALG_WHILE($3[Exp],$5[AlgorithmItems]); }    
                            
-if_algorithm           : IF exp THEN algorithmsection T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],$4[AlgorithmItems],{},{}); } 
+if_algorithm           : IF exp THEN T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],{},{},{}); } // warning empty if 
+                       |IF exp THEN algorithmsection T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],$4[AlgorithmItems],{},{}); } 
                        | IF exp THEN algorithmsection ELSE algorithmsection T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],$4[AlgorithmItems],{},$6[AlgorithmItems]); }
                        | IF exp THEN algorithmsection algelseifs T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],$4[AlgorithmItems],$5[AlgElseifs],{}); }
                        | IF exp THEN algorithmsection algelseifs ELSE algorithmsection T_END IF { $$[Algorithm] = Absyn.ALG_IF($2[Exp],$4[AlgorithmItems],$5[AlgElseifs],$7[AlgorithmItems]); }
@@ -393,10 +430,10 @@ element             : componentclause
                     | classelementspec  
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
 
-componentclause      : innerouter elementspec 
-                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
-                    | elementspec 
+componentclause      : elementspec 
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
+                    | innerouter elementspec 
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
                     | FINAL innerouter ident elementspec 
                         { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$3[Ident],$2[ElementSpec],info,NONE()); }
                     | FINAL ident elementspec 
@@ -415,8 +452,12 @@ componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}
 
 componentitem       : component { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),NONE()); }
                     | component comment { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),SOME($2[Comment])); }
+                   
+component           : ident { $$[Component] = Absyn.COMPONENT($1[Ident],{},NONE()); } 
+                    | ident modification { $$[Component] = Absyn.COMPONENT($1[Ident],{},SOME($2[Modification])); }                                                                 
 
-component           : ident { $$[Component] = Absyn.COMPONENT($1[Ident],{},NONE()); }                                                                 
+modification        : EQUALS exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }
+                    | ASSIGN exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }  
                     
 redeclarekeywords   : REDECLARE { $$[RedeclareKeywords] = Absyn.REDECLARE(); }
                     | REPLACEABLE { $$[RedeclareKeywords] = Absyn.REPLACEABLE(); }
@@ -482,13 +523,14 @@ path                 : ident { $$[Path] = Absyn.IDENT($1[Ident]); }
                                 
 ident                :  IDENT { $$[Ident] = $1; }                      
 
-string               : STRING { $$ = System.substring($1,2,stringLength($1)-1); } // trim the quote of the string
+string               : STRING { $$ = trimquotes($1); } // trim the quote of the string
 
 comment              : string { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
 
 /* function calls */
 
 functioncall        : LPAR functionargs RPAR { $$[FunctionArgs] = $1[FunctionArgs]; }
+                    | LPAR RPAR  { $$[FunctionArgs] = Absyn.FUNCTIONARGS({},{}); }
 
 functionargs        : namedargs { $$[FunctionArgs] = Absyn.FUNCTIONARGS({},$1[NamedArgs]); }
                     | explist { $$[FunctionArgs] = Absyn.FUNCTIONARGS($1[Exps],{}); }
@@ -500,7 +542,7 @@ namedargs           : namedarg { $$[NamedArgs] = $1[NamedArg]::{}; }
 
 namedarg            : ident EQUALS exp { $$[NamedArg] = Absyn.NAMEDARG($1[Ident],$2[Exp]);  }
 
-/* function calls */
+/* expressions */
                      
 exp					: simpleExp { $$[Exp] = $1[Exp]; }
                      | if_exp { $$[Exp] = $1[Exp]; }
@@ -529,6 +571,8 @@ cases             : case { $$[Cases] = $1[Case]::{}; }
                                     
 case              : CASE exp THEN exp SEMICOLON 
                        { $$[Case] = Absyn.CASE($2[Exp],info,{},{},$4[Exp],info,NONE(),info); }
+                  | CASE exp EQUATION THEN exp SEMICOLON 
+                       { $$[Case] = Absyn.CASE($2[Exp],info,{},{},$4[Exp],info,NONE(),info); }
                   | CASE exp EQUATION equationsection THEN exp SEMICOLON 
                        { $$[Case] = Absyn.CASE($2[Exp],info,{},$4[EquationItems],$6[Exp],info,NONE(),info); }
                   | ELSE THEN exp SEMICOLON 
@@ -542,15 +586,16 @@ simpleExp        : logicexp { $$[Exp] = $1[Exp]; }
                   | headtail { $$[Exp] = $1[Exp]; }
                   
 headtail        : logicexp COLONCOLON logicexp { $$[Exp] = Absyn.CONS($1[Exp],$3[Exp]); }
+                 | logicexp COLONCOLON headtail { $$[Exp] = Absyn.CONS($1[Exp],$3[Exp]); }
 
 rangeExp          : logicexp COLON logicexp { $$[Exp] = Absyn.RANGE($1[Exp],NONE(),$3[Exp]); }
                   | logicexp COLON logicexp COLON logicexp { $$[Exp] = Absyn.RANGE($1[Exp],SOME($3[Exp]),$5[Exp]); }                  
 				   
 logicexp          : logicterm { $$[Exp] = $1[Exp]; }
-                   | logicterm T_OR logicterm { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.OR(),$2[Exp]); }
+                   | logicterm T_OR logicexp { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.OR(),$2[Exp]); }
 
 logicterm          : logfactor { $$[Exp] = $1[Exp]; }
-                   | logfactor T_AND logfactor { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.AND(),$2[Exp]); }
+                   | logfactor T_AND logicterm { $$[Exp] = Absyn.LBINARY($1[Exp],Absyn.AND(),$2[Exp]); }
 
 logfactor         : relterm  { $$[Exp] = $1[Exp]; }
                    | T_NOT relterm { $$[Exp] = Absyn.LUNARY(Absyn.NOT(),$1[Exp]); }  
@@ -560,11 +605,11 @@ relterm            : addterm { $$[Exp] = $1[Exp]; }
 
 addterm             : term { $$[Exp] = $1[Exp]; }
                     | woperator term { $$[Exp] = Absyn.UNARY($1[Operator],$2[Exp]); }
-                    | term woperator term { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
+                    | term woperator addterm { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
 
 
 term               : factor { $$[Exp] = $1[Exp]; }
-					| factor soperator factor { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
+					| factor soperator term { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
 
 factor              : expElement { $$[Exp] = $1[Exp]; }
 					| expElement power expElement { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                    
@@ -579,7 +624,8 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | LBRACE explist RBRACE { $$[Exp] = Absyn.ARRAY($2[Exps]); }
                      | LBRACE RBRACE { $$[Exp] = Absyn.ARRAY({}); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
-                    
+                     
+
 explist             : exp { $$[Exps] = $1[Exp]::{};  }
                     | exp COMMA explist { $$[Exps] = $1[Exp]::$2[Exps]; }
                     
@@ -616,6 +662,18 @@ relOperator			: LESS { $$[Operator] = Absyn.LESS(); }
 
 
 %%
+
+public function trimquotes
+"removes chars in charsToRemove from inString"
+  input String inString;
+  output String outString;
+ algorithm
+  if (stringLength(inString)>2) then
+    outString := System.substring(inString,2,stringLength(inString)-1);
+  else
+    outString := "";
+  end if;
+end trimquotes;
 
 function printContentStack
   input AstStack astStk;
