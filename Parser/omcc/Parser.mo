@@ -709,7 +709,7 @@ function reduce
 		      val::stateStk := stateStk;
 		   end for;
 		  if (errSt>=0) then
-		    (astStk) := ParseCode.actionRed(rule,astStk);
+		    (astStk) := ParseCode.actionRed(rule,astStk,mm_r2);
 		  end if;
 		  /* YYPOPSTACK (yylen);
 		  yylen = 0;
