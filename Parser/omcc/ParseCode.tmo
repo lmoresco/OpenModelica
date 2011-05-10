@@ -25,9 +25,12 @@ function getAST "returns the AST built by the parsing"
     ast::_ := retStk;
 end getAST;  
 
+
+
 function actionRed
   input Integer act;
   input AstStack astStk;
+  input array<Integer> mm_r2;
   output AstStack astStk2;
   Types.Info info;
   // env variables       
@@ -36,7 +39,9 @@ function actionRed
 
   
 algorithm
+   
    printContentStack(astStk);
+   print(" rule:" + intString(act));
    %GETASTSTACK%  
   (_) := matchcontinue(act,astStk)
     local
@@ -44,7 +49,7 @@ algorithm
 %caseAction%    
     case (_,_) 
       equation
-        print("FAIL: Ilegal action");
+        print("\n" + Types.printInfoError(info) + " : Ilegal action ");
         //lAST = intString(act);
       then ();
   end matchcontinue;
@@ -53,6 +58,19 @@ algorithm
   
 end actionRed;  
 
+function reduceStringStack
+  input list<String> skString;
+  input Integer nTokens;
+  output list<String> skStringRes;
+  String strReduce;
+  Integer i;
+ algorithm 
+  for i in 1:nTokens loop 
+    strReduce::skString := skString; 
+  end for;
+  skStringRes := skString;
+end reduceStringStack;
+
 function getInfo
   input list<Token> skToken;
   input Integer nTokens;
@@ -60,7 +78,7 @@ function getInfo
   output list<Token> skTokenRes;
   Token token;
   Types.Info tmpInfo;
-  Integer lns,cns,lne,cne;
+  Integer lns,cns,lne,cne,i;
   String fn;
 algorithm  
   for i in 1:nTokens loop
