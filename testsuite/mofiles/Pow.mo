@@ -8,26 +8,29 @@
 model Pow
 	parameter Integer pi = 3;
 	parameter Real pr = 4.0;
-	Real i, j, k, l;
+	Real i, j, k, l, m;
 equation
 	i = 3 * (2 ^ pi);
 	j = 3 * (pi ^ 2);
 	k = 3.0 * (2 ^ pr);
 	l = 3.0 * (pr ^ 2);
+  m = (3.0 ^ pr) ^ (1/pr);
 end Pow;
 
 // Result:
 // class Pow
-// parameter Integer pi = 3;
-// parameter Real pr = 4.0;
-// Real i;
-// Real j;
-// Real k;
-// Real l;
+//   parameter Integer pi = 3;
+//   parameter Real pr = 4.0;
+//   Real i;
+//   Real j;
+//   Real k;
+//   Real l;
+//   Real m;
 // equation
-//   i = Real(3 * 2 ^ pi);
-//   j = Real(3 * pi ^ 2.0);
+//   i = 3.0 * 2.0 ^ Real(pi);
+//   j = 3.0 * Real(pi) ^ 2.0;
 //   k = 3.0 * 2.0 ^ pr;
 //   l = 3.0 * pr ^ 2.0;
+//   m = 3.0;
 // end Pow;
 // endResult

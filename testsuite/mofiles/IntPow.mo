@@ -1,6 +1,6 @@
 // name: IntPow
 // keywords: integer, power
-// status: correct
+// status: incorrect
 //
 // tests Integer powers
 //
@@ -10,7 +10,11 @@ model IntPow
 end IntPow;
 
 // Result:
-// class IntPow
-// constant Integer i = 512;
-// end IntPow;
+// Error processing file: IntPow.mo
+// [IntPow.mo:9:3-9:29:writable] Error: Type mismatch in binding i = 512.0, expected subtype of Integer, got type Real.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult
