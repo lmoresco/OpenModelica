@@ -63,6 +63,8 @@ type EnumDef = Absyn.EnumDef;
 type EnumLiteral = Absyn.EnumLiteral;
 type EnumLiterals = list<EnumLiteral>;
 type Modification = Absyn.Modification;
+type ClassPrefix = tuple<Boolean,Boolean,Boolean>;
+type ClassPrefix2 = tuple<Boolean,Boolean>;
 
 constant list<String> lstSemValue = {};
 
@@ -227,32 +229,24 @@ within              :  WITHIN path SEMICOLON { $$[Within] = Absyn.WITHIN($2[Path
 
 classes_list            : class SEMICOLON { $$[lstClass] = $1[Class]::{}; } 
                         | class SEMICOLON classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
-                          /* restriction IDENT classdef T_END IDENT SEMICOLON
-                                { if (not stringEqual($2,$5) ) then print(Types.printInfoError(info) + " Error: The identifier at start and end are different '" + $2 + "'");
-                                   true = ($2 == $5);
-                                  end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
-                          */
+                         
                           
-class                      : restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
-                           | PARTIAL restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); }
-                           | FINAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($3,false,true,false,$2[Restriction],$4[ClassDef],info); }
-                           | ENCAPSULATED restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($3,false,false,true,$2[Restriction],$4[ClassDef],info); }
-                           | FINAL ENCAPSULATED restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($4,true,true,false,$3[Restriction],$5[ClassDef],info); }
-                           | FINAL PARTIAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($4,true,false,true,$3[Restriction],$5[ClassDef],info); }
-                           | ENCAPSULATED PARTIAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($4,false,true,true,$3[Restriction],$5[ClassDef],info); }
-                           | FINAL ENCAPSULATED PARTIAL restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($5,true,true,true,$4[Restriction],$6[ClassDef],info); } 
+class                      : classprefix restriction IDENT classdef 
+                                { (v1Boolean,v2Boolean,v3Boolean) = $1[ClassPrefix]; 
+                                 $$[Class] = Absyn.CLASS($3,v1Boolean,v2Boolean,v3Boolean,$2[Restriction],$4[ClassDef],info); }
                         
+classprefix            : final encapsulated partial  
+                         { $$[ClassPrefix] = ($1[Boolean],$2[Boolean],$3[Boolean]); }
 
+encapsulated           : ENCAPSULATED { $$[Boolean] = true;   }
+                        | /* empty */ { $$[Boolean] = false; }
+                        
+final                  : FINAL { $$[Boolean] = true;   }
+                        | /* empty */ { $$[Boolean] = false; }
 
-                           
+partial                : PARTIAL { $$[Boolean] = true;   }
+                        | /* empty */ { $$[Boolean] = false; }
+        
 restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
 						| RECORD { $$[Restriction] = Absyn.R_RECORD(); }
