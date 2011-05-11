@@ -155,8 +155,7 @@ real         {digits}[\.]{digits}({exponent})?
     "\\\""    { keepBuffer; }
     "\""    { BEGIN(INITIAL) return STRING; }
     [^\n]   {keepBuffer;};
-    \n       {yyerror("Unterminated string in line")
-              yyterminate();};
+    \n       {keepBuffer;};
     <<EOF>>  {
          yyerror("Unterminated string");
 	       yyterminate();

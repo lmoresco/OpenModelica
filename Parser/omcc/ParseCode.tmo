@@ -32,6 +32,8 @@ function actionRed
   input AstStack astStk;
   input array<Integer> mm_r2;
   output AstStack astStk2;
+  output Boolean error=false;
+  output String errorMsg="";
   Types.Info info;
   // env variables       
   // AstStack 

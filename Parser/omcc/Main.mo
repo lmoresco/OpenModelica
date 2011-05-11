@@ -94,7 +94,7 @@ algorithm
   	    if (result) then
   	     //unparsed = Dump.unparseStr(astTreeModelica,false);
   	     //print(unparsed);
-  	     System.writeFile("UnParsed" + filename,Dump.unparseStr(astTreeModelica,false));
+  	     System.writeFile("UnParsed" + filename,Dump.unparseStr(astTreeModelica,true));
   	     //printAny(unparsed);
   	    end if;
   	    // Run the machine for exercise 10 

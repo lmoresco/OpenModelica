@@ -43,6 +43,7 @@ end ParseData;
     if the error is cero, then no error is present or has been recovered 
     The error value decreases with each shifted token */
 constant Integer maxErrShiftToken = 3;
+constant Integer maxCandidateTokens = 4;
 constant Integer maxErrRecShift = -5;
 
 constant Integer ERR_TYPE_DELETE = 1;
@@ -97,7 +98,21 @@ algorithm
    astStk := ParseCode.initAstStack(astStk);
    env := ENV(emptyTok,emptyTok,stateStk,errStk,0,0,0,tokens,{},astStk,debug,stateStk,astStk);   
   
-   (rToks,result,ast) := processToken(tokens,env,pt);
+  
+   while (Util.isListEmpty(tokens)==false) loop
+	   if (debug) then 
+	     print("\nTokens remaining:");
+	     print(intString(listLength(tokens)));   
+     end if;
+    // printAny("\nTokens remaining:");
+	  // printAny(intString(listLength(tokens))); 
+     (tokens,env,result,ast) := processToken(tokens,env,pt);
+     if (result==false) then 
+       break; 
+     end if;
+   end while;
+   
+   
     if (debug) then
        printAny(ast);   
     end if;
@@ -113,7 +128,7 @@ function addSourceMessage
   input list<String> errStk;
   input Types.Info info;
 algorithm
-    //Error.addSourceMessage(1,errStk,info);
+    Error.addSourceMessage(1,errStk,info);
     //print(printSemStack(listReverse(errStk),""));
 end addSourceMessage;
 
@@ -129,6 +144,7 @@ function processToken
   input Env env;
   input ParseData pt;
   output list<Types.Token> rTokens;
+  output Env env2;
   output Boolean result;
   output ParseCode.AstTree ast;
   list<Types.Token> tempTokens;
@@ -167,7 +183,6 @@ function processToken
         list<Types.Token> rest;
         list<Integer> vl;
         Types.Token c,nt;
-        Env env2;
         Integer n,len,val,tok,tmTok,chkVal;
         String nm,semVal;
         Absyn.Ident idVal;
@@ -246,7 +261,7 @@ function processToken
             if (debug) then 
               print("\nReprocesing at the END");
             end if;  
-            (rest,result,ast) = processToken(rest,env2,pt);
+            (rest,env2,result,ast) = processToken(rest,env2,pt);
          end if;   
            
         then ({},result);
@@ -285,7 +300,7 @@ function processToken
 				   env2=reduce(n,env,pt);
 				   
 				   if (result==true) then //stops when it finds and error             
-              (rest,result,ast) = processToken(tokens,env2,pt);
+              (rest,env2,result,ast) = processToken(tokens,env2,pt);
            end if;
          
       then (rest,result);    
@@ -382,10 +397,13 @@ function processToken
 	           env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);     
 	         end if;
          end if;
-         if ((result==true) and (errSt>maxErrRecShift)) then //stops when it finds and error             
-           (rest,result,ast) = processToken(rest,env2,pt);
-         end if;
          
+         env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);
+         if (errSt<>0 or listLength(rest)==0) then
+	         if ((result==true) and (errSt>maxErrRecShift)) then //stops when it finds and error             
+	           (rest,env2,result,ast) = processToken(rest,env2,pt);
+	         end if;
+	       end if;
      then (rest,result);
     end matchcontinue;
    // return the AST  
@@ -512,7 +530,6 @@ algorithm
             erMsg = erMsg + ", ERASE token";
             //errStk = erMsg::errStk;     
          end if;
-               
          //printAny(errStk);
          if (Util.isListEmpty(errStk)==true) then
             errStk = erMsg::{};
@@ -556,7 +573,7 @@ function checkCandidates
   array<Integer> mm_translate, mm_prhs, mm_rhs, mm_rline, mm_toknum, mm_r1, mm_r2, mm_defact, mm_defgoto,
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   
-  Integer numTokens,i;
+  Integer numTokens,i,j=1;
   String name,tokVal;
  algorithm
     PARSE_TABLE(tname=mm_tname) := pt;
@@ -567,8 +584,13 @@ function checkCandidates
     for i in 258:numTokens loop
       if (checkToken(i,env,pt,action)==true) then
          //name := mm_tname[i-255];
-         tokVal := getTokenSemValue(i-255,pt);
-         resCandidates := tokVal::resCandidates;
+         if (j<=maxCandidateTokens) then
+	         tokVal := getTokenSemValue(i-255,pt);
+	         resCandidates := tokVal::resCandidates;
+	         j := j+1;
+         else
+           i := numTokens+1;  
+         end if;
       end if;
     end for;
 end checkCandidates;
@@ -667,7 +689,8 @@ function checkToken
    //print("\n[State="+ intString(cSt) + " Stack Backup:{" + printStack(stateSkBk,"") + "}]\n");
    //print("\n[StateStack Backup:{" + printStack(stateSkBk,"") + "}\n");
    
-   (_,result,_) := processToken(prog,env2,pt);
+   (_,_,result,_) := processToken(prog,env2,pt);
+     
    if (result and debug) then
       print("\n **** Candidate TOKEN ADDED: " + intString(chkTok));
    end if;
@@ -686,10 +709,10 @@ function reduce
   Types.Token cTok,nTk;
   ParseCode.AstStack astStk;
   ParseCode.AstStack astSkBk;
-  Boolean debug;
+  Boolean debug,error;
   list<Integer> stateStk,stateSkBk;
   list<String> errStk,redStk;
-  String astTmp,semVal;
+  String astTmp,semVal,errMsg;
   Integer errSt,sSt,cSt;
   list<Types.Token> prog,prgBk; 
   Integer i,len,val,n, nSt,chkVal;
@@ -709,15 +732,13 @@ function reduce
 		      val::stateStk := stateStk;
 		   end for;
 		  if (errSt>=0) then
-		    (astStk) := ParseCode.actionRed(rule,astStk,mm_r2);
+		    (astStk,error,errMsg) := ParseCode.actionRed(rule,astStk,mm_r2);
 		  end if;
-		  /* YYPOPSTACK (yylen);
-		  yylen = 0;
-		  YY_STACK_PRINT (yyss, yyssp);
-		
-		  *++yyvsp = yyval;
-		  */
-		  /* Find the new State after reduce */
+		   if (error) then
+		      errStk := errMsg::errStk;
+		      errSt := maxErrShiftToken;
+		   end if;
+		  
 		   cSt::_ := stateStk;
 		  
 		   n := mm_r1[rule];

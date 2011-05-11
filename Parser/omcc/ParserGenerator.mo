@@ -66,7 +66,7 @@ package ParserGenerator
     result := System.stringReplace(parser,"ParseTable","ParseTable" + outFileName);
     result := System.stringReplace(result,"Lexer.","Lexer" + outFileName + ".");
     result := System.stringReplace(result,"ParseCode","ParseCode" + outFileName);
-    cp := "package Parser" + outFileName + " // " + leyend + stTime;
+    cp := "package Parser" + outFileName + " \" " + leyend + stTime + "\"";
     result := System.stringReplace(result,"package Parser",cp );
     result := System.stringReplace(result,"end Parser;","end Parser" + outFileName + ";");
     System.writeFile("Parser" + outFileName + ".mo",result);

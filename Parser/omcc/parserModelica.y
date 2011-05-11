@@ -63,6 +63,8 @@ type EnumDef = Absyn.EnumDef;
 type EnumLiteral = Absyn.EnumLiteral;
 type EnumLiterals = list<EnumLiteral>;
 type Modification = Absyn.Modification;
+type Boolean3 = tuple<Boolean,Boolean,Boolean>;
+type Boolean2 = tuple<Boolean,Boolean>;
 
 constant list<String> lstSemValue = {};
 
@@ -233,25 +235,24 @@ classes_list            : class SEMICOLON { $$[lstClass] = $1[Class]::{}; }
                                   end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                           */
                           
-class                      : restriction IDENT classdef 
+class                  : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
-                           | PARTIAL restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); }
-                           | FINAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($3,false,true,false,$2[Restriction],$4[ClassDef],info); }
-                           | ENCAPSULATED restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($3,false,false,true,$2[Restriction],$4[ClassDef],info); }
-                           | FINAL ENCAPSULATED restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($4,true,true,false,$3[Restriction],$5[ClassDef],info); }
-                           | FINAL PARTIAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($4,true,false,true,$3[Restriction],$5[ClassDef],info); }
-                           | ENCAPSULATED PARTIAL restriction IDENT classdef
-                                { $$[Class] = Absyn.CLASS($4,false,true,true,$3[Restriction],$5[ClassDef],info); }
-                           | FINAL ENCAPSULATED PARTIAL restriction IDENT classdef 
-                                { $$[Class] = Absyn.CLASS($5,true,true,true,$4[Restriction],$6[ClassDef],info); } 
+                       | classprefix restriction IDENT classdef 
+                                { (v1Boolean,v2Boolean,v3Boolean) = $1[Boolean3]; 
+                                 $$[Class] = Absyn.CLASS($3,v1Boolean,v2Boolean,v3Boolean,$2[Restriction],$4[ClassDef],info); }          
+
+classprefix            : FINAL encapsulated partial  
+                         { $$[Boolean3] = (true,$2[Boolean],$3[Boolean]); }
+                        | ENCAPSULATED partial   
+                         { $$[Boolean3] = (false,true,$1[Boolean]); }
+                        | PARTIAL   
+                         { $$[Boolean3] = (false,false,$1[Boolean]); }
+
+encapsulated           : ENCAPSULATED { $$[Boolean] = true;   }
+                        | /* empty */ { $$[Boolean] = false; }
                         
-
-
+partial                : PARTIAL { $$[Boolean] = true;   }
+                        | /* empty */ { $$[Boolean] = false; }
                            
 restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| MODEL { $$[Restriction] = Absyn.R_MODEL(); }
@@ -272,9 +273,9 @@ classdef             : classparts T_END IDENT
                           { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
                      | string classparts T_END IDENT 
                           { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
-                     |   classdefenumeration   
+                     | classdefenumeration   
                           { $$[ClassDef] = $1[ClassDef]; };
-                     |   classdefderived   
+                     | classdefderived   
                           { $$[ClassDef] = $1[ClassDef]; };
                      
 classdefenumeration  :  EQUALS ENUMERATION RPAR enumeration LPAR comment
@@ -492,8 +493,7 @@ direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); }
 
 /* Type specification */
 
-typespec             : path { $$[TypeSpec] = Absyn.TPATH($1[Path],NONE()); }
-                     | path arraySubscripts { $$[TypeSpec] = Absyn.TPATH($1[Path],SOME($2[ArrayDim])); }
+typespec             : path arraySubscripts { $$[TypeSpec] = Absyn.TPATH($1[Path],SOME($2[ArrayDim])); }
                      | path arrayComplex { $$[TypeSpec] = Absyn.TCOMPLEX($1[Path],$2[TypeSpecs],NONE()); }
 
 arrayComplex        : LESS typespecs GREATER { $$[TypeSpecs] = $1[TypeSpecs]; }
@@ -502,7 +502,7 @@ typespecs           : typespec { $$[TypeSpecs] = $1[TypeSpec]::{}; }
                      | typespec COMMA typespecs { $$[TypeSpecs] = $1[TypeSpec]::$2[TypeSpecs]; }
 
 arraySubscripts     : LBRACK arrayDim RBRACK { $$[ArrayDim] = $1[ArrayDim]; }
-                   // | /* empty */ { $$[ArrayDim] = {}; }                      
+                    | /* empty */ { $$[ArrayDim] = {}; }                      
                      
 arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
                      | exp COMMA arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
@@ -605,7 +605,6 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); } 
                      | tuple  { $$[Exp] = $1[Exp]; }
                      | LBRACE explist2 RBRACE { $$[Exp] = Absyn.ARRAY($2[Exps]); }
-                  //   | LBRACE RBRACE { $$[Exp] = Absyn.ARRAY({}); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | LPAR simpleExp RPAR { $$[Exp] = $2[Exp]; }
                      
@@ -619,10 +618,8 @@ explist2            : exp  { $$[Exps] = {$1[Exp]};  }
                     | exp COMMA explist2 { $$[Exps] = $1[Exp]::$3[Exps]; }
                     | /* empty */ { $$[Exps] = {}; }
                     
-cref                : ident { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],{}); }
-                     | ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
+cref                :  ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
                      | ident DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],{},$3[ComponentRef]); }
-                     | ident arraySubscripts DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],$2[ArrayDim],$4[ComponentRef]); }  
                      | DOT cref  { $$[ComponentRef] = Absyn.CREF_FULLYQUALIFIED($2[ComponentRef]); }
                      | WILD { $$[ComponentRef] = Absyn.WILD();}    
                      | ALLWILD { $$[ComponentRef] = Absyn.ALLWILD();}                   
