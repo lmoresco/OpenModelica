@@ -116,7 +116,7 @@ algorithm
   env := ENV(1,1,1,0,1,1,{},{},{1},debug,fileName);
   if (debug==true) then
      print("\nLexer analyzer LexerCode..." + fileName + "\n");
-     printAny("\nLexer analyzer LexerCode..." + fileName + "\n");
+     //printAny("\nLexer analyzer LexerCode..." + fileName + "\n");
   end if;
   
   tokens := {};
@@ -373,10 +373,7 @@ algorithm
     local
       Integer s,c2;
     case (true)
-      equation
-        // print("[NCH:" + intString(cState)+"]");
-        // val = cState; 
-      then (cState,c);
+       then (cState,c);
     case (false)
       equation
         cState = mm_def[cState];

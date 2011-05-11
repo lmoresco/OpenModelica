@@ -1,4 +1,4 @@
-package %ParseCode% // Generated %time%
+package %ParseCode% // %time%
 import Types;
 
 %prologue%
@@ -40,8 +40,8 @@ function actionRed
   
 algorithm
    
-   printContentStack(astStk);
-   print(" rule:" + intString(act));
+  // printContentStack(astStk);
+  // print(" rule:" + intString(act));
    %GETASTSTACK%  
   (_) := matchcontinue(act,astStk)
     local
@@ -49,8 +49,8 @@ algorithm
 %caseAction%    
     case (_,_) 
       equation
-        print("\n" + Types.printInfoError(info) + " : Ilegal action ");
         //lAST = intString(act);
+        printAny("\n" + Types.printInfoError(info) + " : Ilegal action case " + intString(act));
       then ();
   end matchcontinue;
     %PUTASTSTACK% 

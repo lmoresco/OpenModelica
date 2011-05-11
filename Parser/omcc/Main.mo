@@ -42,7 +42,7 @@ algorithm
   local
       String ver_str,errstr,filename,parser,ast;
       list<String> args_1,args,chars;
-      String s,str,omhome,oldpath,newpath;
+      String s,str,omhome,oldpath,newpath,unparsed;
       Boolean result; 
     case args as _::_
       equation
@@ -85,14 +85,17 @@ algorithm
   	    //tokens = LexerModelica.scanString("Hello",true); 
   	    tokens = LexerModelica.scan(filename,false);
   	    
-  	    print(Types.printTokens(tokens,""));
+  	    //print(Types.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser
   	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
   	    // print the AST
   	    if (result) then
-  	     printAny(astTreeModelica);
+  	     //unparsed = Dump.unparseStr(astTreeModelica,false);
+  	     //print(unparsed);
+  	     System.writeFile("UnParsed" + filename,Dump.unparseStr(astTreeModelica,false));
+  	     //printAny(unparsed);
   	    end if;
   	    // Run the machine for exercise 10 
   	   

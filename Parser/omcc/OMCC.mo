@@ -56,7 +56,7 @@ algorithm
   mClass := Absyn.CLASS("ctest",false,false,false,Absyn.R_CLASS(),mCDef);
   prog := Absyn.PROGRAM({mClass},Absyn.WITHIN(Absyn.IDENT("test")),Absyn.TIMESTAMP(System.getCurrentTime(),System.getCurrentTime()));
   printAny(prog); */
-  print("\nOMCC v0.8 (OpenModelica Compiler- Compiler) \nCopyright 2011 Open Souce Modelica Consorsium (OSMC) ");
+  print("\n" + ParserGenerator.leyend);
 end printUsage;
 
 protected function readSettings

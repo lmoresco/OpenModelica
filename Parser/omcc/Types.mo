@@ -78,6 +78,18 @@ function printErrorToken
   strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) + ":Syntax ERROR near '" +  printBuffer(val,"") + "'";
 end printErrorToken;
 
+function printInfoError
+  input Info info;
+  output String strTk;
+  String tokName,fileNm;
+  Integer idtk,lns,cns,lne,cne;
+  list<Integer> val;
+ algorithm
+  INFO(fileName=fileNm,lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
+  //strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) + ":Syntax ERROR near token:[" + tokName + " '" +  printBuffer(val,"") + "']";
+  strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) ;
+end printInfoError;
+
 function printShortToken
   input Token token;
   output String strTk;

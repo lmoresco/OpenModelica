@@ -12,11 +12,16 @@ wild         [_]
 ident        {letter}({letter}|{digit}|{wild})*
 digit        [0-9]
 digits       {digit}+
+exponent     ([e]|[E])([+]|[-])?{digits}
+real         {digits}[\.]{digits}({exponent})?
 /* Lex style lexical syntax of tokens in the MODELICA language */
+
+  
 
 %%
 
 {whitespace} ;
+{real}      return UNSIGNED_REAL;
 "algorithm" return T_ALGORITHM;
 "and" return T_AND;
 "annotation" return T_ANNOTATION;
@@ -140,7 +145,7 @@ digits       {digit}+
 %"[\"][^\"]*[\"]"	return STRING;
 
 {ident}      return IDENT;
-{digits}     return DIGIT;
+{digits}     return UNSIGNED_INTEGER;
 
 "\""	     {
 		BEGIN(c_string) keepBuffer;
