@@ -1,11 +1,68 @@
 // name: SolveLinearSystem
 // status: correct
+// teardown_command: rm -f M_*
 
 solveLinearSystem({{2,0.5},{2,-0.5}},{14.0,30.0});getErrorString();
 solveLinearSystem({{2,0.5},{2,0.5}},{14.0,30.0});getErrorString();
+solveLinearSystem({{2,0.5,1},{2,-0.5,1},{2,-0.5,2}},{14.0,30.0,18.0});getErrorString();
+
+loadString("
+model SolveLinearSystem
+  Real x,y,z;
+equation
+  2*x + y/2 + z = 14.0;
+  2*x - y/2 + z = 30.0;
+  2*x - y/2 + 2*z = 18.0;
+end SolveLinearSystem;
+");
+translateModel(SolveLinearSystem);getErrorString();
+clear();
+loadString("
+model SolveLinearSystem
+  Real x,y,z;
+equation
+  2*x + y/2 + z = 14.0;
+  2*x - y/2 + z = 30.0;
+  2*x - y/2 + z = 18.0;
+end SolveLinearSystem;
+");
+translateModel(SolveLinearSystem);getErrorString();
+
 // Result:
 // ({11.0,-16.0},0)
 // ""
 // ({14.0,30.0},2)
 // ""
+// ({17.0,-16.0,-12.0},0)
+// ""
+// true
+// "SimCode: The model  has been translated"
+// ""
+// true
+// true
+// "There were errors during translation. Use getErrorString() to see them."
+// "Error: When solving linear system 
+// [
+//   1.0 , 2.0 , 0.5 ;
+//   1.0 , 2.0 , -0.5 ;
+//   1.0 , 2.0 , -0.5
+// ]
+//   *
+// [
+//   z ;
+//   x ;
+//   y
+// ]
+//   =
+// [
+//   14.0 ;
+//   18.0 ;
+//   30.0
+// ]
+//   U(2,2) = 0.0, which means system is singular for variable x.
+// Error: Internal error createOdeSystem2 failed
+// Error: Internal error createOdeSystem failed
+// Error: Internal error createEquations failed
+// Error: Internal error Generation of simulation using code using templates failed
+// "
 // endResult
