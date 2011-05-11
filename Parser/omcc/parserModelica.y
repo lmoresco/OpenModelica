@@ -1,6 +1,6 @@
 %{
 import Absyn;
-
+/* Type Declarations */
 type AstTree = Absyn.Program;
 type Token = Types.Token;  
 type Program = Absyn.Program;
@@ -66,29 +66,47 @@ type Modification = Absyn.Modification;
 type Boolean3 = tuple<Boolean,Boolean,Boolean>;
 type Boolean2 = tuple<Boolean,Boolean>;
 
-constant list<String> lstSemValue = {};
+constant list<String> lstSemValue3 = {};
 
-constant list<String> lstSemValue3 = {
-  "error", "$undefined","T_ALGORITHM", "T_AND", "T_ANNOTATION", "BLOCK", "CLASS", "CONNECT",
-  "CONNECTOR", "CONSTANT", "DISCRETE", "DER", "DEFINEUNIT", "EACH", "ELSE",
-  "ELSEIF", "ELSEWHEN", "T_END", "ENUMERATION", "EQUATION", "ENCAPSULATED",
-  "EXPANDABLE", "EXTENDS", "CONSTRAINEDBY", "EXTERNAL", "T_FALSE", "FINAL",
-  "FLOW", "FOR", "FUNCTION", "IF", "IMPORT", "T_IN", "INITIAL", "INNER",
-  "T_INPUT", "LOOP", "MODEL", "T_NOT", "T_OUTER", "OPERATOR", "OVERLOAD",
-  "T_OR", "T_OUTPUT", "T_PACKAGE", "PARAMETER", "PARTIAL", "PROTECTED",
-  "PUBLIC", "RECORD", "REDECLARE", "REPLACEABLE", "RESULTS", "THEN",
-  "T_TRUE", "TYPE", "UNSIGNED_REAL", "WHEN", "WHILE", "WITHIN", "RETURN",
-  "BREAK", "DOT", "LPAR", "RPAR", "LBRACK", "RBRACK", "LBRACE", "RBRACE",
-  "EQUALS", "ASSIGN", "COMMA", "COLON", "SEMICOLON", "CODE", "CODE_NAME",
-  "CODE_EXP", "CODE_VAR", "PURE", "IMPURE", "IDENT", "DIGIT", "STAR",
-  "MINUS", "PLUS", "LESSEQ", "LESSGT", "LESS", "GREATER", "GREATEREQ",
-  "EQEQ", "POWER", "SLASH", "STRING", "PLUS_EW", "MINUS_EW", "STAR_EW",
-  "SLASH_EW", "POWER_EW", "STREAM", "AS", "CASE", "EQUALITY", "FAILURE",
-  "GUARD", "LOCAL", "MATCH", "MATCHCONTINUE", "UNIONTYPE", "ALLWILD",
-  "WILD", "SUBTYPEOF", "COLONCOLON", "MOD", "$accept", "program", "within",
-  "classes_list", "class", "classdef", "classparts", "classpart",
-  "elementItems", "elementItem", "element", "elementspec", "import",
-  "path", "Ident", "comment"};
+constant list<String> lstSemValue = {
+   "error", "$undefined", "ALGORITHM", "AND", "ANNOTATION",
+  "BLOCK", "CLASS", "CONNECT", "CONNECTOR", "CONSTANT", "DISCRETE", "DER",
+  "DEFINEUNIT", "EACH", "ELSE", "ELSEIF", "ELSEWHEN", "END",
+  "ENUMERATION", "EQUATION", "ENCAPSULATED", "EXPANDABLE", "EXTENDS",
+  "CONSTRAINEDBY", "EXTERNAL", "FALSE", "FINAL", "FLOW", "FOR",
+  "FUNCTION", "IF", "IMPORT", "IN", "INITIAL", "INNER", "INPUT",
+  "LOOP", "MODEL", "NOT", "OUTER", "OPERATOR", "OVERLOAD", "OR",
+  "OUTPUT", "PACKAGE", "PARAMETER", "PARTIAL", "PROTECTED", "PUBLIC",
+  "RECORD", "REDECLARE", "REPLACEABLE", "RESULTS", "THEN", "TRUE",
+  "TYPE", "REAL", "WHEN", "WHILE", "WITHIN", "RETURN", "BREAK",
+  ".", "(", ")", "[", "]", "{", "}", "=",
+  "ASSIGN", "COMMA", "COLON", "SEMICOLON", "CODE", "CODE_NAME", "CODE_EXP",
+  "CODE_VAR", "PURE", "IMPURE", "Identity", "DIGIT", "INTEGER",
+  "*", "-", "+", "<=", "<>", "<", ">",
+  ">=", "==", "^", "SLASH", "STRING", ".+", ".-",
+  ".*", "./", ".*", "STREAM", "AS", "CASE", "EQUALITY",
+  "FAILURE", "GUARD", "LOCAL", "MATCH", "MATCHCONTINUE", "UNIONTYPE",
+  "ALLWILD", "WILD", "SUBTYPEOF", "COLONCOLON", "MOD", "$accept",
+  "program", "within", "classes_list", "class", "classprefix",
+  "encapsulated", "partial", "restriction", "classdef",
+  "classdefenumeration", "classdefderived", "enumeration", "enumlist",
+  "enumliteral", "classparts", "classpart", "restClass",
+  "algorithmsection", "algorithmitem", "algorithm", "if_algorithm",
+  "algelseifs", "algelseif", "when_algorithm", "algelsewhens",
+  "algelsewhen", "equationsection", "equationitem", "equation",
+  "when_equation", "elsewhens", "elsewhen", "foriterators", "foriterator",
+  "if_equation", "elseifs", "elseif", "elementItems", "elementItem",
+  "element", "componentclause", "componentitems", "componentitem",
+  "component", "modification", "redeclarekeywords", "innerouter",
+  "importelementspec", "classelementspec", "import", "elementspec",
+  "elementAttr", "variability", "direction", "typespec", "arrayComplex",
+  "typespecs", "arraySubscripts", "arrayDim", "functioncall",
+  "functionargs", "namedargs", "namedarg", "exp", "matchcont", "if_exp",
+  "expelseifs", "expelseif", "matchlocal", "cases", "case", "casearg",
+  "simpleExp", "headtail", "rangeExp", "logicexp", "logicterm",
+  "logfactor", "relterm", "addterm", "term", "factor", "expElement",
+  "tuple", "explist", "explist2", "cref", "woperator", "soperator",
+  "power", "relOperator", "path", "ident", "string", "comment"};
 
 %}
 
