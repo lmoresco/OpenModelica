@@ -48,6 +48,9 @@ checkModel(FinalPropagation); getErrorString();
 // Zero Crossings :
 // ===============
 // 
+// When Clauses :
+// ===============
+// 
 // Array Equations :
 // ===============
 // Algorithms:
