@@ -1,11 +1,11 @@
 # BuiltinReal.mos fails when using Cevalfunc.mo! the values are OK, the display is different! 
-TEST = ../rtest
+TEST = ../rtest -v
 
 
 ifeq ($(OMDEV),)
 	PATH := ./:${PATH}
 else
-	PATH := ./;${PATH}
+	# this DOES NOT WORK ON WINDOWS! PATH := ./;${PATH}
 endif
 
 TESTFILES = linmodel.mos \
