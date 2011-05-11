@@ -27113,9 +27113,7 @@ algorithm
         a_preExp = Tpl.writeText(a_preExp, a_e1);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
         a_preExp = Tpl.writeText(a_preExp, l_tmp);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
-        a_preExp = Tpl.writeText(a_preExp, l_tmp);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" * "));
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" *= "));
         a_preExp = Tpl.writeText(a_preExp, l_tmp);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
