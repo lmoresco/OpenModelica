@@ -1082,6 +1082,14 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.LINEAR_SOLVED(vars = _),
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("  simple equation from linear system: ###"));
+      then txt;
+
+    case ( txt,
            DAE.SOLVE(exp1 = i_op_exp1, exp2 = i_op_exp2, cr = i_op_cr, res = i_op_res, assertConds = i_op_assertConds),
            _ )
       equation
