@@ -27042,40 +27042,116 @@ protected function fun_660
   input Option<Integer> in_mArg;
   input Tpl.Text in_a_e2;
   input Tpl.Text in_a_e1;
+  input Tpl.Text in_a_preExp;
+  input Tpl.Text in_a_varDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_preExp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg, in_a_e2, in_a_e1)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_mArg, in_a_e2, in_a_e1, in_a_preExp, in_a_varDecls)
     local
       Tpl.Text txt;
       Tpl.Text a_e2;
       Tpl.Text a_e1;
+      Tpl.Text a_preExp;
+      Tpl.Text a_varDecls;
       Integer i_i;
+      Tpl.Text l_tmp;
+
+    case ( txt,
+           SOME(2),
+           _,
+           a_e1,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_tmp, a_varDecls) = tempDecl(Tpl.emptyTxt, "modelica_real", a_varDecls);
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
+        a_preExp = Tpl.writeText(a_preExp, a_e1);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" * "));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           SOME(3),
+           _,
+           a_e1,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_tmp, a_varDecls) = tempDecl(Tpl.emptyTxt, "modelica_real", a_varDecls);
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
+        a_preExp = Tpl.writeText(a_preExp, a_e1);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" * "));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" * "));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
+
+    case ( txt,
+           SOME(4),
+           _,
+           a_e1,
+           a_preExp,
+           a_varDecls )
+      equation
+        (l_tmp, a_varDecls) = tempDecl(Tpl.emptyTxt, "modelica_real", a_varDecls);
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
+        a_preExp = Tpl.writeText(a_preExp, a_e1);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" * "));
+        a_preExp = Tpl.writeText(a_preExp, l_tmp);
+        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(";"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" * "));
+        txt = Tpl.writeText(txt, l_tmp);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            SOME(i_i),
            _,
-           a_e1 )
+           a_e1,
+           a_preExp,
+           a_varDecls )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("real_int_pow("));
         txt = Tpl.writeText(txt, a_e1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeStr(txt, intString(i_i));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then txt;
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            _,
            a_e2,
-           a_e1 )
+           a_e1,
+           a_preExp,
+           a_varDecls )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("pow("));
         txt = Tpl.writeText(txt, a_e1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, a_e2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then txt;
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_660;
 
@@ -27084,16 +27160,22 @@ protected function fun_661
   input Boolean in_mArg;
   input Tpl.Text in_a_e2;
   input Tpl.Text in_a_e1;
+  input Tpl.Text in_a_preExp;
+  input Tpl.Text in_a_varDecls;
   input DAE.Exp in_a_exp2;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_preExp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg, in_a_e2, in_a_e1, in_a_exp2)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_mArg, in_a_e2, in_a_e1, in_a_preExp, in_a_varDecls, in_a_exp2)
     local
       Tpl.Text txt;
       Tpl.Text a_e2;
       Tpl.Text a_e1;
+      Tpl.Text a_preExp;
+      Tpl.Text a_varDecls;
       DAE.Exp a_exp2;
       Option<Integer> ret_0;
 
@@ -27101,22 +27183,26 @@ algorithm
            false,
            a_e2,
            a_e1,
+           a_preExp,
+           a_varDecls,
            a_exp2 )
       equation
         ret_0 = Expression.realExpIntLit(a_exp2);
-        txt = fun_660(txt, ret_0, a_e2, a_e1);
-      then txt;
+        (txt, a_preExp, a_varDecls) = fun_660(txt, ret_0, a_e2, a_e1, a_preExp, a_varDecls);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            _,
            _,
            a_e1,
+           a_preExp,
+           a_varDecls,
            _ )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("sqrt("));
         txt = Tpl.writeText(txt, a_e1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-      then txt;
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_661;
 
@@ -27468,7 +27554,7 @@ algorithm
            a_varDecls )
       equation
         ret_3 = Expression.isHalf(a_exp2);
-        txt = fun_661(txt, ret_3, a_e2, a_e1, a_exp2);
+        (txt, a_preExp, a_varDecls) = fun_661(txt, ret_3, a_e2, a_e1, a_preExp, a_varDecls, a_exp2);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33543,7 +33629,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5659, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5672, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -33880,7 +33966,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5704, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5717, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -37463,7 +37549,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6205, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6218, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -39110,7 +39196,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6450, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6463, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_867;
@@ -39225,7 +39311,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6468, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6481, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
