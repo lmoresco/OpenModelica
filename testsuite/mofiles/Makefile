@@ -281,7 +281,9 @@ FloatingPoint.mo \
 Floor.mo \
 FlowDeclConnector.mo \
 FlowDeclRecord.mo \
+FlowDeclRecord2.mo \
 FlowDeclType.mo \
+FlowInvalid1.mo \
 ForceAndTorque.mo \
 ForIf.mo \
 ForIterator1.mo \

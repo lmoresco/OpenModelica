@@ -16,7 +16,7 @@ checkModel(FinalPropagation); getErrorString();
 // ""
 // "function FinalPropagation.R \"Automatically generated record constructor for FinalPropagation.R\"
 //   input Real b;
-// output R res;
+//   output R res;
 // end FinalPropagation.R;
 // 
 // class FinalPropagation
@@ -30,7 +30,7 @@ checkModel(FinalPropagation); getErrorString();
 // 
 // Known Variables (constants) (1)
 // =============================
-// 1:  r.b:PARAM(final = true )  = 1.0 FinalPropagation, .FinalPropagation.R type: Real (final = true )  indx = -1
+// 1:  r.b:PARAM(final = true )  = 1.0 FinalPropagation, .FinalPropagation.R, .Real type: Real (final = true )  indx = -1
 // External Objects (0)
 // =============================
 // Classes of External Objects (0)
