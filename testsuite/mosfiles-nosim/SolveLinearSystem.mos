@@ -1,0 +1,11 @@
+// name: SolveLinearSystem
+// status: correct
+
+solveLinearSystem({{2,0.5},{2,-0.5}},{14.0,30.0});getErrorString();
+solveLinearSystem({{2,0.5},{2,0.5}},{14.0,30.0});getErrorString();
+// Result:
+// ({11.0,-16.0},0)
+// ""
+// ({14.0,30.0},2)
+// ""
+// endResult

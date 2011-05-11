@@ -20,6 +20,7 @@ ModifierVariabilityError.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
 Return.mos \
+SolveLinearSystem.mos \
 UnpOpPrecedence.mos \
 UriLookup.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
