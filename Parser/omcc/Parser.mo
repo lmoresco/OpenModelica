@@ -170,6 +170,7 @@ function processToken
    if (debug) then
      print("\n[State:" + intString(cSt) +"]{" + printStack(stateStk,"") + "}\n");
    end if;  
+   env2 := env;
     // Start the LALR(1) Parsing
    cFinal := ParseTable.YYFINAL;
    cPactNinf := ParseTable.YYPACT_NINF;
@@ -379,6 +380,7 @@ function processToken
 	                 print(" REDUCE");
 	             end if;    
 	             env2=reduce(n,env,pt);
+	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
 	             rest = tokens;
 	           end if;  
 	         else
@@ -398,7 +400,7 @@ function processToken
 	         end if;
          end if;
          
-         env2 = ENV(c,nt,stateStk,errStk,errSt,sSt,cSt,rest,rest,astStk,debug,stateSkBk,astSkBk);
+         
          if (errSt<>0 or listLength(rest)==0) then
 	         if ((result==true) and (errSt>maxErrRecShift)) then //stops when it finds and error             
 	           (rest,env2,result,ast) = processToken(rest,env2,pt);
