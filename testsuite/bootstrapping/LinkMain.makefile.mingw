@@ -1,9 +1,9 @@
 CPPFLAGS=-I../../build/include/omc
 
-LDFLAGS=-L../../build/lib/omc -L./ -lomcruntime -lc_runtime -lomparse ../../Compiler/modpar/libmodparomc.a -lm \
+LDFLAGS=-L../../build/lib/omc -L./ -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c -lomcruntime -lc_runtime -lomparse ../../Compiler/modpar/libmodparomc.a -lm \
 -lantlr3 -lmainrecords -lmico2313 -lregex -lwsock32 ../../Compiler/runtime/lpsolve/lpsolve55.lib \
 -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4 -lshlwapi \
--Wl,--stack,16777216,--large-address-aware
+-Wl,--stack,16777216,--large-address-aware 
 CFLAGS=-O0 -falign-functions 
 
 RECS=libmainrecords.a
@@ -23,7 +23,7 @@ main_records.o: main_records.c ../../build/include/omc/OpenModelicaBootstrapping
 Main_main2.o: Main_main2.c
 	$(CXX) -c -o Main_main2.o Main_main2.c $(CFLAGS) $(CPPFLAGS)
 Main_main2.c: Main_main.c
-	#perl ../../build/share/omc/scripts/convert_lines.pl $< $@.tmp
+	perl ../../build/share/omc/scripts/convert_lines.pl $< $@.tmp
 	cp $< $@.tmp
 	mv $@.tmp $@
 
