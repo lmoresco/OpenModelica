@@ -62,7 +62,8 @@ function scanString "Scan starts the lexical analysis, load the tables and consu
      case (_,_)
        equation
           chars = stringListStringChar(fileSource);
-          streamInteger = Util.listMap(chars, stringCharInt);
+          //streamInteger = Util.listMap(chars, stringCharInt);
+          streamInteger = list(stringCharInt(c) for c in chars);
           resTokens = lex("<StringSource>",streamInteger,debug);
        then (resTokens);   
     end match;
