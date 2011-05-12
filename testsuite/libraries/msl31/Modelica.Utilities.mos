@@ -2,7 +2,7 @@
 //keyword:     instantiating MSL 3.1 Modelica.Utilities
 //status:      correct
 //env: OPENMODELICALIBRARY=../../../libraries/msl31/
-//xteardown_command: rm -f Modelica_Utilities_Strings_*
+//teardown_command: rm -f Modelica_Utilities_Strings_*
 //
 // instantiate example
 //
