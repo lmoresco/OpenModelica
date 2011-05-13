@@ -22,6 +22,7 @@ type Comment = Absyn.Comment;
 type Direction = Absyn.Direction;
 type Exp = Absyn.Exp;
 type Exps = list<Exp>;
+type Matrix = list<list<Exp>>;
 type Subscript = Absyn.Subscript;
 type ArrayDim = list<Subscript>;
 type Operator = Absyn.Operator;
@@ -65,6 +66,9 @@ type EnumLiterals = list<EnumLiteral>;
 type Modification = Absyn.Modification;
 type Boolean3 = tuple<Boolean,Boolean,Boolean>;
 type Boolean2 = tuple<Boolean,Boolean>;
+type ElementArg = Absyn.ElementArg;
+type ElementArgs = list<ElementArg>;
+type Each = Absyn.Each();
 
 constant list<String> lstSemValue3 = {};
 
@@ -229,7 +233,7 @@ constant list<String> lstSemValue = {
 %token COLONCOLON
 %token MOD
 
-%expect 41
+%expect 42
 
 
 
@@ -287,7 +291,9 @@ restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
 	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
 						
-classdef             : classparts T_END IDENT  
+classdef             : T_END IDENT  
+                          { $$[ClassDef] = Absyn.PARTS({},{},NONE()); } 
+                     |classparts T_END IDENT  
                           { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
                      | string classparts T_END IDENT 
                           { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
@@ -435,6 +441,8 @@ element             : componentclause
                         { $$[Element] = $1[Element]; }
                     | importelementspec 
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"IMPORT",$1[ElementSpec],info,NONE()); }
+                    | extends
+                       { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"EXTENDS",$1[ElementSpec],info,NONE()); }     
                     | classelementspec  
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
 
@@ -460,12 +468,27 @@ componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}
 
 componentitem       : component comment { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),SOME($2[Comment])); }
                    
-component           : ident arraySubscripts modification { $$[Component] = Absyn.COMPONENT($1[Ident],{},SOME($2[Modification])); }
+component           : ident arraySubscripts modification { $$[Component] = Absyn.COMPONENT($1[Ident],$2[ArrayDim],SOME($3[Modification])); }
                     | ident arraySubscripts { $$[Component] = Absyn.COMPONENT($1[Ident],$2[ArrayDim],NONE()); }                                                                 
 
 modification        : EQUALS exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }
                     | ASSIGN exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); } 
-                    
+                    | LPAR argumentlist RPAR { $$[Modification] = Absyn.CLASSMOD($2[ElementArgs],Absyn.NOMOD()); }  
+
+argumentlist        : elementarg { $$[ElementArgs] = {$1[ElementArg]}; }
+                    | elementarg COMMA argumentlist { $$[ElementArgs] = $1[ElementArg]::$2[ElementArgs]; }
+
+elementarg         : eachprefix cref 
+                      { $$[ElementArg] = Absyn.MODIFICATION(false,$1[Each],$2[ComponentRef],NONE(),NONE()); }
+                    | eachprefix cref modification 
+                      { $$[ElementArg] = Absyn.MODIFICATION(false,$1[Each],$2[ComponentRef],SOME($3[Modification]),NONE()); }
+                    | eachprefix FINAL cref 
+                      { $$[ElementArg] = Absyn.MODIFICATION(true,$1[Each],$3[ComponentRef],NONE(),NONE()); }
+                    | eachprefix FINAL cref modification 
+                      { $$[ElementArg] = Absyn.MODIFICATION(true,$1[Each],$3[ComponentRef],SOME($4[Modification]),NONE()); }
+
+eachprefix         : EACH { $$[Each]= Absyn.EACH(); }
+                   | /* empty */ { $$[Each]= Absyn.NON_EACH(); }                    
                     
 redeclarekeywords   : REDECLARE { $$[RedeclareKeywords] = Absyn.REDECLARE(); }
                     | REPLACEABLE { $$[RedeclareKeywords] = Absyn.REPLACEABLE(); }
@@ -485,6 +508,8 @@ classelementspec    : class { $$[ElementSpec] = Absyn.CLASSDEF(false,$1[Class]);
 import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
                      | IMPORT path DOT STAR { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
+extends              : EXTENDS path  { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},NONE()); }
+                     
 elementspec          :  elementAttr typespec componentitems
                         { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
                       |  typespec componentitems
@@ -624,8 +649,12 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); } 
                      | tuple  { $$[Exp] = $1[Exp]; }
                      | LBRACE explist2 RBRACE { $$[Exp] = Absyn.ARRAY($2[Exps]); }
+                     | matrix { $$[Exp] = Absyn.MATRIX($1[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | LPAR simpleExp RPAR { $$[Exp] = $2[Exp]; }
+
+matrix             : LBRACK explist2 RBRACK { $$[Matrix] = {$2[Exps]}; }
+                    | LBRACK explist2 RBRACK matrix { $$[Matrix] = $2[Exps]::$4[Matrix]; } 
                      
 tuple               : LPAR explist RPAR { $$[Exp] = Absyn.TUPLE($2[Exps]); }
 
