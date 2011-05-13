@@ -1,6 +1,7 @@
 TEST = ../../../rtest -v
 
 TESTFILES = \
+Modelica.Blocks.CombiTables.mos \
 Modelica.Blocks.Examples.BusUsage.mos \
 Modelica.Blocks.Examples.InverseModel.mos \
 Modelica.Blocks.Examples.LogicalNetwork1.mos \
