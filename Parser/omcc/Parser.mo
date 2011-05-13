@@ -117,11 +117,11 @@ algorithm
        printAny(ast);   
     end if;
     
-    if (result==true) then
+    /*if (result==true) then
        print("\n SUCCEED - (AST)");
     else
        print("\n FAILED PARSING");
-    end if;   
+    end if;*/
 end parse;
 
 function addSourceMessage
