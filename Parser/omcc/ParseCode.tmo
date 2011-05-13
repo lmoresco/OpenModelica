@@ -43,7 +43,7 @@ function actionRed
 algorithm
    
   // printContentStack(astStk);
-  // print(" rule:" + intString(act));
+   //printAny(" rule:" + intString(act));
    %GETASTSTACK%  
   (_) := matchcontinue(act,astStk)
     local
@@ -52,7 +52,8 @@ algorithm
     case (_,_) 
       equation
         //lAST = intString(act);
-        printAny("\n" + OMCCTypes.printInfoError(info) + " : Ilegal action case " + intString(act));
+        errorMsg = "\n" + OMCCTypes.printInfoError(info) + " : Ilegal action case " + intString(act);
+        error = true;
       then ();
   end matchcontinue;
     %PUTASTSTACK% 
