@@ -46,8 +46,7 @@ readFile("output.log"); // Check that output log is emtpy
 //   Real u_Pu1 = u[1];
 //   Real y_Py1 = y[1];
 //   Real y_Py2 = y[2];
-// 
-// equation 
+// equation
 //   der(x) = A * x + B * u;
 //   y = C * x + D * u;
 // end linear_nonlinsys;

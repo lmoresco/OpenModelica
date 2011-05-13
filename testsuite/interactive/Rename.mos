@@ -32,8 +32,7 @@ renameComponent(m1RO, emf1, emf2); getErrorString();
 // "model TestRename
 //   flow Real x;
 //   Real y;
-// 
-// equation 
+// equation
 //   x = 0.2;
 // end TestRename;
 // 
@@ -44,8 +43,7 @@ renameComponent(m1RO, emf1, emf2); getErrorString();
 // "model TestRename
 //   flow Real RENAMED_X;
 //   Real y;
-// 
-// equation 
+// equation
 //   RENAMED_X = 0.2;
 // end TestRename;
 // 

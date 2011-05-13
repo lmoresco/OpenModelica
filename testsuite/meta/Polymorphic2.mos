@@ -21,7 +21,7 @@ i:=Polymorphic.ident("abc123");
 //   function ident<A>
 //     input A x;
 //     output A y;
-//   algorithm 
+//   algorithm
 //     y:=x;
 //   end ident;
 // end Polymorphic;

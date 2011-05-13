@@ -43,8 +43,7 @@ echo(false); // turns of output
 //   Real x_Px2 = x[2];
 //   Real x_Px3 = x[3];
 //   Real x_Px4 = x[4];
-// 
-// equation 
+// equation
 //   der(x) = A * x + B * u;
 //   y = C * x + D * u;
 // end linear_linearmodel;

@@ -18,7 +18,7 @@ getErrorString();
 //   end Union;
 //   function fn
 //     output Real r;
-//   algorithm 
+//   algorithm
 //     r:=match REC(1, 2, 3, 4, 5)
 // 	case (REC(__)) then 6.0;
 // 	end match;

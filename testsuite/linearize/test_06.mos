@@ -51,8 +51,7 @@ list(linear_simple_test);
 //   input Real u[0];
 //   output Real y[0];
 //   Real x_Pi1 = x[1];
-// 
-// equation 
+// equation
 //   der(x) = A * x + B * u;
 //   y = C * x + D * u;
 // end linear_simple_test;

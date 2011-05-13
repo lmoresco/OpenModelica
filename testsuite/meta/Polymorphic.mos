@@ -22,7 +22,7 @@ i:=Polymorphic.ident("abc123");
 //     input Type_a x;
 //     output Type_a y;
 //     replaceable type Type_a = polymorphic<Any>;
-//   algorithm 
+//   algorithm
 //     y:=x;
 //   end ident;
 // end Polymorphic;

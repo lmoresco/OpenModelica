@@ -43,7 +43,7 @@ list(linear_simple_test);
 //   parameter Integer l = 0;
 //   parameter Real x0[1] = {2};
 //   parameter Real u0[0] = {};
-//   parameter Real A[1,1] = [0.333333333333333];
+//   parameter Real A[1,1] = [0.333333333333334];
 //   parameter Real B[1,0] = zeros(1, 0);
 //   parameter Real C[0,1] = zeros(0, 1);
 //   parameter Real D[0,0] = zeros(0, 0);
@@ -51,8 +51,7 @@ list(linear_simple_test);
 //   input Real u[0];
 //   output Real y[0];
 //   Real x_Pa = x[1];
-// 
-// equation 
+// equation
 //   der(x) = A * x + B * u;
 //   y = C * x + D * u;
 // end linear_simple_test;

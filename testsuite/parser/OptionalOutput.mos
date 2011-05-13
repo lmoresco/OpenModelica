@@ -11,8 +11,7 @@ list();
 // Result:
 // true
 // "class OptionalOutput
-// 
-// equation 
+// equation
 //   (a,_,c) = fn();
 //   (a,_) = fn();
 //   (_) = fn();
