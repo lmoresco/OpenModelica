@@ -7,8 +7,10 @@
 //
 loadFile("BouncingBall.mo");
 translateModelFMU(BouncingBall);
+getErrorString();
 
 // Result:
 // true
 // "SimCode: The model BouncingBall has been translated to FMU"
+// ""
 // endResult

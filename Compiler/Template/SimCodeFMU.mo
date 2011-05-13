@@ -61,7 +61,7 @@ algorithm
         Tpl.textFile(txt_2, "modelDescription.xml");
         txt_3 = fmumodel_identifierFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
         txt_4 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
-        txt_4 = Tpl.writeTok(txt_4, Tpl.ST_STRING("_FMU.cpp"));
+        txt_4 = Tpl.writeTok(txt_4, Tpl.ST_STRING("_FMU.c"));
         Tpl.textFile(txt_3, Tpl.textString(txt_4));
         txt_5 = fmuMakefile(Tpl.emptyTxt, i_simCode);
         txt_6 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
@@ -5245,7 +5245,7 @@ algorithm
         ret_6 = RTOpts.acceptMetaModelicaGrammar();
         txt = fun_159(txt, ret_6);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".cpp\n",
+                                    ".c\n",
                                     "\n",
                                     ".PHONY: "
                                 }, false));
@@ -5254,7 +5254,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(": $(MAINFILE) "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.cpp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
@@ -5309,27 +5309,27 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".cpp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".cpp\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.cpp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU.cpp\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.cpp "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.cpp\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
@@ -5356,9 +5356,9 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.cpp: "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.c: "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".cpp\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(PERL) "));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
