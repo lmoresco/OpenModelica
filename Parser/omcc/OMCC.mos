@@ -1,11 +1,11 @@
 getInstallationDirectoryPath();
 loadFile("OMCC.mo");
-loadFile("RTOpts.mo");
-loadFile("Util.mo");
-loadFile("System.mo");
+loadFile("../../Compiler/Util/RTOpts.mo");
+loadFile("../../Compiler/Util/Util.mo");
+loadFile("../../Compiler/Util/System.mo");
 loadFile("LexerGenerator.mo");
 loadFile("ParserGenerator.mo");
-loadFile("Absyn.mo");
+loadFile("../../Compiler/FrontEnd/Absyn.mo");
 OMCC.main({"Modelica"});
 
 getErrorString();
