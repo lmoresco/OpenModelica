@@ -68,8 +68,9 @@ type Boolean3 = tuple<Boolean,Boolean,Boolean>;
 type Boolean2 = tuple<Boolean,Boolean>;
 type ElementArg = Absyn.ElementArg;
 type ElementArgs = list<ElementArg>;
-type Each = Absyn.Each();
-
+type Each = Absyn.Each;
+type Subscript=Absyn.Subscript;
+type EqMod=Absyn.EqMod;
 constant list<String> lstSemValue3 = {};
 
 constant list<String> lstSemValue = {
@@ -338,10 +339,10 @@ restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[E
 
 /* ALGORITHMS */
 
-algorithmsection        :  algorithmitem { $$[AlgorithmItems] = $1[AlgorithmItem]::{}; }
-                        | algorithmitem algorithmsection { $$[AlgorithmItems] = $1[AlgorithmItem]::$2[AlgorithmItems]; }
+algorithmsection        :  algorithmitem SEMICOLON { $$[AlgorithmItems] = $1[AlgorithmItem]::{}; }
+                        | algorithmitem SEMICOLON algorithmsection { $$[AlgorithmItems] = $1[AlgorithmItem]::$2[AlgorithmItems]; }
 
-algorithmitem           : algorithm comment SEMICOLON 
+algorithmitem           : algorithm comment  
                           { $$[AlgorithmItem] = Absyn.ALGORITHMITEM($1[Algorithm],SOME($2[Comment]),info); }  
 
 algorithm              :  simpleExp ASSIGN exp  // TOREV: cref or any exp?  { $$[Algorithm] = Absyn.ALG_ASSIGN(Absyn.CREF($1[ComponentRef]),$2[Exp]); }
@@ -386,10 +387,10 @@ algelsewhen               : ELSEWHEN exp THEN algorithmsection  { $$[AlgElsewhen
 
 
 /* EQUATIONS */
-equationsection        :  equationitem { $$[EquationItems] = $1[EquationItem]::{}; }
-                        | equationitem equationsection { $$[EquationItems] = $1[EquationItem]::$2[EquationItems]; }
+equationsection        :  equationitem SEMICOLON { $$[EquationItems] = $1[EquationItem]::{}; }
+                        | equationitem SEMICOLON equationsection { $$[EquationItems] = $1[EquationItem]::$2[EquationItems]; }
 
-equationitem           :  equation comment SEMICOLON 
+equationitem           :  equation comment  
                           { $$[EquationItem] = Absyn.EQUATIONITEM($1[Equation],SOME($2[Comment]),info); }  
 
 equation               : exp EQUALS exp 
@@ -418,7 +419,7 @@ foriterators          : foriterator { $$[ForIterators] = $1[ForIterator]::{}; }
                       | foriterator COMMA foriterators { $$[ForIterators] = $1[ForIterator]::$2[ForIterators]; }
 
 foriterator           : IDENT { $$[ForIterator] = Absyn.ITERATOR($1,NONE(),NONE()); }
-                      | IDENT T_IN rangeExp { $$[ForIterator] = Absyn.ITERATOR($1,NONE(),SOME($3[Exp])); }
+                      | IDENT T_IN exp { $$[ForIterator] = Absyn.ITERATOR($1,NONE(),SOME($3[Exp])); }
 
 if_equation           : IF exp THEN equationsection T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},{}); } 
                       | IF exp THEN equationsection ELSE equationsection T_END IF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},$6[EquationItems]); }
@@ -473,7 +474,12 @@ component           : ident arraySubscripts modification { $$[Component] = Absyn
 
 modification        : EQUALS exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }
                     | ASSIGN exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); } 
-                    | LPAR argumentlist RPAR { $$[Modification] = Absyn.CLASSMOD($2[ElementArgs],Absyn.NOMOD()); }  
+                    | class_modification { $$[Modification] = $1[Modification]; }
+                    
+class_modification : LPAR argumentlist RPAR 
+                      { $$[Modification] = Absyn.CLASSMOD($2[ElementArgs],Absyn.NOMOD()); }
+                    | LPAR argumentlist RPAR EQUALS exp 
+                      { $$[Modification] = Absyn.CLASSMOD($2[ElementArgs],Absyn.EQMOD($5[Exp],info)); }
 
 argumentlist        : elementarg { $$[ElementArgs] = {$1[ElementArg]}; }
                     | elementarg COMMA argumentlist { $$[ElementArgs] = $1[ElementArg]::$2[ElementArgs]; }
@@ -508,7 +514,10 @@ classelementspec    : class { $$[ElementSpec] = Absyn.CLASSDEF(false,$1[Class]);
 import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
                      | IMPORT path DOT STAR { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
-extends              : EXTENDS path  { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},NONE()); }
+extends              : EXTENDS path  
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},NONE()); }
+                     | EXTENDS path LPAR argumentlist RPAR 
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],NONE()); }
                      
 elementspec          :  elementAttr typespec componentitems
                         { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
@@ -548,8 +557,11 @@ typespecs           : typespec { $$[TypeSpecs] = $1[TypeSpec]::{}; }
 arraySubscripts     : LBRACK arrayDim RBRACK { $$[ArrayDim] = $1[ArrayDim]; }
                     | /* empty */ { $$[ArrayDim] = {}; }                      
                      
-arrayDim			: exp { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::{}; }
-                     | exp COMMA arrayDim { $$[ArrayDim] = Absyn.SUBSCRIPT($1[Exp])::$2[ArrayDim]; }
+arrayDim			: subscript { $$[ArrayDim] = $1[Subscript]::{}; }
+                     | subscript COMMA arrayDim { $$[ArrayDim] = $1[Subscript]::$2[ArrayDim]; }
+
+subscript           : exp { $$[Subscript] = Absyn.SUBSCRIPT($1[Exp]); }
+                    | COLON { $$[Subscript] = Absyn.NOSUB(); } 
 
 /* function calls */
 
@@ -649,12 +661,12 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); } 
                      | tuple  { $$[Exp] = $1[Exp]; }
                      | LBRACE explist2 RBRACE { $$[Exp] = Absyn.ARRAY($2[Exps]); }
-                     | matrix { $$[Exp] = Absyn.MATRIX($1[Matrix]); }
+                     | LBRACK matrix RBRACK { $$[Exp] = Absyn.MATRIX($2[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | LPAR simpleExp RPAR { $$[Exp] = $2[Exp]; }
 
-matrix             : LBRACK explist2 RBRACK { $$[Matrix] = {$2[Exps]}; }
-                    | LBRACK explist2 RBRACK matrix { $$[Matrix] = $2[Exps]::$4[Matrix]; } 
+matrix             : explist2  { $$[Matrix] = {$1[Exps]}; }
+                    | explist2 SEMICOLON matrix  { $$[Matrix] = $1[Exps]::$3[Matrix]; } 
                      
 tuple               : LPAR explist RPAR { $$[Exp] = Absyn.TUPLE($2[Exps]); }
 
