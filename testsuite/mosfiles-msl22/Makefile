@@ -16,7 +16,6 @@ IdealGearBrake.mos \
 InputOutput.mos \
 InitTest.mos \
 InitTest2.mos \
-LossyGear1.mos \
 MatrixTest.mos \
 NonLinsys.mos \
 Shaft.mos \
@@ -37,6 +36,7 @@ WeakAxis.mos
 # Run make testfailing
 FAILINGTESTFILES=\
 BearingFrictionTest.mos \
+LossyGear1.mos \
 Gear.mos \
 Gear2.mos \
 

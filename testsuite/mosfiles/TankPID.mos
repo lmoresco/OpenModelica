@@ -26,7 +26,7 @@ y:=floor(y);
 z:=floor(z);
 w:=floor(w);
 echo(true); // turns on output
-readSimulationResultSize("TankPID_res.mat");getErrorString();
+//readSimulationResultSize("TankPID_res.mat");getErrorString();
 x/1000.0; // rounded value to 3 digits
 y/1000.0;
 z/1000.0;
@@ -41,8 +41,6 @@ w/1000.0;
 // end SimulationResult;
 // {"pidContinuous.K","pidContinuous.T","pidContinuous.Ts","pidContinuous.ref","source.flowLevel","tank.area","tank.flowGain","tank.h","tank.maxV","tank.minV","time"}
 // true
-// 253
-// ""
 // 0.394
 // 0.235
 // 0.252
