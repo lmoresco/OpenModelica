@@ -229,7 +229,7 @@ constant list<String> lstSemValue = {
 %token COLONCOLON
 %token MOD
 
-//%expect 35
+%expect 41
 
 
 
