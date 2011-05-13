@@ -48,7 +48,7 @@ function printToken
   TOKEN(name=tokName,id=idtk,value=val,loc=info) := token;
   INFO(lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
   
-  strTk := "[TOKEN:" + tokName + " '" +  printBuffer(val,"") + "' from (line:" + intString(lns) + " col:" + intString(cns) + ") to (line:"+ intString(lne) + " col:" + intString(cne) +")]";
+  strTk := "[TOKEN:" + tokName + " '" +  printBuffer(val,"") + "' (" + intString(lns) + ":" + intString(cns) + "-"+ intString(lne) + ":" + intString(cne) +")]";
 end printToken;
 
 function getMergeTokenValue
@@ -136,7 +136,8 @@ function printTokens
       else
         equation
            c::rest = inList;
-           new = cBuff + printShortToken2(c);
+           //new = cBuff + printShortToken2(c);
+           new = cBuff + printToken(c);
            (tout) = printTokens(rest,new);
         then (tout);
      end match;     

@@ -264,12 +264,24 @@ class                  : restriction IDENT classdef
                                 { (v1Boolean,v2Boolean,v3Boolean) = $1[Boolean3]; 
                                  $$[Class] = Absyn.CLASS($3,v1Boolean,v2Boolean,v3Boolean,$2[Restriction],$4[ClassDef],info); }          
 
+classdef             : T_END IDENT  
+                          { $$[ClassDef] = Absyn.PARTS({},{},NONE()); } 
+                     |classparts T_END IDENT  
+                          { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
+                     | string classparts T_END IDENT 
+                          { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
+                     | classdefenumeration   
+                          { $$[ClassDef] = $1[ClassDef]; };
+                     | classdefderived   
+                          { $$[ClassDef] = $1[ClassDef]; };
+
+
 classprefix            : FINAL encapsulated partial  
                          { $$[Boolean3] = (true,$2[Boolean],$3[Boolean]); }
                         | ENCAPSULATED partial   
-                         { $$[Boolean3] = (false,true,$1[Boolean]); }
+                         { $$[Boolean3] = (false,true,$2[Boolean]); }
                         | PARTIAL   
-                         { $$[Boolean3] = (false,false,$1[Boolean]); }
+                         { $$[Boolean3] = (false,false,true); }
 
 encapsulated           : ENCAPSULATED { $$[Boolean] = true;   }
                         | /* empty */ { $$[Boolean] = false; }
@@ -292,16 +304,7 @@ restriction             : CLASS { $$[Restriction] = Absyn.R_CLASS(); }
 						| OPERATOR RECORD { $$[Restriction] = Absyn.R_OPERATOR_RECORD(); }
 	                    | OPERATOR { $$[Restriction] = Absyn.R_OPERATOR(); }
 						
-classdef             : T_END IDENT  
-                          { $$[ClassDef] = Absyn.PARTS({},{},NONE()); } 
-                     |classparts T_END IDENT  
-                          { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
-                     | string classparts T_END IDENT 
-                          { $$[ClassDef] = Absyn.PARTS({},$2[ClassParts],SOME($1)); }
-                     | classdefenumeration   
-                          { $$[ClassDef] = $1[ClassDef]; };
-                     | classdefderived   
-                          { $$[ClassDef] = $1[ClassDef]; };
+
                      
 classdefenumeration  :  EQUALS ENUMERATION RPAR enumeration LPAR comment
                           { $$[ClassDef] = Absyn.ENUMERATION($4[EnumDef],SOME($6[Comment])); }
@@ -394,7 +397,7 @@ equationitem           :  equation comment
                           { $$[EquationItem] = Absyn.EQUATIONITEM($1[Equation],SOME($2[Comment]),info); }  
 
 equation               : exp EQUALS exp 
-                             { $$[Equation] = Absyn.EQ_EQUALS($1[Exp],$2[Exp]); }
+                             { $$[Equation] = Absyn.EQ_EQUALS($1[Exp],$3[Exp]); }
                         | if_equation 
                              { $$[Equation] = $1[Equation]; }
                         | when_equation 
@@ -664,6 +667,7 @@ expElement          : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1));
                      | LBRACK matrix RBRACK { $$[Exp] = Absyn.MATRIX($2[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | LPAR simpleExp RPAR { $$[Exp] = $2[Exp]; }
+                     
 
 matrix             : explist2  { $$[Matrix] = {$1[Exps]}; }
                     | explist2 SEMICOLON matrix  { $$[Matrix] = $1[Exps]::$3[Matrix]; } 

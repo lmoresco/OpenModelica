@@ -42,11 +42,11 @@ algorithm
   	    //tokens = LexerModelica.scanString("Hello",true); 
   	    tokens = LexerModelica.scan(filename,false);
   	    
-  	    //print(OMCCTypes.printTokens(tokens,""));
+  	    print(OMCCTypes.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser
-  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
+  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,true);
   	    // print the AST
   	    if (result) then
   	     //unparsed = Dump.unparseStr(astTreeModelica,false);

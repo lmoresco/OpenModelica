@@ -13,7 +13,7 @@ ident        {letter}({letter}|{digit}|{wild})*
 digit        [0-9]
 digits       {digit}+
 exponent     ([e]|[E])([+]|[-])?{digits}
-real         {digits}[\.]{digits}({exponent})?
+real         {digits}[\.]({digits})?({exponent})?
 /* Lex style lexical syntax of tokens in the MODELICA language */
 
   

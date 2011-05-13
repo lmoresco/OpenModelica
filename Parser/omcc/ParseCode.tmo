@@ -94,6 +94,11 @@ algorithm
         OMCCTypes.INFO(lineNumberEnd=lne,columnNumberEnd=cne) := info;
      end if;
   end for;
+  if (nTokens==0) then
+     token::_ := skToken;
+     OMCCTypes.TOKEN(loc=info) := token;  
+     OMCCTypes.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
+  end if;
   info := OMCCTypes.INFO(fn,false,lns,cns,lne,cne,OMCCTypes.getTimeStamp()); 
   token := OMCCTypes.TOKEN("grupped",0,{},info);
   skTokenRes := token::skToken; 
