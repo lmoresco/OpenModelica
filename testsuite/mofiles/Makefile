@@ -316,6 +316,7 @@ FunctionEval8.mo \
 FunctionEval9.mo \
 FunctionEval10.mo \
 FunctionEval11.mo \
+FunctionEval12.mo \
 FunctionEvalBuiltin.mo \
 FunctionEvalFail.mo \
 FunctionEvalSlice.mo \
