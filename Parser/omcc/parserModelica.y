@@ -2,7 +2,7 @@
 import Absyn;
 /* Type Declarations */
 type AstTree = Absyn.Program;
-type Token = Types.Token;  
+type Token = OMCCTypes.Token;  
 type Program = Absyn.Program;
 type Within = Absyn.Within;
 type lstClass = list<Absyn.Class>;
