@@ -242,6 +242,7 @@ algorithm
         
         if (cp==10) then
             mm_linenr = mm_linenr+1;
+            mm_ePos = mm_sPos;
             mm_sPos = 0;
         else
             mm_sPos = mm_sPos+1;
