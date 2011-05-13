@@ -22,11 +22,11 @@ import %ParseTable%;
  function action
     input Integer act;
     input %Lexer%.Env env;
-    output Option<Types.Token> token;
+    output Option<OMCCTypes.Token> token;
     output %Lexer%.Env env2;
     Integer mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,mm_flinenr;
     list<Integer> buffer,bkBuffer,tb,bufferRet;
-    Types.Info info;
+    OMCCTypes.Info info;
     array<String> tokName;
     String sToken,fileNm;
     Integer nameSpan, act2;
@@ -42,19 +42,19 @@ import %ParseTable%;
      tb := buffer;
      //(tb,mm_flinenr) := %Lexer%.lineUpd(tb,mm_flinenr);
      info := %Lexer%.getInfo(tb,mm_sPos,mm_linenr,fileNm);
-     //info := Types.INFO(fileNm,false,mm_linenr,mm_sPos,mm_flinenr,mm_pos);
+     //info := OMCCTypes.INFO(fileNm,false,mm_linenr,mm_sPos,mm_flinenr,mm_pos);
     // print("\n" + intString(act) + ":");
      act2 := act;
      bufferRet := {};
      (token) := matchcontinue (act)
        local 
-         Types.Token tok;
+         OMCCTypes.Token tok;
 %caseAction%
        case (_)
          equation
           // print("[enter else]");
            print("ERROR TOKEN NOT FOUND:['" + sToken + "' TK:" + intString(act)  + "," + tokName[act2] + "]");
-           tok = Types.TOKEN(tokName[act2],act,buffer,info);
+           tok = OMCCTypes.TOKEN(tokName[act2],act,buffer,info);
          then (NONE());
      end matchcontinue;
      env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,bufferRet,bkBuffer,{mm_startSt},debug,fileNm);

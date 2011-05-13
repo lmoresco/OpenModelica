@@ -34,7 +34,7 @@ function actionRed
   output AstStack astStk2;
   output Boolean error=false;
   output String errorMsg="";
-  Types.Info info;
+  OMCCTypes.Info info;
   // env variables       
   // AstStack 
 %astStackVar%
@@ -52,7 +52,7 @@ algorithm
     case (_,_) 
       equation
         //lAST = intString(act);
-        printAny("\n" + Types.printInfoError(info) + " : Ilegal action case " + intString(act));
+        printAny("\n" + OMCCTypes.printInfoError(info) + " : Ilegal action case " + intString(act));
       then ();
   end matchcontinue;
     %PUTASTSTACK% 
@@ -76,32 +76,32 @@ end reduceStringStack;
 function getInfo
   input list<Token> skToken;
   input Integer nTokens;
-  output Types.Info info;
+  output OMCCTypes.Info info;
   output list<Token> skTokenRes;
   Token token;
-  Types.Info tmpInfo;
+  OMCCTypes.Info tmpInfo;
   Integer lns,cns,lne,cne,i;
   String fn;
 algorithm  
   for i in 1:nTokens loop
      token::skToken := skToken;
-     Types.TOKEN(loc=info) := token;
+     OMCCTypes.TOKEN(loc=info) := token;
      if (i==nTokens) then
-        Types.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns) := info;
+        OMCCTypes.INFO(fileName=fn,lineNumberStart=lns,columnNumberStart=cns) := info;
      end if;
      if (i==1) then
-        Types.INFO(lineNumberEnd=lne,columnNumberEnd=cne) := info;
+        OMCCTypes.INFO(lineNumberEnd=lne,columnNumberEnd=cne) := info;
      end if;
   end for;
-  info := Types.INFO(fn,false,lns,cns,lne,cne,Types.getTimeStamp()); 
-  token := Types.TOKEN("grupped",0,{},info);
+  info := OMCCTypes.INFO(fn,false,lns,cns,lne,cne,OMCCTypes.getTimeStamp()); 
+  token := OMCCTypes.TOKEN("grupped",0,{},info);
   skTokenRes := token::skToken; 
 end getInfo;
 
 function push
   input AstStack astStk;
   input String inVal;
-  input Types.Token token;
+  input OMCCTypes.Token token;
   output AstStack astStk2;
   // AstStack 
 %astStackVar%
