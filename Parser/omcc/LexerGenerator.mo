@@ -180,7 +180,7 @@ package LexerGenerator
 				       print("\nFound token:" + cp);
 				    end if;    
 		        resTable := cp::resTable;
-		        cp := ";\n           tok = Types.TOKEN(tokName[act2-nameSpan],act2,buffer,info);\n         then (SOME(tok));\n ";
+		        cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,buffer,info);\n         then (SOME(tok));\n ";
 		        resTable := cp::resTable;
 				else
 				    //print("NONE");

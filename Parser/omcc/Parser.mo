@@ -6,11 +6,11 @@ import Absyn;
 import Error;
 uniontype Env
   record ENV
-    Types.Token crTk,lookAhTk;
+    OMCCTypes.Token crTk,lookAhTk;
     list<Integer> state;
     list<String> errMessages;
     Integer errStatus,sState,cState;
-    list<Types.Token> program,progBk;
+    list<OMCCTypes.Token> program,progBk;
     ParseCode.AstStack astStack;
     Boolean isDebugging;
     list<Integer> stateBackup;
@@ -55,7 +55,7 @@ constant Integer ERR_TYPE_MERGE = 5;
 type AstTree = ParseCode.AstTree;
 
 function parse "realize the syntax analysis over the list of tokens and generates the AST tree"
-  input list<Types.Token> tokens "list of tokens from the lexer";
+  input list<OMCCTypes.Token> tokens "list of tokens from the lexer";
   input String fileName "file name of the source code";
   input Boolean debug "flag to output debug messages that explain the states of the machine while parsing";
   output Boolean result "result of the parsing";
@@ -65,9 +65,9 @@ function parse "realize the syntax analysis over the list of tokens and generate
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   ParseData pt;
   Env env;
-  Types.Token emptyTok;
+  OMCCTypes.Token emptyTok;
   ParseCode.AstStack astStk;
-  list<Types.Token> rToks;
+  list<OMCCTypes.Token> rToks;
   list<Integer> stateStk;
   list<String> errStk;
   //Boolean result;
@@ -126,7 +126,7 @@ end parse;
 
 function addSourceMessage
   input list<String> errStk;
-  input Types.Info info;
+  input OMCCTypes.Info info;
 algorithm
     Error.addSourceMessage(1,errStk,info);
     //print(printSemStack(listReverse(errStk),""));
@@ -140,27 +140,27 @@ algorithm
 end printErrorMessages;
 
 function processToken
-  input list<Types.Token> tokens;
+  input list<OMCCTypes.Token> tokens;
   input Env env;
   input ParseData pt;
-  output list<Types.Token> rTokens;
+  output list<OMCCTypes.Token> rTokens;
   output Env env2;
   output Boolean result;
   output ParseCode.AstTree ast;
-  list<Types.Token> tempTokens;
+  list<OMCCTypes.Token> tempTokens;
   // parse tables
   array<String> mm_tname;
   array<Integer> mm_translate, mm_prhs, mm_rhs, mm_rline, mm_toknum, mm_r1, mm_r2, mm_defact, mm_defgoto,
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   // env variables               
-  Types.Token cTok,nTk;
+  OMCCTypes.Token cTok,nTk;
   ParseCode.AstStack astStk,astSkBk;
   Boolean debug;
   list<Integer> stateStk,stateSkBk;
   list<String> errStk;
   String astTmp;
   Integer sSt,cSt,lSt,errSt,cFinal,cPactNinf,cTableNinf;
-  list<Types.Token> prog,prgBk;               
+  list<OMCCTypes.Token> prog,prgBk;               
  algorithm
    PARSE_TABLE(translate=mm_translate,prhs=mm_prhs,rhs=mm_rhs,rline=mm_rline,tname=mm_tname,toknum=mm_toknum,r1=mm_r1,r2=mm_r2
        ,defact=mm_defact,defgoto=mm_defgoto,pact=mm_pact,pgoto=mm_pgoto,table=mm_table,check=mm_check,stos=mm_stos) := pt;
@@ -181,9 +181,9 @@ function processToken
    result := true;
    (rTokens,result) := matchcontinue(tokens,env,pt,cFinal==cSt,mm_pact[cSt+1]==cPactNinf)
       local 
-        list<Types.Token> rest;
+        list<OMCCTypes.Token> rest;
         list<Integer> vl;
-        Types.Token c,nt;
+        OMCCTypes.Token c,nt;
         Integer n,len,val,tok,tmTok,chkVal;
         String nm,semVal;
         Absyn.Ident idVal;
@@ -311,7 +311,7 @@ function processToken
             lookahead token if we need one and don't already have one.  */
           c::rest = tokens;
           cTok = c;
-          Types.TOKEN(id=tmTok,name=nm,value=vl) = c;
+          OMCCTypes.TOKEN(id=tmTok,name=nm,value=vl) = c;
           semVal = printBuffer(vl,"");
           if (debug) then
              print("[" + nm + ",'" + semVal +"']");
@@ -413,18 +413,18 @@ function processToken
 end processToken;
 
 function errorHandler
-  input Types.Token currTok;
+  input OMCCTypes.Token currTok;
   input Env env;
   input ParseData pt;
   output Env env2;
   output String errorMsg;
   output Boolean result;
   // env variables
-  Types.Token cTok,nTk;
+  OMCCTypes.Token cTok,nTk;
   ParseCode.AstStack astStk,astSkBk;
   Boolean debug;
   Integer sSt,cSt,errSt;
-  list<Types.Token> prog,prgBk; 
+  list<OMCCTypes.Token> prog,prgBk; 
   list<Integer> stateStk,stateSkBk;
   list<String> errStk;
    // parse tables
@@ -448,17 +448,17 @@ algorithm
 	   print("\n[State:" + intString(cSt) +"]{" + printStack(stateStk,"") + "}\n");
 	   print("\n[StateStack Backup:{" + printStack(stateSkBk,"") + "}\n");
   end if;
-  semVal := Types.printToken(currTok);
+  semVal := OMCCTypes.printToken(currTok);
   (errorMsg,result) := matchcontinue(errSt==0,prog)
     local
        String erMsg,name;
        list<String> candidates;
-       list<Types.Token> rest;
+       list<OMCCTypes.Token> rest;
        Integer i,idTok;
-       Types.Info info;
+       OMCCTypes.Info info;
     case (true,{}) //start error catching
       equation  
-         erMsg = Types.printErrorToken(currTok); 
+         erMsg = OMCCTypes.printErrorToken(currTok); 
          // insert token
          if (debug) then
             print("\n Checking INSERT at the END token:");
@@ -471,7 +471,7 @@ algorithm
          end if;
          errStk = erMsg::errStk;
          
-         Types.TOKEN(loc=info) = currTok;
+         OMCCTypes.TOKEN(loc=info) = currTok;
          addSourceMessage(errStk,info);
          
          printErrorMessages(errStk);
@@ -480,18 +480,18 @@ algorithm
     case (true,_) //start error catching
       equation
          
-         //Types.TOKEN(id=idTok) = currTok;
-         erMsg = Types.printErrorToken(currTok);
+         //OMCCTypes.TOKEN(id=idTok) = currTok;
+         erMsg = OMCCTypes.printErrorToken(currTok);
          
         if (debug) then
             print("\n Check MERGE token until next token");
          end if;
          nTk::_ = prog;
-         Types.TOKEN(id=idTok) = nTk;
+         OMCCTypes.TOKEN(id=idTok) = nTk;
          if (checkToken(idTok,env,pt,5)==true) then
             _::nTk::_ = prog;
-            erMsg = erMsg + ", MERGE tokens " + Types.printShortToken(currTok) 
-              + " and " +  Types.printShortToken(nTk);
+            erMsg = erMsg + ", MERGE tokens " + OMCCTypes.printShortToken(currTok) 
+              + " and " +  OMCCTypes.printShortToken(nTk);
          end if;
          
          // insert token
@@ -527,7 +527,7 @@ algorithm
             print("\n Check ERASE token until next token");
          end if;
          nTk::_ = prog;
-         Types.TOKEN(id=idTok) = nTk;
+         OMCCTypes.TOKEN(id=idTok) = nTk;
          if (checkToken(idTok,env,pt,1)==true) then
             erMsg = erMsg + ", ERASE token";
             //errStk = erMsg::errStk;     
@@ -538,14 +538,14 @@ algorithm
          else
              errStk = erMsg::errStk;
          end if;
-         Types.TOKEN(loc=info) = currTok;
+         OMCCTypes.TOKEN(loc=info) = currTok;
          addSourceMessage(errStk,info);
          errSt = maxErrShiftToken;
       then (erMsg,true); //end error catching            
     case (false,_) // add one more error
       equation
          printErrorMessages(errStk);
-         erMsg = Types.printErrorToken(currTok);
+         erMsg = OMCCTypes.printErrorToken(currTok);
       then (erMsg,false);
   end matchcontinue;
   if (debug==true) then
@@ -563,11 +563,11 @@ function checkCandidates
   output list<String> resCandidates;
   Integer n;
    // env variables
-  Types.Token cTok,nTk;
+  OMCCTypes.Token cTok,nTk;
   ParseCode.AstStack astStk,astSkBk;
   Boolean debug;
   Integer sSt,cSt,errSt;
-  list<Types.Token> prog,prgBk; 
+  list<OMCCTypes.Token> prog,prgBk; 
   list<Integer> stateStk,stateSkBk;
   list<String> errStk;
    // parse tables
@@ -605,11 +605,11 @@ function checkToken
   output Boolean result;
   Integer n;
    // env variables
-  Types.Token cTok,nTk;
+  OMCCTypes.Token cTok,nTk;
   ParseCode.AstStack astStk,astSkBk;
   Boolean debug;
   Integer sSt,cSt,errSt;
-  list<Types.Token> prog,prgBk; 
+  list<OMCCTypes.Token> prog,prgBk; 
   list<Integer> stateStk,stateSkBk;
   list<String> errStk;
    // parse tables
@@ -618,8 +618,8 @@ function checkToken
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   Integer chk2;
   Env env2;
-  Types.Info info;
-  Types.Token candTok;
+  OMCCTypes.Info info;
+  OMCCTypes.Token candTok;
  algorithm
     PARSE_TABLE(translate=mm_translate,prhs=mm_prhs,rhs=mm_rhs,rline=mm_rline,tname=mm_tname,toknum=mm_toknum,r1=mm_r1,r2=mm_r2
        ,defact=mm_defact,defgoto=mm_defgoto,pact=mm_pact,pgoto=mm_pgoto,table=mm_table,check=mm_check,stos=mm_stos) := pt;
@@ -635,31 +635,31 @@ function checkToken
    if (Util.isListEmpty(prog)==false) then 
      cTok::prog := prog;
 	   if (debug) then
-	      print("\n **** Last token: " + Types.printToken(cTok));
+	      print("\n **** Last token: " + OMCCTypes.printToken(cTok));
 	   end if;   
-	   info := Types.INFO("",false,1,1,1,1,Types.getTimeStamp()); //fake position
-	   candTok := Types.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
+	   info := OMCCTypes.INFO("",false,1,1,1,1,OMCCTypes.getTimeStamp()); //fake position
+	   candTok := OMCCTypes.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    else
      if (debug) then
 	      print("\n Creating Fake Token position");
 	   end if; 
-     info := Types.INFO("",false,1,1,1,1,Types.getTimeStamp()); //fake position
-     candTok := Types.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
+     info := OMCCTypes.INFO("",false,1,1,1,1,OMCCTypes.getTimeStamp()); //fake position
+     candTok := OMCCTypes.TOKEN(mm_tname[chkTok-255],chkTok,{65},info);
    end if;
    
    if (debug) then
-      print("\n **** Process candidate token: " + Types.printToken(candTok) + " action: " + intString(action));
+      print("\n **** Process candidate token: " + OMCCTypes.printToken(candTok) + " action: " + intString(action));
    end if; 
    
    (prog) := matchcontinue(action)
      local 
         list<Integer> value;
-        list<Types.Token> lstTokens;
+        list<OMCCTypes.Token> lstTokens;
      case (5) // Merge
        equation
           if (Util.isListEmpty(prog)==false) then 
              candTok::prog = prog; 
-             value = Types.getMergeTokenValue(cTok,candTok);
+             value = OMCCTypes.getMergeTokenValue(cTok,candTok);
              lstTokens = Lexer.lex("fileName",value,debug);
              candTok::_ = lstTokens;
              prog = candTok::prog;
@@ -686,7 +686,7 @@ function checkToken
    
    result := false;
    if (debug) then
-      //print("\n\n*****ProcessTOKENS:" + Types.printTokens(prog,"") + " check" + intString(chkTok));
+      //print("\n\n*****ProcessTOKENS:" + OMCCTypes.printTokens(prog,"") + " check" + intString(chkTok));
    end if;   
    //print("\n[State="+ intString(cSt) + " Stack Backup:{" + printStack(stateSkBk,"") + "}]\n");
    //print("\n[StateStack Backup:{" + printStack(stateSkBk,"") + "}\n");
@@ -708,7 +708,7 @@ function reduce
   array<Integer> mm_translate, mm_prhs, mm_rhs, mm_rline, mm_toknum, mm_r1, mm_r2, mm_defact, mm_defgoto,
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   // env variables               
-  Types.Token cTok,nTk;
+  OMCCTypes.Token cTok,nTk;
   ParseCode.AstStack astStk;
   ParseCode.AstStack astSkBk;
   Boolean debug,error;
@@ -716,7 +716,7 @@ function reduce
   list<String> errStk,redStk;
   String astTmp,semVal,errMsg;
   Integer errSt,sSt,cSt;
-  list<Types.Token> prog,prgBk; 
+  list<OMCCTypes.Token> prog,prgBk; 
   Integer i,len,val,n, nSt,chkVal;
  algorithm
    PARSE_TABLE(translate=mm_translate,prhs=mm_prhs,rhs=mm_rhs,rline=mm_rline,tname=mm_tname,toknum=mm_toknum,r1=mm_r1,r2=mm_r2

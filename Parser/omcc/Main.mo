@@ -28,7 +28,7 @@ public function main
   This is the main function that the MetaModelica Compiler (MMC) runtime system calls to
   start the translation."
   input list<String> inStringLst;
-  list<Types.Token> tokens;
+  list<OMCCTypes.Token> tokens;
   ParseCode10.AstTree astTree10;
   ParserModelica.AstTree astTreeModelica;
   type Mcode_MCodeLst = list<Mcode.MCode>;
@@ -85,7 +85,7 @@ algorithm
   	    //tokens = LexerModelica.scanString("Hello",true); 
   	    tokens = LexerModelica.scan(filename,false);
   	    
-  	    //print(Types.printTokens(tokens,""));
+  	    //print(OMCCTypes.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser

@@ -31,13 +31,13 @@ end Env;
 function scan "Scan starts the lexical analysis, load the tables and consume the program to output the tokens"
   input String fileName "input source code file";
   input Boolean debug "flag to activate the debug mode";
-  output list<Types.Token> tokens "return list of tokens";
+  output list<OMCCTypes.Token> tokens "return list of tokens";
   
  algorithm
     // load program
    (tokens) := match(fileName,debug)
       local
-         list<Types.Token> resTokens;
+         list<OMCCTypes.Token> resTokens;
          list<Integer> streamInteger;
      case (_,_)
        equation
@@ -50,13 +50,13 @@ end scan;
 function scanString "Scan starts the lexical analysis, load the tables and consume the program to output the tokens"
   input String fileSource "input source code file";
   input Boolean debug "flag to activate the debug mode";
-  output list<Types.Token> tokens "return list of tokens";
+  output list<OMCCTypes.Token> tokens "return list of tokens";
   
  algorithm
     // load program
    (tokens) := match(fileSource,debug)
       local
-         list<Types.Token> resTokens;
+         list<OMCCTypes.Token> resTokens;
          list<Integer> streamInteger;
          list<String> chars;
      case (_,_)
@@ -93,7 +93,7 @@ function lex "Scan starts the lexical analysis, load the tables and consume the 
   input String fileName "input source code file";
   input list<Integer> program "source code as a stream of Integers";
   input Boolean debug "flag to activate the debug mode";
-  output list<Types.Token> tokens "return list of tokens";
+  output list<OMCCTypes.Token> tokens "return list of tokens";
   Integer r;
   
   list<String> chars;
@@ -135,8 +135,8 @@ function consume
   input Env env;
   input list<Integer> program;
   input LexerTable lexTables;
-  input list<Types.Token> tokens;
-  output list<Types.Token> resToken;
+  input list<OMCCTypes.Token> tokens;
+  output list<OMCCTypes.Token> resToken;
   output Env env2;
   output list<Integer> program2;
   array<Integer> mm_accept,mm_ec,mm_meta,mm_base,mm_def,mm_nxt,mm_chk,mm_acclist; 
@@ -162,10 +162,10 @@ algorithm
     local 
       Integer c,d,act,val,c2,curr2,fchar;
       list<Integer> rest;
-      list<Types.Token> lToken;
+      list<OMCCTypes.Token> lToken;
       String sToken;
       Boolean emptyToken;
-      Option<Types.Token> otok;
+      Option<OMCCTypes.Token> otok;
     case ({},_) // EOF
       equation
         fchar = mm_pos;
@@ -397,7 +397,7 @@ function getInfo
   input Integer frPos;
   input Integer flineNr;
   input String programName;
-  output Types.Info info;
+  output OMCCTypes.Info info;
   Integer mm_linenr,mm_sPos;
   Integer c;
 algorithm
@@ -412,7 +412,7 @@ algorithm
           mm_sPos := mm_sPos - 1;
       end if;
   end while;
-  info := Types.INFO(programName,false,mm_linenr,mm_sPos+1,flineNr,frPos+1,Types.getTimeStamp());
+  info := OMCCTypes.INFO(programName,false,mm_linenr,mm_sPos+1,flineNr,frPos+1,OMCCTypes.getTimeStamp());
   /*if (true) then
      print("\nTOKEN file:" +programName + " p(" + intString(mm_sPos) + ":" + intString(mm_linenr) + ")-(" + intString(frPos) + ":" + intString(flineNr) + ")");
   end if; */

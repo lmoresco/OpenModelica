@@ -1,4 +1,4 @@
-package Types
+package OMCCTypes
 import Absyn;
 import INFO = Absyn.INFO;
 
@@ -190,4 +190,4 @@ algorithm
   end match;     
 end printBuffer; 
  
-end Types;
+end OMCCTypes;
