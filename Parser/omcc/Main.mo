@@ -6,22 +6,11 @@ import Parser;
 import LexerModelica;
 import ParserModelica;
 
-import Lexer10;
-import Parser10;
-
 import Util;
 import RTOpts;
 import System;
 import Types;
 
-
-import AbsynPAM;
-import LexerGenerator;
-import ParserGenerator;
-
-public import Mcode;
-protected import Trans;
-protected import Emit;
 
 public function main
 "function: main
@@ -29,12 +18,8 @@ public function main
   start the translation."
   input list<String> inStringLst;
   list<OMCCTypes.Token> tokens;
-  ParseCode10.AstTree astTree10;
   ParserModelica.AstTree astTreeModelica;
   type Mcode_MCodeLst = list<Mcode.MCode>;
-protected
-  AbsynPAM.Stmt program;
-  Mcode_MCodeLst mcode;
 algorithm
   
   
@@ -44,35 +29,7 @@ algorithm
       list<String> args_1,args,chars;
       String s,str,omhome,oldpath,newpath,unparsed;
       Boolean result; 
-    case args as _::_
-      equation
-        {filename,parser} = RTOpts.args(args);
-         true=(0==stringLength(filename));
-         str = LexerGenerator.genLexer("lexer"+ parser +".c", "lexer"+ parser +".l", parser);
-	       print("\nResult:" + str);
-	       str = ParserGenerator.genParser("parser"+ parser +".c","parser"+ parser +".y",parser);
-  	     print("\nResult:" + str); 
-        // call the lexer
-  	 /*  tokens = Lexer.scan(filename); 
-  	    // call the parser
-  	    (ast,astTree) = Parser.parse(tokens,filename);
-  	    // print the AST
-  	  //  printAny(program.astProgram);
-  	    // Run the machine for exercise 10 
-  	    print("\nRun the machine for exercise 10\n");
-  	    program = astTree;
-		     mcode = Trans.transProgram(program); 
-	       Emit.emitAssembly(mcode);
-	       print("\n" + ast);
-	    */
-	      
-  	   // printAny(astTree);        
-  	    print("\n OMC-LPG Ended:" + filename);
-       // System.stopTimer();
-       //  print(str::args_1);
-         //printAny(System.getTimerIntervalTime());
-         printUsage();
-      then ();
+  
      case args as _::_
       equation
         {filename,parser} = RTOpts.args(args);
@@ -108,64 +65,6 @@ algorithm
         print("\n Total time:" + realString(System.getTimerIntervalTime()));
          printUsage();
       then ();
-   case args as _::_
-      equation
-        {filename,parser} = RTOpts.args(args);
-        System.startTimer();
-         "10" = parser;
-         false=(0==stringLength(filename));
-         print("\nParsing10 with file " + filename + "\n");
-        // call the lexer
-  	   tokens = Lexer10.scan(filename,false); 
-  	    // call the parser
-  	    (result,astTree10) = Parser10.parse(tokens,filename,false);
-  	    // print the AST
-  	    printAny(astTree10);
-  	    if (result) then
-		  	    
-		  	    // Run the machine for exercise 10 
-		  	    print("\nRun the machine for exercise 10\n");
-		  	    program = astTree10;
-				     mcode = Trans.transProgram(program); 
-			       Emit.emitAssembly(mcode); 
-			     //  print("\n" + ast);
-	      end if;
-	      
-  	   // printAny(astTree);        
-  	    print("\nargs:" + filename);
-        System.stopTimer();
-       //  print(str::args_1);
-        print("\n Total time:" + realString(System.getTimerIntervalTime()));
-         printUsage();
-      then ();         
-    case args as _::_
-      equation
-        {filename,parser} = RTOpts.args(args);
-       // System.startTimer();
-         "" = parser;
-          false=(0==stringLength(filename));
-        // call the lexer
-  	   // tokens = Lexer.scan(filename,true); 
-  	    printAny(tokens);
-  	    // call the parser
-  	   // (result,astTree) = Parser.parse(tokens,filename,false);
-  	    // print the AST
-  	  //  printAny(program.astProgram);
-  	    // Run the machine for exercise 10 
-  	    print("\nRun the machine for exercise 10\n");
-  	    //program = astTree;
-		    // mcode = Trans.transProgram(program); 
-	      // Emit.emitAssembly(mcode);
-	      // print("\n" + ast);
-	    
-	      
-  	   // printAny(astTree);        
-  	    print("\nargs:" + filename);
-       // System.stopTimer();
-       //  print(str::args_1);
-         //printAny(System.getTimerIntervalTime());
-         printUsage();
-      then ();    
     case {}
       equation
         print("no args");
