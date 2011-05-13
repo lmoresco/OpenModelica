@@ -460,11 +460,12 @@ componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}
 
 componentitem       : component comment { $$[ComponentItem] = Absyn.COMPONENTITEM($1[Component],NONE(),SOME($2[Comment])); }
                    
-component           : ident { $$[Component] = Absyn.COMPONENT($1[Ident],{},NONE()); } 
-                    | ident modification { $$[Component] = Absyn.COMPONENT($1[Ident],{},SOME($2[Modification])); }                                                                 
+component           : ident arraySubscripts modification { $$[Component] = Absyn.COMPONENT($1[Ident],{},SOME($2[Modification])); }
+                    | ident arraySubscripts { $$[Component] = Absyn.COMPONENT($1[Ident],$2[ArrayDim],NONE()); }                                                                 
 
 modification        : EQUALS exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }
-                    | ASSIGN exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); }  
+                    | ASSIGN exp { $$[Modification] = Absyn.CLASSMOD({},Absyn.EQMOD($2[Exp],info)); } 
+                    
                     
 redeclarekeywords   : REDECLARE { $$[RedeclareKeywords] = Absyn.REDECLARE(); }
                     | REPLACEABLE { $$[RedeclareKeywords] = Absyn.REPLACEABLE(); }
