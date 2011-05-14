@@ -7,13 +7,14 @@
 
 package ExtObj
   class MyTable
-      extends ExternalObject;
+    extends ExternalObject;
     function constructor
       input String fileName="";
       input String tableName="";
+      input Real[:] vals={1,2,3};
       output MyTable outTable;
 
-      external "C" outTable=initMyTable(fileName,tableName) ;
+      external "C" outTable=initMyTable(fileName,tableName,vals,size(vals,1)) ;
       annotation(Include="#include \"ExtObj.h\"",Library="ExtObj.lib");
     end constructor;
     function destructor
@@ -24,8 +25,8 @@ package ExtObj
     end destructor;
   end MyTable;
   model ExtObjtest "define a new table and interpolate in it"
-      //MyTable table=MyTable(fileName="testTables.txt", tableName="table1");
-        MyTable myTable=MyTable("testTables.txt","table1");
+    //MyTable table=MyTable(fileName="testTables.txt", tableName="table1");
+    MyTable myTable=MyTable("testTables.txt","table1",{1,2,3});
     Real y;
 
   equation 

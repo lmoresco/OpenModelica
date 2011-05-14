@@ -355,7 +355,7 @@ algorithm
       String i_fileNamePrefix;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = _), extObjInfo = SimCode.EXTOBJINFO(includes = _), fileNamePrefix = i_fileNamePrefix) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = _), extObjInfo = SimCode.EXTOBJINFO(vars = _), fileNamePrefix = i_fileNamePrefix) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "#pragma once\n",

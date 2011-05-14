@@ -3258,7 +3258,7 @@ algorithm
       String ret_0;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = i_modelInfo_name), extObjInfo = SimCode.EXTOBJINFO(includes = _)) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = i_modelInfo_name), extObjInfo = SimCode.EXTOBJINFO(vars = _)) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("// Simulation code for "));
         txt = SimCodeC.dotPath(txt, i_modelInfo_name);

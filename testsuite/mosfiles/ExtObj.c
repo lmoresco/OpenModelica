@@ -25,7 +25,7 @@
  * 
  */
  
-void* initMyTable(const char* fileName, const char* tableName) 
+void* initMyTable(const char* fileName, const char* tableName, const double* dummyTable, size_t dummySize) 
 {
   double f;
   int r,c,foundTable=0;

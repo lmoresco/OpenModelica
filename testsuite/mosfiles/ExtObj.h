@@ -6,6 +6,6 @@ int type; /* interpolation type */
 int lastIndex; /* last row index for search */
 } MyTable;
 
-void* initMyTable(const char* fileName,const char* tableName);
+void* initMyTable(const char* fileName,const char* tableName,const double*table,size_t size_table);
 void closeMyTable(void* object);
 double interpolateMyTable(void* object, double u);

@@ -7,7 +7,7 @@ model ExtObjStringParam2
       input String fileName;
       input String dummy := "";
       output MyData table;
-      external "C" table = constructor(fileName) annotation(Include = "#include \"ExtObjStringParam.ext.c\"");
+      external "C" table = constructor(fileName,dummy) annotation(Include = "#include \"ExtObjStringParam.ext.c\"");
     end constructor;
 
     function destructor
