@@ -72,6 +72,8 @@ type Each = Absyn.Each;
 type Subscript=Absyn.Subscript;
 type EqMod=Absyn.EqMod;
 type ComponentCondition = Absyn.ComponentCondition;
+type ExternalDecl = Absyn.ExternalDecl;
+type Annotation = Absyn.Annotation;
 
 constant list<String> lstSemValue3 = {};
 
@@ -351,7 +353,14 @@ restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[E
                         | T_ALGORITHM { $$[ClassPart] = Absyn.ALGORITHMS({}); }
                         | T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.ALGORITHMS($1[AlgorithmItems]); } 
                         | INITIAL T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.INITIALALGORITHMS($1[AlgorithmItems]); }
-                       /* | EXTERNAL externalDecl annotation    */
+                        | EXTERNAL externalDecl SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],NONE()); }  
+                        | EXTERNAL externalDecl SEMICOLON annotation SEMICOLON { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],SOME($3[Annotation])); } 
+
+externalDecl           : string { $$[ExternalDecl] = Absyn.EXTERNALDECL(NONE(),SOME($1),NONE(),{},NONE()); }
+                       | string cref EQUALS ident LPAR explist2 RPAR  { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($4[Ident]),SOME($1),SOME($2[ComponentRef]),$6[Exps],NONE()); }
+                       | string cref EQUALS ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($4[Ident]),SOME($1),SOME($2[ComponentRef]),$6[Exps],SOME($8[Annotation])); }
+                       | string ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($2[Ident]),SOME($1),NONE(),$4[Exps],SOME($6[Annotation])); }
+                       | string ident LPAR explist2 RPAR { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($2[Ident]),SOME($1),NONE(),$4[Exps],NONE()); }
 
 /* ALGORITHMS */
 
@@ -509,6 +518,8 @@ class_modification : elementargs
                       { $$[Modification] = Absyn.CLASSMOD($1[ElementArgs],Absyn.NOMOD()); }
                     | elementargs EQUALS exp 
                       { $$[Modification] = Absyn.CLASSMOD($1[ElementArgs],Absyn.EQMOD($3[Exp],info)); }
+
+annotation         : T_ANNOTATION elementargs { $$[Annotation]= Absyn.ANNOTATION($1[ElementArgs]); }
 
 elementargs         : LPAR argumentlist RPAR { $$[ElementArgs] = $1[ElementArgs]; }
 
