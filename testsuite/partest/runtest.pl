@@ -168,16 +168,32 @@ sub enter_sandbox {
 # directory.
 sub exit_sandbox {
   chdir("..");
-  rmtree($test . "_temp" . $test_id) unless $test eq "RunScript.mos";
+
+  # Hack to get RunScript working.
+  sleep 1 if $test eq "RunScript.mos";
+
+  rmtree($test . "_temp" . $test_id);
 }
 
+sub needs_sandbox {
+  given($test) {
+    when ("CheckSourcesForTabs.mos") { return 0; }
+    default { return 1; }
+  }
+}
 
 $ENV{'PATH'} = "./:" . $ENV{'PATH'};
 
-enter_sandbox();
+# Some tests are hard to sandbox and don't really need to be, so skip sandboxing
+# for those tests.
+my $sandbox_needed = needs_sandbox();
+
+enter_sandbox() if $sandbox_needed;
+
+my $fail_log = ($sandbox_needed ? "../" : "") . "$test.fail_log";
 
 # Clean up fail logs from previous runs.
-unlink("../$test.fail_log");
+unlink("$fail_log");
 
 # Determine the full path to rtest.
 my $rtest = $test_suit_path_rel . "rtest -v -nolib ";
@@ -205,11 +221,11 @@ while(<$test_log>) {
       print color 'green';
     } else {
       if($erroneous == 0) {
-        system("cp $test.test_log ../$test.fail_log");
+        system("cp $test.test_log $fail_log");
         print color 'red';
         $exit_status = 0;
       } else {
-        system("cp $test.test_log ../$test.fail_log");
+        system("cp $test.test_log $fail_log");
         print color 'magenta';
       }
     }
@@ -218,7 +234,8 @@ while(<$test_log>) {
   }
 }
 
-exit_sandbox();
+exit_sandbox() if $sandbox_needed;
+
 if ($exit_status == 0) {
   exit 0;
 } else {
