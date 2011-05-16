@@ -473,10 +473,10 @@ classElement2      : classelementspec
                    
 finalElement        : innerouter ident elementspec 
 	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$2[Ident],$3[ElementSpec],info,NONE()); }
-	                 | ident elementspec 
+	                | ident elementspec 
 	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$1[Ident],$2[ElementSpec],info,NONE()); }
-	             //    | elementspec // casues reduce/reduce conflicts
-                 //       { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
+	              //  | elementspec // casues reduce/reduce conflicts
+                  //      { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
 	                     
 
                      
@@ -522,11 +522,7 @@ elementarg         : eachprefix final cref
                       { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],NONE(),NONE()); }
                     | eachprefix final cref modification 
                       { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],SOME($4[Modification]),NONE()); }
-                  /*  |  eachprefix  cref 
-                      { $$[ElementArg] = Absyn.MODIFICATION(false,$1[Each],$2[ComponentRef],NONE(),NONE()); }
-                    | eachprefix cref modification 
-                      { $$[ElementArg] = Absyn.MODIFICATION(false,$1[Each],$2[ComponentRef],SOME($3[Modification]),NONE()); }
-                    */
+                 
                     
 eachprefix         : EACH { $$[Each]= Absyn.EACH(); }
                    | /* empty */ { $$[Each]= Absyn.NON_EACH(); }                    
@@ -692,7 +688,7 @@ relterm            : addterm { $$[Exp] = $1[Exp]; }
                    | addterm relOperator addterm { $$[Exp] = Absyn.RELATION($1[Exp],$2[Operator],$3[Exp]); }
 
 addterm             : term { $$[Exp] = $1[Exp]; }
-                    | woperator LPAR term RPAR { $$[Exp] = Absyn.UNARY($1[Operator],$2[Exp]); }
+                    | unoperator  term  { $$[Exp] = Absyn.UNARY($1[Operator],$2[Exp]); }
                     | addterm woperator term  { $$[Exp] = Absyn.BINARY($1[Exp],$2[Operator],$3[Exp]); }                                          
 
 term               : factor { $$[Exp] = $1[Exp]; }
@@ -716,11 +712,7 @@ expElement          : number { $$[Exp] = $1[Exp]; }
 
 number             : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1)); }
                     | UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($1)); }  
-                    | MINUS UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(-stringInt($2)); }
-                    | MINUS UNSIGNED_REAL { $$[Exp] = Absyn.REAL(-stringReal($2)); } 
-                    | PLUS UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($2)); }
-                    | PLUS UNSIGNED_REAL { $$[Exp] = Absyn.REAL(stringReal($2)); }                     
-
+                  
 matrix             : explist2  { $$[Matrix] = {$1[Exps]}; }
                     | explist2 SEMICOLON matrix  { $$[Matrix] = $1[Exps]::$3[Matrix]; } 
                      
@@ -739,6 +731,12 @@ cref                :  ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDE
                      | DOT cref  { $$[ComponentRef] = Absyn.CREF_FULLYQUALIFIED($2[ComponentRef]); }
                      | WILD { $$[ComponentRef] = Absyn.WILD();}    
                      | ALLWILD { $$[ComponentRef] = Absyn.ALLWILD();}                   
+
+unoperator          : PLUS { $$[Operator] = Absyn.UPLUS(); }
+                     | MINUS { $$[Operator] = Absyn.UMINUS(); }
+                     |  PLUS_EW { $$[Operator] = Absyn.UPLUS_EW(); }
+                     | MINUS_EW { $$[Operator] = Absyn.UMINUS_EW(); }
+                     
                      
 woperator			: PLUS { $$[Operator] = Absyn.ADD(); }
                      | MINUS { $$[Operator] = Absyn.SUB(); }
