@@ -42,7 +42,7 @@ ExtObj.mos ExtObjStringParam.mos \
 FiveForEquations.mos \
 FinalPropagation.mos \
 FlatTank.mos \
-ForIterator1.mos ForIterator2.mos \
+ForIterator1.mos \
 FrameTest.mos \
 FuncDer.mos  \
 FunctionIndirectRecursion.mos \
@@ -120,6 +120,7 @@ AppendElement.mos \
 DimConvert.mos \
 Epidemics1.mos \
 ActivateWhenEquation.mos Enum8.mos  \
+ForIterator2.mos \
 
 .PHONY : test
 
