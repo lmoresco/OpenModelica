@@ -204,6 +204,7 @@ DuplicateElementsNonEquivalent.mo \
 DuplicateElementsExtends.mo \
 DuplicateElementsExtendsEquivalent.mo \
 Each1.mo \
+EmptyArray.mo \
 Encapsulated1.mo \
 Encapsulated2.mo \
 Encapsulated3.mo \

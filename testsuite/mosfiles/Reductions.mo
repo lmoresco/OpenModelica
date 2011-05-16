@@ -17,10 +17,10 @@ equation
 	w = product(i for i in 1:n);
 
 	// Reduction of empty real vector
-	erx = sum(i for i in {});
-	ery = min(i for i in {});
-	erz = max(i for i in {});
-	erw = product(i for i in {});
+  erx = sum(i for i in 1.0:0.0);
+  ery = min(i for i in 1.0:0.0);
+  erz = max(i for i in 1.0:0.0);
+  erw = product(i for i in 1.0:0.0);
 end Reductions;
 
 // class Reductions
