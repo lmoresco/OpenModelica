@@ -14,14 +14,29 @@ digit        [0-9]
 digits       {digit}+
 exponent     ([e]|[E])([+]|[-])?{digits}
 real         {digits}[\.]({digits})?({exponent})?
-/* Lex style lexical syntax of tokens in the MODELICA language */
+endif        "end"{whitespace}"if"
+endfor        "end"{whitespace}"for"
+endwhile        "end"{whitespace}"while"
+endwhen        "end"{whitespace}"when"
+endmatch        "end"{whitespace}"match"
+endmatchcontinue  "end"{whitespace}"matchcontinue"
+endident          "end"{whitespace}{ident}
 
+/* Lex style lexical syntax of tokens in the MODELICA language */
+        
   
 
 %%
 
 {whitespace} ;
 {real}      return UNSIGNED_REAL;
+{endif}     return ENDIF;
+{endfor}     return ENDFOR;
+{endwhile}     return ENDWHILE;
+{endwhen}     return ENDWHEN;
+{endmatchcontinue}   return ENDMATCHCONTINUE;
+{endmatch}     return ENDMATCH;
+{endident}   return ENDCLASS;
 "algorithm" return T_ALGORITHM;
 "and" return T_AND;
 "annotation" return T_ANNOTATION;
