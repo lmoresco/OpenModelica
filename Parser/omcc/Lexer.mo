@@ -84,7 +84,8 @@ function loadSourceCode
      case (_)
        equation
            chars = stringListStringChar(System.readFile(fileName));
-           streamInteger = Util.listMap(chars, stringCharInt);  
+           //streamInteger = Util.listMap(chars, stringCharInt);
+           streamInteger = list(stringCharInt(c) for c in chars);
          then (streamInteger);
    end match;  
 end loadSourceCode;
