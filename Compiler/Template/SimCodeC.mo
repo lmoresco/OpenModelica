@@ -28110,7 +28110,7 @@ algorithm
       Tpl.Text a_e1;
 
     case ( txt,
-           DAE.AND(),
+           DAE.AND(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -28122,7 +28122,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.OR(),
+           DAE.OR(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -28201,7 +28201,7 @@ algorithm
       Tpl.Text a_e;
 
     case ( txt,
-           DAE.NOT(),
+           DAE.NOT(ty = _),
            a_e )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("(!"));
@@ -37955,21 +37955,21 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.AND(),
+           DAE.AND(ty = _),
            a_flag )
       equation
         txt = fun_846(txt, a_flag);
       then txt;
 
     case ( txt,
-           DAE.OR(),
+           DAE.OR(ty = _),
            a_flag )
       equation
         txt = fun_847(txt, a_flag);
       then txt;
 
     case ( txt,
-           DAE.NOT(),
+           DAE.NOT(ty = _),
            a_flag )
       equation
         txt = fun_848(txt, a_flag);

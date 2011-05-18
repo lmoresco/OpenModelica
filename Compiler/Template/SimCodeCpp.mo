@@ -4769,7 +4769,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.AND(),
+           DAE.AND(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -4781,7 +4781,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.OR(),
+           DAE.OR(ty = _),
            a_e2,
            a_e1 )
       equation

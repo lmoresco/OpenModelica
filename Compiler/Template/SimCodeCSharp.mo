@@ -9716,7 +9716,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.AND(),
+           DAE.AND(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -9728,7 +9728,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.OR(),
+           DAE.OR(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -9801,7 +9801,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.NOT(),
+           DAE.NOT(ty = _),
            a_e )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("(!"));
@@ -12066,19 +12066,19 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.AND() )
+           DAE.AND(ty = _) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("bool"));
       then txt;
 
     case ( txt,
-           DAE.OR() )
+           DAE.OR(ty = _) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("bool"));
       then txt;
 
     case ( txt,
-           DAE.NOT() )
+           DAE.NOT(ty = _) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("bool"));
       then txt;

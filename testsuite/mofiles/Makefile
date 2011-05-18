@@ -61,6 +61,7 @@ ArrayExtendsUnknown.mo \
 ArrayIndex.mo \
 ArrayIndex2.mo \
 ArrayInvalidDims.mo \
+ArrayLogic.mo \
 ArrayMatrixSimplifier.mo \
 ArrayModification10.mo \
 ArrayModification11.mo \
