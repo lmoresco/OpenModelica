@@ -95,8 +95,8 @@ function lex "Scan starts the lexical analysis, load the tables and consume the 
   input list<Integer> program "source code as a stream of Integers";
   input Boolean debug "flag to activate the debug mode";
   output list<OMCCTypes.Token> tokens "return list of tokens";
-  Integer r;
-  
+  Integer r,cTok;
+  list<Integer> cProg;
   list<String> chars;
   array<Integer> mm_accept,mm_ec,mm_meta,mm_base,mm_def,mm_nxt,mm_chk,mm_acclist; 
   Env env;
@@ -122,11 +122,17 @@ algorithm
   end if;
   
   tokens := {};
+  if (debug) then
+	  print("\n TOTAL Chars:");
+		print(intString(listLength(program)));   
+	end if;
   while (Util.isListEmpty(program)==false) loop
 	   if (debug) then 
 	     print("\nChars remaining:");
 	     print(intString(listLength(program)));   
      end if;
+     //cTok::program := program;
+     //cProg := {cTok};
      (tokens,env,program) := consume(env,program,lexTables,tokens);
   end while;
   tokens := listReverse(tokens);
