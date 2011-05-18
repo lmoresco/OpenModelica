@@ -131,9 +131,13 @@ algorithm
 	     print("\nChars remaining:");
 	     print(intString(listLength(program)));   
      end if;
-     //cTok::program := program;
-     //cProg := {cTok};
-     (tokens,env,program) := consume(env,program,lexTables,tokens);
+     cTok::program := program;
+     cProg := {cTok};
+     (tokens,env,cProg) := consume(env,cProg,lexTables,tokens);
+     if (Util.isListEmpty(cProg)==false) then
+        cTok::cProg := cProg;
+        program := cTok::program; 
+     end if; 
   end while;
   tokens := listReverse(tokens);
 end lex;   
@@ -162,10 +166,13 @@ algorithm
   mm_finish := LexTable.yy_finish;
   baseCond := mm_base[mm_currSt];
   if (debug==true) then
+    print("\nPROGRAM:{" + printBuffer(program,"") + "} ");
+    print("\nBUFFER:{" + printBuffer(buffer,"") + "} ");
+    print("\nBKBUFFER:{" + printBuffer(bkBuffer,"") + "} ");
     print("\nSTATE STACK:{" + printStack(states,"") + "} ");
     print("base:" + intString(baseCond) + " st:" + intString(mm_currSt)+" ");
   end if;
-  (resToken) := match (program,mm_finish == baseCond)
+  (resToken,program2) := match (program,tokens)
     local 
       Integer c,d,act,val,c2,curr2,fchar;
       list<Integer> rest;
@@ -173,77 +180,10 @@ algorithm
       String sToken;
       Boolean emptyToken;
       Option<OMCCTypes.Token> otok;
-    case ({},_) // EOF
-      equation
-        fchar = mm_pos;
-        
-        env = ENV(mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,buffer,bkBuffer,states,debug,fileNm);
-        
-        // print("[POS:" + intString(mm_pos) + "]");
-        
-        (env2,act) = findRule(lexTables,env);
-        
-        ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
-          linenr=mm_linenr, buff=buffer,bkBuf=bkBuffer,stateSk=states,isDebugging=debug,fileName=fileNm) = env2;
-        //(buffer,sToken) = printBuffer(buffer,""); 
-        // print("['" + sToken + "' TK:" + intString(act)  + "]");
-        
-        env2 = ENV(mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,buffer,bkBuffer,states,debug,fileNm);
-        
-        (otok,env2) = LexerCode.action(act,env2); 	                 
-        //restore the program        
-        // program = bkBuffer;
-       // (buffer,mm_linenr) = lineUpd(buffer,mm_linenr);
-        //restart current state
-        // env2 = ENV(mm_startSt,mm_startSt,mm_startSt,mm_pos,mm_pos,mm_pos,mm_linenr,{},program,{mm_startSt}); 
-        //printAny(buffer);
-        lToken = Util.listConsOption(otok,tokens);
-        if fchar > mm_pos then
-          if (debug==true) then 
-            print("\nMore Chars to finish");
-          end if;  
-          program = bkBuffer;
-        lToken = consume(env2,program,lexTables,lToken);
-        end if; 
-        if (debug==true) then 
-          print("EOF");
-        end if;  
-        then lToken;  
-    case (_,true) // case(_,mm_finish)
-      equation
-        if (debug==true) then
-          print("\n[RESTORE=" + intString(mm_accept[mm_currSt]) + "]");
-        end if;  
-        env2 = ENV(mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,buffer,bkBuffer,states,debug,fileNm);
-        
-        (env2,act) = findRule(lexTables,env2);
-        
-        (otok,env2) = LexerCode.action(act,env2);
-        // read the env
-        ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
-          linenr=mm_linenr,  buff=buffer,bkBuf=bkBuffer,stateSk=states,isDebugging=debug,fileName=fileNm) = env2;
-        // (buffer,sToken) = printBuffer(buffer,""); print("['" + sToken + "' TK:" + intString(act)  + "]");  
-        //  print("['" + sToken + "' TK:" + intString(act)  + "]");
-        //restore the program        
-        program = bkBuffer;
-        //(buffer,mm_linenr) = lineUpd(buffer,mm_linenr);
-        //restart current state
-        env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,program,{mm_startSt},debug,fileNm); 
-        //printAny(buffer);
-        lToken = Util.listConsOption(otok,tokens);
-        if(debug) then
-          print("\n CountTokens:" + intString(listLength(lToken)));
-        end if;
-        program2 = program;
-        if (listLength(program2)==0) then // recursive in the last token
-          lToken = consume(env2,program,lexTables,lToken);
-        end if;
-      then lToken;       
-    case (_::_,false) // loop tokens
+    case (_,_) // loop tokens
       equation
         cp::rest = program;
         buffer = cp::buffer;
-        //bkBuffer = cp::bkBuffer;
         
         mm_pos = mm_pos+1;
         
@@ -282,14 +222,37 @@ algorithm
           //  print("[c" + intString(c) + ",s"+ intString(mm_currSt)+"]");
           //  print("[B:" + intString(mm_base[mm_currSt])+"]");
           env2 = ENV(mm_startSt,mm_currSt,mm_pos,mm_sPos,mm_ePos,mm_linenr,buffer,rest,states,debug,fileNm);
+          lToken = tokens;
           
-          program2 = rest; // consume the character
-          if (listLength(program2)==0) then // recursive in the last token
-            lToken = consume(env2,rest,lexTables,tokens);
-          else
-            lToken = tokens;
+          
+          baseCond = mm_base[mm_currSt];
+          if (baseCond==mm_finish) then
+             if (debug==true) then
+		          print("\n[RESTORE=" + intString(mm_accept[mm_currSt]) + "]");
+		        end if;  
+		        (env2,act) = findRule(lexTables,env2);
+		        
+		       
+		        
+		        (otok,env2) = LexerCode.action(act,env2);
+		        
+		        // read the env
+		        ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
+		          linenr=mm_linenr,  buff=buffer,bkBuf=bkBuffer,stateSk=states,isDebugging=debug,fileName=fileNm) = env2;
+		     
+		        //restore the program
+		        program2 = bkBuffer;
+		        //restart current state
+		        env2 = ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_pos,mm_linenr,buffer,{},{mm_startSt},debug,fileNm);
+		        lToken = Util.listConsOption(otok,tokens);
+		        if(debug) then
+		          print("\n CountTokens:" + intString(listLength(lToken)));
+		        end if;
+		      else
+		         program2 = rest; // consume the character  
           end if;
-        then lToken;
+          
+        then (lToken,program2);
           
   end match;
   
