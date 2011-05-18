@@ -65,7 +65,7 @@ function parse "realize the syntax analysis over the list of tokens and generate
                  mm_pact, mm_pgoto, mm_table, mm_check, mm_stos;
   ParseData pt;
   Env env;
-  OMCCTypes.Token emptyTok;
+  OMCCTypes.Token emptyTok,cTok,cTok2;
   ParseCode.AstStack astStk;
   list<OMCCTypes.Token> rToks;
   list<Integer> stateStk;
@@ -104,9 +104,17 @@ algorithm
 	     print("\nTokens remaining:");
 	     print(intString(listLength(tokens)));   
      end if;
-    // printAny("\nTokens remaining:");
-	  // printAny(intString(listLength(tokens))); 
-     (tokens,env,result,ast) := processToken(tokens,env,pt);
+     
+     cTok::tokens := tokens;
+     
+     if (Util.isListEmpty(tokens)==false) then
+       cTok2::_ := tokens;
+       rToks := cTok2::{};
+       rToks := cTok::rToks; 
+     else
+       rToks := cTok::{};
+     end if;
+     (rToks,env,result,ast) := processToken(rToks,env,pt);
      if (result==false) then 
        break; 
      end if;
@@ -135,8 +143,8 @@ end addSourceMessage;
 function printErrorMessages
   input list<String> errStk;
 algorithm
-    print("\n ***ERROR(S) FOUND*** ");
-    print(printSemStack(listReverse(errStk),""));
+   // print("\n ***ERROR(S) FOUND*** ");
+   // print(printSemStack(listReverse(errStk),""));
 end printErrorMessages;
 
 function processToken
@@ -356,6 +364,7 @@ function processToken
 	             env2=reduce(n,env,pt);
 	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
 	             rest = tokens;
+	             (rest,env2,result,ast) = processToken(rest,env2,pt);
            end if; 
          else  
            // try to get the value for the action in the table array
@@ -382,6 +391,7 @@ function processToken
 	             env2=reduce(n,env,pt);
 	             ENV(crTk=cTok,lookAhTk=nTk,state=stateStk,errMessages=errStk,errStatus=errSt,sState=sSt,cState=cSt,program=prog,progBk=prgBk,astStack=astStk,isDebugging=debug,stateBackup=stateSkBk,astStackBackup=astSkBk)= env2;
 	             rest = tokens;
+	             (rest,env2,result,ast) = processToken(rest,env2,pt);
 	           end if;  
 	         else
 	           if (debug) then
