@@ -59,7 +59,7 @@ import %ParseTable%;
      end matchcontinue;
      env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,bufferRet,bkBuffer,{mm_startSt},debug,fileNm);
      if (debug==true) then 
-       print("\n[TOKEN:'" + sToken + "' ("+ intString(mm_sPos) + ":" + intString(mm_linenr) +") id:" + intString(act2)  + "]");
+       print("\n[TOKEN:'" + sToken + "' ("+ intString(mm_linenr) + ":" + intString(mm_sPos) +") id:" + intString(act2)  + "]");
      end if;   
   end action;  
    
