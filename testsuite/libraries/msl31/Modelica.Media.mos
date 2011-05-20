@@ -21,15 +21,16 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 
 // Not working - Wrong type on builtin attribute start of type Real[0]
-//       check - Class setState_pT not found in scope Modelica.Media.Interfaces.PartialPureSubstance
+//       check - OK
 //instantiateModel(Modelica.Media.Examples.WaterIF97); getErrorString();
-//checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
+checkModel(Modelica.Media.Examples.WaterIF97); getErrorString();
 
 // Not working - Variable data.name not found in scope Modelica.Media.IdealGases.Common.SingleGasNasa
 //instantiateModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 
 // Not working - Class Air.MoistAir not found
+// - SCodeFlattenRedeclare.replaceRedeclaredClassesInEnv failed for Integer in Modelica.Media.Air.MoistAir
 //instantiateModel(Modelica.Media.Examples.MoistAir); getErrorString();
 //checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
 
@@ -42,13 +43,11 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 instantiateModel(Modelica.Media.Water.StandardWater); getErrorString();
 checkModel(Modelica.Media.Water.StandardWater); getErrorString();
 
-// Not working - Class density_ph not found in scope Modelica.Media.Interfaces.PartialTwhoPhaseMedium
-//             - Class DynamicViscosity not found in scope Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties); getErrorString();
 
-// Not working - Class density_ph not found in scope Modelica.Media.Interfaces.PartialTwhoPhaseMedium
-//             - Class DynamicViscosity not found in scope Modelica.Media.Examples.TwoPhaseWater.ExtendedProperties
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 //checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
 
@@ -90,20 +89,19 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
 checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
 
-// Not working - Trying to redeclare class Medium but class not declared as replaceable
-//             - Illegal to instantiate partial class BaseProperties
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
 
-// Not working - Illegal to instantiate partial class BaseProperties
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
 
-// Not working - Illegal to instantiate partial class BaseProperties
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
 
-// Working - Trying to redeclare class Medium but class not declared as replaceable
+// Not working - Variable waterConstants not found in scope Modelica.Media.Examples.TwoPhaseWater
 //instantiateModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
 
@@ -113,7 +111,7 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 // Not working - Illegal to instantiate partial class PartialTestModel2
 //checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getErrorString();
 
-// Not working - Class setState_pTX not found
+// Not working - Error in generated function code
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErrorString();
 
@@ -141,39 +139,38 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition); getErrorString();
 
-// Not working - Variable state.T not found
+// Not working - Error in generated function code
+//             - No constant value for variable tableDensity in scope Modelica.Media.Incompressible.TableBased
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
 
-// Not working - Variable state.T not found
+// Not working - Error in generated function code
+//             - No constant value for variable tableDensity in scope Modelica.Media.Incompressible.TableBased
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650); getErrorString();
 
-// Not working - Variable state.T not found
+// Not working - Error in generated function code
+//             - Variable data.name not found in scope Modelica.Media.Water.IdealSteam
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getErrorString();
 
-// Not working - Variable state.T not found
-//             - Illegal to instantiate partial class BaseProperties
+// Not working - Error in generated function code
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph); getErrorString();
 
-// Not working - Class setState_pTX not found
-//             - Illegal to instantiate partial class BaseProperties
+// Not working - Error in generated function code
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); getErrorString();
 
-// Not working - Class setState_pTX not found
-//             - Illegal to instantiate partial class BaseProperties
+// Not working - Error in generated function code
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); getErrorString();
 
-// Not working - Variable state.T not found
-//             - Illegal to instantiate partial class BaseProperties
+// Not working - Internal error, check of model failed with no error message
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFLuid.LinearColdWater); getErrorString();
 
-// Not working - Class setState_pT not found in scope Modelica.Media.Iterfaces.PartialPureSubstance
+// Not working - Lots of CevalFunction errors, infinite loop or just very slow.
 //instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 //checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT); getErrorString();
 
@@ -185,7 +182,8 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
 
-// Not working - Variable state.T not found
+// Not working - No constant value for variable tableDensity in scope Modelica.Media.Incompressible.TableBased
+//             - Component hasDensity of variability CONST has binding not (size(tableDensity,1)) == (0) of higher variability PARAM
 //instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 //checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T); getErrorString();
 
@@ -197,8 +195,8 @@ checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString
 instantiateModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 
-// Not working - Variable medium.Xi: Wrong type on builtin attribute start
-// Check fails - Variable state.T not found in scope ...BaseProperties.
+// Not working - No constant value for variable tableDensity in scope Modelica.Media.Incompressible.TableBased
+//             - Component densityOfT of variability CONST has binding (size(tableDensity,1)) > (1) of higher variability PARAM
 //instantiateModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 
@@ -215,6 +213,13 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 
 // Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
 // 19 of these are trivial equation(s).
+// "
+// ""
+// "Check of Modelica.Media.Examples.WaterIF97 completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.WaterIF97 has 34 equation(s) and 34 variable(s).
+// 11 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
