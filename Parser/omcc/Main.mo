@@ -29,30 +29,46 @@ algorithm
       list<String> args_1,args,chars;
       String s,str,omhome,oldpath,newpath,unparsed;
       Boolean result; 
-  
+      Real tl,tp,tt;
      case args as _::_
       equation
         {filename,parser} = RTOpts.args(args);
-        System.startTimer();
+        
          "Modelica" = parser;
          false=(0==stringLength(filename));
          print("\nParsing Modelica with file " + filename + "\n");
         
         // call the lexer
   	    //tokens = LexerModelica.scanString("Hello",true); 
+  	    System.startTimer();
   	    tokens = LexerModelica.scan(filename,false);
-  	    
-  	    print(OMCCTypes.printTokens(tokens,""));
+  	    System.stopTimer();
+  	    tl = System.getTimerIntervalTime();
+  	    print("\n Time Lexer:" + realString(tl));
+  	    //print(OMCCTypes.printTokens(tokens,""));
   	    print("\n Tokens processed:");
   	    print(intString(listLength(tokens)));
   	    // call the parser
-  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,true);
+  	    
+  	    System.startTimer();
+  	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
+  	     System.stopTimer();
+       //  print(str::args_1);
+        tp = System.getTimerIntervalTime();
+        print("\n Time Parser:" + realString(tp));
+        tt = tl+tp;
+        print("\n   TOTAL Time:" + realString(tt));
+        print("\n");
   	    // print the AST
   	    if (result) then
   	     //unparsed = Dump.unparseStr(astTreeModelica,false);
   	     //print(unparsed);
+          print("\nSUCCEED");
   	     System.writeFile("UnParsed" + filename,Dump.unparseStr(astTreeModelica,true));
   	     //printAny(unparsed);
+         else
+            //print(Error.getMessagesStr());
+            print("\n" +Error.printMessagesStr());
   	    end if;
   	    // Run the machine for exercise 10 
   	   
@@ -60,9 +76,7 @@ algorithm
 	      
   	   // printAny(astTree);        
   	    print("\nargs:" + filename);
-        System.stopTimer();
-       //  print(str::args_1);
-        print("\n Total time:" + realString(System.getTimerIntervalTime()));
+       
          printUsage();
       then ();
     case {}
@@ -82,7 +96,7 @@ public function printUsage
   Integer n;
   List<String> strs;
 algorithm
-  print("\nOMCC v0.8 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
+  print("\nOMCC v0.9.2 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
 end printUsage;
 
 protected function readSettings

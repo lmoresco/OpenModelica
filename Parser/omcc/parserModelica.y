@@ -347,7 +347,9 @@ classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItem
                      
                      
 restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
+                        | PUBLIC  { $$[ClassPart] = Absyn.PUBLIC({}); } // adds shift/reduce conflicts
                         | PROTECTED elementItems { $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
+                        |  PROTECTED  { $$[ClassPart] = Absyn.PROTECTED({}); }  // adds shift/reduce conflicts
                         | EQUATION { $$[ClassPart] = Absyn.EQUATIONS({}); }
                         | EQUATION equationsection { $$[ClassPart] = Absyn.EQUATIONS($1[EquationItems]); }
                         | INITIAL EQUATION equationsection { $$[ClassPart] = Absyn.INITIALEQUATIONS($1[EquationItems]); }  
@@ -461,6 +463,7 @@ elseif               : ELSEIF exp THEN equationsection  { $$[Elseif] = ($2[Exp],
 
 elementItems         : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
                       | elementItem elementItems { $$[ElementItems] = $1[ElementItem]::$2[ElementItems]; }
+                      
 
 elementItem         : element SEMICOLON { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
                     | annotation SEMICOLON { $$[ElementItem] = Absyn.ANNOTATIONITEM($1[Annotation]); }

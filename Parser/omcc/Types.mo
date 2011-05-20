@@ -75,7 +75,8 @@ function printErrorToken
   INFO(fileName=fileNm,lineNumberStart=lns,columnNumberStart=cns,lineNumberEnd=lne,columnNumberEnd=cne) := info;
   
   //strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) + ":Syntax ERROR near token:[" + tokName + " '" +  printBuffer(val,"") + "']";
-  strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) + ":Syntax ERROR near '" +  printBuffer(val,"") + "'";
+  //strTk := fileNm + ":" + intString(lns) + ":" + intString(cns) + ":Syntax ERROR near '" +  printBuffer(val,"") + "'";
+   strTk := "'" +  printBuffer(val,"") + "'";
 end printErrorToken;
 
 function printInfoError

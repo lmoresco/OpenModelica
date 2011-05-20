@@ -9,11 +9,12 @@
 whitespace   [ \t\n]+
 letter       [a-zA-Z]
 wild         [_]
-ident        {letter}({letter}|{digit}|{wild})*
+ident        ({letter}|{wild})({letter}|{digit}|{wild})*
 digit        [0-9]
 digits       {digit}+
 exponent     ([e]|[E])([+]|[-])?{digits}
-real         {digits}[\.]({digits})?({exponent})?
+real         {digits}[\.]({digits})?({exponent})? 
+real2        {digits}{exponent}
 endif        "end"{whitespace}"if"
 endfor        "end"{whitespace}"for"
 endwhile        "end"{whitespace}"while"
@@ -30,6 +31,7 @@ endident          "end"{whitespace}{ident}
 
 {whitespace} ;
 {real}      return UNSIGNED_REAL;
+{real2}      return UNSIGNED_REAL;
 {endif}     return ENDIF;
 {endfor}     return ENDFOR;
 {endwhile}     return ENDWHILE;
