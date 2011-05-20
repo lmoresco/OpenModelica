@@ -69,7 +69,6 @@ type Boolean2 = tuple<Boolean,Boolean>;
 type ElementArg = Absyn.ElementArg;
 type ElementArgs = list<ElementArg>;
 type Each = Absyn.Each;
-type Subscript=Absyn.Subscript;
 type EqMod=Absyn.EqMod;
 type ComponentCondition = Absyn.ComponentCondition;
 type ExternalDecl = Absyn.ExternalDecl;
@@ -276,7 +275,9 @@ class                  : restriction IDENT classdef
                                 { (v1Boolean,v2Boolean,v3Boolean) = $1[Boolean3]; 
                                  $$[Class] = Absyn.CLASS($3,v3Boolean,v1Boolean,v2Boolean,$2[Restriction],$4[ClassDef],info); }          
 
-classdef             : ENDCLASS  
+classdef             : string ENDCLASS  
+                          { $$[ClassDef] = Absyn.PARTS({},{},SOME($1)); } 
+                     |ENDCLASS  
                           { $$[ClassDef] = Absyn.PARTS({},{},NONE()); } 
                      |classparts ENDCLASS  
                           { $$[ClassDef] = Absyn.PARTS({},$1[ClassParts],NONE()); } 
@@ -462,6 +463,7 @@ elementItems         : elementItem { $$[ElementItems] = $1[ElementItem]::{}; }
                       | elementItem elementItems { $$[ElementItems] = $1[ElementItem]::$2[ElementItems]; }
 
 elementItem         : element SEMICOLON { $$[ElementItem] = Absyn.ELEMENTITEM($1[Element]); }
+                    | annotation SEMICOLON { $$[ElementItem] = Absyn.ANNOTATIONITEM($1[Annotation]); }
 
 element             : componentclause 
                         { $$[Element] = $1[Element]; }
@@ -559,13 +561,19 @@ import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 
 extends              : EXTENDS path  
                        { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},NONE()); }
+                     | EXTENDS path annotation 
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},SOME($3[Annotation])); }  
                      | EXTENDS path LPAR argumentlist RPAR 
                        { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],NONE()); }
+                     | EXTENDS path LPAR argumentlist RPAR annotation
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],SOME($3[Annotation])); }  
                      
-elementspec          :  elementAttr typespec componentitems
-                        { $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
-                      |  typespec componentitems
-                        { $$[ElementSpec] = Absyn.COMPONENTS(Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),$1[TypeSpec],$2[ComponentItems]); }
+elementspec          :  elementAttr typespec  componentitems // arraydim from typespec should be in elementAttr arraydim
+                        { ($1[ElementAttributes],$2[TypeSpec]) = fixArray($1[ElementAttributes],$2[TypeSpec]);
+                          $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
+                      |  typespec  componentitems // arraydim from typespec should be in elementAttr arraydim
+                        { (v1ElementAttributes,$1[TypeSpec]) = fixArray(Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),$1[TypeSpec]); 
+                         $$[ElementSpec] = Absyn.COMPONENTS(v1ElementAttributes,$1[TypeSpec],$2[ComponentItems]); }
                        
 elementAttr          : direction 
                          { $$[ElementAttributes] = Absyn.ATTR(false,false,Absyn.VAR(), $1[Direction],{}); }
@@ -648,12 +656,12 @@ matchcont        : MATCH exp cases ENDMATCH { $$[Exp] = Absyn.MATCHEXP(Absyn.MAT
 
 
 if_exp           : IF exp THEN exp ELSE exp { $$[Exp] = Absyn.IFEXP($2[Exp],$4[Exp],$6[Exp],{}); }
-                 | IF exp THEN exp expelseifs ELSE exp ENDIF { $$[Exp] = Absyn.IFEXP($2[Exp],$4[Exp],$7[Exp],$5[ExpElseifs]); }
+                 | IF exp THEN exp expelseifs ELSE exp  { $$[Exp] = Absyn.IFEXP($2[Exp],$4[Exp],$7[Exp],$5[ExpElseifs]); }
                    
-expelseifs              :  expelseif { $$[ExpElseifs] = $1[ExpElseif]::{}; }
-                        | expelseif expelseifs { $$[ExpElseifs] = $1[ExpElseif]::$2[ExpElseifs]; }
+expelseifs        :  expelseif { $$[ExpElseifs] = $1[ExpElseif]::{}; }
+                  | expelseif expelseifs { $$[ExpElseifs] = $1[ExpElseif]::$2[ExpElseifs]; }
 
-expelseif               : ELSEIF exp THEN exp  { $$[ExpElseif] = ($2[Exp],$4[Exp]); }                                                    
+expelseif       : ELSEIF exp THEN exp  { $$[ExpElseif] = ($2[Exp],$4[Exp]); }                                                    
                      
 
 matchlocal        : LOCAL elementItems { $$[ElementItems] = $1[ElementItems]; }
@@ -718,7 +726,7 @@ expElement          : number { $$[Exp] = $1[Exp]; }
                      | LBRACK matrix RBRACK { $$[Exp] = Absyn.MATRIX($2[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | DER functioncall { $$[Exp] = Absyn.CALL(Absyn.CREF_IDENT("der",{}),$2[FunctionArgs]); }
-                     | LPAR simpleExp RPAR { $$[Exp] = $2[Exp]; }
+                     | LPAR exp RPAR { $$[Exp] = $2[Exp]; }
                      | T_END { $$[Exp] = Absyn.END(); }
 
 number             : UNSIGNED_INTEGER { $$[Exp] = Absyn.INTEGER(stringInt($1)); }
@@ -795,6 +803,37 @@ public function trimquotes
     outString := "";
   end if;
 end trimquotes;
+
+function fixArray
+  input ElementAttributes v1ElementAttributes;
+  input TypeSpec v2TypeSpec;
+  output ElementAttributes v1ElementAttributes2;
+  output TypeSpec v2TypeSpec2;
+   Boolean flowPrefix,b1,b2 "flow" ;
+    Boolean streamPrefix "stream" ;
+//    Boolean inner_ "inner";
+//    Boolean outer_ "outer";
+    Variability variability,v1 "variability ; parameter, constant etc." ;
+    Direction direction,d1 "direction" ;
+    ArrayDim arrayDim,a1 "arrayDim" ;
+    Path path,p1;
+    Option<ArrayDim> oa1;
+ algorithm 
+   Absyn.ATTR(flowPrefix=b1,streamPrefix=b2,variability=v1,direction=d1) := v1ElementAttributes;
+   
+   Absyn.TPATH(path=p1,arrayDim=oa1) :=v2TypeSpec;
+   
+   a1 := match oa1 
+     local ArrayDim l1;
+      case SOME(l1)
+       then (l1);
+      case NONE() then ({});
+    end match;    
+        
+   v1ElementAttributes2 := Absyn.ATTR(b1,b2,v1,d1,a1);
+   v2TypeSpec2 := Absyn.TPATH(p1,NONE());
+   
+end fixArray;
 
 function printContentStack
   input AstStack astStk;
