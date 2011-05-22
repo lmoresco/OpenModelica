@@ -36,6 +36,7 @@ omdev_extra_dlls:
 	(cp -puf $(OMDEV)/tools/mingw/lib/libgnurx.dll.a $(builddir_lib)/omc)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/mico2313.dll $(builddir_bin)/)
 	(cp -pf Compiler/runtime/lpsolve/lpsolve55.dll $(builddir_bin)/)
+	(cp -pf Compiler/runtime/lpsolve/lpsolve55.lib $(builddir_lib)/omc/liblpsolve55.a)
 	(cp -pf $(OMDEV)/lib/mico-msys-mingw/static/libmico2313.a $(builddir_lib)/omc/)
 	(cp -pufr $(OMDEV)/tools/xsltproc $(builddir_lib)/omc/libexec/)
 	(cp -pufr $(OMDEV)/tools/gnuplot $(builddir_lib)/omc/libexec/)
