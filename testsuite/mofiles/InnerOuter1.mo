@@ -17,6 +17,6 @@ end B;
 
 // Result:
 // class B
-// Real T0 = 100.0;
+//   Real T0 = 100.0;
 // end B;
 // endResult

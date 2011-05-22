@@ -11,6 +11,6 @@ end IntMul;
 
 // Result:
 // class IntMul
-// constant Integer i = 5361118;
+//   constant Integer i = 5361118;
 // end IntMul;
 // endResult

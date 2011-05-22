@@ -17,7 +17,7 @@ end FlowDeclRecord;
 
 // Result:
 // class FlowDeclRecord
-// Real fr.r;
+//   Real fr.r;
 // equation
 //   fr.r = 1.0;
 // end FlowDeclRecord;

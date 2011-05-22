@@ -13,7 +13,7 @@ end Floor;
 
 // Result:
 // class Floor
-// Real r;
+//   Real r;
 // equation
 //   r = 4.0;
 // end Floor;

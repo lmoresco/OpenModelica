@@ -17,11 +17,11 @@ end AlgorithmFor2;
 
 // Result:
 // class AlgorithmFor2
-// constant Integer N = 4;
-// Real a[1];
-// Real a[2];
-// Real a[3];
-// Real a[4];
+//   constant Integer N = 4;
+//   Real a[1];
+//   Real a[2];
+//   Real a[3];
+//   Real a[4];
 // algorithm
 //   a[1] := 1.0;
 //   for i in 1:3 loop

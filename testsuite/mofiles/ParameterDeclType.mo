@@ -11,6 +11,6 @@ end ParameterDeclType;
 
 // Result:
 // class ParameterDeclType
-// parameter Real rParameter = 1.0;
+//   parameter Real rParameter = 1.0;
 // end ParameterDeclType;
 // endResult

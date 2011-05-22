@@ -17,10 +17,10 @@ end EquationComponent1;
 
 // Result:
 // class EquationComponent1
-// Real a.x;
-// Real a.y;
-// Real b.x;
-// Real b.y;
+//   Real a.x;
+//   Real a.y;
+//   Real b.x;
+//   Real b.y;
 // equation
 //   a.x = b.x;
 //   a.y = b.y;

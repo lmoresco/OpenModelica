@@ -16,10 +16,10 @@ end Extends11;
 
 // Result:
 // function Extends11.f2
-// output Real r = 2.0;
+//   output Real r = 2.0;
 // end Extends11.f2;
 // 
 // class Extends11
-// constant Real r = 2.0;
+//   constant Real r = 2.0;
 // end Extends11;
 // endResult

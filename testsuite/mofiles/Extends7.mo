@@ -34,7 +34,7 @@ end Utilities;
 //   input String name "Absolute or relative file or directory name";
 //   output String fullName "Full path of 'name'";
 // 
-// external "C";
+//   external "C";
 // end Modelica.Utilities.Files.fullPathName;
 // 
 // class Utilities "Utility classes usually not directly utilized by the user"

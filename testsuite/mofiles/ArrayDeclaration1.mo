@@ -14,8 +14,8 @@ end ArrayDeclaration1;
 
 // Result:
 // class ArrayDeclaration1
-// Real realArray[1];
-// Real realArray[2];
+//   Real realArray[1];
+//   Real realArray[2];
 // equation
 //   realArray[1] = 4.0;
 //   realArray[2] = 5.0;

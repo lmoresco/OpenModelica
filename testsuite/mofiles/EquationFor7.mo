@@ -15,12 +15,12 @@ end EquationFor7;
 
 // Result:
 // class EquationFor7
-// Real a[1,1];
-// Real a[1,2];
-// Real a[1,3];
-// Real a[2,1];
-// Real a[2,2];
-// Real a[2,3];
+//   Real a[1,1];
+//   Real a[1,2];
+//   Real a[1,3];
+//   Real a[2,1];
+//   Real a[2,2];
+//   Real a[2,3];
 // equation
 //   a[1,1] = 2.0;
 //   a[1,2] = 3.0;

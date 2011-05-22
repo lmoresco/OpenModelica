@@ -14,11 +14,11 @@ end bug1210;
 
 // Result:
 // class bug1210
-// constant Real i[1,1] = 1.1;
-// constant Real i[1,2] = 3.3;
-// constant Real i[2,1] = 2.2;
-// constant Real i[2,2] = 4.4;
-// Real r;
+//   constant Real i[1,1] = 1.1;
+//   constant Real i[1,2] = 3.3;
+//   constant Real i[2,1] = 2.2;
+//   constant Real i[2,2] = 4.4;
+//   Real r;
 // equation
 //   r = 4.4;
 // end bug1210;

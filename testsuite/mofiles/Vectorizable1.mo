@@ -23,21 +23,21 @@ end Vectorizable1;
 
 // Result:
 // function foo
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 1.0 + x;
 // end foo;
 // 
 // class Vectorizable1
-// Real x[1];
-// Real x[2];
-// Real x[3];
-// Real s[1];
-// Real s[2];
-// Real a;
-// Real b;
-// Real c;
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
+//   Real s[1];
+//   Real s[2];
+//   Real a;
+//   Real b;
+//   Real c;
 // equation
 //   x[1] = foo(a) + foo(1.0);
 //   x[2] = foo(b) + foo(2.0);

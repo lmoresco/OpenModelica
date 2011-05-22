@@ -156,8 +156,8 @@ model M1_solutions_E03_Faculty_FacultyCall
 end M1_solutions_E03_Faculty_FacultyCall;
 // Result:
 // function M1_solutions.E03.Faculty.faculty
-// input Integer n;
-// output Integer k = 1;
+//   input Integer n;
+//   output Integer k = 1;
 // algorithm
 //   assert( n >= 0, "n must be larger than 0");
 //   if n <> 0 then
@@ -168,16 +168,16 @@ end M1_solutions_E03_Faculty_FacultyCall;
 // end M1_solutions.E03.Faculty.faculty;
 // 
 // function M1_solutions.E03.Faculty.faculty_rec
-// input Integer n;
-// output Integer k = 1;
+//   input Integer n;
+//   output Integer k = 1;
 // algorithm
 //   assert( n >= 0, "n must be larger than 0");
-//   k := if n == 0 then 1 else n * M1_solutions.E03.Faculty.faculty_rec(n - 1);
+//   k := if n == 0 then 1 else n * M1_solutions.E03.Faculty.faculty_rec(n + -1);
 // end M1_solutions.E03.Faculty.faculty_rec;
 // 
 // class M1_solutions_E03_Faculty_FacultyCall
-// parameter Integer n = 15;
-// Integer fac = M1_solutions.E03.Faculty.faculty(n);
-// Integer fac_rec = M1_solutions.E03.Faculty.faculty_rec(n);
+//   parameter Integer n = 15;
+//   Integer fac = M1_solutions.E03.Faculty.faculty(n);
+//   Integer fac_rec = M1_solutions.E03.Faculty.faculty_rec(n);
 // end M1_solutions_E03_Faculty_FacultyCall;
 // endResult

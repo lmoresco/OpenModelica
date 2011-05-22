@@ -18,14 +18,14 @@ end Constant6;
 
 // Result:
 // function inc
-// input Integer x;
-// output Integer y;
+//   input Integer x;
+//   output Integer y;
 // algorithm
 //   y := 1 + x;
 // end inc;
 // 
 // class Constant6
-// Real x[1];
-// Real x[2];
+//   Real x[1];
+//   Real x[2];
 // end Constant6;
 // endResult

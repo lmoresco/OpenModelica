@@ -19,10 +19,10 @@ end BlockIllegal;
 
 // Result:
 // class BlockIllegal
-// Integer tb1.i;
-// Integer tb2.i;
+//   Integer tb1.i;
+//   Integer tb2.i;
 // equation
 //   tb1.i = 1;
-// tb1.i = tb2.i;
+//   tb1.i = tb2.i;
 // end BlockIllegal;
 // endResult

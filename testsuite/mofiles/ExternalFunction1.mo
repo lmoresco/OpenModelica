@@ -31,15 +31,15 @@ end ExternalFunction1;
 // 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // 
-// external "C";
+//   external "C";
 // end f;
 // 
 // class ExternalFunction1
-// constant Real x = 5.0;
-// Real y;
+//   constant Real x = 5.0;
+//   Real y;
 // equation
 //   y = 15.0;
 // end ExternalFunction1;

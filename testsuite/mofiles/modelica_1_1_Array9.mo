@@ -11,7 +11,7 @@ end Array9;
 
 // Result:
 // class Array9
-// Real x[1] = 1.0;
-// Real x[2] = 2.0;
+//   Real x[1] = 1.0;
+//   Real x[2] = 2.0;
 // end Array9;
 // endResult

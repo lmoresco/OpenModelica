@@ -19,7 +19,7 @@ end ProtectedAccess2;
 
 // Result:
 // class ProtectedAccess2
-// protected Integer tm.x = 2;
+//   protected Integer tm.x = 2;
 // equation
 //   tm.x = 3;
 // end ProtectedAccess2;

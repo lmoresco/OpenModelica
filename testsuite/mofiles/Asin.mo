@@ -13,7 +13,7 @@ end Asin;
 
 // Result:
 // class Asin
-// Real r;
+//   Real r;
 // equation
 //   r = 0.523598775598299;
 // end Asin;

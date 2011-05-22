@@ -21,8 +21,8 @@ end InheritanceMultiple;
 
 // Result:
 // class InheritanceMultiple
-// parameter Real baseReal1 = 2.0;
-// parameter Real baseReal2 = 3.0;
-// parameter Real finalReal;
+//   parameter Real baseReal1 = 2.0;
+//   parameter Real baseReal2 = 3.0;
+//   parameter Real finalReal;
 // end InheritanceMultiple;
 // endResult

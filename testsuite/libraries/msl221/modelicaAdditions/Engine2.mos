@@ -49,7 +49,7 @@ getErrorString();// Result:
 //       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
-//       i := i - 1;
+//       i := i + -1;
 //     end if;
 //     u1 := table[i,1];
 //     u2 := table[1 + i,1];
@@ -2016,7 +2016,7 @@ getErrorString();// Result:
 //   Real gasForce.flange_a.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   Real gasForce.flange_b.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real gasForce.flange_b.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
-//   parameter Real gasForce.L(quantity = \"Length\", unit = \"m\") = sqrt((L + D / 2.0) ^ 2.0 - e ^ 2.0) - sqrt((L - D / 2.0) ^ 2.0 - e ^ 2.0) \"Length of cylinder\";
+//   parameter Real gasForce.L(quantity = \"Length\", unit = \"m\") = sqrt((L + D / 2.0) ^ 2.0 - e ^ 2.0) - sqrt((L + (-D) / 2.0) ^ 2.0 - e ^ 2.0) \"Length of cylinder\";
 //   parameter Real gasForce.d(quantity = \"Length\", unit = \"m\") = 0.05 \"diameter of cylinder\";
 //   parameter Real gasForce.k0 = 0.01;
 //   parameter Real gasForce.k1 = 1.0;
@@ -3413,7 +3413,7 @@ getErrorString();// Result:
 //   r1.nn[1] = r1.n[1] / sqrt(r1.n[1] ^ 2.0 + (r1.n[2] ^ 2.0 + r1.n[3] ^ 2.0));
 //   r1.nn[2] = r1.n[2] / sqrt(r1.n[1] ^ 2.0 + (r1.n[2] ^ 2.0 + r1.n[3] ^ 2.0));
 //   r1.nn[3] = r1.n[3] / sqrt(r1.n[1] ^ 2.0 + (r1.n[2] ^ 2.0 + r1.n[3] ^ 2.0));
-//   r1.qq = r1.q - 0.0174532925199433 * r1.q0;
+//   r1.qq = r1.q + -0.0174532925199433 * r1.q0;
 //   r1.sinq = sin(r1.qq);
 //   r1.cosq = cos(r1.qq);
 //   r1.S_rel[1,1] = r1.nn[1] * r1.nn[1] + r1.cosq * (1.0 - r1.nn[1] * r1.nn[1]);
@@ -3794,9 +3794,9 @@ getErrorString();// Result:
 //   crank.vis.ta[1] = 0.0;
 //   crank.vis.ta[2] = 0.0;
 //   crank.vis.ta[3] = 0.0;
-//   gasForce.x = 1.0 - gasForce.s_rel / gasForce.L;
+//   gasForce.x = 1.0 + (-gasForce.s_rel) / gasForce.L;
 //   gasForce.v_rel = der(gasForce.s_rel);
-//   gasForce.press = if gasForce.v_rel < 0.0 then if gasForce.x < 0.987 then 2.4 + (177.4132 * gasForce.x ^ 4.0 + (-287.2189 * gasForce.x ^ 3.0 + (151.8252 * gasForce.x ^ 2.0 + -24.9973 * gasForce.x))) else 2129670.0 + (2836360.0 * gasForce.x ^ 4.0 + (-10569296.0 * gasForce.x ^ 3.0 + (14761814.0 * gasForce.x ^ 2.0 + -9158505.0 * gasForce.x))) else if gasForce.x > 0.93 then -3929704.0 * gasForce.x ^ 4.0 + (14748765.0 * gasForce.x ^ 3.0 + (-20747000.0 * gasForce.x ^ 2.0 + 12964477.0 * gasForce.x)) - 3036495.0 else 2.4 + (145.93 * gasForce.x ^ 4.0 + (-131.707 * gasForce.x ^ 3.0 + (17.3438 * gasForce.x ^ 2.0 + 17.9272 * gasForce.x)));
+//   gasForce.press = if gasForce.v_rel < 0.0 then if gasForce.x < 0.987 then 2.4 + (177.4132 * gasForce.x ^ 4.0 + (-287.2189 * gasForce.x ^ 3.0 + (151.8252 * gasForce.x ^ 2.0 + -24.9973 * gasForce.x))) else 2129670.0 + (2836360.0 * gasForce.x ^ 4.0 + (-10569296.0 * gasForce.x ^ 3.0 + (14761814.0 * gasForce.x ^ 2.0 + -9158505.0 * gasForce.x))) else if gasForce.x > 0.93 then -3929704.0 * gasForce.x ^ 4.0 + (14748765.0 * gasForce.x ^ 3.0 + (-20747000.0 * gasForce.x ^ 2.0 + (12964477.0 * gasForce.x + -3036495.0))) else 2.4 + (145.93 * gasForce.x ^ 4.0 + (-131.707 * gasForce.x ^ 3.0 + (17.3438 * gasForce.x ^ 2.0 + 17.9272 * gasForce.x)));
 //   gasForce.f = -78539.8163397448 * (gasForce.press * gasForce.d ^ 2.0);
 //   gasForce.V = gasForce.k0 + gasForce.k1 * (1.0 - gasForce.x);
 //   gasForce.dens = 1.0 / gasForce.V;
@@ -3818,7 +3818,7 @@ getErrorString();// Result:
 //   torque.a = der(torque.w);
 //   torque.w_relfric = torque.w;
 //   torque.a_relfric = torque.a;
-//   0.0 = torque.flange_a.tau + torque.flange_b.tau - torque.tau;
+//   0.0 = torque.flange_a.tau + (torque.flange_b.tau - torque.tau);
 //   torque.tau = if torque.locked then torque.sa * torque.unitTorque else if torque.startForward then Modelica.Math.tempInterpol1(torque.w,{{torque.tau_pos[1,1],torque.tau_pos[1,2]}},2) else if torque.startBackward then -Modelica.Math.tempInterpol1(-torque.w,{{torque.tau_pos[1,1],torque.tau_pos[1,2]}},2) else if pre(torque.mode) == 1 then Modelica.Math.tempInterpol1(torque.w,{{torque.tau_pos[1,1],torque.tau_pos[1,2]}},2) else -Modelica.Math.tempInterpol1(-torque.w,{{torque.tau_pos[1,1],torque.tau_pos[1,2]}},2);
 //   torque.phi_b = torque.flange_b.phi - torque.bearing.phi;
 //   torque.phi_a = torque.flange_a.phi - torque.bearing.phi;
@@ -3826,8 +3826,8 @@ getErrorString();// Result:
 //   torque.bearing.phi = 0.0;
 //   torque.startForward = pre(torque.mode) == 0 and (torque.sa > torque.tau0_max or pre(torque.startForward) and torque.sa > torque.tau0) or pre(torque.mode) == -1 and torque.w_relfric > torque.w_small or initial() and torque.w_relfric > 0.0;
 //   torque.startBackward = pre(torque.mode) == 0 and (torque.sa < -torque.tau0_max or pre(torque.startBackward) and torque.sa < -torque.tau0) or pre(torque.mode) == 1 and torque.w_relfric < -torque.w_small or initial() and torque.w_relfric < 0.0;
-//   torque.locked =  not torque.free and  not (pre(torque.mode) == 1 or torque.startForward or pre(torque.mode) == -1 or torque.startBackward);
-//   torque.a_relfric = torque.unitAngularAcceleration * (if torque.locked then 0.0 else if torque.free then torque.sa else if torque.startForward then torque.sa - torque.tau0_max / torque.unitTorque else if torque.startBackward then torque.sa + torque.tau0_max / torque.unitTorque else if pre(torque.mode) == 1 then torque.sa - torque.tau0 / torque.unitTorque else torque.sa + torque.tau0 / torque.unitTorque);
+//   torque.locked = not torque.free and not (pre(torque.mode) == 1 or torque.startForward or pre(torque.mode) == -1 or torque.startBackward);
+//   torque.a_relfric = torque.unitAngularAcceleration * (if torque.locked then 0.0 else if torque.free then torque.sa else if torque.startForward then torque.sa + (-torque.tau0_max) / torque.unitTorque else if torque.startBackward then torque.sa + torque.tau0_max / torque.unitTorque else if pre(torque.mode) == 1 then torque.sa + (-torque.tau0) / torque.unitTorque else torque.sa + torque.tau0 / torque.unitTorque);
 //   torque.mode = if torque.free then 2 else if (pre(torque.mode) == 1 or pre(torque.mode) == 2 or torque.startForward) and torque.w_relfric > 0.0 then 1 else if (pre(torque.mode) == -1 or pre(torque.mode) == 2 or torque.startBackward) and torque.w_relfric < 0.0 then -1 else 0;
 //   spherical.constraintResidue[1] = spherical.r_rela[1];
 //   spherical.constraintResidue[2] = spherical.r_rela[2];
@@ -3999,7 +3999,7 @@ getErrorString();// Result:
 //   univ.revolute1.nn[1] = univ.revolute1.n[1] / sqrt(univ.revolute1.n[1] ^ 2.0 + (univ.revolute1.n[2] ^ 2.0 + univ.revolute1.n[3] ^ 2.0));
 //   univ.revolute1.nn[2] = univ.revolute1.n[2] / sqrt(univ.revolute1.n[1] ^ 2.0 + (univ.revolute1.n[2] ^ 2.0 + univ.revolute1.n[3] ^ 2.0));
 //   univ.revolute1.nn[3] = univ.revolute1.n[3] / sqrt(univ.revolute1.n[1] ^ 2.0 + (univ.revolute1.n[2] ^ 2.0 + univ.revolute1.n[3] ^ 2.0));
-//   univ.revolute1.qq = univ.revolute1.q - 0.0174532925199433 * univ.revolute1.q0;
+//   univ.revolute1.qq = univ.revolute1.q + -0.0174532925199433 * univ.revolute1.q0;
 //   univ.revolute1.sinq = sin(univ.revolute1.qq);
 //   univ.revolute1.cosq = cos(univ.revolute1.qq);
 //   univ.revolute1.S_rel[1,1] = univ.revolute1.nn[1] * univ.revolute1.nn[1] + univ.revolute1.cosq * (1.0 - univ.revolute1.nn[1] * univ.revolute1.nn[1]);
@@ -4064,7 +4064,7 @@ getErrorString();// Result:
 //   univ.revolute2.nn[1] = univ.revolute2.n[1] / sqrt(univ.revolute2.n[1] ^ 2.0 + (univ.revolute2.n[2] ^ 2.0 + univ.revolute2.n[3] ^ 2.0));
 //   univ.revolute2.nn[2] = univ.revolute2.n[2] / sqrt(univ.revolute2.n[1] ^ 2.0 + (univ.revolute2.n[2] ^ 2.0 + univ.revolute2.n[3] ^ 2.0));
 //   univ.revolute2.nn[3] = univ.revolute2.n[3] / sqrt(univ.revolute2.n[1] ^ 2.0 + (univ.revolute2.n[2] ^ 2.0 + univ.revolute2.n[3] ^ 2.0));
-//   univ.revolute2.qq = univ.revolute2.q - 0.0174532925199433 * univ.revolute2.q0;
+//   univ.revolute2.qq = univ.revolute2.q + -0.0174532925199433 * univ.revolute2.q0;
 //   univ.revolute2.sinq = sin(univ.revolute2.qq);
 //   univ.revolute2.cosq = cos(univ.revolute2.qq);
 //   univ.revolute2.S_rel[1,1] = univ.revolute2.nn[1] * univ.revolute2.nn[1] + univ.revolute2.cosq * (1.0 - univ.revolute2.nn[1] * univ.revolute2.nn[1]);

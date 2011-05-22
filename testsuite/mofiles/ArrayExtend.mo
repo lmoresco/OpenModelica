@@ -20,7 +20,7 @@ end ArrayExtend;
 
 // Result:
 // class ArrayExtend
-// Real r;
-// Real illegalReal;
+//   Real r;
+//   Real illegalReal;
 // end ArrayExtend;
 // endResult

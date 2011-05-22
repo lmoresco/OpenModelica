@@ -11,6 +11,6 @@ end ConstantDeclType;
 
 // Result:
 // class ConstantDeclType
-// constant Real rConst = 2.0;
+//   constant Real rConst = 2.0;
 // end ConstantDeclType;
 // endResult

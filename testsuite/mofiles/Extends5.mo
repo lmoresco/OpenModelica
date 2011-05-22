@@ -20,13 +20,13 @@ end Extends5;
 
 // Result:
 // function Extends5.f
-// input Integer i;
-// output Integer out;
+//   input Integer i;
+//   output Integer out;
 // algorithm
 //   out := i;
 // end Extends5.f;
 // 
 // class Extends5
-// constant Integer i = 1;
+//   constant Integer i = 1;
 // end Extends5;
 // endResult

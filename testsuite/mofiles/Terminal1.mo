@@ -13,8 +13,8 @@ end Terminal1;
 
 // Result:
 // class Terminal1
-// Boolean t;
+//   Boolean t;
 // equation
-// t = terminal();
+//   t = terminal();
 // end Terminal1;
 // endResult

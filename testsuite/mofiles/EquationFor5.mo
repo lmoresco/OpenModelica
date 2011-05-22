@@ -15,10 +15,10 @@ end EquationFor5;
 
 // Result:
 // class EquationFor5
-// Real a[1];
-// Real a[2];
-// Real a[3];
-// Real a[4];
+//   Real a[1];
+//   Real a[2];
+//   Real a[3];
+//   Real a[4];
 // equation
 //   a[2] = 1.0 + a[1];
 //   a[4] = 1.0 + a[3];

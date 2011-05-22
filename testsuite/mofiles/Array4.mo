@@ -14,11 +14,11 @@ end Array4;
 
 // Result:
 // class Array4
-// parameter Real x[1,1];
-// parameter Real x[1,2];
-// parameter Real x[1,3];
-// parameter Real x[2,1];
-// parameter Real x[2,2];
-// parameter Real x[2,3];
+//   parameter Real x[1,1];
+//   parameter Real x[1,2];
+//   parameter Real x[1,3];
+//   parameter Real x[2,1];
+//   parameter Real x[2,2];
+//   parameter Real x[2,3];
 // end Array4;
 // endResult

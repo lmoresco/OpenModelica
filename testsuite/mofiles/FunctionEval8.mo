@@ -64,28 +64,28 @@ end FunctionEval8;
 // 
 // Result:
 // function test
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 4.0 + cos(x);
 // end test;
 // 
 // function test3
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 7.0 + x;
 // end test3;
 // 
 // class FunctionEval8
-// parameter Real a = 5.0;
-// parameter Real b[1] = 1.0;
-// parameter Real b[2] = 2.0;
-// parameter Real b[3] = 3.0;
-// Real x1 = test(a);
-// parameter Real x2 = 4.0;
-// Real y;
-// Real z;
+//   parameter Real a = 5.0;
+//   parameter Real b[1] = 1.0;
+//   parameter Real b[2] = 2.0;
+//   parameter Real b[3] = 3.0;
+//   Real x1 = test(a);
+//   parameter Real x2 = 4.0;
+//   Real y;
+//   Real z;
 // equation
 //   y = test3(x1 + x2);
 //   z = test(y);

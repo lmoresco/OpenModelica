@@ -41,16 +41,16 @@ end Break;
 
 // Result:
 // class Break
-// Real x;
-// Real y;
-// Real z;
-// Real a;
-// protected Integer i;
+//   Real x;
+//   Real y;
+//   Real z;
+//   Real a;
+//   protected Integer i;
 // equation
 //   y = sin(time);
 // algorithm
 //   i := 0;
-//   a := y - 1.0;
+//   a := y + -1.0;
 //   while Real(i) / 10.0 < y loop
 //     a := 0.5 + a;
 //     if a > y then

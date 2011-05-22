@@ -1096,7 +1096,7 @@ end BM9;
 //   input Real u;
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.cosh;
 // 
 // class BM9

@@ -15,6 +15,6 @@ end ConstantDeclConnector;
 
 // Result:
 // class ConstantDeclConnector
-// constant Real cc.r = 2.0;
+//   constant Real cc.r = 2.0;
 // end ConstantDeclConnector;
 // endResult

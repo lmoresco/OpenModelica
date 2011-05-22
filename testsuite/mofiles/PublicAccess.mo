@@ -18,7 +18,7 @@ end PublicAccess;
 
 // Result:
 // class PublicAccess
-// Integer tm.x = 2;
+//   Integer tm.x = 2;
 // equation
 //   tm.x = 3;
 // end PublicAccess;

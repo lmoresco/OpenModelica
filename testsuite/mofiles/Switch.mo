@@ -26,11 +26,11 @@ end Switch;
 
 // Result:
 // class Switch
-// Real v;
-// Real i;
-// Real i1;
-// Real itot;
-// Boolean open;
+//   Real v;
+//   Real i;
+//   Real i1;
+//   Real itot;
+//   Boolean open;
 // equation
 //   itot = i + i1;
 //   if open then
@@ -39,7 +39,7 @@ end Switch;
 //   i = 0.0;
 //   end if;
 //   1.0 - i1 = 0.0;
-//   1.0 - v - i = 0.0;
+//   1.0 + ((-v) - i) = 0.0;
 //   open = time >= 0.5;
 // end Switch;
 // endResult

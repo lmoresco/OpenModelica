@@ -31,8 +31,8 @@ end Extends6;
 
 // Result:
 // class Extends6
-// Real medium.X[1](start = 0.333333333333333);
-// Real medium.X[2](start = 0.333333333333333);
-// Real medium.X[3](start = 0.333333333333333);
+//   Real medium.X[1](start = 0.333333333333333);
+//   Real medium.X[2](start = 0.333333333333333);
+//   Real medium.X[3](start = 0.333333333333333);
 // end Extends6;
 // endResult

@@ -12,7 +12,7 @@ end Discrete2;
 
 // Result:
 // class Discrete2
-//  discrete Real x;
+//   discrete Real x;
 // equation
 //   x = sin(time);
 // end Discrete2;

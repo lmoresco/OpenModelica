@@ -45,17 +45,17 @@ end RecordConstructorVectorization;
 
 // Result:
 // function Crap.FluidConstants "Automatically generated record constructor for Crap.FluidConstants"
-// input String iupacName;
-// input String casRegistryNumber;
-// input String chemicalFormula;
-// input String structureFormula;
-// output FluidConstants res;
+//   input String iupacName;
+//   input String casRegistryNumber;
+//   input String chemicalFormula;
+//   input String structureFormula;
+//   output FluidConstants res;
 // end Crap.FluidConstants;
 // 
 // function Crap.Whatever "Automatically generated record constructor for Crap.Whatever"
-// input String x;
-// input Real y;
-// output Whatever res;
+//   input String x;
+//   input Real y;
+//   output Whatever res;
 // end Crap.Whatever;
 // 
 // class RecordConstructorVectorization

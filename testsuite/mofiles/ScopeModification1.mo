@@ -18,8 +18,8 @@ end ScopeModification1;
 
 // Result:
 // class ScopeModification1
-// Real a = 1.0;
-// Real m.a = 2.0;
-// Real m.b = a;
+//   Real a = 1.0;
+//   Real m.a = 2.0;
+//   Real m.b = a;
 // end ScopeModification1;
 // endResult

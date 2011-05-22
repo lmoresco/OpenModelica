@@ -18,10 +18,10 @@ end Connect4;
 
 // Result:
 // class Connect4
-// Integer c1.i;
-// Integer c2.i;
+//   Integer c1.i;
+//   Integer c2.i;
 // equation
-//  c1.i = integer(10.0 * time);
+//   c1.i = integer(10.0 * time);
 //   c1.i = c2.i;
 // end Connect4;
 // endResult

@@ -1095,7 +1095,7 @@ end BM26;
 //   input Real u;
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.tanh;
 // 
 // class BM26

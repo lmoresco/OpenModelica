@@ -16,13 +16,13 @@ end ArrayEWOpsCEval5;
 
 // Result:
 // class ArrayEWOpsCEval5
-// Real u1[1];
-// Real u1[2];
-// Real u2[1];
-// Real u2[2];
-// Real u3[1];
-// Real u3[2];
-// Real t;
+//   Real u1[1];
+//   Real u1[2];
+//   Real u2[1];
+//   Real u2[2];
+//   Real u3[1];
+//   Real u3[2];
+//   Real t;
 // equation
 //   u1[1] = 16.0;
 //   u1[2] = 243.0;

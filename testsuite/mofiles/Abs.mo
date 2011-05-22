@@ -14,8 +14,8 @@ end Abs;
 
 // Result:
 // class Abs
-// Real r1;
-// Real r2;
+//   Real r1;
+//   Real r2;
 // equation
 //   r1 = 100.0;
 //   r2 = 100.0;

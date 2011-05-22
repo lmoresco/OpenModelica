@@ -15,14 +15,14 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Mechanics.Translational.Examples.Oscillator
@@ -98,7 +98,7 @@ getErrorString();
 //   SlidingMass1.v = der(SlidingMass1.s);
 //   SlidingMass1.a = der(SlidingMass1.v);
 //   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
-//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_a.s = SlidingMass1.s + (-SlidingMass1.L) / 2.0;
 //   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
 //   Spring1.f = Spring1.c * (Spring1.s_rel - Spring1.s_rel0);
 //   Spring1.s_rel = Spring1.flange_b.s - Spring1.flange_a.s;
@@ -110,7 +110,7 @@ getErrorString();
 //   SlidingMass2.v = der(SlidingMass2.s);
 //   SlidingMass2.a = der(SlidingMass2.v);
 //   SlidingMass2.m * SlidingMass2.a = SlidingMass2.flange_a.f + SlidingMass2.flange_b.f;
-//   SlidingMass2.flange_a.s = SlidingMass2.s - SlidingMass2.L / 2.0;
+//   SlidingMass2.flange_a.s = SlidingMass2.s + (-SlidingMass2.L) / 2.0;
 //   SlidingMass2.flange_b.s = SlidingMass2.s + SlidingMass2.L / 2.0;
 //   Spring2.f = Spring2.c * (Spring2.s_rel - Spring2.s_rel0);
 //   Spring2.s_rel = Spring2.flange_b.s - Spring2.flange_a.s;

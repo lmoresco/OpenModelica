@@ -14,8 +14,8 @@ end Algorithm3;
 
 // Result:
 // class Algorithm3
-// Integer i = integer(10.0 * time);
-// Real x;
+//   Integer i = integer(10.0 * time);
+//   Real x;
 // algorithm
 //   x := Real(i);
 // end Algorithm3;

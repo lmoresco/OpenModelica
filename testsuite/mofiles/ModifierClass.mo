@@ -13,6 +13,6 @@ class ModifierClass = ClassA(r1 = 4711.0);
 
 // Result:
 // class ModifierClass
-// parameter Real r1 = 4711.0;
+//   parameter Real r1 = 4711.0;
 // end ModifierClass;
 // endResult

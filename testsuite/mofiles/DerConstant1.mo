@@ -17,20 +17,20 @@ end DerConstant1;
 
 // Result:
 // class DerConstant1
-// constant Real pa = 1.0;
-// Real a = 0.0;
-// Real b = 0.0;
-// parameter Real pc[1,1,1,1] = 1.0;
-// parameter Real pc[1,1,1,2] = 2.0;
-// parameter Real pc[1,2,1,1] = 3.0;
-// parameter Real pc[1,2,1,2] = 4.0;
-// Real c[1,1,1,1] = 0.0;
-// Real c[1,1,1,2] = 0.0;
-// Real c[1,2,1,1] = 0.0;
-// Real c[1,2,1,2] = 0.0;
-// Real d[1,1,1,1] = 0.0;
-// Real d[1,1,1,2] = 0.0;
-// Real d[1,2,1,1] = 0.0;
-// Real d[1,2,1,2] = 0.0;
+//   constant Real pa = 1.0;
+//   Real a = 0.0;
+//   Real b = 0.0;
+//   parameter Real pc[1,1,1,1] = 1.0;
+//   parameter Real pc[1,1,1,2] = 2.0;
+//   parameter Real pc[1,2,1,1] = 3.0;
+//   parameter Real pc[1,2,1,2] = 4.0;
+//   Real c[1,1,1,1] = 0.0;
+//   Real c[1,1,1,2] = 0.0;
+//   Real c[1,2,1,1] = 0.0;
+//   Real c[1,2,1,2] = 0.0;
+//   Real d[1,1,1,1] = 0.0;
+//   Real d[1,1,1,2] = 0.0;
+//   Real d[1,2,1,1] = 0.0;
+//   Real d[1,2,1,2] = 0.0;
 // end DerConstant1;
 // endResult

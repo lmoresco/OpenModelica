@@ -52,7 +52,7 @@ end ExternalFunction4;
 //   output Integer[min(size(A,1),size(A,2))] pivots;
 //   output Integer info;
 // 
-// external "FORTRAN 77";
+//   external "FORTRAN 77";
 // end ExternalFunction4.dgetrf;
 // 
 // function ExternalFunction4.dgetri
@@ -63,7 +63,7 @@ end ExternalFunction4;
 //   protected Real[lwork] work;
 //   protected Integer info;
 // 
-// external "FORTRAN 77";
+//   external "FORTRAN 77";
 // end ExternalFunction4.dgetri;
 // 
 // function ExternalFunction4.inv

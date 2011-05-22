@@ -19,14 +19,14 @@ end CondOperators;
 
 // Result:
 // class CondOperators
-// constant Boolean b1 = true;
-// constant Boolean b2 = false;
-// constant Boolean b3 = true;
-// constant Boolean b4 = false;
-// constant Boolean b5 = true;
-// constant Boolean b6 = false;
-// constant Boolean b7 = true;
-// constant Boolean b8 = false;
-// constant Boolean b9 = true;
+//   constant Boolean b1 = true;
+//   constant Boolean b2 = false;
+//   constant Boolean b3 = true;
+//   constant Boolean b4 = false;
+//   constant Boolean b5 = true;
+//   constant Boolean b6 = false;
+//   constant Boolean b7 = true;
+//   constant Boolean b8 = false;
+//   constant Boolean b9 = true;
 // end CondOperators;
 // endResult

@@ -12,6 +12,6 @@ end CondDeclaration;
 
 // Result:
 // class CondDeclaration
-// Real r1;
+//   Real r1;
 // end CondDeclaration;
 // endResult

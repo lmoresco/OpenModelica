@@ -29,15 +29,15 @@ end FunctionEval4;
 // 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 4.0 + x;
 // end f;
 // 
 // class FunctionEval4
-// Real x;
-// Real y;
+//   Real x;
+//   Real y;
 // equation
 //   y = f(x);
 //   x = 5.0;

@@ -17,7 +17,7 @@ end ModelSimple;
 
 // Result:
 // class ModelSimple
-// Integer tm.i;
+//   Integer tm.i;
 // equation
 //   tm.i = 1;
 // end ModelSimple;

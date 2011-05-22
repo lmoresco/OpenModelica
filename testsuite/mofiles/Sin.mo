@@ -13,7 +13,7 @@ end Sin;
 
 // Result:
 // class Sin
-// Real r;
+//   Real r;
 // equation
 //   r = 0.850903524534118;
 // end Sin;

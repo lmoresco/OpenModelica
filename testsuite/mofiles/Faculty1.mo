@@ -19,13 +19,13 @@ end Test;
 
 // Result:
 // function Faculty1
-// input Integer x;
-// output Integer y;
+//   input Integer x;
+//   output Integer y;
 // algorithm
-//   y := if x > 0 then x * Faculty1(x - 1) else 1;
+//   y := if x > 0 then x * Faculty1(x + -1) else 1;
 // end Faculty1;
 // 
 // class Test
-// Real x = Real(Faculty1(integer(2.0 * time)));
+//   Real x = Real(Faculty1(integer(2.0 * time)));
 // end Test;
 // endResult

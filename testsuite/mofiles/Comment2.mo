@@ -30,7 +30,7 @@ end Comment2; /* Comment
 
 // Result:
 // class Comment2
-// Real x;
+//   Real x;
 // equation
 //   x = 2.0;
 // end Comment2;

@@ -21,15 +21,15 @@ end FunctionSimple;
 
 // Result:
 // function TestFunction
-// input Integer i;
-// output Integer o;
+//   input Integer i;
+//   output Integer o;
 // algorithm
 //   o := i;
 // end TestFunction;
 // 
 // class FunctionSimple
-// Integer x;
-// Integer y;
+//   Integer x;
+//   Integer y;
 // equation
 //   x = 1;
 //   y = TestFunction(x);

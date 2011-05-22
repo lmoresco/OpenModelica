@@ -15,10 +15,10 @@ end Constant3;
 
 // Result:
 // class Constant3
-// constant Integer N = 3;
-// Real x[1];
-// Real x[2];
-// Real x[3];
+//   constant Integer N = 3;
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
 // equation
 //   x[2] = 2.0;
 //   x[1] = 1.0;

@@ -37,7 +37,7 @@ end Summation;
 //     if a[n] > 0.0 then
 //       sum := sum + a[n];
 //     end if;
-//     n := n - 1;
+//     n := n + -1;
 //   end while;
 // end Summation;
 // endResult

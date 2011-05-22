@@ -17,9 +17,9 @@ end Delay;
 
 // Result:
 // class Delay
-// Real x;
-// Real y;
-// parameter Real a = 1.0;
+//   Real x;
+//   Real y;
+//   parameter Real a = 1.0;
 // equation
 //   a = 1.0;
 //   x = sin(time);

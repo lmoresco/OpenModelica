@@ -24,18 +24,18 @@ algorithm
 end RecursiveFunctionCall;
 // Result:
 // function pkg.factorial
-// input Integer n;
-// output Integer y;
+//   input Integer n;
+//   output Integer y;
 // algorithm
 //   if n <= 1 then
 //     y := 1;
 //   else
-//     y := n * pkg.factorial(n - 1);
+//     y := n * pkg.factorial(n + -1);
 //   end if;
 // end pkg.factorial;
 // 
 // class RecursiveFunctionCall
-// Integer y;
+//   Integer y;
 // algorithm
 //   y := 2;
 // end RecursiveFunctionCall;

@@ -39,15 +39,15 @@ end FunctionEval3;
 // 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 2.0 + x;
 // end f;
 // 
 // class FunctionEval3
-// parameter Real a = 5.0;
-// Real x;
+//   parameter Real a = 5.0;
+//   Real x;
 // equation
 //   x = f(a);
 // end FunctionEval3;

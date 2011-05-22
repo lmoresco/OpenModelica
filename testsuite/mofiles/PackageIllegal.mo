@@ -26,7 +26,7 @@ end PackageIllegal;
 
 // Result:
 // class PackageIllegal
-// Integer lc.i;
+//   Integer lc.i;
 // equation
 //   lc.i = 1;
 // end PackageIllegal;

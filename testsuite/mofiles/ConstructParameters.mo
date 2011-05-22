@@ -59,16 +59,16 @@ end ConstructParameters;
 // 
 // Result:
 // function fc
-// output Real p3;
-// input Real p1;
-// input Real p2;
+//   output Real p3;
+//   input Real p1;
+//   input Real p2;
 // algorithm
 //   p3 := p1 * p2;
 // end fc;
 // 
 // class ConstructParameters
-// parameter Real p1 = 2.0;
-// parameter Real p2 = 3.0;
-// protected parameter Real p3 = fc(p1,p2);
+//   parameter Real p1 = 2.0;
+//   parameter Real p2 = 3.0;
+//   protected parameter Real p3 = fc(p1,p2);
 // end ConstructParameters;
 // endResult

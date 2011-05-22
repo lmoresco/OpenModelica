@@ -11,6 +11,6 @@ end RealPow;
 
 // Result:
 // class RealPow
-// constant Real r = 2731.58325751917;
+//   constant Real r = 2731.58325751917;
 // end RealPow;
 // endResult

@@ -17,14 +17,14 @@ end AlgorithmFor3;
 
 // Result:
 // class AlgorithmFor3
-// parameter Integer N = 4;
-// Real a[1];
-// Real a[2];
-// Real a[3];
-// Real a[4];
+//   parameter Integer N = 4;
+//   Real a[1];
+//   Real a[2];
+//   Real a[3];
+//   Real a[4];
 // algorithm
 //   a[1] := 1.0;
-//   for i in 1:N - 1 loop
+//   for i in 1:N + -1 loop
 //     a[1 + i] := 1.0 + a[i];
 //   end for;
 // end AlgorithmFor3;

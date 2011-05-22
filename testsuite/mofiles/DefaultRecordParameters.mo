@@ -41,30 +41,30 @@ end DefaultRecordParameters;
 
 // Result:
 // function BodyModel.Extended "Automatically generated record constructor for BodyModel.Extended"
-// input Real length = 0.09;
-// input Real volume = 2.1;
-// output Extended res;
+//   input Real length = 0.09;
+//   input Real volume = 2.1;
+//   output Extended res;
 // end BodyModel.Extended;
 // 
 // function BodyModel.Extended2 "Automatically generated record constructor for BodyModel.Extended2"
-// input Real length = 5.0;
-// input Real volume = 6.0;
-// output Extended2 res;
+//   input Real length = 5.0;
+//   input Real volume = 6.0;
+//   output Extended2 res;
 // end BodyModel.Extended2;
 // 
 // class DefaultRecordParameters
-// parameter Real body1.data.length = 0.09;
-// parameter Real body1.data.volume = 2.1;
-// Real body1.displacement;
-// constant Real body1.pi = 3.1415956;
-// parameter Real body2.data.length = 3.0;
-// parameter Real body2.data.volume = 5.0;
-// Real body2.displacement;
-// constant Real body2.pi = 3.1415956;
-// parameter Real body3.data.length = 5.0;
-// parameter Real body3.data.volume = 6.0;
-// Real body3.displacement;
-// constant Real body3.pi = 3.1415956;
+//   parameter Real body1.data.length = 0.09;
+//   parameter Real body1.data.volume = 2.1;
+//   Real body1.displacement;
+//   constant Real body1.pi = 3.1415956;
+//   parameter Real body2.data.length = 3.0;
+//   parameter Real body2.data.volume = 5.0;
+//   Real body2.displacement;
+//   constant Real body2.pi = 3.1415956;
+//   parameter Real body3.data.length = 5.0;
+//   parameter Real body3.data.volume = 6.0;
+//   Real body3.displacement;
+//   constant Real body3.pi = 3.1415956;
 // equation
 //   body1.displacement = 0.7853989 * (body1.data.length * body1.data.volume);
 //   body2.displacement = 0.7853989 * (body2.data.length * body2.data.volume);

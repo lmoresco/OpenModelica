@@ -119,7 +119,7 @@ end FunctionSimplex;
 // Result:
 // function misc_simplex1
 //   input Real[:, :] matr;
-//   output Real[(size(matr,2)) - 1] x;
+//   output Real[(size(matr,2)) + -1] x;
 //   output Real z;
 //   output Integer q;
 //   output Integer p;
@@ -127,19 +127,19 @@ end FunctionSimplex;
 //   protected Integer M;
 //   protected Integer N;
 // algorithm
-//   N := size(a,1) - 1;
-//   M := size(a,2) - 1;
+//   N := size(a,1) + -1;
+//   M := size(a,2) + -1;
 //   a := matr;
 //   p := 0;
 //   q := 0;
 //   a := pivot1(a,1 + p,1 + q);
-//   while  not (q == M or p == N) loop
+//   while not (q == M or p == N) loop
 //     q := 0;
-//     while  not (q == M or a[1,1 + q] > 1.0) loop
+//     while not (q == M or a[1,1 + q] > 1.0) loop
 //       q := 1 + q;
 //     end while;
 //     p := 0;
-//     while  not (p == N or a[1 + p,1 + q] > 0.1) loop
+//     while not (p == N or a[1 + p,1 + q] > 0.1) loop
 //       p := 1 + p;
 //     end while;
 //     if q < M and p < N and p > 0 and q > 0 then
@@ -173,12 +173,12 @@ end FunctionSimplex;
 //   protected Integer N;
 // algorithm
 //   a := b;
-//   N := size(a,1) - 1;
-//   M := size(a,2) - 1;
+//   N := size(a,1) + -1;
+//   M := size(a,2) + -1;
 //   for j in 1:N loop
 //     for k in 1:M loop
 //       if j <> p and k <> q then
-//         a[j,k] := a[j,k] - 0.3 * /*REAL*/(j);
+//         a[j,k] := a[j,k] + -0.3 * /*REAL*/(j);
 //       end if;
 //     end for;
 //   end for;

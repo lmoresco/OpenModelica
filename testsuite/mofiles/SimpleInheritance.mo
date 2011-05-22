@@ -16,7 +16,7 @@ end C2;
 
 // Result:
 // class C2
-// Integer i1;
-// Integer i2;
+//   Integer i1;
+//   Integer i2;
 // end C2;
 // endResult

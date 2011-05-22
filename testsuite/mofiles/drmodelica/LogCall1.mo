@@ -23,7 +23,7 @@ end LogCall1;
 //   input Real x;
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end mylog;
 // 
 // class LogCall1

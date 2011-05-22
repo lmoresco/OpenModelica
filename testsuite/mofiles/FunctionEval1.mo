@@ -28,14 +28,14 @@ end FunctionEval1;
 // 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 1.0 + x;
 // end f;
 // 
 // class FunctionEval1
-// Real x;
+//   Real x;
 // equation
 //   x = 2.0;
 // end FunctionEval1;

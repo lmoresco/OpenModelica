@@ -12,7 +12,7 @@ end GreaterThan;
 
 // Result:
 // class GreaterThan
-// constant Boolean b1 = true;
-// constant Boolean b2 = false;
+//   constant Boolean b1 = true;
+//   constant Boolean b2 = false;
 // end GreaterThan;
 // endResult

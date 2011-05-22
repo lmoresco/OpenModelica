@@ -10,6 +10,6 @@ end Modification12;
 
 // Result:
 // class Modification12
-// Real x[1](min = 1.0) = 1.0;
+//   Real x[1](min = 1.0) = 1.0;
 // end Modification12;
 // endResult

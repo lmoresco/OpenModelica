@@ -47,9 +47,9 @@ end Import3;
 
 // Result:
 // class Import3
-// Real c.x = 4.0;
-// Real d.x = 5.0;
-// Real e.x = 6.0;
-// Real myc.x = 7.0;
+//   Real c.x = 4.0;
+//   Real d.x = 5.0;
+//   Real e.x = 6.0;
+//   Real myc.x = 7.0;
 // end Import3;
 // endResult

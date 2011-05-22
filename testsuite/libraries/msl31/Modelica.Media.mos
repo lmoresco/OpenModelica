@@ -226,7 +226,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Water.StandardWater
@@ -289,7 +289,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort
@@ -314,7 +314,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort_a
@@ -339,7 +339,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Examples.Tests.Components.FluidPort_b
@@ -420,7 +420,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Incompressible.Examples.Glycol47
@@ -571,7 +571,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Air.SimpleAir

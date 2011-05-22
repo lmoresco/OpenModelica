@@ -32,7 +32,7 @@ end Modification10;
 
 // Result:
 // class Modification10
-// Real a.c.b.x = 1.0;
-// Real a.b.x = 17.0;
+//   Real a.c.b.x = 1.0;
+//   Real a.b.x = 17.0;
 // end Modification10;
 // endResult

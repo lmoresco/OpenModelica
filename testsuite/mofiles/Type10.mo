@@ -22,8 +22,8 @@ end test;
 
 // Result:
 // class test
-// Integer t(min = 0, max = 9);
-// Integer t2(min = 0, max = 8);
-// Integer t3(min = 0, max = 10);
+//   Integer t(min = 0, max = 9);
+//   Integer t2(min = 0, max = 8);
+//   Integer t3(min = 0, max = 10);
 // end test;
 // endResult

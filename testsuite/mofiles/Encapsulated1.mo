@@ -25,6 +25,6 @@ end Encapsulated1;
 
 // Result:
 // class Encapsulated1
-// Real c.x = 1.0;
+//   Real c.x = 1.0;
 // end Encapsulated1;
 // endResult

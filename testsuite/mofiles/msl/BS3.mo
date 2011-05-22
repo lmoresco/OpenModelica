@@ -1362,21 +1362,21 @@ end BS3;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.sin;
 // 
 // class BS3

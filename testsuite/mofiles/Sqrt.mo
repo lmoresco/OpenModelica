@@ -13,7 +13,7 @@ end Sqrt;
 
 // Result:
 // class Sqrt
-// Real r;
+//   Real r;
 // equation
 //   r = 5.0;
 // end Sqrt;

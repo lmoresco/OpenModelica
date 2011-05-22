@@ -4101,7 +4101,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 // algorithm
 //   next := last;
 //   nextEvent := t - TimeEps * abs(t);
-//   tp := (t + TimeEps * abs(t)) - startTime;
+//   tp := t + TimeEps * abs(t) - startTime;
 //   if tp < 0.0 then
 //     nextEvent := startTime;
 //     a := 0.0;
@@ -4116,14 +4116,14 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //     if next < nrow then
 //       nextEvent := startTime + table[next,1];
 //     end if;
-//     next0 := next - 1;
+//     next0 := next + -1;
 //     dt := table[next,1] - table[next0,1];
 //     if dt <= TimeEps * abs(table[next,1]) then
 //       a := 0.0;
 //       b := offset + table[next,columns];
 //     else
 //       a := (table[next,columns] - table[next0,columns]) / dt;
-//       b := (offset + table[next0,columns]) - a * table[next0,1];
+//       b := offset + table[next0,columns] - a * table[next0,1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;
@@ -6017,9 +6017,9 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   controller.switch1.y = if controller.switch1.u2 then controller.switch1.u1 else controller.switch1.u3;
 //   controller.ConstantQ.y = controller.ConstantQ.k;
 //   assert(controller.limiter.uMax >= controller.limiter.uMin,"Limiter: Limits must be consistent. However, uMax (=" + String(controller.limiter.uMax,0,true,6) + ") < uMin (=" + String(controller.limiter.uMin,0,true,6) + ")");
-//   if initial() and  not controller.limiter.limitsAtInit then
+//   if initial() and not controller.limiter.limitsAtInit then
 //   controller.limiter.y = controller.limiter.u;
-//   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.
+//   assert(controller.limiter.u >= controller.limiter.uMin + -0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.
 // However, the result is that the input u is not within the required limits:
 //   u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 //   else
@@ -6268,15 +6268,15 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   pendulum.pendulum.body.rCM[1] = pendulum.pendulum.r0[1] + (pendulum.pendulum.length * pendulum.pendulum.box.nLength[1]) / 2.0;
 //   pendulum.pendulum.body.rCM[2] = pendulum.pendulum.r0[2] + (pendulum.pendulum.length * pendulum.pendulum.box.nLength[2]) / 2.0;
 //   pendulum.pendulum.body.rCM[3] = pendulum.pendulum.r0[3] + (pendulum.pendulum.length * pendulum.pendulum.box.nLength[3]) / 2.0;
-//   pendulum.pendulum.body.I[1,1] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
-//   pendulum.pendulum.body.I[1,2] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
-//   pendulum.pendulum.body.I[1,3] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
-//   pendulum.pendulum.body.I[2,1] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
-//   pendulum.pendulum.body.I[2,2] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
-//   pendulum.pendulum.body.I[2,3] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
-//   pendulum.pendulum.body.I[3,1] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
-//   pendulum.pendulum.body.I[3,2] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
-//   pendulum.pendulum.body.I[3,3] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 - (pendulum.pendulum.mi * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
+//   pendulum.pendulum.body.I[1,1] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
+//   pendulum.pendulum.body.I[1,2] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
+//   pendulum.pendulum.body.I[1,3] = pendulum.pendulum.Scyl[1,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[1,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[1,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
+//   pendulum.pendulum.body.I[2,1] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
+//   pendulum.pendulum.body.I[2,2] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
+//   pendulum.pendulum.body.I[2,3] = pendulum.pendulum.Scyl[2,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[2,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[2,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
+//   pendulum.pendulum.body.I[3,1] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[1,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[1,3]);
+//   pendulum.pendulum.body.I[3,2] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[2,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[2,3]);
+//   pendulum.pendulum.body.I[3,3] = pendulum.pendulum.Scyl[3,1] * ((pendulum.pendulum.mo * pendulum.pendulum.Radius ^ 2.0) / 2.0 + ((-pendulum.pendulum.mi) * pendulum.pendulum.InnerRadius ^ 2.0) / 2.0) * pendulum.pendulum.Scyl[3,1] + (pendulum.pendulum.Scyl[3,2] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,2] + pendulum.pendulum.Scyl[3,3] * pendulum.pendulum.I22 * pendulum.pendulum.Scyl[3,3]);
 //   pendulum.pendulumJoint.axis.phi = pendulum.pendulumJoint.q;
 //   pendulum.pendulumJoint.bearing.phi = 0.0;
 //   pendulum.pendulumJoint.qd = der(pendulum.pendulumJoint.q);
@@ -6284,7 +6284,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   pendulum.pendulumJoint.nn[1] = pendulum.pendulumJoint.n[1] / sqrt(pendulum.pendulumJoint.n[1] ^ 2.0 + (pendulum.pendulumJoint.n[2] ^ 2.0 + pendulum.pendulumJoint.n[3] ^ 2.0));
 //   pendulum.pendulumJoint.nn[2] = pendulum.pendulumJoint.n[2] / sqrt(pendulum.pendulumJoint.n[1] ^ 2.0 + (pendulum.pendulumJoint.n[2] ^ 2.0 + pendulum.pendulumJoint.n[3] ^ 2.0));
 //   pendulum.pendulumJoint.nn[3] = pendulum.pendulumJoint.n[3] / sqrt(pendulum.pendulumJoint.n[1] ^ 2.0 + (pendulum.pendulumJoint.n[2] ^ 2.0 + pendulum.pendulumJoint.n[3] ^ 2.0));
-//   pendulum.pendulumJoint.qq = pendulum.pendulumJoint.q - 0.0174532925199433 * pendulum.pendulumJoint.q0;
+//   pendulum.pendulumJoint.qq = pendulum.pendulumJoint.q + -0.0174532925199433 * pendulum.pendulumJoint.q0;
 //   pendulum.pendulumJoint.sinq = sin(pendulum.pendulumJoint.qq);
 //   pendulum.pendulumJoint.cosq = cos(pendulum.pendulumJoint.qq);
 //   pendulum.pendulumJoint.S_rel[1,1] = pendulum.pendulumJoint.nn[1] * pendulum.pendulumJoint.nn[1] + pendulum.pendulumJoint.cosq * (1.0 - pendulum.pendulumJoint.nn[1] * pendulum.pendulumJoint.nn[1]);
@@ -6858,6 +6858,6 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //     (controller.timeTable.a, controller.timeTable.b, controller.timeTable.nextEvent, controller.timeTable.last) := Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients({{controller.timeTable.table[1,1],controller.timeTable.table[1,2]},{controller.timeTable.table[2,1],controller.timeTable.table[2,2]},{controller.timeTable.table[3,1],controller.timeTable.table[3,2]},{controller.timeTable.table[4,1],controller.timeTable.table[4,2]},{controller.timeTable.table[5,1],controller.timeTable.table[5,2]},{controller.timeTable.table[6,1],controller.timeTable.table[6,2]},{controller.timeTable.table[7,1],controller.timeTable.table[7,2]}},controller.timeTable.offset,controller.timeTable.startTime,time,controller.timeTable.last,1e-13);
 //   end when;
 // end IntroductoryExamples_Systems_InvertedPendulum;
-// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring   assert(controller.limiter.u >= controller.limiter.uMin - 0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.However, the result is that the input u is not within the required limits:  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
+// [InvertedPendulumTotal.mo:1708:11-1708:304:writable] Warning: If-equations are only partially supported. Ignoring   assert(controller.limiter.u >= controller.limiter.uMin + -0.01 * abs(controller.limiter.uMin) and controller.limiter.u <= controller.limiter.uMax + 0.01 * abs(controller.limiter.uMax),"Limiter: During initialization the limits have been ignored.However, the result is that the input u is not within the required limits:  u = " + String(controller.limiter.u,0,true,6) + ", uMin = " + String(controller.limiter.uMin,0,true,6) + ", uMax = " + String(controller.limiter.uMax,0,true,6));
 // 
 // endResult

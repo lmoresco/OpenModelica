@@ -15,9 +15,9 @@ end BooleanLiterals;
 
 // Result:
 // class BooleanLiterals
-// constant Boolean b1 = true;
-// constant Boolean b2 = false;
-// Boolean b;
+//   constant Boolean b1 = true;
+//   constant Boolean b2 = false;
+//   Boolean b;
 // equation
 //   b = true;
 // end BooleanLiterals;

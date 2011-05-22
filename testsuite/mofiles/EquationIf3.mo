@@ -20,8 +20,8 @@ end EquationIf3;
 
 // Result:
 // class EquationIf3
-// parameter Boolean b = false;
-// Real x;
+//   parameter Boolean b = false;
+//   Real x;
 // equation
 //   x = 2.0;
 // end EquationIf3;

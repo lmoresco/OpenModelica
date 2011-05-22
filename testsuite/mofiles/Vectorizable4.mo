@@ -19,20 +19,20 @@ end Vectorizable4;
 
 // Result:
 // class Vectorizable4
-// Real x[1,1];
-// Real x[1,2];
-// Real x[2,1];
-// Real x[2,2];
-// Real y[1];
-// Real y[2];
-// Real z[1,1,1];
-// Real z[1,1,2];
-// Real z[1,2,1];
-// Real z[1,2,2];
-// Real z[2,1,1];
-// Real z[2,1,2];
-// Real z[2,2,1];
-// Real z[2,2,2];
+//   Real x[1,1];
+//   Real x[1,2];
+//   Real x[2,1];
+//   Real x[2,2];
+//   Real y[1];
+//   Real y[2];
+//   Real z[1,1,1];
+//   Real z[1,1,2];
+//   Real z[1,2,1];
+//   Real z[1,2,2];
+//   Real z[2,1,1];
+//   Real z[2,1,2];
+//   Real z[2,2,1];
+//   Real z[2,2,2];
 // equation
 //   x[1,1] = der(time);
 //   x[1,2] = der(2.0 * time);

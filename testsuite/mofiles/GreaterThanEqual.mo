@@ -13,8 +13,8 @@ end GreaterThanEqual;
 
 // Result:
 // class GreaterThanEqual
-// constant Boolean b1 = true;
-// constant Boolean b2 = true;
-// constant Boolean b3 = false;
+//   constant Boolean b1 = true;
+//   constant Boolean b2 = true;
+//   constant Boolean b3 = false;
 // end GreaterThanEqual;
 // endResult

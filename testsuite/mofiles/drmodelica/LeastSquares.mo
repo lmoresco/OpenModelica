@@ -41,7 +41,7 @@ end LeastSquares;
 //   protected Integer info;
 //   protected String transposed = "NNNN";
 // 
-// external "FORTRAN 77";
+//   external "FORTRAN 77";
 // end ls;
 // 
 // class LeastSquares

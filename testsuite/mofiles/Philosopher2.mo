@@ -329,10 +329,10 @@ end Philosopher_DiningTable;
 // algorithm
 //   s1 := {si[1],si[2],si[3]};
 //   u2 := 1.0;
-//   while  not my_break loop
+//   while not my_break loop
 //     (u1, s2) := Philosopher.Random.random({s1[1],s1[2],s1[3]});
 //     (u2, s1) := Philosopher.Random.random({s2[1],s2[2],s2[3]});
-//     z := (1.71552776992141 * (u1 - 0.5)) / u2;
+//     z := (1.71552776992141 * (-0.5 + u1)) / u2;
 //     zz := z ^ 2.0 / 4.0;
 //     my_break := zz <= -log(u2);
 //   end while;
@@ -547,23 +547,23 @@ end Philosopher_DiningTable;
 //   Boolean fork[5].right.busy;
 // equation
 //   phil[1].timeToChangeState = phil[1].timeOfNextChange <= time;
-//   phil[1].canEat = phil[1].state == 1 and  not (phil[1].left.busy or phil[1].right.busy);
+//   phil[1].canEat = phil[1].state == 1 and not (phil[1].left.busy or phil[1].right.busy);
 //   phil[1].timeToGetHungry = phil[1].state == 0 and phil[1].timeToChangeState;
 //   phil[1].doneEating = phil[1].state == 2 and phil[1].timeToChangeState;
 //   phil[2].timeToChangeState = phil[2].timeOfNextChange <= time;
-//   phil[2].canEat = phil[2].state == 1 and  not (phil[2].left.busy or phil[2].right.busy);
+//   phil[2].canEat = phil[2].state == 1 and not (phil[2].left.busy or phil[2].right.busy);
 //   phil[2].timeToGetHungry = phil[2].state == 0 and phil[2].timeToChangeState;
 //   phil[2].doneEating = phil[2].state == 2 and phil[2].timeToChangeState;
 //   phil[3].timeToChangeState = phil[3].timeOfNextChange <= time;
-//   phil[3].canEat = phil[3].state == 1 and  not (phil[3].left.busy or phil[3].right.busy);
+//   phil[3].canEat = phil[3].state == 1 and not (phil[3].left.busy or phil[3].right.busy);
 //   phil[3].timeToGetHungry = phil[3].state == 0 and phil[3].timeToChangeState;
 //   phil[3].doneEating = phil[3].state == 2 and phil[3].timeToChangeState;
 //   phil[4].timeToChangeState = phil[4].timeOfNextChange <= time;
-//   phil[4].canEat = phil[4].state == 1 and  not (phil[4].left.busy or phil[4].right.busy);
+//   phil[4].canEat = phil[4].state == 1 and not (phil[4].left.busy or phil[4].right.busy);
 //   phil[4].timeToGetHungry = phil[4].state == 0 and phil[4].timeToChangeState;
 //   phil[4].doneEating = phil[4].state == 2 and phil[4].timeToChangeState;
 //   phil[5].timeToChangeState = phil[5].timeOfNextChange <= time;
-//   phil[5].canEat = phil[5].state == 1 and  not (phil[5].left.busy or phil[5].right.busy);
+//   phil[5].canEat = phil[5].state == 1 and not (phil[5].left.busy or phil[5].right.busy);
 //   phil[5].timeToGetHungry = phil[5].state == 0 and phil[5].timeToChangeState;
 //   phil[5].doneEating = phil[5].state == 2 and phil[5].timeToChangeState;
 //   mutex.port[1].ok = mutex.ok[1];
@@ -783,7 +783,7 @@ end Philosopher_DiningTable;
 //     phil[5].timeOfNextChange := time + abs(phil[5].T);
 //   end when;
 //   when mutex.request[1] then
-//     if  not mutex.occupied then
+//     if not mutex.occupied then
 //       mutex.ok[1] := true;
 //       mutex.waiting[1] := false;
 //     else
@@ -792,7 +792,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     mutex.occupied := true;
 //   end when;
-//   when pre(mutex.waiting[1]) and  not mutex.occupied then
+//   when pre(mutex.waiting[1]) and not mutex.occupied then
 //     mutex.occupied := true;
 //     mutex.ok[1] := true;
 //     mutex.waiting[1] := false;
@@ -802,7 +802,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[2] then
-//     if  not mutex.occupied then
+//     if not mutex.occupied then
 //       mutex.ok[2] := true;
 //       mutex.waiting[2] := false;
 //     else
@@ -811,7 +811,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     mutex.occupied := true;
 //   end when;
-//   when pre(mutex.waiting[2]) and  not mutex.occupied then
+//   when pre(mutex.waiting[2]) and not mutex.occupied then
 //     mutex.occupied := true;
 //     mutex.ok[2] := true;
 //     mutex.waiting[2] := false;
@@ -821,7 +821,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[3] then
-//     if  not mutex.occupied then
+//     if not mutex.occupied then
 //       mutex.ok[3] := true;
 //       mutex.waiting[3] := false;
 //     else
@@ -830,7 +830,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     mutex.occupied := true;
 //   end when;
-//   when pre(mutex.waiting[3]) and  not mutex.occupied then
+//   when pre(mutex.waiting[3]) and not mutex.occupied then
 //     mutex.occupied := true;
 //     mutex.ok[3] := true;
 //     mutex.waiting[3] := false;
@@ -840,7 +840,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[4] then
-//     if  not mutex.occupied then
+//     if not mutex.occupied then
 //       mutex.ok[4] := true;
 //       mutex.waiting[4] := false;
 //     else
@@ -849,7 +849,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     mutex.occupied := true;
 //   end when;
-//   when pre(mutex.waiting[4]) and  not mutex.occupied then
+//   when pre(mutex.waiting[4]) and not mutex.occupied then
 //     mutex.occupied := true;
 //     mutex.ok[4] := true;
 //     mutex.waiting[4] := false;
@@ -859,7 +859,7 @@ end Philosopher_DiningTable;
 //     mutex.occupied := false;
 //   end when;
 //   when mutex.request[5] then
-//     if  not mutex.occupied then
+//     if not mutex.occupied then
 //       mutex.ok[5] := true;
 //       mutex.waiting[5] := false;
 //     else
@@ -868,7 +868,7 @@ end Philosopher_DiningTable;
 //     end if;
 //     mutex.occupied := true;
 //   end when;
-//   when pre(mutex.waiting[5]) and  not mutex.occupied then
+//   when pre(mutex.waiting[5]) and not mutex.occupied then
 //     mutex.occupied := true;
 //     mutex.ok[5] := true;
 //     mutex.waiting[5] := false;

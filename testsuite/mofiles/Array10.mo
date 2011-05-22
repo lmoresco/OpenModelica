@@ -14,14 +14,14 @@ end Array10;
 
 // Result:
 // class Array10
-// Real x[1] = 1.0;
-// Real x[2] = 2.0;
-// Real x[3] = 3.0;
-// Real x[4] = 4.0;
-// Real x[5] = 5.0;
-// Real y[1,1] = 1.0;
-// Real y[1,2] = 2.0;
-// Real y[2,1] = 3.0;
-// Real y[2,2] = 4.0;
+//   Real x[1] = 1.0;
+//   Real x[2] = 2.0;
+//   Real x[3] = 3.0;
+//   Real x[4] = 4.0;
+//   Real x[5] = 5.0;
+//   Real y[1,1] = 1.0;
+//   Real y[1,2] = 2.0;
+//   Real y[2,1] = 3.0;
+//   Real y[2,2] = 4.0;
 // end Array10;
 // endResult

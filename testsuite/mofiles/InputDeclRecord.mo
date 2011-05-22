@@ -17,7 +17,7 @@ end InputDeclRecord;
 
 // Result:
 // class InputDeclRecord
-// input Real ir.r;
+//   input Real ir.r;
 // equation
 //   ir.r = 1.0;
 // end InputDeclRecord;

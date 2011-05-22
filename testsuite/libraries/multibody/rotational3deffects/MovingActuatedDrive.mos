@@ -95,9 +95,9 @@ getErrorString();
 //   protected constant Real p4limit = 0.1;
 //   protected constant Real c4limit = 0.04;
 // algorithm
-//   c1 := (1.0 + T[1,1]) - T[2,2] - T[3,3];
-//   c2 := (1.0 + T[2,2]) - T[1,1] - T[3,3];
-//   c3 := (1.0 + T[3,3]) - T[1,1] - T[2,2];
+//   c1 := 1.0 + T[1,1] + -T[2,2] - T[3,3];
+//   c2 := 1.0 + T[2,2] + -T[1,1] - T[3,3];
+//   c3 := 1.0 + T[3,3] + -T[1,1] - T[2,2];
 //   c4 := 1.0 + T[1,1] + T[2,2] + T[3,3];
 //   if c4 > 0.04 or c4 > c1 and c4 > c2 and c4 > c3 then
 //     paux := sqrt(c4) / 2.0;
@@ -131,7 +131,7 @@ getErrorString();
 //   input Real[4] Q \"Quaternions orientation object to rotate frame 1 into frame 2\";
 //   output Real[1] residue \"Residue constraint (shall be zero)\";
 // algorithm
-//   residue := {(Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0};
+//   residue := {Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0 + -1.0};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.orientationConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation \"Return absolute orientation object from another absolute and a relative orientation object\"
@@ -258,7 +258,7 @@ getErrorString();
 //   input Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity from frame 2 with respect to frame 1, resolved in frame 2\";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R \"Orientation object to rotate frame 1 into frame 2\";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0],{w[1],w[2],w[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) + -1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.nullRotation \"Return orientation object that does not rotate a frame\"
@@ -282,7 +282,7 @@ getErrorString();
 //   input Real[3] v2 \"Vector v resolved in frame 2, i.e., v2 = resolve2(planarRotation(e,angle),v1)\";
 //   output Real angle(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Rotation angle to rotate frame 1 into frame 2 along axis e in the range: -pi <= angle <= pi\";
 // algorithm
-//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],(v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3]) - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
+//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3] - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
 // end Modelica.Mechanics.MultiBody.Frames.planarRotationAngle;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.resolve1 \"Transform vector from frame 2 to frame 1\"
@@ -2157,7 +2157,7 @@ getErrorString();
 //   input Real torque.torqueArrow.arrowLine.widthDirection[1](unit = \"1\") = 0.0 \"Vector in width direction, resolved in object frame\";
 //   input Real torque.torqueArrow.arrowLine.widthDirection[2](unit = \"1\") = 1.0 \"Vector in width direction, resolved in object frame\";
 //   input Real torque.torqueArrow.arrowLine.widthDirection[3](unit = \"1\") = 0.0 \"Vector in width direction, resolved in object frame\";
-//   input Real torque.torqueArrow.arrowLine.length(quantity = \"Length\", unit = \"m\") = max(0.0,torque.torqueArrow.length - 6.0 * torque.torqueArrow.diameter) \"Length of visual object\";
+//   input Real torque.torqueArrow.arrowLine.length(quantity = \"Length\", unit = \"m\") = max(0.0,torque.torqueArrow.length + -6.0 * torque.torqueArrow.diameter) \"Length of visual object\";
 //   input Real torque.torqueArrow.arrowLine.width(quantity = \"Length\", unit = \"m\") = torque.torqueArrow.diameter \"Width of visual object\";
 //   input Real torque.torqueArrow.arrowLine.height(quantity = \"Length\", unit = \"m\") = torque.torqueArrow.diameter \"Height of visual object\";
 //   input Real torque.torqueArrow.arrowLine.extra = 0.0 \"Additional size data for some of the shape types\";
@@ -3768,7 +3768,7 @@ getErrorString();
 //   rotor1D.rotorWith3DEffects.w = der(rotor1D.rotorWith3DEffects.phi);
 //   rotor1D.rotorWith3DEffects.a = der(rotor1D.rotorWith3DEffects.w);
 //   rotor1D.rotorWith3DEffects.w_a = Modelica.Mechanics.MultiBody.Frames.angularVelocity2(rotor1D.rotorWith3DEffects.frame_a.R);
-//   rotor1D.rotorWith3DEffects.J * rotor1D.rotorWith3DEffects.a = rotor1D.rotorWith3DEffects.flange_a.tau + rotor1D.rotorWith3DEffects.flange_b.tau - (rotor1D.rotorWith3DEffects.nJ[1] * der(rotor1D.rotorWith3DEffects.w_a[1]) + (rotor1D.rotorWith3DEffects.nJ[2] * der(rotor1D.rotorWith3DEffects.w_a[2]) + rotor1D.rotorWith3DEffects.nJ[3] * der(rotor1D.rotorWith3DEffects.w_a[3])));
+//   rotor1D.rotorWith3DEffects.J * rotor1D.rotorWith3DEffects.a = rotor1D.rotorWith3DEffects.flange_a.tau + (rotor1D.rotorWith3DEffects.flange_b.tau + ((-rotor1D.rotorWith3DEffects.nJ[2]) * der(rotor1D.rotorWith3DEffects.w_a[2]) - rotor1D.rotorWith3DEffects.nJ[3] * der(rotor1D.rotorWith3DEffects.w_a[3]) - rotor1D.rotorWith3DEffects.nJ[1] * der(rotor1D.rotorWith3DEffects.w_a[1])));
 //   rotor1D.rotorWith3DEffects.frame_a.f[1] = 0.0;
 //   rotor1D.rotorWith3DEffects.frame_a.f[2] = 0.0;
 //   rotor1D.rotorWith3DEffects.frame_a.f[3] = 0.0;
@@ -3831,7 +3831,7 @@ getErrorString();
 //   position1.phi = position1.flange.phi - position1.phi_support;
 //   position1.w = der(position1.phi);
 //   position1.a = der(position1.w);
-//   position1.a = (((position1.phi_ref - position1.phi) * position1.w_crit - 1.3617 * position1.w) * position1.w_crit) / 0.618;
+//   position1.a = (((position1.phi_ref - position1.phi) * position1.w_crit + -1.3617 * position1.w) * position1.w_crit) / 0.618;
 //   sine2.y = sine2.offset + (if time < sine2.startTime then 0.0 else sine2.amplitude * sin(6.28318530717959 * (sine2.freqHz * (time - sine2.startTime)) + sine2.phase));
 //   mounting1D1.housing.frame_a.f[1] = 0.0;
 //   mounting1D1.housing.frame_a.f[2] = 0.0;
@@ -3885,7 +3885,7 @@ getErrorString();
 //   position2.phi = position2.flange.phi - position2.phi_support;
 //   position2.w = der(position2.phi);
 //   position2.a = der(position2.w);
-//   position2.a = (((position2.phi_ref - position2.phi) * position2.w_crit - 1.3617 * position2.w) * position2.w_crit) / 0.618;
+//   position2.a = (((position2.phi_ref - position2.phi) * position2.w_crit + -1.3617 * position2.w) * position2.w_crit) / 0.618;
 //   mounting1D2.housing.frame_a.f[1] = 0.0;
 //   mounting1D2.housing.frame_a.f[2] = 0.0;
 //   mounting1D2.housing.frame_a.f[3] = 0.0;

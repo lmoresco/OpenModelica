@@ -24,8 +24,8 @@ end RecordConstant1;
 
 // Result:
 // function P.R1 "Automatically generated record constructor for P.R1"
-// input Real r;
-// output R1 res;
+//   input Real r;
+//   output R1 res;
 // end P.R1;
 // 
 // class RecordConstant1

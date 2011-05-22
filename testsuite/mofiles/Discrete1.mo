@@ -14,7 +14,7 @@ end Discrete1;
 
 // Result:
 // class Discrete1
-// discrete Real x;
+//   discrete Real x;
 // equation
 //   when time > 0.5 then
 //   x = time;

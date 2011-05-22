@@ -1013,7 +1013,7 @@ end BS17;
 // equation
 //   booleanChange1.y[1] = change(booleanChange1.u[1]);
 //   booleanChange1.y[1] = booleanChange1.outPort.signal[1];
-//   booleanStep1.outPort.signal[1] = if time >= booleanStep1.startTime[1] then  not booleanStep1.startValue[1] else booleanStep1.startValue[1];
+//   booleanStep1.outPort.signal[1] = if time >= booleanStep1.startTime[1] then not booleanStep1.startValue[1] else booleanStep1.startValue[1];
 //   assert(booleanStep1.outPort.n == booleanChange1.inPort.n,"automatically generated from connect");
 //   booleanChange1.inPort.signal[1] = booleanStep1.outPort.signal[1];
 // end BS17;

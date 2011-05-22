@@ -16,8 +16,8 @@ end SimpleIntegrator1;
 
 // Result:
 // class SimpleIntegrator1
-// Real u;
-// Real x = 2.0;
+//   Real u;
+//   Real x = 2.0;
 // equation
 //   der(x) = u;
 // end SimpleIntegrator1;

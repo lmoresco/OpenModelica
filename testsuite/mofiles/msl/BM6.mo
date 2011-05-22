@@ -1098,7 +1098,7 @@ end BM6;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.atan;
 // 
 // class BM6

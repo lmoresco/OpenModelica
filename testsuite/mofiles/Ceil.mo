@@ -13,7 +13,7 @@ end Ceil;
 
 // Result:
 // class Ceil
-// Real r;
+//   Real r;
 // equation
 //   r = 5.0;
 // end Ceil;

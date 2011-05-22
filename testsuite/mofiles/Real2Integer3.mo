@@ -15,8 +15,8 @@ end Real2Integer3;
 
 // Result:
 // class Real2Integer3
-// Integer n1;
-// Integer n2;
+//   Integer n1;
+//   Integer n2;
 // algorithm
 //   n1 := 6;
 //   n2 := div(n1,2);

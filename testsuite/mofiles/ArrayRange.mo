@@ -13,13 +13,13 @@ end ArrayRange;
 
 // Result:
 // class ArrayRange
-// Integer intArray[1,1];
-// Integer intArray[2,1];
-// Integer intArray[3,1];
-// Integer intArray[4,1];
-// Integer intArray[5,1];
-// Integer intArray[6,1];
-// Integer intArray[7,1];
+//   Integer intArray[1,1];
+//   Integer intArray[2,1];
+//   Integer intArray[3,1];
+//   Integer intArray[4,1];
+//   Integer intArray[5,1];
+//   Integer intArray[6,1];
+//   Integer intArray[7,1];
 // equation
 //   intArray[1,1] = 1;
 //   intArray[2,1] = 3;

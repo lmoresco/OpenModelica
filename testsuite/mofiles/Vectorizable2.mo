@@ -30,17 +30,17 @@ end Vectorizable2;
 
 // Result:
 // function foo
-// input Real x;
-// input Real[2] x2;
-// output Real y;
+//   input Real x;
+//   input Real[2] x2;
+//   output Real y;
 // algorithm
 //   y := 1.0 + x + x2[1] + 2.0 * x2[2];
 // end foo;
 // 
 // class Vectorizable2
-// Real x[1];
-// Real x[2];
-// Real x[3];
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
 // equation
 //   x[1] = 7.0;
 //   x[2] = 14.0;

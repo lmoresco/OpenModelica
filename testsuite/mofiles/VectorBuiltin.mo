@@ -18,19 +18,19 @@ end VectorBuiltin;
 
 // Result:
 // class VectorBuiltin
-// output Real A[1];
-// output Real B[1];
-// output Real B[2];
-// output Real B[3];
-// output Real B[4];
-// output Real C[1];
-// output Real C[2];
-// output Real C[3];
-// output Real C[4];
-// output Real D[1];
-// output Real D[2];
-// output Real D[3];
-// output Real D[4];
+//   output Real A[1];
+//   output Real B[1];
+//   output Real B[2];
+//   output Real B[3];
+//   output Real B[4];
+//   output Real C[1];
+//   output Real C[2];
+//   output Real C[3];
+//   output Real C[4];
+//   output Real D[1];
+//   output Real D[2];
+//   output Real D[3];
+//   output Real D[4];
 // equation
 //   A[1] = 1.0;
 //   B[1] = 1.0;

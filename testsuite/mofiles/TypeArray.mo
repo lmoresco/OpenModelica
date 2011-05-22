@@ -17,9 +17,9 @@ end TypeArray;
 
 // Result:
 // class TypeArray
-// Integer ia[1];
-// Integer ia[2];
-// Integer ia[3];
+//   Integer ia[1];
+//   Integer ia[2];
+//   Integer ia[3];
 // equation
 //   ia[1] = 1;
 //   ia[2] = 2;

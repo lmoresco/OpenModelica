@@ -28,6 +28,6 @@ end test;
 
 // Result:
 // class test
-// Real x = 3.14;
+//   Real x = 3.14;
 // end test;
 // endResult

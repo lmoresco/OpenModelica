@@ -21,7 +21,7 @@ end PackageComponents;
 
 // Result:
 // class PackageComponents
-// Integer tc.i;
+//   Integer tc.i;
 // equation
 //   tc.i = 1;
 // end PackageComponents;

@@ -60,9 +60,9 @@ end ComplexUser;
 // end ComplexNumbers.Add;
 // 
 // function ComplexNumbers.Complex "Automatically generated record constructor for ComplexNumbers.Complex"
-// input Real re;
-// input Real im;
-// output Complex res;
+//   input Real re;
+//   input Real im;
+//   output Complex res;
 // end ComplexNumbers.Complex;
 // 
 // function ComplexNumbers.Multiply

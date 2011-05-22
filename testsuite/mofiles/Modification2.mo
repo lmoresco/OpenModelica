@@ -18,6 +18,6 @@ end Modification2;
 
 // Result:
 // class Modification2
-// parameter Real b.a.p = 2.0;
+//   parameter Real b.a.p = 2.0;
 // end Modification2;
 // endResult

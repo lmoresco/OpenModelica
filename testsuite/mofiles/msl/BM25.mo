@@ -1098,7 +1098,7 @@ end BM25;
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-// external "C";
+//   external "C";
 // end Modelica.Math.tan;
 // 
 // class BM25

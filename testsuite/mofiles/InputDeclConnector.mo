@@ -17,7 +17,7 @@ end InputDeclConnector;
 
 // Result:
 // class InputDeclConnector
-// input Real ic.r;
+//   input Real ic.r;
 // equation
 //   ic.r = 1.0;
 // end InputDeclConnector;

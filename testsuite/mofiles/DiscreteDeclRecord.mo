@@ -17,7 +17,7 @@ end DiscreteDeclRecord;
 
 // Result:
 // class DiscreteDeclRecord
-// discrete Real dr.r;
+//   discrete Real dr.r;
 // equation
 //   dr.r = 1.0;
 // end DiscreteDeclRecord;

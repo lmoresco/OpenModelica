@@ -13,13 +13,13 @@ end ArrayCurlyBrackets;
 
 // Result:
 // class ArrayCurlyBrackets
-// Integer intArray[1];
-// Integer intArray[2];
-// Integer intArray[3];
-// Integer intArray[4];
-// Integer intArray[5];
-// Integer intArray[6];
-// Integer intArray[7];
+//   Integer intArray[1];
+//   Integer intArray[2];
+//   Integer intArray[3];
+//   Integer intArray[4];
+//   Integer intArray[5];
+//   Integer intArray[6];
+//   Integer intArray[7];
 // equation
 //   intArray[1] = 1;
 //   intArray[2] = 2;

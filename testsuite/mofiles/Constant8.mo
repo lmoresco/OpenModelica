@@ -24,7 +24,7 @@ end Constant8;
 
 // Result:
 // class Constant8
-// Integer n = 2;
-// Real x;
+//   Integer n = 2;
+//   Real x;
 // end Constant8;
 // endResult

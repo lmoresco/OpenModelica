@@ -35,7 +35,7 @@ end Booltest;
 //   t := false;
 //   if x == y and should_be_equal then
 //     t := true;
-//   elseif x <> y and  not should_be_equal then
+//   elseif x <> y and not should_be_equal then
 //     t := true;
 //   end if;
 // end testBool;

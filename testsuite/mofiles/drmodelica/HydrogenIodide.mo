@@ -29,6 +29,6 @@ end HydrogenIodide;
 // equation
 //   der(H2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
 //   der(I2) = k2 * HI ^ 2.0 - k1 * (H2 * I2);
-//   der(HI) = 2.0 * (k1 * (H2 * I2)) - 2.0 * (k2 * HI ^ 2.0);
+//   der(HI) = 2.0 * (k1 * (H2 * I2)) + -2.0 * (k2 * HI ^ 2.0);
 // end HydrogenIodide;
 // endResult

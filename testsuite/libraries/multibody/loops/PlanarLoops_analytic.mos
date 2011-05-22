@@ -105,9 +105,9 @@ getErrorString();
 //   protected constant Real p4limit = 0.1;
 //   protected constant Real c4limit = 0.04;
 // algorithm
-//   c1 := (1.0 + T[1,1]) - T[2,2] - T[3,3];
-//   c2 := (1.0 + T[2,2]) - T[1,1] - T[3,3];
-//   c3 := (1.0 + T[3,3]) - T[1,1] - T[2,2];
+//   c1 := 1.0 + T[1,1] + -T[2,2] - T[3,3];
+//   c2 := 1.0 + T[2,2] + -T[1,1] - T[3,3];
+//   c3 := 1.0 + T[3,3] + -T[1,1] - T[2,2];
 //   c4 := 1.0 + T[1,1] + T[2,2] + T[3,3];
 //   if c4 > 0.04 or c4 > c1 and c4 > c2 and c4 > c3 then
 //     paux := sqrt(c4) / 2.0;
@@ -141,7 +141,7 @@ getErrorString();
 //   input Real[4] Q \"Quaternions orientation object to rotate frame 1 into frame 2\";
 //   output Real[1] residue \"Residue constraint (shall be zero)\";
 // algorithm
-//   residue := {(Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0};
+//   residue := {Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0 + -1.0};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.orientationConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.absoluteRotation \"Return absolute orientation object from another absolute and a relative orientation object\"
@@ -268,7 +268,7 @@ getErrorString();
 //   input Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity from frame 2 with respect to frame 1, resolved in frame 2\";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R \"Orientation object to rotate frame 1 into frame 2\";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0],{w[1],w[2],w[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) + -1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.from_T \"Return orientation object R from transformation matrix T\"
@@ -300,7 +300,7 @@ getErrorString();
 //   input Real[3] v2 \"Vector v resolved in frame 2, i.e., v2 = resolve2(planarRotation(e,angle),v1)\";
 //   output Real angle(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Rotation angle to rotate frame 1 into frame 2 along axis e in the range: -pi <= angle <= pi\";
 // algorithm
-//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],(v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3]) - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
+//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3] - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
 // end Modelica.Mechanics.MultiBody.Frames.planarRotationAngle;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.resolve1 \"Transform vector from frame 2 to frame 1\"
@@ -363,7 +363,7 @@ getErrorString();
 //   e_r_b := e[1] * r_b[1] + e[2] * r_b[2] + e[3] * r_b[3];
 //   A := -2.0 * (r_b[1] * r_a[1] + r_b[2] * r_a[2] + r_b[3] * r_a[3] - e_r_b * e_r_a);
 //   B := 2.0 * r_b[1] * (e[2] * r_a[3] - e[3] * r_a[2]) + 2.0 * r_b[2] * (e[3] * r_a[1] - e[1] * r_a[3]) + 2.0 * r_b[3] * (e[1] * r_a[2] - e[2] * r_a[1]);
-//   C := (r_a[1] ^ 2.0 + r_a[2] ^ 2.0 + r_a[3] ^ 2.0 + r_b[1] ^ 2.0 + r_b[2] ^ 2.0 + r_b[3] ^ 2.0) - L ^ 2.0 - 2.0 * e_r_b * e_r_a;
+//   C := r_a[1] ^ 2.0 + r_a[2] ^ 2.0 + r_a[3] ^ 2.0 + r_b[1] ^ 2.0 + r_b[2] ^ 2.0 + r_b[3] ^ 2.0 + -2.0 * e_r_b * e_r_a - L ^ 2.0;
 //   k1 := A ^ 2.0 + B ^ 2.0;
 //   k1a := k1 - C ^ 2.0;
 //   assert( k1a > 1e-10, \"
@@ -2142,7 +2142,7 @@ getErrorString();
 //   Real jointRRR1.jointUSR.rod1.R_rel_ia.w[1](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR1.jointUSR.rod1.R_rel_ia.w[2](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR1.jointUSR.rod1.R_rel_ia.w[3](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
-//   final parameter Real jointRRR1.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed =  not jointRRR1.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR1.jointUSR.rod1.rRod_ia[1],jointRRR1.jointUSR.rod1.rRod_ia[2],jointRRR1.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
+//   final parameter Real jointRRR1.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed = not jointRRR1.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR1.jointUSR.rod1.rRod_ia[1],jointRRR1.jointUSR.rod1.rRod_ia[2],jointRRR1.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
 //   final parameter Real jointRRR1.jointUSR.rod1.eRod_ia[1](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR1.jointUSR.rod1.rRod_ia[1],jointRRR1.jointUSR.rod1.rRod_ia[2],jointRRR1.jointUSR.rod1.rRod_ia[3]},1e-13)[1] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR1.jointUSR.rod1.eRod_ia[2](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR1.jointUSR.rod1.rRod_ia[1],jointRRR1.jointUSR.rod1.rRod_ia[2],jointRRR1.jointUSR.rod1.rRod_ia[3]},1e-13)[2] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR1.jointUSR.rod1.eRod_ia[3](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR1.jointUSR.rod1.rRod_ia[1],jointRRR1.jointUSR.rod1.rRod_ia[2],jointRRR1.jointUSR.rod1.rRod_ia[3]},1e-13)[3] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
@@ -3868,7 +3868,7 @@ getErrorString();
 //   Real jointRRR2.jointUSR.rod1.R_rel_ia.w[1](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR2.jointUSR.rod1.R_rel_ia.w[2](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR2.jointUSR.rod1.R_rel_ia.w[3](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
-//   final parameter Real jointRRR2.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed =  not jointRRR2.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR2.jointUSR.rod1.rRod_ia[1],jointRRR2.jointUSR.rod1.rRod_ia[2],jointRRR2.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
+//   final parameter Real jointRRR2.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed = not jointRRR2.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR2.jointUSR.rod1.rRod_ia[1],jointRRR2.jointUSR.rod1.rRod_ia[2],jointRRR2.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
 //   final parameter Real jointRRR2.jointUSR.rod1.eRod_ia[1](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR2.jointUSR.rod1.rRod_ia[1],jointRRR2.jointUSR.rod1.rRod_ia[2],jointRRR2.jointUSR.rod1.rRod_ia[3]},1e-13)[1] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR2.jointUSR.rod1.eRod_ia[2](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR2.jointUSR.rod1.rRod_ia[1],jointRRR2.jointUSR.rod1.rRod_ia[2],jointRRR2.jointUSR.rod1.rRod_ia[3]},1e-13)[2] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR2.jointUSR.rod1.eRod_ia[3](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR2.jointUSR.rod1.rRod_ia[1],jointRRR2.jointUSR.rod1.rRod_ia[2],jointRRR2.jointUSR.rod1.rRod_ia[3]},1e-13)[3] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
@@ -5306,7 +5306,7 @@ getErrorString();
 //   Real jointRRR3.jointUSR.rod1.R_rel_ia.w[1](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR3.jointUSR.rod1.R_rel_ia.w[2](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
 //   Real jointRRR3.jointUSR.rod1.R_rel_ia.w[3](quantity = \"AngularVelocity\", unit = \"rad/s\") \"Absolute angular velocity of local frame, resolved in local frame\";
-//   final parameter Real jointRRR3.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed =  not jointRRR3.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR3.jointUSR.rod1.rRod_ia[1],jointRRR3.jointUSR.rod1.rRod_ia[2],jointRRR3.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
+//   final parameter Real jointRRR3.jointUSR.rod1.rodLength(quantity = \"Length\", unit = \"m\", min = 0.0, fixed = not jointRRR3.jointUSR.rod1.computeRodLength) = Modelica.Math.Vectors.length({jointRRR3.jointUSR.rod1.rRod_ia[1],jointRRR3.jointUSR.rod1.rRod_ia[2],jointRRR3.jointUSR.rod1.rRod_ia[3]}) \"Length of rod (distance between origin of frame_a and origin of frame_b)\";
 //   final parameter Real jointRRR3.jointUSR.rod1.eRod_ia[1](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR3.jointUSR.rod1.rRod_ia[1],jointRRR3.jointUSR.rod1.rRod_ia[2],jointRRR3.jointUSR.rod1.rRod_ia[3]},1e-13)[1] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR3.jointUSR.rod1.eRod_ia[2](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR3.jointUSR.rod1.rRod_ia[1],jointRRR3.jointUSR.rod1.rRod_ia[2],jointRRR3.jointUSR.rod1.rRod_ia[3]},1e-13)[2] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
 //   final parameter Real jointRRR3.jointUSR.rod1.eRod_ia[3](unit = \"1\") = Modelica.Math.Vectors.normalize({jointRRR3.jointUSR.rod1.rRod_ia[1],jointRRR3.jointUSR.rod1.rRod_ia[2],jointRRR3.jointUSR.rod1.rRod_ia[3]},1e-13)[3] \"Unit vector from origin of frame_a to origin of frame_b, resolved in frame_ia\";
@@ -6556,9 +6556,9 @@ getErrorString();
 //   {0.0,0.0,0.0} = jointRRR1.jointUSR.revolute.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(jointRRR1.jointUSR.revolute.R_rel,{jointRRR1.jointUSR.revolute.frame_b.t[1],jointRRR1.jointUSR.revolute.frame_b.t[2],jointRRR1.jointUSR.revolute.frame_b.t[3]});
 //   jointRRR1.jointUSR.revolute.e_r_a = jointRRR1.jointUSR.revolute.e[1] * jointRRR1.jointUSR.revolute.r_a[1] + (jointRRR1.jointUSR.revolute.e[2] * jointRRR1.jointUSR.revolute.r_a[2] + jointRRR1.jointUSR.revolute.e[3] * jointRRR1.jointUSR.revolute.r_a[3]);
 //   jointRRR1.jointUSR.revolute.e_r_b = jointRRR1.jointUSR.revolute.e[1] * jointRRR1.jointUSR.revolute.r_b[1] + (jointRRR1.jointUSR.revolute.e[2] * jointRRR1.jointUSR.revolute.r_b[2] + jointRRR1.jointUSR.revolute.e[3] * jointRRR1.jointUSR.revolute.r_b[3]);
-//   jointRRR1.jointUSR.revolute.A = -2.0 * (jointRRR1.jointUSR.revolute.r_b[1] * jointRRR1.jointUSR.revolute.r_a[1] + (jointRRR1.jointUSR.revolute.r_b[2] * jointRRR1.jointUSR.revolute.r_a[2] + jointRRR1.jointUSR.revolute.r_b[3] * jointRRR1.jointUSR.revolute.r_a[3]) - jointRRR1.jointUSR.revolute.e_r_b * jointRRR1.jointUSR.revolute.e_r_a);
+//   jointRRR1.jointUSR.revolute.A = -2.0 * (jointRRR1.jointUSR.revolute.r_b[1] * jointRRR1.jointUSR.revolute.r_a[1] + (jointRRR1.jointUSR.revolute.r_b[2] * jointRRR1.jointUSR.revolute.r_a[2] + (jointRRR1.jointUSR.revolute.r_b[3] * jointRRR1.jointUSR.revolute.r_a[3] - jointRRR1.jointUSR.revolute.e_r_b * jointRRR1.jointUSR.revolute.e_r_a)));
 //   jointRRR1.jointUSR.revolute.B = 2.0 * (jointRRR1.jointUSR.revolute.r_b[1] * (jointRRR1.jointUSR.revolute.e[2] * jointRRR1.jointUSR.revolute.r_a[3] - jointRRR1.jointUSR.revolute.e[3] * jointRRR1.jointUSR.revolute.r_a[2])) + (2.0 * (jointRRR1.jointUSR.revolute.r_b[2] * (jointRRR1.jointUSR.revolute.e[3] * jointRRR1.jointUSR.revolute.r_a[1] - jointRRR1.jointUSR.revolute.e[1] * jointRRR1.jointUSR.revolute.r_a[3])) + 2.0 * (jointRRR1.jointUSR.revolute.r_b[3] * (jointRRR1.jointUSR.revolute.e[1] * jointRRR1.jointUSR.revolute.r_a[2] - jointRRR1.jointUSR.revolute.e[2] * jointRRR1.jointUSR.revolute.r_a[1])));
-//   jointRRR1.jointUSR.revolute.C = jointRRR1.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_b[2] ^ 2.0 + jointRRR1.jointUSR.revolute.r_b[3] ^ 2.0)))) - jointRRR1.jointUSR.revolute.lengthConstraint ^ 2.0 - 2.0 * (jointRRR1.jointUSR.revolute.e_r_b * jointRRR1.jointUSR.revolute.e_r_a);
+//   jointRRR1.jointUSR.revolute.C = jointRRR1.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_b[2] ^ 2.0 + (jointRRR1.jointUSR.revolute.r_b[3] ^ 2.0 + (-2.0 * (jointRRR1.jointUSR.revolute.e_r_b * jointRRR1.jointUSR.revolute.e_r_a) - jointRRR1.jointUSR.revolute.lengthConstraint ^ 2.0))))));
 //   jointRRR1.jointUSR.revolute.k1 = jointRRR1.jointUSR.revolute.A ^ 2.0 + jointRRR1.jointUSR.revolute.B ^ 2.0;
 //   jointRRR1.jointUSR.revolute.k1a = jointRRR1.jointUSR.revolute.k1 - jointRRR1.jointUSR.revolute.C ^ 2.0;
 //   assert(jointRRR1.jointUSR.revolute.k1a > 1e-10,\"
@@ -7081,7 +7081,7 @@ getErrorString();
 //   position.phi = position.flange.phi - position.phi_support;
 //   position.w = der(position.phi);
 //   position.a = der(position.w);
-//   position.a = (((position.phi_ref - position.phi) * position.w_crit - 1.3617 * position.w) * position.w_crit) / 0.618;
+//   position.a = (((position.phi_ref - position.phi) * position.w_crit + -1.3617 * position.w) * position.w_crit) / 0.618;
 //   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   jointRRR2.jointUSR.revolute.axis.tau = jointRRR2.jointUSR.revolute.tau;
 //   jointRRR2.jointUSR.revolute.axis.phi = jointRRR2.jointUSR.revolute.phi;
@@ -7096,9 +7096,9 @@ getErrorString();
 //   {0.0,0.0,0.0} = jointRRR2.jointUSR.revolute.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(jointRRR2.jointUSR.revolute.R_rel,{jointRRR2.jointUSR.revolute.frame_b.t[1],jointRRR2.jointUSR.revolute.frame_b.t[2],jointRRR2.jointUSR.revolute.frame_b.t[3]});
 //   jointRRR2.jointUSR.revolute.e_r_a = jointRRR2.jointUSR.revolute.e[1] * jointRRR2.jointUSR.revolute.r_a[1] + (jointRRR2.jointUSR.revolute.e[2] * jointRRR2.jointUSR.revolute.r_a[2] + jointRRR2.jointUSR.revolute.e[3] * jointRRR2.jointUSR.revolute.r_a[3]);
 //   jointRRR2.jointUSR.revolute.e_r_b = jointRRR2.jointUSR.revolute.e[1] * jointRRR2.jointUSR.revolute.r_b[1] + (jointRRR2.jointUSR.revolute.e[2] * jointRRR2.jointUSR.revolute.r_b[2] + jointRRR2.jointUSR.revolute.e[3] * jointRRR2.jointUSR.revolute.r_b[3]);
-//   jointRRR2.jointUSR.revolute.A = -2.0 * (jointRRR2.jointUSR.revolute.r_b[1] * jointRRR2.jointUSR.revolute.r_a[1] + (jointRRR2.jointUSR.revolute.r_b[2] * jointRRR2.jointUSR.revolute.r_a[2] + jointRRR2.jointUSR.revolute.r_b[3] * jointRRR2.jointUSR.revolute.r_a[3]) - jointRRR2.jointUSR.revolute.e_r_b * jointRRR2.jointUSR.revolute.e_r_a);
+//   jointRRR2.jointUSR.revolute.A = -2.0 * (jointRRR2.jointUSR.revolute.r_b[1] * jointRRR2.jointUSR.revolute.r_a[1] + (jointRRR2.jointUSR.revolute.r_b[2] * jointRRR2.jointUSR.revolute.r_a[2] + (jointRRR2.jointUSR.revolute.r_b[3] * jointRRR2.jointUSR.revolute.r_a[3] - jointRRR2.jointUSR.revolute.e_r_b * jointRRR2.jointUSR.revolute.e_r_a)));
 //   jointRRR2.jointUSR.revolute.B = 2.0 * (jointRRR2.jointUSR.revolute.r_b[1] * (jointRRR2.jointUSR.revolute.e[2] * jointRRR2.jointUSR.revolute.r_a[3] - jointRRR2.jointUSR.revolute.e[3] * jointRRR2.jointUSR.revolute.r_a[2])) + (2.0 * (jointRRR2.jointUSR.revolute.r_b[2] * (jointRRR2.jointUSR.revolute.e[3] * jointRRR2.jointUSR.revolute.r_a[1] - jointRRR2.jointUSR.revolute.e[1] * jointRRR2.jointUSR.revolute.r_a[3])) + 2.0 * (jointRRR2.jointUSR.revolute.r_b[3] * (jointRRR2.jointUSR.revolute.e[1] * jointRRR2.jointUSR.revolute.r_a[2] - jointRRR2.jointUSR.revolute.e[2] * jointRRR2.jointUSR.revolute.r_a[1])));
-//   jointRRR2.jointUSR.revolute.C = jointRRR2.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_b[2] ^ 2.0 + jointRRR2.jointUSR.revolute.r_b[3] ^ 2.0)))) - jointRRR2.jointUSR.revolute.lengthConstraint ^ 2.0 - 2.0 * (jointRRR2.jointUSR.revolute.e_r_b * jointRRR2.jointUSR.revolute.e_r_a);
+//   jointRRR2.jointUSR.revolute.C = jointRRR2.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_b[2] ^ 2.0 + (jointRRR2.jointUSR.revolute.r_b[3] ^ 2.0 + (-2.0 * (jointRRR2.jointUSR.revolute.e_r_b * jointRRR2.jointUSR.revolute.e_r_a) - jointRRR2.jointUSR.revolute.lengthConstraint ^ 2.0))))));
 //   jointRRR2.jointUSR.revolute.k1 = jointRRR2.jointUSR.revolute.A ^ 2.0 + jointRRR2.jointUSR.revolute.B ^ 2.0;
 //   jointRRR2.jointUSR.revolute.k1a = jointRRR2.jointUSR.revolute.k1 - jointRRR2.jointUSR.revolute.C ^ 2.0;
 //   assert(jointRRR2.jointUSR.revolute.k1a > 1e-10,\"
@@ -7544,9 +7544,9 @@ getErrorString();
 //   {0.0,0.0,0.0} = jointRRR3.jointUSR.revolute.frame_a.t + Modelica.Mechanics.MultiBody.Frames.resolve1(jointRRR3.jointUSR.revolute.R_rel,{jointRRR3.jointUSR.revolute.frame_b.t[1],jointRRR3.jointUSR.revolute.frame_b.t[2],jointRRR3.jointUSR.revolute.frame_b.t[3]});
 //   jointRRR3.jointUSR.revolute.e_r_a = jointRRR3.jointUSR.revolute.e[1] * jointRRR3.jointUSR.revolute.r_a[1] + (jointRRR3.jointUSR.revolute.e[2] * jointRRR3.jointUSR.revolute.r_a[2] + jointRRR3.jointUSR.revolute.e[3] * jointRRR3.jointUSR.revolute.r_a[3]);
 //   jointRRR3.jointUSR.revolute.e_r_b = jointRRR3.jointUSR.revolute.e[1] * jointRRR3.jointUSR.revolute.r_b[1] + (jointRRR3.jointUSR.revolute.e[2] * jointRRR3.jointUSR.revolute.r_b[2] + jointRRR3.jointUSR.revolute.e[3] * jointRRR3.jointUSR.revolute.r_b[3]);
-//   jointRRR3.jointUSR.revolute.A = -2.0 * (jointRRR3.jointUSR.revolute.r_b[1] * jointRRR3.jointUSR.revolute.r_a[1] + (jointRRR3.jointUSR.revolute.r_b[2] * jointRRR3.jointUSR.revolute.r_a[2] + jointRRR3.jointUSR.revolute.r_b[3] * jointRRR3.jointUSR.revolute.r_a[3]) - jointRRR3.jointUSR.revolute.e_r_b * jointRRR3.jointUSR.revolute.e_r_a);
+//   jointRRR3.jointUSR.revolute.A = -2.0 * (jointRRR3.jointUSR.revolute.r_b[1] * jointRRR3.jointUSR.revolute.r_a[1] + (jointRRR3.jointUSR.revolute.r_b[2] * jointRRR3.jointUSR.revolute.r_a[2] + (jointRRR3.jointUSR.revolute.r_b[3] * jointRRR3.jointUSR.revolute.r_a[3] - jointRRR3.jointUSR.revolute.e_r_b * jointRRR3.jointUSR.revolute.e_r_a)));
 //   jointRRR3.jointUSR.revolute.B = 2.0 * (jointRRR3.jointUSR.revolute.r_b[1] * (jointRRR3.jointUSR.revolute.e[2] * jointRRR3.jointUSR.revolute.r_a[3] - jointRRR3.jointUSR.revolute.e[3] * jointRRR3.jointUSR.revolute.r_a[2])) + (2.0 * (jointRRR3.jointUSR.revolute.r_b[2] * (jointRRR3.jointUSR.revolute.e[3] * jointRRR3.jointUSR.revolute.r_a[1] - jointRRR3.jointUSR.revolute.e[1] * jointRRR3.jointUSR.revolute.r_a[3])) + 2.0 * (jointRRR3.jointUSR.revolute.r_b[3] * (jointRRR3.jointUSR.revolute.e[1] * jointRRR3.jointUSR.revolute.r_a[2] - jointRRR3.jointUSR.revolute.e[2] * jointRRR3.jointUSR.revolute.r_a[1])));
-//   jointRRR3.jointUSR.revolute.C = jointRRR3.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_b[2] ^ 2.0 + jointRRR3.jointUSR.revolute.r_b[3] ^ 2.0)))) - jointRRR3.jointUSR.revolute.lengthConstraint ^ 2.0 - 2.0 * (jointRRR3.jointUSR.revolute.e_r_b * jointRRR3.jointUSR.revolute.e_r_a);
+//   jointRRR3.jointUSR.revolute.C = jointRRR3.jointUSR.revolute.r_a[1] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_a[2] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_a[3] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_b[1] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_b[2] ^ 2.0 + (jointRRR3.jointUSR.revolute.r_b[3] ^ 2.0 + (-2.0 * (jointRRR3.jointUSR.revolute.e_r_b * jointRRR3.jointUSR.revolute.e_r_a) - jointRRR3.jointUSR.revolute.lengthConstraint ^ 2.0))))));
 //   jointRRR3.jointUSR.revolute.k1 = jointRRR3.jointUSR.revolute.A ^ 2.0 + jointRRR3.jointUSR.revolute.B ^ 2.0;
 //   jointRRR3.jointUSR.revolute.k1a = jointRRR3.jointUSR.revolute.k1 - jointRRR3.jointUSR.revolute.C ^ 2.0;
 //   assert(jointRRR3.jointUSR.revolute.k1a > 1e-10,\"

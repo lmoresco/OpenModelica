@@ -26,7 +26,7 @@ end ExternalFunction2;
 //   input Real[:] x;
 //   output Real[size(x,1)] y;
 // 
-// external "C";
+//   external "C";
 // end ext_f;
 // 
 // class ExternalFunction2

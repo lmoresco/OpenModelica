@@ -13,8 +13,8 @@ end NumericFunctions;
 
 // Result:
 // class NumericFunctions
-// constant Real r1 = 2.5;
-// constant Real r2 = -1.0;
-// constant Real r3 = 7.0;
+//   constant Real r1 = 2.5;
+//   constant Real r2 = -1.0;
+//   constant Real r3 = 7.0;
 // end NumericFunctions;
 // endResult

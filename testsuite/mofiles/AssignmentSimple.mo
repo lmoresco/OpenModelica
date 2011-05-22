@@ -13,7 +13,7 @@ end AssignmentSimple;
 
 // Result:
 // class AssignmentSimple
-// Real x;
+//   Real x;
 // algorithm
 //   x := 2.0;
 // end AssignmentSimple;

@@ -16,12 +16,12 @@ equation
 end EquationComponent4;
 // Result:
 // class EquationComponent4
-// Real a.x;
-// Real a.y;
-// Real b.x;
-// Real b.y;
-// Real c.x;
-// Real c.y;
+//   Real a.x;
+//   Real a.y;
+//   Real b.x;
+//   Real b.y;
+//   Real c.x;
+//   Real c.y;
 // equation
 //   a.x = b.x;
 //   a.y = b.y;

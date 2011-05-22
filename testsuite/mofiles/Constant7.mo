@@ -23,6 +23,6 @@ model Constant7
 end Constant7;
 // Result:
 // class Constant7
-//  parameter Real t.b.C = 1.0;
+//   parameter Real t.b.C = 1.0;
 // end Constant7;
 // endResult

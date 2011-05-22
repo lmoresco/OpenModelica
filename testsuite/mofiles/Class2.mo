@@ -11,6 +11,6 @@ end Class2;
 
 // Result:
 // class Class2
-// Real x = 17.0;
+//   Real x = 17.0;
 // end Class2;
 // endResult

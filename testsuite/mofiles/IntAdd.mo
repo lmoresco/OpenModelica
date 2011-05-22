@@ -11,6 +11,6 @@ end IntAdd;
 
 // Result:
 // class IntAdd
-// constant Integer i = 5849;
+//   constant Integer i = 5849;
 // end IntAdd;
 // endResult

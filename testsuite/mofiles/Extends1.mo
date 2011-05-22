@@ -19,7 +19,7 @@ end Extends1;
 
 // Result:
 // class Extends1
-// Real x.a = 2.0;
-// Real x.b = 2.0;
+//   Real x.a = 2.0;
+//   Real x.b = 2.0;
 // end Extends1;
 // endResult

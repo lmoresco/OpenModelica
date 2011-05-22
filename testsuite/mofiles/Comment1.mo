@@ -18,7 +18,7 @@ end Comment1; //
 
 // Result:
 // class Comment1
-// Real x;
+//   Real x;
 // equation
 //   x = 2.0;
 // end Comment1;

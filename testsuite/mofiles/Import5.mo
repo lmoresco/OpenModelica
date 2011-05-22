@@ -23,8 +23,8 @@ end Import5;
 
 // Result:
 // class Import5
-// Real x = 9.42;
-// Real x2 = 2.7;
-// Real x3 = 300000000.0;
+//   Real x = 9.42;
+//   Real x2 = 2.7;
+//   Real x3 = 300000000.0;
 // end Import5;
 // endResult

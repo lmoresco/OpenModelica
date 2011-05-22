@@ -23,8 +23,8 @@ end EquationIf4;
 
 // Result:
 // class EquationIf4
-// Real p = 10.0 * time;
-// Real x;
+//   Real p = 10.0 * time;
+//   Real x;
 // equation
 //   if p < 0.0 then
 //   x = 1.0;

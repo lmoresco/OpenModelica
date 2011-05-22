@@ -33,20 +33,20 @@ end EngineSAAB95;
 
 // Result:
 // function EngineModel.SAAB95i "Automatically generated record constructor for EngineModel.SAAB95i"
-// input Real bore = 0.09;
-// input Real stroke = 0.09;
-// output SAAB95i res;
+//   input Real bore = 0.09;
+//   input Real stroke = 0.09;
+//   output SAAB95i res;
 // end EngineModel.SAAB95i;
 // 
 // class EngineSAAB95
-// parameter Real engine.data.bore = 0.09;
-// parameter Real engine.data.stroke = 0.09;
-// Real engine.displacement;
-// constant Real engine.pi = 3.1415956;
-// parameter Real engine2.data.bore = 3.0;
-// parameter Real engine2.data.stroke = 5.0;
-// Real engine2.displacement;
-// constant Real engine2.pi = 3.1415956;
+//   parameter Real engine.data.bore = 0.09;
+//   parameter Real engine.data.stroke = 0.09;
+//   Real engine.displacement;
+//   constant Real engine.pi = 3.1415956;
+//   parameter Real engine2.data.bore = 3.0;
+//   parameter Real engine2.data.stroke = 5.0;
+//   Real engine2.displacement;
+//   constant Real engine2.pi = 3.1415956;
 // equation
 //   engine.displacement = 0.7853989 * (engine.data.bore ^ 2.0 * engine.data.stroke);
 //   engine2.displacement = 0.7853989 * (engine2.data.bore ^ 2.0 * engine2.data.stroke);

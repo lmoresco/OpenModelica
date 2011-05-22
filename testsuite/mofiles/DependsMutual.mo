@@ -31,8 +31,8 @@ end DependsMutual;
 
 // Result:
 // class DependsMutual
-// Real x;
-// Real a.x;
+//   Real x;
+//   Real a.x;
 // equation
 //   a.x = x;
 //   x = time;

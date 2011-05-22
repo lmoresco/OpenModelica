@@ -13,22 +13,22 @@ end MatrixBrackets;
 
 // Result:
 // class MatrixBrackets
-// Integer intMatrix[1,1];
-// Integer intMatrix[1,2];
-// Integer intMatrix[1,3];
-// Integer intMatrix[1,4];
-// Integer intMatrix[2,1];
-// Integer intMatrix[2,2];
-// Integer intMatrix[2,3];
-// Integer intMatrix[2,4];
-// Integer intMatrix[3,1];
-// Integer intMatrix[3,2];
-// Integer intMatrix[3,3];
-// Integer intMatrix[3,4];
-// Integer intMatrix[4,1];
-// Integer intMatrix[4,2];
-// Integer intMatrix[4,3];
-// Integer intMatrix[4,4];
+//   Integer intMatrix[1,1];
+//   Integer intMatrix[1,2];
+//   Integer intMatrix[1,3];
+//   Integer intMatrix[1,4];
+//   Integer intMatrix[2,1];
+//   Integer intMatrix[2,2];
+//   Integer intMatrix[2,3];
+//   Integer intMatrix[2,4];
+//   Integer intMatrix[3,1];
+//   Integer intMatrix[3,2];
+//   Integer intMatrix[3,3];
+//   Integer intMatrix[3,4];
+//   Integer intMatrix[4,1];
+//   Integer intMatrix[4,2];
+//   Integer intMatrix[4,3];
+//   Integer intMatrix[4,4];
 // equation
 //   intMatrix[1,1] = 1;
 //   intMatrix[1,2] = 2;

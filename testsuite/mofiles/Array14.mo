@@ -15,9 +15,9 @@ model Array14
 end Array14;
 // Result:
 // class Array14
-// parameter Integer n1 = 2;
-// parameter Integer m1 = 0;
-// parameter Integer n2 = 2;
-// parameter Integer m2 = 0;
+//   parameter Integer n1 = 2;
+//   parameter Integer m1 = 0;
+//   parameter Integer n2 = 2;
+//   parameter Integer m2 = 0;
 // end Array14;
 // endResult

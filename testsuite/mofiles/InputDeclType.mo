@@ -11,6 +11,6 @@ end InputDeclType;
 
 // Result:
 // class InputDeclType
-// input Real rInput = 1.0;
+//   input Real rInput = 1.0;
 // end InputDeclType;
 // endResult

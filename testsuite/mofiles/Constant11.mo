@@ -24,18 +24,18 @@ end Constant11;
 
 // Result:
 // function Constant11.abc
-// output Real r;
+//   output Real r;
 // algorithm
 //   r := 1.0;
 // end Constant11.abc;
 // 
 // function Constant11.def
-// output Real r;
+//   output Real r;
 // algorithm
 //   r := 1.0;
 // end Constant11.def;
 // 
 // class Constant11
-// constant Real x = 1.0;
+//   constant Real x = 1.0;
 // end Constant11;
 // endResult

@@ -17,10 +17,10 @@ equation
 end ifThenElseIfElse;
 // Result:
 // class ifThenElseIfElse
-// Real out1;
-// Real out2;
-// Real out3;
-// Real out4;
+//   Real out1;
+//   Real out2;
+//   Real out3;
+//   Real out4;
 // equation
 //   out1 = time;
 //   out2 = if time < 1.0 then time else time ^ 3.0;

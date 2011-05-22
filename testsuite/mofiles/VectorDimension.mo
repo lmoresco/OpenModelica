@@ -12,8 +12,8 @@ end VectorDimension;
 
 // Result:
 // class VectorDimension
-// Real x[1];
-// Real x[2];
+//   Real x[1];
+//   Real x[2];
 // equation
 //   x[1] = 1.0;
 //   x[2] = 3.0;

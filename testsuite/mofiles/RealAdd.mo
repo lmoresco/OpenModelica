@@ -11,6 +11,6 @@ end RealAdd;
 
 // Result:
 // class RealAdd
-// constant Real r = 5849.5;
+//   constant Real r = 5849.5;
 // end RealAdd;
 // endResult

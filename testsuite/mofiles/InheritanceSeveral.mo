@@ -20,7 +20,7 @@ end C;
 
 // Result:
 // class C
-// parameter Real a;
-// parameter Real b;
+//   parameter Real a;
+//   parameter Real b;
 // end C;
 // endResult

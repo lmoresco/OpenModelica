@@ -66,9 +66,9 @@ end Derivative1;
 
 // Result:
 // function FooFunctions.foo0
-// input Real x;
-// input Boolean b;
-// output Real y;
+//   input Real x;
+//   input Boolean b;
+//   output Real y;
 // algorithm
 //   if b then
 //     y := sin(x);
@@ -78,10 +78,10 @@ end Derivative1;
 // end FooFunctions.foo0;
 // 
 // function FooFunctions.foo1
-// input Real x;
-// input Boolean b;
-// input Real der_x;
-// output Real der_y;
+//   input Real x;
+//   input Boolean b;
+//   input Real der_x;
+//   output Real der_y;
 // algorithm
 //   if b then
 //     der_y := cos(x) * der_x;
@@ -91,11 +91,11 @@ end Derivative1;
 // end FooFunctions.foo1;
 // 
 // function FooFunctions.foo2
-// input Real x;
-// input Boolean b;
-// input Real der_x;
-// input Real der_2_x;
-// output Real der_2_y;
+//   input Real x;
+//   input Boolean b;
+//   input Real der_x;
+//   input Real der_2_x;
+//   output Real der_2_y;
 // algorithm
 //   if b then
 //     der_2_y := cos(x) * der_2_x - sin(x) * der_x ^ 2.0;
@@ -105,15 +105,15 @@ end Derivative1;
 // end FooFunctions.foo2;
 // 
 // class Derivative1
-// Real x[1];
-// Real x[2];
-// Real x[3];
-// Real u[1](fixed = false);
-// Real u[2](fixed = false);
-// Real u[3](fixed = false);
-// Real ic[1](start = 0.0, fixed = true) = x[1] - u[1];
-// Real ic[2](start = 0.0, fixed = true) = x[2] - u[2];
-// parameter Boolean b = true;
+//   Real x[1];
+//   Real x[2];
+//   Real x[3];
+//   Real u[1](fixed = false);
+//   Real u[2](fixed = false);
+//   Real u[3](fixed = false);
+//   Real ic[1](start = 0.0, fixed = true) = x[1] - u[1];
+//   Real ic[2](start = 0.0, fixed = true) = x[2] - u[2];
+//   parameter Boolean b = true;
 // equation
 //   x[1] = FooFunctions.foo0(exp(time),b);
 //   der(x[1]) = x[2];

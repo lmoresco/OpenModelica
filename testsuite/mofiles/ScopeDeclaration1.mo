@@ -11,6 +11,6 @@ end ScopeDeclaration1;
 
 // Result:
 // class ScopeDeclaration1
-// Real a = -a;
+//   Real a = -a;
 // end ScopeDeclaration1;
 // endResult

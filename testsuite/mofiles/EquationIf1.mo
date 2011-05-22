@@ -18,8 +18,8 @@ end EquationIf1;
 
 // Result:
 // class EquationIf1
-// parameter Boolean b = true;
-// Real x;
+//   parameter Boolean b = true;
+//   Real x;
 // equation
 //   x = 1.0;
 // end EquationIf1;

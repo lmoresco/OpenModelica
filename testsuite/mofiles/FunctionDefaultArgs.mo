@@ -27,19 +27,19 @@ end FunctionDefaultArgs;
 
 // Result:
 // function FunctionDefaultArgs.set
-// input Integer[:] X = {1,2,3};
-// output Integer x1;
+//   input Integer[:] X = {1,2,3};
+//   output Integer x1;
 // algorithm
 //   x1 := X[1];
 // end FunctionDefaultArgs.set;
 // 
 // class FunctionDefaultArgs
-// constant Integer reference_X[1] = 1;
-// constant Integer reference_X[2] = 2;
-// constant Integer reference_X[3] = 3;
-// Integer res1;
-// Integer res2;
-// Integer res3;
+//   constant Integer reference_X[1] = 1;
+//   constant Integer reference_X[2] = 2;
+//   constant Integer reference_X[3] = 3;
+//   Integer res1;
+//   Integer res2;
+//   Integer res3;
 // equation
 //   res1 = 4;
 //   res2 = 4;

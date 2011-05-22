@@ -1394,7 +1394,7 @@ end BS11;
 // algorithm
 //   next := last;
 //   nextEvent := t - TimeEps * abs(t);
-//   tp := (t + TimeEps * abs(t)) - startTime;
+//   tp := t + TimeEps * abs(t) - startTime;
 //   if tp < 0.0 then
 //     nextEvent := startTime;
 //     a := 0.0;
@@ -1410,14 +1410,14 @@ end BS11;
 //       if next < nrow then
 //         nextEvent := startTime + table[next,1];
 //       end if;
-//       next0 := next - 1;
+//       next0 := next + -1;
 //       dt := table[next,1] - table[next0,1];
 //       if dt <= TimeEps * abs(table[next,1]) then
 //         a := 0.0;
 //         b := offset + table[next,columns];
 //       else
 //         a := (table[next,columns] - table[next0,columns]) / dt;
-//         b := (offset + table[next0,columns]) - a * table[next0,1];
+//         b := offset + table[next0,columns] - a * table[next0,1];
 //       end if;
 //     end if;
 //   end if;

@@ -13,7 +13,7 @@ end Rem;
 
 // Result:
 // class Rem
-// Real r;
+//   Real r;
 // equation
 //   r = 3.0;
 // end Rem;

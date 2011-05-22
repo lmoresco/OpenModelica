@@ -21,8 +21,8 @@ end NestedClasses;
 
 // Result:
 // class NestedClasses
-// Integer nc1.nestedInt1;
-// Integer nc2.nestedInt2;
-// Integer i;
+//   Integer nc1.nestedInt1;
+//   Integer nc2.nestedInt2;
+//   Integer i;
 // end NestedClasses;
 // endResult

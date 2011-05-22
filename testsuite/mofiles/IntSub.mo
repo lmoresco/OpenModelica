@@ -11,6 +11,6 @@ end IntSub;
 
 // Result:
 // class IntSub
-// constant Integer i = 3573;
+//   constant Integer i = 3573;
 // end IntSub;
 // endResult

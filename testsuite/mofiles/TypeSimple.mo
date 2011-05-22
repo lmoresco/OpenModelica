@@ -15,7 +15,7 @@ end TypeSimple;
 
 // Result:
 // class TypeSimple
-// Integer mt;
+//   Integer mt;
 // equation
 //   mt = 2;
 // end TypeSimple;

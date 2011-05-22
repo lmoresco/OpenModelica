@@ -11,6 +11,6 @@ end RealMul;
 
 // Result:
 // class RealMul
-// constant Real r = 5362758.96;
+//   constant Real r = 5362758.96;
 // end RealMul;
 // endResult

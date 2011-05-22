@@ -13,6 +13,6 @@ end Record1;
 
 // Result:
 // class Record1
-// Real a.x = 18.0;
+//   Real a.x = 18.0;
 // end Record1;
 // endResult

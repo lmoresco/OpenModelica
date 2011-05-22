@@ -21,8 +21,8 @@ end Function5;
 
 // Result:
 // function f
-// input Real x;
-// output Real y;
+//   input Real x;
+//   output Real y;
 // algorithm
 //   y := 2.0 * x;
 // end f;

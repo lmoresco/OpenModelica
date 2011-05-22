@@ -21,10 +21,10 @@ end ModelAccess;
 
 // Result:
 // class ModelAccess
-// parameter Integer om.i1 = 8;
-// parameter Integer om.i2 = 12;
-// Integer i1;
-// Integer i2;
+//   parameter Integer om.i1 = 8;
+//   parameter Integer om.i2 = 12;
+//   Integer i1;
+//   Integer i2;
 // equation
 //   i1 = om.i1;
 //   i2 = om.i2;

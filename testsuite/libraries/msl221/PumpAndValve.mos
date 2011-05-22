@@ -29,7 +29,7 @@ getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // function Modelica.Thermal.FluidHeatFlow.Media.Medium \"Automatically generated record constructor for Modelica.Thermal.FluidHeatFlow.Media.Medium\"

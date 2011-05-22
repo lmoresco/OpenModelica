@@ -13,13 +13,13 @@ end ArrayBrackets;
 
 // Result:
 // class ArrayBrackets
-// Integer intArray[1,1];
-// Integer intArray[1,2];
-// Integer intArray[1,3];
-// Integer intArray[1,4];
-// Integer intArray[1,5];
-// Integer intArray[1,6];
-// Integer intArray[1,7];
+//   Integer intArray[1,1];
+//   Integer intArray[1,2];
+//   Integer intArray[1,3];
+//   Integer intArray[1,4];
+//   Integer intArray[1,5];
+//   Integer intArray[1,6];
+//   Integer intArray[1,7];
 // equation
 //   intArray[1,1] = 1;
 //   intArray[1,2] = 2;

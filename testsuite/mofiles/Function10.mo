@@ -17,13 +17,13 @@ end test;
 
 // Result:
 // function foo
-// input Real x;
-// output Real foo;
+//   input Real x;
+//   output Real foo;
 // 
-// external "C";
+//   external "C";
 // end foo;
 // 
 // class test
-// Real x = foo(time);
+//   Real x = foo(time);
 // end test;
 // endResult

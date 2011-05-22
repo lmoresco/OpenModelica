@@ -17,7 +17,7 @@ end FlowDeclConnector;
 
 // Result:
 // class FlowDeclConnector
-// Real fc.r;
+//   Real fc.r;
 // equation
 //   fc.r = 1.0;
 // end FlowDeclConnector;

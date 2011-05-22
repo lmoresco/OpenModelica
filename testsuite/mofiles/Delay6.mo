@@ -16,10 +16,10 @@ end Delay;
 
 // Result:
 // class Delay
-// Real x;
-// Real y;
-// Real a = 1.0;
-// constant Real b = 2.0;
+//   Real x;
+//   Real y;
+//   Real a = 1.0;
+//   constant Real b = 2.0;
 // equation
 //   x = sin(time);
 //   y = delay(x,a,2.0);

@@ -13,7 +13,7 @@ end StringConcatenation;
 
 // Result:
 // class StringConcatenation
-// String s;
+//   String s;
 // equation
 //   s = "test";
 // end StringConcatenation;

@@ -22,11 +22,11 @@ algorithm
 end FilterBlock1;
 // Result:
 // class FilterBlock1
-// parameter Real T = 1.0 "Time constant";
-// parameter Real k = 1.0 "Gain";
-// input Real u = 1.0;
-// output Real y;
-// protected Real x;
+//   parameter Real T = 1.0 "Time constant";
+//   parameter Real k = 1.0 "Gain";
+//   input Real u = 1.0;
+//   output Real y;
+//   protected Real x;
 // equation
 //   der(x) = (u - x) / T;
 //   y = k * x;

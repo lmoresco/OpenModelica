@@ -22,9 +22,9 @@ end BlockComponents;
 
 // Result:
 // class BlockComponents
-// Integer i;
-// input Integer tb.inInt;
-// output Integer tb.outInt;
+//   Integer i;
+//   input Integer tb.inInt;
+//   output Integer tb.outInt;
 // equation
 //   Real(tb.outInt) / 2.0 = Real(tb.inInt);
 //   tb.inInt = 3;

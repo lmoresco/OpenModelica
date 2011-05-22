@@ -18,6 +18,6 @@ end Lookup4;
 
 // Result:
 // class Lookup4
-// Real b = 3.0;
+//   Real b = 3.0;
 // end Lookup4;
 // endResult

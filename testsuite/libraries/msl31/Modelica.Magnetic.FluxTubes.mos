@@ -734,7 +734,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.armature.mass.v = der(pmActuator.armature.mass.s);
 //   pmActuator.armature.mass.a = der(pmActuator.armature.mass.v);
 //   pmActuator.armature.mass.m * pmActuator.armature.mass.a = pmActuator.armature.mass.flange_a.f + pmActuator.armature.mass.flange_b.f;
-//   pmActuator.armature.mass.flange_a.s = pmActuator.armature.mass.s - pmActuator.armature.mass.L / 2.0;
+//   pmActuator.armature.mass.flange_a.s = pmActuator.armature.mass.s + (-pmActuator.armature.mass.L) / 2.0;
 //   pmActuator.armature.mass.flange_b.s = pmActuator.armature.mass.s + pmActuator.armature.mass.L / 2.0;
 //   pmActuator.armature.limit_xMin.flange.s = pmActuator.armature.limit_xMin.s0;
 //   pmActuator.armature.limit_xMax.flange.s = pmActuator.armature.limit_xMax.s0;
@@ -840,7 +840,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   cActuator.armature.mass.v = der(cActuator.armature.mass.s);
 //   cActuator.armature.mass.a = der(cActuator.armature.mass.v);
 //   cActuator.armature.mass.m * cActuator.armature.mass.a = cActuator.armature.mass.flange_a.f + cActuator.armature.mass.flange_b.f;
-//   cActuator.armature.mass.flange_a.s = cActuator.armature.mass.s - cActuator.armature.mass.L / 2.0;
+//   cActuator.armature.mass.flange_a.s = cActuator.armature.mass.s + (-cActuator.armature.mass.L) / 2.0;
 //   cActuator.armature.mass.flange_b.s = cActuator.armature.mass.s + cActuator.armature.mass.L / 2.0;
 //   cActuator.armature.limit_xMin.flange.s = cActuator.armature.limit_xMin.s0;
 //   cActuator.armature.limit_xMax.flange.s = cActuator.armature.limit_xMax.s0;
@@ -1343,7 +1343,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.armature.mass.v = der(actuator.armature.mass.s);
 //   actuator.armature.mass.a = der(actuator.armature.mass.v);
 //   actuator.armature.mass.m * actuator.armature.mass.a = actuator.armature.mass.flange_a.f + actuator.armature.mass.flange_b.f;
-//   actuator.armature.mass.flange_a.s = actuator.armature.mass.s - actuator.armature.mass.L / 2.0;
+//   actuator.armature.mass.flange_a.s = actuator.armature.mass.s + (-actuator.armature.mass.L) / 2.0;
 //   actuator.armature.mass.flange_b.s = actuator.armature.mass.s + actuator.armature.mass.L / 2.0;
 //   actuator.armature.limit_xMin.flange.s = actuator.armature.limit_xMin.s0;
 //   actuator.armature.limit_xMax.flange.s = actuator.armature.limit_xMax.s0;
@@ -1911,7 +1911,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.armature.mass.v = der(pmActuator.armature.mass.s);
 //   pmActuator.armature.mass.a = der(pmActuator.armature.mass.v);
 //   pmActuator.armature.mass.m * pmActuator.armature.mass.a = pmActuator.armature.mass.flange_a.f + pmActuator.armature.mass.flange_b.f;
-//   pmActuator.armature.mass.flange_a.s = pmActuator.armature.mass.s - pmActuator.armature.mass.L / 2.0;
+//   pmActuator.armature.mass.flange_a.s = pmActuator.armature.mass.s + (-pmActuator.armature.mass.L) / 2.0;
 //   pmActuator.armature.mass.flange_b.s = pmActuator.armature.mass.s + pmActuator.armature.mass.L / 2.0;
 //   pmActuator.armature.limit_xMin.flange.s = pmActuator.armature.limit_xMin.s0;
 //   pmActuator.armature.limit_xMax.flange.s = pmActuator.armature.limit_xMax.s0;
@@ -1996,7 +1996,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmLoad.v = der(pmLoad.s);
 //   pmLoad.a = der(pmLoad.v);
 //   pmLoad.m * pmLoad.a = pmLoad.flange_a.f + pmLoad.flange_b.f;
-//   pmLoad.flange_a.s = pmLoad.s - pmLoad.L / 2.0;
+//   pmLoad.flange_a.s = pmLoad.s + (-pmLoad.L) / 2.0;
 //   pmLoad.flange_b.s = pmLoad.s + pmLoad.L / 2.0;
 //   cGround.p.v = 0.0;
 //   cSource.signalSource.y = cSource.signalSource.offset + (if time < cSource.signalSource.startTime then 0.0 else cSource.signalSource.height);
@@ -2015,7 +2015,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   cActuator.armature.mass.v = der(cActuator.armature.mass.s);
 //   cActuator.armature.mass.a = der(cActuator.armature.mass.v);
 //   cActuator.armature.mass.m * cActuator.armature.mass.a = cActuator.armature.mass.flange_a.f + cActuator.armature.mass.flange_b.f;
-//   cActuator.armature.mass.flange_a.s = cActuator.armature.mass.s - cActuator.armature.mass.L / 2.0;
+//   cActuator.armature.mass.flange_a.s = cActuator.armature.mass.s + (-cActuator.armature.mass.L) / 2.0;
 //   cActuator.armature.mass.flange_b.s = cActuator.armature.mass.s + cActuator.armature.mass.L / 2.0;
 //   cActuator.armature.limit_xMin.flange.s = cActuator.armature.limit_xMin.s0;
 //   cActuator.armature.limit_xMax.flange.s = cActuator.armature.limit_xMax.s0;
@@ -2058,7 +2058,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   cLoad.v = der(cLoad.s);
 //   cLoad.a = der(cLoad.v);
 //   cLoad.m * cLoad.a = cLoad.flange_a.f + cLoad.flange_b.f;
-//   cLoad.flange_a.s = cLoad.s - cLoad.L / 2.0;
+//   cLoad.flange_a.s = cLoad.s + (-cLoad.L) / 2.0;
 //   cLoad.flange_b.s = cLoad.s + cLoad.L / 2.0;
 //   pmSource.p.i + pmActuator.p.i = 0.0;
 //   pmActuator.p.v = pmSource.p.v;
@@ -2374,7 +2374,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   armature.mass.v = der(armature.mass.s);
 //   armature.mass.a = der(armature.mass.v);
 //   armature.mass.m * armature.mass.a = armature.mass.flange_a.f + armature.mass.flange_b.f;
-//   armature.mass.flange_a.s = armature.mass.s - armature.mass.L / 2.0;
+//   armature.mass.flange_a.s = armature.mass.s + (-armature.mass.L) / 2.0;
 //   armature.mass.flange_b.s = armature.mass.s + armature.mass.L / 2.0;
 //   armature.limit_xMin.flange.s = armature.limit_xMin.s0;
 //   armature.limit_xMax.flange.s = armature.limit_xMax.s0;
@@ -2635,7 +2635,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   armature.mass.v = der(armature.mass.s);
 //   armature.mass.a = der(armature.mass.v);
 //   armature.mass.m * armature.mass.a = armature.mass.flange_a.f + armature.mass.flange_b.f;
-//   armature.mass.flange_a.s = armature.mass.s - armature.mass.L / 2.0;
+//   armature.mass.flange_a.s = armature.mass.s + (-armature.mass.L) / 2.0;
 //   armature.mass.flange_b.s = armature.mass.s + armature.mass.L / 2.0;
 //   armature.limit_xMin.flange.s = armature.limit_xMin.s0;
 //   armature.limit_xMax.flange.s = armature.limit_xMax.s0;
@@ -2876,7 +2876,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeYokeSide1.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeYokeSide1.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeYokeSide1.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 - advancedSolenoid.t_poleBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 + (-advancedSolenoid.t_poleBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide1.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = advancedSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide1.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -2898,7 +2898,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke - (advancedSolenoid.t_yokeBot / 2.0 + advancedSolenoid.t_poleBot / 2.0) - advancedSolenoid.l_pole - (advancedSolenoid.x_max / 2.0 + advancedSolenoid.x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke + ((-advancedSolenoid.t_yokeBot) / 2.0 + ((-advancedSolenoid.t_poleBot) / 2.0 + ((-advancedSolenoid.x_max) / 2.0 + (-advancedSolenoid.x_min) / 2.0 - advancedSolenoid.l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3158,7 +3158,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeYokeSide2.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeYokeSide2.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeYokeSide2.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 - advancedSolenoid.t_yokeBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 + (-advancedSolenoid.t_yokeBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide2.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = advancedSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide2.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.c_par2.v(quantity = \"ElectricPotential\", unit = \"V\", start = 0.0, fixed = true) \"Voltage drop between the two pins (= p.v - n.v)\";
@@ -3346,7 +3346,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mFeYokeSide.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real simpleSolenoid.g_mFeYokeSide.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real simpleSolenoid.g_mFeYokeSide.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real simpleSolenoid.g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke - (simpleSolenoid.t_poleBot / 2.0 + simpleSolenoid.t_yokeBot / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real simpleSolenoid.g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke + ((-simpleSolenoid.t_poleBot) / 2.0 + (-simpleSolenoid.t_yokeBot) / 2.0) \"Axial length (in direction of flux)\";
 //   parameter Real simpleSolenoid.g_mFeYokeSide.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = simpleSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real simpleSolenoid.g_mFeYokeSide.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3368,7 +3368,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real simpleSolenoid.g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real simpleSolenoid.g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real simpleSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke - (simpleSolenoid.t_yokeBot / 2.0 + simpleSolenoid.t_poleBot / 2.0) - simpleSolenoid.l_pole - (simpleSolenoid.x_max / 2.0 + simpleSolenoid.x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real simpleSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke + ((-simpleSolenoid.t_yokeBot) / 2.0 + ((-simpleSolenoid.t_poleBot) / 2.0 + ((-simpleSolenoid.x_max) / 2.0 + (-simpleSolenoid.x_min) / 2.0 - simpleSolenoid.l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real simpleSolenoid.g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real simpleSolenoid.g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3799,7 +3799,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.armature.mass.v = der(advancedSolenoid.armature.mass.s);
 //   advancedSolenoid.armature.mass.a = der(advancedSolenoid.armature.mass.v);
 //   advancedSolenoid.armature.mass.m * advancedSolenoid.armature.mass.a = advancedSolenoid.armature.mass.flange_a.f + advancedSolenoid.armature.mass.flange_b.f;
-//   advancedSolenoid.armature.mass.flange_a.s = advancedSolenoid.armature.mass.s - advancedSolenoid.armature.mass.L / 2.0;
+//   advancedSolenoid.armature.mass.flange_a.s = advancedSolenoid.armature.mass.s + (-advancedSolenoid.armature.mass.L) / 2.0;
 //   advancedSolenoid.armature.mass.flange_b.s = advancedSolenoid.armature.mass.s + advancedSolenoid.armature.mass.L / 2.0;
 //   advancedSolenoid.armature.limit_xMin.flange.s = advancedSolenoid.armature.limit_xMin.s0;
 //   advancedSolenoid.armature.limit_xMax.flange.s = advancedSolenoid.armature.limit_xMax.s0;
@@ -4020,7 +4020,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.armature.mass.v = der(simpleSolenoid.armature.mass.s);
 //   simpleSolenoid.armature.mass.a = der(simpleSolenoid.armature.mass.v);
 //   simpleSolenoid.armature.mass.m * simpleSolenoid.armature.mass.a = simpleSolenoid.armature.mass.flange_a.f + simpleSolenoid.armature.mass.flange_b.f;
-//   simpleSolenoid.armature.mass.flange_a.s = simpleSolenoid.armature.mass.s - simpleSolenoid.armature.mass.L / 2.0;
+//   simpleSolenoid.armature.mass.flange_a.s = simpleSolenoid.armature.mass.s + (-simpleSolenoid.armature.mass.L) / 2.0;
 //   simpleSolenoid.armature.mass.flange_b.s = simpleSolenoid.armature.mass.s + simpleSolenoid.armature.mass.L / 2.0;
 //   simpleSolenoid.armature.limit_xMin.flange.s = simpleSolenoid.armature.limit_xMin.s0;
 //   simpleSolenoid.armature.limit_xMax.flange.s = simpleSolenoid.armature.limit_xMax.s0;
@@ -4070,7 +4070,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.x = simpleSolenoid.flange.s;
 //   simpleFeed_x.v = der(simpleFeed_x.s);
 //   simpleFeed_x.a = der(simpleFeed_x.v);
-//   simpleFeed_x.a = (((simpleFeed_x.s_ref - simpleFeed_x.s) * simpleFeed_x.w_crit - 1.3617 * simpleFeed_x.v) * simpleFeed_x.w_crit) / 0.618;
+//   simpleFeed_x.a = (((simpleFeed_x.s_ref - simpleFeed_x.s) * simpleFeed_x.w_crit + -1.3617 * simpleFeed_x.v) * simpleFeed_x.w_crit) / 0.618;
 //   simpleFeed_x.s_support = 0.0;
 //   assert(true,\"tableOnFile = false and parameter table is an empty matrix\");
 //   comparisonWithFEA.y[1] = Modelica.Blocks.Tables.CombiTable1Ds.tableIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[1],comparisonWithFEA.u);
@@ -4389,7 +4389,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeYokeSide1.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeYokeSide1.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeYokeSide1.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 - advancedSolenoid.t_poleBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 + (-advancedSolenoid.t_poleBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide1.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = advancedSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide1.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4411,7 +4411,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke - (advancedSolenoid.t_yokeBot / 2.0 + advancedSolenoid.t_poleBot / 2.0) - advancedSolenoid.l_pole - (advancedSolenoid.x_max / 2.0 + advancedSolenoid.x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke + ((-advancedSolenoid.t_yokeBot) / 2.0 + ((-advancedSolenoid.t_poleBot) / 2.0 + ((-advancedSolenoid.x_max) / 2.0 + (-advancedSolenoid.x_min) / 2.0 - advancedSolenoid.l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4671,7 +4671,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mFeYokeSide2.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real advancedSolenoid.g_mFeYokeSide2.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real advancedSolenoid.g_mFeYokeSide2.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real advancedSolenoid.g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 - advancedSolenoid.t_yokeBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real advancedSolenoid.g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = advancedSolenoid.l_yoke / 2.0 + (-advancedSolenoid.t_yokeBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide2.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = advancedSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real advancedSolenoid.g_mFeYokeSide2.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.c_par2.v(quantity = \"ElectricPotential\", unit = \"V\", start = 0.0, fixed = true) \"Voltage drop between the two pins (= p.v - n.v)\";
@@ -4856,7 +4856,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mFeYokeSide.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real simpleSolenoid.g_mFeYokeSide.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real simpleSolenoid.g_mFeYokeSide.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real simpleSolenoid.g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke - (simpleSolenoid.t_poleBot / 2.0 + simpleSolenoid.t_yokeBot / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real simpleSolenoid.g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke + ((-simpleSolenoid.t_poleBot) / 2.0 + (-simpleSolenoid.t_yokeBot) / 2.0) \"Axial length (in direction of flux)\";
 //   parameter Real simpleSolenoid.g_mFeYokeSide.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = simpleSolenoid.r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real simpleSolenoid.g_mFeYokeSide.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4878,7 +4878,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real simpleSolenoid.g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real simpleSolenoid.g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real simpleSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke - (simpleSolenoid.t_yokeBot / 2.0 + simpleSolenoid.t_poleBot / 2.0) - simpleSolenoid.l_pole - (simpleSolenoid.x_max / 2.0 + simpleSolenoid.x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real simpleSolenoid.g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = simpleSolenoid.l_yoke + ((-simpleSolenoid.t_yokeBot) / 2.0 + ((-simpleSolenoid.t_poleBot) / 2.0 + ((-simpleSolenoid.x_max) / 2.0 + (-simpleSolenoid.x_min) / 2.0 - simpleSolenoid.l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real simpleSolenoid.g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real simpleSolenoid.g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -7353,7 +7353,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.armature.mass.v = der(advancedSolenoid.armature.mass.s);
 //   advancedSolenoid.armature.mass.a = der(advancedSolenoid.armature.mass.v);
 //   advancedSolenoid.armature.mass.m * advancedSolenoid.armature.mass.a = advancedSolenoid.armature.mass.flange_a.f + advancedSolenoid.armature.mass.flange_b.f;
-//   advancedSolenoid.armature.mass.flange_a.s = advancedSolenoid.armature.mass.s - advancedSolenoid.armature.mass.L / 2.0;
+//   advancedSolenoid.armature.mass.flange_a.s = advancedSolenoid.armature.mass.s + (-advancedSolenoid.armature.mass.L) / 2.0;
 //   advancedSolenoid.armature.mass.flange_b.s = advancedSolenoid.armature.mass.s + advancedSolenoid.armature.mass.L / 2.0;
 //   advancedSolenoid.armature.limit_xMin.flange.s = advancedSolenoid.armature.limit_xMin.s0;
 //   advancedSolenoid.armature.limit_xMax.flange.s = advancedSolenoid.armature.limit_xMax.s0;
@@ -7474,7 +7474,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedLoad.v = der(advancedLoad.s);
 //   advancedLoad.a = der(advancedLoad.v);
 //   advancedLoad.m * advancedLoad.a = advancedLoad.flange_a.f + advancedLoad.flange_b.f;
-//   advancedLoad.flange_a.s = advancedLoad.s - advancedLoad.L / 2.0;
+//   advancedLoad.flange_a.s = advancedLoad.s + (-advancedLoad.L) / 2.0;
 //   advancedLoad.flange_b.s = advancedLoad.s + advancedLoad.L / 2.0;
 //   simpleGround.p.v = 0.0;
 //   simpleSource.signalSource.y = simpleSource.signalSource.offset + (if time < simpleSource.signalSource.startTime then 0.0 else simpleSource.signalSource.height);
@@ -7575,7 +7575,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.armature.mass.v = der(simpleSolenoid.armature.mass.s);
 //   simpleSolenoid.armature.mass.a = der(simpleSolenoid.armature.mass.v);
 //   simpleSolenoid.armature.mass.m * simpleSolenoid.armature.mass.a = simpleSolenoid.armature.mass.flange_a.f + simpleSolenoid.armature.mass.flange_b.f;
-//   simpleSolenoid.armature.mass.flange_a.s = simpleSolenoid.armature.mass.s - simpleSolenoid.armature.mass.L / 2.0;
+//   simpleSolenoid.armature.mass.flange_a.s = simpleSolenoid.armature.mass.s + (-simpleSolenoid.armature.mass.L) / 2.0;
 //   simpleSolenoid.armature.mass.flange_b.s = simpleSolenoid.armature.mass.s + simpleSolenoid.armature.mass.L / 2.0;
 //   simpleSolenoid.armature.limit_xMin.flange.s = simpleSolenoid.armature.limit_xMin.s0;
 //   simpleSolenoid.armature.limit_xMax.flange.s = simpleSolenoid.armature.limit_xMax.s0;
@@ -7626,14 +7626,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleLoad.v = der(simpleLoad.s);
 //   simpleLoad.a = der(simpleLoad.v);
 //   simpleLoad.m * simpleLoad.a = simpleLoad.flange_a.f + simpleLoad.flange_b.f;
-//   simpleLoad.flange_a.s = simpleLoad.s - simpleLoad.L / 2.0;
+//   simpleLoad.flange_a.s = simpleLoad.s + (-simpleLoad.L) / 2.0;
 //   simpleLoad.flange_b.s = simpleLoad.s + simpleLoad.L / 2.0;
 //   assert(true,\"tableOnFile = false and parameter table is an empty matrix\");
 //   comparisonWithFEA.y[1] = comparisonWithFEA.p_offset[1] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[1],time);
 //   comparisonWithFEA.y[2] = comparisonWithFEA.p_offset[2] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[2],time);
 //   comparisonWithFEA.y[3] = comparisonWithFEA.p_offset[3] + Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo(comparisonWithFEA.tableID,comparisonWithFEA.columns[3],time);
 //   when initial() then
-//   comparisonWithFEA.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if  not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.tableName,if  not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.fileName,comparisonWithFEA.table,comparisonWithFEA.startTime,comparisonWithFEA.smoothness,comparisonWithFEA.extrapolation);
+//   comparisonWithFEA.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(if not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.tableName,if not comparisonWithFEA.tableOnFile then \"NoName\" else comparisonWithFEA.fileName,comparisonWithFEA.table,comparisonWithFEA.startTime,comparisonWithFEA.smoothness,comparisonWithFEA.extrapolation);
 //   end when;
 //   simpleSolenoid.flange.f + simpleLoad.flange_a.f = 0.0;
 //   simpleLoad.flange_a.s = simpleSolenoid.flange.s;
@@ -7889,7 +7889,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mFeYokeSide.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real g_mFeYokeSide.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real g_mFeYokeSide.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke - (t_poleBot / 2.0 + t_yokeBot / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real g_mFeYokeSide.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke + ((-t_poleBot) / 2.0 + (-t_yokeBot) / 2.0) \"Axial length (in direction of flux)\";
 //   parameter Real g_mFeYokeSide.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real g_mFeYokeSide.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -7911,7 +7911,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke - (t_yokeBot / 2.0 + t_poleBot / 2.0) - l_pole - (x_max / 2.0 + x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke + ((-t_yokeBot) / 2.0 + ((-t_poleBot) / 2.0 + ((-x_max) / 2.0 + (-x_min) / 2.0 - l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_arm \"Outer radius of (hollow) cylinder\";
 //   Real g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8227,7 +8227,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   armature.mass.v = der(armature.mass.s);
 //   armature.mass.a = der(armature.mass.v);
 //   armature.mass.m * armature.mass.a = armature.mass.flange_a.f + armature.mass.flange_b.f;
-//   armature.mass.flange_a.s = armature.mass.s - armature.mass.L / 2.0;
+//   armature.mass.flange_a.s = armature.mass.s + (-armature.mass.L) / 2.0;
 //   armature.mass.flange_b.s = armature.mass.s + armature.mass.L / 2.0;
 //   armature.limit_xMin.flange.s = armature.limit_xMin.s0;
 //   armature.limit_xMax.flange.s = armature.limit_xMax.s0;
@@ -8456,7 +8456,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mFeYokeSide1.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real g_mFeYokeSide1.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real g_mFeYokeSide1.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke / 2.0 - t_poleBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real g_mFeYokeSide1.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke / 2.0 + (-t_poleBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real g_mFeYokeSide1.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real g_mFeYokeSide1.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real g_mFeArm.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8478,7 +8478,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mFeArm.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real g_mFeArm.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real g_mFeArm.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke - (t_yokeBot / 2.0 + t_poleBot / 2.0) - l_pole - (x_max / 2.0 + x_min / 2.0) \"Axial length (in direction of flux)\";
+//   parameter Real g_mFeArm.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke + ((-t_yokeBot) / 2.0 + ((-t_poleBot) / 2.0 + ((-x_max) / 2.0 + (-x_min) / 2.0 - l_pole))) \"Axial length (in direction of flux)\";
 //   parameter Real g_mFeArm.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real g_mFeArm.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_arm \"Outer radius of (hollow) cylinder\";
 //   Real g_mAirWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8738,7 +8738,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mFeYokeSide2.A(quantity = \"Area\", unit = \"m2\") \"Cross-sectional area penetrated by magnetic flux\";
 //   Real g_mFeYokeSide2.H(quantity = \"MagneticFieldStrength\", unit = \"A/m\") \"Magnetic field strength\";
 //   Real g_mFeYokeSide2.mu_r(quantity = \"RelativePermeability\", unit = \"1\") \"Relative magnetic permeability\";
-//   parameter Real g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke / 2.0 - t_yokeBot / 2.0 \"Axial length (in direction of flux)\";
+//   parameter Real g_mFeYokeSide2.l(quantity = \"Length\", unit = \"m\", start = 0.01) = l_yoke / 2.0 + (-t_yokeBot) / 2.0 \"Axial length (in direction of flux)\";
 //   parameter Real g_mFeYokeSide2.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = r_yokeIn \"Inner radius of hollow cylinder (zero for cylinder)\";
 //   parameter Real g_mFeYokeSide2.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_yokeOut \"Outer radius of (hollow) cylinder\";
 //   Real c_par2.v(quantity = \"ElectricPotential\", unit = \"V\", start = 0.0, fixed = true) \"Voltage drop between the two pins (= p.v - n.v)\";
@@ -8919,7 +8919,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   armature.mass.v = der(armature.mass.s);
 //   armature.mass.a = der(armature.mass.v);
 //   armature.mass.m * armature.mass.a = armature.mass.flange_a.f + armature.mass.flange_b.f;
-//   armature.mass.flange_a.s = armature.mass.s - armature.mass.L / 2.0;
+//   armature.mass.flange_a.s = armature.mass.s + (-armature.mass.L) / 2.0;
 //   armature.mass.flange_b.s = armature.mass.s + armature.mass.L / 2.0;
 //   armature.limit_xMin.flange.s = armature.limit_xMin.s0;
 //   armature.limit_xMax.flange.s = armature.limit_xMax.s0;
@@ -9183,7 +9183,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   mass.v = der(mass.s);
 //   mass.a = der(mass.v);
 //   mass.m * mass.a = mass.flange_a.f + mass.flange_b.f;
-//   mass.flange_a.s = mass.s - mass.L / 2.0;
+//   mass.flange_a.s = mass.s + (-mass.L) / 2.0;
 //   mass.flange_b.s = mass.s + mass.L / 2.0;
 //   limit_xMin.flange.s = limit_xMin.s0;
 //   limit_xMax.flange.s = limit_xMax.s0;

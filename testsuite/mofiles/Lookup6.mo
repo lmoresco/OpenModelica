@@ -18,8 +18,8 @@ end Lookup6;
 
 // Result:
 // class Lookup6
-// constant Real a = 3.0;
-// Real b.a;
+//   constant Real a = 3.0;
+//   Real b.a;
 // equation
 //   b.a = -b.a;
 // end Lookup6;

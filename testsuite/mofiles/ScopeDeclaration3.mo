@@ -18,8 +18,8 @@ end ScopeDeclaration3;
 
 // Result:
 // class ScopeDeclaration3
-// Real x;
-// Real y;
+//   Real x;
+//   Real y;
 // equation
 //   x = y;
 // end ScopeDeclaration3;

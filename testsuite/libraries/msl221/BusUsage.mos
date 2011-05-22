@@ -15,14 +15,14 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-// external \"C\";
+//   external \"C\";
 // end Modelica.Math.sin;
 // 
 // class Modelica.Blocks.Examples.BusUsage
@@ -65,7 +65,7 @@ getErrorString();
 // equation
 //   restBus.bus.realSignal2 = 0.0;
 //   integerStep.y = integerStep.offset + (if time < integerStep.startTime then 0 else integerStep.height);
-//   booleanStep.y = if time >= booleanStep.startTime then  not booleanStep.startValue else booleanStep.startValue;
+//   booleanStep.y = if time >= booleanStep.startTime then not booleanStep.startValue else booleanStep.startValue;
 //   sine.y = sine.offset + (if time < sine.startTime then 0.0 else sine.amplitude * sin(6.28318530717959 * (sine.freqHz * (time - sine.startTime)) + sine.phase));
 //   part.multiSignal.myRealSignal = time;
 //   part.multiSignal.myBooleanSignal = time > 0.5;

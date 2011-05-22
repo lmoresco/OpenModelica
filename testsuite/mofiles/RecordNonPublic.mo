@@ -18,6 +18,6 @@ end RecordNonPublic;
 
 // Result:
 // class RecordNonPublic
-// protected Integer tr.i;
+//   protected Integer tr.i;
 // end RecordNonPublic;
 // endResult

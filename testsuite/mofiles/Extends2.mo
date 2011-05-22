@@ -25,6 +25,6 @@ end test2;
 
 // Result:
 // class test2
-// Real adapter.x;
+//   Real adapter.x;
 // end test2;
 // endResult

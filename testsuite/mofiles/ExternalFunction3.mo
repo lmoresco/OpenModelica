@@ -30,7 +30,7 @@ end ExternalFunction3;
 //   input Real[size(a,1), size(a,2)] b;
 //   output Real[size(a,1), size(a,2)] c;
 // 
-// external "C";
+//   external "C";
 // end ExternalFunction3.addmatrices;
 // 
 // class ExternalFunction3

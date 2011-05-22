@@ -13,8 +13,8 @@ end LessThanEqual;
 
 // Result:
 // class LessThanEqual
-// constant Boolean b1 = true;
-// constant Boolean b2 = true;
-// constant Boolean b3 = false;
+//   constant Boolean b1 = true;
+//   constant Boolean b2 = true;
+//   constant Boolean b3 = false;
 // end LessThanEqual;
 // endResult

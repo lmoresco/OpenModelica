@@ -29,9 +29,9 @@ end Faculty3Model;
 
 // Result:
 // function Faculty3
-// input Integer x;
-// output Integer y;
-// protected Integer i;
+//   input Integer x;
+//   output Integer y;
+//   protected Integer i;
 // algorithm
 //   y := 1;
 //   i := 2;
@@ -42,8 +42,8 @@ end Faculty3Model;
 // end Faculty3;
 // 
 // class Faculty3Model
-// Integer x;
-// Integer y;
+//   Integer x;
+//   Integer y;
 // equation
 //   y = Faculty3(x);
 // end Faculty3Model;

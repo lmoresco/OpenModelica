@@ -15,6 +15,6 @@ end B;
 
 // Result:
 // class B
-// parameter Real a = 2.0;
+//   parameter Real a = 2.0;
 // end B;
 // endResult

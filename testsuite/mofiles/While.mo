@@ -17,8 +17,8 @@ end While;
 
 // Result:
 // class While
-// Integer x;
-// Integer y;
+//   Integer x;
+//   Integer y;
 // algorithm
 //   x := 2;
 //   while y < x loop

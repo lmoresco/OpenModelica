@@ -12,7 +12,7 @@ end Constant4;
 
 // Result:
 // class Constant4
-// Real x[1];
-// Real x[2];
+//   Real x[1];
+//   Real x[2];
 // end Constant4;
 // endResult

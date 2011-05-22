@@ -13,6 +13,6 @@ class ShortClassDef = TestClass;
 
 // Result:
 // class ShortClassDef
-// Integer i1;
+//   Integer i1;
 // end ShortClassDef;
 // endResult

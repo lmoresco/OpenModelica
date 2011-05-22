@@ -22,21 +22,21 @@ end Range1;
 
 // Result:
 // class Range1
-// Integer x[1] = 1;
-// Integer x[2] = 2;
-// Integer x[3] = 3;
-// Integer x[4] = 4;
-// Integer x[5] = 5;
-// Integer y[1];
-// Integer y[2];
-// Integer y[3];
-// Integer y[4];
-// Integer y[5];
-// Integer z[1];
-// Integer z[2];
-// Integer z[3];
-// Integer z[4];
-// Integer z[5];
+//   Integer x[1] = 1;
+//   Integer x[2] = 2;
+//   Integer x[3] = 3;
+//   Integer x[4] = 4;
+//   Integer x[5] = 5;
+//   Integer y[1];
+//   Integer y[2];
+//   Integer y[3];
+//   Integer y[4];
+//   Integer y[5];
+//   Integer z[1];
+//   Integer z[2];
+//   Integer z[3];
+//   Integer z[4];
+//   Integer z[5];
 // equation
 //   y[1] = 1 + x[1];
 //   y[2] = 1 + x[2];

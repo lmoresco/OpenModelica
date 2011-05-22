@@ -350,7 +350,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP1.uds = TP1.ud - TP1.us;
 //   TP1.ubs = if TP1.B.v < TP1.us then 0.0 else TP1.B.v - TP1.us;
 //   TP1.ugst = (TP1.G.v + (TP1.K2 * TP1.ubs + ((-TP1.Vt) - TP1.us))) * TP1.K5;
-//   TP1.id = if TP1.ugst >= 0.0 then TP1.uds * TP1.gds else if TP1.ugst < TP1.uds then (-TP1.v) * (TP1.uds * (TP1.ugst - TP1.uds / 2.0)) + TP1.uds * TP1.gds else ((-TP1.v) * TP1.ugst ^ 2.0) / 2.0 + TP1.uds * TP1.gds;
+//   TP1.id = if TP1.ugst >= 0.0 then TP1.uds * TP1.gds else if TP1.ugst < TP1.uds then (-TP1.v) * (TP1.uds * (TP1.ugst + (-TP1.uds) / 2.0)) + TP1.uds * TP1.gds else ((-TP1.v) * TP1.ugst ^ 2.0) / 2.0 + TP1.uds * TP1.gds;
 //   TP1.G.i = 0.0;
 //   TP1.D.i = if TP1.D.v > TP1.S.v then -TP1.id else TP1.id;
 //   TP1.S.i = if TP1.D.v > TP1.S.v then TP1.id else -TP1.id;
@@ -364,7 +364,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TP2.uds = TP2.ud - TP2.us;
 //   TP2.ubs = if TP2.B.v < TP2.us then 0.0 else TP2.B.v - TP2.us;
 //   TP2.ugst = (TP2.G.v + (TP2.K2 * TP2.ubs + ((-TP2.Vt) - TP2.us))) * TP2.K5;
-//   TP2.id = if TP2.ugst >= 0.0 then TP2.uds * TP2.gds else if TP2.ugst < TP2.uds then (-TP2.v) * (TP2.uds * (TP2.ugst - TP2.uds / 2.0)) + TP2.uds * TP2.gds else ((-TP2.v) * TP2.ugst ^ 2.0) / 2.0 + TP2.uds * TP2.gds;
+//   TP2.id = if TP2.ugst >= 0.0 then TP2.uds * TP2.gds else if TP2.ugst < TP2.uds then (-TP2.v) * (TP2.uds * (TP2.ugst + (-TP2.uds) / 2.0)) + TP2.uds * TP2.gds else ((-TP2.v) * TP2.ugst ^ 2.0) / 2.0 + TP2.uds * TP2.gds;
 //   TP2.G.i = 0.0;
 //   TP2.D.i = if TP2.D.v > TP2.S.v then -TP2.id else TP2.id;
 //   TP2.S.i = if TP2.D.v > TP2.S.v then TP2.id else -TP2.id;
@@ -378,7 +378,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TN1.uds = TN1.ud - TN1.us;
 //   TN1.ubs = if TN1.B.v > TN1.us then 0.0 else TN1.B.v - TN1.us;
 //   TN1.ugst = (TN1.G.v + (TN1.K2 * TN1.ubs + ((-TN1.Vt) - TN1.us))) * TN1.K5;
-//   TN1.id = if TN1.ugst <= 0.0 then TN1.uds * TN1.gds else if TN1.ugst > TN1.uds then TN1.v * (TN1.uds * (TN1.ugst - TN1.uds / 2.0)) + TN1.uds * TN1.gds else (TN1.v * TN1.ugst ^ 2.0) / 2.0 + TN1.uds * TN1.gds;
+//   TN1.id = if TN1.ugst <= 0.0 then TN1.uds * TN1.gds else if TN1.ugst > TN1.uds then TN1.v * (TN1.uds * (TN1.ugst + (-TN1.uds) / 2.0)) + TN1.uds * TN1.gds else (TN1.v * TN1.ugst ^ 2.0) / 2.0 + TN1.uds * TN1.gds;
 //   TN1.G.i = 0.0;
 //   TN1.D.i = if TN1.D.v < TN1.S.v then -TN1.id else TN1.id;
 //   TN1.S.i = if TN1.D.v < TN1.S.v then TN1.id else -TN1.id;
@@ -392,7 +392,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   TN2.uds = TN2.ud - TN2.us;
 //   TN2.ubs = if TN2.B.v > TN2.us then 0.0 else TN2.B.v - TN2.us;
 //   TN2.ugst = (TN2.G.v + (TN2.K2 * TN2.ubs + ((-TN2.Vt) - TN2.us))) * TN2.K5;
-//   TN2.id = if TN2.ugst <= 0.0 then TN2.uds * TN2.gds else if TN2.ugst > TN2.uds then TN2.v * (TN2.uds * (TN2.ugst - TN2.uds / 2.0)) + TN2.uds * TN2.gds else (TN2.v * TN2.ugst ^ 2.0) / 2.0 + TN2.uds * TN2.gds;
+//   TN2.id = if TN2.ugst <= 0.0 then TN2.uds * TN2.gds else if TN2.ugst > TN2.uds then TN2.v * (TN2.uds * (TN2.ugst + (-TN2.uds) / 2.0)) + TN2.uds * TN2.gds else (TN2.v * TN2.ugst ^ 2.0) / 2.0 + TN2.uds * TN2.gds;
 //   TN2.G.i = 0.0;
 //   TN2.D.i = if TN2.D.v < TN2.S.v then -TN2.id else TN2.id;
 //   TN2.S.i = if TN2.D.v < TN2.S.v then TN2.id else -TN2.id;
@@ -563,7 +563,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real opAmp.v_out(quantity = \"ElectricPotential\", unit = \"V\");
 //   Real opAmp.i_out(quantity = \"ElectricCurrent\", unit = \"A\");
 //   final parameter Real opAmp.I1(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib + opAmp.Ios / 2.0;
-//   final parameter Real opAmp.I2(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib - opAmp.Ios / 2.0;
+//   final parameter Real opAmp.I2(quantity = \"ElectricCurrent\", unit = \"A\") = opAmp.Ib + (-opAmp.Ios) / 2.0;
 //   final parameter Real opAmp.vcp_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcp);
 //   final parameter Real opAmp.vcm_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(opAmp.vcm);
 //   final parameter Real opAmp.Avd0_val = 10.0 ^ (opAmp.Avd0 / 20.0) \"differential mode gain\";
@@ -653,8 +653,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   opAmp.v_pos = opAmp.p_supply.v;
 //   opAmp.v_neg = opAmp.m_supply.v;
 //   opAmp.p.i = opAmp.i_vos;
-//   opAmp.m.i = opAmp.i_4 - opAmp.i_r2 - opAmp.i_c3;
-//   0.0 = opAmp.i_3 + (opAmp.i_r2 + opAmp.i_c3) - opAmp.i_vos;
+//   opAmp.m.i = opAmp.i_4 + ((-opAmp.i_r2) - opAmp.i_c3);
+//   0.0 = opAmp.i_3 + (opAmp.i_r2 + (opAmp.i_c3 - opAmp.i_vos));
 //   opAmp.p.v - opAmp.m.v = opAmp.v_vos + opAmp.v_in;
 //   opAmp.v_4 = opAmp.m.v;
 //   opAmp.v_3 = opAmp.p.v - opAmp.v_vos;
@@ -953,7 +953,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = riseTimeConst) \"Fall time constant\";
 // equation
 //   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime + signalSource.startTime - time) / signalSource.fallTimeConst));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1085,7 +1085,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   signalSource.counter2 = pre(signalSource.counter);
 //   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + (signalSource.T_falling - time)) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1122,7 +1122,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // algorithm
 //   next := last;
 //   nextEvent := t - TimeEps * abs(t);
-//   tp := (t + TimeEps * abs(t)) - startTime;
+//   tp := t + TimeEps * abs(t) - startTime;
 //   if tp < 0.0 then
 //     nextEvent := startTime;
 //     a := 0.0;
@@ -1137,14 +1137,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     if next < nrow then
 //       nextEvent := startTime + table[next,1];
 //     end if;
-//     next0 := next - 1;
+//     next0 := next + -1;
 //     dt := table[next,1] - table[next0,1];
 //     if dt <= TimeEps * abs(table[next,1]) then
 //       a := 0.0;
 //       b := offset + table[next,columns];
 //     else
 //       a := (table[next,columns] - table[next0,columns]) / dt;
-//       b := (offset + table[next0,columns]) - a * table[next0,1];
+//       b := offset + table[next0,columns] - a * table[next0,1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;
@@ -1407,7 +1407,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real fallTimeConst(quantity = \"Time\", unit = \"s\", min = 1e-60, start = riseTimeConst) \"Fall time constant\";
 // equation
 //   signalSource.y_riseTime = signalSource.outMax * (1.0 - exp((-signalSource.riseTime) / signalSource.riseTimeConst));
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime - (time - signalSource.startTime)) / signalSource.fallTimeConst));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else if time < signalSource.startTime + signalSource.riseTime then signalSource.outMax * (1.0 - exp((signalSource.startTime - time) / signalSource.riseTimeConst)) else signalSource.y_riseTime * exp((signalSource.riseTime + signalSource.startTime - time) / signalSource.fallTimeConst));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1539,7 +1539,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   signalSource.counter2 = pre(signalSource.counter);
 //   signalSource.counter = pre(signalSource.counter) - (if pre(signalSource.counter) > 0 then 1 else 0);
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + signalSource.T_falling - time) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime or signalSource.counter2 == 0 or time >= signalSource.T0 + signalSource.T_falling then 0.0 else if time < signalSource.T0 + signalSource.T_rising then ((time - signalSource.T0) * signalSource.amplitude) / signalSource.T_rising else if time < signalSource.T0 + signalSource.T_width then signalSource.amplitude else ((signalSource.T0 + (signalSource.T_falling - time)) * signalSource.amplitude) / (signalSource.T_falling - signalSource.T_width));
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1576,7 +1576,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // algorithm
 //   next := last;
 //   nextEvent := t - TimeEps * abs(t);
-//   tp := (t + TimeEps * abs(t)) - startTime;
+//   tp := t + TimeEps * abs(t) - startTime;
 //   if tp < 0.0 then
 //     nextEvent := startTime;
 //     a := 0.0;
@@ -1591,14 +1591,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //     if next < nrow then
 //       nextEvent := startTime + table[next,1];
 //     end if;
-//     next0 := next - 1;
+//     next0 := next + -1;
 //     dt := table[next,1] - table[next0,1];
 //     if dt <= TimeEps * abs(table[next,1]) then
 //       a := 0.0;
 //       b := offset + table[next,columns];
 //     else
 //       a := (table[next,columns] - table[next0,columns]) / dt;
-//       b := (offset + table[next0,columns]) - a * table[next0,1];
+//       b := offset + table[next0,columns] - a * table[next0,1];
 //     end if;
 //   end if;
 //   b := b - a * startTime;
@@ -5228,32 +5228,32 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // algorithm
 //   for s in 1:s[1].inductance.N loop
 //     for z in 1:s[1].inductance.N loop
-//       s.inductance.Lm[1,z,s] := if z >= s then s[1].inductance.L[(s - 1) * s[1].inductance.N + z - div((s - 1) * s,2)] else s[1].inductance.Lm[s,z];
+//       s.inductance.Lm[1,z,s] := if z >= s then s[1].inductance.L[(-1 + s) * s[1].inductance.N + (z - div((-1 + s) * s,2))] else s[1].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[2].inductance.N loop
 //     for z in 1:s[2].inductance.N loop
-//       s.inductance.Lm[2,z,s] := if z >= s then s[2].inductance.L[(s - 1) * s[2].inductance.N + z - div((s - 1) * s,2)] else s[2].inductance.Lm[s,z];
+//       s.inductance.Lm[2,z,s] := if z >= s then s[2].inductance.L[(-1 + s) * s[2].inductance.N + (z - div((-1 + s) * s,2))] else s[2].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[3].inductance.N loop
 //     for z in 1:s[3].inductance.N loop
-//       s.inductance.Lm[3,z,s] := if z >= s then s[3].inductance.L[(s - 1) * s[3].inductance.N + z - div((s - 1) * s,2)] else s[3].inductance.Lm[s,z];
+//       s.inductance.Lm[3,z,s] := if z >= s then s[3].inductance.L[(-1 + s) * s[3].inductance.N + (z - div((-1 + s) * s,2))] else s[3].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s[4].inductance.N loop
 //     for z in 1:s[4].inductance.N loop
-//       s.inductance.Lm[4,z,s] := if z >= s then s[4].inductance.L[(s - 1) * s[4].inductance.N + z - div((s - 1) * s,2)] else s[4].inductance.Lm[s,z];
+//       s.inductance.Lm[4,z,s] := if z >= s then s[4].inductance.L[(-1 + s) * s[4].inductance.N + (z - div((-1 + s) * s,2))] else s[4].inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s_first.inductance.N loop
 //     for z in 1:s_first.inductance.N loop
-//       s_first.inductance.Lm[z,s] := if z >= s then s_first.inductance.L[(s - 1) * s_first.inductance.N + z - div((s - 1) * s,2)] else s_first.inductance.Lm[s,z];
+//       s_first.inductance.Lm[z,s] := if z >= s then s_first.inductance.L[(-1 + s) * s_first.inductance.N + (z - div((-1 + s) * s,2))] else s_first.inductance.Lm[s,z];
 //     end for;
 //   end for;
 //   for s in 1:s_last.inductance.N loop
 //     for z in 1:s_last.inductance.N loop
-//       s_last.inductance.Lm[z,s] := if z >= s then s_last.inductance.L[(s - 1) * s_last.inductance.N + z - div((s - 1) * s,2)] else s_last.inductance.Lm[s,z];
+//       s_last.inductance.Lm[z,s] := if z >= s then s_last.inductance.L[(-1 + s) * s_last.inductance.N + (z - div((-1 + s) * s,2))] else s_last.inductance.Lm[s,z];
 //     end for;
 //   end for;
 // end Modelica.Electrical.Analog.Lines.M_OLine;
@@ -5947,7 +5947,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   Real v_out(quantity = \"ElectricPotential\", unit = \"V\");
 //   Real i_out(quantity = \"ElectricCurrent\", unit = \"A\");
 //   final parameter Real I1(quantity = \"ElectricCurrent\", unit = \"A\") = Ib + Ios / 2.0;
-//   final parameter Real I2(quantity = \"ElectricCurrent\", unit = \"A\") = Ib - Ios / 2.0;
+//   final parameter Real I2(quantity = \"ElectricCurrent\", unit = \"A\") = Ib + (-Ios) / 2.0;
 //   final parameter Real vcp_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(vcp);
 //   final parameter Real vcm_abs(quantity = \"ElectricPotential\", unit = \"V\") = abs(vcm);
 //   final parameter Real Avd0_val = 10.0 ^ (Avd0 / 20.0) \"differential mode gain\";
@@ -5961,8 +5961,8 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   v_pos = p_supply.v;
 //   v_neg = m_supply.v;
 //   p.i = i_vos;
-//   m.i = i_4 - i_r2 - i_c3;
-//   0.0 = i_3 + (i_r2 + i_c3) - i_vos;
+//   m.i = i_4 + ((-i_r2) - i_c3);
+//   0.0 = i_3 + (i_r2 + (i_c3 - i_vos));
 //   p.v - m.v = v_vos + v_in;
 //   v_4 = m.v;
 //   v_3 = p.v - v_vos;

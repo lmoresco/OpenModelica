@@ -19,10 +19,10 @@ end StringReal;
 
 // Result:
 // class StringReal
-// String s1;
-// String s2;
-// Real r;
-// String s3;
+//   String s1;
+//   String s2;
+//   Real r;
+//   String s3;
 // equation
 //   s1 = "111.222";
 //   s2 = "3.14159265";

@@ -17,7 +17,7 @@ end DiscreteDeclConnector;
 
 // Result:
 // class DiscreteDeclConnector
-// discrete Real dc.r;
+//   discrete Real dc.r;
 // equation
 //   dc.r = 1.0;
 // end DiscreteDeclConnector;

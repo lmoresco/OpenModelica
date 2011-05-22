@@ -11,6 +11,6 @@ end FlowDeclType;
 
 // Result:
 // class FlowDeclType
-// Real rFlow = 1.0;
+//   Real rFlow = 1.0;
 // end FlowDeclType;
 // endResult

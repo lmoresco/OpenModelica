@@ -45,7 +45,7 @@ getErrorString();
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
-//   Kelvin := Celsius - -273.15;
+//   Kelvin := Celsius + 273.15;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Electrical.Analog.Examples.HeatingRectifier
@@ -128,8 +128,8 @@ getErrorString();
 //   assert(HeatingDiode1.heatPort.T > 0.0,\"temperature must be positive\");
 //   HeatingDiode1.htemp = HeatingDiode1.heatPort.T;
 //   HeatingDiode1.vt_t = (HeatingDiode1.k * HeatingDiode1.htemp) / HeatingDiode1.q;
-//   HeatingDiode1.id = Modelica.Electrical.Analog.Semiconductors.exlin(HeatingDiode1.v / (HeatingDiode1.vt_t * HeatingDiode1.N),HeatingDiode1.Maxexp) - 1.0;
-//   HeatingDiode1.aux = ((HeatingDiode1.htemp / HeatingDiode1.TNOM - 1.0) * HeatingDiode1.EG) / (HeatingDiode1.vt_t * HeatingDiode1.N);
+//   HeatingDiode1.id = Modelica.Electrical.Analog.Semiconductors.exlin(HeatingDiode1.v / (HeatingDiode1.vt_t * HeatingDiode1.N),HeatingDiode1.Maxexp) + -1.0;
+//   HeatingDiode1.aux = ((-1.0 + HeatingDiode1.htemp / HeatingDiode1.TNOM) * HeatingDiode1.EG) / (HeatingDiode1.vt_t * HeatingDiode1.N);
 //   HeatingDiode1.auxp = exp(HeatingDiode1.aux);
 //   HeatingDiode1.i = HeatingDiode1.Ids * (HeatingDiode1.id * (Modelica.Electrical.Analog.Semiconductors.pow(HeatingDiode1.htemp / HeatingDiode1.TNOM,HeatingDiode1.XTI / HeatingDiode1.N) * HeatingDiode1.auxp)) + HeatingDiode1.v / HeatingDiode1.R;
 //   HeatingDiode1.heatPort.Q_flow = (-HeatingDiode1.i) * HeatingDiode1.v;

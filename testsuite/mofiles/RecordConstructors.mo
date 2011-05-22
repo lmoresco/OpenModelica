@@ -17,12 +17,12 @@ end RecordConstructors;
 
 // Result:
 // function TestRecord "Automatically generated record constructor for TestRecord"
-// input Integer i;
-// output TestRecord res;
+//   input Integer i;
+//   output TestRecord res;
 // end TestRecord;
 // 
 // class RecordConstructors
-// Integer tr.i;
+//   Integer tr.i;
 // equation
 //   tr.i = 1;
 // end RecordConstructors;

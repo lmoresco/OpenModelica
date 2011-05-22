@@ -15,13 +15,13 @@ end Array9;
 
 // Result:
 // class Array9
-// Integer a[1] = 3;
-// Integer a[2] = 4;
-// Integer a[3] = 5;
-// parameter Integer b[1] = 3;
-// parameter Integer b[2] = 2;
-// Real c[1];
-// Real c[2];
+//   Integer a[1] = 3;
+//   Integer a[2] = 4;
+//   Integer a[3] = 5;
+//   parameter Integer b[1] = 3;
+//   parameter Integer b[2] = 2;
+//   Real c[1];
+//   Real c[2];
 // algorithm
 //   a[1] := 1;
 // end Array9;

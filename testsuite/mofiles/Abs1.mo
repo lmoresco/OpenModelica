@@ -14,8 +14,8 @@ end Abs1;
 
 // Result:
 // class Abs1
-// Real x;
-// Real y;
+//   Real x;
+//   Real y;
 // equation
 //   x = abs(x - y);
 // end Abs1;

@@ -53,7 +53,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
-//       i := i - 1;
+//       i := i + -1;
 //     end if;
 //     u1 := table[i,1];
 //     u2 := table[1 + i,1];
@@ -74,7 +74,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   output Real[nTable, 2] table \"Friction table\";
 // algorithm
 //   for i in 1:nTable loop
-//     table[i,1] := (v_max * /*REAL*/(i - 1)) / /*REAL*/(nTable - 1);
+//     table[i,1] := (v_max * /*REAL*/(i + -1)) / /*REAL*/(nTable + -1);
 //     table[i,2] := F_Coulomb + F_prop * table[i,1] + F_Stribeck * exp(-fexp * table[i,1]);
 //   end for;
 // end Modelica.Mechanics.Translational.Examples.Utilities.GenerateStribeckFrictionTable;
@@ -114,7 +114,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   parameter Real stop1.F_Coulomb(quantity = \"Force\", unit = \"N\", start = 5.0) = 5.0 \"Constant friction: Coulomb force\";
 //   parameter Real stop1.F_Stribeck(quantity = \"Force\", unit = \"N\", start = 10.0) = 10.0 \"Stribeck effect\";
 //   parameter Real stop1.fexp(unit = \"s/m\", min = 0.0, start = 2.0) = 2.0 \"Exponential decay\";
-//   Integer stop1.stopped = if stop1.s <= stop1.smin + stop1.L / 2.0 then -1 else if stop1.s >= stop1.smax - stop1.L / 2.0 then 1 else 0;
+//   Integer stop1.stopped = if stop1.s <= stop1.smin + stop1.L / 2.0 then -1 else if stop1.s >= stop1.smax + (-stop1.L) / 2.0 then 1 else 0;
 //   parameter Boolean force.useSupport = false \"= true, if support flange enabled, otherwise implicitly grounded\";
 //   Real force.s(quantity = \"Length\", unit = \"m\") = force.flange.s - force.s_support \"distance between flange and support (= flange.s - support.s)\";
 //   Real force.flange.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
@@ -162,7 +162,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   parameter Real stop2.F_Coulomb(quantity = \"Force\", unit = \"N\", start = 5.0) = 3.0 \"Constant friction: Coulomb force\";
 //   parameter Real stop2.F_Stribeck(quantity = \"Force\", unit = \"N\", start = 10.0) = 5.0 \"Stribeck effect\";
 //   parameter Real stop2.fexp(unit = \"s/m\", min = 0.0, start = 2.0) = 2.0 \"Exponential decay\";
-//   Integer stop2.stopped = if stop2.s <= stop2.smin + stop2.L / 2.0 then -1 else if stop2.s >= stop2.smax - stop2.L / 2.0 then 1 else 0;
+//   Integer stop2.stopped = if stop2.s <= stop2.smin + stop2.L / 2.0 then -1 else if stop2.s >= stop2.smax + (-stop2.L) / 2.0 then 1 else 0;
 //   Real spring.flange_a.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
 //   Real spring.flange_a.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   Real spring.flange_b.s(quantity = \"Length\", unit = \"m\") \"absolute position of flange\";
@@ -324,38 +324,38 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 // equation
 //   stop1.f0 = stop1.F_Coulomb + stop1.F_Stribeck;
 //   stop1.f0_max = 1.001 * stop1.f0;
-//   stop1.free = stop1.f0 <= 0.0 and stop1.F_prop <= 0.0 and stop1.s > stop1.smin + stop1.L / 2.0 and stop1.s < stop1.smax - stop1.L / 2.0;
+//   stop1.free = stop1.f0 <= 0.0 and stop1.F_prop <= 0.0 and stop1.s > stop1.smin + stop1.L / 2.0 and stop1.s < stop1.smax + (-stop1.L) / 2.0;
 //   stop1.v = der(stop1.s);
 //   stop1.a = der(stop1.v);
 //   stop1.v_relfric = stop1.v;
 //   stop1.a_relfric = stop1.a;
-//   0.0 = stop1.flange_a.f + stop1.flange_b.f - stop1.f - stop1.m * der(stop1.v);
-//   stop1.f = if stop1.locked then stop1.sa else if stop1.free then 0.0 else if stop1.startForward then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck) else if stop1.startBackward then stop1.F_prop * stop1.v - stop1.F_Coulomb - stop1.F_Stribeck else if pre(stop1.mode) == 1 then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v))) else stop1.F_prop * stop1.v - stop1.F_Coulomb - stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v));
-//   stop1.mode = if stop1.free then 2 else if (pre(stop1.mode) == 1 or pre(stop1.mode) == 2 or stop1.startForward) and stop1.v_relfric > 0.0 and stop1.s < stop1.smax - stop1.L / 2.0 then 1 else if (pre(stop1.mode) == -1 or pre(stop1.mode) == 2 or stop1.startBackward) and stop1.v_relfric < 0.0 and stop1.s > stop1.smin + stop1.L / 2.0 then -1 else 0;
+//   0.0 = stop1.flange_a.f + (stop1.flange_b.f + ((-stop1.f) - stop1.m * der(stop1.v)));
+//   stop1.f = if stop1.locked then stop1.sa else if stop1.free then 0.0 else if stop1.startForward then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck) else if stop1.startBackward then stop1.F_prop * stop1.v + ((-stop1.F_Coulomb) - stop1.F_Stribeck) else if pre(stop1.mode) == 1 then stop1.F_prop * stop1.v + (stop1.F_Coulomb + stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v))) else stop1.F_prop * stop1.v + ((-stop1.F_Coulomb) - stop1.F_Stribeck * exp((-stop1.fexp) * abs(stop1.v)));
+//   stop1.mode = if stop1.free then 2 else if (pre(stop1.mode) == 1 or pre(stop1.mode) == 2 or stop1.startForward) and stop1.v_relfric > 0.0 and stop1.s < stop1.smax + (-stop1.L) / 2.0 then 1 else if (pre(stop1.mode) == -1 or pre(stop1.mode) == 2 or stop1.startBackward) and stop1.v_relfric < 0.0 and stop1.s > stop1.smin + stop1.L / 2.0 then -1 else 0;
 //   stop1.a_relfric = if stop1.locked then 0.0 else if stop1.free then stop1.sa else if stop1.startForward then stop1.sa - stop1.f0_max else if stop1.startBackward then stop1.sa + stop1.f0_max else if pre(stop1.mode) == 1 then stop1.sa - stop1.f0_max else stop1.sa + stop1.f0_max;
-//   stop1.locked =  not stop1.free and  not (pre(stop1.mode) == 1 or stop1.startForward or pre(stop1.mode) == -1 or stop1.startBackward);
+//   stop1.locked = not stop1.free and not (pre(stop1.mode) == 1 or stop1.startForward or pre(stop1.mode) == -1 or stop1.startBackward);
 //   stop1.startBackward = pre(stop1.mode) == 0 and (stop1.sa < -stop1.f0_max and stop1.s > stop1.smin + stop1.L / 2.0 or pre(stop1.startBackward) and stop1.sa < -stop1.f0 and stop1.s > stop1.smin + stop1.L / 2.0) or pre(stop1.mode) == 1 and stop1.v_relfric < -stop1.v_small or initial() and stop1.v_relfric < 0.0;
-//   stop1.startForward = pre(stop1.mode) == 0 and (stop1.sa > stop1.f0_max and stop1.s < stop1.smax - stop1.L / 2.0 or pre(stop1.startForward) and stop1.sa > stop1.f0 and stop1.s < stop1.smax - stop1.L / 2.0) or pre(stop1.mode) == -1 and stop1.v_relfric > stop1.v_small or initial() and stop1.v_relfric > 0.0;
-//   stop1.flange_a.s = stop1.s - stop1.L / 2.0;
+//   stop1.startForward = pre(stop1.mode) == 0 and (stop1.sa > stop1.f0_max and stop1.s < stop1.smax + (-stop1.L) / 2.0 or pre(stop1.startForward) and stop1.sa > stop1.f0 and stop1.s < stop1.smax + (-stop1.L) / 2.0) or pre(stop1.mode) == -1 and stop1.v_relfric > stop1.v_small or initial() and stop1.v_relfric > 0.0;
+//   stop1.flange_a.s = stop1.s + (-stop1.L) / 2.0;
 //   stop1.flange_b.s = stop1.s + stop1.L / 2.0;
 //   force.flange.f = -force.f;
 //   force.s_support = 0.0;
 //   sineForce.y = sineForce.offset + (if time < sineForce.startTime then 0.0 else sineForce.amplitude * sin(6.28318530717959 * (sineForce.freqHz * (time - sineForce.startTime)) + sineForce.phase));
 //   stop2.f0 = stop2.F_Coulomb + stop2.F_Stribeck;
 //   stop2.f0_max = 1.001 * stop2.f0;
-//   stop2.free = stop2.f0 <= 0.0 and stop2.F_prop <= 0.0 and stop2.s > stop2.smin + stop2.L / 2.0 and stop2.s < stop2.smax - stop2.L / 2.0;
+//   stop2.free = stop2.f0 <= 0.0 and stop2.F_prop <= 0.0 and stop2.s > stop2.smin + stop2.L / 2.0 and stop2.s < stop2.smax + (-stop2.L) / 2.0;
 //   stop2.v = der(stop2.s);
 //   stop2.a = der(stop2.v);
 //   stop2.v_relfric = stop2.v;
 //   stop2.a_relfric = stop2.a;
-//   0.0 = stop2.flange_a.f + stop2.flange_b.f - stop2.f - stop2.m * der(stop2.v);
-//   stop2.f = if stop2.locked then stop2.sa else if stop2.free then 0.0 else if stop2.startForward then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck) else if stop2.startBackward then stop2.F_prop * stop2.v - stop2.F_Coulomb - stop2.F_Stribeck else if pre(stop2.mode) == 1 then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v))) else stop2.F_prop * stop2.v - stop2.F_Coulomb - stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v));
-//   stop2.mode = if stop2.free then 2 else if (pre(stop2.mode) == 1 or pre(stop2.mode) == 2 or stop2.startForward) and stop2.v_relfric > 0.0 and stop2.s < stop2.smax - stop2.L / 2.0 then 1 else if (pre(stop2.mode) == -1 or pre(stop2.mode) == 2 or stop2.startBackward) and stop2.v_relfric < 0.0 and stop2.s > stop2.smin + stop2.L / 2.0 then -1 else 0;
+//   0.0 = stop2.flange_a.f + (stop2.flange_b.f + ((-stop2.f) - stop2.m * der(stop2.v)));
+//   stop2.f = if stop2.locked then stop2.sa else if stop2.free then 0.0 else if stop2.startForward then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck) else if stop2.startBackward then stop2.F_prop * stop2.v + ((-stop2.F_Coulomb) - stop2.F_Stribeck) else if pre(stop2.mode) == 1 then stop2.F_prop * stop2.v + (stop2.F_Coulomb + stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v))) else stop2.F_prop * stop2.v + ((-stop2.F_Coulomb) - stop2.F_Stribeck * exp((-stop2.fexp) * abs(stop2.v)));
+//   stop2.mode = if stop2.free then 2 else if (pre(stop2.mode) == 1 or pre(stop2.mode) == 2 or stop2.startForward) and stop2.v_relfric > 0.0 and stop2.s < stop2.smax + (-stop2.L) / 2.0 then 1 else if (pre(stop2.mode) == -1 or pre(stop2.mode) == 2 or stop2.startBackward) and stop2.v_relfric < 0.0 and stop2.s > stop2.smin + stop2.L / 2.0 then -1 else 0;
 //   stop2.a_relfric = if stop2.locked then 0.0 else if stop2.free then stop2.sa else if stop2.startForward then stop2.sa - stop2.f0_max else if stop2.startBackward then stop2.sa + stop2.f0_max else if pre(stop2.mode) == 1 then stop2.sa - stop2.f0_max else stop2.sa + stop2.f0_max;
-//   stop2.locked =  not stop2.free and  not (pre(stop2.mode) == 1 or stop2.startForward or pre(stop2.mode) == -1 or stop2.startBackward);
+//   stop2.locked = not stop2.free and not (pre(stop2.mode) == 1 or stop2.startForward or pre(stop2.mode) == -1 or stop2.startBackward);
 //   stop2.startBackward = pre(stop2.mode) == 0 and (stop2.sa < -stop2.f0_max and stop2.s > stop2.smin + stop2.L / 2.0 or pre(stop2.startBackward) and stop2.sa < -stop2.f0 and stop2.s > stop2.smin + stop2.L / 2.0) or pre(stop2.mode) == 1 and stop2.v_relfric < -stop2.v_small or initial() and stop2.v_relfric < 0.0;
-//   stop2.startForward = pre(stop2.mode) == 0 and (stop2.sa > stop2.f0_max and stop2.s < stop2.smax - stop2.L / 2.0 or pre(stop2.startForward) and stop2.sa > stop2.f0 and stop2.s < stop2.smax - stop2.L / 2.0) or pre(stop2.mode) == -1 and stop2.v_relfric > stop2.v_small or initial() and stop2.v_relfric > 0.0;
-//   stop2.flange_a.s = stop2.s - stop2.L / 2.0;
+//   stop2.startForward = pre(stop2.mode) == 0 and (stop2.sa > stop2.f0_max and stop2.s < stop2.smax + (-stop2.L) / 2.0 or pre(stop2.startForward) and stop2.sa > stop2.f0 and stop2.s < stop2.smax + (-stop2.L) / 2.0) or pre(stop2.mode) == -1 and stop2.v_relfric > stop2.v_small or initial() and stop2.v_relfric > 0.0;
+//   stop2.flange_a.s = stop2.s + (-stop2.L) / 2.0;
 //   stop2.flange_b.s = stop2.s + stop2.L / 2.0;
 //   spring.f = spring.c * (spring.s_rel - spring.s_rel0);
 //   spring.s_rel = spring.flange_b.s - spring.flange_a.s;
@@ -367,7 +367,7 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   mass.v = der(mass.s);
 //   mass.a = der(mass.v);
 //   mass.m * mass.a = mass.flange_a.f + mass.flange_b.f;
-//   mass.flange_a.s = mass.s - mass.L / 2.0;
+//   mass.flange_a.s = mass.s + (-mass.L) / 2.0;
 //   mass.flange_b.s = mass.s + mass.L / 2.0;
 //   supportFriction.f0 = Modelica.Math.tempInterpol1(0.0,supportFriction.f_pos,2);
 //   supportFriction.f0_max = supportFriction.peak * supportFriction.f0;
@@ -378,12 +378,12 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 //   supportFriction.a = der(supportFriction.v);
 //   supportFriction.v_relfric = supportFriction.v;
 //   supportFriction.a_relfric = supportFriction.a;
-//   supportFriction.flange_a.f + supportFriction.flange_b.f - supportFriction.f = 0.0;
+//   supportFriction.flange_a.f + (supportFriction.flange_b.f - supportFriction.f) = 0.0;
 //   supportFriction.f = if supportFriction.locked then supportFriction.sa else if supportFriction.startForward then Modelica.Math.tempInterpol1(supportFriction.v,supportFriction.f_pos,2) else if supportFriction.startBackward then -Modelica.Math.tempInterpol1(-supportFriction.v,supportFriction.f_pos,2) else if pre(supportFriction.mode) == 1 then Modelica.Math.tempInterpol1(supportFriction.v,supportFriction.f_pos,2) else -Modelica.Math.tempInterpol1(-supportFriction.v,supportFriction.f_pos,2);
 //   supportFriction.s_support = 0.0;
 //   supportFriction.startForward = pre(supportFriction.mode) == 0 and (supportFriction.sa > supportFriction.f0_max or pre(supportFriction.startForward) and supportFriction.sa > supportFriction.f0) or pre(supportFriction.mode) == -1 and supportFriction.v_relfric > supportFriction.v_small or initial() and supportFriction.v_relfric > 0.0;
 //   supportFriction.startBackward = pre(supportFriction.mode) == 0 and (supportFriction.sa < -supportFriction.f0_max or pre(supportFriction.startBackward) and supportFriction.sa < -supportFriction.f0) or pre(supportFriction.mode) == 1 and supportFriction.v_relfric < -supportFriction.v_small or initial() and supportFriction.v_relfric < 0.0;
-//   supportFriction.locked =  not supportFriction.free and  not (pre(supportFriction.mode) == 1 or supportFriction.startForward or pre(supportFriction.mode) == -1 or supportFriction.startBackward);
+//   supportFriction.locked = not supportFriction.free and not (pre(supportFriction.mode) == 1 or supportFriction.startForward or pre(supportFriction.mode) == -1 or supportFriction.startBackward);
 //   supportFriction.a_relfric = if supportFriction.locked then 0.0 else if supportFriction.free then supportFriction.sa else if supportFriction.startForward then supportFriction.sa - supportFriction.f0_max else if supportFriction.startBackward then supportFriction.sa + supportFriction.f0_max else if pre(supportFriction.mode) == 1 then supportFriction.sa - supportFriction.f0_max else supportFriction.sa + supportFriction.f0_max;
 //   supportFriction.mode = if supportFriction.free then 2 else if (pre(supportFriction.mode) == 1 or pre(supportFriction.mode) == 2 or supportFriction.startForward) and supportFriction.v_relfric > 0.0 then 1 else if (pre(supportFriction.mode) == -1 or pre(supportFriction.mode) == 2 or supportFriction.startBackward) and supportFriction.v_relfric < 0.0 then -1 else 0;
 //   force.f = force2.f;
@@ -404,21 +404,21 @@ checkModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString()
 // algorithm
 //   when initial() then
 //     assert(stop1.s > stop1.smin + stop1.L / 2.0 or stop1.s >= stop1.smin + stop1.L / 2.0 and stop1.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
-//     assert(stop1.s < stop1.smax - stop1.L / 2.0 or stop1.s <= stop1.smax - stop1.L / 2.0 and stop1.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
+//     assert(stop1.s < stop1.smax + (-stop1.L) / 2.0 or stop1.s <= stop1.smax + (-stop1.L) / 2.0 and stop1.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
 //   end when;
 //   when stop1.stopped <> 0 then
-//     reinit(stop1.s, if stop1.stopped < 0 then stop1.smin + stop1.L / 2.0 else stop1.smax - stop1.L / 2.0);
-//     if  not initial() or Real(stop1.stopped) * stop1.v > 0.0 then
+//     reinit(stop1.s, if stop1.stopped < 0 then stop1.smin + stop1.L / 2.0 else stop1.smax + (-stop1.L) / 2.0);
+//     if not initial() or Real(stop1.stopped) * stop1.v > 0.0 then
 //       reinit(stop1.v, 0.0);
 //     end if;
 //   end when;
 //   when initial() then
 //     assert(stop2.s > stop2.smin + stop2.L / 2.0 or stop2.s >= stop2.smin + stop2.L / 2.0 and stop2.v >= 0.0, \"Error in initialization of hard stop. (s - L/2) must be >= smin \");
-//     assert(stop2.s < stop2.smax - stop2.L / 2.0 or stop2.s <= stop2.smax - stop2.L / 2.0 and stop2.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
+//     assert(stop2.s < stop2.smax + (-stop2.L) / 2.0 or stop2.s <= stop2.smax + (-stop2.L) / 2.0 and stop2.v <= 0.0, \"Error in initialization of hard stop. (s + L/2) must be <= smax \");
 //   end when;
 //   when stop2.stopped <> 0 then
-//     reinit(stop2.s, if stop2.stopped < 0 then stop2.smin + stop2.L / 2.0 else stop2.smax - stop2.L / 2.0);
-//     if  not initial() or Real(stop2.stopped) * stop2.v > 0.0 then
+//     reinit(stop2.s, if stop2.stopped < 0 then stop2.smin + stop2.L / 2.0 else stop2.smax + (-stop2.L) / 2.0);
+//     if not initial() or Real(stop2.stopped) * stop2.v > 0.0 then
 //       reinit(stop2.v, 0.0);
 //     end if;
 //   end when;

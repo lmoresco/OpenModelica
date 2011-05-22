@@ -13,6 +13,6 @@ end Type5;
 
 // Result:
 // class Type5
-// Real v(unit = "V");
+//   Real v(unit = "V");
 // end Type5;
 // endResult

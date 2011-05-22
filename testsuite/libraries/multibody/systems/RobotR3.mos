@@ -80,7 +80,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
-//       i := i - 1;
+//       i := i + -1;
 //     end if;
 //     u1 := table[i,1];
 //     u2 := table[1 + i,1];
@@ -652,12 +652,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis.gear.bearingFriction.a = der(axis.gear.bearingFriction.w);
 //   axis.gear.bearingFriction.w_relfric = axis.gear.bearingFriction.w;
 //   axis.gear.bearingFriction.a_relfric = axis.gear.bearingFriction.a;
-//   axis.gear.bearingFriction.flange_a.tau + axis.gear.bearingFriction.flange_b.tau - axis.gear.bearingFriction.tau = 0.0;
+//   axis.gear.bearingFriction.flange_a.tau + (axis.gear.bearingFriction.flange_b.tau - axis.gear.bearingFriction.tau) = 0.0;
 //   axis.gear.bearingFriction.tau = if axis.gear.bearingFriction.locked then axis.gear.bearingFriction.sa else if axis.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis.gear.bearingFriction.w,{{axis.gear.bearingFriction.tau_pos[1,1],axis.gear.bearingFriction.tau_pos[1,2]},{axis.gear.bearingFriction.tau_pos[2,1],axis.gear.bearingFriction.tau_pos[2,2]}},2) else if axis.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis.gear.bearingFriction.w,{{axis.gear.bearingFriction.tau_pos[1,1],axis.gear.bearingFriction.tau_pos[1,2]},{axis.gear.bearingFriction.tau_pos[2,1],axis.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis.gear.bearingFriction.w,{{axis.gear.bearingFriction.tau_pos[1,1],axis.gear.bearingFriction.tau_pos[1,2]},{axis.gear.bearingFriction.tau_pos[2,1],axis.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis.gear.bearingFriction.w,{{axis.gear.bearingFriction.tau_pos[1,1],axis.gear.bearingFriction.tau_pos[1,2]},{axis.gear.bearingFriction.tau_pos[2,1],axis.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis.gear.bearingFriction.phi_support = 0.0;
 //   axis.gear.bearingFriction.startForward = pre(axis.gear.bearingFriction.mode) == 0 and (axis.gear.bearingFriction.sa > axis.gear.bearingFriction.tau0_max or pre(axis.gear.bearingFriction.startForward) and axis.gear.bearingFriction.sa > axis.gear.bearingFriction.tau0) or pre(axis.gear.bearingFriction.mode) == -1 and axis.gear.bearingFriction.w_relfric > axis.gear.bearingFriction.w_small or initial() and axis.gear.bearingFriction.w_relfric > 0.0;
 //   axis.gear.bearingFriction.startBackward = pre(axis.gear.bearingFriction.mode) == 0 and (axis.gear.bearingFriction.sa < -axis.gear.bearingFriction.tau0_max or pre(axis.gear.bearingFriction.startBackward) and axis.gear.bearingFriction.sa < -axis.gear.bearingFriction.tau0) or pre(axis.gear.bearingFriction.mode) == 1 and axis.gear.bearingFriction.w_relfric < -axis.gear.bearingFriction.w_small or initial() and axis.gear.bearingFriction.w_relfric < 0.0;
-//   axis.gear.bearingFriction.locked =  not axis.gear.bearingFriction.free and  not (pre(axis.gear.bearingFriction.mode) == 1 or axis.gear.bearingFriction.startForward or pre(axis.gear.bearingFriction.mode) == -1 or axis.gear.bearingFriction.startBackward);
+//   axis.gear.bearingFriction.locked = not axis.gear.bearingFriction.free and not (pre(axis.gear.bearingFriction.mode) == 1 or axis.gear.bearingFriction.startForward or pre(axis.gear.bearingFriction.mode) == -1 or axis.gear.bearingFriction.startBackward);
 //   axis.gear.bearingFriction.a_relfric = if axis.gear.bearingFriction.locked then 0.0 else if axis.gear.bearingFriction.free then axis.gear.bearingFriction.sa else if axis.gear.bearingFriction.startForward then axis.gear.bearingFriction.sa - axis.gear.bearingFriction.tau0_max else if axis.gear.bearingFriction.startBackward then axis.gear.bearingFriction.sa + axis.gear.bearingFriction.tau0_max else if pre(axis.gear.bearingFriction.mode) == 1 then axis.gear.bearingFriction.sa - axis.gear.bearingFriction.tau0_max else axis.gear.bearingFriction.sa + axis.gear.bearingFriction.tau0_max;
 //   axis.gear.bearingFriction.mode = if axis.gear.bearingFriction.free then 2 else if (pre(axis.gear.bearingFriction.mode) == 1 or pre(axis.gear.bearingFriction.mode) == 2 or axis.gear.bearingFriction.startForward) and axis.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis.gear.bearingFriction.mode) == -1 or pre(axis.gear.bearingFriction.mode) == 2 or axis.gear.bearingFriction.startBackward) and axis.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis.motor.Vs.v = axis.motor.Vs.p.v - axis.motor.Vs.n.v;
@@ -852,8 +852,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
 //   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
-//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) - (pathPlanning.path.sdd_max * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
-//   pathPlanning.path.s3 = pathPlanning.path.s2 + pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 - pathPlanning.path.Tv / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv));
+//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-pathPlanning.path.sdd_max) * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
+//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 + (-pathPlanning.path.Tv) / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv)));
 //   if time < pathPlanning.path.startTime then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -862,11 +862,11 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   if time < pathPlanning.path.Ta1s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.startTime / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max2 - pathPlanning.path.sdd_max * (time - pathPlanning.path.Ta1s);
-//   pathPlanning.path.r_s = pathPlanning.path.s1 + pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.Ta1s / 2.0) * (time - pathPlanning.path.Ta1s));
+//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Ta1s) / 2.0) * (time - pathPlanning.path.Ta1s)));
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -875,7 +875,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Ta2s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.startTime / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
 //   elseif time < pathPlanning.path.Tvs then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max;
@@ -883,7 +883,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max - pathPlanning.path.sdd_max * (time - pathPlanning.path.Tvs);
-//   pathPlanning.path.r_s = pathPlanning.path.s2 + pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.Tvs / 2.0) * (time - pathPlanning.path.Tvs));
+//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Tvs) / 2.0) * (time - pathPlanning.path.Tvs)));
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -1171,7 +1171,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //       while i < n and u >= table[i,1] loop
 //         i := 1 + i;
 //       end while;
-//       i := i - 1;
+//       i := i + -1;
 //     end if;
 //     u1 := table[i,1];
 //     u2 := table[1 + i,1];
@@ -1235,9 +1235,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   protected constant Real p4limit = 0.1;
 //   protected constant Real c4limit = 0.04;
 // algorithm
-//   c1 := (1.0 + T[1,1]) - T[2,2] - T[3,3];
-//   c2 := (1.0 + T[2,2]) - T[1,1] - T[3,3];
-//   c3 := (1.0 + T[3,3]) - T[1,1] - T[2,2];
+//   c1 := 1.0 + T[1,1] + -T[2,2] - T[3,3];
+//   c2 := 1.0 + T[2,2] + -T[1,1] - T[3,3];
+//   c3 := 1.0 + T[3,3] + -T[1,1] - T[2,2];
 //   c4 := 1.0 + T[1,1] + T[2,2] + T[3,3];
 //   if c4 > 0.04 or c4 > c1 and c4 > c2 and c4 > c3 then
 //     paux := sqrt(c4) / 2.0;
@@ -1271,7 +1271,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real[4] Q \"Quaternions orientation object to rotate frame 1 into frame 2\";
 //   output Real[1] residue \"Residue constraint (shall be zero)\";
 // algorithm
-//   residue := {(Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0};
+//   residue := {Q[1] ^ 2.0 + Q[2] ^ 2.0 + Q[3] ^ 2.0 + Q[4] ^ 2.0 + -1.0};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.orientationConstraint;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.TransformationMatrices.axisRotation \"Inline before index reduction\" \"Return rotation object to rotate around one frame axis\"
@@ -1376,7 +1376,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity from frame 2 with respect to frame 1, resolved in frame 2\";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R \"Orientation object to rotate frame 1 into frame 2\";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) - 1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) - 1.0],{w[1],w[2],w[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) + -1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.nullRotation \"Inline before index reduction\" \"Return orientation object that does not rotate a frame\"
@@ -1400,7 +1400,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real[3] v2 \"Vector v resolved in frame 2, i.e., v2 = resolve2(planarRotation(e,angle),v1)\";
 //   output Real angle(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Rotation angle to rotate frame 1 into frame 2 along axis e in the range: -pi <= angle <= pi\";
 // algorithm
-//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],(v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3]) - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
+//   angle := atan2((e[3] * v1[2] - e[2] * v1[3]) * v2[1] + (e[1] * v1[3] - e[3] * v1[1]) * v2[2] + (e[2] * v1[1] - e[1] * v1[2]) * v2[3],v1[1] * v2[1] + v1[2] * v2[2] + v1[3] * v2[3] - (e[1] * v1[1] + e[2] * v1[2] + e[3] * v1[3]) * (e[1] * v2[1] + e[2] * v2[2] + e[3] * v2[3]));
 // end Modelica.Mechanics.MultiBody.Frames.planarRotationAngle;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.resolve1 \"Inline after index reduction\" \"Transform vector from frame 2 to frame 1\"
@@ -1454,13 +1454,13 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   protected Real ysc;
 // algorithm
 //   cc1 := if c1 > 1.0 then 1.0 else if c1 < 0.005 then 0.01 else c1;
-//   yc1 := /*REAL*/(100000 * integer(mod(100.0 * cc1 - 0.5,100.0)));
+//   yc1 := /*REAL*/(100000 * integer(mod(-0.5 + 100.0 * cc1,100.0)));
 //   cc2 := if c2 > 1.0 then 1.0 else if c2 < 0.005 then 0.01 else c2;
-//   yc2 := /*REAL*/(1000 * integer(mod(100.0 * cc2 - 0.5,100.0)));
+//   yc2 := /*REAL*/(1000 * integer(mod(-0.5 + 100.0 * cc2,100.0)));
 //   cc3 := if c3 > 1.0 then 1.0 else if c3 < 0.005 then 0.01 else c3;
-//   yc3 := /*REAL*/(10 * integer(mod(100.0 * cc3 - 0.5,100.0)));
+//   yc3 := /*REAL*/(10 * integer(mod(-0.5 + 100.0 * cc3,100.0)));
 //   csc := if sc > 1.0 then 1.0 else if sc < 0.05 then 0.1 else sc;
-//   ysc := /*REAL*/(integer(mod(10.0 * csc - 0.5,10.0)));
+//   ysc := /*REAL*/(integer(mod(-0.5 + 10.0 * csc,10.0)));
 //   m := yc1 + yc2 + yc3 + ysc;
 // end Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial;
 // 
@@ -9631,8 +9631,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
 //   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
-//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) - (pathPlanning.path.sdd_max * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
-//   pathPlanning.path.s3 = pathPlanning.path.s2 + pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 - pathPlanning.path.Tv / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv));
+//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-pathPlanning.path.sdd_max) * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
+//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 + (-pathPlanning.path.Tv) / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv)));
 //   if time < pathPlanning.path.startTime then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -9641,11 +9641,11 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   if time < pathPlanning.path.Ta1s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.startTime / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max2 - pathPlanning.path.sdd_max * (time - pathPlanning.path.Ta1s);
-//   pathPlanning.path.r_s = pathPlanning.path.s1 + pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.Ta1s / 2.0) * (time - pathPlanning.path.Ta1s));
+//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Ta1s) / 2.0) * (time - pathPlanning.path.Ta1s)));
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -9654,7 +9654,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Ta2s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.startTime / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
 //   elseif time < pathPlanning.path.Tvs then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max;
@@ -9662,7 +9662,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max - pathPlanning.path.sdd_max * (time - pathPlanning.path.Tvs);
-//   pathPlanning.path.r_s = pathPlanning.path.s2 + pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 - pathPlanning.path.Tvs / 2.0) * (time - pathPlanning.path.Tvs));
+//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Tvs) / 2.0) * (time - pathPlanning.path.Tvs)));
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -9745,12 +9745,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis1.gear.bearingFriction.a = der(axis1.gear.bearingFriction.w);
 //   axis1.gear.bearingFriction.w_relfric = axis1.gear.bearingFriction.w;
 //   axis1.gear.bearingFriction.a_relfric = axis1.gear.bearingFriction.a;
-//   axis1.gear.bearingFriction.flange_a.tau + axis1.gear.bearingFriction.flange_b.tau - axis1.gear.bearingFriction.tau = 0.0;
+//   axis1.gear.bearingFriction.flange_a.tau + (axis1.gear.bearingFriction.flange_b.tau - axis1.gear.bearingFriction.tau) = 0.0;
 //   axis1.gear.bearingFriction.tau = if axis1.gear.bearingFriction.locked then axis1.gear.bearingFriction.sa else if axis1.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis1.gear.bearingFriction.w,{{axis1.gear.bearingFriction.tau_pos[1,1],axis1.gear.bearingFriction.tau_pos[1,2]},{axis1.gear.bearingFriction.tau_pos[2,1],axis1.gear.bearingFriction.tau_pos[2,2]}},2) else if axis1.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis1.gear.bearingFriction.w,{{axis1.gear.bearingFriction.tau_pos[1,1],axis1.gear.bearingFriction.tau_pos[1,2]},{axis1.gear.bearingFriction.tau_pos[2,1],axis1.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis1.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis1.gear.bearingFriction.w,{{axis1.gear.bearingFriction.tau_pos[1,1],axis1.gear.bearingFriction.tau_pos[1,2]},{axis1.gear.bearingFriction.tau_pos[2,1],axis1.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis1.gear.bearingFriction.w,{{axis1.gear.bearingFriction.tau_pos[1,1],axis1.gear.bearingFriction.tau_pos[1,2]},{axis1.gear.bearingFriction.tau_pos[2,1],axis1.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis1.gear.bearingFriction.phi_support = 0.0;
 //   axis1.gear.bearingFriction.startForward = pre(axis1.gear.bearingFriction.mode) == 0 and (axis1.gear.bearingFriction.sa > axis1.gear.bearingFriction.tau0_max or pre(axis1.gear.bearingFriction.startForward) and axis1.gear.bearingFriction.sa > axis1.gear.bearingFriction.tau0) or pre(axis1.gear.bearingFriction.mode) == -1 and axis1.gear.bearingFriction.w_relfric > axis1.gear.bearingFriction.w_small or initial() and axis1.gear.bearingFriction.w_relfric > 0.0;
 //   axis1.gear.bearingFriction.startBackward = pre(axis1.gear.bearingFriction.mode) == 0 and (axis1.gear.bearingFriction.sa < -axis1.gear.bearingFriction.tau0_max or pre(axis1.gear.bearingFriction.startBackward) and axis1.gear.bearingFriction.sa < -axis1.gear.bearingFriction.tau0) or pre(axis1.gear.bearingFriction.mode) == 1 and axis1.gear.bearingFriction.w_relfric < -axis1.gear.bearingFriction.w_small or initial() and axis1.gear.bearingFriction.w_relfric < 0.0;
-//   axis1.gear.bearingFriction.locked =  not axis1.gear.bearingFriction.free and  not (pre(axis1.gear.bearingFriction.mode) == 1 or axis1.gear.bearingFriction.startForward or pre(axis1.gear.bearingFriction.mode) == -1 or axis1.gear.bearingFriction.startBackward);
+//   axis1.gear.bearingFriction.locked = not axis1.gear.bearingFriction.free and not (pre(axis1.gear.bearingFriction.mode) == 1 or axis1.gear.bearingFriction.startForward or pre(axis1.gear.bearingFriction.mode) == -1 or axis1.gear.bearingFriction.startBackward);
 //   axis1.gear.bearingFriction.a_relfric = if axis1.gear.bearingFriction.locked then 0.0 else if axis1.gear.bearingFriction.free then axis1.gear.bearingFriction.sa else if axis1.gear.bearingFriction.startForward then axis1.gear.bearingFriction.sa - axis1.gear.bearingFriction.tau0_max else if axis1.gear.bearingFriction.startBackward then axis1.gear.bearingFriction.sa + axis1.gear.bearingFriction.tau0_max else if pre(axis1.gear.bearingFriction.mode) == 1 then axis1.gear.bearingFriction.sa - axis1.gear.bearingFriction.tau0_max else axis1.gear.bearingFriction.sa + axis1.gear.bearingFriction.tau0_max;
 //   axis1.gear.bearingFriction.mode = if axis1.gear.bearingFriction.free then 2 else if (pre(axis1.gear.bearingFriction.mode) == 1 or pre(axis1.gear.bearingFriction.mode) == 2 or axis1.gear.bearingFriction.startForward) and axis1.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis1.gear.bearingFriction.mode) == -1 or pre(axis1.gear.bearingFriction.mode) == 2 or axis1.gear.bearingFriction.startBackward) and axis1.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis1.motor.Vs.v = axis1.motor.Vs.p.v - axis1.motor.Vs.n.v;
@@ -9923,12 +9923,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis2.gear.bearingFriction.a = der(axis2.gear.bearingFriction.w);
 //   axis2.gear.bearingFriction.w_relfric = axis2.gear.bearingFriction.w;
 //   axis2.gear.bearingFriction.a_relfric = axis2.gear.bearingFriction.a;
-//   axis2.gear.bearingFriction.flange_a.tau + axis2.gear.bearingFriction.flange_b.tau - axis2.gear.bearingFriction.tau = 0.0;
+//   axis2.gear.bearingFriction.flange_a.tau + (axis2.gear.bearingFriction.flange_b.tau - axis2.gear.bearingFriction.tau) = 0.0;
 //   axis2.gear.bearingFriction.tau = if axis2.gear.bearingFriction.locked then axis2.gear.bearingFriction.sa else if axis2.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis2.gear.bearingFriction.w,{{axis2.gear.bearingFriction.tau_pos[1,1],axis2.gear.bearingFriction.tau_pos[1,2]},{axis2.gear.bearingFriction.tau_pos[2,1],axis2.gear.bearingFriction.tau_pos[2,2]}},2) else if axis2.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis2.gear.bearingFriction.w,{{axis2.gear.bearingFriction.tau_pos[1,1],axis2.gear.bearingFriction.tau_pos[1,2]},{axis2.gear.bearingFriction.tau_pos[2,1],axis2.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis2.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis2.gear.bearingFriction.w,{{axis2.gear.bearingFriction.tau_pos[1,1],axis2.gear.bearingFriction.tau_pos[1,2]},{axis2.gear.bearingFriction.tau_pos[2,1],axis2.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis2.gear.bearingFriction.w,{{axis2.gear.bearingFriction.tau_pos[1,1],axis2.gear.bearingFriction.tau_pos[1,2]},{axis2.gear.bearingFriction.tau_pos[2,1],axis2.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis2.gear.bearingFriction.phi_support = 0.0;
 //   axis2.gear.bearingFriction.startForward = pre(axis2.gear.bearingFriction.mode) == 0 and (axis2.gear.bearingFriction.sa > axis2.gear.bearingFriction.tau0_max or pre(axis2.gear.bearingFriction.startForward) and axis2.gear.bearingFriction.sa > axis2.gear.bearingFriction.tau0) or pre(axis2.gear.bearingFriction.mode) == -1 and axis2.gear.bearingFriction.w_relfric > axis2.gear.bearingFriction.w_small or initial() and axis2.gear.bearingFriction.w_relfric > 0.0;
 //   axis2.gear.bearingFriction.startBackward = pre(axis2.gear.bearingFriction.mode) == 0 and (axis2.gear.bearingFriction.sa < -axis2.gear.bearingFriction.tau0_max or pre(axis2.gear.bearingFriction.startBackward) and axis2.gear.bearingFriction.sa < -axis2.gear.bearingFriction.tau0) or pre(axis2.gear.bearingFriction.mode) == 1 and axis2.gear.bearingFriction.w_relfric < -axis2.gear.bearingFriction.w_small or initial() and axis2.gear.bearingFriction.w_relfric < 0.0;
-//   axis2.gear.bearingFriction.locked =  not axis2.gear.bearingFriction.free and  not (pre(axis2.gear.bearingFriction.mode) == 1 or axis2.gear.bearingFriction.startForward or pre(axis2.gear.bearingFriction.mode) == -1 or axis2.gear.bearingFriction.startBackward);
+//   axis2.gear.bearingFriction.locked = not axis2.gear.bearingFriction.free and not (pre(axis2.gear.bearingFriction.mode) == 1 or axis2.gear.bearingFriction.startForward or pre(axis2.gear.bearingFriction.mode) == -1 or axis2.gear.bearingFriction.startBackward);
 //   axis2.gear.bearingFriction.a_relfric = if axis2.gear.bearingFriction.locked then 0.0 else if axis2.gear.bearingFriction.free then axis2.gear.bearingFriction.sa else if axis2.gear.bearingFriction.startForward then axis2.gear.bearingFriction.sa - axis2.gear.bearingFriction.tau0_max else if axis2.gear.bearingFriction.startBackward then axis2.gear.bearingFriction.sa + axis2.gear.bearingFriction.tau0_max else if pre(axis2.gear.bearingFriction.mode) == 1 then axis2.gear.bearingFriction.sa - axis2.gear.bearingFriction.tau0_max else axis2.gear.bearingFriction.sa + axis2.gear.bearingFriction.tau0_max;
 //   axis2.gear.bearingFriction.mode = if axis2.gear.bearingFriction.free then 2 else if (pre(axis2.gear.bearingFriction.mode) == 1 or pre(axis2.gear.bearingFriction.mode) == 2 or axis2.gear.bearingFriction.startForward) and axis2.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis2.gear.bearingFriction.mode) == -1 or pre(axis2.gear.bearingFriction.mode) == 2 or axis2.gear.bearingFriction.startBackward) and axis2.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis2.motor.Vs.v = axis2.motor.Vs.p.v - axis2.motor.Vs.n.v;
@@ -10101,12 +10101,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis3.gear.bearingFriction.a = der(axis3.gear.bearingFriction.w);
 //   axis3.gear.bearingFriction.w_relfric = axis3.gear.bearingFriction.w;
 //   axis3.gear.bearingFriction.a_relfric = axis3.gear.bearingFriction.a;
-//   axis3.gear.bearingFriction.flange_a.tau + axis3.gear.bearingFriction.flange_b.tau - axis3.gear.bearingFriction.tau = 0.0;
+//   axis3.gear.bearingFriction.flange_a.tau + (axis3.gear.bearingFriction.flange_b.tau - axis3.gear.bearingFriction.tau) = 0.0;
 //   axis3.gear.bearingFriction.tau = if axis3.gear.bearingFriction.locked then axis3.gear.bearingFriction.sa else if axis3.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis3.gear.bearingFriction.w,{{axis3.gear.bearingFriction.tau_pos[1,1],axis3.gear.bearingFriction.tau_pos[1,2]},{axis3.gear.bearingFriction.tau_pos[2,1],axis3.gear.bearingFriction.tau_pos[2,2]}},2) else if axis3.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis3.gear.bearingFriction.w,{{axis3.gear.bearingFriction.tau_pos[1,1],axis3.gear.bearingFriction.tau_pos[1,2]},{axis3.gear.bearingFriction.tau_pos[2,1],axis3.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis3.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis3.gear.bearingFriction.w,{{axis3.gear.bearingFriction.tau_pos[1,1],axis3.gear.bearingFriction.tau_pos[1,2]},{axis3.gear.bearingFriction.tau_pos[2,1],axis3.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis3.gear.bearingFriction.w,{{axis3.gear.bearingFriction.tau_pos[1,1],axis3.gear.bearingFriction.tau_pos[1,2]},{axis3.gear.bearingFriction.tau_pos[2,1],axis3.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis3.gear.bearingFriction.phi_support = 0.0;
 //   axis3.gear.bearingFriction.startForward = pre(axis3.gear.bearingFriction.mode) == 0 and (axis3.gear.bearingFriction.sa > axis3.gear.bearingFriction.tau0_max or pre(axis3.gear.bearingFriction.startForward) and axis3.gear.bearingFriction.sa > axis3.gear.bearingFriction.tau0) or pre(axis3.gear.bearingFriction.mode) == -1 and axis3.gear.bearingFriction.w_relfric > axis3.gear.bearingFriction.w_small or initial() and axis3.gear.bearingFriction.w_relfric > 0.0;
 //   axis3.gear.bearingFriction.startBackward = pre(axis3.gear.bearingFriction.mode) == 0 and (axis3.gear.bearingFriction.sa < -axis3.gear.bearingFriction.tau0_max or pre(axis3.gear.bearingFriction.startBackward) and axis3.gear.bearingFriction.sa < -axis3.gear.bearingFriction.tau0) or pre(axis3.gear.bearingFriction.mode) == 1 and axis3.gear.bearingFriction.w_relfric < -axis3.gear.bearingFriction.w_small or initial() and axis3.gear.bearingFriction.w_relfric < 0.0;
-//   axis3.gear.bearingFriction.locked =  not axis3.gear.bearingFriction.free and  not (pre(axis3.gear.bearingFriction.mode) == 1 or axis3.gear.bearingFriction.startForward or pre(axis3.gear.bearingFriction.mode) == -1 or axis3.gear.bearingFriction.startBackward);
+//   axis3.gear.bearingFriction.locked = not axis3.gear.bearingFriction.free and not (pre(axis3.gear.bearingFriction.mode) == 1 or axis3.gear.bearingFriction.startForward or pre(axis3.gear.bearingFriction.mode) == -1 or axis3.gear.bearingFriction.startBackward);
 //   axis3.gear.bearingFriction.a_relfric = if axis3.gear.bearingFriction.locked then 0.0 else if axis3.gear.bearingFriction.free then axis3.gear.bearingFriction.sa else if axis3.gear.bearingFriction.startForward then axis3.gear.bearingFriction.sa - axis3.gear.bearingFriction.tau0_max else if axis3.gear.bearingFriction.startBackward then axis3.gear.bearingFriction.sa + axis3.gear.bearingFriction.tau0_max else if pre(axis3.gear.bearingFriction.mode) == 1 then axis3.gear.bearingFriction.sa - axis3.gear.bearingFriction.tau0_max else axis3.gear.bearingFriction.sa + axis3.gear.bearingFriction.tau0_max;
 //   axis3.gear.bearingFriction.mode = if axis3.gear.bearingFriction.free then 2 else if (pre(axis3.gear.bearingFriction.mode) == 1 or pre(axis3.gear.bearingFriction.mode) == 2 or axis3.gear.bearingFriction.startForward) and axis3.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis3.gear.bearingFriction.mode) == -1 or pre(axis3.gear.bearingFriction.mode) == 2 or axis3.gear.bearingFriction.startBackward) and axis3.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis3.motor.Vs.v = axis3.motor.Vs.p.v - axis3.motor.Vs.n.v;
@@ -10273,12 +10273,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis4.gear.bearingFriction.a = der(axis4.gear.bearingFriction.w);
 //   axis4.gear.bearingFriction.w_relfric = axis4.gear.bearingFriction.w;
 //   axis4.gear.bearingFriction.a_relfric = axis4.gear.bearingFriction.a;
-//   axis4.gear.bearingFriction.flange_a.tau + axis4.gear.bearingFriction.flange_b.tau - axis4.gear.bearingFriction.tau = 0.0;
+//   axis4.gear.bearingFriction.flange_a.tau + (axis4.gear.bearingFriction.flange_b.tau - axis4.gear.bearingFriction.tau) = 0.0;
 //   axis4.gear.bearingFriction.tau = if axis4.gear.bearingFriction.locked then axis4.gear.bearingFriction.sa else if axis4.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis4.gear.bearingFriction.w,{{axis4.gear.bearingFriction.tau_pos[1,1],axis4.gear.bearingFriction.tau_pos[1,2]},{axis4.gear.bearingFriction.tau_pos[2,1],axis4.gear.bearingFriction.tau_pos[2,2]}},2) else if axis4.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis4.gear.bearingFriction.w,{{axis4.gear.bearingFriction.tau_pos[1,1],axis4.gear.bearingFriction.tau_pos[1,2]},{axis4.gear.bearingFriction.tau_pos[2,1],axis4.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis4.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis4.gear.bearingFriction.w,{{axis4.gear.bearingFriction.tau_pos[1,1],axis4.gear.bearingFriction.tau_pos[1,2]},{axis4.gear.bearingFriction.tau_pos[2,1],axis4.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis4.gear.bearingFriction.w,{{axis4.gear.bearingFriction.tau_pos[1,1],axis4.gear.bearingFriction.tau_pos[1,2]},{axis4.gear.bearingFriction.tau_pos[2,1],axis4.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis4.gear.bearingFriction.phi_support = 0.0;
 //   axis4.gear.bearingFriction.startForward = pre(axis4.gear.bearingFriction.mode) == 0 and (axis4.gear.bearingFriction.sa > axis4.gear.bearingFriction.tau0_max or pre(axis4.gear.bearingFriction.startForward) and axis4.gear.bearingFriction.sa > axis4.gear.bearingFriction.tau0) or pre(axis4.gear.bearingFriction.mode) == -1 and axis4.gear.bearingFriction.w_relfric > axis4.gear.bearingFriction.w_small or initial() and axis4.gear.bearingFriction.w_relfric > 0.0;
 //   axis4.gear.bearingFriction.startBackward = pre(axis4.gear.bearingFriction.mode) == 0 and (axis4.gear.bearingFriction.sa < -axis4.gear.bearingFriction.tau0_max or pre(axis4.gear.bearingFriction.startBackward) and axis4.gear.bearingFriction.sa < -axis4.gear.bearingFriction.tau0) or pre(axis4.gear.bearingFriction.mode) == 1 and axis4.gear.bearingFriction.w_relfric < -axis4.gear.bearingFriction.w_small or initial() and axis4.gear.bearingFriction.w_relfric < 0.0;
-//   axis4.gear.bearingFriction.locked =  not axis4.gear.bearingFriction.free and  not (pre(axis4.gear.bearingFriction.mode) == 1 or axis4.gear.bearingFriction.startForward or pre(axis4.gear.bearingFriction.mode) == -1 or axis4.gear.bearingFriction.startBackward);
+//   axis4.gear.bearingFriction.locked = not axis4.gear.bearingFriction.free and not (pre(axis4.gear.bearingFriction.mode) == 1 or axis4.gear.bearingFriction.startForward or pre(axis4.gear.bearingFriction.mode) == -1 or axis4.gear.bearingFriction.startBackward);
 //   axis4.gear.bearingFriction.a_relfric = if axis4.gear.bearingFriction.locked then 0.0 else if axis4.gear.bearingFriction.free then axis4.gear.bearingFriction.sa else if axis4.gear.bearingFriction.startForward then axis4.gear.bearingFriction.sa - axis4.gear.bearingFriction.tau0_max else if axis4.gear.bearingFriction.startBackward then axis4.gear.bearingFriction.sa + axis4.gear.bearingFriction.tau0_max else if pre(axis4.gear.bearingFriction.mode) == 1 then axis4.gear.bearingFriction.sa - axis4.gear.bearingFriction.tau0_max else axis4.gear.bearingFriction.sa + axis4.gear.bearingFriction.tau0_max;
 //   axis4.gear.bearingFriction.mode = if axis4.gear.bearingFriction.free then 2 else if (pre(axis4.gear.bearingFriction.mode) == 1 or pre(axis4.gear.bearingFriction.mode) == 2 or axis4.gear.bearingFriction.startForward) and axis4.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis4.gear.bearingFriction.mode) == -1 or pre(axis4.gear.bearingFriction.mode) == 2 or axis4.gear.bearingFriction.startBackward) and axis4.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis4.motor.Vs.v = axis4.motor.Vs.p.v - axis4.motor.Vs.n.v;
@@ -10445,12 +10445,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis5.gear.bearingFriction.a = der(axis5.gear.bearingFriction.w);
 //   axis5.gear.bearingFriction.w_relfric = axis5.gear.bearingFriction.w;
 //   axis5.gear.bearingFriction.a_relfric = axis5.gear.bearingFriction.a;
-//   axis5.gear.bearingFriction.flange_a.tau + axis5.gear.bearingFriction.flange_b.tau - axis5.gear.bearingFriction.tau = 0.0;
+//   axis5.gear.bearingFriction.flange_a.tau + (axis5.gear.bearingFriction.flange_b.tau - axis5.gear.bearingFriction.tau) = 0.0;
 //   axis5.gear.bearingFriction.tau = if axis5.gear.bearingFriction.locked then axis5.gear.bearingFriction.sa else if axis5.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis5.gear.bearingFriction.w,{{axis5.gear.bearingFriction.tau_pos[1,1],axis5.gear.bearingFriction.tau_pos[1,2]},{axis5.gear.bearingFriction.tau_pos[2,1],axis5.gear.bearingFriction.tau_pos[2,2]}},2) else if axis5.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis5.gear.bearingFriction.w,{{axis5.gear.bearingFriction.tau_pos[1,1],axis5.gear.bearingFriction.tau_pos[1,2]},{axis5.gear.bearingFriction.tau_pos[2,1],axis5.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis5.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis5.gear.bearingFriction.w,{{axis5.gear.bearingFriction.tau_pos[1,1],axis5.gear.bearingFriction.tau_pos[1,2]},{axis5.gear.bearingFriction.tau_pos[2,1],axis5.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis5.gear.bearingFriction.w,{{axis5.gear.bearingFriction.tau_pos[1,1],axis5.gear.bearingFriction.tau_pos[1,2]},{axis5.gear.bearingFriction.tau_pos[2,1],axis5.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis5.gear.bearingFriction.phi_support = 0.0;
 //   axis5.gear.bearingFriction.startForward = pre(axis5.gear.bearingFriction.mode) == 0 and (axis5.gear.bearingFriction.sa > axis5.gear.bearingFriction.tau0_max or pre(axis5.gear.bearingFriction.startForward) and axis5.gear.bearingFriction.sa > axis5.gear.bearingFriction.tau0) or pre(axis5.gear.bearingFriction.mode) == -1 and axis5.gear.bearingFriction.w_relfric > axis5.gear.bearingFriction.w_small or initial() and axis5.gear.bearingFriction.w_relfric > 0.0;
 //   axis5.gear.bearingFriction.startBackward = pre(axis5.gear.bearingFriction.mode) == 0 and (axis5.gear.bearingFriction.sa < -axis5.gear.bearingFriction.tau0_max or pre(axis5.gear.bearingFriction.startBackward) and axis5.gear.bearingFriction.sa < -axis5.gear.bearingFriction.tau0) or pre(axis5.gear.bearingFriction.mode) == 1 and axis5.gear.bearingFriction.w_relfric < -axis5.gear.bearingFriction.w_small or initial() and axis5.gear.bearingFriction.w_relfric < 0.0;
-//   axis5.gear.bearingFriction.locked =  not axis5.gear.bearingFriction.free and  not (pre(axis5.gear.bearingFriction.mode) == 1 or axis5.gear.bearingFriction.startForward or pre(axis5.gear.bearingFriction.mode) == -1 or axis5.gear.bearingFriction.startBackward);
+//   axis5.gear.bearingFriction.locked = not axis5.gear.bearingFriction.free and not (pre(axis5.gear.bearingFriction.mode) == 1 or axis5.gear.bearingFriction.startForward or pre(axis5.gear.bearingFriction.mode) == -1 or axis5.gear.bearingFriction.startBackward);
 //   axis5.gear.bearingFriction.a_relfric = if axis5.gear.bearingFriction.locked then 0.0 else if axis5.gear.bearingFriction.free then axis5.gear.bearingFriction.sa else if axis5.gear.bearingFriction.startForward then axis5.gear.bearingFriction.sa - axis5.gear.bearingFriction.tau0_max else if axis5.gear.bearingFriction.startBackward then axis5.gear.bearingFriction.sa + axis5.gear.bearingFriction.tau0_max else if pre(axis5.gear.bearingFriction.mode) == 1 then axis5.gear.bearingFriction.sa - axis5.gear.bearingFriction.tau0_max else axis5.gear.bearingFriction.sa + axis5.gear.bearingFriction.tau0_max;
 //   axis5.gear.bearingFriction.mode = if axis5.gear.bearingFriction.free then 2 else if (pre(axis5.gear.bearingFriction.mode) == 1 or pre(axis5.gear.bearingFriction.mode) == 2 or axis5.gear.bearingFriction.startForward) and axis5.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis5.gear.bearingFriction.mode) == -1 or pre(axis5.gear.bearingFriction.mode) == 2 or axis5.gear.bearingFriction.startBackward) and axis5.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis5.motor.Vs.v = axis5.motor.Vs.p.v - axis5.motor.Vs.n.v;
@@ -10617,12 +10617,12 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   axis6.gear.bearingFriction.a = der(axis6.gear.bearingFriction.w);
 //   axis6.gear.bearingFriction.w_relfric = axis6.gear.bearingFriction.w;
 //   axis6.gear.bearingFriction.a_relfric = axis6.gear.bearingFriction.a;
-//   axis6.gear.bearingFriction.flange_a.tau + axis6.gear.bearingFriction.flange_b.tau - axis6.gear.bearingFriction.tau = 0.0;
+//   axis6.gear.bearingFriction.flange_a.tau + (axis6.gear.bearingFriction.flange_b.tau - axis6.gear.bearingFriction.tau) = 0.0;
 //   axis6.gear.bearingFriction.tau = if axis6.gear.bearingFriction.locked then axis6.gear.bearingFriction.sa else if axis6.gear.bearingFriction.startForward then Modelica.Math.tempInterpol1(axis6.gear.bearingFriction.w,{{axis6.gear.bearingFriction.tau_pos[1,1],axis6.gear.bearingFriction.tau_pos[1,2]},{axis6.gear.bearingFriction.tau_pos[2,1],axis6.gear.bearingFriction.tau_pos[2,2]}},2) else if axis6.gear.bearingFriction.startBackward then -Modelica.Math.tempInterpol1(-axis6.gear.bearingFriction.w,{{axis6.gear.bearingFriction.tau_pos[1,1],axis6.gear.bearingFriction.tau_pos[1,2]},{axis6.gear.bearingFriction.tau_pos[2,1],axis6.gear.bearingFriction.tau_pos[2,2]}},2) else if pre(axis6.gear.bearingFriction.mode) == 1 then Modelica.Math.tempInterpol1(axis6.gear.bearingFriction.w,{{axis6.gear.bearingFriction.tau_pos[1,1],axis6.gear.bearingFriction.tau_pos[1,2]},{axis6.gear.bearingFriction.tau_pos[2,1],axis6.gear.bearingFriction.tau_pos[2,2]}},2) else -Modelica.Math.tempInterpol1(-axis6.gear.bearingFriction.w,{{axis6.gear.bearingFriction.tau_pos[1,1],axis6.gear.bearingFriction.tau_pos[1,2]},{axis6.gear.bearingFriction.tau_pos[2,1],axis6.gear.bearingFriction.tau_pos[2,2]}},2);
 //   axis6.gear.bearingFriction.phi_support = 0.0;
 //   axis6.gear.bearingFriction.startForward = pre(axis6.gear.bearingFriction.mode) == 0 and (axis6.gear.bearingFriction.sa > axis6.gear.bearingFriction.tau0_max or pre(axis6.gear.bearingFriction.startForward) and axis6.gear.bearingFriction.sa > axis6.gear.bearingFriction.tau0) or pre(axis6.gear.bearingFriction.mode) == -1 and axis6.gear.bearingFriction.w_relfric > axis6.gear.bearingFriction.w_small or initial() and axis6.gear.bearingFriction.w_relfric > 0.0;
 //   axis6.gear.bearingFriction.startBackward = pre(axis6.gear.bearingFriction.mode) == 0 and (axis6.gear.bearingFriction.sa < -axis6.gear.bearingFriction.tau0_max or pre(axis6.gear.bearingFriction.startBackward) and axis6.gear.bearingFriction.sa < -axis6.gear.bearingFriction.tau0) or pre(axis6.gear.bearingFriction.mode) == 1 and axis6.gear.bearingFriction.w_relfric < -axis6.gear.bearingFriction.w_small or initial() and axis6.gear.bearingFriction.w_relfric < 0.0;
-//   axis6.gear.bearingFriction.locked =  not axis6.gear.bearingFriction.free and  not (pre(axis6.gear.bearingFriction.mode) == 1 or axis6.gear.bearingFriction.startForward or pre(axis6.gear.bearingFriction.mode) == -1 or axis6.gear.bearingFriction.startBackward);
+//   axis6.gear.bearingFriction.locked = not axis6.gear.bearingFriction.free and not (pre(axis6.gear.bearingFriction.mode) == 1 or axis6.gear.bearingFriction.startForward or pre(axis6.gear.bearingFriction.mode) == -1 or axis6.gear.bearingFriction.startBackward);
 //   axis6.gear.bearingFriction.a_relfric = if axis6.gear.bearingFriction.locked then 0.0 else if axis6.gear.bearingFriction.free then axis6.gear.bearingFriction.sa else if axis6.gear.bearingFriction.startForward then axis6.gear.bearingFriction.sa - axis6.gear.bearingFriction.tau0_max else if axis6.gear.bearingFriction.startBackward then axis6.gear.bearingFriction.sa + axis6.gear.bearingFriction.tau0_max else if pre(axis6.gear.bearingFriction.mode) == 1 then axis6.gear.bearingFriction.sa - axis6.gear.bearingFriction.tau0_max else axis6.gear.bearingFriction.sa + axis6.gear.bearingFriction.tau0_max;
 //   axis6.gear.bearingFriction.mode = if axis6.gear.bearingFriction.free then 2 else if (pre(axis6.gear.bearingFriction.mode) == 1 or pre(axis6.gear.bearingFriction.mode) == 2 or axis6.gear.bearingFriction.startForward) and axis6.gear.bearingFriction.w_relfric > 0.0 then 1 else if (pre(axis6.gear.bearingFriction.mode) == -1 or pre(axis6.gear.bearingFriction.mode) == 2 or axis6.gear.bearingFriction.startBackward) and axis6.gear.bearingFriction.w_relfric < 0.0 then -1 else 0;
 //   axis6.motor.Vs.v = axis6.motor.Vs.p.v - axis6.motor.Vs.n.v;

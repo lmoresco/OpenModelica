@@ -18,8 +18,8 @@ end RecordAssignment;
 
 // Result:
 // class RecordAssignment
-// Integer tr1.i;
-// Integer tr2.i;
+//   Integer tr1.i;
+//   Integer tr2.i;
 // equation
 //   tr1.i = 1;
 //   tr2.i = tr1.i;

@@ -45,13 +45,13 @@ end I;
 
 // Result:
 // class I
-// Real TI;
-// Real e.TI;
-// Real e.f.TI;
-// Real e.f.g.TI;
-// Real e.f.g.h.a.b.TI;
-// Real e.f.g.h.a.b.c.TI;
-// Real a.b.TI;
-// Real a.b.c.TI;
+//   Real TI;
+//   Real e.TI;
+//   Real e.f.TI;
+//   Real e.f.g.TI;
+//   Real e.f.g.h.a.b.TI;
+//   Real e.f.g.h.a.b.c.TI;
+//   Real a.b.TI;
+//   Real a.b.c.TI;
 // end I;
 // endResult

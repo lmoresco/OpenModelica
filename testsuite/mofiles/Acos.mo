@@ -13,7 +13,7 @@ end Acos;
 
 // Result:
 // class Acos
-// Real r;
+//   Real r;
 // equation
 //   r = 1.0471975511966;
 // end Acos;

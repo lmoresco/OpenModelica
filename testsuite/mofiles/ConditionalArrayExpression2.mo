@@ -27,12 +27,12 @@ end ConditionalArrayExpression2;
 // equation
 //   d = if a > b then c[1] else e;
 //   e = if a > b then c[2] else 1.0 + 2.0 * d;
-//  if time < 0.5 then
-//     c[1] = 1.0;
-//     c[2] = 0.0;
-//  else
-//     c[1] = 2.0;
-//     c[2] = 4.0;
-//  end if;
+//   if time < 0.5 then
+//   c[1] = 1.0;
+//   c[2] = 0.0;
+//   else
+//   c[1] = 2.0;
+//   c[2] = 4.0;
+//   end if;
 // end ConditionalArrayExpression2;
 // endResult

@@ -25,8 +25,8 @@ end Faculty2Model;
 
 // Result:
 // function Faculty2
-// input Integer x;
-// output Integer y;
+//   input Integer x;
+//   output Integer y;
 // algorithm
 //   y := 1;
 //   for i in 2:x loop
@@ -35,8 +35,8 @@ end Faculty2Model;
 // end Faculty2;
 // 
 // class Faculty2Model
-// Integer x;
-// Integer y;
+//   Integer x;
+//   Integer y;
 // equation
 //   y = Faculty2(x);
 // end Faculty2Model;

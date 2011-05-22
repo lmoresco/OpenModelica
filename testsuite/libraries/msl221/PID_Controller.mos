@@ -171,9 +171,9 @@ getErrorString();
 //   PI.gainPID.y = PI.gainPID.k * PI.gainPID.u;
 //   PI.addPID.y = PI.addPID.k1 * PI.addPID.u1 + (PI.addPID.k2 * PI.addPID.u2 + PI.addPID.k3 * PI.addPID.u3);
 //   assert(PI.limiter.uMax >= PI.limiter.uMin,\"Limiter: Limits must be consistent. However, uMax (=\" + String(PI.limiter.uMax,0,true,6) + \") < uMin (=\" + String(PI.limiter.uMin,0,true,6) + \")\");
-//   if initial() and  not PI.limiter.limitsAtInit then
+//   if initial() and not PI.limiter.limitsAtInit then
 //   PI.limiter.y = PI.limiter.u;
-//   assert(PI.limiter.u >= PI.limiter.uMin - 0.01 * abs(PI.limiter.uMin) and PI.limiter.u <= PI.limiter.uMax + 0.01 * abs(PI.limiter.uMax),\"Limiter: During initialization the limits have been ignored.
+//   assert(PI.limiter.u >= PI.limiter.uMin + -0.01 * abs(PI.limiter.uMin) and PI.limiter.u <= PI.limiter.uMax + 0.01 * abs(PI.limiter.uMax),\"Limiter: During initialization the limits have been ignored.
 // However, the result is that the input u is not within the required limits:
 //   u = \" + String(PI.limiter.u,0,true,6) + \", uMin = \" + String(PI.limiter.uMin,0,true,6) + \", uMax = \" + String(PI.limiter.uMax,0,true,6));
 //   else
@@ -185,7 +185,7 @@ getErrorString();
 //   PI.gainTrack.y = PI.gainTrack.k * PI.gainTrack.u;
 //   PI.Dzero.y = PI.Dzero.k;
 //   assert(PI.yMax >= PI.yMin,\"LimPID: Limits must be consistent. However, yMax (=\" + String(PI.yMax,0,true,6) + \") < yMin (=\" + String(PI.yMin,0,true,6) + \")\");
-//   assert(PI.limitsAtInit or  not PI.limitsAtInit and PI.y >= PI.yMin and PI.y <= PI.yMax,\"LimPID: During initialization the limits have been switched off.
+//   assert(PI.limitsAtInit or not PI.limitsAtInit and PI.y >= PI.yMin and PI.y <= PI.yMax,\"LimPID: During initialization the limits have been switched off.
 // After initialization, the output y (=\" + String(PI.y,0,true,6) + \") is outside of the limits of yMin (=\" + String(PI.yMin,0,true,6) + \") and yMax (=\" + String(PI.yMax,0,true,6) + \")\");
 //   inertia1.w = der(inertia1.phi);
 //   inertia1.a = der(inertia1.w);

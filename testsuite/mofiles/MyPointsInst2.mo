@@ -33,17 +33,17 @@ end MyPointsInst2;
 //
 // Result:
 // class MyPointsInst2
-// parameter Real pts.point1.x = 1.0;
-// parameter Real pts.point1.y = 2.0;
-// parameter Real pts.point1.z = 3.0;
-// parameter Real pts.point2.x;
-// parameter Real pts.point2.y;
-// parameter Real pts.point2.z;
-// parameter Real pts.point3.x;
-// parameter Real pts.point3.y;
-// parameter Real pts.point3.z;
-// Real x = pts.point1.x;
-// Real y = pts.point1.y;
-// Real z = pts.point1.z;
+//   parameter Real pts.point1.x = 1.0;
+//   parameter Real pts.point1.y = 2.0;
+//   parameter Real pts.point1.z = 3.0;
+//   parameter Real pts.point2.x;
+//   parameter Real pts.point2.y;
+//   parameter Real pts.point2.z;
+//   parameter Real pts.point3.x;
+//   parameter Real pts.point3.y;
+//   parameter Real pts.point3.z;
+//   Real x = pts.point1.x;
+//   Real y = pts.point1.y;
+//   Real z = pts.point1.z;
 // end MyPointsInst2;
 // endResult

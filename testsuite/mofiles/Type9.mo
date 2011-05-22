@@ -24,11 +24,11 @@ class A
 end A;
 // Result:
 // class A
-// Real a(unit = "m/s");
-// Real b(unit = "m/s");
-// Real b2(unit = "m/s", displayUnit = "ms");
-// Integer b3(quantity = "pcs");
-// String b4(quantity = "name");
-// Boolean b5(quantity = "foo");
+//   Real a(unit = "m/s");
+//   Real b(unit = "m/s");
+//   Real b2(unit = "m/s", displayUnit = "ms");
+//   Integer b3(quantity = "pcs");
+//   String b4(quantity = "name");
+//   Boolean b5(quantity = "foo");
 // end A;
 // endResult

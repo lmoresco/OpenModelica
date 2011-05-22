@@ -13,7 +13,7 @@ end Log;
 
 // Result:
 // class Log
-// Real r;
+//   Real r;
 // equation
 //   r = 3.80666248977032;
 // end Log;

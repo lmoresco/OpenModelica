@@ -22,6 +22,6 @@ end Lookup2;
 
 // Result:
 // class Lookup2
-// Real c = 3.0;
+//   Real c = 3.0;
 // end Lookup2;
 // endResult

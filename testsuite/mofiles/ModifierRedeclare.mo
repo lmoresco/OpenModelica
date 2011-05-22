@@ -23,7 +23,7 @@ end D;
 
 // Result:
 // class D
-// parameter Real a.x = 1.0;
-// parameter Real a.y = 2.0;
+//   parameter Real a.x = 1.0;
+//   parameter Real a.y = 2.0;
 // end D;
 // endResult

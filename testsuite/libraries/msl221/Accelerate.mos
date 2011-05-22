@@ -37,7 +37,7 @@ getErrorString();
 //   SlidingMass1.v = der(SlidingMass1.s);
 //   SlidingMass1.a = der(SlidingMass1.v);
 //   SlidingMass1.m * SlidingMass1.a = SlidingMass1.flange_a.f + SlidingMass1.flange_b.f;
-//   SlidingMass1.flange_a.s = SlidingMass1.s - SlidingMass1.L / 2.0;
+//   SlidingMass1.flange_a.s = SlidingMass1.s + (-SlidingMass1.L) / 2.0;
 //   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
 //   Constant1.y = Constant1.k;
 //   Accelerate1.flange_b.f + SlidingMass1.flange_a.f = 0.0;

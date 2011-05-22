@@ -18,6 +18,6 @@ end test;
 
 // Result:
 // class test
-// Real x = 1.0;
+//   Real x = 1.0;
 // end test;
 // endResult

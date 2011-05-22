@@ -28,6 +28,6 @@ end Extends8;
 
 // Result:
 // class Extends8
-// Integer abc(min = 1, max = 4) = 3;
+//   Integer abc(min = 1, max = 4) = 3;
 // end Extends8;
 // endResult

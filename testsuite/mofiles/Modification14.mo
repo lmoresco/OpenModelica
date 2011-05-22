@@ -38,11 +38,11 @@ end Modification6;
 // Instantiating element: myFoo
 // Result:
 // class Modification6
-// parameter Real m1.f.q = 4.0;
-// parameter Real m1.f.z = 3.0;
-// parameter Real m2.f.q = 4.0;
-// parameter Real m2.f.z = 1.0;
-// parameter Real m3.f.q = 2.0;
-// parameter Real m3.f.z = 1.0;
+//   parameter Real m1.f.q = 4.0;
+//   parameter Real m1.f.z = 3.0;
+//   parameter Real m2.f.q = 4.0;
+//   parameter Real m2.f.z = 1.0;
+//   parameter Real m3.f.q = 2.0;
+//   parameter Real m3.f.z = 1.0;
 // end Modification6;
 // endResult

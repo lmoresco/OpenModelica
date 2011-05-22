@@ -15,6 +15,6 @@ end ConstantDeclRecord;
 
 // Result:
 // class ConstantDeclRecord
-// constant Real cr.r = 2.0;
+//   constant Real cr.r = 2.0;
 // end ConstantDeclRecord;
 // endResult

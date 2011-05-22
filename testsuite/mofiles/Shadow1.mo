@@ -19,9 +19,9 @@ end Shadow1;
 
 // Result:
 // class Shadow1
-// Real z;
-// Real a.y = 2.0;
-// Real a.x = z;
+//   Real z;
+//   Real a.y = 2.0;
+//   Real a.x = z;
 // equation
 //   a.x = 1.0;
 // end Shadow1;

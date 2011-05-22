@@ -15,9 +15,9 @@ end TypeDeclArray;
 
 // Result:
 // class TypeDeclArray
-// Real at[1];
-// Real at[2];
-// Real at[3];
+//   Real at[1];
+//   Real at[2];
+//   Real at[3];
 // equation
 //   at[1] = 1.0;
 //   at[2] = 2.0;

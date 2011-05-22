@@ -22,8 +22,8 @@ end FunctionReturn;
 
 // Result:
 // function f
-// input Real x;
-// output Real r;
+//   input Real x;
+//   output Real r;
 // algorithm
 //   r := 2.0 * x;
 //   if r > 20.0 then
@@ -33,8 +33,8 @@ end FunctionReturn;
 // end f;
 // 
 // class FunctionReturn
-// Real x;
-// Real y;
+//   Real x;
+//   Real y;
 // equation
 //   x = f(y);
 //   y = f(x);
