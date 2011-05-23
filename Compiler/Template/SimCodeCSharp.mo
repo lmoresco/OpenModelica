@@ -4016,26 +4016,13 @@ algorithm
         l_preExp = Tpl.emptyTxt;
         (l_eStart, l_preExp) = daeExp(Tpl.emptyTxt, i_start, SimCode.contextOther, l_preExp, a_simCode);
         (l_eInterval, l_preExp) = daeExp(Tpl.emptyTxt, i_interval, SimCode.contextOther, l_preExp, a_simCode);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("{"));
-        txt = Tpl.writeText(txt, l_preExp);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("var _zen = zeroCrossingEnabled["));
-        txt = Tpl.writeStr(txt, intString(a_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]; //ZEROCROSSING("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("//ZEROCROSSING("));
         txt = Tpl.writeStr(txt, intString(a_index));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", Sample(*t, "));
         txt = Tpl.writeText(txt, l_eStart);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_eInterval);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "));\n",
-                                    "gout["
-                                }, false));
-        txt = Tpl.writeStr(txt, intString(a_index));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = (_zen != 0) ? _zen * Sample(time, "));
-        txt = Tpl.writeText(txt, l_eStart);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
-        txt = Tpl.writeText(txt, l_eInterval);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") : 1.0; }"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("));"));
       then txt;
 
     case ( txt,
