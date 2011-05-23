@@ -433,6 +433,7 @@ NonConstantReduction.mo \
 NonExpArray1.mo \
 NonExpArray2.mo \
 NonExpArray3.mo \
+NonfixedParamSubscript.mo \
 NotDependsRecursive.mo \
 NotEquals.mo \
 Not.mo \
