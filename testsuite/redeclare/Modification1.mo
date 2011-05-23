@@ -7,7 +7,7 @@
 // 
 
 model m
-  replaceable Real x;
+  replaceable Real x(max = 4.0);
 end m;
 
 model m2
@@ -20,6 +20,6 @@ end Modification1;
 
 // Result:
 // class Modification1
-//   Real x(min = 3.0);
+//   Real x(min = 3.0, max = 4.0);
 // end Modification1;
 // endResult

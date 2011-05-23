@@ -528,6 +528,7 @@ StructuralParameter1.mo \
 SubScript1.mo \
 SubScript2.mo \
 SubScript3.mo \
+SubscriptEval.mo \
 Sum.mo \
 Switch.mo \
 Tanh.mo \
