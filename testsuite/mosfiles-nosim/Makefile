@@ -21,6 +21,7 @@ NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
 Return.mos \
 SolveLinearSystem.mos \
+TestLoadModel.mos \
 UnpOpPrecedence.mos \
 UriLookup.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
