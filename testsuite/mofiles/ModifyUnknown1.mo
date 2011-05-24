@@ -12,7 +12,7 @@ end A;
 class ModifyUnknown1 = A(b = 5);
 // Result:
 // Error processing file: ModifyUnknown1.mo
-// Error: In modifier (b = 5), class or component b not found in <A>
+// Error: In modifier (b = 5), class or component b not found in <ModifyUnknown1>
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

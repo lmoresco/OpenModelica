@@ -1,4 +1,4 @@
-// name:     RedeclareFunction1
+// name:     RedeclareFunctionBug1432
 // keywords: redeclare function bug1432
 // status:   correct
 // 
@@ -34,10 +34,10 @@ end model1;
 model model2 = model1(replaceable function func = func1);
 model model3 = model2(replaceable function func = func2);
 
-model RedeclareFunction1
+model model4
   model2 m2;
   model3 m3;
-end RedeclareFunction1;
+end model4;
 
 // Result:
 // function model2.func
@@ -54,7 +54,7 @@ end RedeclareFunction1;
 //   y := 2.0 * x;
 // end model3.func;
 // 
-// class RedeclareFunction1
+// class model4
 //   Real m2.x;
 //   Real m2.y;
 //   Real m3.x;
@@ -62,5 +62,5 @@ end RedeclareFunction1;
 // equation
 //   m2.x = model2.func(m2.y);
 //   m3.x = model3.func(m3.y);
-// end RedeclareFunction1;
+// end model4;
 // endResult

@@ -17,7 +17,9 @@ Redeclare3.mo \
 Redeclare4.mo \
 Redeclare5.mo \
 RedeclareFlowEffort.mo \
+RedeclareFunction.mo \
 RedeclareFunction1.mo \
+RedeclareFunctionBug1432.mo \
 RedeclareModifierInvalid1.mo \
 RedeclareModifierInvalid2.mo \
 RedeclareVisibility.mo \

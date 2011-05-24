@@ -8,7 +8,7 @@
 
 loadModel(Modelica); getErrorString();
 
-setDebugFlags("scodeFlatten,failtrace");
+setDebugFlags("failtrace");
 
 // Working - OK
 instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
@@ -216,44 +216,44 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (x * (-3.0 + (x / x_small) ^ 2.0) * (y2 - y1)) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Media.Common.smoothStep;
 // 
-// function Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState\"
+// function Modelica.Media.Water.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.Medium.ThermodynamicState\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
 //   output ThermodynamicState res;
-// end Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState;
+// end Modelica.Media.Water.Medium.ThermodynamicState;
 // 
-// function Modelica.Media.Water.ConstantPropertyLiquidWater.dynamicViscosity \"Return dynamic viscosity\"
-//   input Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState state \"thermodynamic state record\";
+// function Modelica.Media.Water.Medium.dynamicViscosity \"Return dynamic viscosity\"
+//   input Modelica.Media.Water.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
 // algorithm
 //   eta := 0.001;
-// end Modelica.Media.Water.ConstantPropertyLiquidWater.dynamicViscosity;
+// end Modelica.Media.Water.Medium.dynamicViscosity;
 // 
-// function Modelica.Media.Water.ConstantPropertyLiquidWater.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
+// function Modelica.Media.Water.Medium.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
 //   input Real x \"m_flow or dp\";
-//   input Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState state_a \"Thermodynamic state if x > 0\";
-//   input Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState state_b \"Thermodynamic state if x < 0\";
+//   input Modelica.Media.Water.Medium.ThermodynamicState state_a \"Thermodynamic state if x > 0\";
+//   input Modelica.Media.Water.Medium.ThermodynamicState state_b \"Thermodynamic state if x < 0\";
 //   input Real x_small(min = 0.0) \"Smooth transition in the region -x_small < x < x_small\";
-//   output Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
+//   output Modelica.Media.Water.Medium.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
 // algorithm
-//   state := Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.T,state_b.T,x_small));
-// end Modelica.Media.Water.ConstantPropertyLiquidWater.setSmoothState;
+//   state := Modelica.Media.Water.Medium.ThermodynamicState(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.T,state_b.T,x_small));
+// end Modelica.Media.Water.Medium.setSmoothState;
 // 
-// function Modelica.Media.Water.ConstantPropertyLiquidWater.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+// function Modelica.Media.Water.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
 //   h := 4184.0 * (-273.15 + T);
-// end Modelica.Media.Water.ConstantPropertyLiquidWater.specificEnthalpy_pTX;
+// end Modelica.Media.Water.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.Water.ConstantPropertyLiquidWater.specificHeatCapacityCv \"Return specific heat capacity at constant volume\"
-//   input Modelica.Media.Water.ConstantPropertyLiquidWater.ThermodynamicState state \"thermodynamic state record\";
+// function Modelica.Media.Water.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume\"
+//   input Modelica.Media.Water.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
 //   cv := 4184.0;
-// end Modelica.Media.Water.ConstantPropertyLiquidWater.specificHeatCapacityCv;
+// end Modelica.Media.Water.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
@@ -315,15 +315,15 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   Real m(quantity = \"Mass\", unit = \"kg\", min = 0.0, start = 1.0);
 //   Real U(quantity = \"Energy\", unit = \"J\");
 //   Real m_flow_ext(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0);
-//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Water.ConstantPropertyLiquidWater.dynamicViscosity(medium);
-//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Water.ConstantPropertyLiquidWater.specificHeatCapacityCv(medium);
+//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Water.Medium.dynamicViscosity(medium);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Water.Medium.specificHeatCapacityCv(medium);
 // equation
 //   assert(medium.T >= 272.15 and medium.T <= 403.15,\"
 // Temperature T (= \" + String(medium.T,0,true,6) + \" K) is not
 // in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
-//   medium.h = Modelica.Media.Water.ConstantPropertyLiquidWater.specificEnthalpy_pTX(medium.p,medium.T,{medium.X[1]});
+//   medium.h = Modelica.Media.Water.Medium.specificEnthalpy_pTX(medium.p,medium.T,{medium.X[1]});
 //   medium.u = 4184.0 * (-273.15 + medium.T);
 //   medium.d = 995.586;
 //   medium.R = 0.0;
@@ -340,7 +340,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
-//   medium2.h = Modelica.Media.Water.ConstantPropertyLiquidWater.specificEnthalpy_pTX(medium2.p,medium2.T,{medium2.X[1]});
+//   medium2.h = Modelica.Media.Water.Medium.specificEnthalpy_pTX(medium2.p,medium2.T,{medium2.X[1]});
 //   medium2.u = 4184.0 * (-273.15 + medium2.T);
 //   medium2.d = 995.586;
 //   medium2.R = 0.0;
@@ -360,7 +360,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   medium2.p = 10000.0 * time;
 //   medium2.T = 330.0;
 //   m_flow_ext2 = time + -30.0;
-//   state = Modelica.Media.Water.ConstantPropertyLiquidWater.setSmoothState(m_flow_ext2,medium.state,medium2.state,10.0);
+//   state = Modelica.Media.Water.Medium.setSmoothState(m_flow_ext2,medium.state,medium2.state,10.0);
 //   der_p = der(state.p);
 //   der_T = der(state.T);
 // end Modelica.Media.Examples.SimpleLiquidWater;
@@ -2155,106 +2155,106 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   end if;
 // end Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.SaturationProperties \"Automatically generated record constructor for Modelica.Media.Water.WaterIF97_ph.SaturationProperties\"
+// function Modelica.Media.Water.Medium.SaturationProperties \"Automatically generated record constructor for Modelica.Media.Water.Medium.SaturationProperties\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") psat;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") Tsat;
 //   output SaturationProperties res;
-// end Modelica.Media.Water.WaterIF97_ph.SaturationProperties;
+// end Modelica.Media.Water.Medium.SaturationProperties;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.WaterIF97_ph.ThermodynamicState\"
+// function Modelica.Media.Water.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.Medium.ThermodynamicState\"
 //   input Integer(min=0, max=2) phase;
 //   input Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
 //   input Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") d;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   output ThermodynamicState res;
-// end Modelica.Media.Water.WaterIF97_ph.ThermodynamicState;
+// end Modelica.Media.Water.Medium.ThermodynamicState;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy \"boiling curve specific enthalpy of water\"
-//   input Modelica.Media.Water.WaterIF97_ph.SaturationProperties sat \"saturation property record\";
+// function Modelica.Media.Water.Medium.bubbleEnthalpy \"boiling curve specific enthalpy of water\"
+//   input Modelica.Media.Water.Medium.SaturationProperties sat \"saturation property record\";
 //   output Real hl(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"boiling curve specific enthalpy\";
 // algorithm
 //   hl := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(sat.psat);
-// end Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy;
+// end Modelica.Media.Water.Medium.bubbleEnthalpy;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.density_pT \"Computes density as a function of pressure and temperature\"
+// function Modelica.Media.Water.Medium.density_pT \"Computes density as a function of pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
-// end Modelica.Media.Water.WaterIF97_ph.density_pT;
+// end Modelica.Media.Water.Medium.density_pT;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.density_ph \"Computes density as a function of pressure and specific enthalpy\"
+// function Modelica.Media.Water.Medium.density_ph \"Computes density as a function of pressure and specific enthalpy\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
 // algorithm
 //   d := Modelica.Media.Water.IF97_Utilities.rho_ph(p,h,phase,0);
-// end Modelica.Media.Water.WaterIF97_ph.density_ph;
+// end Modelica.Media.Water.Medium.density_ph;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.dewEnthalpy \"dew curve specific enthalpy of water\"
-//   input Modelica.Media.Water.WaterIF97_ph.SaturationProperties sat \"saturation property record\";
+// function Modelica.Media.Water.Medium.dewEnthalpy \"dew curve specific enthalpy of water\"
+//   input Modelica.Media.Water.Medium.SaturationProperties sat \"saturation property record\";
 //   output Real hv(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"dew curve specific enthalpy\";
 // algorithm
 //   hv := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hv_p(sat.psat);
-// end Modelica.Media.Water.WaterIF97_ph.dewEnthalpy;
+// end Modelica.Media.Water.Medium.dewEnthalpy;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.saturationTemperature \"saturation temperature of water\"
+// function Modelica.Media.Water.Medium.saturationTemperature \"saturation temperature of water\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"pressure\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"saturation temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
-// end Modelica.Media.Water.WaterIF97_ph.saturationTemperature;
+// end Modelica.Media.Water.Medium.saturationTemperature;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
+// function Modelica.Media.Water.Medium.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
 //   input Real x \"m_flow or dp\";
-//   input Modelica.Media.Water.WaterIF97_ph.ThermodynamicState state_a \"Thermodynamic state if x > 0\";
-//   input Modelica.Media.Water.WaterIF97_ph.ThermodynamicState state_b \"Thermodynamic state if x < 0\";
+//   input Modelica.Media.Water.Medium.ThermodynamicState state_a \"Thermodynamic state if x > 0\";
+//   input Modelica.Media.Water.Medium.ThermodynamicState state_b \"Thermodynamic state if x < 0\";
 //   input Real x_small(min = 0.0) \"Smooth transition in the region -x_small < x < x_small\";
-//   output Modelica.Media.Water.WaterIF97_ph.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
+//   output Modelica.Media.Water.Medium.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
 // algorithm
-//   state := Modelica.Media.Water.WaterIF97_ph.ThermodynamicState(0,Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),Modelica.Media.Water.WaterIF97_ph.density_ph(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),0),Modelica.Media.Water.WaterIF97_ph.temperature_ph(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),0),Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small));
-// end Modelica.Media.Water.WaterIF97_ph.setSmoothState;
+//   state := Modelica.Media.Water.Medium.ThermodynamicState(0,Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),Modelica.Media.Water.Medium.density_ph(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),0),Modelica.Media.Water.Medium.temperature_ph(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.h,state_b.h,x_small),0),Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small));
+// end Modelica.Media.Water.Medium.setSmoothState;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.setState_pT \"Return thermodynamic state from p and T\"
+// function Modelica.Media.Water.Medium.setState_pT \"Return thermodynamic state from p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Modelica.Media.Water.WaterIF97_ph.ThermodynamicState state \"thermodynamic state record\";
+//   output Modelica.Media.Water.Medium.ThermodynamicState state \"thermodynamic state record\";
 // algorithm
-//   state := Modelica.Media.Water.WaterIF97_ph.setState_pTX(p,T,{},phase);
-// end Modelica.Media.Water.WaterIF97_ph.setState_pT;
+//   state := Modelica.Media.Water.Medium.setState_pTX(p,T,{},phase);
+// end Modelica.Media.Water.Medium.setState_pT;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.setState_pTX \"Return thermodynamic state of water as function of p and T\"
+// function Modelica.Media.Water.Medium.setState_pTX \"Return thermodynamic state of water as function of p and T\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Water.WaterIF97_ph.ThermodynamicState state \"thermodynamic state record\";
+//   output Modelica.Media.Water.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 // algorithm
-//   state := Modelica.Media.Water.WaterIF97_ph.ThermodynamicState(1,Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT(p,T,0),Modelica.Media.Water.WaterIF97_ph.density_pT(p,T,0),T,p);
-// end Modelica.Media.Water.WaterIF97_ph.setState_pTX;
+//   state := Modelica.Media.Water.Medium.ThermodynamicState(1,Modelica.Media.Water.Medium.specificEnthalpy_pT(p,T,0),Modelica.Media.Water.Medium.density_pT(p,T,0),T,p);
+// end Modelica.Media.Water.Medium.setState_pTX;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
+// function Modelica.Media.Water.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
 // algorithm
 //   h := Modelica.Media.Water.IF97_Utilities.h_pT(p,T,0);
-// end Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT;
+// end Modelica.Media.Water.Medium.specificEnthalpy_pT;
 // 
-// function Modelica.Media.Water.WaterIF97_ph.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
+// function Modelica.Media.Water.Medium.temperature_ph \"Computes temperature as a function of pressure and specific enthalpy\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 //   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
 // algorithm
 //   T := Modelica.Media.Water.IF97_Utilities.T_ph(p,h,phase,0);
-// end Modelica.Media.Water.WaterIF97_ph.temperature_ph;
+// end Modelica.Media.Water.Medium.temperature_ph;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
@@ -2319,10 +2319,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   Real der_T;
 // equation
 //   medium.MM = 0.018015268;
-//   medium.phase = if medium.h < Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy(medium.sat) or medium.h > Modelica.Media.Water.WaterIF97_ph.dewEnthalpy(medium.sat) or medium.p > 22064000.0 then 1 else 2;
-//   medium.d = Modelica.Media.Water.WaterIF97_ph.density_ph(medium.p,medium.h,medium.phase);
-//   medium.T = Modelica.Media.Water.WaterIF97_ph.temperature_ph(medium.p,medium.h,medium.phase);
-//   medium.sat.Tsat = Modelica.Media.Water.WaterIF97_ph.saturationTemperature(medium.p);
+//   medium.phase = if medium.h < Modelica.Media.Water.Medium.bubbleEnthalpy(medium.sat) or medium.h > Modelica.Media.Water.Medium.dewEnthalpy(medium.sat) or medium.p > 22064000.0 then 1 else 2;
+//   medium.d = Modelica.Media.Water.Medium.density_ph(medium.p,medium.h,medium.phase);
+//   medium.T = Modelica.Media.Water.Medium.temperature_ph(medium.p,medium.h,medium.phase);
+//   medium.sat.Tsat = Modelica.Media.Water.Medium.saturationTemperature(medium.p);
 //   medium.sat.psat = medium.p;
 //   medium.u = medium.h + (-medium.p) / medium.d;
 //   medium.R = 461.523636506545;
@@ -2342,8 +2342,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   der(m) = m_flow_ext;
 //   der(U) = H_flow_ext;
 //   m_flow_ext2 = time + -0.5;
-//   state2 = Modelica.Media.Water.WaterIF97_ph.setState_pT(100000.0 * (1.0 + time),300.0 + 200.0 * time,0);
-//   state = Modelica.Media.Water.WaterIF97_ph.setSmoothState(m_flow_ext2,medium.state,state2,0.05);
+//   state2 = Modelica.Media.Water.Medium.setState_pT(100000.0 * (1.0 + time),300.0 + 200.0 * time,0);
+//   state = Modelica.Media.Water.Medium.setSmoothState(m_flow_ext2,medium.state,state2,0.05);
 //   der_p = der(state.p);
 //   der_T = der(state.T);
 // end Modelica.Media.Examples.WaterIF97;
@@ -2364,7 +2364,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // class Modelica.Media.Water.StandardWater
-//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Water.WaterIF97_ph.Choices.IndependentVariables.ph \"Enumeration type for independent variables\";
+//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Water.StandardWater.Choices.IndependentVariables.ph \"Enumeration type for independent variables\";
 //   constant String mediumName = \"WaterIF97\" \"Name of the medium\";
 //   constant Boolean singleState = false \"= true, if u and d are not a function of pressure\";
 //   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
@@ -2670,7 +2670,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   final constant Real invTK[5] = 0.00341122292341805;
 //   final constant Real invTK[6] = 0.00319335781574325;
 //   final constant Real invTK[7] = 0.0030016509079994;
-//   final constant Real invTK[8] = 0.00283165793572136;
+//   final constant Real invTK[8] = 0.00283165793572137;
 //   final constant Real invTK[9] = 0.00267988744472732;
 //   final constant Integer nS = 1 \"Number of substances\";
 //   final constant Real poly_rho[1] = 0.0;
