@@ -2,12 +2,11 @@
 //name:        Simulate Modelica.Blocks.Examples [version 3.1]
 //keyword:     instantiating/check/simulate MSL 3.1 Modelica.Blocks.Examples
 //status:      correct
-//env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 //
 // instantiate/check/simulate model example
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 
 // Modelica.Blocks.Examples
 instantiateModel(Modelica.Blocks.Examples.PID_Controller);  getErrorString(); 

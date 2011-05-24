@@ -1,15 +1,14 @@
 // name:     Modelica.StateGraph.Examples.ShowCompositeStep
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.StateGraph.Examples.ShowCompositeStep_* Modelica.StateGraph.Examples.ShowCompositeStep Modelica.StateGraph.Examples.ShowCompositeStep.exe Modelica.StateGraph.Examples.ShowCompositeStep.cpp Modelica.StateGraph.Examples.ShowCompositeStep.makefile Modelica.StateGraph.Examples.ShowCompositeStep.libs Modelica.StateGraph.Examples.ShowCompositeStep.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.StateGraph.Examples.ShowCompositeStep,stopTime=15.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ShowCompositeStep_res.mat",

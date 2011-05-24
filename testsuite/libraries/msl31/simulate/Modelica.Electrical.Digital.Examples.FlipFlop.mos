@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Digital.Examples.FlipFlop
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Digital.Examples.FlipFlop_* Modelica.Electrical.Digital.Examples.FlipFlop Modelica.Electrical.Digital.Examples.FlipFlop.exe Modelica.Electrical.Digital.Examples.FlipFlop.cpp Modelica.Electrical.Digital.Examples.FlipFlop.makefile Modelica.Electrical.Digital.Examples.FlipFlop.libs Modelica.Electrical.Digital.Examples.FlipFlop.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Digital.Examples.FlipFlop,stopTime=250.0);
 

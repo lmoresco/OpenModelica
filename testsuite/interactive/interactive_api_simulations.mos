@@ -1,13 +1,12 @@
 // name: Test Interactive API for Simulations
 // keywords: Graphical API, annotations
 // status: correct
-// env: OPENMODELICALIBRARY=../../libraries/msl31
 // teardown_command: rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.* mat-files.txt csv-files.txt plt-files.txt
 // Subset of the Graphical API for annotations
 //
 
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 
 // get the experiment annotation
 getExperimentAnnotation(Modelica.Blocks.Examples.BusUsage);

@@ -2,10 +2,9 @@
 // keywords: Simulation
 // status:   correct
 // teardown_command: rm -f LossyGearDemo1* output.log
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // LossyGearDemo1 in Modelica.Mechanics.Rotational.Examples
 //
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 loadFile("LossyGear1.mo");
 simulate(LossyGearDemo1, numberOfIntervals=200, tolerance=1e-8);
 val(gear.mode,0.0);

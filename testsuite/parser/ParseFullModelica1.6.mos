@@ -1,12 +1,11 @@
 // name:     ParseFullModelica1.6
 // keywords: parse
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl16
 // 
 // Parse/Unparse entire MSL 1.6
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"1.6"});
 getErrorString();
 list();
 

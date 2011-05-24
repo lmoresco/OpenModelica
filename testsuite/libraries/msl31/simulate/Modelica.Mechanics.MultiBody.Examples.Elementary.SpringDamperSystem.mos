@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem_* Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.exe Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.libs Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.SpringDamperSystem,stopTime=10.0);
 

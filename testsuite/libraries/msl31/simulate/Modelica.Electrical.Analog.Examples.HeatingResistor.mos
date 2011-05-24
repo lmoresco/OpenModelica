@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Analog.Examples.HeatingResistor
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.HeatingResistor_* Modelica.Electrical.Analog.Examples.HeatingResistor Modelica.Electrical.Analog.Examples.HeatingResistor.exe Modelica.Electrical.Analog.Examples.HeatingResistor.cpp Modelica.Electrical.Analog.Examples.HeatingResistor.makefile Modelica.Electrical.Analog.Examples.HeatingResistor.libs Modelica.Electrical.Analog.Examples.HeatingResistor.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.HeatingResistor,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.HeatingResistor_res.mat",

@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses_* Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.exe Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.libs Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.LineForceWithTwoMasses,stopTime=3.0);
 

@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Machines.Examples.DCPM_Start
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.DCPM_Start_* Modelica.Electrical.Machines.Examples.DCPM_Start Modelica.Electrical.Machines.Examples.DCPM_Start.exe Modelica.Electrical.Machines.Examples.DCPM_Start.cpp Modelica.Electrical.Machines.Examples.DCPM_Start.makefile Modelica.Electrical.Machines.Examples.DCPM_Start.libs Modelica.Electrical.Machines.Examples.DCPM_Start.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.DCPM_Start,stopTime=2.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Machines.Examples.DCPM_Start_res.mat",

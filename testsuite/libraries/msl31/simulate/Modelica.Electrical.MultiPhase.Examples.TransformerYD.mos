@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.MultiPhase.Examples.TransformerYD
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.MultiPhase.Examples.TransformerYD_* Modelica.Electrical.MultiPhase.Examples.TransformerYD Modelica.Electrical.MultiPhase.Examples.TransformerYD.exe Modelica.Electrical.MultiPhase.Examples.TransformerYD.cpp Modelica.Electrical.MultiPhase.Examples.TransformerYD.makefile Modelica.Electrical.MultiPhase.Examples.TransformerYD.libs Modelica.Electrical.MultiPhase.Examples.TransformerYD.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 //simulate(Modelica.Electrical.MultiPhase.Examples.TransformerYD);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.MultiPhase.Examples.TransformerYD_res.mat",

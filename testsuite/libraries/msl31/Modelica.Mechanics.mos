@@ -1,12 +1,11 @@
 //name:        Modelica.Mechanics [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Mechanics
 //status:      correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 getErrorString(); 
 
 instantiateModel(Modelica.Mechanics.Translational.Examples.Friction); getErrorString();

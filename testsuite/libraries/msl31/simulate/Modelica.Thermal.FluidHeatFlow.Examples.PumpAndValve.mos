@@ -1,15 +1,14 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve_* Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.exe Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.cpp Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.makefile Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.libs Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve,stopTime=2.0);
 

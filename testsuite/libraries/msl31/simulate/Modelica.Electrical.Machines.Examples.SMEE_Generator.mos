@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Machines.Examples.SMEE_Generator
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.SMEE_Generator_* Modelica.Electrical.Machines.Examples.SMEE_Generator Modelica.Electrical.Machines.Examples.SMEE_Generator.exe Modelica.Electrical.Machines.Examples.SMEE_Generator.cpp Modelica.Electrical.Machines.Examples.SMEE_Generator.makefile Modelica.Electrical.Machines.Examples.SMEE_Generator.libs Modelica.Electrical.Machines.Examples.SMEE_Generator.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.SMEE_Generator,stopTime=30.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Machines.Examples.SMEE_Generator_res.mat",

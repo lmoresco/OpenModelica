@@ -1,12 +1,11 @@
 //name:         UniUni
 //keyword:      instantiating msl221
 //status:       correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl221/:../../../libraries/common/
 //
 // instantiate example
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 loadModel(BioChem);
 instantiateModel(BioChem.Examples.MassAction.UniUni);
 getErrorString();

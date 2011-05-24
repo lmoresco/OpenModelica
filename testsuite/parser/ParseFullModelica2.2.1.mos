@@ -1,12 +1,11 @@
 // name:     ParseFullModelica2.2.1
 // keywords: parse
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 // Parse/Unparse entire MSL 2.2.1
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 getErrorString();
 list();
 

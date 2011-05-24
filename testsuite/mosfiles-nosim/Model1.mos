@@ -1,7 +1,6 @@
 //name:        Model1.mos Test for BUG 1238
 //keyword:     handling modifications
 //status:      correct
-//env: OPENMODELICALIBRARY=../../libraries/msl31/
 //
 // instantiate/check model example
 // Many of these models use parameters with unknown dimensions, so it's not
@@ -9,8 +8,8 @@
 //
 
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 loadFile("Model1.mo"); getErrorString();
 checkModel(Model1); getErrorString();
 

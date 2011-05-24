@@ -2,8 +2,6 @@
 // keywords:  rename Component
 // status:    correct
 // setup_command: chmod -w RenameRO.mo
-// env: OPENMODELICALIBRARY=../../libraries/msl31
-// ## 
 //
 loadFile("Rename.mo"); getErrorString();
 
@@ -11,8 +9,8 @@ list(Pck.TestRename); getErrorString();
 renameComponent(Pck.TestRename,x,RENAMED_X); getErrorString();
 list(Pck.TestRename); getErrorString();
 
-loadModel(Modelica); getErrorString();
-loadModel(ModelicaServices); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
+loadModel(ModelicaServices,{"1.0"}); getErrorString();
 deleteClass(Modelica.Fluid);
 deleteClass(Modelica.Media);
 deleteClass(Modelica.Mechanics.MultiBody);

@@ -1,12 +1,11 @@
 // name:     refactorGraphAnn2
 // keywords: annotation
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Tests refactoring of graphical component annotations and connect annotations
 //
 //echo(false);
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 loadFile("refactorGraphAnn2.mo");
 echo(true);
 refactorClass(connecttest);

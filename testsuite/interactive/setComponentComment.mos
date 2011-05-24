@@ -1,7 +1,6 @@
 // name: Test Interactive API for Components 
 // keywords: Graphical API, component attributes
 // status: correct
-// env: OPENMODELICALIBRARY=../../libraries/msl31
 // Subset of the Graphical API for components
 //
 

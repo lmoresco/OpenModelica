@@ -1,12 +1,11 @@
 // name:     Gear
 // keywords: Simulate, readSimulationData
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // teardown_command: rm -f TestModels.RotationalModels.* output.log
 // 
 //  Simulate Rotational gear models and simulate. 
 //
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"2.2.1"}); getErrorString();
 loadFile("TestModels.mo"); getErrorString();
 
 simulate(TestModels.RotationalModels.Gears.Gear, tolerance=1e-5, numberOfIntervals=500); getErrorString();

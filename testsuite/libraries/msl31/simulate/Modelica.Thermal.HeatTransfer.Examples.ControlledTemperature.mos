@@ -1,15 +1,14 @@
 // name:     Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature_* Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.exe Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.cpp Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.makefile Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.libs Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature,stopTime=10.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature_res.mat",

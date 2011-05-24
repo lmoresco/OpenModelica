@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Analog.Examples.ChuaCircuit
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.ChuaCircuit_* Modelica.Electrical.Analog.Examples.ChuaCircuit Modelica.Electrical.Analog.Examples.ChuaCircuit.exe Modelica.Electrical.Analog.Examples.ChuaCircuit.cpp Modelica.Electrical.Analog.Examples.ChuaCircuit.makefile Modelica.Electrical.Analog.Examples.ChuaCircuit.libs Modelica.Electrical.Analog.Examples.ChuaCircuit.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",

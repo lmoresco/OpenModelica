@@ -1,15 +1,14 @@
 // name:     Modelica.Blocks.Examples.InverseModel
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Blocks.Examples.InverseModel_* Modelica.Blocks.Examples.InverseModel Modelica.Blocks.Examples.InverseModel.exe Modelica.Blocks.Examples.InverseModel.cpp Modelica.Blocks.Examples.InverseModel.makefile Modelica.Blocks.Examples.InverseModel.libs Modelica.Blocks.Examples.InverseModel.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Blocks.Examples.InverseModel,stopTime=2);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.InverseModel_res.mat",

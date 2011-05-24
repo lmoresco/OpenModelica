@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.Translational.Examples.SignConvention
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.SignConvention_* Modelica.Mechanics.Translational.Examples.SignConvention Modelica.Mechanics.Translational.Examples.SignConvention.exe Modelica.Mechanics.Translational.Examples.SignConvention.cpp Modelica.Mechanics.Translational.Examples.SignConvention.makefile Modelica.Mechanics.Translational.Examples.SignConvention.libs Modelica.Mechanics.Translational.Examples.SignConvention.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Translational.Examples.SignConvention);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.SignConvention_res.mat",

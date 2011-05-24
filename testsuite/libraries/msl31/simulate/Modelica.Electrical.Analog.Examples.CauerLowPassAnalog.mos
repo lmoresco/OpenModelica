@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Analog.Examples.CauerLowPassAnalog
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_* Modelica.Electrical.Analog.Examples.CauerLowPassAnalog Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.exe Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.cpp Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.makefile Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.libs Modelica.Electrical.Analog.Examples.CauerLowPassAnalog.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.CauerLowPassAnalog,stopTime=60.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.CauerLowPassAnalog_res.mat",

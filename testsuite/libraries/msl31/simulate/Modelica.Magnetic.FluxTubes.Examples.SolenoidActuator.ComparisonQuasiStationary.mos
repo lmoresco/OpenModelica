@@ -1,15 +1,14 @@
 // name:     Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary_* Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.exe Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.cpp Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.makefile Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.libs Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Magnetic.FluxTubes.Examples.SolenoidActuator.ComparisonQuasiStationary,stopTime=10.0);
 

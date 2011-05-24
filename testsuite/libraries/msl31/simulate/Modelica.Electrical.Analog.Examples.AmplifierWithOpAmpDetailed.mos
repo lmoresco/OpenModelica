@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed_* Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.exe Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.cpp Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.makefile Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.libs Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.AmplifierWithOpAmpDetailed,stopTime=0.00300000002608);
 

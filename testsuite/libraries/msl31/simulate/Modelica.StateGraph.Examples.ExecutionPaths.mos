@@ -1,15 +1,14 @@
 // name:     Modelica.StateGraph.Examples.ExecutionPaths
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.StateGraph.Examples.ExecutionPaths_* Modelica.StateGraph.Examples.ExecutionPaths Modelica.StateGraph.Examples.ExecutionPaths.exe Modelica.StateGraph.Examples.ExecutionPaths.cpp Modelica.StateGraph.Examples.ExecutionPaths.makefile Modelica.StateGraph.Examples.ExecutionPaths.libs Modelica.StateGraph.Examples.ExecutionPaths.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.StateGraph.Examples.ExecutionPaths,stopTime=15.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ExecutionPaths_res.mat",

@@ -1,7 +1,6 @@
 // name:     Simulation2
 // keywords: Simulation, BooleanModel, LargeSteps
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // teardown_command: rm -f Booleanmodel* Largesteps* output.log
 //
 

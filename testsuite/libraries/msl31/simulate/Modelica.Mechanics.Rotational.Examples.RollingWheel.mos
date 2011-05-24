@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.Rotational.Examples.RollingWheel
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.RollingWheel_* Modelica.Mechanics.Rotational.Examples.RollingWheel Modelica.Mechanics.Rotational.Examples.RollingWheel.exe Modelica.Mechanics.Rotational.Examples.RollingWheel.cpp Modelica.Mechanics.Rotational.Examples.RollingWheel.makefile Modelica.Mechanics.Rotational.Examples.RollingWheel.libs Modelica.Mechanics.Rotational.Examples.RollingWheel.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Rotational.Examples.RollingWheel,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.RollingWheel_res.mat",

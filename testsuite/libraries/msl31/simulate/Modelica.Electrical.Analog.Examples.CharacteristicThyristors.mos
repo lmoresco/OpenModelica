@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Analog.Examples.CharacteristicThyristors
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Analog.Examples.CharacteristicThyristors_* Modelica.Electrical.Analog.Examples.CharacteristicThyristors Modelica.Electrical.Analog.Examples.CharacteristicThyristors.exe Modelica.Electrical.Analog.Examples.CharacteristicThyristors.cpp Modelica.Electrical.Analog.Examples.CharacteristicThyristors.makefile Modelica.Electrical.Analog.Examples.CharacteristicThyristors.libs Modelica.Electrical.Analog.Examples.CharacteristicThyristors.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.CharacteristicThyristors,stopTime=2.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.CharacteristicThyristors_res.mat",

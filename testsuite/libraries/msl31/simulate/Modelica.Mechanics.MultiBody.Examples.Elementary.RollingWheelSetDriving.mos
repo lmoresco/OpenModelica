@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving_* Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.exe Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.libs Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving,stopTime=3.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.RollingWheelSetDriving_res.mat",

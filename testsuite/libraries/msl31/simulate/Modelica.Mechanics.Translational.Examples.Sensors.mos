@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.Translational.Examples.Sensors
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Translational.Examples.Sensors_* Modelica.Mechanics.Translational.Examples.Sensors Modelica.Mechanics.Translational.Examples.Sensors.exe Modelica.Mechanics.Translational.Examples.Sensors.cpp Modelica.Mechanics.Translational.Examples.Sensors.makefile Modelica.Mechanics.Translational.Examples.Sensors.libs Modelica.Mechanics.Translational.Examples.Sensors.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Translational.Examples.Sensors);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Sensors_res.mat",

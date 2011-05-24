@@ -1,12 +1,11 @@
 //name:        Modelica.Electrical.Analog [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Electrical.Analog
 //status:      correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 
 instantiateModel(Modelica.Electrical.Analog.Examples.Utilities.RealSwitch); getErrorString();
 checkModel(Modelica.Electrical.Analog.Examples.Utilities.RealSwitch); getErrorString();

@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_* Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.exe Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.cpp Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.makefile Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.libs Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b,stopTime=0.5);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Loops.Engine1b_res.mat",

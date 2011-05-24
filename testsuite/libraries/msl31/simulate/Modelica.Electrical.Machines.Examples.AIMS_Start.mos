@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMS_Start
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMS_Start_* Modelica.Electrical.Machines.Examples.AIMS_Start Modelica.Electrical.Machines.Examples.AIMS_Start.exe Modelica.Electrical.Machines.Examples.AIMS_Start.cpp Modelica.Electrical.Machines.Examples.AIMS_Start.makefile Modelica.Electrical.Machines.Examples.AIMS_Start.libs Modelica.Electrical.Machines.Examples.AIMS_Start.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.AIMS_Start,stopTime=1.5);
 

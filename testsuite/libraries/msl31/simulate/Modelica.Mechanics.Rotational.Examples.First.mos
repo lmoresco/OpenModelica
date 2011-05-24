@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.Rotational.Examples.First
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.First_* Modelica.Mechanics.Rotational.Examples.First Modelica.Mechanics.Rotational.Examples.First.exe Modelica.Mechanics.Rotational.Examples.First.cpp Modelica.Mechanics.Rotational.Examples.First.makefile Modelica.Mechanics.Rotational.Examples.First.libs Modelica.Mechanics.Rotational.Examples.First.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Rotational.Examples.First);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.First_res.mat",

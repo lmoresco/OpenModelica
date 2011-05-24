@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity_* Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.exe Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.cpp Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.makefile Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.libs Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.MultiBody.Examples.Elementary.PointGravity_res.mat",

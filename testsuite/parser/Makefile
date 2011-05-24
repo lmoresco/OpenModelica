@@ -1,5 +1,3 @@
-OPENMODELICALIBRARY := ../../../libraries/msl31/
-
 TEST=../rtest -v
 
 ifeq ($(shell uname -m),x86_64)

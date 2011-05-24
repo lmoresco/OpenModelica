@@ -1,13 +1,12 @@
 //name:         LossyGearDemo1Sim
 //keyword:      simulating msl221
 //status:       correct
-//env: OPENMODELICALIBRARY=../../../../libraries/msl221
 //teardown_command: rm -f Modelica.Mechanics.*
 //
 // simulation example
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 simulate(Modelica.Mechanics.Rotational.Examples.LossyGearDemo1,numberOfIntervals=500,tolerance=0.0001,startTime=0,stopTime=1);
 
 "PowerLoss:";

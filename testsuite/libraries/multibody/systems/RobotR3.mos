@@ -1,7 +1,6 @@
 // name:     Modelica3.x.Mechanics.MultiBody.Examples.Systems.RobotR3
 // keywords: multibody, balancing, instantiation, expandable
 // status:   correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -f *.so *.dll *.log *.c* *.makefile *.libs
 // 
 // Modelica MultiBody 3.x: instantiation and balance checking
@@ -9,8 +8,8 @@
 
 
 // loadFile("_SystemsTotal.mo");
-loadModel(Modelica); getErrorString();
-loadModel(ModelicaServices); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
+loadModel(ModelicaServices,{"1.0"}); getErrorString();
 
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis); getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis); getErrorString();

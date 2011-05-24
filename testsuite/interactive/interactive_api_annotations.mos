@@ -1,7 +1,6 @@
 // name: Test Interactive API for Annotations for MSL 3.1
 // keywords: Graphical API, annotations
 // status: correct
-// env: OPENMODELICALIBRARY=../../libraries/msl31
 // Subset of the Graphical API for annotations
 //
 
@@ -11,8 +10,8 @@ setAnnotationVersion("3.x");
 getAnnotationVersion();
 
 
-loadModel(Modelica); getErrorString();
-loadModel(ModelicaServices); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
+loadModel(ModelicaServices,{"1.0"}); getErrorString();
 // delete Modelica.Fluid and Modelica.Media so we don't get the compiler into an infinite loop
 // deleteClass(Modelica.Fluid); getErrorString();
 // deleteClass(Modelica.Media); getErrorString();

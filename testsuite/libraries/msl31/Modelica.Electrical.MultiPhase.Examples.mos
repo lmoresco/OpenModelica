@@ -1,12 +1,11 @@
 //name:        Modelica.Electrical.MultiPhase.Examples [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Electrical.MultiPhase.Examples
 //status:      correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl31/
 //
 // instantiate example
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 
 instantiateModel(Modelica.Electrical.MultiPhase.Examples.TransformerYY); getErrorString();
 checkModel(Modelica.Electrical.MultiPhase.Examples.TransformerYY); getErrorString();

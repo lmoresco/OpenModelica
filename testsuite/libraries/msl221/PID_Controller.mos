@@ -1,12 +1,11 @@
 //name:         PID_Controller
 //keyword:      instantiating msl221
 //status:       correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl221
 //
 // instantiate example
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 instantiateModel(Modelica.Blocks.Examples.PID_Controller);
 getErrorString();
 // Result:

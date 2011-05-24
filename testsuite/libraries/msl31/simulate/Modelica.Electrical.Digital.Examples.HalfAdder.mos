@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Digital.Examples.HalfAdder
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Digital.Examples.HalfAdder_* Modelica.Electrical.Digital.Examples.HalfAdder Modelica.Electrical.Digital.Examples.HalfAdder.exe Modelica.Electrical.Digital.Examples.HalfAdder.cpp Modelica.Electrical.Digital.Examples.HalfAdder.makefile Modelica.Electrical.Digital.Examples.HalfAdder.libs Modelica.Electrical.Digital.Examples.HalfAdder.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Digital.Examples.HalfAdder,stopTime=5.0);
 

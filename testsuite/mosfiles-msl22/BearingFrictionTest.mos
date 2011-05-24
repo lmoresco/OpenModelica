@@ -2,14 +2,13 @@
 // keywords: Simulation
 // status:   correct
 // teardown_command: rm -f BearingFrictionTest_* BearingFrictionTest.cpp BearingFrictionTest BearingFrictionTest.exe BearingFrictionTest.makefile BearingFrictionTest.log BearingFrictionTest.libs
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate models and read in data.
 //  wbraun: The results do not fit to them of dymola.
 //          They differs after initialization.
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 // BearingFriction test (mixed system of equations in columb friction)
 
 loadFile("BearingFrictionTest.mo");

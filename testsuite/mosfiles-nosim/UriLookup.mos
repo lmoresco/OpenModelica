@@ -1,9 +1,9 @@
 // name: UriLookup
 // status: correct
-// env: OPENMODELICALIBRARY=./UriLookup
 // setup_command: rm -rf UriLookup && mkdir -p UriLookup/A
 // teardown_command: rm -rf UriLookup/A
 
+setModelicaPath("./UriLookup");
 uriToFilename("modelica://A.B.C/D.jpeg");getErrorString();
 uriToFilename("Modelica://A.B.C/Resources/Icons/D.jpeg");getErrorString();
 uriToFilename("Modelica:///A.B.C/Resources/Icons/D.jpeg");getErrorString();
@@ -14,6 +14,7 @@ uriToFilename("FilE://localhost/D%20.jpeg");getErrorString();
 uriToFilename("Modelicax://A.B.C/Resources/Icons/D.jpeg");getErrorString();
 
 // Result:
+// true
 // "./UriLookup/D.jpeg"
 // ""
 // "./UriLookup/Resources/Icons/D.jpeg"

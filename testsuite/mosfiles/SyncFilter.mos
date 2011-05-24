@@ -2,11 +2,10 @@
 // keywords: vector and when
 // status:  correct
 // teardown_command: rm -rf SyncFilterTest* output.log
-// env: OPENMODELICALIBRARY=../../libraries/msl31/
 // tests: bug reported here: https://www.openmodelica.org/index.php/forum/topic?id=74
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"3.1"}); getErrorString();
 loadFile("SyncFilter.mo"); getErrorString();
 instantiateModel(SyncFilterTest); getErrorString();
 simulate(SyncFilterTest, stopTime=0.0005);

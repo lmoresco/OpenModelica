@@ -1,7 +1,6 @@
 // name:     TimeVaryingLinsys
 // keywords: Simulation, Linear eqn systems.
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // teardown_command: rm -f TimeVaryingLinSys* output.log
 //  Simulate models and read in data.
 //

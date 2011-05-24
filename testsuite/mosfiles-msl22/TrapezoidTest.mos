@@ -2,11 +2,10 @@
 // keywords: Simulation
 // status:   correct
 // teardown_command: rm -f Trapezoidtest* output.log
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // 
 //  Simulate models and read in data.
 //
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 loadFile("TrapezoidTest.mo");
 simulate(Trapezoidtest, numberOfIntervals=50, tolerance=1e-8);
 val(resistor1.v,0.0);

@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Machines.Examples.AIMC_Steinmetz
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Machines.Examples.AIMC_Steinmetz_* Modelica.Electrical.Machines.Examples.AIMC_Steinmetz Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.exe Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.cpp Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.makefile Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.libs Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz,stopTime=1.5);
 

@@ -1,12 +1,11 @@
 //name:         InsulinSignaling_Sedaghat
 //keyword:      instantiating msl221
 //status:       correct
-//env: OPENMODELICALIBRARY=../../../libraries/msl221/:../../../libraries/common/
 //
 // instantiate example
 //
 
-loadModel(Modelica); getErrorString();
+loadModel(Modelica,{"2.2.1"}); getErrorString();
 loadModel(BioChem); getErrorString();
 instantiateModel(BioChem.Examples.InsulinSignaling_Sedaghat); getErrorString();
 checkModel(BioChem.Examples.InsulinSignaling_Sedaghat); getErrorString();

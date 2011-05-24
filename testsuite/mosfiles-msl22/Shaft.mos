@@ -1,12 +1,11 @@
 // name:     Shaft
 // keywords: Simulate, readSimulationData
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // teardown_command: rm -f TestModels.RotationalModels.SpringInertia.Shaft* output.log
 // 
 //  Simulate Rotational inertias with springs 
 //
-loadModel(Modelica);
+loadModel(Modelica,{"2.2.1"});
 loadFile("TestModels.mo");
 
 // Shaft

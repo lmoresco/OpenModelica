@@ -1,7 +1,6 @@
 // name:     NonLinSystems
 // keywords: Simulation, Non-linear eqn systems.
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl221
 // teardown_command: rm -f NonLinSys* NonLinSys2* NonLinSys3* NonLinSys4* dae1* dae2* output.log
 //  Simulate models and read in data.
 //

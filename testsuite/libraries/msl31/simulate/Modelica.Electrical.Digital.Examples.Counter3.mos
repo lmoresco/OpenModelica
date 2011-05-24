@@ -1,15 +1,14 @@
 // name:     Modelica.Electrical.Digital.Examples.Counter3
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Electrical.Digital.Examples.Counter3_* Modelica.Electrical.Digital.Examples.Counter3 Modelica.Electrical.Digital.Examples.Counter3.exe Modelica.Electrical.Digital.Examples.Counter3.cpp Modelica.Electrical.Digital.Examples.Counter3.makefile Modelica.Electrical.Digital.Examples.Counter3.libs Modelica.Electrical.Digital.Examples.Counter3.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Digital.Examples.Counter3,stopTime=10.0);
 

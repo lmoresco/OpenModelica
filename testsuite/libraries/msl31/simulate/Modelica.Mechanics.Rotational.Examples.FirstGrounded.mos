@@ -1,15 +1,14 @@
 // name:     Modelica.Mechanics.Rotational.Examples.FirstGrounded
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Mechanics.Rotational.Examples.FirstGrounded_* Modelica.Mechanics.Rotational.Examples.FirstGrounded Modelica.Mechanics.Rotational.Examples.FirstGrounded.exe Modelica.Mechanics.Rotational.Examples.FirstGrounded.cpp Modelica.Mechanics.Rotational.Examples.FirstGrounded.makefile Modelica.Mechanics.Rotational.Examples.FirstGrounded.libs Modelica.Mechanics.Rotational.Examples.FirstGrounded.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Rotational.Examples.FirstGrounded);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.FirstGrounded_res.mat",

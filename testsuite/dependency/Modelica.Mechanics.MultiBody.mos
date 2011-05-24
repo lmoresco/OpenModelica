@@ -1,14 +1,13 @@
 //name:        Dependency + check Modelica.Mechanics.MultiBody [version 3.1]
 //keyword:     instantiating MSL 3.1 Modelica.Mechanics.MultiBody using +d=usedep
 //status:      correct
-//env: OPENMODELICALIBRARY=../../libraries/msl31/
 //
 // instantiate/check model example
 //
 
 // load libraries
-loadModel(Modelica); getErrorString();
-loadModel(ModelicaServices); // Needed for PartialLineForce
+loadModel(Modelica,{"3.1"}); getErrorString();
+loadModel(ModelicaServices,{"1.0"}); // Needed for PartialLineForce
 getErrorString();
 
 // check without dependency analysis

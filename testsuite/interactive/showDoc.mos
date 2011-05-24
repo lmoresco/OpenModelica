@@ -1,11 +1,10 @@
 // name:     Show Documentation via getDocumentationAnnotation (bug: 1446)
 // keywords: verifies getDocumentationAnnotation
 // status:   correct
-// env: OPENMODELICALIBRARY=../../libraries/msl31
 // testing getDocumentationAnnotation
 //
 
-loadModel(Modelica);
+loadModel(Modelica,{"3.1"});
 getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK);
 getDocumentationAnnotation(Modelica.Math.Matrices.LAPACK.dgeev);
 

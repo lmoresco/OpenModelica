@@ -1,15 +1,14 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut_* Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.exe Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.cpp Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.makefile Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.libs Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut,stopTime=2.0);
 

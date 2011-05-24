@@ -1,15 +1,14 @@
 // name:     Modelica.Thermal.FluidHeatFlow.Examples.OneMass
 // keywords: simulation MSL Examples
 // status: correct
-// env: OPENMODELICALIBRARY=../../../../libraries/msl31/
 // teardown_command: rm -rf Modelica.Thermal.FluidHeatFlow.Examples.OneMass_* Modelica.Thermal.FluidHeatFlow.Examples.OneMass Modelica.Thermal.FluidHeatFlow.Examples.OneMass.exe Modelica.Thermal.FluidHeatFlow.Examples.OneMass.cpp Modelica.Thermal.FluidHeatFlow.Examples.OneMass.makefile Modelica.Thermal.FluidHeatFlow.Examples.OneMass.libs Modelica.Thermal.FluidHeatFlow.Examples.OneMass.log output.log
 //
 // Simulation Results 
 // Modelica Standard Library
 //
 
-loadModel(Modelica);
-loadModel(ModelicaServices);
+loadModel(Modelica,{"3.1"});
+loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.FluidHeatFlow.Examples.OneMass);
 
