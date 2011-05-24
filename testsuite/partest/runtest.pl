@@ -69,6 +69,9 @@ sub make_test_specific_links {
     when ("ExternalLibraryFunction.mos") {
       make_link("TestLibrary");
     }
+    when ("TestLoadModel.mos") {
+      make_link("TestLibrary");
+    }
     when ("PartialFn6.mo") { make_link("PartialFn6.ext_f.c"); };
     when ("RunScript.mos") { make_link("strings.mo"); };
     when ("SusanTest.mos") { 
