@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Blocks.Examples.LogicalNetwork1,stopTime=10.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.LogicalNetwork1_res.mat",
@@ -38,7 +37,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples
   
   
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.LogicalNetwork1_res.mat",

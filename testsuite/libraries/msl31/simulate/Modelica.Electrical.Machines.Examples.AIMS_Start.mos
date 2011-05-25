@@ -8,13 +8,11 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.AIMS_Start,stopTime=1.5);
 
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Machines.Examples.AIMS_Start_res.mat",

@@ -8,13 +8,11 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 loadFile("Model2.mo"); getErrorString();
 checkModel(Model2); getErrorString();
 
 
 // Result:
-// true
 // true
 // true
 // ""

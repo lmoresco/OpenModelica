@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.SMEE_Generator,stopTime=30.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Machines.Examples.SMEE_Generator_res.mat",

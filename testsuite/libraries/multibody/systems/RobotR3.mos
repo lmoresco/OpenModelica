@@ -9,7 +9,6 @@
 
 // loadFile("_SystemsTotal.mo");
 loadModel(Modelica,{"3.1"}); getErrorString();
-loadModel(ModelicaServices,{"1.0"}); getErrorString();
 
 instantiateModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis); getErrorString();
 checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.oneAxis); getErrorString();
@@ -18,8 +17,6 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot
 checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); getErrorString();
 
 // Result:
-// true
-// ""
 // true
 // ""
 // "function Modelica.Blocks.Sources.KinematicPTP2.position \"Inline after index reduction\"

@@ -11,7 +11,6 @@ getAnnotationVersion();
 
 
 loadModel(Modelica,{"3.1"}); getErrorString();
-loadModel(ModelicaServices,{"1.0"}); getErrorString();
 // delete Modelica.Fluid and Modelica.Media so we don't get the compiler into an infinite loop
 // deleteClass(Modelica.Fluid); getErrorString();
 // deleteClass(Modelica.Media); getErrorString();
@@ -7883,8 +7882,6 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // "3.x"
 // true
 // "3.x"
-// true
-// ""
 // true
 // ""
 // {}

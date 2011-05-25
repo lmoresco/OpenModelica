@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.StateGraph.Examples.ControlledTanks,stopTime=100.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ControlledTanks_res.mat",

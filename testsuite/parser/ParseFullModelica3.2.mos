@@ -5,27 +5,10 @@
 // Parse/Unparse entire MSL 3.2
 //
 
-loadModel(Modelica,{"3.2"});
-getErrorString();
-loadModel(ModelicaServices,{"1.1"});
-getErrorString();
-loadModel(Complex,{"1.0"});
-getErrorString();
+loadModel(Modelica,{"3.2"});getErrorString();
 list();
 
 // Result:
-// true
-// "[Nonlinear.mo:559:14-559:31:writable] Warning: Treating .0158271919734802 as 0.0158271919734802. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:559:48-559:65:writable] Warning: Treating .0942738402188500 as 0.0942738402188500. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:560:13-560:29:writable] Warning: Treating .155071987336585 as 0.155071987336585. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:560:47-560:63:writable] Warning: Treating .188821573960182 as 0.188821573960182. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:561:9-561:25:writable] Warning: Treating .199773405226859 as 0.199773405226859. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:561:42-561:58:writable] Warning: Treating .224926465333340 as 0.224926465333340. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [Nonlinear.mo:561:75-561:91:writable] Warning: Treating .242611071901408 as 0.242611071901408. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// [IF97_Utilities.mo:3820:36-3820:44:writable] Warning: Treating .5132047 as 0.5132047. This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future.
-// "
-// true
-// ""
 // true
 // ""
 // 

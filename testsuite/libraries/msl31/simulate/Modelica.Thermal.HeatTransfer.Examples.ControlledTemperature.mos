@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature,stopTime=10.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Thermal.HeatTransfer.Examples.ControlledTemperature_res.mat",

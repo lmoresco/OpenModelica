@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.StateGraph.Examples.FirstExample_Variant3,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.FirstExample_Variant3_res.mat",

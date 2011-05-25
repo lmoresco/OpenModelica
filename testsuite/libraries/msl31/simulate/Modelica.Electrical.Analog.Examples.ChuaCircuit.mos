@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.ChuaCircuit);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",
@@ -39,7 +38,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Anal
   
   
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.ChuaCircuit_res.mat",

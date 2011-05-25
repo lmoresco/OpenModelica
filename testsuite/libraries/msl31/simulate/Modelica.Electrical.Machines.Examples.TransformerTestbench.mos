@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Machines.Examples.TransformerTestbench,stopTime=0.10000000149);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Machines.Examples.TransformerTestbench_res.mat",
@@ -19,7 +18,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Mach
   "der(transformer.l1sigma.inductor[2].i)"});
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Machines.Examples.TransformerTestbench_res.mat",

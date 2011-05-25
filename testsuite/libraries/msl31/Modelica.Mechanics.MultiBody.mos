@@ -6,8 +6,6 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
-loadModel(ModelicaServices,{"1.0"}); // Needed for PartialLineForce
-getErrorString(); 
 
 checkModel(Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve1); 
 getErrorString();
@@ -32,8 +30,6 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 checkModel(Modelica.Mechanics.MultiBody.Visualizers.Internal.Lines); getErrorString();
 
 // Result:
-// true
-// ""
 // true
 // ""
 // "Check of Modelica.Mechanics.MultiBody.Frames.Quaternions.multipleResolve1 completed successfully.

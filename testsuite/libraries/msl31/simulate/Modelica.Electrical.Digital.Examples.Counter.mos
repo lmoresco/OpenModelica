@@ -8,13 +8,10 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Digital.Examples.Counter,stopTime=100.0);
 
-
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Digital.Examples.Counter_res.mat",

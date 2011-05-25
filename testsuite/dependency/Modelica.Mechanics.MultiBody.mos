@@ -292,7 +292,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // "
 // ""
 // "[package.mo:3:1-3:32:writable] Error: Base class Modelica.Icons.Library2 not found in scope Modelica.Mechanics
-// [package.mo:2:1-5196:13:writable] Error: Class Mechanics.MultiBody.Types.RotationSequence not found in scope Modelica.
+// [package.mo:2:1-5197:13:writable] Error: Class Mechanics.MultiBody.Types.RotationSequence not found in scope Modelica.
 // Error: Class Modelica.Mechanics.MultiBody.Types.RotationSequence not found in scope .
 // Error: Error occured while flattening model Modelica.Mechanics.MultiBody.Types.RotationSequence
 // "

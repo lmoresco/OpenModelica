@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Thermal.HeatTransfer.Examples.TwoMasses);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Thermal.HeatTransfer.Examples.TwoMasses_res.mat",

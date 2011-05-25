@@ -8,7 +8,6 @@
 //
 
 //loadModel(Modelica,{"3.1"});
-//loadModel(ModelicaServices,{"1.0"});
 
 //simulate(Modelica.Blocks.Examples.PID_Controller,stopTime=4.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.PID_Controller_res.mat",
@@ -108,7 +107,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples
   "PI.limiter.limitsAtInit"});
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.PID_Controller_res.mat",

@@ -1,5 +1,4 @@
 loadModel(Modelica,{"3.1"}); getErrorString();
-loadModel(ModelicaServices,{"1.0"}); getErrorString();
 
 // Modelica.Blocks.Examples
 simulate(Modelica.Blocks.Examples.PID_Controller);  getErrorString(); 

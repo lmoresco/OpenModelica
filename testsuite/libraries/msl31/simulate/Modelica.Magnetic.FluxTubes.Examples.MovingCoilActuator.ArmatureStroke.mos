@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke,stopTime=0.0500000007451);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.ArmatureStroke_res.mat",

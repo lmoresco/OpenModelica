@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.StateGraph.Examples.ShowExceptions,stopTime=20.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.StateGraph.Examples.ShowExceptions_res.mat",

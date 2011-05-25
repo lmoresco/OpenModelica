@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.Analog.Examples.NandGate,stopTime=1.00000001169e-07);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Analog.Examples.NandGate_res.mat",
@@ -21,7 +20,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.Anal
   
   
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Electrical.Analog.Examples.NandGate_res.mat",

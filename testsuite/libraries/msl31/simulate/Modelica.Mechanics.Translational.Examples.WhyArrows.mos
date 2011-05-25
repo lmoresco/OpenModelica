@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Translational.Examples.WhyArrows);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.WhyArrows_res.mat",
@@ -23,7 +22,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Trans
   "der(inertia2.v)"});
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Translational.Examples.WhyArrows_res.mat",

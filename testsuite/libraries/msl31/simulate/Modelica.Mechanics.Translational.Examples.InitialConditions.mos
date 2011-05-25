@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Translational.Examples.InitialConditions,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.InitialConditions_res.mat",
@@ -31,7 +30,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Trans
 
   
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Translational.Examples.InitialConditions_res.mat",

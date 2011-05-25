@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Electrical.MultiPhase.Examples.TransformerYY,stopTime=0.1);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Electrical.MultiPhase.Examples.TransformerYY_res.mat",

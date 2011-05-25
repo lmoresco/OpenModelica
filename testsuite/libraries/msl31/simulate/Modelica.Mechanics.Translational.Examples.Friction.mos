@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Translational.Examples.Friction,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Translational.Examples.Friction_res.mat",

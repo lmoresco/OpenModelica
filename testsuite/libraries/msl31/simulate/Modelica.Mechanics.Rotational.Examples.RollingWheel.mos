@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Mechanics.Rotational.Examples.RollingWheel,stopTime=5.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotational.Examples.RollingWheel_res.mat",
@@ -25,7 +24,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Mechanics.Rotat
   "quadraticSpeedDependentForce.s"});
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Mechanics.Rotational.Examples.RollingWheel_res.mat",

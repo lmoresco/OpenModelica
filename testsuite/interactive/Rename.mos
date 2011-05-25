@@ -10,7 +10,6 @@ renameComponent(Pck.TestRename,x,RENAMED_X); getErrorString();
 list(Pck.TestRename); getErrorString();
 
 loadModel(Modelica,{"3.1"}); getErrorString();
-loadModel(ModelicaServices,{"1.0"}); getErrorString();
 deleteClass(Modelica.Fluid);
 deleteClass(Modelica.Media);
 deleteClass(Modelica.Mechanics.MultiBody);
@@ -47,8 +46,6 @@ renameComponent(m1RO, emf1, emf2); getErrorString();
 // end TestRename;
 // 
 // "
-// ""
-// true
 // ""
 // true
 // ""

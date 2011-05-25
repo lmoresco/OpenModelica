@@ -8,7 +8,6 @@
 //
 
 loadModel(Modelica,{"3.1"});
-loadModel(ModelicaServices,{"1.0"});
 
 simulate(Modelica.Blocks.Examples.BusUsage,stopTime=2.0);
 res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples.BusUsage_res.mat",
@@ -17,7 +16,6 @@ res := OpenModelica.Scripting.compareSimulationResults("Modelica.Blocks.Examples
   "controlBus.subControlBus.myBooleanSignal","controlBus.subControlBus.myRealSignal"});
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Blocks.Examples.BusUsage_res.mat",
