@@ -10,14 +10,20 @@
 loadModel(Modelica,{"3.1"});
 
 simulate(Modelica.Thermal.FluidHeatFlow.Examples.OneMass);
+res := OpenModelica.Scripting.compareSimulationResults("Modelica.Thermal.FluidHeatFlow.Examples.OneMass_res.mat",
+  "Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mat","Modelica.Thermal.FluidHeatFlow.Examples.OneMass_diff.csv",0.01,0.00001,
+  {"pipe.T",
+  "der(pipe.T)",
+  "heatCapacitor.T",
+  "der(heatCapacitor.T)"});
 
 
 // Result:
-// true
 // true
 // record SimulationResult
 //     resultFile = "Modelica.Thermal.FluidHeatFlow.Examples.OneMass_res.mat",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'Modelica.Thermal.FluidHeatFlow.Examples.OneMass', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
+// "Files Equal!"
 // endResult
