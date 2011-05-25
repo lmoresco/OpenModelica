@@ -1,0 +1,5 @@
+Modelica_LinearSystems2 2.0 Released Sep 14, 2009
+https://modelica.org/libraries/Modelica_LinearSystems2
+
+Changes made to release version fixes the following:
+  [Modelica_LinearSystems2 2.0/ZerosAndPoles.mo:2063:7-2063:22:writable] Error: Qualified import name Modelica already exists in this scope.
