@@ -5120,6 +5120,7 @@ versionBuild=6,
 versionDate="2009-08-14",
 dateModified = "2010-01-17 20:15:49Z",
 revisionId="$Id:: package.mo 4084 2010-08-25 15:55:15Z #$",
+uses(ModelicaServices(version="1.0")),
 conversion(
  noneFromVersion="3.0.1",
  noneFromVersion="3.0",

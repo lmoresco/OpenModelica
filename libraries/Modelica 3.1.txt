@@ -2,6 +2,9 @@ A full copy of Modelica Standard Library 3.1 from:
  https://svn.modelica.org/projects/Modelica/branches/maintenance/3.1
 Revision 4084
 
+Added by sjoelund.se, 2011-05-25
+Added uses(ModelicaServices(version="1.0")) to package.mo
+
 Added by sjoelund.se, 2011-03-30
 Fixed the following warning:
 [libraries/msl31/Modelica/Media/Water/IF97_Utilities.mo:3820:8-3820:9:writable]
