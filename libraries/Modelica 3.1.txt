@@ -3,7 +3,8 @@ A full copy of Modelica Standard Library 3.1 from:
 Revision 4084
 
 Added by sjoelund.se, 2011-05-25
-Added uses(ModelicaServices(version="1.0")) to package.mo
+- uses(ModelicaServices(version="1.0")) to package.mo
+- order=2 to Modelica.Blocks.Sources.KinematicPTP2.position_der derivative annotations
 
 Added by sjoelund.se, 2011-03-30
 Fixed the following warning:
