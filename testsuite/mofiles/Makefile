@@ -87,6 +87,8 @@ ArraySizeFromFunc.mo \
 ArraySlice1.mo \
 ArraySubtraction.mo \
 Asin.mo \
+AssignmentErrorConstant.mo \
+AssignmentErrorInput.mo \
 AssignmentFunction.mo \
 AssignmentFunctionMultiple1.mo \
 AssignmentSimple.mo \
