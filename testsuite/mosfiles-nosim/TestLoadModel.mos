@@ -40,7 +40,7 @@ getErrorString();getNamedAnnotation(ABC,version);clear();
 // {"3.1"}
 // true
 // true
-// {"3.2"}
+// {"3.1"}
 // true
 // true
 // {"3.3 beta1"}
