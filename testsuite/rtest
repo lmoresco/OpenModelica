@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 use Cwd;
 
+delete($ENV{'OPENMODELICALIBRARY'});
 if (defined $ENV{"RTEST_OMCFLAGS"}) {
     $omcflags=$ENV{"RTEST_OMCFLAGS"};
 } else {
