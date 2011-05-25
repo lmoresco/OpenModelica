@@ -73,6 +73,7 @@ loadFile("../../Compiler/FrontEnd/SCodeLookup.mo");
 loadFile("../../Compiler/FrontEnd/SCodeHashTable.mo");
 loadFile("../../Compiler/FrontEnd/SCodeMod.mo");
 loadFile("../../Compiler/FrontEnd/SCodeFlat.mo");
+loadFile("../../Compiler/FrontEnd/SCodeFlatDump.mo");
 loadFile("../../Compiler/FrontEnd/SCode.mo");
 loadFile("../../Compiler/FrontEnd/SCodeCheck.mo");
 loadFile("../../Compiler/FrontEnd/SCodeUtil.mo");
