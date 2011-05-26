@@ -20,7 +20,7 @@ USE_CORBA = -DUSE_CORBA
 CORBAHOME = $(OMDEV)
 RMLINCLUDE = $(OMDEV)/tools/rml/include/plain/
 
-CFLAGS = -O3 -I. -Isqlite $(USE_CORBA) -DBUILD_MICO_DLL -DMINGW32 
+CFLAGS = -O3 -I. $(USE_CORBA) -DBUILD_MICO_DLL -DMINGW32 
 
 # We always compile with corba on OMDev-mingw
 CORBASRC = omc_communication.cc omc_communication_impl.cpp Corba_rml.cpp
@@ -30,7 +30,7 @@ OMCCORBASRC = omc_communication.o omc_communication_impl.o Corba_omc.o
 SHELL	= /bin/sh
 CC	= gcc 
 IDL	= $(OMDEV)/bin/mico/idl
-CFLAGS	+= -I$(RMLINCLUDE) -I../../c_runtime -I../../c_runtime/meta -I../ $(CORBAINCL) -Ilpsolve
+CFLAGS	+= -I$(RMLINCLUDE) -I../../c_runtime -I../../c_runtime/meta -I../ $(CORBAINCL)
 CXXFLAGS = $(CFLAGS)
 
 include Makefile.common
