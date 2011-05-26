@@ -13,7 +13,7 @@ end C;
 class ConstrainType1
   extends C;
 
-	redeclare Real r(min = 3.0);
+  redeclare Real r(min = 3.0);
 end ConstrainType1;
 
 // Result:
