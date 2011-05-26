@@ -29,6 +29,7 @@ RedeclareVisibility2.mo \
 # Run make testfailing
 FAILINGTESTFILES=\
 ConstrainingType1.mo \
+ConstrainingType2.mo \
 Modification1.mo \
 Modification2.mo \
 RedeclareClass1.mo \

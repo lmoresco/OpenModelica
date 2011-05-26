@@ -1,27 +1,23 @@
-// name:     RedeclareComponent1
+// name:     ConstrainType1
 // keywords: redeclare component constrainedby
 // status:   incorrect
 // 
 // Tests that the constraining class of a replaceable component is implicitly
 // the type of the component if no constraining class is defined.
 //
-
-class C
-  replaceable Real r;
+ 
+model C
+ replaceable Real r constrainedby Real(start = 3.0);
 end C;
 
-class RedeclareComponent1
+class ConstrainType1
   extends C;
 
-  redeclare Integer r;
-end RedeclareComponent1;
+	redeclare Real r(min = 3.0);
+end ConstrainType1;
 
 // Result:
-// Error processing file: RedeclareComponentInvalid1.mo
-// [RedeclareComponentInvalid1.mo:10:3-10:19:writable] Error: Type Integer is not a subtype of the constraining type Real in redeclaration of component r.
-// 
-// # Error encountered! Exiting...
-// # Please check the error message and the flags.
-// 
-// Execution failed!
+// class ConstrainType1
+//   Real r(min = 3.0, start = 3.0);
+// end ConstrainType1;
 // endResult
