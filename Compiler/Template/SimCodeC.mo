@@ -3059,219 +3059,6 @@ algorithm
                                    "  returnData->boolVariables.nAlias = NABOOL;\n",
                                    "  returnData->nJacobianvars = NJACVARS;\n",
                                    "\n",
-                                   "  if (returnData->nStates) {\n",
-                                   "    returnData->states = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    returnData->statesFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nStates);\n",
-                                   "    returnData->states_old = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    returnData->states_old2 = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    assert(returnData->states&&returnData->states_old&&returnData->states_old2);\n",
-                                   "    memset(returnData->states,0,sizeof(double)*returnData->nStates);\n",
-                                   "    memset(returnData->statesFilterOutput,0,sizeof(modelica_boolean)*returnData->nStates);\n",
-                                   "    memset(returnData->states_old,0,sizeof(double)*returnData->nStates);\n",
-                                   "    memset(returnData->states_old2,0,sizeof(double)*returnData->nStates);\n",
-                                   "  } else {\n",
-                                   "    returnData->states = 0;\n",
-                                   "    returnData->statesFilterOutput = 0;\n",
-                                   "    returnData->states_old = 0;\n",
-                                   "    returnData->states_old2 = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nStates) {\n",
-                                   "    returnData->statesDerivatives = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    returnData->statesDerivativesFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nStates);\n",
-                                   "    returnData->statesDerivatives_old = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    returnData->statesDerivatives_old2 = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    returnData->statesDerivativesBackup = (double*) malloc(sizeof(double)*returnData->nStates);\n",
-                                   "    assert(returnData->statesDerivatives&&returnData->statesDerivatives_old&&returnData->statesDerivatives_old2&&returnData->statesDerivativesBackup);\n",
-                                   "    memset(returnData->statesDerivatives,0,sizeof(double)*returnData->nStates);\n",
-                                   "    memset(returnData->statesDerivativesFilterOutput,0,sizeof(modelica_boolean)*returnData->nStates);\n",
-                                   "    memset(returnData->statesDerivatives_old,0,sizeof(double)*returnData->nStates);\n",
-                                   "    memset(returnData->statesDerivatives_old2,0,sizeof(double)*returnData->nStates);\n",
-                                   "    memset(returnData->statesDerivativesBackup,0,sizeof(double)*returnData->nStates);\n",
-                                   "  } else {\n",
-                                   "    returnData->statesDerivatives = 0;\n",
-                                   "    returnData->statesDerivativesFilterOutput = 0;\n",
-                                   "\n",
-                                   "    returnData->statesDerivatives_old = 0;\n",
-                                   "    returnData->statesDerivatives_old2 = 0;\n",
-                                   "    returnData->statesDerivativesBackup = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nHelpVars) {\n",
-                                   "    returnData->helpVars = (double*) malloc(sizeof(double)*returnData->nHelpVars);\n",
-                                   "    assert(returnData->helpVars);\n",
-                                   "    memset(returnData->helpVars,0,sizeof(double)*returnData->nHelpVars);\n",
-                                   "  } else {\n",
-                                   "    returnData->helpVars = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nAlgebraic) {\n",
-                                   "    returnData->algebraics = (double*) malloc(sizeof(double)*returnData->nAlgebraic);\n",
-                                   "    returnData->algebraicsFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nAlgebraic);\n",
-                                   "    returnData->algebraics_old = (double*) malloc(sizeof(double)*returnData->nAlgebraic);\n",
-                                   "    returnData->algebraics_old2 = (double*) malloc(sizeof(double)*returnData->nAlgebraic);\n",
-                                   "    assert(returnData->algebraics&&returnData->algebraics_old&&returnData->algebraics_old2);\n",
-                                   "    memset(returnData->algebraics,0,sizeof(double)*returnData->nAlgebraic);\n",
-                                   "    memset(returnData->algebraicsFilterOutput,0,sizeof(modelica_boolean)*returnData->nAlgebraic);\n",
-                                   "    memset(returnData->algebraics_old,0,sizeof(double)*returnData->nAlgebraic);\n",
-                                   "    memset(returnData->algebraics_old2,0,sizeof(double)*returnData->nAlgebraic);\n",
-                                   "  } else {\n",
-                                   "    returnData->algebraics = 0;\n",
-                                   "    returnData->algebraicsFilterOutput = 0;\n",
-                                   "    returnData->algebraics_old = 0;\n",
-                                   "    returnData->algebraics_old2 = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->stringVariables.nAlgebraic) {\n",
-                                   "    returnData->stringVariables.algebraics = (const char**)malloc(sizeof(char*)*returnData->stringVariables.nAlgebraic);\n",
-                                   "    assert(returnData->stringVariables.algebraics);\n",
-                                   "    memset(returnData->stringVariables.algebraics,0,sizeof(char*)*returnData->stringVariables.nAlgebraic);\n",
-                                   "  } else {\n",
-                                   "    returnData->stringVariables.algebraics=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->intVariables.nAlgebraic) {\n",
-                                   "    returnData->intVariables.algebraics = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "    returnData->intVariables.algebraicsFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->intVariables.nAlgebraic);\n",
-                                   "    returnData->intVariables.algebraics_old = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "    returnData->intVariables.algebraics_old2 = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "    assert(returnData->intVariables.algebraics&&returnData->intVariables.algebraics_old&&returnData->intVariables.algebraics_old2);\n",
-                                   "    memset(returnData->intVariables.algebraics,0,sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "    memset(returnData->intVariables.algebraicsFilterOutput,0,sizeof(modelica_boolean)*returnData->intVariables.nAlgebraic);\n",
-                                   "    memset(returnData->intVariables.algebraics_old,0,sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "    memset(returnData->intVariables.algebraics_old2,0,sizeof(modelica_integer)*returnData->intVariables.nAlgebraic);\n",
-                                   "  } else {\n",
-                                   "    returnData->intVariables.algebraics=0;\n",
-                                   "    returnData->intVariables.algebraicsFilterOutput=0;\n",
-                                   "    returnData->intVariables.algebraics_old = 0;\n",
-                                   "    returnData->intVariables.algebraics_old2 = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->boolVariables.nAlgebraic) {\n",
-                                   "    returnData->boolVariables.algebraics = (modelica_boolean*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    returnData->boolVariables.algebraicsFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    returnData->boolVariables.algebraics_old = (signed char*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    returnData->boolVariables.algebraics_old2 = (signed char*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    assert(returnData->boolVariables.algebraics&&returnData->boolVariables.algebraics_old&&returnData->boolVariables.algebraics_old2);\n",
-                                   "    memset(returnData->boolVariables.algebraics,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    memset(returnData->boolVariables.algebraicsFilterOutput,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    memset(returnData->boolVariables.algebraics_old,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "    memset(returnData->boolVariables.algebraics_old2,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlgebraic);\n",
-                                   "  } else {\n",
-                                   "    returnData->boolVariables.algebraics=0;\n",
-                                   "    returnData->boolVariables.algebraicsFilterOutput=0;\n",
-                                   "    returnData->boolVariables.algebraics_old = 0;\n",
-                                   "    returnData->boolVariables.algebraics_old2 = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nParameters) {\n",
-                                   "    returnData->parameters = (double*) malloc(sizeof(double)*returnData->nParameters);\n",
-                                   "    assert(returnData->parameters);\n",
-                                   "    memset(returnData->parameters,0,sizeof(double)*returnData->nParameters);\n",
-                                   "  } else {\n",
-                                   "    returnData->parameters = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->stringVariables.nParameters) {\n",
-                                   "    returnData->stringVariables.parameters = (const char**)malloc(sizeof(char*)*returnData->stringVariables.nParameters);\n",
-                                   "      assert(returnData->stringVariables.parameters);\n",
-                                   "      memset(returnData->stringVariables.parameters,0,sizeof(char*)*returnData->stringVariables.nParameters);\n",
-                                   "  } else {\n",
-                                   "      returnData->stringVariables.parameters=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->intVariables.nParameters) {\n",
-                                   "    returnData->intVariables.parameters = (modelica_integer*)malloc(sizeof(modelica_integer)*returnData->intVariables.nParameters);\n",
-                                   "      assert(returnData->intVariables.parameters);\n",
-                                   "      memset(returnData->intVariables.parameters,0,sizeof(modelica_integer)*returnData->intVariables.nParameters);\n",
-                                   "  } else {\n",
-                                   "      returnData->intVariables.parameters=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->boolVariables.nParameters) {\n",
-                                   "    returnData->boolVariables.parameters = (modelica_boolean*)malloc(sizeof(modelica_boolean)*returnData->boolVariables.nParameters);\n",
-                                   "      assert(returnData->boolVariables.parameters);\n",
-                                   "      memset(returnData->boolVariables.parameters,0,sizeof(modelica_boolean)*returnData->boolVariables.nParameters);\n",
-                                   "  } else {\n",
-                                   "      returnData->boolVariables.parameters=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nOutputVars) {\n",
-                                   "    returnData->outputVars = (double*) malloc(sizeof(double)*returnData->nOutputVars);\n",
-                                   "    assert(returnData->outputVars);\n",
-                                   "    memset(returnData->outputVars,0,sizeof(double)*returnData->nOutputVars);\n",
-                                   "  } else {\n",
-                                   "    returnData->outputVars = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nInputVars) {\n",
-                                   "    returnData->inputVars = (double*) malloc(sizeof(double)*returnData->nInputVars);\n",
-                                   "    assert(returnData->inputVars);\n",
-                                   "    memset(returnData->inputVars,0,sizeof(double)*returnData->nInputVars);\n",
-                                   "  } else {\n",
-                                   "    returnData->inputVars = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nAlias) {\n",
-                                   "    returnData->realAlias = (DATA_REAL_ALIAS*) malloc(sizeof(DATA_REAL_ALIAS)*returnData->nAlias);\n",
-                                   "    assert(returnData->realAlias);\n",
-                                   "    returnData->aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->nAlias);\n",
-                                   "    assert(returnData->aliasFilterOutput);\n",
-                                   "    memset(returnData->realAlias,0,sizeof(DATA_REAL_ALIAS)*returnData->nAlias);\n",
-                                   "    memset(returnData->aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->nAlias);\n",
-                                   "  } else {\n",
-                                   "    returnData->realAlias = 0;\n",
-                                   "    returnData->aliasFilterOutput = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->intVariables.nAlias) {\n",
-                                   "    returnData->intVariables.alias = (DATA_INT_ALIAS*) malloc(sizeof(DATA_INT_ALIAS)*returnData->intVariables.nAlias);\n",
-                                   "    assert(returnData->intVariables.alias);\n",
-                                   "    returnData->intVariables.aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->intVariables.nAlias);\n",
-                                   "    assert(returnData->intVariables.aliasFilterOutput);\n",
-                                   "    memset(returnData->intVariables.alias,0,sizeof(DATA_INT_ALIAS)*returnData->intVariables.nAlias);\n",
-                                   "    memset(returnData->intVariables.aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->intVariables.nAlias);\n",
-                                   "  } else {\n",
-                                   "    returnData->intVariables.alias = 0;\n",
-                                   "    returnData->intVariables.aliasFilterOutput=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->boolVariables.nAlias) {\n",
-                                   "    returnData->boolVariables.alias = (DATA_BOOL_ALIAS*) malloc(sizeof(DATA_BOOL_ALIAS)*returnData->boolVariables.nAlias);\n",
-                                   "    assert(returnData->boolVariables.alias);\n",
-                                   "    returnData->boolVariables.aliasFilterOutput = (modelica_boolean*) malloc(sizeof(modelica_boolean)*returnData->boolVariables.nAlias);\n",
-                                   "    assert(returnData->boolVariables.aliasFilterOutput);\n",
-                                   "    memset(returnData->boolVariables.alias,0,sizeof(DATA_BOOL_ALIAS)*returnData->boolVariables.nAlias);\n",
-                                   "    memset(returnData->boolVariables.aliasFilterOutput,0,sizeof(modelica_boolean)*returnData->boolVariables.nAlias);\n",
-                                   "  } else {\n",
-                                   "    returnData->boolVariables.alias = 0;\n",
-                                   "    returnData->boolVariables.aliasFilterOutput=0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->stringVariables.nAlias) {\n",
-                                   "    returnData->stringVariables.alias = (DATA_STRING_ALIAS*) malloc(sizeof(DATA_STRING_ALIAS)*returnData->stringVariables.nAlias);\n",
-                                   "    assert(returnData->stringVariables.alias);\n",
-                                   "    memset(returnData->stringVariables.alias,0,sizeof(DATA_STRING_ALIAS)*returnData->stringVariables.nAlias);\n",
-                                   "  } else {\n",
-                                   "    returnData->stringVariables.alias = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nJacobianvars) {\n",
-                                   "    returnData->jacobianVars = (double*) malloc(sizeof(double)*returnData->nJacobianvars);\n",
-                                   "    assert(returnData->jacobianVars);\n",
-                                   "    memset(returnData->jacobianVars,0,sizeof(double)*returnData->nJacobianvars);\n",
-                                   "  } else {\n",
-                                   "    returnData->jacobianVars = 0;\n",
-                                   "  }\n",
-                                   "\n",
-                                   "  if (returnData->nInitialResiduals) {\n",
-                                   "    returnData->initialResiduals = (double*) malloc(sizeof(double)*returnData->nInitialResiduals);\n",
-                                   "    assert(returnData->initialResiduals);\n",
-                                   "    memset(returnData->initialResiduals,0,sizeof(double)*returnData->nInitialResiduals);\n",
-                                   "  } else {\n",
-                                   "    returnData->initialResiduals = 0;\n",
-                                   "  }\n",
-                                   "\n",
                                    "  returnData->initFixed = init_fixed;\n",
                                    "  returnData->var_attr = var_attr;\n",
                                    "  returnData->modelName = model_name;\n",
@@ -3294,14 +3081,6 @@ algorithm
                                    "  returnData->functionNames = function_names;\n",
                                    "  returnData->equationInfo = equation_info;\n",
                                    "  returnData->equationInfo_reverse_prof_index = omc_equationInfo_reverse_prof_index;\n",
-                                   "\n",
-                                   "  if (returnData->nRawSamples) {\n",
-                                   "    returnData->rawSampleExps = (sample_raw_time*) malloc(sizeof(sample_raw_time)*returnData->nRawSamples);\n",
-                                   "    assert(returnData->rawSampleExps);\n",
-                                   "    memset(returnData->rawSampleExps,0,sizeof(sample_raw_time)*returnData->nRawSamples);\n",
-                                   "  } else {\n",
-                                   "    returnData->rawSampleExps = 0;\n",
-                                   "  }\n",
                                    "\n",
                                    "  if (NEXT) {\n",
                                    "    returnData->extObjs = (void**)malloc(sizeof(void*)*NEXT);\n",
@@ -5894,7 +5673,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Do not know what printf argument to give "));
         txt_0 = crefStr(txt_0, a_cr);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 1517, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 1296, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_157;
@@ -7792,7 +7571,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("No runtime support for this sort of array call: "));
         ret_1 = ExpressionDump.printExpStr(a_eqn_exp);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 1951, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 1730, 14), Tpl.textString(txt_1));
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_209;
@@ -10229,7 +10008,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("initial value of unknown type: "));
         ret_1 = ExpressionDump.printExpStr(i_initialValue);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2319, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2098, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end initVal;
@@ -13092,7 +12871,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2836, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2615, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_343;
@@ -13212,7 +12991,7 @@ algorithm
       equation
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unsupport external language: "));
         txt_0 = Tpl.writeStr(txt_0, i_language);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2844, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2623, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_347;
@@ -13260,13 +13039,13 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Expression types are unsupported as return arguments "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2853, 36), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2632, 36), Tpl.textString(txt_0));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2854, 14), "Unsupported return argument");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2633, 14), "Unsupported return argument");
       then txt;
   end matchcontinue;
 end extReturnType;
@@ -13367,7 +13146,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external C type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2873, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2652, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_350;
@@ -13596,7 +13375,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown external F77 type "));
         ret_0 = ExpressionDump.typeString(i_type);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2892, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 2671, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end fun_356;
@@ -18200,7 +17979,7 @@ algorithm
            a_varDecls,
            a_varInits )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3414, 12), "Unknown local variable type");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3193, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits);
   end matchcontinue;
 end varInit;
@@ -21764,7 +21543,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3802, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3581, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_553;
@@ -22581,7 +22360,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3956, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3735, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -25519,7 +25298,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4470, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4249, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -30033,7 +29812,7 @@ algorithm
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
         txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4981, 11), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4760, 11), Tpl.textString(txt_7));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -30068,7 +29847,7 @@ algorithm
         ret_9 = ExpressionDump.printExpStr(i_exp);
         txt_9 = Tpl.writeStr(txt_9, ret_9);
         txt_9 = Tpl.writeTok(txt_9, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4990, 11), Tpl.textString(txt_9));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4769, 11), Tpl.textString(txt_9));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -30094,7 +29873,7 @@ algorithm
         ret_11 = ExpressionDump.printExpStr(i_exp);
         txt_11 = Tpl.writeStr(txt_11, ret_11);
         txt_11 = Tpl.writeTok(txt_11, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4996, 11), Tpl.textString(txt_11));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4775, 11), Tpl.textString(txt_11));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -32100,7 +31879,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5517, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5296, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -33379,7 +33158,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5654, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5433, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -33716,7 +33495,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5699, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5478, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -37299,7 +37078,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6201, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5980, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -38946,7 +38725,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6446, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6225, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_859;
@@ -39061,7 +38840,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6464, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6243, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
