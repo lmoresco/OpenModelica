@@ -541,6 +541,7 @@ Terminal2.mo \
 TestGravityAcceleration.mo \
 Transpose2.mo \
 Transpose.mo \
+TrigIdentity.mo \
 tupleSubset.mo \
 TupleSingleAssign.mo \
 Type10.mo \
