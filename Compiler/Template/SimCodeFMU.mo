@@ -159,7 +159,6 @@ algorithm
       String a_guid;
       Integer i_vi_numZeroCrossings;
       Integer i_vi_numStateVars;
-      String i_fileNamePrefix;
       Absyn.Path i_modelInfo_name;
       Tpl.Text l_numberOfEventIndicators;
       Tpl.Text l_numberOfContinuousStates;
@@ -176,12 +175,12 @@ algorithm
       Tpl.Text l_fmiVersion;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_vi_numStateVars, numZeroCrossings = i_vi_numZeroCrossings), name = i_modelInfo_name), fileNamePrefix = i_fileNamePrefix),
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(varInfo = SimCode.VARINFO(numStateVars = i_vi_numStateVars, numZeroCrossings = i_vi_numZeroCrossings), name = i_modelInfo_name)),
            a_guid )
       equation
         l_fmiVersion = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("1.0"));
         l_modelName = SimCodeC.dotPath(Tpl.emptyTxt, i_modelInfo_name);
-        l_modelIdentifier = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        l_modelIdentifier = SimCodeC.underscorePath(Tpl.emptyTxt, i_modelInfo_name);
         l_description = Tpl.emptyTxt;
         l_author = Tpl.emptyTxt;
         l_version = Tpl.emptyTxt;
@@ -1042,6 +1041,7 @@ algorithm
     local
       Tpl.Text txt;
       String i_comment;
+      String ret_0;
 
     case ( txt,
            "" )
@@ -1051,7 +1051,8 @@ algorithm
            i_comment )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("description=\""));
-        txt = Tpl.writeStr(txt, i_comment);
+        ret_0 = Util.escapeModelicaStringToXmlString(i_comment);
+        txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
@@ -2961,7 +2962,7 @@ algorithm
            DAE.SCONST(string = i_string) )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
-        ret_0 = Util.escapeModelicaStringToCString(i_string);
+        ret_0 = Util.escapeModelicaStringToXmlString(i_string);
         txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
