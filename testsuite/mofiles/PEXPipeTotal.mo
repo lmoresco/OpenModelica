@@ -1060,7 +1060,7 @@ end Toneco_PEXPipe;
 //   parameter Real h_g(quantity = "Length", unit = "m") = 0.0 "geodetic height (heigth difference from flowPort_a to flowPort_b)";
 // initial algorithm
 //   assert(V_flowNominal > V_flowLaminar, "SimpleFriction: V_flowNominal has to be > V_flowLaminar!");
-//   k := (dpLaminar * V_flowNominal) / V_flowLaminar;
+//   k := (V_flowNominal * dpLaminar) / V_flowLaminar;
 //   assert(dpNominal >= k, "SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!");
 //   k := (dpNominal - k) * (V_flowNominal - V_flowLaminar) ^ -2.0;
 // equation
@@ -1072,11 +1072,11 @@ end Toneco_PEXPipe;
 //   flowPort_a.H_flow + (flowPort_b.H_flow + Q_flow) = m * (medium.cv * der(T));
 //   flowPort_a.m_flow + flowPort_b.m_flow = 0.0;
 //   if VolumeFlow > V_flowLaminar then
-//   pressureDrop = (dpLaminar * VolumeFlow) / V_flowLaminar + k * (VolumeFlow - V_flowLaminar) ^ 2.0;
+//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar + k * (VolumeFlow - V_flowLaminar) ^ 2.0;
 //   elseif VolumeFlow < -V_flowLaminar then
-//   pressureDrop = (dpLaminar * VolumeFlow) / V_flowLaminar - k * (VolumeFlow + V_flowLaminar) ^ 2.0;
+//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar - k * (VolumeFlow + V_flowLaminar) ^ 2.0;
 //   else
-//   pressureDrop = (dpLaminar * VolumeFlow) / V_flowLaminar;
+//   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar;
 //   end if;
 //   Q_friction = frictionLoss * (VolumeFlow * pressureDrop);
 //   flowPort_b.H_flow = 0.0;

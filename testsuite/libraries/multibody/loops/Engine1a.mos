@@ -79,7 +79,7 @@ getErrorString();
 //   input Real[4] der_Q(unit = \"1/s\") \"Derivative of Q\";
 //   output Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity of frame 2 with respect to frame 1 resolved in frame 2\";
 // algorithm
-//   w := {Q[4] * der_Q[1] * 2.0 + Q[3] * der_Q[2] * 2.0 + -Q[2] * der_Q[3] * 2.0 + -Q[1] * der_Q[4] * 2.0,-Q[3] * der_Q[1] * 2.0 + Q[4] * der_Q[2] * 2.0 + Q[1] * der_Q[3] * 2.0 + -Q[2] * der_Q[4] * 2.0,Q[2] * der_Q[1] * 2.0 + -Q[1] * der_Q[2] * 2.0 + Q[4] * der_Q[3] * 2.0 + -Q[3] * der_Q[4] * 2.0};
+//   w := {2.0 * Q[4] * der_Q[1] + 2.0 * Q[3] * der_Q[2] + 2.0 * -Q[2] * der_Q[3] + 2.0 * -Q[1] * der_Q[4],2.0 * -Q[3] * der_Q[1] + 2.0 * Q[4] * der_Q[2] + 2.0 * Q[1] * der_Q[3] + 2.0 * -Q[2] * der_Q[4],2.0 * Q[2] * der_Q[1] + 2.0 * -Q[1] * der_Q[2] + 2.0 * Q[4] * der_Q[3] + 2.0 * -Q[3] * der_Q[4]};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T \"Return quaternions orientation object Q from transformation matrix T\"
@@ -346,7 +346,7 @@ getErrorString();
 //   input Real mue(unit = \"m3/s2\") \"Field constant of point gravity field, if gravityType=2\";
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
-//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(r[1] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[2] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[3] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]}))} else {0.0,0.0,0.0};
 // end Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial
@@ -2333,9 +2333,9 @@ getErrorString();
 //   input Real B2.cylinder.r[1](quantity = \"Length\", unit = \"m\") = B2.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real B2.cylinder.r[2](quantity = \"Length\", unit = \"m\") = B2.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real B2.cylinder.r[3](quantity = \"Length\", unit = \"m\") = B2.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real B2.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-B2.cylinderLength) * B2.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real B2.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-B2.cylinderLength) * B2.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real B2.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-B2.cylinderLength) * B2.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B2.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-B2.e[1]) * B2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B2.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-B2.e[2]) * B2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B2.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-B2.e[3]) * B2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real B2.cylinder.lengthDirection[1](unit = \"1\") = B2.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real B2.cylinder.lengthDirection[2](unit = \"1\") = B2.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real B2.cylinder.lengthDirection[3](unit = \"1\") = B2.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2477,9 +2477,9 @@ getErrorString();
 //   input Real Bearing.cylinder.r[1](quantity = \"Length\", unit = \"m\") = Bearing.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real Bearing.cylinder.r[2](quantity = \"Length\", unit = \"m\") = Bearing.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real Bearing.cylinder.r[3](quantity = \"Length\", unit = \"m\") = Bearing.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real Bearing.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-Bearing.cylinderLength) * Bearing.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real Bearing.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-Bearing.cylinderLength) * Bearing.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real Bearing.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-Bearing.cylinderLength) * Bearing.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real Bearing.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-Bearing.e[1]) * Bearing.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real Bearing.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-Bearing.e[2]) * Bearing.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real Bearing.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-Bearing.e[3]) * Bearing.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real Bearing.cylinder.lengthDirection[1](unit = \"1\") = Bearing.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real Bearing.cylinder.lengthDirection[2](unit = \"1\") = Bearing.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real Bearing.cylinder.lengthDirection[3](unit = \"1\") = Bearing.e[3] \"Vector in length direction, resolved in object frame\";
@@ -4084,9 +4084,9 @@ getErrorString();
 //   input Real B1.cylinder.r[1](quantity = \"Length\", unit = \"m\") = B1.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real B1.cylinder.r[2](quantity = \"Length\", unit = \"m\") = B1.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real B1.cylinder.r[3](quantity = \"Length\", unit = \"m\") = B1.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real B1.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-B1.cylinderLength) * B1.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real B1.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-B1.cylinderLength) * B1.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real B1.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-B1.cylinderLength) * B1.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B1.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-B1.e[1]) * B1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B1.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-B1.e[2]) * B1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real B1.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-B1.e[3]) * B1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real B1.cylinder.lengthDirection[1](unit = \"1\") = B1.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real B1.cylinder.lengthDirection[2](unit = \"1\") = B1.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real B1.cylinder.lengthDirection[3](unit = \"1\") = B1.e[3] \"Vector in length direction, resolved in object frame\";

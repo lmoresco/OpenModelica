@@ -130,7 +130,7 @@ end TestGravityAcceleration;
 //   input Real mue(unit = "m3/s2") "Field constant of point gravity field, if gravityType=2";
 //   output Real[3] gravity "Gravity acceleration at point r, resolved in world frame";
 // algorithm
-//   gravity := if gravityType == Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Types.GravityTypes.PointGravity then {(-mue * r[1]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(-mue * r[2]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(-mue * r[3]) / (Math.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Types.GravityTypes.PointGravity then {(-r[1] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Math.length({r[1],r[2],r[3]})),(-r[2] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Math.length({r[1],r[2],r[3]})),(-r[3] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Math.length({r[1],r[2],r[3]}))} else {0.0,0.0,0.0};
 // end TestGravityAcceleration.w__gravityAcceleration;
 // 
 // class TestGravityAcceleration

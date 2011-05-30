@@ -212,7 +212,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   parameter Real pipe.h_g(quantity = \"Length\", unit = \"m\", start = 0.0) \"Geodetic height (heigth difference from flowPort_a to flowPort_b)\";
 //   Real pipe.heatPort.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
 //   Real pipe.heatPort.Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
-//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = (pipe.dpLaminar * pipe.V_flowNominal) / pipe.V_flowLaminar;
+//   protected parameter Real pipe.dpNomMin(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = (pipe.V_flowNominal * pipe.dpLaminar) / pipe.V_flowLaminar;
 //   parameter Real ambient2.medium.rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = 1.0 \"Density\";
 //   parameter Real ambient2.medium.cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant pressure\";
 //   parameter Real ambient2.medium.cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 1.0 \"Specific heat capacity at constant volume\";
@@ -311,7 +311,7 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   idealPump.flowPort_a.H_flow = semiLinear(idealPump.flowPort_a.m_flow,idealPump.flowPort_a.h,idealPump.h);
 //   idealPump.flowPort_b.H_flow = semiLinear(idealPump.flowPort_b.m_flow,idealPump.flowPort_b.h,idealPump.h);
 //   valve.Kv / valve.Kv1 = if valve.LinearCharacteristic then valve.kv0 + ((1.0 - valve.kv0) * valve.yLim) / valve.y1 else valve.kv0 * exp((log(1.0 / valve.kv0) * valve.yLim) / valve.y1);
-//   valve.dp / valve.dp0 = (valve.medium.rho * (valve.V_flow * abs(valve.V_flow / valve.Kv))) / (valve.Kv * valve.rho0);
+//   valve.dp / valve.dp0 = (abs(valve.V_flow / valve.Kv) * (valve.V_flow * valve.medium.rho)) / (valve.rho0 * valve.Kv);
 //   valve.Q_flow = valve.frictionLoss * (valve.V_flow * valve.dp);
 //   valve.flowPort_a.m_flow + valve.flowPort_b.m_flow = 0.0;
 //   valve.flowPort_a.H_flow + (valve.flowPort_b.H_flow + valve.Q_flow) = 0.0;
@@ -326,11 +326,11 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   pipe.flowPort_a.H_flow + (pipe.flowPort_b.H_flow + pipe.Q_flow) = pipe.m * (pipe.medium.cv * der(pipe.T));
 //   pipe.flowPort_a.m_flow + pipe.flowPort_b.m_flow = 0.0;
 //   if pipe.volumeFlow > pipe.V_flowLaminar then
-//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
+//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
 //   elseif pipe.volumeFlow < -pipe.V_flowLaminar then
-//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
+//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar - pipe.k * (pipe.volumeFlow + pipe.V_flowLaminar) ^ 2.0;
 //   else
-//   pipe.pressureDrop = (pipe.dpLaminar * pipe.volumeFlow) / pipe.V_flowLaminar;
+//   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar;
 //   end if;
 //   pipe.Q_friction = pipe.frictionLoss * (pipe.volumeFlow * pipe.pressureDrop);
 //   ambient2.constPressure.y = ambient2.constPressure.k;

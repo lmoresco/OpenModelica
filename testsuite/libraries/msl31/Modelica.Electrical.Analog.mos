@@ -1031,7 +1031,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   when sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else (signalSource.amplitude * (time - signalSource.T0)) / signalSource.period);
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else ((time - signalSource.T0) * signalSource.amplitude) / signalSource.period);
 //   v = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;
@@ -1485,7 +1485,7 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   when sample(signalSource.startTime,signalSource.period) then
 //   signalSource.T0 = time;
 //   end when;
-//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else (signalSource.amplitude * (time - signalSource.T0)) / signalSource.period);
+//   signalSource.y = signalSource.offset + (if time < signalSource.startTime then 0.0 else ((time - signalSource.T0) * signalSource.amplitude) / signalSource.period);
 //   i = signalSource.y;
 //   v = p.v - n.v;
 //   0.0 = p.i + n.i;

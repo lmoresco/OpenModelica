@@ -1915,7 +1915,7 @@ end BC6;
 //   der(limPID1.I.y[1]) = limPID1.I.k[1] * limPID1.I.u[1];
 //   limPID1.I.y[1] = limPID1.I.outPort.signal[1];
 //   der(limPID1.D.x[1]) = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then (limPID1.D.u[1] - limPID1.D.x[1]) / limPID1.D.p_T[1] else 0.0;
-//   limPID1.D.y[1] = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then (limPID1.D.p_k[1] * (limPID1.D.u[1] - limPID1.D.x[1])) / limPID1.D.p_T[1] else 0.0;
+//   limPID1.D.y[1] = if noEvent(abs(limPID1.D.p_k[1]) >= 1e-15) then ((limPID1.D.u[1] - limPID1.D.x[1]) * limPID1.D.p_k[1]) / limPID1.D.p_T[1] else 0.0;
 //   limPID1.D.y[1] = limPID1.D.outPort.signal[1];
 //   limPID1.gainPID.u[1] = limPID1.gainPID.inPort.signal[1];
 //   limPID1.gainPID.y[1] = limPID1.gainPID.outPort.signal[1];

@@ -212,7 +212,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
-//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (x * (-3.0 + (x / x_small) ^ 2.0) * (y2 - y1)) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Media.Common.smoothStep;
 // 
 // function Modelica.Media.Water.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.Medium.ThermodynamicState\"
@@ -487,9 +487,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   sat.s := g.R * (g.tau * g.gtau - g.g);
 //   sat.cp := -g.R * g.tau ^ 2.0 * g.gtautau;
 //   sat.cv := g.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
-//   vt := (g.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / g.p;
+//   vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * g.R) / g.p;
 //   vp := g.R * g.T * g.p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
-//   sat.pt := (-g.p * (g.gpi - g.tau * g.gtaupi)) / (g.pi * g.gpipi * g.T);
+//   sat.pt := (g.tau * g.gtaupi - g.gpi * g.p) / (g.pi * g.gpipi * g.T);
 //   sat.pd := (-g.R * g.T * g.gpi ^ 2.0) / g.gpipi;
 // end Modelica.Media.Common.gibbsToBoundaryProps;
 // 
@@ -516,7 +516,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
-//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (x * (-3.0 + (x / x_small) ^ 2.0) * (y2 - y1)) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
 // end Modelica.Media.Common.smoothStep;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.T3a_ph \"Region 3 a: inverse function T(p,h)\"
@@ -1154,7 +1154,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   dmin := Modelica.Media.Water.IF97_Utilities.BaseIF97.Inverses.dofp23(p);
 //   Tmax := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofp(p);
 //   if supercritical then
-//     dguess := dmin + (-623.15 + T * (dmax - dmin)) / (623.15 - Tmax);
+//     dguess := dmin + (dmax - dmin * (-623.15 + T)) / (623.15 - Tmax);
 //   else
 //     liquid := T < Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 //     if liquid then
@@ -1396,9 +1396,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     bpro.h := if p > plim then 2087546.84511715 else bpro.R * bpro.T * g.tau * g.gtau;
 //     bpro.s := g.R * (g.tau * g.gtau - g.g);
 //     bpro.cp := -bpro.R * g.tau ^ 2.0 * g.gtautau;
-//     bpro.vt := (bpro.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     bpro.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * bpro.R) / p;
 //     bpro.vp := bpro.R * bpro.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
-//     bpro.pt := (-p * (g.gpi - g.tau * g.gtaupi)) / (g.pi * g.gpipi * bpro.T);
+//     bpro.pt := (g.tau * g.gtaupi - g.gpi * p) / (g.pi * g.gpipi * bpro.T);
 //     bpro.pd := (-bpro.R * bpro.T * g.gpi ^ 2.0) / g.gpipi;
 //   else
 //     bpro.d := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b(plim);
@@ -1507,9 +1507,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     bpro.h := if p > plim then 2087546.84511715 else bpro.R * bpro.T * g.tau * g.gtau;
 //     bpro.s := g.R * (g.tau * g.gtau - g.g);
 //     bpro.cp := -bpro.R * g.tau ^ 2.0 * g.gtautau;
-//     bpro.vt := (bpro.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     bpro.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * bpro.R) / p;
 //     bpro.vp := bpro.R * bpro.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
-//     bpro.pt := (-p * (g.gpi - g.tau * g.gtaupi)) / (g.pi * g.gpipi * bpro.T);
+//     bpro.pt := (g.tau * g.gtaupi - g.gpi * p) / (g.pi * g.gpipi * bpro.T);
 //     bpro.pd := (-bpro.R * bpro.T * g.gpi ^ 2.0) / g.gpipi;
 //   else
 //     bpro.d := Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p_R4b(plim);
@@ -1669,9 +1669,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Real h_der \"time derivative of specific enthalpy along the phase boundary\";
 // algorithm
 //   if bpro.region3boundary then
-//     h_der := ((bpro.d * bpro.pd - bpro.T * bpro.pt) * p_der + (bpro.T * bpro.pt ^ 2.0 + bpro.d ^ 2.0 * bpro.pd * bpro.cv * p_der) / bpro.dpT * bpro.d ^ -2.0) / bpro.pd;
+//     h_der := ((bpro.d * bpro.pd - bpro.T * bpro.pt) * p_der + (p_der * (bpro.T * bpro.pt ^ 2.0 + bpro.d ^ 2.0 * bpro.pd * bpro.cv)) / bpro.dpT * bpro.d ^ -2.0) / bpro.pd;
 //   else
-//     h_der := (1.0 / bpro.d - bpro.T * bpro.vt) * p_der + (bpro.cp * p_der) / bpro.dpT;
+//     h_der := (1.0 / bpro.d - bpro.T * bpro.vt) * p_der + (p_der * bpro.cp) / bpro.dpT;
 //   end if;
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p_der;
 // 
@@ -1832,9 +1832,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   if aux.region == 4 then
 //     T_der := p_der / aux.dpT;
 //   elseif aux.region == 3 then
-//     T_der := (-aux.rho * aux.pd + aux.T * aux.pt * p_der) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) + (aux.rho ^ 2.0 * aux.pd * h_der) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0);
+//     T_der := (p_der * (-aux.rho * aux.pd + aux.T * aux.pt)) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) + (h_der * aux.rho ^ 2.0 * aux.pd) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0);
 //   else
-//     T_der := (-1.0 / aux.rho + aux.T * aux.vt * p_der) / aux.cp + h_der / aux.cp;
+//     T_der := (p_der * (-1.0 / aux.rho + aux.T * aux.vt)) / aux.cp + h_der / aux.cp;
 //   end if;
 // end Modelica.Media.Water.IF97_Utilities.T_ph_der;
 // 
@@ -1865,7 +1865,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Real h_der \"derivative of specific enthalpy\";
 // algorithm
 //   if aux.region == 3 then
-//     h_der := (-aux.rho * aux.pd + T * aux.pt * aux.rho ^ -2.0 * p_der) / aux.pd + (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0 * aux.rho ^ -2.0 * T_der) / aux.pd;
+//     h_der := (p_der * (-aux.rho * aux.pd + T * aux.pt) * aux.rho ^ -2.0) / aux.pd + (T_der * (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) * aux.rho ^ -2.0) / aux.pd;
 //   else
 //     h_der := (1.0 / aux.rho - aux.T * aux.vt) * p_der + aux.cp * T_der;
 //   end if;
@@ -1912,7 +1912,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Real rho_der \"derivative of density\";
 // algorithm
 //   if aux.region == 3 then
-//     rho_der := p_der / aux.pd + (-aux.pt * T_der) / aux.pd;
+//     rho_der := p_der / aux.pd + (-T_der * aux.pt) / aux.pd;
 //   else
 //     rho_der := -aux.rho ^ 2.0 * aux.vp * p_der + -aux.rho ^ 2.0 * aux.vt * T_der;
 //   end if;
@@ -1937,11 +1937,11 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Real rho_der \"derivative of density\";
 // algorithm
 //   if aux.region == 4 then
-//     rho_der := (aux.rho * (1.0 + (aux.rho * aux.cv) / aux.dpT) * p_der) / (aux.T * aux.dpT) + (-aux.rho ^ 2.0 * h_der) / (aux.T * aux.dpT);
+//     rho_der := (p_der * aux.rho * (1.0 + (aux.rho * aux.cv) / aux.dpT)) / (aux.T * aux.dpT) + (-h_der * aux.rho ^ 2.0) / (aux.T * aux.dpT);
 //   elseif aux.region == 3 then
-//     rho_der := (aux.rho * (aux.cv * aux.rho + aux.pt) * p_der) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) + (-aux.rho ^ 2.0 * aux.pt * h_der) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0);
+//     rho_der := (p_der * aux.rho * (aux.cv * aux.rho + aux.pt)) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0) + (h_der * -aux.rho ^ 2.0 * aux.pt) / (aux.rho ^ 2.0 * aux.pd * aux.cv + aux.T * aux.pt ^ 2.0);
 //   else
-//     rho_der := (-aux.rho ^ 2.0 * (aux.vp * aux.cp + -aux.vt / aux.rho + aux.T * aux.vt ^ 2.0) * p_der) / aux.cp + (-aux.rho ^ 2.0 * aux.vt * h_der) / aux.cp;
+//     rho_der := (p_der * -aux.rho ^ 2.0 * (aux.vp * aux.cp + -aux.vt / aux.rho + aux.T * aux.vt ^ 2.0)) / aux.cp + (h_der * -aux.rho ^ 2.0 * aux.vt) / aux.cp;
 //   end if;
 // end Modelica.Media.Water.IF97_Utilities.rho_ph_der;
 // 
@@ -2012,7 +2012,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     aux.h := aux.R * aux.T * g.tau * g.gtau;
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
@@ -2022,7 +2022,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     aux.h := aux.R * aux.T * g.tau * g.gtau;
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
@@ -2041,7 +2041,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     aux.h := aux.R * aux.T * g.tau * g.gtau;
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
@@ -2082,7 +2082,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     g := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g1(p,aux.T);
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
@@ -2093,7 +2093,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     g := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g2(p,aux.T);
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);
@@ -2144,7 +2144,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     g := Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.g5(aux.p,aux.T);
 //     aux.s := aux.R * (g.tau * g.gtau - g.g);
 //     aux.rho := p / (g.gpi * g.pi * aux.T * aux.R);
-//     aux.vt := (aux.R * (g.pi * g.gpi - g.tau * g.pi * g.gtaupi)) / p;
+//     aux.vt := (g.pi * g.gpi - g.tau * g.pi * g.gtaupi * aux.R) / p;
 //     aux.vp := aux.R * aux.T * p ^ -2.0 * g.pi ^ 2.0 * g.gpipi;
 //     aux.cp := -aux.R * g.tau ^ 2.0 * g.gtautau;
 //     aux.cv := aux.R * (-g.tau ^ 2.0 * g.gtautau + (g.gpi - g.tau * g.gtaupi) ^ 2.0 / g.gpipi);

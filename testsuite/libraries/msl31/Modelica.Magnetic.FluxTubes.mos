@@ -778,7 +778,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.coil.Psi = pmActuator.coil.N * pmActuator.coil.Phi;
 //   pmActuator.coil.L_stat = if noEvent(abs(pmActuator.coil.i) > pmActuator.coil.eps) then abs(pmActuator.coil.Psi / pmActuator.coil.i) else abs(pmActuator.coil.Psi / pmActuator.coil.eps);
 //   pmActuator.g_ma.G_m = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * pmActuator.g_ma.l)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
-//   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * Real(pmActuator.g_ma.dlBydx))) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
+//   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (Real(pmActuator.g_ma.dlBydx) * pmActuator.g_ma.mu_r)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
 //   pmActuator.g_ma.A_avg = (3.14159265358979 * pmActuator.g_ma.r_i + 3.14159265358979 * pmActuator.g_ma.r_o) * pmActuator.g_ma.l;
 //   pmActuator.g_ma.B_avg = pmActuator.g_ma.Phi / pmActuator.g_ma.A_avg;
 //   pmActuator.g_ma.flange.f = -pmActuator.g_ma.F_m;
@@ -790,7 +790,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.g_ma.Phi = pmActuator.g_ma.port_p.Phi;
 //   0.0 = pmActuator.g_ma.port_p.Phi + pmActuator.g_ma.port_n.Phi;
 //   pmActuator.g_mb.G_m = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * pmActuator.g_mb.l)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
-//   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * Real(pmActuator.g_mb.dlBydx))) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
+//   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (Real(pmActuator.g_mb.dlBydx) * pmActuator.g_mb.mu_r)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
 //   pmActuator.g_mb.A_avg = (3.14159265358979 * pmActuator.g_mb.r_i + 3.14159265358979 * pmActuator.g_mb.r_o) * pmActuator.g_mb.l;
 //   pmActuator.g_mb.B_avg = pmActuator.g_mb.Phi / pmActuator.g_mb.A_avg;
 //   pmActuator.g_mb.flange.f = -pmActuator.g_mb.F_m;
@@ -1387,7 +1387,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.coil.Psi = actuator.coil.N * actuator.coil.Phi;
 //   actuator.coil.L_stat = if noEvent(abs(actuator.coil.i) > actuator.coil.eps) then abs(actuator.coil.Psi / actuator.coil.i) else abs(actuator.coil.Psi / actuator.coil.eps);
 //   actuator.g_ma.G_m = (7.89568352087149e-06 * (actuator.g_ma.mu_r * actuator.g_ma.l)) / log(actuator.g_ma.r_o / actuator.g_ma.r_i);
-//   actuator.g_ma.dGmBydx = (7.89568352087149e-06 * (actuator.g_ma.mu_r * Real(actuator.g_ma.dlBydx))) / log(actuator.g_ma.r_o / actuator.g_ma.r_i);
+//   actuator.g_ma.dGmBydx = (7.89568352087149e-06 * (Real(actuator.g_ma.dlBydx) * actuator.g_ma.mu_r)) / log(actuator.g_ma.r_o / actuator.g_ma.r_i);
 //   actuator.g_ma.A_avg = (3.14159265358979 * actuator.g_ma.r_i + 3.14159265358979 * actuator.g_ma.r_o) * actuator.g_ma.l;
 //   actuator.g_ma.B_avg = actuator.g_ma.Phi / actuator.g_ma.A_avg;
 //   actuator.g_ma.flange.f = -actuator.g_ma.F_m;
@@ -1399,7 +1399,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.g_ma.Phi = actuator.g_ma.port_p.Phi;
 //   0.0 = actuator.g_ma.port_p.Phi + actuator.g_ma.port_n.Phi;
 //   actuator.g_mb.G_m = (7.89568352087149e-06 * (actuator.g_mb.mu_r * actuator.g_mb.l)) / log(actuator.g_mb.r_o / actuator.g_mb.r_i);
-//   actuator.g_mb.dGmBydx = (7.89568352087149e-06 * (actuator.g_mb.mu_r * Real(actuator.g_mb.dlBydx))) / log(actuator.g_mb.r_o / actuator.g_mb.r_i);
+//   actuator.g_mb.dGmBydx = (7.89568352087149e-06 * (Real(actuator.g_mb.dlBydx) * actuator.g_mb.mu_r)) / log(actuator.g_mb.r_o / actuator.g_mb.r_i);
 //   actuator.g_mb.A_avg = (3.14159265358979 * actuator.g_mb.r_i + 3.14159265358979 * actuator.g_mb.r_o) * actuator.g_mb.l;
 //   actuator.g_mb.B_avg = actuator.g_mb.Phi / actuator.g_mb.A_avg;
 //   actuator.g_mb.flange.f = -actuator.g_mb.F_m;
@@ -1955,7 +1955,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.coil.Psi = pmActuator.coil.N * pmActuator.coil.Phi;
 //   pmActuator.coil.L_stat = if noEvent(abs(pmActuator.coil.i) > pmActuator.coil.eps) then abs(pmActuator.coil.Psi / pmActuator.coil.i) else abs(pmActuator.coil.Psi / pmActuator.coil.eps);
 //   pmActuator.g_ma.G_m = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * pmActuator.g_ma.l)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
-//   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * Real(pmActuator.g_ma.dlBydx))) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
+//   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (Real(pmActuator.g_ma.dlBydx) * pmActuator.g_ma.mu_r)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
 //   pmActuator.g_ma.A_avg = (3.14159265358979 * pmActuator.g_ma.r_i + 3.14159265358979 * pmActuator.g_ma.r_o) * pmActuator.g_ma.l;
 //   pmActuator.g_ma.B_avg = pmActuator.g_ma.Phi / pmActuator.g_ma.A_avg;
 //   pmActuator.g_ma.flange.f = -pmActuator.g_ma.F_m;
@@ -1967,7 +1967,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.g_ma.Phi = pmActuator.g_ma.port_p.Phi;
 //   0.0 = pmActuator.g_ma.port_p.Phi + pmActuator.g_ma.port_n.Phi;
 //   pmActuator.g_mb.G_m = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * pmActuator.g_mb.l)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
-//   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * Real(pmActuator.g_mb.dlBydx))) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
+//   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (Real(pmActuator.g_mb.dlBydx) * pmActuator.g_mb.mu_r)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
 //   pmActuator.g_mb.A_avg = (3.14159265358979 * pmActuator.g_mb.r_i + 3.14159265358979 * pmActuator.g_mb.r_o) * pmActuator.g_mb.l;
 //   pmActuator.g_mb.B_avg = pmActuator.g_mb.Phi / pmActuator.g_mb.A_avg;
 //   pmActuator.g_mb.flange.f = -pmActuator.g_mb.F_m;
@@ -2418,7 +2418,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   coil.Psi = coil.N * coil.Phi;
 //   coil.L_stat = if noEvent(abs(coil.i) > coil.eps) then abs(coil.Psi / coil.i) else abs(coil.Psi / coil.eps);
 //   g_ma.G_m = (7.89568352087149e-06 * (g_ma.mu_r * g_ma.l)) / log(g_ma.r_o / g_ma.r_i);
-//   g_ma.dGmBydx = (7.89568352087149e-06 * (g_ma.mu_r * Real(g_ma.dlBydx))) / log(g_ma.r_o / g_ma.r_i);
+//   g_ma.dGmBydx = (7.89568352087149e-06 * (Real(g_ma.dlBydx) * g_ma.mu_r)) / log(g_ma.r_o / g_ma.r_i);
 //   g_ma.A_avg = (3.14159265358979 * g_ma.r_i + 3.14159265358979 * g_ma.r_o) * g_ma.l;
 //   g_ma.B_avg = g_ma.Phi / g_ma.A_avg;
 //   g_ma.flange.f = -g_ma.F_m;
@@ -2430,7 +2430,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_ma.Phi = g_ma.port_p.Phi;
 //   0.0 = g_ma.port_p.Phi + g_ma.port_n.Phi;
 //   g_mb.G_m = (7.89568352087149e-06 * (g_mb.mu_r * g_mb.l)) / log(g_mb.r_o / g_mb.r_i);
-//   g_mb.dGmBydx = (7.89568352087149e-06 * (g_mb.mu_r * Real(g_mb.dlBydx))) / log(g_mb.r_o / g_mb.r_i);
+//   g_mb.dGmBydx = (7.89568352087149e-06 * (Real(g_mb.dlBydx) * g_mb.mu_r)) / log(g_mb.r_o / g_mb.r_i);
 //   g_mb.A_avg = (3.14159265358979 * g_mb.r_i + 3.14159265358979 * g_mb.r_o) * g_mb.l;
 //   g_mb.B_avg = g_mb.Phi / g_mb.A_avg;
 //   g_mb.flange.f = -g_mb.F_m;

@@ -79,7 +79,7 @@ getErrorString();
 //   input Real[4] der_Q(unit = \"1/s\") \"Derivative of Q\";
 //   output Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity of frame 2 with respect to frame 1 resolved in frame 2\";
 // algorithm
-//   w := {Q[4] * der_Q[1] * 2.0 + Q[3] * der_Q[2] * 2.0 + -Q[2] * der_Q[3] * 2.0 + -Q[1] * der_Q[4] * 2.0,-Q[3] * der_Q[1] * 2.0 + Q[4] * der_Q[2] * 2.0 + Q[1] * der_Q[3] * 2.0 + -Q[2] * der_Q[4] * 2.0,Q[2] * der_Q[1] * 2.0 + -Q[1] * der_Q[2] * 2.0 + Q[4] * der_Q[3] * 2.0 + -Q[3] * der_Q[4] * 2.0};
+//   w := {2.0 * Q[4] * der_Q[1] + 2.0 * Q[3] * der_Q[2] + 2.0 * -Q[2] * der_Q[3] + 2.0 * -Q[1] * der_Q[4],2.0 * -Q[3] * der_Q[1] + 2.0 * Q[4] * der_Q[2] + 2.0 * Q[1] * der_Q[3] + 2.0 * -Q[2] * der_Q[4],2.0 * Q[2] * der_Q[1] + 2.0 * -Q[1] * der_Q[2] + 2.0 * Q[4] * der_Q[3] + 2.0 * -Q[3] * der_Q[4]};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T \"Return quaternions orientation object Q from transformation matrix T\"
@@ -316,7 +316,7 @@ getErrorString();
 //   input Real mue(unit = \"m3/s2\") \"Field constant of point gravity field, if gravityType=2\";
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
-//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(r[1] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[2] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[3] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]}))} else {0.0,0.0,0.0};
 // end Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial
@@ -2026,9 +2026,9 @@ getErrorString();
 //   input Real revolute.cylinder.r[1](quantity = \"Length\", unit = \"m\") = revolute.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real revolute.cylinder.r[2](quantity = \"Length\", unit = \"m\") = revolute.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real revolute.cylinder.r[3](quantity = \"Length\", unit = \"m\") = revolute.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real revolute.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-revolute.cylinderLength) * revolute.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real revolute.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-revolute.cylinderLength) * revolute.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real revolute.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-revolute.cylinderLength) * revolute.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real revolute.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-revolute.e[1]) * revolute.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real revolute.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-revolute.e[2]) * revolute.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real revolute.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-revolute.e[3]) * revolute.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real revolute.cylinder.lengthDirection[1](unit = \"1\") = revolute.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real revolute.cylinder.lengthDirection[2](unit = \"1\") = revolute.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real revolute.cylinder.lengthDirection[3](unit = \"1\") = revolute.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2614,9 +2614,9 @@ getErrorString();
 //   input Real rotor1D.rotorWith3DEffects.cylinder.r[1](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real rotor1D.rotorWith3DEffects.cylinder.r[2](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real rotor1D.rotorWith3DEffects.cylinder.r[3](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[1] - (rotor1D.rotorWith3DEffects.cylinderLength * rotor1D.rotorWith3DEffects.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[2] - (rotor1D.rotorWith3DEffects.cylinderLength * rotor1D.rotorWith3DEffects.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[3] - (rotor1D.rotorWith3DEffects.cylinderLength * rotor1D.rotorWith3DEffects.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[1] - (rotor1D.rotorWith3DEffects.e[1] * rotor1D.rotorWith3DEffects.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[2] - (rotor1D.rotorWith3DEffects.e[2] * rotor1D.rotorWith3DEffects.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real rotor1D.rotorWith3DEffects.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = rotor1D.rotorWith3DEffects.r_center[3] - (rotor1D.rotorWith3DEffects.e[3] * rotor1D.rotorWith3DEffects.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real rotor1D.rotorWith3DEffects.cylinder.lengthDirection[1](unit = \"1\") = rotor1D.rotorWith3DEffects.n[1] \"Vector in length direction, resolved in object frame\";
 //   input Real rotor1D.rotorWith3DEffects.cylinder.lengthDirection[2](unit = \"1\") = rotor1D.rotorWith3DEffects.n[2] \"Vector in length direction, resolved in object frame\";
 //   input Real rotor1D.rotorWith3DEffects.cylinder.lengthDirection[3](unit = \"1\") = rotor1D.rotorWith3DEffects.n[3] \"Vector in length direction, resolved in object frame\";

@@ -848,8 +848,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
 //   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
-//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-pathPlanning.path.sdd_max) * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
-//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 + (-pathPlanning.path.Tv) / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv)));
+//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-(pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
+//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) + ((-(pathPlanning.path.Te - pathPlanning.path.Tv) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   if time < pathPlanning.path.startTime then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -858,11 +858,11 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   if time < pathPlanning.path.Ta1s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = ((time - pathPlanning.path.startTime) ^ 2.0 * pathPlanning.path.sdd_max) / 2.0;
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max2 - pathPlanning.path.sdd_max * (time - pathPlanning.path.Ta1s);
-//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Ta1s) / 2.0) * (time - pathPlanning.path.Ta1s)));
+//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) + ((-(time - pathPlanning.path.Ta1s) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -871,7 +871,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Ta2s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = ((time - pathPlanning.path.startTime) ^ 2.0 * pathPlanning.path.sdd_max) / 2.0;
 //   elseif time < pathPlanning.path.Tvs then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max;
@@ -879,7 +879,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max - pathPlanning.path.sdd_max * (time - pathPlanning.path.Tvs);
-//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Tvs) / 2.0) * (time - pathPlanning.path.Tvs)));
+//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) + ((-(time - pathPlanning.path.Tvs) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -1215,7 +1215,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real[4] der_Q(unit = \"1/s\") \"Derivative of Q\";
 //   output Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity of frame 2 with respect to frame 1 resolved in frame 2\";
 // algorithm
-//   w := {Q[4] * der_Q[1] * 2.0 + Q[3] * der_Q[2] * 2.0 + -Q[2] * der_Q[3] * 2.0 + -Q[1] * der_Q[4] * 2.0,-Q[3] * der_Q[1] * 2.0 + Q[4] * der_Q[2] * 2.0 + Q[1] * der_Q[3] * 2.0 + -Q[2] * der_Q[4] * 2.0,Q[2] * der_Q[1] * 2.0 + -Q[1] * der_Q[2] * 2.0 + Q[4] * der_Q[3] * 2.0 + -Q[3] * der_Q[4] * 2.0};
+//   w := {2.0 * Q[4] * der_Q[1] + 2.0 * Q[3] * der_Q[2] + 2.0 * -Q[2] * der_Q[3] + 2.0 * -Q[1] * der_Q[4],2.0 * -Q[3] * der_Q[1] + 2.0 * Q[4] * der_Q[2] + 2.0 * Q[1] * der_Q[3] + 2.0 * -Q[2] * der_Q[4],2.0 * Q[2] * der_Q[1] + 2.0 * -Q[1] * der_Q[2] + 2.0 * Q[4] * der_Q[3] + 2.0 * -Q[3] * der_Q[4]};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T \"Return quaternions orientation object Q from transformation matrix T\"
@@ -1430,7 +1430,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mue(unit = \"m3/s2\") \"Field constant of point gravity field, if gravityType=2\";
 //   output Real[3] gravity(quantity = \"Acceleration\", unit = \"m/s2\") \"Gravity acceleration at point r, resolved in world frame\";
 // algorithm
-//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(mue * r[1]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[2]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0)),(mue * r[3]) / (Modelica.Math.Vectors.length({r[1],r[2],r[3]}) * (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0))} else {0.0,0.0,0.0};
+//   gravity := if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.UniformGravity then {g[1],g[2],g[3]} else if gravityType == Modelica.Mechanics.MultiBody.Types.GravityTypes.PointGravity then -{(r[1] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[2] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]})),(r[3] * mue) / (r[1] ^ 2.0 + r[2] ^ 2.0 + r[3] ^ 2.0 * Modelica.Math.Vectors.length({r[1],r[2],r[3]}))} else {0.0,0.0,0.0};
 // end Modelica.Mechanics.MultiBody.Parts.Body.world__gravityAcceleration;
 // 
 // function Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape.PackMaterial \"Inline before index reduction\"
@@ -1747,9 +1747,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r1.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r1.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r1.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r1.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r1.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r1.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r1.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.cylinderLength) * mechanics.r1.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r1.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.cylinderLength) * mechanics.r1.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r1.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.cylinderLength) * mechanics.r1.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r1.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.e[1]) * mechanics.r1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r1.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.e[2]) * mechanics.r1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r1.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r1.e[3]) * mechanics.r1.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r1.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r1.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r1.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r1.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r1.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r1.e[3] \"Vector in length direction, resolved in object frame\";
@@ -1891,9 +1891,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r2.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r2.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r2.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r2.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r2.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r2.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r2.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.cylinderLength) * mechanics.r2.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r2.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.cylinderLength) * mechanics.r2.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r2.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.cylinderLength) * mechanics.r2.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r2.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.e[1]) * mechanics.r2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r2.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.e[2]) * mechanics.r2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r2.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r2.e[3]) * mechanics.r2.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r2.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r2.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r2.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r2.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r2.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r2.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2035,9 +2035,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r3.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r3.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r3.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r3.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r3.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r3.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r3.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.cylinderLength) * mechanics.r3.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r3.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.cylinderLength) * mechanics.r3.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r3.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.cylinderLength) * mechanics.r3.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r3.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.e[1]) * mechanics.r3.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r3.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.e[2]) * mechanics.r3.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r3.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r3.e[3]) * mechanics.r3.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r3.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r3.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r3.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r3.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r3.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r3.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2179,9 +2179,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r4.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r4.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r4.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r4.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r4.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r4.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r4.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.cylinderLength) * mechanics.r4.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r4.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.cylinderLength) * mechanics.r4.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r4.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.cylinderLength) * mechanics.r4.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r4.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.e[1]) * mechanics.r4.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r4.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.e[2]) * mechanics.r4.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r4.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r4.e[3]) * mechanics.r4.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r4.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r4.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r4.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r4.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r4.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r4.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2323,9 +2323,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r5.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r5.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r5.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r5.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r5.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r5.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r5.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.cylinderLength) * mechanics.r5.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r5.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.cylinderLength) * mechanics.r5.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r5.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.cylinderLength) * mechanics.r5.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r5.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.e[1]) * mechanics.r5.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r5.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.e[2]) * mechanics.r5.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r5.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r5.e[3]) * mechanics.r5.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r5.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r5.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r5.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r5.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r5.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r5.e[3] \"Vector in length direction, resolved in object frame\";
@@ -2467,9 +2467,9 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   input Real mechanics.r6.cylinder.r[1](quantity = \"Length\", unit = \"m\") = mechanics.r6.frame_a.r_0[1] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r6.cylinder.r[2](quantity = \"Length\", unit = \"m\") = mechanics.r6.frame_a.r_0[2] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
 //   input Real mechanics.r6.cylinder.r[3](quantity = \"Length\", unit = \"m\") = mechanics.r6.frame_a.r_0[3] \"Position vector from origin of world frame to origin of object frame, resolved in world frame\";
-//   input Real mechanics.r6.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.cylinderLength) * mechanics.r6.e[1]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r6.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.cylinderLength) * mechanics.r6.e[2]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
-//   input Real mechanics.r6.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.cylinderLength) * mechanics.r6.e[3]) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r6.cylinder.r_shape[1](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.e[1]) * mechanics.r6.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r6.cylinder.r_shape[2](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.e[2]) * mechanics.r6.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
+//   input Real mechanics.r6.cylinder.r_shape[3](quantity = \"Length\", unit = \"m\") = ((-mechanics.r6.e[3]) * mechanics.r6.cylinderLength) / 2.0 \"Position vector from origin of object frame to shape origin, resolved in object frame\";
 //   input Real mechanics.r6.cylinder.lengthDirection[1](unit = \"1\") = mechanics.r6.e[1] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r6.cylinder.lengthDirection[2](unit = \"1\") = mechanics.r6.e[2] \"Vector in length direction, resolved in object frame\";
 //   input Real mechanics.r6.cylinder.lengthDirection[3](unit = \"1\") = mechanics.r6.e[3] \"Vector in length direction, resolved in object frame\";
@@ -9627,8 +9627,8 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   pathPlanning.path.Tes = pathPlanning.path.Te + pathPlanning.path.startTime;
 //   pathPlanning.path.sd_max2 = pathPlanning.path.sdd_max * pathPlanning.path.Ta1;
 //   pathPlanning.path.s1 = (pathPlanning.path.sdd_max * (if pathPlanning.path.noWphase then pathPlanning.path.Ta1 ^ 2.0 else pathPlanning.path.Ta2 ^ 2.0)) / 2.0;
-//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-pathPlanning.path.sdd_max) * (pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
-//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) - pathPlanning.path.sdd_max * ((pathPlanning.path.Te / 2.0 + (-pathPlanning.path.Tv) / 2.0) * (pathPlanning.path.Te - pathPlanning.path.Tv)));
+//   pathPlanning.path.s2 = pathPlanning.path.s1 + (if pathPlanning.path.noWphase then pathPlanning.path.sd_max2 * (pathPlanning.path.Te - pathPlanning.path.Ta1) + ((-(pathPlanning.path.Te - pathPlanning.path.Ta1) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0 else pathPlanning.path.sd_max * (pathPlanning.path.Tv - pathPlanning.path.Ta2));
+//   pathPlanning.path.s3 = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (pathPlanning.path.Te - pathPlanning.path.Tv) + ((-(pathPlanning.path.Te - pathPlanning.path.Tv) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   if time < pathPlanning.path.startTime then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -9637,11 +9637,11 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   if time < pathPlanning.path.Ta1s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = ((time - pathPlanning.path.startTime) ^ 2.0 * pathPlanning.path.sdd_max) / 2.0;
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max2 - pathPlanning.path.sdd_max * (time - pathPlanning.path.Ta1s);
-//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Ta1s) / 2.0) * (time - pathPlanning.path.Ta1s)));
+//   pathPlanning.path.r_s = pathPlanning.path.s1 + (pathPlanning.path.sd_max2 * (time - pathPlanning.path.Ta1s) + ((-(time - pathPlanning.path.Ta1s) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;
@@ -9650,7 +9650,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Ta2s then
 //   pathPlanning.path.r_sdd = pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sdd_max * (time - pathPlanning.path.startTime);
-//   pathPlanning.path.r_s = pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.startTime) / 2.0) * (time - pathPlanning.path.startTime));
+//   pathPlanning.path.r_s = ((time - pathPlanning.path.startTime) ^ 2.0 * pathPlanning.path.sdd_max) / 2.0;
 //   elseif time < pathPlanning.path.Tvs then
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max;
@@ -9658,7 +9658,7 @@ checkModel(Modelica.Mechanics.MultiBody.Examples.Systems.RobotR3.fullRobot); get
 //   elseif time < pathPlanning.path.Tes then
 //   pathPlanning.path.r_sdd = -pathPlanning.path.sdd_max;
 //   pathPlanning.path.r_sd = pathPlanning.path.sd_max - pathPlanning.path.sdd_max * (time - pathPlanning.path.Tvs);
-//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) - pathPlanning.path.sdd_max * ((time / 2.0 + (-pathPlanning.path.Tvs) / 2.0) * (time - pathPlanning.path.Tvs)));
+//   pathPlanning.path.r_s = pathPlanning.path.s2 + (pathPlanning.path.sd_max * (time - pathPlanning.path.Tvs) + ((-(time - pathPlanning.path.Tvs) ^ 2.0) * pathPlanning.path.sdd_max) / 2.0);
 //   else
 //   pathPlanning.path.r_sdd = 0.0;
 //   pathPlanning.path.r_sd = 0.0;

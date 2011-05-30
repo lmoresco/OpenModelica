@@ -201,7 +201,7 @@ getErrorString();
 //   input Real Convection1.Gc(quantity = \"ThermalConductance\", unit = \"W/K\") \"Signal representing the convective thermal conductance in [W/K]\";
 // initial algorithm
 //   assert(Pipe1.V_flowNominal > Pipe1.V_flowLaminar, \"SimpleFriction: V_flowNominal has to be > V_flowLaminar!\");
-//   Pipe1.k := (Pipe1.dpLaminar * Pipe1.V_flowNominal) / Pipe1.V_flowLaminar;
+//   Pipe1.k := (Pipe1.V_flowNominal * Pipe1.dpLaminar) / Pipe1.V_flowLaminar;
 //   assert(Pipe1.dpNominal >= Pipe1.k, \"SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!\");
 //   Pipe1.k := (Pipe1.dpNominal - Pipe1.k) * (Pipe1.V_flowNominal - Pipe1.V_flowLaminar) ^ -2.0;
 // equation
@@ -223,11 +223,11 @@ getErrorString();
 //   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
 //   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then
-//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
+//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar - Pipe1.k * (Pipe1.VolumeFlow + Pipe1.V_flowLaminar) ^ 2.0;
 //   else
-//   Pipe1.pressureDrop = (Pipe1.dpLaminar * Pipe1.VolumeFlow) / Pipe1.V_flowLaminar;
+//   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar;
 //   end if;
 //   Pipe1.Q_friction = Pipe1.frictionLoss * (Pipe1.VolumeFlow * Pipe1.pressureDrop);
 //   Ambient2.flowPort.p = Ambient2.p_Ambient;
