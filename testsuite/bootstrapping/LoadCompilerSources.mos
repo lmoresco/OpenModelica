@@ -92,6 +92,7 @@ loadFile("../../Compiler/Script/CevalScript.mo");
 loadFile("../../Compiler/Script/Interactive.mo");
 loadFile("../../Compiler/Script/Refactor.mo");
 "Template";
+loadFile("../../Compiler/Template/SCodeDumpTpl.mo");
 loadFile("../../Compiler/Template/SimCodeC.mo");
 loadFile("../../Compiler/Template/SimCodeCSharp.mo");
 loadFile("../../Compiler/Template/SimCodeDump.mo");

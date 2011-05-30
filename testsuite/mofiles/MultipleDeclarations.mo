@@ -27,9 +27,8 @@ end test;
 // Result:
 // Error processing file: MultipleDeclarations.mo
 // [MultipleDeclarations.mo:19:2-19:28:writable] Error: Duplicate elements (due to inherited elements) not identical:
-// 	first element is:  parameter Integer n (min  = 3);
-// 	second element is: parameter .Integer n (min  = 1);
-// 
+// 	first element is:  parameter Integer n(min = 3)
+// 	second element is: parameter .Integer n(min = 1)
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

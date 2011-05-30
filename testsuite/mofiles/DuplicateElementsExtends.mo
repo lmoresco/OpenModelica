@@ -21,9 +21,8 @@ end DuplicateElementsExtends;
 // Result:
 // Error processing file: DuplicateElementsExtends.mo
 // [DuplicateElementsExtends.mo:18:2-18:7:writable] Error: Duplicate elements (due to inherited elements) not identical:
-// 	first element is:  .Crap.X x ;
-// 	second element is: .Crap.Y x ;
-// 
+// 	first element is:  .Crap.X x
+// 	second element is: .Crap.Y x
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
