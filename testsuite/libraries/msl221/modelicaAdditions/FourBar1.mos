@@ -64,7 +64,7 @@ getErrorString();
 //   if i4 > 99 then
 //     i4 := 9;
 //   end if;
-//   packedMaterial := /*REAL*/(100000 * i1 + 1000 * i2 + 10 * i3 + i4);
+//   packedMaterial := /*REAL*/(10 * (100 * (100 * i1 + i2) + i3) + i4);
 // end PackMaterial;
 // 
 // function PackShape
@@ -3268,9 +3268,9 @@ getErrorString();
 //   barC.nydd[1] = barC.bdd[1] - (barC.nyd[1] * barC.bd[1] + (barC.nyd[2] * barC.bd[2] + (barC.nyd[3] * barC.bd[3] + (barC.ny[1] * barC.bdd[1] + (barC.ny[2] * barC.bdd[2] + barC.ny[3] * barC.bdd[3]))))) * barC.ny[1] - barC.bb * barC.nyd[1];
 //   barC.nydd[2] = barC.bdd[2] - (barC.nyd[1] * barC.bd[1] + (barC.nyd[2] * barC.bd[2] + (barC.nyd[3] * barC.bd[3] + (barC.ny[1] * barC.bdd[1] + (barC.ny[2] * barC.bdd[2] + barC.ny[3] * barC.bdd[3]))))) * barC.ny[2] - barC.bb * barC.nyd[2];
 //   barC.nydd[3] = barC.bdd[3] - (barC.nyd[1] * barC.bd[1] + (barC.nyd[2] * barC.bd[2] + (barC.nyd[3] * barC.bd[3] + (barC.ny[1] * barC.bdd[1] + (barC.ny[2] * barC.bdd[2] + barC.ny[3] * barC.bdd[3]))))) * barC.ny[3] - barC.bb * barC.nyd[3];
-//   barC.nzdd[1] = barC.nxdd[2] * barC.ny[3] - barC.nxdd[3] * barC.ny[2] + (barC.nx[2] * barC.nydd[3] - barC.nx[3] * barC.nydd[2]) + (2.0 * (barC.nxd[2] * barC.nyd[3]) - 2.0 * (barC.nxd[3] * barC.nyd[2]));
-//   barC.nzdd[2] = barC.nxdd[3] * barC.ny[1] - barC.nxdd[1] * barC.ny[3] + (barC.nx[3] * barC.nydd[1] - barC.nx[1] * barC.nydd[3]) + (2.0 * (barC.nxd[3] * barC.nyd[1]) - 2.0 * (barC.nxd[1] * barC.nyd[3]));
-//   barC.nzdd[3] = barC.nxdd[1] * barC.ny[2] - barC.nxdd[2] * barC.ny[1] + (barC.nx[1] * barC.nydd[2] - barC.nx[2] * barC.nydd[1]) + (2.0 * (barC.nxd[1] * barC.nyd[2]) - 2.0 * (barC.nxd[2] * barC.nyd[1]));
+//   barC.nzdd[1] = barC.nxdd[2] * barC.ny[3] - barC.nxdd[3] * barC.ny[2] + (barC.nx[2] * barC.nydd[3] - barC.nx[3] * barC.nydd[2]) + 2.0 * (barC.nxd[2] * barC.nyd[3] - barC.nxd[3] * barC.nyd[2]);
+//   barC.nzdd[2] = barC.nxdd[3] * barC.ny[1] - barC.nxdd[1] * barC.ny[3] + (barC.nx[3] * barC.nydd[1] - barC.nx[1] * barC.nydd[3]) + 2.0 * (barC.nxd[3] * barC.nyd[1] - barC.nxd[1] * barC.nyd[3]);
+//   barC.nzdd[3] = barC.nxdd[1] * barC.ny[2] - barC.nxdd[2] * barC.ny[1] + (barC.nx[1] * barC.nydd[2] - barC.nx[2] * barC.nydd[1]) + 2.0 * (barC.nxd[1] * barC.nyd[2] - barC.nxd[2] * barC.nyd[1]);
 //   barC.z_relc[1] = barC.nz[1] * barC.nydd[1] + (barC.nz[2] * barC.nydd[2] + (barC.nz[3] * barC.nydd[3] + (barC.nzd[1] * barC.nyd[1] + (barC.nzd[2] * barC.nyd[2] + barC.nzd[3] * barC.nyd[3]))));
 //   barC.z_relc[2] = barC.nx[1] * barC.nzdd[1] + (barC.nx[2] * barC.nzdd[2] + (barC.nx[3] * barC.nzdd[3] + (barC.nxd[1] * barC.nzd[1] + (barC.nxd[2] * barC.nzd[2] + barC.nxd[3] * barC.nzd[3]))));
 //   barC.z_relc[3] = barC.ny[1] * barC.nxdd[1] + (barC.ny[2] * barC.nxdd[2] + (barC.ny[3] * barC.nxdd[3] + (barC.nyd[1] * barC.nxd[1] + (barC.nyd[2] * barC.nxd[2] + barC.nyd[3] * barC.nxd[3]))));

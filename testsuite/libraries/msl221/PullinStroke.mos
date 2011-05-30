@@ -205,8 +205,8 @@ getErrorString();
 //   Real STA_195205_129.ArmatureFlange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected parameter Real STA_195205_129.di_yoke(quantity = \"Length\", unit = \"m\") = STA_195205_129.d_yoke + -2.0 * STA_195205_129.t_yoke \"Inner yoke diameter\";
 //   parameter Real STA_195205_129.A_arm(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * STA_195205_129.d_arm ^ 2.0 \"Cross sectional area of armature\";
-//   parameter Real STA_195205_129.A_pole(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * STA_195205_129.d_pole ^ 2.0 + -0.785398163397448 * STA_195205_129.d_poleBore ^ 2.0 \"Cross sectional area of pole\";
-//   parameter Real STA_195205_129.A_yoke(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * STA_195205_129.d_yoke ^ 2.0 + -0.785398163397448 * STA_195205_129.di_yoke ^ 2.0 \"Cross sectional area of yoke\";
+//   parameter Real STA_195205_129.A_pole(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * (STA_195205_129.d_pole ^ 2.0 - STA_195205_129.d_poleBore ^ 2.0) \"Cross sectional area of pole\";
+//   parameter Real STA_195205_129.A_yoke(quantity = \"Area\", unit = \"m2\") = 0.785398163397448 * (STA_195205_129.d_yoke ^ 2.0 - STA_195205_129.di_yoke ^ 2.0) \"Cross sectional area of yoke\";
 // equation
 //   Ground.p.v = 0.0;
 //   U_step.signalSource.y = U_step.signalSource.offset + (if time < U_step.signalSource.startTime then 0.0 else U_step.signalSource.height);

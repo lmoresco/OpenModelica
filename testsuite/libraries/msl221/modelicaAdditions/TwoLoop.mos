@@ -64,7 +64,7 @@ getErrorString();
 //   if i4 > 99 then
 //     i4 := 9;
 //   end if;
-//   packedMaterial := /*REAL*/(100000 * i1 + 1000 * i2 + 10 * i3 + i4);
+//   packedMaterial := /*REAL*/(10 * (100 * (100 * i1 + i2) + i3) + i4);
 // end PackMaterial;
 // 
 // function PackShape
@@ -6308,9 +6308,9 @@ getErrorString();
 //   j2.nydd[1] = j2.bdd[1] - (j2.nyd[1] * j2.bd[1] + (j2.nyd[2] * j2.bd[2] + (j2.nyd[3] * j2.bd[3] + (j2.ny[1] * j2.bdd[1] + (j2.ny[2] * j2.bdd[2] + j2.ny[3] * j2.bdd[3]))))) * j2.ny[1] - j2.bb * j2.nyd[1];
 //   j2.nydd[2] = j2.bdd[2] - (j2.nyd[1] * j2.bd[1] + (j2.nyd[2] * j2.bd[2] + (j2.nyd[3] * j2.bd[3] + (j2.ny[1] * j2.bdd[1] + (j2.ny[2] * j2.bdd[2] + j2.ny[3] * j2.bdd[3]))))) * j2.ny[2] - j2.bb * j2.nyd[2];
 //   j2.nydd[3] = j2.bdd[3] - (j2.nyd[1] * j2.bd[1] + (j2.nyd[2] * j2.bd[2] + (j2.nyd[3] * j2.bd[3] + (j2.ny[1] * j2.bdd[1] + (j2.ny[2] * j2.bdd[2] + j2.ny[3] * j2.bdd[3]))))) * j2.ny[3] - j2.bb * j2.nyd[3];
-//   j2.nzdd[1] = j2.nxdd[2] * j2.ny[3] - j2.nxdd[3] * j2.ny[2] + (j2.nx[2] * j2.nydd[3] - j2.nx[3] * j2.nydd[2]) + (2.0 * (j2.nxd[2] * j2.nyd[3]) - 2.0 * (j2.nxd[3] * j2.nyd[2]));
-//   j2.nzdd[2] = j2.nxdd[3] * j2.ny[1] - j2.nxdd[1] * j2.ny[3] + (j2.nx[3] * j2.nydd[1] - j2.nx[1] * j2.nydd[3]) + (2.0 * (j2.nxd[3] * j2.nyd[1]) - 2.0 * (j2.nxd[1] * j2.nyd[3]));
-//   j2.nzdd[3] = j2.nxdd[1] * j2.ny[2] - j2.nxdd[2] * j2.ny[1] + (j2.nx[1] * j2.nydd[2] - j2.nx[2] * j2.nydd[1]) + (2.0 * (j2.nxd[1] * j2.nyd[2]) - 2.0 * (j2.nxd[2] * j2.nyd[1]));
+//   j2.nzdd[1] = j2.nxdd[2] * j2.ny[3] - j2.nxdd[3] * j2.ny[2] + (j2.nx[2] * j2.nydd[3] - j2.nx[3] * j2.nydd[2]) + 2.0 * (j2.nxd[2] * j2.nyd[3] - j2.nxd[3] * j2.nyd[2]);
+//   j2.nzdd[2] = j2.nxdd[3] * j2.ny[1] - j2.nxdd[1] * j2.ny[3] + (j2.nx[3] * j2.nydd[1] - j2.nx[1] * j2.nydd[3]) + 2.0 * (j2.nxd[3] * j2.nyd[1] - j2.nxd[1] * j2.nyd[3]);
+//   j2.nzdd[3] = j2.nxdd[1] * j2.ny[2] - j2.nxdd[2] * j2.ny[1] + (j2.nx[1] * j2.nydd[2] - j2.nx[2] * j2.nydd[1]) + 2.0 * (j2.nxd[1] * j2.nyd[2] - j2.nxd[2] * j2.nyd[1]);
 //   j2.z_relc[1] = j2.nz[1] * j2.nydd[1] + (j2.nz[2] * j2.nydd[2] + (j2.nz[3] * j2.nydd[3] + (j2.nzd[1] * j2.nyd[1] + (j2.nzd[2] * j2.nyd[2] + j2.nzd[3] * j2.nyd[3]))));
 //   j2.z_relc[2] = j2.nx[1] * j2.nzdd[1] + (j2.nx[2] * j2.nzdd[2] + (j2.nx[3] * j2.nzdd[3] + (j2.nxd[1] * j2.nzd[1] + (j2.nxd[2] * j2.nzd[2] + j2.nxd[3] * j2.nzd[3]))));
 //   j2.z_relc[3] = j2.ny[1] * j2.nxdd[1] + (j2.ny[2] * j2.nxdd[2] + (j2.ny[3] * j2.nxdd[3] + (j2.nyd[1] * j2.nxd[1] + (j2.nyd[2] * j2.nxd[2] + j2.nyd[3] * j2.nxd[3]))));

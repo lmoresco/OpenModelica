@@ -4175,7 +4175,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   if i4 > 99 then
 //     i4 := 9;
 //   end if;
-//   packedMaterial := /*REAL*/(100000 * i1 + 1000 * i2 + 10 * i3 + i4);
+//   packedMaterial := /*REAL*/(10 * (100 * (100 * i1 + i2) + i3) + i4);
 // end PackMaterial;
 // 
 // function PackShape

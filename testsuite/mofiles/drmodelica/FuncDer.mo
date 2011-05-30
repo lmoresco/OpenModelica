@@ -80,7 +80,7 @@ end FuncDer;
 //   input Real der_2_x;
 //   output Real der_2_y;
 // algorithm
-//   der_2_y := exp(x) * der_x ^ 2.0 + exp(x) * der_2_x;
+//   der_2_y := exp(x) * (der_x ^ 2.0 + der_2_x);
 // end h2;
 // 
 // class FuncDer

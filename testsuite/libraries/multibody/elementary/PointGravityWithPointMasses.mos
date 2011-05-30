@@ -1699,7 +1699,7 @@ getErrorString();
 //   input Integer spring.color[2](min = 0, max = 255) = 0 \" Color of spring\";
 //   input Integer spring.color[3](min = 0, max = 255) = 255 \" Color of spring\";
 //   input Real spring.specularCoefficient = world.defaultSpecularCoefficient \"Reflection of ambient light (= 0: light is completely absorbed)\";
-//   input Real spring.massDiameter(quantity = \"Length\", unit = \"m\", min = 0.0) = max(0.0,0.9 * spring.width + -1.8 * spring.coilWidth) \" Diameter of mass point sphere\";
+//   input Real spring.massDiameter(quantity = \"Length\", unit = \"m\", min = 0.0) = max(0.0,0.9 * (spring.width + -2.0 * spring.coilWidth)) \" Diameter of mass point sphere\";
 //   input Integer spring.massColor[1](min = 0, max = 255) = 0 \" Color of mass point\";
 //   input Integer spring.massColor[2](min = 0, max = 255) = 128 \" Color of mass point\";
 //   input Integer spring.massColor[3](min = 0, max = 255) = 255 \" Color of mass point\";
