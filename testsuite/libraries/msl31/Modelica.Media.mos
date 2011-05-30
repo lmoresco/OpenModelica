@@ -244,7 +244,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := 4184.0 * (-273.15 + T);
+//   h := -1142859.6 + 4184.0 * T;
 // end Modelica.Media.Water.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Water.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume\"
@@ -323,7 +323,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
 //   medium.h = Modelica.Media.Water.Medium.specificEnthalpy_pTX(medium.p,medium.T,{medium.X[1]});
-//   medium.u = 4184.0 * (-273.15 + medium.T);
+//   medium.u = -1142859.6 + 4184.0 * medium.T;
 //   medium.d = 995.586;
 //   medium.R = 0.0;
 //   medium.MM = 0.018015268;
@@ -340,7 +340,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
 // \");
 //   medium2.h = Modelica.Media.Water.Medium.specificEnthalpy_pTX(medium2.p,medium2.T,{medium2.X[1]});
-//   medium2.u = 4184.0 * (-273.15 + medium2.T);
+//   medium2.u = -1142859.6 + 4184.0 * medium2.T;
 //   medium2.d = 995.586;
 //   medium2.R = 0.0;
 //   medium2.MM = 0.018015268;
@@ -589,7 +589,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[29] := 3232555.0322333 + o[26] + o[27] + o[28];
 //   o[30] := o[29] ^ 2.0;
 //   o[31] := o[30] ^ 2.0;
-//   dpt := 1000000.0 * ((-64.0 * o[10] * (-12020.82470247 * o[14] + 34.147693880184 * o[14] * o[4] + (0.5 * (-4.0 * o[20] * o[22] + 2.0 * o[17] * (12020.82470247 * o[14] + -34.147693880184 * o[14] * o[4]) + -4.0 * (1167.0521452767 * o[14] + 2.0 * o[14] * o[4]) * o[8])) / o[26])) / (o[31] * o[29]) + (64.0 * o[20] * o[8] * o[9]) / o[31]);
+//   dpt := (-64000000.0 * o[10] * (-12020.82470247 * o[14] + 34.147693880184 * o[14] * o[4] + (-2.0 * o[20] * o[22] + o[17] * (12020.82470247 * o[14] + -34.147693880184 * o[14] * o[4]) + -0.5 * (4668.2085811068 * o[14] + 8.0 * o[14] * o[4]) * o[8]) / o[26])) / (o[31] * o[29]) + (64000000.0 * o[20] * o[8] * o[9]) / o[31];
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dptofT;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dtsatofp \"derivative of saturation temperature w.r.t. pressure\"
@@ -648,7 +648,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[47] := 1295.95640782102 * o[46];
 //   o[48] := 2862.09212505088 + o[40] + o[41] + o[42] + o[43] + o[44] + o[45] + o[47];
 //   o[49] := o[35] ^ -2.0;
-//   dtsat := 5e-07 * ((2.0 * o[15]) / o[35] + -2.0 * o[11] * (-3005.2061756175 * o[2] + -0.5 * o[26] * o[31] + -583.52607263835 * o[5]) * o[49] + (-20953.4635664399 * (o[39] * (1295.95640782102 + 5398.05138359071 * o[2] + 0.25 * o[2] * o[30] + -0.861036696828853 * o[26] * o[31] + -0.255316477279829 * o[26] * o[31] * o[4] + -4096.43557421473 * o[5] + -0.255316477279829 * o[30] * o[5] + -2325.01894614276 / o[8] + 0.5 * o[26] * o[31] * o[8]) + -2.0 * (o[19] + o[20] + 0.5 * o[26] * o[31]) * o[48] * o[37] ^ -3.0)) / sqrt(o[39] * o[48]));
+//   dtsat := (1e-06 * o[15]) / o[35] + -1e-06 * o[11] * (-3005.2061756175 * o[2] + -0.5 * o[26] * o[31] + -583.52607263835 * o[5]) * o[49] + (-0.01047673178322 * o[39] * (1295.95640782102 + 5398.05138359071 * o[2] + 0.25 * o[2] * o[30] + -0.861036696828853 * o[26] * o[31] + -0.255316477279829 * o[26] * o[31] * o[4] + -4096.43557421473 * o[5] + -0.255316477279829 * o[30] * o[5] + -2325.01894614276 / o[8] + 0.5 * o[26] * o[31] * o[8]) + 0.01047673178322 * (2.0 * o[19] + 2.0 * o[20] + o[26] * o[31]) * o[48] * o[37] ^ -3.0) / sqrt(o[39] * o[48]);
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.dtsatofp;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.f3 \"Helmholtz function for region 3: f(d,T)\"
@@ -926,7 +926,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[6] := o[4] ^ 2.0;
 //   o[7] := 14.91510861353 * o[6];
 //   o[8] := 405113.40542057 + o[5] + o[7];
-//   p_sat := 16000000.0 * o[8] ^ 4.0 * (3232555.0322333 + -12020.82470247 * o[4] + 17.073846940092 * o[6] + (-4.0 * (-724213.16703206 + 1167.0521452767 * o[4] + o[6]) * o[8] + (-3232555.0322333 + 12020.82470247 * o[4] + -17.073846940092 * o[6]) ^ 2.0) ^ 0.5) ^ -4.0;
+//   p_sat := 16000000.0 * o[8] ^ 4.0 * (3232555.0322333 + -12020.82470247 * o[4] + 17.073846940092 * o[6] + ((2896852.66812824 + -4668.2085811068 * o[4] + -4.0 * o[6]) * o[8] + (-3232555.0322333 + 12020.82470247 * o[4] + -17.073846940092 * o[6]) ^ 2.0) ^ 0.5) ^ -4.0;
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.psat_der \"derivative function for psat\"
@@ -1037,7 +1037,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[18] := 4823.2657361591 + o[15] + o[16] + o[17];
 //   o[19] := 1.0 / o[18];
 //   o[20] := 2.0 * o[19] * o[5];
-//   t_sat := 0.5 * (650.17534844798 + o[20] - (-4.0 * (-0.23855557567849 + 1300.35069689596 * o[19] * o[5]) + (650.17534844798 + o[20]) ^ 2.0) ^ 0.5);
+//   t_sat := 325.08767422399 + 0.5 * o[20] + -0.5 * (0.95422230271396 + -5201.40278758384 * o[19] * o[5] + (650.17534844798 + o[20]) ^ 2.0) ^ 0.5;
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat_der \"derivative function for tsat\"
@@ -1158,9 +1158,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   else
 //     liquid := T < Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat(p);
 //     if liquid then
-//       dguess := 0.5 * (Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b(p) + dmax);
+//       dguess := 0.5 * Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhol_p_R4b(p) + 0.5 * dmax;
 //     else
-//       dguess := 0.5 * (Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p_R4b(p) + dmin);
+//       dguess := 0.5 * Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.rhov_p_R4b(p) + 0.5 * dmin;
 //     end if;
 //   end if;
 //   while i < 50 and not found loop
@@ -1266,9 +1266,9 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //     Tmax := 1116.85 + -0.632948717 * dout;
 //   end if;
 //   if dout < 322.0 then
-//     Tmin := 647.096 * (1.0 + -(-322.0 + dout) ^ 2.0 / 1000000.0);
+//     Tmin := 647.096 + -0.000647096 * (-322.0 + dout) ^ 2.0;
 //   else
-//     Tmin := 647.096 * (1.0 + -(-322.0 + dout) ^ 2.0 / 1440000.0);
+//     Tmin := 647.096 + -0.000449372222222222 * (-322.0 + dout) ^ 2.0;
 //   end if;
 //   if Tin < Tmin then
 //     Tout := Tmin;
@@ -1416,7 +1416,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"pressure\";
 //   protected constant Real[5] n = {348.05185628969,-1.1671859879975,0.0010192970039326,572.54459862746,13.91883977887};
 // algorithm
-//   p := 1000000.0 * (348.05185628969 + t * (-1.1671859879975 + 0.0010192970039326 * t));
+//   p := 348051856.28969 + 1000000.0 * t * (-1.1671859879975 + 0.0010192970039326 * t);
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofT;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boundary23ofp \"boundary function for region boundary between regions 2 and 3 (input pressure)\"
@@ -1550,7 +1550,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[1] := pi1 ^ 2.0;
 //   o[2] := o[1] ^ 2.0;
 //   o[3] := o[2] ^ 2.0;
-//   h := 639675.036 * (0.173379420894777 + pi1 * (-0.022914084306349 + pi1 * (-0.00017146768241932 + pi1 * (-4.18695814670391e-06 + pi1 * (-2.41630417490008e-07 + pi1 * (1.73545618580828e-11 + o[1] * pi1 * (8.43755552264362e-14 + o[2] * o[3] * pi1 * (5.35429206228374e-35 + o[1] * (-8.12140581014818e-38 + o[1] * o[2] * (-1.43870236842915e-44 + pi1 * (1.73894459122923e-45 + (-7.06381628462585e-47 + 9.64504638626269e-49 * pi1) * pi1)))))))))));
+//   h := 110906.487302526 + 639675.036 * pi1 * (-0.022914084306349 + pi1 * (-0.00017146768241932 + pi1 * (-4.18695814670391e-06 + pi1 * (-2.41630417490008e-07 + pi1 * (1.73545618580828e-11 + o[1] * pi1 * (8.43755552264362e-14 + o[2] * o[3] * pi1 * (5.35429206228374e-35 + o[1] * (-8.12140581014818e-38 + o[1] * o[2] * (-1.43870236842915e-44 + pi1 * (1.73894459122923e-45 + (-7.06381628462585e-47 + 9.64504638626269e-49 * pi1) * pi1))))))))));
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hlowerofp1;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hlowerofp2 \"explicit lower specific enthalpy limit of region 2 as function of pressure (meets region 4 saturation pressure curve at 623.15 K)\"
@@ -1595,7 +1595,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   pi := p / 1000000.0;
 //   assert( p > 611.657, \"IF97 medium function hlowerofp5 called with too low pressure
 // p = \" + String(p,0,true,6) + \" Pa <= \" + String(611.657,0,true,6) + \" Pa (triple point pressure)\");
-//   h := 461526.0 * (9.01505286876203 + pi * (-0.00979043490246092 + (-2.03245575263501e-05 + 3.36540214679088e-07 * pi) * pi));
+//   h := 4160681.29030826 + 461526.0 * pi * (-0.00979043490246092 + (-2.03245575263501e-05 + 3.36540214679088e-07 * pi) * pi);
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hlowerofp5;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hupperofp1 \"explicit upper specific enthalpy limit of region 1 as function of pressure (meets region 4 saturation pressure curve at 623.15 K)\"
@@ -1610,7 +1610,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   o[1] := pi1 ^ 2.0;
 //   o[2] := o[1] ^ 2.0;
 //   o[3] := o[2] ^ 2.0;
-//   h := 639675.036 * (2.42896927729349 + pi1 * (-0.00141131225285294 + pi1 * (0.00143759406818289 + pi1 * (0.000125338925082983 + pi1 * (1.23617764767172e-05 + pi1 * (3.17834967400818e-06 + o[1] * pi1 * (1.46754947271665e-08 + o[2] * o[3] * pi1 * (1.86779322717506e-17 + o[1] * (-4.18568363667416e-19 + o[1] * o[2] * (-9.19148577641497e-22 + pi1 * (4.27026404402408e-22 + (-6.66749357417962e-23 + 3.49930466305574e-24 * pi1) * pi1)))))))))));
+//   h := 1553751.00989561 + 639675.036 * pi1 * (-0.00141131225285294 + pi1 * (0.00143759406818289 + pi1 * (0.000125338925082983 + pi1 * (1.23617764767172e-05 + pi1 * (3.17834967400818e-06 + o[1] * pi1 * (1.46754947271665e-08 + o[2] * o[3] * pi1 * (1.86779322717506e-17 + o[1] * (-4.18568363667416e-19 + o[1] * o[2] * (-9.19148577641497e-22 + pi1 * (4.27026404402408e-22 + (-6.66749357417962e-23 + 3.49930466305574e-24 * pi1) * pi1))))))))));
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hupperofp1;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hupperofp2 \"explicit upper specific enthalpy limit of region 2 as function of pressure\"
@@ -1635,7 +1635,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   pi := p / 1000000.0;
 //   assert( p > 611.657, \"IF97 medium function hupperofp5 called with too low pressure
 // p = \" + String(p,0,true,6) + \" Pa <= \" + String(611.657,0,true,6) + \" Pa (triple point pressure)\");
-//   h := 461526.0 * (15.9838891400332 + pi * (-0.000489898813722568 + (-5.01510211858761e-08 + 7.5006972718273e-08 * pi) * pi));
+//   h := 7376980.41924296 + 461526.0 * pi * (-0.000489898813722568 + (-5.01510211858761e-08 + 7.5006972718273e-08 * pi) * pi);
 // end Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hupperofp5;
 // 
 // function Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hv_p \"vapour specific enthalpy on the boundary between regions 4 and 3 or 2\"
@@ -2341,7 +2341,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   der(m) = m_flow_ext;
 //   der(U) = H_flow_ext;
 //   m_flow_ext2 = time + -0.5;
-//   state2 = Modelica.Media.Water.Medium.setState_pT(100000.0 * (1.0 + time),300.0 + 200.0 * time,0);
+//   state2 = Modelica.Media.Water.Medium.setState_pT(100000.0 + 100000.0 * time,300.0 + 200.0 * time,0);
 //   state = Modelica.Media.Water.Medium.setSmoothState(m_flow_ext2,medium.state,state2,0.05);
 //   der_p = der(state.p);
 //   der_T = der(state.T);
@@ -2669,7 +2669,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   final constant Real invTK[5] = 0.00341122292341805;
 //   final constant Real invTK[6] = 0.00319335781574325;
 //   final constant Real invTK[7] = 0.0030016509079994;
-//   final constant Real invTK[8] = 0.00283165793572137;
+//   final constant Real invTK[8] = 0.00283165793572136;
 //   final constant Real invTK[9] = 0.00267988744472732;
 //   final constant Integer nS = 1 \"Number of substances\";
 //   final constant Real poly_rho[1] = 0.0;

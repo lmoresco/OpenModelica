@@ -750,10 +750,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[1] = -aimc.spacePhasorS.plug_n.pin[1].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[2] = -aimc.spacePhasorS.plug_n.pin[2].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[3] = -aimc.spacePhasorS.plug_n.pin[3].i;
-//   aimc.spacePhasorS.zero.v = 0.333333333333333 * (aimc.spacePhasorS.v[1] + (aimc.spacePhasorS.v[2] + aimc.spacePhasorS.v[3]));
+//   aimc.spacePhasorS.zero.v = 0.333333333333333 * aimc.spacePhasorS.v[1] + (0.333333333333333 * aimc.spacePhasorS.v[2] + 0.333333333333333 * aimc.spacePhasorS.v[3]);
 //   aimc.spacePhasorS.spacePhasor.v_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.v[3];
 //   aimc.spacePhasorS.spacePhasor.v_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.v[3];
-//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * (aimc.spacePhasorS.i[1] + (aimc.spacePhasorS.i[2] + aimc.spacePhasorS.i[3]));
+//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * aimc.spacePhasorS.i[1] + (0.333333333333333 * aimc.spacePhasorS.i[2] + 0.333333333333333 * aimc.spacePhasorS.i[3]);
 //   -aimc.spacePhasorS.spacePhasor.i_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.i[3];
 //   -aimc.spacePhasorS.spacePhasor.i_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.i[3];
 //   aimc.airGapS.i_ms[1] = aimc.airGapS.i_ss[1] + aimc.airGapS.i_rs[1];
@@ -799,7 +799,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -1893,10 +1893,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[1] = -aimc.spacePhasorS.plug_n.pin[1].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[2] = -aimc.spacePhasorS.plug_n.pin[2].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[3] = -aimc.spacePhasorS.plug_n.pin[3].i;
-//   aimc.spacePhasorS.zero.v = 0.333333333333333 * (aimc.spacePhasorS.v[1] + (aimc.spacePhasorS.v[2] + aimc.spacePhasorS.v[3]));
+//   aimc.spacePhasorS.zero.v = 0.333333333333333 * aimc.spacePhasorS.v[1] + (0.333333333333333 * aimc.spacePhasorS.v[2] + 0.333333333333333 * aimc.spacePhasorS.v[3]);
 //   aimc.spacePhasorS.spacePhasor.v_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.v[3];
 //   aimc.spacePhasorS.spacePhasor.v_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.v[3];
-//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * (aimc.spacePhasorS.i[1] + (aimc.spacePhasorS.i[2] + aimc.spacePhasorS.i[3]));
+//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * aimc.spacePhasorS.i[1] + (0.333333333333333 * aimc.spacePhasorS.i[2] + 0.333333333333333 * aimc.spacePhasorS.i[3]);
 //   -aimc.spacePhasorS.spacePhasor.i_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.i[3];
 //   -aimc.spacePhasorS.spacePhasor.i_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.i[3];
 //   aimc.airGapS.i_ms[1] = aimc.airGapS.i_ss[1] + aimc.airGapS.i_rs[1];
@@ -1942,7 +1942,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -3398,10 +3398,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aims.spacePhasorS.turnsRatio * aims.spacePhasorS.i[1] = -aims.spacePhasorS.plug_n.pin[1].i;
 //   aims.spacePhasorS.turnsRatio * aims.spacePhasorS.i[2] = -aims.spacePhasorS.plug_n.pin[2].i;
 //   aims.spacePhasorS.turnsRatio * aims.spacePhasorS.i[3] = -aims.spacePhasorS.plug_n.pin[3].i;
-//   aims.spacePhasorS.zero.v = 0.333333333333333 * (aims.spacePhasorS.v[1] + (aims.spacePhasorS.v[2] + aims.spacePhasorS.v[3]));
+//   aims.spacePhasorS.zero.v = 0.333333333333333 * aims.spacePhasorS.v[1] + (0.333333333333333 * aims.spacePhasorS.v[2] + 0.333333333333333 * aims.spacePhasorS.v[3]);
 //   aims.spacePhasorS.spacePhasor.v_[1] = aims.spacePhasorS.TransformationMatrix[1,1] * aims.spacePhasorS.v[1] + aims.spacePhasorS.TransformationMatrix[1,2] * aims.spacePhasorS.v[2] + aims.spacePhasorS.TransformationMatrix[1,3] * aims.spacePhasorS.v[3];
 //   aims.spacePhasorS.spacePhasor.v_[2] = aims.spacePhasorS.TransformationMatrix[2,1] * aims.spacePhasorS.v[1] + aims.spacePhasorS.TransformationMatrix[2,2] * aims.spacePhasorS.v[2] + aims.spacePhasorS.TransformationMatrix[2,3] * aims.spacePhasorS.v[3];
-//   -aims.spacePhasorS.zero.i = 0.333333333333333 * (aims.spacePhasorS.i[1] + (aims.spacePhasorS.i[2] + aims.spacePhasorS.i[3]));
+//   -aims.spacePhasorS.zero.i = 0.333333333333333 * aims.spacePhasorS.i[1] + (0.333333333333333 * aims.spacePhasorS.i[2] + 0.333333333333333 * aims.spacePhasorS.i[3]);
 //   -aims.spacePhasorS.spacePhasor.i_[1] = aims.spacePhasorS.TransformationMatrix[1,1] * aims.spacePhasorS.i[1] + aims.spacePhasorS.TransformationMatrix[1,2] * aims.spacePhasorS.i[2] + aims.spacePhasorS.TransformationMatrix[1,3] * aims.spacePhasorS.i[3];
 //   -aims.spacePhasorS.spacePhasor.i_[2] = aims.spacePhasorS.TransformationMatrix[2,1] * aims.spacePhasorS.i[1] + aims.spacePhasorS.TransformationMatrix[2,2] * aims.spacePhasorS.i[2] + aims.spacePhasorS.TransformationMatrix[2,3] * aims.spacePhasorS.i[3];
 //   aims.airGapS.i_ms[1] = aims.airGapS.i_ss[1] + aims.airGapS.i_rs[1];
@@ -3440,10 +3440,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aims.spacePhasorR.turnsRatio * aims.spacePhasorR.i[1] = -aims.spacePhasorR.plug_n.pin[1].i;
 //   aims.spacePhasorR.turnsRatio * aims.spacePhasorR.i[2] = -aims.spacePhasorR.plug_n.pin[2].i;
 //   aims.spacePhasorR.turnsRatio * aims.spacePhasorR.i[3] = -aims.spacePhasorR.plug_n.pin[3].i;
-//   aims.spacePhasorR.zero.v = 0.333333333333333 * (aims.spacePhasorR.v[1] + (aims.spacePhasorR.v[2] + aims.spacePhasorR.v[3]));
+//   aims.spacePhasorR.zero.v = 0.333333333333333 * aims.spacePhasorR.v[1] + (0.333333333333333 * aims.spacePhasorR.v[2] + 0.333333333333333 * aims.spacePhasorR.v[3]);
 //   aims.spacePhasorR.spacePhasor.v_[1] = aims.spacePhasorR.TransformationMatrix[1,1] * aims.spacePhasorR.v[1] + aims.spacePhasorR.TransformationMatrix[1,2] * aims.spacePhasorR.v[2] + aims.spacePhasorR.TransformationMatrix[1,3] * aims.spacePhasorR.v[3];
 //   aims.spacePhasorR.spacePhasor.v_[2] = aims.spacePhasorR.TransformationMatrix[2,1] * aims.spacePhasorR.v[1] + aims.spacePhasorR.TransformationMatrix[2,2] * aims.spacePhasorR.v[2] + aims.spacePhasorR.TransformationMatrix[2,3] * aims.spacePhasorR.v[3];
-//   -aims.spacePhasorR.zero.i = 0.333333333333333 * (aims.spacePhasorR.i[1] + (aims.spacePhasorR.i[2] + aims.spacePhasorR.i[3]));
+//   -aims.spacePhasorR.zero.i = 0.333333333333333 * aims.spacePhasorR.i[1] + (0.333333333333333 * aims.spacePhasorR.i[2] + 0.333333333333333 * aims.spacePhasorR.i[3]);
 //   -aims.spacePhasorR.spacePhasor.i_[1] = aims.spacePhasorR.TransformationMatrix[1,1] * aims.spacePhasorR.i[1] + aims.spacePhasorR.TransformationMatrix[1,2] * aims.spacePhasorR.i[2] + aims.spacePhasorR.TransformationMatrix[1,3] * aims.spacePhasorR.i[3];
 //   -aims.spacePhasorR.spacePhasor.i_[2] = aims.spacePhasorR.TransformationMatrix[2,1] * aims.spacePhasorR.i[1] + aims.spacePhasorR.TransformationMatrix[2,2] * aims.spacePhasorR.i[2] + aims.spacePhasorR.TransformationMatrix[2,3] * aims.spacePhasorR.i[3];
 //   aims.lrsigma.inductor[1].L * der(aims.lrsigma.inductor[1].i) = aims.lrsigma.inductor[1].v;
@@ -3513,7 +3513,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -4562,10 +4562,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[1] = -aimc.spacePhasorS.plug_n.pin[1].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[2] = -aimc.spacePhasorS.plug_n.pin[2].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[3] = -aimc.spacePhasorS.plug_n.pin[3].i;
-//   aimc.spacePhasorS.zero.v = 0.333333333333333 * (aimc.spacePhasorS.v[1] + (aimc.spacePhasorS.v[2] + aimc.spacePhasorS.v[3]));
+//   aimc.spacePhasorS.zero.v = 0.333333333333333 * aimc.spacePhasorS.v[1] + (0.333333333333333 * aimc.spacePhasorS.v[2] + 0.333333333333333 * aimc.spacePhasorS.v[3]);
 //   aimc.spacePhasorS.spacePhasor.v_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.v[3];
 //   aimc.spacePhasorS.spacePhasor.v_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.v[3];
-//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * (aimc.spacePhasorS.i[1] + (aimc.spacePhasorS.i[2] + aimc.spacePhasorS.i[3]));
+//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * aimc.spacePhasorS.i[1] + (0.333333333333333 * aimc.spacePhasorS.i[2] + 0.333333333333333 * aimc.spacePhasorS.i[3]);
 //   -aimc.spacePhasorS.spacePhasor.i_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.i[3];
 //   -aimc.spacePhasorS.spacePhasor.i_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.i[3];
 //   aimc.airGapS.i_ms[1] = aimc.airGapS.i_ss[1] + aimc.airGapS.i_rs[1];
@@ -4611,7 +4611,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -5524,10 +5524,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smr.spacePhasorS.turnsRatio * smr.spacePhasorS.i[1] = -smr.spacePhasorS.plug_n.pin[1].i;
 //   smr.spacePhasorS.turnsRatio * smr.spacePhasorS.i[2] = -smr.spacePhasorS.plug_n.pin[2].i;
 //   smr.spacePhasorS.turnsRatio * smr.spacePhasorS.i[3] = -smr.spacePhasorS.plug_n.pin[3].i;
-//   smr.spacePhasorS.zero.v = 0.333333333333333 * (smr.spacePhasorS.v[1] + (smr.spacePhasorS.v[2] + smr.spacePhasorS.v[3]));
+//   smr.spacePhasorS.zero.v = 0.333333333333333 * smr.spacePhasorS.v[1] + (0.333333333333333 * smr.spacePhasorS.v[2] + 0.333333333333333 * smr.spacePhasorS.v[3]);
 //   smr.spacePhasorS.spacePhasor.v_[1] = smr.spacePhasorS.TransformationMatrix[1,1] * smr.spacePhasorS.v[1] + smr.spacePhasorS.TransformationMatrix[1,2] * smr.spacePhasorS.v[2] + smr.spacePhasorS.TransformationMatrix[1,3] * smr.spacePhasorS.v[3];
 //   smr.spacePhasorS.spacePhasor.v_[2] = smr.spacePhasorS.TransformationMatrix[2,1] * smr.spacePhasorS.v[1] + smr.spacePhasorS.TransformationMatrix[2,2] * smr.spacePhasorS.v[2] + smr.spacePhasorS.TransformationMatrix[2,3] * smr.spacePhasorS.v[3];
-//   -smr.spacePhasorS.zero.i = 0.333333333333333 * (smr.spacePhasorS.i[1] + (smr.spacePhasorS.i[2] + smr.spacePhasorS.i[3]));
+//   -smr.spacePhasorS.zero.i = 0.333333333333333 * smr.spacePhasorS.i[1] + (0.333333333333333 * smr.spacePhasorS.i[2] + 0.333333333333333 * smr.spacePhasorS.i[3]);
 //   -smr.spacePhasorS.spacePhasor.i_[1] = smr.spacePhasorS.TransformationMatrix[1,1] * smr.spacePhasorS.i[1] + smr.spacePhasorS.TransformationMatrix[1,2] * smr.spacePhasorS.i[2] + smr.spacePhasorS.TransformationMatrix[1,3] * smr.spacePhasorS.i[3];
 //   -smr.spacePhasorS.spacePhasor.i_[2] = smr.spacePhasorS.TransformationMatrix[2,1] * smr.spacePhasorS.i[1] + smr.spacePhasorS.TransformationMatrix[2,2] * smr.spacePhasorS.i[2] + smr.spacePhasorS.TransformationMatrix[2,3] * smr.spacePhasorS.i[3];
 //   smr.airGapR.i_mr[1] = smr.airGapR.i_sr[1] + smr.airGapR.i_rr[1];
@@ -5573,7 +5573,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -5589,7 +5589,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].v = rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.v - rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.v;
-//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * (rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.u[3]));
+//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[3]);
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[1] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[2] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.relativeAngleSensor.phi_rel = rotorDisplacementAngle.relativeAngleSensor.flange_b.phi - rotorDisplacementAngle.relativeAngleSensor.flange_a.phi;
@@ -6574,10 +6574,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smpm.spacePhasorS.turnsRatio * smpm.spacePhasorS.i[1] = -smpm.spacePhasorS.plug_n.pin[1].i;
 //   smpm.spacePhasorS.turnsRatio * smpm.spacePhasorS.i[2] = -smpm.spacePhasorS.plug_n.pin[2].i;
 //   smpm.spacePhasorS.turnsRatio * smpm.spacePhasorS.i[3] = -smpm.spacePhasorS.plug_n.pin[3].i;
-//   smpm.spacePhasorS.zero.v = 0.333333333333333 * (smpm.spacePhasorS.v[1] + (smpm.spacePhasorS.v[2] + smpm.spacePhasorS.v[3]));
+//   smpm.spacePhasorS.zero.v = 0.333333333333333 * smpm.spacePhasorS.v[1] + (0.333333333333333 * smpm.spacePhasorS.v[2] + 0.333333333333333 * smpm.spacePhasorS.v[3]);
 //   smpm.spacePhasorS.spacePhasor.v_[1] = smpm.spacePhasorS.TransformationMatrix[1,1] * smpm.spacePhasorS.v[1] + smpm.spacePhasorS.TransformationMatrix[1,2] * smpm.spacePhasorS.v[2] + smpm.spacePhasorS.TransformationMatrix[1,3] * smpm.spacePhasorS.v[3];
 //   smpm.spacePhasorS.spacePhasor.v_[2] = smpm.spacePhasorS.TransformationMatrix[2,1] * smpm.spacePhasorS.v[1] + smpm.spacePhasorS.TransformationMatrix[2,2] * smpm.spacePhasorS.v[2] + smpm.spacePhasorS.TransformationMatrix[2,3] * smpm.spacePhasorS.v[3];
-//   -smpm.spacePhasorS.zero.i = 0.333333333333333 * (smpm.spacePhasorS.i[1] + (smpm.spacePhasorS.i[2] + smpm.spacePhasorS.i[3]));
+//   -smpm.spacePhasorS.zero.i = 0.333333333333333 * smpm.spacePhasorS.i[1] + (0.333333333333333 * smpm.spacePhasorS.i[2] + 0.333333333333333 * smpm.spacePhasorS.i[3]);
 //   -smpm.spacePhasorS.spacePhasor.i_[1] = smpm.spacePhasorS.TransformationMatrix[1,1] * smpm.spacePhasorS.i[1] + smpm.spacePhasorS.TransformationMatrix[1,2] * smpm.spacePhasorS.i[2] + smpm.spacePhasorS.TransformationMatrix[1,3] * smpm.spacePhasorS.i[3];
 //   -smpm.spacePhasorS.spacePhasor.i_[2] = smpm.spacePhasorS.TransformationMatrix[2,1] * smpm.spacePhasorS.i[1] + smpm.spacePhasorS.TransformationMatrix[2,2] * smpm.spacePhasorS.i[2] + smpm.spacePhasorS.TransformationMatrix[2,3] * smpm.spacePhasorS.i[3];
 //   smpm.airGapR.i_mr[1] = smpm.airGapR.i_sr[1] + smpm.airGapR.i_rr[1];
@@ -6625,7 +6625,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -6641,7 +6641,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].v = rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.v - rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.v;
-//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * (rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.u[3]));
+//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[3]);
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[1] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[2] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.relativeAngleSensor.phi_rel = rotorDisplacementAngle.relativeAngleSensor.flange_b.phi - rotorDisplacementAngle.relativeAngleSensor.flange_a.phi;
@@ -6949,7 +6949,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   for k in 1:3 loop
 //     y := {y[1] + x[k] * 0.666666666666667 * cos(2.0943951023932 * /*REAL*/(k + -1)),y[2] + x[k] * 0.666666666666667 * sin(2.0943951023932 * /*REAL*/(k + -1))};
 //   end for;
-//   y0 := 0.333333333333333 * (x[1] + x[2] + x[3]);
+//   y0 := 0.333333333333333 * x[1] + 0.333333333333333 * x[2] + 0.333333333333333 * x[3];
 // end Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor;
 // 
 // function Modelica.Math.asin
@@ -7785,10 +7785,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   smee.spacePhasorS.turnsRatio * smee.spacePhasorS.i[1] = -smee.spacePhasorS.plug_n.pin[1].i;
 //   smee.spacePhasorS.turnsRatio * smee.spacePhasorS.i[2] = -smee.spacePhasorS.plug_n.pin[2].i;
 //   smee.spacePhasorS.turnsRatio * smee.spacePhasorS.i[3] = -smee.spacePhasorS.plug_n.pin[3].i;
-//   smee.spacePhasorS.zero.v = 0.333333333333333 * (smee.spacePhasorS.v[1] + (smee.spacePhasorS.v[2] + smee.spacePhasorS.v[3]));
+//   smee.spacePhasorS.zero.v = 0.333333333333333 * smee.spacePhasorS.v[1] + (0.333333333333333 * smee.spacePhasorS.v[2] + 0.333333333333333 * smee.spacePhasorS.v[3]);
 //   smee.spacePhasorS.spacePhasor.v_[1] = smee.spacePhasorS.TransformationMatrix[1,1] * smee.spacePhasorS.v[1] + smee.spacePhasorS.TransformationMatrix[1,2] * smee.spacePhasorS.v[2] + smee.spacePhasorS.TransformationMatrix[1,3] * smee.spacePhasorS.v[3];
 //   smee.spacePhasorS.spacePhasor.v_[2] = smee.spacePhasorS.TransformationMatrix[2,1] * smee.spacePhasorS.v[1] + smee.spacePhasorS.TransformationMatrix[2,2] * smee.spacePhasorS.v[2] + smee.spacePhasorS.TransformationMatrix[2,3] * smee.spacePhasorS.v[3];
-//   -smee.spacePhasorS.zero.i = 0.333333333333333 * (smee.spacePhasorS.i[1] + (smee.spacePhasorS.i[2] + smee.spacePhasorS.i[3]));
+//   -smee.spacePhasorS.zero.i = 0.333333333333333 * smee.spacePhasorS.i[1] + (0.333333333333333 * smee.spacePhasorS.i[2] + 0.333333333333333 * smee.spacePhasorS.i[3]);
 //   -smee.spacePhasorS.spacePhasor.i_[1] = smee.spacePhasorS.TransformationMatrix[1,1] * smee.spacePhasorS.i[1] + smee.spacePhasorS.TransformationMatrix[1,2] * smee.spacePhasorS.i[2] + smee.spacePhasorS.TransformationMatrix[1,3] * smee.spacePhasorS.i[3];
 //   -smee.spacePhasorS.spacePhasor.i_[2] = smee.spacePhasorS.TransformationMatrix[2,1] * smee.spacePhasorS.i[1] + smee.spacePhasorS.TransformationMatrix[2,2] * smee.spacePhasorS.i[2] + smee.spacePhasorS.TransformationMatrix[2,3] * smee.spacePhasorS.i[3];
 //   smee.airGapR.i_mr[1] = smee.airGapR.i_sr[1] + smee.airGapR.i_rr[1];
@@ -7855,7 +7855,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.i = 0.0;
 //   rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].v = rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].p.v - rotorDisplacementAngle.VoltageSensor1.voltageSensor[3].n.v;
-//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * (rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.u[3]));
+//   rotorDisplacementAngle.ToSpacePhasorVS.zero = 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + (0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + 0.333333333333333 * rotorDisplacementAngle.ToSpacePhasorVS.u[3]);
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[1] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[1,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.ToSpacePhasorVS.y[2] = rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,1] * rotorDisplacementAngle.ToSpacePhasorVS.u[1] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,2] * rotorDisplacementAngle.ToSpacePhasorVS.u[2] + rotorDisplacementAngle.ToSpacePhasorVS.TransformationMatrix[2,3] * rotorDisplacementAngle.ToSpacePhasorVS.u[3];
 //   rotorDisplacementAngle.relativeAngleSensor.phi_rel = rotorDisplacementAngle.relativeAngleSensor.flange_b.phi - rotorDisplacementAngle.relativeAngleSensor.flange_a.phi;
@@ -7907,7 +7907,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensor.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensor.Gain1.y = currentQuasiRMSSensor.Gain1.k * currentQuasiRMSSensor.Gain1.u;
-//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensor.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensor.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[1] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToSpacePhasor1.y[2] = currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensor.ToSpacePhasor1.u[1] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensor.ToSpacePhasor1.u[2] + currentQuasiRMSSensor.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensor.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensor.ToPolar1.y[1] = sqrt(currentQuasiRMSSensor.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensor.ToPolar1.u[2] ^ 2.0);
@@ -8974,7 +8974,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   for k in 1:3 loop
 //     y := {y[1] + x[k] * 0.666666666666667 * cos(2.0943951023932 * /*REAL*/(k + -1)),y[2] + x[k] * 0.666666666666667 * sin(2.0943951023932 * /*REAL*/(k + -1))};
 //   end for;
-//   y0 := 0.333333333333333 * (x[1] + x[2] + x[3]);
+//   y0 := 0.333333333333333 * x[1] + 0.333333333333333 * x[2] + 0.333333333333333 * x[3];
 // end Modelica.Electrical.Machines.SpacePhasors.Functions.ToSpacePhasor;
 // 
 // function Modelica.Math.asin
@@ -10063,7 +10063,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensorS.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensorS.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensorS.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensorS.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensorS.Gain1.y = currentQuasiRMSSensorS.Gain1.k * currentQuasiRMSSensorS.Gain1.u;
-//   currentQuasiRMSSensorS.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensorS.ToSpacePhasor1.u[1] + (currentQuasiRMSSensorS.ToSpacePhasor1.u[2] + currentQuasiRMSSensorS.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensorS.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensorS.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensorS.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensorS.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensorS.ToSpacePhasor1.y[1] = currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensorS.ToSpacePhasor1.u[1] + currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensorS.ToSpacePhasor1.u[2] + currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensorS.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensorS.ToSpacePhasor1.y[2] = currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensorS.ToSpacePhasor1.u[1] + currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensorS.ToSpacePhasor1.u[2] + currentQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensorS.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensorS.ToPolar1.y[1] = sqrt(currentQuasiRMSSensorS.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensorS.ToPolar1.u[2] ^ 2.0);
@@ -10080,7 +10080,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   voltageQuasiRMSSensorS.VoltageSensor1.voltageSensor[3].n.i = 0.0;
 //   voltageQuasiRMSSensorS.VoltageSensor1.voltageSensor[3].v = voltageQuasiRMSSensorS.VoltageSensor1.voltageSensor[3].p.v - voltageQuasiRMSSensorS.VoltageSensor1.voltageSensor[3].n.v;
 //   voltageQuasiRMSSensorS.Gain1.y = voltageQuasiRMSSensorS.Gain1.k * voltageQuasiRMSSensorS.Gain1.u;
-//   voltageQuasiRMSSensorS.ToSpacePhasor1.zero = 0.333333333333333 * (voltageQuasiRMSSensorS.ToSpacePhasor1.u[1] + (voltageQuasiRMSSensorS.ToSpacePhasor1.u[2] + voltageQuasiRMSSensorS.ToSpacePhasor1.u[3]));
+//   voltageQuasiRMSSensorS.ToSpacePhasor1.zero = 0.333333333333333 * voltageQuasiRMSSensorS.ToSpacePhasor1.u[1] + (0.333333333333333 * voltageQuasiRMSSensorS.ToSpacePhasor1.u[2] + 0.333333333333333 * voltageQuasiRMSSensorS.ToSpacePhasor1.u[3]);
 //   voltageQuasiRMSSensorS.ToSpacePhasor1.y[1] = voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,1] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[1] + voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,2] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[2] + voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[1,3] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[3];
 //   voltageQuasiRMSSensorS.ToSpacePhasor1.y[2] = voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,1] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[1] + voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,2] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[2] + voltageQuasiRMSSensorS.ToSpacePhasor1.TransformationMatrix[2,3] * voltageQuasiRMSSensorS.ToSpacePhasor1.u[3];
 //   voltageQuasiRMSSensorS.ToPolar1.y[1] = sqrt(voltageQuasiRMSSensorS.ToPolar1.u[1] ^ 2.0 + voltageQuasiRMSSensorS.ToPolar1.u[2] ^ 2.0);
@@ -10106,7 +10106,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   voltageRMSSensorL.VoltageSensor1.voltageSensor[3].n.i = 0.0;
 //   voltageRMSSensorL.VoltageSensor1.voltageSensor[3].v = voltageRMSSensorL.VoltageSensor1.voltageSensor[3].p.v - voltageRMSSensorL.VoltageSensor1.voltageSensor[3].n.v;
 //   voltageRMSSensorL.Gain1.y = voltageRMSSensorL.Gain1.k * voltageRMSSensorL.Gain1.u;
-//   voltageRMSSensorL.ToSpacePhasor1.zero = 0.333333333333333 * (voltageRMSSensorL.ToSpacePhasor1.u[1] + (voltageRMSSensorL.ToSpacePhasor1.u[2] + voltageRMSSensorL.ToSpacePhasor1.u[3]));
+//   voltageRMSSensorL.ToSpacePhasor1.zero = 0.333333333333333 * voltageRMSSensorL.ToSpacePhasor1.u[1] + (0.333333333333333 * voltageRMSSensorL.ToSpacePhasor1.u[2] + 0.333333333333333 * voltageRMSSensorL.ToSpacePhasor1.u[3]);
 //   voltageRMSSensorL.ToSpacePhasor1.y[1] = voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,1] * voltageRMSSensorL.ToSpacePhasor1.u[1] + voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,2] * voltageRMSSensorL.ToSpacePhasor1.u[2] + voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,3] * voltageRMSSensorL.ToSpacePhasor1.u[3];
 //   voltageRMSSensorL.ToSpacePhasor1.y[2] = voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,1] * voltageRMSSensorL.ToSpacePhasor1.u[1] + voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,2] * voltageRMSSensorL.ToSpacePhasor1.u[2] + voltageRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,3] * voltageRMSSensorL.ToSpacePhasor1.u[3];
 //   voltageRMSSensorL.ToPolar1.y[1] = sqrt(voltageRMSSensorL.ToPolar1.u[1] ^ 2.0 + voltageRMSSensorL.ToPolar1.u[2] ^ 2.0);
@@ -10123,7 +10123,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   currentQuasiRMSSensorL.CurrentSensor1.currentSensor[3].p.i = currentQuasiRMSSensorL.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensorL.CurrentSensor1.currentSensor[3].n.i = -currentQuasiRMSSensorL.CurrentSensor1.currentSensor[3].i;
 //   currentQuasiRMSSensorL.Gain1.y = currentQuasiRMSSensorL.Gain1.k * currentQuasiRMSSensorL.Gain1.u;
-//   currentQuasiRMSSensorL.ToSpacePhasor1.zero = 0.333333333333333 * (currentQuasiRMSSensorL.ToSpacePhasor1.u[1] + (currentQuasiRMSSensorL.ToSpacePhasor1.u[2] + currentQuasiRMSSensorL.ToSpacePhasor1.u[3]));
+//   currentQuasiRMSSensorL.ToSpacePhasor1.zero = 0.333333333333333 * currentQuasiRMSSensorL.ToSpacePhasor1.u[1] + (0.333333333333333 * currentQuasiRMSSensorL.ToSpacePhasor1.u[2] + 0.333333333333333 * currentQuasiRMSSensorL.ToSpacePhasor1.u[3]);
 //   currentQuasiRMSSensorL.ToSpacePhasor1.y[1] = currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,1] * currentQuasiRMSSensorL.ToSpacePhasor1.u[1] + currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,2] * currentQuasiRMSSensorL.ToSpacePhasor1.u[2] + currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[1,3] * currentQuasiRMSSensorL.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensorL.ToSpacePhasor1.y[2] = currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,1] * currentQuasiRMSSensorL.ToSpacePhasor1.u[1] + currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,2] * currentQuasiRMSSensorL.ToSpacePhasor1.u[2] + currentQuasiRMSSensorL.ToSpacePhasor1.TransformationMatrix[2,3] * currentQuasiRMSSensorL.ToSpacePhasor1.u[3];
 //   currentQuasiRMSSensorL.ToPolar1.y[1] = sqrt(currentQuasiRMSSensorL.ToPolar1.u[1] ^ 2.0 + currentQuasiRMSSensorL.ToPolar1.u[2] ^ 2.0);
@@ -14779,10 +14779,10 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[1] = -aimc.spacePhasorS.plug_n.pin[1].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[2] = -aimc.spacePhasorS.plug_n.pin[2].i;
 //   aimc.spacePhasorS.turnsRatio * aimc.spacePhasorS.i[3] = -aimc.spacePhasorS.plug_n.pin[3].i;
-//   aimc.spacePhasorS.zero.v = 0.333333333333333 * (aimc.spacePhasorS.v[1] + (aimc.spacePhasorS.v[2] + aimc.spacePhasorS.v[3]));
+//   aimc.spacePhasorS.zero.v = 0.333333333333333 * aimc.spacePhasorS.v[1] + (0.333333333333333 * aimc.spacePhasorS.v[2] + 0.333333333333333 * aimc.spacePhasorS.v[3]);
 //   aimc.spacePhasorS.spacePhasor.v_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.v[3];
 //   aimc.spacePhasorS.spacePhasor.v_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.v[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.v[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.v[3];
-//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * (aimc.spacePhasorS.i[1] + (aimc.spacePhasorS.i[2] + aimc.spacePhasorS.i[3]));
+//   -aimc.spacePhasorS.zero.i = 0.333333333333333 * aimc.spacePhasorS.i[1] + (0.333333333333333 * aimc.spacePhasorS.i[2] + 0.333333333333333 * aimc.spacePhasorS.i[3]);
 //   -aimc.spacePhasorS.spacePhasor.i_[1] = aimc.spacePhasorS.TransformationMatrix[1,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[1,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[1,3] * aimc.spacePhasorS.i[3];
 //   -aimc.spacePhasorS.spacePhasor.i_[2] = aimc.spacePhasorS.TransformationMatrix[2,1] * aimc.spacePhasorS.i[1] + aimc.spacePhasorS.TransformationMatrix[2,2] * aimc.spacePhasorS.i[2] + aimc.spacePhasorS.TransformationMatrix[2,3] * aimc.spacePhasorS.i[3];
 //   aimc.airGapS.i_ms[1] = aimc.airGapS.i_ss[1] + aimc.airGapS.i_rs[1];

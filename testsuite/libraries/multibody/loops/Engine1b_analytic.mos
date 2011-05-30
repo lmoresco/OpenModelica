@@ -89,7 +89,7 @@ getErrorString();
 //   input Real[4] der_Q(unit = \"1/s\") \"Derivative of Q\";
 //   output Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity of frame 2 with respect to frame 1 resolved in frame 2\";
 // algorithm
-//   w := {2.0 * (Q[4] * der_Q[1] + Q[3] * der_Q[2] + -Q[2] * der_Q[3] + -Q[1] * der_Q[4]),2.0 * (-Q[3] * der_Q[1] + Q[4] * der_Q[2] + Q[1] * der_Q[3] + -Q[2] * der_Q[4]),2.0 * (Q[2] * der_Q[1] + -Q[1] * der_Q[2] + Q[4] * der_Q[3] + -Q[3] * der_Q[4])};
+//   w := {Q[4] * der_Q[1] * 2.0 + Q[3] * der_Q[2] * 2.0 + -Q[2] * der_Q[3] * 2.0 + -Q[1] * der_Q[4] * 2.0,-Q[3] * der_Q[1] * 2.0 + Q[4] * der_Q[2] * 2.0 + Q[1] * der_Q[3] * 2.0 + -Q[2] * der_Q[4] * 2.0,Q[2] * der_Q[1] * 2.0 + -Q[1] * der_Q[2] * 2.0 + Q[4] * der_Q[3] * 2.0 + -Q[3] * der_Q[4] * 2.0};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T \"Return quaternions orientation object Q from transformation matrix T\"
@@ -268,7 +268,7 @@ getErrorString();
 //   input Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity from frame 2 with respect to frame 1, resolved in frame 2\";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R \"Orientation object to rotate frame 1 into frame 2\";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) + -1.0],{w[1],w[2],w[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * Q[1] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0,2.0 * Q[1] * Q[2] + 2.0 * Q[3] * Q[4],2.0 * Q[1] * Q[3] + -2.0 * Q[2] * Q[4];2.0 * Q[2] * Q[1] + -2.0 * Q[3] * Q[4],2.0 * Q[2] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0,2.0 * Q[2] * Q[3] + 2.0 * Q[1] * Q[4];2.0 * Q[3] * Q[1] + 2.0 * Q[2] * Q[4],2.0 * Q[3] * Q[2] + -2.0 * Q[1] * Q[4],2.0 * Q[3] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.from_T \"Return orientation object R from transformation matrix T\"
@@ -376,7 +376,7 @@ getErrorString();
 //   protected Real d2 \"solution 2 of quadratic equation\";
 // algorithm
 //   rbra := {r_b[1] - r_a[1],r_b[2] - r_a[2],r_b[3] - r_a[3]};
-//   B := 2.0 * (e[1] * rbra[1] + e[2] * rbra[2] + e[3] * rbra[3]);
+//   B := 2.0 * e[1] * rbra[1] + 2.0 * e[2] * rbra[2] + 2.0 * e[3] * rbra[3];
 //   C := rbra[1] ^ 2.0 + rbra[2] ^ 2.0 + rbra[3] ^ 2.0 - L ^ 2.0;
 //   k1 := B / 2.0;
 //   k1a := k1 ^ 2.0 - C;
@@ -6037,7 +6037,7 @@ getErrorString();
 //   jointRRP.jointUSP.prismatic.rbra[1] = jointRRP.jointUSP.prismatic.r_b[1] - jointRRP.jointUSP.prismatic.r_a[1];
 //   jointRRP.jointUSP.prismatic.rbra[2] = jointRRP.jointUSP.prismatic.r_b[2] - jointRRP.jointUSP.prismatic.r_a[2];
 //   jointRRP.jointUSP.prismatic.rbra[3] = jointRRP.jointUSP.prismatic.r_b[3] - jointRRP.jointUSP.prismatic.r_a[3];
-//   jointRRP.jointUSP.prismatic.B = 2.0 * (jointRRP.jointUSP.prismatic.e[1] * jointRRP.jointUSP.prismatic.rbra[1] + (jointRRP.jointUSP.prismatic.e[2] * jointRRP.jointUSP.prismatic.rbra[2] + jointRRP.jointUSP.prismatic.e[3] * jointRRP.jointUSP.prismatic.rbra[3]));
+//   jointRRP.jointUSP.prismatic.B = 2.0 * (jointRRP.jointUSP.prismatic.e[1] * jointRRP.jointUSP.prismatic.rbra[1]) + (2.0 * (jointRRP.jointUSP.prismatic.e[2] * jointRRP.jointUSP.prismatic.rbra[2]) + 2.0 * (jointRRP.jointUSP.prismatic.e[3] * jointRRP.jointUSP.prismatic.rbra[3]));
 //   jointRRP.jointUSP.prismatic.C = jointRRP.jointUSP.prismatic.rbra[1] ^ 2.0 + (jointRRP.jointUSP.prismatic.rbra[2] ^ 2.0 + (jointRRP.jointUSP.prismatic.rbra[3] ^ 2.0 - jointRRP.jointUSP.prismatic.length ^ 2.0));
 //   jointRRP.jointUSP.prismatic.k1 = jointRRP.jointUSP.prismatic.B / 2.0;
 //   jointRRP.jointUSP.prismatic.k1a = jointRRP.jointUSP.prismatic.k1 ^ 2.0 - jointRRP.jointUSP.prismatic.C;

@@ -144,7 +144,7 @@ getErrorString();
 //   input Real[4] der_Q(unit = \"1/s\") \"Derivative of Q\";
 //   output Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity of frame 2 with respect to frame 1 resolved in frame 2\";
 // algorithm
-//   w := {2.0 * (Q[4] * der_Q[1] + Q[3] * der_Q[2] + -Q[2] * der_Q[3] + -Q[1] * der_Q[4]),2.0 * (-Q[3] * der_Q[1] + Q[4] * der_Q[2] + Q[1] * der_Q[3] + -Q[2] * der_Q[4]),2.0 * (Q[2] * der_Q[1] + -Q[1] * der_Q[2] + Q[4] * der_Q[3] + -Q[3] * der_Q[4])};
+//   w := {Q[4] * der_Q[1] * 2.0 + Q[3] * der_Q[2] * 2.0 + -Q[2] * der_Q[3] * 2.0 + -Q[1] * der_Q[4] * 2.0,-Q[3] * der_Q[1] * 2.0 + Q[4] * der_Q[2] * 2.0 + Q[1] * der_Q[3] * 2.0 + -Q[2] * der_Q[4] * 2.0,Q[2] * der_Q[1] * 2.0 + -Q[1] * der_Q[2] * 2.0 + Q[4] * der_Q[3] * 2.0 + -Q[3] * der_Q[4] * 2.0};
 // end Modelica.Mechanics.MultiBody.Frames.Quaternions.angularVelocity2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Quaternions.from_T \"Return quaternions orientation object Q from transformation matrix T\"
@@ -323,7 +323,7 @@ getErrorString();
 //   input Real[3] w(quantity = \"AngularVelocity\", unit = \"rad/s\") \"Angular velocity from frame 2 with respect to frame 1, resolved in frame 2\";
 //   output Modelica.Mechanics.MultiBody.Frames.Orientation R \"Orientation object to rotate frame 1 into frame 2\";
 // algorithm
-//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * (Q[1] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[1] * Q[2] + Q[3] * Q[4]),2.0 * (Q[1] * Q[3] - Q[2] * Q[4]);2.0 * (Q[2] * Q[1] - Q[3] * Q[4]),2.0 * (Q[2] ^ 2.0 + Q[4] ^ 2.0) + -1.0,2.0 * (Q[2] * Q[3] + Q[1] * Q[4]);2.0 * (Q[3] * Q[1] + Q[2] * Q[4]),2.0 * (Q[3] * Q[2] - Q[1] * Q[4]),2.0 * (Q[3] ^ 2.0 + Q[4] ^ 2.0) + -1.0],{w[1],w[2],w[3]});
+//   R := Modelica.Mechanics.MultiBody.Frames.Orientation(<matrix>[2.0 * Q[1] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0,2.0 * Q[1] * Q[2] + 2.0 * Q[3] * Q[4],2.0 * Q[1] * Q[3] + -2.0 * Q[2] * Q[4];2.0 * Q[2] * Q[1] + -2.0 * Q[3] * Q[4],2.0 * Q[2] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0,2.0 * Q[2] * Q[3] + 2.0 * Q[1] * Q[4];2.0 * Q[3] * Q[1] + 2.0 * Q[2] * Q[4],2.0 * Q[3] * Q[2] + -2.0 * Q[1] * Q[4],2.0 * Q[3] ^ 2.0 + 2.0 * Q[4] ^ 2.0 + -1.0],{w[1],w[2],w[3]});
 // end Modelica.Mechanics.MultiBody.Frames.from_Q;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.from_T \"Inline before index reduction\" \"Return orientation object R from transformation matrix T\"

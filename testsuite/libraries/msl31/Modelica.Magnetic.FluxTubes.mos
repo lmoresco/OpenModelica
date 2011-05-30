@@ -521,7 +521,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real pmActuator.g_mLeak2.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real pmActuator.g_mLeak2.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real pmActuator.g_mLeak2.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real pmActuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (pmActuator.r_core + (pmActuator.l_air / 2.0 + pmActuator.l_PM / 2.0)) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
+//   parameter Real pmActuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * pmActuator.r_core + (3.14159265358979 * pmActuator.l_air + 3.14159265358979 * pmActuator.l_PM) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
 //   Real pmActuator.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real pmActuator.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real pmActuator.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -779,7 +779,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.coil.L_stat = if noEvent(abs(pmActuator.coil.i) > pmActuator.coil.eps) then abs(pmActuator.coil.Psi / pmActuator.coil.i) else abs(pmActuator.coil.Psi / pmActuator.coil.eps);
 //   pmActuator.g_ma.G_m = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * pmActuator.g_ma.l)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
 //   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * Real(pmActuator.g_ma.dlBydx))) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
-//   pmActuator.g_ma.A_avg = 3.14159265358979 * ((pmActuator.g_ma.r_i + pmActuator.g_ma.r_o) * pmActuator.g_ma.l);
+//   pmActuator.g_ma.A_avg = (3.14159265358979 * pmActuator.g_ma.r_i + 3.14159265358979 * pmActuator.g_ma.r_o) * pmActuator.g_ma.l;
 //   pmActuator.g_ma.B_avg = pmActuator.g_ma.Phi / pmActuator.g_ma.A_avg;
 //   pmActuator.g_ma.flange.f = -pmActuator.g_ma.F_m;
 //   pmActuator.g_ma.s_support = 0.0;
@@ -791,7 +791,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = pmActuator.g_ma.port_p.Phi + pmActuator.g_ma.port_n.Phi;
 //   pmActuator.g_mb.G_m = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * pmActuator.g_mb.l)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
 //   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * Real(pmActuator.g_mb.dlBydx))) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
-//   pmActuator.g_mb.A_avg = 3.14159265358979 * ((pmActuator.g_mb.r_i + pmActuator.g_mb.r_o) * pmActuator.g_mb.l);
+//   pmActuator.g_mb.A_avg = (3.14159265358979 * pmActuator.g_mb.r_i + 3.14159265358979 * pmActuator.g_mb.r_o) * pmActuator.g_mb.l;
 //   pmActuator.g_mb.B_avg = pmActuator.g_mb.Phi / pmActuator.g_mb.A_avg;
 //   pmActuator.g_mb.flange.f = -pmActuator.g_mb.F_m;
 //   pmActuator.g_mb.s_support = 0.0;
@@ -801,7 +801,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.g_mb.V_m = pmActuator.g_mb.port_p.V_m - pmActuator.g_mb.port_n.V_m;
 //   pmActuator.g_mb.Phi = pmActuator.g_mb.port_p.Phi;
 //   0.0 = pmActuator.g_mb.port_p.Phi + pmActuator.g_mb.port_n.Phi;
-//   pmActuator.g_mLeak1.G_m = if pmActuator.g_mLeak1.t <= pmActuator.g_mLeak1.r_0 then 2.51327412287183e-06 * ((pmActuator.g_mLeak1.r_0 + pmActuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * pmActuator.g_mLeak1.t) / pmActuator.g_mLeak1.l_g)) else 2.51327412287183e-06 * ((pmActuator.g_mLeak1.r_0 + pmActuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * pmActuator.g_mLeak1.r_0) / pmActuator.g_mLeak1.l_g));
+//   pmActuator.g_mLeak1.G_m = if pmActuator.g_mLeak1.t <= pmActuator.g_mLeak1.r_0 then (2.51327412287183e-06 * pmActuator.g_mLeak1.r_0 + 1.25663706143592e-06 * pmActuator.g_mLeak1.l_g) * log(1.0 + (2.0 * pmActuator.g_mLeak1.t) / pmActuator.g_mLeak1.l_g) else (2.51327412287183e-06 * pmActuator.g_mLeak1.r_0 + 1.25663706143592e-06 * pmActuator.g_mLeak1.l_g) * log(1.0 + (2.0 * pmActuator.g_mLeak1.r_0) / pmActuator.g_mLeak1.l_g);
 //   pmActuator.g_mLeak1.R_m = 1.0 / pmActuator.g_mLeak1.G_m;
 //   pmActuator.g_mLeak1.V_m = pmActuator.g_mLeak1.Phi * pmActuator.g_mLeak1.R_m;
 //   pmActuator.g_mLeak1.V_m = pmActuator.g_mLeak1.port_p.V_m - pmActuator.g_mLeak1.port_n.V_m;
@@ -1221,7 +1221,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real actuator.g_mLeak2.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real actuator.g_mLeak2.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real actuator.g_mLeak2.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real actuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (actuator.r_core + (actuator.l_air / 2.0 + actuator.l_PM / 2.0)) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
+//   parameter Real actuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * actuator.r_core + (3.14159265358979 * actuator.l_air + 3.14159265358979 * actuator.l_PM) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
 //   Real actuator.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real actuator.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real actuator.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1388,7 +1388,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.coil.L_stat = if noEvent(abs(actuator.coil.i) > actuator.coil.eps) then abs(actuator.coil.Psi / actuator.coil.i) else abs(actuator.coil.Psi / actuator.coil.eps);
 //   actuator.g_ma.G_m = (7.89568352087149e-06 * (actuator.g_ma.mu_r * actuator.g_ma.l)) / log(actuator.g_ma.r_o / actuator.g_ma.r_i);
 //   actuator.g_ma.dGmBydx = (7.89568352087149e-06 * (actuator.g_ma.mu_r * Real(actuator.g_ma.dlBydx))) / log(actuator.g_ma.r_o / actuator.g_ma.r_i);
-//   actuator.g_ma.A_avg = 3.14159265358979 * ((actuator.g_ma.r_i + actuator.g_ma.r_o) * actuator.g_ma.l);
+//   actuator.g_ma.A_avg = (3.14159265358979 * actuator.g_ma.r_i + 3.14159265358979 * actuator.g_ma.r_o) * actuator.g_ma.l;
 //   actuator.g_ma.B_avg = actuator.g_ma.Phi / actuator.g_ma.A_avg;
 //   actuator.g_ma.flange.f = -actuator.g_ma.F_m;
 //   actuator.g_ma.s_support = 0.0;
@@ -1400,7 +1400,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = actuator.g_ma.port_p.Phi + actuator.g_ma.port_n.Phi;
 //   actuator.g_mb.G_m = (7.89568352087149e-06 * (actuator.g_mb.mu_r * actuator.g_mb.l)) / log(actuator.g_mb.r_o / actuator.g_mb.r_i);
 //   actuator.g_mb.dGmBydx = (7.89568352087149e-06 * (actuator.g_mb.mu_r * Real(actuator.g_mb.dlBydx))) / log(actuator.g_mb.r_o / actuator.g_mb.r_i);
-//   actuator.g_mb.A_avg = 3.14159265358979 * ((actuator.g_mb.r_i + actuator.g_mb.r_o) * actuator.g_mb.l);
+//   actuator.g_mb.A_avg = (3.14159265358979 * actuator.g_mb.r_i + 3.14159265358979 * actuator.g_mb.r_o) * actuator.g_mb.l;
 //   actuator.g_mb.B_avg = actuator.g_mb.Phi / actuator.g_mb.A_avg;
 //   actuator.g_mb.flange.f = -actuator.g_mb.F_m;
 //   actuator.g_mb.s_support = 0.0;
@@ -1410,7 +1410,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   actuator.g_mb.V_m = actuator.g_mb.port_p.V_m - actuator.g_mb.port_n.V_m;
 //   actuator.g_mb.Phi = actuator.g_mb.port_p.Phi;
 //   0.0 = actuator.g_mb.port_p.Phi + actuator.g_mb.port_n.Phi;
-//   actuator.g_mLeak1.G_m = if actuator.g_mLeak1.t <= actuator.g_mLeak1.r_0 then 2.51327412287183e-06 * ((actuator.g_mLeak1.r_0 + actuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * actuator.g_mLeak1.t) / actuator.g_mLeak1.l_g)) else 2.51327412287183e-06 * ((actuator.g_mLeak1.r_0 + actuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * actuator.g_mLeak1.r_0) / actuator.g_mLeak1.l_g));
+//   actuator.g_mLeak1.G_m = if actuator.g_mLeak1.t <= actuator.g_mLeak1.r_0 then (2.51327412287183e-06 * actuator.g_mLeak1.r_0 + 1.25663706143592e-06 * actuator.g_mLeak1.l_g) * log(1.0 + (2.0 * actuator.g_mLeak1.t) / actuator.g_mLeak1.l_g) else (2.51327412287183e-06 * actuator.g_mLeak1.r_0 + 1.25663706143592e-06 * actuator.g_mLeak1.l_g) * log(1.0 + (2.0 * actuator.g_mLeak1.r_0) / actuator.g_mLeak1.l_g);
 //   actuator.g_mLeak1.R_m = 1.0 / actuator.g_mLeak1.G_m;
 //   actuator.g_mLeak1.V_m = actuator.g_mLeak1.Phi * actuator.g_mLeak1.R_m;
 //   actuator.g_mLeak1.V_m = actuator.g_mLeak1.port_p.V_m - actuator.g_mLeak1.port_n.V_m;
@@ -1736,7 +1736,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real pmActuator.g_mLeak2.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real pmActuator.g_mLeak2.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real pmActuator.g_mLeak2.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real pmActuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (pmActuator.r_core + (pmActuator.l_air / 2.0 + pmActuator.l_PM / 2.0)) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
+//   parameter Real pmActuator.g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * pmActuator.r_core + (3.14159265358979 * pmActuator.l_air + 3.14159265358979 * pmActuator.l_PM) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
 //   Real pmActuator.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real pmActuator.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real pmActuator.n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1956,7 +1956,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.coil.L_stat = if noEvent(abs(pmActuator.coil.i) > pmActuator.coil.eps) then abs(pmActuator.coil.Psi / pmActuator.coil.i) else abs(pmActuator.coil.Psi / pmActuator.coil.eps);
 //   pmActuator.g_ma.G_m = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * pmActuator.g_ma.l)) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
 //   pmActuator.g_ma.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_ma.mu_r * Real(pmActuator.g_ma.dlBydx))) / log(pmActuator.g_ma.r_o / pmActuator.g_ma.r_i);
-//   pmActuator.g_ma.A_avg = 3.14159265358979 * ((pmActuator.g_ma.r_i + pmActuator.g_ma.r_o) * pmActuator.g_ma.l);
+//   pmActuator.g_ma.A_avg = (3.14159265358979 * pmActuator.g_ma.r_i + 3.14159265358979 * pmActuator.g_ma.r_o) * pmActuator.g_ma.l;
 //   pmActuator.g_ma.B_avg = pmActuator.g_ma.Phi / pmActuator.g_ma.A_avg;
 //   pmActuator.g_ma.flange.f = -pmActuator.g_ma.F_m;
 //   pmActuator.g_ma.s_support = 0.0;
@@ -1968,7 +1968,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = pmActuator.g_ma.port_p.Phi + pmActuator.g_ma.port_n.Phi;
 //   pmActuator.g_mb.G_m = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * pmActuator.g_mb.l)) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
 //   pmActuator.g_mb.dGmBydx = (7.89568352087149e-06 * (pmActuator.g_mb.mu_r * Real(pmActuator.g_mb.dlBydx))) / log(pmActuator.g_mb.r_o / pmActuator.g_mb.r_i);
-//   pmActuator.g_mb.A_avg = 3.14159265358979 * ((pmActuator.g_mb.r_i + pmActuator.g_mb.r_o) * pmActuator.g_mb.l);
+//   pmActuator.g_mb.A_avg = (3.14159265358979 * pmActuator.g_mb.r_i + 3.14159265358979 * pmActuator.g_mb.r_o) * pmActuator.g_mb.l;
 //   pmActuator.g_mb.B_avg = pmActuator.g_mb.Phi / pmActuator.g_mb.A_avg;
 //   pmActuator.g_mb.flange.f = -pmActuator.g_mb.F_m;
 //   pmActuator.g_mb.s_support = 0.0;
@@ -1978,7 +1978,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   pmActuator.g_mb.V_m = pmActuator.g_mb.port_p.V_m - pmActuator.g_mb.port_n.V_m;
 //   pmActuator.g_mb.Phi = pmActuator.g_mb.port_p.Phi;
 //   0.0 = pmActuator.g_mb.port_p.Phi + pmActuator.g_mb.port_n.Phi;
-//   pmActuator.g_mLeak1.G_m = if pmActuator.g_mLeak1.t <= pmActuator.g_mLeak1.r_0 then 2.51327412287183e-06 * ((pmActuator.g_mLeak1.r_0 + pmActuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * pmActuator.g_mLeak1.t) / pmActuator.g_mLeak1.l_g)) else 2.51327412287183e-06 * ((pmActuator.g_mLeak1.r_0 + pmActuator.g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * pmActuator.g_mLeak1.r_0) / pmActuator.g_mLeak1.l_g));
+//   pmActuator.g_mLeak1.G_m = if pmActuator.g_mLeak1.t <= pmActuator.g_mLeak1.r_0 then (2.51327412287183e-06 * pmActuator.g_mLeak1.r_0 + 1.25663706143592e-06 * pmActuator.g_mLeak1.l_g) * log(1.0 + (2.0 * pmActuator.g_mLeak1.t) / pmActuator.g_mLeak1.l_g) else (2.51327412287183e-06 * pmActuator.g_mLeak1.r_0 + 1.25663706143592e-06 * pmActuator.g_mLeak1.l_g) * log(1.0 + (2.0 * pmActuator.g_mLeak1.r_0) / pmActuator.g_mLeak1.l_g);
 //   pmActuator.g_mLeak1.R_m = 1.0 / pmActuator.g_mLeak1.G_m;
 //   pmActuator.g_mLeak1.V_m = pmActuator.g_mLeak1.Phi * pmActuator.g_mLeak1.R_m;
 //   pmActuator.g_mLeak1.V_m = pmActuator.g_mLeak1.port_p.V_m - pmActuator.g_mLeak1.port_n.V_m;
@@ -2359,7 +2359,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeak2.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real g_mLeak2.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real g_mLeak2.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (r_core + (l_air / 2.0 + l_PM / 2.0)) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
+//   parameter Real g_mLeak2.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * r_core + (3.14159265358979 * l_air + 3.14159265358979 * l_PM) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edges)\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real n.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -2419,7 +2419,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   coil.L_stat = if noEvent(abs(coil.i) > coil.eps) then abs(coil.Psi / coil.i) else abs(coil.Psi / coil.eps);
 //   g_ma.G_m = (7.89568352087149e-06 * (g_ma.mu_r * g_ma.l)) / log(g_ma.r_o / g_ma.r_i);
 //   g_ma.dGmBydx = (7.89568352087149e-06 * (g_ma.mu_r * Real(g_ma.dlBydx))) / log(g_ma.r_o / g_ma.r_i);
-//   g_ma.A_avg = 3.14159265358979 * ((g_ma.r_i + g_ma.r_o) * g_ma.l);
+//   g_ma.A_avg = (3.14159265358979 * g_ma.r_i + 3.14159265358979 * g_ma.r_o) * g_ma.l;
 //   g_ma.B_avg = g_ma.Phi / g_ma.A_avg;
 //   g_ma.flange.f = -g_ma.F_m;
 //   g_ma.s_support = 0.0;
@@ -2431,7 +2431,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = g_ma.port_p.Phi + g_ma.port_n.Phi;
 //   g_mb.G_m = (7.89568352087149e-06 * (g_mb.mu_r * g_mb.l)) / log(g_mb.r_o / g_mb.r_i);
 //   g_mb.dGmBydx = (7.89568352087149e-06 * (g_mb.mu_r * Real(g_mb.dlBydx))) / log(g_mb.r_o / g_mb.r_i);
-//   g_mb.A_avg = 3.14159265358979 * ((g_mb.r_i + g_mb.r_o) * g_mb.l);
+//   g_mb.A_avg = (3.14159265358979 * g_mb.r_i + 3.14159265358979 * g_mb.r_o) * g_mb.l;
 //   g_mb.B_avg = g_mb.Phi / g_mb.A_avg;
 //   g_mb.flange.f = -g_mb.F_m;
 //   g_mb.s_support = 0.0;
@@ -2441,7 +2441,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mb.V_m = g_mb.port_p.V_m - g_mb.port_n.V_m;
 //   g_mb.Phi = g_mb.port_p.Phi;
 //   0.0 = g_mb.port_p.Phi + g_mb.port_n.Phi;
-//   g_mLeak1.G_m = if g_mLeak1.t <= g_mLeak1.r_0 then 2.51327412287183e-06 * ((g_mLeak1.r_0 + g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * g_mLeak1.t) / g_mLeak1.l_g)) else 2.51327412287183e-06 * ((g_mLeak1.r_0 + g_mLeak1.l_g / 2.0) * log(1.0 + (2.0 * g_mLeak1.r_0) / g_mLeak1.l_g));
+//   g_mLeak1.G_m = if g_mLeak1.t <= g_mLeak1.r_0 then (2.51327412287183e-06 * g_mLeak1.r_0 + 1.25663706143592e-06 * g_mLeak1.l_g) * log(1.0 + (2.0 * g_mLeak1.t) / g_mLeak1.l_g) else (2.51327412287183e-06 * g_mLeak1.r_0 + 1.25663706143592e-06 * g_mLeak1.l_g) * log(1.0 + (2.0 * g_mLeak1.r_0) / g_mLeak1.l_g);
 //   g_mLeak1.R_m = 1.0 / g_mLeak1.G_m;
 //   g_mLeak1.V_m = g_mLeak1.Phi * g_mLeak1.R_m;
 //   g_mLeak1.V_m = g_mLeak1.port_p.V_m - g_mLeak1.port_n.V_m;
@@ -2921,7 +2921,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real advancedSolenoid.g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real advancedSolenoid.g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real advancedSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (advancedSolenoid.g_mAirWork.r_o ^ 2.0 - advancedSolenoid.g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real advancedSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * advancedSolenoid.g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3082,7 +3082,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real advancedSolenoid.g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real advancedSolenoid.g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real advancedSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (advancedSolenoid.r_arm + advancedSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real advancedSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * advancedSolenoid.r_arm + 3.14159265358979 * advancedSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real advancedSolenoid.g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3217,7 +3217,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeak3.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real advancedSolenoid.g_mLeak3.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real advancedSolenoid.g_mLeak3.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real advancedSolenoid.g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (advancedSolenoid.r_arm + advancedSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real advancedSolenoid.g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * advancedSolenoid.r_arm + 3.14159265358979 * advancedSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real advancedSolenoid.g_mLeakWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mLeakWork.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mLeakWork.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3236,7 +3236,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real advancedSolenoid.g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real advancedSolenoid.g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = advancedSolenoid.flange.s \"Axial length (in direction of flux)\";
-//   parameter Real advancedSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + advancedSolenoid.r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real advancedSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * advancedSolenoid.r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real advancedSolenoid.g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real advancedSolenoid.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real advancedSolenoid.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -3391,7 +3391,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real simpleSolenoid.g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real simpleSolenoid.g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real simpleSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (simpleSolenoid.g_mAirWork.r_o ^ 2.0 - simpleSolenoid.g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real simpleSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * simpleSolenoid.g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3552,7 +3552,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real simpleSolenoid.g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real simpleSolenoid.g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real simpleSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (simpleSolenoid.r_arm + simpleSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real simpleSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * simpleSolenoid.r_arm + 3.14159265358979 * simpleSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real simpleSolenoid.g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real simpleSolenoid.g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real simpleSolenoid.g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -3581,7 +3581,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real simpleSolenoid.g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real simpleSolenoid.g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = simpleSolenoid.flange.s \"Axial length (in direction of flux)\";
-//   parameter Real simpleSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + simpleSolenoid.r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real simpleSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * simpleSolenoid.r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real simpleSolenoid.g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real simpleSolenoid.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real simpleSolenoid.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -3724,7 +3724,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = advancedSolenoid.r_1.p.i + advancedSolenoid.r_1.n.i;
 //   advancedSolenoid.r_1.v = advancedSolenoid.r_1.p.v - advancedSolenoid.r_1.n.v;
 //   advancedSolenoid.r_1.T_heatPort = advancedSolenoid.r_1.T;
-//   advancedSolenoid.g_mFeYokeSide1.A = 3.14159265358979 * (advancedSolenoid.g_mFeYokeSide1.r_o ^ 2.0 - advancedSolenoid.g_mFeYokeSide1.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeYokeSide1.A = 3.14159265358979 * advancedSolenoid.g_mFeYokeSide1.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeYokeSide1.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeYokeSide1.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeYokeSide1.mu_r * advancedSolenoid.g_mFeYokeSide1.A)) / advancedSolenoid.g_mFeYokeSide1.l;
 //   advancedSolenoid.g_mFeYokeSide1.H = advancedSolenoid.g_mFeYokeSide1.B / (advancedSolenoid.g_mFeYokeSide1.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeYokeSide1.B = advancedSolenoid.g_mFeYokeSide1.Phi / advancedSolenoid.g_mFeYokeSide1.A;
@@ -3734,7 +3734,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFeYokeSide1.V_m = advancedSolenoid.g_mFeYokeSide1.port_p.V_m - advancedSolenoid.g_mFeYokeSide1.port_n.V_m;
 //   advancedSolenoid.g_mFeYokeSide1.Phi = advancedSolenoid.g_mFeYokeSide1.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFeYokeSide1.port_p.Phi + advancedSolenoid.g_mFeYokeSide1.port_n.Phi;
-//   advancedSolenoid.g_mFeArm.A = 3.14159265358979 * (advancedSolenoid.g_mFeArm.r_o ^ 2.0 - advancedSolenoid.g_mFeArm.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeArm.A = 3.14159265358979 * advancedSolenoid.g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeArm.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeArm.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeArm.mu_r * advancedSolenoid.g_mFeArm.A)) / advancedSolenoid.g_mFeArm.l;
 //   advancedSolenoid.g_mFeArm.H = advancedSolenoid.g_mFeArm.B / (advancedSolenoid.g_mFeArm.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeArm.B = advancedSolenoid.g_mFeArm.Phi / advancedSolenoid.g_mFeArm.A;
@@ -3785,7 +3785,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFePoleBot.V_m = advancedSolenoid.g_mFePoleBot.port_p.V_m - advancedSolenoid.g_mFePoleBot.port_n.V_m;
 //   advancedSolenoid.g_mFePoleBot.Phi = advancedSolenoid.g_mFePoleBot.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFePoleBot.port_p.Phi + advancedSolenoid.g_mFePoleBot.port_n.Phi;
-//   advancedSolenoid.g_mFePole.A = 3.14159265358979 * (advancedSolenoid.g_mFePole.r_o ^ 2.0 - advancedSolenoid.g_mFePole.r_i ^ 2.0);
+//   advancedSolenoid.g_mFePole.A = 3.14159265358979 * advancedSolenoid.g_mFePole.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFePole.r_i ^ 2.0;
 //   advancedSolenoid.g_mFePole.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFePole.mu_r * advancedSolenoid.g_mFePole.A)) / advancedSolenoid.g_mFePole.l;
 //   advancedSolenoid.g_mFePole.H = advancedSolenoid.g_mFePole.B / (advancedSolenoid.g_mFePole.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFePole.B = advancedSolenoid.g_mFePole.Phi / advancedSolenoid.g_mFePole.A;
@@ -3859,7 +3859,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.G_mLeakRad.V_m = advancedSolenoid.G_mLeakRad.port_p.V_m - advancedSolenoid.G_mLeakRad.port_n.V_m;
 //   advancedSolenoid.G_mLeakRad.Phi = advancedSolenoid.G_mLeakRad.port_p.Phi;
 //   0.0 = advancedSolenoid.G_mLeakRad.port_p.Phi + advancedSolenoid.G_mLeakRad.port_n.Phi;
-//   advancedSolenoid.g_mFeYokeSide2.A = 3.14159265358979 * (advancedSolenoid.g_mFeYokeSide2.r_o ^ 2.0 - advancedSolenoid.g_mFeYokeSide2.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeYokeSide2.A = 3.14159265358979 * advancedSolenoid.g_mFeYokeSide2.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeYokeSide2.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeYokeSide2.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeYokeSide2.mu_r * advancedSolenoid.g_mFeYokeSide2.A)) / advancedSolenoid.g_mFeYokeSide2.l;
 //   advancedSolenoid.g_mFeYokeSide2.H = advancedSolenoid.g_mFeYokeSide2.B / (advancedSolenoid.g_mFeYokeSide2.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeYokeSide2.B = advancedSolenoid.g_mFeYokeSide2.Phi / advancedSolenoid.g_mFeYokeSide2.A;
@@ -3945,7 +3945,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = simpleSolenoid.r.p.i + simpleSolenoid.r.n.i;
 //   simpleSolenoid.r.v = simpleSolenoid.r.p.v - simpleSolenoid.r.n.v;
 //   simpleSolenoid.r.T_heatPort = simpleSolenoid.r.T;
-//   simpleSolenoid.g_mFeYokeSide.A = 3.14159265358979 * (simpleSolenoid.g_mFeYokeSide.r_o ^ 2.0 - simpleSolenoid.g_mFeYokeSide.r_i ^ 2.0);
+//   simpleSolenoid.g_mFeYokeSide.A = 3.14159265358979 * simpleSolenoid.g_mFeYokeSide.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFeYokeSide.r_i ^ 2.0;
 //   simpleSolenoid.g_mFeYokeSide.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFeYokeSide.mu_r * simpleSolenoid.g_mFeYokeSide.A)) / simpleSolenoid.g_mFeYokeSide.l;
 //   simpleSolenoid.g_mFeYokeSide.H = simpleSolenoid.g_mFeYokeSide.B / (simpleSolenoid.g_mFeYokeSide.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFeYokeSide.B = simpleSolenoid.g_mFeYokeSide.Phi / simpleSolenoid.g_mFeYokeSide.A;
@@ -3955,7 +3955,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFeYokeSide.V_m = simpleSolenoid.g_mFeYokeSide.port_p.V_m - simpleSolenoid.g_mFeYokeSide.port_n.V_m;
 //   simpleSolenoid.g_mFeYokeSide.Phi = simpleSolenoid.g_mFeYokeSide.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFeYokeSide.port_p.Phi + simpleSolenoid.g_mFeYokeSide.port_n.Phi;
-//   simpleSolenoid.g_mFeArm.A = 3.14159265358979 * (simpleSolenoid.g_mFeArm.r_o ^ 2.0 - simpleSolenoid.g_mFeArm.r_i ^ 2.0);
+//   simpleSolenoid.g_mFeArm.A = 3.14159265358979 * simpleSolenoid.g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFeArm.r_i ^ 2.0;
 //   simpleSolenoid.g_mFeArm.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFeArm.mu_r * simpleSolenoid.g_mFeArm.A)) / simpleSolenoid.g_mFeArm.l;
 //   simpleSolenoid.g_mFeArm.H = simpleSolenoid.g_mFeArm.B / (simpleSolenoid.g_mFeArm.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFeArm.B = simpleSolenoid.g_mFeArm.Phi / simpleSolenoid.g_mFeArm.A;
@@ -4006,7 +4006,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFePoleBot.V_m = simpleSolenoid.g_mFePoleBot.port_p.V_m - simpleSolenoid.g_mFePoleBot.port_n.V_m;
 //   simpleSolenoid.g_mFePoleBot.Phi = simpleSolenoid.g_mFePoleBot.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFePoleBot.port_p.Phi + simpleSolenoid.g_mFePoleBot.port_n.Phi;
-//   simpleSolenoid.g_mFePole.A = 3.14159265358979 * (simpleSolenoid.g_mFePole.r_o ^ 2.0 - simpleSolenoid.g_mFePole.r_i ^ 2.0);
+//   simpleSolenoid.g_mFePole.A = 3.14159265358979 * simpleSolenoid.g_mFePole.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFePole.r_i ^ 2.0;
 //   simpleSolenoid.g_mFePole.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFePole.mu_r * simpleSolenoid.g_mFePole.A)) / simpleSolenoid.g_mFePole.l;
 //   simpleSolenoid.g_mFePole.H = simpleSolenoid.g_mFePole.B / (simpleSolenoid.g_mFePole.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFePole.B = simpleSolenoid.g_mFePole.Phi / simpleSolenoid.g_mFePole.A;
@@ -4434,7 +4434,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real advancedSolenoid.g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real advancedSolenoid.g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = advancedSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real advancedSolenoid.g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real advancedSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (advancedSolenoid.g_mAirWork.r_o ^ 2.0 - advancedSolenoid.g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real advancedSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * advancedSolenoid.g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4595,7 +4595,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real advancedSolenoid.g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real advancedSolenoid.g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real advancedSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (advancedSolenoid.r_arm + advancedSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real advancedSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * advancedSolenoid.r_arm + 3.14159265358979 * advancedSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real advancedSolenoid.g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4730,7 +4730,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeak3.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real advancedSolenoid.g_mLeak3.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real advancedSolenoid.g_mLeak3.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real advancedSolenoid.g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (advancedSolenoid.r_arm + advancedSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real advancedSolenoid.g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * advancedSolenoid.r_arm + 3.14159265358979 * advancedSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real advancedSolenoid.g_mLeakWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real advancedSolenoid.g_mLeakWork.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real advancedSolenoid.g_mLeakWork.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -4749,7 +4749,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real advancedSolenoid.g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real advancedSolenoid.g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real advancedSolenoid.g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = advancedSolenoid.flange.s \"Axial length (in direction of flux)\";
-//   parameter Real advancedSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + advancedSolenoid.r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real advancedSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * advancedSolenoid.r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real advancedSolenoid.g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real advancedSolenoid.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real advancedSolenoid.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -4901,7 +4901,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real simpleSolenoid.g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real simpleSolenoid.g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = simpleSolenoid.r_arm \"Outer radius of (hollow) cylinder\";
 //   Real simpleSolenoid.g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real simpleSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (simpleSolenoid.g_mAirWork.r_o ^ 2.0 - simpleSolenoid.g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real simpleSolenoid.g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * simpleSolenoid.g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real simpleSolenoid.g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -5062,7 +5062,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real simpleSolenoid.g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real simpleSolenoid.g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real simpleSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (simpleSolenoid.r_arm + simpleSolenoid.t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real simpleSolenoid.g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * simpleSolenoid.r_arm + 3.14159265358979 * simpleSolenoid.t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real simpleSolenoid.g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real simpleSolenoid.g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real simpleSolenoid.g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -5091,7 +5091,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real simpleSolenoid.g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real simpleSolenoid.g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real simpleSolenoid.g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = simpleSolenoid.flange.s \"Axial length (in direction of flux)\";
-//   parameter Real simpleSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + simpleSolenoid.r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real simpleSolenoid.g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * simpleSolenoid.r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real simpleSolenoid.g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real simpleSolenoid.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real simpleSolenoid.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -7278,7 +7278,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = advancedSolenoid.r_1.p.i + advancedSolenoid.r_1.n.i;
 //   advancedSolenoid.r_1.v = advancedSolenoid.r_1.p.v - advancedSolenoid.r_1.n.v;
 //   advancedSolenoid.r_1.T_heatPort = advancedSolenoid.r_1.T;
-//   advancedSolenoid.g_mFeYokeSide1.A = 3.14159265358979 * (advancedSolenoid.g_mFeYokeSide1.r_o ^ 2.0 - advancedSolenoid.g_mFeYokeSide1.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeYokeSide1.A = 3.14159265358979 * advancedSolenoid.g_mFeYokeSide1.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeYokeSide1.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeYokeSide1.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeYokeSide1.mu_r * advancedSolenoid.g_mFeYokeSide1.A)) / advancedSolenoid.g_mFeYokeSide1.l;
 //   advancedSolenoid.g_mFeYokeSide1.H = advancedSolenoid.g_mFeYokeSide1.B / (advancedSolenoid.g_mFeYokeSide1.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeYokeSide1.B = advancedSolenoid.g_mFeYokeSide1.Phi / advancedSolenoid.g_mFeYokeSide1.A;
@@ -7288,7 +7288,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFeYokeSide1.V_m = advancedSolenoid.g_mFeYokeSide1.port_p.V_m - advancedSolenoid.g_mFeYokeSide1.port_n.V_m;
 //   advancedSolenoid.g_mFeYokeSide1.Phi = advancedSolenoid.g_mFeYokeSide1.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFeYokeSide1.port_p.Phi + advancedSolenoid.g_mFeYokeSide1.port_n.Phi;
-//   advancedSolenoid.g_mFeArm.A = 3.14159265358979 * (advancedSolenoid.g_mFeArm.r_o ^ 2.0 - advancedSolenoid.g_mFeArm.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeArm.A = 3.14159265358979 * advancedSolenoid.g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeArm.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeArm.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeArm.mu_r * advancedSolenoid.g_mFeArm.A)) / advancedSolenoid.g_mFeArm.l;
 //   advancedSolenoid.g_mFeArm.H = advancedSolenoid.g_mFeArm.B / (advancedSolenoid.g_mFeArm.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeArm.B = advancedSolenoid.g_mFeArm.Phi / advancedSolenoid.g_mFeArm.A;
@@ -7339,7 +7339,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.g_mFePoleBot.V_m = advancedSolenoid.g_mFePoleBot.port_p.V_m - advancedSolenoid.g_mFePoleBot.port_n.V_m;
 //   advancedSolenoid.g_mFePoleBot.Phi = advancedSolenoid.g_mFePoleBot.port_p.Phi;
 //   0.0 = advancedSolenoid.g_mFePoleBot.port_p.Phi + advancedSolenoid.g_mFePoleBot.port_n.Phi;
-//   advancedSolenoid.g_mFePole.A = 3.14159265358979 * (advancedSolenoid.g_mFePole.r_o ^ 2.0 - advancedSolenoid.g_mFePole.r_i ^ 2.0);
+//   advancedSolenoid.g_mFePole.A = 3.14159265358979 * advancedSolenoid.g_mFePole.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFePole.r_i ^ 2.0;
 //   advancedSolenoid.g_mFePole.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFePole.mu_r * advancedSolenoid.g_mFePole.A)) / advancedSolenoid.g_mFePole.l;
 //   advancedSolenoid.g_mFePole.H = advancedSolenoid.g_mFePole.B / (advancedSolenoid.g_mFePole.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFePole.B = advancedSolenoid.g_mFePole.Phi / advancedSolenoid.g_mFePole.A;
@@ -7413,7 +7413,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   advancedSolenoid.G_mLeakRad.V_m = advancedSolenoid.G_mLeakRad.port_p.V_m - advancedSolenoid.G_mLeakRad.port_n.V_m;
 //   advancedSolenoid.G_mLeakRad.Phi = advancedSolenoid.G_mLeakRad.port_p.Phi;
 //   0.0 = advancedSolenoid.G_mLeakRad.port_p.Phi + advancedSolenoid.G_mLeakRad.port_n.Phi;
-//   advancedSolenoid.g_mFeYokeSide2.A = 3.14159265358979 * (advancedSolenoid.g_mFeYokeSide2.r_o ^ 2.0 - advancedSolenoid.g_mFeYokeSide2.r_i ^ 2.0);
+//   advancedSolenoid.g_mFeYokeSide2.A = 3.14159265358979 * advancedSolenoid.g_mFeYokeSide2.r_o ^ 2.0 + -3.14159265358979 * advancedSolenoid.g_mFeYokeSide2.r_i ^ 2.0;
 //   advancedSolenoid.g_mFeYokeSide2.G_m = (1.25663706143592e-06 * (advancedSolenoid.g_mFeYokeSide2.mu_r * advancedSolenoid.g_mFeYokeSide2.A)) / advancedSolenoid.g_mFeYokeSide2.l;
 //   advancedSolenoid.g_mFeYokeSide2.H = advancedSolenoid.g_mFeYokeSide2.B / (advancedSolenoid.g_mFeYokeSide2.mu_r * 1.25663706143592e-06);
 //   advancedSolenoid.g_mFeYokeSide2.B = advancedSolenoid.g_mFeYokeSide2.Phi / advancedSolenoid.g_mFeYokeSide2.A;
@@ -7500,7 +7500,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = simpleSolenoid.r.p.i + simpleSolenoid.r.n.i;
 //   simpleSolenoid.r.v = simpleSolenoid.r.p.v - simpleSolenoid.r.n.v;
 //   simpleSolenoid.r.T_heatPort = simpleSolenoid.r.T;
-//   simpleSolenoid.g_mFeYokeSide.A = 3.14159265358979 * (simpleSolenoid.g_mFeYokeSide.r_o ^ 2.0 - simpleSolenoid.g_mFeYokeSide.r_i ^ 2.0);
+//   simpleSolenoid.g_mFeYokeSide.A = 3.14159265358979 * simpleSolenoid.g_mFeYokeSide.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFeYokeSide.r_i ^ 2.0;
 //   simpleSolenoid.g_mFeYokeSide.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFeYokeSide.mu_r * simpleSolenoid.g_mFeYokeSide.A)) / simpleSolenoid.g_mFeYokeSide.l;
 //   simpleSolenoid.g_mFeYokeSide.H = simpleSolenoid.g_mFeYokeSide.B / (simpleSolenoid.g_mFeYokeSide.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFeYokeSide.B = simpleSolenoid.g_mFeYokeSide.Phi / simpleSolenoid.g_mFeYokeSide.A;
@@ -7510,7 +7510,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFeYokeSide.V_m = simpleSolenoid.g_mFeYokeSide.port_p.V_m - simpleSolenoid.g_mFeYokeSide.port_n.V_m;
 //   simpleSolenoid.g_mFeYokeSide.Phi = simpleSolenoid.g_mFeYokeSide.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFeYokeSide.port_p.Phi + simpleSolenoid.g_mFeYokeSide.port_n.Phi;
-//   simpleSolenoid.g_mFeArm.A = 3.14159265358979 * (simpleSolenoid.g_mFeArm.r_o ^ 2.0 - simpleSolenoid.g_mFeArm.r_i ^ 2.0);
+//   simpleSolenoid.g_mFeArm.A = 3.14159265358979 * simpleSolenoid.g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFeArm.r_i ^ 2.0;
 //   simpleSolenoid.g_mFeArm.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFeArm.mu_r * simpleSolenoid.g_mFeArm.A)) / simpleSolenoid.g_mFeArm.l;
 //   simpleSolenoid.g_mFeArm.H = simpleSolenoid.g_mFeArm.B / (simpleSolenoid.g_mFeArm.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFeArm.B = simpleSolenoid.g_mFeArm.Phi / simpleSolenoid.g_mFeArm.A;
@@ -7561,7 +7561,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   simpleSolenoid.g_mFePoleBot.V_m = simpleSolenoid.g_mFePoleBot.port_p.V_m - simpleSolenoid.g_mFePoleBot.port_n.V_m;
 //   simpleSolenoid.g_mFePoleBot.Phi = simpleSolenoid.g_mFePoleBot.port_p.Phi;
 //   0.0 = simpleSolenoid.g_mFePoleBot.port_p.Phi + simpleSolenoid.g_mFePoleBot.port_n.Phi;
-//   simpleSolenoid.g_mFePole.A = 3.14159265358979 * (simpleSolenoid.g_mFePole.r_o ^ 2.0 - simpleSolenoid.g_mFePole.r_i ^ 2.0);
+//   simpleSolenoid.g_mFePole.A = 3.14159265358979 * simpleSolenoid.g_mFePole.r_o ^ 2.0 + -3.14159265358979 * simpleSolenoid.g_mFePole.r_i ^ 2.0;
 //   simpleSolenoid.g_mFePole.G_m = (1.25663706143592e-06 * (simpleSolenoid.g_mFePole.mu_r * simpleSolenoid.g_mFePole.A)) / simpleSolenoid.g_mFePole.l;
 //   simpleSolenoid.g_mFePole.H = simpleSolenoid.g_mFePole.B / (simpleSolenoid.g_mFePole.mu_r * 1.25663706143592e-06);
 //   simpleSolenoid.g_mFePole.B = simpleSolenoid.g_mFePole.Phi / simpleSolenoid.g_mFePole.A;
@@ -7934,7 +7934,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_arm \"Outer radius of (hollow) cylinder\";
 //   Real g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (g_mAirWork.r_o ^ 2.0 - g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8095,7 +8095,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (r_arm + t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * r_arm + 3.14159265358979 * t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8124,7 +8124,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = flange.s \"Axial length (in direction of flux)\";
-//   parameter Real g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -8152,7 +8152,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = r.p.i + r.n.i;
 //   r.v = r.p.v - r.n.v;
 //   r.T_heatPort = r.T;
-//   g_mFeYokeSide.A = 3.14159265358979 * (g_mFeYokeSide.r_o ^ 2.0 - g_mFeYokeSide.r_i ^ 2.0);
+//   g_mFeYokeSide.A = 3.14159265358979 * g_mFeYokeSide.r_o ^ 2.0 + -3.14159265358979 * g_mFeYokeSide.r_i ^ 2.0;
 //   g_mFeYokeSide.G_m = (1.25663706143592e-06 * (g_mFeYokeSide.mu_r * g_mFeYokeSide.A)) / g_mFeYokeSide.l;
 //   g_mFeYokeSide.H = g_mFeYokeSide.B / (g_mFeYokeSide.mu_r * 1.25663706143592e-06);
 //   g_mFeYokeSide.B = g_mFeYokeSide.Phi / g_mFeYokeSide.A;
@@ -8162,7 +8162,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFeYokeSide.V_m = g_mFeYokeSide.port_p.V_m - g_mFeYokeSide.port_n.V_m;
 //   g_mFeYokeSide.Phi = g_mFeYokeSide.port_p.Phi;
 //   0.0 = g_mFeYokeSide.port_p.Phi + g_mFeYokeSide.port_n.Phi;
-//   g_mFeArm.A = 3.14159265358979 * (g_mFeArm.r_o ^ 2.0 - g_mFeArm.r_i ^ 2.0);
+//   g_mFeArm.A = 3.14159265358979 * g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * g_mFeArm.r_i ^ 2.0;
 //   g_mFeArm.G_m = (1.25663706143592e-06 * (g_mFeArm.mu_r * g_mFeArm.A)) / g_mFeArm.l;
 //   g_mFeArm.H = g_mFeArm.B / (g_mFeArm.mu_r * 1.25663706143592e-06);
 //   g_mFeArm.B = g_mFeArm.Phi / g_mFeArm.A;
@@ -8213,7 +8213,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFePoleBot.V_m = g_mFePoleBot.port_p.V_m - g_mFePoleBot.port_n.V_m;
 //   g_mFePoleBot.Phi = g_mFePoleBot.port_p.Phi;
 //   0.0 = g_mFePoleBot.port_p.Phi + g_mFePoleBot.port_n.Phi;
-//   g_mFePole.A = 3.14159265358979 * (g_mFePole.r_o ^ 2.0 - g_mFePole.r_i ^ 2.0);
+//   g_mFePole.A = 3.14159265358979 * g_mFePole.r_o ^ 2.0 + -3.14159265358979 * g_mFePole.r_i ^ 2.0;
 //   g_mFePole.G_m = (1.25663706143592e-06 * (g_mFePole.mu_r * g_mFePole.A)) / g_mFePole.l;
 //   g_mFePole.H = g_mFePole.B / (g_mFePole.mu_r * 1.25663706143592e-06);
 //   g_mFePole.B = g_mFePole.Phi / g_mFePole.A;
@@ -8501,7 +8501,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real g_mAirWork.r_i(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.0) = 0.0 \"Inner radius of (hollow) cylinder\";
 //   parameter Real g_mAirWork.r_o(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = r_arm \"Outer radius of (hollow) cylinder\";
 //   Real g_mAirWork.B(quantity = \"MagneticFluxDensity\", unit = \"T\") \"Homogeneous flux density\";
-//   protected parameter Real g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * (g_mAirWork.r_o ^ 2.0 - g_mAirWork.r_i ^ 2.0) \"Cross-sectional area orthogonal to direction of flux\";
+//   protected parameter Real g_mAirWork.A(quantity = \"Area\", unit = \"m2\") = 3.14159265358979 * g_mAirWork.r_o ^ 2.0 + -3.14159265358979 * g_mAirWork.r_i ^ 2.0 \"Cross-sectional area orthogonal to direction of flux\";
 //   Real g_mFeYokeBot.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real g_mFeYokeBot.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real g_mFeYokeBot.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8662,7 +8662,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeak1.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real g_mLeak1.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real g_mLeak1.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (r_arm + t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real g_mLeak1.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * r_arm + 3.14159265358979 * t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real g_mLeak2.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real g_mLeak2.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real g_mLeak2.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8797,7 +8797,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeak3.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux from port_p to port_n\";
 //   Real g_mLeak3.R_m(quantity = \"Reluctance\", unit = \"H-1\") \"Magnetic reluctance\";
 //   Real g_mLeak3.G_m(quantity = \"Permeance\", unit = \"H\") \"Magnetic permeance\";
-//   parameter Real g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (r_arm + t_airPar / 2.0) \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
+//   parameter Real g_mLeak3.l(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * r_arm + 3.14159265358979 * t_airPar \"Axial length orthogonal to flux (=2*pi*r for cylindrical pole and r>>distance between edge and plane)\";
 //   Real g_mLeakWork.port_p.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
 //   Real g_mLeakWork.port_p.Phi(quantity = \"MagneticFlux\", unit = \"Wb\") \"Magnetic flux flowing into the port\";
 //   Real g_mLeakWork.port_n.V_m(quantity = \"MagneticPotential\", unit = \"A\") \"Magnetic potential at the port\";
@@ -8816,7 +8816,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   Real g_mLeakWork.flange.f(quantity = \"Force\", unit = \"N\") \"cut force directed into flange\";
 //   protected Real g_mLeakWork.s_support(quantity = \"Length\", unit = \"m\") \"Absolute position of support flange\";
 //   Real g_mLeakWork.l(quantity = \"Length\", unit = \"m\") = flange.s \"Axial length (in direction of flux)\";
-//   parameter Real g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 6.28318530717959 * (0.0015 + r_arm) \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
+//   parameter Real g_mLeakWork.w(quantity = \"Length\", unit = \"m\", start = 0.1) = 0.00942477796076938 + 6.28318530717959 * r_arm \"Width orthogonal to flux; mean circumference of flux tube in case of cylindrical poles\";
 //   parameter Real g_mLeakWork.r(quantity = \"Length\", unit = \"m\", min = 0.0, start = 0.01) = 0.003 \"Radius of leakage field\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
@@ -8844,7 +8844,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   0.0 = r_1.p.i + r_1.n.i;
 //   r_1.v = r_1.p.v - r_1.n.v;
 //   r_1.T_heatPort = r_1.T;
-//   g_mFeYokeSide1.A = 3.14159265358979 * (g_mFeYokeSide1.r_o ^ 2.0 - g_mFeYokeSide1.r_i ^ 2.0);
+//   g_mFeYokeSide1.A = 3.14159265358979 * g_mFeYokeSide1.r_o ^ 2.0 + -3.14159265358979 * g_mFeYokeSide1.r_i ^ 2.0;
 //   g_mFeYokeSide1.G_m = (1.25663706143592e-06 * (g_mFeYokeSide1.mu_r * g_mFeYokeSide1.A)) / g_mFeYokeSide1.l;
 //   g_mFeYokeSide1.H = g_mFeYokeSide1.B / (g_mFeYokeSide1.mu_r * 1.25663706143592e-06);
 //   g_mFeYokeSide1.B = g_mFeYokeSide1.Phi / g_mFeYokeSide1.A;
@@ -8854,7 +8854,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFeYokeSide1.V_m = g_mFeYokeSide1.port_p.V_m - g_mFeYokeSide1.port_n.V_m;
 //   g_mFeYokeSide1.Phi = g_mFeYokeSide1.port_p.Phi;
 //   0.0 = g_mFeYokeSide1.port_p.Phi + g_mFeYokeSide1.port_n.Phi;
-//   g_mFeArm.A = 3.14159265358979 * (g_mFeArm.r_o ^ 2.0 - g_mFeArm.r_i ^ 2.0);
+//   g_mFeArm.A = 3.14159265358979 * g_mFeArm.r_o ^ 2.0 + -3.14159265358979 * g_mFeArm.r_i ^ 2.0;
 //   g_mFeArm.G_m = (1.25663706143592e-06 * (g_mFeArm.mu_r * g_mFeArm.A)) / g_mFeArm.l;
 //   g_mFeArm.H = g_mFeArm.B / (g_mFeArm.mu_r * 1.25663706143592e-06);
 //   g_mFeArm.B = g_mFeArm.Phi / g_mFeArm.A;
@@ -8905,7 +8905,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   g_mFePoleBot.V_m = g_mFePoleBot.port_p.V_m - g_mFePoleBot.port_n.V_m;
 //   g_mFePoleBot.Phi = g_mFePoleBot.port_p.Phi;
 //   0.0 = g_mFePoleBot.port_p.Phi + g_mFePoleBot.port_n.Phi;
-//   g_mFePole.A = 3.14159265358979 * (g_mFePole.r_o ^ 2.0 - g_mFePole.r_i ^ 2.0);
+//   g_mFePole.A = 3.14159265358979 * g_mFePole.r_o ^ 2.0 + -3.14159265358979 * g_mFePole.r_i ^ 2.0;
 //   g_mFePole.G_m = (1.25663706143592e-06 * (g_mFePole.mu_r * g_mFePole.A)) / g_mFePole.l;
 //   g_mFePole.H = g_mFePole.B / (g_mFePole.mu_r * 1.25663706143592e-06);
 //   g_mFePole.B = g_mFePole.Phi / g_mFePole.A;
@@ -8979,7 +8979,7 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   G_mLeakRad.V_m = G_mLeakRad.port_p.V_m - G_mLeakRad.port_n.V_m;
 //   G_mLeakRad.Phi = G_mLeakRad.port_p.Phi;
 //   0.0 = G_mLeakRad.port_p.Phi + G_mLeakRad.port_n.Phi;
-//   g_mFeYokeSide2.A = 3.14159265358979 * (g_mFeYokeSide2.r_o ^ 2.0 - g_mFeYokeSide2.r_i ^ 2.0);
+//   g_mFeYokeSide2.A = 3.14159265358979 * g_mFeYokeSide2.r_o ^ 2.0 + -3.14159265358979 * g_mFeYokeSide2.r_i ^ 2.0;
 //   g_mFeYokeSide2.G_m = (1.25663706143592e-06 * (g_mFeYokeSide2.mu_r * g_mFeYokeSide2.A)) / g_mFeYokeSide2.l;
 //   g_mFeYokeSide2.H = g_mFeYokeSide2.B / (g_mFeYokeSide2.mu_r * 1.25663706143592e-06);
 //   g_mFeYokeSide2.B = g_mFeYokeSide2.Phi / g_mFeYokeSide2.A;
