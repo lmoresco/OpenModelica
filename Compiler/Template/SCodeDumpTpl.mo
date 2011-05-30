@@ -3432,16 +3432,15 @@ algorithm
     local
       Tpl.Text txt;
       Absyn.ComponentRef i_cref;
-      list<Absyn.Subscript> i_subscripts;
       Absyn.ComponentRef i_componentRef;
-      list<Absyn.Subscript> i_subScripts;
+      list<Absyn.Subscript> i_subscripts;
       Absyn.Ident i_name;
 
     case ( txt,
-           Absyn.CREF_QUAL(name = i_name, subScripts = i_subScripts, componentRef = i_componentRef) )
+           Absyn.CREF_QUAL(name = i_name, subscripts = i_subscripts, componentRef = i_componentRef) )
       equation
         txt = Tpl.writeStr(txt, i_name);
-        txt = dumpSubscripts(txt, i_subScripts);
+        txt = dumpSubscripts(txt, i_subscripts);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("."));
         txt = dumpCref(txt, i_componentRef);
       then txt;
@@ -4739,7 +4738,7 @@ algorithm
   matchcontinue(in_txt, in_a_subscript)
     local
       Tpl.Text txt;
-      Absyn.Exp i_subScript;
+      Absyn.Exp i_subscript;
 
     case ( txt,
            Absyn.NOSUB() )
@@ -4748,9 +4747,9 @@ algorithm
       then txt;
 
     case ( txt,
-           Absyn.SUBSCRIPT(subScript = i_subScript) )
+           Absyn.SUBSCRIPT(subscript = i_subscript) )
       equation
-        txt = dumpExp(txt, i_subScript);
+        txt = dumpExp(txt, i_subscript);
       then txt;
 
     case ( txt,
