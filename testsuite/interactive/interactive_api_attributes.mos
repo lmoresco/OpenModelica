@@ -152,8 +152,8 @@ list(A);                                                                        
 // ""
 // Ok
 // ""
-// "model A "this is the class A"
-//   final inner discrete Integer x "comment for x";
+// "model A \"this is the class A\"
+//   final inner discrete Integer x \"comment for x\";
 //   final stream Real y;
 // equation
 //   connect(a,b) annotation(Line(points = {{-22.0,15.0},{32.0,15.0},{32.0,16.0}}));
@@ -232,8 +232,8 @@ list(A);                                                                        
 // ""
 // Ok
 // ""
-// "model A "this is the class A"
-//   final inner discrete Integer x "comment for x";
+// "model A \"this is the class A\"
+//   final inner discrete Integer x \"comment for x\";
 //   final stream Real y;
 // equation
 //   connect(a,b) annotation(Line(points = {{-22.0,15.0},{32.0,15.0},{32.0,16.0}}));
