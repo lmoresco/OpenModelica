@@ -55,6 +55,7 @@ Identity.mos \
 IdealDiode.mos  \
 IfEquation.mos IfEquation2.mos IfEquation3.mos \
 Initialization.mos \
+InitialConstantSection.mos \
 InlineSolverCodeGenerationEuler.mos \
 InlineSolverCodeGenerationRK.mos \
 Interpolation.mos \
