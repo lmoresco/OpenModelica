@@ -13,7 +13,8 @@ system("extfunction -l 0");
 loadFile("linear_extfunction.mo");
 list(linear_extfunction);
 simulate(linear_extfunction,method="dassl2");
-readFile("output.log"); // Check that output log is emtpy
+readFile("output.log"); // Check that output log is empty
+//system("pause");
 //linearize at point in time 1 
 system("extfunction -l 1");
 loadFile("linear_extfunction.mo");

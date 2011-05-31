@@ -123,7 +123,7 @@ instantiateModel(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  g
 checkModel(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  getErrorString(); 
 simulate(Modelica.Electrical.Analog.Examples.ThyristorBehaviourTest);  getErrorString(); 
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_init.txt *_res.mat");
 
 
 // Result:

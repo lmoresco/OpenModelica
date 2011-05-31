@@ -35,28 +35,32 @@ protected import SimCodeC;
 protected function fun_24
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_simulationSettingsOpt;
+  input Tpl.Text in_a_guid;
   input SimCode.SimCode in_a_simCode;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_simulationSettingsOpt, in_a_simCode)
+  matchcontinue(in_txt, in_a_simulationSettingsOpt, in_a_guid, in_a_simCode)
     local
       Tpl.Text txt;
+      Tpl.Text a_guid;
       SimCode.SimCode a_simCode;
       Tpl.Text txt_0;
 
     case ( txt,
            NONE(),
+           _,
            _ )
       then txt;
 
     case ( txt,
            _,
+           a_guid,
            a_simCode )
       equation
-        txt_0 = SimCodeC.simulationInitFile(Tpl.emptyTxt, a_simCode);
-        Tpl.textFile(txt_0, "model_init.txt");
+        txt_0 = SimCodeC.simulationInitFile(Tpl.emptyTxt, a_simCode, Tpl.textString(a_guid));
+        Tpl.textFile(txt_0, "model_init.xml");
       then txt;
   end matchcontinue;
 end fun_24;
@@ -79,33 +83,37 @@ algorithm
       list<SimCode.Function> i_modelInfo_functions;
       String i_fileNamePrefix;
       SimCode.SimCode i_simCode;
+      Tpl.Text txt_8;
+      Tpl.Text txt_7;
       Tpl.Text txt_6;
       Tpl.Text txt_5;
       Tpl.Text txt_4;
       Tpl.Text txt_3;
       Tpl.Text txt_2;
-      Tpl.Text txt_1;
-      Tpl.Text txt_0;
+      String ret_1;
+      Tpl.Text l_guid;
 
     case ( txt,
            (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(functions = i_modelInfo_functions), fileNamePrefix = i_fileNamePrefix, recordDecls = i_recordDecls, literals = i_literals, simulationSettingsOpt = i_simulationSettingsOpt)),
            a_qssInfo )
       equation
-        txt_0 = simulationFile(Tpl.emptyTxt, i_simCode, a_qssInfo);
-        Tpl.textFile(txt_0, "modelica_funcs.cpp");
-        txt_1 = SimCodeC.simulationFunctionsHeaderFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_recordDecls);
-        Tpl.textFile(txt_1, "model_functions.h");
-        txt_2 = simulationFunctionsFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_literals);
-        Tpl.textFile(txt_2, "model_functions.cpp");
-        txt_3 = SimCodeC.recordsFile(Tpl.emptyTxt, i_fileNamePrefix, i_recordDecls);
-        Tpl.textFile(txt_3, "model_records.c");
-        txt_4 = simulationMakefile(Tpl.emptyTxt, i_simCode);
-        txt_5 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
-        txt_5 = Tpl.writeTok(txt_5, Tpl.ST_STRING(".makefile"));
-        Tpl.textFile(txt_4, Tpl.textString(txt_5));
-        txt_6 = structureFile(Tpl.emptyTxt, i_simCode, a_qssInfo);
-        Tpl.textFile(txt_6, "modelica_structure.pds");
-        txt = fun_24(txt, i_simulationSettingsOpt, i_simCode);
+        ret_1 = System.getUUIDStr();
+        l_guid = Tpl.writeStr(Tpl.emptyTxt, ret_1);
+        txt_2 = simulationFile(Tpl.emptyTxt, i_simCode, a_qssInfo, Tpl.textString(l_guid));
+        Tpl.textFile(txt_2, "modelica_funcs.cpp");
+        txt_3 = SimCodeC.simulationFunctionsHeaderFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_recordDecls);
+        Tpl.textFile(txt_3, "model_functions.h");
+        txt_4 = simulationFunctionsFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_literals);
+        Tpl.textFile(txt_4, "model_functions.cpp");
+        txt_5 = SimCodeC.recordsFile(Tpl.emptyTxt, i_fileNamePrefix, i_recordDecls);
+        Tpl.textFile(txt_5, "model_records.c");
+        txt_6 = simulationMakefile(Tpl.emptyTxt, i_simCode);
+        txt_7 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(".makefile"));
+        Tpl.textFile(txt_6, Tpl.textString(txt_7));
+        txt_8 = structureFile(Tpl.emptyTxt, i_simCode, a_qssInfo);
+        Tpl.textFile(txt_8, "modelica_structure.pds");
+        txt = fun_24(txt, i_simulationSettingsOpt, l_guid, i_simCode);
       then txt;
 
     case ( txt,
@@ -338,14 +346,16 @@ public function simulationFile
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
   input BackendQSS.QSSinfo in_a_qssInfo;
+  input String in_a_guid;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_simCode, in_a_qssInfo)
+  matchcontinue(in_txt, in_a_simCode, in_a_qssInfo, in_a_guid)
     local
       Tpl.Text txt;
       BackendQSS.QSSinfo a_qssInfo;
+      String a_guid;
       list<DAE.Statement> i_algorithmAndEquationAsserts;
       list<DAE.ComponentRef> i_discreteModelVars;
       list<SimCode.SimEqSystem> i_removedEquations;
@@ -380,7 +390,8 @@ algorithm
 
     case ( txt,
            (i_simCode as SimCode.SIMCODE(modelInfo = (i_modelInfo as SimCode.MODELINFO(varInfo = SimCode.VARINFO(numZeroCrossings = i_modelInfo_varInfo_numZeroCrossings, numStateVars = i_modelInfo_varInfo_numStateVars), name = i_modelInfo_name, directory = i_modelInfo_directory)), fileNamePrefix = i_fileNamePrefix, JacobianMatrixes = i_JacobianMatrixes, allEquations = i_allEquations, residualEquations = i_residualEquations, externalFunctionIncludes = i_externalFunctionIncludes, odeEquations = i_odeEquations, zeroCrossings = i_zeroCrossings, whenClauses = i_whenClauses, helpVarInfo = i_helpVarInfo, extObjInfo = i_extObjInfo, sampleConditions = i_sampleConditions, sampleEquations = i_sampleEquations, delayedExps = i_delayedExps, initialEquations = i_initialEquations, parameterEquations = i_parameterEquations, algebraicEquations = i_algebraicEquations, removedEquations = i_removedEquations, discreteModelVars = i_discreteModelVars, algorithmAndEquationAsserts = i_algorithmAndEquationAsserts)),
-           a_qssInfo )
+           a_qssInfo,
+           a_guid )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = simulationFileHeader(txt, i_simCode);
@@ -407,7 +418,7 @@ algorithm
                                     "\n",
                                     "\n"
                                 }, true));
-        txt = SimCodeC.globalData(txt, i_modelInfo, i_fileNamePrefix);
+        txt = SimCodeC.globalData(txt, i_modelInfo, i_fileNamePrefix, a_guid);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         ret_0 = SimCode.appendAllequation(i_JacobianMatrixes);
@@ -672,6 +683,7 @@ algorithm
       then txt;
 
     case ( txt,
+           _,
            _,
            _ )
       then txt;
@@ -1858,7 +1870,7 @@ algorithm
         txt_3 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unhandled expression in SimCodeQSS.generateZCExp: "));
         ret_3 = ExpressionDump.printExpStr(i_exp);
         txt_3 = Tpl.writeStr(txt_3, ret_3);
-        txt = SimCodeC.error(txt, Tpl.sourceInfo("SimCodeQSS.tpl", 605, 23), Tpl.textString(txt_3));
+        txt = SimCodeC.error(txt, Tpl.sourceInfo("SimCodeQSS.tpl", 606, 23), Tpl.textString(txt_3));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end generateZCExp;

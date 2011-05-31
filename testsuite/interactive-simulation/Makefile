@@ -1,13 +1,13 @@
 # makefile for interactive simulation
-TEST = ../rtest
+TEST = ../rtest -v
 PATH := ./:${PATH}
 
-TESTFILES = runInteractiveSimulation.mos
+TESTFILES = testCompileInteractive.mos
 
 
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
-FAILINGTESTFILES= 
+FAILINGTESTFILES = runInteractiveSimulation.mos 
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so

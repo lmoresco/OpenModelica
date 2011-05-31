@@ -1,7 +1,7 @@
 // name:     when-statements
 // keywords: Simulate, when-statements
 // status: correct
-// teardown_command: rm -rf testalgwhen testalgwhen.exe testalgwhen.cpp testalgwhen_functions.cpp testalgwhen_functions.h testalgwhen_init.txt testalgwhen.libs testalgwhen.log testalgwhen.makefile testalgwhen_records.c testalgwhen_res.mat output.log 
+// teardown_command: rm -rf testalgwhen testalgwhen.exe testalgwhen.cpp testalgwhen_functions.cpp testalgwhen_functions.h testalgwhen_init.xml testalgwhen.libs testalgwhen.log testalgwhen.makefile testalgwhen_records.c testalgwhen_res.mat output.log 
 // 
 //  Simulate model containing algortithms with when-stamtements
 //

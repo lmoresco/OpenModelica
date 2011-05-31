@@ -1,7 +1,7 @@
 // name:     WhenPriority
 // keywords: equations when
 // status:   correct
-// teardown_command: rm -rf WhenPriority WhenPriority.exe WhenPriority.cpp WhenPriority_functions.cpp WhenPriority_functions.h WhenPriority_init.txt WhenPriority.libs WhenPriority.log WhenPriority.makefile WhenPriority_records.c WhenPriority_res.mat output.log 
+// teardown_command: rm -rf WhenPriority WhenPriority.exe WhenPriority.cpp WhenPriority_functions.cpp WhenPriority_functions.h WhenPriority_init.xml WhenPriority.libs WhenPriority.log WhenPriority.makefile WhenPriority_records.c WhenPriority_res.mat output.log 
 // 
 //  Tests when, elsewhen
 //

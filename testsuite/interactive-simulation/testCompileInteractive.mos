@@ -1,0 +1,30 @@
+//name:         Interactive Simulation Compilation Testing 
+//keyword:      testing interactive simulation
+//status:       correct
+//teardown_command: rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-trace-server.txt out.log
+//
+// interactive simulation test
+//
+
+// remove the traces
+system("rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-trace-server.txt out.log");
+
+// clean the test area
+system("make -f Makefile.run clean > out.log 2>&1");
+
+// run the interactive simulation compilation only
+system("make -f Makefile.run compile >> out.log 2>&1");
+
+// clean the test area
+system("make -f Makefile.run clean > out.log 2>&1");
+
+// remove the traces
+system("rm -f trace-client.txt trace-server.txt sorted-trace-client.txt sorted-trace-server.txt out.log");
+
+// Result:
+// 0
+// 0
+// 0
+// 0
+// 0
+// endResult

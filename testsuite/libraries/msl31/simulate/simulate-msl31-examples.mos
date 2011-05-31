@@ -170,4 +170,4 @@ simulate(Modelica.StateGraph.Examples.ShowExceptions);  getErrorString();
 simulate(Modelica.StateGraph.Examples.ControlledTanks);  getErrorString(); 
 
 
-system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.txt *_res.mat");
+system("rm -f *.c *.dll *.log *.makefile *.cpp *.exe *.h *.libs *_init.xml *_init.txt *_res.mat");
