@@ -1,4 +1,4 @@
-// name:     ArrayEWOpsCEval1
+// name:     ArrayEWOpsCEval4
 // keywords: array
 // status:   correct
 // 
