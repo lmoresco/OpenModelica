@@ -5540,7 +5540,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
         ret_7 = System.os();
         txt = fun_168(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
