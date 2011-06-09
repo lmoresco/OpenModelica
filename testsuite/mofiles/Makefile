@@ -369,6 +369,9 @@ Integer.mo \
 IntMul.mo \
 IntPow.mo \
 IntSub.mo \
+InvalidSizeScalar.mo \
+InvalidSizeIndex1.mo \
+InvalidSizeIndex2.mo \
 InvertedPendulumTotal.mo \
 LessThanEqual.mo \
 LessThan.mo \
