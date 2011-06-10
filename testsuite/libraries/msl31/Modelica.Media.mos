@@ -314,8 +314,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   Real m(quantity = \"Mass\", unit = \"kg\", min = 0.0, start = 1.0);
 //   Real U(quantity = \"Energy\", unit = \"J\");
 //   Real m_flow_ext(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0);
-//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Water.Medium.dynamicViscosity(medium);
-//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Water.Medium.specificHeatCapacityCv(medium);
+//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Water.Medium.dynamicViscosity(state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Water.Medium.specificHeatCapacityCv(state);
 // equation
 //   assert(medium.T >= 272.15 and medium.T <= 403.15,\"
 // Temperature T (= \" + String(medium.T,0,true,6) + \" K) is not
@@ -369,7 +369,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // 
 // 
 // Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
-// 19 of these are trivial equation(s).
+// 17 of these are trivial equation(s).
 // "
 // ""
 // "function Modelica.Math.acos
@@ -794,7 +794,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   g.p := p;
 //   g.T := T;
 //   g.R := 461.526;
-//   assert( p > 611.657, \"IF97 medium function g2 called with too low pressure
+//   assert( p > 0.0, \"IF97 medium function g2 called with too low pressure
 // p = \" + String(p,0,true,6) + \" Pa <= \" + String(611.657,0,true,6) + \" Pa (triple point pressure)\");
 //   assert( p <= 100000000.0, \"IF97 medium function g2: the input pressure (= \" + String(p,0,true,6) + \" Pa) is higher than 100 Mpa\");
 //   assert( T >= 273.15, \"IF97 medium function g2: the temperature (= \" + String(T,0,true,6) + \" K) is lower than 273.15 K!\");
@@ -871,7 +871,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   output Modelica.Media.Common.GibbsDerivs g \"dimensionless Gibbs funcion and dervatives wrt pi and tau\";
 //   protected Real[11] o \"vector of auxiliary variables\";
 // algorithm
-//   assert( p > 611.657, \"IF97 medium function g5 called with too low pressure
+//   assert( p > 0.0, \"IF97 medium function g5 called with too low pressure
 // p = \" + String(p,0,true,6) + \" Pa <= \" + String(611.657,0,true,6) + \" Pa (triple point pressure)\");
 //   assert( p <= 10000000.0, \"IF97 medium function g5: input pressure (= \" + String(p,0,true,6) + \" Pa) is higher than 10 Mpa in region 5\");
 //   assert( T <= 2273.15, \"IF97 medium function g5: input temperature (= \" + String(T,0,true,6) + \" K) is higher than limit of 2273.15K in region 5\");

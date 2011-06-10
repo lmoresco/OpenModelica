@@ -1776,7 +1776,7 @@ package IF97_Utilities
         g.p := p;
         g.T := T;
         g.R := data.RH2O;
-        assert(p > triple.ptriple,
+        assert(p > 0.0,
           "IF97 medium function g2 called with too low pressure\n" +
           "p = " + String(p) + " Pa <= " + String(triple.ptriple) + " Pa (triple point pressure)");
         assert(p <= 100.0e6,
@@ -2212,7 +2212,7 @@ package IF97_Utilities
       protected
         Real[11] o "vector of auxiliary variables";
       algorithm
-        assert(p > triple.ptriple,
+        assert(p > 0.0,
           "IF97 medium function g5 called with too low pressure\n" +
           "p = " + String(p) + " Pa <= " + String(triple.ptriple) + " Pa (triple point pressure)");
         assert(p <= data.PLIMIT5,
