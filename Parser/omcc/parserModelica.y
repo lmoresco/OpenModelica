@@ -749,7 +749,7 @@ explist2            : exp  { $$[Exps] = {$1[Exp]};  }
                     | /* empty */ { $$[Exps] = {}; }
                     
 cref                :  ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
-                     | ident DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],{},$3[ComponentRef]); }
+                     | ident arraySubscripts DOT cref  { $$[ComponentRef] = Absyn.CREF_QUAL($1[Ident],$2[ArrayDim],$4[ComponentRef]); }
                      | DOT cref  { $$[ComponentRef] = Absyn.CREF_FULLYQUALIFIED($2[ComponentRef]); }
                      | WILD { $$[ComponentRef] = Absyn.WILD();}    
                      | ALLWILD { $$[ComponentRef] = Absyn.ALLWILD();}                   
@@ -790,6 +790,8 @@ ident                :  IDENT { $$[Ident] = $1; }
 string               : STRING { $$ = trimquotes($1); } // trim the quote of the string
 
 comment              : string { $$[Comment] = Absyn.COMMENT(NONE(),SOME($1)); }
+                     | string annotation { $$[Comment] = Absyn.COMMENT(SOME($2[Annotation]),SOME($1)); }
+                     | annotation { $$[Comment] = Absyn.COMMENT(SOME($1[Annotation]),NONE()); }
                      | /* empty */ { $$[Comment] = Absyn.COMMENT(NONE(),NONE()); }                     
 
 
