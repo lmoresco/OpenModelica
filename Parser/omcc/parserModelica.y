@@ -534,11 +534,27 @@ elementargs2         : LPAR argumentlist RPAR { $$[ElementArgs] = $1[ElementArgs
 argumentlist        : elementarg { $$[ElementArgs] = {$1[ElementArg]}; }
                     | elementarg COMMA argumentlist { $$[ElementArgs] = $1[ElementArg]::$2[ElementArgs]; }
 
-elementarg         : eachprefix final cref 
+elementarg         : element_mod_rep { $$[ElementArg] = $1[ElementArg]; }
+                   | element_redec { $$[ElementArg] = $1[ElementArg]; }
+
+element_mod_rep   : element_mod { $$[ElementArg] = $1[ElementArg]; }
+                  | element_rep { $$[ElementArg] = $1[ElementArg]; }
+
+element_mod        : eachprefix final cref 
                       { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],NONE(),NONE()); }
-                    | eachprefix final cref modification 
+                   | eachprefix final cref modification 
                       { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],SOME($4[Modification]),NONE()); }
-                 
+                   | eachprefix final cref string
+                      { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],NONE(),SOME($4)); }
+                   | eachprefix final cref modification string
+                      { $$[ElementArg] = Absyn.MODIFICATION($2[Boolean],$1[Each],$3[ComponentRef],SOME($4[Modification]),SOME($5)); }
+
+
+element_rep       :  REPLACEABLE eachprefix final classelementspec 
+                   { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REPLACEABLE(),$2[Each],$4[ElementSpec],NONE(),info); }               
+
+element_redec     : REDECLARE eachprefix final classelementspec 
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }                   
                     
 eachprefix         : EACH { $$[Each]= Absyn.EACH(); }
                    | /* empty */ { $$[Each]= Absyn.NON_EACH(); }                    
@@ -588,6 +604,8 @@ elementAttr          : direction
                          { $$[ElementAttributes] = Absyn.ATTR(false,true,$2[Variability], $3[Direction],{}); }
                       | FLOW variability direction 
                          { $$[ElementAttributes] = Absyn.ATTR(true,false,$2[Variability], $3[Direction],{}); } 
+                      | FLOW direction 
+                         { $$[ElementAttributes] = Absyn.ATTR(true,false,Absyn.VAR(), $2[Direction],{}); } 
                       | FLOW  
                          { $$[ElementAttributes] = Absyn.ATTR(true,false,Absyn.VAR(),Absyn.BIDIR(),{}); } 
 
@@ -726,6 +744,7 @@ expElement          : number { $$[Exp] = $1[Exp]; }
                      | string { $$[Exp] = Absyn.STRING($1); }
                      | tuple  { $$[Exp] = $1[Exp]; }
                      | LBRACE explist2 RBRACE { $$[Exp] = Absyn.ARRAY($2[Exps]); }
+                     | LBRACE functionargs RBRACE { $$[Exp] = Absyn.CALL(Absyn.CREF_IDENT("array",{}),$2[FunctionArgs]); }
                      | LBRACK matrix RBRACK { $$[Exp] = Absyn.MATRIX($2[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | DER functioncall { $$[Exp] = Absyn.CALL(Absyn.CREF_IDENT("der",{}),$2[FunctionArgs]); }
