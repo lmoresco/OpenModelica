@@ -271,7 +271,7 @@ classes_list            : class2 SEMICOLON { $$[lstClass] = $1[Class]::{}; }
                                   end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                           */
 
-class2               : FINAL classprefix restriction IDENT classdef { (v1Boolean,v2Boolean) = $2[Boolean3]; 
+class2               : FINAL classprefix restriction IDENT classdef { (v1Boolean,v2Boolean) = $2[Boolean2]; 
                                  $$[Class] = Absyn.CLASS($4,true,v1Boolean,v2Boolean,$3[Restriction],$5[ClassDef],info); } 
                      | FINAL restriction IDENT classdef 
                          {  $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); } 
@@ -280,7 +280,7 @@ class2               : FINAL classprefix restriction IDENT classdef { (v1Boolean
 class                  : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                        | classprefix restriction IDENT classdef 
-                                { (v1Boolean,v2Boolean) = $1[Boolean3]; 
+                                { (v1Boolean,v2Boolean) = $1[Boolean2]; 
                                  $$[Class] = Absyn.CLASS($3,false,v1Boolean,v2Boolean,$2[Restriction],$4[ClassDef],info); }          
 
 classdef             : string ENDCLASS  
@@ -482,8 +482,8 @@ element             : componentclause
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"IMPORT",$1[ElementSpec],info,NONE()); }
                     | extends
                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"EXTENDS",$1[ElementSpec],info,NONE()); }     
-                    | FINAL finalElement 
-                        { $$[Element] = $2[Element]; }
+               //     | FINAL finalElement 
+               //         { $$[Element] = $2[Element]; }
                    
                     
 classElement2      : classelementspec  
@@ -491,25 +491,30 @@ classElement2      : classelementspec
                    | REDECLARE classelementspec  
                         { $$[Element] = Absyn.ELEMENT(false,SOME(Absyn.REDECLARE()),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
                    
-finalElement        : innerouter ident elementspec 
-	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$2[Ident],$3[ElementSpec],info,NONE()); }
-	                | ident elementspec 
-	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$1[Ident],$2[ElementSpec],info,NONE()); }
+//finalElement        : innerouter ident elementspec 
+//	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$2[Ident],$3[ElementSpec],info,NONE()); }
+//	                | ident elementspec 
+//	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$1[Ident],$2[ElementSpec],info,NONE()); }
 	              //  | elementspec // casues reduce/reduce conflicts
                   //      { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
 	                     
 
                      
-componentclause      : elementspec 
+componentclause      :  elementspec 
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
 	                  | innerouter elementspec 
-	                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
-	                    | redeclarekeywords final innerouter ident elementspec 
-	                        { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),$3[InnerOuter],$4[Ident],$5[ElementSpec],info,NONE()); }
-	                    | redeclarekeywords final ident elementspec 
-	                        { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),$3[Ident],$4[ElementSpec],info,NONE()); }
-                     
-	                  
+	                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"INNEROUTTER ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
+	                  | redeclarekeywords final innerouter elementspec 
+	                        { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),$3[InnerOuter],"REDE ELEMENTSPEC",$4[ElementSpec],info,NONE()); }
+	                  | redeclarekeywords final elementspec 
+	                       { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),"REDE ELEMENTSPEC",$3[ElementSpec],info,NONE()); }
+                       | FINAL elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"FINAL ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
+                     //  | FINAL ident elementspec 
+                     //   { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$2[Ident],$3[ElementSpec],info,NONE()); }
+                       | FINAL innerouter elementspec 
+                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$2[InnerOuter],"FINAL INNEROUTER ELEMENTSPEC",$3[ElementSpec],info,NONE()); }
+	                    
 componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}; }
                     | componentitem COMMA componentitems { $$[ComponentItems] = $1[ComponentItem]::$2[ComponentItems]; }
 
