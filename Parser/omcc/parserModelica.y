@@ -261,19 +261,27 @@ program             :  classes_list
 
 within              :  WITHIN path SEMICOLON { $$[Within] = Absyn.WITHIN($2[Path]); }
 
-classes_list            : class SEMICOLON { $$[lstClass] = $1[Class]::{}; } 
-                        | class SEMICOLON classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
+
+
+classes_list            : class2 SEMICOLON { $$[lstClass] = $1[Class]::{}; } 
+                        | class2 SEMICOLON classes_list { $$[lstClass] = $1[Class]::$2[lstClass]; }
                           /* restriction IDENT classdef T_END IDENT SEMICOLON
                                 { if (not stringEqual($2,$5) ) then print(Types.printInfoError(info) + " Error: The identifier at start and end are different '" + $2 + "'");
                                    true = ($2 == $5);
                                   end if; $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                           */
+
+class2               : FINAL classprefix restriction IDENT classdef { (v1Boolean,v2Boolean) = $2[Boolean3]; 
+                                 $$[Class] = Absyn.CLASS($4,true,v1Boolean,v2Boolean,$3[Restriction],$5[ClassDef],info); } 
+                     | FINAL restriction IDENT classdef 
+                         {  $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); } 
+                     | class { $$[Class] = $1[Class]; }             
                           
 class                  : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                        | classprefix restriction IDENT classdef 
-                                { (v1Boolean,v2Boolean,v3Boolean) = $1[Boolean3]; 
-                                 $$[Class] = Absyn.CLASS($3,v3Boolean,v1Boolean,v2Boolean,$2[Restriction],$4[ClassDef],info); }          
+                                { (v1Boolean,v2Boolean) = $1[Boolean3]; 
+                                 $$[Class] = Absyn.CLASS($3,false,v1Boolean,v2Boolean,$2[Restriction],$4[ClassDef],info); }          
 
 classdef             : string ENDCLASS  
                           { $$[ClassDef] = Absyn.PARTS({},{},SOME($1)); } 
@@ -288,16 +296,14 @@ classdef             : string ENDCLASS
                      | classdefderived   
                           { $$[ClassDef] = $1[ClassDef]; };
 
-
-classprefix            : FINAL encapsulated partial  
-                         { $$[Boolean3] = (true,$2[Boolean],$3[Boolean]); }
-                        | ENCAPSULATED partial   
-                         { $$[Boolean3] = (false,true,$2[Boolean]); }
+classprefix            : ENCAPSULATED partial   
+                         { $$[Boolean2] = (true,$2[Boolean]); }
                         | PARTIAL   
-                         { $$[Boolean3] = (false,false,true); }
+                         { $$[Boolean2] = (false,true); }
 
-encapsulated           : ENCAPSULATED { $$[Boolean] = true;   }
-                        | /* empty */ { $$[Boolean] = false; }
+
+// encapsulated           : ENCAPSULATED { $$[Boolean] = true;   }
+//                        | /* empty */ { $$[Boolean] = false; } 
                         
 partial                : PARTIAL { $$[Boolean] = true;   }
                         | /* empty */ { $$[Boolean] = false; }
