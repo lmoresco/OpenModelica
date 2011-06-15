@@ -2368,7 +2368,7 @@ algorithm
         ret_2 = System.escapedString(Tpl.textString(txt_1));
         txt = Tpl.writeStr(txt, ret_2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",\""));
-        ret_3 = System.escapedString(i_var_comment);
+        ret_3 = Util.escapeModelicaStringToCString(i_var_comment);
         txt = Tpl.writeStr(txt, ret_3);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\",{"));
         txt = infoArgs(txt, i_info);
