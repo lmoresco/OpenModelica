@@ -272,16 +272,16 @@ classes_list            : class2 SEMICOLON { $$[lstClass] = $1[Class]::{}; }
                           */
 
 class2               : FINAL classprefix restriction IDENT classdef { (v1Boolean,v2Boolean) = $2[Boolean2]; 
-                                 $$[Class] = Absyn.CLASS($4,true,v1Boolean,v2Boolean,$3[Restriction],$5[ClassDef],info); } 
+                                 $$[Class] = Absyn.CLASS($4,v2Boolean,true,v1Boolean,$3[Restriction],$5[ClassDef],info); } 
                      | FINAL restriction IDENT classdef 
-                         {  $$[Class] = Absyn.CLASS($3,true,false,false,$2[Restriction],$4[ClassDef],info); } 
+                         {  $$[Class] = Absyn.CLASS($3,false,true,false,$2[Restriction],$4[ClassDef],info); } 
                      | class { $$[Class] = $1[Class]; }             
                           
 class                  : restriction IDENT classdef 
                                 { $$[Class] = Absyn.CLASS($2,false,false,false,$1[Restriction],$3[ClassDef],info); }
                        | classprefix restriction IDENT classdef 
                                 { (v1Boolean,v2Boolean) = $1[Boolean2]; 
-                                 $$[Class] = Absyn.CLASS($3,false,v1Boolean,v2Boolean,$2[Restriction],$4[ClassDef],info); }          
+                                 $$[Class] = Absyn.CLASS($3,v2Boolean,false,v1Boolean,$2[Restriction],$4[ClassDef],info); }          
 
 classdef             : string ENDCLASS  
                           { $$[ClassDef] = Absyn.PARTS({},{},SOME($1)); } 
@@ -565,7 +565,18 @@ element_rep       :  REPLACEABLE eachprefix final classelementspec
                    { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REPLACEABLE(),$2[Each],$4[ElementSpec],NONE(),info); }               
 
 element_redec     : REDECLARE eachprefix final classelementspec 
-                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }                   
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }
+                   | REDECLARE eachprefix final elementspec2
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }     
+
+elementspec2          :  elementAttr typespec  componentitems2 // arraydim from typespec should be in elementAttr arraydim
+                        { ($1[ElementAttributes],$2[TypeSpec]) = fixArray($1[ElementAttributes],$2[TypeSpec]);
+                          $$[ElementSpec] = Absyn.COMPONENTS($1[ElementAttributes],$2[TypeSpec],$3[ComponentItems]); }
+                      |  typespec  componentitems2 // arraydim from typespec should be in elementAttr arraydim
+                        { (v1ElementAttributes,$1[TypeSpec]) = fixArray(Absyn.ATTR(false,false,Absyn.VAR(), Absyn.BIDIR(),{}),$1[TypeSpec]); 
+                         $$[ElementSpec] = Absyn.COMPONENTS(v1ElementAttributes,$1[TypeSpec],$2[ComponentItems]); }
+                       
+componentitems2	 : component comment   { $$[ComponentItems] = {Absyn.COMPONENTITEM($1[Component],NONE(),SOME($2[Comment]))}; }                          
                     
 eachprefix         : EACH { $$[Each]= Absyn.EACH(); }
                    | /* empty */ { $$[Each]= Absyn.NON_EACH(); }                    
@@ -589,14 +600,14 @@ import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
                      | IMPORT path STAR_EW { $$[Import] = Absyn.UNQUAL_IMPORT($2[Path]); }
                      | IMPORT ident EQUALS path { $$[Import] = Absyn.NAMED_IMPORT($2[Ident],$4[Path]); }
 
-extends              : EXTENDS path  
-                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},NONE()); }
-                     | EXTENDS path annotation 
-                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],{},SOME($3[Annotation])); }  
-                     | EXTENDS path LPAR argumentlist RPAR 
-                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],NONE()); }
-                     | EXTENDS path LPAR argumentlist RPAR annotation
-                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],SOME($3[Annotation])); }  
+extends              : EXTENDS path elementargs2 
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$3[ElementArgs],NONE()); }
+                     | EXTENDS path elementargs2 annotation 
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$3[ElementArgs],SOME($4[Annotation])); }  
+                 //    | EXTENDS path LPAR argumentlist RPAR 
+                 //      { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],NONE()); }
+                //     | EXTENDS path LPAR argumentlist RPAR annotation
+                //       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],SOME($3[Annotation])); }  
                      
 elementspec          :  elementAttr typespec  componentitems // arraydim from typespec should be in elementAttr arraydim
                         { ($1[ElementAttributes],$2[TypeSpec]) = fixArray($1[ElementAttributes],$2[TypeSpec]);
@@ -759,6 +770,7 @@ expElement          : number { $$[Exp] = $1[Exp]; }
                      | LBRACK matrix RBRACK { $$[Exp] = Absyn.MATRIX($2[Matrix]); }
                      | cref functioncall { $$[Exp] = Absyn.CALL($1[ComponentRef],$2[FunctionArgs]); }
                      | DER functioncall { $$[Exp] = Absyn.CALL(Absyn.CREF_IDENT("der",{}),$2[FunctionArgs]); }
+                     | INITIAL functioncall { $$[Exp] = Absyn.CALL(Absyn.CREF_IDENT("initial",{}),$2[FunctionArgs]); }
                      | LPAR exp RPAR { $$[Exp] = $2[Exp]; }
                      | T_END { $$[Exp] = Absyn.END(); }
 
