@@ -22,6 +22,7 @@ endwhen        "end"{whitespace}"when"
 endmatch        "end"{whitespace}"match"
 endmatchcontinue  "end"{whitespace}"matchcontinue"
 endident          "end"{whitespace}{ident}
+sescape        "\\\""
 
 /* Lex style lexical syntax of tokens in the MODELICA language */
         
@@ -169,7 +170,7 @@ endident          "end"{whitespace}{ident}
              }
 <c_string>
 {
-    "\\\""    { keepBuffer; }
+    "\\"+"\""    { keepBuffer; }
     "\""    { BEGIN(INITIAL) return STRING; }
     [^\n]   {keepBuffer;};
     \n       {keepBuffer;};
