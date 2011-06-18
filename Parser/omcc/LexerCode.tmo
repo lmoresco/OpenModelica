@@ -34,14 +34,13 @@ import %ParseTable%;
   algorithm
     %Lexer%.ENV(startSt=mm_startSt,currSt=mm_currSt,pos=mm_pos,sPos=mm_sPos,ePos=mm_ePos,
      linenr=mm_linenr,buff=buffer,bkBuf=bkBuffer,isDebugging=debug,fileName=fileNm) := env;
-     buffer := listReverse(buffer);
-     tb := buffer;
-     sToken := %Lexer%.printBuffer(tb,"");
+     //buffer := listReverse(buffer);
+     
      tokName := listArray(%ParseTable%.yytname);
      nameSpan := %nameSpan%;
      tb := buffer;
      //(tb,mm_flinenr) := %Lexer%.lineUpd(tb,mm_flinenr);
-     info := %Lexer%.getInfo(tb,mm_sPos,mm_linenr,fileNm);
+    // info := %Lexer%.getInfo(tb,mm_sPos,mm_linenr,fileNm);
      //info := OMCCTypes.INFO(fileNm,false,mm_linenr,mm_sPos,mm_flinenr,mm_pos);
     // print("\n" + intString(act) + ":");
      act2 := act;
@@ -53,12 +52,16 @@ import %ParseTable%;
        case (_)
          equation
           // print("[enter else]");
+           tb = buffer;
+           sToken = %Lexer%.printBuffer(tb);
            print("ERROR TOKEN NOT FOUND:['" + sToken + "' TK:" + intString(act)  + "," + tokName[act2] + "]");
-           tok = OMCCTypes.TOKEN(tokName[act2],act,buffer,info);
+           tok = OMCCTypes.TOKEN(tokName[act2],act,listReverse(buffer),info);
          then (NONE());
      end matchcontinue;
      env2 := %Lexer%.ENV(mm_startSt,mm_startSt,mm_pos,mm_sPos,mm_sPos,mm_linenr,bufferRet,bkBuffer,{mm_startSt},debug,fileNm);
      if (debug==true) then 
+        tb := buffer;
+        sToken := %Lexer%.printBuffer(tb);
        print("\n[TOKEN:'" + sToken + "' ("+ intString(mm_linenr) + ":" + intString(mm_sPos) +") id:" + intString(act2)  + "]");
      end if;   
   end action;  
