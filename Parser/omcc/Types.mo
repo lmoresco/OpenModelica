@@ -126,22 +126,13 @@ function printTokens
     input String cBuff;
     output String outList;
     list<Token> inList2;
+    Token c;
    algorithm 
-    (outList) := match(inList,cBuff)
-      local
-        Token c;
-        String new,tout;
-        list<Token> rest;
-      case ({},_) 
-        then (cBuff);
-      else
-        equation
-           c::rest = inList;
-           //new = cBuff + printShortToken2(c);
-           new = cBuff + printToken(c);
-           (tout) = printTokens(rest,new);
-        then (tout);
-     end match;     
+     outList := "";
+     while (Util.isListEmpty(inList)==false) loop
+	     c::inList := inList;
+	     outList := outList + printToken(c);
+     end while; 
   end printTokens; 
   
  function countTokens
