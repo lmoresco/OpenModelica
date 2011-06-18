@@ -362,14 +362,21 @@ restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[E
                         | T_ALGORITHM { $$[ClassPart] = Absyn.ALGORITHMS({}); }
                         | T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.ALGORITHMS($1[AlgorithmItems]); } 
                         | INITIAL T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.INITIALALGORITHMS($1[AlgorithmItems]); }
+                        | EXTERNAL SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL(Absyn.EXTERNALDECL(NONE(),NONE(),NONE(),{},NONE()),NONE()); }
                         | EXTERNAL externalDecl SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],NONE()); }  
                         | EXTERNAL externalDecl SEMICOLON annotation SEMICOLON { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],SOME($3[Annotation])); } 
 
 externalDecl           : string { $$[ExternalDecl] = Absyn.EXTERNALDECL(NONE(),SOME($1),NONE(),{},NONE()); }
+                       | string annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(NONE(),SOME($1),NONE(),{},SOME($2[Annotation])); }
                        | string cref EQUALS ident LPAR explist2 RPAR  { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($4[Ident]),SOME($1),SOME($2[ComponentRef]),$6[Exps],NONE()); }
                        | string cref EQUALS ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($4[Ident]),SOME($1),SOME($2[ComponentRef]),$6[Exps],SOME($8[Annotation])); }
                        | string ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($2[Ident]),SOME($1),NONE(),$4[Exps],SOME($6[Annotation])); }
                        | string ident LPAR explist2 RPAR { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($2[Ident]),SOME($1),NONE(),$4[Exps],NONE()); }
+                       | cref EQUALS ident LPAR explist2 RPAR  { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($3[Ident]),NONE(),SOME($1[ComponentRef]),$5[Exps],NONE()); }
+                       | cref EQUALS ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($3[Ident]),NONE(),SOME($1[ComponentRef]),$5[Exps],SOME($7[Annotation])); }
+                       | ident LPAR explist2 RPAR annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($1[Ident]),NONE(),NONE(),$3[Exps],SOME($5[Annotation])); }
+                       | ident LPAR explist2 RPAR { $$[ExternalDecl] = Absyn.EXTERNALDECL(SOME($1[Ident]),NONE(),NONE(),$3[Exps],NONE()); }
+
 
 /* ALGORITHMS */
 
