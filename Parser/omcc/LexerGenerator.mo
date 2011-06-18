@@ -158,7 +158,7 @@ package LexerGenerator
 		         cp := "\n         equation";
 				     resTable := cp::resTable;
 		        end if;
-            cp := "\n           bufferRet = listReverse(buffer);";
+            cp := "\n           bufferRet = buffer;";
 				    resTable := cp::resTable;
 				end if;
 				 
@@ -180,7 +180,9 @@ package LexerGenerator
 				       print("\nFound token:" + cp);
 				    end if;    
 		        resTable := cp::resTable;
-		        cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,buffer,info);\n         then (SOME(tok));\n ";
+		        cp := ";\n           info = Lexer"+ outFileName +".getInfo(tb,mm_sPos,mm_linenr,fileNm)";
+		        resTable := cp::resTable;
+		        cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,listReverse(buffer),info);\n         then (SOME(tok));\n ";
 		        resTable := cp::resTable;
 				else
 				    //print("NONE");
