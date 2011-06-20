@@ -350,7 +350,7 @@ classparts           : classpart { $$[ClassParts] = $1[ClassPart]::{}; }
 classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                      | restClass { $$[ClassPart] = $1[ClassPart]; }
 
-                     
+      
                      
 restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
                         | PUBLIC  { $$[ClassPart] = Absyn.PUBLIC({}); } // adds shift/reduce conflicts
@@ -387,11 +387,11 @@ algorithmitem           : algorithm comment
                           { $$[AlgorithmItem] = Absyn.ALGORITHMITEM($1[Algorithm],SOME($2[Comment]),info); }  
 
 algorithm              :  simpleExp ASSIGN exp  // TOREV: cref or any exp?  { $$[Algorithm] = Absyn.ALG_ASSIGN(Absyn.CREF($1[ComponentRef]),$2[Exp]); }
-                            { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$2[Exp]); }
+                            { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$3[Exp]); }
                         | cref functioncall 
                             { $$[Algorithm] = Absyn.ALG_NORETCALL($1[ComponentRef],$2[FunctionArgs]); }     
-                        | tuple ASSIGN exp
-                            { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$3[Exp]); }
+                    //    | tuple ASSIGN exp
+                    //        { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$3[Exp]); }
                         | RETURN  
                             { $$[Algorithm] = Absyn.ALG_RETURN(); }
                         | BREAK  
@@ -462,10 +462,18 @@ foriterators          : foriterator { $$[ForIterators] = $1[ForIterator]::{}; }
 foriterator           : IDENT { $$[ForIterator] = Absyn.ITERATOR($1,NONE(),NONE()); }
                       | IDENT T_IN exp { $$[ForIterator] = Absyn.ITERATOR($1,NONE(),SOME($3[Exp])); }
 
-if_equation           : IF exp THEN equationsection ENDIF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},{}); } 
-                      | IF exp THEN equationsection ELSE equationsection ENDIF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},$6[EquationItems]); }
-                      | IF exp THEN equationsection elseifs ENDIF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],{}); }
-                      | IF exp THEN equationsection elseifs ELSE equationsection ENDIF { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],$7[EquationItems]); }
+if_equation           : IF exp THEN equationsection ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},{}); } 
+                      | IF exp THEN equationsection ELSE equationsection ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},$6[EquationItems]); }
+                      | IF exp THEN equationsection ELSE ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],{},{}); }
+                      | IF exp THEN equationsection elseifs ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],{}); }
+                      | IF exp THEN equationsection elseifs ELSE equationsection ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],$7[EquationItems]); }
+                      | IF exp THEN equationsection elseifs ELSE ENDIF 
+                           { $$[Equation] = Absyn.EQ_IF($2[Exp],$4[EquationItems],$5[Elseifs],{}); }
 
 elseifs               :  elseif { $$[Elseifs] = $1[Elseif]::{}; }
                         | elseif elseifs { $$[Elseifs] = $1[Elseif]::$2[Elseifs]; }
@@ -489,8 +497,11 @@ element             : componentclause
                         { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"IMPORT",$1[ElementSpec],info,NONE()); }
                     | extends
                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"EXTENDS",$1[ElementSpec],info,NONE()); }     
-               //     | FINAL finalElement 
-               //         { $$[Element] = $2[Element]; }
+                    | unitclause
+                        { $$[Element] = $1[Element]; }
+
+unitclause         : DEFINEUNIT ident { $$[Element] = Absyn.DEFINEUNIT($2[Ident],{}); }
+                   | DEFINEUNIT ident LPAR namedargs RPAR { $$[Element] = Absyn.DEFINEUNIT($2[Ident],$4[NamedArgs]); }
                    
                     
 classElement2      : classelementspec  
@@ -646,7 +657,9 @@ variability          : PARAMETER { $$[Variability] = Absyn.PARAM(); }
 
 direction           : T_INPUT { $$[Direction] = Absyn.INPUT(); } 
                      | T_OUTPUT { $$[Direction] = Absyn.OUTPUT(); }
-                    // | /* empty */ { $$[Direction] = Absyn.BIDIR(); }              
+                    // | /* empty */ { $$[Direction] = Absyn.BIDIR(); }     
+
+
 
 /* Type specification */
 
@@ -674,14 +687,16 @@ functioncall        : LPAR functionargs RPAR { $$[FunctionArgs] = $1[FunctionArg
 functionargs        : namedargs 
                        { $$[FunctionArgs] = Absyn.FUNCTIONARGS({},$1[NamedArgs]); }
                     | functionargs2 { $$[FunctionArgs]= $1[FunctionArgs]; } 
+                    | functionargs3 { $$[FunctionArgs]= $1[FunctionArgs]; } 
                     
+               
                      
-functionargs2       : functionargs3 { $$[FunctionArgs]= $1[FunctionArgs]; } 
-                    | explist2 
+functionargs2       : explist2  
                        { $$[FunctionArgs] = Absyn.FUNCTIONARGS($1[Exps],{}); }
-                    | explist2 COMMA namedargs // TODO: Test for LALR grammar, may not work shift/reduce conflict 
-                       { $$[FunctionArgs] = Absyn.FUNCTIONARGS($1[Exps],$2[NamedArgs]); } 
-                    
+                    | explist2 COMMA namedargs 
+                       { $$[FunctionArgs] = Absyn.FUNCTIONARGS($1[Exps],$3[NamedArgs]); } 
+
+                  
               
 functionargs3       :  exp FOR foriterators  
                        { $$[FunctionArgs] = Absyn.FOR_ITER_FARG($1[Exp],$3[ForIterators]); } 
@@ -794,7 +809,8 @@ explist             : exp COMMA exp { $$[Exps] = {$1[Exp],$3[Exp]};  }
                     | /* empty */ { $$[Exps] = {}; }
 
 explist2            : exp  { $$[Exps] = {$1[Exp]};  }
-                    | exp COMMA explist2 { $$[Exps] = $1[Exp]::$3[Exps]; }
+                   // | exp COMMA explist2 { $$[Exps] = $1[Exp]::$3[Exps]; } //TODO:Listreverse
+                    | explist2 COMMA exp { $$[Exps] = listReverse($3[Exp]::listReverse($1[Exps])); } //TODO:Listreverse
                     | /* empty */ { $$[Exps] = {}; }
                     
 cref                :  ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
