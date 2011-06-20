@@ -15,6 +15,7 @@ digits       {digit}+
 exponent     ([e]|[E])([+]|[-])?{digits}
 real         {digits}[\.]({digits})?({exponent})? 
 real2        {digits}{exponent}
+real3        [\.]{digits}({exponent})? 
 endif        "end"{whitespace}"if"
 endfor        "end"{whitespace}"for"
 endwhile        "end"{whitespace}"while"
@@ -33,6 +34,7 @@ sescape        "\\\""
 {whitespace} ;
 {real}      return UNSIGNED_REAL;
 {real2}      return UNSIGNED_REAL;
+{real3}      return UNSIGNED_REAL;
 {endif}     return ENDIF;
 {endfor}     return ENDFOR;
 {endwhile}     return ENDWHILE;
@@ -170,7 +172,8 @@ sescape        "\\\""
              }
 <c_string>
 {
-    "\\"+"\""    { keepBuffer; }
+    "\\"+"\"" { keepBuffer; }
+    "\\"+"\\" { keepBuffer; }
     "\""    { BEGIN(INITIAL) return STRING; }
     [^\n]   {keepBuffer;};
     \n       {keepBuffer;};
