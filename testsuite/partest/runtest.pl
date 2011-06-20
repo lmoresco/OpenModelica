@@ -181,6 +181,7 @@ sub exit_sandbox {
 sub needs_sandbox {
   given($test) {
     when ("CheckSourcesForTabs.mos") { return 0; }
+    when ("testCompileInteractive.mos") { return 0; }
     default { return 1; }
   }
 }

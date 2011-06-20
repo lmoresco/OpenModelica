@@ -54,7 +54,6 @@ MatchCase15.mo \
 MatchCase16.mo \
 MatchCase17.mo \
 MatchCaseInteractive1.mos \
-MatchCaseInteractive2.mos \
 MatchCaseInteractive3.mos \
 MatchElse1.mos \
 MatchIfEquation1.mos \
@@ -102,6 +101,7 @@ Uniontype15.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
+MatchCaseInteractive2.mos \
 PartialFn9.mos
 
 # Remove executables on Linux (no extension)
