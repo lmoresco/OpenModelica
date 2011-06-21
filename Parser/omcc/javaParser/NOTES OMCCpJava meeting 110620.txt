@@ -1,0 +1,182 @@
+
+Notes.  June 20, 2011.
+
+Skype Meeting regarding generation of Java parsers from 
+Modelica grammar + AST building semantic actions.
+
+Peter Fritzson
+Chris Paredis
+Edgar Lopez
+Axel Reichwein
+
+
+Summary of Plan (from below)
+----------------------------
+
+PeterF:  
+
+Lets start with a cooperation between Axel and Edgar.
+
+- Scanner core routine, translated by Axel into Java, help by Edgar
+- parser core routine, translated by Axel into Java, help by Edgar
+- (The error handling routines can be done later)
+- Some auxiliary help functions, rewritten in Java by Axel, help by Edgar.
+ 
+
+- We will need an OMCCp generator option that generates Java code
+instead of MetaModelica code. These include semantic action routines
+and the files containing the tables.
+
+
+- The Generator should have a Java generation option. Work started by Edgar.
+
+
+- Axel Reichwein will need a CodeBeamer account/ID for SVN
+There should be a OMCCpJava directory under Parser  OMCCp  (or something similar)
+
+
+
+
+Discussion:
+-----------
+
+
+Chris:
+
+This fits into the SysML2Modelica effort that we are involved it.
+
+Created a transformation approach from SysML to Modelica, profile.
+
+The implementation from .mo file, using Martin Sjölunds parser,
+generates a textual AST file. The MOAST file is parsed into
+an XMI format, corresponding to 
+
+Equations are unparsed into a String-based
+
+QVTO  Qvt will convert the XMI file into an Eclipse XMI file that fits the SysML-to-Modelica.
+
+Just reading and writing these files take quite a bit of time.
+
+Ideally going from the .mo file into UML
+
+Could take an Eclipse based MetaModelica  
+
+Customize the parser.   When I looked at the ANTLR files (C++) it looked
+relatively easy to customize.
+
+
+PeterF:
+
+Right now we are using ANTL3, but would like to switch to OMCCp in the future, because:
+- direct building of MetaModelica AST instead of in C++ avoids errors.
+- Better error handling than in ANTLR3.
+
+
+
+
+Axel:
+I Loaded the XLAST in Java, and converted it
+PeterF: You did not generate another XMI text file?
+
+XMI file is an XML file (in text), You can easily load it
+and models.
+
+Axel: We just generated a Java API for this XMI document.
+
+PeterF: The XMI is rather verbose.  The OpenModelica AST textual file is also verbose.
+
+PeterF: We just use Bison to generate the parse tables, that
+
+Edgar: The whole pa
+
+
+Generating represntation in Eclipse MOdeling Framework
+
+PeterF: Generating Java code for AST building.
+
+
+Chris: 
+Either
+ 1) the AST representation, same as OpenModelica,
+or 2) Skip the equation parsing part.
+3) or build the Eclipse representation
+
+
+Chris: We go from the AST representation
+
+2nd step QVTO transformation, slightly modified.
+
+
+Chris: We will have an Eclipse-based MetaModelica for the OpenModelica AST.
+
+
+Chris:
+One thing that we anticipate is that we will need to add annotations to Modelica,
+to support round-trip.
+
+PeterF: Annotations are also parsed.  Also tool specific annotations are
+supported.
+
+
+PeterF:  
+
+Lets start with a cooperation between Axel and Edgar.
+
+- Scanner core routine, translated by Axel into Java, help by Edgar
+- parser core routine, translated by Axel into Java, help by Edgar
+- (The error handling routines can be done later)
+- Some auxiliary help functions, rewritten in Java by Axel, help by Edgar.
+ 
+
+- We will need an OMCCp generator option that generates Java code
+instead of MetaModelica code. These include semantic action routines
+and the files containing the tables.
+
+
+- The Generator should have a Java generation option. Work started by Edgar.
+
+
+Axel:
+if we use the same OpenModelica AST tree, we
+
+Chris:
+We go straight from a .mo file into an EMF. Once we have it there.
+
+Chris:
+I agree with Peter, taking one step at a time.
+Once you understand it, you.
+
+PeterF:
+This is just the first step.
+
+
+PeterF:
+How much is the SysMLMOdelica metaModel changed.
+
+Chris:
+A number of changes. The SysMLforModelica collapes expressions into text nodes.
+Multiplications are also opaque expressions.
+
+Axel: A simpler representation. Import is not there at all.
+Chris:  From a pure semantics.
+
+PeterF: Yes, but import can also have some structuring significance.
+Inheritance also.
+
+
+PeterF: Some of the SysMLforModelica simplifications might be premature.
+
+Chris: If we don't include the import.
+
+
+Chris: Can we have another branch.
+
+Edgar: We can create another subdirectory on SVN under the OMCCp for the Java.
+
+PEterF: It should be a JavaOMCCp subdirectory under OMCCp
+
+PeterF: Axel and Edgar will need to have several Skype meetings and
+email exchanges
+
+
+
