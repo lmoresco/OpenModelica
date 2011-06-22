@@ -3,6 +3,7 @@ TEST = ../rtest
 
 TESTFILES = twotankmodel.mos \
 bouncingball.mos \
+testModelicaML.mos \
 watchdog.mos \
 trafficlight.mos 
 

@@ -13,7 +13,7 @@ algorithm
 	sum := 0;
   i := 1;
   delta := exp(-0.01 * i);
-  while delta >= eps loop
+  while noEvent(delta >= eps) loop
     sum := sum + delta;
     i := i + 1;
     delta := exp(-0.01 * i);
