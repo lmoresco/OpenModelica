@@ -73,6 +73,7 @@ type EqMod=Absyn.EqMod;
 type ComponentCondition = Absyn.ComponentCondition;
 type ExternalDecl = Absyn.ExternalDecl;
 type Annotation = Absyn.Annotation;
+type ConstrainClass= Absyn.ConstrainClass;
 
 constant list<String> lstSemValue3 = {};
 
@@ -352,19 +353,29 @@ classpart           : elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItem
 
       
                      
-restClass              : PUBLIC elementItems { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
-                        | PUBLIC  { $$[ClassPart] = Absyn.PUBLIC({}); } // adds shift/reduce conflicts
-                        | PROTECTED elementItems { $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
-                        |  PROTECTED  { $$[ClassPart] = Absyn.PROTECTED({}); }  // adds shift/reduce conflicts
-                        | EQUATION { $$[ClassPart] = Absyn.EQUATIONS({}); }
-                        | EQUATION equationsection { $$[ClassPart] = Absyn.EQUATIONS($1[EquationItems]); }
-                        | INITIAL EQUATION equationsection { $$[ClassPart] = Absyn.INITIALEQUATIONS($1[EquationItems]); }  
-                        | T_ALGORITHM { $$[ClassPart] = Absyn.ALGORITHMS({}); }
-                        | T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.ALGORITHMS($1[AlgorithmItems]); } 
-                        | INITIAL T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.INITIALALGORITHMS($1[AlgorithmItems]); }
-                        | EXTERNAL SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL(Absyn.EXTERNALDECL(NONE(),NONE(),NONE(),{},NONE()),NONE()); }
+restClass              : PUBLIC optelement { $$[ClassPart] = Absyn.PUBLIC($1[ElementItems]); }
+                        | PROTECTED optelement { $$[ClassPart] = Absyn.PROTECTED($1[ElementItems]); } 
+                        | EQUATION optequationsection { $$[ClassPart] = Absyn.EQUATIONS($1[EquationItems]); }
+                        |  T_ALGORITHM optalgorithmsection { $$[ClassPart] = Absyn.ALGORITHMS($1[AlgorithmItems]); } 
+                        | initialClass { $$[ClassPart]=$1[ClassPart]; }
+                        | external { $$[ClassPart]=$1[ClassPart]; }
+
+initialClass        :  INITIAL EQUATION equationsection { $$[ClassPart] = Absyn.INITIALEQUATIONS($1[EquationItems]); }  
+                     | INITIAL T_ALGORITHM algorithmsection { $$[ClassPart] = Absyn.INITIALALGORITHMS($1[AlgorithmItems]); }
+
+optelement             : elementItems { $$[ElementItems]=$1[ElementItems]; }
+                       | /* empty */ { $$[ElementItems]={}; }
+
+optequationsection     : equationsection { $$[EquationItems]=$1[EquationItems]; }
+                       | /* empty */ { $$[EquationItems]={}; }
+
+optalgorithmsection    : algorithmsection { $$[AlgorithmItems]=$1[AlgorithmItems]; }
+                       | /* empty */ { $$[AlgorithmItems]={}; }
+
+external               : EXTERNAL SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL(Absyn.EXTERNALDECL(NONE(),NONE(),NONE(),{},NONE()),NONE()); }
                         | EXTERNAL externalDecl SEMICOLON  { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],NONE()); }  
-                        | EXTERNAL externalDecl SEMICOLON annotation SEMICOLON { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],SOME($3[Annotation])); } 
+                        | EXTERNAL externalDecl SEMICOLON annotation SEMICOLON { $$[ClassPart] = Absyn.EXTERNAL($2[ExternalDecl],SOME($3[Annotation])); }
+                        
 
 externalDecl           : string { $$[ExternalDecl] = Absyn.EXTERNALDECL(NONE(),SOME($1),NONE(),{},NONE()); }
                        | string annotation { $$[ExternalDecl] = Absyn.EXTERNALDECL(NONE(),SOME($1),NONE(),{},SOME($2[Annotation])); }
@@ -386,12 +397,10 @@ algorithmsection        :  algorithmitem SEMICOLON { $$[AlgorithmItems] = $1[Alg
 algorithmitem           : algorithm comment  
                           { $$[AlgorithmItem] = Absyn.ALGORITHMITEM($1[Algorithm],SOME($2[Comment]),info); }  
 
-algorithm              :  simpleExp ASSIGN exp  // TOREV: cref or any exp?  { $$[Algorithm] = Absyn.ALG_ASSIGN(Absyn.CREF($1[ComponentRef]),$2[Exp]); }
+algorithm              :  simpleExp ASSIGN exp  
                             { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$3[Exp]); }
                         | cref functioncall 
                             { $$[Algorithm] = Absyn.ALG_NORETCALL($1[ComponentRef],$2[FunctionArgs]); }     
-                    //    | tuple ASSIGN exp
-                    //        { $$[Algorithm] = Absyn.ALG_ASSIGN($1[Exp],$3[Exp]); }
                         | RETURN  
                             { $$[Algorithm] = Absyn.ALG_RETURN(); }
                         | BREAK  
@@ -505,32 +514,26 @@ unitclause         : DEFINEUNIT ident { $$[Element] = Absyn.DEFINEUNIT($2[Ident]
                    
                     
 classElement2      : classelementspec  
-                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"??",$1[ElementSpec],info,NONE()); }  
                    | REDECLARE classelementspec  
                         { $$[Element] = Absyn.ELEMENT(false,SOME(Absyn.REDECLARE()),Absyn.NOT_INNER_OUTER(),"CLASS",$1[ElementSpec],info,NONE()); }  
                    
-//finalElement        : innerouter ident elementspec 
-//	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),$1[InnerOuter],$2[Ident],$3[ElementSpec],info,NONE()); }
-//	                | ident elementspec 
-//	                        { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$1[Ident],$2[ElementSpec],info,NONE()); }
-	              //  | elementspec // casues reduce/reduce conflicts
-                  //      { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
-	                     
+                   
 
                      
 componentclause      :  elementspec 
-                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"ELEMENTSPEC",$1[ElementSpec],info,NONE()); }
+                        { $$[Element] = Absyn.ELEMENT(false,NONE(),Absyn.NOT_INNER_OUTER(),"component",$1[ElementSpec],info,NONE()); }
 	                  | innerouter elementspec 
 	                        { $$[Element] = Absyn.ELEMENT(false,NONE(),$1[InnerOuter],"INNEROUTTER ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
 	                  | redeclarekeywords final innerouter elementspec 
 	                        { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),$3[InnerOuter],"REDE ELEMENTSPEC",$4[ElementSpec],info,NONE()); }
 	                  | redeclarekeywords final elementspec 
 	                       { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),"REDE ELEMENTSPEC",$3[ElementSpec],info,NONE()); }
-                       | FINAL elementspec 
+                       | redeclarekeywords final elementspec constraining_clause
+	                       { $$[Element] = Absyn.ELEMENT($2[Boolean],SOME($1[RedeclareKeywords]),Absyn.NOT_INNER_OUTER(),"REDE ELEMENTSPEC",$3[ElementSpec],info,SOME($4[ConstrainClass])); }
+                      | FINAL elementspec 
                         { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),"FINAL ELEMENTSPEC",$2[ElementSpec],info,NONE()); }
-                     //  | FINAL ident elementspec 
-                     //   { $$[Element] = Absyn.ELEMENT(true,NONE(),Absyn.NOT_INNER_OUTER(),$2[Ident],$3[ElementSpec],info,NONE()); }
-                       | FINAL innerouter elementspec 
+                      | FINAL innerouter elementspec 
                         { $$[Element] = Absyn.ELEMENT(true,NONE(),$2[InnerOuter],"FINAL INNEROUTER ELEMENTSPEC",$3[ElementSpec],info,NONE()); }
 	                    
 componentitems      : componentitem { $$[ComponentItems] = $1[ComponentItem]::{}; }
@@ -580,12 +583,20 @@ element_mod        : eachprefix final cref
 
 
 element_rep       :  REPLACEABLE eachprefix final classelementspec 
-                   { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REPLACEABLE(),$2[Each],$4[ElementSpec],NONE(),info); }               
+                   { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REPLACEABLE(),$2[Each],$4[ElementSpec],NONE(),info); }
+                   | REPLACEABLE eachprefix final elementspec2 
+                   { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REPLACEABLE(),$2[Each],$4[ElementSpec],NONE(),info); }
+                   |  REPLACEABLE eachprefix final classelementspec constraining_clause
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],SOME($5[ConstrainClass]),info); }
+                   | REPLACEABLE eachprefix final elementspec2 constraining_clause
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],SOME($5[ConstrainClass]),info); }    
+             
 
 element_redec     : REDECLARE eachprefix final classelementspec 
                      { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }
                    | REDECLARE eachprefix final elementspec2
-                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }     
+                     { $$[ElementArg] = Absyn.REDECLARATION($3[Boolean],Absyn.REDECLARE(),$2[Each],$4[ElementSpec],NONE(),info); }   
+  
 
 elementspec2          :  elementAttr typespec  componentitems2 // arraydim from typespec should be in elementAttr arraydim
                         { ($1[ElementAttributes],$2[TypeSpec]) = fixArray($1[ElementAttributes],$2[TypeSpec]);
@@ -621,11 +632,10 @@ import              : IMPORT path  { $$[Import] = Absyn.QUAL_IMPORT($2[Path]); }
 extends              : EXTENDS path elementargs2 
                        { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$3[ElementArgs],NONE()); }
                      | EXTENDS path elementargs2 annotation 
-                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$3[ElementArgs],SOME($4[Annotation])); }  
-                 //    | EXTENDS path LPAR argumentlist RPAR 
-                 //      { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],NONE()); }
-                //     | EXTENDS path LPAR argumentlist RPAR annotation
-                //       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$4[ElementArgs],SOME($3[Annotation])); }  
+                       { $$[ElementSpec] = Absyn.EXTENDS($2[Path],$3[ElementArgs],SOME($4[Annotation])); }   
+
+constraining_clause : extends { $$[ConstrainClass]= Absyn.CONSTRAINCLASS($1[ElementSpec],NONE()); }
+                    | CONSTRAINEDBY path elementargs2 { $$[ConstrainClass]= Absyn.CONSTRAINCLASS(Absyn.EXTENDS($2[Path],$3[ElementArgs],NONE()),NONE()); }
                      
 elementspec          :  elementAttr typespec  componentitems // arraydim from typespec should be in elementAttr arraydim
                         { ($1[ElementAttributes],$2[TypeSpec]) = fixArray($1[ElementAttributes],$2[TypeSpec]);
@@ -809,8 +819,7 @@ explist             : exp COMMA exp { $$[Exps] = {$1[Exp],$3[Exp]};  }
                     | /* empty */ { $$[Exps] = {}; }
 
 explist2            : exp  { $$[Exps] = {$1[Exp]};  }
-                   // | exp COMMA explist2 { $$[Exps] = $1[Exp]::$3[Exps]; } //TODO:Listreverse
-                    | explist2 COMMA exp { $$[Exps] = listReverse($3[Exp]::listReverse($1[Exps])); } //TODO:Listreverse
+                    | explist2 COMMA exp { $$[Exps] = listReverse($3[Exp]::listReverse($1[Exps])); } 
                     | /* empty */ { $$[Exps] = {}; }
                     
 cref                :  ident arraySubscripts { $$[ComponentRef] = Absyn.CREF_IDENT($1[Ident],$2[ArrayDim]); }
