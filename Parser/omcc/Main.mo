@@ -41,6 +41,7 @@ algorithm
         // call the lexer
   	    //tokens = LexerModelica.scanString("Hello",true); 
   	    System.startTimer();
+  	   // printAny("\nstarting lexer");
   	    tokens = LexerModelica.scan(filename,false);
   	    System.stopTimer();
   	    tl = System.getTimerIntervalTime();
@@ -51,6 +52,7 @@ algorithm
   	    // call the parser
   	    
   	    System.startTimer();
+  	   // printAny("\nstarting parser");
   	    (result,astTreeModelica) = ParserModelica.parse(tokens,filename,false);
   	     System.stopTimer();
        //  print(str::args_1);
@@ -63,8 +65,9 @@ algorithm
   	    if (result) then
   	     //unparsed = Dump.unparseStr(astTreeModelica,false);
   	     //print(unparsed);
+  	     print("\n" +Error.printMessagesStr());
           print("\nSUCCEED");
-  	     System.writeFile("UnParsed" + filename,Dump.unparseStr(astTreeModelica,true));
+  	     System.writeFile(filename + "UnParsed.mo",Dump.unparseStr(astTreeModelica,true));
   	     //printAny(unparsed);
          else
             //print(Error.getMessagesStr());
@@ -74,7 +77,7 @@ algorithm
   	   
 	    
 	      
-  	   // printAny(astTree);        
+  	    //printAny(astTreeModelica);        
   	    print("\nargs:" + filename);
        
          printUsage();
@@ -87,6 +90,7 @@ algorithm
     case _
       equation
         print("\n**********Error*************");
+        print("\n" +Error.printMessagesStr());
         printUsage();
      then ();            
    end matchcontinue;   
@@ -96,7 +100,7 @@ public function printUsage
   Integer n;
   List<String> strs;
 algorithm
-  print("\nOMCC v0.9.2 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
+  print("\nOMCC v0.9.4 (OpenModelica Compiler- Compiler) Lexer and Parser Generator - 2011");
 end printUsage;
 
 protected function readSettings

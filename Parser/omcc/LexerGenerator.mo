@@ -86,9 +86,9 @@ package LexerGenerator
     input String grammarFile;
     input String outFileName;
     output Boolean buildResult;
-    list<String> resTable;
-    String lexCode,result,rest,stTime,cp,caseAction,re; 
-    Integer i,numRules,pos,pos2,posBegin,posReturn,posKeepBuffer,posBreak,valBegin;
+    list<String> resTable,resultRegex;
+    String lexCode,result,rest,stTime,cp,caseAction,re,code,temp; 
+    Integer i,numRules,pos,pos2,posBegin,posReturn,posKeepBuffer,posBreak,valBegin,posCode,numMatches;
   algorithm
     lexCode := System.readFile("LexerCode.tmo");
     stTime := leyend + getCurrentTimeStr();
@@ -133,7 +133,15 @@ package LexerGenerator
 		    posBreak := System.stringFind(rest,"YY_BREAK");
 		    posBegin := System.stringFind(rest,"BEGIN");
 		    posKeepBuffer := System.stringFind(rest,"keepBuffer");
-		    //print("\n pos:" + intString(pos) + ":" + "pos2:" + intString(pos2) + ":" + "posB:" + intString(posBegin) ); 
+		    posCode := System.stringFind(rest,";}");
+		    //print("\n posR:" + intString(posReturn) + ":" + "posBr:" + intString(posBreak) + ":" + "posB:" + intString(posBegin) + ":" + "posC:" + intString(posCode) ); 
+		    
+		    cp := "\n         equation";
+				resTable := cp::resTable;
+				if (posBreak > posReturn or (posBreak > posCode and posCode>0)) then
+					cp := "\n           info = Lexer"+ outFileName +".getInfo(tb,mm_sPos,mm_linenr,fileNm);";
+			    resTable := cp::resTable;
+			  end if;
 		    if (posBegin < posBreak and posBegin>=0) then // starts BEGIN switch start state
 				    // find token
             pos := System.stringFind(rest,"(");
@@ -145,7 +153,7 @@ package LexerGenerator
             if (debug==true) then
 				       print("\n BEGIN at" + intString(valBegin));
 				    end if; 
-            cp := "\n         equation \n           mm_startSt = " + intString(valBegin) +";";
+            cp := "\n           mm_startSt = " + intString(valBegin) +";";
 				    resTable := cp::resTable;
 				end if; 
 				
@@ -154,34 +162,42 @@ package LexerGenerator
 				    if (debug==true) then
 				       print("\n keepbuffer");
 				    end if; 
-				    if(posBreak < posBegin) then
-		         cp := "\n         equation";
-				     resTable := cp::resTable;
-		        end if;
+				    
             cp := "\n           bufferRet = buffer;";
 				    resTable := cp::resTable;
 				end if;
-				 
+				
+				if (posBreak > posCode and posCode>0) then
+		        if (debug==true) then
+				       print("\nFound code");
+				    end if; 
+		        re := "{.*;}";
+				    (numMatches,resultRegex) := System.regex(rest,re,1,false,false);
+				    code::_ := resultRegex;
+				    code := System.substring(code,2,stringLength(code)-2);
+				    cp := "\n          ";
+				    resTable := cp::resTable;  
+				    resTable := code::resTable;
+        end if;
+      
+				if (debug==true) then
+				   print("\nSearch return");
+				end if;  
 		   if (posBreak > posReturn) then
-		       if(posBreak < posBegin and posBreak < posKeepBuffer) then
-		         cp := "\n         equation";
-				     resTable := cp::resTable;
-		       end if;
-             
 		        cp := "\n           act2 = Token";
 				    resTable := cp::resTable;  
 				    resTable := outFileName::resTable;
 				    cp := ".";
 				    resTable := cp::resTable;
 				    // find token
-				    pos2 := System.stringFind(rest,";");
-				    cp := substring2(rest,posReturn+8,pos2);
+				    temp := System.stringFindString(rest,"return");
+				    pos2 := System.stringFind(temp,";");
+				    cp := substring2(temp,8,pos2);
 				    if (debug==true) then
 				       print("\nFound token:" + cp);
 				    end if;    
 		        resTable := cp::resTable;
-		        cp := ";\n           info = Lexer"+ outFileName +".getInfo(tb,mm_sPos,mm_linenr,fileNm)";
-		        resTable := cp::resTable;
+		        
 		        cp := ";\n           tok = OMCCTypes.TOKEN(tokName[act2-nameSpan],act2,listReverse(buffer),info);\n         then (SOME(tok));\n ";
 		        resTable := cp::resTable;
 				else
@@ -189,8 +205,8 @@ package LexerGenerator
 		        cp := "\n         then (NONE());\n";
 				    resTable := cp::resTable;  
 		    end if;
-		     
-     
+		    
+		    
       end for;
         resTable := listReverse(resTable);
         caseAction := stringCharListString(resTable);

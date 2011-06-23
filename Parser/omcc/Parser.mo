@@ -312,7 +312,7 @@ function processToken
           c::rest = tokens;
           cTok = c;
           OMCCTypes.TOKEN(id=tmTok,name=nm,value=vl) = c;
-          semVal = printBuffer(vl,"");
+          semVal = printBuffer(vl);
           if (debug) then
              print("[" + nm + ",'" + semVal +"']");
           end if;   
@@ -805,26 +805,16 @@ function getTokenSemValue "retrieves semantic value from token id"
 end getTokenSemValue;
 
 function printBuffer
-    input list<Integer> inList;
-    input String cBuff;
-    output String outList;
-    list<Integer> inList2;
-   algorithm 
-    (outList) := matchcontinue(inList,cBuff)
-      local
-        Integer c;
-        String new,tout;
-        list<Integer> rest;
-      case ({},_) 
-        then (cBuff);
-      else
-        equation
-           c::rest = inList;
-           new = cBuff + intStringChar(c);
-           (tout) = printBuffer(rest,new);
-        then (tout);
-     end matchcontinue;     
-  end printBuffer;  
+  input list<Integer> inList;
+  output String outList;
+  Integer c;
+algorithm 
+  outList := "";
+  while (Util.isListEmpty(inList)==false) loop
+     c::inList := inList;
+     outList := outList + intStringChar(c);
+  end while; 
+end printBuffer;   
   
   function printSemStack
     input list<String> inList;

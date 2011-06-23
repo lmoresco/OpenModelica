@@ -34,7 +34,9 @@ sescape        "\\\""
 {whitespace} ;
 {real}      return UNSIGNED_REAL;
 {real2}      return UNSIGNED_REAL;
-{real3}      return UNSIGNED_REAL;
+{real3}     { sToken = LexerModelica.printBuffer(listReverse(buffer));
+              Error.addSourceMessage(6000,{"Treating "+ sToken +" as 0"+sToken+". This is not standard Modelica and only done for compatibility with old code. Support for this feature may be removed in the future."},info);  
+              ;} return UNSIGNED_REAL; // throw a warning
 {endif}     return ENDIF;
 {endfor}     return ENDFOR;
 {endwhile}     return ENDWHILE;
@@ -175,12 +177,8 @@ sescape        "\\\""
     "\\"+"\"" { keepBuffer; }
     "\\"+"\\" { keepBuffer; }
     "\""    { BEGIN(INITIAL) return STRING; }
-    [^\n]   {keepBuffer;};
-    \n       {keepBuffer;};
-    <<EOF>>  {
-         yyerror("Unterminated string");
-	       yyterminate();
-	     }
+    [^\n]   {keepBuffer; }
+    \n       {keepBuffer; }
 }
 
 "/\*"	     {
