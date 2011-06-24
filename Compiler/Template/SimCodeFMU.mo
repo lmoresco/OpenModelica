@@ -5023,10 +5023,85 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -Wl,-Bdynamic"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
       then txt;
   end matchcontinue;
 end fun_155;
+
+protected function fun_156
+  input Tpl.Text in_txt;
+  input String in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           "OSX" )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
+      then txt;
+  end matchcontinue;
+end fun_156;
+
+protected function fun_157
+  input Tpl.Text in_txt;
+  input String in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           "OSX" )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
+      then txt;
+  end matchcontinue;
+end fun_157;
+
+protected function fun_158
+  input Tpl.Text in_txt;
+  input String in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           "OSX" )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
+      then txt;
+  end matchcontinue;
+end fun_158;
 
 public function getPlatformString2
   input Tpl.Text in_txt;
@@ -5047,14 +5122,17 @@ algorithm
       String a_libsPos1;
       String a_libsPos2;
       String i_platform;
+      String ret_3;
+      String ret_2;
+      String ret_1;
       String ret_0;
 
     case ( txt,
            (i_platform as "WIN32"),
            a_fileNamePrefix,
-           _,
-           _,
-           _ )
+           a_dirExtra,
+           a_libsPos1,
+           a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: "));
@@ -5153,7 +5231,16 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o -I\"C:/dev/OpenModelica/build//include/omc\" -I.      -lsim -linteractive  -O3 -falign-functions -msse2 -mfpmath=sse   -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -L\"C:/dev/OpenModelica/build//lib/omc\" -lc_runtime -lregex -lexpat -Wl,-Bstatic -lf2c -Wl,--output-def,"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
+        txt = Tpl.writeStr(txt, a_dirExtra);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
+        ret_0 = System.os();
+        txt = fun_155(txt, ret_0);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -Wl,--output-def,"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".def\n",
@@ -5176,14 +5263,23 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o  $(CPPFLAGS) "));
+        txt = Tpl.writeStr(txt, a_dirExtra);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
+        ret_1 = System.os();
+        txt = fun_156(txt, ret_1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_records.o -I\"C:/dev/OpenModelica/build//include/omc\" -I.      -lsim -linteractive  -O3 -falign-functions -msse2 -mfpmath=sse   -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -L\"C:/dev/OpenModelica/build//lib/omc\" -lc_runtime -lregex -lexpat -Wl,-Bstatic -lf2c -Wl,--kill-at\n",
+                                    " -Wl,--kill-at\n",
                                     "\n"
                                 }, true));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU2.o:\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX)  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"C:/dev/OpenModelica/build//include/omc\" -I.    -c -o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) $(CPPFLAGS) $(CFLAGS) -c -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5194,7 +5290,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(".o:\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC)  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"C:/dev/OpenModelica/build//include/omc\" -I.    -c -o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC) $(CPPFLAGS) $(CFLAGS) -c -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5205,11 +5301,32 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o:\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC)  -O3 -falign-functions -msse2 -mfpmath=sse   -I\"C:/dev/OpenModelica/build//include/omc\" -I.    -c -o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC)  $(CPPFLAGS) $(CFLAGS) -c -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.c"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_records.c\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources"));
       then txt;
 
     case ( txt,
@@ -5220,7 +5337,7 @@ algorithm
            a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: $(MAINFILE) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": $(MAINFILE) "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5230,18 +5347,47 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC) -I. -o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINFILE) -lsim -linteractive "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINFILE) "));
         txt = Tpl.writeStr(txt, a_dirExtra);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
-        ret_0 = System.os();
-        txt = fun_155(txt, ret_0);
+        ret_2 = System.os();
+        txt = fun_157(txt, ret_2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_records.c\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "/binaries\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "/sources\n",
+                                    "\n"
+                                }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5253,7 +5399,134 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".lib "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_functions.h\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources/"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv modelDescription.xml "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".fmu *"));
+      then txt;
+
+    case ( txt,
+           (i_platform as "Unix"),
+           a_fileNamePrefix,
+           a_dirExtra,
+           a_libsPos1,
+           a_libsPos2 )
+      equation
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": $(MAINFILE) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINFILE) "));
+        txt = Tpl.writeStr(txt, a_dirExtra);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos1);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_libsPos2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
+        ret_3 = System.os();
+        txt = fun_158(txt, ret_3);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_records.c\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "/binaries\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "/sources\n",
+                                    "\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
         txt = Tpl.writeStr(txt, i_platform);
@@ -5320,7 +5593,7 @@ algorithm
   end matchcontinue;
 end getPlatformString2;
 
-protected function fun_157
+protected function fun_160
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -5344,9 +5617,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_157;
+end fun_160;
 
-protected function lm_158
+protected function lm_161
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -5368,18 +5641,18 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_158(txt, rest);
+        txt = lm_161(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_158(txt, rest);
+        txt = lm_161(txt, rest);
       then txt;
   end matchcontinue;
-end lm_158;
+end lm_161;
 
-protected function fun_159
+protected function fun_162
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -5404,9 +5677,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_159;
+end fun_162;
 
-protected function fun_160
+protected function fun_163
   input Tpl.Text in_txt;
   input Tpl.Text in_a_dirExtra;
   input Tpl.Text in_a_libsStr;
@@ -5431,9 +5704,9 @@ algorithm
         txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
-end fun_160;
+end fun_163;
 
-protected function fun_161
+protected function fun_164
   input Tpl.Text in_txt;
   input Boolean in_a_s_measureTime;
 
@@ -5454,9 +5727,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("-D_OMC_MEASURE_TIME "));
       then txt;
   end matchcontinue;
-end fun_161;
+end fun_164;
 
-protected function fun_162
+protected function fun_165
   input Tpl.Text in_txt;
   input String in_a_s_method;
 
@@ -5483,9 +5756,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_162;
+end fun_165;
 
-protected function fun_163
+protected function fun_166
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -5501,18 +5774,18 @@ algorithm
     case ( txt,
            SOME(SimCode.SIMULATION_SETTINGS(measureTime = i_s_measureTime, method = i_s_method)) )
       equation
-        txt = fun_161(txt, i_s_measureTime);
+        txt = fun_164(txt, i_s_measureTime);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_162(txt, i_s_method);
+        txt = fun_165(txt, i_s_method);
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end fun_163;
+end fun_166;
 
-protected function fun_164
+protected function fun_167
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -5534,9 +5807,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_164;
+end fun_167;
 
-protected function fun_165
+protected function fun_168
   input Tpl.Text in_txt;
   input Boolean in_mArg;
 
@@ -5557,7 +5830,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
       then txt;
   end matchcontinue;
-end fun_165;
+end fun_168;
 
 public function fmuMakefile
   input Tpl.Text in_txt;
@@ -5595,13 +5868,13 @@ algorithm
     case ( txt,
            SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_157(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_160(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_158(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_161(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_159(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_160(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_extraCflags = fun_163(Tpl.emptyTxt, i_sopt);
+        l_libsPos1 = fun_162(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_163(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_extraCflags = fun_166(Tpl.emptyTxt, i_sopt);
         l_platfrom = getPlatformString(Tpl.emptyTxt, i_makefileParams_platform);
         l_compilecmds = getPlatformString2(Tpl.emptyTxt, i_makefileParams_platform, i_fileNamePrefix, Tpl.textString(l_dirExtra), Tpl.textString(l_libsPos1), Tpl.textString(l_libsPos2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -5628,16 +5901,22 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("CFLAGS_BASED_ON_INIT_FILE="));
         txt = Tpl.writeText(txt, l_extraCflags);
         txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("PLATLINUX = "));
+        txt = Tpl.writeText(txt, l_platfrom);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("PLAT34 = "));
+        txt = Tpl.writeStr(txt, i_makefileParams_platform);
+        txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("CFLAGS=$(CFLAGS_BASED_ON_INIT_FILE) -I\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" "));
         txt = Tpl.writeStr(txt, i_makefileParams_cflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_164(txt, i_sopt);
+        txt = fun_167(txt, i_sopt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" -lSimulationRuntimeC "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SENDDATALIBS="));
@@ -5650,7 +5929,7 @@ algorithm
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
         ret_7 = RTOpts.acceptMetaModelicaGrammar();
-        txt = fun_165(txt, ret_7);
+        txt = fun_168(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
                                     "\n",
@@ -5661,28 +5940,6 @@ algorithm
         txt = Tpl.writeText(txt, l_compilecmds);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
-        txt = Tpl.writeText(txt, l_platfrom);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "/sources\n",
-                                    "\n",
-                                    "\n"
-                                }, true));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv.c: "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
@@ -5722,6 +5979,12 @@ algorithm
            "LINUX" )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("linux"));
+      then txt;
+
+    case ( txt,
+           "Unix" )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("unix"));
       then txt;
 
     case ( txt,

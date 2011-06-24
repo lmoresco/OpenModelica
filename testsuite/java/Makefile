@@ -52,6 +52,6 @@ JavaExtInteractiveTrace.mos: JavaExtInteractiveTrace.txt
 	grep "^>>" $< | sed "s/^>> //" | sed "s/$$/;/" >> $@
 # Used to test the data types we can't test in real OMC right now
 dummytest:
-	gcc -o dummy dummy_test.c -I../../build/include/ ../../build/lib/libc_runtime.a $(LDL)
+	gcc -o dummy dummy_test.c -I../../build/include/ ../../build/lib/libSimulationRuntimeC.a $(LDL)
 	dummy | diff -w dummy_test_expected.txt -
 	rm -f dummy dummy.exe

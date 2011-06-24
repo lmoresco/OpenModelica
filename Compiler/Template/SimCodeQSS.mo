@@ -3205,7 +3205,7 @@ algorithm
                                     "LDFLAGS=-L\""
                                 }, false));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc\" -lSimulationRuntimeQss "));
         txt = Tpl.writeStr(txt, i_makefileParams_ldflags);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("SENDDATALIBS="));
@@ -3233,7 +3233,7 @@ algorithm
         txt = Tpl.writeText(txt, l_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeText(txt, l_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -lsim_ompd -linteractive $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
         ret_5 = System.os();
         txt = fun_93(txt, ret_5);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(" model_records.c\n"));
