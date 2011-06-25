@@ -8,6 +8,7 @@ Modelica.Electrical.Machines.Examples.mos \
 Modelica.Electrical.MultiPhase.Examples.mos \
 Modelica.Magnetic.FluxTubes.mos \
 Modelica.Math.mos \
+Modelica.Math.Matrices.mos \
 Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
 Modelica.Media.mos \
