@@ -9,6 +9,7 @@ Modelica.Electrical.MultiPhase.Examples.mos \
 Modelica.Magnetic.FluxTubes.mos \
 Modelica.Math.mos \
 Modelica.Math.Matrices.mos \
+Modelica.Math.Matrices.LAPACK.mos \
 Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
 Modelica.Media.mos \

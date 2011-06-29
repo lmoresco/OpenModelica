@@ -1,0 +1,438 @@
+//name:        Modelica.Math.Matrices.LAPACK [version 3.1]
+//keyword:     Lapack
+//status:      correct
+//
+// Tests the Lapack functions in the MSL.
+//
+
+loadString("
+  function printMatrix
+    input Real[:,:] inMatrix;
+  protected 
+    String res = \"[ \", row, nr = \"\";
+  algorithm
+    for i in 1:size(inMatrix, 1) loop
+      row := printRow(inMatrix[i, :], 3);
+      res := res + nr + row;
+      nr := \"\\n  \";
+    end for;
+    res := res + \" ]\\n\";
+    print(res);
+  end printMatrix;
+
+  function printArray
+    input Real[:] inArray;
+  algorithm
+    print(\"{ \" + printRow(inArray, 3) + \" }\\n\");
+  end printArray;
+      
+  function printRow
+    input Real[:] inRow;
+    input Integer inDigits;
+    output String outRes = \"\";
+  protected
+    String tmp, ne = \"\";
+  algorithm
+    for i loop
+      tmp := String(round(inRow[i], inDigits), minimumLength = inDigits + 3,
+          leftJustified = false);
+      outRes := outRes + ne + tmp;
+      ne := \", \";
+    end for;
+  end printRow;
+
+  function round
+    input Real inVal;
+    input Integer inDigits;
+    output Real outVal;
+  algorithm
+    if inVal < 0 then
+      outVal := ceil(inVal * 10^inDigits) / 10^inDigits;
+    else
+      outVal := floor(inVal * 10^inDigits) / 10^inDigits;
+    end if;
+  end round;
+
+  function printLabel
+    input String inLabel;
+  algorithm
+    print(\"\\n\" + inLabel + \"\\n\");
+  end printLabel;
+");
+instantiateModel(printMatrix);
+getErrorString();
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+echo(false);
+
+A := [ 0.35, 0.45,-0.14,-0.17;
+       0.09, 0.07,-0.54, 0.35;
+      -0.44,-0.33,-0.03, 0.17;
+       0.25,-0.32,-0.13, 0.11];
+
+(eigenReal, eigenImag, eigenVectors, info) := Modelica.Math.Matrices.LAPACK.dgeev(A);
+if info == 0 then printLabel("DGEEV OK!"); else printLabel("DGEEV FAILED!"); end if;
+printLabel("eigenReal:");
+printArray(eigenReal);
+printLabel("eigenImag:");
+printArray(eigenImag);
+printLabel("eigenVectors:");
+printMatrix(eigenVectors);
+
+A := [ 10.0, 1.0, 2.0;
+        1.0, 3.0,-1.0;
+        1.0, 1.0, 2.0 ];
+
+B := [  1.0, 2.0, 3.0;
+        4.0, 5.0, 6.0;
+        7.0, 8.0, 9.0 ];
+
+(alphaReal, alphaImag, beta, info) := Modelica.Math.Matrices.LAPACK.dgegv(A, B);
+if info == 0 then printLabel("DGEGV OK!"); else printLabel("DGEGV FAILED!"); end if;
+printLabel("alphaReal:");
+printArray(alphaReal);
+printLabel("alphaImag:");
+printArray(alphaImag);
+printLabel("beta:");
+printArray(beta);
+
+A := [ 3, 2;
+       4, 1 ];
+
+b := {7, 8};
+
+(x, info) := Modelica.Math.Matrices.LAPACK.dgels_vec(A, b);
+if info == 0 then printLabel("DGELS_VEC OK!"); else printLabel("DGELS_VEC FAILED!"); end if;
+printLabel("Solution:");
+printArray(x);
+
+A := [ 1.0,  6.0,  2.0,  2.0;
+       1.0, -2.0, -8.0, -8.0;
+       1.0, -2.0,  4.0,  4.0;
+       1.0,  6.0, 14.0, 14.0 ];
+
+b := { 96, 192, 192, -96 };
+
+rcond := sqrt(2.2e-16);
+
+(x, info, rank) := Modelica.Math.Matrices.LAPACK.dgelsx_vec(A, b, rcond);
+if info == 0 then printLabel("DGELSX_VEC OK!"); else printLabel("DGELSX_VEC FAILED!"); end if;
+printLabel("rank of A:");
+rank;
+printLabel("min(b - Ax):");
+printArray(x);
+
+A := [ 1.80,  2.88,  2.05, -0.89;
+       5.25, -2.95, -0.95, -3.80;
+       1.58, -2.69, -2.90, -1.04;
+      -1.11, -0.66, -0.59,  0.80 ];
+
+B := [ 9.52;
+      24.35;
+       0.77;
+      -6.22 ];
+
+b := { 9.52, 24.35, 0.77, -6.22 };
+
+(X, info) := Modelica.Math.Matrices.LAPACK.dgesv(A, B);
+if info == 0 then printLabel("DGESV OK!"); else printLabel("DGESV FAILED!"); end if;
+printLabel("Solution:");
+printMatrix(X);
+
+(X, info) := Modelica.Math.Matrices.LAPACK.dgesv_vec(A, b);
+if info == 0 then printLabel("DGESV_VEC OK!"); else printLabel("DGESV_VEC FAILED!"); end if;
+printLabel("Solution:");
+printArray(X);
+
+
+A := [ -0.57, -1.28, -0.39,  0.25;
+       -1.93,  1.08, -0.31, -2.14;
+        2.30,  0.24,  0.40, -0.35;
+       -1.93,  0.64, -0.66,  0.08;
+        0.15,  0.30,  0.15, -2.13;
+       -0.02,  1.03, -1.43,  0.50 ];
+
+B := [ 1, 0, -1,  0;
+       0, 1,  0, -1 ];
+
+c := { -1.50, -2.14, 1.23, -0.54, -1.68, 0.82 };
+
+d := { 0, 0 };
+
+(x, info) := Modelica.Math.Matrices.LAPACK.dgglse_vec(A, c, B, d);
+if info == 0 then printLabel("DGGLSE_VEC OK!"); else printLabel("DGGLSE_VEC FAILED!"); end if;
+printLabel("Constrained least-squares solution:");
+printArray(x);
+
+DU := { 2.1, -1.0,  1.9,  8.0 };
+ D := { 3.0,  2.3, -5.0, -0.9,  7.1 };
+DL := { 3.4,  3.6,  7.0, -6.0 };
+
+B := [ 2.7;
+      -0.5;
+       2.6;
+       0.6;
+       2.7 ];
+
+(X, info) := Modelica.Math.Matrices.LAPACK.dgtsv(DU, D, DL, B);
+if info == 0 then printLabel("DGTSV OK!"); else printLabel("DGTSV FAILED!"); end if;
+printLabel("Solution:");
+printMatrix(X);
+
+//A := [ -0.23,  2.54, -3.66,  0.00;
+//       -6.98,  2.46, -2.73, -2.14;
+//        0.00,  2.56,  2.46,  4.07;
+//        0.00,  0.00, -4.78, -3.82 ];
+//
+//b := [ 4.42;
+//      27.13;
+//      -6.14;
+//      10.50 ];
+//
+//(X, info) := Modelica.Math.Matrices.LAPACK.dgbsv(4, 1, 2, A, b);
+//if info == 0 then printLabel("DGBSV OK!"); else printLabel("DGBSV FAILED!"); end if;
+//printLabel("Solution:");
+//X;
+
+A := [  2.27, -1.54,  1.15, -1.94;
+        0.28, -1.67,  0.94, -0.78;
+       -0.48, -3.09,  0.99, -0.21;
+        1.07,  1.22,  0.79,  0.63;
+       -2.35,  2.93, -1.45,  2.30;
+        0.62, -7.39,  1.03, -2.57 ];
+
+(sigma, U, VT, info) := Modelica.Math.Matrices.LAPACK.dgesvd(A);
+if info == 0 then printLabel("DGESVD OK!"); else printLabel("DGESVD FAILED!"); end if;
+printLabel("Singular values:");
+printArray(sigma);
+printLabel("Left singular vectors:");
+printMatrix(U[1:6,1:4]);
+printLabel("Right singular vectors:");
+printMatrix(VT);
+
+A := [ 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6;
+       1.2, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4;
+       1.4, 1.2, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2;
+       1.6, 1.4, 1.2, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0;
+       1.8, 1.6, 1.4, 1.2, 1.0, 1.2, 1.4, 1.6, 1.8;
+       2.0, 1.8, 1.6, 1.4, 1.2, 1.0, 1.2, 1.4, 1.6;
+       2.2, 2.0, 1.8, 1.6, 1.4, 1.2, 1.0, 1.2, 1.4;
+       2.4, 2.2, 2.0, 1.8, 1.6, 1.4, 1.2, 1.0, 1.2;
+       2.6, 2.4, 2.2, 2.0, 1.8, 1.6, 1.4, 1.2, 1.0 ];
+
+(LU, pivots, info) := Modelica.Math.Matrices.LAPACK.dgetrf(A);
+if info == 0 then print("\nDGETRF OK!"); else print("\nDGETRF FAILED!"); end if;
+print("\n\nLU factorization:\n");
+printMatrix(LU);
+print("pivots:\n");
+printArray(pivots);
+
+B := [ 93.0, 186.0, 279.0, 372.0, 465.0;
+       84.4, 168.8, 253.2, 337.6, 422.0;
+       76.6, 153.2, 229.8, 306.4, 383.0;
+       70.0, 140.0, 210.0, 280.0, 350.0;
+       65.0, 130.0, 195.0, 260.0, 325.0;
+       62.0, 124.0, 186.0, 248.0, 310.0;
+       61.4, 122.8, 184.2, 245.6, 307.0;
+       63.6, 127.2, 190.8, 254.4, 318.0;
+       69.0, 138.0, 207.0, 276.0, 345.0 ];
+
+X := Modelica.Math.Matrices.LAPACK.dgetrs(LU, pivots, B);
+printLabel("DGETRS");
+printLabel("Solution:");
+printMatrix(X);
+
+inv := Modelica.Math.Matrices.LAPACK.dgetri(LU, pivots);
+printLabel("DGETRI");
+printLabel("Inverted matrix:");
+printMatrix(inv);
+
+printLabel("Sanity check (should be an identity matrix):");
+printMatrix(A * inv);
+
+A := [ 1,  6,  2;
+       1, -2, -8;
+       1, -2,  4;
+       1,  6, 14 ];
+
+(QR, tau, p) := Modelica.Math.Matrices.LAPACK.dgeqpf(A);
+printLabel("DGEQPF");
+printLabel("QR factorization:");
+printMatrix(QR);
+printLabel("Scalar factors:");
+printArray(tau);
+printLabel("Pivot vector:");
+printArray(p);
+
+Q := Modelica.Math.Matrices.LAPACK.dorgqr(QR, tau);
+printLabel("DORGQR");
+printLabel("Orthogonal matrix Q:");
+printMatrix(Q);
+
+// Result:
+// true
+// "class printMatrix
+// end printMatrix;
+// "
+// ""
+// true
+// ""
+// 
+// DGEEV OK!
+// 
+// eigenReal:
+// {  0.799, -0.099, -0.099,   -0.1 }
+// 
+// eigenImag:
+// {    0.0,    0.4,   -0.4,    0.0 }
+// 
+// eigenVectors:
+// [ -0.655, -0.193,  0.254,  0.125
+//   -0.523,  0.251, -0.522,  0.332
+//    0.536,  0.097, -0.308,  0.593
+//   -0.095,  0.675,    0.0,  0.722 ]
+// 
+// DGEGV OK!
+// 
+// alphaReal:
+// {  2.397, -5.581,  4.708 }
+// 
+// alphaImag:
+// {    0.0,    0.0,    0.0 }
+// 
+// beta:
+// { 13.371,  1.095,    0.0 }
+// 
+// DGELS_VEC OK!
+// 
+// Solution:
+// {    1.8,    0.8 }
+// 
+// DGELSX_VEC OK!
+// 
+// rank of A:
+// 
+// min(b - Ax):
+// {  148.0,  -14.0, -3.999, -3.999 }
+// 
+// DGESV OK!
+// 
+// Solution:
+// [    1.0
+//     -1.0
+//      3.0
+//   -4.999 ]
+// 
+// DGESV_VEC OK!
+// 
+// Solution:
+// {    1.0,   -1.0,    3.0, -4.999 }
+// 
+// DGGLSE_VEC OK!
+// 
+// Constrained least-squares solution:
+// {  0.489,  0.997,  0.489,  0.997 }
+// 
+// DGTSV OK!
+// 
+// Solution:
+// [ -3.999
+//    6.999
+//    2.999
+//   -3.999
+//   -2.999 ]
+// 
+// DGESVD OK!
+// 
+// Singular values:
+// {  9.996,  3.683,  1.356,    0.5 }
+// 
+// Left singular vectors:
+// [ -0.277,   -0.6, -0.127,  0.132
+//   -0.202,  -0.03,   0.28,  0.703
+//   -0.291,  0.334,  0.645,   0.19
+//    0.093, -0.369,  0.678, -0.539
+//    0.421,  0.526,  0.041, -0.057
+//   -0.781,  0.335, -0.164, -0.395 ]
+// 
+// Right singular vectors:
+// [ -0.192,  0.879, -0.214,  0.379
+//   -0.802, -0.392, -0.298,  0.335
+//    0.004, -0.075,  0.782,  0.617
+//   -0.564,  0.258,  0.502, -0.601 ]
+// 
+// DGETRF OK!
+// 
+// LU factorization:
+// [    2.6,    2.4,    2.2,    2.0,    1.8,    1.6,    1.4,    1.2,    1.0
+//    0.384,  0.276,  0.553,   0.83,  1.107,  1.384,  1.661,  1.938,  2.215
+//    0.461, -0.388,  0.399,  0.799,  1.199,  1.599,  1.999,  2.399,  2.799
+//    0.538, -0.333,    0.0,    0.4,    0.8,    1.2,    1.6,    2.0,    2.4
+//    0.615, -0.277,    0.0,    0.0,  0.399,  0.799,  1.199,  1.599,  1.999
+//    0.692, -0.222,    0.0,    0.0,    0.0,  0.399,    0.8,    1.2,    1.6
+//    0.769, -0.166,    0.0,    0.0,    0.0,    0.0,    0.4,    0.8,    1.2
+//    0.846, -0.111,    0.0,    0.0,    0.0,    0.0,    0.0,  0.399,  0.799
+//    0.923, -0.055,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.4 ]
+// pivots:
+// {    9.0,    9.0,    9.0,    9.0,    9.0,    9.0,    9.0,    9.0,    9.0 }
+// 
+// DGETRS
+// 
+// Solution:
+// [    1.0,    2.0,    3.0,    4.0,    5.0
+//    1.999,  3.999,  5.999,  7.999,  9.999
+//      3.0,    6.0,    9.0,   12.0, 14.999
+//    3.999,  7.999, 11.999, 15.999,   20.0
+//    4.999,  9.999, 14.999, 19.999,   25.0
+//    5.999, 11.999,   18.0, 23.999, 29.999
+//      7.0,   14.0,   21.0,   28.0,   35.0
+//    7.999, 15.999, 23.999, 31.999, 39.999
+//      9.0,   18.0,   27.0,   36.0,   45.0 ]
+// 
+// DGETRI
+// 
+// Inverted matrix:
+// [ -2.361,  2.499,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,  0.138
+//    2.499, -4.999,  2.499,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,  2.499,   -5.0,  2.499,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,  2.499,   -5.0,  2.499,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,  2.499,   -5.0,  2.499,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,    2.5, -4.999,  2.499,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,  2.499, -4.999,  2.499,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,    0.0,  2.499, -4.999,    2.5
+//    0.138,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,  2.499, -2.361 ]
+// 
+// Sanity check (should be an identity matrix):
+// [  0.999,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,  0.999,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,  0.999,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    1.0,    0.0,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,  0.999,    0.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,    1.0,    0.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    1.0,    0.0,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,  0.999,    0.0
+//      0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    1.0 ]
+// 
+// DGEQPF
+// 
+// QR factorization:
+// [ -16.733, -6.215, -0.717
+//   -0.427, -6.432,  -0.55
+//    0.213, -0.477, -1.783
+//    0.747, -0.324,   0.13 ]
+// 
+// Scalar factors:
+// {  1.119,    1.5,  1.966 }
+// 
+// Pivot vector:
+// {    3.0,    2.0,    1.0 }
+// 
+// DORGQR
+// 
+// Orthogonal matrix Q:
+// [ -0.119, -0.817,  -0.26
+//    0.478, -0.151, -0.706
+//   -0.239,  0.541, -0.631
+//   -0.836, -0.124, -0.185 ]
+// endResult

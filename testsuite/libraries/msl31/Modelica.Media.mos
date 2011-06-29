@@ -3200,10 +3200,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // "
@@ -3219,8 +3219,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3233,8 +3233,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3247,8 +3247,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3261,8 +3261,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3275,8 +3275,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3289,8 +3289,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3303,8 +3303,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3317,8 +3317,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // 
@@ -3624,10 +3624,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c
@@ -3638,10 +3638,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // "
@@ -3658,8 +3658,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3672,8 +3672,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3686,8 +3686,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3700,8 +3700,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3714,8 +3714,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3728,8 +3728,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3742,8 +3742,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3756,8 +3756,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -3770,8 +3770,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // 
@@ -4077,10 +4077,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c
@@ -4091,10 +4091,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // "
@@ -4111,8 +4111,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4125,8 +4125,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4139,8 +4139,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4153,8 +4153,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4167,8 +4167,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4181,8 +4181,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4195,8 +4195,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4209,8 +4209,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4223,8 +4223,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // 
@@ -4530,10 +4530,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.o Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c
@@ -4544,10 +4544,10 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // "
@@ -4564,8 +4564,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_PartialMixtureMedium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4578,8 +4578,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4592,8 +4592,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4606,8 +4606,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4620,8 +4620,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4634,8 +4634,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4648,8 +4648,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4662,8 +4662,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -4676,8 +4676,8 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: \"tmp3\" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: \"tmp4\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // 
@@ -4931,14 +4931,14 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Interfaces_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
 // Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: "tmp3" undeclared (first use in this function)
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:58: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
 // /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
-// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:59: fel: "tmp4" undeclared (first use in this function)
+// Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
 // make: *** [Modelica_Media_Interfaces_Medium_specificEnthalpy__pTX] Fel 1
 // 
 // "
-// "function Modelica.Math.Matrices.LAPACK.dgelsx_vec
+// "function Modelica.Math.Matrices.LAPACK.dgelsx_vec \"Computes the minimum-norm solution to a real linear least squares problem with rank deficient A\"
 //   input Real[:, :] A;
 //   input Real[size(A,1)] b;
 //   input Real rcond = 0.0 \"Reciprocal condition number to estimate rank\";
@@ -5117,12 +5117,12 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   final constant Real invTK[8] = 0.00283165793572136;
 //   final constant Real invTK[9] = 0.00267988744472732;
 //   final constant Integer nS = 1 \"Number of substances\";
-//   final constant Real poly_rho[1] = 0.0;
-//   final constant Real poly_rho[2] = 0.0;
-//   final constant Real poly_rho[3] = 0.0;
-//   final constant Real poly_Cp[1] = 0.0;
-//   final constant Real poly_Cp[2] = 0.0;
-//   final constant Real poly_Cp[3] = 0.0;
+//   final constant Real poly_rho[1] = -0.00208644332581138;
+//   final constant Real poly_rho[2] = -0.496556153445586;
+//   final constant Real poly_rho[3] = 1053.33291673899;
+//   final constant Real poly_Cp[1] = -0.00076664930856902;
+//   final constant Real poly_Cp[2] = 3.4063125614766;
+//   final constant Real poly_Cp[3] = 3555.60273100735;
 //   constant Integer nX = 1 \"Number of mass fractions\";
 //   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
 //   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";

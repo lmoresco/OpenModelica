@@ -47,37 +47,40 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 3: #define MODELICA_TERMINATE(msg) { fprintf(stderr,\"Modelica Terminate: %s!\\n\", msg); fflush(stderr); }
 // 4: void _SimCodeC_abc()
 // 5: {
-// 6:   /* GC: save roots mark when you enter the function */
-// 7:   /* GC: adding inputs as roots! */
+// 6:   /* functionBodyRegularFunction: GC: save roots mark when you enter the function */
+// 7:   /* functionBodyRegularFunction: GC: adding inputs as roots! */
 // 8:   
-// 9:   /* GC: do garbage collection */
+// 9:   /* functionBodyRegularFunction: GC: do garbage collection */
 // 10:   
-// 11:   /* arguments */
-// 12:   /* locals */
+// 11:   /* functionBodyRegularFunction: arguments */
+// 12:   /* functionBodyRegularFunction: locals */
 // 13:   state tmp1;
-// 14:   /* out inits */
-// 15:   tmp1 = get_memory_state();
-// 16:   
-// 17:   /* var inits */
-// 18:   /* body */
-// 19:   
-// 20:   _return:
-// 21:   /* out var copy */
-// 22:   restore_memory_state(tmp1);
-// 23:   /* out var assign */
-// 24:   
-// 25:   /* GC: pop the mark! */
-// 26:   
-// 27:   /* return the outs */
-// 28:   return ;
-// 29: }
-// 30: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
-// 31: {
-// 32:   MMC_TRY_TOP()
-// 33:   _SimCodeC_abc();
-// 34:   MMC_CATCH_TOP(return 1)
-// 35:   write_noretcall(outVar);
-// 36:   return 0;
-// 37: }
+// 14:   /* functionBodyRegularFunction: out inits */
+// 15:   
+// 16:   /* functionBodyRegularFunction: state in */
+// 17:   tmp1 = get_memory_state();
+// 18:   
+// 19:   /* functionBodyRegularFunction: var inits */
+// 20:   /* functionBodyRegularFunction: body */
+// 21:   
+// 22:   _return:
+// 23:   /* functionBodyRegularFunction: out var copy */
+// 24:   /* functionBodyRegularFunction: state out */
+// 25:   restore_memory_state(tmp1);
+// 26:   /* functionBodyRegularFunction: out var assign */
+// 27:   
+// 28:   /* GC: pop the mark! */
+// 29:   
+// 30:   /* functionBodyRegularFunction: return the outs */
+// 31:   return ;
+// 32: }
+// 33: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
+// 34: {
+// 35:   MMC_TRY_TOP()
+// 36:   _SimCodeC_abc();
+// 37:   MMC_CATCH_TOP(return 1)
+// 38:   write_noretcall(outVar);
+// 39:   return 0;
+// 40: }
 // "
 // endResult
