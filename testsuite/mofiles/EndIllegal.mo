@@ -1,5 +1,5 @@
 // name: EndIllegal
-// status: correct
+// status: incorrect
 
 model M
   Real r = end;
