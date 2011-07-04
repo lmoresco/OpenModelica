@@ -142,6 +142,7 @@ ConnectInnerOuter3.mo \
 ConnectInnerOuter.mo \
 ConnectorComponents.mo \
 ConnectorIllegal.mo \
+ConnectorIllegal2.mo \
 ConnectorSimple.mo \
 ConnectTypes.mo \
 Constant10.mo \
