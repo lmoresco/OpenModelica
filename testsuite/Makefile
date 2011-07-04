@@ -28,7 +28,7 @@ msl221.log \
 msl221simulation.log \
 msl221additions.log \
 interactive-simulation.log \
-msl31simulation.log
+msl31simulation.log \
 msl31media.log
 
 
