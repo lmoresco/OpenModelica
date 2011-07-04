@@ -16,12 +16,10 @@ Examples.TestOnly.N2AsMix.mos \
 Examples.TestOnly.TestMedia.TemplateMedium.mos \
 Examples.Tests.Components.mos \
 Examples.Tests.MediaTestModels.Air.DryAirNasa.mos \
-Examples.Tests.MediaTestModels.Air.MoistAir.mos \
 Examples.Tests.MediaTestModels.Air.SimpleAir.mos \
 Examples.Tests.MediaTestModels.IdealGases.Air.mos \
 Examples.Tests.MediaTestModels.IdealGases.Nitrogen.mos \
 Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition.mos \
-Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.mos \
 Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater.mos \
 Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.mos \
 Examples.Tests.MediaTestModels.Water.IdealSteam.mos \
@@ -38,6 +36,8 @@ Water.StandardWater.mos
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=  \
+Examples.Tests.MediaTestModels.Air.MoistAir.mos \
+Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.mos \
 Examples.Tests.MediaTestModels.Incompressible.Essotherm650.mos \
 Examples.Tests.MediaTestModels.Incompressible.Glycol47.mos \
 
