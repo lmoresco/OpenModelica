@@ -16,7 +16,6 @@ model ConnectorIllegal
 end ConnectorIllegal;
 // Result:
 // Error processing file: ConnectorIllegal.mo
-// Error: In class IllegalConnector, equations not allowed in connectors
 // [ConnectorIllegal.mo:11:3-11:8:writable] Error: Equations are not allowed in connector.
 // 
 // # Error encountered! Exiting...
