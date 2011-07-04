@@ -54,8 +54,7 @@ getErrorString();
 //   parameter Real u = 0.1;
 // end DependencyChecking;
 // "
-// "[DependencyChecking.mo:12:3-12:37:writable] Error: Type mismatch in binding wrong = 1.0, expected subtype of Integer, got type Real.
-// "
+// ""
 // Ok
 // 1
 // "function DependencyChecking.func
