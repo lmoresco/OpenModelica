@@ -6222,10 +6222,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Evaluating: getErrorString()
 // ""
 // Evaluating: instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47)
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
 // ""
 // Evaluating: getErrorString()
 // "[Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2]},2).
@@ -6244,11 +6240,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47
 // "
 // Evaluating: checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47)
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
 // "[package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
@@ -6359,10 +6350,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Evaluating: getErrorString()
 // ""
 // Evaluating: instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
 // ""
 // Evaluating: getErrorString()
 // "[Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1],tableDensity[10,1],tableDensity[11,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2],tableDensity[10,2],tableDensity[11,2]},2).
@@ -6381,11 +6368,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650
 // "
 // Evaluating: checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650)
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
 // "[Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1],tableDensity[10,1],tableDensity[11,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2],tableDensity[10,2],tableDensity[11,2]},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({tableHeatCapacity[1,1],tableHeatCapacity[2,1],tableHeatCapacity[3,1],tableHeatCapacity[4,1],tableHeatCapacity[5,1],tableHeatCapacity[6,1],tableHeatCapacity[7,1],tableHeatCapacity[8,1],tableHeatCapacity[9,1],tableHeatCapacity[10,1],tableHeatCapacity[11,1]},{tableHeatCapacity[1,2],tableHeatCapacity[2,2],tableHeatCapacity[3,2],tableHeatCapacity[4,2],tableHeatCapacity[5,2],tableHeatCapacity[6,2],tableHeatCapacity[7,2],tableHeatCapacity[8,2],tableHeatCapacity[9,2],tableHeatCapacity[10,2],tableHeatCapacity[11,2]},2).
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Essotherm650.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1],tableDensity[10,1],tableDensity[11,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2],tableDensity[10,2],tableDensity[11,2]},2).
@@ -17513,8 +17495,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Error: Error occured while flattening model Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T
 // "
 // Evaluating: checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T)
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
 // "[Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2]},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T.Medium.Polynomials_Temp.fitting({tableHeatCapacity[1,1],tableHeatCapacity[2,1],tableHeatCapacity[3,1],tableHeatCapacity[4,1],tableHeatCapacity[5,1],tableHeatCapacity[6,1],tableHeatCapacity[7,1],tableHeatCapacity[8,1],tableHeatCapacity[9,1]},{tableHeatCapacity[1,2],tableHeatCapacity[2,2],tableHeatCapacity[3,2],tableHeatCapacity[4,2],tableHeatCapacity[5,2],tableHeatCapacity[6,2],tableHeatCapacity[7,2],tableHeatCapacity[8,2],tableHeatCapacity[9,2]},2).
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Examples.SolveOneNonlinearEquation.InverseIncompressible_sh_T.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2]},2).
@@ -17659,12 +17639,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Evaluating: getErrorString()
 // ""
 // Evaluating: instantiateModel(Modelica.Media.Incompressible.Examples.TestGlycol)
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
-// - Types.typeToValue failed on unhandled Type NOTYPE
 // ""
 // Evaluating: getErrorString()
 // "[Incompressible.mo:89:5-91:98:writable] Warning: Failed to deduce dimensions of poly_lam due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({tableConductivity[1,1],tableConductivity[2,1],tableConductivity[3,1],tableConductivity[4,1],tableConductivity[5,1],tableConductivity[6,1],tableConductivity[7,1],tableConductivity[8,1],tableConductivity[9,1]},{tableConductivity[1,2],tableConductivity[2,2],tableConductivity[3,2],tableConductivity[4,2],tableConductivity[5,2],tableConductivity[6,2],tableConductivity[7,2],tableConductivity[8,2],tableConductivity[9,2]},2).
@@ -17683,12 +17657,6 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Error: Error occured while flattening model Modelica.Media.Incompressible.Examples.TestGlycol
 // "
 // Evaluating: checkModel(Modelica.Media.Incompressible.Examples.TestGlycol)
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
-// - Types.typeToValue failed on unhandled Type array[:, of type array[:, of type Real()]]
 // "[Incompressible.mo:89:5-91:98:writable] Warning: Failed to deduce dimensions of poly_lam due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({tableConductivity[1,1],tableConductivity[2,1],tableConductivity[3,1],tableConductivity[4,1],tableConductivity[5,1],tableConductivity[6,1],tableConductivity[7,1],tableConductivity[8,1],tableConductivity[9,1]},{tableConductivity[1,2],tableConductivity[2,2],tableConductivity[3,2],tableConductivity[4,2],tableConductivity[5,2],tableConductivity[6,2],tableConductivity[7,2],tableConductivity[8,2],tableConductivity[9,2]},2).
 // [Incompressible.mo:77:5-79:98:writable] Warning: Failed to deduce dimensions of poly_rho due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({tableDensity[1,1],tableDensity[2,1],tableDensity[3,1],tableDensity[4,1],tableDensity[5,1],tableDensity[6,1],tableDensity[7,1],tableDensity[8,1],tableDensity[9,1]},{tableDensity[1,2],tableDensity[2,2],tableDensity[3,2],tableDensity[4,2],tableDensity[5,2],tableDensity[6,2],tableDensity[7,2],tableDensity[8,2],tableDensity[9,2]},2).
 // [Incompressible.mo:80:5-82:98:writable] Warning: Failed to deduce dimensions of poly_Cp due to unknown dimensions of modifier Modelica.Media.Incompressible.Examples.TestGlycol.Medium.Polynomials_Temp.fitting({tableHeatCapacity[1,1],tableHeatCapacity[2,1],tableHeatCapacity[3,1],tableHeatCapacity[4,1],tableHeatCapacity[5,1],tableHeatCapacity[6,1],tableHeatCapacity[7,1],tableHeatCapacity[8,1],tableHeatCapacity[9,1]},{tableHeatCapacity[1,2],tableHeatCapacity[2,2],tableHeatCapacity[3,2],tableHeatCapacity[4,2],tableHeatCapacity[5,2],tableHeatCapacity[6,2],tableHeatCapacity[7,2],tableHeatCapacity[8,2],tableHeatCapacity[9,2]},2).
