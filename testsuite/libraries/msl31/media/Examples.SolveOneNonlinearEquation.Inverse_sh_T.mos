@@ -1,0 +1,91 @@
+//name: Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
+checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getErrorString();
+
+// Result:
+// true
+// ""
+// 
+// "[package.mo:591:5-591:56:writable] Error: No matching function found for Internal.solve(h, 200, 6000, 100000.0, {1}, Modelica.Media.IdealGases.Common.DataRecord("Air",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979))
+// of type
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve<function>(y_zero:Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg"), x_min:Integer, x_max:Integer, pressure:Real, X:Integer[1], f_nonlinear_data:record Modelica.Media.IdealGases.Common.DataRecord
+// String name;
+// Real(quantity="MolarMass", unit="kg/mol", min=0.0) MM;
+// Real(quantity="SpecificEnergy", unit="J/kg") Hf;
+// Real(quantity="SpecificEnergy", unit="J/kg") H0;
+// Real(quantity="ThermodynamicTemperature", unit="K", min=0.0, displayUnit="degC") Tlimit;
+// Real[7] alow;
+// Real[2] blow;
+// Real[7] ahigh;
+// Real[2] bhigh;
+// Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") R;
+// end Modelica.Media.IdealGases.Common.DataRecord;, x_tol:Real) => Real in component <NO COMPONENT>
+// candidates are 
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve<function>(y_zero:Real, x_min:Real, x_max:Real, pressure:Real, X:Real[:], f_nonlinear_data:record Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear_Data
+// end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear_Data;, x_tol:Real) => Real
+// [package.mo:619:5-619:52:writable] Error: No matching function found for Internal.solve(s, 200, 6000, p, {1}, Modelica.Media.IdealGases.Common.DataRecord("Air",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979))
+// of type
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve<function>(y_zero:Real(min=-1000000.0, max=1000000.0, nominal=1000.0, quantity="SpecificEntropy", unit="J/(kg.K)"), x_min:Integer, x_max:Integer, pressure:Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar"), X:Integer[1], f_nonlinear_data:record Modelica.Media.IdealGases.Common.DataRecord
+// String name;
+// Real(quantity="MolarMass", unit="kg/mol", min=0.0) MM;
+// Real(quantity="SpecificEnergy", unit="J/kg") Hf;
+// Real(quantity="SpecificEnergy", unit="J/kg") H0;
+// Real(quantity="ThermodynamicTemperature", unit="K", min=0.0, displayUnit="degC") Tlimit;
+// Real[7] alow;
+// Real[2] blow;
+// Real[7] ahigh;
+// Real[2] bhigh;
+// Real(quantity="SpecificHeatCapacity", unit="J/(kg.K)") R;
+// end Modelica.Media.IdealGases.Common.DataRecord;, x_tol:Real) => Real in component <NO COMPONENT>
+// candidates are 
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve<function>(y_zero:Real, x_min:Real, x_max:Real, pressure:Real, X:Real[:], f_nonlinear_data:record Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear_Data
+// end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear_Data;, x_tol:Real) => Real
+// Error: Tried to use function .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h, but it was not instantiated.
+// "
+// "[package.mo:8236:17-8247:20:writable] Warning: Forcing full instantiation of partial class f_nonlinear during checkModel.
+// [package.mo:591:5-591:56:writable] Error: No matching function found for Internal.solve(h, 200, 6000, 100000.0, {1}, Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979))
+// of type
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve<function>(y_zero:Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\"), x_min:Integer, x_max:Integer, pressure:Real, X:Integer[1], f_nonlinear_data:record Modelica.Media.IdealGases.Common.DataRecord
+// String name;
+// Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+// Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+// Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+// Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+// Real[7] alow;
+// Real[2] blow;
+// Real[7] ahigh;
+// Real[2] bhigh;
+// Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+// end Modelica.Media.IdealGases.Common.DataRecord;, x_tol:Real) => Real in component <NO COMPONENT>
+// candidates are 
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve<function>(y_zero:Real, x_min:Real, x_max:Real, pressure:Real, X:Real[:], f_nonlinear_data:record Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear_Data
+// end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.f_nonlinear_Data;, x_tol:Real) => Real
+// [package.mo:8236:17-8247:20:writable] Warning: Forcing full instantiation of partial class f_nonlinear during checkModel.
+// [package.mo:619:5-619:52:writable] Error: No matching function found for Internal.solve(s, 200, 6000, p, {1}, Modelica.Media.IdealGases.Common.DataRecord(\"Air\",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979))
+// of type
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve<function>(y_zero:Real(min=-1000000.0, max=1000000.0, nominal=1000.0, quantity=\"SpecificEntropy\", unit=\"J/(kg.K)\"), x_min:Integer, x_max:Integer, pressure:Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\"), X:Integer[1], f_nonlinear_data:record Modelica.Media.IdealGases.Common.DataRecord
+// String name;
+// Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+// Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+// Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+// Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+// Real[7] alow;
+// Real[2] blow;
+// Real[7] ahigh;
+// Real[2] bhigh;
+// Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+// end Modelica.Media.IdealGases.Common.DataRecord;, x_tol:Real) => Real in component <NO COMPONENT>
+// candidates are 
+//   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.solve<function>(y_zero:Real, x_min:Real, x_max:Real, pressure:Real, X:Real[:], f_nonlinear_data:record Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear_Data
+// end Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_ps.Internal.f_nonlinear_Data;, x_tol:Real) => Real
+// "
+// ""
+// endResult

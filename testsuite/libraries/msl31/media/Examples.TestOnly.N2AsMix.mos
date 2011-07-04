@@ -1,0 +1,99 @@
+//name:        Modelica.Media.Examples.TestOnly.N2AsMix [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
+checkModel(Modelica.Media.Examples.TestOnly.N2AsMix); getErrorString();
+
+// Result:
+// true
+// ""
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.TestOnly.N2AsMix
+//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Examples.TestOnly.N2AsMix.Choices.IndependentVariables.pTX \"Enumeration type for independent variables\";
+//   constant String mediumName = \"Nitrogen\" \"Name of the medium\";
+//   constant Boolean singleState = false \"= true, if u and d are not a function of pressure\";
+//   constant Boolean reducedX = false \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
+//   constant Boolean fixedX = false \"= true if medium contains the equation X = reference_X\";
+//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Default value for temperature of medium (for initialization)\";
+//   constant String fluidConstants[1].iupacName = \"unknown\" \"complete IUPAC name (or common name, if non-existent)\";
+//   constant String fluidConstants[1].casRegistryNumber = \"7727-37-9\" \"chemical abstracts sequencing number (if it exists)\";
+//   constant String fluidConstants[1].chemicalFormula = \"N2\" \"Chemical formula, (brutto, nomenclature according to Hill\";
+//   constant String fluidConstants[1].structureFormula = \"unknown\" \"Chemical structure formula\";
+//   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.0280134 \"molar mass\";
+//   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 126.2 \"critical temperature\";
+//   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 3398000.0 \"critical pressure\";
+//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-06, max = 1000000.0, nominal = 1.0) = 9.01e-05 \"critical molar Volume\";
+//   constant Real fluidConstants[1].acentricFactor = 0.037 \"Pitzer acentric factor\";
+//   constant Real fluidConstants[1].meltingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 63.15 \"melting point at 101325 Pa\";
+//   constant Real fluidConstants[1].normalBoilingPoint(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 77.35 \"normal boiling point (at 101325 Pa)\";
+//   constant Real fluidConstants[1].dipoleMoment(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) = 0.0 \"dipole moment of molecule in Debye (1 debye = 3.33564e10-30 C.m)\";
+//   constant Boolean fluidConstants[1].hasIdealGasHeatCapacity = true \"true if ideal gas heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasCriticalData = true \"true if critical data are known\";
+//   constant Boolean fluidConstants[1].hasDipoleMoment = true \"true if a dipole moment known\";
+//   constant Boolean fluidConstants[1].hasFundamentalEquation = false \"true if a fundamental equation\";
+//   constant Boolean fluidConstants[1].hasLiquidHeatCapacity = false \"true if liquid heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasSolidHeatCapacity = false \"true if solid heat capacity is available\";
+//   constant Boolean fluidConstants[1].hasAccurateViscosityData = false \"true if accurate data for a viscosity function is available\";
+//   constant Boolean fluidConstants[1].hasAccurateConductivityData = false \"true if accurate data for thermal conductivity is available\";
+//   constant Boolean fluidConstants[1].hasVapourPressureCurve = false \"true if vapour pressure data, e.g. Antoine coefficents are known\";
+//   constant Boolean fluidConstants[1].hasAcentricFactor = true \"true if Pitzer accentric factor is known\";
+//   constant Real fluidConstants[1].HCRIT0(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"Critical specific enthalpy of the fundamental equation\";
+//   constant Real fluidConstants[1].SCRIT0(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = 0.0 \"Critical specific entropy of the fundamental equation\";
+//   constant Real fluidConstants[1].deltah(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"Difference between specific enthalpy model (h_m) and f.eq. (h_f) (h_m - h_f)\";
+//   constant Real fluidConstants[1].deltas(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = 0.0 \"Difference between specific enthalpy model (s_m) and f.eq. (s_f) (s_m - s_f)\";
+//   constant String data[1].name = \"N2\" \"Name of ideal gas\";
+//   constant Real data[1].MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) = 0.0280134 \"Molar mass\";
+//   constant Real data[1].Hf(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"Enthalpy of formation at 298.15K\";
+//   constant Real data[1].H0(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 309498.454311151 \"H0(298.15K) - H0(0K)\";
+//   constant Real data[1].Tlimit(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 1000.0 \"Temperature limit between low and high data sets\";
+//   constant Real data[1].alow[1] = 22103.71497 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[2] = -381.846182 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[3] = 6.08273836 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[4] = -0.00853091441 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[5] = 1.384646189e-05 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[6] = -9.62579362e-09 \"Low temperature coefficients a\";
+//   constant Real data[1].alow[7] = 2.519705809e-12 \"Low temperature coefficients a\";
+//   constant Real data[1].blow[1] = 710.846086 \"Low temperature constants b\";
+//   constant Real data[1].blow[2] = -10.76003744 \"Low temperature constants b\";
+//   constant Real data[1].ahigh[1] = 587712.406 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[2] = -2239.249073 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[3] = 6.06694922 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[4] = -0.00061396855 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[5] = 1.491806679e-07 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[6] = -1.923105485e-11 \"High temperature coefficients a\";
+//   constant Real data[1].ahigh[7] = 1.061954386e-15 \"High temperature coefficients a\";
+//   constant Real data[1].bhigh[1] = 12832.10415 \"High temperature constants b\";
+//   constant Real data[1].bhigh[2] = -15.86640027 \"High temperature constants b\";
+//   constant Real data[1].R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") = 296.803386950531 \"Gas constant\";
+//   constant Boolean excludeEnthalpyOfFormation = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
+//   constant enumeration(ZeroAt0K, ZeroAt25C, UserDefined) referenceChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
+//   constant Real h_offset(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
+//   constant String substanceNames[1] = \"Nitrogen\" \"Names of the mixture substances. Set substanceNames={mediumName} if only one substance.\";
+//   final constant Integer nS = 1 \"Number of substances\";
+//   constant Integer nX = 1 \"Number of mass fractions\";
+//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
+//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
+// end Modelica.Media.Examples.TestOnly.N2AsMix;
+// "
+// ""
+// "Check of Modelica.Media.Examples.TestOnly.N2AsMix completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.TestOnly.N2AsMix has 0 equation(s) and 0 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// endResult

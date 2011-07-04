@@ -1,0 +1,92 @@
+//name:        Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates.mos [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
+checkModel(Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates); getErrorString();
+
+// Result:
+// true
+// ""
+// ""
+// "[package.mo:2460:7-2460:30:writable] Error: No matching function found for setDewState(sat)
+// of type
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(start=100000.0, min=0.0, max=100000000.0, nominal=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") psat;
+// Real(start=300.0, min=1.0, max=10000.0, nominal=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState; in component medium
+// candidates are 
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") psat;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState;
+// Error: Error occured while flattening model Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates
+// [package.mo:2460:7-2460:30:writable] Error: No matching function found for setDewState(sat)
+// of type
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(start=100000.0, min=0.0, max=100000000.0, nominal=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") psat;
+// Real(start=300.0, min=1.0, max=10000.0, nominal=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState; in component medium
+// candidates are 
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") psat;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity="Density", unit="kg/m3", displayUnit="g/cm3") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity="ThermodynamicTemperature", unit="K", displayUnit="degC") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity="Pressure", unit="Pa", displayUnit="bar") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState;
+// Error: Error occured while flattening model Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates
+// "
+// "[package.mo:2460:7-2460:30:writable] Error: No matching function found for setDewState(sat)
+// of type
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(start=100000.0, min=0.0, max=100000000.0, nominal=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") psat;
+// Real(start=300.0, min=1.0, max=10000.0, nominal=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState; in component medium
+// candidates are 
+//   .Modelica.Media.Examples.TwoPhaseWater.setDewState<function>(sat:record Modelica.Media.Examples.TwoPhaseWater.SaturationProperties
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") psat;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") Tsat;
+// end Modelica.Media.Examples.TwoPhaseWater.SaturationProperties;, phase:Integer(min=0, max=2)) => record Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState
+// Integer(min=0, max=2) phase;
+// Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
+// Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") d;
+// Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+// Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+// end Modelica.Media.Examples.TwoPhaseWater.ThermodynamicState;
+// Error: Error occured while flattening model Modelica.Media.Examples.TwoPhaseWater.TestTwoPhaseStates
+// "
+// ""
+// endResult

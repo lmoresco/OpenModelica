@@ -12,7 +12,6 @@ Modelica.Math.Matrices.mos \
 Modelica.Math.Matrices.LAPACK.mos \
 Modelica.Mechanics.mos \
 Modelica.Mechanics.MultiBody.mos \
-Modelica.Media.mos \
 Modelica.Thermal.mos \
 Modelica.Utilities.mos
 

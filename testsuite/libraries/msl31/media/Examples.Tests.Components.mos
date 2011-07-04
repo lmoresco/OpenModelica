@@ -1,0 +1,812 @@
+//name:        Modelica.Media.Examples.Tests.Components [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+// Working - OK
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort); getErrorString();
+
+// Working - OK
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort_a); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+
+// Working - OK
+instantiateModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FluidPort_b); getErrorString();
+
+// Not working - Illegal to instantiate partial class BaseProperties
+instantiateModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.PortVolume); getErrorString();
+
+// Not working - Illegal to instantiate partial class BaseProperties
+// Check - OK, but warnings. Unbalanced.
+instantiateModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.FixedMassFlowRate); getErrorString();
+
+// Not working - Illegal to instantiate partial class BaseProperties
+instantiateModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
+// Check - OK, but warnings. Unbalanced.
+checkModel(Modelica.Media.Examples.Tests.Components.FixedAmbient); getErrorString();
+
+// Working - With warnings
+instantiateModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.Components.ShortPipe); getErrorString();
+
+// Not working - Error in generated function code
+checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel); getErrorString();
+
+// Not working - Illegal to instantiate partial class PartialTestModel2
+checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getErrorString();
+
+// Result:
+// true
+// ""
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort_a
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_a;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.FluidPort_b
+//   Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+// equation
+//   H_flow = 0.0;
+//   m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.FluidPort_b;
+// "
+// ""
+// "Check of Modelica.Media.Examples.Tests.Components.FluidPort_b completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.FluidPort_b has 2 equation(s) and 4 variable(s).
+// 2 of these are trivial equation(s).
+// "
+// ""
+// ""
+// "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
+// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
+// "
+// "[package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// [package.mo:2915:9-2921:15:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
+// "
+// ""
+// ""
+// "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
+// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
+// "
+// "Check of Modelica.Media.Examples.Tests.Components.FixedMassFlowRate completed successfully.
+// 
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// 
+// Class Modelica.Media.Examples.Tests.Components.FixedMassFlowRate has 9 equation(s) and 14 variable(s).
+// 6 of these are trivial equation(s).
+// "
+// ""
+// ""
+// "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
+// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
+// "
+// "Check of Modelica.Media.Examples.Tests.Components.FixedAmbient completed successfully.
+// 
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// [package.mo:3110:9-3114:15:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.
+// 
+// Class Modelica.Media.Examples.Tests.Components.FixedAmbient has 9 equation(s) and 14 variable(s).
+// 6 of these are trivial equation(s).
+// "
+// ""
+// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Examples.Tests.Components.ShortPipe
+//   parameter Real dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Nominal pressure drop\";
+//   parameter Real m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-10, max = 100000.0) \"Nominal mass flow rate at nominal pressure drop\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real port_a.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
+//   Real port_b.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from port_a to port_b (m_flow > 0 is design flow direction)\";
+//   Real dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pressure drop from port_a to port_b\";
+// equation
+//   port_a.H_flow = semiLinear(port_a.m_flow,port_a.h,port_b.h);
+//   port_a.H_flow + port_b.H_flow = 0.0;
+//   port_a.m_flow + port_b.m_flow = 0.0;
+//   m_flow = port_a.m_flow;
+//   dp = port_a.p - port_b.p;
+//   m_flow = (dp * m_flow_nominal) / dp_nominal;
+//   port_b.H_flow = 0.0;
+//   port_b.m_flow = 0.0;
+//   port_a.H_flow = 0.0;
+//   port_a.m_flow = 0.0;
+// end Modelica.Media.Examples.Tests.Components.ShortPipe;
+// "
+// "Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
+// "
+// "Check of Modelica.Media.Examples.Tests.Components.ShortPipe completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.Tests.Components.ShortPipe has 10 equation(s) and 10 variable(s).
+// 7 of these are trivial equation(s).
+// "
+// ""
+// "[package.mo:3227:7-3289:27:writable] Warning: Forcing full instantiation of partial class PartialTestModel during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PartialTestModel_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:2915:9-2921:15:writable] Error: No constant value for variable volume.Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
+// [package.mo:3227:7-3289:27:writable] Error: Illegal to instantiate partial class PartialTestModel
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel
+// "
+// ""
+// "[package.mo:3291:7-3364:28:writable] Warning: Forcing full instantiation of partial class PartialTestModel2 during checkModel.
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// [package.mo:2915:9-2921:15:writable] Error: No constant value for variable volume.Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
+// [package.mo:3291:7-3364:28:writable] Error: Illegal to instantiate partial class PartialTestModel2
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PartialTestModel2
+// "
+// ""
+// endResult

@@ -1,0 +1,16 @@
+//name: Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47 [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Incompressible.Glycol47); getErrorString();
+
+// Result:
+// true
+// ""
+// endResult

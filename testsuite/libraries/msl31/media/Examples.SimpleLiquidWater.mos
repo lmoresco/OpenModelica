@@ -1,0 +1,183 @@
+//name:        Modelica.Media.Examples.SimpleLiquidWater [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
+checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
+
+// Result:
+// true
+// ""
+// "function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
+//   input Real x \"Abszissa value\";
+//   input Real y1 \"Ordinate value for x > 0\";
+//   input Real y2 \"Ordinate value for x < 0\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
+// algorithm
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+// end Modelica.Media.Common.smoothStep;
+// 
+// function Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.SimpleLiquidWater.Medium.dynamicViscosity \"Return dynamic viscosity\"
+//   input Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+// algorithm
+//   eta := 0.001;
+// end Modelica.Media.Examples.SimpleLiquidWater.Medium.dynamicViscosity;
+// 
+// function Modelica.Media.Examples.SimpleLiquidWater.Medium.setSmoothState \"Return thermodynamic state so that it smoothly approximates: if x > 0 then state_a else state_b\"
+//   input Real x \"m_flow or dp\";
+//   input Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState state_a \"Thermodynamic state if x > 0\";
+//   input Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState state_b \"Thermodynamic state if x < 0\";
+//   input Real x_small(min = 0.0) \"Smooth transition in the region -x_small < x < x_small\";
+//   output Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState state \"Smooth thermodynamic state for all x (continuous and differentiable)\";
+// algorithm
+//   state := Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState(Modelica.Media.Common.smoothStep(x,state_a.p,state_b.p,x_small),Modelica.Media.Common.smoothStep(x,state_a.T,state_b.T,x_small));
+// end Modelica.Media.Examples.SimpleLiquidWater.Medium.setSmoothState;
+// 
+// function Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := -1142859.6 + 4184.0 * T;
+// end Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX;
+// 
+// function Modelica.Media.Examples.SimpleLiquidWater.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume\"
+//   input Modelica.Media.Examples.SimpleLiquidWater.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
+// algorithm
+//   cv := 4184.0;
+// end Modelica.Media.Examples.SimpleLiquidWater.Medium.specificHeatCapacityCv;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// function Modelica.SIunits.Conversions.to_bar \"Convert from Pascal to bar\"
+//   input Real Pa(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pascal value\";
+//   output Real bar(quantity = \"Pressure\", unit = \"bar\") \"bar value\";
+// algorithm
+//   bar := Pa / 100000.0;
+// end Modelica.SIunits.Conversions.to_bar;
+// 
+// function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+// algorithm
+//   Celsius := -273.15 + Kelvin;
+// end Modelica.SIunits.Conversions.to_degC;
+// 
+// class Modelica.Media.Examples.SimpleLiquidWater
+//   parameter Real V(quantity = \"Volume\", unit = \"m3\") = 1.0 \"Volume\";
+//   parameter Real H_flow_ext(quantity = \"EnthalpyFlowRate\", unit = \"W\") = 1000000.0 \"Constant enthalpy flow rate into the volume\";
+//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
+//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, fixed = true, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean medium.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean medium.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium.T) \"Temperature of medium in [degC]\";
+//   Real medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium.p) \"Absolute pressure of medium in [bar]\";
+//   input Real medium2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, StateSelect = StateSelect.default) \"Absolute pressure of medium\";
+//   input Real medium2.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
+//   Real medium2.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.default) \"Temperature of medium\";
+//   Real medium2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium2.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real medium2.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium2.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real medium2.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium2.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   parameter Boolean medium2.preferredMediumStates = false \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   parameter Boolean medium2.standardOrderComponents = true \"if true, and reducedX = true, the last element of X will be computed from the other ones\";
+//   Real medium2.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium2.T) \"Temperature of medium in [degC]\";
+//   Real medium2.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium2.p) \"Absolute pressure of medium in [bar]\";
+//   Real state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real m_flow_ext2;
+//   Real der_p;
+//   Real der_T;
+//   Real m(quantity = \"Mass\", unit = \"kg\", min = 0.0, start = 1.0);
+//   Real U(quantity = \"Energy\", unit = \"J\");
+//   Real m_flow_ext(quantity = \"MassFlowRate.SimpleLiquidWater\", unit = \"kg/s\", min = -100000.0, max = 100000.0);
+//   Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.SimpleLiquidWater.Medium.dynamicViscosity(state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificHeatCapacityCv(state);
+// equation
+//   assert(medium.T >= 272.15 and medium.T <= 403.15,\"
+// Temperature T (= \" + String(medium.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   medium.h = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX(medium.p,medium.T,{medium.X[1]});
+//   medium.u = -1142859.6 + 4184.0 * medium.T;
+//   medium.d = 995.586;
+//   medium.R = 0.0;
+//   medium.MM = 0.018015268;
+//   medium.state.T = medium.T;
+//   medium.state.p = medium.p;
+//   medium.X[1] = 1.0;
+//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
+//   assert(medium2.T >= 272.15 and medium2.T <= 403.15,\"
+// Temperature T (= \" + String(medium2.T,0,true,6) + \" K) is not
+// in the allowed range (\" + String(272.15,0,true,6) + \" K <= T <= \" + String(403.15,0,true,6) + \" K)
+// required from medium model \\\"\" + \"SimpleLiquidWater\" + \"\\\".
+// \");
+//   medium2.h = Modelica.Media.Examples.SimpleLiquidWater.Medium.specificEnthalpy_pTX(medium2.p,medium2.T,{medium2.X[1]});
+//   medium2.u = -1142859.6 + 4184.0 * medium2.T;
+//   medium2.d = 995.586;
+//   medium2.R = 0.0;
+//   medium2.MM = 0.018015268;
+//   medium2.state.T = medium2.T;
+//   medium2.state.p = medium2.p;
+//   medium2.X[1] = 1.0;
+//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"SimpleLiquidWater\" + \"
+// of medium \" + \"SimpleLiquidWater\" + \" is not in the range 0..1\");
+//   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleLiquidWater\" + \"\\\" is negative
+// (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");
+//   medium.p = 100000.0;
+//   m = medium.d * V;
+//   U = m * medium.u;
+//   der(m) = m_flow_ext;
+//   der(U) = H_flow_ext;
+//   medium2.p = 10000.0 * time;
+//   medium2.T = 330.0;
+//   m_flow_ext2 = time + -30.0;
+//   state = Modelica.Media.Examples.SimpleLiquidWater.Medium.setSmoothState(m_flow_ext2,medium.state,medium2.state,10.0);
+//   der_p = der(state.p);
+//   der_T = der(state.T);
+// end Modelica.Media.Examples.SimpleLiquidWater;
+// "
+// ""
+// "Check of Modelica.Media.Examples.SimpleLiquidWater completed successfully.
+// 
+// 
+// Class Modelica.Media.Examples.SimpleLiquidWater has 34 equation(s) and 34 variable(s).
+// 17 of these are trivial equation(s).
+// "
+// ""
+// endResult

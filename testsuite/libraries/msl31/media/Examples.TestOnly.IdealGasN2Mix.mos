@@ -1,0 +1,274 @@
+//name:        Modelica.Media.Examples.TestOnly.IdealGasN2Mix [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
+checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
+
+// Result:
+// true
+// ""
+// "function Modelica.Math.log
+//   input Real u;
+//   output Real y;
+// 
+//   external \"C\";
+// end Modelica.Math.log;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState\"
+//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
+//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
+//   input Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[1] X;
+//   output ThermodynamicState res;
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.gasConstant \"Return gasConstant\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state\";
+//   output Real R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"mixture gas constant\";
+// algorithm
+//   R := data.R[1] * state.X[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.gasConstant;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.h_TX \"Return specific enthalpy\"
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Independent Mass fractions of gas mixture\";
+//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
+//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
+//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
+// algorithm
+//   h := X * {Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[1],T,exclEnthForm,refChoice,h_off)};
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.h_TX;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent \"Return isentropic exponent\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) \"Isentropic exponent\";
+// algorithm
+//   gamma := Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(state) / Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(state);
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.massToMoleFractions \"Return mole fractions from mass fractions X\"
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"1\") \"Mass fractions of mixture\";
+//   input Real[:] MMX(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar masses of components\";
+//   output Real[size(X,1)] moleFractions(quantity = \"MoleFraction\", unit = \"1\") \"Mole fractions of gas mixture\";
+//   protected Real[size(X,1)] invMMX \"inverses of molar weights\";
+//   protected Real Mmix(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.0) \"molar mass of mixture\";
+// algorithm
+//   for i in 1:size(X,1) loop
+//     invMMX[i] := 1.0 / MMX[i];
+//   end for;
+//   Mmix := 1.0 / (X * invMMX);
+//   for i in 1:size(X,1) loop
+//     moleFractions[i] := (Mmix * X[i]) / MMX[i];
+//   end for;
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.massToMoleFractions;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.molarMass \"Return molar mass of mixture\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Mixture molar mass\";
+// algorithm
+//   MM := 0.0280134 / state.X[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.molarMass;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX \"Return temperature dependent part of the entropy, expects full entropy vector\"
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
+//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"mass fraction\";
+//   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"specific entropy\";
+// algorithm
+//   s := Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T(data[1],T) * X[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy \"Return specific entropy\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
+//   protected Real[1] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.massToMoleFractions({state.X[1]},{data.MM[1]}) \"Molar fractions\";
+// algorithm
+//   s := Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.s_TX(state.T,{state.X[1]}) + (-8.314472 * if state.X[1] < 1e-15 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+// algorithm
+//   cp := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv \"Return specific heat capacity at constant volume from temperature and gas data\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
+// algorithm
+//   cv := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] - data.R[1] * state.X[1];
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv;
+// 
+// function Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound \"Return velocity of sound\"
+//   input Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
+// algorithm
+//   a := sqrt(max(0.0,(Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.gasConstant(state) * state.T * Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(state)) / Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(state)));
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound;
+// 
+// function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
+//   input String name;
+//   input Real(quantity=\"MolarMass\", unit=\"kg/mol\", min=0.0) MM;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") Hf;
+//   input Real(quantity=\"SpecificEnergy\", unit=\"J/kg\") H0;
+//   input Real(quantity=\"ThermodynamicTemperature\", unit=\"K\", min=0.0, displayUnit=\"degC\") Tlimit;
+//   input Real[7] alow;
+//   input Real[2] blow;
+//   input Real[7] ahigh;
+//   input Real[2] bhigh;
+//   input Real(quantity=\"SpecificHeatCapacity\", unit=\"J/(kg.K)\") R;
+//   output DataRecord res;
+// end Modelica.Media.IdealGases.Common.DataRecord;
+// 
+// function Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T \"Compute specific heat capacity at constant pressure from temperature and gas data\"
+//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"Specific heat capacity at temperature T\";
+// algorithm
+//   cp := if T < data.Tlimit then data.R * T ^ -2.0 * (data.alow[1] + T * (data.alow[2] + T * (data.alow[3] + T * (data.alow[4] + T * (data.alow[5] + T * (data.alow[6] + data.alow[7] * T)))))) else data.R * T ^ -2.0 * (data.ahigh[1] + T * (data.ahigh[2] + T * (data.ahigh[3] + T * (data.ahigh[4] + T * (data.ahigh[5] + T * (data.ahigh[6] + data.ahigh[7] * T))))));
+// end Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T;
+// 
+// function Modelica.Media.IdealGases.Common.SingleGasNasa.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
+//     refChoice input, or by the referenceChoice package constant by default\"
+//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
+//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.IdealGases.Common.SingleGasNasa.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
+//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
+//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
+// algorithm
+//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
+// end Modelica.Media.IdealGases.Common.SingleGasNasa.h_T;
+// 
+// function Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T \"Compute specific entropy from temperature and gas data\"
+//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
+//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
+//   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy at temperature T\";
+// algorithm
+//   s := if noEvent(T < data.Tlimit) then data.R * (data.blow[2] + -0.5 * data.alow[1] * T ^ -2.0 + -data.alow[2] / T + data.alow[3] * log(T) + T * (data.alow[4] + T * (0.5 * data.alow[5] + T * (0.333333333333333 * data.alow[6] + 0.25 * data.alow[7] * T)))) else data.R * (data.bhigh[2] + -0.5 * data.ahigh[1] * T ^ -2.0 + -data.ahigh[2] / T + data.ahigh[3] * log(T) + T * (data.ahigh[4] + T * (0.5 * data.ahigh[5] + T * (0.333333333333333 * data.ahigh[6] + 0.25 * data.ahigh[7] * T))));
+// end Modelica.Media.IdealGases.Common.SingleGasNasa.s0_T;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// function Modelica.SIunits.Conversions.to_bar \"Convert from Pascal to bar\"
+//   input Real Pa(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") \"Pascal value\";
+//   output Real bar(quantity = \"Pressure\", unit = \"bar\") \"bar value\";
+// algorithm
+//   bar := Pa / 100000.0;
+// end Modelica.SIunits.Conversions.to_bar;
+// 
+// function Modelica.SIunits.Conversions.to_degC \"Convert from Kelvin to °Celsius\"
+//   input Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+//   output Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+// algorithm
+//   Celsius := -273.15 + Kelvin;
+// end Modelica.SIunits.Conversions.to_degC;
+// 
+// class Modelica.Media.Examples.TestOnly.IdealGasN2Mix
+//   parameter Real V(quantity = \"Volume\", unit = \"m3\") = 1.0 \"Size of volume\";
+//   parameter Real m_flow_ext(quantity = \"MassFlowRate.Nitrogen\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = 0.01 \"Mass flow rate flowing into volume\";
+//   parameter Real H_flow_ext(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) = 5000.0 \"Enthalpy flow rate flowing into volume\";
+//   input Real medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = 100000.0, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
+//   input Real medium.Xi[1](quantity = \"MassFraction\", unit = \"1\", start = 1.0, StateSelect = StateSelect.prefer) \"Structurally independent mass fractions\";
+//   input Real medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of medium\";
+//   Real medium.d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density of medium\";
+//   Real medium.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0, StateSelect = StateSelect.prefer) \"Temperature of medium\";
+//   Real medium.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, start = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real medium.u(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific internal energy of medium\";
+//   Real medium.R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Gas constant (of mixture if applicable)\";
+//   Real medium.MM(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) \"Molar mass (of mixture or single fluid)\";
+//   Real medium.state.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real medium.state.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real medium.state.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   parameter Boolean medium.preferredMediumStates = true \"= true if StateSelect.prefer shall be used for the independent property variables of the medium\";
+//   final constant Boolean medium.standardOrderComponents;
+//   Real medium.T_degC(quantity = \"ThermodynamicTemperature\", unit = \"degC\") = Modelica.SIunits.Conversions.to_degC(medium.T) \"Temperature of medium in [degC]\";
+//   Real medium.p_bar(quantity = \"Pressure\", unit = \"bar\") = Modelica.SIunits.Conversions.to_bar(medium.p) \"Absolute pressure of medium in [bar]\";
+//   Real m(quantity = \"Nitrogen\", start = 1.0);
+//   Real U(quantity = \"Energy\", unit = \"J\");
+//   Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCp(medium.state);
+//   Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificHeatCapacityCv(medium.state);
+//   Real gamma(quantity = \"RatioOfSpecificHeatCapacities\", unit = \"1\", min = 1.0, max = 500000.0, start = 1.2, nominal = 1.2) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.isentropicExponent(medium.state);
+//   Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy(medium.state);
+//   Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.velocityOfSound(medium.state);
+// equation
+//   assert(medium.T >= 200.0 and medium.T <= 6000.0,\"
+// Temperature T (=\" + String(medium.T,0,true,6) + \" K = 200 K) is not in the allowed range
+// 200 K <= T <= 6000 K
+// required from medium model \\\"\" + \"Nitrogen\" + \"\\\".\");
+//   medium.MM = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.molarMass(medium.state);
+//   medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.h_TX(medium.T,{medium.X[1]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   medium.R = data.R[1] * medium.X[1];
+//   medium.u = medium.h - medium.R * medium.T;
+//   medium.d = medium.p / (medium.T * medium.R);
+//   medium.state.T = medium.T;
+//   medium.state.p = medium.p;
+//   medium.state.X[1] = medium.X[1];
+//   medium.Xi[1] = medium.X[1];
+//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+// of medium \" + \"Nitrogen\" + \" is not in the range 0..1\");
+//   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Nitrogen\" + \"\\\" is negative
+// (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
+//   m = medium.d * V;
+//   U = m * medium.u;
+//   medium.X[1] = 1.0;
+//   der(m) = m_flow_ext;
+//   der(U) = H_flow_ext;
+// end Modelica.Media.Examples.TestOnly.IdealGasN2Mix;
+// "
+// "Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
+// [package.mo:77:3-78:83:writable] Warning: Component: h_offset with no default value! This might happen if you are using a constant with no binding as a modifier.
+// Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
+// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy.$foriter loop scope$
+// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// 	first element is:  input ThermodynamicState state "properties at upstream location"	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state "thermodynamic state record"	Modelica specification requires that elements are exactly identical.
+// "
+// "Check of Modelica.Media.Examples.TestOnly.IdealGasN2Mix completed successfully.
+// 
+// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
+// [package.mo:77:3-78:83:writable] Warning: Component: h_offset with no default value! This might happen if you are using a constant with no binding as a modifier.
+// Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
+// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy.$foriter loop scope$
+// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
+// 	first element is:  input ThermodynamicState state \"properties at upstream location\"	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\"	Modelica specification requires that elements are exactly identical.
+// 
+// Class Modelica.Media.Examples.TestOnly.IdealGasN2Mix has 21 equation(s) and 21 variable(s).
+// 5 of these are trivial equation(s).
+// "
+// ""
+// endResult

@@ -1,0 +1,619 @@
+//name:        Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
+checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getErrorString();
+
+// Result:
+// true
+// ""
+// ""
+// "Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: "Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]=Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 1 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:72: fel: inkompatibel typ för argument 2 av "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.h:118: anm: "modelica_real" förväntades men argumentet har typ "void *"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:74: fel: kan inte konvertera till en pekartyp
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: "sum_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected ";" before "tmp6"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: "tmp6" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I"/home/per/workspace/modelica/build/include/omc"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion "_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: "Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected ";" before "tmp3"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: "Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected ";" before "tmp4"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: "tmp3" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: inkompatibel typ för argument 1 av "mmc_mk_rcon"
+// /home/per/workspace/modelica/build/include/omc/meta_modelica.h:196: anm: "double" förväntades men argumentet har typ "real_array"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: "tmp4" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]=Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
+// "
+// "[package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:46: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX.c:75: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX] Fel 1
+// 
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_PortVolume_Medium_setState__pTX\":
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: \"sum_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:673: fel: expected \";\" before \"tmp6\"
+// Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX.c:702: fel: \"tmp6\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_PortVolume_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
+// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
+// Error: Error building simulator. Buildlog: gcc-4.4 -I\"/home/per/workspace/modelica/build/include/omc\"  -O0 -falign-functions -march=native -mfpmath=sse -fPIC  -c -o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.o Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c: I funktion \"_Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX\":
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_setState__pTX_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: (Each undeclared identifier is reported only once
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: for each function it appears in.)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:49: fel: expected \";\" before \"tmp3\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: \"Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy_rettype\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:50: fel: expected \";\" before \"tmp4\"
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:63: fel: \"tmp3\" undeclared (first use in this function)
+// Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX.c:64: fel: \"tmp4\" undeclared (first use in this function)
+// make: *** [Modelica_Media_Examples_Tests_Components_FluidPort__a_Medium_specificEnthalpy__pTX] Fel 1
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity=\"MassFraction\", unit=\"1\")[1]=Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]
+// Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
+// "
+// ""
+// endResult

@@ -1,0 +1,69 @@
+//name: Modelica.Media.Air.SimpleAir [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Air.SimpleAir); getErrorString();
+checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
+
+// Result:
+// true
+// ""
+// "function Modelica.Media.Air.SimpleAir.FluidConstants \"Automatically generated record constructor for Modelica.Media.Air.SimpleAir.FluidConstants\"
+//   input String iupacName;
+//   input String casRegistryNumber;
+//   input String chemicalFormula;
+//   input String structureFormula;
+//   input Real(min=0.001, max=0.25, nominal=0.032, quantity=\"MolarMass\", unit=\"kg/mol\") molarMass;
+//   output FluidConstants res;
+// end Modelica.Media.Air.SimpleAir.FluidConstants;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Media.Air.SimpleAir
+//   constant enumeration(T, pT, ph, phX, pTX, dTX) ThermoStates = Modelica.Media.Air.SimpleAir.Choices.IndependentVariables.pT \"Enumeration type for independent variables\";
+//   constant String mediumName = \"SimpleAir\" \"Name of the medium\";
+//   constant Boolean singleState = false \"= true, if u and d are not a function of pressure\";
+//   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
+//   constant Boolean fixedX = true \"= true if medium contains the equation X = reference_X\";
+//   constant Real reference_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 298.15 \"Reference temperature of Medium: default 25 deg Celsius\";
+//   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Default value for temperature of medium (for initialization)\";
+//   constant Real cp_const(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 1005.45 \"Constant specific heat capacity at constant pressure\";
+//   constant Real R_gas(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = 287.051224952979 \"medium specific gas constant\";
+//   constant Real MM_const(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.0289651159 \"Molar mass\";
+//   constant Real eta_const(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = 1.82e-05 \"Constant dynamic viscosity\";
+//   constant Real lambda_const(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = 0.026 \"Constant thermal conductivity\";
+//   constant Real T_min(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.15 \"Minimum temperature valid for medium model\";
+//   constant Real T_max(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 373.15 \"Maximum temperature valid for medium model\";
+//   constant String fluidConstants[1].iupacName = \"simple air\" \"complete IUPAC name (or common name, if non-existent)\";
+//   constant String fluidConstants[1].casRegistryNumber = \"not a real substance\" \"chemical abstracts sequencing number (if it exists)\";
+//   constant String fluidConstants[1].chemicalFormula = \"N2, O2\" \"Chemical formula, (brutto, nomenclature according to Hill\";
+//   constant String fluidConstants[1].structureFormula = \"N2, O2\" \"Chemical structure formula\";
+//   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.0280134 \"molar mass\";
+//   constant String substanceNames[1] = \"SimpleAir\" \"Names of the mixture substances. Set substanceNames={mediumName} if only one substance.\";
+//   constant Real T0(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 298.15 \"Zero enthalpy temperature\";
+//   final constant Integer nS = 1 \"Number of substances\";
+//   constant Integer nX = 1 \"Number of mass fractions\";
+//   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";
+//   constant Real X_default[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default value for mass fractions of medium (for initialization)\";
+// end Modelica.Media.Air.SimpleAir;
+// "
+// ""
+// "Check of Modelica.Media.Air.SimpleAir completed successfully.
+// 
+// 
+// Class Modelica.Media.Air.SimpleAir has 0 equation(s) and 0 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// endResult

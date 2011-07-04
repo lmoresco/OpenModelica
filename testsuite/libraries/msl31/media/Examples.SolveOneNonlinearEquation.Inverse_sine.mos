@@ -1,0 +1,29 @@
+//name: Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine [version 3.1]
+//keyword:     media
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica,{"3.1"}); getErrorString();
+
+instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
+checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
+
+// Result:
+// true
+// ""
+// ""
+// "[package.mo:8285:8-8285:71:writable] Error: Class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.f_nonlinear not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.solve (looking for a function or record).
+// [package.mo:3611:7-3611:90:writable] Error: Class Inverse_sine_definition.solve not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine (looking for a function or record).
+// Error: Error occured while flattening model Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine
+// [package.mo:8285:8-8285:71:writable] Error: Class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.f_nonlinear not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.solve (looking for a function or record).
+// [package.mo:3611:7-3611:90:writable] Error: Class Inverse_sine_definition.solve not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine (looking for a function or record).
+// Error: Error occured while flattening model Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine
+// "
+// "[package.mo:8285:8-8285:71:writable] Error: Class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.f_nonlinear not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.solve (looking for a function or record).
+// [package.mo:3611:7-3611:90:writable] Error: Class Inverse_sine_definition.solve not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine (looking for a function or record).
+// Error: Error occured while flattening model Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine
+// "
+// ""
+// endResult
