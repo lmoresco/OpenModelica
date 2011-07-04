@@ -8575,15 +8575,6 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.END(),
-           _,
-           a_preExp,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("END_NOT_IMPLEMENTED"));
-      then (txt, a_preExp);
-
-    case ( txt,
            DAE.LIST(valList = _),
            _,
            a_preExp,

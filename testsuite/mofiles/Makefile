@@ -213,6 +213,9 @@ Encapsulated1.mo \
 Encapsulated2.mo \
 Encapsulated3.mo \
 Encapsulated4.mo \
+End.mo \
+EndIllegal.mo \
+EndUnknown.mo \
 EngineSAAB95Total.mo \
 Enum10.mo \
 Enum11.mo \
