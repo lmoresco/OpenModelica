@@ -13,7 +13,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // Result:
 // true
 // ""
-// 
+// ""
 // "Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -35,9 +35,6 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // [package.mo:1003:5-1003:71:writable] Error: Type mismatch in assignment in X := {state.X[1],state.X[2]} of Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[2] := Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[4]
 // Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
 // Error: Error occured while flattening model Modelica.Media.Examples.TestOnly.MixIdealGasAir
-// Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
-// [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  input ThermodynamicState state "properties at upstream location"	second element is: input .Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state "thermodynamic state record"	Modelica specification requires that elements are exactly identical.
 // "
 // "Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.

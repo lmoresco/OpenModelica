@@ -126,8 +126,6 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.PortVolume
 // "
 // "[package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [package.mo:2915:9-2921:15:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Media.Examples.Tests.Components.PortVolume.
@@ -136,8 +134,6 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // ""
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedMassFlowRate
 // "
 // "Check of Modelica.Media.Examples.Tests.Components.FixedMassFlowRate completed successfully.
@@ -150,8 +146,6 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // ""
 // ""
 // "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
-// [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.Components.FixedAmbient
 // "
 // "Check of Modelica.Media.Examples.Tests.Components.FixedAmbient completed successfully.

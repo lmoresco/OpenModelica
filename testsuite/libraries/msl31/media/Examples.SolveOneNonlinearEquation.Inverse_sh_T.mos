@@ -13,7 +13,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T); getE
 // Result:
 // true
 // ""
-// 
+// ""
 // "[package.mo:591:5-591:56:writable] Error: No matching function found for Internal.solve(h, 200, 6000, 100000.0, {1}, Modelica.Media.IdealGases.Common.DataRecord("Air",0.0289651159,-4333.83385840345,298609.680343105,1000.0,{10099.5016,-196.827561,5.00915511,-0.00576101373,1.06685993e-05,-7.94029797e-09,2.18523191e-12},{-176.796731,-3.921504225},{241521.443,-1257.8746,5.14455867,-0.000213854179,7.06522784e-08,-1.07148349e-11,6.57780015e-16},{6462.26319,-8.147411905},287.051224952979))
 // of type
 //   .Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sh_T.Medium.T_h.Internal.solve<function>(y_zero:Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity="SpecificEnergy", unit="J/kg"), x_min:Integer, x_max:Integer, pressure:Real, X:Integer[1], f_nonlinear_data:record Modelica.Media.IdealGases.Common.DataRecord

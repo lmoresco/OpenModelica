@@ -16,9 +16,5 @@ getErrorString();
 // 	This is forbidden by Modelica specification and may lead to lookup errors.
 // [OneWayRectifierBGTotal.mo:2760:9-2760:374:writable] Error: Variable DS1: Cyclically dependent constants or parameters found in scope BondLib.Spice.DS: {BVval}
 // Error: Error occured while flattening model BondLib_Examples_ModelicaSpice_OneWayRectifierBG
-// [OneWayRectifierBGTotal.mo:2090:7-2090:183:writable] Warning: Component ID0 has the same name as its type Utilities.ID0.
-// 	This is forbidden by Modelica specification and may lead to lookup errors.
-// [OneWayRectifierBGTotal.mo:2760:9-2760:374:writable] Error: Variable DS1: Cyclically dependent constants or parameters found in scope BondLib.Spice.DS: {BVval}
-// Error: Error occured while flattening model BondLib_Examples_ModelicaSpice_OneWayRectifierBG
 // "
 // endResult
