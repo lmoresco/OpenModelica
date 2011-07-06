@@ -4102,37 +4102,7 @@ algorithm
   end matchcontinue;
 end dumpRestriction;
 
-protected function fun_107
-  input Tpl.Text in_txt;
-  input list<SCode.SubMod> in_a_subModLst;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_subModLst)
-    local
-      Tpl.Text txt;
-      SCode.Mod i_m;
-
-    case ( txt,
-           SCode.NAMEMOD(A = i_m) :: _ )
-      equation
-        txt = dumpModifierPrefix(txt, i_m);
-      then txt;
-
-    case ( txt,
-           SCode.IDXMOD(an = i_m) :: _ )
-      equation
-        txt = dumpModifierPrefix(txt, i_m);
-      then txt;
-
-    case ( txt,
-           _ )
-      then txt;
-  end matchcontinue;
-end fun_107;
-
-protected function lm_108
+protected function lm_107
   input Tpl.Text in_txt;
   input list<SCode.SubMod> in_items;
 
@@ -4154,49 +4124,44 @@ algorithm
       equation
         txt = dumpSubModifier(txt, i_submod);
         txt = Tpl.nextIter(txt);
-        txt = lm_108(txt, rest);
+        txt = lm_107(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_108(txt, rest);
+        txt = lm_107(txt, rest);
       then txt;
   end matchcontinue;
-end lm_108;
+end lm_107;
 
-protected function fun_109
+protected function fun_108
   input Tpl.Text in_txt;
   input list<SCode.SubMod> in_a_subModLst;
-  input Tpl.Text in_a_prefix__str;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_subModLst, in_a_prefix__str)
+  matchcontinue(in_txt, in_a_subModLst)
     local
       Tpl.Text txt;
-      Tpl.Text a_prefix__str;
       list<SCode.SubMod> i_subModLst;
 
     case ( txt,
-           {},
-           _ )
+           {} )
       then txt;
 
     case ( txt,
-           i_subModLst,
-           a_prefix__str )
+           i_subModLst )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
-        txt = Tpl.writeText(txt, a_prefix__str);
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        txt = lm_108(txt, i_subModLst);
+        txt = lm_107(txt, i_subModLst);
         txt = Tpl.popIter(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then txt;
   end matchcontinue;
-end fun_109;
+end fun_108;
 
 public function dumpModifier
   input Tpl.Text in_txt;
@@ -4211,15 +4176,13 @@ algorithm
       list<SCode.SubMod> i_subModLst;
       Option<tuple<Absyn.Exp, Boolean>> i_binding;
       Tpl.Text l_submod__str;
-      Tpl.Text l_prefix__str;
       Tpl.Text l_binding__str;
 
     case ( txt,
            SCode.MOD(binding = i_binding, subModLst = i_subModLst) )
       equation
         l_binding__str = dumpModifierBinding(Tpl.emptyTxt, i_binding);
-        l_prefix__str = fun_107(Tpl.emptyTxt, i_subModLst);
-        l_submod__str = fun_109(Tpl.emptyTxt, i_subModLst, l_prefix__str);
+        l_submod__str = fun_108(Tpl.emptyTxt, i_subModLst);
         txt = Tpl.writeText(txt, l_submod__str);
         txt = Tpl.writeText(txt, l_binding__str);
       then txt;
@@ -4269,38 +4232,44 @@ algorithm
   end matchcontinue;
 end dumpModifierPrefix;
 
-protected function lm_112
+protected function lm_111
   input Tpl.Text in_txt;
   input list<SCode.Element> in_items;
+  input Tpl.Text in_a_each__str;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_items)
+  matchcontinue(in_txt, in_items, in_a_each__str)
     local
       Tpl.Text txt;
       list<SCode.Element> rest;
+      Tpl.Text a_each__str;
       SCode.Element i_e;
 
     case ( txt,
-           {} )
+           {},
+           _ )
       then txt;
 
     case ( txt,
-           i_e :: rest )
+           i_e :: rest,
+           a_each__str )
       equation
+        txt = Tpl.writeText(txt, a_each__str);
         txt = dumpElement(txt, i_e);
         txt = Tpl.nextIter(txt);
-        txt = lm_112(txt, rest);
+        txt = lm_111(txt, rest, a_each__str);
       then txt;
 
     case ( txt,
-           _ :: rest )
+           _ :: rest,
+           a_each__str )
       equation
-        txt = lm_112(txt, rest);
+        txt = lm_111(txt, rest, a_each__str);
       then txt;
   end matchcontinue;
-end lm_112;
+end lm_111;
 
 public function dumpRedeclModifier
   input Tpl.Text in_txt;
@@ -4314,22 +4283,15 @@ algorithm
       Tpl.Text txt;
       list<SCode.Element> i_elementLst;
       SCode.Each i_eachPrefix;
-      SCode.Final i_finalPrefix;
-      Tpl.Text l_el__str;
       Tpl.Text l_each__str;
-      Tpl.Text l_final__str;
 
     case ( txt,
-           SCode.REDECL(finalPrefix = i_finalPrefix, eachPrefix = i_eachPrefix, elementLst = i_elementLst) )
+           SCode.REDECL(eachPrefix = i_eachPrefix, elementLst = i_elementLst) )
       equation
-        l_final__str = dumpFinal(Tpl.emptyTxt, i_finalPrefix);
         l_each__str = dumpEach(Tpl.emptyTxt, i_eachPrefix);
-        l_el__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_el__str = lm_112(l_el__str, i_elementLst);
-        l_el__str = Tpl.popIter(l_el__str);
-        txt = Tpl.writeText(txt, l_final__str);
-        txt = Tpl.writeText(txt, l_each__str);
-        txt = Tpl.writeText(txt, l_el__str);
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_111(txt, i_elementLst, l_each__str);
+        txt = Tpl.popIter(txt);
       then txt;
 
     case ( txt,
@@ -4375,14 +4337,15 @@ algorithm
   matchcontinue(in_txt, in_a_submod)
     local
       Tpl.Text txt;
-      SCode.Mod i_an;
       list<SCode.Subscript> i_subscriptLst;
-      SCode.Mod i_A;
+      SCode.Mod i_an;
       SCode.Ident i_ident;
+      SCode.Mod i_A;
 
     case ( txt,
            SCode.NAMEMOD(A = (i_A as SCode.MOD(finalPrefix = _)), ident = i_ident) )
       equation
+        txt = dumpModifierPrefix(txt, i_A);
         txt = Tpl.writeStr(txt, i_ident);
         txt = dumpModifier(txt, i_A);
       then txt;
@@ -4394,8 +4357,9 @@ algorithm
       then txt;
 
     case ( txt,
-           SCode.IDXMOD(subscriptLst = i_subscriptLst, an = i_an) )
+           SCode.IDXMOD(an = i_an, subscriptLst = i_subscriptLst) )
       equation
+        txt = dumpModifierPrefix(txt, i_an);
         txt = dumpSubscripts(txt, i_subscriptLst);
         txt = dumpModifier(txt, i_an);
       then txt;
@@ -4602,7 +4566,7 @@ algorithm
   end matchcontinue;
 end dumpArrayDimOpt;
 
-protected function lm_123
+protected function lm_122
   input Tpl.Text in_txt;
   input list<Absyn.Subscript> in_items;
 
@@ -4624,16 +4588,16 @@ algorithm
       equation
         txt = dumpSubscript(txt, i_s);
         txt = Tpl.nextIter(txt);
-        txt = lm_123(txt, rest);
+        txt = lm_122(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_123(txt, rest);
+        txt = lm_122(txt, rest);
       then txt;
   end matchcontinue;
-end lm_123;
+end lm_122;
 
 public function dumpSubscripts
   input Tpl.Text in_txt;
@@ -4656,7 +4620,7 @@ algorithm
            i_subscripts )
       equation
         l_sub__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_sub__str = lm_123(l_sub__str, i_subscripts);
+        l_sub__str = lm_122(l_sub__str, i_subscripts);
         l_sub__str = Tpl.popIter(l_sub__str);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeText(txt, l_sub__str);
@@ -4780,7 +4744,7 @@ algorithm
   end matchcontinue;
 end dumpExternalDeclOpt;
 
-protected function fun_130
+protected function fun_129
   input Tpl.Text in_txt;
   input Option<SCode.Ident> in_a_funcName;
 
@@ -4802,9 +4766,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_130;
+end fun_129;
 
-protected function lm_131
+protected function lm_130
   input Tpl.Text in_txt;
   input list<Absyn.Exp> in_items;
 
@@ -4826,18 +4790,18 @@ algorithm
       equation
         txt = dumpExp(txt, i_arg);
         txt = Tpl.nextIter(txt);
-        txt = lm_131(txt, rest);
+        txt = lm_130(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_131(txt, rest);
+        txt = lm_130(txt, rest);
       then txt;
   end matchcontinue;
-end lm_131;
+end lm_130;
 
-protected function fun_132
+protected function fun_131
   input Tpl.Text in_txt;
   input Tpl.Text in_a_func__name__str;
   input Tpl.Text in_a_func__args__str;
@@ -4868,9 +4832,9 @@ algorithm
         txt = Tpl.popBlock(txt);
       then txt;
   end matchcontinue;
-end fun_132;
+end fun_131;
 
-protected function fun_133
+protected function fun_132
   input Tpl.Text in_txt;
   input Option<String> in_a_lang;
 
@@ -4896,9 +4860,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_133;
+end fun_132;
 
-protected function fun_134
+protected function fun_133
   input Tpl.Text in_txt;
   input Option<Absyn.ComponentRef> in_a_output__;
 
@@ -4921,7 +4885,7 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_134;
+end fun_133;
 
 public function dumpExternalDecl
   input Tpl.Text in_txt;
@@ -4946,13 +4910,13 @@ algorithm
     case ( txt,
            SCode.EXTERNALDECL(funcName = i_funcName, args = i_args, lang = i_lang, output_ = i_output__) )
       equation
-        l_func__name__str = fun_130(Tpl.emptyTxt, i_funcName);
+        l_func__name__str = fun_129(Tpl.emptyTxt, i_funcName);
         l_func__args__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_func__args__str = lm_131(l_func__args__str, i_args);
+        l_func__args__str = lm_130(l_func__args__str, i_args);
         l_func__args__str = Tpl.popIter(l_func__args__str);
-        l_func__str = fun_132(Tpl.emptyTxt, l_func__name__str, l_func__args__str);
-        l_lang__str = fun_133(Tpl.emptyTxt, i_lang);
-        l_output__str = fun_134(Tpl.emptyTxt, i_output__);
+        l_func__str = fun_131(Tpl.emptyTxt, l_func__name__str, l_func__args__str);
+        l_lang__str = fun_132(Tpl.emptyTxt, i_lang);
+        l_output__str = fun_133(Tpl.emptyTxt, i_output__);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("external"));
         txt = Tpl.writeText(txt, l_lang__str);
         txt = Tpl.writeText(txt, l_output__str);
@@ -4990,7 +4954,7 @@ algorithm
   end matchcontinue;
 end dumpCommentOpt;
 
-protected function lm_137
+protected function lm_136
   input Tpl.Text in_txt;
   input list<SCode.Annotation> in_items;
 
@@ -5012,16 +4976,16 @@ algorithm
       equation
         txt = dumpAnnotation(txt, i_ann);
         txt = Tpl.nextIter(txt);
-        txt = lm_137(txt, rest);
+        txt = lm_136(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_137(txt, rest);
+        txt = lm_136(txt, rest);
       then txt;
   end matchcontinue;
-end lm_137;
+end lm_136;
 
 public function dumpComment
   input Tpl.Text in_txt;
@@ -5054,7 +5018,7 @@ algorithm
            SCode.CLASS_COMMENT(annotations = i_annotations, comment = i_comment_1) )
       equation
         l_annl__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_annl__str = lm_137(l_annl__str, i_annotations);
+        l_annl__str = lm_136(l_annl__str, i_annotations);
         l_annl__str = Tpl.popIter(l_annl__str);
         l_cmt__str = dumpCommentOpt(Tpl.emptyTxt, i_comment_1);
         txt = Tpl.writeText(txt, l_cmt__str);
@@ -5137,7 +5101,7 @@ algorithm
   end matchcontinue;
 end dumpPath;
 
-protected function lm_141
+protected function lm_140
   input Tpl.Text in_txt;
   input list<Absyn.TypeSpec> in_items;
 
@@ -5159,16 +5123,16 @@ algorithm
       equation
         txt = dumpTypeSpec(txt, i_ty);
         txt = Tpl.nextIter(txt);
-        txt = lm_141(txt, rest);
+        txt = lm_140(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_141(txt, rest);
+        txt = lm_140(txt, rest);
       then txt;
   end matchcontinue;
-end lm_141;
+end lm_140;
 
 public function dumpTypeSpec
   input Tpl.Text in_txt;
@@ -5201,7 +5165,7 @@ algorithm
       equation
         l_path__str = dumpPath(Tpl.emptyTxt, i_path);
         l_ty__str = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_ty__str = lm_141(l_ty__str, i_typeSpecs);
+        l_ty__str = lm_140(l_ty__str, i_typeSpecs);
         l_ty__str = Tpl.popIter(l_ty__str);
         l_arraydim__str = dumpArrayDimOpt(Tpl.emptyTxt, i_arrayDim);
         txt = Tpl.writeText(txt, l_path__str);
