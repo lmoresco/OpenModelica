@@ -4944,8 +4944,10 @@ algorithm
     case ( txt,
            SOME(i_name) )
       equation
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
         txt = dumpCref(txt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" ="));
+        txt = Tpl.popBlock(txt);
       then txt;
 
     case ( txt,
