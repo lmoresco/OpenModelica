@@ -244,7 +244,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
 // Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy.$foriter loop scope$
 // [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  input ThermodynamicState state "properties at upstream location"	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state "thermodynamic state record"	Modelica specification requires that elements are exactly identical.
+// 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // "
 // "Check of Modelica.Media.Examples.TestOnly.IdealGasN2Mix completed successfully.
 // 
@@ -265,7 +265,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium
 // Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.specificEntropy.$foriter loop scope$
 // [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
-// 	first element is:  input ThermodynamicState state \"properties at upstream location\"	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state \"thermodynamic state record\"	Modelica specification requires that elements are exactly identical.
+// 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.IdealGasN2Mix.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // 
 // Class Modelica.Media.Examples.TestOnly.IdealGasN2Mix has 21 equation(s) and 21 variable(s).
 // 5 of these are trivial equation(s).
