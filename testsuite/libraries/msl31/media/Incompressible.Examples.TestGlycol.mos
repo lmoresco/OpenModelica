@@ -324,6 +324,11 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 // end Modelica.Media.Incompressible.Examples.TestGlycol;
 // "
 // ""
-// "Internal error, check of model failed with no error message."
+// "Check of Modelica.Media.Incompressible.Examples.TestGlycol completed successfully.
+// 
+// 
+// Class Modelica.Media.Incompressible.Examples.TestGlycol has 17 equation(s) and 17 variable(s).
+// 6 of these are trivial equation(s).
+// "
 // ""
 // endResult
