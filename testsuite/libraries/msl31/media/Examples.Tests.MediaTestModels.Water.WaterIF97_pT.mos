@@ -1383,7 +1383,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); ge
 //   fixedMassFlowRate.port.p = volume.port.p;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT;
 // "
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT completed successfully.
 // 
@@ -1392,7 +1392,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); ge
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:5591:27-5596:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.

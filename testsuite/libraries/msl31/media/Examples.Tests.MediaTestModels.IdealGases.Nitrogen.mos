@@ -583,11 +583,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); g
 //   fixedMassFlowRate.port.p = volume.port.p;
 // end Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen;
 // "
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen completed successfully.
 // 
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.

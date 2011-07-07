@@ -16,14 +16,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // ""
 // true
 // ""
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
-// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
-// 
-// [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
-// 
-// [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]=Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]
-// Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable volume.medium.Xi: Non-array modification 'if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
@@ -31,7 +24,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir); getError
 // [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]=Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
 // "
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.MoistAir
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.

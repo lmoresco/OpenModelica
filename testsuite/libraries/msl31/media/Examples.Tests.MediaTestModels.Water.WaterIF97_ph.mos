@@ -2574,7 +2574,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); ge
 //   fixedMassFlowRate.port.p = volume.port.p;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph;
 // "
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph completed successfully.
 // 
@@ -2583,11 +2583,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph); ge
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:5591:27-5596:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_ph
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.

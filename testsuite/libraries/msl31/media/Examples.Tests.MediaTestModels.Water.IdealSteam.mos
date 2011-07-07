@@ -583,7 +583,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   fixedMassFlowRate.port.p = volume.port.p;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam;
 // "
-// "Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam
+// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam completed successfully.
 // 
@@ -592,7 +592,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
 // [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
