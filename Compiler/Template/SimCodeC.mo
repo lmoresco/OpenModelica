@@ -4272,6 +4272,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
         txt = Tpl.writeText(txt, l_eRes);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(");"));
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         (txt, a_varDecls) = lm_127(txt, rest, a_varDecls);
       then (txt, a_varDecls);
 
