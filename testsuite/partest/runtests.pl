@@ -39,10 +39,18 @@ use Fcntl;
 my $use_db = 1;
 my $fast = 0;
 
+# Default is two threads.
+my $thread_count = 2;
+my $check_proc_cpu = 1;
+
 # Check for the -f flag.
 for(@ARGV){
   if(/-f/) {
     $fast = 1;
+  }
+  elsif(/-j([0-9]+)/) {
+    $check_proc_cpu = 0;
+    $thread_count = $1;
   }
   elsif(/-nodb/) {
     $use_db = 0;
@@ -162,19 +170,16 @@ foreach(@test_list) {
   $test_queue->enqueue($_);
 }
 
-# Default is two threads.
-my $thread_count = 2;
-
 # Check if we can open /proc/cpuinfo to see how many cores are available, and
 # use that many threads instead.
-if(open(my $in, "<", "/proc/cpuinfo")) {
+if ($check_proc_cpu and open(my $in, "<", "/proc/cpuinfo")) {
   $thread_count = 0;
 
   while(<$in>) {
     $thread_count++ if /processor/;
   }
-  print "$thread_count threads\n";
 }
+print "$thread_count threads\n";
 
 # Make sure that omc-diff is generated before trying to run any tests.
 system("make -C difftool > /dev/null 2>&1");
