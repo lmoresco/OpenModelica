@@ -20,7 +20,7 @@ end Delay;
 //   Real z;
 // equation
 //   y = sin(time);
-//   x = delay(1.0 + y,2.5,2.5);
-//   z = delay(y + -1.0,0.5,1.0);
+//   x = 1.0 + delay(y,2.5,2.5);
+//   z = delay(y,0.5,1.0) + -1.0;
 // end Delay;
 // endResult
