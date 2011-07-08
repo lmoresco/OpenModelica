@@ -251,6 +251,7 @@ EquationIf2.mo \
 EquationIf3.mo \
 EquationIf4.mo \
 ErrorMultipleClasses.mo \
+ErrorUnknownDimension.mo \
 EventFunctions.mo \
 Exp.mo \
 Expressions.mo \
