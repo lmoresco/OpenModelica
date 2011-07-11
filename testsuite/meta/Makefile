@@ -81,6 +81,7 @@ Shadowing1.mos \
 Shadowing2.mos \
 Simplify1.mos \
 StrictRML.mos \
+TailRecursion.mo \
 TupleInteractive.mos \
 Uniontype1.mos \
 Uniontype2.mos \

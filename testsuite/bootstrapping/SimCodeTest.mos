@@ -55,32 +55,33 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 11:   /* functionBodyRegularFunction: arguments */
 // 12:   /* functionBodyRegularFunction: locals */
 // 13:   state tmp1;
-// 14:   /* functionBodyRegularFunction: out inits */
-// 15:   
-// 16:   /* functionBodyRegularFunction: state in */
-// 17:   tmp1 = get_memory_state();
-// 18:   
-// 19:   /* functionBodyRegularFunction: var inits */
-// 20:   /* functionBodyRegularFunction: body */
-// 21:   
-// 22:   _return:
-// 23:   /* functionBodyRegularFunction: out var copy */
-// 24:   /* functionBodyRegularFunction: state out */
-// 25:   restore_memory_state(tmp1);
-// 26:   /* functionBodyRegularFunction: out var assign */
-// 27:   
-// 28:   /* GC: pop the mark! */
-// 29:   
-// 30:   /* functionBodyRegularFunction: return the outs */
-// 31:   return ;
-// 32: }
-// 33: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
-// 34: {
-// 35:   MMC_TRY_TOP()
-// 36:   _SimCodeC_abc();
-// 37:   MMC_CATCH_TOP(return 1)
-// 38:   write_noretcall(outVar);
-// 39:   return 0;
-// 40: }
+// 14:   _tailrecursive:
+// 15:   /* functionBodyRegularFunction: out inits */
+// 16:   
+// 17:   /* functionBodyRegularFunction: state in */
+// 18:   tmp1 = get_memory_state();
+// 19:   
+// 20:   /* functionBodyRegularFunction: var inits */
+// 21:   /* functionBodyRegularFunction: body */
+// 22:   
+// 23:   _return:
+// 24:   /* functionBodyRegularFunction: out var copy */
+// 25:   /* functionBodyRegularFunction: state out */
+// 26:   restore_memory_state(tmp1);
+// 27:   /* functionBodyRegularFunction: out var assign */
+// 28:   
+// 29:   /* GC: pop the mark! */
+// 30:   
+// 31:   /* functionBodyRegularFunction: return the outs */
+// 32:   return ;
+// 33: }
+// 34: int in_SimCodeC_abc(type_description * inArgs, type_description * outVar)
+// 35: {
+// 36:   MMC_TRY_TOP()
+// 37:   _SimCodeC_abc();
+// 38:   MMC_CATCH_TOP(return 1)
+// 39:   write_noretcall(outVar);
+// 40:   return 0;
+// 41: }
 // "
 // endResult
