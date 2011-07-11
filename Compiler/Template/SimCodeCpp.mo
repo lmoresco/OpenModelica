@@ -6330,12 +6330,12 @@ end daeExpCast;
 
 protected function fun_184
   input Tpl.Text in_txt;
-  input DAE.ExpType in_a_ty;
+  input DAE.ExpType in_a_attr_ty;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_ty)
+  matchcontinue(in_txt, in_a_attr_ty)
     local
       Tpl.Text txt;
 
@@ -6478,14 +6478,14 @@ end lm_187;
 
 protected function fun_188
   input Tpl.Text in_txt;
-  input Boolean in_a_builtin;
+  input Boolean in_a_attr_builtin;
   input Tpl.Text in_a_retType;
   input Tpl.Text in_a_retVar;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_builtin, in_a_retType, in_a_retVar)
+  matchcontinue(in_txt, in_a_attr_builtin, in_a_retType, in_a_retVar)
     local
       Tpl.Text txt;
       Tpl.Text a_retType;
@@ -6694,7 +6694,7 @@ algorithm
       Tpl.Text a_retType;
 
     case ( txt,
-           DAE.CALL(ty = DAE.ET_NORETCALL()),
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = DAE.ET_NORETCALL())),
            a_varDecls,
            _ )
       then (txt, a_varDecls);
@@ -6747,14 +6747,14 @@ end fun_193;
 
 protected function fun_194
   input Tpl.Text in_txt;
-  input Boolean in_a_builtin;
+  input Boolean in_a_attr_builtin;
   input Tpl.Text in_a_funName;
   input SimCode.Context in_a_context;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_builtin, in_a_funName, in_a_context)
+  matchcontinue(in_txt, in_a_attr_builtin, in_a_funName, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_funName;
@@ -6839,14 +6839,14 @@ end fun_196;
 
 protected function fun_197
   input Tpl.Text in_txt;
-  input Boolean in_a_builtin;
+  input Boolean in_a_attr_builtin;
   input Tpl.Text in_a_funName;
   input SimCode.Context in_a_context;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_builtin, in_a_funName, in_a_context)
+  matchcontinue(in_txt, in_a_attr_builtin, in_a_funName, in_a_context)
     local
       Tpl.Text txt;
       Tpl.Text a_funName;
@@ -6870,14 +6870,14 @@ end fun_197;
 
 protected function fun_198
   input Tpl.Text in_txt;
-  input Boolean in_a_builtin;
+  input Boolean in_a_attr_builtin;
   input Tpl.Text in_a_retType;
   input Tpl.Text in_a_retVar;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_builtin, in_a_retType, in_a_retVar)
+  matchcontinue(in_txt, in_a_attr_builtin, in_a_retType, in_a_retVar)
     local
       Tpl.Text txt;
       Tpl.Text a_retType;
@@ -6918,10 +6918,10 @@ algorithm
       Tpl.Text txt;
       Tpl.Text a_retType;
       Tpl.Text a_retVar;
-      Boolean i_builtin;
+      Boolean i_attr_builtin;
 
     case ( txt,
-           DAE.CALL(ty = DAE.ET_NORETCALL()),
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = DAE.ET_NORETCALL())),
            _,
            _ )
       equation
@@ -6929,15 +6929,15 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = i_builtin),
+           DAE.CALL(attr = DAE.CALL_ATTR(tuple_ = false, builtin = i_attr_builtin)),
            a_retType,
            a_retVar )
       equation
-        txt = fun_198(txt, i_builtin, a_retType, a_retVar);
+        txt = fun_198(txt, i_attr_builtin, a_retType, a_retVar);
       then txt;
 
     case ( txt,
-           DAE.CALL(tuple_ = true),
+           DAE.CALL(attr = DAE.CALL_ATTR(tuple_ = true)),
            _,
            a_retVar )
       equation
@@ -6994,12 +6994,12 @@ algorithm
       list<DAE.Exp> i_dims;
       DAE.Exp i_val;
       DAE.Exp i_array;
-      Boolean i_builtin;
+      Boolean i_attr_builtin;
       Absyn.Path i_path;
       list<DAE.Exp> i_expLst;
       DAE.ExpType i_arg_ty;
       String i_string;
-      DAE.ExpType i_ty;
+      DAE.ExpType i_attr_ty;
       DAE.Exp i_e2;
       DAE.Exp i_index;
       DAE.Exp i_interval;
@@ -7048,7 +7048,7 @@ algorithm
       Tpl.Text l_var1;
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "edge"), expLst = {i_e1}),
+           DAE.CALL(path = Absyn.IDENT(name = "edge"), expLst = {i_e1}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7063,7 +7063,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "pre"), expLst = {(i_arg as DAE.CREF(componentRef = i_arg_componentRef))}),
+           DAE.CALL(path = Absyn.IDENT(name = "pre"), expLst = {(i_arg as DAE.CREF(componentRef = i_arg_componentRef))}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7093,7 +7093,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "DIVISION"), expLst = {i_e1, i_e2, DAE.SCONST(string = _)}),
+           DAE.CALL(path = Absyn.IDENT(name = "DIVISION"), expLst = {i_e1, i_e2, DAE.SCONST(string = _)}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7109,13 +7109,13 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, ty = i_ty, path = Absyn.IDENT(name = "DIVISION_ARRAY_SCALAR"), expLst = {i_e1, i_e2, DAE.SCONST(string = i_string)}),
+           DAE.CALL(path = Absyn.IDENT(name = "DIVISION_ARRAY_SCALAR"), expLst = {i_e1, i_e2, DAE.SCONST(string = i_string)}, attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_context,
            a_preExp,
            a_varDecls,
            a_simCode )
       equation
-        l_type = fun_184(Tpl.emptyTxt, i_ty);
+        l_type = fun_184(Tpl.emptyTxt, i_attr_ty);
         (l_var, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_type), a_varDecls);
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls, a_simCode);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls, a_simCode);
@@ -7137,7 +7137,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "der"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
+           DAE.CALL(path = Absyn.IDENT(name = "der"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
            _,
            a_preExp,
            a_varDecls,
@@ -7148,7 +7148,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "pre"), expLst = {DAE.CREF(ty = i_arg_ty, componentRef = i_arg_componentRef)}),
+           DAE.CALL(path = Absyn.IDENT(name = "pre"), expLst = {DAE.CREF(ty = i_arg_ty, componentRef = i_arg_componentRef)}),
            _,
            a_preExp,
            a_varDecls,
@@ -7180,7 +7180,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), ty = DAE.ET_REAL(), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "max"), attr = DAE.CALL_ATTR(ty = DAE.ET_REAL()), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7196,7 +7196,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7212,7 +7212,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, ty = DAE.ET_REAL(), path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = DAE.ET_REAL()), path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7228,7 +7228,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7244,7 +7244,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "abs"), expLst = {i_e1}, ty = DAE.ET_INT()),
+           DAE.CALL(path = Absyn.IDENT(name = "abs"), expLst = {i_e1}, attr = DAE.CALL_ATTR(ty = DAE.ET_INT())),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7257,7 +7257,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "abs"), expLst = {i_e1}),
+           DAE.CALL(path = Absyn.IDENT(name = "abs"), expLst = {i_e1}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7270,7 +7270,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = (i_builtin as true), path = (i_path as Absyn.IDENT(name = "sqrt")), expLst = (i_expLst as {i_e1})),
+           DAE.CALL(path = (i_path as Absyn.IDENT(name = "sqrt")), expLst = (i_expLst as {i_e1}), attr = DAE.CALL_ATTR(builtin = i_attr_builtin)),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7289,17 +7289,17 @@ algorithm
         (l_retVar, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_retType), a_varDecls);
         a_preExp = Tpl.writeText(a_preExp, l_retVar);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(" = "));
-        a_preExp = daeExpCallBuiltinPrefix(a_preExp, i_builtin);
+        a_preExp = daeExpCallBuiltinPrefix(a_preExp, i_attr_builtin);
         a_preExp = Tpl.writeText(a_preExp, l_funName);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("("));
         a_preExp = Tpl.writeText(a_preExp, l_argStr);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(");"));
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
-        txt = fun_188(txt, i_builtin, l_retType, l_retVar);
+        txt = fun_188(txt, i_attr_builtin, l_retType, l_retVar);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "div"), expLst = {i_e1, i_e2}, ty = DAE.ET_INT()),
+           DAE.CALL(path = Absyn.IDENT(name = "div"), expLst = {i_e1, i_e2}, attr = DAE.CALL_ATTR(ty = DAE.ET_INT())),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7315,7 +7315,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "div"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "div"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7331,7 +7331,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "mod"), expLst = {i_e1, i_e2}, ty = i_ty),
+           DAE.CALL(path = Absyn.IDENT(name = "mod"), expLst = {i_e1, i_e2}, attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7340,7 +7340,7 @@ algorithm
         (l_var1, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_varDecls, a_simCode);
         (l_var2, a_preExp, a_varDecls) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_varDecls, a_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_mod_"));
-        txt = expTypeShort(txt, i_ty);
+        txt = expTypeShort(txt, i_attr_ty);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
@@ -7349,7 +7349,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_array}),
+           DAE.CALL(path = Absyn.IDENT(name = "max"), expLst = {i_array}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7370,7 +7370,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "min"), expLst = {i_array}),
+           DAE.CALL(path = Absyn.IDENT(name = "min"), expLst = {i_array}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7391,7 +7391,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "fill"), expLst = i_val :: i_dims, ty = i_ty),
+           DAE.CALL(path = Absyn.IDENT(name = "fill"), expLst = i_val :: i_dims, attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7401,7 +7401,7 @@ algorithm
         l_dimsExp = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_dimsExp, a_varDecls, a_preExp) = lm_189(l_dimsExp, i_dims, a_simCode, a_varDecls, a_preExp, a_context);
         l_dimsExp = Tpl.popIter(l_dimsExp);
-        l_ty__str = expTypeArray(Tpl.emptyTxt, i_ty);
+        l_ty__str = expTypeArray(Tpl.emptyTxt, i_attr_ty);
         (l_tvar, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_ty__str), a_varDecls);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("fill_alloc_"));
         a_preExp = Tpl.writeText(a_preExp, l_ty__str);
@@ -7420,7 +7420,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "cat"), expLst = i_dim :: i_arrays, ty = i_ty),
+           DAE.CALL(path = Absyn.IDENT(name = "cat"), expLst = i_dim :: i_arrays, attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7430,7 +7430,7 @@ algorithm
         l_arrays__exp = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", &")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_arrays__exp, a_varDecls, a_preExp) = lm_190(l_arrays__exp, i_arrays, a_simCode, a_varDecls, a_preExp, a_context);
         l_arrays__exp = Tpl.popIter(l_arrays__exp);
-        l_ty__str = expTypeArray(Tpl.emptyTxt, i_ty);
+        l_ty__str = expTypeArray(Tpl.emptyTxt, i_attr_ty);
         (l_tvar, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_ty__str), a_varDecls);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("cat_alloc_"));
         a_preExp = Tpl.writeText(a_preExp, l_ty__str);
@@ -7449,7 +7449,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "promote"), expLst = {i_A, i_n}),
+           DAE.CALL(path = Absyn.IDENT(name = "promote"), expLst = {i_A, i_n}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7473,7 +7473,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "transpose"), expLst = {i_A}),
+           DAE.CALL(path = Absyn.IDENT(name = "transpose"), expLst = {i_A}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7494,7 +7494,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "cross"), expLst = {i_v1, i_v2}),
+           DAE.CALL(path = Absyn.IDENT(name = "cross"), expLst = {i_v1, i_v2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7518,7 +7518,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "identity"), expLst = {i_A}),
+           DAE.CALL(path = Absyn.IDENT(name = "identity"), expLst = {i_A}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7539,7 +7539,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "rem"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "rem"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7558,7 +7558,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "String"), expLst = {i_s, i_format}),
+           DAE.CALL(path = Absyn.IDENT(name = "String"), expLst = {i_s, i_format}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7581,7 +7581,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "String"), expLst = {i_s, i_minlen, i_leftjust}),
+           DAE.CALL(path = Absyn.IDENT(name = "String"), expLst = {i_s, i_minlen, i_leftjust}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7607,7 +7607,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "String"), expLst = {i_s, i_minlen, i_leftjust, i_signdig}),
+           DAE.CALL(path = Absyn.IDENT(name = "String"), expLst = {i_s, i_minlen, i_leftjust, i_signdig}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7633,7 +7633,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "delay"), expLst = {DAE.ICONST(integer = i_index_1), i_e, i_d, i_delayMax}),
+           DAE.CALL(path = Absyn.IDENT(name = "delay"), expLst = {DAE.ICONST(integer = i_index_1), i_e, i_d, i_delayMax}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7658,7 +7658,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "integer"), expLst = {i_toBeCasted}),
+           DAE.CALL(path = Absyn.IDENT(name = "integer"), expLst = {i_toBeCasted}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7671,7 +7671,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "Integer"), expLst = {i_toBeCasted}),
+           DAE.CALL(path = Absyn.IDENT(name = "Integer"), expLst = {i_toBeCasted}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7684,7 +7684,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "clock"), expLst = {}),
+           DAE.CALL(path = Absyn.IDENT(name = "clock"), expLst = {}),
            _,
            a_preExp,
            a_varDecls,
@@ -7694,7 +7694,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "noEvent"), expLst = {i_e1}),
+           DAE.CALL(path = Absyn.IDENT(name = "noEvent"), expLst = {i_e1}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7704,7 +7704,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "anyString"), expLst = {i_e1}),
+           DAE.CALL(path = Absyn.IDENT(name = "anyString"), expLst = {i_e1}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7716,7 +7716,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "mmc_get_field"), expLst = {i_s1, DAE.ICONST(integer = i_i)}),
+           DAE.CALL(path = Absyn.IDENT(name = "mmc_get_field"), expLst = {i_s1, DAE.ICONST(integer = i_i)}),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7735,7 +7735,7 @@ algorithm
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
-           (i_exp as DAE.CALL(expLst = i_expLst, path = i_path, builtin = i_builtin)),
+           (i_exp as DAE.CALL(attr = DAE.CALL_ATTR(builtin = i_attr_builtin), expLst = i_expLst, path = i_path)),
            a_context,
            a_preExp,
            a_varDecls,
@@ -7748,15 +7748,15 @@ algorithm
         l_retType = Tpl.writeText(Tpl.emptyTxt, l_funName);
         l_retType = Tpl.writeTok(l_retType, Tpl.ST_STRING("_rettype"));
         (l_retVar, a_varDecls) = fun_192(Tpl.emptyTxt, i_exp, a_varDecls, l_retType);
-        a_preExp = fun_194(a_preExp, i_builtin, l_funName, a_context);
+        a_preExp = fun_194(a_preExp, i_attr_builtin, l_funName, a_context);
         a_preExp = fun_195(a_preExp, l_retVar);
-        a_preExp = daeExpCallBuiltinPrefix(a_preExp, i_builtin);
+        a_preExp = daeExpCallBuiltinPrefix(a_preExp, i_attr_builtin);
         a_preExp = Tpl.writeText(a_preExp, l_funName);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("("));
         a_preExp = Tpl.writeText(a_preExp, l_argStr);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(");"));
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
-        a_preExp = fun_197(a_preExp, i_builtin, l_funName, a_context);
+        a_preExp = fun_197(a_preExp, i_attr_builtin, l_funName, a_context);
         txt = fun_199(txt, i_exp, l_retType, l_retVar);
       then (txt, a_preExp, a_varDecls);
 
@@ -10299,6 +10299,7 @@ algorithm
       DAE.Exp i_expr;
       DAE.Exp i_exp;
       DAE.ExpType i_ty;
+      DAE.ExpType i_attr_ty;
       DAE.Exp i_expThen;
       DAE.Operator i_operator;
 
@@ -10363,9 +10364,9 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CALL(ty = i_ty) )
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = i_attr_ty)) )
       equation
-        txt = expTypeShort(txt, i_ty);
+        txt = expTypeShort(txt, i_attr_ty);
       then txt;
 
     case ( txt,
@@ -13814,7 +13815,7 @@ algorithm
       Integer a_flag;
       DAE.Exp i_exp;
       DAE.ExpType i_c_ty;
-      DAE.ExpType i_ty;
+      DAE.ExpType i_attr_ty;
       DAE.Exp i_expThen;
       DAE.Operator i_e_operator;
       DAE.ExpType ret_1;
@@ -13899,10 +13900,10 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CALL(ty = i_ty),
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_flag )
       equation
-        txt = expTypeFlag(txt, i_ty, a_flag);
+        txt = expTypeFlag(txt, i_attr_ty, a_flag);
       then txt;
 
     case ( txt,

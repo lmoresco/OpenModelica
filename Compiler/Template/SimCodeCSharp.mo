@@ -11119,13 +11119,13 @@ end lm_268;
 
 protected function fun_269
   input Tpl.Text in_txt;
-  input Boolean in_a_builtin;
+  input Boolean in_a_attr_builtin;
   input Tpl.Text in_a_funName;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_builtin, in_a_funName)
+  matchcontinue(in_txt, in_a_attr_builtin, in_a_funName)
     local
       Tpl.Text txt;
       Tpl.Text a_funName;
@@ -11164,10 +11164,10 @@ algorithm
       Tpl.Text a_preExp;
       SimCode.SimCode a_simCode;
       Absyn.Path i_path;
-      Boolean i_builtin;
+      Boolean i_attr_builtin;
       list<DAE.Exp> i_expLst;
       DAE.Exp i_s1;
-      DAE.ExpType i_ty;
+      DAE.ExpType i_attr_ty;
       DAE.ExpType i_arg_ty;
       DAE.ComponentRef i_arg_componentRef;
       DAE.Exp i_e2;
@@ -11181,7 +11181,7 @@ algorithm
       Tpl.Text l_var1;
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "DIVISION"), expLst = {i_e1, i_e2, DAE.SCONST(string = i_string)}),
+           DAE.CALL(path = Absyn.IDENT(name = "DIVISION"), expLst = {i_e1, i_e2, DAE.SCONST(string = i_string)}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11193,7 +11193,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "der"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
+           DAE.CALL(path = Absyn.IDENT(name = "der"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
            _,
            a_preExp,
            a_simCode )
@@ -11202,7 +11202,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "pre"), expLst = {DAE.CREF(ty = i_arg_ty, componentRef = i_arg_componentRef)}),
+           DAE.CALL(path = Absyn.IDENT(name = "pre"), expLst = {DAE.CREF(ty = i_arg_ty, componentRef = i_arg_componentRef)}),
            _,
            a_preExp,
            a_simCode )
@@ -11212,7 +11212,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "edge"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
+           DAE.CALL(path = Absyn.IDENT(name = "edge"), expLst = {DAE.CREF(componentRef = i_arg_componentRef)}),
            _,
            a_preExp,
            a_simCode )
@@ -11225,7 +11225,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "max"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11238,7 +11238,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
+           DAE.CALL(path = Absyn.IDENT(name = "min"), expLst = {i_e1, i_e2}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11251,7 +11251,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "mod"), expLst = {i_e1, i_e2}, ty = i_ty),
+           DAE.CALL(path = Absyn.IDENT(name = "mod"), expLst = {i_e1, i_e2}, attr = DAE.CALL_ATTR(ty = i_attr_ty)),
            a_context,
            a_preExp,
            a_simCode )
@@ -11259,7 +11259,7 @@ algorithm
         (l_var1, a_preExp) = daeExp(Tpl.emptyTxt, i_e1, a_context, a_preExp, a_simCode);
         (l_var2, a_preExp) = daeExp(Tpl.emptyTxt, i_e2, a_context, a_preExp, a_simCode);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("Mod_"));
-        txt = expTypeShort(txt, i_ty);
+        txt = expTypeShort(txt, i_attr_ty);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_var1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(","));
@@ -11268,7 +11268,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "abs"), expLst = {i_e1}, ty = DAE.ET_INT()),
+           DAE.CALL(path = Absyn.IDENT(name = "abs"), expLst = {i_e1}, attr = DAE.CALL_ATTR(ty = DAE.ET_INT())),
            a_context,
            a_preExp,
            a_simCode )
@@ -11280,7 +11280,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "abs"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "abs"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11291,7 +11291,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "log"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "log"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11302,7 +11302,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "log10"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "log10"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11313,7 +11313,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "exp"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "exp"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11324,7 +11324,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "sin"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "sin"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11335,7 +11335,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "sqrt"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "sqrt"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11346,7 +11346,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, builtin = true, path = Absyn.IDENT(name = "noEvent"), expLst = {i_s1}),
+           DAE.CALL(path = Absyn.IDENT(name = "noEvent"), expLst = {i_s1}),
            a_context,
            a_preExp,
            a_simCode )
@@ -11357,7 +11357,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, ty = DAE.ET_NORETCALL(), expLst = i_expLst, builtin = i_builtin, path = i_path),
+           DAE.CALL(attr = DAE.CALL_ATTR(tuple_ = false, ty = DAE.ET_NORETCALL(), builtin = i_attr_builtin), expLst = i_expLst, path = i_path),
            a_context,
            a_preExp,
            a_simCode )
@@ -11365,7 +11365,7 @@ algorithm
         l_argStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(", ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_argStr, a_preExp) = lm_267(l_argStr, i_expLst, a_simCode, a_preExp, a_context);
         l_argStr = Tpl.popIter(l_argStr);
-        a_preExp = underscorePrefix(a_preExp, i_builtin);
+        a_preExp = underscorePrefix(a_preExp, i_attr_builtin);
         a_preExp = underscorePath(a_preExp, i_path);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("("));
         a_preExp = Tpl.writeText(a_preExp, l_argStr);
@@ -11375,7 +11375,7 @@ algorithm
       then (txt, a_preExp);
 
     case ( txt,
-           DAE.CALL(tuple_ = false, expLst = i_expLst, path = i_path, builtin = i_builtin),
+           DAE.CALL(attr = DAE.CALL_ATTR(tuple_ = false, builtin = i_attr_builtin), expLst = i_expLst, path = i_path),
            a_context,
            a_preExp,
            a_simCode )
@@ -11384,12 +11384,12 @@ algorithm
         (l_argStr, a_preExp) = lm_268(l_argStr, i_expLst, a_simCode, a_preExp, a_context);
         l_argStr = Tpl.popIter(l_argStr);
         l_funName = underscorePath(Tpl.emptyTxt, i_path);
-        txt = underscorePrefix(txt, i_builtin);
+        txt = underscorePrefix(txt, i_attr_builtin);
         txt = Tpl.writeText(txt, l_funName);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("("));
         txt = Tpl.writeText(txt, l_argStr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
-        txt = fun_269(txt, i_builtin, l_funName);
+        txt = fun_269(txt, i_attr_builtin, l_funName);
       then (txt, a_preExp);
 
     case ( txt,
@@ -12224,6 +12224,7 @@ algorithm
       DAE.Exp i_expr;
       DAE.Exp i_exp;
       DAE.ExpType i_ty;
+      DAE.ExpType i_attr_ty;
       DAE.Exp i_expThen;
       DAE.Operator i_operator;
 
@@ -12288,9 +12289,9 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.CALL(ty = i_ty) )
+           DAE.CALL(attr = DAE.CALL_ATTR(ty = i_attr_ty)) )
       equation
-        txt = expTypeShort(txt, i_ty);
+        txt = expTypeShort(txt, i_attr_ty);
       then txt;
 
     case ( txt,
