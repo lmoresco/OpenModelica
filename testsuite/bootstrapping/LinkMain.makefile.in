@@ -9,7 +9,7 @@ RECS=libmainrecords.a
 
 main: Main_main2.o $(RECS) main.c
 	@echo $(UNAME)
-	$(CC) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) -L./ -lomparse -lomcruntime -L"../../build/lib/omc" -lmodparomc -lc_runtime $(LDFLAGS) -lm -ldl -lantlr3 -lmainrecords -lomniORB4 -lomnithread
+	$(CC) $(CFLAGS) -o main main.c Main_main2.o $(CPPFLAGS) -L./ -lomparse -lomcruntime -L"../../build/lib/omc" -lmodparomc -lSimulationRuntimeC $(LDFLAGS) -lm -ldl -lantlr3 -lmainrecords -lomniORB4 -lomnithread
 $(RECS): main_records.o
 	rm -f $@
 	ar -ru $@ $<
