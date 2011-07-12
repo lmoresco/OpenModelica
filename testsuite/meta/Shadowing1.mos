@@ -3,14 +3,16 @@
 // status:   correct
 // cflags:   +g=MetaModelica
 //
-// Local Delcaration Shadowing
+// Local Declaration Shadowing
 //
 loadFile("Shadowing1.mo");
 getErrorString();
 a:=Shadowing1.test(1);
+getErrorString();
 
 // Result:
 // true
 // ""
 // 42
+// ""
 // endResult
