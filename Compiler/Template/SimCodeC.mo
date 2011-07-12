@@ -35986,6 +35986,17 @@ algorithm
       then (txt, a_varDeclsCaseInner, a_preRes);
 
     case ( txt,
+           SOME((i_exp as DAE.CALL(attr = DAE.CALL_ATTR(tailCall = DAE.TAIL(vars = _))))),
+           _,
+           a_varDeclsCaseInner,
+           a_preRes,
+           a_context,
+           _ )
+      equation
+        (txt, a_preRes, a_varDeclsCaseInner) = daeExp(txt, i_exp, a_context, a_preRes, a_varDeclsCaseInner);
+      then (txt, a_varDeclsCaseInner, a_preRes);
+
+    case ( txt,
            SOME((i_exp as DAE.CALL(attr = DAE.CALL_ATTR(tuple_ = true)))),
            a_tupleAssignExps,
            a_varDeclsCaseInner,
@@ -38939,7 +38950,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6165, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6167, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -40586,7 +40597,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6410, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6412, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_891;
@@ -40701,7 +40712,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6428, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6430, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
