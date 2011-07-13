@@ -93,6 +93,6 @@ end TailRecursion;
 // [TailRecursion.mo:11:3-11:19:writable] Notification: Tail recursion of: TailRecursion.last(1.0 + x) with input vars: x
 // [TailRecursion.mo:18:3-18:46:writable] Notification: Tail recursion of: TailRecursion.if_(1.0 + x) with input vars: x
 // [TailRecursion.mo:25:3-29:12:writable] Notification: Tail recursion of: TailRecursion.match_(1.0 + x) with input vars: x
-// [TailRecursion.mo:38:7-38:13:writable] Warning: Cannot optimize function due local variable having the same name as an input variable: x
+// [TailRecursion.mo:38:7-38:13:writable] Warning: Cannot optimize function due to a local variable having the same name as an input variable: x.
 // 
 // endResult
