@@ -81,7 +81,9 @@ readFileShowLineNumbers("SimCodeC_abc.c");
 // 37:   _SimCodeC_abc();
 // 38:   MMC_CATCH_TOP(return 1)
 // 39:   write_noretcall(outVar);
-// 40:   return 0;
-// 41: }
+// 40:   fflush(NULL);
+// 41:   
+// 42:   return 0;
+// 43: }
 // "
 // endResult
