@@ -250,6 +250,7 @@ EquationIf1.mo \
 EquationIf2.mo \
 EquationIf3.mo \
 EquationIf4.mo \
+ErrorExternalAlgorithm.mo \
 ErrorMultipleClasses.mo \
 ErrorUnknownDimension.mo \
 EventFunctions.mo \
