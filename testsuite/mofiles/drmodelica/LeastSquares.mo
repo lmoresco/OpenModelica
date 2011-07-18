@@ -18,7 +18,7 @@ protected
   Integer info;
   String transposed = "NNNN";  // Workaround for passing character data to Fortran routine
   external "FORTRAN 77"
-   dgesl(transposed, 100, size(A,1), size(A,2), size(B,2), Ares, size(A,1), B, size(B,1), work, lwork, info);
+   dgesl(transposed, 100, size(A,1), size(A,2), size(B,2), Ares, size(A,1), B, size(B,1), work, lwork, info, x);
 end ls;
 
 model LeastSquares
