@@ -122,4 +122,9 @@ end extfunction;
 //   der(u[1]) = u[2];
 //   der(u[2]) = u[3];
 // end extfunction;
+// [ExternalFunctionAnno.mo:35:3-35:19:writable] Warning: Unused input variable der_x in function .FooFunctions.foo2.
+// [ExternalFunctionAnno.mo:36:3-36:22:writable] Warning: Unused input variable derder_x in function .FooFunctions.foo2.
+// [ExternalFunctionAnno.mo:37:3-37:25:writable] Warning: Unused input variable derderder_x in function .FooFunctions.foo2.
+// [ExternalFunctionAnno.mo:28:3-28:19:writable] Warning: Unused input variable der_x in function .FooFunctions.foo1.
+// 
 // endResult

@@ -572,6 +572,7 @@ TypeDeclArray.mo \
 TypeEnumeration.mo \
 TypeSimple.mo \
 Units2.mo \
+UnusedInput.mo \
 UsertypeModifications.mo \
 VectorBuiltin.mo \
 VectorDimension.mo \
