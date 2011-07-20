@@ -1227,9 +1227,11 @@ algorithm
                                               ";\n",
                                               "\n"
                                           }, true));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("edge(localData->helpVars["));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("localData->helpVars["));
         txt = Tpl.writeStr(txt, intString(a_hvar));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("])"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] && !localData->helpVars_saved["));
+        txt = Tpl.writeStr(txt, intString(a_hvar));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] /* edge */"));
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_46;
