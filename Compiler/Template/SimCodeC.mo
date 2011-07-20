@@ -15170,6 +15170,7 @@ algorithm
            a_inFunc )
       equation
         System.tmpTickReset(1);
+        System.tmpTickResetIndex(0, 1);
         l_fname = underscorePath(Tpl.emptyTxt, i_name);
         l_retType = fun_378(Tpl.emptyTxt, i_outVars, l_fname);
         l_varDecls = Tpl.emptyTxt;
@@ -15198,6 +15199,7 @@ algorithm
         l_0___1 = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(1, SOME(Tpl.ST_STRING("")), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (l_0___1, l_outVarAssign, l_outVarCopy, l_outVarInits, l_varDecls) = lm_386(l_0___1, i_outVars, l_outVarAssign, l_outVarCopy, l_outVarInits, l_varDecls, l_retVar);
         l_0___1 = Tpl.popIter(l_0___1);
+        l_varDecls = addRootsTempArray(l_varDecls);
         ret_17 = RTOpts.acceptMetaModelicaGrammar();
         l_boxedFn = fun_387(Tpl.emptyTxt, ret_17, i_fn);
         txt = Tpl.writeText(txt, l_retType);
@@ -16731,6 +16733,7 @@ protected
   Tpl.Text l_fname;
 algorithm
   System.tmpTickReset(1);
+  System.tmpTickResetIndex(0, 1);
   l_fname := underscorePath(Tpl.emptyTxt, a_name);
   l_retType := fun_428(Tpl.emptyTxt, a_outvars, l_fname);
   l_retTypeBoxed := fun_429(Tpl.emptyTxt, a_outvars, l_retType);
@@ -16765,6 +16768,8 @@ algorithm
   out_txt := Tpl.softNewLine(out_txt);
   out_txt := Tpl.writeTok(out_txt, Tpl.ST_NEW_LINE());
   out_txt := Tpl.writeText(out_txt, l_varDecls);
+  out_txt := Tpl.softNewLine(out_txt);
+  out_txt := addRootsTempArray(out_txt);
   out_txt := Tpl.softNewLine(out_txt);
   ret_13 := RTOpts.acceptMetaModelicaGrammar();
   out_txt := fun_437(out_txt, ret_13, l_stateVar);
@@ -18404,7 +18409,7 @@ algorithm
            a_varDecls,
            a_varInits )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3186, 12), "Unknown local variable type");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3191, 12), "Unknown local variable type");
       then (txt, a_varDecls, a_varInits);
   end matchcontinue;
 end varInit;
@@ -22187,7 +22192,7 @@ algorithm
            a_varDecls,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3610, 14), "ALG_STATEMENT NYI");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3615, 14), "ALG_STATEMENT NYI");
       then (txt, a_varDecls);
   end matchcontinue;
 end fun_564;
@@ -23077,7 +23082,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3777, 12), "algStmtTupleAssign failed");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 3782, 12), "algStmtTupleAssign failed");
       then (txt, a_varDecls);
   end matchcontinue;
 end algStmtTupleAssign;
@@ -26027,7 +26032,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown expression: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4296, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4301, 14), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExp;
@@ -31511,7 +31516,7 @@ algorithm
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
         txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4976, 11), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4981, 11), Tpl.textString(txt_7));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -31546,7 +31551,7 @@ algorithm
         ret_9 = ExpressionDump.printExpStr(i_exp);
         txt_9 = Tpl.writeStr(txt_9, ret_9);
         txt_9 = Tpl.writeTok(txt_9, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4982, 11), Tpl.textString(txt_9));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4987, 11), Tpl.textString(txt_9));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -31572,7 +31577,7 @@ algorithm
         ret_11 = ExpressionDump.printExpStr(i_exp);
         txt_11 = Tpl.writeStr(txt_11, ret_11);
         txt_11 = Tpl.writeTok(txt_11, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4986, 11), Tpl.textString(txt_11));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4991, 11), Tpl.textString(txt_11));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33744,7 +33749,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5484, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5489, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -35023,7 +35028,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5621, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5626, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -35360,7 +35365,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5666, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5671, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -37351,295 +37356,265 @@ end outDecl;
 protected function fun_828
   input Tpl.Text in_txt;
   input String in_a_ty;
-  input Tpl.Text in_a_newVar;
+  input Tpl.Text in_a_varDecls;
 
   output Tpl.Text out_txt;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_ty, in_a_newVar)
+  (out_txt, out_a_varDecls) :=
+  matchcontinue(in_txt, in_a_ty, in_a_varDecls)
     local
       Tpl.Text txt;
-      Tpl.Text a_newVar;
+      Tpl.Text a_varDecls;
+      String i_ty;
+      Integer ret_22;
+      Tpl.Text l_newVarIx;
+      Integer ret_20;
+      Integer ret_19;
+      Integer ret_18;
+      Integer ret_17;
+      Integer ret_16;
+      Integer ret_15;
+      Integer ret_14;
+      Integer ret_13;
+      Integer ret_12;
+      Integer ret_11;
+      Integer ret_10;
+      Integer ret_9;
+      Integer ret_8;
+      Integer ret_7;
+      Integer ret_6;
+      Integer ret_5;
+      Integer ret_4;
+      Integer ret_3;
+      Integer ret_2;
+      Integer ret_1;
+      Integer ret_0;
 
     case ( txt,
            "modelica_metatype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_0 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_0));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "metamodelica_string",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_1 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_1));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "metamodelica_string_const",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_2 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_2));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "stringListStringChar_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_3 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_3));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "stringAppendList_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_4 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_4));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "stringGetStringChar_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_5 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_5));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "stringUpdateStringChar_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_6 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_6));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listReverse_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_7 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_7));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listAppend_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_8 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_8));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listGet_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_9 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_9));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listDelete_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_10 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_10));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listRest_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_11 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_11));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listFirst_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_12 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_12));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayGet_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_13 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_13));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayCreate_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_14 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_14));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayList_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_15 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_15));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "listArray_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_16 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_16));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayUpdate_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_17 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_17));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayCopy_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_18 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_18));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "arrayAdd_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_19 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_19));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
            "getGlobalRoot_rettype",
-           a_newVar )
+           a_varDecls )
       equation
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("= NULL;  mmc_GC_add_root(&"));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \""));
-        txt = Tpl.writeText(txt, a_newVar);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\");"));
-        txt = Tpl.popBlock(txt);
-      then txt;
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("tmpMeta["));
+        ret_20 = System.tmpTickIndex(1);
+        txt = Tpl.writeStr(txt, intString(ret_20));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("]"));
+      then (txt, a_varDecls);
 
     case ( txt,
-           _,
-           _ )
+           i_ty,
+           a_varDecls )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(";"));
-      then txt;
+        l_newVarIx = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("tmp"));
+        ret_22 = System.tmpTick();
+        l_newVarIx = Tpl.writeStr(l_newVarIx, intString(ret_22));
+        a_varDecls = Tpl.writeStr(a_varDecls, i_ty);
+        a_varDecls = Tpl.writeTok(a_varDecls, Tpl.ST_STRING(" "));
+        a_varDecls = Tpl.writeText(a_varDecls, l_newVarIx);
+        a_varDecls = Tpl.writeTok(a_varDecls, Tpl.ST_STRING(";"));
+        a_varDecls = Tpl.writeTok(a_varDecls, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeText(txt, l_newVarIx);
+      then (txt, a_varDecls);
   end matchcontinue;
 end fun_828;
 
@@ -37651,19 +37626,9 @@ public function tempDecl
   output Tpl.Text out_txt;
   output Tpl.Text out_a_varDecls;
 protected
-  Tpl.Text l_initVarAddRoot;
-  Integer ret_1;
   Tpl.Text l_newVar;
 algorithm
-  l_newVar := Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("tmp"));
-  ret_1 := System.tmpTick();
-  l_newVar := Tpl.writeStr(l_newVar, intString(ret_1));
-  l_initVarAddRoot := fun_828(Tpl.emptyTxt, a_ty, l_newVar);
-  out_a_varDecls := Tpl.writeStr(a_varDecls, a_ty);
-  out_a_varDecls := Tpl.writeTok(out_a_varDecls, Tpl.ST_STRING(" "));
-  out_a_varDecls := Tpl.writeText(out_a_varDecls, l_newVar);
-  out_a_varDecls := Tpl.writeText(out_a_varDecls, l_initVarAddRoot);
-  out_a_varDecls := Tpl.writeTok(out_a_varDecls, Tpl.ST_NEW_LINE());
+  (l_newVar, out_a_varDecls) := fun_828(Tpl.emptyTxt, a_ty, a_varDecls);
   out_txt := Tpl.writeText(txt, l_newVar);
 end tempDecl;
 
@@ -38954,7 +38919,7 @@ algorithm
         txt_2 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6170, 14), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6178, 14), Tpl.textString(txt_2));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -40601,7 +40566,7 @@ algorithm
         txt_8 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_8 = ExpressionDump.printExpStr(i_lit);
         txt_8 = Tpl.writeStr(txt_8, ret_8);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6415, 14), Tpl.textString(txt_8));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6423, 14), Tpl.textString(txt_8));
       then txt;
   end matchcontinue;
 end fun_891;
@@ -40716,7 +40681,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6433, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6441, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -42512,5 +42477,48 @@ algorithm
   out_txt := Tpl.writeText(txt, l_unit__);
   out_txt := Tpl.writeText(out_txt, l_displayUnit__);
 end ScalarVariableTypeRealAttribute;
+
+protected function fun_937
+  input Tpl.Text in_txt;
+  input Integer in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+      Integer i_i;
+
+    case ( txt,
+           0 )
+      then txt;
+
+    case ( txt,
+           i_i )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("modelica_metatype tmpMeta["));
+        txt = Tpl.writeStr(txt, intString(i_i));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "] = {0};\n",
+                                    "mmc_GC_add_roots(tmpMeta, "
+                                }, false));
+        txt = Tpl.writeStr(txt, intString(i_i));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", mmc_GC_local_state, \"Array of temporaries\");"));
+      then txt;
+  end matchcontinue;
+end fun_937;
+
+public function addRootsTempArray
+  input Tpl.Text txt;
+
+  output Tpl.Text out_txt;
+protected
+  Integer ret_0;
+algorithm
+  System.tmpTickResetIndex(0, 2);
+  ret_0 := System.tmpTickIndex(1);
+  out_txt := fun_937(txt, ret_0);
+end addRootsTempArray;
 
 end SimCodeC;
