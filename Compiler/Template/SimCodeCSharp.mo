@@ -10719,9 +10719,15 @@ algorithm
       then txt;
 
     case ( txt,
+           DAE.NEQUAL(ty = _) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" != "));
+      then txt;
+
+    case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("daeExpSimRelation:ERR"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" daeExpSimRelation:ERR "));
       then txt;
   end matchcontinue;
 end fun_260;

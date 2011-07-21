@@ -21,6 +21,11 @@ getIconAnnotation(Modelica.UsersGuide);            getErrorString();
 getDiagramAnnotation(Modelica.UsersGuide);         getErrorString();
 getDocumentationAnnotation(Modelica.UsersGuide);   getErrorString();
 
+// test bug 1538
+getComponentAnnotations(Modelica.Blocks.Sources.RealExpression); getErrorString();
+getComponentAnnotations(Modelica.Blocks.Sources.IntegerExpression); getErrorString();
+getComponentAnnotations(Modelica.Blocks.Sources.BooleanExpression); getErrorString();
+
 
 // test getting of non-standard annotation
 getNamedAnnotation(Modelica.UsersGuide, __Dymola_DocumentationClass); getErrorString();
@@ -7951,6 +7956,12 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // 
 // </html>"}
 // ""
+// {{Dialog("General","Time varying output signal",true), Placement(true,0.0,0.0,100.0,-10.0,120.0,10.0,0.0,0.0,0.0,-,-,-,-,0.0)}}
+// ""
+// {{Dialog("General","Time varying output signal",true), Placement(true,0.0,0.0,100.0,-10.0,120.0,10.0,0.0,0.0,0.0,-,-,-,-,0.0)}}
+// ""
+// {{Dialog("General","Time varying output signal",true), Placement(true,0.0,0.0,100.0,-10.0,120.0,10.0,0.0,0.0,0.0,-,-,-,-,0.0)}}
+// ""
 // {true}
 // ""
 // {}
@@ -8100,7 +8111,7 @@ getDocumentationAnnotation(Modelica.UsersGuide.Contact); getErrorString();
 // "I am using MSL31"
 // {-100.0,-100.0,100.0,100.0,true,0.1,2.0,2.0,{Line(true,{0.0,0.0},0,{{-60,50},{60,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-40,30},{40,30}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{-20,10},{20,10}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Line(true,{0.0,0.0},0,{{0,90},{0,50}},{0,0,255},LinePattern.Solid,0.25,{Arrow.None,Arrow.None},3,Smooth.None),Text(true,{0.0,0.0},0,{0,0,255},{0,0,0},LinePattern.Solid,FillPattern.None,0.25,{{-144,-19},{156,-59}},"%name",0,TextAlignment.Center)}}
 // ""
-// {{true,0.0,100.0,10.0,-10.0,-10.0,10.0,270.0,0.0,0.0,-,-,-,-,0.0}}
+// {{Placement(true,0.0,100.0,10.0,-10.0,-10.0,10.0,270.0,0.0,0.0,-,-,-,-,0.0)}}
 // ""
 // {R, T_ref, alpha}
 // ""
