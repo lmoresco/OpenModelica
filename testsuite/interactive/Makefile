@@ -2,6 +2,7 @@ TEST = ../rtest -v
 
 TESTFILES = \
 DefaultComponentName.mos \
+DeleteConnection.mos \
 differentiate.mos \
 ForStatement1.mos ForStatement2.mos ForStatement3.mos ForStatement4.mos \
 ForStatement5fail.mos ForStatement6.mos ForStatement7.mos \
