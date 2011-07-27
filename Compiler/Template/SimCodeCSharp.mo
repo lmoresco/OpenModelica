@@ -4248,7 +4248,7 @@ algorithm
       Tpl.Text a_e1;
 
     case ( txt,
-           DAE.LESS(ty = _),
+           DAE.GREATER(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -4268,7 +4268,7 @@ algorithm
       then txt;
 
     case ( txt,
-           DAE.GREATER(ty = _),
+           DAE.LESS(ty = _),
            a_e2,
            a_e1 )
       equation
@@ -4292,11 +4292,11 @@ algorithm
            a_e2,
            a_e1 )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*HACK*/("));
-        txt = Tpl.writeText(txt, a_e2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" == "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*BE AWARE*/Math.Abs("));
         txt = Tpl.writeText(txt, a_e1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") ? 0.0 : 1.0"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" - "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then txt;
 
     case ( txt,
@@ -4304,11 +4304,11 @@ algorithm
            a_e2,
            a_e1 )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*HACK*/("));
-        txt = Tpl.writeText(txt, a_e2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" != "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/*BE AWARE*/Math.Abs("));
         txt = Tpl.writeText(txt, a_e1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(") ? 0.0 : 1.0"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" - "));
+        txt = Tpl.writeText(txt, a_e2);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(")"));
       then txt;
 
     case ( txt,
