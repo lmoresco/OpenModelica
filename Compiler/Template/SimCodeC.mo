@@ -33806,7 +33806,7 @@ algorithm
            _,
            a_varDecls )
       equation
-        txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by simplify, but for some reason it was not: "));
+        txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
         txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5404, 11), Tpl.textString(txt_0));
