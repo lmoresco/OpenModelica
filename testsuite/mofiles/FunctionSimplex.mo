@@ -69,7 +69,7 @@ algorithm
 	end if;
   end while;
   z := a[1,M];
-  x := a[1,1:30];
+  x := {a[1,i] for i in 1:size(x,1)};
   for i in 1:10 loop
    for j in 1:M loop
     x[j] := x[j]+x[j]*0.01;
@@ -156,7 +156,7 @@ end FunctionSimplex;
 //     end if;
 //   end while;
 //   z := a[1,M];
-//   x := a[1,{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30}];
+//   x := <reduction>array(a[1,i] for i in 1:(size(x,1)));
 //   for i in 1:10 loop
 //     for j in 1:M loop
 //       x[j] := 1.01 * x[j];

@@ -10,7 +10,7 @@ model BooleanArray
   protected
     Boolean[size(boolArr,1)] boolArr2;
   algorithm
-    boolArr2 := fill(true,5);
+    boolArr2 := fill(true,size(boolArr,1));
     for i in 1:size(boolArr,1) loop
       if not boolArr2[i] then
         outArr[i] := -1;
