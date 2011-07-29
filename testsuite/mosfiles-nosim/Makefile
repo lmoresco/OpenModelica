@@ -3,6 +3,7 @@ TEST = ../rtest -v
 TESTFILES = \
 Array1.mos \
 BaseClass1.mos \
+cat.mos \
 EnzMM.mos \
 ErrorFunctionCallNumArgs.mos \
 ExtendsOrder.mos \
