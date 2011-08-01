@@ -1360,7 +1360,6 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_varInits);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* functionBodyRegularFunction: body */\n"));
         txt = Tpl.writeText(txt, l_bodyPart);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeText(txt, l_outVarAssign);
