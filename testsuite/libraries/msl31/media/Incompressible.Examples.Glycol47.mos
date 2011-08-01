@@ -17,7 +17,7 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 //   input Real[:, :] A;
 //   input Real[size(A,1)] b;
 //   input Real rcond = 0.0 \"Reciprocal condition number to estimate rank\";
-//   output Real[max(nrow,ncol)] x = cat(1,b,fill(0,max(nrow,ncol) - nrow)) \"solution is in first size(A,2) rows\";
+//   output Real[max(nrow,ncol)] x = cat(1,b,DAE.CAST(/tp:REAL[:]/, fill(0,max(nrow,ncol) - nrow))) \"solution is in first size(A,2) rows\";
 //   output Integer info;
 //   output Integer rank \"Effective rank of A\";
 //   protected Integer nrow = size(A,1);
