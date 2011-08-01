@@ -36,7 +36,6 @@ Colors.mo \
 ComplexNumbers.mo \
 Concat3.mo \
 ConstructFunc.mo \
-CyclicPerm.mo \
 DAEexample.mo \
 DiscreteVectorStateSpace.mo \
 DoubleWhenSequential.mo \
