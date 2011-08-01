@@ -17,7 +17,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Real[:, :] A;
 //   input Real[size(A,1)] b;
 //   input Real rcond = 0.0 \"Reciprocal condition number to estimate rank\";
-//   output Real[max(nrow,ncol)] x = cat(1,b,DAE.CAST(/tp:REAL[:]/, fill(0,max(nrow,ncol) - nrow))) \"solution is in first size(A,2) rows\";
+//   output Real[max(nrow,ncol)] x = cat(1,b,fill(0.0,max(nrow,ncol) - nrow)) \"solution is in first size(A,2) rows\";
 //   output Integer info;
 //   output Integer rank \"Effective rank of A\";
 //   protected Integer nrow = size(A,1);
@@ -66,7 +66,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   output Real[1 + n] p \"Polynomial coefficients of polynomial that fits the date points\";
 //   protected Real[size(u,1), 1 + n] V \"Vandermonde matrix\";
 // algorithm
-//   V[:,1 + n] := /*/tp:REAL[:]/*/(fill(1,size(u,1)));
+//   V[:,1 + n] := fill(1.0,size(u,1));
 //   for j in n:-1:1 loop
 //     V[:,j] := <reduction>array(u[i] * V[i,1 + j] for i in 1:(size(u,1)));
 //   end for;
@@ -90,7 +90,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   output Real[1 + n] p \"Polynomial coefficients of polynomial that fits the date points\";
 //   protected Real[size(u,1), 1 + n] V \"Vandermonde matrix\";
 // algorithm
-//   V[:,1 + n] := /*/tp:REAL[:]/*/(fill(1,size(u,1)));
+//   V[:,1 + n] := fill(1.0,size(u,1));
 //   for j in n:-1:1 loop
 //     V[:,j] := <reduction>array(u[i] * V[i,1 + j] for i in 1:(size(u,1)));
 //   end for;
@@ -114,7 +114,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.00076664930856902,3.4063125614766,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.000766649308568852,3.40631256147659,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15));
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_T;
 // 
 // function Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_T_der \"Compute specific enthalpy from temperature\"
@@ -122,7 +122,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Real dT \"temperature derivative\";
 //   output Real dh \"derivative of Specific enthalpy at T\";
 // algorithm
-//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00076664930856902,3.4063125614766,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T)) * dT;
+//   dh := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.000766649308568852,3.40631256147659,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T)) * dT;
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_T_der;
 // 
 // function Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_pT \"Compute specific enthalpy from pressure and temperature\"
@@ -131,7 +131,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Boolean densityOfT = false \"include or neglect density derivative dependence of enthalpy\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at p, T\";
 // algorithm
-//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.00076664930856902,3.4063125614766,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue({-0.00208644332581138,-0.496556153445586,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581138,-0.496556153445586,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581138,-0.496556153445586,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T));
+//   h := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.000766649308568852,3.40631256147659,3555.60273100735},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + (if densityOfT then 1.0 + (Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue({-0.00208644332581142,-0.496556153445583,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T)) * T) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581142,-0.496556153445583,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T)) else 1.0 * (-101325.0 + p)) / Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581142,-0.496556153445583,1053.33291673899},Modelica.SIunits.Conversions.to_degC(T));
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_pT;
 // 
 // function Modelica.Media.Incompressible.Examples.TestGlycol.Medium.invertTemp \"function to invert temperatures\"
@@ -148,7 +148,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"temperature\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"specific entropy\";
 // algorithm
-//   s := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.00076664930856902,3.4063125614766},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + log(T / 273.15) * Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00076664930856902,3.4063125614766,3555.60273100735},-273.15);
+//   s := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.integralValue({-0.000766649308568852,3.40631256147659},Modelica.SIunits.Conversions.to_degC(T),Modelica.SIunits.Conversions.to_degC(273.15)) + log(T / 273.15) * Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.000766649308568852,3.40631256147659,3555.60273100735},-273.15);
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.s_T;
 // 
 // function Modelica.Media.Incompressible.Examples.TestGlycol.Medium.specificEntropy \"Return specific entropy
@@ -164,14 +164,14 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Modelica.Media.Incompressible.Examples.TestGlycol.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
-//   cv := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00076664930856902,3.4063125614766,3555.60273100735},state.T + -273.15);
+//   cv := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.000766649308568852,3.40631256147659,3555.60273100735},state.T + -273.15);
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Incompressible.Examples.TestGlycol.Medium.thermalConductivity \"Return thermal conductivity as a function of the thermodynamic state record\"
 //   input Modelica.Media.Incompressible.Examples.TestGlycol.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
 // algorithm
-//   lambda := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({5.2652895909271e-08,-5.41190765492087e-05,0.394972944511948},Modelica.SIunits.Conversions.to_degC(state.T));
+//   lambda := Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({5.26528959092599e-08,-5.41190765492073e-05,0.394972944511948},Modelica.SIunits.Conversions.to_degC(state.T));
 // end Modelica.Media.Incompressible.Examples.TestGlycol.Medium.thermalConductivity;
 // 
 // function Modelica.Media.Incompressible.TableBased.Polynomials_Temp.derivativeValue \"Value of derivative of polynomial at abszissa value u\"
@@ -307,10 +307,10 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   assert(true,\"Medium Glycol-Water 47% can not be used without assigning tableDensity.\");
 //   assert(medium.T >= 243.15 and medium.T <= 373.15,\"Temperature T (= \" + String(medium.T,0,true,6) + \" K) is not in the allowed range (\" + String(243.15,0,true,6) + \" K <= T <= \" + String(373.15,0,true,6) + \" K) required from medium model \\\"\" + \"Glycol-Water 47%\" + \"\\\".\");
 //   medium.R = 8.314472;
-//   medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00076664930856902,3.4063125614766,3555.60273100735},medium.T_degC);
+//   medium.cp = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.000766649308568852,3.40631256147659,3555.60273100735},medium.T_degC);
 //   medium.h = Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_T(medium.T);
 //   medium.u = Modelica.Media.Incompressible.Examples.TestGlycol.Medium.h_T(medium.T) + -101325.0 / medium.d;
-//   medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581138,-0.496556153445586,1053.33291673899},medium.T_degC);
+//   medium.d = Modelica.Media.Incompressible.TableBased.Polynomials_Temp.evaluate({-0.00208644332581142,-0.496556153445583,1053.33291673899},medium.T_degC);
 //   medium.state.T = medium.T;
 //   medium.state.p = medium.p;
 //   medium.MM = 0.1;
