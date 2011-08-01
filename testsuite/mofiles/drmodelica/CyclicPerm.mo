@@ -35,7 +35,7 @@ end CyclicPerm;
 
 // Result:
 // Error processing file: CyclicPerm.mo
-// [CyclicPerm.mo:26:3-26:42:writable] Error: Type mismatch in assignment in W := cat(2,{{WO[1,2],WO[1,3]}},{{WO[1,1]}}) of Real[1, 3] := Real[1, 4]
+// [CyclicPerm.mo:27:3-27:30:writable] Error: Type mismatch in assignment in W := cat(2,{{WO[1,2]},{WO[1,3]}},{{WO[1,1]}}) of Real[1, 3] := Real[1, 2]
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
