@@ -13,7 +13,14 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 // Result:
 // true
 // ""
-// "function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
 //   input Real x \"Abszissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";

@@ -17,7 +17,14 @@ val(syncFilter.y, 6.2*10e-6);
 // ""
 // true
 // ""
-// "class SyncFilterTest
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class SyncFilterTest
 //   parameter Real syncFilter.samplePeriod(quantity = \"Time\", unit = \"s\", min = 1e-13, start = 0.1) = 1.0 / (syncFilter.UpdateRate * Real(syncFilter.n)) \"Sample period of component\";
 //   parameter Real syncFilter.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"First sample time instant\";
 //   protected output Boolean syncFilter.sampleTrigger \"True, if sample time instant\";

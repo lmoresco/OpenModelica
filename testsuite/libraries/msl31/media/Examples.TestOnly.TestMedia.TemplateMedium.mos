@@ -13,7 +13,14 @@ checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorS
 // Result:
 // true
 // ""
-// "function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium.Medium.ThermodynamicState\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
 //   output ThermodynamicState res;

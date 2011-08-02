@@ -48,7 +48,14 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // true
 // ""
 // true
-// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -73,7 +80,14 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 2 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -98,7 +112,14 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 2 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm
@@ -157,7 +178,14 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 // 6 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
 // algorithm

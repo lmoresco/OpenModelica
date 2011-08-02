@@ -117,7 +117,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // true
 // ""
 // ""
-// "class Modelica.Electrical.Digital.Examples.Multiplexer
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Multiplexer
 //   parameter Real CLK.startTime(quantity = \"Time\", unit = \"s\", start = 0.0) \"Output = offset for time < startTime\";
 //   parameter Real CLK.period(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 1.0) = 20.0 \"Time for one period\";
 //   parameter Real CLK.width(min = 1e-60, max = 100.0, start = 50.0) \"Width of pulses in % of period\";
@@ -488,7 +495,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 97 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.FlipFlop
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.FlipFlop
 //   parameter Real FF.delayTime(quantity = \"Time\", unit = \"s\") = 0.001 \"delay time\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') FF.q0 = Modelica.Electrical.Digital.Interfaces.Logic.'0' \"initial value\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') FF.j;
@@ -705,7 +719,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 54 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.HalfAdder
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.HalfAdder
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') a.x[1] = Modelica.Electrical.Digital.Interfaces.Logic.'1' \"vector of values\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') a.x[2] = Modelica.Electrical.Digital.Interfaces.Logic.'0' \"vector of values\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') a.x[3] = Modelica.Electrical.Digital.Interfaces.Logic.'1' \"vector of values\";
@@ -1045,7 +1066,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 184 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.FullAdder
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.FullAdder
 //   parameter Real Adder1.Adder2.delayTime = 0.001 \"delay time\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder1.Adder2.b;
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder1.Adder2.s;
@@ -2098,7 +2126,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 540 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Adder4
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Adder4
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') b4.x[1] = Modelica.Electrical.Digital.Interfaces.Logic.'1' \"vector of values\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') b4.x[2] = Modelica.Electrical.Digital.Interfaces.Logic.'0' \"vector of values\";
 //   parameter Real b4.t[1] = 1.0 \"vector of corresponding time points\";
@@ -4414,7 +4449,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 1492 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Counter3
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Counter3
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Enable.before(start = Modelica.Electrical.Digital.Interfaces.Logic.'0') \"Logic value before step\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Enable.after(start = Modelica.Electrical.Digital.Interfaces.Logic.'1') \"Logic value after step\";
 //   parameter Real Enable.stepTime(start = 1.0) \"step time\";
@@ -4913,7 +4955,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 165 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Counter
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Counter
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Enable.before(start = Modelica.Electrical.Digital.Interfaces.Logic.'0') \"Logic value before step\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Enable.after(start = Modelica.Electrical.Digital.Interfaces.Logic.'1') \"Logic value after step\";
 //   parameter Real Enable.stepTime(start = 1.0) \"step time\";
@@ -6132,7 +6181,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 47 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
 //   parameter Real delayTime = 0.0 \"delay time\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') b;
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') s;
@@ -6402,7 +6458,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 178 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Utilities.FullAdder
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Utilities.FullAdder
 //   parameter Real Adder2.delayTime = 0.001 \"delay time\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder2.b;
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder2.s;
@@ -6951,7 +7014,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 367 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Examples.Utilities.Adder
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Examples.Utilities.Adder
 //   parameter Integer n = 2 \"number of single adders\";
 //   parameter Real Adder[1].Adder2.delayTime = 0.001 \"delay time\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') Adder[1].Adder2.b;
@@ -9042,7 +9112,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 0 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Delay.InertialDelaySensitive
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Delay.InertialDelaySensitive
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') x(start = Modelica.Electrical.Digital.Interfaces.Logic.'U', fixed = true) \"Connector of Digital input signal\";
 //   output enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y \"Connector of Digital output signal\";
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
@@ -9300,7 +9377,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 1 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.InvGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.InvGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -9429,7 +9513,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 84 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.AndGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.AndGate
 //   parameter Integer n(min = 2) = 2 \"Number of inputs\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') x[1] \"Connector of Digital input signal vector\";
 //   input enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') x[2] \"Connector of Digital input signal vector\";
@@ -9565,7 +9656,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.NandGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.NandGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -9701,7 +9799,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.OrGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.OrGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -9837,7 +9942,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.NorGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.NorGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -9973,7 +10085,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.XorGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.XorGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -10109,7 +10228,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.XnorGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.XnorGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";
@@ -10245,7 +10371,14 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 // 85 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Digital.Gates.BufGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Digital.Gates.BufGate
 //   parameter Real tLH(quantity = \"Time\", unit = \"s\", start = 0.0) \"rise inertial delay\";
 //   parameter Real tHL(quantity = \"Time\", unit = \"s\", start = 0.0) \"fall inertial delay\";
 //   parameter enumeration('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') y0 = Modelica.Electrical.Digital.Interfaces.Logic.'U' \"initial value of output\";

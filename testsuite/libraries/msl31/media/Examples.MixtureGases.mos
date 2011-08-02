@@ -13,7 +13,14 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // Result:
 // true
 // ""
-// "function Modelica.Math.exp
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 

@@ -10,7 +10,14 @@ instantiateModel(Modelica.Electrical.Analog.Examples.NandGate);
 getErrorString();
 // Result:
 // true
-// "class Modelica.Electrical.Analog.Examples.NandGate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Examples.NandGate
 //   Real Gnd1.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real Gnd1.p.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real Gnd4.p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";

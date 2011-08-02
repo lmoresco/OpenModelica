@@ -45,6 +45,13 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 // equations with function \\\"Matrices.leastSquares\\\" failed.\");
 // end Modelica.Math.Matrices.leastSquares;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting \"Computes the coefficients of a polynomial that fits a set of data points in a least-squares sense\"
 //   input Real[:] u \"Abscissa data values\";
 //   input Real[size(u,1)] y \"Ordinate data values\";
@@ -192,11 +199,11 @@ checkModel(Modelica.Media.Incompressible.Examples.Glycol47); getErrorString();
 //   final constant Real invTK[8] = 0.00283165793572136;
 //   final constant Real invTK[9] = 0.00267988744472732;
 //   final constant Integer nS = 1 \"Number of substances\";
-//   final constant Real poly_rho[1] = -0.00208644332581142;
-//   final constant Real poly_rho[2] = -0.496556153445583;
+//   final constant Real poly_rho[1] = -0.00208644332581138;
+//   final constant Real poly_rho[2] = -0.496556153445586;
 //   final constant Real poly_rho[3] = 1053.33291673899;
-//   final constant Real poly_Cp[1] = -0.000766649308568852;
-//   final constant Real poly_Cp[2] = 3.40631256147659;
+//   final constant Real poly_Cp[1] = -0.00076664930856902;
+//   final constant Real poly_Cp[2] = 3.4063125614766;
 //   final constant Real poly_Cp[3] = 3555.60273100735;
 //   constant Integer nX = 1 \"Number of mass fractions\";
 //   constant Real reference_X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Default mass fractions of medium\";

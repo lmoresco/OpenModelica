@@ -58,6 +58,13 @@ getErrorString();
 //   end if;
 // end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // class Modelica.Blocks.Examples.LogicalNetwork1
 //   output Boolean table2.y \"Connector of Boolean output signal\";
 //   parameter Boolean table2.startValue = false \"Start value of y. At time = table[1], y changes to 'not startValue'\";

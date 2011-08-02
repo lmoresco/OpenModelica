@@ -107,7 +107,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // Result:
 // true
 // ""
-// "class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Examples.Utilities.RealSwitch
 //   parameter Boolean S.useHeatPort = false \"=true, if HeatPort is enabled\";
 //   parameter Real S.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Fixed device temperature if useHeatPort = false\";
 //   Real S.LossPower(quantity = \"Power\", unit = \"W\") \"Loss power leaving component via HeatPort\";
@@ -777,7 +784,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.RampVoltage
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.RampVoltage
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -922,7 +936,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.exp
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
@@ -969,7 +990,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 6 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.PulseVoltage
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.PulseVoltage
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1010,7 +1038,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 6 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.SawToothVoltage
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.SawToothVoltage
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1048,7 +1083,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.TrapezoidVoltage
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.TrapezoidVoltage
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1149,6 +1191,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // class Modelica.Electrical.Analog.Sources.TableVoltage
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
@@ -1231,7 +1280,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.RampCurrent
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.RampCurrent
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1376,7 +1432,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "function Modelica.Math.exp
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
@@ -1423,7 +1486,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 6 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.PulseCurrent
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.PulseCurrent
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1464,7 +1534,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 6 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.SawToothCurrent
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.SawToothCurrent
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1502,7 +1579,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 5 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Sources.TrapezoidCurrent
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Sources.TrapezoidCurrent
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
 //   Real i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing from pin p to pin n\";
 //   Real p.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1602,6 +1686,13 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   end if;
 //   b := b - a * startTime;
 // end Modelica.Blocks.Sources.TimeTable.getInterpolationCoefficients;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Analog.Sources.TableCurrent
 //   Real v(quantity = \"ElectricPotential\", unit = \"V\") \"Voltage drop between the two pins (= p.v - n.v)\";
@@ -1709,7 +1800,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 20 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Lines.OLine
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Lines.OLine
 //   Real p1.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p1.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real p2.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
@@ -1858,7 +1956,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 33 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Lines.M_OLine
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Lines.M_OLine
 //   parameter Real length(quantity = \"Length\", unit = \"m\", min = 1e-60) = 0.1 \"Length of line\";
 //   parameter Integer N(min = 1) = 5 \"Number of lumped segments\";
 //   parameter Integer lines(min = 2) = 4 \"Number of lines\";
@@ -5537,7 +5642,14 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 // 765 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Electrical.Analog.Lines.ULine
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Electrical.Analog.Lines.ULine
 //   Real p1.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";
 //   Real p1.i(quantity = \"ElectricCurrent\", unit = \"A\") \"Current flowing into the pin\";
 //   Real p2.v(quantity = \"ElectricPotential\", unit = \"V\") \"Potential at the pin\";

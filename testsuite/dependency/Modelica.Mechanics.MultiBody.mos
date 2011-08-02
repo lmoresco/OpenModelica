@@ -115,6 +115,13 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   result := if Modelica.Math.Vectors.length(v) >= eps then v / Modelica.Math.Vectors.length(v) else v / eps;
 // end Modelica.Math.Vectors.normalize;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"
 //   input Real[3, 3] T;
 //   input Real(quantity=\"AngularVelocity\", unit=\"rad/s\")[3] w;
@@ -311,6 +318,13 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 // algorithm
 //   result := if Modelica.Math.Vectors.length(v) >= eps then v / Modelica.Math.Vectors.length(v) else v / eps;
 // end Modelica.Math.Vectors.normalize;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"
 //   input Real[3, 3] T;

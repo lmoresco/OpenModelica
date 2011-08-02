@@ -315,13 +315,6 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
-// function Modelica.Math.asin
-//   input Real u;
-//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
-// 
-//   external \"C\";
-// end Modelica.Math.asin;
-// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -1015,13 +1008,6 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
 // 
-// function Modelica.Math.asin
-//   input Real u;
-//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
-// 
-//   external \"C\";
-// end Modelica.Math.asin;
-// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -1516,13 +1502,6 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   input Real(quantity=\"RelativePermeability\", unit=\"1\") mu_r = B_r / (H_cB * 1.25663706143592e-06);
 //   output PlasticNdFeB res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.PlasticNdFeB;
-// 
-// function Modelica.Math.asin
-//   input Real u;
-//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
-// 
-//   external \"C\";
-// end Modelica.Math.asin;
 // 
 // function Modelica.Math.log
 //   input Real u;
@@ -2155,13 +2134,6 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   output BaseData res;
 // end Modelica.Magnetic.FluxTubes.Material.HardMagnetic.BaseData;
 // 
-// function Modelica.Math.asin
-//   input Real u;
-//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
-// 
-//   external \"C\";
-// end Modelica.Math.asin;
-// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
@@ -2502,7 +2474,14 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 // 72 of these are trivial equation(s).
 // "
 // ""
-// "class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.ConstantActuator
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Magnetic.FluxTubes.Examples.MovingCoilActuator.Components.ConstantActuator
 //   parameter Real k(quantity = \"ElectricalForceConstant\", unit = \"N/A\") = 3.88 \"Converter constant\";
 //   parameter Real R(quantity = \"Resistance\", unit = \"Ohm\") = 2.86 \"Coil resistance\";
 //   parameter Real L(quantity = \"Inductance\", unit = \"H\") = 0.0051 \"Coil inductance at mid-stroke\";

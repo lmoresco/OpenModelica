@@ -22,6 +22,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); ge
 //   external \"C\";
 // end Modelica.Math.acos;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;

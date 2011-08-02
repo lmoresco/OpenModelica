@@ -997,6 +997,13 @@ end Toneco_PEXPipe;
 // end Modelica.SIunits.Conversions.from_degC;
 // 
 // Result:
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
+// 
+//   external "C";
+// end Modelica.Math.asin;
+// 
 // function Modelica.SIunits.Conversions.from_degC "Convert from °Celsius to Kelvin"
 //   input Real Celsius(quantity = "ThermodynamicTemperature", unit = "degC") "Celsius value";
 //   output Real Kelvin(quantity = "ThermodynamicTemperature", unit = "K", displayUnit = "degC", min = 0.0) "Kelvin value";

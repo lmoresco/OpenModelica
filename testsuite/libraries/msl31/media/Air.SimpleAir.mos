@@ -13,7 +13,14 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 // Result:
 // true
 // ""
-// "function Modelica.Media.Air.SimpleAir.FluidConstants \"Automatically generated record constructor for Modelica.Media.Air.SimpleAir.FluidConstants\"
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// function Modelica.Media.Air.SimpleAir.FluidConstants \"Automatically generated record constructor for Modelica.Media.Air.SimpleAir.FluidConstants\"
 //   input String iupacName;
 //   input String casRegistryNumber;
 //   input String chemicalFormula;

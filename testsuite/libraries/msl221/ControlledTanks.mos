@@ -58,6 +58,13 @@ getErrorString();
 //   end if;
 // end Modelica.Blocks.Sources.BooleanTable.getFirstIndex;
 // 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
 // function Modelica.StateGraph.Temporary.anyTrue \"Returns true, if at least on element of the Boolean input vector is true\"
 //   input Boolean[:] b;
 //   output Boolean result;

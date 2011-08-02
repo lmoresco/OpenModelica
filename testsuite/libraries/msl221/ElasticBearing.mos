@@ -10,7 +10,14 @@ instantiateModel(Modelica.Mechanics.Rotational.Examples.ElasticBearing);
 getErrorString();
 // Result:
 // true
-// "class Modelica.Mechanics.Rotational.Examples.ElasticBearing
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Mechanics.Rotational.Examples.ElasticBearing
 //   Real shaft.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\", start = shaft.phi_start, StateSelect = StateSelect.default) \"Absolute rotation angle of component (= flange_a.phi = flange_b.phi)\";
 //   Real shaft.flange_a.phi(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\") \"Absolute rotation angle of flange\";
 //   Real shaft.flange_a.tau(quantity = \"Torque\", unit = \"N.m\") \"Cut torque in the flange\";
