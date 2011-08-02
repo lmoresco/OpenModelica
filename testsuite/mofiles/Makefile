@@ -583,6 +583,7 @@ Vectorizable4.mo \
 Vectorizable5.mo \
 Vectorizable6.mo \
 VectorizeExtendedType.mo \
+VectorizeUnknownDim.mo \
 VectorTest.mo \
 WhenElseNested.mo \
 WhenNested.mo \
