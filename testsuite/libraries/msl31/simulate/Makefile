@@ -23,7 +23,7 @@ Modelica.Mechanics.Translational.Examples.Damper.mos \
 Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
 Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
-Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos 
+Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
 
 #compile time to large
 #Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6.mos 
@@ -51,11 +51,6 @@ NOTSIMULATETEST= \
 Modelica.Electrical.Analog.Examples.ControlledSwitchWithArc.mos \
 Modelica.Electrical.Analog.Examples.ShowSaturatingInductor.mos \
 Modelica.Electrical.Analog.Examples.SwitchWithArc.mos \
-Modelica.Electrical.Machines.Examples.AIMC_DOL.mos \
-Modelica.Electrical.Machines.Examples.AIMC_Inverter.mos \
-Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.mos \
-Modelica.Electrical.Machines.Examples.AIMC_YD.mos \
-Modelica.Electrical.Machines.Examples.AIMS_Start.mos \
 Modelica.Electrical.Machines.Examples.Rectifier6pulse.mos \
 Modelica.Electrical.Machines.Examples.Rectifier12pulse.mos \
 Modelica.Electrical.Machines.Examples.SMEE_Generator.mos \
@@ -85,7 +80,12 @@ Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.PumpDropOut.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.SimpleCooling.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.TwoMass.mos \
-Modelica.Thermal.HeatTransfer.Examples.Motor.mos 
+Modelica.Thermal.HeatTransfer.Examples.Motor.mos \
+Modelica.Electrical.Machines.Examples.AIMC_DOL.mos \
+Modelica.Electrical.Machines.Examples.AIMS_Start.mos \
+Modelica.Electrical.Machines.Examples.AIMC_YD.mos \
+Modelica.Electrical.Machines.Examples.AIMC_Steinmetz.mos \
+Modelica.Electrical.Machines.Examples.AIMC_Inverter.mos \
 
 
 WRONGRESULTTEST = \
@@ -164,3 +164,4 @@ failingtest :
 	@echo Running failing tests...
 	@echo
 	@$(TEST) $(FAILINGTESTFILES) \
+	
