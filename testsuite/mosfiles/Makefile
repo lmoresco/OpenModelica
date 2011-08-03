@@ -74,6 +74,7 @@ MyPointsInst1.mos MyPointsInst2.mos \
 ModelBalance1.mos ModelBalance2.mos ModelBalance3.mos \
 nonConstantIndex.mos \
 nonConstantParam.mos \
+NonlinearFailed.mos \
 NonlinearMixed.mos \
 OneArgBaseFunction.mos \
 Pendulum.mos \

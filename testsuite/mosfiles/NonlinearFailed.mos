@@ -1,0 +1,24 @@
+// name: NonlinearFailed
+// status: correct
+// teardown_command: rm -f NonLinSysFailed*
+
+loadFile("NonlinearFailed.mo");
+simulate(NonLinSysFailed);
+val(x,{0.0,0.5,1.0});
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "NonLinSysFailed_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'NonLinSysFailed', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = "Error solving nonlinear system residualFunc1 at time 0
+// Error solving nonlinear system residualFunc1 at time 0
+// Error solving nonlinear system residualFunc1 at time 0
+// Error solving nonlinear system residualFunc1 at time 0.002
+// Error solving nonlinear system residualFunc1 at time 0.002
+// Error in Simulation. Solver exit with error.
+// 
+// "
+// end SimulationResult;
+// {1.57063878666939,NaN,NaN}
+// endResult
