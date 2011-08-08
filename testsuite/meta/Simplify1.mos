@@ -8,11 +8,12 @@
 //
 
 loadFile("Simplify1.mo"); getErrorString();
-Simplify1({3,7,2}, 2);
+Simplify1({3,7,2}, 2); getErrorString();
 
 // Result:
 // true
 // ""
 // 49 == 49
 // 
+// ""
 // endResult
