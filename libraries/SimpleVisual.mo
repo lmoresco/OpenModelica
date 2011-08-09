@@ -1,8 +1,8 @@
-within Modelica;
+within ;
 package SimpleVisual ""
   extends Modelica.Icons.Library;
 
-annotation (Documentation(info="<html>
+annotation (uses(Modelica(version="2.2.1")),Documentation(info="<html>
 <p></p>
 </html>"));
   
