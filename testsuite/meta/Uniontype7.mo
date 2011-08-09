@@ -6,7 +6,7 @@
 // Uniontype Testing
 //
 
-model Uniontype7
+package Uniontype7
   record foo
       Integer i;
       Real r;
@@ -37,8 +37,4 @@ model Uniontype7
     re := REC1(foo(2,2.0,"2.0",true),2);
     k := 5;
   end test;
-  
-  Integer a;
-equation
-  a = test(5);
 end Uniontype7;

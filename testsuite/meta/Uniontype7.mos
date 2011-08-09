@@ -5,9 +5,8 @@
 //
 // Uniontype Testing
 //
-loadFile("Uniontype7.mo");
-simulate(Uniontype7);
-val(a,0.0);
+loadFile("Uniontype7.mo");getErrorString();
+Uniontype7.test(5);getErrorString();
 
 // Result:
 // true

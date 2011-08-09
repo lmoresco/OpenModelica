@@ -89,7 +89,6 @@ Uniontype3.mos \
 Uniontype4.mos \
 Uniontype5.mos \
 Uniontype6.mos \
-Uniontype7.mos \
 Uniontype8.mos \
 Uniontype9.mos \
 Uniontype10.mos \
@@ -103,7 +102,8 @@ Uniontype15.mos
 # Run make testfailing
 FAILINGTESTFILES= \
 MatchCaseInteractive2.mos \
-PartialFn9.mos
+PartialFn9.mos \
+Uniontype7.mos
 
 # Remove executables on Linux (no extension)
 CLEAN = $(TESTFILES:.mos=) $(TESTFILES:.mos=_*) $(TESTFILES:.mos=.cpp) $(TESTFILES:.mos=.makefile) $(TESTFILES:.mos=.libs) $(TESTFILES:.mos=.log) output.log *.dll *.exe *.so
