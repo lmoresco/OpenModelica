@@ -155,7 +155,7 @@ record WithParameters
 end WithParameters;
 
 function TestWithParameters
-  input Integer x;
+  parameter input Integer x(fixed=false);
   input Integer y;
   output WithParameters out1;
 algorithm
