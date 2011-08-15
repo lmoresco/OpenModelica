@@ -164,13 +164,14 @@ algorithm
       Tpl.Text l_numberOfEventIndicators;
       Tpl.Text l_numberOfContinuousStates;
       Tpl.Text l_variableNamingConvention;
-      Util.DateTime ret_9;
+      Util.DateTime ret_10;
       Tpl.Text l_generationDateAndTime;
-      String ret_7;
+      String ret_8;
       Tpl.Text l_generationTool;
       Tpl.Text l_version;
       Tpl.Text l_author;
       Tpl.Text l_description;
+      String ret_3;
       Tpl.Text l_modelIdentifier;
       Tpl.Text l_modelName;
       Tpl.Text l_fmiVersion;
@@ -181,15 +182,16 @@ algorithm
       equation
         l_fmiVersion = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("1.0"));
         l_modelName = SimCodeC.dotPath(Tpl.emptyTxt, i_modelInfo_name);
-        l_modelIdentifier = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        ret_3 = System.stringReplace(i_fileNamePrefix, ".", "_");
+        l_modelIdentifier = Tpl.writeStr(Tpl.emptyTxt, ret_3);
         l_description = Tpl.emptyTxt;
         l_author = Tpl.emptyTxt;
         l_version = Tpl.emptyTxt;
         l_generationTool = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OpenModelica Compiler "));
-        ret_7 = Settings.getVersionNr();
-        l_generationTool = Tpl.writeStr(l_generationTool, ret_7);
-        ret_9 = Util.getCurrentDateTime();
-        l_generationDateAndTime = xsdateTime(Tpl.emptyTxt, ret_9);
+        ret_8 = Settings.getVersionNr();
+        l_generationTool = Tpl.writeStr(l_generationTool, ret_8);
+        ret_10 = Util.getCurrentDateTime();
+        l_generationDateAndTime = xsdateTime(Tpl.emptyTxt, ret_10);
         l_variableNamingConvention = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("structured"));
         l_numberOfContinuousStates = Tpl.writeStr(Tpl.emptyTxt, intString(i_vi_numStateVars));
         l_numberOfEventIndicators = Tpl.writeStr(Tpl.emptyTxt, intString(i_vi_numZeroCrossings));
@@ -1540,6 +1542,7 @@ algorithm
       SimCode.SimCode i_simCode;
       SimCode.ModelInfo i_modelInfo;
       String i_fileNamePrefix;
+      String ret_0;
 
     case ( txt,
            (i_simCode as SimCode.SIMCODE(fileNamePrefix = i_fileNamePrefix, modelInfo = i_modelInfo)),
@@ -1550,7 +1553,8 @@ algorithm
                                     "// define class name and unique id\n",
                                     "#define MODEL_IDENTIFIER "
                                 }, false));
-        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        ret_0 = System.stringReplace(i_fileNamePrefix, ".", "_");
+        txt = Tpl.writeStr(txt, ret_0);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("#define MODEL_GUID \"{"));
         txt = Tpl.writeStr(txt, a_guid);
