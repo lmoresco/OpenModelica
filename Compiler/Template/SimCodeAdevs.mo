@@ -10428,20 +10428,20 @@ algorithm
         l_mixedPostfix = fun_273(Tpl.emptyTxt, i_partOfMixed);
         txt = fun_274(txt, i_partOfMixed, i_index);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("static declare_matrix("));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("double "));
         txt = Tpl.writeText(txt, l_aname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("["));
         txt = Tpl.writeText(txt, l_size);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*"));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ");\n",
-                                    "static declare_vector("
+                                    "];\n",
+                                    "double "
                                 }, false));
         txt = Tpl.writeText(txt, l_bname);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(", "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" ["));
         txt = Tpl.writeText(txt, l_size);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(");\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (txt, a_varDecls) = lm_275(txt, i_simJac, l_size, l_aname, a_varDecls, a_context);
         txt = Tpl.popIter(txt);
