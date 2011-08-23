@@ -42,8 +42,21 @@ algorithm
   matchcontinue(in_txt, in_a_simCode)
     local
       Tpl.Text txt;
-      String i_fileNamePrefix;
       SimCode.SimCode i_simCode;
+      list<DAE.Exp> i_literals;
+      list<SimCode.RecordDeclaration> i_recordDecls;
+      list<SimCode.Function> i_modelInfo_functions;
+      String i_fileNamePrefix;
+      Tpl.Text txt_16;
+      Tpl.Text txt_15;
+      Tpl.Text txt_14;
+      Tpl.Text txt_13;
+      Tpl.Text txt_12;
+      Tpl.Text txt_11;
+      Tpl.Text txt_10;
+      Tpl.Text txt_9;
+      Tpl.Text txt_8;
+      Tpl.Text txt_7;
       Tpl.Text txt_6;
       Tpl.Text txt_5;
       Tpl.Text txt_4;
@@ -53,20 +66,40 @@ algorithm
       Tpl.Text l_guid;
 
     case ( txt,
-           (i_simCode as SimCode.SIMCODE(fileNamePrefix = i_fileNamePrefix)) )
+           (i_simCode as SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(functions = i_modelInfo_functions), fileNamePrefix = i_fileNamePrefix, recordDecls = i_recordDecls, literals = i_literals)) )
       equation
         ret_1 = System.getUUIDStr();
         l_guid = Tpl.writeStr(Tpl.emptyTxt, ret_1);
-        txt_2 = fmuModelDescriptionFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
-        Tpl.textFile(txt_2, "modelDescription.xml");
-        txt_3 = fmumodel_identifierFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
-        txt_4 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
-        txt_4 = Tpl.writeTok(txt_4, Tpl.ST_STRING("_FMU.c"));
-        Tpl.textFile(txt_3, Tpl.textString(txt_4));
-        txt_5 = fmuMakefile(Tpl.emptyTxt, i_simCode);
-        txt_6 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
-        txt_6 = Tpl.writeTok(txt_6, Tpl.ST_STRING("_FMU.makefile"));
-        Tpl.textFile(txt_5, Tpl.textString(txt_6));
+        txt_2 = SimCodeC.simulationFunctionsHeaderFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_recordDecls);
+        txt_3 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_3 = Tpl.writeTok(txt_3, Tpl.ST_STRING("_functions.h"));
+        Tpl.textFile(txt_2, Tpl.textString(txt_3));
+        txt_4 = SimCodeC.simulationFunctionsFile(Tpl.emptyTxt, i_fileNamePrefix, i_modelInfo_functions, i_literals);
+        txt_5 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_5 = Tpl.writeTok(txt_5, Tpl.ST_STRING("_functions.c"));
+        Tpl.textFile(txt_4, Tpl.textString(txt_5));
+        txt_6 = SimCodeC.recordsFile(Tpl.emptyTxt, i_fileNamePrefix, i_recordDecls);
+        txt_7 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING("_records.c"));
+        Tpl.textFile(txt_6, Tpl.textString(txt_7));
+        txt_8 = SimCodeC.simulationFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
+        txt_9 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_9 = Tpl.writeTok(txt_9, Tpl.ST_STRING(".c"));
+        Tpl.textFile(txt_8, Tpl.textString(txt_9));
+        txt_10 = fmumodel_identifierFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
+        txt_11 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_11 = Tpl.writeTok(txt_11, Tpl.ST_STRING("_FMU.c"));
+        Tpl.textFile(txt_10, Tpl.textString(txt_11));
+        txt_12 = fmuModelDescriptionFile(Tpl.emptyTxt, i_simCode, Tpl.textString(l_guid));
+        Tpl.textFile(txt_12, "modelDescription.xml");
+        txt_13 = fmudeffile(Tpl.emptyTxt, i_simCode);
+        txt_14 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_14 = Tpl.writeTok(txt_14, Tpl.ST_STRING(".def"));
+        Tpl.textFile(txt_13, Tpl.textString(txt_14));
+        txt_15 = fmuMakefile(Tpl.emptyTxt, i_simCode);
+        txt_16 = Tpl.writeStr(Tpl.emptyTxt, i_fileNamePrefix);
+        txt_16 = Tpl.writeTok(txt_16, Tpl.ST_STRING("_FMU.makefile"));
+        Tpl.textFile(txt_15, Tpl.textString(txt_16));
       then txt;
 
     case ( txt,
@@ -3097,13 +3130,13 @@ algorithm
     case ( txt,
            false )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("false"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("0"));
       then txt;
 
     case ( txt,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("true"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("1"));
       then txt;
   end matchcontinue;
 end fun_102;
@@ -5082,31 +5115,6 @@ algorithm
   end matchcontinue;
 end fun_157;
 
-protected function fun_158
-  input Tpl.Text in_txt;
-  input String in_mArg;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_mArg)
-    local
-      Tpl.Text txt;
-
-    case ( txt,
-           "OSX" )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-lf2c"));
-      then txt;
-
-    case ( txt,
-           _ )
-      equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("-Wl,-Bstatic -lf2c -Wl,-Bdynamic"));
-      then txt;
-  end matchcontinue;
-end fun_158;
-
 public function getPlatformString2
   input Tpl.Text in_txt;
   input String in_a_platform;
@@ -5126,7 +5134,6 @@ algorithm
       String a_libsPos1;
       String a_libsPos2;
       String i_platform;
-      String ret_3;
       String ret_2;
       String ret_1;
       String ret_0;
@@ -5141,7 +5148,9 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".def\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".def "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".dll\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" dlltool -d "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5223,34 +5232,6 @@ algorithm
                                     "\n"
                                 }, true));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".def: "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".dll\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
-        txt = Tpl.writeStr(txt, a_dirExtra);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, a_libsPos1);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, a_libsPos2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
-        ret_0 = System.os();
-        txt = fun_155(txt, ret_0);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" -Wl,--output-def,"));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".def\n",
-                                    "\n"
-                                }, true));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll: "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
@@ -5274,8 +5255,8 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(LDFLAGS) -linteractive $(SENDDATALIBS) "));
-        ret_1 = System.os();
-        txt = fun_156(txt, ret_1);
+        ret_0 = System.os();
+        txt = fun_155(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " -Wl,--kill-at\n",
                                     "\n"
@@ -5283,7 +5264,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU2.o:\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) $(CPPFLAGS) $(CFLAGS) -c -o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC) $(CPPFLAGS) $(CFLAGS) -c -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5341,33 +5322,25 @@ algorithm
            a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": $(MAINFILE) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": clean $(MAINOBJ) "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINFILE) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINOBJ) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
         txt = Tpl.writeStr(txt, a_dirExtra);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
-        ret_2 = System.os();
-        txt = fun_157(txt, ret_2);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_records.c\n",
-                                    "\n"
-                                }, true));
+        ret_1 = System.os();
+        txt = fun_156(txt, ret_1);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5468,33 +5441,25 @@ algorithm
            a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": $(MAINFILE) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": clean $(MAINOBJ) "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.c "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.h "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.c\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINFILE) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINOBJ) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
         txt = Tpl.writeStr(txt, a_dirExtra);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos1);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
         txt = Tpl.writeStr(txt, a_libsPos2);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CFLAGS) $(SENDDATALIBS) $(LDFLAGS) "));
-        ret_3 = System.os();
-        txt = fun_158(txt, ret_3);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_records.c\n",
-                                    "\n"
-                                }, true));
+        ret_2 = System.os();
+        txt = fun_157(txt, ret_2);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5597,7 +5562,7 @@ algorithm
   end matchcontinue;
 end getPlatformString2;
 
-protected function fun_160
+protected function fun_159
   input Tpl.Text in_txt;
   input String in_a_modelInfo_directory;
 
@@ -5621,9 +5586,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\""));
       then txt;
   end matchcontinue;
-end fun_160;
+end fun_159;
 
-protected function lm_161
+protected function lm_160
   input Tpl.Text in_txt;
   input list<String> in_items;
 
@@ -5645,16 +5610,43 @@ algorithm
       equation
         txt = Tpl.writeStr(txt, i_lib);
         txt = Tpl.nextIter(txt);
-        txt = lm_161(txt, rest);
+        txt = lm_160(txt, rest);
       then txt;
 
     case ( txt,
            _ :: rest )
       equation
-        txt = lm_161(txt, rest);
+        txt = lm_160(txt, rest);
       then txt;
   end matchcontinue;
-end lm_161;
+end lm_160;
+
+protected function fun_161
+  input Tpl.Text in_txt;
+  input Tpl.Text in_a_dirExtra;
+  input Tpl.Text in_a_libsStr;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
+    local
+      Tpl.Text txt;
+      Tpl.Text a_libsStr;
+
+    case ( txt,
+           Tpl.MEM_TEXT(tokens = {}),
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
+      then txt;
+
+    case ( txt,
+           _,
+           _ )
+      then txt;
+  end matchcontinue;
+end fun_161;
 
 protected function fun_162
   input Tpl.Text in_txt;
@@ -5671,46 +5663,19 @@ algorithm
 
     case ( txt,
            Tpl.MEM_TEXT(tokens = {}),
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
+           _ )
       then txt;
 
     case ( txt,
            _,
-           _ )
+           a_libsStr )
+      equation
+        txt = Tpl.writeText(txt, a_libsStr);
       then txt;
   end matchcontinue;
 end fun_162;
 
 protected function fun_163
-  input Tpl.Text in_txt;
-  input Tpl.Text in_a_dirExtra;
-  input Tpl.Text in_a_libsStr;
-
-  output Tpl.Text out_txt;
-algorithm
-  out_txt :=
-  matchcontinue(in_txt, in_a_dirExtra, in_a_libsStr)
-    local
-      Tpl.Text txt;
-      Tpl.Text a_libsStr;
-
-    case ( txt,
-           Tpl.MEM_TEXT(tokens = {}),
-           _ )
-      then txt;
-
-    case ( txt,
-           _,
-           a_libsStr )
-      equation
-        txt = Tpl.writeText(txt, a_libsStr);
-      then txt;
-  end matchcontinue;
-end fun_163;
-
-protected function fun_164
   input Tpl.Text in_txt;
   input Boolean in_a_s_measureTime;
 
@@ -5731,9 +5696,9 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("-D_OMC_MEASURE_TIME "));
       then txt;
   end matchcontinue;
-end fun_164;
+end fun_163;
 
-protected function fun_165
+protected function fun_164
   input Tpl.Text in_txt;
   input String in_a_s_method;
 
@@ -5760,9 +5725,9 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_165;
+end fun_164;
 
-protected function fun_166
+protected function fun_165
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -5778,18 +5743,18 @@ algorithm
     case ( txt,
            SOME(SimCode.SIMULATION_SETTINGS(measureTime = i_s_measureTime, method = i_s_method)) )
       equation
-        txt = fun_164(txt, i_s_measureTime);
+        txt = fun_163(txt, i_s_measureTime);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_165(txt, i_s_method);
+        txt = fun_164(txt, i_s_method);
       then txt;
 
     case ( txt,
            _ )
       then txt;
   end matchcontinue;
-end fun_166;
+end fun_165;
 
-protected function fun_167
+protected function fun_166
   input Tpl.Text in_txt;
   input Option<SimCode.SimulationSettings> in_a_sopt;
 
@@ -5811,7 +5776,40 @@ algorithm
            _ )
       then txt;
   end matchcontinue;
-end fun_167;
+end fun_166;
+
+protected function lm_167
+  input Tpl.Text in_txt;
+  input list<String> in_items;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_items)
+    local
+      Tpl.Text txt;
+      list<String> rest;
+      String i_it;
+
+    case ( txt,
+           {} )
+      then txt;
+
+    case ( txt,
+           i_it :: rest )
+      equation
+        txt = Tpl.writeStr(txt, i_it);
+        txt = Tpl.nextIter(txt);
+        txt = lm_167(txt, rest);
+      then txt;
+
+    case ( txt,
+           _ :: rest )
+      equation
+        txt = lm_167(txt, rest);
+      then txt;
+  end matchcontinue;
+end lm_167;
 
 protected function fun_168
   input Tpl.Text in_txt;
@@ -5836,6 +5834,29 @@ algorithm
   end matchcontinue;
 end fun_168;
 
+protected function fun_169
+  input Tpl.Text in_txt;
+  input Boolean in_mArg;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_mArg)
+    local
+      Tpl.Text txt;
+
+    case ( txt,
+           false )
+      then txt;
+
+    case ( txt,
+           _ )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".conv"));
+      then txt;
+  end matchcontinue;
+end fun_169;
+
 public function fmuMakefile
   input Tpl.Text in_txt;
   input SimCode.SimCode in_a_simCode;
@@ -5848,6 +5869,7 @@ algorithm
       Tpl.Text txt;
       String i_makefileParams_senddatalibs;
       String i_makefileParams_ldflags;
+      list<String> i_makefileParams_includes;
       String i_makefileParams_cflags;
       String i_makefileParams_omhome;
       String i_makefileParams_dllext;
@@ -5860,6 +5882,7 @@ algorithm
       Option<SimCode.SimulationSettings> i_sopt;
       list<String> i_makefileParams_libs;
       String i_modelInfo_directory;
+      Boolean ret_8;
       Boolean ret_7;
       Tpl.Text l_compilecmds;
       Tpl.Text l_platfrom;
@@ -5870,15 +5893,15 @@ algorithm
       Tpl.Text l_dirExtra;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
-        l_dirExtra = fun_160(Tpl.emptyTxt, i_modelInfo_directory);
+        l_dirExtra = fun_159(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
-        l_libsStr = lm_161(l_libsStr, i_makefileParams_libs);
+        l_libsStr = lm_160(l_libsStr, i_makefileParams_libs);
         l_libsStr = Tpl.popIter(l_libsStr);
-        l_libsPos1 = fun_162(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_libsPos2 = fun_163(Tpl.emptyTxt, l_dirExtra, l_libsStr);
-        l_extraCflags = fun_166(Tpl.emptyTxt, i_sopt);
+        l_libsPos1 = fun_161(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_libsPos2 = fun_162(Tpl.emptyTxt, l_dirExtra, l_libsStr);
+        l_extraCflags = fun_165(Tpl.emptyTxt, i_sopt);
         l_platfrom = getPlatformString(Tpl.emptyTxt, i_makefileParams_platform);
         l_compilecmds = getPlatformString2(Tpl.emptyTxt, i_makefileParams_platform, i_fileNamePrefix, Tpl.textString(l_dirExtra), Tpl.textString(l_libsPos1), Tpl.textString(l_libsPos2));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
@@ -5916,7 +5939,16 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" "));
         txt = Tpl.writeStr(txt, i_makefileParams_cflags);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
-        txt = fun_167(txt, i_sopt);
+        txt = fun_166(txt, i_sopt);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("CPPFLAGS=-I\""));
+        txt = Tpl.writeStr(txt, i_makefileParams_omhome);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/include/omc\" -I. "));
+        txt = Tpl.writeText(txt, l_dirExtra);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" "));
+        txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
+        txt = lm_167(txt, i_makefileParams_includes);
+        txt = Tpl.popIter(txt);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("LDFLAGS=-L\""));
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
@@ -5936,8 +5968,16 @@ algorithm
         txt = fun_168(txt, ret_7);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     ".c\n",
+                                    "MAINOBJ="
+                                }, false));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU"));
+        ret_8 = RTOpts.acceptMetaModelicaGrammar();
+        txt = fun_169(txt, ret_8);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    ".o\n",
                                     "\n",
-                                    ".PHONY: "
+                                    "PHONY: clean "
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU\n"));
@@ -5953,7 +5993,23 @@ algorithm
         txt = Tpl.writeStr(txt, i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/share/omc/scripts/convert_lines.pl $< $@.tmp\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" @mv $@.tmp $@"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    " @mv $@.tmp $@\n",
+                                    "$(MAINOBJ): $(MAINFILE) "
+                                }, false));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".c "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_functions.c "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_functions.h\n",
+                                    "clean:\n"
+                                }, true));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" @rm -f "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(MAINOBJ)"));
       then txt;
 
     case ( txt,
@@ -5996,5 +6052,81 @@ algorithm
       then txt;
   end matchcontinue;
 end getPlatformString;
+
+public function fmudeffile
+  input Tpl.Text in_txt;
+  input SimCode.SimCode in_a_simCode;
+
+  output Tpl.Text out_txt;
+algorithm
+  out_txt :=
+  matchcontinue(in_txt, in_a_simCode)
+    local
+      Tpl.Text txt;
+      String i_fileNamePrefix;
+
+    case ( txt,
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(name = _), makefileParams = SimCode.MAKEFILE_PARAMS(ccompiler = _), simulationSettingsOpt = _, fileNamePrefix = i_fileNamePrefix) )
+      equation
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("EXPORTS\n"));
+        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(2));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiCompletedIntegratorStep @1\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiEventUpdate @2\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiFreeModelInstance @3\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetBoolean @4\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetContinuousStates @5\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetDerivatives @6\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetEventIndicators @7\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetInteger @8\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetModelTypesPlatform @9\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetNominalContinuousStates @10\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetReal @11\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetStateValueReferences @12\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetString @13\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiGetVersion @14\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiInitialize @15\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiInstantiateModel @16\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetBoolean @17\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetContinuousStates @18\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetDebugLogging @19\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetExternalFunction @20\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetInteger @21\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetReal @22\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetString @23\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_fmiSetTime @24\n"));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_fmiTerminate @25"));
+        txt = Tpl.popBlock(txt);
+      then txt;
+
+    case ( txt,
+           _ )
+      then txt;
+  end matchcontinue;
+end fmudeffile;
 
 end SimCodeFMU;
