@@ -1595,13 +1595,22 @@ algorithm
                                     "}\"\n",
                                     "\n",
                                     "// include fmu header files, typedefs and macros\n",
-                                    "#include \"fmiModelFunctions.h\"\n",
-                                    "#include \"fmu_model_interface.h\"\n",
+                                    "#include <stdio.h>\n",
+                                    "#include <string.h>\n",
+                                    "#include <assert.h>\n",
                                     "#include \""
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "_functions.h\"\n",
+                                    "#include \"simulation_init.h\"\n",
+                                    "#include \"fmiModelFunctions.h\"\n",
+                                    "#include \"fmu_model_interface.h\"\n",
+                                    "#include \"solver_main.h\"\n",
+                                    "\n",
+                                    "#ifdef __cplusplus\n",
+                                    "extern \"C\" {\n",
+                                    "#endif\n",
                                     "\n",
                                     "void setStartValues(ModelInstance *comp);\n",
                                     "fmiStatus getEventIndicator(ModelInstance* comp, fmiReal eventIndicators[]);\n",
@@ -1646,7 +1655,13 @@ algorithm
         txt = Tpl.softNewLine(txt);
         txt = setExternalFunction(txt, i_modelInfo);
         txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_NEW_LINE());
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "\n",
+                                    "#ifdef __cplusplus\n",
+                                    "}\n",
+                                    "#endif\n",
+                                    "\n"
+                                }, true));
       then txt;
 
     case ( txt,
@@ -5234,7 +5249,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll: "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5244,7 +5259,7 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5259,39 +5274,6 @@ algorithm
         txt = fun_155(txt, ret_0);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     " -Wl,--kill-at\n",
-                                    "\n"
-                                }, true));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_FMU2.o:\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC) $(CPPFLAGS) $(CFLAGS) -c -o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU2.o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_FMU.c\n",
-                                    "\n"
-                                }, true));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".o:\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC) $(CPPFLAGS) $(CFLAGS) -c -o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".c\n",
-                                    "\n"
-                                }, true));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o:\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CC)  $(CPPFLAGS) $(CFLAGS) -c -o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "_records.c\n",
                                     "\n"
                                 }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
