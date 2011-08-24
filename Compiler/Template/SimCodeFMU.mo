@@ -1598,6 +1598,7 @@ algorithm
                                     "#include <stdio.h>\n",
                                     "#include <string.h>\n",
                                     "#include <assert.h>\n",
+                                    "#include \"modelica.h\"\n",
                                     "#include \""
                                 }, false));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
@@ -5247,7 +5248,7 @@ algorithm
                                     "\n"
                                 }, true));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll: "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".dll: clean "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5304,13 +5305,21 @@ algorithm
            a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": clean $(MAINOBJ) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINOBJ) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
         txt = Tpl.writeStr(txt, a_dirExtra);
@@ -5423,13 +5432,21 @@ algorithm
            a_libsPos2 )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(": clean $(MAINOBJ) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("_records.o\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" $(CXX) -shared -I. -o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) $(MAINOBJ) "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("$(DLLEXT) "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(CPPFLAGS) "));
         txt = Tpl.writeStr(txt, a_dirExtra);
@@ -5991,7 +6008,11 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" @rm -f "));
         txt = Tpl.writeStr(txt, i_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(MAINOBJ)"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_records.o $(MAINOBJ) "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, i_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o"));
       then txt;
 
     case ( txt,
