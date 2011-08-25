@@ -637,7 +637,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // required from medium model \\\"\" + \"SimpleNaturalGas\" + \"\\\".\");
 //   volume.medium.MM = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.molarMass(volume.medium.state);
 //   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_TX(volume.medium.T,{volume.medium.X[1],volume.medium.X[2],volume.medium.X[3],volume.medium.X[4],volume.medium.X[5],volume.medium.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   volume.medium.R = data.R[1] * volume.medium.X[1] + (data.R[2] * volume.medium.X[2] + (data.R[3] * volume.medium.X[3] + (data.R[4] * volume.medium.X[4] + (data.R[5] * volume.medium.X[5] + data.R[6] * volume.medium.X[6]))));
+//   volume.medium.R = 518.279116793808 * (volume.medium.X[1] + (volume.medium.X[2] + (volume.medium.X[3] + (volume.medium.X[4] + (volume.medium.X[5] + volume.medium.X[6])))));
 //   volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 //   volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
 //   volume.medium.state.T = volume.medium.T;
@@ -680,7 +680,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // required from medium model \\\"\" + \"SimpleNaturalGas\" + \"\\\".\");
 //   fixedMassFlowRate.medium.MM = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.molarMass(fixedMassFlowRate.medium.state);
 //   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_TX(fixedMassFlowRate.medium.T,{fixedMassFlowRate.medium.X[1],fixedMassFlowRate.medium.X[2],fixedMassFlowRate.medium.X[3],fixedMassFlowRate.medium.X[4],fixedMassFlowRate.medium.X[5],fixedMassFlowRate.medium.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   fixedMassFlowRate.medium.R = data.R[1] * fixedMassFlowRate.medium.X[1] + (data.R[2] * fixedMassFlowRate.medium.X[2] + (data.R[3] * fixedMassFlowRate.medium.X[3] + (data.R[4] * fixedMassFlowRate.medium.X[4] + (data.R[5] * fixedMassFlowRate.medium.X[5] + data.R[6] * fixedMassFlowRate.medium.X[6]))));
+//   fixedMassFlowRate.medium.R = 518.279116793808 * (fixedMassFlowRate.medium.X[1] + (fixedMassFlowRate.medium.X[2] + (fixedMassFlowRate.medium.X[3] + (fixedMassFlowRate.medium.X[4] + (fixedMassFlowRate.medium.X[5] + fixedMassFlowRate.medium.X[6])))));
 //   fixedMassFlowRate.medium.u = fixedMassFlowRate.medium.h - fixedMassFlowRate.medium.R * fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.d = fixedMassFlowRate.medium.p / (fixedMassFlowRate.medium.T * fixedMassFlowRate.medium.R);
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
@@ -721,7 +721,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // required from medium model \\\"\" + \"SimpleNaturalGas\" + \"\\\".\");
 //   ambient.medium.MM = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.molarMass(ambient.medium.state);
 //   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_TX(ambient.medium.T,{ambient.medium.X[1],ambient.medium.X[2],ambient.medium.X[3],ambient.medium.X[4],ambient.medium.X[5],ambient.medium.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   ambient.medium.R = data.R[1] * ambient.medium.X[1] + (data.R[2] * ambient.medium.X[2] + (data.R[3] * ambient.medium.X[3] + (data.R[4] * ambient.medium.X[4] + (data.R[5] * ambient.medium.X[5] + data.R[6] * ambient.medium.X[6]))));
+//   ambient.medium.R = 518.279116793808 * (ambient.medium.X[1] + (ambient.medium.X[2] + (ambient.medium.X[3] + (ambient.medium.X[4] + (ambient.medium.X[5] + ambient.medium.X[6])))));
 //   ambient.medium.u = ambient.medium.h - ambient.medium.R * ambient.medium.T;
 //   ambient.medium.d = ambient.medium.p / (ambient.medium.T * ambient.medium.R);
 //   ambient.medium.state.T = ambient.medium.T;

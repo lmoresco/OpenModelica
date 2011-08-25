@@ -2833,6 +2833,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.T in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.T in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.BaseProperties.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.PortVolume.Medium.
@@ -2881,6 +2886,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.T in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.T in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.BaseProperties.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater_pT.Medium.
@@ -2914,6 +2924,11 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 // [package.mo:4971:7-4971:47:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.
 // [package.mo:4992:9-4992:87:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4993:9-4995:67:writable] Error: No constant value for variable state in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.T in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
+// [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.p in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.phase in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.h in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.
 // [package.mo:4999:9-4999:22:writable] Error: No constant value for variable state.d in scope Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.BaseProperties.

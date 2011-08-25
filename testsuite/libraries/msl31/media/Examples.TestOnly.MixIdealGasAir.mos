@@ -49,14 +49,14 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   for i in 1:2 loop
 //     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,fluidConstants[i].criticalTemperature,fluidConstants[i].molarMass,fluidConstants[i].criticalMolarVolume,fluidConstants[i].acentricFactor,fluidConstants[i].dipoleMoment,0.0);
 //   end for;
-//   eta := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.gasMixtureViscosity(Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]}),{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]},{etaX[1],etaX[2]});
+//   eta := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.gasMixtureViscosity(Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),{0.0280134,0.0280134},{etaX[1],etaX[2]});
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.gasConstant \"Return gasConstant\"
 //   input Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state \"thermodynamic state\";
 //   output Real R(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"mixture gas constant\";
 // algorithm
-//   R := data.R[1] * state.X[1] + data.R[2] * state.X[2];
+//   R := 296.803386950531 * (state.X[1] + state.X[2]);
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.gasConstant;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
@@ -188,7 +188,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificEntropy \"Return specific entropy\"
 //   input Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
-//   protected Real[2] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{data.MM[1],data.MM[2]}) \"Molar fractions\";
+//   protected Real[2] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}) \"Molar fractions\";
 // algorithm
 //   s := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.s_TX(state.T,{state.X[1],state.X[2]}) + (-8.314472 * if state.X[1] < 1e-15 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1] + (-8.314472 * if state.X[2] < 1e-15 then Y[2] else log((Y[2] * state.p) / 101325.0) * state.X[2]) / MMX[2];
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificEntropy;
@@ -204,7 +204,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   input Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
-//   cv := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2] + -data.R[1] * state.X[1] - data.R[2] * state.X[2];
+//   cv := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[1],state.T) * state.X[1] + Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[2],state.T) * state.X[2] + -296.803386950531 * (state.X[1] + state.X[2]);
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.thermalConductivity \"Return thermal conductivity for low pressure gas mixtures\"
@@ -221,7 +221,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
-//   lambda := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.lowPressureThermalConductivity(Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]}),state.T,{fluidConstants[:].criticalTemperature[1],fluidConstants[:].criticalTemperature[2]},{fluidConstants[:].criticalPressure[1],fluidConstants[:].criticalPressure[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]},{lambdaX[1],lambdaX[2]});
+//   lambda := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.lowPressureThermalConductivity(Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),state.T,{126.2,126.2},{3398000.0,3398000.0},{0.0280134,0.0280134},{lambdaX[1],lambdaX[2]});
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.thermalConductivity;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.velocityOfSound \"Return velocity of sound\"
@@ -381,7 +381,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // required from medium model \\\"\" + \"CombustionAirN2O2\" + \"\\\".\");
 //   medium.MM = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.molarMass(medium.state);
 //   medium.h = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.h_TX(medium.T,{medium.X[1],medium.X[2]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   medium.R = data.R[1] * medium.X[1] + data.R[2] * medium.X[2];
+//   medium.R = 296.803386950531 * (medium.X[1] + medium.X[2]);
 //   medium.u = medium.h - medium.R * medium.T;
 //   medium.d = medium.p / (medium.T * medium.R);
 //   medium.state.T = medium.T;
@@ -402,7 +402,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // required from medium model \\\"\" + \"CombustionAirN2O2\" + \"\\\".\");
 //   medium2.MM = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.molarMass(medium2.state);
 //   medium2.h = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.h_TX(medium2.T,{medium2.X[1],medium2.X[2]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   medium2.R = data.R[1] * medium2.X[1] + data.R[2] * medium2.X[2];
+//   medium2.R = 296.803386950531 * (medium2.X[1] + medium2.X[2]);
 //   medium2.u = medium2.h - medium2.R * medium2.T;
 //   medium2.d = medium2.p / (medium2.T * medium2.R);
 //   medium2.state.T = medium2.T;
@@ -427,8 +427,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   der(medium2.X[2]) = 0.0;
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir;
 // "
-// "[package.mo:764:3-764:69:writable] Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
-// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
@@ -439,14 +438,12 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:882:3-884:66:writable] Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificEntropy.$foriter loop scope$
 // [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
 // "
 // "Check of Modelica.Media.Examples.TestOnly.MixIdealGasAir completed successfully.
 // 
-// [package.mo:764:3-764:69:writable] Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -458,7 +455,6 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:882:3-884:66:writable] Error: Variable data[:].MM[1] not found in scope Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificEntropy.$foriter loop scope$
 // [package.mo:985:5-985:69:writable] Warning: Duplicate elements (due to inherited elements) not syntactically identical but semantically identical:
 // 	first element is:  input ThermodynamicState state	second element is: input .Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState state	Modelica specification requires that elements are exactly identical.
 // [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
