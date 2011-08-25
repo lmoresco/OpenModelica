@@ -59,7 +59,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   for i in 1:2 loop
 //     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,fluidConstants[i].criticalTemperature,fluidConstants[i].molarMass,fluidConstants[i].criticalMolarVolume,fluidConstants[i].acentricFactor,fluidConstants[i].dipoleMoment,0.0);
 //   end for;
-//   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]}),{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]},{etaX[1],etaX[2]});
+//   eta := Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),{0.0280134,0.0280134},{etaX[1],etaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium1.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
@@ -165,7 +165,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
-//   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]}),state.T,{fluidConstants[:].criticalTemperature[1],fluidConstants[:].criticalTemperature[2]},{fluidConstants[:].criticalPressure[1],fluidConstants[:].criticalPressure[2]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2]},{lambdaX[1],lambdaX[2]});
+//   lambda := Modelica.Media.Examples.MixtureGases.Medium1.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium1.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}),state.T,{126.2,126.2},{3398000.0,3398000.0},{0.0280134,0.0280134},{lambdaX[1],lambdaX[2]});
 // end Modelica.Media.Examples.MixtureGases.Medium1.thermalConductivity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.MixtureGases.Medium2.ThermodynamicState\"
@@ -183,7 +183,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   for i in 1:6 loop
 //     etaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.dynamicViscosityLowPressure(state.T,fluidConstants[i].criticalTemperature,fluidConstants[i].molarMass,fluidConstants[i].criticalMolarVolume,fluidConstants[i].acentricFactor,fluidConstants[i].dipoleMoment,0.0);
 //   end for;
-//   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2],fluidConstants[:].molarMass[3],fluidConstants[:].molarMass[4],fluidConstants[:].molarMass[5],fluidConstants[:].molarMass[6]}),{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2],fluidConstants[:].molarMass[3],fluidConstants[:].molarMass[4],fluidConstants[:].molarMass[5],fluidConstants[:].molarMass[6]},{etaX[1],etaX[2],etaX[3],etaX[4],etaX[5],etaX[6]});
+//   eta := Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{etaX[1],etaX[2],etaX[3],etaX[4],etaX[5],etaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity;
 // 
 // function Modelica.Media.Examples.MixtureGases.Medium2.gasMixtureViscosity \"Return viscosities of gas mixtures at low pressures (Wilke method)\"
@@ -308,7 +308,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //     cp[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.cp_T(data[i],state.T);
 //     lambdaX[i] := Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate(cp[i],eta[i],method);
 //   end for;
-//   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2],fluidConstants[:].molarMass[3],fluidConstants[:].molarMass[4],fluidConstants[:].molarMass[5],fluidConstants[:].molarMass[6]}),state.T,{fluidConstants[:].criticalTemperature[1],fluidConstants[:].criticalTemperature[2],fluidConstants[:].criticalTemperature[3],fluidConstants[:].criticalTemperature[4],fluidConstants[:].criticalTemperature[5],fluidConstants[:].criticalTemperature[6]},{fluidConstants[:].criticalPressure[1],fluidConstants[:].criticalPressure[2],fluidConstants[:].criticalPressure[3],fluidConstants[:].criticalPressure[4],fluidConstants[:].criticalPressure[5],fluidConstants[:].criticalPressure[6]},{fluidConstants[:].molarMass[1],fluidConstants[:].molarMass[2],fluidConstants[:].molarMass[3],fluidConstants[:].molarMass[4],fluidConstants[:].molarMass[5],fluidConstants[:].molarMass[6]},{lambdaX[1],lambdaX[2],lambdaX[3],lambdaX[4],lambdaX[5],lambdaX[6]});
+//   lambda := Modelica.Media.Examples.MixtureGases.Medium2.lowPressureThermalConductivity(Modelica.Media.Examples.MixtureGases.Medium2.massToMoleFractions({state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246}),state.T,{190.56,190.56,190.56,190.56,190.56,190.56},{4599000.0,4599000.0,4599000.0,4599000.0,4599000.0,4599000.0},{0.01604246,0.01604246,0.01604246,0.01604246,0.01604246,0.01604246},{lambdaX[1],lambdaX[2],lambdaX[3],lambdaX[4],lambdaX[5],lambdaX[6]});
 // end Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity;
 // 
 // function Modelica.Media.IdealGases.Common.DataRecord \"Automatically generated record constructor for Modelica.Media.IdealGases.Common.DataRecord\"
@@ -486,7 +486,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // required from medium model \\\"\" + \"CombustionAirN2O2\" + \"\\\".\");
 //   medium1.MM = Modelica.Media.Examples.MixtureGases.Medium1.molarMass(medium1.state);
 //   medium1.h = Modelica.Media.Examples.MixtureGases.Medium1.h_TX(medium1.T,{medium1.X[1],medium1.X[2]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   medium1.R = data.R[1] * medium1.X[1] + data.R[2] * medium1.X[2];
+//   medium1.R = 296.803386950531 * (medium1.X[1] + medium1.X[2]);
 //   medium1.u = medium1.h - medium1.R * medium1.T;
 //   medium1.d = medium1.p / (medium1.T * medium1.R);
 //   medium1.state.T = medium1.T;
@@ -507,7 +507,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // required from medium model \\\"\" + \"SimpleNaturalGas\" + \"\\\".\");
 //   medium2.MM = Modelica.Media.Examples.MixtureGases.Medium2.molarMass(medium2.state);
 //   medium2.h = Modelica.Media.Examples.MixtureGases.Medium2.h_TX(medium2.T,{medium2.X[1],medium2.X[2],medium2.X[3],medium2.X[4],medium2.X[5],medium2.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-//   medium2.R = data.R[1] * medium2.X[1] + (data.R[2] * medium2.X[2] + (data.R[3] * medium2.X[3] + (data.R[4] * medium2.X[4] + (data.R[5] * medium2.X[5] + data.R[6] * medium2.X[6]))));
+//   medium2.R = 518.279116793808 * (medium2.X[1] + (medium2.X[2] + (medium2.X[3] + (medium2.X[4] + (medium2.X[5] + medium2.X[6])))));
 //   medium2.u = medium2.h - medium2.R * medium2.T;
 //   medium2.d = medium2.p / (medium2.T * medium2.R);
 //   medium2.state.T = medium2.T;
