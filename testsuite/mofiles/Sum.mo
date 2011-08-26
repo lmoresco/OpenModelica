@@ -8,10 +8,12 @@
 model Sum
   parameter Real x[3](each fixed = false);
   Real y[3];
-  Real a, b;
+  Real z[2,2,2] = fill(1,2,2,2);
+  Real a,b,c;
 equation
   a = sum(x);
   b = sum(y);
+  c = sum(z);
 end Sum;
 
 // Result:
@@ -22,10 +24,20 @@ end Sum;
 //   Real y[1];
 //   Real y[2];
 //   Real y[3];
+//   Real z[1,1,1] = 1.0;
+//   Real z[1,1,2] = 1.0;
+//   Real z[1,2,1] = 1.0;
+//   Real z[1,2,2] = 1.0;
+//   Real z[2,1,1] = 1.0;
+//   Real z[2,1,2] = 1.0;
+//   Real z[2,2,1] = 1.0;
+//   Real z[2,2,2] = 1.0;
 //   Real a;
 //   Real b;
+//   Real c;
 // equation
 //   a = x[1] + (x[2] + x[3]);
 //   b = y[1] + (y[2] + y[3]);
+//   c = sum({{{z[1,1,1],z[1,1,2]},{z[1,2,1],z[1,2,2]}},{{z[2,1,1],z[2,1,2]},{z[2,2,1],z[2,2,2]}}});
 // end Sum;
 // endResult
