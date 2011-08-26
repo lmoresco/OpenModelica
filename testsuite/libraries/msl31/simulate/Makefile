@@ -24,6 +24,7 @@ Modelica.Mechanics.Translational.Examples.InitialConditions.mos \
 Modelica.Mechanics.Translational.Examples.SignConvention.mos \
 Modelica.Mechanics.Translational.Examples.WhyArrows.mos \
 Modelica.Thermal.FluidHeatFlow.Examples.OneMass.mos \
+Modelica.Math.Matrices.norm.mos
 
 #compile time to large
 #Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6.mos 
