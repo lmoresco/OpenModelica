@@ -33,6 +33,7 @@ Array8.mo \
 Array9.mo \
 ArrayAccess.mo \
 ArrayAddition.mo \
+ArrayAddition2.mo \
 ArrayAsAliasInExtends.mo \
 ArrayAsAlias.mo \
 ArrayAssignWholeDim.mo \
