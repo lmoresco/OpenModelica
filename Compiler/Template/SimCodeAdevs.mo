@@ -10437,13 +10437,13 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("*"));
         txt = Tpl.writeText(txt, l_size);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    "];\n",
+                                    "]={0};\n",
                                     "double "
                                 }, false));
         txt = Tpl.writeText(txt, l_bname);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" ["));
         txt = Tpl.writeText(txt, l_size);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("];\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("]={0};\n"));
         txt = Tpl.pushIter(txt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_NEW_LINE()), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
         (txt, a_varDecls) = lm_275(txt, i_simJac, l_size, l_aname, a_varDecls, a_context);
         txt = Tpl.popIter(txt);
