@@ -17,7 +17,7 @@ getErrorString();
 //     messages = ""
 // end SimulationResult;
 // {-0.0,-0.0,-0.0,31.6587054087782,29.8376021433761,29.2574901633581,29.4976107931355,29.445756053155,29.4528259903594,29.4525963435901,29.4523751679711}
-// "Warning: Alias variables DCEE1.airGapDC.flange_a.phi = TorqueStep1.flange.phi have start values DCEE1.inertiaRotor.phi_start != LoadInertia.phi_start. Use value from DCEE1.airGapDC.flange_a.phi.
+// "Warning: Alias variables DCEE1.airGapDC.flange_a.phi = LoadInertia.phi have start values DCEE1.inertiaRotor.phi_start != LoadInertia.phi_start. Use value from DCEE1.airGapDC.flange_a.phi.
 // 
 // Warning: Alias variables LoadInertia.w = $DER.DCEE1.inertiaRotor.phi have start values LoadInertia.w_start != DCEE1.inertiaRotor.w_start. Use value from LoadInertia.w.
 // 
