@@ -39,7 +39,7 @@ end Connect16;
 //   Real c.v;
 //   Real c.i;
 // equation
-//   (-c.i) + (b.a1.c.i + b.a2.c.i) = 0.0;
+//   b.a1.c.i + b.a2.c.i + (-c.i) = 0.0;
 //   b.a1.c.v = b.a2.c.v;
 //   b.a1.c.v = c.v;
 //   c.i = 0.0;

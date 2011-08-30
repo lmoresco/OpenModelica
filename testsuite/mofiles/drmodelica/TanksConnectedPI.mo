@@ -159,11 +159,11 @@ end TanksConnectedPI;
 //   piContinuous2.outCtr = piContinuous2.K * (piContinuous2.error + piContinuous2.x);
 //   piContinuous2.error = piContinuous2.ref - piContinuous2.cIn.val;
 //   piContinuous2.cOut.act = piContinuous2.outCtr;
-//   piContinuous2.cIn.val = tank2.tSensor.val;
-//   piContinuous2.cOut.act = tank2.tActuator.act;
-//   tank1.qOut.lflow = tank2.qIn.lflow;
-//   piContinuous1.cIn.val = tank1.tSensor.val;
-//   piContinuous1.cOut.act = tank1.tActuator.act;
 //   source.qOut.lflow = tank1.qIn.lflow;
+//   piContinuous1.cOut.act = tank1.tActuator.act;
+//   piContinuous1.cIn.val = tank1.tSensor.val;
+//   tank1.qOut.lflow = tank2.qIn.lflow;
+//   piContinuous2.cOut.act = tank2.tActuator.act;
+//   piContinuous2.cIn.val = tank2.tSensor.val;
 // end TanksConnectedPI;
 // endResult

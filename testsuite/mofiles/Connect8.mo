@@ -28,10 +28,10 @@ end Connect8;
 //   Real cy.x = time;
 // equation
 //   c[1].x = time;
-//   (-c[2].x) + ((-cx.x) + (-cy.x)) = 0.0;
-//   cy.x = 0.0;
-//   cx.x = 0.0;
-//   c[2].x = 0.0;
 //   c[1].x = 0.0;
+//   c[2].x = 0.0;
+//   cx.x = 0.0;
+//   cy.x = 0.0;
+//   (-c[2].x) + (-cx.x) + (-cy.x) = 0.0;
 // end Connect8;
 // endResult

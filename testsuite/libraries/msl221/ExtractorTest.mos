@@ -66,9 +66,9 @@ getErrorString();
 //   pulse1.T0 = time;
 //   end when;
 //   pulse1.y = pulse1.offset + (if time < pulse1.startTime or time >= pulse1.T0 + pulse1.T_width then 0.0 else pulse1.amplitude);
-//   extractor1.u[1] = pulse1.y;
-//   extractor1.u[2] = sine1.y;
 //   extractor1.index = integerStep1.y;
+//   extractor1.u[2] = sine1.y;
+//   extractor1.u[1] = pulse1.y;
 // end ExtractorTest;
 // "
 // ""

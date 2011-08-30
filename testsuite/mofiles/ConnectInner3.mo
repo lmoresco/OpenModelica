@@ -44,8 +44,8 @@ end ConnectInner3;
 //   b.a.my.f = 10.0 + b.a.my.e;
 //   a.my.f = 10.0 + a.my.e;
 //   global.c.e = 10.0;
-//   b.a.my.f + (global.c.f + a.my.f) = 0.0;
-//   b.a.my.e = a.my.e;
-//   b.a.my.e = global.c.e;
+//   global.c.f + b.a.my.f + a.my.f = 0.0;
+//   a.my.e = b.a.my.e;
+//   a.my.e = global.c.e;
 // end ConnectInner3;
 // endResult

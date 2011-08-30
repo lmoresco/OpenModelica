@@ -42,8 +42,8 @@ end test;
 //   Real w[2];
 // equation
 //   x - y = 0.0;
-//   v2[1] = v[1];
-//   v2[2] = v[2];
 //   x = x2;
+//   v2[2] = v[2];
+//   v2[1] = v[1];
 // end test;
 // endResult

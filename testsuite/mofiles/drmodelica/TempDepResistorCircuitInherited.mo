@@ -94,11 +94,11 @@ end TempDepResistorCircuitInherited;
 //   R1.v = R1.i * R1.R;
 //   R2.v = R2.i * R2.R;
 //   R3.v = R3.i * R3.R;
-//   R1.p.i + (R2.p.i + R3.p.i) = 0.0;
+//   R1.p.i + R2.p.i + R3.p.i = 0.0;
+//   R1.n.i = 0.0;
+//   R2.n.i = 0.0;
+//   R3.n.i = 0.0;
 //   R1.p.v = R2.p.v;
 //   R1.p.v = R3.p.v;
-//   R3.n.i = 0.0;
-//   R2.n.i = 0.0;
-//   R1.n.i = 0.0;
 // end TempDepResistorCircuitInherited;
 // endResult

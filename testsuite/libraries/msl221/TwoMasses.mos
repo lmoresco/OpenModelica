@@ -73,12 +73,12 @@ getErrorString();
 //   Tsensor1.port.Q_flow = 0.0;
 //   Tsensor2.T = Modelica.SIunits.Conversions.to_degC(Tsensor2.port.T);
 //   Tsensor2.port.Q_flow = 0.0;
-//   mass1.port.Q_flow + (Tsensor1.port.Q_flow + conduction.port_a.Q_flow) = 0.0;
-//   Tsensor1.port.T = conduction.port_a.T;
-//   Tsensor1.port.T = mass1.port.T;
-//   conduction.port_b.Q_flow + (mass2.port.Q_flow + Tsensor2.port.Q_flow) = 0.0;
+//   mass1.port.Q_flow + conduction.port_a.Q_flow + Tsensor1.port.Q_flow = 0.0;
+//   mass2.port.Q_flow + conduction.port_b.Q_flow + Tsensor2.port.Q_flow = 0.0;
 //   Tsensor2.port.T = conduction.port_b.T;
 //   Tsensor2.port.T = mass2.port.T;
+//   Tsensor1.port.T = conduction.port_a.T;
+//   Tsensor1.port.T = mass1.port.T;
 // end Modelica.Thermal.HeatTransfer.Examples.TwoMasses;
 // "
 // ""

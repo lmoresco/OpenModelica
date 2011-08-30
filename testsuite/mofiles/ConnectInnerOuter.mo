@@ -36,11 +36,11 @@ end Top;
 //   Real a2.aPin.i;
 //   Real a2.aPin.v;
 // equation
+//   world.i = 0.0;
+//   topPin.i = 0.0;
+//   (-world.i) + (-topPin.i) + a1.aPin.i + a2.aPin.i = 0.0;
 //   a1.aPin.v = a2.aPin.v;
 //   a1.aPin.v = topPin.v;
 //   a1.aPin.v = world.v;
-//   (-world.i) + ((-topPin.i) + (a2.aPin.i + a1.aPin.i)) = 0.0;
-//   topPin.i = 0.0;
-//   world.i = 0.0;
 // end Top;
 // endResult

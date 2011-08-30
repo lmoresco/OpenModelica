@@ -72,7 +72,7 @@ end HeatTank;
 //   area * der(level) = inlet.volumeFlowRate + outlet.volumeFlowRate;
 //   outlet.pressure = inlet.pressure;
 //   outlet.volumeFlowRate = 2.0;
-//   outlet.volumeFlowRate = 0.0;
 //   inlet.volumeFlowRate = 0.0;
+//   outlet.volumeFlowRate = 0.0;
 // end HeatTank;
 // endResult

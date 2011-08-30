@@ -1086,9 +1086,9 @@ end Toneco_PEXPipe;
 //   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar;
 //   end if;
 //   Q_friction = frictionLoss * (VolumeFlow * pressureDrop);
-//   flowPort_b.H_flow = 0.0;
-//   flowPort_b.m_flow = 0.0;
 //   flowPort_a.H_flow = 0.0;
 //   flowPort_a.m_flow = 0.0;
+//   flowPort_b.H_flow = 0.0;
+//   flowPort_b.m_flow = 0.0;
 // end Toneco_PEXPipe;
 // endResult

@@ -50,7 +50,7 @@ end Main;
 //   phi_rel = flange_b.phi - flange_a.phi;
 //   flange_b.tau = tau;
 //   flange_a.tau = -tau;
-//   flange_b.tau = 0.0;
 //   flange_a.tau = 0.0;
+//   flange_b.tau = 0.0;
 // end Main;
 // endResult

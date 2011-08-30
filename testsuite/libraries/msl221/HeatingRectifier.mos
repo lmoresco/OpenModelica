@@ -149,19 +149,19 @@ getErrorString();
 //   SineVoltage1.v = SineVoltage1.p.v - SineVoltage1.n.v;
 //   0.0 = SineVoltage1.p.i + SineVoltage1.n.i;
 //   SineVoltage1.i = SineVoltage1.p.i;
-//   SineVoltage1.n.i + (R.n.i + (Capacitor1.n.i + G.p.i)) = 0.0;
+//   HeatCapacitor1.port.Q_flow + ThermalConductor1.port_b.Q_flow = 0.0;
+//   ThermalConductor1.port_a.Q_flow + HeatingDiode1.heatPort.Q_flow = 0.0;
+//   HeatingDiode1.p.i + SineVoltage1.p.i = 0.0;
+//   HeatingDiode1.n.i + Capacitor1.p.i + R.p.i = 0.0;
+//   G.p.i + Capacitor1.n.i + R.n.i + SineVoltage1.n.i = 0.0;
 //   Capacitor1.n.v = G.p.v;
 //   Capacitor1.n.v = R.n.v;
 //   Capacitor1.n.v = SineVoltage1.n.v;
-//   SineVoltage1.p.i + HeatingDiode1.p.i = 0.0;
-//   HeatingDiode1.p.v = SineVoltage1.p.v;
-//   HeatingDiode1.n.i + (R.p.i + Capacitor1.p.i) = 0.0;
 //   Capacitor1.p.v = HeatingDiode1.n.v;
 //   Capacitor1.p.v = R.p.v;
-//   HeatingDiode1.heatPort.Q_flow + ThermalConductor1.port_a.Q_flow = 0.0;
-//   HeatingDiode1.heatPort.T = ThermalConductor1.port_a.T;
-//   ThermalConductor1.port_b.Q_flow + HeatCapacitor1.port.Q_flow = 0.0;
 //   HeatCapacitor1.port.T = ThermalConductor1.port_b.T;
+//   HeatingDiode1.heatPort.T = ThermalConductor1.port_a.T;
+//   HeatingDiode1.p.v = SineVoltage1.p.v;
 // end Modelica.Electrical.Analog.Examples.HeatingRectifier;
 // "
 // ""

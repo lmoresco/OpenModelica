@@ -46,7 +46,7 @@ end ConnectTypes;
 //   assert(c.c == a.c.c,"automatically generated from connect");
 //   c.e[1] = time;
 //   c.d = 4;
-//   a.c.d = c.d;
 //   a.c.e[1] = c.e[1];
+//   a.c.d = c.d;
 // end ConnectTypes;
 // endResult

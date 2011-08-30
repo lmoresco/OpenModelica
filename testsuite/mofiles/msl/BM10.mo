@@ -1046,7 +1046,7 @@ end BM10;
 //   constant2.y[1] = constant2.outPort.signal[1];
 //   assert(division1.inPort2.n == constant2.outPort.n,"automatically generated from connect");
 //   assert(division1.inPort1.n == constant1.outPort.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = division1.inPort1.signal[1];
 //   constant2.outPort.signal[1] = division1.inPort2.signal[1];
+//   constant1.outPort.signal[1] = division1.inPort1.signal[1];
 // end BM10;
 // endResult

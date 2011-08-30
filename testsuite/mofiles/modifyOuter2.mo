@@ -63,10 +63,10 @@ end inn;
 //   io.mid.x = der(io.mid.x) + io.ip.v;
 //   io.mid.y.v = 2.4;
 //   io.x = der(io.x) + ip.v;
-//   io.mid.ip.v = io.mid.la.o.v;
+//   ip.i = 0.0;
+//   io.ip.i + io.mid.y.i = 0.0;
 //   io.mid.ip.i + io.mid.la.o.i = 0.0;
 //   io.ip.v = io.mid.y.v;
-//   io.ip.i + io.mid.y.i = 0.0;
-//   ip.i = 0.0;
+//   io.mid.ip.v = io.mid.la.o.v;
 // end inn;
 // endResult

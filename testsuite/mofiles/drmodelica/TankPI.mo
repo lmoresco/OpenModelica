@@ -128,8 +128,8 @@ end TankPI;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = limitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   piContinuous.cIn.val = tank.tSensor.val;
-//   piContinuous.cOut.act = tank.tActuator.act;
 //   source.qOut.lflow = tank.qIn.lflow;
+//   piContinuous.cOut.act = tank.tActuator.act;
+//   piContinuous.cIn.val = tank.tSensor.val;
 // end TankPI;
 // endResult

@@ -40,9 +40,9 @@ getErrorString();
 //   SlidingMass1.flange_b.s = SlidingMass1.s + SlidingMass1.L / 2.0;
 //   Constant1.y = Constant1.k;
 //   Accelerate1.flange_b.f + SlidingMass1.flange_a.f = 0.0;
-//   Accelerate1.flange_b.s = SlidingMass1.flange_a.s;
-//   Accelerate1.a = Constant1.y;
 //   SlidingMass1.flange_b.f = 0.0;
+//   Accelerate1.a = Constant1.y;
+//   Accelerate1.flange_b.s = SlidingMass1.flange_a.s;
 // end Modelica.Mechanics.Translational.Examples.Accelerate;
 // "
 // ""

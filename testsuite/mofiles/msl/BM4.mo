@@ -1073,8 +1073,8 @@ end BM4;
 //   assert(constant3.outPort.n == add31.inPort3.n,"automatically generated from connect");
 //   assert(constant2.outPort.n == add31.inPort2.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == add31.inPort1.n,"automatically generated from connect");
-//   add31.inPort1.signal[1] = constant1.outPort.signal[1];
-//   add31.inPort2.signal[1] = constant2.outPort.signal[1];
 //   add31.inPort3.signal[1] = constant3.outPort.signal[1];
+//   add31.inPort2.signal[1] = constant2.outPort.signal[1];
+//   add31.inPort1.signal[1] = constant1.outPort.signal[1];
 // end BM4;
 // endResult

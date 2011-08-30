@@ -54,12 +54,12 @@ getErrorString();
 //   V = G6P.n1.V;
 //   G6P.c = G6P.n / V;
 //   der(V) = 0.0;
-//   G6P.n1.V = uur.s1.V;
-//   G6P.n1.r + uur.s1.r = 0.0;
-//   G6P.n1.c = uur.s1.c;
-//   F6P.n1.V = uur.p1.V;
-//   uur.p1.r + F6P.n1.r = 0.0;
+//   F6P.n1.r + uur.p1.r = 0.0;
+//   uur.s1.r + G6P.n1.r = 0.0;
 //   F6P.n1.c = uur.p1.c;
+//   F6P.n1.V = uur.p1.V;
+//   G6P.n1.c = uur.s1.c;
+//   G6P.n1.V = uur.s1.V;
 // end BioChem.Examples.EnzMM;
 // "
 // ""

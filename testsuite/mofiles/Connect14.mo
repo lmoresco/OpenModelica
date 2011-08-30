@@ -33,10 +33,10 @@ end Connect14;
 //   Real c2.x;
 //   Boolean b2;
 // equation
+//   c1.s = c2.s;
 //   b2 = c1.b;
 //   b2 = c2.b;
-//   c1.x = c2.x;
 //   c1.n = c2.n;
-//   c1.s = c2.s;
+//   c1.x = c2.x;
 // end Connect14;
 // endResult

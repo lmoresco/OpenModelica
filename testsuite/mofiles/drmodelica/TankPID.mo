@@ -130,8 +130,8 @@ end TankPID;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = limitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   pidContinuous.cIn.val = tank.tSensor.val;
-//   pidContinuous.cOut.act = tank.tActuator.act;
 //   source.qOut.lflow = tank.qIn.lflow;
+//   pidContinuous.cOut.act = tank.tActuator.act;
+//   pidContinuous.cIn.val = tank.tSensor.val;
 // end TankPID;
 // endResult

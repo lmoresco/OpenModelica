@@ -105,12 +105,12 @@ getErrorString();
 //   And1.y = And1.u1 and And1.u2;
 //   Or1.y = Or1.u1 or Or1.u2;
 //   Pre1.y = pre(Pre1.u);
-//   Not1.u = table2.y;
-//   And1.y = Or1.u2;
-//   Or1.u1 = table1.y;
-//   And1.u1 = Not1.y;
-//   And1.u2 = Pre1.y;
 //   Or1.y = Pre1.u;
+//   And1.u2 = Pre1.y;
+//   And1.u1 = Not1.y;
+//   Or1.u1 = table1.y;
+//   And1.y = Or1.u2;
+//   Not1.u = table2.y;
 // algorithm
 //   when time >= pre(table2.nextTime) and table2.n > 0 then
 //     if table2.index < table2.n then

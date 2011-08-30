@@ -153,8 +153,8 @@ end TankHybridPI;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   piDiscrete.cIn.val = tank.tSensor.val;
-//   piDiscrete.cOut.act = tank.tActuator.act;
 //   source.qOut.lflow = tank.qIn.lflow;
+//   piDiscrete.cOut.act = tank.tActuator.act;
+//   piDiscrete.cIn.val = tank.tSensor.val;
 // end TankHybridPI;
 // endResult

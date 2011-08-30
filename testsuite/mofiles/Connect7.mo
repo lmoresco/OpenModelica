@@ -28,11 +28,11 @@ end Connect7;
 //   Real cx.x = 2.0;
 //   Real cy.x = time;
 // equation
-//   (-c[2].x) + (-cy.x) = 0.0;
-//   (-c[1].x) + (-cx.x) = 0.0;
-//   cy.x = 0.0;
-//   cx.x = 0.0;
-//   c[2].x = 0.0;
 //   c[1].x = 0.0;
+//   c[2].x = 0.0;
+//   cx.x = 0.0;
+//   cy.x = 0.0;
+//   (-c[1].x) + (-cx.x) = 0.0;
+//   (-c[2].x) + (-cy.x) = 0.0;
 // end Connect7;
 // endResult

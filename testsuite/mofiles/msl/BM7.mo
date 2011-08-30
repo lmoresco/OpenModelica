@@ -1168,7 +1168,7 @@ end BM7;
 //   atan21.y[1] = atan21.outPort.signal[1];
 //   assert(atan21.inPort2.n == constant2.outPort.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == atan21.inPort1.n,"automatically generated from connect");
-//   atan21.inPort1.signal[1] = constant1.outPort.signal[1];
 //   atan21.inPort2.signal[1] = constant2.outPort.signal[1];
+//   atan21.inPort1.signal[1] = constant1.outPort.signal[1];
 // end BM7;
 // endResult

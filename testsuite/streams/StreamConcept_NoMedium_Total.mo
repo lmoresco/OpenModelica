@@ -2268,7 +2268,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   end if;
 //   valve_fixeddensity1.rho = 900.0;
 //   valve_fixeddensity1.m_flow = valve_fixeddensity1.flowdirection * (valve_fixeddensity1.A * (valve_fixeddensity1.Y * SiemensPower.Utilities.Functions.sqrtReg((2.0 * (valve_fixeddensity1.rho * abs(valve_fixeddensity1.dp))) / valve_fixeddensity1.chi,valve_fixeddensity1.delta * valve_fixeddensity1.p_a_nom)));
-//   valve_fixeddensity1.h = valve_fixeddensity1.fromleft * (max(-InStreamEnthalpy.port.m_flow,1e-15) * InStreamEnthalpy.port.h_outflow + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow) / (max(-InStreamEnthalpy.port.m_flow,1e-15) + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15)) + (1.0 - valve_fixeddensity1.fromleft) * watersink_ph_StreamConcept.port.h_outflow;
+//   valve_fixeddensity1.h = valve_fixeddensity1.fromleft * (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow + max(-InStreamEnthalpy.port.m_flow,1e-15) * InStreamEnthalpy.port.h_outflow) / (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) + max(-InStreamEnthalpy.port.m_flow,1e-15)) + (1.0 - valve_fixeddensity1.fromleft) * watersink_ph_StreamConcept.port.h_outflow;
 //   valve_fixeddensity1.p = valve_fixeddensity1.fromleft * valve_fixeddensity1.port_a.p + (1.0 - valve_fixeddensity1.fromleft) * valve_fixeddensity1.port_b.p;
 //   if noEvent(valve_fixeddensity1.m_flow > valve_fixeddensity1.m_flow_small) then
 //   valve_fixeddensity1.fromleft = 1.0;
@@ -2277,7 +2277,7 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   else
 //   valve_fixeddensity1.fromleft = 0.5 + (-0.25 * ((-3.0 + (valve_fixeddensity1.m_flow / valve_fixeddensity1.m_flow_small) ^ 2.0) * valve_fixeddensity1.m_flow)) / valve_fixeddensity1.m_flow_small;
 //   end if;
-//   valve_fixeddensity1.port_b.h_outflow = (max(-InStreamEnthalpy.port.m_flow,1e-15) * InStreamEnthalpy.port.h_outflow + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow) / (max(-InStreamEnthalpy.port.m_flow,1e-15) + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15));
+//   valve_fixeddensity1.port_b.h_outflow = (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow + max(-InStreamEnthalpy.port.m_flow,1e-15) * InStreamEnthalpy.port.h_outflow) / (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) + max(-InStreamEnthalpy.port.m_flow,1e-15));
 //   valve_fixeddensity1.port_a.h_outflow = watersink_ph_StreamConcept.port.h_outflow;
 //   valve_fixeddensity1.port_a.m_flow + valve_fixeddensity1.port_b.m_flow = 0.0;
 //   valve_fixeddensity1.m_flow = valve_fixeddensity1.port_a.m_flow;
@@ -2291,15 +2291,15 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   watersink_ph_StreamConcept1.port.h_outflow = watersink_ph_StreamConcept1.h0;
 //   InStreamEnthalpy.port.m_flow = 0.0;
 //   InStreamEnthalpy.port.h_outflow = 0.0;
-//   InStreamEnthalpy.h_out = (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow + max(-valve_fixeddensity1.port_a.m_flow,1e-15) * valve_fixeddensity1.port_a.h_outflow) / (max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) + max(-valve_fixeddensity1.port_a.m_flow,1e-15));
+//   InStreamEnthalpy.h_out = (max(-valve_fixeddensity1.port_a.m_flow,1e-15) * valve_fixeddensity1.port_a.h_outflow + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15) * watersink_ph_StreamConcept1.port.h_outflow) / (max(-valve_fixeddensity1.port_a.m_flow,1e-15) + max(-watersink_ph_StreamConcept1.port.m_flow,1e-15));
+//   valve_fixeddensity1.port_a.m_flow + watersink_ph_StreamConcept1.port.m_flow + InStreamEnthalpy.port.m_flow = 0.0;
+//   valve_fixeddensity1.port_b.m_flow + watersink_ph_StreamConcept.port.m_flow = 0.0;
+//   valve_fixeddensity1.port_b.p = watersink_ph_StreamConcept.port.p;
+//   ramp2.y = watersink_ph_StreamConcept.p_in;
+//   ramp3.y = valve_fixeddensity1.Y;
 //   InStreamEnthalpy.port.p = valve_fixeddensity1.port_a.p;
 //   InStreamEnthalpy.port.p = watersink_ph_StreamConcept1.port.p;
-//   InStreamEnthalpy.port.m_flow + (watersink_ph_StreamConcept1.port.m_flow + valve_fixeddensity1.port_a.m_flow) = 0.0;
 //   sine.y = watersink_ph_StreamConcept1.p_in;
-//   ramp3.y = valve_fixeddensity1.Y;
-//   ramp2.y = watersink_ph_StreamConcept.p_in;
-//   valve_fixeddensity1.port_b.p = watersink_ph_StreamConcept.port.p;
-//   valve_fixeddensity1.port_b.m_flow + watersink_ph_StreamConcept.port.m_flow = 0.0;
 // end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 // [StreamConcept_NoMedium_Total.mo:1575:9-1577:77:writable] Warning: Component watersink_ph_StreamConcept has the same name as its type .SiemensPower.Boundaries.watersink_ph_StreamConcept.
 // 	This is forbidden by Modelica specification and may lead to lookup errors.

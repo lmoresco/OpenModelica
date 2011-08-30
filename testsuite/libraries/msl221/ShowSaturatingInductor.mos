@@ -86,11 +86,11 @@ getErrorString();
 //   SineVoltage1.i = SineVoltage1.p.i;
 //   v = SaturatingInductance1.v;
 //   i = SaturatingInductance1.i;
-//   SineVoltage1.n.i + (Ground1.p.i + SaturatingInductance1.n.i) = 0.0;
+//   SaturatingInductance1.p.i + SineVoltage1.p.i = 0.0;
+//   SaturatingInductance1.n.i + Ground1.p.i + SineVoltage1.n.i = 0.0;
+//   SaturatingInductance1.p.v = SineVoltage1.p.v;
 //   Ground1.p.v = SaturatingInductance1.n.v;
 //   Ground1.p.v = SineVoltage1.n.v;
-//   SaturatingInductance1.p.i + SineVoltage1.p.i = 0.0;
-//   SaturatingInductance1.p.v = SineVoltage1.p.v;
 // end Modelica.Electrical.Analog.Examples.ShowSaturatingInductor;
 // "
 // ""

@@ -27,11 +27,11 @@ end FlowDeclRecord2;
 //   Real c2.r.x;
 //   Real c2.r.y;
 // equation
-//   (-c1.r.y) + (-c2.r.y) = 0.0;
-//   (-c1.r.x) + (-c2.r.x) = 0.0;
-//   c2.r.y = 0.0;
-//   c2.r.x = 0.0;
-//   c1.r.y = 0.0;
 //   c1.r.x = 0.0;
+//   c1.r.y = 0.0;
+//   c2.r.x = 0.0;
+//   c2.r.y = 0.0;
+//   (-c1.r.x) + (-c2.r.x) = 0.0;
+//   (-c1.r.y) + (-c2.r.y) = 0.0;
 // end FlowDeclRecord2;
 // endResult

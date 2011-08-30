@@ -1064,7 +1064,7 @@ end BM16;
 //   constant1.y[1] = constant1.outPort.signal[1];
 //   constant1.y[2] = constant1.outPort.signal[2];
 //   assert(matrixGain1.inPort.n == constant1.outPort.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = matrixGain1.inPort.signal[1];
 //   constant1.outPort.signal[2] = matrixGain1.inPort.signal[2];
+//   constant1.outPort.signal[1] = matrixGain1.inPort.signal[1];
 // end BM16;
 // endResult

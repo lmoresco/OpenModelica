@@ -1037,7 +1037,7 @@ end BM17;
 //   constant2.y[1] = constant2.outPort.signal[1];
 //   assert(max1.inPort2.n == constant2.outPort.n,"automatically generated from connect");
 //   assert(max1.inPort1.n == constant1.outPort.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = max1.inPort1.signal[1];
 //   constant2.outPort.signal[1] = max1.inPort2.signal[1];
+//   constant1.outPort.signal[1] = max1.inPort1.signal[1];
 // end BM17;
 // endResult

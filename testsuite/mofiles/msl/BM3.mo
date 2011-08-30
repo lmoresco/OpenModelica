@@ -1062,7 +1062,7 @@ end BM3;
 //   constant2.y[1] = constant2.outPort.signal[1];
 //   assert(constant2.outPort.n == add1.inPort2.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == add1.inPort1.n,"automatically generated from connect");
-//   add1.inPort1.signal[1] = constant1.outPort.signal[1];
 //   add1.inPort2.signal[1] = constant2.outPort.signal[1];
+//   add1.inPort1.signal[1] = constant1.outPort.signal[1];
 // end BM3;
 // endResult

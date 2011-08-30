@@ -2572,16 +2572,16 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase
 //   shortPipe.m_flow = shortPipe.port_a.m_flow;
 //   shortPipe.dp = shortPipe.port_a.p - shortPipe.port_b.p;
 //   shortPipe.m_flow = (shortPipe.dp * shortPipe.m_flow_nominal) / shortPipe.dp_nominal;
-//   shortPipe.port_b.H_flow + ambient.port.H_flow = 0.0;
-//   ambient.port.h = shortPipe.port_b.h;
-//   shortPipe.port_b.m_flow + ambient.port.m_flow = 0.0;
-//   ambient.port.p = shortPipe.port_b.p;
-//   fixedMassFlowRate.port.H_flow + (volume.port.H_flow + shortPipe.port_a.H_flow) = 0.0;
-//   fixedMassFlowRate.port.h = shortPipe.port_a.h;
-//   fixedMassFlowRate.port.h = volume.port.h;
-//   fixedMassFlowRate.port.m_flow + (volume.port.m_flow + shortPipe.port_a.m_flow) = 0.0;
+//   volume.port.H_flow + fixedMassFlowRate.port.H_flow + shortPipe.port_a.H_flow = 0.0;
+//   volume.port.m_flow + fixedMassFlowRate.port.m_flow + shortPipe.port_a.m_flow = 0.0;
+//   ambient.port.H_flow + shortPipe.port_b.H_flow = 0.0;
+//   ambient.port.m_flow + shortPipe.port_b.m_flow = 0.0;
 //   fixedMassFlowRate.port.p = shortPipe.port_a.p;
 //   fixedMassFlowRate.port.p = volume.port.p;
+//   fixedMassFlowRate.port.h = shortPipe.port_a.h;
+//   fixedMassFlowRate.port.h = volume.port.h;
+//   ambient.port.p = shortPipe.port_b.p;
+//   ambient.port.h = shortPipe.port_b.h;
 // end Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph;
 // "
 // "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97OnePhase_ph

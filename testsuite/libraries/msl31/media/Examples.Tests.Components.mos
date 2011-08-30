@@ -212,10 +212,10 @@ checkModel(Modelica.Media.Examples.Tests.Components.PartialTestModel2); getError
 //   m_flow = port_a.m_flow;
 //   dp = port_a.p - port_b.p;
 //   m_flow = (dp * m_flow_nominal) / dp_nominal;
-//   port_b.H_flow = 0.0;
-//   port_b.m_flow = 0.0;
 //   port_a.H_flow = 0.0;
 //   port_a.m_flow = 0.0;
+//   port_b.H_flow = 0.0;
+//   port_b.m_flow = 0.0;
 // end Modelica.Media.Examples.Tests.Components.ShortPipe;
 // "
 // "Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)

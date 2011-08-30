@@ -43,12 +43,12 @@ end ConnectHierarchical2;
 //   Real c.f = 1.0;
 //   Real c.e = 1.0;
 // equation
-//   a.c1.e = c.e;
-//   (-c.f) + a.c1.f = 0.0;
-//   c.f = 0.0;
+//   a.b.c.f + (-a.c1.f) + (-a.c2.f) = 0.0;
+//   a.c1.f + (-c.f) = 0.0;
+//   a.c2.f = 0.0;
 //   a.b.c.e = a.c1.e;
 //   a.b.c.e = a.c2.e;
-//   (-a.c1.f) + (a.b.c.f + (-a.c2.f)) = 0.0;
-//   a.c2.f = 0.0;
+//   c.f = 0.0;
+//   a.c1.e = c.e;
 // end ConnectHierarchical2;
 // endResult

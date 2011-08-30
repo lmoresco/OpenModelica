@@ -1051,8 +1051,8 @@ end BN3;
 //   assert(constant3.outPort.n == variableLimiter1.limit2.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == variableLimiter1.inPort.n,"automatically generated from connect");
 //   assert(constant2.outPort.n == variableLimiter1.limit1.n,"automatically generated from connect");
-//   constant2.outPort.signal[1] = variableLimiter1.limit1.signal[1];
-//   constant1.outPort.signal[1] = variableLimiter1.inPort.signal[1];
 //   constant3.outPort.signal[1] = variableLimiter1.limit2.signal[1];
+//   constant1.outPort.signal[1] = variableLimiter1.inPort.signal[1];
+//   constant2.outPort.signal[1] = variableLimiter1.limit1.signal[1];
 // end BN3;
 // endResult

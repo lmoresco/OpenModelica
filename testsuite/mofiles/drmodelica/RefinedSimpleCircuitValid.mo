@@ -162,11 +162,11 @@
 //   comp2.p.i + comp2.n.i = 0.0;
 //   comp2.i = comp2.p.i;
 //   R3.v = R3.i * R3.R;
-//   comp1.p.i + (comp2.p.i + R3.p.i) = 0.0;
+//   comp1.p.i + comp2.p.i + R3.p.i = 0.0;
+//   comp1.n.i = 0.0;
+//   comp2.n.i = 0.0;
+//   R3.n.i = 0.0;
 //   R3.p.v = comp1.p.v;
 //   R3.p.v = comp2.p.v;
-//   R3.n.i = 0.0;
-//   comp2.n.i = 0.0;
-//   comp1.n.i = 0.0;
 // end RefinedSimpleCircuit;
 // endResult

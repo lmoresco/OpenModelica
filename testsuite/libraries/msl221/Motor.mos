@@ -174,20 +174,20 @@ getErrorString();
 //   when initial() then
 //   lossTable.tableID = Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit(0.0,lossTable.startTime,lossTable.smoothness,lossTable.extrapolation,if not lossTable.tableOnFile then \"NoName\" else lossTable.tableName,if not lossTable.tableOnFile then \"NoName\" else lossTable.fileName,{{lossTable.table[1,1],lossTable.table[1,2],lossTable.table[1,3]},{lossTable.table[2,1],lossTable.table[2,2],lossTable.table[2,3]},{lossTable.table[3,1],lossTable.table[3,2],lossTable.table[3,3]},{lossTable.table[4,1],lossTable.table[4,2],lossTable.table[4,3]}},0);
 //   end when;
-//   coreLosses.Q_flow = lossTable.y[2];
-//   lossTable.y[1] = windingLosses.Q_flow;
-//   coreLosses.port.Q_flow + (winding2core.port_b.Q_flow + (convection.solid.Q_flow + (core.port.Q_flow + Tcore.port.Q_flow))) = 0.0;
+//   winding.port.Q_flow + winding2core.port_a.Q_flow + windingLosses.port.Q_flow + Twinding.port.Q_flow = 0.0;
+//   winding2core.port_b.Q_flow + core.port.Q_flow + convection.solid.Q_flow + coreLosses.port.Q_flow + Tcore.port.Q_flow = 0.0;
+//   convection.fluid.Q_flow + environment.port.Q_flow = 0.0;
+//   convection.fluid.T = environment.port.T;
 //   Tcore.port.T = convection.solid.T;
 //   Tcore.port.T = core.port.T;
 //   Tcore.port.T = coreLosses.port.T;
 //   Tcore.port.T = winding2core.port_b.T;
-//   windingLosses.port.Q_flow + (winding.port.Q_flow + (winding2core.port_a.Q_flow + Twinding.port.Q_flow)) = 0.0;
 //   Twinding.port.T = winding.port.T;
 //   Twinding.port.T = winding2core.port_a.T;
 //   Twinding.port.T = windingLosses.port.T;
 //   convection.Gc = convectionConstant.y;
-//   convection.fluid.Q_flow + environment.port.Q_flow = 0.0;
-//   convection.fluid.T = environment.port.T;
+//   lossTable.y[1] = windingLosses.Q_flow;
+//   coreLosses.Q_flow = lossTable.y[2];
 // end Modelica.Thermal.HeatTransfer.Examples.Motor;
 // "
 // ""

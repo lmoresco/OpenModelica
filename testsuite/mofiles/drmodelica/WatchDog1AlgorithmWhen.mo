@@ -67,9 +67,9 @@ end WatchDogSystem1;
 //   turnOn.dOutput.signal = time > turnOn.eventTime;
 //   turnOff.dOutput.signal = time > turnOff.eventTime;
 //   deadlineEmitter.dOutput.signal = time > deadlineEmitter.eventTime;
-//   deadlineEmitter.dOutput.signal = watchdog.dDeadline.signal;
-//   turnOff.dOutput.signal = watchdog.dOff.signal;
 //   turnOn.dOutput.signal = watchdog.dOn.signal;
+//   turnOff.dOutput.signal = watchdog.dOff.signal;
+//   deadlineEmitter.dOutput.signal = watchdog.dDeadline.signal;
 // algorithm
 //   when change(watchdog.dOn.signal) then
 //     watchdog.watchdogActive := true;

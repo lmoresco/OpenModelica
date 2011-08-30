@@ -1030,7 +1030,7 @@ end BM12;
 //   constant2.y[1] = constant2.outPort.signal[1];
 //   assert(constant2.outPort.n == feedback1.inPort2.n,"automatically generated from connect");
 //   assert(constant1.outPort.n == feedback1.inPort1.n,"automatically generated from connect");
-//   constant1.outPort.signal[1] = feedback1.inPort1.signal[1];
 //   constant2.outPort.signal[1] = feedback1.inPort2.signal[1];
+//   constant1.outPort.signal[1] = feedback1.inPort1.signal[1];
 // end BM12;
 // endResult

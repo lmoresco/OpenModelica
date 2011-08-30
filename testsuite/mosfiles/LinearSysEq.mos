@@ -49,10 +49,10 @@ val(pu.port.flowrate, 1.0);
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 500, tolerance = 1e-06, method = 'dassl', fileNamePrefix = 'LinearSysEq', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = ""
 // end SimulationResult;
-// 0.0
 // -0.0
 // 0.0
-// 0.0
+// -0.0
+// -0.0
 // 0.25
 // 0.25
 // 0.25

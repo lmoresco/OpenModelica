@@ -169,8 +169,8 @@ end TankHybridPID;
 //   der(tank.h) = (tank.qIn.lflow - tank.qOut.lflow) / tank.area;
 //   tank.qOut.lflow = LimitValue(tank.minV,tank.maxV,(-tank.flowGain) * tank.tActuator.act);
 //   tank.tSensor.val = tank.h;
-//   pidDiscrete.cIn.val = tank.tSensor.val;
-//   pidDiscrete.cOut.act = tank.tActuator.act;
 //   source.qOut.lflow = tank.qIn.lflow;
+//   pidDiscrete.cOut.act = tank.tActuator.act;
+//   pidDiscrete.cIn.val = tank.tSensor.val;
 // end TankHybridPID;
 // endResult

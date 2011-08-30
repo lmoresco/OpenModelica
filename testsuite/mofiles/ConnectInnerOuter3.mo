@@ -46,12 +46,12 @@ end Top2;
 //   Real a1.a2Pin.i;
 //   Real a1.a2Pin.v;
 // equation
-//   a1.a.aPin.v = a1.world.v;
+//   world.i = 0.0;
+//   topPin.i = 0.0;
 //   a1.world.i + a1.a.aPin.i = 0.0;
+//   (-world.i) + (-topPin.i) + a1.a2Pin.i = 0.0;
 //   a1.a2Pin.v = topPin.v;
 //   a1.a2Pin.v = world.v;
-//   (-world.i) + ((-topPin.i) + a1.a2Pin.i) = 0.0;
-//   topPin.i = 0.0;
-//   world.i = 0.0;
+//   a1.a.aPin.v = a1.world.v;
 // end Top2;
 // endResult
