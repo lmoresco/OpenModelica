@@ -513,6 +513,7 @@ ReinitArray.mo \
 Rem.mo \
 ReturnError.mo \
 SampleError.mo \
+Scalar.mo \
 ScopeDeclaration1.mo \
 ScopeDeclaration3.mo \
 ScopeModification1.mo \
