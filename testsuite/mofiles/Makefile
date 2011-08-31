@@ -396,6 +396,7 @@ Lookup7.mo \
 Lookup9.mo \
 LookupArray.mo \
 MathematicalFunctions.mo \
+Matrix.mo \
 Matrix1.mo \
 MatrixAddition.mo \
 MatrixBrackets.mo \
