@@ -219,8 +219,6 @@ End.mo \
 EndIllegal.mo \
 EndUnknown.mo \
 EngineSAAB95Total.mo \
-Enum10.mo \
-Enum11.mo \
 Enum1.mo \
 Enum2.mo \
 Enum3.mo \
@@ -230,6 +228,9 @@ Enum6.mo \
 Enum7.mo \
 Enum8.mo \
 Enum9.mo \
+Enum10.mo \
+Enum11.mo \
+Enum12.mo \
 EnumConnectArray.mo \
 EnumDimSum.mo \
 EnumFor.mo \
