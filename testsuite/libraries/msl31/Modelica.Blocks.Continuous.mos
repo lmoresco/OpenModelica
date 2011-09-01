@@ -1,0 +1,143 @@
+// name: Modelica.Blocks.Continuous
+// status: correct
+
+loadModel(Modelica,{"3.1"});
+instantiateModel(Modelica.Blocks.Continuous.LimPID);getErrorString();
+
+// Result:
+// true
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\";
+// end Modelica.Math.asin;
+// 
+// class Modelica.Blocks.Continuous.LimPID
+//   input Real u_s \"Connector of setpoint input signal\";
+//   input Real u_m \"Connector of measurement input signal\";
+//   output Real y \"Connector of actuator output signal\";
+//   output Real controlError = u_s - u_m \"Control error (set point - measurement)\";
+//   parameter enumeration(P, PI, PD, PID) controllerType = Modelica.Blocks.Types.SimpleController.PID \"Type of controller\";
+//   parameter Real k(min = 0.0) = 1.0 \"Gain of controller\";
+//   parameter Real Ti(quantity = \"Time\", unit = \"s\", min = 1e-60, start = 0.5) \"Time constant of Integrator block\";
+//   parameter Real Td(quantity = \"Time\", unit = \"s\", min = 0.0, start = 0.1) \"Time constant of Derivative block\";
+//   parameter Real yMax(start = 1.0) \"Upper limit of output\";
+//   parameter Real wp(min = 0.0) = 1.0 \"Set-point weight for Proportional block (0..1)\";
+//   parameter Real wd(min = 0.0) = 0.0 \"Set-point weight for Derivative block (0..1)\";
+//   parameter Real Ni(min = 1e-13) = 0.9 \"Ni*Ti is time constant of anti-windup compensation\";
+//   parameter Real Nd(min = 1e-13) = 10.0 \"The higher Nd, the more ideal the derivative block\";
+//   parameter enumeration(NoInit, SteadyState, InitialState, InitialOutput, DoNotUse_InitialIntegratorState) initType = Modelica.Blocks.Types.InitPID.DoNotUse_InitialIntegratorState \"Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)\";
+//   parameter Boolean limitsAtInit = true \"= false, if limits are ignored during initializiation\";
+//   parameter Real xi_start = 0.0 \"Initial or guess value value for integrator output (= integrator state)\";
+//   parameter Real xd_start = 0.0 \"Initial or guess value for state of derivative block\";
+//   parameter Real y_start = 0.0 \"Initial value of output\";
+//   input Real addP.u1 \"Connector of Real input signal 1\";
+//   input Real addP.u2 \"Connector of Real input signal 2\";
+//   output Real addP.y \"Connector of Real output signal\";
+//   parameter Real addP.k1 = wp \"Gain of upper input\";
+//   parameter Real addP.k2 = -1.0 \"Gain of lower input\";
+//   parameter Real P.k(start = 1.0) = 1.0 \"Gain value multiplied with input signal\";
+//   input Real P.u \"Input signal connector\";
+//   output Real P.y \"Output signal connector\";
+//   parameter Real gainPID.k(start = 1.0) = k \"Gain value multiplied with input signal\";
+//   input Real gainPID.u \"Input signal connector\";
+//   output Real gainPID.y \"Output signal connector\";
+//   parameter Real addPID.k1 = 1.0 \"Gain of upper input\";
+//   parameter Real addPID.k2 = 1.0 \"Gain of middle input\";
+//   parameter Real addPID.k3 = 1.0 \"Gain of lower input\";
+//   input Real addPID.u1 \"Connector 1 of Real input signals\";
+//   input Real addPID.u2 \"Connector 2 of Real input signals\";
+//   input Real addPID.u3 \"Connector 3 of Real input signals\";
+//   output Real addPID.y \"Connector of Real output signals\";
+//   input Real limiter.u \"Connector of Real input signal\";
+//   output Real limiter.y \"Connector of Real output signal\";
+//   parameter Real limiter.uMax(start = 1.0) = yMax \"Upper limits of input signals\";
+//   parameter Boolean limiter.limitsAtInit = limitsAtInit \"= false, if limits are ignored during initializiation (i.e., y=u)\";
+//   parameter Real limiter.uMin = yMin \"Lower limits of input signals\";
+//   protected parameter Boolean with_I = controllerType == Modelica.Blocks.Types.SimpleController.PI or controllerType == Modelica.Blocks.Types.SimpleController.PID;
+//   protected parameter Boolean with_D = controllerType == Modelica.Blocks.Types.SimpleController.PD or controllerType == Modelica.Blocks.Types.SimpleController.PID;
+//   parameter Real yMin = -yMax \"Lower limit of output\";
+//   input Real I.u \"Connector of Real input signal\";
+//   output Real I.y(start = I.y_start) \"Connector of Real output signal\";
+//   parameter Real I.k = 1.0 / Ti \"Integrator gain\";
+//   parameter enumeration(NoInit, SteadyState, InitialState, InitialOutput) I.initType = if initType == Modelica.Blocks.Types.InitPID.SteadyState then Modelica.Blocks.Types.Init.SteadyState else if initType == Modelica.Blocks.Types.InitPID.InitialState or initType == Modelica.Blocks.Types.InitPID.DoNotUse_InitialIntegratorState then Modelica.Blocks.Types.Init.InitialState else Modelica.Blocks.Types.Init.NoInit \"Type of initialization (1: no init, 2: steady state, 3,4: initial output)\";
+//   parameter Real I.y_start = xi_start \"Initial or guess value of output (= state)\";
+//   parameter Real addI.k1 = 1.0 \"Gain of upper input\";
+//   parameter Real addI.k2 = -1.0 \"Gain of middle input\";
+//   parameter Real addI.k3 = 1.0 \"Gain of lower input\";
+//   input Real addI.u1 \"Connector 1 of Real input signals\";
+//   input Real addI.u2 \"Connector 2 of Real input signals\";
+//   input Real addI.u3 \"Connector 3 of Real input signals\";
+//   output Real addI.y \"Connector of Real output signals\";
+//   input Real addSat.u1 \"Connector of Real input signal 1\";
+//   input Real addSat.u2 \"Connector of Real input signal 2\";
+//   output Real addSat.y \"Connector of Real output signal\";
+//   parameter Real addSat.k1 = 1.0 \"Gain of upper input\";
+//   parameter Real addSat.k2 = -1.0 \"Gain of lower input\";
+//   parameter Real gainTrack.k(start = 1.0) = 1.0 / (Ni * k) \"Gain value multiplied with input signal\";
+//   input Real gainTrack.u \"Input signal connector\";
+//   output Real gainTrack.y \"Output signal connector\";
+//   input Real addD.u1 \"Connector of Real input signal 1\";
+//   input Real addD.u2 \"Connector of Real input signal 2\";
+//   output Real addD.y \"Connector of Real output signal\";
+//   parameter Real addD.k1 = wd \"Gain of upper input\";
+//   parameter Real addD.k2 = -1.0 \"Gain of lower input\";
+//   input Real D.u \"Connector of Real input signal\";
+//   output Real D.y \"Connector of Real output signal\";
+//   parameter Real D.k = Td \"Gains\";
+//   parameter Real D.T(quantity = \"Time\", unit = \"s\", min = 1e-60) = max({{Td / Nd,1e-14}}) \"Time constants (T>0 required; T=0 is ideal derivative block)\";
+//   parameter enumeration(NoInit, SteadyState, InitialState, InitialOutput) D.initType = if initType == Modelica.Blocks.Types.InitPID.SteadyState or initType == Modelica.Blocks.Types.InitPID.InitialOutput then Modelica.Blocks.Types.Init.SteadyState else if initType == Modelica.Blocks.Types.InitPID.InitialState then Modelica.Blocks.Types.Init.InitialState else Modelica.Blocks.Types.Init.NoInit \"Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)\";
+//   parameter Real D.x_start = xd_start \"Initial or guess value of state\";
+//   parameter Real D.y_start = 0.0 \"Initial value of output (= state)\";
+//   output Real D.x(start = D.x_start) \"State of block\";
+//   protected parameter Boolean D.zeroGain = abs(D.k) < 1e-15;
+// initial equation
+//   I.y = I.y_start;
+// equation
+//   addP.y = addP.k1 * addP.u1 + addP.k2 * addP.u2;
+//   P.y = P.k * P.u;
+//   gainPID.y = gainPID.k * gainPID.u;
+//   addPID.y = addPID.k1 * addPID.u1 + (addPID.k2 * addPID.u2 + addPID.k3 * addPID.u3);
+//   assert(limiter.uMax >= limiter.uMin,\"Limiter: Limits must be consistent. However, uMax (=\" + String(limiter.uMax,0,true,6) + \") < uMin (=\" + String(limiter.uMin,0,true,6) + \")\");
+//   if initial() and not limiter.limitsAtInit then
+//   limiter.y = limiter.u;
+//   assert(limiter.u >= limiter.uMin + -0.01 * abs(limiter.uMin) and limiter.u <= limiter.uMax + 0.01 * abs(limiter.uMax),\"Limiter: During initialization the limits have been ignored.
+// However, the result is that the input u is not within the required limits:
+//   u = \" + String(limiter.u,0,true,6) + \", uMin = \" + String(limiter.uMin,0,true,6) + \", uMax = \" + String(limiter.uMax,0,true,6));
+//   else
+//   limiter.y = if limiter.u > limiter.uMax then limiter.uMax else if limiter.u < limiter.uMin then limiter.uMin else limiter.u;
+//   end if;
+//   der(I.y) = I.k * I.u;
+//   addI.y = addI.k1 * addI.u1 + (addI.k2 * addI.u2 + addI.k3 * addI.u3);
+//   addSat.y = addSat.k1 * addSat.u1 + addSat.k2 * addSat.u2;
+//   gainTrack.y = gainTrack.k * gainTrack.u;
+//   addD.y = addD.k1 * addD.u1 + addD.k2 * addD.u2;
+//   der(D.x) = if D.zeroGain then 0.0 else (D.u - D.x) / D.T;
+//   D.y = if D.zeroGain then 0.0 else ((D.u - D.x) * D.k) / D.T;
+//   assert(yMax >= yMin,\"LimPID: Limits must be consistent. However, yMax (=\" + String(yMax,0,true,6) + \") < yMin (=\" + String(yMin,0,true,6) + \")\");
+//   assert(limitsAtInit or not limitsAtInit and y >= yMin and y <= yMax,\"LimPID: During initialization the limits have been switched off.
+// After initialization, the output y (=\" + String(y,0,true,6) + \") is outside of the limits of yMin (=\" + String(yMin,0,true,6) + \") and yMax (=\" + String(yMax,0,true,6) + \")\");
+//   addD.u1 = addI.u1;
+//   addD.u1 = addP.u1;
+//   addD.u1 = u_s;
+//   P.u = addP.y;
+//   D.u = addD.y;
+//   I.u = addI.y;
+//   P.y = addPID.u1;
+//   D.y = addPID.u2;
+//   I.y = addPID.u3;
+//   addPID.y = gainPID.u;
+//   addSat.u2 = gainPID.y;
+//   addSat.u2 = limiter.u;
+//   addSat.u1 = limiter.y;
+//   addSat.u1 = y;
+//   addSat.y = gainTrack.u;
+//   addI.u3 = gainTrack.y;
+//   addD.u2 = addI.u2;
+//   addD.u2 = addP.u2;
+//   addD.u2 = u_m;
+// end Modelica.Blocks.Continuous.LimPID;
+// "
+// ""
+// endResult
