@@ -86,6 +86,7 @@ ArrayReduce2.mo \
 ArrayRemoveIndex1.mo \
 ArraySizeFromFunc.mo \
 ArraySlice1.mo \
+ArraySlice2.mo \
 ArraySubtraction.mo \
 Asin.mo \
 AssignmentErrorConstant.mo \
