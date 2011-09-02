@@ -10,6 +10,8 @@ RECS=libmainrecords.a
 CC=gcc
 CPP=g++
 
+all: main.exe BreakProcess.exe
+
 main.exe: Main_main2.o $(RECS) main.c
 	@echo $(UNAME)
 	$(CPP) -o main main.c Main_main2.o $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
@@ -29,7 +31,10 @@ Main_main2.c: Main_main.c
 
 test: main.exe  
 	./main +g=MetaModelica +d=rml,failtrace +showErrorMessages UtilTest.mos 
-
+	
+BreakProcess.exe: BreakProcess.cpp
+	$(CPP) BreakProcess.cpp -o BreakProcess
+	
 # if omc is newer or MainTest.mos is newer, rebuild!
 build: MainTest.mos ../../build/bin/omc.exe
 	../rtest -v MainTest.mos 
