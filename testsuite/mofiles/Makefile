@@ -507,6 +507,7 @@ RecordConstructorVectorization.mo \
 RecordNonPublic.mo \
 RecordPrefixes.mo \
 RecordSimple.mo \
+RecursiveDefinition.mo \
 RecursiveFunctionCall.mo \
 RecursiveShort.mo \
 Reductions.mo \

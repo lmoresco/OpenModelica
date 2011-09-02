@@ -11,7 +11,7 @@ model DependsRecursive
 end DependsRecursive;
 // Result:
 // Error processing file: DependsRecursive.mo
-// Error: Class DependsRecursive has a recursive definition, i.e. contains an instance of itself
+// [DependsRecursive.mo:10:3-10:24:writable] Error: Declaration of element tail causes recursive definition of class DependsRecursive.
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
