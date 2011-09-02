@@ -9,6 +9,8 @@ ClassExtends5.mo \
 ClassExtendsInvalid1.mo \
 ClassExtendsInvalid2.mo \
 ConstantRedeclareModifier.mo \
+DuplicateRedeclares1.mo \
+DuplicateRedeclares2.mo \
 FinalRedeclareModifier.mo \
 FinalRedeclareModifier2.mo \
 Redeclare1.mo \
