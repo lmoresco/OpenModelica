@@ -655,8 +655,6 @@ OperatorFunction1.mo \
 OperatorFunction2.mo \
 OperatorIllegal.mo \
 OperatorSimple.mo \
-partial-s-1.mo \
-partials1.mo \
 ReplaceFunction.mo \
 ScopeDeclaration2.mo \
 ScopeDeclaration4.mo \
