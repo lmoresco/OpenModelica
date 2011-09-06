@@ -101,6 +101,7 @@ BlockIllegal.mo \
 BlockResult.mo \
 BlockSimple.mo \
 BoolArrayTest.mo \
+BooleanDim.mo \
 BooleanLiterals.mo \
 Break.mo \
 Cardinality.mo \
