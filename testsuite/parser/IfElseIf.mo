@@ -1,5 +1,5 @@
 // name: IfElseIf
-// status: correct
+// status: incorrect
 
 model IfElseIf
 equation
