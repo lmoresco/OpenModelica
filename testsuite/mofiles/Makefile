@@ -335,6 +335,8 @@ FunctionEval12.mo \
 FunctionEvalBuiltin.mo \
 FunctionEvalFail.mo \
 FunctionEvalSlice.mo \
+FunctionInvalidVar1.mo \
+FunctionInvalidVar2.mo \
 FunctionProtectedInput.mo \
 FunctionReturn.mo \
 FunctionSimple.mo \
