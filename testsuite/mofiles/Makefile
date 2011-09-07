@@ -284,6 +284,7 @@ ExternalFunction8.mo \
 ExternalFunctionAnno.mo \
 ExternalFunctionBuiltin.mo \
 ExternalFunctionExtends.mo \
+ExtObjError.mo \
 Faculty1.mo \
 Faculty2.mo \
 Faculty3.mo \
