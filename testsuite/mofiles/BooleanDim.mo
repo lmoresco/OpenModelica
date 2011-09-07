@@ -6,12 +6,12 @@
 // 
 
 model BooleanDim
-  Boolean b[Boolean] = {not b for b in Boolean};
+  Real x[Boolean] = {if b then 1.5 else 2.5 for b in Boolean};
 end BooleanDim;
 
 // Result:
 // class BooleanDim
-//   Boolean b[1] = true;
-//   Boolean b[2] = false;
+//   Real x[1] = 2.5;
+//   Real x[2] = 1.5;
 // end BooleanDim;
 // endResult
