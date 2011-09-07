@@ -24,6 +24,7 @@ DocumentationBackslash.mo \
 DotName.mos \
 EmptyWithin.mo \
 Identifier.mo \
+IfElseIf.mo \
 MetaModelicaMatchElse.mo \
 MetaModelicaStringOpModelicaLexer.mo \
 MissingSemicolon.mo \
