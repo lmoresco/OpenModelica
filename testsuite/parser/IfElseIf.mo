@@ -1,11 +1,11 @@
 // name: IfElseIf
-// status: incorrect
+// status: correct
 
 model IfElseIf
 equation
   if cond then
     abc();
-  elseif cond then
+  else if cond then
     def();
   end if;
 end IfElseIf;
