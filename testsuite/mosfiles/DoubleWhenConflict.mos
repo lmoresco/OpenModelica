@@ -14,7 +14,7 @@ getErrorString(); // simulation failed, check error string.
 //     resultFile = "",
 //     simulationOptions = "startTime = 0.0, stopTime = 1.0, numberOfIntervals = 2, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'DoubleWhenConflict', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
 //     messages = "Simulation failed for model: DoubleWhenConflict
-// Error: Too many equations, overdetermined system. The model has 2 equation(s) and 1 variable(s)
+// Error: Too many equations, overdetermined system. The model has 3 equation(s) and 2 variable(s)
 // "
 // end SimulationResult;
 // ""

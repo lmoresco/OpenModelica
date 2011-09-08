@@ -24,6 +24,7 @@ Return.mos \
 SolveLinearSystem.mos \
 TestLoadModel.mos \
 UnpOpPrecedence.mos \
+UnusedVariable.mos \
 UriLookup.mos \
 WhileStatement.mos WhileStatementIllegal.mos \
 ModifierProblem.mos \
