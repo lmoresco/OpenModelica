@@ -17,7 +17,7 @@ checkModel(Modelica.Media.Examples.SimpleLiquidWater); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"

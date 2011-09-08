@@ -63,7 +63,7 @@ end extfunction;
 //   input Real x;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sin(x);
 // end FooFunctions.foo0;
 // 
 // function FooFunctions.foo1
@@ -71,7 +71,7 @@ end extfunction;
 //   input Real der_x;
 //   output Real der_y;
 // 
-//   external "C";
+//   external "C" der_y = cos(x);
 // end FooFunctions.foo1;
 // 
 // function FooFunctions.foo2
@@ -81,7 +81,7 @@ end extfunction;
 //   input Real derderder_x;
 //   output Real der_der_y;
 // 
-//   external "C";
+//   external "C" der_der_y = sin(x);
 // end FooFunctions.foo2;
 // 
 // function df1
@@ -89,14 +89,14 @@ end extfunction;
 //   input Real b;
 //   output Real c;
 // 
-//   external "C";
+//   external "C" c = dmyfoo(a, b);
 // end df1;
 // 
 // function f1
 //   input Real a;
 //   output Real b;
 // 
-//   external "C";
+//   external "C" b = myfoo(a);
 // end f1;
 // 
 // class extfunction

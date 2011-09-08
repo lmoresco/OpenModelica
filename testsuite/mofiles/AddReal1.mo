@@ -25,7 +25,7 @@ end AddReal1;
 //   input Real y;
 //   output Real res;
 // 
-//   external "C";
+//   external "C" res = addReal1_(x, y);
 // end addReal1_;
 // 
 // class AddReal1

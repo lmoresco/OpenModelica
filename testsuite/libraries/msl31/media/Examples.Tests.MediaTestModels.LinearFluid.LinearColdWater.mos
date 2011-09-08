@@ -19,7 +19,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Media.CompressibleLiquids.LinearColdWater.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.CompressibleLiquids.LinearColdWater.ThermodynamicState\"

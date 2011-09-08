@@ -17,21 +17,21 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = exp(u);
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.ThermodynamicState\"

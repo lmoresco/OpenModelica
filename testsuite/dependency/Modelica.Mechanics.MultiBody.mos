@@ -119,7 +119,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"
@@ -323,7 +323,7 @@ checkModel(Modelica.Mechanics.MultiBody.Visualizers.Advanced.Shape); getErrorStr
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Orientation \"Automatically generated record constructor for Modelica.Mechanics.MultiBody.Frames.Orientation\"

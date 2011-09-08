@@ -40,9 +40,9 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Continuous.TransferFunction completed successfully.
 // 
-// [Continuous.mo:1211:5-1213:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
-// [Continuous.mo:1224:5-1224:61:writable] Warning: Failed to deduce dimensions of bb due to unknown dimensions of modifier vector(DAE.CAST(/tp:REAL[:, :]/, cat(1,fill(0,max(0,na - nb),1),{{b[1]}}))).
-// [Continuous.mo:1211:5-1213:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
+// [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
+// [Continuous.mo:1226:5-1226:61:writable] Warning: Failed to deduce dimensions of bb due to unknown dimensions of modifier vector(DAE.CAST(/tp:REAL[:, :]/, cat(1,fill(0,max(0,na - nb),1),{{b[1]}}))).
+// [Continuous.mo:1213:5-1215:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
 // 
 // Class Modelica.Blocks.Continuous.TransferFunction has 1 equation(s) and 3 variable(s).
 // 0 of these are trivial equation(s).
@@ -50,8 +50,8 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 // ""
 // "Check of Modelica.Blocks.Continuous.StateSpace completed successfully.
 // 
-// [Continuous.mo:1329:5-1330:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
-// [Continuous.mo:1331:5-1334:31:writable] Warning: Failed to deduce dimensions of y_start due to unknown dimensions of modifier fill(0,ny).
+// [Continuous.mo:1331:5-1332:50:writable] Warning: Failed to deduce dimensions of x_start due to unknown dimensions of modifier fill(0,nx).
+// [Continuous.mo:1333:5-1336:31:writable] Warning: Failed to deduce dimensions of y_start due to unknown dimensions of modifier fill(0,ny).
 // 
 // Class Modelica.Blocks.Continuous.StateSpace has 2 equation(s) and 2 variable(s).
 // 1 of these are trivial equation(s).
@@ -61,14 +61,14 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Blocks.Examples.BusUsage
@@ -160,7 +160,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input enumeration(LinearSegments, ContinuousDerivative) smoothness;
 //   output Integer tableID;
 // 
-//   external \"C\";
+//   external \"C\" tableID = ModelicaTables_CombiTable2D_init(tableName, fileName, table, size(table, 1), size(table, 2), smoothness);
 // end Modelica.Blocks.Tables.CombiTable2D.tableInit;
 // 
 // function Modelica.Blocks.Tables.CombiTable2D.tableIpo
@@ -169,7 +169,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input Real u2;
 //   output Real value;
 // 
-//   external \"C\";
+//   external \"C\" value = ModelicaTables_CombiTable2D_interpolate(tableID, u1, u2);
 // end Modelica.Blocks.Tables.CombiTable2D.tableIpo;
 // 
 // class Modelica.Blocks.Tables.CombiTable2D
@@ -235,7 +235,7 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input enumeration(HoldLastPoint, LastTwoPoints, Periodic) extrapolation;
 //   output Integer tableID;
 // 
-//   external \"C\";
+//   external \"C\" tableID = ModelicaTables_CombiTimeTable_init(tableName, fileName, table, size(table, 1), size(table, 2), startTime, smoothness, extrapolation);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -244,21 +244,21 @@ checkModel(Modelica.Blocks.Sources.BooleanTable); getErrorString();
 //   input Real timeIn;
 //   output Real value;
 // 
-//   external \"C\";
+//   external \"C\" value = ModelicaTables_CombiTimeTable_interpolate(tableID, icol, timeIn);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
 //   output Real Tmax \"maximum time value in table\";
 // 
-//   external \"C\";
+//   external \"C\" Tmax = ModelicaTables_CombiTimeTable_maximumTime(tableID);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
 //   output Real Tmin \"minimum time value in table\";
 // 
-//   external \"C\";
+//   external \"C\" Tmin = ModelicaTables_CombiTimeTable_minimumTime(tableID);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // class Modelica.Blocks.Sources.CombiTimeTable

@@ -2159,14 +2159,14 @@ end SiemensPower_Components_Valves_Tests_valve_fixeddensity_test;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function SiemensPower.Utilities.Functions.der_sqrtReg "Time derivative of sqrtReg"

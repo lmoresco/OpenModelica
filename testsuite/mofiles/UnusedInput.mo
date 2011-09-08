@@ -26,7 +26,7 @@ end UnusedInput;
 //   input Real x;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sin();
 // end UnusedInput.sinxx;
 // 
 // function UnusedInput.sinxy

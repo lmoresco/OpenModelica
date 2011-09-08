@@ -19,21 +19,21 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); ge
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = acos(u);
 // end Modelica.Math.acos;
 // 
 // function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Media.Common.HelmholtzDerivs \"Automatically generated record constructor for Modelica.Media.Common.HelmholtzDerivs\"

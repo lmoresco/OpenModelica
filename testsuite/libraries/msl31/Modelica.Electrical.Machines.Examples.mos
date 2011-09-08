@@ -56,7 +56,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -64,14 +64,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Machines.Examples.AIMC_DOL
@@ -1090,7 +1090,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -1098,14 +1098,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Machines.Examples.AIMC_YD
@@ -2303,7 +2303,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -2311,14 +2311,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Machines.Examples.AIMS_Start
@@ -4004,7 +4004,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -4012,7 +4012,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // class Modelica.Electrical.Machines.Examples.AIMC_Inverter
@@ -4847,7 +4847,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -4855,7 +4855,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // class Modelica.Electrical.Machines.Examples.SMR_Inverter
@@ -5888,7 +5888,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -5896,7 +5896,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // class Modelica.Electrical.Machines.Examples.SMPM_Inverter
@@ -6956,7 +6956,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -6964,14 +6964,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Machines.Examples.SMEE_Generator
@@ -8231,7 +8231,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Machines.Examples.DCPM_Start
@@ -8458,7 +8458,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Machines.Examples.DCEE_Start
@@ -8721,7 +8721,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Machines.Examples.DCSE_Start
@@ -8981,7 +8981,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -8989,14 +8989,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function Modelica.Utilities.Strings.substring
@@ -9005,7 +9005,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Integer endIndex(min = 1) \"Character position of substring end\";
 //   output String result \"String containing substring string[startIndex:endIndex]\";
 // 
-//   external \"C\";
+//   external \"C\" result = ModelicaStrings_substring(string, startIndex, endIndex);
 // end Modelica.Utilities.Strings.substring;
 // 
 // class Modelica.Electrical.Machines.Examples.TransformerTestbench
@@ -10711,14 +10711,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function Modelica.Utilities.Strings.substring
@@ -10727,7 +10727,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Integer endIndex(min = 1) \"Character position of substring end\";
 //   output String result \"String containing substring string[startIndex:endIndex]\";
 // 
-//   external \"C\";
+//   external \"C\" result = ModelicaStrings_substring(string, startIndex, endIndex);
 // end Modelica.Utilities.Strings.substring;
 // 
 // class Modelica.Electrical.Machines.Examples.Rectifier6pulse
@@ -11999,14 +11999,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function Modelica.Utilities.Strings.substring
@@ -12015,7 +12015,7 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Integer endIndex(min = 1) \"Character position of substring end\";
 //   output String result \"String containing substring string[startIndex:endIndex]\";
 // 
-//   external \"C\";
+//   external \"C\" result = ModelicaStrings_substring(string, startIndex, endIndex);
 // end Modelica.Utilities.Strings.substring;
 // 
 // class Modelica.Electrical.Machines.Examples.Rectifier12pulse
@@ -14242,14 +14242,14 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.Machines.Examples.AIMC_Steinmetz

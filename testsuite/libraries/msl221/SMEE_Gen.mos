@@ -28,7 +28,7 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -36,14 +36,14 @@ getErrorString();
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function Modelica.SIunits.Conversions.from_deg \"Convert from degree to radian\"

@@ -17,7 +17,7 @@ end ExternalFunction6;
 //   input Integer i1;
 //   output Integer i;
 // 
-//   external "C";
+//   external "C" i = myFn(i1);
 // end ExternalFunction6.fn;
 // 
 // class ExternalFunction6

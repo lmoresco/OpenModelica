@@ -17,14 +17,14 @@ checkModel(Modelica.Media.Examples.IdealGasH2O); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"

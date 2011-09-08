@@ -17,7 +17,7 @@ checkModel(Modelica.Media.Air.SimpleAir); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Media.Air.SimpleAir.FluidConstants \"Automatically generated record constructor for Modelica.Media.Air.SimpleAir.FluidConstants\"

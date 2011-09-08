@@ -4133,7 +4133,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function PackMaterial

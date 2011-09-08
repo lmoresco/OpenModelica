@@ -21,7 +21,7 @@ val(syncFilter.y, 6.2*10e-6);
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class SyncFilterTest

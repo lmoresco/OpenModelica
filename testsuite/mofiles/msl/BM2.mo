@@ -1107,7 +1107,7 @@ end BM2;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = acos(u);
 // end Modelica.Math.acos;
 // 
 // class BM2

@@ -36,7 +36,7 @@ getErrorString();
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent \"Maximum of the input arguments, without event and without warning message when differentiating\"

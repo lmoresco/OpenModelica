@@ -97,18 +97,30 @@ int lex_main(double eps, FILE* f1, FILE* f2) {
       }
       break;
     case T_REAL: {
-      double d1 = strtod(s1,NULL);
-      double d2 = strtod(s2,NULL);
-      // We should check also for a relative error
-	  // otherwise some tests need to many adjustments
-	  double err = fabs(d2-d1);
-      if (err > eps*fabs(d2)+eps) {
-        printf("Line %d: Real %s != %s\n  eps: %f, actual diff: %f\n",
-               line, s1, s2, eps, fabs(d2-d1));
-        return 1;
+      char *end1, *end2;
+      long l1 = strtol(s1, &end1, 10);
+      long l2 = strtol(s2, &end2, 10);
+
+      if(*end1 == '\0' && *end2 == '\0') {
+        if (l1 != l2) {
+          printf("Line %d: Integer %s != %s\n", line, s1, s2);
+          return 1;
+        }
+      }
+      else {
+        double d1 = strtod(s1,NULL);
+        double d2 = strtod(s2,NULL);
+        // We should check also for a relative error
+        // otherwise some tests need to many adjustments
+        double err = fabs(d2-d1);
+        if (err > eps*fabs(d2)+eps) {
+          printf("Line %d: Real %s != %s\n  eps: %f, actual diff: %f\n",
+                 line, s1, s2, eps, fabs(d2-d1));
+          return 1;
+        }
       }
       break;
-	};
+      };
     }
     free(s1);
   }

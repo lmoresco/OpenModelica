@@ -34,7 +34,7 @@ end ExternalFunction1;
 //   input Real x;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = ExternalFunction1_f(x);
 // end f;
 // 
 // class ExternalFunction1

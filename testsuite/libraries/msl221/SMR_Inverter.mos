@@ -14,7 +14,7 @@ getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -22,7 +22,7 @@ getErrorString();
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.SIunits.Conversions.to_rpm \"Convert from radian per second to revolutions per minute\"

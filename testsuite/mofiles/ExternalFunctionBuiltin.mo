@@ -36,14 +36,14 @@ end ExternalFunctionBuiltin;
 //   input Real r;
 //   output Real o;
 // 
-//   external "C";
+//   external "C" o = cos(r);
 // end ExternalFunctionBuiltin.cos;
 // 
 // function ExternalFunctionBuiltin.cos2
 //   input Real r;
 //   output Real o;
 // 
-//   external "C";
+//   external "C" o = cos(r);
 // end ExternalFunctionBuiltin.cos2;
 // 
 // class ExternalFunctionBuiltin

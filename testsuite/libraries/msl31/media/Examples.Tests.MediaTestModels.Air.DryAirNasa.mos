@@ -19,14 +19,14 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.DryAirNasa); getErr
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Media.Air.DryAirNasa.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Air.DryAirNasa.ThermodynamicState\"

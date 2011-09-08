@@ -1332,14 +1332,14 @@ end BS9;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class BS9

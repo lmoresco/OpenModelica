@@ -1104,7 +1104,7 @@ end BM5;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class BM5

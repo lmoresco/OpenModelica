@@ -121,7 +121,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Multiplexer
@@ -499,7 +499,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.FlipFlop
@@ -723,7 +723,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.HalfAdder
@@ -1070,7 +1070,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.FullAdder
@@ -2130,7 +2130,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Adder4
@@ -4453,7 +4453,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Counter3
@@ -4959,7 +4959,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Counter
@@ -6185,7 +6185,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Utilities.HalfAdder
@@ -6462,7 +6462,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Utilities.FullAdder
@@ -7018,7 +7018,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Examples.Utilities.Adder
@@ -9116,7 +9116,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Delay.InertialDelaySensitive
@@ -9381,7 +9381,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.InvGate
@@ -9517,7 +9517,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.AndGate
@@ -9660,7 +9660,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.NandGate
@@ -9803,7 +9803,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.OrGate
@@ -9946,7 +9946,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.NorGate
@@ -10089,7 +10089,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.XorGate
@@ -10232,7 +10232,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.XnorGate
@@ -10375,7 +10375,7 @@ checkModel(Modelica.Electrical.Digital.Gates.BufGate); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // class Modelica.Electrical.Digital.Gates.BufGate

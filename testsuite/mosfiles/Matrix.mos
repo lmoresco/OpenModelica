@@ -33,7 +33,7 @@ simulate(tt,numberOfIntervals=1);
 //   input Real[:, :] x;
 //   output Real[size(x,2), size(x,1)] y;
 // 
-// external \"C\";
+//   external \"C\" Trans(x, size(x, 1), size(x, 2), y, size(y, 1), size(y, 2));
 // end Trans;
 // 
 // class tt

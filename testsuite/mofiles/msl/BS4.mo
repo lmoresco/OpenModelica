@@ -1323,7 +1323,7 @@ end BS4;
 //   input Real u;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = exp(u);
 // end Modelica.Math.exp;
 // 
 // class BS4

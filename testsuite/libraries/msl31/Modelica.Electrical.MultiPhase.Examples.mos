@@ -23,14 +23,14 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.MultiPhase.Examples.TransformerYY
@@ -784,21 +784,21 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.cos
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = cos(u);
 // end Modelica.Math.cos;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.MultiPhase.Examples.TransformerYD
@@ -1563,14 +1563,14 @@ checkModel(Modelica.Electrical.MultiPhase.Examples.Rectifier); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class Modelica.Electrical.MultiPhase.Examples.Rectifier

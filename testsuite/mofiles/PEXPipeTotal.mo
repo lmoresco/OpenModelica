@@ -1001,7 +1001,7 @@ end Toneco_PEXPipe;
 //   input Real u;
 //   output Real y(quantity = "Angle", unit = "rad", displayUnit = "deg");
 // 
-//   external "C";
+//   external "C" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.SIunits.Conversions.from_degC "Convert from °Celsius to Kelvin"

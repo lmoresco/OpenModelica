@@ -1096,7 +1096,7 @@ end BM22;
 //   input Real u;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sinh(u);
 // end Modelica.Math.sinh;
 // 
 // class BM22

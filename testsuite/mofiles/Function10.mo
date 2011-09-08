@@ -20,7 +20,7 @@ end test;
 //   input Real x;
 //   output Real foo;
 // 
-//   external "C";
+//   external "C" foo = foo(x);
 // end foo;
 // 
 // class test

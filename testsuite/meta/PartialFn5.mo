@@ -65,7 +65,7 @@ end PartialFn5;
 //   input Real rin;
 //   output Real rout;
 // 
-//   external "C";
+//   external "C" rout = ceil(rin);
 // end PartialFn5.ceil_;
 // 
 // class PartialFn5

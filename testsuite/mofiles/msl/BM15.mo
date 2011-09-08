@@ -1103,7 +1103,7 @@ end BM15;
 //   input Real u;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = log10(u);
 // end Modelica.Math.log10;
 // 
 // class BM15

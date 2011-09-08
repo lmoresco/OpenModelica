@@ -28,7 +28,7 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   protected Real[nrow, ncol] Awork = A;
 //   protected Integer[ncol] jpvt = fill(0,ncol);
 // 
-//   external \"FORTRAN 77\";
+//   external \"FORTRAN 77\" dgelsx(nrow, ncol, 1, Awork, nrow, x, nx, jpvt, rcond, rank, work, lwork, info);
 // end Modelica.Math.Matrices.LAPACK.dgelsx_vec;
 // 
 // function Modelica.Math.Matrices.leastSquares \"Solve overdetermined or underdetermined real system of linear equations A*x=b in a least squares sense (A may be rank deficient)\"
@@ -49,21 +49,21 @@ checkModel(Modelica.Media.Incompressible.Examples.TestGlycol); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = exp(u);
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Media.Incompressible.Examples.Glycol47.Polynomials_Temp.fitting \"Computes the coefficients of a polynomial that fits a set of data points in a least-squares sense\"

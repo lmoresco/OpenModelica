@@ -1102,7 +1102,7 @@ end BM14;
 //   input Real u;
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = log(u);
 // end Modelica.Math.log;
 // 
 // class BM14

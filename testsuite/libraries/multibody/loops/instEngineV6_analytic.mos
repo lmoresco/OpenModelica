@@ -32,7 +32,7 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.atan2
@@ -40,21 +40,21 @@ instantiateModel(Modelica.Mechanics.MultiBody.Examples.Loops.EngineV6_analytic);
 //   input Real u2;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = atan2(u1, u2);
 // end Modelica.Math.atan2;
 // 
 // function Modelica.Math.cos
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = cos(u);
 // end Modelica.Math.cos;
 // 
 // function Modelica.Math.sin
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // function Modelica.Mechanics.MultiBody.Frames.Internal.maxWithoutEvent \"Maximum of the input arguments, without event and without warning message when differentiating\"

@@ -31,7 +31,7 @@ end joinThreeVectors;
 //   input Real[:] v3;
 //   output Real[(size(v1,1)) + ((size(v2,1)) + (size(v3,1)))] vres;
 // 
-//   external "C";
+//   external "C" join3vec(v1, v2, v3, vres, size(v1, 1), size(v2, 1), size(v3, 1));
 // end joinThreeVectors2;
 // 
 // class joinThreeVectors

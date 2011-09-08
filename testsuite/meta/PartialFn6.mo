@@ -52,7 +52,7 @@ end PartialFn6;
 //   input Real r;
 //   output Real out;
 // 
-//   external "C";
+//   external "C" out = PartialFn6_f(r);
 // end ExtFunc;
 // 
 // function TestApplyRealOp

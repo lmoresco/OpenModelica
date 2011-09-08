@@ -1099,7 +1099,7 @@ end BM8;
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = cos(u);
 // end Modelica.Math.cos;
 // 
 // class BM8

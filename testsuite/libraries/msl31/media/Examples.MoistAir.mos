@@ -17,49 +17,49 @@ checkModel(Modelica.Media.Examples.MoistAir); getErrorString();
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.cos
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = cos(u);
 // end Modelica.Math.cos;
 // 
 // function Modelica.Math.cosh
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = cosh(u);
 // end Modelica.Math.cosh;
 // 
 // function Modelica.Math.exp
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = exp(u);
 // end Modelica.Math.exp;
 // 
 // function Modelica.Math.log
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = log(u);
 // end Modelica.Math.log;
 // 
 // function Modelica.Math.tan
 //   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = tan(u);
 // end Modelica.Math.tan;
 // 
 // function Modelica.Math.tanh
 //   input Real u;
 //   output Real y;
 // 
-//   external \"C\";
+//   external \"C\" y = tanh(u);
 // end Modelica.Math.tanh;
 // 
 // function Modelica.Media.Common.smoothStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"

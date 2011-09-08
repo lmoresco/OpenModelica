@@ -101,7 +101,7 @@ simulate(testRandom2, stopTime=3); getErrorString();
 //   input String string = \"\" \"String to be printed\";
 //   input String fileName = \"\" \"File where to print (empty string is the terminal)\";
 // 
-//   external \"C\";
+//   external \"C\" ModelicaInternal_print(string, fileName);
 // end Modelica.Utilities.Streams.print;
 // 
 // function random \"Pseudo random number generator\"

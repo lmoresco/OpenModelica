@@ -1099,7 +1099,7 @@ end BM21;
 //   input Real u(quantity = "Angle", unit = "rad", displayUnit = "deg");
 //   output Real y;
 // 
-//   external "C";
+//   external "C" y = sin(u);
 // end Modelica.Math.sin;
 // 
 // class BM21

@@ -15,7 +15,7 @@ end ExternalFunction7;
 // function ExternalFunction7.fn
 //   output Real r;
 // 
-//   external "C";
+//   external "C" r = mySum123({1.0,2.0,3.0});
 // end ExternalFunction7.fn;
 // 
 // class ExternalFunction7

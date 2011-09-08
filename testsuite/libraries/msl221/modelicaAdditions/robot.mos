@@ -29,7 +29,7 @@ getErrorString();
 //   input Integer colWise;
 //   output Integer tableID;
 // 
-//   external \"C\";
+//   external \"C\" tableID = omcTableTimeIni(timeIn, startTime, ipoType, expoType, tableName, fileName, table, size(table, 1), size(table, 2), colWise);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeInit;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo
@@ -38,28 +38,28 @@ getErrorString();
 //   input Real timeIn;
 //   output Real value;
 // 
-//   external \"C\";
+//   external \"C\" value = omcTableTimeIpo(tableID, icol, timeIn);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeIpo;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax
 //   input Integer tableID;
 //   output Real Tmax \"maximum time value in table\";
 // 
-//   external \"C\";
+//   external \"C\" Tmax = omcTableTimeTmax(tableID);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax;
 // 
 // function Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin
 //   input Integer tableID;
 //   output Real Tmin \"minimum time value in table\";
 // 
-//   external \"C\";
+//   external \"C\" Tmin = omcTableTimeTmin(tableID);
 // end Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin;
 // 
 // function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
 // 
-//   external \"C\";
+//   external \"C\" y = asin(u);
 // end Modelica.Math.asin;
 // 
 // function Modelica.Math.tempInterpol1 \"temporary routine for linear interpolation (will be removed)\"
