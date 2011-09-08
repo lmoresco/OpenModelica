@@ -37,6 +37,7 @@ EquationCallIntegerArray.mos \
 EqualityEquations.mos \
 EqualityEquationsCorrect.mos \
 EventIteration.mos \
+EventTests.mos \
 ExtendsBasic.mos  \
 ExternalLibraries.mos \
 ExtObj.mos ExtObjStringParam.mos \
