@@ -36,6 +36,7 @@ EnumArray.mos \
 EquationCallIntegerArray.mos \
 EqualityEquations.mos \
 EqualityEquationsCorrect.mos \
+EventDelay.mos \
 EventIteration.mos \
 EventTests.mos \
 ExtendsBasic.mos  \
