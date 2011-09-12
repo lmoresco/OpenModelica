@@ -81,6 +81,9 @@ sub make_test_specific_links {
     when ("ParseModel.mos") {
       make_link("ParseModel-saved.mo");
     }
+    when ("EventTests.mos") {
+      make_link("EventTests.mat");
+    }
   }
 
   given($test_dir) {
