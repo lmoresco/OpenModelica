@@ -32,6 +32,7 @@ DAEexample.mos DAEexample2.mos \
 dertest.mos  \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
+DummyDerMatching.mos  \
 EnumArray.mos \
 EquationCallIntegerArray.mos \
 EqualityEquations.mos \

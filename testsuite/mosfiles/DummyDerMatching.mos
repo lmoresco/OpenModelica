@@ -1,0 +1,30 @@
+// name:     Test Bug #1617
+// keywords: DummyDer, Matching
+// status: correct
+// teardown_command: rm -rf testDummyDerMatching* output.log
+// 
+//  Simulate model containing EventIterations
+//
+loadFile("./DummyDerMatching.mo");
+simulate(testDummyDerMatching,  tolerance=1e-5, startTime=0, stopTime=10);
+val(x,0.0);
+val(x,5.0);
+val(x,10.0);
+val(y,0.0);
+val(y,5.0);
+val(y,10.0);
+
+// Result:
+// true
+// record SimulationResult
+//     resultFile = "testDummyDerMatching_res.mat",
+//     simulationOptions = "startTime = 0.0, stopTime = 10.0, numberOfIntervals = 500, tolerance = 1e-05, method = 'dassl', fileNamePrefix = 'testDummyDerMatching', storeInTemp = false, noClean = false, options = '', outputFormat = 'mat', variableFilter = '.*', measureTime = false, cflags = ''",
+//     messages = ""
+// end SimulationResult;
+// 1.0
+// 0.957938897731829
+// -0.568926185912963
+// 0.0
+// 0.28697224293009
+// -0.822388591228337
+// endResult
