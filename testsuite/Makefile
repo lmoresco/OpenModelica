@@ -1,5 +1,6 @@
 # Sorted by time it takes to run the tests...
 FASTLOGS= \
+initialization.log \
 mosfiles.log \
 mosfiles-msl22.log \
 parser.log \
@@ -33,6 +34,7 @@ msl31media.log
 
 
 SIMULATIONLOGS = \
+initialization.log \
 mosfiles.log \
 mosfiles-msl22.log \
 msl221simulation.log  \
@@ -111,6 +113,9 @@ records.log: omc-diff
 	@echo $@ done
 expandable.log: omc-diff
 	$(MAKE) -C expandable -f Makefile test > $@
+	@echo $@ done
+initialization.log: omc-diff
+	$(MAKE) -C initialization -f Makefile test > $@
 	@echo $@ done
 linearize.log: omc-diff
 	$(MAKE) -C linearize -f Makefile test > $@
