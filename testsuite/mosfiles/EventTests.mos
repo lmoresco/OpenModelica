@@ -5,7 +5,7 @@
 // 
 //  Simulate model containing EventIterations
 //
-loadFile("./EventTests.mo");
+loadFile("EventTests.mo");
 
 simulate(testEvents, tolerance=1e-6,startTime=0, stopTime=10,numberOfIntervals=100);
 res := OpenModelica.Scripting.compareSimulationResults("testEvents_res.mat",
