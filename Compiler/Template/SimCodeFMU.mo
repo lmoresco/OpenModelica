@@ -5138,17 +5138,19 @@ public function getPlatformString2
   input String in_a_dirExtra;
   input String in_a_libsPos1;
   input String in_a_libsPos2;
+  input String in_a_omhome;
 
   output Tpl.Text out_txt;
 algorithm
   out_txt :=
-  matchcontinue(in_txt, in_a_platform, in_a_fileNamePrefix, in_a_dirExtra, in_a_libsPos1, in_a_libsPos2)
+  matchcontinue(in_txt, in_a_platform, in_a_fileNamePrefix, in_a_dirExtra, in_a_libsPos1, in_a_libsPos2, in_a_omhome)
     local
       Tpl.Text txt;
       String a_fileNamePrefix;
       String a_dirExtra;
       String a_libsPos1;
       String a_libsPos2;
+      String a_omhome;
       String i_platform;
       String ret_2;
       String ret_1;
@@ -5159,7 +5161,8 @@ algorithm
            a_fileNamePrefix,
            a_dirExtra,
            a_libsPos1,
-           a_libsPos2 )
+           a_libsPos2,
+           a_omhome )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: "));
@@ -5239,12 +5242,38 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeStr(txt, a_omhome);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc/libexec/gnuplot/binary/libexpat-1.dll "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r ../"));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -rf "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -f "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".def "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.makefile "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
-                                    ".fmu *\n",
+                                    "_records.o\n",
                                     "\n"
                                 }, true));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
@@ -5302,7 +5331,8 @@ algorithm
            a_fileNamePrefix,
            a_dirExtra,
            a_libsPos1,
-           a_libsPos2 )
+           a_libsPos2,
+           a_omhome )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
@@ -5417,11 +5447,40 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeStr(txt, a_omhome);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc/libexec/gnuplot/binary/libexpat-1.so "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r ../"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".fmu *"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -rf "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -f "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".def "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.makefile "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_records.o\n",
+                                    "\n"
+                                }, true));
       then txt;
 
     case ( txt,
@@ -5429,7 +5488,8 @@ algorithm
            a_fileNamePrefix,
            a_dirExtra,
            a_libsPos1,
-           a_libsPos2 )
+           a_libsPos2,
+           a_omhome )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
@@ -5544,14 +5604,44 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
+        txt = Tpl.writeStr(txt, a_omhome);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc/libexec/gnuplot/binary/libexpat-1.so "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
+        txt = Tpl.writeStr(txt, i_platform);
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r ../"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".fmu *"));
+        txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -rf "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.softNewLine(txt);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" rm -f "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".def "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(".o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.libs "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.makefile "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU.o "));
+        txt = Tpl.writeStr(txt, a_fileNamePrefix);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
+                                    "_records.o\n",
+                                    "\n"
+                                }, true));
       then txt;
 
     case ( txt,
+           _,
            _,
            _,
            _,
@@ -5870,12 +5960,12 @@ algorithm
       String i_makefileParams_ldflags;
       list<String> i_makefileParams_includes;
       String i_makefileParams_cflags;
-      String i_makefileParams_omhome;
       String i_makefileParams_dllext;
       String i_makefileParams_exeext;
       String i_makefileParams_linker;
       String i_makefileParams_cxxcompiler;
       String i_makefileParams_ccompiler;
+      String i_makefileParams_omhome;
       String i_fileNamePrefix;
       String i_makefileParams_platform;
       Option<SimCode.SimulationSettings> i_sopt;
@@ -5892,7 +5982,7 @@ algorithm
       Tpl.Text l_dirExtra;
 
     case ( txt,
-           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, omhome = i_makefileParams_omhome, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
+           SimCode.SIMCODE(modelInfo = SimCode.MODELINFO(directory = i_modelInfo_directory), makefileParams = SimCode.MAKEFILE_PARAMS(libs = i_makefileParams_libs, platform = i_makefileParams_platform, omhome = i_makefileParams_omhome, ccompiler = i_makefileParams_ccompiler, cxxcompiler = i_makefileParams_cxxcompiler, linker = i_makefileParams_linker, exeext = i_makefileParams_exeext, dllext = i_makefileParams_dllext, cflags = i_makefileParams_cflags, includes = i_makefileParams_includes, ldflags = i_makefileParams_ldflags, senddatalibs = i_makefileParams_senddatalibs), simulationSettingsOpt = i_sopt, fileNamePrefix = i_fileNamePrefix) )
       equation
         l_dirExtra = fun_159(Tpl.emptyTxt, i_modelInfo_directory);
         l_libsStr = Tpl.pushIter(Tpl.emptyTxt, Tpl.ITER_OPTIONS(0, NONE(), SOME(Tpl.ST_STRING(" ")), 0, 0, Tpl.ST_NEW_LINE(), 0, Tpl.ST_NEW_LINE()));
@@ -5902,7 +5992,7 @@ algorithm
         l_libsPos2 = fun_162(Tpl.emptyTxt, l_dirExtra, l_libsStr);
         l_extraCflags = fun_165(Tpl.emptyTxt, i_sopt);
         l_platfrom = getPlatformString(Tpl.emptyTxt, i_makefileParams_platform);
-        l_compilecmds = getPlatformString2(Tpl.emptyTxt, i_makefileParams_platform, i_fileNamePrefix, Tpl.textString(l_dirExtra), Tpl.textString(l_libsPos1), Tpl.textString(l_libsPos2));
+        l_compilecmds = getPlatformString2(Tpl.emptyTxt, i_makefileParams_platform, i_fileNamePrefix, Tpl.textString(l_dirExtra), Tpl.textString(l_libsPos1), Tpl.textString(l_libsPos2), i_makefileParams_omhome);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING_LIST({
                                     "# Makefile generated by OpenModelica\n",
                                     "\n",
