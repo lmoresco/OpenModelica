@@ -1346,7 +1346,7 @@ algorithm
            _,
            _ )
       equation
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Integer/>"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("<Real/>"));
       then txt;
 
     case ( txt,
@@ -5332,7 +5332,7 @@ algorithm
            a_dirExtra,
            a_libsPos1,
            a_libsPos2,
-           a_omhome )
+           _ )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
@@ -5447,14 +5447,6 @@ algorithm
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
-        txt = Tpl.writeStr(txt, a_omhome);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc/libexec/gnuplot/binary/libexpat-1.so "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
-        txt = Tpl.writeStr(txt, i_platform);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r ../"));
@@ -5489,7 +5481,7 @@ algorithm
            a_dirExtra,
            a_libsPos1,
            a_libsPos2,
-           a_omhome )
+           _ )
       equation
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_FMU: clean "));
@@ -5603,14 +5595,6 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mv modelDescription.xml "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/modelDescription.xml\n"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cp "));
-        txt = Tpl.writeStr(txt, a_omhome);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/lib/omc/libexec/gnuplot/binary/libexpat-1.so "));
-        txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
-        txt = Tpl.writeStr(txt, i_platform);
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
