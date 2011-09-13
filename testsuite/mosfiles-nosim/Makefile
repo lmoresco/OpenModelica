@@ -4,6 +4,7 @@ TESTFILES = \
 Array1.mos \
 BaseClass1.mos \
 cat.mos \
+ComplexConnect.mos \
 EnzMM.mos \
 ErrorFunctionCallNumArgs.mos \
 ExtendsOrder.mos \
