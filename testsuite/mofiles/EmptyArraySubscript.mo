@@ -19,7 +19,7 @@ end blogg;
 model EmptyArraySubscript
   parameter Integer nIn = 0;
   parameter Integer n =0;
-  Real tIn[n];
+  Boolean tIn[n];
   blogg glog(n=nIn,t=tIn);
   Boolean bOut;
 equation

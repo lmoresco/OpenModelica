@@ -30,10 +30,12 @@ CyclicPerm.mos \
 Delay.mos \
 DAEexample.mos DAEexample2.mos \
 dertest.mos  \
+DimConvert.mos \
 DiscreteVectorStateSpace.mos \
 DoubleWhenConflict.mos DoubleWhenSequential.mos \
 DummyDerMatching.mos  \
 EnumArray.mos \
+Epidemics1.mos \
 EquationCallIntegerArray.mos \
 EqualityEquations.mos \
 EqualityEquationsCorrect.mos \
@@ -125,8 +127,6 @@ JoinThreeVectors2.mos StatementCall.mos \
 OneArgBaseFunction.mos \
 ArrayFieldSlice.mos \
 AppendElement.mos \
-DimConvert.mos \
-Epidemics1.mos \
 ActivateWhenEquation.mos Enum8.mos  \
 ForIterator2.mos \
 

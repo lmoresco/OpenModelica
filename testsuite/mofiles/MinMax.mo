@@ -8,7 +8,7 @@ model MinMax
   Real y[max([n,m])];
   parameter Integer n=min(m,3);
   parameter Integer m = 4;
-  constant Boolean bemptyarr[0]={i for i in 1:0};
+  constant Boolean bemptyarr[0]=fill(true, 0);
   constant Boolean b1 = min(true,false);
   constant Boolean b2 = min({true,true,false});
   constant Boolean b3 = min(bemptyarr);
