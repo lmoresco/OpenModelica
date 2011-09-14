@@ -24,7 +24,7 @@ end C3;
 
 // Result:
 // Error processing file: Modification15.mo
-// [Modification15.mo:14:5-14:11:writable] Error: Multiple modifers in same scope for element c.x.unit: unit = "V", from calling scope: c, duplicates are: c.x.unit: unit = "J", c.x.unit: unit = "K"
+// [Modification15.mo:14:5-14:11:writable] Error: Multiple modifiers in same scope for element c.x.unit: unit = "V", from calling scope: c, duplicates are: c.x.unit: unit = "J", c.x.unit: unit = "K"
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.

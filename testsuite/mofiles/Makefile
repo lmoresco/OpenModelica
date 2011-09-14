@@ -181,6 +181,7 @@ DeclarationEquation3.mo \
 DeclarationOrder1.mo \
 DeclarationOrder2.mo \
 DeclarationOrder.mo \
+DeclareConstant3.mo \
 DefaultRecordParameters.mo \
 Delay2.mo \
 Delay3.mo \
@@ -201,6 +202,7 @@ Discrete2.mo \
 DiscreteDeclConnector.mo \
 DiscreteDeclRecord.mo \
 DiscreteDeclType.mo \
+DisturbedResistance1.mo \
 DisturbedResistance3.mo \
 DisturbedResistance4.mo \
 Div.mo \
@@ -370,6 +372,7 @@ InheritanceSimple.mo \
 InnerOuter1.mo \
 InnerOuter2.mo \
 InnerOuterSystem.mo \
+InnerOuterWithExtends.mo \
 InOutArray2.mo \
 InOutArray.mo \
 InOutBool.mo \
@@ -383,6 +386,7 @@ Integer.mo \
 IntMul.mo \
 IntPow.mo \
 IntSub.mo \
+InvalidExtends1.mo \
 InvalidSizeScalar.mo \
 InvalidSizeIndex1.mo \
 InvalidSizeIndex2.mo \
@@ -417,16 +421,19 @@ modelica_1_1_Type10.mo \
 modelica_1_1_Type9.mo \
 ModelSimple.mo \
 Modification10.mo \
+Modification11.mo \
 Modification12.mo \
 Modification13.mo \
 Modification14.mo \
 Modification15.mo \
 Modification1.mo \
 Modification2.mo \
+Modification3.mo \
 Modification4.mo \
 Modification5.mo \
 Modification6.mo \
 Modification7.mo \
+Modification8.mo \
 Modification9.mo \
 ModifierClass.mo \
 ModifierExtends.mo \
@@ -522,6 +529,7 @@ ReturnError.mo \
 SampleError.mo \
 Scalar.mo \
 ScopeDeclaration1.mo \
+ScopeDeclaration2.mo \
 ScopeDeclaration3.mo \
 ScopeModification1.mo \
 ScopeModification2.mo \
@@ -597,6 +605,7 @@ Vectorizable6.mo \
 VectorizeExtendedType.mo \
 VectorizeUnknownDim.mo \
 VectorTest.mo \
+WaveEquationSample.mo \
 WhenElseNested.mo \
 WhenNested.mo \
 WhenNestedEquation.mo \
@@ -607,11 +616,8 @@ WillowForest.mo \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES=\
-InvalidExtends1.mo \
-Algorithm4.mo \
 Array5.mo \
 Array6.mo \
-ArrayModification12.mo \
 AssignmentFunctionMultiple2.mo \
 Connect10.mo \
 Connect11.mo \
@@ -621,8 +627,6 @@ ConstrainingType2.mo \
 ConstrainingType3.mo \
 DeclareConstant1.mo \
 DeclareConstant2.mo \
-DeclareConstant3.mo \
-DisturbedResistance1.mo \
 DisturbedResistance2.mo \
 Faculty4.mo \
 FlatParse.mof \
@@ -637,22 +641,8 @@ Inline4.mo \
 Inline5.mo \
 Inline6.mo \
 InnerClass1.mo \
-InnerOuterWithExtends.mo \
-ListTest.mo \
 Lookup8.mo \
-Match1.mo \
-Match2.mo \
-Match3.mo \
-Match4.mo \
-Match5.mo \
-Match6.mo \
-Match7.mo \
 modelica_1_1_Type11.mo \
-Modification11.mo \
-Modification3.mo \
-Modification8.mo \
-ModifyConstant1.mo \
-ModifyConstant2.mo \
 NonExpModif2.mo \
 OperatorComponents.mo \
 OperatorFunction1.mo \
@@ -660,12 +650,9 @@ OperatorFunction2.mo \
 OperatorIllegal.mo \
 OperatorSimple.mo \
 ReplaceFunction.mo \
-ScopeDeclaration2.mo \
 ScopeDeclaration4.mo \
-SmallPlantModified.mo \
 Type2.mo \
 Units1.mo \
-WaveEquationSample.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi
 DISTFILES=$(TESTFILES) VERSION modtest.texi \

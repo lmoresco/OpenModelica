@@ -15,11 +15,12 @@ class ScopeDeclaration2
 end ScopeDeclaration2;
 
 // Result:
-// class ScopeDeclaration2
-//   constant Real a=3.0;
-//   Real b.a;
-//   parameter Real b.a.min=b.a;// Illegal.
-// equation
-//   assert(b.a >= b.a.min,"...");
-// end ScopeDeclaration2;
+// Error processing file: ScopeDeclaration2.mo
+// [ScopeDeclaration2.mo:12:5-12:20:writable] Error: Variable b.a: Component min of variability PARAM has binding b.a of higher variability VAR.
+// [ScopeDeclaration2.mo:12:5-12:20:writable] Error: Variable b.a: In modifier min = b.a, not processed in the built-in class Real
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

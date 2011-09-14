@@ -12,3 +12,13 @@ class DeclareConstant3
 equation
   c = 5.0;
 end DeclareConstant3;
+
+// Result:
+// Error processing file: DeclareConstant3.mo
+// [DeclareConstant3.mo:11:3-11:26:writable] Error: Component c of variability CONST has binding x + y of higher variability VAR.
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
+// endResult
