@@ -103,6 +103,7 @@ BlockSimple.mo \
 BoolArrayTest.mo \
 BooleanDim.mo \
 BooleanLiterals.mo \
+BooleanRanges.mo \
 Break.mo \
 Cardinality.mo \
 Ceil.mo \
