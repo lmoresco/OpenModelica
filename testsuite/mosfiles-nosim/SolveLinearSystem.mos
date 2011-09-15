@@ -76,6 +76,6 @@ translateModel(SolveLinearSystem);getErrorString();
 // Error: Internal error createOdeSystem2 failed
 // Error: Internal error createOdeSystem failed
 // Error: Internal error createEquations failed
-// Error: Internal error Generation of simulation using code using templates failed
+// Error: Internal error Transformation from optimised DAE to simulation code structure failed
 // "
 // endResult
