@@ -8219,9 +8219,21 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   mechanicalPowerSensor.flange_a.phi = smee.flange.phi;
 // end Modelica.Electrical.Machines.Examples.SMEE_Generator;
 // "
-// ""
+// "[Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// "
 // "Check of Modelica.Electrical.Machines.Examples.SMEE_Generator completed successfully.
 // 
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
 // 
 // Class Modelica.Electrical.Machines.Examples.SMEE_Generator has 501 equation(s) and 501 variable(s).
 // 371 of these are trivial equation(s).
@@ -10699,9 +10711,21 @@ checkModel(Modelica.Electrical.Machines.Examples.AIMC_Steinmetz); getErroString(
 //   deltaL.plug_p.pin[3].v = voltageRMSSensorL.plug_n.pin[3].v;
 // end Modelica.Electrical.Machines.Examples.TransformerTestbench;
 // "
-// ""
+// "[Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// "
 // "Check of Modelica.Electrical.Machines.Examples.TransformerTestbench completed successfully.
 // 
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// [Machines.mo:7053:9-7053:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
+// [Machines.mo:7054:9-7054:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
 // 
 // Class Modelica.Electrical.Machines.Examples.TransformerTestbench has 672 equation(s) and 672 variable(s).
 // 518 of these are trivial equation(s).

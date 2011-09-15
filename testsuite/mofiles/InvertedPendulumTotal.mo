@@ -3605,6 +3605,7 @@ protected
   function local_normalize
     input Real iv[3];
     output Real ov[3];
+  protected
     Real length;
   algorithm 
     length:=sqrt(iv*iv);
@@ -3632,6 +3633,7 @@ function PackMaterial
   input Real b;
   input Real spec;
   output Real packedMaterial;
+protected
   Integer i1;
   Integer i2;
   Integer i3;
@@ -4075,7 +4077,7 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 // function MCVisualShape.local_normalize
 //   input Real[3] iv;
 //   output Real[3] ov;
-//   Real length;
+//   protected Real length;
 // algorithm
 //   length := sqrt(iv[1] ^ 2.0 + iv[2] ^ 2.0 + iv[3] ^ 2.0);
 //   ov := {iv[1] / length,iv[2] / length,iv[3] / length};
@@ -4142,10 +4144,10 @@ end IntroductoryExamples_Systems_InvertedPendulum;
 //   input Real b;
 //   input Real spec;
 //   output Real packedMaterial;
-//   Integer i1;
-//   Integer i2;
-//   Integer i3;
-//   Integer i4;
+//   protected Integer i1;
+//   protected Integer i2;
+//   protected Integer i3;
+//   protected Integer i4;
 // algorithm
 //   i1 := integer(floor(99.0 * r));
 //   if i1 < 0 then

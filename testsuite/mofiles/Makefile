@@ -315,6 +315,7 @@ Function10.mo \
 Function11.mo \
 Function12.mo \
 Function1.mo \
+Function2.mo \
 Function5.mo \
 Function5_test.mo \
 Function6.mo \
@@ -631,7 +632,6 @@ DeclareConstant2.mo \
 DisturbedResistance2.mo \
 Faculty4.mo \
 FlatParse.mof \
-Function2.mo \
 Function4.mo \
 FunctionEval5.mo \
 InheritanceRestrictions.mo \

@@ -7,6 +7,7 @@ import BaseHashTable.*;
 function fn
   input Integer i;
   output list<DAE.Exp> lst;
+protected
   DAE.ComponentRef wild;
   DAE.ComponentRef abc;
   DAE.ComponentRef def;

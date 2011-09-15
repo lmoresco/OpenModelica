@@ -2875,6 +2875,7 @@ function PackMaterial
   input Real b;
   input Real spec;
   output Real packedMaterial;
+protected
   Integer i1;
   Integer i2;
   Integer i3;

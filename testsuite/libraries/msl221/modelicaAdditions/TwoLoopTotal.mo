@@ -2935,7 +2935,7 @@ protected
   function local_normalize
     input Real iv[3];
     output Real ov[3];
-    Real length;
+    protected Real length;
   algorithm 
     length:=sqrt(iv*iv);
     ov:=iv/length;
@@ -2995,6 +2995,7 @@ function PackMaterial
   input Real b;
   input Real spec;
   output Real packedMaterial;
+protected
   Integer i1;
   Integer i2;
   Integer i3;

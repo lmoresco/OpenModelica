@@ -348,10 +348,10 @@ getErrorString();
 //   input Real b;
 //   input Real spec;
 //   output Real packedMaterial;
-//   Integer i1;
-//   Integer i2;
-//   Integer i3;
-//   Integer i4;
+//   protected Integer i1;
+//   protected Integer i2;
+//   protected Integer i3;
+//   protected Integer i4;
 // algorithm
 //   i1 := integer(floor(99.0 * r));
 //   if i1 < 0 then

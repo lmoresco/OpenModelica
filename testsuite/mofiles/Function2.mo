@@ -1,8 +1,10 @@
 // name:     Function2
 // keywords: function
-// status:   incorrect
+// status:   correct
 // 
 // This tests for illegal parts of a function definition.
+// This test should really fail, but since the MSL uses public non-formal
+// parameters we can only print a warning.
 // 
 
 function f
@@ -18,3 +20,22 @@ model Function2
 equation
   x = f(z);
 end Function2;
+
+// Result:
+// function f
+//   input Real x;
+//   output Real r;
+//   Real toomuch;
+// algorithm
+//   r := 2.0 * x;
+// end f;
+// 
+// class Function2
+//   Real x;
+//   Real z;
+// equation
+//   x = f(z);
+// end Function2;
+// [Function2.mo:13:3-13:15:writable] Warning: Invalid formal parameter toomuch, public components in functions must be either input or output.
+// 
+// endResult

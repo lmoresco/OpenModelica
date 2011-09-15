@@ -14,22 +14,18 @@ a:=RecordTest.TestWithoutParameters();
 // true
 // record RecordTest.WithParameters
 //     x = 1,
-//     y = 2,
-//     z = 1
+//     y = 2
 // end RecordTest.WithParameters;
 // record RecordTest.WithParameters
 //     x = 5,
-//     y = 3,
-//     z = 1
+//     y = 3
 // end RecordTest.WithParameters;
 // record RecordTest.WithParameters
 //     x = 2,
-//     y = 1,
-//     z = 1
+//     y = 1
 // end RecordTest.WithParameters;
 // record RecordTest.WithParameters
 //     x = 5,
-//     y = 3,
-//     z = 1
+//     y = 3
 // end RecordTest.WithParameters;
 // endResult
