@@ -7,7 +7,7 @@ cp ../../../../Compiler/Template/Tpl.mo ../10_pamtrans/
 mkdir -p $DIR
 
 svn export .. $DIR/MetaModelica
-(cd ../documentation/; for f in *.ppt; do
+(cd ../documentation/; for f in *.ppt *.odp; do
   echo $f
   rm "$DIR/MetaModelica/documentation/$f"
   cp "../documentation/`echo $f | sed 's/ppt$/pdf/'`" $DIR/MetaModelica/documentation/
