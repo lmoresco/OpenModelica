@@ -6,10 +6,10 @@ endif
 
 ifndef OPENMODELICAHOME
 CFLAGS = -I'../../../../build/include/omc' $(FPIC)
-OMC = ../../../../build/bin/omc +d=rml,noevalfunc +g=MetaModelica
+OMC = ../../../../build/bin/omc
 else
 CFLAGS = -I'$(OPENMODELICAHOME)/include/omc' $(FPIC)
-OMC = ${OPENMODELICAHOME}/bin/omc +d=rml,noevalfunc +g=MetaModelica
+OMC = ${OPENMODELICAHOME}/bin/omc
 endif
 
 CC = gcc
@@ -18,7 +18,7 @@ run: run2 clean
 
 deps: $(DEPS)
 
-TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $(OMC); fi) +d=rml,noevalfunc +g=MetaModelica
+TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $(OMC); fi)
 
 # LEXER
 

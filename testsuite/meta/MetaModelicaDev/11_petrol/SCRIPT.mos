@@ -4,7 +4,7 @@
 //
 // OpenModelica Development Course at PELAB
 //
-setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
+setCommandLineOptions({"+d=rml,noevalfunc","+g=MetaModelica"});setEnvironmentVar("MODELICAUSERCFLAGS","-g");reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("Absyn.mo");
 loadFile("FCEmit.mo");
 loadFile("FCode.mo");
@@ -19,6 +19,8 @@ Main.main({});
 getErrorString();
 
 // Result:
+// {true,true}
+// true
 // true
 // true
 // true

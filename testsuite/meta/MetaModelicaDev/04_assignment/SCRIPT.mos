@@ -12,7 +12,7 @@
 // d+1
 // or something that generates the same output.
 //
-setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
+setCommandLineOptions({"+d=rml,noevalfunc","+g=MetaModelica"});setEnvironmentVar("MODELICAUSERCFLAGS","-g");reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("Assignment.mo");
 loadFile("Parse.mo");
 getErrorString();
@@ -27,6 +27,8 @@ Assignment.evalprogram(syntree);
 getErrorString();
 
 // Result:
+// {true,true}
+// true
 // true
 // true
 // true
