@@ -12,7 +12,7 @@
 // d+1
 // or something that generates the same output.
 //
-setEnvironmentVar("MODELICAUSERCFLAGS","-g");
+setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("SOLUTION.mo");
 loadFile("Parse.mo");
 getErrorString();

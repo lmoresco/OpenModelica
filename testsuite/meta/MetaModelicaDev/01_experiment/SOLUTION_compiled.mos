@@ -5,7 +5,7 @@
 // OpenModelica Development Course at PELAB
 // Uses packages, aliases, etc
 //
-setEnvironmentVar("MODELICAUSERCFLAGS","-g");
+setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 getErrorString();

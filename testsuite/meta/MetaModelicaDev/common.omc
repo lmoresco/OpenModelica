@@ -43,16 +43,16 @@ run2: deps
 	@echo "***   program   ***"
 	@cat program.txt
 	@echo "*** end program ***"
-	$(OMC) SCRIPT.mos < program.txt
+	$(OMC) SCRIPT.mos
 
 test: test2
 
 test2: deps
-	$(TEST) $(SOLUTIONS) < program.txt
+	$(TEST) $(SOLUTIONS)
 	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
 test-noclean: $(DEPS)
-	$(TEST) $(SOLUTIONS) < program.txt
+	$(TEST) $(SOLUTIONS)
 
 %.mo: %.tpl
 	$(OMC) $<

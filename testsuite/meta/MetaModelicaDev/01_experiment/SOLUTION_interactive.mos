@@ -9,7 +9,7 @@
 // works properly on the Windows platform.
 //
 echo(false);
-setEnvironmentVar("MODELICAUSERCFLAGS","-g");
+setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 

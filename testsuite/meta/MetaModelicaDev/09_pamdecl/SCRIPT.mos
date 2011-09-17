@@ -4,7 +4,7 @@
 //
 // OpenModelica Development Course at PELAB
 //
-setEnvironmentVar("MODELICAUSERCFLAGS","-g");
+setEnvironmentVar("MODELICAUSERCFLAGS","-g") and reopenStandardStream(OpenModelica.Scripting.StandardStream.stdin,"program.txt");
 loadFile("Absyn.mo");
 loadFile("Env.mo");
 loadFile("Eval.mo");
