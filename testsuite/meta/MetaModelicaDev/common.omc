@@ -16,6 +16,8 @@ CC = gcc
 .SUFFIXES : .mo .tpl
 run: run2 clean
 
+deps: $(DEPS)
+
 TEST = $(shell if [ -f ../../../rtest ]; then echo ../../../rtest; else echo $(OMC); fi) +d=rml,noevalfunc +g=MetaModelica
 
 # LEXER
@@ -37,7 +39,7 @@ parser.c:  parser.y
 clean:
 	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
-run2: $(DEPS)
+run2: deps
 	@echo "***   program   ***"
 	@cat program.txt
 	@echo "*** end program ***"
@@ -45,7 +47,7 @@ run2: $(DEPS)
 
 test: test2
 
-test2: $(DEPS)
+test2: deps
 	$(TEST) $(SOLUTIONS) < program.txt
 	@rm -f $(CLEAN) *.o *.so *.dll *.exe parser.c parser.h lexer.c rtest *~
 
