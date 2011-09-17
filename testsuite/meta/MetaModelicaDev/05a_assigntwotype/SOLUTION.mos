@@ -4,6 +4,7 @@
 //
 // OpenModelica Development Course at PELAB
 //
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("SOLUTION.mo");
 loadFile("Parse.mo");
 getErrorString();
@@ -18,6 +19,7 @@ AssignTwoType.evalprogram(syntree);
 getErrorString();
 
 // Result:
+// true
 // true
 // true
 // ""

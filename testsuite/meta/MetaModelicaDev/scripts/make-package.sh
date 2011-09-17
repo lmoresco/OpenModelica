@@ -2,7 +2,7 @@
 
 DIR=/tmp/make-package-sh-$$/
 
-cp ../../../../Compiler/Template/Tpl.mo ../10_pamtrans/
+cp ../../../../Compiler/Template/Tpl.mo ../10_pamtrans/ || exit 1
 
 mkdir -p $DIR
 
@@ -10,8 +10,10 @@ svn export .. $DIR/MetaModelica
 (cd ../documentation/; for f in *.ppt *.odp; do
   echo $f
   rm "$DIR/MetaModelica/documentation/$f"
-  cp "../documentation/`echo $f | sed 's/ppt$/pdf/'`" $DIR/MetaModelica/documentation/
+  cp "../documentation/`echo $f | sed 's/ppt$/pdf/'`" $DIR/MetaModelica/documentation/ || exit 1
 done)
+cp ../../../../doc/OpenModelicaMetaProgramming.pdf $DIR/MetaModelica/documentation/ || exit 1
+wget "http://liu.diva-portal.org/smash/get/diva2:418188/FULLTEXT01" -o $DIR/MetaModelica/documentation/MetaModelica2.0.pdf || exit 1
 
 find $DIR -name SOLUTION*.mo* -delete
 
@@ -20,3 +22,4 @@ FILE=MetaModelicaDevelopersCourse-`date +%Y-%m-%d`.tar.gz
 cp $DIR/$FILE ./
 
 rm -rf $DIR
+echo Success! Created $FILE

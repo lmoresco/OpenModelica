@@ -4,12 +4,14 @@
 //
 // OpenModelica Development Course at PELAB
 //
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 getErrorString();
 Main.main({});
 getErrorString();
 // Result:
+// true
 // true
 // true
 // ""

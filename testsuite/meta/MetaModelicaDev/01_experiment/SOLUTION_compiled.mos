@@ -5,12 +5,14 @@
 // OpenModelica Development Course at PELAB
 // Uses packages, aliases, etc
 //
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 getErrorString();
 i:=Main.main({"10"});
 getErrorString();
 // Result:
+// true
 // true
 // true
 // ""

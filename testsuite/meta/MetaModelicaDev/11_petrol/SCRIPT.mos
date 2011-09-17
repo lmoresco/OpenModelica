@@ -4,6 +4,7 @@
 //
 // OpenModelica Development Course at PELAB
 //
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("Absyn.mo");
 loadFile("FCEmit.mo");
 loadFile("FCode.mo");
@@ -18,6 +19,7 @@ Main.main({});
 getErrorString();
 
 // Result:
+// true
 // true
 // true
 // true

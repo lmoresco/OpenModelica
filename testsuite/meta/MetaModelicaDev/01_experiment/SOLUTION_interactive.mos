@@ -9,6 +9,7 @@
 // works properly on the Windows platform.
 //
 echo(false);
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("SOLUTION.mo");
 loadFile("Types.mo");
 

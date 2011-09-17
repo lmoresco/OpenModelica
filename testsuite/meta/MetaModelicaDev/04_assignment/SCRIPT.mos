@@ -12,6 +12,7 @@
 // d+1
 // or something that generates the same output.
 //
+setEnvironmentVar("MODELICAUSERCFLAGS","-g");
 loadFile("Assignment.mo");
 loadFile("Parse.mo");
 getErrorString();
@@ -26,6 +27,7 @@ Assignment.evalprogram(syntree);
 getErrorString();
 
 // Result:
+// true
 // true
 // true
 // ""
