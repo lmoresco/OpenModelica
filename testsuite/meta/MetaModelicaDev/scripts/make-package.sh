@@ -2,6 +2,7 @@
 
 DIR=/tmp/make-package-sh-$$/
 
+sh createbuilders.sh win32
 cp ../../../../Compiler/Template/Tpl.mo ../10_pamtrans/ || exit 1
 
 mkdir -p $DIR
