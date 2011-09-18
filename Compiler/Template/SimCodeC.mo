@@ -27328,59 +27328,52 @@ end fun_671;
 protected function fun_672
   input Tpl.Text in_txt;
   input Boolean in_mArg;
+  input DAE.Exp in_a_ecr;
+  input Tpl.Text in_a_preExp;
   input Tpl.Text in_a_varDecls;
   input DAE.ExpType in_a_ty;
   input SimCode.Context in_a_context;
   input DAE.ComponentRef in_a_cr;
-  input DAE.Exp in_a_ecr;
-  input Tpl.Text in_a_preExp;
 
   output Tpl.Text out_txt;
-  output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_mArg, in_a_varDecls, in_a_ty, in_a_context, in_a_cr, in_a_ecr, in_a_preExp)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_mArg, in_a_ecr, in_a_preExp, in_a_varDecls, in_a_ty, in_a_context, in_a_cr)
     local
       Tpl.Text txt;
+      DAE.Exp a_ecr;
+      Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
       DAE.ExpType a_ty;
       SimCode.Context a_context;
       DAE.ComponentRef a_cr;
-      DAE.Exp a_ecr;
-      Tpl.Text a_preExp;
-      String str_11;
-      Integer ret_10;
-      list<DAE.Subscript> ret_9;
+      String str_9;
+      Integer ret_8;
+      list<DAE.Subscript> ret_7;
       Tpl.Text l_dimsLenStr;
-      DAE.ComponentRef ret_7;
-      String ret_6;
-      list<DAE.Subscript> ret_5;
+      DAE.ComponentRef ret_5;
+      list<DAE.Subscript> ret_4;
       Tpl.Text l_spec1;
       Tpl.Text l_tmp;
       Tpl.Text l_arrayType;
       Tpl.Text l_arrName;
-      String ret_0;
 
     case ( txt,
            false,
+           _,
+           a_preExp,
            a_varDecls,
            a_ty,
            a_context,
-           a_cr,
-           a_ecr,
-           a_preExp )
+           a_cr )
       equation
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("/* daeExpCrefRhs2 SLICE("));
-        ret_0 = ExpressionDump.printExpStr(a_ecr);
-        a_preExp = Tpl.writeStr(a_preExp, ret_0);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(") preExp  */"));
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
         l_arrName = contextArrayCref(Tpl.emptyTxt, a_cr, a_context);
         l_arrayType = expTypeArray(Tpl.emptyTxt, a_ty);
         (l_tmp, a_varDecls) = tempDecl(Tpl.emptyTxt, Tpl.textString(l_arrayType), a_varDecls);
-        ret_5 = ComponentReference.crefSubs(a_cr);
-        (l_spec1, a_preExp, a_varDecls) = daeExpCrefRhsIndexSpec(Tpl.emptyTxt, ret_5, a_context, a_preExp, a_varDecls);
+        ret_4 = ComponentReference.crefSubs(a_cr);
+        (l_spec1, a_preExp, a_varDecls) = daeExpCrefRhsIndexSpec(Tpl.emptyTxt, ret_4, a_context, a_preExp, a_varDecls);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("index_alloc_"));
         a_preExp = Tpl.writeText(a_preExp, l_arrayType);
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("(&"));
@@ -27392,31 +27385,26 @@ algorithm
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(");"));
         a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
         txt = Tpl.writeText(txt, l_tmp);
-      then (txt, a_varDecls, a_preExp);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            _,
+           a_ecr,
+           a_preExp,
            a_varDecls,
            a_ty,
            a_context,
-           a_cr,
-           a_ecr,
-           a_preExp )
+           a_cr )
       equation
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("/* daeExpCrefRhs2 SCALAR("));
-        ret_6 = ExpressionDump.printExpStr(a_ecr);
-        a_preExp = Tpl.writeStr(a_preExp, ret_6);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(") preExp  */"));
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
-        ret_7 = ComponentReference.crefStripLastSubs(a_cr);
-        l_arrName = contextCref(Tpl.emptyTxt, ret_7, a_context);
+        ret_5 = ComponentReference.crefStripLastSubs(a_cr);
+        l_arrName = contextCref(Tpl.emptyTxt, ret_5, a_context);
         l_arrayType = expTypeArray(Tpl.emptyTxt, a_ty);
-        ret_9 = ComponentReference.crefSubs(a_cr);
-        ret_10 = listLength(ret_9);
-        l_dimsLenStr = Tpl.writeStr(Tpl.emptyTxt, intString(ret_10));
-        str_11 = Tpl.textString(l_arrayType);
-        (txt, a_varDecls, a_preExp) = fun_671(txt, str_11, a_ecr, l_dimsLenStr, l_arrayType, l_arrName, a_varDecls, a_preExp, a_context, a_cr);
-      then (txt, a_varDecls, a_preExp);
+        ret_7 = ComponentReference.crefSubs(a_cr);
+        ret_8 = listLength(ret_7);
+        l_dimsLenStr = Tpl.writeStr(Tpl.emptyTxt, intString(ret_8));
+        str_9 = Tpl.textString(l_arrayType);
+        (txt, a_varDecls, a_preExp) = fun_671(txt, str_9, a_ecr, l_dimsLenStr, l_arrayType, l_arrName, a_varDecls, a_preExp, a_context, a_cr);
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_672;
 
@@ -27452,81 +27440,81 @@ end fun_673;
 protected function fun_674
   input Tpl.Text in_txt;
   input Boolean in_mArg;
+  input DAE.Exp in_a_ecr;
+  input Tpl.Text in_a_preExp;
   input Tpl.Text in_a_varDecls;
   input DAE.ExpType in_a_ty;
   input SimCode.Context in_a_context;
-  input DAE.Exp in_a_ecr;
-  input Tpl.Text in_a_preExp;
   input DAE.ComponentRef in_a_cr;
 
   output Tpl.Text out_txt;
-  output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_mArg, in_a_varDecls, in_a_ty, in_a_context, in_a_ecr, in_a_preExp, in_a_cr)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_mArg, in_a_ecr, in_a_preExp, in_a_varDecls, in_a_ty, in_a_context, in_a_cr)
     local
       Tpl.Text txt;
+      DAE.Exp a_ecr;
+      Tpl.Text a_preExp;
       Tpl.Text a_varDecls;
       DAE.ExpType a_ty;
       SimCode.Context a_context;
-      DAE.Exp a_ecr;
-      Tpl.Text a_preExp;
       DAE.ComponentRef a_cr;
       Tpl.Text l_cast;
       Boolean ret_0;
 
     case ( txt,
            false,
+           a_ecr,
+           a_preExp,
            a_varDecls,
            a_ty,
            a_context,
-           a_ecr,
-           a_preExp,
            a_cr )
       equation
         ret_0 = SimCode.crefSubIsScalar(a_cr);
-        (txt, a_varDecls, a_preExp) = fun_672(txt, ret_0, a_varDecls, a_ty, a_context, a_cr, a_ecr, a_preExp);
-      then (txt, a_varDecls, a_preExp);
+        (txt, a_preExp, a_varDecls) = fun_672(txt, ret_0, a_ecr, a_preExp, a_varDecls, a_ty, a_context, a_cr);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            _,
+           _,
+           a_preExp,
            a_varDecls,
            a_ty,
            a_context,
-           _,
-           a_preExp,
            a_cr )
       equation
         l_cast = fun_673(Tpl.emptyTxt, a_ty);
         txt = Tpl.writeText(txt, l_cast);
         txt = contextCref(txt, a_cr, a_context);
-      then (txt, a_varDecls, a_preExp);
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_674;
 
 protected function fun_675
   input Tpl.Text in_txt;
   input Tpl.Text in_a_box;
-  input Tpl.Text in_a_varDecls;
-  input DAE.ExpType in_a_ty;
   input DAE.Exp in_a_ecr;
   input Tpl.Text in_a_preExp;
+  input Tpl.Text in_a_varDecls;
+  input DAE.ExpType in_a_ty;
   input SimCode.Context in_a_context;
   input DAE.ComponentRef in_a_cr;
 
   output Tpl.Text out_txt;
-  output Tpl.Text out_a_varDecls;
   output Tpl.Text out_a_preExp;
+  output Tpl.Text out_a_varDecls;
 algorithm
-  (out_txt, out_a_varDecls, out_a_preExp) :=
-  matchcontinue(in_txt, in_a_box, in_a_varDecls, in_a_ty, in_a_ecr, in_a_preExp, in_a_context, in_a_cr)
+  (out_txt, out_a_preExp, out_a_varDecls) :=
+  matchcontinue(in_txt, in_a_box, in_a_ecr, in_a_preExp, in_a_varDecls, in_a_ty, in_a_context, in_a_cr)
     local
       Tpl.Text txt;
-      Tpl.Text a_varDecls;
-      DAE.ExpType a_ty;
       DAE.Exp a_ecr;
       Tpl.Text a_preExp;
+      Tpl.Text a_varDecls;
+      DAE.ExpType a_ty;
       SimCode.Context a_context;
       DAE.ComponentRef a_cr;
       Tpl.Text i_box;
@@ -27534,28 +27522,28 @@ algorithm
 
     case ( txt,
            Tpl.MEM_TEXT(tokens = {}),
-           a_varDecls,
-           a_ty,
            a_ecr,
            a_preExp,
+           a_varDecls,
+           a_ty,
            a_context,
            a_cr )
       equation
         ret_0 = SimCode.crefIsScalar(a_cr, a_context);
-        (txt, a_varDecls, a_preExp) = fun_674(txt, ret_0, a_varDecls, a_ty, a_context, a_ecr, a_preExp, a_cr);
-      then (txt, a_varDecls, a_preExp);
+        (txt, a_preExp, a_varDecls) = fun_674(txt, ret_0, a_ecr, a_preExp, a_varDecls, a_ty, a_context, a_cr);
+      then (txt, a_preExp, a_varDecls);
 
     case ( txt,
            i_box,
-           a_varDecls,
-           _,
            _,
            a_preExp,
+           a_varDecls,
+           _,
            _,
            _ )
       equation
         txt = Tpl.writeText(txt, i_box);
-      then (txt, a_varDecls, a_preExp);
+      then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_675;
 
@@ -27580,10 +27568,9 @@ algorithm
       DAE.ExpType i_ty;
       DAE.ComponentRef i_cr;
       DAE.Exp i_ecr;
-      String ret_3;
-      String ret_2;
+      Tpl.Text txt_1;
+      String ret_1;
       Tpl.Text l_box;
-      String ret_0;
 
     case ( txt,
            (i_ecr as DAE.CREF(componentRef = i_cr, ty = i_ty)),
@@ -27591,13 +27578,8 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("/* daeExpCrefRhs2 begin preExp ("));
-        ret_0 = ExpressionDump.printExpStr(i_ecr);
-        a_preExp = Tpl.writeStr(a_preExp, ret_0);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(") */"));
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
         (l_box, a_preExp, a_varDecls) = daeExpCrefRhsArrayBox(Tpl.emptyTxt, i_ecr, a_context, a_preExp, a_varDecls);
-        (txt, a_varDecls, a_preExp) = fun_675(txt, l_box, a_varDecls, i_ty, i_ecr, a_preExp, a_context, i_cr);
+        (txt, a_preExp, a_varDecls) = fun_675(txt, l_box, i_ecr, a_preExp, a_varDecls, i_ty, a_context, i_cr);
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -27606,19 +27588,10 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING("/* daeExpCrefRhs2 UNHANDLED("));
-        ret_2 = ExpressionDump.printExpStr(i_ecr);
-        a_preExp = Tpl.writeStr(a_preExp, ret_2);
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_STRING(") preExp */"));
-        a_preExp = Tpl.writeTok(a_preExp, Tpl.ST_NEW_LINE());
-        txt = Tpl.writeTok(txt, Tpl.ST_LINE("/* SimCodeC.tpl template: daeExpCrefRhs2: UNHANDLED EXPRESSION:\n"));
-        txt = Tpl.pushBlock(txt, Tpl.BT_INDENT(1));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("* "));
-        ret_3 = ExpressionDump.printExpStr(i_ecr);
-        txt = Tpl.writeStr(txt, ret_3);
-        txt = Tpl.softNewLine(txt);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("*/"));
-        txt = Tpl.popBlock(txt);
+        txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("daeExpCrefRhs2: UNHANDLED EXPRESSION: "));
+        ret_1 = ExpressionDump.printExpStr(i_ecr);
+        txt_1 = Tpl.writeStr(txt_1, ret_1);
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4547, 11), Tpl.textString(txt_1));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCrefRhs2;
@@ -27653,7 +27626,7 @@ algorithm
     case ( txt,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4570, 22), "Non-constant dimension in simulation context");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4566, 22), "Non-constant dimension in simulation context");
       then txt;
   end matchcontinue;
 end fun_677;
@@ -27783,7 +27756,7 @@ algorithm
            _,
            _ )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4572, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4568, 18), "Less subscripts that dimensions in indexing cref? That\'s odd!");
       then (txt, a_varDecls, a_preExp);
   end matchcontinue;
 end fun_680;
@@ -27818,7 +27791,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4558, 22), "Empty dimensions in indexing cref?");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4554, 22), "Empty dimensions in indexing cref?");
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -27838,7 +27811,7 @@ algorithm
            a_preExp,
            a_varDecls )
       equation
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4573, 14), "Non-index subscript in indexing cref? That\'s odd!");
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 4569, 14), "Non-index subscript in indexing cref? That\'s odd!");
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_681;
@@ -32728,7 +32701,7 @@ algorithm
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
         txt_7 = Tpl.writeTok(txt_7, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5154, 11), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5150, 11), Tpl.textString(txt_7));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -32763,7 +32736,7 @@ algorithm
         ret_9 = ExpressionDump.printExpStr(i_exp);
         txt_9 = Tpl.writeStr(txt_9, ret_9);
         txt_9 = Tpl.writeTok(txt_9, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5160, 11), Tpl.textString(txt_9));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5156, 11), Tpl.textString(txt_9));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -32789,7 +32762,7 @@ algorithm
         ret_11 = ExpressionDump.printExpStr(i_exp);
         txt_11 = Tpl.writeStr(txt_11, ret_11);
         txt_11 = Tpl.writeTok(txt_11, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5164, 11), Tpl.textString(txt_11));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5160, 11), Tpl.textString(txt_11));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -33042,7 +33015,7 @@ algorithm
         txt_28 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("vector() call does not have a C implementation "));
         ret_28 = ExpressionDump.printExpStr(i_call);
         txt_28 = Tpl.writeStr(txt_28, ret_28);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5249, 11), Tpl.textString(txt_28));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5245, 11), Tpl.textString(txt_28));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -34573,7 +34546,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Nested array subscripting *should* have been handled by the routine creating the asub, but for some reason it was not: "));
         ret_0 = ExpressionDump.printExpStr(i_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5544, 11), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5540, 11), Tpl.textString(txt_0));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -34610,7 +34583,7 @@ algorithm
         txt_6 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("ASUB_EASY_CASE "));
         ret_6 = ExpressionDump.printExpStr(i_exp);
         txt_6 = Tpl.writeStr(txt_6, ret_6);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5573, 11), Tpl.textString(txt_6));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5569, 11), Tpl.textString(txt_6));
       then (txt, a_preExp, a_varDecls);
 
     case ( txt,
@@ -34655,7 +34628,7 @@ algorithm
         txt_14 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("OTHER_ASUB "));
         ret_14 = ExpressionDump.printExpStr(i_exp);
         txt_14 = Tpl.writeStr(txt_14, ret_14);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5590, 11), Tpl.textString(txt_14));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5586, 11), Tpl.textString(txt_14));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end fun_780;
@@ -34838,7 +34811,7 @@ algorithm
         ret_2 = ExpressionDump.printExpStr(i_exp);
         txt_2 = Tpl.writeStr(txt_2, ret_2);
         txt_2 = Tpl.writeTok(txt_2, Tpl.ST_STRING(")"));
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5613, 11), Tpl.textString(txt_2));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5609, 11), Tpl.textString(txt_2));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpCallPre;
@@ -36117,7 +36090,7 @@ algorithm
         txt_40 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Code generation does not support multiple iterators: "));
         ret_40 = ExpressionDump.printExpStr(i_exp);
         txt_40 = Tpl.writeStr(txt_40, ret_40);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5750, 14), Tpl.textString(txt_40));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5746, 14), Tpl.textString(txt_40));
       then (txt, a_preExp, a_varDecls);
   end matchcontinue;
 end daeExpReduction;
@@ -36454,7 +36427,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("Unknown switch: "));
         ret_0 = ExpressionDump.printExpStr(a_exp);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5795, 13), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 5791, 13), Tpl.textString(txt_0));
       then (txt, a_varDeclsInner);
 
     case ( txt,
@@ -39024,7 +38997,7 @@ algorithm
         txt_1 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeShort:"));
         ret_1 = ExpressionDump.typeString(i_type);
         txt_1 = Tpl.writeStr(txt_1, ret_1);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6154, 14), Tpl.textString(txt_1));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6150, 14), Tpl.textString(txt_1));
       then txt;
   end matchcontinue;
 end expTypeShort;
@@ -39957,7 +39930,7 @@ algorithm
         txt_7 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("expTypeFromExpFlag:"));
         ret_7 = ExpressionDump.printExpStr(i_exp);
         txt_7 = Tpl.writeStr(txt_7, ret_7);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6303, 14), Tpl.textString(txt_7));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6299, 14), Tpl.textString(txt_7));
       then txt;
   end matchcontinue;
 end expTypeFromExpFlag;
@@ -41769,7 +41742,7 @@ algorithm
         txt_14 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConst failed: "));
         ret_14 = ExpressionDump.printExpStr(i_lit);
         txt_14 = Tpl.writeStr(txt_14, ret_14);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6561, 14), Tpl.textString(txt_14));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6557, 14), Tpl.textString(txt_14));
       then txt;
   end matchcontinue;
 end fun_922;
@@ -41884,7 +41857,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstBoxedVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6579, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6575, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstBoxedVal;
@@ -41963,7 +41936,7 @@ algorithm
         txt_0 = Tpl.writeTok(Tpl.emptyTxt, Tpl.ST_STRING("literalExpConstArrayVal failed: "));
         ret_0 = ExpressionDump.printExpStr(i_lit);
         txt_0 = Tpl.writeStr(txt_0, ret_0);
-        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6589, 14), Tpl.textString(txt_0));
+        txt = error(txt, Tpl.sourceInfo("SimCodeC.tpl", 6585, 14), Tpl.textString(txt_0));
       then txt;
   end matchcontinue;
 end literalExpConstArrayVal;
