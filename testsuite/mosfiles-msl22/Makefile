@@ -15,7 +15,6 @@ IdealGear.mos \
 IdealGearBrake.mos \
 InputOutput.mos \
 InitTest.mos \
-InitTest2.mos \
 MatrixTest.mos \
 NonLinsys.mos \
 Shaft.mos \
@@ -27,6 +26,10 @@ SineTorque2inertias.mos \
 SpringMass.mos \
 StepTorque.mos \
 Tank.mos \
+Test3PhaseInit.mos \
+Test3PhaseInitParam.mos \
+Test3PhaseInitOver.mos \
+Test3PhaseStart.mos \
 TimeVaryingLinsys.mos \
 TrapezoidTest.mos \
 tupleTest.mos \
