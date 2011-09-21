@@ -57,6 +57,9 @@ algorithm
 end main;
 
 function diff
+  "Symbolic differentation, e.g. d/dx x^2 = 2*x is performed by calling
+  diff(x^2,x) => 2*x
+  "
   input Exp expr;
   input String timevar;
   output Exp diffExpr;
