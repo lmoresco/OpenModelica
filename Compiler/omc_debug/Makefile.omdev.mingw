@@ -21,7 +21,7 @@ LIBSOCKET = -lsocket
 
 SHELL	= /bin/sh
 CC	= gcc
-CFLAGS	= $(USE_CORBA) -O0
+CFLAGS	= $(USE_CORBA) -O0 --param ggc-min-expand=1 --param ggc-min-heapsize=999999
 RMLHOME	= $(OMDEV)/tools/rml
 RMLINC  = -I$(RMLHOME)/include/plain
 
@@ -42,7 +42,7 @@ CORBALIB=-L$(CORBAHOME)/lib/mico-msys-mingw$(OMC_BUILD_STATIC) -lmico2313
 #endif
 
 LDFLAGS = -lm -L$(RMLHOME)/lib/plain -lrml_g $(LIBSOCKET) $(CORBALIBS) -lsqlite3 -llpsolve55 -lregex -llapack-mingw -ltmglib-mingw -lblas-mingw -lf2c
-PLTPKGFLAGS = -L../../build/lib/omc -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4
+PLTPKGFLAGS = -static-libgcc -L../../build/lib/omc -lsendData -lQtNetwork-mingw -lQtCore-mingw -lQtGui-mingw -luuid -lole32 -lws2_32 -lRpcrt4
 
 PROG = omcd.exe
 # There is now debug in OMDev-mingw
