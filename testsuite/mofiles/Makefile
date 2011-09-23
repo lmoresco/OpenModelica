@@ -236,6 +236,7 @@ Enum9.mo \
 Enum10.mo \
 Enum11.mo \
 Enum12.mo \
+Enum13.mo \
 EnumConnectArray.mo \
 EnumDimSum.mo \
 EnumFor.mo \
