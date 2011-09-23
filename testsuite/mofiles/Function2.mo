@@ -36,6 +36,6 @@ end Function2;
 // equation
 //   x = f(z);
 // end Function2;
-// [Function2.mo:13:3-13:15:writable] Warning: Invalid formal parameter toomuch, public components in functions must be either input or output.
+// [Function2.mo:13:3-13:15:writable] Warning: Invalid public variable toomuch, function variables that are not input/output must be protected.
 // 
 // endResult

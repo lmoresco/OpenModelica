@@ -1223,11 +1223,11 @@ getErrorString();
 //   RampCurrent1.n.v = SMEE1.pin_ep.v;
 // end Modelica.Electrical.Machines.Examples.SMEE_Gen;
 // "
-// "[Machines.mo:2787:9-2787:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
-// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
-// [Machines.mo:2787:9-2787:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
-// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
-// [Machines.mo:2787:9-2787:48:writable] Warning: Invalid formal parameter m, public components in functions must be either input or output.
-// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid formal parameter pi, public components in functions must be either input or output.
+// "[Machines.mo:2787:9-2787:48:writable] Warning: Invalid public variable m, function variables that are not input/output must be protected.
+// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid public variable pi, function variables that are not input/output must be protected.
+// [Machines.mo:2787:9-2787:48:writable] Warning: Invalid public variable m, function variables that are not input/output must be protected.
+// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid public variable pi, function variables that are not input/output must be protected.
+// [Machines.mo:2787:9-2787:48:writable] Warning: Invalid public variable m, function variables that are not input/output must be protected.
+// [Machines.mo:2788:9-2788:47:writable] Warning: Invalid public variable pi, function variables that are not input/output must be protected.
 // "
 // endResult
