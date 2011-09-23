@@ -1,6 +1,7 @@
 final encapsulated package UtilTest
 
 import Util;
+import List;
 
 function listRangeString
 "Takes start, stop index, generates a list<Integer> which it then
@@ -12,10 +13,10 @@ transforms into a list<String>"
 protected
   list<Integer> is;
 algorithm
-  is := Util.listIntRange2(start,stop);
-  is := Util.listMap1(is, intMul, 3);
-  ss := Util.listMap(is, intString);
-  sum := Util.listFold(is, intAdd, 0);
+  is := List.intRange2(start,stop);
+  is := List.map1(is, intMul, 3);
+  ss := List.map(is, intString);
+  sum := List.fold(is, intAdd, 0);
 end listRangeString;
 
 function getIntOption
@@ -30,8 +31,8 @@ function listMapGetOption
   output list<Integer> is1;
   output list<Integer> is2;
 algorithm
-  is1 := Util.listMap(ios, Util.getOption);
-  is2 := Util.listMap(ios, getIntOption);
+  is1 := List.map(ios, Util.getOption);
+  is2 := List.map(ios, getIntOption);
 end listMapGetOption;
 
 function listMap1r
@@ -39,7 +40,7 @@ function listMap1r
   input String s;
   output list<String> oss;
 algorithm
-  oss := Util.listMap1r(ss, stringAppend, s);
+  oss := List.map1r(ss, stringAppend, s);
 end listMap1r;
 
 function listSplitOnTrue
@@ -47,28 +48,68 @@ function listSplitOnTrue
   output list<Option<Integer>> somes;
   output list<Option<Integer>> nones;
 algorithm
-  (somes,nones) := Util.listSplitOnTrue(xs, Util.isSome);
+  (somes,nones) := List.splitOnTrue(xs, Util.isSome);
 end listSplitOnTrue;
 
 function listMapTuple21
   input list<tuple<String,Integer>> xs;
   output list<String> ys;
 algorithm
-  ys := Util.listMap(xs, Util.tuple21);
+  ys := List.map(xs, Util.tuple21);
 end listMapTuple21;
 
 function listListMap
   input list<list<Integer>> xs;
   output list<list<String>> ys;
 algorithm
-  ys := Util.listListMap(xs, intString);
+  ys := List.mapList(xs, intString);
 end listListMap;
 
 function listMapMap
   input list<Integer> xs;
   output list<String> ys;
 algorithm
-  ys := Util.listMapMap(xs, intReal, realString);
+  ys := List.mapMap(xs, intReal, realString);
 end listMapMap;
+
+function threadMapList
+  input list<list<Integer>> l1;
+  input list<list<Integer>> l2;
+  output list<list<Integer>> l3;
+algorithm
+  l3 := List.threadMapList(l1, l2, intAdd);
+end threadMapList;
+
+function isThree
+  input Integer i;
+algorithm
+  true := intEq(i, 3);
+end isThree;
+
+function splitOnFirstMatch
+  input list<Integer> l1;
+  output list<Integer> l2;
+  output list<Integer> l3;
+algorithm
+  (l2, l3) := List.splitOnFirstMatch(l1, isThree);
+end splitOnFirstMatch;
+
+function incAdd
+  input tuple<Integer, Integer> inTuple;
+  output tuple<Integer, Integer> outTuple;
+protected
+  Integer i, j;
+algorithm
+  (i, j) := inTuple;
+  outTuple := (i + 1, j + i);
+end incAdd;
+
+function mapFoldListTuple
+  input list<list<Integer>> l1;
+  output list<list<Integer>> l2;
+  output Integer lsum;
+algorithm
+  (l2, lsum) := List.mapFoldListTuple(l1, incAdd, 0);
+end mapFoldListTuple;
 
 end UtilTest;

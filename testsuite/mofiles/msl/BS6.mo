@@ -1253,11 +1253,11 @@ end BS6;
 //   assert(pulse1.outPort.n == der1.inPort.n,"automatically generated from connect");
 //   der1.inPort.signal[1] = pulse1.outPort.signal[1];
 // end BS6;
-// [BS6.mo:687:11-688:31:writable] Warning: Variable pulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
-// 
 // [BS6.mo:685:11-686:43:writable] Warning: Variable pulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [BS6.mo:685:11-686:43:writable] Warning: Variable pulse1.width: Non-array modification '100' for array component, possibly due to missing 'each'.
+// 
+// [BS6.mo:687:11-688:31:writable] Warning: Variable pulse1.period: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 
 // [BS6.mo:685:11-686:43:writable] Warning: Variable pulse1.width: Non-array modification '1e-60' for array component, possibly due to missing 'each'.
 // 

@@ -237,10 +237,6 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
-// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
-// [package.mo:77:3-78:83:writable] Warning: Component: h_offset with no default value! This might happen if you are using a constant with no binding as a modifier.
 // [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
@@ -253,10 +249,6 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2Mix); getErrorString();
 // [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
-// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
-// [package.mo:77:3-78:83:writable] Error: Failed to elaborate expression: if referenceChoice == .Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_offset else 0
-// [package.mo:77:3-78:83:writable] Warning: Component: h_offset with no default value! This might happen if you are using a constant with no binding as a modifier.
 // [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.

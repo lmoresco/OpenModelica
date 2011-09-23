@@ -137,6 +137,7 @@ loadFile("../../Compiler/Util/HashTableExpType.mo");
 loadFile("../../Compiler/Util/IOStreamExt.mo");
 loadFile("../../Compiler/Util/IOStream.mo");
 loadFile("../../Compiler/Util/Lapack.mo");
+loadFile("../../Compiler/Util/List.mo");
 loadFile("../../Compiler/Util/OptManager.mo");
 loadFile("../../Compiler/Util/Print.mo");
 loadFile("../../Compiler/Util/RTOpts.mo");

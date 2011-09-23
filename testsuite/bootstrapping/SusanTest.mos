@@ -28,6 +28,7 @@ getErrorString();
 loadFile("../../Compiler/Template/TplParser.mo");
 getErrorString();
 loadFile("../../Compiler/Util/Util.mo");
+loadFile("../../Compiler/Util/List.mo");
 loadFile("SusanTest.mo");
 getErrorString();
 
@@ -79,6 +80,7 @@ getErrorString();
 // ""
 // true
 // ""
+// true
 // true
 // true
 // ""

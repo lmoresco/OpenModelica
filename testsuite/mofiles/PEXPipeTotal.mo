@@ -1071,13 +1071,13 @@ end Toneco_PEXPipe;
 //   assert(dpNominal >= k, "SimpleFriction: dpNominal has to be > dpLaminar*V_flowNominal/V_flowLaminar!");
 //   k := (dpNominal - k) * (V_flowNominal - V_flowLaminar) ^ -2.0;
 // equation
-//   Q_flow = Q_friction;
-//   dp = pressureDrop + 9.80665 * (medium.rho * h_g);
 //   VolumeFlow = V_flow;
-//   flowPort_b.H_flow = semiLinear(flowPort_b.m_flow,flowPort_b.h,h);
-//   flowPort_a.H_flow = semiLinear(flowPort_a.m_flow,flowPort_a.h,h);
-//   flowPort_a.H_flow + (flowPort_b.H_flow + Q_flow) = m * (medium.cv * der(T));
+//   dp = pressureDrop + 9.80665 * (medium.rho * h_g);
+//   Q_flow = Q_friction;
 //   flowPort_a.m_flow + flowPort_b.m_flow = 0.0;
+//   flowPort_a.H_flow + (flowPort_b.H_flow + Q_flow) = m * (medium.cv * der(T));
+//   flowPort_a.H_flow = semiLinear(flowPort_a.m_flow,flowPort_a.h,h);
+//   flowPort_b.H_flow = semiLinear(flowPort_b.m_flow,flowPort_b.h,h);
 //   if VolumeFlow > V_flowLaminar then
 //   pressureDrop = (VolumeFlow * dpLaminar) / V_flowLaminar + k * (VolumeFlow - V_flowLaminar) ^ 2.0;
 //   elseif VolumeFlow < -V_flowLaminar then

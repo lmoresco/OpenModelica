@@ -12,7 +12,7 @@ getErrorString();
 // true
 // 
 // "[ErrorMatchNumOutput.mo:11:3-14:12:writable] Error: Match expression has mismatched result types:
-//   (Integer, Integer, Integer)
 //   (Integer, Integer)
+//   (Integer, Integer, Integer)
 // "
 // endResult

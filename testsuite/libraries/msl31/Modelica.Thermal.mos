@@ -321,10 +321,10 @@ checkModel(Modelica.Thermal.FluidHeatFlow.Examples.PumpAndValve); getErrorString
 //   pipe.dp = pipe.pressureDrop + 9.80665 * (pipe.medium.rho * pipe.h_g);
 //   pipe.Q_flow = pipe.heatPort.Q_flow + pipe.Q_friction;
 //   pipe.heatPort.T = pipe.T_q;
-//   pipe.flowPort_b.H_flow = semiLinear(pipe.flowPort_b.m_flow,pipe.flowPort_b.h,pipe.h);
-//   pipe.flowPort_a.H_flow = semiLinear(pipe.flowPort_a.m_flow,pipe.flowPort_a.h,pipe.h);
-//   pipe.flowPort_a.H_flow + (pipe.flowPort_b.H_flow + pipe.Q_flow) = pipe.m * (pipe.medium.cv * der(pipe.T));
 //   pipe.flowPort_a.m_flow + pipe.flowPort_b.m_flow = 0.0;
+//   pipe.flowPort_a.H_flow + (pipe.flowPort_b.H_flow + pipe.Q_flow) = pipe.m * (pipe.medium.cv * der(pipe.T));
+//   pipe.flowPort_a.H_flow = semiLinear(pipe.flowPort_a.m_flow,pipe.flowPort_a.h,pipe.h);
+//   pipe.flowPort_b.H_flow = semiLinear(pipe.flowPort_b.m_flow,pipe.flowPort_b.h,pipe.h);
 //   if pipe.volumeFlow > pipe.V_flowLaminar then
 //   pipe.pressureDrop = (pipe.volumeFlow * pipe.dpLaminar) / pipe.V_flowLaminar + pipe.k * (pipe.volumeFlow - pipe.V_flowLaminar) ^ 2.0;
 //   elseif pipe.volumeFlow < -pipe.V_flowLaminar then

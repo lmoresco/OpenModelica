@@ -304,10 +304,10 @@ getErrorString();
 //   Pipe1.dp = Pipe1.pressureDrop + 9.80665 * (Pipe1.medium.rho * Pipe1.h_g);
 //   Pipe1.Q_flow = Pipe1.heatPort.Q_flow + Pipe1.Q_friction;
 //   Pipe1.heatPort.T = Pipe1.T_q;
-//   Pipe1.flowPort_b.H_flow = semiLinear(Pipe1.flowPort_b.m_flow,Pipe1.flowPort_b.h,Pipe1.h);
-//   Pipe1.flowPort_a.H_flow = semiLinear(Pipe1.flowPort_a.m_flow,Pipe1.flowPort_a.h,Pipe1.h);
-//   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
 //   Pipe1.flowPort_a.m_flow + Pipe1.flowPort_b.m_flow = 0.0;
+//   Pipe1.flowPort_a.H_flow + (Pipe1.flowPort_b.H_flow + Pipe1.Q_flow) = Pipe1.m * (Pipe1.medium.cv * der(Pipe1.T));
+//   Pipe1.flowPort_a.H_flow = semiLinear(Pipe1.flowPort_a.m_flow,Pipe1.flowPort_a.h,Pipe1.h);
+//   Pipe1.flowPort_b.H_flow = semiLinear(Pipe1.flowPort_b.m_flow,Pipe1.flowPort_b.h,Pipe1.h);
 //   if Pipe1.VolumeFlow > Pipe1.V_flowLaminar then
 //   Pipe1.pressureDrop = (Pipe1.VolumeFlow * Pipe1.dpLaminar) / Pipe1.V_flowLaminar + Pipe1.k * (Pipe1.VolumeFlow - Pipe1.V_flowLaminar) ^ 2.0;
 //   elseif Pipe1.VolumeFlow < -Pipe1.V_flowLaminar then

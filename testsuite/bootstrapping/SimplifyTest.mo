@@ -38,8 +38,8 @@ package SimplifyTest "Run ExpressionSimplify.simplify on some sample expressions
   algorithm
     base     := {i1,i2,i3,add1_2,r1,rx,rxMulr1,r1Mulrx,rxAddrx,rxAddrxMulrx,add2r1,add3r1,add4r1,add5r1,rxPow2,rxPow2Mul1,bigExp};
     simpl    := ExpressionSimplify.simplifyList(base,{});
-    baseStr  := Util.listMap(base, ExpressionDump.printExpStr);
-    simplStr := Util.listMap(simpl, ExpressionDump.printExpStr);
-    Util.listMap0(Util.listThreadTuple(baseStr,simplStr), printResult);
+    baseStr  := List.map(base, ExpressionDump.printExpStr);
+    simplStr := List.map(simpl, ExpressionDump.printExpStr);
+    List.map_0(List.threadTuple(baseStr,simplStr), printResult);
   end test;
 end SimplifyTest;
