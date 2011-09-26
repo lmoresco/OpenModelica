@@ -578,9 +578,10 @@ TestGravityAcceleration.mo \
 Transpose2.mo \
 Transpose.mo \
 TrigIdentity.mo \
-tupleSubset.mo \
 TupleSingleAssign.mo \
+tupleSubset.mo \
 Type10.mo \
+Type11.mo \
 Type1.mo \
 Type3.mo \
 Type4.mo \
@@ -644,7 +645,6 @@ Inline4.mo \
 Inline5.mo \
 Inline6.mo \
 InnerClass1.mo \
-modelica_1_1_Type11.mo \
 NonExpModif2.mo \
 OperatorComponents.mo \
 OperatorFunction1.mo \

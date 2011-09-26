@@ -1,4 +1,4 @@
-// name:     modelica_1_1_Type11
+// name:     Type11
 // keywords: types
 // status:   correct
 // 
@@ -7,8 +7,8 @@
 // 
 
 class Type11
-  Real[3] x[2]=[[11.,12.,13.],[21.,22.,23.]];
-  Real y[2,3]=[[11.,12.,13.],[21.,22.,23.]];
+  Real[3] x[2]=[[11.,12.,13.];[21.,22.,23.]];
+  Real y[2,3]=[[11.,12.,13.];[21.,22.,23.]];
 
   Real ok[3];
 equation
