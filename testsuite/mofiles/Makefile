@@ -406,6 +406,7 @@ Lookup4.mo \
 Lookup5.mo \
 Lookup6.mo \
 Lookup7.mo \
+Lookup8.mo \
 Lookup9.mo \
 LookupArray.mo \
 MathematicalFunctions.mo \
@@ -643,7 +644,6 @@ Inline4.mo \
 Inline5.mo \
 Inline6.mo \
 InnerClass1.mo \
-Lookup8.mo \
 modelica_1_1_Type11.mo \
 NonExpModif2.mo \
 OperatorComponents.mo \

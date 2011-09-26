@@ -1,8 +1,8 @@
 // name:     Lookup8
 // keywords: scoping
-// status:   correct
+// status:   incorrect
 // 
-// Instance hierarchy are looked up before class hierachy
+// A component is not allowed to have the same name as its type specifier.
 // 
 
 
@@ -16,11 +16,11 @@ model Test
 end Test;
 
 // Result:
-// class Test
-// Real Cytosol_V;
-// Real Cytosol.V;
-// equation
-//   Cytosol_V = Cytosol.V;
-//   Cytosol.V = 1.0;
-// end Test;
+// Error processing file: Lookup8.mo
+// [Lookup8.mo:15:3-15:18:writable] Error: Found a component with same name when looking for type Cytosol
+// 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult
