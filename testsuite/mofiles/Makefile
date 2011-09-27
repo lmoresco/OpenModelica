@@ -147,6 +147,7 @@ ConnectInnerOuter.mo \
 ConnectorComponents.mo \
 ConnectorIllegal.mo \
 ConnectorIllegal2.mo \
+ConnectorInheritance1.mo \
 ConnectorSimple.mo \
 ConnectTypes.mo \
 Constant10.mo \
@@ -653,7 +654,6 @@ OperatorIllegal.mo \
 OperatorSimple.mo \
 ReplaceFunction.mo \
 ScopeDeclaration4.mo \
-Type2.mo \
 Units1.mo \
 
 DOCFILES=modtest.texi cases.texi VERSION.texi

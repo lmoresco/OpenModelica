@@ -58,7 +58,6 @@ loadFile("../../Compiler/FrontEnd/Lookup.mo");
 loadFile("../../Compiler/FrontEnd/MetaUtil.mo");
 loadFile("../../Compiler/FrontEnd/MMath.mo");
 loadFile("../../Compiler/FrontEnd/Mod.mo");
-loadFile("../../Compiler/FrontEnd/ModUtil.mo");
 loadFile("../../Compiler/FrontEnd/Parser.mo");
 loadFile("../../Compiler/FrontEnd/Patternm.mo");
 loadFile("../../Compiler/FrontEnd/Prefix.mo");
