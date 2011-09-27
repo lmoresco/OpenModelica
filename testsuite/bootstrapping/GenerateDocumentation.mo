@@ -28,5 +28,5 @@ function sortAppendLst
   input list<String> strs;
   output String str;
 algorithm
-  str := Util.stringDelimitList(Util.sort(strs,compFn),"<hr />");
+  str := stringDelimitList(List.sort(strs,compFn),"<hr />");
 end sortAppendLst;
