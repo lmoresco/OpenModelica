@@ -17,9 +17,6 @@ getErrorString();
 // "Error: trying to override final variable in class: test1
 // 	by using modifiers: ( = 10,  = final 1.123456) that do not agree.
 // Error: Error occured while flattening model test1
-// Error: trying to override final variable in class: test1
-// 	by using modifiers: ( = 10,  = final 1.123456) that do not agree.
-// Error: Error occured while flattening model test1
 // "
 // ""
 // "[FinalTests.mo:27:3-27:23:writable] Error: Variable a1: trying to override final variable in class: test2

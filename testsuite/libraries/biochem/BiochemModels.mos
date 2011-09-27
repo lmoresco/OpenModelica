@@ -443,8 +443,8 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.per2_cry_mRNA_degradation.s1.r = cytoplasm.per2_cry_mRNA_degradation.nS1 * cytoplasm.per2_cry_mRNA_degradation.rr;
 //   cytoplasm.per2_cry_mRNA_degradation.p1.r = (-cytoplasm.per2_cry_mRNA_degradation.nP1) * cytoplasm.per2_cry_mRNA_degradation.rr;
 //   cytoplasm.per2_cry_complex_formation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.per2_cry_complex_formation.k2b * cytoplasm.per2_cry_complex_formation.m1.c ^ cytoplasm.per2_cry_complex_formation.q);
-//   cytoplasm.per2_cry_complex_formation.p1.r = (-cytoplasm.per2_cry_complex_formation.nP1) * cytoplasm.per2_cry_complex_formation.rr;
 //   cytoplasm.per2_cry_complex_formation.s1.r = cytoplasm.per2_cry_complex_formation.nS1 * cytoplasm.per2_cry_complex_formation.rr;
+//   cytoplasm.per2_cry_complex_formation.p1.r = (-cytoplasm.per2_cry_complex_formation.nP1) * cytoplasm.per2_cry_complex_formation.rr;
 //   cytoplasm.per2_cry_complex_formation.m1.r = 0.0;
 //   cytoplasm.cytoplasmic_per2_cry_complex_degradation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.cytoplasmic_per2_cry_complex_degradation.k2d * cytoplasm.cytoplasmic_per2_cry_complex_degradation.s1.c);
 //   cytoplasm.cytoplasmic_per2_cry_complex_degradation.s1.r = cytoplasm.cytoplasmic_per2_cry_complex_degradation.nS1 * cytoplasm.cytoplasmic_per2_cry_complex_degradation.rr;
@@ -459,8 +459,8 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.Bmal1_mRNA_degradation.s1.r = cytoplasm.Bmal1_mRNA_degradation.nS1 * cytoplasm.Bmal1_mRNA_degradation.rr;
 //   cytoplasm.Bmal1_mRNA_degradation.p1.r = (-cytoplasm.Bmal1_mRNA_degradation.nP1) * cytoplasm.Bmal1_mRNA_degradation.rr;
 //   cytoplasm.BMAL1_translation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.BMAL1_translation.k5b * cytoplasm.BMAL1_translation.m1.c);
-//   cytoplasm.BMAL1_translation.p1.r = (-cytoplasm.BMAL1_translation.nP1) * cytoplasm.BMAL1_translation.rr;
 //   cytoplasm.BMAL1_translation.s1.r = cytoplasm.BMAL1_translation.nS1 * cytoplasm.BMAL1_translation.rr;
+//   cytoplasm.BMAL1_translation.p1.r = (-cytoplasm.BMAL1_translation.nP1) * cytoplasm.BMAL1_translation.rr;
 //   cytoplasm.BMAL1_translation.m1.r = 0.0;
 //   cytoplasm.cytoplasmic_BMAL1_degradation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.cytoplasmic_BMAL1_degradation.k5d * cytoplasm.cytoplasmic_BMAL1_degradation.s1.c);
 //   cytoplasm.cytoplasmic_BMAL1_degradation.s1.r = cytoplasm.cytoplasmic_BMAL1_degradation.nS1 * cytoplasm.cytoplasmic_BMAL1_degradation.rr;
@@ -469,9 +469,9 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.BMAL1_nuclear_import.s1.r = cytoplasm.BMAL1_nuclear_import.nS1 * cytoplasm.BMAL1_nuclear_import.rr;
 //   cytoplasm.BMAL1_nuclear_import.p1.r = (-cytoplasm.BMAL1_nuclear_import.nP1) * cytoplasm.BMAL1_nuclear_import.rr;
 //   der(cytoplasm.V) = 0.0;
-//   y5_y6_y7 = cytoplasm.y5.c + (nucleus.y6.c + nucleus.y7.c);
-//   trans_Bmal1 = (v4b * nucleus.y3.c ^ r_sbml) / (k4b ^ r_sbml + nucleus.y3.c ^ r_sbml);
 //   trans_per2_cry = (v1b * (nucleus.y7.c + c_sbml)) / (k1b * (1.0 + (nucleus.y3.c / k1i) ^ hill_coeff) + (nucleus.y7.c + c_sbml));
+//   trans_Bmal1 = (v4b * nucleus.y3.c ^ r_sbml) / (k4b ^ r_sbml + nucleus.y3.c ^ r_sbml);
+//   y5_y6_y7 = cytoplasm.y5.c + (nucleus.y6.c + nucleus.y7.c);
 //   der(V) = 0.0;
 //   nucleus.y3.n1.r + (-nucleus.y3_node.r) + nucleus.per2_cry_nuclear_export.s1.r + nucleus.nuclear_per2_cry_complex_degradation.s1.r = 0.0;
 //   nucleus.y6.n1.r + (-nucleus.y6_node.r) + nucleus.BMAL1_nuclear_export.s1.r + nucleus.nuclear_BMAL1_degradation.s1.r + nucleus.BMAL1_activation.s1.r + nucleus.BMAL1_deactivation.p1.r = 0.0;
@@ -570,14 +570,14 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.Bmal1_mRNA_degradation.s1.V;
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.Bmal1_transcription.p1.V;
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.y4.n1.V;
-//   cytoplasm.y3_node.c = nucleus.y3_node.c;
-//   cytoplasm.y3_node.V = nucleus.y3_node.V;
-//   cytoplasm.y2_node.c = nucleus.y2_node.c;
-//   cytoplasm.y2_node.V = nucleus.y2_node.V;
-//   cytoplasm.y6_node.c = nucleus.y6_node.c;
-//   cytoplasm.y6_node.V = nucleus.y6_node.V;
 //   cytoplasm.y5_node.c = nucleus.y5_node.c;
 //   cytoplasm.y5_node.V = nucleus.y5_node.V;
+//   cytoplasm.y6_node.c = nucleus.y6_node.c;
+//   cytoplasm.y6_node.V = nucleus.y6_node.V;
+//   cytoplasm.y2_node.c = nucleus.y2_node.c;
+//   cytoplasm.y2_node.V = nucleus.y2_node.V;
+//   cytoplasm.y3_node.c = nucleus.y3_node.c;
+//   cytoplasm.y3_node.V = nucleus.y3_node.V;
 // end BioChem_Examples_CircadianOscillator_Container;
 // "
 // ""
@@ -990,7 +990,7 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   parameter Real iv4 = 0.148871;
 //   parameter Real iv5 = 4.34299;
 //   parameter Real iv6 = 0.00406177;
-//   parameter Real iv7 = 1.72073e-05;
+//   parameter Real iv7 = 1.72073e-005;
 //   parameter Real iv8 = 0.0695775;
 //   parameter Real iv9 = 28.2621;
 //   parameter Real iv10 = 0.000398124;
@@ -1095,22 +1095,22 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytosol.vpfk.p1.r = (-cytosol.vpfk.nP1) * cytosol.vpfk.rr;
 //   cytosol.vpfk.p2.r = (-cytosol.vpfk.nP2) * cytosol.vpfk.rr;
 //   cytosol.vldh.rr = (cytosol.vldh.e0 * ((cytosol.vldh.s2.c * (cytosol.vldh.s1.c * cytosol.vldh.kf)) / (cytosol.vldh.kia * cytosol.vldh.kmb) + ((-cytosol.vldh.kr) * (cytosol.vldh.p1.c * cytosol.vldh.m1.c)) / (cytosol.vldh.kiq * cytosol.vldh.kmp))) / (cytosol.vldh.s2.c / cytosol.vldh.kia + ((cytosol.vldh.s2.c * cytosol.vldh.s1.c) / (cytosol.vldh.kia * cytosol.vldh.kmb) + ((cytosol.vldh.s2.c * (cytosol.vldh.s1.c * cytosol.vldh.p1.c)) / (cytosol.vldh.kmb * cytosol.vldh.kip * cytosol.vldh.kia) + ((cytosol.vldh.s2.c * (cytosol.vldh.kmq * cytosol.vldh.p1.c)) / (cytosol.vldh.kia * cytosol.vldh.kiq * cytosol.vldh.kmp) + ((1.0 + cytosol.vldh.s1.c / cytosol.vldh.k1ib) * (1.0 + ((cytosol.vldh.s1.c * cytosol.vldh.kma) / (cytosol.vldh.kia * cytosol.vldh.kmb) + (cytosol.vldh.kmq * cytosol.vldh.p1.c) / (cytosol.vldh.kmp * cytosol.vldh.kiq))) + (cytosol.vldh.m1.c / cytosol.vldh.kiq + ((cytosol.vldh.s1.c * (cytosol.vldh.kma * cytosol.vldh.m1.c)) / (cytosol.vldh.kmb * cytosol.vldh.kiq * cytosol.vldh.kia) + ((cytosol.vldh.p1.c * cytosol.vldh.m1.c) / (cytosol.vldh.kiq * cytosol.vldh.kmp) + (cytosol.vldh.s1.c * (cytosol.vldh.p1.c * cytosol.vldh.m1.c)) / (cytosol.vldh.kmp * cytosol.vldh.kiq * cytosol.vldh.kib)))))))));
-//   cytosol.vldh.p1.r = (-cytosol.vldh.nP1) * cytosol.vldh.rr;
-//   cytosol.vldh.s2.r = cytosol.vldh.nS2 * cytosol.vldh.rr;
 //   cytosol.vldh.s1.r = cytosol.vldh.nS1 * cytosol.vldh.rr;
+//   cytosol.vldh.s2.r = cytosol.vldh.nS2 * cytosol.vldh.rr;
+//   cytosol.vldh.p1.r = (-cytosol.vldh.nP1) * cytosol.vldh.rr;
 //   cytosol.vldh.m1.r = 0.0;
 //   cytosol.vpdh.rr = (cytosol.vpdh.KcatPDH * (cytosol.vpdh.s1.c * cytosol.vpdh.m1.c)) / ((0.1 + cytosol.vpdh.m1.c) * (cytosol.vpdh.s1.c + cytosol.vpdh.KmPYR));
-//   cytosol.vpdh.p1.r = (-cytosol.vpdh.nP1) * cytosol.vpdh.rr;
-//   cytosol.vpdh.s2.r = cytosol.vpdh.nS2 * cytosol.vpdh.rr;
 //   cytosol.vpdh.s1.r = cytosol.vpdh.nS1 * cytosol.vpdh.rr;
+//   cytosol.vpdh.s2.r = cytosol.vpdh.nS2 * cytosol.vpdh.rr;
+//   cytosol.vpdh.p1.r = (-cytosol.vpdh.nP1) * cytosol.vpdh.rr;
 //   cytosol.vpdh.m1.r = 0.0;
 //   cytosol.jak.rr = (cytosol.jak.KcatAK * (cytosol.jak.m1.c * cytosol.jak.s1.c - cytosol.jak.p1.c ^ 2.0)) / (1.0 + (cytosol.jak.s1.c / 0.1 + (cytosol.jak.p1.c / 0.1 + (cytosol.jak.m1.c * (10.0 + cytosol.jak.s1.c / 0.01) + cytosol.jak.p1.c * (10.0 + (cytosol.jak.p1.c / 0.01 + cytosol.jak.s1.c / 3.49))))));
-//   cytosol.jak.p1.r = (-cytosol.jak.nP1) * cytosol.jak.rr;
 //   cytosol.jak.s1.r = cytosol.jak.nS1 * cytosol.jak.rr;
+//   cytosol.jak.p1.r = (-cytosol.jak.nP1) * cytosol.jak.rr;
 //   cytosol.jak.m1.r = 0.0;
 //   cytosol.vgph.rr = (cytosol.vgph.KcatGPH * (cytosol.vgph.m[3].c * (0.002 + (cytosol.vgph.m[2].c + cytosol.vgph.m[1].c / cytosol.vgph.bamp)))) / (((0.08 + 8.0 * (cytosol.vgph.m[2].c + cytosol.vgph.m[1].c / cytosol.vgph.bamp)) / (0.002 + (cytosol.vgph.m[2].c + cytosol.vgph.m[1].c / cytosol.vgph.bamp)) + cytosol.vgph.m[3].c) * (0.014 + (cytosol.vgph.m[2].c + cytosol.vgph.m[1].c / cytosol.vgph.bamp)));
-//   cytosol.vgph.p1.r = (-cytosol.vgph.nP1) * cytosol.vgph.rr;
 //   cytosol.vgph.s1.r = cytosol.vgph.nS1 * cytosol.vgph.rr;
+//   cytosol.vgph.p1.r = (-cytosol.vgph.nP1) * cytosol.vgph.rr;
 //   cytosol.vgph.m[1].r = 0.0;
 //   cytosol.vgph.m[2].r = 0.0;
 //   cytosol.vgph.m[3].r = 0.0;
@@ -1157,10 +1157,10 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytosol.V = cytosol.G3P.n1.V;
 //   cytosol.G3P.c = cytosol.G3P.n / cytosol.V;
 //   cytosol.vgpdh_1.rr = (cytosol.vgpdh_1.KcatGPDH * (cytosol.vgpdh_1.s2.c * (cytosol.vgpdh_1.s1.c * cytosol.vgpdh_1.m1.c))) / ((cytosol.vgpdh_1.m1.c + cytosol.vgpdh_1.KmPN) * (cytosol.vgpdh_1.s1.c + cytosol.vgpdh_1.KmADP) * (cytosol.vgpdh_1.KmGPDH + cytosol.vgpdh_1.s2.c));
-//   cytosol.vgpdh_1.p2.r = (-cytosol.vgpdh_1.nP2) * cytosol.vgpdh_1.rr;
-//   cytosol.vgpdh_1.p1.r = (-cytosol.vgpdh_1.nP1) * cytosol.vgpdh_1.rr;
-//   cytosol.vgpdh_1.s2.r = cytosol.vgpdh_1.nS2 * cytosol.vgpdh_1.rr;
 //   cytosol.vgpdh_1.s1.r = cytosol.vgpdh_1.nS1 * cytosol.vgpdh_1.rr;
+//   cytosol.vgpdh_1.s2.r = cytosol.vgpdh_1.nS2 * cytosol.vgpdh_1.rr;
+//   cytosol.vgpdh_1.p1.r = (-cytosol.vgpdh_1.nP1) * cytosol.vgpdh_1.rr;
+//   cytosol.vgpdh_1.p2.r = (-cytosol.vgpdh_1.nP2) * cytosol.vgpdh_1.rr;
 //   cytosol.vgpdh_1.m1.r = 0.0;
 //   cytosol.vT3P.p1.c = (cytosol.vT3P.s1.c * cytosol.vT3P.kP1) / cytosol.vT3P.kS1;
 //   cytosol.vT3P.s1.r + cytosol.vT3P.p1.r = 0.0;
@@ -1173,15 +1173,15 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   LACext.c = LACext.n1.c;
 //   V = LACext.n1.V;
 //   LACext.c = LACext.n / V;
-//   cr = tcr - cytosol.CP.c;
-//   nad = 0.7 - cytosol.NADH.c;
-//   bamp = (k2amp * kamp) / (kamp + cytosol.AMP.c);
-//   pn = (PNt + (-3.0 * atpt + (-2.0 * adpt + (-2.0 * cytosol.CP.c + ((-2.0 * cytosol.FDP.c + ((-cytosol.G3P.c) - cytosol.DHAP.c) - cytosol.F6P.c - cytosol.G6P.c) * cytosol.V - ampt - cytosol.IMP.c))))) / cytosol.V;
-//   atp = atpt / cytosol.V;
-//   ampt = cytosol.AMP.c * bamp;
-//   atpt = tan + ((-ampt) - cytosol.IMP.c - adpt);
-//   adpt = cytosol.ADP.c * badp;
 //   badp = (k2adp * kadp) / (kadp + cytosol.ADP.c);
+//   adpt = cytosol.ADP.c * badp;
+//   atpt = tan + ((-ampt) - cytosol.IMP.c - adpt);
+//   ampt = cytosol.AMP.c * bamp;
+//   atp = atpt / cytosol.V;
+//   pn = (PNt + (-3.0 * atpt + (-2.0 * adpt + (-2.0 * cytosol.CP.c + ((-2.0 * cytosol.FDP.c + ((-cytosol.G3P.c) - cytosol.DHAP.c) - cytosol.F6P.c - cytosol.G6P.c) * cytosol.V - ampt - cytosol.IMP.c))))) / cytosol.V;
+//   bamp = (k2amp * kamp) / (kamp + cytosol.AMP.c);
+//   nad = 0.7 - cytosol.NADH.c;
+//   cr = tcr - cytosol.CP.c;
 //   der(V) = 0.0;
 //   cytosol.NADH.n1.r + cytosol.vldh.s2.r + cytosol.mitochondria.node_NADH.r + cytosol.vgpdh_1.p1.r = 0.0;
 //   cytosol.FDP.n1.r + cytosol.vpfk.p1.r + cytosol.vald.s1.r = 0.0;
@@ -1306,10 +1306,10 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytosol.GLY.n1.c = cytosol.vgph.s1.c;
 //   cytosol.GLY.n1.V = cytosol.vgph.s1.V;
 //   vef.p1.r + LACext.n1.r = 0.0;
-//   cytosol.node_LAC.c = vef.s1.c;
-//   cytosol.node_LAC.V = vef.s1.V;
 //   LACext.n1.c = vef.p1.c;
 //   LACext.n1.V = vef.p1.V;
+//   cytosol.node_LAC.c = vef.s1.c;
+//   cytosol.node_LAC.V = vef.s1.V;
 // end BioChem_Examples_centralMetabolism_extra_cellular;
 // "
 // "[extra_cellularTotal.mo:1354:9-1354:231:writable] Warning: Component cytosol has the same name as its type .BioChem.Examples.centralMetabolism.cytosol.
@@ -1715,8 +1715,8 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.per2_cry_mRNA_degradation.s1.r = cytoplasm.per2_cry_mRNA_degradation.nS1 * cytoplasm.per2_cry_mRNA_degradation.rr;
 //   cytoplasm.per2_cry_mRNA_degradation.p1.r = (-cytoplasm.per2_cry_mRNA_degradation.nP1) * cytoplasm.per2_cry_mRNA_degradation.rr;
 //   cytoplasm.per2_cry_complex_formation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.per2_cry_complex_formation.k2b * cytoplasm.per2_cry_complex_formation.m1.c ^ cytoplasm.per2_cry_complex_formation.q);
-//   cytoplasm.per2_cry_complex_formation.p1.r = (-cytoplasm.per2_cry_complex_formation.nP1) * cytoplasm.per2_cry_complex_formation.rr;
 //   cytoplasm.per2_cry_complex_formation.s1.r = cytoplasm.per2_cry_complex_formation.nS1 * cytoplasm.per2_cry_complex_formation.rr;
+//   cytoplasm.per2_cry_complex_formation.p1.r = (-cytoplasm.per2_cry_complex_formation.nP1) * cytoplasm.per2_cry_complex_formation.rr;
 //   cytoplasm.per2_cry_complex_formation.m1.r = 0.0;
 //   cytoplasm.cytoplasmic_per2_cry_complex_degradation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.cytoplasmic_per2_cry_complex_degradation.k2d * cytoplasm.cytoplasmic_per2_cry_complex_degradation.s1.c);
 //   cytoplasm.cytoplasmic_per2_cry_complex_degradation.s1.r = cytoplasm.cytoplasmic_per2_cry_complex_degradation.nS1 * cytoplasm.cytoplasmic_per2_cry_complex_degradation.rr;
@@ -1731,8 +1731,8 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.Bmal1_mRNA_degradation.s1.r = cytoplasm.Bmal1_mRNA_degradation.nS1 * cytoplasm.Bmal1_mRNA_degradation.rr;
 //   cytoplasm.Bmal1_mRNA_degradation.p1.r = (-cytoplasm.Bmal1_mRNA_degradation.nP1) * cytoplasm.Bmal1_mRNA_degradation.rr;
 //   cytoplasm.BMAL1_translation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.BMAL1_translation.k5b * cytoplasm.BMAL1_translation.m1.c);
-//   cytoplasm.BMAL1_translation.p1.r = (-cytoplasm.BMAL1_translation.nP1) * cytoplasm.BMAL1_translation.rr;
 //   cytoplasm.BMAL1_translation.s1.r = cytoplasm.BMAL1_translation.nS1 * cytoplasm.BMAL1_translation.rr;
+//   cytoplasm.BMAL1_translation.p1.r = (-cytoplasm.BMAL1_translation.nP1) * cytoplasm.BMAL1_translation.rr;
 //   cytoplasm.BMAL1_translation.m1.r = 0.0;
 //   cytoplasm.cytoplasmic_BMAL1_degradation.rr = cytoplasm.Cytoplasm_V * (cytoplasm.cytoplasmic_BMAL1_degradation.k5d * cytoplasm.cytoplasmic_BMAL1_degradation.s1.c);
 //   cytoplasm.cytoplasmic_BMAL1_degradation.s1.r = cytoplasm.cytoplasmic_BMAL1_degradation.nS1 * cytoplasm.cytoplasmic_BMAL1_degradation.rr;
@@ -1741,9 +1741,9 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.BMAL1_nuclear_import.s1.r = cytoplasm.BMAL1_nuclear_import.nS1 * cytoplasm.BMAL1_nuclear_import.rr;
 //   cytoplasm.BMAL1_nuclear_import.p1.r = (-cytoplasm.BMAL1_nuclear_import.nP1) * cytoplasm.BMAL1_nuclear_import.rr;
 //   der(cytoplasm.V) = 0.0;
-//   y5_y6_y7 = cytoplasm.y5.c + (nucleus.y6.c + nucleus.y7.c);
-//   trans_Bmal1 = (v4b * nucleus.y3.c ^ r_sbml) / (k4b ^ r_sbml + nucleus.y3.c ^ r_sbml);
 //   trans_per2_cry = (v1b * (nucleus.y7.c + c_sbml)) / (k1b * (1.0 + (nucleus.y3.c / k1i) ^ hill_coeff) + (nucleus.y7.c + c_sbml));
+//   trans_Bmal1 = (v4b * nucleus.y3.c ^ r_sbml) / (k4b ^ r_sbml + nucleus.y3.c ^ r_sbml);
+//   y5_y6_y7 = cytoplasm.y5.c + (nucleus.y6.c + nucleus.y7.c);
 //   der(V) = 0.0;
 //   nucleus.y3.n1.r + (-nucleus.y3_node.r) + nucleus.per2_cry_nuclear_export.s1.r + nucleus.nuclear_per2_cry_complex_degradation.s1.r = 0.0;
 //   nucleus.y6.n1.r + (-nucleus.y6_node.r) + nucleus.BMAL1_nuclear_export.s1.r + nucleus.nuclear_BMAL1_degradation.s1.r + nucleus.BMAL1_activation.s1.r + nucleus.BMAL1_deactivation.p1.r = 0.0;
@@ -1842,14 +1842,14 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.Bmal1_mRNA_degradation.s1.V;
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.Bmal1_transcription.p1.V;
 //   cytoplasm.BMAL1_translation.m1.V = cytoplasm.y4.n1.V;
-//   cytoplasm.y3_node.c = nucleus.y3_node.c;
-//   cytoplasm.y3_node.V = nucleus.y3_node.V;
-//   cytoplasm.y2_node.c = nucleus.y2_node.c;
-//   cytoplasm.y2_node.V = nucleus.y2_node.V;
-//   cytoplasm.y6_node.c = nucleus.y6_node.c;
-//   cytoplasm.y6_node.V = nucleus.y6_node.V;
 //   cytoplasm.y5_node.c = nucleus.y5_node.c;
 //   cytoplasm.y5_node.V = nucleus.y5_node.V;
+//   cytoplasm.y6_node.c = nucleus.y6_node.c;
+//   cytoplasm.y6_node.V = nucleus.y6_node.V;
+//   cytoplasm.y2_node.c = nucleus.y2_node.c;
+//   cytoplasm.y2_node.V = nucleus.y2_node.V;
+//   cytoplasm.y3_node.c = nucleus.y3_node.c;
+//   cytoplasm.y3_node.V = nucleus.y3_node.V;
 // end BioChem_Examples_CircadianOscillator_Container;
 // "
 // ""
@@ -1958,10 +1958,10 @@ checkModel(BioChem.Examples.MultiCompartments.Utilities.SmallCompartment); getEr
 //   Jpump.rr = (Jpump.Fpump_0 * Jpump.s1.c) / (Jpump.Kpump + Jpump.s1.c);
 //   Jpump.s1.r = Jpump.nS1 * Jpump.rr;
 //   Jpump.p1.r = (-Jpump.nP1) * Jpump.rr;
-//   der(p3_sbml) = (-k31) * (Ca_Cyt.c * p3_sbml) + k31 * (K3 * (1.0 - p3_sbml));
-//   p2_sbml = Ca_Cyt.c / (K2 + Ca_Cyt.c);
-//   p1_sbml = p11 + (p12 * n_sbml) / (K1 + n_sbml);
 //   n_sbml = n0 * (exp((-kbN) * time) + kappa * (1.0 - exp((-kbN) * time)));
+//   p1_sbml = p11 + (p12 * n_sbml) / (K1 + n_sbml);
+//   p2_sbml = Ca_Cyt.c / (K2 + Ca_Cyt.c);
+//   der(p3_sbml) = (-k31) * (Ca_Cyt.c * p3_sbml) + k31 * (K3 * (1.0 - p3_sbml));
 //   der(V) = 0.0;
 //   Endoplasmic_Reticulum.CaER.n1.r + Endoplasmic_Reticulum.Jch.s1.r + Endoplasmic_Reticulum.Jleak.s1.r + (-Endoplasmic_Reticulum.CaER_node.r) = 0.0;
 //   Endoplasmic_Reticulum.Ca_Cyt_node.r + Ca_Cyt.n1.r + Jpump.s1.r = 0.0;

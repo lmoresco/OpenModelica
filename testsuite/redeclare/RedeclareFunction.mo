@@ -32,24 +32,24 @@ model RedeclareFunction
 end RedeclareFunction;
 
 // Result:
-// function RedeclareFunction.A2.f
+// function RedeclareFunction.B.A2.f
 //   input Real[2] a;
 //   output Real b;
 // algorithm
 //   b := {a[1],a[2]} * /*/tp:REAL[2]/*/(1:2);
-// end RedeclareFunction.A2.f;
+// end RedeclareFunction.B.A2.f;
 // 
-// function RedeclareFunction.A3.f
+// function RedeclareFunction.B.A3.f
 //   input Real[3] a;
 //   output Real b;
 // algorithm
 //   b := {a[1],a[2],a[3]} * /*/tp:REAL[3]/*/(1:3);
-// end RedeclareFunction.A3.f;
+// end RedeclareFunction.B.A3.f;
 // 
 // class RedeclareFunction
 //   Real b.nA2 = 2.0;
 //   Real b.nA3 = 3.0;
-//   Real b.x = RedeclareFunction.A2.f(1.0:b.nA2);
-//   Real b.y = RedeclareFunction.A3.f(1.0:b.nA3);
+//   Real b.x = RedeclareFunction.B.A2.f(1.0:b.nA2);
+//   Real b.y = RedeclareFunction.B.A3.f(1.0:b.nA3);
 // end RedeclareFunction;
 // endResult
