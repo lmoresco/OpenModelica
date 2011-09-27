@@ -9175,7 +9175,9 @@ algorithm
         l_namestr = cref(Tpl.emptyTxt, i_name);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("nls_x["));
         txt = Tpl.writeStr(txt, intString(x_i0));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = extraPolate($P$old"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("] = extraPolate("));
+        txt = Tpl.writeText(txt, l_namestr);
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(",$P$old"));
         txt = Tpl.writeText(txt, l_namestr);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(",$P$old2"));
         txt = Tpl.writeText(txt, l_namestr);
