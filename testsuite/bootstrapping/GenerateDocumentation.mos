@@ -3,13 +3,7 @@
 
 setCommandLineOptions({"+g=MetaModelica","+d=noevalfunc"});
 runScript("LoadCompilerSources.mos");
-/*
-loadFile("../../Compiler/BackEnd/BackendDAECreate.mo");
-loadFile("../../Compiler/BackEnd/BackendDAEEXT.mo");
-loadFile("../../Compiler/FrontEnd/Absyn.mo");
-loadFile("../../Compiler/Util/System.mo");
-loadFile("../../Compiler/Util/Util.mo");
-*/
+
 writeFile("GenerateDocumentation.b.mos","getClassNames()");
 strs:=strtok(OpenModelica.Scripting.runScript("GenerateDocumentation.b.mos"),",\n}{");
 loadFile("GenerateDocumentation.mo");
