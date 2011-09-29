@@ -2,7 +2,7 @@ package AssignTwoType "file AssignTwoType.mo"
 
 type ExpLst = list<Exp>;
 
-// Abstract syntax for the Assigntwotype language 
+// Abstract syntax for the Assigntwotype language 
 
 uniontype Program "a program"
   record PROGRAM

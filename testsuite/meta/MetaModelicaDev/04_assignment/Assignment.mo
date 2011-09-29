@@ -2,7 +2,7 @@ package Assignment "Assignment.mo"
 
 type ExpLst = list<Exp> "a list of expressions";
 
-// Abstract syntax for the Assignments language
+// Abstract syntax for the Assignments language
 uniontype Program "a program"
   record PROGRAM
     ExpLst expLst;
@@ -146,7 +146,7 @@ algorithm
       Exp exp,e1,e2,e;
       BinOp binop;
       UnOp unop;
-    // eval of integer record returns the integer value
+    // eval of integer record returns the integer value
     case (env,INT(integer = ival)) then (env,ival);
     // eval of an identifier node will lookup the identifier and return a
     // value if present; otherwise insert a binding to zero, and return zero.
@@ -167,7 +167,7 @@ algorithm
         (env3,v2) = eval(env2, e2);
         v3 = applyBinop(binop, v1, v2);
       then (env3,v3);
-    // eval of a node NEG,e etc. in an environment env
+    // eval of a node NEG,e etc. in an environment env
     case (env1,UNARY(unOp = unop,exp = e))
       equation 
         (env2,v1) = eval(env1, e);

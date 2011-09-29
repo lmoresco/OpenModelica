@@ -59,7 +59,7 @@ algorithm
       Value value;
       Env env;
       String id;
-    // Return value of id in env. If id not present, add id and return 0
+    // Return value of id in env. If id not present, add id and return 0
     case (env,id)
       equation 
         failure(_ = lookup(env, id));
