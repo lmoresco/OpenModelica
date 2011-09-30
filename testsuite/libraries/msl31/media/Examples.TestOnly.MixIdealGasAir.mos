@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 // Result:
 // true
 // ""
+// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
@@ -190,7 +192,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 //   protected Real[2] Y(unit = \"mol/mol\") = Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.massToMoleFractions({state.X[1],state.X[2]},{0.0280134,0.0280134}) \"Molar fractions\";
 // algorithm
-//   s := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.s_TX(state.T,{state.X[1],state.X[2]}) + (-8.314472 * if state.X[1] < 1e-15 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1] + (-8.314472 * if state.X[2] < 1e-15 then Y[2] else log((Y[2] * state.p) / 101325.0) * state.X[2]) / MMX[2];
+//   s := Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.s_TX(state.T,{state.X[1],state.X[2]}) + (-8.314472 * if state.X[1] < 1e-015 then Y[1] else log((Y[1] * state.p) / 101325.0) * state.X[1]) / MMX[1] + (-8.314472 * if state.X[2] < 1e-015 then Y[2] else log((Y[2] * state.p) / 101325.0) * state.X[2]) / MMX[2];
 // end Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.TestOnly.MixIdealGasAir.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
@@ -262,7 +264,7 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   input Real mu(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) \"Dipole moment of gas molecule\";
 //   input Real k = 0.0 \"Special correction for highly polar substances\";
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity of gas\";
-//   protected parameter Real Const1_SI = 1.28973494369967e-08 \"Constant in formula for eta converted to SI units\";
+//   protected parameter Real Const1_SI = 1.28973494369967e-008 \"Constant in formula for eta converted to SI units\";
 //   protected parameter Real Const2_SI = 0.1313 \"Constant in formula for mur converted to SI units\";
 //   protected Real mur = (Const2_SI * mu) / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
 //   protected Real Fc = 1.0 + (-0.2756 * w + (0.059035 * mur ^ 4.0 + k)) \"Factor to account for molecular shape and polarities of gas\";
@@ -390,9 +392,9 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   medium.state.X[2] = medium.X[2];
 //   medium.Xi[1] = medium.X[1];
 //   medium.Xi[2] = medium.X[2];
-//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium.X[1] >= -1e-005 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium.X[2] >= -1e-05 and medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium.X[2] >= -1e-005 and medium.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");
@@ -411,9 +413,9 @@ checkModel(Modelica.Media.Examples.TestOnly.MixIdealGasAir); getErrorString();
 //   medium2.state.X[2] = medium2.X[2];
 //   medium2.Xi[1] = medium2.X[1];
 //   medium2.Xi[2] = medium2.X[2];
-//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -1e-05 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium2.X[2] >= -1e-005 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");

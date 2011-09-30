@@ -67,7 +67,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -88,7 +88,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -109,7 +109,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -157,7 +157,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
@@ -262,8 +262,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   Real ambient.port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real ambient.port.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.SimpleAir\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -291,7 +291,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -314,7 +314,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -335,7 +335,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"SimpleAir\" + \"
 // of medium \" + \"SimpleAir\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleAir\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");
@@ -366,11 +366,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir); getErro
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir completed successfully.
 // 
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.Air.SimpleAir has 60 equation(s) and 60 variable(s).
 // 36 of these are trivial equation(s).

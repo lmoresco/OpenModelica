@@ -31,15 +31,16 @@ Examples.TwoPhaseWater.TestTwoPhaseStates.mos \
 Examples.WaterIF97.mos \
 Incompressible.Examples.Glycol47.mos \
 Incompressible.Examples.TestGlycol.mos \
-Water.StandardWater.mos
-
-# test that currently fail. Move up when fixed. 
-# Run make testfailing
-FAILINGTESTFILES=  \
+Water.StandardWater.mos \
 Examples.Tests.MediaTestModels.Air.MoistAir.mos \
 Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas.mos \
 Examples.Tests.MediaTestModels.Incompressible.Essotherm650.mos \
 Examples.Tests.MediaTestModels.Incompressible.Glycol47.mos \
+Examples.TwoPhaseWater.ExtendedProperties.mos
+
+# test that currently fail. Move up when fixed. 
+# Run make testfailing
+FAILINGTESTFILES=  
 
 .PHONY : test
 

@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
 checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.TestOnly.TestMedia.TemplateMedium); getErrorS
 // Result:
 // true
 // ""
+// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");

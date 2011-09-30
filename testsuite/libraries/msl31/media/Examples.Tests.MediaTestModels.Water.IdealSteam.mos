@@ -60,7 +60,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -103,7 +103,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -133,7 +133,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -154,7 +154,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -175,7 +175,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState\"
@@ -209,7 +209,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -252,7 +252,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.Components.ShortPipe.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -295,7 +295,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.specificEnthalpy;
 // 
 // function Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam.Medium.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -325,7 +325,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Interfaces.PartialMixtureMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -346,7 +346,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Interfaces.PartialMixtureMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMixtureMedium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Interfaces.PartialMixtureMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMixtureMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMixtureMedium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Water.IdealSteam.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.IdealSteam.ThermodynamicState\"
@@ -380,7 +380,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   input Modelica.Media.Water.IdealSteam.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := Modelica.Media.Water.IdealSteam.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Water.IdealSteam.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   h := Modelica.Media.Water.IdealSteam.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),state.T,true,Modelica.Media.Water.IdealSteam.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 // end Modelica.Media.Water.IdealSteam.specificEnthalpy;
 // 
 // function Modelica.Media.Water.IdealSteam.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
@@ -494,8 +494,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 //   Real ambient.port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real ambient.port.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.IdealGasSteam\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.IdealGasSteam\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -516,13 +516,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 // \");
 //   volume.medium.MM = 0.01801528;
 //   volume.medium.R = 461.523329085088;
-//   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),volume.medium.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   volume.medium.h = Modelica.Media.Examples.Tests.Components.PortVolume.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),volume.medium.T,true,Modelica.Media.Examples.Tests.Components.PortVolume.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   volume.medium.u = volume.medium.h - volume.medium.R * volume.medium.T;
 //   volume.medium.d = volume.medium.p / (volume.medium.T * volume.medium.R);
 //   volume.medium.state.T = volume.medium.T;
 //   volume.medium.state.p = volume.medium.p;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
 // of medium \" + \"IdealGasSteam\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"IdealGasSteam\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -538,13 +538,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 // \");
 //   fixedMassFlowRate.medium.MM = 0.01801528;
 //   fixedMassFlowRate.medium.R = 461.523329085088;
-//   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),fixedMassFlowRate.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   fixedMassFlowRate.medium.h = Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),fixedMassFlowRate.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedMassFlowRate.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   fixedMassFlowRate.medium.u = fixedMassFlowRate.medium.h - fixedMassFlowRate.medium.R * fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.d = fixedMassFlowRate.medium.p / (fixedMassFlowRate.medium.T * fixedMassFlowRate.medium.R);
 //   fixedMassFlowRate.medium.state.T = fixedMassFlowRate.medium.T;
 //   fixedMassFlowRate.medium.state.p = fixedMassFlowRate.medium.p;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
 // of medium \" + \"IdealGasSteam\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"IdealGasSteam\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -558,13 +558,13 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 // \");
 //   ambient.medium.MM = 0.01801528;
 //   ambient.medium.R = 461.523329085088;
-//   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-06,4.95504349e-09,-1.336933246e-12},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-07,9.42646893e-11,-4.82238053e-15},{-13842.86509,-7.97814851},461.523329085088),ambient.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   ambient.medium.h = Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"H2O\",0.01801528,-13423382.8172529,549760.647628014,1000.0,{-39479.6083,575.573102,0.931782653,0.00722271286,-7.34255737e-006,4.95504349e-009,-1.336933246e-012},{-33039.7431,17.24205775},{1034972.096,-2412.698562,4.64611078,0.002291998307,-6.83683048e-007,9.42646893e-011,-4.82238053e-015},{-13842.86509,-7.97814851},461.523329085088),ambient.medium.T,true,Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   ambient.medium.u = ambient.medium.h - ambient.medium.R * ambient.medium.T;
 //   ambient.medium.d = ambient.medium.p / (ambient.medium.T * ambient.medium.R);
 //   ambient.medium.state.T = ambient.medium.T;
 //   ambient.medium.state.p = ambient.medium.p;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"H2O\" + \"
 // of medium \" + \"IdealGasSteam\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"IdealGasSteam\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");
@@ -594,17 +594,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam); getE
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam completed successfully.
 // 
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.Water.IdealSteam has 60 equation(s) and 60 variable(s).
 // 36 of these are trivial equation(s).

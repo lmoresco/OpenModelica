@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // Result:
 // true
 // ""
+// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
@@ -38,7 +40,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real x \"Abszissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -342,7 +344,7 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   input Real mu(quantity = \"ElectricDipoleMoment\", unit = \"debye\", min = 0.0, max = 2.0) \"Dipole moment of gas molecule\";
 //   input Real k = 0.0 \"Special correction for highly polar substances\";
 //   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic viscosity of gas\";
-//   protected parameter Real Const1_SI = 1.28973494369967e-08 \"Constant in formula for eta converted to SI units\";
+//   protected parameter Real Const1_SI = 1.28973494369967e-008 \"Constant in formula for eta converted to SI units\";
 //   protected parameter Real Const2_SI = 0.1313 \"Constant in formula for mur converted to SI units\";
 //   protected Real mur = (Const2_SI * mu) / sqrt(Vc * Tc) \"Dimensionless dipole moment of gas molecule\";
 //   protected Real Fc = 1.0 + (-0.2756 * w + (0.059035 * mur ^ 4.0 + k)) \"Factor to account for molecular shape and polarities of gas\";
@@ -460,14 +462,14 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   Real cp2(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) = Modelica.Media.Examples.MixtureGases.Medium2.specificHeatCapacityCp(medium2.state);
 //   Real eta2(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) = Modelica.Media.Examples.MixtureGases.Medium2.dynamicViscosity(medium2.state);
 //   Real lambda2(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) = Modelica.Media.Examples.MixtureGases.Medium2.thermalConductivity(medium2.state,1);
-//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 100500.0 \"Absolute pressure of medium\";
-//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 302.0 \"Temperature of medium\";
-//   Real state2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.3 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.2 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
-//   Real state2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 0.1 \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
+//   Real state2.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
+//   Real state2.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[2](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[3](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[4](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[5](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
+//   Real state2.X[6](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
 //   Real smoothState.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Absolute pressure of medium\";
 //   Real smoothState.T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature of medium\";
 //   Real smoothState.X[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions (= (component mass)/total mass  m_i/m)\";
@@ -495,9 +497,9 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium1.state.X[2] = medium1.X[2];
 //   medium1.Xi[1] = medium1.X[1];
 //   medium1.Xi[2] = medium1.X[2];
-//   assert(medium1.X[1] >= -1e-05 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium1.X[1] >= -1e-005 and medium1.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium1.X[1],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
-//   assert(medium1.X[2] >= -1e-05 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
+//   assert(medium1.X[2] >= -1e-005 and medium1.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium1.X[2],0,true,6) + \"of substance \" + \"Oxygen\" + \"
 // of medium \" + \"CombustionAirN2O2\" + \" is not in the range 0..1\");
 //   assert(medium1.p >= 0.0,\"Pressure (= \" + String(medium1.p,0,true,6) + \" Pa) of medium \\\"\" + \"CombustionAirN2O2\" + \"\\\" is negative
 // (Temperature = \" + String(medium1.T,0,true,6) + \" K)\");
@@ -524,17 +526,17 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 //   medium2.Xi[4] = medium2.X[4];
 //   medium2.Xi[5] = medium2.X[5];
 //   medium2.Xi[6] = medium2.X[6];
-//   assert(medium2.X[1] >= -1e-05 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
+//   assert(medium2.X[1] >= -1e-005 and medium2.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium2.X[1],0,true,6) + \"of substance \" + \"Methane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[2] >= -1e-05 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
+//   assert(medium2.X[2] >= -1e-005 and medium2.X[2] <= 1.00001,\"Mass fraction X[2] = \" + String(medium2.X[2],0,true,6) + \"of substance \" + \"Ethane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[3] >= -1e-05 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
+//   assert(medium2.X[3] >= -1e-005 and medium2.X[3] <= 1.00001,\"Mass fraction X[3] = \" + String(medium2.X[3],0,true,6) + \"of substance \" + \"Propane\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[4] >= -1e-05 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
+//   assert(medium2.X[4] >= -1e-005 and medium2.X[4] <= 1.00001,\"Mass fraction X[4] = \" + String(medium2.X[4],0,true,6) + \"of substance \" + \"N-Butane,\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[5] >= -1e-05 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
+//   assert(medium2.X[5] >= -1e-005 and medium2.X[5] <= 1.00001,\"Mass fraction X[5] = \" + String(medium2.X[5],0,true,6) + \"of substance \" + \"Nitrogen\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
-//   assert(medium2.X[6] >= -1e-05 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
+//   assert(medium2.X[6] >= -1e-005 and medium2.X[6] <= 1.00001,\"Mass fraction X[6] = \" + String(medium2.X[6],0,true,6) + \"of substance \" + \"Carbondioxide\" + \"
 // of medium \" + \"SimpleNaturalGas\" + \" is not in the range 0..1\");
 //   assert(medium2.p >= 0.0,\"Pressure (= \" + String(medium2.p,0,true,6) + \" Pa) of medium \\\"\" + \"SimpleNaturalGas\" + \"\\\" is negative
 // (Temperature = \" + String(medium2.T,0,true,6) + \" K)\");
@@ -580,8 +582,8 @@ checkModel(Modelica.Media.Examples.MixtureGases); getErrorString();
 // [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:534:5-535:65:writable] Error: No constant value for variable data.R in scope Modelica.Media.IdealGases.Common.SingleGasNasa.thermalConductivityEstimate.
 // 
-// Class Modelica.Media.Examples.MixtureGases has 75 equation(s) and 75 variable(s).
-// 38 of these are trivial equation(s).
+// Class Modelica.Media.Examples.MixtureGases has 67 equation(s) and 75 variable(s).
+// 30 of these are trivial equation(s).
 // "
 // ""
 // endResult

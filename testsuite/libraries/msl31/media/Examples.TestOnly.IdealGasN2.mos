@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 // Result:
 // true
 // ""
+// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
@@ -72,28 +74,28 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
 // algorithm
-//   s := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),state.T) + -296.803386950531 * log(state.p / 101325.0);
+//   s := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.s0_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T) + -296.803386950531 * log(state.p / 101325.0);
 // end Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificEntropy;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
 // algorithm
-//   cp := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),state.T);
+//   cp := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T);
 // end Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCp;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCv \"Compute specific heat capacity at constant volume from temperature and gas data\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real cv(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant volume\";
 // algorithm
-//   cv := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),state.T) + -296.803386950531;
+//   cv := Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T) + -296.803386950531;
 // end Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCv;
 // 
 // function Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.velocityOfSound \"Return velocity of sound\"
 //   input Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real a(quantity = \"Velocity\", unit = \"m/s\", min = 0.0, max = 100000.0, start = 1000.0, nominal = 1000.0) \"Velocity of sound\";
 // algorithm
-//   a := sqrt(max(0.0,(296.803386950531 * state.T * Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),state.T)) / Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCv(state)));
+//   a := sqrt(max(0.0,(296.803386950531 * state.T * Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.cp_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T)) / Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.specificHeatCapacityCv(state)));
 // end Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.velocityOfSound;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
@@ -149,13 +151,13 @@ checkModel(Modelica.Media.Examples.TestOnly.IdealGasN2); getErrorString();
 // \");
 //   medium.MM = 0.0280134;
 //   medium.R = 296.803386950531;
-//   medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-05,-9.62579362e-09,2.519705809e-12},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-07,-1.923105485e-11,1.061954386e-15},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
+//   medium.h = Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),medium.T,true,Modelica.Media.Examples.TestOnly.IdealGasN2.Medium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
 //   medium.u = medium.h - medium.R * medium.T;
 //   medium.d = medium.p / (medium.T * medium.R);
 //   medium.state.T = medium.T;
 //   medium.state.p = medium.p;
 //   medium.X[1] = 1.0;
-//   assert(medium.X[1] >= -1e-05 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"N2\" + \"
+//   assert(medium.X[1] >= -1e-005 and medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(medium.X[1],0,true,6) + \"of substance \" + \"N2\" + \"
 // of medium \" + \"Nitrogen\" + \" is not in the range 0..1\");
 //   assert(medium.p >= 0.0,\"Pressure (= \" + String(medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"Nitrogen\" + \"\\\" is negative
 // (Temperature = \" + String(medium.T,0,true,6) + \" K)\");

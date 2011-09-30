@@ -46,7 +46,7 @@ all : test
 
 omc-diff :
 	$(MAKE) -C difftool
-test : slow.logs fast.logs
+test : fast.logs slow.logs
 	@cat `ls $(FASTLOGS) $(SLOWLOGS) | sort`
 	@rm -f {mofiles/drmodelica,streams,mofiles,mofiles/msl,meta,records,java,interactive,mosfiles-nosim}/*.{dll,so,exe};
 test-oldresult:

@@ -133,7 +133,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -154,7 +154,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_a.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
@@ -175,7 +175,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.Components.FluidPort_b.Medium.specificEnthalpy_pTX;
 // 
 // function Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.PortVolume.Medium.ThermodynamicState\"
@@ -289,7 +289,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
 // algorithm
-//   h := unbox(Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(#(p),#(T),#(X))));
+//   h := Modelica.Media.Interfaces.PartialMedium.specificEnthalpy(Modelica.Media.Interfaces.PartialMedium.setState_pTX(p,T,X));
 // end Modelica.Media.Interfaces.PartialMedium.specificEnthalpy_pTX;
 // 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
@@ -394,8 +394,8 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   Real ambient.port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real ambient.port.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
 //   Real ambient.port.H_flow(quantity = \"EnthalpyFlowRate\", unit = \"W\", min = -100000000.0, max = 100000000.0, nominal = 1000.0) \"Enthalpy flow rate into the component (if m_flow > 0, H_flow = m_flow*h)\";
-//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-10, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
-//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-10, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
+//   parameter Real shortPipe.dp_nominal(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 1e-010, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 10000.0 \"Nominal pressure drop\";
+//   parameter Real shortPipe.m_flow_nominal(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 1e-010, max = 100000.0) = 1.0 \"Nominal mass flow rate at nominal pressure drop\";
 //   Real shortPipe.port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure in the connection point\";
 //   Real shortPipe.port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real shortPipe.port_a.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific mixture enthalpy in the connection point\";
@@ -410,7 +410,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   volume.medium.p = volume.p_start;
 //   volume.medium.T = volume.T_start;
 // equation
-//   volume.medium.d = 1068.31410608573 + 997.05 * (4.5154e-10 * volume.medium.p + -0.00025713 * volume.medium.T);
+//   volume.medium.d = 1068.31410608573 + 997.05 * (4.5154e-010 * volume.medium.p + -0.00025713 * volume.medium.T);
 //   volume.medium.h = -1058360.84151583 + (4181.9 * volume.medium.T + 0.000931226408404794 * volume.medium.p);
 //   volume.medium.u = volume.medium.h + (-volume.medium.p) / volume.medium.d;
 //   volume.medium.p = volume.medium.state.p;
@@ -418,7 +418,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   volume.medium.MM = 0.018015268;
 //   volume.medium.R = 8.3144 / volume.medium.MM;
 //   volume.medium.X[1] = 1.0;
-//   assert(volume.medium.X[1] >= -1e-05 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
+//   assert(volume.medium.X[1] >= -1e-005 and volume.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(volume.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
 // of medium \" + \"unusablePartialMedium\" + \" is not in the range 0..1\");
 //   assert(volume.medium.p >= 0.0,\"Pressure (= \" + String(volume.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"unusablePartialMedium\" + \"\\\" is negative
 // (Temperature = \" + String(volume.medium.T,0,true,6) + \" K)\");
@@ -428,7 +428,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   volume.U = volume.m * volume.medium.u;
 //   der(volume.m) = volume.port.m_flow;
 //   der(volume.U) = volume.port.H_flow;
-//   fixedMassFlowRate.medium.d = 1068.31410608573 + 997.05 * (4.5154e-10 * fixedMassFlowRate.medium.p + -0.00025713 * fixedMassFlowRate.medium.T);
+//   fixedMassFlowRate.medium.d = 1068.31410608573 + 997.05 * (4.5154e-010 * fixedMassFlowRate.medium.p + -0.00025713 * fixedMassFlowRate.medium.T);
 //   fixedMassFlowRate.medium.h = -1058360.84151583 + (4181.9 * fixedMassFlowRate.medium.T + 0.000931226408404794 * fixedMassFlowRate.medium.p);
 //   fixedMassFlowRate.medium.u = fixedMassFlowRate.medium.h + (-fixedMassFlowRate.medium.p) / fixedMassFlowRate.medium.d;
 //   fixedMassFlowRate.medium.p = fixedMassFlowRate.medium.state.p;
@@ -436,7 +436,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   fixedMassFlowRate.medium.MM = 0.018015268;
 //   fixedMassFlowRate.medium.R = 8.3144 / fixedMassFlowRate.medium.MM;
 //   fixedMassFlowRate.medium.X[1] = 1.0;
-//   assert(fixedMassFlowRate.medium.X[1] >= -1e-05 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
+//   assert(fixedMassFlowRate.medium.X[1] >= -1e-005 and fixedMassFlowRate.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(fixedMassFlowRate.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
 // of medium \" + \"unusablePartialMedium\" + \" is not in the range 0..1\");
 //   assert(fixedMassFlowRate.medium.p >= 0.0,\"Pressure (= \" + String(fixedMassFlowRate.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"unusablePartialMedium\" + \"\\\" is negative
 // (Temperature = \" + String(fixedMassFlowRate.medium.T,0,true,6) + \" K)\");
@@ -444,7 +444,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   fixedMassFlowRate.medium.p = fixedMassFlowRate.port.p;
 //   fixedMassFlowRate.port.m_flow = -fixedMassFlowRate.m_flow;
 //   fixedMassFlowRate.port.H_flow = semiLinear(fixedMassFlowRate.port.m_flow,fixedMassFlowRate.port.h,fixedMassFlowRate.medium.h);
-//   ambient.medium.d = 1068.31410608573 + 997.05 * (4.5154e-10 * ambient.medium.p + -0.00025713 * ambient.medium.T);
+//   ambient.medium.d = 1068.31410608573 + 997.05 * (4.5154e-010 * ambient.medium.p + -0.00025713 * ambient.medium.T);
 //   ambient.medium.h = -1058360.84151583 + (4181.9 * ambient.medium.T + 0.000931226408404794 * ambient.medium.p);
 //   ambient.medium.u = ambient.medium.h + (-ambient.medium.p) / ambient.medium.d;
 //   ambient.medium.p = ambient.medium.state.p;
@@ -452,7 +452,7 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 //   ambient.medium.MM = 0.018015268;
 //   ambient.medium.R = 8.3144 / ambient.medium.MM;
 //   ambient.medium.X[1] = 1.0;
-//   assert(ambient.medium.X[1] >= -1e-05 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
+//   assert(ambient.medium.X[1] >= -1e-005 and ambient.medium.X[1] <= 1.00001,\"Mass fraction X[1] = \" + String(ambient.medium.X[1],0,true,6) + \"of substance \" + \"unusablePartialMedium\" + \"
 // of medium \" + \"unusablePartialMedium\" + \" is not in the range 0..1\");
 //   assert(ambient.medium.p >= 0.0,\"Pressure (= \" + String(ambient.medium.p,0,true,6) + \" Pa) of medium \\\"\" + \"unusablePartialMedium\" + \"\\\" is negative
 // (Temperature = \" + String(ambient.medium.T,0,true,6) + \" K)\");
@@ -483,11 +483,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdW
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater completed successfully.
 // 
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearColdWater has 60 equation(s) and 60 variable(s).
 // 33 of these are trivial equation(s).

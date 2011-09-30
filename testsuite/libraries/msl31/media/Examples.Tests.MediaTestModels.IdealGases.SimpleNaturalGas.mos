@@ -21,9 +21,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // "
 // "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
-// [package.mo:4217:17-4225:21:writable] Warning: Forcing full instantiation of partial class setState_pTX during checkModel.
-// [package.mo:4374:17-4379:25:writable] Warning: Forcing full instantiation of partial class specificEnthalpy during checkModel.
 // [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.92, quantity=\"MassFraction\", unit=\"1\")[6]=Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // "

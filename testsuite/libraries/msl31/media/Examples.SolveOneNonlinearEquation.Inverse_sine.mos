@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
 checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine); getE
 // Result:
 // true
 // ""
+// true
 // ""
 // "[package.mo:8285:8-8285:71:writable] Error: Class Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.f_nonlinear not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine.Inverse_sine_definition.solve (looking for a function or record).
 // [package.mo:3611:7-3611:90:writable] Error: Class Inverse_sine_definition.solve not found in scope Modelica.Media.Examples.SolveOneNonlinearEquation.Inverse_sine (looking for a function or record).

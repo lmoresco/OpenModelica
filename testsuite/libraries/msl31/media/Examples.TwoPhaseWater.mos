@@ -6,6 +6,7 @@
 //
 
 loadModel(Modelica,{"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
@@ -13,6 +14,7 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 // Result:
 // true
 // ""
+// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
@@ -34,7 +36,7 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 //   constant Boolean reducedX = true \"= true if medium contains the equation sum(X) = 1.0; set reducedX=true if only one substance (see docu for details)\";
 //   constant Boolean fixedX = true \"= true if medium contains the equation X = reference_X\";
 //   constant Real p_default(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 101325.0 \"Default value for pressure of medium (for initialization)\";
-//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Default value for temperature of medium (for initialization)\";
+//   constant Real T_default(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.SIunits.Conversions.from_degC(20.0) \"Default value for temperature of medium (for initialization)\";
 //   constant Boolean smoothModel = false \"true if the (derived) model should not generate state events\";
 //   constant Boolean onePhase = false \"true if the (derived) model should never be called with two-phase inputs\";
 //   constant String fluidConstants[1].iupacName = \"oxidane\" \"complete IUPAC name (or common name, if non-existent)\";
@@ -44,7 +46,7 @@ checkModel(Modelica.Media.Examples.TwoPhaseWater); getErrorString();
 //   constant Real fluidConstants[1].molarMass(quantity = \"MolarMass\", unit = \"kg/mol\", min = 0.001, max = 0.25, nominal = 0.032) = 0.018015268 \"molar mass\";
 //   constant Real fluidConstants[1].criticalTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 647.096 \"critical temperature\";
 //   constant Real fluidConstants[1].criticalPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 22064000.0 \"critical pressure\";
-//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-06, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-05 \"critical molar Volume\";
+//   constant Real fluidConstants[1].criticalMolarVolume(quantity = \"MolarVolume\", unit = \"m3/mol\", min = 1e-006, max = 1000000.0, nominal = 1.0) = 5.59480372670807e-005 \"critical molar Volume\";
 //   constant Real fluidConstants[1].acentricFactor = 0.344 \"Pitzer acentric factor\";
 //   constant Real fluidConstants[1].triplePointTemperature(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 273.16 \"triple point temperature\";
 //   constant Real fluidConstants[1].triplePointPressure(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = 611.657 \"triple point pressure\";
