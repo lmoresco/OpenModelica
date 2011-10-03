@@ -10,7 +10,8 @@ getErrorString();
 // Result:
 // true
 // 
-// "[ErrorFunctionCallNumArgs.mo:12:3-12:12:writable] Error: No matching function found for fn()
+// "[ErrorFunctionCallNumArgs.mo:12:3-12:12:writable] Error: Function argument i was not given by the function call, and does not have a default value.
+// [ErrorFunctionCallNumArgs.mo:12:3-12:12:writable] Error: No matching function found for fn()
 // of type
 //   .ErrorFunctionCallNumArgs.fn<function>(i:Integer) => String in component <NO COMPONENT>
 // candidates are 

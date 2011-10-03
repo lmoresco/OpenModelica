@@ -12,6 +12,7 @@ ExternalFunctionResultOrder.mos\
 ExternalLibraryFunction.mos\
 FinalTests.mos \
 FuncNamespace.mos \
+FunctionDefaultArg.mos \
 GroupImport.mos \
 IntMulOverflow.mos IntPowOverflow.mos IntDivOverflow.mos IntAddSubOverflow.mos \
 LookupBuiltin.mos \
