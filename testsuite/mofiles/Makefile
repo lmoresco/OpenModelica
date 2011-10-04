@@ -192,6 +192,7 @@ Delay4.mo \
 Delay5.mo \
 Delay6.mo \
 Delay7.mo \
+Delay8.mo \
 Delay.mo \
 DependsMutual.mo \
 DependsRecursive.mo \

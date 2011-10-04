@@ -2,6 +2,9 @@ A full copy of Modelica Standard Library 3.1 from:
  https://svn.modelica.org/projects/Modelica/branches/maintenance/3.1
 Revision 4084
 
+Added by sjoelund.se, 2011-10-04
+Modelica/Electrical/Analog/Lines.mo fixed according to https://trac.modelica.org/Modelica/ticket/485
+
 Added by sjoelund.se, 2011-05-25
 - uses(ModelicaServices(version="1.0")) to package.mo
 - order=2 to Modelica.Blocks.Sources.KinematicPTP2.position_der derivative annotations

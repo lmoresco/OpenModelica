@@ -1,10 +1,9 @@
 // name:     Delay5
 // keywords: builtin
-// status:   correct
+// status:   incorrect
 // 
 // Test flattening of the builtin function delay.
-// Should issue a warning as a is not parameter/constant.
-// Modelica.Electrical.Analog.Lines.TLine* uses delay(x, var)
+// Should issue an error as a is not parameter/constant.
 // 
 
 model Delay
@@ -15,18 +14,13 @@ equation
   y = delay(x, a);
   z = delay(x, a, a);
 end Delay;
+
 // Result:
-// class Delay
-//   Real x;
-//   Real y;
-//   Real z;
-//   Real a = 1.0;
-// equation
-//   x = sin(time);
-//   y = delay(x,a,a);
-//   z = delay(x,a,a);
-// end Delay;
-// [Delay5.mo:15:3-15:18:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a) where argument #2 has to be parameter or constant expression but is a variable
-// [Delay5.mo:16:3-16:21:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(x, a, a) where argument #3 has to be parameter or constant expression but is a variable
+// Error processing file: Delay5.mo
+// [Delay5.mo:14:3-14:18:writable] Error: Function argument delayTime=a is not a parameter expression
 // 
+// # Error encountered! Exiting...
+// # Please check the error message and the flags.
+// 
+// Execution failed!
 // endResult

@@ -5764,12 +5764,11 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real NL(start = 1.0) \"Normalized length\";
 //   protected Real er(quantity = \"ElectricPotential\", unit = \"V\");
 //   protected Real es(quantity = \"ElectricPotential\", unit = \"V\");
-//   protected Real TD(quantity = \"Time\", unit = \"s\");
+//   protected parameter Real TD(quantity = \"Time\", unit = \"s\") = NL / F;
 // equation
 //   assert(Z0 > 0.0,\"Z0 has to be positive\");
 //   assert(NL > 0.0,\"NL has to be positive\");
 //   assert(F > 0.0,\"F  has to be positive\");
-//   TD = NL / F;
 //   i1 = (v1 - es) / Z0;
 //   i2 = (v2 - er) / Z0;
 //   es = 2.0 * delay(v2,TD,TD) - delay(er,TD,TD);
@@ -5786,20 +5785,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   n2.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine2;
 // "
-// "[Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Lines.TLine2 completed successfully.
 // 
-// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:756:5-756:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:757:5-757:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
-// Class Modelica.Electrical.Analog.Lines.TLine2 has 15 equation(s) and 15 variable(s).
-// 9 of these are trivial equation(s).
+// Class Modelica.Electrical.Analog.Lines.TLine2 has 14 equation(s) and 14 variable(s).
+// 8 of these are trivial equation(s).
 // "
 // ""
 // "class Modelica.Electrical.Analog.Lines.TLine3
@@ -5819,11 +5810,10 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   parameter Real F(quantity = \"Frequency\", unit = \"Hz\", start = 1.0) \"Frequency\";
 //   protected Real er(quantity = \"ElectricPotential\", unit = \"V\");
 //   protected Real es(quantity = \"ElectricPotential\", unit = \"V\");
-//   protected Real TD(quantity = \"Time\", unit = \"s\");
+//   protected parameter Real TD(quantity = \"Time\", unit = \"s\") = 1.0 / (F * 4.0);
 // equation
 //   assert(Z0 > 0.0,\"Z0 has to be positive\");
 //   assert(F > 0.0,\"F  has to be positive\");
-//   TD = 1.0 / (F * 4.0);
 //   i1 = (v1 - es) / Z0;
 //   i2 = (v2 - er) / Z0;
 //   es = 2.0 * delay(v2,TD,TD) - delay(er,TD,TD);
@@ -5840,20 +5830,12 @@ checkModel(Modelica.Electrical.Analog.Basic.OpAmpDetailed); getErrorString();
 //   n2.i = 0.0;
 // end Modelica.Electrical.Analog.Lines.TLine3;
 // "
-// "[Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
-// "
+// ""
 // "Check of Modelica.Electrical.Analog.Lines.TLine3 completed successfully.
 // 
-// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v2, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:853:5-853:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(er, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(v1, TD) where argument #2 has to be parameter or constant expression but is a variable
-// [Lines.mo:854:5-854:41:writable] Warning: Improper use of builtin function delay(expr,delayTime,delayMax*) in component <NO COMPONENT>: delay(es, TD) where argument #2 has to be parameter or constant expression but is a variable
 // 
-// Class Modelica.Electrical.Analog.Lines.TLine3 has 15 equation(s) and 15 variable(s).
-// 9 of these are trivial equation(s).
+// Class Modelica.Electrical.Analog.Lines.TLine3 has 14 equation(s) and 14 variable(s).
+// 8 of these are trivial equation(s).
 // "
 // ""
 // "Check of Modelica.Electrical.Analog.Interfaces.VoltageSource completed successfully.

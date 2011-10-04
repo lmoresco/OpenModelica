@@ -12,7 +12,7 @@ end SampleError;
 
 // Result:
 // Error processing file: SampleError.mo
-// [SampleError.mo:8:3-10:11:writable] Error: Function argument start is not a parameter expression
+// [SampleError.mo:8:3-10:11:writable] Error: Function argument start=r is not a parameter expression
 // 
 // # Error encountered! Exiting...
 // # Please check the error message and the flags.
