@@ -1,15 +1,15 @@
 # Project: Code Generator for FMU Import to OpenModelica 1.7.0
 # Author: Wuzhu Chen, TU-Clausthal
 
-#CPP  = g++.exe
+CPP  = g++
 CC   = gcc
 RES  = 
-OBJS  = xmlparser.o stack.o fmuWrapper.o moGenerator.o$(RES)
+OBJS  = xmlparser.o stack.o fmuWrapper.o moGenerator.o $(RES)
 LINKOBJS  = xmlparser.o stack.o fmuWrapper.o moGenerator.o $(RES)
-LIBS =  -L"/mingw/lib" -lexpat
-INCS =  -I"/mingw/include"	
-CXXINCS =  -I"../include/"	-I"/mingw/msys/1.0/include/" 
-BIN  = ../bin/generator.exe
+LIBS =  -lexpat
+INCS =  -I"../../../build/include/omc"	
+CXXINCS =  -I"../include/"
+BIN  = ../../../build/bin/fmigenerator.exe
 CXXFLAGS = $(CXXINCS)  
 CFLAGS = $(INCS)  
 RM = rm -f
@@ -17,7 +17,6 @@ RM = rm -f
 .PHONY: all all-before all-after clean clean-custom
 
 all: all-before $(BIN) all-after
-
 
 clean: clean-custom
 	${RM} $(OBJS) $(BIN)
