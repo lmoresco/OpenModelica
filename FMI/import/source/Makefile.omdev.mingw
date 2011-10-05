@@ -7,8 +7,8 @@ RES  =
 OBJS  = xmlparser.o stack.o fmuWrapper.o moGenerator.o $(RES)
 LINKOBJS  = xmlparser.o stack.o fmuWrapper.o moGenerator.o $(RES)
 LIBS =  -lexpat
-INCS =  -I"../../../build/include/omc"	
-CXXINCS =  -I"../include/"
+INCS =  -I"../../../build/include/omc"
+CXXINCS =  -I"."
 BIN  = ../../../build/bin/fmigenerator.exe
 CXXFLAGS = $(CXXINCS)  
 CFLAGS = $(INCS)  
@@ -16,15 +16,21 @@ RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: all-before $(BIN) all-after
+all: fmuModelica.h all-before $(BIN) all-after
+
+fmuModelica.h: fmuModelica.tmp
+	echo Adeel
+	sed 's/"/\\"/g' $< | sed 's/^/"/' | sed 's/$$/\\n"/' > $@.tmp
+	mv $@.tmp $@
 
 clean: clean-custom
-	${RM} $(OBJS) $(BIN)
-
+	${RM} $(OBJS) $(BIN) fmuModelica.h
+	
 $(BIN): $(OBJS)
 	$(CC) -Wall -o $(BIN) $(LINKOBJS) $(LIBS)
 	
 moGenerator.o: moGenerator.c
+	echo moGenerator
 	$(CC) -Wall -c moGenerator.c -o moGenerator.o $(INCS)
 	
 fmuWrapper.o: fmuWrapper.c
