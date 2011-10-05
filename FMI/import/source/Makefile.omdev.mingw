@@ -19,7 +19,6 @@ RM = rm -f
 all: fmuModelica.h all-before $(BIN) all-after
 
 fmuModelica.h: fmuModelica.tmp
-	echo Adeel
 	sed 's/"/\\"/g' $< | sed 's/^/"/' | sed 's/$$/\\n"/' > $@.tmp
 	mv $@.tmp $@
 
