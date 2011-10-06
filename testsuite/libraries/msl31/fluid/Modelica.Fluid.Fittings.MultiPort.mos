@@ -1,0 +1,59 @@
+//name:        Modelica.Fluid.Fittings.MultiPort [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
+checkModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.Fluid.Fittings.MultiPort.positiveMax
+//   input Real x;
+//   output Real y;
+// algorithm
+//   y := max(x,1e-10);
+// end Modelica.Fluid.Fittings.MultiPort.positiveMax;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Fittings.MultiPort
+//   parameter Integer nPorts_b = 0 \"Number of outlet ports (mass is distributed evenly between the outlet ports\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+// equation
+//   0.0 = port_a.m_flow;
+//   port_a.h_outflow = 1.0;
+//   port_a.m_flow = 0.0;
+//   ports_b[0].m_flow = 0.0;
+// end Modelica.Fluid.Fittings.MultiPort;
+// "
+// ""
+// "Check of Modelica.Fluid.Fittings.MultiPort completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Fittings.MultiPort has 4 equation(s) and 3 variable(s).
+// 3 of these are trivial equation(s).
+// "
+// ""
+// endResult

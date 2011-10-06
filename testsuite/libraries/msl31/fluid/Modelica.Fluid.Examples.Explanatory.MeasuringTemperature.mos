@@ -1,0 +1,28 @@
+//name:        Modelica.Fluid.Examples.Explanatory.MeasuringTemperature [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorString();
+checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[Sensors.mo:147:5-147:109:writable] Error: Wrong type or wrong number of arguments to inStream(port.Xi_outflow)'.
+//  (in component T_onePort)
+// Error: Error occured while flattening model Modelica.Fluid.Examples.Explanatory.MeasuringTemperature
+// "
+// "[Sensors.mo:147:5-147:109:writable] Error: Wrong type or wrong number of arguments to inStream(port.Xi_outflow)'.
+//  (in component T_onePort)
+// Error: Error occured while flattening model Modelica.Fluid.Examples.Explanatory.MeasuringTemperature
+// "
+// ""
+// endResult

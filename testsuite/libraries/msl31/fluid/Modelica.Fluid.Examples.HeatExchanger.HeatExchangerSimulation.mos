@@ -1,0 +1,66 @@
+//name:        Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getErrorString();
+checkModel(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:11:5-44:47:writable] Error: Variable HEX: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX: {h_start_1,T_start_1}, {h_start_2,T_start_2}
+// Error: Error occured while flattening model Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation
+// "
+// "[HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:271:25-271:60:writable] Error: Base class HeatTransfer_1 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:261:25-261:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:294:25-294:60:writable] Error: Base class HeatTransfer_2 not found in scope Modelica.Fluid.Pipes.DynamicPipe.HeatTransfer
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Trying to redeclare package Medium but package not declared as replaceable
+// [Pipes.mo:121:28-121:51:writable] Notification: From here:
+// [HeatExchanger.mo:284:25-284:50:writable] Error: Redeclaration of final package Medium is not allowed.
+// [HeatExchanger.mo:11:5-44:47:writable] Error: Variable HEX: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX: {h_start_1,T_start_1}, {h_start_2,T_start_2}
+// Error: Error occured while flattening model Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation
+// "
+// ""
+// endResult

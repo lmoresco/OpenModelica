@@ -1,0 +1,89 @@
+//name:        Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer); getErrorString();
+checkModel(Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// end Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer
+//   parameter Integer n = 1 \"Number of heat transfer segments\";
+//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
+//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
+//   parameter Boolean use_k = false \"= true to use k value for thermal isolation\";
+//   parameter Real k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
+//   parameter Real T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   Real heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   Real Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.Medium.temperature(states[1]) \"Temperatures defined by fluid states\";
+//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") \"constant heat transfer coefficient\";
+// equation
+//   Q_flows[1] = (alpha0 + k) * (surfaceAreas[1] * (heatPorts[1].T - Ts[1]));
+//   Q_flows[1] = heatPorts[1].Q_flow;
+//   heatPorts[1].Q_flow = 0.0;
+// end Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer;
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter alpha0 has neither value nor start value, and is fixed during initialization (fixed=true)
+// "
+// "Check of Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer has 4 equation(s) and 4 variable(s).
+// 3 of these are trivial equation(s).
+// "
+// ""
+// endResult

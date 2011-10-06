@@ -1,0 +1,40 @@
+//name:        Modelica.Fluid.Sensors.MassFlowRate [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Sensors.MassFlowRate); getErrorString();
+checkModel(Modelica.Fluid.Sensors.MassFlowRate); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.MassFlowRate.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Sensors.MassFlowRate
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.MassFlowRate.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Sensors.MassFlowRate
+// "
+// ""
+// endResult

@@ -1,0 +1,31 @@
+//name:        Modelica.Fluid.Sources.MassFlowSource_T [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Sources.MassFlowSource_T); getErrorString();
+checkModel(Modelica.Fluid.Sources.MassFlowSource_T); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
+// Error: Error occured while flattening model Modelica.Fluid.Sources.MassFlowSource_T
+// "
+// "Check of Modelica.Fluid.Sources.MassFlowSource_T completed successfully.
+// 
+// [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
+// [Sources.mo:457:5-458:67:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Sources.MassFlowSource_T.
+// 
+// Class Modelica.Fluid.Sources.MassFlowSource_T has 9 equation(s) and 10 variable(s).
+// 1 of these are trivial equation(s).
+// "
+// ""
+// endResult

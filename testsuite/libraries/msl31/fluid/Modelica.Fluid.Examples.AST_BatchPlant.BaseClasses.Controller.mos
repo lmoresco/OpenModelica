@@ -1,0 +1,1348 @@
+//name:        Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getErrorString();
+checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.StateGraph.Temporary.allTrue \"Returns true, if all elements of the Boolean input vector are true\"
+//   input Boolean[:] b;
+//   output Boolean result;
+// algorithm
+//   result := true;
+//   for i in 1:size(b,1) loop
+//     result := result and b[i];
+//   end for;
+// end Modelica.StateGraph.Temporary.allTrue;
+// 
+// function Modelica.StateGraph.Temporary.anyTrue \"Returns true, if at least on element of the Boolean input vector is true\"
+//   input Boolean[:] b;
+//   output Boolean result;
+// algorithm
+//   result := false;
+//   for i in 1:size(b,1) loop
+//     result := result or b[i];
+//   end for;
+// end Modelica.StateGraph.Temporary.anyTrue;
+// 
+// class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller
+//   input Real sensors.LIS_301;
+//   input Real sensors.QI_302;
+//   input Real sensors.LIS_501;
+//   input Real sensors.QIS_502;
+//   input Real sensors.TI_503;
+//   input Real sensors.LIS_601;
+//   input Real sensors.TIS_602;
+//   input Real sensors.LIS_701;
+//   input Real sensors.TIS_702;
+//   output Boolean actuators.P1;
+//   output Boolean actuators.P2;
+//   output Boolean actuators.T5_Heater;
+//   output Boolean actuators.T7_Cooling;
+//   output Boolean actuators.T6_Cooling;
+//   output Boolean actuators.V1;
+//   output Boolean actuators.V2;
+//   output Boolean actuators.V3;
+//   output Boolean actuators.V4;
+//   output Boolean actuators.V5;
+//   output Boolean actuators.V6;
+//   output Boolean actuators.V8;
+//   output Boolean actuators.V9;
+//   output Boolean actuators.V10;
+//   output Boolean actuators.V11;
+//   output Boolean actuators.V12;
+//   output Boolean actuators.V15;
+//   output Boolean actuators.V18;
+//   output Boolean actuators.V19;
+//   output Boolean actuators.V20;
+//   output Boolean actuators.V21;
+//   output Boolean actuators.V22;
+//   output Boolean actuators.V23;
+//   output Boolean actuators.V24;
+//   output Boolean actuators.V25;
+//   parameter Real w_dilution = 0.003;
+//   parameter Real w_concentrate = 0.005;
+//   parameter Real startTime = 1.0;
+//   parameter Real T5_batch_level = 0.211;
+//   parameter Integer InitialStep1.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer InitialStep1.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean InitialStep1.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean InitialStep1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean InitialStep1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean InitialStep1.outPort[1].available \"true, if step is active\";
+//   input Boolean InitialStep1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean InitialStep1.stateGraphRoot.suspend = false;
+//   output Boolean InitialStep1.stateGraphRoot.resume = false;
+//   output Boolean InitialStep1.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean InitialStep1.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real InitialStep1.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real InitialStep1.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean InitialStep1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean InitialStep1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real InitialStep1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real InitialStep1.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean InitialStep1.newActive \"Value of active in the next iteration\";
+//   protected Boolean InitialStep1.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean InitialStep1.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition1.localCondition = Transition1.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition1.enableTimer = true \"= true, if timer is enabled\";
+//   parameter Real Transition1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = startTime \"Wait time before transition fires\";
+//   output Real Transition1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition1.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition1.fire \"= true, if transition fires\";
+//   input Boolean Transition1.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition1.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition1.t_dummy;
+//   input Boolean Transition1.condition = true \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step1.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step1.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step1.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step1.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step1.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step1.outPort[1].available \"true, if step is active\";
+//   input Boolean Step1.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step1.stateGraphRoot.suspend = false;
+//   output Boolean Step1.stateGraphRoot.resume = false;
+//   output Boolean Step1.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step1.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step1.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step1.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step1.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step1.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step1.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step1.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step1.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step1.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step1.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition2.localCondition = Transition2.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition2.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition2.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition2.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition2.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition2.fire \"= true, if transition fires\";
+//   input Boolean Transition2.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition2.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition2.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition2.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition2.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition2.t_dummy;
+//   input Boolean Transition2.condition = LIS_301 >= 0.13 \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step2.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step2.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step2.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step2.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step2.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step2.outPort[1].available \"true, if step is active\";
+//   input Boolean Step2.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step2.stateGraphRoot.suspend = false;
+//   output Boolean Step2.stateGraphRoot.resume = false;
+//   output Boolean Step2.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step2.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step2.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step2.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step2.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step2.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step2.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step2.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step2.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step2.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step2.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition3.localCondition = Transition3.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition3.enableTimer = true \"= true, if timer is enabled\";
+//   parameter Real Transition3.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 500.0 \"Wait time before transition fires\";
+//   output Real Transition3.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition3.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition3.fire \"= true, if transition fires\";
+//   input Boolean Transition3.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition3.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition3.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition3.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition3.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition3.t_dummy;
+//   input Boolean Transition3.condition = true \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step3.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step3.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step3.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step3.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step3.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step3.outPort[1].available \"true, if step is active\";
+//   input Boolean Step3.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step3.stateGraphRoot.suspend = false;
+//   output Boolean Step3.stateGraphRoot.resume = false;
+//   output Boolean Step3.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step3.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step3.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step3.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step3.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step3.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step3.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step3.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step3.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step3.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step3.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition4.localCondition = Transition4.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition4.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition4.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition4.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition4.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition4.fire \"= true, if transition fires\";
+//   input Boolean Transition4.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition4.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition4.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition4.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition4.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition4.t_dummy;
+//   input Boolean Transition4.condition = LIS_301 <= 0.01 \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step4.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step4.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step4.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step4.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step4.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step4.outPort[1].available \"true, if step is active\";
+//   input Boolean Step4.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step4.stateGraphRoot.suspend = false;
+//   output Boolean Step4.stateGraphRoot.resume = false;
+//   output Boolean Step4.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step4.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step4.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step4.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step4.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step4.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step4.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step4.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step4.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step4.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step4.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition5.localCondition = Transition5.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition5.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition5.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition5.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition5.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition5.fire \"= true, if transition fires\";
+//   input Boolean Transition5.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition5.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition5.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition5.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition5.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition5.t_dummy;
+//   input Boolean Transition5.condition = T5_idle \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step5.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step5.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step5.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step5.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step5.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step5.outPort[1].available \"true, if step is active\";
+//   input Boolean Step5.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step5.stateGraphRoot.suspend = false;
+//   output Boolean Step5.stateGraphRoot.resume = false;
+//   output Boolean Step5.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step5.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step5.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step5.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step5.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step5.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step5.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step5.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step5.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step5.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step5.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition6.localCondition = Transition6.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition6.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition6.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition6.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition6.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition6.fire \"= true, if transition fires\";
+//   input Boolean Transition6.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition6.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition6.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition6.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition6.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition6.t_dummy;
+//   input Boolean Transition6.condition = LIS_501 >= T5_batch_level \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Step6.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step6.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step6.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step6.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step6.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step6.outPort[1].available \"true, if step is active\";
+//   input Boolean Step6.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step6.stateGraphRoot.suspend = false;
+//   output Boolean Step6.stateGraphRoot.resume = false;
+//   output Boolean Step6.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step6.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step6.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step6.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step6.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step6.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step6.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step6.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step6.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step6.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step6.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition7.localCondition = Transition7.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition7.enableTimer = true \"= true, if timer is enabled\";
+//   parameter Real Transition7.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 300.0 \"Wait time before transition fires\";
+//   output Real Transition7.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition7.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition7.fire \"= true, if transition fires\";
+//   input Boolean Transition7.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition7.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition7.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition7.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition7.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition7.t_dummy;
+//   input Boolean Transition7.condition = true \"= true, if transition may fire (time varying expression)\";
+//   parameter Integer Parallel1.nBranches(min = 1) = 2 \"Number of parallel branches that are executed in parallel\";
+//   output Boolean Parallel1.inPort.occupied \"true, if step is active\";
+//   input Boolean Parallel1.inPort.set \"true, if transition fires and step is activated\";
+//   output Boolean Parallel1.outPort.available \"true, if step is active\";
+//   input Boolean Parallel1.outPort.reset \"true, if transition fires and step is deactivated\";
+//   input Boolean Parallel1.join[1].available \"true, if step connected to the transition input is active\";
+//   output Boolean Parallel1.join[1].reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Parallel1.join[2].available \"true, if step connected to the transition input is active\";
+//   output Boolean Parallel1.join[2].reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Parallel1.split[1].occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Parallel1.split[1].set \"true, if transition fires and step connected to the transition output becomes active\";
+//   input Boolean Parallel1.split[2].occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Parallel1.split[2].set \"true, if transition fires and step connected to the transition output becomes active\";
+//   parameter Integer Step7.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step7.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step7.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step7.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step7.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step7.outPort[1].available \"true, if step is active\";
+//   input Boolean Step7.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step7.stateGraphRoot.suspend = false;
+//   output Boolean Step7.stateGraphRoot.resume = false;
+//   output Boolean Step7.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step7.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step7.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step7.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step7.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step7.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step7.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step7.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step7.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step7.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step7.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step8.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step8.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step8.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step8.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step8.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step8.outPort[1].available \"true, if step is active\";
+//   input Boolean Step8.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step8.stateGraphRoot.suspend = false;
+//   output Boolean Step8.stateGraphRoot.resume = false;
+//   output Boolean Step8.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step8.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step8.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step8.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step8.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step8.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step8.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step8.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step8.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step8.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step8.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step9.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step9.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step9.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step9.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step9.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step9.outPort[1].available \"true, if step is active\";
+//   input Boolean Step9.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step9.stateGraphRoot.suspend = false;
+//   output Boolean Step9.stateGraphRoot.resume = false;
+//   output Boolean Step9.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step9.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step9.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step9.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step9.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step9.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step9.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step9.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step9.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step9.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step9.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step10.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step10.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step10.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step10.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step10.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step10.outPort[1].available \"true, if step is active\";
+//   input Boolean Step10.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step10.stateGraphRoot.suspend = false;
+//   output Boolean Step10.stateGraphRoot.resume = false;
+//   output Boolean Step10.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step10.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step10.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step10.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step10.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step10.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step10.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step10.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step10.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step10.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step10.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step11.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step11.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step11.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step11.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step11.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step11.outPort[1].available \"true, if step is active\";
+//   input Boolean Step11.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step11.stateGraphRoot.suspend = false;
+//   output Boolean Step11.stateGraphRoot.resume = false;
+//   output Boolean Step11.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step11.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step11.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step11.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step11.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step11.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step11.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step11.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step11.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step11.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step11.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step12.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step12.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step12.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step12.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step12.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step12.outPort[1].available \"true, if step is active\";
+//   input Boolean Step12.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step12.stateGraphRoot.suspend = false;
+//   output Boolean Step12.stateGraphRoot.resume = false;
+//   output Boolean Step12.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step12.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step12.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step12.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step12.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step12.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step12.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step12.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step12.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step12.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step12.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step13.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step13.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step13.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step13.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step13.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step13.outPort[1].available \"true, if step is active\";
+//   input Boolean Step13.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step13.stateGraphRoot.suspend = false;
+//   output Boolean Step13.stateGraphRoot.resume = false;
+//   output Boolean Step13.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step13.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step13.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step13.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step13.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step13.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step13.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step13.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step13.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step13.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step13.active \"= true if step is active, otherwise the step is not active\";
+//   parameter Integer Step14.nIn(min = 0) = 1 \"Number of input connections\";
+//   parameter Integer Step14.nOut(min = 0) = 1 \"Number of output connections\";
+//   output Boolean Step14.localActive \"= true if step is active, otherwise the step is not active\";
+//   output Boolean Step14.inPort[1].occupied \"true, if step is active\";
+//   input Boolean Step14.inPort[1].set \"true, if transition fires and step is activated\";
+//   output Boolean Step14.outPort[1].available \"true, if step is active\";
+//   input Boolean Step14.outPort[1].reset \"true, if transition fires and step is deactivated\";
+//   output Boolean Step14.stateGraphRoot.suspend = false;
+//   output Boolean Step14.stateGraphRoot.resume = false;
+//   output Boolean Step14.stateGraphRoot.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   output Boolean Step14.stateGraphRoot.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step14.stateGraphRoot.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step14.stateGraphRoot.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   input Boolean Step14.outerStatePort.subgraphStatePort.suspend \"= true, if suspend transition of CompositeStep fires\";
+//   input Boolean Step14.outerStatePort.subgraphStatePort.resume \"= true, if resume transition of CompositeStep fires\";
+//   Real Step14.outerStatePort.subgraphStatePort.activeStepsDummy \"Dummy variable in order that connector fulfills restriction of connector\";
+//   Real Step14.outerStatePort.subgraphStatePort.activeSteps \"Number of active steps in the CompositeStep\";
+//   protected Boolean Step14.newActive \"Value of active in the next iteration\";
+//   protected Boolean Step14.oldActive \"Value of active when CompositeStep was aborted\";
+//   output Boolean Step14.active \"= true if step is active, otherwise the step is not active\";
+//   input Boolean Transition8.localCondition = Transition8.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition8.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition8.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition8.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition8.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition8.fire \"= true, if transition fires\";
+//   input Boolean Transition8.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition8.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition8.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition8.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition8.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition8.t_dummy;
+//   input Boolean Transition8.condition = T7_idle \"= true, if transition may fire (time varying expression)\";
+//   input Boolean Transition9.localCondition = Transition9.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition9.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition9.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition9.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition9.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition9.fire \"= true, if transition fires\";
+//   input Boolean Transition9.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition9.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition9.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition9.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition9.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition9.t_dummy;
+//   input Boolean Transition9.condition = LIS_501 <= 0.01 \"= true, if transition may fire (time varying expression)\";
+//   input Boolean Transition10.localCondition = Transition10.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition10.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition10.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition10.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition10.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition10.fire \"= true, if transition fires\";
+//   input Boolean Transition10.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition10.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition10.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition10.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition10.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition10.t_dummy;
+//   input Boolean Transition10.condition = TIS_702 <= 298.0 \"= true, if transition may fire (time varying expression)\";
+//   input Boolean Transition11.localCondition = Transition11.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition11.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition11.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition11.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition11.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition11.fire \"= true, if transition fires\";
+//   input Boolean Transition11.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition11.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition11.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition11.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition11.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition11.t_dummy;
+//   input Boolean Transition11.condition = LIS_701 <= 0.01 \"= true, if transition may fire (time varying expression)\";
+//   input Boolean Transition12.localCondition = Transition12.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition12.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition12.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition12.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition12.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition12.fire \"= true, if transition fires\";
+//   input Boolean Transition12.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition12.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition12.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition12.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition12.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition12.t_dummy;
+//   input Boolean Transition12.condition = TIS_602 <= 298.0 \"= true, if transition may fire (time varying expression)\";
+//   input Boolean Transition13.localCondition = Transition13.condition \"= true, if transition may fire\";
+//   parameter Boolean Transition13.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real Transition13.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real Transition13.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean Transition13.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean Transition13.fire \"= true, if transition fires\";
+//   input Boolean Transition13.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean Transition13.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean Transition13.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean Transition13.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real Transition13.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real Transition13.t_dummy;
+//   input Boolean Transition13.condition = LIS_601 <= 0.01 \"= true, if transition may fire (time varying expression)\";
+//   Real LIS_301;
+//   Real LIS_501;
+//   Real LIS_601;
+//   Real LIS_701;
+//   Real QI_302;
+//   Real QIS_502;
+//   Real TIS_602;
+//   Real TIS_702;
+//   Boolean T5_idle;
+//   Boolean T7_idle;
+//   input Boolean TransitionWithSignal1.localCondition = TransitionWithSignal1.condition \"= true, if transition may fire\";
+//   parameter Boolean TransitionWithSignal1.enableTimer = false \"= true, if timer is enabled\";
+//   parameter Real TransitionWithSignal1.waitTime(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Wait time before transition fires\";
+//   output Real TransitionWithSignal1.t(quantity = \"Time\", unit = \"s\") \"= actual waiting time (transition will fire when t > waitTime)\";
+//   output Boolean TransitionWithSignal1.enableFire \"= true, if all firing conditions are true\";
+//   output Boolean TransitionWithSignal1.fire \"= true, if transition fires\";
+//   input Boolean TransitionWithSignal1.inPort.available \"true, if step connected to the transition input is active\";
+//   output Boolean TransitionWithSignal1.inPort.reset \"true, if transition fires and the step connected to the transition input is deactivated\";
+//   input Boolean TransitionWithSignal1.outPort.occupied \"true, if step connected to the transition output is active\";
+//   output Boolean TransitionWithSignal1.outPort.set \"true, if transition fires and step connected to the transition output becomes active\";
+//   protected Real TransitionWithSignal1.t_start(quantity = \"Time\", unit = \"s\") \"Time instant at which the transition would fire, if waitTime would be zero\";
+//   protected Real TransitionWithSignal1.t_dummy;
+//   input Boolean TransitionWithSignal1.condition;
+//   output Boolean BooleanExpression1.y = time > 2500.0 \"Value of Boolean output\";
+// initial equation
+//   InitialStep1.active = true;
+//   pre(InitialStep1.newActive) = pre(InitialStep1.localActive);
+//   pre(InitialStep1.oldActive) = pre(InitialStep1.localActive);
+//   pre(Transition1.enableFire) = false;
+//   Step1.active = false;
+//   pre(Step1.newActive) = pre(Step1.localActive);
+//   pre(Step1.oldActive) = pre(Step1.localActive);
+//   pre(Transition2.enableFire) = false;
+//   Step2.active = false;
+//   pre(Step2.newActive) = pre(Step2.localActive);
+//   pre(Step2.oldActive) = pre(Step2.localActive);
+//   pre(Transition3.enableFire) = false;
+//   Step3.active = false;
+//   pre(Step3.newActive) = pre(Step3.localActive);
+//   pre(Step3.oldActive) = pre(Step3.localActive);
+//   pre(Transition4.enableFire) = false;
+//   Step4.active = false;
+//   pre(Step4.newActive) = pre(Step4.localActive);
+//   pre(Step4.oldActive) = pre(Step4.localActive);
+//   pre(Transition5.enableFire) = false;
+//   Step5.active = false;
+//   pre(Step5.newActive) = pre(Step5.localActive);
+//   pre(Step5.oldActive) = pre(Step5.localActive);
+//   pre(Transition6.enableFire) = false;
+//   Step6.active = false;
+//   pre(Step6.newActive) = pre(Step6.localActive);
+//   pre(Step6.oldActive) = pre(Step6.localActive);
+//   pre(Transition7.enableFire) = false;
+//   Step7.active = false;
+//   pre(Step7.newActive) = pre(Step7.localActive);
+//   pre(Step7.oldActive) = pre(Step7.localActive);
+//   Step8.active = false;
+//   pre(Step8.newActive) = pre(Step8.localActive);
+//   pre(Step8.oldActive) = pre(Step8.localActive);
+//   Step9.active = false;
+//   pre(Step9.newActive) = pre(Step9.localActive);
+//   pre(Step9.oldActive) = pre(Step9.localActive);
+//   Step10.active = false;
+//   pre(Step10.newActive) = pre(Step10.localActive);
+//   pre(Step10.oldActive) = pre(Step10.localActive);
+//   Step11.active = false;
+//   pre(Step11.newActive) = pre(Step11.localActive);
+//   pre(Step11.oldActive) = pre(Step11.localActive);
+//   Step12.active = false;
+//   pre(Step12.newActive) = pre(Step12.localActive);
+//   pre(Step12.oldActive) = pre(Step12.localActive);
+//   Step13.active = false;
+//   pre(Step13.newActive) = pre(Step13.localActive);
+//   pre(Step13.oldActive) = pre(Step13.localActive);
+//   Step14.active = false;
+//   pre(Step14.newActive) = pre(Step14.localActive);
+//   pre(Step14.oldActive) = pre(Step14.localActive);
+//   pre(Transition8.enableFire) = false;
+//   pre(Transition9.enableFire) = false;
+//   pre(Transition10.enableFire) = false;
+//   pre(Transition11.enableFire) = false;
+//   pre(Transition12.enableFire) = false;
+//   pre(Transition13.enableFire) = false;
+//   pre(TransitionWithSignal1.enableFire) = false;
+// equation
+//   InitialStep1.stateGraphRoot.suspend = InitialStep1.stateGraphRoot.subgraphStatePort.suspend;
+//   InitialStep1.stateGraphRoot.resume = InitialStep1.stateGraphRoot.subgraphStatePort.resume;
+//   InitialStep1.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   InitialStep1.active = InitialStep1.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   InitialStep1.localActive = pre(InitialStep1.newActive);
+//   InitialStep1.newActive = if InitialStep1.outerStatePort.subgraphStatePort.resume then InitialStep1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({InitialStep1.inPort[1].set}) or InitialStep1.localActive and not Modelica.StateGraph.Temporary.anyTrue({InitialStep1.outPort[1].reset})) and not InitialStep1.outerStatePort.subgraphStatePort.suspend;
+//   when InitialStep1.outerStatePort.subgraphStatePort.suspend then
+//   InitialStep1.oldActive = InitialStep1.localActive;
+//   end when;
+//   InitialStep1.outerStatePort.subgraphStatePort.activeSteps = if InitialStep1.localActive then 1.0 else 0.0;
+//   InitialStep1.inPort[1].occupied = InitialStep1.localActive;
+//   InitialStep1.outPort[1].available = InitialStep1.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when Transition1.enableFire then
+//   Transition1.t_start = time;
+//   end when;
+//   Transition1.t_dummy = time - Transition1.t_start;
+//   Transition1.t = if Transition1.enableFire then Transition1.t_dummy else 0.0;
+//   Transition1.fire = Transition1.enableFire and time >= Transition1.t_start + Transition1.waitTime;
+//   Transition1.enableFire = Transition1.localCondition and Transition1.inPort.available and not Transition1.outPort.occupied;
+//   Transition1.inPort.reset = Transition1.fire;
+//   Transition1.outPort.set = Transition1.fire;
+//   Step1.stateGraphRoot.suspend = Step1.stateGraphRoot.subgraphStatePort.suspend;
+//   Step1.stateGraphRoot.resume = Step1.stateGraphRoot.subgraphStatePort.resume;
+//   Step1.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step1.active = Step1.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step1.localActive = pre(Step1.newActive);
+//   Step1.newActive = if Step1.outerStatePort.subgraphStatePort.resume then Step1.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step1.inPort[1].set}) or Step1.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step1.outPort[1].reset})) and not Step1.outerStatePort.subgraphStatePort.suspend;
+//   when Step1.outerStatePort.subgraphStatePort.suspend then
+//   Step1.oldActive = Step1.localActive;
+//   end when;
+//   Step1.outerStatePort.subgraphStatePort.activeSteps = if Step1.localActive then 1.0 else 0.0;
+//   Step1.inPort[1].occupied = Step1.localActive;
+//   Step1.outPort[1].available = Step1.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition2.t_start = 0.0;
+//   Transition2.t_dummy = 0.0;
+//   Transition2.t = 0.0;
+//   Transition2.fire = Transition2.enableFire;
+//   Transition2.enableFire = Transition2.localCondition and Transition2.inPort.available and not Transition2.outPort.occupied;
+//   Transition2.inPort.reset = Transition2.fire;
+//   Transition2.outPort.set = Transition2.fire;
+//   Step2.stateGraphRoot.suspend = Step2.stateGraphRoot.subgraphStatePort.suspend;
+//   Step2.stateGraphRoot.resume = Step2.stateGraphRoot.subgraphStatePort.resume;
+//   Step2.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step2.active = Step2.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step2.localActive = pre(Step2.newActive);
+//   Step2.newActive = if Step2.outerStatePort.subgraphStatePort.resume then Step2.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step2.inPort[1].set}) or Step2.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step2.outPort[1].reset})) and not Step2.outerStatePort.subgraphStatePort.suspend;
+//   when Step2.outerStatePort.subgraphStatePort.suspend then
+//   Step2.oldActive = Step2.localActive;
+//   end when;
+//   Step2.outerStatePort.subgraphStatePort.activeSteps = if Step2.localActive then 1.0 else 0.0;
+//   Step2.inPort[1].occupied = Step2.localActive;
+//   Step2.outPort[1].available = Step2.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when Transition3.enableFire then
+//   Transition3.t_start = time;
+//   end when;
+//   Transition3.t_dummy = time - Transition3.t_start;
+//   Transition3.t = if Transition3.enableFire then Transition3.t_dummy else 0.0;
+//   Transition3.fire = Transition3.enableFire and time >= Transition3.t_start + Transition3.waitTime;
+//   Transition3.enableFire = Transition3.localCondition and Transition3.inPort.available and not Transition3.outPort.occupied;
+//   Transition3.inPort.reset = Transition3.fire;
+//   Transition3.outPort.set = Transition3.fire;
+//   Step3.stateGraphRoot.suspend = Step3.stateGraphRoot.subgraphStatePort.suspend;
+//   Step3.stateGraphRoot.resume = Step3.stateGraphRoot.subgraphStatePort.resume;
+//   Step3.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step3.active = Step3.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step3.localActive = pre(Step3.newActive);
+//   Step3.newActive = if Step3.outerStatePort.subgraphStatePort.resume then Step3.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step3.inPort[1].set}) or Step3.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step3.outPort[1].reset})) and not Step3.outerStatePort.subgraphStatePort.suspend;
+//   when Step3.outerStatePort.subgraphStatePort.suspend then
+//   Step3.oldActive = Step3.localActive;
+//   end when;
+//   Step3.outerStatePort.subgraphStatePort.activeSteps = if Step3.localActive then 1.0 else 0.0;
+//   Step3.inPort[1].occupied = Step3.localActive;
+//   Step3.outPort[1].available = Step3.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition4.t_start = 0.0;
+//   Transition4.t_dummy = 0.0;
+//   Transition4.t = 0.0;
+//   Transition4.fire = Transition4.enableFire;
+//   Transition4.enableFire = Transition4.localCondition and Transition4.inPort.available and not Transition4.outPort.occupied;
+//   Transition4.inPort.reset = Transition4.fire;
+//   Transition4.outPort.set = Transition4.fire;
+//   Step4.stateGraphRoot.suspend = Step4.stateGraphRoot.subgraphStatePort.suspend;
+//   Step4.stateGraphRoot.resume = Step4.stateGraphRoot.subgraphStatePort.resume;
+//   Step4.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step4.active = Step4.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step4.localActive = pre(Step4.newActive);
+//   Step4.newActive = if Step4.outerStatePort.subgraphStatePort.resume then Step4.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step4.inPort[1].set}) or Step4.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step4.outPort[1].reset})) and not Step4.outerStatePort.subgraphStatePort.suspend;
+//   when Step4.outerStatePort.subgraphStatePort.suspend then
+//   Step4.oldActive = Step4.localActive;
+//   end when;
+//   Step4.outerStatePort.subgraphStatePort.activeSteps = if Step4.localActive then 1.0 else 0.0;
+//   Step4.inPort[1].occupied = Step4.localActive;
+//   Step4.outPort[1].available = Step4.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition5.t_start = 0.0;
+//   Transition5.t_dummy = 0.0;
+//   Transition5.t = 0.0;
+//   Transition5.fire = Transition5.enableFire;
+//   Transition5.enableFire = Transition5.localCondition and Transition5.inPort.available and not Transition5.outPort.occupied;
+//   Transition5.inPort.reset = Transition5.fire;
+//   Transition5.outPort.set = Transition5.fire;
+//   Step5.stateGraphRoot.suspend = Step5.stateGraphRoot.subgraphStatePort.suspend;
+//   Step5.stateGraphRoot.resume = Step5.stateGraphRoot.subgraphStatePort.resume;
+//   Step5.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step5.active = Step5.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step5.localActive = pre(Step5.newActive);
+//   Step5.newActive = if Step5.outerStatePort.subgraphStatePort.resume then Step5.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step5.inPort[1].set}) or Step5.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step5.outPort[1].reset})) and not Step5.outerStatePort.subgraphStatePort.suspend;
+//   when Step5.outerStatePort.subgraphStatePort.suspend then
+//   Step5.oldActive = Step5.localActive;
+//   end when;
+//   Step5.outerStatePort.subgraphStatePort.activeSteps = if Step5.localActive then 1.0 else 0.0;
+//   Step5.inPort[1].occupied = Step5.localActive;
+//   Step5.outPort[1].available = Step5.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition6.t_start = 0.0;
+//   Transition6.t_dummy = 0.0;
+//   Transition6.t = 0.0;
+//   Transition6.fire = Transition6.enableFire;
+//   Transition6.enableFire = Transition6.localCondition and Transition6.inPort.available and not Transition6.outPort.occupied;
+//   Transition6.inPort.reset = Transition6.fire;
+//   Transition6.outPort.set = Transition6.fire;
+//   Step6.stateGraphRoot.suspend = Step6.stateGraphRoot.subgraphStatePort.suspend;
+//   Step6.stateGraphRoot.resume = Step6.stateGraphRoot.subgraphStatePort.resume;
+//   Step6.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step6.active = Step6.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step6.localActive = pre(Step6.newActive);
+//   Step6.newActive = if Step6.outerStatePort.subgraphStatePort.resume then Step6.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step6.inPort[1].set}) or Step6.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step6.outPort[1].reset})) and not Step6.outerStatePort.subgraphStatePort.suspend;
+//   when Step6.outerStatePort.subgraphStatePort.suspend then
+//   Step6.oldActive = Step6.localActive;
+//   end when;
+//   Step6.outerStatePort.subgraphStatePort.activeSteps = if Step6.localActive then 1.0 else 0.0;
+//   Step6.inPort[1].occupied = Step6.localActive;
+//   Step6.outPort[1].available = Step6.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   when Transition7.enableFire then
+//   Transition7.t_start = time;
+//   end when;
+//   Transition7.t_dummy = time - Transition7.t_start;
+//   Transition7.t = if Transition7.enableFire then Transition7.t_dummy else 0.0;
+//   Transition7.fire = Transition7.enableFire and time >= Transition7.t_start + Transition7.waitTime;
+//   Transition7.enableFire = Transition7.localCondition and Transition7.inPort.available and not Transition7.outPort.occupied;
+//   Transition7.inPort.reset = Transition7.fire;
+//   Transition7.outPort.set = Transition7.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector is not connected to exactly one other connector\");
+//   assert(true,\"Connector is not connected to exactly one other connector\");
+//   assert(true,\"Connector is not connected to exactly one other connector\");
+//   assert(true,\"Connector is not connected to exactly one other connector\");
+//   Parallel1.split[1].set = Parallel1.inPort.set;
+//   Parallel1.split[2].set = Parallel1.inPort.set;
+//   Parallel1.join[1].reset = Parallel1.outPort.reset;
+//   Parallel1.join[2].reset = Parallel1.outPort.reset;
+//   Parallel1.inPort.occupied = Modelica.StateGraph.Temporary.anyTrue({Parallel1.split[1].occupied,Parallel1.split[2].occupied});
+//   Parallel1.outPort.available = Modelica.StateGraph.Temporary.allTrue({Parallel1.join[1].available,Parallel1.join[2].available});
+//   Step7.stateGraphRoot.suspend = Step7.stateGraphRoot.subgraphStatePort.suspend;
+//   Step7.stateGraphRoot.resume = Step7.stateGraphRoot.subgraphStatePort.resume;
+//   Step7.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step7.active = Step7.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step7.localActive = pre(Step7.newActive);
+//   Step7.newActive = if Step7.outerStatePort.subgraphStatePort.resume then Step7.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step7.inPort[1].set}) or Step7.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step7.outPort[1].reset})) and not Step7.outerStatePort.subgraphStatePort.suspend;
+//   when Step7.outerStatePort.subgraphStatePort.suspend then
+//   Step7.oldActive = Step7.localActive;
+//   end when;
+//   Step7.outerStatePort.subgraphStatePort.activeSteps = if Step7.localActive then 1.0 else 0.0;
+//   Step7.inPort[1].occupied = Step7.localActive;
+//   Step7.outPort[1].available = Step7.localActive;
+//   Step8.stateGraphRoot.suspend = Step8.stateGraphRoot.subgraphStatePort.suspend;
+//   Step8.stateGraphRoot.resume = Step8.stateGraphRoot.subgraphStatePort.resume;
+//   Step8.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step8.active = Step8.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step8.localActive = pre(Step8.newActive);
+//   Step8.newActive = if Step8.outerStatePort.subgraphStatePort.resume then Step8.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step8.inPort[1].set}) or Step8.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step8.outPort[1].reset})) and not Step8.outerStatePort.subgraphStatePort.suspend;
+//   when Step8.outerStatePort.subgraphStatePort.suspend then
+//   Step8.oldActive = Step8.localActive;
+//   end when;
+//   Step8.outerStatePort.subgraphStatePort.activeSteps = if Step8.localActive then 1.0 else 0.0;
+//   Step8.inPort[1].occupied = Step8.localActive;
+//   Step8.outPort[1].available = Step8.localActive;
+//   Step9.stateGraphRoot.suspend = Step9.stateGraphRoot.subgraphStatePort.suspend;
+//   Step9.stateGraphRoot.resume = Step9.stateGraphRoot.subgraphStatePort.resume;
+//   Step9.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step9.active = Step9.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step9.localActive = pre(Step9.newActive);
+//   Step9.newActive = if Step9.outerStatePort.subgraphStatePort.resume then Step9.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step9.inPort[1].set}) or Step9.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step9.outPort[1].reset})) and not Step9.outerStatePort.subgraphStatePort.suspend;
+//   when Step9.outerStatePort.subgraphStatePort.suspend then
+//   Step9.oldActive = Step9.localActive;
+//   end when;
+//   Step9.outerStatePort.subgraphStatePort.activeSteps = if Step9.localActive then 1.0 else 0.0;
+//   Step9.inPort[1].occupied = Step9.localActive;
+//   Step9.outPort[1].available = Step9.localActive;
+//   Step10.stateGraphRoot.suspend = Step10.stateGraphRoot.subgraphStatePort.suspend;
+//   Step10.stateGraphRoot.resume = Step10.stateGraphRoot.subgraphStatePort.resume;
+//   Step10.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step10.active = Step10.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step10.localActive = pre(Step10.newActive);
+//   Step10.newActive = if Step10.outerStatePort.subgraphStatePort.resume then Step10.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step10.inPort[1].set}) or Step10.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step10.outPort[1].reset})) and not Step10.outerStatePort.subgraphStatePort.suspend;
+//   when Step10.outerStatePort.subgraphStatePort.suspend then
+//   Step10.oldActive = Step10.localActive;
+//   end when;
+//   Step10.outerStatePort.subgraphStatePort.activeSteps = if Step10.localActive then 1.0 else 0.0;
+//   Step10.inPort[1].occupied = Step10.localActive;
+//   Step10.outPort[1].available = Step10.localActive;
+//   Step11.stateGraphRoot.suspend = Step11.stateGraphRoot.subgraphStatePort.suspend;
+//   Step11.stateGraphRoot.resume = Step11.stateGraphRoot.subgraphStatePort.resume;
+//   Step11.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step11.active = Step11.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step11.localActive = pre(Step11.newActive);
+//   Step11.newActive = if Step11.outerStatePort.subgraphStatePort.resume then Step11.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step11.inPort[1].set}) or Step11.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step11.outPort[1].reset})) and not Step11.outerStatePort.subgraphStatePort.suspend;
+//   when Step11.outerStatePort.subgraphStatePort.suspend then
+//   Step11.oldActive = Step11.localActive;
+//   end when;
+//   Step11.outerStatePort.subgraphStatePort.activeSteps = if Step11.localActive then 1.0 else 0.0;
+//   Step11.inPort[1].occupied = Step11.localActive;
+//   Step11.outPort[1].available = Step11.localActive;
+//   Step12.stateGraphRoot.suspend = Step12.stateGraphRoot.subgraphStatePort.suspend;
+//   Step12.stateGraphRoot.resume = Step12.stateGraphRoot.subgraphStatePort.resume;
+//   Step12.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step12.active = Step12.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step12.localActive = pre(Step12.newActive);
+//   Step12.newActive = if Step12.outerStatePort.subgraphStatePort.resume then Step12.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step12.inPort[1].set}) or Step12.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step12.outPort[1].reset})) and not Step12.outerStatePort.subgraphStatePort.suspend;
+//   when Step12.outerStatePort.subgraphStatePort.suspend then
+//   Step12.oldActive = Step12.localActive;
+//   end when;
+//   Step12.outerStatePort.subgraphStatePort.activeSteps = if Step12.localActive then 1.0 else 0.0;
+//   Step12.inPort[1].occupied = Step12.localActive;
+//   Step12.outPort[1].available = Step12.localActive;
+//   Step13.stateGraphRoot.suspend = Step13.stateGraphRoot.subgraphStatePort.suspend;
+//   Step13.stateGraphRoot.resume = Step13.stateGraphRoot.subgraphStatePort.resume;
+//   Step13.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step13.active = Step13.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step13.localActive = pre(Step13.newActive);
+//   Step13.newActive = if Step13.outerStatePort.subgraphStatePort.resume then Step13.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step13.inPort[1].set}) or Step13.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step13.outPort[1].reset})) and not Step13.outerStatePort.subgraphStatePort.suspend;
+//   when Step13.outerStatePort.subgraphStatePort.suspend then
+//   Step13.oldActive = Step13.localActive;
+//   end when;
+//   Step13.outerStatePort.subgraphStatePort.activeSteps = if Step13.localActive then 1.0 else 0.0;
+//   Step13.inPort[1].occupied = Step13.localActive;
+//   Step13.outPort[1].available = Step13.localActive;
+//   Step14.stateGraphRoot.suspend = Step14.stateGraphRoot.subgraphStatePort.suspend;
+//   Step14.stateGraphRoot.resume = Step14.stateGraphRoot.subgraphStatePort.resume;
+//   Step14.stateGraphRoot.subgraphStatePort.activeStepsDummy = 0.0;
+//   Step14.active = Step14.localActive;
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   assert(true,\"Connector is connected to more than one transition (this is not allowed)\");
+//   Step14.localActive = pre(Step14.newActive);
+//   Step14.newActive = if Step14.outerStatePort.subgraphStatePort.resume then Step14.oldActive else (Modelica.StateGraph.Temporary.anyTrue({Step14.inPort[1].set}) or Step14.localActive and not Modelica.StateGraph.Temporary.anyTrue({Step14.outPort[1].reset})) and not Step14.outerStatePort.subgraphStatePort.suspend;
+//   when Step14.outerStatePort.subgraphStatePort.suspend then
+//   Step14.oldActive = Step14.localActive;
+//   end when;
+//   Step14.outerStatePort.subgraphStatePort.activeSteps = if Step14.localActive then 1.0 else 0.0;
+//   Step14.inPort[1].occupied = Step14.localActive;
+//   Step14.outPort[1].available = Step14.localActive;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition8.t_start = 0.0;
+//   Transition8.t_dummy = 0.0;
+//   Transition8.t = 0.0;
+//   Transition8.fire = Transition8.enableFire;
+//   Transition8.enableFire = Transition8.localCondition and Transition8.inPort.available and not Transition8.outPort.occupied;
+//   Transition8.inPort.reset = Transition8.fire;
+//   Transition8.outPort.set = Transition8.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition9.t_start = 0.0;
+//   Transition9.t_dummy = 0.0;
+//   Transition9.t = 0.0;
+//   Transition9.fire = Transition9.enableFire;
+//   Transition9.enableFire = Transition9.localCondition and Transition9.inPort.available and not Transition9.outPort.occupied;
+//   Transition9.inPort.reset = Transition9.fire;
+//   Transition9.outPort.set = Transition9.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition10.t_start = 0.0;
+//   Transition10.t_dummy = 0.0;
+//   Transition10.t = 0.0;
+//   Transition10.fire = Transition10.enableFire;
+//   Transition10.enableFire = Transition10.localCondition and Transition10.inPort.available and not Transition10.outPort.occupied;
+//   Transition10.inPort.reset = Transition10.fire;
+//   Transition10.outPort.set = Transition10.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition11.t_start = 0.0;
+//   Transition11.t_dummy = 0.0;
+//   Transition11.t = 0.0;
+//   Transition11.fire = Transition11.enableFire;
+//   Transition11.enableFire = Transition11.localCondition and Transition11.inPort.available and not Transition11.outPort.occupied;
+//   Transition11.inPort.reset = Transition11.fire;
+//   Transition11.outPort.set = Transition11.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition12.t_start = 0.0;
+//   Transition12.t_dummy = 0.0;
+//   Transition12.t = 0.0;
+//   Transition12.fire = Transition12.enableFire;
+//   Transition12.enableFire = Transition12.localCondition and Transition12.inPort.available and not Transition12.outPort.occupied;
+//   Transition12.inPort.reset = Transition12.fire;
+//   Transition12.outPort.set = Transition12.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   Transition13.t_start = 0.0;
+//   Transition13.t_dummy = 0.0;
+//   Transition13.t = 0.0;
+//   Transition13.fire = Transition13.enableFire;
+//   Transition13.enableFire = Transition13.localCondition and Transition13.inPort.available and not Transition13.outPort.occupied;
+//   Transition13.inPort.reset = Transition13.fire;
+//   Transition13.outPort.set = Transition13.fire;
+//   assert(true,\"Connector inPort is not connected to exactly one other connector\");
+//   assert(true,\"Connector outPort is not connected to exactly one other connector\");
+//   TransitionWithSignal1.t_start = 0.0;
+//   TransitionWithSignal1.t_dummy = 0.0;
+//   TransitionWithSignal1.t = 0.0;
+//   TransitionWithSignal1.fire = TransitionWithSignal1.enableFire;
+//   TransitionWithSignal1.enableFire = TransitionWithSignal1.localCondition and TransitionWithSignal1.inPort.available and not TransitionWithSignal1.outPort.occupied;
+//   TransitionWithSignal1.inPort.reset = TransitionWithSignal1.fire;
+//   TransitionWithSignal1.outPort.set = TransitionWithSignal1.fire;
+//   LIS_301 = sensors.LIS_301;
+//   LIS_501 = sensors.LIS_501;
+//   LIS_601 = sensors.LIS_601;
+//   LIS_701 = sensors.LIS_701;
+//   QI_302 = sensors.QI_302;
+//   QIS_502 = sensors.QIS_502;
+//   TIS_602 = sensors.TIS_602;
+//   TIS_702 = sensors.TIS_702;
+//   T5_idle = not actuators.V12 and not actuators.V15 and not actuators.T5_Heater and sensors.LIS_501 < 0.01;
+//   T7_idle = not actuators.V15 and not actuators.V18 and not actuators.T7_Cooling and sensors.LIS_701 < 0.01;
+//   actuators.P1 = Step10.active;
+//   actuators.P2 = Step13.active;
+//   actuators.T5_Heater = Step6.active;
+//   actuators.T7_Cooling = Step9.active;
+//   actuators.T6_Cooling = Step12.active;
+//   actuators.V1 = Step10.active;
+//   actuators.V2 = false;
+//   actuators.V3 = Step10.active;
+//   actuators.V4 = false;
+//   actuators.V5 = Step13.active;
+//   actuators.V6 = Step13.active;
+//   actuators.V8 = Step1.active;
+//   actuators.V9 = Step2.active;
+//   actuators.V10 = false;
+//   actuators.V11 = Step3.active;
+//   actuators.V12 = Step5.active;
+//   actuators.V15 = Step8.active;
+//   actuators.V18 = Step10.active;
+//   actuators.V19 = false;
+//   actuators.V20 = Step13.active;
+//   actuators.V21 = false;
+//   actuators.V22 = Step10.active;
+//   actuators.V23 = Step10.active;
+//   actuators.V25 = Step13.active;
+//   actuators.V24 = Step13.active;
+//   InitialStep1.stateGraphRoot.subgraphStatePort.activeSteps + InitialStep1.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step1.stateGraphRoot.subgraphStatePort.activeSteps + Step1.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step2.stateGraphRoot.subgraphStatePort.activeSteps + Step2.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step3.stateGraphRoot.subgraphStatePort.activeSteps + Step3.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step4.stateGraphRoot.subgraphStatePort.activeSteps + Step4.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step5.stateGraphRoot.subgraphStatePort.activeSteps + Step5.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step6.stateGraphRoot.subgraphStatePort.activeSteps + Step6.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step7.stateGraphRoot.subgraphStatePort.activeSteps + Step7.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step8.stateGraphRoot.subgraphStatePort.activeSteps + Step8.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step9.stateGraphRoot.subgraphStatePort.activeSteps + Step9.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step10.stateGraphRoot.subgraphStatePort.activeSteps + Step10.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step11.stateGraphRoot.subgraphStatePort.activeSteps + Step11.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step12.stateGraphRoot.subgraphStatePort.activeSteps + Step12.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step13.stateGraphRoot.subgraphStatePort.activeSteps + Step13.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   Step14.stateGraphRoot.subgraphStatePort.activeSteps + Step14.outerStatePort.subgraphStatePort.activeSteps = 0.0;
+//   InitialStep1.outPort[1].available = Transition1.inPort.available;
+//   InitialStep1.outPort[1].reset = Transition1.inPort.reset;
+//   Step1.inPort[1].occupied = Transition1.outPort.occupied;
+//   Step1.inPort[1].set = Transition1.outPort.set;
+//   Step1.outPort[1].available = Transition2.inPort.available;
+//   Step1.outPort[1].reset = Transition2.inPort.reset;
+//   Step2.inPort[1].occupied = Transition2.outPort.occupied;
+//   Step2.inPort[1].set = Transition2.outPort.set;
+//   Step2.outPort[1].available = Transition3.inPort.available;
+//   Step2.outPort[1].reset = Transition3.inPort.reset;
+//   Step3.inPort[1].occupied = Transition3.outPort.occupied;
+//   Step3.inPort[1].set = Transition3.outPort.set;
+//   Step3.outPort[1].available = Transition4.inPort.available;
+//   Step3.outPort[1].reset = Transition4.inPort.reset;
+//   Step4.inPort[1].occupied = Transition4.outPort.occupied;
+//   Step4.inPort[1].set = Transition4.outPort.set;
+//   Step4.outPort[1].available = Transition5.inPort.available;
+//   Step4.outPort[1].reset = Transition5.inPort.reset;
+//   Step5.inPort[1].occupied = Transition5.outPort.occupied;
+//   Step5.inPort[1].set = Transition5.outPort.set;
+//   Step5.outPort[1].available = Transition6.inPort.available;
+//   Step5.outPort[1].reset = Transition6.inPort.reset;
+//   Step6.inPort[1].occupied = Transition6.outPort.occupied;
+//   Step6.inPort[1].set = Transition6.outPort.set;
+//   Step6.outPort[1].available = Transition7.inPort.available;
+//   Step6.outPort[1].reset = Transition7.inPort.reset;
+//   Parallel1.split[1].occupied = Step12.inPort[1].occupied;
+//   Parallel1.split[1].set = Step12.inPort[1].set;
+//   Step12.outPort[1].available = Transition12.inPort.available;
+//   Step12.outPort[1].reset = Transition12.inPort.reset;
+//   Step13.inPort[1].occupied = Transition12.outPort.occupied;
+//   Step13.inPort[1].set = Transition12.outPort.set;
+//   Step13.outPort[1].available = Transition13.inPort.available;
+//   Step13.outPort[1].reset = Transition13.inPort.reset;
+//   Step14.inPort[1].occupied = Transition13.outPort.occupied;
+//   Step14.inPort[1].set = Transition13.outPort.set;
+//   Parallel1.join[1].available = Step14.outPort[1].available;
+//   Parallel1.join[1].reset = Step14.outPort[1].reset;
+//   Parallel1.split[2].occupied = Step7.inPort[1].occupied;
+//   Parallel1.split[2].set = Step7.inPort[1].set;
+//   Step7.outPort[1].available = Transition8.inPort.available;
+//   Step7.outPort[1].reset = Transition8.inPort.reset;
+//   Step8.inPort[1].occupied = Transition8.outPort.occupied;
+//   Step8.inPort[1].set = Transition8.outPort.set;
+//   Step8.outPort[1].available = Transition9.inPort.available;
+//   Step8.outPort[1].reset = Transition9.inPort.reset;
+//   Step9.inPort[1].occupied = Transition9.outPort.occupied;
+//   Step9.inPort[1].set = Transition9.outPort.set;
+//   Step9.outPort[1].available = Transition10.inPort.available;
+//   Step9.outPort[1].reset = Transition10.inPort.reset;
+//   Step10.inPort[1].occupied = Transition10.outPort.occupied;
+//   Step10.inPort[1].set = Transition10.outPort.set;
+//   Step10.outPort[1].available = Transition11.inPort.available;
+//   Step10.outPort[1].reset = Transition11.inPort.reset;
+//   Step11.inPort[1].occupied = Transition11.outPort.occupied;
+//   Step11.inPort[1].set = Transition11.outPort.set;
+//   Parallel1.join[2].available = Step11.outPort[1].available;
+//   Parallel1.join[2].reset = Step11.outPort[1].reset;
+//   Parallel1.inPort.occupied = Transition7.outPort.occupied;
+//   Parallel1.inPort.set = Transition7.outPort.set;
+//   Parallel1.outPort.available = TransitionWithSignal1.inPort.available;
+//   Parallel1.outPort.reset = TransitionWithSignal1.inPort.reset;
+//   InitialStep1.inPort[1].occupied = TransitionWithSignal1.outPort.occupied;
+//   InitialStep1.inPort[1].set = TransitionWithSignal1.outPort.set;
+//   BooleanExpression1.y = TransitionWithSignal1.condition;
+//   Step14.outerStatePort.subgraphStatePort.suspend = Step14.stateGraphRoot.subgraphStatePort.suspend;
+//   Step14.outerStatePort.subgraphStatePort.resume = Step14.stateGraphRoot.subgraphStatePort.resume;
+//   Step14.outerStatePort.subgraphStatePort.activeStepsDummy = Step14.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step13.outerStatePort.subgraphStatePort.suspend = Step13.stateGraphRoot.subgraphStatePort.suspend;
+//   Step13.outerStatePort.subgraphStatePort.resume = Step13.stateGraphRoot.subgraphStatePort.resume;
+//   Step13.outerStatePort.subgraphStatePort.activeStepsDummy = Step13.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step12.outerStatePort.subgraphStatePort.suspend = Step12.stateGraphRoot.subgraphStatePort.suspend;
+//   Step12.outerStatePort.subgraphStatePort.resume = Step12.stateGraphRoot.subgraphStatePort.resume;
+//   Step12.outerStatePort.subgraphStatePort.activeStepsDummy = Step12.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step11.outerStatePort.subgraphStatePort.suspend = Step11.stateGraphRoot.subgraphStatePort.suspend;
+//   Step11.outerStatePort.subgraphStatePort.resume = Step11.stateGraphRoot.subgraphStatePort.resume;
+//   Step11.outerStatePort.subgraphStatePort.activeStepsDummy = Step11.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step10.outerStatePort.subgraphStatePort.suspend = Step10.stateGraphRoot.subgraphStatePort.suspend;
+//   Step10.outerStatePort.subgraphStatePort.resume = Step10.stateGraphRoot.subgraphStatePort.resume;
+//   Step10.outerStatePort.subgraphStatePort.activeStepsDummy = Step10.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step9.outerStatePort.subgraphStatePort.suspend = Step9.stateGraphRoot.subgraphStatePort.suspend;
+//   Step9.outerStatePort.subgraphStatePort.resume = Step9.stateGraphRoot.subgraphStatePort.resume;
+//   Step9.outerStatePort.subgraphStatePort.activeStepsDummy = Step9.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step8.outerStatePort.subgraphStatePort.suspend = Step8.stateGraphRoot.subgraphStatePort.suspend;
+//   Step8.outerStatePort.subgraphStatePort.resume = Step8.stateGraphRoot.subgraphStatePort.resume;
+//   Step8.outerStatePort.subgraphStatePort.activeStepsDummy = Step8.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step7.outerStatePort.subgraphStatePort.suspend = Step7.stateGraphRoot.subgraphStatePort.suspend;
+//   Step7.outerStatePort.subgraphStatePort.resume = Step7.stateGraphRoot.subgraphStatePort.resume;
+//   Step7.outerStatePort.subgraphStatePort.activeStepsDummy = Step7.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step6.outerStatePort.subgraphStatePort.suspend = Step6.stateGraphRoot.subgraphStatePort.suspend;
+//   Step6.outerStatePort.subgraphStatePort.resume = Step6.stateGraphRoot.subgraphStatePort.resume;
+//   Step6.outerStatePort.subgraphStatePort.activeStepsDummy = Step6.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step5.outerStatePort.subgraphStatePort.suspend = Step5.stateGraphRoot.subgraphStatePort.suspend;
+//   Step5.outerStatePort.subgraphStatePort.resume = Step5.stateGraphRoot.subgraphStatePort.resume;
+//   Step5.outerStatePort.subgraphStatePort.activeStepsDummy = Step5.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step4.outerStatePort.subgraphStatePort.suspend = Step4.stateGraphRoot.subgraphStatePort.suspend;
+//   Step4.outerStatePort.subgraphStatePort.resume = Step4.stateGraphRoot.subgraphStatePort.resume;
+//   Step4.outerStatePort.subgraphStatePort.activeStepsDummy = Step4.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step3.outerStatePort.subgraphStatePort.suspend = Step3.stateGraphRoot.subgraphStatePort.suspend;
+//   Step3.outerStatePort.subgraphStatePort.resume = Step3.stateGraphRoot.subgraphStatePort.resume;
+//   Step3.outerStatePort.subgraphStatePort.activeStepsDummy = Step3.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step2.outerStatePort.subgraphStatePort.suspend = Step2.stateGraphRoot.subgraphStatePort.suspend;
+//   Step2.outerStatePort.subgraphStatePort.resume = Step2.stateGraphRoot.subgraphStatePort.resume;
+//   Step2.outerStatePort.subgraphStatePort.activeStepsDummy = Step2.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   Step1.outerStatePort.subgraphStatePort.suspend = Step1.stateGraphRoot.subgraphStatePort.suspend;
+//   Step1.outerStatePort.subgraphStatePort.resume = Step1.stateGraphRoot.subgraphStatePort.resume;
+//   Step1.outerStatePort.subgraphStatePort.activeStepsDummy = Step1.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+//   InitialStep1.outerStatePort.subgraphStatePort.suspend = InitialStep1.stateGraphRoot.subgraphStatePort.suspend;
+//   InitialStep1.outerStatePort.subgraphStatePort.resume = InitialStep1.stateGraphRoot.subgraphStatePort.resume;
+//   InitialStep1.outerStatePort.subgraphStatePort.activeStepsDummy = InitialStep1.stateGraphRoot.subgraphStatePort.activeStepsDummy;
+// end Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller;
+// "
+// "Warning: No corresponding 'inner' declaration found for component InitialStep1.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.InitialStep.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step1.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step2.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step3.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step4.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step5.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step6.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step7.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step8.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step9.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step10.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step11.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step12.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step13.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step14.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// "
+// "Check of Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component InitialStep1.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.InitialStep.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step1.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step2.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step3.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step4.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step5.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step6.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step7.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step8.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step9.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step10.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step11.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step12.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step13.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component Step14.stateGraphRoot declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.StateGraph.Step.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller has 472 equation(s) and 472 variable(s).
+// 365 of these are trivial equation(s).
+// "
+// ""
+// endResult

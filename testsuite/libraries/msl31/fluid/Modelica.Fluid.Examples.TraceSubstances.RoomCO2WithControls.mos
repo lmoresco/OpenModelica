@@ -1,0 +1,54 @@
+//name:        Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErrorString();
+checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:176:5-176:27:writable] Error: No constant value for variable data in scope Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy.
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
+// [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]
+// Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
+// "
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:176:5-176:27:writable] Error: No constant value for variable data in scope Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy.
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
+// 
+// [Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
+// [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity=\"MassFraction\", unit=\"1\")[1]
+// Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2WithControls
+// "
+// ""
+// endResult

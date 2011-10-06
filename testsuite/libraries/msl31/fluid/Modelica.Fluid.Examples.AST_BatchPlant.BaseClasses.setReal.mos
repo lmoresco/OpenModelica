@@ -1,0 +1,30 @@
+//name:        Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal); getErrorString();
+checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal
+//   input Real u \"Set value of Real input\";
+// end Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal;
+// "
+// ""
+// "Check of Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal has 0 equation(s) and 0 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// endResult

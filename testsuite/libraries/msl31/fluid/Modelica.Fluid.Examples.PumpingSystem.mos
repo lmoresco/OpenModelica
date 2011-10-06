@@ -1,0 +1,35 @@
+//name:        Modelica.Fluid.Examples.PumpingSystem [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.PumpingSystem); getErrorString();
+checkModel(Modelica.Fluid.Examples.PumpingSystem); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
+// Warning: Parameter diameter has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pipe.flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pipe.flowModel.p_b_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter pipe.flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Pipes.mo:21:5-40:85:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component pipe)
+// Error: Error occured while flattening model Modelica.Fluid.Examples.PumpingSystem
+// "
+// "[Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
+// [Pipes.mo:21:5-40:85:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component pipe)
+// Error: Error occured while flattening model Modelica.Fluid.Examples.PumpingSystem
+// "
+// ""
+// endResult

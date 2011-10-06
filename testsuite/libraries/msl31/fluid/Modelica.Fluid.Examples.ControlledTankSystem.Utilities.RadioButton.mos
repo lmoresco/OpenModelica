@@ -1,0 +1,30 @@
+//name:        Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); getErrorString();
+checkModel(Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[ControlledTankSystem.mo:483:7-484:49:writable] Error: Failed to deduce dimensions of buttonTimeTable due to missing binding equation.
+// Error: Error occured while flattening model Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton
+// "
+// "Check of Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton completed successfully.
+// 
+// [Sources.mo:2842:7-2843:108:writable] Warning: Failed to deduce dimensions of table due to unknown dimensions of modifier buttonTimeTable.
+// 
+// Class Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton has 4 equation(s) and 4 variable(s).
+// 0 of these are trivial equation(s).
+// "
+// ""
+// endResult

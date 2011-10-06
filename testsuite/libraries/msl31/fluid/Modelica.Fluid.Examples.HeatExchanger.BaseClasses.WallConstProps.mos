@@ -1,0 +1,107 @@
+//name:        Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps); getErrorString();
+checkModel(Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// class Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps
+//   parameter Integer n(min = 1) = 1 \"Segmentation perpendicular to heat conduction\";
+//   parameter Real s(quantity = \"Length\", unit = \"m\") \"Wall thickness\";
+//   parameter Real area_h(quantity = \"Area\", unit = \"m2\") \"Heat transfer area\";
+//   parameter Real rho_wall(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"Density of wall material\";
+//   parameter Real c_wall(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\") \"Specific heat capacity of wall material\";
+//   parameter Real k_wall(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\") \"Thermal conductivity of wall material\";
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) energyDynamics = system.energyDynamics \"Formulation of energy balance\";
+//   parameter Real T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Wall temperature start value\";
+//   parameter Real dT(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Start value for port_b.T - port_a.T\";
+//   Real Tb[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start + 0.5 * dT);
+//   Real Ta[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start + -0.5 * dT);
+//   Real T[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0, start = T_start, StateSelect = StateSelect.prefer) \"Wall temperature\";
+//   Real heatPort_a[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real heatPort_a[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   Real heatPort_b[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real heatPort_b[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   parameter Real m[1](quantity = \"Mass\", unit = \"kg\", min = 0.0) = (rho_wall * (area_h * s)) / Real(n) \"Distribution of wall mass\";
+// equation
+//   assert(m[1] > 0.0,\"Wall has negative dimensions\");
+//   c_wall * (m[1] * der(T[1])) = heatPort_a[1].Q_flow + heatPort_b[1].Q_flow;
+//   heatPort_a[1].Q_flow = (area_h * ((Ta[1] - T[1]) * k_wall)) / (Real(n) * s);
+//   heatPort_b[1].Q_flow = (area_h * ((Tb[1] - T[1]) * k_wall)) / (Real(n) * s);
+//   Ta[1] = heatPort_a[1].T;
+//   Tb[1] = heatPort_b[1].T;
+//   heatPort_a[1].Q_flow = 0.0;
+//   heatPort_b[1].Q_flow = 0.0;
+// end Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps;
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter T_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter dT has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter T_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter dT has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter T_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// [HeatExchanger.mo:442:7-443:27:writable] Warning: Variable T: Non-array modification 'StateSelect.prefer' for array component, possibly due to missing 'each'.
+// 
+// Warning: Parameter rho_wall has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter area_h has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter s has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter c_wall has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter k_wall has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter s has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter area_h has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter k_wall has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter s has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter area_h has neither value nor start value, and is fixed during initialization (fixed=true)
+// "
+// "Check of Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// [HeatExchanger.mo:442:7-443:27:writable] Warning: Variable T: Non-array modification 'StateSelect.prefer' for array component, possibly due to missing 'each'.
+// 
+// 
+// Class Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps has 7 equation(s) and 7 variable(s).
+// 4 of these are trivial equation(s).
+// "
+// ""
+// endResult

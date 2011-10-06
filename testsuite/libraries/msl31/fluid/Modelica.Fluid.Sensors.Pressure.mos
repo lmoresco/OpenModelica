@@ -1,0 +1,52 @@
+//name:        Modelica.Fluid.Sensors.Pressure [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Sensors.Pressure); getErrorString();
+checkModel(Modelica.Fluid.Sensors.Pressure); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Sensors.Pressure
+//   Real port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   output Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) \"Pressure at port\";
+// equation
+//   p = port.p;
+//   port.m_flow = 0.0;
+//   port.h_outflow = 0.0;
+//   port.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.Pressure;
+// "
+// ""
+// "Check of Modelica.Fluid.Sensors.Pressure completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Sensors.Pressure has 4 equation(s) and 4 variable(s).
+// 4 of these are trivial equation(s).
+// "
+// ""
+// endResult

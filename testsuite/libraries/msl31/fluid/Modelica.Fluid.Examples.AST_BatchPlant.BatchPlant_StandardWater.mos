@@ -1,0 +1,44 @@
+//name:        Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater); getErrorString();
+checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[AST_BatchPlant.mo:18:17-18:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.
+// [AST_BatchPlant.mo:409:17-409:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:324:17-324:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:18:17-18:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.Medium
+// [AST_BatchPlant.mo:961:7-965:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.
+// [AST_BatchPlant.mo:409:17-409:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.Medium
+// [Interfaces.mo:584:7-589:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:324:17-324:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.Medium
+// [Interfaces.mo:584:7-589:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:17:5-35:26:writable] Error: Variable B5: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater
+// "
+// "[AST_BatchPlant.mo:18:17-18:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.
+// [AST_BatchPlant.mo:409:17-409:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:324:17-324:45:writable] Error: Class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:18:17-18:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.Medium
+// [AST_BatchPlant.mo:961:7-965:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.
+// [AST_BatchPlant.mo:409:17-409:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.Medium
+// [Interfaces.mo:584:7-589:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:324:17-324:45:writable] Error: Base class BatchMedium not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.Medium
+// [Interfaces.mo:584:7-589:41:writable] Error: Class Medium.BaseProperties not found in scope Modelica.Fluid.Interfaces.PartialLumpedVolume.
+// [AST_BatchPlant.mo:17:5-35:26:writable] Error: Variable B5: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater
+// "
+// ""
+// endResult

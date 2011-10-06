@@ -31,6 +31,7 @@ msl221additions.log \
 interactive-simulation.log \
 msl31simulation.log \
 msl31media.log
+msl31fluid.log
 
 
 SIMULATIONLOGS = \
@@ -152,6 +153,9 @@ msl31simulation.log: omc-diff
 	@echo $@ done
 msl31media.log: omc-diff
 	$(MAKE) -C libraries/msl31/media -f Makefile test > $@
+	@echo $@ done
+msl31fluid.log: omc-diff
+	$(MAKE) -C libraries/msl31/fluid -f Makefile test > $@
 	@echo $@ done
 fmi.log: omc-diff
 	$(MAKE) -C fmi -f Makefile test > $@

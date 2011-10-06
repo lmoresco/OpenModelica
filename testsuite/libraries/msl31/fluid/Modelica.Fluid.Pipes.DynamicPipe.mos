@@ -1,0 +1,27 @@
+//name:        Modelica.Fluid.Pipes.DynamicPipe [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Pipes.DynamicPipe); getErrorString();
+checkModel(Modelica.Fluid.Pipes.DynamicPipe); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
+// Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Pipes.DynamicPipe: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Pipes.DynamicPipe
+// "
+// "Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Pipes.DynamicPipe: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Pipes.DynamicPipe
+// "
+// ""
+// endResult

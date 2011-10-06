@@ -1,0 +1,257 @@
+//name:        Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer); getErrorString();
+checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// "function Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.NusseltNumber \"Return Nusselt number\"
+//   input Real alpha(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") \"Coefficient of heat transfer\";
+//   input Real D(quantity = \"Length\", unit = \"m\") \"Characteristic dimension\";
+//   input Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\") \"Thermal conductivity\";
+//   output Real Nu(quantity = \"NusseltNumber\", unit = \"1\") \"Nusselt number\";
+// algorithm
+//   Nu := (alpha * D) / lambda;
+// end Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.NusseltNumber;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.ReynoldsNumber \"Return Reynolds number from v, rho, mu, D\"
+//   input Real v(quantity = \"Velocity\", unit = \"m/s\") \"Mean velocity of fluid flow\";
+//   input Real rho(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) \"Fluid density\";
+//   input Real mu(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) \"Dynamic (absolute) viscosity\";
+//   input Real D(quantity = \"Length\", unit = \"m\") \"Characteristic dimension (hydraulic diameter of pipes)\";
+//   output Real Re(quantity = \"ReynoldsNumber\", unit = \"1\") \"Reynolds number\";
+// algorithm
+//   Re := (abs(v) * rho * D) / mu;
+// end Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.ReynoldsNumber;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState\"
+//   output ThermodynamicState res;
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.density \"Return density\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.density;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.dynamicViscosity \"Return dynamic viscosity\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real eta(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosity\";
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.dynamicViscosity;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.prandtlNumber \"Return the Prandtl number\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real Pr(quantity = \"PrandtlNumber\", unit = \"1\", min = 0.001, max = 100000.0, nominal = 1.0) \"Prandtl number\";
+// algorithm
+//   Pr := (Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.dynamicViscosity(state) * Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.specificHeatCapacityCp(state)) / Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.thermalConductivity(state);
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.prandtlNumber;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.specificHeatCapacityCp \"Return specific heat capacity at constant pressure\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real cp(quantity = \"SpecificHeatCapacity\", unit = \"J/(kg.K)\", min = 0.0, max = 1000000.0, start = 1000.0, nominal = 1000.0) \"Specific heat capacity at constant pressure\";
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.specificHeatCapacityCp;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.temperature;
+// 
+// function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.thermalConductivity \"Return thermal conductivity\"
+//   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real lambda(quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.thermalConductivity;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.Math.cos
+//   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+//   output Real y;
+// 
+//   external \"C\" y = cos(u);
+// end Modelica.Math.cos;
+// 
+// function Modelica.Math.cosh
+//   input Real u;
+//   output Real y;
+// 
+//   external \"C\" y = cosh(u);
+// end Modelica.Math.cosh;
+// 
+// function Modelica.Math.log10
+//   input Real u;
+//   output Real y;
+// 
+//   external \"C\" y = log10(u);
+// end Modelica.Math.log10;
+// 
+// function Modelica.Math.tan
+//   input Real u(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+//   output Real y;
+// 
+//   external \"C\" y = tan(u);
+// end Modelica.Math.tan;
+// 
+// function Modelica.Math.tanh
+//   input Real u;
+//   output Real y;
+// 
+//   external \"C\" y = tanh(u);
+// end Modelica.Math.tanh;
+// 
+// function Modelica.Media.Air.MoistAir.Utilities.spliceFunction \"Spline interpolation of two functions\"
+//   input Real pos \"Returned value for x-deltax >= 0\";
+//   input Real neg \"Returned value for x+deltax <= 0\";
+//   input Real x \"Function argument\";
+//   input Real deltax = 1.0 \"Region around x with spline interpolation\";
+//   output Real out;
+//   protected Real scaledX;
+//   protected Real scaledX1;
+//   protected Real y;
+// algorithm
+//   scaledX1 := x / deltax;
+//   scaledX := scaledX1 * asin(1.0);
+//   if scaledX1 <= -0.999999999 then
+//     y := 0.0;
+//   elseif scaledX1 >= 0.999999999 then
+//     y := 1.0;
+//   else
+//     y := 0.5 + tanh(tan(scaledX)) / 2.0;
+//   end if;
+//   out := pos * y + (1.0 - y) * neg;
+// end Modelica.Media.Air.MoistAir.Utilities.spliceFunction;
+// 
+// function Modelica.Media.Air.MoistAir.Utilities.spliceFunction_der \"Derivative of spliceFunction\"
+//   input Real pos;
+//   input Real neg;
+//   input Real x;
+//   input Real deltax = 1.0;
+//   input Real dpos;
+//   input Real dneg;
+//   input Real dx;
+//   input Real ddeltax = 0.0;
+//   output Real out;
+//   protected Real scaledX;
+//   protected Real scaledX1;
+//   protected Real dscaledX1;
+//   protected Real y;
+// algorithm
+//   scaledX1 := x / deltax;
+//   scaledX := scaledX1 * asin(1.0);
+//   dscaledX1 := (dx - scaledX1 * ddeltax) / deltax;
+//   if scaledX1 <= -0.99999999999 then
+//     y := 0.0;
+//   elseif scaledX1 >= 0.9999999999 then
+//     y := 1.0;
+//   else
+//     y := 0.5 + tanh(tan(scaledX)) / 2.0;
+//   end if;
+//   out := dpos * y + (1.0 - y) * dneg;
+//   if abs(scaledX1) < 1.0 then
+//     out := out + (pos - neg * dscaledX1 * asin(1.0) * (cosh(tan(scaledX)) * cos(scaledX)) ^ -2.0) / 2.0;
+//   end if;
+// end Modelica.Media.Air.MoistAir.Utilities.spliceFunction_der;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer
+//   parameter Integer n = 1 \"Number of heat transfer segments\";
+//   input Real surfaceAreas[1](quantity = \"Area\", unit = \"m2\") \"Heat transfer areas\";
+//   output Real Q_flows[1](quantity = \"Power\", unit = \"W\") \"Heat flow rates\";
+//   parameter Boolean use_k = false \"= true to use k value for thermal isolation\";
+//   parameter Real k(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 0.0 \"Heat transfer coefficient to ambient\";
+//   parameter Real T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Ambient temperature\";
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   Real heatPorts[1].T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Port temperature\";
+//   Real heatPorts[1].Q_flow(quantity = \"Power\", unit = \"W\") \"Heat flow rate (positive if flowing from outside into the component)\";
+//   Real Ts[1](quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.temperature(states[1]) \"Temperatures defined by fluid states\";
+//   input Real vs[1](quantity = \"Velocity\", unit = \"m/s\") \"Mean velocities of fluid flow in segments\";
+//   parameter Real nParallel \"number of identical parallel flow devices\";
+//   input Real lengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
+//   input Real dimensions[1](quantity = \"Length\", unit = \"m\") \"Characteristic dimensions for fluid flow (diameter for pipe flow)\";
+//   input Real roughnesses[1](quantity = \"Length\", unit = \"m\", min = 0.0) \"Average heights of surface asperities\";
+//   parameter Real alpha0(quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\") = 100.0 \"guess value for heat transfer coefficients\";
+//   Real alphas[1](quantity = \"CoefficientOfHeatTransfer\", unit = \"W/(m2.K)\", start = alpha0) \"CoefficientOfHeatTransfer\";
+//   Real Res[1] \"Reynolds numbers\";
+//   Real Prs[1] \"Prandtl numbers\";
+//   Real Nus[1] \"Nusselt numbers\";
+//   Real ds[1](quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Densities\";
+//   Real mus[1](quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0, max = 100000000.0, start = 0.001, nominal = 0.001) \"Dynamic viscosities\";
+//   Real lambdas[1](quantity = \"ThermalConductivity\", unit = \"W/(m.K)\", min = 0.0, max = 500.0, start = 1.0, nominal = 1.0) \"Thermal conductivity\";
+//   Real diameters[1](quantity = \"Length\", unit = \"m\") = dimensions[1] \"Hydraulic diameters for pipe flow\";
+//   protected Real Nus_turb[1] \"Nusselt number for turbulent flow\";
+//   protected Real Nus_lam[1] \"Nusselt number for laminar flow\";
+//   protected Real Nu_1;
+//   protected Real Nus_2[1];
+//   protected Real Xis[1];
+// equation
+//   Nu_1 = 3.66;
+//   Nus_turb[1] = ((1.0 + 0.333333333333333 * (diameters[1] ^ 0.666666666666667 * ((1.0 / (if vs[1] >= 0.0 then 0.5 else 0.5 + Real(n + -1))) ^ 0.666666666666667 * (1.0 / lengths[1]) ^ 0.666666666666667))) * (Prs[1] * (abs(Res[1]) * Xis[1]))) / (8.0 + 101.6 * ((Xis[1] / 8.0) ^ 0.5 * (-1.0 + Prs[1] ^ 0.666666666666667)));
+//   Xis[1] = (-1.5 + 1.8 * log10(max(1e-10,Res[1]))) ^ -2.0;
+//   Nus_lam[1] = (0.343 + (Nu_1 ^ 3.0 + (-0.7 + Nus_2[1]) ^ 3.0)) ^ 0.333333333333333;
+//   Nus_2[1] = 1.077 * (abs(Res[1]) ^ 0.333333333333333 * (Prs[1] ^ 0.333333333333333 * (diameters[1] ^ 0.333333333333333 * ((1.0 / (if vs[1] >= 0.0 then 0.5 else 0.5 + Real(n + -1))) ^ 0.333333333333333 * (1.0 / lengths[1]) ^ 0.333333333333333))));
+//   Nus[1] = Modelica.Media.Air.MoistAir.Utilities.spliceFunction(Nus_turb[1],Nus_lam[1],Res[1] + -6150.0,3850.0);
+//   ds[1] = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.density(states[1]);
+//   mus[1] = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.dynamicViscosity(states[1]);
+//   lambdas[1] = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.thermalConductivity(states[1]);
+//   Prs[1] = Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.Medium.prandtlNumber(states[1]);
+//   Res[1] = Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.ReynoldsNumber(vs[1],ds[1],mus[1],diameters[1]);
+//   Nus[1] = Modelica.Fluid.Pipes.BaseClasses.CharacteristicNumbers.NusseltNumber(alphas[1],diameters[1],lambdas[1]);
+//   Q_flows[1] = alphas[1] * (surfaceAreas[1] * ((heatPorts[1].T - Ts[1]) * nParallel));
+//   Q_flows[1] = heatPorts[1].Q_flow;
+//   heatPorts[1].Q_flow = 0.0;
+// end Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer;
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
+// "
+// "Check of Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer has 17 equation(s) and 17 variable(s).
+// 8 of these are trivial equation(s).
+// "
+// ""
+// endResult

@@ -1,0 +1,57 @@
+//name:        Modelica.Fluid.Pipes.StaticPipe [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
+checkModel(Modelica.Fluid.Pipes.StaticPipe); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter diameter has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter length has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.FlowModel.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: Parameter flowModel.p_a_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter flowModel.p_b_start has neither value nor start value, and is fixed during initialization (fixed=true)
+// Warning: Parameter flowModel.nParallel has neither value nor start value, and is fixed during initialization (fixed=true)
+// [Pipes.mo:21:5-40:85:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Pipes.StaticPipe
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Warning: No corresponding 'inner' declaration found for component flowModel.system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Pipes.StaticPipe.FlowModel.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// [Pipes.mo:21:5-40:85:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Pipes.StaticPipe
+// "
+// ""
+// endResult

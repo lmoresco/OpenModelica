@@ -1,0 +1,38 @@
+//name:        Modelica.Fluid.Machines.ControlledPump [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Machines.ControlledPump); getErrorString();
+checkModel(Modelica.Fluid.Machines.ControlledPump); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.ControlledPump.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Machines.ControlledPump: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Machines.ControlledPump
+// "
+// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Machines.ControlledPump.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Machines.ControlledPump: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Machines.ControlledPump
+// "
+// ""
+// endResult

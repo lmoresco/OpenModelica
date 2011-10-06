@@ -1,0 +1,26 @@
+//name:        Modelica.Fluid.Examples.DrumBoiler.DrumBoiler [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
+checkModel(Modelica.Fluid.Examples.DrumBoiler.DrumBoiler); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[DrumBoiler.mo:237:7-238:56:writable] Error: Class Medium.SaturationProperties not found in scope Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.
+// Error: Error occured while flattening model Modelica.Fluid.Examples.DrumBoiler.DrumBoiler
+// "
+// "[DrumBoiler.mo:237:7-238:56:writable] Error: Class Medium.SaturationProperties not found in scope Modelica.Fluid.Examples.DrumBoiler.BaseClasses.EquilibriumDrumBoiler.
+// Error: Error occured while flattening model Modelica.Fluid.Examples.DrumBoiler.DrumBoiler
+// "
+// ""
+// endResult

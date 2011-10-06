@@ -1,0 +1,27 @@
+//name:        Modelica.Fluid.Fittings.TeeJunctionVolume [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
+checkModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "Warning: Parameter V has neither value nor start value, and is fixed during initialization (fixed=true)
+// Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Fittings.TeeJunctionVolume: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Fittings.TeeJunctionVolume
+// "
+// "Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Fittings.TeeJunctionVolume: {h_start,T_start}
+// Error: Error occured while flattening model Modelica.Fluid.Fittings.TeeJunctionVolume
+// "
+// ""
+// endResult
