@@ -30,7 +30,7 @@ msl221simulation.log \
 msl221additions.log \
 interactive-simulation.log \
 msl31simulation.log \
-msl31media.log
+msl31media.log \
 msl31fluid.log
 
 
