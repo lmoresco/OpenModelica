@@ -16,6 +16,7 @@ Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.mos \
 Modelica.Fluid.Sensors.Pressure.mos \
+Modelica.Fluid.Sensors.RelativePressure.mos \
 Modelica.Fluid.Sensors.SpecificEnthalpy.mos \
 Modelica.Fluid.System.mos \
 Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.mos \

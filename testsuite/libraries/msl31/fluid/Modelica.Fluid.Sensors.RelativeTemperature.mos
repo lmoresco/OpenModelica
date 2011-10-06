@@ -1,0 +1,28 @@
+//name:        Modelica.Fluid.Sensors.RelativeTemperature [version 3.1]
+//keyword:     fluid
+//status:      correct
+//
+// instantiate/check model example
+//
+
+loadModel(Modelica, {"3.1"}); getErrorString();
+setDebugFlags("nogen,noevalfunc");
+
+instantiateModel(Modelica.Fluid.Sensors.RelativeTemperature); getErrorString();
+checkModel(Modelica.Fluid.Sensors.RelativeTemperature); getErrorString();
+
+// Result:
+// true
+// ""
+// true
+// ""
+// "[Sensors.mo:777:5-778:119:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Sensors.RelativeTemperature
+// "
+// "[Sensors.mo:777:5-778:119:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
+//  (in component <NO COMPONENT>)
+// Error: Error occured while flattening model Modelica.Fluid.Sensors.RelativeTemperature
+// "
+// ""
+// endResult
