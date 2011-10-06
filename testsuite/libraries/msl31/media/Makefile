@@ -50,7 +50,7 @@ test:
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
 	@$(TEST) $(TESTFILES) 
-	@rm *.o *.c *.h *.libs *.log *.makefile
+	@rm -f *.o *.c *.h *.libs *.log *.makefile
 failingtest :
 	@echo
 	@echo Running failing tests...
