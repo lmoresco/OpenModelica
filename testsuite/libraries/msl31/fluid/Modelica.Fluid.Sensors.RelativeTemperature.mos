@@ -15,14 +15,56 @@ checkModel(Modelica.Fluid.Sensors.RelativeTemperature); getErrorString();
 // true
 // ""
 // true
-// ""
-// "[Sensors.mo:777:5-778:119:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.RelativeTemperature
+// "function Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Sensors.RelativeTemperature.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX;
+// 
+// function Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature \"Return temperature\"
+//   input Modelica.Fluid.Sensors.RelativeTemperature.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
+// end Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Sensors.RelativeTemperature
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   output Real T_rel(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Relative temperature signal\";
+// equation
+//   port_a.m_flow = 0.0;
+//   port_b.m_flow = 0.0;
+//   port_a.h_outflow = 0.0;
+//   port_b.h_outflow = 0.0;
+//   T_rel = Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_a.p,port_a.h_outflow,{})) - Modelica.Fluid.Sensors.RelativeTemperature.Medium.temperature(Modelica.Fluid.Sensors.RelativeTemperature.Medium.setState_phX(port_b.p,port_b.h_outflow,{}));
+//   port_a.m_flow = 0.0;
+//   port_b.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.RelativeTemperature;
 // "
-// "[Sensors.mo:777:5-778:119:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.RelativeTemperature
+// ""
+// "Check of Modelica.Fluid.Sensors.RelativeTemperature completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Sensors.RelativeTemperature has 7 equation(s) and 7 variable(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // endResult

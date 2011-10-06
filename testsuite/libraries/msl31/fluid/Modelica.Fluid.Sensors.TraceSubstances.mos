@@ -15,14 +15,67 @@ checkModel(Modelica.Fluid.Sensors.TraceSubstances); getErrorString();
 // true
 // ""
 // true
-// ""
-// "[Sensors.mo:501:5-501:36:writable] Error: Wrong type or wrong number of arguments to inStream(port.C_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.TraceSubstances
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// function Modelica.Utilities.Strings.compare
+//   input String string1;
+//   input String string2;
+//   input Boolean caseSensitive = true \"= false, if case of letters is ignored\";
+//   output enumeration(Less, Equal, Greater) result \"Result of comparison\";
+// 
+//   external \"C\" result = ModelicaStrings_compare(string1, string2, caseSensitive);
+// end Modelica.Utilities.Strings.compare;
+// 
+// function Modelica.Utilities.Strings.isEqual \"Determine whether two strings are identical\"
+//   input String string1;
+//   input String string2;
+//   input Boolean caseSensitive = true \"= false, if lower and upper case are ignored for the comparison\";
+//   output Boolean identical \"True, if string1 is identical to string2\";
+// algorithm
+//   identical := Modelica.Utilities.Strings.compare(string1,string2,caseSensitive) == Modelica.Utilities.Types.Compare.Equal;
+// end Modelica.Utilities.Strings.isEqual;
+// 
+// class Modelica.Fluid.Sensors.TraceSubstances
+//   Real port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   parameter String substanceName = \"CO2\" \"Name of trace substance\";
+//   output Real C \"Trace substance in port medium\";
+//   protected parameter Integer ind(fixed = false) \"Index of species in vector of auxiliary substances\";
+// initial algorithm
+//   ind := -1;
+//   for i in 1:0 loop
+//     if Modelica.Utilities.Strings.isEqual({}[i],substanceName,true) then
+//       ind := i;
+//     end if;
+//   end for;
+//   assert(ind > 0, \"Trace substance '\" + substanceName + \"' is not present in medium '\" + \"unusablePartialMedium\" + \"'.
+// \" + \"Check sensor parameter and medium model.\");
+// equation
+//   C = {}[ind];
+//   port.m_flow = 0.0;
+//   port.h_outflow = 0.0;
+//   port.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.TraceSubstances;
 // "
-// "[Sensors.mo:501:5-501:36:writable] Error: Wrong type or wrong number of arguments to inStream(port.C_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.TraceSubstances
+// ""
+// "Check of Modelica.Fluid.Sensors.TraceSubstances completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Sensors.TraceSubstances has 4 equation(s) and 4 variable(s).
+// 4 of these are trivial equation(s).
 // "
 // ""
 // endResult

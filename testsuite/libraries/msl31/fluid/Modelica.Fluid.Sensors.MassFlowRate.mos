@@ -15,16 +15,55 @@ checkModel(Modelica.Fluid.Sensors.MassFlowRate); getErrorString();
 // true
 // ""
 // true
-// ""
-// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.MassFlowRate.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.MassFlowRate
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Sensors.MassFlowRate
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Boolean allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
+// equation
+//   m_flow = port_a.m_flow;
+//   0.0 = port_a.m_flow + port_b.m_flow;
+//   port_a.p = port_b.p;
+//   port_a.h_outflow = port_b.h_outflow;
+//   port_b.h_outflow = port_a.h_outflow;
+//   port_a.m_flow = 0.0;
+//   port_b.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.MassFlowRate;
 // "
 // "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
@@ -32,9 +71,18 @@ checkModel(Modelica.Fluid.Sensors.MassFlowRate); getErrorString();
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.MassFlowRate
+// "
+// "Check of Modelica.Fluid.Sensors.MassFlowRate completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.MassFlowRate.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Fluid.Sensors.MassFlowRate has 7 equation(s) and 7 variable(s).
+// 7 of these are trivial equation(s).
 // "
 // ""
 // endResult

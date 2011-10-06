@@ -1,7 +1,8 @@
-TEST = ../../../rtest -v
+TEST = ../../../rtest -b
 
 TESTFILES = \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller.mos \
+Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.mos \
@@ -15,9 +16,22 @@ Modelica.Fluid.Pipes.BaseClasses.FlowModels.TurbulentPipeFlow.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.ConstantFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer.mos \
 Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.LocalPipeFlowHeatTransfer.mos \
+Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.mos \
+Modelica.Fluid.Sensors.Density.mos \
+Modelica.Fluid.Sensors.DensityTwoPort.mos \
 Modelica.Fluid.Sensors.Pressure.mos \
+Modelica.Fluid.Sensors.MassFlowRate.mos \
 Modelica.Fluid.Sensors.RelativePressure.mos \
+Modelica.Fluid.Sensors.RelativeTemperature.mos \
 Modelica.Fluid.Sensors.SpecificEnthalpy.mos \
+Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort.mos \
+Modelica.Fluid.Sensors.SpecificEntropy.mos \
+Modelica.Fluid.Sensors.SpecificEntropyTwoPort.mos \
+Modelica.Fluid.Sensors.Temperature.mos \
+Modelica.Fluid.Sensors.TemperatureTwoPort.mos \
+Modelica.Fluid.Sensors.TraceSubstances.mos \
+Modelica.Fluid.Sensors.TraceSubstancesTwoPort.mos \
+Modelica.Fluid.Sensors.VolumeFlowRate.mos \
 Modelica.Fluid.System.mos \
 Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.ConstantHeatTransfer.mos \
 Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.IdealHeatTransfer.mos \
@@ -25,7 +39,6 @@ Modelica.Fluid.Vessels.BaseClasses.HeatTransfer.IdealHeatTransfer.mos \
 # test that currently fail. Move up when fixed. 
 # Run make testfailing
 FAILINGTESTFILES= \
-Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BatchPlant_StandardWater.mos \
@@ -63,21 +76,8 @@ Modelica.Fluid.Machines.ControlledPump.mos \
 Modelica.Fluid.Machines.PrescribedPump.mos \
 Modelica.Fluid.Machines.Pump.mos \
 Modelica.Fluid.Machines.SweptVolume.mos \
-Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.mos \
 Modelica.Fluid.Pipes.DynamicPipe.mos \
 Modelica.Fluid.Pipes.StaticPipe.mos \
-Modelica.Fluid.Sensors.Density.mos \
-Modelica.Fluid.Sensors.DensityTwoPort.mos \
-Modelica.Fluid.Sensors.MassFlowRate.mos \
-Modelica.Fluid.Sensors.RelativeTemperature.mos \
-Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort.mos \
-Modelica.Fluid.Sensors.SpecificEntropy.mos \
-Modelica.Fluid.Sensors.SpecificEntropyTwoPort.mos \
-Modelica.Fluid.Sensors.Temperature.mos \
-Modelica.Fluid.Sensors.TemperatureTwoPort.mos \
-Modelica.Fluid.Sensors.TraceSubstances.mos \
-Modelica.Fluid.Sensors.TraceSubstancesTwoPort.mos \
-Modelica.Fluid.Sensors.VolumeFlowRate.mos \
 Modelica.Fluid.Sources.Boundary_ph.mos \
 Modelica.Fluid.Sources.Boundary_pT.mos \
 Modelica.Fluid.Sources.FixedBoundary.mos \

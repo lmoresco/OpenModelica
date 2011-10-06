@@ -18,12 +18,10 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1); g
 // ""
 // "Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter dp_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:365:3-365:99:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
-//  (in component valveDiscrete)
+// Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts: {h_start,T_start}
 // Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1
 // "
-// "[Interfaces.mo:365:3-365:99:writable] Error: Wrong type or wrong number of arguments to inStream(port_a.Xi_outflow)'.
-//  (in component valveDiscrete)
+// "Error: Cyclically dependent constants or parameters found in scope Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWithTopPorts: {h_start,T_start}
 // Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.Test.TankWithEmptyingPipe1
 // "
 // ""

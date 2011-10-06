@@ -15,14 +15,50 @@ checkModel(Modelica.Fluid.Sensors.SpecificEntropy); getErrorString();
 // true
 // ""
 // true
-// ""
-// "[Sensors.mo:398:5-398:113:writable] Error: Wrong type or wrong number of arguments to inStream(port.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.SpecificEntropy
+// "function Modelica.Fluid.Sensors.SpecificEntropy.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
+//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
+//   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
+//   output Modelica.Fluid.Sensors.SpecificEntropy.Medium.ThermodynamicState state \"thermodynamic state record\";
+// end Modelica.Fluid.Sensors.SpecificEntropy.Medium.setState_phX;
+// 
+// function Modelica.Fluid.Sensors.SpecificEntropy.Medium.specificEntropy \"Return specific entropy\"
+//   input Modelica.Fluid.Sensors.SpecificEntropy.Medium.ThermodynamicState state \"thermodynamic state record\";
+//   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\", min = -1000000.0, max = 1000000.0, nominal = 1000.0) \"Specific entropy\";
+// end Modelica.Fluid.Sensors.SpecificEntropy.Medium.specificEntropy;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Sensors.SpecificEntropy
+//   Real port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   output Real s(quantity = \"SpecificEntropy\", unit = \"J/(kg.K)\") \"Specific entropy in port medium\";
+// equation
+//   s = Modelica.Fluid.Sensors.SpecificEntropy.Medium.specificEntropy(Modelica.Fluid.Sensors.SpecificEntropy.Medium.setState_phX(port.p,port.h_outflow,{}));
+//   port.m_flow = 0.0;
+//   port.h_outflow = 0.0;
+//   port.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.SpecificEntropy;
 // "
-// "[Sensors.mo:398:5-398:113:writable] Error: Wrong type or wrong number of arguments to inStream(port.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.SpecificEntropy
+// ""
+// "Check of Modelica.Fluid.Sensors.SpecificEntropy completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Sensors.SpecificEntropy has 4 equation(s) and 4 variable(s).
+// 3 of these are trivial equation(s).
 // "
 // ""
 // endResult

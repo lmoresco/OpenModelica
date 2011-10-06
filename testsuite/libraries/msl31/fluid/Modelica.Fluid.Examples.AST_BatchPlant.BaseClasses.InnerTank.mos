@@ -15,14 +15,56 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank); getErr
 // true
 // ""
 // true
-// ""
-// "[AST_BatchPlant.mo:1310:7-1310:59:writable] Error: Wrong type or wrong number of arguments to actualStream(port.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank
+// "function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank
+//   Real port.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Boolean m_flow_negative(start = true) \"true= massflow out of tank\";
+//   constant Real g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665;
+//   input Real aboveLevel;
+//   input Real d;
+//   input Real p_ambient;
+//   input Real h;
+//   input Real pipeArea;
+//   output Real H_flow;
+//   output Real m_flow;
+// equation
+//   m_flow_negative = pre(m_flow_negative) and not port.p > p_ambient or port.m_flow < -1e-06;
+//   if noEvent(aboveLevel > 0.0) then
+//   port.p = 9.80665 * (aboveLevel * d) + (p_ambient - smooth(2,if noEvent(m_flow < 0.0) then (m_flow ^ 2.0 * pipeArea ^ -2.0) / (d * 2.0) else 0.0));
+//   else
+//   if pre(m_flow_negative) then
+//   port.m_flow = 0.0;
+//   else
+//   port.p = p_ambient;
+//   end if;
+//   end if;
+//   H_flow = port.m_flow * (if port.m_flow > 0.0 then port.h_outflow else port.h_outflow);
+//   m_flow = port.m_flow;
+//   port.h_outflow = h;
+//   port.m_flow = 0.0;
+// end Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank;
 // "
-// "[AST_BatchPlant.mo:1310:7-1310:59:writable] Error: Wrong type or wrong number of arguments to actualStream(port.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank
+// ""
+// "Check of Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank completed successfully.
+// 
+// 
+// Class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank has 6 equation(s) and 6 variable(s).
+// 2 of these are trivial equation(s).
 // "
 // ""
 // endResult

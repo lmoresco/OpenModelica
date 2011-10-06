@@ -15,16 +15,66 @@ checkModel(Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort); getErrorString();
 // true
 // ""
 // true
-// ""
-// "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
-//   The existing 'inner' components are: 
-//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort.
-//   Check if you have not misspelled the 'outer' component name.
-//   Please declare an 'inner' component with the same name in the top scope.
-//   Continuing flattening by only considering the 'outer' component declaration.
-// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort
+// "function Modelica.Fluid.Utilities.regStep \"Approximation of a general step, such that the characteristic is continuous and differentiable\"
+//   input Real x \"Abscissa value\";
+//   input Real y1 \"Ordinate value for x > 0\";
+//   input Real y2 \"Ordinate value for x < 0\";
+//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
+// algorithm
+//   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
+// end Modelica.Fluid.Utilities.regStep;
+// 
+// function Modelica.Math.asin
+//   input Real u;
+//   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");
+// 
+//   external \"C\" y = asin(u);
+// end Modelica.Math.asin;
+// 
+// function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
+//   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
+//   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";
+// algorithm
+//   Kelvin := Celsius + 273.15;
+// end Modelica.SIunits.Conversions.from_degC;
+// 
+// class Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort
+//   parameter Real system.p_ambient(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 101325.0 \"Default ambient pressure\";
+//   parameter Real system.T_ambient(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = 293.15 \"Default ambient temperature\";
+//   parameter Real system.g(quantity = \"Acceleration\", unit = \"m/s2\") = 9.80665 \"Constant gravity acceleration\";
+//   parameter Boolean system.allowFlowReversal = true \"= false to restrict to design flow direction (port_a -> port_b)\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.energyDynamics = Modelica.Fluid.Types.Dynamics.DynamicFreeInitial \"Default formulation of energy balances\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.momentumDynamics = Modelica.Fluid.Types.Dynamics.SteadyState \"Default formulation of momentum balances, if options available\";
+//   parameter Real system.m_flow_start(quantity = \"MassFlowRate\", unit = \"kg/s\") = 0.0 \"Default start value for mass flow rates\";
+//   parameter Real system.m_flow_small(quantity = \"MassFlowRate\", unit = \"kg/s\", min = 0.0) = 0.01 \"Default small laminar mass flow rate for regularization of zero flow\";
+//   parameter Real system.dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Default small pressure drop for regularization of laminar and zero flow\";
+//   parameter Real system.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.p_ambient \"Default start value for pressures\";
+//   parameter Real system.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) = system.T_ambient \"Default start value for temperatures\";
+//   parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.massDynamics = system.energyDynamics \"Default formulation of mass balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
+//   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
+//   parameter Boolean allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
+//   Real port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
+//   protected parameter Boolean port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
+//   protected parameter Boolean port_b_exposesState = false \"= true if port_b.p exposes the state of a fluid volume\";
+//   protected parameter Boolean showDesignFlowDirection = true \"= false to hide the arrow in the model icon\";
+//   output Real h_out(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy of the passing fluid\";
+//   parameter Real m_flow_small(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = 0.0, max = 100000.0) = system.m_flow_small \"For bi-directional flow, specific enthalpy is regularized in the region |m_flow| < m_flow_small (m_flow_small > 0 required)\";
+// equation
+//   h_out = Modelica.Fluid.Utilities.regStep(port_a.m_flow,port_b.h_outflow,port_a.h_outflow,m_flow_small);
+//   0.0 = port_a.m_flow + port_b.m_flow;
+//   port_a.p = port_b.p;
+//   port_a.h_outflow = port_b.h_outflow;
+//   port_b.h_outflow = port_a.h_outflow;
+//   port_a.m_flow = 0.0;
+//   port_b.m_flow = 0.0;
+// end Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort;
 // "
 // "Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
@@ -32,9 +82,18 @@ checkModel(Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort); getErrorString();
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [Sensors.mo:1067:7-1067:54:writable] Error: Wrong type or wrong number of arguments to inStream(port_b.Xi_outflow)'.
-//  (in component <NO COMPONENT>)
-// Error: Error occured while flattening model Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort
+// "
+// "Check of Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort completed successfully.
+// 
+// Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
+//   The existing 'inner' components are: 
+//     There are no 'inner' components defined in the model in any of the parent scopes of 'outer' component's scope: Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort.
+//   Check if you have not misspelled the 'outer' component name.
+//   Please declare an 'inner' component with the same name in the top scope.
+//   Continuing flattening by only considering the 'outer' component declaration.
+// 
+// Class Modelica.Fluid.Sensors.SpecificEnthalpyTwoPort has 7 equation(s) and 7 variable(s).
+// 6 of these are trivial equation(s).
 // "
 // ""
 // endResult
