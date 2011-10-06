@@ -49,10 +49,10 @@ test:
 	@echo Running tests...
 	@echo
 	@echo OPENMODELICAHOME=" $(OPENMODELICAHOME) "
-	@$(TEST) $(TESTFILES) \
-	
+	@$(TEST) $(TESTFILES) 
+	@rm *.o *.c *.h *.libs *.log *.makefile
 failingtest :
 	@echo
 	@echo Running failing tests...
 	@echo
-	@$(TEST) $(FAILINGTESTFILES) \
+	@$(TEST) $(FAILINGTESTFILES)
