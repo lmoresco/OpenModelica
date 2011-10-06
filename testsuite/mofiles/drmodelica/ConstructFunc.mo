@@ -17,6 +17,16 @@ class ConstructFunc
 end ConstructFunc;
 
 // Result:
+// function linspace
+//   input Real x1 "start";
+//   input Real x2 "end";
+//   input Integer n "number";
+//   output Real[n] v;
+// algorithm
+//   assert( n >= 2, "linspace requires n>=2 but got " + String(n,0,true));
+//   v := <reduction>array(x1 + ((x2 - x1) * Real(i + -1)) / Real(n + -1) for i in 1:n);
+// end linspace;
+// 
 // class ConstructFunc
 //   Real z[1,1] = 0.0;
 //   Real z[1,2] = 0.0;
