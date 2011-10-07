@@ -1,4 +1,4 @@
-TEST = ../../../rtest -b
+TEST = ../../../rtest -v
 
 TESTFILES = \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller.mos \
