@@ -7221,13 +7221,13 @@ checkModel(Modelica.Magnetic.FluxTubes.Examples.Utilities.CoilDesign); getErrorS
 //   parameter Real comparisonWithFEA.startTime(quantity = \"Time\", unit = \"s\") = 0.0 \"Output = offset for time < startTime\";
 //   final parameter Real comparisonWithFEA.t_min(fixed = false) \"Minimum abscissa value defined in table\";
 //   final parameter Real comparisonWithFEA.t_max(fixed = false) \"Maximum abscissa value defined in table\";
+//   protected final parameter Real comparisonWithFEA.p_offset[1] = comparisonWithFEA.offset[1];
+//   protected final parameter Real comparisonWithFEA.p_offset[2] = comparisonWithFEA.offset[1];
+//   protected final parameter Real comparisonWithFEA.p_offset[3] = comparisonWithFEA.offset[1];
 //   protected Integer comparisonWithFEA.tableID;
 //   parameter Integer comparisonWithFEA.columns[1] = 2 \"Columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[2] = 3 \"Columns of table to be interpolated\";
 //   parameter Integer comparisonWithFEA.columns[3] = 4 \"Columns of table to be interpolated\";
-//   protected final parameter Real comparisonWithFEA.p_offset[1] = comparisonWithFEA.offset[1];
-//   protected final parameter Real comparisonWithFEA.p_offset[2] = comparisonWithFEA.offset[1];
-//   protected final parameter Real comparisonWithFEA.p_offset[3] = comparisonWithFEA.offset[1];
 // initial equation
 //   comparisonWithFEA.t_min = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmin(comparisonWithFEA.tableID);
 //   comparisonWithFEA.t_max = Modelica.Blocks.Sources.CombiTimeTable.tableTimeTmax(comparisonWithFEA.tableID);

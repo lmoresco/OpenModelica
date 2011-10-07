@@ -1343,14 +1343,14 @@ end BS4;
 //   parameter Real exponentials1.riseTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = 0.1 "Rise time constant";
 //   parameter Real exponentials1.offset[1] = 0.0 "Offsets of output signals";
 //   parameter Real exponentials1.startTime[1](quantity = "Time", unit = "s") = 0.0 "Output = offset for time < startTime";
-//   protected Real exponentials1.y_riseTime[1];
 //   protected parameter Real exponentials1.p_outMax[1] = exponentials1.outMax[1];
 //   protected parameter Real exponentials1.p_riseTime[1](quantity = "Time", unit = "s") = exponentials1.riseTime[1];
-//   parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = exponentials1.riseTimeConst[1] "Fall time constant";
 //   protected parameter Real exponentials1.p_riseTimeConst[1](quantity = "Time", unit = "s") = exponentials1.riseTimeConst[1];
+//   protected parameter Real exponentials1.p_fallTimeConst[1](quantity = "Time", unit = "s") = exponentials1.fallTimeConst[1];
 //   protected parameter Real exponentials1.p_offset[1] = exponentials1.offset[1];
 //   protected parameter Real exponentials1.p_startTime[1](quantity = "Time", unit = "s") = exponentials1.startTime[1];
-//   protected parameter Real exponentials1.p_fallTimeConst[1](quantity = "Time", unit = "s") = exponentials1.fallTimeConst[1];
+//   protected Real exponentials1.y_riseTime[1];
+//   parameter Real exponentials1.fallTimeConst[1](quantity = "Time", unit = "s", min = 1e-60) = exponentials1.riseTimeConst[1] "Fall time constant";
 // equation
 //   der1.y[1] = der(der1.u[1]);
 //   der1.y[1] = der1.outPort.signal[1];
