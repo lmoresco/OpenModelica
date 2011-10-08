@@ -66,7 +66,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   input Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   input Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
 //   input Real g_times_height_ab \"Gravity times (Height(port_b) - Height(port_a))\";
-//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
+//   input Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-005 \"Absolute roughness of pipe, with a default for a smooth steel pipe (dummy if use_roughness = false)\";
 //   input Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = 1.0 \"Turbulent flow if |dp| >= dp_small (dummy if use_dp_small = false)\";
 //   output Real m_flow(quantity = \"MassFlowRate\", unit = \"kg/s\") \"Mass flow rate from port_a to port_b\";
 //   protected constant Real pi = 3.14159265358979;
@@ -86,7 +86,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   protected Real dp_zero(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\") = dp_grav_a / 2.0 + dp_grav_b / 2.0;
 //   protected Real dm_flow_ddp_fric_zero;
 // algorithm
-//   assert( roughness > 1e-10, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
+//   assert( roughness > 1e-010, \"roughness > 0 required for quadratic turbulent wall friction characteristic\");
 //   if dp >= dp_a then
 //     m_flow := sqrt(k1 * (dp - dp_grav_a));
 //   elseif dp <= dp_b then
@@ -141,8 +141,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   if abs(Delta0) <= 0.0 then
 //     y := y0;
 //   else
-//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
-//       xstar := 1e+60 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//     if abs(y1d + y0d + -2.0 * Delta0) < 1e-013 then
+//       xstar := 1e+060 * (x1 - x0) * (2.0 * y0d + y1d + -3.0 * Delta0) * if y0d + y1d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       xstar := (0.333333333333333 * (-3.0 * x0 * (y0d + y1d) + 6.0 * x0 * Delta0 + -2.0 * h0 * y0d + 3.0 * h0 * Delta0 - h0 * y1d)) / (2.0 * Delta0 + -y1d - y0d);
 //     end if;
@@ -150,13 +150,13 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //     eta := x1 - xstar;
 //     omega := 3.0 * (y0d + y1d + -2.0 * Delta0) * (xstar - x0) ^ 2.0 * h0 ^ -2.0 + (2.0 * (-2.0 * y0d + 3.0 * Delta0 - y1d) * (xstar - x0)) / h0 + y0d;
 //     aux01 := 0.25 * /*REAL*/(sign(Delta0)) * min(abs(omega),abs(Delta0));
-//     if abs(y0d - y1d) <= 1e-13 then
+//     if abs(y0d - y1d) <= 1e-013 then
 //       aux02 := y0d;
 //       if y1 > y0 + y0d * (x1 - x0) then
 //         useSingleCubicPolynomial := true;
 //       end if;
-//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-13 then
-//       aux02 := 1e+60 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
+//     elseif abs(y1d + y0d + -2.0 * Delta0) < 1e-013 then
+//       aux02 := 1e+060 * (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) * if y1d + y0d + -2.0 * Delta0 >= 0.0 then 1.0 else -1.0;
 //     else
 //       aux02 := (6.0 * Delta0 * (y1d + y0d + -1.5 * Delta0) + -y1d * y0d + -y1d ^ 2.0 - y0d ^ 2.0) / (y1d + y0d + -2.0 * Delta0 * 3.0);
 //     end if;
@@ -169,7 +169,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //         c := 0.1 * Delta0;
 //       end if;
 //       theta0 := (y0d * mu + y1d * eta) / h0;
-//       if abs(theta0 - c) < 1e-06 then
+//       if abs(theta0 - c) < 1e-006 then
 //         c := 0.999999 * theta0;
 //       end if;
 //       rho := (3.0 * (Delta0 - c)) / (theta0 - c);
@@ -177,8 +177,8 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //       eta_tilde := rho * eta;
 //       xi1 := x0 + mu_tilde;
 //       xi2 := x1 - eta_tilde;
-//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-13);
-//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-13);
+//       a1 := (y0d - c) / max(mu_tilde ^ 2.0,1e-013);
+//       a2 := (y1d - c) / max(eta_tilde ^ 2.0,1e-013);
 //       const12 := y0 + (-(x0 - xi1) ^ 3.0 * a1) / 3.0 - c * x0;
 //       const3 := y1 + (-(x1 - xi2) ^ 3.0 * a2) / 3.0 - c * x1;
 //       if x < xi1 then
@@ -200,7 +200,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   input Real x \"Abscissa value\";
 //   input Real y1 \"Ordinate value for x > 0\";
 //   input Real y2 \"Ordinate value for x < 0\";
-//   input Real x_small(min = 0.0) = 1e-05 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
+//   input Real x_small(min = 0.0) = 1e-005 \"Approximation of step for -x_small <= x <= x_small; x_small > 0 required\";
 //   output Real y \"Ordinate value to approximate y = if x > 0 then y1 else y2\";
 // algorithm
 //   y := smooth(1,if x > x_small then y1 else if x < -x_small then y2 else if abs(x_small) > 0.0 then (y2 - y1 * (-3.0 + (x / x_small) ^ 2.0) * x) / (x_small * 4.0) + y1 / 2.0 + y2 / 2.0 else y1 / 2.0 + y2 / 2.0);
@@ -243,10 +243,10 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.substanceDynamics = system.massDynamics \"Default formulation of substance balances\";
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
 //   parameter Boolean allowFlowReversal = system.allowFlowReversal \"= true to allow flow reversal, false restricts to design direction (port_a -> port_b)\";
-//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_a.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0) \"Mass flow rate from the connection point into the component\";
 //   Real port_a.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real port_a.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
-//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if allowFlowReversal then 1e+60 else 0.0) \"Mass flow rate from the connection point into the component\";
+//   Real port_b.m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = if allowFlowReversal then 1e+060 else 0.0) \"Mass flow rate from the connection point into the component\";
 //   Real port_b.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Thermodynamic pressure in the connection point\";
 //   Real port_b.h_outflow(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific thermodynamic enthalpy close to the connection point if m_flow < 0\";
 //   protected parameter Boolean port_a_exposesState = false \"= true if port_a exposes the state of a fluid volume\";
@@ -257,26 +257,26 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGrav
 //   parameter Real m_flow_small(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = -100000.0, max = 100000.0) = system.m_flow_small \"Small mass flow rate for regularization of zero flow\";
 //   parameter Boolean show_T = true \"= true, if temperatures at port_a and port_b are computed\";
 //   parameter Boolean show_V_flow = true \"= true, if volume flow rate at inflowing port is computed\";
-//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = m_flow_start) \"Mass flow rate in design flow direction\";
+//   Real m_flow(quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start) \"Mass flow rate in design flow direction\";
 //   Real dp(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", start = dp_start) \"Pressure difference between port_a and port_b (= port_a.p - port_b.p)\";
 //   parameter Real length(quantity = \"Length\", unit = \"m\") \"Length of pipe\";
 //   parameter Real diameter(quantity = \"Length\", unit = \"m\", min = 0.0) \"Inner (hydraulic) diameter of pipe\";
 //   parameter Real height_ab(quantity = \"Length\", unit = \"m\") = 0.0 \"Height(port_b) - Height(port_a)\";
-//   parameter Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-05 \"Absolute roughness of pipe (default = smooth steel pipe)\";
+//   parameter Real roughness(quantity = \"Length\", unit = \"m\", min = 0.0) = 2.5e-005 \"Absolute roughness of pipe (default = smooth steel pipe)\";
 //   parameter Boolean use_nominal = false \"= true, if mu_nominal and rho_nominal are used, otherwise computed from medium\";
 //   parameter Real mu_nominal(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.dynamicViscosity(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.setState_pTX(101325.0,Medium.T_default,{1.0})) \"Nominal dynamic viscosity (e.g. mu_liquidWater = 1e-3, mu_air = 1.8e-5)\";
 //   parameter Real rho_nominal(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.density_pTX(101325.0,Medium.T_default,{1.0}) \"Nominal density (e.g. rho_liquidWater = 995, rho_air = 1.2)\";
 //   parameter Boolean show_Re = false \"= true, if Reynolds number is included for plotting\";
 //   parameter Boolean from_dp = true \" = true, use m_flow = f(dp), otherwise dp = f(m_flow)\";
 //   parameter Real dp_small(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = system.dp_small \"Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head)\";
-//   protected Real mu_a(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = 1e-10;
-//   protected Real mu_b(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = 1e-10;
+//   protected Real mu_a(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = 1e-010;
+//   protected Real mu_b(quantity = \"DynamicViscosity\", unit = \"Pa.s\", min = 0.0) = 1e-010;
 //   protected Real rho_a(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = if use_nominal then rho_nominal else Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.density(state_a);
 //   protected Real rho_b(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0) = if use_nominal then rho_nominal else Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.density(state_b);
 //   protected Real g_times_height_ab(unit = \"m2/s2\") = system.g * height_ab \"Gravitiy times height_ab = dp_grav/d\";
 //   protected final parameter Boolean use_x_small_staticHead = false \"Use dp_/m_flow_small_staticHead only if static head actually exists\";
 //   protected Real dp_small_staticHead(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0) = max(dp_small,0.015 * abs(g_times_height_ab * (rho_a - rho_b))) \"Heuristic for large discontinuities in static head\";
-//   protected Real m_flow_small_staticHead(quantity = \"MassFlowRate\", unit = \"kg/s\") = max(m_flow_small,(0.00055 + -2.775e-07 * (rho_a + rho_b)) * abs(g_times_height_ab * (rho_a - rho_b))) \"Heuristic for large discontinuities in static head\";
+//   protected Real m_flow_small_staticHead(quantity = \"MassFlowRate\", unit = \"kg/s\") = max(m_flow_small,(0.00055 + -2.775e-007 * (rho_a + rho_b)) * abs(g_times_height_ab * (rho_a - rho_b))) \"Heuristic for large discontinuities in static head\";
 //   Real port_a_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(port_a.m_flow,Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.temperature(state_a),Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.temperature(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.setState_phX(port_a.p,port_a.h_outflow,{})),m_flow_small) \"Temperature close to port_a, if show_T = true\";
 //   Real port_b_T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = Modelica.Fluid.Utilities.regStep(port_b.m_flow,Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.temperature(state_b),Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.temperature(Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.setState_phX(port_b.p,port_b.h_outflow,{})),m_flow_small) \"Temperature close to port_b, if show_T = true\";
 //   Real V_flow(quantity = \"VolumeFlowRate\", unit = \"m3/s\") = m_flow / Modelica.Fluid.Utilities.regStep(m_flow,Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.density(state_a),Modelica.Fluid.Pipes.BaseClasses.WallFriction.TestWallFrictionAndGravity.Medium.density(state_b),m_flow_small) \"Volume flow rate at inflowing port (positive when flow from port_a to port_b)\";

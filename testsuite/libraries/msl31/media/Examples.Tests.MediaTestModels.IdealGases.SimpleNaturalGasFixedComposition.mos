@@ -375,49 +375,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   h := Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy(Modelica.Media.IdealGases.Common.SingleGasNasa.setState_pTX(p,T,X));
 // end Modelica.Media.IdealGases.Common.SingleGasNasa.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   input Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[6] X;
-//   output ThermodynamicState res;
-// end Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.h_TX \"Return specific enthalpy\"
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Independent Mass fractions of gas mixture\";
-//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
-//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
-//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
-// algorithm
-//   h := 0.92 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[1],T,exclEnthForm,refChoice,h_off) + 0.048 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[2],T,exclEnthForm,refChoice,h_off) + 0.005 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[3],T,exclEnthForm,refChoice,h_off) + 0.002 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[4],T,exclEnthForm,refChoice,h_off) + 0.015 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[5],T,exclEnthForm,refChoice,h_off) + 0.01 * Modelica.Media.IdealGases.Common.SingleGasNasa.h_T(data[6],T,exclEnthForm,refChoice,h_off);
-// end Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.h_TX;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
-//   output Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState state;
-// algorithm
-//   state := if size(X,1) == 6 then Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState(p,T,X) else Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState(p,T,cat(1,X,{1.0 - sum(X)}));
-// end Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.setState_pTX;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.h_TX(state.T,{state.X[1],state.X[2],state.X[3],state.X[4],state.X[5],state.X[6]},true,Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-// end Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.specificEnthalpy;
-// 
-// function Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {0.92,0.048,0.005,0.002,0.015,0.01} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.specificEnthalpy(Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.setState_pTX(p,T,X));
-// end Modelica.Media.IdealGases.MixtureGases.SimpleNaturalGasFixedComposition.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
@@ -774,10 +731,26 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 //   ambient.port.h = shortPipe.port_b.h;
 // end Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition;
 // "
-// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition
 // "
 // "Check of Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition completed successfully.
 // 
+// [package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
 // [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition
 // 
 // Class Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGasFixedComposition has 93 equation(s) and 93 variable(s).

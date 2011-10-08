@@ -159,37 +159,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.LinearFluid.LinearWater
 //   sat.pd := f.R * f.T * f.delta * (2.0 * f.fdelta + f.delta * f.fdeltadelta);
 // end Modelica.Media.Common.helmholtzToBoundaryProps;
 // 
-// function Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   output ThermodynamicState res;
-// end Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState;
-// 
-// function Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.setState_pTX \"set the thermodynamic state record from p and T (X not needed)\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState state \"thermodynamic state record\";
-// algorithm
-//   state := Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState(p,T);
-// end Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.setState_pTX;
-// 
-// function Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.specificEnthalpy \"Return the specific enthalpy from the thermodynamic state\"
-//   input Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := reference_h + (-298.15 + state.T) * cp_const + (-101325.0 + state.p * (1.0 + -298.15 * beta_const)) / reference_d;
-// end Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.specificEnthalpy;
-// 
-// function Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.specificEnthalpy(Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.setState_pTX(p,T,X));
-// end Modelica.Media.CompressibleLiquids.LinearWater_pT_Ambient.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Examples.Tests.Components.FixedAmbient.Medium.ThermodynamicState\"
 //   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
 //   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;

@@ -307,49 +307,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen); g
 //   h := Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.specificEnthalpy(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.setState_pTX(p,T,X));
 // end Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.Nitrogen.Medium.specificEnthalpy_pTX;
 // 
-// function Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState\"
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   output ThermodynamicState res;
-// end Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState;
-// 
-// function Modelica.Media.IdealGases.SingleGases.N2.h_T \"Compute specific enthalpy from temperature and gas data; reference is decided by the
-//     refChoice input, or by the referenceChoice package constant by default\"
-//   input Modelica.Media.IdealGases.Common.DataRecord data \"Ideal gas data\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Temperature\";
-//   input Boolean exclEnthForm = true \"If true, enthalpy of formation Hf is not included in specific enthalpy h\";
-//   input enumeration(ZeroAt0K, ZeroAt25C, UserDefined) refChoice = Modelica.Media.IdealGases.SingleGases.N2.Choices.ReferenceEnthalpy.ZeroAt0K \"Choice of reference enthalpy\";
-//   input Real h_off(quantity = \"SpecificEnergy\", unit = \"J/kg\") = 0.0 \"User defined offset for reference enthalpy, if referenceChoice = UserDefined\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\") \"Specific enthalpy at temperature T\";
-// algorithm
-//   h := if T < data.Tlimit then (data.R * (T * (data.blow[1] + data.alow[2] * log(T) + T * (data.alow[3] + T * (0.5 * data.alow[4] + T * (0.333333333333333 * data.alow[5] + T * (0.25 * data.alow[6] + 0.2 * data.alow[7] * T))))) - data.alow[1])) / T else (data.R * (T * (data.bhigh[1] + data.ahigh[2] * log(T) + T * (data.ahigh[3] + T * (0.5 * data.ahigh[4] + T * (0.333333333333333 * data.ahigh[5] + T * (0.25 * data.ahigh[6] + 0.2 * data.ahigh[7] * T))))) - data.ahigh[1])) / T + if exclEnthForm then -data.Hf else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.ZeroAt0K then data.H0 else 0.0 + if refChoice == Modelica.Media.Interfaces.PartialMedium.Choices.ReferenceEnthalpy.UserDefined then h_off else 0.0;
-// end Modelica.Media.IdealGases.SingleGases.N2.h_T;
-// 
-// function Modelica.Media.IdealGases.SingleGases.N2.setState_pTX \"Return thermodynamic state as function of p, T and composition X\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState state;
-// algorithm
-//   state := Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState(p,T);
-// end Modelica.Media.IdealGases.SingleGases.N2.setState_pTX;
-// 
-// function Modelica.Media.IdealGases.SingleGases.N2.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.IdealGases.SingleGases.N2.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.SingleGases.N2.h_T(Modelica.Media.IdealGases.Common.DataRecord(\"N2\",0.0280134,0.0,309498.454311151,1000.0,{22103.71497,-381.846182,6.08273836,-0.00853091441,1.384646189e-005,-9.62579362e-009,2.519705809e-012},{710.846086,-10.76003744},{587712.406,-2239.249073,6.06694922,-0.00061396855,1.491806679e-007,-1.923105485e-011,1.061954386e-015},{12832.10415,-15.86640027},296.803386950531),state.T,true,Modelica.Media.IdealGases.SingleGases.N2.Choices.ReferenceEnthalpy.ZeroAt0K,0.0);
-// end Modelica.Media.IdealGases.SingleGases.N2.specificEnthalpy;
-// 
-// function Modelica.Media.IdealGases.SingleGases.N2.specificEnthalpy_pTX \"Return specific enthalpy from p, T, and X or Xi\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.IdealGases.SingleGases.N2.specificEnthalpy(Modelica.Media.IdealGases.SingleGases.N2.setState_pTX(p,T,X));
-// end Modelica.Media.IdealGases.SingleGases.N2.specificEnthalpy_pTX;
-// 
 // function Modelica.Media.Interfaces.PartialMedium.setState_pTX \"Return thermodynamic state as function of p, T and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";

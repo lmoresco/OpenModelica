@@ -1111,60 +1111,6 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.Water.WaterIF97_pT); ge
 //   end if;
 // end Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT;
 // 
-// function Modelica.Media.Water.WaterIF97_pT.ThermodynamicState \"Automatically generated record constructor for Modelica.Media.Water.WaterIF97_pT.ThermodynamicState\"
-//   input Integer(min=0, max=2) phase;
-//   input Real(min=-100000000.0, max=100000000.0, nominal=1000000.0, quantity=\"SpecificEnergy\", unit=\"J/kg\") h;
-//   input Real(min=0.0, max=100000.0, nominal=1.0, start=1.0, quantity=\"Density\", unit=\"kg/m3\", displayUnit=\"g/cm3\") d;
-//   input Real(min=1.0, max=10000.0, nominal=300.0, start=300.0, quantity=\"ThermodynamicTemperature\", unit=\"K\", displayUnit=\"degC\") T;
-//   input Real(min=0.0, max=100000000.0, nominal=100000.0, start=100000.0, quantity=\"Pressure\", unit=\"Pa\", displayUnit=\"bar\") p;
-//   output ThermodynamicState res;
-// end Modelica.Media.Water.WaterIF97_pT.ThermodynamicState;
-// 
-// function Modelica.Media.Water.WaterIF97_pT.density_pT \"Computes density as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";
-// algorithm
-//   d := Modelica.Media.Water.IF97_Utilities.rho_pT(p,T,0);
-// end Modelica.Media.Water.WaterIF97_pT.density_pT;
-// 
-// function Modelica.Media.Water.WaterIF97_pT.setState_pTX \"Return thermodynamic state of water as function of p and T\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[:] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = {1.0} \"Mass fractions\";
-//   output Modelica.Media.Water.WaterIF97_pT.ThermodynamicState state \"thermodynamic state record\";
-//   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-// algorithm
-//   state := Modelica.Media.Water.WaterIF97_pT.ThermodynamicState(1,Modelica.Media.Water.WaterIF97_pT.specificEnthalpy_pT(p,T,0),Modelica.Media.Water.WaterIF97_pT.density_pT(p,T,0),T,p);
-// end Modelica.Media.Water.WaterIF97_pT.setState_pTX;
-// 
-// function Modelica.Media.Water.WaterIF97_pT.specificEnthalpy \"Return specific enthalpy\"
-//   input Modelica.Media.Water.WaterIF97_pT.ThermodynamicState state \"thermodynamic state record\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
-// algorithm
-//   h := state.h;
-// end Modelica.Media.Water.WaterIF97_pT.specificEnthalpy;
-// 
-// function Modelica.Media.Water.WaterIF97_pT.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"specific enthalpy\";
-// algorithm
-//   h := Modelica.Media.Water.IF97_Utilities.h_pT(p,T,0);
-// end Modelica.Media.Water.WaterIF97_pT.specificEnthalpy_pT;
-// 
-// function Modelica.Media.Water.WaterIF97_pT.specificEnthalpy_pTX \"Return specific enthalpy from pressure, temperature and mass fraction\"
-//   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
-//   input Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
-//   input Real[1] X(quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) \"Mass fractions\";
-//   input Integer phase(min = 0, max = 2) = 0 \"2 for two-phase, 1 for one-phase, 0 if not known\";
-//   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy at p, T, X\";
-// algorithm
-//   h := Modelica.Media.Water.WaterIF97_pT.specificEnthalpy(Modelica.Media.Water.WaterIF97_pT.setState_pTX(p,T,{X[1]},phase));
-// end Modelica.Media.Water.WaterIF97_pT.specificEnthalpy_pTX;
-// 
 // function Modelica.SIunits.Conversions.from_degC \"Convert from °Celsius to Kelvin\"
 //   input Real Celsius(quantity = \"ThermodynamicTemperature\", unit = \"degC\") \"Celsius value\";
 //   output Real Kelvin(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 0.0) \"Kelvin value\";

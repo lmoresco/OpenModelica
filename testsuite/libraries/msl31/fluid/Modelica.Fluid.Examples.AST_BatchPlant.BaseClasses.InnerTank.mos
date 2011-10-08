@@ -43,7 +43,7 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank); getErr
 //   output Real H_flow;
 //   output Real m_flow;
 // equation
-//   m_flow_negative = pre(m_flow_negative) and not port.p > p_ambient or port.m_flow < -1e-06;
+//   m_flow_negative = pre(m_flow_negative) and not port.p > p_ambient or port.m_flow < -1e-006;
 //   if noEvent(aboveLevel > 0.0) then
 //   port.p = 9.80665 * (aboveLevel * d) + (p_ambient - smooth(2,if noEvent(m_flow < 0.0) then (m_flow ^ 2.0 * pipeArea ^ -2.0) / (d * 2.0) else 0.0));
 //   else

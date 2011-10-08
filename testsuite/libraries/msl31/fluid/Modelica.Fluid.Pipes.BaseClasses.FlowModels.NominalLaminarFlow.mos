@@ -98,7 +98,7 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow); getE
 //   final parameter enumeration(DynamicFreeInitial, FixedInitial, SteadyStateInitial, SteadyState) system.traceDynamics = system.massDynamics \"Default formulation of trace substance balances\";
 //   parameter Integer m = n + -1 \"Number of flow segments\";
 //   input Real pathLengths[1](quantity = \"Length\", unit = \"m\") \"Lengths along flow path\";
-//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+60 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
+//   Real m_flows[1](quantity = \"MassFlowRate.unusablePartialMedium\", unit = \"kg/s\", min = if allowFlowReversal then -1e+060 else 0.0, max = 100000.0, start = m_flow_start, StateSelect = StateSelect.default) \"mass flow rates between states\";
 //   Real Is[1](quantity = \"Momentum\", unit = \"kg.m/s\") \"Momentums of flow segments\";
 //   Real Ib_flows[1](quantity = \"Force\", unit = \"N\") \"Flow of momentum across boudaries\";
 //   Real Fs_p[1](quantity = \"Force\", unit = \"N\") \"Pressure forces\";

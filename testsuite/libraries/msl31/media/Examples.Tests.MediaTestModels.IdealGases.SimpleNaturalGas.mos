@@ -16,11 +16,27 @@ checkModel(Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNatura
 // ""
 // true
 // ""
-// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.92, quantity="MassFraction", unit="1")[6]=Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // "
-// "[package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
+// "[package.mo:4034:5-4034:78:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4684:5-4688:67:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:77:3-78:83:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4035:5-4036:96:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4060:5-4060:103:writable] Error: No constant value for variable data.name in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:4055:5-4056:75:writable] Error: No constant value for variable data.H0 in scope Modelica.Media.IdealGases.Common.SingleGasNasa.
+// [package.mo:3237:9-3238:47:writable] Error: Variable T_default not found in scope Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // [package.mo:2934:12-2934:31:writable] Error: Type mismatch in equation {volume.medium.Xi[1],volume.medium.Xi[2],volume.medium.Xi[3],volume.medium.Xi[4],volume.medium.Xi[5],volume.medium.Xi[6]}={} of type Real(stateSelect=if volume.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.92, quantity=\"MassFraction\", unit=\"1\")[6]=Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]
 // Error: Error occured while flattening model Modelica.Media.Examples.Tests.MediaTestModels.IdealGases.SimpleNaturalGas
 // "
