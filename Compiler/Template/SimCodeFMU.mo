@@ -5253,7 +5253,7 @@ algorithm
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING(" cd "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING("; zip -r ../"));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING("&& zip -r ../"));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE(".fmu *\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
@@ -5308,21 +5308,21 @@ algorithm
                                     "\n"
                                 }, true));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" \"mkdir.exe\" -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" \"mkdir.exe\" -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_LINE("/binaries\n"));
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" \"mkdir.exe\" -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/binaries/"));
         txt = Tpl.writeStr(txt, i_platform);
         txt = Tpl.softNewLine(txt);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("\t"));
-        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" mkdir -p "));
+        txt = Tpl.writeTok(txt, Tpl.ST_STRING(" \"mkdir.exe\" -p "));
         txt = Tpl.writeStr(txt, a_fileNamePrefix);
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("/sources"));
       then txt;
