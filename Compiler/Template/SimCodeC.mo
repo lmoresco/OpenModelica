@@ -5691,7 +5691,7 @@ algorithm
                                    "\n",
                                    "  localData->timeValue = *t;\n",
                                    "  localData->states = x;\n",
-                                   "  functionODE(1.0);\n",
+                                   "  functionODE();\n",
                                    "\n",
                                    "  /* get the difference between the temp_xd(=localData->statesDerivatives)\n",
                                    "     and xd(=statesDerivativesBackup) */\n",
