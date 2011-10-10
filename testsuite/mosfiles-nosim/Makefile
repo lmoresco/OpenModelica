@@ -22,6 +22,7 @@ Model2.mos \
 ModifierVariabilityError.mos \
 NotbasicType.mos NotbasicType2.mos \
 OverloadingFunc.mos \
+QuotedFunction.mos \
 Return.mos \
 SolveLinearSystem.mos \
 TestLoadModel.mos \

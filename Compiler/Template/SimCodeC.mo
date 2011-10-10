@@ -11544,13 +11544,17 @@ algorithm
     local
       Tpl.Text txt;
       DAE.ComponentRef a_cr;
+      String ret_1;
+      Tpl.Text txt_0;
 
     case ( txt,
            SimCode.FUNCTION_CONTEXT(),
            a_cr )
       equation
         txt = Tpl.writeTok(txt, Tpl.ST_STRING("_"));
-        txt = crefStr(txt, a_cr);
+        txt_0 = crefStr(Tpl.emptyTxt, a_cr);
+        ret_1 = System.unquoteIdentifier(Tpl.textString(txt_0));
+        txt = Tpl.writeStr(txt, ret_1);
       then txt;
 
     case ( txt,
@@ -12380,6 +12384,7 @@ algorithm
     local
       Tpl.Text txt;
       String i_name;
+      String ret_4;
       String ret_3;
       Tpl.Text l_str__underscores;
       String ret_1;
@@ -12392,7 +12397,8 @@ algorithm
         l_str__dots = Tpl.writeStr(Tpl.emptyTxt, ret_1);
         ret_3 = System.stringReplace(Tpl.textString(l_str__dots), "_", "__");
         l_str__underscores = Tpl.writeStr(Tpl.emptyTxt, ret_3);
-        txt = Tpl.writeText(txt, l_str__underscores);
+        ret_4 = System.unquoteIdentifier(Tpl.textString(l_str__underscores));
+        txt = Tpl.writeStr(txt, ret_4);
       then txt;
   end matchcontinue;
 end replaceDotAndUnderscore;

@@ -1,0 +1,23 @@
+// name: QuotedFunction
+// status: correct
+// cflags: +d=noevalfunc
+// env: MODELICAUSERCFLAGS=-g
+// teardown_command: rm -f _omcQuot_*
+
+loadString("
+function 'オーペンモーデリッカー・ロックス'
+  input Real 'キャン・ザー・デバガー・シー・ミー';
+  output Real 'イェッス・イット・キャン';
+algorithm
+  'イェッス・イット・キャン' := sin('キャン・ザー・デバガー・シー・ミー');
+end 'オーペンモーデリッカー・ロックス';
+");getErrorString();
+'オーペンモーデリッカー・ロックス'(1.5);getErrorString();
+
+
+// Result:
+// true
+// ""
+// 0.997494986604054
+// ""
+// endResult
