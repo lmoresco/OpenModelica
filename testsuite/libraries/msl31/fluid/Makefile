@@ -6,6 +6,7 @@ Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.InnerTank.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal.mos \
 Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.NormalOperation.mos \
+Modelica.Fluid.Examples.Explanatory.MeasuringTemperature.mos \
 Modelica.Fluid.Examples.HeatExchanger.BaseClasses.WallConstProps.mos \
 Modelica.Fluid.Fittings.MultiPort.mos \
 Modelica.Fluid.Fittings.TeeJunctionIdeal.mos \
@@ -54,7 +55,6 @@ Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.RadioButton.mos \
 Modelica.Fluid.Examples.ControlledTankSystem.Utilities.TankController.mos \
 Modelica.Fluid.Examples.DrumBoiler.DrumBoiler.mos \
-Modelica.Fluid.Examples.Explanatory.MeasuringTemperature.mos \
 Modelica.Fluid.Examples.Explanatory.MomentumBalanceFittings.mos \
 Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX.mos \
 Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation.mos \
