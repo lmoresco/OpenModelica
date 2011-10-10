@@ -4,14 +4,7 @@
 // env: MODELICAUSERCFLAGS=-g
 // teardown_command: rm -f _omcQuot_*
 
-loadString("
-function 'オーペンモーデリッカー・ロックス'
-  input Real 'キャン・ザー・デバガー・シー・ミー';
-  output Real 'イェッス・イット・キャン';
-algorithm
-  'イェッス・イット・キャン' := sin('キャン・ザー・デバガー・シー・ミー');
-end 'オーペンモーデリッカー・ロックス';
-");getErrorString();
+loadFile("QuotedFunction.mo");getErrorString();
 'オーペンモーデリッカー・ロックス'(1.5);getErrorString();
 
 
