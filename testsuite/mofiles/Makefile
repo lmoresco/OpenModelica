@@ -351,6 +351,7 @@ FunctionReturn.mo \
 FunctionSimple.mo \
 FunctionSimplex.mo \
 FunctionWithEquation.mo \
+GetInstanceName.mo \
 GreaterThanEqual.mo \
 GreaterThan.mo \
 IconsRecursiveTest.mo \
