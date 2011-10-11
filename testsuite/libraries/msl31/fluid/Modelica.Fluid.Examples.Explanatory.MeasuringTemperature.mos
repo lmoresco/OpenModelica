@@ -238,6 +238,8 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 // function Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.specificEnthalpy \"Return specific enthalpy\"
 //   input Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";
+// algorithm
+//   h := state.h;
 // end Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.specificEnthalpy;
 // 
 // function Modelica.Fluid.Sensors.TemperatureTwoPort.Medium.specificEnthalpy_pT \"Computes specific enthalpy as a function of pressure and temperature\"
@@ -2607,7 +2609,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankCold2.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold2.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankCold2.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankCold2.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Start value of temperature\";
-//   parameter Real openTankCold2.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold2.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold2.p_start,openTankCold2.T_start,{openTankCold2.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankCold2.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold2.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold2.p_start,openTankCold2.T_start,{openTankCold2.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankCold2.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankCold2.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankCold2.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankCold2.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankCold2.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
@@ -2695,7 +2697,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankCold1.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold1.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankCold1.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankCold1.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Start value of temperature\";
-//   parameter Real openTankCold1.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold1.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold1.p_start,openTankCold1.T_start,{openTankCold1.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankCold1.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold1.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold1.p_start,openTankCold1.T_start,{openTankCold1.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankCold1.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankCold1.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankCold1.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankCold1.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankCold1.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
@@ -2783,7 +2785,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankHot1.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot1.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankHot1.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankHot1.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 353.15 \"Start value of temperature\";
-//   parameter Real openTankHot1.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot1.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot1.p_start,openTankHot1.T_start,{openTankHot1.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankHot1.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot1.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot1.p_start,openTankHot1.T_start,{openTankHot1.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankHot1.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankHot1.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankHot1.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankHot1.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankHot1.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
@@ -2871,7 +2873,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankHot2.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot2.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankHot2.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankHot2.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 353.15 \"Start value of temperature\";
-//   parameter Real openTankHot2.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot2.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot2.p_start,openTankHot2.T_start,{openTankHot2.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankHot2.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot2.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot2.p_start,openTankHot2.T_start,{openTankHot2.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankHot2.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankHot2.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankHot2.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankHot2.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankHot2.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
@@ -3042,7 +3044,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankCold3.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankCold3.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankCold3.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankCold3.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 293.15 \"Start value of temperature\";
-//   parameter Real openTankCold3.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold3.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold3.p_start,openTankCold3.T_start,{openTankCold3.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankCold3.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankCold3.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankCold3.p_start,openTankCold3.T_start,{openTankCold3.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankCold3.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankCold3.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankCold3.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankCold3.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankCold3.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";
@@ -3130,7 +3132,7 @@ checkModel(Modelica.Fluid.Examples.Explanatory.MeasuringTemperature); getErrorSt
 //   parameter Real openTankHot3.p_start(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) = openTankHot3.p_ambient \"Start value of pressure\";
 //   parameter Boolean openTankHot3.use_T_start = true \"= true, use T_start, otherwise h_start\";
 //   parameter Real openTankHot3.T_start(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) = 353.15 \"Start value of temperature\";
-//   parameter Real openTankHot3.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot3.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot3.p_start,openTankHot3.T_start,{openTankHot3.X_start[1]},0) else Medium.h_default \"Start value of specific enthalpy\";
+//   parameter Real openTankHot3.h_start(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) = if openTankHot3.use_T_start then Modelica.Fluid.Vessels.OpenTank.Medium.specificEnthalpy_pTX(openTankHot3.p_start,openTankHot3.T_start,{openTankHot3.X_start[1]},0) else 0.0 \"Start value of specific enthalpy\";
 //   parameter Real openTankHot3.X_start[1](quantity = \"MassFraction\", unit = \"kg/kg\", min = 0.0, max = 1.0, nominal = 0.1) = 1.0 \"Start value of mass fractions m_i/m\";
 //   input Real openTankHot3.medium.p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, start = openTankHot3.p_start, StateSelect = StateSelect.prefer) \"Absolute pressure of medium\";
 //   input Real openTankHot3.medium.h(quantity = \"SpecificEnergy\", unit = \"J/kg\", start = openTankHot3.h_start, StateSelect = StateSelect.prefer) \"Specific enthalpy of medium\";

@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Examples.BranchingDynamicPipes); getErrorString();
 checkModel(Modelica.Fluid.Examples.BranchingDynamicPipes); getErrorString();

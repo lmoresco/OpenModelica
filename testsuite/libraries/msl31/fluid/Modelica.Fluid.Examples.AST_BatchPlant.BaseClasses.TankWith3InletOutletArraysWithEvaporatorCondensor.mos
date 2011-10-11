@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor); getErrorString();
 checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutletArraysWithEvaporatorCondensor); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TankWith3InletOutl
 // Result:
 // true
 // ""
-// true
 // ""
 // "[AST_BatchPlant.mo:948:7-951:77:writable] Error: No matching function found for Medium.specificEnthalpy_pTX(p_ambient, T_start, {})
 // of type

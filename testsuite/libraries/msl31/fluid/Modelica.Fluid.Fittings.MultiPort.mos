@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
 checkModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Fittings.MultiPort); getErrorString();
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Fluid.Fittings.MultiPort.positiveMax
 //   input Real x;
 //   output Real y;

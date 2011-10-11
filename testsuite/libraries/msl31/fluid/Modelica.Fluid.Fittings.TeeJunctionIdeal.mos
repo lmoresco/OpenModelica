@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
 checkModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionIdeal); getErrorString();
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Math.asin
 //   input Real u;
 //   output Real y(quantity = \"Angle\", unit = \"rad\", displayUnit = \"deg\");

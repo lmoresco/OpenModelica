@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getErrorString();
 checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.Controller); getEr
 // Result:
 // true
 // ""
-// true
 // "function Modelica.StateGraph.Temporary.allTrue \"Returns true, if all elements of the Boolean input vector are true\"
 //   input Boolean[:] b;
 //   output Boolean result;

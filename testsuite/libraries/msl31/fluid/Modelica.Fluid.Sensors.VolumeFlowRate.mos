@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Sensors.VolumeFlowRate); getErrorString();
 checkModel(Modelica.Fluid.Sensors.VolumeFlowRate); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Sensors.VolumeFlowRate); getErrorString();
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Fluid.Sensors.VolumeFlowRate.Medium.density \"Return density\"
 //   input Modelica.Fluid.Sensors.VolumeFlowRate.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real d(quantity = \"Density\", unit = \"kg/m3\", displayUnit = \"g/cm3\", min = 0.0, max = 100000.0, start = 1.0, nominal = 1.0) \"Density\";

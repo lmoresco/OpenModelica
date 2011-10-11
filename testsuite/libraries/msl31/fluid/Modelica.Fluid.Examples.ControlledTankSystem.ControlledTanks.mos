@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErrorString();
 checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Examples.ControlledTankSystem.ControlledTanks); getErr
 // Result:
 // true
 // ""
-// true
 // SCodeEnv.avlTreeGet
 // SCodeEnv.avlTreeGet_ExitCall_stringCompare_SC12
 // SCodeEnv.avlTreeGet2_NextCase_FC7

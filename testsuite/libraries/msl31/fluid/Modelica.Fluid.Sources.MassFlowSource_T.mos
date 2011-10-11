@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Sources.MassFlowSource_T); getErrorString();
 checkModel(Modelica.Fluid.Sources.MassFlowSource_T); getErrorString();

@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2); getErrorString();
 checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2); getErrorString();
@@ -29,7 +29,6 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2); getErrorString();
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
 // [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity="MassFraction", unit="kg/kg", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity="MassFraction", unit="1")[1]
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2
 // "
@@ -46,7 +45,6 @@ checkModel(Modelica.Fluid.Examples.TraceSubstances.RoomCO2); getErrorString();
 // 
 // [package.mo:4093:7-4094:50:writable] Warning: Variable boundary4.medium.Xi: Non-array modification 'if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default' for array component, possibly due to missing 'each'.
 // 
-// [Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
 // [Sources.mo:768:8-768:39:writable] Error: Type mismatch in equation {}={boundary4.medium.Xi[1]} of type Real(quantity=\"MassFraction\", unit=\"kg/kg\", min=0.0, max=1.0, nominal=0.1)[0]=Real(stateSelect=if boundary4.medium.preferredMediumStates then StateSelect.prefer else StateSelect.default, start=0.01, quantity=\"MassFraction\", unit=\"1\")[1]
 // Error: Error occured while flattening model Modelica.Fluid.Examples.TraceSubstances.RoomCO2
 // "

@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getErrorString();
 checkModel(Modelica.Fluid.Examples.HeatExchanger.HeatExchangerSimulation); getErrorString();

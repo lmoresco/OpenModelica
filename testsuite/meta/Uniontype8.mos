@@ -43,11 +43,11 @@ a:=Uniontype8.test6(5);getErrorString();
 // record UT.REC4
 //     ut = record UT.REC4
 //     ut = record UT.REC5
-//     f = record foo
+//     f = record .foo
 //     x = 1,
 //     y = 2.5,
 //     z = "z"
-// end foo;
+// end .foo;
 // end UT.REC5;
 // end UT.REC4;
 // end UT.REC4;

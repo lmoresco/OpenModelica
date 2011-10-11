@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid); getErrorString();
 checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid
 // Result:
 // true
 // ""
-// true
 // "class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.TriggeredTrapezoid
 //   parameter Real amplitude = 1.0 \"Amplitude of trapezoid\";
 //   parameter Real rising(quantity = \"Time\", unit = \"s\", min = 0.0) = 0.0 \"Rising duration of trapezoid\";

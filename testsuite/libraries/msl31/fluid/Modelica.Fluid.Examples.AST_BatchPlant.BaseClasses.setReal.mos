@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal); getErrorString();
 checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal); getError
 // Result:
 // true
 // ""
-// true
 // "class Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal
 //   input Real u \"Set value of Real input\";
 // end Modelica.Fluid.Examples.AST_BatchPlant.BaseClasses.setReal;

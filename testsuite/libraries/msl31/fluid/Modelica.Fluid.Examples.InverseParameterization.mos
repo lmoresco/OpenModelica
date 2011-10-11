@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Examples.InverseParameterization); getErrorString();
 checkModel(Modelica.Fluid.Examples.InverseParameterization); getErrorString();
@@ -16,21 +16,23 @@ checkModel(Modelica.Fluid.Examples.InverseParameterization); getErrorString();
 // ""
 // true
 // ""
-// "[Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Machines.ControlledPump
-// [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
+// "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
 // Warning: Parameter p_b_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter p_a_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
 // Warning: Parameter m_flow_nominal has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Machines.ControlledPump
+// Error: Division by zero in m_flow_start / Real(nParallel) * rho_nominal
+// Error: Division by zero in p_b_nominal - p_a_nominal / g * rho_nominal
+// Error: Division by zero in m_flow_nominal / rho_nominal
 // Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
 // [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
 // Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
 // [Machines.mo:148:29-151:50:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
 // Error: Error occured while flattening model Modelica.Fluid.Examples.InverseParameterization
 // "
-// "[Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Machines.ControlledPump
-// [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Machines.ControlledPump
+// "[Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Machines.ControlledPump.
+// Error: Division by zero in m_flow_start / Real(nParallel) * rho_nominal
+// Error: Division by zero in p_b_nominal - p_a_nominal / g * rho_nominal
+// Error: Division by zero in m_flow_nominal / rho_nominal
 // Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant
 // [Machines.mo:620:7-622:87:writable] Error: Variable V_flow_op not found in scope Modelica.Fluid.Machines.ControlledPump.flowCharacteristic
 // Error: Variable V_flow_op in package Modelica.Fluid.Machines.ControlledPump is not constant

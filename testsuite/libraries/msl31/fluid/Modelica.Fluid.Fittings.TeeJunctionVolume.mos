@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
 checkModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
@@ -17,7 +17,6 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
 // true
 // ""
 // "Warning: Parameter V has neither value nor start value, and is fixed during initialization (fixed=true)
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Fittings.TeeJunctionVolume
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Fittings.TeeJunctionVolume.
 // Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
@@ -25,13 +24,11 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Fittings.TeeJunctionVolume
 // [package.mo:4090:17-4215:23:writable] Error: Illegal to instantiate partial class BaseProperties
 // Error: Error occured while flattening model Modelica.Fluid.Fittings.TeeJunctionVolume
 // "
 // "Check of Modelica.Fluid.Fittings.TeeJunctionVolume completed successfully.
 // 
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Fittings.TeeJunctionVolume
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Fittings.TeeJunctionVolume.
 // Warning: No corresponding 'inner' declaration found for component system declared as 'outer '.
 //   The existing 'inner' components are: 
@@ -39,7 +36,6 @@ checkModel(Modelica.Fluid.Fittings.TeeJunctionVolume); getErrorString();
 //   Check if you have not misspelled the 'outer' component name.
 //   Please declare an 'inner' component with the same name in the top scope.
 //   Continuing flattening by only considering the 'outer' component declaration.
-// [Interfaces.mo:572:7-575:77:writable] Error: Variable T_default not found in scope Modelica.Fluid.Fittings.TeeJunctionVolume
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
 // [Interfaces.mo:610:7-611:56:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Fittings.TeeJunctionVolume.
 // [Interfaces.mo:613:7-614:108:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Fittings.TeeJunctionVolume.

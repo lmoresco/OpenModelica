@@ -6,7 +6,7 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
+setDebugFlags("nogen");
 
 instantiateModel(Modelica.Fluid.Sources.FixedBoundary); getErrorString();
 checkModel(Modelica.Fluid.Sources.FixedBoundary); getErrorString();
@@ -22,7 +22,6 @@ checkModel(Modelica.Fluid.Sources.FixedBoundary); getErrorString();
 // "Check of Modelica.Fluid.Sources.FixedBoundary completed successfully.
 // 
 // [package.mo:4090:17-4215:23:writable] Warning: Forcing full instantiation of partial class BaseProperties during checkModel.
-// [Sources.mo:22:5-25:39:writable] Error: Variable T_default not found in scope Modelica.Fluid.Sources.FixedBoundary
 // [Sources.mo:37:5-39:59:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Sources.FixedBoundary.
 // [Sources.mo:40:5-44:11:writable] Error: No constant value for variable Medium.singleState in scope Modelica.Fluid.Sources.FixedBoundary.
 // 

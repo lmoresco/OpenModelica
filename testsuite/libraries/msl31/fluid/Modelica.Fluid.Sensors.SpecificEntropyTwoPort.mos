@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Sensors.SpecificEntropyTwoPort); getErrorString();
 checkModel(Modelica.Fluid.Sensors.SpecificEntropyTwoPort); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Sensors.SpecificEntropyTwoPort); getErrorString();
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Fluid.Sensors.SpecificEntropyTwoPort.Medium.setState_phX \"Return thermodynamic state as function of p, h and composition X or Xi\"
 //   input Real p(quantity = \"Pressure\", unit = \"Pa\", displayUnit = \"bar\", min = 0.0, max = 100000000.0, start = 100000.0, nominal = 100000.0) \"Pressure\";
 //   input Real h(quantity = \"SpecificEnergy\", unit = \"J/kg\", min = -100000000.0, max = 100000000.0, nominal = 1000000.0) \"Specific enthalpy\";

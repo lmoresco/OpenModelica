@@ -6,7 +6,6 @@
 //
 
 loadModel(Modelica, {"3.1"}); getErrorString();
-setDebugFlags("nogen,noevalfunc");
 
 instantiateModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer); getErrorString();
 checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer); getErrorString();
@@ -14,7 +13,6 @@ checkModel(Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer);
 // Result:
 // true
 // ""
-// true
 // "function Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer.Medium.temperature \"Return temperature\"
 //   input Modelica.Fluid.Pipes.BaseClasses.HeatTransfer.IdealFlowHeatTransfer.Medium.ThermodynamicState state \"thermodynamic state record\";
 //   output Real T(quantity = \"ThermodynamicTemperature\", unit = \"K\", displayUnit = \"degC\", min = 1.0, max = 10000.0, start = 300.0, nominal = 300.0) \"Temperature\";
